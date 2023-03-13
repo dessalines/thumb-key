@@ -63,8 +63,6 @@ fun KeyboardKey(
     val releasedKey = remember { mutableStateOf<String?>(null) }
 
     var tapCount by remember { mutableStateOf(0) }
-
-    // TODO does it need to build this every time?
     val tapActions = buildTapActions(key)
 
     var offsetX by remember { mutableStateOf(0f) }

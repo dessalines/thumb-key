@@ -17,13 +17,15 @@ import kotlinx.coroutines.launch
 
 const val TAG = "com.thumbkey"
 
+const val THUMBKEY_IME_NAME = "com.dessalines.thumbkey/.IMEService"
+
 @Composable
 fun colorVariantToColor(colorVariant: ColorVariant): Color {
     return when (colorVariant) {
         ColorVariant.SURFACE -> MaterialTheme.colorScheme.surface
         ColorVariant.SURFACE_VARIANT -> MaterialTheme.colorScheme.surfaceVariant
         ColorVariant.PRIMARY -> MaterialTheme.colorScheme.primary
-        ColorVariant.SECONDARY -> MaterialTheme.colorScheme.secondary // TODO this is never used?
+        ColorVariant.SECONDARY -> MaterialTheme.colorScheme.secondary
         ColorVariant.MUTED -> MaterialTheme.colorScheme.secondary.copy(alpha = 0.5F)
     }
 }
@@ -132,13 +134,7 @@ private fun autoCapitalize(
 }
 
 fun deleteLastWord(ime: IMEService) {
-    // TODO bugs here. It should work like fleksy. Find the index of the last full word not spaces
-//    val lastWordLength =
-//        ime.currentInputConnection.getTextBeforeCursor(100, 0)?.split(" ")?.lastOrNull()?.length
-//            ?: 1
     val lastWords = ime.currentInputConnection.getTextBeforeCursor(100, 0)
-
-//    val lastWordIndex = lastWords?.trim()?.lastIndexOf(" ") ?: 0
 
     val trimmedLength = lastWords?.length?.minus(lastWords.trimmedLength()) ?: 0
     val trimmed = lastWords?.trim()
@@ -154,11 +150,8 @@ fun deleteLastWord(ime: IMEService) {
 
 fun buildTapActions(
     keyItem: KeyItemC
-): Array<KeyAction> {
-    Log.d(TAG, "building tap actions again") // TODO
-    val tapActions: MutableList<KeyAction> = mutableListOf(keyItem.center.action)
-    keyItem.nextTapActions?.let { tapActions.addAll(it) }
-    return tapActions.toTypedArray()
+): List<KeyAction> {
+    return listOf(keyItem.center.action, *keyItem.nextTapActions.orEmpty())
 }
 
 fun doneKeyAction(

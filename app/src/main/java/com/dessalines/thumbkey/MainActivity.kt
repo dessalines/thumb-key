@@ -20,6 +20,7 @@ import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.text.input.TextFieldValue
 import androidx.compose.ui.unit.dp
 import com.dessalines.thumbkey.ui.theme.MainTheme
+import com.dessalines.thumbkey.utils.THUMBKEY_IME_NAME
 import splitties.systemservices.inputMethodManager
 
 class MainActivity : AppCompatActivity() {
@@ -48,20 +49,34 @@ fun Options() {
             .fillMaxWidth()
     ) {
         val ctx = LocalContext.current
+
+        val thumbkeyEnabled = inputMethodManager.enabledInputMethodList.any {
+            it.id == THUMBKEY_IME_NAME
+        }
+        val thumbkeySelected = Settings.Secure.getString(ctx.contentResolver, Settings.Secure.DEFAULT_INPUT_METHOD) == THUMBKEY_IME_NAME
+
         Text(text = "Compose Keyboard")
         val (text, setValue) = remember { mutableStateOf(TextFieldValue("Try here")) }
-        Spacer(modifier = Modifier.height(16.dp))
-        Button(modifier = Modifier.fillMaxWidth(), onClick = {
-            ctx.startActivity(Intent(Settings.ACTION_INPUT_METHOD_SETTINGS))
-        }) {
-            Text(text = "Enable IME")
+
+        if (!thumbkeyEnabled) {
+            Spacer(modifier = Modifier.height(16.dp))
+            Button(modifier = Modifier.fillMaxWidth(), onClick = {
+                ctx.startActivity(Intent(Settings.ACTION_INPUT_METHOD_SETTINGS))
+            }) {
+                Text(text = "Enable Thumbkey")
+            }
         }
-        Spacer(modifier = Modifier.height(16.dp))
-        Button(modifier = Modifier.fillMaxWidth(), onClick = {
-            inputMethodManager.showInputMethodPicker()
-        }) {
-            Text(text = "Select IME")
+        if (!thumbkeySelected) {
+            Spacer(modifier = Modifier.height(16.dp))
+            Button(modifier = Modifier.fillMaxWidth(), onClick = {
+                inputMethodManager.showInputMethodPicker()
+            }) {
+                Text(text = "Select Thumbkey")
+            }
         }
+
+        // All settings here
+
         Spacer(modifier = Modifier.height(16.dp))
         TextField(value = text, onValueChange = setValue, modifier = Modifier.fillMaxWidth())
     }
