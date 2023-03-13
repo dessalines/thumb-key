@@ -30,8 +30,7 @@ class IMEService :
         return view
     }
 
-    // Lifecylce Methods
-
+    // Lifecycle Methods
     private var lifecycleRegistry: LifecycleRegistry = LifecycleRegistry(this)
 
     private fun handleLifecycleEvent(event: Lifecycle.Event) =
@@ -57,7 +56,7 @@ class IMEService :
 
     override fun getViewModelStore(): ViewModelStore = store
 
-    // SaveStateRegestry Methods
+    // SaveStateRegistry Methods
 
     private val savedStateRegistryController = SavedStateRegistryController.create(this)
     override val savedStateRegistry: SavedStateRegistry = savedStateRegistryController.savedStateRegistry

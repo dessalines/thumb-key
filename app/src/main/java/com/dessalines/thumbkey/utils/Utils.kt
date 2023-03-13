@@ -1,12 +1,21 @@
 package com.dessalines.thumbkey.utils
 
+import android.util.Log
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.MutableState
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.ExperimentalUnitApi
 import androidx.compose.ui.unit.TextUnit
 import androidx.compose.ui.unit.TextUnitType
+import androidx.core.text.trimmedLength
+import com.dessalines.thumbkey.IMEService
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.delay
+import kotlinx.coroutines.launch
+
+const val TAG = "com.thumbkey"
 
 @Composable
 fun colorVariantToColor(colorVariant: ColorVariant): Color {
@@ -26,4 +35,149 @@ fun fontSizeVariantToFontSize(fontSizeVariant: FontSizeVariant, keySize: Dp): Te
         FontSizeVariant.SMALL -> 5f
     }
     return TextUnit(keySize.value / divFactor, TextUnitType.Sp)
+}
+
+fun swipeDirection(x: Float, y: Float, leeway: Float): SwipeDirection? {
+    return if (x > leeway) {
+        if (y > leeway) {
+            SwipeDirection.BOTTOM_RIGHT
+        } else if (y < -leeway) {
+            SwipeDirection.TOP_RIGHT
+        } else {
+            SwipeDirection.RIGHT
+        }
+    } else if (x < -leeway) {
+        if (y > leeway) {
+            SwipeDirection.BOTTOM_LEFT
+        } else if (y < -leeway) {
+            SwipeDirection.TOP_LEFT
+        } else {
+            SwipeDirection.LEFT
+        }
+    } else {
+        if (y > leeway) {
+            SwipeDirection.BOTTOM
+        } else if (y < -leeway) {
+            SwipeDirection.TOP
+        } else {
+            null
+        }
+    }
+}
+
+fun performKeyAction(
+    action: KeyAction,
+    ime: IMEService,
+    onToggleShiftMode: (enable: Boolean) -> Unit,
+    onToggleNumericMode: (enable: Boolean) -> Unit,
+    mode: KeyboardMode
+) {
+    when (action) {
+        is KeyAction.CommitText -> {
+            val text = action.text
+            Log.d(TAG, "committing key text: $text")
+            ime.currentInputConnection.commitText(
+                text,
+                text.length
+            )
+
+            if (mode !== KeyboardMode.NUMERIC) {
+                autoCapitalize(ime, onToggleShiftMode)
+            }
+        }
+        is KeyAction.SendEvent -> {
+            val ev = action.event
+            Log.d(TAG, "sending key event: $ev")
+            ime.currentInputConnection.sendKeyEvent(ev)
+        }
+        is KeyAction.DeleteLastWord -> {
+            Log.d(TAG, "deleting last word")
+            deleteLastWord(ime)
+        }
+        is KeyAction.ReplaceLastText -> {
+            // TODO auto-shift doesn't work with this unfortunately
+            Log.d(TAG, "replacing last word")
+            val text = action.text
+
+            ime.currentInputConnection.deleteSurroundingText(action.trimCount, 0)
+            ime.currentInputConnection.commitText(
+                text,
+                text.length
+            )
+        }
+        is KeyAction.ToggleShiftMode -> {
+            val enable = action.enable
+            Log.d(TAG, "Toggling Shifted: $enable")
+            onToggleShiftMode(enable)
+        }
+        is KeyAction.ToggleNumericMode -> {
+            val enable = action.enable
+            Log.d(TAG, "Toggling Numeric: $enable")
+            onToggleNumericMode(enable)
+        }
+    }
+}
+
+private fun autoCapitalize(
+    ime: IMEService,
+    onToggleShiftMode: (enable: Boolean) -> Unit
+) {
+    val textBefore = ime.currentInputConnection.getTextBeforeCursor(1, 0)
+
+    if (arrayOf(".", "?", "!").contains(textBefore)) {
+        onToggleShiftMode(true)
+    } else {
+        onToggleShiftMode(false)
+    }
+}
+
+fun deleteLastWord(ime: IMEService) {
+    // TODO bugs here. It should work like fleksy. Find the index of the last full word not spaces
+//    val lastWordLength =
+//        ime.currentInputConnection.getTextBeforeCursor(100, 0)?.split(" ")?.lastOrNull()?.length
+//            ?: 1
+    val lastWords = ime.currentInputConnection.getTextBeforeCursor(100, 0)
+
+//    val lastWordIndex = lastWords?.trim()?.lastIndexOf(" ") ?: 0
+
+    val trimmedLength = lastWords?.length?.minus(lastWords.trimmedLength()) ?: 0
+    val trimmed = lastWords?.trim()
+    val lastWordLength = trimmed?.split(" ")?.lastOrNull()?.length ?: 1
+    val minDelete = if (lastWordLength > 0) {
+        lastWordLength + trimmedLength
+    } else {
+        1
+    }
+
+    ime.currentInputConnection.deleteSurroundingText(minDelete, 0)
+}
+
+fun buildTapActions(
+    keyItem: KeyItemC
+): Array<KeyAction> {
+    Log.d(TAG, "building tap actions again") // TODO
+    val tapActions: MutableList<KeyAction> = mutableListOf(keyItem.center.action)
+    keyItem.nextTapActions?.let { tapActions.addAll(it) }
+    return tapActions.toTypedArray()
+}
+
+fun doneKeyAction(
+    scope: CoroutineScope,
+    action: KeyAction,
+    pressed: MutableState<Boolean>,
+    releasedKey: MutableState<String?>
+) {
+    pressed.value = false
+    scope.launch {
+        delay(350)
+        releasedKey.value = null
+    }
+    releasedKey.value = when (action) {
+        is KeyAction.CommitText -> {
+            action.text
+        }
+        else -> {
+            null
+        }
+    }
 }
