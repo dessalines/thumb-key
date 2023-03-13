@@ -3,7 +3,6 @@ package com.dessalines.thumbkey.ui.components
 import android.util.Log
 import androidx.compose.animation.AnimatedVisibility
 import androidx.compose.animation.ExitTransition
-import androidx.compose.animation.ExperimentalAnimationApi
 import androidx.compose.animation.core.tween
 import androidx.compose.animation.slideInVertically
 import androidx.compose.foundation.background
@@ -58,7 +57,7 @@ fun performKeyAction(
     ime: IMEService,
     onToggleShiftMode: (enable: Boolean) -> Unit,
     onToggleNumericMode: (enable: Boolean) -> Unit,
-    mode: KeyboardMode,
+    mode: KeyboardMode
 ) {
     when (action) {
         is KeyAction.CommitText -> {
@@ -128,7 +127,6 @@ fun deleteLastWord(ime: IMEService) {
 
 //    val lastWordIndex = lastWords?.trim()?.lastIndexOf(" ") ?: 0
 
-
     val trimmedLength = lastWords?.length?.minus(lastWords.trimmedLength()) ?: 0
     val trimmed = lastWords?.trim()
     val lastWordLength = trimmed?.split(" ")?.lastOrNull()?.length ?: 1
@@ -155,7 +153,7 @@ fun KeyboardKey(
     mode: KeyboardMode,
     lastAction: MutableState<KeyAction?>,
     onToggleShiftMode: (enable: Boolean) -> Unit,
-    onToggleNumericMode: (enable: Boolean) -> Unit,
+    onToggleNumericMode: (enable: Boolean) -> Unit
 ) {
     val ctx = LocalContext.current
     val ime = ctx as IMEService
@@ -163,7 +161,7 @@ fun KeyboardKey(
 //    val scale = remember { AnimateFl}
 
     val pressed = remember { mutableStateOf(false) }
-    val releasedKey = remember { mutableStateOf<String?>(null)}
+    val releasedKey = remember { mutableStateOf<String?>(null) }
 
 //    val scale = animateFloatAsState(targetValue = if (pressed) 2f else 1f)
 
@@ -217,7 +215,7 @@ fun KeyboardKey(
                             ime = ime,
                             mode = mode,
                             onToggleShiftMode = onToggleShiftMode,
-                            onToggleNumericMode = onToggleNumericMode,
+                            onToggleNumericMode = onToggleNumericMode
                         )
                         doneKeyAction(scope, action, pressed, releasedKey)
                     }
@@ -242,8 +240,9 @@ fun KeyboardKey(
                         val swipeDirection = swipeDirection(offsetX, offsetY, leeway)
 
                         Log.d(
-                            TAG, "x: ${offsetX.roundToInt()}\ny: ${
-                                offsetY.roundToInt()
+                            TAG,
+                            "x: ${offsetX.roundToInt()}\ny: ${
+                            offsetY.roundToInt()
                             }\n${swipeDirection?.name}"
                         )
 
@@ -254,7 +253,7 @@ fun KeyboardKey(
                             ime = ime,
                             onToggleShiftMode = onToggleShiftMode,
                             onToggleNumericMode = onToggleNumericMode,
-                            mode = mode,
+                            mode = mode
                         )
 
                         // Reset the drags
@@ -265,7 +264,6 @@ fun KeyboardKey(
                     }
                 )
             }
-
 
     // a 3x3 grid
     // Use box so they can overlap
@@ -287,65 +285,65 @@ fun KeyboardKey(
             contentAlignment = Alignment.TopCenter,
             modifier = Modifier.fillMaxSize().padding(horizontal = keyPadding)
         ) {
-                key.swipes?.get(SwipeDirection.TOP)?.let {
-                    KeyText(it, keySize)
-                }
+            key.swipes?.get(SwipeDirection.TOP)?.let {
+                KeyText(it, keySize)
             }
+        }
         Box(
             contentAlignment = Alignment.TopEnd,
-                    modifier = Modifier.fillMaxSize().padding(horizontal = keyPadding)
+            modifier = Modifier.fillMaxSize().padding(horizontal = keyPadding)
         ) {
-                key.swipes?.get(SwipeDirection.TOP_RIGHT)?.let {
-                    KeyText(it, keySize)
-                }
+            key.swipes?.get(SwipeDirection.TOP_RIGHT)?.let {
+                KeyText(it, keySize)
             }
-            Box(
-                contentAlignment = Alignment.CenterStart,
-                        modifier = Modifier.fillMaxSize().padding(horizontal = keyPadding)
-            ) {
-                key.swipes?.get(SwipeDirection.LEFT)?.let {
-                    KeyText(it, keySize)
-                }
+        }
+        Box(
+            contentAlignment = Alignment.CenterStart,
+            modifier = Modifier.fillMaxSize().padding(horizontal = keyPadding)
+        ) {
+            key.swipes?.get(SwipeDirection.LEFT)?.let {
+                KeyText(it, keySize)
             }
-            Box(
-                contentAlignment = Alignment.Center,
-                        modifier = Modifier.fillMaxSize().padding(horizontal = keyPadding)
-                ) {
-                KeyText(key.center, keySize)
-            }
+        }
+        Box(
+            contentAlignment = Alignment.Center,
+            modifier = Modifier.fillMaxSize().padding(horizontal = keyPadding)
+        ) {
+            KeyText(key.center, keySize)
+        }
 
-            Box(
-                contentAlignment = Alignment.CenterEnd,
-                        modifier = Modifier.fillMaxSize().padding(horizontal = keyPadding)
-            ) {
-                key.swipes?.get(SwipeDirection.RIGHT)?.let {
-                    KeyText(it, keySize)
-                }
+        Box(
+            contentAlignment = Alignment.CenterEnd,
+            modifier = Modifier.fillMaxSize().padding(horizontal = keyPadding)
+        ) {
+            key.swipes?.get(SwipeDirection.RIGHT)?.let {
+                KeyText(it, keySize)
             }
+        }
         Box(
             contentAlignment = Alignment.BottomStart,
-                    modifier = Modifier.fillMaxSize().padding(horizontal = keyPadding)
+            modifier = Modifier.fillMaxSize().padding(horizontal = keyPadding)
         ) {
-                key.swipes?.get(SwipeDirection.BOTTOM_LEFT)?.let {
-                    KeyText(it, keySize)
-                }
+            key.swipes?.get(SwipeDirection.BOTTOM_LEFT)?.let {
+                KeyText(it, keySize)
             }
+        }
         Box(
             contentAlignment = Alignment.BottomCenter,
-                            modifier = Modifier.fillMaxSize().padding(horizontal = keyPadding)
+            modifier = Modifier.fillMaxSize().padding(horizontal = keyPadding)
         ) {
-                key.swipes?.get(SwipeDirection.BOTTOM)?.let {
-                    KeyText(it, keySize)
-                }
+            key.swipes?.get(SwipeDirection.BOTTOM)?.let {
+                KeyText(it, keySize)
             }
+        }
         Box(
             contentAlignment = Alignment.BottomEnd,
-                    modifier = Modifier.fillMaxSize().padding(horizontal = keyPadding)
+            modifier = Modifier.fillMaxSize().padding(horizontal = keyPadding)
         ) {
-                key.swipes?.get(SwipeDirection.BOTTOM_RIGHT)?.let {
-                    KeyText(it, keySize)
-                }
+            key.swipes?.get(SwipeDirection.BOTTOM_RIGHT)?.let {
+                KeyText(it, keySize)
             }
+        }
         // The popup overlay
         AnimatedVisibility(
             modifier = Modifier
@@ -354,11 +352,11 @@ fun KeyboardKey(
             visible = releasedKey.value != null,
 //            enter = scaleIn(tween(100)),
             enter = slideInVertically(tween(animationSpeed)),
-            exit = ExitTransition.None,
+            exit = ExitTransition.None
         ) {
             Box(
                 contentAlignment = Alignment.Center,
-                modifier = Modifier.fillMaxSize(),
+                modifier = Modifier.fillMaxSize()
             ) {
                 val fontSize = fontSizeVariantToFontSize(
                     fontSizeVariant = FontSizeVariant.LARGE,
@@ -369,7 +367,7 @@ fun KeyboardKey(
                         text = text,
                         fontWeight = FontWeight.Bold,
                         fontSize = fontSize,
-                        color = MaterialTheme.colorScheme.tertiary,
+                        color = MaterialTheme.colorScheme.tertiary
                     )
                 }
             }
@@ -381,7 +379,7 @@ private fun doneKeyAction(
     scope: CoroutineScope,
     action: KeyAction,
     pressed: MutableState<Boolean>,
-    releasedKey: MutableState<String?>,
+    releasedKey: MutableState<String?>
 ) {
     pressed.value = false
     scope.launch {
@@ -406,7 +404,8 @@ fun KeyText(key: KeyC, keySize: Dp) {
     when (val display = key.display) {
         is KeyDisplay.IconDisplay -> {
             Icon(
-                imageVector = display.icon, contentDescription = "TODO",
+                imageVector = display.icon,
+                contentDescription = "TODO",
                 tint = color
             )
         }
@@ -415,9 +414,8 @@ fun KeyText(key: KeyC, keySize: Dp) {
                 text = display.text,
                 fontWeight = FontWeight.Bold,
                 fontSize = fontSize,
-                color = color,
+                color = color
             )
-
         }
         null -> {}
     }
@@ -460,11 +458,11 @@ fun KeyboardScreen() {
     val keyboard = MESSAGEEASE_KEYBOARD_MODES[mode]!!
 
     Box(
-        contentAlignment = Alignment.BottomEnd,
+        contentAlignment = Alignment.BottomEnd
     ) {
         Column(
             modifier = Modifier
-                .background(MaterialTheme.colorScheme.onBackground),
+                .background(MaterialTheme.colorScheme.onBackground)
         ) {
             keyboard.arr.forEach { row ->
                 Row {
@@ -503,8 +501,8 @@ fun PreviewKeyboardScreen() {
     KeyboardScreen()
 }
 
-//@Composable
-//fun KeyboardScreen() {
+// @Composable
+// fun KeyboardScreen() {
 //    val keysMatrix = arrayOf(
 //        arrayOf("Q", "W", "E", "R", "T", "Y", "U", "I", "O", "P"),
 //        arrayOf("A", "S", "D", "F", "G", "H", "J", "K", "L"),
@@ -525,10 +523,10 @@ fun PreviewKeyboardScreen() {
 //            }
 //        }
 //    }
-//}
+// }
 //
-//@Composable
-//fun FixedHeightBox(modifier: Modifier, height: Dp, content: @Composable () -> Unit) {
+// @Composable
+// fun FixedHeightBox(modifier: Modifier, height: Dp, content: @Composable () -> Unit) {
 //    Layout(modifier = modifier, content = content) { measurables, constraints ->
 //        val placeables = measurables.map { measurable ->
 //            measurable.measure(constraints)
@@ -540,13 +538,13 @@ fun PreviewKeyboardScreen() {
 //            }
 //        }
 //    }
-//}
+// }
 
-//@Composable
-//fun KeyboardKey(
+// @Composable
+// fun KeyboardKey(
 //    keyboardKey: String,
 //    modifier: Modifier
-//) {
+// ) {
 //    val interactionSource = remember { MutableInteractionSource() }
 //    val pressed = interactionSource.collectIsPressedAsState()
 //    val ctx = LocalContext.current
@@ -559,11 +557,11 @@ fun PreviewKeyboardScreen() {
 //                .padding(2.dp)
 //                .border(1.dp, Color.Black)
 //                .clickable(interactionSource = interactionSource, indication = null) {
-////                    (ctx as IMEService).currentInputConnection.commitText(
-////                        keyboardKey,
-////                        keyboardKey
-////                            .length
-////                    )
+// //                    (ctx as IMEService).currentInputConnection.commitText(
+// //                        keyboardKey,
+// //                        keyboardKey
+// //                            .length
+// //                    )
 //                    ime.currentInputConnection.sendKeyEvent(KeyEvent(KeyEvent.ACTION_DOWN,
 //                        KeyEvent.KEYCODE_E))
 //                }
@@ -592,4 +590,4 @@ fun PreviewKeyboardScreen() {
 //            )
 //        }
 //    }
-//}
+// }
