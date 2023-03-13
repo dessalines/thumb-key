@@ -1,0 +1,16 @@
+*.iml
+.gradle
+/local.properties
+/.idea
+.DS_Store
+/build
+/*/build/
+/captures
+/Gemfile*
+.externalNativeBuild
+.cxx
+local.properties
+app/release
+.project
+.settings
+.classpath
