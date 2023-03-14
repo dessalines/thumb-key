@@ -1,16 +1,28 @@
 package com.dessalines.thumbkey.utils
 
 import android.util.Log
+import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.outlined.ArrowBack
+import androidx.compose.material3.ExperimentalMaterial3Api
+import androidx.compose.material3.Icon
+import androidx.compose.material3.IconButton
 import androidx.compose.material3.MaterialTheme
+import androidx.compose.material3.Text
+import androidx.compose.material3.TopAppBar
+import androidx.compose.material3.TopAppBarScrollBehavior
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.MutableState
+import androidx.compose.ui.Alignment
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.ExperimentalUnitApi
 import androidx.compose.ui.unit.TextUnit
 import androidx.compose.ui.unit.TextUnitType
 import androidx.core.text.trimmedLength
+import androidx.navigation.NavController
 import com.dessalines.thumbkey.IMEService
+import com.dessalines.thumbkey.keyboards.MESSAGEEASE_KEYBOARD_MODES
+import com.dessalines.thumbkey.keyboards.THUMBKEY_V4_KEYBOARD_MODES
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
@@ -37,6 +49,21 @@ fun fontSizeVariantToFontSize(fontSizeVariant: FontSizeVariant, keySize: Dp): Te
         FontSizeVariant.SMALL -> 5f
     }
     return TextUnit(keySize.value / divFactor, TextUnitType.Sp)
+}
+
+fun keyboardLayoutToModes(layout: KeyboardLayout): Map<KeyboardMode, KeyboardC> {
+    return when (layout) {
+        KeyboardLayout.ThumbKeyV4 -> THUMBKEY_V4_KEYBOARD_MODES
+        KeyboardLayout.MessageEase -> MESSAGEEASE_KEYBOARD_MODES
+    }
+}
+
+fun keyboardPositionToAlignment(position: KeyboardPosition): Alignment {
+    return when (position) {
+        KeyboardPosition.Right -> Alignment.BottomEnd
+        KeyboardPosition.Center -> Alignment.BottomCenter
+        KeyboardPosition.Left -> Alignment.BottomStart
+    }
 }
 
 fun swipeDirection(x: Float, y: Float, leeway: Float): SwipeDirection? {
@@ -70,9 +97,10 @@ fun swipeDirection(x: Float, y: Float, leeway: Float): SwipeDirection? {
 fun performKeyAction(
     action: KeyAction,
     ime: IMEService,
+    mode: KeyboardMode,
+    autoCapitalize: Boolean,
     onToggleShiftMode: (enable: Boolean) -> Unit,
-    onToggleNumericMode: (enable: Boolean) -> Unit,
-    mode: KeyboardMode
+    onToggleNumericMode: (enable: Boolean) -> Unit
 ) {
     when (action) {
         is KeyAction.CommitText -> {
@@ -83,7 +111,8 @@ fun performKeyAction(
                 text.length
             )
 
-            if (mode !== KeyboardMode.NUMERIC) {
+            // TODO  this broke
+            if (autoCapitalize && mode !== KeyboardMode.NUMERIC) {
                 autoCapitalize(ime, onToggleShiftMode)
             }
         }
@@ -158,11 +187,12 @@ fun doneKeyAction(
     scope: CoroutineScope,
     action: KeyAction,
     pressed: MutableState<Boolean>,
-    releasedKey: MutableState<String?>
+    releasedKey: MutableState<String?>,
+    animationHelperSpeed: Int
 ) {
     pressed.value = false
     scope.launch {
-        delay(350)
+        delay(animationHelperSpeed.toLong())
         releasedKey.value = null
     }
     releasedKey.value = when (action) {
@@ -173,4 +203,32 @@ fun doneKeyAction(
             null
         }
     }
+}
+
+@OptIn(ExperimentalMaterial3Api::class)
+@Composable
+fun SimpleTopAppBar(
+    text: String,
+    navController: NavController,
+    scrollBehavior: TopAppBarScrollBehavior? = null,
+    showBack: Boolean = true
+) {
+    TopAppBar(
+        scrollBehavior = scrollBehavior,
+        title = {
+            Text(
+                text = text
+            )
+        },
+        navigationIcon = {
+            if (showBack) {
+                IconButton(onClick = { navController.popBackStack() }) {
+                    Icon(
+                        Icons.Outlined.ArrowBack,
+                        contentDescription = "Back"
+                    )
+                }
+            }
+        }
+    )
 }

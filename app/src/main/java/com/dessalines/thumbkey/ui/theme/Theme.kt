@@ -7,11 +7,18 @@ import androidx.compose.material3.dynamicDarkColorScheme
 import androidx.compose.material3.dynamicLightColorScheme
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.platform.LocalContext
+import com.dessalines.thumbkey.db.AppSettings
+import com.dessalines.thumbkey.utils.ThemeColor
+import com.dessalines.thumbkey.utils.ThemeMode
 
 @Composable
-fun MainTheme(
+fun ThumbkeyTheme(
+    settings: AppSettings?,
     content: @Composable () -> Unit
 ) {
+    val themeMode = ThemeMode.values()[settings?.theme ?: 0]
+    val themeColor = ThemeColor.values()[settings?.themeColor ?: 0]
+
     val ctx = LocalContext.current
     val android12OrLater = Build.VERSION.SDK_INT >= Build.VERSION_CODES.S
 
@@ -22,14 +29,26 @@ fun MainTheme(
         pink()
     }
 
+    val colorPair = when (themeColor) {
+        ThemeColor.Dynamic -> dynamicPair
+        ThemeColor.Green -> green()
+        ThemeColor.Pink -> pink()
+    }
+
     val systemTheme = if (!isSystemInDarkTheme()) {
-        dynamicPair.first
+        colorPair.first
     } else {
-        dynamicPair.second
+        colorPair.second
+    }
+
+    val colors = when (themeMode) {
+        ThemeMode.System -> systemTheme
+        ThemeMode.Light -> colorPair.first
+        ThemeMode.Dark -> colorPair.second
     }
 
     MaterialTheme(
-        colorScheme = systemTheme,
+        colorScheme = colors,
         typography = Typography,
         shapes = Shapes,
         content = content

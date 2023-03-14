@@ -15,7 +15,8 @@ class IMEService :
     SavedStateRegistryOwner {
 
     override fun onCreateInputView(): View {
-        val view = ComposeKeyboardView(this)
+        val liveSettings = (application as ThumbkeyApplication).appSettingsRepository.appSettings
+        val view = ComposeKeyboardView(this, liveSettings)
 
         window?.window?.decorView?.let { decorView ->
             ViewTreeLifecycleOwner.set(decorView, this)

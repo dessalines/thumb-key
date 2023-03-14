@@ -52,3 +52,26 @@ enum class ColorVariant {
 enum class FontSizeVariant {
     LARGE, SMALL
 }
+
+enum class ThemeMode {
+    System,
+    Light,
+    Dark
+}
+
+enum class ThemeColor {
+    Dynamic,
+    Green,
+    Pink
+}
+
+enum class KeyboardLayout {
+    ThumbKeyV4,
+    MessageEase
+}
+
+enum class KeyboardPosition {
+    Right,
+    Center,
+    Left
+}

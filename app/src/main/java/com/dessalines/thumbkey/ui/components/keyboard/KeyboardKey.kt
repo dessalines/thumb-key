@@ -1,5 +1,4 @@
-package com.dessalines.thumbkey.ui.components
-
+package com.dessalines.thumbkey.ui.components.keyboard
 import android.util.Log
 import androidx.compose.animation.AnimatedVisibility
 import androidx.compose.animation.ExitTransition
@@ -52,9 +51,14 @@ fun KeyboardKey(
     key: KeyItemC,
     mode: KeyboardMode,
     lastAction: MutableState<KeyAction?>,
+    animationHelperSpeed: Int,
+    animationSpeed: Int,
+    autoCapitalize: Boolean,
+    keySize: Int,
     onToggleShiftMode: (enable: Boolean) -> Unit,
     onToggleNumericMode: (enable: Boolean) -> Unit
 ) {
+    val id = key.toString() + animationHelperSpeed + animationSpeed + keySize + mode
     val ctx = LocalContext.current
     val ime = ctx as IMEService
     val scope = rememberCoroutineScope()
@@ -74,18 +78,17 @@ fun KeyboardKey(
         MaterialTheme.colorScheme.inversePrimary
     }
 
-    val keySize = 80.dp
-    val keyPadding = 2.dp
+    val keySizeDp = keySize.dp
 
-    val animationSpeed = 100
+    val keyPadding = 4.dp
 
     val keyboardKeyModifier =
         Modifier
-            .height(keySize)
-            .width(keySize * key.widthMultiplier)
+            .height(keySizeDp)
+            .width(keySizeDp * key.widthMultiplier)
             .padding(.5.dp)
             .background(color = backgroundColor)
-            .pointerInput(key1 = key) {
+            .pointerInput(key1 = id) {
                 detectTapGestures(
                     onPress = {
                         pressed.value = true
@@ -108,15 +111,16 @@ fun KeyboardKey(
                             action = action,
                             ime = ime,
                             mode = mode,
+                            autoCapitalize = autoCapitalize,
                             onToggleShiftMode = onToggleShiftMode,
                             onToggleNumericMode = onToggleNumericMode
                         )
-                        doneKeyAction(scope, action, pressed, releasedKey)
+                        doneKeyAction(scope, action, pressed, releasedKey, animationHelperSpeed)
                     }
                 )
             }
             // The key1 is necessary, otherwise new swipes wont work
-            .pointerInput(key1 = key) {
+            .pointerInput(key1 = id) {
                 detectDragGestures(
                     onDragStart = {
                         pressed.value = true
@@ -128,7 +132,7 @@ fun KeyboardKey(
                         offsetY += y
                     },
                     onDragEnd = {
-                        val leeway = keySize.value
+                        val leeway = keySizeDp.value
                         val swipeDirection = swipeDirection(offsetX, offsetY, leeway)
 
                         Log.d(
@@ -143,16 +147,17 @@ fun KeyboardKey(
                         performKeyAction(
                             action = action,
                             ime = ime,
+                            autoCapitalize = autoCapitalize,
+                            mode = mode,
                             onToggleShiftMode = onToggleShiftMode,
-                            onToggleNumericMode = onToggleNumericMode,
-                            mode = mode
+                            onToggleNumericMode = onToggleNumericMode
                         )
 
                         // Reset the drags
                         offsetX = 0f
                         offsetY = 0f
 
-                        doneKeyAction(scope, action, pressed, releasedKey)
+                        doneKeyAction(scope, action, pressed, releasedKey, animationHelperSpeed)
                     }
                 )
             }
@@ -167,7 +172,7 @@ fun KeyboardKey(
             modifier = Modifier.fillMaxSize().padding(horizontal = keyPadding)
         ) {
             key.swipes?.get(SwipeDirection.TOP_LEFT)?.let {
-                KeyText(it, keySize)
+                KeyText(it, keySizeDp)
             }
         }
         Box(
@@ -175,7 +180,7 @@ fun KeyboardKey(
             modifier = Modifier.fillMaxSize().padding(horizontal = keyPadding)
         ) {
             key.swipes?.get(SwipeDirection.TOP)?.let {
-                KeyText(it, keySize)
+                KeyText(it, keySizeDp)
             }
         }
         Box(
@@ -183,7 +188,7 @@ fun KeyboardKey(
             modifier = Modifier.fillMaxSize().padding(horizontal = keyPadding)
         ) {
             key.swipes?.get(SwipeDirection.TOP_RIGHT)?.let {
-                KeyText(it, keySize)
+                KeyText(it, keySizeDp)
             }
         }
         Box(
@@ -191,14 +196,14 @@ fun KeyboardKey(
             modifier = Modifier.fillMaxSize().padding(horizontal = keyPadding)
         ) {
             key.swipes?.get(SwipeDirection.LEFT)?.let {
-                KeyText(it, keySize)
+                KeyText(it, keySizeDp)
             }
         }
         Box(
             contentAlignment = Alignment.Center,
             modifier = Modifier.fillMaxSize().padding(horizontal = keyPadding)
         ) {
-            KeyText(key.center, keySize)
+            KeyText(key.center, keySizeDp)
         }
 
         Box(
@@ -206,7 +211,7 @@ fun KeyboardKey(
             modifier = Modifier.fillMaxSize().padding(horizontal = keyPadding)
         ) {
             key.swipes?.get(SwipeDirection.RIGHT)?.let {
-                KeyText(it, keySize)
+                KeyText(it, keySizeDp)
             }
         }
         Box(
@@ -214,7 +219,7 @@ fun KeyboardKey(
             modifier = Modifier.fillMaxSize().padding(horizontal = keyPadding)
         ) {
             key.swipes?.get(SwipeDirection.BOTTOM_LEFT)?.let {
-                KeyText(it, keySize)
+                KeyText(it, keySizeDp)
             }
         }
         Box(
@@ -222,7 +227,7 @@ fun KeyboardKey(
             modifier = Modifier.fillMaxSize().padding(horizontal = keyPadding)
         ) {
             key.swipes?.get(SwipeDirection.BOTTOM)?.let {
-                KeyText(it, keySize)
+                KeyText(it, keySizeDp)
             }
         }
         Box(
@@ -230,7 +235,7 @@ fun KeyboardKey(
             modifier = Modifier.fillMaxSize().padding(horizontal = keyPadding)
         ) {
             key.swipes?.get(SwipeDirection.BOTTOM_RIGHT)?.let {
-                KeyText(it, keySize)
+                KeyText(it, keySizeDp)
             }
         }
         // The popup overlay
@@ -249,7 +254,7 @@ fun KeyboardKey(
             ) {
                 val fontSize = fontSizeVariantToFontSize(
                     fontSizeVariant = FontSizeVariant.LARGE,
-                    keySize = keySize
+                    keySize = keySizeDp
                 )
                 releasedKey.value?.let { text ->
                     Text(
