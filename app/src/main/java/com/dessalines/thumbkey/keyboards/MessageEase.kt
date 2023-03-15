@@ -66,7 +66,7 @@ val messageEaseKeyboard = KeyboardC(
             KeyItemC(
                 center = KeyC(
                     display = KeyDisplay.IconDisplay(Icons.Outlined.Settings),
-                    action = KeyAction.CommitText("n"), // TODO
+                    action = KeyAction.GotoSettings,
                     size = FontSizeVariant.LARGE,
                     color = ColorVariant.SECONDARY
                 ),
@@ -339,7 +339,7 @@ val messageEaseKeyboardShifted = KeyboardC(
             KeyItemC(
                 center = KeyC(
                     display = KeyDisplay.IconDisplay(Icons.Outlined.Settings),
-                    action = KeyAction.CommitText("N"), // TODO
+                    action = KeyAction.GotoSettings,
                     size = FontSizeVariant.LARGE,
                     color = ColorVariant.SECONDARY
                 ),

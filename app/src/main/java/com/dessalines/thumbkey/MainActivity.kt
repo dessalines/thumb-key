@@ -2,11 +2,13 @@ package com.dessalines.thumbkey
 
 import android.app.Application
 import android.os.Bundle
+import android.provider.Settings
 import androidx.activity.compose.setContent
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.livedata.observeAsState
+import androidx.compose.ui.platform.LocalContext
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
@@ -18,6 +20,7 @@ import com.dessalines.thumbkey.ui.components.settings.SettingsActivity
 import com.dessalines.thumbkey.ui.components.settings.lookandfeel.LookAndFeelActivity
 import com.dessalines.thumbkey.ui.components.setup.SetupActivity
 import com.dessalines.thumbkey.ui.theme.ThumbkeyTheme
+import com.dessalines.thumbkey.utils.THUMBKEY_IME_NAME
 
 class ThumbkeyApplication : Application() {
     private val database by lazy { AppDB.getDatabase(this) }
@@ -36,6 +39,20 @@ class MainActivity : AppCompatActivity() {
         setContent {
             val settings by appSettingsViewModel.appSettings.observeAsState()
 
+            val ctx = LocalContext.current
+
+            // TODO make this a watcher?
+            val thumbkeySelected = Settings.Secure.getString(
+                ctx.contentResolver,
+                Settings.Secure.DEFAULT_INPUT_METHOD
+            ) == THUMBKEY_IME_NAME
+
+            val startDestination = if (!thumbkeySelected) {
+                "setup"
+            } else {
+                "settings"
+            }
+
             ThumbkeyTheme(
                 settings = settings
             ) {
@@ -43,12 +60,14 @@ class MainActivity : AppCompatActivity() {
 
                 NavHost(
                     navController = navController,
-                    startDestination = "settings" // TODO
+                    startDestination = startDestination
                 ) {
                     composable(
                         route = "setup"
                     ) {
-                        SetupActivity(navController = navController)
+                        SetupActivity(
+                            navController = navController
+                        )
                     }
                     composable(route = "settings") {
                         SettingsActivity(navController = navController)
@@ -62,7 +81,7 @@ class MainActivity : AppCompatActivity() {
                     composable(
                         route = "about"
                     ) {
-                        //                        AboutActivity( 
+                        //                        AboutActivity(
                         //                            navController = navController
                         //                        )
                     }

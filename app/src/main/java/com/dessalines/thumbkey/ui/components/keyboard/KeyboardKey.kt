@@ -5,8 +5,10 @@ import androidx.compose.animation.ExitTransition
 import androidx.compose.animation.core.tween
 import androidx.compose.animation.slideInVertically
 import androidx.compose.foundation.background
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.gestures.detectDragGestures
-import androidx.compose.foundation.gestures.detectTapGestures
+import androidx.compose.foundation.interaction.MutableInteractionSource
+import androidx.compose.foundation.interaction.collectIsPressedAsState
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.height
@@ -35,7 +37,6 @@ import com.dessalines.thumbkey.utils.KeyAction
 import com.dessalines.thumbkey.utils.KeyC
 import com.dessalines.thumbkey.utils.KeyDisplay
 import com.dessalines.thumbkey.utils.KeyItemC
-import com.dessalines.thumbkey.utils.KeyboardMode
 import com.dessalines.thumbkey.utils.SwipeDirection
 import com.dessalines.thumbkey.utils.TAG
 import com.dessalines.thumbkey.utils.buildTapActions
@@ -49,7 +50,6 @@ import kotlin.math.roundToInt
 @Composable
 fun KeyboardKey(
     key: KeyItemC,
-    mode: KeyboardMode,
     lastAction: MutableState<KeyAction?>,
     animationHelperSpeed: Int,
     animationSpeed: Int,
@@ -58,12 +58,15 @@ fun KeyboardKey(
     onToggleShiftMode: (enable: Boolean) -> Unit,
     onToggleNumericMode: (enable: Boolean) -> Unit
 ) {
-    val id = key.toString() + animationHelperSpeed + animationSpeed + keySize + mode
+    val id = key.toString() + animationHelperSpeed + animationSpeed + keySize
     val ctx = LocalContext.current
     val ime = ctx as IMEService
     val scope = rememberCoroutineScope()
 
-    val pressed = remember { mutableStateOf(false) }
+    val interactionSource = remember { MutableInteractionSource() }
+    val isPressed by interactionSource.collectIsPressedAsState()
+
+    val isDragged = remember { mutableStateOf(false) }
     val releasedKey = remember { mutableStateOf<String?>(null) }
 
     var tapCount by remember { mutableStateOf(0) }
@@ -72,7 +75,7 @@ fun KeyboardKey(
     var offsetX by remember { mutableStateOf(0f) }
     var offsetY by remember { mutableStateOf(0f) }
 
-    val backgroundColor = if (!pressed.value) {
+    val backgroundColor = if (!(isDragged.value || isPressed)) {
         colorVariantToColor(colorVariant = key.backgroundColor)
     } else {
         MaterialTheme.colorScheme.inversePrimary
@@ -88,42 +91,37 @@ fun KeyboardKey(
             .width(keySizeDp * key.widthMultiplier)
             .padding(.5.dp)
             .background(color = backgroundColor)
-            .pointerInput(key1 = id) {
-                detectTapGestures(
-                    onPress = {
-                        pressed.value = true
-                    },
-                    onTap = {
-                        // Set the last key info, and the tap count
-                        lastAction.value?.let { lastAction ->
-                            if (lastAction == key.center.action) {
-                                tapCount += 1
-                            } else {
-                                tapCount = 0
-                            }
-                        }
-                        lastAction.value = key.center.action
-
-                        // Set the correct action
-                        val action = tapActions[tapCount % tapActions.size]
-
-                        performKeyAction(
-                            action = action,
-                            ime = ime,
-                            mode = mode,
-                            autoCapitalize = autoCapitalize,
-                            onToggleShiftMode = onToggleShiftMode,
-                            onToggleNumericMode = onToggleNumericMode
-                        )
-                        doneKeyAction(scope, action, pressed, releasedKey, animationHelperSpeed)
+            // Note: pointerInput has a delay when switching keyboards, so you must use this
+            .clickable(interactionSource = interactionSource, indication = null) {
+                // Set the last key info, and the tap count
+                val cAction = key.center.action
+                lastAction.value?.let { lastAction ->
+                    if (lastAction == cAction) {
+                        tapCount += 1
+                    } else {
+                        tapCount = 0
                     }
+                }
+                lastAction.value = cAction
+
+                // Set the correct action
+                val action = tapActions[tapCount % tapActions.size]
+
+                performKeyAction(
+                    action = action,
+                    ime = ime,
+                    ctx = ctx,
+                    autoCapitalize = autoCapitalize,
+                    onToggleShiftMode = onToggleShiftMode,
+                    onToggleNumericMode = onToggleNumericMode
                 )
+                doneKeyAction(scope, action, isDragged, releasedKey, animationHelperSpeed)
             }
             // The key1 is necessary, otherwise new swipes wont work
             .pointerInput(key1 = id) {
                 detectDragGestures(
                     onDragStart = {
-                        pressed.value = true
+                        isDragged.value = true
                     },
                     onDrag = { change, dragAmount ->
                         change.consume()
@@ -147,8 +145,8 @@ fun KeyboardKey(
                         performKeyAction(
                             action = action,
                             ime = ime,
+                            ctx = ctx,
                             autoCapitalize = autoCapitalize,
-                            mode = mode,
                             onToggleShiftMode = onToggleShiftMode,
                             onToggleNumericMode = onToggleNumericMode
                         )
@@ -157,7 +155,7 @@ fun KeyboardKey(
                         offsetX = 0f
                         offsetY = 0f
 
-                        doneKeyAction(scope, action, pressed, releasedKey, animationHelperSpeed)
+                        doneKeyAction(scope, action, isDragged, releasedKey, animationHelperSpeed)
                     }
                 )
             }
@@ -244,7 +242,6 @@ fun KeyboardKey(
                 .fillMaxSize()
                 .background(color = MaterialTheme.colorScheme.tertiaryContainer),
             visible = releasedKey.value != null,
-//            enter = scaleIn(tween(100)),
             enter = slideInVertically(tween(animationSpeed)),
             exit = ExitTransition.None
         ) {

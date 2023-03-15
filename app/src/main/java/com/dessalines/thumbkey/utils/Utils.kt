@@ -1,5 +1,6 @@
 package com.dessalines.thumbkey.utils
 
+import android.content.Intent
 import android.util.Log
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.outlined.ArrowBack
@@ -21,6 +22,7 @@ import androidx.compose.ui.unit.TextUnitType
 import androidx.core.text.trimmedLength
 import androidx.navigation.NavController
 import com.dessalines.thumbkey.IMEService
+import com.dessalines.thumbkey.MainActivity
 import com.dessalines.thumbkey.keyboards.MESSAGEEASE_KEYBOARD_MODES
 import com.dessalines.thumbkey.keyboards.THUMBKEY_V4_KEYBOARD_MODES
 import kotlinx.coroutines.CoroutineScope
@@ -97,8 +99,8 @@ fun swipeDirection(x: Float, y: Float, leeway: Float): SwipeDirection? {
 fun performKeyAction(
     action: KeyAction,
     ime: IMEService,
-    mode: KeyboardMode,
     autoCapitalize: Boolean,
+    ctx: IMEService,
     onToggleShiftMode: (enable: Boolean) -> Unit,
     onToggleNumericMode: (enable: Boolean) -> Unit
 ) {
@@ -112,8 +114,11 @@ fun performKeyAction(
             )
 
             // TODO  this broke
-            if (autoCapitalize && mode !== KeyboardMode.NUMERIC) {
-                autoCapitalize(ime, onToggleShiftMode)
+            if (autoCapitalize) {
+                autoCapitalize(
+                    ime = ime,
+                    onToggleShiftMode = onToggleShiftMode
+                )
             }
         }
         is KeyAction.SendEvent -> {
@@ -145,6 +150,11 @@ fun performKeyAction(
             val enable = action.enable
             Log.d(TAG, "Toggling Numeric: $enable")
             onToggleNumericMode(enable)
+        }
+        KeyAction.GotoSettings -> {
+            val mainActivityIntent = Intent(ctx, MainActivity::class.java)
+            mainActivityIntent.flags = Intent.FLAG_ACTIVITY_NEW_TASK
+            ctx.startActivity(mainActivityIntent)
         }
     }
 }
@@ -222,7 +232,7 @@ fun SimpleTopAppBar(
         },
         navigationIcon = {
             if (showBack) {
-                IconButton(onClick = { navController.popBackStack() }) {
+                IconButton(onClick = { navController.navigate("settings") }) {
                     Icon(
                         Icons.Outlined.ArrowBack,
                         contentDescription = "Back"

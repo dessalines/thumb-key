@@ -35,6 +35,7 @@ sealed class KeyAction {
     class ReplaceLastText(val text: String, val trimCount: Int = 2) : KeyAction()
     class ToggleShiftMode(val enable: Boolean) : KeyAction()
     class ToggleNumericMode(val enable: Boolean) : KeyAction()
+    object GotoSettings : KeyAction()
 }
 
 enum class KeyboardMode {

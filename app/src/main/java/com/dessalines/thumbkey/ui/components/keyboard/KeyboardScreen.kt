@@ -16,6 +16,7 @@ import com.dessalines.thumbkey.db.DEFAULT_AUTO_CAPITALIZE
 import com.dessalines.thumbkey.db.DEFAULT_KEYBOARD_LAYOUT
 import com.dessalines.thumbkey.db.DEFAULT_KEY_SIZE
 import com.dessalines.thumbkey.db.DEFAULT_POSITION
+import com.dessalines.thumbkey.keyboards.thumbkeyV4Keyboard
 import com.dessalines.thumbkey.utils.KeyAction
 import com.dessalines.thumbkey.utils.KeyboardLayout
 import com.dessalines.thumbkey.utils.KeyboardMode
@@ -28,9 +29,17 @@ fun KeyboardScreen(settings: AppSettings?) {
     var mode by remember {
         mutableStateOf(KeyboardMode.SHIFTED)
     }
+    // TODO get rid of this crap
     val lastAction = remember { mutableStateOf<KeyAction?>(null) }
 
-    val keyboard = keyboardLayoutToModes(KeyboardLayout.values()[settings?.keyboardLayout ?: DEFAULT_KEYBOARD_LAYOUT])[mode]!!
+    val keyboardGroup = keyboardLayoutToModes(
+        KeyboardLayout.values()[
+            settings?.keyboardLayout
+                ?: DEFAULT_KEYBOARD_LAYOUT
+        ]
+    )
+
+    val keyboard = keyboardGroup[mode] ?: thumbkeyV4Keyboard
 
     val alignment = keyboardPositionToAlignment(
         KeyboardPosition.values()[
@@ -40,8 +49,6 @@ fun KeyboardScreen(settings: AppSettings?) {
     )
 
     val autoCapitalize = (settings?.autoCapitalize ?: DEFAULT_AUTO_CAPITALIZE) == 1
-
-    // TODO Cache these keyboards somehow, because the shifted to non-shifted delay is slow
 
     Box(
         contentAlignment = alignment
@@ -57,7 +64,6 @@ fun KeyboardScreen(settings: AppSettings?) {
                             KeyboardKey(
                                 key = key,
                                 lastAction = lastAction,
-                                mode = mode,
                                 keySize = settings?.keySize ?: DEFAULT_KEY_SIZE,
                                 autoCapitalize = autoCapitalize,
                                 animationSpeed = settings?.animationSpeed
@@ -65,10 +71,12 @@ fun KeyboardScreen(settings: AppSettings?) {
                                 animationHelperSpeed = settings?.animationHelperSpeed
                                     ?: DEFAULT_ANIMATION_HELPER_SPEED,
                                 onToggleShiftMode = { enable ->
-                                    mode = if (enable) {
-                                        KeyboardMode.SHIFTED
-                                    } else {
-                                        KeyboardMode.MAIN
+                                    if (mode !== KeyboardMode.NUMERIC) {
+                                        mode = if (enable) {
+                                            KeyboardMode.SHIFTED
+                                        } else {
+                                            KeyboardMode.MAIN
+                                        }
                                     }
                                 },
                                 onToggleNumericMode = { numeric ->
