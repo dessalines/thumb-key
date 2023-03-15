@@ -321,13 +321,7 @@ val numericKeyboard = KeyboardC(
             KeyItemC(
                 center = KeyC(
                     display = KeyDisplay.IconDisplay(Icons.Outlined.KeyboardReturn),
-                    action = KeyAction.SendEvent(
-                        KeyEvent(
-                            KeyEvent.ACTION_DOWN,
-                            KeyEvent
-                                .KEYCODE_ENTER
-                        )
-                    ),
+                    action = KeyAction.IMECompleteAction,
                     size = FontSizeVariant.LARGE,
                     color = ColorVariant.PRIMARY
                 ),

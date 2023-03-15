@@ -36,6 +36,7 @@ sealed class KeyAction {
     class ToggleShiftMode(val enable: Boolean) : KeyAction()
     class ToggleNumericMode(val enable: Boolean) : KeyAction()
     object GotoSettings : KeyAction()
+    object IMECompleteAction : KeyAction()
 }
 
 enum class KeyboardMode {

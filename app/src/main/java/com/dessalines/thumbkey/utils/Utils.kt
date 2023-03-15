@@ -4,6 +4,8 @@ import android.content.Context
 import android.content.Intent
 import android.net.Uri
 import android.util.Log
+import android.view.KeyEvent
+import android.view.inputmethod.EditorInfo
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.outlined.ArrowBack
 import androidx.compose.material3.ExperimentalMaterial3Api
@@ -163,7 +165,38 @@ fun performKeyAction(
             mainActivityIntent.flags = Intent.FLAG_ACTIVITY_NEW_TASK
             ctx.startActivity(mainActivityIntent)
         }
+        KeyAction.IMECompleteAction -> {
+            val imeAction = getImeActionCode(ime)
+            if (arrayOf(
+                    EditorInfo.IME_ACTION_DONE,
+                    EditorInfo.IME_ACTION_GO,
+                    EditorInfo.IME_ACTION_NEXT,
+                    EditorInfo.IME_ACTION_SEARCH,
+                    EditorInfo.IME_ACTION_SEND
+                ).contains(imeAction)
+            ) {
+                ime.currentInputConnection.performEditorAction(imeAction)
+            } else {
+                ime.currentInputConnection.sendKeyEvent(KeyEvent(KeyEvent.ACTION_DOWN, KeyEvent.KEYCODE_ENTER))
+            }
+        }
     }
+}
+
+fun getImeActionCode(ime: IMEService): Int {
+    return (
+        ime.currentInputEditorInfo.imeOptions and (
+            EditorInfo
+                .IME_MASK_ACTION or
+                EditorInfo.IME_FLAG_NO_ENTER_ACTION
+            )
+        )
+}
+
+fun getImeActionText(ime: IMEService): String? {
+    val action = getImeActionCode(ime)
+    val text = ime.getTextForImeAction(action).toString()
+    return text
 }
 
 private fun autoCapitalize(
