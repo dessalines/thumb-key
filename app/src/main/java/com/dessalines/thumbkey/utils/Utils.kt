@@ -1,6 +1,8 @@
 package com.dessalines.thumbkey.utils
 
+import android.content.Context
 import android.content.Intent
+import android.net.Uri
 import android.util.Log
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.outlined.ArrowBack
@@ -241,4 +243,9 @@ fun SimpleTopAppBar(
             }
         }
     )
+}
+
+fun openLink(url: String, ctx: Context) {
+    val intent = Intent(Intent.ACTION_VIEW, Uri.parse(url))
+    ctx.startActivity(intent)
 }

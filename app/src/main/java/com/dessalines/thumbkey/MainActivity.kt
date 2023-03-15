@@ -17,6 +17,7 @@ import com.dessalines.thumbkey.db.AppSettingsRepository
 import com.dessalines.thumbkey.db.AppSettingsViewModel
 import com.dessalines.thumbkey.db.AppSettingsViewModelFactory
 import com.dessalines.thumbkey.ui.components.settings.SettingsActivity
+import com.dessalines.thumbkey.ui.components.settings.about.AboutActivity
 import com.dessalines.thumbkey.ui.components.settings.lookandfeel.LookAndFeelActivity
 import com.dessalines.thumbkey.ui.components.setup.SetupActivity
 import com.dessalines.thumbkey.ui.theme.ThumbkeyTheme
@@ -81,9 +82,9 @@ class MainActivity : AppCompatActivity() {
                     composable(
                         route = "about"
                     ) {
-                        //                        AboutActivity(
-                        //                            navController = navController
-                        //                        )
+                        AboutActivity(
+                            navController = navController
+                        )
                     }
                 }
             }

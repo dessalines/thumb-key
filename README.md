@@ -1,3 +1,9 @@
+# Thumb-Key
+
+## User Guide
+
+## Design
+
 ## Resources
 
 - https://github.com/THEAccess/compose-keyboard-ime

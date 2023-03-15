@@ -126,7 +126,7 @@ abstract class AppDB : RoomDatabase() {
                 val instance = Room.databaseBuilder(
                     context.applicationContext,
                     AppDB::class.java,
-                    "jerboa"
+                    "thumbkey"
                 )
                     .allowMainThreadQueries()
 //          .addMigrations(
