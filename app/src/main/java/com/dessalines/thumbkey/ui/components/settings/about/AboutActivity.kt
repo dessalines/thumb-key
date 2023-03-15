@@ -36,7 +36,7 @@ import com.dessalines.thumbkey.utils.TAG
 import com.dessalines.thumbkey.utils.openLink
 
 const val githubUrl = "https://github.com/dessalines/thumb-key"
-const val userGuideLink = "https://github.com/dessalines/thumb-key#User-guide"
+const val userGuideLink = "https://github.com/dessalines/thumb-key#user-guide"
 const val matrixChat = "https://matrix.to/#/#thumbkey-dev:matrix.org"
 const val donateLink = "https://liberapay.com/dessalines"
 const val lemmyLink = "https://lemmy.ml/c/thumbkey"

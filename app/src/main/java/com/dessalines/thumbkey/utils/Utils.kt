@@ -133,7 +133,6 @@ fun performKeyAction(
             deleteLastWord(ime)
         }
         is KeyAction.ReplaceLastText -> {
-            // TODO auto-shift doesn't work with this unfortunately
             Log.d(TAG, "replacing last word")
             val text = action.text
 
@@ -142,6 +141,12 @@ fun performKeyAction(
                 text,
                 text.length
             )
+            if (autoCapitalize) {
+                autoCapitalize(
+                    ime = ime,
+                    onToggleShiftMode = onToggleShiftMode
+                )
+            }
         }
         is KeyAction.ToggleShiftMode -> {
             val enable = action.enable
@@ -165,9 +170,19 @@ private fun autoCapitalize(
     ime: IMEService,
     onToggleShiftMode: (enable: Boolean) -> Unit
 ) {
-    val textBefore = ime.currentInputConnection.getTextBeforeCursor(1, 0)
+    // Capitalizes 'i'
+    val textBefore = ime.currentInputConnection.getTextBeforeCursor(3, 0)
+    if (textBefore == " i ") {
+        ime.currentInputConnection.deleteSurroundingText(2, 0)
+        ime.currentInputConnection.commitText(
+            "I ",
+            2
+        )
+    }
 
-    if (arrayOf(".", "?", "!").contains(textBefore)) {
+    // Toggles shift after punctuation
+    val beforeSpace: Char = textBefore?.getOrNull(1) ?: ' '
+    if (arrayOf('.', '?', '!').contains(beforeSpace)) {
         onToggleShiftMode(true)
     } else {
         onToggleShiftMode(false)
