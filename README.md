@@ -35,7 +35,7 @@ Thumb-Key is a _privacy-conscious_ smart keyboard, made specifically for your th
 
 It features a **3x3 grid layout**, as many older phones had, and uses swipes for the less common letters. Initial testing shows that you can reach ~25 words per minute after a day of use.
 
-Instead of relying on big-data-driven, privacy-offending word and sentence prediction for accuracy, as do most popular phone keyboards like Gboard and Swiftkey, Thumb-Key uses **large keys with predictable positions**, to prevent your eyes from [hunting and pecking](https://www.keyboardingonline.com/hunting-and-pecking/) for letters.
+Instead of relying on profit-driven, privacy-offending word and sentence prediction for accuracy, as do most popular phone keyboards like Gboard and Swiftkey, Thumb-Key uses **large keys with predictable positions**, to prevent your eyes from [hunting and pecking](https://www.keyboardingonline.com/hunting-and-pecking/) for letters.
 
 As the key positions get ingrained into your muscle memory, eventually you'll be able to appromixate the fast speeds of [touch-typing](https://en.m.wikipedia.org/wiki/Touch_typing), your eyes never having to leave the text edit area.
 
@@ -59,24 +59,25 @@ Slide left on the backspace key to delete whole words.
 
 - Press the `#` key to see a numeric keypad, and additional symbols.
 - Press the Settings Gear key to configure Thumb-Key.
+- Practice typing, and check your words per minute, using [https://monkeytype.com](monkeytype.com)
 
-## Design
+## Thumb-Key Design
 
-### History
+### A History of Phone Keyboards
 
 Physical keyboards, with the full-size _QWERTY_ layout, **were not designed for use on small devices like phones**; they were designed specifically for 10 fingers resting on a keybed, sitting on a secure surface.
 
-Phones must be held with the fore-fingers and palm, leaving only 1 or 2 thumbs (as opposed to 10 fingers) free to perform key-presses. As texting came into being, word prediction came to be seen as the best solution to slow input speeds.
+Phones must be held with the fore-fingers and palm, or held with one hand and typed with the other, leaving only 1 or 2 thumbs (as opposed to 10 fingers) free to perform key-presses. As texting came into being, word prediction came to be seen as the best solution to slow input speeds.
 
-On phones that used the 9-key numeric layout, [T9 predictive text](<https://en.m.wikipedia.org/wiki/T9_(predictive_text)>) was used. Other phones used the full-hand layout with the familiar _QWERTY_ layout, with other predictive methods.
+On phones that used the 9-key numeric layout, [T9 predictive text](<https://en.m.wikipedia.org/wiki/T9_(predictive_text)>) was used. Other phones used the full-hand layout with the familiar _QWERTY_ layout, with other proprietary predictive methods.
 
 #### When phone keyboards became Keyloggers
 
 As phones moved from physical buttons to soft-keyboards, key sizes became smaller and taps more imprecise and error-prone, with better predictive technology picking up the slack.
 
-Smartphone companies like Apple and Google, in an attempt to better their word prediction algorithms, as well as collect potentially profitable information on what their users were typing, began submitting and aggregating all their user's key-taps to their servers, violating user's privacy in the process. [Known as Keyloggers](https://usa.kaspersky.com/resource-center/definitions/keylogger), and seen as universally malicious programs on desktop computers, these apps unfortunately became normalized and seen as a necessity on phones.
+Smartphone companies like Apple and Google, in an attempt to better their word prediction algorithms, as well as collect potentially profitable information on what their users were typing, began submitting and aggregating all their user's key-taps to their servers, violating user's privacy in the process. [Known as Keyloggers](https://usa.kaspersky.com/resource-center/definitions/keylogger), and seen as _universally malicious_ programs on desktop computers, these apps unfortunately became normalized and seen as a necessity on phones.
 
-The lack of innovation on phone keyboard design, is best explained by the _potential profitability_ these companies stand to gain by collecting and aggregating everything a user types, and the commodification of this data directly, or information and trends about you learned from this data, it can sell to advertisers and 3rd parties. These could include your buying preferences, preferred websites, what you most commonly talk about with friends, and everything you type into search bars and text boxes.
+The lack of innovation on phone keyboard design, is best explained by the _potential profitability_ these companies stand to gain by collecting and aggregating everything a user types; including the commodification of this data directly, or information and trends about you learned from this data, that they can sell to advertisers and 3rd parties. These could include your buying preferences, preferred websites, what you most commonly talk about with friends, and **everything you type into search bars and text boxes.**
 
 As of today, phone keyboards are in such an abysmal state of privacy, that there aren't many keyboards left that can guarantee **not to be logging all of your keystrokes.**
 
@@ -90,11 +91,11 @@ One company named Exideas created a keyboard app called [MessageEase](https://ww
 
 MessageEase is unfortunately unmaintained, and Thumb-Key uses a better alternating-thumb layout letter position (although the original MessageEase Keyboard layout is available in the settings).
 
-### Thumb-Key Letter Position Design
+### Thumb-Key Letter Positions
 
 - Large keys are in a predictable 9-key grid. Eventually, like touch-typing, you should be able to keep your eyes on the text input area, rather than hunting-and-pecking for letters, appromimating touch-typing.
-- Letter positions are based on [English text letter frequency](https://en.m.wikipedia.org/wiki/Letter_frequency). The most common letters are: **ETAOINSHR**. These 9 letters alone make up ~70% of all English tex.
-- First 9 letters by frequency are the 9 center key taps. The next 8 are swipes to the center. The next 8 are on the center hub key. Z is last.
+- Letter positions are based on [English text letter frequency](https://en.m.wikipedia.org/wiki/Letter_frequency). The most common letters are: **ETAOINSHR**. These 9 letters alone make up ~70% of all English text.
+- First 9 letters by frequency are the 9 center key taps. The next 8 are swipes to the center. The next 8 are off the center hub key. Z is last.
 - Alternate fingers for vowels and consonants (Vowels on right side of keyboard, consonants on left). This naturally results in fast digram and trigram speeds.
 - Prioritize bottom, and right side of keyboard. So EAO should be on the right side, and bottom to top, while TNS is on the left side.
 
