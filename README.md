@@ -33,9 +33,11 @@
 
 Thumb-Key is a _privacy-conscious_ smart keyboard, made specifically for your thumbs.
 
-It features a 9-key grid layout, as many older phones had, and uses swipes for the less common letters. Initial testing shows that you can reach ~25 words per minute after a few days of use.
+It features a **3x3 grid layout**, as many older phones had, and uses swipes for the less common letters. Initial testing shows that you can reach ~25 words per minute after a few days of use.
 
-Instead of relying on privacy-offending word and sentence prediction for accuracy, as do most popular smartphone keyboards like Gboard and Swiftkey, Thumb-Key uses larger keys with predictable positions, around a central hub key (the middle of the grid), to prevent your eyes from [hunting and pecking](https://www.keyboardingonline.com/hunting-and-pecking/) for letters. As the key positions get ingrained into your muscle memory, eventually you'll be able to appromixate the fast speeds of [touch-typing](https://en.m.wikipedia.org/wiki/Touch_typing), your eyes never having to leave the text edit area.
+Instead of relying on privacy-offending word and sentence prediction for accuracy, as do most popular smartphone keyboards like Gboard and Swiftkey, Thumb-Key uses **large keys with predictable positions**, to prevent your eyes from [hunting and pecking](https://www.keyboardingonline.com/hunting-and-pecking/) for letters.
+
+As the key positions get ingrained into your muscle memory, eventually you'll be able to appromixate the fast speeds of [touch-typing](https://en.m.wikipedia.org/wiki/Touch_typing), your eyes never having to leave the text edit area.
 
 This project is a follow-up to the now dead (and closed-source) [MessageEase Keyboard](https://www.exideas.com/ME/), which is its main inspiration.
 
@@ -47,19 +49,21 @@ This project is a follow-up to the now dead (and closed-source) [MessageEase Key
 
 Physical keyboards, with the full-size _QWERTY_ layout, **were not designed for use on small devices like phones**; they were designed specifically for 10 fingers resting on a keybed, sitting on a secure surface.
 
-Phones must be held with the fore-fingers and palm, leaving only your thumbs free to perform key-presses.
+Phones must be held with the fore-fingers and palm, leaving only 2 thumbs (as opposed to 10 fingers) free to perform key-presses.
 
-As texting came into being, early phones tried two approaches: the first was to add letters to the 12-key numeric layout. Since multiple taps were slow, it was assisted by [T9 predictive text](<https://en.m.wikipedia.org/wiki/T9_(predictive_text)>). The second was to use a full-hand layout with the familiar _QWERTY_ layout from the 1800s, with even more advanced word prediction becoming necessary, as phones moved from physical buttons to soft-keyboards, and two-thumb input on soft-keyboards could not avoid the hunt-and-peck problem.
+As texting came into being, word prediction came to be seen as the only solution to slow input. On phones that used the 12-key numeric layout, [T9 predictive text](<https://en.m.wikipedia.org/wiki/T9_(predictive_text)>) was used. Other phones used the full-hand layout with the familiar _QWERTY_ layout from the 1800s.
 
 #### When keyboards became Keyloggers
 
-Both Apple and Google decided to continue the strategy of putting full-size keyboard layouts on their smartphones, supplemented with word-prediction into their keyboard apps. In order to better this technology, these companies began submitting and aggregating all their user's key-taps to their servers, violating user's privacy in the process. [Known as Keyloggers](https://usa.kaspersky.com/resource-center/definitions/keylogger) on desktop computers, these became normalized and seen as a necessity on smartphones.
+As phones moved from physical buttons to soft-keyboards, key sizes became smaller and taps more imprecise, with better predictive technology picking up the slack. These solutions still could not avoid the hunt-and-peck problem.
 
-As of today, smartphone keyboards are in such a terrible state of privacy, that there aren't many keyboards left that can guarantee not to be logging all of your keystrokes.
+Smartphone companies like Apple and Google, in an attempt to better their word prediction algorithms, began submitting and aggregating all their user's key-taps to their servers, violating user's privacy in the process. [Known as Keyloggers](https://usa.kaspersky.com/resource-center/definitions/keylogger) on desktop computers, and seen as universally malicious programs, these apps unfortunately became normalized, and seen as a necessity on smartphones.
+
+As of today, smartphone keyboards are in such a terrible state of privacy, that there aren't many keyboards left that can guarantee **not to be logging all of your keystrokes.**
 
 #### MessageEase
 
-One company named Exideas created a keyboard app called [MessageEase](https://www.exideas.com/ME/), which relies on the original large 9-key grid of old phones, and manages to acheive comparable typing speeds to other keyboards, without relying on submitted word-prediction.
+One company named Exideas created a keyboard app called [MessageEase](https://www.exideas.com/ME/), which relied on the original large 9-key grid of old phones, and managed to acheive comparable typing speeds to other keyboards, without relying on submitted word-prediction.
 
 [Much research went into MessageEase's design](https://www.exideas.com/ME/ICMI2003Paper.pdf), and its and many of its users can do > 50 words per minute.
 
