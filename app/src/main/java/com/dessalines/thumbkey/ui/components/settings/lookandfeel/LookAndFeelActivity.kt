@@ -247,7 +247,7 @@ fun LookAndFeelActivity(
                     }
                 )
                 SettingsSlider(
-                    valueRange = 0f..1000f,
+                    valueRange = 0f..500f,
                     state = animationSpeedState,
                     icon = {
                         Icon(
@@ -273,7 +273,7 @@ fun LookAndFeelActivity(
                     }
                 )
                 SettingsSlider(
-                    valueRange = 0f..1000f,
+                    valueRange = 0f..500f,
                     state = animationHelperSpeedState,
                     icon = {
                         Icon(

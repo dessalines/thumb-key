@@ -14,8 +14,8 @@ import kotlinx.coroutines.launch
 import java.util.concurrent.Executors
 
 const val DEFAULT_KEY_SIZE = 64
-const val DEFAULT_ANIMATION_SPEED = 350
-const val DEFAULT_ANIMATION_HELPER_SPEED = 500
+const val DEFAULT_ANIMATION_SPEED = 250
+const val DEFAULT_ANIMATION_HELPER_SPEED = 250
 const val DEFAULT_POSITION = 0
 const val DEFAULT_AUTO_CAPITALIZE = 1
 const val DEFAULT_KEYBOARD_LAYOUT = 0

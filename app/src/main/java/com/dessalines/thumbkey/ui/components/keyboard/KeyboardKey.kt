@@ -1,5 +1,4 @@
 package com.dessalines.thumbkey.ui.components.keyboard
-import android.util.Log
 import androidx.compose.animation.AnimatedVisibility
 import androidx.compose.animation.ExitTransition
 import androidx.compose.animation.core.tween
@@ -38,14 +37,12 @@ import com.dessalines.thumbkey.utils.KeyC
 import com.dessalines.thumbkey.utils.KeyDisplay
 import com.dessalines.thumbkey.utils.KeyItemC
 import com.dessalines.thumbkey.utils.SwipeDirection
-import com.dessalines.thumbkey.utils.TAG
 import com.dessalines.thumbkey.utils.buildTapActions
 import com.dessalines.thumbkey.utils.colorVariantToColor
 import com.dessalines.thumbkey.utils.doneKeyAction
 import com.dessalines.thumbkey.utils.fontSizeVariantToFontSize
 import com.dessalines.thumbkey.utils.performKeyAction
 import com.dessalines.thumbkey.utils.swipeDirection
-import kotlin.math.roundToInt
 
 @Composable
 fun KeyboardKey(
@@ -130,15 +127,7 @@ fun KeyboardKey(
                         offsetY += y
                     },
                     onDragEnd = {
-                        val leeway = keySizeDp.value
-                        val swipeDirection = swipeDirection(offsetX, offsetY, leeway)
-
-                        Log.d(
-                            TAG,
-                            "x: ${offsetX.roundToInt()}\ny: ${
-                            offsetY.roundToInt()
-                            }\n${swipeDirection?.name}"
-                        )
+                        val swipeDirection = swipeDirection(offsetX, offsetY)
 
                         val swipeKey = key.swipes?.get(swipeDirection)
                         val action = swipeKey?.action ?: run { key.center.action }
