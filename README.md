@@ -53,7 +53,7 @@ Double tap the space bar to type a period.
 
 Slide left to delete whole words
 
-![slide_left_delete](https://i.postimg.cc/d1YpKyKk/In-Shot-20230316-091739029.gif)
+<!-- ![slide_left_delete](https://i.postimg.cc/d1YpKyKk/In-Shot-20230316-091739029.gif) -->
 
 ### Other hints
 
