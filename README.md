@@ -33,9 +33,9 @@
 
 Thumb-Key is a _privacy-conscious_ smart keyboard, made specifically for your thumbs.
 
-It features a 9-key grid layout, as many old-school phones had, and uses swipes for the less common letters. Initial testing shows that you can reach ~25 words per minute after a few days of use.
+It features a 9-key grid layout, as many older phones had, and uses swipes for the less common letters. Initial testing shows that you can reach ~25 words per minute after a few days of use.
 
-Instead of relying on spying word and sentence prediction for accuracy, as do most popular smartphone keyboards like Gboard and Swiftkey, Thumb-Key uses larger keys with predictable positions, around a central hub key (the middle of the grid), to prevent your eyes from hunting for letters.
+Instead of relying on privacy-offending word and sentence prediction for accuracy, as do most popular smartphone keyboards like Gboard and Swiftkey, Thumb-Key uses larger keys with predictable positions, around a central hub key (the middle of the grid), to prevent your eyes from [hunting and pecking](https://www.keyboardingonline.com/hunting-and-pecking/) for letters. As the key positions get ingrained into your muscle memory, eventually you'll be able to appromixate the fast speeds of [touch-typing](https://en.m.wikipedia.org/wiki/Touch_typing), your eyes never having to leave the text edit area.
 
 This project is a follow-up to the now dead (and closed-source) [MessageEase Keyboard](https://www.exideas.com/ME/), which is its main inspiration.
 
@@ -45,9 +45,34 @@ This project is a follow-up to the now dead (and closed-source) [MessageEase Key
 
 ### History
 
-Physical keyboards were not designed for use on small devices like phones. They were designed specifically for 10 fingers resting on a keybed.
+Physical keyboards, with the full-size _QWERTY_ layout, **were not designed for use on small devices like phones**; they were designed specifically for 10 fingers resting on a keybed, sitting on a secure surface.
+
+Phones must be held with the fore-fingers and palm, leaving only your thumbs free to perform key-presses.
+
+As texting came into being, early phones tried two approaches: the first was to add letters to the 12-key numeric layout. Since multiple taps were slow, it was assisted by [T9 predictive text](<https://en.m.wikipedia.org/wiki/T9_(predictive_text)>). The second was to use a full-hand layout with the familiar _QWERTY_ layout from the 1800s, with even more advanced word prediction becoming necessary, as phones moved from physical buttons to soft-keyboards, and two-thumb input on soft-keyboards could not avoid the hunt-and-peck problem.
+
+#### When keyboards became Keyloggers
+
+Both Apple and Google decided to continue the strategy of putting full-size keyboard layouts on their smartphones, supplemented with word-prediction into their keyboard apps. In order to better this technology, these companies began submitting and aggregating all their user's key-taps to their servers, violating user's privacy in the process. [Known as Keyloggers](https://usa.kaspersky.com/resource-center/definitions/keylogger) on desktop computers, these became normalized and seen as a necessity on smartphones.
+
+As of today, smartphone keyboards are in such a terrible state of privacy, that there aren't many keyboards left that can guarantee not to be logging all of your keystrokes.
+
+#### MessageEase
+
+One company named Exideas created a keyboard app called [MessageEase](https://www.exideas.com/ME/), which relies on the original large 9-key grid of old phones, and manages to acheive comparable typing speeds to other keyboards, without relying on submitted word-prediction.
+
+[Much research went into MessageEase's design](https://www.exideas.com/ME/ICMI2003Paper.pdf), and its and many of its users can do > 50 words per minute.
+
+MessageEase is unfortunately unmaintained, and Thumb-Key uses a better alternating-thumb layout letter position (although the original MessageEase Keyboard layout is available in the settings.)
 
 ### Letter Position
+
+- Large keys in a predictable 9-key grid. Eventually, like touch-typing, you should be able to keep your eyes on the text input area, rather than hunting-and-pecking for letters
+- Letter positions based on [English text letter frequency](https://en.m.wikipedia.org/wiki/Letter_frequency). The most common letters are: **ETAOINSHRDLC**
+- First 9 letters by frequency are the center keys. Next 8 are swipes to the center. Next 8 are on the center key. Z is last.
+- Prioritize lower keys, and right side of keyboard.
+- Alternating fingers for vowels and consonants (Vowels on right side of keyboard).
+- Alternating fingers for common digrams.
 
 ## Resources
 
@@ -61,6 +86,7 @@ Physical keyboards were not designed for use on small devices like phones. They 
 
 ## Features
 
+- Highly configurable: Optional sizing, ThumbKey and MessageEase layouts, themes, animations, haptic feedback, and audio feedback.
 - Open source, [AGPL License](/LICENSE).
 
 ## Installation / Releases
@@ -70,7 +96,7 @@ Physical keyboards were not designed for use on small devices like phones. They 
 
 ## Support / Donate
 
-Thumb-Key will always remain free, open-source software. We've seen many keyboards go unmaintained after a few years. Your donations directly support full-time development of the project.
+Thumb-Key will always remain free, open-source software. We've seen many keyboards (and open-source projects in general) go unmaintained after a few years. Your donations directly support full-time development, and will help keep this project alive.
 
 - [Support me on Liberapay](https://liberapay.com/dessalines).
 - [Support me Patreon](https://www.patreon.com/dessalines).
@@ -84,5 +110,5 @@ Thumb-Key will always remain free, open-source software. We've seen many keyboar
 
 ## Contact
 
-- [Mastodon](https://mastodon.social/@dessalines)
 - [Thumbkey dev chat](https://matrix.to/#/#thumbkey-dev:matrix.org)
+- [Mastodon](https://mastodon.social/@dessalines)
