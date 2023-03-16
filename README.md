@@ -33,32 +33,27 @@
 
 Thumb-Key is a _privacy-conscious_ smart keyboard, made specifically for your thumbs.
 
-It features a **3x3 grid layout**, as many older phones had, and uses swipes for the less common letters. Initial testing shows that you can reach ~25 words per minute after a few days of use.
+It features a **3x3 grid layout**, as many older phones had, and uses swipes for the less common letters. Initial testing shows that you can reach ~25 words per minute after a day of use.
 
-Instead of relying on privacy-offending word and sentence prediction for accuracy, as do most popular smartphone keyboards like Gboard and Swiftkey, Thumb-Key uses **large keys with predictable positions**, to prevent your eyes from [hunting and pecking](https://www.keyboardingonline.com/hunting-and-pecking/) for letters.
+Instead of relying on big-data-driven, privacy-offending word and sentence prediction for accuracy, as do most popular smartphone keyboards like Gboard and Swiftkey, Thumb-Key uses **large keys with predictable positions**, to prevent your eyes from [hunting and pecking](https://www.keyboardingonline.com/hunting-and-pecking/) for letters.
 
 As the key positions get ingrained into your muscle memory, eventually you'll be able to appromixate the fast speeds of [touch-typing](https://en.m.wikipedia.org/wiki/Touch_typing), your eyes never having to leave the text edit area.
 
-This project is a follow-up to the now dead (and closed-source) [MessageEase Keyboard](https://www.exideas.com/ME/), which is its main inspiration.
+This project is a follow-up to the now unmaintained (and closed-source) [MessageEase Keyboard](https://www.exideas.com/ME/), which is its main inspiration.
 
 ## User Guide
 
 Tap a key, or slide to type a letter.
 
- <img width=200px height=200px src="https://i.postimg.cc/7hSF2nMN/In-Shot-20230316-091452080.gif">
-
-<!-- ![hello_img](https://i.postimg.cc/7hSF2nMN/In-Shot-20230316-091452080.gif) -->
+<img width=200px height=200px src="https://i.postimg.cc/7hSF2nMN/In-Shot-20230316-091452080.gif">
 
 Double tap the space bar to type a period.
 
-<!-- ![double_tap_space](https://i.postimg.cc/LXkdqVV3/In-Shot-20230316-091704600.gif) -->
+<img width=200px height=200px src="https://i.postimg.cc/LXkdqVV3/In-Shot-20230316-091704600.gif">
 
- <img width=200px height=200px src="https://i.postimg.cc/LXkdqVV3/In-Shot-20230316-091704600.gif">
+Slide left on the backspace key to delete whole words.
 
-Slide left to delete whole words
-
-<!-- ![slide_left_delete](https://i.postimg.cc/d1YpKyKk/In-Shot-20230316-091739029.gif) -->
- <img width=200px height=200px src="https://i.postimg.cc/d1YpKyKk/In-Shot-20230316-091739029.gif">
+<img width=200px height=200px src="https://i.postimg.cc/d1YpKyKk/In-Shot-20230316-091739029.gif">
 
 ### Other hints
 
@@ -106,17 +101,20 @@ MessageEase is unfortunately unmaintained, and Thumb-Key uses a better alternati
 
 ## Features
 
-- Highly configurable: Optional sizing, ThumbKey and MessageEase layouts, dynamic / Material v3 themes, animations, haptic feedback, and audio feedback.
+- Highly configurable.
+- Customizeable sizing, ThumbKey and MessageEase layouts, dynamic / Material v3 themes, animations, haptic feedback, and audio feedback.
 - Open source, [AGPL License](/LICENSE).
 
 ## Installation / Releases
 
 - [Releases](https://github.com/dessalines/thumb-key/releases)
-- [F-Droid](https://f-droid.org/en/packages/com.dessalines.thumbkey/)
+<!-- - [F-Droid](https://f-droid.org/en/packages/com.dessalines.thumbkey/) -->
 
 ## Support / Donate
 
-Thumb-Key will always remain free, open-source software. We've seen many keyboards (and open-source projects in general) go unmaintained after a few years. Your donations directly support full-time development, and will help keep this project alive.
+Thumb-Key will always remain free, open-source software. We've seen many keyboards (and open-source projects in general) go unmaintained after a few years. **Recurring donations have proven to be the only way these projects can stay alive.**
+
+Your donations directly support full-time development, and help keep this maintained. If you find yourself using Thumb-Key every day, consider donating:
 
 - [Support me on Liberapay](https://liberapay.com/dessalines).
 - [Support me Patreon](https://www.patreon.com/dessalines).
