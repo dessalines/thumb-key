@@ -22,6 +22,7 @@ import com.dessalines.thumbkey.ui.components.settings.lookandfeel.LookAndFeelAct
 import com.dessalines.thumbkey.ui.components.setup.SetupActivity
 import com.dessalines.thumbkey.ui.theme.ThumbkeyTheme
 import com.dessalines.thumbkey.utils.THUMBKEY_IME_NAME
+import splitties.systemservices.inputMethodManager
 
 class ThumbkeyApplication : Application() {
     private val database by lazy { AppDB.getDatabase(this) }
@@ -41,14 +42,15 @@ class MainActivity : AppCompatActivity() {
             val settings by appSettingsViewModel.appSettings.observeAsState()
 
             val ctx = LocalContext.current
-
-            // TODO make this a watcher?
+            val thumbkeyEnabled = inputMethodManager.enabledInputMethodList.any {
+                it.id == THUMBKEY_IME_NAME
+            }
             val thumbkeySelected = Settings.Secure.getString(
                 ctx.contentResolver,
                 Settings.Secure.DEFAULT_INPUT_METHOD
             ) == THUMBKEY_IME_NAME
 
-            val startDestination = if (!thumbkeySelected) {
+            val startDestination = if (!thumbkeyEnabled) {
                 "setup"
             } else {
                 "settings"
@@ -67,11 +69,17 @@ class MainActivity : AppCompatActivity() {
                         route = "setup"
                     ) {
                         SetupActivity(
-                            navController = navController
+                            navController = navController,
+                            thumbkeyEnabled = thumbkeyEnabled,
+                            thumbkeySelected = thumbkeySelected
                         )
                     }
                     composable(route = "settings") {
-                        SettingsActivity(navController = navController)
+                        SettingsActivity(
+                            navController = navController,
+                            thumbkeyEnabled = thumbkeyEnabled,
+                            thumbkeySelected = thumbkeySelected
+                        )
                     }
                     composable(route = "lookAndFeel") {
                         LookAndFeelActivity(

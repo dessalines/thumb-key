@@ -73,7 +73,7 @@ enum class KeyboardLayout {
 }
 
 enum class KeyboardPosition {
-    Right,
     Center,
+    Right,
     Left
 }

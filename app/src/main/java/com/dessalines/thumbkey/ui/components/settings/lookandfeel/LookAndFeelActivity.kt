@@ -4,17 +4,17 @@ import android.util.Log
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.rememberScrollState
+import androidx.compose.foundation.verticalScroll
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.outlined.*
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.Icon
+import androidx.compose.material3.OutlinedTextField
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.SnackbarHost
 import androidx.compose.material3.SnackbarHostState
 import androidx.compose.material3.Text
-import androidx.compose.material3.TextField
-import androidx.compose.material3.TopAppBarDefaults
-import androidx.compose.material3.rememberTopAppBarState
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
@@ -80,17 +80,21 @@ fun LookAndFeelActivity(
 
     val snackbarHostState = remember { SnackbarHostState() }
 
-    val scrollBehavior = TopAppBarDefaults.enterAlwaysScrollBehavior(rememberTopAppBarState())
-
     var text by remember { mutableStateOf("") }
+
+    val scrollState = rememberScrollState()
 
     Scaffold(
         snackbarHost = { SnackbarHost(snackbarHostState) },
         topBar = {
-            SimpleTopAppBar(text = "Look and feel", navController = navController, scrollBehavior = scrollBehavior)
+            SimpleTopAppBar(text = "Look and feel", navController = navController)
         },
         content = { padding ->
-            Column(modifier = Modifier.padding(padding)) {
+            Column(
+                modifier = Modifier
+                    .padding(padding)
+                    .verticalScroll(scrollState)
+            ) {
                 SettingsList(
                     state = keyboardLayoutState,
                     items = KeyboardLayout.values().map { it.name },
@@ -298,10 +302,13 @@ fun LookAndFeelActivity(
                         )
                     }
                 )
-                TextField(
-                    modifier = Modifier.padding(16.dp).fillMaxWidth(),
+                OutlinedTextField(
+                    modifier = Modifier
+                        .padding(16.dp)
+                        .fillMaxWidth(),
                     value = text,
                     onValueChange = { text = it },
+                    singleLine = true,
                     label = { Text("Test out Thumb-Key") }
                 )
             }

@@ -8,11 +8,9 @@
         android:label="@string/app_name"
         android:roundIcon="@drawable/thumb_key_icon"
         android:supportsRtl="true"
-        android:windowSoftInputMode="adjustResize"
         android:theme="@style/Theme.AppCompat.NoActionBar">
         <activity
             android:name=".MainActivity"
-            android:label="@string/app_name"
             android:theme="@style/Theme.AppCompat.NoActionBar"
             android:exported="true">
             <intent-filter>
@@ -25,7 +23,6 @@
         <service
             android:name=".IMEService"
             android:label="Thumb-Key"
-
             android:permission="android.permission.BIND_INPUT_METHOD"
             android:exported="false">
             <intent-filter>

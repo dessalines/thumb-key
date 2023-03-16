@@ -7,7 +7,6 @@ import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
-import androidx.compose.material.icons.outlined.Settings
 import androidx.compose.material3.Button
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.Scaffold
@@ -22,19 +21,16 @@ import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
 import com.dessalines.thumbkey.utils.SimpleTopAppBar
 import com.dessalines.thumbkey.utils.TAG
-import com.dessalines.thumbkey.utils.THUMBKEY_IME_NAME
 import splitties.systemservices.inputMethodManager
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun SetupActivity(
-    navController: NavController
+    navController: NavController,
+    thumbkeyEnabled: Boolean,
+    thumbkeySelected: Boolean
 ) {
     Log.d(TAG, "Got to setup activity")
-
-    val thumbkeyEnabled = inputMethodManager.enabledInputMethodList.any {
-        it.id == THUMBKEY_IME_NAME
-    }
 
     val snackbarHostState = remember { SnackbarHostState() }
     val ctx = LocalContext.current
@@ -44,7 +40,11 @@ fun SetupActivity(
     Scaffold(
         snackbarHost = { SnackbarHost(snackbarHostState) },
         topBar = {
-            SimpleTopAppBar(text = "Setup Thumb-Key", navController = navController)
+            SimpleTopAppBar(
+                text = "Setup Thumb-Key",
+                navController = navController,
+                showBack = false
+            )
         },
         content = { padding ->
             Column(
@@ -60,10 +60,17 @@ fun SetupActivity(
                         Text(text = "Enable Thumbkey")
                     }
                 }
+                if (!thumbkeySelected) {
+                    Button(modifier = Modifier.fillMaxWidth(), onClick = {
+                        inputMethodManager.showInputMethodPicker()
+                    }) {
+                        Text(text = "Select Thumbkey")
+                    }
+                }
                 Button(modifier = Modifier.fillMaxWidth(), onClick = {
-                    inputMethodManager.showInputMethodPicker()
+                    navController.navigate("settings")
                 }) {
-                    Text(text = "Select Thumbkey")
+                    Text(text = "Finish Setup")
                 }
             }
         }

@@ -28,7 +28,9 @@ import com.dessalines.thumbkey.utils.openLink
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun SettingsActivity(
-    navController: NavController
+    navController: NavController,
+    thumbkeyEnabled: Boolean,
+    thumbkeySelected: Boolean
 ) {
     Log.d(TAG, "Got to settings activity")
 
@@ -42,16 +44,18 @@ fun SettingsActivity(
         },
         content = { padding ->
             Column(modifier = Modifier.padding(padding)) {
-                SettingsMenuLink(
-                    title = { Text("Setup") },
-                    icon = {
-                        Icon(
-                            imageVector = Icons.Outlined.InstallMobile,
-                            contentDescription = "TODO"
-                        )
-                    },
-                    onClick = { navController.navigate("setup") }
-                )
+                if (!(thumbkeyEnabled || thumbkeySelected)) {
+                    SettingsMenuLink(
+                        title = { Text("Setup") },
+                        icon = {
+                            Icon(
+                                imageVector = Icons.Outlined.InstallMobile,
+                                contentDescription = "TODO"
+                            )
+                        },
+                        onClick = { navController.navigate("setup") }
+                    )
+                }
 
                 SettingsMenuLink(
                     title = { Text("Look and feel") },
