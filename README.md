@@ -9,7 +9,7 @@
 
 <p align="center">
   <a href="https://github.com/dessalines/thumb-key" rel="noopener">
- <img width=200px height=200px src="https://raw.githubusercontent.com/dessalines/thumb-key/main/app/src/main/res/thumbkey.png"></a>
+ <img width=200px height=200px src="https://i.postimg.cc/RZjZGzFG/Screenshot-2023-03-16-00-14-28-039-edit-app-olaunchercf.jpg"></a>
 
  <h3 align="center"><a href="https://github.com/dessalines/thumb-key">Thumb-Key</a></h3>
   <p align="center">
@@ -30,8 +30,6 @@
 </p>
 
 ## About Thumb-Key
-
-![img_1](https://i.postimg.cc/RZjZGzFG/Screenshot-2023-03-16-00-14-28-039-edit-app-olaunchercf.jpg)
 
 Thumb-Key is a _privacy-conscious_ smart keyboard, made specifically for your thumbs.
 
