@@ -45,7 +45,7 @@ This project is a follow-up to the now unmaintained (and closed-source) [Message
 
 Tap a key, or slide to type a letter.
 
-<img width=200px height=200px src="https://i.postimg.cc/7hSF2nMN/In-Shot-20230316-091452080.gif">
+<img width=200px height=200px src="https://i.postimg.cc/vmNtd1x7/In-Shot-20230316-095059022.gif">
 
 Double tap the space bar to type a period.
 
