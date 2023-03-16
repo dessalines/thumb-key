@@ -93,10 +93,10 @@ MessageEase is unfortunately unmaintained, and Thumb-Key uses a better alternati
 
 ### Thumb-Key Letter Positions
 
-- Large keys are in a predictable 9-key grid. Eventually, like touch-typing, you should be able to keep your eyes on the text input area, rather than hunting-and-pecking for letters, appromimating touch-typing.
+- Large keys are in a predictable 9-key grid. Eventually, you should be able to keep your eyes on the text input area, rather than hunting-and-pecking for letters, approximating touch-typing.
 - Letter positions are based on [English text letter frequency](https://en.m.wikipedia.org/wiki/Letter_frequency). The most common letters are: **ETAOINSHR**. These 9 letters alone make up ~70% of all English text.
 - First 9 letters by frequency are the 9 center key taps. The next 8 are swipes to the center. The next 8 are off the center hub key. Z is last.
-- Alternate fingers for vowels and consonants (Vowels on right side of keyboard, consonants on left). This naturally results in fast digram and trigram speeds.
+- Alternate fingers for vowels and consonants (Vowels on right side of keyboard, consonants on left). This naturally results in fast digram speeds.
 - Prioritize bottom, and right side of keyboard. So EAO should be on the right side, and bottom to top, while TNS is on the left side.
 
 ### Built With
