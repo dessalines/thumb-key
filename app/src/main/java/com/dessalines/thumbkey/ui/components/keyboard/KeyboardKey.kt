@@ -1,4 +1,6 @@
 package com.dessalines.thumbkey.ui.components.keyboard
+import android.content.Context
+import android.media.AudioManager
 import androidx.compose.animation.AnimatedVisibility
 import androidx.compose.animation.ExitTransition
 import androidx.compose.animation.core.tween
@@ -17,6 +19,7 @@ import androidx.compose.material3.Icon
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.MutableState
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
@@ -25,8 +28,10 @@ import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.hapticfeedback.HapticFeedbackType
 import androidx.compose.ui.input.pointer.pointerInput
 import androidx.compose.ui.platform.LocalContext
+import androidx.compose.ui.platform.LocalHapticFeedback
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
@@ -51,6 +56,8 @@ fun KeyboardKey(
     animationHelperSpeed: Int,
     animationSpeed: Int,
     autoCapitalize: Boolean,
+    vibrateOnTap: Boolean,
+    soundOnTap: Boolean,
     keySize: Int,
     onToggleShiftMode: (enable: Boolean) -> Unit,
     onToggleNumericMode: (enable: Boolean) -> Unit
@@ -79,8 +86,21 @@ fun KeyboardKey(
     }
 
     val keySizeDp = keySize.dp
-
     val keyPadding = 4.dp
+
+    val haptic = LocalHapticFeedback.current
+    val audioManager = ctx.getSystemService(Context.AUDIO_SERVICE) as AudioManager
+
+    LaunchedEffect(key1 = isPressed) {
+        if (isPressed) {
+            if (vibrateOnTap) {
+                haptic.performHapticFeedback(HapticFeedbackType.LongPress)
+            }
+            if (soundOnTap) {
+                audioManager.playSoundEffect(AudioManager.FX_KEY_CLICK, .1f)
+            }
+        }
+    }
 
     val keyboardKeyModifier =
         Modifier
@@ -156,7 +176,9 @@ fun KeyboardKey(
     ) {
         Box(
             contentAlignment = Alignment.TopStart,
-            modifier = Modifier.fillMaxSize().padding(horizontal = keyPadding)
+            modifier = Modifier
+                .fillMaxSize()
+                .padding(horizontal = keyPadding)
         ) {
             key.swipes?.get(SwipeDirection.TOP_LEFT)?.let {
                 KeyText(it, keySizeDp)
@@ -164,7 +186,9 @@ fun KeyboardKey(
         }
         Box(
             contentAlignment = Alignment.TopCenter,
-            modifier = Modifier.fillMaxSize().padding(horizontal = keyPadding)
+            modifier = Modifier
+                .fillMaxSize()
+                .padding(horizontal = keyPadding)
         ) {
             key.swipes?.get(SwipeDirection.TOP)?.let {
                 KeyText(it, keySizeDp)
@@ -172,7 +196,9 @@ fun KeyboardKey(
         }
         Box(
             contentAlignment = Alignment.TopEnd,
-            modifier = Modifier.fillMaxSize().padding(horizontal = keyPadding)
+            modifier = Modifier
+                .fillMaxSize()
+                .padding(horizontal = keyPadding)
         ) {
             key.swipes?.get(SwipeDirection.TOP_RIGHT)?.let {
                 KeyText(it, keySizeDp)
@@ -180,7 +206,9 @@ fun KeyboardKey(
         }
         Box(
             contentAlignment = Alignment.CenterStart,
-            modifier = Modifier.fillMaxSize().padding(horizontal = keyPadding)
+            modifier = Modifier
+                .fillMaxSize()
+                .padding(horizontal = keyPadding)
         ) {
             key.swipes?.get(SwipeDirection.LEFT)?.let {
                 KeyText(it, keySizeDp)
@@ -188,14 +216,18 @@ fun KeyboardKey(
         }
         Box(
             contentAlignment = Alignment.Center,
-            modifier = Modifier.fillMaxSize().padding(horizontal = keyPadding)
+            modifier = Modifier
+                .fillMaxSize()
+                .padding(horizontal = keyPadding)
         ) {
             KeyText(key.center, keySizeDp)
         }
 
         Box(
             contentAlignment = Alignment.CenterEnd,
-            modifier = Modifier.fillMaxSize().padding(horizontal = keyPadding)
+            modifier = Modifier
+                .fillMaxSize()
+                .padding(horizontal = keyPadding)
         ) {
             key.swipes?.get(SwipeDirection.RIGHT)?.let {
                 KeyText(it, keySizeDp)
@@ -203,7 +235,9 @@ fun KeyboardKey(
         }
         Box(
             contentAlignment = Alignment.BottomStart,
-            modifier = Modifier.fillMaxSize().padding(horizontal = keyPadding)
+            modifier = Modifier
+                .fillMaxSize()
+                .padding(horizontal = keyPadding)
         ) {
             key.swipes?.get(SwipeDirection.BOTTOM_LEFT)?.let {
                 KeyText(it, keySizeDp)
@@ -211,7 +245,9 @@ fun KeyboardKey(
         }
         Box(
             contentAlignment = Alignment.BottomCenter,
-            modifier = Modifier.fillMaxSize().padding(horizontal = keyPadding)
+            modifier = Modifier
+                .fillMaxSize()
+                .padding(horizontal = keyPadding)
         ) {
             key.swipes?.get(SwipeDirection.BOTTOM)?.let {
                 KeyText(it, keySizeDp)
@@ -219,7 +255,9 @@ fun KeyboardKey(
         }
         Box(
             contentAlignment = Alignment.BottomEnd,
-            modifier = Modifier.fillMaxSize().padding(horizontal = keyPadding)
+            modifier = Modifier
+                .fillMaxSize()
+                .padding(horizontal = keyPadding)
         ) {
             key.swipes?.get(SwipeDirection.BOTTOM_RIGHT)?.let {
                 KeyText(it, keySizeDp)

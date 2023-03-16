@@ -34,8 +34,13 @@ import com.dessalines.thumbkey.db.AppSettings
 import com.dessalines.thumbkey.db.AppSettingsViewModel
 import com.dessalines.thumbkey.db.DEFAULT_ANIMATION_HELPER_SPEED
 import com.dessalines.thumbkey.db.DEFAULT_ANIMATION_SPEED
+import com.dessalines.thumbkey.db.DEFAULT_AUTO_CAPITALIZE
 import com.dessalines.thumbkey.db.DEFAULT_KEYBOARD_LAYOUT
 import com.dessalines.thumbkey.db.DEFAULT_KEY_SIZE
+import com.dessalines.thumbkey.db.DEFAULT_SOUND_ON_TAP
+import com.dessalines.thumbkey.db.DEFAULT_THEME
+import com.dessalines.thumbkey.db.DEFAULT_THEME_COLOR
+import com.dessalines.thumbkey.db.DEFAULT_VIBRATE_ON_TAP
 import com.dessalines.thumbkey.utils.KeyboardLayout
 import com.dessalines.thumbkey.utils.KeyboardPosition
 import com.dessalines.thumbkey.utils.SimpleTopAppBar
@@ -53,30 +58,32 @@ fun LookAndFeelActivity(
 
     val settings = appSettingsViewModel.appSettings.value
 
-    val keySizeState = rememberFloatSettingState((settings?.keySize ?: DEFAULT_KEY_SIZE).toFloat())
+    val keySizeState = rememberFloatSettingState(
+        (settings?.keySize ?: DEFAULT_KEY_SIZE).toFloat()
+    )
     val animationSpeedState = rememberFloatSettingState(
         (settings?.animationSpeed ?: DEFAULT_ANIMATION_SPEED).toFloat()
     )
     val animationHelperSpeedState = rememberFloatSettingState(
-        (
-            settings?.animationHelperSpeed
-                ?: DEFAULT_ANIMATION_HELPER_SPEED
-            ).toFloat()
+        (settings?.animationHelperSpeed ?: DEFAULT_ANIMATION_HELPER_SPEED).toFloat()
     )
     val positionState = rememberIntSettingState(
-        settings?.position ?: com.dessalines.thumbkey
-            .db.DEFAULT_POSITION
+        settings?.position ?: com.dessalines.thumbkey.db.DEFAULT_POSITION
     )
     val autoCapitalizeState = rememberBooleanSettingState(
-        (settings?.autoCapitalize?.equals(1))
-            ?: true
+        ((settings?.autoCapitalize ?: DEFAULT_AUTO_CAPITALIZE) == 1)
+    )
+    val vibrateOnTapState = rememberBooleanSettingState(
+        ((settings?.vibrateOnTap ?: DEFAULT_VIBRATE_ON_TAP) == 1)
+    )
+    val soundOnTapState = rememberBooleanSettingState(
+        ((settings?.soundOnTap ?: DEFAULT_SOUND_ON_TAP) == 1)
     )
     val keyboardLayoutState = rememberIntSettingState(
-        settings?.keyboardLayout
-            ?: DEFAULT_KEYBOARD_LAYOUT
+        settings?.keyboardLayout ?: DEFAULT_KEYBOARD_LAYOUT
     )
-    val themeState = rememberIntSettingState(settings?.theme ?: 0)
-    val themeColorState = rememberIntSettingState(settings?.themeColor ?: 0)
+    val themeState = rememberIntSettingState(settings?.theme ?: DEFAULT_THEME)
+    val themeColorState = rememberIntSettingState(settings?.themeColor ?: DEFAULT_THEME_COLOR)
 
     val snackbarHostState = remember { SnackbarHostState() }
 
@@ -114,6 +121,8 @@ fun LookAndFeelActivity(
                             animationSpeedState,
                             animationHelperSpeedState,
                             positionState,
+                            vibrateOnTapState,
+                            soundOnTapState,
                             autoCapitalizeState,
                             keyboardLayoutState,
                             themeState,
@@ -141,6 +150,8 @@ fun LookAndFeelActivity(
                             animationHelperSpeedState,
                             positionState,
                             autoCapitalizeState,
+                            vibrateOnTapState,
+                            soundOnTapState,
                             keyboardLayoutState,
                             themeState,
                             themeColorState
@@ -167,31 +178,8 @@ fun LookAndFeelActivity(
                             animationHelperSpeedState,
                             positionState,
                             autoCapitalizeState,
-                            keyboardLayoutState,
-                            themeState,
-                            themeColorState
-                        )
-                    }
-                )
-                SettingsCheckbox(
-                    state = autoCapitalizeState,
-                    icon = {
-                        Icon(
-                            imageVector = Icons.Outlined.Abc,
-                            contentDescription = "TODO"
-                        )
-                    },
-                    title = {
-                        Text(text = "Auto-Capitalize")
-                    },
-                    onCheckedChange = {
-                        updateAppSettings(
-                            appSettingsViewModel,
-                            keySizeState,
-                            animationSpeedState,
-                            animationHelperSpeedState,
-                            positionState,
-                            autoCapitalizeState,
+                            vibrateOnTapState,
+                            soundOnTapState,
                             keyboardLayoutState,
                             themeState,
                             themeColorState
@@ -218,6 +206,89 @@ fun LookAndFeelActivity(
                             animationHelperSpeedState,
                             positionState,
                             autoCapitalizeState,
+                            vibrateOnTapState,
+                            soundOnTapState,
+                            keyboardLayoutState,
+                            themeState,
+                            themeColorState
+                        )
+                    }
+                )
+                SettingsCheckbox(
+                    state = vibrateOnTapState,
+                    icon = {
+                        Icon(
+                            imageVector = Icons.Outlined.Vibration,
+                            contentDescription = "TODO"
+                        )
+                    },
+                    title = {
+                        Text(text = "Vibrate on tap")
+                    },
+                    onCheckedChange = {
+                        updateAppSettings(
+                            appSettingsViewModel,
+                            keySizeState,
+                            animationSpeedState,
+                            animationHelperSpeedState,
+                            positionState,
+                            autoCapitalizeState,
+                            vibrateOnTapState,
+                            soundOnTapState,
+                            keyboardLayoutState,
+                            themeState,
+                            themeColorState
+                        )
+                    }
+                )
+                SettingsCheckbox(
+                    state = soundOnTapState,
+                    icon = {
+                        Icon(
+                            imageVector = Icons.Outlined.MusicNote,
+                            contentDescription = "TODO"
+                        )
+                    },
+                    title = {
+                        Text(text = "Play sound on tap")
+                    },
+                    onCheckedChange = {
+                        updateAppSettings(
+                            appSettingsViewModel,
+                            keySizeState,
+                            animationSpeedState,
+                            animationHelperSpeedState,
+                            positionState,
+                            autoCapitalizeState,
+                            vibrateOnTapState,
+                            soundOnTapState,
+                            keyboardLayoutState,
+                            themeState,
+                            themeColorState
+                        )
+                    }
+                )
+                SettingsCheckbox(
+                    state = autoCapitalizeState,
+                    icon = {
+                        Icon(
+                            imageVector = Icons.Outlined.Abc,
+                            contentDescription = "TODO"
+                        )
+                    },
+                    title = {
+                        Text(text = "Auto-Capitalize")
+                    },
+                    onCheckedChange = {
+                        updateAppSettings(
+                            appSettingsViewModel,
+                            keySizeState,
+                            animationSpeedState,
+                            animationHelperSpeedState,
+                            positionState,
+                            autoCapitalizeState,
+                            vibrateOnTapState,
+                            soundOnTapState,
                             keyboardLayoutState,
                             themeState,
                             themeColorState
@@ -244,6 +315,8 @@ fun LookAndFeelActivity(
                             animationHelperSpeedState,
                             positionState,
                             autoCapitalizeState,
+                            vibrateOnTapState,
+                            soundOnTapState,
                             keyboardLayoutState,
                             themeState,
                             themeColorState
@@ -270,6 +343,8 @@ fun LookAndFeelActivity(
                             animationHelperSpeedState,
                             positionState,
                             autoCapitalizeState,
+                            vibrateOnTapState,
+                            soundOnTapState,
                             keyboardLayoutState,
                             themeState,
                             themeColorState
@@ -296,6 +371,8 @@ fun LookAndFeelActivity(
                             animationHelperSpeedState,
                             positionState,
                             autoCapitalizeState,
+                            vibrateOnTapState,
+                            soundOnTapState,
                             keyboardLayoutState,
                             themeState,
                             themeColorState
@@ -323,6 +400,8 @@ private fun updateAppSettings(
     animationHelperSpeedState: SettingValueState<Float>,
     positionState: SettingValueState<Int>,
     autoCapitalizeState: SettingValueState<Boolean>,
+    vibrateOnTapState: SettingValueState<Boolean>,
+    soundOnTapState: SettingValueState<Boolean>,
     keyboardLayoutState: SettingValueState<Int>,
     themeState: SettingValueState<Int>,
     themeColorState: SettingValueState<Int>
@@ -335,6 +414,8 @@ private fun updateAppSettings(
             animationHelperSpeed = animationHelperSpeedState.value.toInt(),
             position = positionState.value,
             autoCapitalize = autoCapitalizeState.value.compareTo(false),
+            vibrateOnTap = vibrateOnTapState.value.compareTo(false),
+            soundOnTap = soundOnTapState.value.compareTo(false),
             keyboardLayout = keyboardLayoutState.value,
             theme = themeState.value,
             themeColor = themeColorState.value,

@@ -16,6 +16,8 @@ import com.dessalines.thumbkey.db.DEFAULT_AUTO_CAPITALIZE
 import com.dessalines.thumbkey.db.DEFAULT_KEYBOARD_LAYOUT
 import com.dessalines.thumbkey.db.DEFAULT_KEY_SIZE
 import com.dessalines.thumbkey.db.DEFAULT_POSITION
+import com.dessalines.thumbkey.db.DEFAULT_SOUND_ON_TAP
+import com.dessalines.thumbkey.db.DEFAULT_VIBRATE_ON_TAP
 import com.dessalines.thumbkey.keyboards.thumbkeyV4Keyboard
 import com.dessalines.thumbkey.utils.KeyAction
 import com.dessalines.thumbkey.utils.KeyboardLayout
@@ -49,6 +51,8 @@ fun KeyboardScreen(settings: AppSettings?) {
     )
 
     val autoCapitalize = (settings?.autoCapitalize ?: DEFAULT_AUTO_CAPITALIZE) == 1
+    val vibrateOnTap = (settings?.vibrateOnTap ?: DEFAULT_VIBRATE_ON_TAP) == 1
+    val soundOnTap = (settings?.soundOnTap ?: DEFAULT_SOUND_ON_TAP) == 1
 
     Box(
         contentAlignment = alignment
@@ -66,6 +70,8 @@ fun KeyboardScreen(settings: AppSettings?) {
                                 lastAction = lastAction,
                                 keySize = settings?.keySize ?: DEFAULT_KEY_SIZE,
                                 autoCapitalize = autoCapitalize,
+                                vibrateOnTap = vibrateOnTap,
+                                soundOnTap = soundOnTap,
                                 animationSpeed = settings?.animationSpeed
                                     ?: DEFAULT_ANIMATION_SPEED,
                                 animationHelperSpeed = settings?.animationHelperSpeed

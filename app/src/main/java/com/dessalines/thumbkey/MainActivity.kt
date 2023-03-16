@@ -8,6 +8,8 @@ import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.livedata.observeAsState
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.remember
 import androidx.compose.ui.platform.LocalContext
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
@@ -50,10 +52,14 @@ class MainActivity : AppCompatActivity() {
                 Settings.Secure.DEFAULT_INPUT_METHOD
             ) == THUMBKEY_IME_NAME
 
-            val startDestination = if (!thumbkeyEnabled) {
-                "setup"
-            } else {
-                "settings"
+            val startDestination by remember {
+                mutableStateOf(
+                    if (!thumbkeyEnabled) {
+                        "setup"
+                    } else {
+                        "settings"
+                    }
+                )
             }
 
             ThumbkeyTheme(

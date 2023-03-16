@@ -56,7 +56,6 @@ fun SettingsActivity(
                         onClick = { navController.navigate("setup") }
                     )
                 }
-
                 SettingsMenuLink(
                     title = { Text("Look and feel") },
                     icon = {

@@ -21,6 +21,8 @@ const val DEFAULT_AUTO_CAPITALIZE = 1
 const val DEFAULT_KEYBOARD_LAYOUT = 0
 const val DEFAULT_THEME = 0
 const val DEFAULT_THEME_COLOR = 0
+const val DEFAULT_VIBRATE_ON_TAP = 1
+const val DEFAULT_SOUND_ON_TAP = 0
 
 const val UPDATE_APP_CHANGELOG_UNVIEWED = "UPDATE AppSettings SET viewed_changelog = 0"
 
@@ -57,6 +59,16 @@ data class AppSettings(
         defaultValue = DEFAULT_KEYBOARD_LAYOUT.toString()
     )
     val keyboardLayout: Int,
+    @ColumnInfo(
+        name = "vibrate_on_tap",
+        defaultValue = DEFAULT_VIBRATE_ON_TAP.toString()
+    )
+    val vibrateOnTap: Int,
+    @ColumnInfo(
+        name = "sound_on_tap",
+        defaultValue = DEFAULT_SOUND_ON_TAP.toString()
+    )
+    val soundOnTap: Int,
     @ColumnInfo(
         name = "theme",
         defaultValue = DEFAULT_THEME.toString()
