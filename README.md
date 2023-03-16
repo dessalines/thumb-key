@@ -45,15 +45,15 @@ This project is a follow-up to the now unmaintained (and closed-source) [Message
 
 Tap a key, or slide to type a letter.
 
-<img width=200px height=200px src="https://i.postimg.cc/vmNtd1x7/In-Shot-20230316-095059022.gif">
+<img width=200px height=200px src="https://i.postimg.cc/DZwBDFt9/In-Shot-20230316-095059022.gif">
 
 Double tap the space bar to type a period.
 
-<img width=200px height=200px src="https://i.postimg.cc/LXkdqVV3/In-Shot-20230316-091704600.gif">
+<img width=200px height=200px src="https://i.postimg.cc/DZWnhVGN/In-Shot-20230316-091704600.gif">
 
 Slide left on the backspace key to delete whole words.
 
-<img width=200px height=200px src="https://i.postimg.cc/d1YpKyKk/In-Shot-20230316-091739029.gif">
+<img width=200px height=200px src="https://i.postimg.cc/W3xYJCHx/In-Shot-20230316-091739029.gif">
 
 ### Other hints
 
