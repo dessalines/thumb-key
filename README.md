@@ -59,7 +59,7 @@ Slide left on the backspace key to delete whole words.
 
 - Press the `#` key to see a numeric keypad, and additional symbols.
 - Press the Settings Gear key to configure Thumb-Key.
-- Practice typing, and check your words per minute, using [https://monkeytype.com](monkeytype.com)
+- Practice typing, and check your words per minute, using [monkeytype.com](https://monkeytype.com)
 
 ## Thumb-Key Design
 
