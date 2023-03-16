@@ -45,15 +45,20 @@ This project is a follow-up to the now dead (and closed-source) [MessageEase Key
 
 Tap a key, or slide to type a letter.
 
-![hello_img](https://i.postimg.cc/7hSF2nMN/In-Shot-20230316-091452080.gif)
+ <img width=200px height=200px src="https://i.postimg.cc/7hSF2nMN/In-Shot-20230316-091452080.gif">
+
+<!-- ![hello_img](https://i.postimg.cc/7hSF2nMN/In-Shot-20230316-091452080.gif) -->
 
 Double tap the space bar to type a period.
 
-![double_tap_space](https://i.postimg.cc/LXkdqVV3/In-Shot-20230316-091704600.gif)
+<!-- ![double_tap_space](https://i.postimg.cc/LXkdqVV3/In-Shot-20230316-091704600.gif) -->
+
+ <img width=200px height=200px src="https://i.postimg.cc/LXkdqVV3/In-Shot-20230316-091704600.gif">
 
 Slide left to delete whole words
 
 <!-- ![slide_left_delete](https://i.postimg.cc/d1YpKyKk/In-Shot-20230316-091739029.gif) -->
+ <img width=200px height=200px src="https://i.postimg.cc/d1YpKyKk/In-Shot-20230316-091739029.gif">
 
 ### Other hints
 
