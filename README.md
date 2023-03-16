@@ -23,8 +23,8 @@
     <a href="https://github.com/dessalines/thumb-key/blob/main/RELEASES.md">Releases</a>
   </p>
   <p align="center">
-    <a href="https://f-droid.org/packages/com.dessalines.thumbkey"><img src="https://fdroid.gitlab.io/artwork/badge/get-it-on.png" alt="Get it on F-Droid" height="80"></a>
-    <a href="https://play.google.com/store/apps/details?id=com.dessalines.thumbkey"><img src="https://cdn.rawgit.com/steverichey/google-play-badge-svg/master/img/en_get.svg" height="80"></a>
+    <!-- <a href="https://f-droid.org/packages/com.dessalines.thumbkey"><img src="https://fdroid.gitlab.io/artwork/badge/get-it-on.png" alt="Get it on F-Droid" height="80"></a> -->
+    <!-- <a href="https://play.google.com/store/apps/details?id=com.dessalines.thumbkey"><img src="https://cdn.rawgit.com/steverichey/google-play-badge-svg/master/img/en_get.svg" height="80"></a> -->
     <a href="https://github.com/dessalines/thumb-key/releases/latest"><img src="https://raw.githubusercontent.com/andOTP/andOTP/master/assets/badges/get-it-on-github.png" height="80"></a>
   </p>
 </p>
@@ -42,6 +42,23 @@ As the key positions get ingrained into your muscle memory, eventually you'll be
 This project is a follow-up to the now dead (and closed-source) [MessageEase Keyboard](https://www.exideas.com/ME/), which is its main inspiration.
 
 ## User Guide
+
+Tap a key, or slide to type a letter.
+
+![hello_img](https://i.postimg.cc/7hSF2nMN/In-Shot-20230316-091452080.gif)
+
+Double tap the space bar to type a period.
+
+![double_tap_space](https://i.postimg.cc/LXkdqVV3/In-Shot-20230316-091704600.gif)
+
+Slide left to delete whole words
+
+![slide_left_delete](https://i.postimg.cc/d1YpKyKk/In-Shot-20230316-091739029.gif)
+
+### Other hints
+
+- Press the `#` key to see a numeric keypad, and additional symbols.
+- Press the Settings Gear key to configure Thumb-Key.
 
 ## Design
 
@@ -63,26 +80,20 @@ As of today, smartphone keyboards are in such a terrible state of privacy, that 
 
 #### MessageEase
 
-One company named Exideas created a keyboard app called [MessageEase](https://www.exideas.com/ME/), which relied on the original large 9-key grid of old phones, and managed to acheive comparable typing speeds to other keyboards, without relying on submitted word-prediction.
+One company named Exideas created a keyboard app called [MessageEase](https://www.exideas.com/ME/), which relied on the original large 9-key grid of old phones, and managed to acheive comparable typing speeds to other keyboards, without relying on big-data-powered word-prediction.
 
-[Much research went into MessageEase's design](https://www.exideas.com/ME/ICMI2003Paper.pdf), and its and many of its users can do > 50 words per minute.
+[Much research went into MessageEase's design](https://www.exideas.com/ME/ICMI2003Paper.pdf), and many of its users can do > 50 words per minute.
 
 MessageEase is unfortunately unmaintained, and Thumb-Key uses a better alternating-thumb layout letter position (although the original MessageEase Keyboard layout is available in the settings.)
 
-### Letter Position
+### Thumb-Key Letter Position
 
-- Large keys in a predictable 9-key grid. Eventually, like touch-typing, you should be able to keep your eyes on the text input area, rather than hunting-and-pecking for letters
-- Letter positions based on [English text letter frequency](https://en.m.wikipedia.org/wiki/Letter_frequency). The most common letters are: **ETAOINSHRDLC**
-- First 9 letters by frequency are the center keys. Next 8 are swipes to the center. Next 8 are on the center key. Z is last.
-- Prioritize lower keys, and right side of keyboard.
+- Large keys are in a predictable 9-key grid. Eventually, like touch-typing, you should be able to keep your eyes on the text input area, rather than hunting-and-pecking for letters.
+- Letter positions are based on [English text letter frequency](https://en.m.wikipedia.org/wiki/Letter_frequency). The most common letters are: **ETAOINSHRDLC**
+- First 9 letters by frequency are the 9 center keys. The next 8 are swipes to the center. The next 8 are on the center hub key. Z is last.
 - Alternating fingers for vowels and consonants (Vowels on right side of keyboard).
+- Prioritize bottom keys, and right side of keyboard. So EAO should be on the right side, and bottom to top, while TNS is on the left side.
 - Alternating fingers for common digrams.
-
-## Resources
-
-- https://github.com/THEAccess/compose-keyboard-ime
-- https://stackoverflow.com/questions/65570024/build-software-keyboard-with-jetpack-compose-ime-input-method-with-jetpack-com
-- https://developer.android.com/develop/ui/views/touch-and-input/creating-input-method
 
 ### Built With
 
@@ -90,7 +101,7 @@ MessageEase is unfortunately unmaintained, and Thumb-Key uses a better alternati
 
 ## Features
 
-- Highly configurable: Optional sizing, ThumbKey and MessageEase layouts, themes, animations, haptic feedback, and audio feedback.
+- Highly configurable: Optional sizing, ThumbKey and MessageEase layouts, dynamic / Material v3 themes, animations, haptic feedback, and audio feedback.
 - Open source, [AGPL License](/LICENSE).
 
 ## Installation / Releases
@@ -116,3 +127,9 @@ Thumb-Key will always remain free, open-source software. We've seen many keyboar
 
 - [Thumbkey dev chat](https://matrix.to/#/#thumbkey-dev:matrix.org)
 - [Mastodon](https://mastodon.social/@dessalines)
+
+## Android IME Resources
+
+- https://github.com/THEAccess/compose-keyboard-ime
+- https://stackoverflow.com/questions/65570024/build-software-keyboard-with-jetpack-compose-ime-input-method-with-jetpack-com
+- https://developer.android.com/develop/ui/views/touch-and-input/creating-input-method
