@@ -47,6 +47,10 @@ Tap a key, or slide to type a letter.
 
 <img width=200px height=200px src="https://i.postimg.cc/DZwBDFt9/In-Shot-20230316-095059022.gif">
 
+Swipe up or down on `A` to capitalize.
+
+<img width=200px height=200px src="https://i.postimg.cc/Znt2Ft9G/thumbkey-1-1.png">
+
 Double tap the space bar to type a period.
 
 <img width=200px height=200px src="https://i.postimg.cc/DZWnhVGN/In-Shot-20230316-091704600.gif">
@@ -141,3 +145,4 @@ Your donations directly support full-time development, and help keep this mainta
 - https://github.com/THEAccess/compose-keyboard-ime
 - https://stackoverflow.com/questions/65570024/build-software-keyboard-with-jetpack-compose-ime-input-method-with-jetpack-com
 - https://developer.android.com/develop/ui/views/touch-and-input/creating-input-method
+- https://www.answertopia.com/jetpack-compose/a-jetpack-compose-in-app-purchasing-tutorial/
