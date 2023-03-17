@@ -33,11 +33,11 @@
 
 Thumb-Key is a _privacy-conscious_ smart keyboard, made specifically for your thumbs.
 
-It features a **3x3 grid layout**, as many older phones had, and uses swipes for the less common letters. Initial testing shows that you can reach ~25 words per minute after a day of use.
+It features a **3x3 grid layout**, and uses swipes for the less common letters. Its easy to learn, and designed for fast typing speeds.
 
 Instead of relying on profit-driven, privacy-offending word and sentence prediction for accuracy, as do most popular phone keyboards like Gboard and Swiftkey, Thumb-Key uses **large keys with predictable positions**, to prevent your eyes from [hunting and pecking](https://www.keyboardingonline.com/hunting-and-pecking/) for letters.
 
-As the key positions get ingrained into your muscle memory, eventually you'll be able to appromixate the fast speeds of [touch-typing](https://en.m.wikipedia.org/wiki/Touch_typing), your eyes never having to leave the text edit area.
+As the key positions get ingrained into your muscle memory, eventually you'll be able to approximate the fast speeds of [touch-typing](https://en.m.wikipedia.org/wiki/Touch_typing), your eyes never having to leave the text edit area.
 
 This project is a follow-up to the now unmaintained (and closed-source) [MessageEase Keyboard](https://www.exideas.com/ME/), which is its main inspiration.
 
@@ -130,8 +130,9 @@ Your donations directly support full-time development, and help keep this mainta
 - monero: `41taVyY6e1xApqKyMVDRVxJ76sPkfZhALLTjRvVKpaAh2pBd4wv9RgYj1tSPrx8wc6iE1uWUfjtQdTmTy2FGMeChGVKPQuV`
 - cardano: `addr1q858t89l2ym6xmrugjs0af9cslfwvnvsh2xxp6x4dcez7pf5tushkp4wl7zxfhm2djp6gq60dk4cmc7seaza5p3slx0sakjutm`
 
-## Contact
+## Social / Contact
 
+- [lemmy.ml/c/thumbkey](https://lemmy.ml/c/thumbkey)
 - [Thumbkey dev chat](https://matrix.to/#/#thumbkey-dev:matrix.org)
 - [Mastodon](https://mastodon.social/@dessalines)
 
