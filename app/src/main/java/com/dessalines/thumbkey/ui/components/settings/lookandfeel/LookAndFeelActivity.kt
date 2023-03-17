@@ -37,6 +37,7 @@ import com.dessalines.thumbkey.db.DEFAULT_ANIMATION_SPEED
 import com.dessalines.thumbkey.db.DEFAULT_AUTO_CAPITALIZE
 import com.dessalines.thumbkey.db.DEFAULT_KEYBOARD_LAYOUT
 import com.dessalines.thumbkey.db.DEFAULT_KEY_SIZE
+import com.dessalines.thumbkey.db.DEFAULT_MIN_SWIPE_LENGTH
 import com.dessalines.thumbkey.db.DEFAULT_SOUND_ON_TAP
 import com.dessalines.thumbkey.db.DEFAULT_THEME
 import com.dessalines.thumbkey.db.DEFAULT_THEME_COLOR
@@ -66,6 +67,9 @@ fun LookAndFeelActivity(
     )
     val animationHelperSpeedState = rememberFloatSettingState(
         (settings?.animationHelperSpeed ?: DEFAULT_ANIMATION_HELPER_SPEED).toFloat()
+    )
+    val minSwipeLengthState = rememberFloatSettingState(
+        (settings?.minSwipeLength ?: DEFAULT_MIN_SWIPE_LENGTH).toFloat()
     )
     val positionState = rememberIntSettingState(
         settings?.position ?: com.dessalines.thumbkey.db.DEFAULT_POSITION
@@ -120,6 +124,7 @@ fun LookAndFeelActivity(
                             keySizeState,
                             animationSpeedState,
                             animationHelperSpeedState,
+                            minSwipeLengthState,
                             positionState,
                             vibrateOnTapState,
                             soundOnTapState,
@@ -148,6 +153,7 @@ fun LookAndFeelActivity(
                             keySizeState,
                             animationSpeedState,
                             animationHelperSpeedState,
+                            minSwipeLengthState,
                             positionState,
                             autoCapitalizeState,
                             vibrateOnTapState,
@@ -176,6 +182,7 @@ fun LookAndFeelActivity(
                             keySizeState,
                             animationSpeedState,
                             animationHelperSpeedState,
+                            minSwipeLengthState,
                             positionState,
                             autoCapitalizeState,
                             vibrateOnTapState,
@@ -204,6 +211,7 @@ fun LookAndFeelActivity(
                             keySizeState,
                             animationSpeedState,
                             animationHelperSpeedState,
+                            minSwipeLengthState,
                             positionState,
                             autoCapitalizeState,
                             vibrateOnTapState,
@@ -231,6 +239,7 @@ fun LookAndFeelActivity(
                             keySizeState,
                             animationSpeedState,
                             animationHelperSpeedState,
+                            minSwipeLengthState,
                             positionState,
                             autoCapitalizeState,
                             vibrateOnTapState,
@@ -258,6 +267,7 @@ fun LookAndFeelActivity(
                             keySizeState,
                             animationSpeedState,
                             animationHelperSpeedState,
+                            minSwipeLengthState,
                             positionState,
                             autoCapitalizeState,
                             vibrateOnTapState,
@@ -285,6 +295,7 @@ fun LookAndFeelActivity(
                             keySizeState,
                             animationSpeedState,
                             animationHelperSpeedState,
+                            minSwipeLengthState,
                             positionState,
                             autoCapitalizeState,
                             vibrateOnTapState,
@@ -313,6 +324,36 @@ fun LookAndFeelActivity(
                             keySizeState,
                             animationSpeedState,
                             animationHelperSpeedState,
+                            minSwipeLengthState,
+                            positionState,
+                            autoCapitalizeState,
+                            vibrateOnTapState,
+                            soundOnTapState,
+                            keyboardLayoutState,
+                            themeState,
+                            themeColorState
+                        )
+                    }
+                )
+                SettingsSlider(
+                    valueRange = 0f..200f,
+                    state = minSwipeLengthState,
+                    icon = {
+                        Icon(
+                            imageVector = Icons.Outlined.Swipe,
+                            contentDescription = "TODO"
+                        )
+                    },
+                    title = {
+                        Text(text = "Minimum Swipe Length: ${minSwipeLengthState.value.toInt()}")
+                    },
+                    onValueChangeFinished = {
+                        updateAppSettings(
+                            appSettingsViewModel,
+                            keySizeState,
+                            animationSpeedState,
+                            animationHelperSpeedState,
+                            minSwipeLengthState,
                             positionState,
                             autoCapitalizeState,
                             vibrateOnTapState,
@@ -341,6 +382,7 @@ fun LookAndFeelActivity(
                             keySizeState,
                             animationSpeedState,
                             animationHelperSpeedState,
+                            minSwipeLengthState,
                             positionState,
                             autoCapitalizeState,
                             vibrateOnTapState,
@@ -369,6 +411,7 @@ fun LookAndFeelActivity(
                             keySizeState,
                             animationSpeedState,
                             animationHelperSpeedState,
+                            minSwipeLengthState,
                             positionState,
                             autoCapitalizeState,
                             vibrateOnTapState,
@@ -398,6 +441,7 @@ private fun updateAppSettings(
     keySizeState: SettingValueState<Float>,
     animationSpeedState: SettingValueState<Float>,
     animationHelperSpeedState: SettingValueState<Float>,
+    minSwipeLengthState: SettingValueState<Float>,
     positionState: SettingValueState<Int>,
     autoCapitalizeState: SettingValueState<Boolean>,
     vibrateOnTapState: SettingValueState<Boolean>,
@@ -412,6 +456,7 @@ private fun updateAppSettings(
             keySize = keySizeState.value.toInt(),
             animationSpeed = animationSpeedState.value.toInt(),
             animationHelperSpeed = animationHelperSpeedState.value.toInt(),
+            minSwipeLength = minSwipeLengthState.value.toInt(),
             position = positionState.value,
             autoCapitalize = autoCapitalizeState.value.compareTo(false),
             vibrateOnTap = vibrateOnTapState.value.compareTo(false),

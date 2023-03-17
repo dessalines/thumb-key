@@ -33,6 +33,8 @@ import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 import kotlin.math.atan2
+import kotlin.math.pow
+import kotlin.math.sqrt
 
 const val TAG = "com.thumbkey"
 
@@ -73,39 +75,58 @@ fun keyboardPositionToAlignment(position: KeyboardPosition): Alignment {
     }
 }
 
-fun swipeDirection(x: Float, y: Float): SwipeDirection {
-    val angleDir = (atan2(x.toDouble(), y.toDouble()) / Math.PI * 180)
-    val angle = if (angleDir < 0) {
-        360 + angleDir
-    } else {
-        angleDir
-    }
+/**
+ * If this doesn't meet the minimum swipe length, it returns null
+ */
+fun swipeDirection(x: Float, y: Float, minSwipeLength: Int): SwipeDirection? {
+    val xD = x.toDouble()
+    val yD = y.toDouble()
 
-    return when (angle) {
-        in 22.5..67.5 -> {
-            SwipeDirection.BOTTOM_RIGHT
+    val swipeLength = sqrt(xD.pow(2) + yD.pow(2))
+
+    if (swipeLength > minSwipeLength) {
+        val angleDir = (atan2(xD, yD) / Math.PI * 180)
+        val angle = if (angleDir < 0) {
+            360 + angleDir
+        } else {
+            angleDir
         }
-        in 67.5..112.5 -> {
-            SwipeDirection.RIGHT
+
+        return when (angle) {
+            in 22.5..67.5 -> {
+                SwipeDirection.BOTTOM_RIGHT
+            }
+
+            in 67.5..112.5 -> {
+                SwipeDirection.RIGHT
+            }
+
+            in 112.5..157.5 -> {
+                SwipeDirection.TOP_RIGHT
+            }
+
+            in 157.5..202.5 -> {
+                SwipeDirection.TOP
+            }
+
+            in 202.5..247.5 -> {
+                SwipeDirection.TOP_LEFT
+            }
+
+            in 247.5..292.5 -> {
+                SwipeDirection.LEFT
+            }
+
+            in 292.5..337.5 -> {
+                SwipeDirection.BOTTOM_LEFT
+            }
+
+            else -> {
+                SwipeDirection.BOTTOM
+            }
         }
-        in 112.5..157.5 -> {
-            SwipeDirection.TOP_RIGHT
-        }
-        in 157.5..202.5 -> {
-            SwipeDirection.TOP
-        }
-        in 202.5..247.5 -> {
-            SwipeDirection.TOP_LEFT
-        }
-        in 247.5..292.5 -> {
-            SwipeDirection.LEFT
-        }
-        in 292.5..337.5 -> {
-            SwipeDirection.BOTTOM_LEFT
-        }
-        else -> {
-            SwipeDirection.BOTTOM
-        }
+    } else {
+        return null
     }
 }
 

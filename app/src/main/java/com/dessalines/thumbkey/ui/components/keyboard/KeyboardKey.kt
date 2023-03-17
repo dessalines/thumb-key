@@ -59,10 +59,13 @@ fun KeyboardKey(
     vibrateOnTap: Boolean,
     soundOnTap: Boolean,
     keySize: Int,
+    minSwipeLength: Int,
     onToggleShiftMode: (enable: Boolean) -> Unit,
     onToggleNumericMode: (enable: Boolean) -> Unit
 ) {
-    val id = key.toString() + animationHelperSpeed + animationSpeed + keySize
+    // Necessary for swipe settings to get updated correctly
+    val id = key.toString() + animationHelperSpeed + animationSpeed + autoCapitalize + vibrateOnTap + soundOnTap + keySize + minSwipeLength
+
     val ctx = LocalContext.current
     val ime = ctx as IMEService
     val scope = rememberCoroutineScope()
@@ -147,10 +150,9 @@ fun KeyboardKey(
                         offsetY += y
                     },
                     onDragEnd = {
-                        val swipeDirection = swipeDirection(offsetX, offsetY)
+                        val swipeDirection = swipeDirection(offsetX, offsetY, minSwipeLength)
+                        val action = key.swipes?.get(swipeDirection)?.action ?: key.center.action
 
-                        val swipeKey = key.swipes?.get(swipeDirection)
-                        val action = swipeKey?.action ?: run { key.center.action }
                         performKeyAction(
                             action = action,
                             ime = ime,
