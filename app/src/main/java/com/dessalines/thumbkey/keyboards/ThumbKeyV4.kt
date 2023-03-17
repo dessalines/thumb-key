@@ -263,8 +263,8 @@ val thumbkeyV4Keyboard = KeyboardC(
                     action = KeyAction.CommitText(" ")
                 ),
                 nextTapActions = arrayOf(
-                    KeyAction.ReplaceLastText(". ", trimCount = 1),
-                    KeyAction.ReplaceLastText(", "),
+                    KeyAction.ReplaceLastText(", ", trimCount = 1),
+                    KeyAction.ReplaceLastText(". "),
                     KeyAction.ReplaceLastText("? "),
                     KeyAction.ReplaceLastText("! "),
                     KeyAction.ReplaceLastText(": ")
@@ -530,8 +530,8 @@ val thumbkeyV4KeyboardShifted = KeyboardC(
                     action = KeyAction.CommitText(" ")
                 ),
                 nextTapActions = arrayOf(
-                    KeyAction.ReplaceLastText(". ", trimCount = 1),
-                    KeyAction.ReplaceLastText(", "),
+                    KeyAction.ReplaceLastText(", ", trimCount = 1),
+                    KeyAction.ReplaceLastText(". "),
                     KeyAction.ReplaceLastText("? "),
                     KeyAction.ReplaceLastText("! "),
                     KeyAction.ReplaceLastText(": ")
