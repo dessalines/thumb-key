@@ -159,6 +159,7 @@ fun KeyboardKey(
                             onToggleShiftMode = onToggleShiftMode,
                             onToggleNumericMode = onToggleNumericMode
                         )
+                        lastAction.value = action
 
                         // Reset the drags
                         offsetX = 0f
