@@ -196,8 +196,8 @@ val thumbkeyV4Keyboard = KeyboardC(
                         action = KeyAction.CommitText("z")
                     ),
                     SwipeDirection.BOTTOM_RIGHT to KeyC(
-                        display = KeyDisplay.TextDisplay("*"),
-                        action = KeyAction.CommitText("*"),
+                        display = KeyDisplay.TextDisplay("-"),
+                        action = KeyAction.CommitText("-"),
                         color = ColorVariant.MUTED
                     ),
                     SwipeDirection.BOTTOM to KeyC(
@@ -463,8 +463,8 @@ val thumbkeyV4KeyboardShifted = KeyboardC(
                         action = KeyAction.CommitText("Z")
                     ),
                     SwipeDirection.BOTTOM_RIGHT to KeyC(
-                        display = KeyDisplay.TextDisplay("*"),
-                        action = KeyAction.CommitText("*"),
+                        display = KeyDisplay.TextDisplay("-"),
+                        action = KeyAction.CommitText("-"),
                         color = ColorVariant.MUTED
                     ),
                     SwipeDirection.BOTTOM to KeyC(
