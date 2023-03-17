@@ -9,6 +9,7 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.viewModelScope
 import androidx.room.*
+import androidx.room.migration.Migration
 import androidx.sqlite.db.SupportSQLiteDatabase
 import kotlinx.coroutines.launch
 import java.util.concurrent.Executors
@@ -23,6 +24,7 @@ const val DEFAULT_THEME = 0
 const val DEFAULT_THEME_COLOR = 0
 const val DEFAULT_VIBRATE_ON_TAP = 1
 const val DEFAULT_SOUND_ON_TAP = 0
+const val DEFAULT_MIN_SWIPE_LENGTH = 40
 
 const val UPDATE_APP_CHANGELOG_UNVIEWED = "UPDATE AppSettings SET viewed_changelog = 0"
 
@@ -83,7 +85,12 @@ data class AppSettings(
         name = "viewed_changelog",
         defaultValue = "0"
     )
-    val viewedChangelog: Int
+    val viewedChangelog: Int,
+    @ColumnInfo(
+        name = "min_swipe_length",
+        defaultValue = DEFAULT_MIN_SWIPE_LENGTH.toString()
+    )
+    val minSwipeLength: Int
 )
 
 @Dao
@@ -117,8 +124,16 @@ class AppSettingsRepository(private val appSettingsDao: AppSettingsDao) {
     }
 }
 
+val MIGRATION_1_2 = object : Migration(1, 2) {
+    override fun migrate(database: SupportSQLiteDatabase) {
+        database.execSQL(
+            "alter table AppSettings add column min_swipe_length INTEGER NOT NULL default $DEFAULT_MIN_SWIPE_LENGTH"
+        )
+    }
+}
+
 @Database(
-    version = 1,
+    version = 2,
     entities = [AppSettings::class],
     exportSchema = true
 )
@@ -141,9 +156,9 @@ abstract class AppDB : RoomDatabase() {
                     "thumbkey"
                 )
                     .allowMainThreadQueries()
-//          .addMigrations(
-//            MIGRATION_1_2,
-//          )
+                    .addMigrations(
+                        MIGRATION_1_2
+                    )
                     // Necessary because it can't insert data on creation
                     .addCallback(object : Callback() {
                         override fun onOpen(db: SupportSQLiteDatabase) {
