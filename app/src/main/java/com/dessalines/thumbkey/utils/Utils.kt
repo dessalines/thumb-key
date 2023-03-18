@@ -3,6 +3,7 @@ package com.dessalines.thumbkey.utils
 import android.content.Context
 import android.content.Intent
 import android.net.Uri
+import android.text.InputType
 import android.util.Log
 import android.view.KeyEvent
 import android.view.inputmethod.EditorInfo
@@ -221,6 +222,19 @@ fun getImeActionCode(ime: IMEService): Int {
                 EditorInfo.IME_FLAG_NO_ENTER_ACTION
             )
         )
+}
+
+/**
+ * Returns the correct keyboard mode
+ */
+fun getKeyboardMode(ime: IMEService): KeyboardMode {
+    val inputType = ime.currentInputEditorInfo.inputType and (InputType.TYPE_MASK_CLASS)
+
+    return if (arrayOf(InputType.TYPE_CLASS_NUMBER, InputType.TYPE_CLASS_PHONE).contains(inputType)) {
+        KeyboardMode.NUMERIC
+    } else {
+        KeyboardMode.SHIFTED
+    }
 }
 
 fun getImeActionText(ime: IMEService): String? {
