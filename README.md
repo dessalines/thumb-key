@@ -41,6 +41,12 @@ As the key positions get ingrained into your muscle memory, eventually you'll be
 
 This project is a follow-up to the now unmaintained (and closed-source) [MessageEase Keyboard](https://www.exideas.com/ME/), which is its main inspiration.
 
+### Features
+
+- Highly configurable.
+- Customizeable sizing, ThumbKey and MessageEase layouts, dynamic / Material v3 themes, animations, haptic feedback, and audio feedback.
+- Open source, [AGPL License](/LICENSE).
+
 ## User Guide
 
 Tap a key, or slide to type a letter.
@@ -107,16 +113,21 @@ MessageEase is unfortunately unmaintained, and Thumb-Key uses a better alternati
 
 - [Android Jetpack Compose](https://developer.android.com/jetpack/compose)
 
-## Features
-
-- Highly configurable.
-- Customizeable sizing, ThumbKey and MessageEase layouts, dynamic / Material v3 themes, animations, haptic feedback, and audio feedback.
-- Open source, [AGPL License](/LICENSE).
-
 ## Installation / Releases
 
 - [Releases](https://github.com/dessalines/thumb-key/releases)
 <!-- - [F-Droid](https://f-droid.org/en/packages/com.dessalines.thumbkey/) -->
+
+## How do I add my language or layout?
+
+I'd be happy to accept additions to add more languages, and layouts. To start:
+
+- Read the letter position guidelines above. This means you'll likely need a letter frequency chart for text written in your language.
+- Copy [this file](https://github.com/dessalines/thumb-key/blob/main/app/src/main/java/com/dessalines/thumbkey/keyboards/ThumbKeyV4.kt), or another sample keyboard from the same folder.
+  - Change the characters to whatever you'd like.
+  - This file contains both a _shifted_, and _non-shifted_ keyboard, so make sure you take care of both.
+  - You can also add or subtract columns if you want, but the layout must remain a grid. I **highly recommend** sticking with the 3x3 layout.
+- Either open a pull request, or an issue, linking your new keyboard file. I'll handle the rest of the work.
 
 ## Support / Donate
 
