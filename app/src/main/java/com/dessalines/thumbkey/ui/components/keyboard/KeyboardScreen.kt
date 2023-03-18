@@ -28,10 +28,14 @@ import com.dessalines.thumbkey.utils.keyboardLayoutToModes
 import com.dessalines.thumbkey.utils.keyboardPositionToAlignment
 
 @Composable
-fun KeyboardScreen(settings: AppSettings?) {
+fun KeyboardScreen(
+    settings: AppSettings?,
+    startMode: KeyboardMode
+) {
     var mode by remember {
-        mutableStateOf(KeyboardMode.SHIFTED)
+        mutableStateOf(startMode)
     }
+
     // TODO get rid of this crap
     val lastAction = remember { mutableStateOf<KeyAction?>(null) }
 
