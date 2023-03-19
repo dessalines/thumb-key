@@ -29,7 +29,9 @@ import androidx.navigation.NavController
 import com.dessalines.thumbkey.IMEService
 import com.dessalines.thumbkey.MainActivity
 import com.dessalines.thumbkey.keyboards.MESSAGEEASE_KEYBOARD_MODES
-import com.dessalines.thumbkey.keyboards.THUMBKEY_V4_KEYBOARD_MODES
+import com.dessalines.thumbkey.keyboards.THUMBKEY_EN_V4_KEYBOARD_MODES
+import com.dessalines.thumbkey.keyboards.THUMBKEY_RU_V1_KEYBOARD_MODES
+import com.dessalines.thumbkey.keyboards.THUMBKEY_UK_V1_KEYBOARD_MODES
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
@@ -63,7 +65,9 @@ fun fontSizeVariantToFontSize(fontSizeVariant: FontSizeVariant, keySize: Dp): Te
 
 fun keyboardLayoutToModes(layout: KeyboardLayout): Map<KeyboardMode, KeyboardC> {
     return when (layout) {
-        KeyboardLayout.ThumbKeyV4 -> THUMBKEY_V4_KEYBOARD_MODES
+        KeyboardLayout.ThumbKeyENv4 -> THUMBKEY_EN_V4_KEYBOARD_MODES
+        KeyboardLayout.ThumbkeyRUv1 -> THUMBKEY_RU_V1_KEYBOARD_MODES
+        KeyboardLayout.ThumbkeyUKv1 -> THUMBKEY_UK_V1_KEYBOARD_MODES
         KeyboardLayout.MessageEase -> MESSAGEEASE_KEYBOARD_MODES
     }
 }
