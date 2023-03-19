@@ -50,24 +50,10 @@ This project is a follow-up to the now unmaintained (and closed-source) [Message
 
 ## User Guide
 
-Tap a key, or slide to type a letter.
-
-<img width=200px height=200px src="https://i.postimg.cc/DZwBDFt9/In-Shot-20230316-095059022.gif">
-
-Swipe up or down on `A` to capitalize.
-
-<img width=200px height=200px src="https://i.postimg.cc/Znt2Ft9G/thumbkey-1-1.png">
-
-Double tap the space bar to type a period.
-
-<img width=200px height=200px src="https://i.postimg.cc/DZWnhVGN/In-Shot-20230316-091704600.gif">
-
-Slide left on the backspace key to delete whole words.
-
-<img width=200px height=200px src="https://i.postimg.cc/W3xYJCHx/In-Shot-20230316-091739029.gif">
-
-### Other hints
-
+- Tap a key, or slide to type a letter.
+- Swipe up or down on `A` to capitalize. <img width=60px height=60px src="https://i.postimg.cc/Znt2Ft9G/thumbkey-1-1.png">
+- Double tap the space bar to type a comma, triple tap to type a period.
+- Slide left on the backspace key to delete whole words.
 - Press the `#` key to see a numeric keypad, and additional symbols.
 - Press the Settings Gear key to configure Thumb-Key.
 - Practice typing, and check your words per minute, using [monkeytype.com](https://monkeytype.com)
