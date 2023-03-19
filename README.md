@@ -24,6 +24,7 @@
   </p>
   <p align="center">
     <!-- <a href="https://f-droid.org/packages/com.dessalines.thumbkey"><img src="https://fdroid.gitlab.io/artwork/badge/get-it-on.png" alt="Get it on F-Droid" height="80"></a> -->
+    <a href="https://apt.izzysoft.de/fdroid/index/apk/com.dessalines.thumbkey"><img src="https://gitlab.com/IzzyOnDroid/repo/-/raw/master/assets/IzzyOnDroid.png" alt="Get it on IzzyOnDroid" height="80"></a>
     <!-- <a href="https://play.google.com/store/apps/details?id=com.dessalines.thumbkey"><img src="https://cdn.rawgit.com/steverichey/google-play-badge-svg/master/img/en_get.svg" height="80"></a> -->
     <a href="https://github.com/dessalines/thumb-key/releases/latest"><img src="https://raw.githubusercontent.com/andOTP/andOTP/master/assets/badges/get-it-on-github.png" height="80"></a>
   </p>
@@ -105,8 +106,8 @@ MessageEase is unfortunately unmaintained, and Thumb-Key uses a better alternati
 
 - Large keys are in a predictable 9-key grid. Eventually, you should be able to keep your eyes on the text input area, rather than hunting-and-pecking for letters, approximating touch-typing.
 - Letter positions are based on [English text letter frequency](https://en.m.wikipedia.org/wiki/Letter_frequency). The most common letters are: **ETAOINSHR**. These 9 letters alone make up ~70% of all English text.
-- First 9 letters by frequency are the 9 center key taps. The next 8 are swipes to the center. The next 8 are off the center hub key. Z is last.
-- Alternate fingers for vowels and consonants (Vowels on right side of keyboard, consonants on left). This naturally results in fast digram speeds.
+- First 9 letters by frequency are the 9 center key taps. The next 8 are swipes to the center. The next 8 are swipes on the center hub key. Z is last.
+- Alternate thumbs for vowels and consonants (Vowels on right side of keyboard, consonants on left). This naturally results in fast digram speeds.
 - Prioritize bottom, and right side of keyboard. So EAO should be on the right side, and bottom to top, while TNS is on the left side.
 
 ### Built With
