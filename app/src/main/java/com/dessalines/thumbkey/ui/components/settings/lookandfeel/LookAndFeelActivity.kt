@@ -42,6 +42,7 @@ import com.dessalines.thumbkey.db.DEFAULT_KEYBOARD_LAYOUT
 import com.dessalines.thumbkey.db.DEFAULT_KEY_SIZE
 import com.dessalines.thumbkey.db.DEFAULT_MIN_SWIPE_LENGTH
 import com.dessalines.thumbkey.db.DEFAULT_POSITION
+import com.dessalines.thumbkey.db.DEFAULT_PUSHUP_SIZE
 import com.dessalines.thumbkey.db.DEFAULT_SOUND_ON_TAP
 import com.dessalines.thumbkey.db.DEFAULT_THEME
 import com.dessalines.thumbkey.db.DEFAULT_THEME_COLOR
@@ -67,6 +68,9 @@ fun LookAndFeelActivity(
 
     val keySizeState = rememberFloatSettingState(
         (settings?.keySize ?: DEFAULT_KEY_SIZE).toFloat()
+    )
+    val pushupSizeState = rememberFloatSettingState(
+        (settings?.pushupSize ?: DEFAULT_PUSHUP_SIZE).toFloat()
     )
     val animationSpeedState = rememberFloatSettingState(
         (settings?.animationSpeed ?: DEFAULT_ANIMATION_SPEED).toFloat()
@@ -128,6 +132,7 @@ fun LookAndFeelActivity(
                         updateAppSettings(
                             appSettingsViewModel,
                             keySizeState,
+                            pushupSizeState,
                             animationSpeedState,
                             animationHelperSpeedState,
                             minSwipeLengthState,
@@ -157,6 +162,7 @@ fun LookAndFeelActivity(
                         updateAppSettings(
                             appSettingsViewModel,
                             keySizeState,
+                            pushupSizeState,
                             animationSpeedState,
                             animationHelperSpeedState,
                             minSwipeLengthState,
@@ -186,6 +192,7 @@ fun LookAndFeelActivity(
                         updateAppSettings(
                             appSettingsViewModel,
                             keySizeState,
+                            pushupSizeState,
                             animationSpeedState,
                             animationHelperSpeedState,
                             minSwipeLengthState,
@@ -215,6 +222,7 @@ fun LookAndFeelActivity(
                         updateAppSettings(
                             appSettingsViewModel,
                             keySizeState,
+                            pushupSizeState,
                             animationSpeedState,
                             animationHelperSpeedState,
                             minSwipeLengthState,
@@ -243,6 +251,7 @@ fun LookAndFeelActivity(
                         updateAppSettings(
                             appSettingsViewModel,
                             keySizeState,
+                            pushupSizeState,
                             animationSpeedState,
                             animationHelperSpeedState,
                             minSwipeLengthState,
@@ -271,6 +280,7 @@ fun LookAndFeelActivity(
                         updateAppSettings(
                             appSettingsViewModel,
                             keySizeState,
+                            pushupSizeState,
                             animationSpeedState,
                             animationHelperSpeedState,
                             minSwipeLengthState,
@@ -299,6 +309,7 @@ fun LookAndFeelActivity(
                         updateAppSettings(
                             appSettingsViewModel,
                             keySizeState,
+                            pushupSizeState,
                             animationSpeedState,
                             animationHelperSpeedState,
                             minSwipeLengthState,
@@ -328,6 +339,37 @@ fun LookAndFeelActivity(
                         updateAppSettings(
                             appSettingsViewModel,
                             keySizeState,
+                            pushupSizeState,
+                            animationSpeedState,
+                            animationHelperSpeedState,
+                            minSwipeLengthState,
+                            positionState,
+                            autoCapitalizeState,
+                            vibrateOnTapState,
+                            soundOnTapState,
+                            keyboardLayoutState,
+                            themeState,
+                            themeColorState
+                        )
+                    }
+                )
+                SettingsSlider(
+                    valueRange = 0f..100f,
+                    state = pushupSizeState,
+                    icon = {
+                        Icon(
+                            imageVector = Icons.Outlined.VerticalAlignTop,
+                            contentDescription = "TODO"
+                        )
+                    },
+                    title = {
+                        Text(text = "Bottom Offset: ${pushupSizeState.value.toInt()}")
+                    },
+                    onValueChangeFinished = {
+                        updateAppSettings(
+                            appSettingsViewModel,
+                            keySizeState,
+                            pushupSizeState,
                             animationSpeedState,
                             animationHelperSpeedState,
                             minSwipeLengthState,
@@ -357,6 +399,7 @@ fun LookAndFeelActivity(
                         updateAppSettings(
                             appSettingsViewModel,
                             keySizeState,
+                            pushupSizeState,
                             animationSpeedState,
                             animationHelperSpeedState,
                             minSwipeLengthState,
@@ -386,6 +429,7 @@ fun LookAndFeelActivity(
                         updateAppSettings(
                             appSettingsViewModel,
                             keySizeState,
+                            pushupSizeState,
                             animationSpeedState,
                             animationHelperSpeedState,
                             minSwipeLengthState,
@@ -415,6 +459,7 @@ fun LookAndFeelActivity(
                         updateAppSettings(
                             appSettingsViewModel,
                             keySizeState,
+                            pushupSizeState,
                             animationSpeedState,
                             animationHelperSpeedState,
                             minSwipeLengthState,
@@ -435,6 +480,7 @@ fun LookAndFeelActivity(
                             resetAppSettingsToDefault(
                                 appSettingsViewModel,
                                 keySizeState,
+                                pushupSizeState,
                                 animationSpeedState,
                                 animationHelperSpeedState,
                                 minSwipeLengthState,
@@ -474,6 +520,7 @@ fun LookAndFeelActivity(
 private fun updateAppSettings(
     appSettingsViewModel: AppSettingsViewModel,
     keySizeState: SettingValueState<Float>,
+    pushupSizeState: SettingValueState<Float>,
     animationSpeedState: SettingValueState<Float>,
     animationHelperSpeedState: SettingValueState<Float>,
     minSwipeLengthState: SettingValueState<Float>,
@@ -489,6 +536,7 @@ private fun updateAppSettings(
         AppSettings(
             id = 1,
             keySize = keySizeState.value.toInt(),
+            pushupSize = pushupSizeState.value.toInt(),
             animationSpeed = animationSpeedState.value.toInt(),
             animationHelperSpeed = animationHelperSpeedState.value.toInt(),
             minSwipeLength = minSwipeLengthState.value.toInt(),
@@ -507,6 +555,7 @@ private fun updateAppSettings(
 private fun resetAppSettingsToDefault(
     appSettingsViewModel: AppSettingsViewModel,
     keySizeState: SettingValueState<Float>,
+    pushupSizeState: SettingValueState<Float>,
     animationSpeedState: SettingValueState<Float>,
     animationHelperSpeedState: SettingValueState<Float>,
     minSwipeLengthState: SettingValueState<Float>,
@@ -519,6 +568,7 @@ private fun resetAppSettingsToDefault(
     themeColorState: SettingValueState<Int>
 ) {
     keySizeState.value = DEFAULT_KEY_SIZE.toFloat()
+    pushupSizeState.value = DEFAULT_PUSHUP_SIZE.toFloat()
     animationSpeedState.value = DEFAULT_ANIMATION_SPEED.toFloat()
     animationHelperSpeedState.value = DEFAULT_ANIMATION_HELPER_SPEED.toFloat()
     minSwipeLengthState.value = DEFAULT_MIN_SWIPE_LENGTH.toFloat()
@@ -533,6 +583,7 @@ private fun resetAppSettingsToDefault(
     updateAppSettings(
         appSettingsViewModel,
         keySizeState,
+        pushupSizeState,
         animationSpeedState,
         animationHelperSpeedState,
         minSwipeLengthState,

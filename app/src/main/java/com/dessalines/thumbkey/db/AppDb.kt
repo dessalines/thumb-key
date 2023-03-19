@@ -25,6 +25,7 @@ const val DEFAULT_THEME_COLOR = 0
 const val DEFAULT_VIBRATE_ON_TAP = 1
 const val DEFAULT_SOUND_ON_TAP = 0
 const val DEFAULT_MIN_SWIPE_LENGTH = 40
+const val DEFAULT_PUSHUP_SIZE = 0
 
 const val UPDATE_APP_CHANGELOG_UNVIEWED = "UPDATE AppSettings SET viewed_changelog = 0"
 
@@ -90,7 +91,12 @@ data class AppSettings(
         name = "min_swipe_length",
         defaultValue = DEFAULT_MIN_SWIPE_LENGTH.toString()
     )
-    val minSwipeLength: Int
+    val minSwipeLength: Int,
+    @ColumnInfo(
+        name = "pushup_size",
+        defaultValue = DEFAULT_PUSHUP_SIZE.toString()
+    )
+    val pushupSize: Int
 )
 
 @Dao
@@ -132,8 +138,16 @@ val MIGRATION_1_2 = object : Migration(1, 2) {
     }
 }
 
+val MIGRATION_2_3 = object : Migration(2, 3) {
+    override fun migrate(database: SupportSQLiteDatabase) {
+        database.execSQL(
+            "alter table AppSettings add column pushup_size INTEGER NOT NULL default $DEFAULT_PUSHUP_SIZE"
+        )
+    }
+}
+
 @Database(
-    version = 2,
+    version = 3,
     entities = [AppSettings::class],
     exportSchema = true
 )
@@ -157,7 +171,8 @@ abstract class AppDB : RoomDatabase() {
                 )
                     .allowMainThreadQueries()
                     .addMigrations(
-                        MIGRATION_1_2
+                        MIGRATION_1_2,
+                        MIGRATION_2_3
                     )
                     // Necessary because it can't insert data on creation
                     .addCallback(object : Callback() {
