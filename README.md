@@ -20,7 +20,7 @@
     ·
     <a href="https://github.com/dessalines/thumb-key/issues">Request Feature</a>
     ·
-    <a href="https://github.com/dessalines/thumb-key/blob/main/RELEASES.md">Releases</a>
+    <a href="https://github.com/dessalines/thumb-key/releases">Releases</a>
   </p>
   <p align="center">
     <!-- <a href="https://f-droid.org/packages/com.dessalines.thumbkey"><img src="https://fdroid.gitlab.io/artwork/badge/get-it-on.png" alt="Get it on F-Droid" height="80"></a> -->
@@ -124,6 +124,7 @@ MessageEase is unfortunately unmaintained, and Thumb-Key uses a better alternati
 I'd be happy to accept additions to add more languages, and layouts. To start:
 
 - Read the letter position guidelines above. This means you'll likely need a letter frequency chart for text written in your language.
+  - The general rule is: popular vowels on the right, bottom to top, consonants on the left.
 - Copy [this file](https://github.com/dessalines/thumb-key/blob/main/app/src/main/java/com/dessalines/thumbkey/keyboards/ThumbKeyV4.kt), or another sample keyboard from the same folder.
   - Change the characters to whatever you'd like.
   - This file contains both a _shifted_, and _non-shifted_ keyboard, so make sure you take care of both.
