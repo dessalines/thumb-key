@@ -5,6 +5,7 @@ import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
+import androidx.compose.foundation.layout.imePadding
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.verticalScroll
@@ -115,6 +116,7 @@ fun LookAndFeelActivity(
                 modifier = Modifier
                     .padding(padding)
                     .verticalScroll(scrollState)
+                    .imePadding()
             ) {
                 SettingsList(
                     state = keyboardLayoutState,
@@ -509,7 +511,6 @@ fun LookAndFeelActivity(
                         .fillMaxWidth(),
                     value = text,
                     onValueChange = { text = it },
-                    singleLine = true,
                     label = { Text("Test out Thumb-Key") }
                 )
             }
