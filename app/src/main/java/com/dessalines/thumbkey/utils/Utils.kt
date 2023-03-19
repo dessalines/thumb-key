@@ -257,9 +257,9 @@ private fun autoCapitalize(
         )
     }
 
-    // Toggles shift after punctuation
-    val beforeSpace: Char = textBefore?.getOrNull(1) ?: ' '
-    if (arrayOf('.', '?', '!').contains(beforeSpace)) {
+    // Toggles shift after punctuation and space
+    val beforeSpace = textBefore?.substring(1)
+    if (arrayOf(". ", "? ", "! ").contains(beforeSpace)) {
         onToggleShiftMode(true)
     } else {
         onToggleShiftMode(false)
