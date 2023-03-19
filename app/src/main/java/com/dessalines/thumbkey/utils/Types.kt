@@ -67,9 +67,11 @@ enum class ThemeColor {
     Pink
 }
 
-enum class KeyboardLayout {
-    ThumbKeyV4,
-    MessageEase
+enum class KeyboardLayout(val title: String) {
+    ThumbKeyENv4("Thumb-Key English v4"),
+    ThumbkeyRUv1("Thumb-Key русский v1"),
+    ThumbkeyUKv1("Thumb-Key українська v1"),
+    MessageEase("MessageEase")
 }
 
 enum class KeyboardPosition {

@@ -120,7 +120,7 @@ fun LookAndFeelActivity(
             ) {
                 SettingsList(
                     state = keyboardLayoutState,
-                    items = KeyboardLayout.values().map { it.name },
+                    items = KeyboardLayout.values().map { it.title },
                     icon = {
                         Icon(
                             imageVector = Icons.Outlined.KeyboardAlt,

@@ -21,7 +21,7 @@ import com.dessalines.thumbkey.db.DEFAULT_POSITION
 import com.dessalines.thumbkey.db.DEFAULT_PUSHUP_SIZE
 import com.dessalines.thumbkey.db.DEFAULT_SOUND_ON_TAP
 import com.dessalines.thumbkey.db.DEFAULT_VIBRATE_ON_TAP
-import com.dessalines.thumbkey.keyboards.thumbkeyV4Keyboard
+import com.dessalines.thumbkey.keyboards.THUMBKEY_EN_V4_MAIN
 import com.dessalines.thumbkey.utils.KeyAction
 import com.dessalines.thumbkey.utils.KeyboardLayout
 import com.dessalines.thumbkey.utils.KeyboardMode
@@ -49,7 +49,7 @@ fun KeyboardScreen(
         ]
     )
 
-    val keyboard = keyboardGroup[mode] ?: thumbkeyV4Keyboard
+    val keyboard = keyboardGroup[mode] ?: THUMBKEY_EN_V4_MAIN
 
     val alignment = keyboardPositionToAlignment(
         KeyboardPosition.values()[
