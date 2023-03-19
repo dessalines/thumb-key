@@ -15,7 +15,7 @@ import com.dessalines.thumbkey.utils.KeyItemC
 import com.dessalines.thumbkey.utils.KeyboardC
 import com.dessalines.thumbkey.utils.SwipeDirection
 
-val numericKeyboard = KeyboardC(
+val NUMERIC_KEYBOARD = KeyboardC(
     arrayOf(
         arrayOf(
             KeyItemC(
