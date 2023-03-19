@@ -1,8 +1,10 @@
 package com.dessalines.thumbkey.ui.components.settings.lookandfeel
 
 import android.util.Log
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.verticalScroll
@@ -10,6 +12,7 @@ import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.outlined.*
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.Icon
+import androidx.compose.material3.ListItem
 import androidx.compose.material3.OutlinedTextField
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.SnackbarHost
@@ -38,6 +41,7 @@ import com.dessalines.thumbkey.db.DEFAULT_AUTO_CAPITALIZE
 import com.dessalines.thumbkey.db.DEFAULT_KEYBOARD_LAYOUT
 import com.dessalines.thumbkey.db.DEFAULT_KEY_SIZE
 import com.dessalines.thumbkey.db.DEFAULT_MIN_SWIPE_LENGTH
+import com.dessalines.thumbkey.db.DEFAULT_POSITION
 import com.dessalines.thumbkey.db.DEFAULT_SOUND_ON_TAP
 import com.dessalines.thumbkey.db.DEFAULT_THEME
 import com.dessalines.thumbkey.db.DEFAULT_THEME_COLOR
@@ -48,6 +52,8 @@ import com.dessalines.thumbkey.utils.SimpleTopAppBar
 import com.dessalines.thumbkey.utils.TAG
 import com.dessalines.thumbkey.utils.ThemeColor
 import com.dessalines.thumbkey.utils.ThemeMode
+import com.dessalines.thumbkey.utils.toBool
+import com.dessalines.thumbkey.utils.toInt
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
@@ -72,16 +78,16 @@ fun LookAndFeelActivity(
         (settings?.minSwipeLength ?: DEFAULT_MIN_SWIPE_LENGTH).toFloat()
     )
     val positionState = rememberIntSettingState(
-        settings?.position ?: com.dessalines.thumbkey.db.DEFAULT_POSITION
+        settings?.position ?: DEFAULT_POSITION
     )
     val autoCapitalizeState = rememberBooleanSettingState(
-        ((settings?.autoCapitalize ?: DEFAULT_AUTO_CAPITALIZE) == 1)
+        ((settings?.autoCapitalize ?: DEFAULT_AUTO_CAPITALIZE).toBool())
     )
     val vibrateOnTapState = rememberBooleanSettingState(
-        ((settings?.vibrateOnTap ?: DEFAULT_VIBRATE_ON_TAP) == 1)
+        ((settings?.vibrateOnTap ?: DEFAULT_VIBRATE_ON_TAP).toBool())
     )
     val soundOnTapState = rememberBooleanSettingState(
-        ((settings?.soundOnTap ?: DEFAULT_SOUND_ON_TAP) == 1)
+        ((settings?.soundOnTap ?: DEFAULT_SOUND_ON_TAP).toBool())
     )
     val keyboardLayoutState = rememberIntSettingState(
         settings?.keyboardLayout ?: DEFAULT_KEYBOARD_LAYOUT
@@ -422,6 +428,35 @@ fun LookAndFeelActivity(
                         )
                     }
                 )
+                ListItem(
+                    modifier = Modifier
+                        .height(56.dp)
+                        .clickable {
+                            resetAppSettingsToDefault(
+                                appSettingsViewModel,
+                                keySizeState,
+                                animationSpeedState,
+                                animationHelperSpeedState,
+                                minSwipeLengthState,
+                                positionState,
+                                autoCapitalizeState,
+                                vibrateOnTapState,
+                                soundOnTapState,
+                                keyboardLayoutState,
+                                themeState,
+                                themeColorState
+                            )
+                        },
+                    headlineText = {
+                        Text("Reset to defaults")
+                    },
+                    leadingContent = {
+                        Icon(
+                            imageVector = Icons.Outlined.ResetTv,
+                            contentDescription = "TODO"
+                        )
+                    }
+                )
                 OutlinedTextField(
                     modifier = Modifier
                         .padding(16.dp)
@@ -458,13 +493,55 @@ private fun updateAppSettings(
             animationHelperSpeed = animationHelperSpeedState.value.toInt(),
             minSwipeLength = minSwipeLengthState.value.toInt(),
             position = positionState.value,
-            autoCapitalize = autoCapitalizeState.value.compareTo(false),
-            vibrateOnTap = vibrateOnTapState.value.compareTo(false),
-            soundOnTap = soundOnTapState.value.compareTo(false),
+            autoCapitalize = autoCapitalizeState.value.toInt(),
+            vibrateOnTap = vibrateOnTapState.value.toInt(),
+            soundOnTap = soundOnTapState.value.toInt(),
             keyboardLayout = keyboardLayoutState.value,
             theme = themeState.value,
             themeColor = themeColorState.value,
             viewedChangelog = appSettingsViewModel.appSettings.value?.viewedChangelog ?: 0
         )
+    )
+}
+
+private fun resetAppSettingsToDefault(
+    appSettingsViewModel: AppSettingsViewModel,
+    keySizeState: SettingValueState<Float>,
+    animationSpeedState: SettingValueState<Float>,
+    animationHelperSpeedState: SettingValueState<Float>,
+    minSwipeLengthState: SettingValueState<Float>,
+    positionState: SettingValueState<Int>,
+    autoCapitalizeState: SettingValueState<Boolean>,
+    vibrateOnTapState: SettingValueState<Boolean>,
+    soundOnTapState: SettingValueState<Boolean>,
+    keyboardLayoutState: SettingValueState<Int>,
+    themeState: SettingValueState<Int>,
+    themeColorState: SettingValueState<Int>
+) {
+    keySizeState.value = DEFAULT_KEY_SIZE.toFloat()
+    animationSpeedState.value = DEFAULT_ANIMATION_SPEED.toFloat()
+    animationHelperSpeedState.value = DEFAULT_ANIMATION_HELPER_SPEED.toFloat()
+    minSwipeLengthState.value = DEFAULT_MIN_SWIPE_LENGTH.toFloat()
+    positionState.value = DEFAULT_POSITION
+    autoCapitalizeState.value = DEFAULT_AUTO_CAPITALIZE.toBool()
+    vibrateOnTapState.value = DEFAULT_VIBRATE_ON_TAP.toBool()
+    soundOnTapState.value = DEFAULT_SOUND_ON_TAP.toBool()
+    keyboardLayoutState.value = DEFAULT_KEYBOARD_LAYOUT
+    themeState.value = DEFAULT_THEME
+    themeColorState.value = DEFAULT_THEME_COLOR
+
+    updateAppSettings(
+        appSettingsViewModel,
+        keySizeState,
+        animationSpeedState,
+        animationHelperSpeedState,
+        minSwipeLengthState,
+        positionState,
+        autoCapitalizeState,
+        vibrateOnTapState,
+        soundOnTapState,
+        keyboardLayoutState,
+        themeState,
+        themeColorState
     )
 }

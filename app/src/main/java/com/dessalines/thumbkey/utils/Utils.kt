@@ -341,3 +341,6 @@ fun openLink(url: String, ctx: Context) {
     val intent = Intent(Intent.ACTION_VIEW, Uri.parse(url))
     ctx.startActivity(intent)
 }
+
+fun Int.toBool() = this == 1
+fun Boolean.toInt() = this.compareTo(false)

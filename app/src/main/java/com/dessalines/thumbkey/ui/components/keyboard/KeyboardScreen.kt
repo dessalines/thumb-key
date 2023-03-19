@@ -26,6 +26,7 @@ import com.dessalines.thumbkey.utils.KeyboardMode
 import com.dessalines.thumbkey.utils.KeyboardPosition
 import com.dessalines.thumbkey.utils.keyboardLayoutToModes
 import com.dessalines.thumbkey.utils.keyboardPositionToAlignment
+import com.dessalines.thumbkey.utils.toBool
 
 @Composable
 fun KeyboardScreen(
@@ -55,9 +56,9 @@ fun KeyboardScreen(
         ]
     )
 
-    val autoCapitalize = (settings?.autoCapitalize ?: DEFAULT_AUTO_CAPITALIZE) == 1
-    val vibrateOnTap = (settings?.vibrateOnTap ?: DEFAULT_VIBRATE_ON_TAP) == 1
-    val soundOnTap = (settings?.soundOnTap ?: DEFAULT_SOUND_ON_TAP) == 1
+    val autoCapitalize = (settings?.autoCapitalize ?: DEFAULT_AUTO_CAPITALIZE).toBool()
+    val vibrateOnTap = (settings?.vibrateOnTap ?: DEFAULT_VIBRATE_ON_TAP).toBool()
+    val soundOnTap = (settings?.soundOnTap ?: DEFAULT_SOUND_ON_TAP).toBool()
 
     Box(
         contentAlignment = alignment
