@@ -259,20 +259,22 @@ private fun autoCapitalize(
 ) {
     // Capitalizes 'i'
     val textBefore = ime.currentInputConnection.getTextBeforeCursor(3, 0)
-    if (textBefore == " i ") {
-        ime.currentInputConnection.deleteSurroundingText(2, 0)
-        ime.currentInputConnection.commitText(
-            "I ",
-            2
-        )
-    }
+    if (!textBefore.isNullOrEmpty()) {
+        if (textBefore == " i ") {
+            ime.currentInputConnection.deleteSurroundingText(2, 0)
+            ime.currentInputConnection.commitText(
+                "I ",
+                2
+            )
+        }
 
-    // Toggles shift after punctuation and space
-    val beforeSpace = textBefore?.substring(1)
-    if (arrayOf(". ", "? ", "! ").contains(beforeSpace)) {
-        onToggleShiftMode(true)
-    } else {
-        onToggleShiftMode(false)
+        // Toggles shift after punctuation and space
+        val beforeSpace = textBefore.substring(1)
+        if (arrayOf(". ", "? ", "! ").contains(beforeSpace)) {
+            onToggleShiftMode(true)
+        } else {
+            onToggleShiftMode(false)
+        }
     }
 }
 
