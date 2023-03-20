@@ -111,7 +111,7 @@ I'd be happy to accept additions to add more languages, and layouts. To start:
 
 - Read the letter position guidelines above. This means you'll likely need a letter frequency chart for text written in your language.
   - The general rule is: popular vowels on the right, bottom to top, consonants on the left.
-- Copy [this file](https://github.com/dessalines/thumb-key/blob/main/app/src/main/java/com/dessalines/thumbkey/keyboards/ThumbKeyV4.kt), or another sample keyboard from the same folder.
+- Copy [this file](https://github.com/dessalines/thumb-key/blob/main/app/src/main/java/com/dessalines/thumbkey/keyboards/ThumbKeyENv4.kt), or another sample keyboard from the same folder.
   - Change the characters to whatever you'd like.
   - This file contains both a _shifted_, and _non-shifted_ keyboard, so make sure you take care of both.
   - You can also add or subtract columns if you want, but the layout must remain a grid. I **highly recommend** sticking with the 3x3 layout.
