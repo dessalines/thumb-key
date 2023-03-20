@@ -1,3 +1,20 @@
+# Thumb-Key 0.0.4-alpha (2023-03-20)
+
+## What's Changed
+
+- Finnish layout added by @anevaiopvn in https://github.com/dessalines/thumb-key/pull/49
+- Adding italian language layout. Fixes #52 by @dessalines in https://github.com/dessalines/thumb-key/pull/53
+- Adding portuguese language layout. Fixes #47 by @dessalines in https://github.com/dessalines/thumb-key/pull/54
+- Fixing substring crash for strange text fields. Fixes #45 by @dessalines in https://github.com/dessalines/thumb-key/pull/55
+- changed double 'г' to 'к' by @DobriniaMerk in https://github.com/dessalines/thumb-key/pull/56
+
+## New Contributors
+
+- @anevaiopvn made their first contribution in https://github.com/dessalines/thumb-key/pull/49
+- @DobriniaMerk made their first contribution in https://github.com/dessalines/thumb-key/pull/56
+
+**Full Changelog**: https://github.com/dessalines/thumb-key/compare/0.0.3...0.0.4
+
 # Thumb-Key 0.0.3-alpha (2023-03-19)
 
 ## What's Changed
