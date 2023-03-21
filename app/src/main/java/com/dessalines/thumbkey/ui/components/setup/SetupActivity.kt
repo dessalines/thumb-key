@@ -17,8 +17,10 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.remember
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
+import com.dessalines.thumbkey.R
 import com.dessalines.thumbkey.utils.SimpleTopAppBar
 import com.dessalines.thumbkey.utils.TAG
 import splitties.systemservices.inputMethodManager
@@ -41,7 +43,7 @@ fun SetupActivity(
         snackbarHost = { SnackbarHost(snackbarHostState) },
         topBar = {
             SimpleTopAppBar(
-                text = "Setup Thumb-Key",
+                text = stringResource(R.string.setup_thumbkey),
                 navController = navController,
                 showBack = false
             )
@@ -57,20 +59,20 @@ fun SetupActivity(
                     Button(modifier = Modifier.fillMaxWidth(), onClick = {
                         ctx.startActivity(Intent(Settings.ACTION_INPUT_METHOD_SETTINGS))
                     }) {
-                        Text(text = "Enable Thumbkey")
+                        Text(stringResource(R.string.enable_thumbkey))
                     }
                 }
                 if (!thumbkeySelected) {
                     Button(modifier = Modifier.fillMaxWidth(), onClick = {
                         inputMethodManager.showInputMethodPicker()
                     }) {
-                        Text(text = "Select Thumbkey")
+                        Text(stringResource(R.string.select_thumbkey))
                     }
                 }
                 Button(modifier = Modifier.fillMaxWidth(), onClick = {
                     navController.navigate("settings")
                 }) {
-                    Text(text = "Finish Setup")
+                    Text(stringResource(R.string.finish_setup))
                 }
             }
         }

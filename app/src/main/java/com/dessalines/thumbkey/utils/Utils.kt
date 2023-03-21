@@ -20,6 +20,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.MutableState
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.ExperimentalUnitApi
 import androidx.compose.ui.unit.TextUnit
@@ -28,6 +29,7 @@ import androidx.core.text.trimmedLength
 import androidx.navigation.NavController
 import com.dessalines.thumbkey.IMEService
 import com.dessalines.thumbkey.MainActivity
+import com.dessalines.thumbkey.R
 import com.dessalines.thumbkey.keyboards.MESSAGEEASE_KEYBOARD_MODES
 import com.dessalines.thumbkey.keyboards.THUMBKEY_EN_V4_KEYBOARD_MODES
 import com.dessalines.thumbkey.keyboards.THUMBKEY_FI_V1_KEYBOARD_MODES
@@ -341,7 +343,7 @@ fun SimpleTopAppBar(
                 IconButton(onClick = { navController.navigate("settings") }) {
                     Icon(
                         Icons.Outlined.ArrowBack,
-                        contentDescription = "Back"
+                        contentDescription = stringResource(R.string.settings)
                     )
                 }
             }

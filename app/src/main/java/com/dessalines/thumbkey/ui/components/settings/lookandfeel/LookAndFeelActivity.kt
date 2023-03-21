@@ -25,6 +25,7 @@ import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
 import com.alorma.compose.settings.storage.base.SettingValueState
@@ -34,6 +35,7 @@ import com.alorma.compose.settings.storage.base.rememberIntSettingState
 import com.alorma.compose.settings.ui.SettingsCheckbox
 import com.alorma.compose.settings.ui.SettingsList
 import com.alorma.compose.settings.ui.SettingsSlider
+import com.dessalines.thumbkey.R
 import com.dessalines.thumbkey.db.AppSettings
 import com.dessalines.thumbkey.db.AppSettingsViewModel
 import com.dessalines.thumbkey.db.DEFAULT_ANIMATION_HELPER_SPEED
@@ -109,7 +111,7 @@ fun LookAndFeelActivity(
     Scaffold(
         snackbarHost = { SnackbarHost(snackbarHostState) },
         topBar = {
-            SimpleTopAppBar(text = "Look and feel", navController = navController)
+            SimpleTopAppBar(text = stringResource(R.string.look_and_feel), navController = navController)
         },
         content = { padding ->
             Column(
@@ -124,11 +126,11 @@ fun LookAndFeelActivity(
                     icon = {
                         Icon(
                             imageVector = Icons.Outlined.KeyboardAlt,
-                            contentDescription = "TODO"
+                            contentDescription = stringResource(R.string.layout)
                         )
                     },
                     title = {
-                        Text(text = "Layout")
+                        Text(stringResource(R.string.layout))
                     },
                     action = {
                         updateAppSettings(
@@ -150,15 +152,15 @@ fun LookAndFeelActivity(
                 )
                 SettingsList(
                     state = themeState,
-                    items = ThemeMode.values().map { it.name },
+                    items = ThemeMode.values().map { it.title() },
                     icon = {
                         Icon(
                             imageVector = Icons.Outlined.Palette,
-                            contentDescription = "TODO"
+                            contentDescription = stringResource(R.string.theme)
                         )
                     },
                     title = {
-                        Text(text = "Theme")
+                        Text(stringResource(R.string.theme))
                     },
                     action = {
                         updateAppSettings(
@@ -180,15 +182,15 @@ fun LookAndFeelActivity(
                 )
                 SettingsList(
                     state = themeColorState,
-                    items = ThemeColor.values().map { it.name },
+                    items = ThemeColor.values().map { it.title() },
                     icon = {
                         Icon(
                             imageVector = Icons.Outlined.Colorize,
-                            contentDescription = "TODO"
+                            contentDescription = stringResource(R.string.theme_color)
                         )
                     },
                     title = {
-                        Text(text = "Theme color")
+                        Text(stringResource(R.string.theme_color))
                     },
                     action = {
                         updateAppSettings(
@@ -210,15 +212,15 @@ fun LookAndFeelActivity(
                 )
                 SettingsList(
                     state = positionState,
-                    items = KeyboardPosition.values().map { it.name },
+                    items = KeyboardPosition.values().map { it.title() },
                     icon = {
                         Icon(
                             imageVector = Icons.Outlined.LinearScale,
-                            contentDescription = "TODO"
+                            contentDescription = stringResource(R.string.position)
                         )
                     },
                     title = {
-                        Text(text = "Position")
+                        Text(stringResource(R.string.position))
                     },
                     action = {
                         updateAppSettings(
@@ -243,11 +245,11 @@ fun LookAndFeelActivity(
                     icon = {
                         Icon(
                             imageVector = Icons.Outlined.Vibration,
-                            contentDescription = "TODO"
+                            contentDescription = stringResource(R.string.vibrate_on_tap)
                         )
                     },
                     title = {
-                        Text(text = "Vibrate on tap")
+                        Text(stringResource(R.string.vibrate_on_tap))
                     },
                     onCheckedChange = {
                         updateAppSettings(
@@ -272,11 +274,11 @@ fun LookAndFeelActivity(
                     icon = {
                         Icon(
                             imageVector = Icons.Outlined.MusicNote,
-                            contentDescription = "TODO"
+                            contentDescription = stringResource(R.string.play_sound_on_tap)
                         )
                     },
                     title = {
-                        Text(text = "Play sound on tap")
+                        Text(stringResource(R.string.play_sound_on_tap))
                     },
                     onCheckedChange = {
                         updateAppSettings(
@@ -301,11 +303,11 @@ fun LookAndFeelActivity(
                     icon = {
                         Icon(
                             imageVector = Icons.Outlined.Abc,
-                            contentDescription = "TODO"
+                            contentDescription = stringResource(R.string.auto_capitalize)
                         )
                     },
                     title = {
-                        Text(text = "Auto-Capitalize")
+                        Text(stringResource(R.string.auto_capitalize))
                     },
                     onCheckedChange = {
                         updateAppSettings(
@@ -325,17 +327,18 @@ fun LookAndFeelActivity(
                         )
                     }
                 )
+                val keySizeStr = stringResource(R.string.key_size, keySizeState.value.toInt().toString())
                 SettingsSlider(
                     valueRange = 10f..200f,
                     state = keySizeState,
                     icon = {
                         Icon(
                             imageVector = Icons.Outlined.FormatSize,
-                            contentDescription = "TODO"
+                            contentDescription = keySizeStr
                         )
                     },
                     title = {
-                        Text(text = "Key Size: ${keySizeState.value.toInt()}")
+                        Text(keySizeStr)
                     },
                     onValueChangeFinished = {
                         updateAppSettings(
@@ -355,17 +358,18 @@ fun LookAndFeelActivity(
                         )
                     }
                 )
+                val bottomOffsetStr = stringResource(R.string.bottom_offset, pushupSizeState.value.toInt().toString())
                 SettingsSlider(
                     valueRange = 0f..100f,
                     state = pushupSizeState,
                     icon = {
                         Icon(
                             imageVector = Icons.Outlined.VerticalAlignTop,
-                            contentDescription = "TODO"
+                            contentDescription = bottomOffsetStr
                         )
                     },
                     title = {
-                        Text(text = "Bottom Offset: ${pushupSizeState.value.toInt()}")
+                        Text(bottomOffsetStr)
                     },
                     onValueChangeFinished = {
                         updateAppSettings(
@@ -385,17 +389,18 @@ fun LookAndFeelActivity(
                         )
                     }
                 )
+                val minSwipeLengthStr = stringResource(R.string.min_swipe_length, minSwipeLengthState.value.toInt().toString())
                 SettingsSlider(
                     valueRange = 0f..200f,
                     state = minSwipeLengthState,
                     icon = {
                         Icon(
                             imageVector = Icons.Outlined.Swipe,
-                            contentDescription = "TODO"
+                            contentDescription = minSwipeLengthStr
                         )
                     },
                     title = {
-                        Text(text = "Minimum Swipe Length: ${minSwipeLengthState.value.toInt()}")
+                        Text(minSwipeLengthStr)
                     },
                     onValueChangeFinished = {
                         updateAppSettings(
@@ -415,17 +420,18 @@ fun LookAndFeelActivity(
                         )
                     }
                 )
+                val animationSpeedStr = stringResource(R.string.animation_speed, animationSpeedState.value.toInt().toString())
                 SettingsSlider(
                     valueRange = 0f..500f,
                     state = animationSpeedState,
                     icon = {
                         Icon(
                             imageVector = Icons.Outlined.Animation,
-                            contentDescription = "TODO"
+                            contentDescription = animationSpeedStr
                         )
                     },
                     title = {
-                        Text(text = "Animation Speed: ${animationSpeedState.value.toInt()}")
+                        Text(animationSpeedStr)
                     },
                     onValueChangeFinished = {
                         updateAppSettings(
@@ -444,6 +450,12 @@ fun LookAndFeelActivity(
                             themeColorState
                         )
                     }
+                )
+                val animationHelperSpeedStr = stringResource(
+                    R.string.animation_helper_speed,
+                    animationHelperSpeedState
+                        .value
+                        .toInt().toString()
                 )
                 SettingsSlider(
                     valueRange = 0f..500f,
@@ -451,11 +463,11 @@ fun LookAndFeelActivity(
                     icon = {
                         Icon(
                             imageVector = Icons.Outlined.Visibility,
-                            contentDescription = "TODO"
+                            contentDescription = animationHelperSpeedStr
                         )
                     },
                     title = {
-                        Text(text = "Animation Helper Speed: ${animationHelperSpeedState.value.toInt()}")
+                        Text(animationHelperSpeedStr)
                     },
                     onValueChangeFinished = {
                         updateAppSettings(
@@ -496,12 +508,12 @@ fun LookAndFeelActivity(
                             )
                         },
                     headlineText = {
-                        Text("Reset to defaults")
+                        Text(stringResource(R.string.reset_to_defaults))
                     },
                     leadingContent = {
                         Icon(
                             imageVector = Icons.Outlined.ResetTv,
-                            contentDescription = "TODO"
+                            contentDescription = stringResource(R.string.reset_to_defaults)
                         )
                     }
                 )
@@ -511,7 +523,7 @@ fun LookAndFeelActivity(
                         .fillMaxWidth(),
                     value = text,
                     onValueChange = { text = it },
-                    label = { Text("Test out Thumb-Key") }
+                    label = { Text(stringResource(R.string.test_out_thumbkey)) }
                 )
             }
         }

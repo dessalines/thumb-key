@@ -18,8 +18,10 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.remember
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
+import androidx.compose.ui.res.stringResource
 import androidx.navigation.NavController
 import com.alorma.compose.settings.ui.SettingsMenuLink
+import com.dessalines.thumbkey.R
 import com.dessalines.thumbkey.ui.components.settings.about.userGuideLink
 import com.dessalines.thumbkey.utils.SimpleTopAppBar
 import com.dessalines.thumbkey.utils.TAG
@@ -40,50 +42,54 @@ fun SettingsActivity(
     Scaffold(
         snackbarHost = { SnackbarHost(snackbarHostState) },
         topBar = {
-            SimpleTopAppBar(text = "Thumb-Key", navController = navController, showBack = false)
+            SimpleTopAppBar(text = stringResource(R.string.app_name), navController = navController, showBack = false)
         },
         content = { padding ->
             Column(modifier = Modifier.padding(padding)) {
                 if (!(thumbkeyEnabled || thumbkeySelected)) {
+                    val setupStr = stringResource(R.string.setup)
                     SettingsMenuLink(
-                        title = { Text("Setup") },
+                        title = { Text(setupStr) },
                         icon = {
                             Icon(
                                 imageVector = Icons.Outlined.InstallMobile,
-                                contentDescription = "TODO"
+                                contentDescription = setupStr
                             )
                         },
                         onClick = { navController.navigate("setup") }
                     )
                 }
+                val lookAndFeelStr = stringResource(R.string.look_and_feel)
                 SettingsMenuLink(
-                    title = { Text("Look and feel") },
+                    title = { Text(lookAndFeelStr) },
                     icon = {
                         Icon(
                             imageVector = Icons.Outlined.Palette,
-                            contentDescription = "TODO"
+                            contentDescription = lookAndFeelStr
                         )
                     },
                     onClick = { navController.navigate("lookAndFeel") }
                 )
+                val userGuideStr = stringResource(R.string.user_guide)
                 SettingsMenuLink(
-                    title = { Text("User Guide") },
+                    title = { Text(userGuideStr) },
                     icon = {
                         Icon(
                             imageVector = Icons.Outlined.HelpCenter,
-                            contentDescription = "TODO"
+                            contentDescription = userGuideStr
                         )
                     },
                     onClick = {
                         openLink(userGuideLink, ctx)
                     }
                 )
+                val aboutStr = stringResource(R.string.about)
                 SettingsMenuLink(
-                    title = { Text("About") },
+                    title = { Text(aboutStr) },
                     icon = {
                         Icon(
                             imageVector = Icons.Outlined.Info,
-                            contentDescription = "TODO"
+                            contentDescription = aboutStr
                         )
                     },
                     onClick = { navController.navigate("about") }

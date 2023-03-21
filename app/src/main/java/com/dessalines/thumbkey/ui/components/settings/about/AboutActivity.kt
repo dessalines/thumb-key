@@ -25,6 +25,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
@@ -59,17 +60,17 @@ fun AboutActivity(
     Scaffold(
         snackbarHost = { SnackbarHost(snackbarHostState) },
         topBar = {
-            SimpleTopAppBar(text = "About", navController = navController)
+            SimpleTopAppBar(text = stringResource(R.string.about), navController = navController)
         },
         content = { padding ->
             Column(modifier = Modifier.padding(padding)) {
                 SettingsMenuLink(
-                    title = { Text("What's New") },
-                    subtitle = { Text("Version $version") },
+                    title = { Text(stringResource(R.string.whats_new)) },
+                    subtitle = { Text(stringResource(R.string.version, version)) },
                     icon = {
                         Icon(
                             imageVector = Icons.Outlined.NewReleases,
-                            contentDescription = "TODO"
+                            contentDescription = stringResource(R.string.releases)
                         )
                     },
                     onClick = {
@@ -77,13 +78,13 @@ fun AboutActivity(
                     }
                 )
                 SettingsDivider()
-                SettingsHeader(text = "Support")
+                SettingsHeader(text = stringResource(R.string.support))
                 SettingsMenuLink(
-                    title = { Text("Issue tracker") },
+                    title = { Text(stringResource(R.string.issue_tracker)) },
                     icon = {
                         Icon(
                             imageVector = Icons.Outlined.BugReport,
-                            contentDescription = "TODO"
+                            contentDescription = stringResource(R.string.issue_tracker)
                         )
                     },
                     onClick = {
@@ -91,11 +92,11 @@ fun AboutActivity(
                     }
                 )
                 SettingsMenuLink(
-                    title = { Text("Developer Matrix chatroom") },
+                    title = { Text(stringResource(R.string.developer_matrix_chatroom)) },
                     icon = {
                         Icon(
                             imageVector = Icons.Outlined.Chat,
-                            contentDescription = "TODO"
+                            contentDescription = stringResource(R.string.developer_matrix_chatroom)
                         )
                     },
                     onClick = {
@@ -103,11 +104,11 @@ fun AboutActivity(
                     }
                 )
                 SettingsMenuLink(
-                    title = { Text("Donate to Thumb-Key") },
+                    title = { Text(stringResource(R.string.donate_to_thumbkey)) },
                     icon = {
                         Icon(
                             imageVector = Icons.Outlined.AttachMoney,
-                            contentDescription = "TODO"
+                            contentDescription = stringResource(R.string.donate_to_thumbkey)
                         )
                     },
                     onClick = {
@@ -115,14 +116,14 @@ fun AboutActivity(
                     }
                 )
                 SettingsDivider()
-                SettingsHeader(text = "Social")
+                SettingsHeader(text = stringResource(R.string.social))
                 SettingsMenuLink(
-                    title = { Text("Join c/thumbkey") },
+                    title = { Text(stringResource(R.string.join_c_thumbkey)) },
                     icon = {
                         Icon(
                             painter = painterResource(id = R.drawable.thumb_key_icon),
                             modifier = Modifier.size(32.dp),
-                            contentDescription = "TODO"
+                            contentDescription = stringResource(R.string.join_c_thumbkey)
                         )
                     },
                     onClick = {
@@ -130,11 +131,11 @@ fun AboutActivity(
                     }
                 )
                 SettingsMenuLink(
-                    title = { Text("Follow me on Mastodon") },
+                    title = { Text(stringResource(R.string.follow_me_mastodon)) },
                     icon = {
                         Icon(
                             imageVector = Icons.Outlined.TravelExplore,
-                            contentDescription = "TODO"
+                            contentDescription = stringResource(R.string.follow_me_mastodon)
                         )
                     },
                     onClick = {
@@ -142,20 +143,17 @@ fun AboutActivity(
                     }
                 )
                 SettingsDivider()
-                SettingsHeader(text = "Open source")
+                SettingsHeader(text = stringResource(R.string.open_source))
                 SettingsMenuLink(
                     modifier = Modifier.padding(top = 20.dp),
-                    title = { Text("Source code") },
+                    title = { Text(stringResource(R.string.source_code)) },
                     subtitle = {
-                        Text(
-                            "Thumb-Key is libre open-source software, licensed under " +
-                                "the GNU Affero General Public License v3.0"
-                        )
+                        Text(stringResource(R.string.source_code_subtitle))
                     },
                     icon = {
                         Icon(
                             imageVector = Icons.Outlined.Code,
-                            contentDescription = "TODO"
+                            contentDescription = stringResource(R.string.source_code)
                         )
                     },
                     onClick = {
