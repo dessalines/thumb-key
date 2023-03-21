@@ -67,6 +67,10 @@ val NUMERIC_KEYBOARD = KeyboardC(
                     SwipeDirection.BOTTOM_LEFT to KeyC(
                         display = KeyDisplay.TextDisplay("/"),
                         action = KeyAction.CommitText("/")
+                    ),
+                    SwipeDirection.LEFT to KeyC(
+                        display = KeyDisplay.TextDisplay("+"),
+                        action = KeyAction.CommitText("+")
                     )
                 )
             ),
