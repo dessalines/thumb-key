@@ -1,3 +1,20 @@
+# Thumb-Key 0.0.5-alpha (2023-03-22)
+
+## What's Changed
+
+- Correcting special characters location in Portuguese Layout by @somehare in https://github.com/dessalines/thumb-key/pull/57
+- Adding internationalized strings. Fixes #31 by @dessalines in https://github.com/dessalines/thumb-key/pull/58
+- Extracting some common keys. by @dessalines in https://github.com/dessalines/thumb-key/pull/62
+- Adding + to numeric keyboard. Fixes #60 by @dessalines in https://github.com/dessalines/thumb-key/pull/61
+- Swiping on the spacebar moves the cursor. Fixes #59 by @dessalines in https://github.com/dessalines/thumb-key/pull/63
+- Fixing messageease keys by @dessalines in https://github.com/dessalines/thumb-key/pull/66
+
+## New Contributors
+
+- @somehare made their first contribution in https://github.com/dessalines/thumb-key/pull/57
+
+**Full Changelog**: https://github.com/dessalines/thumb-key/compare/0.0.4...0.0.5
+
 # Thumb-Key 0.0.4-alpha (2023-03-20)
 
 ## What's Changed
