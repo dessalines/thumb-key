@@ -1,13 +1,8 @@
 package com.dessalines.thumbkey.keyboards
 
-import android.view.KeyEvent
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.outlined.ArrowDropDown
 import androidx.compose.material.icons.outlined.ArrowDropUp
-import androidx.compose.material.icons.outlined.KeyboardBackspace
-import androidx.compose.material.icons.outlined.KeyboardReturn
-import androidx.compose.material.icons.outlined.Numbers
-import androidx.compose.material.icons.outlined.Settings
 import com.dessalines.thumbkey.utils.ColorVariant
 import com.dessalines.thumbkey.utils.FontSizeVariant
 import com.dessalines.thumbkey.utils.KeyAction
@@ -71,15 +66,7 @@ val THUMBKEY_IT_V1_MAIN = KeyboardC(
                     )
                 )
             ),
-            KeyItemC(
-                center = KeyC(
-                    display = KeyDisplay.IconDisplay(Icons.Outlined.Settings),
-                    action = KeyAction.GotoSettings,
-                    size = FontSizeVariant.LARGE,
-                    color = ColorVariant.SECONDARY
-                ),
-                backgroundColor = ColorVariant.SURFACE_VARIANT
-            )
+            SETTINGS_KEY_ITEM
         ),
         arrayOf(
             KeyItemC(
@@ -161,15 +148,7 @@ val THUMBKEY_IT_V1_MAIN = KeyboardC(
                     )
                 )
             ),
-            KeyItemC(
-                center = KeyC(
-                    display = KeyDisplay.IconDisplay(Icons.Outlined.Numbers),
-                    action = KeyAction.ToggleNumericMode(true),
-                    size = FontSizeVariant.LARGE,
-                    color = ColorVariant.SECONDARY
-                ),
-                backgroundColor = ColorVariant.SURFACE_VARIANT
-            )
+            NUMERIC_KEY_ITEM
         ),
         arrayOf(
             KeyItemC(
@@ -250,61 +229,11 @@ val THUMBKEY_IT_V1_MAIN = KeyboardC(
                     )
                 )
             ),
-            KeyItemC(
-                center = KeyC(
-                    display = KeyDisplay.IconDisplay(Icons.Outlined.KeyboardBackspace),
-                    action = KeyAction.SendEvent(
-                        KeyEvent(
-                            KeyEvent.ACTION_DOWN,
-                            KeyEvent
-                                .KEYCODE_DEL
-                        )
-                    ),
-                    size = FontSizeVariant.LARGE,
-                    color = ColorVariant.SECONDARY
-                ),
-                swipes = mapOf(
-                    SwipeDirection.LEFT to KeyC(
-                        action = KeyAction.DeleteLastWord,
-                        display = null
-                    ),
-                    SwipeDirection.TOP_LEFT to KeyC(
-                        action = KeyAction.DeleteLastWord,
-                        display = null
-                    ),
-                    SwipeDirection.BOTTOM_LEFT to KeyC(
-                        action = KeyAction.DeleteLastWord,
-                        display = null
-                    )
-                ),
-                backgroundColor = ColorVariant.SURFACE_VARIANT
-            )
+            BACKSPACE_KEY_ITEM
         ),
         arrayOf(
-            KeyItemC(
-                center = KeyC(
-                    display = KeyDisplay.TextDisplay(" "),
-                    action = KeyAction.CommitText(" ")
-                ),
-                nextTapActions = arrayOf(
-                    KeyAction.ReplaceLastText(", ", trimCount = 1),
-                    KeyAction.ReplaceLastText(". "),
-                    KeyAction.ReplaceLastText("? "),
-                    KeyAction.ReplaceLastText("! "),
-                    KeyAction.ReplaceLastText(": ")
-                ),
-                backgroundColor = ColorVariant.SURFACE_VARIANT,
-                widthMultiplier = 3
-            ),
-            KeyItemC(
-                center = KeyC(
-                    display = KeyDisplay.IconDisplay(Icons.Outlined.KeyboardReturn),
-                    action = KeyAction.IMECompleteAction,
-                    size = FontSizeVariant.LARGE,
-                    color = ColorVariant.SECONDARY
-                ),
-                backgroundColor = ColorVariant.SURFACE_VARIANT
-            )
+            SPACEBAR_KEY_ITEM,
+            RETURN_KEY_ITEM
         )
     )
 )
@@ -362,15 +291,7 @@ val THUMBKEY_IT_V1_SHIFTED = KeyboardC(
                     )
                 )
             ),
-            KeyItemC(
-                center = KeyC(
-                    display = KeyDisplay.IconDisplay(Icons.Outlined.Settings),
-                    action = KeyAction.GotoSettings,
-                    size = FontSizeVariant.LARGE,
-                    color = ColorVariant.SECONDARY
-                ),
-                backgroundColor = ColorVariant.SURFACE_VARIANT
-            )
+            SETTINGS_KEY_ITEM
         ),
         arrayOf(
             KeyItemC(
@@ -452,15 +373,7 @@ val THUMBKEY_IT_V1_SHIFTED = KeyboardC(
                     )
                 )
             ),
-            KeyItemC(
-                center = KeyC(
-                    display = KeyDisplay.IconDisplay(Icons.Outlined.Numbers),
-                    action = KeyAction.ToggleNumericMode(true),
-                    size = FontSizeVariant.LARGE,
-                    color = ColorVariant.SECONDARY
-                ),
-                backgroundColor = ColorVariant.SURFACE_VARIANT
-            )
+            NUMERIC_KEY_ITEM
         ),
         arrayOf(
             KeyItemC(
@@ -541,61 +454,11 @@ val THUMBKEY_IT_V1_SHIFTED = KeyboardC(
                     )
                 )
             ),
-            KeyItemC(
-                center = KeyC(
-                    display = KeyDisplay.IconDisplay(Icons.Outlined.KeyboardBackspace),
-                    action = KeyAction.SendEvent(
-                        KeyEvent(
-                            KeyEvent.ACTION_DOWN,
-                            KeyEvent
-                                .KEYCODE_DEL
-                        )
-                    ),
-                    size = FontSizeVariant.LARGE,
-                    color = ColorVariant.SECONDARY
-                ),
-                swipes = mapOf(
-                    SwipeDirection.LEFT to KeyC(
-                        action = KeyAction.DeleteLastWord,
-                        display = null
-                    ),
-                    SwipeDirection.TOP_LEFT to KeyC(
-                        action = KeyAction.DeleteLastWord,
-                        display = null
-                    ),
-                    SwipeDirection.BOTTOM_LEFT to KeyC(
-                        action = KeyAction.DeleteLastWord,
-                        display = null
-                    )
-                ),
-                backgroundColor = ColorVariant.SURFACE_VARIANT
-            )
+            BACKSPACE_KEY_ITEM
         ),
         arrayOf(
-            KeyItemC(
-                center = KeyC(
-                    display = KeyDisplay.TextDisplay(" "),
-                    action = KeyAction.CommitText(" ")
-                ),
-                nextTapActions = arrayOf(
-                    KeyAction.ReplaceLastText(", ", trimCount = 1),
-                    KeyAction.ReplaceLastText(". "),
-                    KeyAction.ReplaceLastText("? "),
-                    KeyAction.ReplaceLastText("! "),
-                    KeyAction.ReplaceLastText(": ")
-                ),
-                backgroundColor = ColorVariant.SURFACE_VARIANT,
-                widthMultiplier = 3
-            ),
-            KeyItemC(
-                center = KeyC(
-                    display = KeyDisplay.IconDisplay(Icons.Outlined.KeyboardReturn),
-                    action = KeyAction.IMECompleteAction,
-                    size = FontSizeVariant.LARGE,
-                    color = ColorVariant.SECONDARY
-                ),
-                backgroundColor = ColorVariant.SURFACE_VARIANT
-            )
+            SPACEBAR_KEY_ITEM,
+            RETURN_KEY_ITEM
         )
     )
 )
