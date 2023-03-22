@@ -73,6 +73,26 @@ val SPACEBAR_KEY_ITEM =
             display = KeyDisplay.TextDisplay(" "),
             action = KeyAction.CommitText(" ")
         ),
+        swipes = mapOf(
+            SwipeDirection.LEFT to KeyC(
+                action = KeyAction.SendEvent(
+                    KeyEvent(
+                        KeyEvent.ACTION_DOWN,
+                        KeyEvent.KEYCODE_DPAD_LEFT
+                    )
+                ),
+                display = null
+            ),
+            SwipeDirection.RIGHT to KeyC(
+                action = KeyAction.SendEvent(
+                    KeyEvent(
+                        KeyEvent.ACTION_DOWN,
+                        KeyEvent.KEYCODE_DPAD_RIGHT
+                    )
+                ),
+                display = null
+            )
+        ),
         nextTapActions = arrayOf(
             KeyAction.ReplaceLastText(", ", trimCount = 1),
             KeyAction.ReplaceLastText(". "),
