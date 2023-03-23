@@ -31,6 +31,7 @@ import com.dessalines.thumbkey.IMEService
 import com.dessalines.thumbkey.MainActivity
 import com.dessalines.thumbkey.R
 import com.dessalines.thumbkey.keyboards.MESSAGEEASE_KEYBOARD_MODES
+import com.dessalines.thumbkey.keyboards.THUMBKEY_DE_V1_KEYBOARD_MODES
 import com.dessalines.thumbkey.keyboards.THUMBKEY_EN_V4_KEYBOARD_MODES
 import com.dessalines.thumbkey.keyboards.THUMBKEY_FI_V1_KEYBOARD_MODES
 import com.dessalines.thumbkey.keyboards.THUMBKEY_IT_V1_KEYBOARD_MODES
@@ -71,7 +72,8 @@ fun fontSizeVariantToFontSize(fontSizeVariant: FontSizeVariant, keySize: Dp): Te
 fun keyboardLayoutToModes(layout: KeyboardLayout): Map<KeyboardMode, KeyboardC> {
     return when (layout) {
         KeyboardLayout.ThumbKeyENv4 -> THUMBKEY_EN_V4_KEYBOARD_MODES
-        KeyboardLayout.ThumbKeyFIv4 -> THUMBKEY_FI_V1_KEYBOARD_MODES
+        KeyboardLayout.ThumbKeyDEv1 -> THUMBKEY_DE_V1_KEYBOARD_MODES
+        KeyboardLayout.ThumbKeyFIv1 -> THUMBKEY_FI_V1_KEYBOARD_MODES
         KeyboardLayout.ThumbKeyITv1 -> THUMBKEY_IT_V1_KEYBOARD_MODES
         KeyboardLayout.ThumbKeyPTv1 -> THUMBKEY_PT_V1_KEYBOARD_MODES
         KeyboardLayout.ThumbkeyRUv1 -> THUMBKEY_RU_V1_KEYBOARD_MODES
