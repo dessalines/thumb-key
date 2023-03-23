@@ -83,7 +83,7 @@ As of today, phone keyboards are in such an abysmal state of privacy, that there
 
 As a testament to the stunning lack of innovation on both desktop and phone keyboards, the _QWERTY_ layout from the 1880s is still the dominant layout, even on smartphones in the 21st century.
 
-One company named Exideas created a keyboard app called [MessageEase](https://www.exideas.com/ME/), which relied on the original large 9-key grid of old phones, and managed to acheive comparable fast typing speeds to other keyboards, without relying on big-data-powered word-prediction.
+One company named Exideas created a keyboard app called [MessageEase](https://www.exideas.com/ME/), which relied on the original large 9-key grid of old phones, and managed to achieve comparable fast typing speeds to other keyboards, without relying on big-data-powered word-prediction.
 
 [Much research went into MessageEase's design](https://www.exideas.com/ME/ICMI2003Paper.pdf), and many of its users can do > 50 words per minute.
 
