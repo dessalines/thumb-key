@@ -56,7 +56,7 @@ val THUMBKEY_DE_V2_MAIN = KeyboardC(
                         display = KeyDisplay.TextDisplay("l"),
                         action = KeyAction.CommitText("l")
                     ),
-                    SwipeDirection.BOTTOM_RIGHT to KeyC(
+                    SwipeDirection.RIGHT to KeyC(
                         display = KeyDisplay.TextDisplay("ä"),
                         action = KeyAction.CommitText("ä")
                     )
@@ -273,7 +273,7 @@ val THUMBKEY_DE_V2_SHIFTED = KeyboardC(
                         display = KeyDisplay.TextDisplay("L"),
                         action = KeyAction.CommitText("L")
                     ),
-                    SwipeDirection.BOTTOM_RIGHT to KeyC(
+                    SwipeDirection.RIGHT to KeyC(
                         display = KeyDisplay.TextDisplay("Ä"),
                         action = KeyAction.CommitText("Ä")
                     )
