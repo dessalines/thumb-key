@@ -179,8 +179,8 @@ val THUMBKEY_DE_V2_MAIN = KeyboardC(
                         color = ColorVariant.MUTED
                     ),
                     SwipeDirection.RIGHT to KeyC(
-                        display = KeyDisplay.TextDisplay("z"),
-                        action = KeyAction.CommitText("z")
+                        display = KeyDisplay.TextDisplay("y"),
+                        action = KeyAction.CommitText("y")
                     ),
                     SwipeDirection.BOTTOM_RIGHT to KeyC(
                         display = KeyDisplay.TextDisplay("-"),
@@ -396,8 +396,8 @@ val THUMBKEY_DE_V2_SHIFTED = KeyboardC(
                         color = ColorVariant.MUTED
                     ),
                     SwipeDirection.RIGHT to KeyC(
-                        display = KeyDisplay.TextDisplay("Z"),
-                        action = KeyAction.CommitText("Z")
+                        display = KeyDisplay.TextDisplay("Y"),
+                        action = KeyAction.CommitText("Y")
                     ),
                     SwipeDirection.BOTTOM_RIGHT to KeyC(
                         display = KeyDisplay.TextDisplay("-"),
