@@ -1,3 +1,22 @@
+# Thumb-Key 0.0.6-alpha (2023-03-24)
+
+## What's Changed
+
+- Adding german layout. Fixes #68 by @dessalines in https://github.com/dessalines/thumb-key/pull/69
+- Fix readme typo by @erjanmx in https://github.com/dessalines/thumb-key/pull/71
+- Adding woodpecker by @dessalines in https://github.com/dessalines/thumb-key/pull/74
+- Adding more punctuation to spacebar multi-tap. by @dessalines in https://github.com/dessalines/thumb-key/pull/77
+- Have settings tap go directly to look and feel. Fixes #70 by @dessalines in https://github.com/dessalines/thumb-key/pull/78
+- Update ThumbKeyDEv1.kt by @rickcrash in https://github.com/dessalines/thumb-key/pull/80
+- Fixing newline / autocorrect glitch. Fixes #79 by @dessalines in https://github.com/dessalines/thumb-key/pull/81
+
+## New Contributors
+
+- @erjanmx made their first contribution in https://github.com/dessalines/thumb-key/pull/71
+- @rickcrash made their first contribution in https://github.com/dessalines/thumb-key/pull/80
+
+**Full Changelog**: https://github.com/dessalines/thumb-key/compare/0.0.5...0.0.6
+
 # Thumb-Key 0.0.5-alpha (2023-03-22)
 
 ## What's Changed
