@@ -56,7 +56,7 @@ val THUMBKEY_DE_V2_MAIN = KeyboardC(
                         display = KeyDisplay.TextDisplay("l"),
                         action = KeyAction.CommitText("l")
                     ),
-                    SwipeDirection.BOTTOM_RIGHT to KeyC(
+                    SwipeDirection.RIGHT to KeyC(
                         display = KeyDisplay.TextDisplay("ä"),
                         action = KeyAction.CommitText("ä")
                     )
@@ -179,8 +179,8 @@ val THUMBKEY_DE_V2_MAIN = KeyboardC(
                         color = ColorVariant.MUTED
                     ),
                     SwipeDirection.RIGHT to KeyC(
-                        display = KeyDisplay.TextDisplay("z"),
-                        action = KeyAction.CommitText("z")
+                        display = KeyDisplay.TextDisplay("y"),
+                        action = KeyAction.CommitText("y")
                     ),
                     SwipeDirection.BOTTOM_RIGHT to KeyC(
                         display = KeyDisplay.TextDisplay("-"),
@@ -273,7 +273,7 @@ val THUMBKEY_DE_V2_SHIFTED = KeyboardC(
                         display = KeyDisplay.TextDisplay("L"),
                         action = KeyAction.CommitText("L")
                     ),
-                    SwipeDirection.BOTTOM_RIGHT to KeyC(
+                    SwipeDirection.RIGHT to KeyC(
                         display = KeyDisplay.TextDisplay("Ä"),
                         action = KeyAction.CommitText("Ä")
                     )
@@ -396,8 +396,8 @@ val THUMBKEY_DE_V2_SHIFTED = KeyboardC(
                         color = ColorVariant.MUTED
                     ),
                     SwipeDirection.RIGHT to KeyC(
-                        display = KeyDisplay.TextDisplay("Z"),
-                        action = KeyAction.CommitText("Z")
+                        display = KeyDisplay.TextDisplay("Y"),
+                        action = KeyAction.CommitText("Y")
                     ),
                     SwipeDirection.BOTTOM_RIGHT to KeyC(
                         display = KeyDisplay.TextDisplay("-"),
