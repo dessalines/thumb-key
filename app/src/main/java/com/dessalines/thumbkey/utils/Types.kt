@@ -82,7 +82,7 @@ enum class ThemeColor(private val stringId: Int) {
 
 enum class KeyboardLayout(val title: String) {
     ThumbKeyENv4("Thumb-Key English v4"),
-    ThumbKeyDEv1("Thumb-Key Deutsch v1"),
+    ThumbKeyDEv2("Thumb-Key Deutsch v2"),
     ThumbKeyFIv1("Thumb-Key suomi v1"),
     ThumbKeyITv1("Thumb-Key italiano v1"),
     ThumbKeyPTv1("Thumb-Key português v1"),
