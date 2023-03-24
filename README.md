@@ -1,6 +1,7 @@
 <div align="center">
 
 ![GitHub tag (latest SemVer)](https://img.shields.io/github/tag/dessalines/thumb-key.svg)
+[![status-badge](https://woodpecker.join-lemmy.org/api/badges/dessalines/thumb-key/status.svg)](https://woodpecker.join-lemmy.org/dessalines/thumb-key)
 [![GitHub issues](https://img.shields.io/github/issues-raw/dessalines/thumb-key.svg)](https://github.com/dessalines/thumb-key/issues)
 [![License](https://img.shields.io/github/license/dessalines/thumb-key.svg)](LICENSE)
 ![GitHub stars](https://img.shields.io/github/stars/dessalines/thumb-key?style=social)
