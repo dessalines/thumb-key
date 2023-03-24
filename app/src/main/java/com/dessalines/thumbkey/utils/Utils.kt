@@ -162,7 +162,6 @@ fun performKeyAction(
                 text.length
             )
 
-            // TODO  this broke
             if (autoCapitalize) {
                 autoCapitalize(
                     ime = ime,
@@ -186,7 +185,7 @@ fun performKeyAction(
             ime.currentInputConnection.deleteSurroundingText(action.trimCount, 0)
             ime.currentInputConnection.commitText(
                 text,
-                text.length
+                1
             )
             if (autoCapitalize) {
                 autoCapitalize(
@@ -268,7 +267,7 @@ private fun autoCapitalize(
             ime.currentInputConnection.deleteSurroundingText(2, 0)
             ime.currentInputConnection.commitText(
                 "I ",
-                2
+                1
             )
         }
 
