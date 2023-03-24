@@ -208,6 +208,7 @@ fun performKeyAction(
         KeyAction.GotoSettings -> {
             val mainActivityIntent = Intent(ctx, MainActivity::class.java)
             mainActivityIntent.flags = Intent.FLAG_ACTIVITY_NEW_TASK
+            mainActivityIntent.putExtra("startRoute", "lookAndFeel")
             ctx.startActivity(mainActivityIntent)
         }
         KeyAction.IMECompleteAction -> {
@@ -253,8 +254,7 @@ fun getKeyboardMode(ime: IMEService): KeyboardMode {
 
 fun getImeActionText(ime: IMEService): String? {
     val action = getImeActionCode(ime)
-    val text = ime.getTextForImeAction(action).toString()
-    return text
+    return ime.getTextForImeAction(action).toString()
 }
 
 private fun autoCapitalize(

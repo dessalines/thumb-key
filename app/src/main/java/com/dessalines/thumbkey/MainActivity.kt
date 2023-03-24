@@ -57,7 +57,7 @@ class MainActivity : AppCompatActivity() {
                     if (!thumbkeyEnabled) {
                         "setup"
                     } else {
-                        "settings"
+                        intent.extras?.getString("startRoute") ?: "settings"
                     }
                 )
             }
