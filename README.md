@@ -50,9 +50,9 @@ This project is a follow-up to the now unmaintained (and closed-source) [Message
 
 ## User Guide
 
-- Tap a key, or slide to type a letter.
+- Tap, or slide / swipe to type a letter.
 - Swipe up or down on `A` to capitalize. <img width=60px height=60px src="https://i.postimg.cc/Znt2Ft9G/thumbkey-1-1.png">
-- Double tap the space bar to type a comma, triple tap to type a period.
+- Double tap the space bar to type a comma, triple tap to type a period. More taps have more punctuation.
 - Slide left on the backspace key to delete whole words.
 - Slide left or right on the spacebar to move the cursor.
 - Press the `#` key to see a numeric keypad, and additional symbols.

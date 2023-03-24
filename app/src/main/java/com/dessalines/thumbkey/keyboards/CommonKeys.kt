@@ -98,7 +98,8 @@ val SPACEBAR_KEY_ITEM =
             KeyAction.ReplaceLastText(". "),
             KeyAction.ReplaceLastText("? "),
             KeyAction.ReplaceLastText("! "),
-            KeyAction.ReplaceLastText(": ")
+            KeyAction.ReplaceLastText(": "),
+            KeyAction.ReplaceLastText("; ")
         ),
         backgroundColor = ColorVariant.SURFACE_VARIANT,
         widthMultiplier = 3

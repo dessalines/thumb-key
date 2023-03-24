@@ -1,11 +1,7 @@
 package com.dessalines.thumbkey.keyboards
 
-import android.view.KeyEvent
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.outlined.Abc
-import androidx.compose.material.icons.outlined.KeyboardBackspace
-import androidx.compose.material.icons.outlined.KeyboardReturn
-import androidx.compose.material.icons.outlined.Settings
 import com.dessalines.thumbkey.utils.ColorVariant
 import com.dessalines.thumbkey.utils.FontSizeVariant
 import com.dessalines.thumbkey.utils.KeyAction
@@ -96,15 +92,7 @@ val NUMERIC_KEYBOARD = KeyboardC(
                     )
                 )
             ),
-            KeyItemC(
-                center = KeyC(
-                    display = KeyDisplay.IconDisplay(Icons.Outlined.Settings),
-                    action = KeyAction.GotoSettings,
-                    size = FontSizeVariant.LARGE,
-                    color = ColorVariant.PRIMARY
-                ),
-                backgroundColor = ColorVariant.SURFACE_VARIANT
-            )
+            SETTINGS_KEY_ITEM
         ),
         arrayOf(
             KeyItemC(
@@ -225,14 +213,18 @@ val NUMERIC_KEYBOARD = KeyboardC(
                         action = KeyAction.CommitText("'")
                     ),
                     SwipeDirection.BOTTOM_RIGHT to KeyC(
-                        display = KeyDisplay.TextDisplay("*"),
-                        action = KeyAction.CommitText("*")
+                        display = KeyDisplay.TextDisplay("-"),
+                        action = KeyAction.CommitText("-")
                     ),
                     SwipeDirection.BOTTOM to KeyC(
                         display = KeyDisplay.TextDisplay("."),
                         action = KeyAction.CommitText(".")
                     ),
                     SwipeDirection.BOTTOM_LEFT to KeyC(
+                        display = KeyDisplay.TextDisplay("*"),
+                        action = KeyAction.CommitText("*")
+                    ),
+                    SwipeDirection.LEFT to KeyC(
                         display = KeyDisplay.TextDisplay(","),
                         action = KeyAction.CommitText(",")
                     )
@@ -268,35 +260,7 @@ val NUMERIC_KEYBOARD = KeyboardC(
                     )
                 )
             ),
-            KeyItemC(
-                center = KeyC(
-                    display = KeyDisplay.IconDisplay(Icons.Outlined.KeyboardBackspace),
-                    action = KeyAction.SendEvent(
-                        KeyEvent(
-                            KeyEvent.ACTION_DOWN,
-                            KeyEvent
-                                .KEYCODE_DEL
-                        )
-                    ),
-                    size = FontSizeVariant.LARGE,
-                    color = ColorVariant.PRIMARY
-                ),
-                swipes = mapOf(
-                    SwipeDirection.LEFT to KeyC(
-                        action = KeyAction.DeleteLastWord,
-                        display = null
-                    ),
-                    SwipeDirection.TOP_LEFT to KeyC(
-                        action = KeyAction.DeleteLastWord,
-                        display = null
-                    ),
-                    SwipeDirection.BOTTOM_LEFT to KeyC(
-                        action = KeyAction.DeleteLastWord,
-                        display = null
-                    )
-                ),
-                backgroundColor = ColorVariant.SURFACE_VARIANT
-            )
+            BACKSPACE_KEY_ITEM
         ),
         arrayOf(
             KeyItemC(
@@ -322,15 +286,7 @@ val NUMERIC_KEYBOARD = KeyboardC(
                 ),
                 backgroundColor = ColorVariant.SURFACE_VARIANT
             ),
-            KeyItemC(
-                center = KeyC(
-                    display = KeyDisplay.IconDisplay(Icons.Outlined.KeyboardReturn),
-                    action = KeyAction.IMECompleteAction,
-                    size = FontSizeVariant.LARGE,
-                    color = ColorVariant.PRIMARY
-                ),
-                backgroundColor = ColorVariant.SURFACE_VARIANT
-            )
+            RETURN_KEY_ITEM
         )
     )
 )
