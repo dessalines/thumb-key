@@ -305,7 +305,7 @@ fun KeyText(key: KeyC, keySize: Dp) {
         is KeyDisplay.IconDisplay -> {
             Icon(
                 imageVector = display.icon,
-                contentDescription = "TODO",
+                contentDescription = display.icon.name,
                 tint = color
             )
         }

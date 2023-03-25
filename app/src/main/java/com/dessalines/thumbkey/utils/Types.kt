@@ -1,7 +1,10 @@
 package com.dessalines.thumbkey.utils
 
 import android.view.KeyEvent
+import androidx.compose.runtime.Composable
 import androidx.compose.ui.graphics.vector.ImageVector
+import androidx.compose.ui.res.stringResource
+import com.dessalines.thumbkey.R
 
 // Almost a 4x4 grid, but the bottom is mostly spacebar
 data class KeyboardC(
@@ -55,21 +58,32 @@ enum class FontSizeVariant {
     LARGE, SMALL
 }
 
-enum class ThemeMode {
-    System,
-    Light,
-    Dark
+enum class ThemeMode(private val stringId: Int) {
+    System(R.string.system),
+    Light(R.string.light),
+    Dark(R.string.dark);
+
+    @Composable
+    fun title(): String {
+        return stringResource(this.stringId)
+    }
 }
 
-enum class ThemeColor {
-    Dynamic,
-    Green,
-    Pink
+enum class ThemeColor(private val stringId: Int) {
+    Dynamic(R.string.dynamic),
+    Green(R.string.green),
+    Pink(R.string.pink);
+
+    @Composable
+    fun title(): String {
+        return stringResource(this.stringId)
+    }
 }
 
 enum class KeyboardLayout(val title: String) {
     ThumbKeyENv4("Thumb-Key English v4"),
-    ThumbKeyFIv4("Thumb-Key suomi v1"),
+    ThumbKeyDEv2("Thumb-Key Deutsch v2"),
+    ThumbKeyFIv1("Thumb-Key suomi v1"),
     ThumbKeyITv1("Thumb-Key italiano v1"),
     ThumbKeyPTv1("Thumb-Key português v1"),
     ThumbkeyRUv1("Thumb-Key русский v1"),
@@ -77,8 +91,13 @@ enum class KeyboardLayout(val title: String) {
     MessageEase("MessageEase")
 }
 
-enum class KeyboardPosition {
-    Center,
-    Right,
-    Left
+enum class KeyboardPosition(private val stringId: Int) {
+    Center(R.string.center),
+    Right(R.string.right),
+    Left(R.string.left);
+
+    @Composable
+    fun title(): String {
+        return stringResource(this.stringId)
+    }
 }

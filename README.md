@@ -1,6 +1,7 @@
 <div align="center">
 
 ![GitHub tag (latest SemVer)](https://img.shields.io/github/tag/dessalines/thumb-key.svg)
+[![status-badge](https://woodpecker.join-lemmy.org/api/badges/dessalines/thumb-key/status.svg)](https://woodpecker.join-lemmy.org/dessalines/thumb-key)
 [![GitHub issues](https://img.shields.io/github/issues-raw/dessalines/thumb-key.svg)](https://github.com/dessalines/thumb-key/issues)
 [![License](https://img.shields.io/github/license/dessalines/thumb-key.svg)](LICENSE)
 ![GitHub stars](https://img.shields.io/github/stars/dessalines/thumb-key?style=social)
@@ -50,10 +51,11 @@ This project is a follow-up to the now unmaintained (and closed-source) [Message
 
 ## User Guide
 
-- Tap a key, or slide to type a letter.
+- Tap, or slide / swipe to type a letter.
 - Swipe up or down on `A` to capitalize. <img width=60px height=60px src="https://i.postimg.cc/Znt2Ft9G/thumbkey-1-1.png">
-- Double tap the space bar to type a comma, triple tap to type a period.
+- Double tap the space bar to type a comma, triple tap to type a period. More taps have more punctuation.
 - Slide left on the backspace key to delete whole words.
+- Slide left or right on the spacebar to move the cursor.
 - Press the `#` key to see a numeric keypad, and additional symbols.
 - Press the Settings Gear key to configure Thumb-Key.
 - Practice typing, and check your words per minute, using [monkeytype.com](https://monkeytype.com)
@@ -82,7 +84,7 @@ As of today, phone keyboards are in such an abysmal state of privacy, that there
 
 As a testament to the stunning lack of innovation on both desktop and phone keyboards, the _QWERTY_ layout from the 1880s is still the dominant layout, even on smartphones in the 21st century.
 
-One company named Exideas created a keyboard app called [MessageEase](https://www.exideas.com/ME/), which relied on the original large 9-key grid of old phones, and managed to acheive comparable fast typing speeds to other keyboards, without relying on big-data-powered word-prediction.
+One company named Exideas created a keyboard app called [MessageEase](https://www.exideas.com/ME/), which relied on the original large 9-key grid of old phones, and managed to achieve comparable fast typing speeds to other keyboards, without relying on big-data-powered word-prediction.
 
 [Much research went into MessageEase's design](https://www.exideas.com/ME/ICMI2003Paper.pdf), and many of its users can do > 50 words per minute.
 
