@@ -112,8 +112,8 @@ val THUMBKEY_UK_V1_MAIN = KeyboardC(
                         action = KeyAction.CommitText("г")
                     ),
                     SwipeDirection.LEFT to KeyC(
-                        display = KeyDisplay.TextDisplay("г"),
-                        action = KeyAction.CommitText("г")
+                        display = KeyDisplay.TextDisplay("к"),
+                        action = KeyAction.CommitText("к")
                     )
                 )
             ),
@@ -341,8 +341,8 @@ val THUMBKEY_UK_V1_SHIFTED = KeyboardC(
                         action = KeyAction.CommitText("Г")
                     ),
                     SwipeDirection.LEFT to KeyC(
-                        display = KeyDisplay.TextDisplay("Г"),
-                        action = KeyAction.CommitText("Г")
+                        display = KeyDisplay.TextDisplay("К"),
+                        action = KeyAction.CommitText("К")
                     )
                 )
             ),
@@ -366,7 +366,7 @@ val THUMBKEY_UK_V1_SHIFTED = KeyboardC(
                         display = KeyDisplay.TextDisplay("Ф"),
                         action = KeyAction.CommitText("Ф")
                     ),
-                    SwipeDirection.TOP to KeyC(
+                    SwipeDirection.BOTTOM to KeyC(
                         display = KeyDisplay.IconDisplay(Icons.Outlined.ArrowDropDown),
                         action = KeyAction.ToggleShiftMode(false),
                         color = ColorVariant.MUTED

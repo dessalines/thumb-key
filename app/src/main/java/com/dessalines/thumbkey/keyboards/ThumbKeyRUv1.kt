@@ -366,7 +366,7 @@ val THUMBKEY_RU_V1_SHIFTED = KeyboardC(
                         display = KeyDisplay.TextDisplay("Ф"),
                         action = KeyAction.CommitText("Ф")
                     ),
-                    SwipeDirection.TOP to KeyC(
+                    SwipeDirection.BOTTOM to KeyC(
                         display = KeyDisplay.IconDisplay(Icons.Outlined.ArrowDropDown),
                         action = KeyAction.ToggleShiftMode(false),
                         color = ColorVariant.MUTED
