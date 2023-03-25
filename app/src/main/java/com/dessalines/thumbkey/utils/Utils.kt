@@ -30,6 +30,8 @@ import androidx.navigation.NavController
 import com.dessalines.thumbkey.IMEService
 import com.dessalines.thumbkey.MainActivity
 import com.dessalines.thumbkey.R
+import com.dessalines.thumbkey.db.AppSettings
+import com.dessalines.thumbkey.db.DEFAULT_AUTO_CAPITALIZE
 import com.dessalines.thumbkey.keyboards.MESSAGEEASE_KEYBOARD_MODES
 import com.dessalines.thumbkey.keyboards.THUMBKEY_DE_V2_KEYBOARD_MODES
 import com.dessalines.thumbkey.keyboards.THUMBKEY_EN_V4_KEYBOARD_MODES
@@ -241,13 +243,17 @@ fun getImeActionCode(ime: IMEService): Int {
 /**
  * Returns the correct keyboard mode
  */
-fun getKeyboardMode(ime: IMEService): KeyboardMode {
+fun getKeyboardMode(ime: IMEService): (AppSettings?) -> KeyboardMode {
     val inputType = ime.currentInputEditorInfo.inputType and (InputType.TYPE_MASK_CLASS)
 
-    return if (arrayOf(InputType.TYPE_CLASS_NUMBER, InputType.TYPE_CLASS_PHONE).contains(inputType)) {
-        KeyboardMode.NUMERIC
-    } else {
-        KeyboardMode.SHIFTED
+    return { settings ->
+        if (arrayOf(InputType.TYPE_CLASS_NUMBER, InputType.TYPE_CLASS_PHONE).contains(inputType)) {
+            KeyboardMode.NUMERIC
+        } else if ((settings?.autoCapitalize ?: DEFAULT_AUTO_CAPITALIZE).toBool()) {
+            KeyboardMode.SHIFTED
+        } else {
+            KeyboardMode.MAIN
+        }
     }
 }
 

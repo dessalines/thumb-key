@@ -15,7 +15,7 @@ import com.dessalines.thumbkey.utils.KeyboardMode
 class ComposeKeyboardView(
     context: Context,
     private val liveSettings: LiveData<AppSettings>,
-    private val startMode: KeyboardMode
+    private val startMode: (AppSettings) -> KeyboardMode
 ) :
     AbstractComposeView
     (context) {
@@ -27,7 +27,7 @@ class ComposeKeyboardView(
         ThumbkeyTheme(
             settings = settings
         ) {
-            KeyboardScreen(settings, startMode)
+            KeyboardScreen(settings, startMode(settings as AppSettings))
         }
     }
 }
