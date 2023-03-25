@@ -1,10 +1,8 @@
 package com.dessalines.thumbkey.ui.components.settings.lookandfeel
 
 import android.util.Log
-import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxWidth
-import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.imePadding
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.rememberScrollState
@@ -13,7 +11,6 @@ import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.outlined.*
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.Icon
-import androidx.compose.material3.ListItem
 import androidx.compose.material3.OutlinedTextField
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.SnackbarHost
@@ -34,6 +31,7 @@ import com.alorma.compose.settings.storage.base.rememberFloatSettingState
 import com.alorma.compose.settings.storage.base.rememberIntSettingState
 import com.alorma.compose.settings.ui.SettingsCheckbox
 import com.alorma.compose.settings.ui.SettingsList
+import com.alorma.compose.settings.ui.SettingsMenuLink
 import com.alorma.compose.settings.ui.SettingsSlider
 import com.dessalines.thumbkey.R
 import com.dessalines.thumbkey.db.AppSettings
@@ -132,7 +130,8 @@ fun LookAndFeelActivity(
                     title = {
                         Text(stringResource(R.string.layout))
                     },
-                    action = {
+                    onItemSelected = { i, _ ->
+                        keyboardLayoutState.value = i
                         updateAppSettings(
                             appSettingsViewModel,
                             keySizeState,
@@ -162,7 +161,8 @@ fun LookAndFeelActivity(
                     title = {
                         Text(stringResource(R.string.theme))
                     },
-                    action = {
+                    onItemSelected = { i, _ ->
+                        themeState.value = i
                         updateAppSettings(
                             appSettingsViewModel,
                             keySizeState,
@@ -192,7 +192,8 @@ fun LookAndFeelActivity(
                     title = {
                         Text(stringResource(R.string.theme_color))
                     },
-                    action = {
+                    onItemSelected = { i, _ ->
+                        themeColorState.value = i
                         updateAppSettings(
                             appSettingsViewModel,
                             keySizeState,
@@ -222,7 +223,8 @@ fun LookAndFeelActivity(
                     title = {
                         Text(stringResource(R.string.position))
                     },
-                    action = {
+                    onItemSelected = { i, _ ->
+                        positionState.value = i
                         updateAppSettings(
                             appSettingsViewModel,
                             keySizeState,
@@ -487,33 +489,31 @@ fun LookAndFeelActivity(
                         )
                     }
                 )
-                ListItem(
-                    modifier = Modifier
-                        .height(56.dp)
-                        .clickable {
-                            resetAppSettingsToDefault(
-                                appSettingsViewModel,
-                                keySizeState,
-                                pushupSizeState,
-                                animationSpeedState,
-                                animationHelperSpeedState,
-                                minSwipeLengthState,
-                                positionState,
-                                autoCapitalizeState,
-                                vibrateOnTapState,
-                                soundOnTapState,
-                                keyboardLayoutState,
-                                themeState,
-                                themeColorState
-                            )
-                        },
-                    headlineText = {
+                SettingsMenuLink(
+                    title = {
                         Text(stringResource(R.string.reset_to_defaults))
                     },
-                    leadingContent = {
+                    icon = {
                         Icon(
                             imageVector = Icons.Outlined.ResetTv,
                             contentDescription = stringResource(R.string.reset_to_defaults)
+                        )
+                    },
+                    onClick = {
+                        resetAppSettingsToDefault(
+                            appSettingsViewModel,
+                            keySizeState,
+                            pushupSizeState,
+                            animationSpeedState,
+                            animationHelperSpeedState,
+                            minSwipeLengthState,
+                            positionState,
+                            autoCapitalizeState,
+                            vibrateOnTapState,
+                            soundOnTapState,
+                            keyboardLayoutState,
+                            themeState,
+                            themeColorState
                         )
                     }
                 )
