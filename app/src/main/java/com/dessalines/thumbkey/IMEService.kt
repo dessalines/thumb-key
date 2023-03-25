@@ -25,13 +25,13 @@ class IMEService :
         val startMode = getKeyboardMode(this)
         val view = ComposeKeyboardView(this, liveSettings, startMode)
         window?.window?.decorView?.let { decorView ->
-            ViewTreeLifecycleOwner.set(decorView, this)
-            ViewTreeViewModelStoreOwner.set(decorView, this)
+            decorView.setViewTreeLifecycleOwner(this)
+            decorView.setViewTreeViewModelStoreOwner(this)
             decorView.setViewTreeSavedStateRegistryOwner(this)
         }
         view.let {
-            ViewTreeLifecycleOwner.set(it, this)
-            ViewTreeViewModelStoreOwner.set(it, this)
+            view.setViewTreeLifecycleOwner(this)
+            view.setViewTreeViewModelStoreOwner(this)
             view.setViewTreeSavedStateRegistryOwner(this)
         }
         Log.d(TAG, "Thumbkey initialized to mode: $startMode")
@@ -54,9 +54,7 @@ class IMEService :
     private fun handleLifecycleEvent(event: Lifecycle.Event) =
         lifecycleRegistry.handleLifecycleEvent(event)
 
-    override fun getLifecycle(): Lifecycle {
-        return lifecycleRegistry
-    }
+    override val lifecycle = lifecycleRegistry
 
     override fun onCreate() {
         super.onCreate()
@@ -70,9 +68,7 @@ class IMEService :
     }
 
     // ViewModelStore Methods
-    private val store = ViewModelStore()
-
-    override fun getViewModelStore(): ViewModelStore = store
+    override val viewModelStore = ViewModelStore()
 
     // SaveStateRegistry Methods
 
