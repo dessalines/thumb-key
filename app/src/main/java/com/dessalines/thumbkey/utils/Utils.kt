@@ -192,7 +192,7 @@ fun performKeyAction(
             if (autoCapitalize) {
                 autoCapitalize(
                     ime = ime,
-                    onAutoCapitalize = onToggleShiftMode
+                    onAutoCapitalize = onAutoCapitalize
                 )
             }
         }
