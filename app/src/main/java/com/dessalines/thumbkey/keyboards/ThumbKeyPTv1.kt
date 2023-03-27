@@ -3,6 +3,7 @@ package com.dessalines.thumbkey.keyboards
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.outlined.ArrowDropDown
 import androidx.compose.material.icons.outlined.ArrowDropUp
+import androidx.compose.material.icons.outlined.KeyboardCapslock
 import com.dessalines.thumbkey.utils.ColorVariant
 import com.dessalines.thumbkey.utils.FontSizeVariant
 import com.dessalines.thumbkey.utils.KeyAction
@@ -159,7 +160,7 @@ val THUMBKEY_PT_V1_MAIN = KeyboardC(
                         action = KeyAction.CommitText("é"),
                         color = ColorVariant.MUTED
                     ),
-                    SwipeDirection.BOTTOM to KeyC(
+                    SwipeDirection.RIGHT to KeyC(
                         display = KeyDisplay.TextDisplay("ê"),
                         action = KeyAction.CommitText("ê"),
                         color = ColorVariant.MUTED
@@ -410,7 +411,7 @@ val THUMBKEY_PT_V1_SHIFTED = KeyboardC(
                         display = KeyDisplay.TextDisplay("T"),
                         action = KeyAction.CommitText("T")
                     ),
-                    SwipeDirection.TOP to KeyC(
+                    SwipeDirection.RIGHT to KeyC(
                         display = KeyDisplay.TextDisplay("Ê"),
                         action = KeyAction.CommitText("Ê"),
                         color = ColorVariant.MUTED
@@ -423,6 +424,11 @@ val THUMBKEY_PT_V1_SHIFTED = KeyboardC(
                     SwipeDirection.BOTTOM to KeyC(
                         display = KeyDisplay.IconDisplay(Icons.Outlined.ArrowDropDown),
                         action = KeyAction.ToggleShiftMode(false),
+                        color = ColorVariant.MUTED
+                    ),
+                    SwipeDirection.TOP to KeyC(
+                        display = KeyDisplay.IconDisplay(Icons.Outlined.KeyboardCapslock),
+                        action = KeyAction.ToggleCapsLock,
                         color = ColorVariant.MUTED
                     )
                 )

@@ -151,7 +151,9 @@ fun performKeyAction(
     autoCapitalize: Boolean,
     ctx: IMEService,
     onToggleShiftMode: (enable: Boolean) -> Unit,
-    onToggleNumericMode: (enable: Boolean) -> Unit
+    onToggleNumericMode: (enable: Boolean) -> Unit,
+    onToggleCapsLock: () -> Unit,
+    onAutoCapitalize: (enable: Boolean) -> Unit
 ) {
     when (action) {
         is KeyAction.CommitText -> {
@@ -165,7 +167,7 @@ fun performKeyAction(
             if (autoCapitalize) {
                 autoCapitalize(
                     ime = ime,
-                    onToggleShiftMode = onToggleShiftMode
+                    onAutoCapitalize = onAutoCapitalize
                 )
             }
         }
@@ -190,7 +192,7 @@ fun performKeyAction(
             if (autoCapitalize) {
                 autoCapitalize(
                     ime = ime,
-                    onToggleShiftMode = onToggleShiftMode
+                    onAutoCapitalize = onToggleShiftMode
                 )
             }
         }
@@ -225,6 +227,7 @@ fun performKeyAction(
                 ime.currentInputConnection.sendKeyEvent(KeyEvent(KeyEvent.ACTION_DOWN, KeyEvent.KEYCODE_ENTER))
             }
         }
+        KeyAction.ToggleCapsLock -> onToggleCapsLock()
     }
 }
 
@@ -241,13 +244,17 @@ fun getImeActionCode(ime: IMEService): Int {
 /**
  * Returns the correct keyboard mode
  */
-fun getKeyboardMode(ime: IMEService): KeyboardMode {
+fun getKeyboardMode(ime: IMEService, autoCapitalize: Boolean): KeyboardMode {
     val inputType = ime.currentInputEditorInfo.inputType and (InputType.TYPE_MASK_CLASS)
 
     return if (arrayOf(InputType.TYPE_CLASS_NUMBER, InputType.TYPE_CLASS_PHONE).contains(inputType)) {
         KeyboardMode.NUMERIC
     } else {
-        KeyboardMode.SHIFTED
+        if (autoCapitalize) {
+            KeyboardMode.SHIFTED
+        } else {
+            KeyboardMode.MAIN
+        }
     }
 }
 
@@ -258,7 +265,7 @@ fun getImeActionText(ime: IMEService): String? {
 
 private fun autoCapitalize(
     ime: IMEService,
-    onToggleShiftMode: (enable: Boolean) -> Unit
+    onAutoCapitalize: (enable: Boolean) -> Unit
 ) {
     // Capitalizes 'i'
     val textBefore = ime.currentInputConnection.getTextBeforeCursor(3, 0)
@@ -274,9 +281,9 @@ private fun autoCapitalize(
         // Toggles shift after punctuation and space
         val beforeSpace = textBefore.substring(1)
         if (arrayOf(". ", "? ", "! ").contains(beforeSpace)) {
-            onToggleShiftMode(true)
+            onAutoCapitalize(true)
         } else {
-            onToggleShiftMode(false)
+            onAutoCapitalize(false)
         }
     }
 }

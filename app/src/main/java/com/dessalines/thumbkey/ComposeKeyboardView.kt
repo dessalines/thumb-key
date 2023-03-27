@@ -9,13 +9,13 @@ import androidx.lifecycle.LiveData
 import com.dessalines.thumbkey.db.AppSettings
 import com.dessalines.thumbkey.ui.components.keyboard.KeyboardScreen
 import com.dessalines.thumbkey.ui.theme.ThumbkeyTheme
-import com.dessalines.thumbkey.utils.KeyboardMode
+import com.dessalines.thumbkey.utils.getKeyboardMode
+import com.dessalines.thumbkey.utils.toBool
 
 @SuppressLint("ViewConstructor")
 class ComposeKeyboardView(
     context: Context,
-    private val liveSettings: LiveData<AppSettings>,
-    private val startMode: KeyboardMode
+    private val liveSettings: LiveData<AppSettings>
 ) :
     AbstractComposeView
     (context) {
@@ -23,6 +23,11 @@ class ComposeKeyboardView(
     @Composable
     override fun Content() {
         val settings = liveSettings.observeAsState().value
+
+        val startMode = getKeyboardMode(
+            ime = context as IMEService,
+            autoCapitalize = settings?.autoCapitalize?.toBool() ?: false
+        )
 
         ThumbkeyTheme(
             settings = settings

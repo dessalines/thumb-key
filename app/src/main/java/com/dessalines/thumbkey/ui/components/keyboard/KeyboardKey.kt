@@ -61,7 +61,9 @@ fun KeyboardKey(
     keySize: Int,
     minSwipeLength: Int,
     onToggleShiftMode: (enable: Boolean) -> Unit,
-    onToggleNumericMode: (enable: Boolean) -> Unit
+    onToggleNumericMode: (enable: Boolean) -> Unit,
+    onToggleCapsLock: () -> Unit,
+    onAutoCapitalize: (enable: Boolean) -> Unit
 ) {
     // Necessary for swipe settings to get updated correctly
     val id = key.toString() + animationHelperSpeed + animationSpeed + autoCapitalize + vibrateOnTap + soundOnTap + keySize + minSwipeLength
@@ -133,7 +135,9 @@ fun KeyboardKey(
                     ctx = ctx,
                     autoCapitalize = autoCapitalize,
                     onToggleShiftMode = onToggleShiftMode,
-                    onToggleNumericMode = onToggleNumericMode
+                    onToggleNumericMode = onToggleNumericMode,
+                    onToggleCapsLock = onToggleCapsLock,
+                    onAutoCapitalize = onAutoCapitalize
                 )
                 doneKeyAction(scope, action, isDragged, releasedKey, animationHelperSpeed)
             }
@@ -159,7 +163,9 @@ fun KeyboardKey(
                             ctx = ctx,
                             autoCapitalize = autoCapitalize,
                             onToggleShiftMode = onToggleShiftMode,
-                            onToggleNumericMode = onToggleNumericMode
+                            onToggleNumericMode = onToggleNumericMode,
+                            onToggleCapsLock = onToggleCapsLock,
+                            onAutoCapitalize = onAutoCapitalize
                         )
                         lastAction.value = action
 

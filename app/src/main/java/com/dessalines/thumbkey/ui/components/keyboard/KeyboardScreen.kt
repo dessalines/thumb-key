@@ -39,6 +39,10 @@ fun KeyboardScreen(
         mutableStateOf(startMode)
     }
 
+    var capsLock by remember {
+        mutableStateOf(false)
+    }
+
     // TODO get rid of this crap
     val lastAction = remember { mutableStateOf<KeyAction?>(null) }
 
@@ -89,19 +93,31 @@ fun KeyboardScreen(
                                     ?: DEFAULT_ANIMATION_HELPER_SPEED,
                                 minSwipeLength = settings?.minSwipeLength ?: DEFAULT_MIN_SWIPE_LENGTH,
                                 onToggleShiftMode = { enable ->
-                                    if (mode !== KeyboardMode.NUMERIC) {
-                                        mode = if (enable) {
-                                            KeyboardMode.SHIFTED
-                                        } else {
-                                            KeyboardMode.MAIN
-                                        }
+                                    mode = if (enable) {
+                                        KeyboardMode.SHIFTED
+                                    } else {
+                                        capsLock = false
+                                        KeyboardMode.MAIN
                                     }
                                 },
-                                onToggleNumericMode = { numeric ->
-                                    mode = if (numeric) {
+                                onToggleNumericMode = { enable ->
+                                    mode = if (enable) {
                                         KeyboardMode.NUMERIC
                                     } else {
+                                        capsLock = false
                                         KeyboardMode.MAIN
+                                    }
+                                },
+                                onToggleCapsLock = {
+                                    capsLock = !capsLock
+                                },
+                                onAutoCapitalize = { enable ->
+                                    if (mode !== KeyboardMode.NUMERIC) {
+                                        if (enable) {
+                                            mode = KeyboardMode.SHIFTED
+                                        } else if (!capsLock) {
+                                            mode = KeyboardMode.MAIN
+                                        }
                                     }
                                 }
                             )

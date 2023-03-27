@@ -1,7 +1,6 @@
 package com.dessalines.thumbkey
 
 import android.inputmethodservice.InputMethodService
-import android.util.Log
 import android.view.View
 import android.view.inputmethod.EditorInfo
 import androidx.lifecycle.*
@@ -9,8 +8,6 @@ import androidx.savedstate.SavedStateRegistry
 import androidx.savedstate.SavedStateRegistryController
 import androidx.savedstate.SavedStateRegistryOwner
 import androidx.savedstate.setViewTreeSavedStateRegistryOwner
-import com.dessalines.thumbkey.utils.TAG
-import com.dessalines.thumbkey.utils.getKeyboardMode
 
 class IMEService :
     InputMethodService(),
@@ -22,8 +19,7 @@ class IMEService :
         val liveSettings = (application as ThumbkeyApplication).appSettingsRepository
             .appSettings
 
-        val startMode = getKeyboardMode(this)
-        val view = ComposeKeyboardView(this, liveSettings, startMode)
+        val view = ComposeKeyboardView(this, liveSettings)
         window?.window?.decorView?.let { decorView ->
             decorView.setViewTreeLifecycleOwner(this)
             decorView.setViewTreeViewModelStoreOwner(this)
@@ -34,7 +30,6 @@ class IMEService :
             view.setViewTreeViewModelStoreOwner(this)
             view.setViewTreeSavedStateRegistryOwner(this)
         }
-        Log.d(TAG, "Thumbkey initialized to mode: $startMode")
         return view
     }
 
