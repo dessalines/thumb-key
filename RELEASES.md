@@ -1,3 +1,19 @@
+# Thumb-Key 0.0.7-alpha (2023-03-27)
+
+## What's Changed
+
+- Fixed double Z and Position of "Ä" by @rickcrash in https://github.com/dessalines/thumb-key/pull/83
+- Various fixes to Russian and Ukrainian layouts by @DobriniaMerk in https://github.com/dessalines/thumb-key/pull/87
+- Upgrading deps. by @dessalines in https://github.com/dessalines/thumb-key/pull/89
+- Rename to match versioncode by @licaon-kter in https://github.com/dessalines/thumb-key/pull/92
+- Adding a caps lock mode. Autocapitalize off starts in lowercase. by @dessalines in https://github.com/dessalines/thumb-key/pull/93
+
+## New Contributors
+
+- @licaon-kter made their first contribution in https://github.com/dessalines/thumb-key/pull/92
+
+**Full Changelog**: https://github.com/dessalines/thumb-key/compare/0.0.6...0.0.7
+
 # Thumb-Key 0.0.6-alpha (2023-03-24)
 
 ## What's Changed
