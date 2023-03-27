@@ -40,6 +40,7 @@ sealed class KeyAction {
     class ToggleNumericMode(val enable: Boolean) : KeyAction()
     object GotoSettings : KeyAction()
     object IMECompleteAction : KeyAction()
+    object ToggleCapsLock : KeyAction()
 }
 
 enum class KeyboardMode {
