@@ -68,13 +68,13 @@ val THUMBKEY_PT_V1_MAIN = KeyboardC(
                         color = ColorVariant.MUTED
                     ),
                     SwipeDirection.RIGHT to KeyC(
-                        display = KeyDisplay.TextDisplay("õ"),
-                        action = KeyAction.CommitText("õ"),
+                        display = KeyDisplay.TextDisplay("ô"),
+                        action = KeyAction.CommitText("ô"),
                         color = ColorVariant.MUTED
                     ),
                     SwipeDirection.BOTTOM to KeyC(
-                        display = KeyDisplay.TextDisplay("ô"),
-                        action = KeyAction.CommitText("ô"),
+                        display = KeyDisplay.TextDisplay("õ"),
+                        action = KeyAction.CommitText("õ"),
                         color = ColorVariant.MUTED
                     )
                 )
@@ -250,8 +250,8 @@ val THUMBKEY_PT_V1_MAIN = KeyboardC(
                         color = ColorVariant.MUTED
                     ),
                     SwipeDirection.RIGHT to KeyC(
-                        display = KeyDisplay.TextDisplay("ã"),
-                        action = KeyAction.CommitText("ã"),
+                        display = KeyDisplay.TextDisplay("â"),
+                        action = KeyAction.CommitText("â"),
                         color = ColorVariant.MUTED
                     ),
                     SwipeDirection.BOTTOM_RIGHT to KeyC(
@@ -260,8 +260,8 @@ val THUMBKEY_PT_V1_MAIN = KeyboardC(
                         color = ColorVariant.MUTED
                     ),
                     SwipeDirection.BOTTOM to KeyC(
-                        display = KeyDisplay.TextDisplay("â"),
-                        action = KeyAction.CommitText("â"),
+                        display = KeyDisplay.TextDisplay("ã"),
+                        action = KeyAction.CommitText("ã"),
                         color = ColorVariant.MUTED
                     )
                 )
@@ -329,13 +329,13 @@ val THUMBKEY_PT_V1_SHIFTED = KeyboardC(
                         color = ColorVariant.MUTED
                     ),
                     SwipeDirection.RIGHT to KeyC(
-                        display = KeyDisplay.TextDisplay("Õ"),
-                        action = KeyAction.CommitText("Õ"),
+                        display = KeyDisplay.TextDisplay("Ô"),
+                        action = KeyAction.CommitText("Ô"),
                         color = ColorVariant.MUTED
                     ),
                     SwipeDirection.BOTTOM to KeyC(
-                        display = KeyDisplay.TextDisplay("Ô"),
-                        action = KeyAction.CommitText("Ô"),
+                        display = KeyDisplay.TextDisplay("Õ"),
+                        action = KeyAction.CommitText("Õ"),
                         color = ColorVariant.MUTED
                     )
                 )
@@ -516,8 +516,8 @@ val THUMBKEY_PT_V1_SHIFTED = KeyboardC(
                         color = ColorVariant.MUTED
                     ),
                     SwipeDirection.RIGHT to KeyC(
-                        display = KeyDisplay.TextDisplay("Ã"),
-                        action = KeyAction.CommitText("Ã"),
+                        display = KeyDisplay.TextDisplay("Â"),
+                        action = KeyAction.CommitText("Â"),
                         color = ColorVariant.MUTED
                     ),
                     SwipeDirection.BOTTOM_RIGHT to KeyC(
@@ -526,8 +526,8 @@ val THUMBKEY_PT_V1_SHIFTED = KeyboardC(
                         color = ColorVariant.MUTED
                     ),
                     SwipeDirection.BOTTOM to KeyC(
-                        display = KeyDisplay.TextDisplay("Â"),
-                        action = KeyAction.CommitText("Â"),
+                        display = KeyDisplay.TextDisplay("Ã"),
+                        action = KeyAction.CommitText("Ã"),
                         color = ColorVariant.MUTED
                     )
                 )
