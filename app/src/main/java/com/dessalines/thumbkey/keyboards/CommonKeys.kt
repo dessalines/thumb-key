@@ -2,9 +2,11 @@ package com.dessalines.thumbkey.keyboards
 
 import android.view.KeyEvent
 import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.outlined.ContentPaste
 import androidx.compose.material.icons.outlined.KeyboardBackspace
 import androidx.compose.material.icons.outlined.KeyboardReturn
 import androidx.compose.material.icons.outlined.Numbers
+import androidx.compose.material.icons.outlined.SelectAll
 import androidx.compose.material.icons.outlined.Settings
 import com.dessalines.thumbkey.utils.ColorVariant
 import com.dessalines.thumbkey.utils.FontSizeVariant
@@ -32,6 +34,18 @@ val NUMERIC_KEY_ITEM =
             action = KeyAction.ToggleNumericMode(true),
             size = FontSizeVariant.LARGE,
             color = ColorVariant.SECONDARY
+        ),
+        swipes = mapOf(
+            SwipeDirection.TOP to KeyC(
+                display = KeyDisplay.IconDisplay(Icons.Outlined.SelectAll),
+                action = KeyAction.SelectAndCopyAll,
+                color = ColorVariant.MUTED
+            ),
+            SwipeDirection.BOTTOM to KeyC(
+                display = KeyDisplay.IconDisplay(Icons.Outlined.ContentPaste),
+                action = KeyAction.Paste,
+                color = ColorVariant.MUTED
+            )
         ),
         backgroundColor = ColorVariant.SURFACE_VARIANT
     )

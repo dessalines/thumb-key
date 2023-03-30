@@ -3,10 +3,12 @@ package com.dessalines.thumbkey.utils
 import android.content.Context
 import android.content.Intent
 import android.net.Uri
+import android.provider.Settings.System.getString
 import android.text.InputType
 import android.util.Log
 import android.view.KeyEvent
 import android.view.inputmethod.EditorInfo
+import android.widget.Toast
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.outlined.ArrowBack
 import androidx.compose.material3.ExperimentalMaterial3Api
@@ -22,7 +24,6 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.Dp
-import androidx.compose.ui.unit.ExperimentalUnitApi
 import androidx.compose.ui.unit.TextUnit
 import androidx.compose.ui.unit.TextUnitType
 import androidx.core.text.trimmedLength
@@ -61,7 +62,6 @@ fun colorVariantToColor(colorVariant: ColorVariant): Color {
     }
 }
 
-@OptIn(ExperimentalUnitApi::class)
 fun fontSizeVariantToFontSize(fontSizeVariant: FontSizeVariant, keySize: Dp): TextUnit {
     val divFactor = when (fontSizeVariant) {
         FontSizeVariant.LARGE -> 2.5f
@@ -151,7 +151,6 @@ fun performKeyAction(
     action: KeyAction,
     ime: IMEService,
     autoCapitalize: Boolean,
-    ctx: IMEService,
     onToggleShiftMode: (enable: Boolean) -> Unit,
     onToggleNumericMode: (enable: Boolean) -> Unit,
     onToggleCapsLock: () -> Unit,
@@ -209,10 +208,10 @@ fun performKeyAction(
             onToggleNumericMode(enable)
         }
         KeyAction.GotoSettings -> {
-            val mainActivityIntent = Intent(ctx, MainActivity::class.java)
+            val mainActivityIntent = Intent(ime, MainActivity::class.java)
             mainActivityIntent.flags = Intent.FLAG_ACTIVITY_NEW_TASK
             mainActivityIntent.putExtra("startRoute", "lookAndFeel")
-            ctx.startActivity(mainActivityIntent)
+            ime.startActivity(mainActivityIntent)
         }
         KeyAction.IMECompleteAction -> {
             val imeAction = getImeActionCode(ime)
@@ -230,6 +229,22 @@ fun performKeyAction(
             }
         }
         KeyAction.ToggleCapsLock -> onToggleCapsLock()
+        KeyAction.SelectAndCopyAll -> {
+            // Check here for the action #s:
+            // https://developer.android.com/reference/android/R.id
+
+            // Select all
+            ime.currentInputConnection.performContextMenuAction(16908319)
+
+            // Copy all
+            ime.currentInputConnection.performContextMenuAction(16908321)
+
+            val copyAllStr = ime.getString(R.string.copy_all)
+            Toast.makeText(ime, copyAllStr, Toast.LENGTH_SHORT).show()
+        }
+        KeyAction.Paste -> {
+            ime.currentInputConnection.performContextMenuAction(16908322)
+        }
     }
 }
 
@@ -260,7 +275,7 @@ fun getKeyboardMode(ime: IMEService, autoCapitalize: Boolean): KeyboardMode {
     }
 }
 
-fun getImeActionText(ime: IMEService): String? {
+fun getImeActionText(ime: IMEService): String {
     val action = getImeActionCode(ime)
     return ime.getTextForImeAction(action).toString()
 }

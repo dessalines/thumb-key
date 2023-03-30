@@ -14,6 +14,7 @@ import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
 import androidx.compose.material3.Icon
 import androidx.compose.material3.MaterialTheme
@@ -132,7 +133,6 @@ fun KeyboardKey(
                 performKeyAction(
                     action = action,
                     ime = ime,
-                    ctx = ctx,
                     autoCapitalize = autoCapitalize,
                     onToggleShiftMode = onToggleShiftMode,
                     onToggleNumericMode = onToggleNumericMode,
@@ -160,7 +160,6 @@ fun KeyboardKey(
                         performKeyAction(
                             action = action,
                             ime = ime,
-                            ctx = ctx,
                             autoCapitalize = autoCapitalize,
                             onToggleShiftMode = onToggleShiftMode,
                             onToggleNumericMode = onToggleNumericMode,
@@ -312,7 +311,8 @@ fun KeyText(key: KeyC, keySize: Dp) {
             Icon(
                 imageVector = display.icon,
                 contentDescription = display.icon.name,
-                tint = color
+                tint = color,
+                modifier = Modifier.size(fontSize.value.dp)
             )
         }
         is KeyDisplay.TextDisplay -> {
