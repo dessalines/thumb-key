@@ -68,19 +68,19 @@ dependencies {
     implementation 'com.github.alorma:compose-settings-ui-m3:0.25.0'
 
     // To use Kotlin annotation processing tool
-    ksp "androidx.room:room-compiler:2.5.0"
+    ksp "androidx.room:room-compiler:2.5.1"
 
-    implementation "androidx.room:room-runtime:2.5.0"
-    annotationProcessor "androidx.room:room-compiler:2.5.0"
+    implementation "androidx.room:room-runtime:2.5.1"
+    annotationProcessor "androidx.room:room-compiler:2.5.1"
 
     // optional - Kotlin Extensions and Coroutines support for Room
-    implementation("androidx.room:room-ktx:2.5.0")
+    implementation("androidx.room:room-ktx:2.5.1")
 
     // optional - Test helpers
-    testImplementation "androidx.room:room-testing:2.5.0"
+    testImplementation "androidx.room:room-testing:2.5.1"
 
     // optional - Paging 3 Integration
-    implementation "androidx.room:room-paging:2.5.0"
+    implementation "androidx.room:room-paging:2.5.1"
 
     // LiveData
     implementation "androidx.compose.runtime:runtime-livedata:1.4.0"
