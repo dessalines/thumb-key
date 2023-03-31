@@ -1,3 +1,21 @@
+# Thumb-Key 0.0.8-alpha (2023-03-31)
+
+## What's Changed
+
+- fixing accented vowels' location in Portuguese layout by @somehare in https://github.com/dessalines/thumb-key/pull/95
+- Add basque layout by @zgll2022 in https://github.com/dessalines/thumb-key/pull/107
+- Adding copy and paste buttons. Fixes #98 by @dessalines in https://github.com/dessalines/thumb-key/pull/108
+- Adding farsi layout. Fixes #110 by @dessalines in https://github.com/dessalines/thumb-key/pull/113
+- Update ThumbKeyITv1.kt by @morellik in https://github.com/dessalines/thumb-key/pull/112
+- Upgrading deps by @dessalines in https://github.com/dessalines/thumb-key/pull/114
+
+## New Contributors
+
+- @zgll2022 made their first contribution in https://github.com/dessalines/thumb-key/pull/107
+- @morellik made their first contribution in https://github.com/dessalines/thumb-key/pull/112
+
+**Full Changelog**: https://github.com/dessalines/thumb-key/compare/0.0.7...0.0.8
+
 # Thumb-Key 0.0.7-alpha (2023-03-27)
 
 ## What's Changed
