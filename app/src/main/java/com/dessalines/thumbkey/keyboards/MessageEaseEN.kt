@@ -14,52 +14,48 @@ import com.dessalines.thumbkey.utils.KeyboardC
 import com.dessalines.thumbkey.utils.KeyboardMode
 import com.dessalines.thumbkey.utils.SwipeDirection
 
-val MESSAGEASE_HE_MAIN = KeyboardC(
+val MESSAGEEASE_EN_MAIN = KeyboardC(
     arrayOf(
         arrayOf(
             KeyItemC(
                 center = KeyC(
-                    display = KeyDisplay.TextDisplay("ר"),
-                    action = KeyAction.CommitText("ר"),
+                    display = KeyDisplay.TextDisplay("a"),
+                    action = KeyAction.CommitText("a"),
                     size = FontSizeVariant.LARGE,
                     color = ColorVariant.PRIMARY
                 ),
                 swipes = mapOf(
                     SwipeDirection.BOTTOM_RIGHT to KeyC(
-                        display = KeyDisplay.TextDisplay("ן"),
-                        action = KeyAction.CommitText("ן")
+                        display = KeyDisplay.TextDisplay("v"),
+                        action = KeyAction.CommitText("v")
                     )
                 )
             ),
             KeyItemC(
                 center = KeyC(
-                    display = KeyDisplay.TextDisplay("ב"),
-                    action = KeyAction.CommitText("ב"),
+                    display = KeyDisplay.TextDisplay("n"),
+                    action = KeyAction.CommitText("n"),
                     size = FontSizeVariant.LARGE,
                     color = ColorVariant.PRIMARY
                 ),
                 swipes = mapOf(
                     SwipeDirection.BOTTOM to KeyC(
-                        display = KeyDisplay.TextDisplay("ג"),
-                        action = KeyAction.CommitText("ג")
+                        display = KeyDisplay.TextDisplay("l"),
+                        action = KeyAction.CommitText("l")
                     )
                 )
             ),
             KeyItemC(
                 center = KeyC(
-                    display = KeyDisplay.TextDisplay("א"),
-                    action = KeyAction.CommitText("א"),
+                    display = KeyDisplay.TextDisplay("i"),
+                    action = KeyAction.CommitText("i"),
                     size = FontSizeVariant.LARGE,
                     color = ColorVariant.PRIMARY
                 ),
                 swipes = mapOf(
                     SwipeDirection.BOTTOM_LEFT to KeyC(
-                        display = KeyDisplay.TextDisplay("צ"),
-                        action = KeyAction.CommitText("צ")
-                    ),
-                    SwipeDirection.LEFT to KeyC(
-                        display = KeyDisplay.TextDisplay("ץ"),
-                        action = KeyAction.CommitText("ץ")
+                        display = KeyDisplay.TextDisplay("x"),
+                        action = KeyAction.CommitText("x")
                     )
                 )
             ),
@@ -68,79 +64,75 @@ val MESSAGEASE_HE_MAIN = KeyboardC(
         arrayOf(
             KeyItemC(
                 center = KeyC(
-                    display = KeyDisplay.TextDisplay("מ"),
-                    action = KeyAction.CommitText("מ"),
+                    display = KeyDisplay.TextDisplay("h"),
+                    action = KeyAction.CommitText("h"),
                     size = FontSizeVariant.LARGE,
                     color = ColorVariant.PRIMARY
                 ),
                 swipes = mapOf(
                     SwipeDirection.RIGHT to KeyC(
-                        display = KeyDisplay.TextDisplay("ם"),
-                        action = KeyAction.CommitText("ם")
-                    ),
-                    SwipeDirection.BOTTOM_RIGHT to KeyC(
-                        display = KeyDisplay.TextDisplay("ך"),
-                        action = KeyAction.CommitText("ך")
+                        display = KeyDisplay.TextDisplay("k"),
+                        action = KeyAction.CommitText("k")
                     )
                 )
             ),
             KeyItemC(
                 center = KeyC(
-                    display = KeyDisplay.TextDisplay("י"),
-                    action = KeyAction.CommitText("י"),
+                    display = KeyDisplay.TextDisplay("o"),
+                    action = KeyAction.CommitText("o"),
                     size = FontSizeVariant.LARGE,
                     color = ColorVariant.PRIMARY
                 ),
                 swipes = mapOf(
                     SwipeDirection.TOP_LEFT to KeyC(
-                        display = KeyDisplay.TextDisplay("ק"),
-                        action = KeyAction.CommitText("ק")
+                        display = KeyDisplay.TextDisplay("q"),
+                        action = KeyAction.CommitText("q")
                     ),
                     SwipeDirection.TOP to KeyC(
-                        display = KeyDisplay.TextDisplay("ח"),
-                        action = KeyAction.CommitText("ח")
+                        display = KeyDisplay.TextDisplay("u"),
+                        action = KeyAction.CommitText("u")
                     ),
                     SwipeDirection.TOP_RIGHT to KeyC(
-                        display = KeyDisplay.TextDisplay("פ"),
-                        action = KeyAction.CommitText("פ")
+                        display = KeyDisplay.TextDisplay("p"),
+                        action = KeyAction.CommitText("p")
                     ),
                     SwipeDirection.RIGHT to KeyC(
-                        display = KeyDisplay.TextDisplay("ד"),
-                        action = KeyAction.CommitText("ד")
+                        display = KeyDisplay.TextDisplay("b"),
+                        action = KeyAction.CommitText("b")
                     ),
                     SwipeDirection.BOTTOM_RIGHT to KeyC(
-                        display = KeyDisplay.TextDisplay("ש"),
-                        action = KeyAction.CommitText("ש")
+                        display = KeyDisplay.TextDisplay("j"),
+                        action = KeyAction.CommitText("j")
                     ),
                     SwipeDirection.BOTTOM to KeyC(
-                        display = KeyDisplay.TextDisplay("נ"),
-                        action = KeyAction.CommitText("נ")
+                        display = KeyDisplay.TextDisplay("d"),
+                        action = KeyAction.CommitText("d")
                     ),
                     SwipeDirection.BOTTOM_LEFT to KeyC(
-                        display = KeyDisplay.TextDisplay("כ"),
-                        action = KeyAction.CommitText("כ")
+                        display = KeyDisplay.TextDisplay("g"),
+                        action = KeyAction.CommitText("g")
                     ),
                     SwipeDirection.LEFT to KeyC(
-                        display = KeyDisplay.TextDisplay("ע"),
-                        action = KeyAction.CommitText("ע")
+                        display = KeyDisplay.TextDisplay("c"),
+                        action = KeyAction.CommitText("c")
                     )
                 )
             ),
             KeyItemC(
                 center = KeyC(
-                    display = KeyDisplay.TextDisplay("ו"),
-                    action = KeyAction.CommitText("ו"),
+                    display = KeyDisplay.TextDisplay("r"),
+                    action = KeyAction.CommitText("r"),
                     size = FontSizeVariant.LARGE,
                     color = ColorVariant.PRIMARY
                 ),
                 swipes = mapOf(
-                    SwipeDirection.TOP_LEFT to KeyC(
-                        display = KeyDisplay.TextDisplay("ף"),
-                        action = KeyAction.CommitText("ף")
+                    SwipeDirection.LEFT to KeyC(
+                        display = KeyDisplay.TextDisplay("m"),
+                        action = KeyAction.CommitText("m")
                     ),
                     SwipeDirection.TOP to KeyC(
                         display = KeyDisplay.IconDisplay(Icons.Outlined.ArrowDropUp),
-                        action = KeyAction.ToggleShiftMode(false),
+                        action = KeyAction.ToggleShiftMode(true),
                         color = ColorVariant.MUTED
                     )
                 )
@@ -150,34 +142,38 @@ val MESSAGEASE_HE_MAIN = KeyboardC(
         arrayOf(
             KeyItemC(
                 center = KeyC(
-                    display = KeyDisplay.TextDisplay("ת"),
-                    action = KeyAction.CommitText("ת"),
+                    display = KeyDisplay.TextDisplay("t"),
+                    action = KeyAction.CommitText("t"),
                     size = FontSizeVariant.LARGE,
                     color = ColorVariant.PRIMARY
                 ),
                 swipes = mapOf(
                     SwipeDirection.TOP_RIGHT to KeyC(
-                        display = KeyDisplay.TextDisplay("ז"),
-                        action = KeyAction.CommitText("ז")
+                        display = KeyDisplay.TextDisplay("y"),
+                        action = KeyAction.CommitText("y")
                     )
                 )
             ),
             KeyItemC(
                 center = KeyC(
-                    display = KeyDisplay.TextDisplay("ה"),
-                    action = KeyAction.CommitText("ה"),
+                    display = KeyDisplay.TextDisplay("e"),
+                    action = KeyAction.CommitText("e"),
                     size = FontSizeVariant.LARGE,
                     color = ColorVariant.PRIMARY
                 ),
                 swipes = mapOf(
                     SwipeDirection.TOP to KeyC(
-                        display = KeyDisplay.TextDisplay("ס"),
-                        action = KeyAction.CommitText("ס")
+                        display = KeyDisplay.TextDisplay("w"),
+                        action = KeyAction.CommitText("w")
                     ),
                     SwipeDirection.TOP_RIGHT to KeyC(
                         display = KeyDisplay.TextDisplay("'"),
                         action = KeyAction.CommitText("'"),
                         color = ColorVariant.MUTED
+                    ),
+                    SwipeDirection.RIGHT to KeyC(
+                        display = KeyDisplay.TextDisplay("z"),
+                        action = KeyAction.CommitText("z")
                     ),
                     SwipeDirection.BOTTOM_RIGHT to KeyC(
                         display = KeyDisplay.TextDisplay("-"),
@@ -198,15 +194,15 @@ val MESSAGEASE_HE_MAIN = KeyboardC(
             ),
             KeyItemC(
                 center = KeyC(
-                    display = KeyDisplay.TextDisplay("ל"),
-                    action = KeyAction.CommitText("ל"),
+                    display = KeyDisplay.TextDisplay("s"),
+                    action = KeyAction.CommitText("s"),
                     size = FontSizeVariant.LARGE,
                     color = ColorVariant.PRIMARY
                 ),
                 swipes = mapOf(
                     SwipeDirection.TOP_LEFT to KeyC(
-                        display = KeyDisplay.TextDisplay("ט"),
-                        action = KeyAction.CommitText("ט")
+                        display = KeyDisplay.TextDisplay("f"),
+                        action = KeyAction.CommitText("f")
                     )
                 )
             ),
@@ -425,8 +421,8 @@ val MESSAGEEASE_EN_SHIFTED = KeyboardC(
     )
 )
 
-val MESSAGEEASE_KEYBOARD_MODES: Map<KeyboardMode, KeyboardC> = mapOf(
-    KeyboardMode.MAIN to MESSAGEASE_HE_MAIN,
-    KeyboardMode.SHIFTED to MESSAGEASE_HE_MAIN,
+val MESSAGEEASE_EN_KEYBOARD_MODES: Map<KeyboardMode, KeyboardC> = mapOf(
+    KeyboardMode.MAIN to MESSAGEEASE_EN_MAIN,
+    KeyboardMode.SHIFTED to MESSAGEEASE_EN_SHIFTED,
     KeyboardMode.NUMERIC to NUMERIC_KEYBOARD
 )
