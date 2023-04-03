@@ -3,7 +3,6 @@ package com.dessalines.thumbkey.utils
 import android.content.Context
 import android.content.Intent
 import android.net.Uri
-import android.provider.Settings.System.getString
 import android.text.InputType
 import android.util.Log
 import android.view.KeyEvent
@@ -31,7 +30,8 @@ import androidx.navigation.NavController
 import com.dessalines.thumbkey.IMEService
 import com.dessalines.thumbkey.MainActivity
 import com.dessalines.thumbkey.R
-import com.dessalines.thumbkey.keyboards.MESSAGEEASE_KEYBOARD_MODES
+import com.dessalines.thumbkey.keyboards.MESSAGEEASE_EN_KEYBOARD_MODES
+import com.dessalines.thumbkey.keyboards.MESSAGEEASE_HE_KEYBOARD_MODES
 import com.dessalines.thumbkey.keyboards.THUMBKEY_DE_V2_KEYBOARD_MODES
 import com.dessalines.thumbkey.keyboards.THUMBKEY_EN_V4_KEYBOARD_MODES
 import com.dessalines.thumbkey.keyboards.THUMBKEY_EU_V1_KEYBOARD_MODES
@@ -82,7 +82,8 @@ fun keyboardLayoutToModes(layout: KeyboardLayout): Map<KeyboardMode, KeyboardC> 
         KeyboardLayout.ThumbKeyPTv1 -> THUMBKEY_PT_V1_KEYBOARD_MODES
         KeyboardLayout.ThumbkeyRUv1 -> THUMBKEY_RU_V1_KEYBOARD_MODES
         KeyboardLayout.ThumbkeyUKv1 -> THUMBKEY_UK_V1_KEYBOARD_MODES
-        KeyboardLayout.MessageEase -> MESSAGEEASE_KEYBOARD_MODES
+        KeyboardLayout.MessageEaseEN -> MESSAGEEASE_EN_KEYBOARD_MODES
+        KeyboardLayout.MessageEaseHE -> MESSAGEEASE_HE_KEYBOARD_MODES
     }
 }
 

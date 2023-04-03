@@ -421,7 +421,7 @@ val MESSAGEEASE_EN_SHIFTED = KeyboardC(
     )
 )
 
-val MESSAGEEASE_KEYBOARD_MODES: Map<KeyboardMode, KeyboardC> = mapOf(
+val MESSAGEEASE_EN_KEYBOARD_MODES: Map<KeyboardMode, KeyboardC> = mapOf(
     KeyboardMode.MAIN to MESSAGEEASE_EN_MAIN,
     KeyboardMode.SHIFTED to MESSAGEEASE_EN_SHIFTED,
     KeyboardMode.NUMERIC to NUMERIC_KEYBOARD
