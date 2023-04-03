@@ -1,3 +1,16 @@
+# Thumb-Key 0.0.9-alpha (2023-04-03)
+
+## What's Changed
+
+- Adding hebrew (messagease style) layout by @montdor in https://github.com/dessalines/thumb-key/pull/117
+- Update ThumbKeyITv1.kt by @morellik in https://github.com/dessalines/thumb-key/pull/119
+
+## New Contributors
+
+- @montdor made their first contribution in https://github.com/dessalines/thumb-key/pull/117
+
+**Full Changelog**: https://github.com/dessalines/thumb-key/compare/0.0.8...0.0.9
+
 # Thumb-Key 0.0.8-alpha (2023-03-31)
 
 ## What's Changed
