@@ -30,6 +30,7 @@ import androidx.navigation.NavController
 import com.dessalines.thumbkey.IMEService
 import com.dessalines.thumbkey.MainActivity
 import com.dessalines.thumbkey.R
+import com.dessalines.thumbkey.db.DEFAULT_KEYBOARD_LAYOUT
 import com.dessalines.thumbkey.keyboards.MESSAGEEASE_EN_KEYBOARD_MODES
 import com.dessalines.thumbkey.keyboards.MESSAGEEASE_HE_KEYBOARD_MODES
 import com.dessalines.thumbkey.keyboards.THUMBKEY_DE_V2_KEYBOARD_MODES
@@ -159,7 +160,8 @@ fun performKeyAction(
     onToggleShiftMode: (enable: Boolean) -> Unit,
     onToggleNumericMode: (enable: Boolean) -> Unit,
     onToggleCapsLock: () -> Unit,
-    onAutoCapitalize: (enable: Boolean) -> Unit
+    onAutoCapitalize: (enable: Boolean) -> Unit,
+    onSwitchLanguage: () -> Unit
 ) {
     when (action) {
         is KeyAction.CommitText -> {
@@ -250,6 +252,7 @@ fun performKeyAction(
         KeyAction.Paste -> {
             ime.currentInputConnection.performContextMenuAction(16908322)
         }
+        KeyAction.SwitchLanguage -> onSwitchLanguage()
     }
 }
 
@@ -388,3 +391,9 @@ fun openLink(url: String, ctx: Context) {
 
 fun Int.toBool() = this == 1
 fun Boolean.toInt() = this.compareTo(false)
+
+fun keyboardLayoutsSetFromString(layouts: String?): Set<Int> {
+    return layouts?.split(",")?.map { it.trim().toInt() }?.toSet() ?: setOf(
+        DEFAULT_KEYBOARD_LAYOUT
+    )
+}

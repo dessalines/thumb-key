@@ -34,7 +34,8 @@ import com.dessalines.thumbkey.utils.toBool
 @Composable
 fun KeyboardScreen(
     settings: AppSettings?,
-    startMode: KeyboardMode
+    startMode: KeyboardMode,
+    onSwitchLanguage: () -> Unit
 ) {
     var mode by remember {
         mutableStateOf(startMode)
@@ -123,7 +124,8 @@ fun KeyboardScreen(
                                             mode = KeyboardMode.MAIN
                                         }
                                     }
-                                }
+                                },
+                                onSwitchLanguage = onSwitchLanguage
                             )
                         }
                     }
