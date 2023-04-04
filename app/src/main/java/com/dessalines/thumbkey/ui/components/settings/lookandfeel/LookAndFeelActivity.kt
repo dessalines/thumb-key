@@ -133,11 +133,11 @@ fun LookAndFeelActivity(
                     icon = {
                         Icon(
                             imageVector = Icons.Outlined.KeyboardAlt,
-                            contentDescription = stringResource(R.string.layout)
+                            contentDescription = stringResource(R.string.layouts)
                         )
                     },
                     title = {
-                        Text(stringResource(R.string.layout))
+                        Text(stringResource(R.string.layouts))
                     },
                     confirmButton = stringResource(R.string.save),
                     onItemsSelected = { _ ->

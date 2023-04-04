@@ -168,7 +168,7 @@ val MIGRATION_3_4 = object : Migration(3, 4) {
 val MIGRATION_4_5 = object : Migration(4, 5) {
     override fun migrate(database: SupportSQLiteDatabase) {
         database.execSQL(
-            "alter table AppSettings add column keyboard_layouts TEXT NOT NULL  '[$DEFAULT_KEYBOARD_LAYOUT]'"
+            "alter table AppSettings add column keyboard_layouts TEXT NOT NULL default '$DEFAULT_KEYBOARD_LAYOUT'"
         )
     }
 }
