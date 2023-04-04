@@ -26,6 +26,7 @@ const val DEFAULT_VIBRATE_ON_TAP = 1
 const val DEFAULT_SOUND_ON_TAP = 0
 const val DEFAULT_MIN_SWIPE_LENGTH = 40
 const val DEFAULT_PUSHUP_SIZE = 0
+const val DEFAULT_HIDE_LETTERS = 0
 
 const val UPDATE_APP_CHANGELOG_UNVIEWED = "UPDATE AppSettings SET viewed_changelog = 0"
 
@@ -96,7 +97,12 @@ data class AppSettings(
         name = "pushup_size",
         defaultValue = DEFAULT_PUSHUP_SIZE.toString()
     )
-    val pushupSize: Int
+    val pushupSize: Int,
+    @ColumnInfo(
+        name = "hide_letters",
+        defaultValue = DEFAULT_HIDE_LETTERS.toString()
+    )
+    val hideLetters: Int
 )
 
 @Dao
@@ -146,8 +152,16 @@ val MIGRATION_2_3 = object : Migration(2, 3) {
     }
 }
 
+val MIGRATION_3_4 = object : Migration(3, 4) {
+    override fun migrate(database: SupportSQLiteDatabase) {
+        database.execSQL(
+            "alter table AppSettings add column hide_letters INTEGER NOT NULL default $DEFAULT_HIDE_LETTERS"
+        )
+    }
+}
+
 @Database(
-    version = 3,
+    version = 4,
     entities = [AppSettings::class],
     exportSchema = true
 )
@@ -172,7 +186,8 @@ abstract class AppDB : RoomDatabase() {
                     .allowMainThreadQueries()
                     .addMigrations(
                         MIGRATION_1_2,
-                        MIGRATION_2_3
+                        MIGRATION_2_3,
+                        MIGRATION_3_4
                     )
                     // Necessary because it can't insert data on creation
                     .addCallback(object : Callback() {
