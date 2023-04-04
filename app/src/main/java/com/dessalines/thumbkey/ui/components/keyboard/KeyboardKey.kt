@@ -59,6 +59,7 @@ fun KeyboardKey(
     autoCapitalize: Boolean,
     vibrateOnTap: Boolean,
     soundOnTap: Boolean,
+    hideLetters: Boolean,
     keySize: Int,
     minSwipeLength: Int,
     onToggleShiftMode: (enable: Boolean) -> Unit,
@@ -189,7 +190,7 @@ fun KeyboardKey(
                 .padding(horizontal = keyPadding)
         ) {
             key.swipes?.get(SwipeDirection.TOP_LEFT)?.let {
-                KeyText(it, keySizeDp)
+                KeyText(it, keySizeDp, hideLetters)
             }
         }
         Box(
@@ -199,7 +200,7 @@ fun KeyboardKey(
                 .padding(horizontal = keyPadding)
         ) {
             key.swipes?.get(SwipeDirection.TOP)?.let {
-                KeyText(it, keySizeDp)
+                KeyText(it, keySizeDp, hideLetters)
             }
         }
         Box(
@@ -209,7 +210,7 @@ fun KeyboardKey(
                 .padding(horizontal = keyPadding)
         ) {
             key.swipes?.get(SwipeDirection.TOP_RIGHT)?.let {
-                KeyText(it, keySizeDp)
+                KeyText(it, keySizeDp, hideLetters)
             }
         }
         Box(
@@ -219,7 +220,7 @@ fun KeyboardKey(
                 .padding(horizontal = keyPadding)
         ) {
             key.swipes?.get(SwipeDirection.LEFT)?.let {
-                KeyText(it, keySizeDp)
+                KeyText(it, keySizeDp, hideLetters)
             }
         }
         Box(
@@ -228,7 +229,7 @@ fun KeyboardKey(
                 .fillMaxSize()
                 .padding(horizontal = keyPadding)
         ) {
-            KeyText(key.center, keySizeDp)
+            KeyText(key.center, keySizeDp, hideLetters)
         }
 
         Box(
@@ -238,7 +239,7 @@ fun KeyboardKey(
                 .padding(horizontal = keyPadding)
         ) {
             key.swipes?.get(SwipeDirection.RIGHT)?.let {
-                KeyText(it, keySizeDp)
+                KeyText(it, keySizeDp, hideLetters)
             }
         }
         Box(
@@ -248,7 +249,7 @@ fun KeyboardKey(
                 .padding(horizontal = keyPadding)
         ) {
             key.swipes?.get(SwipeDirection.BOTTOM_LEFT)?.let {
-                KeyText(it, keySizeDp)
+                KeyText(it, keySizeDp, hideLetters)
             }
         }
         Box(
@@ -258,7 +259,7 @@ fun KeyboardKey(
                 .padding(horizontal = keyPadding)
         ) {
             key.swipes?.get(SwipeDirection.BOTTOM)?.let {
-                KeyText(it, keySizeDp)
+                KeyText(it, keySizeDp, hideLetters)
             }
         }
         Box(
@@ -268,7 +269,7 @@ fun KeyboardKey(
                 .padding(horizontal = keyPadding)
         ) {
             key.swipes?.get(SwipeDirection.BOTTOM_RIGHT)?.let {
-                KeyText(it, keySizeDp)
+                KeyText(it, keySizeDp, hideLetters)
             }
         }
         // The popup overlay
@@ -302,7 +303,7 @@ fun KeyboardKey(
 }
 
 @Composable
-fun KeyText(key: KeyC, keySize: Dp) {
+fun KeyText(key: KeyC, keySize: Dp, hideLetters: Boolean) {
     val color = colorVariantToColor(colorVariant = key.color)
     val fontSize = fontSizeVariantToFontSize(fontSizeVariant = key.size, keySize = keySize)
 
@@ -316,12 +317,15 @@ fun KeyText(key: KeyC, keySize: Dp) {
             )
         }
         is KeyDisplay.TextDisplay -> {
-            Text(
-                text = display.text,
-                fontWeight = FontWeight.Bold,
-                fontSize = fontSize,
-                color = color
-            )
+            // Only  hide the letters for text, not symbols
+            if (!hideLetters) {
+                Text(
+                    text = display.text,
+                    fontWeight = FontWeight.Bold,
+                    fontSize = fontSize,
+                    color = color
+                )
+            }
         }
         null -> {}
     }

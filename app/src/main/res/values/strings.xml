@@ -46,5 +46,5 @@
     <string name="select_thumbkey">Select Thumb-Key</string>
     <string name="finish_setup">Finish Setup</string>
     <string name="copy_all">Copy All</string>
-
+    <string name="hide_letters">Hide Letters</string>
 </resources>
