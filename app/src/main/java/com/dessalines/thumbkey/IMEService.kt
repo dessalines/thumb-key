@@ -16,10 +16,9 @@ class IMEService :
     SavedStateRegistryOwner {
 
     private fun setupView(): View {
-        val liveSettings = (application as ThumbkeyApplication).appSettingsRepository
-            .appSettings
+        val settingsRepo = (application as ThumbkeyApplication).appSettingsRepository
 
-        val view = ComposeKeyboardView(this, liveSettings)
+        val view = ComposeKeyboardView(this, settingsRepo)
         window?.window?.decorView?.let { decorView ->
             decorView.setViewTreeLifecycleOwner(this)
             decorView.setViewTreeViewModelStoreOwner(this)

@@ -44,6 +44,7 @@ sealed class KeyAction {
     object ToggleCapsLock : KeyAction()
     object SelectAndCopyAll : KeyAction()
     object Paste : KeyAction()
+    object SwitchLanguage : KeyAction()
 }
 
 enum class KeyboardMode {

@@ -25,7 +25,7 @@
     <string name="source_code">Source code</string>
     <string name="source_code_subtitle">Thumb-Key is libre open-source software, licensed under the GNU Affero General Public License v3.0</string>
     <string name="look_and_feel">Look and feel</string>
-    <string name="layout">Layout</string>
+    <string name="layouts">Layouts</string>
     <string name="theme">Theme</string>
     <string name="theme_color">Theme color</string>
     <string name="position">Position</string>
@@ -47,4 +47,5 @@
     <string name="finish_setup">Finish Setup</string>
     <string name="copy_all">Copy All</string>
     <string name="hide_letters">Hide Letters</string>
+    <string name="save">Save</string>
 </resources>

@@ -102,7 +102,12 @@ data class AppSettings(
         name = "hide_letters",
         defaultValue = DEFAULT_HIDE_LETTERS.toString()
     )
-    val hideLetters: Int
+    val hideLetters: Int,
+    @ColumnInfo(
+        name = "keyboard_layouts",
+        defaultValue = "$DEFAULT_KEYBOARD_LAYOUT"
+    )
+    val keyboardLayouts: String
 )
 
 @Dao
@@ -160,8 +165,16 @@ val MIGRATION_3_4 = object : Migration(3, 4) {
     }
 }
 
+val MIGRATION_4_5 = object : Migration(4, 5) {
+    override fun migrate(database: SupportSQLiteDatabase) {
+        database.execSQL(
+            "alter table AppSettings add column keyboard_layouts TEXT NOT NULL default '$DEFAULT_KEYBOARD_LAYOUT'"
+        )
+    }
+}
+
 @Database(
-    version = 4,
+    version = 5,
     entities = [AppSettings::class],
     exportSchema = true
 )
@@ -187,7 +200,8 @@ abstract class AppDB : RoomDatabase() {
                     .addMigrations(
                         MIGRATION_1_2,
                         MIGRATION_2_3,
-                        MIGRATION_3_4
+                        MIGRATION_3_4,
+                        MIGRATION_4_5
                     )
                     // Necessary because it can't insert data on creation
                     .addCallback(object : Callback() {
