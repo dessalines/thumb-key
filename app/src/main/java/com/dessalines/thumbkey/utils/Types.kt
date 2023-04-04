@@ -21,6 +21,7 @@ data class KeyItemC(
 
 data class KeyC(
     val display: KeyDisplay?,
+    val capsModeDisplay: KeyDisplay? = null,
     val action: KeyAction,
     val color: ColorVariant = ColorVariant.SECONDARY,
     val size: FontSizeVariant = FontSizeVariant.SMALL
