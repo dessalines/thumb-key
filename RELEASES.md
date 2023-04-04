@@ -1,3 +1,18 @@
+# Thumb-Key 0.0.10-alpha (2023-04-04)
+
+## What's Changed
+
+- Adding french layout. Fixes #26 by @CastelJeremy in https://github.com/dessalines/thumb-key/pull/120
+- Hide letters by @dessalines in https://github.com/dessalines/thumb-key/pull/121
+- Adding a capslock mode indicator. Fixes #97 by @dessalines in https://github.com/dessalines/thumb-key/pull/122
+- Adding multiple default languages. Fixes #42 by @dessalines in https://github.com/dessalines/thumb-key/pull/123
+
+## New Contributors
+
+- @CastelJeremy made their first contribution in https://github.com/dessalines/thumb-key/pull/120
+
+**Full Changelog**: https://github.com/dessalines/thumb-key/compare/0.0.9...0.0.10
+
 # Thumb-Key 0.0.9-alpha (2023-04-03)
 
 ## What's Changed
