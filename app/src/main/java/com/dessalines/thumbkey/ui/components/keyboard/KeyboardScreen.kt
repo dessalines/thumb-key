@@ -90,6 +90,7 @@ fun KeyboardScreen(
                                 vibrateOnTap = vibrateOnTap,
                                 soundOnTap = soundOnTap,
                                 hideLetters = hideLetters,
+                                capsLock = capsLock,
                                 animationSpeed = settings?.animationSpeed
                                     ?: DEFAULT_ANIMATION_SPEED,
                                 animationHelperSpeed = settings?.animationHelperSpeed
