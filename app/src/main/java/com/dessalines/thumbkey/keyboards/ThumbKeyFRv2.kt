@@ -94,7 +94,7 @@ val THUMBKEY_FR_V2_MAIN = KeyboardC(
                         action = KeyAction.CommitText("î"),
                         color = ColorVariant.MUTED
                     ),
-                    SwipeDirection.BOTTOM_RIGHT to KeyC(
+                    SwipeDirection.BOTTOM to KeyC(
                         display = KeyDisplay.TextDisplay("k"),
                         action = KeyAction.CommitText("k")
                     ),
