@@ -1,0 +1,9 @@
+Tommeltast er et <i>privatlivsbevidst</i> smart tastatur, lavet specifikt til dine tommelfingre.
+
+Det består af et <b>3x3 tastaturgitter</b>, og benytter swipes til de mindre hyppige bogstaver.
+
+I stedet for at være afhænging af profitdreven og privatlivskrænkende forudsigelse af ord og sætninger, som de fleste populære tastaturer som Gboard og Swiftkey, bruger Tommeltast <b>store taster med forudsigelige positioner</b>. På den måde kan præcision stadig opnås, og samtdig behøver dine øjne ikke søge og prikke præcist efter bogstaver.
+
+Efterhånden som tasternes positioner bliver indgroede i din fingre, vil du nå samme hastighed som ved normal tastning uden at behøve at kigge på tastaturet, mens du skriver.
+
+Dette projekt er en efterfølger til det nu forladte (og closed-source) <a href="https://www.exideas.com/ME/">MessageEase Tastatur</a>, hvilket er projektes største inspirationskilde.
