@@ -445,7 +445,7 @@ val THUMBKEY_DK_V1_SHIFTED = KeyboardC(
     )
 )
 
-val THUMBKEY_FI_V1_KEYBOARD_MODES: Map<KeyboardMode, KeyboardC> = mapOf(
+val THUMBKEY_DK_V1_KEYBOARD_MODES: Map<KeyboardMode, KeyboardC> = mapOf(
     KeyboardMode.MAIN to THUMBKEY_DK_V1_MAIN,
     KeyboardMode.SHIFTED to THUMBKEY_DK_V1_SHIFTED,
     KeyboardMode.NUMERIC to NUMERIC_KEYBOARD
