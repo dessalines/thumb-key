@@ -25,9 +25,14 @@ val THUMBKEY_FR_V2_MAIN = KeyboardC(
                     color = ColorVariant.PRIMARY
                 ),
                 swipes = mapOf(
-                    SwipeDirection.TOP to KeyC(
-                        display = KeyDisplay.TextDisplay("\""),
-                        action = KeyAction.CommitText("\""),
+                    SwipeDirection.TOP_LEFT to KeyC(
+                        display = KeyDisplay.TextDisplay("«"),
+                        action = KeyAction.CommitText("«"),
+                        color = ColorVariant.MUTED
+
+                    ),SwipeDirection.TOP to KeyC(
+                        display = KeyDisplay.TextDisplay("»"),
+                        action = KeyAction.CommitText("»"),
                         color = ColorVariant.MUTED
 
                     ),
@@ -358,9 +363,13 @@ val THUMBKEY_FR_V2_SHIFTED = KeyboardC(
                 ),
                 swipes = mapOf(
                     swipes = mapOf(
-                    SwipeDirection.TOP to KeyC(
-                        display = KeyDisplay.TextDisplay("\""),
-                        action = KeyAction.CommitText("\""),
+                    SwipeDirection.TOP_LEFT to KeyC(
+                        display = KeyDisplay.TextDisplay("«"),
+                        action = KeyAction.CommitText("«"),
+                        color = ColorVariant.MUTED
+                    ),SwipeDirection.TOP to KeyC(
+                        display = KeyDisplay.TextDisplay("»"),
+                        action = KeyAction.CommitText("»"),
                         color = ColorVariant.MUTED
                     ),
                     SwipeDirection.TOP_RIGHT to KeyC(
