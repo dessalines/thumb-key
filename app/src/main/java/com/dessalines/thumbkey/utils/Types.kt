@@ -98,6 +98,7 @@ enum class KeyboardLayout(val title: String) {
     ThumbkeyRUv1("Thumb-Key русский v1"),
     ThumbkeyUKv1("Thumb-Key українська v1"),
     MessageEaseEN("MessageEase English"),
+    MessageEaseENSymbols("MessageEase English w/ Symbols"),
     MessageEaseHE("MessageEase עברית")
 }
 
