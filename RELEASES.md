@@ -1,3 +1,19 @@
+# Thumb-Key 0.0.11-alpha (2023-04-12)
+
+## What's Changed
+
+- Add f-droid links. Fixes #8 by @dessalines in https://github.com/dessalines/thumb-key/pull/139
+- Create Danish keyboard file and add Danish translation by @Limfjorden in https://github.com/dessalines/thumb-key/pull/137
+- Adding messageease symbols keyboard. Fixes #106 by @dessalines in https://github.com/dessalines/thumb-key/pull/140
+- Fixing a few caps issues. #132 by @dessalines in https://github.com/dessalines/thumb-key/pull/144
+- Upgrading deps. by @dessalines in https://github.com/dessalines/thumb-key/pull/145
+
+## New Contributors
+
+- @Limfjorden made their first contribution in https://github.com/dessalines/thumb-key/pull/137
+
+**Full Changelog**: https://github.com/dessalines/thumb-key/compare/0.0.10...0.0.11
+
 # Thumb-Key 0.0.10-alpha (2023-04-04)
 
 ## What's Changed
