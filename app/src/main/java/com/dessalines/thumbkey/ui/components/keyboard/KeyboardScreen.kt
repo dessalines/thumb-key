@@ -9,7 +9,9 @@ import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.unit.dp
+import com.dessalines.thumbkey.IMEService
 import com.dessalines.thumbkey.db.AppSettings
 import com.dessalines.thumbkey.db.DEFAULT_ANIMATION_HELPER_SPEED
 import com.dessalines.thumbkey.db.DEFAULT_ANIMATION_SPEED
@@ -27,6 +29,7 @@ import com.dessalines.thumbkey.utils.KeyAction
 import com.dessalines.thumbkey.utils.KeyboardLayout
 import com.dessalines.thumbkey.utils.KeyboardMode
 import com.dessalines.thumbkey.utils.KeyboardPosition
+import com.dessalines.thumbkey.utils.getKeyboardMode
 import com.dessalines.thumbkey.utils.keyboardLayoutToModes
 import com.dessalines.thumbkey.utils.keyboardPositionToAlignment
 import com.dessalines.thumbkey.utils.toBool
@@ -34,10 +37,16 @@ import com.dessalines.thumbkey.utils.toBool
 @Composable
 fun KeyboardScreen(
     settings: AppSettings?,
-    startMode: KeyboardMode,
     onSwitchLanguage: () -> Unit
 ) {
+    val ctx = LocalContext.current as IMEService
+
     var mode by remember {
+        val startMode = getKeyboardMode(
+            ime = ctx,
+            autoCapitalize = settings?.autoCapitalize?.toBool() ?: false
+        )
+
         mutableStateOf(startMode)
     }
 

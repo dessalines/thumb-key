@@ -279,7 +279,7 @@ fun getKeyboardMode(ime: IMEService, autoCapitalize: Boolean): KeyboardMode {
     return if (arrayOf(InputType.TYPE_CLASS_NUMBER, InputType.TYPE_CLASS_PHONE).contains(inputType)) {
         KeyboardMode.NUMERIC
     } else {
-        if (autoCapitalize) {
+        if (autoCapitalize && autoCapitalizeCheck(ime)) {
             KeyboardMode.SHIFTED
         } else {
             KeyboardMode.MAIN
@@ -296,6 +296,18 @@ private fun autoCapitalize(
     ime: IMEService,
     onAutoCapitalize: (enable: Boolean) -> Unit
 ) {
+    autoCapitalizeI(ime)
+
+    if (autoCapitalizeCheck(ime)) {
+        onAutoCapitalize(true)
+    } else {
+        onAutoCapitalize(false)
+    }
+}
+
+fun autoCapitalizeI(
+    ime: IMEService
+) {
     // Capitalizes 'i'
     val textBefore = ime.currentInputConnection.getTextBeforeCursor(3, 0)
     if (!textBefore.isNullOrEmpty()) {
@@ -306,15 +318,18 @@ private fun autoCapitalize(
                 1
             )
         }
-
-        // Toggles shift after punctuation and space
-        val beforeSpace = textBefore.substring(1)
-        if (arrayOf(". ", "? ", "! ").contains(beforeSpace)) {
-            onAutoCapitalize(true)
-        } else {
-            onAutoCapitalize(false)
-        }
     }
+}
+
+fun autoCapitalizeCheck(
+    ime: IMEService
+): Boolean {
+    // Knows if its an empty field
+    val empty = ime.currentInputConnection.getTextBeforeCursor(1, 0).isNullOrEmpty()
+
+    // For punctuation ending
+    val textBefore = ime.currentInputConnection.getTextBeforeCursor(2, 0)
+    return (arrayOf(". ", "? ", "! ").contains(textBefore)) || empty
 }
 
 fun deleteLastWord(ime: IMEService) {
