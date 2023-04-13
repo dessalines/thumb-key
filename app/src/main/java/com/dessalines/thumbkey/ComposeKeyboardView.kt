@@ -9,9 +9,7 @@ import androidx.lifecycle.lifecycleScope
 import com.dessalines.thumbkey.db.AppSettingsRepository
 import com.dessalines.thumbkey.ui.components.keyboard.KeyboardScreen
 import com.dessalines.thumbkey.ui.theme.ThumbkeyTheme
-import com.dessalines.thumbkey.utils.getKeyboardMode
 import com.dessalines.thumbkey.utils.keyboardLayoutsSetFromString
-import com.dessalines.thumbkey.utils.toBool
 import kotlinx.coroutines.launch
 
 @SuppressLint("ViewConstructor")
@@ -28,17 +26,11 @@ class ComposeKeyboardView(
         val settings = settingsState.value
         val ctx = context as IMEService
 
-        val startMode = getKeyboardMode(
-            ime = ctx,
-            autoCapitalize = settings?.autoCapitalize?.toBool() ?: false
-        )
-
         ThumbkeyTheme(
             settings = settings
         ) {
             KeyboardScreen(
                 settings = settings,
-                startMode = startMode,
                 onSwitchLanguage = {
                     ctx.lifecycleScope.launch {
                         // Cycle to the next keyboard
@@ -47,9 +39,11 @@ class ComposeKeyboardView(
                         val currentLayout = s.keyboardLayout
                         val index = layouts.indexOf(currentLayout)
                         val nextIndex = (index + 1).mod(layouts.size)
-                        val nextLayout = layouts.get(nextIndex)
-                        val s2 = s.copy(keyboardLayout = nextLayout)
-                        settingsRepo.update(s2)
+                        val nextLayout = layouts.getOrNull(nextIndex)
+                        nextLayout?.let { layout ->
+                            val s2 = s.copy(keyboardLayout = layout)
+                            settingsRepo.update(s2)
+                        }
                     }
                 }
             )
