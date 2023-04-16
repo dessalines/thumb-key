@@ -60,7 +60,7 @@ enum class ColorVariant {
 }
 
 enum class FontSizeVariant {
-    LARGE, SMALL
+    LARGE, SMALL, SMALLEST
 }
 
 enum class ThemeMode(private val stringId: Int) {
@@ -87,6 +87,7 @@ enum class ThemeColor(private val stringId: Int) {
 
 enum class KeyboardLayout(val title: String) {
     ThumbKeyENv4("Thumb-Key English v4"),
+    ThumbKeyENv4Programmer("Thumb-Key English v4 (Programmer)"),
     ThumbKeyDEv2("Thumb-Key Deutsch v2"),
     ThumbKeyDKv1("Thumb-Key dansk v1"),
     ThumbKeyEUv1("Thumb-Key euskara v1"),
