@@ -246,13 +246,13 @@ val THUMBKEY_EN_V4_PROGRAMMER = KeyboardC(
                         color = ColorVariant.MUTED
                     ),
                     SwipeDirection.TOP_LEFT to KeyC(
-                        display = KeyDisplay.TextDisplay("["),
-                        action = KeyAction.CommitText("["),
+                        display = KeyDisplay.TextDisplay("{"),
+                        action = KeyAction.CommitText("{"),
                         color = ColorVariant.MUTED
                     ),
                     SwipeDirection.BOTTOM_LEFT to KeyC(
-                        display = KeyDisplay.TextDisplay("{"),
-                        action = KeyAction.CommitText("{"),
+                        display = KeyDisplay.TextDisplay("["),
+                        action = KeyAction.CommitText("["),
                         color = ColorVariant.MUTED
                     ),
                     SwipeDirection.BOTTOM_RIGHT to KeyC(
@@ -568,8 +568,8 @@ val THUMBKEY_EN_V4_PROGRAMMER_SHIFTED = KeyboardC(
                         color = ColorVariant.MUTED
                     ),
                     SwipeDirection.TOP_LEFT to KeyC(
-                        display = KeyDisplay.TextDisplay("["),
-                        action = KeyAction.CommitText("["),
+                        display = KeyDisplay.TextDisplay("{"),
+                        action = KeyAction.CommitText("{"),
                         color = ColorVariant.MUTED
                     ),
                     SwipeDirection.LEFT to KeyC(
@@ -579,8 +579,8 @@ val THUMBKEY_EN_V4_PROGRAMMER_SHIFTED = KeyboardC(
                         size = FontSizeVariant.SMALLEST
                     ),
                     SwipeDirection.BOTTOM_LEFT to KeyC(
-                        display = KeyDisplay.TextDisplay("{"),
-                        action = KeyAction.CommitText("{"),
+                        display = KeyDisplay.TextDisplay("["),
+                        action = KeyAction.CommitText("["),
                         color = ColorVariant.MUTED
                     ),
                     SwipeDirection.BOTTOM_RIGHT to KeyC(
@@ -660,8 +660,8 @@ val THUMBKEY_EN_V4_PROGRAMMER_SHIFTED = KeyboardC(
                         color = ColorVariant.MUTED
                     ),
                     SwipeDirection.RIGHT to KeyC(
-                        display = KeyDisplay.TextDisplay(".com/"),
-                        action = KeyAction.CommitText(".com/"),
+                        display = KeyDisplay.TextDisplay(".com"),
+                        action = KeyAction.CommitText(".com"),
                         color = ColorVariant.MUTED,
                         size = FontSizeVariant.SMALLEST
                     )
