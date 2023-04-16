@@ -2,19 +2,13 @@
 name: Feature request
 about: Suggest an idea for this project
 title: ''
-labels: ''
+labels: enhancement
 assignees: ''
 
 ---
 
-**Is your feature request related to a problem? Please describe.**
-A clear and concise description of what the problem is. Ex. I'm always frustrated when [...]
+- [ ] Did you check to see if this issue already exists?
+- [ ] Is this only a single feature request? Do not put multiple feature requests in one issue.
+- [ ] Is this a question or discussion? Don't use this, use https://lemmy.ml/c/thumbkey
 
-**Describe the solution you'd like**
-A clear and concise description of what you want to happen.
-
-**Describe alternatives you've considered**
-A clear and concise description of any alternative solutions or features you've considered.
-
-**Additional context**
-Add any other context or screenshots about the feature request here.
+** Describe the feature request below **
