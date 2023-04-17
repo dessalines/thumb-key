@@ -82,6 +82,38 @@ val BACKSPACE_KEY_ITEM =
             SwipeDirection.BOTTOM_LEFT to KeyC(
                 action = KeyAction.DeleteLastWord,
                 display = null
+            ),
+            SwipeDirection.RIGHT to KeyC(
+                action = KeyAction.SendEvent(
+                    KeyEvent(
+                        KeyEvent.ACTION_DOWN,
+                        KeyEvent
+                            .KEYCODE_FORWARD_DEL
+                    )
+                ),
+                display = null,
+                color = ColorVariant.MUTED,
+                size = FontSizeVariant.SMALLEST
+            ),
+            SwipeDirection.TOP_RIGHT to KeyC(
+                action = KeyAction.SendEvent(
+                    KeyEvent(
+                        KeyEvent.ACTION_DOWN,
+                        KeyEvent
+                            .KEYCODE_FORWARD_DEL
+                    )
+                ),
+                display = null
+            ),
+            SwipeDirection.BOTTOM_RIGHT to KeyC(
+                action = KeyAction.SendEvent(
+                    KeyEvent(
+                        KeyEvent.ACTION_DOWN,
+                        KeyEvent
+                            .KEYCODE_FORWARD_DEL
+                    )
+                ),
+                display = null
             )
         ),
         backgroundColor = ColorVariant.SURFACE_VARIANT
@@ -108,6 +140,24 @@ val SPACEBAR_KEY_ITEM =
                     KeyEvent(
                         KeyEvent.ACTION_DOWN,
                         KeyEvent.KEYCODE_DPAD_RIGHT
+                    )
+                ),
+                display = null
+            ),
+            SwipeDirection.TOP to KeyC(
+                action = KeyAction.SendEvent(
+                    KeyEvent(
+                        KeyEvent.ACTION_DOWN,
+                        KeyEvent.KEYCODE_DPAD_UP
+                    )
+                ),
+                display = null
+            ),
+            SwipeDirection.BOTTOM to KeyC(
+                action = KeyAction.SendEvent(
+                    KeyEvent(
+                        KeyEvent.ACTION_DOWN,
+                        KeyEvent.KEYCODE_DPAD_DOWN
                     )
                 ),
                 display = null

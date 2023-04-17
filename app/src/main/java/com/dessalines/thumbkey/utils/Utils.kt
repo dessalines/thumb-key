@@ -37,6 +37,7 @@ import com.dessalines.thumbkey.keyboards.MESSAGEEASE_HE_KEYBOARD_MODES
 import com.dessalines.thumbkey.keyboards.THUMBKEY_DE_V2_KEYBOARD_MODES
 import com.dessalines.thumbkey.keyboards.THUMBKEY_DK_V1_KEYBOARD_MODES
 import com.dessalines.thumbkey.keyboards.THUMBKEY_EN_V4_KEYBOARD_MODES
+import com.dessalines.thumbkey.keyboards.THUMBKEY_EN_V4_PROGRAMMER_KEYBOARD_MODES
 import com.dessalines.thumbkey.keyboards.THUMBKEY_EU_V1_KEYBOARD_MODES
 import com.dessalines.thumbkey.keyboards.THUMBKEY_FA_V1_KEYBOARD_MODES
 import com.dessalines.thumbkey.keyboards.THUMBKEY_FI_V1_KEYBOARD_MODES
@@ -72,6 +73,7 @@ fun fontSizeVariantToFontSize(fontSizeVariant: FontSizeVariant, keySize: Dp): Te
     val divFactor = when (fontSizeVariant) {
         FontSizeVariant.LARGE -> 2.5f
         FontSizeVariant.SMALL -> 5f
+        FontSizeVariant.SMALLEST -> 8f
     }
     return TextUnit(keySize.value / divFactor, TextUnitType.Sp)
 }
@@ -79,6 +81,7 @@ fun fontSizeVariantToFontSize(fontSizeVariant: FontSizeVariant, keySize: Dp): Te
 fun keyboardLayoutToModes(layout: KeyboardLayout): Map<KeyboardMode, KeyboardC> {
     return when (layout) {
         KeyboardLayout.ThumbKeyENv4 -> THUMBKEY_EN_V4_KEYBOARD_MODES
+        KeyboardLayout.ThumbKeyENv4Programmer -> THUMBKEY_EN_V4_PROGRAMMER_KEYBOARD_MODES
         KeyboardLayout.ThumbKeyDEv2 -> THUMBKEY_DE_V2_KEYBOARD_MODES
         KeyboardLayout.ThumbKeyDKv1 -> THUMBKEY_DK_V1_KEYBOARD_MODES
         KeyboardLayout.ThumbKeyEUv1 -> THUMBKEY_EU_V1_KEYBOARD_MODES
