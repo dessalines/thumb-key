@@ -15,7 +15,7 @@ import com.dessalines.thumbkey.utils.KeyboardC
 import com.dessalines.thumbkey.utils.KeyboardMode
 import com.dessalines.thumbkey.utils.SwipeDirection
 
-val THUMBKEY_NL_MAIN = KeyboardC(
+val THUMBKEY_NL_V1_MAIN = KeyboardC(
     arrayOf(
         arrayOf(
             KeyItemC(
@@ -216,7 +216,7 @@ val THUMBKEY_NL_MAIN = KeyboardC(
     )
 )
 
-val THUMBKEY_NL_SHIFTED = KeyboardC(
+val THUMBKEY_NL_V1_SHIFTED = KeyboardC(
     arrayOf(
         arrayOf(
             KeyItemC(
@@ -423,8 +423,8 @@ val THUMBKEY_NL_SHIFTED = KeyboardC(
     )
 )
 
-val THUMBKEY_NL_KEYBOARD_MODES: Map<KeyboardMode, KeyboardC> = mapOf(
-    KeyboardMode.MAIN to THUMBKEY_NL_MAIN,
-    KeyboardMode.SHIFTED to THUMBKEY_NL_SHIFTED,
+val THUMBKEY_NL_V1_KEYBOARD_MODES: Map<KeyboardMode, KeyboardC> = mapOf(
+    KeyboardMode.MAIN to THUMBKEY_NL_V1_MAIN,
+    KeyboardMode.SHIFTED to THUMBKEY_NL_V1_SHIFTED,
     KeyboardMode.NUMERIC to NUMERIC_KEYBOARD
 )
