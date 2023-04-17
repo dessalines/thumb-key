@@ -91,7 +91,7 @@ val BACKSPACE_KEY_ITEM =
                             .KEYCODE_FORWARD_DEL
                     )
                 ),
-                display = KeyDisplay.TextDisplay("DEL"),
+                display = null,
                 color = ColorVariant.MUTED,
                 size = FontSizeVariant.SMALLEST
             ),

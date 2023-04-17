@@ -73,7 +73,6 @@ fun fontSizeVariantToFontSize(fontSizeVariant: FontSizeVariant, keySize: Dp): Te
         FontSizeVariant.LARGE -> 2.5f
         FontSizeVariant.SMALL -> 5f
         FontSizeVariant.SMALLEST -> 8f
-
     }
     return TextUnit(keySize.value / divFactor, TextUnitType.Sp)
 }

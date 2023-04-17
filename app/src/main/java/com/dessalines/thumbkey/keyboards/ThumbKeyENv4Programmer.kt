@@ -379,7 +379,7 @@ val THUMBKEY_EN_V4_PROGRAMMER_SHIFTED = KeyboardC(
                     ),
                     SwipeDirection.TOP_RIGHT to KeyC(
                         display = KeyDisplay.TextDisplay("%"),
-                        action = KeyAction.CommitText("%"),
+                        action = KeyAction.CommitText("%")
                     )
                 )
             ),
@@ -468,7 +468,7 @@ val THUMBKEY_EN_V4_PROGRAMMER_SHIFTED = KeyboardC(
                     ),
                     SwipeDirection.LEFT to KeyC(
                         display = KeyDisplay.TextDisplay("#"),
-                        action = KeyAction.CommitText("#"),
+                        action = KeyAction.CommitText("#")
                     ),
                     SwipeDirection.TOP to KeyC(
                         display = KeyDisplay.TextDisplay("€"),
@@ -599,7 +599,7 @@ val THUMBKEY_EN_V4_PROGRAMMER_SHIFTED = KeyboardC(
                         action = KeyAction.CommitText("!"),
                         color = ColorVariant.MUTED
                     )
-                ),
+                )
             ),
             KeyItemC(
                 center = KeyC(
@@ -619,7 +619,7 @@ val THUMBKEY_EN_V4_PROGRAMMER_SHIFTED = KeyboardC(
                     ),
                     SwipeDirection.BOTTOM_RIGHT to KeyC(
                         display = KeyDisplay.TextDisplay("_"),
-                        action = KeyAction.CommitText("_"),
+                        action = KeyAction.CommitText("_")
                     ),
                     SwipeDirection.BOTTOM to KeyC(
                         display = KeyDisplay.TextDisplay("."),
