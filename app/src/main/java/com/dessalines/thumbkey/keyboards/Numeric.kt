@@ -86,6 +86,10 @@ val NUMERIC_KEYBOARD = KeyboardC(
                         display = KeyDisplay.TextDisplay("€"),
                         action = KeyAction.CommitText("€")
                     ),
+                    SwipeDirection.BOTTOM_LEFT to KeyC(
+                        display = KeyDisplay.TextDisplay("£"),
+                        action = KeyAction.CommitText("£")
+                    ),
                     SwipeDirection.BOTTOM to KeyC(
                         display = KeyDisplay.TextDisplay("="),
                         action = KeyAction.CommitText("=")
