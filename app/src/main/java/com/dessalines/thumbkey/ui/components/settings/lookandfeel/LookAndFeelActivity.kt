@@ -44,6 +44,7 @@ import com.dessalines.thumbkey.db.DEFAULT_ANIMATION_SPEED
 import com.dessalines.thumbkey.db.DEFAULT_AUTO_CAPITALIZE
 import com.dessalines.thumbkey.db.DEFAULT_HIDE_LETTERS
 import com.dessalines.thumbkey.db.DEFAULT_KEYBOARD_LAYOUT
+import com.dessalines.thumbkey.db.DEFAULT_KEY_BORDERS
 import com.dessalines.thumbkey.db.DEFAULT_KEY_SIZE
 import com.dessalines.thumbkey.db.DEFAULT_MIN_SWIPE_LENGTH
 import com.dessalines.thumbkey.db.DEFAULT_POSITION
@@ -108,6 +109,9 @@ fun LookAndFeelActivity(
     )
     val themeState = rememberIntSettingState(settings?.theme ?: DEFAULT_THEME)
     val themeColorState = rememberIntSettingState(settings?.themeColor ?: DEFAULT_THEME_COLOR)
+    val keyBordersState = rememberBooleanSettingState(
+        ((settings?.keyBorders ?: DEFAULT_KEY_BORDERS).toBool())
+    )
 
     val snackbarHostState = remember { SnackbarHostState() }
 
@@ -150,6 +154,7 @@ fun LookAndFeelActivity(
                             minSwipeLengthState,
                             positionState,
                             autoCapitalizeState,
+                            keyBordersState,
                             vibrateOnTapState,
                             soundOnTapState,
                             hideLettersState,
@@ -182,6 +187,7 @@ fun LookAndFeelActivity(
                             minSwipeLengthState,
                             positionState,
                             autoCapitalizeState,
+                            keyBordersState,
                             vibrateOnTapState,
                             soundOnTapState,
                             hideLettersState,
@@ -214,6 +220,7 @@ fun LookAndFeelActivity(
                             minSwipeLengthState,
                             positionState,
                             autoCapitalizeState,
+                            keyBordersState,
                             vibrateOnTapState,
                             soundOnTapState,
                             hideLettersState,
@@ -246,6 +253,7 @@ fun LookAndFeelActivity(
                             minSwipeLengthState,
                             positionState,
                             autoCapitalizeState,
+                            keyBordersState,
                             vibrateOnTapState,
                             soundOnTapState,
                             hideLettersState,
@@ -276,6 +284,7 @@ fun LookAndFeelActivity(
                             minSwipeLengthState,
                             positionState,
                             autoCapitalizeState,
+                            keyBordersState,
                             vibrateOnTapState,
                             soundOnTapState,
                             hideLettersState,
@@ -306,6 +315,7 @@ fun LookAndFeelActivity(
                             minSwipeLengthState,
                             positionState,
                             autoCapitalizeState,
+                            keyBordersState,
                             vibrateOnTapState,
                             soundOnTapState,
                             hideLettersState,
@@ -336,6 +346,7 @@ fun LookAndFeelActivity(
                             minSwipeLengthState,
                             positionState,
                             autoCapitalizeState,
+                            keyBordersState,
                             vibrateOnTapState,
                             soundOnTapState,
                             hideLettersState,
@@ -366,6 +377,38 @@ fun LookAndFeelActivity(
                             minSwipeLengthState,
                             positionState,
                             autoCapitalizeState,
+                            keyBordersState,
+                            vibrateOnTapState,
+                            soundOnTapState,
+                            hideLettersState,
+                            keyboardLayoutsState,
+                            themeState,
+                            themeColorState
+                        )
+                    }
+                )
+                SettingsCheckbox(
+                    state = keyBordersState,
+                    icon = {
+                        Icon(
+                            imageVector = Icons.Outlined.BorderAll,
+                            contentDescription = stringResource(R.string.key_borders)
+                        )
+                    },
+                    title = {
+                        Text(stringResource(R.string.key_borders))
+                    },
+                    onCheckedChange = {
+                        updateAppSettings(
+                            appSettingsViewModel,
+                            keySizeState,
+                            pushupSizeState,
+                            animationSpeedState,
+                            animationHelperSpeedState,
+                            minSwipeLengthState,
+                            positionState,
+                            autoCapitalizeState,
+                            keyBordersState,
                             vibrateOnTapState,
                             soundOnTapState,
                             hideLettersState,
@@ -398,6 +441,7 @@ fun LookAndFeelActivity(
                             minSwipeLengthState,
                             positionState,
                             autoCapitalizeState,
+                            keyBordersState,
                             vibrateOnTapState,
                             soundOnTapState,
                             hideLettersState,
@@ -430,6 +474,7 @@ fun LookAndFeelActivity(
                             minSwipeLengthState,
                             positionState,
                             autoCapitalizeState,
+                            keyBordersState,
                             vibrateOnTapState,
                             soundOnTapState,
                             hideLettersState,
@@ -462,6 +507,7 @@ fun LookAndFeelActivity(
                             minSwipeLengthState,
                             positionState,
                             autoCapitalizeState,
+                            keyBordersState,
                             vibrateOnTapState,
                             soundOnTapState,
                             hideLettersState,
@@ -494,6 +540,7 @@ fun LookAndFeelActivity(
                             minSwipeLengthState,
                             positionState,
                             autoCapitalizeState,
+                            keyBordersState,
                             vibrateOnTapState,
                             soundOnTapState,
                             hideLettersState,
@@ -531,6 +578,7 @@ fun LookAndFeelActivity(
                             minSwipeLengthState,
                             positionState,
                             autoCapitalizeState,
+                            keyBordersState,
                             vibrateOnTapState,
                             soundOnTapState,
                             hideLettersState,
@@ -560,6 +608,7 @@ fun LookAndFeelActivity(
                             minSwipeLengthState,
                             positionState,
                             autoCapitalizeState,
+                            keyBordersState,
                             vibrateOnTapState,
                             soundOnTapState,
                             hideLettersState,
@@ -591,6 +640,7 @@ private fun updateAppSettings(
     minSwipeLengthState: SettingValueState<Float>,
     positionState: SettingValueState<Int>,
     autoCapitalizeState: SettingValueState<Boolean>,
+    keyBordersState: SettingValueState<Boolean>,
     vibrateOnTapState: SettingValueState<Boolean>,
     soundOnTapState: SettingValueState<Boolean>,
     hideLettersState: SettingValueState<Boolean>,
@@ -608,6 +658,7 @@ private fun updateAppSettings(
             minSwipeLength = minSwipeLengthState.value.toInt(),
             position = positionState.value,
             autoCapitalize = autoCapitalizeState.value.toInt(),
+            keyBorders = keyBordersState.value.toInt(),
             vibrateOnTap = vibrateOnTapState.value.toInt(),
             soundOnTap = soundOnTapState.value.toInt(),
             hideLetters = hideLettersState.value.toInt(),
@@ -629,6 +680,7 @@ private fun resetAppSettingsToDefault(
     minSwipeLengthState: SettingValueState<Float>,
     positionState: SettingValueState<Int>,
     autoCapitalizeState: SettingValueState<Boolean>,
+    keyBordersState: SettingValueState<Boolean>,
     vibrateOnTapState: SettingValueState<Boolean>,
     soundOnTapState: SettingValueState<Boolean>,
     hideLettersState: SettingValueState<Boolean>,
@@ -643,6 +695,7 @@ private fun resetAppSettingsToDefault(
     minSwipeLengthState.value = DEFAULT_MIN_SWIPE_LENGTH.toFloat()
     positionState.value = DEFAULT_POSITION
     autoCapitalizeState.value = DEFAULT_AUTO_CAPITALIZE.toBool()
+    keyBordersState.value = DEFAULT_KEY_BORDERS.toBool()
     vibrateOnTapState.value = DEFAULT_VIBRATE_ON_TAP.toBool()
     soundOnTapState.value = DEFAULT_SOUND_ON_TAP.toBool()
     hideLettersState.value = DEFAULT_HIDE_LETTERS.toBool()
@@ -659,6 +712,7 @@ private fun resetAppSettingsToDefault(
         minSwipeLengthState,
         positionState,
         autoCapitalizeState,
+        keyBordersState,
         vibrateOnTapState,
         soundOnTapState,
         hideLettersState,
