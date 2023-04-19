@@ -18,6 +18,7 @@ import com.dessalines.thumbkey.db.DEFAULT_ANIMATION_SPEED
 import com.dessalines.thumbkey.db.DEFAULT_AUTO_CAPITALIZE
 import com.dessalines.thumbkey.db.DEFAULT_HIDE_LETTERS
 import com.dessalines.thumbkey.db.DEFAULT_KEYBOARD_LAYOUT
+import com.dessalines.thumbkey.db.DEFAULT_KEY_BORDERS
 import com.dessalines.thumbkey.db.DEFAULT_KEY_SIZE
 import com.dessalines.thumbkey.db.DEFAULT_MIN_SWIPE_LENGTH
 import com.dessalines.thumbkey.db.DEFAULT_POSITION
@@ -75,6 +76,7 @@ fun KeyboardScreen(
     val pushupSizeDp = (settings?.pushupSize ?: DEFAULT_PUSHUP_SIZE).dp
 
     val autoCapitalize = (settings?.autoCapitalize ?: DEFAULT_AUTO_CAPITALIZE).toBool()
+    val keyBorders = (settings?.keyBorders ?: DEFAULT_KEY_BORDERS).toBool()
     val vibrateOnTap = (settings?.vibrateOnTap ?: DEFAULT_VIBRATE_ON_TAP).toBool()
     val soundOnTap = (settings?.soundOnTap ?: DEFAULT_SOUND_ON_TAP).toBool()
     val hideLetters = (settings?.hideLetters ?: DEFAULT_HIDE_LETTERS).toBool()
@@ -97,6 +99,7 @@ fun KeyboardScreen(
                                 lastAction = lastAction,
                                 keySize = settings?.keySize ?: DEFAULT_KEY_SIZE,
                                 autoCapitalize = autoCapitalize,
+                                keyBorders = keyBorders,
                                 vibrateOnTap = vibrateOnTap,
                                 soundOnTap = soundOnTap,
                                 hideLetters = hideLetters,
