@@ -49,4 +49,5 @@
     <string name="hide_letters">Hide Letters</string>
     <string name="save">Save</string>
     <string name="key_borders">Key Borders</string>
+    <string name="spacebar_multitaps">Spacebar Multi-taps</string>
 </resources>

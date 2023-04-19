@@ -57,6 +57,7 @@ fun KeyboardKey(
     animationHelperSpeed: Int,
     animationSpeed: Int,
     autoCapitalize: Boolean,
+    spacebarMultiTaps: Boolean,
     keyBorders: Boolean,
     vibrateOnTap: Boolean,
     soundOnTap: Boolean,
@@ -84,7 +85,11 @@ fun KeyboardKey(
     val releasedKey = remember { mutableStateOf<String?>(null) }
 
     var tapCount by remember { mutableStateOf(0) }
-    val tapActions = buildTapActions(key)
+    val tapActions = if (spacebarMultiTaps) {
+        buildTapActions(key)
+    } else {
+        listOf(key.center.action)
+    }
 
     var offsetX by remember { mutableStateOf(0f) }
     var offsetY by remember { mutableStateOf(0f) }

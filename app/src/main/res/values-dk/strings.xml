@@ -49,4 +49,6 @@
     <string name="hide_letters">Skjul bogstaver</string>
     <string name="save">Gem</string>
     <string name="key_borders">Nøglegrænser</string>
+    <!--    TODO Needs Translating -->
+    <string name="spacebar_multitaps">Spacebar Multi-taps</string>
 </resources>
