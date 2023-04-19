@@ -462,10 +462,6 @@ val THUMBKEY_IT_V1_SHIFTED = KeyboardC(
                     color = ColorVariant.PRIMARY
                 ),
                 swipes = mapOf(
-                    SwipeDirection.TOP_LEFT to KeyC(
-                        display = KeyDisplay.TextDisplay("F"),
-                        action = KeyAction.CommitText("F")
-                    ),
                     SwipeDirection.RIGHT to KeyC(
                         display = KeyDisplay.TextDisplay("È"),
                         action = KeyAction.CommitText("È")
