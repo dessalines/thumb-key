@@ -37,11 +37,15 @@ import com.dessalines.thumbkey.keyboards.MESSAGEEASE_HE_KEYBOARD_MODES
 import com.dessalines.thumbkey.keyboards.THUMBKEY_DE_V2_KEYBOARD_MODES
 import com.dessalines.thumbkey.keyboards.THUMBKEY_DK_V1_KEYBOARD_MODES
 import com.dessalines.thumbkey.keyboards.THUMBKEY_EN_V4_KEYBOARD_MODES
+import com.dessalines.thumbkey.keyboards.THUMBKEY_EN_V4_PROGRAMMER_KEYBOARD_MODES
+import com.dessalines.thumbkey.keyboards.THUMBKEY_ES_V1_KEYBOARD_MODES
 import com.dessalines.thumbkey.keyboards.THUMBKEY_EU_V1_KEYBOARD_MODES
 import com.dessalines.thumbkey.keyboards.THUMBKEY_FA_V1_KEYBOARD_MODES
 import com.dessalines.thumbkey.keyboards.THUMBKEY_FI_V1_KEYBOARD_MODES
 import com.dessalines.thumbkey.keyboards.THUMBKEY_FR_V1_KEYBOARD_MODES
 import com.dessalines.thumbkey.keyboards.THUMBKEY_IT_V1_KEYBOARD_MODES
+import com.dessalines.thumbkey.keyboards.THUMBKEY_NL_V1_KEYBOARD_MODES
+import com.dessalines.thumbkey.keyboards.THUMBKEY_PL_V2_KEYBOARD_MODES
 import com.dessalines.thumbkey.keyboards.THUMBKEY_PT_V1_KEYBOARD_MODES
 import com.dessalines.thumbkey.keyboards.THUMBKEY_RU_V1_KEYBOARD_MODES
 import com.dessalines.thumbkey.keyboards.THUMBKEY_UK_V1_KEYBOARD_MODES
@@ -71,6 +75,7 @@ fun fontSizeVariantToFontSize(fontSizeVariant: FontSizeVariant, keySize: Dp): Te
     val divFactor = when (fontSizeVariant) {
         FontSizeVariant.LARGE -> 2.5f
         FontSizeVariant.SMALL -> 5f
+        FontSizeVariant.SMALLEST -> 8f
     }
     return TextUnit(keySize.value / divFactor, TextUnitType.Sp)
 }
@@ -78,16 +83,20 @@ fun fontSizeVariantToFontSize(fontSizeVariant: FontSizeVariant, keySize: Dp): Te
 fun keyboardLayoutToModes(layout: KeyboardLayout): Map<KeyboardMode, KeyboardC> {
     return when (layout) {
         KeyboardLayout.ThumbKeyENv4 -> THUMBKEY_EN_V4_KEYBOARD_MODES
+        KeyboardLayout.ThumbKeyENv4Programmer -> THUMBKEY_EN_V4_PROGRAMMER_KEYBOARD_MODES
         KeyboardLayout.ThumbKeyDEv2 -> THUMBKEY_DE_V2_KEYBOARD_MODES
         KeyboardLayout.ThumbKeyDKv1 -> THUMBKEY_DK_V1_KEYBOARD_MODES
+        KeyboardLayout.ThumbKeyESv1 -> THUMBKEY_ES_V1_KEYBOARD_MODES
         KeyboardLayout.ThumbKeyEUv1 -> THUMBKEY_EU_V1_KEYBOARD_MODES
         KeyboardLayout.ThumbKeyFAv1 -> THUMBKEY_FA_V1_KEYBOARD_MODES
         KeyboardLayout.ThumbKeyFIv1 -> THUMBKEY_FI_V1_KEYBOARD_MODES
         KeyboardLayout.ThumbKeyFRv1 -> THUMBKEY_FR_V1_KEYBOARD_MODES
         KeyboardLayout.ThumbKeyITv1 -> THUMBKEY_IT_V1_KEYBOARD_MODES
+        KeyboardLayout.ThumbKeyNLv1 -> THUMBKEY_NL_V1_KEYBOARD_MODES
+        KeyboardLayout.ThumbKeyPLv2 -> THUMBKEY_PL_V2_KEYBOARD_MODES
         KeyboardLayout.ThumbKeyPTv1 -> THUMBKEY_PT_V1_KEYBOARD_MODES
-        KeyboardLayout.ThumbkeyRUv1 -> THUMBKEY_RU_V1_KEYBOARD_MODES
-        KeyboardLayout.ThumbkeyUKv1 -> THUMBKEY_UK_V1_KEYBOARD_MODES
+        KeyboardLayout.ThumbKeyRUv1 -> THUMBKEY_RU_V1_KEYBOARD_MODES
+        KeyboardLayout.ThumbKeyUKv1 -> THUMBKEY_UK_V1_KEYBOARD_MODES
         KeyboardLayout.MessageEaseEN -> MESSAGEEASE_EN_KEYBOARD_MODES
         KeyboardLayout.MessageEaseENSymbols -> MESSAGEEASE_EN_SYMBOLS_KEYBOARD_MODES
         KeyboardLayout.MessageEaseHE -> MESSAGEEASE_HE_KEYBOARD_MODES

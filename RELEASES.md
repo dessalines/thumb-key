@@ -1,3 +1,21 @@
+# Thumb-Key 0.0.12-alpha (2023-04-18)
+
+## What's Changed
+
+- Update ThumbKeyITv1.kt by @morellik in https://github.com/dessalines/thumb-key/pull/157
+- added dutch layout by @joerievers in https://github.com/dessalines/thumb-key/pull/166
+- programmer keyboard layout by @domportera in https://github.com/dessalines/thumb-key/pull/153
+- Adding polish layout. Fixes #173 by @dessalines in https://github.com/dessalines/thumb-key/pull/174
+- Add spanish layout. Fixes #142 by @dessalines in https://github.com/dessalines/thumb-key/pull/175
+- Fix scrolling language selection. Fixes #130 by @dessalines in https://github.com/dessalines/thumb-key/pull/176
+
+## New Contributors
+
+- @joerievers made their first contribution in https://github.com/dessalines/thumb-key/pull/166
+- @domportera made their first contribution in https://github.com/dessalines/thumb-key/pull/153
+
+**Full Changelog**: https://github.com/dessalines/thumb-key/compare/0.0.11...0.0.12
+
 # Thumb-Key 0.0.11-alpha (2023-04-12)
 
 ## What's Changed
