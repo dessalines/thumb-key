@@ -24,6 +24,7 @@ import com.dessalines.thumbkey.db.DEFAULT_MIN_SWIPE_LENGTH
 import com.dessalines.thumbkey.db.DEFAULT_POSITION
 import com.dessalines.thumbkey.db.DEFAULT_PUSHUP_SIZE
 import com.dessalines.thumbkey.db.DEFAULT_SOUND_ON_TAP
+import com.dessalines.thumbkey.db.DEFAULT_SPACEBAR_MULTITAPS
 import com.dessalines.thumbkey.db.DEFAULT_VIBRATE_ON_TAP
 import com.dessalines.thumbkey.keyboards.THUMBKEY_EN_V4_MAIN
 import com.dessalines.thumbkey.utils.KeyAction
@@ -76,6 +77,7 @@ fun KeyboardScreen(
     val pushupSizeDp = (settings?.pushupSize ?: DEFAULT_PUSHUP_SIZE).dp
 
     val autoCapitalize = (settings?.autoCapitalize ?: DEFAULT_AUTO_CAPITALIZE).toBool()
+    val spacebarMultiTaps = (settings?.spacebarMultiTaps ?: DEFAULT_SPACEBAR_MULTITAPS).toBool()
     val keyBorders = (settings?.keyBorders ?: DEFAULT_KEY_BORDERS).toBool()
     val vibrateOnTap = (settings?.vibrateOnTap ?: DEFAULT_VIBRATE_ON_TAP).toBool()
     val soundOnTap = (settings?.soundOnTap ?: DEFAULT_SOUND_ON_TAP).toBool()
@@ -99,6 +101,7 @@ fun KeyboardScreen(
                                 lastAction = lastAction,
                                 keySize = settings?.keySize ?: DEFAULT_KEY_SIZE,
                                 autoCapitalize = autoCapitalize,
+                                spacebarMultiTaps = spacebarMultiTaps,
                                 keyBorders = keyBorders,
                                 vibrateOnTap = vibrateOnTap,
                                 soundOnTap = soundOnTap,

@@ -50,6 +50,7 @@ import com.dessalines.thumbkey.db.DEFAULT_MIN_SWIPE_LENGTH
 import com.dessalines.thumbkey.db.DEFAULT_POSITION
 import com.dessalines.thumbkey.db.DEFAULT_PUSHUP_SIZE
 import com.dessalines.thumbkey.db.DEFAULT_SOUND_ON_TAP
+import com.dessalines.thumbkey.db.DEFAULT_SPACEBAR_MULTITAPS
 import com.dessalines.thumbkey.db.DEFAULT_THEME
 import com.dessalines.thumbkey.db.DEFAULT_THEME_COLOR
 import com.dessalines.thumbkey.db.DEFAULT_VIBRATE_ON_TAP
@@ -112,6 +113,9 @@ fun LookAndFeelActivity(
     val keyBordersState = rememberBooleanSettingState(
         ((settings?.keyBorders ?: DEFAULT_KEY_BORDERS).toBool())
     )
+    val spacebarMultiTapsState = rememberBooleanSettingState(
+        ((settings?.spacebarMultiTaps ?: DEFAULT_SPACEBAR_MULTITAPS).toBool())
+    )
 
     val snackbarHostState = remember { SnackbarHostState() }
 
@@ -154,6 +158,7 @@ fun LookAndFeelActivity(
                             minSwipeLengthState,
                             positionState,
                             autoCapitalizeState,
+                            spacebarMultiTapsState,
                             keyBordersState,
                             vibrateOnTapState,
                             soundOnTapState,
@@ -187,6 +192,7 @@ fun LookAndFeelActivity(
                             minSwipeLengthState,
                             positionState,
                             autoCapitalizeState,
+                            spacebarMultiTapsState,
                             keyBordersState,
                             vibrateOnTapState,
                             soundOnTapState,
@@ -220,6 +226,7 @@ fun LookAndFeelActivity(
                             minSwipeLengthState,
                             positionState,
                             autoCapitalizeState,
+                            spacebarMultiTapsState,
                             keyBordersState,
                             vibrateOnTapState,
                             soundOnTapState,
@@ -253,6 +260,7 @@ fun LookAndFeelActivity(
                             minSwipeLengthState,
                             positionState,
                             autoCapitalizeState,
+                            spacebarMultiTapsState,
                             keyBordersState,
                             vibrateOnTapState,
                             soundOnTapState,
@@ -284,6 +292,7 @@ fun LookAndFeelActivity(
                             minSwipeLengthState,
                             positionState,
                             autoCapitalizeState,
+                            spacebarMultiTapsState,
                             keyBordersState,
                             vibrateOnTapState,
                             soundOnTapState,
@@ -315,6 +324,7 @@ fun LookAndFeelActivity(
                             minSwipeLengthState,
                             positionState,
                             autoCapitalizeState,
+                            spacebarMultiTapsState,
                             keyBordersState,
                             vibrateOnTapState,
                             soundOnTapState,
@@ -346,6 +356,7 @@ fun LookAndFeelActivity(
                             minSwipeLengthState,
                             positionState,
                             autoCapitalizeState,
+                            spacebarMultiTapsState,
                             keyBordersState,
                             vibrateOnTapState,
                             soundOnTapState,
@@ -377,6 +388,39 @@ fun LookAndFeelActivity(
                             minSwipeLengthState,
                             positionState,
                             autoCapitalizeState,
+                            spacebarMultiTapsState,
+                            keyBordersState,
+                            vibrateOnTapState,
+                            soundOnTapState,
+                            hideLettersState,
+                            keyboardLayoutsState,
+                            themeState,
+                            themeColorState
+                        )
+                    }
+                )
+                SettingsCheckbox(
+                    state = spacebarMultiTapsState,
+                    icon = {
+                        Icon(
+                            imageVector = Icons.Outlined.SpaceBar,
+                            contentDescription = stringResource(R.string.spacebar_multitaps)
+                        )
+                    },
+                    title = {
+                        Text(stringResource(R.string.spacebar_multitaps))
+                    },
+                    onCheckedChange = {
+                        updateAppSettings(
+                            appSettingsViewModel,
+                            keySizeState,
+                            pushupSizeState,
+                            animationSpeedState,
+                            animationHelperSpeedState,
+                            minSwipeLengthState,
+                            positionState,
+                            autoCapitalizeState,
+                            spacebarMultiTapsState,
                             keyBordersState,
                             vibrateOnTapState,
                             soundOnTapState,
@@ -408,6 +452,7 @@ fun LookAndFeelActivity(
                             minSwipeLengthState,
                             positionState,
                             autoCapitalizeState,
+                            spacebarMultiTapsState,
                             keyBordersState,
                             vibrateOnTapState,
                             soundOnTapState,
@@ -441,6 +486,7 @@ fun LookAndFeelActivity(
                             minSwipeLengthState,
                             positionState,
                             autoCapitalizeState,
+                            spacebarMultiTapsState,
                             keyBordersState,
                             vibrateOnTapState,
                             soundOnTapState,
@@ -474,6 +520,7 @@ fun LookAndFeelActivity(
                             minSwipeLengthState,
                             positionState,
                             autoCapitalizeState,
+                            spacebarMultiTapsState,
                             keyBordersState,
                             vibrateOnTapState,
                             soundOnTapState,
@@ -507,6 +554,7 @@ fun LookAndFeelActivity(
                             minSwipeLengthState,
                             positionState,
                             autoCapitalizeState,
+                            spacebarMultiTapsState,
                             keyBordersState,
                             vibrateOnTapState,
                             soundOnTapState,
@@ -540,6 +588,7 @@ fun LookAndFeelActivity(
                             minSwipeLengthState,
                             positionState,
                             autoCapitalizeState,
+                            spacebarMultiTapsState,
                             keyBordersState,
                             vibrateOnTapState,
                             soundOnTapState,
@@ -578,6 +627,7 @@ fun LookAndFeelActivity(
                             minSwipeLengthState,
                             positionState,
                             autoCapitalizeState,
+                            spacebarMultiTapsState,
                             keyBordersState,
                             vibrateOnTapState,
                             soundOnTapState,
@@ -608,6 +658,7 @@ fun LookAndFeelActivity(
                             minSwipeLengthState,
                             positionState,
                             autoCapitalizeState,
+                            spacebarMultiTapsState,
                             keyBordersState,
                             vibrateOnTapState,
                             soundOnTapState,
@@ -640,6 +691,7 @@ private fun updateAppSettings(
     minSwipeLengthState: SettingValueState<Float>,
     positionState: SettingValueState<Int>,
     autoCapitalizeState: SettingValueState<Boolean>,
+    spacebarMultiTapsState: SettingValueState<Boolean>,
     keyBordersState: SettingValueState<Boolean>,
     vibrateOnTapState: SettingValueState<Boolean>,
     soundOnTapState: SettingValueState<Boolean>,
@@ -658,6 +710,7 @@ private fun updateAppSettings(
             minSwipeLength = minSwipeLengthState.value.toInt(),
             position = positionState.value,
             autoCapitalize = autoCapitalizeState.value.toInt(),
+            spacebarMultiTaps = spacebarMultiTapsState.value.toInt(),
             keyBorders = keyBordersState.value.toInt(),
             vibrateOnTap = vibrateOnTapState.value.toInt(),
             soundOnTap = soundOnTapState.value.toInt(),
@@ -680,6 +733,7 @@ private fun resetAppSettingsToDefault(
     minSwipeLengthState: SettingValueState<Float>,
     positionState: SettingValueState<Int>,
     autoCapitalizeState: SettingValueState<Boolean>,
+    spacebarMultiTapsState: SettingValueState<Boolean>,
     keyBordersState: SettingValueState<Boolean>,
     vibrateOnTapState: SettingValueState<Boolean>,
     soundOnTapState: SettingValueState<Boolean>,
@@ -695,6 +749,7 @@ private fun resetAppSettingsToDefault(
     minSwipeLengthState.value = DEFAULT_MIN_SWIPE_LENGTH.toFloat()
     positionState.value = DEFAULT_POSITION
     autoCapitalizeState.value = DEFAULT_AUTO_CAPITALIZE.toBool()
+    spacebarMultiTapsState.value = DEFAULT_SPACEBAR_MULTITAPS.toBool()
     keyBordersState.value = DEFAULT_KEY_BORDERS.toBool()
     vibrateOnTapState.value = DEFAULT_VIBRATE_ON_TAP.toBool()
     soundOnTapState.value = DEFAULT_SOUND_ON_TAP.toBool()
@@ -712,6 +767,7 @@ private fun resetAppSettingsToDefault(
         minSwipeLengthState,
         positionState,
         autoCapitalizeState,
+        spacebarMultiTapsState,
         keyBordersState,
         vibrateOnTapState,
         soundOnTapState,
