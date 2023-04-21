@@ -423,7 +423,7 @@ fun Boolean.toInt() = this.compareTo(false)
 fun keyboardLayoutsSetFromString(layouts: String?): Set<Int> {
     return layouts?.split(",")?.map { it.trim().toInt() }?.toSet()
         ?: setOf(
-            DEFAULT_KEYBOARD_LAYOUT // TODO this right
+            DEFAULT_KEYBOARD_LAYOUT
         )
 }
 
