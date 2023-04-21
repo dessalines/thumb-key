@@ -60,7 +60,9 @@ import com.dessalines.thumbkey.utils.SimpleTopAppBar
 import com.dessalines.thumbkey.utils.TAG
 import com.dessalines.thumbkey.utils.ThemeColor
 import com.dessalines.thumbkey.utils.ThemeMode
-import com.dessalines.thumbkey.utils.keyboardLayoutsSetFromString
+import com.dessalines.thumbkey.utils.keyboardLayoutsSetFromTitleIndex
+import com.dessalines.thumbkey.utils.keyboardRealIndexFromTitleIndex
+import com.dessalines.thumbkey.utils.keyboardTitleIndexFromRealIndex
 import com.dessalines.thumbkey.utils.toBool
 import com.dessalines.thumbkey.utils.toInt
 
@@ -106,7 +108,7 @@ fun LookAndFeelActivity(
     )
 
     val keyboardLayoutsState = rememberIntSetSettingState(
-        keyboardLayoutsSetFromString(settings?.keyboardLayouts)
+        keyboardLayoutsSetFromTitleIndex(settings?.keyboardLayouts)
     )
     val themeState = rememberIntSettingState(settings?.theme ?: DEFAULT_THEME)
     val themeColorState = rememberIntSettingState(settings?.themeColor ?: DEFAULT_THEME_COLOR)
@@ -137,7 +139,7 @@ fun LookAndFeelActivity(
             ) {
                 SettingsListMultiSelect(
                     state = keyboardLayoutsState,
-                    items = KeyboardLayout.values().map { it.title },
+                    items = KeyboardLayout.values().sortedBy { it.title }.map { it.title },
                     icon = {
                         Icon(
                             imageVector = Icons.Outlined.KeyboardAlt,
@@ -715,8 +717,10 @@ private fun updateAppSettings(
             vibrateOnTap = vibrateOnTapState.value.toInt(),
             soundOnTap = soundOnTapState.value.toInt(),
             hideLetters = hideLettersState.value.toInt(),
-            keyboardLayout = keyboardLayoutsState.value.first(), // Set the current to the first
-            keyboardLayouts = keyboardLayoutsState.value.joinToString(),
+            keyboardLayout = keyboardRealIndexFromTitleIndex(keyboardLayoutsState.value.first()), // Set
+            // the current to the first
+            keyboardLayouts = keyboardLayoutsState.value.map { keyboardRealIndexFromTitleIndex(it) }
+                .joinToString(),
             theme = themeState.value,
             themeColor = themeColorState.value,
             viewedChangelog = appSettingsViewModel.appSettings.value?.viewedChangelog ?: 0
@@ -754,7 +758,7 @@ private fun resetAppSettingsToDefault(
     vibrateOnTapState.value = DEFAULT_VIBRATE_ON_TAP.toBool()
     soundOnTapState.value = DEFAULT_SOUND_ON_TAP.toBool()
     hideLettersState.value = DEFAULT_HIDE_LETTERS.toBool()
-    keyboardLayoutsState.value = setOf(DEFAULT_KEYBOARD_LAYOUT)
+    keyboardLayoutsState.value = setOf(keyboardTitleIndexFromRealIndex(DEFAULT_KEYBOARD_LAYOUT))
     themeState.value = DEFAULT_THEME
     themeColorState.value = DEFAULT_THEME_COLOR
 
