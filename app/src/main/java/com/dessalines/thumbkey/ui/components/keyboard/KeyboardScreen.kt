@@ -60,7 +60,7 @@ fun KeyboardScreen(
     val lastAction = remember { mutableStateOf<KeyAction?>(null) }
 
     val keyboardGroup = keyboardLayoutToModes(
-        KeyboardLayout.values()[
+        KeyboardLayout.values().sortedBy { it.index }[
             settings?.keyboardLayout
                 ?: DEFAULT_KEYBOARD_LAYOUT
         ]
