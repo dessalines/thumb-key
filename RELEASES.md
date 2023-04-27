@@ -1,3 +1,19 @@
+# Thumb-Key 0.0.13-alpha (2023-04-21)
+
+## What's Changed
+
+- suggestion to add sterling symbol to numeric key 3 bottom left swipe by @scheckley in https://github.com/dessalines/thumb-key/pull/179
+- Removed double capital F by @morellik in https://github.com/dessalines/thumb-key/pull/180
+- Add borderless keys option. Fixes #158 by @dessalines in https://github.com/dessalines/thumb-key/pull/181
+- Disable spacebar multitap option by @dessalines in https://github.com/dessalines/thumb-key/pull/182
+- Send apostrophe back where it came from 🔫 by @domportera in https://github.com/dessalines/thumb-key/pull/185
+
+## New Contributors
+
+- @scheckley made their first contribution in https://github.com/dessalines/thumb-key/pull/179
+
+**Full Changelog**: https://github.com/dessalines/thumb-key/compare/0.0.12...0.0.13
+
 # Thumb-Key 0.0.12-alpha (2023-04-18)
 
 ## What's Changed

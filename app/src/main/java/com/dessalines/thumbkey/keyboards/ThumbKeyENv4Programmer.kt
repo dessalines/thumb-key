@@ -76,11 +76,6 @@ val THUMBKEY_EN_V4_PROGRAMMER = KeyboardC(
                         action = KeyAction.CommitText("\""),
                         color = ColorVariant.MUTED
                     ),
-                    SwipeDirection.TOP_RIGHT to KeyC(
-                        display = KeyDisplay.TextDisplay("'"),
-                        action = KeyAction.CommitText("'"),
-                        color = ColorVariant.MUTED
-                    ),
                     SwipeDirection.LEFT to KeyC(
                         display = KeyDisplay.TextDisplay("<"),
                         action = KeyAction.CommitText("<"),
@@ -279,6 +274,11 @@ val THUMBKEY_EN_V4_PROGRAMMER = KeyboardC(
                         display = KeyDisplay.TextDisplay("f"),
                         action = KeyAction.CommitText("f")
                     ),
+                    SwipeDirection.TOP_RIGHT to KeyC(
+                        display = KeyDisplay.TextDisplay("'"),
+                        action = KeyAction.CommitText("'"),
+                        color = ColorVariant.MUTED
+                    ),
                     SwipeDirection.RIGHT to KeyC(
                         display = KeyDisplay.TextDisplay("z"),
                         action = KeyAction.CommitText("z")
@@ -403,11 +403,6 @@ val THUMBKEY_EN_V4_PROGRAMMER_SHIFTED = KeyboardC(
                     SwipeDirection.TOP_LEFT to KeyC(
                         display = KeyDisplay.TextDisplay("\""),
                         action = KeyAction.CommitText("\""),
-                        color = ColorVariant.MUTED
-                    ),
-                    SwipeDirection.TOP_RIGHT to KeyC(
-                        display = KeyDisplay.TextDisplay("'"),
-                        action = KeyAction.CommitText("'"),
                         color = ColorVariant.MUTED
                     ),
                     SwipeDirection.LEFT to KeyC(
@@ -612,6 +607,11 @@ val THUMBKEY_EN_V4_PROGRAMMER_SHIFTED = KeyboardC(
                     SwipeDirection.TOP to KeyC(
                         display = KeyDisplay.TextDisplay("F"),
                         action = KeyAction.CommitText("F")
+                    ),
+                    SwipeDirection.TOP_RIGHT to KeyC(
+                        display = KeyDisplay.TextDisplay("'"),
+                        action = KeyAction.CommitText("'"),
+                        color = ColorVariant.MUTED
                     ),
                     SwipeDirection.RIGHT to KeyC(
                         display = KeyDisplay.TextDisplay("Z"),

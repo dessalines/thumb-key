@@ -27,6 +27,8 @@ const val DEFAULT_SOUND_ON_TAP = 0
 const val DEFAULT_MIN_SWIPE_LENGTH = 40
 const val DEFAULT_PUSHUP_SIZE = 0
 const val DEFAULT_HIDE_LETTERS = 0
+const val DEFAULT_KEY_BORDERS = 1
+const val DEFAULT_SPACEBAR_MULTITAPS = 1
 
 const val UPDATE_APP_CHANGELOG_UNVIEWED = "UPDATE AppSettings SET viewed_changelog = 0"
 
@@ -107,7 +109,17 @@ data class AppSettings(
         name = "keyboard_layouts",
         defaultValue = "$DEFAULT_KEYBOARD_LAYOUT"
     )
-    val keyboardLayouts: String
+    val keyboardLayouts: String,
+    @ColumnInfo(
+        name = "key_borders",
+        defaultValue = DEFAULT_KEY_BORDERS.toString()
+    )
+    val keyBorders: Int,
+    @ColumnInfo(
+        name = "spacebar_multitaps",
+        defaultValue = DEFAULT_SPACEBAR_MULTITAPS.toString()
+    )
+    val spacebarMultiTaps: Int
 )
 
 @Dao
@@ -173,8 +185,24 @@ val MIGRATION_4_5 = object : Migration(4, 5) {
     }
 }
 
+val MIGRATION_5_6 = object : Migration(5, 6) {
+    override fun migrate(database: SupportSQLiteDatabase) {
+        database.execSQL(
+            "alter table AppSettings add column key_borders INTEGER NOT NULL default $DEFAULT_KEY_BORDERS"
+        )
+    }
+}
+
+val MIGRATION_6_7 = object : Migration(6, 7) {
+    override fun migrate(database: SupportSQLiteDatabase) {
+        database.execSQL(
+            "alter table AppSettings add column spacebar_multitaps INTEGER NOT NULL default $DEFAULT_SPACEBAR_MULTITAPS"
+        )
+    }
+}
+
 @Database(
-    version = 5,
+    version = 7,
     entities = [AppSettings::class],
     exportSchema = true
 )
@@ -201,7 +229,9 @@ abstract class AppDB : RoomDatabase() {
                         MIGRATION_1_2,
                         MIGRATION_2_3,
                         MIGRATION_3_4,
-                        MIGRATION_4_5
+                        MIGRATION_4_5,
+                        MIGRATION_5_6,
+                        MIGRATION_6_7
                     )
                     // Necessary because it can't insert data on creation
                     .addCallback(object : Callback() {

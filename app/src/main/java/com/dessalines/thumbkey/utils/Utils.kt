@@ -421,7 +421,24 @@ fun Int.toBool() = this == 1
 fun Boolean.toInt() = this.compareTo(false)
 
 fun keyboardLayoutsSetFromString(layouts: String?): Set<Int> {
-    return layouts?.split(",")?.map { it.trim().toInt() }?.toSet() ?: setOf(
-        DEFAULT_KEYBOARD_LAYOUT
-    )
+    return layouts?.split(",")?.map { it.trim().toInt() }?.toSet()
+        ?: setOf(
+            DEFAULT_KEYBOARD_LAYOUT
+        )
+}
+
+fun keyboardLayoutsSetFromTitleIndex(layouts: String?): Set<Int> {
+    return layouts?.split(",")?.map { keyboardTitleIndexFromRealIndex(it.trim().toInt()) }?.toSet()
+        ?: setOf(
+            keyboardTitleIndexFromRealIndex(DEFAULT_KEYBOARD_LAYOUT)
+        )
+}
+
+fun keyboardRealIndexFromTitleIndex(index: Int): Int {
+    return KeyboardLayout.values().sortedBy { it.title }[index].index
+}
+
+fun keyboardTitleIndexFromRealIndex(index: Int): Int {
+    val keyboard = KeyboardLayout.values().find { it.index == index } ?: KeyboardLayout.ThumbKeyENv4
+    return KeyboardLayout.values().sortedBy { it.title }.indexOf(keyboard)
 }

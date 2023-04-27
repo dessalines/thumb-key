@@ -57,6 +57,8 @@ fun KeyboardKey(
     animationHelperSpeed: Int,
     animationSpeed: Int,
     autoCapitalize: Boolean,
+    spacebarMultiTaps: Boolean,
+    keyBorders: Boolean,
     vibrateOnTap: Boolean,
     soundOnTap: Boolean,
     hideLetters: Boolean,
@@ -83,7 +85,11 @@ fun KeyboardKey(
     val releasedKey = remember { mutableStateOf<String?>(null) }
 
     var tapCount by remember { mutableStateOf(0) }
-    val tapActions = buildTapActions(key)
+    val tapActions = if (spacebarMultiTaps) {
+        buildTapActions(key)
+    } else {
+        listOf(key.center.action)
+    }
 
     var offsetX by remember { mutableStateOf(0f) }
     var offsetY by remember { mutableStateOf(0f) }
@@ -96,6 +102,12 @@ fun KeyboardKey(
 
     val keySizeDp = keySize.dp
     val keyPadding = 4.dp
+
+    val keyBorderSize = if (keyBorders) {
+        0.5.dp
+    } else {
+        0.dp
+    }
 
     val haptic = LocalHapticFeedback.current
     val audioManager = ctx.getSystemService(Context.AUDIO_SERVICE) as AudioManager
@@ -115,7 +127,7 @@ fun KeyboardKey(
         Modifier
             .height(keySizeDp)
             .width(keySizeDp * key.widthMultiplier)
-            .padding(.5.dp)
+            .padding(keyBorderSize)
             .background(color = backgroundColor)
             // Note: pointerInput has a delay when switching keyboards, so you must use this
             .clickable(interactionSource = interactionSource, indication = null) {
