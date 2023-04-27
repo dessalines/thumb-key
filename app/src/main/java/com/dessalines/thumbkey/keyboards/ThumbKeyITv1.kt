@@ -25,7 +25,7 @@ val THUMBKEY_IT_V1_MAIN = KeyboardC(
                     color = ColorVariant.PRIMARY
                 ),
                 swipes = mapOf(
-                    SwipeDirection.LEFT to KeyC(
+                    SwipeDirection.BOTTOM to KeyC(
                         display = KeyDisplay.TextDisplay("z"),
                         action = KeyAction.CommitText("z")
                     ),
@@ -262,7 +262,7 @@ val THUMBKEY_IT_V1_SHIFTED = KeyboardC(
                     color = ColorVariant.PRIMARY
                 ),
                 swipes = mapOf(
-                    SwipeDirection.LEFT to KeyC(
+                    SwipeDirection.BOTTOM to KeyC(
                         display = KeyDisplay.TextDisplay("Z"),
                         action = KeyAction.CommitText("Z")
                     ),
