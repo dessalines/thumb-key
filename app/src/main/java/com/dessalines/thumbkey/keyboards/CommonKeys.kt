@@ -143,7 +143,7 @@ val SPACEBAR_KEY_ITEM =
                     )
                 ),
                 display = null
-            ),
+            )
         ),
         nextTapActions = arrayOf(
             KeyAction.ReplaceLastText(", ", trimCount = 1),
