@@ -4,6 +4,11 @@ pipeline:
     commands:
       - ./gradlew lintKotlin
 
+  prettier_markdown_check:
+    image: tmknom/prettier
+    commands:
+      - prettier -c *.md
+
   # - name: build the project
   #   user: root
   #   image: cimg/android:2022.12
