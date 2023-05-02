@@ -174,7 +174,8 @@ fun performKeyAction(
     onToggleNumericMode: (enable: Boolean) -> Unit,
     onToggleCapsLock: () -> Unit,
     onAutoCapitalize: (enable: Boolean) -> Unit,
-    onSwitchLanguage: () -> Unit
+    onSwitchLanguage: () -> Unit,
+    onSwitchPosition: () -> Unit
 ) {
     when (action) {
         is KeyAction.CommitText -> {
@@ -266,6 +267,7 @@ fun performKeyAction(
             ime.currentInputConnection.performContextMenuAction(16908322)
         }
         KeyAction.SwitchLanguage -> onSwitchLanguage()
+        KeyAction.SwitchPosition -> onSwitchPosition()
     }
 }
 

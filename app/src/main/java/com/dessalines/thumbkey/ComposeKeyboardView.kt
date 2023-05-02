@@ -45,6 +45,15 @@ class ComposeKeyboardView(
                             settingsRepo.update(s2)
                         }
                     }
+                },
+                onSwitchPosition = {
+                    ctx.lifecycleScope.launch {
+                        // Cycle to the next position
+                        val s = settingsState.value!!
+                        val nextPosition = (s.position + 1).mod(3)
+                        val s2 = s.copy(position = nextPosition)
+                        settingsRepo.update(s2)
+                    }
                 }
             )
         }

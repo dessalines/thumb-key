@@ -39,7 +39,8 @@ import com.dessalines.thumbkey.utils.toBool
 @Composable
 fun KeyboardScreen(
     settings: AppSettings?,
-    onSwitchLanguage: () -> Unit
+    onSwitchLanguage: () -> Unit,
+    onSwitchPosition: () -> Unit
 ) {
     val ctx = LocalContext.current as IMEService
 
@@ -140,7 +141,8 @@ fun KeyboardScreen(
                                         }
                                     }
                                 },
-                                onSwitchLanguage = onSwitchLanguage
+                                onSwitchLanguage = onSwitchLanguage,
+                                onSwitchPosition = onSwitchPosition
                             )
                         }
                     }
