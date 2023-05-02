@@ -144,6 +144,44 @@ val SPACEBAR_KEY_ITEM =
                 ),
                 display = null
             ),
+        ),
+        nextTapActions = arrayOf(
+            KeyAction.ReplaceLastText(", ", trimCount = 1),
+            KeyAction.ReplaceLastText(". "),
+            KeyAction.ReplaceLastText("? "),
+            KeyAction.ReplaceLastText("! "),
+            KeyAction.ReplaceLastText(": "),
+            KeyAction.ReplaceLastText("; ")
+        ),
+        backgroundColor = ColorVariant.SURFACE_VARIANT,
+        widthMultiplier = 3
+    )
+
+val SPACEBAR_PROGRAMMER_KEY_ITEM =
+    KeyItemC(
+        center = KeyC(
+            display = KeyDisplay.TextDisplay(" "),
+            action = KeyAction.CommitText(" ")
+        ),
+        swipes = mapOf(
+            SwipeDirection.LEFT to KeyC(
+                action = KeyAction.SendEvent(
+                    KeyEvent(
+                        KeyEvent.ACTION_DOWN,
+                        KeyEvent.KEYCODE_DPAD_LEFT
+                    )
+                ),
+                display = null
+            ),
+            SwipeDirection.RIGHT to KeyC(
+                action = KeyAction.SendEvent(
+                    KeyEvent(
+                        KeyEvent.ACTION_DOWN,
+                        KeyEvent.KEYCODE_DPAD_RIGHT
+                    )
+                ),
+                display = null
+            ),
             SwipeDirection.TOP to KeyC(
                 action = KeyAction.SendEvent(
                     KeyEvent(
@@ -162,14 +200,6 @@ val SPACEBAR_KEY_ITEM =
                 ),
                 display = null
             )
-        ),
-        nextTapActions = arrayOf(
-            KeyAction.ReplaceLastText(", ", trimCount = 1),
-            KeyAction.ReplaceLastText(". "),
-            KeyAction.ReplaceLastText("? "),
-            KeyAction.ReplaceLastText("! "),
-            KeyAction.ReplaceLastText(": "),
-            KeyAction.ReplaceLastText("; ")
         ),
         backgroundColor = ColorVariant.SURFACE_VARIANT,
         widthMultiplier = 3
