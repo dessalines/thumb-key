@@ -61,6 +61,7 @@ This project is a follow-up to the now unmaintained (and closed-source) [Message
 - Slide left on the `#` key to switch to a default language.
 - Slide up on the `#` key to select and copy all.
 - Slide down on the `#` key to paste.
+- Slide right on the `#` key to switch keyboard position.
 - Practice typing, and check your words per minute, using [monkeytype.com](https://monkeytype.com)
 
 ## Thumb-Key Design

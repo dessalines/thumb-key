@@ -6,6 +6,7 @@ import androidx.compose.material.icons.outlined.ContentPaste
 import androidx.compose.material.icons.outlined.KeyboardBackspace
 import androidx.compose.material.icons.outlined.KeyboardReturn
 import androidx.compose.material.icons.outlined.Language
+import androidx.compose.material.icons.outlined.LinearScale
 import androidx.compose.material.icons.outlined.Numbers
 import androidx.compose.material.icons.outlined.SelectAll
 import androidx.compose.material.icons.outlined.Settings
@@ -50,6 +51,11 @@ val NUMERIC_KEY_ITEM =
             SwipeDirection.LEFT to KeyC(
                 display = KeyDisplay.IconDisplay(Icons.Outlined.Language),
                 action = KeyAction.SwitchLanguage,
+                color = ColorVariant.MUTED
+            ),
+            SwipeDirection.RIGHT to KeyC(
+                display = KeyDisplay.IconDisplay(Icons.Outlined.LinearScale),
+                action = KeyAction.SwitchPosition,
                 color = ColorVariant.MUTED
             )
         ),
