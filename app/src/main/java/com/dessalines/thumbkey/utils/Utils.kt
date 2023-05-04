@@ -348,7 +348,7 @@ fun deleteLastWord(ime: IMEService) {
 
     val trimmedLength = lastWords?.length?.minus(lastWords.trimmedLength()) ?: 0
     val trimmed = lastWords?.trim()
-    val lastWordLength = trimmed?.split(" ")?.lastOrNull()?.length ?: 1
+    val lastWordLength = trimmed?.split("\\s".toRegex())?.lastOrNull()?.length ?: 1
     val minDelete = if (lastWordLength > 0) {
         lastWordLength + trimmedLength
     } else {
