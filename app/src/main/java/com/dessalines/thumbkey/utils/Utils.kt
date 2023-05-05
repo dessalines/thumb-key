@@ -191,6 +191,8 @@ fun performKeyAction(
                     ime = ime,
                     onAutoCapitalize = onAutoCapitalize
                 )
+            } else {// To return to MAIN mode after a shifted key action.
+                onAutoCapitalize(false)
             }
         }
         is KeyAction.SendEvent -> {
