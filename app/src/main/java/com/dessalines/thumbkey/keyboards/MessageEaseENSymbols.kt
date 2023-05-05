@@ -352,8 +352,8 @@ val MESSAGEEASE_EN_SYMBOLS_SHIFTED = KeyboardC(
                 ),
                 swipes = mapOf(
                     SwipeDirection.BOTTOM_RIGHT to KeyC(
-                        display = KeyDisplay.TextDisplay("v"),
-                        action = KeyAction.CommitText("v")
+                        display = KeyDisplay.TextDisplay("V"),
+                        action = KeyAction.CommitText("V")
                     ),
                     SwipeDirection.RIGHT to KeyC(
                         display = KeyDisplay.TextDisplay("-"),

@@ -45,6 +45,7 @@ sealed class KeyAction {
     object SelectAndCopyAll : KeyAction()
     object Paste : KeyAction()
     object SwitchLanguage : KeyAction()
+    object SwitchPosition : KeyAction()
 }
 
 enum class KeyboardMode {

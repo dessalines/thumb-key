@@ -1,3 +1,40 @@
+# Thumb-Key 1.0.0 (2023-05-05)
+
+- First major release. Thank you to everyone, language adders, and coders, who've contributed to Thumb-Key!
+
+## What's Changed
+
+- Fix Capital V in MessageEaseENSymbols.kt by @reneald in https://github.com/dessalines/thumb-key/pull/205
+- Comprehensive delimiter for deleting last word. by @mockballed in https://github.com/dessalines/thumb-key/pull/206
+- KeyAction.CommitText to better handle Shifted mode. by @mockballed in https://github.com/dessalines/thumb-key/pull/207
+- Upgrading deps. by @dessalines in https://github.com/dessalines/thumb-key/pull/208
+
+## New Contributors
+
+- @reneald made their first contribution in https://github.com/dessalines/thumb-key/pull/205
+- @mockballed made their first contribution in https://github.com/dessalines/thumb-key/pull/206
+
+**Full Changelog**: https://github.com/dessalines/thumb-key/compare/0.0.14...1.0.0
+
+# Thumb-Key 0.0.14-alpha (2023-05-02)
+
+## What's Changed
+
+- Fixing wrong layouts chosen after adding new ones. Fixes #167 by @dessalines in https://github.com/dessalines/thumb-key/pull/188
+- Changed z position by @morellik in https://github.com/dessalines/thumb-key/pull/193
+- Upgrading deps. by @dessalines in https://github.com/dessalines/thumb-key/pull/198
+- Custom programmers spacebar by @dessalines in https://github.com/dessalines/thumb-key/pull/200
+- Pexemo persian fixes by @dessalines in https://github.com/dessalines/thumb-key/pull/201
+- Changed Persian layout by @pexemo in https://github.com/dessalines/thumb-key/pull/199
+- Adding a swipe gesture to change keyboard position. Fixes #96 by @dessalines in https://github.com/dessalines/thumb-key/pull/203
+- Adding a markdown check to CI. by @dessalines in https://github.com/dessalines/thumb-key/pull/202
+
+## New Contributors
+
+- @pexemo made their first contribution in https://github.com/dessalines/thumb-key/pull/199
+
+**Full Changelog**: https://github.com/dessalines/thumb-key/compare/0.0.13...0.0.14
+
 # Thumb-Key 0.0.13-alpha (2023-04-21)
 
 ## What's Changed

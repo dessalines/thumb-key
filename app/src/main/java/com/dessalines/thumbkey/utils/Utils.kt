@@ -174,7 +174,8 @@ fun performKeyAction(
     onToggleNumericMode: (enable: Boolean) -> Unit,
     onToggleCapsLock: () -> Unit,
     onAutoCapitalize: (enable: Boolean) -> Unit,
-    onSwitchLanguage: () -> Unit
+    onSwitchLanguage: () -> Unit,
+    onSwitchPosition: () -> Unit
 ) {
     when (action) {
         is KeyAction.CommitText -> {
@@ -190,6 +191,8 @@ fun performKeyAction(
                     ime = ime,
                     onAutoCapitalize = onAutoCapitalize
                 )
+            } else { // To return to MAIN mode after a shifted key action.
+                onAutoCapitalize(false)
             }
         }
         is KeyAction.SendEvent -> {
@@ -266,6 +269,7 @@ fun performKeyAction(
             ime.currentInputConnection.performContextMenuAction(16908322)
         }
         KeyAction.SwitchLanguage -> onSwitchLanguage()
+        KeyAction.SwitchPosition -> onSwitchPosition()
     }
 }
 
@@ -346,7 +350,7 @@ fun deleteLastWord(ime: IMEService) {
 
     val trimmedLength = lastWords?.length?.minus(lastWords.trimmedLength()) ?: 0
     val trimmed = lastWords?.trim()
-    val lastWordLength = trimmed?.split(" ")?.lastOrNull()?.length ?: 1
+    val lastWordLength = trimmed?.split("\\s".toRegex())?.lastOrNull()?.length ?: 1
     val minDelete = if (lastWordLength > 0) {
         lastWordLength + trimmedLength
     } else {
