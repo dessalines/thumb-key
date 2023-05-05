@@ -47,6 +47,10 @@ val THUMBKEY_ES_V1_MAIN = KeyboardC(
                     SwipeDirection.BOTTOM to KeyC(
                         display = KeyDisplay.TextDisplay("v"),
                         action = KeyAction.CommitText("v")
+                    ),
+                    SwipeDirection.RIGHT to KeyC(
+                        display = KeyDisplay.TextDisplay("¡"),
+                        action = KeyAction.CommitText("¡")
                     )
                 )
             ),
@@ -69,6 +73,14 @@ val THUMBKEY_ES_V1_MAIN = KeyboardC(
                     SwipeDirection.BOTTOM_RIGHT to KeyC(
                         display = KeyDisplay.TextDisplay("ú"),
                         action = KeyAction.CommitText("ú")
+                    ),
+                    SwipeDirection.BOTTOM to KeyC(
+                        display = KeyDisplay.TextDisplay("ü"),
+                        action = KeyAction.CommitText("ü")
+                    ),
+                    SwipeDirection.LEFT to KeyC(
+                        display = KeyDisplay.TextDisplay("¿"),
+                        action = KeyAction.CommitText("¿")
                     )
                 )
             ),
@@ -272,6 +284,10 @@ val THUMBKEY_ES_V1_SHIFTED = KeyboardC(
                     SwipeDirection.BOTTOM to KeyC(
                         display = KeyDisplay.TextDisplay("V"),
                         action = KeyAction.CommitText("V")
+                    ),
+                    SwipeDirection.RIGHT to KeyC(
+                        display = KeyDisplay.TextDisplay("¡"),
+                        action = KeyAction.CommitText("¡")
                     )
                 )
             ),
@@ -294,6 +310,14 @@ val THUMBKEY_ES_V1_SHIFTED = KeyboardC(
                     SwipeDirection.BOTTOM_RIGHT to KeyC(
                         display = KeyDisplay.TextDisplay("Ú"),
                         action = KeyAction.CommitText("Ú")
+                    ),
+                    SwipeDirection.BOTTOM to KeyC(
+                        display = KeyDisplay.TextDisplay("Ü"),
+                        action = KeyAction.CommitText("Ü")
+                    ),
+                    SwipeDirection.LEFT to KeyC(
+                        display = KeyDisplay.TextDisplay("¿"),
+                        action = KeyAction.CommitText("¿")
                     )
                 )
             ),
