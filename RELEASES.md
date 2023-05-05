@@ -1,3 +1,21 @@
+# Thumb-Key 1.0.0 (2023-05-05)
+
+- First major release. Thank you to everyone, language adders, and coders, who've contributed to Thumb-Key!
+
+## What's Changed
+
+- Fix Capital V in MessageEaseENSymbols.kt by @reneald in https://github.com/dessalines/thumb-key/pull/205
+- Comprehensive delimiter for deleting last word. by @mockballed in https://github.com/dessalines/thumb-key/pull/206
+- KeyAction.CommitText to better handle Shifted mode. by @mockballed in https://github.com/dessalines/thumb-key/pull/207
+- Upgrading deps. by @dessalines in https://github.com/dessalines/thumb-key/pull/208
+
+## New Contributors
+
+- @reneald made their first contribution in https://github.com/dessalines/thumb-key/pull/205
+- @mockballed made their first contribution in https://github.com/dessalines/thumb-key/pull/206
+
+**Full Changelog**: https://github.com/dessalines/thumb-key/compare/0.0.14...1.0.0
+
 # Thumb-Key 0.0.14-alpha (2023-05-02)
 
 ## What's Changed
