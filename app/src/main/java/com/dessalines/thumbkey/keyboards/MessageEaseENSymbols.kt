@@ -30,11 +30,6 @@ val MESSAGEEASE_EN_SYMBOLS_MAIN = KeyboardC(
                         display = KeyDisplay.TextDisplay("v"),
                         action = KeyAction.CommitText("v")
                     ),
-                    SwipeDirection.RIGHT to KeyC(
-                        display = KeyDisplay.TextDisplay("-"),
-                        action = KeyAction.CommitText("-"),
-                        color = ColorVariant.MUTED
-                    ),
                     SwipeDirection.BOTTOM_LEFT to KeyC(
                         display = KeyDisplay.TextDisplay("$"),
                         action = KeyAction.CommitText("$"),
@@ -317,10 +312,14 @@ val MESSAGEEASE_EN_SYMBOLS_MAIN = KeyboardC(
                         color = ColorVariant.MUTED
                     ),
                     SwipeDirection.BOTTOM_LEFT to KeyC(
+                        display = KeyDisplay.TextDisplay("*"),
+                        action = KeyAction.CommitText("*"),
+                        color = ColorVariant.MUTED
+                    )
+                    SwipeDirection.LEFT to KeyC(
                         display = KeyDisplay.TextDisplay(","),
                         action = KeyAction.CommitText(","),
                         color = ColorVariant.MUTED
-                    )
                 )
             ),
             KeyItemC(
