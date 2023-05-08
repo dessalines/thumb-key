@@ -140,9 +140,9 @@ fun swipeDirection(x: Float, y: Float, minSwipeLength: Int, swipeType: SwipeNWay
                 in 202.5..247.5 -> SwipeDirection.TOP_LEFT
                 in 247.5..292.5 -> SwipeDirection.LEFT
                 in 292.5..337.5 -> SwipeDirection.BOTTOM_LEFT
-                else ->  SwipeDirection.BOTTOM
+                else -> SwipeDirection.BOTTOM
             }
-            SwipeNWay.FOUR_WAY -> return when (angle) {
+            SwipeNWay.FOUR_WAY_CROSS -> return when (angle) {
                 in 45.0..135.0 -> SwipeDirection.RIGHT
                 in 135.0..225.0 -> SwipeDirection.TOP
                 in 225.0..315.0 -> SwipeDirection.LEFT
@@ -162,7 +162,6 @@ fun swipeDirection(x: Float, y: Float, minSwipeLength: Int, swipeType: SwipeNWay
                 in 90.0..270.0 -> SwipeDirection.TOP
                 else -> SwipeDirection.BOTTOM
             }
-            else -> throw IllegalStateException("Invalid NWay key type")
         }
     } else {
         return null
