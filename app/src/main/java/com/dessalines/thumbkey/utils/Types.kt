@@ -97,6 +97,7 @@ enum class KeyboardLayout(val title: String, val index: Int) {
     ThumbKeyEUv1("Thumb-Key euskara v1", 5),
     ThumbKeyFAv1("Thumb-Key فارسیv1", 6),
     ThumbKeyFIv1("Thumb-Key suomi v1", 7),
+    ThumbKeyFIv1Wide("Thumb-Key suomi v1 Wide", 18),
     ThumbKeyFRv1("Thumb-Key Français v1", 8),
     ThumbKeyITv1("Thumb-Key italiano v1", 9),
     ThumbKeyNLv1("Thumb-Key Nederlands v1", 10),
