@@ -162,6 +162,7 @@ val SPACEBAR_KEY_ITEM =
         backgroundColor = ColorVariant.SURFACE_VARIANT,
         widthMultiplier = 3
     )
+val SPACEBAR_SKINNY_KEY_ITEM = SPACEBAR_KEY_ITEM.copy(widthMultiplier = 1)
 
 val SPACEBAR_PROGRAMMER_KEY_ITEM =
     KeyItemC(
