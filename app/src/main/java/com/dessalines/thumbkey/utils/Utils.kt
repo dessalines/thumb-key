@@ -114,7 +114,7 @@ fun keyboardPositionToAlignment(position: KeyboardPosition): Alignment {
 /**
  * If this doesn't meet the minimum swipe length, it returns null
  */
-fun swipeDirection(x: Float, y: Float, minSwipeLength: Int): SwipeDirection? {
+fun swipeDirection(x: Float, y: Float, minSwipeLength: Int, swipeType: SwipeNWay = SwipeNWay.EIGHT_WAY): SwipeDirection? {
     val xD = x.toDouble()
     val yD = y.toDouble()
 
@@ -128,38 +128,39 @@ fun swipeDirection(x: Float, y: Float, minSwipeLength: Int): SwipeDirection? {
             angleDir
         }
 
-        return when (angle) {
-            in 22.5..67.5 -> {
-                SwipeDirection.BOTTOM_RIGHT
+        when (swipeType) {
+            // 0 degrees = down, increasing counter-clockwise
+            SwipeNWay.EIGHT_WAY -> return when (angle) {
+                in 22.5..67.5 -> SwipeDirection.BOTTOM_RIGHT
+                in 67.5..112.5 -> SwipeDirection.RIGHT
+                in 112.5..157.5 -> SwipeDirection.TOP_RIGHT
+                in 157.5..202.5 -> SwipeDirection.TOP
+                in 202.5..247.5 -> SwipeDirection.TOP_LEFT
+                in 247.5..292.5 -> SwipeDirection.LEFT
+                in 292.5..337.5 -> SwipeDirection.BOTTOM_LEFT
+                else ->  SwipeDirection.BOTTOM
             }
-
-            in 67.5..112.5 -> {
-                SwipeDirection.RIGHT
+            SwipeNWay.FOUR_WAY -> return when (angle) {
+                in 45.0..135.0 -> SwipeDirection.RIGHT
+                in 135.0..225.0 -> SwipeDirection.TOP
+                in 225.0..315.0 -> SwipeDirection.LEFT
+                else -> SwipeDirection.BOTTOM
             }
-
-            in 112.5..157.5 -> {
-                SwipeDirection.TOP_RIGHT
+            SwipeNWay.FOUR_WAY_DIAGONAL -> return when (angle) {
+                in 0.0..90.0 -> SwipeDirection.BOTTOM_RIGHT
+                in 90.0..180.0 -> SwipeDirection.TOP_RIGHT
+                in 180.0..270.0 -> SwipeDirection.TOP_LEFT
+                else -> SwipeDirection.BOTTOM_LEFT
             }
-
-            in 157.5..202.5 -> {
-                SwipeDirection.TOP
+            SwipeNWay.TWO_WAY_HORIZONTAL -> return when (angle) {
+                in 0.0..180.0 -> SwipeDirection.RIGHT
+                else -> SwipeDirection.LEFT
             }
-
-            in 202.5..247.5 -> {
-                SwipeDirection.TOP_LEFT
+            SwipeNWay.TWO_WAY_VERTICAL -> return when (angle) {
+                in 90.0..270.0 -> SwipeDirection.TOP
+                else -> SwipeDirection.BOTTOM
             }
-
-            in 247.5..292.5 -> {
-                SwipeDirection.LEFT
-            }
-
-            in 292.5..337.5 -> {
-                SwipeDirection.BOTTOM_LEFT
-            }
-
-            else -> {
-                SwipeDirection.BOTTOM
-            }
+            else -> throw IllegalStateException("Invalid NWay key type")
         }
     } else {
         return null

@@ -16,7 +16,8 @@ data class KeyItemC(
     val swipes: Map<SwipeDirection, KeyC>? = null,
     val nextTapActions: Array<KeyAction>? = null,
     val widthMultiplier: Int = 1,
-    val backgroundColor: ColorVariant = ColorVariant.SURFACE
+    val backgroundColor: ColorVariant = ColorVariant.SURFACE,
+    val swipeType: SwipeNWay = SwipeNWay.EIGHT_WAY
 )
 
 data class KeyC(
@@ -117,4 +118,8 @@ enum class KeyboardPosition(private val stringId: Int) {
     fun title(): String {
         return stringResource(this.stringId)
     }
+}
+
+enum class SwipeNWay {
+    EIGHT_WAY, FOUR_WAY, FOUR_WAY_DIAGONAL, TWO_WAY_VERTICAL, TWO_WAY_HORIZONTAL
 }
