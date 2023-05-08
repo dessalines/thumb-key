@@ -17,6 +17,7 @@ import com.dessalines.thumbkey.utils.KeyC
 import com.dessalines.thumbkey.utils.KeyDisplay
 import com.dessalines.thumbkey.utils.KeyItemC
 import com.dessalines.thumbkey.utils.SwipeDirection
+import com.dessalines.thumbkey.utils.SwipeNWay
 
 val SETTINGS_KEY_ITEM =
     KeyItemC(
@@ -37,6 +38,7 @@ val NUMERIC_KEY_ITEM =
             size = FontSizeVariant.LARGE,
             color = ColorVariant.SECONDARY
         ),
+        swipeType = SwipeNWay.FOUR_WAY_CROSS,
         swipes = mapOf(
             SwipeDirection.TOP to KeyC(
                 display = KeyDisplay.IconDisplay(Icons.Outlined.SelectAll),
@@ -76,16 +78,9 @@ val BACKSPACE_KEY_ITEM =
             size = FontSizeVariant.LARGE,
             color = ColorVariant.SECONDARY
         ),
+        swipeType = SwipeNWay.TWO_WAY_HORIZONTAL,
         swipes = mapOf(
             SwipeDirection.LEFT to KeyC(
-                action = KeyAction.DeleteLastWord,
-                display = null
-            ),
-            SwipeDirection.TOP_LEFT to KeyC(
-                action = KeyAction.DeleteLastWord,
-                display = null
-            ),
-            SwipeDirection.BOTTOM_LEFT to KeyC(
                 action = KeyAction.DeleteLastWord,
                 display = null
             ),
@@ -100,26 +95,6 @@ val BACKSPACE_KEY_ITEM =
                 display = null,
                 color = ColorVariant.MUTED,
                 size = FontSizeVariant.SMALLEST
-            ),
-            SwipeDirection.TOP_RIGHT to KeyC(
-                action = KeyAction.SendEvent(
-                    KeyEvent(
-                        KeyEvent.ACTION_DOWN,
-                        KeyEvent
-                            .KEYCODE_FORWARD_DEL
-                    )
-                ),
-                display = null
-            ),
-            SwipeDirection.BOTTOM_RIGHT to KeyC(
-                action = KeyAction.SendEvent(
-                    KeyEvent(
-                        KeyEvent.ACTION_DOWN,
-                        KeyEvent
-                            .KEYCODE_FORWARD_DEL
-                    )
-                ),
-                display = null
             )
         ),
         backgroundColor = ColorVariant.SURFACE_VARIANT
@@ -131,6 +106,7 @@ val SPACEBAR_KEY_ITEM =
             display = KeyDisplay.TextDisplay(" "),
             action = KeyAction.CommitText(" ")
         ),
+        swipeType = SwipeNWay.TWO_WAY_HORIZONTAL,
         swipes = mapOf(
             SwipeDirection.LEFT to KeyC(
                 action = KeyAction.SendEvent(
@@ -170,6 +146,7 @@ val SPACEBAR_PROGRAMMER_KEY_ITEM =
             display = KeyDisplay.TextDisplay(" "),
             action = KeyAction.CommitText(" ")
         ),
+        swipeType = SwipeNWay.FOUR_WAY_CROSS,
         swipes = mapOf(
             SwipeDirection.LEFT to KeyC(
                 action = KeyAction.SendEvent(

@@ -172,7 +172,7 @@ fun KeyboardKey(
                         offsetY += y
                     },
                     onDragEnd = {
-                        val swipeDirection = swipeDirection(offsetX, offsetY, minSwipeLength)
+                        val swipeDirection = swipeDirection(offsetX, offsetY, minSwipeLength, key.swipeType)
                         val action = key.swipes?.get(swipeDirection)?.action ?: key.center.action
 
                         performKeyAction(
