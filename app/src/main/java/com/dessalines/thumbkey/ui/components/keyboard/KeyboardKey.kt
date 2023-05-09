@@ -3,7 +3,6 @@ import android.content.Context
 import android.media.AudioManager
 import androidx.compose.animation.AnimatedVisibility
 import androidx.compose.animation.EnterTransition
-import androidx.compose.animation.ExitTransition
 import androidx.compose.animation.core.tween
 import androidx.compose.animation.fadeOut
 import androidx.compose.animation.slideInVertically
@@ -302,7 +301,7 @@ fun KeyboardKey(
                 .background(color = Color(0, 0, 0, 0)),
             visible = releasedKey.value != null,
             enter = EnterTransition.None,
-            exit = fadeOut( tween(animationSpeed) )
+            exit = fadeOut(tween(animationSpeed))
         ) {
             Box(
                 contentAlignment = Alignment.Center,
@@ -317,8 +316,8 @@ fun KeyboardKey(
                 .fillMaxSize()
                 .background(color = Color(0, 0, 0, 0)),
             visible = releasedKey.value != null,
-            enter = slideInVertically( tween(animationSpeed) ),
-            exit = fadeOut( tween(animationSpeed) )
+            enter = slideInVertically(tween(animationSpeed)),
+            exit = fadeOut(tween(animationSpeed))
         ) {
             Box(
                 contentAlignment = Alignment.Center,

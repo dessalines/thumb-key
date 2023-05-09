@@ -45,6 +45,7 @@ class ComposeKeyboardView(
                         nextLayout?.let { layout ->
                             val s2 = s.copy(keyboardLayout = layout)
                             settingsRepo.update(s2)
+
                             // Display the new layout's name on the screen
                             val layoutName = KeyboardLayout.values().find { it.index == nextLayout }?.title
                             Toast.makeText(context, "$layoutName", Toast.LENGTH_SHORT).show()
