@@ -2,8 +2,10 @@ package com.dessalines.thumbkey.ui.components.keyboard
 import android.content.Context
 import android.media.AudioManager
 import androidx.compose.animation.AnimatedVisibility
+import androidx.compose.animation.EnterTransition
 import androidx.compose.animation.ExitTransition
 import androidx.compose.animation.core.tween
+import androidx.compose.animation.fadeOut
 import androidx.compose.animation.slideInVertically
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
@@ -29,6 +31,7 @@ import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.hapticfeedback.HapticFeedbackType
 import androidx.compose.ui.input.pointer.pointerInput
 import androidx.compose.ui.platform.LocalContext
@@ -291,14 +294,31 @@ fun KeyboardKey(
                 KeyText(it, keySizeDp, hideLetters, capsLock)
             }
         }
-        // The popup overlay
+
+        // The animated box that fades out.
         AnimatedVisibility(
             modifier = Modifier
                 .fillMaxSize()
-                .background(color = MaterialTheme.colorScheme.tertiaryContainer),
+                .background(color = Color(0, 0, 0, 0)),
             visible = releasedKey.value != null,
-            enter = slideInVertically(tween(animationSpeed)),
-            exit = ExitTransition.None
+            enter = EnterTransition.None,
+            exit = fadeOut( tween(animationSpeed) )
+        ) {
+            Box(
+                contentAlignment = Alignment.Center,
+                modifier = Modifier.fillMaxSize()
+                    .background(color = MaterialTheme.colorScheme.tertiaryContainer)
+            ) {}
+        }
+
+        // The animated key letter that falls downwards and then fades out.
+        AnimatedVisibility(
+            modifier = Modifier
+                .fillMaxSize()
+                .background(color = Color(0, 0, 0, 0)),
+            visible = releasedKey.value != null,
+            enter = slideInVertically( tween(animationSpeed) ),
+            exit = fadeOut( tween(animationSpeed) )
         ) {
             Box(
                 contentAlignment = Alignment.Center,
