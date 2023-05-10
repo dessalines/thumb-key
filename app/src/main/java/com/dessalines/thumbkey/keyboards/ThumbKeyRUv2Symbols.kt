@@ -798,4 +798,3 @@ val THUMBKEY_RU_V2_SYMBOLS_KEYBOARD_MODES: Map<KeyboardMode, KeyboardC> = mapOf(
     KeyboardMode.SHIFTED to THUMBKEY_RU_V2_SYMBOLS_SHIFTED,
     KeyboardMode.NUMERIC to NUMERIC_KEYBOARD
 )
-
