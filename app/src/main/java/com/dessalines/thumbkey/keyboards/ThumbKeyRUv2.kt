@@ -3,6 +3,7 @@ package com.dessalines.thumbkey.keyboards
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.outlined.ArrowDropDown
 import androidx.compose.material.icons.outlined.ArrowDropUp
+import androidx.compose.material.icons.outlined.Copyright
 import androidx.compose.material.icons.outlined.KeyboardCapslock
 import com.dessalines.thumbkey.utils.ColorVariant
 import com.dessalines.thumbkey.utils.FontSizeVariant
@@ -14,7 +15,7 @@ import com.dessalines.thumbkey.utils.KeyboardC
 import com.dessalines.thumbkey.utils.KeyboardMode
 import com.dessalines.thumbkey.utils.SwipeDirection
 
-val THUMBKEY_RU_V1_MAIN = KeyboardC(
+val THUMBKEY_RU_V2_MAIN = KeyboardC(
     arrayOf(
         arrayOf(
             KeyItemC(
@@ -25,9 +26,17 @@ val THUMBKEY_RU_V1_MAIN = KeyboardC(
                     color = ColorVariant.PRIMARY
                 ),
                 swipes = mapOf(
+                    SwipeDirection.RIGHT to KeyC(
+                        display = KeyDisplay.TextDisplay("щ"),
+                        action = KeyAction.CommitText("щ")
+                    ),
                     SwipeDirection.BOTTOM_RIGHT to KeyC(
                         display = KeyDisplay.TextDisplay("й"),
                         action = KeyAction.CommitText("й")
+                    ),
+                    SwipeDirection.BOTTOM to KeyC(
+                        display = KeyDisplay.TextDisplay("э"),
+                        action = KeyAction.CommitText("э")
                     )
                 )
             ),
@@ -73,6 +82,10 @@ val THUMBKEY_RU_V1_MAIN = KeyboardC(
                     SwipeDirection.RIGHT to KeyC(
                         display = KeyDisplay.TextDisplay("м"),
                         action = KeyAction.CommitText("м")
+                    ),
+                    SwipeDirection.BOTTOM to KeyC(
+                        display = KeyDisplay.TextDisplay("л"),
+                        action = KeyAction.CommitText("л")
                     )
                 )
             ),
@@ -126,21 +139,18 @@ val THUMBKEY_RU_V1_MAIN = KeyboardC(
                     color = ColorVariant.PRIMARY
                 ),
                 swipes = mapOf(
-                    SwipeDirection.TOP_LEFT to KeyC(
-                        display = KeyDisplay.TextDisplay("э"),
-                        action = KeyAction.CommitText("э")
-                    ),
                     SwipeDirection.LEFT to KeyC(
-                        display = KeyDisplay.TextDisplay("л"),
-                        action = KeyAction.CommitText("л")
-                    ),
-                    SwipeDirection.BOTTOM_LEFT to KeyC(
                         display = KeyDisplay.TextDisplay("ф"),
                         action = KeyAction.CommitText("ф")
                     ),
                     SwipeDirection.TOP to KeyC(
                         display = KeyDisplay.IconDisplay(Icons.Outlined.ArrowDropUp),
                         action = KeyAction.ToggleShiftMode(true),
+                        color = ColorVariant.MUTED
+                    ),
+                    SwipeDirection.BOTTOM to KeyC(
+                        display = KeyDisplay.IconDisplay(Icons.Outlined.ArrowDropDown),
+                        action = KeyAction.ToggleShiftMode(false),
                         color = ColorVariant.MUTED
                     )
                 )
@@ -163,6 +173,10 @@ val THUMBKEY_RU_V1_MAIN = KeyboardC(
                     SwipeDirection.TOP to KeyC(
                         display = KeyDisplay.TextDisplay("ш"),
                         action = KeyAction.CommitText("ш")
+                    ),
+                    SwipeDirection.RIGHT to KeyC(
+                        display = KeyDisplay.TextDisplay("ъ"),
+                        action = KeyAction.CommitText("ъ")
                     )
                 )
             ),
@@ -174,22 +188,23 @@ val THUMBKEY_RU_V1_MAIN = KeyboardC(
                     color = ColorVariant.PRIMARY
                 ),
                 swipes = mapOf(
-                    SwipeDirection.TOP_LEFT to KeyC(
-                        display = KeyDisplay.TextDisplay("щ"),
-                        action = KeyAction.CommitText("щ")
-                    ),
                     SwipeDirection.TOP to KeyC(
                         display = KeyDisplay.TextDisplay("б"),
                         action = KeyAction.CommitText("б")
+                    ),
+                    SwipeDirection.RIGHT to KeyC(
+                        display = KeyDisplay.TextDisplay("ц"),
+                        action = KeyAction.CommitText("ц")
+                    ),
+                    SwipeDirection.TOP_LEFT to KeyC(
+                        display = KeyDisplay.TextDisplay("\""),
+                        action = KeyAction.CommitText("\""),
+                        color = ColorVariant.MUTED
                     ),
                     SwipeDirection.TOP_RIGHT to KeyC(
                         display = KeyDisplay.TextDisplay("'"),
                         action = KeyAction.CommitText("'"),
                         color = ColorVariant.MUTED
-                    ),
-                    SwipeDirection.RIGHT to KeyC(
-                        display = KeyDisplay.TextDisplay("ц"),
-                        action = KeyAction.CommitText("ц")
                     ),
                     SwipeDirection.BOTTOM_RIGHT to KeyC(
                         display = KeyDisplay.TextDisplay("-"),
@@ -202,6 +217,11 @@ val THUMBKEY_RU_V1_MAIN = KeyboardC(
                         color = ColorVariant.MUTED
                     ),
                     SwipeDirection.BOTTOM_LEFT to KeyC(
+                        display = KeyDisplay.TextDisplay("*"),
+                        action = KeyAction.CommitText("*"),
+                        color = ColorVariant.MUTED
+                    ),
+                    SwipeDirection.LEFT to KeyC(
                         display = KeyDisplay.TextDisplay(","),
                         action = KeyAction.CommitText(","),
                         color = ColorVariant.MUTED
@@ -220,15 +240,11 @@ val THUMBKEY_RU_V1_MAIN = KeyboardC(
                         display = KeyDisplay.TextDisplay("д"),
                         action = KeyAction.CommitText("д")
                     ),
-                    SwipeDirection.TOP to KeyC(
+                    SwipeDirection.BOTTOM to KeyC(
                         display = KeyDisplay.TextDisplay("ю"),
                         action = KeyAction.CommitText("ю")
                     ),
                     SwipeDirection.RIGHT to KeyC(
-                        display = KeyDisplay.TextDisplay("ъ"),
-                        action = KeyAction.CommitText("ъ")
-                    ),
-                    SwipeDirection.BOTTOM_RIGHT to KeyC(
                         display = KeyDisplay.TextDisplay("ё"),
                         action = KeyAction.CommitText("ё")
                     )
@@ -243,7 +259,7 @@ val THUMBKEY_RU_V1_MAIN = KeyboardC(
     )
 )
 
-val THUMBKEY_RU_V1_SHIFTED = KeyboardC(
+val THUMBKEY_RU_V2_SHIFTED = KeyboardC(
     arrayOf(
         arrayOf(
             KeyItemC(
@@ -254,9 +270,17 @@ val THUMBKEY_RU_V1_SHIFTED = KeyboardC(
                     color = ColorVariant.PRIMARY
                 ),
                 swipes = mapOf(
+                    SwipeDirection.RIGHT to KeyC(
+                        display = KeyDisplay.TextDisplay("Щ"),
+                        action = KeyAction.CommitText("Щ")
+                    ),
                     SwipeDirection.BOTTOM_RIGHT to KeyC(
                         display = KeyDisplay.TextDisplay("Й"),
                         action = KeyAction.CommitText("Й")
+                    ),
+                    SwipeDirection.BOTTOM to KeyC(
+                        display = KeyDisplay.TextDisplay("Э"),
+                        action = KeyAction.CommitText("Э")
                     )
                 )
             ),
@@ -302,6 +326,10 @@ val THUMBKEY_RU_V1_SHIFTED = KeyboardC(
                     SwipeDirection.RIGHT to KeyC(
                         display = KeyDisplay.TextDisplay("М"),
                         action = KeyAction.CommitText("М")
+                    ),
+                    SwipeDirection.BOTTOM to KeyC(
+                        display = KeyDisplay.TextDisplay("Л"),
+                        action = KeyAction.CommitText("Л")
                     )
                 )
             ),
@@ -355,26 +383,19 @@ val THUMBKEY_RU_V1_SHIFTED = KeyboardC(
                     color = ColorVariant.PRIMARY
                 ),
                 swipes = mapOf(
-                    SwipeDirection.TOP_LEFT to KeyC(
-                        display = KeyDisplay.TextDisplay("Э"),
-                        action = KeyAction.CommitText("Э")
-                    ),
                     SwipeDirection.LEFT to KeyC(
-                        display = KeyDisplay.TextDisplay("Л"),
-                        action = KeyAction.CommitText("Л")
-                    ),
-                    SwipeDirection.BOTTOM_LEFT to KeyC(
                         display = KeyDisplay.TextDisplay("Ф"),
                         action = KeyAction.CommitText("Ф")
+                    ),
+                    SwipeDirection.TOP to KeyC(
+                        display = KeyDisplay.IconDisplay(Icons.Outlined.KeyboardCapslock),
+                        capsModeDisplay = KeyDisplay.IconDisplay(Icons.Outlined.Copyright),
+                        action = KeyAction.ToggleCapsLock,
+                        color = ColorVariant.MUTED
                     ),
                     SwipeDirection.BOTTOM to KeyC(
                         display = KeyDisplay.IconDisplay(Icons.Outlined.ArrowDropDown),
                         action = KeyAction.ToggleShiftMode(false),
-                        color = ColorVariant.MUTED
-                    ),
-                    SwipeDirection.TOP to KeyC(
-                        display = KeyDisplay.IconDisplay(Icons.Outlined.KeyboardCapslock),
-                        action = KeyAction.ToggleCapsLock,
                         color = ColorVariant.MUTED
                     )
                 )
@@ -397,6 +418,10 @@ val THUMBKEY_RU_V1_SHIFTED = KeyboardC(
                     SwipeDirection.TOP to KeyC(
                         display = KeyDisplay.TextDisplay("Ш"),
                         action = KeyAction.CommitText("Ш")
+                    ),
+                    SwipeDirection.RIGHT to KeyC(
+                        display = KeyDisplay.TextDisplay("Ъ"),
+                        action = KeyAction.CommitText("Ъ")
                     )
                 )
             ),
@@ -408,22 +433,23 @@ val THUMBKEY_RU_V1_SHIFTED = KeyboardC(
                     color = ColorVariant.PRIMARY
                 ),
                 swipes = mapOf(
-                    SwipeDirection.TOP_LEFT to KeyC(
-                        display = KeyDisplay.TextDisplay("Щ"),
-                        action = KeyAction.CommitText("Щ")
-                    ),
                     SwipeDirection.TOP to KeyC(
                         display = KeyDisplay.TextDisplay("Б"),
                         action = KeyAction.CommitText("Б")
+                    ),
+                    SwipeDirection.RIGHT to KeyC(
+                        display = KeyDisplay.TextDisplay("Ц"),
+                        action = KeyAction.CommitText("Ц")
+                    ),
+                    SwipeDirection.TOP_LEFT to KeyC(
+                        display = KeyDisplay.TextDisplay("\""),
+                        action = KeyAction.CommitText("\""),
+                        color = ColorVariant.MUTED
                     ),
                     SwipeDirection.TOP_RIGHT to KeyC(
                         display = KeyDisplay.TextDisplay("'"),
                         action = KeyAction.CommitText("'"),
                         color = ColorVariant.MUTED
-                    ),
-                    SwipeDirection.RIGHT to KeyC(
-                        display = KeyDisplay.TextDisplay("Ц"),
-                        action = KeyAction.CommitText("Ц")
                     ),
                     SwipeDirection.BOTTOM_RIGHT to KeyC(
                         display = KeyDisplay.TextDisplay("-"),
@@ -436,6 +462,11 @@ val THUMBKEY_RU_V1_SHIFTED = KeyboardC(
                         color = ColorVariant.MUTED
                     ),
                     SwipeDirection.BOTTOM_LEFT to KeyC(
+                        display = KeyDisplay.TextDisplay("*"),
+                        action = KeyAction.CommitText("*"),
+                        color = ColorVariant.MUTED
+                    ),
+                    SwipeDirection.LEFT to KeyC(
                         display = KeyDisplay.TextDisplay(","),
                         action = KeyAction.CommitText(","),
                         color = ColorVariant.MUTED
@@ -454,15 +485,11 @@ val THUMBKEY_RU_V1_SHIFTED = KeyboardC(
                         display = KeyDisplay.TextDisplay("Д"),
                         action = KeyAction.CommitText("Д")
                     ),
-                    SwipeDirection.TOP to KeyC(
+                    SwipeDirection.BOTTOM to KeyC(
                         display = KeyDisplay.TextDisplay("Ю"),
                         action = KeyAction.CommitText("Ю")
                     ),
                     SwipeDirection.RIGHT to KeyC(
-                        display = KeyDisplay.TextDisplay("Ъ"),
-                        action = KeyAction.CommitText("Ъ")
-                    ),
-                    SwipeDirection.BOTTOM_RIGHT to KeyC(
                         display = KeyDisplay.TextDisplay("Ё"),
                         action = KeyAction.CommitText("Ё")
                     )
@@ -477,8 +504,8 @@ val THUMBKEY_RU_V1_SHIFTED = KeyboardC(
     )
 )
 
-val THUMBKEY_RU_V1_KEYBOARD_MODES: Map<KeyboardMode, KeyboardC> = mapOf(
-    KeyboardMode.MAIN to THUMBKEY_RU_V1_MAIN,
-    KeyboardMode.SHIFTED to THUMBKEY_RU_V1_SHIFTED,
+val THUMBKEY_RU_V2_KEYBOARD_MODES: Map<KeyboardMode, KeyboardC> = mapOf(
+    KeyboardMode.MAIN to THUMBKEY_RU_V2_MAIN,
+    KeyboardMode.SHIFTED to THUMBKEY_RU_V2_SHIFTED,
     KeyboardMode.NUMERIC to NUMERIC_KEYBOARD
 )
