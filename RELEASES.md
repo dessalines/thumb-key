@@ -1,3 +1,21 @@
+# Thumb-Key 1.1.0 (2023-05-11)
+
+## What's Changed
+
+- Spanish fixes by @mpice-mn in https://github.com/dessalines/thumb-key/pull/209
+- Adding wide finnish layout. Fixes #212 by @dessalines in https://github.com/dessalines/thumb-key/pull/215
+- feat: add four-way and two-way swipes by @mpice-mn in https://github.com/dessalines/thumb-key/pull/214
+- Smoother animation, notification on layout change and a bug fix by @sslater11 in https://github.com/dessalines/thumb-key/pull/218
+- Added belarusian layout, as well as some other changes :) by @Chirikumbrah in https://github.com/dessalines/thumb-key/pull/211
+
+## New Contributors
+
+- @mpice-mn made their first contribution in https://github.com/dessalines/thumb-key/pull/209
+- @sslater11 made their first contribution in https://github.com/dessalines/thumb-key/pull/218
+- @Chirikumbrah made their first contribution in https://github.com/dessalines/thumb-key/pull/211
+
+**Full Changelog**: https://github.com/dessalines/thumb-key/compare/1.0.0...1.1.0
+
 # Thumb-Key 1.0.0 (2023-05-05)
 
 - First major release. Thank you to everyone, language adders, and coders, who've contributed to Thumb-Key!
