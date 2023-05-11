@@ -93,7 +93,7 @@ enum class KeyboardLayout(val title: String, val index: Int) {
     ThumbKeyENv4Symbols("Thumb-Key English v4 with Symbols", 21),
     ThumbKeyENv4Programmer("Thumb-Key English v4 (Programmer)", 1),
     ThumbKeyDEv2("Thumb-Key Deutsch v2", 2),
-    ThumbKeyDKv1("Thumb-Key dansk v1", 3),
+    ThumbKeyDAv1("Thumb-Key dansk v1", 3),
     ThumbKeyESv1("Thumb-Key español v1", 4),
     ThumbKeyEUv1("Thumb-Key euskara v1", 5),
     ThumbKeyFAv1("Thumb-Key فارسیv1", 6),
