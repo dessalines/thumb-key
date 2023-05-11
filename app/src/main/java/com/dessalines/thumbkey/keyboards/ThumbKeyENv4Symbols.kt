@@ -371,7 +371,7 @@ val THUMBKEY_EN_V4_SYMBOLS = KeyboardC(
             BACKSPACE_KEY_ITEM
         ),
         arrayOf(
-            SPACEBAR_SYMBOLS_KEY_ITEM,
+            SPACEBAR_PROGRAMMER_KEY_ITEM,
             RETURN_KEY_ITEM
         )
     )
@@ -733,7 +733,7 @@ val THUMBKEY_EN_V4_SYMBOLS_SHIFTED = KeyboardC(
             BACKSPACE_KEY_ITEM
         ),
         arrayOf(
-            SPACEBAR_SYMBOLS_KEY_ITEM,
+            SPACEBAR_PROGRAMMER_KEY_ITEM,
             RETURN_KEY_ITEM
         )
     )

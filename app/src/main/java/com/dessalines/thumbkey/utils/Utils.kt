@@ -34,10 +34,13 @@ import com.dessalines.thumbkey.db.DEFAULT_KEYBOARD_LAYOUT
 import com.dessalines.thumbkey.keyboards.MESSAGEEASE_EN_KEYBOARD_MODES
 import com.dessalines.thumbkey.keyboards.MESSAGEEASE_EN_SYMBOLS_KEYBOARD_MODES
 import com.dessalines.thumbkey.keyboards.MESSAGEEASE_HE_KEYBOARD_MODES
+import com.dessalines.thumbkey.keyboards.THUMBKEY_BY_V1_KEYBOARD_MODES
+import com.dessalines.thumbkey.keyboards.THUMBKEY_BY_V1_SYMBOLS_KEYBOARD_MODES
 import com.dessalines.thumbkey.keyboards.THUMBKEY_DE_V2_KEYBOARD_MODES
 import com.dessalines.thumbkey.keyboards.THUMBKEY_DK_V1_KEYBOARD_MODES
 import com.dessalines.thumbkey.keyboards.THUMBKEY_EN_V4_KEYBOARD_MODES
 import com.dessalines.thumbkey.keyboards.THUMBKEY_EN_V4_PROGRAMMER_KEYBOARD_MODES
+import com.dessalines.thumbkey.keyboards.THUMBKEY_EN_V4_SYMBOLS_KEYBOARD_MODES
 import com.dessalines.thumbkey.keyboards.THUMBKEY_ES_V1_KEYBOARD_MODES
 import com.dessalines.thumbkey.keyboards.THUMBKEY_EU_V1_KEYBOARD_MODES
 import com.dessalines.thumbkey.keyboards.THUMBKEY_FA_V1_KEYBOARD_MODES
@@ -47,7 +50,8 @@ import com.dessalines.thumbkey.keyboards.THUMBKEY_IT_V1_KEYBOARD_MODES
 import com.dessalines.thumbkey.keyboards.THUMBKEY_NL_V1_KEYBOARD_MODES
 import com.dessalines.thumbkey.keyboards.THUMBKEY_PL_V2_KEYBOARD_MODES
 import com.dessalines.thumbkey.keyboards.THUMBKEY_PT_V1_KEYBOARD_MODES
-import com.dessalines.thumbkey.keyboards.THUMBKEY_RU_V1_KEYBOARD_MODES
+import com.dessalines.thumbkey.keyboards.THUMBKEY_RU_V2_KEYBOARD_MODES
+import com.dessalines.thumbkey.keyboards.THUMBKEY_RU_V2_SYMBOLS_KEYBOARD_MODES
 import com.dessalines.thumbkey.keyboards.THUMBKEY_UK_V1_KEYBOARD_MODES
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.delay
@@ -95,11 +99,15 @@ fun keyboardLayoutToModes(layout: KeyboardLayout): Map<KeyboardMode, KeyboardC> 
         KeyboardLayout.ThumbKeyNLv1 -> THUMBKEY_NL_V1_KEYBOARD_MODES
         KeyboardLayout.ThumbKeyPLv2 -> THUMBKEY_PL_V2_KEYBOARD_MODES
         KeyboardLayout.ThumbKeyPTv1 -> THUMBKEY_PT_V1_KEYBOARD_MODES
-        KeyboardLayout.ThumbKeyRUv1 -> THUMBKEY_RU_V1_KEYBOARD_MODES
+        KeyboardLayout.ThumbKeyRUv2 -> THUMBKEY_RU_V2_KEYBOARD_MODES
         KeyboardLayout.ThumbKeyUKv1 -> THUMBKEY_UK_V1_KEYBOARD_MODES
         KeyboardLayout.MessageEaseEN -> MESSAGEEASE_EN_KEYBOARD_MODES
         KeyboardLayout.MessageEaseENSymbols -> MESSAGEEASE_EN_SYMBOLS_KEYBOARD_MODES
         KeyboardLayout.MessageEaseHE -> MESSAGEEASE_HE_KEYBOARD_MODES
+        KeyboardLayout.ThumbKeyENv4Symbols -> THUMBKEY_EN_V4_SYMBOLS_KEYBOARD_MODES
+        KeyboardLayout.ThumbKeyRUv2Symbols -> THUMBKEY_RU_V2_SYMBOLS_KEYBOARD_MODES
+        KeyboardLayout.ThumbKeyBYv1 -> THUMBKEY_BY_V1_KEYBOARD_MODES
+        KeyboardLayout.ThumbKeyBYv1Symbols -> THUMBKEY_BY_V1_SYMBOLS_KEYBOARD_MODES
     }
 }
 
