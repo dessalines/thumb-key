@@ -90,7 +90,7 @@ enum class ThemeColor(private val stringId: Int) {
 // Make sure new keyboards have a new index, even if they are in the middle
 enum class KeyboardLayout(val title: String, val index: Int) {
     ThumbKeyENv4("Thumb-Key English v4", 0),
-    ThumbKeyENv4Symbols("Thumb-Key English v4 with Symbols", 21),
+    ThumbKeyENv4Symbols("Thumb-Key English v4 with Symbols", 22),
     ThumbKeyENv4Programmer("Thumb-Key English v4 (Programmer)", 1),
     ThumbKeyDEv2("Thumb-Key Deutsch v2", 2),
     ThumbKeyDAv1("Thumb-Key dansk v1", 3),
@@ -105,9 +105,9 @@ enum class KeyboardLayout(val title: String, val index: Int) {
     ThumbKeyPLv2("Thumb-Key polski v2", 11),
     ThumbKeyPTv1("Thumb-Key português v1", 12),
     ThumbKeyRUv2("Thumb-Key русский v2", 13),
-    ThumbKeyRUv2Symbols("Thumb-Key русский v2 с символами", 18),
-    ThumbKeyBYv1("Thumb-Key беларуская v1", 19),
-    ThumbKeyBYv1Symbols("Thumb-Key беларуская v1 з сімваламі", 20),
+    ThumbKeyRUv2Symbols("Thumb-Key русский v2 с символами", 19),
+    ThumbKeyBYv1("Thumb-Key беларуская v1", 20),
+    ThumbKeyBYv1Symbols("Thumb-Key беларуская v1 з сімваламі", 21),
     ThumbKeyUKv1("Thumb-Key українська v1", 14),
     MessageEaseEN("MessageEase English", 15),
     MessageEaseENSymbols("MessageEase English with Symbols", 16),
