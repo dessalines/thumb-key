@@ -1,7 +1,8 @@
 pipeline:
   check_formatting:
-    image: gradle:jdk17-alpine
+    image: cimg/android:2023.05
     commands:
+      - sudo chown -R circleci:circleci .
       - ./gradlew lintKotlin
 
   prettier_markdown_check:
@@ -9,8 +10,16 @@ pipeline:
     commands:
       - prettier -c *.md
 
-  # - name: build the project
-  #   user: root
-  #   image: cimg/android:2022.12
-  #   commands: 
-  #     - ./gradlew assembleDebug
+  build_project:
+    image: cimg/android:2023.05
+    commands:
+      - sudo chown -R circleci:circleci .
+      - ./gradlew assembleDebug
+
+  notify_on_failure:
+    image: alpine:3
+    commands:
+      - apk add curl
+      - "curl -d'CI build failed: ${CI_BUILD_LINK}' ntfy.sh/thumbkey_ci"
+    when:
+      status: [failure]
