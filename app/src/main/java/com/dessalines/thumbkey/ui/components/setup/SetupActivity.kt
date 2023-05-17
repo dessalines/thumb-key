@@ -30,7 +30,7 @@ import splitties.systemservices.inputMethodManager
 fun SetupActivity(
     navController: NavController,
     thumbkeyEnabled: Boolean,
-    thumbkeySelected: Boolean
+    thumbkeySelected: Boolean,
 ) {
     Log.d(TAG, "Got to setup activity")
 
@@ -45,7 +45,7 @@ fun SetupActivity(
             SimpleTopAppBar(
                 text = stringResource(R.string.setup_thumbkey),
                 navController = navController,
-                showBack = false
+                showBack = false,
             )
         },
         content = { padding ->
@@ -53,7 +53,7 @@ fun SetupActivity(
                 verticalArrangement = Arrangement.spacedBy(spacing),
                 modifier = Modifier
                     .padding(padding)
-                    .padding(horizontal = spacing)
+                    .padding(horizontal = spacing),
             ) {
                 if (!thumbkeyEnabled) {
                     Button(modifier = Modifier.fillMaxWidth(), onClick = {
@@ -75,6 +75,6 @@ fun SetupActivity(
                     Text(stringResource(R.string.finish_setup))
                 }
             }
-        }
+        },
     )
 }

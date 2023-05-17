@@ -17,10 +17,10 @@ import kotlinx.coroutines.launch
 @SuppressLint("ViewConstructor")
 class ComposeKeyboardView(
     context: Context,
-    private val settingsRepo: AppSettingsRepository
+    private val settingsRepo: AppSettingsRepository,
 ) :
     AbstractComposeView
-    (context) {
+        (context) {
 
     @Composable
     override fun Content() {
@@ -29,7 +29,7 @@ class ComposeKeyboardView(
         val ctx = context as IMEService
 
         ThumbkeyTheme(
-            settings = settings
+            settings = settings,
         ) {
             KeyboardScreen(
                 settings = settings,
@@ -60,7 +60,7 @@ class ComposeKeyboardView(
                         val s2 = s.copy(position = nextPosition)
                         settingsRepo.update(s2)
                     }
-                }
+                },
             )
         }
     }

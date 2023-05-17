@@ -49,7 +49,7 @@ class MainActivity : AppCompatActivity() {
             }
             val thumbkeySelected = Settings.Secure.getString(
                 ctx.contentResolver,
-                Settings.Secure.DEFAULT_INPUT_METHOD
+                Settings.Secure.DEFAULT_INPUT_METHOD,
             ) == THUMBKEY_IME_NAME
 
             val startDestination by remember {
@@ -58,46 +58,46 @@ class MainActivity : AppCompatActivity() {
                         "setup"
                     } else {
                         intent.extras?.getString("startRoute") ?: "settings"
-                    }
+                    },
                 )
             }
 
             ThumbkeyTheme(
-                settings = settings
+                settings = settings,
             ) {
                 val navController = rememberNavController()
 
                 NavHost(
                     navController = navController,
-                    startDestination = startDestination
+                    startDestination = startDestination,
                 ) {
                     composable(
-                        route = "setup"
+                        route = "setup",
                     ) {
                         SetupActivity(
                             navController = navController,
                             thumbkeyEnabled = thumbkeyEnabled,
-                            thumbkeySelected = thumbkeySelected
+                            thumbkeySelected = thumbkeySelected,
                         )
                     }
                     composable(route = "settings") {
                         SettingsActivity(
                             navController = navController,
                             thumbkeyEnabled = thumbkeyEnabled,
-                            thumbkeySelected = thumbkeySelected
+                            thumbkeySelected = thumbkeySelected,
                         )
                     }
                     composable(route = "lookAndFeel") {
                         LookAndFeelActivity(
                             navController = navController,
-                            appSettingsViewModel = appSettingsViewModel
+                            appSettingsViewModel = appSettingsViewModel,
                         )
                     }
                     composable(
-                        route = "about"
+                        route = "about",
                     ) {
                         AboutActivity(
-                            navController = navController
+                            navController = navController,
                         )
                     }
                 }

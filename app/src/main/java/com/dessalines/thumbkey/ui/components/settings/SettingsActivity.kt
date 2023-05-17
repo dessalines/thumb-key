@@ -32,7 +32,7 @@ import com.dessalines.thumbkey.utils.openLink
 fun SettingsActivity(
     navController: NavController,
     thumbkeyEnabled: Boolean,
-    thumbkeySelected: Boolean
+    thumbkeySelected: Boolean,
 ) {
     Log.d(TAG, "Got to settings activity")
 
@@ -53,10 +53,10 @@ fun SettingsActivity(
                         icon = {
                             Icon(
                                 imageVector = Icons.Outlined.InstallMobile,
-                                contentDescription = setupStr
+                                contentDescription = setupStr,
                             )
                         },
-                        onClick = { navController.navigate("setup") }
+                        onClick = { navController.navigate("setup") },
                     )
                 }
                 val lookAndFeelStr = stringResource(R.string.look_and_feel)
@@ -65,10 +65,10 @@ fun SettingsActivity(
                     icon = {
                         Icon(
                             imageVector = Icons.Outlined.Palette,
-                            contentDescription = lookAndFeelStr
+                            contentDescription = lookAndFeelStr,
                         )
                     },
-                    onClick = { navController.navigate("lookAndFeel") }
+                    onClick = { navController.navigate("lookAndFeel") },
                 )
                 val userGuideStr = stringResource(R.string.user_guide)
                 SettingsMenuLink(
@@ -76,12 +76,12 @@ fun SettingsActivity(
                     icon = {
                         Icon(
                             imageVector = Icons.Outlined.HelpCenter,
-                            contentDescription = userGuideStr
+                            contentDescription = userGuideStr,
                         )
                     },
                     onClick = {
                         openLink(userGuideLink, ctx)
-                    }
+                    },
                 )
                 val aboutStr = stringResource(R.string.about)
                 SettingsMenuLink(
@@ -89,12 +89,12 @@ fun SettingsActivity(
                     icon = {
                         Icon(
                             imageVector = Icons.Outlined.Info,
-                            contentDescription = aboutStr
+                            contentDescription = aboutStr,
                         )
                     },
-                    onClick = { navController.navigate("about") }
+                    onClick = { navController.navigate("about") },
                 )
             }
-        }
+        },
     )
 }

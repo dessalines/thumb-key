@@ -3,7 +3,13 @@ package com.dessalines.thumbkey
 import android.inputmethodservice.InputMethodService
 import android.view.View
 import android.view.inputmethod.EditorInfo
-import androidx.lifecycle.*
+import androidx.lifecycle.Lifecycle
+import androidx.lifecycle.LifecycleOwner
+import androidx.lifecycle.LifecycleRegistry
+import androidx.lifecycle.ViewModelStore
+import androidx.lifecycle.ViewModelStoreOwner
+import androidx.lifecycle.setViewTreeLifecycleOwner
+import androidx.lifecycle.setViewTreeViewModelStoreOwner
 import androidx.savedstate.SavedStateRegistry
 import androidx.savedstate.SavedStateRegistryController
 import androidx.savedstate.SavedStateRegistryOwner
