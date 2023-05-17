@@ -1,3 +1,23 @@
+# Thumb-Key 1.2.0 (2023-05-17)
+
+## What's Changed
+
+- Fixing misnamed danish keyboard. by @dessalines in https://github.com/dessalines/thumb-key/pull/220
+- Fixed layouts indexes in Types.kt by @Chirikumbrah in https://github.com/dessalines/thumb-key/pull/222
+- Revert changing indices and fix suomi v1 Wide index by @roihershberg in https://github.com/dessalines/thumb-key/pull/223
+- Fixing misnamed danish keyboard. by @dessalines in https://github.com/dessalines/thumb-key/pull/221
+- Use four-way / two-way swipes where applicable by @mpice-mn in https://github.com/dessalines/thumb-key/pull/224
+- Adding a build CI. by @dessalines in https://github.com/dessalines/thumb-key/pull/225
+- Adding google play link. by @dessalines in https://github.com/dessalines/thumb-key/pull/227
+- Moving from arrays to lists. Running upgraded kotlinter by @dessalines in https://github.com/dessalines/thumb-key/pull/229
+- Adding messageease DE keyboard. Fixes #219 by @dessalines in https://github.com/dessalines/thumb-key/pull/230
+
+## New Contributors
+
+- @roihershberg made their first contribution in https://github.com/dessalines/thumb-key/pull/223
+
+**Full Changelog**: https://github.com/dessalines/thumb-key/compare/1.1.0...1.2.0
+
 # Thumb-Key 1.1.0 (2023-05-11)
 
 ## What's Changed
