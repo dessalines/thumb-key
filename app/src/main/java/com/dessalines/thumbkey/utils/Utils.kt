@@ -185,7 +185,7 @@ fun performKeyAction(
     onToggleCapsLock: () -> Unit,
     onAutoCapitalize: (enable: Boolean) -> Unit,
     onSwitchLanguage: () -> Unit,
-    onSwitchPosition: () -> Unit
+    onSwitchPosition: () -> Unit,
 ) {
     when (action) {
         is KeyAction.CommitText -> {
@@ -193,13 +193,13 @@ fun performKeyAction(
             Log.d(TAG, "committing key text: $text")
             ime.currentInputConnection.commitText(
                 text,
-                1
+                1,
             )
 
             if (autoCapitalize) {
                 autoCapitalize(
                     ime = ime,
-                    onAutoCapitalize = onAutoCapitalize
+                    onAutoCapitalize = onAutoCapitalize,
                 )
             } else { // To return to MAIN mode after a shifted key action.
                 onAutoCapitalize(false)
@@ -221,12 +221,12 @@ fun performKeyAction(
             ime.currentInputConnection.deleteSurroundingText(action.trimCount, 0)
             ime.currentInputConnection.commitText(
                 text,
-                1
+                1,
             )
             if (autoCapitalize) {
                 autoCapitalize(
                     ime = ime,
-                    onAutoCapitalize = onAutoCapitalize
+                    onAutoCapitalize = onAutoCapitalize,
                 )
             }
         }
@@ -248,12 +248,12 @@ fun performKeyAction(
         }
         KeyAction.IMECompleteAction -> {
             val imeAction = getImeActionCode(ime)
-            if (arrayOf(
+            if (listOf(
                     EditorInfo.IME_ACTION_DONE,
                     EditorInfo.IME_ACTION_GO,
                     EditorInfo.IME_ACTION_NEXT,
                     EditorInfo.IME_ACTION_SEARCH,
-                    EditorInfo.IME_ACTION_SEND
+                    EditorInfo.IME_ACTION_SEND,
                 ).contains(imeAction)
             ) {
                 ime.currentInputConnection.performEditorAction(imeAction)
@@ -299,7 +299,7 @@ fun getImeActionCode(ime: IMEService): Int {
 fun getKeyboardMode(ime: IMEService, autoCapitalize: Boolean): KeyboardMode {
     val inputType = ime.currentInputEditorInfo.inputType and (InputType.TYPE_MASK_CLASS)
 
-    return if (arrayOf(InputType.TYPE_CLASS_NUMBER, InputType.TYPE_CLASS_PHONE).contains(inputType)) {
+    return if (listOf(InputType.TYPE_CLASS_NUMBER, InputType.TYPE_CLASS_PHONE).contains(inputType)) {
         KeyboardMode.NUMERIC
     } else {
         if (autoCapitalize && autoCapitalizeCheck(ime)) {
@@ -317,7 +317,7 @@ fun getImeActionText(ime: IMEService): String {
 
 private fun autoCapitalize(
     ime: IMEService,
-    onAutoCapitalize: (enable: Boolean) -> Unit
+    onAutoCapitalize: (enable: Boolean) -> Unit,
 ) {
     autoCapitalizeI(ime)
 
@@ -329,7 +329,7 @@ private fun autoCapitalize(
 }
 
 fun autoCapitalizeI(
-    ime: IMEService
+    ime: IMEService,
 ) {
     // Capitalizes 'i'
     val textBefore = ime.currentInputConnection.getTextBeforeCursor(3, 0)
@@ -338,21 +338,21 @@ fun autoCapitalizeI(
             ime.currentInputConnection.deleteSurroundingText(2, 0)
             ime.currentInputConnection.commitText(
                 "I ",
-                1
+                1,
             )
         }
     }
 }
 
 fun autoCapitalizeCheck(
-    ime: IMEService
+    ime: IMEService,
 ): Boolean {
     // Knows if its an empty field
     val empty = ime.currentInputConnection.getTextBeforeCursor(1, 0).isNullOrEmpty()
 
     // For punctuation ending
     val textBefore = ime.currentInputConnection.getTextBeforeCursor(2, 0)
-    return (arrayOf(". ", "? ", "! ").contains(textBefore)) || empty
+    return (listOf(". ", "? ", "! ").contains(textBefore)) || empty
 }
 
 fun deleteLastWord(ime: IMEService) {
@@ -371,9 +371,11 @@ fun deleteLastWord(ime: IMEService) {
 }
 
 fun buildTapActions(
-    keyItem: KeyItemC
+    keyItem: KeyItemC,
 ): List<KeyAction> {
-    return listOf(keyItem.center.action, *keyItem.nextTapActions.orEmpty())
+    val mutable = mutableListOf(keyItem.center.action)
+    mutable.addAll(keyItem.nextTapActions.orEmpty())
+    return mutable.toList()
 }
 
 fun doneKeyAction(
@@ -381,7 +383,7 @@ fun doneKeyAction(
     action: KeyAction,
     pressed: MutableState<Boolean>,
     releasedKey: MutableState<String?>,
-    animationHelperSpeed: Int
+    animationHelperSpeed: Int,
 ) {
     pressed.value = false
     scope.launch {
@@ -404,13 +406,13 @@ fun SimpleTopAppBar(
     text: String,
     navController: NavController,
     scrollBehavior: TopAppBarScrollBehavior? = null,
-    showBack: Boolean = true
+    showBack: Boolean = true,
 ) {
     TopAppBar(
         scrollBehavior = scrollBehavior,
         title = {
             Text(
-                text = text
+                text = text,
             )
         },
         navigationIcon = {
@@ -418,11 +420,11 @@ fun SimpleTopAppBar(
                 IconButton(onClick = { navController.navigate("settings") }) {
                     Icon(
                         Icons.Outlined.ArrowBack,
-                        contentDescription = stringResource(R.string.settings)
+                        contentDescription = stringResource(R.string.settings),
                     )
                 }
             }
-        }
+        },
     )
 }
 
@@ -437,14 +439,14 @@ fun Boolean.toInt() = this.compareTo(false)
 fun keyboardLayoutsSetFromString(layouts: String?): Set<Int> {
     return layouts?.split(",")?.map { it.trim().toInt() }?.toSet()
         ?: setOf(
-            DEFAULT_KEYBOARD_LAYOUT
+            DEFAULT_KEYBOARD_LAYOUT,
         )
 }
 
 fun keyboardLayoutsSetFromTitleIndex(layouts: String?): Set<Int> {
     return layouts?.split(",")?.map { keyboardTitleIndexFromRealIndex(it.trim().toInt()) }?.toSet()
         ?: setOf(
-            keyboardTitleIndexFromRealIndex(DEFAULT_KEYBOARD_LAYOUT)
+            keyboardTitleIndexFromRealIndex(DEFAULT_KEYBOARD_LAYOUT),
         )
 }
 

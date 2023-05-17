@@ -8,16 +8,16 @@ import com.dessalines.thumbkey.R
 
 // Almost a 4x4 grid, but the bottom is mostly spacebar
 data class KeyboardC(
-    val arr: Array<Array<KeyItemC>>
+    val arr: List<List<KeyItemC>>,
 )
 
 data class KeyItemC(
     val center: KeyC,
     val swipes: Map<SwipeDirection, KeyC>? = null,
-    val nextTapActions: Array<KeyAction>? = null,
+    val nextTapActions: List<KeyAction>? = null,
     val widthMultiplier: Int = 1,
     val backgroundColor: ColorVariant = ColorVariant.SURFACE,
-    val swipeType: SwipeNWay = SwipeNWay.EIGHT_WAY
+    val swipeType: SwipeNWay = SwipeNWay.EIGHT_WAY,
 )
 
 data class KeyC(
@@ -25,7 +25,7 @@ data class KeyC(
     val capsModeDisplay: KeyDisplay? = null,
     val action: KeyAction,
     val color: ColorVariant = ColorVariant.SECONDARY,
-    val size: FontSizeVariant = FontSizeVariant.SMALL
+    val size: FontSizeVariant = FontSizeVariant.SMALL,
 )
 
 sealed class KeyDisplay {
@@ -68,7 +68,8 @@ enum class FontSizeVariant {
 enum class ThemeMode(private val stringId: Int) {
     System(R.string.system),
     Light(R.string.light),
-    Dark(R.string.dark);
+    Dark(R.string.dark),
+    ;
 
     @Composable
     fun title(): String {
@@ -79,7 +80,8 @@ enum class ThemeMode(private val stringId: Int) {
 enum class ThemeColor(private val stringId: Int) {
     Dynamic(R.string.dynamic),
     Green(R.string.green),
-    Pink(R.string.pink);
+    Pink(R.string.pink),
+    ;
 
     @Composable
     fun title(): String {
@@ -111,13 +113,14 @@ enum class KeyboardLayout(val title: String, val index: Int) {
     ThumbKeyUKv1("Thumb-Key українська v1", 14),
     MessageEaseEN("MessageEase English", 15),
     MessageEaseENSymbols("MessageEase English with Symbols", 16),
-    MessageEaseHE("MessageEase עברית", 17)
+    MessageEaseHE("MessageEase עברית", 17),
 }
 
 enum class KeyboardPosition(private val stringId: Int) {
     Center(R.string.center),
     Right(R.string.right),
-    Left(R.string.left);
+    Left(R.string.left),
+    ;
 
     @Composable
     fun title(): String {

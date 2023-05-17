@@ -8,7 +8,22 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.outlined.*
+import androidx.compose.material.icons.outlined.Abc
+import androidx.compose.material.icons.outlined.Animation
+import androidx.compose.material.icons.outlined.BorderAll
+import androidx.compose.material.icons.outlined.Colorize
+import androidx.compose.material.icons.outlined.FormatSize
+import androidx.compose.material.icons.outlined.HideImage
+import androidx.compose.material.icons.outlined.KeyboardAlt
+import androidx.compose.material.icons.outlined.LinearScale
+import androidx.compose.material.icons.outlined.MusicNote
+import androidx.compose.material.icons.outlined.Palette
+import androidx.compose.material.icons.outlined.ResetTv
+import androidx.compose.material.icons.outlined.SpaceBar
+import androidx.compose.material.icons.outlined.Swipe
+import androidx.compose.material.icons.outlined.VerticalAlignTop
+import androidx.compose.material.icons.outlined.Vibration
+import androidx.compose.material.icons.outlined.Visibility
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.Icon
 import androidx.compose.material3.OutlinedTextField
@@ -70,53 +85,53 @@ import com.dessalines.thumbkey.utils.toInt
 @Composable
 fun LookAndFeelActivity(
     navController: NavController,
-    appSettingsViewModel: AppSettingsViewModel
+    appSettingsViewModel: AppSettingsViewModel,
 ) {
     Log.d(TAG, "Got to lookAndFeel activity")
 
     val settings = appSettingsViewModel.appSettings.observeAsState().value
 
     val keySizeState = rememberFloatSettingState(
-        (settings?.keySize ?: DEFAULT_KEY_SIZE).toFloat()
+        (settings?.keySize ?: DEFAULT_KEY_SIZE).toFloat(),
     )
     val pushupSizeState = rememberFloatSettingState(
-        (settings?.pushupSize ?: DEFAULT_PUSHUP_SIZE).toFloat()
+        (settings?.pushupSize ?: DEFAULT_PUSHUP_SIZE).toFloat(),
     )
     val animationSpeedState = rememberFloatSettingState(
-        (settings?.animationSpeed ?: DEFAULT_ANIMATION_SPEED).toFloat()
+        (settings?.animationSpeed ?: DEFAULT_ANIMATION_SPEED).toFloat(),
     )
     val animationHelperSpeedState = rememberFloatSettingState(
-        (settings?.animationHelperSpeed ?: DEFAULT_ANIMATION_HELPER_SPEED).toFloat()
+        (settings?.animationHelperSpeed ?: DEFAULT_ANIMATION_HELPER_SPEED).toFloat(),
     )
     val minSwipeLengthState = rememberFloatSettingState(
-        (settings?.minSwipeLength ?: DEFAULT_MIN_SWIPE_LENGTH).toFloat()
+        (settings?.minSwipeLength ?: DEFAULT_MIN_SWIPE_LENGTH).toFloat(),
     )
     val positionState = rememberIntSettingState(
-        settings?.position ?: DEFAULT_POSITION
+        settings?.position ?: DEFAULT_POSITION,
     )
     val autoCapitalizeState = rememberBooleanSettingState(
-        ((settings?.autoCapitalize ?: DEFAULT_AUTO_CAPITALIZE).toBool())
+        ((settings?.autoCapitalize ?: DEFAULT_AUTO_CAPITALIZE).toBool()),
     )
     val vibrateOnTapState = rememberBooleanSettingState(
-        ((settings?.vibrateOnTap ?: DEFAULT_VIBRATE_ON_TAP).toBool())
+        ((settings?.vibrateOnTap ?: DEFAULT_VIBRATE_ON_TAP).toBool()),
     )
     val soundOnTapState = rememberBooleanSettingState(
-        ((settings?.soundOnTap ?: DEFAULT_SOUND_ON_TAP).toBool())
+        ((settings?.soundOnTap ?: DEFAULT_SOUND_ON_TAP).toBool()),
     )
     val hideLettersState = rememberBooleanSettingState(
-        ((settings?.hideLetters ?: DEFAULT_HIDE_LETTERS).toBool())
+        ((settings?.hideLetters ?: DEFAULT_HIDE_LETTERS).toBool()),
     )
 
     val keyboardLayoutsState = rememberIntSetSettingState(
-        keyboardLayoutsSetFromTitleIndex(settings?.keyboardLayouts)
+        keyboardLayoutsSetFromTitleIndex(settings?.keyboardLayouts),
     )
     val themeState = rememberIntSettingState(settings?.theme ?: DEFAULT_THEME)
     val themeColorState = rememberIntSettingState(settings?.themeColor ?: DEFAULT_THEME_COLOR)
     val keyBordersState = rememberBooleanSettingState(
-        ((settings?.keyBorders ?: DEFAULT_KEY_BORDERS).toBool())
+        ((settings?.keyBorders ?: DEFAULT_KEY_BORDERS).toBool()),
     )
     val spacebarMultiTapsState = rememberBooleanSettingState(
-        ((settings?.spacebarMultiTaps ?: DEFAULT_SPACEBAR_MULTITAPS).toBool())
+        ((settings?.spacebarMultiTaps ?: DEFAULT_SPACEBAR_MULTITAPS).toBool()),
     )
 
     val snackbarHostState = remember { SnackbarHostState() }
@@ -135,7 +150,7 @@ fun LookAndFeelActivity(
                 modifier = Modifier
                     .padding(padding)
                     .verticalScroll(scrollState)
-                    .imePadding()
+                    .imePadding(),
             ) {
                 SettingsListMultiSelect(
                     state = keyboardLayoutsState,
@@ -143,7 +158,7 @@ fun LookAndFeelActivity(
                     icon = {
                         Icon(
                             imageVector = Icons.Outlined.KeyboardAlt,
-                            contentDescription = stringResource(R.string.layouts)
+                            contentDescription = stringResource(R.string.layouts),
                         )
                     },
                     title = {
@@ -167,9 +182,9 @@ fun LookAndFeelActivity(
                             hideLettersState,
                             keyboardLayoutsState,
                             themeState,
-                            themeColorState
+                            themeColorState,
                         )
-                    }
+                    },
                 )
                 SettingsList(
                     state = themeState,
@@ -177,7 +192,7 @@ fun LookAndFeelActivity(
                     icon = {
                         Icon(
                             imageVector = Icons.Outlined.Palette,
-                            contentDescription = stringResource(R.string.theme)
+                            contentDescription = stringResource(R.string.theme),
                         )
                     },
                     title = {
@@ -201,9 +216,9 @@ fun LookAndFeelActivity(
                             hideLettersState,
                             keyboardLayoutsState,
                             themeState,
-                            themeColorState
+                            themeColorState,
                         )
-                    }
+                    },
                 )
                 SettingsList(
                     state = themeColorState,
@@ -211,7 +226,7 @@ fun LookAndFeelActivity(
                     icon = {
                         Icon(
                             imageVector = Icons.Outlined.Colorize,
-                            contentDescription = stringResource(R.string.theme_color)
+                            contentDescription = stringResource(R.string.theme_color),
                         )
                     },
                     title = {
@@ -235,9 +250,9 @@ fun LookAndFeelActivity(
                             hideLettersState,
                             keyboardLayoutsState,
                             themeState,
-                            themeColorState
+                            themeColorState,
                         )
-                    }
+                    },
                 )
                 SettingsList(
                     state = positionState,
@@ -245,7 +260,7 @@ fun LookAndFeelActivity(
                     icon = {
                         Icon(
                             imageVector = Icons.Outlined.LinearScale,
-                            contentDescription = stringResource(R.string.position)
+                            contentDescription = stringResource(R.string.position),
                         )
                     },
                     title = {
@@ -269,16 +284,16 @@ fun LookAndFeelActivity(
                             hideLettersState,
                             keyboardLayoutsState,
                             themeState,
-                            themeColorState
+                            themeColorState,
                         )
-                    }
+                    },
                 )
                 SettingsCheckbox(
                     state = vibrateOnTapState,
                     icon = {
                         Icon(
                             imageVector = Icons.Outlined.Vibration,
-                            contentDescription = stringResource(R.string.vibrate_on_tap)
+                            contentDescription = stringResource(R.string.vibrate_on_tap),
                         )
                     },
                     title = {
@@ -301,16 +316,16 @@ fun LookAndFeelActivity(
                             hideLettersState,
                             keyboardLayoutsState,
                             themeState,
-                            themeColorState
+                            themeColorState,
                         )
-                    }
+                    },
                 )
                 SettingsCheckbox(
                     state = soundOnTapState,
                     icon = {
                         Icon(
                             imageVector = Icons.Outlined.MusicNote,
-                            contentDescription = stringResource(R.string.play_sound_on_tap)
+                            contentDescription = stringResource(R.string.play_sound_on_tap),
                         )
                     },
                     title = {
@@ -333,16 +348,16 @@ fun LookAndFeelActivity(
                             hideLettersState,
                             keyboardLayoutsState,
                             themeState,
-                            themeColorState
+                            themeColorState,
                         )
-                    }
+                    },
                 )
                 SettingsCheckbox(
                     state = hideLettersState,
                     icon = {
                         Icon(
                             imageVector = Icons.Outlined.HideImage,
-                            contentDescription = stringResource(R.string.hide_letters)
+                            contentDescription = stringResource(R.string.hide_letters),
                         )
                     },
                     title = {
@@ -365,16 +380,16 @@ fun LookAndFeelActivity(
                             hideLettersState,
                             keyboardLayoutsState,
                             themeState,
-                            themeColorState
+                            themeColorState,
                         )
-                    }
+                    },
                 )
                 SettingsCheckbox(
                     state = autoCapitalizeState,
                     icon = {
                         Icon(
                             imageVector = Icons.Outlined.Abc,
-                            contentDescription = stringResource(R.string.auto_capitalize)
+                            contentDescription = stringResource(R.string.auto_capitalize),
                         )
                     },
                     title = {
@@ -397,16 +412,16 @@ fun LookAndFeelActivity(
                             hideLettersState,
                             keyboardLayoutsState,
                             themeState,
-                            themeColorState
+                            themeColorState,
                         )
-                    }
+                    },
                 )
                 SettingsCheckbox(
                     state = spacebarMultiTapsState,
                     icon = {
                         Icon(
                             imageVector = Icons.Outlined.SpaceBar,
-                            contentDescription = stringResource(R.string.spacebar_multitaps)
+                            contentDescription = stringResource(R.string.spacebar_multitaps),
                         )
                     },
                     title = {
@@ -429,16 +444,16 @@ fun LookAndFeelActivity(
                             hideLettersState,
                             keyboardLayoutsState,
                             themeState,
-                            themeColorState
+                            themeColorState,
                         )
-                    }
+                    },
                 )
                 SettingsCheckbox(
                     state = keyBordersState,
                     icon = {
                         Icon(
                             imageVector = Icons.Outlined.BorderAll,
-                            contentDescription = stringResource(R.string.key_borders)
+                            contentDescription = stringResource(R.string.key_borders),
                         )
                     },
                     title = {
@@ -461,9 +476,9 @@ fun LookAndFeelActivity(
                             hideLettersState,
                             keyboardLayoutsState,
                             themeState,
-                            themeColorState
+                            themeColorState,
                         )
-                    }
+                    },
                 )
                 val keySizeStr = stringResource(R.string.key_size, keySizeState.value.toInt().toString())
                 SettingsSlider(
@@ -472,7 +487,7 @@ fun LookAndFeelActivity(
                     icon = {
                         Icon(
                             imageVector = Icons.Outlined.FormatSize,
-                            contentDescription = keySizeStr
+                            contentDescription = keySizeStr,
                         )
                     },
                     title = {
@@ -495,9 +510,9 @@ fun LookAndFeelActivity(
                             hideLettersState,
                             keyboardLayoutsState,
                             themeState,
-                            themeColorState
+                            themeColorState,
                         )
-                    }
+                    },
                 )
                 val bottomOffsetStr = stringResource(R.string.bottom_offset, pushupSizeState.value.toInt().toString())
                 SettingsSlider(
@@ -506,7 +521,7 @@ fun LookAndFeelActivity(
                     icon = {
                         Icon(
                             imageVector = Icons.Outlined.VerticalAlignTop,
-                            contentDescription = bottomOffsetStr
+                            contentDescription = bottomOffsetStr,
                         )
                     },
                     title = {
@@ -529,9 +544,9 @@ fun LookAndFeelActivity(
                             hideLettersState,
                             keyboardLayoutsState,
                             themeState,
-                            themeColorState
+                            themeColorState,
                         )
-                    }
+                    },
                 )
                 val minSwipeLengthStr = stringResource(R.string.min_swipe_length, minSwipeLengthState.value.toInt().toString())
                 SettingsSlider(
@@ -540,7 +555,7 @@ fun LookAndFeelActivity(
                     icon = {
                         Icon(
                             imageVector = Icons.Outlined.Swipe,
-                            contentDescription = minSwipeLengthStr
+                            contentDescription = minSwipeLengthStr,
                         )
                     },
                     title = {
@@ -563,9 +578,9 @@ fun LookAndFeelActivity(
                             hideLettersState,
                             keyboardLayoutsState,
                             themeState,
-                            themeColorState
+                            themeColorState,
                         )
-                    }
+                    },
                 )
                 val animationSpeedStr = stringResource(R.string.animation_speed, animationSpeedState.value.toInt().toString())
                 SettingsSlider(
@@ -574,7 +589,7 @@ fun LookAndFeelActivity(
                     icon = {
                         Icon(
                             imageVector = Icons.Outlined.Animation,
-                            contentDescription = animationSpeedStr
+                            contentDescription = animationSpeedStr,
                         )
                     },
                     title = {
@@ -597,15 +612,15 @@ fun LookAndFeelActivity(
                             hideLettersState,
                             keyboardLayoutsState,
                             themeState,
-                            themeColorState
+                            themeColorState,
                         )
-                    }
+                    },
                 )
                 val animationHelperSpeedStr = stringResource(
                     R.string.animation_helper_speed,
                     animationHelperSpeedState
                         .value
-                        .toInt().toString()
+                        .toInt().toString(),
                 )
                 SettingsSlider(
                     valueRange = 0f..500f,
@@ -613,7 +628,7 @@ fun LookAndFeelActivity(
                     icon = {
                         Icon(
                             imageVector = Icons.Outlined.Visibility,
-                            contentDescription = animationHelperSpeedStr
+                            contentDescription = animationHelperSpeedStr,
                         )
                     },
                     title = {
@@ -636,9 +651,9 @@ fun LookAndFeelActivity(
                             hideLettersState,
                             keyboardLayoutsState,
                             themeState,
-                            themeColorState
+                            themeColorState,
                         )
-                    }
+                    },
                 )
                 SettingsMenuLink(
                     title = {
@@ -647,7 +662,7 @@ fun LookAndFeelActivity(
                     icon = {
                         Icon(
                             imageVector = Icons.Outlined.ResetTv,
-                            contentDescription = stringResource(R.string.reset_to_defaults)
+                            contentDescription = stringResource(R.string.reset_to_defaults),
                         )
                     },
                     onClick = {
@@ -667,9 +682,9 @@ fun LookAndFeelActivity(
                             hideLettersState,
                             keyboardLayoutsState,
                             themeState,
-                            themeColorState
+                            themeColorState,
                         )
-                    }
+                    },
                 )
                 OutlinedTextField(
                     modifier = Modifier
@@ -677,10 +692,10 @@ fun LookAndFeelActivity(
                         .fillMaxWidth(),
                     value = text,
                     onValueChange = { text = it },
-                    label = { Text(stringResource(R.string.test_out_thumbkey)) }
+                    label = { Text(stringResource(R.string.test_out_thumbkey)) },
                 )
             }
-        }
+        },
     )
 }
 
@@ -700,7 +715,7 @@ private fun updateAppSettings(
     hideLettersState: SettingValueState<Boolean>,
     keyboardLayoutsState: SettingValueState<Set<Int>>,
     themeState: SettingValueState<Int>,
-    themeColorState: SettingValueState<Int>
+    themeColorState: SettingValueState<Int>,
 ) {
     appSettingsViewModel.update(
         AppSettings(
@@ -723,8 +738,8 @@ private fun updateAppSettings(
                 .joinToString(),
             theme = themeState.value,
             themeColor = themeColorState.value,
-            viewedChangelog = appSettingsViewModel.appSettings.value?.viewedChangelog ?: 0
-        )
+            viewedChangelog = appSettingsViewModel.appSettings.value?.viewedChangelog ?: 0,
+        ),
     )
 }
 
@@ -744,7 +759,7 @@ private fun resetAppSettingsToDefault(
     hideLettersState: SettingValueState<Boolean>,
     keyboardLayoutsState: SettingValueState<Set<Int>>,
     themeState: SettingValueState<Int>,
-    themeColorState: SettingValueState<Int>
+    themeColorState: SettingValueState<Int>,
 ) {
     keySizeState.value = DEFAULT_KEY_SIZE.toFloat()
     pushupSizeState.value = DEFAULT_PUSHUP_SIZE.toFloat()
@@ -778,6 +793,6 @@ private fun resetAppSettingsToDefault(
         hideLettersState,
         keyboardLayoutsState,
         themeState,
-        themeColorState
+        themeColorState,
     )
 }

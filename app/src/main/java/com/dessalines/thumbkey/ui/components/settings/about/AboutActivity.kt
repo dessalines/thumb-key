@@ -46,7 +46,7 @@ const val mastodonLink = "https://mastodon.social/@dessalines"
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun AboutActivity(
-    navController: NavController
+    navController: NavController,
 ) {
     Log.d(TAG, "Got to About activity")
 
@@ -70,12 +70,12 @@ fun AboutActivity(
                     icon = {
                         Icon(
                             imageVector = Icons.Outlined.NewReleases,
-                            contentDescription = stringResource(R.string.releases)
+                            contentDescription = stringResource(R.string.releases),
                         )
                     },
                     onClick = {
                         openLink("$githubUrl/blob/main/RELEASES.md", ctx)
-                    }
+                    },
                 )
                 SettingsDivider()
                 SettingsHeader(text = stringResource(R.string.support))
@@ -84,36 +84,36 @@ fun AboutActivity(
                     icon = {
                         Icon(
                             imageVector = Icons.Outlined.BugReport,
-                            contentDescription = stringResource(R.string.issue_tracker)
+                            contentDescription = stringResource(R.string.issue_tracker),
                         )
                     },
                     onClick = {
                         openLink("$githubUrl/issues", ctx)
-                    }
+                    },
                 )
                 SettingsMenuLink(
                     title = { Text(stringResource(R.string.developer_matrix_chatroom)) },
                     icon = {
                         Icon(
                             imageVector = Icons.Outlined.Chat,
-                            contentDescription = stringResource(R.string.developer_matrix_chatroom)
+                            contentDescription = stringResource(R.string.developer_matrix_chatroom),
                         )
                     },
                     onClick = {
                         openLink(matrixChat, ctx)
-                    }
+                    },
                 )
                 SettingsMenuLink(
                     title = { Text(stringResource(R.string.donate_to_thumbkey)) },
                     icon = {
                         Icon(
                             imageVector = Icons.Outlined.AttachMoney,
-                            contentDescription = stringResource(R.string.donate_to_thumbkey)
+                            contentDescription = stringResource(R.string.donate_to_thumbkey),
                         )
                     },
                     onClick = {
                         openLink(donateLink, ctx)
-                    }
+                    },
                 )
                 SettingsDivider()
                 SettingsHeader(text = stringResource(R.string.social))
@@ -123,24 +123,24 @@ fun AboutActivity(
                         Icon(
                             painter = painterResource(id = R.drawable.thumb_key_icon),
                             modifier = Modifier.size(32.dp),
-                            contentDescription = stringResource(R.string.join_c_thumbkey)
+                            contentDescription = stringResource(R.string.join_c_thumbkey),
                         )
                     },
                     onClick = {
                         openLink(lemmyLink, ctx)
-                    }
+                    },
                 )
                 SettingsMenuLink(
                     title = { Text(stringResource(R.string.follow_me_mastodon)) },
                     icon = {
                         Icon(
                             imageVector = Icons.Outlined.TravelExplore,
-                            contentDescription = stringResource(R.string.follow_me_mastodon)
+                            contentDescription = stringResource(R.string.follow_me_mastodon),
                         )
                     },
                     onClick = {
                         openLink(mastodonLink, ctx)
-                    }
+                    },
                 )
                 SettingsDivider()
                 SettingsHeader(text = stringResource(R.string.open_source))
@@ -153,15 +153,15 @@ fun AboutActivity(
                     icon = {
                         Icon(
                             imageVector = Icons.Outlined.Code,
-                            contentDescription = stringResource(R.string.source_code)
+                            contentDescription = stringResource(R.string.source_code),
                         )
                     },
                     onClick = {
                         openLink(githubUrl, ctx)
-                    }
+                    },
                 )
             }
-        }
+        },
     )
 }
 
@@ -173,12 +173,12 @@ fun SettingsDivider() {
 @Composable
 fun SettingsHeader(
     text: String,
-    color: Color = MaterialTheme.colorScheme.primary
+    color: Color = MaterialTheme.colorScheme.primary,
 ) {
     Text(
         text,
         modifier = Modifier.padding(start = 64.dp),
-        color = color
+        color = color,
     )
 }
 
