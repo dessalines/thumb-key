@@ -374,7 +374,7 @@ val THUMBKEY_DE_V2_MULTILINGUAL_MAIN = KeyboardC(
     ),
 )
 
-val THUMBKEY_DE_V2_SHIFTED = KeyboardC(
+val THUMBKEY_DE_V2_MULTILINGUAL_SHIFTED = KeyboardC(
     listOf(
         listOf(
             KeyItemC(
@@ -567,7 +567,6 @@ val THUMBKEY_DE_V2_SHIFTED = KeyboardC(
                     color = ColorVariant.PRIMARY,
                 ),
                 swipeType = SwipeNWay.FOUR_WAY_CROSS,
-                swipes = mapOf(
                     swipes = mapOf(
                     SwipeDirection.TOP_LEFT to KeyC(
                         display = KeyDisplay.TextDisplay("Ï"),
@@ -739,8 +738,8 @@ val THUMBKEY_DE_V2_SHIFTED = KeyboardC(
     ),
 )
 
-val THUMBKEY_DE_V2_KEYBOARD_MODES: Map<KeyboardMode, KeyboardC> = mapOf(
-    KeyboardMode.MAIN to THUMBKEY_DE_V2_MAIN,
-    KeyboardMode.SHIFTED to THUMBKEY_DE_V2_SHIFTED,
+val THUMBKEY_DE_V2_MULTILINGUAL_KEYBOARD_MODES: Map<KeyboardMode, KeyboardC> = mapOf(
+    KeyboardMode.MAIN to THUMBKEY_DE_V2_MULTILINGUAL_MAIN,
+    KeyboardMode.SHIFTED to THUMBKEY_DE_V2_MULTILINGUAL_SHIFTED,
     KeyboardMode.NUMERIC to NUMERIC_KEYBOARD,
 )
