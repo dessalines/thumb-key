@@ -1,3 +1,12 @@
+# Thumb-Key 1.3.0 (2023-05-21)
+
+## What's Changed
+
+- Adding Norwegian keyboard. Fixes #232 by @dessalines in https://github.com/dessalines/thumb-key/pull/236
+- De multiling 2 by @dessalines in https://github.com/dessalines/thumb-key/pull/237
+
+**Full Changelog**: https://github.com/dessalines/thumb-key/compare/1.2.0...1.3.0
+
 # Thumb-Key 1.2.0 (2023-05-17)
 
 ## What's Changed
