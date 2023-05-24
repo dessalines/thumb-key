@@ -221,7 +221,8 @@ val THUMBKEY_FR_V2_MAIN = KeyboardC(
                     SwipeDirection.TOP_RIGHT to KeyC(
                         display = KeyDisplay.TextDisplay("m"),
                         action = KeyAction.CommitText("m")
-                    ),
+                    )
+                )
             ),
             KeyItemC(
                 center = KeyC(
