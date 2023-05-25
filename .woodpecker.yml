@@ -20,6 +20,6 @@ pipeline:
     image: alpine:3
     commands:
       - apk add curl
-      - "curl -d'CI build failed: ${CI_BUILD_LINK}' ntfy.sh/thumbkey_ci"
+      - "curl -d'Thumb-Key build ${CI_BUILD_STATUS}: ${CI_BUILD_LINK}' ntfy.sh/thumbkey_ci"
     when:
       status: [failure, success]
