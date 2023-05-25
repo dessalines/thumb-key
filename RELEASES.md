@@ -1,3 +1,19 @@
+# Thumb-Key 1.4.0 (2023-05-25)
+
+## What's Changed
+
+- MessageEaseENSymbols corrected by @FranciscoTrigo in https://github.com/dessalines/thumb-key/pull/239
+- Add Georgian keyboard layout by @gvalson in https://github.com/dessalines/thumb-key/pull/240
+- Adding indonesian keyboard. Fixes #241 by @dessalines in https://github.com/dessalines/thumb-key/pull/245
+- Upgrade deps by @dessalines in https://github.com/dessalines/thumb-key/pull/246
+
+## New Contributors
+
+- @FranciscoTrigo made their first contribution in https://github.com/dessalines/thumb-key/pull/239
+- @gvalson made their first contribution in https://github.com/dessalines/thumb-key/pull/240
+
+**Full Changelog**: https://github.com/dessalines/thumb-key/compare/1.3.0...1.4.0
+
 # Thumb-Key 1.3.0 (2023-05-21)
 
 ## What's Changed
