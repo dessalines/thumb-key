@@ -1,8 +1,5 @@
 package com.dessalines.thumbkey.keyboards
 
-import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.outlined.ArrowDropDown
-import androidx.compose.material.icons.outlined.ArrowDropUp
 import com.dessalines.thumbkey.utils.ColorVariant
 import com.dessalines.thumbkey.utils.FontSizeVariant
 import com.dessalines.thumbkey.utils.KeyAction
@@ -70,7 +67,7 @@ val THUMBKEY_KA_V1_MAIN = KeyboardC(
                     SwipeDirection.BOTTOM_RIGHT to KeyC(
                         display = KeyDisplay.TextDisplay("ჰ"),
                         action = KeyAction.CommitText("ჰ"),
-                    )
+                    ),
                 ),
             ),
             SETTINGS_KEY_ITEM,
@@ -149,16 +146,6 @@ val THUMBKEY_KA_V1_MAIN = KeyboardC(
                     SwipeDirection.LEFT to KeyC(
                         display = KeyDisplay.TextDisplay("კ"),
                         action = KeyAction.CommitText("კ"),
-                    ),
-                    SwipeDirection.TOP to KeyC(
-                        display = KeyDisplay.IconDisplay(Icons.Outlined.ArrowDropUp),
-                        action = KeyAction.ToggleShiftMode(true),
-                        color = ColorVariant.MUTED,
-                    ),
-                    SwipeDirection.BOTTOM to KeyC(
-                        display = KeyDisplay.IconDisplay(Icons.Outlined.ArrowDropDown),
-                        action = KeyAction.ToggleShiftMode(false),
-                        color = ColorVariant.MUTED,
                     ),
                 ),
             ),
@@ -257,13 +244,13 @@ val THUMBKEY_KA_V1_MAIN = KeyboardC(
         ),
         listOf(
             SPACEBAR_KEY_ITEM,
-            RETURN_KEY_ITEM
-        )
-    )
+            RETURN_KEY_ITEM,
+        ),
+    ),
 )
 
 val THUMBKEY_KA_V1_KEYBOARD_MODES: Map<KeyboardMode, KeyboardC> = mapOf(
     KeyboardMode.MAIN to THUMBKEY_KA_V1_MAIN,
     KeyboardMode.SHIFTED to THUMBKEY_KA_V1_MAIN,
-    KeyboardMode.NUMERIC to NUMERIC_KEYBOARD
+    KeyboardMode.NUMERIC to NUMERIC_KEYBOARD,
 )
