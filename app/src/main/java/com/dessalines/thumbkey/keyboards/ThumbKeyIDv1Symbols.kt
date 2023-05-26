@@ -334,8 +334,8 @@ val THUMBKEY_ID_V1_SYMBOLS = KeyboardC(
             ),
             KeyItemC(
                 center = KeyC(
-                    display = KeyDisplay.TextDisplay("e"),
-                    action = KeyAction.CommitText("e"),
+                    display = KeyDisplay.TextDisplay("a"),
+                    action = KeyAction.CommitText("a"),
                     size = FontSizeVariant.LARGE,
                     color = ColorVariant.PRIMARY,
                 ),
