@@ -1,3 +1,16 @@
+# Thumb-Key 1.5.0 (2023-05-29)
+
+## What's Changed
+
+- Update ThumbKeyIDv1Symbols.kt by @awandepan in https://github.com/dessalines/thumb-key/pull/248
+- Adding French and Russian MessageEase Keyboards. by @dessalines in https://github.com/dessalines/thumb-key/pull/255
+
+## New Contributors
+
+- @awandepan made their first contribution in https://github.com/dessalines/thumb-key/pull/248
+
+**Full Changelog**: https://github.com/dessalines/thumb-key/compare/1.4.1...1.5.0
+
 # Thumb-Key 1.4.0 (2023-05-25)
 
 ## What's Changed
