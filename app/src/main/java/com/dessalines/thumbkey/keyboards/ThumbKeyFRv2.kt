@@ -240,6 +240,21 @@ val THUMBKEY_FR_V2_MAIN = KeyboardC(
                     SwipeDirection.TOP to KeyC(
                         display = KeyDisplay.TextDisplay("c"),
                         action = KeyAction.CommitText("c")
+                    ),
+                    SwipeDirection.BOTTOM_RIGHT to KeyC(
+                        display = KeyDisplay.TextDisplay("*"),
+                        action = KeyAction.CommitText("*"),
+                        color = ColorVariant.MUTED
+                    ),
+                    SwipeDirection.BOTTOM to KeyC(
+                        display = KeyDisplay.TextDisplay("."),
+                        action = KeyAction.CommitText("."),
+                        color = ColorVariant.MUTED
+                    ),
+                    SwipeDirection.BOTTOM_LEFT to KeyC(
+                        display = KeyDisplay.TextDisplay(","),
+                        action = KeyAction.CommitText(","),
+                        color = ColorVariant.MUTED
                     )
                 )
             ),
@@ -524,6 +539,21 @@ val THUMBKEY_FR_V2_SHIFTED = KeyboardC(
                     SwipeDirection.TOP to KeyC(
                         display = KeyDisplay.TextDisplay("C"),
                         action = KeyAction.CommitText("C")
+                    ),
+                    SwipeDirection.BOTTOM_RIGHT to KeyC(
+                        display = KeyDisplay.TextDisplay("*"),
+                        action = KeyAction.CommitText("*"),
+                        color = ColorVariant.MUTED
+                    ),
+                    SwipeDirection.BOTTOM to KeyC(
+                        display = KeyDisplay.TextDisplay("."),
+                        action = KeyAction.CommitText("."),
+                        color = ColorVariant.MUTED
+                    ),
+                    SwipeDirection.BOTTOM_LEFT to KeyC(
+                        display = KeyDisplay.TextDisplay(","),
+                        action = KeyAction.CommitText(","),
+                        color = ColorVariant.MUTED
                     )
                 )
             ),
