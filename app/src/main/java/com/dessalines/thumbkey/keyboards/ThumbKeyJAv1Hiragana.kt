@@ -16,7 +16,7 @@ import com.dessalines.thumbkey.utils.KeyboardMode
 import com.dessalines.thumbkey.utils.SwipeDirection
 import com.dessalines.thumbkey.utils.SwipeNWay
 
-val THUMBKEY_EN_V4_MAIN = KeyboardC(
+val THUMBKEY_JA_V1_HIRAGANA = KeyboardC(
     listOf(
         listOf(
             KeyItemC(
@@ -284,8 +284,8 @@ val THUMBKEY_EN_V4_MAIN = KeyboardC(
             ),
             KeyItemC(
                 center = KeyC(
-                    display = KeyDisplay.TextDisplay("わ"),
-                    action = KeyAction.CommitText("わ"),
+                    display = KeyDisplay.TextDisplay("゛"),
+                    action = KeyAction.ToggleShiftMode(true)
                     size = FontSizeVariant.LARGE,
                     color = ColorVariant.PRIMARY,
                 ),
@@ -302,7 +302,7 @@ val THUMBKEY_EN_V4_MAIN = KeyboardC(
     ),
 )
 
-val THUMBKEY_EN_V4_SHIFTED = KeyboardC(
+val THUMBKEY_JA_V1_HIRAGANA_SHIFTED = KeyboardC(
     listOf(
         listOf(
             KeyItemC(
@@ -410,28 +410,28 @@ val THUMBKEY_EN_V4_SHIFTED = KeyboardC(
             ),
             KeyItemC(
                 center = KeyC(
-                    display = KeyDisplay.TextDisplay("な"),
-                    action = KeyAction.CommitText("な"),
+                    display = KeyDisplay.TextDisplay("ぱ"),
+                    action = KeyAction.CommitText("ぱ"),
                     size = FontSizeVariant.LARGE,
                     color = ColorVariant.PRIMARY,
                 ),
                 swipeType = SwipeNWay.FOUR_WAY_CROSS,
                 swipes = mapOf(
                     SwipeDirection.BOTTOM to KeyC(
-                        display = KeyDisplay.TextDisplay("に"),
-                        action = KeyAction.CommitText("に"),
+                        display = KeyDisplay.TextDisplay("ぴ"),
+                        action = KeyAction.CommitText("ぴ"),
                     ),
                     SwipeDirection.LEFT to KeyC(
-                        display = KeyDisplay.TextDisplay("ぬ"),
-                        action = KeyAction.CommitText("ぬ"),
+                        display = KeyDisplay.TextDisplay("ぷ"),
+                        action = KeyAction.CommitText("ぷ"),
                     ),
                     SwipeDirection.TOP to KeyC(
-                        display = KeyDisplay.TextDisplay("ね"),
-                        action = KeyAction.CommitText("ね"),
+                        display = KeyDisplay.TextDisplay("ぺ"),
+                        action = KeyAction.CommitText("ぺ"),
                     ),
                     SwipeDirection.RIGHT to KeyC(
-                        display = KeyDisplay.TextDisplay("の"),
-                        action = KeyAction.CommitText("の"),
+                        display = KeyDisplay.TextDisplay("ぽ"),
+                        action = KeyAction.CommitText("ぽ"),
                     ),
                 ),
             ),
@@ -467,29 +467,10 @@ val THUMBKEY_EN_V4_SHIFTED = KeyboardC(
         listOf(
             KeyItemC(
                 center = KeyC(
-                    display = KeyDisplay.TextDisplay("ら"),
-                    action = KeyAction.CommitText("ら"),
+                    display = KeyDisplay.TextDisplay("っ"),
+                    action = KeyAction.CommitText("っ"),
                     size = FontSizeVariant.LARGE,
                     color = ColorVariant.PRIMARY,
-                ),
-                swipeType = SwipeNWay.FOUR_WAY_CROSS,
-                swipes = mapOf(
-                    SwipeDirection.BOTTOM to KeyC(
-                        display = KeyDisplay.TextDisplay("り"),
-                        action = KeyAction.CommitText("り"),
-                    ),
-                    SwipeDirection.LEFT to KeyC(
-                        display = KeyDisplay.TextDisplay("る"),
-                        action = KeyAction.CommitText("る"),
-                    ),
-                    SwipeDirection.TOP to KeyC(
-                        display = KeyDisplay.TextDisplay("れ"),
-                        action = KeyAction.CommitText("れ"),
-                    ),
-                    SwipeDirection.RIGHT to KeyC(
-                        display = KeyDisplay.TextDisplay("ろ"),
-                        action = KeyAction.CommitText("ろ"),
-                    ),
                 ),
             ),
             KeyItemC(
@@ -570,8 +551,8 @@ val THUMBKEY_EN_V4_SHIFTED = KeyboardC(
             ),
             KeyItemC(
                 center = KeyC(
-                    display = KeyDisplay.TextDisplay("わ"),
-                    action = KeyAction.CommitText("わ"),
+                    display = KeyDisplay.TextDisplay("゛"),
+                    action = KeyAction.ToggleShiftMode(false),
                     size = FontSizeVariant.LARGE,
                     color = ColorVariant.PRIMARY,
                 ),
@@ -589,7 +570,7 @@ val THUMBKEY_EN_V4_SHIFTED = KeyboardC(
 )
 
 val THUMBKEY_EN_V4_KEYBOARD_MODES: Map<KeyboardMode, KeyboardC> = mapOf(
-    KeyboardMode.MAIN to THUMBKEY_EN_V4_MAIN,
-    KeyboardMode.SHIFTED to THUMBKEY_EN_V4_SHIFTED,
+    KeyboardMode.MAIN to THUMBKEY_JA_V1_HIRAGANA,
+    KeyboardMode.SHIFTED to THUMBKEY_JA_V1_HIRAGANA_SHIFTED,
     KeyboardMode.NUMERIC to NUMERIC_KEYBOARD,
 )
