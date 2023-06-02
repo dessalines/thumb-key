@@ -21,8 +21,8 @@ val THUMBKEY_EN_V4_MAIN = KeyboardC(
         listOf(
             KeyItemC(
                 center = KeyC(
-                    display = KeyDisplay.TextDisplay("s"),
-                    action = KeyAction.CommitText("s"),
+                    display = KeyDisplay.TextDisplay("ま"),
+                    action = KeyAction.CommitText("ま"),
                     size = FontSizeVariant.LARGE,
                     color = ColorVariant.PRIMARY,
                 ),
@@ -36,8 +36,8 @@ val THUMBKEY_EN_V4_MAIN = KeyboardC(
             ),
             KeyItemC(
                 center = KeyC(
-                    display = KeyDisplay.TextDisplay("r"),
-                    action = KeyAction.CommitText("r"),
+                    display = KeyDisplay.TextDisplay("は"),
+                    action = KeyAction.CommitText("は"),
                     size = FontSizeVariant.LARGE,
                     color = ColorVariant.PRIMARY,
                 ),
@@ -51,8 +51,8 @@ val THUMBKEY_EN_V4_MAIN = KeyboardC(
             ),
             KeyItemC(
                 center = KeyC(
-                    display = KeyDisplay.TextDisplay("o"),
-                    action = KeyAction.CommitText("o"),
+                    display = KeyDisplay.TextDisplay("さ"),
+                    action = KeyAction.CommitText("さ"),
                     size = FontSizeVariant.LARGE,
                     color = ColorVariant.PRIMARY,
                 ),
@@ -69,8 +69,8 @@ val THUMBKEY_EN_V4_MAIN = KeyboardC(
         listOf(
             KeyItemC(
                 center = KeyC(
-                    display = KeyDisplay.TextDisplay("n"),
-                    action = KeyAction.CommitText("n"),
+                    display = KeyDisplay.TextDisplay("や"),
+                    action = KeyAction.CommitText("や"),
                     size = FontSizeVariant.LARGE,
                     color = ColorVariant.PRIMARY,
                 ),
@@ -84,8 +84,8 @@ val THUMBKEY_EN_V4_MAIN = KeyboardC(
             ),
             KeyItemC(
                 center = KeyC(
-                    display = KeyDisplay.TextDisplay("h"),
-                    action = KeyAction.CommitText("h"),
+                    display = KeyDisplay.TextDisplay("な"),
+                    action = KeyAction.CommitText("な"),
                     size = FontSizeVariant.LARGE,
                     color = ColorVariant.PRIMARY,
                 ),
@@ -126,8 +126,8 @@ val THUMBKEY_EN_V4_MAIN = KeyboardC(
             ),
             KeyItemC(
                 center = KeyC(
-                    display = KeyDisplay.TextDisplay("a"),
-                    action = KeyAction.CommitText("a"),
+                    display = KeyDisplay.TextDisplay("か"),
+                    action = KeyAction.CommitText("か"),
                     size = FontSizeVariant.LARGE,
                     color = ColorVariant.PRIMARY,
                 ),
@@ -149,8 +149,8 @@ val THUMBKEY_EN_V4_MAIN = KeyboardC(
         listOf(
             KeyItemC(
                 center = KeyC(
-                    display = KeyDisplay.TextDisplay("t"),
-                    action = KeyAction.CommitText("t"),
+                    display = KeyDisplay.TextDisplay("ら"),
+                    action = KeyAction.CommitText("ら"),
                     size = FontSizeVariant.LARGE,
                     color = ColorVariant.PRIMARY,
                 ),
@@ -164,8 +164,8 @@ val THUMBKEY_EN_V4_MAIN = KeyboardC(
             ),
             KeyItemC(
                 center = KeyC(
-                    display = KeyDisplay.TextDisplay("i"),
-                    action = KeyAction.CommitText("i"),
+                    display = KeyDisplay.TextDisplay("た"),
+                    action = KeyAction.CommitText("た"),
                     size = FontSizeVariant.LARGE,
                     color = ColorVariant.PRIMARY,
                 ),
@@ -202,8 +202,8 @@ val THUMBKEY_EN_V4_MAIN = KeyboardC(
             ),
             KeyItemC(
                 center = KeyC(
-                    display = KeyDisplay.TextDisplay("e"),
-                    action = KeyAction.CommitText("e"),
+                    display = KeyDisplay.TextDisplay("あ"),
+                    action = KeyAction.CommitText("あ"),
                     size = FontSizeVariant.LARGE,
                     color = ColorVariant.PRIMARY,
                 ),
@@ -259,8 +259,8 @@ val THUMBKEY_EN_V4_SHIFTED = KeyboardC(
             ),
             KeyItemC(
                 center = KeyC(
-                    display = KeyDisplay.TextDisplay("O"),
-                    action = KeyAction.CommitText("O"),
+                    display = KeyDisplay.TextDisplay("ざ"),
+                    action = KeyAction.CommitText("ざ"),
                     size = FontSizeVariant.LARGE,
                     color = ColorVariant.PRIMARY,
                 ),
@@ -277,8 +277,8 @@ val THUMBKEY_EN_V4_SHIFTED = KeyboardC(
         listOf(
             KeyItemC(
                 center = KeyC(
-                    display = KeyDisplay.TextDisplay("N"),
-                    action = KeyAction.CommitText("N"),
+                    display = KeyDisplay.TextDisplay("ゃ"),
+                    action = KeyAction.CommitText("ゃ"),
                     size = FontSizeVariant.LARGE,
                     color = ColorVariant.PRIMARY,
                 ),
@@ -334,8 +334,8 @@ val THUMBKEY_EN_V4_SHIFTED = KeyboardC(
             ),
             KeyItemC(
                 center = KeyC(
-                    display = KeyDisplay.TextDisplay("A"),
-                    action = KeyAction.CommitText("A"),
+                    display = KeyDisplay.TextDisplay("が"),
+                    action = KeyAction.CommitText("が"),
                     size = FontSizeVariant.LARGE,
                     color = ColorVariant.PRIMARY,
                 ),
@@ -378,8 +378,8 @@ val THUMBKEY_EN_V4_SHIFTED = KeyboardC(
             ),
             KeyItemC(
                 center = KeyC(
-                    display = KeyDisplay.TextDisplay("I"),
-                    action = KeyAction.CommitText("I"),
+                    display = KeyDisplay.TextDisplay("だ"),
+                    action = KeyAction.CommitText("だ"),
                     size = FontSizeVariant.LARGE,
                     color = ColorVariant.PRIMARY,
                 ),
@@ -416,8 +416,8 @@ val THUMBKEY_EN_V4_SHIFTED = KeyboardC(
             ),
             KeyItemC(
                 center = KeyC(
-                    display = KeyDisplay.TextDisplay("E"),
-                    action = KeyAction.CommitText("E"),
+                    display = KeyDisplay.TextDisplay("ぁ"),
+                    action = KeyAction.CommitText("ぁ"),
                     size = FontSizeVariant.LARGE,
                     color = ColorVariant.PRIMARY,
                 ),
