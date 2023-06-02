@@ -26,11 +26,23 @@ val THUMBKEY_EN_V4_MAIN = KeyboardC(
                     size = FontSizeVariant.LARGE,
                     color = ColorVariant.PRIMARY,
                 ),
-                swipeType = SwipeNWay.FOUR_WAY_DIAGONAL,
+                swipeType = SwipeNWay.FOUR_WAY_CROSS,
                 swipes = mapOf(
-                    SwipeDirection.BOTTOM_RIGHT to KeyC(
-                        display = KeyDisplay.TextDisplay("w"),
-                        action = KeyAction.CommitText("w"),
+                    SwipeDirection.BOTTOM to KeyC(
+                        display = KeyDisplay.TextDisplay("み"),
+                        action = KeyAction.CommitText("み"),
+                    ),
+                    SwipeDirection.LEFT to KeyC(
+                        display = KeyDisplay.TextDisplay("む"),
+                        action = KeyAction.CommitText("む"),
+                    ),
+                    SwipeDirection.TOP to KeyC(
+                        display = KeyDisplay.TextDisplay("め"),
+                        action = KeyAction.CommitText("め"),
+                    ),
+                    SwipeDirection.RIGHT to KeyC(
+                        display = KeyDisplay.TextDisplay("も"),
+                        action = KeyAction.CommitText("も"),
                     ),
                 ),
             ),
@@ -41,11 +53,23 @@ val THUMBKEY_EN_V4_MAIN = KeyboardC(
                     size = FontSizeVariant.LARGE,
                     color = ColorVariant.PRIMARY,
                 ),
-                swipeType = SwipeNWay.TWO_WAY_VERTICAL,
+                swipeType = SwipeNWay.FOUR_WAY_CROSS,
                 swipes = mapOf(
                     SwipeDirection.BOTTOM to KeyC(
-                        display = KeyDisplay.TextDisplay("g"),
-                        action = KeyAction.CommitText("g"),
+                        display = KeyDisplay.TextDisplay("ひ"),
+                        action = KeyAction.CommitText("ひ"),
+                    ),
+                    SwipeDirection.LEFT to KeyC(
+                        display = KeyDisplay.TextDisplay("ふ"),
+                        action = KeyAction.CommitText("ふ"),
+                    ),
+                    SwipeDirection.TOP to KeyC(
+                        display = KeyDisplay.TextDisplay("へ"),
+                        action = KeyAction.CommitText("へ"),
+                    ),
+                    SwipeDirection.RIGHT to KeyC(
+                        display = KeyDisplay.TextDisplay("ほ"),
+                        action = KeyAction.CommitText("ほ"),
                     ),
                 ),
             ),
@@ -56,11 +80,23 @@ val THUMBKEY_EN_V4_MAIN = KeyboardC(
                     size = FontSizeVariant.LARGE,
                     color = ColorVariant.PRIMARY,
                 ),
-                swipeType = SwipeNWay.FOUR_WAY_DIAGONAL,
+                swipeType = SwipeNWay.FOUR_WAY_CROSS,
                 swipes = mapOf(
-                    SwipeDirection.BOTTOM_LEFT to KeyC(
-                        display = KeyDisplay.TextDisplay("u"),
-                        action = KeyAction.CommitText("u"),
+                    SwipeDirection.BOTTOM to KeyC(
+                        display = KeyDisplay.TextDisplay("し"),
+                        action = KeyAction.CommitText("し"),
+                    ),
+                    SwipeDirection.LEFT to KeyC(
+                        display = KeyDisplay.TextDisplay("す"),
+                        action = KeyAction.CommitText("す"),
+                    ),
+                    SwipeDirection.TOP to KeyC(
+                        display = KeyDisplay.TextDisplay("せ"),
+                        action = KeyAction.CommitText("せ"),
+                    ),
+                    SwipeDirection.RIGHT to KeyC(
+                        display = KeyDisplay.TextDisplay("そ"),
+                        action = KeyAction.CommitText("そ"),
                     ),
                 ),
             ),
@@ -74,11 +110,15 @@ val THUMBKEY_EN_V4_MAIN = KeyboardC(
                     size = FontSizeVariant.LARGE,
                     color = ColorVariant.PRIMARY,
                 ),
-                swipeType = SwipeNWay.TWO_WAY_HORIZONTAL,
+                swipeType = SwipeNWay.FOUR_WAY_CROSS,
                 swipes = mapOf(
+                    SwipeDirection.BOTTOM to KeyC(
+                        display = KeyDisplay.TextDisplay("ゆ"),
+                        action = KeyAction.CommitText("ゆ"),
+                    ),
                     SwipeDirection.RIGHT to KeyC(
-                        display = KeyDisplay.TextDisplay("m"),
-                        action = KeyAction.CommitText("m"),
+                        display = KeyDisplay.TextDisplay("よ"),
+                        action = KeyAction.CommitText("よ"),
                     ),
                 ),
             ),
@@ -89,38 +129,23 @@ val THUMBKEY_EN_V4_MAIN = KeyboardC(
                     size = FontSizeVariant.LARGE,
                     color = ColorVariant.PRIMARY,
                 ),
+                swipeType = SwipeNWay.FOUR_WAY_CROSS,
                 swipes = mapOf(
-                    SwipeDirection.TOP_LEFT to KeyC(
-                        display = KeyDisplay.TextDisplay("j"),
-                        action = KeyAction.CommitText("j"),
-                    ),
-                    SwipeDirection.TOP to KeyC(
-                        display = KeyDisplay.TextDisplay("q"),
-                        action = KeyAction.CommitText("q"),
-                    ),
-                    SwipeDirection.TOP_RIGHT to KeyC(
-                        display = KeyDisplay.TextDisplay("b"),
-                        action = KeyAction.CommitText("b"),
-                    ),
-                    SwipeDirection.RIGHT to KeyC(
-                        display = KeyDisplay.TextDisplay("p"),
-                        action = KeyAction.CommitText("p"),
-                    ),
-                    SwipeDirection.BOTTOM_RIGHT to KeyC(
-                        display = KeyDisplay.TextDisplay("y"),
-                        action = KeyAction.CommitText("y"),
-                    ),
                     SwipeDirection.BOTTOM to KeyC(
-                        display = KeyDisplay.TextDisplay("x"),
-                        action = KeyAction.CommitText("x"),
-                    ),
-                    SwipeDirection.BOTTOM_LEFT to KeyC(
-                        display = KeyDisplay.TextDisplay("v"),
-                        action = KeyAction.CommitText("v"),
+                        display = KeyDisplay.TextDisplay("に"),
+                        action = KeyAction.CommitText("に"),
                     ),
                     SwipeDirection.LEFT to KeyC(
-                        display = KeyDisplay.TextDisplay("k"),
-                        action = KeyAction.CommitText("k"),
+                        display = KeyDisplay.TextDisplay("ぬ"),
+                        action = KeyAction.CommitText("ぬ"),
+                    ),
+                    SwipeDirection.TOP to KeyC(
+                        display = KeyDisplay.TextDisplay("ね"),
+                        action = KeyAction.CommitText("ね"),
+                    ),
+                    SwipeDirection.RIGHT to KeyC(
+                        display = KeyDisplay.TextDisplay("の"),
+                        action = KeyAction.CommitText("の"),
                     ),
                 ),
             ),
@@ -133,14 +158,21 @@ val THUMBKEY_EN_V4_MAIN = KeyboardC(
                 ),
                 swipeType = SwipeNWay.FOUR_WAY_CROSS,
                 swipes = mapOf(
+                    SwipeDirection.BOTTOM to KeyC(
+                        display = KeyDisplay.TextDisplay("き"),
+                        action = KeyAction.CommitText("き"),
+                    ),
                     SwipeDirection.LEFT to KeyC(
-                        display = KeyDisplay.TextDisplay("l"),
-                        action = KeyAction.CommitText("l"),
+                        display = KeyDisplay.TextDisplay("く"),
+                        action = KeyAction.CommitText("く"),
                     ),
                     SwipeDirection.TOP to KeyC(
-                        display = KeyDisplay.IconDisplay(Icons.Outlined.ArrowDropUp),
-                        action = KeyAction.ToggleShiftMode(true),
-                        color = ColorVariant.MUTED,
+                        display = KeyDisplay.TextDisplay("け"),
+                        action = KeyAction.CommitText("け"),
+                    ),
+                    SwipeDirection.RIGHT to KeyC(
+                        display = KeyDisplay.TextDisplay("こ"),
+                        action = KeyAction.CommitText("こ"),
                     ),
                 ),
             ),
@@ -154,11 +186,23 @@ val THUMBKEY_EN_V4_MAIN = KeyboardC(
                     size = FontSizeVariant.LARGE,
                     color = ColorVariant.PRIMARY,
                 ),
-                swipeType = SwipeNWay.FOUR_WAY_DIAGONAL,
+                swipeType = SwipeNWay.FOUR_WAY_CROSS,
                 swipes = mapOf(
-                    SwipeDirection.TOP_RIGHT to KeyC(
-                        display = KeyDisplay.TextDisplay("c"),
-                        action = KeyAction.CommitText("c"),
+                    SwipeDirection.BOTTOM to KeyC(
+                        display = KeyDisplay.TextDisplay("り"),
+                        action = KeyAction.CommitText("り"),
+                    ),
+                    SwipeDirection.LEFT to KeyC(
+                        display = KeyDisplay.TextDisplay("る"),
+                        action = KeyAction.CommitText("る"),
+                    ),
+                    SwipeDirection.TOP to KeyC(
+                        display = KeyDisplay.TextDisplay("れ"),
+                        action = KeyAction.CommitText("れ"),
+                    ),
+                    SwipeDirection.RIGHT to KeyC(
+                        display = KeyDisplay.TextDisplay("ろ"),
+                        action = KeyAction.CommitText("ろ"),
                     ),
                 ),
             ),
@@ -169,34 +213,23 @@ val THUMBKEY_EN_V4_MAIN = KeyboardC(
                     size = FontSizeVariant.LARGE,
                     color = ColorVariant.PRIMARY,
                 ),
+                swipeType = SwipeNWay.FOUR_WAY_CROSS,
                 swipes = mapOf(
-                    SwipeDirection.TOP to KeyC(
-                        display = KeyDisplay.TextDisplay("f"),
-                        action = KeyAction.CommitText("f"),
+                    SwipeDirection.BOTTOM to KeyC(
+                        display = KeyDisplay.TextDisplay("ち"),
+                        action = KeyAction.CommitText("ち"),
                     ),
-                    SwipeDirection.TOP_RIGHT to KeyC(
-                        display = KeyDisplay.TextDisplay("'"),
-                        action = KeyAction.CommitText("'"),
-                        color = ColorVariant.MUTED,
+                    SwipeDirection.LEFT to KeyC(
+                        display = KeyDisplay.TextDisplay("つ"),
+                        action = KeyAction.CommitText("つ"),
+                    ),
+                    SwipeDirection.TOP to KeyC(
+                        display = KeyDisplay.TextDisplay("て"),
+                        action = KeyAction.CommitText("て"),
                     ),
                     SwipeDirection.RIGHT to KeyC(
-                        display = KeyDisplay.TextDisplay("z"),
-                        action = KeyAction.CommitText("z"),
-                    ),
-                    SwipeDirection.BOTTOM_RIGHT to KeyC(
-                        display = KeyDisplay.TextDisplay("-"),
-                        action = KeyAction.CommitText("-"),
-                        color = ColorVariant.MUTED,
-                    ),
-                    SwipeDirection.BOTTOM to KeyC(
-                        display = KeyDisplay.TextDisplay("."),
-                        action = KeyAction.CommitText("."),
-                        color = ColorVariant.MUTED,
-                    ),
-                    SwipeDirection.BOTTOM_LEFT to KeyC(
-                        display = KeyDisplay.TextDisplay("*"),
-                        action = KeyAction.CommitText("*"),
-                        color = ColorVariant.MUTED,
+                        display = KeyDisplay.TextDisplay("と"),
+                        action = KeyAction.CommitText("と"),
                     ),
                 ),
             ),
@@ -207,225 +240,23 @@ val THUMBKEY_EN_V4_MAIN = KeyboardC(
                     size = FontSizeVariant.LARGE,
                     color = ColorVariant.PRIMARY,
                 ),
-                swipeType = SwipeNWay.FOUR_WAY_DIAGONAL,
-                swipes = mapOf(
-                    SwipeDirection.TOP_LEFT to KeyC(
-                        display = KeyDisplay.TextDisplay("d"),
-                        action = KeyAction.CommitText("d"),
-                    ),
-                ),
-            ),
-            BACKSPACE_KEY_ITEM,
-        ),
-        listOf(
-            SPACEBAR_KEY_ITEM,
-            RETURN_KEY_ITEM,
-        ),
-    ),
-)
-
-val THUMBKEY_EN_V4_SHIFTED = KeyboardC(
-    listOf(
-        listOf(
-            KeyItemC(
-                center = KeyC(
-                    display = KeyDisplay.TextDisplay("S"),
-                    action = KeyAction.CommitText("S"),
-                    size = FontSizeVariant.LARGE,
-                    color = ColorVariant.PRIMARY,
-                ),
-                swipeType = SwipeNWay.FOUR_WAY_DIAGONAL,
-                swipes = mapOf(
-                    SwipeDirection.BOTTOM_RIGHT to KeyC(
-                        display = KeyDisplay.TextDisplay("W"),
-                        action = KeyAction.CommitText("W"),
-                    ),
-                ),
-            ),
-            KeyItemC(
-                center = KeyC(
-                    display = KeyDisplay.TextDisplay("R"),
-                    action = KeyAction.CommitText("R"),
-                    size = FontSizeVariant.LARGE,
-                    color = ColorVariant.PRIMARY,
-                ),
-                swipeType = SwipeNWay.TWO_WAY_VERTICAL,
-                swipes = mapOf(
-                    SwipeDirection.BOTTOM to KeyC(
-                        display = KeyDisplay.TextDisplay("G"),
-                        action = KeyAction.CommitText("G"),
-                    ),
-                ),
-            ),
-            KeyItemC(
-                center = KeyC(
-                    display = KeyDisplay.TextDisplay("ざ"),
-                    action = KeyAction.CommitText("ざ"),
-                    size = FontSizeVariant.LARGE,
-                    color = ColorVariant.PRIMARY,
-                ),
-                swipeType = SwipeNWay.FOUR_WAY_DIAGONAL,
-                swipes = mapOf(
-                    SwipeDirection.BOTTOM_LEFT to KeyC(
-                        display = KeyDisplay.TextDisplay("U"),
-                        action = KeyAction.CommitText("U"),
-                    ),
-                ),
-            ),
-            SETTINGS_KEY_ITEM,
-        ),
-        listOf(
-            KeyItemC(
-                center = KeyC(
-                    display = KeyDisplay.TextDisplay("ゃ"),
-                    action = KeyAction.CommitText("ゃ"),
-                    size = FontSizeVariant.LARGE,
-                    color = ColorVariant.PRIMARY,
-                ),
-                swipeType = SwipeNWay.TWO_WAY_HORIZONTAL,
-                swipes = mapOf(
-                    SwipeDirection.RIGHT to KeyC(
-                        display = KeyDisplay.TextDisplay("M"),
-                        action = KeyAction.CommitText("M"),
-                    ),
-                ),
-            ),
-            KeyItemC(
-                center = KeyC(
-                    display = KeyDisplay.TextDisplay("H"),
-                    action = KeyAction.CommitText("H"),
-                    size = FontSizeVariant.LARGE,
-                    color = ColorVariant.PRIMARY,
-                ),
-                swipes = mapOf(
-                    SwipeDirection.TOP_LEFT to KeyC(
-                        display = KeyDisplay.TextDisplay("J"),
-                        action = KeyAction.CommitText("J"),
-                    ),
-                    SwipeDirection.TOP to KeyC(
-                        display = KeyDisplay.TextDisplay("Q"),
-                        action = KeyAction.CommitText("Q"),
-                    ),
-                    SwipeDirection.TOP_RIGHT to KeyC(
-                        display = KeyDisplay.TextDisplay("B"),
-                        action = KeyAction.CommitText("B"),
-                    ),
-                    SwipeDirection.RIGHT to KeyC(
-                        display = KeyDisplay.TextDisplay("P"),
-                        action = KeyAction.CommitText("P"),
-                    ),
-                    SwipeDirection.BOTTOM_RIGHT to KeyC(
-                        display = KeyDisplay.TextDisplay("Y"),
-                        action = KeyAction.CommitText("Y"),
-                    ),
-                    SwipeDirection.BOTTOM to KeyC(
-                        display = KeyDisplay.TextDisplay("X"),
-                        action = KeyAction.CommitText("X"),
-                    ),
-                    SwipeDirection.BOTTOM_LEFT to KeyC(
-                        display = KeyDisplay.TextDisplay("V"),
-                        action = KeyAction.CommitText("V"),
-                    ),
-                    SwipeDirection.LEFT to KeyC(
-                        display = KeyDisplay.TextDisplay("K"),
-                        action = KeyAction.CommitText("K"),
-                    ),
-                ),
-            ),
-            KeyItemC(
-                center = KeyC(
-                    display = KeyDisplay.TextDisplay("が"),
-                    action = KeyAction.CommitText("が"),
-                    size = FontSizeVariant.LARGE,
-                    color = ColorVariant.PRIMARY,
-                ),
                 swipeType = SwipeNWay.FOUR_WAY_CROSS,
                 swipes = mapOf(
-                    SwipeDirection.LEFT to KeyC(
-                        display = KeyDisplay.TextDisplay("L"),
-                        action = KeyAction.CommitText("L"),
-                    ),
                     SwipeDirection.BOTTOM to KeyC(
-                        display = KeyDisplay.IconDisplay(Icons.Outlined.ArrowDropDown),
-                        action = KeyAction.ToggleShiftMode(false),
-                        color = ColorVariant.MUTED,
+                        display = KeyDisplay.TextDisplay("い"),
+                        action = KeyAction.CommitText("い"),
+                    ),
+                    SwipeDirection.LEFT to KeyC(
+                        display = KeyDisplay.TextDisplay("う"),
+                        action = KeyAction.CommitText("う"),
                     ),
                     SwipeDirection.TOP to KeyC(
-                        display = KeyDisplay.IconDisplay(Icons.Outlined.KeyboardCapslock),
-                        capsModeDisplay = KeyDisplay.IconDisplay(Icons.Outlined.Copyright),
-                        action = KeyAction.ToggleCapsLock,
-                        color = ColorVariant.MUTED,
-                    ),
-                ),
-            ),
-            NUMERIC_KEY_ITEM,
-        ),
-        listOf(
-            KeyItemC(
-                center = KeyC(
-                    display = KeyDisplay.TextDisplay("T"),
-                    action = KeyAction.CommitText("T"),
-                    size = FontSizeVariant.LARGE,
-                    color = ColorVariant.PRIMARY,
-                ),
-                swipeType = SwipeNWay.FOUR_WAY_DIAGONAL,
-                swipes = mapOf(
-                    SwipeDirection.TOP_RIGHT to KeyC(
-                        display = KeyDisplay.TextDisplay("C"),
-                        action = KeyAction.CommitText("C"),
-                    ),
-                ),
-            ),
-            KeyItemC(
-                center = KeyC(
-                    display = KeyDisplay.TextDisplay("だ"),
-                    action = KeyAction.CommitText("だ"),
-                    size = FontSizeVariant.LARGE,
-                    color = ColorVariant.PRIMARY,
-                ),
-                swipes = mapOf(
-                    SwipeDirection.TOP to KeyC(
-                        display = KeyDisplay.TextDisplay("F"),
-                        action = KeyAction.CommitText("F"),
-                    ),
-                    SwipeDirection.TOP_RIGHT to KeyC(
-                        display = KeyDisplay.TextDisplay("'"),
-                        action = KeyAction.CommitText("'"),
-                        color = ColorVariant.MUTED,
+                        display = KeyDisplay.TextDisplay("え"),
+                        action = KeyAction.CommitText("え"),
                     ),
                     SwipeDirection.RIGHT to KeyC(
-                        display = KeyDisplay.TextDisplay("Z"),
-                        action = KeyAction.CommitText("Z"),
-                    ),
-                    SwipeDirection.BOTTOM_RIGHT to KeyC(
-                        display = KeyDisplay.TextDisplay("-"),
-                        action = KeyAction.CommitText("-"),
-                        color = ColorVariant.MUTED,
-                    ),
-                    SwipeDirection.BOTTOM to KeyC(
-                        display = KeyDisplay.TextDisplay("."),
-                        action = KeyAction.CommitText("."),
-                        color = ColorVariant.MUTED,
-                    ),
-                    SwipeDirection.BOTTOM_LEFT to KeyC(
-                        display = KeyDisplay.TextDisplay("*"),
-                        action = KeyAction.CommitText("*"),
-                        color = ColorVariant.MUTED,
-                    ),
-                ),
-            ),
-            KeyItemC(
-                center = KeyC(
-                    display = KeyDisplay.TextDisplay("ぁ"),
-                    action = KeyAction.CommitText("ぁ"),
-                    size = FontSizeVariant.LARGE,
-                    color = ColorVariant.PRIMARY,
-                ),
-                swipeType = SwipeNWay.FOUR_WAY_DIAGONAL,
-                swipes = mapOf(
-                    SwipeDirection.TOP_LEFT to KeyC(
-                        display = KeyDisplay.TextDisplay("D"),
-                        action = KeyAction.CommitText("D"),
+                        display = KeyDisplay.TextDisplay("お"),
+                        action = KeyAction.CommitText("お"),
                     ),
                 ),
             ),
@@ -442,10 +273,292 @@ val THUMBKEY_EN_V4_SHIFTED = KeyboardC(
             ),
             KeyItemC(
                 center = KeyC(
+                    display = KeyDisplay.TextDisplay("わ"),
+                    action = KeyAction.CommitText("わ"),
+                    size = FontSizeVariant.LARGE,
+                    color = ColorVariant.PRIMARY,
+                ),
+            ),
+            KeyItemC(
+                center = KeyC(
                     display = KeyDisplay.TextDisplay(" "),
                     action = KeyAction.CommitText(" "),
                 ),
-                widthMultiplier = 2,
+                backgroundColor = ColorVariant.SURFACE_VARIANT,
+            ),
+            RETURN_KEY_ITEM,
+        ),
+    ),
+)
+
+val THUMBKEY_EN_V4_SHIFTED = KeyboardC(
+    listOf(
+        listOf(
+            KeyItemC(
+                center = KeyC(
+                    display = KeyDisplay.TextDisplay("ま"),
+                    action = KeyAction.CommitText("ま"),
+                    size = FontSizeVariant.LARGE,
+                    color = ColorVariant.PRIMARY,
+                ),
+                swipeType = SwipeNWay.FOUR_WAY_CROSS,
+                swipes = mapOf(
+                    SwipeDirection.BOTTOM to KeyC(
+                        display = KeyDisplay.TextDisplay("み"),
+                        action = KeyAction.CommitText("み"),
+                    ),
+                    SwipeDirection.LEFT to KeyC(
+                        display = KeyDisplay.TextDisplay("む"),
+                        action = KeyAction.CommitText("む"),
+                    ),
+                    SwipeDirection.TOP to KeyC(
+                        display = KeyDisplay.TextDisplay("め"),
+                        action = KeyAction.CommitText("め"),
+                    ),
+                    SwipeDirection.RIGHT to KeyC(
+                        display = KeyDisplay.TextDisplay("も"),
+                        action = KeyAction.CommitText("も"),
+                    ),
+                ),
+            ),
+            KeyItemC(
+                center = KeyC(
+                    display = KeyDisplay.TextDisplay("ば"),
+                    action = KeyAction.CommitText("ば"),
+                    size = FontSizeVariant.LARGE,
+                    color = ColorVariant.PRIMARY,
+                ),
+                swipeType = SwipeNWay.FOUR_WAY_CROSS,
+                swipes = mapOf(
+                    SwipeDirection.BOTTOM to KeyC(
+                        display = KeyDisplay.TextDisplay("び"),
+                        action = KeyAction.CommitText("び"),
+                    ),
+                    SwipeDirection.LEFT to KeyC(
+                        display = KeyDisplay.TextDisplay("ぶ"),
+                        action = KeyAction.CommitText("ぶ"),
+                    ),
+                    SwipeDirection.TOP to KeyC(
+                        display = KeyDisplay.TextDisplay("べ"),
+                        action = KeyAction.CommitText("べ"),
+                    ),
+                    SwipeDirection.RIGHT to KeyC(
+                        display = KeyDisplay.TextDisplay("ぼ"),
+                        action = KeyAction.CommitText("ぼ"),
+                    ),
+                ),
+            ),
+            KeyItemC(
+                center = KeyC(
+                    display = KeyDisplay.TextDisplay("ざ"),
+                    action = KeyAction.CommitText("ざ"),
+                    size = FontSizeVariant.LARGE,
+                    color = ColorVariant.PRIMARY,
+                ),
+                swipeType = SwipeNWay.FOUR_WAY_CROSS,
+                swipes = mapOf(
+                    SwipeDirection.BOTTOM to KeyC(
+                        display = KeyDisplay.TextDisplay("じ"),
+                        action = KeyAction.CommitText("じ"),
+                    ),
+                    SwipeDirection.LEFT to KeyC(
+                        display = KeyDisplay.TextDisplay("ず"),
+                        action = KeyAction.CommitText("ず"),
+                    ),
+                    SwipeDirection.TOP to KeyC(
+                        display = KeyDisplay.TextDisplay("ぜ"),
+                        action = KeyAction.CommitText("ぜ"),
+                    ),
+                    SwipeDirection.RIGHT to KeyC(
+                        display = KeyDisplay.TextDisplay("ぞ"),
+                        action = KeyAction.CommitText("ぞ"),
+                    ),
+                ),
+            ),
+            SETTINGS_KEY_ITEM,
+        ),
+        listOf(
+            KeyItemC(
+                center = KeyC(
+                    display = KeyDisplay.TextDisplay("ゃ"),
+                    action = KeyAction.CommitText("ゃ"),
+                    size = FontSizeVariant.LARGE,
+                    color = ColorVariant.PRIMARY,
+                ),
+                swipeType = SwipeNWay.FOUR_WAY_CROSS,
+                swipes = mapOf(
+                    SwipeDirection.BOTTOM to KeyC(
+                        display = KeyDisplay.TextDisplay("ゅ"),
+                        action = KeyAction.CommitText("ゅ"),
+                    ),
+                    SwipeDirection.RIGHT to KeyC(
+                        display = KeyDisplay.TextDisplay("ょ"),
+                        action = KeyAction.CommitText("ょ"),
+                    ),
+                ),
+            ),
+            KeyItemC(
+                center = KeyC(
+                    display = KeyDisplay.TextDisplay("な"),
+                    action = KeyAction.CommitText("な"),
+                    size = FontSizeVariant.LARGE,
+                    color = ColorVariant.PRIMARY,
+                ),
+                swipeType = SwipeNWay.FOUR_WAY_CROSS,
+                swipes = mapOf(
+                    SwipeDirection.BOTTOM to KeyC(
+                        display = KeyDisplay.TextDisplay("に"),
+                        action = KeyAction.CommitText("に"),
+                    ),
+                    SwipeDirection.LEFT to KeyC(
+                        display = KeyDisplay.TextDisplay("ぬ"),
+                        action = KeyAction.CommitText("ぬ"),
+                    ),
+                    SwipeDirection.TOP to KeyC(
+                        display = KeyDisplay.TextDisplay("ね"),
+                        action = KeyAction.CommitText("ね"),
+                    ),
+                    SwipeDirection.RIGHT to KeyC(
+                        display = KeyDisplay.TextDisplay("の"),
+                        action = KeyAction.CommitText("の"),
+                    ),
+                ),
+            ),
+            KeyItemC(
+                center = KeyC(
+                    display = KeyDisplay.TextDisplay("が"),
+                    action = KeyAction.CommitText("が"),
+                    size = FontSizeVariant.LARGE,
+                    color = ColorVariant.PRIMARY,
+                ),
+                swipeType = SwipeNWay.FOUR_WAY_CROSS,
+                swipes = mapOf(
+                    SwipeDirection.BOTTOM to KeyC(
+                        display = KeyDisplay.TextDisplay("ぎ"),
+                        action = KeyAction.CommitText("ぎ"),
+                    ),
+                    SwipeDirection.LEFT to KeyC(
+                        display = KeyDisplay.TextDisplay("ぐ"),
+                        action = KeyAction.CommitText("ぐ"),
+                    ),
+                    SwipeDirection.TOP to KeyC(
+                        display = KeyDisplay.TextDisplay("げ"),
+                        action = KeyAction.CommitText("げ"),
+                    ),
+                    SwipeDirection.RIGHT to KeyC(
+                        display = KeyDisplay.TextDisplay("ご"),
+                        action = KeyAction.CommitText("ご"),
+                    ),
+                ),
+            ),
+            NUMERIC_KEY_ITEM,
+        ),
+        listOf(
+            KeyItemC(
+                center = KeyC(
+                    display = KeyDisplay.TextDisplay("ら"),
+                    action = KeyAction.CommitText("ら"),
+                    size = FontSizeVariant.LARGE,
+                    color = ColorVariant.PRIMARY,
+                ),
+                swipeType = SwipeNWay.FOUR_WAY_CROSS,
+                swipes = mapOf(
+                    SwipeDirection.BOTTOM to KeyC(
+                        display = KeyDisplay.TextDisplay("り"),
+                        action = KeyAction.CommitText("り"),
+                    ),
+                    SwipeDirection.LEFT to KeyC(
+                        display = KeyDisplay.TextDisplay("る"),
+                        action = KeyAction.CommitText("る"),
+                    ),
+                    SwipeDirection.TOP to KeyC(
+                        display = KeyDisplay.TextDisplay("れ"),
+                        action = KeyAction.CommitText("れ"),
+                    ),
+                    SwipeDirection.RIGHT to KeyC(
+                        display = KeyDisplay.TextDisplay("ろ"),
+                        action = KeyAction.CommitText("ろ"),
+                    ),
+                ),
+            ),
+            KeyItemC(
+                center = KeyC(
+                    display = KeyDisplay.TextDisplay("だ"),
+                    action = KeyAction.CommitText("だ"),
+                    size = FontSizeVariant.LARGE,
+                    color = ColorVariant.PRIMARY,
+                ),
+                swipeType = SwipeNWay.FOUR_WAY_CROSS,
+                swipes = mapOf(
+                    SwipeDirection.BOTTOM to KeyC(
+                        display = KeyDisplay.TextDisplay("ぢ"),
+                        action = KeyAction.CommitText("ぢ"),
+                    ),
+                    SwipeDirection.LEFT to KeyC(
+                        display = KeyDisplay.TextDisplay("づ"),
+                        action = KeyAction.CommitText("づ"),
+                    ),
+                    SwipeDirection.TOP to KeyC(
+                        display = KeyDisplay.TextDisplay("で"),
+                        action = KeyAction.CommitText("で"),
+                    ),
+                    SwipeDirection.RIGHT to KeyC(
+                        display = KeyDisplay.TextDisplay("ど"),
+                        action = KeyAction.CommitText("ど"),
+                    ),
+                ),
+            ),
+            KeyItemC(
+                center = KeyC(
+                    display = KeyDisplay.TextDisplay("ぁ"),
+                    action = KeyAction.CommitText("ぁ"),
+                    size = FontSizeVariant.LARGE,
+                    color = ColorVariant.PRIMARY,
+                ),
+                swipeType = SwipeNWay.FOUR_WAY_CROSS,
+                swipes = mapOf(
+                    SwipeDirection.BOTTOM to KeyC(
+                        display = KeyDisplay.TextDisplay("ぃ"),
+                        action = KeyAction.CommitText("ぃ"),
+                    ),
+                    SwipeDirection.LEFT to KeyC(
+                        display = KeyDisplay.TextDisplay("ぅ"),
+                        action = KeyAction.CommitText("ぅ"),
+                    ),
+                    SwipeDirection.TOP to KeyC(
+                        display = KeyDisplay.TextDisplay("ぇ"),
+                        action = KeyAction.CommitText("ぇ"),
+                    ),
+                    SwipeDirection.RIGHT to KeyC(
+                        display = KeyDisplay.TextDisplay("ぉ"),
+                        action = KeyAction.CommitText("ぉ"),
+                    ),
+                ),
+            ),
+            BACKSPACE_KEY_ITEM,
+        ),
+        listOf(
+            KeyItemC(
+                center = KeyC(
+                    display = KeyDisplay.TextDisplay("わ"),
+                    action = KeyAction.CommitText("わ"),
+                    size = FontSizeVariant.LARGE,
+                    color = ColorVariant.PRIMARY,
+                ),
+            ),
+            KeyItemC(
+                center = KeyC(
+                    display = KeyDisplay.TextDisplay("わ"),
+                    action = KeyAction.CommitText("わ"),
+                    size = FontSizeVariant.LARGE,
+                    color = ColorVariant.PRIMARY,
+                ),
+            ),
+            KeyItemC(
+                center = KeyC(
+                    display = KeyDisplay.TextDisplay(" "),
+                    action = KeyAction.CommitText(" "),
+                ),
                 backgroundColor = ColorVariant.SURFACE_VARIANT,
             ),
             RETURN_KEY_ITEM,
