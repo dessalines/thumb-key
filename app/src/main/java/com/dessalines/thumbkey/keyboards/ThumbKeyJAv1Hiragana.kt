@@ -432,7 +432,22 @@ val THUMBKEY_EN_V4_SHIFTED = KeyboardC(
             BACKSPACE_KEY_ITEM,
         ),
         listOf(
-            SPACEBAR_KEY_ITEM,
+            KeyItemC(
+                center = KeyC(
+                    display = KeyDisplay.TextDisplay("わ"),
+                    action = KeyAction.CommitText("わ"),
+                    size = FontSizeVariant.LARGE,
+                    color = ColorVariant.PRIMARY,
+                ),
+            ),
+            KeyItemC(
+                center = KeyC(
+                    display = KeyDisplay.TextDisplay(" "),
+                    action = KeyAction.CommitText(" "),
+                ),
+                widthMultiplier = 2,
+                backgroundColor = ColorVariant.SURFACE_VARIANT,
+            ),
             RETURN_KEY_ITEM,
         ),
     ),
