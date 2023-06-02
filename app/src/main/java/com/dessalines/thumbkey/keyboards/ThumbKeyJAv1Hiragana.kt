@@ -270,6 +270,17 @@ val THUMBKEY_EN_V4_MAIN = KeyboardC(
                     size = FontSizeVariant.LARGE,
                     color = ColorVariant.PRIMARY,
                 ),
+                swipeType = SwipeNWay.FOUR_WAY_CROSS,
+                swipes = mapOf(
+                    SwipeDirection.RIGHT to KeyC(
+                        display = KeyDisplay.TextDisplay("を"),
+                        action = KeyAction.CommitText("を"),
+                    ),
+                    SwipeDirection.TOP to KeyC(
+                        display = KeyDisplay.TextDisplay("ん"),
+                        action = KeyAction.CommitText("ん"),
+                    ),
+                ),
             ),
             KeyItemC(
                 center = KeyC(
@@ -544,6 +555,17 @@ val THUMBKEY_EN_V4_SHIFTED = KeyboardC(
                     action = KeyAction.CommitText("わ"),
                     size = FontSizeVariant.LARGE,
                     color = ColorVariant.PRIMARY,
+                ),
+                swipeType = SwipeNWay.FOUR_WAY_CROSS,
+                swipes = mapOf(
+                    SwipeDirection.RIGHT to KeyC(
+                        display = KeyDisplay.TextDisplay("を"),
+                        action = KeyAction.CommitText("を"),
+                    ),
+                    SwipeDirection.TOP to KeyC(
+                        display = KeyDisplay.TextDisplay("ん"),
+                        action = KeyAction.CommitText("ん"),
+                    ),
                 ),
             ),
             KeyItemC(
