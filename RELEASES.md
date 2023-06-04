@@ -1,3 +1,32 @@
+# Thumb-Key 1.6.0 (2023-06-04)
+
+## What's Changed
+
+- Update MessageEaseFR.kt by @cosminribo in https://github.com/dessalines/thumb-key/pull/256
+- Upgrade deps. by @dessalines in https://github.com/dessalines/thumb-key/pull/265
+- Add T9 keyboard. Fixes #263 by @dessalines in https://github.com/dessalines/thumb-key/pull/264
+- T symbol fix by @dessalines in https://github.com/dessalines/thumb-key/pull/266
+- Corrected "T" key with symbols by @FranciscoTrigo in https://github.com/dessalines/thumb-key/pull/262
+- Hiragana by @dessalines in https://github.com/dessalines/thumb-key/pull/267
+- Added Japanese kana(hiragana/katakana) by @K0baU in https://github.com/dessalines/thumb-key/pull/261
+- Ru four way by @dessalines in https://github.com/dessalines/thumb-key/pull/268
+- Fix the MessageEaseRUSymbols layout by removing FOUR_WAY_DIAGONAL by @last5bits in https://github.com/dessalines/thumb-key/pull/258
+- Fr v2 breversa by @dessalines in https://github.com/dessalines/thumb-key/pull/269
+- French keymap by @breversa in https://github.com/dessalines/thumb-key/pull/257
+- De multiling fix by @dessalines in https://github.com/dessalines/thumb-key/pull/270
+- Update ThumbKeyDEv2MultiLingual.kt by @Falcarragh in https://github.com/dessalines/thumb-key/pull/250
+- Fixing spacebar multitap reset. Fixes #242 by @dessalines in https://github.com/dessalines/thumb-key/pull/271
+
+## New Contributors
+
+- @cosminribo made their first contribution in https://github.com/dessalines/thumb-key/pull/256
+- @K0baU made their first contribution in https://github.com/dessalines/thumb-key/pull/261
+- @last5bits made their first contribution in https://github.com/dessalines/thumb-key/pull/258
+- @breversa made their first contribution in https://github.com/dessalines/thumb-key/pull/257
+- @Falcarragh made their first contribution in https://github.com/dessalines/thumb-key/pull/250
+
+**Full Changelog**: https://github.com/dessalines/thumb-key/compare/1.5.0...1.6.0
+
 # Thumb-Key 1.5.0 (2023-05-29)
 
 ## What's Changed
