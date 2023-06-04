@@ -188,6 +188,7 @@ fun KeyboardKey(
                             onSwitchLanguage = onSwitchLanguage,
                             onSwitchPosition = onSwitchPosition,
                         )
+                        tapCount = 0
                         lastAction.value = action
 
                         // Reset the drags
