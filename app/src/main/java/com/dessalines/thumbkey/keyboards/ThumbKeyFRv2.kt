@@ -490,6 +490,11 @@ val THUMBKEY_FR_V2_SHIFTED = KeyboardC(
                         action = KeyAction.CommitText("Â"),
                         color = ColorVariant.MUTED,
                     ),
+                    SwipeDirection.BOTTOM_RIGHT to KeyC(
+                        display = KeyDisplay.TextDisplay("À"),
+                        action = KeyAction.CommitText("À"),
+                        color = ColorVariant.MUTED,
+                    ),
                     SwipeDirection.BOTTOM to KeyC(
                         display = KeyDisplay.IconDisplay(Icons.Outlined.ArrowDropDown),
                         action = KeyAction.ToggleShiftMode(false),
