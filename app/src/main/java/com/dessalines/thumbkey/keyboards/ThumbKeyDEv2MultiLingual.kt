@@ -13,7 +13,6 @@ import com.dessalines.thumbkey.utils.KeyItemC
 import com.dessalines.thumbkey.utils.KeyboardC
 import com.dessalines.thumbkey.utils.KeyboardMode
 import com.dessalines.thumbkey.utils.SwipeDirection
-import com.dessalines.thumbkey.utils.SwipeNWay
 
 val THUMBKEY_DE_V2_MULTILINGUAL_MAIN = KeyboardC(
     listOf(
@@ -24,12 +23,12 @@ val THUMBKEY_DE_V2_MULTILINGUAL_MAIN = KeyboardC(
                     action = KeyAction.CommitText("t"),
                     size = FontSizeVariant.LARGE,
                     color = ColorVariant.PRIMARY,
-                ),                
+                ),
                 swipes = mapOf(
                     SwipeDirection.TOP_LEFT to KeyC(
                         display = KeyDisplay.TextDisplay("@"),
                         action = KeyAction.CommitText("@"),
-                        color = ColorVariant.MUTED,                   
+                        color = ColorVariant.MUTED,
                     ),
                     SwipeDirection.TOP_RIGHT to KeyC(
                         display = KeyDisplay.TextDisplay("#"),
@@ -53,15 +52,15 @@ val THUMBKEY_DE_V2_MULTILINGUAL_MAIN = KeyboardC(
                     action = KeyAction.CommitText("d"),
                     size = FontSizeVariant.LARGE,
                     color = ColorVariant.PRIMARY,
-                ),                
-                swipes = mapOf(                    
+                ),
+                swipes = mapOf(
                     SwipeDirection.BOTTOM to KeyC(
                         display = KeyDisplay.TextDisplay("f"),
                         action = KeyAction.CommitText("f"),
                     ),
                     SwipeDirection.BOTTOM_RIGHT to KeyC(
                         display = KeyDisplay.TextDisplay("l"),
-                        action = KeyAction.CommitText("l"),                  
+                        action = KeyAction.CommitText("l"),
                     ),
                 ),
             ),
@@ -72,7 +71,7 @@ val THUMBKEY_DE_V2_MULTILINGUAL_MAIN = KeyboardC(
                     size = FontSizeVariant.LARGE,
                     color = ColorVariant.PRIMARY,
                 ),
-                swipes = mapOf(                    
+                swipes = mapOf(
                     SwipeDirection.BOTTOM_LEFT to KeyC(
                         display = KeyDisplay.TextDisplay("ä"),
                         action = KeyAction.CommitText("ä"),
@@ -113,7 +112,7 @@ val THUMBKEY_DE_V2_MULTILINGUAL_MAIN = KeyboardC(
                     action = KeyAction.CommitText("r"),
                     size = FontSizeVariant.LARGE,
                     color = ColorVariant.PRIMARY,
-                ),                
+                ),
                 swipes = mapOf(
                     SwipeDirection.RIGHT to KeyC(
                         display = KeyDisplay.TextDisplay("m"),
@@ -122,7 +121,6 @@ val THUMBKEY_DE_V2_MULTILINGUAL_MAIN = KeyboardC(
                     SwipeDirection.BOTTOM_LEFT to KeyC(
                         display = KeyDisplay.TextDisplay("ó"),
                         action = KeyAction.CommitText("ó"),
-                        ´
                     ),
                     SwipeDirection.LEFT to KeyC(
                         display = KeyDisplay.TextDisplay("ò"),
@@ -192,7 +190,7 @@ val THUMBKEY_DE_V2_MULTILINGUAL_MAIN = KeyboardC(
                     action = KeyAction.CommitText("i"),
                     size = FontSizeVariant.LARGE,
                     color = ColorVariant.PRIMARY,
-                ),                
+                ),
                 swipes = mapOf(
                     SwipeDirection.BOTTOM to KeyC(
                         display = KeyDisplay.TextDisplay("ï"),
@@ -204,7 +202,7 @@ val THUMBKEY_DE_V2_MULTILINGUAL_MAIN = KeyboardC(
                         action = KeyAction.CommitText("ì"),
                         color = ColorVariant.MUTED,
                     ),
-                    SwipeDirection.BOTTOM.RIGHT to KeyC(
+                    SwipeDirection.RIGHT to KeyC(
                         display = KeyDisplay.TextDisplay("î"),
                         action = KeyAction.CommitText("î"),
                         color = ColorVariant.MUTED,
@@ -225,7 +223,7 @@ val THUMBKEY_DE_V2_MULTILINGUAL_MAIN = KeyboardC(
                     action = KeyAction.CommitText("n"),
                     size = FontSizeVariant.LARGE,
                     color = ColorVariant.PRIMARY,
-                ),                
+                ),
                 swipes = mapOf(
                     SwipeDirection.RIGHT to KeyC(
                         display = KeyDisplay.TextDisplay("g"),
@@ -314,7 +312,7 @@ val THUMBKEY_DE_V2_MULTILINGUAL_MAIN = KeyboardC(
                     action = KeyAction.CommitText("e"),
                     size = FontSizeVariant.LARGE,
                     color = ColorVariant.PRIMARY,
-                ),                
+                ),
                 swipes = mapOf(
                     SwipeDirection.LEFT to KeyC(
                         display = KeyDisplay.TextDisplay("œ"),
@@ -376,22 +374,22 @@ val THUMBKEY_DE_V2_MULTILINGUAL_SHIFTED = KeyboardC(
                     action = KeyAction.CommitText("T"),
                     size = FontSizeVariant.LARGE,
                     color = ColorVariant.PRIMARY,
-                ),               
+                ),
                 swipes = mapOf(
                     SwipeDirection.TOP_LEFT to KeyC(
                         display = KeyDisplay.TextDisplay("@"),
                         action = KeyAction.CommitText("@"),
-                        color = ColorVariant.MUTED,                   
+                        color = ColorVariant.MUTED,
                     ),
                     SwipeDirection.TOP_RIGHT to KeyC(
                         display = KeyDisplay.TextDisplay("#"),
                         action = KeyAction.CommitText("#"),
-                        color = ColorVariant.MUTED,                   
+                        color = ColorVariant.MUTED,
                     ),
                     SwipeDirection.RIGHT to KeyC(
                         display = KeyDisplay.TextDisplay("Ç"),
                         action = KeyAction.CommitText("Ç"),
-                         color = ColorVariant.MUTED,
+                        color = ColorVariant.MUTED,
                     ),
                     SwipeDirection.BOTTOM_RIGHT to KeyC(
                         display = KeyDisplay.TextDisplay("C"),
@@ -405,7 +403,7 @@ val THUMBKEY_DE_V2_MULTILINGUAL_SHIFTED = KeyboardC(
                     action = KeyAction.CommitText("D"),
                     size = FontSizeVariant.LARGE,
                     color = ColorVariant.PRIMARY,
-                ),                
+                ),
                 swipes = mapOf(
                     SwipeDirection.BOTTOM to KeyC(
                         display = KeyDisplay.TextDisplay("F"),
@@ -413,7 +411,7 @@ val THUMBKEY_DE_V2_MULTILINGUAL_SHIFTED = KeyboardC(
                     ),
                     SwipeDirection.BOTTOM_RIGHT to KeyC(
                         display = KeyDisplay.TextDisplay("L"),
-                        action = KeyAction.CommitText("L"), 
+                        action = KeyAction.CommitText("L"),
                     ),
                 ),
             ),
@@ -424,8 +422,8 @@ val THUMBKEY_DE_V2_MULTILINGUAL_SHIFTED = KeyboardC(
                     size = FontSizeVariant.LARGE,
                     color = ColorVariant.PRIMARY,
                 ),
-                  swipes = mapOf(                    
-                    SwipeDirection.BOTTOM_LEFT to KeyC(                       
+                swipes = mapOf(
+                    SwipeDirection.BOTTOM_LEFT to KeyC(
                         display = KeyDisplay.TextDisplay("Ä"),
                         action = KeyAction.CommitText("Ä"),
                     ),
@@ -452,7 +450,7 @@ val THUMBKEY_DE_V2_MULTILINGUAL_SHIFTED = KeyboardC(
                     SwipeDirection.TOP_RIGHT to KeyC(
                         display = KeyDisplay.TextDisplay("&"),
                         action = KeyAction.CommitText("&"),
-                        color = ColorVariant.MUTED,                    
+                        color = ColorVariant.MUTED,
                     ),
                 ),
             ),
@@ -465,7 +463,7 @@ val THUMBKEY_DE_V2_MULTILINGUAL_SHIFTED = KeyboardC(
                     action = KeyAction.CommitText("R"),
                     size = FontSizeVariant.LARGE,
                     color = ColorVariant.PRIMARY,
-                ),                
+                ),
                 swipes = mapOf(
                     SwipeDirection.RIGHT to KeyC(
                         display = KeyDisplay.TextDisplay("M"),
@@ -544,7 +542,7 @@ val THUMBKEY_DE_V2_MULTILINGUAL_SHIFTED = KeyboardC(
                     action = KeyAction.CommitText("I"),
                     size = FontSizeVariant.LARGE,
                     color = ColorVariant.PRIMARY,
-                ),                
+                ),
                 swipes = mapOf(
                     SwipeDirection.BOTTOM to KeyC(
                         display = KeyDisplay.TextDisplay("Ï"),
@@ -559,7 +557,7 @@ val THUMBKEY_DE_V2_MULTILINGUAL_SHIFTED = KeyboardC(
                     SwipeDirection.BOTTOM_RIGHT to KeyC(
                         display = KeyDisplay.TextDisplay("Î"),
                         action = KeyAction.CommitText("Î"),
-                        color = ColorVariant.MUTED,                     
+                        color = ColorVariant.MUTED,
                     ),
                     SwipeDirection.BOTTOM to KeyC(
                         display = KeyDisplay.IconDisplay(Icons.Outlined.ArrowDropDown),
@@ -582,7 +580,7 @@ val THUMBKEY_DE_V2_MULTILINGUAL_SHIFTED = KeyboardC(
                     action = KeyAction.CommitText("N"),
                     size = FontSizeVariant.LARGE,
                     color = ColorVariant.PRIMARY,
-                ),                
+                ),
                 swipes = mapOf(
                     SwipeDirection.RIGHT to KeyC(
                         display = KeyDisplay.TextDisplay("G"),
@@ -671,7 +669,7 @@ val THUMBKEY_DE_V2_MULTILINGUAL_SHIFTED = KeyboardC(
                     action = KeyAction.CommitText("E"),
                     size = FontSizeVariant.LARGE,
                     color = ColorVariant.PRIMARY,
-                ),                
+                ),
                 swipes = mapOf(
                     SwipeDirection.LEFT to KeyC(
                         display = KeyDisplay.TextDisplay("Œ"),
