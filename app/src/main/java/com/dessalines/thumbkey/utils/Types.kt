@@ -122,6 +122,8 @@ enum class KeyboardLayout(val title: String, val index: Int) {
     MessageEaseFR("MessageEase Français", 28),
     MessageEaseRUSymbols("MessageEase русский with Symbols", 29),
     T9v1("T9 v1", 30),
+    ThumbKeyJAv1Hiragana("Thumb-Key Japanese Hiragana v1", 31),
+    ThumbKeyJAv1Katakana("Thumb-Key Japanese Katakana v1", 32),
 }
 
 enum class KeyboardPosition(private val stringId: Int) {
