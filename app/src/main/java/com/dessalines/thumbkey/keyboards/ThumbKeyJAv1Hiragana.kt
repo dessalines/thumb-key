@@ -1,10 +1,5 @@
 package com.dessalines.thumbkey.keyboards
 
-import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.outlined.ArrowDropDown
-import androidx.compose.material.icons.outlined.ArrowDropUp
-import androidx.compose.material.icons.outlined.Copyright
-import androidx.compose.material.icons.outlined.KeyboardCapslock
 import com.dessalines.thumbkey.utils.ColorVariant
 import com.dessalines.thumbkey.utils.FontSizeVariant
 import com.dessalines.thumbkey.utils.KeyAction
@@ -285,7 +280,7 @@ val THUMBKEY_JA_V1_HIRAGANA = KeyboardC(
             KeyItemC(
                 center = KeyC(
                     display = KeyDisplay.TextDisplay("゛"),
-                    action = KeyAction.ToggleShiftMode(true)
+                    action = KeyAction.ToggleShiftMode(true),
                     size = FontSizeVariant.LARGE,
                     color = ColorVariant.PRIMARY,
                 ),
@@ -569,7 +564,7 @@ val THUMBKEY_JA_V1_HIRAGANA_SHIFTED = KeyboardC(
     ),
 )
 
-val THUMBKEY_EN_V4_KEYBOARD_MODES: Map<KeyboardMode, KeyboardC> = mapOf(
+val THUMBKEY_JA_V1_HIRAGANA_KEYBOARD_MODES: Map<KeyboardMode, KeyboardC> = mapOf(
     KeyboardMode.MAIN to THUMBKEY_JA_V1_HIRAGANA,
     KeyboardMode.SHIFTED to THUMBKEY_JA_V1_HIRAGANA_SHIFTED,
     KeyboardMode.NUMERIC to NUMERIC_KEYBOARD,
