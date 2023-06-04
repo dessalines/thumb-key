@@ -8,7 +8,7 @@ pipeline:
   prettier_markdown_check:
     image: tmknom/prettier
     commands:
-      - prettier -c *.md
+      - prettier -c "*.md" "*.yml"
 
   build_project:
     image: cimg/android:2023.05
@@ -16,10 +16,10 @@ pipeline:
       - sudo chown -R circleci:circleci .
       - ./gradlew assembleDebug
 
-  notify_on_failure:
+  notify:
     image: alpine:3
     commands:
       - apk add curl
-      - "curl -d'CI build failed: ${CI_BUILD_LINK}' ntfy.sh/thumbkey_ci"
+      - "curl -d'Thumb-Key build ${CI_BUILD_STATUS}: ${CI_BUILD_LINK}' ntfy.sh/thumbkey_ci"
     when:
-      status: [failure]
+      status: [failure, success]
