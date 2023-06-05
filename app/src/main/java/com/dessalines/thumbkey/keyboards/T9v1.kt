@@ -260,13 +260,6 @@ val T9_V1_MAIN = KeyboardC(
                     size = FontSizeVariant.LARGE,
                     color = ColorVariant.SECONDARY,
                 ),
-                swipes = mapOf(
-                    SwipeDirection.TOP to KeyC(
-                        display = KeyDisplay.TextDisplay("⇪"),
-                        action = KeyAction.ToggleCapsLock,
-                        color = ColorVariant.MUTED,
-                    ),
-                ),
                 backgroundColor = ColorVariant.SURFACE_VARIANT,
             ),
         ),
@@ -359,11 +352,6 @@ val T9_V1_MAIN = KeyboardC(
                     color = ColorVariant.SECONDARY,
                 ),
                 swipes = mapOf(
-                    SwipeDirection.TOP_LEFT to KeyC(
-                        display = KeyDisplay.TextDisplay("🗐"),
-                        action = KeyAction.SelectAndCopyAll,
-                        color = ColorVariant.MUTED,
-                    ),
                     SwipeDirection.TOP_RIGHT to KeyC(
                         display = KeyDisplay.IconDisplay(Icons.Outlined.SelectAll),
                         action = KeyAction.SelectAndCopyAll,
@@ -385,11 +373,6 @@ val T9_V1_MAIN = KeyboardC(
                         action = KeyAction.Paste,
                         color = ColorVariant.MUTED,
                     ),
-                    SwipeDirection.BOTTOM_LEFT to KeyC(
-                        display = KeyDisplay.TextDisplay("✀"),
-                        action = KeyAction.SelectAndCopyAll,
-                        color = ColorVariant.MUTED,
-                    ),
                     SwipeDirection.LEFT to KeyC(
                         display = KeyDisplay.TextDisplay("⇤"),
                         action = KeyAction.DeleteLastWord,
@@ -402,7 +385,7 @@ val T9_V1_MAIN = KeyboardC(
         listOf(
             KeyItemC(
                 center = KeyC(
-                    display = KeyDisplay.TextDisplay(" "),
+                    display = KeyDisplay.TextDisplay("␠"),
                     action = KeyAction.CommitText(" "),
                     color = ColorVariant.SECONDARY,
                 ),
@@ -815,6 +798,7 @@ val T9_V1_SHIFTED = KeyboardC(
                 swipes = mapOf(
                     SwipeDirection.TOP to KeyC(
                         display = KeyDisplay.TextDisplay("⇪"),
+                        capsModeDisplay = KeyDisplay.TextDisplay("⇧"),
                         action = KeyAction.ToggleCapsLock,
                         color = ColorVariant.MUTED,
                     ),
@@ -910,13 +894,8 @@ val T9_V1_SHIFTED = KeyboardC(
                     size = FontSizeVariant.LARGE,
                     color = ColorVariant.SECONDARY,
                 ),
-                swipes = mapOf(
-                    SwipeDirection.TOP_LEFT to KeyC(
-                        display = KeyDisplay.TextDisplay("🗐"),
-                        action = KeyAction.SelectAndCopyAll,
-                        color = ColorVariant.MUTED,
-                    ),
-                    SwipeDirection.TOP_RIGHT to KeyC(
+                 swipes = mapOf(
+                   SwipeDirection.TOP_RIGHT to KeyC(
                         display = KeyDisplay.IconDisplay(Icons.Outlined.SelectAll),
                         action = KeyAction.SelectAndCopyAll,
                         color = ColorVariant.MUTED,
@@ -937,11 +916,6 @@ val T9_V1_SHIFTED = KeyboardC(
                         action = KeyAction.Paste,
                         color = ColorVariant.MUTED,
                     ),
-                    SwipeDirection.BOTTOM_LEFT to KeyC(
-                        display = KeyDisplay.TextDisplay("✀"),
-                        action = KeyAction.SelectAndCopyAll,
-                        color = ColorVariant.MUTED,
-                    ),
                     SwipeDirection.LEFT to KeyC(
                         display = KeyDisplay.TextDisplay("⇤"),
                         action = KeyAction.DeleteLastWord,
@@ -954,7 +928,7 @@ val T9_V1_SHIFTED = KeyboardC(
         listOf(
             KeyItemC(
                 center = KeyC(
-                    display = KeyDisplay.TextDisplay(" "),
+                    display = KeyDisplay.TextDisplay("␠"),
                     action = KeyAction.CommitText(" "),
                     color = ColorVariant.SECONDARY,
                 ),
