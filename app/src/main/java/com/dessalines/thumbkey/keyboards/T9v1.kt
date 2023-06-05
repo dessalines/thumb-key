@@ -894,8 +894,8 @@ val T9_V1_SHIFTED = KeyboardC(
                     size = FontSizeVariant.LARGE,
                     color = ColorVariant.SECONDARY,
                 ),
-                 swipes = mapOf(
-                   SwipeDirection.TOP_RIGHT to KeyC(
+                swipes = mapOf(
+                    SwipeDirection.TOP_RIGHT to KeyC(
                         display = KeyDisplay.IconDisplay(Icons.Outlined.SelectAll),
                         action = KeyAction.SelectAndCopyAll,
                         color = ColorVariant.MUTED,
