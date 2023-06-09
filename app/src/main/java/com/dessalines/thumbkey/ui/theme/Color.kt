@@ -397,7 +397,7 @@ fun srcery(): Pair<ColorScheme, ColorScheme> {
     )
     return Pair(light, dark)
 }
-fun blue(): Pair<ColorScheme, ColorScheme> { 
+fun blue(): Pair<ColorScheme, ColorScheme> {
     val md_theme_light_primary = Color(0xFF006874)
     val md_theme_light_onPrimary = Color(0xFFFFFFFF)
     val md_theme_light_primaryContainer = Color(0xFF97F0FF)
@@ -461,7 +461,7 @@ fun blue(): Pair<ColorScheme, ColorScheme> {
     val md_theme_dark_scrim = Color(0xFF000000)
 
     val seed = Color(0xFF282828)
-    
+
     val light = lightColorScheme(
         primary = md_theme_light_primary,
         onPrimary = md_theme_light_onPrimary,
