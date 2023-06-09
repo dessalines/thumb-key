@@ -76,7 +76,7 @@ val THUMBKEY_IT_V1_MAIN = KeyboardC(
                         display = KeyDisplay.TextDisplay("ò"),
                         action = KeyAction.CommitText("ò"),
                     ),
-                     SwipeDirection.BOTTOM_LEFT to KeyC(
+                    SwipeDirection.BOTTOM_LEFT to KeyC(
                         display = KeyDisplay.TextDisplay("qu"),
                         action = KeyAction.CommitText("qu"),
                     ),
