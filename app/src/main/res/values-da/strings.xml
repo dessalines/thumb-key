@@ -24,7 +24,7 @@
     <string name="open_source">Åben kildekode</string>
     <string name="source_code">Kildekode</string>
     <string name="source_code_subtitle">Tommeltast er libre software med åben kildekode, licenseret under GNU Affero General Public License v3.0</string>
-    <string name="look_and_feel">Udseende og håndtering</string>
+    <string name="look_and_feel">Udseende og tilpasning</string>
     <string name="layouts">Layouts</string>
     <string name="theme">Tema</string>
     <string name="theme_color">Tema farve</string>
@@ -48,7 +48,6 @@
     <string name="copy_all">Kopier alt</string>
     <string name="hide_letters">Skjul bogstaver</string>
     <string name="save">Gem</string>
-    <string name="key_borders">Nøglegrænser</string>
-    <!--    TODO Needs Translating -->
-    <string name="spacebar_multitaps">Spacebar Multi-taps</string>
+    <string name="key_borders">Kanter</string>
+    <string name="spacebar_multitaps">Multi-tryk på mellemrumstasten</string>
 </resources>
