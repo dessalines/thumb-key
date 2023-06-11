@@ -111,8 +111,8 @@ val THUMBKEY_DA_V1_MAIN = KeyboardC(
                         action = KeyAction.CommitText("æ"),
                     ),
                     SwipeDirection.RIGHT to KeyC(
-                        display = KeyDisplay.TextDisplay("p"),
-                        action = KeyAction.CommitText("p"),
+                        display = KeyDisplay.TextDisplay("ø"),
+                        action = KeyAction.CommitText("ø"),
                     ),
                     SwipeDirection.BOTTOM_RIGHT to KeyC(
                         display = KeyDisplay.TextDisplay("å"),
@@ -127,8 +127,8 @@ val THUMBKEY_DA_V1_MAIN = KeyboardC(
                         action = KeyAction.CommitText("b"),
                     ),
                     SwipeDirection.LEFT to KeyC(
-                        display = KeyDisplay.TextDisplay("ø"),
-                        action = KeyAction.CommitText("ø"),
+                        display = KeyDisplay.TextDisplay("p"),
+                        action = KeyAction.CommitText("p"),
                     ),
                 ),
             ),
@@ -331,8 +331,8 @@ val THUMBKEY_DA_V1_SHIFTED = KeyboardC(
                         action = KeyAction.CommitText("Æ"),
                     ),
                     SwipeDirection.RIGHT to KeyC(
-                        display = KeyDisplay.TextDisplay("P"),
-                        action = KeyAction.CommitText("P"),
+                        display = KeyDisplay.TextDisplay("Ø"),
+                        action = KeyAction.CommitText("Ø"),
                     ),
                     SwipeDirection.BOTTOM_RIGHT to KeyC(
                         display = KeyDisplay.TextDisplay("Å"),
@@ -347,8 +347,8 @@ val THUMBKEY_DA_V1_SHIFTED = KeyboardC(
                         action = KeyAction.CommitText("B"),
                     ),
                     SwipeDirection.LEFT to KeyC(
-                        display = KeyDisplay.TextDisplay("Ø"),
-                        action = KeyAction.CommitText("Ø"),
+                        display = KeyDisplay.TextDisplay("P"),
+                        action = KeyAction.CommitText("P"),
                     ),
                 ),
             ),
@@ -432,8 +432,8 @@ val THUMBKEY_DA_V1_SHIFTED = KeyboardC(
                         color = ColorVariant.MUTED,
                     ),
                     SwipeDirection.BOTTOM_LEFT to KeyC(
-                        display = KeyDisplay.TextDisplay(","),
-                        action = KeyAction.CommitText(","),
+                        display = KeyDisplay.TextDisplay("*"),
+                        action = KeyAction.CommitText("*"),
                         color = ColorVariant.MUTED,
                     ),
                 ),
