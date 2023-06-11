@@ -1,3 +1,26 @@
+# Thumb-Key 1.6.1 (2023-06-10)
+
+## What's Changed
+
+- Added missing "À" by @breversa in https://github.com/dessalines/thumb-key/pull/272
+- Update T9v1.kt by @FriedGrregg in https://github.com/dessalines/thumb-key/pull/273
+- Srcery color theme by @FranciscoTrigo in https://github.com/dessalines/thumb-key/pull/275
+- Adding Swedish keyboard. by @dessalines in https://github.com/dessalines/thumb-key/pull/277
+- Update ThumbKeyJAv1Hiragana.kt by @K0baU in https://github.com/dessalines/thumb-key/pull/278
+- Added blue color theme by @Lavin-tom in https://github.com/dessalines/thumb-key/pull/280
+- Update ThumbKeyITv1.kt - shortcuts for QU CH GH by @flauta in https://github.com/dessalines/thumb-key/pull/281
+- Adding Turkish Keyboard by @akurone in https://github.com/dessalines/thumb-key/pull/283
+- Fixing NO keyboard. Fixes #282 by @dessalines in https://github.com/dessalines/thumb-key/pull/285
+
+## New Contributors
+
+- @FriedGrregg made their first contribution in https://github.com/dessalines/thumb-key/pull/273
+- @Lavin-tom made their first contribution in https://github.com/dessalines/thumb-key/pull/280
+- @flauta made their first contribution in https://github.com/dessalines/thumb-key/pull/281
+- @akurone made their first contribution in https://github.com/dessalines/thumb-key/pull/283
+
+**Full Changelog**: https://github.com/dessalines/thumb-key/compare/1.6.0...1.6.1
+
 # Thumb-Key 1.6.0 (2023-06-04)
 
 ## What's Changed
