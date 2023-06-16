@@ -128,6 +128,7 @@ enum class KeyboardLayout(val title: String, val index: Int) {
     ThumbKeyJAv1Katakana("Thumb-Key japanese Katakana v1", 32),
     ThumbKeyFRv2("Thumb-Key français v2", 33),
     ThumbKeySVv1("Thumb-Key svenska v1", 34),
+    ThumbKeyTRv1("Thumb-Key Türkçe v1", 35),
 }
 
 enum class KeyboardPosition(private val stringId: Int) {
