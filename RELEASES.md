@@ -1,3 +1,19 @@
+# Thumb-Key 1.7.0 (2023-06-18)
+
+## What's Changed
+
+- Update Danish translation and fix minor errors in the Danish keyboard by @Limfjorden in https://github.com/dessalines/thumb-key/pull/286
+- Fix swedish keyboard by @maxhambraeus in https://github.com/dessalines/thumb-key/pull/287
+- Update ThumbKeyIDv1Symbols.kt by @awandepan in https://github.com/dessalines/thumb-key/pull/289
+- New layout: "Four columns" (English). by @mockballed in https://github.com/dessalines/thumb-key/pull/292
+- Add debug mode. by @dessalines in https://github.com/dessalines/thumb-key/pull/294
+
+## New Contributors
+
+- @maxhambraeus made their first contribution in https://github.com/dessalines/thumb-key/pull/287
+
+**Full Changelog**: https://github.com/dessalines/thumb-key/compare/1.6.1...1.7.0
+
 # Thumb-Key 1.6.1 (2023-06-10)
 
 ## What's Changed
