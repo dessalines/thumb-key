@@ -22,8 +22,8 @@ val THUMBKEY_ID_V1_SYMBOLS = KeyboardC(
         listOf(
             KeyItemC(
                 center = KeyC(
-                    display = KeyDisplay.TextDisplay("d"),
-                    action = KeyAction.CommitText("d"),
+                    display = KeyDisplay.TextDisplay("t"),
+                    action = KeyAction.CommitText("t"),
                     size = FontSizeVariant.LARGE,
                     color = ColorVariant.PRIMARY,
                 ),
@@ -42,8 +42,8 @@ val THUMBKEY_ID_V1_SYMBOLS = KeyboardC(
             ),
             KeyItemC(
                 center = KeyC(
-                    display = KeyDisplay.TextDisplay("r"),
-                    action = KeyAction.CommitText("r"),
+                    display = KeyDisplay.TextDisplay("d"),
+                    action = KeyAction.CommitText("d"),
                     size = FontSizeVariant.LARGE,
                     color = ColorVariant.PRIMARY,
                 ),
@@ -123,8 +123,8 @@ val THUMBKEY_ID_V1_SYMBOLS = KeyboardC(
         listOf(
             KeyItemC(
                 center = KeyC(
-                    display = KeyDisplay.TextDisplay("s"),
-                    action = KeyAction.CommitText("s"),
+                    display = KeyDisplay.TextDisplay("r"),
+                    action = KeyAction.CommitText("r"),
                     size = FontSizeVariant.LARGE,
                     color = ColorVariant.PRIMARY,
                 ),
@@ -162,8 +162,8 @@ val THUMBKEY_ID_V1_SYMBOLS = KeyboardC(
             ),
             KeyItemC(
                 center = KeyC(
-                    display = KeyDisplay.TextDisplay("n"),
-                    action = KeyAction.CommitText("n"),
+                    display = KeyDisplay.TextDisplay("s"),
+                    action = KeyAction.CommitText("s"),
                     size = FontSizeVariant.LARGE,
                     color = ColorVariant.PRIMARY,
                 ),
@@ -256,8 +256,8 @@ val THUMBKEY_ID_V1_SYMBOLS = KeyboardC(
         listOf(
             KeyItemC(
                 center = KeyC(
-                    display = KeyDisplay.TextDisplay("t"),
-                    action = KeyAction.CommitText("t"),
+                    display = KeyDisplay.TextDisplay("n"),
+                    action = KeyAction.CommitText("n"),
                     size = FontSizeVariant.LARGE,
                     color = ColorVariant.PRIMARY,
                 ),
@@ -385,8 +385,8 @@ val THUMBKEY_ID_V1_SYMBOLS_SHIFTED = KeyboardC(
         listOf(
             KeyItemC(
                 center = KeyC(
-                    display = KeyDisplay.TextDisplay("D"),
-                    action = KeyAction.CommitText("D"),
+                    display = KeyDisplay.TextDisplay("T"),
+                    action = KeyAction.CommitText("T"),
                     size = FontSizeVariant.LARGE,
                     color = ColorVariant.PRIMARY,
                 ),
@@ -405,8 +405,8 @@ val THUMBKEY_ID_V1_SYMBOLS_SHIFTED = KeyboardC(
             ),
             KeyItemC(
                 center = KeyC(
-                    display = KeyDisplay.TextDisplay("R"),
-                    action = KeyAction.CommitText("R"),
+                    display = KeyDisplay.TextDisplay("D"),
+                    action = KeyAction.CommitText("D"),
                     size = FontSizeVariant.LARGE,
                     color = ColorVariant.PRIMARY,
                 ),
@@ -486,8 +486,8 @@ val THUMBKEY_ID_V1_SYMBOLS_SHIFTED = KeyboardC(
         listOf(
             KeyItemC(
                 center = KeyC(
-                    display = KeyDisplay.TextDisplay("S"),
-                    action = KeyAction.CommitText("S"),
+                    display = KeyDisplay.TextDisplay("R"),
+                    action = KeyAction.CommitText("R"),
                     size = FontSizeVariant.LARGE,
                     color = ColorVariant.PRIMARY,
                 ),
@@ -525,8 +525,8 @@ val THUMBKEY_ID_V1_SYMBOLS_SHIFTED = KeyboardC(
             ),
             KeyItemC(
                 center = KeyC(
-                    display = KeyDisplay.TextDisplay("N"),
-                    action = KeyAction.CommitText("N"),
+                    display = KeyDisplay.TextDisplay("S"),
+                    action = KeyAction.CommitText("S"),
                     size = FontSizeVariant.LARGE,
                     color = ColorVariant.PRIMARY,
                 ),
@@ -620,8 +620,8 @@ val THUMBKEY_ID_V1_SYMBOLS_SHIFTED = KeyboardC(
         listOf(
             KeyItemC(
                 center = KeyC(
-                    display = KeyDisplay.TextDisplay("T"),
-                    action = KeyAction.CommitText("T"),
+                    display = KeyDisplay.TextDisplay("N"),
+                    action = KeyAction.CommitText("N"),
                     size = FontSizeVariant.LARGE,
                     color = ColorVariant.PRIMARY,
                 ),
