@@ -147,6 +147,11 @@ val TYPESPLIT_FR_V1 = KeyboardC(
                         display = KeyDisplay.TextDisplay("q"),
                         action = KeyAction.CommitText("q"),
                     ),
+                    SwipeDirection.TOP to KeyC(
+                        display = KeyDisplay.TextDisplay("œ"),
+                        action = KeyAction.CommitText("œ"),
+                        color = ColorVariant.MUTED,
+                    ),
                 ),
             ),
             KeyItemC(
@@ -444,6 +449,11 @@ val TYPESPLIT_FR_V1_SHIFTED = KeyboardC(
                     SwipeDirection.BOTTOM to KeyC(
                         display = KeyDisplay.TextDisplay("Q"),
                         action = KeyAction.CommitText("Q"),
+                    ),
+                    SwipeDirection.TOP to KeyC(
+                        display = KeyDisplay.TextDisplay("Œ"),
+                        action = KeyAction.CommitText("Œ"),
+                        color = ColorVariant.MUTED,
                     ),
                 ),
             ),
