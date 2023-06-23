@@ -72,6 +72,7 @@ import com.dessalines.thumbkey.keyboards.TYPESPLIT_EN_V2_KEYBOARD_MODES
 import com.dessalines.thumbkey.keyboards.TYPESPLIT_ES_V1_KEYBOARD_MODES
 import com.dessalines.thumbkey.keyboards.TYPESPLIT_FR_V1_KEYBOARD_MODES
 import com.dessalines.thumbkey.keyboards.TYPESPLIT_IT_V1_KEYBOARD_MODES
+import com.dessalines.thumbkey.keyboards.TYPESPLIT_PL_V1_KEYBOARD_MODES
 import com.dessalines.thumbkey.keyboards.TYPESPLIT_PT_V1_KEYBOARD_MODES
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.delay
@@ -148,6 +149,7 @@ fun keyboardLayoutToModes(layout: KeyboardLayout): Map<KeyboardMode, KeyboardC> 
         KeyboardLayout.TypeSplitITv1 -> TYPESPLIT_IT_V1_KEYBOARD_MODES
         KeyboardLayout.TypeSplitFRv1 -> TYPESPLIT_FR_V1_KEYBOARD_MODES
         KeyboardLayout.TypeSplitPTv1 -> TYPESPLIT_PT_V1_KEYBOARD_MODES
+        KeyboardLayout.TypeSplitPLv1 -> TYPESPLIT_PL_V1_KEYBOARD_MODES
     }
 }
 
