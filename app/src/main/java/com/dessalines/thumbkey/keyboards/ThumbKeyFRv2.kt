@@ -354,7 +354,7 @@ val THUMBKEY_FR_V2_SHIFTED = KeyboardC(
             KeyItemC(
                 center = KeyC(
                     display = KeyDisplay.TextDisplay("U"),
-                    action = KeyAction.CommitText("uU"),
+                    action = KeyAction.CommitText("U"),
                     size = FontSizeVariant.LARGE,
                     color = ColorVariant.PRIMARY,
                 ),
