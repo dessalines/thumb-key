@@ -25,7 +25,6 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.TextUnit
 import androidx.compose.ui.unit.TextUnitType
-import androidx.core.text.trimmedLength
 import androidx.navigation.NavController
 import com.dessalines.thumbkey.IMEService
 import com.dessalines.thumbkey.MainActivity
@@ -398,14 +397,10 @@ fun autoCapitalizeCheck(
 fun deleteLastWord(ime: IMEService) {
     val lastWords = ime.currentInputConnection.getTextBeforeCursor(100, 0)
 
-    val trimmedLength = lastWords?.length?.minus(lastWords.trimmedLength()) ?: 0
+    val trailingSpacesLength = lastWords?.length?.minus(lastWords.trimEnd().length) ?: 0
     val trimmed = lastWords?.trim()
     val lastWordLength = trimmed?.split("\\s".toRegex())?.lastOrNull()?.length ?: 1
-    val minDelete = if (lastWordLength > 0) {
-        lastWordLength + trimmedLength
-    } else {
-        1
-    }
+    val minDelete = lastWordLength + trailingSpacesLength
 
     ime.currentInputConnection.deleteSurroundingText(minDelete, 0)
 }
