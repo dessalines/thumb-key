@@ -1,13 +1,5 @@
 package com.dessalines.thumbkey.keyboards
 
-import android.view.KeyEvent
-import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.outlined.ArrowDropDown
-import androidx.compose.material.icons.outlined.ArrowDropUp
-import androidx.compose.material.icons.outlined.Copyright
-import androidx.compose.material.icons.outlined.KeyboardBackspace
-import androidx.compose.material.icons.outlined.KeyboardCapslock
-import androidx.compose.material.icons.outlined.Settings
 import com.dessalines.thumbkey.utils.ColorVariant
 import com.dessalines.thumbkey.utils.FontSizeVariant
 import com.dessalines.thumbkey.utils.KeyAction
@@ -19,7 +11,7 @@ import com.dessalines.thumbkey.utils.KeyboardMode
 import com.dessalines.thumbkey.utils.SwipeDirection
 import com.dessalines.thumbkey.utils.SwipeNWay
 
-val FOUR_COLUMNS_EN_V1 = KeyboardC(
+val TYPESPLIT_EN_V2 = KeyboardC(
     listOf(
         listOf(
             KeyItemC(
@@ -60,52 +52,7 @@ val FOUR_COLUMNS_EN_V1 = KeyboardC(
                     ),
                 ),
             ),
-            KeyItemC(
-                center = KeyC(
-                    display = KeyDisplay.TextDisplay(" "),
-                    action = KeyAction.CommitText(" "),
-                ),
-                swipeType = SwipeNWay.FOUR_WAY_CROSS,
-                swipes = mapOf(
-                    SwipeDirection.LEFT to KeyC(
-                        action = KeyAction.SendEvent(
-                            KeyEvent(
-                                KeyEvent.ACTION_DOWN,
-                                KeyEvent.KEYCODE_DPAD_LEFT,
-                            ),
-                        ),
-                        display = null,
-                    ),
-                    SwipeDirection.RIGHT to KeyC(
-                        action = KeyAction.SendEvent(
-                            KeyEvent(
-                                KeyEvent.ACTION_DOWN,
-                                KeyEvent.KEYCODE_DPAD_RIGHT,
-                            ),
-                        ),
-                        display = null,
-                    ),
-                    SwipeDirection.BOTTOM to KeyC(
-                        display = KeyDisplay.TextDisplay("*"),
-                        action = KeyAction.CommitText("*"),
-                        color = ColorVariant.MUTED,
-                    ),
-                    SwipeDirection.TOP to KeyC(
-                        display = KeyDisplay.IconDisplay(Icons.Outlined.Settings),
-                        action = KeyAction.GotoSettings,
-                        color = ColorVariant.SECONDARY,
-                    ),
-                ),
-                nextTapActions = listOf(
-                    KeyAction.ReplaceLastText(", ", trimCount = 1),
-                    KeyAction.ReplaceLastText(". "),
-                    KeyAction.ReplaceLastText("? "),
-                    KeyAction.ReplaceLastText("! "),
-                    KeyAction.ReplaceLastText(": "),
-                    KeyAction.ReplaceLastText("; "),
-                ),
-                backgroundColor = ColorVariant.SURFACE_VARIANT,
-            ),
+            SPACEBAR_TYPESPLIT_TOP_KEY_ITEM,
             KeyItemC(
                 center = KeyC(
                     display = KeyDisplay.TextDisplay("i"),
@@ -177,52 +124,7 @@ val FOUR_COLUMNS_EN_V1 = KeyboardC(
                     ),
                 ),
             ),
-            KeyItemC(
-                center = KeyC(
-                    display = KeyDisplay.TextDisplay(" "),
-                    action = KeyAction.CommitText(" "),
-                ),
-                swipeType = SwipeNWay.FOUR_WAY_CROSS,
-                swipes = mapOf(
-                    SwipeDirection.LEFT to KeyC(
-                        action = KeyAction.SendEvent(
-                            KeyEvent(
-                                KeyEvent.ACTION_DOWN,
-                                KeyEvent.KEYCODE_DPAD_LEFT,
-                            ),
-                        ),
-                        display = null,
-                    ),
-                    SwipeDirection.RIGHT to KeyC(
-                        action = KeyAction.SendEvent(
-                            KeyEvent(
-                                KeyEvent.ACTION_DOWN,
-                                KeyEvent.KEYCODE_DPAD_RIGHT,
-                            ),
-                        ),
-                        display = null,
-                    ),
-                    SwipeDirection.BOTTOM to KeyC(
-                        display = KeyDisplay.TextDisplay(","),
-                        action = KeyAction.CommitText(","),
-                        color = ColorVariant.MUTED,
-                    ),
-                    SwipeDirection.TOP to KeyC(
-                        display = KeyDisplay.TextDisplay("'"),
-                        action = KeyAction.CommitText("'"),
-                        color = ColorVariant.MUTED,
-                    ),
-                ),
-                nextTapActions = listOf(
-                    KeyAction.ReplaceLastText(", ", trimCount = 1),
-                    KeyAction.ReplaceLastText(". "),
-                    KeyAction.ReplaceLastText("? "),
-                    KeyAction.ReplaceLastText("! "),
-                    KeyAction.ReplaceLastText(": "),
-                    KeyAction.ReplaceLastText("; "),
-                ),
-                backgroundColor = ColorVariant.SURFACE_VARIANT,
-            ),
+            SPACEBAR_TYPESPLIT_MIDDLE_KEY_ITEM,
             KeyItemC(
                 center = KeyC(
                     display = KeyDisplay.TextDisplay("h"),
@@ -301,52 +203,7 @@ val FOUR_COLUMNS_EN_V1 = KeyboardC(
                     ),
                 ),
             ),
-            KeyItemC(
-                center = KeyC(
-                    display = KeyDisplay.TextDisplay(" "),
-                    action = KeyAction.CommitText(" "),
-                ),
-                swipeType = SwipeNWay.FOUR_WAY_CROSS,
-                swipes = mapOf(
-                    SwipeDirection.LEFT to KeyC(
-                        action = KeyAction.SendEvent(
-                            KeyEvent(
-                                KeyEvent.ACTION_DOWN,
-                                KeyEvent.KEYCODE_DPAD_LEFT,
-                            ),
-                        ),
-                        display = null,
-                    ),
-                    SwipeDirection.RIGHT to KeyC(
-                        action = KeyAction.SendEvent(
-                            KeyEvent(
-                                KeyEvent.ACTION_DOWN,
-                                KeyEvent.KEYCODE_DPAD_RIGHT,
-                            ),
-                        ),
-                        display = null,
-                    ),
-                    SwipeDirection.BOTTOM to KeyC(
-                        display = KeyDisplay.TextDisplay("."),
-                        action = KeyAction.CommitText("."),
-                        color = ColorVariant.MUTED,
-                    ),
-                    SwipeDirection.TOP to KeyC(
-                        display = KeyDisplay.TextDisplay("-"),
-                        action = KeyAction.CommitText("-"),
-                        color = ColorVariant.MUTED,
-                    ),
-                ),
-                nextTapActions = listOf(
-                    KeyAction.ReplaceLastText(", ", trimCount = 1),
-                    KeyAction.ReplaceLastText(". "),
-                    KeyAction.ReplaceLastText("? "),
-                    KeyAction.ReplaceLastText("! "),
-                    KeyAction.ReplaceLastText(": "),
-                    KeyAction.ReplaceLastText("; "),
-                ),
-                backgroundColor = ColorVariant.SURFACE_VARIANT,
-            ),
+            SPACEBAR_TYPESPLIT_BOTTOM_KEY_ITEM,
             KeyItemC(
                 center = KeyC(
                     display = KeyDisplay.TextDisplay("n"),
@@ -362,56 +219,40 @@ val FOUR_COLUMNS_EN_V1 = KeyboardC(
                     size = FontSizeVariant.LARGE,
                     color = ColorVariant.PRIMARY,
                 ),
+                swipeType = SwipeNWay.FOUR_WAY_CROSS,
+                swipes = mapOf(
+                    SwipeDirection.RIGHT to KeyC(
+                        display = KeyDisplay.TextDisplay("?"),
+                        action = KeyAction.CommitText("?"),
+                        color = ColorVariant.MUTED,
+                    ),
+                    SwipeDirection.LEFT to KeyC(
+                        display = KeyDisplay.TextDisplay("!"),
+                        action = KeyAction.CommitText("!"),
+                        color = ColorVariant.MUTED,
+                    ),
+                    SwipeDirection.BOTTOM to KeyC(
+                        display = KeyDisplay.TextDisplay(":"),
+                        action = KeyAction.CommitText(":"),
+                        color = ColorVariant.MUTED,
+                    ),
+                    SwipeDirection.TOP to KeyC(
+                        display = KeyDisplay.TextDisplay(";"),
+                        action = KeyAction.CommitText(";"),
+                        color = ColorVariant.MUTED,
+                    ),
+                ),
             ),
         ),
         listOf(
             NUMERIC_KEY_ITEM,
-            KeyItemC(
-                center = KeyC(
-                    display = KeyDisplay.IconDisplay(Icons.Outlined.KeyboardBackspace),
-                    action = KeyAction.SendEvent(
-                        KeyEvent(
-                            KeyEvent.ACTION_DOWN,
-                            KeyEvent
-                                .KEYCODE_DEL,
-                        ),
-                    ),
-                    size = FontSizeVariant.LARGE,
-                    color = ColorVariant.SECONDARY,
-                ),
-                swipeType = SwipeNWay.FOUR_WAY_CROSS,
-                swipes = mapOf(
-                    SwipeDirection.LEFT to KeyC(
-                        action = KeyAction.DeleteLastWord,
-                        display = null,
-                    ),
-                    SwipeDirection.RIGHT to KeyC(
-                        action = KeyAction.SendEvent(
-                            KeyEvent(
-                                KeyEvent.ACTION_DOWN,
-                                KeyEvent
-                                    .KEYCODE_FORWARD_DEL,
-                            ),
-                        ),
-                        display = null,
-                        color = ColorVariant.MUTED,
-                        size = FontSizeVariant.SMALLEST,
-                    ),
-                    SwipeDirection.TOP to KeyC(
-                        display = KeyDisplay.IconDisplay(Icons.Outlined.ArrowDropUp),
-                        action = KeyAction.ToggleShiftMode(true),
-                        color = ColorVariant.SECONDARY,
-                    ),
-                ),
-                widthMultiplier = 3,
-                backgroundColor = ColorVariant.SURFACE_VARIANT,
-            ),
+            BACKSPACE_TYPESPLIT_KEY_ITEM,
             RETURN_KEY_ITEM,
         ),
     ),
 )
 
-val FOUR_COLUMNS_EN_V1_SHIFTED = KeyboardC(
+val TYPESPLIT_EN_V2_SHIFTED = KeyboardC(
     listOf(
         listOf(
             KeyItemC(
@@ -452,52 +293,7 @@ val FOUR_COLUMNS_EN_V1_SHIFTED = KeyboardC(
                     ),
                 ),
             ),
-            KeyItemC(
-                center = KeyC(
-                    display = KeyDisplay.TextDisplay(" "),
-                    action = KeyAction.CommitText(" "),
-                ),
-                swipeType = SwipeNWay.FOUR_WAY_CROSS,
-                swipes = mapOf(
-                    SwipeDirection.LEFT to KeyC(
-                        action = KeyAction.SendEvent(
-                            KeyEvent(
-                                KeyEvent.ACTION_DOWN,
-                                KeyEvent.KEYCODE_DPAD_LEFT,
-                            ),
-                        ),
-                        display = null,
-                    ),
-                    SwipeDirection.RIGHT to KeyC(
-                        action = KeyAction.SendEvent(
-                            KeyEvent(
-                                KeyEvent.ACTION_DOWN,
-                                KeyEvent.KEYCODE_DPAD_RIGHT,
-                            ),
-                        ),
-                        display = null,
-                    ),
-                    SwipeDirection.BOTTOM to KeyC(
-                        display = KeyDisplay.TextDisplay("*"),
-                        action = KeyAction.CommitText("*"),
-                        color = ColorVariant.MUTED,
-                    ),
-                    SwipeDirection.TOP to KeyC(
-                        display = KeyDisplay.IconDisplay(Icons.Outlined.Settings),
-                        action = KeyAction.GotoSettings,
-                        color = ColorVariant.SECONDARY,
-                    ),
-                ),
-                nextTapActions = listOf(
-                    KeyAction.ReplaceLastText(", ", trimCount = 1),
-                    KeyAction.ReplaceLastText(". "),
-                    KeyAction.ReplaceLastText("? "),
-                    KeyAction.ReplaceLastText("! "),
-                    KeyAction.ReplaceLastText(": "),
-                    KeyAction.ReplaceLastText("; "),
-                ),
-                backgroundColor = ColorVariant.SURFACE_VARIANT,
-            ),
+            SPACEBAR_TYPESPLIT_TOP_KEY_ITEM,
             KeyItemC(
                 center = KeyC(
                     display = KeyDisplay.TextDisplay("I"),
@@ -569,52 +365,7 @@ val FOUR_COLUMNS_EN_V1_SHIFTED = KeyboardC(
                     ),
                 ),
             ),
-            KeyItemC(
-                center = KeyC(
-                    display = KeyDisplay.TextDisplay(" "),
-                    action = KeyAction.CommitText(" "),
-                ),
-                swipeType = SwipeNWay.FOUR_WAY_CROSS,
-                swipes = mapOf(
-                    SwipeDirection.LEFT to KeyC(
-                        action = KeyAction.SendEvent(
-                            KeyEvent(
-                                KeyEvent.ACTION_DOWN,
-                                KeyEvent.KEYCODE_DPAD_LEFT,
-                            ),
-                        ),
-                        display = null,
-                    ),
-                    SwipeDirection.RIGHT to KeyC(
-                        action = KeyAction.SendEvent(
-                            KeyEvent(
-                                KeyEvent.ACTION_DOWN,
-                                KeyEvent.KEYCODE_DPAD_RIGHT,
-                            ),
-                        ),
-                        display = null,
-                    ),
-                    SwipeDirection.BOTTOM to KeyC(
-                        display = KeyDisplay.TextDisplay(","),
-                        action = KeyAction.CommitText(","),
-                        color = ColorVariant.MUTED,
-                    ),
-                    SwipeDirection.TOP to KeyC(
-                        display = KeyDisplay.TextDisplay("'"),
-                        action = KeyAction.CommitText("'"),
-                        color = ColorVariant.MUTED,
-                    ),
-                ),
-                nextTapActions = listOf(
-                    KeyAction.ReplaceLastText(", ", trimCount = 1),
-                    KeyAction.ReplaceLastText(". "),
-                    KeyAction.ReplaceLastText("? "),
-                    KeyAction.ReplaceLastText("! "),
-                    KeyAction.ReplaceLastText(": "),
-                    KeyAction.ReplaceLastText("; "),
-                ),
-                backgroundColor = ColorVariant.SURFACE_VARIANT,
-            ),
+            SPACEBAR_TYPESPLIT_MIDDLE_KEY_ITEM,
             KeyItemC(
                 center = KeyC(
                     display = KeyDisplay.TextDisplay("H"),
@@ -693,52 +444,7 @@ val FOUR_COLUMNS_EN_V1_SHIFTED = KeyboardC(
                     ),
                 ),
             ),
-            KeyItemC(
-                center = KeyC(
-                    display = KeyDisplay.TextDisplay(" "),
-                    action = KeyAction.CommitText(" "),
-                ),
-                swipeType = SwipeNWay.FOUR_WAY_CROSS,
-                swipes = mapOf(
-                    SwipeDirection.LEFT to KeyC(
-                        action = KeyAction.SendEvent(
-                            KeyEvent(
-                                KeyEvent.ACTION_DOWN,
-                                KeyEvent.KEYCODE_DPAD_LEFT,
-                            ),
-                        ),
-                        display = null,
-                    ),
-                    SwipeDirection.RIGHT to KeyC(
-                        action = KeyAction.SendEvent(
-                            KeyEvent(
-                                KeyEvent.ACTION_DOWN,
-                                KeyEvent.KEYCODE_DPAD_RIGHT,
-                            ),
-                        ),
-                        display = null,
-                    ),
-                    SwipeDirection.BOTTOM to KeyC(
-                        display = KeyDisplay.TextDisplay("."),
-                        action = KeyAction.CommitText("."),
-                        color = ColorVariant.MUTED,
-                    ),
-                    SwipeDirection.TOP to KeyC(
-                        display = KeyDisplay.TextDisplay("-"),
-                        action = KeyAction.CommitText("-"),
-                        color = ColorVariant.MUTED,
-                    ),
-                ),
-                nextTapActions = listOf(
-                    KeyAction.ReplaceLastText(", ", trimCount = 1),
-                    KeyAction.ReplaceLastText(". "),
-                    KeyAction.ReplaceLastText("? "),
-                    KeyAction.ReplaceLastText("! "),
-                    KeyAction.ReplaceLastText(": "),
-                    KeyAction.ReplaceLastText("; "),
-                ),
-                backgroundColor = ColorVariant.SURFACE_VARIANT,
-            ),
+            SPACEBAR_TYPESPLIT_BOTTOM_KEY_ITEM,
             KeyItemC(
                 center = KeyC(
                     display = KeyDisplay.TextDisplay("N"),
@@ -754,63 +460,41 @@ val FOUR_COLUMNS_EN_V1_SHIFTED = KeyboardC(
                     size = FontSizeVariant.LARGE,
                     color = ColorVariant.PRIMARY,
                 ),
+                swipeType = SwipeNWay.FOUR_WAY_CROSS,
+                swipes = mapOf(
+                    SwipeDirection.RIGHT to KeyC(
+                        display = KeyDisplay.TextDisplay("?"),
+                        action = KeyAction.CommitText("?"),
+                        color = ColorVariant.MUTED,
+                    ),
+                    SwipeDirection.LEFT to KeyC(
+                        display = KeyDisplay.TextDisplay("!"),
+                        action = KeyAction.CommitText("!"),
+                        color = ColorVariant.MUTED,
+                    ),
+                    SwipeDirection.BOTTOM to KeyC(
+                        display = KeyDisplay.TextDisplay(":"),
+                        action = KeyAction.CommitText(":"),
+                        color = ColorVariant.MUTED,
+                    ),
+                    SwipeDirection.TOP to KeyC(
+                        display = KeyDisplay.TextDisplay(";"),
+                        action = KeyAction.CommitText(";"),
+                        color = ColorVariant.MUTED,
+                    ),
+                ),
             ),
         ),
         listOf(
             NUMERIC_KEY_ITEM,
-            KeyItemC(
-                center = KeyC(
-                    display = KeyDisplay.IconDisplay(Icons.Outlined.KeyboardBackspace),
-                    action = KeyAction.SendEvent(
-                        KeyEvent(
-                            KeyEvent.ACTION_DOWN,
-                            KeyEvent
-                                .KEYCODE_DEL,
-                        ),
-                    ),
-                    size = FontSizeVariant.LARGE,
-                    color = ColorVariant.SECONDARY,
-                ),
-                swipeType = SwipeNWay.FOUR_WAY_CROSS,
-                swipes = mapOf(
-                    SwipeDirection.LEFT to KeyC(
-                        action = KeyAction.DeleteLastWord,
-                        display = null,
-                    ),
-                    SwipeDirection.RIGHT to KeyC(
-                        action = KeyAction.SendEvent(
-                            KeyEvent(
-                                KeyEvent.ACTION_DOWN,
-                                KeyEvent
-                                    .KEYCODE_FORWARD_DEL,
-                            ),
-                        ),
-                        display = null,
-                        color = ColorVariant.MUTED,
-                        size = FontSizeVariant.SMALLEST,
-                    ),
-                    SwipeDirection.TOP to KeyC(
-                        display = KeyDisplay.IconDisplay(Icons.Outlined.KeyboardCapslock),
-                        capsModeDisplay = KeyDisplay.IconDisplay(Icons.Outlined.Copyright),
-                        action = KeyAction.ToggleCapsLock,
-                        color = ColorVariant.SECONDARY,
-                    ),
-                    SwipeDirection.BOTTOM to KeyC(
-                        display = KeyDisplay.IconDisplay(Icons.Outlined.ArrowDropDown),
-                        action = KeyAction.ToggleShiftMode(false),
-                        color = ColorVariant.SECONDARY,
-                    ),
-                ),
-                widthMultiplier = 3,
-                backgroundColor = ColorVariant.SURFACE_VARIANT,
-            ),
+            BACKSPACE_TYPESPLIT_SHIFTED_KEY_ITEM,
             RETURN_KEY_ITEM,
         ),
     ),
 )
 
-val FOUR_COLUMNS_EN_V1_KEYBOARD_MODES: Map<KeyboardMode, KeyboardC> = mapOf(
-    KeyboardMode.MAIN to FOUR_COLUMNS_EN_V1,
-    KeyboardMode.SHIFTED to FOUR_COLUMNS_EN_V1_SHIFTED,
+val TYPESPLIT_EN_V2_KEYBOARD_MODES: Map<KeyboardMode, KeyboardC> = mapOf(
+    KeyboardMode.MAIN to TYPESPLIT_EN_V2,
+    KeyboardMode.SHIFTED to TYPESPLIT_EN_V2_SHIFTED,
     KeyboardMode.NUMERIC to NUMERIC_KEYBOARD,
 )

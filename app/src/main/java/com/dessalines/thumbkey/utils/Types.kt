@@ -129,7 +129,13 @@ enum class KeyboardLayout(val title: String, val index: Int) {
     ThumbKeyFRv2("Thumb-Key français v2", 33),
     ThumbKeySVv1("Thumb-Key svenska v1", 34),
     ThumbKeyTRv1("Thumb-Key Türkçe v1", 35),
-    FourColumnsENv1("v. Four Columns english v1", 36),
+    TypeSplitENv2("Type-Split english v2", 36),
+    TypeSplitESv1("Type-Split español v1", 37),
+    TypeSplitDEv1("Type-Split deutsch v1", 38),
+    TypeSplitFRv1("Type-Split français v1", 39),
+    TypeSplitITv1("Type-Split italiano v1", 40),
+    TypeSplitPTv1("Type-Split português v1", 41),
+    TypeSplitPLv1("Type-Split polski v1", 42),
 }
 
 enum class KeyboardPosition(private val stringId: Int) {
