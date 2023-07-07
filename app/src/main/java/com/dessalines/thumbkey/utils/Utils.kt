@@ -73,7 +73,6 @@ import com.dessalines.thumbkey.keyboards.TYPESPLIT_FR_V1_KEYBOARD_MODES
 import com.dessalines.thumbkey.keyboards.TYPESPLIT_IT_V1_KEYBOARD_MODES
 import com.dessalines.thumbkey.keyboards.TYPESPLIT_PL_V1_KEYBOARD_MODES
 import com.dessalines.thumbkey.keyboards.TYPESPLIT_PT_V1_KEYBOARD_MODES
-import com.dessalines.thumbkey.keyboards.TWO_HANDS_EN_V1_KEYBOARD_MODES
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
@@ -150,7 +149,6 @@ fun keyboardLayoutToModes(layout: KeyboardLayout): Map<KeyboardMode, KeyboardC> 
         KeyboardLayout.TypeSplitFRv1 -> TYPESPLIT_FR_V1_KEYBOARD_MODES
         KeyboardLayout.TypeSplitPTv1 -> TYPESPLIT_PT_V1_KEYBOARD_MODES
         KeyboardLayout.TypeSplitPLv1 -> TYPESPLIT_PL_V1_KEYBOARD_MODES
-        KeyboardLayout.TwoHandsENv1 -> TWO_HANDS_EN_V1_KEYBOARD_MODES
     }
 }
 
@@ -399,14 +397,10 @@ fun autoCapitalizeCheck(
 fun deleteLastWord(ime: IMEService) {
     val lastWords = ime.currentInputConnection.getTextBeforeCursor(100, 0)
 
-    val trimmedLength = lastWords?.length?.minus(lastWords.trimmedLength()) ?: 0
+    val trailingSpacesLength = lastWords?.length?.minus(lastWords.trimEnd().length) ?: 0
     val trimmed = lastWords?.trim()
     val lastWordLength = trimmed?.split("\\s".toRegex())?.lastOrNull()?.length ?: 1
-    val minDelete = if (lastWordLength > 0) {
-        lastWordLength + trimmedLength
-    } else {
-        1
-    }
+    val minDelete = lastWordLength + trailingSpacesLength
 
     ime.currentInputConnection.deleteSurroundingText(minDelete, 0)
 }
