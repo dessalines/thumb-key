@@ -25,13 +25,11 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.TextUnit
 import androidx.compose.ui.unit.TextUnitType
-import androidx.core.text.trimmedLength
 import androidx.navigation.NavController
 import com.dessalines.thumbkey.IMEService
 import com.dessalines.thumbkey.MainActivity
 import com.dessalines.thumbkey.R
 import com.dessalines.thumbkey.db.DEFAULT_KEYBOARD_LAYOUT
-import com.dessalines.thumbkey.keyboards.FOUR_COLUMNS_EN_V1_KEYBOARD_MODES
 import com.dessalines.thumbkey.keyboards.MESSAGEEASE_DE_KEYBOARD_MODES
 import com.dessalines.thumbkey.keyboards.MESSAGEEASE_EN_KEYBOARD_MODES
 import com.dessalines.thumbkey.keyboards.MESSAGEEASE_EN_SYMBOLS_KEYBOARD_MODES
@@ -68,6 +66,13 @@ import com.dessalines.thumbkey.keyboards.THUMBKEY_RU_V2_SYMBOLS_KEYBOARD_MODES
 import com.dessalines.thumbkey.keyboards.THUMBKEY_SV_V1_KEYBOARD_MODES
 import com.dessalines.thumbkey.keyboards.THUMBKEY_TR_V1_KEYBOARD_MODES
 import com.dessalines.thumbkey.keyboards.THUMBKEY_UK_V1_KEYBOARD_MODES
+import com.dessalines.thumbkey.keyboards.TYPESPLIT_DE_V1_KEYBOARD_MODES
+import com.dessalines.thumbkey.keyboards.TYPESPLIT_EN_V2_KEYBOARD_MODES
+import com.dessalines.thumbkey.keyboards.TYPESPLIT_ES_V1_KEYBOARD_MODES
+import com.dessalines.thumbkey.keyboards.TYPESPLIT_FR_V1_KEYBOARD_MODES
+import com.dessalines.thumbkey.keyboards.TYPESPLIT_IT_V1_KEYBOARD_MODES
+import com.dessalines.thumbkey.keyboards.TYPESPLIT_PL_V1_KEYBOARD_MODES
+import com.dessalines.thumbkey.keyboards.TYPESPLIT_PT_V1_KEYBOARD_MODES
 import com.dessalines.thumbkey.keyboards.TWO_HANDS_EN_V1_KEYBOARD_MODES
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.delay
@@ -138,7 +143,13 @@ fun keyboardLayoutToModes(layout: KeyboardLayout): Map<KeyboardMode, KeyboardC> 
         KeyboardLayout.ThumbKeyFRv2 -> THUMBKEY_FR_V2_KEYBOARD_MODES
         KeyboardLayout.ThumbKeySVv1 -> THUMBKEY_SV_V1_KEYBOARD_MODES
         KeyboardLayout.ThumbKeyTRv1 -> THUMBKEY_TR_V1_KEYBOARD_MODES
-        KeyboardLayout.FourColumnsENv1 -> FOUR_COLUMNS_EN_V1_KEYBOARD_MODES
+        KeyboardLayout.TypeSplitENv2 -> TYPESPLIT_EN_V2_KEYBOARD_MODES
+        KeyboardLayout.TypeSplitESv1 -> TYPESPLIT_ES_V1_KEYBOARD_MODES
+        KeyboardLayout.TypeSplitDEv1 -> TYPESPLIT_DE_V1_KEYBOARD_MODES
+        KeyboardLayout.TypeSplitITv1 -> TYPESPLIT_IT_V1_KEYBOARD_MODES
+        KeyboardLayout.TypeSplitFRv1 -> TYPESPLIT_FR_V1_KEYBOARD_MODES
+        KeyboardLayout.TypeSplitPTv1 -> TYPESPLIT_PT_V1_KEYBOARD_MODES
+        KeyboardLayout.TypeSplitPLv1 -> TYPESPLIT_PL_V1_KEYBOARD_MODES
         KeyboardLayout.TwoHandsENv1 -> TWO_HANDS_EN_V1_KEYBOARD_MODES
     }
 }
