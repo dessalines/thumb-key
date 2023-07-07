@@ -31,7 +31,6 @@ import com.dessalines.thumbkey.IMEService
 import com.dessalines.thumbkey.MainActivity
 import com.dessalines.thumbkey.R
 import com.dessalines.thumbkey.db.DEFAULT_KEYBOARD_LAYOUT
-import com.dessalines.thumbkey.keyboards.TWO_HANDS_EN_V1_KEYBOARD_MODES
 import com.dessalines.thumbkey.keyboards.FOUR_COLUMNS_EN_V1_KEYBOARD_MODES
 import com.dessalines.thumbkey.keyboards.MESSAGEEASE_DE_KEYBOARD_MODES
 import com.dessalines.thumbkey.keyboards.MESSAGEEASE_EN_KEYBOARD_MODES
@@ -69,6 +68,7 @@ import com.dessalines.thumbkey.keyboards.THUMBKEY_RU_V2_SYMBOLS_KEYBOARD_MODES
 import com.dessalines.thumbkey.keyboards.THUMBKEY_SV_V1_KEYBOARD_MODES
 import com.dessalines.thumbkey.keyboards.THUMBKEY_TR_V1_KEYBOARD_MODES
 import com.dessalines.thumbkey.keyboards.THUMBKEY_UK_V1_KEYBOARD_MODES
+import com.dessalines.thumbkey.keyboards.TWO_HANDS_EN_V1_KEYBOARD_MODES
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
