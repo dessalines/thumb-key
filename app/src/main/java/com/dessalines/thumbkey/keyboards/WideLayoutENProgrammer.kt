@@ -353,6 +353,7 @@ val WIDE_LAYOUT_EN_PROGRAMMER = KeyboardC(
 val WIDE_LAYOUT_EN_PROGRAMMER_SHIFTED = KeyboardC(
     listOf(
         listOf(
+            SPACEBAR_TYPESPLIT_TOP_KEY_ITEM,
             KeyItemC(
                 center = KeyC(
                     display = KeyDisplay.TextDisplay("S"),
@@ -454,6 +455,7 @@ val WIDE_LAYOUT_EN_PROGRAMMER_SHIFTED = KeyboardC(
             NUMERIC_KEY_ITEM,
         ),
         listOf(
+            SPACEBAR_TYPESPLIT_MIDDLE_KEY_ITEM,
             KeyItemC(
                 center = KeyC(
                     display = KeyDisplay.TextDisplay("N"),
@@ -564,6 +566,7 @@ val WIDE_LAYOUT_EN_PROGRAMMER_SHIFTED = KeyboardC(
             BACKSPACE_KEY_ITEM,
         ),
         listOf(
+            SPACEBAR_TYPESPLIT_BOTTOM_KEY_ITEM,
             KeyItemC(
                 center = KeyC(
                     display = KeyDisplay.TextDisplay("T"),
