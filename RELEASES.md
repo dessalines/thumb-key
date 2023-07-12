@@ -1,3 +1,17 @@
+# Thumb-Key 1.8.0 (2023-07-06)
+
+## What's Changed
+
+- ThumbKeyFRv2: Fix key "U" writing "uU". by @mockballed in https://github.com/dessalines/thumb-key/pull/298
+- New "Type-Split" layouts. by @mockballed in https://github.com/dessalines/thumb-key/pull/296
+- Fix bug in deleteLastWord by @tbhno in https://github.com/dessalines/thumb-key/pull/305
+
+## New Contributors
+
+- @tbhno made their first contribution in https://github.com/dessalines/thumb-key/pull/305
+
+**Full Changelog**: https://github.com/dessalines/thumb-key/compare/1.7.0...1.8.0
+
 # Thumb-Key 1.7.0 (2023-06-18)
 
 ## What's Changed
