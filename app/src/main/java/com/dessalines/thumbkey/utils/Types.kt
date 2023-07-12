@@ -137,6 +137,7 @@ enum class KeyboardLayout(val title: String, val index: Int) {
     TypeSplitPTv1("Type-Split português v1", 41),
     TypeSplitPLv1("Type-Split polski v1", 42),
     TwoHandsENv1("v. Two Hands english v1", 43),
+    WideLayoutENProgrammer("Wide Layout English Programmer", 44),
 }
 
 enum class KeyboardPosition(private val stringId: Int) {
