@@ -62,8 +62,6 @@ val TWO_HANDS_EN_V1 = KeyboardC(
                 ),
             ),
             SETTINGS_KEY_ITEM,
-        ),
-        listOf(
             KeyItemC(
                 center = KeyC(
                     display = KeyDisplay.TextDisplay("s"),
@@ -189,8 +187,6 @@ val TWO_HANDS_EN_V1 = KeyboardC(
                 ),
             ),
             NUMERIC_KEY_ITEM,
-        ),
-        listOf(
             KeyItemC(
                 center = KeyC(
                     display = KeyDisplay.TextDisplay("n"),
@@ -339,8 +335,6 @@ val TWO_HANDS_EN_V1 = KeyboardC(
                 ),
             ),
             BACKSPACE_KEY_ITEM,
-        ),
-        listOf(
             KeyItemC(
                 center = KeyC(
                     display = KeyDisplay.TextDisplay("t"),
@@ -467,8 +461,6 @@ val TWO_HANDS_EN_V1_SHIFTED = KeyboardC(
                 ),
             ),
             SETTINGS_KEY_ITEM,
-        ),
-        listOf(
             KeyItemC(
                 center = KeyC(
                     display = KeyDisplay.TextDisplay("S"),
@@ -594,8 +586,6 @@ val TWO_HANDS_EN_V1_SHIFTED = KeyboardC(
                 ),
             ),
             NUMERIC_KEY_ITEM,
-        ),
-        listOf(
             KeyItemC(
                 center = KeyC(
                     display = KeyDisplay.TextDisplay("N"),
@@ -744,8 +734,6 @@ val TWO_HANDS_EN_V1_SHIFTED = KeyboardC(
                 ),
             ),
             BACKSPACE_KEY_ITEM,
-        ),
-        listOf(
             KeyItemC(
                 center = KeyC(
                     display = KeyDisplay.TextDisplay("T"),
