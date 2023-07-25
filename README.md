@@ -52,7 +52,7 @@ This project is a follow-up to the now unmaintained (and closed-source) [Message
 ## User Guide
 
 - Tap, or slide / swipe to type a letter.
-- Swipe up or down on `A` to capitalize. <img width=60px height=60px src="https://i.postimg.cc/Znt2Ft9G/thumbkey-1-1.png">
+- Swipe up or down on `A` to capitalize. (If you changed the layout, the button next to `#`) <img width=60px height=60px src="https://i.postimg.cc/Znt2Ft9G/thumbkey-1-1.png">
 - Double tap the space bar to type a comma, triple tap to type a period. More taps have more punctuation.
 - Press the `#` key to see a numeric keypad, and additional symbols.
 - Press the Settings Gear key to configure Thumb-Key.
@@ -69,7 +69,6 @@ This project is a follow-up to the now unmaintained (and closed-source) [Message
 ### A History of Phone Keyboards
 
 Physical keyboards, with the full-size _QWERTY_ layout, **were not designed for use on small devices like phones**; they were designed specifically for 10 fingers resting on a keybed, sitting on a secure surface.
-
 Phones must be held with the fore-fingers and palm, or held with one hand and typed with the other, leaving only 1 or 2 thumbs (as opposed to 10 fingers) free to perform key-presses. As texting came into being, word prediction came to be seen as the best solution to slow input speeds.
 
 On phones that used the 9-key numeric layout, [T9 predictive text](<https://en.m.wikipedia.org/wiki/T9_(predictive_text)>) was used. Other phones used the full-hand layout with the familiar _QWERTY_ layout, with other proprietary predictive methods.
