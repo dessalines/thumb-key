@@ -302,29 +302,10 @@ val THUMBKEY_JA_V1_HIRAGANA_SHIFTED = KeyboardC(
         listOf(
             KeyItemC(
                 center = KeyC(
-                    display = KeyDisplay.TextDisplay("ま"),
-                    action = KeyAction.CommitText("ま"),
+                    display = KeyDisplay.TextDisplay("ゔ"),
+                    action = KeyAction.CommitText("ゔ"),
                     size = FontSizeVariant.LARGE,
                     color = ColorVariant.PRIMARY,
-                ),
-                swipeType = SwipeNWay.FOUR_WAY_CROSS,
-                swipes = mapOf(
-                    SwipeDirection.BOTTOM to KeyC(
-                        display = KeyDisplay.TextDisplay("み"),
-                        action = KeyAction.CommitText("み"),
-                    ),
-                    SwipeDirection.LEFT to KeyC(
-                        display = KeyDisplay.TextDisplay("む"),
-                        action = KeyAction.CommitText("む"),
-                    ),
-                    SwipeDirection.TOP to KeyC(
-                        display = KeyDisplay.TextDisplay("め"),
-                        action = KeyAction.CommitText("め"),
-                    ),
-                    SwipeDirection.RIGHT to KeyC(
-                        display = KeyDisplay.TextDisplay("も"),
-                        action = KeyAction.CommitText("も"),
-                    ),
                 ),
             ),
             KeyItemC(
