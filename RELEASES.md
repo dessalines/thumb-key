@@ -1,3 +1,32 @@
+# Thumb-Key 1.9.1 (2023-07-26)
+
+## What's Changed
+
+- Rectified issue of "TwoHands" layout by @Lavin-tom in https://github.com/dessalines/thumb-key/pull/313
+- Capital letters when layout changed by @niccokunzmann in https://github.com/dessalines/thumb-key/pull/322
+- Add single quote to MessageEase German by @meliache in https://github.com/dessalines/thumb-key/pull/323
+- まみむめも=>ゔ by @K0baU in https://github.com/dessalines/thumb-key/pull/326
+
+## New Contributors
+
+- @niccokunzmann made their first contribution in https://github.com/dessalines/thumb-key/pull/322
+- @meliache made their first contribution in https://github.com/dessalines/thumb-key/pull/323
+
+**Full Changelog**: https://github.com/dessalines/thumb-key/compare/1.9.0...1.9.1
+
+# Thumb-Key 1.9.0 (2023-07-12)
+
+## What's Changed
+
+- Added Two-Hands layout by @Lavin-tom in https://github.com/dessalines/thumb-key/pull/306
+- Added wide layout by @thedroppedpocket in https://github.com/dessalines/thumb-key/pull/308
+
+## New Contributors
+
+- @thedroppedpocket made their first contribution in https://github.com/dessalines/thumb-key/pull/308
+
+**Full Changelog**: https://github.com/dessalines/thumb-key/compare/1.8.0...1.9.0
+
 # Thumb-Key 1.8.0 (2023-07-06)
 
 ## What's Changed
