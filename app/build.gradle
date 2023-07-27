@@ -11,8 +11,8 @@ android {
         applicationId "com.dessalines.thumbkey"
         minSdk 21
         targetSdk 33
-        versionCode 26
-        versionName "1.9.1"
+        versionCode 27
+        versionName "1.10.0"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         vectorDrawables {
@@ -62,7 +62,7 @@ android {
         compose true
     }
     composeOptions {
-        kotlinCompilerExtensionVersion = "1.4.7"
+        kotlinCompilerExtensionVersion = "1.5.1"
     }
     namespace 'com.dessalines.thumbkey'
 }
@@ -72,30 +72,30 @@ dependencies {
     implementation 'com.github.alorma:compose-settings-ui-m3:0.27.0'
 
     // To use Kotlin annotation processing tool
-    ksp "androidx.room:room-compiler:2.5.1"
+    ksp 'androidx.room:room-compiler:2.5.2'
 
-    implementation "androidx.room:room-runtime:2.5.1"
-    annotationProcessor "androidx.room:room-compiler:2.5.1"
+    implementation 'androidx.room:room-runtime:2.5.2'
+    annotationProcessor 'androidx.room:room-compiler:2.5.2'
 
     // optional - Kotlin Extensions and Coroutines support for Room
-    implementation("androidx.room:room-ktx:2.5.1")
+    implementation('androidx.room:room-ktx:2.5.2')
 
     // optional - Test helpers
-    testImplementation "androidx.room:room-testing:2.5.1"
+    testImplementation 'androidx.room:room-testing:2.5.2'
 
     // optional - Paging 3 Integration
-    implementation "androidx.room:room-paging:2.5.1"
+    implementation 'androidx.room:room-paging:2.5.2'
 
     // LiveData
     implementation "androidx.compose.runtime:runtime-livedata:1.4.3"
     implementation "androidx.lifecycle:lifecycle-runtime-compose:2.6.1"
 
-    implementation 'org.jetbrains.kotlin:kotlin-stdlib:1.8.21'
+    implementation 'org.jetbrains.kotlin:kotlin-stdlib:1.9.0'
     implementation 'androidx.appcompat:appcompat:1.6.1'
     implementation "androidx.compose.ui:ui:1.4.3"
-    implementation "androidx.compose.material3:material3:1.1.0"
+    implementation 'androidx.compose.material3:material3:1.1.1'
     implementation "androidx.compose.material:material-icons-extended:1.4.3"
-    implementation "androidx.compose.material3:material3-window-size-class:1.1.0"
+    implementation 'androidx.compose.material3:material3-window-size-class:1.1.1'
     implementation "androidx.compose.ui:ui-tooling:1.4.3"
     implementation "androidx.activity:activity-compose:1.7.2"
     implementation "com.louiscad.splitties:splitties-systemservices:3.0.0"
