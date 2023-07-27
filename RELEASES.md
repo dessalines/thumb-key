@@ -1,3 +1,14 @@
+# Thumb-Key 1.10.0 (2023-07-27)
+
+## What's Changed
+
+- Adding hungarian layout. Fixes #325 by @dessalines in https://github.com/dessalines/thumb-key/pull/330
+- Upgrading deps. by @dessalines in https://github.com/dessalines/thumb-key/pull/331
+- Add spanish esperanto by @dessalines in https://github.com/dessalines/thumb-key/pull/332
+- Add messageease it by @dessalines in https://github.com/dessalines/thumb-key/pull/333
+
+**Full Changelog**: https://github.com/dessalines/thumb-key/compare/1.9.1...1.10.0
+
 # Thumb-Key 1.9.1 (2023-07-26)
 
 ## What's Changed
