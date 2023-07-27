@@ -28,7 +28,7 @@ val THUMBKEY_EN_V4_MULTI_MAIN = KeyboardC(
                 ),
                 swipeType = SwipeNWay.EIGHT_WAY,
                 swipes = mapOf(
-					SwipeDirection.TOP to KeyC(
+                    SwipeDirection.TOP to KeyC(
                         display = KeyDisplay.TextDisplay("š"),
                         action = KeyAction.CommitText("š"),
                     ),
@@ -36,7 +36,7 @@ val THUMBKEY_EN_V4_MULTI_MAIN = KeyboardC(
                         display = KeyDisplay.TextDisplay("w"),
                         action = KeyAction.CommitText("w"),
                     ),
-					SwipeDirection.LEFT to KeyC(
+                    SwipeDirection.LEFT to KeyC(
                         display = KeyDisplay.TextDisplay("ô"),
                         action = KeyAction.CommitText("ô"),
                     ),
@@ -51,7 +51,7 @@ val THUMBKEY_EN_V4_MULTI_MAIN = KeyboardC(
                 ),
                 swipeType = SwipeNWay.TWO_WAY_VERTICAL,
                 swipes = mapOf(
-					SwipeDirection.TOP to KeyC(
+                    SwipeDirection.TOP to KeyC(
                         display = KeyDisplay.TextDisplay("ŕ"),
                         action = KeyAction.CommitText("ŕ"),
                     ),
@@ -70,14 +70,14 @@ val THUMBKEY_EN_V4_MULTI_MAIN = KeyboardC(
                 ),
                 swipeType = SwipeNWay.EIGHT_WAY,
                 swipes = mapOf(
-					SwipeDirection.TOP to KeyC(
+                    SwipeDirection.TOP to KeyC(
                         display = KeyDisplay.TextDisplay("ó"),
                         action = KeyAction.CommitText("ó"),
                     ),
-					SwipeDirection.BOTTOM_RIGHT to KeyC(
-						display = KeyDisplay.TextDisplay("ú"),
-						action = KeyAction.CommitText("ú"),
-					),
+                    SwipeDirection.BOTTOM_RIGHT to KeyC(
+                        display = KeyDisplay.TextDisplay("ú"),
+                        action = KeyAction.CommitText("ú"),
+                    ),
                     SwipeDirection.BOTTOM_LEFT to KeyC(
                         display = KeyDisplay.TextDisplay("u"),
                         action = KeyAction.CommitText("u"),
@@ -96,7 +96,7 @@ val THUMBKEY_EN_V4_MULTI_MAIN = KeyboardC(
                 ),
                 swipeType = SwipeNWay.FOUR_WAY_CROSS,
                 swipes = mapOf(
-					SwipeDirection.TOP to KeyC(
+                    SwipeDirection.TOP to KeyC(
                         display = KeyDisplay.TextDisplay("ň"),
                         action = KeyAction.CommitText("ň"),
                     ),
@@ -104,7 +104,7 @@ val THUMBKEY_EN_V4_MULTI_MAIN = KeyboardC(
                         display = KeyDisplay.TextDisplay("m"),
                         action = KeyAction.CommitText("m"),
                     ),
-					SwipeDirection.LEFT to KeyC(
+                    SwipeDirection.LEFT to KeyC(
                         display = KeyDisplay.TextDisplay("ä"),
                         action = KeyAction.CommitText("ä"),
                     ),
@@ -117,7 +117,7 @@ val THUMBKEY_EN_V4_MULTI_MAIN = KeyboardC(
                     size = FontSizeVariant.LARGE,
                     color = ColorVariant.PRIMARY,
                 ),
-				swipeType = SwipeNWay.EIGHT_WAY,
+                swipeType = SwipeNWay.EIGHT_WAY,
                 swipes = mapOf(
                     SwipeDirection.TOP_LEFT to KeyC(
                         display = KeyDisplay.TextDisplay("j"),
@@ -162,24 +162,24 @@ val THUMBKEY_EN_V4_MULTI_MAIN = KeyboardC(
                 ),
                 swipeType = SwipeNWay.EIGHT_WAY,
                 swipes = mapOf(
-					SwipeDirection.TOP_LEFT to KeyC(
+                    SwipeDirection.TOP_LEFT to KeyC(
                         display = KeyDisplay.TextDisplay("ĺ"),
                         action = KeyAction.CommitText("ĺ"),
                     ),
-					SwipeDirection.TOP to KeyC(
-						display = KeyDisplay.IconDisplay(Icons.Outlined.ArrowDropUp),
-						action = KeyAction.ToggleShiftMode(true),
-						color = ColorVariant.MUTED,
-					),
-					SwipeDirection.TOP_RIGHT to KeyC(
+                    SwipeDirection.TOP to KeyC(
+                        display = KeyDisplay.IconDisplay(Icons.Outlined.ArrowDropUp),
+                        action = KeyAction.ToggleShiftMode(true),
+                        color = ColorVariant.MUTED,
+                    ),
+                    SwipeDirection.TOP_RIGHT to KeyC(
                         display = KeyDisplay.TextDisplay("á"),
                         action = KeyAction.CommitText("á"),
                     ),
-					SwipeDirection.BOTTOM_RIGHT to KeyC(
+                    SwipeDirection.BOTTOM_RIGHT to KeyC(
                         display = KeyDisplay.TextDisplay("ý"),
                         action = KeyAction.CommitText("ý"),
                     ),
-					SwipeDirection.BOTTOM_LEFT to KeyC(
+                    SwipeDirection.BOTTOM_LEFT to KeyC(
                         display = KeyDisplay.TextDisplay("ľ"),
                         action = KeyAction.CommitText("ľ"),
                     ),
@@ -201,7 +201,7 @@ val THUMBKEY_EN_V4_MULTI_MAIN = KeyboardC(
                 ),
                 swipeType = SwipeNWay.EIGHT_WAY,
                 swipes = mapOf(
-					SwipeDirection.TOP to KeyC(
+                    SwipeDirection.TOP to KeyC(
                         display = KeyDisplay.TextDisplay("ť"),
                         action = KeyAction.CommitText("ť"),
                     ),
@@ -209,7 +209,7 @@ val THUMBKEY_EN_V4_MULTI_MAIN = KeyboardC(
                         display = KeyDisplay.TextDisplay("c"),
                         action = KeyAction.CommitText("c"),
                     ),
-					SwipeDirection.BOTTOM_RIGHT to KeyC(
+                    SwipeDirection.BOTTOM_RIGHT to KeyC(
                         display = KeyDisplay.TextDisplay("č"),
                         action = KeyAction.CommitText("č"),
                     ),
@@ -222,9 +222,9 @@ val THUMBKEY_EN_V4_MULTI_MAIN = KeyboardC(
                     size = FontSizeVariant.LARGE,
                     color = ColorVariant.PRIMARY,
                 ),
-				swipeType = SwipeNWay.EIGHT_WAY,
+                swipeType = SwipeNWay.EIGHT_WAY,
                 swipes = mapOf(
-					SwipeDirection.TOP_LEFT to KeyC(
+                    SwipeDirection.TOP_LEFT to KeyC(
                         display = KeyDisplay.TextDisplay("í"),
                         action = KeyAction.CommitText("í"),
                     ),
@@ -271,15 +271,15 @@ val THUMBKEY_EN_V4_MULTI_MAIN = KeyboardC(
                         display = KeyDisplay.TextDisplay("d"),
                         action = KeyAction.CommitText("d"),
                     ),
-					SwipeDirection.TOP to KeyC(
+                    SwipeDirection.TOP to KeyC(
                         display = KeyDisplay.TextDisplay("é"),
                         action = KeyAction.CommitText("é"),
                     ),
-					SwipeDirection.RIGHT to KeyC(
+                    SwipeDirection.RIGHT to KeyC(
                         display = KeyDisplay.TextDisplay("ž"),
                         action = KeyAction.CommitText("ž"),
                     ),
-					SwipeDirection.BOTTOM_LEFT to KeyC(
+                    SwipeDirection.BOTTOM_LEFT to KeyC(
                         display = KeyDisplay.TextDisplay("ď"),
                         action = KeyAction.CommitText("ď"),
                     ),
@@ -306,7 +306,7 @@ val THUMBKEY_EN_V4_MULTI_SHIFTED = KeyboardC(
                 ),
                 swipeType = SwipeNWay.EIGHT_WAY,
                 swipes = mapOf(
-					SwipeDirection.TOP to KeyC(
+                    SwipeDirection.TOP to KeyC(
                         display = KeyDisplay.TextDisplay("Š"),
                         action = KeyAction.CommitText("Š"),
                     ),
@@ -314,7 +314,7 @@ val THUMBKEY_EN_V4_MULTI_SHIFTED = KeyboardC(
                         display = KeyDisplay.TextDisplay("W"),
                         action = KeyAction.CommitText("W"),
                     ),
-					SwipeDirection.LEFT to KeyC(
+                    SwipeDirection.LEFT to KeyC(
                         display = KeyDisplay.TextDisplay("Ô"),
                         action = KeyAction.CommitText("Ô"),
                     ),
@@ -329,7 +329,7 @@ val THUMBKEY_EN_V4_MULTI_SHIFTED = KeyboardC(
                 ),
                 swipeType = SwipeNWay.TWO_WAY_VERTICAL,
                 swipes = mapOf(
-					SwipeDirection.TOP to KeyC(
+                    SwipeDirection.TOP to KeyC(
                         display = KeyDisplay.TextDisplay("Ŕ"),
                         action = KeyAction.CommitText("Ŕ"),
                     ),
@@ -348,11 +348,11 @@ val THUMBKEY_EN_V4_MULTI_SHIFTED = KeyboardC(
                 ),
                 swipeType = SwipeNWay.EIGHT_WAY,
                 swipes = mapOf(
-					SwipeDirection.TOP to KeyC(
+                    SwipeDirection.TOP to KeyC(
                         display = KeyDisplay.TextDisplay("Ó"),
                         action = KeyAction.CommitText("Ó"),
                     ),
-					SwipeDirection.BOTTOM_RIGHT to KeyC(
+                    SwipeDirection.BOTTOM_RIGHT to KeyC(
                         display = KeyDisplay.TextDisplay("Ú"),
                         action = KeyAction.CommitText("Ú"),
                     ),
@@ -374,7 +374,7 @@ val THUMBKEY_EN_V4_MULTI_SHIFTED = KeyboardC(
                 ),
                 swipeType = SwipeNWay.FOUR_WAY_CROSS,
                 swipes = mapOf(
-					SwipeDirection.TOP to KeyC(
+                    SwipeDirection.TOP to KeyC(
                         display = KeyDisplay.TextDisplay("Ň"),
                         action = KeyAction.CommitText("Ň"),
                     ),
@@ -382,7 +382,7 @@ val THUMBKEY_EN_V4_MULTI_SHIFTED = KeyboardC(
                         display = KeyDisplay.TextDisplay("M"),
                         action = KeyAction.CommitText("M"),
                     ),
-					SwipeDirection.LEFT to KeyC(
+                    SwipeDirection.LEFT to KeyC(
                         display = KeyDisplay.TextDisplay("Ä"),
                         action = KeyAction.CommitText("Ä"),
                     ),
@@ -395,7 +395,7 @@ val THUMBKEY_EN_V4_MULTI_SHIFTED = KeyboardC(
                     size = FontSizeVariant.LARGE,
                     color = ColorVariant.PRIMARY,
                 ),
-				swipeType = SwipeNWay.EIGHT_WAY,
+                swipeType = SwipeNWay.EIGHT_WAY,
                 swipes = mapOf(
                     SwipeDirection.TOP_LEFT to KeyC(
                         display = KeyDisplay.TextDisplay("J"),
@@ -440,34 +440,34 @@ val THUMBKEY_EN_V4_MULTI_SHIFTED = KeyboardC(
                 ),
                 swipeType = SwipeNWay.EIGHT_WAY,
                 swipes = mapOf(
-					SwipeDirection.TOP_LEFT to KeyC(
+                    SwipeDirection.TOP_LEFT to KeyC(
                         display = KeyDisplay.TextDisplay("Ĺ"),
                         action = KeyAction.CommitText("Ĺ"),
                     ),
-					SwipeDirection.TOP to KeyC(
+                    SwipeDirection.TOP to KeyC(
                         display = KeyDisplay.IconDisplay(Icons.Outlined.KeyboardCapslock),
                         capsModeDisplay = KeyDisplay.IconDisplay(Icons.Outlined.Copyright),
                         action = KeyAction.ToggleCapsLock,
                         color = ColorVariant.MUTED,
                     ),
-					SwipeDirection.TOP_RIGHT to KeyC(
+                    SwipeDirection.TOP_RIGHT to KeyC(
                         display = KeyDisplay.TextDisplay("Á"),
                         action = KeyAction.CommitText("Á"),
                     ),
-					SwipeDirection.BOTTOM_RIGHT to KeyC(
+                    SwipeDirection.BOTTOM_RIGHT to KeyC(
                         display = KeyDisplay.TextDisplay("Ý"),
                         action = KeyAction.CommitText("Ý"),
                     ),
-					SwipeDirection.BOTTOM to KeyC(
+                    SwipeDirection.BOTTOM to KeyC(
                         display = KeyDisplay.IconDisplay(Icons.Outlined.ArrowDropDown),
                         action = KeyAction.ToggleShiftMode(false),
                         color = ColorVariant.MUTED,
-					),
-					SwipeDirection.BOTTOM_LEFT to KeyC(
-						display = KeyDisplay.TextDisplay("Ľ"),
-						action = KeyAction.CommitText("Ľ"),
-					),
-					SwipeDirection.LEFT to KeyC(
+                    ),
+                    SwipeDirection.BOTTOM_LEFT to KeyC(
+                        display = KeyDisplay.TextDisplay("Ľ"),
+                        action = KeyAction.CommitText("Ľ"),
+                    ),
+                    SwipeDirection.LEFT to KeyC(
                         display = KeyDisplay.TextDisplay("L"),
                         action = KeyAction.CommitText("L"),
                     ),
@@ -485,7 +485,7 @@ val THUMBKEY_EN_V4_MULTI_SHIFTED = KeyboardC(
                 ),
                 swipeType = SwipeNWay.EIGHT_WAY,
                 swipes = mapOf(
-					SwipeDirection.TOP to KeyC(
+                    SwipeDirection.TOP to KeyC(
                         display = KeyDisplay.TextDisplay("Ť"),
                         action = KeyAction.CommitText("Ť"),
                     ),
@@ -493,7 +493,7 @@ val THUMBKEY_EN_V4_MULTI_SHIFTED = KeyboardC(
                         display = KeyDisplay.TextDisplay("C"),
                         action = KeyAction.CommitText("C"),
                     ),
-					SwipeDirection.BOTTOM_RIGHT to KeyC(
+                    SwipeDirection.BOTTOM_RIGHT to KeyC(
                         display = KeyDisplay.TextDisplay("Č"),
                         action = KeyAction.CommitText("Č"),
                     ),
@@ -506,9 +506,9 @@ val THUMBKEY_EN_V4_MULTI_SHIFTED = KeyboardC(
                     size = FontSizeVariant.LARGE,
                     color = ColorVariant.PRIMARY,
                 ),
-				swipeType = SwipeNWay.EIGHT_WAY,
+                swipeType = SwipeNWay.EIGHT_WAY,
                 swipes = mapOf(
-					SwipeDirection.TOP_LEFT to KeyC(
+                    SwipeDirection.TOP_LEFT to KeyC(
                         display = KeyDisplay.TextDisplay("Í"),
                         action = KeyAction.CommitText("Í"),
                         color = ColorVariant.MUTED,
@@ -556,15 +556,15 @@ val THUMBKEY_EN_V4_MULTI_SHIFTED = KeyboardC(
                         display = KeyDisplay.TextDisplay("D"),
                         action = KeyAction.CommitText("D"),
                     ),
-					SwipeDirection.TOP to KeyC(
+                    SwipeDirection.TOP to KeyC(
                         display = KeyDisplay.TextDisplay("É"),
                         action = KeyAction.CommitText("É"),
                     ),
-					SwipeDirection.RIGHT to KeyC(
+                    SwipeDirection.RIGHT to KeyC(
                         display = KeyDisplay.TextDisplay("Ž"),
                         action = KeyAction.CommitText("Ž"),
                     ),
-					SwipeDirection.BOTTOM_LEFT to KeyC(
+                    SwipeDirection.BOTTOM_LEFT to KeyC(
                         display = KeyDisplay.TextDisplay("Ď"),
                         action = KeyAction.CommitText("Ď"),
                     ),
