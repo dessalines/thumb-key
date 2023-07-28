@@ -16,7 +16,7 @@ import com.dessalines.thumbkey.utils.KeyboardMode
 import com.dessalines.thumbkey.utils.SwipeDirection
 import com.dessalines.thumbkey.utils.SwipeNWay
 
-val THUMBKEY_HU_V1_MAIN = KeyboardC(
+val THUMBKEY_HU_V2_MAIN = KeyboardC(
     listOf(
         listOf(
             KeyItemC(
@@ -207,6 +207,11 @@ val THUMBKEY_HU_V1_MAIN = KeyboardC(
                         action = KeyAction.CommitText("'"),
                         color = ColorVariant.MUTED,
                     ),
+                    SwipeDirection.TOP_LEFT to KeyC(
+                        display = KeyDisplay.TextDisplay("í"),
+                        action = KeyAction.CommitText("í"),
+                        color = ColorVariant.MUTED,
+                    ),
                     SwipeDirection.RIGHT to KeyC(
                         display = KeyDisplay.TextDisplay("z"),
                         action = KeyAction.CommitText("z"),
@@ -256,7 +261,7 @@ val THUMBKEY_HU_V1_MAIN = KeyboardC(
     ),
 )
 
-val THUMBKEY_HU_V1_SHIFTED = KeyboardC(
+val THUMBKEY_EN_V4_SHIFTED = KeyboardC(
     listOf(
         listOf(
             KeyItemC(
@@ -453,6 +458,11 @@ val THUMBKEY_HU_V1_SHIFTED = KeyboardC(
                         action = KeyAction.CommitText("'"),
                         color = ColorVariant.MUTED,
                     ),
+                    SwipeDirection.TOP_RIGHT to KeyC(
+                        display = KeyDisplay.TextDisplay("Í"),
+                        action = KeyAction.CommitText("Í"),
+                        color = ColorVariant.MUTED,
+                    ),
                     SwipeDirection.RIGHT to KeyC(
                         display = KeyDisplay.TextDisplay("Z"),
                         action = KeyAction.CommitText("Z"),
@@ -502,8 +512,8 @@ val THUMBKEY_HU_V1_SHIFTED = KeyboardC(
     ),
 )
 
-val THUMBKEY_HU_V1_KEYBOARD_MODES: Map<KeyboardMode, KeyboardC> = mapOf(
-    KeyboardMode.MAIN to THUMBKEY_HU_V1_MAIN,
-    KeyboardMode.SHIFTED to THUMBKEY_HU_V1_SHIFTED,
+val THUMBKEY_HU_V2_KEYBOARD_MODES: Map<KeyboardMode, KeyboardC> = mapOf(
+    KeyboardMode.MAIN to THUMBKEY_HU_V2_MAIN,
+    KeyboardMode.SHIFTED to THUMBKEY_HU_V2_SHIFTED,
     KeyboardMode.NUMERIC to NUMERIC_KEYBOARD,
 )
