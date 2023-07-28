@@ -96,7 +96,6 @@ enum class KeyboardLayout(val title: String, val index: Int) {
     ThumbKeyENv4("Thumb-Key english v4", 0),
     ThumbKeyENv4Symbols("Thumb-Key english v4 with symbols", 21),
     ThumbKeyENv4Programmer("Thumb-Key english v4 (programmer)", 1),
-    ThumbKeyENv4Multi("Thumb-Key english v4 (EN+SK multi)", 48),
     ThumbKeyDEv2("Thumb-Key deutsch v2", 2),
     ThumbKeyDAv1("Thumb-Key dansk v1", 3),
     ThumbKeyESv1("Thumb-Key español v1", 4),
@@ -142,6 +141,7 @@ enum class KeyboardLayout(val title: String, val index: Int) {
     ThumbKeyHUv1("Thumb-Key magyar nyelv v1", 45),
     ThumbKeyESEOv1("Thumb-Key español esperanto v1", 46),
     MessageEaseIT("MessageEase italiano", 47),
+    ThumbKeyENv4Multi("Thumb-Key english v4 (EN+SK multi)", 48),
 }
 
 enum class KeyboardPosition(private val stringId: Int) {
