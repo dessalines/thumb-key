@@ -14,8 +14,9 @@ import com.dessalines.thumbkey.utils.KeyItemC
 import com.dessalines.thumbkey.utils.KeyboardC
 import com.dessalines.thumbkey.utils.KeyboardMode
 import com.dessalines.thumbkey.utils.SwipeDirection
+import com.dessalines.thumbkey.utils.SwipeNWay
 
-val MESSAGEEASE_DE_MAIN = KeyboardC(
+val THUMBKEY_ES_EO_V1_MAIN = KeyboardC(
     listOf(
         listOf(
             KeyItemC(
@@ -31,13 +32,8 @@ val MESSAGEEASE_DE_MAIN = KeyboardC(
                         action = KeyAction.CommitText("v"),
                     ),
                     SwipeDirection.BOTTOM to KeyC(
-                        display = KeyDisplay.TextDisplay("ä"),
-                        action = KeyAction.CommitText("ä"),
-                    ),
-                    SwipeDirection.RIGHT to KeyC(
-                        display = KeyDisplay.TextDisplay("-"),
-                        action = KeyAction.CommitText("-"),
-                        color = ColorVariant.MUTED,
+                        display = KeyDisplay.TextDisplay("^"),
+                        action = KeyAction.CommitText("^"),
                     ),
                 ),
             ),
@@ -48,25 +44,15 @@ val MESSAGEEASE_DE_MAIN = KeyboardC(
                     size = FontSizeVariant.LARGE,
                     color = ColorVariant.PRIMARY,
                 ),
+                swipeType = SwipeNWay.FOUR_WAY_CROSS,
                 swipes = mapOf(
                     SwipeDirection.BOTTOM to KeyC(
                         display = KeyDisplay.TextDisplay("l"),
                         action = KeyAction.CommitText("l"),
                     ),
-                    SwipeDirection.LEFT to KeyC(
-                        display = KeyDisplay.TextDisplay("+"),
-                        action = KeyAction.CommitText("+"),
-                        color = ColorVariant.MUTED,
-                    ),
-                    SwipeDirection.BOTTOM_LEFT to KeyC(
-                        display = KeyDisplay.TextDisplay("/"),
-                        action = KeyAction.CommitText("/"),
-                        color = ColorVariant.MUTED,
-                    ),
-                    SwipeDirection.RIGHT to KeyC(
-                        display = KeyDisplay.TextDisplay("!"),
-                        action = KeyAction.CommitText("!"),
-                        color = ColorVariant.MUTED,
+                    SwipeDirection.TOP to KeyC(
+                        display = KeyDisplay.TextDisplay("ñ"),
+                        action = KeyAction.CommitText("ñ"),
                     ),
                 ),
             ),
@@ -82,21 +68,9 @@ val MESSAGEEASE_DE_MAIN = KeyboardC(
                         display = KeyDisplay.TextDisplay("x"),
                         action = KeyAction.CommitText("x"),
                     ),
-                    SwipeDirection.LEFT to KeyC(
-                        display = KeyDisplay.TextDisplay("?"),
-                        action = KeyAction.CommitText("?"),
-                        color = ColorVariant.MUTED,
-                    ),
                     SwipeDirection.BOTTOM to KeyC(
-                        display = KeyDisplay.TextDisplay("="),
-                        action = KeyAction.CommitText("="),
-                        color = ColorVariant.MUTED,
-                    ),
-                    SwipeDirection.RIGHT to KeyC(
-                        display = KeyDisplay.TextDisplay("€"),
-                        action = KeyAction.CommitText("€"),
-                        color = ColorVariant.MUTED,
-
+                        display = KeyDisplay.TextDisplay("´"),
+                        action = KeyAction.CommitText("´"),
                     ),
                 ),
             ),
@@ -105,41 +79,27 @@ val MESSAGEEASE_DE_MAIN = KeyboardC(
         listOf(
             KeyItemC(
                 center = KeyC(
-                    display = KeyDisplay.TextDisplay("h"),
-                    action = KeyAction.CommitText("h"),
+                    display = KeyDisplay.TextDisplay("d"),
+                    action = KeyAction.CommitText("d"),
                     size = FontSizeVariant.LARGE,
                     color = ColorVariant.PRIMARY,
                 ),
+                swipeType = SwipeNWay.FOUR_WAY_CROSS,
                 swipes = mapOf(
                     SwipeDirection.RIGHT to KeyC(
                         display = KeyDisplay.TextDisplay("k"),
                         action = KeyAction.CommitText("k"),
-
                     ),
                     SwipeDirection.TOP to KeyC(
-                        display = KeyDisplay.TextDisplay("ü"),
-                        action = KeyAction.CommitText("ü"),
-                    ),
-                    SwipeDirection.BOTTOM to KeyC(
-                        display = KeyDisplay.TextDisplay("ö"),
-                        action = KeyAction.CommitText("ö"),
-                    ),
-                    SwipeDirection.LEFT to KeyC(
-                        display = KeyDisplay.TextDisplay("("),
-                        action = KeyAction.CommitText("("),
-                        color = ColorVariant.MUTED,
-                    ),
-                    SwipeDirection.TOP_RIGHT to KeyC(
-                        display = KeyDisplay.TextDisplay("%"),
-                        action = KeyAction.CommitText("%"),
-                        color = ColorVariant.MUTED,
+                        display = KeyDisplay.TextDisplay("ŭ"),
+                        action = KeyAction.CommitText("ŭ"),
                     ),
                 ),
             ),
             KeyItemC(
                 center = KeyC(
-                    display = KeyDisplay.TextDisplay("d"),
-                    action = KeyAction.CommitText("d"),
+                    display = KeyDisplay.TextDisplay("o"),
+                    action = KeyAction.CommitText("o"),
                     size = FontSizeVariant.LARGE,
                     color = ColorVariant.PRIMARY,
                 ),
@@ -149,8 +109,8 @@ val MESSAGEEASE_DE_MAIN = KeyboardC(
                         action = KeyAction.CommitText("q"),
                     ),
                     SwipeDirection.TOP to KeyC(
-                        display = KeyDisplay.TextDisplay("u"),
-                        action = KeyAction.CommitText("u"),
+                        display = KeyDisplay.TextDisplay("h"),
+                        action = KeyAction.CommitText("h"),
                     ),
                     SwipeDirection.TOP_RIGHT to KeyC(
                         display = KeyDisplay.TextDisplay("p"),
@@ -165,8 +125,8 @@ val MESSAGEEASE_DE_MAIN = KeyboardC(
                         action = KeyAction.CommitText("j"),
                     ),
                     SwipeDirection.BOTTOM to KeyC(
-                        display = KeyDisplay.TextDisplay("o"),
-                        action = KeyAction.CommitText("o"),
+                        display = KeyDisplay.TextDisplay("u"),
+                        action = KeyAction.CommitText("u"),
                     ),
                     SwipeDirection.BOTTOM_LEFT to KeyC(
                         display = KeyDisplay.TextDisplay("g"),
@@ -185,6 +145,7 @@ val MESSAGEEASE_DE_MAIN = KeyboardC(
                     size = FontSizeVariant.LARGE,
                     color = ColorVariant.PRIMARY,
                 ),
+                swipeType = SwipeNWay.FOUR_WAY_CROSS,
                 swipes = mapOf(
                     SwipeDirection.LEFT to KeyC(
                         display = KeyDisplay.TextDisplay("m"),
@@ -193,16 +154,6 @@ val MESSAGEEASE_DE_MAIN = KeyboardC(
                     SwipeDirection.TOP to KeyC(
                         display = KeyDisplay.IconDisplay(Icons.Outlined.ArrowDropUp),
                         action = KeyAction.ToggleShiftMode(true),
-                        color = ColorVariant.MUTED,
-                    ),
-                    SwipeDirection.BOTTOM_LEFT to KeyC(
-                        display = KeyDisplay.TextDisplay("@"),
-                        action = KeyAction.CommitText("@"),
-                        color = ColorVariant.MUTED,
-                    ),
-                    SwipeDirection.RIGHT to KeyC(
-                        display = KeyDisplay.TextDisplay(")"),
-                        action = KeyAction.CommitText(")"),
                         color = ColorVariant.MUTED,
                     ),
                 ),
@@ -217,20 +168,11 @@ val MESSAGEEASE_DE_MAIN = KeyboardC(
                     size = FontSizeVariant.LARGE,
                     color = ColorVariant.PRIMARY,
                 ),
+                swipeType = SwipeNWay.FOUR_WAY_DIAGONAL,
                 swipes = mapOf(
                     SwipeDirection.TOP_RIGHT to KeyC(
                         display = KeyDisplay.TextDisplay("y"),
                         action = KeyAction.CommitText("y"),
-                    ),
-                    SwipeDirection.BOTTOM to KeyC(
-                        display = KeyDisplay.TextDisplay("ß"),
-                        action = KeyAction.CommitText("ß"),
-                        color = ColorVariant.MUTED,
-                    ),
-                    SwipeDirection.RIGHT to KeyC(
-                        display = KeyDisplay.TextDisplay("*"),
-                        action = KeyAction.CommitText("*"),
-                        color = ColorVariant.MUTED,
                     ),
                 ),
             ),
@@ -246,40 +188,28 @@ val MESSAGEEASE_DE_MAIN = KeyboardC(
                         display = KeyDisplay.TextDisplay("w"),
                         action = KeyAction.CommitText("w"),
                     ),
-                    SwipeDirection.RIGHT to KeyC(
-                        display = KeyDisplay.TextDisplay("z"),
-                        action = KeyAction.CommitText("z"),
-                        color = ColorVariant.MUTED,
-                    ),
-                    SwipeDirection.TOP_LEFT to KeyC(
-                        display = KeyDisplay.TextDisplay(
-                            "\"",
-                        ),
-                        action = KeyAction.CommitText(
-                            "\"",
-                        ),
-                        color = ColorVariant.MUTED,
-                    ),
                     SwipeDirection.TOP_RIGHT to KeyC(
                         display = KeyDisplay.TextDisplay("'"),
                         action = KeyAction.CommitText("'"),
                         color = ColorVariant.MUTED,
                     ),
-                    SwipeDirection.BOTTOM_LEFT to KeyC(
-                        display = KeyDisplay.TextDisplay(","),
-                        action = KeyAction.CommitText(","),
+                    SwipeDirection.RIGHT to KeyC(
+                        display = KeyDisplay.TextDisplay("z"),
+                        action = KeyAction.CommitText("z"),
+                    ),
+                    SwipeDirection.BOTTOM_RIGHT to KeyC(
+                        display = KeyDisplay.TextDisplay("-"),
+                        action = KeyAction.CommitText("-"),
                         color = ColorVariant.MUTED,
-
                     ),
                     SwipeDirection.BOTTOM to KeyC(
                         display = KeyDisplay.TextDisplay("."),
                         action = KeyAction.CommitText("."),
                         color = ColorVariant.MUTED,
-
                     ),
-                    SwipeDirection.BOTTOM_RIGHT to KeyC(
-                        display = KeyDisplay.TextDisplay(":"),
-                        action = KeyAction.CommitText(":"),
+                    SwipeDirection.BOTTOM_LEFT to KeyC(
+                        display = KeyDisplay.TextDisplay("*"),
+                        action = KeyAction.CommitText("*"),
                         color = ColorVariant.MUTED,
                     ),
                 ),
@@ -295,24 +225,6 @@ val MESSAGEEASE_DE_MAIN = KeyboardC(
                     SwipeDirection.TOP_LEFT to KeyC(
                         display = KeyDisplay.TextDisplay("f"),
                         action = KeyAction.CommitText("f"),
-
-                    ),
-                    SwipeDirection.TOP to KeyC(
-                        display = KeyDisplay.TextDisplay("&"),
-                        action = KeyAction.CommitText("&"),
-                        color = ColorVariant.MUTED,
-
-                    ),
-                    SwipeDirection.TOP_RIGHT to KeyC(
-                        display = KeyDisplay.TextDisplay("°"),
-                        action = KeyAction.CommitText("°"),
-                        color = ColorVariant.MUTED,
-
-                    ),
-                    SwipeDirection.BOTTOM_LEFT to KeyC(
-                        display = KeyDisplay.TextDisplay(";"),
-                        action = KeyAction.CommitText(";"),
-                        color = ColorVariant.MUTED,
                     ),
                 ),
             ),
@@ -325,7 +237,7 @@ val MESSAGEEASE_DE_MAIN = KeyboardC(
     ),
 )
 
-val MESSAGEEASE_DE_SHIFTED = KeyboardC(
+val THUMBKEY_ES_EO_V1_SHIFTED = KeyboardC(
     listOf(
         listOf(
             KeyItemC(
@@ -339,17 +251,10 @@ val MESSAGEEASE_DE_SHIFTED = KeyboardC(
                     SwipeDirection.BOTTOM_RIGHT to KeyC(
                         display = KeyDisplay.TextDisplay("V"),
                         action = KeyAction.CommitText("V"),
-
                     ),
                     SwipeDirection.BOTTOM to KeyC(
-                        display = KeyDisplay.TextDisplay("Ä"),
-                        action = KeyAction.CommitText("Ä"),
-
-                    ),
-                    SwipeDirection.RIGHT to KeyC(
-                        display = KeyDisplay.TextDisplay("-"),
-                        action = KeyAction.CommitText("-"),
-                        color = ColorVariant.MUTED,
+                        display = KeyDisplay.TextDisplay("^"),
+                        action = KeyAction.CommitText("^"),
                     ),
                 ),
             ),
@@ -360,27 +265,15 @@ val MESSAGEEASE_DE_SHIFTED = KeyboardC(
                     size = FontSizeVariant.LARGE,
                     color = ColorVariant.PRIMARY,
                 ),
+                swipeType = SwipeNWay.FOUR_WAY_CROSS,
                 swipes = mapOf(
                     SwipeDirection.BOTTOM to KeyC(
                         display = KeyDisplay.TextDisplay("L"),
                         action = KeyAction.CommitText("L"),
                     ),
-                    SwipeDirection.LEFT to KeyC(
-                        display = KeyDisplay.TextDisplay("+"),
-                        action = KeyAction.CommitText("+"),
-                        color = ColorVariant.MUTED,
-
-                    ),
-                    SwipeDirection.BOTTOM_LEFT to KeyC(
-                        display = KeyDisplay.TextDisplay("/"),
-                        action = KeyAction.CommitText("/"),
-                        color = ColorVariant.MUTED,
-
-                    ),
-                    SwipeDirection.RIGHT to KeyC(
-                        display = KeyDisplay.TextDisplay("!"),
-                        action = KeyAction.CommitText("!"),
-                        color = ColorVariant.MUTED,
+                    SwipeDirection.TOP to KeyC(
+                        display = KeyDisplay.TextDisplay("Ñ"),
+                        action = KeyAction.CommitText("Ñ"),
                     ),
                 ),
             ),
@@ -395,24 +288,10 @@ val MESSAGEEASE_DE_SHIFTED = KeyboardC(
                     SwipeDirection.BOTTOM_LEFT to KeyC(
                         display = KeyDisplay.TextDisplay("X"),
                         action = KeyAction.CommitText("X"),
-
-                    ),
-                    SwipeDirection.LEFT to KeyC(
-                        display = KeyDisplay.TextDisplay("?"),
-                        action = KeyAction.CommitText("?"),
-                        color = ColorVariant.MUTED,
-
                     ),
                     SwipeDirection.BOTTOM to KeyC(
-                        display = KeyDisplay.TextDisplay("="),
-                        action = KeyAction.CommitText("="),
-                        color = ColorVariant.MUTED,
-
-                    ),
-                    SwipeDirection.BOTTOM_RIGHT to KeyC(
-                        display = KeyDisplay.TextDisplay("€"),
-                        action = KeyAction.CommitText("€"),
-                        color = ColorVariant.MUTED,
+                        display = KeyDisplay.TextDisplay("´"),
+                        action = KeyAction.CommitText("´"),
                     ),
                 ),
             ),
@@ -421,44 +300,27 @@ val MESSAGEEASE_DE_SHIFTED = KeyboardC(
         listOf(
             KeyItemC(
                 center = KeyC(
-                    display = KeyDisplay.TextDisplay("H"),
-                    action = KeyAction.CommitText("H"),
+                    display = KeyDisplay.TextDisplay("D"),
+                    action = KeyAction.CommitText("D"),
                     size = FontSizeVariant.LARGE,
                     color = ColorVariant.PRIMARY,
                 ),
+                swipeType = SwipeNWay.FOUR_WAY_CROSS,
                 swipes = mapOf(
                     SwipeDirection.RIGHT to KeyC(
                         display = KeyDisplay.TextDisplay("K"),
                         action = KeyAction.CommitText("K"),
-
-                    ),
-                    SwipeDirection.BOTTOM to KeyC(
-                        display = KeyDisplay.TextDisplay("Ö"),
-                        action = KeyAction.CommitText("Ö"),
-
                     ),
                     SwipeDirection.TOP to KeyC(
-                        display = KeyDisplay.TextDisplay("Ü"),
-                        action = KeyAction.CommitText("Ü"),
-
-                    ),
-                    SwipeDirection.LEFT to KeyC(
-                        display = KeyDisplay.TextDisplay("("),
-                        action = KeyAction.CommitText("("),
-                        color = ColorVariant.MUTED,
-
-                    ),
-                    SwipeDirection.TOP_RIGHT to KeyC(
-                        display = KeyDisplay.TextDisplay("%"),
-                        action = KeyAction.CommitText("%"),
-                        color = ColorVariant.MUTED,
+                        display = KeyDisplay.TextDisplay("ŭ"),
+                        action = KeyAction.CommitText("ŭ"),
                     ),
                 ),
             ),
             KeyItemC(
                 center = KeyC(
-                    display = KeyDisplay.TextDisplay("D"),
-                    action = KeyAction.CommitText("D"),
+                    display = KeyDisplay.TextDisplay("O"),
+                    action = KeyAction.CommitText("O"),
                     size = FontSizeVariant.LARGE,
                     color = ColorVariant.PRIMARY,
                 ),
@@ -468,8 +330,8 @@ val MESSAGEEASE_DE_SHIFTED = KeyboardC(
                         action = KeyAction.CommitText("Q"),
                     ),
                     SwipeDirection.TOP to KeyC(
-                        display = KeyDisplay.TextDisplay("U"),
-                        action = KeyAction.CommitText("U"),
+                        display = KeyDisplay.TextDisplay("H"),
+                        action = KeyAction.CommitText("H"),
                     ),
                     SwipeDirection.TOP_RIGHT to KeyC(
                         display = KeyDisplay.TextDisplay("P"),
@@ -484,8 +346,8 @@ val MESSAGEEASE_DE_SHIFTED = KeyboardC(
                         action = KeyAction.CommitText("J"),
                     ),
                     SwipeDirection.BOTTOM to KeyC(
-                        display = KeyDisplay.TextDisplay("O"),
-                        action = KeyAction.CommitText("O"),
+                        display = KeyDisplay.TextDisplay("U"),
+                        action = KeyAction.CommitText("U"),
                     ),
                     SwipeDirection.BOTTOM_LEFT to KeyC(
                         display = KeyDisplay.TextDisplay("G"),
@@ -504,33 +366,21 @@ val MESSAGEEASE_DE_SHIFTED = KeyboardC(
                     size = FontSizeVariant.LARGE,
                     color = ColorVariant.PRIMARY,
                 ),
+                swipeType = SwipeNWay.FOUR_WAY_CROSS,
                 swipes = mapOf(
                     SwipeDirection.LEFT to KeyC(
                         display = KeyDisplay.TextDisplay("M"),
                         action = KeyAction.CommitText("M"),
-
                     ),
-                    SwipeDirection.BOTTOM_LEFT to KeyC(
-                        display = KeyDisplay.TextDisplay("@"),
-                        action = KeyAction.CommitText("@"),
+                    SwipeDirection.BOTTOM to KeyC(
+                        display = KeyDisplay.IconDisplay(Icons.Outlined.ArrowDropDown),
+                        action = KeyAction.ToggleShiftMode(false),
                         color = ColorVariant.MUTED,
-
-                    ),
-                    SwipeDirection.RIGHT to KeyC(
-                        display = KeyDisplay.TextDisplay(")"),
-                        action = KeyAction.CommitText(")"),
-                        color = ColorVariant.MUTED,
-
                     ),
                     SwipeDirection.TOP to KeyC(
                         display = KeyDisplay.IconDisplay(Icons.Outlined.KeyboardCapslock),
                         capsModeDisplay = KeyDisplay.IconDisplay(Icons.Outlined.Copyright),
                         action = KeyAction.ToggleCapsLock,
-                        color = ColorVariant.MUTED,
-                    ),
-                    SwipeDirection.BOTTOM to KeyC(
-                        display = KeyDisplay.IconDisplay(Icons.Outlined.ArrowDropDown),
-                        action = KeyAction.ToggleShiftMode(false),
                         color = ColorVariant.MUTED,
                     ),
                 ),
@@ -545,21 +395,11 @@ val MESSAGEEASE_DE_SHIFTED = KeyboardC(
                     size = FontSizeVariant.LARGE,
                     color = ColorVariant.PRIMARY,
                 ),
+                swipeType = SwipeNWay.FOUR_WAY_DIAGONAL,
                 swipes = mapOf(
                     SwipeDirection.TOP_RIGHT to KeyC(
                         display = KeyDisplay.TextDisplay("Y"),
                         action = KeyAction.CommitText("Y"),
-                    ),
-                    SwipeDirection.BOTTOM to KeyC(
-                        display = KeyDisplay.TextDisplay("ß"),
-                        action = KeyAction.CommitText("ß"),
-
-                    ),
-                    SwipeDirection.BOTTOM_RIGHT to KeyC(
-                        display = KeyDisplay.TextDisplay("*"),
-                        action = KeyAction.CommitText("*"),
-                        color = ColorVariant.MUTED,
-
                     ),
                 ),
             ),
@@ -575,32 +415,28 @@ val MESSAGEEASE_DE_SHIFTED = KeyboardC(
                         display = KeyDisplay.TextDisplay("W"),
                         action = KeyAction.CommitText("W"),
                     ),
+                    SwipeDirection.TOP_RIGHT to KeyC(
+                        display = KeyDisplay.TextDisplay("'"),
+                        action = KeyAction.CommitText("'"),
+                        color = ColorVariant.MUTED,
+                    ),
                     SwipeDirection.RIGHT to KeyC(
                         display = KeyDisplay.TextDisplay("Z"),
                         action = KeyAction.CommitText("Z"),
-
                     ),
-                    SwipeDirection.TOP_LEFT to KeyC(
-                        display = KeyDisplay.TextDisplay("\""),
-                        action = KeyAction.CommitText("\""),
+                    SwipeDirection.BOTTOM_RIGHT to KeyC(
+                        display = KeyDisplay.TextDisplay("-"),
+                        action = KeyAction.CommitText("-"),
                         color = ColorVariant.MUTED,
-
-                    ),
-                    SwipeDirection.BOTTOM_LEFT to KeyC(
-                        display = KeyDisplay.TextDisplay(","),
-                        action = KeyAction.CommitText(","),
-                        color = ColorVariant.MUTED,
-
                     ),
                     SwipeDirection.BOTTOM to KeyC(
                         display = KeyDisplay.TextDisplay("."),
                         action = KeyAction.CommitText("."),
                         color = ColorVariant.MUTED,
-
                     ),
-                    SwipeDirection.BOTTOM_RIGHT to KeyC(
-                        display = KeyDisplay.TextDisplay(":"),
-                        action = KeyAction.CommitText(":"),
+                    SwipeDirection.BOTTOM_LEFT to KeyC(
+                        display = KeyDisplay.TextDisplay("*"),
+                        action = KeyAction.CommitText("*"),
                         color = ColorVariant.MUTED,
                     ),
                 ),
@@ -616,24 +452,6 @@ val MESSAGEEASE_DE_SHIFTED = KeyboardC(
                     SwipeDirection.TOP_LEFT to KeyC(
                         display = KeyDisplay.TextDisplay("F"),
                         action = KeyAction.CommitText("F"),
-
-                    ),
-                    SwipeDirection.BOTTOM_LEFT to KeyC(
-                        display = KeyDisplay.TextDisplay(";"),
-                        action = KeyAction.CommitText(";"),
-                        color = ColorVariant.MUTED,
-
-                    ),
-                    SwipeDirection.TOP to KeyC(
-                        display = KeyDisplay.TextDisplay("&"),
-                        action = KeyAction.CommitText("&"),
-                        color = ColorVariant.MUTED,
-
-                    ),
-                    SwipeDirection.TOP_RIGHT to KeyC(
-                        display = KeyDisplay.TextDisplay("°"),
-                        action = KeyAction.CommitText("°"),
-                        color = ColorVariant.MUTED,
                     ),
                 ),
             ),
@@ -646,8 +464,8 @@ val MESSAGEEASE_DE_SHIFTED = KeyboardC(
     ),
 )
 
-val MESSAGEEASE_DE_KEYBOARD_MODES: Map<KeyboardMode, KeyboardC> = mapOf(
-    KeyboardMode.MAIN to MESSAGEEASE_DE_MAIN,
-    KeyboardMode.SHIFTED to MESSAGEEASE_DE_SHIFTED,
+val THUMBKEY_ES_EO_V1_KEYBOARD_MODES: Map<KeyboardMode, KeyboardC> = mapOf(
+    KeyboardMode.MAIN to THUMBKEY_ES_EO_V1_MAIN,
+    KeyboardMode.SHIFTED to THUMBKEY_ES_EO_V1_SHIFTED,
     KeyboardMode.NUMERIC to NUMERIC_KEYBOARD,
 )
