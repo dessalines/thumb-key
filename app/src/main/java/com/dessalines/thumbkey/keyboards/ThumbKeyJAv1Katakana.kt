@@ -302,29 +302,10 @@ val THUMBKEY_JA_V1_KATAKANA_SHIFTED = KeyboardC(
         listOf(
             KeyItemC(
                 center = KeyC(
-                    display = KeyDisplay.TextDisplay("マ"),
-                    action = KeyAction.CommitText("マ"),
+                    display = KeyDisplay.TextDisplay("ヴ"),
+                    action = KeyAction.CommitText("ヴ"),
                     size = FontSizeVariant.LARGE,
                     color = ColorVariant.PRIMARY,
-                ),
-                swipeType = SwipeNWay.FOUR_WAY_CROSS,
-                swipes = mapOf(
-                    SwipeDirection.BOTTOM to KeyC(
-                        display = KeyDisplay.TextDisplay("ミ"),
-                        action = KeyAction.CommitText("ミ"),
-                    ),
-                    SwipeDirection.LEFT to KeyC(
-                        display = KeyDisplay.TextDisplay("ム"),
-                        action = KeyAction.CommitText("ム"),
-                    ),
-                    SwipeDirection.TOP to KeyC(
-                        display = KeyDisplay.TextDisplay("メ"),
-                        action = KeyAction.CommitText("メ"),
-                    ),
-                    SwipeDirection.RIGHT to KeyC(
-                        display = KeyDisplay.TextDisplay("モ"),
-                        action = KeyAction.CommitText("モ"),
-                    ),
                 ),
             ),
             KeyItemC(
