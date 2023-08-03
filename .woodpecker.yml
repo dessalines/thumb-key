@@ -1,7 +1,6 @@
 variables:
   - &slow_check_paths
     - path:
-        # rust source code
         - "**/*.kt"
         - "**/*.gradle"
         - ".woodpecker.yml"
