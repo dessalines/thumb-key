@@ -1,9 +1,18 @@
+variables:
+  - &slow_check_paths
+    - path:
+        # rust source code
+        - "**/*.kt"
+        - "**/*.gradle"
+        - ".woodpecker.yml"
+
 pipeline:
   check_formatting:
     image: cimg/android:2023.05
     commands:
       - sudo chown -R circleci:circleci .
       - ./gradlew lintKotlin
+    when: *slow_check_paths
 
   prettier_markdown_check:
     image: tmknom/prettier
@@ -15,6 +24,7 @@ pipeline:
     commands:
       - sudo chown -R circleci:circleci .
       - ./gradlew assembleDebug
+    when: *slow_check_paths
 
   notify:
     image: alpine:3
