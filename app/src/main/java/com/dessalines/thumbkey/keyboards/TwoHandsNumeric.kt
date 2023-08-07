@@ -492,7 +492,7 @@ val TWO_HANDS_NUMERIC_KEYBOARD = KeyboardC(
                         action = KeyAction.CommitText("#"),
                     ),
                 ),
-            ),  
+            ),
         ),
         listOf(
             KeyItemC(
