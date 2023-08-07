@@ -405,9 +405,11 @@ val TWO_HANDS_EN_V1 = KeyboardC(
             ),
         ),
         listOf(
-            SPACEBAR_KEY_ITEM,
             RETURN_KEY_ITEM,
+            BACKSPACE_KEY_ITEM,
             SPACEBAR_KEY_ITEM,
+            BACKSPACE_KEY_ITEM,
+            RETURN_KEY_ITEM,
         ),
     ),
 )
@@ -804,9 +806,11 @@ val TWO_HANDS_EN_V1_SHIFTED = KeyboardC(
             ),
         ),
         listOf(
-            SPACEBAR_KEY_ITEM,
             RETURN_KEY_ITEM,
+            BACKSPACE_KEY_ITEM,
             SPACEBAR_KEY_ITEM,
+            BACKSPACE_KEY_ITEM,
+            RETURN_KEY_ITEM,
         ),
     ),
 )
@@ -814,5 +818,5 @@ val TWO_HANDS_EN_V1_SHIFTED = KeyboardC(
 val TWO_HANDS_EN_V1_KEYBOARD_MODES: Map<KeyboardMode, KeyboardC> = mapOf(
     KeyboardMode.MAIN to TWO_HANDS_EN_V1,
     KeyboardMode.SHIFTED to TWO_HANDS_EN_V1_SHIFTED,
-    KeyboardMode.NUMERIC to NUMERIC_KEYBOARD,
+    KeyboardMode.NUMERIC to TWO_HANDS_NUMERIC_KEYBOARD,
 )
