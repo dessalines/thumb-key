@@ -11,4 +11,4 @@ assignees: ''
 - [ ] Is this only a single feature request? Do not put multiple feature requests in one issue.
 - [ ] Is this a question or discussion? Don't use this, use https://lemmy.ml/c/thumbkey
 
-** Describe the feature request below **
+**Describe the feature request below**
