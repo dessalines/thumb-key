@@ -1,3 +1,17 @@
+# Thumb-Key 1.11.0 (2023-08-03)
+
+## What's Changed
+
+- Add ENv4MultiLayout by @KraXen72 in https://github.com/dessalines/thumb-key/pull/327
+- Numeric layout for type-split. by @mockballed in https://github.com/dessalines/thumb-key/pull/337
+- Add Hebrew layout based on letter position guidelines by @roihershberg in https://github.com/dessalines/thumb-key/pull/335
+
+## New Contributors
+
+- @KraXen72 made their first contribution in https://github.com/dessalines/thumb-key/pull/327
+
+**Full Changelog**: https://github.com/dessalines/thumb-key/compare/1.10.0...1.11.0
+
 # Thumb-Key 1.10.0 (2023-07-27)
 
 ## What's Changed
