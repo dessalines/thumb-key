@@ -7,7 +7,7 @@ assignees: ''
 
 ---
 
-** Thumb-Key Version **
+**Thumb-Key Version**
 Type the version from the settings here.
 
 **Describe the bug**
