@@ -496,5 +496,5 @@ val TYPESPLIT_EN_V2_SHIFTED = KeyboardC(
 val TYPESPLIT_EN_V2_KEYBOARD_MODES: Map<KeyboardMode, KeyboardC> = mapOf(
     KeyboardMode.MAIN to TYPESPLIT_EN_V2,
     KeyboardMode.SHIFTED to TYPESPLIT_EN_V2_SHIFTED,
-    KeyboardMode.NUMERIC to NUMERIC_KEYBOARD,
+    KeyboardMode.NUMERIC to TYPESPLIT_NUMERIC_KEYBOARD,
 )
