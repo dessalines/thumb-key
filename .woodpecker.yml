@@ -5,7 +5,7 @@ variables:
         - "**/*.gradle"
         - ".woodpecker.yml"
 
-pipeline:
+steps:
   check_formatting:
     image: cimg/android:2023.05
     commands:
@@ -29,6 +29,6 @@ pipeline:
     image: alpine:3
     commands:
       - apk add curl
-      - "curl -d'Thumb-Key build ${CI_BUILD_STATUS}: ${CI_BUILD_LINK}' ntfy.sh/thumbkey_ci"
+      - "curl -d'Thumb-Key build ${CI_PIPELINE_STATUS}: ${CI_PIPELINE_URL}' ntfy.sh/thumbkey_ci"
     when:
       status: [failure, success]
