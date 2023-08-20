@@ -278,7 +278,8 @@ val THUMBKEY_CZ_V1_MAIN = KeyboardC(
             RETURN_KEY_ITEM,
         ),
     ),
-)
+))
+
 val THUMBKEY_CZ_V1_SHIFTED = KeyboardC(
     listOf(
         listOf(
@@ -541,7 +542,7 @@ val THUMBKEY_CZ_V1_SHIFTED = KeyboardC(
             RETURN_KEY_ITEM,
         ),
     ),
-)
+))
 
 
 val THUMBKEY_EN_V4_KEYBOARD_MODES: Map<KeyboardMode, KeyboardC> = mapOf(
