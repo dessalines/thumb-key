@@ -182,7 +182,6 @@ val THUMBKEY_CZ_V1_MAIN = KeyboardC(
                     size = FontSizeVariant.LARGE,
                     color = ColorVariant.PRIMARY,
                 ),
-                
                 swipes = mapOf(
                     SwipeDirection.TOP_RIGHT to KeyC(
                         display = KeyDisplay.TextDisplay("c"),
@@ -252,7 +251,6 @@ val THUMBKEY_CZ_V1_MAIN = KeyboardC(
                     size = FontSizeVariant.LARGE,
                     color = ColorVariant.PRIMARY,
                 ),
-                
                 swipes = mapOf(
                     SwipeDirection.TOP_LEFT to KeyC(
                         display = KeyDisplay.TextDisplay("d"),
@@ -276,9 +274,10 @@ val THUMBKEY_CZ_V1_MAIN = KeyboardC(
         listOf(
             SPACEBAR_KEY_ITEM,
             RETURN_KEY_ITEM,
+            ),
         ),
-    ),
-))
+    )
+)
 
 val THUMBKEY_CZ_V1_SHIFTED = KeyboardC(
     listOf(
@@ -446,7 +445,6 @@ val THUMBKEY_CZ_V1_SHIFTED = KeyboardC(
                     size = FontSizeVariant.LARGE,
                     color = ColorVariant.PRIMARY,
                 ),
-                
                 swipes = mapOf(
                     SwipeDirection.TOP_RIGHT to KeyC(
                         display = KeyDisplay.TextDisplay("C"),
@@ -516,7 +514,6 @@ val THUMBKEY_CZ_V1_SHIFTED = KeyboardC(
                     size = FontSizeVariant.LARGE,
                     color = ColorVariant.PRIMARY,
                 ),
-                
                 swipes = mapOf(
                     SwipeDirection.TOP_LEFT to KeyC(
                         display = KeyDisplay.TextDisplay("D"),
@@ -540,9 +537,10 @@ val THUMBKEY_CZ_V1_SHIFTED = KeyboardC(
         listOf(
             SPACEBAR_KEY_ITEM,
             RETURN_KEY_ITEM,
+            ),
         ),
-    ),
-))
+    )
+)
 
 
 val THUMBKEY_EN_V4_KEYBOARD_MODES: Map<KeyboardMode, KeyboardC> = mapOf(
