@@ -262,6 +262,7 @@ val THUMBKEY_CZ_V1_MAIN = KeyboardC(
                         display = KeyDisplay.TextDisplay("é"),
                         action = KeyAction.CommitText("é"),
                     ),
+                ),
                 swipes = mapOf(
                     SwipeDirection.RIGHT to KeyC(
                         display = KeyDisplay.TextDisplay("ď"),
@@ -274,10 +275,10 @@ val THUMBKEY_CZ_V1_MAIN = KeyboardC(
         listOf(
             SPACEBAR_KEY_ITEM,
             RETURN_KEY_ITEM,
-            ),
         ),
-    )
+    ),
 )
+
 val THUMBKEY_CZ_V1_SHIFTED = KeyboardC(
     listOf(
         listOf(
@@ -524,6 +525,7 @@ val THUMBKEY_CZ_V1_SHIFTED = KeyboardC(
                         display = KeyDisplay.TextDisplay("É"),
                         action = KeyAction.CommitText("É"),
                     ),
+                ),
                 swipes = mapOf(
                     SwipeDirection.RIGHT to KeyC(
                         display = KeyDisplay.TextDisplay("Ď"),
@@ -536,10 +538,12 @@ val THUMBKEY_CZ_V1_SHIFTED = KeyboardC(
         listOf(
             SPACEBAR_KEY_ITEM,
             RETURN_KEY_ITEM,
-            ),
         ),
-    )
+    ),
 )
+
+
+
 val THUMBKEY_EN_V4_KEYBOARD_MODES: Map<KeyboardMode, KeyboardC> = mapOf(
     KeyboardMode.MAIN to THUMBKEY_EN_V4_MAIN,
     KeyboardMode.SHIFTED to THUMBKEY_EN_V4_SHIFTED,
