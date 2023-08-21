@@ -41,7 +41,7 @@ val THUMBKEY_GR_V1_MAIN = KeyboardC(
                     size = FontSizeVariant.LARGE,
                     color = ColorVariant.PRIMARY,
                 ),
-                swipeType = SwipeNWay.TWO_WAY_VERTICAL,
+                swipeType = SwipeNWay.FOUR_WAY_CROSS,
                 swipes = mapOf(
                     SwipeDirection.TOP to KeyC(
                         display = KeyDisplay.TextDisplay("ΰ"),
@@ -288,7 +288,7 @@ val THUMBKEY_GR_V1_SHIFTED = KeyboardC(
                     size = FontSizeVariant.LARGE,
                     color = ColorVariant.PRIMARY,
                 ),
-                swipeType = SwipeNWay.TWO_WAY_VERTICAL,
+                swipeType = SwipeNWay.FOUR_WAY_CROSS,
                 swipes = mapOf(
                     SwipeDirection.TOP to KeyC(
                         display = KeyDisplay.TextDisplay("Ϋ́"),
