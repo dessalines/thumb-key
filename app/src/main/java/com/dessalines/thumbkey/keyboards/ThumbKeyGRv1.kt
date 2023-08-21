@@ -68,7 +68,6 @@ val THUMBKEY_GR_V1_MAIN = KeyboardC(
                     size = FontSizeVariant.LARGE,
                     color = ColorVariant.PRIMARY,
                 ),
-                swipeType = SwipeNWay.FOUR_WAY_DIAGONAL,
                 swipes = mapOf(
                     SwipeDirection.TOP to KeyC(
                         display = KeyDisplay.TextDisplay("ΐ"),
@@ -102,11 +101,15 @@ val THUMBKEY_GR_V1_MAIN = KeyboardC(
                     size = FontSizeVariant.LARGE,
                     color = ColorVariant.PRIMARY,
                 ),
-                swipeType = SwipeNWay.TWO_WAY_HORIZONTAL,
+                swipeType = SwipeNWay.FOUR_WAY_CROSS,
                 swipes = mapOf(
                     SwipeDirection.RIGHT to KeyC(
                         display = KeyDisplay.TextDisplay("γ"),
                         action = KeyAction.CommitText("γ"),
+                    ),
+                    SwipeDirection.TOP to KeyC(
+                        display = KeyDisplay.TextDisplay("ς"),
+                        action = KeyAction.CommitText("ς"),
                     ),
                 ),
             ),
@@ -165,7 +168,7 @@ val THUMBKEY_GR_V1_MAIN = KeyboardC(
                         display = KeyDisplay.TextDisplay("ξ"),
                         action = KeyAction.CommitText("ξ"),
                     ),
-                    SwipeDirection.BOTTOM_LEFT to KeyC(
+                    SwipeDirection.RIGHT to KeyC(
                         display = KeyDisplay.TextDisplay("ό"),
                         action = KeyAction.CommitText("ό"),
                     ),
@@ -245,7 +248,7 @@ val THUMBKEY_GR_V1_MAIN = KeyboardC(
                         display = KeyDisplay.TextDisplay("β"),
                         action = KeyAction.CommitText("β"),
                     ),
-                    SwipeDirection.LEFT to KeyC(
+                    SwipeDirection.BOTTOM_LEFT to KeyC(
                         display = KeyDisplay.TextDisplay("ά"),
                         action = KeyAction.CommitText("ά"),
                     ),
@@ -312,7 +315,6 @@ val THUMBKEY_GR_V1_SHIFTED = KeyboardC(
                     size = FontSizeVariant.LARGE,
                     color = ColorVariant.PRIMARY,
                 ),
-                swipeType = SwipeNWay.FOUR_WAY_DIAGONAL,
                 swipes = mapOf(
                     SwipeDirection.TOP to KeyC(
                         display = KeyDisplay.TextDisplay("Ϊ́"),
@@ -409,7 +411,7 @@ val THUMBKEY_GR_V1_SHIFTED = KeyboardC(
                         display = KeyDisplay.TextDisplay("Ξ"),
                         action = KeyAction.CommitText("Ξ"),
                     ),
-                    SwipeDirection.BOTTOM_LEFT to KeyC(
+                    SwipeDirection.RIGHT to KeyC(
                         display = KeyDisplay.TextDisplay("Ό"),
                         action = KeyAction.CommitText("Ό"),
                     ),
@@ -495,7 +497,7 @@ val THUMBKEY_GR_V1_SHIFTED = KeyboardC(
                         display = KeyDisplay.TextDisplay("Β"),
                         action = KeyAction.CommitText("Β"),
                     ),
-                    SwipeDirection.LEFT to KeyC(
+                    SwipeDirection.BOTTOM_LEFT to KeyC(
                         display = KeyDisplay.TextDisplay("Ά"),
                         action = KeyAction.CommitText("Ά"),
                     ),
