@@ -165,7 +165,10 @@ fun LookAndFeelActivity(
                         Text(stringResource(R.string.layouts))
                     },
                     confirmButton = stringResource(R.string.save),
-                    onItemsSelected = { _ ->
+                    onItemsSelected = { saved ->
+                        if (saved.isEmpty()) {
+                            keyboardLayoutsState.value = setOf(keyboardTitleIndexFromRealIndex(DEFAULT_KEYBOARD_LAYOUT))
+                        }
                         updateAppSettings(
                             appSettingsViewModel,
                             keySizeState,
