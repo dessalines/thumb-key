@@ -1,3 +1,29 @@
+# Thumb-Key 1.12.0 (2023-08-23)
+
+## What's Changed
+
+- Adding slow path checks to CI. by @dessalines in https://github.com/dessalines/thumb-key/pull/338
+- Fix markdown in issue templates by @KraXen72 in https://github.com/dessalines/thumb-key/pull/346
+- Added Numeric layout for Two Hands by @Lavin-tom in https://github.com/dessalines/thumb-key/pull/342
+- Fixing woodpecker env vars. by @dessalines in https://github.com/dessalines/thumb-key/pull/347
+- Adding thumbkey EO-EN-DE. Fixes #340 by @dessalines in https://github.com/dessalines/thumb-key/pull/348
+- Added greek layout by @iByteABit256 in https://github.com/dessalines/thumb-key/pull/357
+- created czech layout by @Michael36500 in https://github.com/dessalines/thumb-key/pull/355
+- Add MessagEase spanish layout by @gmartineza in https://github.com/dessalines/thumb-key/pull/336
+- Adding MessageEase RU. Fixes #356 by @dessalines in https://github.com/dessalines/thumb-key/pull/359
+- Upgrading deps. by @dessalines in https://github.com/dessalines/thumb-key/pull/358
+- Fix settings crash 1 by @dessalines in https://github.com/dessalines/thumb-key/pull/360
+- Update TypeSplitESv1.1.kt by @racuna in https://github.com/dessalines/thumb-key/pull/361
+
+## New Contributors
+
+- @iByteABit256 made their first contribution in https://github.com/dessalines/thumb-key/pull/357
+- @Michael36500 made their first contribution in https://github.com/dessalines/thumb-key/pull/355
+- @gmartineza made their first contribution in https://github.com/dessalines/thumb-key/pull/336
+- @racuna made their first contribution in https://github.com/dessalines/thumb-key/pull/361
+
+**Full Changelog**: https://github.com/dessalines/thumb-key/compare/1.11.0...1.12.0
+
 # Thumb-Key 1.11.0 (2023-08-03)
 
 ## What's Changed
