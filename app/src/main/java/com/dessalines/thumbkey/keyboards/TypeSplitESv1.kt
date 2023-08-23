@@ -29,8 +29,9 @@ val TYPESPLIT_ES_V1 = KeyboardC(
                         color = ColorVariant.MUTED,
                     ),
                     SwipeDirection.LEFT to KeyC(
-                        display = null,
-                        action = KeyAction.CommitText("é"),
+                        display = KeyDisplay.TextDisplay("qu"),
+                        action = KeyAction.CommitText("qu"),
+                        color = ColorVariant.MUTED,
                     ),
                     SwipeDirection.BOTTOM to KeyC(
                         display = KeyDisplay.TextDisplay("q"),
@@ -149,6 +150,18 @@ val TYPESPLIT_ES_V1 = KeyboardC(
                     size = FontSizeVariant.LARGE,
                     color = ColorVariant.PRIMARY,
                 ),
+                swipeType = SwipeNWay.TWO_WAY_HORIZONTAL,
+                swipes = mapOf(
+                    SwipeDirection.RIGHT to KeyC(
+                        display = KeyDisplay.TextDisplay("#"),
+                        action = KeyAction.CommitText("#"),
+                        color = ColorVariant.MUTED,
+                    ),
+                    SwipeDirection.LEFT to KeyC(
+                        display = null,
+                        action = KeyAction.CommitText("#"),
+                    ),
+                ),
             ),
             SPACEBAR_TYPESPLIT_MIDDLE_KEY_ITEM,
             KeyItemC(
@@ -239,6 +252,10 @@ val TYPESPLIT_ES_V1 = KeyboardC(
                         display = KeyDisplay.TextDisplay("v"),
                         action = KeyAction.CommitText("v"),
                     ),
+                    SwipeDirection.TOP to KeyC(
+                        display = KeyDisplay.TextDisplay("\""),
+                        action = KeyAction.CommitText("\""),
+                    ),
                 ),
             ),
             SPACEBAR_TYPESPLIT_BOTTOM_KEY_ITEM,
@@ -326,8 +343,9 @@ val TYPESPLIT_ES_V1_SHIFTED = KeyboardC(
                         color = ColorVariant.MUTED,
                     ),
                     SwipeDirection.LEFT to KeyC(
-                        display = null,
-                        action = KeyAction.CommitText("É"),
+                        display = KeyDisplay.TextDisplay("Qu"),
+                        action = KeyAction.CommitText("Qu"),
+                        color = ColorVariant.MUTED,
                     ),
                     SwipeDirection.BOTTOM to KeyC(
                         display = KeyDisplay.TextDisplay("Q"),
@@ -446,6 +464,18 @@ val TYPESPLIT_ES_V1_SHIFTED = KeyboardC(
                     size = FontSizeVariant.LARGE,
                     color = ColorVariant.PRIMARY,
                 ),
+                swipeType = SwipeNWay.TWO_WAY_HORIZONTAL,
+                swipes = mapOf(
+                    SwipeDirection.RIGHT to KeyC(
+                        display = KeyDisplay.TextDisplay("#"),
+                        action = KeyAction.CommitText("#"),
+                        color = ColorVariant.MUTED,
+                    ),
+                    SwipeDirection.LEFT to KeyC(
+                        display = null,
+                        action = KeyAction.CommitText("#"),
+                    ),
+                ),
             ),
             SPACEBAR_TYPESPLIT_MIDDLE_KEY_ITEM,
             KeyItemC(
@@ -535,6 +565,10 @@ val TYPESPLIT_ES_V1_SHIFTED = KeyboardC(
                     SwipeDirection.BOTTOM to KeyC(
                         display = KeyDisplay.TextDisplay("V"),
                         action = KeyAction.CommitText("V"),
+                    ),
+                    SwipeDirection.TOP to KeyC(
+                        display = KeyDisplay.TextDisplay("\""),
+                        action = KeyAction.CommitText("\""),
                     ),
                 ),
             ),
