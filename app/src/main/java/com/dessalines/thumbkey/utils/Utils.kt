@@ -41,6 +41,7 @@ import com.dessalines.thumbkey.keyboards.MESSAGEEASE_RU_SYMBOLS_KEYBOARD_MODES
 import com.dessalines.thumbkey.keyboards.T9_V1_KEYBOARD_MODES
 import com.dessalines.thumbkey.keyboards.THUMBKEY_BY_V1_KEYBOARD_MODES
 import com.dessalines.thumbkey.keyboards.THUMBKEY_BY_V1_SYMBOLS_KEYBOARD_MODES
+import com.dessalines.thumbkey.keyboards.THUMBKEY_CZ_V1_KEYBOARD_MODES
 import com.dessalines.thumbkey.keyboards.THUMBKEY_DA_V1_KEYBOARD_MODES
 import com.dessalines.thumbkey.keyboards.THUMBKEY_DE_V2_KEYBOARD_MODES
 import com.dessalines.thumbkey.keyboards.THUMBKEY_DE_V2_MULTILINGUAL_KEYBOARD_MODES
@@ -57,6 +58,7 @@ import com.dessalines.thumbkey.keyboards.THUMBKEY_FI_V1_KEYBOARD_MODES
 import com.dessalines.thumbkey.keyboards.THUMBKEY_FI_V1_WIDE_KEYBOARD_MODES
 import com.dessalines.thumbkey.keyboards.THUMBKEY_FR_V1_KEYBOARD_MODES
 import com.dessalines.thumbkey.keyboards.THUMBKEY_FR_V2_KEYBOARD_MODES
+import com.dessalines.thumbkey.keyboards.THUMBKEY_GR_V1_KEYBOARD_MODES
 import com.dessalines.thumbkey.keyboards.THUMBKEY_HE_V1_KEYBOARD_MODES
 import com.dessalines.thumbkey.keyboards.THUMBKEY_HU_V1_KEYBOARD_MODES
 import com.dessalines.thumbkey.keyboards.THUMBKEY_ID_V1_SYMBOLS_KEYBOARD_MODES
@@ -126,6 +128,7 @@ fun keyboardLayoutToModes(layout: KeyboardLayout): Map<KeyboardMode, KeyboardC> 
         KeyboardLayout.ThumbKeyFIv1 -> THUMBKEY_FI_V1_KEYBOARD_MODES
         KeyboardLayout.ThumbKeyFIv1Wide -> THUMBKEY_FI_V1_WIDE_KEYBOARD_MODES
         KeyboardLayout.ThumbKeyFRv1 -> THUMBKEY_FR_V1_KEYBOARD_MODES
+        KeyboardLayout.ThumbKeyGRv1 -> THUMBKEY_GR_V1_KEYBOARD_MODES
         KeyboardLayout.ThumbKeyITv1 -> THUMBKEY_IT_V1_KEYBOARD_MODES
         KeyboardLayout.ThumbKeyNLv1 -> THUMBKEY_NL_V1_KEYBOARD_MODES
         KeyboardLayout.ThumbKeyPLv2 -> THUMBKEY_PL_V2_KEYBOARD_MODES
@@ -167,6 +170,7 @@ fun keyboardLayoutToModes(layout: KeyboardLayout): Map<KeyboardMode, KeyboardC> 
         KeyboardLayout.MessageEaseIT -> MESSAGEEASE_IT_KEYBOARD_MODES
         KeyboardLayout.ThumbKeyHEv1 -> THUMBKEY_HE_V1_KEYBOARD_MODES
         KeyboardLayout.ThumbKeyEOENDEv1 -> THUMBKEY_EOENDE_KEYBOARD_MODES
+        KeyboardLayout.ThumbKeyCZv1 -> THUMBKEY_CZ_V1_KEYBOARD_MODES
     }
 }
 
