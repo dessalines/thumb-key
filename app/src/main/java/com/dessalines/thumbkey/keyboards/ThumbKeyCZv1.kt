@@ -253,14 +253,10 @@ val THUMBKEY_CZ_V1_MAIN = KeyboardC(
                         display = KeyDisplay.TextDisplay("d"),
                         action = KeyAction.CommitText("d"),
                     ),
-                ),
-                swipes = mapOf(
                     SwipeDirection.TOP to KeyC(
                         display = KeyDisplay.TextDisplay("é"),
                         action = KeyAction.CommitText("é"),
                     ),
-                ),
-                swipes = mapOf(
                     SwipeDirection.RIGHT to KeyC(
                         display = KeyDisplay.TextDisplay("ď"),
                         action = KeyAction.CommitText("ď"),
@@ -516,14 +512,10 @@ val THUMBKEY_CZ_V1_SHIFTED = KeyboardC(
                         display = KeyDisplay.TextDisplay("D"),
                         action = KeyAction.CommitText("D"),
                     ),
-                ),
-                swipes = mapOf(
                     SwipeDirection.TOP to KeyC(
                         display = KeyDisplay.TextDisplay("É"),
                         action = KeyAction.CommitText("É"),
                     ),
-                ),
-                swipes = mapOf(
                     SwipeDirection.RIGHT to KeyC(
                         display = KeyDisplay.TextDisplay("Ď"),
                         action = KeyAction.CommitText("Ď"),
@@ -539,8 +531,8 @@ val THUMBKEY_CZ_V1_SHIFTED = KeyboardC(
     ),
 )
 
-val THUMBKEY_EN_V4_KEYBOARD_MODES: Map<KeyboardMode, KeyboardC> = mapOf(
-    KeyboardMode.MAIN to THUMBKEY_EN_V4_MAIN,
-    KeyboardMode.SHIFTED to THUMBKEY_EN_V4_SHIFTED,
+val THUMBKEY_CZ_V1_KEYBOARD_MODES: Map<KeyboardMode, KeyboardC> = mapOf(
+    KeyboardMode.MAIN to THUMBKEY_CZ_V1_MAIN,
+    KeyboardMode.SHIFTED to THUMBKEY_CZ_V1_SHIFTED,
     KeyboardMode.NUMERIC to NUMERIC_KEYBOARD,
 )
