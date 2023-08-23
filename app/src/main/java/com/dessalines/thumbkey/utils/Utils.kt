@@ -32,8 +32,8 @@ import com.dessalines.thumbkey.R
 import com.dessalines.thumbkey.db.DEFAULT_KEYBOARD_LAYOUT
 import com.dessalines.thumbkey.keyboards.MESSAGEEASE_DE_KEYBOARD_MODES
 import com.dessalines.thumbkey.keyboards.MESSAGEEASE_EN_KEYBOARD_MODES
-import com.dessalines.thumbkey.keyboards.MESSAGEEASE_ES_KEYBOARD_MODES
 import com.dessalines.thumbkey.keyboards.MESSAGEEASE_EN_SYMBOLS_KEYBOARD_MODES
+import com.dessalines.thumbkey.keyboards.MESSAGEEASE_ES_KEYBOARD_MODES
 import com.dessalines.thumbkey.keyboards.MESSAGEEASE_FR_KEYBOARD_MODES
 import com.dessalines.thumbkey.keyboards.MESSAGEEASE_HE_KEYBOARD_MODES
 import com.dessalines.thumbkey.keyboards.MESSAGEEASE_IT_KEYBOARD_MODES
