@@ -33,6 +33,7 @@ import com.dessalines.thumbkey.db.DEFAULT_KEYBOARD_LAYOUT
 import com.dessalines.thumbkey.keyboards.MESSAGEEASE_DE_KEYBOARD_MODES
 import com.dessalines.thumbkey.keyboards.MESSAGEEASE_EN_KEYBOARD_MODES
 import com.dessalines.thumbkey.keyboards.MESSAGEEASE_EN_SYMBOLS_KEYBOARD_MODES
+import com.dessalines.thumbkey.keyboards.MESSAGEEASE_ES_KEYBOARD_MODES
 import com.dessalines.thumbkey.keyboards.MESSAGEEASE_FR_KEYBOARD_MODES
 import com.dessalines.thumbkey.keyboards.MESSAGEEASE_HE_KEYBOARD_MODES
 import com.dessalines.thumbkey.keyboards.MESSAGEEASE_IT_KEYBOARD_MODES
@@ -135,6 +136,7 @@ fun keyboardLayoutToModes(layout: KeyboardLayout): Map<KeyboardMode, KeyboardC> 
         KeyboardLayout.ThumbKeyRUv2 -> THUMBKEY_RU_V2_KEYBOARD_MODES
         KeyboardLayout.ThumbKeyUKv1 -> THUMBKEY_UK_V1_KEYBOARD_MODES
         KeyboardLayout.MessageEaseEN -> MESSAGEEASE_EN_KEYBOARD_MODES
+        KeyboardLayout.MessageEaseES -> MESSAGEEASE_ES_KEYBOARD_MODES
         KeyboardLayout.MessageEaseENSymbols -> MESSAGEEASE_EN_SYMBOLS_KEYBOARD_MODES
         KeyboardLayout.MessageEaseHE -> MESSAGEEASE_HE_KEYBOARD_MODES
         KeyboardLayout.ThumbKeyENv4Symbols -> THUMBKEY_EN_V4_SYMBOLS_KEYBOARD_MODES
