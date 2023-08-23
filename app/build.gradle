@@ -5,12 +5,12 @@ plugins {
 }
 
 android {
-    compileSdk 33
+    compileSdk 34
 
     defaultConfig {
         applicationId "com.dessalines.thumbkey"
         minSdk 21
-        targetSdk 33
+        targetSdkVersion 34
         versionCode 28
         versionName "1.11.0"
 
