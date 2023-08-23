@@ -127,7 +127,7 @@ enum class KeyboardLayout(val title: String, val index: Int) {
     ThumbKeyJAv1Hiragana("Thumb-Key japanese Hiragana v1", 31),
     ThumbKeyJAv1Katakana("Thumb-Key japanese Katakana v1", 32),
     ThumbKeyFRv2("Thumb-Key français v2", 33),
-    ThumbKeySVv1("Thumb-Key svenska v1", 32),
+    ThumbKeySVv1("Thumb-Key svenska v1", 34),
     ThumbKeyTRv1("Thumb-Key Türkçe v1", 35),
     TypeSplitENv2("Type-Split english v2", 36),
     TypeSplitESv1("Type-Split español v1", 37),
