@@ -10,7 +10,7 @@ steps:
     image: tmknom/prettier
     commands:
       - prettier -c "*.md" "*.yml"
-      
+
   check_formatting:
     image: cimg/android:2023.08
     commands:
@@ -19,7 +19,7 @@ steps:
     when: *slow_check_paths
     environment:
       GRADLE_USER_HOME: ".gradle"
-      
+
   build_project:
     image: cimg/android:2023.08
     commands:
