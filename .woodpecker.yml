@@ -6,24 +6,28 @@ variables:
         - ".woodpecker.yml"
 
 steps:
+  prettier_markdown_check:
+    image: tmknom/prettier
+    commands:
+      - prettier -c "*.md" "*.yml"
+      
   check_formatting:
     image: cimg/android:2023.08
     commands:
       - sudo chown -R circleci:circleci .
       - ./gradlew lintKotlin
     when: *slow_check_paths
-
-  prettier_markdown_check:
-    image: tmknom/prettier
-    commands:
-      - prettier -c "*.md" "*.yml"
-
+    environment:
+      GRADLE_USER_HOME: ".gradle"
+      
   build_project:
     image: cimg/android:2023.08
     commands:
       - sudo chown -R circleci:circleci .
       - ./gradlew assembleDebug
     when: *slow_check_paths
+    environment:
+      GRADLE_USER_HOME: ".gradle"
 
   notify:
     image: alpine:3
