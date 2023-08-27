@@ -40,6 +40,7 @@ import com.dessalines.thumbkey.keyboards.MESSAGEEASE_IT_KEYBOARD_MODES
 import com.dessalines.thumbkey.keyboards.MESSAGEEASE_RU_KEYBOARD_MODES
 import com.dessalines.thumbkey.keyboards.MESSAGEEASE_RU_SYMBOLS_KEYBOARD_MODES
 import com.dessalines.thumbkey.keyboards.T9_V1_KEYBOARD_MODES
+import com.dessalines.thumbkey.keyboards.THUMBKEY_BG_V1_SYMBOLS_KEYBOARD_MODES
 import com.dessalines.thumbkey.keyboards.THUMBKEY_BY_V1_KEYBOARD_MODES
 import com.dessalines.thumbkey.keyboards.THUMBKEY_BY_V1_SYMBOLS_KEYBOARD_MODES
 import com.dessalines.thumbkey.keyboards.THUMBKEY_CZ_V1_KEYBOARD_MODES
@@ -173,6 +174,7 @@ fun keyboardLayoutToModes(layout: KeyboardLayout): Map<KeyboardMode, KeyboardC> 
         KeyboardLayout.ThumbKeyEOENDEv1 -> THUMBKEY_EOENDE_KEYBOARD_MODES
         KeyboardLayout.ThumbKeyCZv1 -> THUMBKEY_CZ_V1_KEYBOARD_MODES
         KeyboardLayout.MessageEaseRU -> MESSAGEEASE_RU_KEYBOARD_MODES
+        KeyboardLayout.ThumbKeyBGv1Symbols -> THUMBKEY_BG_V1_SYMBOLS_KEYBOARD_MODES
     }
 }
 
