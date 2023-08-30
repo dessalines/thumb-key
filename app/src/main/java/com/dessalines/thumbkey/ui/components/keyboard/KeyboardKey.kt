@@ -363,7 +363,7 @@ fun KeyText(key: KeyC, keySize: Dp, hideLetters: Boolean, capsLock: Boolean) {
         }
         is KeyDisplay.TextDisplay -> {
             // Only  hide the letters for text, not symbols
-            if (!hideLetters) {
+            if ((!hideLetters) || (display.text.any { !it.isLetter() })) {
                 Text(
                     text = display.text,
                     fontWeight = FontWeight.Bold,
