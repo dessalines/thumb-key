@@ -58,6 +58,7 @@ import com.dessalines.thumbkey.db.DEFAULT_ANIMATION_HELPER_SPEED
 import com.dessalines.thumbkey.db.DEFAULT_ANIMATION_SPEED
 import com.dessalines.thumbkey.db.DEFAULT_AUTO_CAPITALIZE
 import com.dessalines.thumbkey.db.DEFAULT_HIDE_LETTERS
+import com.dessalines.thumbkey.db.DEFAULT_HIDE_SYMBOLS
 import com.dessalines.thumbkey.db.DEFAULT_KEYBOARD_LAYOUT
 import com.dessalines.thumbkey.db.DEFAULT_KEY_BORDERS
 import com.dessalines.thumbkey.db.DEFAULT_KEY_SIZE
@@ -121,6 +122,9 @@ fun LookAndFeelActivity(
     val hideLettersState = rememberBooleanSettingState(
         ((settings?.hideLetters ?: DEFAULT_HIDE_LETTERS).toBool()),
     )
+    val hideSymbolsState = rememberBooleanSettingState(
+        ((settings?.hideSymbols ?: DEFAULT_HIDE_SYMBOLS).toBool()),
+    )
 
     val keyboardLayoutsState = rememberIntSetSettingState(
         keyboardLayoutsSetFromTitleIndex(settings?.keyboardLayouts),
@@ -183,6 +187,7 @@ fun LookAndFeelActivity(
                             vibrateOnTapState,
                             soundOnTapState,
                             hideLettersState,
+                            hideSymbolsState,
                             keyboardLayoutsState,
                             themeState,
                             themeColorState,
@@ -217,6 +222,7 @@ fun LookAndFeelActivity(
                             vibrateOnTapState,
                             soundOnTapState,
                             hideLettersState,
+                            hideSymbolsState,
                             keyboardLayoutsState,
                             themeState,
                             themeColorState,
@@ -251,6 +257,7 @@ fun LookAndFeelActivity(
                             vibrateOnTapState,
                             soundOnTapState,
                             hideLettersState,
+                            hideSymbolsState,
                             keyboardLayoutsState,
                             themeState,
                             themeColorState,
@@ -285,6 +292,7 @@ fun LookAndFeelActivity(
                             vibrateOnTapState,
                             soundOnTapState,
                             hideLettersState,
+                            hideSymbolsState,
                             keyboardLayoutsState,
                             themeState,
                             themeColorState,
@@ -317,6 +325,7 @@ fun LookAndFeelActivity(
                             vibrateOnTapState,
                             soundOnTapState,
                             hideLettersState,
+                            hideSymbolsState,
                             keyboardLayoutsState,
                             themeState,
                             themeColorState,
@@ -349,6 +358,7 @@ fun LookAndFeelActivity(
                             vibrateOnTapState,
                             soundOnTapState,
                             hideLettersState,
+                            hideSymbolsState,
                             keyboardLayoutsState,
                             themeState,
                             themeColorState,
@@ -381,6 +391,40 @@ fun LookAndFeelActivity(
                             vibrateOnTapState,
                             soundOnTapState,
                             hideLettersState,
+                            hideSymbolsState,
+                            keyboardLayoutsState,
+                            themeState,
+                            themeColorState,
+                        )
+                    },
+                )
+                SettingsCheckbox(
+                    state = hideSymbolsState,
+                    icon = {
+                        Icon(
+                            imageVector = Icons.Outlined.HideImage,
+                            contentDescription = stringResource(R.string.hide_symbols),
+                        )
+                    },
+                    title = {
+                        Text(stringResource(R.string.hide_symbols))
+                    },
+                    onCheckedChange = {
+                        updateAppSettings(
+                            appSettingsViewModel,
+                            keySizeState,
+                            pushupSizeState,
+                            animationSpeedState,
+                            animationHelperSpeedState,
+                            minSwipeLengthState,
+                            positionState,
+                            autoCapitalizeState,
+                            spacebarMultiTapsState,
+                            keyBordersState,
+                            vibrateOnTapState,
+                            soundOnTapState,
+                            hideLettersState,
+                            hideSymbolsState,
                             keyboardLayoutsState,
                             themeState,
                             themeColorState,
@@ -413,6 +457,7 @@ fun LookAndFeelActivity(
                             vibrateOnTapState,
                             soundOnTapState,
                             hideLettersState,
+                            hideSymbolsState,
                             keyboardLayoutsState,
                             themeState,
                             themeColorState,
@@ -445,6 +490,7 @@ fun LookAndFeelActivity(
                             vibrateOnTapState,
                             soundOnTapState,
                             hideLettersState,
+                            hideSymbolsState,
                             keyboardLayoutsState,
                             themeState,
                             themeColorState,
@@ -477,6 +523,7 @@ fun LookAndFeelActivity(
                             vibrateOnTapState,
                             soundOnTapState,
                             hideLettersState,
+                            hideSymbolsState,
                             keyboardLayoutsState,
                             themeState,
                             themeColorState,
@@ -511,6 +558,7 @@ fun LookAndFeelActivity(
                             vibrateOnTapState,
                             soundOnTapState,
                             hideLettersState,
+                            hideSymbolsState,
                             keyboardLayoutsState,
                             themeState,
                             themeColorState,
@@ -545,6 +593,7 @@ fun LookAndFeelActivity(
                             vibrateOnTapState,
                             soundOnTapState,
                             hideLettersState,
+                            hideSymbolsState,
                             keyboardLayoutsState,
                             themeState,
                             themeColorState,
@@ -579,6 +628,7 @@ fun LookAndFeelActivity(
                             vibrateOnTapState,
                             soundOnTapState,
                             hideLettersState,
+                            hideSymbolsState,
                             keyboardLayoutsState,
                             themeState,
                             themeColorState,
@@ -613,6 +663,7 @@ fun LookAndFeelActivity(
                             vibrateOnTapState,
                             soundOnTapState,
                             hideLettersState,
+                            hideSymbolsState,
                             keyboardLayoutsState,
                             themeState,
                             themeColorState,
@@ -652,6 +703,7 @@ fun LookAndFeelActivity(
                             vibrateOnTapState,
                             soundOnTapState,
                             hideLettersState,
+                            hideSymbolsState,
                             keyboardLayoutsState,
                             themeState,
                             themeColorState,
@@ -683,6 +735,7 @@ fun LookAndFeelActivity(
                             vibrateOnTapState,
                             soundOnTapState,
                             hideLettersState,
+                            hideSymbolsState,
                             keyboardLayoutsState,
                             themeState,
                             themeColorState,
@@ -716,6 +769,7 @@ private fun updateAppSettings(
     vibrateOnTapState: SettingValueState<Boolean>,
     soundOnTapState: SettingValueState<Boolean>,
     hideLettersState: SettingValueState<Boolean>,
+    hideSymbolsState: SettingValueState<Boolean>,
     keyboardLayoutsState: SettingValueState<Set<Int>>,
     themeState: SettingValueState<Int>,
     themeColorState: SettingValueState<Int>,
@@ -735,6 +789,7 @@ private fun updateAppSettings(
             vibrateOnTap = vibrateOnTapState.value.toInt(),
             soundOnTap = soundOnTapState.value.toInt(),
             hideLetters = hideLettersState.value.toInt(),
+            hideSymbols = hideSymbolsState.value.toInt(),
             keyboardLayout = keyboardRealIndexFromTitleIndex(keyboardLayoutsState.value.first()), // Set
             // the current to the first
             keyboardLayouts = keyboardLayoutsState.value.map { keyboardRealIndexFromTitleIndex(it) }
@@ -760,6 +815,7 @@ private fun resetAppSettingsToDefault(
     vibrateOnTapState: SettingValueState<Boolean>,
     soundOnTapState: SettingValueState<Boolean>,
     hideLettersState: SettingValueState<Boolean>,
+    hideSymbolsState: SettingValueState<Boolean>,
     keyboardLayoutsState: SettingValueState<Set<Int>>,
     themeState: SettingValueState<Int>,
     themeColorState: SettingValueState<Int>,
@@ -794,6 +850,7 @@ private fun resetAppSettingsToDefault(
         vibrateOnTapState,
         soundOnTapState,
         hideLettersState,
+        hideSymbolsState,
         keyboardLayoutsState,
         themeState,
         themeColorState,

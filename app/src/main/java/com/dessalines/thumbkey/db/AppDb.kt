@@ -35,6 +35,7 @@ const val DEFAULT_SOUND_ON_TAP = 0
 const val DEFAULT_MIN_SWIPE_LENGTH = 40
 const val DEFAULT_PUSHUP_SIZE = 0
 const val DEFAULT_HIDE_LETTERS = 0
+const val DEFAULT_HIDE_SYMBOLS = 0
 const val DEFAULT_KEY_BORDERS = 1
 const val DEFAULT_SPACEBAR_MULTITAPS = 1
 
@@ -113,6 +114,11 @@ data class AppSettings(
         defaultValue = DEFAULT_HIDE_LETTERS.toString(),
     )
     val hideLetters: Int,
+    @ColumnInfo(
+        name = "hide_symbols",
+        defaultValue = DEFAULT_HIDE_SYMBOLS.toString(),
+    )
+    val hideSymbols: Int,
     @ColumnInfo(
         name = "keyboard_layouts",
         defaultValue = "$DEFAULT_KEYBOARD_LAYOUT",
