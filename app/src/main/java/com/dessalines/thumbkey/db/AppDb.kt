@@ -115,11 +115,6 @@ data class AppSettings(
     )
     val hideLetters: Int,
     @ColumnInfo(
-        name = "hide_symbols",
-        defaultValue = DEFAULT_HIDE_SYMBOLS.toString(),
-    )
-    val hideSymbols: Int,
-    @ColumnInfo(
         name = "keyboard_layouts",
         defaultValue = "$DEFAULT_KEYBOARD_LAYOUT",
     )
@@ -134,6 +129,11 @@ data class AppSettings(
         defaultValue = DEFAULT_SPACEBAR_MULTITAPS.toString(),
     )
     val spacebarMultiTaps: Int,
+    @ColumnInfo(
+        name = "hide_symbols",
+        defaultValue = DEFAULT_HIDE_SYMBOLS.toString(),
+    )
+    val hideSymbols: Int,
 )
 
 @Dao
@@ -211,6 +211,14 @@ val MIGRATION_6_7 = object : Migration(6, 7) {
     override fun migrate(database: SupportSQLiteDatabase) {
         database.execSQL(
             "alter table AppSettings add column spacebar_multitaps INTEGER NOT NULL default $DEFAULT_SPACEBAR_MULTITAPS",
+        )
+    }
+}
+
+val MIGRATION_7_8 = object : Migration(7, 8) {
+    override fun migrate(database: SupportSQLiteDatabase) {
+        database.execSQL(
+            "alter table AppSettings add column hide_symbols BOOLEAN NOT NULL default $DEFAULT_HIDE_SYMBOLS",
         )
     }
 }
