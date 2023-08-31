@@ -14,7 +14,6 @@ import com.dessalines.thumbkey.utils.KeyItemC
 import com.dessalines.thumbkey.utils.KeyboardC
 import com.dessalines.thumbkey.utils.KeyboardMode
 import com.dessalines.thumbkey.utils.SwipeDirection
-import com.dessalines.thumbkey.utils.SwipeNWay
 
 // Adds more punctuation options to the main screen to reduce switches to the numeric keyboard
 val THUMBKEY_BG_V1_SYMBOLS = KeyboardC(
