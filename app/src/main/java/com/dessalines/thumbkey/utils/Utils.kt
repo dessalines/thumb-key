@@ -84,6 +84,7 @@ import com.dessalines.thumbkey.keyboards.TWO_HANDS_HR_V1_KEYBOARD_MODES
 import com.dessalines.thumbkey.keyboards.TYPESPLIT_DE_V1_KEYBOARD_MODES
 import com.dessalines.thumbkey.keyboards.TYPESPLIT_EN_V2_KEYBOARD_MODES
 import com.dessalines.thumbkey.keyboards.TYPESPLIT_ES_V1_KEYBOARD_MODES
+import com.dessalines.thumbkey.keyboards.TYPESPLIT_FI_V1_KEYBOARD_MODES
 import com.dessalines.thumbkey.keyboards.TYPESPLIT_FR_V1_KEYBOARD_MODES
 import com.dessalines.thumbkey.keyboards.TYPESPLIT_IT_V1_KEYBOARD_MODES
 import com.dessalines.thumbkey.keyboards.TYPESPLIT_PL_V1_KEYBOARD_MODES
@@ -181,6 +182,7 @@ fun keyboardLayoutToModes(layout: KeyboardLayout): Map<KeyboardMode, KeyboardC> 
         KeyboardLayout.TwoHandsHRv1 -> TWO_HANDS_HR_V1_KEYBOARD_MODES
         KeyboardLayout.ThumbKeyHRv1 -> THUMBKEY_HR_V1_KEYBOARD_MODES
         KeyboardLayout.ThumbKeyHRv1Symbols -> THUMBKEY_HR_V1_SYMBOLS_KEYBOARD_MODES
+        KeyboardLayout.TypeSplitFIv1 -> TYPESPLIT_FI_V1_KEYBOARD_MODES
     }
 }
 
