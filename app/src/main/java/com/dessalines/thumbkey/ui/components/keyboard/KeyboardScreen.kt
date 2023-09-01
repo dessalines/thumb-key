@@ -20,6 +20,7 @@ import com.dessalines.thumbkey.db.DEFAULT_ANIMATION_HELPER_SPEED
 import com.dessalines.thumbkey.db.DEFAULT_ANIMATION_SPEED
 import com.dessalines.thumbkey.db.DEFAULT_AUTO_CAPITALIZE
 import com.dessalines.thumbkey.db.DEFAULT_HIDE_LETTERS
+import com.dessalines.thumbkey.db.DEFAULT_HIDE_SYMBOLS
 import com.dessalines.thumbkey.db.DEFAULT_KEYBOARD_LAYOUT
 import com.dessalines.thumbkey.db.DEFAULT_KEY_BORDERS
 import com.dessalines.thumbkey.db.DEFAULT_KEY_SIZE
@@ -86,6 +87,7 @@ fun KeyboardScreen(
     val vibrateOnTap = (settings?.vibrateOnTap ?: DEFAULT_VIBRATE_ON_TAP).toBool()
     val soundOnTap = (settings?.soundOnTap ?: DEFAULT_SOUND_ON_TAP).toBool()
     val hideLetters = (settings?.hideLetters ?: DEFAULT_HIDE_LETTERS).toBool()
+    val hideSymbols = (settings?.hideSymbols ?: DEFAULT_HIDE_SYMBOLS).toBool()
 
     Box(
         contentAlignment = alignment,
@@ -110,6 +112,7 @@ fun KeyboardScreen(
                                 vibrateOnTap = vibrateOnTap,
                                 soundOnTap = soundOnTap,
                                 hideLetters = hideLetters,
+                                hideSymbols = hideSymbols,
                                 capsLock = capsLock,
                                 animationSpeed = settings?.animationSpeed
                                     ?: DEFAULT_ANIMATION_SPEED,

@@ -35,6 +35,7 @@ const val DEFAULT_SOUND_ON_TAP = 0
 const val DEFAULT_MIN_SWIPE_LENGTH = 40
 const val DEFAULT_PUSHUP_SIZE = 0
 const val DEFAULT_HIDE_LETTERS = 0
+const val DEFAULT_HIDE_SYMBOLS = 0
 const val DEFAULT_KEY_BORDERS = 1
 const val DEFAULT_SPACEBAR_MULTITAPS = 1
 
@@ -128,6 +129,11 @@ data class AppSettings(
         defaultValue = DEFAULT_SPACEBAR_MULTITAPS.toString(),
     )
     val spacebarMultiTaps: Int,
+    @ColumnInfo(
+        name = "hide_symbols",
+        defaultValue = DEFAULT_HIDE_SYMBOLS.toString(),
+    )
+    val hideSymbols: Int,
 )
 
 @Dao
@@ -209,8 +215,16 @@ val MIGRATION_6_7 = object : Migration(6, 7) {
     }
 }
 
+val MIGRATION_7_8 = object : Migration(7, 8) {
+    override fun migrate(database: SupportSQLiteDatabase) {
+        database.execSQL(
+            "alter table AppSettings add column hide_symbols INTEGER NOT NULL default $DEFAULT_HIDE_SYMBOLS",
+        )
+    }
+}
+
 @Database(
-    version = 7,
+    version = 8,
     entities = [AppSettings::class],
     exportSchema = true,
 )
@@ -240,6 +254,7 @@ abstract class AppDB : RoomDatabase() {
                         MIGRATION_4_5,
                         MIGRATION_5_6,
                         MIGRATION_6_7,
+                        MIGRATION_7_8,
                     )
                     // Necessary because it can't insert data on creation
                     .addCallback(object : Callback() {

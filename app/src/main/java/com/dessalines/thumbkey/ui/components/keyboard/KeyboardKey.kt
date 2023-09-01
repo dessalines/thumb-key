@@ -64,6 +64,7 @@ fun KeyboardKey(
     vibrateOnTap: Boolean,
     soundOnTap: Boolean,
     hideLetters: Boolean,
+    hideSymbols: Boolean,
     capsLock: Boolean,
     keySize: Int,
     minSwipeLength: Int,
@@ -212,7 +213,7 @@ fun KeyboardKey(
                 .padding(horizontal = keyPadding),
         ) {
             key.swipes?.get(SwipeDirection.TOP_LEFT)?.let {
-                KeyText(it, keySizeDp, hideLetters, capsLock)
+                KeyText(it, keySizeDp, hideLetters, hideSymbols, capsLock)
             }
         }
         Box(
@@ -222,7 +223,7 @@ fun KeyboardKey(
                 .padding(horizontal = keyPadding),
         ) {
             key.swipes?.get(SwipeDirection.TOP)?.let {
-                KeyText(it, keySizeDp, hideLetters, capsLock)
+                KeyText(it, keySizeDp, hideLetters, hideSymbols, capsLock)
             }
         }
         Box(
@@ -232,7 +233,7 @@ fun KeyboardKey(
                 .padding(horizontal = keyPadding),
         ) {
             key.swipes?.get(SwipeDirection.TOP_RIGHT)?.let {
-                KeyText(it, keySizeDp, hideLetters, capsLock)
+                KeyText(it, keySizeDp, hideLetters, hideSymbols, capsLock)
             }
         }
         Box(
@@ -242,7 +243,7 @@ fun KeyboardKey(
                 .padding(horizontal = keyPadding),
         ) {
             key.swipes?.get(SwipeDirection.LEFT)?.let {
-                KeyText(it, keySizeDp, hideLetters, capsLock)
+                KeyText(it, keySizeDp, hideLetters, hideSymbols, capsLock)
             }
         }
         Box(
@@ -251,7 +252,7 @@ fun KeyboardKey(
                 .fillMaxSize()
                 .padding(horizontal = keyPadding),
         ) {
-            KeyText(key.center, keySizeDp, hideLetters, capsLock)
+            KeyText(key.center, keySizeDp, hideLetters, hideSymbols, capsLock)
         }
 
         Box(
@@ -261,7 +262,7 @@ fun KeyboardKey(
                 .padding(horizontal = keyPadding),
         ) {
             key.swipes?.get(SwipeDirection.RIGHT)?.let {
-                KeyText(it, keySizeDp, hideLetters, capsLock)
+                KeyText(it, keySizeDp, hideLetters, hideSymbols, capsLock)
             }
         }
         Box(
@@ -271,7 +272,7 @@ fun KeyboardKey(
                 .padding(horizontal = keyPadding),
         ) {
             key.swipes?.get(SwipeDirection.BOTTOM_LEFT)?.let {
-                KeyText(it, keySizeDp, hideLetters, capsLock)
+                KeyText(it, keySizeDp, hideLetters, hideSymbols, capsLock)
             }
         }
         Box(
@@ -281,7 +282,7 @@ fun KeyboardKey(
                 .padding(horizontal = keyPadding),
         ) {
             key.swipes?.get(SwipeDirection.BOTTOM)?.let {
-                KeyText(it, keySizeDp, hideLetters, capsLock)
+                KeyText(it, keySizeDp, hideLetters, hideSymbols, capsLock)
             }
         }
         Box(
@@ -291,7 +292,7 @@ fun KeyboardKey(
                 .padding(horizontal = keyPadding),
         ) {
             key.swipes?.get(SwipeDirection.BOTTOM_RIGHT)?.let {
-                KeyText(it, keySizeDp, hideLetters, capsLock)
+                KeyText(it, keySizeDp, hideLetters, hideSymbols, capsLock)
             }
         }
 
@@ -342,7 +343,7 @@ fun KeyboardKey(
 }
 
 @Composable
-fun KeyText(key: KeyC, keySize: Dp, hideLetters: Boolean, capsLock: Boolean) {
+fun KeyText(key: KeyC, keySize: Dp, hideLetters: Boolean, hideSymbols: Boolean, capsLock: Boolean) {
     val color = colorVariantToColor(colorVariant = key.color)
     val fontSize = fontSizeVariantToFontSize(fontSizeVariant = key.size, keySize = keySize)
 
@@ -363,7 +364,15 @@ fun KeyText(key: KeyC, keySize: Dp, hideLetters: Boolean, capsLock: Boolean) {
         }
         is KeyDisplay.TextDisplay -> {
             // Only  hide the letters for text, not symbols
-            if (!hideLetters) {
+            val containsLetters = display.text.any { it.isLetter() }
+
+            // If its a letter key, use the hide letter setting
+            val showKey = if (containsLetters) {
+                !hideLetters
+            } else {
+                !hideSymbols
+            }
+            if (showKey) {
                 Text(
                     text = display.text,
                     fontWeight = FontWeight.Bold,
