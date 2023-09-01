@@ -63,13 +63,13 @@ android {
         compose true
     }
     composeOptions {
-        kotlinCompilerExtensionVersion = "1.5.1"
+        kotlinCompilerExtensionVersion = "1.5.3"
     }
     namespace 'com.dessalines.thumbkey'
 }
 
 dependencies {
-    implementation "androidx.navigation:navigation-compose:2.7.0"
+    implementation "androidx.navigation:navigation-compose:2.7.1"
     implementation 'com.github.alorma:compose-settings-ui-m3:0.27.0'
 
     // To use Kotlin annotation processing tool
