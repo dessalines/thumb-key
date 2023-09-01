@@ -1,3 +1,23 @@
+# Thumb-Key 1.13.0 (2023-09-01)
+
+## What's Changed
+
+- Update .woodpecker.yml by @MV-GH in https://github.com/dessalines/thumb-key/pull/363
+- Update build.gradle buildtools version by @MV-GH in https://github.com/dessalines/thumb-key/pull/364
+- Add Thumb-Key Bulgarian v1 with symbols by @salif in https://github.com/dessalines/thumb-key/pull/368
+- Adding croation layouts. Fixes #365 by @dessalines in https://github.com/dessalines/thumb-key/pull/372
+- make "hide letters" only hide letters, add new toggle "hide symbols" (fixes #299) by @nejni-marji in https://github.com/dessalines/thumb-key/pull/370
+- Typesplit fi by @dessalines in https://github.com/dessalines/thumb-key/pull/373
+- Upgrading deps. by @dessalines in https://github.com/dessalines/thumb-key/pull/374
+
+## New Contributors
+
+- @MV-GH made their first contribution in https://github.com/dessalines/thumb-key/pull/363
+- @salif made their first contribution in https://github.com/dessalines/thumb-key/pull/368
+- @nejni-marji made their first contribution in https://github.com/dessalines/thumb-key/pull/370
+
+**Full Changelog**: https://github.com/dessalines/thumb-key/compare/1.12.0...1.13.0
+
 # Thumb-Key 1.12.0 (2023-08-23)
 
 ## What's Changed
