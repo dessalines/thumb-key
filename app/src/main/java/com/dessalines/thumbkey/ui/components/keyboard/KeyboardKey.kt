@@ -364,7 +364,10 @@ fun KeyText(key: KeyC, keySize: Dp, hideLetters: Boolean, hideSymbols: Boolean, 
         }
         is KeyDisplay.TextDisplay -> {
             // Only  hide the letters for text, not symbols
-            val showKey = if (!display.text.any { !it.isLetter() }) {
+            val containsLetters = display.text.any { it.isLetter() }
+
+            // If its a letter key, use the hide letter setting
+            val showKey = if (containsLetters) {
                 !hideLetters
             } else {
                 !hideSymbols
