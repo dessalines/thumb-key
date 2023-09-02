@@ -1,7 +1,10 @@
 package com.dessalines.thumbkey.keyboards
 
 import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.outlined.ArrowDropDown
 import androidx.compose.material.icons.outlined.ArrowDropUp
+import androidx.compose.material.icons.outlined.Copyright
+import androidx.compose.material.icons.outlined.KeyboardCapslock
 import com.dessalines.thumbkey.utils.ColorVariant
 import com.dessalines.thumbkey.utils.FontSizeVariant
 import com.dessalines.thumbkey.utils.KeyAction
@@ -185,8 +188,8 @@ val THUMBKEY_CZ_V1_MAIN = KeyboardC(
                         action = KeyAction.CommitText("c"),
                     ),
                     SwipeDirection.RIGHT to KeyC(
-                        display = KeyDisplay.TextDisplay("ť"),
-                        action = KeyAction.CommitText("ť"),
+                        display = KeyDisplay.TextDisplay("č"),
+                        action = KeyAction.CommitText("č"),
                     ),
                     SwipeDirection.TOP to KeyC(
                         display = KeyDisplay.TextDisplay("ť"),
@@ -209,12 +212,10 @@ val THUMBKEY_CZ_V1_MAIN = KeyboardC(
                     SwipeDirection.TOP_RIGHT to KeyC(
                         display = KeyDisplay.TextDisplay("í"),
                         action = KeyAction.CommitText("í"),
-                        color = ColorVariant.MUTED,
                     ),
                     SwipeDirection.TOP_LEFT to KeyC(
                         display = KeyDisplay.TextDisplay("ý"),
                         action = KeyAction.CommitText("ý"),
-                        color = ColorVariant.MUTED,
                     ),
                     SwipeDirection.RIGHT to KeyC(
                         display = KeyDisplay.TextDisplay("z"),
@@ -260,6 +261,10 @@ val THUMBKEY_CZ_V1_MAIN = KeyboardC(
                     SwipeDirection.RIGHT to KeyC(
                         display = KeyDisplay.TextDisplay("ď"),
                         action = KeyAction.CommitText("ď"),
+                    ),
+                    SwipeDirection.LEFT to KeyC(
+                        display = KeyDisplay.TextDisplay("ě"),
+                        action = KeyAction.CommitText("ě"),
                     ),
                 ),
             ),
@@ -422,8 +427,14 @@ val THUMBKEY_CZ_V1_SHIFTED = KeyboardC(
                         action = KeyAction.CommitText("Á"),
                     ),
                     SwipeDirection.TOP to KeyC(
-                        display = KeyDisplay.IconDisplay(Icons.Outlined.ArrowDropUp),
-                        action = KeyAction.ToggleShiftMode(true),
+                        display = KeyDisplay.IconDisplay(Icons.Outlined.KeyboardCapslock),
+                        capsModeDisplay = KeyDisplay.IconDisplay(Icons.Outlined.Copyright),
+                        action = KeyAction.ToggleCapsLock,
+                        color = ColorVariant.MUTED,
+                    ),
+                    SwipeDirection.BOTTOM to KeyC(
+                        display = KeyDisplay.IconDisplay(Icons.Outlined.ArrowDropDown),
+                        action = KeyAction.ToggleShiftMode(false),
                         color = ColorVariant.MUTED,
                     ),
                 ),
@@ -444,8 +455,8 @@ val THUMBKEY_CZ_V1_SHIFTED = KeyboardC(
                         action = KeyAction.CommitText("C"),
                     ),
                     SwipeDirection.RIGHT to KeyC(
-                        display = KeyDisplay.TextDisplay("Ť"),
-                        action = KeyAction.CommitText("Ť"),
+                        display = KeyDisplay.TextDisplay("Č"),
+                        action = KeyAction.CommitText("Č"),
                     ),
                     SwipeDirection.TOP to KeyC(
                         display = KeyDisplay.TextDisplay("Ť"),
@@ -468,12 +479,10 @@ val THUMBKEY_CZ_V1_SHIFTED = KeyboardC(
                     SwipeDirection.TOP_RIGHT to KeyC(
                         display = KeyDisplay.TextDisplay("Í"),
                         action = KeyAction.CommitText("Í"),
-                        color = ColorVariant.MUTED,
                     ),
                     SwipeDirection.TOP_LEFT to KeyC(
                         display = KeyDisplay.TextDisplay("Ý"),
                         action = KeyAction.CommitText("Ý"),
-                        color = ColorVariant.MUTED,
                     ),
                     SwipeDirection.RIGHT to KeyC(
                         display = KeyDisplay.TextDisplay("Z"),
@@ -519,6 +528,10 @@ val THUMBKEY_CZ_V1_SHIFTED = KeyboardC(
                     SwipeDirection.RIGHT to KeyC(
                         display = KeyDisplay.TextDisplay("Ď"),
                         action = KeyAction.CommitText("Ď"),
+                    ),
+                    SwipeDirection.TOP to KeyC(
+                        display = KeyDisplay.TextDisplay("Ě"),
+                        action = KeyAction.CommitText("Ě"),
                     ),
                 ),
             ),
