@@ -526,7 +526,9 @@ fun blue(): Pair<ColorScheme, ColorScheme> {
         surfaceTint = md_theme_dark_surfaceTint,
         outlineVariant = md_theme_dark_outlineVariant,
         scrim = md_theme_dark_scrim,
-    )}
+    )
+    return Pair(light, dark)
+}
     fun dracula(): Pair<ColorScheme, ColorScheme> {
         val md_theme_light_primary = Color(0xFF4758A9)
         val md_theme_light_onPrimary = Color(0xFFFFFFFF)
@@ -624,7 +626,7 @@ fun blue(): Pair<ColorScheme, ColorScheme> {
         scrim = md_theme_light_scrim,
     )
 
-    val dark = darkColorScheme(
+        val dark = darkColorScheme(
         primary = md_theme_dark_primary,
         onPrimary = md_theme_dark_onPrimary,
         primaryContainer = md_theme_dark_primaryContainer,
@@ -653,7 +655,7 @@ fun blue(): Pair<ColorScheme, ColorScheme> {
         inversePrimary = md_theme_dark_inversePrimary,
         surfaceTint = md_theme_dark_surfaceTint,
         outlineVariant = md_theme_dark_outlineVariant,
-        scrim = md_theme_dark_scrim
-    )}
+        scrim = md_theme_dark_scrim,
+    )
     return Pair(light, dark)
 }
