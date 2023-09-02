@@ -219,11 +219,6 @@ val THUMBKEY_EN_V4_SYMBOLS = KeyboardC(
                         action = KeyAction.ToggleShiftMode(true),
                         color = ColorVariant.MUTED,
                     ),
-                    SwipeDirection.BOTTOM to KeyC(
-                        display = KeyDisplay.IconDisplay(Icons.Outlined.ArrowDropDown),
-                        action = KeyAction.ToggleShiftMode(false),
-                        color = ColorVariant.MUTED,
-                    ),
                     SwipeDirection.TOP_LEFT to KeyC(
                         display = KeyDisplay.TextDisplay("|"),
                         action = KeyAction.CommitText("|"),
