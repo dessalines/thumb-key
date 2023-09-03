@@ -1,25 +1,38 @@
 package com.dessalines.thumbkey.utils
 
 import android.view.KeyEvent
+import androidx.compose.material.icons.Icons
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.res.stringResource
 import com.dessalines.thumbkey.R
+import kotlinx.serialization.KSerializer
+import kotlinx.serialization.SerialName
+import kotlinx.serialization.Serializable
+import kotlinx.serialization.descriptors.SerialDescriptor
+import kotlinx.serialization.encoding.Decoder
+import kotlinx.serialization.encoding.Encoder
 
 // Almost a 4x4 grid, but the bottom is mostly spacebar
+@Serializable
 data class KeyboardC(
     val arr: List<List<KeyItemC>>,
-)
+) {
+    init {
+        require(arr.map { it.sumOf { it.widthMultiplier } }.reduce { acc, sum -> if (acc == sum) acc else -1 } != -1) { "Keyboard must be rectangular" }
+    }
+}
 
+@Serializable
 data class KeyItemC(
     val center: KeyC,
     val swipes: Map<SwipeDirection, KeyC>? = null,
     val nextTapActions: List<KeyAction>? = null,
     val widthMultiplier: Int = 1,
     val backgroundColor: ColorVariant = ColorVariant.SURFACE,
-    val swipeType: SwipeNWay = SwipeNWay.EIGHT_WAY,
 )
 
+@Serializable
 data class KeyC(
     val display: KeyDisplay?,
     val capsModeDisplay: KeyDisplay? = null,
@@ -28,39 +41,84 @@ data class KeyC(
     val size: FontSizeVariant = FontSizeVariant.SMALL,
 )
 
+@Serializable
 sealed class KeyDisplay {
+    @Serializable
     class TextDisplay(val text: String) : KeyDisplay()
-    class IconDisplay(val icon: ImageVector) : KeyDisplay()
+    @Serializable
+    class IconDisplay(val iconType: String, val iconName: String) : KeyDisplay() {
+        val icon: ImageVector by lazy(LazyThreadSafetyMode.PUBLICATION) {
+            require(iconType in setOf("Filled", "Outlined", "Rounded", "Sharp", "TwoTone"))
+            val className = buildString {
+                append("androidx.compose.material.icons.")
+                append(iconType.lowercase())
+                append(".")
+                append(iconName)
+                append("Kt")
+            }
+            val style = Icons::class.java.declaredClasses.single { it.simpleName == iconType }.getField("INSTANCE").get(null)
+            Class.forName(className).declaredMethods.single().invoke(null, style) as ImageVector
+        }
+    }
 }
 
+@Serializable
 sealed class KeyAction {
+    @Serializable
     class CommitText(val text: String) : KeyAction()
-    class SendEvent(val event: KeyEvent) : KeyAction()
+    @Serializable
+    class SendEvent(@Serializable(with = KeyEventSerializer::class) val event: KeyEvent) : KeyAction()
+    @Serializable
     object DeleteLastWord : KeyAction()
-    class ReplaceLastText(val text: String, val trimCount: Int = 2) : KeyAction()
+    @Serializable
+    class ReplaceLastText(val text: String, val trimCount: Int = 2) : KeyAction() {
+        init {
+            require(trimCount >= 0) { "Invalid trimCount $trimCount" }
+        }
+    }
+    @Serializable
     class ToggleShiftMode(val enable: Boolean) : KeyAction()
+    @Serializable
     class ToggleNumericMode(val enable: Boolean) : KeyAction()
+    @Serializable
     object GotoSettings : KeyAction()
+    @Serializable
     object IMECompleteAction : KeyAction()
+    @Serializable
     object ToggleCapsLock : KeyAction()
+    @Serializable
     object SelectAndCopyAll : KeyAction()
+    @Serializable
     object Paste : KeyAction()
+    @Serializable
     object SwitchLanguage : KeyAction()
+    @Serializable
     object SwitchPosition : KeyAction()
 }
 
+@Serializable
 enum class KeyboardMode {
     MAIN, SHIFTED, NUMERIC
 }
 
-enum class SwipeDirection {
-    LEFT, TOP_LEFT, TOP, TOP_RIGHT, RIGHT, BOTTOM_RIGHT, BOTTOM, BOTTOM_LEFT,
+@Serializable
+enum class SwipeDirection(val angle: Double) {
+    LEFT(1 * Math.PI),
+    TOP_LEFT(-0.75 * Math.PI),
+    TOP(-0.5 * Math.PI),
+    TOP_RIGHT(-0.25 * Math.PI),
+    RIGHT(0 * Math.PI),
+    BOTTOM_RIGHT(0.25 * Math.PI),
+    BOTTOM(0.5 * Math.PI),
+    BOTTOM_LEFT(0.75 * Math.PI),
 }
 
+@Serializable
 enum class ColorVariant {
     PRIMARY, SECONDARY, SURFACE, SURFACE_VARIANT, MUTED,
 }
 
+@Serializable
 enum class FontSizeVariant {
     LARGE, SMALL, SMALLEST
 }
@@ -92,68 +150,7 @@ enum class ThemeColor(private val stringId: Int) {
 }
 
 // Make sure new keyboards have a new index, even if they are in the middle
-enum class KeyboardLayout(val title: String, val index: Int) {
-    ThumbKeyENv4("Thumb-Key english v4", 0),
-    ThumbKeyENv4Programmer("Thumb-Key english v4 (programmer)", 1),
-    ThumbKeyDEv2("Thumb-Key deutsch v2", 2),
-    ThumbKeyDAv1("Thumb-Key dansk v1", 3),
-    ThumbKeyESv1("Thumb-Key español v1", 4),
-    ThumbKeyEUv1("Thumb-Key euskara v1", 5),
-    ThumbKeyFAv1("Thumb-Key فارسیv1", 6),
-    ThumbKeyFIv1("Thumb-Key suomi v1", 7),
-    ThumbKeyFRv1("Thumb-Key français v1", 8),
-    ThumbKeyITv1("Thumb-Key italiano v1", 9),
-    ThumbKeyNLv1("Thumb-Key nederlands v1", 10),
-    ThumbKeyPLv2("Thumb-Key polski v2", 11),
-    ThumbKeyPTv1("Thumb-Key português v1", 12),
-    ThumbKeyRUv2("Thumb-Key русский v2", 13),
-    ThumbKeyUKv1("Thumb-Key українська v1", 14),
-    MessageEaseEN("MessageEase english", 15),
-    MessageEaseENSymbols("MessageEase english with symbols", 16),
-    MessageEaseHE("MessageEase עברית", 17),
-    ThumbKeyRUv2Symbols("Thumb-Key русский v2 с символами", 18),
-    ThumbKeyBYv1("Thumb-Key беларуская v1", 19),
-    ThumbKeyBYv1Symbols("Thumb-Key беларуская v1 з сімваламі", 20),
-    ThumbKeyENv4Symbols("Thumb-Key english v4 with symbols", 21),
-    ThumbKeyFIv1Wide("Thumb-Key suomi v1 wide", 22),
-    MessageEaseDE("MessageEase deutsch", 23),
-    ThumbKeyNOv1("Thumb-Key norsk v1", 24),
-    ThumbKeyDEv2MultiLingual("Thumb-Key deutsch v2 multilingual", 25),
-    ThumbKeyKAv1("Thumb-Key kartuli ena v1", 26),
-    ThumbKeyIDv1("Thumb-Key bahasa indonesia with symbols v1", 27),
-    MessageEaseFR("MessageEase français", 28),
-    MessageEaseRUSymbols("MessageEase русский with Symbols", 29),
-    T9v1("T9 v1", 30),
-    ThumbKeyJAv1Hiragana("Thumb-Key japanese Hiragana v1", 31),
-    ThumbKeyJAv1Katakana("Thumb-Key japanese Katakana v1", 32),
-    ThumbKeyFRv2("Thumb-Key français v2", 33),
-    ThumbKeySVv1("Thumb-Key svenska v1", 34),
-    ThumbKeyTRv1("Thumb-Key Türkçe v1", 35),
-    TypeSplitENv2("Type-Split english v2", 36),
-    TypeSplitESv1("Type-Split español v1", 37),
-    TypeSplitDEv1("Type-Split deutsch v1", 38),
-    TypeSplitFRv1("Type-Split français v1", 39),
-    TypeSplitITv1("Type-Split italiano v1", 40),
-    TypeSplitPTv1("Type-Split português v1", 41),
-    TypeSplitPLv1("Type-Split polski v1", 42),
-    TwoHandsENv1("Two Hands english v1", 43),
-    WideLayoutENProgrammer("Wide Layout English Programmer", 44),
-    ThumbKeyHUv1("Thumb-Key magyar nyelv v1", 45),
-    ThumbKeyESEOv1("Thumb-Key español esperanto v1", 46),
-    MessageEaseIT("MessageEase italiano", 47),
-    ThumbKeyENv4Multi("Thumb-Key english v4 (EN+SK multi)", 48),
-    ThumbKeyHEv1("Thumb-Key עברית v1", 49),
-    ThumbKeyEOENDEv1("Thumb-Key EO/EN/DE", 50),
-    ThumbKeyGRv1("Thumb-Key ελληνικά v1", 51),
-    ThumbKeyCZv1("Thumb-Key čeština v1", 52),
-    MessageEaseES("MessageEase español", 53),
-    MessageEaseRU("MessageEase русский", 54),
-    ThumbKeyBGv1Symbols("Thumb-Key български v1 със символи", 55),
-    TwoHandsHRv1("Two hands hrvatski v1", 56),
-    ThumbKeyHRv1("Thumb-Key hrvatski v1", 57),
-    ThumbKeyHRv1Symbols("Thumb-Key hrvatski v1 with symbols", 58),
-    TypeSplitFIv1("Type-Split suomi v1", 59),
-}
+data class KeyboardLayout(val title: String, val json: String)
 
 enum class KeyboardPosition(private val stringId: Int) {
     Center(R.string.center),
@@ -167,6 +164,22 @@ enum class KeyboardPosition(private val stringId: Int) {
     }
 }
 
-enum class SwipeNWay {
-    EIGHT_WAY, FOUR_WAY_CROSS, FOUR_WAY_DIAGONAL, TWO_WAY_VERTICAL, TWO_WAY_HORIZONTAL
+
+class KeyEventSerializer : KSerializer<KeyEvent> {
+    @Serializable
+    @SerialName("KeyEvent")
+    private class KeyEventSurrogate(val action: Int, val code: Int)
+
+    override val descriptor: SerialDescriptor
+        get() = KeyEventSurrogate.serializer().descriptor
+
+    override fun deserialize(decoder: Decoder): KeyEvent {
+        val surrogate = decoder.decodeSerializableValue(KeyEventSurrogate.serializer())
+        return KeyEvent(surrogate.action, surrogate.code)
+    }
+
+    override fun serialize(encoder: Encoder, value: KeyEvent) {
+        val surrogate = KeyEventSurrogate(value.action, value.keyCode)
+        encoder.encodeSerializableValue(KeyEventSurrogate.serializer(), surrogate)
+    }
 }

@@ -19,3 +19,4 @@ dependencyResolutionManagement {
 }
 rootProject.name = "com.dessalines.thumbkey"
 include ':app'
+include ':xml-schemas'

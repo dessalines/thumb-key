@@ -76,9 +76,8 @@ import com.dessalines.thumbkey.utils.SimpleTopAppBar
 import com.dessalines.thumbkey.utils.TAG
 import com.dessalines.thumbkey.utils.ThemeColor
 import com.dessalines.thumbkey.utils.ThemeMode
-import com.dessalines.thumbkey.utils.keyboardLayoutsSetFromTitleIndex
-import com.dessalines.thumbkey.utils.keyboardRealIndexFromTitleIndex
-import com.dessalines.thumbkey.utils.keyboardTitleIndexFromRealIndex
+import com.dessalines.thumbkey.utils.getEnabledKeyboardLayoutIndices
+import com.dessalines.thumbkey.utils.internalKeyboardLayouts
 import com.dessalines.thumbkey.utils.toBool
 import com.dessalines.thumbkey.utils.toInt
 
@@ -90,53 +89,66 @@ fun LookAndFeelActivity(
 ) {
     Log.d(TAG, "Got to lookAndFeel activity")
 
-    val settings = appSettingsViewModel.appSettings.observeAsState().value
+    val settings by appSettingsViewModel.appSettings.observeAsState()
+    val externalKeyboardLayouts by appSettingsViewModel.externalKeyboardLayouts.observeAsState()
+    val enabledInternalKeyboardLayouts by appSettingsViewModel.enabledInternalKeyboardLayouts.observeAsState()
+    if (settings == null) {
+        // TODO loading screen only
+    }
 
     val keySizeState = rememberFloatSettingState(
-        (settings?.keySize ?: DEFAULT_KEY_SIZE).toFloat(),
+        (settings?.appSettings?.keySize ?: DEFAULT_KEY_SIZE).toFloat(),
     )
     val pushupSizeState = rememberFloatSettingState(
-        (settings?.pushupSize ?: DEFAULT_PUSHUP_SIZE).toFloat(),
+        (settings?.appSettings?.pushupSize ?: DEFAULT_PUSHUP_SIZE).toFloat(),
     )
     val animationSpeedState = rememberFloatSettingState(
-        (settings?.animationSpeed ?: DEFAULT_ANIMATION_SPEED).toFloat(),
+        (settings?.appSettings?.animationSpeed ?: DEFAULT_ANIMATION_SPEED).toFloat(),
     )
     val animationHelperSpeedState = rememberFloatSettingState(
-        (settings?.animationHelperSpeed ?: DEFAULT_ANIMATION_HELPER_SPEED).toFloat(),
+        (settings?.appSettings?.animationHelperSpeed ?: DEFAULT_ANIMATION_HELPER_SPEED).toFloat(),
     )
     val minSwipeLengthState = rememberFloatSettingState(
-        (settings?.minSwipeLength ?: DEFAULT_MIN_SWIPE_LENGTH).toFloat(),
+        (settings?.appSettings?.minSwipeLength ?: DEFAULT_MIN_SWIPE_LENGTH).toFloat(),
     )
     val positionState = rememberIntSettingState(
-        settings?.position ?: DEFAULT_POSITION,
+        settings?.appSettings?.position ?: DEFAULT_POSITION,
     )
     val autoCapitalizeState = rememberBooleanSettingState(
-        ((settings?.autoCapitalize ?: DEFAULT_AUTO_CAPITALIZE).toBool()),
+        ((settings?.appSettings?.autoCapitalize ?: DEFAULT_AUTO_CAPITALIZE).toBool()),
     )
     val vibrateOnTapState = rememberBooleanSettingState(
-        ((settings?.vibrateOnTap ?: DEFAULT_VIBRATE_ON_TAP).toBool()),
+        ((settings?.appSettings?.vibrateOnTap ?: DEFAULT_VIBRATE_ON_TAP).toBool()),
     )
     val soundOnTapState = rememberBooleanSettingState(
-        ((settings?.soundOnTap ?: DEFAULT_SOUND_ON_TAP).toBool()),
+        ((settings?.appSettings?.soundOnTap ?: DEFAULT_SOUND_ON_TAP).toBool()),
     )
     val hideLettersState = rememberBooleanSettingState(
-        ((settings?.hideLetters ?: DEFAULT_HIDE_LETTERS).toBool()),
+        ((settings?.appSettings?.hideLetters ?: DEFAULT_HIDE_LETTERS).toBool()),
     )
     val hideSymbolsState = rememberBooleanSettingState(
-        ((settings?.hideSymbols ?: DEFAULT_HIDE_SYMBOLS).toBool()),
+        ((settings?.appSettings?.hideSymbols ?: DEFAULT_HIDE_SYMBOLS).toBool()),
     )
 
+
+    val internalKeyboardLayoutsDisplay = internalKeyboardLayouts.toList().sortedBy { it.second.title }
+    val externalKeyboardLayoutsDisplay = (externalKeyboardLayouts ?: emptyList()).associate { it.id to KeyboardLayout(it.title, it.json) }.toList().sortedBy { it.second.title }
+    // XXX fragile code, indices of internalKeyboardLayouts are assumed to be the same in allKeyboardLayouts, so nothing can be added before internalKeyboardLayouts
+    val allKeyboardLayouts = internalKeyboardLayoutsDisplay.map { it.second } + externalKeyboardLayoutsDisplay.map { it.second }
+    val allKeyboardLayoutsDisplay = allKeyboardLayouts.map { it.title }
     val keyboardLayoutsState = rememberIntSetSettingState(
-        keyboardLayoutsSetFromTitleIndex(settings?.keyboardLayouts),
+        getEnabledKeyboardLayoutIndices(settings, externalKeyboardLayouts, enabledInternalKeyboardLayouts, allKeyboardLayouts)
     )
-    val themeState = rememberIntSettingState(settings?.theme ?: DEFAULT_THEME)
-    val themeColorState = rememberIntSettingState(settings?.themeColor ?: DEFAULT_THEME_COLOR)
+    val themeState = rememberIntSettingState(settings?.appSettings?.theme ?: DEFAULT_THEME)
+    val themeColorState = rememberIntSettingState(settings?.appSettings?.themeColor ?: DEFAULT_THEME_COLOR)
     val keyBordersState = rememberBooleanSettingState(
-        ((settings?.keyBorders ?: DEFAULT_KEY_BORDERS).toBool()),
+        ((settings?.appSettings?.keyBorders ?: DEFAULT_KEY_BORDERS).toBool()),
     )
     val spacebarMultiTapsState = rememberBooleanSettingState(
-        ((settings?.spacebarMultiTaps ?: DEFAULT_SPACEBAR_MULTITAPS).toBool()),
+        ((settings?.appSettings?.spacebarMultiTaps ?: DEFAULT_SPACEBAR_MULTITAPS).toBool()),
     )
+
+    val viewedChangelog = settings?.appSettings?.viewedChangelog?.toBool() ?: false
 
     val snackbarHostState = remember { SnackbarHostState() }
 
@@ -158,7 +170,7 @@ fun LookAndFeelActivity(
             ) {
                 SettingsListMultiSelect(
                     state = keyboardLayoutsState,
-                    items = KeyboardLayout.values().sortedBy { it.title }.map { it.title },
+                    items = allKeyboardLayoutsDisplay,
                     icon = {
                         Icon(
                             imageVector = Icons.Outlined.KeyboardAlt,
@@ -171,7 +183,7 @@ fun LookAndFeelActivity(
                     confirmButton = stringResource(R.string.save),
                     onItemsSelected = { saved ->
                         if (saved.isEmpty()) {
-                            keyboardLayoutsState.value = setOf(keyboardTitleIndexFromRealIndex(DEFAULT_KEYBOARD_LAYOUT))
+                            keyboardLayoutsState.value = setOf(internalKeyboardLayoutsDisplay.indexOfFirst { it.first == DEFAULT_KEYBOARD_LAYOUT })
                         }
                         updateAppSettings(
                             appSettingsViewModel,
@@ -191,6 +203,9 @@ fun LookAndFeelActivity(
                             keyboardLayoutsState,
                             themeState,
                             themeColorState,
+                            internalKeyboardLayoutsDisplay,
+                            externalKeyboardLayoutsDisplay,
+                            viewedChangelog,
                         )
                     },
                 )
@@ -226,6 +241,9 @@ fun LookAndFeelActivity(
                             keyboardLayoutsState,
                             themeState,
                             themeColorState,
+                            internalKeyboardLayoutsDisplay,
+                            externalKeyboardLayoutsDisplay,
+                            viewedChangelog,
                         )
                     },
                 )
@@ -261,6 +279,9 @@ fun LookAndFeelActivity(
                             keyboardLayoutsState,
                             themeState,
                             themeColorState,
+                            internalKeyboardLayoutsDisplay,
+                            externalKeyboardLayoutsDisplay,
+                            viewedChangelog,
                         )
                     },
                 )
@@ -296,6 +317,9 @@ fun LookAndFeelActivity(
                             keyboardLayoutsState,
                             themeState,
                             themeColorState,
+                            internalKeyboardLayoutsDisplay,
+                            externalKeyboardLayoutsDisplay,
+                            viewedChangelog,
                         )
                     },
                 )
@@ -329,6 +353,9 @@ fun LookAndFeelActivity(
                             keyboardLayoutsState,
                             themeState,
                             themeColorState,
+                            internalKeyboardLayoutsDisplay,
+                            externalKeyboardLayoutsDisplay,
+                            viewedChangelog,
                         )
                     },
                 )
@@ -362,6 +389,9 @@ fun LookAndFeelActivity(
                             keyboardLayoutsState,
                             themeState,
                             themeColorState,
+                            internalKeyboardLayoutsDisplay,
+                            externalKeyboardLayoutsDisplay,
+                            viewedChangelog,
                         )
                     },
                 )
@@ -395,6 +425,9 @@ fun LookAndFeelActivity(
                             keyboardLayoutsState,
                             themeState,
                             themeColorState,
+                            internalKeyboardLayoutsDisplay,
+                            externalKeyboardLayoutsDisplay,
+                            viewedChangelog,
                         )
                     },
                 )
@@ -428,6 +461,9 @@ fun LookAndFeelActivity(
                             keyboardLayoutsState,
                             themeState,
                             themeColorState,
+                            internalKeyboardLayoutsDisplay,
+                            externalKeyboardLayoutsDisplay,
+                            viewedChangelog,
                         )
                     },
                 )
@@ -461,6 +497,9 @@ fun LookAndFeelActivity(
                             keyboardLayoutsState,
                             themeState,
                             themeColorState,
+                            internalKeyboardLayoutsDisplay,
+                            externalKeyboardLayoutsDisplay,
+                            viewedChangelog,
                         )
                     },
                 )
@@ -494,6 +533,9 @@ fun LookAndFeelActivity(
                             keyboardLayoutsState,
                             themeState,
                             themeColorState,
+                            internalKeyboardLayoutsDisplay,
+                            externalKeyboardLayoutsDisplay,
+                            viewedChangelog,
                         )
                     },
                 )
@@ -527,6 +569,9 @@ fun LookAndFeelActivity(
                             keyboardLayoutsState,
                             themeState,
                             themeColorState,
+                            internalKeyboardLayoutsDisplay,
+                            externalKeyboardLayoutsDisplay,
+                            viewedChangelog,
                         )
                     },
                 )
@@ -562,6 +607,9 @@ fun LookAndFeelActivity(
                             keyboardLayoutsState,
                             themeState,
                             themeColorState,
+                            internalKeyboardLayoutsDisplay,
+                            externalKeyboardLayoutsDisplay,
+                            viewedChangelog,
                         )
                     },
                 )
@@ -597,6 +645,9 @@ fun LookAndFeelActivity(
                             keyboardLayoutsState,
                             themeState,
                             themeColorState,
+                            internalKeyboardLayoutsDisplay,
+                            externalKeyboardLayoutsDisplay,
+                            viewedChangelog,
                         )
                     },
                 )
@@ -632,6 +683,9 @@ fun LookAndFeelActivity(
                             keyboardLayoutsState,
                             themeState,
                             themeColorState,
+                            internalKeyboardLayoutsDisplay,
+                            externalKeyboardLayoutsDisplay,
+                            viewedChangelog,
                         )
                     },
                 )
@@ -667,6 +721,9 @@ fun LookAndFeelActivity(
                             keyboardLayoutsState,
                             themeState,
                             themeColorState,
+                            internalKeyboardLayoutsDisplay,
+                            externalKeyboardLayoutsDisplay,
+                            viewedChangelog,
                         )
                     },
                 )
@@ -707,6 +764,9 @@ fun LookAndFeelActivity(
                             keyboardLayoutsState,
                             themeState,
                             themeColorState,
+                            internalKeyboardLayoutsDisplay,
+                            externalKeyboardLayoutsDisplay,
+                            viewedChangelog,
                         )
                     },
                 )
@@ -739,6 +799,9 @@ fun LookAndFeelActivity(
                             keyboardLayoutsState,
                             themeState,
                             themeColorState,
+                            internalKeyboardLayoutsDisplay,
+                            externalKeyboardLayoutsDisplay,
+                            viewedChangelog,
                         )
                     },
                 )
@@ -754,6 +817,8 @@ fun LookAndFeelActivity(
         },
     )
 }
+
+
 
 private fun updateAppSettings(
     appSettingsViewModel: AppSettingsViewModel,
@@ -773,6 +838,11 @@ private fun updateAppSettings(
     keyboardLayoutsState: SettingValueState<Set<Int>>,
     themeState: SettingValueState<Int>,
     themeColorState: SettingValueState<Int>,
+
+    internalKeyboardLayoutsDisplay: List<Pair<String, KeyboardLayout>>,
+    externalKeyboardLayoutsDisplay: List<Pair<Int, KeyboardLayout>>,
+
+    viewedChangelog: Boolean,
 ) {
     appSettingsViewModel.update(
         AppSettings(
@@ -790,15 +860,15 @@ private fun updateAppSettings(
             soundOnTap = soundOnTapState.value.toInt(),
             hideLetters = hideLettersState.value.toInt(),
             hideSymbols = hideSymbolsState.value.toInt(),
-            keyboardLayout = keyboardRealIndexFromTitleIndex(keyboardLayoutsState.value.first()), // Set
+            keyboardLayoutInternal = if (keyboardLayoutsState.value.first() < internalKeyboardLayoutsDisplay.size) internalKeyboardLayoutsDisplay[keyboardLayoutsState.value.first()].first else null,
             // the current to the first
-            keyboardLayouts = keyboardLayoutsState.value.map { keyboardRealIndexFromTitleIndex(it) }
-                .joinToString(),
+            keyboardLayoutExternal = if (keyboardLayoutsState.value.first() < internalKeyboardLayoutsDisplay.size) null else externalKeyboardLayoutsDisplay[keyboardLayoutsState.value.first()].first,
             theme = themeState.value,
             themeColor = themeColorState.value,
-            viewedChangelog = appSettingsViewModel.appSettings.value?.viewedChangelog ?: 0,
+            viewedChangelog = viewedChangelog.toInt(),
         ),
     )
+    appSettingsViewModel.setEnabledInternalKeyboardLayouts(keyboardLayoutsState.value.mapNotNull { if (it < internalKeyboardLayoutsDisplay.size) internalKeyboardLayoutsDisplay[it].first else null })
 }
 
 private fun resetAppSettingsToDefault(
@@ -819,6 +889,11 @@ private fun resetAppSettingsToDefault(
     keyboardLayoutsState: SettingValueState<Set<Int>>,
     themeState: SettingValueState<Int>,
     themeColorState: SettingValueState<Int>,
+
+    internalKeyboardLayoutsDisplay: List<Pair<String, KeyboardLayout>>,
+    externalKeyboardLayoutsDisplay: List<Pair<Int, KeyboardLayout>>,
+
+    viewedChangelog: Boolean,
 ) {
     keySizeState.value = DEFAULT_KEY_SIZE.toFloat()
     pushupSizeState.value = DEFAULT_PUSHUP_SIZE.toFloat()
@@ -832,7 +907,7 @@ private fun resetAppSettingsToDefault(
     vibrateOnTapState.value = DEFAULT_VIBRATE_ON_TAP.toBool()
     soundOnTapState.value = DEFAULT_SOUND_ON_TAP.toBool()
     hideLettersState.value = DEFAULT_HIDE_LETTERS.toBool()
-    keyboardLayoutsState.value = setOf(keyboardTitleIndexFromRealIndex(DEFAULT_KEYBOARD_LAYOUT))
+    keyboardLayoutsState.value = setOf(internalKeyboardLayoutsDisplay.indexOfFirst { it.first == DEFAULT_KEYBOARD_LAYOUT })
     themeState.value = DEFAULT_THEME
     themeColorState.value = DEFAULT_THEME_COLOR
 
@@ -854,5 +929,8 @@ private fun resetAppSettingsToDefault(
         keyboardLayoutsState,
         themeState,
         themeColorState,
+        internalKeyboardLayoutsDisplay,
+        externalKeyboardLayoutsDisplay,
+        viewedChangelog,
     )
 }

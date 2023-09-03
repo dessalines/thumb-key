@@ -29,71 +29,15 @@ import androidx.navigation.NavController
 import com.dessalines.thumbkey.IMEService
 import com.dessalines.thumbkey.MainActivity
 import com.dessalines.thumbkey.R
-import com.dessalines.thumbkey.db.DEFAULT_KEYBOARD_LAYOUT
-import com.dessalines.thumbkey.keyboards.MESSAGEEASE_DE_KEYBOARD_MODES
-import com.dessalines.thumbkey.keyboards.MESSAGEEASE_EN_KEYBOARD_MODES
-import com.dessalines.thumbkey.keyboards.MESSAGEEASE_EN_SYMBOLS_KEYBOARD_MODES
-import com.dessalines.thumbkey.keyboards.MESSAGEEASE_ES_KEYBOARD_MODES
-import com.dessalines.thumbkey.keyboards.MESSAGEEASE_FR_KEYBOARD_MODES
-import com.dessalines.thumbkey.keyboards.MESSAGEEASE_HE_KEYBOARD_MODES
-import com.dessalines.thumbkey.keyboards.MESSAGEEASE_IT_KEYBOARD_MODES
-import com.dessalines.thumbkey.keyboards.MESSAGEEASE_RU_KEYBOARD_MODES
-import com.dessalines.thumbkey.keyboards.MESSAGEEASE_RU_SYMBOLS_KEYBOARD_MODES
-import com.dessalines.thumbkey.keyboards.T9_V1_KEYBOARD_MODES
-import com.dessalines.thumbkey.keyboards.THUMBKEY_BG_V1_SYMBOLS_KEYBOARD_MODES
-import com.dessalines.thumbkey.keyboards.THUMBKEY_BY_V1_KEYBOARD_MODES
-import com.dessalines.thumbkey.keyboards.THUMBKEY_BY_V1_SYMBOLS_KEYBOARD_MODES
-import com.dessalines.thumbkey.keyboards.THUMBKEY_CZ_V1_KEYBOARD_MODES
-import com.dessalines.thumbkey.keyboards.THUMBKEY_DA_V1_KEYBOARD_MODES
-import com.dessalines.thumbkey.keyboards.THUMBKEY_DE_V2_KEYBOARD_MODES
-import com.dessalines.thumbkey.keyboards.THUMBKEY_DE_V2_MULTILINGUAL_KEYBOARD_MODES
-import com.dessalines.thumbkey.keyboards.THUMBKEY_EN_V4_KEYBOARD_MODES
-import com.dessalines.thumbkey.keyboards.THUMBKEY_EN_V4_MULTI_KEYBOARD_MODES
-import com.dessalines.thumbkey.keyboards.THUMBKEY_EN_V4_PROGRAMMER_KEYBOARD_MODES
-import com.dessalines.thumbkey.keyboards.THUMBKEY_EN_V4_SYMBOLS_KEYBOARD_MODES
-import com.dessalines.thumbkey.keyboards.THUMBKEY_EOENDE_KEYBOARD_MODES
-import com.dessalines.thumbkey.keyboards.THUMBKEY_ES_EO_V1_KEYBOARD_MODES
-import com.dessalines.thumbkey.keyboards.THUMBKEY_ES_V1_KEYBOARD_MODES
-import com.dessalines.thumbkey.keyboards.THUMBKEY_EU_V1_KEYBOARD_MODES
-import com.dessalines.thumbkey.keyboards.THUMBKEY_FA_V1_KEYBOARD_MODES
-import com.dessalines.thumbkey.keyboards.THUMBKEY_FI_V1_KEYBOARD_MODES
-import com.dessalines.thumbkey.keyboards.THUMBKEY_FI_V1_WIDE_KEYBOARD_MODES
-import com.dessalines.thumbkey.keyboards.THUMBKEY_FR_V1_KEYBOARD_MODES
-import com.dessalines.thumbkey.keyboards.THUMBKEY_FR_V2_KEYBOARD_MODES
-import com.dessalines.thumbkey.keyboards.THUMBKEY_GR_V1_KEYBOARD_MODES
-import com.dessalines.thumbkey.keyboards.THUMBKEY_HE_V1_KEYBOARD_MODES
-import com.dessalines.thumbkey.keyboards.THUMBKEY_HR_V1_KEYBOARD_MODES
-import com.dessalines.thumbkey.keyboards.THUMBKEY_HR_V1_SYMBOLS_KEYBOARD_MODES
-import com.dessalines.thumbkey.keyboards.THUMBKEY_HU_V1_KEYBOARD_MODES
-import com.dessalines.thumbkey.keyboards.THUMBKEY_ID_V1_SYMBOLS_KEYBOARD_MODES
-import com.dessalines.thumbkey.keyboards.THUMBKEY_IT_V1_KEYBOARD_MODES
-import com.dessalines.thumbkey.keyboards.THUMBKEY_JA_V1_HIRAGANA_KEYBOARD_MODES
-import com.dessalines.thumbkey.keyboards.THUMBKEY_JA_V1_KATAKANA_KEYBOARD_MODES
-import com.dessalines.thumbkey.keyboards.THUMBKEY_KA_V1_KEYBOARD_MODES
-import com.dessalines.thumbkey.keyboards.THUMBKEY_NL_V1_KEYBOARD_MODES
-import com.dessalines.thumbkey.keyboards.THUMBKEY_NO_V1_KEYBOARD_MODES
-import com.dessalines.thumbkey.keyboards.THUMBKEY_PL_V2_KEYBOARD_MODES
-import com.dessalines.thumbkey.keyboards.THUMBKEY_PT_V1_KEYBOARD_MODES
-import com.dessalines.thumbkey.keyboards.THUMBKEY_RU_V2_KEYBOARD_MODES
-import com.dessalines.thumbkey.keyboards.THUMBKEY_RU_V2_SYMBOLS_KEYBOARD_MODES
-import com.dessalines.thumbkey.keyboards.THUMBKEY_SV_V1_KEYBOARD_MODES
-import com.dessalines.thumbkey.keyboards.THUMBKEY_TR_V1_KEYBOARD_MODES
-import com.dessalines.thumbkey.keyboards.THUMBKEY_UK_V1_KEYBOARD_MODES
-import com.dessalines.thumbkey.keyboards.TWO_HANDS_EN_V1_KEYBOARD_MODES
-import com.dessalines.thumbkey.keyboards.TWO_HANDS_HR_V1_KEYBOARD_MODES
-import com.dessalines.thumbkey.keyboards.TYPESPLIT_DE_V1_KEYBOARD_MODES
-import com.dessalines.thumbkey.keyboards.TYPESPLIT_EN_V2_KEYBOARD_MODES
-import com.dessalines.thumbkey.keyboards.TYPESPLIT_ES_V1_KEYBOARD_MODES
-import com.dessalines.thumbkey.keyboards.TYPESPLIT_FI_V1_KEYBOARD_MODES
-import com.dessalines.thumbkey.keyboards.TYPESPLIT_FR_V1_KEYBOARD_MODES
-import com.dessalines.thumbkey.keyboards.TYPESPLIT_IT_V1_KEYBOARD_MODES
-import com.dessalines.thumbkey.keyboards.TYPESPLIT_PL_V1_KEYBOARD_MODES
-import com.dessalines.thumbkey.keyboards.TYPESPLIT_PT_V1_KEYBOARD_MODES
-import com.dessalines.thumbkey.keyboards.WIDE_LAYOUT_EN_PROGRAMMER_KEYBOARD_MODES
+import com.dessalines.thumbkey.db.AppSettingsWithKeyboardLayout
+import com.dessalines.thumbkey.db.EnabledInternalKeyboardLayout
+import com.dessalines.thumbkey.db.ExternalKeyboardLayout
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
+import kotlin.math.abs
 import kotlin.math.atan2
+import kotlin.math.min
 import kotlin.math.pow
 import kotlin.math.sqrt
 
@@ -121,71 +65,6 @@ fun fontSizeVariantToFontSize(fontSizeVariant: FontSizeVariant, keySize: Dp): Te
     return TextUnit(keySize.value / divFactor, TextUnitType.Sp)
 }
 
-fun keyboardLayoutToModes(layout: KeyboardLayout): Map<KeyboardMode, KeyboardC> {
-    return when (layout) {
-        KeyboardLayout.ThumbKeyENv4 -> THUMBKEY_EN_V4_KEYBOARD_MODES
-        KeyboardLayout.ThumbKeyENv4Programmer -> THUMBKEY_EN_V4_PROGRAMMER_KEYBOARD_MODES
-        KeyboardLayout.ThumbKeyENv4Multi -> THUMBKEY_EN_V4_MULTI_KEYBOARD_MODES
-        KeyboardLayout.ThumbKeyDEv2 -> THUMBKEY_DE_V2_KEYBOARD_MODES
-        KeyboardLayout.ThumbKeyDAv1 -> THUMBKEY_DA_V1_KEYBOARD_MODES
-        KeyboardLayout.ThumbKeyESv1 -> THUMBKEY_ES_V1_KEYBOARD_MODES
-        KeyboardLayout.ThumbKeyEUv1 -> THUMBKEY_EU_V1_KEYBOARD_MODES
-        KeyboardLayout.ThumbKeyFAv1 -> THUMBKEY_FA_V1_KEYBOARD_MODES
-        KeyboardLayout.ThumbKeyFIv1 -> THUMBKEY_FI_V1_KEYBOARD_MODES
-        KeyboardLayout.ThumbKeyFIv1Wide -> THUMBKEY_FI_V1_WIDE_KEYBOARD_MODES
-        KeyboardLayout.ThumbKeyFRv1 -> THUMBKEY_FR_V1_KEYBOARD_MODES
-        KeyboardLayout.ThumbKeyGRv1 -> THUMBKEY_GR_V1_KEYBOARD_MODES
-        KeyboardLayout.ThumbKeyITv1 -> THUMBKEY_IT_V1_KEYBOARD_MODES
-        KeyboardLayout.ThumbKeyNLv1 -> THUMBKEY_NL_V1_KEYBOARD_MODES
-        KeyboardLayout.ThumbKeyPLv2 -> THUMBKEY_PL_V2_KEYBOARD_MODES
-        KeyboardLayout.ThumbKeyPTv1 -> THUMBKEY_PT_V1_KEYBOARD_MODES
-        KeyboardLayout.ThumbKeyRUv2 -> THUMBKEY_RU_V2_KEYBOARD_MODES
-        KeyboardLayout.ThumbKeyUKv1 -> THUMBKEY_UK_V1_KEYBOARD_MODES
-        KeyboardLayout.MessageEaseEN -> MESSAGEEASE_EN_KEYBOARD_MODES
-        KeyboardLayout.MessageEaseES -> MESSAGEEASE_ES_KEYBOARD_MODES
-        KeyboardLayout.MessageEaseENSymbols -> MESSAGEEASE_EN_SYMBOLS_KEYBOARD_MODES
-        KeyboardLayout.MessageEaseHE -> MESSAGEEASE_HE_KEYBOARD_MODES
-        KeyboardLayout.ThumbKeyENv4Symbols -> THUMBKEY_EN_V4_SYMBOLS_KEYBOARD_MODES
-        KeyboardLayout.ThumbKeyRUv2Symbols -> THUMBKEY_RU_V2_SYMBOLS_KEYBOARD_MODES
-        KeyboardLayout.ThumbKeyBYv1 -> THUMBKEY_BY_V1_KEYBOARD_MODES
-        KeyboardLayout.ThumbKeyBYv1Symbols -> THUMBKEY_BY_V1_SYMBOLS_KEYBOARD_MODES
-        KeyboardLayout.MessageEaseDE -> MESSAGEEASE_DE_KEYBOARD_MODES
-        KeyboardLayout.ThumbKeyNOv1 -> THUMBKEY_NO_V1_KEYBOARD_MODES
-        KeyboardLayout.ThumbKeyDEv2MultiLingual -> THUMBKEY_DE_V2_MULTILINGUAL_KEYBOARD_MODES
-        KeyboardLayout.ThumbKeyKAv1 -> THUMBKEY_KA_V1_KEYBOARD_MODES
-        KeyboardLayout.ThumbKeyIDv1 -> THUMBKEY_ID_V1_SYMBOLS_KEYBOARD_MODES
-        KeyboardLayout.MessageEaseFR -> MESSAGEEASE_FR_KEYBOARD_MODES
-        KeyboardLayout.MessageEaseRUSymbols -> MESSAGEEASE_RU_SYMBOLS_KEYBOARD_MODES
-        KeyboardLayout.T9v1 -> T9_V1_KEYBOARD_MODES
-        KeyboardLayout.ThumbKeyJAv1Hiragana -> THUMBKEY_JA_V1_HIRAGANA_KEYBOARD_MODES
-        KeyboardLayout.ThumbKeyJAv1Katakana -> THUMBKEY_JA_V1_KATAKANA_KEYBOARD_MODES
-        KeyboardLayout.ThumbKeyFRv2 -> THUMBKEY_FR_V2_KEYBOARD_MODES
-        KeyboardLayout.ThumbKeySVv1 -> THUMBKEY_SV_V1_KEYBOARD_MODES
-        KeyboardLayout.ThumbKeyTRv1 -> THUMBKEY_TR_V1_KEYBOARD_MODES
-        KeyboardLayout.TypeSplitENv2 -> TYPESPLIT_EN_V2_KEYBOARD_MODES
-        KeyboardLayout.TypeSplitESv1 -> TYPESPLIT_ES_V1_KEYBOARD_MODES
-        KeyboardLayout.TypeSplitDEv1 -> TYPESPLIT_DE_V1_KEYBOARD_MODES
-        KeyboardLayout.TypeSplitITv1 -> TYPESPLIT_IT_V1_KEYBOARD_MODES
-        KeyboardLayout.TypeSplitFRv1 -> TYPESPLIT_FR_V1_KEYBOARD_MODES
-        KeyboardLayout.TypeSplitPTv1 -> TYPESPLIT_PT_V1_KEYBOARD_MODES
-        KeyboardLayout.TypeSplitPLv1 -> TYPESPLIT_PL_V1_KEYBOARD_MODES
-        KeyboardLayout.TwoHandsENv1 -> TWO_HANDS_EN_V1_KEYBOARD_MODES
-        KeyboardLayout.WideLayoutENProgrammer -> WIDE_LAYOUT_EN_PROGRAMMER_KEYBOARD_MODES
-        KeyboardLayout.ThumbKeyHUv1 -> THUMBKEY_HU_V1_KEYBOARD_MODES
-        KeyboardLayout.ThumbKeyESEOv1 -> THUMBKEY_ES_EO_V1_KEYBOARD_MODES
-        KeyboardLayout.MessageEaseIT -> MESSAGEEASE_IT_KEYBOARD_MODES
-        KeyboardLayout.ThumbKeyHEv1 -> THUMBKEY_HE_V1_KEYBOARD_MODES
-        KeyboardLayout.ThumbKeyEOENDEv1 -> THUMBKEY_EOENDE_KEYBOARD_MODES
-        KeyboardLayout.ThumbKeyCZv1 -> THUMBKEY_CZ_V1_KEYBOARD_MODES
-        KeyboardLayout.MessageEaseRU -> MESSAGEEASE_RU_KEYBOARD_MODES
-        KeyboardLayout.ThumbKeyBGv1Symbols -> THUMBKEY_BG_V1_SYMBOLS_KEYBOARD_MODES
-        KeyboardLayout.TwoHandsHRv1 -> TWO_HANDS_HR_V1_KEYBOARD_MODES
-        KeyboardLayout.ThumbKeyHRv1 -> THUMBKEY_HR_V1_KEYBOARD_MODES
-        KeyboardLayout.ThumbKeyHRv1Symbols -> THUMBKEY_HR_V1_SYMBOLS_KEYBOARD_MODES
-        KeyboardLayout.TypeSplitFIv1 -> TYPESPLIT_FI_V1_KEYBOARD_MODES
-    }
-}
-
 fun keyboardPositionToAlignment(position: KeyboardPosition): Alignment {
     return when (position) {
         KeyboardPosition.Right -> Alignment.BottomEnd
@@ -197,56 +76,19 @@ fun keyboardPositionToAlignment(position: KeyboardPosition): Alignment {
 /**
  * If this doesn't meet the minimum swipe length, it returns null
  */
-fun swipeDirection(x: Float, y: Float, minSwipeLength: Int, swipeType: SwipeNWay = SwipeNWay.EIGHT_WAY): SwipeDirection? {
+fun swipeDirection(x: Float, y: Float, minSwipeLength: Int, possible: Collection<SwipeDirection>): SwipeDirection? {
     val xD = x.toDouble()
     val yD = y.toDouble()
 
     val swipeLength = sqrt(xD.pow(2) + yD.pow(2))
 
-    if (swipeLength > minSwipeLength) {
-        val angleDir = (atan2(xD, yD) / Math.PI * 180)
-        val angle = if (angleDir < 0) {
-            360 + angleDir
-        } else {
-            angleDir
-        }
-
-        when (swipeType) {
-            // 0 degrees = down, increasing counter-clockwise
-            SwipeNWay.EIGHT_WAY -> return when (angle) {
-                in 22.5..67.5 -> SwipeDirection.BOTTOM_RIGHT
-                in 67.5..112.5 -> SwipeDirection.RIGHT
-                in 112.5..157.5 -> SwipeDirection.TOP_RIGHT
-                in 157.5..202.5 -> SwipeDirection.TOP
-                in 202.5..247.5 -> SwipeDirection.TOP_LEFT
-                in 247.5..292.5 -> SwipeDirection.LEFT
-                in 292.5..337.5 -> SwipeDirection.BOTTOM_LEFT
-                else -> SwipeDirection.BOTTOM
-            }
-            SwipeNWay.FOUR_WAY_CROSS -> return when (angle) {
-                in 45.0..135.0 -> SwipeDirection.RIGHT
-                in 135.0..225.0 -> SwipeDirection.TOP
-                in 225.0..315.0 -> SwipeDirection.LEFT
-                else -> SwipeDirection.BOTTOM
-            }
-            SwipeNWay.FOUR_WAY_DIAGONAL -> return when (angle) {
-                in 0.0..90.0 -> SwipeDirection.BOTTOM_RIGHT
-                in 90.0..180.0 -> SwipeDirection.TOP_RIGHT
-                in 180.0..270.0 -> SwipeDirection.TOP_LEFT
-                else -> SwipeDirection.BOTTOM_LEFT
-            }
-            SwipeNWay.TWO_WAY_HORIZONTAL -> return when (angle) {
-                in 0.0..180.0 -> SwipeDirection.RIGHT
-                else -> SwipeDirection.LEFT
-            }
-            SwipeNWay.TWO_WAY_VERTICAL -> return when (angle) {
-                in 90.0..270.0 -> SwipeDirection.TOP
-                else -> SwipeDirection.BOTTOM
-            }
-        }
-    } else {
+    if (swipeLength < minSwipeLength) {
         return null
     }
+
+    val angle = atan2(yD, xD)
+
+    return possible.minByOrNull { min(abs((it.angle - angle).mod(Math.PI * 2)), abs((angle - it.angle).mod(Math.PI * 2))) }
 }
 
 fun performKeyAction(
@@ -505,25 +347,44 @@ fun openLink(url: String, ctx: Context) {
 fun Int.toBool() = this == 1
 fun Boolean.toInt() = this.compareTo(false)
 
-fun keyboardLayoutsSetFromString(layouts: String?): Set<Int> {
-    return layouts?.split(",")?.map { it.trim().toInt() }?.toSet()
-        ?: setOf(
-            DEFAULT_KEYBOARD_LAYOUT,
-        )
+
+val internalKeyboardLayouts = mapOf(
+    "ThumbKeyENv4" to KeyboardLayout("ThumbKey English v4", "{\"MAIN\":{\"arr\":[[{\"center\":{\"display\":{\"type\":\"com.dessalines.thumbkey.utils.KeyDisplay.TextDisplay\",\"text\":\"s\"},\"action\":{\"type\":\"com.dessalines.thumbkey.utils.KeyAction.CommitText\",\"text\":\"s\"},\"color\":\"PRIMARY\",\"size\":\"LARGE\"},\"swipes\":{\"BOTTOM_RIGHT\":{\"display\":{\"type\":\"com.dessalines.thumbkey.utils.KeyDisplay.TextDisplay\",\"text\":\"w\"},\"action\":{\"type\":\"com.dessalines.thumbkey.utils.KeyAction.CommitText\",\"text\":\"w\"}}}},{\"center\":{\"display\":{\"type\":\"com.dessalines.thumbkey.utils.KeyDisplay.TextDisplay\",\"text\":\"r\"},\"action\":{\"type\":\"com.dessalines.thumbkey.utils.KeyAction.CommitText\",\"text\":\"r\"},\"color\":\"PRIMARY\",\"size\":\"LARGE\"},\"swipes\":{\"BOTTOM\":{\"display\":{\"type\":\"com.dessalines.thumbkey.utils.KeyDisplay.TextDisplay\",\"text\":\"g\"},\"action\":{\"type\":\"com.dessalines.thumbkey.utils.KeyAction.CommitText\",\"text\":\"g\"}}}},{\"center\":{\"display\":{\"type\":\"com.dessalines.thumbkey.utils.KeyDisplay.TextDisplay\",\"text\":\"o\"},\"action\":{\"type\":\"com.dessalines.thumbkey.utils.KeyAction.CommitText\",\"text\":\"o\"},\"color\":\"PRIMARY\",\"size\":\"LARGE\"},\"swipes\":{\"BOTTOM_LEFT\":{\"display\":{\"type\":\"com.dessalines.thumbkey.utils.KeyDisplay.TextDisplay\",\"text\":\"u\"},\"action\":{\"type\":\"com.dessalines.thumbkey.utils.KeyAction.CommitText\",\"text\":\"u\"}}}},{\"center\":{\"display\":{\"type\":\"com.dessalines.thumbkey.utils.KeyDisplay.IconDisplay\",\"iconType\":\"Outlined\",\"iconName\":\"Settings\"},\"action\":{\"type\":\"com.dessalines.thumbkey.utils.KeyAction.GotoSettings\"},\"size\":\"LARGE\"},\"backgroundColor\":\"SURFACE_VARIANT\"}],[{\"center\":{\"display\":{\"type\":\"com.dessalines.thumbkey.utils.KeyDisplay.TextDisplay\",\"text\":\"n\"},\"action\":{\"type\":\"com.dessalines.thumbkey.utils.KeyAction.CommitText\",\"text\":\"n\"},\"color\":\"PRIMARY\",\"size\":\"LARGE\"},\"swipes\":{\"RIGHT\":{\"display\":{\"type\":\"com.dessalines.thumbkey.utils.KeyDisplay.TextDisplay\",\"text\":\"m\"},\"action\":{\"type\":\"com.dessalines.thumbkey.utils.KeyAction.CommitText\",\"text\":\"m\"}}}},{\"center\":{\"display\":{\"type\":\"com.dessalines.thumbkey.utils.KeyDisplay.TextDisplay\",\"text\":\"h\"},\"action\":{\"type\":\"com.dessalines.thumbkey.utils.KeyAction.CommitText\",\"text\":\"h\"},\"color\":\"PRIMARY\",\"size\":\"LARGE\"},\"swipes\":{\"TOP\":{\"display\":{\"type\":\"com.dessalines.thumbkey.utils.KeyDisplay.TextDisplay\",\"text\":\"q\"},\"action\":{\"type\":\"com.dessalines.thumbkey.utils.KeyAction.CommitText\",\"text\":\"q\"}},\"TOP_RIGHT\":{\"display\":{\"type\":\"com.dessalines.thumbkey.utils.KeyDisplay.TextDisplay\",\"text\":\"b\"},\"action\":{\"type\":\"com.dessalines.thumbkey.utils.KeyAction.CommitText\",\"text\":\"b\"}},\"RIGHT\":{\"display\":{\"type\":\"com.dessalines.thumbkey.utils.KeyDisplay.TextDisplay\",\"text\":\"p\"},\"action\":{\"type\":\"com.dessalines.thumbkey.utils.KeyAction.CommitText\",\"text\":\"p\"}},\"BOTTOM_RIGHT\":{\"display\":{\"type\":\"com.dessalines.thumbkey.utils.KeyDisplay.TextDisplay\",\"text\":\"y\"},\"action\":{\"type\":\"com.dessalines.thumbkey.utils.KeyAction.CommitText\",\"text\":\"y\"}},\"BOTTOM\":{\"display\":{\"type\":\"com.dessalines.thumbkey.utils.KeyDisplay.TextDisplay\",\"text\":\"x\"},\"action\":{\"type\":\"com.dessalines.thumbkey.utils.KeyAction.CommitText\",\"text\":\"x\"}},\"BOTTOM_LEFT\":{\"display\":{\"type\":\"com.dessalines.thumbkey.utils.KeyDisplay.TextDisplay\",\"text\":\"v\"},\"action\":{\"type\":\"com.dessalines.thumbkey.utils.KeyAction.CommitText\",\"text\":\"v\"}},\"LEFT\":{\"display\":{\"type\":\"com.dessalines.thumbkey.utils.KeyDisplay.TextDisplay\",\"text\":\"k\"},\"action\":{\"type\":\"com.dessalines.thumbkey.utils.KeyAction.CommitText\",\"text\":\"k\"}},\"TOP_LEFT\":{\"display\":{\"type\":\"com.dessalines.thumbkey.utils.KeyDisplay.TextDisplay\",\"text\":\"j\"},\"action\":{\"type\":\"com.dessalines.thumbkey.utils.KeyAction.CommitText\",\"text\":\"j\"}}}},{\"center\":{\"display\":{\"type\":\"com.dessalines.thumbkey.utils.KeyDisplay.TextDisplay\",\"text\":\"a\"},\"action\":{\"type\":\"com.dessalines.thumbkey.utils.KeyAction.CommitText\",\"text\":\"a\"},\"color\":\"PRIMARY\",\"size\":\"LARGE\"},\"swipes\":{\"LEFT\":{\"display\":{\"type\":\"com.dessalines.thumbkey.utils.KeyDisplay.TextDisplay\",\"text\":\"l\"},\"action\":{\"type\":\"com.dessalines.thumbkey.utils.KeyAction.CommitText\",\"text\":\"l\"}}}},{\"center\":{\"display\":{\"type\":\"com.dessalines.thumbkey.utils.KeyDisplay.IconDisplay\",\"iconType\":\"Outlined\",\"iconName\":\"Numbers\"},\"action\":{\"type\":\"com.dessalines.thumbkey.utils.KeyAction.ToggleNumericMode\",\"enable\":true},\"size\":\"LARGE\"},\"swipes\":{\"TOP\":{\"display\":{\"type\":\"com.dessalines.thumbkey.utils.KeyDisplay.IconDisplay\",\"iconType\":\"Outlined\",\"iconName\":\"SelectAll\"},\"action\":{\"type\":\"com.dessalines.thumbkey.utils.KeyAction.SelectAndCopyAll\"},\"color\":\"MUTED\"},\"BOTTOM\":{\"display\":{\"type\":\"com.dessalines.thumbkey.utils.KeyDisplay.IconDisplay\",\"iconType\":\"Outlined\",\"iconName\":\"ContentPaste\"},\"action\":{\"type\":\"com.dessalines.thumbkey.utils.KeyAction.Paste\"},\"color\":\"MUTED\"},\"LEFT\":{\"display\":{\"type\":\"com.dessalines.thumbkey.utils.KeyDisplay.IconDisplay\",\"iconType\":\"Outlined\",\"iconName\":\"Language\"},\"action\":{\"type\":\"com.dessalines.thumbkey.utils.KeyAction.SwitchLanguage\"},\"color\":\"MUTED\"},\"RIGHT\":{\"display\":{\"type\":\"com.dessalines.thumbkey.utils.KeyDisplay.IconDisplay\",\"iconType\":\"Outlined\",\"iconName\":\"LinearScale\"},\"action\":{\"type\":\"com.dessalines.thumbkey.utils.KeyAction.SwitchPosition\"},\"color\":\"MUTED\"}},\"backgroundColor\":\"SURFACE_VARIANT\"}],[{\"center\":{\"display\":{\"type\":\"com.dessalines.thumbkey.utils.KeyDisplay.TextDisplay\",\"text\":\"t\"},\"action\":{\"type\":\"com.dessalines.thumbkey.utils.KeyAction.CommitText\",\"text\":\"t\"},\"color\":\"PRIMARY\",\"size\":\"LARGE\"},\"swipes\":{\"TOP_RIGHT\":{\"display\":{\"type\":\"com.dessalines.thumbkey.utils.KeyDisplay.TextDisplay\",\"text\":\"c\"},\"action\":{\"type\":\"com.dessalines.thumbkey.utils.KeyAction.CommitText\",\"text\":\"c\"}}}},{\"center\":{\"display\":{\"type\":\"com.dessalines.thumbkey.utils.KeyDisplay.TextDisplay\",\"text\":\"i\"},\"action\":{\"type\":\"com.dessalines.thumbkey.utils.KeyAction.CommitText\",\"text\":\"i\"},\"color\":\"PRIMARY\",\"size\":\"LARGE\"},\"swipes\":{\"TOP\":{\"display\":{\"type\":\"com.dessalines.thumbkey.utils.KeyDisplay.TextDisplay\",\"text\":\"f\"},\"action\":{\"type\":\"com.dessalines.thumbkey.utils.KeyAction.CommitText\",\"text\":\"f\"}},\"RIGHT\":{\"display\":{\"type\":\"com.dessalines.thumbkey.utils.KeyDisplay.TextDisplay\",\"text\":\"z\"},\"action\":{\"type\":\"com.dessalines.thumbkey.utils.KeyAction.CommitText\",\"text\":\"z\"}}}},{\"center\":{\"display\":{\"type\":\"com.dessalines.thumbkey.utils.KeyDisplay.TextDisplay\",\"text\":\"e\"},\"action\":{\"type\":\"com.dessalines.thumbkey.utils.KeyAction.CommitText\",\"text\":\"e\"},\"color\":\"PRIMARY\",\"size\":\"LARGE\"},\"swipes\":{\"TOP_LEFT\":{\"display\":{\"type\":\"com.dessalines.thumbkey.utils.KeyDisplay.TextDisplay\",\"text\":\"d\"},\"action\":{\"type\":\"com.dessalines.thumbkey.utils.KeyAction.CommitText\",\"text\":\"d\"}}}},{\"center\":{\"display\":{\"type\":\"com.dessalines.thumbkey.utils.KeyDisplay.IconDisplay\",\"iconType\":\"Outlined\",\"iconName\":\"KeyboardBackspace\"},\"action\":{\"type\":\"com.dessalines.thumbkey.utils.KeyAction.SendEvent\",\"event\":{\"action\":0,\"code\":67}},\"size\":\"LARGE\"},\"swipes\":{\"LEFT\":{\"display\":null,\"action\":{\"type\":\"com.dessalines.thumbkey.utils.KeyAction.DeleteLastWord\"}},\"RIGHT\":{\"display\":null,\"action\":{\"type\":\"com.dessalines.thumbkey.utils.KeyAction.SendEvent\",\"event\":{\"action\":0,\"code\":112}},\"color\":\"MUTED\",\"size\":\"SMALLEST\"}},\"backgroundColor\":\"SURFACE_VARIANT\"}],[{\"center\":{\"display\":{\"type\":\"com.dessalines.thumbkey.utils.KeyDisplay.TextDisplay\",\"text\":\" \"},\"action\":{\"type\":\"com.dessalines.thumbkey.utils.KeyAction.CommitText\",\"text\":\" \"}},\"swipes\":{\"LEFT\":{\"display\":null,\"action\":{\"type\":\"com.dessalines.thumbkey.utils.KeyAction.SendEvent\",\"event\":{\"action\":0,\"code\":21}}},\"RIGHT\":{\"display\":null,\"action\":{\"type\":\"com.dessalines.thumbkey.utils.KeyAction.SendEvent\",\"event\":{\"action\":0,\"code\":22}}}},\"nextTapActions\":[{\"type\":\"com.dessalines.thumbkey.utils.KeyAction.ReplaceLastText\",\"text\":\", \",\"trimCount\":1},{\"type\":\"com.dessalines.thumbkey.utils.KeyAction.ReplaceLastText\",\"text\":\". \"},{\"type\":\"com.dessalines.thumbkey.utils.KeyAction.ReplaceLastText\",\"text\":\"? \"},{\"type\":\"com.dessalines.thumbkey.utils.KeyAction.ReplaceLastText\",\"text\":\"! \"},{\"type\":\"com.dessalines.thumbkey.utils.KeyAction.ReplaceLastText\",\"text\":\": \"},{\"type\":\"com.dessalines.thumbkey.utils.KeyAction.ReplaceLastText\",\"text\":\"; \"}],\"widthMultiplier\":3,\"backgroundColor\":\"SURFACE_VARIANT\"},{\"center\":{\"display\":{\"type\":\"com.dessalines.thumbkey.utils.KeyDisplay.IconDisplay\",\"iconType\":\"Outlined\",\"iconName\":\"KeyboardReturn\"},\"action\":{\"type\":\"com.dessalines.thumbkey.utils.KeyAction.IMECompleteAction\"},\"size\":\"LARGE\"},\"backgroundColor\":\"SURFACE_VARIANT\"}]]},\"SHIFTED\":{\"arr\":[[{\"center\":{\"display\":{\"type\":\"com.dessalines.thumbkey.utils.KeyDisplay.TextDisplay\",\"text\":\"S\"},\"action\":{\"type\":\"com.dessalines.thumbkey.utils.KeyAction.CommitText\",\"text\":\"S\"},\"color\":\"PRIMARY\",\"size\":\"LARGE\"},\"swipes\":{\"BOTTOM_RIGHT\":{\"display\":{\"type\":\"com.dessalines.thumbkey.utils.KeyDisplay.TextDisplay\",\"text\":\"W\"},\"action\":{\"type\":\"com.dessalines.thumbkey.utils.KeyAction.CommitText\",\"text\":\"W\"}}}},{\"center\":{\"display\":{\"type\":\"com.dessalines.thumbkey.utils.KeyDisplay.TextDisplay\",\"text\":\"R\"},\"action\":{\"type\":\"com.dessalines.thumbkey.utils.KeyAction.CommitText\",\"text\":\"R\"},\"color\":\"PRIMARY\",\"size\":\"LARGE\"},\"swipes\":{\"BOTTOM\":{\"display\":{\"type\":\"com.dessalines.thumbkey.utils.KeyDisplay.TextDisplay\",\"text\":\"G\"},\"action\":{\"type\":\"com.dessalines.thumbkey.utils.KeyAction.CommitText\",\"text\":\"G\"}}}},{\"center\":{\"display\":{\"type\":\"com.dessalines.thumbkey.utils.KeyDisplay.TextDisplay\",\"text\":\"O\"},\"action\":{\"type\":\"com.dessalines.thumbkey.utils.KeyAction.CommitText\",\"text\":\"O\"},\"color\":\"PRIMARY\",\"size\":\"LARGE\"},\"swipes\":{\"BOTTOM_LEFT\":{\"display\":{\"type\":\"com.dessalines.thumbkey.utils.KeyDisplay.TextDisplay\",\"text\":\"U\"},\"action\":{\"type\":\"com.dessalines.thumbkey.utils.KeyAction.CommitText\",\"text\":\"U\"}}}},{\"center\":{\"display\":{\"type\":\"com.dessalines.thumbkey.utils.KeyDisplay.IconDisplay\",\"iconType\":\"Outlined\",\"iconName\":\"Settings\"},\"action\":{\"type\":\"com.dessalines.thumbkey.utils.KeyAction.GotoSettings\"},\"size\":\"LARGE\"},\"backgroundColor\":\"SURFACE_VARIANT\"}],[{\"center\":{\"display\":{\"type\":\"com.dessalines.thumbkey.utils.KeyDisplay.TextDisplay\",\"text\":\"N\"},\"action\":{\"type\":\"com.dessalines.thumbkey.utils.KeyAction.CommitText\",\"text\":\"N\"},\"color\":\"PRIMARY\",\"size\":\"LARGE\"},\"swipes\":{\"RIGHT\":{\"display\":{\"type\":\"com.dessalines.thumbkey.utils.KeyDisplay.TextDisplay\",\"text\":\"M\"},\"action\":{\"type\":\"com.dessalines.thumbkey.utils.KeyAction.CommitText\",\"text\":\"M\"}}}},{\"center\":{\"display\":{\"type\":\"com.dessalines.thumbkey.utils.KeyDisplay.TextDisplay\",\"text\":\"H\"},\"action\":{\"type\":\"com.dessalines.thumbkey.utils.KeyAction.CommitText\",\"text\":\"H\"},\"color\":\"PRIMARY\",\"size\":\"LARGE\"},\"swipes\":{\"TOP\":{\"display\":{\"type\":\"com.dessalines.thumbkey.utils.KeyDisplay.TextDisplay\",\"text\":\"Q\"},\"action\":{\"type\":\"com.dessalines.thumbkey.utils.KeyAction.CommitText\",\"text\":\"Q\"}},\"TOP_RIGHT\":{\"display\":{\"type\":\"com.dessalines.thumbkey.utils.KeyDisplay.TextDisplay\",\"text\":\"B\"},\"action\":{\"type\":\"com.dessalines.thumbkey.utils.KeyAction.CommitText\",\"text\":\"B\"}},\"RIGHT\":{\"display\":{\"type\":\"com.dessalines.thumbkey.utils.KeyDisplay.TextDisplay\",\"text\":\"P\"},\"action\":{\"type\":\"com.dessalines.thumbkey.utils.KeyAction.CommitText\",\"text\":\"P\"}},\"BOTTOM_RIGHT\":{\"display\":{\"type\":\"com.dessalines.thumbkey.utils.KeyDisplay.TextDisplay\",\"text\":\"Y\"},\"action\":{\"type\":\"com.dessalines.thumbkey.utils.KeyAction.CommitText\",\"text\":\"Y\"}},\"BOTTOM\":{\"display\":{\"type\":\"com.dessalines.thumbkey.utils.KeyDisplay.TextDisplay\",\"text\":\"X\"},\"action\":{\"type\":\"com.dessalines.thumbkey.utils.KeyAction.CommitText\",\"text\":\"X\"}},\"BOTTOM_LEFT\":{\"display\":{\"type\":\"com.dessalines.thumbkey.utils.KeyDisplay.TextDisplay\",\"text\":\"V\"},\"action\":{\"type\":\"com.dessalines.thumbkey.utils.KeyAction.CommitText\",\"text\":\"V\"}},\"LEFT\":{\"display\":{\"type\":\"com.dessalines.thumbkey.utils.KeyDisplay.TextDisplay\",\"text\":\"K\"},\"action\":{\"type\":\"com.dessalines.thumbkey.utils.KeyAction.CommitText\",\"text\":\"K\"}},\"TOP_LEFT\":{\"display\":{\"type\":\"com.dessalines.thumbkey.utils.KeyDisplay.TextDisplay\",\"text\":\"J\"},\"action\":{\"type\":\"com.dessalines.thumbkey.utils.KeyAction.CommitText\",\"text\":\"J\"}}}},{\"center\":{\"display\":{\"type\":\"com.dessalines.thumbkey.utils.KeyDisplay.TextDisplay\",\"text\":\"A\"},\"action\":{\"type\":\"com.dessalines.thumbkey.utils.KeyAction.CommitText\",\"text\":\"A\"},\"color\":\"PRIMARY\",\"size\":\"LARGE\"},\"swipes\":{\"LEFT\":{\"display\":{\"type\":\"com.dessalines.thumbkey.utils.KeyDisplay.TextDisplay\",\"text\":\"L\"},\"action\":{\"type\":\"com.dessalines.thumbkey.utils.KeyAction.CommitText\",\"text\":\"L\"}}}},{\"center\":{\"display\":{\"type\":\"com.dessalines.thumbkey.utils.KeyDisplay.IconDisplay\",\"iconType\":\"Outlined\",\"iconName\":\"Numbers\"},\"action\":{\"type\":\"com.dessalines.thumbkey.utils.KeyAction.ToggleNumericMode\",\"enable\":true},\"size\":\"LARGE\"},\"swipes\":{\"TOP\":{\"display\":{\"type\":\"com.dessalines.thumbkey.utils.KeyDisplay.IconDisplay\",\"iconType\":\"Outlined\",\"iconName\":\"SelectAll\"},\"action\":{\"type\":\"com.dessalines.thumbkey.utils.KeyAction.SelectAndCopyAll\"},\"color\":\"MUTED\"},\"BOTTOM\":{\"display\":{\"type\":\"com.dessalines.thumbkey.utils.KeyDisplay.IconDisplay\",\"iconType\":\"Outlined\",\"iconName\":\"ContentPaste\"},\"action\":{\"type\":\"com.dessalines.thumbkey.utils.KeyAction.Paste\"},\"color\":\"MUTED\"},\"LEFT\":{\"display\":{\"type\":\"com.dessalines.thumbkey.utils.KeyDisplay.IconDisplay\",\"iconType\":\"Outlined\",\"iconName\":\"Language\"},\"action\":{\"type\":\"com.dessalines.thumbkey.utils.KeyAction.SwitchLanguage\"},\"color\":\"MUTED\"},\"RIGHT\":{\"display\":{\"type\":\"com.dessalines.thumbkey.utils.KeyDisplay.IconDisplay\",\"iconType\":\"Outlined\",\"iconName\":\"LinearScale\"},\"action\":{\"type\":\"com.dessalines.thumbkey.utils.KeyAction.SwitchPosition\"},\"color\":\"MUTED\"}},\"backgroundColor\":\"SURFACE_VARIANT\"}],[{\"center\":{\"display\":{\"type\":\"com.dessalines.thumbkey.utils.KeyDisplay.TextDisplay\",\"text\":\"T\"},\"action\":{\"type\":\"com.dessalines.thumbkey.utils.KeyAction.CommitText\",\"text\":\"T\"},\"color\":\"PRIMARY\",\"size\":\"LARGE\"},\"swipes\":{\"TOP_RIGHT\":{\"display\":{\"type\":\"com.dessalines.thumbkey.utils.KeyDisplay.TextDisplay\",\"text\":\"C\"},\"action\":{\"type\":\"com.dessalines.thumbkey.utils.KeyAction.CommitText\",\"text\":\"C\"}}}},{\"center\":{\"display\":{\"type\":\"com.dessalines.thumbkey.utils.KeyDisplay.TextDisplay\",\"text\":\"I\"},\"action\":{\"type\":\"com.dessalines.thumbkey.utils.KeyAction.CommitText\",\"text\":\"I\"},\"color\":\"PRIMARY\",\"size\":\"LARGE\"},\"swipes\":{\"TOP\":{\"display\":{\"type\":\"com.dessalines.thumbkey.utils.KeyDisplay.TextDisplay\",\"text\":\"F\"},\"action\":{\"type\":\"com.dessalines.thumbkey.utils.KeyAction.CommitText\",\"text\":\"F\"}},\"RIGHT\":{\"display\":{\"type\":\"com.dessalines.thumbkey.utils.KeyDisplay.TextDisplay\",\"text\":\"Z\"},\"action\":{\"type\":\"com.dessalines.thumbkey.utils.KeyAction.CommitText\",\"text\":\"Z\"}}}},{\"center\":{\"display\":{\"type\":\"com.dessalines.thumbkey.utils.KeyDisplay.TextDisplay\",\"text\":\"E\"},\"action\":{\"type\":\"com.dessalines.thumbkey.utils.KeyAction.CommitText\",\"text\":\"E\"},\"color\":\"PRIMARY\",\"size\":\"LARGE\"},\"swipes\":{\"TOP_LEFT\":{\"display\":{\"type\":\"com.dessalines.thumbkey.utils.KeyDisplay.TextDisplay\",\"text\":\"D\"},\"action\":{\"type\":\"com.dessalines.thumbkey.utils.KeyAction.CommitText\",\"text\":\"D\"}}}},{\"center\":{\"display\":{\"type\":\"com.dessalines.thumbkey.utils.KeyDisplay.IconDisplay\",\"iconType\":\"Outlined\",\"iconName\":\"KeyboardBackspace\"},\"action\":{\"type\":\"com.dessalines.thumbkey.utils.KeyAction.SendEvent\",\"event\":{\"action\":0,\"code\":67}},\"size\":\"LARGE\"},\"swipes\":{\"LEFT\":{\"display\":null,\"action\":{\"type\":\"com.dessalines.thumbkey.utils.KeyAction.DeleteLastWord\"}},\"RIGHT\":{\"display\":null,\"action\":{\"type\":\"com.dessalines.thumbkey.utils.KeyAction.SendEvent\",\"event\":{\"action\":0,\"code\":112}},\"color\":\"MUTED\",\"size\":\"SMALLEST\"}},\"backgroundColor\":\"SURFACE_VARIANT\"}],[{\"center\":{\"display\":{\"type\":\"com.dessalines.thumbkey.utils.KeyDisplay.TextDisplay\",\"text\":\" \"},\"action\":{\"type\":\"com.dessalines.thumbkey.utils.KeyAction.CommitText\",\"text\":\" \"}},\"swipes\":{\"LEFT\":{\"display\":null,\"action\":{\"type\":\"com.dessalines.thumbkey.utils.KeyAction.SendEvent\",\"event\":{\"action\":0,\"code\":21}}},\"RIGHT\":{\"display\":null,\"action\":{\"type\":\"com.dessalines.thumbkey.utils.KeyAction.SendEvent\",\"event\":{\"action\":0,\"code\":22}}}},\"nextTapActions\":[{\"type\":\"com.dessalines.thumbkey.utils.KeyAction.ReplaceLastText\",\"text\":\", \",\"trimCount\":1},{\"type\":\"com.dessalines.thumbkey.utils.KeyAction.ReplaceLastText\",\"text\":\". \"},{\"type\":\"com.dessalines.thumbkey.utils.KeyAction.ReplaceLastText\",\"text\":\"? \"},{\"type\":\"com.dessalines.thumbkey.utils.KeyAction.ReplaceLastText\",\"text\":\"! \"},{\"type\":\"com.dessalines.thumbkey.utils.KeyAction.ReplaceLastText\",\"text\":\": \"},{\"type\":\"com.dessalines.thumbkey.utils.KeyAction.ReplaceLastText\",\"text\":\"; \"}],\"widthMultiplier\":3,\"backgroundColor\":\"SURFACE_VARIANT\"},{\"center\":{\"display\":{\"type\":\"com.dessalines.thumbkey.utils.KeyDisplay.IconDisplay\",\"iconType\":\"Outlined\",\"iconName\":\"KeyboardReturn\"},\"action\":{\"type\":\"com.dessalines.thumbkey.utils.KeyAction.IMECompleteAction\"},\"size\":\"LARGE\"},\"backgroundColor\":\"SURFACE_VARIANT\"}]]},\"NUMERIC\":{\"arr\":[[{\"center\":{\"display\":{\"type\":\"com.dessalines.thumbkey.utils.KeyDisplay.TextDisplay\",\"text\":\"1\"},\"action\":{\"type\":\"com.dessalines.thumbkey.utils.KeyAction.CommitText\",\"text\":\"1\"},\"color\":\"PRIMARY\",\"size\":\"LARGE\"},\"swipes\":{\"BOTTOM_LEFT\":{\"display\":{\"type\":\"com.dessalines.thumbkey.utils.KeyDisplay.TextDisplay\",\"text\":\"\$\"},\"action\":{\"type\":\"com.dessalines.thumbkey.utils.KeyAction.CommitText\",\"text\":\"\$\"}}}},{\"center\":{\"display\":{\"type\":\"com.dessalines.thumbkey.utils.KeyDisplay.TextDisplay\",\"text\":\"2\"},\"action\":{\"type\":\"com.dessalines.thumbkey.utils.KeyAction.CommitText\",\"text\":\"2\"},\"color\":\"PRIMARY\",\"size\":\"LARGE\"},\"swipes\":{\"TOP_LEFT\":{\"display\":{\"type\":\"com.dessalines.thumbkey.utils.KeyDisplay.TextDisplay\",\"text\":\"`\"},\"action\":{\"type\":\"com.dessalines.thumbkey.utils.KeyAction.CommitText\",\"text\":\"`\"}},\"TOP\":{\"display\":{\"type\":\"com.dessalines.thumbkey.utils.KeyDisplay.TextDisplay\",\"text\":\"^\"},\"action\":{\"type\":\"com.dessalines.thumbkey.utils.KeyAction.CommitText\",\"text\":\"^\"}},\"TOP_RIGHT\":{\"display\":{\"type\":\"com.dessalines.thumbkey.utils.KeyDisplay.TextDisplay\",\"text\":\"\\u00b4\"},\"action\":{\"type\":\"com.dessalines.thumbkey.utils.KeyAction.CommitText\",\"text\":\"\\u00b4\"}},\"RIGHT\":{\"display\":{\"type\":\"com.dessalines.thumbkey.utils.KeyDisplay.TextDisplay\",\"text\":\"!\"},\"action\":{\"type\":\"com.dessalines.thumbkey.utils.KeyAction.CommitText\",\"text\":\"!\"}},\"BOTTOM_RIGHT\":{\"display\":{\"type\":\"com.dessalines.thumbkey.utils.KeyDisplay.TextDisplay\",\"text\":\"\\\\\"},\"action\":{\"type\":\"com.dessalines.thumbkey.utils.KeyAction.CommitText\",\"text\":\"\\\\\"}},\"BOTTOM_LEFT\":{\"display\":{\"type\":\"com.dessalines.thumbkey.utils.KeyDisplay.TextDisplay\",\"text\":\"/\"},\"action\":{\"type\":\"com.dessalines.thumbkey.utils.KeyAction.CommitText\",\"text\":\"/\"}},\"LEFT\":{\"display\":{\"type\":\"com.dessalines.thumbkey.utils.KeyDisplay.TextDisplay\",\"text\":\"+\"},\"action\":{\"type\":\"com.dessalines.thumbkey.utils.KeyAction.CommitText\",\"text\":\"+\"}}}},{\"center\":{\"display\":{\"type\":\"com.dessalines.thumbkey.utils.KeyDisplay.TextDisplay\",\"text\":\"3\"},\"action\":{\"type\":\"com.dessalines.thumbkey.utils.KeyAction.CommitText\",\"text\":\"3\"},\"color\":\"PRIMARY\",\"size\":\"LARGE\"},\"swipes\":{\"LEFT\":{\"display\":{\"type\":\"com.dessalines.thumbkey.utils.KeyDisplay.TextDisplay\",\"text\":\"?\"},\"action\":{\"type\":\"com.dessalines.thumbkey.utils.KeyAction.CommitText\",\"text\":\"?\"}},\"BOTTOM_RIGHT\":{\"display\":{\"type\":\"com.dessalines.thumbkey.utils.KeyDisplay.TextDisplay\",\"text\":\"\\u20ac\"},\"action\":{\"type\":\"com.dessalines.thumbkey.utils.KeyAction.CommitText\",\"text\":\"\\u20ac\"}},\"BOTTOM_LEFT\":{\"display\":{\"type\":\"com.dessalines.thumbkey.utils.KeyDisplay.TextDisplay\",\"text\":\"\\u00a3\"},\"action\":{\"type\":\"com.dessalines.thumbkey.utils.KeyAction.CommitText\",\"text\":\"\\u00a3\"}},\"BOTTOM\":{\"display\":{\"type\":\"com.dessalines.thumbkey.utils.KeyDisplay.TextDisplay\",\"text\":\"=\"},\"action\":{\"type\":\"com.dessalines.thumbkey.utils.KeyAction.CommitText\",\"text\":\"=\"}}}},{\"center\":{\"display\":{\"type\":\"com.dessalines.thumbkey.utils.KeyDisplay.IconDisplay\",\"iconType\":\"Outlined\",\"iconName\":\"Settings\"},\"action\":{\"type\":\"com.dessalines.thumbkey.utils.KeyAction.GotoSettings\"},\"size\":\"LARGE\"},\"backgroundColor\":\"SURFACE_VARIANT\"}],[{\"center\":{\"display\":{\"type\":\"com.dessalines.thumbkey.utils.KeyDisplay.TextDisplay\",\"text\":\"4\"},\"action\":{\"type\":\"com.dessalines.thumbkey.utils.KeyAction.CommitText\",\"text\":\"4\"},\"color\":\"PRIMARY\",\"size\":\"LARGE\"},\"swipes\":{\"TOP_LEFT\":{\"display\":{\"type\":\"com.dessalines.thumbkey.utils.KeyDisplay.TextDisplay\",\"text\":\"{\"},\"action\":{\"type\":\"com.dessalines.thumbkey.utils.KeyAction.CommitText\",\"text\":\"{\"}},\"TOP_RIGHT\":{\"display\":{\"type\":\"com.dessalines.thumbkey.utils.KeyDisplay.TextDisplay\",\"text\":\"%\"},\"action\":{\"type\":\"com.dessalines.thumbkey.utils.KeyAction.CommitText\",\"text\":\"%\"}},\"BOTTOM_RIGHT\":{\"display\":{\"type\":\"com.dessalines.thumbkey.utils.KeyDisplay.TextDisplay\",\"text\":\"_\"},\"action\":{\"type\":\"com.dessalines.thumbkey.utils.KeyAction.CommitText\",\"text\":\"_\"}},\"BOTTOM_LEFT\":{\"display\":{\"type\":\"com.dessalines.thumbkey.utils.KeyDisplay.TextDisplay\",\"text\":\"[\"},\"action\":{\"type\":\"com.dessalines.thumbkey.utils.KeyAction.CommitText\",\"text\":\"[\"}},\"LEFT\":{\"display\":{\"type\":\"com.dessalines.thumbkey.utils.KeyDisplay.TextDisplay\",\"text\":\"(\"},\"action\":{\"type\":\"com.dessalines.thumbkey.utils.KeyAction.CommitText\",\"text\":\"(\"}}}},{\"center\":{\"display\":{\"type\":\"com.dessalines.thumbkey.utils.KeyDisplay.TextDisplay\",\"text\":\"5\"},\"action\":{\"type\":\"com.dessalines.thumbkey.utils.KeyAction.CommitText\",\"text\":\"5\"},\"color\":\"PRIMARY\",\"size\":\"LARGE\"}},{\"center\":{\"display\":{\"type\":\"com.dessalines.thumbkey.utils.KeyDisplay.TextDisplay\",\"text\":\"6\"},\"action\":{\"type\":\"com.dessalines.thumbkey.utils.KeyAction.CommitText\",\"text\":\"6\"},\"color\":\"PRIMARY\",\"size\":\"LARGE\"},\"swipes\":{\"TOP_LEFT\":{\"display\":{\"type\":\"com.dessalines.thumbkey.utils.KeyDisplay.TextDisplay\",\"text\":\"|\"},\"action\":{\"type\":\"com.dessalines.thumbkey.utils.KeyAction.CommitText\",\"text\":\"|\"}},\"TOP_RIGHT\":{\"display\":{\"type\":\"com.dessalines.thumbkey.utils.KeyDisplay.TextDisplay\",\"text\":\"}\"},\"action\":{\"type\":\"com.dessalines.thumbkey.utils.KeyAction.CommitText\",\"text\":\"}\"}},\"RIGHT\":{\"display\":{\"type\":\"com.dessalines.thumbkey.utils.KeyDisplay.TextDisplay\",\"text\":\")\"},\"action\":{\"type\":\"com.dessalines.thumbkey.utils.KeyAction.CommitText\",\"text\":\")\"}},\"BOTTOM_RIGHT\":{\"display\":{\"type\":\"com.dessalines.thumbkey.utils.KeyDisplay.TextDisplay\",\"text\":\"]\"},\"action\":{\"type\":\"com.dessalines.thumbkey.utils.KeyAction.CommitText\",\"text\":\"]\"}},\"BOTTOM_LEFT\":{\"display\":{\"type\":\"com.dessalines.thumbkey.utils.KeyDisplay.TextDisplay\",\"text\":\"@\"},\"action\":{\"type\":\"com.dessalines.thumbkey.utils.KeyAction.CommitText\",\"text\":\"@\"}}}},{\"center\":{\"display\":{\"type\":\"com.dessalines.thumbkey.utils.KeyDisplay.IconDisplay\",\"iconType\":\"Outlined\",\"iconName\":\"Abc\"},\"action\":{\"type\":\"com.dessalines.thumbkey.utils.KeyAction.ToggleNumericMode\",\"enable\":false},\"color\":\"PRIMARY\",\"size\":\"LARGE\"},\"backgroundColor\":\"SURFACE_VARIANT\"}],[{\"center\":{\"display\":{\"type\":\"com.dessalines.thumbkey.utils.KeyDisplay.TextDisplay\",\"text\":\"7\"},\"action\":{\"type\":\"com.dessalines.thumbkey.utils.KeyAction.CommitText\",\"text\":\"7\"},\"color\":\"PRIMARY\",\"size\":\"LARGE\"},\"swipes\":{\"TOP_LEFT\":{\"display\":{\"type\":\"com.dessalines.thumbkey.utils.KeyDisplay.TextDisplay\",\"text\":\"~\"},\"action\":{\"type\":\"com.dessalines.thumbkey.utils.KeyAction.CommitText\",\"text\":\"~\"}},\"BOTTOM_RIGHT\":{\"display\":{\"type\":\"com.dessalines.thumbkey.utils.KeyDisplay.TextDisplay\",\"text\":\":\"},\"action\":{\"type\":\"com.dessalines.thumbkey.utils.KeyAction.CommitText\",\"text\":\":\"}},\"BOTTOM_LEFT\":{\"display\":{\"type\":\"com.dessalines.thumbkey.utils.KeyDisplay.TextDisplay\",\"text\":\"<\"},\"action\":{\"type\":\"com.dessalines.thumbkey.utils.KeyAction.CommitText\",\"text\":\"<\"}}}},{\"center\":{\"display\":{\"type\":\"com.dessalines.thumbkey.utils.KeyDisplay.TextDisplay\",\"text\":\"8\"},\"action\":{\"type\":\"com.dessalines.thumbkey.utils.KeyAction.CommitText\",\"text\":\"8\"},\"color\":\"PRIMARY\",\"size\":\"LARGE\"},\"swipes\":{\"TOP_LEFT\":{\"display\":{\"type\":\"com.dessalines.thumbkey.utils.KeyDisplay.TextDisplay\",\"text\":\"\\\"\"},\"action\":{\"type\":\"com.dessalines.thumbkey.utils.KeyAction.CommitText\",\"text\":\"\\\"\"}},\"TOP_RIGHT\":{\"display\":{\"type\":\"com.dessalines.thumbkey.utils.KeyDisplay.TextDisplay\",\"text\":\"'\"},\"action\":{\"type\":\"com.dessalines.thumbkey.utils.KeyAction.CommitText\",\"text\":\"'\"}},\"BOTTOM_RIGHT\":{\"display\":{\"type\":\"com.dessalines.thumbkey.utils.KeyDisplay.TextDisplay\",\"text\":\"-\"},\"action\":{\"type\":\"com.dessalines.thumbkey.utils.KeyAction.CommitText\",\"text\":\"-\"}},\"BOTTOM\":{\"display\":{\"type\":\"com.dessalines.thumbkey.utils.KeyDisplay.TextDisplay\",\"text\":\".\"},\"action\":{\"type\":\"com.dessalines.thumbkey.utils.KeyAction.CommitText\",\"text\":\".\"}},\"BOTTOM_LEFT\":{\"display\":{\"type\":\"com.dessalines.thumbkey.utils.KeyDisplay.TextDisplay\",\"text\":\"*\"},\"action\":{\"type\":\"com.dessalines.thumbkey.utils.KeyAction.CommitText\",\"text\":\"*\"}},\"LEFT\":{\"display\":{\"type\":\"com.dessalines.thumbkey.utils.KeyDisplay.TextDisplay\",\"text\":\",\"},\"action\":{\"type\":\"com.dessalines.thumbkey.utils.KeyAction.CommitText\",\"text\":\",\"}}}},{\"center\":{\"display\":{\"type\":\"com.dessalines.thumbkey.utils.KeyDisplay.TextDisplay\",\"text\":\"9\"},\"action\":{\"type\":\"com.dessalines.thumbkey.utils.KeyAction.CommitText\",\"text\":\"9\"},\"color\":\"PRIMARY\",\"size\":\"LARGE\"},\"swipes\":{\"TOP\":{\"display\":{\"type\":\"com.dessalines.thumbkey.utils.KeyDisplay.TextDisplay\",\"text\":\"&\"},\"action\":{\"type\":\"com.dessalines.thumbkey.utils.KeyAction.CommitText\",\"text\":\"&\"}},\"TOP_RIGHT\":{\"display\":{\"type\":\"com.dessalines.thumbkey.utils.KeyDisplay.TextDisplay\",\"text\":\"\\u00b0\"},\"action\":{\"type\":\"com.dessalines.thumbkey.utils.KeyAction.CommitText\",\"text\":\"\\u00b0\"}},\"BOTTOM_RIGHT\":{\"display\":{\"type\":\"com.dessalines.thumbkey.utils.KeyDisplay.TextDisplay\",\"text\":\">\"},\"action\":{\"type\":\"com.dessalines.thumbkey.utils.KeyAction.CommitText\",\"text\":\">\"}},\"BOTTOM_LEFT\":{\"display\":{\"type\":\"com.dessalines.thumbkey.utils.KeyDisplay.TextDisplay\",\"text\":\";\"},\"action\":{\"type\":\"com.dessalines.thumbkey.utils.KeyAction.CommitText\",\"text\":\";\"}},\"LEFT\":{\"display\":{\"type\":\"com.dessalines.thumbkey.utils.KeyDisplay.TextDisplay\",\"text\":\"#\"},\"action\":{\"type\":\"com.dessalines.thumbkey.utils.KeyAction.CommitText\",\"text\":\"#\"}}}},{\"center\":{\"display\":{\"type\":\"com.dessalines.thumbkey.utils.KeyDisplay.IconDisplay\",\"iconType\":\"Outlined\",\"iconName\":\"KeyboardBackspace\"},\"action\":{\"type\":\"com.dessalines.thumbkey.utils.KeyAction.SendEvent\",\"event\":{\"action\":0,\"code\":67}},\"size\":\"LARGE\"},\"swipes\":{\"LEFT\":{\"display\":null,\"action\":{\"type\":\"com.dessalines.thumbkey.utils.KeyAction.DeleteLastWord\"}},\"RIGHT\":{\"display\":null,\"action\":{\"type\":\"com.dessalines.thumbkey.utils.KeyAction.SendEvent\",\"event\":{\"action\":0,\"code\":112}},\"color\":\"MUTED\",\"size\":\"SMALLEST\"}},\"backgroundColor\":\"SURFACE_VARIANT\"}],[{\"center\":{\"display\":{\"type\":\"com.dessalines.thumbkey.utils.KeyDisplay.TextDisplay\",\"text\":\"0\"},\"action\":{\"type\":\"com.dessalines.thumbkey.utils.KeyAction.CommitText\",\"text\":\"0\"},\"color\":\"PRIMARY\",\"size\":\"LARGE\"},\"widthMultiplier\":2},{\"center\":{\"display\":{\"type\":\"com.dessalines.thumbkey.utils.KeyDisplay.TextDisplay\",\"text\":\" \"},\"action\":{\"type\":\"com.dessalines.thumbkey.utils.KeyAction.CommitText\",\"text\":\" \"}},\"nextTapActions\":[{\"type\":\"com.dessalines.thumbkey.utils.KeyAction.ReplaceLastText\",\"text\":\". \",\"trimCount\":1},{\"type\":\"com.dessalines.thumbkey.utils.KeyAction.ReplaceLastText\",\"text\":\", \"},{\"type\":\"com.dessalines.thumbkey.utils.KeyAction.ReplaceLastText\",\"text\":\"? \"},{\"type\":\"com.dessalines.thumbkey.utils.KeyAction.ReplaceLastText\",\"text\":\"! \"},{\"type\":\"com.dessalines.thumbkey.utils.KeyAction.ReplaceLastText\",\"text\":\": \"}],\"backgroundColor\":\"SURFACE_VARIANT\"},{\"center\":{\"display\":{\"type\":\"com.dessalines.thumbkey.utils.KeyDisplay.IconDisplay\",\"iconType\":\"Outlined\",\"iconName\":\"KeyboardReturn\"},\"action\":{\"type\":\"com.dessalines.thumbkey.utils.KeyAction.IMECompleteAction\"},\"size\":\"LARGE\"},\"backgroundColor\":\"SURFACE_VARIANT\"}]]}}"),
+)
+
+fun loadInternalKeyboard(layout: String): KeyboardLayout {
+    return internalKeyboardLayouts.getValue(layout)
 }
 
-fun keyboardLayoutsSetFromTitleIndex(layouts: String?): Set<Int> {
-    return layouts?.split(",")?.map { keyboardTitleIndexFromRealIndex(it.trim().toInt()) }?.toSet()
-        ?: setOf(
-            keyboardTitleIndexFromRealIndex(DEFAULT_KEYBOARD_LAYOUT),
-        )
-}
+fun getEnabledKeyboardLayouts(
+    settings: AppSettingsWithKeyboardLayout?,
+    externalKeyboardLayouts: List<ExternalKeyboardLayout>?,
+    enabledInternalKeyboardLayouts: List<EnabledInternalKeyboardLayout>?,
+) = buildSet {
+        settings?.externalKeyboardLayout?.let {
+            add(it.id to KeyboardLayout(it.title, it.json))
+        }
+        settings?.appSettings?.keyboardLayoutInternal?.let {
+            add(it to loadInternalKeyboard(it))
+        }
+        externalKeyboardLayouts?.let {
+            addAll(it.mapNotNull { layout ->
+                if (layout.enabled) layout.id to KeyboardLayout(layout.title, layout.json) else null
+            })
+        }
+        enabledInternalKeyboardLayouts?.let {
+            addAll(it.map { layout ->
+                layout to loadInternalKeyboard(layout.internalId)
+            })
+        }
+    }
 
-fun keyboardRealIndexFromTitleIndex(index: Int): Int {
-    return KeyboardLayout.values().sortedBy { it.title }[index].index
-}
-
-fun keyboardTitleIndexFromRealIndex(index: Int): Int {
-    val keyboard = KeyboardLayout.values().find { it.index == index } ?: KeyboardLayout.ThumbKeyENv4
-    return KeyboardLayout.values().sortedBy { it.title }.indexOf(keyboard)
+fun getEnabledKeyboardLayoutIndices(
+    settings: AppSettingsWithKeyboardLayout?,
+    externalKeyboardLayouts: List<ExternalKeyboardLayout>?,
+    enabledInternalKeyboardLayouts: List<EnabledInternalKeyboardLayout>?,
+    allKeyboardLayouts: List<KeyboardLayout>
+): Set<Int> {
+    val layouts = getEnabledKeyboardLayouts(settings, externalKeyboardLayouts, enabledInternalKeyboardLayouts)
+    return layouts.map { allKeyboardLayouts.indexOf(it.second) }.toSet()
 }

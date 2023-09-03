@@ -63,7 +63,7 @@ class MainActivity : AppCompatActivity() {
             }
 
             ThumbkeyTheme(
-                settings = settings,
+                settings = (settings ?: return@setContent).appSettings,
             ) {
                 val navController = rememberNavController()
 
