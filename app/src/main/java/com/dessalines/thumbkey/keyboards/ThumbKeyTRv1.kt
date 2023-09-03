@@ -225,17 +225,17 @@ val THUMBKEY_TR_V1 = KeyboardC(
                         action = KeyAction.CommitText("t"),
                     ),
                     SwipeDirection.TOP to KeyC(
-                        display = KeyDisplay.IconDisplay(Icons.Outlined.ArrowDropUp),
+                        display = KeyDisplay.IconDisplay("Outlined", "ArrowDropUp"),
                         action = KeyAction.ToggleShiftMode(true),
                         color = ColorVariant.MUTED,
                     ),
                     SwipeDirection.BOTTOM to KeyC(
-                        display = KeyDisplay.IconDisplay(Icons.Outlined.ArrowDropDown),
+                        display = KeyDisplay.IconDisplay("Outlined", "ArrowDropDown"),
                         action = KeyAction.ToggleShiftMode(false),
                         color = ColorVariant.MUTED,
                     ),
                     SwipeDirection.RIGHT to KeyC(
-                        display = KeyDisplay.IconDisplay(Icons.Outlined.KeyboardTab),
+                        display = KeyDisplay.IconDisplay("Outlined", "KeyboardTab"),
                         action = KeyAction.CommitText("\t"),
                         color = ColorVariant.MUTED,
                     ),
@@ -580,18 +580,18 @@ val THUMBKEY_TR_V1_SHIFTED = KeyboardC(
                         action = KeyAction.CommitText("T"),
                     ),
                     SwipeDirection.BOTTOM to KeyC(
-                        display = KeyDisplay.IconDisplay(Icons.Outlined.ArrowDropDown),
+                        display = KeyDisplay.IconDisplay("Outlined", "ArrowDropDown"),
                         action = KeyAction.ToggleShiftMode(false),
                         color = ColorVariant.MUTED,
                     ),
                     SwipeDirection.TOP to KeyC(
-                        display = KeyDisplay.IconDisplay(Icons.Outlined.KeyboardCapslock),
-                        capsModeDisplay = KeyDisplay.IconDisplay(Icons.Outlined.Copyright),
+                        display = KeyDisplay.IconDisplay("Outlined", "KeyboardCapslock"),
+                        capsModeDisplay = KeyDisplay.IconDisplay("Outlined", "Copyright"),
                         action = KeyAction.ToggleCapsLock,
                         color = ColorVariant.MUTED,
                     ),
                     SwipeDirection.RIGHT to KeyC(
-                        display = KeyDisplay.IconDisplay(Icons.Outlined.KeyboardTab),
+                        display = KeyDisplay.IconDisplay("Outlined", "KeyboardTab"),
                         action = KeyAction.CommitText("\t"),
                         color = ColorVariant.MUTED,
                     ),

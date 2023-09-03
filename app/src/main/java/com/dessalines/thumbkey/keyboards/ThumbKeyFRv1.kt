@@ -151,7 +151,7 @@ val THUMBKEY_FR_V1_MAIN = KeyboardC(
                 ),
                 swipes = mapOf(
                     SwipeDirection.TOP to KeyC(
-                        display = KeyDisplay.IconDisplay(Icons.Outlined.ArrowDropUp),
+                        display = KeyDisplay.IconDisplay("Outlined", "ArrowDropUp"),
                         action = KeyAction.ToggleShiftMode(true),
                         color = ColorVariant.MUTED,
                     ),
@@ -413,7 +413,7 @@ val THUMBKEY_FR_V1_SHIFTED = KeyboardC(
                 ),
                 swipes = mapOf(
                     SwipeDirection.TOP to KeyC(
-                        display = KeyDisplay.IconDisplay(Icons.Outlined.KeyboardCapslock),
+                        display = KeyDisplay.IconDisplay("Outlined", "KeyboardCapslock"),
                         action = KeyAction.ToggleCapsLock,
                         color = ColorVariant.MUTED,
                     ),
@@ -426,7 +426,7 @@ val THUMBKEY_FR_V1_SHIFTED = KeyboardC(
                         action = KeyAction.CommitText("À"),
                     ),
                     SwipeDirection.BOTTOM to KeyC(
-                        display = KeyDisplay.IconDisplay(Icons.Outlined.ArrowDropDown),
+                        display = KeyDisplay.IconDisplay("Outlined", "ArrowDropDown"),
                         action = KeyAction.ToggleShiftMode(false),
                         color = ColorVariant.MUTED,
                     ),

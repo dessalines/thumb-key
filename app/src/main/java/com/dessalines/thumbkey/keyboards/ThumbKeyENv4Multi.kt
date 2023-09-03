@@ -160,7 +160,7 @@ val THUMBKEY_EN_V4_MULTI_MAIN = KeyboardC(
                         action = KeyAction.CommitText("ĺ"),
                     ),
                     SwipeDirection.TOP to KeyC(
-                        display = KeyDisplay.IconDisplay(Icons.Outlined.ArrowDropUp),
+                        display = KeyDisplay.IconDisplay("Outlined", "ArrowDropUp"),
                         action = KeyAction.ToggleShiftMode(true),
                         color = ColorVariant.MUTED,
                     ),
@@ -429,8 +429,8 @@ val THUMBKEY_EN_V4_MULTI_SHIFTED = KeyboardC(
                         action = KeyAction.CommitText("Ĺ"),
                     ),
                     SwipeDirection.TOP to KeyC(
-                        display = KeyDisplay.IconDisplay(Icons.Outlined.KeyboardCapslock),
-                        capsModeDisplay = KeyDisplay.IconDisplay(Icons.Outlined.Copyright),
+                        display = KeyDisplay.IconDisplay("Outlined", "KeyboardCapslock"),
+                        capsModeDisplay = KeyDisplay.IconDisplay("Outlined", "Copyright"),
                         action = KeyAction.ToggleCapsLock,
                         color = ColorVariant.MUTED,
                     ),
@@ -443,7 +443,7 @@ val THUMBKEY_EN_V4_MULTI_SHIFTED = KeyboardC(
                         action = KeyAction.CommitText("Ý"),
                     ),
                     SwipeDirection.BOTTOM to KeyC(
-                        display = KeyDisplay.IconDisplay(Icons.Outlined.ArrowDropDown),
+                        display = KeyDisplay.IconDisplay("Outlined", "ArrowDropDown"),
                         action = KeyAction.ToggleShiftMode(false),
                         color = ColorVariant.MUTED,
                     ),

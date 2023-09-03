@@ -212,17 +212,17 @@ val WIDE_LAYOUT_EN_PROGRAMMER = KeyboardC(
                         action = KeyAction.CommitText("l"),
                     ),
                     SwipeDirection.TOP to KeyC(
-                        display = KeyDisplay.IconDisplay(Icons.Outlined.ArrowDropUp),
+                        display = KeyDisplay.IconDisplay("Outlined", "ArrowDropUp"),
                         action = KeyAction.ToggleShiftMode(true),
                         color = ColorVariant.MUTED,
                     ),
                     SwipeDirection.BOTTOM to KeyC(
-                        display = KeyDisplay.IconDisplay(Icons.Outlined.ArrowDropDown),
+                        display = KeyDisplay.IconDisplay("Outlined", "ArrowDropDown"),
                         action = KeyAction.ToggleShiftMode(false),
                         color = ColorVariant.MUTED,
                     ),
                     SwipeDirection.RIGHT to KeyC(
-                        display = KeyDisplay.IconDisplay(Icons.Outlined.KeyboardTab),
+                        display = KeyDisplay.IconDisplay("Outlined", "KeyboardTab"),
                         action = KeyAction.CommitText("\t"),
                         color = ColorVariant.MUTED,
                     ),
@@ -542,18 +542,18 @@ val WIDE_LAYOUT_EN_PROGRAMMER_SHIFTED = KeyboardC(
                         action = KeyAction.CommitText("L"),
                     ),
                     SwipeDirection.BOTTOM to KeyC(
-                        display = KeyDisplay.IconDisplay(Icons.Outlined.ArrowDropDown),
+                        display = KeyDisplay.IconDisplay("Outlined", "ArrowDropDown"),
                         action = KeyAction.ToggleShiftMode(false),
                         color = ColorVariant.MUTED,
                     ),
                     SwipeDirection.TOP to KeyC(
-                        display = KeyDisplay.IconDisplay(Icons.Outlined.KeyboardCapslock),
-                        capsModeDisplay = KeyDisplay.IconDisplay(Icons.Outlined.Copyright),
+                        display = KeyDisplay.IconDisplay("Outlined", "KeyboardCapslock"),
+                        capsModeDisplay = KeyDisplay.IconDisplay("Outlined", "Copyright"),
                         action = KeyAction.ToggleCapsLock,
                         color = ColorVariant.MUTED,
                     ),
                     SwipeDirection.RIGHT to KeyC(
-                        display = KeyDisplay.IconDisplay(Icons.Outlined.KeyboardTab),
+                        display = KeyDisplay.IconDisplay("Outlined", "KeyboardTab"),
                         action = KeyAction.CommitText("\t"),
                         color = ColorVariant.MUTED,
                     ),
@@ -780,7 +780,7 @@ val NUMERIC_KEYBOARD_WIDE = KeyboardC(
             ),
             KeyItemC(
                 center = KeyC(
-                    display = KeyDisplay.IconDisplay(Icons.Outlined.Abc),
+                    display = KeyDisplay.IconDisplay("Outlined", "Abc"),
                     action = KeyAction.ToggleNumericMode(false),
                     size = FontSizeVariant.LARGE,
                     color = ColorVariant.PRIMARY,

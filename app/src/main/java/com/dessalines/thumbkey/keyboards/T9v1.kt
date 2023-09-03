@@ -353,7 +353,7 @@ val T9_V1_MAIN = KeyboardC(
                 ),
                 swipes = mapOf(
                     SwipeDirection.TOP_RIGHT to KeyC(
-                        display = KeyDisplay.IconDisplay(Icons.Outlined.SelectAll),
+                        display = KeyDisplay.IconDisplay("Outlined", "SelectAll"),
                         action = KeyAction.SelectAndCopyAll,
                         color = ColorVariant.MUTED,
                     ),
@@ -369,7 +369,7 @@ val T9_V1_MAIN = KeyboardC(
                         color = ColorVariant.MUTED,
                     ),
                     SwipeDirection.BOTTOM_RIGHT to KeyC(
-                        display = KeyDisplay.IconDisplay(Icons.Outlined.ContentPaste),
+                        display = KeyDisplay.IconDisplay("Outlined", "ContentPaste"),
                         action = KeyAction.Paste,
                         color = ColorVariant.MUTED,
                     ),
@@ -524,19 +524,19 @@ val T9_V1_MAIN = KeyboardC(
             ),
             KeyItemC(
                 center = KeyC(
-                    display = KeyDisplay.IconDisplay(Icons.Outlined.KeyboardReturn),
+                    display = KeyDisplay.IconDisplay("Outlined", "KeyboardReturn"),
                     action = KeyAction.IMECompleteAction,
                     size = FontSizeVariant.LARGE,
                     color = ColorVariant.SECONDARY,
                 ),
                 swipes = mapOf(
                     SwipeDirection.TOP_RIGHT to KeyC(
-                        display = KeyDisplay.IconDisplay(Icons.Outlined.Settings),
+                        display = KeyDisplay.IconDisplay("Outlined", "Settings"),
                         action = KeyAction.GotoSettings,
                         color = ColorVariant.MUTED,
                     ),
                     SwipeDirection.RIGHT to KeyC(
-                        display = KeyDisplay.IconDisplay(Icons.Outlined.Language),
+                        display = KeyDisplay.IconDisplay("Outlined", "Language"),
                         action = KeyAction.SwitchLanguage,
                         color = ColorVariant.MUTED,
                     ),
@@ -896,7 +896,7 @@ val T9_V1_SHIFTED = KeyboardC(
                 ),
                 swipes = mapOf(
                     SwipeDirection.TOP_RIGHT to KeyC(
-                        display = KeyDisplay.IconDisplay(Icons.Outlined.SelectAll),
+                        display = KeyDisplay.IconDisplay("Outlined", "SelectAll"),
                         action = KeyAction.SelectAndCopyAll,
                         color = ColorVariant.MUTED,
                     ),
@@ -912,7 +912,7 @@ val T9_V1_SHIFTED = KeyboardC(
                         color = ColorVariant.MUTED,
                     ),
                     SwipeDirection.BOTTOM_RIGHT to KeyC(
-                        display = KeyDisplay.IconDisplay(Icons.Outlined.ContentPaste),
+                        display = KeyDisplay.IconDisplay("Outlined", "ContentPaste"),
                         action = KeyAction.Paste,
                         color = ColorVariant.MUTED,
                     ),
@@ -1067,19 +1067,19 @@ val T9_V1_SHIFTED = KeyboardC(
             ),
             KeyItemC(
                 center = KeyC(
-                    display = KeyDisplay.IconDisplay(Icons.Outlined.KeyboardReturn),
+                    display = KeyDisplay.IconDisplay("Outlined", "KeyboardReturn"),
                     action = KeyAction.IMECompleteAction,
                     size = FontSizeVariant.LARGE,
                     color = ColorVariant.SECONDARY,
                 ),
                 swipes = mapOf(
                     SwipeDirection.TOP_RIGHT to KeyC(
-                        display = KeyDisplay.IconDisplay(Icons.Outlined.Settings),
+                        display = KeyDisplay.IconDisplay("Outlined", "Settings"),
                         action = KeyAction.GotoSettings,
                         color = ColorVariant.MUTED,
                     ),
                     SwipeDirection.RIGHT to KeyC(
-                        display = KeyDisplay.IconDisplay(Icons.Outlined.Language),
+                        display = KeyDisplay.IconDisplay("Outlined", "Language"),
                         action = KeyAction.SwitchLanguage,
                         color = ColorVariant.MUTED,
                     ),

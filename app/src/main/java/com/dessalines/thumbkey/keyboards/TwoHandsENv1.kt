@@ -171,7 +171,7 @@ val TWO_HANDS_EN_V1 = KeyboardC(
                         action = KeyAction.CommitText("l"),
                     ),
                     SwipeDirection.TOP to KeyC(
-                        display = KeyDisplay.IconDisplay(Icons.Outlined.ArrowDropUp),
+                        display = KeyDisplay.IconDisplay("Outlined", "ArrowDropUp"),
                         action = KeyAction.ToggleShiftMode(true),
                         color = ColorVariant.MUTED,
                     ),
@@ -247,7 +247,7 @@ val TWO_HANDS_EN_V1 = KeyboardC(
                         action = KeyAction.CommitText("l"),
                     ),
                     SwipeDirection.TOP to KeyC(
-                        display = KeyDisplay.IconDisplay(Icons.Outlined.ArrowDropUp),
+                        display = KeyDisplay.IconDisplay("Outlined", "ArrowDropUp"),
                         action = KeyAction.ToggleShiftMode(true),
                         color = ColorVariant.MUTED,
                     ),
@@ -558,7 +558,7 @@ val TWO_HANDS_EN_V1_SHIFTED = KeyboardC(
                         action = KeyAction.CommitText("L"),
                     ),
                     SwipeDirection.TOP to KeyC(
-                        display = KeyDisplay.IconDisplay(Icons.Outlined.ArrowDropUp),
+                        display = KeyDisplay.IconDisplay("Outlined", "ArrowDropUp"),
                         action = KeyAction.ToggleShiftMode(true),
                         color = ColorVariant.MUTED,
                     ),
@@ -634,7 +634,7 @@ val TWO_HANDS_EN_V1_SHIFTED = KeyboardC(
                         action = KeyAction.CommitText("L"),
                     ),
                     SwipeDirection.TOP to KeyC(
-                        display = KeyDisplay.IconDisplay(Icons.Outlined.ArrowDropUp),
+                        display = KeyDisplay.IconDisplay("Outlined", "ArrowDropUp"),
                         action = KeyAction.ToggleShiftMode(true),
                         color = ColorVariant.MUTED,
                     ),

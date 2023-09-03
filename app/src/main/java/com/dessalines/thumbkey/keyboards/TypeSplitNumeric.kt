@@ -22,7 +22,7 @@ val TYPESPLIT_NUMERIC_KEYBOARD = KeyboardC(
                 ),
                 swipes = mapOf(
                     SwipeDirection.TOP to KeyC(
-                        display = KeyDisplay.IconDisplay(Icons.Outlined.Settings),
+                        display = KeyDisplay.IconDisplay("Outlined", "Settings"),
                         action = KeyAction.GotoSettings,
                         color = ColorVariant.SECONDARY,
                     ),
@@ -295,7 +295,7 @@ val TYPESPLIT_NUMERIC_KEYBOARD = KeyboardC(
         listOf(
             KeyItemC(
                 center = KeyC(
-                    display = KeyDisplay.IconDisplay(Icons.Outlined.Abc),
+                    display = KeyDisplay.IconDisplay("Outlined", "Abc"),
                     action = KeyAction.ToggleNumericMode(false),
                     size = FontSizeVariant.LARGE,
                     color = ColorVariant.PRIMARY,

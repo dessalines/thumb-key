@@ -243,7 +243,7 @@ val TWO_HANDS_NUMERIC_KEYBOARD = KeyboardC(
             ),
             KeyItemC(
                 center = KeyC(
-                    display = KeyDisplay.IconDisplay(Icons.Outlined.Abc),
+                    display = KeyDisplay.IconDisplay("Outlined", "Abc"),
                     action = KeyAction.ToggleNumericMode(false),
                     size = FontSizeVariant.LARGE,
                     color = ColorVariant.PRIMARY,

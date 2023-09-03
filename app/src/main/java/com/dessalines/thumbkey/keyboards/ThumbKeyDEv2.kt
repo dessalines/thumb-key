@@ -139,7 +139,7 @@ val THUMBKEY_DE_V2_MAIN = KeyboardC(
                         action = KeyAction.CommitText("ö"),
                     ),
                     SwipeDirection.TOP to KeyC(
-                        display = KeyDisplay.IconDisplay(Icons.Outlined.ArrowDropUp),
+                        display = KeyDisplay.IconDisplay("Outlined", "ArrowDropUp"),
                         action = KeyAction.ToggleShiftMode(true),
                         color = ColorVariant.MUTED,
                     ),
@@ -356,12 +356,12 @@ val THUMBKEY_DE_V2_SHIFTED = KeyboardC(
                         action = KeyAction.CommitText("Ö"),
                     ),
                     SwipeDirection.BOTTOM to KeyC(
-                        display = KeyDisplay.IconDisplay(Icons.Outlined.ArrowDropDown),
+                        display = KeyDisplay.IconDisplay("Outlined", "ArrowDropDown"),
                         action = KeyAction.ToggleShiftMode(false),
                         color = ColorVariant.MUTED,
                     ),
                     SwipeDirection.TOP to KeyC(
-                        display = KeyDisplay.IconDisplay(Icons.Outlined.KeyboardCapslock),
+                        display = KeyDisplay.IconDisplay("Outlined", "KeyboardCapslock"),
                         action = KeyAction.ToggleCapsLock,
                         color = ColorVariant.MUTED,
                     ),

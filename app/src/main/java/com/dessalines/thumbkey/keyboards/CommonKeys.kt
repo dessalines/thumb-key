@@ -25,7 +25,7 @@ import com.dessalines.thumbkey.utils.SwipeDirection
 val SETTINGS_KEY_ITEM =
     KeyItemC(
         center = KeyC(
-            display = KeyDisplay.IconDisplay(Icons.Outlined.Settings),
+            display = KeyDisplay.IconDisplay("Outlined", "Settings"),
             action = KeyAction.GotoSettings,
             size = FontSizeVariant.LARGE,
             color = ColorVariant.SECONDARY,
@@ -36,29 +36,29 @@ val SETTINGS_KEY_ITEM =
 val NUMERIC_KEY_ITEM =
     KeyItemC(
         center = KeyC(
-            display = KeyDisplay.IconDisplay(Icons.Outlined.Numbers),
+            display = KeyDisplay.IconDisplay("Outlined", "Numbers"),
             action = KeyAction.ToggleNumericMode(true),
             size = FontSizeVariant.LARGE,
             color = ColorVariant.SECONDARY,
         ),
         swipes = mapOf(
             SwipeDirection.TOP to KeyC(
-                display = KeyDisplay.IconDisplay(Icons.Outlined.SelectAll),
+                display = KeyDisplay.IconDisplay("Outlined", "SelectAll"),
                 action = KeyAction.SelectAndCopyAll,
                 color = ColorVariant.MUTED,
             ),
             SwipeDirection.BOTTOM to KeyC(
-                display = KeyDisplay.IconDisplay(Icons.Outlined.ContentPaste),
+                display = KeyDisplay.IconDisplay("Outlined", "ContentPaste"),
                 action = KeyAction.Paste,
                 color = ColorVariant.MUTED,
             ),
             SwipeDirection.LEFT to KeyC(
-                display = KeyDisplay.IconDisplay(Icons.Outlined.Language),
+                display = KeyDisplay.IconDisplay("Outlined", "Language"),
                 action = KeyAction.SwitchLanguage,
                 color = ColorVariant.MUTED,
             ),
             SwipeDirection.RIGHT to KeyC(
-                display = KeyDisplay.IconDisplay(Icons.Outlined.LinearScale),
+                display = KeyDisplay.IconDisplay("Outlined", "LinearScale"),
                 action = KeyAction.SwitchPosition,
                 color = ColorVariant.MUTED,
             ),
@@ -69,7 +69,7 @@ val NUMERIC_KEY_ITEM =
 val BACKSPACE_KEY_ITEM =
     KeyItemC(
         center = KeyC(
-            display = KeyDisplay.IconDisplay(Icons.Outlined.KeyboardBackspace),
+            display = KeyDisplay.IconDisplay("Outlined", "KeyboardBackspace"),
             action = KeyAction.SendEvent(
                 KeyEvent(
                     KeyEvent.ACTION_DOWN,
@@ -191,7 +191,7 @@ val SPACEBAR_PROGRAMMER_KEY_ITEM =
 val RETURN_KEY_ITEM =
     KeyItemC(
         center = KeyC(
-            display = KeyDisplay.IconDisplay(Icons.Outlined.KeyboardReturn),
+            display = KeyDisplay.IconDisplay("Outlined", "KeyboardReturn"),
             action = KeyAction.IMECompleteAction,
             size = FontSizeVariant.LARGE,
             color = ColorVariant.SECONDARY,
@@ -230,7 +230,7 @@ val SPACEBAR_TYPESPLIT_TOP_KEY_ITEM =
                 color = ColorVariant.MUTED,
             ),
             SwipeDirection.TOP to KeyC(
-                display = KeyDisplay.IconDisplay(Icons.Outlined.Settings),
+                display = KeyDisplay.IconDisplay("Outlined", "Settings"),
                 action = KeyAction.GotoSettings,
                 color = ColorVariant.SECONDARY,
             ),
@@ -313,7 +313,7 @@ val SPACEBAR_TYPESPLIT_BOTTOM_KEY_ITEM = SPACEBAR_TYPESPLIT_TOP_KEY_ITEM.copy(
 val BACKSPACE_TYPESPLIT_KEY_ITEM =
     KeyItemC(
         center = KeyC(
-            display = KeyDisplay.IconDisplay(Icons.Outlined.KeyboardBackspace),
+            display = KeyDisplay.IconDisplay("Outlined", "KeyboardBackspace"),
             action = KeyAction.SendEvent(
                 KeyEvent(
                     KeyEvent.ACTION_DOWN,
@@ -342,7 +342,7 @@ val BACKSPACE_TYPESPLIT_KEY_ITEM =
                 size = FontSizeVariant.SMALLEST,
             ),
             SwipeDirection.TOP to KeyC(
-                display = KeyDisplay.IconDisplay(Icons.Outlined.ArrowDropUp),
+                display = KeyDisplay.IconDisplay("Outlined", "ArrowDropUp"),
                 action = KeyAction.ToggleShiftMode(true),
                 color = ColorVariant.SECONDARY,
             ),
@@ -369,13 +369,13 @@ val BACKSPACE_TYPESPLIT_SHIFTED_KEY_ITEM = BACKSPACE_TYPESPLIT_KEY_ITEM.copy(
             size = FontSizeVariant.SMALLEST,
         ),
         SwipeDirection.TOP to KeyC(
-            display = KeyDisplay.IconDisplay(Icons.Outlined.KeyboardCapslock),
-            capsModeDisplay = KeyDisplay.IconDisplay(Icons.Outlined.Copyright),
+            display = KeyDisplay.IconDisplay("Outlined", "KeyboardCapslock"),
+            capsModeDisplay = KeyDisplay.IconDisplay("Outlined", "Copyright"),
             action = KeyAction.ToggleCapsLock,
             color = ColorVariant.SECONDARY,
         ),
         SwipeDirection.BOTTOM to KeyC(
-            display = KeyDisplay.IconDisplay(Icons.Outlined.ArrowDropDown),
+            display = KeyDisplay.IconDisplay("Outlined", "ArrowDropDown"),
             action = KeyAction.ToggleShiftMode(false),
             color = ColorVariant.SECONDARY,
         ),
