@@ -9,7 +9,6 @@ import com.dessalines.thumbkey.utils.KeyItemC
 import com.dessalines.thumbkey.utils.KeyboardC
 import com.dessalines.thumbkey.utils.KeyboardMode
 import com.dessalines.thumbkey.utils.SwipeDirection
-import com.dessalines.thumbkey.utils.SwipeNWay
 
 val THUMBKEY_JA_V1_HIRAGANA = KeyboardC(
     listOf(
@@ -21,7 +20,6 @@ val THUMBKEY_JA_V1_HIRAGANA = KeyboardC(
                     size = FontSizeVariant.LARGE,
                     color = ColorVariant.PRIMARY,
                 ),
-                swipeType = SwipeNWay.FOUR_WAY_CROSS,
                 swipes = mapOf(
                     SwipeDirection.BOTTOM to KeyC(
                         display = KeyDisplay.TextDisplay("み"),
@@ -48,7 +46,6 @@ val THUMBKEY_JA_V1_HIRAGANA = KeyboardC(
                     size = FontSizeVariant.LARGE,
                     color = ColorVariant.PRIMARY,
                 ),
-                swipeType = SwipeNWay.FOUR_WAY_CROSS,
                 swipes = mapOf(
                     SwipeDirection.BOTTOM to KeyC(
                         display = KeyDisplay.TextDisplay("ひ"),
@@ -75,7 +72,6 @@ val THUMBKEY_JA_V1_HIRAGANA = KeyboardC(
                     size = FontSizeVariant.LARGE,
                     color = ColorVariant.PRIMARY,
                 ),
-                swipeType = SwipeNWay.FOUR_WAY_CROSS,
                 swipes = mapOf(
                     SwipeDirection.BOTTOM to KeyC(
                         display = KeyDisplay.TextDisplay("し"),
@@ -105,7 +101,6 @@ val THUMBKEY_JA_V1_HIRAGANA = KeyboardC(
                     size = FontSizeVariant.LARGE,
                     color = ColorVariant.PRIMARY,
                 ),
-                swipeType = SwipeNWay.FOUR_WAY_CROSS,
                 swipes = mapOf(
                     SwipeDirection.BOTTOM to KeyC(
                         display = KeyDisplay.TextDisplay("ゆ"),
@@ -124,7 +119,6 @@ val THUMBKEY_JA_V1_HIRAGANA = KeyboardC(
                     size = FontSizeVariant.LARGE,
                     color = ColorVariant.PRIMARY,
                 ),
-                swipeType = SwipeNWay.FOUR_WAY_CROSS,
                 swipes = mapOf(
                     SwipeDirection.BOTTOM to KeyC(
                         display = KeyDisplay.TextDisplay("に"),
@@ -151,7 +145,6 @@ val THUMBKEY_JA_V1_HIRAGANA = KeyboardC(
                     size = FontSizeVariant.LARGE,
                     color = ColorVariant.PRIMARY,
                 ),
-                swipeType = SwipeNWay.FOUR_WAY_CROSS,
                 swipes = mapOf(
                     SwipeDirection.BOTTOM to KeyC(
                         display = KeyDisplay.TextDisplay("き"),
@@ -181,7 +174,6 @@ val THUMBKEY_JA_V1_HIRAGANA = KeyboardC(
                     size = FontSizeVariant.LARGE,
                     color = ColorVariant.PRIMARY,
                 ),
-                swipeType = SwipeNWay.FOUR_WAY_CROSS,
                 swipes = mapOf(
                     SwipeDirection.BOTTOM to KeyC(
                         display = KeyDisplay.TextDisplay("り"),
@@ -208,7 +200,6 @@ val THUMBKEY_JA_V1_HIRAGANA = KeyboardC(
                     size = FontSizeVariant.LARGE,
                     color = ColorVariant.PRIMARY,
                 ),
-                swipeType = SwipeNWay.FOUR_WAY_CROSS,
                 swipes = mapOf(
                     SwipeDirection.BOTTOM to KeyC(
                         display = KeyDisplay.TextDisplay("ち"),
@@ -235,7 +226,6 @@ val THUMBKEY_JA_V1_HIRAGANA = KeyboardC(
                     size = FontSizeVariant.LARGE,
                     color = ColorVariant.PRIMARY,
                 ),
-                swipeType = SwipeNWay.FOUR_WAY_CROSS,
                 swipes = mapOf(
                     SwipeDirection.BOTTOM to KeyC(
                         display = KeyDisplay.TextDisplay("い"),
@@ -265,7 +255,6 @@ val THUMBKEY_JA_V1_HIRAGANA = KeyboardC(
                     size = FontSizeVariant.LARGE,
                     color = ColorVariant.PRIMARY,
                 ),
-                swipeType = SwipeNWay.FOUR_WAY_CROSS,
                 swipes = mapOf(
                     SwipeDirection.RIGHT to KeyC(
                         display = KeyDisplay.TextDisplay("を"),
@@ -315,7 +304,6 @@ val THUMBKEY_JA_V1_HIRAGANA_SHIFTED = KeyboardC(
                     size = FontSizeVariant.LARGE,
                     color = ColorVariant.PRIMARY,
                 ),
-                swipeType = SwipeNWay.FOUR_WAY_CROSS,
                 swipes = mapOf(
                     SwipeDirection.BOTTOM to KeyC(
                         display = KeyDisplay.TextDisplay("び"),
@@ -342,7 +330,6 @@ val THUMBKEY_JA_V1_HIRAGANA_SHIFTED = KeyboardC(
                     size = FontSizeVariant.LARGE,
                     color = ColorVariant.PRIMARY,
                 ),
-                swipeType = SwipeNWay.FOUR_WAY_CROSS,
                 swipes = mapOf(
                     SwipeDirection.BOTTOM to KeyC(
                         display = KeyDisplay.TextDisplay("じ"),
@@ -372,7 +359,6 @@ val THUMBKEY_JA_V1_HIRAGANA_SHIFTED = KeyboardC(
                     size = FontSizeVariant.LARGE,
                     color = ColorVariant.PRIMARY,
                 ),
-                swipeType = SwipeNWay.FOUR_WAY_CROSS,
                 swipes = mapOf(
                     SwipeDirection.BOTTOM to KeyC(
                         display = KeyDisplay.TextDisplay("ゅ"),
@@ -391,7 +377,6 @@ val THUMBKEY_JA_V1_HIRAGANA_SHIFTED = KeyboardC(
                     size = FontSizeVariant.LARGE,
                     color = ColorVariant.PRIMARY,
                 ),
-                swipeType = SwipeNWay.FOUR_WAY_CROSS,
                 swipes = mapOf(
                     SwipeDirection.BOTTOM to KeyC(
                         display = KeyDisplay.TextDisplay("ぴ"),
@@ -418,7 +403,6 @@ val THUMBKEY_JA_V1_HIRAGANA_SHIFTED = KeyboardC(
                     size = FontSizeVariant.LARGE,
                     color = ColorVariant.PRIMARY,
                 ),
-                swipeType = SwipeNWay.FOUR_WAY_CROSS,
                 swipes = mapOf(
                     SwipeDirection.BOTTOM to KeyC(
                         display = KeyDisplay.TextDisplay("ぎ"),
@@ -456,7 +440,6 @@ val THUMBKEY_JA_V1_HIRAGANA_SHIFTED = KeyboardC(
                     size = FontSizeVariant.LARGE,
                     color = ColorVariant.PRIMARY,
                 ),
-                swipeType = SwipeNWay.FOUR_WAY_CROSS,
                 swipes = mapOf(
                     SwipeDirection.BOTTOM to KeyC(
                         display = KeyDisplay.TextDisplay("ぢ"),
@@ -483,7 +466,6 @@ val THUMBKEY_JA_V1_HIRAGANA_SHIFTED = KeyboardC(
                     size = FontSizeVariant.LARGE,
                     color = ColorVariant.PRIMARY,
                 ),
-                swipeType = SwipeNWay.FOUR_WAY_CROSS,
                 swipes = mapOf(
                     SwipeDirection.BOTTOM to KeyC(
                         display = KeyDisplay.TextDisplay("ぃ"),
@@ -513,7 +495,6 @@ val THUMBKEY_JA_V1_HIRAGANA_SHIFTED = KeyboardC(
                     size = FontSizeVariant.LARGE,
                     color = ColorVariant.PRIMARY,
                 ),
-                swipeType = SwipeNWay.FOUR_WAY_CROSS,
                 swipes = mapOf(
                     SwipeDirection.RIGHT to KeyC(
                         display = KeyDisplay.TextDisplay("、"),

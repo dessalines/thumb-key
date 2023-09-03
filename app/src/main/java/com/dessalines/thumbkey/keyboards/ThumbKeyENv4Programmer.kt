@@ -15,7 +15,6 @@ import com.dessalines.thumbkey.utils.KeyItemC
 import com.dessalines.thumbkey.utils.KeyboardC
 import com.dessalines.thumbkey.utils.KeyboardMode
 import com.dessalines.thumbkey.utils.SwipeDirection
-import com.dessalines.thumbkey.utils.SwipeNWay
 
 // Adds more punctuation options to the main screen to reduce switches to the numeric keyboard
 val THUMBKEY_EN_V4_PROGRAMMER = KeyboardC(
@@ -96,7 +95,6 @@ val THUMBKEY_EN_V4_PROGRAMMER = KeyboardC(
                     size = FontSizeVariant.LARGE,
                     color = ColorVariant.PRIMARY,
                 ),
-                swipeType = SwipeNWay.FOUR_WAY_DIAGONAL,
                 swipes = mapOf(
                     SwipeDirection.BOTTOM_LEFT to KeyC(
                         display = KeyDisplay.TextDisplay("u"),
@@ -205,7 +203,6 @@ val THUMBKEY_EN_V4_PROGRAMMER = KeyboardC(
                     size = FontSizeVariant.LARGE,
                     color = ColorVariant.PRIMARY,
                 ),
-                swipeType = SwipeNWay.FOUR_WAY_CROSS,
                 swipes = mapOf(
                     SwipeDirection.LEFT to KeyC(
                         display = KeyDisplay.TextDisplay("l"),
@@ -429,7 +426,6 @@ val THUMBKEY_EN_V4_PROGRAMMER_SHIFTED = KeyboardC(
                     size = FontSizeVariant.LARGE,
                     color = ColorVariant.PRIMARY,
                 ),
-                swipeType = SwipeNWay.FOUR_WAY_DIAGONAL,
                 swipes = mapOf(
                     SwipeDirection.BOTTOM_LEFT to KeyC(
                         display = KeyDisplay.TextDisplay("U"),
@@ -538,7 +534,6 @@ val THUMBKEY_EN_V4_PROGRAMMER_SHIFTED = KeyboardC(
                     size = FontSizeVariant.LARGE,
                     color = ColorVariant.PRIMARY,
                 ),
-                swipeType = SwipeNWay.FOUR_WAY_CROSS,
                 swipes = mapOf(
                     SwipeDirection.LEFT to KeyC(
                         display = KeyDisplay.TextDisplay("L"),
