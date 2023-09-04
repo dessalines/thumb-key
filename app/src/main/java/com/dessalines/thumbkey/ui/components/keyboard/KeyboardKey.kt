@@ -68,6 +68,7 @@ fun KeyboardKey(
     capsLock: Boolean,
     keySize: Int,
     minSwipeLength: Int,
+    swipeAssist: Double,
     onToggleShiftMode: (enable: Boolean) -> Unit,
     onToggleNumericMode: (enable: Boolean) -> Unit,
     onToggleCapsLock: () -> Unit,
@@ -176,7 +177,7 @@ fun KeyboardKey(
                     },
                     onDragEnd = {
                         val action = (key.swipes?.let {
-                            val direction = swipeDirection(offsetX, offsetY, minSwipeLength, it.keys)
+                            val direction = swipeDirection(offsetX, offsetY, minSwipeLength, it.keys, swipeAssist)
                             it[direction]
                         } ?: key.center).action
 

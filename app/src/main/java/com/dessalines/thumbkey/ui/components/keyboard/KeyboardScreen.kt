@@ -29,6 +29,7 @@ import com.dessalines.thumbkey.db.DEFAULT_POSITION
 import com.dessalines.thumbkey.db.DEFAULT_PUSHUP_SIZE
 import com.dessalines.thumbkey.db.DEFAULT_SOUND_ON_TAP
 import com.dessalines.thumbkey.db.DEFAULT_SPACEBAR_MULTITAPS
+import com.dessalines.thumbkey.db.DEFAULT_SWIPE_ASSIST
 import com.dessalines.thumbkey.db.DEFAULT_VIBRATE_ON_TAP
 import com.dessalines.thumbkey.keyboards.generateKeyboard
 import com.dessalines.thumbkey.utils.KeyAction
@@ -116,6 +117,7 @@ fun KeyboardScreen(
                                 animationHelperSpeed = settings?.appSettings?.animationHelperSpeed
                                     ?: DEFAULT_ANIMATION_HELPER_SPEED,
                                 minSwipeLength = settings?.appSettings?.minSwipeLength ?: DEFAULT_MIN_SWIPE_LENGTH,
+                                swipeAssist = settings?.appSettings?.swipeAssist ?: DEFAULT_SWIPE_ASSIST,
                                 onToggleShiftMode = { enable ->
                                     mode = if (enable) {
                                         KeyboardMode.SHIFTED

@@ -18,7 +18,6 @@ import com.dessalines.thumbkey.db.AppDB
 import com.dessalines.thumbkey.db.AppSettingsRepository
 import com.dessalines.thumbkey.db.AppSettingsViewModel
 import com.dessalines.thumbkey.db.AppSettingsViewModelFactory
-import com.dessalines.thumbkey.keyboards.convert
 import com.dessalines.thumbkey.ui.components.settings.SettingsActivity
 import com.dessalines.thumbkey.ui.components.settings.about.AboutActivity
 import com.dessalines.thumbkey.ui.components.settings.lookandfeel.LookAndFeelActivity
@@ -40,7 +39,6 @@ class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        convert(this)
 
         setContent {
             val settings by appSettingsViewModel.appSettings.observeAsState()

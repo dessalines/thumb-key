@@ -76,7 +76,7 @@ fun keyboardPositionToAlignment(position: KeyboardPosition): Alignment {
 /**
  * If this doesn't meet the minimum swipe length, it returns null
  */
-fun swipeDirection(x: Float, y: Float, minSwipeLength: Int, possible: Collection<SwipeDirection>): SwipeDirection? {
+fun swipeDirection(x: Float, y: Float, minSwipeLength: Int, possible: Collection<SwipeDirection>, swipeAssist: Double): SwipeDirection? {
     val xD = x.toDouble()
     val yD = y.toDouble()
 
@@ -88,7 +88,14 @@ fun swipeDirection(x: Float, y: Float, minSwipeLength: Int, possible: Collection
 
     val angle = atan2(yD, xD)
 
-    return possible.minByOrNull { min(abs((it.angle - angle).mod(Math.PI * 2)), abs((angle - it.angle).mod(Math.PI * 2))) }
+    return possible.minByOrNull {
+        min(
+            abs((it.angle - angle).mod(Math.PI * 2)),
+            abs((angle - it.angle).mod(Math.PI * 2))
+        ).let {
+            if (it < swipeAssist) it else Double.POSITIVE_INFINITY
+        }
+    }
 }
 
 fun performKeyAction(
@@ -419,16 +426,16 @@ fun getEnabledKeyboardLayouts(
     settings: AppSettingsWithKeyboardLayout?,
     externalKeyboardLayouts: List<ExternalKeyboardLayout>?,
     enabledInternalKeyboardLayouts: List<EnabledInternalKeyboardLayout>?,
-) = buildSet {
+): Set<Pair<Any, KeyboardLayout>> = buildSet { // TODO better return type
         settings?.externalKeyboardLayout?.let {
-            add(it.id to KeyboardLayout(it.title, it.json))
+            add(it to KeyboardLayout(it.title, it.json))
         }
         settings?.appSettings?.keyboardLayoutInternal?.let {
-            add(it to loadInternalKeyboard(it))
+            add(EnabledInternalKeyboardLayout(it) to loadInternalKeyboard(it))
         }
         externalKeyboardLayouts?.let {
             addAll(it.mapNotNull { layout ->
-                if (layout.enabled) layout.id to KeyboardLayout(layout.title, layout.json) else null
+                if (layout.enabled) layout to KeyboardLayout(layout.title, layout.json) else null
             })
         }
         enabledInternalKeyboardLayouts?.let {

@@ -36,6 +36,7 @@ const val DEFAULT_THEME_COLOR = 0
 const val DEFAULT_VIBRATE_ON_TAP = 1
 const val DEFAULT_SOUND_ON_TAP = 0
 const val DEFAULT_MIN_SWIPE_LENGTH = 40
+const val DEFAULT_SWIPE_ASSIST: Double = Math.PI / 8
 const val DEFAULT_PUSHUP_SIZE = 0
 const val DEFAULT_HIDE_LETTERS = 0
 const val DEFAULT_HIDE_SYMBOLS = 0
@@ -129,6 +130,11 @@ data class AppSettings(
         defaultValue = DEFAULT_MIN_SWIPE_LENGTH.toString(),
     )
     val minSwipeLength: Int,
+    @ColumnInfo(
+        name = "swipe_assist",
+        defaultValue = DEFAULT_SWIPE_ASSIST.toString()
+    )
+    val swipeAssist: Double,
     @ColumnInfo(
         name = "pushup_size",
         defaultValue = DEFAULT_PUSHUP_SIZE.toString(),
@@ -323,13 +329,14 @@ val MIGRATION_8_9 = object : Migration(7, 8) {
                 theme_color INTEGER NOT NULL DEFAULT 0,
                 viewed_changelog INTEGER NOT NULL DEFAULT 0,
                 min_swipe_length INTEGER NOT NULL DEFAULT 40,
+                swipe_assist REAL NOT NULL DEFAULT 180,
                 pushup_size INTEGER NOT NULL DEFAULT 0,
                 hide_letters INTEGER NOT NULL DEFAULT 0,
                 key_borders INTEGER NOT NULL DEFAULT 1,
                 spacebar_multitaps INTEGER NOT NULL DEFAULT 1
             )
         """.trimIndent())
-        database.execSQL("insert into AppSettingsNew select id, key_size, animation_speed, animation_helper_speed, position, auto_capitalize, null as keyboard_layout_internal, null as keyboard_layout_external, vibrate_on_tap, sound_on_tap, theme, theme_color, viewed_changelog, min_swipe_length, pushup_size, hide_letters, key_borders, spacebar_multitaps from AppSettings")
+        database.execSQL("insert into AppSettingsNew select id, key_size, animation_speed, animation_helper_speed, position, auto_capitalize, null as keyboard_layout_internal, null as keyboard_layout_external, vibrate_on_tap, sound_on_tap, theme, theme_color, viewed_changelog, min_swipe_length, undefined as swipe_assist, pushup_size, hide_letters, key_borders, spacebar_multitaps from AppSettings")
         database.execSQL("drop table AppSettings")
         database.execSQL("alter table AppSettingsNew rename to AppSettings")
         database.execSQL(

@@ -9,6 +9,7 @@ import androidx.compose.runtime.livedata.observeAsState
 import androidx.compose.ui.platform.AbstractComposeView
 import androidx.lifecycle.lifecycleScope
 import com.dessalines.thumbkey.db.AppSettingsRepository
+import com.dessalines.thumbkey.db.DEFAULT_KEYBOARD_LAYOUT
 import com.dessalines.thumbkey.db.EnabledInternalKeyboardLayout
 import com.dessalines.thumbkey.db.ExternalKeyboardLayout
 import com.dessalines.thumbkey.ui.components.keyboard.KeyboardScreen
@@ -40,7 +41,7 @@ class ComposeKeyboardView(
                         // TODO ugly code but it works
                         val layouts = getEnabledKeyboardLayouts(settings, settingsRepo.enabledExternalKeyboardLayouts.value, settingsRepo.enabledInternalKeyboardLayouts.value).sortedBy { it.second.title }
                         val index = layouts.indexOfFirst { layout ->
-                            layout.first == (settings!!.externalKeyboardLayout?.id ?: settings!!.appSettings.keyboardLayoutInternal)
+                            layout.first == (settings!!.externalKeyboardLayout ?: EnabledInternalKeyboardLayout(settings!!.appSettings.keyboardLayoutInternal ?: DEFAULT_KEYBOARD_LAYOUT))
                         }
                         val newLayout = layouts[(index + 1).mod(layouts.size)]
                         val newSettings = (newLayout.first as? EnabledInternalKeyboardLayout)?.let {

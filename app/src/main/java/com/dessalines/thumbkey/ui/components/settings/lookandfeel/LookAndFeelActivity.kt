@@ -19,6 +19,7 @@ import androidx.compose.material.icons.outlined.LinearScale
 import androidx.compose.material.icons.outlined.MusicNote
 import androidx.compose.material.icons.outlined.Palette
 import androidx.compose.material.icons.outlined.ResetTv
+import androidx.compose.material.icons.outlined.RotateRight
 import androidx.compose.material.icons.outlined.SpaceBar
 import androidx.compose.material.icons.outlined.Swipe
 import androidx.compose.material.icons.outlined.VerticalAlignTop
@@ -46,6 +47,7 @@ import com.alorma.compose.settings.storage.base.rememberBooleanSettingState
 import com.alorma.compose.settings.storage.base.rememberFloatSettingState
 import com.alorma.compose.settings.storage.base.rememberIntSetSettingState
 import com.alorma.compose.settings.storage.base.rememberIntSettingState
+import com.alorma.compose.settings.storage.base.rememberStringSettingState
 import com.alorma.compose.settings.ui.SettingsCheckbox
 import com.alorma.compose.settings.ui.SettingsList
 import com.alorma.compose.settings.ui.SettingsListMultiSelect
@@ -67,6 +69,7 @@ import com.dessalines.thumbkey.db.DEFAULT_POSITION
 import com.dessalines.thumbkey.db.DEFAULT_PUSHUP_SIZE
 import com.dessalines.thumbkey.db.DEFAULT_SOUND_ON_TAP
 import com.dessalines.thumbkey.db.DEFAULT_SPACEBAR_MULTITAPS
+import com.dessalines.thumbkey.db.DEFAULT_SWIPE_ASSIST
 import com.dessalines.thumbkey.db.DEFAULT_THEME
 import com.dessalines.thumbkey.db.DEFAULT_THEME_COLOR
 import com.dessalines.thumbkey.db.DEFAULT_VIBRATE_ON_TAP
@@ -110,6 +113,9 @@ fun LookAndFeelActivity(
     )
     val minSwipeLengthState = rememberFloatSettingState(
         (settings?.appSettings?.minSwipeLength ?: DEFAULT_MIN_SWIPE_LENGTH).toFloat(),
+    )
+    val swipeAssistState = rememberFloatSettingState(
+        (settings?.appSettings?.swipeAssist ?: DEFAULT_SWIPE_ASSIST).toFloat(), // TODO stupid framework won't allow doubles
     )
     val positionState = rememberIntSettingState(
         settings?.appSettings?.position ?: DEFAULT_POSITION,
@@ -192,6 +198,7 @@ fun LookAndFeelActivity(
                             animationSpeedState,
                             animationHelperSpeedState,
                             minSwipeLengthState,
+                            swipeAssistState,
                             positionState,
                             autoCapitalizeState,
                             spacebarMultiTapsState,
@@ -230,6 +237,7 @@ fun LookAndFeelActivity(
                             animationSpeedState,
                             animationHelperSpeedState,
                             minSwipeLengthState,
+                            swipeAssistState,
                             positionState,
                             autoCapitalizeState,
                             spacebarMultiTapsState,
@@ -268,6 +276,7 @@ fun LookAndFeelActivity(
                             animationSpeedState,
                             animationHelperSpeedState,
                             minSwipeLengthState,
+                            swipeAssistState,
                             positionState,
                             autoCapitalizeState,
                             spacebarMultiTapsState,
@@ -306,6 +315,7 @@ fun LookAndFeelActivity(
                             animationSpeedState,
                             animationHelperSpeedState,
                             minSwipeLengthState,
+                            swipeAssistState,
                             positionState,
                             autoCapitalizeState,
                             spacebarMultiTapsState,
@@ -342,6 +352,7 @@ fun LookAndFeelActivity(
                             animationSpeedState,
                             animationHelperSpeedState,
                             minSwipeLengthState,
+                            swipeAssistState,
                             positionState,
                             autoCapitalizeState,
                             spacebarMultiTapsState,
@@ -378,6 +389,7 @@ fun LookAndFeelActivity(
                             animationSpeedState,
                             animationHelperSpeedState,
                             minSwipeLengthState,
+                            swipeAssistState,
                             positionState,
                             autoCapitalizeState,
                             spacebarMultiTapsState,
@@ -414,6 +426,7 @@ fun LookAndFeelActivity(
                             animationSpeedState,
                             animationHelperSpeedState,
                             minSwipeLengthState,
+                            swipeAssistState,
                             positionState,
                             autoCapitalizeState,
                             spacebarMultiTapsState,
@@ -450,6 +463,7 @@ fun LookAndFeelActivity(
                             animationSpeedState,
                             animationHelperSpeedState,
                             minSwipeLengthState,
+                            swipeAssistState,
                             positionState,
                             autoCapitalizeState,
                             spacebarMultiTapsState,
@@ -486,6 +500,7 @@ fun LookAndFeelActivity(
                             animationSpeedState,
                             animationHelperSpeedState,
                             minSwipeLengthState,
+                            swipeAssistState,
                             positionState,
                             autoCapitalizeState,
                             spacebarMultiTapsState,
@@ -522,6 +537,7 @@ fun LookAndFeelActivity(
                             animationSpeedState,
                             animationHelperSpeedState,
                             minSwipeLengthState,
+                            swipeAssistState,
                             positionState,
                             autoCapitalizeState,
                             spacebarMultiTapsState,
@@ -558,6 +574,7 @@ fun LookAndFeelActivity(
                             animationSpeedState,
                             animationHelperSpeedState,
                             minSwipeLengthState,
+                            swipeAssistState,
                             positionState,
                             autoCapitalizeState,
                             spacebarMultiTapsState,
@@ -596,6 +613,7 @@ fun LookAndFeelActivity(
                             animationSpeedState,
                             animationHelperSpeedState,
                             minSwipeLengthState,
+                            swipeAssistState,
                             positionState,
                             autoCapitalizeState,
                             spacebarMultiTapsState,
@@ -634,6 +652,7 @@ fun LookAndFeelActivity(
                             animationSpeedState,
                             animationHelperSpeedState,
                             minSwipeLengthState,
+                            swipeAssistState,
                             positionState,
                             autoCapitalizeState,
                             spacebarMultiTapsState,
@@ -672,6 +691,46 @@ fun LookAndFeelActivity(
                             animationSpeedState,
                             animationHelperSpeedState,
                             minSwipeLengthState,
+                            swipeAssistState,
+                            positionState,
+                            autoCapitalizeState,
+                            spacebarMultiTapsState,
+                            keyBordersState,
+                            vibrateOnTapState,
+                            soundOnTapState,
+                            hideLettersState,
+                            hideSymbolsState,
+                            keyboardLayoutsState,
+                            themeState,
+                            themeColorState,
+                            internalKeyboardLayoutsDisplay,
+                            externalKeyboardLayoutsDisplay,
+                            viewedChangelog,
+                        )
+                    },
+                )
+                val swipeAssistStr = stringResource(R.string.swipe_assist, swipeAssistState.value)
+                SettingsSlider(
+                    valueRange = 0f..(Math.PI * 2).toFloat(),
+                    state = swipeAssistState,
+                    icon = {
+                        Icon(
+                            imageVector = Icons.Outlined.RotateRight,
+                            contentDescription = null,
+                        )
+                    },
+                    title = {
+                        Text(swipeAssistStr)
+                    },
+                    onValueChangeFinished = {
+                        updateAppSettings(
+                            appSettingsViewModel,
+                            keySizeState,
+                            pushupSizeState,
+                            animationSpeedState,
+                            animationHelperSpeedState,
+                            minSwipeLengthState,
+                            swipeAssistState,
                             positionState,
                             autoCapitalizeState,
                             spacebarMultiTapsState,
@@ -710,6 +769,7 @@ fun LookAndFeelActivity(
                             animationSpeedState,
                             animationHelperSpeedState,
                             minSwipeLengthState,
+                            swipeAssistState,
                             positionState,
                             autoCapitalizeState,
                             spacebarMultiTapsState,
@@ -753,6 +813,7 @@ fun LookAndFeelActivity(
                             animationSpeedState,
                             animationHelperSpeedState,
                             minSwipeLengthState,
+                            swipeAssistState,
                             positionState,
                             autoCapitalizeState,
                             spacebarMultiTapsState,
@@ -788,6 +849,7 @@ fun LookAndFeelActivity(
                             animationSpeedState,
                             animationHelperSpeedState,
                             minSwipeLengthState,
+                            swipeAssistState,
                             positionState,
                             autoCapitalizeState,
                             spacebarMultiTapsState,
@@ -827,6 +889,7 @@ private fun updateAppSettings(
     animationSpeedState: SettingValueState<Float>,
     animationHelperSpeedState: SettingValueState<Float>,
     minSwipeLengthState: SettingValueState<Float>,
+    swipeAssistState: SettingValueState<Float>,
     positionState: SettingValueState<Int>,
     autoCapitalizeState: SettingValueState<Boolean>,
     spacebarMultiTapsState: SettingValueState<Boolean>,
@@ -852,6 +915,7 @@ private fun updateAppSettings(
             animationSpeed = animationSpeedState.value.toInt(),
             animationHelperSpeed = animationHelperSpeedState.value.toInt(),
             minSwipeLength = minSwipeLengthState.value.toInt(),
+            swipeAssist = swipeAssistState.value.toDouble(),
             position = positionState.value,
             autoCapitalize = autoCapitalizeState.value.toInt(),
             spacebarMultiTaps = spacebarMultiTapsState.value.toInt(),
@@ -878,6 +942,7 @@ private fun resetAppSettingsToDefault(
     animationSpeedState: SettingValueState<Float>,
     animationHelperSpeedState: SettingValueState<Float>,
     minSwipeLengthState: SettingValueState<Float>,
+    swipeAssistState: SettingValueState<Float>,
     positionState: SettingValueState<Int>,
     autoCapitalizeState: SettingValueState<Boolean>,
     spacebarMultiTapsState: SettingValueState<Boolean>,
@@ -900,6 +965,7 @@ private fun resetAppSettingsToDefault(
     animationSpeedState.value = DEFAULT_ANIMATION_SPEED.toFloat()
     animationHelperSpeedState.value = DEFAULT_ANIMATION_HELPER_SPEED.toFloat()
     minSwipeLengthState.value = DEFAULT_MIN_SWIPE_LENGTH.toFloat()
+    swipeAssistState.value = DEFAULT_SWIPE_ASSIST.toFloat() // TODO stupid fw won't allow double
     positionState.value = DEFAULT_POSITION
     autoCapitalizeState.value = DEFAULT_AUTO_CAPITALIZE.toBool()
     spacebarMultiTapsState.value = DEFAULT_SPACEBAR_MULTITAPS.toBool()
@@ -918,6 +984,7 @@ private fun resetAppSettingsToDefault(
         animationSpeedState,
         animationHelperSpeedState,
         minSwipeLengthState,
+        swipeAssistState,
         positionState,
         autoCapitalizeState,
         spacebarMultiTapsState,
