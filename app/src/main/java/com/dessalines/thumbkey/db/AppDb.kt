@@ -329,14 +329,15 @@ val MIGRATION_8_9 = object : Migration(8, 9) {
                 theme_color INTEGER NOT NULL DEFAULT 0,
                 viewed_changelog INTEGER NOT NULL DEFAULT 0,
                 min_swipe_length INTEGER NOT NULL DEFAULT 40,
-                swipe_assist REAL NOT NULL DEFAULT 180,
+                swipe_assist REAL NOT NULL DEFAULT ${Math.PI / 8},
                 pushup_size INTEGER NOT NULL DEFAULT 0,
                 hide_letters INTEGER NOT NULL DEFAULT 0,
                 key_borders INTEGER NOT NULL DEFAULT 1,
-                spacebar_multitaps INTEGER NOT NULL DEFAULT 1
+                spacebar_multitaps INTEGER NOT NULL DEFAULT 1,
+                hide_symbols INTEGER NOT NULL DEFAULT 0
             )
         """.trimIndent())
-        database.execSQL("insert into AppSettingsNew select id, key_size, animation_speed, animation_helper_speed, position, auto_capitalize, null as keyboard_layout_internal, null as keyboard_layout_external, vibrate_on_tap, sound_on_tap, theme, theme_color, viewed_changelog, min_swipe_length, undefined as swipe_assist, pushup_size, hide_letters, key_borders, spacebar_multitaps from AppSettings")
+        database.execSQL("insert into AppSettingsNew select id, key_size, animation_speed, animation_helper_speed, position, auto_capitalize, null as keyboard_layout_internal, null as keyboard_layout_external, vibrate_on_tap, sound_on_tap, theme, theme_color, viewed_changelog, min_swipe_length, '${Math.PI / 8}' as swipe_assist, pushup_size, hide_letters, key_borders, spacebar_multitaps, hide_symbols from AppSettings")
         database.execSQL("drop table AppSettings")
         database.execSQL("alter table AppSettingsNew rename to AppSettings")
         database.execSQL(

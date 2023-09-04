@@ -88,13 +88,13 @@ fun swipeDirection(x: Float, y: Float, minSwipeLength: Int, possible: Collection
 
     val angle = atan2(yD, xD)
 
-    return possible.minByOrNull {
-        min(
+    return possible.map {
+        it to min(
             abs((it.angle - angle).mod(Math.PI * 2)),
             abs((angle - it.angle).mod(Math.PI * 2))
-        ).let {
-            if (it < swipeAssist) it else Double.POSITIVE_INFINITY
-        }
+        )
+    }.minByOrNull { it.second }?.let {
+        if (it.second < swipeAssist) it.first else null
     }
 }
 
@@ -422,26 +422,47 @@ fun loadInternalKeyboard(layout: String): KeyboardLayout {
     return internalKeyboardLayouts.getValue(layout)
 }
 
-fun getEnabledKeyboardLayouts(
+fun fetchEnabledKeyboardLayouts(
     settings: AppSettingsWithKeyboardLayout?,
     externalKeyboardLayouts: List<ExternalKeyboardLayout>?,
     enabledInternalKeyboardLayouts: List<EnabledInternalKeyboardLayout>?,
 ): Set<Pair<Any, KeyboardLayout>> = buildSet { // TODO better return type
+    settings?.externalKeyboardLayout?.let {
+        add(it to KeyboardLayout(it.title, it.json))
+    }
+    settings?.appSettings?.keyboardLayoutInternal?.let {
+        add(EnabledInternalKeyboardLayout(it) to loadInternalKeyboard(it))
+    }
+    externalKeyboardLayouts?.let {
+        addAll(it.mapNotNull { layout ->
+            if (layout.enabled) layout to KeyboardLayout(layout.title, layout.json) else null
+        })
+    }
+    enabledInternalKeyboardLayouts?.let {
+        addAll(it.map { layout ->
+            layout to loadInternalKeyboard(layout.internalId)
+        })
+    }
+}
+
+fun getEnabledKeyboardLayouts(
+    settings: AppSettingsWithKeyboardLayout?,
+    externalKeyboardLayouts: List<ExternalKeyboardLayout>?,
+    enabledInternalKeyboardLayouts: List<EnabledInternalKeyboardLayout>?,
+): Set<Any> = buildSet { // TODO better return type
         settings?.externalKeyboardLayout?.let {
-            add(it to KeyboardLayout(it.title, it.json))
+            add(it)
         }
         settings?.appSettings?.keyboardLayoutInternal?.let {
-            add(EnabledInternalKeyboardLayout(it) to loadInternalKeyboard(it))
+            add(EnabledInternalKeyboardLayout(it))
         }
         externalKeyboardLayouts?.let {
-            addAll(it.mapNotNull { layout ->
-                if (layout.enabled) layout to KeyboardLayout(layout.title, layout.json) else null
+            addAll(it.filter { layout ->
+                layout.enabled
             })
         }
         enabledInternalKeyboardLayouts?.let {
-            addAll(it.map { layout ->
-                layout to loadInternalKeyboard(layout.internalId)
-            })
+            addAll(it)
         }
     }
 
@@ -449,8 +470,14 @@ fun getEnabledKeyboardLayoutIndices(
     settings: AppSettingsWithKeyboardLayout?,
     externalKeyboardLayouts: List<ExternalKeyboardLayout>?,
     enabledInternalKeyboardLayouts: List<EnabledInternalKeyboardLayout>?,
-    allKeyboardLayouts: List<KeyboardLayout>
-): Set<Int> {
-    val layouts = getEnabledKeyboardLayouts(settings, externalKeyboardLayouts, enabledInternalKeyboardLayouts)
-    return layouts.map { allKeyboardLayouts.indexOf(it.second) }.toSet()
+    internalKeyboardLayoutsDisplay: List<Pair<String, KeyboardLayout>>,
+    externalKeyboardLayoutsDisplay: List<Pair<Int, KeyboardLayout>>,
+): Collection<Int> {
+    return getEnabledKeyboardLayouts(settings, externalKeyboardLayouts, enabledInternalKeyboardLayouts).map {
+        if (it is EnabledInternalKeyboardLayout) {
+            internalKeyboardLayoutsDisplay.indexOfFirst { layout -> layout.first == it.internalId }
+        } else {
+            externalKeyboardLayoutsDisplay.indexOfFirst { layout -> layout.first == (it as ExternalKeyboardLayout).id }
+        }
+    }
 }

@@ -95,7 +95,8 @@ fun LookAndFeelActivity(
     val settings by appSettingsViewModel.appSettings.observeAsState()
     val externalKeyboardLayouts by appSettingsViewModel.externalKeyboardLayouts.observeAsState()
     val enabledInternalKeyboardLayouts by appSettingsViewModel.enabledInternalKeyboardLayouts.observeAsState()
-    if (settings == null) {
+    if (settings == null || externalKeyboardLayouts == null || enabledInternalKeyboardLayouts == null) {
+        return
         // TODO loading screen only
     }
 
@@ -143,7 +144,7 @@ fun LookAndFeelActivity(
     val allKeyboardLayouts = internalKeyboardLayoutsDisplay.map { it.second } + externalKeyboardLayoutsDisplay.map { it.second }
     val allKeyboardLayoutsDisplay = allKeyboardLayouts.map { it.title }
     val keyboardLayoutsState = rememberIntSetSettingState(
-        getEnabledKeyboardLayoutIndices(settings, externalKeyboardLayouts, enabledInternalKeyboardLayouts, allKeyboardLayouts)
+        getEnabledKeyboardLayoutIndices(settings, externalKeyboardLayouts, enabledInternalKeyboardLayouts, internalKeyboardLayoutsDisplay, externalKeyboardLayoutsDisplay).toSet()
     )
     val themeState = rememberIntSettingState(settings?.appSettings?.theme ?: DEFAULT_THEME)
     val themeColorState = rememberIntSettingState(settings?.appSettings?.themeColor ?: DEFAULT_THEME_COLOR)

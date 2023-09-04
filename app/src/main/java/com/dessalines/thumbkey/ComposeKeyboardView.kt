@@ -15,6 +15,7 @@ import com.dessalines.thumbkey.db.ExternalKeyboardLayout
 import com.dessalines.thumbkey.ui.components.keyboard.KeyboardScreen
 import com.dessalines.thumbkey.ui.theme.ThumbkeyTheme
 import com.dessalines.thumbkey.utils.getEnabledKeyboardLayouts
+import com.dessalines.thumbkey.utils.fetchEnabledKeyboardLayouts
 import kotlinx.coroutines.launch
 
 @SuppressLint("ViewConstructor")
@@ -39,7 +40,7 @@ class ComposeKeyboardView(
                     ctx.lifecycleScope.launch {
                         // Cycle to the next keyboard
                         // TODO ugly code but it works
-                        val layouts = getEnabledKeyboardLayouts(settings, settingsRepo.enabledExternalKeyboardLayouts.value, settingsRepo.enabledInternalKeyboardLayouts.value).sortedBy { it.second.title }
+                        val layouts = fetchEnabledKeyboardLayouts(settings, settingsRepo.enabledExternalKeyboardLayouts.value, settingsRepo.enabledInternalKeyboardLayouts.value).sortedBy { it.second.title }
                         val index = layouts.indexOfFirst { layout ->
                             layout.first == (settings!!.externalKeyboardLayout ?: EnabledInternalKeyboardLayout(settings!!.appSettings.keyboardLayoutInternal ?: DEFAULT_KEYBOARD_LAYOUT))
                         }
