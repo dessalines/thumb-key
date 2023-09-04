@@ -225,7 +225,7 @@ val MESSAGEEASE_DE_MAIN = KeyboardC(
                     SwipeDirection.BOTTOM to KeyC(
                         display = KeyDisplay.TextDisplay("ß"),
                         action = KeyAction.CommitText("ß"),
-                        color = ColorVariant.MUTED,
+                        color = ColorVariant.PRIMARY,
                     ),
                     SwipeDirection.RIGHT to KeyC(
                         display = KeyDisplay.TextDisplay("*"),
@@ -249,7 +249,7 @@ val MESSAGEEASE_DE_MAIN = KeyboardC(
                     SwipeDirection.RIGHT to KeyC(
                         display = KeyDisplay.TextDisplay("z"),
                         action = KeyAction.CommitText("z"),
-                        color = ColorVariant.MUTED,
+                        color = ColorVariant.PRIMARY,
                     ),
                     SwipeDirection.TOP_LEFT to KeyC(
                         display = KeyDisplay.TextDisplay(
