@@ -304,7 +304,7 @@ val MIGRATION_7_8 = object : Migration(7, 8) {
     }
 }
 
-val MIGRATION_8_9 = object : Migration(7, 8) {
+val MIGRATION_8_9 = object : Migration(8, 9) {
     override fun migrate(database: SupportSQLiteDatabase) {
         val ret = database.query("select keyboard_layout, keyboard_layouts from AppSettings limit 1")
         val (layout, layouts) = if (ret.moveToFirst()) {
