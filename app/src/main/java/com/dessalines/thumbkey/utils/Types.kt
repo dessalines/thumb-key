@@ -83,6 +83,7 @@ enum class ThemeColor(private val stringId: Int) {
     Pink(R.string.pink),
     Srcery(R.string.srcery),
     Blue(R.string.blue),
+    Dracula(R.string.dracula),
     ;
 
     @Composable
