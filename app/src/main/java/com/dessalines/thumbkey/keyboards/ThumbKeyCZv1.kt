@@ -516,6 +516,7 @@ val THUMBKEY_CZ_V1_SHIFTED = KeyboardC(
                     size = FontSizeVariant.LARGE,
                     color = ColorVariant.PRIMARY,
                 ),
+                swipeType = SwipeNWay.EIGHT_WAY,
                 swipes = mapOf(
                     SwipeDirection.TOP_LEFT to KeyC(
                         display = KeyDisplay.TextDisplay("D"),
@@ -529,7 +530,7 @@ val THUMBKEY_CZ_V1_SHIFTED = KeyboardC(
                         display = KeyDisplay.TextDisplay("Ď"),
                         action = KeyAction.CommitText("Ď"),
                     ),
-                    SwipeDirection.TOP to KeyC(
+                    SwipeDirection.LEFT to KeyC(
                         display = KeyDisplay.TextDisplay("Ě"),
                         action = KeyAction.CommitText("Ě"),
                     ),
@@ -549,3 +550,4 @@ val THUMBKEY_CZ_V1_KEYBOARD_MODES: Map<KeyboardMode, KeyboardC> = mapOf(
     KeyboardMode.SHIFTED to THUMBKEY_CZ_V1_SHIFTED,
     KeyboardMode.NUMERIC to NUMERIC_KEYBOARD,
 )
+// čďě dvojté ť
