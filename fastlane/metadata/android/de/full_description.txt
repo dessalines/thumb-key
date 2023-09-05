@@ -1,0 +1,10 @@
+Thumb-Key ist eine intelligente Tastatur die <i>deine Privatsphäre respektiert</i> und speziell für deine Daumen gemacht ist.
+
+Sie besteht aus einem <b>3 mal 3 feldern</b>, und benutzt wisch-muster für weniger verwendete Buchstaben. Die Tastatur ist einfach zu lernen und wurde für schnelles schreiben konzipiert.
+
+Anders als profit-orientiert, privatsphären-verletzende autokorrektur zu sehen wie Gboard und SwiftKey benutzt Thumb-Key eine 3x3 Tastenmatrix um zu verhindern dass deine Augen nach dem nächsten Buchstaben ausschau halten müssen.
+
+Sobald die Tastenpositionen drauf hast wirst du fast so schnell sein wie mit einer herkömmlichen touch-tastatur. Deine Augen müssen nie wieder vom Text wegsehen.
+
+Diese Projekt ist eine fortsetzung vom mittlerweile eingestellten (und nicht Quelloffenen-Projekt) <a href="https://www.exideas.com/ME/">MessageEase Keyboard</a>, welche die Hauptinspiration ist.
+This project is a follow-up to the now unmaintained (and closed-source) <a href="https://www.exideas.com/ME/">MessageEase Keyboard</a>, which is its main inspiration.
