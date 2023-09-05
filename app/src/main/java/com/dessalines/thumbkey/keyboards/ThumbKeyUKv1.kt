@@ -473,7 +473,7 @@ val THUMBKEY_UK_V1_SHIFTED = KeyboardC(
                         display = KeyDisplay.TextDisplay("Є"),
                         action = KeyAction.CommitText("Є"),
                     ),
-                    SwipeDirection.BOTTOM_LEFT to KeyC(
+                    SwipeDirection.BOTTOM_RIGHT to KeyC(
                         display = KeyDisplay.TextDisplay("Ґ"),
                         action = KeyAction.CommitText("Ґ"),
                     ),
