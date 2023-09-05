@@ -550,4 +550,3 @@ val THUMBKEY_CZ_V1_KEYBOARD_MODES: Map<KeyboardMode, KeyboardC> = mapOf(
     KeyboardMode.SHIFTED to THUMBKEY_CZ_V1_SHIFTED,
     KeyboardMode.NUMERIC to NUMERIC_KEYBOARD,
 )
-// čďě dvojté ť
