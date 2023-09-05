@@ -35,6 +35,7 @@ fun ThumbkeyTheme(
         ThemeColor.Pink -> pink()
         ThemeColor.Srcery -> srcery()
         ThemeColor.Blue -> blue()
+        ThemeColor.Dracula -> dracula()
     }
 
     val systemTheme = if (!isSystemInDarkTheme()) {
