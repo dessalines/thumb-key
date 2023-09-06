@@ -160,6 +160,56 @@ fun LookAndFeelActivity(
                     .verticalScroll(scrollState)
                     .imePadding(),
             ) {
+                if (showConfirmResetDialog.value) {
+                    AlertDialog(
+                        onDismissRequest = {
+                            showConfirmResetDialog.value = false
+                        },
+                        title = {
+                            Text(stringResource(R.string.reset_to_defaults))
+                        },
+                        text = {
+                            Text(stringResource(R.string.reset_to_defaults_msg))
+                        },
+                        confirmButton = {
+                            Button(
+                                onClick = {
+                                    showConfirmResetDialog.value = false
+                                    resetAppSettingsToDefault(
+                                        appSettingsViewModel,
+                                        keySizeState,
+                                        pushupSizeState,
+                                        animationSpeedState,
+                                        animationHelperSpeedState,
+                                        minSwipeLengthState,
+                                        positionState,
+                                        autoCapitalizeState,
+                                        spacebarMultiTapsState,
+                                        keyBordersState,
+                                        vibrateOnTapState,
+                                        soundOnTapState,
+                                        hideLettersState,
+                                        hideSymbolsState,
+                                        keyboardLayoutsState,
+                                        themeState,
+                                        themeColorState,
+                                    )
+                                },
+                            ) {
+                                Text(stringResource(R.string.reset_to_defaults_confirm))
+                            }
+                        },
+                        dismissButton = {
+                            Button(
+                                onClick = {
+                                    showConfirmResetDialog.value = false
+                                },
+                            ) {
+                                Text(stringResource(R.string.cancel))
+                            }
+                        },
+                    )
+                }
                 SettingsListMultiSelect(
                     state = keyboardLayoutsState,
                     items = KeyboardLayout.values().sortedBy { it.title }.map { it.title },
@@ -736,56 +786,6 @@ fun LookAndFeelActivity(
                     onValueChange = { text = it },
                     label = { Text(stringResource(R.string.test_out_thumbkey)) },
                 )
-                if (showConfirmResetDialog.value) {
-                    AlertDialog(
-                        onDismissRequest = {
-                            showConfirmResetDialog.value = false
-                        },
-                        title = {
-                            Text(stringResource(R.string.reset_to_defaults))
-                        },
-                        text = {
-                            Text(stringResource(R.string.reset_to_defaults_msg))
-                        },
-                        confirmButton = {
-                            Button(
-                                onClick = {
-                                    showConfirmResetDialog.value = false
-                                    resetAppSettingsToDefault(
-                                        appSettingsViewModel,
-                                        keySizeState,
-                                        pushupSizeState,
-                                        animationSpeedState,
-                                        animationHelperSpeedState,
-                                        minSwipeLengthState,
-                                        positionState,
-                                        autoCapitalizeState,
-                                        spacebarMultiTapsState,
-                                        keyBordersState,
-                                        vibrateOnTapState,
-                                        soundOnTapState,
-                                        hideLettersState,
-                                        hideSymbolsState,
-                                        keyboardLayoutsState,
-                                        themeState,
-                                        themeColorState,
-                                    )
-                                },
-                            ) {
-                                Text(stringResource(R.string.reset_to_defaults_confirm))
-                            }
-                        },
-                        dismissButton = {
-                            Button(
-                                onClick = {
-                                    showConfirmResetDialog.value = false
-                                },
-                            ) {
-                                Text(stringResource(R.string.cancel))
-                            }
-                        },
-                    )
-                }
             }
         },
     )
