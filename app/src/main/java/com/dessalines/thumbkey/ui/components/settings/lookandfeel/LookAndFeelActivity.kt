@@ -144,7 +144,7 @@ fun LookAndFeelActivity(
 
     var text by remember { mutableStateOf("") }
 
-    val confirmReset = remember { mutableStateOf(false)  }
+    val confirmReset = remember { mutableStateOf(false) }
 
     val scrollState = rememberScrollState()
 
@@ -770,7 +770,8 @@ fun LookAndFeelActivity(
                                         themeState,
                                         themeColorState,
                                     )
-                                }) {
+                                },
+                            ) {
                                 Text(stringResource(R.string.reset_to_defaults_confirm))
                             }
                         },
@@ -778,10 +779,11 @@ fun LookAndFeelActivity(
                             Button(
                                 onClick = {
                                     confirmReset.value = false
-                                }) {
+                                },
+                            ) {
                                 Text(stringResource(R.string.cancel))
                             }
-                        }
+                        },
                     )
                 }
             }
