@@ -144,7 +144,7 @@ fun LookAndFeelActivity(
 
     var text by remember { mutableStateOf("") }
 
-    val confirmReset = remember { mutableStateOf(false) }
+    val showConfirmResetDialog = remember { mutableStateOf(false) }
 
     val scrollState = rememberScrollState()
 
@@ -725,7 +725,7 @@ fun LookAndFeelActivity(
                         )
                     },
                     onClick = {
-                        confirmReset.value = true
+                        showConfirmResetDialog.value = true
                     },
                 )
                 OutlinedTextField(
@@ -736,10 +736,10 @@ fun LookAndFeelActivity(
                     onValueChange = { text = it },
                     label = { Text(stringResource(R.string.test_out_thumbkey)) },
                 )
-                if (confirmReset.value) {
+                if (showConfirmResetDialog.value) {
                     AlertDialog(
                         onDismissRequest = {
-                            confirmReset.value = false
+                            showConfirmResetDialog.value = false
                         },
                         title = {
                             Text(stringResource(R.string.reset_to_defaults))
@@ -750,7 +750,7 @@ fun LookAndFeelActivity(
                         confirmButton = {
                             Button(
                                 onClick = {
-                                    confirmReset.value = false
+                                    showConfirmResetDialog.value = false
                                     resetAppSettingsToDefault(
                                         appSettingsViewModel,
                                         keySizeState,
@@ -778,7 +778,7 @@ fun LookAndFeelActivity(
                         dismissButton = {
                             Button(
                                 onClick = {
-                                    confirmReset.value = false
+                                    showConfirmResetDialog.value = false
                                 },
                             ) {
                                 Text(stringResource(R.string.cancel))
