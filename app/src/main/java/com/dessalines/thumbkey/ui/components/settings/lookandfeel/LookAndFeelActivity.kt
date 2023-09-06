@@ -24,6 +24,8 @@ import androidx.compose.material.icons.outlined.Swipe
 import androidx.compose.material.icons.outlined.VerticalAlignTop
 import androidx.compose.material.icons.outlined.Vibration
 import androidx.compose.material.icons.outlined.Visibility
+import androidx.compose.material3.AlertDialog
+import androidx.compose.material3.Button
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.Icon
 import androidx.compose.material3.OutlinedTextField
@@ -141,6 +143,8 @@ fun LookAndFeelActivity(
     val snackbarHostState = remember { SnackbarHostState() }
 
     var text by remember { mutableStateOf("") }
+
+    val confirmReset = remember { mutableStateOf(false)  }
 
     val scrollState = rememberScrollState()
 
@@ -721,25 +725,7 @@ fun LookAndFeelActivity(
                         )
                     },
                     onClick = {
-                        resetAppSettingsToDefault(
-                            appSettingsViewModel,
-                            keySizeState,
-                            pushupSizeState,
-                            animationSpeedState,
-                            animationHelperSpeedState,
-                            minSwipeLengthState,
-                            positionState,
-                            autoCapitalizeState,
-                            spacebarMultiTapsState,
-                            keyBordersState,
-                            vibrateOnTapState,
-                            soundOnTapState,
-                            hideLettersState,
-                            hideSymbolsState,
-                            keyboardLayoutsState,
-                            themeState,
-                            themeColorState,
-                        )
+                        confirmReset.value = true
                     },
                 )
                 OutlinedTextField(
@@ -750,6 +736,54 @@ fun LookAndFeelActivity(
                     onValueChange = { text = it },
                     label = { Text(stringResource(R.string.test_out_thumbkey)) },
                 )
+                if (confirmReset.value) {
+                    AlertDialog(
+                        onDismissRequest = {
+                            confirmReset.value = false
+                        },
+                        title = {
+                            Text(stringResource(R.string.reset_to_defaults))
+                        },
+                        text = {
+                            Text(stringResource(R.string.reset_to_defaults_msg))
+                        },
+                        confirmButton = {
+                            Button(
+                                onClick = {
+                                    confirmReset.value = false
+                                    resetAppSettingsToDefault(
+                                        appSettingsViewModel,
+                                        keySizeState,
+                                        pushupSizeState,
+                                        animationSpeedState,
+                                        animationHelperSpeedState,
+                                        minSwipeLengthState,
+                                        positionState,
+                                        autoCapitalizeState,
+                                        spacebarMultiTapsState,
+                                        keyBordersState,
+                                        vibrateOnTapState,
+                                        soundOnTapState,
+                                        hideLettersState,
+                                        hideSymbolsState,
+                                        keyboardLayoutsState,
+                                        themeState,
+                                        themeColorState,
+                                    )
+                                }) {
+                                Text(stringResource(R.string.reset_to_defaults_confirm))
+                            }
+                        },
+                        dismissButton = {
+                            Button(
+                                onClick = {
+                                    confirmReset.value = false
+                                }) {
+                                Text(stringResource(R.string.cancel))
+                            }
+                        }
+                    )
+                }
             }
         },
     )

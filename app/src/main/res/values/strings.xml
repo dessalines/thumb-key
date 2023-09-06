@@ -41,6 +41,9 @@
     <string name="animation_speed">Animation Speed: %1$s</string>
     <string name="animation_helper_speed">Animation Helper Speed: %1$s</string>
     <string name="reset_to_defaults">Reset to defaults</string>
+    <string name="reset_to_defaults_msg">Are you sure you want to reset settings to defaults?</string>
+    <string name="reset_to_defaults_confirm">Reset</string>
+    <string name="cancel">Cancel</string>
     <string name="test_out_thumbkey">Test out Thumb-Key</string>
     <string name="setup">Setup</string>
     <string name="user_guide">User Guide</string>
