@@ -24,6 +24,8 @@ import androidx.compose.material.icons.outlined.Swipe
 import androidx.compose.material.icons.outlined.VerticalAlignTop
 import androidx.compose.material.icons.outlined.Vibration
 import androidx.compose.material.icons.outlined.Visibility
+import androidx.compose.material3.AlertDialog
+import androidx.compose.material3.Button
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.Icon
 import androidx.compose.material3.OutlinedTextField
@@ -142,6 +144,8 @@ fun LookAndFeelActivity(
 
     var text by remember { mutableStateOf("") }
 
+    val showConfirmResetDialog = remember { mutableStateOf(false) }
+
     val scrollState = rememberScrollState()
 
     Scaffold(
@@ -156,6 +160,56 @@ fun LookAndFeelActivity(
                     .verticalScroll(scrollState)
                     .imePadding(),
             ) {
+                if (showConfirmResetDialog.value) {
+                    AlertDialog(
+                        onDismissRequest = {
+                            showConfirmResetDialog.value = false
+                        },
+                        title = {
+                            Text(stringResource(R.string.reset_to_defaults))
+                        },
+                        text = {
+                            Text(stringResource(R.string.reset_to_defaults_msg))
+                        },
+                        confirmButton = {
+                            Button(
+                                onClick = {
+                                    showConfirmResetDialog.value = false
+                                    resetAppSettingsToDefault(
+                                        appSettingsViewModel,
+                                        keySizeState,
+                                        pushupSizeState,
+                                        animationSpeedState,
+                                        animationHelperSpeedState,
+                                        minSwipeLengthState,
+                                        positionState,
+                                        autoCapitalizeState,
+                                        spacebarMultiTapsState,
+                                        keyBordersState,
+                                        vibrateOnTapState,
+                                        soundOnTapState,
+                                        hideLettersState,
+                                        hideSymbolsState,
+                                        keyboardLayoutsState,
+                                        themeState,
+                                        themeColorState,
+                                    )
+                                },
+                            ) {
+                                Text(stringResource(R.string.reset_to_defaults_confirm))
+                            }
+                        },
+                        dismissButton = {
+                            Button(
+                                onClick = {
+                                    showConfirmResetDialog.value = false
+                                },
+                            ) {
+                                Text(stringResource(R.string.cancel))
+                            }
+                        },
+                    )
+                }
                 SettingsListMultiSelect(
                     state = keyboardLayoutsState,
                     items = KeyboardLayout.values().sortedBy { it.title }.map { it.title },
@@ -721,25 +775,7 @@ fun LookAndFeelActivity(
                         )
                     },
                     onClick = {
-                        resetAppSettingsToDefault(
-                            appSettingsViewModel,
-                            keySizeState,
-                            pushupSizeState,
-                            animationSpeedState,
-                            animationHelperSpeedState,
-                            minSwipeLengthState,
-                            positionState,
-                            autoCapitalizeState,
-                            spacebarMultiTapsState,
-                            keyBordersState,
-                            vibrateOnTapState,
-                            soundOnTapState,
-                            hideLettersState,
-                            hideSymbolsState,
-                            keyboardLayoutsState,
-                            themeState,
-                            themeColorState,
-                        )
+                        showConfirmResetDialog.value = true
                     },
                 )
                 OutlinedTextField(
