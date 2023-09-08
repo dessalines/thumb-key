@@ -212,11 +212,11 @@ fun LookAndFeelActivity(
                 }
                 SettingsListMultiSelect(
                     state = keyboardLayoutsState,
-                    items = KeyboardLayout.values().sortedBy { it.title }.map { it.title },
+                    items = KeyboardLayout.entries.sortedBy { it.title }.map { it.title },
                     icon = {
                         Icon(
                             imageVector = Icons.Outlined.KeyboardAlt,
-                            contentDescription = stringResource(R.string.layouts),
+                            contentDescription = null,
                         )
                     },
                     title = {
@@ -250,11 +250,11 @@ fun LookAndFeelActivity(
                 )
                 SettingsList(
                     state = themeState,
-                    items = ThemeMode.values().map { it.title() },
+                    items = ThemeMode.entries.map { it.title() },
                     icon = {
                         Icon(
                             imageVector = Icons.Outlined.Palette,
-                            contentDescription = stringResource(R.string.theme),
+                            contentDescription = null,
                         )
                     },
                     title = {
@@ -285,11 +285,11 @@ fun LookAndFeelActivity(
                 )
                 SettingsList(
                     state = themeColorState,
-                    items = ThemeColor.values().map { it.title() },
+                    items = ThemeColor.entries.map { it.title() },
                     icon = {
                         Icon(
                             imageVector = Icons.Outlined.Colorize,
-                            contentDescription = stringResource(R.string.theme_color),
+                            contentDescription = null,
                         )
                     },
                     title = {
@@ -320,11 +320,11 @@ fun LookAndFeelActivity(
                 )
                 SettingsList(
                     state = positionState,
-                    items = KeyboardPosition.values().map { it.title() },
+                    items = KeyboardPosition.entries.map { it.title() },
                     icon = {
                         Icon(
                             imageVector = Icons.Outlined.LinearScale,
-                            contentDescription = stringResource(R.string.position),
+                            contentDescription = null,
                         )
                     },
                     title = {
@@ -358,7 +358,7 @@ fun LookAndFeelActivity(
                     icon = {
                         Icon(
                             imageVector = Icons.Outlined.Vibration,
-                            contentDescription = stringResource(R.string.vibrate_on_tap),
+                            contentDescription = null,
                         )
                     },
                     title = {
@@ -391,7 +391,7 @@ fun LookAndFeelActivity(
                     icon = {
                         Icon(
                             imageVector = Icons.Outlined.MusicNote,
-                            contentDescription = stringResource(R.string.play_sound_on_tap),
+                            contentDescription = null,
                         )
                     },
                     title = {
@@ -424,7 +424,7 @@ fun LookAndFeelActivity(
                     icon = {
                         Icon(
                             imageVector = Icons.Outlined.HideImage,
-                            contentDescription = stringResource(R.string.hide_letters),
+                            contentDescription = null,
                         )
                     },
                     title = {
@@ -457,7 +457,7 @@ fun LookAndFeelActivity(
                     icon = {
                         Icon(
                             imageVector = Icons.Outlined.HideImage,
-                            contentDescription = stringResource(R.string.hide_symbols),
+                            contentDescription = null,
                         )
                     },
                     title = {
@@ -490,7 +490,7 @@ fun LookAndFeelActivity(
                     icon = {
                         Icon(
                             imageVector = Icons.Outlined.Abc,
-                            contentDescription = stringResource(R.string.auto_capitalize),
+                            contentDescription = null,
                         )
                     },
                     title = {
@@ -523,7 +523,7 @@ fun LookAndFeelActivity(
                     icon = {
                         Icon(
                             imageVector = Icons.Outlined.SpaceBar,
-                            contentDescription = stringResource(R.string.spacebar_multitaps),
+                            contentDescription = null,
                         )
                     },
                     title = {
@@ -556,7 +556,7 @@ fun LookAndFeelActivity(
                     icon = {
                         Icon(
                             imageVector = Icons.Outlined.BorderAll,
-                            contentDescription = stringResource(R.string.key_borders),
+                            contentDescription = null,
                         )
                     },
                     title = {
@@ -591,7 +591,7 @@ fun LookAndFeelActivity(
                     icon = {
                         Icon(
                             imageVector = Icons.Outlined.FormatSize,
-                            contentDescription = keySizeStr,
+                            contentDescription = null,
                         )
                     },
                     title = {
@@ -626,7 +626,7 @@ fun LookAndFeelActivity(
                     icon = {
                         Icon(
                             imageVector = Icons.Outlined.VerticalAlignTop,
-                            contentDescription = bottomOffsetStr,
+                            contentDescription = null,
                         )
                     },
                     title = {
@@ -661,7 +661,7 @@ fun LookAndFeelActivity(
                     icon = {
                         Icon(
                             imageVector = Icons.Outlined.Swipe,
-                            contentDescription = minSwipeLengthStr,
+                            contentDescription = null,
                         )
                     },
                     title = {
@@ -696,7 +696,7 @@ fun LookAndFeelActivity(
                     icon = {
                         Icon(
                             imageVector = Icons.Outlined.Animation,
-                            contentDescription = animationSpeedStr,
+                            contentDescription = null,
                         )
                     },
                     title = {
@@ -736,7 +736,7 @@ fun LookAndFeelActivity(
                     icon = {
                         Icon(
                             imageVector = Icons.Outlined.Visibility,
-                            contentDescription = animationHelperSpeedStr,
+                            contentDescription = null,
                         )
                     },
                     title = {
@@ -771,7 +771,7 @@ fun LookAndFeelActivity(
                     icon = {
                         Icon(
                             imageVector = Icons.Outlined.ResetTv,
-                            contentDescription = stringResource(R.string.reset_to_defaults),
+                            contentDescription = null,
                         )
                     },
                     onClick = {
