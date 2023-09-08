@@ -7,6 +7,7 @@ import android.text.InputType
 import android.util.Log
 import android.view.KeyEvent
 import android.view.inputmethod.EditorInfo
+import android.view.inputmethod.InputMethodManager
 import android.widget.Toast
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.outlined.ArrowBack
@@ -355,6 +356,10 @@ fun performKeyAction(
         }
         KeyAction.SwitchLanguage -> onSwitchLanguage()
         KeyAction.SwitchPosition -> onSwitchPosition()
+        KeyAction.SwitchIME -> {
+            val imeManager = ime.getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
+            imeManager.showInputMethodPicker()
+        }
     }
 }
 

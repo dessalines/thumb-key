@@ -6,6 +6,7 @@ import androidx.compose.material.icons.outlined.ArrowDropDown
 import androidx.compose.material.icons.outlined.ArrowDropUp
 import androidx.compose.material.icons.outlined.ContentPaste
 import androidx.compose.material.icons.outlined.Copyright
+import androidx.compose.material.icons.outlined.Keyboard
 import androidx.compose.material.icons.outlined.KeyboardBackspace
 import androidx.compose.material.icons.outlined.KeyboardCapslock
 import androidx.compose.material.icons.outlined.KeyboardReturn
@@ -42,11 +43,16 @@ val NUMERIC_KEY_ITEM =
             size = FontSizeVariant.LARGE,
             color = ColorVariant.SECONDARY,
         ),
-        swipeType = SwipeNWay.FOUR_WAY_CROSS,
+        swipeType = SwipeNWay.EIGHT_WAY,
         swipes = mapOf(
             SwipeDirection.TOP to KeyC(
                 display = KeyDisplay.IconDisplay(Icons.Outlined.SelectAll),
                 action = KeyAction.SelectAndCopyAll,
+                color = ColorVariant.MUTED,
+            ),
+            SwipeDirection.TOP_LEFT to KeyC(
+                display = KeyDisplay.IconDisplay(Icons.Outlined.Keyboard),
+                action = KeyAction.SwitchIME,
                 color = ColorVariant.MUTED,
             ),
             SwipeDirection.BOTTOM to KeyC(
