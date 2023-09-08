@@ -2,7 +2,10 @@ package com.dessalines.thumbkey.utils
 
 import android.content.Context
 import android.content.Intent
+import android.content.pm.PackageInfo
+import android.content.pm.PackageManager
 import android.net.Uri
+import android.os.Build
 import android.text.InputType
 import android.util.Log
 import android.view.KeyEvent
@@ -200,7 +203,12 @@ fun keyboardPositionToAlignment(position: KeyboardPosition): Alignment {
 /**
  * If this doesn't meet the minimum swipe length, it returns null
  */
-fun swipeDirection(x: Float, y: Float, minSwipeLength: Int, swipeType: SwipeNWay = SwipeNWay.EIGHT_WAY): SwipeDirection? {
+fun swipeDirection(
+    x: Float,
+    y: Float,
+    minSwipeLength: Int,
+    swipeType: SwipeNWay = SwipeNWay.EIGHT_WAY,
+): SwipeDirection? {
     val xD = x.toDouble()
     val yD = y.toDouble()
 
@@ -226,22 +234,26 @@ fun swipeDirection(x: Float, y: Float, minSwipeLength: Int, swipeType: SwipeNWay
                 in 292.5..337.5 -> SwipeDirection.BOTTOM_LEFT
                 else -> SwipeDirection.BOTTOM
             }
+
             SwipeNWay.FOUR_WAY_CROSS -> return when (angle) {
                 in 45.0..135.0 -> SwipeDirection.RIGHT
                 in 135.0..225.0 -> SwipeDirection.TOP
                 in 225.0..315.0 -> SwipeDirection.LEFT
                 else -> SwipeDirection.BOTTOM
             }
+
             SwipeNWay.FOUR_WAY_DIAGONAL -> return when (angle) {
                 in 0.0..90.0 -> SwipeDirection.BOTTOM_RIGHT
                 in 90.0..180.0 -> SwipeDirection.TOP_RIGHT
                 in 180.0..270.0 -> SwipeDirection.TOP_LEFT
                 else -> SwipeDirection.BOTTOM_LEFT
             }
+
             SwipeNWay.TWO_WAY_HORIZONTAL -> return when (angle) {
                 in 0.0..180.0 -> SwipeDirection.RIGHT
                 else -> SwipeDirection.LEFT
             }
+
             SwipeNWay.TWO_WAY_VERTICAL -> return when (angle) {
                 in 90.0..270.0 -> SwipeDirection.TOP
                 else -> SwipeDirection.BOTTOM
@@ -281,15 +293,18 @@ fun performKeyAction(
                 onAutoCapitalize(false)
             }
         }
+
         is KeyAction.SendEvent -> {
             val ev = action.event
             Log.d(TAG, "sending key event: $ev")
             ime.currentInputConnection.sendKeyEvent(ev)
         }
+
         is KeyAction.DeleteLastWord -> {
             Log.d(TAG, "deleting last word")
             deleteLastWord(ime)
         }
+
         is KeyAction.ReplaceLastText -> {
             Log.d(TAG, "replacing last word")
             val text = action.text
@@ -306,22 +321,26 @@ fun performKeyAction(
                 )
             }
         }
+
         is KeyAction.ToggleShiftMode -> {
             val enable = action.enable
             Log.d(TAG, "Toggling Shifted: $enable")
             onToggleShiftMode(enable)
         }
+
         is KeyAction.ToggleNumericMode -> {
             val enable = action.enable
             Log.d(TAG, "Toggling Numeric: $enable")
             onToggleNumericMode(enable)
         }
+
         KeyAction.GotoSettings -> {
             val mainActivityIntent = Intent(ime, MainActivity::class.java)
             mainActivityIntent.flags = Intent.FLAG_ACTIVITY_NEW_TASK
             mainActivityIntent.putExtra("startRoute", "lookAndFeel")
             ime.startActivity(mainActivityIntent)
         }
+
         KeyAction.IMECompleteAction -> {
             val imeAction = getImeActionCode(ime)
             if (listOf(
@@ -334,9 +353,15 @@ fun performKeyAction(
             ) {
                 ime.currentInputConnection.performEditorAction(imeAction)
             } else {
-                ime.currentInputConnection.sendKeyEvent(KeyEvent(KeyEvent.ACTION_DOWN, KeyEvent.KEYCODE_ENTER))
+                ime.currentInputConnection.sendKeyEvent(
+                    KeyEvent(
+                        KeyEvent.ACTION_DOWN,
+                        KeyEvent.KEYCODE_ENTER,
+                    ),
+                )
             }
         }
+
         KeyAction.ToggleCapsLock -> onToggleCapsLock()
         KeyAction.SelectAndCopyAll -> {
             // Check here for the action #s:
@@ -351,13 +376,16 @@ fun performKeyAction(
             val copyAllStr = ime.getString(R.string.copy_all)
             Toast.makeText(ime, copyAllStr, Toast.LENGTH_SHORT).show()
         }
+
         KeyAction.Paste -> {
             ime.currentInputConnection.performContextMenuAction(16908322)
         }
+
         KeyAction.SwitchLanguage -> onSwitchLanguage()
         KeyAction.SwitchPosition -> onSwitchPosition()
         KeyAction.SwitchIME -> {
-            val imeManager = ime.getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
+            val imeManager =
+                ime.getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
             imeManager.showInputMethodPicker()
         }
     }
@@ -379,7 +407,11 @@ fun getImeActionCode(ime: IMEService): Int {
 fun getKeyboardMode(ime: IMEService, autoCapitalize: Boolean): KeyboardMode {
     val inputType = ime.currentInputEditorInfo.inputType and (InputType.TYPE_MASK_CLASS)
 
-    return if (listOf(InputType.TYPE_CLASS_NUMBER, InputType.TYPE_CLASS_PHONE).contains(inputType)) {
+    return if (listOf(
+            InputType.TYPE_CLASS_NUMBER,
+            InputType.TYPE_CLASS_PHONE,
+        ).contains(inputType)
+    ) {
         KeyboardMode.NUMERIC
     } else {
         if (autoCapitalize && autoCapitalizeCheck(ime)) {
@@ -470,6 +502,7 @@ fun doneKeyAction(
         is KeyAction.CommitText -> {
             action.text
         }
+
         else -> {
             null
         }
@@ -533,4 +566,18 @@ fun keyboardRealIndexFromTitleIndex(index: Int): Int {
 fun keyboardTitleIndexFromRealIndex(index: Int): Int {
     val keyboard = KeyboardLayout.values().find { it.index == index } ?: KeyboardLayout.ThumbKeyENv4
     return KeyboardLayout.values().sortedBy { it.title }.indexOf(keyboard)
+}
+
+fun Context.getPackageInfo(): PackageInfo {
+    return if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
+        packageManager.getPackageInfo(packageName, PackageManager.PackageInfoFlags.of(0))
+    } else {
+        packageManager.getPackageInfo(packageName, 0)
+    }
+}
+
+fun Context.getVersionCode(): Int = if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.P) {
+    getPackageInfo().longVersionCode.toInt()
+} else {
+    getPackageInfo().versionCode
 }

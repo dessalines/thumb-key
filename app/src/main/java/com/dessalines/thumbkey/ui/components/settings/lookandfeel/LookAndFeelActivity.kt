@@ -833,6 +833,7 @@ private fun updateAppSettings(
             theme = themeState.value,
             themeColor = themeColorState.value,
             viewedChangelog = appSettingsViewModel.appSettings.value?.viewedChangelog ?: 0,
+            lastVersionCodeViewed = appSettingsViewModel.appSettings.value?.lastVersionCodeViewed ?: 0,
         ),
     )
 }

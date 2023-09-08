@@ -3,6 +3,7 @@ package com.dessalines.thumbkey.db
 import android.content.ContentValues
 import android.content.Context
 import android.database.sqlite.SQLiteDatabase.CONFLICT_IGNORE
+import android.util.Log
 import androidx.annotation.WorkerThread
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.ViewModel
@@ -19,8 +20,16 @@ import androidx.room.RoomDatabase
 import androidx.room.Update
 import androidx.room.migration.Migration
 import androidx.sqlite.db.SupportSQLiteDatabase
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.flow.MutableStateFlow
+import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.launch
+import kotlinx.coroutines.withContext
+import okhttp3.HttpUrl.Companion.toHttpUrl
+import okhttp3.OkHttpClient
+import okhttp3.Request
 import java.util.concurrent.Executors
+import java.util.concurrent.TimeUnit
 
 const val DEFAULT_KEY_SIZE = 64
 const val DEFAULT_ANIMATION_SPEED = 250
@@ -38,8 +47,6 @@ const val DEFAULT_HIDE_LETTERS = 0
 const val DEFAULT_HIDE_SYMBOLS = 0
 const val DEFAULT_KEY_BORDERS = 1
 const val DEFAULT_SPACEBAR_MULTITAPS = 1
-
-const val UPDATE_APP_CHANGELOG_UNVIEWED = "UPDATE AppSettings SET viewed_changelog = 0"
 
 @Entity
 data class AppSettings(
@@ -94,6 +101,7 @@ data class AppSettings(
         defaultValue = DEFAULT_THEME_COLOR.toString(),
     )
     val themeColor: Int,
+    // TODO get rid of this column next time you regenerate the app
     @ColumnInfo(
         name = "viewed_changelog",
         defaultValue = "0",
@@ -134,6 +142,11 @@ data class AppSettings(
         defaultValue = DEFAULT_HIDE_SYMBOLS.toString(),
     )
     val hideSymbols: Int,
+    @ColumnInfo(
+        name = "last_version_code_viewed",
+        defaultValue = "0",
+    )
+    val lastVersionCodeViewed: Int,
 )
 
 @Dao
@@ -144,13 +157,16 @@ interface AppSettingsDao {
     @Update
     suspend fun updateAppSettings(appSettings: AppSettings)
 
-    @Query("UPDATE AppSettings set viewed_changelog = 1")
-    suspend fun markChangelogViewed()
+    @Query("UPDATE AppSettings SET last_version_code_viewed = :versionCode")
+    suspend fun updateLastVersionCode(versionCode: Int)
 }
 
 // Declares the DAO as a private property in the constructor. Pass in the DAO
 // instead of the whole database, because you only need access to the DAO
 class AppSettingsRepository(private val appSettingsDao: AppSettingsDao) {
+
+    private val _changelog = MutableStateFlow("")
+    val changelog = _changelog.asStateFlow()
 
     // Room executes all queries on a separate thread.
     // Observed Flow will notify the observer when the data has changed.
@@ -162,8 +178,36 @@ class AppSettingsRepository(private val appSettingsDao: AppSettingsDao) {
     }
 
     @WorkerThread
-    suspend fun markChangelogViewed() {
-        appSettingsDao.markChangelogViewed()
+    suspend fun updateLastVersionCodeViewed(versionCode: Int) {
+        appSettingsDao.updateLastVersionCode(versionCode)
+    }
+
+    @WorkerThread
+    suspend fun updateChangelog() {
+        withContext(Dispatchers.IO) {
+            try {
+                val httpClient: OkHttpClient = OkHttpClient.Builder()
+                    .connectTimeout(30, TimeUnit.SECONDS)
+                    .writeTimeout(30, TimeUnit.SECONDS)
+                    .readTimeout(30, TimeUnit.SECONDS)
+                    .addNetworkInterceptor { chain ->
+                        chain.request().newBuilder()
+                            .header("User-Agent", "Thumb-Key")
+                            .build()
+                            .let(chain::proceed)
+                    }
+                    .build()
+                Log.d("thumb-key", "Fetching RELEASES.md ...")
+                // Fetch the markdown text
+                val releasesUrl =
+                    "https://raw.githubusercontent.com/dessalines/thumb-key/main/RELEASES.md".toHttpUrl()
+                val req = Request.Builder().url(releasesUrl).build()
+                val res = httpClient.newCall(req).execute()
+                _changelog.value = res.body.string()
+            } catch (e: Exception) {
+                Log.e("thumb-key", "Failed to load changelog: $e")
+            }
+        }
     }
 }
 
@@ -223,8 +267,16 @@ val MIGRATION_7_8 = object : Migration(7, 8) {
     }
 }
 
+val MIGRATION_8_9 = object : Migration(8, 9) {
+    override fun migrate(database: SupportSQLiteDatabase) {
+        database.execSQL(
+            "alter table AppSettings add column last_version_code_viewed INTEGER NOT NULL default 0",
+        )
+    }
+}
+
 @Database(
-    version = 8,
+    version = 9,
     entities = [AppSettings::class],
     exportSchema = true,
 )
@@ -255,6 +307,7 @@ abstract class AppDB : RoomDatabase() {
                         MIGRATION_5_6,
                         MIGRATION_6_7,
                         MIGRATION_7_8,
+                        MIGRATION_8_9,
                     )
                     // Necessary because it can't insert data on creation
                     .addCallback(object : Callback() {
@@ -280,15 +333,19 @@ abstract class AppDB : RoomDatabase() {
 }
 
 class AppSettingsViewModel(private val repository: AppSettingsRepository) : ViewModel() {
-
     val appSettings = repository.appSettings
+    val changelog = repository.changelog
 
     fun update(appSettings: AppSettings) = viewModelScope.launch {
         repository.update(appSettings)
     }
 
-    fun markChangelogViewed() = viewModelScope.launch {
-        repository.markChangelogViewed()
+    fun updateLastVersionCodeViewed(versionCode: Int) = viewModelScope.launch {
+        repository.updateLastVersionCodeViewed(versionCode)
+    }
+
+    fun updateChangelog() = viewModelScope.launch {
+        repository.updateChangelog()
     }
 }
 

@@ -69,6 +69,10 @@ android {
 }
 
 dependencies {
+
+    implementation "com.github.jeziellago:compose-markdown:0.3.5"
+    implementation "com.squareup.okhttp3:logging-interceptor:5.0.0-alpha.11"
+
     implementation "androidx.navigation:navigation-compose:2.7.2"
     implementation 'com.github.alorma:compose-settings-ui-m3:0.27.0'
 
