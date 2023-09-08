@@ -47,6 +47,7 @@ sealed class KeyAction {
     object Paste : KeyAction()
     object SwitchLanguage : KeyAction()
     object SwitchPosition : KeyAction()
+    object SwitchIME : KeyAction()
 }
 
 enum class KeyboardMode {
