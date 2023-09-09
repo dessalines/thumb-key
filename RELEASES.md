@@ -1,3 +1,30 @@
+# Thumb-Key 1.14.0 (2023-09-09)
+
+## What's Changed
+
+- fix: Czech keyboard - ě, č and Caps Lock by @Lastaapps in https://github.com/dessalines/thumb-key/pull/377
+- Update MessageEaseDE.kt by @Saturo78 in https://github.com/dessalines/thumb-key/pull/384
+- Fixed missing and overlapping keys on CZ keyboard by @Michael36500 in https://github.com/dessalines/thumb-key/pull/386
+- Update ThumbKeyUKv1.kt - fix Ґ and Д conflict by @plugnburn in https://github.com/dessalines/thumb-key/pull/385
+- Added Dracula Theme by @0xFOSSMan in https://github.com/dessalines/thumb-key/pull/376
+- Added german translation by @0xFOSSMan in https://github.com/dessalines/thumb-key/pull/387
+- Adding latvian LV+LTG. Fixes #388 by @dessalines in https://github.com/dessalines/thumb-key/pull/389
+- Add confirmation dialog before resetting to default settings by @storvik in https://github.com/dessalines/thumb-key/pull/390
+- Adding an IME switcher button. Fixes #380 by @dessalines in https://github.com/dessalines/thumb-key/pull/391
+- Upgrading deps. by @dessalines in https://github.com/dessalines/thumb-key/pull/392
+- Nulling icon descriptions. Fixes #382 by @dessalines in https://github.com/dessalines/thumb-key/pull/393
+- Adding a changelog popup. Fixes #375 by @dessalines in https://github.com/dessalines/thumb-key/pull/394
+
+## New Contributors
+
+- @Lastaapps made their first contribution in https://github.com/dessalines/thumb-key/pull/377
+- @Saturo78 made their first contribution in https://github.com/dessalines/thumb-key/pull/384
+- @plugnburn made their first contribution in https://github.com/dessalines/thumb-key/pull/385
+- @0xFOSSMan made their first contribution in https://github.com/dessalines/thumb-key/pull/376
+- @storvik made their first contribution in https://github.com/dessalines/thumb-key/pull/390
+
+**Full Changelog**: https://github.com/dessalines/thumb-key/compare/1.13.0...1.14.0
+
 # Thumb-Key 1.13.0 (2023-09-01)
 
 ## What's Changed
