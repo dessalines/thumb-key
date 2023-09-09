@@ -18,6 +18,7 @@ import com.dessalines.thumbkey.db.AppDB
 import com.dessalines.thumbkey.db.AppSettingsRepository
 import com.dessalines.thumbkey.db.AppSettingsViewModel
 import com.dessalines.thumbkey.db.AppSettingsViewModelFactory
+import com.dessalines.thumbkey.ui.components.common.ShowChangelog
 import com.dessalines.thumbkey.ui.components.settings.SettingsActivity
 import com.dessalines.thumbkey.ui.components.settings.about.AboutActivity
 import com.dessalines.thumbkey.ui.components.settings.lookandfeel.LookAndFeelActivity
@@ -66,6 +67,8 @@ class MainActivity : AppCompatActivity() {
                 settings = settings,
             ) {
                 val navController = rememberNavController()
+
+                ShowChangelog(appSettingsViewModel = appSettingsViewModel)
 
                 NavHost(
                     navController = navController,
