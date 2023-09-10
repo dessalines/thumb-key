@@ -1,6 +1,7 @@
 package com.dessalines.thumbkey.ui.components.keyboard
 import android.content.Context
 import android.media.AudioManager
+import android.view.KeyEvent
 import androidx.compose.animation.AnimatedVisibility
 import androidx.compose.animation.EnterTransition
 import androidx.compose.animation.core.tween
@@ -44,13 +45,16 @@ import com.dessalines.thumbkey.utils.KeyAction
 import com.dessalines.thumbkey.utils.KeyC
 import com.dessalines.thumbkey.utils.KeyDisplay
 import com.dessalines.thumbkey.utils.KeyItemC
+import com.dessalines.thumbkey.utils.SlideType
 import com.dessalines.thumbkey.utils.SwipeDirection
+import com.dessalines.thumbkey.utils.SwipeNWay
 import com.dessalines.thumbkey.utils.buildTapActions
 import com.dessalines.thumbkey.utils.colorVariantToColor
 import com.dessalines.thumbkey.utils.doneKeyAction
 import com.dessalines.thumbkey.utils.fontSizeVariantToFontSize
 import com.dessalines.thumbkey.utils.performKeyAction
 import com.dessalines.thumbkey.utils.swipeDirection
+import kotlin.math.abs
 
 @Composable
 fun KeyboardKey(
@@ -68,6 +72,8 @@ fun KeyboardKey(
     capsLock: Boolean,
     keySize: Int,
     minSwipeLength: Int,
+    slideSensitivity: Int,
+    spacebarSlide: Boolean,
     onToggleShiftMode: (enable: Boolean) -> Unit,
     onToggleNumericMode: (enable: Boolean) -> Unit,
     onToggleCapsLock: () -> Unit,
@@ -76,7 +82,7 @@ fun KeyboardKey(
     onSwitchPosition: () -> Unit,
 ) {
     // Necessary for swipe settings to get updated correctly
-    val id = key.toString() + animationHelperSpeed + animationSpeed + autoCapitalize + vibrateOnTap + soundOnTap + keySize + minSwipeLength
+    val id = key.toString() + animationHelperSpeed + animationSpeed + autoCapitalize + vibrateOnTap + soundOnTap + keySize + minSwipeLength + slideSensitivity + spacebarSlide
 
     val ctx = LocalContext.current
     val ime = ctx as IMEService
@@ -173,30 +179,56 @@ fun KeyboardKey(
                         val (x, y) = dragAmount
                         offsetX += x
                         offsetY += y
+                        if (key.slideType == SlideType.MOVE_CURSOR && spacebarSlide) {
+                            if (abs(offsetX) > slideSensitivity) {
+                                val action = KeyAction.SendEvent(
+                                    KeyEvent(
+                                        KeyEvent.ACTION_DOWN,
+                                        // check direction
+                                        if (offsetX < 0.00)  KeyEvent.KEYCODE_DPAD_LEFT else KeyEvent.KEYCODE_DPAD_RIGHT,
+                                    ),
+                                )
+                                performKeyAction(
+                                    action = action,
+                                    ime = ime,
+                                    autoCapitalize = autoCapitalize,
+                                    onToggleShiftMode = onToggleShiftMode,
+                                    onToggleNumericMode = onToggleNumericMode,
+                                    onToggleCapsLock = onToggleCapsLock,
+                                    onAutoCapitalize = onAutoCapitalize,
+                                    onSwitchLanguage = onSwitchLanguage,
+                                    onSwitchPosition = onSwitchPosition,
+                                )
+                                offsetX = 0f
+                                offsetY = 0f
+                            }
+                        }
                     },
                     onDragEnd = {
-                        val swipeDirection = swipeDirection(offsetX, offsetY, minSwipeLength, key.swipeType)
-                        val action = key.swipes?.get(swipeDirection)?.action ?: key.center.action
+                        if (key.slideType == SlideType.NONE || !spacebarSlide) {
+                            val swipeDirection = swipeDirection(offsetX, offsetY, minSwipeLength, key.swipeType)
+                            val action = key.swipes?.get(swipeDirection)?.action ?: key.center.action
 
-                        performKeyAction(
-                            action = action,
-                            ime = ime,
-                            autoCapitalize = autoCapitalize,
-                            onToggleShiftMode = onToggleShiftMode,
-                            onToggleNumericMode = onToggleNumericMode,
-                            onToggleCapsLock = onToggleCapsLock,
-                            onAutoCapitalize = onAutoCapitalize,
-                            onSwitchLanguage = onSwitchLanguage,
-                            onSwitchPosition = onSwitchPosition,
-                        )
-                        tapCount = 0
-                        lastAction.value = action
+                            performKeyAction(
+                                action = action,
+                                ime = ime,
+                                autoCapitalize = autoCapitalize,
+                                onToggleShiftMode = onToggleShiftMode,
+                                onToggleNumericMode = onToggleNumericMode,
+                                onToggleCapsLock = onToggleCapsLock,
+                                onAutoCapitalize = onAutoCapitalize,
+                                onSwitchLanguage = onSwitchLanguage,
+                                onSwitchPosition = onSwitchPosition,
+                            )
+                            tapCount = 0
+                            lastAction.value = action
 
-                        // Reset the drags
-                        offsetX = 0f
-                        offsetY = 0f
+                            // Reset the drags
+                            offsetX = 0f
+                            offsetY = 0f
 
-                        doneKeyAction(scope, action, isDragged, releasedKey, animationHelperSpeed)
+                            doneKeyAction(scope, action, isDragged, releasedKey, animationHelperSpeed)
+                        }
                     },
                 )
             }

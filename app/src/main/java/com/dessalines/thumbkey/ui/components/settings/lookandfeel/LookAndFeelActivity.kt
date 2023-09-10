@@ -20,6 +20,7 @@ import androidx.compose.material.icons.outlined.MusicNote
 import androidx.compose.material.icons.outlined.Palette
 import androidx.compose.material.icons.outlined.ResetTv
 import androidx.compose.material.icons.outlined.SpaceBar
+import androidx.compose.material.icons.outlined.SwapHoriz
 import androidx.compose.material.icons.outlined.Swipe
 import androidx.compose.material.icons.outlined.VerticalAlignTop
 import androidx.compose.material.icons.outlined.Vibration
@@ -67,8 +68,10 @@ import com.dessalines.thumbkey.db.DEFAULT_KEY_SIZE
 import com.dessalines.thumbkey.db.DEFAULT_MIN_SWIPE_LENGTH
 import com.dessalines.thumbkey.db.DEFAULT_POSITION
 import com.dessalines.thumbkey.db.DEFAULT_PUSHUP_SIZE
+import com.dessalines.thumbkey.db.DEFAULT_SLIDE_SENSITIVITY
 import com.dessalines.thumbkey.db.DEFAULT_SOUND_ON_TAP
 import com.dessalines.thumbkey.db.DEFAULT_SPACEBAR_MULTITAPS
+import com.dessalines.thumbkey.db.DEFAULT_SPACEBAR_SLIDE
 import com.dessalines.thumbkey.db.DEFAULT_THEME
 import com.dessalines.thumbkey.db.DEFAULT_THEME_COLOR
 import com.dessalines.thumbkey.db.DEFAULT_VIBRATE_ON_TAP
@@ -108,6 +111,12 @@ fun LookAndFeelActivity(
     )
     val minSwipeLengthState = rememberFloatSettingState(
         (settings?.minSwipeLength ?: DEFAULT_MIN_SWIPE_LENGTH).toFloat(),
+    )
+    val slideSensitivityState = rememberFloatSettingState(
+        (settings?.slideSensitivity ?: DEFAULT_SLIDE_SENSITIVITY).toFloat(),
+    )
+    val spacebarSlideState = rememberBooleanSettingState(
+        (settings?.spacebarSlide ?: DEFAULT_SPACEBAR_SLIDE).toBool(),
     )
     val positionState = rememberIntSettingState(
         settings?.position ?: DEFAULT_POSITION,
@@ -182,6 +191,8 @@ fun LookAndFeelActivity(
                                         animationSpeedState,
                                         animationHelperSpeedState,
                                         minSwipeLengthState,
+                                        slideSensitivityState,
+                                        spacebarSlideState,
                                         positionState,
                                         autoCapitalizeState,
                                         spacebarMultiTapsState,
@@ -234,6 +245,8 @@ fun LookAndFeelActivity(
                             animationSpeedState,
                             animationHelperSpeedState,
                             minSwipeLengthState,
+                            slideSensitivityState,
+                            spacebarSlideState,
                             positionState,
                             autoCapitalizeState,
                             spacebarMultiTapsState,
@@ -269,6 +282,8 @@ fun LookAndFeelActivity(
                             animationSpeedState,
                             animationHelperSpeedState,
                             minSwipeLengthState,
+                            slideSensitivityState,
+                            spacebarSlideState,
                             positionState,
                             autoCapitalizeState,
                             spacebarMultiTapsState,
@@ -304,6 +319,8 @@ fun LookAndFeelActivity(
                             animationSpeedState,
                             animationHelperSpeedState,
                             minSwipeLengthState,
+                            slideSensitivityState,
+                            spacebarSlideState,
                             positionState,
                             autoCapitalizeState,
                             spacebarMultiTapsState,
@@ -339,6 +356,8 @@ fun LookAndFeelActivity(
                             animationSpeedState,
                             animationHelperSpeedState,
                             minSwipeLengthState,
+                            slideSensitivityState,
+                            spacebarSlideState,
                             positionState,
                             autoCapitalizeState,
                             spacebarMultiTapsState,
@@ -372,6 +391,8 @@ fun LookAndFeelActivity(
                             animationSpeedState,
                             animationHelperSpeedState,
                             minSwipeLengthState,
+                            slideSensitivityState,
+                            spacebarSlideState,
                             positionState,
                             autoCapitalizeState,
                             spacebarMultiTapsState,
@@ -405,6 +426,8 @@ fun LookAndFeelActivity(
                             animationSpeedState,
                             animationHelperSpeedState,
                             minSwipeLengthState,
+                            slideSensitivityState,
+                            spacebarSlideState,
                             positionState,
                             autoCapitalizeState,
                             spacebarMultiTapsState,
@@ -438,6 +461,8 @@ fun LookAndFeelActivity(
                             animationSpeedState,
                             animationHelperSpeedState,
                             minSwipeLengthState,
+                            slideSensitivityState,
+                            spacebarSlideState,
                             positionState,
                             autoCapitalizeState,
                             spacebarMultiTapsState,
@@ -471,6 +496,8 @@ fun LookAndFeelActivity(
                             animationSpeedState,
                             animationHelperSpeedState,
                             minSwipeLengthState,
+                            slideSensitivityState,
+                            spacebarSlideState,
                             positionState,
                             autoCapitalizeState,
                             spacebarMultiTapsState,
@@ -504,6 +531,8 @@ fun LookAndFeelActivity(
                             animationSpeedState,
                             animationHelperSpeedState,
                             minSwipeLengthState,
+                            slideSensitivityState,
+                            spacebarSlideState,
                             positionState,
                             autoCapitalizeState,
                             spacebarMultiTapsState,
@@ -537,6 +566,43 @@ fun LookAndFeelActivity(
                             animationSpeedState,
                             animationHelperSpeedState,
                             minSwipeLengthState,
+                            slideSensitivityState,
+                            spacebarSlideState,
+                            positionState,
+                            autoCapitalizeState,
+                            spacebarMultiTapsState,
+                            keyBordersState,
+                            vibrateOnTapState,
+                            soundOnTapState,
+                            hideLettersState,
+                            hideSymbolsState,
+                            keyboardLayoutsState,
+                            themeState,
+                            themeColorState,
+                        )
+                    },
+                )
+                SettingsCheckbox(
+                    state = spacebarSlideState,
+                    icon = {
+                        Icon(
+                            imageVector = Icons.Outlined.SpaceBar,
+                            contentDescription = stringResource(R.string.spacebar_slide),
+                        )
+                    },
+                    title = {
+                        Text(stringResource(R.string.spacebar_slide))
+                    },
+                    onCheckedChange = {
+                        updateAppSettings(
+                            appSettingsViewModel,
+                            keySizeState,
+                            pushupSizeState,
+                            animationSpeedState,
+                            animationHelperSpeedState,
+                            minSwipeLengthState,
+                            slideSensitivityState,
+                            spacebarSlideState,
                             positionState,
                             autoCapitalizeState,
                             spacebarMultiTapsState,
@@ -570,6 +636,8 @@ fun LookAndFeelActivity(
                             animationSpeedState,
                             animationHelperSpeedState,
                             minSwipeLengthState,
+                            slideSensitivityState,
+                            spacebarSlideState,
                             positionState,
                             autoCapitalizeState,
                             spacebarMultiTapsState,
@@ -605,6 +673,8 @@ fun LookAndFeelActivity(
                             animationSpeedState,
                             animationHelperSpeedState,
                             minSwipeLengthState,
+                            slideSensitivityState,
+                            spacebarSlideState,
                             positionState,
                             autoCapitalizeState,
                             spacebarMultiTapsState,
@@ -640,6 +710,8 @@ fun LookAndFeelActivity(
                             animationSpeedState,
                             animationHelperSpeedState,
                             minSwipeLengthState,
+                            slideSensitivityState,
+                            spacebarSlideState,
                             positionState,
                             autoCapitalizeState,
                             spacebarMultiTapsState,
@@ -675,6 +747,8 @@ fun LookAndFeelActivity(
                             animationSpeedState,
                             animationHelperSpeedState,
                             minSwipeLengthState,
+                            slideSensitivityState,
+                            spacebarSlideState,
                             positionState,
                             autoCapitalizeState,
                             spacebarMultiTapsState,
@@ -710,6 +784,8 @@ fun LookAndFeelActivity(
                             animationSpeedState,
                             animationHelperSpeedState,
                             minSwipeLengthState,
+                            slideSensitivityState,
+                            spacebarSlideState,
                             positionState,
                             autoCapitalizeState,
                             spacebarMultiTapsState,
@@ -750,6 +826,50 @@ fun LookAndFeelActivity(
                             animationSpeedState,
                             animationHelperSpeedState,
                             minSwipeLengthState,
+                            slideSensitivityState,
+                            spacebarSlideState,
+                            positionState,
+                            autoCapitalizeState,
+                            spacebarMultiTapsState,
+                            keyBordersState,
+                            vibrateOnTapState,
+                            soundOnTapState,
+                            hideLettersState,
+                            hideSymbolsState,
+                            keyboardLayoutsState,
+                            themeState,
+                            themeColorState,
+                        )
+                    },
+                )
+                val slideSensitivityStr = stringResource(
+                    R.string.slide_sensitivity,
+                    slideSensitivityState
+                        .value
+                        .toInt().toString(),
+                )
+                SettingsSlider(
+                    valueRange = 1f..20f,
+                    state = slideSensitivityState,
+                    icon = {
+                        Icon(
+                            imageVector = Icons.Outlined.SwapHoriz,
+                            contentDescription = slideSensitivityStr,
+                        )
+                    },
+                    title = {
+                        Text(slideSensitivityStr)
+                    },
+                    onValueChangeFinished = {
+                        updateAppSettings(
+                            appSettingsViewModel,
+                            keySizeState,
+                            pushupSizeState,
+                            animationSpeedState,
+                            animationHelperSpeedState,
+                            minSwipeLengthState,
+                            slideSensitivityState,
+                            spacebarSlideState,
                             positionState,
                             autoCapitalizeState,
                             spacebarMultiTapsState,
@@ -798,6 +918,8 @@ private fun updateAppSettings(
     animationSpeedState: SettingValueState<Float>,
     animationHelperSpeedState: SettingValueState<Float>,
     minSwipeLengthState: SettingValueState<Float>,
+    slideSensitivityState: SettingValueState<Float>,
+    spacebarSlideState: SettingValueState<Boolean>,
     positionState: SettingValueState<Int>,
     autoCapitalizeState: SettingValueState<Boolean>,
     spacebarMultiTapsState: SettingValueState<Boolean>,
@@ -818,6 +940,8 @@ private fun updateAppSettings(
             animationSpeed = animationSpeedState.value.toInt(),
             animationHelperSpeed = animationHelperSpeedState.value.toInt(),
             minSwipeLength = minSwipeLengthState.value.toInt(),
+            slideSensitivity = slideSensitivityState.value.toInt(),
+            spacebarSlide = spacebarSlideState.value.toInt(),
             position = positionState.value,
             autoCapitalize = autoCapitalizeState.value.toInt(),
             spacebarMultiTaps = spacebarMultiTapsState.value.toInt(),
@@ -845,6 +969,8 @@ private fun resetAppSettingsToDefault(
     animationSpeedState: SettingValueState<Float>,
     animationHelperSpeedState: SettingValueState<Float>,
     minSwipeLengthState: SettingValueState<Float>,
+    slideSensitivityState: SettingValueState<Float>,
+    spacebarSlideState: SettingValueState<Boolean>,
     positionState: SettingValueState<Int>,
     autoCapitalizeState: SettingValueState<Boolean>,
     spacebarMultiTapsState: SettingValueState<Boolean>,
@@ -862,6 +988,7 @@ private fun resetAppSettingsToDefault(
     animationSpeedState.value = DEFAULT_ANIMATION_SPEED.toFloat()
     animationHelperSpeedState.value = DEFAULT_ANIMATION_HELPER_SPEED.toFloat()
     minSwipeLengthState.value = DEFAULT_MIN_SWIPE_LENGTH.toFloat()
+    slideSensitivityState.value = DEFAULT_SLIDE_SENSITIVITY.toFloat()
     positionState.value = DEFAULT_POSITION
     autoCapitalizeState.value = DEFAULT_AUTO_CAPITALIZE.toBool()
     spacebarMultiTapsState.value = DEFAULT_SPACEBAR_MULTITAPS.toBool()
@@ -880,6 +1007,8 @@ private fun resetAppSettingsToDefault(
         animationSpeedState,
         animationHelperSpeedState,
         minSwipeLengthState,
+        slideSensitivityState,
+        spacebarSlideState,
         positionState,
         autoCapitalizeState,
         spacebarMultiTapsState,

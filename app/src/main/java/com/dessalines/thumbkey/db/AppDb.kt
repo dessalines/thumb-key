@@ -47,6 +47,8 @@ const val DEFAULT_HIDE_LETTERS = 0
 const val DEFAULT_HIDE_SYMBOLS = 0
 const val DEFAULT_KEY_BORDERS = 1
 const val DEFAULT_SPACEBAR_MULTITAPS = 1
+const val DEFAULT_SLIDE_SENSITIVITY = 9
+const val DEFAULT_SPACEBAR_SLIDE = 0
 
 @Entity
 data class AppSettings(
@@ -90,6 +92,11 @@ data class AppSettings(
         name = "sound_on_tap",
         defaultValue = DEFAULT_SOUND_ON_TAP.toString(),
     )
+    val spacebarSlide: Int,
+    @ColumnInfo(
+        name = "spacebar_slide",
+        defaultValue = DEFAULT_SPACEBAR_SLIDE.toString(),
+    )
     val soundOnTap: Int,
     @ColumnInfo(
         name = "theme",
@@ -112,6 +119,11 @@ data class AppSettings(
         defaultValue = DEFAULT_MIN_SWIPE_LENGTH.toString(),
     )
     val minSwipeLength: Int,
+    @ColumnInfo(
+        name = "slide_sensitivity",
+        defaultValue = DEFAULT_SLIDE_SENSITIVITY.toString(),
+    )
+    val slideSensitivity: Int,
     @ColumnInfo(
         name = "pushup_size",
         defaultValue = DEFAULT_PUSHUP_SIZE.toString(),
@@ -275,6 +287,22 @@ val MIGRATION_8_9 = object : Migration(8, 9) {
     }
 }
 
+val MIGRATION_9_10 = object : Migration(9, 10) {
+    override fun migrate(database: SupportSQLiteDatabase) {
+        database.execSQL(
+            "alter table AppSettings add column slide_sensitivity INTEGER NOT NULL default $DEFAULT_SLIDE_SENSITIVITY",
+        )
+    }
+}
+
+val MIGRATION_10_11 = object : Migration(10, 11) {
+    override fun migrate(database: SupportSQLiteDatabase) {
+        database.execSQL(
+            "alter table AppSettings add column spacebar_slide INTEGER NOT NULL default $DEFAULT_SPACEBAR_SLIDE",
+        )
+    }
+}
+
 @Database(
     version = 9,
     entities = [AppSettings::class],
@@ -308,6 +336,8 @@ abstract class AppDB : RoomDatabase() {
                         MIGRATION_6_7,
                         MIGRATION_7_8,
                         MIGRATION_8_9,
+                        MIGRATION_9_10,
+                        MIGRATION_10_11,
                     )
                     // Necessary because it can't insert data on creation
                     .addCallback(object : Callback() {
