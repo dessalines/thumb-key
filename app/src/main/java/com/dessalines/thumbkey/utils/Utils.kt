@@ -74,6 +74,7 @@ import com.dessalines.thumbkey.keyboards.THUMBKEY_IT_V1_KEYBOARD_MODES
 import com.dessalines.thumbkey.keyboards.THUMBKEY_JA_V1_HIRAGANA_KEYBOARD_MODES
 import com.dessalines.thumbkey.keyboards.THUMBKEY_JA_V1_KATAKANA_KEYBOARD_MODES
 import com.dessalines.thumbkey.keyboards.THUMBKEY_KA_V1_KEYBOARD_MODES
+import com.dessalines.thumbkey.keyboards.THUMBKEY_LT_V1_KEYBOARD_MODES
 import com.dessalines.thumbkey.keyboards.THUMBKEY_LV_LTG_V1_KEYBOARD_MODES
 import com.dessalines.thumbkey.keyboards.THUMBKEY_NL_V1_KEYBOARD_MODES
 import com.dessalines.thumbkey.keyboards.THUMBKEY_NO_V1_KEYBOARD_MODES
@@ -189,6 +190,7 @@ fun keyboardLayoutToModes(layout: KeyboardLayout): Map<KeyboardMode, KeyboardC> 
         KeyboardLayout.ThumbKeyHRv1Symbols -> THUMBKEY_HR_V1_SYMBOLS_KEYBOARD_MODES
         KeyboardLayout.TypeSplitFIv1 -> TYPESPLIT_FI_V1_KEYBOARD_MODES
         KeyboardLayout.ThumbKeyLVLTGv1 -> THUMBKEY_LV_LTG_V1_KEYBOARD_MODES
+        KeyboardLayout.ThumbKeyLTv1 -> THUMBKEY_LT_V1_KEYBOARD_MODES
     }
 }
 
