@@ -243,7 +243,7 @@ val THUMBKEY_LT_V1_MAIN = KeyboardC(
     ),
 )
 
-val THUMBKEY_EN_V4_SHIFTED = KeyboardC(
+val THUMBKEY_LT_V1_SHIFTED = KeyboardC(
     listOf(
         listOf(
             KeyItemC(
