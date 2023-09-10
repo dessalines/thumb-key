@@ -159,6 +159,7 @@ val SPACEBAR_PROGRAMMER_KEY_ITEM =
             action = KeyAction.CommitText(" "),
         ),
         swipeType = SwipeNWay.FOUR_WAY_CROSS,
+        slideType = SlideType.MOVE_CURSOR,
         swipes = mapOf(
             SwipeDirection.LEFT to KeyC(
                 action = KeyAction.SendEvent(

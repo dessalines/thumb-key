@@ -178,7 +178,6 @@ enum class SwipeNWay {
     FOUR_WAY_DIAGONAL,
     TWO_WAY_VERTICAL,
     TWO_WAY_HORIZONTAL,
-    SLIDE_MOVE_CURSOR, // swipe type used for keys that should move cursor
 }
 
 enum class SlideType {
