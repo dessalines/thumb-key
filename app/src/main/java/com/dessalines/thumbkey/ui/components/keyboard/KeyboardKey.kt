@@ -180,24 +180,40 @@ fun KeyboardKey(
                         offsetY += y
                         if (key.slideType == SlideType.MOVE_CURSOR && spacebarSlide) {
                             if (abs(offsetX) > slideSensitivity) {
-                                val action = KeyAction.SendEvent(
-                                    KeyEvent(
-                                        KeyEvent.ACTION_DOWN,
-                                        // check direction
-                                        if (offsetX < 0.00) KeyEvent.KEYCODE_DPAD_LEFT else KeyEvent.KEYCODE_DPAD_RIGHT,
-                                    ),
-                                )
-                                performKeyAction(
-                                    action = action,
-                                    ime = ime,
-                                    autoCapitalize = autoCapitalize,
-                                    onToggleShiftMode = onToggleShiftMode,
-                                    onToggleNumericMode = onToggleNumericMode,
-                                    onToggleCapsLock = onToggleCapsLock,
-                                    onAutoCapitalize = onAutoCapitalize,
-                                    onSwitchLanguage = onSwitchLanguage,
-                                    onSwitchPosition = onSwitchPosition,
-                                )
+                                var direction = 0
+                                var shouldMove = false
+                                if (offsetX < 0.00) {
+                                    // move left
+                                    if (ime.currentInputConnection.getTextBeforeCursor(1, 0)?.length != 0) {
+                                        shouldMove = true
+                                    }
+                                    direction = KeyEvent.KEYCODE_DPAD_LEFT
+                                } else {
+                                    // move right
+                                    if (ime.currentInputConnection.getTextAfterCursor(1, 0)?.length != 0) {
+                                        shouldMove = true
+                                    }
+                                    direction = KeyEvent.KEYCODE_DPAD_RIGHT
+                                }
+                                if (shouldMove) {
+                                    val action = KeyAction.SendEvent(
+                                        KeyEvent(
+                                            KeyEvent.ACTION_DOWN,
+                                            direction,
+                                        ),
+                                    )
+                                    performKeyAction(
+                                        action = action,
+                                        ime = ime,
+                                        autoCapitalize = autoCapitalize,
+                                        onToggleShiftMode = onToggleShiftMode,
+                                        onToggleNumericMode = onToggleNumericMode,
+                                        onToggleCapsLock = onToggleCapsLock,
+                                        onAutoCapitalize = onAutoCapitalize,
+                                        onSwitchLanguage = onSwitchLanguage,
+                                        onSwitchPosition = onSwitchPosition,
+                                    )
+                                }
                                 offsetX = 0f
                                 offsetY = 0f
                             }
