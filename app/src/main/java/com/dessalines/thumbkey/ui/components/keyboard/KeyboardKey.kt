@@ -72,7 +72,7 @@ fun KeyboardKey(
     keySize: Int,
     minSwipeLength: Int,
     slideSensitivity: Int,
-    spacebarSlide: Boolean,
+    slideEnabled: Boolean,
     onToggleShiftMode: (enable: Boolean) -> Unit,
     onToggleNumericMode: (enable: Boolean) -> Unit,
     onToggleCapsLock: () -> Unit,
@@ -81,7 +81,7 @@ fun KeyboardKey(
     onSwitchPosition: () -> Unit,
 ) {
     // Necessary for swipe settings to get updated correctly
-    val id = key.toString() + animationHelperSpeed + animationSpeed + autoCapitalize + vibrateOnTap + soundOnTap + keySize + minSwipeLength + slideSensitivity + spacebarSlide
+    val id = key.toString() + animationHelperSpeed + animationSpeed + autoCapitalize + vibrateOnTap + soundOnTap + keySize + minSwipeLength + slideSensitivity + slideEnabled
 
     val ctx = LocalContext.current
     val ime = ctx as IMEService
@@ -178,7 +178,7 @@ fun KeyboardKey(
                         val (x, y) = dragAmount
                         offsetX += x
                         offsetY += y
-                        if (key.slideType == SlideType.MOVE_CURSOR && spacebarSlide) {
+                        if (key.slideType == SlideType.MOVE_CURSOR && slideEnabled) {
                             if (abs(offsetX) > slideSensitivity) {
                                 var direction = 0
                                 var shouldMove = false
@@ -220,7 +220,7 @@ fun KeyboardKey(
                         }
                     },
                     onDragEnd = {
-                        if (key.slideType == SlideType.NONE || !spacebarSlide) {
+                        if (key.slideType == SlideType.NONE || !slideEnabled) {
                             val swipeDirection = swipeDirection(offsetX, offsetY, minSwipeLength, key.swipeType)
                             val action = key.swipes?.get(swipeDirection)?.action ?: key.center.action
 
