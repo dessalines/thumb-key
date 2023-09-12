@@ -243,6 +243,19 @@ fun KeyboardKey(
                             offsetY = 0f
 
                             doneKeyAction(scope, action, isDragged, releasedKey, animationHelperSpeed)
+                        } else {
+                            doneKeyAction(
+                                scope,
+                                KeyAction.SendEvent(
+                                    KeyEvent(
+                                        KeyEvent.ACTION_UP,
+                                        KeyEvent.KEYCODE_DPAD_RIGHT,
+                                    ),
+                                ),
+                                isDragged,
+                                releasedKey,
+                                animationHelperSpeed,
+                            )
                         }
                     },
                 )
