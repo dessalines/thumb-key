@@ -278,8 +278,8 @@ val MESSAGEEASE_IT_SHIFTED = KeyboardC(
                 swipeType = SwipeNWay.TWO_WAY_VERTICAL,
                 swipes = mapOf(
                     SwipeDirection.BOTTOM to KeyC(
-                        display = KeyDisplay.TextDisplay("L"),
-                        action = KeyAction.CommitText("L"),
+                        display = KeyDisplay.TextDisplay("H"),
+                        action = KeyAction.CommitText("H"),
                     ),
                 ),
             ),
