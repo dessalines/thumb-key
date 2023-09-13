@@ -161,6 +161,7 @@ fun keyboardLayoutToModes(layout: KeyboardLayout): Map<KeyboardMode, KeyboardC> 
         KeyboardLayout.ThumbKeyDEv2MultiLingual -> THUMBKEY_DE_V2_MULTILINGUAL_KEYBOARD_MODES
         KeyboardLayout.ThumbKeyKAv1 -> THUMBKEY_KA_V1_KEYBOARD_MODES
         KeyboardLayout.ThumbKeyIDv1 -> THUMBKEY_ID_V1_SYMBOLS_KEYBOARD_MODES
+        KeyboardLayout.ThumbKeyIDv2 -> THUMBKEY_ID_V2_SYMBOLS_KEYBOARD_MODES
         KeyboardLayout.MessageEaseFR -> MESSAGEEASE_FR_KEYBOARD_MODES
         KeyboardLayout.MessageEaseRUSymbols -> MESSAGEEASE_RU_SYMBOLS_KEYBOARD_MODES
         KeyboardLayout.T9v1 -> T9_V1_KEYBOARD_MODES
