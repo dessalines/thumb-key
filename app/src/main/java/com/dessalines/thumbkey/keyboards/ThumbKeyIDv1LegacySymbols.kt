@@ -17,7 +17,7 @@ import com.dessalines.thumbkey.utils.SwipeDirection
 import com.dessalines.thumbkey.utils.SwipeNWay
 
 // Adds more punctuation options to the main screen to reduce switches to the numeric keyboard
-val THUMBKEY_ID_V1_SYMBOLS = KeyboardC(
+val THUMBKEY_ID_V2_SYMBOLS = KeyboardC(
     listOf(
         listOf(
             KeyItemC(
@@ -380,7 +380,7 @@ val THUMBKEY_ID_V1_SYMBOLS = KeyboardC(
     ),
 )
 
-val THUMBKEY_ID_V1_SYMBOLS_SHIFTED = KeyboardC(
+val THUMBKEY_ID_V2_SYMBOLS_SHIFTED = KeyboardC(
     listOf(
         listOf(
             KeyItemC(
@@ -744,8 +744,8 @@ val THUMBKEY_ID_V1_SYMBOLS_SHIFTED = KeyboardC(
     ),
 )
 
-val THUMBKEY_ID_V1_SYMBOLS_KEYBOARD_MODES: Map<KeyboardMode, KeyboardC> = mapOf(
-    KeyboardMode.MAIN to THUMBKEY_ID_V1_SYMBOLS,
-    KeyboardMode.SHIFTED to THUMBKEY_ID_V1_SYMBOLS_SHIFTED,
+val THUMBKEY_ID_V2_SYMBOLS_KEYBOARD_MODES: Map<KeyboardMode, KeyboardC> = mapOf(
+    KeyboardMode.MAIN to THUMBKEY_ID_V2_SYMBOLS,
+    KeyboardMode.SHIFTED to THUMBKEY_ID_V2_SYMBOLS_SHIFTED,
     KeyboardMode.NUMERIC to NUMERIC_KEYBOARD,
 )
