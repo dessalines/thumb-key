@@ -21,6 +21,7 @@ import com.dessalines.thumbkey.utils.KeyAction
 import com.dessalines.thumbkey.utils.KeyC
 import com.dessalines.thumbkey.utils.KeyDisplay
 import com.dessalines.thumbkey.utils.KeyItemC
+import com.dessalines.thumbkey.utils.SlideType
 import com.dessalines.thumbkey.utils.SwipeDirection
 import com.dessalines.thumbkey.utils.SwipeNWay
 
@@ -117,6 +118,7 @@ val SPACEBAR_KEY_ITEM =
             action = KeyAction.CommitText(" "),
         ),
         swipeType = SwipeNWay.TWO_WAY_HORIZONTAL,
+        slideType = SlideType.MOVE_CURSOR,
         swipes = mapOf(
             SwipeDirection.LEFT to KeyC(
                 action = KeyAction.SendEvent(
@@ -157,6 +159,7 @@ val SPACEBAR_PROGRAMMER_KEY_ITEM =
             action = KeyAction.CommitText(" "),
         ),
         swipeType = SwipeNWay.FOUR_WAY_CROSS,
+        slideType = SlideType.MOVE_CURSOR,
         swipes = mapOf(
             SwipeDirection.LEFT to KeyC(
                 action = KeyAction.SendEvent(
