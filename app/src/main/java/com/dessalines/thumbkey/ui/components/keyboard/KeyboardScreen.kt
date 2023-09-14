@@ -31,6 +31,7 @@ import com.dessalines.thumbkey.db.DEFAULT_SLIDE_ENABLED
 import com.dessalines.thumbkey.db.DEFAULT_SLIDE_SENSITIVITY
 import com.dessalines.thumbkey.db.DEFAULT_SOUND_ON_TAP
 import com.dessalines.thumbkey.db.DEFAULT_SPACEBAR_MULTITAPS
+import com.dessalines.thumbkey.db.DEFAULT_SWIPE_ASSIST
 import com.dessalines.thumbkey.db.DEFAULT_VIBRATE_ON_TAP
 import com.dessalines.thumbkey.keyboards.THUMBKEY_EN_V4_MAIN
 import com.dessalines.thumbkey.utils.KeyAction
@@ -124,6 +125,7 @@ fun KeyboardScreen(
                                 minSwipeLength = settings?.minSwipeLength ?: DEFAULT_MIN_SWIPE_LENGTH,
                                 slideSensitivity = settings?.slideSensitivity ?: DEFAULT_SLIDE_SENSITIVITY,
                                 slideEnabled = slideEnabled,
+                                swipeAssist = settings?.swipeAssist ?: DEFAULT_SWIPE_ASSIST,
                                 onToggleShiftMode = { enable ->
                                     mode = if (enable) {
                                         KeyboardMode.SHIFTED

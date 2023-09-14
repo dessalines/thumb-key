@@ -17,7 +17,6 @@ data class KeyItemC(
     val nextTapActions: List<KeyAction>? = null,
     val widthMultiplier: Int = 1,
     val backgroundColor: ColorVariant = ColorVariant.SURFACE,
-    val swipeType: SwipeNWay = SwipeNWay.EIGHT_WAY,
     val slideType: SlideType = SlideType.NONE,
 )
 
@@ -55,8 +54,15 @@ enum class KeyboardMode {
     MAIN, SHIFTED, NUMERIC
 }
 
-enum class SwipeDirection {
-    LEFT, TOP_LEFT, TOP, TOP_RIGHT, RIGHT, BOTTOM_RIGHT, BOTTOM, BOTTOM_LEFT,
+enum class SwipeDirection(val angle: Double) {
+    LEFT(1 * Math.PI),
+    TOP_LEFT(-0.75 * Math.PI),
+    TOP(-0.5 * Math.PI),
+    TOP_RIGHT(-0.25 * Math.PI),
+    RIGHT(0 * Math.PI),
+    BOTTOM_RIGHT(0.25 * Math.PI),
+    BOTTOM(0.5 * Math.PI),
+    BOTTOM_LEFT(0.75 * Math.PI),
 }
 
 enum class ColorVariant {
@@ -171,14 +177,6 @@ enum class KeyboardPosition(private val stringId: Int) {
     fun title(): String {
         return stringResource(this.stringId)
     }
-}
-
-enum class SwipeNWay {
-    EIGHT_WAY,
-    FOUR_WAY_CROSS,
-    FOUR_WAY_DIAGONAL,
-    TWO_WAY_VERTICAL,
-    TWO_WAY_HORIZONTAL,
 }
 
 enum class SlideType {

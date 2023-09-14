@@ -9,7 +9,6 @@ import com.dessalines.thumbkey.utils.KeyItemC
 import com.dessalines.thumbkey.utils.KeyboardC
 import com.dessalines.thumbkey.utils.KeyboardMode
 import com.dessalines.thumbkey.utils.SwipeDirection
-import com.dessalines.thumbkey.utils.SwipeNWay
 
 val THUMBKEY_HE_V1_MAIN = KeyboardC(
     listOf(
@@ -27,7 +26,6 @@ val THUMBKEY_HE_V1_MAIN = KeyboardC(
                         action = KeyAction.CommitText("נ"),
                     ),
                 ),
-                swipeType = SwipeNWay.FOUR_WAY_DIAGONAL,
             ),
             KeyItemC(
                 center = KeyC(
@@ -42,7 +40,6 @@ val THUMBKEY_HE_V1_MAIN = KeyboardC(
                         action = KeyAction.CommitText("ע"),
                     ),
                 ),
-                swipeType = SwipeNWay.TWO_WAY_VERTICAL,
             ),
             KeyItemC(
                 center = KeyC(
@@ -57,7 +54,6 @@ val THUMBKEY_HE_V1_MAIN = KeyboardC(
                         action = KeyAction.CommitText("כ"),
                     ),
                 ),
-                swipeType = SwipeNWay.FOUR_WAY_DIAGONAL,
             ),
             SETTINGS_KEY_ITEM,
         ),
@@ -79,7 +75,6 @@ val THUMBKEY_HE_V1_MAIN = KeyboardC(
                         action = KeyAction.CommitText("ץ"),
                     ),
                 ),
-                swipeType = SwipeNWay.TWO_WAY_HORIZONTAL,
             ),
             KeyItemC(
                 center = KeyC(
@@ -140,7 +135,6 @@ val THUMBKEY_HE_V1_MAIN = KeyboardC(
                         action = KeyAction.CommitText("ף"),
                     ),
                 ),
-                swipeType = SwipeNWay.TWO_WAY_HORIZONTAL,
             ),
             NUMERIC_KEY_ITEM,
         ),
@@ -163,7 +157,6 @@ val THUMBKEY_HE_V1_MAIN = KeyboardC(
                         color = ColorVariant.MUTED,
                     ),
                 ),
-                swipeType = SwipeNWay.FOUR_WAY_DIAGONAL,
             ),
             KeyItemC(
                 center = KeyC(
@@ -232,7 +225,6 @@ val THUMBKEY_HE_V1_MAIN = KeyboardC(
                         color = ColorVariant.MUTED,
                     ),
                 ),
-                swipeType = SwipeNWay.FOUR_WAY_DIAGONAL,
             ),
             BACKSPACE_KEY_ITEM,
         ),
