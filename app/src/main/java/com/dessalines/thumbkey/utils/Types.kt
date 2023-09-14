@@ -18,6 +18,7 @@ data class KeyItemC(
     val widthMultiplier: Int = 1,
     val backgroundColor: ColorVariant = ColorVariant.SURFACE,
     val swipeType: SwipeNWay = SwipeNWay.EIGHT_WAY,
+    val slideType: SlideType = SlideType.NONE,
 )
 
 data class KeyC(
@@ -173,5 +174,14 @@ enum class KeyboardPosition(private val stringId: Int) {
 }
 
 enum class SwipeNWay {
-    EIGHT_WAY, FOUR_WAY_CROSS, FOUR_WAY_DIAGONAL, TWO_WAY_VERTICAL, TWO_WAY_HORIZONTAL
+    EIGHT_WAY,
+    FOUR_WAY_CROSS,
+    FOUR_WAY_DIAGONAL,
+    TWO_WAY_VERTICAL,
+    TWO_WAY_HORIZONTAL,
+}
+
+enum class SlideType {
+    NONE,
+    MOVE_CURSOR,
 }
