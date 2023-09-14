@@ -214,7 +214,7 @@ fun swipeDirection(
     y: Float,
     minSwipeLength: Int,
     possible: Collection<SwipeDirection>,
-    swipeAssist: Double,
+    swipeAssist: int,
 ): SwipeDirection? {
     val xD = x.toDouble()
     val yD = y.toDouble()
@@ -233,7 +233,7 @@ fun swipeDirection(
             abs((angle - it.angle).mod(Math.PI * 2))
         )
     }.minByOrNull { it.second }?.let {
-        if (it.second < swipeAssist) it.first else null
+        if (it.second < (swipeAssist*Math.PI/180)) it.first else null
     }
 }
 

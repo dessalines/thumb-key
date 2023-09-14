@@ -121,7 +121,7 @@ fun LookAndFeelActivity(
         (settings?.slideEnabled ?: DEFAULT_SLIDE_ENABLED).toBool(),
     )
     val swipeAssistState = rememberFloatSettingState(
-        (settings?.swipeAssist ?: DEFAULT_SWIPE_ASSIST).toFloat(), // TODO stupid framework won't allow doubles
+        (settings?.swipeAssist ?: DEFAULT_SWIPE_ASSIST).toFloat(),
     )
     val positionState = rememberIntSettingState(
         settings?.position ?: DEFAULT_POSITION,
@@ -783,9 +783,9 @@ fun LookAndFeelActivity(
                         )
                     },
                 )
-                val swipeAssistStr = stringResource(R.string.swipe_assist, swipeAssistState.value)
+                val swipeAssistStr = stringResource(R.string.swipe_assist, swipeAssistState.value.toInt().toString())
                 SettingsSlider(
-                    valueRange = 0f..(Math.PI * 2).toFloat(),
+                    valueRange = 0f..360f,
                     state = swipeAssistState,
                     icon = {
                         Icon(
@@ -1004,7 +1004,7 @@ private fun updateAppSettings(
             minSwipeLength = minSwipeLengthState.value.toInt(),
             slideSensitivity = slideSensitivityState.value.toInt(),
             slideEnabled = slideEnabledState.value.toInt(),
-           swipeAssist = swipeAssistState.value.toDouble(),
+            swipeAssist = swipeAssistState.value.toInt(),
             position = positionState.value,
             autoCapitalize = autoCapitalizeState.value.toInt(),
             spacebarMultiTaps = spacebarMultiTapsState.value.toInt(),
@@ -1053,7 +1053,7 @@ private fun resetAppSettingsToDefault(
     animationHelperSpeedState.value = DEFAULT_ANIMATION_HELPER_SPEED.toFloat()
     minSwipeLengthState.value = DEFAULT_MIN_SWIPE_LENGTH.toFloat()
     slideSensitivityState.value = DEFAULT_SLIDE_SENSITIVITY.toFloat()
-    swipeAssistState.value = DEFAULT_SWIPE_ASSIST.toFloat() // TODO stupid fw won't allow double
+    swipeAssistState.value = DEFAULT_SWIPE_ASSIST.toFloat()
     positionState.value = DEFAULT_POSITION
     autoCapitalizeState.value = DEFAULT_AUTO_CAPITALIZE.toBool()
     spacebarMultiTapsState.value = DEFAULT_SPACEBAR_MULTITAPS.toBool()

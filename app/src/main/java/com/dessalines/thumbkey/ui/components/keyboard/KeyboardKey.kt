@@ -73,7 +73,7 @@ fun KeyboardKey(
     minSwipeLength: Int,
     slideSensitivity: Int,
     slideEnabled: Boolean,
-    swipeAssist: Double,
+    swipeAssist: Int,
     onToggleShiftMode: (enable: Boolean) -> Unit,
     onToggleNumericMode: (enable: Boolean) -> Unit,
     onToggleCapsLock: () -> Unit,

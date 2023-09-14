@@ -42,7 +42,7 @@ const val DEFAULT_THEME_COLOR = 0
 const val DEFAULT_VIBRATE_ON_TAP = 1
 const val DEFAULT_SOUND_ON_TAP = 0
 const val DEFAULT_MIN_SWIPE_LENGTH = 40
-const val DEFAULT_SWIPE_ASSIST: Double = Math.PI / 8
+const val DEFAULT_SWIPE_ASSIST = 23 // ceil(360/8/2)
 const val DEFAULT_PUSHUP_SIZE = 0
 const val DEFAULT_HIDE_LETTERS = 0
 const val DEFAULT_HIDE_SYMBOLS = 0
@@ -120,6 +120,7 @@ data class AppSettings(
         defaultValue = DEFAULT_MIN_SWIPE_LENGTH.toString(),
     )
     val minSwipeLength: Int,
+    // TODO: move this to the end when we corect the DB migration
     @ColumnInfo(
         name = "slide_sensitivity",
         defaultValue = DEFAULT_SLIDE_SENSITIVITY.toString(),
@@ -129,7 +130,7 @@ data class AppSettings(
         name = "swipe_assist",
         defaultValue = DEFAULT_SWIPE_ASSIST.toString()
     )
-    val swipeAssist: Double,
+    val swipeAssist: Int,
     @ColumnInfo(
         name = "pushup_size",
         defaultValue = DEFAULT_PUSHUP_SIZE.toString(),
@@ -307,7 +308,7 @@ val MIGRATION_9_10 = object : Migration(9, 10) {
 val MIGRATION_10_11 = object : Migration(10, 11) {
     override fun migrate(database: SupportSQLiteDatabase) {
         database.execSQL(
-            "alter table AppSettings add column hide_symbols FLOAT NOT NULL default $DEFAULT_SWIPE_ASSIST",
+            "alter table AppSettings add column hide_symbols INTEGER NOT NULL default $DEFAULT_SWIPE_ASSIST",
         )
     }
 }

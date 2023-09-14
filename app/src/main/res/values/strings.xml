@@ -38,7 +38,7 @@
     <string name="key_size">Key Size: %1$s</string>
     <string name="bottom_offset">Bottom Offset: %1$s</string>
     <string name="min_swipe_length">Minimum Swipe Length: %1$s</string>
-    <string name="swipe_assist">Swipe assist: %1$f</string>
+    <string name="swipe_assist">Swipe assist: %1$s°</string>
     <string name="animation_speed">Animation Speed: %1$s</string>
     <string name="animation_helper_speed">Animation Helper Speed: %1$s</string>
     <string name="slide_sensitivity">Slide sensitivity: %1$s</string>
