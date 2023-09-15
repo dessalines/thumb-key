@@ -371,18 +371,28 @@ fun performKeyAction(
             // Check here for the action #s:
             // https://developer.android.com/reference/android/R.id
 
-            // Select all
-            ime.currentInputConnection.performContextMenuAction(16908319)
+            ime.currentInputConnection.performContextMenuAction( android.R.id.selectAll )
+            ime.currentInputConnection.performContextMenuAction( android.R.id.copy )
 
-            // Copy all
-            ime.currentInputConnection.performContextMenuAction(16908321)
-
-            val copyAllStr = ime.getString(R.string.copy_all)
-            Toast.makeText(ime, copyAllStr, Toast.LENGTH_SHORT).show()
+            val message = ime.getString(R.string.copy_all)
+            Toast.makeText(ime, message, Toast.LENGTH_SHORT).show()
         }
+        KeyAction.SelectAll -> {
+            // Check here for the action #s:
+            // https://developer.android.com/reference/android/R.id
+            ime.currentInputConnection.performContextMenuAction( android.R.id.selectAll )
+        }
+        KeyAction.Cut -> {
+            ime.currentInputConnection.performContextMenuAction( android.R.id.cut )
+        }
+        KeyAction.Copy -> {
+            ime.currentInputConnection.performContextMenuAction( android.R.id.copy )
 
+            val message = ime.getString(R.string.copy)
+            Toast.makeText(ime, message, Toast.LENGTH_SHORT).show()
+        }
         KeyAction.Paste -> {
-            ime.currentInputConnection.performContextMenuAction(16908322)
+            ime.currentInputConnection.performContextMenuAction( android.R.id.paste )
         }
 
         KeyAction.SwitchLanguage -> onSwitchLanguage()
