@@ -786,9 +786,9 @@ fun LookAndFeelActivity(
                 )
                 val swipeAssistStr = stringResource(R.string.swipe_assist, swipeAssistState.value.toInt().toString())
                 SettingsSlider(
-                    // 23° is the minimum for 8-directional swiping.
-                    // Above 180°, the behavior no longer changes.
-                    valueRange = 23f..180f,
+                    // 45° is the minimum for 8-directional swiping.
+                    // Above 360°, the behavior no longer changes.
+                    valueRange = 45f..360f,
                     state = swipeAssistState,
                     icon = {
                         Icon(

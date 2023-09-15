@@ -233,7 +233,7 @@ fun swipeDirection(
             abs((angle - it.angle).mod(Math.PI * 2)),
         )
     }.minByOrNull { it.second }?.let {
-        if (it.second < (swipeAssist * Math.PI / 180)) it.first else null
+        if (it.second < (swipeAssist * Math.PI / 180 / 2)) it.first else null
     }
 }
 
