@@ -213,82 +213,82 @@ fun KeyboardScreen(
             }
         }
     }
-    else { // not indenting as it messes up the git diff. Will indent in the next git commit.
-    Box(
-        contentAlignment = alignment,
-        modifier = Modifier
-            .padding(bottom = pushupSizeDp),
-    ) {
-        Column(
+    else {
+        Box(
+            contentAlignment = alignment,
             modifier = Modifier
-                .background(MaterialTheme.colorScheme.onBackground),
+                .padding(bottom = pushupSizeDp),
         ) {
-            keyboard.arr.forEach { row ->
-                Row {
-                    row.forEach { key ->
-                        Column {
-                            KeyboardKey(
-                                key = key,
-                                lastAction = lastAction,
-                                keySize = settings?.keySize ?: DEFAULT_KEY_SIZE,
-                                autoCapitalize = autoCapitalize,
-                                spacebarMultiTaps = spacebarMultiTaps,
-                                keyBorders = keyBorders,
-                                vibrateOnTap = vibrateOnTap,
-                                soundOnTap = soundOnTap,
-                                hideLetters = hideLetters,
-                                hideSymbols = hideSymbols,
-                                capsLock = capsLock,
-                                animationSpeed = settings?.animationSpeed
-                                    ?: DEFAULT_ANIMATION_SPEED,
-                                animationHelperSpeed = settings?.animationHelperSpeed
-                                    ?: DEFAULT_ANIMATION_HELPER_SPEED,
-                                minSwipeLength = settings?.minSwipeLength ?: DEFAULT_MIN_SWIPE_LENGTH,
-                                slideSensitivity = settings?.slideSensitivity ?: DEFAULT_SLIDE_SENSITIVITY,
-                                slideEnabled = slideEnabled,
-                                onToggleShiftMode = { enable ->
-                                    mode = if (enable) {
-                                        KeyboardMode.SHIFTED
-                                    } else {
-                                        capsLock = false
-                                        KeyboardMode.MAIN
-                                    }
-                                },
-                                onToggleNumericMode = { enable ->
-                                    mode = if (enable) {
-                                        KeyboardMode.NUMERIC
-                                    } else {
-                                        capsLock = false
-                                        KeyboardMode.MAIN
-                                    }
-                                },
-                                onToggleEmojiMode = { enable ->
-                                    mode = if (enable) {
-                                        KeyboardMode.EMOJI
-                                    } else {
-                                        KeyboardMode.MAIN
-                                    }
-                                },
-                                onToggleCapsLock = {
-                                    capsLock = !capsLock
-                                },
-                                onAutoCapitalize = { enable ->
-                                    if (mode !== KeyboardMode.NUMERIC) {
-                                        if (enable) {
-                                            mode = KeyboardMode.SHIFTED
-                                        } else if (!capsLock) {
-                                            mode = KeyboardMode.MAIN
+            Column(
+                modifier = Modifier
+                    .background(MaterialTheme.colorScheme.onBackground),
+            ) {
+                keyboard.arr.forEach { row ->
+                    Row {
+                        row.forEach { key ->
+                            Column {
+                                KeyboardKey(
+                                    key = key,
+                                    lastAction = lastAction,
+                                    keySize = settings?.keySize ?: DEFAULT_KEY_SIZE,
+                                    autoCapitalize = autoCapitalize,
+                                    spacebarMultiTaps = spacebarMultiTaps,
+                                    keyBorders = keyBorders,
+                                    vibrateOnTap = vibrateOnTap,
+                                    soundOnTap = soundOnTap,
+                                    hideLetters = hideLetters,
+                                    hideSymbols = hideSymbols,
+                                    capsLock = capsLock,
+                                    animationSpeed = settings?.animationSpeed
+                                        ?: DEFAULT_ANIMATION_SPEED,
+                                    animationHelperSpeed = settings?.animationHelperSpeed
+                                        ?: DEFAULT_ANIMATION_HELPER_SPEED,
+                                    minSwipeLength = settings?.minSwipeLength ?: DEFAULT_MIN_SWIPE_LENGTH,
+                                    slideSensitivity = settings?.slideSensitivity ?: DEFAULT_SLIDE_SENSITIVITY,
+                                    slideEnabled = slideEnabled,
+                                    onToggleShiftMode = { enable ->
+                                        mode = if (enable) {
+                                            KeyboardMode.SHIFTED
+                                        } else {
+                                            capsLock = false
+                                            KeyboardMode.MAIN
                                         }
-                                    }
-                                },
-                                onSwitchLanguage = onSwitchLanguage,
-                                onSwitchPosition = onSwitchPosition,
-                            )
+                                    },
+                                    onToggleNumericMode = { enable ->
+                                        mode = if (enable) {
+                                            KeyboardMode.NUMERIC
+                                        } else {
+                                            capsLock = false
+                                            KeyboardMode.MAIN
+                                        }
+                                    },
+                                    onToggleEmojiMode = { enable ->
+                                        mode = if (enable) {
+                                            KeyboardMode.EMOJI
+                                        } else {
+                                            KeyboardMode.MAIN
+                                        }
+                                    },
+                                    onToggleCapsLock = {
+                                        capsLock = !capsLock
+                                    },
+                                    onAutoCapitalize = { enable ->
+                                        if (mode !== KeyboardMode.NUMERIC) {
+                                            if (enable) {
+                                                mode = KeyboardMode.SHIFTED
+                                            } else if (!capsLock) {
+                                                mode = KeyboardMode.MAIN
+                                            }
+                                        }
+                                    },
+                                    onSwitchLanguage = onSwitchLanguage,
+                                    onSwitchPosition = onSwitchPosition,
+                                )
+                            }
                         }
                     }
                 }
             }
         }
-    } // not indenting this code block as it messes up the git diff. Will indent in the next git commit.
     }
 }
