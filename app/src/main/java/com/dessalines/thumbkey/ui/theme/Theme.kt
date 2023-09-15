@@ -16,8 +16,8 @@ fun ThumbkeyTheme(
     settings: AppSettings?,
     content: @Composable () -> Unit,
 ) {
-    val themeMode = ThemeMode.values()[settings?.theme ?: 0]
-    val themeColor = ThemeColor.values()[settings?.themeColor ?: 0]
+    val themeMode = ThemeMode.entries[settings?.theme ?: 0]
+    val themeColor = ThemeColor.entries[settings?.themeColor ?: 0]
 
     val ctx = LocalContext.current
     val android12OrLater = Build.VERSION.SDK_INT >= Build.VERSION_CODES.S

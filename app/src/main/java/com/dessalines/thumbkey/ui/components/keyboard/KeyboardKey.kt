@@ -25,6 +25,8 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.MutableState
 import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableFloatStateOf
+import androidx.compose.runtime.mutableIntStateOf
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.rememberCoroutineScope
@@ -93,15 +95,15 @@ fun KeyboardKey(
     val isDragged = remember { mutableStateOf(false) }
     val releasedKey = remember { mutableStateOf<String?>(null) }
 
-    var tapCount by remember { mutableStateOf(0) }
+    var tapCount by remember { mutableIntStateOf(0) }
     val tapActions = if (spacebarMultiTaps) {
         buildTapActions(key)
     } else {
         listOf(key.center.action)
     }
 
-    var offsetX by remember { mutableStateOf(0f) }
-    var offsetY by remember { mutableStateOf(0f) }
+    var offsetX by remember { mutableFloatStateOf(0f) }
+    var offsetY by remember { mutableFloatStateOf(0f) }
 
     val backgroundColor = if (!(isDragged.value || isPressed)) {
         colorVariantToColor(colorVariant = key.backgroundColor)
@@ -180,7 +182,7 @@ fun KeyboardKey(
                         offsetY += y
                         if (key.slideType == SlideType.MOVE_CURSOR && slideEnabled) {
                             if (abs(offsetX) > slideSensitivity) {
-                                var direction = 0
+                                val direction: Int
                                 var shouldMove = false
                                 if (offsetX < 0.00) {
                                     // move left
