@@ -274,6 +274,7 @@ fun performKeyAction(
     autoCapitalize: Boolean,
     onToggleShiftMode: (enable: Boolean) -> Unit,
     onToggleNumericMode: (enable: Boolean) -> Unit,
+    onToggleEmojiMode: (enable: Boolean) -> Unit,
     onToggleCapsLock: () -> Unit,
     onAutoCapitalize: (enable: Boolean) -> Unit,
     onSwitchLanguage: () -> Unit,
@@ -336,6 +337,12 @@ fun performKeyAction(
             val enable = action.enable
             Log.d(TAG, "Toggling Numeric: $enable")
             onToggleNumericMode(enable)
+        }
+
+        is KeyAction.ToggleEmojiMode -> {
+            val enable = action.enable
+            Log.d(TAG, "Toggling Emoji: $enable")
+            onToggleEmojiMode(enable)
         }
 
         KeyAction.GotoSettings -> {

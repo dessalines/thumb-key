@@ -40,6 +40,7 @@ sealed class KeyAction {
     class ReplaceLastText(val text: String, val trimCount: Int = 2) : KeyAction()
     class ToggleShiftMode(val enable: Boolean) : KeyAction()
     class ToggleNumericMode(val enable: Boolean) : KeyAction()
+    class ToggleEmojiMode(val enable: Boolean) : KeyAction()
     data object DeleteLastWord : KeyAction()
     data object GotoSettings : KeyAction()
     data object IMECompleteAction : KeyAction()
@@ -55,7 +56,7 @@ sealed class KeyAction {
 }
 
 enum class KeyboardMode {
-    MAIN, SHIFTED, NUMERIC
+    MAIN, SHIFTED, NUMERIC, EMOJI
 }
 
 enum class SwipeDirection {
