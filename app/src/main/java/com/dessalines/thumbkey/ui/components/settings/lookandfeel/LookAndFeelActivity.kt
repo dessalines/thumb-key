@@ -198,6 +198,7 @@ fun LookAndFeelActivity(
                                         minSwipeLengthState,
                                         slideSensitivityState,
                                         slideEnabledState,
+                                        swipeAssistState,
                                         positionState,
                                         autoCapitalizeState,
                                         spacebarMultiTapsState,

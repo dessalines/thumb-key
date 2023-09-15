@@ -120,7 +120,6 @@ data class AppSettings(
         defaultValue = DEFAULT_MIN_SWIPE_LENGTH.toString(),
     )
     val minSwipeLength: Int,
-    // TODO: move this to the end when we corect the DB migration
     @ColumnInfo(
         name = "slide_sensitivity",
         defaultValue = DEFAULT_SLIDE_SENSITIVITY.toString(),
@@ -308,7 +307,7 @@ val MIGRATION_9_10 = object : Migration(9, 10) {
 val MIGRATION_10_11 = object : Migration(10, 11) {
     override fun migrate(database: SupportSQLiteDatabase) {
         database.execSQL(
-            "alter table AppSettings add column hide_symbols INTEGER NOT NULL default $DEFAULT_SWIPE_ASSIST",
+            "alter table AppSettings add column swipe_assist INTEGER NOT NULL default $DEFAULT_SWIPE_ASSIST",
         )
     }
 }

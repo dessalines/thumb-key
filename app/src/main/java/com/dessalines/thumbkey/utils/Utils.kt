@@ -214,7 +214,7 @@ fun swipeDirection(
     y: Float,
     minSwipeLength: Int,
     possible: Collection<SwipeDirection>,
-    swipeAssist: int,
+    swipeAssist: Int,
 ): SwipeDirection? {
     val xD = x.toDouble()
     val yD = y.toDouble()
