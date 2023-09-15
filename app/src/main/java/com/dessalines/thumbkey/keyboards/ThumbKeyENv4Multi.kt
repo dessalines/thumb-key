@@ -511,7 +511,6 @@ val THUMBKEY_EN_V4_MULTI_SHIFTED = KeyboardC(
                     SwipeDirection.TOP_LEFT to KeyC(
                         display = KeyDisplay.TextDisplay("Í"),
                         action = KeyAction.CommitText("Í"),
-                        color = ColorVariant.MUTED,
                     ),
                     SwipeDirection.TOP to KeyC(
                         display = KeyDisplay.TextDisplay("F"),
