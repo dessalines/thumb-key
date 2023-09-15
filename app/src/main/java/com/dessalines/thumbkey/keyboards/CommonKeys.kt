@@ -79,10 +79,7 @@ val NUMERIC_KEY_ITEM =
                 display = KeyDisplay.IconDisplay(Icons.Outlined.Undo),
                 action = KeyAction.SendEvent(
                     KeyEvent(
-                        /* downTime= */
-                        0, /* eventTime= */ 0, KeyEvent.ACTION_DOWN, KeyEvent.KEYCODE_Z, /* repeat= */ 0,
-                        /* metaState= */
-                        KeyEvent.META_CTRL_ON,
+                        0, 0, KeyEvent.ACTION_DOWN, KeyEvent.KEYCODE_Z, 0, KeyEvent.META_CTRL_ON,
                     ),
                 ),
                 color = ColorVariant.MUTED,
@@ -92,10 +89,7 @@ val NUMERIC_KEY_ITEM =
                 display = KeyDisplay.IconDisplay(Icons.Outlined.Redo),
                 action = KeyAction.SendEvent(
                     KeyEvent(
-                        /* downTime= */
-                        0, /* eventTime= */ 0, KeyEvent.ACTION_DOWN, KeyEvent.KEYCODE_Z, /* repeat= */ 0,
-                        /* metaState= */
-                        (KeyEvent.META_CTRL_ON or KeyEvent.META_SHIFT_ON),
+                        0, 0, KeyEvent.ACTION_DOWN, KeyEvent.KEYCODE_Z, 0, (KeyEvent.META_CTRL_ON or KeyEvent.META_SHIFT_ON),
                     ),
                 ),
                 color = ColorVariant.MUTED,
