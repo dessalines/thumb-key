@@ -127,7 +127,7 @@ data class AppSettings(
     val slideSensitivity: Int,
     @ColumnInfo(
         name = "swipe_assist",
-        defaultValue = DEFAULT_SWIPE_ASSIST.toString()
+        defaultValue = DEFAULT_SWIPE_ASSIST.toString(),
     )
     val swipeAssist: Int,
     @ColumnInfo(

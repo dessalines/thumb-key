@@ -222,10 +222,12 @@ fun KeyboardKey(
                     },
                     onDragEnd = {
                         if (key.slideType == SlideType.NONE || !slideEnabled) {
-                            val action = (key.swipes?.let {
-                                val direction = swipeDirection(offsetX, offsetY, minSwipeLength, it.keys, swipeAssist)
-                                it[direction]
-                            } ?: key.center).action
+                            val action = (
+                                key.swipes?.let {
+                                    val direction = swipeDirection(offsetX, offsetY, minSwipeLength, it.keys, swipeAssist)
+                                    it[direction]
+                                } ?: key.center
+                                ).action
 
                             performKeyAction(
                                 action = action,
