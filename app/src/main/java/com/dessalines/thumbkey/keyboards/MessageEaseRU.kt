@@ -76,7 +76,7 @@ val MESSAGEEASE_RU_MAIN = KeyboardC(
                     ),
                 ),
             ),
-            SETTINGS_KEY_ITEM,
+            EMOJI_KEY_ITEM,
         ),
         listOf(
             KeyItemC(
@@ -300,7 +300,7 @@ val MESSAGEEASE_RU_SHIFTED = KeyboardC(
                     ),
                 ),
             ),
-            SETTINGS_KEY_ITEM,
+            EMOJI_KEY_ITEM,
         ),
         listOf(
             KeyItemC(

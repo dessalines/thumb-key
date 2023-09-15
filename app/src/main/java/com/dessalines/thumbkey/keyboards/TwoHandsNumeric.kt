@@ -92,7 +92,7 @@ val TWO_HANDS_NUMERIC_KEYBOARD = KeyboardC(
                     ),
                 ),
             ),
-            SETTINGS_KEY_ITEM,
+            EMOJI_KEY_ITEM,
             KeyItemC(
                 center = KeyC(
                     display = KeyDisplay.TextDisplay("1"),

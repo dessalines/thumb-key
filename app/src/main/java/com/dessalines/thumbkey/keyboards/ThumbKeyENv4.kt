@@ -64,7 +64,7 @@ val THUMBKEY_EN_V4_MAIN = KeyboardC(
                     ),
                 ),
             ),
-            SETTINGS_KEY_ITEM,
+            EMOJI_KEY_ITEM,
         ),
         listOf(
             KeyItemC(
@@ -272,7 +272,7 @@ val THUMBKEY_EN_V4_SHIFTED = KeyboardC(
                     ),
                 ),
             ),
-            SETTINGS_KEY_ITEM,
+            EMOJI_KEY_ITEM,
         ),
         listOf(
             KeyItemC(
