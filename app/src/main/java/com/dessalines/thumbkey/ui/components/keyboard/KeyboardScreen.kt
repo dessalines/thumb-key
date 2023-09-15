@@ -107,7 +107,7 @@ fun KeyboardScreen(
     val hideLetters = (settings?.hideLetters ?: DEFAULT_HIDE_LETTERS).toBool()
     val hideSymbols = (settings?.hideSymbols ?: DEFAULT_HIDE_SYMBOLS).toBool()
 
-    if( mode == KeyboardMode.EMOJI ) {
+    if (mode == KeyboardMode.EMOJI) {
         val emojiBackKey = KeyItemC(
             center = KeyC(
                 display = KeyDisplay.IconDisplay(Icons.Outlined.Abc),
@@ -118,7 +118,7 @@ fun KeyboardScreen(
             backgroundColor = ColorVariant.SURFACE_VARIANT,
         )
 
-        val controllerKeys = listOf( emojiBackKey, NUMERIC_KEY_ITEM, RETURN_KEY_ITEM, BACKSPACE_KEY_ITEM )
+        val controllerKeys = listOf(emojiBackKey, NUMERIC_KEY_ITEM, RETURN_KEY_ITEM, BACKSPACE_KEY_ITEM)
 
         val keySize = settings?.keySize ?: DEFAULT_KEY_SIZE
         val keyboardHeight = Dp((keySize * controllerKeys.size).toFloat()) + pushupSizeDp
@@ -127,7 +127,7 @@ fun KeyboardScreen(
             modifier = Modifier.fillMaxWidth(),
         ) {
             Box(
-                modifier = Modifier.weight(1f) // Take up available space equally
+                modifier = Modifier.weight(1f), // Take up available space equally
             ) {
                 AndroidView(
                     // Write the emoji to our text box when we tap one.
@@ -144,7 +144,7 @@ fun KeyboardScreen(
                     },
                     modifier = Modifier
                         .fillMaxWidth()
-                        .height(keyboardHeight)
+                        .height(keyboardHeight),
                 )
             }
 
@@ -212,8 +212,7 @@ fun KeyboardScreen(
                 }
             }
         }
-    }
-    else {
+    } else {
         Box(
             contentAlignment = alignment,
             modifier = Modifier

@@ -378,8 +378,8 @@ fun performKeyAction(
             // Check here for the action #s:
             // https://developer.android.com/reference/android/R.id
 
-            ime.currentInputConnection.performContextMenuAction( android.R.id.selectAll )
-            ime.currentInputConnection.performContextMenuAction( android.R.id.copy )
+            ime.currentInputConnection.performContextMenuAction(android.R.id.selectAll)
+            ime.currentInputConnection.performContextMenuAction(android.R.id.copy)
 
             val message = ime.getString(R.string.copy_all)
             Toast.makeText(ime, message, Toast.LENGTH_SHORT).show()
@@ -387,19 +387,19 @@ fun performKeyAction(
         KeyAction.SelectAll -> {
             // Check here for the action #s:
             // https://developer.android.com/reference/android/R.id
-            ime.currentInputConnection.performContextMenuAction( android.R.id.selectAll )
+            ime.currentInputConnection.performContextMenuAction(android.R.id.selectAll)
         }
         KeyAction.Cut -> {
-            ime.currentInputConnection.performContextMenuAction( android.R.id.cut )
+            ime.currentInputConnection.performContextMenuAction(android.R.id.cut)
         }
         KeyAction.Copy -> {
-            ime.currentInputConnection.performContextMenuAction( android.R.id.copy )
+            ime.currentInputConnection.performContextMenuAction(android.R.id.copy)
 
             val message = ime.getString(R.string.copy)
             Toast.makeText(ime, message, Toast.LENGTH_SHORT).show()
         }
         KeyAction.Paste -> {
-            ime.currentInputConnection.performContextMenuAction( android.R.id.paste )
+            ime.currentInputConnection.performContextMenuAction(android.R.id.paste)
         }
 
         KeyAction.SwitchLanguage -> onSwitchLanguage()

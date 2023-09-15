@@ -4,8 +4,8 @@ import android.view.KeyEvent
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.outlined.ArrowDropDown
 import androidx.compose.material.icons.outlined.ArrowDropUp
-import androidx.compose.material.icons.outlined.ContentCut
 import androidx.compose.material.icons.outlined.ContentCopy
+import androidx.compose.material.icons.outlined.ContentCut
 import androidx.compose.material.icons.outlined.ContentPaste
 import androidx.compose.material.icons.outlined.Copyright
 import androidx.compose.material.icons.outlined.Keyboard
@@ -16,10 +16,10 @@ import androidx.compose.material.icons.outlined.Language
 import androidx.compose.material.icons.outlined.LinearScale
 import androidx.compose.material.icons.outlined.Mood
 import androidx.compose.material.icons.outlined.Numbers
-import androidx.compose.material.icons.outlined.Undo
 import androidx.compose.material.icons.outlined.Redo
 import androidx.compose.material.icons.outlined.SelectAll
 import androidx.compose.material.icons.outlined.Settings
+import androidx.compose.material.icons.outlined.Undo
 import com.dessalines.thumbkey.utils.ColorVariant
 import com.dessalines.thumbkey.utils.FontSizeVariant
 import com.dessalines.thumbkey.utils.KeyAction
@@ -78,8 +78,12 @@ val NUMERIC_KEY_ITEM =
                 // Undo
                 display = KeyDisplay.IconDisplay(Icons.Outlined.Undo),
                 action = KeyAction.SendEvent(
-                    KeyEvent(/* downTime= */ 0, /* eventTime= */ 0, KeyEvent.ACTION_DOWN, KeyEvent.KEYCODE_Z, /* repeat= */ 0,
-                        /* metaState= */ KeyEvent.META_CTRL_ON)
+                    KeyEvent(
+                        /* downTime= */
+                        0, /* eventTime= */ 0, KeyEvent.ACTION_DOWN, KeyEvent.KEYCODE_Z, /* repeat= */ 0,
+                        /* metaState= */
+                        KeyEvent.META_CTRL_ON,
+                    ),
                 ),
                 color = ColorVariant.MUTED,
             ),
@@ -87,8 +91,12 @@ val NUMERIC_KEY_ITEM =
                 // Redo
                 display = KeyDisplay.IconDisplay(Icons.Outlined.Redo),
                 action = KeyAction.SendEvent(
-                    KeyEvent(/* downTime= */ 0, /* eventTime= */ 0, KeyEvent.ACTION_DOWN, KeyEvent.KEYCODE_Z, /* repeat= */ 0,
-                        /* metaState= */ (KeyEvent.META_CTRL_ON or KeyEvent.META_SHIFT_ON))
+                    KeyEvent(
+                        /* downTime= */
+                        0, /* eventTime= */ 0, KeyEvent.ACTION_DOWN, KeyEvent.KEYCODE_Z, /* repeat= */ 0,
+                        /* metaState= */
+                        (KeyEvent.META_CTRL_ON or KeyEvent.META_SHIFT_ON),
+                    ),
                 ),
                 color = ColorVariant.MUTED,
             ),
