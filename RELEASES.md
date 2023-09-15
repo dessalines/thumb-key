@@ -1,3 +1,21 @@
+# Thumb-Key 1.15.0 (2023-09-15)
+
+## What's Changed
+
+- lithuanian layout by @MariusTrap in https://github.com/dessalines/thumb-key/pull/395
+- Update MessageEaseIT.kt by @flauta in https://github.com/dessalines/thumb-key/pull/404
+- Add support for moving cursor on spacebar slide. Fixes #91 by @storvik in https://github.com/dessalines/thumb-key/pull/401
+- add the old idv1symbol to be v2. by @Matyeyev in https://github.com/dessalines/thumb-key/pull/405
+- Fixing delete whole word. Fixes #398 by @dessalines in https://github.com/dessalines/thumb-key/pull/406
+- Update MessageEaseDE.kt by @Saturo78 in https://github.com/dessalines/thumb-key/pull/402
+
+## New Contributors
+
+- @MariusTrap made their first contribution in https://github.com/dessalines/thumb-key/pull/395
+- @Matyeyev made their first contribution in https://github.com/dessalines/thumb-key/pull/405
+
+**Full Changelog**: https://github.com/dessalines/thumb-key/compare/1.14.0...1.15.0
+
 # Thumb-Key 1.14.0 (2023-09-09)
 
 ## What's Changed
