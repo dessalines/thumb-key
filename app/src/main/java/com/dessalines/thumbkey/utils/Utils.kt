@@ -472,7 +472,7 @@ fun autoCapitalizeCheck(
 }
 
 fun deleteLastWord(ime: IMEService) {
-    val lastWords = ime.currentInputConnection.getTextBeforeCursor(100, 0)
+    val lastWords = ime.currentInputConnection.getTextBeforeCursor(9999, 0)
 
     val trailingSpacesLength = lastWords?.length?.minus(lastWords.trimEnd().length) ?: 0
     val trimmed = lastWords?.trim()
