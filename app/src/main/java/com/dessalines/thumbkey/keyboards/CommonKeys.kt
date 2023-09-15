@@ -74,6 +74,24 @@ val NUMERIC_KEY_ITEM =
                 action = KeyAction.Cut,
                 color = ColorVariant.MUTED,
             ),
+            SwipeDirection.LEFT to KeyC(
+                // Undo
+                display = KeyDisplay.IconDisplay(Icons.Outlined.Undo),
+                action = KeyAction.SendEvent(
+                    KeyEvent(/* downTime= */ 0, /* eventTime= */ 0, KeyEvent.ACTION_DOWN, KeyEvent.KEYCODE_Z, /* repeat= */ 0,
+                        /* metaState= */ KeyEvent.META_CTRL_ON)
+                ),
+                color = ColorVariant.MUTED,
+            ),
+            SwipeDirection.RIGHT to KeyC(
+                // Redo
+                display = KeyDisplay.IconDisplay(Icons.Outlined.Redo),
+                action = KeyAction.SendEvent(
+                    KeyEvent(/* downTime= */ 0, /* eventTime= */ 0, KeyEvent.ACTION_DOWN, KeyEvent.KEYCODE_Z, /* repeat= */ 0,
+                        /* metaState= */ (KeyEvent.META_CTRL_ON or KeyEvent.META_SHIFT_ON))
+                ),
+                color = ColorVariant.MUTED,
+            ),
             SwipeDirection.BOTTOM to KeyC(
                 display = KeyDisplay.IconDisplay(Icons.Outlined.ContentPaste),
                 action = KeyAction.Paste,
