@@ -59,7 +59,7 @@ val THUMBKEY_HE_V1_MAIN = KeyboardC(
                 ),
                 swipeType = SwipeNWay.FOUR_WAY_DIAGONAL,
             ),
-            SETTINGS_KEY_ITEM,
+            EMOJI_KEY_ITEM,
         ),
         listOf(
             KeyItemC(

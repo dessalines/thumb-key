@@ -72,7 +72,7 @@ val MESSAGEEASE_IT_MAIN = KeyboardC(
                     ),
                 ),
             ),
-            SETTINGS_KEY_ITEM,
+            EMOJI_KEY_ITEM,
         ),
         listOf(
             KeyItemC(
@@ -302,7 +302,7 @@ val MESSAGEEASE_IT_SHIFTED = KeyboardC(
                     ),
                 ),
             ),
-            SETTINGS_KEY_ITEM,
+            EMOJI_KEY_ITEM,
         ),
         listOf(
             KeyItemC(

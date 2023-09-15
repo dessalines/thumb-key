@@ -123,7 +123,7 @@ val THUMBKEY_RU_V2_SYMBOLS_MAIN = KeyboardC(
                     ),
                 ),
             ),
-            SETTINGS_KEY_ITEM,
+            EMOJI_KEY_ITEM,
         ),
         listOf(
             KeyItemC(
@@ -512,7 +512,7 @@ val THUMBKEY_RU_V2_SYMBOLS_SHIFTED = KeyboardC(
                     ),
                 ),
             ),
-            SETTINGS_KEY_ITEM,
+            EMOJI_KEY_ITEM,
         ),
         listOf(
             KeyItemC(

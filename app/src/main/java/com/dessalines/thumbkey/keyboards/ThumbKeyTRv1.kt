@@ -127,7 +127,7 @@ val THUMBKEY_TR_V1 = KeyboardC(
                     ),
                 ),
             ),
-            SETTINGS_KEY_ITEM,
+            EMOJI_KEY_ITEM,
         ),
         listOf(
             KeyItemC(
@@ -483,7 +483,7 @@ val THUMBKEY_TR_V1_SHIFTED = KeyboardC(
                     ),
                 ),
             ),
-            SETTINGS_KEY_ITEM,
+            EMOJI_KEY_ITEM,
         ),
         listOf(
             KeyItemC(
