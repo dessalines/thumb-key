@@ -37,18 +37,18 @@ sealed class KeyDisplay {
 sealed class KeyAction {
     class CommitText(val text: String) : KeyAction()
     class SendEvent(val event: KeyEvent) : KeyAction()
-    object DeleteLastWord : KeyAction()
     class ReplaceLastText(val text: String, val trimCount: Int = 2) : KeyAction()
     class ToggleShiftMode(val enable: Boolean) : KeyAction()
     class ToggleNumericMode(val enable: Boolean) : KeyAction()
-    object GotoSettings : KeyAction()
-    object IMECompleteAction : KeyAction()
-    object ToggleCapsLock : KeyAction()
-    object SelectAndCopyAll : KeyAction()
-    object Paste : KeyAction()
-    object SwitchLanguage : KeyAction()
-    object SwitchPosition : KeyAction()
-    object SwitchIME : KeyAction()
+    data object DeleteLastWord : KeyAction()
+    data object GotoSettings : KeyAction()
+    data object IMECompleteAction : KeyAction()
+    data object ToggleCapsLock : KeyAction()
+    data object SelectAndCopyAll : KeyAction()
+    data object Paste : KeyAction()
+    data object SwitchLanguage : KeyAction()
+    data object SwitchPosition : KeyAction()
+    data object SwitchIME : KeyAction()
 }
 
 enum class KeyboardMode {

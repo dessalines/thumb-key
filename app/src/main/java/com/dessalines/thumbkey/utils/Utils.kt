@@ -426,11 +426,6 @@ fun getKeyboardMode(ime: IMEService, autoCapitalize: Boolean): KeyboardMode {
     }
 }
 
-fun getImeActionText(ime: IMEService): String {
-    val action = getImeActionCode(ime)
-    return ime.getTextForImeAction(action).toString()
-}
-
 private fun autoCapitalize(
     ime: IMEService,
     onAutoCapitalize: (enable: Boolean) -> Unit,
@@ -564,12 +559,12 @@ fun keyboardLayoutsSetFromTitleIndex(layouts: String?): Set<Int> {
 }
 
 fun keyboardRealIndexFromTitleIndex(index: Int): Int {
-    return KeyboardLayout.values().sortedBy { it.title }[index].index
+    return KeyboardLayout.entries.sortedBy { it.title }[index].index
 }
 
 fun keyboardTitleIndexFromRealIndex(index: Int): Int {
-    val keyboard = KeyboardLayout.values().find { it.index == index } ?: KeyboardLayout.ThumbKeyENv4
-    return KeyboardLayout.values().sortedBy { it.title }.indexOf(keyboard)
+    val keyboard = KeyboardLayout.entries.find { it.index == index } ?: KeyboardLayout.ThumbKeyENv4
+    return KeyboardLayout.entries.sortedBy { it.title }.indexOf(keyboard)
 }
 
 fun Context.getPackageInfo(): PackageInfo {
@@ -583,5 +578,6 @@ fun Context.getPackageInfo(): PackageInfo {
 fun Context.getVersionCode(): Int = if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.P) {
     getPackageInfo().longVersionCode.toInt()
 } else {
+    @Suppress("DEPRECATION")
     getPackageInfo().versionCode
 }
