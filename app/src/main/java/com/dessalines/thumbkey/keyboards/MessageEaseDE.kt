@@ -92,7 +92,7 @@ val MESSAGEEASE_DE_MAIN = KeyboardC(
                         action = KeyAction.CommitText("="),
                         color = ColorVariant.MUTED,
                     ),
-                    SwipeDirection.Bottom_RIGHT to KeyC(
+                    SwipeDirection.BOTTOM_RIGHT to KeyC(
                         display = KeyDisplay.TextDisplay("€"),
                         action = KeyAction.CommitText("€"),
                         color = ColorVariant.MUTED,
