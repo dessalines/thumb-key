@@ -159,6 +159,7 @@ enum class KeyboardLayout(val title: String, val index: Int) {
     ThumbKeyLVLTGv1("Thumb-Key latviešu valoda v1", 60),
     ThumbKeyLTv1("Thumb-Key lietuvių kalba v1", 61),
     ThumbKeyIDv2("Thumb-Key Bahasa Indonesia with Symbols v2", 62),
+    ThumbKeyIDv1SN("Thumb-Key Bahasa Indonesia with Symbols and Number v1", 63),
 }
 
 enum class KeyboardPosition(private val stringId: Int) {
