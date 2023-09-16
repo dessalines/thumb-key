@@ -33,11 +33,11 @@ val THUMBKEY_ID_V1_SN = KeyboardC(
                         display = KeyDisplay.TextDisplay("h"),
                         action = KeyAction.CommitText("h"),
                     ),
-                    SwipeDirection.BOTTOM to KeyC(
+                    SwipeDirection.RIGHT to KeyC(
                         display = KeyDisplay.TextDisplay("1"),
                         action = KeyAction.CommitText("1"),
                     ),
-                    SwipeDirection.RIGHT to KeyC(
+                    SwipeDirection.BOTTOM to KeyC(
                         display = KeyDisplay.TextDisplay("2"),
                         action = KeyAction.CommitText("2"),
                     ),
@@ -436,11 +436,11 @@ val THUMBKEY_ID_V1_SN_SHIFTED = KeyboardC(
                         display = KeyDisplay.TextDisplay("H"),
                         action = KeyAction.CommitText("H"),
                     ),
-                    SwipeDirection.BOTTOM to KeyC(
+                    SwipeDirection.RIGHT to KeyC(
                         display = KeyDisplay.TextDisplay("1"),
                         action = KeyAction.CommitText("1"),
                     ),
-                    SwipeDirection.RIGHT to KeyC(
+                    SwipeDirection.BOTTOM to KeyC(
                         display = KeyDisplay.TextDisplay("2"),
                         action = KeyAction.CommitText("2"),
                     ),
