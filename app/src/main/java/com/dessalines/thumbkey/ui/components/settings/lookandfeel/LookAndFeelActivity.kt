@@ -989,6 +989,7 @@ private fun resetAppSettingsToDefault(
     animationHelperSpeedState.value = DEFAULT_ANIMATION_HELPER_SPEED.toFloat()
     minSwipeLengthState.value = DEFAULT_MIN_SWIPE_LENGTH.toFloat()
     slideSensitivityState.value = DEFAULT_SLIDE_SENSITIVITY.toFloat()
+    slideEnabledState.value = DEFAULT_SLIDE_ENABLED.toBool()
     positionState.value = DEFAULT_POSITION
     autoCapitalizeState.value = DEFAULT_AUTO_CAPITALIZE.toBool()
     spacebarMultiTapsState.value = DEFAULT_SPACEBAR_MULTITAPS.toBool()
