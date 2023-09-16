@@ -420,7 +420,7 @@ val THUMBKEY_ID_V1_SN = KeyboardC(
     ),
 )
 
-val THUMBKEY_ID_V1_SYMBOLS_SHIFTED = KeyboardC(
+val THUMBKEY_ID_V1_SN_SHIFTED = KeyboardC(
     listOf(
         listOf(
             KeyItemC(
@@ -824,7 +824,7 @@ val THUMBKEY_ID_V1_SYMBOLS_SHIFTED = KeyboardC(
     ),
 )
 
-val THUMBKEY_ID_V1_SYMBOLS_KEYBOARD_MODES: Map<KeyboardMode, KeyboardC> = mapOf(
+val THUMBKEY_ID_V1_SN_KEYBOARD_MODES: Map<KeyboardMode, KeyboardC> = mapOf(
     KeyboardMode.MAIN to THUMBKEY_ID_V1_SN,
     KeyboardMode.SHIFTED to THUMBKEY_ID_V1_SN_SHIFTED,
     KeyboardMode.NUMERIC to NUMERIC_KEYBOARD,
