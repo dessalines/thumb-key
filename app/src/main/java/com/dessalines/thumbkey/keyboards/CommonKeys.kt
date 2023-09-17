@@ -2,6 +2,7 @@ package com.dessalines.thumbkey.keyboards
 
 import android.view.KeyEvent
 import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.outlined.Abc
 import androidx.compose.material.icons.outlined.ArrowDropDown
 import androidx.compose.material.icons.outlined.ArrowDropUp
 import androidx.compose.material.icons.outlined.ContentCopy
@@ -82,7 +83,7 @@ val EMOJI_KEY_ITEM =
             size = FontSizeVariant.LARGE,
             color = ColorVariant.SECONDARY,
         ),
-        swipeType = SwipeNWay.EIGHT_WAY,
+        swipeType = SwipeNWay.FOUR_WAY_CROSS,
         swipes = mapOf(
             SwipeDirection.TOP to KeyC(
                 display = KeyDisplay.IconDisplay(Icons.Outlined.Settings),
@@ -104,6 +105,17 @@ val EMOJI_KEY_ITEM =
                 action = KeyAction.SwitchPosition,
                 color = ColorVariant.MUTED,
             ),
+        ),
+        backgroundColor = ColorVariant.SURFACE_VARIANT,
+    )
+
+val EMOJI_BACK_KEY_ITEM =
+    KeyItemC(
+        center = KeyC(
+            display = KeyDisplay.IconDisplay(Icons.Outlined.Abc),
+            action = KeyAction.ToggleEmojiMode(false),
+            size = FontSizeVariant.LARGE,
+            color = ColorVariant.PRIMARY,
         ),
         backgroundColor = ColorVariant.SURFACE_VARIANT,
     )
