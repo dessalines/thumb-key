@@ -48,7 +48,7 @@ const val DEFAULT_HIDE_SYMBOLS = 0
 const val DEFAULT_KEY_BORDERS = 1
 const val DEFAULT_SPACEBAR_MULTITAPS = 1
 const val DEFAULT_SLIDE_SENSITIVITY = 9
-const val DEFAULT_SLIDE_ENABLED = 0
+const val DEFAULT_SLIDE_ENABLED = 1
 
 @Entity
 data class AppSettings(
