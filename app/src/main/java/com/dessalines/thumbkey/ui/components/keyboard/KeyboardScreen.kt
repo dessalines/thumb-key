@@ -118,7 +118,7 @@ fun KeyboardScreen(
             backgroundColor = ColorVariant.SURFACE_VARIANT,
         )
 
-        val controllerKeys = listOf(emojiBackKey, NUMERIC_KEY_ITEM, RETURN_KEY_ITEM, BACKSPACE_KEY_ITEM)
+        val controllerKeys = listOf(EMOJI_BACK_KEY_ITEM, NUMERIC_KEY_ITEM, BACKSPACE_KEY_ITEM, RETURN_KEY_ITEM)
 
         val keySize = settings?.keySize ?: DEFAULT_KEY_SIZE
         val keyboardHeight = Dp((keySize * controllerKeys.size).toFloat()) + pushupSizeDp
@@ -144,7 +144,8 @@ fun KeyboardScreen(
                     },
                     modifier = Modifier
                         .fillMaxWidth()
-                        .height(keyboardHeight),
+                        .height(keyboardHeight)
+                        .background(MaterialTheme.colorScheme.background)
                 )
             }
 
