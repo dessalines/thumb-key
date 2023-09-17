@@ -2,6 +2,8 @@ package com.dessalines.thumbkey.keyboards
 
 import android.view.KeyEvent
 import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.outlined.ContentCopy
+import androidx.compose.material.icons.outlined.ContentCut
 import androidx.compose.material.icons.outlined.ContentPaste
 import androidx.compose.material.icons.outlined.KeyboardReturn
 import androidx.compose.material.icons.outlined.Language
@@ -352,9 +354,19 @@ val T9_V1_MAIN = KeyboardC(
                     color = ColorVariant.SECONDARY,
                 ),
                 swipes = mapOf(
-                    SwipeDirection.TOP_RIGHT to KeyC(
+                    SwipeDirection.TOP_LEFT to KeyC(
                         display = KeyDisplay.IconDisplay(Icons.Outlined.SelectAll),
-                        action = KeyAction.SelectAndCopyAll,
+                        action = KeyAction.SelectAll,
+                        color = ColorVariant.MUTED,
+                    ),
+                    SwipeDirection.TOP to KeyC(
+                        display = KeyDisplay.IconDisplay(Icons.Outlined.ContentCopy),
+                        action = KeyAction.Copy,
+                        color = ColorVariant.MUTED,
+                    ),
+                    SwipeDirection.TOP_RIGHT to KeyC(
+                        display = KeyDisplay.IconDisplay(Icons.Outlined.ContentCut),
+                        action = KeyAction.Cut,
                         color = ColorVariant.MUTED,
                     ),
                     SwipeDirection.RIGHT to KeyC(
@@ -368,7 +380,7 @@ val T9_V1_MAIN = KeyboardC(
                         ),
                         color = ColorVariant.MUTED,
                     ),
-                    SwipeDirection.BOTTOM_RIGHT to KeyC(
+                    SwipeDirection.BOTTOM to KeyC(
                         display = KeyDisplay.IconDisplay(Icons.Outlined.ContentPaste),
                         action = KeyAction.Paste,
                         color = ColorVariant.MUTED,
@@ -895,9 +907,19 @@ val T9_V1_SHIFTED = KeyboardC(
                     color = ColorVariant.SECONDARY,
                 ),
                 swipes = mapOf(
-                    SwipeDirection.TOP_RIGHT to KeyC(
+                    SwipeDirection.TOP_LEFT to KeyC(
                         display = KeyDisplay.IconDisplay(Icons.Outlined.SelectAll),
-                        action = KeyAction.SelectAndCopyAll,
+                        action = KeyAction.SelectAll,
+                        color = ColorVariant.MUTED,
+                    ),
+                    SwipeDirection.TOP to KeyC(
+                        display = KeyDisplay.IconDisplay(Icons.Outlined.ContentCopy),
+                        action = KeyAction.Copy,
+                        color = ColorVariant.MUTED,
+                    ),
+                    SwipeDirection.TOP_RIGHT to KeyC(
+                        display = KeyDisplay.IconDisplay(Icons.Outlined.ContentCut),
+                        action = KeyAction.Cut,
                         color = ColorVariant.MUTED,
                     ),
                     SwipeDirection.RIGHT to KeyC(
@@ -911,7 +933,7 @@ val T9_V1_SHIFTED = KeyboardC(
                         ),
                         color = ColorVariant.MUTED,
                     ),
-                    SwipeDirection.BOTTOM_RIGHT to KeyC(
+                    SwipeDirection.BOTTOM to KeyC(
                         display = KeyDisplay.IconDisplay(Icons.Outlined.ContentPaste),
                         action = KeyAction.Paste,
                         color = ColorVariant.MUTED,

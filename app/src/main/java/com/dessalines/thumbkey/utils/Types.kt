@@ -45,7 +45,6 @@ sealed class KeyAction {
     data object GotoSettings : KeyAction()
     data object IMECompleteAction : KeyAction()
     data object ToggleCapsLock : KeyAction()
-    data object SelectAndCopyAll : KeyAction()
     data object SelectAll : KeyAction()
     data object Cut : KeyAction()
     data object Copy : KeyAction()

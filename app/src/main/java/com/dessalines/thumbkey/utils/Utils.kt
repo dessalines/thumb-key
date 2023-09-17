@@ -374,16 +374,6 @@ fun performKeyAction(
         }
 
         KeyAction.ToggleCapsLock -> onToggleCapsLock()
-        KeyAction.SelectAndCopyAll -> {
-            // Check here for the action #s:
-            // https://developer.android.com/reference/android/R.id
-
-            ime.currentInputConnection.performContextMenuAction(android.R.id.selectAll)
-            ime.currentInputConnection.performContextMenuAction(android.R.id.copy)
-
-            val message = ime.getString(R.string.copy_all)
-            Toast.makeText(ime, message, Toast.LENGTH_SHORT).show()
-        }
         KeyAction.SelectAll -> {
             // Check here for the action #s:
             // https://developer.android.com/reference/android/R.id
