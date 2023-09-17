@@ -30,25 +30,6 @@ import com.dessalines.thumbkey.utils.SlideType
 import com.dessalines.thumbkey.utils.SwipeDirection
 import com.dessalines.thumbkey.utils.SwipeNWay
 
-val SETTINGS_KEY_ITEM =
-    KeyItemC(
-        center = KeyC(
-            display = KeyDisplay.IconDisplay(Icons.Outlined.Settings),
-            action = KeyAction.GotoSettings,
-            size = FontSizeVariant.LARGE,
-            color = ColorVariant.SECONDARY,
-        ),
-        swipeType = SwipeNWay.TWO_WAY_HORIZONTAL,
-        swipes = mapOf(
-            SwipeDirection.LEFT to KeyC(
-                display = KeyDisplay.IconDisplay(Icons.Outlined.Language),
-                action = KeyAction.SwitchLanguage,
-                color = ColorVariant.MUTED,
-            ),
-        ),
-        backgroundColor = ColorVariant.SURFACE_VARIANT,
-    )
-
 val NUMERIC_KEY_ITEM =
     KeyItemC(
         center = KeyC(
