@@ -393,16 +393,12 @@ fun performKeyAction(
         }
         KeyAction.Undo -> {
             ime.currentInputConnection.sendKeyEvent(
-                KeyEvent(
-                    0, 0, KeyEvent.ACTION_DOWN, KeyEvent.KEYCODE_Z, 0, KeyEvent.META_CTRL_ON,
-                )
+                KeyEvent(0, 0, KeyEvent.ACTION_DOWN, KeyEvent.KEYCODE_Z, 0, KeyEvent.META_CTRL_ON),
             )
         }
         KeyAction.Redo -> {
             ime.currentInputConnection.sendKeyEvent(
-                KeyEvent(
-                    0, 0, KeyEvent.ACTION_DOWN, KeyEvent.KEYCODE_Z, 0, (KeyEvent.META_CTRL_ON or KeyEvent.META_SHIFT_ON),
-                )
+                KeyEvent(0, 0, KeyEvent.ACTION_DOWN, KeyEvent.KEYCODE_Z, 0, (KeyEvent.META_CTRL_ON or KeyEvent.META_SHIFT_ON)),
             )
         }
 
