@@ -75,23 +75,13 @@ val NUMERIC_KEY_ITEM =
                 color = ColorVariant.MUTED,
             ),
             SwipeDirection.LEFT to KeyC(
-                // Undo
                 display = KeyDisplay.IconDisplay(Icons.Outlined.Undo),
-                action = KeyAction.SendEvent(
-                    KeyEvent(
-                        0, 0, KeyEvent.ACTION_DOWN, KeyEvent.KEYCODE_Z, 0, KeyEvent.META_CTRL_ON,
-                    ),
-                ),
+                action = KeyAction.Undo,
                 color = ColorVariant.MUTED,
             ),
             SwipeDirection.RIGHT to KeyC(
-                // Redo
                 display = KeyDisplay.IconDisplay(Icons.Outlined.Redo),
-                action = KeyAction.SendEvent(
-                    KeyEvent(
-                        0, 0, KeyEvent.ACTION_DOWN, KeyEvent.KEYCODE_Z, 0, (KeyEvent.META_CTRL_ON or KeyEvent.META_SHIFT_ON),
-                    ),
-                ),
+                action = KeyAction.Redo,
                 color = ColorVariant.MUTED,
             ),
             SwipeDirection.BOTTOM to KeyC(

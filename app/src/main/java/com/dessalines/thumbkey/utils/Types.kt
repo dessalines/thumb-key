@@ -50,6 +50,8 @@ sealed class KeyAction {
     data object Cut : KeyAction()
     data object Copy : KeyAction()
     data object Paste : KeyAction()
+    data object Undo : KeyAction()
+    data object Redo : KeyAction()
     data object SwitchLanguage : KeyAction()
     data object SwitchPosition : KeyAction()
     data object SwitchIME : KeyAction()
