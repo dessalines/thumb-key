@@ -1,3 +1,16 @@
+# Thumb-Key 2.0.0 (2023-09-18)
+
+## What's Changed
+
+- Fixing some project errs. by @dessalines in https://github.com/dessalines/thumb-key/pull/408
+- fix EnV4SK multiLayout shifted í (Í) being muted by @KraXen72 in https://github.com/dessalines/thumb-key/pull/413
+- fix reset to defaults: slideEnabledState (fixes #407) by @nejni-marji in https://github.com/dessalines/thumb-key/pull/414
+- Add Indonesian Layout Symbols v1 with Number. by @Matyeyev in https://github.com/dessalines/thumb-key/pull/416
+- Emoji Picker by @sslater11 in https://github.com/dessalines/thumb-key/pull/415
+- Adding spanish-catalan keyboard. Fixes #418 by @dessalines in https://github.com/dessalines/thumb-key/pull/419
+
+**Full Changelog**: https://github.com/dessalines/thumb-key/compare/1.15.0...2.0.0
+
 # Thumb-Key 1.15.0 (2023-09-15)
 
 ## What's Changed
