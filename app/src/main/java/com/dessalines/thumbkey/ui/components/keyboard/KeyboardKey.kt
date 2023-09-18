@@ -1,6 +1,7 @@
 package com.dessalines.thumbkey.ui.components.keyboard
 import android.content.Context
 import android.media.AudioManager
+import android.util.Log
 import android.view.KeyEvent
 import androidx.compose.animation.AnimatedVisibility
 import androidx.compose.animation.EnterTransition
@@ -182,8 +183,36 @@ fun KeyboardKey(
                         val (x, y) = dragAmount
                         offsetX += x
                         offsetY += y
+                        Log.v("storvik-thumb-key", offsetY.toString())
                         if (key.slideType == SlideType.MOVE_CURSOR && slideEnabled) {
-                            if (abs(offsetX) > slideSensitivity) {
+                            if (abs(offsetY) > slideSensitivity * 5) {
+                                // If user slides upwards, enable selection
+                                if (abs(offsetX) > slideSensitivity) {
+                                    val action = KeyAction.SendEvent(
+                                        KeyEvent(
+                                            0,
+                                            0,
+                                            KeyEvent.ACTION_DOWN,
+                                            if (offsetX < 0.00) KeyEvent.KEYCODE_DPAD_LEFT else KeyEvent.KEYCODE_DPAD_RIGHT,
+                                            0,
+                                            KeyEvent.META_SHIFT_ON,
+                                        ),
+                                    )
+                                    performKeyAction(
+                                        action = action,
+                                        ime = ime,
+                                        autoCapitalize = autoCapitalize,
+                                        onToggleShiftMode = onToggleShiftMode,
+                                        onToggleNumericMode = onToggleNumericMode,
+                                        onToggleCapsLock = onToggleCapsLock,
+                                        onAutoCapitalize = onAutoCapitalize,
+                                        onSwitchLanguage = onSwitchLanguage,
+                                        onSwitchPosition = onSwitchPosition,
+                                    )
+                                    offsetX = 0f
+                                }
+                            } else if (abs(offsetX) > slideSensitivity) {
+                                // If user slides horizontally only, move cursor
                                 val direction: Int
                                 var shouldMove = false
                                 if (offsetX < 0.00) {
@@ -220,7 +249,31 @@ fun KeyboardKey(
                                     )
                                 }
                                 offsetX = 0f
-                                offsetY = 0f
+                                // offsetY = 0f - do not reset this while sliding
+                            }
+                        } else if (key.slideType == SlideType.DELETE && slideEnabled) {
+                            if (abs(offsetX) > slideSensitivity) {
+                                val action = KeyAction.SendEvent(
+                                    KeyEvent(
+                                        0,
+                                        0,
+                                        KeyEvent.ACTION_DOWN,
+                                        if (offsetX < 0.00) KeyEvent.KEYCODE_DPAD_LEFT else KeyEvent.KEYCODE_DPAD_RIGHT,                                        0,
+                                        KeyEvent.META_SHIFT_ON,
+                                    ),
+                                )
+                                performKeyAction(
+                                    action = action,
+                                    ime = ime,
+                                    autoCapitalize = autoCapitalize,
+                                    onToggleShiftMode = onToggleShiftMode,
+                                    onToggleNumericMode = onToggleNumericMode,
+                                    onToggleCapsLock = onToggleCapsLock,
+                                    onAutoCapitalize = onAutoCapitalize,
+                                    onSwitchLanguage = onSwitchLanguage,
+                                    onSwitchPosition = onSwitchPosition,
+                                )
+                                offsetX = 0f
                             }
                         }
                     },
@@ -243,11 +296,28 @@ fun KeyboardKey(
                             )
                             tapCount = 0
                             lastAction.value = action
-
-                            // Reset the drags
-                            offsetX = 0f
-                            offsetY = 0f
-
+                            doneKeyAction(scope, action, isDragged, releasedKey, animationHelperSpeed)
+                        } else if (key.slideType == SlideType.DELETE && slideEnabled) {
+                            val action = KeyAction.SendEvent(
+                                KeyEvent(
+                                    KeyEvent.ACTION_DOWN,
+                                    KeyEvent
+                                        .KEYCODE_DEL,
+                                ),
+                            )
+                            performKeyAction(
+                                action = action,
+                                ime = ime,
+                                autoCapitalize = autoCapitalize,
+                                onToggleShiftMode = onToggleShiftMode,
+                                onToggleNumericMode = onToggleNumericMode,
+                                onToggleCapsLock = onToggleCapsLock,
+                                onAutoCapitalize = onAutoCapitalize,
+                                onSwitchLanguage = onSwitchLanguage,
+                                onSwitchPosition = onSwitchPosition,
+                            )
+                            tapCount = 0
+                            lastAction.value = action
                             doneKeyAction(scope, action, isDragged, releasedKey, animationHelperSpeed)
                         } else {
                             doneKeyAction(
@@ -263,6 +333,10 @@ fun KeyboardKey(
                                 animationHelperSpeed,
                             )
                         }
+
+                        // Reset the drags
+                        offsetX = 0f
+                        offsetY = 0f
                     },
                 )
             }

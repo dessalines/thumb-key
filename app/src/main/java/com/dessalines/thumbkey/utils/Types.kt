@@ -191,4 +191,5 @@ enum class SwipeNWay {
 enum class SlideType {
     NONE,
     MOVE_CURSOR,
+    DELETE,
 }

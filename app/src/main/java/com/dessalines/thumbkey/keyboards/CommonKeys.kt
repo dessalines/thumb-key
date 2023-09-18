@@ -135,6 +135,7 @@ val BACKSPACE_KEY_ITEM =
             color = ColorVariant.SECONDARY,
         ),
         swipeType = SwipeNWay.TWO_WAY_HORIZONTAL,
+        slideType = SlideType.DELETE,
         swipes = mapOf(
             SwipeDirection.LEFT to KeyC(
                 action = KeyAction.DeleteLastWord,
