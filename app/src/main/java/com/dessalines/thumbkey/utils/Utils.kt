@@ -276,6 +276,7 @@ fun performKeyAction(
     autoCapitalize: Boolean,
     onToggleShiftMode: (enable: Boolean) -> Unit,
     onToggleNumericMode: (enable: Boolean) -> Unit,
+    onToggleEmojiMode: (enable: Boolean) -> Unit,
     onToggleCapsLock: () -> Unit,
     onAutoCapitalize: (enable: Boolean) -> Unit,
     onSwitchLanguage: () -> Unit,
@@ -340,6 +341,12 @@ fun performKeyAction(
             onToggleNumericMode(enable)
         }
 
+        is KeyAction.ToggleEmojiMode -> {
+            val enable = action.enable
+            Log.d(TAG, "Toggling Emoji: $enable")
+            onToggleEmojiMode(enable)
+        }
+
         KeyAction.GotoSettings -> {
             val mainActivityIntent = Intent(ime, MainActivity::class.java)
             mainActivityIntent.flags = Intent.FLAG_ACTIVITY_NEW_TASK
@@ -369,22 +376,32 @@ fun performKeyAction(
         }
 
         KeyAction.ToggleCapsLock -> onToggleCapsLock()
-        KeyAction.SelectAndCopyAll -> {
+        KeyAction.SelectAll -> {
             // Check here for the action #s:
             // https://developer.android.com/reference/android/R.id
-
-            // Select all
-            ime.currentInputConnection.performContextMenuAction(16908319)
-
-            // Copy all
-            ime.currentInputConnection.performContextMenuAction(16908321)
-
-            val copyAllStr = ime.getString(R.string.copy_all)
-            Toast.makeText(ime, copyAllStr, Toast.LENGTH_SHORT).show()
+            ime.currentInputConnection.performContextMenuAction(android.R.id.selectAll)
         }
+        KeyAction.Cut -> {
+            ime.currentInputConnection.performContextMenuAction(android.R.id.cut)
+        }
+        KeyAction.Copy -> {
+            ime.currentInputConnection.performContextMenuAction(android.R.id.copy)
 
+            val message = ime.getString(R.string.copy)
+            Toast.makeText(ime, message, Toast.LENGTH_SHORT).show()
+        }
         KeyAction.Paste -> {
-            ime.currentInputConnection.performContextMenuAction(16908322)
+            ime.currentInputConnection.performContextMenuAction(android.R.id.paste)
+        }
+        KeyAction.Undo -> {
+            ime.currentInputConnection.sendKeyEvent(
+                KeyEvent(0, 0, KeyEvent.ACTION_DOWN, KeyEvent.KEYCODE_Z, 0, KeyEvent.META_CTRL_ON),
+            )
+        }
+        KeyAction.Redo -> {
+            ime.currentInputConnection.sendKeyEvent(
+                KeyEvent(0, 0, KeyEvent.ACTION_DOWN, KeyEvent.KEYCODE_Z, 0, (KeyEvent.META_CTRL_ON or KeyEvent.META_SHIFT_ON)),
+            )
         }
 
         KeyAction.SwitchLanguage -> onSwitchLanguage()

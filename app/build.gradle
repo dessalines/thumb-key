@@ -105,4 +105,7 @@ dependencies {
     implementation "androidx.activity:activity-compose:1.7.2"
     implementation "com.louiscad.splitties:splitties-systemservices:3.0.0"
     implementation "com.louiscad.splitties:splitties-views:3.0.0"
+
+    // Emoji Picker
+    implementation "androidx.emoji2:emoji2-emojipicker:1.4.0"
 }

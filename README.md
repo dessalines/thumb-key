@@ -10,7 +10,7 @@
 
 <p align="center">
   <a href="https://github.com/dessalines/thumb-key" rel="noopener">
- <img width=200px height=200px src="https://i.postimg.cc/RZjZGzFG/Screenshot-2023-03-16-00-14-28-039-edit-app-olaunchercf.jpg"></a>
+ <img width=200px height=200px src="https://raw.githubusercontent.com/dessalines/thumb-key/main/fastlane/metadata/android/en-US/images/phoneScreenshots/1.png"></a>
 
  <h3 align="center"><a href="https://github.com/dessalines/thumb-key">Thumb-Key</a></h3>
   <p align="center">

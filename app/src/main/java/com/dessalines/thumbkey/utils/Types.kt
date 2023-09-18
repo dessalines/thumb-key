@@ -40,19 +40,24 @@ sealed class KeyAction {
     class ReplaceLastText(val text: String, val trimCount: Int = 2) : KeyAction()
     class ToggleShiftMode(val enable: Boolean) : KeyAction()
     class ToggleNumericMode(val enable: Boolean) : KeyAction()
+    class ToggleEmojiMode(val enable: Boolean) : KeyAction()
     data object DeleteLastWord : KeyAction()
     data object GotoSettings : KeyAction()
     data object IMECompleteAction : KeyAction()
     data object ToggleCapsLock : KeyAction()
-    data object SelectAndCopyAll : KeyAction()
+    data object SelectAll : KeyAction()
+    data object Cut : KeyAction()
+    data object Copy : KeyAction()
     data object Paste : KeyAction()
+    data object Undo : KeyAction()
+    data object Redo : KeyAction()
     data object SwitchLanguage : KeyAction()
     data object SwitchPosition : KeyAction()
     data object SwitchIME : KeyAction()
 }
 
 enum class KeyboardMode {
-    MAIN, SHIFTED, NUMERIC
+    MAIN, SHIFTED, NUMERIC, EMOJI
 }
 
 enum class SwipeDirection {

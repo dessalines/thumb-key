@@ -118,7 +118,7 @@ val THUMBKEY_EN_V4_SYMBOLS = KeyboardC(
                     ),
                 ),
             ),
-            SETTINGS_KEY_ITEM,
+            EMOJI_KEY_ITEM,
         ),
         listOf(
             KeyItemC(
@@ -476,7 +476,7 @@ val THUMBKEY_EN_V4_SYMBOLS_SHIFTED = KeyboardC(
                     ),
                 ),
             ),
-            SETTINGS_KEY_ITEM,
+            EMOJI_KEY_ITEM,
         ),
         listOf(
             KeyItemC(
