@@ -110,6 +110,11 @@ fun KeyboardScreen(
 
         val keySize = settings?.keySize ?: DEFAULT_KEY_SIZE
         val keyboardHeight = Dp((keySize * controllerKeys.size).toFloat()) + pushupSizeDp
+        val keyBorderSize = if (keyBorders) {
+            0.5.dp
+        } else {
+            0.dp
+        }
 
         Row(
             modifier = Modifier
@@ -117,7 +122,8 @@ fun KeyboardScreen(
                 .background(MaterialTheme.colorScheme.onBackground),
         ) {
             Box(
-                modifier = Modifier.weight(1f), // Take up available space equally
+                modifier = Modifier.weight(1f) // Take up available space equally
+                    .padding(keyBorderSize),
             ) {
                 val haptic = LocalHapticFeedback.current
                 val audioManager = ctx.getSystemService(Context.AUDIO_SERVICE) as AudioManager
