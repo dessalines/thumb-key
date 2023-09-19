@@ -1,7 +1,6 @@
 package com.dessalines.thumbkey.ui.components.keyboard
 import android.content.Context
 import android.media.AudioManager
-import android.util.Log
 import android.view.KeyEvent
 import androidx.compose.animation.AnimatedVisibility
 import androidx.compose.animation.EnterTransition
@@ -48,6 +47,7 @@ import com.dessalines.thumbkey.utils.KeyAction
 import com.dessalines.thumbkey.utils.KeyC
 import com.dessalines.thumbkey.utils.KeyDisplay
 import com.dessalines.thumbkey.utils.KeyItemC
+import com.dessalines.thumbkey.utils.Selection
 import com.dessalines.thumbkey.utils.SlideType
 import com.dessalines.thumbkey.utils.SwipeDirection
 import com.dessalines.thumbkey.utils.buildTapActions
@@ -106,6 +106,8 @@ fun KeyboardKey(
 
     var offsetX by remember { mutableFloatStateOf(0f) }
     var offsetY by remember { mutableFloatStateOf(0f) }
+
+    var selection by remember { mutableStateOf<Selection>(Selection()) }
 
     val backgroundColor = if (!(isDragged.value || isPressed)) {
         colorVariantToColor(colorVariant = key.backgroundColor)
@@ -186,33 +188,29 @@ fun KeyboardKey(
                         if (key.slideType == SlideType.MOVE_CURSOR && slideEnabled) {
                             if (abs(offsetY) > slideSensitivity * 5) {
                                 // If user slides upwards, enable selection
+                                if (!selection.active) {
+                                    // Activate selection
+                                    var cursorPosition =
+                                        ime.currentInputConnection.getTextBeforeCursor(
+                                            255, // Higher value mens slower execution
+                                            0,
+                                        )?.length
+                                    cursorPosition?.let {
+                                        selection = Selection(it, it, true)
+                                    }
+                                }
                                 if (abs(offsetX) > slideSensitivity) {
-                                    val action = KeyAction.SendEvent(
-                                        KeyEvent(
-                                            0,
-                                            0,
-                                            KeyEvent.ACTION_DOWN,
-                                            if (offsetX < 0.00) KeyEvent.KEYCODE_DPAD_LEFT else KeyEvent.KEYCODE_DPAD_RIGHT,
-                                            0,
-                                            KeyEvent.META_SHIFT_ON,
-                                        ),
-                                    )
-                                    performKeyAction(
-                                        action = action,
-                                        ime = ime,
-                                        autoCapitalize = autoCapitalize,
-                                        onToggleShiftMode = onToggleShiftMode,
-                                        onToggleNumericMode = onToggleNumericMode,
-                                        onToggleCapsLock = onToggleCapsLock,
-                                        onAutoCapitalize = onAutoCapitalize,
-                                        onSwitchLanguage = onSwitchLanguage,
-                                        onSwitchPosition = onSwitchPosition,
-                                        onToggleEmojiMode = onToggleEmojiMode,
-                                    )
+                                    if (offsetX < 0.00) {
+                                        selection.left()
+                                    } else {
+                                        selection.right()
+                                    }
+                                    ime.currentInputConnection.setSelection(selection.start, selection.end)
                                     offsetX = 0f
                                 }
                             } else if (abs(offsetX) > slideSensitivity) {
                                 // If user slides horizontally only, move cursor
+                                if (selection.active) selection = Selection(0, 0, false)
                                 val direction: Int
                                 var shouldMove = false
                                 if (offsetX < 0.00) {
@@ -252,28 +250,24 @@ fun KeyboardKey(
                                 offsetX = 0f
                             }
                         } else if (key.slideType == SlideType.DELETE && slideEnabled) {
+                            if (!selection.active) {
+                                // Activate selection
+                                var cursorPosition =
+                                    ime.currentInputConnection.getTextBeforeCursor(
+                                        255, // Higher value mens slower execution
+                                        0,
+                                    )?.length
+                                cursorPosition?.let {
+                                    selection = Selection(it, it, true)
+                                }
+                            }
                             if (abs(offsetX) > slideSensitivity) {
-                                val action = KeyAction.SendEvent(
-                                    KeyEvent(
-                                        0,
-                                        0,
-                                        KeyEvent.ACTION_DOWN,
-                                        if (offsetX < 0.00) KeyEvent.KEYCODE_DPAD_LEFT else KeyEvent.KEYCODE_DPAD_RIGHT,                                        0,
-                                        KeyEvent.META_SHIFT_ON,
-                                    ),
-                                )
-                                performKeyAction(
-                                    action = action,
-                                    ime = ime,
-                                    autoCapitalize = autoCapitalize,
-                                    onToggleShiftMode = onToggleShiftMode,
-                                    onToggleNumericMode = onToggleNumericMode,
-                                    onToggleCapsLock = onToggleCapsLock,
-                                    onAutoCapitalize = onAutoCapitalize,
-                                    onSwitchLanguage = onSwitchLanguage,
-                                    onSwitchPosition = onSwitchPosition,
-                                    onToggleEmojiMode = onToggleEmojiMode,
-                                )
+                                if (offsetX < 0.00) {
+                                    selection.left()
+                                } else {
+                                    selection.right()
+                                }
+                                ime.currentInputConnection.setSelection(selection.start, selection.end)
                                 offsetX = 0f
                             }
                         }
@@ -281,7 +275,8 @@ fun KeyboardKey(
                     onDragEnd = {
                         lateinit var action: KeyAction
                         if (key.slideType == SlideType.NONE || !slideEnabled) {
-                            val swipeDirection = swipeDirection(offsetX, offsetY, minSwipeLength, key.swipeType)
+                            val swipeDirection =
+                                swipeDirection(offsetX, offsetY, minSwipeLength, key.swipeType)
                             action = key.swipes?.get(swipeDirection)?.action ?: key.center.action
 
                             performKeyAction(
@@ -296,7 +291,13 @@ fun KeyboardKey(
                                 onSwitchLanguage = onSwitchLanguage,
                                 onSwitchPosition = onSwitchPosition,
                             )
-                            doneKeyAction(scope, action, isDragged, releasedKey, animationHelperSpeed)
+                            doneKeyAction(
+                                scope,
+                                action,
+                                isDragged,
+                                releasedKey,
+                                animationHelperSpeed,
+                            )
                         } else if (key.slideType == SlideType.DELETE && slideEnabled) {
                             action = KeyAction.SendEvent(
                                 KeyEvent(
@@ -305,19 +306,31 @@ fun KeyboardKey(
                                         .KEYCODE_DEL,
                                 ),
                             )
-                            performKeyAction(
-                                action = action,
-                                ime = ime,
-                                autoCapitalize = autoCapitalize,
-                                onToggleShiftMode = onToggleShiftMode,
-                                onToggleNumericMode = onToggleNumericMode,
-                                onToggleCapsLock = onToggleCapsLock,
-                                onAutoCapitalize = onAutoCapitalize,
-                                onSwitchLanguage = onSwitchLanguage,
-                                onSwitchPosition = onSwitchPosition,
-                                onToggleEmojiMode = onToggleEmojiMode,
+                            // only delete if valid selection
+                            val sel = ime.currentInputConnection.getSelectedText(0)
+                            sel?.let {
+                                if (it.isNotEmpty()) {
+                                    performKeyAction(
+                                        action = action,
+                                        ime = ime,
+                                        autoCapitalize = autoCapitalize,
+                                        onToggleShiftMode = onToggleShiftMode,
+                                        onToggleNumericMode = onToggleNumericMode,
+                                        onToggleCapsLock = onToggleCapsLock,
+                                        onAutoCapitalize = onAutoCapitalize,
+                                        onSwitchLanguage = onSwitchLanguage,
+                                        onSwitchPosition = onSwitchPosition,
+                                        onToggleEmojiMode = onToggleEmojiMode,
+                                    )
+                                }
+                            }
+                            doneKeyAction(
+                                scope,
+                                action,
+                                isDragged,
+                                releasedKey,
+                                animationHelperSpeed,
                             )
-                            doneKeyAction(scope, action, isDragged, releasedKey, animationHelperSpeed)
                         } else {
                             action = KeyAction.SendEvent(
                                 KeyEvent(
@@ -341,6 +354,9 @@ fun KeyboardKey(
                         // Reset the drags
                         offsetX = 0f
                         offsetY = 0f
+
+                        // Reset selection
+                        selection = Selection()
                     },
                 )
             }
@@ -451,7 +467,8 @@ fun KeyboardKey(
         ) {
             Box(
                 contentAlignment = Alignment.Center,
-                modifier = Modifier.fillMaxSize()
+                modifier = Modifier
+                    .fillMaxSize()
                     .background(color = MaterialTheme.colorScheme.tertiaryContainer),
             ) {}
         }

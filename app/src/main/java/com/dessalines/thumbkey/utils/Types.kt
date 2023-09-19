@@ -193,3 +193,17 @@ enum class SlideType {
     MOVE_CURSOR,
     DELETE,
 }
+
+data class Selection(
+    var start: Int,
+    var end: Int,
+    var active: Boolean,
+) {
+    constructor() : this (0, 0, false)
+    fun left() {
+        end -= 1
+    }
+    fun right() {
+        end += 1
+    }
+}
