@@ -112,7 +112,9 @@ fun KeyboardScreen(
         val keyboardHeight = Dp((keySize * controllerKeys.size).toFloat()) + pushupSizeDp
 
         Row(
-            modifier = Modifier.fillMaxWidth(),
+            modifier = Modifier
+                .fillMaxWidth()
+                .background(MaterialTheme.colorScheme.onBackground),
         ) {
             Box(
                 modifier = Modifier.weight(1f), // Take up available space equally
