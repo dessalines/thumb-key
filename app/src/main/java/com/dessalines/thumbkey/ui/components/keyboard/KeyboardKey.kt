@@ -183,7 +183,6 @@ fun KeyboardKey(
                         val (x, y) = dragAmount
                         offsetX += x
                         offsetY += y
-                        Log.v("storvik-thumb-key", offsetY.toString())
                         if (key.slideType == SlideType.MOVE_CURSOR && slideEnabled) {
                             if (abs(offsetY) > slideSensitivity * 5) {
                                 // If user slides upwards, enable selection
@@ -208,6 +207,7 @@ fun KeyboardKey(
                                         onAutoCapitalize = onAutoCapitalize,
                                         onSwitchLanguage = onSwitchLanguage,
                                         onSwitchPosition = onSwitchPosition,
+                                        onToggleEmojiMode = onToggleEmojiMode,
                                     )
                                     offsetX = 0f
                                 }
@@ -248,8 +248,8 @@ fun KeyboardKey(
                                         onSwitchPosition = onSwitchPosition,
                                     )
                                 }
+                                // reset offsetX, do not reset offsetY when sliding, it will break selecting
                                 offsetX = 0f
-                                // offsetY = 0f - do not reset this while sliding
                             }
                         } else if (key.slideType == SlideType.DELETE && slideEnabled) {
                             if (abs(offsetX) > slideSensitivity) {
@@ -272,15 +272,17 @@ fun KeyboardKey(
                                     onAutoCapitalize = onAutoCapitalize,
                                     onSwitchLanguage = onSwitchLanguage,
                                     onSwitchPosition = onSwitchPosition,
+                                    onToggleEmojiMode = onToggleEmojiMode,
                                 )
                                 offsetX = 0f
                             }
                         }
                     },
                     onDragEnd = {
+                        lateinit var action: KeyAction
                         if (key.slideType == SlideType.NONE || !slideEnabled) {
                             val swipeDirection = swipeDirection(offsetX, offsetY, minSwipeLength, key.swipeType)
-                            val action = key.swipes?.get(swipeDirection)?.action ?: key.center.action
+                            action = key.swipes?.get(swipeDirection)?.action ?: key.center.action
 
                             performKeyAction(
                                 action = action,
@@ -294,11 +296,9 @@ fun KeyboardKey(
                                 onSwitchLanguage = onSwitchLanguage,
                                 onSwitchPosition = onSwitchPosition,
                             )
-                            tapCount = 0
-                            lastAction.value = action
                             doneKeyAction(scope, action, isDragged, releasedKey, animationHelperSpeed)
                         } else if (key.slideType == SlideType.DELETE && slideEnabled) {
-                            val action = KeyAction.SendEvent(
+                            action = KeyAction.SendEvent(
                                 KeyEvent(
                                     KeyEvent.ACTION_DOWN,
                                     KeyEvent
@@ -315,24 +315,28 @@ fun KeyboardKey(
                                 onAutoCapitalize = onAutoCapitalize,
                                 onSwitchLanguage = onSwitchLanguage,
                                 onSwitchPosition = onSwitchPosition,
+                                onToggleEmojiMode = onToggleEmojiMode,
                             )
-                            tapCount = 0
-                            lastAction.value = action
                             doneKeyAction(scope, action, isDragged, releasedKey, animationHelperSpeed)
                         } else {
+                            action = KeyAction.SendEvent(
+                                KeyEvent(
+                                    KeyEvent.ACTION_UP,
+                                    KeyEvent.KEYCODE_DPAD_RIGHT,
+                                ),
+                            )
                             doneKeyAction(
                                 scope,
-                                KeyAction.SendEvent(
-                                    KeyEvent(
-                                        KeyEvent.ACTION_UP,
-                                        KeyEvent.KEYCODE_DPAD_RIGHT,
-                                    ),
-                                ),
+                                action,
                                 isDragged,
                                 releasedKey,
                                 animationHelperSpeed,
                             )
                         }
+
+                        // Set tapCount and lastAction to avoid issues with multitap after slide
+                        tapCount = 0
+                        lastAction.value = action
 
                         // Reset the drags
                         offsetX = 0f
