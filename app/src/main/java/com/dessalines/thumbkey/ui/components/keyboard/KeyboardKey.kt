@@ -55,6 +55,7 @@ import com.dessalines.thumbkey.utils.colorVariantToColor
 import com.dessalines.thumbkey.utils.doneKeyAction
 import com.dessalines.thumbkey.utils.fontSizeVariantToFontSize
 import com.dessalines.thumbkey.utils.performKeyAction
+import com.dessalines.thumbkey.utils.startSelection
 import com.dessalines.thumbkey.utils.swipeDirection
 import kotlin.math.abs
 
@@ -107,7 +108,7 @@ fun KeyboardKey(
     var offsetX by remember { mutableFloatStateOf(0f) }
     var offsetY by remember { mutableFloatStateOf(0f) }
 
-    var selection by remember { mutableStateOf<Selection>(Selection()) }
+    var selection by remember { mutableStateOf(Selection()) }
 
     val backgroundColor = if (!(isDragged.value || isPressed)) {
         colorVariantToColor(colorVariant = key.backgroundColor)
@@ -190,14 +191,7 @@ fun KeyboardKey(
                                 // If user slides upwards, enable selection
                                 if (!selection.active) {
                                     // Activate selection
-                                    var cursorPosition =
-                                        ime.currentInputConnection.getTextBeforeCursor(
-                                            255, // Higher value mens slower execution
-                                            0,
-                                        )?.length
-                                    cursorPosition?.let {
-                                        selection = Selection(it, it, true)
-                                    }
+                                    selection = startSelection(ime)
                                 }
                                 if (abs(offsetX) > slideSensitivity) {
                                     if (offsetX < 0.00) {
@@ -264,14 +258,7 @@ fun KeyboardKey(
                             if (!selection.active) {
                                 // Activate selection, first detection is longer to preserve swipe actions
                                 if (abs(offsetX) > slideSensitivity * 10) {
-                                    var cursorPosition =
-                                        ime.currentInputConnection.getTextBeforeCursor(
-                                            255, // Higher value mens slower execution
-                                            0,
-                                        )?.length
-                                    cursorPosition?.let {
-                                        selection = Selection(it, it, true)
-                                    }
+                                    selection = startSelection(ime)
                                 }
                             } else {
                                 if (abs(offsetX) > slideSensitivity) {
@@ -315,7 +302,7 @@ fun KeyboardKey(
                                 releasedKey,
                                 animationHelperSpeed,
                             )
-                        } else if (key.slideType == SlideType.DELETE && slideEnabled) {
+                        } else if (key.slideType == SlideType.DELETE) {
                             action = KeyAction.SendEvent(
                                 KeyEvent(
                                     KeyEvent.ACTION_DOWN,

@@ -602,3 +602,15 @@ fun Context.getVersionCode(): Int = if (Build.VERSION.SDK_INT >= Build.VERSION_C
     @Suppress("DEPRECATION")
     getPackageInfo().versionCode
 }
+
+fun startSelection(ime: IMEService): Selection {
+    val cursorPosition =
+        ime.currentInputConnection.getTextBeforeCursor(
+            1000, // Higher value mens slower execution
+            0,
+        )?.length
+    cursorPosition?.let {
+        return Selection(it, it, true)
+    }
+    return Selection()
+}
