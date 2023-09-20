@@ -50,27 +50,38 @@ This project is a follow-up to the now unmaintained (and closed-source) [Message
 - Open source, [AGPL License](/LICENSE).
 
 ## User Guide
+- **Tap**, or **swipe** to type a letter.
+- **Swipe up** or **down** on `A` to capitalize. (If you changed the layout, the button next to `#`) <img width=60px height=60px src="https://i.postimg.cc/Znt2Ft9G/thumbkey-1-1.png">
+- **Double tap** the space bar to type a comma, triple tap to type a period. More taps have more punctuation.
+- **Swipe left** on the backspace key to delete whole words.
+- **Swipe left** or **right** on the spacebar to move the cursor by 1 character.
 
-- Tap, or slide / swipe to type a letter.
-- Swipe up or down on `A` to capitalize. (If you changed the layout, the button next to `#`) <img width=60px height=60px src="https://i.postimg.cc/Znt2Ft9G/thumbkey-1-1.png">
-- Double tap the space bar to type a comma, triple tap to type a period. More taps have more punctuation.
-- Press the `#` key to see a numeric keypad, and additional symbols.
-- Press the Settings Gear key to configure Thumb-Key.
-- Slide left on the backspace key to delete whole words.
-- Slide left or right on the spacebar to move the cursor.
-- Slide left on the `#` key to switch to a default language.
-- Slide up on the `#` key to select and copy all.
-- Slide down on the `#` key to paste.
-- Slide right on the `#` key to switch keyboard position.
-- Practice typing, and check your words per minute, using [monkeytype.com](https://monkeytype.com)
+### Emoji Key
+- **Tap** to access the emoji picker
+- **Swipe up** to configure Thumb-key
+- **Swipe right** to change keyboard position
+- **Swipe down** to access IME switcher (switch between Thumb-key and other keyboards)
+- **Swipe left** to cycle between selected layouts (languages).
+
+### Symbol (`#`) Key
+- **Tap** to access numbers & symbols
+- **Swipe to top-left** to select all
+- **Swipe up** to copy
+- **Swipe to top-right** to cut
+- **Swipe right** to redo
+- **Swipe down** to paste
+- **Swipe left** to undo
 
 ### Slide gestures
-
-Enabling `Slide gestures` in keyboard settings will enable the following gestures:
+Enabling `Slide gestures` in keyboard settings will enable the following continuous sliding gestures:
 
 - Slide spacebar horizontally to move cursor position left and right.
 - Slide upwards while sliding the spacebar to select text.
 - Slide backspace to the left to select text to be deleted. Text will be deleted when key is released.
+
+### Other
+- Practice typing, and check your words per minute, using [monkeytype.com](https://monkeytype.com)
+
 
 ## Thumb-Key Design
 
