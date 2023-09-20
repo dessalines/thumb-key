@@ -52,7 +52,7 @@ This project is a follow-up to the now unmaintained (and closed-source) [Message
 ## User Guide
 - **Tap**, or **swipe** to type a letter.
 - **Swipe up** or **down** on `A` to capitalize. (If you changed the layout, the button next to `#`)  
-<img width=60px height=60px src="https://i.postimg.cc/Znt2Ft9G/thumbkey-1-1.png">  
+  <img width=60px height=60px src="https://i.postimg.cc/Znt2Ft9G/thumbkey-1-1.png">  
 
 - **Double tap** the space bar to type a comma, triple tap to type a period. More taps have more punctuation.
 - **Swipe left** on the backspace key to delete whole words.
