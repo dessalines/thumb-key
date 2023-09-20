@@ -7,6 +7,7 @@ import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.material3.AlertDialog
 import androidx.compose.material3.Button
+import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
@@ -71,7 +72,11 @@ fun ShowChangelog(appSettingsViewModel: AppSettingsViewModel) {
                             .verticalScroll(scrollState),
                     ) {
                         val markdownText = DONATION_MARKDOWN + markdown
-                        MarkdownText(markdownText)
+                        MarkdownText(
+                            markdown = markdownText,
+                            color = MaterialTheme.colorScheme.onBackground,
+                            linkColor = MaterialTheme.colorScheme.primary,
+                        )
                     }
                 },
                 confirmButton = {
