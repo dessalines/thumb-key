@@ -41,7 +41,7 @@
     <string name="animation_speed">Animation Speed: %1$s</string>
     <string name="animation_helper_speed">Animation Helper Speed: %1$s</string>
     <string name="slide_sensitivity">Slide sensitivity: %1$s</string>
-    <string name="spacebar_slide">Spacebar Sliding Cursor</string>
+    <string name="slide_enable">Slide gestures</string>
     <string name="reset_to_defaults">Reset to defaults</string>
     <string name="reset_to_defaults_msg">Are you sure you want to reset settings to defaults?</string>
     <string name="reset_to_defaults_confirm">Reset</string>

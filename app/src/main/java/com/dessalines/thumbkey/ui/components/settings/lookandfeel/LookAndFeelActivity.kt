@@ -587,11 +587,11 @@ fun LookAndFeelActivity(
                     icon = {
                         Icon(
                             imageVector = Icons.Outlined.SpaceBar,
-                            contentDescription = stringResource(R.string.spacebar_slide),
+                            contentDescription = stringResource(R.string.slide_enable),
                         )
                     },
                     title = {
-                        Text(stringResource(R.string.spacebar_slide))
+                        Text(stringResource(R.string.slide_enable))
                     },
                     onCheckedChange = {
                         updateAppSettings(

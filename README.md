@@ -64,6 +64,14 @@ This project is a follow-up to the now unmaintained (and closed-source) [Message
 - Slide right on the `#` key to switch keyboard position.
 - Practice typing, and check your words per minute, using [monkeytype.com](https://monkeytype.com)
 
+### Slide gestures
+
+Enabling `Slide gestures` in keyboard settings will enable the following gestures:
+
+- Slide spacebar horizontally to move cursor position left and right.
+- Slide upwards while sliding the spacebar to select text.
+- Slide backspace to the left to select text to be deleted. Text will be deleted when key is released.
+
 ## Thumb-Key Design
 
 ### A History of Phone Keyboards
