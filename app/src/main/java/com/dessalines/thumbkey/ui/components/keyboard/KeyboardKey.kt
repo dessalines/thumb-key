@@ -205,7 +205,10 @@ fun KeyboardKey(
                                     } else {
                                         selection.right()
                                     }
-                                    ime.currentInputConnection.setSelection(selection.start, selection.end)
+                                    ime.currentInputConnection.setSelection(
+                                        selection.start,
+                                        selection.end,
+                                    )
                                     offsetX = 0f
                                 }
                             } else if (abs(offsetX) > slideSensitivity) {
@@ -215,13 +218,21 @@ fun KeyboardKey(
                                 var shouldMove = false
                                 if (offsetX < 0.00) {
                                     // move left
-                                    if (ime.currentInputConnection.getTextBeforeCursor(1, 0)?.length != 0) {
+                                    if (ime.currentInputConnection.getTextBeforeCursor(
+                                            1,
+                                            0,
+                                        )?.length != 0
+                                    ) {
                                         shouldMove = true
                                     }
                                     direction = KeyEvent.KEYCODE_DPAD_LEFT
                                 } else {
                                     // move right
-                                    if (ime.currentInputConnection.getTextAfterCursor(1, 0)?.length != 0) {
+                                    if (ime.currentInputConnection.getTextAfterCursor(
+                                            1,
+                                            0,
+                                        )?.length != 0
+                                    ) {
                                         shouldMove = true
                                     }
                                     direction = KeyEvent.KEYCODE_DPAD_RIGHT
@@ -251,30 +262,36 @@ fun KeyboardKey(
                             }
                         } else if (key.slideType == SlideType.DELETE && slideEnabled) {
                             if (!selection.active) {
-                                // Activate selection
-                                var cursorPosition =
-                                    ime.currentInputConnection.getTextBeforeCursor(
-                                        255, // Higher value mens slower execution
-                                        0,
-                                    )?.length
-                                cursorPosition?.let {
-                                    selection = Selection(it, it, true)
+                                // Activate selection, first detection is longer to preserve swipe actions
+                                if (abs(offsetX) > slideSensitivity * 10) {
+                                    var cursorPosition =
+                                        ime.currentInputConnection.getTextBeforeCursor(
+                                            255, // Higher value mens slower execution
+                                            0,
+                                        )?.length
+                                    cursorPosition?.let {
+                                        selection = Selection(it, it, true)
+                                    }
                                 }
-                            }
-                            if (abs(offsetX) > slideSensitivity) {
-                                if (offsetX < 0.00) {
-                                    selection.left()
-                                } else {
-                                    selection.right()
+                            } else {
+                                if (abs(offsetX) > slideSensitivity) {
+                                    if (offsetX < 0.00) {
+                                        selection.left()
+                                    } else {
+                                        selection.right()
+                                    }
+                                    ime.currentInputConnection.setSelection(
+                                        selection.start,
+                                        selection.end,
+                                    )
+                                    offsetX = 0f
                                 }
-                                ime.currentInputConnection.setSelection(selection.start, selection.end)
-                                offsetX = 0f
                             }
                         }
                     },
                     onDragEnd = {
                         lateinit var action: KeyAction
-                        if (key.slideType == SlideType.NONE || !slideEnabled) {
+                        if (key.slideType == SlideType.NONE || !slideEnabled || (key.slideType == SlideType.DELETE && !selection.active)) {
                             val swipeDirection =
                                 swipeDirection(offsetX, offsetY, minSwipeLength, key.swipeType)
                             action = key.swipes?.get(swipeDirection)?.action ?: key.center.action
