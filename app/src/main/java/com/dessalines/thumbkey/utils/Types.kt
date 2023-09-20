@@ -40,19 +40,24 @@ sealed class KeyAction {
     class ReplaceLastText(val text: String, val trimCount: Int = 2) : KeyAction()
     class ToggleShiftMode(val enable: Boolean) : KeyAction()
     class ToggleNumericMode(val enable: Boolean) : KeyAction()
+    class ToggleEmojiMode(val enable: Boolean) : KeyAction()
     data object DeleteLastWord : KeyAction()
     data object GotoSettings : KeyAction()
     data object IMECompleteAction : KeyAction()
     data object ToggleCapsLock : KeyAction()
-    data object SelectAndCopyAll : KeyAction()
+    data object SelectAll : KeyAction()
+    data object Cut : KeyAction()
+    data object Copy : KeyAction()
     data object Paste : KeyAction()
+    data object Undo : KeyAction()
+    data object Redo : KeyAction()
     data object SwitchLanguage : KeyAction()
     data object SwitchPosition : KeyAction()
     data object SwitchIME : KeyAction()
 }
 
 enum class KeyboardMode {
-    MAIN, SHIFTED, NUMERIC
+    MAIN, SHIFTED, NUMERIC, EMOJI
 }
 
 enum class SwipeDirection {
@@ -159,6 +164,8 @@ enum class KeyboardLayout(val title: String, val index: Int) {
     ThumbKeyLVLTGv1("Thumb-Key latviešu valoda v1", 60),
     ThumbKeyLTv1("Thumb-Key lietuvių kalba v1", 61),
     ThumbKeyIDv2("Thumb-Key Bahasa Indonesia with Symbols v2", 62),
+    ThumbKeyIDv1SN("Thumb-Key Bahasa Indonesia with Symbols and Number v1", 63),
+    ThumbKeyESCAv1("Thumb-Key español català v1", 64),
 }
 
 enum class KeyboardPosition(private val stringId: Int) {
@@ -184,4 +191,19 @@ enum class SwipeNWay {
 enum class SlideType {
     NONE,
     MOVE_CURSOR,
+    DELETE,
+}
+
+data class Selection(
+    var start: Int,
+    var end: Int,
+    var active: Boolean,
+) {
+    constructor() : this (0, 0, false)
+    fun left() {
+        end -= 1
+    }
+    fun right() {
+        end += 1
+    }
 }

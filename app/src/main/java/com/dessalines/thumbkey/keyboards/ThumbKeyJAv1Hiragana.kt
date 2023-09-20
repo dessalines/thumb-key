@@ -95,7 +95,7 @@ val THUMBKEY_JA_V1_HIRAGANA = KeyboardC(
                     ),
                 ),
             ),
-            SETTINGS_KEY_ITEM,
+            EMOJI_KEY_ITEM,
         ),
         listOf(
             KeyItemC(
@@ -362,7 +362,7 @@ val THUMBKEY_JA_V1_HIRAGANA_SHIFTED = KeyboardC(
                     ),
                 ),
             ),
-            SETTINGS_KEY_ITEM,
+            EMOJI_KEY_ITEM,
         ),
         listOf(
             KeyItemC(

@@ -56,6 +56,7 @@ import com.dessalines.thumbkey.keyboards.THUMBKEY_EN_V4_MULTI_KEYBOARD_MODES
 import com.dessalines.thumbkey.keyboards.THUMBKEY_EN_V4_PROGRAMMER_KEYBOARD_MODES
 import com.dessalines.thumbkey.keyboards.THUMBKEY_EN_V4_SYMBOLS_KEYBOARD_MODES
 import com.dessalines.thumbkey.keyboards.THUMBKEY_EOENDE_KEYBOARD_MODES
+import com.dessalines.thumbkey.keyboards.THUMBKEY_ES_CA_V1_KEYBOARD_MODES
 import com.dessalines.thumbkey.keyboards.THUMBKEY_ES_EO_V1_KEYBOARD_MODES
 import com.dessalines.thumbkey.keyboards.THUMBKEY_ES_V1_KEYBOARD_MODES
 import com.dessalines.thumbkey.keyboards.THUMBKEY_EU_V1_KEYBOARD_MODES
@@ -69,6 +70,7 @@ import com.dessalines.thumbkey.keyboards.THUMBKEY_HE_V1_KEYBOARD_MODES
 import com.dessalines.thumbkey.keyboards.THUMBKEY_HR_V1_KEYBOARD_MODES
 import com.dessalines.thumbkey.keyboards.THUMBKEY_HR_V1_SYMBOLS_KEYBOARD_MODES
 import com.dessalines.thumbkey.keyboards.THUMBKEY_HU_V1_KEYBOARD_MODES
+import com.dessalines.thumbkey.keyboards.THUMBKEY_ID_V1_SN_KEYBOARD_MODES
 import com.dessalines.thumbkey.keyboards.THUMBKEY_ID_V1_SYMBOLS_KEYBOARD_MODES
 import com.dessalines.thumbkey.keyboards.THUMBKEY_ID_V2_SYMBOLS_KEYBOARD_MODES
 import com.dessalines.thumbkey.keyboards.THUMBKEY_IT_V1_KEYBOARD_MODES
@@ -161,6 +163,7 @@ fun keyboardLayoutToModes(layout: KeyboardLayout): Map<KeyboardMode, KeyboardC> 
         KeyboardLayout.ThumbKeyDEv2MultiLingual -> THUMBKEY_DE_V2_MULTILINGUAL_KEYBOARD_MODES
         KeyboardLayout.ThumbKeyKAv1 -> THUMBKEY_KA_V1_KEYBOARD_MODES
         KeyboardLayout.ThumbKeyIDv1 -> THUMBKEY_ID_V1_SYMBOLS_KEYBOARD_MODES
+        KeyboardLayout.ThumbKeyIDv1SN -> THUMBKEY_ID_V1_SN_KEYBOARD_MODES
         KeyboardLayout.ThumbKeyIDv2 -> THUMBKEY_ID_V2_SYMBOLS_KEYBOARD_MODES
         KeyboardLayout.MessageEaseFR -> MESSAGEEASE_FR_KEYBOARD_MODES
         KeyboardLayout.MessageEaseRUSymbols -> MESSAGEEASE_RU_SYMBOLS_KEYBOARD_MODES
@@ -193,6 +196,7 @@ fun keyboardLayoutToModes(layout: KeyboardLayout): Map<KeyboardMode, KeyboardC> 
         KeyboardLayout.TypeSplitFIv1 -> TYPESPLIT_FI_V1_KEYBOARD_MODES
         KeyboardLayout.ThumbKeyLVLTGv1 -> THUMBKEY_LV_LTG_V1_KEYBOARD_MODES
         KeyboardLayout.ThumbKeyLTv1 -> THUMBKEY_LT_V1_KEYBOARD_MODES
+        KeyboardLayout.ThumbKeyESCAv1 -> THUMBKEY_ES_CA_V1_KEYBOARD_MODES
     }
 }
 
@@ -274,6 +278,7 @@ fun performKeyAction(
     autoCapitalize: Boolean,
     onToggleShiftMode: (enable: Boolean) -> Unit,
     onToggleNumericMode: (enable: Boolean) -> Unit,
+    onToggleEmojiMode: (enable: Boolean) -> Unit,
     onToggleCapsLock: () -> Unit,
     onAutoCapitalize: (enable: Boolean) -> Unit,
     onSwitchLanguage: () -> Unit,
@@ -338,6 +343,12 @@ fun performKeyAction(
             onToggleNumericMode(enable)
         }
 
+        is KeyAction.ToggleEmojiMode -> {
+            val enable = action.enable
+            Log.d(TAG, "Toggling Emoji: $enable")
+            onToggleEmojiMode(enable)
+        }
+
         KeyAction.GotoSettings -> {
             val mainActivityIntent = Intent(ime, MainActivity::class.java)
             mainActivityIntent.flags = Intent.FLAG_ACTIVITY_NEW_TASK
@@ -367,22 +378,32 @@ fun performKeyAction(
         }
 
         KeyAction.ToggleCapsLock -> onToggleCapsLock()
-        KeyAction.SelectAndCopyAll -> {
+        KeyAction.SelectAll -> {
             // Check here for the action #s:
             // https://developer.android.com/reference/android/R.id
-
-            // Select all
-            ime.currentInputConnection.performContextMenuAction(16908319)
-
-            // Copy all
-            ime.currentInputConnection.performContextMenuAction(16908321)
-
-            val copyAllStr = ime.getString(R.string.copy_all)
-            Toast.makeText(ime, copyAllStr, Toast.LENGTH_SHORT).show()
+            ime.currentInputConnection.performContextMenuAction(android.R.id.selectAll)
         }
+        KeyAction.Cut -> {
+            ime.currentInputConnection.performContextMenuAction(android.R.id.cut)
+        }
+        KeyAction.Copy -> {
+            ime.currentInputConnection.performContextMenuAction(android.R.id.copy)
 
+            val message = ime.getString(R.string.copy)
+            Toast.makeText(ime, message, Toast.LENGTH_SHORT).show()
+        }
         KeyAction.Paste -> {
-            ime.currentInputConnection.performContextMenuAction(16908322)
+            ime.currentInputConnection.performContextMenuAction(android.R.id.paste)
+        }
+        KeyAction.Undo -> {
+            ime.currentInputConnection.sendKeyEvent(
+                KeyEvent(0, 0, KeyEvent.ACTION_DOWN, KeyEvent.KEYCODE_Z, 0, KeyEvent.META_CTRL_ON),
+            )
+        }
+        KeyAction.Redo -> {
+            ime.currentInputConnection.sendKeyEvent(
+                KeyEvent(0, 0, KeyEvent.ACTION_DOWN, KeyEvent.KEYCODE_Z, 0, (KeyEvent.META_CTRL_ON or KeyEvent.META_SHIFT_ON)),
+            )
         }
 
         KeyAction.SwitchLanguage -> onSwitchLanguage()
@@ -580,4 +601,16 @@ fun Context.getVersionCode(): Int = if (Build.VERSION.SDK_INT >= Build.VERSION_C
 } else {
     @Suppress("DEPRECATION")
     getPackageInfo().versionCode
+}
+
+fun startSelection(ime: IMEService): Selection {
+    val cursorPosition =
+        ime.currentInputConnection.getTextBeforeCursor(
+            1000, // Higher value mens slower execution
+            0,
+        )?.length
+    cursorPosition?.let {
+        return Selection(it, it, true)
+    }
+    return Selection()
 }

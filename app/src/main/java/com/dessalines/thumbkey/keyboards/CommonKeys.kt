@@ -2,8 +2,11 @@ package com.dessalines.thumbkey.keyboards
 
 import android.view.KeyEvent
 import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.outlined.Abc
 import androidx.compose.material.icons.outlined.ArrowDropDown
 import androidx.compose.material.icons.outlined.ArrowDropUp
+import androidx.compose.material.icons.outlined.ContentCopy
+import androidx.compose.material.icons.outlined.ContentCut
 import androidx.compose.material.icons.outlined.ContentPaste
 import androidx.compose.material.icons.outlined.Copyright
 import androidx.compose.material.icons.outlined.Keyboard
@@ -12,9 +15,12 @@ import androidx.compose.material.icons.outlined.KeyboardCapslock
 import androidx.compose.material.icons.outlined.KeyboardReturn
 import androidx.compose.material.icons.outlined.Language
 import androidx.compose.material.icons.outlined.LinearScale
+import androidx.compose.material.icons.outlined.Mood
 import androidx.compose.material.icons.outlined.Numbers
+import androidx.compose.material.icons.outlined.Redo
 import androidx.compose.material.icons.outlined.SelectAll
 import androidx.compose.material.icons.outlined.Settings
+import androidx.compose.material.icons.outlined.Undo
 import com.dessalines.thumbkey.utils.ColorVariant
 import com.dessalines.thumbkey.utils.FontSizeVariant
 import com.dessalines.thumbkey.utils.KeyAction
@@ -24,17 +30,6 @@ import com.dessalines.thumbkey.utils.KeyItemC
 import com.dessalines.thumbkey.utils.SlideType
 import com.dessalines.thumbkey.utils.SwipeDirection
 import com.dessalines.thumbkey.utils.SwipeNWay
-
-val SETTINGS_KEY_ITEM =
-    KeyItemC(
-        center = KeyC(
-            display = KeyDisplay.IconDisplay(Icons.Outlined.Settings),
-            action = KeyAction.GotoSettings,
-            size = FontSizeVariant.LARGE,
-            color = ColorVariant.SECONDARY,
-        ),
-        backgroundColor = ColorVariant.SURFACE_VARIANT,
-    )
 
 val NUMERIC_KEY_ITEM =
     KeyItemC(
@@ -47,18 +42,57 @@ val NUMERIC_KEY_ITEM =
         swipeType = SwipeNWay.EIGHT_WAY,
         swipes = mapOf(
             SwipeDirection.TOP to KeyC(
-                display = KeyDisplay.IconDisplay(Icons.Outlined.SelectAll),
-                action = KeyAction.SelectAndCopyAll,
+                display = KeyDisplay.IconDisplay(Icons.Outlined.ContentCopy),
+                action = KeyAction.Copy,
                 color = ColorVariant.MUTED,
             ),
             SwipeDirection.TOP_LEFT to KeyC(
-                display = KeyDisplay.IconDisplay(Icons.Outlined.Keyboard),
-                action = KeyAction.SwitchIME,
+                display = KeyDisplay.IconDisplay(Icons.Outlined.SelectAll),
+                action = KeyAction.SelectAll,
+                color = ColorVariant.MUTED,
+            ),
+            SwipeDirection.TOP_RIGHT to KeyC(
+                display = KeyDisplay.IconDisplay(Icons.Outlined.ContentCut),
+                action = KeyAction.Cut,
+                color = ColorVariant.MUTED,
+            ),
+            SwipeDirection.LEFT to KeyC(
+                display = KeyDisplay.IconDisplay(Icons.Outlined.Undo),
+                action = KeyAction.Undo,
+                color = ColorVariant.MUTED,
+            ),
+            SwipeDirection.RIGHT to KeyC(
+                display = KeyDisplay.IconDisplay(Icons.Outlined.Redo),
+                action = KeyAction.Redo,
                 color = ColorVariant.MUTED,
             ),
             SwipeDirection.BOTTOM to KeyC(
                 display = KeyDisplay.IconDisplay(Icons.Outlined.ContentPaste),
                 action = KeyAction.Paste,
+                color = ColorVariant.MUTED,
+            ),
+        ),
+        backgroundColor = ColorVariant.SURFACE_VARIANT,
+    )
+
+val EMOJI_KEY_ITEM =
+    KeyItemC(
+        center = KeyC(
+            display = KeyDisplay.IconDisplay(Icons.Outlined.Mood),
+            action = KeyAction.ToggleEmojiMode(true),
+            size = FontSizeVariant.LARGE,
+            color = ColorVariant.SECONDARY,
+        ),
+        swipeType = SwipeNWay.FOUR_WAY_CROSS,
+        swipes = mapOf(
+            SwipeDirection.TOP to KeyC(
+                display = KeyDisplay.IconDisplay(Icons.Outlined.Settings),
+                action = KeyAction.GotoSettings,
+                color = ColorVariant.MUTED,
+            ),
+            SwipeDirection.BOTTOM to KeyC(
+                display = KeyDisplay.IconDisplay(Icons.Outlined.Keyboard),
+                action = KeyAction.SwitchIME,
                 color = ColorVariant.MUTED,
             ),
             SwipeDirection.LEFT to KeyC(
@@ -71,6 +105,17 @@ val NUMERIC_KEY_ITEM =
                 action = KeyAction.SwitchPosition,
                 color = ColorVariant.MUTED,
             ),
+        ),
+        backgroundColor = ColorVariant.SURFACE_VARIANT,
+    )
+
+val EMOJI_BACK_KEY_ITEM =
+    KeyItemC(
+        center = KeyC(
+            display = KeyDisplay.IconDisplay(Icons.Outlined.Abc),
+            action = KeyAction.ToggleEmojiMode(false),
+            size = FontSizeVariant.LARGE,
+            color = ColorVariant.PRIMARY,
         ),
         backgroundColor = ColorVariant.SURFACE_VARIANT,
     )
@@ -90,6 +135,7 @@ val BACKSPACE_KEY_ITEM =
             color = ColorVariant.SECONDARY,
         ),
         swipeType = SwipeNWay.TWO_WAY_HORIZONTAL,
+        slideType = SlideType.DELETE,
         swipes = mapOf(
             SwipeDirection.LEFT to KeyC(
                 action = KeyAction.DeleteLastWord,

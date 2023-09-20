@@ -73,7 +73,7 @@ val THUMBKEY_FI_V1_WIDE_MAIN = KeyboardC(
                 ),
             ),
             SPACEBAR_SKINNY_KEY_ITEM,
-            SETTINGS_KEY_ITEM,
+            EMOJI_KEY_ITEM,
         ),
         listOf(
             KeyItemC(
@@ -292,7 +292,7 @@ val THUMBKEY_FI_V1_WIDE_SHIFTED = KeyboardC(
                 ),
             ),
             SPACEBAR_SKINNY_KEY_ITEM,
-            SETTINGS_KEY_ITEM,
+            EMOJI_KEY_ITEM,
         ),
         listOf(
             KeyItemC(

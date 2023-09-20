@@ -33,6 +33,7 @@
     <string name="theme_color">Theme color</string>
     <string name="position">Position</string>
     <string name="vibrate_on_tap">Vibrate on tap</string>
+    <string name="vibrate_warning">Requires touch feedback to be enabled in system settings</string>
     <string name="play_sound_on_tap">Play sound on tap</string>
     <string name="auto_capitalize">Auto-Capitalize</string>
     <string name="key_size">Key Size: %1$s</string>
@@ -41,7 +42,7 @@
     <string name="animation_speed">Animation Speed: %1$s</string>
     <string name="animation_helper_speed">Animation Helper Speed: %1$s</string>
     <string name="slide_sensitivity">Slide sensitivity: %1$s</string>
-    <string name="spacebar_slide">Spacebar Sliding Cursor</string>
+    <string name="slide_enable">Slide gestures</string>
     <string name="reset_to_defaults">Reset to defaults</string>
     <string name="reset_to_defaults_msg">Are you sure you want to reset settings to defaults?</string>
     <string name="reset_to_defaults_confirm">Reset</string>
@@ -53,7 +54,7 @@
     <string name="enable_thumbkey">Enable Thumb-Key</string>
     <string name="select_thumbkey">Select Thumb-Key</string>
     <string name="finish_setup">Finish Setup</string>
-    <string name="copy_all">Copy All</string>
+    <string name="copy">Copied Selected Text</string>
     <string name="hide_letters">Hide Letters</string>
     <string name="hide_symbols">Hide Symbols</string>
     <string name="save">Save</string>

@@ -119,7 +119,7 @@ val THUMBKEY_EN_V4_PROGRAMMER = KeyboardC(
                     ),
                 ),
             ),
-            SETTINGS_KEY_ITEM,
+            EMOJI_KEY_ITEM,
         ),
         listOf(
             KeyItemC(
@@ -452,7 +452,7 @@ val THUMBKEY_EN_V4_PROGRAMMER_SHIFTED = KeyboardC(
                     ),
                 ),
             ),
-            SETTINGS_KEY_ITEM,
+            EMOJI_KEY_ITEM,
         ),
         listOf(
             KeyItemC(

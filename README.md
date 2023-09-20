@@ -10,7 +10,7 @@
 
 <p align="center">
   <a href="https://github.com/dessalines/thumb-key" rel="noopener">
- <img width=200px height=200px src="https://i.postimg.cc/RZjZGzFG/Screenshot-2023-03-16-00-14-28-039-edit-app-olaunchercf.jpg"></a>
+ <img width=200px height=200px src="https://raw.githubusercontent.com/dessalines/thumb-key/main/fastlane/metadata/android/en-US/images/phoneScreenshots/1.png"></a>
 
  <h3 align="center"><a href="https://github.com/dessalines/thumb-key">Thumb-Key</a></h3>
   <p align="center">
@@ -63,6 +63,14 @@ This project is a follow-up to the now unmaintained (and closed-source) [Message
 - Slide down on the `#` key to paste.
 - Slide right on the `#` key to switch keyboard position.
 - Practice typing, and check your words per minute, using [monkeytype.com](https://monkeytype.com)
+
+### Slide gestures
+
+Enabling `Slide gestures` in keyboard settings will enable the following gestures:
+
+- Slide spacebar horizontally to move cursor position left and right.
+- Slide upwards while sliding the spacebar to select text.
+- Slide backspace to the left to select text to be deleted. Text will be deleted when key is released.
 
 ## Thumb-Key Design
 

@@ -383,6 +383,9 @@ fun LookAndFeelActivity(
                     title = {
                         Text(stringResource(R.string.vibrate_on_tap))
                     },
+                    subtitle = {
+                        Text(stringResource(R.string.vibrate_warning))
+                    },
                     onCheckedChange = {
                         updateAppSettings(
                             appSettingsViewModel,
@@ -587,11 +590,11 @@ fun LookAndFeelActivity(
                     icon = {
                         Icon(
                             imageVector = Icons.Outlined.SpaceBar,
-                            contentDescription = stringResource(R.string.spacebar_slide),
+                            contentDescription = stringResource(R.string.slide_enable),
                         )
                     },
                     title = {
-                        Text(stringResource(R.string.spacebar_slide))
+                        Text(stringResource(R.string.slide_enable))
                     },
                     onCheckedChange = {
                         updateAppSettings(
@@ -989,6 +992,7 @@ private fun resetAppSettingsToDefault(
     animationHelperSpeedState.value = DEFAULT_ANIMATION_HELPER_SPEED.toFloat()
     minSwipeLengthState.value = DEFAULT_MIN_SWIPE_LENGTH.toFloat()
     slideSensitivityState.value = DEFAULT_SLIDE_SENSITIVITY.toFloat()
+    slideEnabledState.value = DEFAULT_SLIDE_ENABLED.toBool()
     positionState.value = DEFAULT_POSITION
     autoCapitalizeState.value = DEFAULT_AUTO_CAPITALIZE.toBool()
     spacebarMultiTapsState.value = DEFAULT_SPACEBAR_MULTITAPS.toBool()
