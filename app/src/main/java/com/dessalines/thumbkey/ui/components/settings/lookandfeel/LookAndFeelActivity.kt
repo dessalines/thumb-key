@@ -383,6 +383,9 @@ fun LookAndFeelActivity(
                     title = {
                         Text(stringResource(R.string.vibrate_on_tap))
                     },
+                    subtitle = {
+                        Text(stringResource(R.string.vibrate_warning))
+                    },
                     onCheckedChange = {
                         updateAppSettings(
                             appSettingsViewModel,

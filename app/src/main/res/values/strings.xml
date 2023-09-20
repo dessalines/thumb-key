@@ -33,6 +33,7 @@
     <string name="theme_color">Theme color</string>
     <string name="position">Position</string>
     <string name="vibrate_on_tap">Vibrate on tap</string>
+    <string name="vibrate_warning">Requires touch feedback to be enabled in system settings</string>
     <string name="play_sound_on_tap">Play sound on tap</string>
     <string name="auto_capitalize">Auto-Capitalize</string>
     <string name="key_size">Key Size: %1$s</string>
