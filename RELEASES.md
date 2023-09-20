@@ -1,3 +1,19 @@
+# Thumb-Key 2.1.0 (2023-09-20)
+
+## What's Changed
+
+- Haptic and audible feedback on emoji key press + key border displayed properly. by @sslater11 in https://github.com/dessalines/thumb-key/pull/426
+- Update and rename ThumbKeyESCAv1.kt to ThumbKeyESCAv2.kt by @PeuDenPau in https://github.com/dessalines/thumb-key/pull/423
+- Fixing markdown view colors to use M3 theme. Fixes #409 by @dessalines in https://github.com/dessalines/thumb-key/pull/427
+- Add slide selection and deletion by @storvik in https://github.com/dessalines/thumb-key/pull/424
+- Adding haptic feedback warning. Fixes #420 by @dessalines in https://github.com/dessalines/thumb-key/pull/428
+
+## New Contributors
+
+- @PeuDenPau made their first contribution in https://github.com/dessalines/thumb-key/pull/423
+
+**Full Changelog**: https://github.com/dessalines/thumb-key/compare/2.0.0...2.1.0
+
 # Thumb-Key 2.0.0 (2023-09-18)
 
 ## What's Changed
