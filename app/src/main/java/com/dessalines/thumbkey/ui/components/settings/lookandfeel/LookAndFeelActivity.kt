@@ -853,6 +853,7 @@ fun LookAndFeelActivity(
                 )
                 SettingsSlider(
                     valueRange = 1f..50f,
+                    enabled = slideEnabledState.value,
                     state = slideSensitivityState,
                     icon = {
                         Icon(
