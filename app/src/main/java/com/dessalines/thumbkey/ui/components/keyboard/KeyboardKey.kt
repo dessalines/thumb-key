@@ -187,7 +187,8 @@ fun KeyboardKey(
                         offsetX += x
                         offsetY += y
                         if (key.slideType == SlideType.MOVE_CURSOR && slideEnabled) {
-                            if (abs(offsetY) > slideSensitivity * 5) {
+                            val slideSelectionOffsetTrigger = 0 - (keySizeDp.toPx() * 1.25)
+                            if (offsetY < slideSelectionOffsetTrigger) {
                                 // If user slides upwards, enable selection
                                 if (!selection.active) {
                                     // Activate selection
@@ -256,8 +257,9 @@ fun KeyboardKey(
                             }
                         } else if (key.slideType == SlideType.DELETE && slideEnabled) {
                             if (!selection.active) {
-                                // Activate selection, first detection is longer to preserve swipe actions
-                                if (abs(offsetX) > slideSensitivity * 10) {
+                                // Activate selection, first detection is bigger than the size of a keyboard key to preserve swipe actions.
+                                val slideDeleteSelectionOffsetTrigger = keySizeDp.toPx() * 1.25
+                                if ((abs(offsetX) > slideDeleteSelectionOffsetTrigger)) {
                                     selection = startSelection(ime)
                                 }
                             } else {
