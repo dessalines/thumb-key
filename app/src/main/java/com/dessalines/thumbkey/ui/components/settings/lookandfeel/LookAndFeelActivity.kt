@@ -586,41 +586,6 @@ fun LookAndFeelActivity(
                     },
                 )
                 SettingsCheckbox(
-                    state = slideEnabledState,
-                    icon = {
-                        Icon(
-                            imageVector = Icons.Outlined.SpaceBar,
-                            contentDescription = stringResource(R.string.slide_enable),
-                        )
-                    },
-                    title = {
-                        Text(stringResource(R.string.slide_enable))
-                    },
-                    onCheckedChange = {
-                        updateAppSettings(
-                            appSettingsViewModel,
-                            keySizeState,
-                            pushupSizeState,
-                            animationSpeedState,
-                            animationHelperSpeedState,
-                            minSwipeLengthState,
-                            slideSensitivityState,
-                            slideEnabledState,
-                            positionState,
-                            autoCapitalizeState,
-                            spacebarMultiTapsState,
-                            keyBordersState,
-                            vibrateOnTapState,
-                            soundOnTapState,
-                            hideLettersState,
-                            hideSymbolsState,
-                            keyboardLayoutsState,
-                            themeState,
-                            themeColorState,
-                        )
-                    },
-                )
-                SettingsCheckbox(
                     state = keyBordersState,
                     icon = {
                         Icon(
@@ -850,6 +815,41 @@ fun LookAndFeelActivity(
                     slideSensitivityState
                         .value
                         .toInt().toString(),
+                )
+                SettingsCheckbox(
+                    state = slideEnabledState,
+                    icon = {
+                        Icon(
+                            imageVector = Icons.Outlined.SpaceBar,
+                            contentDescription = stringResource(R.string.slide_enable),
+                        )
+                    },
+                    title = {
+                        Text(stringResource(R.string.slide_enable))
+                    },
+                    onCheckedChange = {
+                        updateAppSettings(
+                            appSettingsViewModel,
+                            keySizeState,
+                            pushupSizeState,
+                            animationSpeedState,
+                            animationHelperSpeedState,
+                            minSwipeLengthState,
+                            slideSensitivityState,
+                            slideEnabledState,
+                            positionState,
+                            autoCapitalizeState,
+                            spacebarMultiTapsState,
+                            keyBordersState,
+                            vibrateOnTapState,
+                            soundOnTapState,
+                            hideLettersState,
+                            hideSymbolsState,
+                            keyboardLayoutsState,
+                            themeState,
+                            themeColorState,
+                        )
+                    },
                 )
                 SettingsSlider(
                     valueRange = 1f..50f,
