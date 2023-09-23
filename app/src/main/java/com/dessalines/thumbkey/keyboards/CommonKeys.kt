@@ -138,20 +138,12 @@ val BACKSPACE_KEY_ITEM =
         slideType = SlideType.DELETE,
         swipes = mapOf(
             SwipeDirection.LEFT to KeyC(
-                action = KeyAction.DeleteLastWord,
+                action = KeyAction.DeleteWordBeforeCursor,
                 display = null,
             ),
             SwipeDirection.RIGHT to KeyC(
-                action = KeyAction.SendEvent(
-                    KeyEvent(
-                        KeyEvent.ACTION_DOWN,
-                        KeyEvent
-                            .KEYCODE_FORWARD_DEL,
-                    ),
-                ),
+                action = KeyAction.DeleteWordAfterCursor,
                 display = null,
-                color = ColorVariant.MUTED,
-                size = FontSizeVariant.SMALLEST,
             ),
         ),
         backgroundColor = ColorVariant.SURFACE_VARIANT,
@@ -388,20 +380,12 @@ val BACKSPACE_TYPESPLIT_KEY_ITEM =
         swipeType = SwipeNWay.FOUR_WAY_CROSS,
         swipes = mapOf(
             SwipeDirection.LEFT to KeyC(
-                action = KeyAction.DeleteLastWord,
+                action = KeyAction.DeleteWordBeforeCursor,
                 display = null,
             ),
             SwipeDirection.RIGHT to KeyC(
-                action = KeyAction.SendEvent(
-                    KeyEvent(
-                        KeyEvent.ACTION_DOWN,
-                        KeyEvent
-                            .KEYCODE_FORWARD_DEL,
-                    ),
-                ),
+                action = KeyAction.DeleteWordAfterCursor,
                 display = null,
-                color = ColorVariant.MUTED,
-                size = FontSizeVariant.SMALLEST,
             ),
             SwipeDirection.TOP to KeyC(
                 display = KeyDisplay.IconDisplay(Icons.Outlined.ArrowDropUp),
@@ -415,20 +399,12 @@ val BACKSPACE_TYPESPLIT_KEY_ITEM =
 val BACKSPACE_TYPESPLIT_SHIFTED_KEY_ITEM = BACKSPACE_TYPESPLIT_KEY_ITEM.copy(
     swipes = mapOf(
         SwipeDirection.LEFT to KeyC(
-            action = KeyAction.DeleteLastWord,
+            action = KeyAction.DeleteWordBeforeCursor,
             display = null,
         ),
         SwipeDirection.RIGHT to KeyC(
-            action = KeyAction.SendEvent(
-                KeyEvent(
-                    KeyEvent.ACTION_DOWN,
-                    KeyEvent
-                        .KEYCODE_FORWARD_DEL,
-                ),
-            ),
+            action = KeyAction.DeleteWordAfterCursor,
             display = null,
-            color = ColorVariant.MUTED,
-            size = FontSizeVariant.SMALLEST,
         ),
         SwipeDirection.TOP to KeyC(
             display = KeyDisplay.IconDisplay(Icons.Outlined.KeyboardCapslock),

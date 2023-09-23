@@ -309,9 +309,14 @@ fun performKeyAction(
             ime.currentInputConnection.sendKeyEvent(ev)
         }
 
-        is KeyAction.DeleteLastWord -> {
+        is KeyAction.DeleteWordBeforeCursor -> {
             Log.d(TAG, "deleting last word")
-            deleteLastWord(ime)
+            deleteWordBeforeCursor(ime)
+        }
+
+        is KeyAction.DeleteWordAfterCursor -> {
+            Log.d(TAG, "deleting next word")
+            deleteWordAfterCursor(ime)
         }
 
         is KeyAction.ReplaceLastText -> {
@@ -487,15 +492,26 @@ fun autoCapitalizeCheck(
     return (listOf(". ", "? ", "! ").contains(textBefore)) || empty
 }
 
-fun deleteLastWord(ime: IMEService) {
-    val lastWords = ime.currentInputConnection.getTextBeforeCursor(9999, 0)
+fun deleteWordBeforeCursor(ime: IMEService) {
+    val wordsBeforeCursor = ime.currentInputConnection.getTextBeforeCursor(9999, 0)
 
-    val trailingSpacesLength = lastWords?.length?.minus(lastWords.trimEnd().length) ?: 0
-    val trimmed = lastWords?.trim()
+    val trailingSpacesLength = wordsBeforeCursor?.length?.minus(wordsBeforeCursor.trimEnd().length) ?: 0
+    val trimmed = wordsBeforeCursor?.trim()
     val lastWordLength = trimmed?.split("\\s".toRegex())?.lastOrNull()?.length ?: 1
     val minDelete = lastWordLength + trailingSpacesLength
 
     ime.currentInputConnection.deleteSurroundingText(minDelete, 0)
+}
+
+fun deleteWordAfterCursor(ime: IMEService) {
+    val wordsAfterCursor = ime.currentInputConnection.getTextAfterCursor(9999, 0)
+
+    val trailingSpacesLength = wordsAfterCursor?.length?.minus(wordsAfterCursor.trimStart().length) ?: 0
+    val trimmed = wordsAfterCursor?.trim()
+    val nextWordLength = trimmed?.split("\\s".toRegex())?.firstOrNull()?.length ?: 1
+    val minDelete = nextWordLength + trailingSpacesLength
+
+    ime.currentInputConnection.deleteSurroundingText(0, minDelete)
 }
 
 fun buildTapActions(
