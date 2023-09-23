@@ -426,8 +426,8 @@ val THUMBKEY_ID_V1_SN_SHIFTED = KeyboardC(
                     action = KeyAction.CommitText("T"),
                     size = FontSizeVariant.LARGE,
                     color = ColorVariant.PRIMARY,
-                    ),
-                    swipes = mapOf(
+                ),
+                swipes = mapOf(
                     SwipeDirection.BOTTOM_RIGHT to KeyC(
                         display = KeyDisplay.TextDisplay("H"),
                         action = KeyAction.CommitText("H"),
