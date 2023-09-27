@@ -145,7 +145,7 @@ enum class KeyboardLayout(val title: String, val index: Int) {
     TypeSplitPTv1("Type-Split português v1", 41),
     TypeSplitPLv1("Type-Split polski v1", 42),
     TwoHandsENv1("Two Hands english v1", 43),
-    ThumbKeyEnProgrammerWide("Wide english programmer", 44),
+    ThumbKeyEnProgrammerWide("Wide programmer (Thumb-Key english)", 44),
     ThumbKeyHUv1("Thumb-Key magyar nyelv v1", 45),
     ThumbKeyESEOv1("Thumb-Key español esperanto v1", 46),
     MessageEaseIT("MessageEase italiano", 47),
