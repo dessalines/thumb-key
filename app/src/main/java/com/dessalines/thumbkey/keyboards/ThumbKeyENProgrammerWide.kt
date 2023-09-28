@@ -19,10 +19,10 @@ import com.dessalines.thumbkey.utils.SwipeDirection
 import com.dessalines.thumbkey.utils.SwipeNWay
 
 // uses programmer layout but moves spacebar to the left column in order to make a more aspect ration friendly layout. this grid is 5x3 which is closer to the average phone aspect ration of 16:9 than 4x4 keyboard.
-val WIDE_LAYOUT_EN_PROGRAMMER = KeyboardC(
+val THUMBKEY_EN_PROGRAMMER_WIDE = KeyboardC(
     listOf(
         listOf(
-            SPACEBAR_TYPESPLIT_TOP_KEY_ITEM,
+            EMOJI_KEY_ITEM,
             KeyItemC(
                 center = KeyC(
                     display = KeyDisplay.TextDisplay("s"),
@@ -351,10 +351,10 @@ val WIDE_LAYOUT_EN_PROGRAMMER = KeyboardC(
     ),
 )
 
-val WIDE_LAYOUT_EN_PROGRAMMER_SHIFTED = KeyboardC(
+val THUMBKEY_EN_PROGRAMMER_WIDE_SHIFTED = KeyboardC(
     listOf(
         listOf(
-            SPACEBAR_TYPESPLIT_TOP_KEY_ITEM,
+            EMOJI_BACK_KEY_ITEM,
             KeyItemC(
                 center = KeyC(
                     display = KeyDisplay.TextDisplay("S"),
@@ -958,8 +958,8 @@ val NUMERIC_KEYBOARD_WIDE = KeyboardC(
     ),
 )
 
-val WIDE_LAYOUT_EN_PROGRAMMER_KEYBOARD_MODES: Map<KeyboardMode, KeyboardC> = mapOf(
-    KeyboardMode.MAIN to WIDE_LAYOUT_EN_PROGRAMMER,
-    KeyboardMode.SHIFTED to WIDE_LAYOUT_EN_PROGRAMMER_SHIFTED,
+val THUMBKEY_EN_PROGRAMMER_WIDE_KEYBOARD_MODES: Map<KeyboardMode, KeyboardC> = mapOf(
+    KeyboardMode.MAIN to THUMBKEY_EN_PROGRAMMER_WIDE,
+    KeyboardMode.SHIFTED to THUMBKEY_EN_PROGRAMMER_WIDE_SHIFTED,
     KeyboardMode.NUMERIC to NUMERIC_KEYBOARD_WIDE,
 )
