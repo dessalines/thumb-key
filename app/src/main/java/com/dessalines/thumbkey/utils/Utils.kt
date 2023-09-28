@@ -53,8 +53,8 @@ import com.dessalines.thumbkey.keyboards.THUMBKEY_DE_V2_KEYBOARD_MODES
 import com.dessalines.thumbkey.keyboards.THUMBKEY_DE_V2_MULTILINGUAL_KEYBOARD_MODES
 import com.dessalines.thumbkey.keyboards.THUMBKEY_EN_PROGRAMMER_WIDE_KEYBOARD_MODES
 import com.dessalines.thumbkey.keyboards.THUMBKEY_EN_V4_KEYBOARD_MODES
-import com.dessalines.thumbkey.keyboards.THUMBKEY_EN_V4_MULTI_KEYBOARD_MODES
 import com.dessalines.thumbkey.keyboards.THUMBKEY_EN_V4_MULTI_IT_KEYBOARD_MODES
+import com.dessalines.thumbkey.keyboards.THUMBKEY_EN_V4_MULTI_KEYBOARD_MODES
 import com.dessalines.thumbkey.keyboards.THUMBKEY_EN_V4_PROGRAMMER_KEYBOARD_MODES
 import com.dessalines.thumbkey.keyboards.THUMBKEY_EN_V4_SYMBOLS_KEYBOARD_MODES
 import com.dessalines.thumbkey.keyboards.THUMBKEY_EOENDE_KEYBOARD_MODES
