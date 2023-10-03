@@ -97,7 +97,7 @@ val EMOJI_KEY_ITEM =
                 color = ColorVariant.MUTED,
             ),
             SwipeDirection.BOTTOM_LEFT to KeyC(
-              display = KeyDisplay.IconDisplay(Icons.Outlined.Mic),
+                display = KeyDisplay.IconDisplay(Icons.Outlined.Mic),
                 action = KeyAction.SwitchIMEVoice,
                 color = ColorVariant.MUTED,
             ),

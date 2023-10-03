@@ -410,16 +410,16 @@ fun performKeyAction(
         KeyAction.SwitchLanguage -> onSwitchLanguage()
         KeyAction.SwitchPosition -> onSwitchPosition()
         KeyAction.SwitchIME -> {
-             val imeManager =
-                 ime.getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
-             imeManager.showInputMethodPicker()
+            val imeManager =
+                ime.getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
+            imeManager.showInputMethodPicker()
         }
         KeyAction.SwitchIMEVoice -> {
             val imeManager =
                 ime.getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
             val list: List<InputMethodInfo> = imeManager.enabledInputMethodList
             for (el in list) {
-                for (i in 0 until el.subtypeCount){
+                for (i in 0 until el.subtypeCount) {
                     if (el.getSubtypeAt(i).mode != "voice") continue
                     if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.P) {
                         ime.switchInputMethod(el.id)
