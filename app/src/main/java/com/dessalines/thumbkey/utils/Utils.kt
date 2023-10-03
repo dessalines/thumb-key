@@ -10,6 +10,7 @@ import android.text.InputType
 import android.util.Log
 import android.view.KeyEvent
 import android.view.inputmethod.EditorInfo
+import android.view.inputmethod.InputMethodInfo
 import android.view.inputmethod.InputMethodManager
 import android.widget.Toast
 import androidx.compose.material.icons.Icons
@@ -409,9 +410,27 @@ fun performKeyAction(
         KeyAction.SwitchLanguage -> onSwitchLanguage()
         KeyAction.SwitchPosition -> onSwitchPosition()
         KeyAction.SwitchIME -> {
+             val imeManager =
+                 ime.getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
+             imeManager.showInputMethodPicker()
+        }
+        KeyAction.SwitchIMEVoice -> {
             val imeManager =
                 ime.getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
-            imeManager.showInputMethodPicker()
+            val list: List<InputMethodInfo> = imeManager.enabledInputMethodList
+            for (el in list) {
+                for (i in 0 until el.subtypeCount){
+                    if (el.getSubtypeAt(i).mode != "voice") continue
+                    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.P) {
+                        ime.switchInputMethod(el.id)
+                    } else {
+                        ime.window.window?.let { window ->
+                            @Suppress("DEPRECATION")
+                            imeManager.setInputMethod(window.attributes.token, el.id)
+                        }
+                    }
+                }
+            }
         }
     }
 }

@@ -15,6 +15,7 @@ import androidx.compose.material.icons.outlined.KeyboardCapslock
 import androidx.compose.material.icons.outlined.KeyboardReturn
 import androidx.compose.material.icons.outlined.Language
 import androidx.compose.material.icons.outlined.LinearScale
+import androidx.compose.material.icons.outlined.Mic
 import androidx.compose.material.icons.outlined.Mood
 import androidx.compose.material.icons.outlined.Numbers
 import androidx.compose.material.icons.outlined.Redo
@@ -83,7 +84,7 @@ val EMOJI_KEY_ITEM =
             size = FontSizeVariant.LARGE,
             color = ColorVariant.SECONDARY,
         ),
-        swipeType = SwipeNWay.FOUR_WAY_CROSS,
+        swipeType = SwipeNWay.EIGHT_WAY,
         swipes = mapOf(
             SwipeDirection.TOP to KeyC(
                 display = KeyDisplay.IconDisplay(Icons.Outlined.Settings),
@@ -93,6 +94,11 @@ val EMOJI_KEY_ITEM =
             SwipeDirection.BOTTOM to KeyC(
                 display = KeyDisplay.IconDisplay(Icons.Outlined.Keyboard),
                 action = KeyAction.SwitchIME,
+                color = ColorVariant.MUTED,
+            ),
+            SwipeDirection.BOTTOM_LEFT to KeyC(
+              display = KeyDisplay.IconDisplay(Icons.Outlined.Mic),
+                action = KeyAction.SwitchIMEVoice,
                 color = ColorVariant.MUTED,
             ),
             SwipeDirection.LEFT to KeyC(
