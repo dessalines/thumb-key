@@ -335,28 +335,12 @@ private fun autoCapitalize(
     ime: IMEService,
     onAutoCapitalize: (enable: Boolean) -> Unit,
 ) {
-    autoCapitalizeI(ime)
+    // autoCapitalizeI(ime)
 
     if (autoCapitalizeCheck(ime)) {
         onAutoCapitalize(true)
     } else {
         onAutoCapitalize(false)
-    }
-}
-
-fun autoCapitalizeI(
-    ime: IMEService,
-) {
-    // Capitalizes 'i'
-    val textBefore = ime.currentInputConnection.getTextBeforeCursor(3, 0)
-    if (!textBefore.isNullOrEmpty()) {
-        if (textBefore == " i ") {
-            ime.currentInputConnection.deleteSurroundingText(2, 0)
-            ime.currentInputConnection.commitText(
-                "I ",
-                1,
-            )
-        }
     }
 }
 
