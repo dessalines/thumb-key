@@ -54,6 +54,7 @@ sealed class KeyAction {
     data object SwitchLanguage : KeyAction()
     data object SwitchPosition : KeyAction()
     data object SwitchIME : KeyAction()
+    data object SwitchIMEVoice : KeyAction()
 }
 
 enum class KeyboardMode {
