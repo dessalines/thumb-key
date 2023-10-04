@@ -89,13 +89,13 @@ data class AppSettings(
     )
     val vibrateOnTap: Int,
     @ColumnInfo(
-        name = "sound_on_tap",
-        defaultValue = DEFAULT_SOUND_ON_TAP.toString(),
+        name = "slide_enabled",
+        defaultValue = DEFAULT_SLIDE_ENABLED.toString(),
     )
     val slideEnabled: Int,
     @ColumnInfo(
-        name = "slide_enabled",
-        defaultValue = DEFAULT_SLIDE_ENABLED.toString(),
+        name = "sound_on_tap",
+        defaultValue = DEFAULT_SOUND_ON_TAP.toString(),
     )
     val soundOnTap: Int,
     @ColumnInfo(
@@ -161,6 +161,94 @@ data class AppSettings(
     val lastVersionCodeViewed: Int,
 )
 
+data class LayoutsUpdate(
+    val id: Int,
+    @ColumnInfo(
+        name = "keyboard_layout",
+        defaultValue = DEFAULT_KEYBOARD_LAYOUT.toString(),
+    )
+    val keyboardLayout: Int,
+    @ColumnInfo(
+        name = "keyboard_layouts",
+        defaultValue = "$DEFAULT_KEYBOARD_LAYOUT",
+    )
+    val keyboardLayouts: String,
+)
+
+data class LookAndFeelUpdate(
+    val id: Int,
+    @ColumnInfo(
+        name = "key_size",
+    )
+    val keySize: Int,
+    @ColumnInfo(
+        name = "animation_speed",
+    )
+    val animationSpeed: Int,
+    @ColumnInfo(
+        name = "animation_helper_speed",
+    )
+    val animationHelperSpeed: Int,
+    @ColumnInfo(
+        name = "position",
+    )
+    val position: Int,
+    @ColumnInfo(
+        name = "vibrate_on_tap",
+        defaultValue = DEFAULT_VIBRATE_ON_TAP.toString(),
+    )
+    val vibrateOnTap: Int,
+    @ColumnInfo(
+        name = "sound_on_tap",
+        defaultValue = DEFAULT_SOUND_ON_TAP.toString(),
+    )
+    val soundOnTap: Int,
+    @ColumnInfo(
+        name = "theme",
+        defaultValue = DEFAULT_THEME.toString(),
+    )
+    val theme: Int,
+    @ColumnInfo(
+        name = "theme_color",
+        defaultValue = DEFAULT_THEME_COLOR.toString(),
+    )
+    val themeColor: Int,
+    @ColumnInfo(
+        name = "pushup_size",
+        defaultValue = DEFAULT_PUSHUP_SIZE.toString(),
+    )
+    val pushupSize: Int,
+    @ColumnInfo(
+        name = "hide_letters",
+        defaultValue = DEFAULT_HIDE_LETTERS.toString(),
+    )
+    val hideLetters: Int,
+    @ColumnInfo(
+        name = "key_borders",
+        defaultValue = DEFAULT_KEY_BORDERS.toString(),
+    )
+    val keyBorders: Int,
+    @ColumnInfo(
+        name = "hide_symbols",
+        defaultValue = DEFAULT_HIDE_SYMBOLS.toString(),
+    )
+    val hideSymbols: Int,
+)
+
+data class BehaviorUpdate(
+    val id: Int,
+    @ColumnInfo(name = "min_swipe_length")
+    val minSwipeLength: Int,
+    @ColumnInfo(name = "slide_sensitivity")
+    val slideSensitivity: Int,
+    @ColumnInfo(name = "slide_enabled")
+    val slideEnabled: Int,
+    @ColumnInfo(name = "auto_capitalize")
+    val autoCapitalize: Int,
+    @ColumnInfo(name = "spacebar_multitaps")
+    val spacebarMultiTaps: Int,
+)
+
 @Dao
 interface AppSettingsDao {
     @Query("SELECT * FROM AppSettings limit 1")
@@ -168,6 +256,15 @@ interface AppSettingsDao {
 
     @Update
     suspend fun updateAppSettings(appSettings: AppSettings)
+
+    @Update(entity = AppSettings::class)
+    fun updateLayouts(layouts: LayoutsUpdate)
+
+    @Update(entity = AppSettings::class)
+    fun updateLookAndFeel(lookAndFeel: LookAndFeelUpdate)
+
+    @Update(entity = AppSettings::class)
+    fun updateBehavior(behavior: BehaviorUpdate)
 
     @Query("UPDATE AppSettings SET last_version_code_viewed = :versionCode")
     suspend fun updateLastVersionCode(versionCode: Int)
@@ -187,6 +284,21 @@ class AppSettingsRepository(private val appSettingsDao: AppSettingsDao) {
     @WorkerThread
     suspend fun update(appSettings: AppSettings) {
         appSettingsDao.updateAppSettings(appSettings)
+    }
+
+    @WorkerThread
+    suspend fun updateLayouts(layouts: LayoutsUpdate) {
+        appSettingsDao.updateLayouts(layouts)
+    }
+
+    @WorkerThread
+    suspend fun updateLookAndFeel(lookAndFeel: LookAndFeelUpdate) {
+        appSettingsDao.updateLookAndFeel(lookAndFeel)
+    }
+
+    @WorkerThread
+    suspend fun updateBehavior(behavior: BehaviorUpdate) {
+        appSettingsDao.updateBehavior(behavior)
     }
 
     @WorkerThread
@@ -362,6 +474,18 @@ class AppSettingsViewModel(private val repository: AppSettingsRepository) : View
 
     fun update(appSettings: AppSettings) = viewModelScope.launch {
         repository.update(appSettings)
+    }
+
+    fun updateLayouts(layouts: LayoutsUpdate) = viewModelScope.launch {
+        repository.updateLayouts(layouts)
+    }
+
+    fun updateLookAndFeel(lookAndFeel: LookAndFeelUpdate) = viewModelScope.launch {
+        repository.updateLookAndFeel(lookAndFeel)
+    }
+
+    fun updateBehavior(behavior: BehaviorUpdate) = viewModelScope.launch {
+        repository.updateBehavior(behavior)
     }
 
     fun updateLastVersionCodeViewed(versionCode: Int) = viewModelScope.launch {

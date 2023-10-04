@@ -21,6 +21,7 @@ import com.dessalines.thumbkey.db.AppSettingsViewModelFactory
 import com.dessalines.thumbkey.ui.components.common.ShowChangelog
 import com.dessalines.thumbkey.ui.components.settings.SettingsActivity
 import com.dessalines.thumbkey.ui.components.settings.about.AboutActivity
+import com.dessalines.thumbkey.ui.components.settings.behavior.BehaviorActivity
 import com.dessalines.thumbkey.ui.components.settings.lookandfeel.LookAndFeelActivity
 import com.dessalines.thumbkey.ui.components.setup.SetupActivity
 import com.dessalines.thumbkey.ui.theme.ThumbkeyTheme
@@ -86,12 +87,19 @@ class MainActivity : AppCompatActivity() {
                     composable(route = "settings") {
                         SettingsActivity(
                             navController = navController,
+                            appSettingsViewModel = appSettingsViewModel,
                             thumbkeyEnabled = thumbkeyEnabled,
                             thumbkeySelected = thumbkeySelected,
                         )
                     }
                     composable(route = "lookAndFeel") {
                         LookAndFeelActivity(
+                            navController = navController,
+                            appSettingsViewModel = appSettingsViewModel,
+                        )
+                    }
+                    composable(route = "behavior") {
+                        BehaviorActivity(
                             navController = navController,
                             appSettingsViewModel = appSettingsViewModel,
                         )
