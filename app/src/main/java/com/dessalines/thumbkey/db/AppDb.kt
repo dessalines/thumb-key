@@ -165,12 +165,10 @@ data class LayoutsUpdate(
     val id: Int,
     @ColumnInfo(
         name = "keyboard_layout",
-        defaultValue = DEFAULT_KEYBOARD_LAYOUT.toString(),
     )
     val keyboardLayout: Int,
     @ColumnInfo(
         name = "keyboard_layouts",
-        defaultValue = "$DEFAULT_KEYBOARD_LAYOUT",
     )
     val keyboardLayouts: String,
 )
@@ -195,42 +193,34 @@ data class LookAndFeelUpdate(
     val position: Int,
     @ColumnInfo(
         name = "vibrate_on_tap",
-        defaultValue = DEFAULT_VIBRATE_ON_TAP.toString(),
     )
     val vibrateOnTap: Int,
     @ColumnInfo(
         name = "sound_on_tap",
-        defaultValue = DEFAULT_SOUND_ON_TAP.toString(),
     )
     val soundOnTap: Int,
     @ColumnInfo(
         name = "theme",
-        defaultValue = DEFAULT_THEME.toString(),
     )
     val theme: Int,
     @ColumnInfo(
         name = "theme_color",
-        defaultValue = DEFAULT_THEME_COLOR.toString(),
     )
     val themeColor: Int,
     @ColumnInfo(
         name = "pushup_size",
-        defaultValue = DEFAULT_PUSHUP_SIZE.toString(),
     )
     val pushupSize: Int,
     @ColumnInfo(
         name = "hide_letters",
-        defaultValue = DEFAULT_HIDE_LETTERS.toString(),
     )
     val hideLetters: Int,
     @ColumnInfo(
         name = "key_borders",
-        defaultValue = DEFAULT_KEY_BORDERS.toString(),
     )
     val keyBorders: Int,
     @ColumnInfo(
         name = "hide_symbols",
-        defaultValue = DEFAULT_HIDE_SYMBOLS.toString(),
     )
     val hideSymbols: Int,
 )
