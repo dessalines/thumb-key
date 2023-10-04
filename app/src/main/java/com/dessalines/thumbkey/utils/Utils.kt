@@ -218,7 +218,7 @@ fun performKeyAction(
         KeyAction.GotoSettings -> {
             val mainActivityIntent = Intent(ime, MainActivity::class.java)
             mainActivityIntent.flags = Intent.FLAG_ACTIVITY_NEW_TASK
-            mainActivityIntent.putExtra("startRoute", "lookAndFeel")
+            mainActivityIntent.putExtra("startRoute", "settings")
             ime.startActivity(mainActivityIntent)
         }
 
