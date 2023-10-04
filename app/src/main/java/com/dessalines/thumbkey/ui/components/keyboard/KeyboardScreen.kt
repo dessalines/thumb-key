@@ -51,7 +51,6 @@ import com.dessalines.thumbkey.utils.KeyboardLayout
 import com.dessalines.thumbkey.utils.KeyboardMode
 import com.dessalines.thumbkey.utils.KeyboardPosition
 import com.dessalines.thumbkey.utils.getKeyboardMode
-import com.dessalines.thumbkey.utils.keyboardLayoutToModes
 import com.dessalines.thumbkey.utils.keyboardPositionToAlignment
 import com.dessalines.thumbkey.utils.toBool
 
@@ -79,17 +78,15 @@ fun KeyboardScreen(
     // TODO get rid of this crap
     val lastAction = remember { mutableStateOf<KeyAction?>(null) }
 
-    val keyboardGroup = keyboardLayoutToModes(
-        KeyboardLayout.values().sortedBy { it.index }[
-            settings?.keyboardLayout
-                ?: DEFAULT_KEYBOARD_LAYOUT,
-        ],
-    )
+    val keyboardGroup = KeyboardLayout.entries.sortedBy { it.index }[
+        settings?.keyboardLayout
+            ?: DEFAULT_KEYBOARD_LAYOUT,
+    ].modes
 
     val keyboard = keyboardGroup[mode] ?: THUMBKEY_EN_V4_MAIN
 
     val alignment = keyboardPositionToAlignment(
-        KeyboardPosition.values()[
+        KeyboardPosition.entries[
             settings?.position
                 ?: DEFAULT_POSITION,
         ],
@@ -122,7 +119,8 @@ fun KeyboardScreen(
                 .background(MaterialTheme.colorScheme.onBackground),
         ) {
             Box(
-                modifier = Modifier.weight(1f) // Take up available space equally
+                modifier = Modifier
+                    .weight(1f) // Take up available space equally
                     .padding(keyBorderSize),
             ) {
                 val haptic = LocalHapticFeedback.current
@@ -153,7 +151,7 @@ fun KeyboardScreen(
                 )
             }
 
-            Column() {
+            Column {
                 controllerKeys.forEach { key ->
                     Column {
                         KeyboardKey(
