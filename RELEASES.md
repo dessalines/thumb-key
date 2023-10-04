@@ -1,3 +1,17 @@
+# Thumb-Key 2.1.1 (2023-09-27)
+
+## What's Changed
+
+- Better User Guide section in README by @KraXen72 in https://github.com/dessalines/thumb-key/pull/430
+- Fix IDv1SN bug + renaming Indonesian layout sort problem by @Matyeyev in https://github.com/dessalines/thumb-key/pull/438
+- Complete MessageEaseFR keyboard (main level) by @pulkomandy in https://github.com/dessalines/thumb-key/pull/435
+
+## New Contributors
+
+- @pulkomandy made their first contribution in https://github.com/dessalines/thumb-key/pull/435
+
+**Full Changelog**: https://github.com/dessalines/thumb-key/compare/2.1.0...2.1.1
+
 # Thumb-Key 2.1.0 (2023-09-20)
 
 ## What's Changed
