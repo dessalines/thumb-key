@@ -230,13 +230,13 @@ fun KeyboardScreen(
                 .padding(bottom = pushupSizeDp),
         ) {
             // adds a pretty line if you're using the backdrop
-            if (backdropEnabled){
+            if (backdropEnabled) {
                 Box(
                     modifier = Modifier
                         .align(Alignment.TopCenter)
                         .fillMaxWidth()
                         .height(1.dp)
-                        .background(color = MaterialTheme.colorScheme.surfaceVariant)
+                        .background(color = MaterialTheme.colorScheme.surfaceVariant),
                 )
             }
             Column(

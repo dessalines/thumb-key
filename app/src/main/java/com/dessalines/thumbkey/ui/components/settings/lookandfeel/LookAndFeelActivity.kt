@@ -349,11 +349,11 @@ fun LookAndFeelActivity(
                     },
                 )
                 SettingsCheckbox(
-                state = backdropEnabledState,
-                icon = {
-                    Icon(
-                        imageVector = Icons.Outlined.ViewDay,
-                        contentDescription = null,
+                    state = backdropEnabledState,
+                    icon = {
+                        Icon(
+                            imageVector = Icons.Outlined.ViewDay,
+                            contentDescription = null,
                         )
                     },
                     title = {
