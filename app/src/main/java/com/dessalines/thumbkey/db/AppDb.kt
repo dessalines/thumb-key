@@ -161,7 +161,7 @@ data class AppSettings(
     )
     val lastVersionCodeViewed: Int,
     @ColumnInfo(
-        name = "keyboard_backdrop_enabled",
+        name = "backdrop_enabled",
         defaultValue = DEFAULT_BACKDROP_ENABLED.toString(),
     )
     val backdropEnabled: Int,

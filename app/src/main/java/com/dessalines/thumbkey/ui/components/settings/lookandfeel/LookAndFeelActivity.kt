@@ -316,20 +316,18 @@ fun LookAndFeelActivity(
                         )
                     },
                 )
-                val keySizeStr = stringResource(R.string.key_size, keySizeState.value.toInt().toString())
-                SettingsSlider(
-                    valueRange = 10f..200f,
-                    state = keySizeState,
+                SettingsCheckbox(
+                    state = backdropEnabledState,
                     icon = {
                         Icon(
-                            imageVector = Icons.Outlined.FormatSize,
+                            imageVector = Icons.Outlined.ViewDay,
                             contentDescription = null,
                         )
                     },
                     title = {
-                        Text(keySizeStr)
+                        Text(stringResource(R.string.backdrop))
                     },
-                    onValueChangeFinished = {
+                    onCheckedChange = {
                         updateLookAndFeel(
                             appSettingsViewModel,
                             keySizeState,
@@ -348,18 +346,20 @@ fun LookAndFeelActivity(
                         )
                     },
                 )
-                SettingsCheckbox(
-                    state = backdropEnabledState,
+                val keySizeStr = stringResource(R.string.key_size, keySizeState.value.toInt().toString())
+                SettingsSlider(
+                    valueRange = 10f..200f,
+                    state = keySizeState,
                     icon = {
                         Icon(
-                            imageVector = Icons.Outlined.ViewDay,
+                            imageVector = Icons.Outlined.FormatSize,
                             contentDescription = null,
                         )
                     },
                     title = {
-                        Text(stringResource(R.string.backdrop))
+                        Text(keySizeStr)
                     },
-                    onCheckedChange = {
+                    onValueChangeFinished = {
                         updateLookAndFeel(
                             appSettingsViewModel,
                             keySizeState,
