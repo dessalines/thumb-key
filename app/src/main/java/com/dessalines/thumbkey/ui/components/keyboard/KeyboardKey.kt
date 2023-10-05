@@ -187,8 +187,8 @@ fun KeyboardKey(
                         offsetX += x
                         offsetY += y
                         if (key.slideType == SlideType.MOVE_CURSOR && slideEnabled) {
-                            val slideSelectionOffsetTrigger = 0 - (keySizeDp.toPx() * 1.25)
-                            if (offsetY < slideSelectionOffsetTrigger) {
+                            val slideSelectionOffsetTrigger = (keySizeDp.toPx() * 1.25)
+                            if (abs(offsetY) > slideSelectionOffsetTrigger) {
                                 // If user slides upwards, enable selection
                                 if (!selection.active) {
                                     // Activate selection
