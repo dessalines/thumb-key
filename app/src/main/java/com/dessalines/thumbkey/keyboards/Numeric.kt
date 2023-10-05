@@ -272,20 +272,7 @@ val NUMERIC_KEYBOARD = KeyboardC(
                 ),
                 widthMultiplier = 2,
             ),
-            KeyItemC(
-                center = KeyC(
-                    display = KeyDisplay.TextDisplay(" "),
-                    action = KeyAction.CommitText(" "),
-                ),
-                nextTapActions = listOf(
-                    KeyAction.ReplaceLastText(". ", trimCount = 1),
-                    KeyAction.ReplaceLastText(", "),
-                    KeyAction.ReplaceLastText("? "),
-                    KeyAction.ReplaceLastText("! "),
-                    KeyAction.ReplaceLastText(": "),
-                ),
-                backgroundColor = ColorVariant.SURFACE_VARIANT,
-            ),
+            SPACEBAR_SKINNY_KEY_ITEM,
             RETURN_KEY_ITEM,
         ),
     ),
