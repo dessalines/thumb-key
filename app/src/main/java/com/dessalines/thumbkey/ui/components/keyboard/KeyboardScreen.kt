@@ -52,7 +52,6 @@ import com.dessalines.thumbkey.utils.KeyAction
 import com.dessalines.thumbkey.utils.KeyboardLayout
 import com.dessalines.thumbkey.utils.KeyboardMode
 import com.dessalines.thumbkey.utils.KeyboardPosition
-import com.dessalines.thumbkey.utils.conditional
 import com.dessalines.thumbkey.utils.getKeyboardMode
 import com.dessalines.thumbkey.utils.keyboardPositionToAlignment
 import com.dessalines.thumbkey.utils.toBool
@@ -224,9 +223,7 @@ fun KeyboardScreen(
         Box(
             contentAlignment = alignment,
             modifier = Modifier
-                .conditional(backdropEnabled) {
-                    background(backdropColor)
-                }
+                .then(if(backdropEnabled) Modifier.background(backdropColor) else(Modifier))
                 .padding(bottom = pushupSizeDp),
         ) {
             // adds a pretty line if you're using the backdrop
@@ -241,9 +238,7 @@ fun KeyboardScreen(
             }
             Column(
                 modifier = Modifier
-                    .conditional(backdropEnabled) {
-                        padding(top = 4.dp)
-                    }
+                    .then(if(backdropEnabled) Modifier.padding(top = 6.dp) else(Modifier))
                     .background(MaterialTheme.colorScheme.onBackground),
             ) {
                 keyboard.arr.forEach { row ->

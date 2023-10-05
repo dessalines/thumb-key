@@ -499,11 +499,3 @@ fun startSelection(ime: IMEService): Selection {
     }
     return Selection()
 }
-
-fun Modifier.conditional(condition: Boolean, modifier: Modifier.() -> Modifier): Modifier {
-    return if (condition) {
-        then(modifier(Modifier))
-    } else {
-        this
-    }
-}
