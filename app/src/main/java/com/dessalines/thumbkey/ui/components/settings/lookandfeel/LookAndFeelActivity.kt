@@ -17,6 +17,7 @@ import androidx.compose.material.icons.outlined.MusicNote
 import androidx.compose.material.icons.outlined.Palette
 import androidx.compose.material.icons.outlined.VerticalAlignTop
 import androidx.compose.material.icons.outlined.Vibration
+import androidx.compose.material.icons.outlined.ViewDay
 import androidx.compose.material.icons.outlined.Visibility
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.Icon
@@ -43,6 +44,7 @@ import com.dessalines.thumbkey.R
 import com.dessalines.thumbkey.db.AppSettingsViewModel
 import com.dessalines.thumbkey.db.DEFAULT_ANIMATION_HELPER_SPEED
 import com.dessalines.thumbkey.db.DEFAULT_ANIMATION_SPEED
+import com.dessalines.thumbkey.db.DEFAULT_BACKDROP_ENABLED
 import com.dessalines.thumbkey.db.DEFAULT_HIDE_LETTERS
 import com.dessalines.thumbkey.db.DEFAULT_HIDE_SYMBOLS
 import com.dessalines.thumbkey.db.DEFAULT_KEY_BORDERS
@@ -112,6 +114,10 @@ fun LookAndFeelActivity(
 
     val scrollState = rememberScrollState()
 
+    val backdropEnabledState = rememberBooleanSettingState(
+        ((settings?.backdropEnabled ?: DEFAULT_BACKDROP_ENABLED).toBool()),
+    )
+
     Scaffold(
         snackbarHost = { SnackbarHost(snackbarHostState) },
         topBar = {
@@ -152,6 +158,7 @@ fun LookAndFeelActivity(
                             hideSymbolsState,
                             themeState,
                             themeColorState,
+                            backdropEnabledState,
                         )
                     },
                 )
@@ -183,6 +190,7 @@ fun LookAndFeelActivity(
                             hideSymbolsState,
                             themeState,
                             themeColorState,
+                            backdropEnabledState,
                         )
                     },
                 )
@@ -214,6 +222,7 @@ fun LookAndFeelActivity(
                             hideSymbolsState,
                             themeState,
                             themeColorState,
+                            backdropEnabledState,
                         )
                     },
                 )
@@ -243,6 +252,7 @@ fun LookAndFeelActivity(
                             hideSymbolsState,
                             themeState,
                             themeColorState,
+                            backdropEnabledState,
                         )
                     },
                 )
@@ -272,6 +282,7 @@ fun LookAndFeelActivity(
                             hideSymbolsState,
                             themeState,
                             themeColorState,
+                            backdropEnabledState,
                         )
                     },
                 )
@@ -301,6 +312,37 @@ fun LookAndFeelActivity(
                             hideSymbolsState,
                             themeState,
                             themeColorState,
+                            backdropEnabledState,
+                        )
+                    },
+                )
+                SettingsCheckbox(
+                    state = backdropEnabledState,
+                    icon = {
+                        Icon(
+                            imageVector = Icons.Outlined.ViewDay,
+                            contentDescription = null,
+                        )
+                    },
+                    title = {
+                        Text(stringResource(R.string.backdrop))
+                    },
+                    onCheckedChange = {
+                        updateLookAndFeel(
+                            appSettingsViewModel,
+                            keySizeState,
+                            pushupSizeState,
+                            animationSpeedState,
+                            animationHelperSpeedState,
+                            positionState,
+                            keyBordersState,
+                            vibrateOnTapState,
+                            soundOnTapState,
+                            hideLettersState,
+                            hideSymbolsState,
+                            themeState,
+                            themeColorState,
+                            backdropEnabledState,
                         )
                     },
                 )
@@ -332,6 +374,7 @@ fun LookAndFeelActivity(
                             hideSymbolsState,
                             themeState,
                             themeColorState,
+                            backdropEnabledState,
                         )
                     },
                 )
@@ -363,6 +406,7 @@ fun LookAndFeelActivity(
                             hideSymbolsState,
                             themeState,
                             themeColorState,
+                            backdropEnabledState,
                         )
                     },
                 )
@@ -394,6 +438,7 @@ fun LookAndFeelActivity(
                             hideSymbolsState,
                             themeState,
                             themeColorState,
+                            backdropEnabledState,
                         )
                     },
                 )
@@ -430,6 +475,7 @@ fun LookAndFeelActivity(
                             hideSymbolsState,
                             themeState,
                             themeColorState,
+                            backdropEnabledState,
                         )
                     },
                 )
@@ -463,6 +509,7 @@ fun LookAndFeelActivity(
                             hideSymbolsState,
                             themeState,
                             themeColorState,
+                            backdropEnabledState,
                         )
                     },
                 )
@@ -492,6 +539,7 @@ fun LookAndFeelActivity(
                             hideSymbolsState,
                             themeState,
                             themeColorState,
+                            backdropEnabledState,
                         )
                     },
                 )
@@ -516,6 +564,7 @@ private fun updateLookAndFeel(
     hideSymbolsState: SettingValueState<Boolean>,
     themeState: SettingValueState<Int>,
     themeColorState: SettingValueState<Int>,
+    backdropEnabledState: SettingValueState<Boolean>,
 ) {
     appSettingsViewModel.updateLookAndFeel(
         LookAndFeelUpdate(
@@ -532,6 +581,7 @@ private fun updateLookAndFeel(
             hideSymbols = hideSymbolsState.value.toInt(),
             theme = themeState.value,
             themeColor = themeColorState.value,
+            backdropEnabled = backdropEnabledState.value.toInt(),
         ),
     )
 }

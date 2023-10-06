@@ -49,6 +49,7 @@ const val DEFAULT_KEY_BORDERS = 1
 const val DEFAULT_SPACEBAR_MULTITAPS = 1
 const val DEFAULT_SLIDE_SENSITIVITY = 9
 const val DEFAULT_SLIDE_ENABLED = 0
+const val DEFAULT_BACKDROP_ENABLED = 0
 
 @Entity
 data class AppSettings(
@@ -159,6 +160,11 @@ data class AppSettings(
         defaultValue = "0",
     )
     val lastVersionCodeViewed: Int,
+    @ColumnInfo(
+        name = "backdrop_enabled",
+        defaultValue = DEFAULT_BACKDROP_ENABLED.toString(),
+    )
+    val backdropEnabled: Int,
 )
 
 data class LayoutsUpdate(
@@ -223,6 +229,10 @@ data class LookAndFeelUpdate(
         name = "hide_symbols",
     )
     val hideSymbols: Int,
+    @ColumnInfo(
+        name = "backdrop_enabled",
+    )
+    val backdropEnabled: Int,
 )
 
 data class BehaviorUpdate(
@@ -400,8 +410,16 @@ val MIGRATION_9_10 = object : Migration(9, 10) {
     }
 }
 
+val MIGRATION_10_11 = object : Migration(10, 11) {
+    override fun migrate(database: SupportSQLiteDatabase) {
+        database.execSQL(
+            "alter table AppSettings add column backdrop_enabled INTEGER NOT NULL default $DEFAULT_BACKDROP_ENABLED",
+        )
+    }
+}
+
 @Database(
-    version = 10,
+    version = 11,
     entities = [AppSettings::class],
     exportSchema = true,
 )
@@ -434,6 +452,7 @@ abstract class AppDB : RoomDatabase() {
                         MIGRATION_7_8,
                         MIGRATION_8_9,
                         MIGRATION_9_10,
+                        MIGRATION_10_11,
                     )
                     // Necessary because it can't insert data on creation
                     .addCallback(object : Callback() {

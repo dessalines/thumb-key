@@ -62,4 +62,5 @@
     <string name="key_borders">Key Borders</string>
     <string name="spacebar_multitaps">Spacebar Multi-taps</string>
     <string name="done">Done</string>
+    <string name="backdrop">Keyboard Backdrop</string>
 </resources>
