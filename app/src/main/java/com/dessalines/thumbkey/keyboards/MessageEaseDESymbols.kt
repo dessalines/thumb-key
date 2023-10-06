@@ -597,8 +597,9 @@ val MESSAGEEASE_DE_SYMBOLS_SHIFTED = KeyboardC(
                 ),
                 swipes = mapOf(
                     SwipeDirection.TOP to KeyC(
-                        display = KeyDisplay.IconDisplay(Icons.Outlined.ArrowDropUp),
-                        action = KeyAction.ToggleShiftMode(true),
+                        display = KeyDisplay.IconDisplay(Icons.Outlined.KeyboardCapslock),
+                        capsModeDisplay = KeyDisplay.IconDisplay(Icons.Outlined.Copyright),
+                        action = KeyAction.ToggleCapsLock,
                         color = ColorVariant.MUTED,
                     ),
                     SwipeDirection.TOP_LEFT to KeyC(
@@ -613,6 +614,11 @@ val MESSAGEEASE_DE_SYMBOLS_SHIFTED = KeyboardC(
                     SwipeDirection.BOTTOM_LEFT to KeyC(
                         display = KeyDisplay.TextDisplay("@"),
                         action = KeyAction.CommitText("@"),
+                        color = ColorVariant.MUTED,
+                    ),
+                    SwipeDirection.BOTTOM to KeyC(
+                        display = KeyDisplay.IconDisplay(Icons.Outlined.ArrowDropDown),
+                        action = KeyAction.ToggleShiftMode(false),
                         color = ColorVariant.MUTED,
                     ),
                     SwipeDirection.BOTTOM_RIGHT to KeyC(
