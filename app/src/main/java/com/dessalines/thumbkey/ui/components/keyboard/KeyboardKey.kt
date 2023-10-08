@@ -8,6 +8,7 @@ import androidx.compose.animation.core.tween
 import androidx.compose.animation.fadeOut
 import androidx.compose.animation.slideInVertically
 import androidx.compose.foundation.background
+import androidx.compose.foundation.border
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.gestures.detectDragGestures
 import androidx.compose.foundation.interaction.MutableInteractionSource
@@ -18,6 +19,7 @@ import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
+import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.Icon
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
@@ -33,6 +35,7 @@ import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.hapticfeedback.HapticFeedbackType
 import androidx.compose.ui.input.pointer.pointerInput
@@ -116,16 +119,13 @@ fun KeyboardKey(
         MaterialTheme.colorScheme.inversePrimary
     }
 
-    val keyPadding = 15.dp
-    val legendSize = keySize.dp
-    val keySizeDp = keySize.dp + (keyPadding * 2)
+    val keyPadding = 2.0
+    val keyBorderWidth = 0.0
+    val keyBorderColour = MaterialTheme.colorScheme.outline
+    val legendSize = keySize
+    val keySizeDp = keySize + (keyPadding * 2.0)
+    val keyRadius = 0.2 * (keySizeDp / 2.0)
     val legendPadding = 4.dp
-
-    val keyBorderSize = if (keyBorders) {
-        0.5.dp
-    } else {
-        0.dp
-    }
 
     val haptic = LocalHapticFeedback.current
     val audioManager = ctx.getSystemService(Context.AUDIO_SERVICE) as AudioManager
@@ -143,9 +143,14 @@ fun KeyboardKey(
 
     val keyboardKeyModifier =
         Modifier
-            .height(keySizeDp)
-            .width(keySizeDp * key.widthMultiplier)
-            .padding(keyPadding)
+            .height(keySizeDp.dp)
+            .width(keySizeDp.dp * key.widthMultiplier)
+            .padding(keyPadding.dp)
+            .clip(RoundedCornerShape(keyRadius.dp))
+            .then(if (keyBorderWidth > 0.0)
+                Modifier.border(keyBorderWidth.dp, keyBorderColour, shape = RoundedCornerShape(keyRadius.dp))
+                else (Modifier))
+            //.border(keyBorderWidth.dp, keyBorderColour, shape = RoundedCornerShape(keyRadius.dp))
             .background(color = backgroundColor)
             // Note: pointerInput has a delay when switching keyboards, so you must use this
             .clickable(interactionSource = interactionSource, indication = null) {
@@ -379,7 +384,7 @@ fun KeyboardKey(
                 .padding(horizontal = legendPadding),
         ) {
             key.swipes?.get(SwipeDirection.TOP_LEFT)?.let {
-                KeyText(it, legendSize, hideLetters, hideSymbols, capsLock)
+                KeyText(it, legendSize.dp, hideLetters, hideSymbols, capsLock)
             }
         }
         Box(
@@ -389,7 +394,7 @@ fun KeyboardKey(
                 .padding(horizontal = legendPadding),
         ) {
             key.swipes?.get(SwipeDirection.TOP)?.let {
-                KeyText(it, legendSize, hideLetters, hideSymbols, capsLock)
+                KeyText(it, legendSize.dp, hideLetters, hideSymbols, capsLock)
             }
         }
         Box(
@@ -399,7 +404,7 @@ fun KeyboardKey(
                 .padding(horizontal = legendPadding),
         ) {
             key.swipes?.get(SwipeDirection.TOP_RIGHT)?.let {
-                KeyText(it, legendSize, hideLetters, hideSymbols, capsLock)
+                KeyText(it, legendSize.dp, hideLetters, hideSymbols, capsLock)
             }
         }
         Box(
@@ -409,7 +414,7 @@ fun KeyboardKey(
                 .padding(horizontal = legendPadding),
         ) {
             key.swipes?.get(SwipeDirection.LEFT)?.let {
-                KeyText(it, legendSize, hideLetters, hideSymbols, capsLock)
+                KeyText(it, legendSize.dp, hideLetters, hideSymbols, capsLock)
             }
         }
         Box(
@@ -418,7 +423,7 @@ fun KeyboardKey(
                 .fillMaxSize()
                 .padding(horizontal = legendPadding),
         ) {
-            KeyText(key.center, legendSize, hideLetters, hideSymbols, capsLock)
+            KeyText(key.center, legendSize.dp, hideLetters, hideSymbols, capsLock)
         }
 
         Box(
@@ -428,7 +433,7 @@ fun KeyboardKey(
                 .padding(horizontal = legendPadding),
         ) {
             key.swipes?.get(SwipeDirection.RIGHT)?.let {
-                KeyText(it, legendSize, hideLetters, hideSymbols, capsLock)
+                KeyText(it, legendSize.dp, hideLetters, hideSymbols, capsLock)
             }
         }
         Box(
@@ -438,7 +443,7 @@ fun KeyboardKey(
                 .padding(horizontal = legendPadding),
         ) {
             key.swipes?.get(SwipeDirection.BOTTOM_LEFT)?.let {
-                KeyText(it, legendSize, hideLetters, hideSymbols, capsLock)
+                KeyText(it, legendSize.dp, hideLetters, hideSymbols, capsLock)
             }
         }
         Box(
@@ -448,7 +453,7 @@ fun KeyboardKey(
                 .padding(horizontal = legendPadding),
         ) {
             key.swipes?.get(SwipeDirection.BOTTOM)?.let {
-                KeyText(it, legendSize, hideLetters, hideSymbols, capsLock)
+                KeyText(it, legendSize.dp, hideLetters, hideSymbols, capsLock)
             }
         }
         Box(
@@ -458,7 +463,7 @@ fun KeyboardKey(
                 .padding(horizontal = legendPadding),
         ) {
             key.swipes?.get(SwipeDirection.BOTTOM_RIGHT)?.let {
-                KeyText(it, legendSize, hideLetters, hideSymbols, capsLock)
+                KeyText(it, legendSize.dp, hideLetters, hideSymbols, capsLock)
             }
         }
 
@@ -494,7 +499,7 @@ fun KeyboardKey(
             ) {
                 val fontSize = fontSizeVariantToFontSize(
                     fontSizeVariant = FontSizeVariant.LARGE,
-                    keySize = legendSize,
+                    keySize = legendSize.dp,
                 )
                 releasedKey.value?.let { text ->
                     Text(
