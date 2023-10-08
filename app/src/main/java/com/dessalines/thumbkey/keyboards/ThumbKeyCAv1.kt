@@ -419,8 +419,6 @@ val THUMBKEY_CA_V1_MAIN = KeyboardC(
     ),
 )
 
-
-
 val THUMBKEY_CA_V1_SHIFTED = KeyboardC(
     listOf(
         listOf(
