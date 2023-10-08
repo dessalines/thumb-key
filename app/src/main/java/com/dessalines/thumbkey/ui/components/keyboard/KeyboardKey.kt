@@ -107,6 +107,7 @@ fun KeyboardKey(
 
     var offsetX by remember { mutableFloatStateOf(0f) }
     var offsetY by remember { mutableFloatStateOf(0f) }
+    var hasSlideMoveCursorTriggered by remember { mutableStateOf(false) }
 
     var selection by remember { mutableStateOf(Selection()) }
 
@@ -186,9 +187,14 @@ fun KeyboardKey(
                         val (x, y) = dragAmount
                         offsetX += x
                         offsetY += y
+
+                        // First detection is large enough to preserve swipe actions.
+                        val slideOffsetTrigger = (keySizeDp.toPx() * 0.75) + minSwipeLength
+
                         if (key.slideType == SlideType.MOVE_CURSOR && slideEnabled) {
-                            val slideSelectionOffsetTrigger = (keySizeDp.toPx() * 1.25)
+                            val slideSelectionOffsetTrigger = (keySizeDp.toPx() * 1.25) + minSwipeLength
                             if (abs(offsetY) > slideSelectionOffsetTrigger) {
+                                hasSlideMoveCursorTriggered = true
                                 // If user slides upwards, enable selection
                                 if (!selection.active) {
                                     // Activate selection
@@ -206,7 +212,10 @@ fun KeyboardKey(
                                     )
                                     offsetX = 0f
                                 }
-                            } else if (abs(offsetX) > slideSensitivity) {
+                            } else if ((abs(offsetX) > slideOffsetTrigger) ||
+                                ((abs(offsetX) > slideSensitivity) && hasSlideMoveCursorTriggered)
+                            ) {
+                                hasSlideMoveCursorTriggered = true
                                 // If user slides horizontally only, move cursor
                                 if (selection.active) selection = Selection(0, 0, false)
                                 val direction: Int
@@ -257,9 +266,8 @@ fun KeyboardKey(
                             }
                         } else if (key.slideType == SlideType.DELETE && slideEnabled) {
                             if (!selection.active) {
-                                // Activate selection, first detection is bigger than the size of a keyboard key to preserve swipe actions.
-                                val slideDeleteSelectionOffsetTrigger = keySizeDp.toPx() * 1.25
-                                if ((abs(offsetX) > slideDeleteSelectionOffsetTrigger)) {
+                                // Activate selection, first detection is large enough to preserve swipe actions.
+                                if ((abs(offsetX) > slideOffsetTrigger)) {
                                     selection = startSelection(ime)
                                 }
                             } else {
@@ -280,7 +288,12 @@ fun KeyboardKey(
                     },
                     onDragEnd = {
                         lateinit var action: KeyAction
-                        if (key.slideType == SlideType.NONE || !slideEnabled || (key.slideType == SlideType.DELETE && !selection.active)) {
+                        if (key.slideType == SlideType.NONE ||
+                            !slideEnabled ||
+                            ((key.slideType == SlideType.DELETE) && !selection.active) ||
+                            ((key.slideType == SlideType.MOVE_CURSOR) && !hasSlideMoveCursorTriggered)
+                        ) {
+                            hasSlideMoveCursorTriggered = false
                             val swipeDirection =
                                 swipeDirection(offsetX, offsetY, minSwipeLength, key.swipeType)
                             action = key.swipes?.get(swipeDirection)?.action ?: key.center.action
@@ -338,6 +351,7 @@ fun KeyboardKey(
                                 animationHelperSpeed,
                             )
                         } else {
+                            hasSlideMoveCursorTriggered = false
                             action = KeyAction.SendEvent(
                                 KeyEvent(
                                     KeyEvent.ACTION_UP,
