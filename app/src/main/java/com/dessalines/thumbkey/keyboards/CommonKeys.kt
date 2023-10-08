@@ -155,9 +155,27 @@ val SPACEBAR_KEY_ITEM =
             display = KeyDisplay.TextDisplay(" "),
             action = KeyAction.CommitText(" "),
         ),
-        swipeType = SwipeNWay.TWO_WAY_HORIZONTAL,
+        swipeType = SwipeNWay.FOUR_WAY_CROSS,
         slideType = SlideType.MOVE_CURSOR,
         swipes = mapOf(
+            SwipeDirection.TOP to KeyC(
+                action = KeyAction.SendEvent(
+                    KeyEvent(
+                        KeyEvent.ACTION_DOWN,
+                        KeyEvent.KEYCODE_DPAD_UP,
+                    ),
+                ),
+                display = null,
+            ),
+            SwipeDirection.BOTTOM to KeyC(
+                action = KeyAction.SendEvent(
+                    KeyEvent(
+                        KeyEvent.ACTION_DOWN,
+                        KeyEvent.KEYCODE_DPAD_DOWN,
+                    ),
+                ),
+                display = null,
+            ),
             SwipeDirection.LEFT to KeyC(
                 action = KeyAction.SendEvent(
                     KeyEvent(
