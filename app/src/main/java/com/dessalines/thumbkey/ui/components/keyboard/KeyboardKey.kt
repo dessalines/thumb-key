@@ -116,8 +116,10 @@ fun KeyboardKey(
         MaterialTheme.colorScheme.inversePrimary
     }
 
-    val keySizeDp = keySize.dp
-    val keyPadding = 4.dp
+    val keyPadding = 15.dp
+    val legendSize = keySize.dp
+    val keySizeDp = keySize.dp + (keyPadding * 2)
+    val legendPadding = 4.dp
 
     val keyBorderSize = if (keyBorders) {
         0.5.dp
@@ -143,7 +145,7 @@ fun KeyboardKey(
         Modifier
             .height(keySizeDp)
             .width(keySizeDp * key.widthMultiplier)
-            .padding(keyBorderSize)
+            .padding(keyPadding)
             .background(color = backgroundColor)
             // Note: pointerInput has a delay when switching keyboards, so you must use this
             .clickable(interactionSource = interactionSource, indication = null) {
@@ -374,89 +376,89 @@ fun KeyboardKey(
             contentAlignment = Alignment.TopStart,
             modifier = Modifier
                 .fillMaxSize()
-                .padding(horizontal = keyPadding),
+                .padding(horizontal = legendPadding),
         ) {
             key.swipes?.get(SwipeDirection.TOP_LEFT)?.let {
-                KeyText(it, keySizeDp, hideLetters, hideSymbols, capsLock)
+                KeyText(it, legendSize, hideLetters, hideSymbols, capsLock)
             }
         }
         Box(
             contentAlignment = Alignment.TopCenter,
             modifier = Modifier
                 .fillMaxSize()
-                .padding(horizontal = keyPadding),
+                .padding(horizontal = legendPadding),
         ) {
             key.swipes?.get(SwipeDirection.TOP)?.let {
-                KeyText(it, keySizeDp, hideLetters, hideSymbols, capsLock)
+                KeyText(it, legendSize, hideLetters, hideSymbols, capsLock)
             }
         }
         Box(
             contentAlignment = Alignment.TopEnd,
             modifier = Modifier
                 .fillMaxSize()
-                .padding(horizontal = keyPadding),
+                .padding(horizontal = legendPadding),
         ) {
             key.swipes?.get(SwipeDirection.TOP_RIGHT)?.let {
-                KeyText(it, keySizeDp, hideLetters, hideSymbols, capsLock)
+                KeyText(it, legendSize, hideLetters, hideSymbols, capsLock)
             }
         }
         Box(
             contentAlignment = Alignment.CenterStart,
             modifier = Modifier
                 .fillMaxSize()
-                .padding(horizontal = keyPadding),
+                .padding(horizontal = legendPadding),
         ) {
             key.swipes?.get(SwipeDirection.LEFT)?.let {
-                KeyText(it, keySizeDp, hideLetters, hideSymbols, capsLock)
+                KeyText(it, legendSize, hideLetters, hideSymbols, capsLock)
             }
         }
         Box(
             contentAlignment = Alignment.Center,
             modifier = Modifier
                 .fillMaxSize()
-                .padding(horizontal = keyPadding),
+                .padding(horizontal = legendPadding),
         ) {
-            KeyText(key.center, keySizeDp, hideLetters, hideSymbols, capsLock)
+            KeyText(key.center, legendSize, hideLetters, hideSymbols, capsLock)
         }
 
         Box(
             contentAlignment = Alignment.CenterEnd,
             modifier = Modifier
                 .fillMaxSize()
-                .padding(horizontal = keyPadding),
+                .padding(horizontal = legendPadding),
         ) {
             key.swipes?.get(SwipeDirection.RIGHT)?.let {
-                KeyText(it, keySizeDp, hideLetters, hideSymbols, capsLock)
+                KeyText(it, legendSize, hideLetters, hideSymbols, capsLock)
             }
         }
         Box(
             contentAlignment = Alignment.BottomStart,
             modifier = Modifier
                 .fillMaxSize()
-                .padding(horizontal = keyPadding),
+                .padding(horizontal = legendPadding),
         ) {
             key.swipes?.get(SwipeDirection.BOTTOM_LEFT)?.let {
-                KeyText(it, keySizeDp, hideLetters, hideSymbols, capsLock)
+                KeyText(it, legendSize, hideLetters, hideSymbols, capsLock)
             }
         }
         Box(
             contentAlignment = Alignment.BottomCenter,
             modifier = Modifier
                 .fillMaxSize()
-                .padding(horizontal = keyPadding),
+                .padding(horizontal = legendPadding),
         ) {
             key.swipes?.get(SwipeDirection.BOTTOM)?.let {
-                KeyText(it, keySizeDp, hideLetters, hideSymbols, capsLock)
+                KeyText(it, legendSize, hideLetters, hideSymbols, capsLock)
             }
         }
         Box(
             contentAlignment = Alignment.BottomEnd,
             modifier = Modifier
                 .fillMaxSize()
-                .padding(horizontal = keyPadding),
+                .padding(horizontal = legendPadding),
         ) {
             key.swipes?.get(SwipeDirection.BOTTOM_RIGHT)?.let {
-                KeyText(it, keySizeDp, hideLetters, hideSymbols, capsLock)
+                KeyText(it, legendSize, hideLetters, hideSymbols, capsLock)
             }
         }
 
@@ -492,7 +494,7 @@ fun KeyboardKey(
             ) {
                 val fontSize = fontSizeVariantToFontSize(
                     fontSizeVariant = FontSizeVariant.LARGE,
-                    keySize = keySizeDp,
+                    keySize = legendSize,
                 )
                 releasedKey.value?.let { text ->
                     Text(
