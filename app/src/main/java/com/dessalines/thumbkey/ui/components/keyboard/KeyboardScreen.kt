@@ -15,6 +15,7 @@ import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
+import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.hapticfeedback.HapticFeedbackType
 import androidx.compose.ui.platform.LocalContext
@@ -28,6 +29,7 @@ import com.dessalines.thumbkey.db.AppSettings
 import com.dessalines.thumbkey.db.DEFAULT_ANIMATION_HELPER_SPEED
 import com.dessalines.thumbkey.db.DEFAULT_ANIMATION_SPEED
 import com.dessalines.thumbkey.db.DEFAULT_AUTO_CAPITALIZE
+import com.dessalines.thumbkey.db.DEFAULT_BACKDROP_ENABLED
 import com.dessalines.thumbkey.db.DEFAULT_HIDE_LETTERS
 import com.dessalines.thumbkey.db.DEFAULT_HIDE_SYMBOLS
 import com.dessalines.thumbkey.db.DEFAULT_KEYBOARD_LAYOUT
@@ -51,7 +53,6 @@ import com.dessalines.thumbkey.utils.KeyboardLayout
 import com.dessalines.thumbkey.utils.KeyboardMode
 import com.dessalines.thumbkey.utils.KeyboardPosition
 import com.dessalines.thumbkey.utils.getKeyboardMode
-import com.dessalines.thumbkey.utils.keyboardLayoutToModes
 import com.dessalines.thumbkey.utils.keyboardPositionToAlignment
 import com.dessalines.thumbkey.utils.toBool
 
@@ -79,17 +80,15 @@ fun KeyboardScreen(
     // TODO get rid of this crap
     val lastAction = remember { mutableStateOf<KeyAction?>(null) }
 
-    val keyboardGroup = keyboardLayoutToModes(
-        KeyboardLayout.values().sortedBy { it.index }[
-            settings?.keyboardLayout
-                ?: DEFAULT_KEYBOARD_LAYOUT,
-        ],
-    )
+    val keyboardGroup = KeyboardLayout.entries.sortedBy { it.index }[
+        settings?.keyboardLayout
+            ?: DEFAULT_KEYBOARD_LAYOUT,
+    ].modes
 
     val keyboard = keyboardGroup[mode] ?: THUMBKEY_EN_V4_MAIN
 
     val alignment = keyboardPositionToAlignment(
-        KeyboardPosition.values()[
+        KeyboardPosition.entries[
             settings?.position
                 ?: DEFAULT_POSITION,
         ],
@@ -104,6 +103,8 @@ fun KeyboardScreen(
     val soundOnTap = (settings?.soundOnTap ?: DEFAULT_SOUND_ON_TAP).toBool()
     val hideLetters = (settings?.hideLetters ?: DEFAULT_HIDE_LETTERS).toBool()
     val hideSymbols = (settings?.hideSymbols ?: DEFAULT_HIDE_SYMBOLS).toBool()
+    val backdropEnabled = (settings?.backdropEnabled ?: DEFAULT_BACKDROP_ENABLED).toBool()
+    val backdropColor = MaterialTheme.colorScheme.background
 
     if (mode == KeyboardMode.EMOJI) {
         val controllerKeys = listOf(EMOJI_BACK_KEY_ITEM, NUMERIC_KEY_ITEM, BACKSPACE_KEY_ITEM, RETURN_KEY_ITEM)
@@ -122,7 +123,8 @@ fun KeyboardScreen(
                 .background(MaterialTheme.colorScheme.onBackground),
         ) {
             Box(
-                modifier = Modifier.weight(1f) // Take up available space equally
+                modifier = Modifier
+                    .weight(1f) // Take up available space equally
                     .padding(keyBorderSize),
             ) {
                 val haptic = LocalHapticFeedback.current
@@ -153,7 +155,7 @@ fun KeyboardScreen(
                 )
             }
 
-            Column() {
+            Column {
                 controllerKeys.forEach { key ->
                     Column {
                         KeyboardKey(
@@ -221,10 +223,22 @@ fun KeyboardScreen(
         Box(
             contentAlignment = alignment,
             modifier = Modifier
+                .then(if (backdropEnabled) Modifier.background(backdropColor) else (Modifier))
                 .padding(bottom = pushupSizeDp),
         ) {
+            // adds a pretty line if you're using the backdrop
+            if (backdropEnabled) {
+                Box(
+                    modifier = Modifier
+                        .align(Alignment.TopCenter)
+                        .fillMaxWidth()
+                        .height(1.dp)
+                        .background(color = MaterialTheme.colorScheme.surfaceVariant),
+                )
+            }
             Column(
                 modifier = Modifier
+                    .then(if (backdropEnabled) Modifier.padding(top = 6.dp) else (Modifier))
                     .background(MaterialTheme.colorScheme.onBackground),
             ) {
                 keyboard.arr.forEach { row ->

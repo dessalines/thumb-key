@@ -1,3 +1,35 @@
+# Thumb-Key 2.2.0 (2023-10-04)
+
+## What's Changed
+
+- Add Emoji to Wide Layout by @thedroppedpocket in https://github.com/dessalines/thumb-key/pull/448
+- EnglishV4MultiIT keyboard layout by @yuroller in https://github.com/dessalines/thumb-key/pull/449
+- Upgrading deps. by @dessalines in https://github.com/dessalines/thumb-key/pull/457
+- Upgrade deps 14 by @dessalines in https://github.com/dessalines/thumb-key/pull/459
+- Add voice input button to emoji key by @storvik in https://github.com/dessalines/thumb-key/pull/454
+- Add messageease en eo symbols by @dessalines in https://github.com/dessalines/thumb-key/pull/458
+- Refactoring settings. by @dessalines in https://github.com/dessalines/thumb-key/pull/460
+
+## New Contributors
+
+- @yuroller made their first contribution in https://github.com/dessalines/thumb-key/pull/449
+
+**Full Changelog**: https://github.com/dessalines/thumb-key/compare/2.1.1...2.2.0
+
+# Thumb-Key 2.1.1 (2023-09-27)
+
+## What's Changed
+
+- Better User Guide section in README by @KraXen72 in https://github.com/dessalines/thumb-key/pull/430
+- Fix IDv1SN bug + renaming Indonesian layout sort problem by @Matyeyev in https://github.com/dessalines/thumb-key/pull/438
+- Complete MessageEaseFR keyboard (main level) by @pulkomandy in https://github.com/dessalines/thumb-key/pull/435
+
+## New Contributors
+
+- @pulkomandy made their first contribution in https://github.com/dessalines/thumb-key/pull/435
+
+**Full Changelog**: https://github.com/dessalines/thumb-key/compare/2.1.0...2.1.1
+
 # Thumb-Key 2.1.0 (2023-09-20)
 
 ## What's Changed

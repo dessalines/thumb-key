@@ -5,7 +5,7 @@ steps:
       - prettier -c "*.md" "*.yml"
 
   check_formatting:
-    image: cimg/android:2023.08
+    image: cimg/android:2023.09.1
     commands:
       - sudo chown -R circleci:circleci .
       - ./gradlew lintKotlin
@@ -13,7 +13,7 @@ steps:
       GRADLE_USER_HOME: ".gradle"
 
   build_project:
-    image: cimg/android:2023.08
+    image: cimg/android:2023.09.1
     commands:
       - sudo chown -R circleci:circleci .
       - ./gradlew assembleDebug
