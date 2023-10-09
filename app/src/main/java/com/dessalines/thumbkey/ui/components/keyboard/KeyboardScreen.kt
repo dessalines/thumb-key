@@ -34,6 +34,9 @@ import com.dessalines.thumbkey.db.DEFAULT_HIDE_LETTERS
 import com.dessalines.thumbkey.db.DEFAULT_HIDE_SYMBOLS
 import com.dessalines.thumbkey.db.DEFAULT_KEYBOARD_LAYOUT
 import com.dessalines.thumbkey.db.DEFAULT_KEY_BORDERS
+import com.dessalines.thumbkey.db.DEFAULT_KEY_BORDER_WIDTH
+import com.dessalines.thumbkey.db.DEFAULT_KEY_PADDING
+import com.dessalines.thumbkey.db.DEFAULT_KEY_RADIUS
 import com.dessalines.thumbkey.db.DEFAULT_KEY_SIZE
 import com.dessalines.thumbkey.db.DEFAULT_MIN_SWIPE_LENGTH
 import com.dessalines.thumbkey.db.DEFAULT_POSITION
@@ -156,7 +159,10 @@ fun KeyboardScreen(
                         KeyboardKey(
                             key = key,
                             lastAction = lastAction,
-                            keySize = settings?.keySize ?: DEFAULT_KEY_SIZE,
+                            legendSize = settings?.keySize ?: DEFAULT_KEY_SIZE,
+                            keyPadding = settings?.keyPadding ?: DEFAULT_KEY_PADDING,
+                            keyBorderWidth = settings?.keyBorderWidth ?: DEFAULT_KEY_BORDER_WIDTH,
+                            keyRadius = settings?.keyRadius ?: DEFAULT_KEY_RADIUS,
                             autoCapitalize = autoCapitalize,
                             spacebarMultiTaps = spacebarMultiTaps,
                             keyBorders = keyBorders,
@@ -244,7 +250,10 @@ fun KeyboardScreen(
                                 KeyboardKey(
                                     key = key,
                                     lastAction = lastAction,
-                                    keySize = settings?.keySize ?: DEFAULT_KEY_SIZE,
+                                    legendSize = settings?.keySize ?: DEFAULT_KEY_SIZE,
+                                    keyPadding = settings?.keyPadding ?: DEFAULT_KEY_PADDING,
+                                    keyBorderWidth = settings?.keyBorderWidth ?: DEFAULT_KEY_BORDER_WIDTH,
+                                    keyRadius = settings?.keyRadius ?: DEFAULT_KEY_RADIUS,
                                     autoCapitalize = autoCapitalize,
                                     spacebarMultiTaps = spacebarMultiTaps,
                                     keyBorders = keyBorders,
