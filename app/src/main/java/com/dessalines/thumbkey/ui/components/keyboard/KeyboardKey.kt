@@ -378,9 +378,9 @@ fun KeyboardKey(
     // Some magic padding numbers so that large radii don'g obscure the ledends
     val radiusPercent = keyRadius.toFloat() / 100.toFloat()
     val yPadding = 0.dp + borderWidth.dp
-    val diagonalXPadding = lerp(legendPadding, 13.dp + borderWidth.dp, radiusPercent)
+    val diagonalXPadding = lerp(legendPadding, 11.dp + borderWidth.dp, radiusPercent)
     val diagonalYPadding = lerp(yPadding, 6.dp + borderWidth.dp, radiusPercent)
-    
+
     Box(
         modifier = keyboardKeyModifier,
     ) {
