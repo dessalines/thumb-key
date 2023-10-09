@@ -155,8 +155,8 @@ fun KeyboardKey(
                         keyBorderColour,
                         shape = RoundedCornerShape(cornerRadius.dp),
                     )
-                }else {
-                    (Modifier)
+                } else {
+                    Modifier
                 }
             )
             .background(color = backgroundColor)
