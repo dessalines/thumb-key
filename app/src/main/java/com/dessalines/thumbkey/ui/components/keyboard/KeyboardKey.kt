@@ -149,11 +149,15 @@ fun KeyboardKey(
             .padding(keyPadding.dp)
             .clip(RoundedCornerShape(cornerRadius.dp))
             .then(
-                if (borderWidth > 0.0) Modifier.border(
-                    borderWidth.dp,
-                    keyBorderColour,
-                    shape = RoundedCornerShape(cornerRadius.dp),
-                ) else (Modifier)
+                if (borderWidth > 0.0) {
+                    Modifier.border(
+                        borderWidth.dp,
+                        keyBorderColour,
+                        shape = RoundedCornerShape(cornerRadius.dp),
+                    )
+                }else {
+                    (Modifier)
+                }
             )
             .background(color = backgroundColor)
             // Note: pointerInput has a delay when switching keyboards, so you must use this
