@@ -420,7 +420,7 @@ fun LookAndFeelActivity(
                 )
                 val keyPaddingStr = stringResource(R.string.key_padding, keyPaddingState.value.toInt().toString())
                 SettingsSlider(
-                    valueRange = 0f..20f,
+                    valueRange = 0f..10f,
                     state = keyPaddingState,
                     icon = {
                         Icon(

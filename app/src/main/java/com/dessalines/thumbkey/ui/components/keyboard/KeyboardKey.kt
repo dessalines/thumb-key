@@ -122,12 +122,12 @@ fun KeyboardKey(
     } else {
         MaterialTheme.colorScheme.inversePrimary
     }
-    
+
     val borderWidth = keyBorderWidth / 10.0
     val keyBorderColour = MaterialTheme.colorScheme.outline
-    val keySize = legendSize + (keyPadding * 2.0)
+    val keySize = legendSize + (keyPadding * 2.0) + (borderWidth * 2.0)
     val cornerRadius = (keyRadius / 100.0) * (keySize / 2.0)
-    val legendPadding = 4.dp
+    val legendPadding = 4.dp  + borderWidth.dp
 
     val haptic = LocalHapticFeedback.current
     val audioManager = ctx.getSystemService(Context.AUDIO_SERVICE) as AudioManager
@@ -377,9 +377,10 @@ fun KeyboardKey(
     // Use box so they can overlap
     // Some magic padding numbers so that large radii don'g obscure the ledends
     val radiusPercent = keyRadius.toFloat() / 100.toFloat()
-    val yPadding = 0.dp
-    val diagonalXPadding = lerp(legendPadding, 13.dp, radiusPercent)
-    val diagonalYPadding = lerp(yPadding, 6.dp, radiusPercent)
+    val yPadding = 0.dp + borderWidth.dp
+    val diagonalXPadding = lerp(legendPadding, 13.dp + borderWidth.dp, radiusPercent)
+    val diagonalYPadding = lerp(yPadding, 6.dp + borderWidth.dp, radiusPercent)
+    
     Box(
         modifier = keyboardKeyModifier,
     ) {
@@ -390,7 +391,7 @@ fun KeyboardKey(
                 .padding(horizontal = diagonalXPadding, vertical = diagonalYPadding),
         ) {
             key.swipes?.get(SwipeDirection.TOP_LEFT)?.let {
-                KeyText(it, legendSize.dp, hideLetters, hideSymbols, capsLock)
+                KeyText(it, (legendSize - borderWidth).dp, hideLetters, hideSymbols, capsLock)
             }
         }
         Box(
@@ -400,7 +401,7 @@ fun KeyboardKey(
                 .padding(vertical = yPadding),
         ) {
             key.swipes?.get(SwipeDirection.TOP)?.let {
-                KeyText(it, legendSize.dp, hideLetters, hideSymbols, capsLock)
+                KeyText(it, (legendSize - borderWidth).dp, hideLetters, hideSymbols, capsLock)
             }
         }
         Box(
@@ -410,7 +411,7 @@ fun KeyboardKey(
                 .padding(horizontal = diagonalXPadding, vertical = diagonalYPadding),
         ) {
             key.swipes?.get(SwipeDirection.TOP_RIGHT)?.let {
-                KeyText(it, legendSize.dp, hideLetters, hideSymbols, capsLock)
+                KeyText(it, (legendSize - borderWidth).dp, hideLetters, hideSymbols, capsLock)
             }
         }
         Box(
@@ -420,7 +421,7 @@ fun KeyboardKey(
                 .padding(horizontal = legendPadding),
         ) {
             key.swipes?.get(SwipeDirection.LEFT)?.let {
-                KeyText(it, legendSize.dp, hideLetters, hideSymbols, capsLock)
+                KeyText(it, (legendSize - borderWidth).dp, hideLetters, hideSymbols, capsLock)
             }
         }
         Box(
@@ -429,7 +430,7 @@ fun KeyboardKey(
                 .fillMaxSize()
                 .padding(legendPadding),
         ) {
-            KeyText(key.center, legendSize.dp, hideLetters, hideSymbols, capsLock)
+            KeyText(key.center, (legendSize - borderWidth).dp, hideLetters, hideSymbols, capsLock)
         }
 
         Box(
@@ -439,7 +440,7 @@ fun KeyboardKey(
                 .padding(horizontal = legendPadding),
         ) {
             key.swipes?.get(SwipeDirection.RIGHT)?.let {
-                KeyText(it, legendSize.dp, hideLetters, hideSymbols, capsLock)
+                KeyText(it, (legendSize - borderWidth).dp, hideLetters, hideSymbols, capsLock)
             }
         }
         Box(
@@ -449,7 +450,7 @@ fun KeyboardKey(
                 .padding(horizontal = diagonalXPadding, vertical = diagonalYPadding),
         ) {
             key.swipes?.get(SwipeDirection.BOTTOM_LEFT)?.let {
-                KeyText(it, legendSize.dp, hideLetters, hideSymbols, capsLock)
+                KeyText(it, (legendSize - borderWidth).dp, hideLetters, hideSymbols, capsLock)
             }
         }
         Box(
@@ -459,7 +460,7 @@ fun KeyboardKey(
                 .padding(vertical = yPadding),
         ) {
             key.swipes?.get(SwipeDirection.BOTTOM)?.let {
-                KeyText(it, legendSize.dp, hideLetters, hideSymbols, capsLock)
+                KeyText(it, (legendSize - borderWidth).dp, hideLetters, hideSymbols, capsLock)
             }
         }
         Box(
@@ -469,7 +470,7 @@ fun KeyboardKey(
                 .padding(horizontal = diagonalXPadding, vertical = diagonalYPadding),
         ) {
             key.swipes?.get(SwipeDirection.BOTTOM_RIGHT)?.let {
-                KeyText(it, legendSize.dp, hideLetters, hideSymbols, capsLock)
+                KeyText(it, (legendSize - borderWidth).dp, hideLetters, hideSymbols, capsLock)
             }
         }
 
