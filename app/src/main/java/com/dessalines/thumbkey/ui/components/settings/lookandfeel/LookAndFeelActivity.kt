@@ -318,39 +318,6 @@ fun LookAndFeelActivity(
                     },
                 )
                 SettingsCheckbox(
-                    state = keyBordersState,
-                    icon = {
-                        Icon(
-                            imageVector = Icons.Outlined.BorderAll,
-                            contentDescription = null,
-                        )
-                    },
-                    title = {
-                        Text(stringResource(R.string.key_borders))
-                    },
-                    onCheckedChange = {
-                        updateLookAndFeel(
-                            appSettingsViewModel,
-                            keySizeState,
-                            pushupSizeState,
-                            animationSpeedState,
-                            animationHelperSpeedState,
-                            positionState,
-                            keyBordersState,
-                            vibrateOnTapState,
-                            soundOnTapState,
-                            hideLettersState,
-                            hideSymbolsState,
-                            themeState,
-                            themeColorState,
-                            backdropEnabledState,
-                            keyPaddingState,
-                            keyBorderWidthState,
-                            keyRadiusState,
-                        )
-                    },
-                )
-                SettingsCheckbox(
                     state = backdropEnabledState,
                     icon = {
                         Icon(

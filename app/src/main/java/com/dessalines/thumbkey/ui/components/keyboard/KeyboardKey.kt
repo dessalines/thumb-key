@@ -71,7 +71,6 @@ fun KeyboardKey(
     animationSpeed: Int,
     autoCapitalize: Boolean,
     spacebarMultiTaps: Boolean,
-    keyBorders: Boolean,
     vibrateOnTap: Boolean,
     soundOnTap: Boolean,
     hideLetters: Boolean,
