@@ -156,8 +156,8 @@ fun KeyboardKey(
                         shape = RoundedCornerShape(cornerRadius.dp),
                     )
                 } else {
-                    Modifier
-                }
+                    (Modifier)
+                },
             )
             .background(color = backgroundColor)
             // Note: pointerInput has a delay when switching keyboards, so you must use this
