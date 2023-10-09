@@ -126,7 +126,7 @@ fun KeyboardKey(
     val keyBorderColour = MaterialTheme.colorScheme.outline
     val keySize = legendSize + (keyPadding * 2.0) + (borderWidth * 2.0)
     val cornerRadius = (keyRadius / 100.0) * (keySize / 2.0)
-    val legendPadding = 4.dp  + borderWidth.dp
+    val legendPadding = 4.dp + borderWidth.dp
 
     val haptic = LocalHapticFeedback.current
     val audioManager = ctx.getSystemService(Context.AUDIO_SERVICE) as AudioManager
@@ -148,9 +148,13 @@ fun KeyboardKey(
             .width(keySize.dp * key.widthMultiplier)
             .padding(keyPadding.dp)
             .clip(RoundedCornerShape(cornerRadius.dp))
-            .then(if (borderWidth > 0.0)
-                Modifier.border(borderWidth.dp, keyBorderColour, shape = RoundedCornerShape(cornerRadius.dp))
-                else (Modifier))
+            .then(
+                if (borderWidth > 0.0) Modifier.border(
+                    borderWidth.dp,
+                    keyBorderColour,
+                    shape = RoundedCornerShape(cornerRadius.dp),
+                ) else (Modifier)
+            )
             .background(color = backgroundColor)
             // Note: pointerInput has a delay when switching keyboards, so you must use this
             .clickable(interactionSource = interactionSource, indication = null) {

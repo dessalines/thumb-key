@@ -238,9 +238,7 @@ fun KeyboardScreen(
             }
             Column(
                 modifier = Modifier
-                    .then(if (backdropEnabled) Modifier.padding(top = 6.dp) else (Modifier))
-                    // this is the bit that adds a background instead of an outline
-                    //.background(MaterialTheme.colorScheme.errorContainer),
+                    .then(if (backdropEnabled) Modifier.padding(top = 6.dp) else (Modifier)),
             ) {
                 keyboard.arr.forEach { row ->
                     Row {

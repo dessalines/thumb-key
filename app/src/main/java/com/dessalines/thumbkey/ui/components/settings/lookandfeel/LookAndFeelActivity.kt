@@ -711,7 +711,7 @@ private fun updateLookAndFeel(
             themeColor = themeColorState.value,
             backdropEnabled = backdropEnabledState.value.toInt(),
             keyPadding = keyPaddingState.value.toInt(),
-            keyBorderWidth =  keyBorderWidthState.value.toInt(),
+            keyBorderWidth = keyBorderWidthState.value.toInt(),
             keyRadius = keyRadiusState.value.toInt(),
         ),
     )
