@@ -9,12 +9,16 @@ import androidx.compose.foundation.verticalScroll
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.outlined.Animation
 import androidx.compose.material.icons.outlined.BorderAll
+import androidx.compose.material.icons.outlined.BorderOuter
+import androidx.compose.material.icons.outlined.BorderStyle
 import androidx.compose.material.icons.outlined.Colorize
 import androidx.compose.material.icons.outlined.FormatSize
 import androidx.compose.material.icons.outlined.HideImage
 import androidx.compose.material.icons.outlined.LinearScale
 import androidx.compose.material.icons.outlined.MusicNote
+import androidx.compose.material.icons.outlined.Padding
 import androidx.compose.material.icons.outlined.Palette
+import androidx.compose.material.icons.outlined.RoundedCorner
 import androidx.compose.material.icons.outlined.VerticalAlignTop
 import androidx.compose.material.icons.outlined.Vibration
 import androidx.compose.material.icons.outlined.ViewDay
@@ -420,7 +424,7 @@ fun LookAndFeelActivity(
                     state = keyPaddingState,
                     icon = {
                         Icon(
-                            imageVector = Icons.Outlined.FormatSize,
+                            imageVector = Icons.Outlined.Padding,
                             contentDescription = null,
                         )
                     },
@@ -455,7 +459,7 @@ fun LookAndFeelActivity(
                     state = keyBorderWidthState,
                     icon = {
                         Icon(
-                            imageVector = Icons.Outlined.FormatSize,
+                            imageVector = Icons.Outlined.BorderOuter,
                             contentDescription = null,
                         )
                     },
@@ -490,7 +494,7 @@ fun LookAndFeelActivity(
                     state = keyRadiusState,
                     icon = {
                         Icon(
-                            imageVector = Icons.Outlined.FormatSize,
+                            imageVector = Icons.Outlined.RoundedCorner,
                             contentDescription = null,
                         )
                     },
