@@ -8,9 +8,7 @@ import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.outlined.Animation
-import androidx.compose.material.icons.outlined.BorderAll
 import androidx.compose.material.icons.outlined.BorderOuter
-import androidx.compose.material.icons.outlined.BorderStyle
 import androidx.compose.material.icons.outlined.Colorize
 import androidx.compose.material.icons.outlined.FormatSize
 import androidx.compose.material.icons.outlined.HideImage
