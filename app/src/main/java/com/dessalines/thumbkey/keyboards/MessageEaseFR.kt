@@ -40,7 +40,7 @@ val MESSAGEEASE_FR_MAIN = KeyboardC(
                         display = KeyDisplay.TextDisplay("à"),
                         action = KeyAction.CommitText("à"),
                     ),
-                    SwipeDirection.LEFT to KeyC(
+                    SwipeDirection.RIGHT to KeyC(
                         display = KeyDisplay.TextDisplay("-"),
                         action = KeyAction.CommitText("-"),
                         color = ColorVariant.MUTED,
@@ -107,7 +107,6 @@ val MESSAGEEASE_FR_MAIN = KeyboardC(
                     size = FontSizeVariant.LARGE,
                     color = ColorVariant.PRIMARY,
                 ),
-                swipeType = SwipeNWay.FOUR_WAY_DIAGONAL,
                 swipes = mapOf(
                     SwipeDirection.LEFT to KeyC(
                         display = KeyDisplay.TextDisplay("?"),
@@ -425,7 +424,7 @@ val MESSAGEEASE_FR_SHIFTED = KeyboardC(
                         display = KeyDisplay.TextDisplay("À"),
                         action = KeyAction.CommitText("À"),
                     ),
-                    SwipeDirection.LEFT to KeyC(
+                    SwipeDirection.RIGHT to KeyC(
                         display = KeyDisplay.TextDisplay("-"),
                         action = KeyAction.CommitText("-"),
                         color = ColorVariant.MUTED,
