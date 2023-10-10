@@ -549,8 +549,8 @@ val THUMBKEY_CA_V1_SHIFTED = KeyboardC(
         listOf(
             KeyItemC(
                 center = KeyC(
-                    display = KeyDisplay.TextDisplay("ᑔ"),
-                    action = KeyAction.CommitText("ᑔ"),
+                    display = KeyDisplay.TextDisplay("ᑍ"),
+                    action = KeyAction.CommitText("ᑍ"),
                 ),
                 swipes = mapOf(
                     SwipeDirection.TOP to KeyC(
@@ -564,8 +564,8 @@ val THUMBKEY_CA_V1_SHIFTED = KeyboardC(
                         color = ColorVariant.PRIMARY,
                     ),
                     SwipeDirection.RIGHT to KeyC(
-                        display = KeyDisplay.TextDisplay("ᑍ"),
-                        action = KeyAction.CommitText("ᑍ"),
+                        display = KeyDisplay.TextDisplay("ᑔ"),
+                        action = KeyAction.CommitText("ᑔ"),
                     ),
                     SwipeDirection.BOTTOM to KeyC(
                         display = KeyDisplay.TextDisplay("ᑖ"),
