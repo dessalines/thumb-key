@@ -14,7 +14,6 @@ import com.dessalines.thumbkey.utils.KeyItemC
 import com.dessalines.thumbkey.utils.KeyboardC
 import com.dessalines.thumbkey.utils.KeyboardMode
 import com.dessalines.thumbkey.utils.SwipeDirection
-import com.dessalines.thumbkey.utils.SwipeNWay
 
 val MESSAGEEASE_FR_MAIN = KeyboardC(
     listOf(
@@ -40,7 +39,7 @@ val MESSAGEEASE_FR_MAIN = KeyboardC(
                         display = KeyDisplay.TextDisplay("à"),
                         action = KeyAction.CommitText("à"),
                     ),
-                    SwipeDirection.LEFT to KeyC(
+                    SwipeDirection.RIGHT to KeyC(
                         display = KeyDisplay.TextDisplay("-"),
                         action = KeyAction.CommitText("-"),
                         color = ColorVariant.MUTED,
@@ -107,7 +106,6 @@ val MESSAGEEASE_FR_MAIN = KeyboardC(
                     size = FontSizeVariant.LARGE,
                     color = ColorVariant.PRIMARY,
                 ),
-                swipeType = SwipeNWay.FOUR_WAY_DIAGONAL,
                 swipes = mapOf(
                     SwipeDirection.LEFT to KeyC(
                         display = KeyDisplay.TextDisplay("?"),
@@ -425,7 +423,7 @@ val MESSAGEEASE_FR_SHIFTED = KeyboardC(
                         display = KeyDisplay.TextDisplay("À"),
                         action = KeyAction.CommitText("À"),
                     ),
-                    SwipeDirection.LEFT to KeyC(
+                    SwipeDirection.RIGHT to KeyC(
                         display = KeyDisplay.TextDisplay("-"),
                         action = KeyAction.CommitText("-"),
                         color = ColorVariant.MUTED,
