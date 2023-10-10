@@ -1,3 +1,27 @@
+# Thumb-Key 2.3.0 (2023-10-10)
+
+## What's Changed
+
+- Fixing settings intent. by @dessalines in https://github.com/dessalines/thumb-key/pull/461
+- Update MessageEaseENEOSymbols.kt by @uxintro in https://github.com/dessalines/thumb-key/pull/462
+- Use common spacebar in numeric keyboard by @cjparsons74 in https://github.com/dessalines/thumb-key/pull/463
+- Adding a backdrop for the keyboard by @WadeWT in https://github.com/dessalines/thumb-key/pull/464
+- Add UA-RU and DE keyboards with symbols by @Crandel in https://github.com/dessalines/thumb-key/pull/465
+- Created layout for Canadian Aboriginal Syllabics by @CarolineHusky in https://github.com/dessalines/thumb-key/pull/472
+- More fixes to MessageEaseFR by @pulkomandy in https://github.com/dessalines/thumb-key/pull/474
+- Adding new theme by @WadeWT in https://github.com/dessalines/thumb-key/pull/475
+- Key customisation by @WadeWT in https://github.com/dessalines/thumb-key/pull/473
+
+## New Contributors
+
+- @uxintro made their first contribution in https://github.com/dessalines/thumb-key/pull/462
+- @cjparsons74 made their first contribution in https://github.com/dessalines/thumb-key/pull/463
+- @WadeWT made their first contribution in https://github.com/dessalines/thumb-key/pull/464
+- @Crandel made their first contribution in https://github.com/dessalines/thumb-key/pull/465
+- @CarolineHusky made their first contribution in https://github.com/dessalines/thumb-key/pull/472
+
+**Full Changelog**: https://github.com/dessalines/thumb-key/compare/2.2.0...2.3.0
+
 # Thumb-Key 2.2.0 (2023-10-04)
 
 ## What's Changed
