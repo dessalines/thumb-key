@@ -8,13 +8,15 @@ import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.outlined.Animation
-import androidx.compose.material.icons.outlined.BorderAll
+import androidx.compose.material.icons.outlined.BorderOuter
 import androidx.compose.material.icons.outlined.Colorize
 import androidx.compose.material.icons.outlined.FormatSize
 import androidx.compose.material.icons.outlined.HideImage
 import androidx.compose.material.icons.outlined.LinearScale
 import androidx.compose.material.icons.outlined.MusicNote
+import androidx.compose.material.icons.outlined.Padding
 import androidx.compose.material.icons.outlined.Palette
+import androidx.compose.material.icons.outlined.RoundedCorner
 import androidx.compose.material.icons.outlined.VerticalAlignTop
 import androidx.compose.material.icons.outlined.Vibration
 import androidx.compose.material.icons.outlined.ViewDay
@@ -48,6 +50,9 @@ import com.dessalines.thumbkey.db.DEFAULT_BACKDROP_ENABLED
 import com.dessalines.thumbkey.db.DEFAULT_HIDE_LETTERS
 import com.dessalines.thumbkey.db.DEFAULT_HIDE_SYMBOLS
 import com.dessalines.thumbkey.db.DEFAULT_KEY_BORDERS
+import com.dessalines.thumbkey.db.DEFAULT_KEY_BORDER_WIDTH
+import com.dessalines.thumbkey.db.DEFAULT_KEY_PADDING
+import com.dessalines.thumbkey.db.DEFAULT_KEY_RADIUS
 import com.dessalines.thumbkey.db.DEFAULT_KEY_SIZE
 import com.dessalines.thumbkey.db.DEFAULT_POSITION
 import com.dessalines.thumbkey.db.DEFAULT_PUSHUP_SIZE
@@ -117,6 +122,15 @@ fun LookAndFeelActivity(
     val backdropEnabledState = rememberBooleanSettingState(
         ((settings?.backdropEnabled ?: DEFAULT_BACKDROP_ENABLED).toBool()),
     )
+    val keyPaddingState = rememberFloatSettingState(
+        (settings?.keyPadding ?: DEFAULT_KEY_PADDING).toFloat(),
+    )
+    val keyBorderWidthState = rememberFloatSettingState(
+        (settings?.keyBorderWidth ?: DEFAULT_KEY_BORDER_WIDTH).toFloat(),
+    )
+    val keyRadiusState = rememberFloatSettingState(
+        (settings?.keyRadius ?: DEFAULT_KEY_RADIUS).toFloat(),
+    )
 
     Scaffold(
         snackbarHost = { SnackbarHost(snackbarHostState) },
@@ -159,6 +173,9 @@ fun LookAndFeelActivity(
                             themeState,
                             themeColorState,
                             backdropEnabledState,
+                            keyPaddingState,
+                            keyBorderWidthState,
+                            keyRadiusState,
                         )
                     },
                 )
@@ -191,6 +208,9 @@ fun LookAndFeelActivity(
                             themeState,
                             themeColorState,
                             backdropEnabledState,
+                            keyPaddingState,
+                            keyBorderWidthState,
+                            keyRadiusState,
                         )
                     },
                 )
@@ -223,6 +243,9 @@ fun LookAndFeelActivity(
                             themeState,
                             themeColorState,
                             backdropEnabledState,
+                            keyPaddingState,
+                            keyBorderWidthState,
+                            keyRadiusState,
                         )
                     },
                 )
@@ -253,6 +276,9 @@ fun LookAndFeelActivity(
                             themeState,
                             themeColorState,
                             backdropEnabledState,
+                            keyPaddingState,
+                            keyBorderWidthState,
+                            keyRadiusState,
                         )
                     },
                 )
@@ -283,36 +309,9 @@ fun LookAndFeelActivity(
                             themeState,
                             themeColorState,
                             backdropEnabledState,
-                        )
-                    },
-                )
-                SettingsCheckbox(
-                    state = keyBordersState,
-                    icon = {
-                        Icon(
-                            imageVector = Icons.Outlined.BorderAll,
-                            contentDescription = null,
-                        )
-                    },
-                    title = {
-                        Text(stringResource(R.string.key_borders))
-                    },
-                    onCheckedChange = {
-                        updateLookAndFeel(
-                            appSettingsViewModel,
-                            keySizeState,
-                            pushupSizeState,
-                            animationSpeedState,
-                            animationHelperSpeedState,
-                            positionState,
-                            keyBordersState,
-                            vibrateOnTapState,
-                            soundOnTapState,
-                            hideLettersState,
-                            hideSymbolsState,
-                            themeState,
-                            themeColorState,
-                            backdropEnabledState,
+                            keyPaddingState,
+                            keyBorderWidthState,
+                            keyRadiusState,
                         )
                     },
                 )
@@ -343,6 +342,9 @@ fun LookAndFeelActivity(
                             themeState,
                             themeColorState,
                             backdropEnabledState,
+                            keyPaddingState,
+                            keyBorderWidthState,
+                            keyRadiusState,
                         )
                     },
                 )
@@ -375,6 +377,114 @@ fun LookAndFeelActivity(
                             themeState,
                             themeColorState,
                             backdropEnabledState,
+                            keyPaddingState,
+                            keyBorderWidthState,
+                            keyRadiusState,
+                        )
+                    },
+                )
+                val keyPaddingStr = stringResource(R.string.key_padding, keyPaddingState.value.toInt().toString())
+                SettingsSlider(
+                    valueRange = 0f..10f,
+                    state = keyPaddingState,
+                    icon = {
+                        Icon(
+                            imageVector = Icons.Outlined.Padding,
+                            contentDescription = null,
+                        )
+                    },
+                    title = {
+                        Text(keyPaddingStr)
+                    },
+                    onValueChangeFinished = {
+                        updateLookAndFeel(
+                            appSettingsViewModel,
+                            keySizeState,
+                            pushupSizeState,
+                            animationSpeedState,
+                            animationHelperSpeedState,
+                            positionState,
+                            keyBordersState,
+                            vibrateOnTapState,
+                            soundOnTapState,
+                            hideLettersState,
+                            hideSymbolsState,
+                            themeState,
+                            themeColorState,
+                            backdropEnabledState,
+                            keyPaddingState,
+                            keyBorderWidthState,
+                            keyRadiusState,
+                        )
+                    },
+                )
+                val keyBorderWidthStr = stringResource(R.string.key_border_width, keyBorderWidthState.value.toInt().toString())
+                SettingsSlider(
+                    valueRange = 0f..50f,
+                    state = keyBorderWidthState,
+                    icon = {
+                        Icon(
+                            imageVector = Icons.Outlined.BorderOuter,
+                            contentDescription = null,
+                        )
+                    },
+                    title = {
+                        Text(keyBorderWidthStr)
+                    },
+                    onValueChangeFinished = {
+                        updateLookAndFeel(
+                            appSettingsViewModel,
+                            keySizeState,
+                            pushupSizeState,
+                            animationSpeedState,
+                            animationHelperSpeedState,
+                            positionState,
+                            keyBordersState,
+                            vibrateOnTapState,
+                            soundOnTapState,
+                            hideLettersState,
+                            hideSymbolsState,
+                            themeState,
+                            themeColorState,
+                            backdropEnabledState,
+                            keyPaddingState,
+                            keyBorderWidthState,
+                            keyRadiusState,
+                        )
+                    },
+                )
+                val keyRadiusStr = stringResource(R.string.key_radius, keyRadiusState.value.toInt().toString())
+                SettingsSlider(
+                    valueRange = 0f..100f,
+                    state = keyRadiusState,
+                    icon = {
+                        Icon(
+                            imageVector = Icons.Outlined.RoundedCorner,
+                            contentDescription = null,
+                        )
+                    },
+                    title = {
+                        Text(keyRadiusStr)
+                    },
+                    onValueChangeFinished = {
+                        updateLookAndFeel(
+                            appSettingsViewModel,
+                            keySizeState,
+                            pushupSizeState,
+                            animationSpeedState,
+                            animationHelperSpeedState,
+                            positionState,
+                            keyBordersState,
+                            vibrateOnTapState,
+                            soundOnTapState,
+                            hideLettersState,
+                            hideSymbolsState,
+                            themeState,
+                            themeColorState,
+                            backdropEnabledState,
+                            keyPaddingState,
+                            keyBorderWidthState,
+                            keyRadiusState,
                         )
                     },
                 )
@@ -407,6 +517,9 @@ fun LookAndFeelActivity(
                             themeState,
                             themeColorState,
                             backdropEnabledState,
+                            keyPaddingState,
+                            keyBorderWidthState,
+                            keyRadiusState,
                         )
                     },
                 )
@@ -439,6 +552,9 @@ fun LookAndFeelActivity(
                             themeState,
                             themeColorState,
                             backdropEnabledState,
+                            keyPaddingState,
+                            keyBorderWidthState,
+                            keyRadiusState,
                         )
                     },
                 )
@@ -476,6 +592,9 @@ fun LookAndFeelActivity(
                             themeState,
                             themeColorState,
                             backdropEnabledState,
+                            keyPaddingState,
+                            keyBorderWidthState,
+                            keyRadiusState,
                         )
                     },
                 )
@@ -510,6 +629,9 @@ fun LookAndFeelActivity(
                             themeState,
                             themeColorState,
                             backdropEnabledState,
+                            keyPaddingState,
+                            keyBorderWidthState,
+                            keyRadiusState,
                         )
                     },
                 )
@@ -540,6 +662,9 @@ fun LookAndFeelActivity(
                             themeState,
                             themeColorState,
                             backdropEnabledState,
+                            keyPaddingState,
+                            keyBorderWidthState,
+                            keyRadiusState,
                         )
                     },
                 )
@@ -565,6 +690,9 @@ private fun updateLookAndFeel(
     themeState: SettingValueState<Int>,
     themeColorState: SettingValueState<Int>,
     backdropEnabledState: SettingValueState<Boolean>,
+    keyPaddingState: SettingValueState<Float>,
+    keyBorderWidthState: SettingValueState<Float>,
+    keyRadiusState: SettingValueState<Float>,
 ) {
     appSettingsViewModel.updateLookAndFeel(
         LookAndFeelUpdate(
@@ -582,6 +710,9 @@ private fun updateLookAndFeel(
             theme = themeState.value,
             themeColor = themeColorState.value,
             backdropEnabled = backdropEnabledState.value.toInt(),
+            keyPadding = keyPaddingState.value.toInt(),
+            keyBorderWidth = keyBorderWidthState.value.toInt(),
+            keyRadius = keyRadiusState.value.toInt(),
         ),
     )
 }

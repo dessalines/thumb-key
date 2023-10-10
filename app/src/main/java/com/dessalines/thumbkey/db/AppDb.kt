@@ -50,6 +50,9 @@ const val DEFAULT_SPACEBAR_MULTITAPS = 1
 const val DEFAULT_SLIDE_SENSITIVITY = 9
 const val DEFAULT_SLIDE_ENABLED = 0
 const val DEFAULT_BACKDROP_ENABLED = 0
+const val DEFAULT_KEY_PADDING = 0
+const val DEFAULT_KEY_BORDER_WIDTH = 1
+const val DEFAULT_KEY_RADIUS = 0
 
 @Entity
 data class AppSettings(
@@ -165,6 +168,21 @@ data class AppSettings(
         defaultValue = DEFAULT_BACKDROP_ENABLED.toString(),
     )
     val backdropEnabled: Int,
+    @ColumnInfo(
+        name = "key_padding",
+        defaultValue = DEFAULT_KEY_PADDING.toString(),
+    )
+    val keyPadding: Int,
+    @ColumnInfo(
+        name = "key_border_width",
+        defaultValue = DEFAULT_KEY_BORDER_WIDTH.toString(),
+    )
+    val keyBorderWidth: Int,
+    @ColumnInfo(
+        name = "key_radius",
+        defaultValue = DEFAULT_KEY_RADIUS.toString(),
+    )
+    val keyRadius: Int,
 )
 
 data class LayoutsUpdate(
@@ -233,6 +251,18 @@ data class LookAndFeelUpdate(
         name = "backdrop_enabled",
     )
     val backdropEnabled: Int,
+    @ColumnInfo(
+        name = "key_padding",
+    )
+    val keyPadding: Int,
+    @ColumnInfo(
+        name = "key_border_width",
+    )
+    val keyBorderWidth: Int,
+    @ColumnInfo(
+        name = "key_radius",
+    )
+    val keyRadius: Int,
 )
 
 data class BehaviorUpdate(
@@ -418,8 +448,22 @@ val MIGRATION_10_11 = object : Migration(10, 11) {
     }
 }
 
+val MIGRATION_11_12 = object : Migration(11, 12) {
+    override fun migrate(database: SupportSQLiteDatabase) {
+        database.execSQL(
+            "alter table AppSettings add column key_padding INTEGER NOT NULL default $DEFAULT_KEY_PADDING",
+        )
+        database.execSQL(
+            "alter table AppSettings add column key_border_width INTEGER NOT NULL default $DEFAULT_KEY_BORDER_WIDTH",
+        )
+        database.execSQL(
+            "alter table AppSettings add column key_radius INTEGER NOT NULL default $DEFAULT_KEY_RADIUS",
+        )
+    }
+}
+
 @Database(
-    version = 11,
+    version = 12,
     entities = [AppSettings::class],
     exportSchema = true,
 )
@@ -453,6 +497,7 @@ abstract class AppDB : RoomDatabase() {
                         MIGRATION_8_9,
                         MIGRATION_9_10,
                         MIGRATION_10_11,
+                        MIGRATION_11_12,
                     )
                     // Necessary because it can't insert data on creation
                     .addCallback(object : Callback() {

@@ -33,7 +33,9 @@ import com.dessalines.thumbkey.db.DEFAULT_BACKDROP_ENABLED
 import com.dessalines.thumbkey.db.DEFAULT_HIDE_LETTERS
 import com.dessalines.thumbkey.db.DEFAULT_HIDE_SYMBOLS
 import com.dessalines.thumbkey.db.DEFAULT_KEYBOARD_LAYOUT
-import com.dessalines.thumbkey.db.DEFAULT_KEY_BORDERS
+import com.dessalines.thumbkey.db.DEFAULT_KEY_BORDER_WIDTH
+import com.dessalines.thumbkey.db.DEFAULT_KEY_PADDING
+import com.dessalines.thumbkey.db.DEFAULT_KEY_RADIUS
 import com.dessalines.thumbkey.db.DEFAULT_KEY_SIZE
 import com.dessalines.thumbkey.db.DEFAULT_MIN_SWIPE_LENGTH
 import com.dessalines.thumbkey.db.DEFAULT_POSITION
@@ -98,7 +100,7 @@ fun KeyboardScreen(
     val autoCapitalize = (settings?.autoCapitalize ?: DEFAULT_AUTO_CAPITALIZE).toBool()
     val spacebarMultiTaps = (settings?.spacebarMultiTaps ?: DEFAULT_SPACEBAR_MULTITAPS).toBool()
     val slideEnabled = (settings?.slideEnabled ?: DEFAULT_SLIDE_ENABLED).toBool()
-    val keyBorders = (settings?.keyBorders ?: DEFAULT_KEY_BORDERS).toBool()
+    val keyBorderWidth = (settings?.keyBorderWidth ?: DEFAULT_KEY_BORDER_WIDTH)
     val vibrateOnTap = (settings?.vibrateOnTap ?: DEFAULT_VIBRATE_ON_TAP).toBool()
     val soundOnTap = (settings?.soundOnTap ?: DEFAULT_SOUND_ON_TAP).toBool()
     val hideLetters = (settings?.hideLetters ?: DEFAULT_HIDE_LETTERS).toBool()
@@ -111,21 +113,16 @@ fun KeyboardScreen(
 
         val keySize = settings?.keySize ?: DEFAULT_KEY_SIZE
         val keyboardHeight = Dp((keySize * controllerKeys.size).toFloat()) + pushupSizeDp
-        val keyBorderSize = if (keyBorders) {
-            0.5.dp
-        } else {
-            0.dp
-        }
 
         Row(
             modifier = Modifier
                 .fillMaxWidth()
-                .background(MaterialTheme.colorScheme.onBackground),
+                .background(MaterialTheme.colorScheme.outline),
         ) {
             Box(
                 modifier = Modifier
                     .weight(1f) // Take up available space equally
-                    .padding(keyBorderSize),
+                    .padding(keyBorderWidth.dp),
             ) {
                 val haptic = LocalHapticFeedback.current
                 val audioManager = ctx.getSystemService(Context.AUDIO_SERVICE) as AudioManager
@@ -161,10 +158,12 @@ fun KeyboardScreen(
                         KeyboardKey(
                             key = key,
                             lastAction = lastAction,
-                            keySize = settings?.keySize ?: DEFAULT_KEY_SIZE,
+                            legendSize = settings?.keySize ?: DEFAULT_KEY_SIZE,
+                            keyPadding = settings?.keyPadding ?: DEFAULT_KEY_PADDING,
+                            keyBorderWidth = settings?.keyBorderWidth ?: DEFAULT_KEY_BORDER_WIDTH,
+                            keyRadius = settings?.keyRadius ?: DEFAULT_KEY_RADIUS,
                             autoCapitalize = autoCapitalize,
                             spacebarMultiTaps = spacebarMultiTaps,
-                            keyBorders = keyBorders,
                             vibrateOnTap = vibrateOnTap,
                             soundOnTap = soundOnTap,
                             hideLetters = hideLetters,
@@ -238,8 +237,7 @@ fun KeyboardScreen(
             }
             Column(
                 modifier = Modifier
-                    .then(if (backdropEnabled) Modifier.padding(top = 6.dp) else (Modifier))
-                    .background(MaterialTheme.colorScheme.onBackground),
+                    .then(if (backdropEnabled) Modifier.padding(top = 6.dp) else (Modifier)),
             ) {
                 keyboard.arr.forEach { row ->
                     Row {
@@ -248,10 +246,12 @@ fun KeyboardScreen(
                                 KeyboardKey(
                                     key = key,
                                     lastAction = lastAction,
-                                    keySize = settings?.keySize ?: DEFAULT_KEY_SIZE,
+                                    legendSize = settings?.keySize ?: DEFAULT_KEY_SIZE,
+                                    keyPadding = settings?.keyPadding ?: DEFAULT_KEY_PADDING,
+                                    keyBorderWidth = settings?.keyBorderWidth ?: DEFAULT_KEY_BORDER_WIDTH,
+                                    keyRadius = settings?.keyRadius ?: DEFAULT_KEY_RADIUS,
                                     autoCapitalize = autoCapitalize,
                                     spacebarMultiTaps = spacebarMultiTaps,
-                                    keyBorders = keyBorders,
                                     vibrateOnTap = vibrateOnTap,
                                     soundOnTap = soundOnTap,
                                     hideLetters = hideLetters,

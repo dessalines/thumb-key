@@ -8,6 +8,7 @@ import androidx.compose.animation.core.tween
 import androidx.compose.animation.fadeOut
 import androidx.compose.animation.slideInVertically
 import androidx.compose.foundation.background
+import androidx.compose.foundation.border
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.gestures.detectDragGestures
 import androidx.compose.foundation.interaction.MutableInteractionSource
@@ -18,6 +19,7 @@ import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
+import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.Icon
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
@@ -33,6 +35,7 @@ import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.hapticfeedback.HapticFeedbackType
 import androidx.compose.ui.input.pointer.pointerInput
@@ -41,6 +44,7 @@ import androidx.compose.ui.platform.LocalHapticFeedback
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
+import androidx.compose.ui.unit.lerp
 import com.dessalines.thumbkey.IMEService
 import com.dessalines.thumbkey.utils.FontSizeVariant
 import com.dessalines.thumbkey.utils.KeyAction
@@ -67,13 +71,15 @@ fun KeyboardKey(
     animationSpeed: Int,
     autoCapitalize: Boolean,
     spacebarMultiTaps: Boolean,
-    keyBorders: Boolean,
     vibrateOnTap: Boolean,
     soundOnTap: Boolean,
     hideLetters: Boolean,
     hideSymbols: Boolean,
     capsLock: Boolean,
-    keySize: Int,
+    legendSize: Int,
+    keyPadding: Int,
+    keyBorderWidth: Int,
+    keyRadius: Int,
     minSwipeLength: Int,
     slideSensitivity: Int,
     slideEnabled: Boolean,
@@ -86,7 +92,7 @@ fun KeyboardKey(
     onSwitchPosition: () -> Unit,
 ) {
     // Necessary for swipe settings to get updated correctly
-    val id = key.toString() + animationHelperSpeed + animationSpeed + autoCapitalize + vibrateOnTap + soundOnTap + keySize + minSwipeLength + slideSensitivity + slideEnabled
+    val id = key.toString() + animationHelperSpeed + animationSpeed + autoCapitalize + vibrateOnTap + soundOnTap + legendSize + minSwipeLength + slideSensitivity + slideEnabled
 
     val ctx = LocalContext.current
     val ime = ctx as IMEService
@@ -116,14 +122,11 @@ fun KeyboardKey(
         MaterialTheme.colorScheme.inversePrimary
     }
 
-    val keySizeDp = keySize.dp
-    val keyPadding = 4.dp
-
-    val keyBorderSize = if (keyBorders) {
-        0.5.dp
-    } else {
-        0.dp
-    }
+    val borderWidth = keyBorderWidth / 10.0
+    val keyBorderColour = MaterialTheme.colorScheme.outline
+    val keySize = legendSize + (keyPadding * 2.0) + (borderWidth * 2.0)
+    val cornerRadius = (keyRadius / 100.0) * (keySize / 2.0)
+    val legendPadding = 4.dp + borderWidth.dp
 
     val haptic = LocalHapticFeedback.current
     val audioManager = ctx.getSystemService(Context.AUDIO_SERVICE) as AudioManager
@@ -141,9 +144,21 @@ fun KeyboardKey(
 
     val keyboardKeyModifier =
         Modifier
-            .height(keySizeDp)
-            .width(keySizeDp * key.widthMultiplier)
-            .padding(keyBorderSize)
+            .height(keySize.dp)
+            .width(keySize.dp * key.widthMultiplier)
+            .padding(keyPadding.dp)
+            .clip(RoundedCornerShape(cornerRadius.dp))
+            .then(
+                if (borderWidth > 0.0) {
+                    Modifier.border(
+                        borderWidth.dp,
+                        keyBorderColour,
+                        shape = RoundedCornerShape(cornerRadius.dp),
+                    )
+                } else {
+                    (Modifier)
+                },
+            )
             .background(color = backgroundColor)
             // Note: pointerInput has a delay when switching keyboards, so you must use this
             .clickable(interactionSource = interactionSource, indication = null) {
@@ -367,6 +382,12 @@ fun KeyboardKey(
 
     // a 3x3 grid
     // Use box so they can overlap
+    // Some magic padding numbers so that large radii don't obscure the legends
+    val radiusPercent = keyRadius.toFloat() / 100.toFloat()
+    val yPadding = 0.dp + borderWidth.dp
+    val diagonalXPadding = lerp(legendPadding, 11.dp + borderWidth.dp, radiusPercent)
+    val diagonalYPadding = lerp(yPadding, 6.dp + borderWidth.dp, radiusPercent)
+
     Box(
         modifier = keyboardKeyModifier,
     ) {
@@ -374,89 +395,101 @@ fun KeyboardKey(
             contentAlignment = Alignment.TopStart,
             modifier = Modifier
                 .fillMaxSize()
-                .padding(horizontal = keyPadding),
+                .padding(
+                    horizontal = diagonalXPadding,
+                    vertical = diagonalYPadding,
+                ),
         ) {
             key.swipes?.get(SwipeDirection.TOP_LEFT)?.let {
-                KeyText(it, keySizeDp, hideLetters, hideSymbols, capsLock)
+                KeyText(it, (legendSize - borderWidth).dp, hideLetters, hideSymbols, capsLock)
             }
         }
         Box(
             contentAlignment = Alignment.TopCenter,
             modifier = Modifier
                 .fillMaxSize()
-                .padding(horizontal = keyPadding),
+                .padding(vertical = yPadding),
         ) {
             key.swipes?.get(SwipeDirection.TOP)?.let {
-                KeyText(it, keySizeDp, hideLetters, hideSymbols, capsLock)
+                KeyText(it, (legendSize - borderWidth).dp, hideLetters, hideSymbols, capsLock)
             }
         }
         Box(
             contentAlignment = Alignment.TopEnd,
             modifier = Modifier
                 .fillMaxSize()
-                .padding(horizontal = keyPadding),
+                .padding(
+                    horizontal = diagonalXPadding,
+                    vertical = diagonalYPadding,
+                ),
         ) {
             key.swipes?.get(SwipeDirection.TOP_RIGHT)?.let {
-                KeyText(it, keySizeDp, hideLetters, hideSymbols, capsLock)
+                KeyText(it, (legendSize - borderWidth).dp, hideLetters, hideSymbols, capsLock)
             }
         }
         Box(
             contentAlignment = Alignment.CenterStart,
             modifier = Modifier
                 .fillMaxSize()
-                .padding(horizontal = keyPadding),
+                .padding(horizontal = legendPadding),
         ) {
             key.swipes?.get(SwipeDirection.LEFT)?.let {
-                KeyText(it, keySizeDp, hideLetters, hideSymbols, capsLock)
+                KeyText(it, (legendSize - borderWidth).dp, hideLetters, hideSymbols, capsLock)
             }
         }
         Box(
             contentAlignment = Alignment.Center,
             modifier = Modifier
                 .fillMaxSize()
-                .padding(horizontal = keyPadding),
+                .padding(legendPadding),
         ) {
-            KeyText(key.center, keySizeDp, hideLetters, hideSymbols, capsLock)
+            KeyText(key.center, (legendSize - borderWidth).dp, hideLetters, hideSymbols, capsLock)
         }
 
         Box(
             contentAlignment = Alignment.CenterEnd,
             modifier = Modifier
                 .fillMaxSize()
-                .padding(horizontal = keyPadding),
+                .padding(horizontal = legendPadding),
         ) {
             key.swipes?.get(SwipeDirection.RIGHT)?.let {
-                KeyText(it, keySizeDp, hideLetters, hideSymbols, capsLock)
+                KeyText(it, (legendSize - borderWidth).dp, hideLetters, hideSymbols, capsLock)
             }
         }
         Box(
             contentAlignment = Alignment.BottomStart,
             modifier = Modifier
                 .fillMaxSize()
-                .padding(horizontal = keyPadding),
+                .padding(
+                    horizontal = diagonalXPadding,
+                    vertical = diagonalYPadding,
+                ),
         ) {
             key.swipes?.get(SwipeDirection.BOTTOM_LEFT)?.let {
-                KeyText(it, keySizeDp, hideLetters, hideSymbols, capsLock)
+                KeyText(it, (legendSize - borderWidth).dp, hideLetters, hideSymbols, capsLock)
             }
         }
         Box(
             contentAlignment = Alignment.BottomCenter,
             modifier = Modifier
                 .fillMaxSize()
-                .padding(horizontal = keyPadding),
+                .padding(vertical = yPadding),
         ) {
             key.swipes?.get(SwipeDirection.BOTTOM)?.let {
-                KeyText(it, keySizeDp, hideLetters, hideSymbols, capsLock)
+                KeyText(it, (legendSize - borderWidth).dp, hideLetters, hideSymbols, capsLock)
             }
         }
         Box(
             contentAlignment = Alignment.BottomEnd,
             modifier = Modifier
                 .fillMaxSize()
-                .padding(horizontal = keyPadding),
+                .padding(
+                    horizontal = diagonalXPadding,
+                    vertical = diagonalYPadding,
+                ),
         ) {
             key.swipes?.get(SwipeDirection.BOTTOM_RIGHT)?.let {
-                KeyText(it, keySizeDp, hideLetters, hideSymbols, capsLock)
+                KeyText(it, (legendSize - borderWidth).dp, hideLetters, hideSymbols, capsLock)
             }
         }
 
@@ -492,7 +525,7 @@ fun KeyboardKey(
             ) {
                 val fontSize = fontSizeVariantToFontSize(
                     fontSizeVariant = FontSizeVariant.LARGE,
-                    keySize = keySizeDp,
+                    keySize = legendSize.dp,
                 )
                 releasedKey.value?.let { text ->
                     Text(

@@ -45,6 +45,9 @@ import com.dessalines.thumbkey.db.DEFAULT_HIDE_LETTERS
 import com.dessalines.thumbkey.db.DEFAULT_HIDE_SYMBOLS
 import com.dessalines.thumbkey.db.DEFAULT_KEYBOARD_LAYOUT
 import com.dessalines.thumbkey.db.DEFAULT_KEY_BORDERS
+import com.dessalines.thumbkey.db.DEFAULT_KEY_BORDER_WIDTH
+import com.dessalines.thumbkey.db.DEFAULT_KEY_PADDING
+import com.dessalines.thumbkey.db.DEFAULT_KEY_RADIUS
 import com.dessalines.thumbkey.db.DEFAULT_KEY_SIZE
 import com.dessalines.thumbkey.db.DEFAULT_MIN_SWIPE_LENGTH
 import com.dessalines.thumbkey.db.DEFAULT_POSITION
@@ -270,6 +273,9 @@ private fun resetAppSettingsToDefault(
             lastVersionCodeViewed = appSettingsViewModel.appSettings.value?.lastVersionCodeViewed ?: 0,
             viewedChangelog = appSettingsViewModel.appSettings.value?.viewedChangelog ?: 1,
             backdropEnabled = DEFAULT_BACKDROP_ENABLED,
+            keyPadding = DEFAULT_KEY_PADDING,
+            keyBorderWidth = DEFAULT_KEY_BORDER_WIDTH,
+            keyRadius = DEFAULT_KEY_RADIUS,
         ),
 
     )
