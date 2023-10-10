@@ -382,7 +382,7 @@ fun KeyboardKey(
 
     // a 3x3 grid
     // Use box so they can overlap
-    // Some magic padding numbers so that large radii don'g obscure the ledends
+    // Some magic padding numbers so that large radii don't obscure the legends
     val radiusPercent = keyRadius.toFloat() / 100.toFloat()
     val yPadding = 0.dp + borderWidth.dp
     val diagonalXPadding = lerp(legendPadding, 11.dp + borderWidth.dp, radiusPercent)
@@ -395,7 +395,10 @@ fun KeyboardKey(
             contentAlignment = Alignment.TopStart,
             modifier = Modifier
                 .fillMaxSize()
-                .padding(horizontal = diagonalXPadding, vertical = diagonalYPadding),
+                .padding(
+                    horizontal = diagonalXPadding,
+                    vertical = diagonalYPadding,
+                ),
         ) {
             key.swipes?.get(SwipeDirection.TOP_LEFT)?.let {
                 KeyText(it, (legendSize - borderWidth).dp, hideLetters, hideSymbols, capsLock)
@@ -415,7 +418,10 @@ fun KeyboardKey(
             contentAlignment = Alignment.TopEnd,
             modifier = Modifier
                 .fillMaxSize()
-                .padding(horizontal = diagonalXPadding, vertical = diagonalYPadding),
+                .padding(
+                    horizontal = diagonalXPadding,
+                    vertical = diagonalYPadding,
+                ),
         ) {
             key.swipes?.get(SwipeDirection.TOP_RIGHT)?.let {
                 KeyText(it, (legendSize - borderWidth).dp, hideLetters, hideSymbols, capsLock)
@@ -454,7 +460,10 @@ fun KeyboardKey(
             contentAlignment = Alignment.BottomStart,
             modifier = Modifier
                 .fillMaxSize()
-                .padding(horizontal = diagonalXPadding, vertical = diagonalYPadding),
+                .padding(
+                    horizontal = diagonalXPadding,
+                    vertical = diagonalYPadding,
+                ),
         ) {
             key.swipes?.get(SwipeDirection.BOTTOM_LEFT)?.let {
                 KeyText(it, (legendSize - borderWidth).dp, hideLetters, hideSymbols, capsLock)
@@ -474,7 +483,10 @@ fun KeyboardKey(
             contentAlignment = Alignment.BottomEnd,
             modifier = Modifier
                 .fillMaxSize()
-                .padding(horizontal = diagonalXPadding, vertical = diagonalYPadding),
+                .padding(
+                    horizontal = diagonalXPadding,
+                    vertical = diagonalYPadding,
+                ),
         ) {
             key.swipes?.get(SwipeDirection.BOTTOM_RIGHT)?.let {
                 KeyText(it, (legendSize - borderWidth).dp, hideLetters, hideSymbols, capsLock)
