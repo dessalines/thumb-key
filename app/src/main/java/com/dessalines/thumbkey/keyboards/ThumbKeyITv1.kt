@@ -147,12 +147,12 @@ val THUMBKEY_IT_V1_MAIN = KeyboardC(
                         action = KeyAction.CommitText("b"),
                     ),
                     SwipeDirection.RIGHT to KeyC(
-                        display = KeyDisplay.TextDisplay("à"),
-                        action = KeyAction.CommitText("à"),
-                    ),
-                    SwipeDirection.BOTTOM_RIGHT to KeyC(
                         display = KeyDisplay.TextDisplay("c"),
                         action = KeyAction.CommitText("c"),
+                    ),
+                    SwipeDirection.BOTTOM_RIGHT to KeyC(
+                        display = KeyDisplay.TextDisplay("à"),
+                        action = KeyAction.CommitText("à"),
                     ),
                     SwipeDirection.BOTTOM_LEFT to KeyC(
                         display = KeyDisplay.TextDisplay("ch"),
@@ -245,6 +245,10 @@ val THUMBKEY_IT_V1_MAIN = KeyboardC(
                         display = KeyDisplay.TextDisplay("é"),
                         action = KeyAction.CommitText("é"),
                     ),
+                    SwipeDirection.TOP_LEFT to KeyC(
+                        display = KeyDisplay.TextDisplay("ə"),
+                        action = KeyAction.CommitText("ə"),
+                    ),
                     SwipeDirection.TOP to KeyC(
                         display = KeyDisplay.TextDisplay("d"),
                         action = KeyAction.CommitText("d"),
@@ -256,6 +260,10 @@ val THUMBKEY_IT_V1_MAIN = KeyboardC(
                     SwipeDirection.BOTTOM_LEFT to KeyC(
                         display = KeyDisplay.TextDisplay("gh"),
                         action = KeyAction.CommitText("gh"),
+                    ),
+                    SwipeDirection.BOTTOM_RIGHT to KeyC(
+                        display = KeyDisplay.TextDisplay("ɜ"),
+                        action = KeyAction.CommitText("ɜ"),
                     ),
                 ),
             ),
@@ -395,16 +403,16 @@ val THUMBKEY_IT_V1_SHIFTED = KeyboardC(
                 ),
                 swipes = mapOf(
                     SwipeDirection.RIGHT to KeyC(
-                        display = KeyDisplay.TextDisplay("À"),
-                        action = KeyAction.CommitText("À"),
+                        display = KeyDisplay.TextDisplay("C"),
+                        action = KeyAction.CommitText("C"),
                     ),
                     SwipeDirection.LEFT to KeyC(
                         display = KeyDisplay.TextDisplay("B"),
                         action = KeyAction.CommitText("B"),
                     ),
                     SwipeDirection.BOTTOM_RIGHT to KeyC(
-                        display = KeyDisplay.TextDisplay("C"),
-                        action = KeyAction.CommitText("C"),
+                        display = KeyDisplay.TextDisplay("À"),
+                        action = KeyAction.CommitText("À"),
                     ),
                     SwipeDirection.BOTTOM_LEFT to KeyC(
                         display = KeyDisplay.TextDisplay("Ch"),
@@ -499,6 +507,10 @@ val THUMBKEY_IT_V1_SHIFTED = KeyboardC(
                         display = KeyDisplay.TextDisplay("É"),
                         action = KeyAction.CommitText("É"),
                     ),
+                    SwipeDirection.TOP_LEFT to KeyC(
+                        display = KeyDisplay.TextDisplay("Ǝ"),
+                        action = KeyAction.CommitText("Ǝ"),
+                    ),
                     SwipeDirection.TOP to KeyC(
                         display = KeyDisplay.TextDisplay("D"),
                         action = KeyAction.CommitText("D"),
@@ -514,6 +526,10 @@ val THUMBKEY_IT_V1_SHIFTED = KeyboardC(
                     SwipeDirection.BOTTOM_LEFT to KeyC(
                         display = KeyDisplay.TextDisplay("Gh"),
                         action = KeyAction.CommitText("Gh"),
+                    ),
+                    SwipeDirection.BOTTOM_RIGHT to KeyC(
+                        display = KeyDisplay.TextDisplay("3"),
+                        action = KeyAction.CommitText("3"),
                     ),
                 ),
             ),
