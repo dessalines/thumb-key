@@ -46,6 +46,32 @@ const val TAG = "com.thumbkey"
 
 const val THUMBKEY_IME_NAME = "com.dessalines.thumbkey/.IMEService"
 
+fun acceleratingCursorDistance(offsetX: Float, timeOfLastAccelerationInput: Long): Int {
+    val timeDifference = System.currentTimeMillis() - timeOfLastAccelerationInput
+    // Prevent division by 0 error.
+    var distance = if( timeDifference == 0L ) {
+        0f
+    } else {
+        offsetX / timeDifference
+    }
+
+    // Quadratic equation to make the swipe acceleration work along a curve.
+    val accelerationCurve = 0.3f // Fast and almost perfect.
+    // var accelerationCurve = 0.2f // Fast and almost perfect.
+    // var accelerationCurve = 0.1f // Slowish and moves almost a full line at a time.
+    // var accelerationCurve = 0.01f // is slow, only 1 char at a time.
+    if (distance < 0) {
+        distance = accelerationCurve * distance.pow(2)
+        // Set the value back to negative.
+        // A distance of -1 will move the cursor left by 1 character
+        distance *= -1
+    } else {
+        distance = accelerationCurve * distance.pow(2)
+    }
+
+    return distance.toInt()
+}
+
 @Composable
 fun colorVariantToColor(colorVariant: ColorVariant): Color {
     return when (colorVariant) {

@@ -136,7 +136,13 @@ data class Selection(
     fun left() {
         end -= 1
     }
+    fun left(index: Int) {
+        end -= index
+    }
     fun right() {
         end += 1
+    }
+    fun right(index: Int) {
+        end += index
     }
 }
