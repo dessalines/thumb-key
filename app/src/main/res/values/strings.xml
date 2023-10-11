@@ -10,6 +10,9 @@
     <string name="srcery">Srcery</string>
     <string name="blue">Blue</string>
     <string name="dracula">Dracula</string>
+    <string name="twilight">Twilight</string>
+    <string name="high_contrast">High Contrast</string>
+    <string name="high_contrast_colorful">High Contrast Colorful</string>
     <string name="center">Center</string>
     <string name="right">Right</string>
     <string name="left">Left</string>
@@ -63,4 +66,7 @@
     <string name="spacebar_multitaps">Spacebar Multi-taps</string>
     <string name="done">Done</string>
     <string name="backdrop">Keyboard Backdrop</string>
+    <string name="key_padding">Key Padding: %1$s</string>
+    <string name="key_border_width">Key Border Width: %1$s</string>
+    <string name="key_radius">Key Radius: %1$s</string>
 </resources>

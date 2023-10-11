@@ -93,6 +93,9 @@ enum class ThemeColor(private val stringId: Int) {
     Srcery(R.string.srcery),
     Blue(R.string.blue),
     Dracula(R.string.dracula),
+    Twilight(R.string.twilight),
+    HighContrast(R.string.high_contrast),
+    HighContrastColorful(R.string.high_contrast_colorful),
     ;
 
     @Composable
