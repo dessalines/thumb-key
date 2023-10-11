@@ -49,7 +49,7 @@ const val THUMBKEY_IME_NAME = "com.dessalines.thumbkey/.IMEService"
 fun acceleratingCursorDistance(offsetX: Float, timeOfLastAccelerationInput: Long): Int {
     val timeDifference = System.currentTimeMillis() - timeOfLastAccelerationInput
     // Prevent division by 0 error.
-    var distance = if( timeDifference == 0L ) {
+    var distance = if (timeDifference == 0L) {
         0f
     } else {
         offsetX / timeDifference
