@@ -209,10 +209,10 @@ fun KeyboardKey(
                         offsetY += y
 
                         // First detection is large enough to preserve swipe actions.
-                        val slideOffsetTrigger = (keySizeDp.toPx() * 0.75) + minSwipeLength
+                        val slideOffsetTrigger = (keySize.dp.toPx() * 0.75) + minSwipeLength
 
                         if (key.slideType == SlideType.MOVE_CURSOR && slideEnabled) {
-                            val slideSelectionOffsetTrigger = (keySizeDp.toPx() * 1.25) + minSwipeLength
+                            val slideSelectionOffsetTrigger = (keySize.dp.toPx() * 1.25) + minSwipeLength
                             if (abs(offsetY) > slideSelectionOffsetTrigger) {
                                 // If user slides upwards, enable selection
                                 hasSlideMoveCursorTriggered = true
