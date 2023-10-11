@@ -827,7 +827,7 @@ fun highContrast(): Pair<ColorScheme, ColorScheme> {
     val md_theme_dark_onSecondary = Color(0xFF2C2F42)
     val md_theme_dark_secondaryContainer = Color(0xFF434659)
     val md_theme_dark_onSecondaryContainer = Color(0xFFDFE1F9)
-    val md_theme_dark_tertiary = Color(0xFF000000)// Legend Pressed
+    val md_theme_dark_tertiary = Color(0xFF000000) // Legend Pressed
     val md_theme_dark_onTertiary = Color(0xFF44263E)
     val md_theme_dark_tertiaryContainer = Color(0xFFE2E2E2) // Key Up
     val md_theme_dark_onTertiaryContainer = Color(0xFFFFD7F2)
@@ -840,7 +840,7 @@ fun highContrast(): Pair<ColorScheme, ColorScheme> {
     val md_theme_dark_surface = Color(0xFF0F0F0F) // Primary Keys
     val md_theme_dark_onSurface = Color(0xFFFFFFFF) // Menu Text
     val md_theme_dark_surfaceVariant = Color(0xFF000000) // Secondary Keys
-    val md_theme_dark_onSurfaceVariant = Color(0xFFFFFFFF)// Menu Icons
+    val md_theme_dark_onSurfaceVariant = Color(0xFFFFFFFF) // Menu Icons
     val md_theme_dark_outline = Color(0xFFCCCCCC) // Outline
     val md_theme_dark_inverseOnSurface = Color(0xFF1B1B1F)
     val md_theme_dark_inverseSurface = Color(0xFFE4E1E6)
@@ -957,7 +957,7 @@ fun highContrastColorful(): Pair<ColorScheme, ColorScheme> {
     val md_theme_dark_onSecondary = Color(0xFF2C2F42)
     val md_theme_dark_secondaryContainer = Color(0xFF434659)
     val md_theme_dark_onSecondaryContainer = Color(0xFFDFE1F9)
-    val md_theme_dark_tertiary = Color(0xFF825BAD)// Legend Pressed
+    val md_theme_dark_tertiary = Color(0xFF825BAD) // Legend Pressed
     val md_theme_dark_onTertiary = Color(0xFF44263E)
     val md_theme_dark_tertiaryContainer = Color(0xFFDF995B) // Key Up
     val md_theme_dark_onTertiaryContainer = Color(0xFFFFD7F2)
@@ -970,7 +970,7 @@ fun highContrastColorful(): Pair<ColorScheme, ColorScheme> {
     val md_theme_dark_surface = Color(0xFF241B33) // Primary Keys
     val md_theme_dark_onSurface = Color(0xFFFFFAD8) // Menu Text
     val md_theme_dark_surfaceVariant = Color(0xFF1F1927) // Secondary Keys
-    val md_theme_dark_onSurfaceVariant = Color(0xFFFFF192)// Menu Icons
+    val md_theme_dark_onSurfaceVariant = Color(0xFFFFF192) // Menu Icons
     val md_theme_dark_outline = Color(0xFF62537A) // Outline
     val md_theme_dark_inverseOnSurface = Color(0xFF1B1B1F)
     val md_theme_dark_inverseSurface = Color(0xFFE4E1E6)
