@@ -31,6 +31,7 @@ import com.dessalines.thumbkey.keyboards.THUMBKEY_EOENDE_KEYBOARD_MODES
 import com.dessalines.thumbkey.keyboards.THUMBKEY_ES_CA_V1_KEYBOARD_MODES
 import com.dessalines.thumbkey.keyboards.THUMBKEY_ES_EO_V1_KEYBOARD_MODES
 import com.dessalines.thumbkey.keyboards.THUMBKEY_ES_V1_KEYBOARD_MODES
+import com.dessalines.thumbkey.keyboards.THUMBKEY_EE_ET_V1_KEYBOARD_MODES
 import com.dessalines.thumbkey.keyboards.THUMBKEY_EU_V1_KEYBOARD_MODES
 import com.dessalines.thumbkey.keyboards.THUMBKEY_FA_V1_KEYBOARD_MODES
 import com.dessalines.thumbkey.keyboards.THUMBKEY_FI_V1_KEYBOARD_MODES
@@ -77,6 +78,7 @@ enum class KeyboardLayout(val title: String, val index: Int, val modes: Map<Keyb
     ThumbKeyENv4("Thumb-Key english v4", 0, THUMBKEY_EN_V4_KEYBOARD_MODES),
     ThumbKeyENv4Programmer("Thumb-Key english v4 (programmer)", 1, THUMBKEY_EN_V4_PROGRAMMER_KEYBOARD_MODES),
     ThumbKeyDEv2("Thumb-Key deutsch v2", 2, THUMBKEY_DE_V2_KEYBOARD_MODES),
+
     ThumbKeyDAv1("Thumb-Key dansk v1", 3, THUMBKEY_DA_V1_KEYBOARD_MODES),
     ThumbKeyESv1("Thumb-Key español v1", 4, THUMBKEY_ES_V1_KEYBOARD_MODES),
     ThumbKeyEUv1("Thumb-Key euskara v1", 5, THUMBKEY_EU_V1_KEYBOARD_MODES),
@@ -145,4 +147,5 @@ enum class KeyboardLayout(val title: String, val index: Int, val modes: Map<Keyb
     MessageEaseDESymbols("MessageEase deutsch with Symbols", 68, MESSAGEEASE_DE_SYMBOLS_KEYBOARD_MODES),
     ThumbKeyCAv1("Thumb-Key Canadian Aboriginal Syllabic v1", 69, THUMBKEY_CA_V1_KEYBOARD_MODES),
     ThumbKeyMATHv1("Thumb-Key Mathematical", 70, THUMBKEY_MATH_V1_KEYBOARD_MODES),
+    ThumbKeyETv1("Thumb-Key eesti keel v1", 71, THUMBKEY_EE_ET_V1_KEYBOARD_MODES),
 }
