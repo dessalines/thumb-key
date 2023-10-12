@@ -5,6 +5,7 @@ import androidx.compose.material.icons.outlined.ArrowDropDown
 import androidx.compose.material.icons.outlined.ArrowDropUp
 import androidx.compose.material.icons.outlined.Copyright
 import androidx.compose.material.icons.outlined.KeyboardCapslock
+import com.dessalines.thumbkey.utils.Autocapitalizers
 import com.dessalines.thumbkey.utils.ColorVariant
 import com.dessalines.thumbkey.utils.FontSizeVariant
 import com.dessalines.thumbkey.utils.KeyAction
@@ -14,6 +15,7 @@ import com.dessalines.thumbkey.utils.KeyItemC
 import com.dessalines.thumbkey.utils.KeyboardC
 import com.dessalines.thumbkey.utils.KeyboardMode
 import com.dessalines.thumbkey.utils.SwipeDirection
+import com.dessalines.thumbkey.utils.autoCapitalizeI
 
 val MESSAGEEASE_EN_SYMBOLS_MAIN = KeyboardC(
     listOf(
@@ -746,3 +748,5 @@ val MESSAGEEASE_EN_SYMBOLS_KEYBOARD_MODES: Map<KeyboardMode, KeyboardC> = mapOf(
     KeyboardMode.SHIFTED to MESSAGEEASE_EN_SYMBOLS_SHIFTED,
     KeyboardMode.NUMERIC to NUMERIC_KEYBOARD,
 )
+
+val MESSAGEEASE_EN_SYMBOLS_KEYBOARD_AUTOCAPITALIZERS: Autocapitalizers = arrayOf(::autoCapitalizeI)

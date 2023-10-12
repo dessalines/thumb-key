@@ -9,6 +9,7 @@ import androidx.compose.material.icons.outlined.KeyboardReturn
 import androidx.compose.material.icons.outlined.Language
 import androidx.compose.material.icons.outlined.SelectAll
 import androidx.compose.material.icons.outlined.Settings
+import com.dessalines.thumbkey.utils.Autocapitalizers
 import com.dessalines.thumbkey.utils.ColorVariant
 import com.dessalines.thumbkey.utils.FontSizeVariant
 import com.dessalines.thumbkey.utils.KeyAction
@@ -1122,3 +1123,5 @@ val T9_V1_KEYBOARD_MODES: Map<KeyboardMode, KeyboardC> = mapOf(
     KeyboardMode.SHIFTED to T9_V1_SHIFTED,
     KeyboardMode.NUMERIC to NUMERIC_KEYBOARD,
 )
+
+val T9_V1_KEYBOARD_AUTOCAPITALIZERS: Autocapitalizers = arrayOf()

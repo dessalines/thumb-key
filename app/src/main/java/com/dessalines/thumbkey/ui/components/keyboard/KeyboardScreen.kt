@@ -87,6 +87,11 @@ fun KeyboardScreen(
             ?: DEFAULT_KEYBOARD_LAYOUT,
     ].modes
 
+    val autocapitalizers = KeyboardLayout.entries.sortedBy { it.index }[
+        settings?.keyboardLayout
+            ?: DEFAULT_KEYBOARD_LAYOUT,
+    ].autocapitalizers
+
     val keyboard = keyboardGroup[mode] ?: THUMBKEY_EN_V4_MAIN
 
     val alignment = keyboardPositionToAlignment(
@@ -163,6 +168,7 @@ fun KeyboardScreen(
                             keyBorderWidth = settings?.keyBorderWidth ?: DEFAULT_KEY_BORDER_WIDTH,
                             keyRadius = settings?.keyRadius ?: DEFAULT_KEY_RADIUS,
                             autoCapitalize = autoCapitalize,
+                            autocapitalizers = autocapitalizers,
                             spacebarMultiTaps = spacebarMultiTaps,
                             vibrateOnTap = vibrateOnTap,
                             soundOnTap = soundOnTap,
@@ -251,6 +257,7 @@ fun KeyboardScreen(
                                     keyBorderWidth = settings?.keyBorderWidth ?: DEFAULT_KEY_BORDER_WIDTH,
                                     keyRadius = settings?.keyRadius ?: DEFAULT_KEY_RADIUS,
                                     autoCapitalize = autoCapitalize,
+                                    autocapitalizers = autocapitalizers,
                                     spacebarMultiTaps = spacebarMultiTaps,
                                     vibrateOnTap = vibrateOnTap,
                                     soundOnTap = soundOnTap,

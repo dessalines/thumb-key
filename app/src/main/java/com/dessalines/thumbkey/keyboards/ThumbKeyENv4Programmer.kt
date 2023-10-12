@@ -6,6 +6,7 @@ import androidx.compose.material.icons.outlined.ArrowDropUp
 import androidx.compose.material.icons.outlined.Copyright
 import androidx.compose.material.icons.outlined.KeyboardCapslock
 import androidx.compose.material.icons.outlined.KeyboardTab
+import com.dessalines.thumbkey.utils.Autocapitalizers
 import com.dessalines.thumbkey.utils.ColorVariant
 import com.dessalines.thumbkey.utils.FontSizeVariant
 import com.dessalines.thumbkey.utils.KeyAction
@@ -16,6 +17,7 @@ import com.dessalines.thumbkey.utils.KeyboardC
 import com.dessalines.thumbkey.utils.KeyboardMode
 import com.dessalines.thumbkey.utils.SwipeDirection
 import com.dessalines.thumbkey.utils.SwipeNWay
+import com.dessalines.thumbkey.utils.autoCapitalizeI
 
 // Adds more punctuation options to the main screen to reduce switches to the numeric keyboard
 val THUMBKEY_EN_V4_PROGRAMMER = KeyboardC(
@@ -701,3 +703,5 @@ val THUMBKEY_EN_V4_PROGRAMMER_KEYBOARD_MODES: Map<KeyboardMode, KeyboardC> = map
     KeyboardMode.SHIFTED to THUMBKEY_EN_V4_PROGRAMMER_SHIFTED,
     KeyboardMode.NUMERIC to NUMERIC_KEYBOARD,
 )
+
+val THUMBKEY_EN_V4_PROGRAMMER_KEYBOARD_AUTOCAPITALIZERS: Autocapitalizers = arrayOf(::autoCapitalizeI)

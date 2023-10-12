@@ -2,6 +2,9 @@ package com.dessalines.thumbkey.utils
 
 import com.dessalines.thumbkey.IMEService
 
+typealias Autocapitalizer = (IMEService) -> Unit
+typealias Autocapitalizers = Array<Autocapitalizer>
+
 fun autoCapitalizeI(
     ime: IMEService,
 ) {

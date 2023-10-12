@@ -46,6 +46,7 @@ import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.lerp
 import com.dessalines.thumbkey.IMEService
+import com.dessalines.thumbkey.utils.Autocapitalizers
 import com.dessalines.thumbkey.utils.FontSizeVariant
 import com.dessalines.thumbkey.utils.KeyAction
 import com.dessalines.thumbkey.utils.KeyC
@@ -70,6 +71,7 @@ fun KeyboardKey(
     animationHelperSpeed: Int,
     animationSpeed: Int,
     autoCapitalize: Boolean,
+    autocapitalizers: Autocapitalizers,
     spacebarMultiTaps: Boolean,
     vibrateOnTap: Boolean,
     soundOnTap: Boolean,
@@ -180,6 +182,7 @@ fun KeyboardKey(
                     action = action,
                     ime = ime,
                     autoCapitalize = autoCapitalize,
+                    autocapitalizers = autocapitalizers,
                     onToggleShiftMode = onToggleShiftMode,
                     onToggleNumericMode = onToggleNumericMode,
                     onToggleEmojiMode = onToggleEmojiMode,
@@ -257,6 +260,7 @@ fun KeyboardKey(
                                         action = action,
                                         ime = ime,
                                         autoCapitalize = autoCapitalize,
+                                        autocapitalizers = autocapitalizers,
                                         onToggleShiftMode = onToggleShiftMode,
                                         onToggleNumericMode = onToggleNumericMode,
                                         onToggleEmojiMode = onToggleEmojiMode,
@@ -302,6 +306,7 @@ fun KeyboardKey(
                                 action = action,
                                 ime = ime,
                                 autoCapitalize = autoCapitalize,
+                                autocapitalizers = autocapitalizers,
                                 onToggleShiftMode = onToggleShiftMode,
                                 onToggleNumericMode = onToggleNumericMode,
                                 onToggleEmojiMode = onToggleEmojiMode,
@@ -333,6 +338,7 @@ fun KeyboardKey(
                                         action = action,
                                         ime = ime,
                                         autoCapitalize = autoCapitalize,
+                                        autocapitalizers = autocapitalizers,
                                         onToggleShiftMode = onToggleShiftMode,
                                         onToggleNumericMode = onToggleNumericMode,
                                         onToggleCapsLock = onToggleCapsLock,

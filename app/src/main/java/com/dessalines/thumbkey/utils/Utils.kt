@@ -142,6 +142,7 @@ fun performKeyAction(
     action: KeyAction,
     ime: IMEService,
     autoCapitalize: Boolean,
+    autocapitalizers: Autocapitalizers,
     onToggleShiftMode: (enable: Boolean) -> Unit,
     onToggleNumericMode: (enable: Boolean) -> Unit,
     onToggleEmojiMode: (enable: Boolean) -> Unit,
@@ -163,6 +164,7 @@ fun performKeyAction(
                 autoCapitalize(
                     ime = ime,
                     onAutoCapitalize = onAutoCapitalize,
+                    autocapitalizers = autocapitalizers,
                 )
             } else { // To return to MAIN mode after a shifted key action.
                 onAutoCapitalize(false)
@@ -193,6 +195,7 @@ fun performKeyAction(
                 autoCapitalize(
                     ime = ime,
                     onAutoCapitalize = onAutoCapitalize,
+                    autocapitalizers = autocapitalizers,
                 )
             }
         }
@@ -334,8 +337,13 @@ fun getKeyboardMode(ime: IMEService, autoCapitalize: Boolean): KeyboardMode {
 private fun autoCapitalize(
     ime: IMEService,
     onAutoCapitalize: (enable: Boolean) -> Unit,
+    autocapitalizers: Autocapitalizers,
 ) {
-    // autoCapitalizeI(ime)
+
+    // Run language specific autocapitalizers
+    autocapitalizers.forEach { fn ->
+        fn(ime)
+    }
 
     if (autoCapitalizeCheck(ime)) {
         onAutoCapitalize(true)
