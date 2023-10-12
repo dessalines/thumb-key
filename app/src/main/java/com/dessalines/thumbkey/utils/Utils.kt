@@ -6,6 +6,8 @@ import android.content.pm.PackageInfo
 import android.content.pm.PackageManager
 import android.net.Uri
 import android.os.Build
+import android.os.Handler
+import android.os.Looper
 import android.text.InputType
 import android.util.Log
 import android.view.KeyEvent
@@ -281,10 +283,30 @@ fun performKeyAction(
             ime.currentInputConnection.performContextMenuAction(android.R.id.selectAll)
         }
         KeyAction.Cut -> {
-            ime.currentInputConnection.performContextMenuAction(android.R.id.cut)
+            if (ime.currentInputConnection.getSelectedText(0).isNullOrEmpty()) {
+                // Nothing selected, so cut all the text
+                ime.currentInputConnection.performContextMenuAction(android.R.id.selectAll)
+                // Wait a bit for the select all to complete.
+                val delayInMillis = 100L
+                Handler(Looper.getMainLooper()).postDelayed({
+                    ime.currentInputConnection.performContextMenuAction(android.R.id.cut)
+                }, delayInMillis)
+            } else {
+                ime.currentInputConnection.performContextMenuAction(android.R.id.cut)
+            }
         }
         KeyAction.Copy -> {
-            ime.currentInputConnection.performContextMenuAction(android.R.id.copy)
+            if (ime.currentInputConnection.getSelectedText(0).isNullOrEmpty()) {
+                // Nothing selected, so copy all the text
+                ime.currentInputConnection.performContextMenuAction(android.R.id.selectAll)
+                // Wait a bit for the select all to complete.
+                val delayInMillis = 100L
+                Handler(Looper.getMainLooper()).postDelayed({
+                    ime.currentInputConnection.performContextMenuAction(android.R.id.copy)
+                }, delayInMillis)
+            } else {
+                ime.currentInputConnection.performContextMenuAction(android.R.id.copy)
+            }
 
             val message = ime.getString(R.string.copy)
             Toast.makeText(ime, message, Toast.LENGTH_SHORT).show()
