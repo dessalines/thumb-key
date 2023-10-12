@@ -339,7 +339,6 @@ private fun autoCapitalize(
     onAutoCapitalize: (enable: Boolean) -> Unit,
     autocapitalizers: Autocapitalizers,
 ) {
-
     // Run language specific autocapitalizers
     autocapitalizers.forEach { fn ->
         fn(ime)
