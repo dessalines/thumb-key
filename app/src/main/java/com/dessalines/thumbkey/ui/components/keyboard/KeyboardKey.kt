@@ -246,6 +246,7 @@ fun KeyboardKey(
                                     hasSlideMoveCursorTriggered = true
                                 }
 
+                                var lengthOfSelectedText = 0
                                 if (selection.active) {
                                     // Move the cursor to the beginning or end of the selection and exit selection.
                                     val location = if (offsetX < 0) {
@@ -259,6 +260,12 @@ fun KeyboardKey(
                                         selection.start,
                                         selection.end,
                                     )
+                                } else {
+                                    // Check if any text has been selected, but the selection wasn't done by this keyboard.
+                                    val selectedText = ime.currentInputConnection.getSelectedText(0)
+                                    if ((!selectedText.isNullOrEmpty()) && selectedText.length > 0) {
+                                        lengthOfSelectedText = selectedText.length
+                                    }
                                 }
 
                                 var cursorMovement = acceleratingCursorDistance(offsetX, timeOfLastAccelerationInput)
@@ -267,9 +274,26 @@ fun KeyboardKey(
                                     // Increment distance by one, because a value of 2 moves the cursor by 1 character.
                                     cursorMovement += 1
                                 }
+
+                                // Move the cursor
                                 // For some reason, '2' moves the cursor to the right by 1 character.
                                 //                 '-1' moves the cursor to the left  by 1 character.
                                 if (cursorMovement >= 2 || cursorMovement <= -1) {
+                                    if (lengthOfSelectedText > 0) {
+                                        // Deselect text that has been selected, but the selection wasn't done by this keyboard.
+                                        selection = startSelection(ime)
+                                        ime.currentInputConnection.setSelection(
+                                            selection.start,
+                                            selection.end,
+                                        )
+                                        // Reset the selection
+                                        selection = Selection()
+
+                                        // Move the cursor to the end of the selection if we swipe right.
+                                        if (cursorMovement >= 2) {
+                                            cursorMovement += lengthOfSelectedText
+                                        }
+                                    }
                                     ime.currentInputConnection.commitText("", cursorMovement)
                                     // reset offsetX, do not reset offsetY when sliding, it will break selecting
                                     offsetX = 0f
