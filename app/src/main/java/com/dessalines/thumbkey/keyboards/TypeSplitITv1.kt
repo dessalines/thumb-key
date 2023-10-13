@@ -1,6 +1,6 @@
 package com.dessalines.thumbkey.keyboards
 
-import com.dessalines.thumbkey.utils.Autocapitalizers
+import com.dessalines.thumbkey.utils.AutoCapitalizers
 import com.dessalines.thumbkey.utils.ColorVariant
 import com.dessalines.thumbkey.utils.FontSizeVariant
 import com.dessalines.thumbkey.utils.KeyAction
@@ -552,4 +552,4 @@ val TYPESPLIT_IT_V1_KEYBOARD_MODES: Map<KeyboardMode, KeyboardC> = mapOf(
     KeyboardMode.NUMERIC to TYPESPLIT_NUMERIC_KEYBOARD,
 )
 
-val TYPESPLIT_IT_V1_KEYBOARD_AUTOCAPITALIZERS: Autocapitalizers = arrayOf()
+val TYPESPLIT_IT_V1_KEYBOARD_AUTOCAPITALIZERS: AutoCapitalizers = arrayOf()

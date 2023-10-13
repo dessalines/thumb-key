@@ -142,7 +142,7 @@ fun performKeyAction(
     action: KeyAction,
     ime: IMEService,
     autoCapitalize: Boolean,
-    autocapitalizers: Autocapitalizers,
+    autocapitalizers: AutoCapitalizers,
     onToggleShiftMode: (enable: Boolean) -> Unit,
     onToggleNumericMode: (enable: Boolean) -> Unit,
     onToggleEmojiMode: (enable: Boolean) -> Unit,
@@ -337,7 +337,7 @@ fun getKeyboardMode(ime: IMEService, autoCapitalize: Boolean): KeyboardMode {
 private fun autoCapitalize(
     ime: IMEService,
     onAutoCapitalize: (enable: Boolean) -> Unit,
-    autocapitalizers: Autocapitalizers,
+    autocapitalizers: AutoCapitalizers,
 ) {
     // Run language specific autocapitalizers
     autocapitalizers.forEach { fn ->
@@ -455,12 +455,12 @@ fun keyboardLayoutsSetFromTitleIndex(layouts: String?): Set<Int> {
 }
 
 fun keyboardRealIndexFromTitleIndex(index: Int): Int {
-    return KeyboardLayout.entries.sortedBy { it.title }[index].index
+    return KeyboardLayout.entries.sortedBy { it.keyboardDefinition.title }[index].index
 }
 
 fun keyboardTitleIndexFromRealIndex(index: Int): Int {
     val keyboard = KeyboardLayout.entries.find { it.index == index } ?: KeyboardLayout.ThumbKeyENv4
-    return KeyboardLayout.entries.sortedBy { it.title }.indexOf(keyboard)
+    return KeyboardLayout.entries.sortedBy { it.keyboardDefinition.title }.indexOf(keyboard)
 }
 
 fun Context.getPackageInfo(): PackageInfo {

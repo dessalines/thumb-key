@@ -2,7 +2,7 @@ package com.dessalines.thumbkey.keyboards
 
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.outlined.ArrowDropUp
-import com.dessalines.thumbkey.utils.Autocapitalizers
+import com.dessalines.thumbkey.utils.AutoCapitalizers
 import com.dessalines.thumbkey.utils.ColorVariant
 import com.dessalines.thumbkey.utils.FontSizeVariant
 import com.dessalines.thumbkey.utils.KeyAction
@@ -890,4 +890,4 @@ val TWO_HANDS_HR_V1_KEYBOARD_MODES: Map<KeyboardMode, KeyboardC> = mapOf(
     KeyboardMode.NUMERIC to TWO_HANDS_NUMERIC_KEYBOARD,
 )
 
-val TWO_HANDS_HR_V1_KEYBOARD_AUTOCAPITALIZERS: Autocapitalizers = arrayOf()
+val TWO_HANDS_HR_V1_KEYBOARD_AUTOCAPITALIZERS: AutoCapitalizers = arrayOf()

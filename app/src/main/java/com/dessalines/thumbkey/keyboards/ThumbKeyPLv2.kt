@@ -5,7 +5,7 @@ import androidx.compose.material.icons.outlined.ArrowDropDown
 import androidx.compose.material.icons.outlined.ArrowDropUp
 import androidx.compose.material.icons.outlined.Copyright
 import androidx.compose.material.icons.outlined.KeyboardCapslock
-import com.dessalines.thumbkey.utils.Autocapitalizers
+import com.dessalines.thumbkey.utils.AutoCapitalizers
 import com.dessalines.thumbkey.utils.ColorVariant
 import com.dessalines.thumbkey.utils.FontSizeVariant
 import com.dessalines.thumbkey.utils.KeyAction
@@ -515,4 +515,4 @@ val THUMBKEY_PL_V2_KEYBOARD_MODES: Map<KeyboardMode, KeyboardC> = mapOf(
     KeyboardMode.NUMERIC to NUMERIC_KEYBOARD,
 )
 
-val THUMBKEY_PL_V2_KEYBOARD_AUTOCAPITALIZERS: Autocapitalizers = arrayOf()
+val THUMBKEY_PL_V2_KEYBOARD_AUTOCAPITALIZERS: AutoCapitalizers = arrayOf()

@@ -82,17 +82,12 @@ fun KeyboardScreen(
     // TODO get rid of this crap
     val lastAction = remember { mutableStateOf<KeyAction?>(null) }
 
-    val keyboardGroup = KeyboardLayout.entries.sortedBy { it.index }[
+    val keyboardDefinition = KeyboardLayout.entries.sortedBy { it.index }[
         settings?.keyboardLayout
             ?: DEFAULT_KEYBOARD_LAYOUT,
-    ].modes
+    ].keyboardDefinition
 
-    val autocapitalizers = KeyboardLayout.entries.sortedBy { it.index }[
-        settings?.keyboardLayout
-            ?: DEFAULT_KEYBOARD_LAYOUT,
-    ].autocapitalizers
-
-    val keyboard = keyboardGroup[mode] ?: THUMBKEY_EN_V4_MAIN
+    val keyboard = keyboardDefinition.modes[mode] ?: THUMBKEY_EN_V4_MAIN
 
     val alignment = keyboardPositionToAlignment(
         KeyboardPosition.entries[
@@ -168,7 +163,7 @@ fun KeyboardScreen(
                             keyBorderWidth = settings?.keyBorderWidth ?: DEFAULT_KEY_BORDER_WIDTH,
                             keyRadius = settings?.keyRadius ?: DEFAULT_KEY_RADIUS,
                             autoCapitalize = autoCapitalize,
-                            autocapitalizers = autocapitalizers,
+                            autocapitalizers = keyboardDefinition.settings.autoCapitalizers,
                             spacebarMultiTaps = spacebarMultiTaps,
                             vibrateOnTap = vibrateOnTap,
                             soundOnTap = soundOnTap,
@@ -257,7 +252,7 @@ fun KeyboardScreen(
                                     keyBorderWidth = settings?.keyBorderWidth ?: DEFAULT_KEY_BORDER_WIDTH,
                                     keyRadius = settings?.keyRadius ?: DEFAULT_KEY_RADIUS,
                                     autoCapitalize = autoCapitalize,
-                                    autocapitalizers = autocapitalizers,
+                                    autocapitalizers = keyboardDefinition.settings.autoCapitalizers,
                                     spacebarMultiTaps = spacebarMultiTaps,
                                     vibrateOnTap = vibrateOnTap,
                                     soundOnTap = soundOnTap,
