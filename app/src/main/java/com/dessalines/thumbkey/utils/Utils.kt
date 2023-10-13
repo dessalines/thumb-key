@@ -459,7 +459,7 @@ fun keyboardRealIndexFromTitleIndex(index: Int): Int {
 }
 
 fun keyboardTitleIndexFromRealIndex(index: Int): Int {
-    val keyboard = KeyboardLayout.entries.find { it.index == index } ?: KeyboardLayout.ThumbKeyENv4
+    val keyboard = KeyboardLayout.entries.find { it.index == index } ?: KeyboardLayout.ENThumbKey
     return KeyboardLayout.entries.sortedBy { it.keyboardDefinition.title }.indexOf(keyboard)
 }
 

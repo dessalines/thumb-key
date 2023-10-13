@@ -6,20 +6,20 @@ import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.res.stringResource
 import com.dessalines.thumbkey.R
 
-data class KeyboardDefinitionModes (
+data class KeyboardDefinitionModes(
     val main: KeyboardC,
     val shifted: KeyboardC,
     val numeric: KeyboardC,
 )
 
-data class KeyboardDefinitionSettings (
-    val autoCapitalizers: AutoCapitalizers,
+data class KeyboardDefinitionSettings(
+    val autoCapitalizers: AutoCapitalizers = arrayOf(),
 )
 
-data class KeyboardDefinition (
+data class KeyboardDefinition(
     val title: String,
     val modes: KeyboardDefinitionModes,
-    val settings: KeyboardDefinitionSettings,
+    val settings: KeyboardDefinitionSettings = KeyboardDefinitionSettings(),
 )
 
 // Almost a 4x4 grid, but the bottom is mostly spacebar
