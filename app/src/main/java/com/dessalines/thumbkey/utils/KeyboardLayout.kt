@@ -51,6 +51,7 @@ import com.dessalines.thumbkey.keyboards.THUMBKEY_JA_V1_KATAKANA_KEYBOARD_MODES
 import com.dessalines.thumbkey.keyboards.THUMBKEY_KA_V1_KEYBOARD_MODES
 import com.dessalines.thumbkey.keyboards.THUMBKEY_LT_V1_KEYBOARD_MODES
 import com.dessalines.thumbkey.keyboards.THUMBKEY_LV_LTG_V1_KEYBOARD_MODES
+import com.dessalines.thumbkey.keyboards.THUMBKEY_MATH_V1_KEYBOARD_MODES
 import com.dessalines.thumbkey.keyboards.THUMBKEY_NL_V1_KEYBOARD_MODES
 import com.dessalines.thumbkey.keyboards.THUMBKEY_NO_V1_KEYBOARD_MODES
 import com.dessalines.thumbkey.keyboards.THUMBKEY_PL_V2_KEYBOARD_MODES
@@ -143,4 +144,5 @@ enum class KeyboardLayout(val title: String, val index: Int, val modes: Map<Keyb
     MessageEaseUKRUSymbols("MessageEase український-русский with Symbols", 67, MESSAGEEASE_UA_RU_SYMBOLS_KEYBOARD_MODES),
     MessageEaseDESymbols("MessageEase deutsch with Symbols", 68, MESSAGEEASE_DE_SYMBOLS_KEYBOARD_MODES),
     ThumbKeyCAv1("Thumb-Key Canadian Aboriginal Syllabic v1", 69, THUMBKEY_CA_V1_KEYBOARD_MODES),
+    ThumbKeyMATHv1("Thumb-Key Mathematical", 70, THUMBKEY_MATH_V1_KEYBOARD_MODES),
 }
