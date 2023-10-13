@@ -13,8 +13,8 @@ import com.dessalines.thumbkey.utils.KeyDisplay
 import com.dessalines.thumbkey.utils.KeyItemC
 import com.dessalines.thumbkey.utils.KeyboardC
 import com.dessalines.thumbkey.utils.KeyboardDefinition
-import com.dessalines.thumbkey.utils.KeyboardMode
-import com.dessalines.thumbkey.utils.KeyboardSettings
+import com.dessalines.thumbkey.utils.KeyboardDefinitionModes
+import com.dessalines.thumbkey.utils.KeyboardDefinitionSettings
 import com.dessalines.thumbkey.utils.SwipeDirection
 import com.dessalines.thumbkey.utils.SwipeNWay
 import com.dessalines.thumbkey.utils.autoCapitalizeI
@@ -442,13 +442,13 @@ val THUMBKEY_EN_V4_SHIFTED = KeyboardC(
 )
 
 val THUMBKEY_EN_V4: KeyboardDefinition = KeyboardDefinition(
-    title = "EN - Thumb-Key english v4",
-    modes = mapOf(
-        KeyboardMode.MAIN to THUMBKEY_EN_V4_MAIN,
-        KeyboardMode.SHIFTED to THUMBKEY_EN_V4_SHIFTED,
-        KeyboardMode.NUMERIC to NUMERIC_KEYBOARD,
+    title = "EN Thumb-Key english v4",
+    modes = KeyboardDefinitionModes (
+        main = THUMBKEY_EN_V4_MAIN,
+        shifted = THUMBKEY_EN_V4_SHIFTED,
+        numeric = NUMERIC_KEYBOARD,
     ),
-    settings = KeyboardSettings(
+    settings = KeyboardDefinitionSettings(
         autoCapitalizers = arrayOf(::autoCapitalizeI)
     )
 )

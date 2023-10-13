@@ -13,8 +13,8 @@ import com.dessalines.thumbkey.utils.KeyDisplay
 import com.dessalines.thumbkey.utils.KeyItemC
 import com.dessalines.thumbkey.utils.KeyboardC
 import com.dessalines.thumbkey.utils.KeyboardDefinition
-import com.dessalines.thumbkey.utils.KeyboardMode
-import com.dessalines.thumbkey.utils.KeyboardSettings
+import com.dessalines.thumbkey.utils.KeyboardDefinitionModes
+import com.dessalines.thumbkey.utils.KeyboardDefinitionSettings
 import com.dessalines.thumbkey.utils.SwipeDirection
 import com.dessalines.thumbkey.utils.SwipeNWay
 
@@ -463,13 +463,13 @@ val THUMBKEY_NO_V1_SHIFTED = KeyboardC(
 )
 
 val THUMBKEY_NO_V1: KeyboardDefinition = KeyboardDefinition(
-    title = "NO - Thumb-Key norsk v1",
-    modes = mapOf(
-        KeyboardMode.MAIN to THUMBKEY_NO_V1_MAIN,
-        KeyboardMode.SHIFTED to THUMBKEY_NO_V1_SHIFTED,
-        KeyboardMode.NUMERIC to NUMERIC_KEYBOARD,
+    title = "NO Thumb-Key norsk v1",
+    modes = KeyboardDefinitionModes (
+        main = THUMBKEY_NO_V1_MAIN,
+        shifted = THUMBKEY_NO_V1_SHIFTED,
+        numeric = NUMERIC_KEYBOARD,
     ),
-    settings = KeyboardSettings(
+    settings = KeyboardDefinitionSettings(
         autoCapitalizers = arrayOf()
     )
 )
