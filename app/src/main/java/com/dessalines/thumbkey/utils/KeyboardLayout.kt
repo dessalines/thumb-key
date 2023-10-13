@@ -23,6 +23,7 @@ import com.dessalines.thumbkey.keyboards.THUMBKEY_DE_V2_KEYBOARD_MODES
 import com.dessalines.thumbkey.keyboards.THUMBKEY_DE_V2_MULTILINGUAL_KEYBOARD_MODES
 import com.dessalines.thumbkey.keyboards.THUMBKEY_EN_PROGRAMMER_WIDE_KEYBOARD_MODES
 import com.dessalines.thumbkey.keyboards.THUMBKEY_EN_V4_KEYBOARD_MODES
+import com.dessalines.thumbkey.keyboards.THUMBKEY_EN_V4_MULTI_EE_KEYBOARD_MODES
 import com.dessalines.thumbkey.keyboards.THUMBKEY_EN_V4_MULTI_IT_KEYBOARD_MODES
 import com.dessalines.thumbkey.keyboards.THUMBKEY_EN_V4_MULTI_KEYBOARD_MODES
 import com.dessalines.thumbkey.keyboards.THUMBKEY_EN_V4_PROGRAMMER_KEYBOARD_MODES
@@ -31,7 +32,6 @@ import com.dessalines.thumbkey.keyboards.THUMBKEY_EOENDE_KEYBOARD_MODES
 import com.dessalines.thumbkey.keyboards.THUMBKEY_ES_CA_V1_KEYBOARD_MODES
 import com.dessalines.thumbkey.keyboards.THUMBKEY_ES_EO_V1_KEYBOARD_MODES
 import com.dessalines.thumbkey.keyboards.THUMBKEY_ES_V1_KEYBOARD_MODES
-import com.dessalines.thumbkey.keyboards.THUMBKEY_EE_ET_V1_KEYBOARD_MODES
 import com.dessalines.thumbkey.keyboards.THUMBKEY_EU_V1_KEYBOARD_MODES
 import com.dessalines.thumbkey.keyboards.THUMBKEY_FA_V1_KEYBOARD_MODES
 import com.dessalines.thumbkey.keyboards.THUMBKEY_FI_V1_KEYBOARD_MODES
@@ -148,5 +148,5 @@ enum class KeyboardLayout(val title: String, val index: Int, val modes: Map<Keyb
     MessageEaseDESymbols("MessageEase deutsch with Symbols", 68, MESSAGEEASE_DE_SYMBOLS_KEYBOARD_MODES),
     ThumbKeyCAv1("Thumb-Key Canadian Aboriginal Syllabic v1", 69, THUMBKEY_CA_V1_KEYBOARD_MODES),
     ThumbKeyMATHv1("Thumb-Key Mathematical", 70, THUMBKEY_MATH_V1_KEYBOARD_MODES),
-    ThumbKeyENv4MultiEE("Thumb-Key english v4 (EN+EE multi)", 71, THUMBKEY_EE_ET_V1_KEYBOARD_MODES),
+    ThumbKeyENv4MultiEE("Thumb-Key english v4 (EN+EE multi)", 71, THUMBKEY_EN_V4_MULTI_EE_KEYBOARD_MODES),
 }
