@@ -74,6 +74,7 @@ import com.dessalines.thumbkey.keyboards.TYPESPLIT_PL_V1_KEYBOARD_MODES
 import com.dessalines.thumbkey.keyboards.TYPESPLIT_PT_V1_KEYBOARD_MODES
 
 // Make sure new keyboards have a new index, even if they are in the middle
+@Suppress("unused")
 enum class KeyboardLayout(val title: String, val index: Int, val modes: Map<KeyboardMode, KeyboardC>) {
     ThumbKeyENv4("Thumb-Key english v4", 0, THUMBKEY_EN_V4_KEYBOARD_MODES),
     ThumbKeyENv4Programmer("Thumb-Key english v4 (programmer)", 1, THUMBKEY_EN_V4_PROGRAMMER_KEYBOARD_MODES),
@@ -147,5 +148,5 @@ enum class KeyboardLayout(val title: String, val index: Int, val modes: Map<Keyb
     MessageEaseDESymbols("MessageEase deutsch with Symbols", 68, MESSAGEEASE_DE_SYMBOLS_KEYBOARD_MODES),
     ThumbKeyCAv1("Thumb-Key Canadian Aboriginal Syllabic v1", 69, THUMBKEY_CA_V1_KEYBOARD_MODES),
     ThumbKeyMATHv1("Thumb-Key Mathematical", 70, THUMBKEY_MATH_V1_KEYBOARD_MODES),
-    ThumbKeyETv1("Thumb-Key eesti keel v1", 71, THUMBKEY_EE_ET_V1_KEYBOARD_MODES),
+    ThumbKeyENv4MultiEE("Thumb-Key english v4 (EN+EE multi)", 71, THUMBKEY_EE_ET_V1_KEYBOARD_MODES),
 }
