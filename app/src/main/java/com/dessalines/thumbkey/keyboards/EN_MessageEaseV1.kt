@@ -5,7 +5,6 @@ import androidx.compose.material.icons.outlined.ArrowDropDown
 import androidx.compose.material.icons.outlined.ArrowDropUp
 import androidx.compose.material.icons.outlined.Copyright
 import androidx.compose.material.icons.outlined.KeyboardCapslock
-import com.dessalines.thumbkey.utils.AutoCapitalizers
 import com.dessalines.thumbkey.utils.ColorVariant
 import com.dessalines.thumbkey.utils.FontSizeVariant
 import com.dessalines.thumbkey.utils.KeyAction
@@ -13,12 +12,14 @@ import com.dessalines.thumbkey.utils.KeyC
 import com.dessalines.thumbkey.utils.KeyDisplay
 import com.dessalines.thumbkey.utils.KeyItemC
 import com.dessalines.thumbkey.utils.KeyboardC
-import com.dessalines.thumbkey.utils.KeyboardMode
+import com.dessalines.thumbkey.utils.KeyboardDefinition
+import com.dessalines.thumbkey.utils.KeyboardDefinitionModes
+import com.dessalines.thumbkey.utils.KeyboardDefinitionSettings
 import com.dessalines.thumbkey.utils.SwipeDirection
 import com.dessalines.thumbkey.utils.SwipeNWay
 import com.dessalines.thumbkey.utils.autoCapitalizeI
 
-val MESSAGEEASE_EN_MAIN = KeyboardC(
+val KB_EN_MESSAGEEASE_V1_MAIN = KeyboardC(
     listOf(
         listOf(
             KeyItemC(
@@ -226,7 +227,7 @@ val MESSAGEEASE_EN_MAIN = KeyboardC(
     ),
 )
 
-val MESSAGEEASE_EN_SHIFTED = KeyboardC(
+val KB_EN_MESSAGEEASE_V1_SHIFTED = KeyboardC(
     listOf(
         listOf(
             KeyItemC(
@@ -440,10 +441,14 @@ val MESSAGEEASE_EN_SHIFTED = KeyboardC(
     ),
 )
 
-val MESSAGEEASE_EN_KEYBOARD_MODES: Map<KeyboardMode, KeyboardC> = mapOf(
-    KeyboardMode.MAIN to MESSAGEEASE_EN_MAIN,
-    KeyboardMode.SHIFTED to MESSAGEEASE_EN_SHIFTED,
-    KeyboardMode.NUMERIC to NUMERIC_KEYBOARD,
+val KB_EN_MESSAGEEASE_V1: KeyboardDefinition = KeyboardDefinition(
+    title = "EN MessageEase english v1",
+    modes = KeyboardDefinitionModes (
+        main = KB_EN_MESSAGEEASE_V1_MAIN,
+        shifted = KB_EN_MESSAGEEASE_V1_SHIFTED,
+        numeric = NUMERIC_KEYBOARD,
+    ),
+    settings = KeyboardDefinitionSettings(
+        autoCapitalizers = arrayOf(::autoCapitalizeI)
+    )
 )
-
-val MESSAGEEASE_EN_KEYBOARD_AUTOCAPITALIZERS: AutoCapitalizers = arrayOf(::autoCapitalizeI)

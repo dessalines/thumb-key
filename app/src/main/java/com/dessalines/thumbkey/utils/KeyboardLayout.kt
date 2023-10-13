@@ -1,12 +1,12 @@
 package com.dessalines.thumbkey.utils
 
-import com.dessalines.thumbkey.keyboards.THUMBKEY_EN_V4
-import com.dessalines.thumbkey.keyboards.THUMBKEY_NO_V1
+import com.dessalines.thumbkey.keyboards.KB_EN_THUMBKEY_V4
+import com.dessalines.thumbkey.keyboards.KB_NO_THUMBKEY_V1
 
 // Make sure new keyboards have a new index, even if they are in the middle
 enum class KeyboardLayout(val index: Int, val keyboardDefinition: KeyboardDefinition) {
-    ThumbKeyENv4(0, THUMBKEY_EN_V4),
-    ThumbKeyNOv1(1, THUMBKEY_NO_V1),
+    ThumbKeyENv4(0, KB_EN_THUMBKEY_V4),
+    ThumbKeyNOv1(1, KB_NO_THUMBKEY_V1),
 //    ThumbKeyENv4Programmer("Thumb-Key english v4 (programmer)", 1, THUMBKEY_EN_V4_PROGRAMMER_KEYBOARD_MODES, THUMBKEY_EN_V4_PROGRAMMER_KEYBOARD_AUTOCAPITALIZERS),
 //    ThumbKeyDEv2("Thumb-Key deutsch v2", 2, THUMBKEY_DE_V2_KEYBOARD_MODES, THUMBKEY_DE_V2_KEYBOARD_AUTOCAPITALIZERS),
 //    ThumbKeyDAv1("Thumb-Key dansk v1", 3, THUMBKEY_DA_V1_KEYBOARD_MODES, THUMBKEY_DA_V1_KEYBOARD_AUTOCAPITALIZERS),

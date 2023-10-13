@@ -5,7 +5,6 @@ import androidx.compose.material.icons.outlined.ArrowDropDown
 import androidx.compose.material.icons.outlined.ArrowDropUp
 import androidx.compose.material.icons.outlined.Copyright
 import androidx.compose.material.icons.outlined.KeyboardCapslock
-import com.dessalines.thumbkey.utils.AutoCapitalizers
 import com.dessalines.thumbkey.utils.ColorVariant
 import com.dessalines.thumbkey.utils.FontSizeVariant
 import com.dessalines.thumbkey.utils.KeyAction
@@ -13,10 +12,12 @@ import com.dessalines.thumbkey.utils.KeyC
 import com.dessalines.thumbkey.utils.KeyDisplay
 import com.dessalines.thumbkey.utils.KeyItemC
 import com.dessalines.thumbkey.utils.KeyboardC
-import com.dessalines.thumbkey.utils.KeyboardMode
+import com.dessalines.thumbkey.utils.KeyboardDefinition
+import com.dessalines.thumbkey.utils.KeyboardDefinitionModes
+import com.dessalines.thumbkey.utils.KeyboardDefinitionSettings
 import com.dessalines.thumbkey.utils.SwipeDirection
 
-val MESSAGEEASE_DE_MAIN = KeyboardC(
+val KB_DE_MESSAGEEASE_V1_MAIN = KeyboardC(
     listOf(
         listOf(
             KeyItemC(
@@ -326,7 +327,7 @@ val MESSAGEEASE_DE_MAIN = KeyboardC(
     ),
 )
 
-val MESSAGEEASE_DE_SHIFTED = KeyboardC(
+val KB_DE_MESSAGEEASE_V1_SHIFTED = KeyboardC(
     listOf(
         listOf(
             KeyItemC(
@@ -653,10 +654,14 @@ val MESSAGEEASE_DE_SHIFTED = KeyboardC(
     ),
 )
 
-val MESSAGEEASE_DE_KEYBOARD_MODES: Map<KeyboardMode, KeyboardC> = mapOf(
-    KeyboardMode.MAIN to MESSAGEEASE_DE_MAIN,
-    KeyboardMode.SHIFTED to MESSAGEEASE_DE_SHIFTED,
-    KeyboardMode.NUMERIC to NUMERIC_KEYBOARD,
+val KB_DE_MESSAGEEASE_V1: KeyboardDefinition = KeyboardDefinition(
+    title = "DE MessageEase deutch v1",
+    modes = KeyboardDefinitionModes (
+        main = KB_DE_MESSAGEEASE_V1_MAIN,
+        shifted = KB_DE_MESSAGEEASE_V1_SHIFTED,
+        numeric = NUMERIC_KEYBOARD,
+    ),
+    settings = KeyboardDefinitionSettings(
+        autoCapitalizers = arrayOf()
+    )
 )
-
-val MESSAGEEASE_DE_KEYBOARD_AUTOCAPITALIZERS: AutoCapitalizers = arrayOf()

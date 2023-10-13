@@ -47,9 +47,9 @@ import com.dessalines.thumbkey.db.DEFAULT_SPACEBAR_MULTITAPS
 import com.dessalines.thumbkey.db.DEFAULT_VIBRATE_ON_TAP
 import com.dessalines.thumbkey.keyboards.BACKSPACE_KEY_ITEM
 import com.dessalines.thumbkey.keyboards.EMOJI_BACK_KEY_ITEM
+import com.dessalines.thumbkey.keyboards.KB_EN_THUMBKEY_V4_MAIN
 import com.dessalines.thumbkey.keyboards.NUMERIC_KEY_ITEM
 import com.dessalines.thumbkey.keyboards.RETURN_KEY_ITEM
-import com.dessalines.thumbkey.keyboards.THUMBKEY_EN_V4_MAIN
 import com.dessalines.thumbkey.utils.KeyAction
 import com.dessalines.thumbkey.utils.KeyboardLayout
 import com.dessalines.thumbkey.utils.KeyboardMode
@@ -91,7 +91,7 @@ fun KeyboardScreen(
         KeyboardMode.MAIN -> keyboardDefinition.modes.main
         KeyboardMode.SHIFTED -> keyboardDefinition.modes.shifted
         KeyboardMode.NUMERIC -> keyboardDefinition.modes.numeric
-        else -> THUMBKEY_EN_V4_MAIN
+        else -> KB_EN_THUMBKEY_V4_MAIN
     }
 
     val alignment = keyboardPositionToAlignment(
