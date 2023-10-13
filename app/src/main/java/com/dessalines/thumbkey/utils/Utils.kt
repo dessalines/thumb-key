@@ -227,22 +227,17 @@ fun performKeyAction(
 
         KeyAction.IMECompleteAction -> {
             val imeAction = getImeActionCode(ime)
-            if (listOf(
-                    EditorInfo.IME_ACTION_DONE,
-                    EditorInfo.IME_ACTION_GO,
-                    EditorInfo.IME_ACTION_NEXT,
-                    EditorInfo.IME_ACTION_SEARCH,
-                    EditorInfo.IME_ACTION_SEND,
-                ).contains(imeAction)
-            ) {
-                ime.currentInputConnection.performEditorAction(imeAction)
-            } else {
+            // A lot of apps like discord and slack use weird IME actions,
+            // so its best to only check the none case
+            if (imeAction == EditorInfo.IME_FLAG_NO_ENTER_ACTION) {
                 ime.currentInputConnection.sendKeyEvent(
                     KeyEvent(
                         KeyEvent.ACTION_DOWN,
                         KeyEvent.KEYCODE_ENTER,
                     ),
                 )
+            } else {
+                ime.currentInputConnection.performEditorAction(imeAction)
             }
         }
 
@@ -303,6 +298,9 @@ fun performKeyAction(
     }
 }
 
+/**
+ * Returns the current IME action, or IME_FLAG_NO_ENTER_ACTION if there is none.
+ */
 fun getImeActionCode(ime: IMEService): Int {
     return (
         ime.currentInputEditorInfo.imeOptions and (

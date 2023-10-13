@@ -16,6 +16,7 @@ import com.dessalines.thumbkey.keyboards.KB_EN_MESSAGEEASE
 import com.dessalines.thumbkey.keyboards.KB_EN_MESSAGEEASE_SYMBOLS
 import com.dessalines.thumbkey.keyboards.KB_EN_THUMBKEY
 import com.dessalines.thumbkey.keyboards.KB_EN_THUMBKEY_MULTI
+import com.dessalines.thumbkey.keyboards.KB_EN_THUMBKEY_MULTI_EE
 import com.dessalines.thumbkey.keyboards.KB_EN_THUMBKEY_MULTI_IT
 import com.dessalines.thumbkey.keyboards.KB_EN_THUMBKEY_PROGRAMMER
 import com.dessalines.thumbkey.keyboards.KB_EN_THUMBKEY_SYMBOLS
@@ -52,6 +53,7 @@ import com.dessalines.thumbkey.keyboards.KB_JA_THUMBKEY_KATAKANA
 import com.dessalines.thumbkey.keyboards.KB_KA_THUMBKEY
 import com.dessalines.thumbkey.keyboards.KB_LT_THUMBKEY
 import com.dessalines.thumbkey.keyboards.KB_LV_LTG_THUMBKEY
+import com.dessalines.thumbkey.keyboards.KB_MATH_THUMBKEY
 import com.dessalines.thumbkey.keyboards.KB_NL_THUMBKEY
 import com.dessalines.thumbkey.keyboards.KB_NO_THUMBKEY
 import com.dessalines.thumbkey.keyboards.KB_PL_THUMBKEY
@@ -91,6 +93,7 @@ enum class KeyboardLayout(val index: Int, val keyboardDefinition: KeyboardDefini
     ENMessageEaseSymbols(16, KB_EN_MESSAGEEASE_SYMBOLS),
     ENTypeSplit(36, KB_EN_TYPESPLIT),
     ENTwoHands(43, KB_EN_TWO_HANDS),
+    ENThumbKeyMultiEE(71, KB_EN_THUMBKEY_MULTI_EE),
     ENThumbKeyMultiIT(65, KB_EN_THUMBKEY_MULTI_IT),
     ENEOMessageEaseSymbols(66, KB_ENEO_MESSAGEEASE_SYMBOLS),
     EOENDEThumbKey(50, KB_ES_EO_THUMBKEY),
@@ -126,6 +129,7 @@ enum class KeyboardLayout(val index: Int, val keyboardDefinition: KeyboardDefini
     KAThumbKey(26, KB_KA_THUMBKEY),
     LTThumbKey(61, KB_LT_THUMBKEY),
     LVLTGThumbKey(60, KB_LV_LTG_THUMBKEY),
+    MATHThumbKey(70, KB_MATH_THUMBKEY),
     NLThumbKey(10, KB_NL_THUMBKEY),
     NOThumbKey(24, KB_NO_THUMBKEY),
     PLThumbKey(11, KB_PL_THUMBKEY),
