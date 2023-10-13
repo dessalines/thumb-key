@@ -78,7 +78,7 @@ fun KeyboardKey(
     capsLock: Boolean,
     legendSize: Int,
     keyPadding: Int,
-    keyBorderWidth: Float,
+    keyBorderWidth: Int,
     keyRadius: Int,
     minSwipeLength: Int,
     slideSensitivity: Int,
