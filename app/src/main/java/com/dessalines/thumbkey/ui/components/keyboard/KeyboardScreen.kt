@@ -105,121 +105,141 @@ fun KeyboardScreen(
     val autoCapitalize = (settings?.autoCapitalize ?: DEFAULT_AUTO_CAPITALIZE).toBool()
     val spacebarMultiTaps = (settings?.spacebarMultiTaps ?: DEFAULT_SPACEBAR_MULTITAPS).toBool()
     val slideEnabled = (settings?.slideEnabled ?: DEFAULT_SLIDE_ENABLED).toBool()
-    val keyBorderWidth = (settings?.keyBorderWidth ?: DEFAULT_KEY_BORDER_WIDTH)
+    val keyBorderWidth = ((settings?.keyBorderWidth ?: DEFAULT_KEY_BORDER_WIDTH) / 10.0f).toInt()
     val vibrateOnTap = (settings?.vibrateOnTap ?: DEFAULT_VIBRATE_ON_TAP).toBool()
     val soundOnTap = (settings?.soundOnTap ?: DEFAULT_SOUND_ON_TAP).toBool()
     val hideLetters = (settings?.hideLetters ?: DEFAULT_HIDE_LETTERS).toBool()
     val hideSymbols = (settings?.hideSymbols ?: DEFAULT_HIDE_SYMBOLS).toBool()
     val backdropEnabled = (settings?.backdropEnabled ?: DEFAULT_BACKDROP_ENABLED).toBool()
     val backdropColor = MaterialTheme.colorScheme.background
+    val backdropPadding = 6.dp
+    val keyPadding = settings?.keyPadding ?: DEFAULT_KEY_PADDING
 
     if (mode == KeyboardMode.EMOJI) {
         val controllerKeys = listOf(EMOJI_BACK_KEY_ITEM, NUMERIC_KEY_ITEM, BACKSPACE_KEY_ITEM, RETURN_KEY_ITEM)
 
-        val keySize = settings?.keySize ?: DEFAULT_KEY_SIZE
-        val keyboardHeight = Dp((keySize * controllerKeys.size).toFloat()) + pushupSizeDp
+        val keySize = (settings?.keySize ?: DEFAULT_KEY_SIZE) + ((keyPadding + keyBorderWidth.toFloat()) * 2)
+        val keyboardHeight = Dp((keySize * controllerKeys.size))
 
-        Row(
+        Box(
             modifier = Modifier
-                .fillMaxWidth()
-                .background(MaterialTheme.colorScheme.outline),
+                .background(backdropColor)
+                .padding(bottom = pushupSizeDp),
         ) {
-            Box(
-                modifier = Modifier
-                    .weight(1f) // Take up available space equally
-                    .padding(keyBorderWidth.dp),
-            ) {
-                val haptic = LocalHapticFeedback.current
-                val audioManager = ctx.getSystemService(Context.AUDIO_SERVICE) as AudioManager
-                AndroidView(
-                    // Write the emoji to our text box when we tap one.
-                    factory = { context ->
-                        val emojiPicker = EmojiPickerView(context)
-                        emojiPicker.setOnEmojiPickedListener {
-                            if (vibrateOnTap) {
-                                haptic.performHapticFeedback(HapticFeedbackType.LongPress)
-                            }
-                            if (soundOnTap) {
-                                audioManager.playSoundEffect(AudioManager.FX_KEY_CLICK, .1f)
-                            }
-                            ctx.currentInputConnection.commitText(
-                                it.emoji,
-                                1,
-                            )
-                        }
-
-                        emojiPicker
-                    },
+            // adds a pretty line if you're using the backdrop
+            if (backdropEnabled) {
+                Box(
                     modifier = Modifier
+                        .align(Alignment.TopCenter)
                         .fillMaxWidth()
-                        .height(keyboardHeight)
-                        .background(MaterialTheme.colorScheme.background),
+                        .height(1.dp)
+                        .background(color = MaterialTheme.colorScheme.surfaceVariant),
                 )
             }
-
-            Column {
-                controllerKeys.forEach { key ->
-                    Column {
-                        KeyboardKey(
-                            key = key,
-                            lastAction = lastAction,
-                            legendSize = settings?.keySize ?: DEFAULT_KEY_SIZE,
-                            keyPadding = settings?.keyPadding ?: DEFAULT_KEY_PADDING,
-                            keyBorderWidth = settings?.keyBorderWidth ?: DEFAULT_KEY_BORDER_WIDTH,
-                            keyRadius = settings?.keyRadius ?: DEFAULT_KEY_RADIUS,
-                            autoCapitalize = autoCapitalize,
-                            keyboardSettings = keyboardDefinition.settings,
-                            spacebarMultiTaps = spacebarMultiTaps,
-                            vibrateOnTap = vibrateOnTap,
-                            soundOnTap = soundOnTap,
-                            hideLetters = hideLetters,
-                            hideSymbols = hideSymbols,
-                            capsLock = capsLock,
-                            animationSpeed = settings?.animationSpeed
-                                ?: DEFAULT_ANIMATION_SPEED,
-                            animationHelperSpeed = settings?.animationHelperSpeed
-                                ?: DEFAULT_ANIMATION_HELPER_SPEED,
-                            minSwipeLength = settings?.minSwipeLength ?: DEFAULT_MIN_SWIPE_LENGTH,
-                            slideSensitivity = settings?.slideSensitivity ?: DEFAULT_SLIDE_SENSITIVITY,
-                            slideEnabled = slideEnabled,
-                            onToggleShiftMode = { enable ->
-                                mode = if (enable) {
-                                    KeyboardMode.SHIFTED
-                                } else {
-                                    capsLock = false
-                                    KeyboardMode.MAIN
+            Row(
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .then(
+                        if (backdropEnabled) {
+                            Modifier.padding(top = backdropPadding)
+                        } else {
+                            (Modifier)
+                        },
+                    ),
+            ) {
+                Box(
+                    modifier = Modifier
+                        .weight(1f), // Take up available space equally
+                ) {
+                    val haptic = LocalHapticFeedback.current
+                    val audioManager = ctx.getSystemService(Context.AUDIO_SERVICE) as AudioManager
+                    AndroidView(
+                        // Write the emoji to our text box when we tap one.
+                        factory = { context ->
+                            val emojiPicker = EmojiPickerView(context)
+                            emojiPicker.setOnEmojiPickedListener {
+                                if (vibrateOnTap) {
+                                    haptic.performHapticFeedback(HapticFeedbackType.LongPress)
                                 }
-                            },
-                            onToggleNumericMode = { enable ->
-                                mode = if (enable) {
-                                    KeyboardMode.NUMERIC
-                                } else {
-                                    capsLock = false
-                                    KeyboardMode.MAIN
+                                if (soundOnTap) {
+                                    audioManager.playSoundEffect(AudioManager.FX_KEY_CLICK, .1f)
                                 }
-                            },
-                            onToggleEmojiMode = { enable ->
-                                mode = if (enable) {
-                                    KeyboardMode.EMOJI
-                                } else {
-                                    KeyboardMode.MAIN
-                                }
-                            },
-                            onToggleCapsLock = {
-                                capsLock = !capsLock
-                            },
-                            onAutoCapitalize = { enable ->
-                                if (mode !== KeyboardMode.NUMERIC) {
-                                    if (enable) {
-                                        mode = KeyboardMode.SHIFTED
-                                    } else if (!capsLock) {
-                                        mode = KeyboardMode.MAIN
+                                ctx.currentInputConnection.commitText(
+                                    it.emoji,
+                                    1,
+                                )
+                            }
+                            emojiPicker
+                        },
+                        modifier = Modifier
+                            .fillMaxWidth()
+                            .height(keyboardHeight),
+                    )
+                }
+                Column {
+                    controllerKeys.forEach { key ->
+                        Column {
+                            KeyboardKey(
+                                key = key,
+                                lastAction = lastAction,
+                                legendSize = settings?.keySize ?: DEFAULT_KEY_SIZE,
+                                keyPadding = keyPadding,
+                                keyBorderWidth = keyBorderWidth,
+                                keyRadius = settings?.keyRadius ?: DEFAULT_KEY_RADIUS,
+                                autoCapitalize = autoCapitalize,
+                                keyboardSettings = keyboardDefinition.settings,
+                                spacebarMultiTaps = spacebarMultiTaps,
+                                vibrateOnTap = vibrateOnTap,
+                                soundOnTap = soundOnTap,
+                                hideLetters = hideLetters,
+                                hideSymbols = hideSymbols,
+                                capsLock = capsLock,
+                                animationSpeed = settings?.animationSpeed
+                                    ?: DEFAULT_ANIMATION_SPEED,
+                                animationHelperSpeed = settings?.animationHelperSpeed
+                                    ?: DEFAULT_ANIMATION_HELPER_SPEED,
+                                minSwipeLength = settings?.minSwipeLength ?: DEFAULT_MIN_SWIPE_LENGTH,
+                                slideSensitivity = settings?.slideSensitivity ?: DEFAULT_SLIDE_SENSITIVITY,
+                                slideEnabled = slideEnabled,
+                                onToggleShiftMode = { enable ->
+                                    mode = if (enable) {
+                                        KeyboardMode.SHIFTED
+                                    } else {
+                                        capsLock = false
+                                        KeyboardMode.MAIN
                                     }
-                                }
-                            },
-                            onSwitchLanguage = onSwitchLanguage,
-                            onSwitchPosition = onSwitchPosition,
-                        )
+                                },
+                                onToggleNumericMode = { enable ->
+                                    mode = if (enable) {
+                                        KeyboardMode.NUMERIC
+                                    } else {
+                                        capsLock = false
+                                        KeyboardMode.MAIN
+                                    }
+                                },
+                                onToggleEmojiMode = { enable ->
+                                    mode = if (enable) {
+                                        KeyboardMode.EMOJI
+                                    } else {
+                                        KeyboardMode.MAIN
+                                    }
+                                },
+                                onToggleCapsLock = {
+                                    capsLock = !capsLock
+                                },
+                                onAutoCapitalize = { enable ->
+                                    if (mode !== KeyboardMode.NUMERIC) {
+                                        if (enable) {
+                                            mode = KeyboardMode.SHIFTED
+                                        } else if (!capsLock) {
+                                            mode = KeyboardMode.MAIN
+                                        }
+                                    }
+                                },
+                                onSwitchLanguage = onSwitchLanguage,
+                                onSwitchPosition = onSwitchPosition,
+                            )
+                        }
                     }
                 }
             }
@@ -243,7 +263,13 @@ fun KeyboardScreen(
             }
             Column(
                 modifier = Modifier
-                    .then(if (backdropEnabled) Modifier.padding(top = 6.dp) else (Modifier)),
+                    .then(
+                        if (backdropEnabled) {
+                            Modifier.padding(top = backdropPadding)
+                        } else {
+                            (Modifier)
+                        },
+                    ),
             ) {
                 keyboard.arr.forEach { row ->
                     Row {
@@ -253,8 +279,8 @@ fun KeyboardScreen(
                                     key = key,
                                     lastAction = lastAction,
                                     legendSize = settings?.keySize ?: DEFAULT_KEY_SIZE,
-                                    keyPadding = settings?.keyPadding ?: DEFAULT_KEY_PADDING,
-                                    keyBorderWidth = settings?.keyBorderWidth ?: DEFAULT_KEY_BORDER_WIDTH,
+                                    keyPadding = keyPadding,
+                                    keyBorderWidth = keyBorderWidth,
                                     keyRadius = settings?.keyRadius ?: DEFAULT_KEY_RADIUS,
                                     autoCapitalize = autoCapitalize,
                                     keyboardSettings = keyboardDefinition.settings,
