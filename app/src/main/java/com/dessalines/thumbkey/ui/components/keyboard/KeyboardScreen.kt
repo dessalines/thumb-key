@@ -118,7 +118,6 @@ fun KeyboardScreen(
     if (mode == KeyboardMode.EMOJI) {
         val controllerKeys = listOf(EMOJI_BACK_KEY_ITEM, NUMERIC_KEY_ITEM, BACKSPACE_KEY_ITEM, RETURN_KEY_ITEM)
 
-
         val keyBorderWidthFloat = keyBorderWidth / 10.0f
         val keySize = (settings?.keySize ?: DEFAULT_KEY_SIZE) + ((keyPadding + keyBorderWidthFloat) * 2)
         val keyboardHeight = Dp((keySize * controllerKeys.size))
