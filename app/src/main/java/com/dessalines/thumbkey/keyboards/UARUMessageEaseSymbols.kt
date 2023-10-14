@@ -781,7 +781,7 @@ val KB_UA_RU_MESSAGEEASE_SYMBOLS_SHIFTED = KeyboardC(
 )
 
 val KB_UA_RU_MESSAGEEASE_SYMBOLS: KeyboardDefinition = KeyboardDefinition(
-    title = "UA RU MessageEase український-русский with Symbols",
+    title = "RU MessageEase русский (RU+UA multi) with symbols",
     modes = KeyboardDefinitionModes(
         main = KB_UA_RU_MESSAGEEASE_SYMBOLS_MAIN,
         shifted = KB_UA_RU_MESSAGEEASE_SYMBOLS_SHIFTED,
