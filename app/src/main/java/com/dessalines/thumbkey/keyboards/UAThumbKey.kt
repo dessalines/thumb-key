@@ -17,7 +17,7 @@ import com.dessalines.thumbkey.utils.KeyboardDefinitionModes
 import com.dessalines.thumbkey.utils.SwipeDirection
 import com.dessalines.thumbkey.utils.SwipeNWay
 
-val KB_UK_THUMBKEY_MAIN = KeyboardC(
+val KB_UA_THUMBKEY_MAIN = KeyboardC(
     listOf(
         listOf(
             KeyItemC(
@@ -250,7 +250,7 @@ val KB_UK_THUMBKEY_MAIN = KeyboardC(
     ),
 )
 
-val KB_UK_THUMBKEY_SHIFTED = KeyboardC(
+val KB_UA_THUMBKEY_SHIFTED = KeyboardC(
     listOf(
         listOf(
             KeyItemC(
@@ -489,11 +489,11 @@ val KB_UK_THUMBKEY_SHIFTED = KeyboardC(
     ),
 )
 
-val KB_UK_THUMBKEY: KeyboardDefinition = KeyboardDefinition(
-    title = "UK Thumb-Key українська",
+val KB_UA_THUMBKEY: KeyboardDefinition = KeyboardDefinition(
+    title = "UA Thumb-Key українська",
     modes = KeyboardDefinitionModes(
-        main = KB_UK_THUMBKEY_MAIN,
-        shifted = KB_UK_THUMBKEY_SHIFTED,
+        main = KB_UA_THUMBKEY_MAIN,
+        shifted = KB_UA_THUMBKEY_SHIFTED,
         numeric = NUMERIC_KEYBOARD,
     ),
 )

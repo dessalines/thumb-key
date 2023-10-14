@@ -70,7 +70,7 @@ import com.dessalines.thumbkey.keyboards.KB_SV_THUMBKEY
 import com.dessalines.thumbkey.keyboards.KB_T9
 import com.dessalines.thumbkey.keyboards.KB_TR_THUMBKEY
 import com.dessalines.thumbkey.keyboards.KB_UA_RU_MESSAGEEASE_SYMBOLS
-import com.dessalines.thumbkey.keyboards.KB_UK_THUMBKEY
+import com.dessalines.thumbkey.keyboards.KB_UA_THUMBKEY
 
 // Make sure new keyboards have a new index, even if they are in the middle
 // Keyboards are placed in alphabetical order
@@ -143,7 +143,7 @@ enum class KeyboardLayout(val index: Int, val keyboardDefinition: KeyboardDefini
     SVThumbKey(34, KB_SV_THUMBKEY),
     T9v1(30, KB_T9),
     TRThumbKey(35, KB_TR_THUMBKEY),
-    UKThumbKeyUKv1(14, KB_UK_THUMBKEY),
+    UKThumbKeyUKv1(14, KB_UA_THUMBKEY),
     UKRUMessageEaseSymbols(67, KB_UA_RU_MESSAGEEASE_SYMBOLS),
     MATHThumbKey(70, KB_MATH_THUMBKEY),
     ENThumbKeyMultiEE(71, KB_EN_THUMBKEY_MULTI_EE),
