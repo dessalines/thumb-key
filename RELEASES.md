@@ -1,3 +1,27 @@
+# Thumb-Key 2.4.0 (2023-10-14)
+
+## What's Changed
+
+- Small fix on the canadian aboriginal keyboard by @CarolineHusky in https://github.com/dessalines/thumb-key/pull/476
+- High contrast themes - Fixes #477 by @WadeWT in https://github.com/dessalines/thumb-key/pull/478
+- Update ThumbKeyITv1.kt - added schwa and reversed-E by @flauta in https://github.com/dessalines/thumb-key/pull/479
+- Add mathematical keyboard layout by @Kuna42 in https://github.com/dessalines/thumb-key/pull/482
+- Add Estonian language Thumb-key (eesti keel) by @Lastaapps in https://github.com/dessalines/thumb-key/pull/481
+- Fixing slack and discord IME. Fixes #136 by @dessalines in https://github.com/dessalines/thumb-key/pull/486
+- Making the emoji screen work with the key customisation, fixes #483 by @WadeWT in https://github.com/dessalines/thumb-key/pull/485
+- Add language specific autocapitalization. Fixes #429 by @storvik in https://github.com/dessalines/thumb-key/pull/484
+- Fix keyborderwidth float by @dessalines in https://github.com/dessalines/thumb-key/pull/489
+- Upgrading deps. by @dessalines in https://github.com/dessalines/thumb-key/pull/492
+- Adding slovak layout. Fixes #487 by @dessalines in https://github.com/dessalines/thumb-key/pull/490
+- Code cleanup: Getting rid of null asserts. by @dessalines in https://github.com/dessalines/thumb-key/pull/491
+- Try to lower memory to fix CI. by @dessalines in https://github.com/dessalines/thumb-key/pull/493
+
+## New Contributors
+
+- @Kuna42 made their first contribution in https://github.com/dessalines/thumb-key/pull/482
+
+**Full Changelog**: https://github.com/dessalines/thumb-key/compare/2.3.0...2.4.0
+
 # Thumb-Key 2.3.0 (2023-10-10)
 
 ## What's Changed
