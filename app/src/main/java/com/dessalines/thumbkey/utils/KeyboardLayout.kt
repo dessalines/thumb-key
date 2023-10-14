@@ -1,152 +1,148 @@
 package com.dessalines.thumbkey.utils
 
-import com.dessalines.thumbkey.keyboards.MESSAGEEASE_DE_KEYBOARD_MODES
-import com.dessalines.thumbkey.keyboards.MESSAGEEASE_DE_SYMBOLS_KEYBOARD_MODES
-import com.dessalines.thumbkey.keyboards.MESSAGEEASE_EN_EO_SYMBOLS_KEYBOARD_MODES
-import com.dessalines.thumbkey.keyboards.MESSAGEEASE_EN_KEYBOARD_MODES
-import com.dessalines.thumbkey.keyboards.MESSAGEEASE_EN_SYMBOLS_KEYBOARD_MODES
-import com.dessalines.thumbkey.keyboards.MESSAGEEASE_ES_KEYBOARD_MODES
-import com.dessalines.thumbkey.keyboards.MESSAGEEASE_FR_KEYBOARD_MODES
-import com.dessalines.thumbkey.keyboards.MESSAGEEASE_HE_KEYBOARD_MODES
-import com.dessalines.thumbkey.keyboards.MESSAGEEASE_IT_KEYBOARD_MODES
-import com.dessalines.thumbkey.keyboards.MESSAGEEASE_RU_KEYBOARD_MODES
-import com.dessalines.thumbkey.keyboards.MESSAGEEASE_RU_SYMBOLS_KEYBOARD_MODES
-import com.dessalines.thumbkey.keyboards.MESSAGEEASE_UA_RU_SYMBOLS_KEYBOARD_MODES
-import com.dessalines.thumbkey.keyboards.T9_V1_KEYBOARD_MODES
-import com.dessalines.thumbkey.keyboards.THUMBKEY_BG_V1_SYMBOLS_KEYBOARD_MODES
-import com.dessalines.thumbkey.keyboards.THUMBKEY_BY_V1_KEYBOARD_MODES
-import com.dessalines.thumbkey.keyboards.THUMBKEY_BY_V1_SYMBOLS_KEYBOARD_MODES
-import com.dessalines.thumbkey.keyboards.THUMBKEY_CA_V1_KEYBOARD_MODES
-import com.dessalines.thumbkey.keyboards.THUMBKEY_CZ_V1_KEYBOARD_MODES
-import com.dessalines.thumbkey.keyboards.THUMBKEY_DA_V1_KEYBOARD_MODES
-import com.dessalines.thumbkey.keyboards.THUMBKEY_DE_V2_KEYBOARD_MODES
-import com.dessalines.thumbkey.keyboards.THUMBKEY_DE_V2_MULTILINGUAL_KEYBOARD_MODES
-import com.dessalines.thumbkey.keyboards.THUMBKEY_EN_PROGRAMMER_WIDE_KEYBOARD_MODES
-import com.dessalines.thumbkey.keyboards.THUMBKEY_EN_V4_KEYBOARD_MODES
-import com.dessalines.thumbkey.keyboards.THUMBKEY_EN_V4_MULTI_EE_KEYBOARD_MODES
-import com.dessalines.thumbkey.keyboards.THUMBKEY_EN_V4_MULTI_IT_KEYBOARD_MODES
-import com.dessalines.thumbkey.keyboards.THUMBKEY_EN_V4_MULTI_KEYBOARD_MODES
-import com.dessalines.thumbkey.keyboards.THUMBKEY_EN_V4_PROGRAMMER_KEYBOARD_MODES
-import com.dessalines.thumbkey.keyboards.THUMBKEY_EN_V4_SYMBOLS_KEYBOARD_MODES
-import com.dessalines.thumbkey.keyboards.THUMBKEY_EOENDE_KEYBOARD_MODES
-import com.dessalines.thumbkey.keyboards.THUMBKEY_ES_CA_V1_KEYBOARD_MODES
-import com.dessalines.thumbkey.keyboards.THUMBKEY_ES_EO_V1_KEYBOARD_MODES
-import com.dessalines.thumbkey.keyboards.THUMBKEY_ES_V1_KEYBOARD_MODES
-import com.dessalines.thumbkey.keyboards.THUMBKEY_EU_V1_KEYBOARD_MODES
-import com.dessalines.thumbkey.keyboards.THUMBKEY_FA_V1_KEYBOARD_MODES
-import com.dessalines.thumbkey.keyboards.THUMBKEY_FI_V1_KEYBOARD_MODES
-import com.dessalines.thumbkey.keyboards.THUMBKEY_FI_V1_WIDE_KEYBOARD_MODES
-import com.dessalines.thumbkey.keyboards.THUMBKEY_FR_V1_KEYBOARD_MODES
-import com.dessalines.thumbkey.keyboards.THUMBKEY_FR_V2_KEYBOARD_MODES
-import com.dessalines.thumbkey.keyboards.THUMBKEY_GR_V1_KEYBOARD_MODES
-import com.dessalines.thumbkey.keyboards.THUMBKEY_HE_V1_KEYBOARD_MODES
-import com.dessalines.thumbkey.keyboards.THUMBKEY_HR_V1_KEYBOARD_MODES
-import com.dessalines.thumbkey.keyboards.THUMBKEY_HR_V1_SYMBOLS_KEYBOARD_MODES
-import com.dessalines.thumbkey.keyboards.THUMBKEY_HU_V1_KEYBOARD_MODES
-import com.dessalines.thumbkey.keyboards.THUMBKEY_ID_V1_SN_KEYBOARD_MODES
-import com.dessalines.thumbkey.keyboards.THUMBKEY_ID_V1_SYMBOLS_KEYBOARD_MODES
-import com.dessalines.thumbkey.keyboards.THUMBKEY_ID_V2_SYMBOLS_KEYBOARD_MODES
-import com.dessalines.thumbkey.keyboards.THUMBKEY_IT_V1_KEYBOARD_MODES
-import com.dessalines.thumbkey.keyboards.THUMBKEY_JA_V1_HIRAGANA_KEYBOARD_MODES
-import com.dessalines.thumbkey.keyboards.THUMBKEY_JA_V1_KATAKANA_KEYBOARD_MODES
-import com.dessalines.thumbkey.keyboards.THUMBKEY_KA_V1_KEYBOARD_MODES
-import com.dessalines.thumbkey.keyboards.THUMBKEY_LT_V1_KEYBOARD_MODES
-import com.dessalines.thumbkey.keyboards.THUMBKEY_LV_LTG_V1_KEYBOARD_MODES
-import com.dessalines.thumbkey.keyboards.THUMBKEY_MATH_V1_KEYBOARD_MODES
-import com.dessalines.thumbkey.keyboards.THUMBKEY_NL_V1_KEYBOARD_MODES
-import com.dessalines.thumbkey.keyboards.THUMBKEY_NO_V1_KEYBOARD_MODES
-import com.dessalines.thumbkey.keyboards.THUMBKEY_PL_V2_KEYBOARD_MODES
-import com.dessalines.thumbkey.keyboards.THUMBKEY_PT_V1_KEYBOARD_MODES
-import com.dessalines.thumbkey.keyboards.THUMBKEY_RU_V2_KEYBOARD_MODES
-import com.dessalines.thumbkey.keyboards.THUMBKEY_RU_V2_SYMBOLS_KEYBOARD_MODES
-import com.dessalines.thumbkey.keyboards.THUMBKEY_SV_V1_KEYBOARD_MODES
-import com.dessalines.thumbkey.keyboards.THUMBKEY_TR_V1_KEYBOARD_MODES
-import com.dessalines.thumbkey.keyboards.THUMBKEY_UK_V1_KEYBOARD_MODES
-import com.dessalines.thumbkey.keyboards.TWO_HANDS_EN_V1_KEYBOARD_MODES
-import com.dessalines.thumbkey.keyboards.TWO_HANDS_HR_V1_KEYBOARD_MODES
-import com.dessalines.thumbkey.keyboards.TYPESPLIT_DE_V1_KEYBOARD_MODES
-import com.dessalines.thumbkey.keyboards.TYPESPLIT_EN_V2_KEYBOARD_MODES
-import com.dessalines.thumbkey.keyboards.TYPESPLIT_ES_V1_KEYBOARD_MODES
-import com.dessalines.thumbkey.keyboards.TYPESPLIT_FI_V1_KEYBOARD_MODES
-import com.dessalines.thumbkey.keyboards.TYPESPLIT_FR_V1_KEYBOARD_MODES
-import com.dessalines.thumbkey.keyboards.TYPESPLIT_IT_V1_KEYBOARD_MODES
-import com.dessalines.thumbkey.keyboards.TYPESPLIT_PL_V1_KEYBOARD_MODES
-import com.dessalines.thumbkey.keyboards.TYPESPLIT_PT_V1_KEYBOARD_MODES
+import com.dessalines.thumbkey.keyboards.KB_BG_THUMBKEY_SYMBOLS
+import com.dessalines.thumbkey.keyboards.KB_BY_THUMBKEY
+import com.dessalines.thumbkey.keyboards.KB_BY_THUMBKEY_SYMBOLS
+import com.dessalines.thumbkey.keyboards.KB_CA_THUMBKEY
+import com.dessalines.thumbkey.keyboards.KB_CZ_THUMBKEY
+import com.dessalines.thumbkey.keyboards.KB_DA_THUMBKEY
+import com.dessalines.thumbkey.keyboards.KB_DE_MESSAGEEASE
+import com.dessalines.thumbkey.keyboards.KB_DE_MESSAGEEASE_SYMBOLS
+import com.dessalines.thumbkey.keyboards.KB_DE_THUMBKEY
+import com.dessalines.thumbkey.keyboards.KB_DE_THUMBKEY_MULTILINGUAL
+import com.dessalines.thumbkey.keyboards.KB_DE_TYPESPLIT
+import com.dessalines.thumbkey.keyboards.KB_ENEO_MESSAGEEASE_SYMBOLS
+import com.dessalines.thumbkey.keyboards.KB_EN_MESSAGEEASE
+import com.dessalines.thumbkey.keyboards.KB_EN_MESSAGEEASE_SYMBOLS
+import com.dessalines.thumbkey.keyboards.KB_EN_THUMBKEY
+import com.dessalines.thumbkey.keyboards.KB_EN_THUMBKEY_MULTI
+import com.dessalines.thumbkey.keyboards.KB_EN_THUMBKEY_MULTI_EE
+import com.dessalines.thumbkey.keyboards.KB_EN_THUMBKEY_MULTI_IT
+import com.dessalines.thumbkey.keyboards.KB_EN_THUMBKEY_PROGRAMMER
+import com.dessalines.thumbkey.keyboards.KB_EN_THUMBKEY_SYMBOLS
+import com.dessalines.thumbkey.keyboards.KB_EN_TWO_HANDS
+import com.dessalines.thumbkey.keyboards.KB_EN_TYPESPLIT
+import com.dessalines.thumbkey.keyboards.KB_ES_CA_THUMBKEY
+import com.dessalines.thumbkey.keyboards.KB_ES_EO_THUMBKEY
+import com.dessalines.thumbkey.keyboards.KB_ES_MESSAGEEASE
+import com.dessalines.thumbkey.keyboards.KB_ES_THUMBKEY
+import com.dessalines.thumbkey.keyboards.KB_ES_TYPESPLIT
+import com.dessalines.thumbkey.keyboards.KB_EU_THUMBKEY
+import com.dessalines.thumbkey.keyboards.KB_FA_THUMBKEY
+import com.dessalines.thumbkey.keyboards.KB_FI_THUMBKEY
+import com.dessalines.thumbkey.keyboards.KB_FI_THUMBKEY_WIDE
+import com.dessalines.thumbkey.keyboards.KB_FI_TYPESPLIT
+import com.dessalines.thumbkey.keyboards.KB_FR_THUMBKEY_V1
+import com.dessalines.thumbkey.keyboards.KB_FR_THUMBKEY_V2
+import com.dessalines.thumbkey.keyboards.KB_FR_TYPESPLIT
+import com.dessalines.thumbkey.keyboards.KB_GR_THUMBKEY
+import com.dessalines.thumbkey.keyboards.KB_HE_MESSAGEEASE
+import com.dessalines.thumbkey.keyboards.KB_HE_THUMBKEY
+import com.dessalines.thumbkey.keyboards.KB_HR_THUMBKEY
+import com.dessalines.thumbkey.keyboards.KB_HR_THUMBKEY_SYMBOLS
+import com.dessalines.thumbkey.keyboards.KB_HR_TWO_HANDS
+import com.dessalines.thumbkey.keyboards.KB_HU_THUMBKEY
+import com.dessalines.thumbkey.keyboards.KB_ID_THUMBKEY_SYMBOLS_NUMERIC_V1
+import com.dessalines.thumbkey.keyboards.KB_ID_THUMBKEY_SYMBOLS_V1
+import com.dessalines.thumbkey.keyboards.KB_ID_THUMBKEY_SYMBOLS_V2
+import com.dessalines.thumbkey.keyboards.KB_IT_MESSAGEEASE
+import com.dessalines.thumbkey.keyboards.KB_IT_THUMBKEY
+import com.dessalines.thumbkey.keyboards.KB_IT_TYPESPLIT
+import com.dessalines.thumbkey.keyboards.KB_JA_THUMBKEY_HIRAGANA
+import com.dessalines.thumbkey.keyboards.KB_JA_THUMBKEY_KATAKANA
+import com.dessalines.thumbkey.keyboards.KB_KA_THUMBKEY
+import com.dessalines.thumbkey.keyboards.KB_LT_THUMBKEY
+import com.dessalines.thumbkey.keyboards.KB_LV_LTG_THUMBKEY
+import com.dessalines.thumbkey.keyboards.KB_MATH_THUMBKEY
+import com.dessalines.thumbkey.keyboards.KB_NL_THUMBKEY
+import com.dessalines.thumbkey.keyboards.KB_NO_THUMBKEY
+import com.dessalines.thumbkey.keyboards.KB_PL_THUMBKEY
+import com.dessalines.thumbkey.keyboards.KB_PL_TYPESPLIT
+import com.dessalines.thumbkey.keyboards.KB_PT_THUMBKEY
+import com.dessalines.thumbkey.keyboards.KB_PT_TYPESPLIT
+import com.dessalines.thumbkey.keyboards.KB_RU_MESSAGEEASE
+import com.dessalines.thumbkey.keyboards.KB_RU_MESSAGEEASE_SYMBOLS
+import com.dessalines.thumbkey.keyboards.KB_RU_THUMBKEY
+import com.dessalines.thumbkey.keyboards.KB_RU_THUMBKEY_SYMBOLS
+import com.dessalines.thumbkey.keyboards.KB_SV_THUMBKEY
+import com.dessalines.thumbkey.keyboards.KB_T9
+import com.dessalines.thumbkey.keyboards.KB_TR_THUMBKEY
+import com.dessalines.thumbkey.keyboards.KB_UA_RU_MESSAGEEASE_SYMBOLS
+import com.dessalines.thumbkey.keyboards.KB_UK_THUMBKEY
 
 // Make sure new keyboards have a new index, even if they are in the middle
-@Suppress("unused")
-enum class KeyboardLayout(val title: String, val index: Int, val modes: Map<KeyboardMode, KeyboardC>) {
-    ThumbKeyENv4("Thumb-Key english v4", 0, THUMBKEY_EN_V4_KEYBOARD_MODES),
-    ThumbKeyENv4Programmer("Thumb-Key english v4 (programmer)", 1, THUMBKEY_EN_V4_PROGRAMMER_KEYBOARD_MODES),
-    ThumbKeyDEv2("Thumb-Key deutsch v2", 2, THUMBKEY_DE_V2_KEYBOARD_MODES),
-
-    ThumbKeyDAv1("Thumb-Key dansk v1", 3, THUMBKEY_DA_V1_KEYBOARD_MODES),
-    ThumbKeyESv1("Thumb-Key español v1", 4, THUMBKEY_ES_V1_KEYBOARD_MODES),
-    ThumbKeyEUv1("Thumb-Key euskara v1", 5, THUMBKEY_EU_V1_KEYBOARD_MODES),
-    ThumbKeyFAv1("Thumb-Key فارسیv1", 6, THUMBKEY_FA_V1_KEYBOARD_MODES),
-    ThumbKeyFIv1("Thumb-Key suomi v1", 7, THUMBKEY_FI_V1_KEYBOARD_MODES),
-    ThumbKeyFRv1("Thumb-Key français v1", 8, THUMBKEY_FR_V1_KEYBOARD_MODES),
-    ThumbKeyITv1("Thumb-Key italiano v1", 9, THUMBKEY_IT_V1_KEYBOARD_MODES),
-    ThumbKeyNLv1("Thumb-Key nederlands v1", 10, THUMBKEY_NL_V1_KEYBOARD_MODES),
-    ThumbKeyPLv2("Thumb-Key polski v2", 11, THUMBKEY_PL_V2_KEYBOARD_MODES),
-    ThumbKeyPTv1("Thumb-Key português v1", 12, THUMBKEY_PT_V1_KEYBOARD_MODES),
-    ThumbKeyRUv2("Thumb-Key русский v2", 13, THUMBKEY_RU_V2_KEYBOARD_MODES),
-    ThumbKeyUKv1("Thumb-Key українська v1", 14, THUMBKEY_UK_V1_KEYBOARD_MODES),
-    MessageEaseEN("MessageEase english", 15, MESSAGEEASE_EN_KEYBOARD_MODES),
-    MessageEaseENSymbols("MessageEase english with symbols", 16, MESSAGEEASE_EN_SYMBOLS_KEYBOARD_MODES),
-    MessageEaseHE("MessageEase עברית", 17, MESSAGEEASE_HE_KEYBOARD_MODES),
-    ThumbKeyRUv2Symbols("Thumb-Key русский v2 с символами", 18, THUMBKEY_RU_V2_SYMBOLS_KEYBOARD_MODES),
-    ThumbKeyBYv1("Thumb-Key беларуская v1", 19, THUMBKEY_BY_V1_KEYBOARD_MODES),
-    ThumbKeyBYv1Symbols("Thumb-Key беларуская v1 з сімваламі", 20, THUMBKEY_BY_V1_SYMBOLS_KEYBOARD_MODES),
-    ThumbKeyENv4Symbols("Thumb-Key english v4 with symbols", 21, THUMBKEY_EN_V4_SYMBOLS_KEYBOARD_MODES),
-    ThumbKeyFIv1Wide("Thumb-Key suomi v1 wide", 22, THUMBKEY_FI_V1_WIDE_KEYBOARD_MODES),
-    MessageEaseDE("MessageEase deutsch", 23, MESSAGEEASE_DE_KEYBOARD_MODES),
-    ThumbKeyNOv1("Thumb-Key norsk v1", 24, THUMBKEY_NO_V1_KEYBOARD_MODES),
-    ThumbKeyDEv2MultiLingual("Thumb-Key deutsch v2 multilingual", 25, THUMBKEY_DE_V2_MULTILINGUAL_KEYBOARD_MODES),
-    ThumbKeyKAv1("Thumb-Key kartuli ena v1", 26, THUMBKEY_KA_V1_KEYBOARD_MODES),
-    ThumbKeyIDv1("Thumb-Key Bahasa Indonesia with Symbols v1", 27, THUMBKEY_ID_V1_SYMBOLS_KEYBOARD_MODES),
-    MessageEaseFR("MessageEase français", 28, MESSAGEEASE_FR_KEYBOARD_MODES),
-    MessageEaseRUSymbols("MessageEase русский with Symbols", 29, MESSAGEEASE_RU_SYMBOLS_KEYBOARD_MODES),
-    T9v1("T9 v1", 30, T9_V1_KEYBOARD_MODES),
-    ThumbKeyJAv1Hiragana("Thumb-Key japanese Hiragana v1", 31, THUMBKEY_JA_V1_HIRAGANA_KEYBOARD_MODES),
-    ThumbKeyJAv1Katakana("Thumb-Key japanese Katakana v1", 32, THUMBKEY_JA_V1_KATAKANA_KEYBOARD_MODES),
-    ThumbKeyFRv2("Thumb-Key français v2", 33, THUMBKEY_FR_V2_KEYBOARD_MODES),
-    ThumbKeySVv1("Thumb-Key svenska v1", 34, THUMBKEY_SV_V1_KEYBOARD_MODES),
-    ThumbKeyTRv1("Thumb-Key Türkçe v1", 35, THUMBKEY_TR_V1_KEYBOARD_MODES),
-    TypeSplitENv2("Type-Split english v2", 36, TYPESPLIT_EN_V2_KEYBOARD_MODES),
-    TypeSplitESv1("Type-Split español v1", 37, TYPESPLIT_ES_V1_KEYBOARD_MODES),
-    TypeSplitDEv1("Type-Split deutsch v1", 38, TYPESPLIT_DE_V1_KEYBOARD_MODES),
-    TypeSplitFRv1("Type-Split français v1", 39, TYPESPLIT_FR_V1_KEYBOARD_MODES),
-    TypeSplitITv1("Type-Split italiano v1", 40, TYPESPLIT_IT_V1_KEYBOARD_MODES),
-    TypeSplitPTv1("Type-Split português v1", 41, TYPESPLIT_PT_V1_KEYBOARD_MODES),
-    TypeSplitPLv1("Type-Split polski v1", 42, TYPESPLIT_PL_V1_KEYBOARD_MODES),
-    TwoHandsENv1("Two Hands english v1", 43, TWO_HANDS_EN_V1_KEYBOARD_MODES),
-    ThumbKeyEnProgrammerWide("Wide programmer (Thumb-Key english)", 44, THUMBKEY_EN_PROGRAMMER_WIDE_KEYBOARD_MODES),
-    ThumbKeyHUv1("Thumb-Key magyar nyelv v1", 45, THUMBKEY_HU_V1_KEYBOARD_MODES),
-    ThumbKeyESEOv1("Thumb-Key español esperanto v1", 46, THUMBKEY_ES_EO_V1_KEYBOARD_MODES),
-    MessageEaseIT("MessageEase italiano", 47, MESSAGEEASE_IT_KEYBOARD_MODES),
-    ThumbKeyENv4Multi("Thumb-Key english v4 (EN+SK multi)", 48, THUMBKEY_EN_V4_MULTI_KEYBOARD_MODES),
-    ThumbKeyHEv1("Thumb-Key עברית v1", 49, THUMBKEY_HE_V1_KEYBOARD_MODES),
-    ThumbKeyEOENDEv1("Thumb-Key EO/EN/DE", 50, THUMBKEY_EOENDE_KEYBOARD_MODES),
-    ThumbKeyGRv1("Thumb-Key ελληνικά v1", 51, THUMBKEY_GR_V1_KEYBOARD_MODES),
-    ThumbKeyCZv1("Thumb-Key čeština v1", 52, THUMBKEY_CZ_V1_KEYBOARD_MODES),
-    MessageEaseES("MessageEase español", 53, MESSAGEEASE_ES_KEYBOARD_MODES),
-    MessageEaseRU("MessageEase русский", 54, MESSAGEEASE_RU_KEYBOARD_MODES),
-    ThumbKeyBGv1Symbols("Thumb-Key български v1 със символи", 55, THUMBKEY_BG_V1_SYMBOLS_KEYBOARD_MODES),
-    TwoHandsHRv1("Two hands hrvatski v1", 56, TWO_HANDS_HR_V1_KEYBOARD_MODES),
-    ThumbKeyHRv1("Thumb-Key hrvatski v1", 57, THUMBKEY_HR_V1_KEYBOARD_MODES),
-    ThumbKeyHRv1Symbols("Thumb-Key hrvatski v1 with symbols", 58, THUMBKEY_HR_V1_SYMBOLS_KEYBOARD_MODES),
-    TypeSplitFIv1("Type-Split suomi v1", 59, TYPESPLIT_FI_V1_KEYBOARD_MODES),
-    ThumbKeyLVLTGv1("Thumb-Key latviešu valoda v1", 60, THUMBKEY_LV_LTG_V1_KEYBOARD_MODES),
-    ThumbKeyLTv1("Thumb-Key lietuvių kalba v1", 61, THUMBKEY_LT_V1_KEYBOARD_MODES),
-    ThumbKeyIDv2Symbols("Thumb-Key Bahasa Indonesia with Symbols v2", 62, THUMBKEY_ID_V2_SYMBOLS_KEYBOARD_MODES),
-    ThumbKeyIDv1SN("Thumb-Key Bahasa Indonesia with Symbols and Number v1", 63, THUMBKEY_ID_V1_SN_KEYBOARD_MODES),
-    ThumbKeyESCAv1("Thumb-Key español català v1", 64, THUMBKEY_ES_CA_V1_KEYBOARD_MODES),
-    ThumbKeyENv4MultiIT("Thumb-Key english v4 (EN+IT multi)", 65, THUMBKEY_EN_V4_MULTI_IT_KEYBOARD_MODES),
-    MessageEaseENEOSymbols("MessageEase english esperanto with symbols", 66, MESSAGEEASE_EN_EO_SYMBOLS_KEYBOARD_MODES),
-    MessageEaseUKRUSymbols("MessageEase український-русский with Symbols", 67, MESSAGEEASE_UA_RU_SYMBOLS_KEYBOARD_MODES),
-    MessageEaseDESymbols("MessageEase deutsch with Symbols", 68, MESSAGEEASE_DE_SYMBOLS_KEYBOARD_MODES),
-    ThumbKeyCAv1("Thumb-Key Canadian Aboriginal Syllabic v1", 69, THUMBKEY_CA_V1_KEYBOARD_MODES),
-    ThumbKeyMATHv1("Thumb-Key Mathematical", 70, THUMBKEY_MATH_V1_KEYBOARD_MODES),
-    ThumbKeyENv4MultiEE("Thumb-Key english v4 (EN+EE multi)", 71, THUMBKEY_EN_V4_MULTI_EE_KEYBOARD_MODES),
+// Keyboards are placed in alphabetical order
+enum class KeyboardLayout(val index: Int, val keyboardDefinition: KeyboardDefinition) {
+    BGThumbKeySymbols(55, KB_BG_THUMBKEY_SYMBOLS),
+    BYThumbKey(19, KB_BY_THUMBKEY),
+    BYThumbKeySymbols(20, KB_BY_THUMBKEY_SYMBOLS),
+    CAThumbKey(69, KB_CA_THUMBKEY),
+    CZThumbKey(52, KB_CZ_THUMBKEY),
+    DAThumbKey(3, KB_DA_THUMBKEY),
+    DEThumbKey(2, KB_DE_THUMBKEY),
+    DEThumbKeyMultiLingual(25, KB_DE_THUMBKEY_MULTILINGUAL),
+    DEMessageEase(23, KB_DE_MESSAGEEASE),
+    DEMessageEaseSymbols(68, KB_DE_MESSAGEEASE_SYMBOLS),
+    DETypeSplit(38, KB_DE_TYPESPLIT),
+    ENThumbKey(0, KB_EN_THUMBKEY),
+    ENThumbKeySymbols(21, KB_EN_THUMBKEY_SYMBOLS),
+    ENThumbKeyProgrammer(1, KB_EN_THUMBKEY_PROGRAMMER),
+    ENThumbKeyProgrammerWide(44, KB_EN_THUMBKEY_PROGRAMMER),
+    ENThumbKeyMulti(48, KB_EN_THUMBKEY_MULTI),
+    ENMessageEase(15, KB_EN_MESSAGEEASE),
+    ENMessageEaseSymbols(16, KB_EN_MESSAGEEASE_SYMBOLS),
+    ENTypeSplit(36, KB_EN_TYPESPLIT),
+    ENTwoHands(43, KB_EN_TWO_HANDS),
+    ENThumbKeyMultiEE(71, KB_EN_THUMBKEY_MULTI_EE),
+    ENThumbKeyMultiIT(65, KB_EN_THUMBKEY_MULTI_IT),
+    ENEOMessageEaseSymbols(66, KB_ENEO_MESSAGEEASE_SYMBOLS),
+    EOENDEThumbKey(50, KB_ES_EO_THUMBKEY),
+    ESThumbKey(4, KB_ES_THUMBKEY),
+    ESMessageEase(53, KB_ES_MESSAGEEASE),
+    ESTypeSplit(37, KB_ES_TYPESPLIT),
+    ESCAThumbKey(64, KB_ES_CA_THUMBKEY),
+    ESEOThumbKey(46, KB_ES_EO_THUMBKEY),
+    EUThumbKey(5, KB_EU_THUMBKEY),
+    FAThumbKey(6, KB_FA_THUMBKEY),
+    FIThumbKey(7, KB_FI_THUMBKEY),
+    FIThumbKeyWide(22, KB_FI_THUMBKEY_WIDE),
+    FITypeSplit(59, KB_FI_TYPESPLIT),
+    FRThumbKeyV1(8, KB_FR_THUMBKEY_V1),
+    FRThumbKeyV2(33, KB_FR_THUMBKEY_V2),
+    FRMessageEase(28, KB_FR_THUMBKEY_V1),
+    FRTypeSplit(39, KB_FR_TYPESPLIT),
+    GRThumbKey(51, KB_GR_THUMBKEY),
+    HEThumbKey(49, KB_HE_THUMBKEY),
+    HEMessageEase(17, KB_HE_MESSAGEEASE),
+    HRThumbKey(57, KB_HR_THUMBKEY),
+    HRThumbKeySymbols(58, KB_HR_THUMBKEY_SYMBOLS),
+    HRTwoHands(56, KB_HR_TWO_HANDS),
+    HUThumbKey(45, KB_HU_THUMBKEY),
+    IDThumbKeySymbolsV1(27, KB_ID_THUMBKEY_SYMBOLS_V1),
+    IDThumbKeySymbolsV2(62, KB_ID_THUMBKEY_SYMBOLS_V2),
+    IDThumbKeySymbolsNumeric(63, KB_ID_THUMBKEY_SYMBOLS_NUMERIC_V1),
+    ITThumbKey(9, KB_IT_THUMBKEY),
+    ITMessageEase(47, KB_IT_MESSAGEEASE),
+    ITTypeSplit(40, KB_IT_TYPESPLIT),
+    JAThumbKeyHiragana(31, KB_JA_THUMBKEY_HIRAGANA),
+    JAThumbKeyKatakana(32, KB_JA_THUMBKEY_KATAKANA),
+    KAThumbKey(26, KB_KA_THUMBKEY),
+    LTThumbKey(61, KB_LT_THUMBKEY),
+    LVLTGThumbKey(60, KB_LV_LTG_THUMBKEY),
+    MATHThumbKey(70, KB_MATH_THUMBKEY),
+    NLThumbKey(10, KB_NL_THUMBKEY),
+    NOThumbKey(24, KB_NO_THUMBKEY),
+    PLThumbKey(11, KB_PL_THUMBKEY),
+    PLTypeSplit(42, KB_PL_TYPESPLIT),
+    PTThumbKey(12, KB_PT_THUMBKEY),
+    PTTypeSplit(41, KB_PT_TYPESPLIT),
+    RUThumbKey(13, KB_RU_THUMBKEY),
+    RUThumbKeySymbols(18, KB_RU_THUMBKEY_SYMBOLS),
+    RUMessageEase(54, KB_RU_MESSAGEEASE),
+    RUMessageEaseSymbols(29, KB_RU_MESSAGEEASE_SYMBOLS),
+    SVThumbKey(34, KB_SV_THUMBKEY),
+    T9v1(30, KB_T9),
+    TRThumbKey(35, KB_TR_THUMBKEY),
+    UKThumbKeyUKv1(14, KB_UK_THUMBKEY),
+    UKRUMessageEaseSymbols(67, KB_UA_RU_MESSAGEEASE_SYMBOLS),
 }

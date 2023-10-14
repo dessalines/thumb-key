@@ -47,9 +47,9 @@ import com.dessalines.thumbkey.db.DEFAULT_SPACEBAR_MULTITAPS
 import com.dessalines.thumbkey.db.DEFAULT_VIBRATE_ON_TAP
 import com.dessalines.thumbkey.keyboards.BACKSPACE_KEY_ITEM
 import com.dessalines.thumbkey.keyboards.EMOJI_BACK_KEY_ITEM
+import com.dessalines.thumbkey.keyboards.KB_EN_THUMBKEY_MAIN
 import com.dessalines.thumbkey.keyboards.NUMERIC_KEY_ITEM
 import com.dessalines.thumbkey.keyboards.RETURN_KEY_ITEM
-import com.dessalines.thumbkey.keyboards.THUMBKEY_EN_V4_MAIN
 import com.dessalines.thumbkey.utils.KeyAction
 import com.dessalines.thumbkey.utils.KeyboardLayout
 import com.dessalines.thumbkey.utils.KeyboardMode
@@ -82,12 +82,17 @@ fun KeyboardScreen(
     // TODO get rid of this crap
     val lastAction = remember { mutableStateOf<KeyAction?>(null) }
 
-    val keyboardGroup = KeyboardLayout.entries.sortedBy { it.index }[
+    val keyboardDefinition = KeyboardLayout.entries.sortedBy { it.index }[
         settings?.keyboardLayout
             ?: DEFAULT_KEYBOARD_LAYOUT,
-    ].modes
+    ].keyboardDefinition
 
-    val keyboard = keyboardGroup[mode] ?: THUMBKEY_EN_V4_MAIN
+    val keyboard = when (mode) {
+        KeyboardMode.MAIN -> keyboardDefinition.modes.main
+        KeyboardMode.SHIFTED -> keyboardDefinition.modes.shifted
+        KeyboardMode.NUMERIC -> keyboardDefinition.modes.numeric
+        else -> KB_EN_THUMBKEY_MAIN
+    }
 
     val alignment = keyboardPositionToAlignment(
         KeyboardPosition.entries[
@@ -182,6 +187,7 @@ fun KeyboardScreen(
                                 keyBorderWidth = keyBorderWidth,
                                 keyRadius = settings?.keyRadius ?: DEFAULT_KEY_RADIUS,
                                 autoCapitalize = autoCapitalize,
+                                keyboardSettings = keyboardDefinition.settings,
                                 spacebarMultiTaps = spacebarMultiTaps,
                                 vibrateOnTap = vibrateOnTap,
                                 soundOnTap = soundOnTap,
@@ -277,6 +283,7 @@ fun KeyboardScreen(
                                     keyBorderWidth = keyBorderWidth,
                                     keyRadius = settings?.keyRadius ?: DEFAULT_KEY_RADIUS,
                                     autoCapitalize = autoCapitalize,
+                                    keyboardSettings = keyboardDefinition.settings,
                                     spacebarMultiTaps = spacebarMultiTaps,
                                     vibrateOnTap = vibrateOnTap,
                                     soundOnTap = soundOnTap,

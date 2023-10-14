@@ -51,6 +51,7 @@ import com.dessalines.thumbkey.utils.KeyAction
 import com.dessalines.thumbkey.utils.KeyC
 import com.dessalines.thumbkey.utils.KeyDisplay
 import com.dessalines.thumbkey.utils.KeyItemC
+import com.dessalines.thumbkey.utils.KeyboardDefinitionSettings
 import com.dessalines.thumbkey.utils.Selection
 import com.dessalines.thumbkey.utils.SlideType
 import com.dessalines.thumbkey.utils.SwipeDirection
@@ -70,6 +71,7 @@ fun KeyboardKey(
     animationHelperSpeed: Int,
     animationSpeed: Int,
     autoCapitalize: Boolean,
+    keyboardSettings: KeyboardDefinitionSettings,
     spacebarMultiTaps: Boolean,
     vibrateOnTap: Boolean,
     soundOnTap: Boolean,
@@ -179,6 +181,7 @@ fun KeyboardKey(
                     action = action,
                     ime = ime,
                     autoCapitalize = autoCapitalize,
+                    keyboardSettings = keyboardSettings,
                     onToggleShiftMode = onToggleShiftMode,
                     onToggleNumericMode = onToggleNumericMode,
                     onToggleEmojiMode = onToggleEmojiMode,
@@ -256,6 +259,7 @@ fun KeyboardKey(
                                         action = action,
                                         ime = ime,
                                         autoCapitalize = autoCapitalize,
+                                        keyboardSettings = keyboardSettings,
                                         onToggleShiftMode = onToggleShiftMode,
                                         onToggleNumericMode = onToggleNumericMode,
                                         onToggleEmojiMode = onToggleEmojiMode,
@@ -301,6 +305,7 @@ fun KeyboardKey(
                                 action = action,
                                 ime = ime,
                                 autoCapitalize = autoCapitalize,
+                                keyboardSettings = keyboardSettings,
                                 onToggleShiftMode = onToggleShiftMode,
                                 onToggleNumericMode = onToggleNumericMode,
                                 onToggleEmojiMode = onToggleEmojiMode,
@@ -332,6 +337,7 @@ fun KeyboardKey(
                                         action = action,
                                         ime = ime,
                                         autoCapitalize = autoCapitalize,
+                                        keyboardSettings = keyboardSettings,
                                         onToggleShiftMode = onToggleShiftMode,
                                         onToggleNumericMode = onToggleNumericMode,
                                         onToggleCapsLock = onToggleCapsLock,

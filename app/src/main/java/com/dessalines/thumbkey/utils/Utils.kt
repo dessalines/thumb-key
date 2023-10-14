@@ -142,6 +142,7 @@ fun performKeyAction(
     action: KeyAction,
     ime: IMEService,
     autoCapitalize: Boolean,
+    keyboardSettings: KeyboardDefinitionSettings,
     onToggleShiftMode: (enable: Boolean) -> Unit,
     onToggleNumericMode: (enable: Boolean) -> Unit,
     onToggleEmojiMode: (enable: Boolean) -> Unit,
@@ -163,6 +164,7 @@ fun performKeyAction(
                 autoCapitalize(
                     ime = ime,
                     onAutoCapitalize = onAutoCapitalize,
+                    autocapitalizers = keyboardSettings.autoCapitalizers,
                 )
             } else { // To return to MAIN mode after a shifted key action.
                 onAutoCapitalize(false)
@@ -193,6 +195,7 @@ fun performKeyAction(
                 autoCapitalize(
                     ime = ime,
                     onAutoCapitalize = onAutoCapitalize,
+                    autocapitalizers = keyboardSettings.autoCapitalizers,
                 )
             }
         }
@@ -332,29 +335,17 @@ fun getKeyboardMode(ime: IMEService, autoCapitalize: Boolean): KeyboardMode {
 private fun autoCapitalize(
     ime: IMEService,
     onAutoCapitalize: (enable: Boolean) -> Unit,
+    autocapitalizers: AutoCapitalizers,
 ) {
-    autoCapitalizeI(ime)
+    // Run language specific autocapitalizers
+    autocapitalizers.forEach { fn ->
+        fn(ime)
+    }
 
     if (autoCapitalizeCheck(ime)) {
         onAutoCapitalize(true)
     } else {
         onAutoCapitalize(false)
-    }
-}
-
-fun autoCapitalizeI(
-    ime: IMEService,
-) {
-    // Capitalizes 'i'
-    val textBefore = ime.currentInputConnection.getTextBeforeCursor(3, 0)
-    if (!textBefore.isNullOrEmpty()) {
-        if (textBefore == " i ") {
-            ime.currentInputConnection.deleteSurroundingText(2, 0)
-            ime.currentInputConnection.commitText(
-                "I ",
-                1,
-            )
-        }
     }
 }
 
@@ -462,12 +453,12 @@ fun keyboardLayoutsSetFromTitleIndex(layouts: String?): Set<Int> {
 }
 
 fun keyboardRealIndexFromTitleIndex(index: Int): Int {
-    return KeyboardLayout.entries.sortedBy { it.title }[index].index
+    return KeyboardLayout.entries.sortedBy { it.keyboardDefinition.title }[index].index
 }
 
 fun keyboardTitleIndexFromRealIndex(index: Int): Int {
-    val keyboard = KeyboardLayout.entries.find { it.index == index } ?: KeyboardLayout.ThumbKeyENv4
-    return KeyboardLayout.entries.sortedBy { it.title }.indexOf(keyboard)
+    val keyboard = KeyboardLayout.entries.find { it.index == index } ?: KeyboardLayout.ENThumbKey
+    return KeyboardLayout.entries.sortedBy { it.keyboardDefinition.title }.indexOf(keyboard)
 }
 
 fun Context.getPackageInfo(): PackageInfo {
