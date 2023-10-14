@@ -105,7 +105,7 @@ fun KeyboardScreen(
     val autoCapitalize = (settings?.autoCapitalize ?: DEFAULT_AUTO_CAPITALIZE).toBool()
     val spacebarMultiTaps = (settings?.spacebarMultiTaps ?: DEFAULT_SPACEBAR_MULTITAPS).toBool()
     val slideEnabled = (settings?.slideEnabled ?: DEFAULT_SLIDE_ENABLED).toBool()
-    val keyBorderWidth = ((settings?.keyBorderWidth ?: DEFAULT_KEY_BORDER_WIDTH) / 10.0f).toInt()
+    val keyBorderWidth = (settings?.keyBorderWidth ?: DEFAULT_KEY_BORDER_WIDTH)
     val vibrateOnTap = (settings?.vibrateOnTap ?: DEFAULT_VIBRATE_ON_TAP).toBool()
     val soundOnTap = (settings?.soundOnTap ?: DEFAULT_SOUND_ON_TAP).toBool()
     val hideLetters = (settings?.hideLetters ?: DEFAULT_HIDE_LETTERS).toBool()
@@ -118,7 +118,8 @@ fun KeyboardScreen(
     if (mode == KeyboardMode.EMOJI) {
         val controllerKeys = listOf(EMOJI_BACK_KEY_ITEM, NUMERIC_KEY_ITEM, BACKSPACE_KEY_ITEM, RETURN_KEY_ITEM)
 
-        val keySize = (settings?.keySize ?: DEFAULT_KEY_SIZE) + ((keyPadding + keyBorderWidth.toFloat()) * 2)
+        val keyBorderWidthFloat = keyBorderWidth / 10.0f
+        val keySize = (settings?.keySize ?: DEFAULT_KEY_SIZE) + ((keyPadding + keyBorderWidthFloat) * 2)
         val keyboardHeight = Dp((keySize * controllerKeys.size))
 
         Box(
