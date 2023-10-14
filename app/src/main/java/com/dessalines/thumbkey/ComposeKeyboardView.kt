@@ -36,29 +36,34 @@ class ComposeKeyboardView(
                 onSwitchLanguage = {
                     ctx.lifecycleScope.launch {
                         // Cycle to the next keyboard
-                        val s = settingsState.value!!
-                        val layouts = keyboardLayoutsSetFromString(s.keyboardLayouts).toList()
-                        val currentLayout = s.keyboardLayout
-                        val index = layouts.indexOf(currentLayout)
-                        val nextIndex = (index + 1).mod(layouts.size)
-                        val nextLayout = layouts.getOrNull(nextIndex)
-                        nextLayout?.let { layout ->
-                            val s2 = s.copy(keyboardLayout = layout)
-                            settingsRepo.update(s2)
+                        val state = settingsState.value
+                        state?.let { s ->
 
-                            // Display the new layout's name on the screen
-                            val layoutName = KeyboardLayout.entries.find { it.index == nextLayout }?.keyboardDefinition!!.title
-                            Toast.makeText(context, "$layoutName", Toast.LENGTH_SHORT).show()
+                            val layouts = keyboardLayoutsSetFromString(s.keyboardLayouts).toList()
+                            val currentLayout = s.keyboardLayout
+                            val index = layouts.indexOf(currentLayout)
+                            val nextIndex = (index + 1).mod(layouts.size)
+                            val nextLayout = layouts.getOrNull(nextIndex)
+                            nextLayout?.let { layout ->
+                                val s2 = s.copy(keyboardLayout = layout)
+                                settingsRepo.update(s2)
+
+                                // Display the new layout's name on the screen
+                                val layoutName = KeyboardLayout.entries.find { it.index == nextLayout }?.keyboardDefinition?.title
+                                Toast.makeText(context, layoutName, Toast.LENGTH_SHORT).show()
+                            }
                         }
                     }
                 },
                 onSwitchPosition = {
                     ctx.lifecycleScope.launch {
                         // Cycle to the next position
-                        val s = settingsState.value!!
-                        val nextPosition = (s.position + 1).mod(3)
-                        val s2 = s.copy(position = nextPosition)
-                        settingsRepo.update(s2)
+                        val state = settingsState.value
+                        state?.let { s ->
+                            val nextPosition = (s.position + 1).mod(3)
+                            val s2 = s.copy(position = nextPosition)
+                            settingsRepo.update(s2)
+                        }
                     }
                 },
             )
