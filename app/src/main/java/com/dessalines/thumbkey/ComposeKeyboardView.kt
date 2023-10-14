@@ -59,7 +59,7 @@ class ComposeKeyboardView(
                     ctx.lifecycleScope.launch {
                         // Cycle to the next position
                         val state = settingsState.value
-                        state.let { s ->
+                        state?.let { s ->
                             val nextPosition = (s.position + 1).mod(3)
                             val s2 = s.copy(position = nextPosition)
                             settingsRepo.update(s2)
