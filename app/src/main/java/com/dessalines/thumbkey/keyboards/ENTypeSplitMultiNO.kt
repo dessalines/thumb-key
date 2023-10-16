@@ -268,7 +268,7 @@ val KB_EN_TYPESPLIT_NO_MAIN = KeyboardC(
     ),
 )
 
-val KB_EN_TYPESPLIT_SHIFTED = KeyboardC(
+val KB_EN_TYPESPLIT_NO_SHIFTED = KeyboardC(
     listOf(
         listOf(
             KeyItemC(
@@ -524,7 +524,7 @@ val KB_EN_TYPESPLIT_SHIFTED = KeyboardC(
     ),
 )
 
-val KB_EN_TYPESPLIT: KeyboardDefinition = KeyboardDefinition(
+val KB_EN_TYPESPLIT_NO: KeyboardDefinition = KeyboardDefinition(
     title = "EN Type-Split english (EN+NO multi)",
     modes = KeyboardDefinitionModes(
         main = KB_EN_TYPESPLIT_MAIN,
