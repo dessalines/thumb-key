@@ -45,6 +45,7 @@ import kotlin.math.sqrt
 const val TAG = "com.thumbkey"
 
 const val THUMBKEY_IME_NAME = "com.dessalines.thumbkey/.IMEService"
+const val IME_ACTION_CUSTOM_LABEL = EditorInfo.IME_MASK_ACTION + 1
 
 @Composable
 fun colorVariantToColor(colorVariant: ColorVariant): Color {
@@ -226,18 +227,23 @@ fun performKeyAction(
         }
 
         KeyAction.IMECompleteAction -> {
-            val imeAction = getImeActionCode(ime)
             // A lot of apps like discord and slack use weird IME actions,
             // so its best to only check the none case
-            if (imeAction == EditorInfo.IME_FLAG_NO_ENTER_ACTION) {
-                ime.currentInputConnection.sendKeyEvent(
-                    KeyEvent(
-                        KeyEvent.ACTION_DOWN,
-                        KeyEvent.KEYCODE_ENTER,
-                    ),
-                )
-            } else {
-                ime.currentInputConnection.performEditorAction(imeAction)
+            when (val imeAction = getImeActionCode(ime)) {
+                IME_ACTION_CUSTOM_LABEL -> {
+                    ime.currentInputConnection.performEditorAction(ime.currentInputEditorInfo.actionId)
+                }
+                EditorInfo.IME_ACTION_NONE -> {
+                    ime.currentInputConnection.sendKeyEvent(
+                        KeyEvent(
+                            KeyEvent.ACTION_DOWN,
+                            KeyEvent.KEYCODE_ENTER,
+                        ),
+                    )
+                }
+                else -> {
+                    ime.currentInputConnection.performEditorAction(imeAction)
+                }
             }
         }
 
@@ -302,13 +308,16 @@ fun performKeyAction(
  * Returns the current IME action, or IME_FLAG_NO_ENTER_ACTION if there is none.
  */
 fun getImeActionCode(ime: IMEService): Int {
-    return (
-        ime.currentInputEditorInfo.imeOptions and (
-            EditorInfo
-                .IME_MASK_ACTION or
-                EditorInfo.IME_FLAG_NO_ENTER_ACTION
-            )
-        )
+    val ei = ime.currentInputEditorInfo
+
+    return if ((ei.imeOptions and EditorInfo.IME_FLAG_NO_ENTER_ACTION) != 0) {
+        EditorInfo.IME_ACTION_NONE
+    } else if (ei.actionLabel != null) {
+        IME_ACTION_CUSTOM_LABEL
+    } else {
+        // Note: this is different from editorInfo.actionId, hence "ImeOptionsActionId"
+        ei.imeOptions and EditorInfo.IME_MASK_ACTION
+    }
 }
 
 /**

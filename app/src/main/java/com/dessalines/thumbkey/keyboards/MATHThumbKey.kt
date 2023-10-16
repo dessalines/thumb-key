@@ -540,7 +540,7 @@ val KB_MATH_THUMBKEY_SLASH = KeyboardC(
 )
 
 val KB_MATH_THUMBKEY: KeyboardDefinition = KeyboardDefinition(
-    title = "Math Thumb-Key",
+    title = "MATH Thumb-Key",
     modes = KeyboardDefinitionModes(
         main = KB_MATH_THUMBKEY_MAIN,
         shifted = KB_MATH_THUMBKEY_SLASH,
