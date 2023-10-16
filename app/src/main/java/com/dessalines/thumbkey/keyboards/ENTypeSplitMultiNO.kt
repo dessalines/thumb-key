@@ -107,11 +107,11 @@ val KB_EN_TYPESPLIT_MAIN = KeyboardC(
                 ),
                 swipeType = SwipeNWay.FOUR_WAY_CROSS,
                 swipes = mapOf(
-                    SwipeDirection.RIGHT to KeyC(
+                    SwipeDirection.TOP to KeyC(
                         display = KeyDisplay.TextDisplay("æ"),
                         action = KeyAction.CommitText("æ"),
                     ),
-                    SwipeDirection.TOP to KeyC(
+                    SwipeDirection.RIGHT to KeyC(
                         display = KeyDisplay.TextDisplay("å"),
                         action = KeyAction.CommitText("å"),
                     ),
@@ -363,11 +363,11 @@ val KB_EN_TYPESPLIT_SHIFTED = KeyboardC(
                 ),
                 swipeType = SwipeNWay.FOUR_WAY_CROSS,
                 swipes = mapOf(
-                    SwipeDirection.RIGHT to KeyC(
+                    SwipeDirection.TOP to KeyC(
                         display = KeyDisplay.TextDisplay("Æ"),
                         action = KeyAction.CommitText("Æ"),
                     ),
-                    SwipeDirection.TOP to KeyC(
+                    SwipeDirection.RIGHT to KeyC(
                         display = KeyDisplay.TextDisplay("Å"),
                         action = KeyAction.CommitText("Å"),
                     ),
