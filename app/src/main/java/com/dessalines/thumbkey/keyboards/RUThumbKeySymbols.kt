@@ -796,7 +796,7 @@ val KB_RU_THUMBKEY_SYMBOLS_SHIFTED = KeyboardC(
 )
 
 val KB_RU_THUMBKEY_SYMBOLS: KeyboardDefinition = KeyboardDefinition(
-    title = "RU Thumb-Key русский with symbols",
+    title = "RU Thumb-Key русский symbols",
     modes = KeyboardDefinitionModes(
         main = KB_RU_THUMBKEY_SYMBOLS_MAIN,
         shifted = KB_RU_THUMBKEY_SYMBOLS_SHIFTED,
