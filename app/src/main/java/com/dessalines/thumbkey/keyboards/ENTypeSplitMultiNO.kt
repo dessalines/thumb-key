@@ -12,7 +12,7 @@ import com.dessalines.thumbkey.utils.KeyboardDefinitionModes
 import com.dessalines.thumbkey.utils.SwipeDirection
 import com.dessalines.thumbkey.utils.SwipeNWay
 
-val KB_EN_TYPESPLIT_MAIN = KeyboardC(
+val KB_EN_TYPESPLIT_NO_MAIN = KeyboardC(
     listOf(
         listOf(
             KeyItemC(
