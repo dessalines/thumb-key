@@ -1,3 +1,19 @@
+# Thumb-Key 2.4.0 (2023-10-16)
+
+## What's Changed
+
+- Fix en thumb-key programmers wide. Fixes #503 by @storvik in https://github.com/dessalines/thumb-key/pull/504
+- Fixing enter action. Fixes #136 by @dessalines in https://github.com/dessalines/thumb-key/pull/506
+- Adding keyboard PR instruction. by @dessalines in https://github.com/dessalines/thumb-key/pull/507
+- fix inconsistent layout naming by @KraXen72 in https://github.com/dessalines/thumb-key/pull/497
+- Type Split English with Norwegian characters added by @henrikx in https://github.com/dessalines/thumb-key/pull/502
+
+## New Contributors
+
+- @henrikx made their first contribution in https://github.com/dessalines/thumb-key/pull/502
+
+**Full Changelog**: https://github.com/dessalines/thumb-key/compare/2.4.0...2.4.1
+
 # Thumb-Key 2.4.0 (2023-10-14)
 
 ## What's Changed
