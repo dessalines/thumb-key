@@ -16,7 +16,7 @@ import com.dessalines.thumbkey.utils.KeyboardDefinition
 import com.dessalines.thumbkey.utils.KeyboardDefinitionModes
 import com.dessalines.thumbkey.utils.SwipeDirection
 
-val KB_UA_RU_MESSAGEEASE_SYMBOLS_MAIN = KeyboardC(
+val KB_UK_RU_MESSAGEEASE_SYMBOLS_MAIN = KeyboardC(
     listOf(
         listOf(
             KeyItemC(
@@ -395,7 +395,7 @@ val KB_UA_RU_MESSAGEEASE_SYMBOLS_MAIN = KeyboardC(
     ),
 )
 
-val KB_UA_RU_MESSAGEEASE_SYMBOLS_SHIFTED = KeyboardC(
+val KB_UK_RU_MESSAGEEASE_SYMBOLS_SHIFTED = KeyboardC(
     listOf(
         listOf(
             KeyItemC(
@@ -780,11 +780,11 @@ val KB_UA_RU_MESSAGEEASE_SYMBOLS_SHIFTED = KeyboardC(
     ),
 )
 
-val KB_UA_RU_MESSAGEEASE_SYMBOLS: KeyboardDefinition = KeyboardDefinition(
-    title = "UA RU MessageEase український-русский with Symbols",
+val KB_UK_RU_MESSAGEEASE_SYMBOLS: KeyboardDefinition = KeyboardDefinition(
+    title = "UK RU MessageEase русский (UK+RU multi) symbols",
     modes = KeyboardDefinitionModes(
-        main = KB_UA_RU_MESSAGEEASE_SYMBOLS_MAIN,
-        shifted = KB_UA_RU_MESSAGEEASE_SYMBOLS_SHIFTED,
+        main = KB_UK_RU_MESSAGEEASE_SYMBOLS_MAIN,
+        shifted = KB_UK_RU_MESSAGEEASE_SYMBOLS_SHIFTED,
         numeric = NUMERIC_KEYBOARD,
     ),
 )

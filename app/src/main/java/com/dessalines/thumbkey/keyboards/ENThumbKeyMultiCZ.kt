@@ -17,7 +17,7 @@ import com.dessalines.thumbkey.utils.KeyboardDefinitionModes
 import com.dessalines.thumbkey.utils.SwipeDirection
 import com.dessalines.thumbkey.utils.SwipeNWay
 
-val KB_CZ_THUMBKEY_MAIN = KeyboardC(
+val KB_EN_THUMBKEY_MULTI_CZ_MAIN = KeyboardC(
     listOf(
         listOf(
             KeyItemC(
@@ -278,7 +278,7 @@ val KB_CZ_THUMBKEY_MAIN = KeyboardC(
     ),
 )
 
-val KB_CZ_THUMBKEY_SHIFTED = KeyboardC(
+val KB_EN_THUMBKEY_MULTI_CZ_SHIFTED = KeyboardC(
     listOf(
         listOf(
             KeyItemC(
@@ -546,11 +546,11 @@ val KB_CZ_THUMBKEY_SHIFTED = KeyboardC(
     ),
 )
 
-val KB_CZ_THUMBKEY: KeyboardDefinition = KeyboardDefinition(
-    title = "CZ Thumb-Key čeština",
+val KB_EN_THUMBKEY_MULTI_CZ: KeyboardDefinition = KeyboardDefinition(
+    title = "EN Thumb-key english (EN+CZ multi)",
     modes = KeyboardDefinitionModes(
-        main = KB_CZ_THUMBKEY_MAIN,
-        shifted = KB_CZ_THUMBKEY_SHIFTED,
+        main = KB_EN_THUMBKEY_MULTI_CZ_MAIN,
+        shifted = KB_EN_THUMBKEY_MULTI_CZ_SHIFTED,
         numeric = NUMERIC_KEYBOARD,
     ),
 )

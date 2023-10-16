@@ -488,7 +488,7 @@ val KB_EN_THUMBKEY_MULTI_EE_SHIFTED = KeyboardC(
 )
 
 val KB_EN_THUMBKEY_MULTI_EE: KeyboardDefinition = KeyboardDefinition(
-    title = "EN Thumb-Key english (EN+EE)",
+    title = "EN Thumb-Key english (EN+EE multi)",
     modes = KeyboardDefinitionModes(
         main = KB_EN_THUMBKEY_MULTI_EE_MAIN,
         shifted = KB_EN_THUMBKEY_MULTI_EE_SHIFTED,
