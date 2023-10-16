@@ -12,7 +12,7 @@ import com.dessalines.thumbkey.utils.KeyboardDefinitionModes
 import com.dessalines.thumbkey.utils.SwipeDirection
 import com.dessalines.thumbkey.utils.SwipeNWay
 
-val KB_EN_TYPESPLIT_NO_MAIN = KeyboardC(
+val KB_EN_NO_TYPESPLIT_MAIN = KeyboardC(
     listOf(
         listOf(
             KeyItemC(
@@ -268,7 +268,7 @@ val KB_EN_TYPESPLIT_NO_MAIN = KeyboardC(
     ),
 )
 
-val KB_EN_TYPESPLIT_NO_SHIFTED = KeyboardC(
+val KB_EN_NO_TYPESPLIT_SHIFTED = KeyboardC(
     listOf(
         listOf(
             KeyItemC(
@@ -524,11 +524,11 @@ val KB_EN_TYPESPLIT_NO_SHIFTED = KeyboardC(
     ),
 )
 
-val KB_EN_TYPESPLIT_NO: KeyboardDefinition = KeyboardDefinition(
-    title = "EN Type-Split english (EN+NO multi)",
+val KB_EN_NO_TYPESPLIT: KeyboardDefinition = KeyboardDefinition(
+    title = "EN NO Type-Split",
     modes = KeyboardDefinitionModes(
-        main = KB_EN_TYPESPLIT_MAIN,
-        shifted = KB_EN_TYPESPLIT_SHIFTED,
+        main = KB_EN_NO_TYPESPLIT_MAIN,
+        shifted = KB_EN_NO_TYPESPLIT_SHIFTED,
         numeric = TYPESPLIT_NUMERIC_KEYBOARD,
     ),
 )

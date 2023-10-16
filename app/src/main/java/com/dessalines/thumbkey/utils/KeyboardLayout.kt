@@ -14,6 +14,7 @@ import com.dessalines.thumbkey.keyboards.KB_DE_TYPESPLIT
 import com.dessalines.thumbkey.keyboards.KB_ENEO_MESSAGEEASE_SYMBOLS
 import com.dessalines.thumbkey.keyboards.KB_EN_MESSAGEEASE
 import com.dessalines.thumbkey.keyboards.KB_EN_MESSAGEEASE_SYMBOLS
+import com.dessalines.thumbkey.keyboards.KB_EN_NO_TYPESPLIT
 import com.dessalines.thumbkey.keyboards.KB_EN_THUMBKEY
 import com.dessalines.thumbkey.keyboards.KB_EN_THUMBKEY_MULTI
 import com.dessalines.thumbkey.keyboards.KB_EN_THUMBKEY_MULTI_EE
@@ -147,4 +148,5 @@ enum class KeyboardLayout(val index: Int, val keyboardDefinition: KeyboardDefini
     MATHThumbKey(70, KB_MATH_THUMBKEY),
     ENThumbKeyMultiEE(71, KB_EN_THUMBKEY_MULTI_EE),
     SKThumbKey(72, KB_SK_THUMBKEY),
+    ENNOTypeSplit(73, KB_EN_NO_TYPESPLIT),
 }
