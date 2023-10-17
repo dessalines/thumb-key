@@ -74,10 +74,6 @@ val KB_FA_THUMBKEY_MAIN = KeyboardC(
                         display = KeyDisplay.TextDisplay("ع"),
                         action = KeyAction.CommitText("ع"),
                     ),
-                    SwipeDirection.LEFT to KeyC(
-                        display = KeyDisplay.TextDisplay("ؤ"),
-                        action = KeyAction.CommitText("ؤ"),
-                    ),
                 ),
             ),
             EMOJI_KEY_ITEM,
@@ -184,11 +180,6 @@ val KB_FA_THUMBKEY_MAIN = KeyboardC(
                         display = KeyDisplay.TextDisplay("ث"),
                         action = KeyAction.CommitText("ث"),
                     ),
-                    SwipeDirection.BOTTOM to KeyC(
-                        display = KeyDisplay.TextDisplay("،"),
-                        action = KeyAction.CommitText("،"),
-                        color = ColorVariant.MUTED,
-                    ),
                 ),
             ),
             KeyItemC(
@@ -218,14 +209,14 @@ val KB_FA_THUMBKEY_MAIN = KeyboardC(
                         action = KeyAction.CommitText("."),
                         color = ColorVariant.MUTED,
                     ),
-                    SwipeDirection.BOTTOM_LEFT to KeyC(
-                        display = KeyDisplay.TextDisplay("›‹"),
-                        action = KeyAction.CommitText("‍"),
-                        color = ColorVariant.MUTED,
-                    ),
                     SwipeDirection.LEFT to KeyC(
                         display = KeyDisplay.TextDisplay("؟"),
                         action = KeyAction.CommitText("؟"),
+                        color = ColorVariant.MUTED,
+                    ),
+                    SwipeDirection.BOTTOM_LEFT to KeyC(
+                        display = KeyDisplay.TextDisplay("*"),
+                        action = KeyAction.CommitText("*"),
                         color = ColorVariant.MUTED,
                     ),
                 ),
@@ -246,6 +237,10 @@ val KB_FA_THUMBKEY_MAIN = KeyboardC(
                         display = KeyDisplay.TextDisplay("ظ"),
                         action = KeyAction.CommitText("ظ"),
                     ),
+                    SwipeDirection.LEFT to KeyC(
+                        display = KeyDisplay.TextDisplay("ۀ"),
+                        action = KeyAction.CommitText("ۀ"),
+                    ),
                 ),
             ),
             BACKSPACE_KEY_ITEM,
@@ -262,6 +257,6 @@ val KB_FA_THUMBKEY: KeyboardDefinition = KeyboardDefinition(
     modes = KeyboardDefinitionModes(
         main = KB_FA_THUMBKEY_MAIN,
         shifted = KB_FA_THUMBKEY_MAIN,
-        numeric = NUMERIC_KEYBOARD,
+        numeric = FARSI_NUMERIC_KEYBOARD,
     ),
 )
