@@ -201,6 +201,125 @@ fun performKeyAction(
             }
         }
 
+        is KeyAction.ComposeLastKey -> {
+            Log.d(TAG, "composing last key")
+            val text = action.text
+            val textBefore = ime.currentInputConnection.getTextBeforeCursor(1, 0)
+
+            val textNew = when (text) {
+                "\"" -> when(textBefore) {
+                    "a" -> "ä"; "A" -> "Ä"
+                    "e" -> "ë"; "E" -> "Ë"
+                    "h" -> "ḧ"; "H" -> "Ḧ"
+                    "i" -> "ï"; "I" -> "Ï"
+                    "o" -> "ö"; "O" -> "Ö"
+                    "t" -> "ẗ"
+                    "u" -> "ü"; "U" -> "Ü"
+                    "w" -> "ẅ"; "W" -> "Ẅ"
+                    "x" -> "ẍ"; "X" -> "Ẍ"
+                    "y" -> "ÿ"; "Y" -> "Ÿ"
+                    " " -> "\""
+                    else -> textBefore
+                }
+                "'" -> when(textBefore) {
+                    "a" -> "á"; "A" -> "Á"
+                    "c" -> "ć"; "C" -> "Ć"
+                    "e" -> "é"; "E" -> "É"
+                    "g" -> "ǵ"; "G" -> "Ǵ"
+                    "i" -> "í"; "I" -> "Í"
+                    "j" -> "j́"; "J" -> "J́"
+                    "k" -> "ḱ"; "K" -> "Ḱ"
+                    "l" -> "ĺ"; "L" -> "Ĺ"
+                    "m" -> "ḿ"; "M" -> "Ḿ"
+                    "n" -> "ń"; "N" -> "Ń"
+                    "o" -> "ó"; "O" -> "Ó"
+                    "p" -> "ṕ"; "P" -> "Ṕ"
+                    "r" -> "ŕ"; "R" -> "Ŕ"
+                    "s" -> "ś"; "S" -> "Ś"
+                    "u" -> "ú"; "U" -> "Ú"
+                    "w" -> "ẃ"; "W" -> "Ẃ"
+                    "y" -> "ý"; "Y" -> "Ý"
+                    "z" -> "ź"; "Z" -> "Ź"
+                    " " -> "'"
+                    else -> textBefore
+                }
+                "`" -> when(textBefore) {
+                    "a" -> "à"; "A" -> "À"
+                    "e" -> "è"; "E" -> "È"
+                    "i" -> "ì"; "I" -> "Ì"
+                    "n" -> "ǹ"; "N" -> "Ǹ"
+                    "o" -> "ò"; "O" -> "Ò"
+                    "u" -> "ù"; "U" -> "Ù"
+                    "ü" -> "ǜ"; "Ü" -> "Ǜ"
+                    "w" -> "ẁ"; "W" -> "Ẁ"
+                    "y" -> "ỳ"; "Y" -> "Ỳ"
+                    " " -> "`"
+                    else -> textBefore
+                }
+                "^" -> when(textBefore) {
+                    "a" -> "â"; "A" -> "Â"
+                    "c" -> "ĉ"; "C" -> "Ĉ"
+                    "e" -> "ê"; "E" -> "Ê"
+                    "g" -> "ĝ"; "G" -> "Ĝ"
+                    "h" -> "ĥ"; "H" -> "Ĥ"
+                    "i" -> "î"; "I" -> "Î"
+                    "j" -> "ĵ"; "J" -> "Ĵ"
+                    "o" -> "ô"; "O" -> "Ô"
+                    "s" -> "ŝ"; "S" -> "Ŝ"
+                    "u" -> "û"; "U" -> "Û"
+                    "w" -> "ŵ"; "W" -> "Ŵ"
+                    "y" -> "ŷ"; "Y" -> "Ŷ"
+                    "z" -> "ẑ"; "Z" -> "Ẑ"
+                    " " -> "^"
+                    else -> textBefore
+                }
+                "~" -> when(textBefore) {
+                    "a" -> "ã"; "A" -> "Ã"
+                    "c" -> "ç"; "C" -> "Ç"
+                    "e" -> "ẽ"; "E" -> "Ẽ"
+                    "i" -> "ĩ"; "I" -> "Ĩ"
+                    "n" -> "ñ"; "N" -> "Ñ"
+                    "o" -> "õ"; "O" -> "Õ"
+                    "u" -> "ũ"; "U" -> "Ũ"
+                    "v" -> "ṽ"; "V" -> "Ṽ"
+                    "y" -> "ỹ"; "Y" -> "Ỹ"
+                    " " -> "~"
+                    else -> textBefore
+                }
+                "°" -> when(textBefore) {
+                    "a" -> "å"; "A" -> "Å"
+                    "o" -> "ø"; "O" -> "Ø"
+                    "u" -> "ů"; "U" -> "Ů"
+                    " " -> "°"
+                    else -> textBefore
+                }
+                "!" -> when(textBefore) {
+                    "a" -> "æ"; "A" -> "Æ"
+                    "c" -> "ç"; "C" -> "Ç"
+                    "e" -> "æ"; "E" -> "Æ"
+                    "s" -> "ß"; "S" -> "ẞ"
+                    "!" -> "¡"
+                    "?" -> "¿"
+                    " " -> "!"
+                    else -> textBefore
+                }
+                "\$" -> when(textBefore) {
+                    "e" -> "€"; "E" -> "€"
+                    "f" -> "₣"; "F" -> "₣"
+                    "l" -> "£"; "L" -> "£"
+                    "y" -> "¥"; "Y" -> "¥"
+                    "w" -> "₩"; "W" -> "₩"
+                    " " -> "\$"
+                    else -> textBefore
+                }
+                else -> throw IllegalStateException("Invalid key modifier")
+            }
+
+            if (textNew != textBefore) {
+                ime.currentInputConnection.deleteSurroundingText(1, 0)
+                ime.currentInputConnection.commitText(textNew, 1)
+            }
+        }
         is KeyAction.ToggleShiftMode -> {
             val enable = action.enable
             Log.d(TAG, "Toggling Shifted: $enable")

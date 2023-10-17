@@ -57,6 +57,7 @@ sealed class KeyAction {
     class ToggleShiftMode(val enable: Boolean) : KeyAction()
     class ToggleNumericMode(val enable: Boolean) : KeyAction()
     class ToggleEmojiMode(val enable: Boolean) : KeyAction()
+    class ComposeLastKey(val text: String) : KeyAction()
     data object DeleteLastWord : KeyAction()
     data object GotoSettings : KeyAction()
     data object IMECompleteAction : KeyAction()
