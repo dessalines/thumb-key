@@ -966,7 +966,7 @@ val KB_EN_THUMBKEY_PROGRAMMER_WIDE: KeyboardDefinition = KeyboardDefinition(
     modes = KeyboardDefinitionModes(
         main = KB_EN_THUMBKEY_PROGRAMMER_WIDE_MAIN,
         shifted = KB_EN_THUMBKEY_PROGRAMMER_WIDE_SHIFTED,
-        numeric = NUMERIC_KEYBOARD,
+        numeric = NUMERIC_KEYBOARD_WIDE,
     ),
     settings = KeyboardDefinitionSettings(
         autoCapitalizers = arrayOf(::autoCapitalizeI),
