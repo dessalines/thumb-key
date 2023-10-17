@@ -39,6 +39,7 @@ fun ThumbkeyTheme(
         ThemeColor.Twilight -> twilight()
         ThemeColor.HighContrast -> highContrast()
         ThemeColor.HighContrastColorful -> highContrastColorful()
+        ThemeColor.ancom -> ancom()
     }
 
     val systemTheme = if (!isSystemInDarkTheme()) {
