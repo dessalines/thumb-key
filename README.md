@@ -8,9 +8,10 @@
 
 </div>
 
-<p align="center">
+<div align="center">
   <a href="https://github.com/dessalines/thumb-key" rel="noopener">
- <img width=200px height=200px src="https://raw.githubusercontent.com/dessalines/thumb-key/main/fastlane/metadata/android/en-US/images/phoneScreenshots/1.png"></a>
+    <img width=200px height=200px src="https://raw.githubusercontent.com/dessalines/thumb-key/main/fastlane/metadata/android/en-US/images/phoneScreenshots/1.png" alt="phone_screen"> />
+  </a>
 
  <h3 align="center"><a href="https://github.com/dessalines/thumb-key">Thumb-Key</a></h3>
   <p align="center">
@@ -29,7 +30,7 @@
     <a href="https://play.google.com/store/apps/details?id=com.dessalines.thumbkey"><img src="https://cdn.rawgit.com/steverichey/google-play-badge-svg/master/img/en_get.svg" height="80"></a>
     <a href="https://github.com/dessalines/thumb-key/releases/latest"><img src="https://raw.githubusercontent.com/andOTP/andOTP/master/assets/badges/get-it-on-github.png" height="80"></a>
   </p>
-</p>
+</div>
 
 ## About Thumb-Key
 
@@ -149,6 +150,16 @@ I'd be happy to accept additions to add more languages, and layouts. To start:
   - You can also add or subtract columns if you want, but the layout must remain a grid. I **highly recommend** sticking with the 3x3 layout.
 - Add the new keyboard to the [KeyboardLayout.kt file](https://github.com/dessalines/thumb-key/blob/main/app/src/main/java/com/dessalines/thumbkey/utils/KeyboardLayout.kt), with a new higher index.
 - Either open a pull request, or an issue, linking your new keyboard file. I'll handle the rest of the work.
+
+## Theming guide
+
+To add a custom theme:
+
+- Use google's [Material 3 custom theme generator](https://m3.material.io/theme-builder#/custom), and save your `Theme.kt` file.
+- Copy the theme into `Color.kt` like the others.
+- Add the theme to the `ThemeColor` enum in `Types.kt`
+- Add a translation string in `strings.xml` for your theme name.
+- Add the theme to the `colorPairs` in `Theme.kt`
 
 ## Support / Donate
 
