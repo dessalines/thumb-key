@@ -10,7 +10,7 @@
 
 <div align="center">
   <a href="https://github.com/dessalines/thumb-key" rel="noopener">
-    <img width=200px height=200px src="https://raw.githubusercontent.com/dessalines/thumb-key/main/fastlane/metadata/android/en-US/images/phoneScreenshots/1.png" alt="phone_screen"> />
+    <img width=200px height=200px src="https://raw.githubusercontent.com/dessalines/thumb-key/main/fastlane/metadata/android/en-US/images/phoneScreenshots/1.png" alt="phone_screen" />
   </a>
 
  <h3 align="center"><a href="https://github.com/dessalines/thumb-key">Thumb-Key</a></h3>
