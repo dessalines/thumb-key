@@ -19,7 +19,7 @@ import com.dessalines.thumbkey.utils.SwipeDirection
 import com.dessalines.thumbkey.utils.SwipeNWay
 import com.dessalines.thumbkey.utils.autoCapitalizeI
 
-var KB_EN_THUMBKEY_COMPOSE_MAIN =  KeyboardC(
+var KB_EN_THUMBKEY_COMPOSE_MAIN = KeyboardC(
     listOf(
         listOf(
             KeyItemC(
@@ -38,17 +38,17 @@ var KB_EN_THUMBKEY_COMPOSE_MAIN =  KeyboardC(
                     SwipeDirection.TOP_LEFT to KeyC(
                         display = KeyDisplay.TextDisplay("\""),
                         action = KeyAction.ComposeLastKey("\""),
-                        color = ColorVariant.MUTED
+                        color = ColorVariant.MUTED,
                     ),
                     SwipeDirection.TOP_RIGHT to KeyC(
                         display = KeyDisplay.TextDisplay("^"),
                         action = KeyAction.ComposeLastKey("^"),
-                        color = ColorVariant.MUTED
+                        color = ColorVariant.MUTED,
                     ),
                     SwipeDirection.BOTTOM_LEFT to KeyC(
                         display = KeyDisplay.TextDisplay("~"),
                         action = KeyAction.ComposeLastKey("~"),
-                        color = ColorVariant.MUTED
+                        color = ColorVariant.MUTED,
                     ),
                 ),
             ),
@@ -109,13 +109,13 @@ var KB_EN_THUMBKEY_COMPOSE_MAIN =  KeyboardC(
                     SwipeDirection.BOTTOM_LEFT to KeyC(
                         display = KeyDisplay.TextDisplay("`"),
                         action = KeyAction.ComposeLastKey("`"),
-                        color = ColorVariant.MUTED
+                        color = ColorVariant.MUTED,
                     ),
                     SwipeDirection.TOP_LEFT to KeyC(
                         display = KeyDisplay.TextDisplay("'"),
                         action = KeyAction.ComposeLastKey("'"),
-                        color = ColorVariant.MUTED
-                    )
+                        color = ColorVariant.MUTED,
+                    ),
                 ),
             ),
             KeyItemC(
@@ -199,17 +199,17 @@ var KB_EN_THUMBKEY_COMPOSE_MAIN =  KeyboardC(
                     SwipeDirection.TOP_LEFT to KeyC(
                         display = KeyDisplay.TextDisplay("°/"),
                         action = KeyAction.ComposeLastKey("°"),
-                        color = ColorVariant.MUTED
+                        color = ColorVariant.MUTED,
                     ),
                     SwipeDirection.BOTTOM_LEFT to KeyC(
                         display = KeyDisplay.TextDisplay("¿¡"),
                         action = KeyAction.ComposeLastKey("!"),
-                        color = ColorVariant.MUTED
+                        color = ColorVariant.MUTED,
                     ),
                     SwipeDirection.BOTTOM_RIGHT to KeyC(
                         display = KeyDisplay.TextDisplay("\$"),
                         action = KeyAction.ComposeLastKey("\$"),
-                        color = ColorVariant.MUTED
+                        color = ColorVariant.MUTED,
                     ),
                 ),
             ),
@@ -294,17 +294,17 @@ val KB_EN_THUMBKEY_COMPOSE_SHIFTED = KeyboardC(
                     SwipeDirection.TOP_LEFT to KeyC(
                         display = KeyDisplay.TextDisplay("\""),
                         action = KeyAction.ComposeLastKey("\""),
-                        color = ColorVariant.MUTED
+                        color = ColorVariant.MUTED,
                     ),
                     SwipeDirection.TOP_RIGHT to KeyC(
                         display = KeyDisplay.TextDisplay("^"),
                         action = KeyAction.ComposeLastKey("^"),
-                        color = ColorVariant.MUTED
+                        color = ColorVariant.MUTED,
                     ),
                     SwipeDirection.BOTTOM_LEFT to KeyC(
                         display = KeyDisplay.TextDisplay("~"),
                         action = KeyAction.ComposeLastKey("~"),
-                        color = ColorVariant.MUTED
+                        color = ColorVariant.MUTED,
                     ),
                 ),
             ),
@@ -365,13 +365,13 @@ val KB_EN_THUMBKEY_COMPOSE_SHIFTED = KeyboardC(
                     SwipeDirection.TOP_LEFT to KeyC(
                         display = KeyDisplay.TextDisplay("'"),
                         action = KeyAction.ComposeLastKey("'"),
-                        color = ColorVariant.MUTED
+                        color = ColorVariant.MUTED,
                     ),
                     SwipeDirection.BOTTOM_LEFT to KeyC(
                         display = KeyDisplay.TextDisplay("`"),
                         action = KeyAction.ComposeLastKey("`"),
-                        color = ColorVariant.MUTED
-                    )
+                        color = ColorVariant.MUTED,
+                    ),
                 ),
             ),
             KeyItemC(
@@ -461,17 +461,17 @@ val KB_EN_THUMBKEY_COMPOSE_SHIFTED = KeyboardC(
                     SwipeDirection.TOP_LEFT to KeyC(
                         display = KeyDisplay.TextDisplay("°/"),
                         action = KeyAction.ComposeLastKey("°"),
-                        color = ColorVariant.MUTED
+                        color = ColorVariant.MUTED,
                     ),
                     SwipeDirection.BOTTOM_LEFT to KeyC(
                         display = KeyDisplay.TextDisplay("¿¡"),
                         action = KeyAction.ComposeLastKey("!"),
-                        color = ColorVariant.MUTED
+                        color = ColorVariant.MUTED,
                     ),
                     SwipeDirection.BOTTOM_RIGHT to KeyC(
                         display = KeyDisplay.TextDisplay("\$"),
                         action = KeyAction.ComposeLastKey("\$"),
-                        color = ColorVariant.MUTED
+                        color = ColorVariant.MUTED,
                     ),
                 ),
             ),
