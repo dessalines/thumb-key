@@ -8,7 +8,7 @@
 
 </div>
 
-<div align="center">
+<p align="center">
   <a href="https://github.com/dessalines/thumb-key" rel="noopener">
     <img width=200px height=200px src="https://raw.githubusercontent.com/dessalines/thumb-key/main/fastlane/metadata/android/en-US/images/phoneScreenshots/1.png" alt="phone_screen" />
   </a>
@@ -30,7 +30,7 @@
     <a href="https://play.google.com/store/apps/details?id=com.dessalines.thumbkey"><img src="https://cdn.rawgit.com/steverichey/google-play-badge-svg/master/img/en_get.svg" height="80"></a>
     <a href="https://github.com/dessalines/thumb-key/releases/latest"><img src="https://raw.githubusercontent.com/andOTP/andOTP/master/assets/badges/get-it-on-github.png" height="80"></a>
   </p>
-</div>
+</p>
 
 ## About Thumb-Key
 
