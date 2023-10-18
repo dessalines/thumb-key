@@ -3,12 +3,14 @@ package com.dessalines.thumbkey.ui.components.keyboard
 import android.content.Context
 import android.media.AudioManager
 import androidx.compose.foundation.background
+import androidx.compose.foundation.border
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
@@ -17,6 +19,7 @@ import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.draw.clip
 import androidx.compose.ui.hapticfeedback.HapticFeedbackType
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.platform.LocalHapticFeedback
@@ -114,18 +117,27 @@ fun KeyboardScreen(
     val backdropColor = MaterialTheme.colorScheme.background
     val backdropPadding = 6.dp
     val keyPadding = settings?.keyPadding ?: DEFAULT_KEY_PADDING
+    val legendSize = settings?.keySize ?: DEFAULT_KEY_SIZE
+    val keyRadius = settings?.keyRadius ?: DEFAULT_KEY_RADIUS
+
+    val keyBorderWidthFloat = keyBorderWidth / 10.0f
+    val keyBorderColour = MaterialTheme.colorScheme.outline
+    val keySize = legendSize + (keyPadding * 2.0f) + (keyBorderWidthFloat * 2.0f)
+    val cornerRadius = (keyRadius / 100.0f) * (keySize / 2.0f)
 
     if (mode == KeyboardMode.EMOJI) {
         val controllerKeys = listOf(EMOJI_BACK_KEY_ITEM, NUMERIC_KEY_ITEM, BACKSPACE_KEY_ITEM, RETURN_KEY_ITEM)
-
-        val keyBorderWidthFloat = keyBorderWidth / 10.0f
-        val keySize = (settings?.keySize ?: DEFAULT_KEY_SIZE) + ((keyPadding + keyBorderWidthFloat) * 2)
-        val keyboardHeight = Dp((keySize * controllerKeys.size))
+        val keyboardHeight = Dp((keySize * controllerKeys.size) - (keyPadding * 2))
 
         Box(
             modifier = Modifier
-                .background(backdropColor)
-                .padding(bottom = pushupSizeDp),
+                .then(
+                    if (backdropEnabled) {
+                        Modifier.background(backdropColor)
+                    } else {
+                        (Modifier)
+                    },
+                ),
         ) {
             // adds a pretty line if you're using the backdrop
             if (backdropEnabled) {
@@ -139,6 +151,7 @@ fun KeyboardScreen(
             }
             Row(
                 modifier = Modifier
+                    .padding(bottom = pushupSizeDp)
                     .fillMaxWidth()
                     .then(
                         if (backdropEnabled) {
@@ -150,7 +163,21 @@ fun KeyboardScreen(
             ) {
                 Box(
                     modifier = Modifier
-                        .weight(1f), // Take up available space equally
+                        .weight(1f) // Take up available space equally
+                        .padding(keyPadding.dp)
+                        .clip(RoundedCornerShape(cornerRadius.dp))
+                        .then(
+                            if (keyBorderWidthFloat > 0.0) {
+                                Modifier.border(
+                                    keyBorderWidthFloat.dp,
+                                    keyBorderColour,
+                                    shape = RoundedCornerShape(cornerRadius.dp),
+                                )
+                            } else {
+                                (Modifier)
+                            },
+                        )
+                        .background(MaterialTheme.colorScheme.surface),
                 ) {
                     val haptic = LocalHapticFeedback.current
                     val audioManager = ctx.getSystemService(Context.AUDIO_SERVICE) as AudioManager
@@ -183,10 +210,10 @@ fun KeyboardScreen(
                             KeyboardKey(
                                 key = key,
                                 lastAction = lastAction,
-                                legendSize = settings?.keySize ?: DEFAULT_KEY_SIZE,
+                                legendSize = legendSize,
                                 keyPadding = keyPadding,
-                                keyBorderWidth = keyBorderWidth,
-                                keyRadius = settings?.keyRadius ?: DEFAULT_KEY_RADIUS,
+                                keyBorderWidth = keyBorderWidthFloat,
+                                keyRadius = cornerRadius,
                                 autoCapitalize = autoCapitalize,
                                 keyboardSettings = keyboardDefinition.settings,
                                 spacebarMultiTaps = spacebarMultiTaps,
@@ -279,10 +306,10 @@ fun KeyboardScreen(
                                 KeyboardKey(
                                     key = key,
                                     lastAction = lastAction,
-                                    legendSize = settings?.keySize ?: DEFAULT_KEY_SIZE,
+                                    legendSize = legendSize,
                                     keyPadding = keyPadding,
-                                    keyBorderWidth = keyBorderWidth,
-                                    keyRadius = settings?.keyRadius ?: DEFAULT_KEY_RADIUS,
+                                    keyBorderWidth = keyBorderWidthFloat,
+                                    keyRadius = cornerRadius,
                                     autoCapitalize = autoCapitalize,
                                     keyboardSettings = keyboardDefinition.settings,
                                     spacebarMultiTaps = spacebarMultiTaps,
