@@ -387,7 +387,7 @@ fun KeyboardKey(
     // a 3x3 grid
     // Use box so they can overlap
     // Some magic padding numbers so that large radii don't obscure the legends
-    val radiusPercent = keyRadius.toFloat() / 100.toFloat()
+    val radiusPercent = keyRadius / 100.toFloat()
     val yPadding = 0.dp + keyBorderWidth.dp
     val diagonalXPadding = lerp(legendPadding, 11.dp + keyBorderWidth.dp, radiusPercent)
     val diagonalYPadding = lerp(yPadding, 6.dp + keyBorderWidth.dp, radiusPercent)
