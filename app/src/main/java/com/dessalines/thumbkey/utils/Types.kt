@@ -111,6 +111,7 @@ enum class ThemeColor(private val stringId: Int) {
     Twilight(R.string.twilight),
     HighContrast(R.string.high_contrast),
     HighContrastColorful(R.string.high_contrast_colorful),
+    Ancom(R.string.ancom),
     ;
 
     @Composable
