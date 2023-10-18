@@ -14,7 +14,20 @@ data class KeyboardDefinitionModes(
 
 data class KeyboardDefinitionSettings(
     val autoCapitalizers: AutoCapitalizers = arrayOf(),
-)
+) {
+    override fun equals(other: Any?): Boolean {
+        if (this === other) return true
+        if (javaClass != other?.javaClass) return false
+
+        other as KeyboardDefinitionSettings
+
+        return autoCapitalizers.contentEquals(other.autoCapitalizers)
+    }
+
+    override fun hashCode(): Int {
+        return autoCapitalizers.contentHashCode()
+    }
+}
 
 data class KeyboardDefinition(
     val title: String,

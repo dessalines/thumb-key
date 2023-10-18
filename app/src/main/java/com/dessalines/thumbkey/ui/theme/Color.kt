@@ -1,3 +1,5 @@
+@file:Suppress("LocalVariableName")
+
 package com.dessalines.thumbkey.ui.theme
 
 import androidx.compose.material3.ColorScheme

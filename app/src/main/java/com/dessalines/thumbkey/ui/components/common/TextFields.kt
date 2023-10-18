@@ -15,7 +15,6 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.stringResource
 import com.dessalines.thumbkey.R
 
-@OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun TestOutTextField() {
     var text by remember { mutableStateOf("") }
