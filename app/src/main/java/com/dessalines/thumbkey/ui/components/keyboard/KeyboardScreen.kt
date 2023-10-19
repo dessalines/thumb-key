@@ -40,8 +40,11 @@ import com.dessalines.thumbkey.db.DEFAULT_KEY_SIZE
 import com.dessalines.thumbkey.db.DEFAULT_MIN_SWIPE_LENGTH
 import com.dessalines.thumbkey.db.DEFAULT_POSITION
 import com.dessalines.thumbkey.db.DEFAULT_PUSHUP_SIZE
+import com.dessalines.thumbkey.db.DEFAULT_SLIDE_BACKSPACE_DEADZONE_ENABLED
+import com.dessalines.thumbkey.db.DEFAULT_SLIDE_CURSOR_MOVEMENT_MODE
 import com.dessalines.thumbkey.db.DEFAULT_SLIDE_ENABLED
 import com.dessalines.thumbkey.db.DEFAULT_SLIDE_SENSITIVITY
+import com.dessalines.thumbkey.db.DEFAULT_SLIDE_SPACEBAR_DEADZONE_ENABLED
 import com.dessalines.thumbkey.db.DEFAULT_SOUND_ON_TAP
 import com.dessalines.thumbkey.db.DEFAULT_SPACEBAR_MULTITAPS
 import com.dessalines.thumbkey.db.DEFAULT_VIBRATE_ON_TAP
@@ -100,6 +103,9 @@ fun KeyboardScreen(
     val autoCapitalize = (settings?.autoCapitalize ?: DEFAULT_AUTO_CAPITALIZE).toBool()
     val spacebarMultiTaps = (settings?.spacebarMultiTaps ?: DEFAULT_SPACEBAR_MULTITAPS).toBool()
     val slideEnabled = (settings?.slideEnabled ?: DEFAULT_SLIDE_ENABLED).toBool()
+    val slideCursorMovementMode = (settings?.slideCursorMovementMode ?: DEFAULT_SLIDE_CURSOR_MOVEMENT_MODE)
+    val slideSpacebarDeadzoneEnabled = (settings?.slideSpacebarDeadzoneEnabled ?: DEFAULT_SLIDE_SPACEBAR_DEADZONE_ENABLED).toBool()
+    val slideBackspaceDeadzoneEnabled = (settings?.slideBackspaceDeadzoneEnabled ?: DEFAULT_SLIDE_BACKSPACE_DEADZONE_ENABLED).toBool()
     val keyBorderWidth = (settings?.keyBorderWidth ?: DEFAULT_KEY_BORDER_WIDTH)
     val vibrateOnTap = (settings?.vibrateOnTap ?: DEFAULT_VIBRATE_ON_TAP).toBool()
     val soundOnTap = (settings?.soundOnTap ?: DEFAULT_SOUND_ON_TAP).toBool()
@@ -176,6 +182,9 @@ fun KeyboardScreen(
                             minSwipeLength = settings?.minSwipeLength ?: DEFAULT_MIN_SWIPE_LENGTH,
                             slideSensitivity = settings?.slideSensitivity ?: DEFAULT_SLIDE_SENSITIVITY,
                             slideEnabled = slideEnabled,
+                            slideCursorMovementMode = slideCursorMovementMode,
+                            slideSpacebarDeadzoneEnabled = slideSpacebarDeadzoneEnabled,
+                            slideBackspaceDeadzoneEnabled = slideBackspaceDeadzoneEnabled,
                             onToggleShiftMode = { enable ->
                                 mode = if (enable) {
                                     KeyboardMode.SHIFTED
@@ -264,6 +273,9 @@ fun KeyboardScreen(
                                     minSwipeLength = settings?.minSwipeLength ?: DEFAULT_MIN_SWIPE_LENGTH,
                                     slideSensitivity = settings?.slideSensitivity ?: DEFAULT_SLIDE_SENSITIVITY,
                                     slideEnabled = slideEnabled,
+                                    slideCursorMovementMode = slideCursorMovementMode,
+                                    slideSpacebarDeadzoneEnabled = slideSpacebarDeadzoneEnabled,
+                                    slideBackspaceDeadzoneEnabled = slideBackspaceDeadzoneEnabled,
                                     onToggleShiftMode = { enable ->
                                         mode = if (enable) {
                                             KeyboardMode.SHIFTED

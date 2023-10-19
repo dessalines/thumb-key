@@ -41,7 +41,8 @@ sealed class KeyAction {
     class ToggleShiftMode(val enable: Boolean) : KeyAction()
     class ToggleNumericMode(val enable: Boolean) : KeyAction()
     class ToggleEmojiMode(val enable: Boolean) : KeyAction()
-    data object DeleteLastWord : KeyAction()
+    data object DeleteWordBeforeCursor : KeyAction()
+    data object DeleteWordAfterCursor : KeyAction()
     data object GotoSettings : KeyAction()
     data object IMECompleteAction : KeyAction()
     data object ToggleCapsLock : KeyAction()
@@ -55,6 +56,18 @@ sealed class KeyAction {
     data object SwitchPosition : KeyAction()
     data object SwitchIME : KeyAction()
     data object SwitchIMEVoice : KeyAction()
+}
+
+enum class CursorAccelerationMode(private val stringId: Int) {
+    LINEAR(R.string.slide_cursor_acceleration_linear),
+    QUADRATIC(R.string.slide_cursor_acceleration_quadratic),
+    CONSTANT(R.string.slide_cursor_acceleration_constant),
+    ;
+
+    @Composable
+    fun title(): String {
+        return stringResource(this.stringId)
+    }
 }
 
 enum class KeyboardMode {
@@ -138,7 +151,13 @@ data class Selection(
     fun left() {
         end -= 1
     }
+    fun left(index: Int) {
+        end -= index
+    }
     fun right() {
         end += 1
+    }
+    fun right(index: Int) {
+        end += index
     }
 }

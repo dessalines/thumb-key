@@ -6,6 +6,8 @@ import android.content.pm.PackageInfo
 import android.content.pm.PackageManager
 import android.net.Uri
 import android.os.Build
+import android.os.Handler
+import android.os.Looper
 import android.text.InputType
 import android.util.Log
 import android.view.KeyEvent
@@ -80,6 +82,92 @@ fun acceleratingCursorDistanceThreshold(offsetX: Float, timeOfLastAccelerationIn
         distance *= -1
     }
     // distance = offsetX / 10
+    return distance.toInt()
+}
+
+
+fun slideCursorDistance(offsetX: Float, timeOfLastAccelerationInput: Long, accelerationMode: Int, acceleration: Int): Int {
+    when (accelerationMode) {
+        CursorAccelerationMode.CONSTANT.ordinal -> {
+            // Do the same speed every time
+            val settings_slider_max_value = 50
+
+            return if (abs(offsetX) > (settings_slider_max_value - acceleration)) {
+                if (offsetX > 0) {
+                    1
+                } else {
+                    -1
+                }
+            } else {
+                0
+            }
+        }
+
+        CursorAccelerationMode.QUADRATIC.ordinal -> return acceleratingCursorDistanceQuadratic(
+            offsetX,
+            timeOfLastAccelerationInput,
+            acceleration,
+        )
+
+        CursorAccelerationMode.LINEAR.ordinal -> return acceleratingCursorDistanceLinear(
+            offsetX,
+            timeOfLastAccelerationInput,
+            acceleration,
+        )
+
+        else -> {
+            // Default to this if there is no match.
+            return acceleratingCursorDistanceLinear(
+                offsetX,
+                timeOfLastAccelerationInput,
+                acceleration,
+            )
+        }
+    }
+}
+
+fun acceleratingCursorDistanceLinear(offsetX: Float, timeOfLastAccelerationInput: Long, acceleration: Int): Int {
+    val accelerationCurve = ((acceleration * 6) / 100f) // Will give us a range from 0-3
+    val timeDifference = System.currentTimeMillis() - timeOfLastAccelerationInput
+    // Prevent division by 0 error.
+    var distance = if (timeDifference == 0L) {
+        0f
+    } else {
+        abs(offsetX) / timeDifference
+    }
+
+    distance = accelerationCurve * distance
+    if (offsetX < 0) {
+        // Set the value back to negative.
+        // A distance of -1 will move the cursor left by 1 character
+        distance *= -1
+    }
+
+    return distance.toInt()
+}
+
+fun acceleratingCursorDistanceQuadratic(offsetX: Float, timeOfLastAccelerationInput: Long, acceleration: Int): Int {
+    val accelerationCurve = 0.1f + ((acceleration * 6) / 1000f) // Will give us a range from 0.1-0.4
+    val timeDifference = System.currentTimeMillis() - timeOfLastAccelerationInput
+    // Prevent division by 0 error.
+    var distance = if (timeDifference == 0L) {
+        0f
+    } else {
+        abs(offsetX) / timeDifference
+    }
+
+    // Quadratic equation to make the swipe acceleration work along a curve.
+    // val accelerationCurve = 0.3f // Fast and almost perfect.
+    // var accelerationCurve = 0.2f // Fast and almost perfect.
+    // var accelerationCurve = 0.1f // Slowish and moves almost a full line at a time.
+    // var accelerationCurve = 0.01f // is slow, only 1 char at a time.
+    distance = accelerationCurve * distance.pow(2)
+    if (offsetX < 0) {
+        // Set the value back to negative.
+        // A distance of -1 will move the cursor left by 1 character
+        distance *= -1
+    }
+
     return distance.toInt()
 }
 
@@ -212,9 +300,14 @@ fun performKeyAction(
             ime.currentInputConnection.sendKeyEvent(ev)
         }
 
-        is KeyAction.DeleteLastWord -> {
+        is KeyAction.DeleteWordBeforeCursor -> {
             Log.d(TAG, "deleting last word")
-            deleteLastWord(ime)
+            deleteWordBeforeCursor(ime)
+        }
+
+        is KeyAction.DeleteWordAfterCursor -> {
+            Log.d(TAG, "deleting next word")
+            deleteWordAfterCursor(ime)
         }
 
         is KeyAction.ReplaceLastText -> {
@@ -287,10 +380,30 @@ fun performKeyAction(
             ime.currentInputConnection.performContextMenuAction(android.R.id.selectAll)
         }
         KeyAction.Cut -> {
-            ime.currentInputConnection.performContextMenuAction(android.R.id.cut)
+            if (ime.currentInputConnection.getSelectedText(0).isNullOrEmpty()) {
+                // Nothing selected, so cut all the text
+                ime.currentInputConnection.performContextMenuAction(android.R.id.selectAll)
+                // Wait a bit for the select all to complete.
+                val delayInMillis = 100L
+                Handler(Looper.getMainLooper()).postDelayed({
+                    ime.currentInputConnection.performContextMenuAction(android.R.id.cut)
+                }, delayInMillis)
+            } else {
+                ime.currentInputConnection.performContextMenuAction(android.R.id.cut)
+            }
         }
         KeyAction.Copy -> {
-            ime.currentInputConnection.performContextMenuAction(android.R.id.copy)
+            if (ime.currentInputConnection.getSelectedText(0).isNullOrEmpty()) {
+                // Nothing selected, so copy all the text
+                ime.currentInputConnection.performContextMenuAction(android.R.id.selectAll)
+                // Wait a bit for the select all to complete.
+                val delayInMillis = 100L
+                Handler(Looper.getMainLooper()).postDelayed({
+                    ime.currentInputConnection.performContextMenuAction(android.R.id.copy)
+                }, delayInMillis)
+            } else {
+                ime.currentInputConnection.performContextMenuAction(android.R.id.copy)
+            }
 
             val message = ime.getString(R.string.copy)
             Toast.makeText(ime, message, Toast.LENGTH_SHORT).show()
@@ -408,15 +521,26 @@ fun autoCapitalizeCheck(
     return (listOf(". ", "? ", "! ").contains(textBefore)) || empty
 }
 
-fun deleteLastWord(ime: IMEService) {
-    val lastWords = ime.currentInputConnection.getTextBeforeCursor(9999, 0)
+fun deleteWordBeforeCursor(ime: IMEService) {
+    val wordsBeforeCursor = ime.currentInputConnection.getTextBeforeCursor(9999, 0)
 
-    val trailingSpacesLength = lastWords?.length?.minus(lastWords.trimEnd().length) ?: 0
-    val trimmed = lastWords?.trim()
+    val trailingSpacesLength = wordsBeforeCursor?.length?.minus(wordsBeforeCursor.trimEnd().length) ?: 0
+    val trimmed = wordsBeforeCursor?.trim()
     val lastWordLength = trimmed?.split("\\s".toRegex())?.lastOrNull()?.length ?: 1
     val minDelete = lastWordLength + trailingSpacesLength
 
     ime.currentInputConnection.deleteSurroundingText(minDelete, 0)
+}
+
+fun deleteWordAfterCursor(ime: IMEService) {
+    val wordsAfterCursor = ime.currentInputConnection.getTextAfterCursor(9999, 0)
+
+    val trailingSpacesLength = wordsAfterCursor?.length?.minus(wordsAfterCursor.trimStart().length) ?: 0
+    val trimmed = wordsAfterCursor?.trim()
+    val nextWordLength = trimmed?.split("\\s".toRegex())?.firstOrNull()?.length ?: 1
+    val minDelete = nextWordLength + trailingSpacesLength
+
+    ime.currentInputConnection.deleteSurroundingText(0, minDelete)
 }
 
 fun buildTapActions(
