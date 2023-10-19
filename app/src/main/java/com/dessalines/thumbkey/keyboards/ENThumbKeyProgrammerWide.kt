@@ -1,5 +1,6 @@
 package com.dessalines.thumbkey.keyboards
 
+import android.view.KeyEvent
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.outlined.Abc
 import androidx.compose.material.icons.outlined.ArrowDropDown
@@ -20,6 +21,76 @@ import com.dessalines.thumbkey.utils.KeyboardDefinitionSettings
 import com.dessalines.thumbkey.utils.SwipeDirection
 import com.dessalines.thumbkey.utils.SwipeNWay
 import com.dessalines.thumbkey.utils.autoCapitalizeI
+
+val SPACEBAR_ALL_SYMBOLS = SPACEBAR_TYPESPLIT_TOP_KEY_ITEM.copy(
+    swipes = mapOf(
+        SwipeDirection.LEFT to KeyC(
+            display = KeyDisplay.TextDisplay(","),
+            action = KeyAction.CommitText(","),
+            color = ColorVariant.MUTED,
+        ),
+        SwipeDirection.RIGHT to KeyC(
+            display = KeyDisplay.TextDisplay("'"),
+            action = KeyAction.CommitText("'"),
+            color = ColorVariant.MUTED,
+        ),
+        SwipeDirection.BOTTOM to KeyC(
+            display = KeyDisplay.TextDisplay("."),
+            action = KeyAction.CommitText("."),
+            color = ColorVariant.MUTED,
+        ),
+        SwipeDirection.TOP to KeyC(
+            display = KeyDisplay.TextDisplay("-"),
+            action = KeyAction.CommitText("-"),
+            color = ColorVariant.MUTED,
+        ),
+    ),
+)
+
+val SPACEBAR_ALL_DIRECTIONS = SPACEBAR_TYPESPLIT_TOP_KEY_ITEM.copy(
+    swipes = mapOf(
+        SwipeDirection.LEFT to KeyC(
+            display = KeyDisplay.TextDisplay("←"),
+            action = KeyAction.SendEvent(
+                KeyEvent(
+                    KeyEvent.ACTION_DOWN,
+                    KeyEvent.KEYCODE_DPAD_LEFT,
+                ),
+            ),
+            color = ColorVariant.MUTED,
+        ),
+        SwipeDirection.RIGHT to KeyC(
+            display = KeyDisplay.TextDisplay("→"),
+            action = KeyAction.SendEvent(
+                KeyEvent(
+                    KeyEvent.ACTION_DOWN,
+                    KeyEvent.KEYCODE_DPAD_RIGHT,
+                ),
+            ),
+            color = ColorVariant.MUTED,
+        ),
+        SwipeDirection.BOTTOM to KeyC(
+            display = KeyDisplay.TextDisplay("↓"),
+            action = KeyAction.SendEvent(
+                KeyEvent(
+                    KeyEvent.ACTION_DOWN,
+                    KeyEvent.KEYCODE_DPAD_DOWN,
+                ),
+            ),
+            color = ColorVariant.MUTED,
+        ),
+        SwipeDirection.TOP to KeyC(
+            display = KeyDisplay.TextDisplay("↑"),
+            action = KeyAction.SendEvent(
+                KeyEvent(
+                    KeyEvent.ACTION_DOWN,
+                    KeyEvent.KEYCODE_DPAD_UP,
+                ),
+            ),
+            color = ColorVariant.MUTED,
+        ),
+    ),
+)
 
 // uses programmer layout but moves spacebar to the left column in order to make a more aspect ration friendly layout. this grid is 5x3 which is closer to the average phone aspect ration of 16:9 than 4x4 keyboard.
 val KB_EN_THUMBKEY_PROGRAMMER_WIDE_MAIN = KeyboardC(
@@ -127,7 +198,7 @@ val KB_EN_THUMBKEY_PROGRAMMER_WIDE_MAIN = KeyboardC(
             NUMERIC_KEY_ITEM,
         ),
         listOf(
-            SPACEBAR_TYPESPLIT_MIDDLE_KEY_ITEM,
+            SPACEBAR_ALL_SYMBOLS,
             KeyItemC(
                 center = KeyC(
                     display = KeyDisplay.TextDisplay("n"),
@@ -237,7 +308,7 @@ val KB_EN_THUMBKEY_PROGRAMMER_WIDE_MAIN = KeyboardC(
             BACKSPACE_KEY_ITEM,
         ),
         listOf(
-            SPACEBAR_TYPESPLIT_BOTTOM_KEY_ITEM,
+            SPACEBAR_ALL_DIRECTIONS,
             KeyItemC(
                 center = KeyC(
                     display = KeyDisplay.TextDisplay("t"),
@@ -459,7 +530,7 @@ val KB_EN_THUMBKEY_PROGRAMMER_WIDE_SHIFTED = KeyboardC(
             NUMERIC_KEY_ITEM,
         ),
         listOf(
-            SPACEBAR_TYPESPLIT_MIDDLE_KEY_ITEM,
+            SPACEBAR_ALL_SYMBOLS,
             KeyItemC(
                 center = KeyC(
                     display = KeyDisplay.TextDisplay("N"),
@@ -570,7 +641,7 @@ val KB_EN_THUMBKEY_PROGRAMMER_WIDE_SHIFTED = KeyboardC(
             BACKSPACE_KEY_ITEM,
         ),
         listOf(
-            SPACEBAR_TYPESPLIT_BOTTOM_KEY_ITEM,
+            SPACEBAR_ALL_DIRECTIONS,
             KeyItemC(
                 center = KeyC(
                     display = KeyDisplay.TextDisplay("T"),
@@ -797,7 +868,7 @@ val NUMERIC_KEYBOARD_WIDE = KeyboardC(
             ),
         ),
         listOf(
-            SPACEBAR_TYPESPLIT_TOP_KEY_ITEM,
+            SPACEBAR_ALL_SYMBOLS,
             KeyItemC(
                 center = KeyC(
                     display = KeyDisplay.TextDisplay("4"),
@@ -869,7 +940,7 @@ val NUMERIC_KEYBOARD_WIDE = KeyboardC(
             BACKSPACE_KEY_ITEM,
         ),
         listOf(
-            SPACEBAR_TYPESPLIT_BOTTOM_KEY_ITEM,
+            SPACEBAR_ALL_DIRECTIONS,
             KeyItemC(
                 center = KeyC(
                     display = KeyDisplay.TextDisplay("7"),
