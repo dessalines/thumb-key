@@ -62,6 +62,7 @@ enum class CursorAccelerationMode(private val stringId: Int) {
     LINEAR(R.string.slide_cursor_acceleration_linear),
     QUADRATIC(R.string.slide_cursor_acceleration_quadratic),
     CONSTANT(R.string.slide_cursor_acceleration_constant),
+    THRESHOLD(R.string.slide_cursor_acceleration_threshold_acceleration),
     ;
 
     @Composable

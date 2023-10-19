@@ -85,7 +85,6 @@ fun acceleratingCursorDistanceThreshold(offsetX: Float, timeOfLastAccelerationIn
     return distance.toInt()
 }
 
-
 fun slideCursorDistance(offsetX: Float, timeOfLastAccelerationInput: Long, accelerationMode: Int, acceleration: Int): Int {
     when (accelerationMode) {
         CursorAccelerationMode.CONSTANT.ordinal -> {
@@ -110,6 +109,12 @@ fun slideCursorDistance(offsetX: Float, timeOfLastAccelerationInput: Long, accel
         )
 
         CursorAccelerationMode.LINEAR.ordinal -> return acceleratingCursorDistanceLinear(
+            offsetX,
+            timeOfLastAccelerationInput,
+            acceleration,
+        )
+
+        CursorAccelerationMode.THRESHOLD.ordinal -> return acceleratingCursorDistanceThreshold(
             offsetX,
             timeOfLastAccelerationInput,
             acceleration,
