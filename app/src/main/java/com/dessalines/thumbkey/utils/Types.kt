@@ -58,6 +58,18 @@ sealed class KeyAction {
     data object SwitchIMEVoice : KeyAction()
 }
 
+enum class CursorAccelerationMode(private val stringId: Int) {
+    LINEAR(R.string.slide_cursor_acceleration_linear),
+    QUADRATIC(R.string.slide_cursor_acceleration_quadratic),
+    CONSTANT(R.string.slide_cursor_acceleration_constant),
+    ;
+
+    @Composable
+    fun title(): String {
+        return stringResource(this.stringId)
+    }
+}
+
 enum class KeyboardMode {
     MAIN, SHIFTED, NUMERIC, EMOJI
 }

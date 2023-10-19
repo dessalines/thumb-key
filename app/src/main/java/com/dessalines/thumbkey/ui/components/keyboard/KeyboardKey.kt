@@ -55,12 +55,12 @@ import com.dessalines.thumbkey.utils.KeyItemC
 import com.dessalines.thumbkey.utils.Selection
 import com.dessalines.thumbkey.utils.SlideType
 import com.dessalines.thumbkey.utils.SwipeDirection
-import com.dessalines.thumbkey.utils.acceleratingCursorDistance
 import com.dessalines.thumbkey.utils.buildTapActions
 import com.dessalines.thumbkey.utils.colorVariantToColor
 import com.dessalines.thumbkey.utils.doneKeyAction
 import com.dessalines.thumbkey.utils.fontSizeVariantToFontSize
 import com.dessalines.thumbkey.utils.performKeyAction
+import com.dessalines.thumbkey.utils.slideCursorDistance
 import com.dessalines.thumbkey.utils.startSelection
 import com.dessalines.thumbkey.utils.swipeDirection
 import kotlin.math.abs
@@ -87,6 +87,7 @@ fun KeyboardKey(
     minSwipeLength: Int,
     slideSensitivity: Int,
     slideEnabled: Boolean,
+    slideCursorMovementMode: Int,
     onToggleShiftMode: (enable: Boolean) -> Unit,
     onToggleNumericMode: (enable: Boolean) -> Unit,
     onToggleEmojiMode: (enable: Boolean) -> Unit,
@@ -221,7 +222,7 @@ fun KeyboardKey(
                                     selection = startSelection(ime)
                                 }
 
-                                val cursorMovement = acceleratingCursorDistance(offsetX, timeOfLastAccelerationInput)
+                                val cursorMovement = slideCursorDistance(offsetX, timeOfLastAccelerationInput, slideCursorMovementMode, slideSensitivity)
                                 timeOfLastAccelerationInput = System.currentTimeMillis()
                                 if (cursorMovement >= 1 || cursorMovement <= -1) {
                                     if (cursorMovement < 0.00) {
@@ -268,7 +269,7 @@ fun KeyboardKey(
                                     }
                                 }
 
-                                var cursorMovement = acceleratingCursorDistance(offsetX, timeOfLastAccelerationInput)
+                                var cursorMovement = slideCursorDistance(offsetX, timeOfLastAccelerationInput, slideCursorMovementMode, slideSensitivity)
                                 timeOfLastAccelerationInput = System.currentTimeMillis()
                                 if (cursorMovement > 0) {
                                     // Increment distance by one, because a value of 2 moves the cursor by 1 character.
@@ -309,7 +310,7 @@ fun KeyboardKey(
                                     selection = startSelection(ime)
                                 }
                             } else {
-                                val cursorMovement = acceleratingCursorDistance(offsetX, timeOfLastAccelerationInput)
+                                val cursorMovement = slideCursorDistance(offsetX, timeOfLastAccelerationInput, slideCursorMovementMode, slideSensitivity)
                                 timeOfLastAccelerationInput = System.currentTimeMillis()
                                 if (cursorMovement >= 1 || cursorMovement <= -1) {
                                     if (cursorMovement < 0.00) {

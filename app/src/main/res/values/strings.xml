@@ -46,6 +46,10 @@
     <string name="animation_speed">Animation Speed: %1$s</string>
     <string name="animation_helper_speed">Animation Helper Speed: %1$s</string>
     <string name="slide_sensitivity">Slide sensitivity: %1$s</string>
+    <string name="slide_cursor_acceleration_constant">No acceleration / Constant speed</string>
+    <string name="slide_cursor_acceleration_linear">Linear acceleration</string>
+    <string name="slide_cursor_acceleration_quadratic">Quadratic acceleration</string>
+    <string name="slide_cursor_acceleration_threshold_acceleration">Threshold acceleration</string>
     <string name="slide_enable">Slide gestures</string>
     <string name="reset_to_defaults">Reset to defaults</string>
     <string name="reset_to_defaults_msg">Are you sure you want to reset settings to defaults?</string>
