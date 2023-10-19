@@ -156,31 +156,6 @@ fun BehaviorActivity(
                         )
                     },
                 )
-                SettingsCheckbox(
-                    state = slideEnabledState,
-                    icon = {
-                        Icon(
-                            imageVector = Icons.Outlined.SpaceBar,
-                            contentDescription = stringResource(R.string.slide_enable),
-                        )
-                    },
-                    title = {
-                        Text(stringResource(R.string.slide_enable))
-                    },
-                    onCheckedChange = {
-                        updateBehavior(
-                            appSettingsViewModel,
-                            minSwipeLengthState,
-                            slideSensitivityState,
-                            slideEnabledState,
-                            slideCursorMovementModeState,
-                            slideSpacebarDeadzoneEnabledState,
-                            slideBackspaceDeadzoneEnabledState,
-                            autoCapitalizeState,
-                            spacebarMultiTapsState,
-                        )
-                    },
-                )
                 val minSwipeLengthStr = stringResource(
                     R.string.min_swipe_length,
                     minSwipeLengthState.value.toInt().toString(),
@@ -217,20 +192,19 @@ fun BehaviorActivity(
                         .value
                         .toInt().toString(),
                 )
-                SettingsSlider(
-                    valueRange = 1f..50f,
-                    state = slideSensitivityState,
-                    enabled = slideEnabledState.value,
+                SettingsDivider()
+                SettingsCheckbox(
+                    state = slideEnabledState,
                     icon = {
                         Icon(
-                            imageVector = Icons.Outlined.SwapHoriz,
-                            contentDescription = slideSensitivityStr,
+                            imageVector = Icons.Outlined.SpaceBar,
+                            contentDescription = stringResource(R.string.slide_enable),
                         )
                     },
                     title = {
-                        Text(slideSensitivityStr)
+                        Text(stringResource(R.string.slide_enable))
                     },
-                    onValueChangeFinished = {
+                    onCheckedChange = {
                         updateBehavior(
                             appSettingsViewModel,
                             minSwipeLengthState,
@@ -244,7 +218,6 @@ fun BehaviorActivity(
                         )
                     },
                 )
-                SettingsDivider()
                 SettingsList(
                     state = slideCursorMovementModeState,
                     enabled = slideEnabledState.value,
@@ -260,6 +233,33 @@ fun BehaviorActivity(
                     },
                     onItemSelected = { i, _ ->
                         slideCursorMovementModeState.value = i
+                        updateBehavior(
+                            appSettingsViewModel,
+                            minSwipeLengthState,
+                            slideSensitivityState,
+                            slideEnabledState,
+                            slideCursorMovementModeState,
+                            slideSpacebarDeadzoneEnabledState,
+                            slideBackspaceDeadzoneEnabledState,
+                            autoCapitalizeState,
+                            spacebarMultiTapsState,
+                        )
+                    },
+                )
+                SettingsSlider(
+                    valueRange = 1f..50f,
+                    state = slideSensitivityState,
+                    enabled = slideEnabledState.value,
+                    icon = {
+                        Icon(
+                            imageVector = Icons.Outlined.SwapHoriz,
+                            contentDescription = slideSensitivityStr,
+                        )
+                    },
+                    title = {
+                        Text(slideSensitivityStr)
+                    },
+                    onValueChangeFinished = {
                         updateBehavior(
                             appSettingsViewModel,
                             minSwipeLengthState,
