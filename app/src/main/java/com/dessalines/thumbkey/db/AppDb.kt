@@ -49,6 +49,9 @@ const val DEFAULT_KEY_BORDERS = 1
 const val DEFAULT_SPACEBAR_MULTITAPS = 1
 const val DEFAULT_SLIDE_SENSITIVITY = 9
 const val DEFAULT_SLIDE_ENABLED = 0
+const val DEFAULT_SLIDE_CURSOR_MOVEMENT_MODE = 0
+const val DEFAULT_SLIDE_SPACEBAR_DEADZONE_ENABLED = 1
+const val DEFAULT_SLIDE_BACKSPACE_DEADZONE_ENABLED = 1
 const val DEFAULT_BACKDROP_ENABLED = 0
 const val DEFAULT_KEY_PADDING = 0
 const val DEFAULT_KEY_BORDER_WIDTH = 1
@@ -97,6 +100,21 @@ data class AppSettings(
         defaultValue = DEFAULT_SLIDE_ENABLED.toString(),
     )
     val slideEnabled: Int,
+    @ColumnInfo(
+        name = "slide_cursor_movement_mode",
+        defaultValue = DEFAULT_SLIDE_CURSOR_MOVEMENT_MODE.toString(),
+    )
+    val slideCursorMovementMode: Int,
+    @ColumnInfo(
+        name = "slide_spacebar_deadzone_enabled",
+        defaultValue = DEFAULT_SLIDE_SPACEBAR_DEADZONE_ENABLED.toString(),
+    )
+    val slideSpacebarDeadzoneEnabled: Int,
+    @ColumnInfo(
+        name = "slide_backspace_deadzone_enabled",
+        defaultValue = DEFAULT_SLIDE_BACKSPACE_DEADZONE_ENABLED.toString(),
+    )
+    val slideBackspaceDeadzoneEnabled: Int,
     @ColumnInfo(
         name = "sound_on_tap",
         defaultValue = DEFAULT_SOUND_ON_TAP.toString(),
@@ -273,6 +291,12 @@ data class BehaviorUpdate(
     val slideSensitivity: Int,
     @ColumnInfo(name = "slide_enabled")
     val slideEnabled: Int,
+    @ColumnInfo(name = "slide_cursor_movement_mode")
+    val slideCursorMovementMode: Int,
+    @ColumnInfo(name = "slide_spacebar_deadzone_enabled")
+    val slideSpacebarDeadzoneEnabled: Int,
+    @ColumnInfo(name = "slide_backspace_deadzone_enabled")
+    val slideBackspaceDeadzoneEnabled: Int,
     @ColumnInfo(name = "auto_capitalize")
     val autoCapitalize: Int,
     @ColumnInfo(name = "spacebar_multitaps")
@@ -462,8 +486,22 @@ val MIGRATION_11_12 = object : Migration(11, 12) {
     }
 }
 
+val MIGRATION_12_13 = object : Migration(12, 13) {
+    override fun migrate(database: SupportSQLiteDatabase) {
+        database.execSQL(
+            "alter table AppSettings add column slide_spacebar_deadzone_enabled INTEGER NOT NULL default $DEFAULT_SLIDE_SPACEBAR_DEADZONE_ENABLED",
+        )
+        database.execSQL(
+            "alter table AppSettings add column slide_backspace_deadzone_enabled INTEGER NOT NULL default $DEFAULT_SLIDE_BACKSPACE_DEADZONE_ENABLED",
+        )
+        database.execSQL(
+            "alter table AppSettings add column slide_cursor_movement_mode INTEGER NOT NULL default $DEFAULT_SLIDE_CURSOR_MOVEMENT_MODE",
+        )
+    }
+}
+
 @Database(
-    version = 12,
+    version = 13,
     entities = [AppSettings::class],
     exportSchema = true,
 )
@@ -498,6 +536,7 @@ abstract class AppDB : RoomDatabase() {
                         MIGRATION_9_10,
                         MIGRATION_10_11,
                         MIGRATION_11_12,
+                        MIGRATION_12_13,
                     )
                     // Necessary because it can't insert data on creation
                     .addCallback(object : Callback() {

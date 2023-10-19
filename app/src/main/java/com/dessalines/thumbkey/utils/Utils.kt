@@ -42,8 +42,6 @@ import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 import kotlin.math.abs
 import kotlin.math.atan2
-import kotlin.math.max
-import kotlin.math.min
 import kotlin.math.pow
 import kotlin.math.sqrt
 
@@ -71,13 +69,13 @@ fun slideCursorDistance(offsetX: Float, timeOfLastAccelerationInput: Long, accel
         CursorAccelerationMode.QUADRATIC.ordinal -> return acceleratingCursorDistanceQuadratic(
             offsetX,
             timeOfLastAccelerationInput,
-            acceleration
+            acceleration,
         )
 
         CursorAccelerationMode.LINEAR.ordinal -> return acceleratingCursorDistanceLinear(
             offsetX,
             timeOfLastAccelerationInput,
-            acceleration
+            acceleration,
         )
 
         else -> {
@@ -85,7 +83,7 @@ fun slideCursorDistance(offsetX: Float, timeOfLastAccelerationInput: Long, accel
             return acceleratingCursorDistanceLinear(
                 offsetX,
                 timeOfLastAccelerationInput,
-                acceleration
+                acceleration,
             )
         }
     }

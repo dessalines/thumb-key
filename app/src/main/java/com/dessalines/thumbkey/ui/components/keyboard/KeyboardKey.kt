@@ -88,6 +88,8 @@ fun KeyboardKey(
     slideSensitivity: Int,
     slideEnabled: Boolean,
     slideCursorMovementMode: Int,
+    slideSpacebarDeadzoneEnabled: Boolean,
+    slideBackspaceDeadzoneEnabled: Boolean,
     onToggleShiftMode: (enable: Boolean) -> Unit,
     onToggleNumericMode: (enable: Boolean) -> Unit,
     onToggleEmojiMode: (enable: Boolean) -> Unit,
@@ -97,7 +99,7 @@ fun KeyboardKey(
     onSwitchPosition: () -> Unit,
 ) {
     // Necessary for swipe settings to get updated correctly
-    val id = key.toString() + animationHelperSpeed + animationSpeed + autoCapitalize + vibrateOnTap + soundOnTap + legendSize + minSwipeLength + slideSensitivity + slideEnabled
+    val id = key.toString() + animationHelperSpeed + animationSpeed + autoCapitalize + vibrateOnTap + soundOnTap + legendSize + minSwipeLength + slideSensitivity + slideEnabled + slideCursorMovementMode + slideSpacebarDeadzoneEnabled + slideBackspaceDeadzoneEnabled
 
     val ctx = LocalContext.current
     val ime = ctx as IMEService
@@ -212,6 +214,19 @@ fun KeyboardKey(
                         // First detection is large enough to preserve swipe actions.
                         val slideOffsetTrigger = (keySize.dp.toPx() * 0.75) + minSwipeLength
 
+                        // These keys have a lot of functionality.
+                        // We can tap; swipe; slide the cursor left/right; select and delete text
+                        // Spacebar:
+                        //      Swipe up/down/left/right
+                        //      Slide gesture
+                        //          Wtih slide gesture deadzone to allow normal swipes
+                        //          Without deadzone
+                        //      Slide up to enter selection mode.
+                        // Backspace key:
+                        //      Swipe left and right to delete whole word
+                        //      Slide gesture delete
+                        //          Wtih slide gesture deadzone to allow normal swipes
+                        //          Without deadzone
                         if (key.slideType == SlideType.MOVE_CURSOR && slideEnabled) {
                             val slideSelectionOffsetTrigger = (keySize.dp.toPx() * 1.25) + minSwipeLength
                             if (abs(offsetY) > slideSelectionOffsetTrigger) {
@@ -237,7 +252,10 @@ fun KeyboardKey(
                                     // reset offsetX, do not reset offsetY when sliding, it will break selecting
                                     offsetX = 0f
                                 }
-                            } else if (((abs(offsetX) > slideOffsetTrigger) && !hasSlideMoveCursorTriggered) || hasSlideMoveCursorTriggered) {
+                            } else if ((slideSpacebarDeadzoneEnabled && (abs(offsetX) > slideOffsetTrigger) && (!hasSlideMoveCursorTriggered)) || // if we've gone past the deadzone
+                                ((!hasSlideMoveCursorTriggered) && (!slideSpacebarDeadzoneEnabled)) || // OR we don't use the deadzone
+                                hasSlideMoveCursorTriggered // OR we have already started slide gesture mode.
+                            ) {
                                 // If user slides horizontally only, move cursor
 
                                 // The first time we enter this, reset offsetX, because of the slideOffsetTrigger
@@ -304,7 +322,9 @@ fun KeyboardKey(
                             if (!selection.active) {
                                 timeOfLastAccelerationInput = System.currentTimeMillis()
                                 // Activate selection, first detection is large enough to preserve swipe actions.
-                                if ((abs(offsetX) > slideOffsetTrigger)) {
+                                if (slideBackspaceDeadzoneEnabled && (abs(offsetX) > slideOffsetTrigger) ||
+                                    !slideBackspaceDeadzoneEnabled
+                                ) {
                                     // reset offsetX, do not reset offsetY when sliding, it will break selecting
                                     offsetX = 0f
                                     selection = startSelection(ime)
