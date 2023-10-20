@@ -127,7 +127,7 @@ val KB_EN_THUMBKEY_PROGRAMMER_WIDE_MAIN = KeyboardC(
             NUMERIC_KEY_ITEM,
         ),
         listOf(
-            SPACEBAR_TYPESPLIT_MIDDLE_KEY_ITEM,
+            SPACEBAR_ALL_SYMBOLS,
             KeyItemC(
                 center = KeyC(
                     display = KeyDisplay.TextDisplay("n"),
@@ -237,7 +237,7 @@ val KB_EN_THUMBKEY_PROGRAMMER_WIDE_MAIN = KeyboardC(
             BACKSPACE_KEY_ITEM,
         ),
         listOf(
-            SPACEBAR_TYPESPLIT_BOTTOM_KEY_ITEM,
+            SPACEBAR_ALL_DIRECTIONS,
             KeyItemC(
                 center = KeyC(
                     display = KeyDisplay.TextDisplay("t"),
@@ -459,7 +459,7 @@ val KB_EN_THUMBKEY_PROGRAMMER_WIDE_SHIFTED = KeyboardC(
             NUMERIC_KEY_ITEM,
         ),
         listOf(
-            SPACEBAR_TYPESPLIT_MIDDLE_KEY_ITEM,
+            SPACEBAR_ALL_SYMBOLS,
             KeyItemC(
                 center = KeyC(
                     display = KeyDisplay.TextDisplay("N"),
@@ -570,7 +570,7 @@ val KB_EN_THUMBKEY_PROGRAMMER_WIDE_SHIFTED = KeyboardC(
             BACKSPACE_KEY_ITEM,
         ),
         listOf(
-            SPACEBAR_TYPESPLIT_BOTTOM_KEY_ITEM,
+            SPACEBAR_ALL_DIRECTIONS,
             KeyItemC(
                 center = KeyC(
                     display = KeyDisplay.TextDisplay("T"),
@@ -797,7 +797,7 @@ val NUMERIC_KEYBOARD_WIDE = KeyboardC(
             ),
         ),
         listOf(
-            SPACEBAR_TYPESPLIT_TOP_KEY_ITEM,
+            SPACEBAR_ALL_SYMBOLS,
             KeyItemC(
                 center = KeyC(
                     display = KeyDisplay.TextDisplay("4"),
@@ -869,7 +869,7 @@ val NUMERIC_KEYBOARD_WIDE = KeyboardC(
             BACKSPACE_KEY_ITEM,
         ),
         listOf(
-            SPACEBAR_TYPESPLIT_BOTTOM_KEY_ITEM,
+            SPACEBAR_ALL_DIRECTIONS,
             KeyItemC(
                 center = KeyC(
                     display = KeyDisplay.TextDisplay("7"),
