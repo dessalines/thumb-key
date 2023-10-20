@@ -73,7 +73,7 @@ val KB_FI_THUMBKEY_WIDE_MAIN = KeyboardC(
                     ),
                 ),
             ),
-            SPACEBAR_SKINNY_KEY_ITEM,
+            SPACEBAR_ALL_SYMBOLS,
             EMOJI_KEY_ITEM,
         ),
         listOf(
@@ -154,7 +154,7 @@ val KB_FI_THUMBKEY_WIDE_MAIN = KeyboardC(
                     ),
                 ),
             ),
-            SPACEBAR_SKINNY_KEY_ITEM,
+            SPACEBAR_ALL_DIRECTIONS,
             NUMERIC_KEY_ITEM,
         ),
         listOf(
@@ -292,7 +292,7 @@ val KB_FI_THUMBKEY_WIDE_SHIFTED = KeyboardC(
                     ),
                 ),
             ),
-            SPACEBAR_SKINNY_KEY_ITEM,
+            SPACEBAR_ALL_SYMBOLS,
             EMOJI_KEY_ITEM,
         ),
         listOf(
@@ -379,7 +379,7 @@ val KB_FI_THUMBKEY_WIDE_SHIFTED = KeyboardC(
                     ),
                 ),
             ),
-            SPACEBAR_SKINNY_KEY_ITEM,
+            SPACEBAR_ALL_DIRECTIONS,
             NUMERIC_KEY_ITEM,
         ),
         listOf(

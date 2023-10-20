@@ -377,6 +377,75 @@ val SPACEBAR_TYPESPLIT_BOTTOM_KEY_ITEM = SPACEBAR_TYPESPLIT_TOP_KEY_ITEM.copy(
     ),
 )
 
+val SPACEBAR_ALL_SYMBOLS = SPACEBAR_TYPESPLIT_TOP_KEY_ITEM.copy(
+    swipes = mapOf(
+        SwipeDirection.LEFT to KeyC(
+            display = KeyDisplay.TextDisplay(","),
+            action = KeyAction.CommitText(","),
+            color = ColorVariant.MUTED,
+        ),
+        SwipeDirection.RIGHT to KeyC(
+            display = KeyDisplay.TextDisplay("'"),
+            action = KeyAction.CommitText("'"),
+            color = ColorVariant.MUTED,
+        ),
+        SwipeDirection.BOTTOM to KeyC(
+            display = KeyDisplay.TextDisplay("."),
+            action = KeyAction.CommitText("."),
+            color = ColorVariant.MUTED,
+        ),
+        SwipeDirection.TOP to KeyC(
+            display = KeyDisplay.TextDisplay("-"),
+            action = KeyAction.CommitText("-"),
+            color = ColorVariant.MUTED,
+        ),
+    ),
+)
+val SPACEBAR_ALL_DIRECTIONS = SPACEBAR_TYPESPLIT_TOP_KEY_ITEM.copy(
+    swipes = mapOf(
+        SwipeDirection.LEFT to KeyC(
+            display = KeyDisplay.TextDisplay("←"),
+            action = KeyAction.SendEvent(
+                KeyEvent(
+                    KeyEvent.ACTION_DOWN,
+                    KeyEvent.KEYCODE_DPAD_LEFT,
+                ),
+            ),
+            color = ColorVariant.MUTED,
+        ),
+        SwipeDirection.RIGHT to KeyC(
+            display = KeyDisplay.TextDisplay("→"),
+            action = KeyAction.SendEvent(
+                KeyEvent(
+                    KeyEvent.ACTION_DOWN,
+                    KeyEvent.KEYCODE_DPAD_RIGHT,
+                ),
+            ),
+            color = ColorVariant.MUTED,
+        ),
+        SwipeDirection.BOTTOM to KeyC(
+            display = KeyDisplay.TextDisplay("↓"),
+            action = KeyAction.SendEvent(
+                KeyEvent(
+                    KeyEvent.ACTION_DOWN,
+                    KeyEvent.KEYCODE_DPAD_DOWN,
+                ),
+            ),
+            color = ColorVariant.MUTED,
+        ),
+        SwipeDirection.TOP to KeyC(
+            display = KeyDisplay.TextDisplay("↑"),
+            action = KeyAction.SendEvent(
+                KeyEvent(
+                    KeyEvent.ACTION_DOWN,
+                    KeyEvent.KEYCODE_DPAD_UP,
+                ),
+            ),
+            color = ColorVariant.MUTED,
+        ),
+    ),
+)
+
 val BACKSPACE_TYPESPLIT_KEY_ITEM =
     KeyItemC(
         center = KeyC(
