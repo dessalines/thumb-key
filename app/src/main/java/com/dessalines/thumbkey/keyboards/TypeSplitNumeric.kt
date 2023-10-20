@@ -24,17 +24,17 @@ val TYPESPLIT_NUMERIC_KEYBOARD = KeyboardC(
                     SwipeDirection.TOP to KeyC(
                         display = KeyDisplay.IconDisplay(Icons.Outlined.Settings),
                         action = KeyAction.GotoSettings,
-                        color = ColorVariant.SECONDARY,
+                        color = ColorVariant.SECONDARY_LEGENDS,
                     ),
                 ),
-                backgroundColor = ColorVariant.SURFACE_VARIANT,
+                backgroundColor = ColorVariant.SECONDARY_KEY,
             ),
             KeyItemC(
                 center = KeyC(
                     display = KeyDisplay.TextDisplay("1"),
                     action = KeyAction.CommitText("1"),
                     size = FontSizeVariant.LARGE,
-                    color = ColorVariant.PRIMARY,
+                    color = ColorVariant.PRIMARY_LEGENDS,
                 ),
                 swipes = mapOf(
                     SwipeDirection.BOTTOM_LEFT to KeyC(
@@ -48,7 +48,7 @@ val TYPESPLIT_NUMERIC_KEYBOARD = KeyboardC(
                     display = KeyDisplay.TextDisplay("2"),
                     action = KeyAction.CommitText("2"),
                     size = FontSizeVariant.LARGE,
-                    color = ColorVariant.PRIMARY,
+                    color = ColorVariant.PRIMARY_LEGENDS,
                 ),
                 swipes = mapOf(
                     SwipeDirection.TOP_LEFT to KeyC(
@@ -86,7 +86,7 @@ val TYPESPLIT_NUMERIC_KEYBOARD = KeyboardC(
                     display = KeyDisplay.TextDisplay("3"),
                     action = KeyAction.CommitText("3"),
                     size = FontSizeVariant.LARGE,
-                    color = ColorVariant.PRIMARY,
+                    color = ColorVariant.PRIMARY_LEGENDS,
                 ),
                 swipes = mapOf(
                     SwipeDirection.LEFT to KeyC(
@@ -112,7 +112,7 @@ val TYPESPLIT_NUMERIC_KEYBOARD = KeyboardC(
                     display = KeyDisplay.TextDisplay("."),
                     action = KeyAction.CommitText("."),
                     size = FontSizeVariant.LARGE,
-                    color = ColorVariant.PRIMARY,
+                    color = ColorVariant.PRIMARY_LEGENDS,
                 ),
             ),
         ),
@@ -123,7 +123,7 @@ val TYPESPLIT_NUMERIC_KEYBOARD = KeyboardC(
                     display = KeyDisplay.TextDisplay("4"),
                     action = KeyAction.CommitText("4"),
                     size = FontSizeVariant.LARGE,
-                    color = ColorVariant.PRIMARY,
+                    color = ColorVariant.PRIMARY_LEGENDS,
                 ),
                 swipes = mapOf(
                     SwipeDirection.TOP_LEFT to KeyC(
@@ -153,7 +153,7 @@ val TYPESPLIT_NUMERIC_KEYBOARD = KeyboardC(
                     display = KeyDisplay.TextDisplay("5"),
                     action = KeyAction.CommitText("5"),
                     size = FontSizeVariant.LARGE,
-                    color = ColorVariant.PRIMARY,
+                    color = ColorVariant.PRIMARY_LEGENDS,
                 ),
             ),
             KeyItemC(
@@ -161,7 +161,7 @@ val TYPESPLIT_NUMERIC_KEYBOARD = KeyboardC(
                     display = KeyDisplay.TextDisplay("6"),
                     action = KeyAction.CommitText("6"),
                     size = FontSizeVariant.LARGE,
-                    color = ColorVariant.PRIMARY,
+                    color = ColorVariant.PRIMARY_LEGENDS,
                 ),
                 swipes = mapOf(
                     SwipeDirection.TOP_LEFT to KeyC(
@@ -191,7 +191,7 @@ val TYPESPLIT_NUMERIC_KEYBOARD = KeyboardC(
                     display = KeyDisplay.TextDisplay(","),
                     action = KeyAction.CommitText(","),
                     size = FontSizeVariant.LARGE,
-                    color = ColorVariant.PRIMARY,
+                    color = ColorVariant.PRIMARY_LEGENDS,
                 ),
             ),
         ),
@@ -202,7 +202,7 @@ val TYPESPLIT_NUMERIC_KEYBOARD = KeyboardC(
                     display = KeyDisplay.TextDisplay("7"),
                     action = KeyAction.CommitText("7"),
                     size = FontSizeVariant.LARGE,
-                    color = ColorVariant.PRIMARY,
+                    color = ColorVariant.PRIMARY_LEGENDS,
                 ),
                 swipes = mapOf(
                     SwipeDirection.TOP_LEFT to KeyC(
@@ -224,7 +224,7 @@ val TYPESPLIT_NUMERIC_KEYBOARD = KeyboardC(
                     display = KeyDisplay.TextDisplay("8"),
                     action = KeyAction.CommitText("8"),
                     size = FontSizeVariant.LARGE,
-                    color = ColorVariant.PRIMARY,
+                    color = ColorVariant.PRIMARY_LEGENDS,
                 ),
                 swipes = mapOf(
                     SwipeDirection.TOP_LEFT to KeyC(
@@ -258,7 +258,7 @@ val TYPESPLIT_NUMERIC_KEYBOARD = KeyboardC(
                     display = KeyDisplay.TextDisplay("9"),
                     action = KeyAction.CommitText("9"),
                     size = FontSizeVariant.LARGE,
-                    color = ColorVariant.PRIMARY,
+                    color = ColorVariant.PRIMARY_LEGENDS,
                 ),
                 swipes = mapOf(
                     SwipeDirection.TOP to KeyC(
@@ -288,7 +288,7 @@ val TYPESPLIT_NUMERIC_KEYBOARD = KeyboardC(
                     display = KeyDisplay.TextDisplay("0"),
                     action = KeyAction.CommitText("0"),
                     size = FontSizeVariant.LARGE,
-                    color = ColorVariant.PRIMARY,
+                    color = ColorVariant.PRIMARY_LEGENDS,
                 ),
             ),
         ),
@@ -298,9 +298,9 @@ val TYPESPLIT_NUMERIC_KEYBOARD = KeyboardC(
                     display = KeyDisplay.IconDisplay(Icons.Outlined.Abc),
                     action = KeyAction.ToggleNumericMode(false),
                     size = FontSizeVariant.LARGE,
-                    color = ColorVariant.PRIMARY,
+                    color = ColorVariant.PRIMARY_LEGENDS,
                 ),
-                backgroundColor = ColorVariant.SURFACE_VARIANT,
+                backgroundColor = ColorVariant.SECONDARY_KEY,
             ),
             BACKSPACE_TYPESPLIT_SHIFTED_KEY_ITEM,
             RETURN_KEY_ITEM,

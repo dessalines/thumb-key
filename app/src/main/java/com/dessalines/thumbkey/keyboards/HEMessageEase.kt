@@ -20,7 +20,7 @@ val KB_HE_MESSAGEASE_MAIN = KeyboardC(
                     display = KeyDisplay.TextDisplay("ר"),
                     action = KeyAction.CommitText("ר"),
                     size = FontSizeVariant.LARGE,
-                    color = ColorVariant.PRIMARY,
+                    color = ColorVariant.PRIMARY_LEGENDS,
                 ),
                 swipeType = SwipeNWay.FOUR_WAY_DIAGONAL,
                 swipes = mapOf(
@@ -35,7 +35,7 @@ val KB_HE_MESSAGEASE_MAIN = KeyboardC(
                     display = KeyDisplay.TextDisplay("ב"),
                     action = KeyAction.CommitText("ב"),
                     size = FontSizeVariant.LARGE,
-                    color = ColorVariant.PRIMARY,
+                    color = ColorVariant.PRIMARY_LEGENDS,
                 ),
                 swipeType = SwipeNWay.TWO_WAY_VERTICAL,
                 swipes = mapOf(
@@ -50,7 +50,7 @@ val KB_HE_MESSAGEASE_MAIN = KeyboardC(
                     display = KeyDisplay.TextDisplay("א"),
                     action = KeyAction.CommitText("א"),
                     size = FontSizeVariant.LARGE,
-                    color = ColorVariant.PRIMARY,
+                    color = ColorVariant.PRIMARY_LEGENDS,
                 ),
                 swipes = mapOf(
                     SwipeDirection.BOTTOM_LEFT to KeyC(
@@ -71,7 +71,7 @@ val KB_HE_MESSAGEASE_MAIN = KeyboardC(
                     display = KeyDisplay.TextDisplay("מ"),
                     action = KeyAction.CommitText("מ"),
                     size = FontSizeVariant.LARGE,
-                    color = ColorVariant.PRIMARY,
+                    color = ColorVariant.PRIMARY_LEGENDS,
                 ),
                 swipes = mapOf(
                     SwipeDirection.RIGHT to KeyC(
@@ -89,7 +89,7 @@ val KB_HE_MESSAGEASE_MAIN = KeyboardC(
                     display = KeyDisplay.TextDisplay("י"),
                     action = KeyAction.CommitText("י"),
                     size = FontSizeVariant.LARGE,
-                    color = ColorVariant.PRIMARY,
+                    color = ColorVariant.PRIMARY_LEGENDS,
                 ),
                 swipes = mapOf(
                     SwipeDirection.TOP_LEFT to KeyC(
@@ -131,7 +131,7 @@ val KB_HE_MESSAGEASE_MAIN = KeyboardC(
                     display = KeyDisplay.TextDisplay("ו"),
                     action = KeyAction.CommitText("ו"),
                     size = FontSizeVariant.LARGE,
-                    color = ColorVariant.PRIMARY,
+                    color = ColorVariant.PRIMARY_LEGENDS,
                 ),
                 swipeType = SwipeNWay.FOUR_WAY_DIAGONAL,
                 swipes = mapOf(
@@ -149,7 +149,7 @@ val KB_HE_MESSAGEASE_MAIN = KeyboardC(
                     display = KeyDisplay.TextDisplay("ת"),
                     action = KeyAction.CommitText("ת"),
                     size = FontSizeVariant.LARGE,
-                    color = ColorVariant.PRIMARY,
+                    color = ColorVariant.PRIMARY_LEGENDS,
                 ),
                 swipeType = SwipeNWay.FOUR_WAY_DIAGONAL,
                 swipes = mapOf(
@@ -164,7 +164,7 @@ val KB_HE_MESSAGEASE_MAIN = KeyboardC(
                     display = KeyDisplay.TextDisplay("ה"),
                     action = KeyAction.CommitText("ה"),
                     size = FontSizeVariant.LARGE,
-                    color = ColorVariant.PRIMARY,
+                    color = ColorVariant.PRIMARY_LEGENDS,
                 ),
                 swipes = mapOf(
                     SwipeDirection.TOP to KeyC(
@@ -174,22 +174,22 @@ val KB_HE_MESSAGEASE_MAIN = KeyboardC(
                     SwipeDirection.TOP_RIGHT to KeyC(
                         display = KeyDisplay.TextDisplay("'"),
                         action = KeyAction.CommitText("'"),
-                        color = ColorVariant.MUTED,
+                        color = ColorVariant.SECONDARY_SWIPES,
                     ),
                     SwipeDirection.BOTTOM_RIGHT to KeyC(
                         display = KeyDisplay.TextDisplay("-"),
                         action = KeyAction.CommitText("-"),
-                        color = ColorVariant.MUTED,
+                        color = ColorVariant.SECONDARY_SWIPES,
                     ),
                     SwipeDirection.BOTTOM to KeyC(
                         display = KeyDisplay.TextDisplay("."),
                         action = KeyAction.CommitText("."),
-                        color = ColorVariant.MUTED,
+                        color = ColorVariant.SECONDARY_SWIPES,
                     ),
                     SwipeDirection.BOTTOM_LEFT to KeyC(
                         display = KeyDisplay.TextDisplay(","),
                         action = KeyAction.CommitText(","),
-                        color = ColorVariant.MUTED,
+                        color = ColorVariant.SECONDARY_SWIPES,
                     ),
                 ),
             ),
@@ -198,7 +198,7 @@ val KB_HE_MESSAGEASE_MAIN = KeyboardC(
                     display = KeyDisplay.TextDisplay("ל"),
                     action = KeyAction.CommitText("ל"),
                     size = FontSizeVariant.LARGE,
-                    color = ColorVariant.PRIMARY,
+                    color = ColorVariant.PRIMARY_LEGENDS,
                 ),
                 swipeType = SwipeNWay.FOUR_WAY_DIAGONAL,
                 swipes = mapOf(

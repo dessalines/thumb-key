@@ -38,42 +38,42 @@ val NUMERIC_KEY_ITEM =
             display = KeyDisplay.IconDisplay(Icons.Outlined.Numbers),
             action = KeyAction.ToggleNumericMode(true),
             size = FontSizeVariant.LARGE,
-            color = ColorVariant.SECONDARY,
+            color = ColorVariant.SECONDARY_LEGENDS,
         ),
         swipeType = SwipeNWay.EIGHT_WAY,
         swipes = mapOf(
             SwipeDirection.TOP to KeyC(
                 display = KeyDisplay.IconDisplay(Icons.Outlined.ContentCopy),
                 action = KeyAction.Copy,
-                color = ColorVariant.MUTED,
+                color = ColorVariant.SECONDARY_SWIPES,
             ),
             SwipeDirection.TOP_LEFT to KeyC(
                 display = KeyDisplay.IconDisplay(Icons.Outlined.SelectAll),
                 action = KeyAction.SelectAll,
-                color = ColorVariant.MUTED,
+                color = ColorVariant.SECONDARY_SWIPES,
             ),
             SwipeDirection.TOP_RIGHT to KeyC(
                 display = KeyDisplay.IconDisplay(Icons.Outlined.ContentCut),
                 action = KeyAction.Cut,
-                color = ColorVariant.MUTED,
+                color = ColorVariant.SECONDARY_SWIPES,
             ),
             SwipeDirection.LEFT to KeyC(
                 display = KeyDisplay.IconDisplay(Icons.Outlined.Undo),
                 action = KeyAction.Undo,
-                color = ColorVariant.MUTED,
+                color = ColorVariant.SECONDARY_SWIPES,
             ),
             SwipeDirection.RIGHT to KeyC(
                 display = KeyDisplay.IconDisplay(Icons.Outlined.Redo),
                 action = KeyAction.Redo,
-                color = ColorVariant.MUTED,
+                color = ColorVariant.SECONDARY_SWIPES,
             ),
             SwipeDirection.BOTTOM to KeyC(
                 display = KeyDisplay.IconDisplay(Icons.Outlined.ContentPaste),
                 action = KeyAction.Paste,
-                color = ColorVariant.MUTED,
+                color = ColorVariant.SECONDARY_SWIPES,
             ),
         ),
-        backgroundColor = ColorVariant.SURFACE_VARIANT,
+        backgroundColor = ColorVariant.SECONDARY_KEY,
     )
 
 val EMOJI_KEY_ITEM =
@@ -82,37 +82,37 @@ val EMOJI_KEY_ITEM =
             display = KeyDisplay.IconDisplay(Icons.Outlined.Mood),
             action = KeyAction.ToggleEmojiMode(true),
             size = FontSizeVariant.LARGE,
-            color = ColorVariant.SECONDARY,
+            color = ColorVariant.SECONDARY_LEGENDS,
         ),
         swipeType = SwipeNWay.EIGHT_WAY,
         swipes = mapOf(
             SwipeDirection.TOP to KeyC(
                 display = KeyDisplay.IconDisplay(Icons.Outlined.Settings),
                 action = KeyAction.GotoSettings,
-                color = ColorVariant.MUTED,
+                color = ColorVariant.SECONDARY_SWIPES,
             ),
             SwipeDirection.BOTTOM to KeyC(
                 display = KeyDisplay.IconDisplay(Icons.Outlined.Keyboard),
                 action = KeyAction.SwitchIME,
-                color = ColorVariant.MUTED,
+                color = ColorVariant.SECONDARY_SWIPES,
             ),
             SwipeDirection.BOTTOM_LEFT to KeyC(
                 display = KeyDisplay.IconDisplay(Icons.Outlined.Mic),
                 action = KeyAction.SwitchIMEVoice,
-                color = ColorVariant.MUTED,
+                color = ColorVariant.SECONDARY_SWIPES,
             ),
             SwipeDirection.LEFT to KeyC(
                 display = KeyDisplay.IconDisplay(Icons.Outlined.Language),
                 action = KeyAction.SwitchLanguage,
-                color = ColorVariant.MUTED,
+                color = ColorVariant.SECONDARY_SWIPES,
             ),
             SwipeDirection.RIGHT to KeyC(
                 display = KeyDisplay.IconDisplay(Icons.Outlined.LinearScale),
                 action = KeyAction.SwitchPosition,
-                color = ColorVariant.MUTED,
+                color = ColorVariant.SECONDARY_SWIPES,
             ),
         ),
-        backgroundColor = ColorVariant.SURFACE_VARIANT,
+        backgroundColor = ColorVariant.SECONDARY_KEY,
     )
 
 val EMOJI_BACK_KEY_ITEM =
@@ -121,9 +121,9 @@ val EMOJI_BACK_KEY_ITEM =
             display = KeyDisplay.IconDisplay(Icons.Outlined.Abc),
             action = KeyAction.ToggleEmojiMode(false),
             size = FontSizeVariant.LARGE,
-            color = ColorVariant.PRIMARY,
+            color = ColorVariant.PRIMARY_LEGENDS,
         ),
-        backgroundColor = ColorVariant.SURFACE_VARIANT,
+        backgroundColor = ColorVariant.SECONDARY_KEY,
     )
 
 val BACKSPACE_KEY_ITEM =
@@ -138,7 +138,7 @@ val BACKSPACE_KEY_ITEM =
                 ),
             ),
             size = FontSizeVariant.LARGE,
-            color = ColorVariant.SECONDARY,
+            color = ColorVariant.SECONDARY_LEGENDS,
         ),
         swipeType = SwipeNWay.TWO_WAY_HORIZONTAL,
         slideType = SlideType.DELETE,
@@ -156,11 +156,11 @@ val BACKSPACE_KEY_ITEM =
                     ),
                 ),
                 display = null,
-                color = ColorVariant.MUTED,
+                color = ColorVariant.SECONDARY_SWIPES,
                 size = FontSizeVariant.SMALLEST,
             ),
         ),
-        backgroundColor = ColorVariant.SURFACE_VARIANT,
+        backgroundColor = ColorVariant.SECONDARY_KEY,
     )
 
 val SPACEBAR_KEY_ITEM =
@@ -199,7 +199,7 @@ val SPACEBAR_KEY_ITEM =
             KeyAction.ReplaceLastText(": "),
             KeyAction.ReplaceLastText("; "),
         ),
-        backgroundColor = ColorVariant.SURFACE_VARIANT,
+        backgroundColor = ColorVariant.SECONDARY_KEY,
         widthMultiplier = 3,
     )
 val SPACEBAR_SKINNY_KEY_ITEM = SPACEBAR_KEY_ITEM.copy(widthMultiplier = 1)
@@ -250,7 +250,7 @@ val SPACEBAR_PROGRAMMER_KEY_ITEM =
                 display = null,
             ),
         ),
-        backgroundColor = ColorVariant.SURFACE_VARIANT,
+        backgroundColor = ColorVariant.SECONDARY_KEY,
         widthMultiplier = 3,
     )
 
@@ -260,9 +260,9 @@ val RETURN_KEY_ITEM =
             display = KeyDisplay.IconDisplay(Icons.Outlined.KeyboardReturn),
             action = KeyAction.IMECompleteAction,
             size = FontSizeVariant.LARGE,
-            color = ColorVariant.SECONDARY,
+            color = ColorVariant.SECONDARY_LEGENDS,
         ),
-        backgroundColor = ColorVariant.SURFACE_VARIANT,
+        backgroundColor = ColorVariant.SECONDARY_KEY,
     )
 
 val SPACEBAR_TYPESPLIT_TOP_KEY_ITEM =
@@ -294,12 +294,12 @@ val SPACEBAR_TYPESPLIT_TOP_KEY_ITEM =
             SwipeDirection.BOTTOM to KeyC(
                 display = KeyDisplay.TextDisplay("*"),
                 action = KeyAction.CommitText("*"),
-                color = ColorVariant.MUTED,
+                color = ColorVariant.SECONDARY_SWIPES,
             ),
             SwipeDirection.TOP to KeyC(
                 display = KeyDisplay.IconDisplay(Icons.Outlined.Settings),
                 action = KeyAction.GotoSettings,
-                color = ColorVariant.SECONDARY,
+                color = ColorVariant.SECONDARY_LEGENDS,
             ),
         ),
         nextTapActions = listOf(
@@ -310,7 +310,7 @@ val SPACEBAR_TYPESPLIT_TOP_KEY_ITEM =
             KeyAction.ReplaceLastText(": "),
             KeyAction.ReplaceLastText("; "),
         ),
-        backgroundColor = ColorVariant.SURFACE_VARIANT,
+        backgroundColor = ColorVariant.SECONDARY_KEY,
     )
 val SPACEBAR_TYPESPLIT_MIDDLE_KEY_ITEM = SPACEBAR_TYPESPLIT_TOP_KEY_ITEM.copy(
     swipes = mapOf(
@@ -335,12 +335,12 @@ val SPACEBAR_TYPESPLIT_MIDDLE_KEY_ITEM = SPACEBAR_TYPESPLIT_TOP_KEY_ITEM.copy(
         SwipeDirection.BOTTOM to KeyC(
             display = KeyDisplay.TextDisplay(","),
             action = KeyAction.CommitText(","),
-            color = ColorVariant.MUTED,
+            color = ColorVariant.SECONDARY_SWIPES,
         ),
         SwipeDirection.TOP to KeyC(
             display = KeyDisplay.TextDisplay("'"),
             action = KeyAction.CommitText("'"),
-            color = ColorVariant.MUTED,
+            color = ColorVariant.SECONDARY_SWIPES,
         ),
     ),
 )
@@ -367,12 +367,12 @@ val SPACEBAR_TYPESPLIT_BOTTOM_KEY_ITEM = SPACEBAR_TYPESPLIT_TOP_KEY_ITEM.copy(
         SwipeDirection.BOTTOM to KeyC(
             display = KeyDisplay.TextDisplay("."),
             action = KeyAction.CommitText("."),
-            color = ColorVariant.MUTED,
+            color = ColorVariant.SECONDARY_SWIPES,
         ),
         SwipeDirection.TOP to KeyC(
             display = KeyDisplay.TextDisplay("-"),
             action = KeyAction.CommitText("-"),
-            color = ColorVariant.MUTED,
+            color = ColorVariant.SECONDARY_SWIPES,
         ),
     ),
 )
@@ -389,7 +389,7 @@ val BACKSPACE_TYPESPLIT_KEY_ITEM =
                 ),
             ),
             size = FontSizeVariant.LARGE,
-            color = ColorVariant.SECONDARY,
+            color = ColorVariant.SECONDARY_LEGENDS,
         ),
         swipeType = SwipeNWay.FOUR_WAY_CROSS,
         swipes = mapOf(
@@ -406,17 +406,17 @@ val BACKSPACE_TYPESPLIT_KEY_ITEM =
                     ),
                 ),
                 display = null,
-                color = ColorVariant.MUTED,
+                color = ColorVariant.SECONDARY_SWIPES,
                 size = FontSizeVariant.SMALLEST,
             ),
             SwipeDirection.TOP to KeyC(
                 display = KeyDisplay.IconDisplay(Icons.Outlined.ArrowDropUp),
                 action = KeyAction.ToggleShiftMode(true),
-                color = ColorVariant.SECONDARY,
+                color = ColorVariant.SECONDARY_LEGENDS,
             ),
         ),
         widthMultiplier = 3,
-        backgroundColor = ColorVariant.SURFACE_VARIANT,
+        backgroundColor = ColorVariant.SECONDARY_KEY,
     )
 val BACKSPACE_TYPESPLIT_SHIFTED_KEY_ITEM = BACKSPACE_TYPESPLIT_KEY_ITEM.copy(
     swipes = mapOf(
@@ -433,19 +433,19 @@ val BACKSPACE_TYPESPLIT_SHIFTED_KEY_ITEM = BACKSPACE_TYPESPLIT_KEY_ITEM.copy(
                 ),
             ),
             display = null,
-            color = ColorVariant.MUTED,
+            color = ColorVariant.SECONDARY_SWIPES,
             size = FontSizeVariant.SMALLEST,
         ),
         SwipeDirection.TOP to KeyC(
             display = KeyDisplay.IconDisplay(Icons.Outlined.KeyboardCapslock),
             capsModeDisplay = KeyDisplay.IconDisplay(Icons.Outlined.Copyright),
             action = KeyAction.ToggleCapsLock,
-            color = ColorVariant.SECONDARY,
+            color = ColorVariant.SECONDARY_LEGENDS,
         ),
         SwipeDirection.BOTTOM to KeyC(
             display = KeyDisplay.IconDisplay(Icons.Outlined.ArrowDropDown),
             action = KeyAction.ToggleShiftMode(false),
-            color = ColorVariant.SECONDARY,
+            color = ColorVariant.SECONDARY_LEGENDS,
         ),
     ),
 )

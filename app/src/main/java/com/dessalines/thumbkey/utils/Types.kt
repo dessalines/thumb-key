@@ -45,7 +45,7 @@ data class KeyItemC(
     val swipes: Map<SwipeDirection, KeyC>? = null,
     val nextTapActions: List<KeyAction>? = null,
     val widthMultiplier: Int = 1,
-    val backgroundColor: ColorVariant = ColorVariant.SURFACE,
+    val backgroundColor: ColorVariant = ColorVariant.PRIMARY_KEY,
     val swipeType: SwipeNWay = SwipeNWay.EIGHT_WAY,
     val slideType: SlideType = SlideType.NONE,
 )
@@ -54,7 +54,7 @@ data class KeyC(
     val display: KeyDisplay?,
     val capsModeDisplay: KeyDisplay? = null,
     val action: KeyAction,
-    val color: ColorVariant = ColorVariant.SECONDARY,
+    val color: ColorVariant = ColorVariant.SECONDARY_LEGENDS,
     val size: FontSizeVariant = FontSizeVariant.SMALL,
 )
 
@@ -96,7 +96,7 @@ enum class SwipeDirection {
 }
 
 enum class ColorVariant {
-    PRIMARY, SECONDARY, SURFACE, SURFACE_VARIANT, MUTED,
+    PRIMARY_LEGENDS, SECONDARY_LEGENDS, PRIMARY_KEY, SECONDARY_KEY, SECONDARY_SWIPES,
 }
 
 enum class FontSizeVariant {

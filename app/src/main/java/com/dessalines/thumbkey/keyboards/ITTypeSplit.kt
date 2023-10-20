@@ -20,14 +20,14 @@ val KB_IT_TYPESPLIT_MAIN = KeyboardC(
                     display = KeyDisplay.TextDisplay("e"),
                     action = KeyAction.CommitText("e"),
                     size = FontSizeVariant.LARGE,
-                    color = ColorVariant.PRIMARY,
+                    color = ColorVariant.PRIMARY_LEGENDS,
                 ),
                 swipeType = SwipeNWay.FOUR_WAY_CROSS,
                 swipes = mapOf(
                     SwipeDirection.RIGHT to KeyC(
                         display = KeyDisplay.TextDisplay("è"),
                         action = KeyAction.CommitText("è"),
-                        color = ColorVariant.MUTED,
+                        color = ColorVariant.SECONDARY_SWIPES,
                     ),
                     SwipeDirection.LEFT to KeyC(
                         display = KeyDisplay.TextDisplay("w"),
@@ -40,7 +40,7 @@ val KB_IT_TYPESPLIT_MAIN = KeyboardC(
                     SwipeDirection.TOP to KeyC(
                         display = KeyDisplay.TextDisplay("é"),
                         action = KeyAction.CommitText("é"),
-                        color = ColorVariant.MUTED,
+                        color = ColorVariant.SECONDARY_SWIPES,
                     ),
                 ),
             ),
@@ -49,7 +49,7 @@ val KB_IT_TYPESPLIT_MAIN = KeyboardC(
                     display = KeyDisplay.TextDisplay("t"),
                     action = KeyAction.CommitText("t"),
                     size = FontSizeVariant.LARGE,
-                    color = ColorVariant.PRIMARY,
+                    color = ColorVariant.PRIMARY_LEGENDS,
                 ),
                 swipeType = SwipeNWay.FOUR_WAY_CROSS,
                 swipes = mapOf(
@@ -73,19 +73,19 @@ val KB_IT_TYPESPLIT_MAIN = KeyboardC(
                     display = KeyDisplay.TextDisplay("i"),
                     action = KeyAction.CommitText("i"),
                     size = FontSizeVariant.LARGE,
-                    color = ColorVariant.PRIMARY,
+                    color = ColorVariant.PRIMARY_LEGENDS,
                 ),
                 swipeType = SwipeNWay.FOUR_WAY_CROSS,
                 swipes = mapOf(
                     SwipeDirection.RIGHT to KeyC(
                         display = KeyDisplay.TextDisplay("ù"),
                         action = KeyAction.CommitText("ù"),
-                        color = ColorVariant.MUTED,
+                        color = ColorVariant.SECONDARY_SWIPES,
                     ),
                     SwipeDirection.LEFT to KeyC(
                         display = KeyDisplay.TextDisplay("ì"),
                         action = KeyAction.CommitText("ì"),
-                        color = ColorVariant.MUTED,
+                        color = ColorVariant.SECONDARY_SWIPES,
                     ),
                     SwipeDirection.BOTTOM to KeyC(
                         display = KeyDisplay.TextDisplay("u"),
@@ -98,7 +98,7 @@ val KB_IT_TYPESPLIT_MAIN = KeyboardC(
                     display = KeyDisplay.TextDisplay("o"),
                     action = KeyAction.CommitText("o"),
                     size = FontSizeVariant.LARGE,
-                    color = ColorVariant.PRIMARY,
+                    color = ColorVariant.PRIMARY_LEGENDS,
                 ),
                 swipeType = SwipeNWay.FOUR_WAY_CROSS,
                 swipes = mapOf(
@@ -109,7 +109,7 @@ val KB_IT_TYPESPLIT_MAIN = KeyboardC(
                     SwipeDirection.LEFT to KeyC(
                         display = KeyDisplay.TextDisplay("ò"),
                         action = KeyAction.CommitText("ò"),
-                        color = ColorVariant.MUTED,
+                        color = ColorVariant.SECONDARY_SWIPES,
                     ),
                     SwipeDirection.BOTTOM to KeyC(
                         display = KeyDisplay.TextDisplay("p"),
@@ -124,14 +124,14 @@ val KB_IT_TYPESPLIT_MAIN = KeyboardC(
                     display = KeyDisplay.TextDisplay("a"),
                     action = KeyAction.CommitText("a"),
                     size = FontSizeVariant.LARGE,
-                    color = ColorVariant.PRIMARY,
+                    color = ColorVariant.PRIMARY_LEGENDS,
                 ),
                 swipeType = SwipeNWay.TWO_WAY_HORIZONTAL,
                 swipes = mapOf(
                     SwipeDirection.RIGHT to KeyC(
                         display = KeyDisplay.TextDisplay("à"),
                         action = KeyAction.CommitText("à"),
-                        color = ColorVariant.MUTED,
+                        color = ColorVariant.SECONDARY_SWIPES,
                     ),
                     SwipeDirection.LEFT to KeyC(
                         display = null,
@@ -144,7 +144,7 @@ val KB_IT_TYPESPLIT_MAIN = KeyboardC(
                     display = KeyDisplay.TextDisplay("s"),
                     action = KeyAction.CommitText("s"),
                     size = FontSizeVariant.LARGE,
-                    color = ColorVariant.PRIMARY,
+                    color = ColorVariant.PRIMARY_LEGENDS,
                 ),
             ),
             SPACEBAR_TYPESPLIT_MIDDLE_KEY_ITEM,
@@ -153,7 +153,7 @@ val KB_IT_TYPESPLIT_MAIN = KeyboardC(
                     display = KeyDisplay.TextDisplay("d"),
                     action = KeyAction.CommitText("d"),
                     size = FontSizeVariant.LARGE,
-                    color = ColorVariant.PRIMARY,
+                    color = ColorVariant.PRIMARY_LEGENDS,
                 ),
                 swipeType = SwipeNWay.FOUR_WAY_CROSS,
                 swipes = mapOf(
@@ -176,7 +176,7 @@ val KB_IT_TYPESPLIT_MAIN = KeyboardC(
                     display = KeyDisplay.TextDisplay("l"),
                     action = KeyAction.CommitText("l"),
                     size = FontSizeVariant.LARGE,
-                    color = ColorVariant.PRIMARY,
+                    color = ColorVariant.PRIMARY_LEGENDS,
                 ),
                 swipeType = SwipeNWay.FOUR_WAY_CROSS,
                 swipes = mapOf(
@@ -205,7 +205,7 @@ val KB_IT_TYPESPLIT_MAIN = KeyboardC(
                     display = KeyDisplay.TextDisplay("c"),
                     action = KeyAction.CommitText("c"),
                     size = FontSizeVariant.LARGE,
-                    color = ColorVariant.PRIMARY,
+                    color = ColorVariant.PRIMARY_LEGENDS,
                 ),
                 swipeType = SwipeNWay.TWO_WAY_VERTICAL,
                 swipes = mapOf(
@@ -220,7 +220,7 @@ val KB_IT_TYPESPLIT_MAIN = KeyboardC(
                     display = KeyDisplay.TextDisplay("v"),
                     action = KeyAction.CommitText("v"),
                     size = FontSizeVariant.LARGE,
-                    color = ColorVariant.PRIMARY,
+                    color = ColorVariant.PRIMARY_LEGENDS,
                 ),
                 swipeType = SwipeNWay.TWO_WAY_VERTICAL,
                 swipes = mapOf(
@@ -236,7 +236,7 @@ val KB_IT_TYPESPLIT_MAIN = KeyboardC(
                     display = KeyDisplay.TextDisplay("n"),
                     action = KeyAction.CommitText("n"),
                     size = FontSizeVariant.LARGE,
-                    color = ColorVariant.PRIMARY,
+                    color = ColorVariant.PRIMARY_LEGENDS,
                 ),
             ),
             KeyItemC(
@@ -244,29 +244,29 @@ val KB_IT_TYPESPLIT_MAIN = KeyboardC(
                     display = KeyDisplay.TextDisplay("m"),
                     action = KeyAction.CommitText("m"),
                     size = FontSizeVariant.LARGE,
-                    color = ColorVariant.PRIMARY,
+                    color = ColorVariant.PRIMARY_LEGENDS,
                 ),
                 swipeType = SwipeNWay.FOUR_WAY_CROSS,
                 swipes = mapOf(
                     SwipeDirection.RIGHT to KeyC(
                         display = KeyDisplay.TextDisplay("?"),
                         action = KeyAction.CommitText("?"),
-                        color = ColorVariant.MUTED,
+                        color = ColorVariant.SECONDARY_SWIPES,
                     ),
                     SwipeDirection.LEFT to KeyC(
                         display = KeyDisplay.TextDisplay("!"),
                         action = KeyAction.CommitText("!"),
-                        color = ColorVariant.MUTED,
+                        color = ColorVariant.SECONDARY_SWIPES,
                     ),
                     SwipeDirection.BOTTOM to KeyC(
                         display = KeyDisplay.TextDisplay(":"),
                         action = KeyAction.CommitText(":"),
-                        color = ColorVariant.MUTED,
+                        color = ColorVariant.SECONDARY_SWIPES,
                     ),
                     SwipeDirection.TOP to KeyC(
                         display = KeyDisplay.TextDisplay(";"),
                         action = KeyAction.CommitText(";"),
-                        color = ColorVariant.MUTED,
+                        color = ColorVariant.SECONDARY_SWIPES,
                     ),
                 ),
             ),
@@ -287,14 +287,14 @@ val KB_IT_TYPESPLIT_SHIFTED = KeyboardC(
                     display = KeyDisplay.TextDisplay("E"),
                     action = KeyAction.CommitText("E"),
                     size = FontSizeVariant.LARGE,
-                    color = ColorVariant.PRIMARY,
+                    color = ColorVariant.PRIMARY_LEGENDS,
                 ),
                 swipeType = SwipeNWay.FOUR_WAY_CROSS,
                 swipes = mapOf(
                     SwipeDirection.RIGHT to KeyC(
                         display = KeyDisplay.TextDisplay("È"),
                         action = KeyAction.CommitText("È"),
-                        color = ColorVariant.MUTED,
+                        color = ColorVariant.SECONDARY_SWIPES,
                     ),
                     SwipeDirection.LEFT to KeyC(
                         display = KeyDisplay.TextDisplay("W"),
@@ -307,7 +307,7 @@ val KB_IT_TYPESPLIT_SHIFTED = KeyboardC(
                     SwipeDirection.TOP to KeyC(
                         display = KeyDisplay.TextDisplay("É"),
                         action = KeyAction.CommitText("É"),
-                        color = ColorVariant.MUTED,
+                        color = ColorVariant.SECONDARY_SWIPES,
                     ),
                 ),
             ),
@@ -316,7 +316,7 @@ val KB_IT_TYPESPLIT_SHIFTED = KeyboardC(
                     display = KeyDisplay.TextDisplay("T"),
                     action = KeyAction.CommitText("T"),
                     size = FontSizeVariant.LARGE,
-                    color = ColorVariant.PRIMARY,
+                    color = ColorVariant.PRIMARY_LEGENDS,
                 ),
                 swipeType = SwipeNWay.FOUR_WAY_CROSS,
                 swipes = mapOf(
@@ -340,19 +340,19 @@ val KB_IT_TYPESPLIT_SHIFTED = KeyboardC(
                     display = KeyDisplay.TextDisplay("I"),
                     action = KeyAction.CommitText("I"),
                     size = FontSizeVariant.LARGE,
-                    color = ColorVariant.PRIMARY,
+                    color = ColorVariant.PRIMARY_LEGENDS,
                 ),
                 swipeType = SwipeNWay.FOUR_WAY_CROSS,
                 swipes = mapOf(
                     SwipeDirection.RIGHT to KeyC(
                         display = KeyDisplay.TextDisplay("Ù"),
                         action = KeyAction.CommitText("Ù"),
-                        color = ColorVariant.MUTED,
+                        color = ColorVariant.SECONDARY_SWIPES,
                     ),
                     SwipeDirection.LEFT to KeyC(
                         display = KeyDisplay.TextDisplay("Ì"),
                         action = KeyAction.CommitText("Ì"),
-                        color = ColorVariant.MUTED,
+                        color = ColorVariant.SECONDARY_SWIPES,
                     ),
                     SwipeDirection.BOTTOM to KeyC(
                         display = KeyDisplay.TextDisplay("U"),
@@ -365,7 +365,7 @@ val KB_IT_TYPESPLIT_SHIFTED = KeyboardC(
                     display = KeyDisplay.TextDisplay("O"),
                     action = KeyAction.CommitText("O"),
                     size = FontSizeVariant.LARGE,
-                    color = ColorVariant.PRIMARY,
+                    color = ColorVariant.PRIMARY_LEGENDS,
                 ),
                 swipeType = SwipeNWay.FOUR_WAY_CROSS,
                 swipes = mapOf(
@@ -376,7 +376,7 @@ val KB_IT_TYPESPLIT_SHIFTED = KeyboardC(
                     SwipeDirection.LEFT to KeyC(
                         display = KeyDisplay.TextDisplay("Ò"),
                         action = KeyAction.CommitText("Ò"),
-                        color = ColorVariant.MUTED,
+                        color = ColorVariant.SECONDARY_SWIPES,
                     ),
                     SwipeDirection.BOTTOM to KeyC(
                         display = KeyDisplay.TextDisplay("P"),
@@ -391,14 +391,14 @@ val KB_IT_TYPESPLIT_SHIFTED = KeyboardC(
                     display = KeyDisplay.TextDisplay("A"),
                     action = KeyAction.CommitText("A"),
                     size = FontSizeVariant.LARGE,
-                    color = ColorVariant.PRIMARY,
+                    color = ColorVariant.PRIMARY_LEGENDS,
                 ),
                 swipeType = SwipeNWay.TWO_WAY_HORIZONTAL,
                 swipes = mapOf(
                     SwipeDirection.RIGHT to KeyC(
                         display = KeyDisplay.TextDisplay("À"),
                         action = KeyAction.CommitText("À"),
-                        color = ColorVariant.MUTED,
+                        color = ColorVariant.SECONDARY_SWIPES,
                     ),
                     SwipeDirection.LEFT to KeyC(
                         display = null,
@@ -411,7 +411,7 @@ val KB_IT_TYPESPLIT_SHIFTED = KeyboardC(
                     display = KeyDisplay.TextDisplay("S"),
                     action = KeyAction.CommitText("S"),
                     size = FontSizeVariant.LARGE,
-                    color = ColorVariant.PRIMARY,
+                    color = ColorVariant.PRIMARY_LEGENDS,
                 ),
             ),
             SPACEBAR_TYPESPLIT_MIDDLE_KEY_ITEM,
@@ -420,7 +420,7 @@ val KB_IT_TYPESPLIT_SHIFTED = KeyboardC(
                     display = KeyDisplay.TextDisplay("D"),
                     action = KeyAction.CommitText("D"),
                     size = FontSizeVariant.LARGE,
-                    color = ColorVariant.PRIMARY,
+                    color = ColorVariant.PRIMARY_LEGENDS,
                 ),
                 swipeType = SwipeNWay.FOUR_WAY_CROSS,
                 swipes = mapOf(
@@ -443,7 +443,7 @@ val KB_IT_TYPESPLIT_SHIFTED = KeyboardC(
                     display = KeyDisplay.TextDisplay("L"),
                     action = KeyAction.CommitText("L"),
                     size = FontSizeVariant.LARGE,
-                    color = ColorVariant.PRIMARY,
+                    color = ColorVariant.PRIMARY_LEGENDS,
                 ),
                 swipeType = SwipeNWay.FOUR_WAY_CROSS,
                 swipes = mapOf(
@@ -472,7 +472,7 @@ val KB_IT_TYPESPLIT_SHIFTED = KeyboardC(
                     display = KeyDisplay.TextDisplay("C"),
                     action = KeyAction.CommitText("C"),
                     size = FontSizeVariant.LARGE,
-                    color = ColorVariant.PRIMARY,
+                    color = ColorVariant.PRIMARY_LEGENDS,
                 ),
                 swipeType = SwipeNWay.TWO_WAY_VERTICAL,
                 swipes = mapOf(
@@ -487,7 +487,7 @@ val KB_IT_TYPESPLIT_SHIFTED = KeyboardC(
                     display = KeyDisplay.TextDisplay("V"),
                     action = KeyAction.CommitText("V"),
                     size = FontSizeVariant.LARGE,
-                    color = ColorVariant.PRIMARY,
+                    color = ColorVariant.PRIMARY_LEGENDS,
                 ),
                 swipeType = SwipeNWay.TWO_WAY_VERTICAL,
                 swipes = mapOf(
@@ -503,7 +503,7 @@ val KB_IT_TYPESPLIT_SHIFTED = KeyboardC(
                     display = KeyDisplay.TextDisplay("N"),
                     action = KeyAction.CommitText("N"),
                     size = FontSizeVariant.LARGE,
-                    color = ColorVariant.PRIMARY,
+                    color = ColorVariant.PRIMARY_LEGENDS,
                 ),
             ),
             KeyItemC(
@@ -511,29 +511,29 @@ val KB_IT_TYPESPLIT_SHIFTED = KeyboardC(
                     display = KeyDisplay.TextDisplay("M"),
                     action = KeyAction.CommitText("M"),
                     size = FontSizeVariant.LARGE,
-                    color = ColorVariant.PRIMARY,
+                    color = ColorVariant.PRIMARY_LEGENDS,
                 ),
                 swipeType = SwipeNWay.FOUR_WAY_CROSS,
                 swipes = mapOf(
                     SwipeDirection.RIGHT to KeyC(
                         display = KeyDisplay.TextDisplay("?"),
                         action = KeyAction.CommitText("?"),
-                        color = ColorVariant.MUTED,
+                        color = ColorVariant.SECONDARY_SWIPES,
                     ),
                     SwipeDirection.LEFT to KeyC(
                         display = KeyDisplay.TextDisplay("!"),
                         action = KeyAction.CommitText("!"),
-                        color = ColorVariant.MUTED,
+                        color = ColorVariant.SECONDARY_SWIPES,
                     ),
                     SwipeDirection.BOTTOM to KeyC(
                         display = KeyDisplay.TextDisplay(":"),
                         action = KeyAction.CommitText(":"),
-                        color = ColorVariant.MUTED,
+                        color = ColorVariant.SECONDARY_SWIPES,
                     ),
                     SwipeDirection.TOP to KeyC(
                         display = KeyDisplay.TextDisplay(";"),
                         action = KeyAction.CommitText(";"),
-                        color = ColorVariant.MUTED,
+                        color = ColorVariant.SECONDARY_SWIPES,
                     ),
                 ),
             ),

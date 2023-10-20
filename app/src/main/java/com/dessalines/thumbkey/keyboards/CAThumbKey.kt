@@ -23,12 +23,12 @@ val KB_CA_THUMBKEY_MAIN = KeyboardC(
                     SwipeDirection.TOP to KeyC(
                         display = KeyDisplay.TextDisplay("ᐱ"),
                         action = KeyAction.CommitText("ᐱ"),
-                        color = ColorVariant.PRIMARY,
+                        color = ColorVariant.PRIMARY_LEGENDS,
                     ),
                     SwipeDirection.TOP_RIGHT to KeyC(
                         display = KeyDisplay.TextDisplay("ᐯ"),
                         action = KeyAction.CommitText("ᐯ"),
-                        color = ColorVariant.PRIMARY,
+                        color = ColorVariant.PRIMARY_LEGENDS,
                     ),
                     SwipeDirection.RIGHT to KeyC(
                         display = KeyDisplay.TextDisplay("ᕑ"),
@@ -37,12 +37,12 @@ val KB_CA_THUMBKEY_MAIN = KeyboardC(
                     SwipeDirection.BOTTOM to KeyC(
                         display = KeyDisplay.TextDisplay("ᐸ"),
                         action = KeyAction.CommitText("ᐸ"),
-                        color = ColorVariant.PRIMARY,
+                        color = ColorVariant.PRIMARY_LEGENDS,
                     ),
                     SwipeDirection.BOTTOM_RIGHT to KeyC(
                         display = KeyDisplay.TextDisplay("ᐳ"),
                         action = KeyAction.CommitText("ᐳ"),
-                        color = ColorVariant.PRIMARY,
+                        color = ColorVariant.PRIMARY_LEGENDS,
                     ),
                 ),
             ),
@@ -56,7 +56,7 @@ val KB_CA_THUMBKEY_MAIN = KeyboardC(
                         display = KeyDisplay.TextDisplay("ᒋ"),
                         action = KeyAction.CommitText("ᒋ"),
                         size = FontSizeVariant.LARGE,
-                        color = ColorVariant.PRIMARY,
+                        color = ColorVariant.PRIMARY_LEGENDS,
                     ),
                     SwipeDirection.TOP to KeyC(
                         display = KeyDisplay.TextDisplay("ᕠ"),
@@ -66,7 +66,7 @@ val KB_CA_THUMBKEY_MAIN = KeyboardC(
                         display = KeyDisplay.TextDisplay("ᒉ"),
                         action = KeyAction.CommitText("ᒉ"),
                         size = FontSizeVariant.LARGE,
-                        color = ColorVariant.PRIMARY,
+                        color = ColorVariant.PRIMARY_LEGENDS,
                     ),
                     SwipeDirection.LEFT to KeyC(
                         display = KeyDisplay.TextDisplay("ᕦ"),
@@ -80,7 +80,7 @@ val KB_CA_THUMBKEY_MAIN = KeyboardC(
                         display = KeyDisplay.TextDisplay("ᒐ"),
                         action = KeyAction.CommitText("ᒐ"),
                         size = FontSizeVariant.LARGE,
-                        color = ColorVariant.PRIMARY,
+                        color = ColorVariant.PRIMARY_LEGENDS,
                     ),
                     SwipeDirection.BOTTOM to KeyC(
                         display = KeyDisplay.TextDisplay("ᕞ"),
@@ -90,7 +90,7 @@ val KB_CA_THUMBKEY_MAIN = KeyboardC(
                         display = KeyDisplay.TextDisplay("ᒍ"),
                         action = KeyAction.CommitText("ᒍ"),
                         size = FontSizeVariant.LARGE,
-                        color = ColorVariant.PRIMARY,
+                        color = ColorVariant.PRIMARY_LEGENDS,
                     ),
                 ),
             ),
@@ -104,7 +104,7 @@ val KB_CA_THUMBKEY_MAIN = KeyboardC(
                         display = KeyDisplay.TextDisplay("ᓯ"),
                         action = KeyAction.CommitText("ᓯ"),
                         size = FontSizeVariant.LARGE,
-                        color = ColorVariant.PRIMARY,
+                        color = ColorVariant.PRIMARY_LEGENDS,
                     ),
                     SwipeDirection.TOP to KeyC(
                         display = KeyDisplay.TextDisplay("ᔑ"),
@@ -114,7 +114,7 @@ val KB_CA_THUMBKEY_MAIN = KeyboardC(
                         display = KeyDisplay.TextDisplay("ᓭ"),
                         action = KeyAction.CommitText("ᓭ"),
                         size = FontSizeVariant.LARGE,
-                        color = ColorVariant.PRIMARY,
+                        color = ColorVariant.PRIMARY_LEGENDS,
                     ),
                     SwipeDirection.LEFT to KeyC(
                         display = KeyDisplay.TextDisplay("ᔕ"),
@@ -128,7 +128,7 @@ val KB_CA_THUMBKEY_MAIN = KeyboardC(
                         display = KeyDisplay.TextDisplay("ᓴ"),
                         action = KeyAction.CommitText("ᓴ"),
                         size = FontSizeVariant.LARGE,
-                        color = ColorVariant.PRIMARY,
+                        color = ColorVariant.PRIMARY_LEGENDS,
                     ),
                     SwipeDirection.BOTTOM to KeyC(
                         display = KeyDisplay.TextDisplay("ᔐ"),
@@ -138,7 +138,7 @@ val KB_CA_THUMBKEY_MAIN = KeyboardC(
                         display = KeyDisplay.TextDisplay("ᓱ"),
                         action = KeyAction.CommitText("ᓱ"),
                         size = FontSizeVariant.LARGE,
-                        color = ColorVariant.PRIMARY,
+                        color = ColorVariant.PRIMARY_LEGENDS,
                     ),
                 ),
             ),
@@ -154,12 +154,12 @@ val KB_CA_THUMBKEY_MAIN = KeyboardC(
                     SwipeDirection.TOP to KeyC(
                         display = KeyDisplay.TextDisplay("ᑎ"),
                         action = KeyAction.CommitText("ᑎ"),
-                        color = ColorVariant.PRIMARY,
+                        color = ColorVariant.PRIMARY_LEGENDS,
                     ),
                     SwipeDirection.TOP_RIGHT to KeyC(
                         display = KeyDisplay.TextDisplay("ᑌ"),
                         action = KeyAction.CommitText("ᑌ"),
-                        color = ColorVariant.PRIMARY,
+                        color = ColorVariant.PRIMARY_LEGENDS,
                     ),
                     SwipeDirection.RIGHT to KeyC(
                         display = KeyDisplay.TextDisplay("ᓫ"),
@@ -168,12 +168,12 @@ val KB_CA_THUMBKEY_MAIN = KeyboardC(
                     SwipeDirection.BOTTOM to KeyC(
                         display = KeyDisplay.TextDisplay("ᑕ"),
                         action = KeyAction.CommitText("ᑕ"),
-                        color = ColorVariant.PRIMARY,
+                        color = ColorVariant.PRIMARY_LEGENDS,
                     ),
                     SwipeDirection.BOTTOM_RIGHT to KeyC(
                         display = KeyDisplay.TextDisplay("ᑐ"),
                         action = KeyAction.CommitText("ᑐ"),
-                        color = ColorVariant.PRIMARY,
+                        color = ColorVariant.PRIMARY_LEGENDS,
                     ),
                 ),
             ),
@@ -187,7 +187,7 @@ val KB_CA_THUMBKEY_MAIN = KeyboardC(
                         display = KeyDisplay.TextDisplay("ᔨ"),
                         action = KeyAction.CommitText("ᔨ"),
                         size = FontSizeVariant.LARGE,
-                        color = ColorVariant.PRIMARY,
+                        color = ColorVariant.PRIMARY_LEGENDS,
                     ),
                     SwipeDirection.TOP to KeyC(
                         display = KeyDisplay.TextDisplay("ᕕ"),
@@ -197,7 +197,7 @@ val KB_CA_THUMBKEY_MAIN = KeyboardC(
                         display = KeyDisplay.TextDisplay("ᔦ"),
                         action = KeyAction.CommitText("ᔦ"),
                         size = FontSizeVariant.LARGE,
-                        color = ColorVariant.PRIMARY,
+                        color = ColorVariant.PRIMARY_LEGENDS,
                     ),
                     SwipeDirection.LEFT to KeyC(
                         display = KeyDisplay.TextDisplay("ᕙ"),
@@ -211,7 +211,7 @@ val KB_CA_THUMBKEY_MAIN = KeyboardC(
                         display = KeyDisplay.TextDisplay("ᔭ"),
                         action = KeyAction.CommitText("ᔭ"),
                         size = FontSizeVariant.LARGE,
-                        color = ColorVariant.PRIMARY,
+                        color = ColorVariant.PRIMARY_LEGENDS,
                     ),
                     SwipeDirection.BOTTOM to KeyC(
                         display = KeyDisplay.TextDisplay("ᕓ"),
@@ -221,7 +221,7 @@ val KB_CA_THUMBKEY_MAIN = KeyboardC(
                         display = KeyDisplay.TextDisplay("ᔪ"),
                         action = KeyAction.CommitText("ᔪ"),
                         size = FontSizeVariant.LARGE,
-                        color = ColorVariant.PRIMARY,
+                        color = ColorVariant.PRIMARY_LEGENDS,
                     ),
                 ),
             ),
@@ -235,7 +235,7 @@ val KB_CA_THUMBKEY_MAIN = KeyboardC(
                         display = KeyDisplay.TextDisplay("ᒥ"),
                         action = KeyAction.CommitText("ᒥ"),
                         size = FontSizeVariant.LARGE,
-                        color = ColorVariant.PRIMARY,
+                        color = ColorVariant.PRIMARY_LEGENDS,
                     ),
                     SwipeDirection.TOP to KeyC(
                         display = KeyDisplay.TextDisplay("ᕆ"),
@@ -245,7 +245,7 @@ val KB_CA_THUMBKEY_MAIN = KeyboardC(
                         display = KeyDisplay.TextDisplay("ᒣ"),
                         action = KeyAction.CommitText("ᒣ"),
                         size = FontSizeVariant.LARGE,
-                        color = ColorVariant.PRIMARY,
+                        color = ColorVariant.PRIMARY_LEGENDS,
                     ),
                     SwipeDirection.LEFT to KeyC(
                         display = KeyDisplay.TextDisplay("ᕋ"),
@@ -259,7 +259,7 @@ val KB_CA_THUMBKEY_MAIN = KeyboardC(
                         display = KeyDisplay.TextDisplay("ᒪ"),
                         action = KeyAction.CommitText("ᒪ"),
                         size = FontSizeVariant.LARGE,
-                        color = ColorVariant.PRIMARY,
+                        color = ColorVariant.PRIMARY_LEGENDS,
                     ),
                     SwipeDirection.BOTTOM to KeyC(
                         display = KeyDisplay.TextDisplay("ᕃ"),
@@ -269,7 +269,7 @@ val KB_CA_THUMBKEY_MAIN = KeyboardC(
                         display = KeyDisplay.TextDisplay("ᒧ"),
                         action = KeyAction.CommitText("ᒧ"),
                         size = FontSizeVariant.LARGE,
-                        color = ColorVariant.PRIMARY,
+                        color = ColorVariant.PRIMARY_LEGENDS,
                     ),
                 ),
             ),
@@ -285,12 +285,12 @@ val KB_CA_THUMBKEY_MAIN = KeyboardC(
                     SwipeDirection.TOP to KeyC(
                         display = KeyDisplay.TextDisplay("ᐃ"),
                         action = KeyAction.CommitText("ᐃ"),
-                        color = ColorVariant.PRIMARY,
+                        color = ColorVariant.PRIMARY_LEGENDS,
                     ),
                     SwipeDirection.TOP_RIGHT to KeyC(
                         display = KeyDisplay.TextDisplay("ᐁ"),
                         action = KeyAction.CommitText("ᐁ"),
-                        color = ColorVariant.PRIMARY,
+                        color = ColorVariant.PRIMARY_LEGENDS,
                     ),
                     SwipeDirection.RIGHT to KeyC(
                         display = KeyDisplay.TextDisplay("ᕽ"),
@@ -299,12 +299,12 @@ val KB_CA_THUMBKEY_MAIN = KeyboardC(
                     SwipeDirection.BOTTOM to KeyC(
                         display = KeyDisplay.TextDisplay("ᐊ"),
                         action = KeyAction.CommitText("ᐊ"),
-                        color = ColorVariant.PRIMARY,
+                        color = ColorVariant.PRIMARY_LEGENDS,
                     ),
                     SwipeDirection.BOTTOM_RIGHT to KeyC(
                         display = KeyDisplay.TextDisplay("ᐅ"),
                         action = KeyAction.CommitText("ᐅ"),
-                        color = ColorVariant.PRIMARY,
+                        color = ColorVariant.PRIMARY_LEGENDS,
                     ),
                 ),
             ),
@@ -318,18 +318,18 @@ val KB_CA_THUMBKEY_MAIN = KeyboardC(
                         display = KeyDisplay.TextDisplay("ᑭ"),
                         action = KeyAction.CommitText("ᑭ"),
                         size = FontSizeVariant.LARGE,
-                        color = ColorVariant.PRIMARY,
+                        color = ColorVariant.PRIMARY_LEGENDS,
                     ),
                     SwipeDirection.TOP to KeyC(
                         display = KeyDisplay.TextDisplay("·"),
                         action = KeyAction.ToggleShiftMode(true),
-                        color = ColorVariant.MUTED,
+                        color = ColorVariant.SECONDARY_SWIPES,
                     ),
                     SwipeDirection.TOP_RIGHT to KeyC(
                         display = KeyDisplay.TextDisplay("ᑫ"),
                         action = KeyAction.CommitText("ᑫ"),
                         size = FontSizeVariant.LARGE,
-                        color = ColorVariant.PRIMARY,
+                        color = ColorVariant.PRIMARY_LEGENDS,
                     ),
                     SwipeDirection.LEFT to KeyC(
                         display = KeyDisplay.TextDisplay("·"),
@@ -343,7 +343,7 @@ val KB_CA_THUMBKEY_MAIN = KeyboardC(
                         display = KeyDisplay.TextDisplay("ᑲ"),
                         action = KeyAction.CommitText("ᑲ"),
                         size = FontSizeVariant.LARGE,
-                        color = ColorVariant.PRIMARY,
+                        color = ColorVariant.PRIMARY_LEGENDS,
                     ),
                     SwipeDirection.BOTTOM to KeyC(
                         display = KeyDisplay.TextDisplay("ᐞ"),
@@ -353,7 +353,7 @@ val KB_CA_THUMBKEY_MAIN = KeyboardC(
                         display = KeyDisplay.TextDisplay("ᑯ"),
                         action = KeyAction.CommitText("ᑯ"),
                         size = FontSizeVariant.LARGE,
-                        color = ColorVariant.PRIMARY,
+                        color = ColorVariant.PRIMARY_LEGENDS,
                     ),
                 ),
             ),
@@ -367,7 +367,7 @@ val KB_CA_THUMBKEY_MAIN = KeyboardC(
                         display = KeyDisplay.TextDisplay("ᓂ"),
                         action = KeyAction.CommitText("ᓂ"),
                         size = FontSizeVariant.LARGE,
-                        color = ColorVariant.PRIMARY,
+                        color = ColorVariant.PRIMARY_LEGENDS,
                     ),
                     SwipeDirection.TOP to KeyC(
                         display = KeyDisplay.TextDisplay("ᓕ"),
@@ -377,7 +377,7 @@ val KB_CA_THUMBKEY_MAIN = KeyboardC(
                         display = KeyDisplay.TextDisplay("ᓀ"),
                         action = KeyAction.CommitText("ᓀ"),
                         size = FontSizeVariant.LARGE,
-                        color = ColorVariant.PRIMARY,
+                        color = ColorVariant.PRIMARY_LEGENDS,
                     ),
                     SwipeDirection.LEFT to KeyC(
                         display = KeyDisplay.TextDisplay("ᓚ"),
@@ -391,7 +391,7 @@ val KB_CA_THUMBKEY_MAIN = KeyboardC(
                         display = KeyDisplay.TextDisplay("ᓇ"),
                         action = KeyAction.CommitText("ᓇ"),
                         size = FontSizeVariant.LARGE,
-                        color = ColorVariant.PRIMARY,
+                        color = ColorVariant.PRIMARY_LEGENDS,
                     ),
                     SwipeDirection.BOTTOM to KeyC(
                         display = KeyDisplay.TextDisplay("ᓓ"),
@@ -401,7 +401,7 @@ val KB_CA_THUMBKEY_MAIN = KeyboardC(
                         display = KeyDisplay.TextDisplay("ᓄ"),
                         action = KeyAction.CommitText("ᓄ"),
                         size = FontSizeVariant.LARGE,
-                        color = ColorVariant.PRIMARY,
+                        color = ColorVariant.PRIMARY_LEGENDS,
                     ),
                 ),
             ),
@@ -426,12 +426,12 @@ val KB_CA_THUMBKEY_SHIFTED = KeyboardC(
                     SwipeDirection.TOP to KeyC(
                         display = KeyDisplay.TextDisplay("ᐲ"),
                         action = KeyAction.CommitText("ᐲ"),
-                        color = ColorVariant.PRIMARY,
+                        color = ColorVariant.PRIMARY_LEGENDS,
                     ),
                     SwipeDirection.TOP_RIGHT to KeyC(
                         display = KeyDisplay.TextDisplay("ᐶ"),
                         action = KeyAction.CommitText("ᐶ"),
-                        color = ColorVariant.PRIMARY,
+                        color = ColorVariant.PRIMARY_LEGENDS,
                     ),
                     SwipeDirection.RIGHT to KeyC(
                         display = KeyDisplay.TextDisplay("ᐷ"),
@@ -440,12 +440,12 @@ val KB_CA_THUMBKEY_SHIFTED = KeyboardC(
                     SwipeDirection.BOTTOM to KeyC(
                         display = KeyDisplay.TextDisplay("ᐹ"),
                         action = KeyAction.CommitText("ᐹ"),
-                        color = ColorVariant.PRIMARY,
+                        color = ColorVariant.PRIMARY_LEGENDS,
                     ),
                     SwipeDirection.BOTTOM_RIGHT to KeyC(
                         display = KeyDisplay.TextDisplay("ᐴ"),
                         action = KeyAction.CommitText("ᐴ"),
-                        color = ColorVariant.PRIMARY,
+                        color = ColorVariant.PRIMARY_LEGENDS,
                     ),
                 ),
             ),
@@ -459,7 +459,7 @@ val KB_CA_THUMBKEY_SHIFTED = KeyboardC(
                         display = KeyDisplay.TextDisplay("ᒌ"),
                         action = KeyAction.CommitText("ᒌ"),
                         size = FontSizeVariant.LARGE,
-                        color = ColorVariant.PRIMARY,
+                        color = ColorVariant.PRIMARY_LEGENDS,
                     ),
                     SwipeDirection.TOP to KeyC(
                         display = KeyDisplay.TextDisplay("ᕢ"),
@@ -469,7 +469,7 @@ val KB_CA_THUMBKEY_SHIFTED = KeyboardC(
                         display = KeyDisplay.TextDisplay("ᒊ"),
                         action = KeyAction.CommitText("ᒊ"),
                         size = FontSizeVariant.LARGE,
-                        color = ColorVariant.PRIMARY,
+                        color = ColorVariant.PRIMARY_LEGENDS,
                     ),
                     SwipeDirection.LEFT to KeyC(
                         display = KeyDisplay.TextDisplay("ᕧ"),
@@ -483,7 +483,7 @@ val KB_CA_THUMBKEY_SHIFTED = KeyboardC(
                         display = KeyDisplay.TextDisplay("ᒑ"),
                         action = KeyAction.CommitText("ᒑ"),
                         size = FontSizeVariant.LARGE,
-                        color = ColorVariant.PRIMARY,
+                        color = ColorVariant.PRIMARY_LEGENDS,
                     ),
                     SwipeDirection.BOTTOM to KeyC(
                         display = KeyDisplay.TextDisplay("ᕐ"),
@@ -493,7 +493,7 @@ val KB_CA_THUMBKEY_SHIFTED = KeyboardC(
                         display = KeyDisplay.TextDisplay("ᒎ"),
                         action = KeyAction.CommitText("ᒎ"),
                         size = FontSizeVariant.LARGE,
-                        color = ColorVariant.PRIMARY,
+                        color = ColorVariant.PRIMARY_LEGENDS,
                     ),
                 ),
             ),
@@ -507,7 +507,7 @@ val KB_CA_THUMBKEY_SHIFTED = KeyboardC(
                         display = KeyDisplay.TextDisplay("ᓰ"),
                         action = KeyAction.CommitText("ᓰ"),
                         size = FontSizeVariant.LARGE,
-                        color = ColorVariant.PRIMARY,
+                        color = ColorVariant.PRIMARY_LEGENDS,
                     ),
                     SwipeDirection.TOP to KeyC(
                         display = KeyDisplay.TextDisplay("ᔒ"),
@@ -517,7 +517,7 @@ val KB_CA_THUMBKEY_SHIFTED = KeyboardC(
                         display = KeyDisplay.TextDisplay("ᓮ"),
                         action = KeyAction.CommitText("ᓮ"),
                         size = FontSizeVariant.LARGE,
-                        color = ColorVariant.PRIMARY,
+                        color = ColorVariant.PRIMARY_LEGENDS,
                     ),
                     SwipeDirection.LEFT to KeyC(
                         display = KeyDisplay.TextDisplay("ᔖ"),
@@ -531,7 +531,7 @@ val KB_CA_THUMBKEY_SHIFTED = KeyboardC(
                         display = KeyDisplay.TextDisplay("ᓵ"),
                         action = KeyAction.CommitText("ᓵ"),
                         size = FontSizeVariant.LARGE,
-                        color = ColorVariant.PRIMARY,
+                        color = ColorVariant.PRIMARY_LEGENDS,
                     ),
                     SwipeDirection.BOTTOM to KeyC(
                         display = KeyDisplay.TextDisplay("ᖕ"),
@@ -541,7 +541,7 @@ val KB_CA_THUMBKEY_SHIFTED = KeyboardC(
                         display = KeyDisplay.TextDisplay("ᓲ"),
                         action = KeyAction.CommitText("ᓲ"),
                         size = FontSizeVariant.LARGE,
-                        color = ColorVariant.PRIMARY,
+                        color = ColorVariant.PRIMARY_LEGENDS,
                     ),
                 ),
             ),
@@ -557,12 +557,12 @@ val KB_CA_THUMBKEY_SHIFTED = KeyboardC(
                     SwipeDirection.TOP to KeyC(
                         display = KeyDisplay.TextDisplay("ᑏ"),
                         action = KeyAction.CommitText("ᑏ"),
-                        color = ColorVariant.PRIMARY,
+                        color = ColorVariant.PRIMARY_LEGENDS,
                     ),
                     SwipeDirection.TOP_RIGHT to KeyC(
                         display = KeyDisplay.TextDisplay("ᑓ"),
                         action = KeyAction.CommitText("ᑓ"),
-                        color = ColorVariant.PRIMARY,
+                        color = ColorVariant.PRIMARY_LEGENDS,
                     ),
                     SwipeDirection.RIGHT to KeyC(
                         display = KeyDisplay.TextDisplay("ᑔ"),
@@ -571,12 +571,12 @@ val KB_CA_THUMBKEY_SHIFTED = KeyboardC(
                     SwipeDirection.BOTTOM to KeyC(
                         display = KeyDisplay.TextDisplay("ᑖ"),
                         action = KeyAction.CommitText("ᑖ"),
-                        color = ColorVariant.PRIMARY,
+                        color = ColorVariant.PRIMARY_LEGENDS,
                     ),
                     SwipeDirection.BOTTOM_RIGHT to KeyC(
                         display = KeyDisplay.TextDisplay("ᑑ"),
                         action = KeyAction.CommitText("ᑑ"),
-                        color = ColorVariant.PRIMARY,
+                        color = ColorVariant.PRIMARY_LEGENDS,
                     ),
                 ),
             ),
@@ -590,7 +590,7 @@ val KB_CA_THUMBKEY_SHIFTED = KeyboardC(
                         display = KeyDisplay.TextDisplay("ᔩ"),
                         action = KeyAction.CommitText("ᔩ"),
                         size = FontSizeVariant.LARGE,
-                        color = ColorVariant.PRIMARY,
+                        color = ColorVariant.PRIMARY_LEGENDS,
                     ),
                     SwipeDirection.TOP to KeyC(
                         display = KeyDisplay.TextDisplay("ᕖ"),
@@ -600,7 +600,7 @@ val KB_CA_THUMBKEY_SHIFTED = KeyboardC(
                         display = KeyDisplay.TextDisplay("ᔧ"),
                         action = KeyAction.CommitText("ᔧ"),
                         size = FontSizeVariant.LARGE,
-                        color = ColorVariant.PRIMARY,
+                        color = ColorVariant.PRIMARY_LEGENDS,
                     ),
                     SwipeDirection.LEFT to KeyC(
                         display = KeyDisplay.TextDisplay("ᕚ"),
@@ -614,7 +614,7 @@ val KB_CA_THUMBKEY_SHIFTED = KeyboardC(
                         display = KeyDisplay.TextDisplay("ᔮ"),
                         action = KeyAction.CommitText("ᔮ"),
                         size = FontSizeVariant.LARGE,
-                        color = ColorVariant.PRIMARY,
+                        color = ColorVariant.PRIMARY_LEGENDS,
                     ),
                     SwipeDirection.BOTTOM to KeyC(
                         display = KeyDisplay.TextDisplay("ᕔ"),
@@ -624,7 +624,7 @@ val KB_CA_THUMBKEY_SHIFTED = KeyboardC(
                         display = KeyDisplay.TextDisplay("ᔫ"),
                         action = KeyAction.CommitText("ᔫ"),
                         size = FontSizeVariant.LARGE,
-                        color = ColorVariant.PRIMARY,
+                        color = ColorVariant.PRIMARY_LEGENDS,
                     ),
                 ),
             ),
@@ -638,7 +638,7 @@ val KB_CA_THUMBKEY_SHIFTED = KeyboardC(
                         display = KeyDisplay.TextDisplay("ᒦ"),
                         action = KeyAction.CommitText("ᒦ"),
                         size = FontSizeVariant.LARGE,
-                        color = ColorVariant.PRIMARY,
+                        color = ColorVariant.PRIMARY_LEGENDS,
                     ),
                     SwipeDirection.TOP to KeyC(
                         display = KeyDisplay.TextDisplay("ᕇ"),
@@ -648,7 +648,7 @@ val KB_CA_THUMBKEY_SHIFTED = KeyboardC(
                         display = KeyDisplay.TextDisplay("ᒤ"),
                         action = KeyAction.CommitText("ᒤ"),
                         size = FontSizeVariant.LARGE,
-                        color = ColorVariant.PRIMARY,
+                        color = ColorVariant.PRIMARY_LEGENDS,
                     ),
                     SwipeDirection.LEFT to KeyC(
                         display = KeyDisplay.TextDisplay("ᕌ"),
@@ -662,7 +662,7 @@ val KB_CA_THUMBKEY_SHIFTED = KeyboardC(
                         display = KeyDisplay.TextDisplay("ᒫ"),
                         action = KeyAction.CommitText("ᒫ"),
                         size = FontSizeVariant.LARGE,
-                        color = ColorVariant.PRIMARY,
+                        color = ColorVariant.PRIMARY_LEGENDS,
                     ),
                     SwipeDirection.BOTTOM to KeyC(
                         display = KeyDisplay.TextDisplay("ᕅ"),
@@ -672,7 +672,7 @@ val KB_CA_THUMBKEY_SHIFTED = KeyboardC(
                         display = KeyDisplay.TextDisplay("ᒨ"),
                         action = KeyAction.CommitText("ᒨ"),
                         size = FontSizeVariant.LARGE,
-                        color = ColorVariant.PRIMARY,
+                        color = ColorVariant.PRIMARY_LEGENDS,
                     ),
                 ),
             ),
@@ -688,12 +688,12 @@ val KB_CA_THUMBKEY_SHIFTED = KeyboardC(
                     SwipeDirection.TOP to KeyC(
                         display = KeyDisplay.TextDisplay("ᐄ"),
                         action = KeyAction.CommitText("ᐄ"),
-                        color = ColorVariant.PRIMARY,
+                        color = ColorVariant.PRIMARY_LEGENDS,
                     ),
                     SwipeDirection.TOP_RIGHT to KeyC(
                         display = KeyDisplay.TextDisplay("ᐈ"),
                         action = KeyAction.CommitText("ᐈ"),
-                        color = ColorVariant.PRIMARY,
+                        color = ColorVariant.PRIMARY_LEGENDS,
                     ),
                     SwipeDirection.RIGHT to KeyC(
                         display = KeyDisplay.TextDisplay("ᐉ"),
@@ -702,12 +702,12 @@ val KB_CA_THUMBKEY_SHIFTED = KeyboardC(
                     SwipeDirection.BOTTOM to KeyC(
                         display = KeyDisplay.TextDisplay("ᐋ"),
                         action = KeyAction.CommitText("ᐋ"),
-                        color = ColorVariant.PRIMARY,
+                        color = ColorVariant.PRIMARY_LEGENDS,
                     ),
                     SwipeDirection.BOTTOM_RIGHT to KeyC(
                         display = KeyDisplay.TextDisplay("ᐆ"),
                         action = KeyAction.CommitText("ᐆ"),
-                        color = ColorVariant.PRIMARY,
+                        color = ColorVariant.PRIMARY_LEGENDS,
                     ),
                 ),
             ),
@@ -721,18 +721,18 @@ val KB_CA_THUMBKEY_SHIFTED = KeyboardC(
                         display = KeyDisplay.TextDisplay("ᑮ"),
                         action = KeyAction.CommitText("ᑮ"),
                         size = FontSizeVariant.LARGE,
-                        color = ColorVariant.PRIMARY,
+                        color = ColorVariant.PRIMARY_LEGENDS,
                     ),
                     SwipeDirection.TOP to KeyC(
                         display = KeyDisplay.TextDisplay("·"),
                         action = KeyAction.ToggleShiftMode(false),
-                        color = ColorVariant.MUTED,
+                        color = ColorVariant.SECONDARY_SWIPES,
                     ),
                     SwipeDirection.TOP_RIGHT to KeyC(
                         display = KeyDisplay.TextDisplay("ᑬ"),
                         action = KeyAction.CommitText("ᑬ"),
                         size = FontSizeVariant.LARGE,
-                        color = ColorVariant.PRIMARY,
+                        color = ColorVariant.PRIMARY_LEGENDS,
                     ),
                     SwipeDirection.LEFT to KeyC(
                         display = KeyDisplay.TextDisplay("ᐮ"),
@@ -746,7 +746,7 @@ val KB_CA_THUMBKEY_SHIFTED = KeyboardC(
                         display = KeyDisplay.TextDisplay("ᑳ"),
                         action = KeyAction.CommitText("ᑳ"),
                         size = FontSizeVariant.LARGE,
-                        color = ColorVariant.PRIMARY,
+                        color = ColorVariant.PRIMARY_LEGENDS,
                     ),
                     SwipeDirection.BOTTOM to KeyC(
                         display = KeyDisplay.TextDisplay("ᐫ"),
@@ -756,7 +756,7 @@ val KB_CA_THUMBKEY_SHIFTED = KeyboardC(
                         display = KeyDisplay.TextDisplay("ᑰ"),
                         action = KeyAction.CommitText("ᑰ"),
                         size = FontSizeVariant.LARGE,
-                        color = ColorVariant.PRIMARY,
+                        color = ColorVariant.PRIMARY_LEGENDS,
                     ),
                 ),
             ),
@@ -770,7 +770,7 @@ val KB_CA_THUMBKEY_SHIFTED = KeyboardC(
                         display = KeyDisplay.TextDisplay("ᓃ"),
                         action = KeyAction.CommitText("ᓃ"),
                         size = FontSizeVariant.LARGE,
-                        color = ColorVariant.PRIMARY,
+                        color = ColorVariant.PRIMARY_LEGENDS,
                     ),
                     SwipeDirection.TOP to KeyC(
                         display = KeyDisplay.TextDisplay("ᓖ"),
@@ -780,7 +780,7 @@ val KB_CA_THUMBKEY_SHIFTED = KeyboardC(
                         display = KeyDisplay.TextDisplay("ᓁ"),
                         action = KeyAction.CommitText("ᓁ"),
                         size = FontSizeVariant.LARGE,
-                        color = ColorVariant.PRIMARY,
+                        color = ColorVariant.PRIMARY_LEGENDS,
                     ),
                     SwipeDirection.LEFT to KeyC(
                         display = KeyDisplay.TextDisplay("ᓛ"),
@@ -794,7 +794,7 @@ val KB_CA_THUMBKEY_SHIFTED = KeyboardC(
                         display = KeyDisplay.TextDisplay("ᓈ"),
                         action = KeyAction.CommitText("ᓈ"),
                         size = FontSizeVariant.LARGE,
-                        color = ColorVariant.PRIMARY,
+                        color = ColorVariant.PRIMARY_LEGENDS,
                     ),
                     SwipeDirection.BOTTOM to KeyC(
                         display = KeyDisplay.TextDisplay("ᓔ"),
@@ -804,7 +804,7 @@ val KB_CA_THUMBKEY_SHIFTED = KeyboardC(
                         display = KeyDisplay.TextDisplay("ᓅ"),
                         action = KeyAction.CommitText("ᓅ"),
                         size = FontSizeVariant.LARGE,
-                        color = ColorVariant.PRIMARY,
+                        color = ColorVariant.PRIMARY_LEGENDS,
                     ),
                 ),
             ),

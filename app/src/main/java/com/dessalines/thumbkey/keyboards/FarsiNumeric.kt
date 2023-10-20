@@ -19,7 +19,7 @@ val FARSI_NUMERIC_KEYBOARD = KeyboardC(
                     display = KeyDisplay.TextDisplay("۱"),
                     action = KeyAction.CommitText("۱"),
                     size = FontSizeVariant.LARGE,
-                    color = ColorVariant.PRIMARY,
+                    color = ColorVariant.PRIMARY_LEGENDS,
                 ),
                 swipes = mapOf(
                     SwipeDirection.BOTTOM_LEFT to KeyC(
@@ -33,7 +33,7 @@ val FARSI_NUMERIC_KEYBOARD = KeyboardC(
                     display = KeyDisplay.TextDisplay("۲"),
                     action = KeyAction.CommitText("۲"),
                     size = FontSizeVariant.LARGE,
-                    color = ColorVariant.PRIMARY,
+                    color = ColorVariant.PRIMARY_LEGENDS,
                 ),
                 swipes = mapOf(
                     SwipeDirection.TOP_LEFT to KeyC(
@@ -71,7 +71,7 @@ val FARSI_NUMERIC_KEYBOARD = KeyboardC(
                     display = KeyDisplay.TextDisplay("۳"),
                     action = KeyAction.CommitText("۳"),
                     size = FontSizeVariant.LARGE,
-                    color = ColorVariant.PRIMARY,
+                    color = ColorVariant.PRIMARY_LEGENDS,
                 ),
                 swipes = mapOf(
                     SwipeDirection.LEFT to KeyC(
@@ -96,7 +96,7 @@ val FARSI_NUMERIC_KEYBOARD = KeyboardC(
                     display = KeyDisplay.TextDisplay("۴"),
                     action = KeyAction.CommitText("۴"),
                     size = FontSizeVariant.LARGE,
-                    color = ColorVariant.PRIMARY,
+                    color = ColorVariant.PRIMARY_LEGENDS,
                 ),
                 swipes = mapOf(
                     SwipeDirection.TOP_LEFT to KeyC(
@@ -126,7 +126,7 @@ val FARSI_NUMERIC_KEYBOARD = KeyboardC(
                     display = KeyDisplay.TextDisplay("۵"),
                     action = KeyAction.CommitText("۵"),
                     size = FontSizeVariant.LARGE,
-                    color = ColorVariant.PRIMARY,
+                    color = ColorVariant.PRIMARY_LEGENDS,
                 ),
             ),
             KeyItemC(
@@ -134,7 +134,7 @@ val FARSI_NUMERIC_KEYBOARD = KeyboardC(
                     display = KeyDisplay.TextDisplay("۶"),
                     action = KeyAction.CommitText("۶"),
                     size = FontSizeVariant.LARGE,
-                    color = ColorVariant.PRIMARY,
+                    color = ColorVariant.PRIMARY_LEGENDS,
                 ),
                 swipes = mapOf(
                     SwipeDirection.TOP_LEFT to KeyC(
@@ -164,9 +164,9 @@ val FARSI_NUMERIC_KEYBOARD = KeyboardC(
                     display = KeyDisplay.IconDisplay(Icons.Outlined.Abc),
                     action = KeyAction.ToggleNumericMode(false),
                     size = FontSizeVariant.LARGE,
-                    color = ColorVariant.PRIMARY,
+                    color = ColorVariant.PRIMARY_LEGENDS,
                 ),
-                backgroundColor = ColorVariant.SURFACE_VARIANT,
+                backgroundColor = ColorVariant.SECONDARY_KEY,
             ),
         ),
         listOf(
@@ -175,7 +175,7 @@ val FARSI_NUMERIC_KEYBOARD = KeyboardC(
                     display = KeyDisplay.TextDisplay("۷"),
                     action = KeyAction.CommitText("۷"),
                     size = FontSizeVariant.LARGE,
-                    color = ColorVariant.PRIMARY,
+                    color = ColorVariant.PRIMARY_LEGENDS,
                 ),
                 swipes = mapOf(
                     SwipeDirection.TOP_LEFT to KeyC(
@@ -201,7 +201,7 @@ val FARSI_NUMERIC_KEYBOARD = KeyboardC(
                     display = KeyDisplay.TextDisplay("۸"),
                     action = KeyAction.CommitText("۸"),
                     size = FontSizeVariant.LARGE,
-                    color = ColorVariant.PRIMARY,
+                    color = ColorVariant.PRIMARY_LEGENDS,
                 ),
                 swipes = mapOf(
                     SwipeDirection.TOP_LEFT to KeyC(
@@ -235,7 +235,7 @@ val FARSI_NUMERIC_KEYBOARD = KeyboardC(
                     display = KeyDisplay.TextDisplay("۹"),
                     action = KeyAction.CommitText("۹"),
                     size = FontSizeVariant.LARGE,
-                    color = ColorVariant.PRIMARY,
+                    color = ColorVariant.PRIMARY_LEGENDS,
                 ),
                 swipes = mapOf(
                     SwipeDirection.TOP to KeyC(
@@ -272,7 +272,7 @@ val FARSI_NUMERIC_KEYBOARD = KeyboardC(
                     display = KeyDisplay.TextDisplay("۰"),
                     action = KeyAction.CommitText("۰"),
                     size = FontSizeVariant.LARGE,
-                    color = ColorVariant.PRIMARY,
+                    color = ColorVariant.PRIMARY_LEGENDS,
                 ),
                 widthMultiplier = 2,
             ),

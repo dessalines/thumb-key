@@ -510,7 +510,7 @@ fun KeyboardKey(
                 contentAlignment = Alignment.Center,
                 modifier = Modifier
                     .fillMaxSize()
-                    .background(color = MaterialTheme.colorScheme.tertiaryContainer),
+                    .background(color = MaterialTheme.colorScheme.inverseSurface),
             ) {}
         }
 
@@ -536,7 +536,7 @@ fun KeyboardKey(
                         text = text,
                         fontWeight = FontWeight.Bold,
                         fontSize = fontSize,
-                        color = MaterialTheme.colorScheme.tertiary,
+                        color = MaterialTheme.colorScheme.inverseOnSurface,
                     )
                 }
             }

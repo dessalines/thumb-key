@@ -19,7 +19,7 @@ val KB_FA_THUMBKEY_MAIN = KeyboardC(
                     display = KeyDisplay.TextDisplay("د"),
                     action = KeyAction.CommitText("د"),
                     size = FontSizeVariant.LARGE,
-                    color = ColorVariant.PRIMARY,
+                    color = ColorVariant.PRIMARY_LEGENDS,
                 ),
                 swipes = mapOf(
                     SwipeDirection.BOTTOM_RIGHT to KeyC(
@@ -37,7 +37,7 @@ val KB_FA_THUMBKEY_MAIN = KeyboardC(
                     display = KeyDisplay.TextDisplay("ر"),
                     action = KeyAction.CommitText("ر"),
                     size = FontSizeVariant.LARGE,
-                    color = ColorVariant.PRIMARY,
+                    color = ColorVariant.PRIMARY_LEGENDS,
                 ),
                 swipes = mapOf(
                     SwipeDirection.RIGHT to KeyC(
@@ -63,7 +63,7 @@ val KB_FA_THUMBKEY_MAIN = KeyboardC(
                     display = KeyDisplay.TextDisplay("و"),
                     action = KeyAction.CommitText("و"),
                     size = FontSizeVariant.LARGE,
-                    color = ColorVariant.PRIMARY,
+                    color = ColorVariant.PRIMARY_LEGENDS,
                 ),
                 swipes = mapOf(
                     SwipeDirection.BOTTOM to KeyC(
@@ -84,7 +84,7 @@ val KB_FA_THUMBKEY_MAIN = KeyboardC(
                     display = KeyDisplay.TextDisplay("ن"),
                     action = KeyAction.CommitText("ن"),
                     size = FontSizeVariant.LARGE,
-                    color = ColorVariant.PRIMARY,
+                    color = ColorVariant.PRIMARY_LEGENDS,
                 ),
                 swipes = mapOf(
                     SwipeDirection.RIGHT to KeyC(
@@ -106,7 +106,7 @@ val KB_FA_THUMBKEY_MAIN = KeyboardC(
                     display = KeyDisplay.TextDisplay("ا"),
                     action = KeyAction.CommitText("ا"),
                     size = FontSizeVariant.LARGE,
-                    color = ColorVariant.PRIMARY,
+                    color = ColorVariant.PRIMARY_LEGENDS,
                 ),
                 swipes = mapOf(
                     SwipeDirection.TOP_LEFT to KeyC(
@@ -148,7 +148,7 @@ val KB_FA_THUMBKEY_MAIN = KeyboardC(
                     display = KeyDisplay.TextDisplay("م"),
                     action = KeyAction.CommitText("م"),
                     size = FontSizeVariant.LARGE,
-                    color = ColorVariant.PRIMARY,
+                    color = ColorVariant.PRIMARY_LEGENDS,
                 ),
                 swipes = mapOf(
                     SwipeDirection.BOTTOM_LEFT to KeyC(
@@ -173,7 +173,7 @@ val KB_FA_THUMBKEY_MAIN = KeyboardC(
                     display = KeyDisplay.TextDisplay("ت"),
                     action = KeyAction.CommitText("ت"),
                     size = FontSizeVariant.LARGE,
-                    color = ColorVariant.PRIMARY,
+                    color = ColorVariant.PRIMARY_LEGENDS,
                 ),
                 swipes = mapOf(
                     SwipeDirection.TOP_RIGHT to KeyC(
@@ -187,13 +187,13 @@ val KB_FA_THUMBKEY_MAIN = KeyboardC(
                     display = KeyDisplay.TextDisplay("ی"),
                     action = KeyAction.CommitText("ی"),
                     size = FontSizeVariant.LARGE,
-                    color = ColorVariant.PRIMARY,
+                    color = ColorVariant.PRIMARY_LEGENDS,
                 ),
                 swipes = mapOf(
                     SwipeDirection.TOP to KeyC(
                         display = KeyDisplay.TextDisplay("‹›"),
                         action = KeyAction.CommitText("‌"),
-                        color = ColorVariant.MUTED,
+                        color = ColorVariant.SECONDARY_SWIPES,
                     ),
                     SwipeDirection.RIGHT to KeyC(
                         display = KeyDisplay.TextDisplay("ئ"),
@@ -202,22 +202,22 @@ val KB_FA_THUMBKEY_MAIN = KeyboardC(
                     SwipeDirection.BOTTOM_RIGHT to KeyC(
                         display = KeyDisplay.TextDisplay("ـ"),
                         action = KeyAction.CommitText("ـ"),
-                        color = ColorVariant.MUTED,
+                        color = ColorVariant.SECONDARY_SWIPES,
                     ),
                     SwipeDirection.BOTTOM to KeyC(
                         display = KeyDisplay.TextDisplay("."),
                         action = KeyAction.CommitText("."),
-                        color = ColorVariant.MUTED,
+                        color = ColorVariant.SECONDARY_SWIPES,
                     ),
                     SwipeDirection.LEFT to KeyC(
                         display = KeyDisplay.TextDisplay("؟"),
                         action = KeyAction.CommitText("؟"),
-                        color = ColorVariant.MUTED,
+                        color = ColorVariant.SECONDARY_SWIPES,
                     ),
                     SwipeDirection.BOTTOM_LEFT to KeyC(
                         display = KeyDisplay.TextDisplay("*"),
                         action = KeyAction.CommitText("*"),
-                        color = ColorVariant.MUTED,
+                        color = ColorVariant.SECONDARY_SWIPES,
                     ),
                 ),
             ),
@@ -226,7 +226,7 @@ val KB_FA_THUMBKEY_MAIN = KeyboardC(
                     display = KeyDisplay.TextDisplay("ه"),
                     action = KeyAction.CommitText("ه"),
                     size = FontSizeVariant.LARGE,
-                    color = ColorVariant.PRIMARY,
+                    color = ColorVariant.PRIMARY_LEGENDS,
                 ),
                 swipes = mapOf(
                     SwipeDirection.TOP_LEFT to KeyC(

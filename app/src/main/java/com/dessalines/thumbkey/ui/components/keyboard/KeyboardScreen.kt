@@ -146,7 +146,7 @@ fun KeyboardScreen(
                         .align(Alignment.TopCenter)
                         .fillMaxWidth()
                         .height(1.dp)
-                        .background(color = MaterialTheme.colorScheme.surfaceVariant),
+                        .background(color = MaterialTheme.colorScheme.outlineVariant),
                 )
             }
             Row(
@@ -177,7 +177,7 @@ fun KeyboardScreen(
                                 (Modifier)
                             },
                         )
-                        .background(MaterialTheme.colorScheme.surface),
+                        .background(MaterialTheme.colorScheme.primaryContainer),
                 ) {
                     val haptic = LocalHapticFeedback.current
                     val audioManager = ctx.getSystemService(Context.AUDIO_SERVICE) as AudioManager
@@ -286,7 +286,7 @@ fun KeyboardScreen(
                         .align(Alignment.TopCenter)
                         .fillMaxWidth()
                         .height(1.dp)
-                        .background(color = MaterialTheme.colorScheme.surfaceVariant),
+                        .background(color = MaterialTheme.colorScheme.outlineVariant),
                 )
             }
             Column(

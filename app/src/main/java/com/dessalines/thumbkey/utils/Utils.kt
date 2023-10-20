@@ -50,11 +50,11 @@ const val IME_ACTION_CUSTOM_LABEL = EditorInfo.IME_MASK_ACTION + 1
 @Composable
 fun colorVariantToColor(colorVariant: ColorVariant): Color {
     return when (colorVariant) {
-        ColorVariant.SURFACE -> MaterialTheme.colorScheme.surface
-        ColorVariant.SURFACE_VARIANT -> MaterialTheme.colorScheme.surfaceVariant
-        ColorVariant.PRIMARY -> MaterialTheme.colorScheme.primary
-        ColorVariant.SECONDARY -> MaterialTheme.colorScheme.secondary
-        ColorVariant.MUTED -> MaterialTheme.colorScheme.secondary.copy(alpha = 0.5F)
+        ColorVariant.PRIMARY_KEY -> MaterialTheme.colorScheme.primaryContainer
+        ColorVariant.SECONDARY_KEY -> MaterialTheme.colorScheme.secondaryContainer
+        ColorVariant.PRIMARY_LEGENDS -> MaterialTheme.colorScheme.primary
+        ColorVariant.SECONDARY_LEGENDS -> MaterialTheme.colorScheme.secondary
+        ColorVariant.SECONDARY_SWIPES -> MaterialTheme.colorScheme.onSecondaryContainer
     }
 }
 

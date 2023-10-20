@@ -74,8 +74,8 @@ fun ShowChangelog(appSettingsViewModel: AppSettingsViewModel) {
                         val markdownText = DONATION_MARKDOWN + markdown
                         MarkdownText(
                             markdown = markdownText,
-                            color = MaterialTheme.colorScheme.onBackground,
-                            linkColor = MaterialTheme.colorScheme.primary,
+                            color = MaterialTheme.colorScheme.surfaceVariant,
+                            linkColor = MaterialTheme.colorScheme.onSurfaceVariant,
                         )
                     }
                 },

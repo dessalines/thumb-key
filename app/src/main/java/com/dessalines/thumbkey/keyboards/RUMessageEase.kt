@@ -25,13 +25,13 @@ val KB_RU_MESSAGEEASE_MAIN = KeyboardC(
                     display = KeyDisplay.TextDisplay("с"),
                     action = KeyAction.CommitText("с"),
                     size = FontSizeVariant.LARGE,
-                    color = ColorVariant.PRIMARY,
+                    color = ColorVariant.PRIMARY_LEGENDS,
                 ),
                 swipes = mapOf(
                     SwipeDirection.RIGHT to KeyC(
                         display = KeyDisplay.TextDisplay("-"),
                         action = KeyAction.CommitText("-"),
-                        color = ColorVariant.MUTED,
+                        color = ColorVariant.SECONDARY_SWIPES,
                     ),
                     SwipeDirection.BOTTOM_RIGHT to KeyC(
                         display = KeyDisplay.TextDisplay("п"),
@@ -48,7 +48,7 @@ val KB_RU_MESSAGEEASE_MAIN = KeyboardC(
                     display = KeyDisplay.TextDisplay("и"),
                     action = KeyAction.CommitText("и"),
                     size = FontSizeVariant.LARGE,
-                    color = ColorVariant.PRIMARY,
+                    color = ColorVariant.PRIMARY_LEGENDS,
                 ),
                 swipeType = SwipeNWay.TWO_WAY_VERTICAL,
                 swipes = mapOf(
@@ -67,7 +67,7 @@ val KB_RU_MESSAGEEASE_MAIN = KeyboardC(
                     display = KeyDisplay.TextDisplay("т"),
                     action = KeyAction.CommitText("т"),
                     size = FontSizeVariant.LARGE,
-                    color = ColorVariant.PRIMARY,
+                    color = ColorVariant.PRIMARY_LEGENDS,
                 ),
                 swipeType = SwipeNWay.FOUR_WAY_DIAGONAL,
                 swipes = mapOf(
@@ -85,7 +85,7 @@ val KB_RU_MESSAGEEASE_MAIN = KeyboardC(
                     display = KeyDisplay.TextDisplay("в"),
                     action = KeyAction.CommitText("в"),
                     size = FontSizeVariant.LARGE,
-                    color = ColorVariant.PRIMARY,
+                    color = ColorVariant.PRIMARY_LEGENDS,
                 ),
                 swipeType = SwipeNWay.FOUR_WAY_CROSS,
                 swipes = mapOf(
@@ -108,7 +108,7 @@ val KB_RU_MESSAGEEASE_MAIN = KeyboardC(
                     display = KeyDisplay.TextDisplay("о"),
                     action = KeyAction.CommitText("о"),
                     size = FontSizeVariant.LARGE,
-                    color = ColorVariant.PRIMARY,
+                    color = ColorVariant.PRIMARY_LEGENDS,
                 ),
                 swipes = mapOf(
                     SwipeDirection.TOP_LEFT to KeyC(
@@ -150,7 +150,7 @@ val KB_RU_MESSAGEEASE_MAIN = KeyboardC(
                     display = KeyDisplay.TextDisplay("а"),
                     action = KeyAction.CommitText("а"),
                     size = FontSizeVariant.LARGE,
-                    color = ColorVariant.PRIMARY,
+                    color = ColorVariant.PRIMARY_LEGENDS,
                 ),
                 swipeType = SwipeNWay.FOUR_WAY_CROSS,
                 swipes = mapOf(
@@ -161,7 +161,7 @@ val KB_RU_MESSAGEEASE_MAIN = KeyboardC(
                     SwipeDirection.TOP to KeyC(
                         display = KeyDisplay.IconDisplay(Icons.Outlined.ArrowDropUp),
                         action = KeyAction.ToggleShiftMode(true),
-                        color = ColorVariant.MUTED,
+                        color = ColorVariant.SECONDARY_SWIPES,
                     ),
                 ),
             ),
@@ -173,7 +173,7 @@ val KB_RU_MESSAGEEASE_MAIN = KeyboardC(
                     display = KeyDisplay.TextDisplay("е"),
                     action = KeyAction.CommitText("е"),
                     size = FontSizeVariant.LARGE,
-                    color = ColorVariant.PRIMARY,
+                    color = ColorVariant.PRIMARY_LEGENDS,
                 ),
                 swipes = mapOf(
                     SwipeDirection.TOP to KeyC(
@@ -195,7 +195,7 @@ val KB_RU_MESSAGEEASE_MAIN = KeyboardC(
                     display = KeyDisplay.TextDisplay("р"),
                     action = KeyAction.CommitText("р"),
                     size = FontSizeVariant.LARGE,
-                    color = ColorVariant.PRIMARY,
+                    color = ColorVariant.PRIMARY_LEGENDS,
                 ),
                 swipes = mapOf(
                     SwipeDirection.TOP to KeyC(
@@ -213,12 +213,12 @@ val KB_RU_MESSAGEEASE_MAIN = KeyboardC(
                     SwipeDirection.BOTTOM to KeyC(
                         display = KeyDisplay.TextDisplay("."),
                         action = KeyAction.CommitText("."),
-                        color = ColorVariant.MUTED,
+                        color = ColorVariant.SECONDARY_SWIPES,
                     ),
                     SwipeDirection.BOTTOM_LEFT to KeyC(
                         display = KeyDisplay.TextDisplay(","),
                         action = KeyAction.CommitText(","),
-                        color = ColorVariant.MUTED,
+                        color = ColorVariant.SECONDARY_SWIPES,
                     ),
                 ),
             ),
@@ -227,7 +227,7 @@ val KB_RU_MESSAGEEASE_MAIN = KeyboardC(
                     display = KeyDisplay.TextDisplay("н"),
                     action = KeyAction.CommitText("н"),
                     size = FontSizeVariant.LARGE,
-                    color = ColorVariant.PRIMARY,
+                    color = ColorVariant.PRIMARY_LEGENDS,
                 ),
                 swipeType = SwipeNWay.FOUR_WAY_DIAGONAL,
                 swipes = mapOf(
@@ -254,7 +254,7 @@ val KB_RU_MESSAGEEASE_SHIFTED = KeyboardC(
                     display = KeyDisplay.TextDisplay("С"),
                     action = KeyAction.CommitText("С"),
                     size = FontSizeVariant.LARGE,
-                    color = ColorVariant.PRIMARY,
+                    color = ColorVariant.PRIMARY_LEGENDS,
                 ),
                 swipes = mapOf(
                     SwipeDirection.BOTTOM_RIGHT to KeyC(
@@ -272,7 +272,7 @@ val KB_RU_MESSAGEEASE_SHIFTED = KeyboardC(
                     display = KeyDisplay.TextDisplay("И"),
                     action = KeyAction.CommitText("И"),
                     size = FontSizeVariant.LARGE,
-                    color = ColorVariant.PRIMARY,
+                    color = ColorVariant.PRIMARY_LEGENDS,
                 ),
                 swipeType = SwipeNWay.TWO_WAY_VERTICAL,
                 swipes = mapOf(
@@ -291,7 +291,7 @@ val KB_RU_MESSAGEEASE_SHIFTED = KeyboardC(
                     display = KeyDisplay.TextDisplay("Т"),
                     action = KeyAction.CommitText("Т"),
                     size = FontSizeVariant.LARGE,
-                    color = ColorVariant.PRIMARY,
+                    color = ColorVariant.PRIMARY_LEGENDS,
                 ),
                 swipeType = SwipeNWay.FOUR_WAY_DIAGONAL,
                 swipes = mapOf(
@@ -309,7 +309,7 @@ val KB_RU_MESSAGEEASE_SHIFTED = KeyboardC(
                     display = KeyDisplay.TextDisplay("В"),
                     action = KeyAction.CommitText("В"),
                     size = FontSizeVariant.LARGE,
-                    color = ColorVariant.PRIMARY,
+                    color = ColorVariant.PRIMARY_LEGENDS,
                 ),
                 swipeType = SwipeNWay.FOUR_WAY_CROSS,
                 swipes = mapOf(
@@ -332,7 +332,7 @@ val KB_RU_MESSAGEEASE_SHIFTED = KeyboardC(
                     display = KeyDisplay.TextDisplay("О"),
                     action = KeyAction.CommitText("О"),
                     size = FontSizeVariant.LARGE,
-                    color = ColorVariant.PRIMARY,
+                    color = ColorVariant.PRIMARY_LEGENDS,
                 ),
                 swipes = mapOf(
                     SwipeDirection.TOP_LEFT to KeyC(
@@ -374,7 +374,7 @@ val KB_RU_MESSAGEEASE_SHIFTED = KeyboardC(
                     display = KeyDisplay.TextDisplay("А"),
                     action = KeyAction.CommitText("А"),
                     size = FontSizeVariant.LARGE,
-                    color = ColorVariant.PRIMARY,
+                    color = ColorVariant.PRIMARY_LEGENDS,
                 ),
                 swipeType = SwipeNWay.FOUR_WAY_CROSS,
                 swipes = mapOf(
@@ -385,13 +385,13 @@ val KB_RU_MESSAGEEASE_SHIFTED = KeyboardC(
                     SwipeDirection.BOTTOM to KeyC(
                         display = KeyDisplay.IconDisplay(Icons.Outlined.ArrowDropDown),
                         action = KeyAction.ToggleShiftMode(false),
-                        color = ColorVariant.MUTED,
+                        color = ColorVariant.SECONDARY_SWIPES,
                     ),
                     SwipeDirection.TOP to KeyC(
                         display = KeyDisplay.IconDisplay(Icons.Outlined.KeyboardCapslock),
                         capsModeDisplay = KeyDisplay.IconDisplay(Icons.Outlined.Copyright),
                         action = KeyAction.ToggleCapsLock,
-                        color = ColorVariant.MUTED,
+                        color = ColorVariant.SECONDARY_SWIPES,
                     ),
                 ),
             ),
@@ -403,7 +403,7 @@ val KB_RU_MESSAGEEASE_SHIFTED = KeyboardC(
                     display = KeyDisplay.TextDisplay("Е"),
                     action = KeyAction.CommitText("Е"),
                     size = FontSizeVariant.LARGE,
-                    color = ColorVariant.PRIMARY,
+                    color = ColorVariant.PRIMARY_LEGENDS,
                 ),
                 swipes = mapOf(
                     SwipeDirection.TOP to KeyC(
@@ -425,7 +425,7 @@ val KB_RU_MESSAGEEASE_SHIFTED = KeyboardC(
                     display = KeyDisplay.TextDisplay("Р"),
                     action = KeyAction.CommitText("Р"),
                     size = FontSizeVariant.LARGE,
-                    color = ColorVariant.PRIMARY,
+                    color = ColorVariant.PRIMARY_LEGENDS,
                 ),
                 swipes = mapOf(
                     SwipeDirection.TOP to KeyC(
@@ -443,12 +443,12 @@ val KB_RU_MESSAGEEASE_SHIFTED = KeyboardC(
                     SwipeDirection.BOTTOM to KeyC(
                         display = KeyDisplay.TextDisplay("."),
                         action = KeyAction.CommitText("."),
-                        color = ColorVariant.MUTED,
+                        color = ColorVariant.SECONDARY_SWIPES,
                     ),
                     SwipeDirection.BOTTOM_LEFT to KeyC(
                         display = KeyDisplay.TextDisplay(","),
                         action = KeyAction.CommitText(","),
-                        color = ColorVariant.MUTED,
+                        color = ColorVariant.SECONDARY_SWIPES,
                     ),
                 ),
             ),
@@ -457,7 +457,7 @@ val KB_RU_MESSAGEEASE_SHIFTED = KeyboardC(
                     display = KeyDisplay.TextDisplay("Н"),
                     action = KeyAction.CommitText("Н"),
                     size = FontSizeVariant.LARGE,
-                    color = ColorVariant.PRIMARY,
+                    color = ColorVariant.PRIMARY_LEGENDS,
                 ),
                 swipeType = SwipeNWay.FOUR_WAY_DIAGONAL,
                 swipes = mapOf(

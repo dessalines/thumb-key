@@ -20,7 +20,7 @@ val KB_JA_THUMBKEY_HIRAGANA_MAIN = KeyboardC(
                     display = KeyDisplay.TextDisplay("ま"),
                     action = KeyAction.CommitText("ま"),
                     size = FontSizeVariant.LARGE,
-                    color = ColorVariant.PRIMARY,
+                    color = ColorVariant.PRIMARY_LEGENDS,
                 ),
                 swipeType = SwipeNWay.FOUR_WAY_CROSS,
                 swipes = mapOf(
@@ -47,7 +47,7 @@ val KB_JA_THUMBKEY_HIRAGANA_MAIN = KeyboardC(
                     display = KeyDisplay.TextDisplay("は"),
                     action = KeyAction.CommitText("は"),
                     size = FontSizeVariant.LARGE,
-                    color = ColorVariant.PRIMARY,
+                    color = ColorVariant.PRIMARY_LEGENDS,
                 ),
                 swipeType = SwipeNWay.FOUR_WAY_CROSS,
                 swipes = mapOf(
@@ -74,7 +74,7 @@ val KB_JA_THUMBKEY_HIRAGANA_MAIN = KeyboardC(
                     display = KeyDisplay.TextDisplay("さ"),
                     action = KeyAction.CommitText("さ"),
                     size = FontSizeVariant.LARGE,
-                    color = ColorVariant.PRIMARY,
+                    color = ColorVariant.PRIMARY_LEGENDS,
                 ),
                 swipeType = SwipeNWay.FOUR_WAY_CROSS,
                 swipes = mapOf(
@@ -104,7 +104,7 @@ val KB_JA_THUMBKEY_HIRAGANA_MAIN = KeyboardC(
                     display = KeyDisplay.TextDisplay("や"),
                     action = KeyAction.CommitText("や"),
                     size = FontSizeVariant.LARGE,
-                    color = ColorVariant.PRIMARY,
+                    color = ColorVariant.PRIMARY_LEGENDS,
                 ),
                 swipeType = SwipeNWay.FOUR_WAY_CROSS,
                 swipes = mapOf(
@@ -123,7 +123,7 @@ val KB_JA_THUMBKEY_HIRAGANA_MAIN = KeyboardC(
                     display = KeyDisplay.TextDisplay("な"),
                     action = KeyAction.CommitText("な"),
                     size = FontSizeVariant.LARGE,
-                    color = ColorVariant.PRIMARY,
+                    color = ColorVariant.PRIMARY_LEGENDS,
                 ),
                 swipeType = SwipeNWay.FOUR_WAY_CROSS,
                 swipes = mapOf(
@@ -150,7 +150,7 @@ val KB_JA_THUMBKEY_HIRAGANA_MAIN = KeyboardC(
                     display = KeyDisplay.TextDisplay("か"),
                     action = KeyAction.CommitText("か"),
                     size = FontSizeVariant.LARGE,
-                    color = ColorVariant.PRIMARY,
+                    color = ColorVariant.PRIMARY_LEGENDS,
                 ),
                 swipeType = SwipeNWay.FOUR_WAY_CROSS,
                 swipes = mapOf(
@@ -180,7 +180,7 @@ val KB_JA_THUMBKEY_HIRAGANA_MAIN = KeyboardC(
                     display = KeyDisplay.TextDisplay("ら"),
                     action = KeyAction.CommitText("ら"),
                     size = FontSizeVariant.LARGE,
-                    color = ColorVariant.PRIMARY,
+                    color = ColorVariant.PRIMARY_LEGENDS,
                 ),
                 swipeType = SwipeNWay.FOUR_WAY_CROSS,
                 swipes = mapOf(
@@ -207,7 +207,7 @@ val KB_JA_THUMBKEY_HIRAGANA_MAIN = KeyboardC(
                     display = KeyDisplay.TextDisplay("た"),
                     action = KeyAction.CommitText("た"),
                     size = FontSizeVariant.LARGE,
-                    color = ColorVariant.PRIMARY,
+                    color = ColorVariant.PRIMARY_LEGENDS,
                 ),
                 swipeType = SwipeNWay.FOUR_WAY_CROSS,
                 swipes = mapOf(
@@ -234,7 +234,7 @@ val KB_JA_THUMBKEY_HIRAGANA_MAIN = KeyboardC(
                     display = KeyDisplay.TextDisplay("あ"),
                     action = KeyAction.CommitText("あ"),
                     size = FontSizeVariant.LARGE,
-                    color = ColorVariant.PRIMARY,
+                    color = ColorVariant.PRIMARY_LEGENDS,
                 ),
                 swipeType = SwipeNWay.FOUR_WAY_CROSS,
                 swipes = mapOf(
@@ -264,7 +264,7 @@ val KB_JA_THUMBKEY_HIRAGANA_MAIN = KeyboardC(
                     display = KeyDisplay.TextDisplay("わ"),
                     action = KeyAction.CommitText("わ"),
                     size = FontSizeVariant.LARGE,
-                    color = ColorVariant.PRIMARY,
+                    color = ColorVariant.PRIMARY_LEGENDS,
                 ),
                 swipeType = SwipeNWay.FOUR_WAY_CROSS,
                 swipes = mapOf(
@@ -283,7 +283,7 @@ val KB_JA_THUMBKEY_HIRAGANA_MAIN = KeyboardC(
                     display = KeyDisplay.TextDisplay("゛"),
                     action = KeyAction.ToggleShiftMode(true),
                     size = FontSizeVariant.LARGE,
-                    color = ColorVariant.PRIMARY,
+                    color = ColorVariant.PRIMARY_LEGENDS,
                 ),
             ),
             KeyItemC(
@@ -291,7 +291,7 @@ val KB_JA_THUMBKEY_HIRAGANA_MAIN = KeyboardC(
                     display = KeyDisplay.TextDisplay(" "),
                     action = KeyAction.CommitText(" "),
                 ),
-                backgroundColor = ColorVariant.SURFACE_VARIANT,
+                backgroundColor = ColorVariant.SECONDARY_KEY,
             ),
             RETURN_KEY_ITEM,
         ),
@@ -306,7 +306,7 @@ val KB_JA_THUMBKEY_HIRAGANA_SHIFTED = KeyboardC(
                     display = KeyDisplay.TextDisplay("ゔ"),
                     action = KeyAction.CommitText("ゔ"),
                     size = FontSizeVariant.LARGE,
-                    color = ColorVariant.PRIMARY,
+                    color = ColorVariant.PRIMARY_LEGENDS,
                 ),
             ),
             KeyItemC(
@@ -314,7 +314,7 @@ val KB_JA_THUMBKEY_HIRAGANA_SHIFTED = KeyboardC(
                     display = KeyDisplay.TextDisplay("ば"),
                     action = KeyAction.CommitText("ば"),
                     size = FontSizeVariant.LARGE,
-                    color = ColorVariant.PRIMARY,
+                    color = ColorVariant.PRIMARY_LEGENDS,
                 ),
                 swipeType = SwipeNWay.FOUR_WAY_CROSS,
                 swipes = mapOf(
@@ -341,7 +341,7 @@ val KB_JA_THUMBKEY_HIRAGANA_SHIFTED = KeyboardC(
                     display = KeyDisplay.TextDisplay("ざ"),
                     action = KeyAction.CommitText("ざ"),
                     size = FontSizeVariant.LARGE,
-                    color = ColorVariant.PRIMARY,
+                    color = ColorVariant.PRIMARY_LEGENDS,
                 ),
                 swipeType = SwipeNWay.FOUR_WAY_CROSS,
                 swipes = mapOf(
@@ -371,7 +371,7 @@ val KB_JA_THUMBKEY_HIRAGANA_SHIFTED = KeyboardC(
                     display = KeyDisplay.TextDisplay("ゃ"),
                     action = KeyAction.CommitText("ゃ"),
                     size = FontSizeVariant.LARGE,
-                    color = ColorVariant.PRIMARY,
+                    color = ColorVariant.PRIMARY_LEGENDS,
                 ),
                 swipeType = SwipeNWay.FOUR_WAY_CROSS,
                 swipes = mapOf(
@@ -390,7 +390,7 @@ val KB_JA_THUMBKEY_HIRAGANA_SHIFTED = KeyboardC(
                     display = KeyDisplay.TextDisplay("ぱ"),
                     action = KeyAction.CommitText("ぱ"),
                     size = FontSizeVariant.LARGE,
-                    color = ColorVariant.PRIMARY,
+                    color = ColorVariant.PRIMARY_LEGENDS,
                 ),
                 swipeType = SwipeNWay.FOUR_WAY_CROSS,
                 swipes = mapOf(
@@ -417,7 +417,7 @@ val KB_JA_THUMBKEY_HIRAGANA_SHIFTED = KeyboardC(
                     display = KeyDisplay.TextDisplay("が"),
                     action = KeyAction.CommitText("が"),
                     size = FontSizeVariant.LARGE,
-                    color = ColorVariant.PRIMARY,
+                    color = ColorVariant.PRIMARY_LEGENDS,
                 ),
                 swipeType = SwipeNWay.FOUR_WAY_CROSS,
                 swipes = mapOf(
@@ -447,7 +447,7 @@ val KB_JA_THUMBKEY_HIRAGANA_SHIFTED = KeyboardC(
                     display = KeyDisplay.TextDisplay("っ"),
                     action = KeyAction.CommitText("っ"),
                     size = FontSizeVariant.LARGE,
-                    color = ColorVariant.PRIMARY,
+                    color = ColorVariant.PRIMARY_LEGENDS,
                 ),
             ),
             KeyItemC(
@@ -455,7 +455,7 @@ val KB_JA_THUMBKEY_HIRAGANA_SHIFTED = KeyboardC(
                     display = KeyDisplay.TextDisplay("だ"),
                     action = KeyAction.CommitText("だ"),
                     size = FontSizeVariant.LARGE,
-                    color = ColorVariant.PRIMARY,
+                    color = ColorVariant.PRIMARY_LEGENDS,
                 ),
                 swipeType = SwipeNWay.FOUR_WAY_CROSS,
                 swipes = mapOf(
@@ -482,7 +482,7 @@ val KB_JA_THUMBKEY_HIRAGANA_SHIFTED = KeyboardC(
                     display = KeyDisplay.TextDisplay("ぁ"),
                     action = KeyAction.CommitText("ぁ"),
                     size = FontSizeVariant.LARGE,
-                    color = ColorVariant.PRIMARY,
+                    color = ColorVariant.PRIMARY_LEGENDS,
                 ),
                 swipeType = SwipeNWay.FOUR_WAY_CROSS,
                 swipes = mapOf(
@@ -512,7 +512,7 @@ val KB_JA_THUMBKEY_HIRAGANA_SHIFTED = KeyboardC(
                     display = KeyDisplay.TextDisplay("ー"),
                     action = KeyAction.CommitText("ー"),
                     size = FontSizeVariant.LARGE,
-                    color = ColorVariant.PRIMARY,
+                    color = ColorVariant.PRIMARY_LEGENDS,
                 ),
                 swipeType = SwipeNWay.FOUR_WAY_CROSS,
                 swipes = mapOf(
@@ -531,7 +531,7 @@ val KB_JA_THUMBKEY_HIRAGANA_SHIFTED = KeyboardC(
                     display = KeyDisplay.TextDisplay("゛"),
                     action = KeyAction.ToggleShiftMode(false),
                     size = FontSizeVariant.LARGE,
-                    color = ColorVariant.PRIMARY,
+                    color = ColorVariant.PRIMARY_LEGENDS,
                 ),
             ),
             KeyItemC(
@@ -539,7 +539,7 @@ val KB_JA_THUMBKEY_HIRAGANA_SHIFTED = KeyboardC(
                     display = KeyDisplay.TextDisplay(" "),
                     action = KeyAction.CommitText(" "),
                 ),
-                backgroundColor = ColorVariant.SURFACE_VARIANT,
+                backgroundColor = ColorVariant.SECONDARY_KEY,
             ),
             RETURN_KEY_ITEM,
         ),
