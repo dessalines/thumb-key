@@ -158,7 +158,7 @@ fun SettingsActivity(
                 }
                 SettingsListMultiSelect(
                     state = layoutsState,
-                    items = KeyboardLayout.entries.sortedBy { it.title }.map { it.title },
+                    items = KeyboardLayout.entries.sortedBy { it.keyboardDefinition.title }.map { it.keyboardDefinition.title },
                     icon = {
                         Icon(
                             imageVector = Icons.Outlined.KeyboardAlt,

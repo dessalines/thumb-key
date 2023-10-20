@@ -18,6 +18,6 @@ subprojects {
   apply plugin: "org.jmailen.kotlinter" // Version should be inherited from parent
 }
 
-task clean(type: Delete) {
+tasks.register('clean', Delete) {
     delete rootProject.buildDir
 }

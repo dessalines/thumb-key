@@ -50,6 +50,7 @@ import kotlin.math.sqrt
 const val TAG = "com.thumbkey"
 
 const val THUMBKEY_IME_NAME = "com.dessalines.thumbkey/.IMEService"
+const val IME_ACTION_CUSTOM_LABEL = EditorInfo.IME_MASK_ACTION + 1
 
 fun accelCurve(offset: Float, threshold: Float, exp: Float): Float {
     var x = abs(offset)
@@ -272,6 +273,7 @@ fun performKeyAction(
     action: KeyAction,
     ime: IMEService,
     autoCapitalize: Boolean,
+    keyboardSettings: KeyboardDefinitionSettings,
     onToggleShiftMode: (enable: Boolean) -> Unit,
     onToggleNumericMode: (enable: Boolean) -> Unit,
     onToggleEmojiMode: (enable: Boolean) -> Unit,
@@ -293,6 +295,7 @@ fun performKeyAction(
                 autoCapitalize(
                     ime = ime,
                     onAutoCapitalize = onAutoCapitalize,
+                    autocapitalizers = keyboardSettings.autoCapitalizers,
                 )
             } else { // To return to MAIN mode after a shifted key action.
                 onAutoCapitalize(false)
@@ -328,10 +331,200 @@ fun performKeyAction(
                 autoCapitalize(
                     ime = ime,
                     onAutoCapitalize = onAutoCapitalize,
+                    autocapitalizers = keyboardSettings.autoCapitalizers,
                 )
             }
         }
 
+        is KeyAction.ComposeLastKey -> {
+            Log.d(TAG, "composing last key")
+            val text = action.text
+            val textBefore = ime.currentInputConnection.getTextBeforeCursor(1, 0)
+
+            val textNew = when (text) {
+                "\"" -> when (textBefore) {
+                    "a" -> "ä"
+                    "A" -> "Ä"
+                    "e" -> "ë"
+                    "E" -> "Ë"
+                    "h" -> "ḧ"
+                    "H" -> "Ḧ"
+                    "i" -> "ï"
+                    "I" -> "Ï"
+                    "o" -> "ö"
+                    "O" -> "Ö"
+                    "t" -> "ẗ"
+                    "u" -> "ü"
+                    "U" -> "Ü"
+                    "w" -> "ẅ"
+                    "W" -> "Ẅ"
+                    "x" -> "ẍ"
+                    "X" -> "Ẍ"
+                    "y" -> "ÿ"
+                    "Y" -> "Ÿ"
+                    " " -> "\""
+                    else -> textBefore
+                }
+                "'" -> when (textBefore) {
+                    "a" -> "á"
+                    "A" -> "Á"
+                    "c" -> "ć"
+                    "C" -> "Ć"
+                    "e" -> "é"
+                    "E" -> "É"
+                    "g" -> "ǵ"
+                    "G" -> "Ǵ"
+                    "i" -> "í"
+                    "I" -> "Í"
+                    "j" -> "j́"
+                    "J" -> "J́"
+                    "k" -> "ḱ"
+                    "K" -> "Ḱ"
+                    "l" -> "ĺ"
+                    "L" -> "Ĺ"
+                    "m" -> "ḿ"
+                    "M" -> "Ḿ"
+                    "n" -> "ń"
+                    "N" -> "Ń"
+                    "o" -> "ó"
+                    "O" -> "Ó"
+                    "p" -> "ṕ"
+                    "P" -> "Ṕ"
+                    "r" -> "ŕ"
+                    "R" -> "Ŕ"
+                    "s" -> "ś"
+                    "S" -> "Ś"
+                    "u" -> "ú"
+                    "U" -> "Ú"
+                    "w" -> "ẃ"
+                    "W" -> "Ẃ"
+                    "y" -> "ý"
+                    "Y" -> "Ý"
+                    "z" -> "ź"
+                    "Z" -> "Ź"
+                    " " -> "'"
+                    else -> textBefore
+                }
+                "`" -> when (textBefore) {
+                    "a" -> "à"
+                    "A" -> "À"
+                    "e" -> "è"
+                    "E" -> "È"
+                    "i" -> "ì"
+                    "I" -> "Ì"
+                    "n" -> "ǹ"
+                    "N" -> "Ǹ"
+                    "o" -> "ò"
+                    "O" -> "Ò"
+                    "u" -> "ù"
+                    "U" -> "Ù"
+                    "ü" -> "ǜ"
+                    "Ü" -> "Ǜ"
+                    "w" -> "ẁ"
+                    "W" -> "Ẁ"
+                    "y" -> "ỳ"
+                    "Y" -> "Ỳ"
+                    " " -> "`"
+                    else -> textBefore
+                }
+                "^" -> when (textBefore) {
+                    "a" -> "â"
+                    "A" -> "Â"
+                    "c" -> "ĉ"
+                    "C" -> "Ĉ"
+                    "e" -> "ê"
+                    "E" -> "Ê"
+                    "g" -> "ĝ"
+                    "G" -> "Ĝ"
+                    "h" -> "ĥ"
+                    "H" -> "Ĥ"
+                    "i" -> "î"
+                    "I" -> "Î"
+                    "j" -> "ĵ"
+                    "J" -> "Ĵ"
+                    "o" -> "ô"
+                    "O" -> "Ô"
+                    "s" -> "ŝ"
+                    "S" -> "Ŝ"
+                    "u" -> "û"
+                    "U" -> "Û"
+                    "w" -> "ŵ"
+                    "W" -> "Ŵ"
+                    "y" -> "ŷ"
+                    "Y" -> "Ŷ"
+                    "z" -> "ẑ"
+                    "Z" -> "Ẑ"
+                    " " -> "^"
+                    else -> textBefore
+                }
+                "~" -> when (textBefore) {
+                    "a" -> "ã"
+                    "A" -> "Ã"
+                    "c" -> "ç"
+                    "C" -> "Ç"
+                    "e" -> "ẽ"
+                    "E" -> "Ẽ"
+                    "i" -> "ĩ"
+                    "I" -> "Ĩ"
+                    "n" -> "ñ"
+                    "N" -> "Ñ"
+                    "o" -> "õ"
+                    "O" -> "Õ"
+                    "u" -> "ũ"
+                    "U" -> "Ũ"
+                    "v" -> "ṽ"
+                    "V" -> "Ṽ"
+                    "y" -> "ỹ"
+                    "Y" -> "Ỹ"
+                    " " -> "~"
+                    else -> textBefore
+                }
+                "°" -> when (textBefore) {
+                    "a" -> "å"
+                    "A" -> "Å"
+                    "o" -> "ø"
+                    "O" -> "Ø"
+                    "u" -> "ů"
+                    "U" -> "Ů"
+                    " " -> "°"
+                    else -> textBefore
+                }
+                "!" -> when (textBefore) {
+                    "a" -> "æ"
+                    "A" -> "Æ"
+                    "c" -> "ç"
+                    "C" -> "Ç"
+                    "e" -> "æ"
+                    "E" -> "Æ"
+                    "s" -> "ß"
+                    "S" -> "ẞ"
+                    "!" -> "¡"
+                    "?" -> "¿"
+                    " " -> "!"
+                    else -> textBefore
+                }
+                "\$" -> when (textBefore) {
+                    "e" -> "€"
+                    "E" -> "€"
+                    "f" -> "₣"
+                    "F" -> "₣"
+                    "l" -> "£"
+                    "L" -> "£"
+                    "y" -> "¥"
+                    "Y" -> "¥"
+                    "w" -> "₩"
+                    "W" -> "₩"
+                    " " -> "\$"
+                    else -> textBefore
+                }
+                else -> throw IllegalStateException("Invalid key modifier")
+            }
+
+            if (textNew != textBefore) {
+                ime.currentInputConnection.deleteSurroundingText(1, 0)
+                ime.currentInputConnection.commitText(textNew, 1)
+            }
+        }
         is KeyAction.ToggleShiftMode -> {
             val enable = action.enable
             Log.d(TAG, "Toggling Shifted: $enable")
@@ -358,23 +551,23 @@ fun performKeyAction(
         }
 
         KeyAction.IMECompleteAction -> {
-            val imeAction = getImeActionCode(ime)
-            if (listOf(
-                    EditorInfo.IME_ACTION_DONE,
-                    EditorInfo.IME_ACTION_GO,
-                    EditorInfo.IME_ACTION_NEXT,
-                    EditorInfo.IME_ACTION_SEARCH,
-                    EditorInfo.IME_ACTION_SEND,
-                ).contains(imeAction)
-            ) {
-                ime.currentInputConnection.performEditorAction(imeAction)
-            } else {
-                ime.currentInputConnection.sendKeyEvent(
-                    KeyEvent(
-                        KeyEvent.ACTION_DOWN,
-                        KeyEvent.KEYCODE_ENTER,
-                    ),
-                )
+            // A lot of apps like discord and slack use weird IME actions,
+            // so its best to only check the none case
+            when (val imeAction = getImeActionCode(ime)) {
+                IME_ACTION_CUSTOM_LABEL -> {
+                    ime.currentInputConnection.performEditorAction(ime.currentInputEditorInfo.actionId)
+                }
+                EditorInfo.IME_ACTION_NONE -> {
+                    ime.currentInputConnection.sendKeyEvent(
+                        KeyEvent(
+                            KeyEvent.ACTION_DOWN,
+                            KeyEvent.KEYCODE_ENTER,
+                        ),
+                    )
+                }
+                else -> {
+                    ime.currentInputConnection.performEditorAction(imeAction)
+                }
             }
         }
 
@@ -455,14 +648,20 @@ fun performKeyAction(
     }
 }
 
+/**
+ * Returns the current IME action, or IME_FLAG_NO_ENTER_ACTION if there is none.
+ */
 fun getImeActionCode(ime: IMEService): Int {
-    return (
-        ime.currentInputEditorInfo.imeOptions and (
-            EditorInfo
-                .IME_MASK_ACTION or
-                EditorInfo.IME_FLAG_NO_ENTER_ACTION
-            )
-        )
+    val ei = ime.currentInputEditorInfo
+
+    return if ((ei.imeOptions and EditorInfo.IME_FLAG_NO_ENTER_ACTION) != 0) {
+        EditorInfo.IME_ACTION_NONE
+    } else if (ei.actionLabel != null) {
+        IME_ACTION_CUSTOM_LABEL
+    } else {
+        // Note: this is different from editorInfo.actionId, hence "ImeOptionsActionId"
+        ei.imeOptions and EditorInfo.IME_MASK_ACTION
+    }
 }
 
 /**
@@ -489,29 +688,17 @@ fun getKeyboardMode(ime: IMEService, autoCapitalize: Boolean): KeyboardMode {
 private fun autoCapitalize(
     ime: IMEService,
     onAutoCapitalize: (enable: Boolean) -> Unit,
+    autocapitalizers: AutoCapitalizers,
 ) {
-    autoCapitalizeI(ime)
+    // Run language specific autocapitalizers
+    autocapitalizers.forEach { fn ->
+        fn(ime)
+    }
 
     if (autoCapitalizeCheck(ime)) {
         onAutoCapitalize(true)
     } else {
         onAutoCapitalize(false)
-    }
-}
-
-fun autoCapitalizeI(
-    ime: IMEService,
-) {
-    // Capitalizes 'i'
-    val textBefore = ime.currentInputConnection.getTextBeforeCursor(3, 0)
-    if (!textBefore.isNullOrEmpty()) {
-        if (textBefore == " i ") {
-            ime.currentInputConnection.deleteSurroundingText(2, 0)
-            ime.currentInputConnection.commitText(
-                "I ",
-                1,
-            )
-        }
     }
 }
 
@@ -630,12 +817,12 @@ fun keyboardLayoutsSetFromTitleIndex(layouts: String?): Set<Int> {
 }
 
 fun keyboardRealIndexFromTitleIndex(index: Int): Int {
-    return KeyboardLayout.entries.sortedBy { it.title }[index].index
+    return KeyboardLayout.entries.sortedBy { it.keyboardDefinition.title }[index].index
 }
 
 fun keyboardTitleIndexFromRealIndex(index: Int): Int {
-    val keyboard = KeyboardLayout.entries.find { it.index == index } ?: KeyboardLayout.ThumbKeyENv4
-    return KeyboardLayout.entries.sortedBy { it.title }.indexOf(keyboard)
+    val keyboard = KeyboardLayout.entries.find { it.index == index } ?: KeyboardLayout.ENThumbKey
+    return KeyboardLayout.entries.sortedBy { it.keyboardDefinition.title }.indexOf(keyboard)
 }
 
 fun Context.getPackageInfo(): PackageInfo {

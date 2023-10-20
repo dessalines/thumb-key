@@ -341,17 +341,17 @@ class AppSettingsRepository(private val appSettingsDao: AppSettingsDao) {
     }
 
     @WorkerThread
-    suspend fun updateLayouts(layouts: LayoutsUpdate) {
+    fun updateLayouts(layouts: LayoutsUpdate) {
         appSettingsDao.updateLayouts(layouts)
     }
 
     @WorkerThread
-    suspend fun updateLookAndFeel(lookAndFeel: LookAndFeelUpdate) {
+    fun updateLookAndFeel(lookAndFeel: LookAndFeelUpdate) {
         appSettingsDao.updateLookAndFeel(lookAndFeel)
     }
 
     @WorkerThread
-    suspend fun updateBehavior(behavior: BehaviorUpdate) {
+    fun updateBehavior(behavior: BehaviorUpdate) {
         appSettingsDao.updateBehavior(behavior)
     }
 

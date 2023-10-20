@@ -6,6 +6,35 @@ import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.res.stringResource
 import com.dessalines.thumbkey.R
 
+data class KeyboardDefinitionModes(
+    val main: KeyboardC,
+    val shifted: KeyboardC,
+    val numeric: KeyboardC,
+)
+
+data class KeyboardDefinitionSettings(
+    val autoCapitalizers: AutoCapitalizers = arrayOf(),
+) {
+    override fun equals(other: Any?): Boolean {
+        if (this === other) return true
+        if (javaClass != other?.javaClass) return false
+
+        other as KeyboardDefinitionSettings
+
+        return autoCapitalizers.contentEquals(other.autoCapitalizers)
+    }
+
+    override fun hashCode(): Int {
+        return autoCapitalizers.contentHashCode()
+    }
+}
+
+data class KeyboardDefinition(
+    val title: String,
+    val modes: KeyboardDefinitionModes,
+    val settings: KeyboardDefinitionSettings = KeyboardDefinitionSettings(),
+)
+
 // Almost a 4x4 grid, but the bottom is mostly spacebar
 data class KeyboardC(
     val arr: List<List<KeyItemC>>,
@@ -41,6 +70,7 @@ sealed class KeyAction {
     class ToggleShiftMode(val enable: Boolean) : KeyAction()
     class ToggleNumericMode(val enable: Boolean) : KeyAction()
     class ToggleEmojiMode(val enable: Boolean) : KeyAction()
+    class ComposeLastKey(val text: String) : KeyAction()
     data object DeleteWordBeforeCursor : KeyAction()
     data object DeleteWordAfterCursor : KeyAction()
     data object GotoSettings : KeyAction()
@@ -61,8 +91,8 @@ sealed class KeyAction {
 enum class CursorAccelerationMode(private val stringId: Int) {
     LINEAR(R.string.slide_cursor_acceleration_linear),
     QUADRATIC(R.string.slide_cursor_acceleration_quadratic),
-    CONSTANT(R.string.slide_cursor_acceleration_constant),
     THRESHOLD(R.string.slide_cursor_acceleration_threshold_acceleration),
+    CONSTANT(R.string.slide_cursor_acceleration_constant),
     ;
 
     @Composable
@@ -109,6 +139,7 @@ enum class ThemeColor(private val stringId: Int) {
     Twilight(R.string.twilight),
     HighContrast(R.string.high_contrast),
     HighContrastColorful(R.string.high_contrast_colorful),
+    Ancom(R.string.ancom),
     ;
 
     @Composable

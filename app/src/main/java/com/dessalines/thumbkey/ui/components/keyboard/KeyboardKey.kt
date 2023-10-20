@@ -52,6 +52,7 @@ import com.dessalines.thumbkey.utils.KeyAction
 import com.dessalines.thumbkey.utils.KeyC
 import com.dessalines.thumbkey.utils.KeyDisplay
 import com.dessalines.thumbkey.utils.KeyItemC
+import com.dessalines.thumbkey.utils.KeyboardDefinitionSettings
 import com.dessalines.thumbkey.utils.Selection
 import com.dessalines.thumbkey.utils.SlideType
 import com.dessalines.thumbkey.utils.SwipeDirection
@@ -74,6 +75,7 @@ fun KeyboardKey(
     animationHelperSpeed: Int,
     animationSpeed: Int,
     autoCapitalize: Boolean,
+    keyboardSettings: KeyboardDefinitionSettings,
     spacebarMultiTaps: Boolean,
     vibrateOnTap: Boolean,
     soundOnTap: Boolean,
@@ -82,8 +84,8 @@ fun KeyboardKey(
     capsLock: Boolean,
     legendSize: Int,
     keyPadding: Int,
-    keyBorderWidth: Int,
-    keyRadius: Int,
+    keyBorderWidth: Float,
+    keyRadius: Float,
     minSwipeLength: Int,
     slideSensitivity: Int,
     slideEnabled: Boolean,
@@ -131,11 +133,9 @@ fun KeyboardKey(
         MaterialTheme.colorScheme.inversePrimary
     }
 
-    val borderWidth = keyBorderWidth / 10.0
     val keyBorderColour = MaterialTheme.colorScheme.outline
-    val keySize = legendSize + (keyPadding * 2.0) + (borderWidth * 2.0)
-    val cornerRadius = (keyRadius / 100.0) * (keySize / 2.0)
-    val legendPadding = 4.dp + borderWidth.dp
+    val keySize = legendSize + (keyPadding * 2.0) + (keyBorderWidth * 2.0)
+    val legendPadding = 4.dp + keyBorderWidth.dp
 
     val haptic = LocalHapticFeedback.current
     val audioManager = ctx.getSystemService(Context.AUDIO_SERVICE) as AudioManager
@@ -156,13 +156,13 @@ fun KeyboardKey(
             .height(keySize.dp)
             .width(keySize.dp * key.widthMultiplier)
             .padding(keyPadding.dp)
-            .clip(RoundedCornerShape(cornerRadius.dp))
+            .clip(RoundedCornerShape(keyRadius.dp))
             .then(
-                if (borderWidth > 0.0) {
+                if (keyBorderWidth > 0.0) {
                     Modifier.border(
-                        borderWidth.dp,
+                        keyBorderWidth.dp,
                         keyBorderColour,
-                        shape = RoundedCornerShape(cornerRadius.dp),
+                        shape = RoundedCornerShape(keyRadius.dp),
                     )
                 } else {
                     (Modifier)
@@ -189,6 +189,7 @@ fun KeyboardKey(
                     action = action,
                     ime = ime,
                     autoCapitalize = autoCapitalize,
+                    keyboardSettings = keyboardSettings,
                     onToggleShiftMode = onToggleShiftMode,
                     onToggleNumericMode = onToggleNumericMode,
                     onToggleEmojiMode = onToggleEmojiMode,
@@ -364,6 +365,7 @@ fun KeyboardKey(
                                 action = action,
                                 ime = ime,
                                 autoCapitalize = autoCapitalize,
+                                keyboardSettings = keyboardSettings,
                                 onToggleShiftMode = onToggleShiftMode,
                                 onToggleNumericMode = onToggleNumericMode,
                                 onToggleEmojiMode = onToggleEmojiMode,
@@ -395,6 +397,7 @@ fun KeyboardKey(
                                         action = action,
                                         ime = ime,
                                         autoCapitalize = autoCapitalize,
+                                        keyboardSettings = keyboardSettings,
                                         onToggleShiftMode = onToggleShiftMode,
                                         onToggleNumericMode = onToggleNumericMode,
                                         onToggleCapsLock = onToggleCapsLock,
@@ -446,10 +449,10 @@ fun KeyboardKey(
     // a 3x3 grid
     // Use box so they can overlap
     // Some magic padding numbers so that large radii don't obscure the legends
-    val radiusPercent = keyRadius.toFloat() / 100.toFloat()
-    val yPadding = 0.dp + borderWidth.dp
-    val diagonalXPadding = lerp(legendPadding, 11.dp + borderWidth.dp, radiusPercent)
-    val diagonalYPadding = lerp(yPadding, 6.dp + borderWidth.dp, radiusPercent)
+    val radiusPercent = keyRadius / 100.toFloat()
+    val yPadding = 0.dp + keyBorderWidth.dp
+    val diagonalXPadding = lerp(legendPadding, 11.dp + keyBorderWidth.dp, radiusPercent)
+    val diagonalYPadding = lerp(yPadding, 6.dp + keyBorderWidth.dp, radiusPercent)
 
     Box(
         modifier = keyboardKeyModifier,
@@ -464,7 +467,7 @@ fun KeyboardKey(
                 ),
         ) {
             key.swipes?.get(SwipeDirection.TOP_LEFT)?.let {
-                KeyText(it, (legendSize - borderWidth).dp, hideLetters, hideSymbols, capsLock)
+                KeyText(it, (legendSize - keyBorderWidth).dp, hideLetters, hideSymbols, capsLock)
             }
         }
         Box(
@@ -474,7 +477,7 @@ fun KeyboardKey(
                 .padding(vertical = yPadding),
         ) {
             key.swipes?.get(SwipeDirection.TOP)?.let {
-                KeyText(it, (legendSize - borderWidth).dp, hideLetters, hideSymbols, capsLock)
+                KeyText(it, (legendSize - keyBorderWidth).dp, hideLetters, hideSymbols, capsLock)
             }
         }
         Box(
@@ -487,7 +490,7 @@ fun KeyboardKey(
                 ),
         ) {
             key.swipes?.get(SwipeDirection.TOP_RIGHT)?.let {
-                KeyText(it, (legendSize - borderWidth).dp, hideLetters, hideSymbols, capsLock)
+                KeyText(it, (legendSize - keyBorderWidth).dp, hideLetters, hideSymbols, capsLock)
             }
         }
         Box(
@@ -497,7 +500,7 @@ fun KeyboardKey(
                 .padding(horizontal = legendPadding),
         ) {
             key.swipes?.get(SwipeDirection.LEFT)?.let {
-                KeyText(it, (legendSize - borderWidth).dp, hideLetters, hideSymbols, capsLock)
+                KeyText(it, (legendSize - keyBorderWidth).dp, hideLetters, hideSymbols, capsLock)
             }
         }
         Box(
@@ -506,7 +509,7 @@ fun KeyboardKey(
                 .fillMaxSize()
                 .padding(legendPadding),
         ) {
-            KeyText(key.center, (legendSize - borderWidth).dp, hideLetters, hideSymbols, capsLock)
+            KeyText(key.center, (legendSize - keyBorderWidth).dp, hideLetters, hideSymbols, capsLock)
         }
 
         Box(
@@ -516,7 +519,7 @@ fun KeyboardKey(
                 .padding(horizontal = legendPadding),
         ) {
             key.swipes?.get(SwipeDirection.RIGHT)?.let {
-                KeyText(it, (legendSize - borderWidth).dp, hideLetters, hideSymbols, capsLock)
+                KeyText(it, (legendSize - keyBorderWidth).dp, hideLetters, hideSymbols, capsLock)
             }
         }
         Box(
@@ -529,7 +532,7 @@ fun KeyboardKey(
                 ),
         ) {
             key.swipes?.get(SwipeDirection.BOTTOM_LEFT)?.let {
-                KeyText(it, (legendSize - borderWidth).dp, hideLetters, hideSymbols, capsLock)
+                KeyText(it, (legendSize - keyBorderWidth).dp, hideLetters, hideSymbols, capsLock)
             }
         }
         Box(
@@ -539,7 +542,7 @@ fun KeyboardKey(
                 .padding(vertical = yPadding),
         ) {
             key.swipes?.get(SwipeDirection.BOTTOM)?.let {
-                KeyText(it, (legendSize - borderWidth).dp, hideLetters, hideSymbols, capsLock)
+                KeyText(it, (legendSize - keyBorderWidth).dp, hideLetters, hideSymbols, capsLock)
             }
         }
         Box(
@@ -552,7 +555,7 @@ fun KeyboardKey(
                 ),
         ) {
             key.swipes?.get(SwipeDirection.BOTTOM_RIGHT)?.let {
-                KeyText(it, (legendSize - borderWidth).dp, hideLetters, hideSymbols, capsLock)
+                KeyText(it, (legendSize - keyBorderWidth).dp, hideLetters, hideSymbols, capsLock)
             }
         }
 
