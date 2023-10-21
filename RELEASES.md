@@ -1,4 +1,27 @@
-# Thumb-Key 2.4.0 (2023-10-16)
+# Thumb-Key 2.5.0 (2023-10-21)
+
+## What's Changed
+
+- Added FarsiNumeric.kt. by @pxeemo in https://github.com/dessalines/thumb-key/pull/511
+- EN Programmer Wide: Restore wide numeric layout by @Terrance in https://github.com/dessalines/thumb-key/pull/514
+- fixing emoji picker inconsistancies, fixes #496 by @WadeWT in https://github.com/dessalines/thumb-key/pull/515
+- Add ancom theme by @Kommynct in https://github.com/dessalines/thumb-key/pull/509
+- Implement EN layout with composable keys by @mpice-mn in https://github.com/dessalines/thumb-key/pull/513
+- Adding theming guide. Fixes #508 by @dessalines in https://github.com/dessalines/thumb-key/pull/516
+- Running code analyzer for a few fixes. by @dessalines in https://github.com/dessalines/thumb-key/pull/517
+- EN Wide Programmer: Add four-way movement swipes by @Terrance in https://github.com/dessalines/thumb-key/pull/519
+- Backspace swipe right to delete word and Slide gestures improvements by @sslater11 in https://github.com/dessalines/thumb-key/pull/439
+- Updated readme with new features/settings by @sslater11 in https://github.com/dessalines/thumb-key/pull/522
+- Added slide gestures to Type-Split layouts by @sslater11 in https://github.com/dessalines/thumb-key/pull/521
+
+## New Contributors
+
+- @Terrance made their first contribution in https://github.com/dessalines/thumb-key/pull/514
+- @Kommynct made their first contribution in https://github.com/dessalines/thumb-key/pull/509
+
+**Full Changelog**: https://github.com/dessalines/thumb-key/compare/2.4.1...2.5.0
+
+# Thumb-Key 2.4.1 (2023-10-16)
 
 ## What's Changed
 
