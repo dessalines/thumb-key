@@ -56,7 +56,8 @@ This project is a follow-up to the now unmaintained (and closed-source) [Message
 - **Swipe up** or **down** on `A` to capitalize. (If you changed the layout, the button next to `#`)  
   <img width=60px height=60px src="https://i.postimg.cc/Znt2Ft9G/thumbkey-1-1.png">
 - **Double tap** the space bar to type a comma, triple tap to type a period. More taps have more punctuation.
-- **Swipe left** on the backspace key to delete whole words.
+- **Swipe left** on the backspace key to delete whole words to the left of the cursor.
+- **Swipe right** on the backspace key to delete whole words to the right of the cursor.
 - **Swipe left** or **right** on the spacebar to move the cursor by 1 character.
 
 ### Emoji Key
@@ -72,8 +73,8 @@ This project is a follow-up to the now unmaintained (and closed-source) [Message
 
 - **Tap** to access numbers & symbols
 - **Swipe to top-left** to select all
-- **Swipe up** to copy
-- **Swipe to top-right** to cut
+- **Swipe up** to copy - If nothing is selected, all the text will be copied.
+- **Swipe to top-right** to cut - If nothing is selected, all the text will be selected and cut.
 - **Swipe right** to redo
 - **Swipe down** to paste
 - **Swipe left** to undo
@@ -85,6 +86,17 @@ Enabling `Slide gestures` in keyboard settings will enable the following continu
 - Slide spacebar horizontally to move cursor position left and right.
 - Slide upwards while sliding the spacebar to select text.
 - Slide backspace to the left to select text to be deleted. Text will be deleted when key is released.
+
+Enabling `Spacebar: Allow normal swipes to work with slide gestures`, in keyboard settings will enable the following:
+
+- Swipe left and right to move the cursor by a single character.
+- Swipe up and down to move the cursor up or down a line.
+- Allow us to use the other characters on the spacebars in the typesplit layouts.
+
+Enabling `Backspace: Allow normal swipes to work with slide gestures`, in keyboard settings will enable the following:
+
+- Swipe left to delete whole words to the left of the cursor.
+- Swipe right to delete whole words to the right of the cursor.
 
 ### Other
 
