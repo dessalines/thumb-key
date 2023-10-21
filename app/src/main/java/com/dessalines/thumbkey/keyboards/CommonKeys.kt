@@ -282,6 +282,7 @@ val SPACEBAR_TYPESPLIT_TOP_KEY_ITEM =
             action = KeyAction.CommitText(" "),
         ),
         swipeType = SwipeNWay.FOUR_WAY_CROSS,
+        slideType = SlideType.MOVE_CURSOR,
         swipes = mapOf(
             SwipeDirection.LEFT to KeyC(
                 action = KeyAction.SendEvent(
@@ -471,6 +472,7 @@ val BACKSPACE_TYPESPLIT_KEY_ITEM =
             color = ColorVariant.SECONDARY,
         ),
         swipeType = SwipeNWay.FOUR_WAY_CROSS,
+        slideType = SlideType.DELETE,
         swipes = mapOf(
             SwipeDirection.LEFT to KeyC(
                 action = KeyAction.DeleteWordBeforeCursor,
