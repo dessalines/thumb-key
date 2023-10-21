@@ -53,7 +53,7 @@ val KB_EN_TYPESPLIT_MAIN = KeyboardC(
                     ),
                 ),
             ),
-            SPACEBAR_TYPESPLIT_TOP_KEY_ITEM,
+            EMOJI_KEY_ITEM,
             KeyItemC(
                 center = KeyC(
                     display = KeyDisplay.TextDisplay("i"),
@@ -294,7 +294,7 @@ val KB_EN_TYPESPLIT_SHIFTED = KeyboardC(
                     ),
                 ),
             ),
-            SPACEBAR_TYPESPLIT_TOP_KEY_ITEM,
+            EMOJI_KEY_ITEM,
             KeyItemC(
                 center = KeyC(
                     display = KeyDisplay.TextDisplay("I"),
