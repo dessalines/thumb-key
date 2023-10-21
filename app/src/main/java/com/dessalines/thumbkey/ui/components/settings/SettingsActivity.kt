@@ -52,8 +52,11 @@ import com.dessalines.thumbkey.db.DEFAULT_KEY_SIZE
 import com.dessalines.thumbkey.db.DEFAULT_MIN_SWIPE_LENGTH
 import com.dessalines.thumbkey.db.DEFAULT_POSITION
 import com.dessalines.thumbkey.db.DEFAULT_PUSHUP_SIZE
+import com.dessalines.thumbkey.db.DEFAULT_SLIDE_BACKSPACE_DEADZONE_ENABLED
+import com.dessalines.thumbkey.db.DEFAULT_SLIDE_CURSOR_MOVEMENT_MODE
 import com.dessalines.thumbkey.db.DEFAULT_SLIDE_ENABLED
 import com.dessalines.thumbkey.db.DEFAULT_SLIDE_SENSITIVITY
+import com.dessalines.thumbkey.db.DEFAULT_SLIDE_SPACEBAR_DEADZONE_ENABLED
 import com.dessalines.thumbkey.db.DEFAULT_SOUND_ON_TAP
 import com.dessalines.thumbkey.db.DEFAULT_SPACEBAR_MULTITAPS
 import com.dessalines.thumbkey.db.DEFAULT_THEME
@@ -255,6 +258,9 @@ private fun resetAppSettingsToDefault(
             autoCapitalize = DEFAULT_AUTO_CAPITALIZE,
             animationSpeed = DEFAULT_ANIMATION_SPEED,
             slideEnabled = DEFAULT_SLIDE_ENABLED,
+            slideCursorMovementMode = DEFAULT_SLIDE_CURSOR_MOVEMENT_MODE,
+            slideSpacebarDeadzoneEnabled = DEFAULT_SLIDE_SPACEBAR_DEADZONE_ENABLED,
+            slideBackspaceDeadzoneEnabled = DEFAULT_SLIDE_BACKSPACE_DEADZONE_ENABLED,
             slideSensitivity = DEFAULT_SLIDE_SENSITIVITY,
             soundOnTap = DEFAULT_SOUND_ON_TAP,
             position = DEFAULT_POSITION,

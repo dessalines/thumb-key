@@ -371,15 +371,9 @@ val KB_T9_MAIN = KeyboardC(
                         color = ColorVariant.SECONDARY_SWIPES,
                     ),
                     SwipeDirection.RIGHT to KeyC(
-                        display = KeyDisplay.TextDisplay("⌦"),
-                        action = KeyAction.SendEvent(
-                            KeyEvent(
-                                KeyEvent.ACTION_DOWN,
-                                KeyEvent
-                                    .KEYCODE_FORWARD_DEL,
-                            ),
-                        ),
-                        color = ColorVariant.SECONDARY_SWIPES,
+                        display = KeyDisplay.TextDisplay("⇥"),
+                        action = KeyAction.DeleteWordAfterCursor,
+                        color = ColorVariant.MUTED,
                     ),
                     SwipeDirection.BOTTOM to KeyC(
                         display = KeyDisplay.IconDisplay(Icons.Outlined.ContentPaste),
@@ -388,7 +382,7 @@ val KB_T9_MAIN = KeyboardC(
                     ),
                     SwipeDirection.LEFT to KeyC(
                         display = KeyDisplay.TextDisplay("⇤"),
-                        action = KeyAction.DeleteLastWord,
+                        action = KeyAction.DeleteWordBeforeCursor,
                         color = ColorVariant.SECONDARY_SWIPES,
                     ),
                 ),
@@ -924,14 +918,8 @@ val KB_T9_SHIFTED = KeyboardC(
                         color = ColorVariant.SECONDARY_SWIPES,
                     ),
                     SwipeDirection.RIGHT to KeyC(
-                        display = KeyDisplay.TextDisplay("⌦"),
-                        action = KeyAction.SendEvent(
-                            KeyEvent(
-                                KeyEvent.ACTION_DOWN,
-                                KeyEvent
-                                    .KEYCODE_FORWARD_DEL,
-                            ),
-                        ),
+                        display = KeyDisplay.TextDisplay("⇥"),
+                        action = KeyAction.DeleteWordAfterCursor,
                         color = ColorVariant.SECONDARY_SWIPES,
                     ),
                     SwipeDirection.BOTTOM to KeyC(
@@ -941,7 +929,7 @@ val KB_T9_SHIFTED = KeyboardC(
                     ),
                     SwipeDirection.LEFT to KeyC(
                         display = KeyDisplay.TextDisplay("⇤"),
-                        action = KeyAction.DeleteLastWord,
+                        action = KeyAction.DeleteWordBeforeCursor,
                         color = ColorVariant.SECONDARY_SWIPES,
                     ),
                 ),
