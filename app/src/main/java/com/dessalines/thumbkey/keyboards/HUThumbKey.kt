@@ -59,22 +59,6 @@ val KB_HU_THUMBKEY_MAIN = KeyboardC(
                 ),
                 swipeType = SwipeNWay.FOUR_WAY_DIAGONAL,
                 swipes = mapOf(
-                    SwipeDirection.BOTTOM_LEFT to KeyC(
-                        display = KeyDisplay.TextDisplay("u"),
-                        action = KeyAction.CommitText("u"),
-                    ),
-                    SwipeDirection.BOTTOM to KeyC(
-                        display = KeyDisplay.TextDisplay("ú"),
-                        action = KeyAction.CommitText("ú"),
-                    ),
-                    SwipeDirection.BOTTOM_RIGHT to KeyC(
-                        display = KeyDisplay.TextDisplay("ü"),
-                        action = KeyAction.CommitText("ü"),
-                    ),
-                    SwipeDirection.RIGHT to KeyC(
-                        display = KeyDisplay.TextDisplay("ű"),
-                        action = KeyAction.CommitText("ű"),
-                    ),
                     SwipeDirection.TOP to KeyC(
                         display = KeyDisplay.TextDisplay("ó"),
                         action = KeyAction.CommitText("ó"),
@@ -86,6 +70,22 @@ val KB_HU_THUMBKEY_MAIN = KeyboardC(
                     SwipeDirection.TOP_RIGHT to KeyC(
                         display = KeyDisplay.TextDisplay("ő"),
                         action = KeyAction.CommitText("ő"),
+                    ),
+                    SwipeDirection.RIGHT to KeyC(
+                        display = KeyDisplay.TextDisplay("ű"),
+                        action = KeyAction.CommitText("ű"),
+                    ),
+                    SwipeDirection.BOTTOM_LEFT to KeyC(
+                        display = KeyDisplay.TextDisplay("u"),
+                        action = KeyAction.CommitText("u"),
+                    ),
+                    SwipeDirection.BOTTOM to KeyC(
+                        display = KeyDisplay.TextDisplay("ú"),
+                        action = KeyAction.CommitText("ú"),
+                    ),
+                    SwipeDirection.BOTTOM_RIGHT to KeyC(
+                        display = KeyDisplay.TextDisplay("ü"),
+                        action = KeyAction.CommitText("ü"),
                     ),
                 ),
             ),
@@ -158,10 +158,6 @@ val KB_HU_THUMBKEY_MAIN = KeyboardC(
                 ),
                 swipeType = SwipeNWay.FOUR_WAY_CROSS,
                 swipes = mapOf(
-                    SwipeDirection.LEFT to KeyC(
-                        display = KeyDisplay.TextDisplay("l"),
-                        action = KeyAction.CommitText("l"),
-                    ),
                     SwipeDirection.TOP to KeyC(
                         display = KeyDisplay.IconDisplay(Icons.Outlined.ArrowDropUp),
                         action = KeyAction.ToggleShiftMode(true),
@@ -170,6 +166,10 @@ val KB_HU_THUMBKEY_MAIN = KeyboardC(
                     SwipeDirection.TOP_RIGHT to KeyC(
                         display = KeyDisplay.TextDisplay("á"),
                         action = KeyAction.CommitText("á"),
+                    ),
+                    SwipeDirection.LEFT to KeyC(
+                        display = KeyDisplay.TextDisplay("l"),
+                        action = KeyAction.CommitText("l"),
                     ),
                 ),
             ),
@@ -200,10 +200,14 @@ val KB_HU_THUMBKEY_MAIN = KeyboardC(
                 ),
                 swipes = mapOf(
                     SwipeDirection.TOP to KeyC(
+                        display = KeyDisplay.TextDisplay("í"),
+                        action = KeyAction.CommitText("í"),
+                    ),
+                    SwipeDirection.TOP_RIGHT to KeyC(
                         display = KeyDisplay.TextDisplay("f"),
                         action = KeyAction.CommitText("f"),
                     ),
-                    SwipeDirection.TOP_RIGHT to KeyC(
+                    SwipeDirection.LEFT to KeyC(
                         display = KeyDisplay.TextDisplay("'"),
                         action = KeyAction.CommitText("'"),
                         color = ColorVariant.MUTED,
@@ -299,22 +303,6 @@ val KB_HU_THUMBKEY_SHIFTED = KeyboardC(
                 ),
                 swipeType = SwipeNWay.FOUR_WAY_DIAGONAL,
                 swipes = mapOf(
-                    SwipeDirection.BOTTOM_LEFT to KeyC(
-                        display = KeyDisplay.TextDisplay("U"),
-                        action = KeyAction.CommitText("U"),
-                    ),
-                    SwipeDirection.BOTTOM to KeyC(
-                        display = KeyDisplay.TextDisplay("Ú"),
-                        action = KeyAction.CommitText("Ú"),
-                    ),
-                    SwipeDirection.BOTTOM_RIGHT to KeyC(
-                        display = KeyDisplay.TextDisplay("Ü"),
-                        action = KeyAction.CommitText("Ü"),
-                    ),
-                    SwipeDirection.RIGHT to KeyC(
-                        display = KeyDisplay.TextDisplay("Ű"),
-                        action = KeyAction.CommitText("Ű"),
-                    ),
                     SwipeDirection.TOP to KeyC(
                         display = KeyDisplay.TextDisplay("Ó"),
                         action = KeyAction.CommitText("Ó"),
@@ -326,6 +314,22 @@ val KB_HU_THUMBKEY_SHIFTED = KeyboardC(
                     SwipeDirection.TOP_RIGHT to KeyC(
                         display = KeyDisplay.TextDisplay("Ő"),
                         action = KeyAction.CommitText("Ő"),
+                    ),
+                    SwipeDirection.RIGHT to KeyC(
+                        display = KeyDisplay.TextDisplay("Ű"),
+                        action = KeyAction.CommitText("Ű"),
+                    ),
+                    SwipeDirection.BOTTOM_LEFT to KeyC(
+                        display = KeyDisplay.TextDisplay("U"),
+                        action = KeyAction.CommitText("U"),
+                    ),
+                    SwipeDirection.BOTTOM to KeyC(
+                        display = KeyDisplay.TextDisplay("Ú"),
+                        action = KeyAction.CommitText("Ú"),
+                    ),
+                    SwipeDirection.BOTTOM_RIGHT to KeyC(
+                        display = KeyDisplay.TextDisplay("Ü"),
+                        action = KeyAction.CommitText("Ü"),
                     ),
                 ),
             ),
@@ -398,15 +402,6 @@ val KB_HU_THUMBKEY_SHIFTED = KeyboardC(
                 ),
                 swipeType = SwipeNWay.FOUR_WAY_CROSS,
                 swipes = mapOf(
-                    SwipeDirection.LEFT to KeyC(
-                        display = KeyDisplay.TextDisplay("L"),
-                        action = KeyAction.CommitText("L"),
-                    ),
-                    SwipeDirection.BOTTOM to KeyC(
-                        display = KeyDisplay.IconDisplay(Icons.Outlined.ArrowDropDown),
-                        action = KeyAction.ToggleShiftMode(false),
-                        color = ColorVariant.MUTED,
-                    ),
                     SwipeDirection.TOP to KeyC(
                         display = KeyDisplay.IconDisplay(Icons.Outlined.KeyboardCapslock),
                         capsModeDisplay = KeyDisplay.IconDisplay(Icons.Outlined.Copyright),
@@ -416,6 +411,15 @@ val KB_HU_THUMBKEY_SHIFTED = KeyboardC(
                     SwipeDirection.TOP_RIGHT to KeyC(
                         display = KeyDisplay.TextDisplay("Á"),
                         action = KeyAction.CommitText("Á"),
+                    ),
+                    SwipeDirection.LEFT to KeyC(
+                        display = KeyDisplay.TextDisplay("L"),
+                        action = KeyAction.CommitText("L"),
+                    ),
+                    SwipeDirection.BOTTOM to KeyC(
+                        display = KeyDisplay.IconDisplay(Icons.Outlined.ArrowDropDown),
+                        action = KeyAction.ToggleShiftMode(false),
+                        color = ColorVariant.MUTED,
                     ),
                 ),
             ),
@@ -446,10 +450,14 @@ val KB_HU_THUMBKEY_SHIFTED = KeyboardC(
                 ),
                 swipes = mapOf(
                     SwipeDirection.TOP to KeyC(
+                        display = KeyDisplay.TextDisplay("Í"),
+                        action = KeyAction.CommitText("Í"),
+                    ),
+                    SwipeDirection.TOP_RIGHT to KeyC(
                         display = KeyDisplay.TextDisplay("F"),
                         action = KeyAction.CommitText("F"),
                     ),
-                    SwipeDirection.TOP_RIGHT to KeyC(
+                    SwipeDirection.LEFT to KeyC(
                         display = KeyDisplay.TextDisplay("'"),
                         action = KeyAction.CommitText("'"),
                         color = ColorVariant.MUTED,
@@ -504,7 +512,7 @@ val KB_HU_THUMBKEY_SHIFTED = KeyboardC(
 )
 
 val KB_HU_THUMBKEY: KeyboardDefinition = KeyboardDefinition(
-    title = "HU Thumb-Key magyar nyelv",
+    title = "HU Thumb-Key magyar",
     modes = KeyboardDefinitionModes(
         main = KB_HU_THUMBKEY_MAIN,
         shifted = KB_HU_THUMBKEY_SHIFTED,
