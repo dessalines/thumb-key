@@ -547,7 +547,7 @@ val KB_JA_THUMBKEY_HIRAGANA_SHIFTED = KeyboardC(
 )
 
 val KB_JA_THUMBKEY_HIRAGANA: KeyboardDefinition = KeyboardDefinition(
-    title = "JA Thumb-Key japanese Hiragana",
+    title = "japanese hiragana thumb-key ",
     modes = KeyboardDefinitionModes(
         main = KB_JA_THUMBKEY_HIRAGANA_MAIN,
         shifted = KB_JA_THUMBKEY_HIRAGANA_SHIFTED,

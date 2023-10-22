@@ -466,7 +466,7 @@ val KB_ES_EO_THUMBKEY_SHIFTED = KeyboardC(
 )
 
 val KB_ES_EO_THUMBKEY: KeyboardDefinition = KeyboardDefinition(
-    title = "ESEO Thumb-Key español esperanto",
+    title = "español esperanto thumb-key",
     modes = KeyboardDefinitionModes(
         main = KB_ES_EO_THUMBKEY_MAIN,
         shifted = KB_ES_EO_THUMBKEY_SHIFTED,

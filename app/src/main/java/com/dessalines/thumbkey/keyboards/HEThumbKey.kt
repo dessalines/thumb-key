@@ -245,7 +245,7 @@ val KB_HE_THUMBKEY_MAIN = KeyboardC(
 )
 
 val KB_HE_THUMBKEY: KeyboardDefinition = KeyboardDefinition(
-    title = "HE Thumb-Key עברית",
+    title = "thumb-key עברית",
     modes = KeyboardDefinitionModes(
         main = KB_HE_THUMBKEY_MAIN,
         shifted = KB_HE_THUMBKEY_MAIN,

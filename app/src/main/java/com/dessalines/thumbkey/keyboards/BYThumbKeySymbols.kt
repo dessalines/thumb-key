@@ -786,7 +786,7 @@ val KB_BY_THUMBKEY_SYMBOLS_SHIFTED = KeyboardC(
 )
 
 val KB_BY_THUMBKEY_SYMBOLS: KeyboardDefinition = KeyboardDefinition(
-    title = "BY Thumb-Key беларуская з сімваламі",
+    title = "беларуская з сімваламі thumb-key",
     modes = KeyboardDefinitionModes(
         main = KB_BY_THUMBKEY_SYMBOLS_MAIN,
         shifted = KB_BY_THUMBKEY_SYMBOLS_SHIFTED,

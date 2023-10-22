@@ -801,7 +801,7 @@ val KB_GB_THUMBKEY_SYMBOLS_SHIFTED = KeyboardC(
 )
 
 val KB_BG_THUMBKEY_SYMBOLS: KeyboardDefinition = KeyboardDefinition(
-    title = "BG Thumb-Key български със символи",
+    title = "български със символи thumb-key",
     modes = KeyboardDefinitionModes(
         main = KB_BG_THUMBKEY_SYMBOLS_MAIN,
         shifted = KB_GB_THUMBKEY_SYMBOLS_SHIFTED,

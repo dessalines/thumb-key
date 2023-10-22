@@ -462,7 +462,7 @@ val KB_NO_THUMBKEY_SHIFTED = KeyboardC(
 )
 
 val KB_NO_THUMBKEY: KeyboardDefinition = KeyboardDefinition(
-    title = "NO Thumb-Key norsk",
+    title = "norsk thumb-key",
     modes = KeyboardDefinitionModes(
         main = KB_NO_THUMBKEY_MAIN,
         shifted = KB_NO_THUMBKEY_SHIFTED,

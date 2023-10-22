@@ -474,7 +474,7 @@ val KB_HR_THUMBKEY_SHIFTED = KeyboardC(
 )
 
 val KB_HR_THUMBKEY: KeyboardDefinition = KeyboardDefinition(
-    title = "HR Thumb-Key hrvatski",
+    title = "hrvatski thumb-key",
     modes = KeyboardDefinitionModes(
         main = KB_HR_THUMBKEY_MAIN,
         shifted = KB_HR_THUMBKEY_SHIFTED,

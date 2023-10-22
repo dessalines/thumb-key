@@ -723,8 +723,9 @@ val KB_DE_THUMBKEY_MULTILINGUAL_SHIFTED = KeyboardC(
     ),
 )
 
+// TODO this needs fixing, which languages are here?
 val KB_DE_THUMBKEY_MULTILINGUAL: KeyboardDefinition = KeyboardDefinition(
-    title = "DE Thumb-Key deutsch multilingual",
+    title = "deutsch multilingual thumb-key",
     modes = KeyboardDefinitionModes(
         main = KB_DE_THUMBKEY_MULTILINGUAL_MAIN,
         shifted = KB_DE_THUMBKEY_MULTILINGUAL_SHIFTED,

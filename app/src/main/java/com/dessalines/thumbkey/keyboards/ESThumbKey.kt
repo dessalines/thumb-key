@@ -506,7 +506,7 @@ val KB_ES_THUMBKEY_SHIFTED = KeyboardC(
 )
 
 val KB_ES_THUMBKEY: KeyboardDefinition = KeyboardDefinition(
-    title = "ES Thumb-Key español",
+    title = "español thumb-key",
     modes = KeyboardDefinitionModes(
         main = KB_ES_THUMBKEY_MAIN,
         shifted = KB_ES_THUMBKEY_SHIFTED,

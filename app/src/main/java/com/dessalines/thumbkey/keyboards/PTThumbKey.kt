@@ -554,7 +554,7 @@ val KB_PT_THUMBKEY_SHIFTED = KeyboardC(
 )
 
 val KB_PT_THUMBKEY: KeyboardDefinition = KeyboardDefinition(
-    title = "PT Type-Split português",
+    title = "português thumb-key",
     modes = KeyboardDefinitionModes(
         main = KB_PT_THUMBKEY_MAIN,
         shifted = KB_PT_THUMBKEY_SHIFTED,

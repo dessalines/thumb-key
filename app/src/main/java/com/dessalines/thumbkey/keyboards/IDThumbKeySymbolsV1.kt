@@ -746,7 +746,7 @@ val KB_ID_THUMBKEY_SYMBOLS_V1_SHIFTED = KeyboardC(
 )
 
 val KB_ID_THUMBKEY_SYMBOLS_V1: KeyboardDefinition = KeyboardDefinition(
-    title = "ID Thumb-Key Bahasa Indonesia symbols v1",
+    title = "bahasa indonesia symbols v1 thumb-key",
     modes = KeyboardDefinitionModes(
         main = KB_ID_THUMBKEY_SYMBOLS_V1_MAIN,
         shifted = KB_ID_THUMBKEY_SYMBOLS_V1_SHIFTED,

@@ -817,7 +817,7 @@ val KB_EN_TWO_HANDS_SHIFTED = KeyboardC(
 )
 
 val KB_EN_TWO_HANDS: KeyboardDefinition = KeyboardDefinition(
-    title = "EN Two Hands english",
+    title = "english two-hands",
     modes = KeyboardDefinitionModes(
         main = KB_EN_TWO_HANDS_MAIN,
         shifted = KB_EN_TWO_HANDS_SHIFTED,

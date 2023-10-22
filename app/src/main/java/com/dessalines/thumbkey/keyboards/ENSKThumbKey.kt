@@ -19,7 +19,7 @@ import com.dessalines.thumbkey.utils.SwipeDirection
 import com.dessalines.thumbkey.utils.SwipeNWay
 import com.dessalines.thumbkey.utils.autoCapitalizeI
 
-val KB_EN_THUMBKEY_MULTI_MAIN = KeyboardC(
+val KB_EN_SK_THUMBKEY_MAIN = KeyboardC(
     listOf(
         listOf(
             KeyItemC(
@@ -297,7 +297,7 @@ val KB_EN_THUMBKEY_MULTI_MAIN = KeyboardC(
     ),
 )
 
-val KB_EN_THUMBKEY_MULTI_SHIFTED = KeyboardC(
+val KB_EN_SK_THUMBKEY_SHIFTED = KeyboardC(
     listOf(
         listOf(
             KeyItemC(
@@ -581,11 +581,11 @@ val KB_EN_THUMBKEY_MULTI_SHIFTED = KeyboardC(
     ),
 )
 
-val KB_EN_THUMBKEY_MULTI: KeyboardDefinition = KeyboardDefinition(
-    title = "EN Thumb-Key english (EN+SK multi)",
+val KB_EN_SK_THUMBKEY: KeyboardDefinition = KeyboardDefinition(
+    title = "english slovenčina thumb-key",
     modes = KeyboardDefinitionModes(
-        main = KB_EN_THUMBKEY_MULTI_MAIN,
-        shifted = KB_EN_THUMBKEY_MULTI_SHIFTED,
+        main = KB_EN_SK_THUMBKEY_MAIN,
+        shifted = KB_EN_SK_THUMBKEY_SHIFTED,
         numeric = NUMERIC_KEYBOARD,
     ),
     settings = KeyboardDefinitionSettings(

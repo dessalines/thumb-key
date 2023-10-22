@@ -743,7 +743,7 @@ val KB_TR_THUMBKEY_SHIFTED = KeyboardC(
 )
 
 val KB_TR_THUMBKEY: KeyboardDefinition = KeyboardDefinition(
-    title = "TR Thumb-Key Türkçe",
+    title = "türkçe thumb-key",
     modes = KeyboardDefinitionModes(
         main = KB_TR_THUMBKEY_MAIN,
         shifted = KB_TR_THUMBKEY_SHIFTED,

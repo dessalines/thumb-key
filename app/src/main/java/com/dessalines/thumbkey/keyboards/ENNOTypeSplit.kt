@@ -525,7 +525,7 @@ val KB_EN_NO_TYPESPLIT_SHIFTED = KeyboardC(
 )
 
 val KB_EN_NO_TYPESPLIT: KeyboardDefinition = KeyboardDefinition(
-    title = "EN NO Type-Split",
+    title = "english norsk type-split",
     modes = KeyboardDefinitionModes(
         main = KB_EN_NO_TYPESPLIT_MAIN,
         shifted = KB_EN_NO_TYPESPLIT_SHIFTED,

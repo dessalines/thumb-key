@@ -490,7 +490,7 @@ val KB_UK_THUMBKEY_SHIFTED = KeyboardC(
 )
 
 val KB_UK_THUMBKEY: KeyboardDefinition = KeyboardDefinition(
-    title = "UK Thumb-Key українська",
+    title = "українська thumb-key",
     modes = KeyboardDefinitionModes(
         main = KB_UK_THUMBKEY_MAIN,
         shifted = KB_UK_THUMBKEY_SHIFTED,

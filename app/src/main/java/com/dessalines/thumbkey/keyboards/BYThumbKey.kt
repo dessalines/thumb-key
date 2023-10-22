@@ -505,7 +505,7 @@ val KB_BY_THUMBKEY_SHIFTED = KeyboardC(
 )
 
 val KB_BY_THUMBKEY: KeyboardDefinition = KeyboardDefinition(
-    title = "BY Thumb-Key беларуская",
+    title = "беларуская thumb-key",
     modes = KeyboardDefinitionModes(
         main = KB_BY_THUMBKEY_MAIN,
         shifted = KB_BY_THUMBKEY_SHIFTED,
