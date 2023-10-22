@@ -46,7 +46,7 @@ val KB_DE_TYPESPLIT_MAIN = KeyboardC(
                     color = ColorVariant.PRIMARY,
                 ),
             ),
-            SPACEBAR_TYPESPLIT_TOP_KEY_ITEM,
+            EMOJI_KEY_ITEM,
             KeyItemC(
                 center = KeyC(
                     display = KeyDisplay.TextDisplay("t"),
@@ -319,7 +319,7 @@ val KB_DE_TYPESPLIT_SHIFTED = KeyboardC(
                     color = ColorVariant.PRIMARY,
                 ),
             ),
-            SPACEBAR_TYPESPLIT_TOP_KEY_ITEM,
+            EMOJI_KEY_ITEM,
             KeyItemC(
                 center = KeyC(
                     display = KeyDisplay.TextDisplay("T"),
