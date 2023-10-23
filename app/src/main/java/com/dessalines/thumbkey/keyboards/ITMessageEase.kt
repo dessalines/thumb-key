@@ -484,7 +484,7 @@ val KB_IT_MESSAGEEASE_SHIFTED = KeyboardC(
 )
 
 val KB_IT_MESSAGEEASE: KeyboardDefinition = KeyboardDefinition(
-    title = "IT MessageEase italiano",
+    title = "italiano messageease",
     modes = KeyboardDefinitionModes(
         main = KB_IT_MESSAGEEASE_MAIN,
         shifted = KB_IT_MESSAGEEASE_SHIFTED,

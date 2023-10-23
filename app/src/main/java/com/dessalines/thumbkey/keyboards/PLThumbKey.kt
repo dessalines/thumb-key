@@ -510,7 +510,7 @@ val KB_PL_THUMBKEY_SHIFTED = KeyboardC(
 )
 
 val KB_PL_THUMBKEY: KeyboardDefinition = KeyboardDefinition(
-    title = "PL Thumb-Key polski",
+    title = "polski thumb-key",
     modes = KeyboardDefinitionModes(
         main = KB_PL_THUMBKEY_MAIN,
         shifted = KB_PL_THUMBKEY_SHIFTED,

@@ -530,7 +530,7 @@ val KB_EOENDE_THUMBKEY_SHIFTED = KeyboardC(
 )
 
 val KB_EOENDE_THUMBKEY: KeyboardDefinition = KeyboardDefinition(
-    title = "EOENDE Thumb-Key EO/EN/DE",
+    title = "esperanto english deutsch thumb-key",
     modes = KeyboardDefinitionModes(
         main = KB_EOENDE_THUMBKEY_MAIN,
         shifted = KB_EOENDE_THUMBKEY_SHIFTED,

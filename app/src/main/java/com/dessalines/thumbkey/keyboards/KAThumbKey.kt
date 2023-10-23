@@ -251,7 +251,7 @@ val KB_KA_THUMBKEY_MAIN = KeyboardC(
 )
 
 val KB_KA_THUMBKEY: KeyboardDefinition = KeyboardDefinition(
-    title = "KA Thumb-Key kartuli ena",
+    title = "kartuli ena thumb-key",
     modes = KeyboardDefinitionModes(
         main = KB_KA_THUMBKEY_MAIN,
         shifted = KB_KA_THUMBKEY_MAIN,

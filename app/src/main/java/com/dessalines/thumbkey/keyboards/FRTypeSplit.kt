@@ -619,7 +619,7 @@ val KB_FR_TYPESPLIT_SHIFTED = KeyboardC(
 )
 
 val KB_FR_TYPESPLIT: KeyboardDefinition = KeyboardDefinition(
-    title = "ES Type-Split français",
+    title = "français type-split",
     modes = KeyboardDefinitionModes(
         main = KB_FR_TYPESPLIT_MAIN,
         shifted = KB_FR_TYPESPLIT_SHIFTED,

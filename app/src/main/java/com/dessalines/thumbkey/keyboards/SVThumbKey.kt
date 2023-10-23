@@ -460,7 +460,7 @@ val KB_SV_THUMBKEY_SHIFTED = KeyboardC(
 )
 
 val KB_SV_THUMBKEY: KeyboardDefinition = KeyboardDefinition(
-    title = "SV Thumb-Key svenska",
+    title = "svenska thumb-key",
     modes = KeyboardDefinitionModes(
         main = KB_SV_THUMBKEY_MAIN,
         shifted = KB_SV_THUMBKEY_SHIFTED,

@@ -440,7 +440,7 @@ val KB_EU_THUMBKEY_SHIFTED = KeyboardC(
 )
 
 val KB_EU_THUMBKEY: KeyboardDefinition = KeyboardDefinition(
-    title = "EU Thumb-Key euskara",
+    title = "euskara thumb-key",
     modes = KeyboardDefinitionModes(
         main = KB_EU_THUMBKEY_MAIN,
         shifted = KB_EU_THUMBKEY_SHIFTED,

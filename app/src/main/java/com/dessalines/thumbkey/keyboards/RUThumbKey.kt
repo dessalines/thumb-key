@@ -515,7 +515,7 @@ val KB_RU_THUMBKEY_SHIFTED = KeyboardC(
 )
 
 val KB_RU_THUMBKEY: KeyboardDefinition = KeyboardDefinition(
-    title = "RU Thumb-Key русский",
+    title = "русский thumb-key",
     modes = KeyboardDefinitionModes(
         main = KB_RU_THUMBKEY_MAIN,
         shifted = KB_RU_THUMBKEY_SHIFTED,

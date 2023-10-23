@@ -962,7 +962,7 @@ val NUMERIC_KEYBOARD_WIDE = KeyboardC(
 )
 
 val KB_EN_THUMBKEY_PROGRAMMER_WIDE: KeyboardDefinition = KeyboardDefinition(
-    title = "EN Thumb-Key english Wide programmer",
+    title = "english wide programmer thumb-key",
     modes = KeyboardDefinitionModes(
         main = KB_EN_THUMBKEY_PROGRAMMER_WIDE_MAIN,
         shifted = KB_EN_THUMBKEY_PROGRAMMER_WIDE_SHIFTED,

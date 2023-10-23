@@ -533,7 +533,7 @@ val KB_FI_TYPESPLIT_SHIFTED = KeyboardC(
 )
 
 val KB_FI_TYPESPLIT: KeyboardDefinition = KeyboardDefinition(
-    title = "FI Type-Split suomi",
+    title = "suomi type-split",
     modes = KeyboardDefinitionModes(
         main = KB_FI_TYPESPLIT_MAIN,
         shifted = KB_FI_TYPESPLIT_SHIFTED,

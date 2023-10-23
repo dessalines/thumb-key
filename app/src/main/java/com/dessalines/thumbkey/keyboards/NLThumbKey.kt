@@ -440,7 +440,7 @@ val KB_NL_THUMBKEY_SHIFTED = KeyboardC(
 )
 
 val KB_NL_THUMBKEY: KeyboardDefinition = KeyboardDefinition(
-    title = "NL Thumb-Key nederlands",
+    title = "nederlands thumb-key",
     modes = KeyboardDefinitionModes(
         main = KB_NL_THUMBKEY_MAIN,
         shifted = KB_NL_THUMBKEY_SHIFTED,

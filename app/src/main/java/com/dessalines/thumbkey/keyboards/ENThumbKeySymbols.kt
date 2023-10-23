@@ -743,7 +743,7 @@ val KB_EN_THUMBKEY_SYMBOLS_SHIFTED = KeyboardC(
 )
 
 val KB_EN_THUMBKEY_SYMBOLS: KeyboardDefinition = KeyboardDefinition(
-    title = "EN Thumb-Key english symbols",
+    title = "english symbols thumb-key",
     modes = KeyboardDefinitionModes(
         main = KB_EN_THUMBKEY_SYMBOLS_MAIN,
         shifted = KB_EN_THUMBKEY_SYMBOLS_SHIFTED,

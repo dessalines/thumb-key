@@ -767,7 +767,7 @@ val KB_DE_MESSAGEEASE_SYMBOLS_SHIFTED = KeyboardC(
 )
 
 val KB_DE_MESSAGEEASE_SYMBOLS: KeyboardDefinition = KeyboardDefinition(
-    title = "DE MessageEase deutsch symbols",
+    title = "deutsch symbols messageease",
     modes = KeyboardDefinitionModes(
         main = KB_DE_MESSAGEEASE_SYMBOLS_MAIN,
         shifted = KB_DE_MESSAGEEASE_SYMBOLS_SHIFTED,

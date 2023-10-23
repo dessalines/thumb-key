@@ -17,7 +17,7 @@ import com.dessalines.thumbkey.utils.KeyboardDefinitionModes
 import com.dessalines.thumbkey.utils.SwipeDirection
 import com.dessalines.thumbkey.utils.SwipeNWay
 
-val KB_EN_THUMBKEY_MULTI_EE_MAIN = KeyboardC(
+val KB_EN_EE_THUMBKEY_MAIN = KeyboardC(
     listOf(
         listOf(
             KeyItemC(
@@ -249,7 +249,7 @@ val KB_EN_THUMBKEY_MULTI_EE_MAIN = KeyboardC(
     ),
 )
 
-val KB_EN_THUMBKEY_MULTI_EE_SHIFTED = KeyboardC(
+val KB_EN_EE_THUMBKEY_SHIFTED = KeyboardC(
     listOf(
         listOf(
             KeyItemC(
@@ -487,11 +487,11 @@ val KB_EN_THUMBKEY_MULTI_EE_SHIFTED = KeyboardC(
     ),
 )
 
-val KB_EN_THUMBKEY_MULTI_EE: KeyboardDefinition = KeyboardDefinition(
-    title = "EN Thumb-Key english (EN+EE multi)",
+val KB_EN_EE_THUMBKEY: KeyboardDefinition = KeyboardDefinition(
+    title = "english eegbe thumb-key",
     modes = KeyboardDefinitionModes(
-        main = KB_EN_THUMBKEY_MULTI_EE_MAIN,
-        shifted = KB_EN_THUMBKEY_MULTI_EE_SHIFTED,
+        main = KB_EN_EE_THUMBKEY_MAIN,
+        shifted = KB_EN_EE_THUMBKEY_SHIFTED,
         numeric = NUMERIC_KEYBOARD,
     ),
 )

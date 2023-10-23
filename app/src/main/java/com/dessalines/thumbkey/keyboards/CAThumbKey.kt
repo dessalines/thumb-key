@@ -818,7 +818,7 @@ val KB_CA_THUMBKEY_SHIFTED = KeyboardC(
 )
 
 val KB_CA_THUMBKEY: KeyboardDefinition = KeyboardDefinition(
-    title = "CA Thumb-Key Canadian Aboriginal Syllabic",
+    title = "canadian aboriginal syllabic thumb-key",
     modes = KeyboardDefinitionModes(
         main = KB_CA_THUMBKEY_MAIN,
         shifted = KB_CA_THUMBKEY_SHIFTED,

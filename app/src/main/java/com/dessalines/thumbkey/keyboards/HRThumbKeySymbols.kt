@@ -781,7 +781,7 @@ val KB_HR_THUMBKEY_SYMBOLS_SHIFTED = KeyboardC(
 )
 
 val KB_HR_THUMBKEY_SYMBOLS: KeyboardDefinition = KeyboardDefinition(
-    title = "HR Thumb-Key hrvatski symbols",
+    title = "hrvatski symbols thumb-key",
     modes = KeyboardDefinitionModes(
         main = KB_HR_THUMBKEY_SYMBOLS_MAIN,
         shifted = KB_HR_THUMBKEY_SYMBOLS_SHIFTED,

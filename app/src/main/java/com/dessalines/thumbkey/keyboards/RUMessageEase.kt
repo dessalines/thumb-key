@@ -477,7 +477,7 @@ val KB_RU_MESSAGEEASE_SHIFTED = KeyboardC(
 )
 
 val KB_RU_MESSAGEEASE: KeyboardDefinition = KeyboardDefinition(
-    title = "RU MessageEase русский",
+    title = "русский messageease",
     modes = KeyboardDefinitionModes(
         main = KB_RU_MESSAGEEASE_MAIN,
         shifted = KB_RU_MESSAGEEASE_SHIFTED,

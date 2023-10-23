@@ -514,7 +514,7 @@ val KB_GR_THUMBKEY_SHIFTED = KeyboardC(
 )
 
 val KB_GR_THUMBKEY: KeyboardDefinition = KeyboardDefinition(
-    title = "GR Thumb-Key ελληνικά",
+    title = "ελληνικά thumb-key",
     modes = KeyboardDefinitionModes(
         main = KB_GR_THUMBKEY_MAIN,
         shifted = KB_GR_THUMBKEY_SHIFTED,
