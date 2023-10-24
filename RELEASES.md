@@ -1,3 +1,18 @@
+# Thumb-Key 2.5.1 (2023-10-24)
+
+## What's Changed
+
+- Fix hungarian layout by @KnockoffFeline in https://github.com/dessalines/thumb-key/pull/525
+- Added emoji key to Type-Split layout. Fixes #432 by @sslater11 in https://github.com/dessalines/thumb-key/pull/524
+- Fixing keyboard names. Fixes #523 by @dessalines in https://github.com/dessalines/thumb-key/pull/526
+- Upgrading deps. by @dessalines in https://github.com/dessalines/thumb-key/pull/532
+
+## New Contributors
+
+- @KnockoffFeline made their first contribution in https://github.com/dessalines/thumb-key/pull/525
+
+**Full Changelog**: https://github.com/dessalines/thumb-key/compare/2.5.0...2.5.1
+
 # Thumb-Key 2.5.0 (2023-10-21)
 
 ## What's Changed
