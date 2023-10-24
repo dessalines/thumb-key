@@ -77,31 +77,31 @@ dependencies {
     implementation 'com.github.alorma:compose-settings-ui-m3:1.0.2'
 
     // To use Kotlin annotation processing tool
-    ksp 'androidx.room:room-compiler:2.5.2'
+    ksp 'androidx.room:room-compiler:2.6.0'
 
-    implementation 'androidx.room:room-runtime:2.5.2'
-    annotationProcessor 'androidx.room:room-compiler:2.5.2'
+    implementation 'androidx.room:room-runtime:2.6.0'
+    annotationProcessor 'androidx.room:room-compiler:2.6.0'
 
     // optional - Kotlin Extensions and Coroutines support for Room
-    implementation('androidx.room:room-ktx:2.5.2')
+    implementation('androidx.room:room-ktx:2.6.0')
 
     // optional - Test helpers
-    testImplementation 'androidx.room:room-testing:2.5.2'
+    testImplementation 'androidx.room:room-testing:2.6.0'
 
     // optional - Paging 3 Integration
-    implementation 'androidx.room:room-paging:2.5.2'
+    implementation 'androidx.room:room-paging:2.6.0'
 
     // LiveData
-    implementation 'androidx.compose.runtime:runtime-livedata:1.5.3'
+    implementation 'androidx.compose.runtime:runtime-livedata:1.5.4'
     implementation "androidx.lifecycle:lifecycle-runtime-compose:2.6.2"
 
     implementation 'org.jetbrains.kotlin:kotlin-stdlib:1.9.10'
     implementation 'androidx.appcompat:appcompat:1.6.1'
-    implementation 'androidx.compose.ui:ui:1.5.3'
+    implementation 'androidx.compose.ui:ui:1.5.4'
     implementation 'androidx.compose.material3:material3:1.1.2'
-    implementation 'androidx.compose.material:material-icons-extended:1.5.3'
+    implementation 'androidx.compose.material:material-icons-extended:1.5.4'
     implementation 'androidx.compose.material3:material3-window-size-class:1.1.2'
-    implementation 'androidx.compose.ui:ui-tooling:1.5.3'
+    implementation 'androidx.compose.ui:ui-tooling:1.5.4'
     implementation 'androidx.activity:activity-compose:1.8.0'
     implementation "com.louiscad.splitties:splitties-systemservices:3.0.0"
     implementation "com.louiscad.splitties:splitties-views:3.0.0"
