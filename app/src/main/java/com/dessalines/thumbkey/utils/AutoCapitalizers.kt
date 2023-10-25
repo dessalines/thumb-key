@@ -16,7 +16,17 @@ fun autoCapitalizeI(
                 "I ",
                 1,
             )
-        } else if (textBefore == " i\'") {
+        }
+    }
+}
+
+fun autoCapitalizeIApostrophe(
+    ime: IMEService,
+) {
+    // Capitalizes "i'"
+    val textBefore = ime.currentInputConnection.getTextBeforeCursor(3, 0)
+    if (!textBefore.isNullOrEmpty()) {
+        if (textBefore == " i\'") {
             ime.currentInputConnection.deleteSurroundingText(2, 0)
             ime.currentInputConnection.commitText(
                 "I\'",
