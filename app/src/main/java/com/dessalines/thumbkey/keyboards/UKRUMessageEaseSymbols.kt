@@ -115,7 +115,6 @@ val KB_UK_RU_MESSAGEEASE_SYMBOLS_MAIN = KeyboardC(
                     SwipeDirection.BOTTOM_RIGHT to KeyC(
                         display = KeyDisplay.TextDisplay("э"),
                         action = KeyAction.CommitText("э"),
-                        color = ColorVariant.MUTED,
                     ),
                     SwipeDirection.BOTTOM to KeyC(
                         display = KeyDisplay.TextDisplay("="),
@@ -367,7 +366,6 @@ val KB_UK_RU_MESSAGEEASE_SYMBOLS_MAIN = KeyboardC(
                     SwipeDirection.TOP_RIGHT to KeyC(
                         display = KeyDisplay.TextDisplay("ё"),
                         action = KeyAction.CommitText("ё"),
-                        color = ColorVariant.MUTED,
                     ),
                     SwipeDirection.RIGHT to KeyC(
                         display = KeyDisplay.TextDisplay(">"),
@@ -494,7 +492,6 @@ val KB_UK_RU_MESSAGEEASE_SYMBOLS_SHIFTED = KeyboardC(
                     SwipeDirection.BOTTOM_RIGHT to KeyC(
                         display = KeyDisplay.TextDisplay("Э"),
                         action = KeyAction.CommitText("Э"),
-                        color = ColorVariant.MUTED,
                     ),
                     SwipeDirection.BOTTOM to KeyC(
                         display = KeyDisplay.TextDisplay("="),
@@ -752,7 +749,6 @@ val KB_UK_RU_MESSAGEEASE_SYMBOLS_SHIFTED = KeyboardC(
                     SwipeDirection.TOP_RIGHT to KeyC(
                         display = KeyDisplay.TextDisplay("Ё"),
                         action = KeyAction.CommitText("Ё"),
-                        color = ColorVariant.MUTED,
                     ),
                     SwipeDirection.RIGHT to KeyC(
                         display = KeyDisplay.TextDisplay(">"),
