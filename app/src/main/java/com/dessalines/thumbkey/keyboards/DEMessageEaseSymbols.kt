@@ -367,7 +367,7 @@ val KB_DE_MESSAGEEASE_SYMBOLS_MAIN = KeyboardC(
                         action = KeyAction.CommitText(";"),
                         color = ColorVariant.MUTED,
                     ),
-                    SwipeDirection.LEFT to KeyC(
+                    SwipeDirection.RIGHT to KeyC(
                         display = KeyDisplay.TextDisplay(">"),
                         action = KeyAction.CommitText(">"),
                         color = ColorVariant.MUTED,
@@ -745,7 +745,7 @@ val KB_DE_MESSAGEEASE_SYMBOLS_SHIFTED = KeyboardC(
                         action = KeyAction.CommitText(";"),
                         color = ColorVariant.MUTED,
                     ),
-                    SwipeDirection.LEFT to KeyC(
+                    SwipeDirection.RIGHT to KeyC(
                         display = KeyDisplay.TextDisplay(">"),
                         action = KeyAction.CommitText(">"),
                         color = ColorVariant.MUTED,
