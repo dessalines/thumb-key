@@ -16,6 +16,12 @@ fun autoCapitalizeI(
                 "I ",
                 1,
             )
+        } else if (textBefore == " i\'") {
+            ime.currentInputConnection.deleteSurroundingText(2, 0)
+            ime.currentInputConnection.commitText(
+                "I\'",
+                1,
+            )
         }
     }
 }
