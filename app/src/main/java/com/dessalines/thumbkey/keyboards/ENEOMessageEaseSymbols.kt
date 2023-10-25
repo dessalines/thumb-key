@@ -14,6 +14,7 @@ import com.dessalines.thumbkey.utils.KeyboardDefinitionModes
 import com.dessalines.thumbkey.utils.KeyboardDefinitionSettings
 import com.dessalines.thumbkey.utils.SwipeDirection
 import com.dessalines.thumbkey.utils.autoCapitalizeI
+import com.dessalines.thumbkey.utils.autoCapitalizeIApostrophe
 
 val KB_ENEO_MESSAGEEASE_SYMBOLS_MAIN = KeyboardC(
     listOf(
@@ -879,6 +880,6 @@ val KB_ENEO_MESSAGEEASE_SYMBOLS: KeyboardDefinition = KeyboardDefinition(
         numeric = NUMERIC_KEYBOARD,
     ),
     settings = KeyboardDefinitionSettings(
-        autoCapitalizers = arrayOf(::autoCapitalizeI),
+        autoCapitalizers = arrayOf(::autoCapitalizeI, ::autoCapitalizeIApostrophe),
     ),
 )

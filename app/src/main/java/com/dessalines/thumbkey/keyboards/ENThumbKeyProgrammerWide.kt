@@ -20,6 +20,7 @@ import com.dessalines.thumbkey.utils.KeyboardDefinitionSettings
 import com.dessalines.thumbkey.utils.SwipeDirection
 import com.dessalines.thumbkey.utils.SwipeNWay
 import com.dessalines.thumbkey.utils.autoCapitalizeI
+import com.dessalines.thumbkey.utils.autoCapitalizeIApostrophe
 
 // uses programmer layout but moves spacebar to the left column in order to make a more aspect ration friendly layout. this grid is 5x3 which is closer to the average phone aspect ration of 16:9 than 4x4 keyboard.
 val KB_EN_THUMBKEY_PROGRAMMER_WIDE_MAIN = KeyboardC(
@@ -969,6 +970,6 @@ val KB_EN_THUMBKEY_PROGRAMMER_WIDE: KeyboardDefinition = KeyboardDefinition(
         numeric = NUMERIC_KEYBOARD_WIDE,
     ),
     settings = KeyboardDefinitionSettings(
-        autoCapitalizers = arrayOf(::autoCapitalizeI),
+        autoCapitalizers = arrayOf(::autoCapitalizeI, ::autoCapitalizeIApostrophe),
     ),
 )

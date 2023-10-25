@@ -18,6 +18,7 @@ import com.dessalines.thumbkey.utils.KeyboardDefinitionSettings
 import com.dessalines.thumbkey.utils.SwipeDirection
 import com.dessalines.thumbkey.utils.SwipeNWay
 import com.dessalines.thumbkey.utils.autoCapitalizeI
+import com.dessalines.thumbkey.utils.autoCapitalizeIApostrophe
 
 val KB_EN_THUMBKEY_MAIN = KeyboardC(
     listOf(
@@ -449,6 +450,6 @@ val KB_EN_THUMBKEY: KeyboardDefinition = KeyboardDefinition(
         numeric = NUMERIC_KEYBOARD,
     ),
     settings = KeyboardDefinitionSettings(
-        autoCapitalizers = arrayOf(::autoCapitalizeI),
+        autoCapitalizers = arrayOf(::autoCapitalizeI, ::autoCapitalizeIApostrophe),
     ),
 )

@@ -19,6 +19,7 @@ import com.dessalines.thumbkey.utils.KeyboardDefinitionSettings
 import com.dessalines.thumbkey.utils.SwipeDirection
 import com.dessalines.thumbkey.utils.SwipeNWay
 import com.dessalines.thumbkey.utils.autoCapitalizeI
+import com.dessalines.thumbkey.utils.autoCapitalizeIApostrophe
 
 // Adds more punctuation options to the main screen to reduce switches to the numeric keyboard
 val KB_EN_THUMBKEY_PROGRAMMER_MAIN = KeyboardC(
@@ -707,6 +708,6 @@ val KB_EN_THUMBKEY_PROGRAMMER: KeyboardDefinition = KeyboardDefinition(
         numeric = NUMERIC_KEYBOARD,
     ),
     settings = KeyboardDefinitionSettings(
-        autoCapitalizers = arrayOf(::autoCapitalizeI),
+        autoCapitalizers = arrayOf(::autoCapitalizeI, ::autoCapitalizeIApostrophe),
     ),
 )
