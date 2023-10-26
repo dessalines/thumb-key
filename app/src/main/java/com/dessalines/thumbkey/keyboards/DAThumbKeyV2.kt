@@ -188,13 +188,13 @@ val KB_DA_THUMBKEY_MAIN = KeyboardC(
                         action = KeyAction.CommitText("k"),
                     ),
                     SwipeDirection.TOP_RIGHT to KeyC(
-                        display = KeyDisplay.TextDisplay("'"),
-                        action = KeyAction.CommitText("'"),
+                        display = KeyDisplay.TextDisplay("c"),
+                        action = KeyAction.CommitText("c"),
                         color = ColorVariant.MUTED,
                     ),
                     SwipeDirection.RIGHT to KeyC(
-                        display = KeyDisplay.TextDisplay("c"),
-                        action = KeyAction.CommitText("c"),
+                        display = KeyDisplay.TextDisplay("'"),
+                        action = KeyAction.CommitText("'"),
                     ),
                     SwipeDirection.BOTTOM_RIGHT to KeyC(
                         display = KeyDisplay.TextDisplay("-"),
@@ -414,13 +414,13 @@ val KB_DA_THUMBKEY_SHIFTED = KeyboardC(
                         action = KeyAction.CommitText("K"),
                     ),
                     SwipeDirection.TOP_RIGHT to KeyC(
-                        display = KeyDisplay.TextDisplay("'"),
-                        action = KeyAction.CommitText("'"),
+                        display = KeyDisplay.TextDisplay("C"),
+                        action = KeyAction.CommitText("C"),
                         color = ColorVariant.MUTED,
                     ),
                     SwipeDirection.RIGHT to KeyC(
-                        display = KeyDisplay.TextDisplay("C"),
-                        action = KeyAction.CommitText("C"),
+                        display = KeyDisplay.TextDisplay("'"),
+                        action = KeyAction.CommitText("'"),
                     ),
                     SwipeDirection.BOTTOM_RIGHT to KeyC(
                         display = KeyDisplay.TextDisplay("-"),
