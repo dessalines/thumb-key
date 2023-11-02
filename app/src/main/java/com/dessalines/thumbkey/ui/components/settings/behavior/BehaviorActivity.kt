@@ -1,6 +1,7 @@
 package com.dessalines.thumbkey.ui.components.settings.behavior
 
 import android.util.Log
+import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.imePadding
 import androidx.compose.foundation.layout.padding
@@ -14,6 +15,7 @@ import androidx.compose.material.icons.outlined.SwapHoriz
 import androidx.compose.material.icons.outlined.Swipe
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.Icon
+import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.SnackbarHost
 import androidx.compose.material3.SnackbarHostState
@@ -60,30 +62,38 @@ fun BehaviorActivity(
 
     val settings = appSettingsViewModel.appSettings.observeAsState().value
 
-    val minSwipeLengthState = rememberFloatSettingState(
-        (settings?.minSwipeLength ?: DEFAULT_MIN_SWIPE_LENGTH).toFloat(),
-    )
-    val slideSensitivityState = rememberFloatSettingState(
-        (settings?.slideSensitivity ?: DEFAULT_SLIDE_SENSITIVITY).toFloat(),
-    )
-    val slideCursorMovementModeState = rememberIntSettingState(
-        (settings?.slideCursorMovementMode ?: DEFAULT_SLIDE_CURSOR_MOVEMENT_MODE),
-    )
-    val slideEnabledState = rememberBooleanSettingState(
-        (settings?.slideEnabled ?: DEFAULT_SLIDE_ENABLED).toBool(),
-    )
-    val slideSpacebarDeadzoneEnabledState = rememberBooleanSettingState(
-        (settings?.slideSpacebarDeadzoneEnabled ?: DEFAULT_SLIDE_SPACEBAR_DEADZONE_ENABLED).toBool(),
-    )
-    val slideBackspaceDeadzoneEnabledState = rememberBooleanSettingState(
-        (settings?.slideBackspaceDeadzoneEnabled ?: DEFAULT_SLIDE_BACKSPACE_DEADZONE_ENABLED).toBool(),
-    )
-    val autoCapitalizeState = rememberBooleanSettingState(
-        ((settings?.autoCapitalize ?: DEFAULT_AUTO_CAPITALIZE).toBool()),
-    )
-    val spacebarMultiTapsState = rememberBooleanSettingState(
-        ((settings?.spacebarMultiTaps ?: DEFAULT_SPACEBAR_MULTITAPS).toBool()),
-    )
+    val minSwipeLengthState =
+        rememberFloatSettingState(
+            (settings?.minSwipeLength ?: DEFAULT_MIN_SWIPE_LENGTH).toFloat(),
+        )
+    val slideSensitivityState =
+        rememberFloatSettingState(
+            (settings?.slideSensitivity ?: DEFAULT_SLIDE_SENSITIVITY).toFloat(),
+        )
+    val slideCursorMovementModeState =
+        rememberIntSettingState(
+            (settings?.slideCursorMovementMode ?: DEFAULT_SLIDE_CURSOR_MOVEMENT_MODE),
+        )
+    val slideEnabledState =
+        rememberBooleanSettingState(
+            (settings?.slideEnabled ?: DEFAULT_SLIDE_ENABLED).toBool(),
+        )
+    val slideSpacebarDeadzoneEnabledState =
+        rememberBooleanSettingState(
+            (settings?.slideSpacebarDeadzoneEnabled ?: DEFAULT_SLIDE_SPACEBAR_DEADZONE_ENABLED).toBool(),
+        )
+    val slideBackspaceDeadzoneEnabledState =
+        rememberBooleanSettingState(
+            (settings?.slideBackspaceDeadzoneEnabled ?: DEFAULT_SLIDE_BACKSPACE_DEADZONE_ENABLED).toBool(),
+        )
+    val autoCapitalizeState =
+        rememberBooleanSettingState(
+            ((settings?.autoCapitalize ?: DEFAULT_AUTO_CAPITALIZE).toBool()),
+        )
+    val spacebarMultiTapsState =
+        rememberBooleanSettingState(
+            ((settings?.spacebarMultiTaps ?: DEFAULT_SPACEBAR_MULTITAPS).toBool()),
+        )
 
     val snackbarHostState = remember { SnackbarHostState() }
 
@@ -99,10 +109,12 @@ fun BehaviorActivity(
         },
         content = { padding ->
             Column(
-                modifier = Modifier
-                    .padding(padding)
-                    .verticalScroll(scrollState)
-                    .imePadding(),
+                modifier =
+                    Modifier
+                        .padding(padding)
+                        .verticalScroll(scrollState)
+                        .background(color = MaterialTheme.colorScheme.surface)
+                        .imePadding(),
             ) {
                 SettingsCheckbox(
                     state = autoCapitalizeState,
@@ -154,10 +166,11 @@ fun BehaviorActivity(
                         )
                     },
                 )
-                val minSwipeLengthStr = stringResource(
-                    R.string.min_swipe_length,
-                    minSwipeLengthState.value.toInt().toString(),
-                )
+                val minSwipeLengthStr =
+                    stringResource(
+                        R.string.min_swipe_length,
+                        minSwipeLengthState.value.toInt().toString(),
+                    )
                 SettingsSlider(
                     valueRange = 0f..200f,
                     state = minSwipeLengthState,
@@ -184,12 +197,13 @@ fun BehaviorActivity(
                         )
                     },
                 )
-                val slideSensitivityStr = stringResource(
-                    R.string.slide_sensitivity,
-                    slideSensitivityState
-                        .value
-                        .toInt().toString(),
-                )
+                val slideSensitivityStr =
+                    stringResource(
+                        R.string.slide_sensitivity,
+                        slideSensitivityState
+                            .value
+                            .toInt().toString(),
+                    )
                 SettingsDivider()
                 SettingsCheckbox(
                     state = slideEnabledState,

@@ -20,7 +20,6 @@ class IMEService :
     LifecycleOwner,
     ViewModelStoreOwner,
     SavedStateRegistryOwner {
-
     private fun setupView(): View {
         val settingsRepo = (application as ThumbkeyApplication).appSettingsRepository
 
@@ -42,7 +41,10 @@ class IMEService :
      * This is called every time the keyboard is brought up.
      * You can't use onCreate, because that can't pick up new numeric inputs
      */
-    override fun onStartInput(attribute: EditorInfo?, restarting: Boolean) {
+    override fun onStartInput(
+        attribute: EditorInfo?,
+        restarting: Boolean,
+    ) {
         super.onStartInput(attribute, restarting)
         val view = this.setupView()
         this.setInputView(view)
@@ -51,8 +53,7 @@ class IMEService :
     // Lifecycle Methods
     private var lifecycleRegistry: LifecycleRegistry = LifecycleRegistry(this)
 
-    private fun handleLifecycleEvent(event: Lifecycle.Event) =
-        lifecycleRegistry.handleLifecycleEvent(event)
+    private fun handleLifecycleEvent(event: Lifecycle.Event) = lifecycleRegistry.handleLifecycleEvent(event)
 
     override val lifecycle = lifecycleRegistry
 

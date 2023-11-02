@@ -51,9 +51,10 @@ fun SetupActivity(
         content = { padding ->
             Column(
                 verticalArrangement = Arrangement.spacedBy(spacing),
-                modifier = Modifier
-                    .padding(padding)
-                    .padding(horizontal = spacing),
+                modifier =
+                    Modifier
+                        .padding(padding)
+                        .padding(horizontal = spacing),
             ) {
                 if (!thumbkeyEnabled) {
                     Button(modifier = Modifier.fillMaxWidth(), onClick = {

@@ -21,7 +21,6 @@ class ComposeKeyboardView(
 ) :
     AbstractComposeView
         (context) {
-
     @Composable
     override fun Content() {
         val settingsState = settingsRepo.appSettings.observeAsState()

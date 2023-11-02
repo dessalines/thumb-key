@@ -1,6 +1,7 @@
 package com.dessalines.thumbkey.ui.components.settings.about
 
 import android.util.Log
+import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
@@ -45,9 +46,7 @@ const val mastodonLink = "https://mastodon.social/@dessalines"
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun AboutActivity(
-    navController: NavController,
-) {
+fun AboutActivity(navController: NavController) {
     Log.d(TAG, "Got to About activity")
 
     val ctx = LocalContext.current
@@ -62,7 +61,11 @@ fun AboutActivity(
             SimpleTopAppBar(text = stringResource(R.string.about), navController = navController)
         },
         content = { padding ->
-            Column(modifier = Modifier.padding(padding)) {
+            Column(
+                modifier =
+                    Modifier.padding(padding)
+                        .background(color = MaterialTheme.colorScheme.surface),
+            ) {
                 SettingsMenuLink(
                     title = { Text(stringResource(R.string.whats_new)) },
                     subtitle = { Text(stringResource(R.string.version, version)) },

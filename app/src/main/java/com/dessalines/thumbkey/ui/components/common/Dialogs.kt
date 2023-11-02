@@ -28,7 +28,8 @@ import com.dessalines.thumbkey.db.AppSettingsViewModel
 import com.dessalines.thumbkey.utils.getVersionCode
 import dev.jeziellago.compose.markdowntext.MarkdownText
 
-val DONATION_MARKDOWN = """
+val DONATION_MARKDOWN =
+    """
     ### Support Thumb-Key
     
     [Thumb-Key](https://github.com/dessalines/thumb-key) is free, 
@@ -42,7 +43,7 @@ val DONATION_MARKDOWN = """
     - [Support on Liberapay](https://liberapay.com/dessalines).
     - [Support on Patreon](https://www.patreon.com/dessalines).
 
-""".trimIndent()
+    """.trimIndent()
 
 @OptIn(ExperimentalComposeUiApi::class)
 @Composable
@@ -67,9 +68,10 @@ fun ShowChangelog(appSettingsViewModel: AppSettingsViewModel) {
             AlertDialog(
                 text = {
                     Column(
-                        modifier = Modifier
-                            .fillMaxSize()
-                            .verticalScroll(scrollState),
+                        modifier =
+                            Modifier
+                                .fillMaxSize()
+                                .verticalScroll(scrollState),
                     ) {
                         val markdownText = DONATION_MARKDOWN + markdown
                         MarkdownText(
