@@ -107,11 +107,11 @@ fun SettingsActivity(
         content = { padding ->
             Column(
                 modifier =
-                    Modifier
-                        .padding(padding)
-                        .verticalScroll(scrollState)
-                        .background(color = MaterialTheme.colorScheme.surface)
-                        .imePadding(),
+                Modifier
+                    .padding(padding)
+                    .verticalScroll(scrollState)
+                    .background(color = MaterialTheme.colorScheme.surface)
+                    .imePadding(),
             ) {
                 if (!(thumbkeyEnabled || thumbkeySelected)) {
                     val setupStr = stringResource(R.string.setup)
@@ -301,8 +301,8 @@ private fun updateLayouts(
             keyboardLayout = keyboardRealIndexFromTitleIndex(layoutsState.value.first()), // Set
             // the current to the first
             keyboardLayouts =
-                layoutsState.value.map { keyboardRealIndexFromTitleIndex(it) }
-                    .joinToString(),
+            layoutsState.value.map { keyboardRealIndexFromTitleIndex(it) }
+                .joinToString(),
         ),
     )
 }

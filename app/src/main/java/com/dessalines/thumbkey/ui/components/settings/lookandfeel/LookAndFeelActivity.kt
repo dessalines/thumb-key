@@ -154,11 +154,11 @@ fun LookAndFeelActivity(
         content = { padding ->
             Column(
                 modifier =
-                    Modifier
-                        .padding(padding)
-                        .verticalScroll(scrollState)
-                        .background(color = MaterialTheme.colorScheme.surface)
-                        .imePadding(),
+                Modifier
+                    .padding(padding)
+                    .verticalScroll(scrollState)
+                    .background(color = MaterialTheme.colorScheme.surface)
+                    .imePadding(),
             ) {
                 SettingsList(
                     state = themeState,

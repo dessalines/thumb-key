@@ -63,8 +63,8 @@ fun AboutActivity(navController: NavController) {
         content = { padding ->
             Column(
                 modifier =
-                    Modifier.padding(padding)
-                        .background(color = MaterialTheme.colorScheme.surface),
+                Modifier.padding(padding)
+                    .background(color = MaterialTheme.colorScheme.surface),
             ) {
                 SettingsMenuLink(
                     title = { Text(stringResource(R.string.whats_new)) },

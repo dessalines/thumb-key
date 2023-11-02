@@ -468,12 +468,12 @@ fun KeyboardKey(
         Box(
             contentAlignment = Alignment.TopStart,
             modifier =
-                Modifier
-                    .fillMaxSize()
-                    .padding(
-                        horizontal = diagonalXPadding,
-                        vertical = diagonalYPadding,
-                    ),
+            Modifier
+                .fillMaxSize()
+                .padding(
+                    horizontal = diagonalXPadding,
+                    vertical = diagonalYPadding,
+                ),
         ) {
             key.swipes?.get(SwipeDirection.TOP_LEFT)?.let {
                 KeyText(it, (legendSize - keyBorderWidth).dp, hideLetters, hideSymbols, capsLock)
@@ -482,9 +482,9 @@ fun KeyboardKey(
         Box(
             contentAlignment = Alignment.TopCenter,
             modifier =
-                Modifier
-                    .fillMaxSize()
-                    .padding(vertical = yPadding),
+            Modifier
+                .fillMaxSize()
+                .padding(vertical = yPadding),
         ) {
             key.swipes?.get(SwipeDirection.TOP)?.let {
                 KeyText(it, (legendSize - keyBorderWidth).dp, hideLetters, hideSymbols, capsLock)
@@ -493,12 +493,12 @@ fun KeyboardKey(
         Box(
             contentAlignment = Alignment.TopEnd,
             modifier =
-                Modifier
-                    .fillMaxSize()
-                    .padding(
-                        horizontal = diagonalXPadding,
-                        vertical = diagonalYPadding,
-                    ),
+            Modifier
+                .fillMaxSize()
+                .padding(
+                    horizontal = diagonalXPadding,
+                    vertical = diagonalYPadding,
+                ),
         ) {
             key.swipes?.get(SwipeDirection.TOP_RIGHT)?.let {
                 KeyText(it, (legendSize - keyBorderWidth).dp, hideLetters, hideSymbols, capsLock)
@@ -507,9 +507,9 @@ fun KeyboardKey(
         Box(
             contentAlignment = Alignment.CenterStart,
             modifier =
-                Modifier
-                    .fillMaxSize()
-                    .padding(horizontal = legendPadding),
+            Modifier
+                .fillMaxSize()
+                .padding(horizontal = legendPadding),
         ) {
             key.swipes?.get(SwipeDirection.LEFT)?.let {
                 KeyText(it, (legendSize - keyBorderWidth).dp, hideLetters, hideSymbols, capsLock)
@@ -518,9 +518,9 @@ fun KeyboardKey(
         Box(
             contentAlignment = Alignment.Center,
             modifier =
-                Modifier
-                    .fillMaxSize()
-                    .padding(legendPadding),
+            Modifier
+                .fillMaxSize()
+                .padding(legendPadding),
         ) {
             KeyText(key.center, (legendSize - keyBorderWidth).dp, hideLetters, hideSymbols, capsLock)
         }
@@ -528,9 +528,9 @@ fun KeyboardKey(
         Box(
             contentAlignment = Alignment.CenterEnd,
             modifier =
-                Modifier
-                    .fillMaxSize()
-                    .padding(horizontal = legendPadding),
+            Modifier
+                .fillMaxSize()
+                .padding(horizontal = legendPadding),
         ) {
             key.swipes?.get(SwipeDirection.RIGHT)?.let {
                 KeyText(it, (legendSize - keyBorderWidth).dp, hideLetters, hideSymbols, capsLock)
@@ -539,12 +539,12 @@ fun KeyboardKey(
         Box(
             contentAlignment = Alignment.BottomStart,
             modifier =
-                Modifier
-                    .fillMaxSize()
-                    .padding(
-                        horizontal = diagonalXPadding,
-                        vertical = diagonalYPadding,
-                    ),
+            Modifier
+                .fillMaxSize()
+                .padding(
+                    horizontal = diagonalXPadding,
+                    vertical = diagonalYPadding,
+                ),
         ) {
             key.swipes?.get(SwipeDirection.BOTTOM_LEFT)?.let {
                 KeyText(it, (legendSize - keyBorderWidth).dp, hideLetters, hideSymbols, capsLock)
@@ -553,9 +553,9 @@ fun KeyboardKey(
         Box(
             contentAlignment = Alignment.BottomCenter,
             modifier =
-                Modifier
-                    .fillMaxSize()
-                    .padding(vertical = yPadding),
+            Modifier
+                .fillMaxSize()
+                .padding(vertical = yPadding),
         ) {
             key.swipes?.get(SwipeDirection.BOTTOM)?.let {
                 KeyText(it, (legendSize - keyBorderWidth).dp, hideLetters, hideSymbols, capsLock)
@@ -564,12 +564,12 @@ fun KeyboardKey(
         Box(
             contentAlignment = Alignment.BottomEnd,
             modifier =
-                Modifier
-                    .fillMaxSize()
-                    .padding(
-                        horizontal = diagonalXPadding,
-                        vertical = diagonalYPadding,
-                    ),
+            Modifier
+                .fillMaxSize()
+                .padding(
+                    horizontal = diagonalXPadding,
+                    vertical = diagonalYPadding,
+                ),
         ) {
             key.swipes?.get(SwipeDirection.BOTTOM_RIGHT)?.let {
                 KeyText(it, (legendSize - keyBorderWidth).dp, hideLetters, hideSymbols, capsLock)
@@ -579,9 +579,9 @@ fun KeyboardKey(
         // The animated box that fades out.
         AnimatedVisibility(
             modifier =
-                Modifier
-                    .fillMaxSize()
-                    .background(color = Color(0, 0, 0, 0)),
+            Modifier
+                .fillMaxSize()
+                .background(color = Color(0, 0, 0, 0)),
             visible = releasedKey.value != null,
             enter = EnterTransition.None,
             exit = fadeOut(tween(animationSpeed)),
@@ -589,18 +589,18 @@ fun KeyboardKey(
             Box(
                 contentAlignment = Alignment.Center,
                 modifier =
-                    Modifier
-                        .fillMaxSize()
-                        .background(color = MaterialTheme.colorScheme.tertiaryContainer),
+                Modifier
+                    .fillMaxSize()
+                    .background(color = MaterialTheme.colorScheme.tertiaryContainer),
             ) {}
         }
 
         // The animated key letter that falls downwards and then fades out.
         AnimatedVisibility(
             modifier =
-                Modifier
-                    .fillMaxSize()
-                    .background(color = Color(0, 0, 0, 0)),
+            Modifier
+                .fillMaxSize()
+                .background(color = Color(0, 0, 0, 0)),
             visible = releasedKey.value != null,
             enter = slideInVertically(tween(animationSpeed)),
             exit = fadeOut(tween(animationSpeed)),
