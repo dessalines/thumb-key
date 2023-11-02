@@ -360,8 +360,8 @@ val KB_JA_TYPESPLIT_KATAKANA_SHIFTED = KeyboardC(
         listOf(
             KeyItemC(
                 center = KeyC(
-                    display = KeyDisplay.TextDisplay("ゔ"),
-                    action = KeyAction.CommitText("ゔ"),
+                    display = KeyDisplay.TextDisplay("ヴ"),
+                    action = KeyAction.CommitText("ヴ"),
                     size = FontSizeVariant.LARGE,
                     color = ColorVariant.PRIMARY,
                 ),
