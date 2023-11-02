@@ -390,111 +390,111 @@ class AppSettingsRepository(private val appSettingsDao: AppSettingsDao) {
 }
 
 val MIGRATION_1_2 = object : Migration(1, 2) {
-    override fun migrate(database: SupportSQLiteDatabase) {
-        database.execSQL(
+    override fun migrate(db: SupportSQLiteDatabase) {
+        db.execSQL(
             "alter table AppSettings add column min_swipe_length INTEGER NOT NULL default $DEFAULT_MIN_SWIPE_LENGTH",
         )
     }
 }
 
 val MIGRATION_2_3 = object : Migration(2, 3) {
-    override fun migrate(database: SupportSQLiteDatabase) {
-        database.execSQL(
+    override fun migrate(db: SupportSQLiteDatabase) {
+        db.execSQL(
             "alter table AppSettings add column pushup_size INTEGER NOT NULL default $DEFAULT_PUSHUP_SIZE",
         )
     }
 }
 
 val MIGRATION_3_4 = object : Migration(3, 4) {
-    override fun migrate(database: SupportSQLiteDatabase) {
-        database.execSQL(
+    override fun migrate(db: SupportSQLiteDatabase) {
+        db.execSQL(
             "alter table AppSettings add column hide_letters INTEGER NOT NULL default $DEFAULT_HIDE_LETTERS",
         )
     }
 }
 
 val MIGRATION_4_5 = object : Migration(4, 5) {
-    override fun migrate(database: SupportSQLiteDatabase) {
-        database.execSQL(
+    override fun migrate(db: SupportSQLiteDatabase) {
+        db.execSQL(
             "alter table AppSettings add column keyboard_layouts TEXT NOT NULL default '$DEFAULT_KEYBOARD_LAYOUT'",
         )
     }
 }
 
 val MIGRATION_5_6 = object : Migration(5, 6) {
-    override fun migrate(database: SupportSQLiteDatabase) {
-        database.execSQL(
+    override fun migrate(db: SupportSQLiteDatabase) {
+        db.execSQL(
             "alter table AppSettings add column key_borders INTEGER NOT NULL default $DEFAULT_KEY_BORDERS",
         )
     }
 }
 
 val MIGRATION_6_7 = object : Migration(6, 7) {
-    override fun migrate(database: SupportSQLiteDatabase) {
-        database.execSQL(
+    override fun migrate(db: SupportSQLiteDatabase) {
+        db.execSQL(
             "alter table AppSettings add column spacebar_multitaps INTEGER NOT NULL default $DEFAULT_SPACEBAR_MULTITAPS",
         )
     }
 }
 
 val MIGRATION_7_8 = object : Migration(7, 8) {
-    override fun migrate(database: SupportSQLiteDatabase) {
-        database.execSQL(
+    override fun migrate(db: SupportSQLiteDatabase) {
+        db.execSQL(
             "alter table AppSettings add column hide_symbols INTEGER NOT NULL default $DEFAULT_HIDE_SYMBOLS",
         )
     }
 }
 
 val MIGRATION_8_9 = object : Migration(8, 9) {
-    override fun migrate(database: SupportSQLiteDatabase) {
-        database.execSQL(
+    override fun migrate(db: SupportSQLiteDatabase) {
+        db.execSQL(
             "alter table AppSettings add column last_version_code_viewed INTEGER NOT NULL default 0",
         )
     }
 }
 
 val MIGRATION_9_10 = object : Migration(9, 10) {
-    override fun migrate(database: SupportSQLiteDatabase) {
-        database.execSQL(
+    override fun migrate(db: SupportSQLiteDatabase) {
+        db.execSQL(
             "alter table AppSettings add column slide_enabled INTEGER NOT NULL default $DEFAULT_SLIDE_ENABLED",
         )
-        database.execSQL(
+        db.execSQL(
             "alter table AppSettings add column slide_sensitivity INTEGER NOT NULL default $DEFAULT_SLIDE_SENSITIVITY",
         )
     }
 }
 
 val MIGRATION_10_11 = object : Migration(10, 11) {
-    override fun migrate(database: SupportSQLiteDatabase) {
-        database.execSQL(
+    override fun migrate(db: SupportSQLiteDatabase) {
+        db.execSQL(
             "alter table AppSettings add column backdrop_enabled INTEGER NOT NULL default $DEFAULT_BACKDROP_ENABLED",
         )
     }
 }
 
 val MIGRATION_11_12 = object : Migration(11, 12) {
-    override fun migrate(database: SupportSQLiteDatabase) {
-        database.execSQL(
+    override fun migrate(db: SupportSQLiteDatabase) {
+        db.execSQL(
             "alter table AppSettings add column key_padding INTEGER NOT NULL default $DEFAULT_KEY_PADDING",
         )
-        database.execSQL(
+        db.execSQL(
             "alter table AppSettings add column key_border_width INTEGER NOT NULL default $DEFAULT_KEY_BORDER_WIDTH",
         )
-        database.execSQL(
+        db.execSQL(
             "alter table AppSettings add column key_radius INTEGER NOT NULL default $DEFAULT_KEY_RADIUS",
         )
     }
 }
 
 val MIGRATION_12_13 = object : Migration(12, 13) {
-    override fun migrate(database: SupportSQLiteDatabase) {
-        database.execSQL(
+    override fun migrate(db: SupportSQLiteDatabase) {
+        db.execSQL(
             "alter table AppSettings add column slide_spacebar_deadzone_enabled INTEGER NOT NULL default $DEFAULT_SLIDE_SPACEBAR_DEADZONE_ENABLED",
         )
-        database.execSQL(
+        db.execSQL(
             "alter table AppSettings add column slide_backspace_deadzone_enabled INTEGER NOT NULL default $DEFAULT_SLIDE_BACKSPACE_DEADZONE_ENABLED",
         )
-        database.execSQL(
+        db.execSQL(
             "alter table AppSettings add column slide_cursor_movement_mode INTEGER NOT NULL default $DEFAULT_SLIDE_CURSOR_MOVEMENT_MODE",
         )
     }
