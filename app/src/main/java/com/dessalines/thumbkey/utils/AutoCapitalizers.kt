@@ -4,9 +4,7 @@ import com.dessalines.thumbkey.IMEService
 
 typealias AutoCapitalizers = Array<(IMEService) -> Unit>
 
-fun autoCapitalizeI(
-    ime: IMEService,
-) {
+fun autoCapitalizeI(ime: IMEService) {
     // Capitalizes 'i'
     val textBefore = ime.currentInputConnection.getTextBeforeCursor(3, 0)
     if (!textBefore.isNullOrEmpty()) {

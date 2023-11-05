@@ -23,36 +23,40 @@ fun ThumbkeyTheme(
     val android12OrLater = Build.VERSION.SDK_INT >= Build.VERSION_CODES.S
 
     // Dynamic schemes crash on lower than android 12
-    val dynamicPair = if (android12OrLater) {
-        Pair(dynamicLightColorScheme(ctx), dynamicDarkColorScheme(ctx))
-    } else {
-        pink()
-    }
+    val dynamicPair =
+        if (android12OrLater) {
+            Pair(dynamicLightColorScheme(ctx), dynamicDarkColorScheme(ctx))
+        } else {
+            pink()
+        }
 
-    val colorPair = when (themeColor) {
-        ThemeColor.Dynamic -> dynamicPair
-        ThemeColor.Green -> green()
-        ThemeColor.Pink -> pink()
-        ThemeColor.Srcery -> srcery()
-        ThemeColor.Blue -> blue()
-        ThemeColor.Dracula -> dracula()
-        ThemeColor.Twilight -> twilight()
-        ThemeColor.HighContrast -> highContrast()
-        ThemeColor.HighContrastColorful -> highContrastColorful()
-        ThemeColor.Ancom -> ancom()
-    }
+    val colorPair =
+        when (themeColor) {
+            ThemeColor.Dynamic -> dynamicPair
+            ThemeColor.Green -> green()
+            ThemeColor.Pink -> pink()
+            ThemeColor.Srcery -> srcery()
+            ThemeColor.Blue -> blue()
+            ThemeColor.Dracula -> dracula()
+            ThemeColor.Twilight -> twilight()
+            ThemeColor.HighContrast -> highContrast()
+            ThemeColor.HighContrastColorful -> highContrastColorful()
+            ThemeColor.Ancom -> ancom()
+        }
 
-    val systemTheme = if (!isSystemInDarkTheme()) {
-        colorPair.first
-    } else {
-        colorPair.second
-    }
+    val systemTheme =
+        if (!isSystemInDarkTheme()) {
+            colorPair.first
+        } else {
+            colorPair.second
+        }
 
-    val colors = when (themeMode) {
-        ThemeMode.System -> systemTheme
-        ThemeMode.Light -> colorPair.first
-        ThemeMode.Dark -> colorPair.second
-    }
+    val colors =
+        when (themeMode) {
+            ThemeMode.System -> systemTheme
+            ThemeMode.Light -> colorPair.first
+            ThemeMode.Dark -> colorPair.second
+        }
 
     MaterialTheme(
         colorScheme = colors,
