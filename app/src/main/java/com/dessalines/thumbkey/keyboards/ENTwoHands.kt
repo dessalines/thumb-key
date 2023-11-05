@@ -3,6 +3,7 @@ package com.dessalines.thumbkey.keyboards
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.outlined.ArrowDropDown
 import androidx.compose.material.icons.outlined.ArrowDropUp
+import androidx.compose.material.icons.outlined.Copyright
 import androidx.compose.material.icons.outlined.KeyboardCapslock
 import com.dessalines.thumbkey.utils.ColorVariant
 import com.dessalines.thumbkey.utils.FontSizeVariant
@@ -710,6 +711,7 @@ val KB_EN_TWO_HANDS_SHIFTED =
                         SwipeDirection.TOP to
                             KeyC(
                                 display = KeyDisplay.IconDisplay(Icons.Outlined.KeyboardCapslock),
+                                capsModeDisplay = KeyDisplay.TextDisplay(" "),
                                 action = KeyAction.ToggleCapsLock,
                                 color = ColorVariant.MUTED,
                             ),
@@ -811,6 +813,7 @@ val KB_EN_TWO_HANDS_SHIFTED =
                         SwipeDirection.TOP to
                             KeyC(
                                 display = KeyDisplay.IconDisplay(Icons.Outlined.KeyboardCapslock),
+                                capsModeDisplay = KeyDisplay.TextDisplay(" "),
                                 action = KeyAction.ToggleCapsLock,
                                 color = ColorVariant.MUTED,
                             ),
