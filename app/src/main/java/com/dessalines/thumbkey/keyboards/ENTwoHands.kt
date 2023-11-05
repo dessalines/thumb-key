@@ -3,7 +3,6 @@ package com.dessalines.thumbkey.keyboards
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.outlined.ArrowDropDown
 import androidx.compose.material.icons.outlined.ArrowDropUp
-import androidx.compose.material.icons.outlined.Copyright
 import androidx.compose.material.icons.outlined.KeyboardCapslock
 import com.dessalines.thumbkey.utils.ColorVariant
 import com.dessalines.thumbkey.utils.FontSizeVariant
@@ -702,10 +701,16 @@ val KB_EN_TWO_HANDS_SHIFTED =
                                 display = KeyDisplay.TextDisplay("L"),
                                 action = KeyAction.CommitText("L"),
                             ),
+                        SwipeDirection.BOTTOM to
+                            KeyC(
+                                display = KeyDisplay.IconDisplay(Icons.Outlined.ArrowDropDown),
+                                action = KeyAction.ToggleShiftMode(false),
+                                color = ColorVariant.MUTED,
+                            ),
                         SwipeDirection.TOP to
                             KeyC(
-                                display = KeyDisplay.IconDisplay(Icons.Outlined.ArrowDropUp),
-                                action = KeyAction.ToggleShiftMode(true),
+                                display = KeyDisplay.IconDisplay(Icons.Outlined.KeyboardCapslock),
+                                action = KeyAction.ToggleCapsLock,
                                 color = ColorVariant.MUTED,
                             ),
                     ),
@@ -797,10 +802,16 @@ val KB_EN_TWO_HANDS_SHIFTED =
                                 display = KeyDisplay.TextDisplay("L"),
                                 action = KeyAction.CommitText("L"),
                             ),
+                        SwipeDirection.BOTTOM to
+                            KeyC(
+                                display = KeyDisplay.IconDisplay(Icons.Outlined.ArrowDropDown),
+                                action = KeyAction.ToggleShiftMode(false),
+                                color = ColorVariant.MUTED,
+                            ),
                         SwipeDirection.TOP to
                             KeyC(
-                                display = KeyDisplay.IconDisplay(Icons.Outlined.ArrowDropUp),
-                                action = KeyAction.ToggleShiftMode(true),
+                                display = KeyDisplay.IconDisplay(Icons.Outlined.KeyboardCapslock),
+                                action = KeyAction.ToggleCapsLock,
                                 color = ColorVariant.MUTED,
                             ),
                     ),
@@ -991,5 +1002,9 @@ val KB_EN_TWO_HANDS: KeyboardDefinition =
             main = KB_EN_TWO_HANDS_MAIN,
             shifted = KB_EN_TWO_HANDS_SHIFTED,
             numeric = TWO_HANDS_NUMERIC_KEYBOARD,
+        ),
+        settings =
+        KeyboardDefinitionSettings(
+            autoCapitalizers = arrayOf(::autoCapitalizeI),
         ),
     )
