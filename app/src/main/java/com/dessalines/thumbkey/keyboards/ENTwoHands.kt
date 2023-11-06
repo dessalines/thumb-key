@@ -710,7 +710,7 @@ val KB_EN_TWO_HANDS_SHIFTED =
                         SwipeDirection.TOP to
                             KeyC(
                                 display = KeyDisplay.IconDisplay(Icons.Outlined.KeyboardCapslock),
-                                capsModeDisplay = KeyDisplay.TextDisplay(" "),
+                                capsModeDisplay = KeyDisplay.IconDisplay(Icons.Outlined.ArrowDropUp),
                                 action = KeyAction.ToggleCapsLock,
                                 color = ColorVariant.MUTED,
                             ),
@@ -812,7 +812,7 @@ val KB_EN_TWO_HANDS_SHIFTED =
                         SwipeDirection.TOP to
                             KeyC(
                                 display = KeyDisplay.IconDisplay(Icons.Outlined.KeyboardCapslock),
-                                capsModeDisplay = KeyDisplay.TextDisplay(" "),
+                                capsModeDisplay = KeyDisplay.IconDisplay(Icons.Outlined.ArrowDropUp),
                                 action = KeyAction.ToggleCapsLock,
                                 color = ColorVariant.MUTED,
                             ),
