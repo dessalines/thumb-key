@@ -1,12 +1,12 @@
 <resources>
     <string name="app_name">Thumb-Key</string>
-    <string name="settings">Settings</string>
-    <string name="system">System</string>
-    <string name="light">Light</string>
-    <string name="dark">Dark</string>
-    <string name="dynamic">Dynamic</string>
-    <string name="green">Green</string>
-    <string name="pink">Pink</string>
+    <string name="settings">Ajustes</string>
+    <string name="system">Sistema</string>
+    <string name="light">Claro</string>
+    <string name="dark">Oscuro</string>
+    <string name="dynamic">Dinámico</string>
+    <string name="green">Verde</string>
+    <string name="pink">Rosado</string>
     <string name="srcery">Srcery</string>
     <string name="blue">Azul</string>
     <string name="dracula">Drácula</string>
