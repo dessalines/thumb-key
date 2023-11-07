@@ -206,10 +206,16 @@ val KB_EU_ES_THUMBKEY_MAIN =
                                 display = KeyDisplay.TextDisplay("l"),
                                 action = KeyAction.CommitText("l"),
                             ),
-                        SwipeDirection.BOTTOM to
+                        SwipeDirection.LEFT to
                             KeyC(
                                 display = KeyDisplay.TextDisplay("ñ"),
                                 action = KeyAction.CommitText("ñ"),
+                            ),
+                        SwipeDirection.BOTTOM to
+                            KeyC(
+                                display = KeyDisplay.TextDisplay("¡"),
+                                action = KeyAction.CommitText("¡"),
+                                color = ColorVariant.MUTED,
                             ),
                     ),
                 ),
@@ -278,6 +284,12 @@ val KB_EU_ES_THUMBKEY_MAIN =
                             KeyC(
                                 display = KeyDisplay.TextDisplay("á"),
                                 action = KeyAction.CommitText("á"),
+                            ),
+                        SwipeDirection.BOTTOM to
+                            KeyC(
+                                display = KeyDisplay.TextDisplay("¿"),
+                                action = KeyAction.CommitText("¿"),
+                                color = ColorVariant.MUTED,
                             ),
                     ),
                 ),
@@ -486,10 +498,16 @@ val KB_EU_ES_THUMBKEY_SHIFTED =
                                 display = KeyDisplay.TextDisplay("L"),
                                 action = KeyAction.CommitText("L"),
                             ),
-                        SwipeDirection.BOTTOM to
+                        SwipeDirection.LEFT to
                             KeyC(
                                 display = KeyDisplay.TextDisplay("Ñ"),
                                 action = KeyAction.CommitText("Ñ"),
+                            ),
+                        SwipeDirection.BOTTOM to
+                            KeyC(
+                                display = KeyDisplay.TextDisplay("¡"),
+                                action = KeyAction.CommitText("¡"),
+                                color = ColorVariant.MUTED,
                             ),
                     ),
                 ),
@@ -558,6 +576,12 @@ val KB_EU_ES_THUMBKEY_SHIFTED =
                             KeyC(
                                 display = KeyDisplay.TextDisplay("Á"),
                                 action = KeyAction.CommitText("Á"),
+                            ),
+                        SwipeDirection.BOTTOM to
+                            KeyC(
+                                display = KeyDisplay.TextDisplay("¿"),
+                                action = KeyAction.CommitText("¿"),
+                                color = ColorVariant.MUTED,
                             ),
                     ),
                 ),
