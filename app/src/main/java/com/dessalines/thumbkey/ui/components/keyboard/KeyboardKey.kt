@@ -114,11 +114,12 @@ fun KeyboardKey(
     val releasedKey = remember { mutableStateOf<String?>(null) }
 
     var tapCount by remember { mutableIntStateOf(0) }
-    val tapActions = if (spacebarMultiTaps) {
-        buildTapActions(key)
-    } else {
-        listOf(key.center.action)
-    }
+    val tapActions =
+        if (spacebarMultiTaps) {
+            buildTapActions(key)
+        } else {
+            listOf(key.center.action)
+        }
 
     var offsetX by remember { mutableFloatStateOf(0f) }
     var offsetY by remember { mutableFloatStateOf(0f) }
@@ -127,11 +128,12 @@ fun KeyboardKey(
 
     var selection by remember { mutableStateOf(Selection()) }
 
-    val backgroundColor = if (!(isDragged.value || isPressed)) {
-        colorVariantToColor(colorVariant = key.backgroundColor)
-    } else {
-        MaterialTheme.colorScheme.inversePrimary
-    }
+    val backgroundColor =
+        if (!(isDragged.value || isPressed)) {
+            colorVariantToColor(colorVariant = key.backgroundColor)
+        } else {
+            MaterialTheme.colorScheme.inversePrimary
+        }
 
     val keyBorderColour = MaterialTheme.colorScheme.outline
     val keySize = legendSize + (keyPadding * 2.0) + (keyBorderWidth * 2.0)
@@ -238,7 +240,8 @@ fun KeyboardKey(
                                     selection = startSelection(ime)
                                 }
 
-                                val cursorMovement = slideCursorDistance(offsetX, timeOfLastAccelerationInput, slideCursorMovementMode, slideSensitivity)
+                                val cursorMovement =
+                                    slideCursorDistance(offsetX, timeOfLastAccelerationInput, slideCursorMovementMode, slideSensitivity)
                                 timeOfLastAccelerationInput = System.currentTimeMillis()
                                 if (cursorMovement >= 1 || cursorMovement <= -1) {
                                     if (cursorMovement < 0.00) {
@@ -269,11 +272,12 @@ fun KeyboardKey(
                                 var lengthOfSelectedText = 0
                                 if (selection.active) {
                                     // Move the cursor to the beginning or end of the selection and exit selection.
-                                    val location = if (offsetX < 0) {
-                                        min(selection.start, selection.end)
-                                    } else {
-                                        max(selection.start, selection.end)
-                                    }
+                                    val location =
+                                        if (offsetX < 0) {
+                                            min(selection.start, selection.end)
+                                        } else {
+                                            max(selection.start, selection.end)
+                                        }
 
                                     selection = Selection(location, location, false)
                                     ime.currentInputConnection.setSelection(
@@ -288,7 +292,8 @@ fun KeyboardKey(
                                     }
                                 }
 
-                                var cursorMovement = slideCursorDistance(offsetX, timeOfLastAccelerationInput, slideCursorMovementMode, slideSensitivity)
+                                var cursorMovement =
+                                    slideCursorDistance(offsetX, timeOfLastAccelerationInput, slideCursorMovementMode, slideSensitivity)
                                 timeOfLastAccelerationInput = System.currentTimeMillis()
                                 if (cursorMovement > 0) {
                                     // Increment distance by one, because a value of 2 moves the cursor by 1 character.
@@ -331,7 +336,8 @@ fun KeyboardKey(
                                     selection = startSelection(ime)
                                 }
                             } else {
-                                val cursorMovement = slideCursorDistance(offsetX, timeOfLastAccelerationInput, slideCursorMovementMode, slideSensitivity)
+                                val cursorMovement =
+                                    slideCursorDistance(offsetX, timeOfLastAccelerationInput, slideCursorMovementMode, slideSensitivity)
                                 timeOfLastAccelerationInput = System.currentTimeMillis()
                                 if (cursorMovement >= 1 || cursorMovement <= -1) {
                                     if (cursorMovement < 0.00) {
@@ -382,13 +388,14 @@ fun KeyboardKey(
                                 animationHelperSpeed,
                             )
                         } else if (key.slideType == SlideType.DELETE) {
-                            action = KeyAction.SendEvent(
-                                KeyEvent(
-                                    KeyEvent.ACTION_DOWN,
-                                    KeyEvent
-                                        .KEYCODE_DEL,
-                                ),
-                            )
+                            action =
+                                KeyAction.SendEvent(
+                                    KeyEvent(
+                                        KeyEvent.ACTION_DOWN,
+                                        KeyEvent
+                                            .KEYCODE_DEL,
+                                    ),
+                                )
                             // only delete if valid selection
                             val sel = ime.currentInputConnection.getSelectedText(0)
                             sel?.let {
@@ -417,12 +424,13 @@ fun KeyboardKey(
                             )
                         } else {
                             hasSlideMoveCursorTriggered = false
-                            action = KeyAction.SendEvent(
-                                KeyEvent(
-                                    KeyEvent.ACTION_UP,
-                                    KeyEvent.KEYCODE_DPAD_RIGHT,
-                                ),
-                            )
+                            action =
+                                KeyAction.SendEvent(
+                                    KeyEvent(
+                                        KeyEvent.ACTION_UP,
+                                        KeyEvent.KEYCODE_DPAD_RIGHT,
+                                    ),
+                                )
                             doneKeyAction(
                                 scope,
                                 action,
@@ -459,7 +467,8 @@ fun KeyboardKey(
     ) {
         Box(
             contentAlignment = Alignment.TopStart,
-            modifier = Modifier
+            modifier =
+            Modifier
                 .fillMaxSize()
                 .padding(
                     horizontal = diagonalXPadding,
@@ -472,7 +481,8 @@ fun KeyboardKey(
         }
         Box(
             contentAlignment = Alignment.TopCenter,
-            modifier = Modifier
+            modifier =
+            Modifier
                 .fillMaxSize()
                 .padding(vertical = yPadding),
         ) {
@@ -482,7 +492,8 @@ fun KeyboardKey(
         }
         Box(
             contentAlignment = Alignment.TopEnd,
-            modifier = Modifier
+            modifier =
+            Modifier
                 .fillMaxSize()
                 .padding(
                     horizontal = diagonalXPadding,
@@ -495,7 +506,8 @@ fun KeyboardKey(
         }
         Box(
             contentAlignment = Alignment.CenterStart,
-            modifier = Modifier
+            modifier =
+            Modifier
                 .fillMaxSize()
                 .padding(horizontal = legendPadding),
         ) {
@@ -505,7 +517,8 @@ fun KeyboardKey(
         }
         Box(
             contentAlignment = Alignment.Center,
-            modifier = Modifier
+            modifier =
+            Modifier
                 .fillMaxSize()
                 .padding(legendPadding),
         ) {
@@ -514,7 +527,8 @@ fun KeyboardKey(
 
         Box(
             contentAlignment = Alignment.CenterEnd,
-            modifier = Modifier
+            modifier =
+            Modifier
                 .fillMaxSize()
                 .padding(horizontal = legendPadding),
         ) {
@@ -524,7 +538,8 @@ fun KeyboardKey(
         }
         Box(
             contentAlignment = Alignment.BottomStart,
-            modifier = Modifier
+            modifier =
+            Modifier
                 .fillMaxSize()
                 .padding(
                     horizontal = diagonalXPadding,
@@ -537,7 +552,8 @@ fun KeyboardKey(
         }
         Box(
             contentAlignment = Alignment.BottomCenter,
-            modifier = Modifier
+            modifier =
+            Modifier
                 .fillMaxSize()
                 .padding(vertical = yPadding),
         ) {
@@ -547,7 +563,8 @@ fun KeyboardKey(
         }
         Box(
             contentAlignment = Alignment.BottomEnd,
-            modifier = Modifier
+            modifier =
+            Modifier
                 .fillMaxSize()
                 .padding(
                     horizontal = diagonalXPadding,
@@ -561,7 +578,8 @@ fun KeyboardKey(
 
         // The animated box that fades out.
         AnimatedVisibility(
-            modifier = Modifier
+            modifier =
+            Modifier
                 .fillMaxSize()
                 .background(color = Color(0, 0, 0, 0)),
             visible = releasedKey.value != null,
@@ -570,7 +588,8 @@ fun KeyboardKey(
         ) {
             Box(
                 contentAlignment = Alignment.Center,
-                modifier = Modifier
+                modifier =
+                Modifier
                     .fillMaxSize()
                     .background(color = MaterialTheme.colorScheme.tertiaryContainer),
             ) {}
@@ -578,7 +597,8 @@ fun KeyboardKey(
 
         // The animated key letter that falls downwards and then fades out.
         AnimatedVisibility(
-            modifier = Modifier
+            modifier =
+            Modifier
                 .fillMaxSize()
                 .background(color = Color(0, 0, 0, 0)),
             visible = releasedKey.value != null,
@@ -589,10 +609,11 @@ fun KeyboardKey(
                 contentAlignment = Alignment.Center,
                 modifier = Modifier.fillMaxSize(),
             ) {
-                val fontSize = fontSizeVariantToFontSize(
-                    fontSizeVariant = FontSizeVariant.LARGE,
-                    keySize = legendSize.dp,
-                )
+                val fontSize =
+                    fontSizeVariantToFontSize(
+                        fontSizeVariant = FontSizeVariant.LARGE,
+                        keySize = legendSize.dp,
+                    )
                 releasedKey.value?.let { text ->
                     Text(
                         text = text,
@@ -607,15 +628,22 @@ fun KeyboardKey(
 }
 
 @Composable
-fun KeyText(key: KeyC, keySize: Dp, hideLetters: Boolean, hideSymbols: Boolean, capsLock: Boolean) {
+fun KeyText(
+    key: KeyC,
+    keySize: Dp,
+    hideLetters: Boolean,
+    hideSymbols: Boolean,
+    capsLock: Boolean,
+) {
     val color = colorVariantToColor(colorVariant = key.color)
     val fontSize = fontSizeVariantToFontSize(fontSizeVariant = key.size, keySize = keySize)
 
-    val display = if (capsLock) {
-        key.capsModeDisplay ?: key.display
-    } else {
-        key.display
-    }
+    val display =
+        if (capsLock) {
+            key.capsModeDisplay ?: key.display
+        } else {
+            key.display
+        }
 
     when (display) {
         is KeyDisplay.IconDisplay -> {
@@ -631,11 +659,12 @@ fun KeyText(key: KeyC, keySize: Dp, hideLetters: Boolean, hideSymbols: Boolean, 
             val containsLetters = display.text.any { it.isLetter() }
 
             // If its a letter key, use the hide letter setting
-            val showKey = if (containsLetters) {
-                !hideLetters
-            } else {
-                !hideSymbols
-            }
+            val showKey =
+                if (containsLetters) {
+                    !hideLetters
+                } else {
+                    !hideSymbols
+                }
             if (showKey) {
                 Text(
                     text = display.text,

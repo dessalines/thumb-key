@@ -665,7 +665,7 @@ val KB_JA_TYPESPLIT_HIRAGANA_SHIFTED = KeyboardC(
 )
 
 val KB_JA_TYPESPLIT_HIRAGANA: KeyboardDefinition = KeyboardDefinition(
-    title = "japanese type-split hiragana",
+    title = "japanese hiragana type-split",
     modes = KeyboardDefinitionModes(
         main = KB_JA_TYPESPLIT_HIRAGANA_MAIN,
         shifted = KB_JA_TYPESPLIT_HIRAGANA_SHIFTED,

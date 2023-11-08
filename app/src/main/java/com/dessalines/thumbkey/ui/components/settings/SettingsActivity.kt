@@ -1,6 +1,7 @@
 package com.dessalines.thumbkey.ui.components.settings
 
 import android.util.Log
+import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.imePadding
 import androidx.compose.foundation.layout.padding
@@ -18,6 +19,7 @@ import androidx.compose.material3.AlertDialog
 import androidx.compose.material3.Button
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.Icon
+import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.SnackbarHost
 import androidx.compose.material3.SnackbarHostState
@@ -92,9 +94,10 @@ fun SettingsActivity(
     val scrollState = rememberScrollState()
     val showConfirmResetDialog = remember { mutableStateOf(false) }
 
-    val layoutsState = rememberIntSetSettingState(
-        keyboardLayoutsSetFromTitleIndex(settings?.keyboardLayouts),
-    )
+    val layoutsState =
+        rememberIntSetSettingState(
+            keyboardLayoutsSetFromTitleIndex(settings?.keyboardLayouts),
+        )
 
     Scaffold(
         snackbarHost = { SnackbarHost(snackbarHostState) },
@@ -103,9 +106,11 @@ fun SettingsActivity(
         },
         content = { padding ->
             Column(
-                modifier = Modifier
+                modifier =
+                Modifier
                     .padding(padding)
                     .verticalScroll(scrollState)
+                    .background(color = MaterialTheme.colorScheme.surface)
                     .imePadding(),
             ) {
                 if (!(thumbkeyEnabled || thumbkeySelected)) {
@@ -283,7 +288,6 @@ private fun resetAppSettingsToDefault(
             keyBorderWidth = DEFAULT_KEY_BORDER_WIDTH,
             keyRadius = DEFAULT_KEY_RADIUS,
         ),
-
     )
 }
 
@@ -296,7 +300,8 @@ private fun updateLayouts(
             id = 1,
             keyboardLayout = keyboardRealIndexFromTitleIndex(layoutsState.value.first()), // Set
             // the current to the first
-            keyboardLayouts = layoutsState.value.map { keyboardRealIndexFromTitleIndex(it) }
+            keyboardLayouts =
+            layoutsState.value.map { keyboardRealIndexFromTitleIndex(it) }
                 .joinToString(),
         ),
     )
