@@ -58,6 +58,8 @@ import com.dessalines.thumbkey.keyboards.KB_IT_THUMBKEY
 import com.dessalines.thumbkey.keyboards.KB_IT_TYPESPLIT
 import com.dessalines.thumbkey.keyboards.KB_JA_THUMBKEY_HIRAGANA
 import com.dessalines.thumbkey.keyboards.KB_JA_THUMBKEY_KATAKANA
+import com.dessalines.thumbkey.keyboards.KB_JA_TYPESPLIT_HIRAGANA
+import com.dessalines.thumbkey.keyboards.KB_JA_TYPESPLIT_KATAKANA
 import com.dessalines.thumbkey.keyboards.KB_KA_THUMBKEY
 import com.dessalines.thumbkey.keyboards.KB_LT_THUMBKEY
 import com.dessalines.thumbkey.keyboards.KB_LV_LTG_THUMBKEY
@@ -160,4 +162,6 @@ enum class KeyboardLayout(val index: Int, val keyboardDefinition: KeyboardDefini
     ENNOThumbKey(75, KB_EN_NO_THUMBKEY),
     ENTwoHandsSymbols(76, KB_EN_TWO_HANDS_SYMBOLS),
     ENTwoHandsSymbolsNumbers(77, KB_EN_TWO_HANDS_SYMBOLS_NUMBERS),
+    JATypeSplitHiragana(78, KB_JA_TYPESPLIT_HIRAGANA),
+    JATypeSplitKatakana(79, KB_JA_TYPESPLIT_KATAKANA),
 }
