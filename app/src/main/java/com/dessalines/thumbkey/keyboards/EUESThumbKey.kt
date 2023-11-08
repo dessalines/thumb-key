@@ -594,7 +594,7 @@ val KB_EU_ES_THUMBKEY_SHIFTED =
         ),
     )
 
-val KB_EU_THUMBKEY: KeyboardDefinition =
+val KB_EU_ES_THUMBKEY: KeyboardDefinition =
     KeyboardDefinition(
         title = "euskara español thumb-key",
         modes =

@@ -25,6 +25,8 @@ import com.dessalines.thumbkey.keyboards.KB_EN_THUMBKEY_PROGRAMMER
 import com.dessalines.thumbkey.keyboards.KB_EN_THUMBKEY_PROGRAMMER_WIDE
 import com.dessalines.thumbkey.keyboards.KB_EN_THUMBKEY_SYMBOLS
 import com.dessalines.thumbkey.keyboards.KB_EN_TWO_HANDS
+import com.dessalines.thumbkey.keyboards.KB_EN_TWO_HANDS_SYMBOLS
+import com.dessalines.thumbkey.keyboards.KB_EN_TWO_HANDS_SYMBOLS_NUMBERS
 import com.dessalines.thumbkey.keyboards.KB_EN_TYPESPLIT
 import com.dessalines.thumbkey.keyboards.KB_EOENDE_THUMBKEY
 import com.dessalines.thumbkey.keyboards.KB_ES_CA_THUMBKEY
@@ -32,8 +34,8 @@ import com.dessalines.thumbkey.keyboards.KB_ES_EO_THUMBKEY
 import com.dessalines.thumbkey.keyboards.KB_ES_MESSAGEEASE
 import com.dessalines.thumbkey.keyboards.KB_ES_THUMBKEY
 import com.dessalines.thumbkey.keyboards.KB_ES_TYPESPLIT
-import com.dessalines.thumbkey.keyboards.KB_EU_THUMBKEY
 import com.dessalines.thumbkey.keyboards.KB_EU_ES_THUMBKEY
+import com.dessalines.thumbkey.keyboards.KB_EU_THUMBKEY
 import com.dessalines.thumbkey.keyboards.KB_FA_THUMBKEY
 import com.dessalines.thumbkey.keyboards.KB_FI_THUMBKEY
 import com.dessalines.thumbkey.keyboards.KB_FI_THUMBKEY_WIDE
@@ -57,6 +59,8 @@ import com.dessalines.thumbkey.keyboards.KB_IT_THUMBKEY
 import com.dessalines.thumbkey.keyboards.KB_IT_TYPESPLIT
 import com.dessalines.thumbkey.keyboards.KB_JA_THUMBKEY_HIRAGANA
 import com.dessalines.thumbkey.keyboards.KB_JA_THUMBKEY_KATAKANA
+import com.dessalines.thumbkey.keyboards.KB_JA_TYPESPLIT_HIRAGANA
+import com.dessalines.thumbkey.keyboards.KB_JA_TYPESPLIT_KATAKANA
 import com.dessalines.thumbkey.keyboards.KB_KA_THUMBKEY
 import com.dessalines.thumbkey.keyboards.KB_LT_THUMBKEY
 import com.dessalines.thumbkey.keyboards.KB_LV_LTG_THUMBKEY
@@ -157,5 +161,9 @@ enum class KeyboardLayout(val index: Int, val keyboardDefinition: KeyboardDefini
     ENNOTypeSplit(73, KB_EN_NO_TYPESPLIT),
     ENThumbKeyCompose(74, KB_EN_THUMBKEY_COMPOSE),
     ENNOThumbKey(75, KB_EN_NO_THUMBKEY),
-    EUESThumbKey(76, KB_EU_ES_THUMBKEY),
+    ENTwoHandsSymbols(76, KB_EN_TWO_HANDS_SYMBOLS),
+    ENTwoHandsSymbolsNumbers(77, KB_EN_TWO_HANDS_SYMBOLS_NUMBERS),
+    JATypeSplitHiragana(78, KB_JA_TYPESPLIT_HIRAGANA),
+    JATypeSplitKatakana(79, KB_JA_TYPESPLIT_KATAKANA),
+    EUESThumbKey(80, KB_EU_ES_THUMBKEY),
 }
