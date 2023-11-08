@@ -18,6 +18,7 @@ import com.dessalines.thumbkey.utils.KeyboardDefinitionSettings
 import com.dessalines.thumbkey.utils.SwipeDirection
 import com.dessalines.thumbkey.utils.SwipeNWay
 import com.dessalines.thumbkey.utils.autoCapitalizeI
+import com.dessalines.thumbkey.utils.autoCapitalizeIApostrophe
 
 var KB_EN_THUMBKEY_COMPOSE_MAIN =
     KeyboardC(
@@ -651,6 +652,6 @@ val KB_EN_THUMBKEY_COMPOSE: KeyboardDefinition =
         ),
         settings =
         KeyboardDefinitionSettings(
-            autoCapitalizers = arrayOf(::autoCapitalizeI),
+            autoCapitalizers = arrayOf(::autoCapitalizeI, ::autoCapitalizeIApostrophe),
         ),
     )

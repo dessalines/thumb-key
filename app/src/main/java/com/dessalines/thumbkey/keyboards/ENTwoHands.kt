@@ -17,6 +17,7 @@ import com.dessalines.thumbkey.utils.KeyboardDefinitionSettings
 import com.dessalines.thumbkey.utils.SwipeDirection
 import com.dessalines.thumbkey.utils.SwipeNWay
 import com.dessalines.thumbkey.utils.autoCapitalizeI
+import com.dessalines.thumbkey.utils.autoCapitalizeIApostrophe
 
 val KB_EN_TWO_HANDS_MAIN =
     KeyboardC(
@@ -1005,8 +1006,7 @@ val KB_EN_TWO_HANDS: KeyboardDefinition =
             shifted = KB_EN_TWO_HANDS_SHIFTED,
             numeric = TWO_HANDS_NUMERIC_KEYBOARD,
         ),
-        settings =
         KeyboardDefinitionSettings(
-            autoCapitalizers = arrayOf(::autoCapitalizeI),
+            autoCapitalizers = arrayOf(::autoCapitalizeI, ::autoCapitalizeIApostrophe),
         ),
     )
