@@ -34,6 +34,7 @@ import com.dessalines.thumbkey.keyboards.KB_ES_EO_THUMBKEY
 import com.dessalines.thumbkey.keyboards.KB_ES_MESSAGEEASE
 import com.dessalines.thumbkey.keyboards.KB_ES_THUMBKEY
 import com.dessalines.thumbkey.keyboards.KB_ES_TYPESPLIT
+import com.dessalines.thumbkey.keyboards.KB_EU_ES_THUMBKEY
 import com.dessalines.thumbkey.keyboards.KB_EU_THUMBKEY
 import com.dessalines.thumbkey.keyboards.KB_FA_THUMBKEY
 import com.dessalines.thumbkey.keyboards.KB_FI_THUMBKEY
@@ -164,4 +165,5 @@ enum class KeyboardLayout(val index: Int, val keyboardDefinition: KeyboardDefini
     ENTwoHandsSymbolsNumbers(77, KB_EN_TWO_HANDS_SYMBOLS_NUMBERS),
     JATypeSplitHiragana(78, KB_JA_TYPESPLIT_HIRAGANA),
     JATypeSplitKatakana(79, KB_JA_TYPESPLIT_KATAKANA),
+    EUESThumbKey(80, KB_EU_ES_THUMBKEY),
 }
