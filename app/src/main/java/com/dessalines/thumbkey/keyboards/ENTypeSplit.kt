@@ -9,8 +9,11 @@ import com.dessalines.thumbkey.utils.KeyItemC
 import com.dessalines.thumbkey.utils.KeyboardC
 import com.dessalines.thumbkey.utils.KeyboardDefinition
 import com.dessalines.thumbkey.utils.KeyboardDefinitionModes
+import com.dessalines.thumbkey.utils.KeyboardDefinitionSettings
 import com.dessalines.thumbkey.utils.SwipeDirection
 import com.dessalines.thumbkey.utils.SwipeNWay
+import com.dessalines.thumbkey.utils.autoCapitalizeI
+import com.dessalines.thumbkey.utils.autoCapitalizeIApostrophe
 
 val KB_EN_TYPESPLIT_MAIN =
     KeyboardC(
@@ -594,5 +597,8 @@ val KB_EN_TYPESPLIT: KeyboardDefinition =
             main = KB_EN_TYPESPLIT_MAIN,
             shifted = KB_EN_TYPESPLIT_SHIFTED,
             numeric = TYPESPLIT_NUMERIC_KEYBOARD,
+        ),
+        KeyboardDefinitionSettings(
+            autoCapitalizers = arrayOf(::autoCapitalizeI, ::autoCapitalizeIApostrophe),
         ),
     )
