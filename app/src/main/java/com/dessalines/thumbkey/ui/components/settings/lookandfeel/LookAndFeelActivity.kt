@@ -1,6 +1,7 @@
 package com.dessalines.thumbkey.ui.components.settings.lookandfeel
 
 import android.util.Log
+import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.imePadding
 import androidx.compose.foundation.layout.padding
@@ -23,6 +24,7 @@ import androidx.compose.material.icons.outlined.ViewDay
 import androidx.compose.material.icons.outlined.Visibility
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.Icon
+import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.SnackbarHost
 import androidx.compose.material3.SnackbarHostState
@@ -79,56 +81,70 @@ fun LookAndFeelActivity(
 
     val settings = appSettingsViewModel.appSettings.observeAsState().value
 
-    val keySizeState = rememberFloatSettingState(
-        (settings?.keySize ?: DEFAULT_KEY_SIZE).toFloat(),
-    )
-    val pushupSizeState = rememberFloatSettingState(
-        (settings?.pushupSize ?: DEFAULT_PUSHUP_SIZE).toFloat(),
-    )
-    val animationSpeedState = rememberFloatSettingState(
-        (settings?.animationSpeed ?: DEFAULT_ANIMATION_SPEED).toFloat(),
-    )
-    val animationHelperSpeedState = rememberFloatSettingState(
-        (settings?.animationHelperSpeed ?: DEFAULT_ANIMATION_HELPER_SPEED).toFloat(),
-    )
-    val positionState = rememberIntSettingState(
-        settings?.position ?: DEFAULT_POSITION,
-    )
-    val vibrateOnTapState = rememberBooleanSettingState(
-        ((settings?.vibrateOnTap ?: DEFAULT_VIBRATE_ON_TAP).toBool()),
-    )
-    val soundOnTapState = rememberBooleanSettingState(
-        ((settings?.soundOnTap ?: DEFAULT_SOUND_ON_TAP).toBool()),
-    )
-    val hideLettersState = rememberBooleanSettingState(
-        ((settings?.hideLetters ?: DEFAULT_HIDE_LETTERS).toBool()),
-    )
-    val hideSymbolsState = rememberBooleanSettingState(
-        ((settings?.hideSymbols ?: DEFAULT_HIDE_SYMBOLS).toBool()),
-    )
+    val keySizeState =
+        rememberFloatSettingState(
+            (settings?.keySize ?: DEFAULT_KEY_SIZE).toFloat(),
+        )
+    val pushupSizeState =
+        rememberFloatSettingState(
+            (settings?.pushupSize ?: DEFAULT_PUSHUP_SIZE).toFloat(),
+        )
+    val animationSpeedState =
+        rememberFloatSettingState(
+            (settings?.animationSpeed ?: DEFAULT_ANIMATION_SPEED).toFloat(),
+        )
+    val animationHelperSpeedState =
+        rememberFloatSettingState(
+            (settings?.animationHelperSpeed ?: DEFAULT_ANIMATION_HELPER_SPEED).toFloat(),
+        )
+    val positionState =
+        rememberIntSettingState(
+            settings?.position ?: DEFAULT_POSITION,
+        )
+    val vibrateOnTapState =
+        rememberBooleanSettingState(
+            ((settings?.vibrateOnTap ?: DEFAULT_VIBRATE_ON_TAP).toBool()),
+        )
+    val soundOnTapState =
+        rememberBooleanSettingState(
+            ((settings?.soundOnTap ?: DEFAULT_SOUND_ON_TAP).toBool()),
+        )
+    val hideLettersState =
+        rememberBooleanSettingState(
+            ((settings?.hideLetters ?: DEFAULT_HIDE_LETTERS).toBool()),
+        )
+    val hideSymbolsState =
+        rememberBooleanSettingState(
+            ((settings?.hideSymbols ?: DEFAULT_HIDE_SYMBOLS).toBool()),
+        )
 
     val themeState = rememberIntSettingState(settings?.theme ?: DEFAULT_THEME)
     val themeColorState = rememberIntSettingState(settings?.themeColor ?: DEFAULT_THEME_COLOR)
-    val keyBordersState = rememberBooleanSettingState(
-        ((settings?.keyBorders ?: DEFAULT_KEY_BORDERS).toBool()),
-    )
+    val keyBordersState =
+        rememberBooleanSettingState(
+            ((settings?.keyBorders ?: DEFAULT_KEY_BORDERS).toBool()),
+        )
 
     val snackbarHostState = remember { SnackbarHostState() }
 
     val scrollState = rememberScrollState()
 
-    val backdropEnabledState = rememberBooleanSettingState(
-        ((settings?.backdropEnabled ?: DEFAULT_BACKDROP_ENABLED).toBool()),
-    )
-    val keyPaddingState = rememberFloatSettingState(
-        (settings?.keyPadding ?: DEFAULT_KEY_PADDING).toFloat(),
-    )
-    val keyBorderWidthState = rememberFloatSettingState(
-        (settings?.keyBorderWidth ?: DEFAULT_KEY_BORDER_WIDTH).toFloat(),
-    )
-    val keyRadiusState = rememberFloatSettingState(
-        (settings?.keyRadius ?: DEFAULT_KEY_RADIUS).toFloat(),
-    )
+    val backdropEnabledState =
+        rememberBooleanSettingState(
+            ((settings?.backdropEnabled ?: DEFAULT_BACKDROP_ENABLED).toBool()),
+        )
+    val keyPaddingState =
+        rememberFloatSettingState(
+            (settings?.keyPadding ?: DEFAULT_KEY_PADDING).toFloat(),
+        )
+    val keyBorderWidthState =
+        rememberFloatSettingState(
+            (settings?.keyBorderWidth ?: DEFAULT_KEY_BORDER_WIDTH).toFloat(),
+        )
+    val keyRadiusState =
+        rememberFloatSettingState(
+            (settings?.keyRadius ?: DEFAULT_KEY_RADIUS).toFloat(),
+        )
 
     Scaffold(
         snackbarHost = { SnackbarHost(snackbarHostState) },
@@ -137,9 +153,11 @@ fun LookAndFeelActivity(
         },
         content = { padding ->
             Column(
-                modifier = Modifier
+                modifier =
+                Modifier
                     .padding(padding)
                     .verticalScroll(scrollState)
+                    .background(color = MaterialTheme.colorScheme.surface)
                     .imePadding(),
             ) {
                 SettingsList(
@@ -556,12 +574,13 @@ fun LookAndFeelActivity(
                         )
                     },
                 )
-                val animationHelperSpeedStr = stringResource(
-                    R.string.animation_helper_speed,
-                    animationHelperSpeedState
-                        .value
-                        .toInt().toString(),
-                )
+                val animationHelperSpeedStr =
+                    stringResource(
+                        R.string.animation_helper_speed,
+                        animationHelperSpeedState
+                            .value
+                            .toInt().toString(),
+                    )
                 SettingsSlider(
                     valueRange = 0f..500f,
                     state = animationHelperSpeedState,

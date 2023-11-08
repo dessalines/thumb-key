@@ -18,12 +18,14 @@ import com.dessalines.thumbkey.R
 fun TestOutTextField() {
     var text by remember { mutableStateOf("") }
     TextField(
-        modifier = Modifier
+        modifier =
+        Modifier
             .fillMaxWidth(),
         value = text,
         onValueChange = { text = it },
         placeholder = { Text(stringResource(R.string.test_out_thumbkey)) },
-        colors = TextFieldDefaults.colors(
+        colors =
+        TextFieldDefaults.colors(
             focusedContainerColor = Color.Transparent,
             unfocusedContainerColor = Color.Transparent,
             disabledContainerColor = Color.Transparent,

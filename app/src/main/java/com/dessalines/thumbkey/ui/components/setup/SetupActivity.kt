@@ -51,7 +51,8 @@ fun SetupActivity(
         content = { padding ->
             Column(
                 verticalArrangement = Arrangement.spacedBy(spacing),
-                modifier = Modifier
+                modifier =
+                Modifier
                     .padding(padding)
                     .padding(horizontal = spacing),
             ) {

@@ -1,0 +1,9 @@
+Thumb-Key es un teclado inteligente <i>enfocado en la privacidad</i>, hecho específicamente para tus pulgares.
+
+Se caracteriza por su <b>rejilla 3x3</b>, y utiliza deslizamientos para las letras menos comunes. Es fácil de aprender y está diseñado para escribir a gran velocidad.
+
+En lugar de basarse en la predicción de palabras y frases con fines lucrativos y que atentan contra la privacidad, como hacen la mayoría de los teclados telefónicos populares como Gboard y Swiftkey, Thumb-Key utiliza <b>teclas grandes con posiciones predecibles</b>, para evitar que tus ojos busquen y picoteen letras.
+
+A medida que las posiciones de las teclas se arraiguen en tu memoria muscular, serás capaz de asimilar las rápidas velocidades de la escritura táctil, sin tener que apartar los ojos del área de edición de texto.
+
+Este proyecto es una continuación del ya sin mantenimiento (y de código cerrado) <a href="https://www.exideas.com/ME/">Teclado MessageEase</a>, que es su principal inspiración.

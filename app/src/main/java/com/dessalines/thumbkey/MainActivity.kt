@@ -34,7 +34,6 @@ class ThumbkeyApplication : Application() {
 }
 
 class MainActivity : AppCompatActivity() {
-
     private val appSettingsViewModel: AppSettingsViewModel by viewModels {
         AppSettingsViewModelFactory((application as ThumbkeyApplication).appSettingsRepository)
     }
@@ -46,13 +45,15 @@ class MainActivity : AppCompatActivity() {
             val settings by appSettingsViewModel.appSettings.observeAsState()
 
             val ctx = LocalContext.current
-            val thumbkeyEnabled = inputMethodManager.enabledInputMethodList.any {
-                it.id == THUMBKEY_IME_NAME
-            }
-            val thumbkeySelected = Settings.Secure.getString(
-                ctx.contentResolver,
-                Settings.Secure.DEFAULT_INPUT_METHOD,
-            ) == THUMBKEY_IME_NAME
+            val thumbkeyEnabled =
+                inputMethodManager.enabledInputMethodList.any {
+                    it.id == THUMBKEY_IME_NAME
+                }
+            val thumbkeySelected =
+                Settings.Secure.getString(
+                    ctx.contentResolver,
+                    Settings.Secure.DEFAULT_INPUT_METHOD,
+                ) == THUMBKEY_IME_NAME
 
             val startDestination by remember {
                 mutableStateOf(
