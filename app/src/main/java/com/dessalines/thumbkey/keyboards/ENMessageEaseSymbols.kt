@@ -17,6 +17,7 @@ import com.dessalines.thumbkey.utils.KeyboardDefinitionModes
 import com.dessalines.thumbkey.utils.KeyboardDefinitionSettings
 import com.dessalines.thumbkey.utils.SwipeDirection
 import com.dessalines.thumbkey.utils.autoCapitalizeI
+import com.dessalines.thumbkey.utils.autoCapitalizeIApostrophe
 
 val KB_EN_MESSAGEEASE_SYMBOLS_MAIN =
     KeyboardC(
@@ -900,6 +901,6 @@ val KB_EN_MESSAGEEASE_SYMBOLS: KeyboardDefinition =
         ),
         settings =
         KeyboardDefinitionSettings(
-            autoCapitalizers = arrayOf(::autoCapitalizeI),
+            autoCapitalizers = arrayOf(::autoCapitalizeI, ::autoCapitalizeIApostrophe),
         ),
     )
