@@ -1,3 +1,35 @@
+# Thumb-Key 2.6.0 (2023-11-08)
+
+## What's Changed
+
+- Add English-Norwegian Thumb-Key layout by @petlyh in https://github.com/dessalines/thumb-key/pull/547
+- Add twohands symbols layout, fix twohands capitalization issues by @Kommynct in https://github.com/dessalines/thumb-key/pull/549
+- Add spanish translation by @sguinetti in https://github.com/dessalines/thumb-key/pull/552
+- TypeSplit Japanese Hiragana/Katakana by @K0baU in https://github.com/dessalines/thumb-key/pull/541
+- Update ITTypeSplit.kt by @flauta in https://github.com/dessalines/thumb-key/pull/540
+- AutoCapitalize "i\'" ("I'm" and "I'd") by @jeremiah-miller in https://github.com/dessalines/thumb-key/pull/534
+- Add EU ES keyboard by @zgll2022 in https://github.com/dessalines/thumb-key/pull/551
+
+## New Contributors
+
+- @petlyh made their first contribution in https://github.com/dessalines/thumb-key/pull/547
+- @sguinetti made their first contribution in https://github.com/dessalines/thumb-key/pull/552
+- @jeremiah-miller made their first contribution in https://github.com/dessalines/thumb-key/pull/534
+
+**Full Changelog**: https://github.com/dessalines/thumb-key/compare/2.5.2...2.6.0
+
+# Thumb-Key 2.5.2 (2023-11-02)
+
+## What's Changed
+
+- Small issues with DEMessageEaseSymbols and UKRUMessageEaseSymbols layouts by @Crandel in https://github.com/dessalines/thumb-key/pull/535
+- Update Danish Keyboard by @Limfjorden in https://github.com/dessalines/thumb-key/pull/537
+- Redone Lithuanian layout by @MariusTrap in https://github.com/dessalines/thumb-key/pull/542
+- Fixing DB warnings. by @dessalines in https://github.com/dessalines/thumb-key/pull/543
+- Upgrading gradle to 8.4 by @dessalines in https://github.com/dessalines/thumb-key/pull/544
+
+**Full Changelog**: https://github.com/dessalines/thumb-key/compare/2.5.1...2.5.2
+
 # Thumb-Key 2.5.1 (2023-10-24)
 
 ## What's Changed
