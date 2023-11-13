@@ -16,14 +16,16 @@ val KB_IT_TYPESPLIT_MAIN = KeyboardC(
     listOf(
         listOf(
             KeyItemC(
-                center = KeyC(
+                center =
+                KeyC(
                     display = KeyDisplay.TextDisplay("n"),
                     action = KeyAction.CommitText("n"),
                     size = FontSizeVariant.LARGE,
                     color = ColorVariant.PRIMARY,
                 ),
                 swipeType = SwipeNWay.TWO_WAY_HORIZONTAL,
-                swipes = mapOf(
+                swipes =
+                mapOf(
                     SwipeDirection.RIGHT to KeyC(
                         display = KeyDisplay.TextDisplay("m"),
                         action = KeyAction.CommitText("m"),
@@ -42,7 +44,6 @@ val KB_IT_TYPESPLIT_MAIN = KeyboardC(
                     SwipeDirection.RIGHT to KeyC(
                         display = KeyDisplay.TextDisplay("g"),
                         action = KeyAction.CommitText("g"),
-                        color = ColorVariant.MUTED,
                     ),
                     SwipeDirection.LEFT to KeyC(
                         display = KeyDisplay.TextDisplay("h"),
@@ -59,7 +60,7 @@ val KB_IT_TYPESPLIT_MAIN = KeyboardC(
                     ),
                 ),
             ),
-            SPACEBAR_TYPESPLIT_MIDDLE_KEY_ITEM,
+            EMOJI_KEY_ITEM,
             KeyItemC(
                 center = KeyC(
                     display = KeyDisplay.TextDisplay("o"),
@@ -127,7 +128,7 @@ val KB_IT_TYPESPLIT_MAIN = KeyboardC(
                         display = KeyDisplay.TextDisplay("v"),
                         action = KeyAction.CommitText("v"),
                     ),
-                    SwipeDirection.LEFT to KeyC(
+                    SwipeDirection.TOP to KeyC(
                         display = KeyDisplay.TextDisplay("w"),
                         action = KeyAction.CommitText("w"),
                     ),
@@ -145,7 +146,7 @@ val KB_IT_TYPESPLIT_MAIN = KeyboardC(
                     color = ColorVariant.PRIMARY,
                 ),
             ),
-            SPACEBAR_TYPESPLIT_BOTTOM_KEY_ITEM,
+            SPACEBAR_TYPESPLIT_MIDDLE_KEY_ITEM,
             KeyItemC(
                 center = KeyC(
                     display = KeyDisplay.TextDisplay("u"),
@@ -237,6 +238,7 @@ val KB_IT_TYPESPLIT_MAIN = KeyboardC(
                     ),
                 ),
             ),
+            SPACEBAR_TYPESPLIT_BOTTOM_KEY_ITEM,
             KeyItemC(
                 center = KeyC(
                     display = KeyDisplay.TextDisplay("p"),
@@ -338,7 +340,7 @@ val KB_IT_TYPESPLIT_SHIFTED = KeyboardC(
                     ),
                 ),
             ),
-            SPACEBAR_TYPESPLIT_MIDDLE_KEY_ITEM,
+            EMOJI_KEY_ITEM,
             KeyItemC(
                 center = KeyC(
                     display = KeyDisplay.TextDisplay("O"),
@@ -406,7 +408,7 @@ val KB_IT_TYPESPLIT_SHIFTED = KeyboardC(
                         display = KeyDisplay.TextDisplay("V"),
                         action = KeyAction.CommitText("V"),
                     ),
-                    SwipeDirection.LEFT to KeyC(
+                    SwipeDirection.TOP to KeyC(
                         display = KeyDisplay.TextDisplay("W"),
                         action = KeyAction.CommitText("W"),
                     ),
@@ -424,7 +426,7 @@ val KB_IT_TYPESPLIT_SHIFTED = KeyboardC(
                     color = ColorVariant.PRIMARY,
                 ),
             ),
-            SPACEBAR_TYPESPLIT_BOTTOM_KEY_ITEM,
+            SPACEBAR_TYPESPLIT_MIDDLE_KEY_ITEM,
             KeyItemC(
                 center = KeyC(
                     display = KeyDisplay.TextDisplay("U"),
@@ -516,6 +518,7 @@ val KB_IT_TYPESPLIT_SHIFTED = KeyboardC(
                     ),
                 ),
             ),
+            SPACEBAR_TYPESPLIT_BOTTOM_KEY_ITEM,
             KeyItemC(
                 center = KeyC(
                     display = KeyDisplay.TextDisplay("P"),
