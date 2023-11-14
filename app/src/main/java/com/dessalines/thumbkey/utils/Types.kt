@@ -78,20 +78,35 @@ sealed class KeyAction {
     class ToggleEmojiMode(val enable: Boolean) : KeyAction()
 
     class ComposeLastKey(val text: String) : KeyAction()
+
     data object DeleteWordBeforeCursor : KeyAction()
+
     data object DeleteWordAfterCursor : KeyAction()
+
     data object GotoSettings : KeyAction()
+
     data object IMECompleteAction : KeyAction()
+
     data object ToggleCapsLock : KeyAction()
+
     data object SelectAll : KeyAction()
+
     data object Cut : KeyAction()
+
     data object Copy : KeyAction()
+
     data object Paste : KeyAction()
+
     data object Undo : KeyAction()
+
     data object Redo : KeyAction()
+
     data object SwitchLanguage : KeyAction()
+
     data object SwitchPosition : KeyAction()
+
     data object SwitchIME : KeyAction()
+
     data object SwitchIMEVoice : KeyAction()
 }
 

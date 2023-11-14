@@ -69,9 +69,9 @@ fun ShowChangelog(appSettingsViewModel: AppSettingsViewModel) {
                 text = {
                     Column(
                         modifier =
-                        Modifier
-                            .fillMaxSize()
-                            .verticalScroll(scrollState),
+                            Modifier
+                                .fillMaxSize()
+                                .verticalScroll(scrollState),
                     ) {
                         val markdownText = DONATION_MARKDOWN + markdown
                         MarkdownText(

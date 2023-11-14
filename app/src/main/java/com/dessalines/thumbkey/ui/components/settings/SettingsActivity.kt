@@ -67,7 +67,7 @@ import com.dessalines.thumbkey.db.DEFAULT_VIBRATE_ON_TAP
 import com.dessalines.thumbkey.db.LayoutsUpdate
 import com.dessalines.thumbkey.ui.components.common.TestOutTextField
 import com.dessalines.thumbkey.ui.components.settings.about.SettingsDivider
-import com.dessalines.thumbkey.ui.components.settings.about.userGuideLink
+import com.dessalines.thumbkey.ui.components.settings.about.USER_GUIDE_URL
 import com.dessalines.thumbkey.utils.KeyboardLayout
 import com.dessalines.thumbkey.utils.SimpleTopAppBar
 import com.dessalines.thumbkey.utils.TAG
@@ -107,11 +107,11 @@ fun SettingsActivity(
         content = { padding ->
             Column(
                 modifier =
-                Modifier
-                    .padding(padding)
-                    .verticalScroll(scrollState)
-                    .background(color = MaterialTheme.colorScheme.surface)
-                    .imePadding(),
+                    Modifier
+                        .padding(padding)
+                        .verticalScroll(scrollState)
+                        .background(color = MaterialTheme.colorScheme.surface)
+                        .imePadding(),
             ) {
                 if (!(thumbkeyEnabled || thumbkeySelected)) {
                     val setupStr = stringResource(R.string.setup)
@@ -216,7 +216,7 @@ fun SettingsActivity(
                         )
                     },
                     onClick = {
-                        openLink(userGuideLink, ctx)
+                        openLink(USER_GUIDE_URL, ctx)
                     },
                 )
                 val aboutStr = stringResource(R.string.about)
@@ -298,11 +298,11 @@ private fun updateLayouts(
     appSettingsViewModel.updateLayouts(
         LayoutsUpdate(
             id = 1,
-            keyboardLayout = keyboardRealIndexFromTitleIndex(layoutsState.value.first()), // Set
-            // the current to the first
+            // Set the current to the first
+            keyboardLayout = keyboardRealIndexFromTitleIndex(layoutsState.value.first()),
             keyboardLayouts =
-            layoutsState.value.map { keyboardRealIndexFromTitleIndex(it) }
-                .joinToString(),
+                layoutsState.value.map { keyboardRealIndexFromTitleIndex(it) }
+                    .joinToString(),
         ),
     )
 }

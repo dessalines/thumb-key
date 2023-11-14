@@ -501,13 +501,16 @@ val MIGRATION_12_13 =
     object : Migration(12, 13) {
         override fun migrate(db: SupportSQLiteDatabase) {
             db.execSQL(
-                "alter table AppSettings add column slide_spacebar_deadzone_enabled INTEGER NOT NULL default $DEFAULT_SLIDE_SPACEBAR_DEADZONE_ENABLED",
+                "alter table AppSettings add column slide_spacebar_deadzone_enabled INTEGER NOT NULL " +
+                    "default $DEFAULT_SLIDE_SPACEBAR_DEADZONE_ENABLED",
             )
             db.execSQL(
-                "alter table AppSettings add column slide_backspace_deadzone_enabled INTEGER NOT NULL default $DEFAULT_SLIDE_BACKSPACE_DEADZONE_ENABLED",
+                "alter table AppSettings add column slide_backspace_deadzone_enabled INTEGER NOT NULL " +
+                    "default $DEFAULT_SLIDE_BACKSPACE_DEADZONE_ENABLED",
             )
             db.execSQL(
-                "alter table AppSettings add column slide_cursor_movement_mode INTEGER NOT NULL default $DEFAULT_SLIDE_CURSOR_MOVEMENT_MODE",
+                "alter table AppSettings add column slide_cursor_movement_mode INTEGER NOT NULL " +
+                    "default $DEFAULT_SLIDE_CURSOR_MOVEMENT_MODE",
             )
         }
     }
@@ -522,13 +525,13 @@ abstract class AppDB : RoomDatabase() {
 
     companion object {
         @Volatile
-        private var INSTANCE: AppDB? = null
+        private var instance: AppDB? = null
 
         fun getDatabase(context: Context): AppDB {
             // if the INSTANCE is not null, then return it,
             // if it is, then create the database
-            return INSTANCE ?: synchronized(this) {
-                val instance =
+            return instance ?: synchronized(this) {
+                val i =
                     Room.databaseBuilder(
                         context.applicationContext,
                         AppDB::class.java,
@@ -557,7 +560,8 @@ abstract class AppDB : RoomDatabase() {
                                     Executors.newSingleThreadExecutor().execute {
                                         db.insert(
                                             "AppSettings",
-                                            CONFLICT_IGNORE, // Ensures it won't overwrite the existing data
+                                            // Ensures it won't overwrite the existing data
+                                            CONFLICT_IGNORE,
                                             ContentValues(2).apply {
                                                 put("id", 1)
                                             },
@@ -566,9 +570,9 @@ abstract class AppDB : RoomDatabase() {
                                 }
                             },
                         ).build()
-                INSTANCE = instance
+                instance = i
                 // return instance
-                instance
+                i
             }
         }
     }

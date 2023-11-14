@@ -141,57 +141,57 @@ fun KeyboardScreen(
 
         Box(
             modifier =
-            Modifier
-                .then(
-                    if (backdropEnabled) {
-                        Modifier.background(backdropColor)
-                    } else {
-                        (Modifier)
-                    },
-                ),
+                Modifier
+                    .then(
+                        if (backdropEnabled) {
+                            Modifier.background(backdropColor)
+                        } else {
+                            (Modifier)
+                        },
+                    ),
         ) {
             // adds a pretty line if you're using the backdrop
             if (backdropEnabled) {
                 Box(
                     modifier =
-                    Modifier
-                        .align(Alignment.TopCenter)
-                        .fillMaxWidth()
-                        .height(1.dp)
-                        .background(color = MaterialTheme.colorScheme.surfaceVariant),
+                        Modifier
+                            .align(Alignment.TopCenter)
+                            .fillMaxWidth()
+                            .height(1.dp)
+                            .background(color = MaterialTheme.colorScheme.surfaceVariant),
                 )
             }
             Row(
                 modifier =
-                Modifier
-                    .padding(bottom = pushupSizeDp)
-                    .fillMaxWidth()
-                    .then(
-                        if (backdropEnabled) {
-                            Modifier.padding(top = backdropPadding)
-                        } else {
-                            (Modifier)
-                        },
-                    ),
-            ) {
-                Box(
-                    modifier =
                     Modifier
-                        .weight(1f) // Take up available space equally
-                        .padding(keyPadding.dp)
-                        .clip(RoundedCornerShape(cornerRadius.dp))
+                        .padding(bottom = pushupSizeDp)
+                        .fillMaxWidth()
                         .then(
-                            if (keyBorderWidthFloat > 0.0) {
-                                Modifier.border(
-                                    keyBorderWidthFloat.dp,
-                                    keyBorderColour,
-                                    shape = RoundedCornerShape(cornerRadius.dp),
-                                )
+                            if (backdropEnabled) {
+                                Modifier.padding(top = backdropPadding)
                             } else {
                                 (Modifier)
                             },
-                        )
-                        .background(MaterialTheme.colorScheme.surface),
+                        ),
+            ) {
+                Box(
+                    modifier =
+                        Modifier
+                            .weight(1f) // Take up available space equally
+                            .padding(keyPadding.dp)
+                            .clip(RoundedCornerShape(cornerRadius.dp))
+                            .then(
+                                if (keyBorderWidthFloat > 0.0) {
+                                    Modifier.border(
+                                        keyBorderWidthFloat.dp,
+                                        keyBorderColour,
+                                        shape = RoundedCornerShape(cornerRadius.dp),
+                                    )
+                                } else {
+                                    (Modifier)
+                                },
+                            )
+                            .background(MaterialTheme.colorScheme.surface),
                 ) {
                     val haptic = LocalHapticFeedback.current
                     val audioManager = ctx.getSystemService(Context.AUDIO_SERVICE) as AudioManager
@@ -214,9 +214,9 @@ fun KeyboardScreen(
                             emojiPicker
                         },
                         modifier =
-                        Modifier
-                            .fillMaxWidth()
-                            .height(keyboardHeight),
+                            Modifier
+                                .fillMaxWidth()
+                                .height(keyboardHeight),
                     )
                 }
                 Column {
@@ -238,11 +238,11 @@ fun KeyboardScreen(
                                 hideSymbols = hideSymbols,
                                 capsLock = capsLock,
                                 animationSpeed =
-                                settings?.animationSpeed
-                                    ?: DEFAULT_ANIMATION_SPEED,
+                                    settings?.animationSpeed
+                                        ?: DEFAULT_ANIMATION_SPEED,
                                 animationHelperSpeed =
-                                settings?.animationHelperSpeed
-                                    ?: DEFAULT_ANIMATION_HELPER_SPEED,
+                                    settings?.animationHelperSpeed
+                                        ?: DEFAULT_ANIMATION_HELPER_SPEED,
                                 minSwipeLength = settings?.minSwipeLength ?: DEFAULT_MIN_SWIPE_LENGTH,
                                 slideSensitivity = settings?.slideSensitivity ?: DEFAULT_SLIDE_SENSITIVITY,
                                 slideEnabled = slideEnabled,
@@ -299,31 +299,31 @@ fun KeyboardScreen(
         Box(
             contentAlignment = alignment,
             modifier =
-            Modifier
-                .then(if (backdropEnabled) Modifier.background(backdropColor) else (Modifier))
-                .padding(bottom = pushupSizeDp),
+                Modifier
+                    .then(if (backdropEnabled) Modifier.background(backdropColor) else (Modifier))
+                    .padding(bottom = pushupSizeDp),
         ) {
             // adds a pretty line if you're using the backdrop
             if (backdropEnabled) {
                 Box(
                     modifier =
-                    Modifier
-                        .align(Alignment.TopCenter)
-                        .fillMaxWidth()
-                        .height(1.dp)
-                        .background(color = MaterialTheme.colorScheme.surfaceVariant),
+                        Modifier
+                            .align(Alignment.TopCenter)
+                            .fillMaxWidth()
+                            .height(1.dp)
+                            .background(color = MaterialTheme.colorScheme.surfaceVariant),
                 )
             }
             Column(
                 modifier =
-                Modifier
-                    .then(
-                        if (backdropEnabled) {
-                            Modifier.padding(top = backdropPadding)
-                        } else {
-                            (Modifier)
-                        },
-                    ),
+                    Modifier
+                        .then(
+                            if (backdropEnabled) {
+                                Modifier.padding(top = backdropPadding)
+                            } else {
+                                (Modifier)
+                            },
+                        ),
             ) {
                 keyboard.arr.forEach { row ->
                     Row {
@@ -345,11 +345,11 @@ fun KeyboardScreen(
                                     hideSymbols = hideSymbols,
                                     capsLock = capsLock,
                                     animationSpeed =
-                                    settings?.animationSpeed
-                                        ?: DEFAULT_ANIMATION_SPEED,
+                                        settings?.animationSpeed
+                                            ?: DEFAULT_ANIMATION_SPEED,
                                     animationHelperSpeed =
-                                    settings?.animationHelperSpeed
-                                        ?: DEFAULT_ANIMATION_HELPER_SPEED,
+                                        settings?.animationHelperSpeed
+                                            ?: DEFAULT_ANIMATION_HELPER_SPEED,
                                     minSwipeLength = settings?.minSwipeLength ?: DEFAULT_MIN_SWIPE_LENGTH,
                                     slideSensitivity = settings?.slideSensitivity ?: DEFAULT_SLIDE_SENSITIVITY,
                                     slideEnabled = slideEnabled,

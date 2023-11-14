@@ -37,12 +37,12 @@ import com.dessalines.thumbkey.utils.SimpleTopAppBar
 import com.dessalines.thumbkey.utils.TAG
 import com.dessalines.thumbkey.utils.openLink
 
-const val githubUrl = "https://github.com/dessalines/thumb-key"
-const val userGuideLink = "https://github.com/dessalines/thumb-key#user-guide"
-const val matrixChat = "https://matrix.to/#/#thumbkey-dev:matrix.org"
-const val donateLink = "https://liberapay.com/dessalines"
-const val lemmyLink = "https://lemmy.ml/c/thumbkey"
-const val mastodonLink = "https://mastodon.social/@dessalines"
+const val GITHUB_URL = "https://github.com/dessalines/thumb-key"
+const val USER_GUIDE_URL = "https://github.com/dessalines/thumb-key#user-guide"
+const val MATRIX_CHAT_URL = "https://matrix.to/#/#thumbkey-dev:matrix.org"
+const val DONATE_URL = "https://liberapay.com/dessalines"
+const val LEMMY_URL = "https://lemmy.ml/c/thumbkey"
+const val MASTODON_URL = "https://mastodon.social/@dessalines"
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
@@ -63,8 +63,8 @@ fun AboutActivity(navController: NavController) {
         content = { padding ->
             Column(
                 modifier =
-                Modifier.padding(padding)
-                    .background(color = MaterialTheme.colorScheme.surface),
+                    Modifier.padding(padding)
+                        .background(color = MaterialTheme.colorScheme.surface),
             ) {
                 SettingsMenuLink(
                     title = { Text(stringResource(R.string.whats_new)) },
@@ -76,7 +76,7 @@ fun AboutActivity(navController: NavController) {
                         )
                     },
                     onClick = {
-                        openLink("$githubUrl/blob/main/RELEASES.md", ctx)
+                        openLink("$GITHUB_URL/blob/main/RELEASES.md", ctx)
                     },
                 )
                 SettingsDivider()
@@ -90,7 +90,7 @@ fun AboutActivity(navController: NavController) {
                         )
                     },
                     onClick = {
-                        openLink("$githubUrl/issues", ctx)
+                        openLink("$GITHUB_URL/issues", ctx)
                     },
                 )
                 SettingsMenuLink(
@@ -102,7 +102,7 @@ fun AboutActivity(navController: NavController) {
                         )
                     },
                     onClick = {
-                        openLink(matrixChat, ctx)
+                        openLink(MATRIX_CHAT_URL, ctx)
                     },
                 )
                 SettingsMenuLink(
@@ -114,7 +114,7 @@ fun AboutActivity(navController: NavController) {
                         )
                     },
                     onClick = {
-                        openLink(donateLink, ctx)
+                        openLink(DONATE_URL, ctx)
                     },
                 )
                 SettingsDivider()
@@ -129,7 +129,7 @@ fun AboutActivity(navController: NavController) {
                         )
                     },
                     onClick = {
-                        openLink(lemmyLink, ctx)
+                        openLink(LEMMY_URL, ctx)
                     },
                 )
                 SettingsMenuLink(
@@ -141,7 +141,7 @@ fun AboutActivity(navController: NavController) {
                         )
                     },
                     onClick = {
-                        openLink(mastodonLink, ctx)
+                        openLink(MASTODON_URL, ctx)
                     },
                 )
                 SettingsDivider()
@@ -159,7 +159,7 @@ fun AboutActivity(navController: NavController) {
                         )
                     },
                     onClick = {
-                        openLink(githubUrl, ctx)
+                        openLink(GITHUB_URL, ctx)
                     },
                 )
             }
