@@ -1,4 +1,4 @@
-@file:Suppress("LocalVariableName")
+@file:Suppress("ktlint:standard:property-naming")
 
 package com.dessalines.thumbkey.ui.theme
 

@@ -104,9 +104,9 @@ fun slideCursorDistance(
     when (accelerationMode) {
         CursorAccelerationMode.CONSTANT.ordinal -> {
             // Do the same speed every time
-            val settings_slider_max_value = 50
+            val settingsSliderMaxValue = 50
 
-            return if (abs(offsetX) > (settings_slider_max_value - acceleration)) {
+            return if (abs(offsetX) > (settingsSliderMaxValue - acceleration)) {
                 if (offsetX > 0) {
                     1
                 } else {
@@ -161,7 +161,7 @@ fun acceleratingCursorDistanceLinear(
             abs(offsetX) / timeDifference
         }
 
-    distance = accelerationCurve * distance
+    distance *= accelerationCurve
     if (offsetX < 0) {
         // Set the value back to negative.
         // A distance of -1 will move the cursor left by 1 character
@@ -886,7 +886,8 @@ fun Context.getVersionCode(): Int =
 fun startSelection(ime: IMEService): Selection {
     val cursorPosition =
         ime.currentInputConnection.getTextBeforeCursor(
-            1000, // Higher value mens slower execution
+            // Higher value mens slower execution
+            1000,
             0,
         )?.length
     cursorPosition?.let {
