@@ -1,3 +1,16 @@
+# Thumb-Key 2.6.1 (2023-11-14)
+
+## What's Changed
+
+- fix apostrophe autocorrect in the other two-handed layouts by @Kommynct in https://github.com/dessalines/thumb-key/pull/553
+- Update ITTypeSplit.kt by @flauta in https://github.com/dessalines/thumb-key/pull/558
+- Update Danish Loc by @Limfjorden in https://github.com/dessalines/thumb-key/pull/555
+- Update ENEOMessageEaseSymbols.kt by @uxintro in https://github.com/dessalines/thumb-key/pull/561
+- Upgrading deps, running new kotlinter. by @dessalines in https://github.com/dessalines/thumb-key/pull/564
+- Fix EUESThumbKey layout by @zgll2022 in https://github.com/dessalines/thumb-key/pull/563
+
+**Full Changelog**: https://github.com/dessalines/thumb-key/compare/2.6.0...2.6.1
+
 # Thumb-Key 2.6.0 (2023-11-08)
 
 ## What's Changed
