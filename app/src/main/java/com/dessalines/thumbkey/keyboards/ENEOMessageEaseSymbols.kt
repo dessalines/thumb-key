@@ -1,6 +1,7 @@
 package com.dessalines.thumbkey.keyboards
 
 import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.outlined.ArrowDropDown
 import androidx.compose.material.icons.outlined.ArrowDropUp
 import com.dessalines.thumbkey.utils.ColorVariant
 import com.dessalines.thumbkey.utils.FontSizeVariant
@@ -327,6 +328,12 @@ val KB_ENEO_MESSAGEEASE_SYMBOLS_MAIN =
                             KeyC(
                                 display = KeyDisplay.IconDisplay(Icons.Outlined.ArrowDropUp),
                                 action = KeyAction.ToggleShiftMode(true),
+                                color = ColorVariant.MUTED,
+                            ),
+                        SwipeDirection.BOTTOM to
+                            KeyC(
+                                display = KeyDisplay.IconDisplay(Icons.Outlined.ArrowDropDown),
+                                action = KeyAction.ToggleShiftMode(false),
                                 color = ColorVariant.MUTED,
                             ),
                         SwipeDirection.TOP_LEFT to
@@ -861,6 +868,12 @@ val KB_ENEO_MESSAGEEASE_SYMBOLS_SHIFTED =
                                 action = KeyAction.ToggleShiftMode(true),
                                 color = ColorVariant.MUTED,
                             ),
+                        SwipeDirection.BOTTOM to
+                            KeyC(
+                                display = KeyDisplay.IconDisplay(Icons.Outlined.ArrowDropDown),
+                                action = KeyAction.ToggleShiftMode(false),
+                                color = ColorVariant.MUTED,
+                            ),
                         SwipeDirection.TOP_LEFT to
                             KeyC(
                                 display = KeyDisplay.TextDisplay("|"),
@@ -924,6 +937,24 @@ val KB_ENEO_MESSAGEEASE_SYMBOLS_SHIFTED =
                                 action = KeyAction.CommitText("*"),
                                 color = ColorVariant.MUTED,
                             ),
+                        SwipeDirection.TOP to
+                            KeyC(
+                                display = KeyDisplay.TextDisplay("😍"),
+                                action = KeyAction.CommitText("😍"),
+                                color = ColorVariant.MUTED,
+                            ),
+                        SwipeDirection.BOTTOM_LEFT to
+                            KeyC(
+                                display = KeyDisplay.TextDisplay("✨"),
+                                action = KeyAction.CommitText("✨"),
+                                color = ColorVariant.MUTED,
+                            ),
+                        SwipeDirection.BOTTOM to
+                            KeyC(
+                                display = KeyDisplay.TextDisplay("Ĵ"),
+                                action = KeyAction.CommitText("Ĵ"),
+                                color = ColorVariant.MUTED,
+                            ),
                         SwipeDirection.BOTTOM_RIGHT to
                             KeyC(
                                 display = KeyDisplay.TextDisplay(":"),
@@ -963,6 +994,11 @@ val KB_ENEO_MESSAGEEASE_SYMBOLS_SHIFTED =
                             KeyC(
                                 display = KeyDisplay.TextDisplay("Z"),
                                 action = KeyAction.CommitText("Z"),
+                            ),
+                        SwipeDirection.LEFT to
+                            KeyC(
+                                display = KeyDisplay.TextDisplay("Ĝ"),
+                                action = KeyAction.CommitText("Ĝ"),
                             ),
                         SwipeDirection.TOP_LEFT to
                             KeyC(
@@ -1004,6 +1040,11 @@ val KB_ENEO_MESSAGEEASE_SYMBOLS_SHIFTED =
                             KeyC(
                                 display = KeyDisplay.TextDisplay("F"),
                                 action = KeyAction.CommitText("F"),
+                            ),
+                        SwipeDirection.BOTTOM to
+                            KeyC(
+                                display = KeyDisplay.TextDisplay("Ŝ"),
+                                action = KeyAction.CommitText("Ŝ"),
                             ),
                         SwipeDirection.TOP to
                             KeyC(
