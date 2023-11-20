@@ -166,4 +166,5 @@ enum class KeyboardLayout(val index: Int, val keyboardDefinition: KeyboardDefini
     JATypeSplitHiragana(78, KB_JA_TYPESPLIT_HIRAGANA),
     JATypeSplitKatakana(79, KB_JA_TYPESPLIT_KATAKANA),
     EUESThumbKey(80, KB_EU_ES_THUMBKEY),
+    ENqwertyfour(81, EN_QWERTYFOUR),
 }
