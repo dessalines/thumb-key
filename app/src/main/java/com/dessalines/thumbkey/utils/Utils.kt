@@ -754,7 +754,10 @@ fun autoCapitalizeCheck(ime: IMEService): Boolean {
             InputType.TYPE_TEXT_VARIATION_PASSWORD,
             InputType.TYPE_TEXT_VARIATION_WEB_PASSWORD,
             InputType.TYPE_TEXT_VARIATION_VISIBLE_PASSWORD,
-        ).contains(inputType)) return false
+        ).contains(inputType)
+    ) {
+        return false
+    }
     // TYPE_NULL indicates no automation desired. Notably fixes termux
     if (ime.currentInputEditorInfo.inputType == EditorInfo.TYPE_NULL) return false
 
