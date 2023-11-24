@@ -748,19 +748,18 @@ fun autoCapitalizeCheck(ime: IMEService): Boolean {
     val empty = ime.currentInputConnection.getTextBeforeCursor(1, 0).isNullOrEmpty()
 
     // Avoid capitalizing in certain edit boxes
-    // TYPE_NULL indicates no automation desired. Notably fixes termux
     val inputType = ime.currentInputEditorInfo.inputType and (InputType.TYPE_MASK_VARIATION)
     if (listOf(
             InputType.TYPE_TEXT_VARIATION_URI,
             InputType.TYPE_TEXT_VARIATION_PASSWORD,
             InputType.TYPE_TEXT_VARIATION_WEB_PASSWORD,
             InputType.TYPE_TEXT_VARIATION_VISIBLE_PASSWORD,
-            EditorInfo.TYPE_NULL,
         ).contains(inputType)
     ) {
         return false
     }
-
+    // TYPE_NULL indicates no automation desired. Notably fixes termux
+    if (ime.currentInputEditorInfo.inputType == EditorInfo.TYPE_NULL) return false
 
     // For punctuation ending
     val textBefore = ime.currentInputConnection.getTextBeforeCursor(2, 0)
