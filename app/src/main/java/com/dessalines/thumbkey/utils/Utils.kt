@@ -754,7 +754,8 @@ fun autoCapitalizeCheck(ime: IMEService): Boolean {
             InputType.TYPE_TEXT_VARIATION_PASSWORD,
             InputType.TYPE_TEXT_VARIATION_WEB_PASSWORD,
             InputType.TYPE_TEXT_VARIATION_VISIBLE_PASSWORD,
-        ).contains(inputType) || ime.currentInputEditorInfo.inputType == EditorInfo.TYPE_NULL) {
+        ).contains(inputType) || ime.currentInputEditorInfo.inputType == EditorInfo.TYPE_NULL
+    ) {
         return false
     }
 
