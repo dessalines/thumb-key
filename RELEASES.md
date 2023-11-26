@@ -1,3 +1,20 @@
+# Thumb-Key 2.6.2 (2023-11-26)
+
+## What's Changed
+
+- Add French translation by @soupirs in https://github.com/dessalines/thumb-key/pull/574
+- Fixing HU swipetype. Fixes #565 by @dessalines in https://github.com/dessalines/thumb-key/pull/576
+- Added qwerty-like layout by @Housies in https://github.com/dessalines/thumb-key/pull/569
+- fixed autocapitalization by @Kommynct in https://github.com/dessalines/thumb-key/pull/572
+- Upgrading deps. by @dessalines in https://github.com/dessalines/thumb-key/pull/577
+
+## New Contributors
+
+- @soupirs made their first contribution in https://github.com/dessalines/thumb-key/pull/574
+- @Housies made their first contribution in https://github.com/dessalines/thumb-key/pull/569
+
+**Full Changelog**: https://github.com/dessalines/thumb-key/compare/2.6.1...2.6.2
+
 # Thumb-Key 2.6.1 (2023-11-14)
 
 ## What's Changed
