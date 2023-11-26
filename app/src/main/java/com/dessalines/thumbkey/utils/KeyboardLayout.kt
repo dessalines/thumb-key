@@ -18,6 +18,7 @@ import com.dessalines.thumbkey.keyboards.KB_EN_MESSAGEEASE
 import com.dessalines.thumbkey.keyboards.KB_EN_MESSAGEEASE_SYMBOLS
 import com.dessalines.thumbkey.keyboards.KB_EN_NO_THUMBKEY
 import com.dessalines.thumbkey.keyboards.KB_EN_NO_TYPESPLIT
+import com.dessalines.thumbkey.keyboards.KB_EN_QWERTYFOUR
 import com.dessalines.thumbkey.keyboards.KB_EN_SK_THUMBKEY
 import com.dessalines.thumbkey.keyboards.KB_EN_THUMBKEY
 import com.dessalines.thumbkey.keyboards.KB_EN_THUMBKEY_COMPOSE
@@ -166,5 +167,5 @@ enum class KeyboardLayout(val index: Int, val keyboardDefinition: KeyboardDefini
     JATypeSplitHiragana(78, KB_JA_TYPESPLIT_HIRAGANA),
     JATypeSplitKatakana(79, KB_JA_TYPESPLIT_KATAKANA),
     EUESThumbKey(80, KB_EU_ES_THUMBKEY),
-    ENqwertyfour(81, EN_QWERTYFOUR),
+    ENQwertyFour(81, KB_EN_QWERTYFOUR),
 }

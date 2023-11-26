@@ -587,7 +587,7 @@ val KB_EN_QWERTYFOUR_SHIFTED =
         ),
     )
 
-val EN_QWERTYFOUR: KeyboardDefinition =
+val KB_EN_QWERTYFOUR: KeyboardDefinition =
     KeyboardDefinition(
         title = "english qwertyfour",
         modes =
