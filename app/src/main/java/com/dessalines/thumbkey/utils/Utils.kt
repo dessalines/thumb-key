@@ -718,7 +718,7 @@ fun getKeyboardMode(
     ) {
         KeyboardMode.NUMERIC
     } else {
-        if (autoCapitalize && autoCapitalizeCheck(ime)) {
+        if (autoCapitalize && isPasswordField(ime) && autoCapitalizeCheck(ime)) {
             KeyboardMode.SHIFTED
         } else {
             KeyboardMode.MAIN
@@ -748,12 +748,31 @@ fun autoCapitalizeCheck(ime: IMEService): Boolean {
     val empty = ime.currentInputConnection.getTextBeforeCursor(1, 0).isNullOrEmpty()
 
     // Avoid capitalizing in certain edit boxes
-    val inputType = ime.currentInputEditorInfo.inputType and InputType.TYPE_MASK_VARIATION
+    val inputType = ime.currentInputEditorInfo.inputType and (InputType.TYPE_MASK_VARIATION)
     if (listOf(
             InputType.TYPE_TEXT_VARIATION_URI,
+            InputType.TYPE_TEXT_VARIATION_WEB_EMAIL_ADDRESS,
+            InputType.TYPE_TEXT_VARIATION_EMAIL_ADDRESS,
+        ).contains(inputType) || ime.currentInputEditorInfo.inputType == EditorInfo.TYPE_NULL
+    ) {
+        return false
+    }
+
+    // For punctuation ending
+    val textBefore = ime.currentInputConnection.getTextBeforeCursor(2, 0)
+    return (listOf(". ", "? ", "! ").contains(textBefore)) || empty
+}
+fun isPasswordField(ime: IMEService): Boolean {
+    // Knows if its an empty field
+    val empty = ime.currentInputConnection.getTextBeforeCursor(1, 0).isNullOrEmpty()
+
+    // Avoid capitalizing in certain edit boxes
+    val inputType = ime.currentInputEditorInfo.inputType and (InputType.TYPE_MASK_VARIATION)
+    if (listOf(
             InputType.TYPE_TEXT_VARIATION_PASSWORD,
             InputType.TYPE_TEXT_VARIATION_WEB_PASSWORD,
             InputType.TYPE_TEXT_VARIATION_VISIBLE_PASSWORD,
+            InputType.TYPE_NUMBER_VARIATION_PASSWORD,
         ).contains(inputType) || ime.currentInputEditorInfo.inputType == EditorInfo.TYPE_NULL
     ) {
         return false
