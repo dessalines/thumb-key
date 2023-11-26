@@ -762,6 +762,7 @@ fun autoCapitalizeCheck(ime: IMEService): Boolean {
     val textBefore = ime.currentInputConnection.getTextBeforeCursor(2, 0)
     return (listOf(". ", "? ", "! ").contains(textBefore)) || empty
 }
+
 fun isPasswordField(ime: IMEService): Boolean {
     // Knows if its an empty field
     val empty = ime.currentInputConnection.getTextBeforeCursor(1, 0).isNullOrEmpty()
