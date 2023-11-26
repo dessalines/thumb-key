@@ -361,7 +361,7 @@ private fun updateBehavior(
             minSwipeLength = minSwipeLengthState.value.toInt(),
             slideSensitivity = slideSensitivityState.value.toInt(),
             slideEnabled = slideEnabledState.value.toInt(),
-            slideCursorMovementMode = slideCursorMovementModeState.value.toInt(),
+            slideCursorMovementMode = slideCursorMovementModeState.value,
             slideSpacebarDeadzoneEnabled = slideSpacebarDeadzoneEnabledState.value.toInt(),
             slideBackspaceDeadzoneEnabled = slideBackspaceDeadzoneEnabledState.value.toInt(),
             autoCapitalize = autoCapitalizeState.value.toInt(),

@@ -298,7 +298,7 @@ fun KeyboardKey(
                                 } else {
                                     // Check if any text has been selected, but the selection wasn't done by this keyboard.
                                     val selectedText = ime.currentInputConnection.getSelectedText(0)
-                                    if ((!selectedText.isNullOrEmpty()) && selectedText.length > 0) {
+                                    if ((!selectedText.isNullOrEmpty()) && selectedText.isNotEmpty()) {
                                         lengthOfSelectedText = selectedText.length
                                     }
                                 }
