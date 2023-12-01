@@ -63,6 +63,7 @@ import com.dessalines.thumbkey.keyboards.KB_JA_THUMBKEY_KATAKANA
 import com.dessalines.thumbkey.keyboards.KB_JA_TYPESPLIT_HIRAGANA
 import com.dessalines.thumbkey.keyboards.KB_JA_TYPESPLIT_KATAKANA
 import com.dessalines.thumbkey.keyboards.KB_KA_THUMBKEY
+import com.dessalines.thumbkey.keyboards.KB_KZ_THUMBKEY
 import com.dessalines.thumbkey.keyboards.KB_LT_THUMBKEY
 import com.dessalines.thumbkey.keyboards.KB_LV_LTG_THUMBKEY
 import com.dessalines.thumbkey.keyboards.KB_MATH_THUMBKEY
@@ -168,4 +169,5 @@ enum class KeyboardLayout(val index: Int, val keyboardDefinition: KeyboardDefini
     JATypeSplitKatakana(79, KB_JA_TYPESPLIT_KATAKANA),
     EUESThumbKey(80, KB_EU_ES_THUMBKEY),
     ENQwertyFour(81, KB_EN_QWERTYFOUR),
+    KZThumbKey(82, KB_KZ_THUMBKEY),
 }
