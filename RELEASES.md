@@ -1,3 +1,16 @@
+# Thumb-Key 2.6.3 (2023-12-01)
+
+## What's Changed
+
+- Update HUThumbKey.kt by @KnockoffFeline in https://github.com/dessalines/thumb-key/pull/578
+- Add Persian (farsi) translation by @salif in https://github.com/dessalines/thumb-key/pull/580
+- Adding KZ keyboard. Fixes #579 by @dessalines in https://github.com/dessalines/thumb-key/pull/581
+- Increasing maximum bottom offset. Fixes #575 by @dessalines in https://github.com/dessalines/thumb-key/pull/582
+- Upgrading deps. by @dessalines in https://github.com/dessalines/thumb-key/pull/583
+- Dont hide numbers. Fixes #501 by @dessalines in https://github.com/dessalines/thumb-key/pull/584
+
+**Full Changelog**: https://github.com/dessalines/thumb-key/compare/2.6.2...2.6.3
+
 # Thumb-Key 2.6.2 (2023-11-26)
 
 ## What's Changed
