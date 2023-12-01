@@ -5,7 +5,7 @@ plugins {
 }
 
 android {
-    buildToolsVersion = "34.0.0-rc3"
+    buildToolsVersion = "34.0.0"
     compileSdk 34
 
     defaultConfig {
@@ -77,25 +77,25 @@ dependencies {
     implementation 'com.github.alorma:compose-settings-ui-m3:1.0.2'
 
     // To use Kotlin annotation processing tool
-    ksp 'androidx.room:room-compiler:2.6.0'
+    ksp 'androidx.room:room-compiler:2.6.1'
 
-    implementation 'androidx.room:room-runtime:2.6.0'
-    annotationProcessor 'androidx.room:room-compiler:2.6.0'
+    implementation 'androidx.room:room-runtime:2.6.1'
+    annotationProcessor 'androidx.room:room-compiler:2.6.1'
 
     // optional - Kotlin Extensions and Coroutines support for Room
-    implementation('androidx.room:room-ktx:2.6.0')
+    implementation 'androidx.room:room-ktx:2.6.1'
 
     // optional - Test helpers
-    testImplementation 'androidx.room:room-testing:2.6.0'
+    testImplementation 'androidx.room:room-testing:2.6.1'
 
     // optional - Paging 3 Integration
-    implementation 'androidx.room:room-paging:2.6.0'
+    implementation 'androidx.room:room-paging:2.6.1'
 
     // LiveData
     implementation 'androidx.compose.runtime:runtime-livedata:1.5.4'
     implementation "androidx.lifecycle:lifecycle-runtime-compose:2.6.2"
 
-    implementation 'org.jetbrains.kotlin:kotlin-stdlib:1.9.21'
+    implementation 'org.jetbrains.kotlin:kotlin-stdlib:1.9.20'
     implementation 'androidx.appcompat:appcompat:1.6.1'
     implementation 'androidx.compose.ui:ui:1.5.4'
     implementation 'androidx.compose.material3:material3:1.1.2'
