@@ -506,7 +506,7 @@ fun LookAndFeelActivity(
                 )
                 val bottomOffsetStr = stringResource(R.string.bottom_offset, pushupSizeState.value.toInt().toString())
                 SettingsSlider(
-                    valueRange = 0f..100f,
+                    valueRange = 0f..200f,
                     state = pushupSizeState,
                     icon = {
                         Icon(
