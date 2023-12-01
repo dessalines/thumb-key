@@ -668,15 +668,20 @@ fun KeyText(
         is KeyDisplay.TextDisplay -> {
             // Only  hide the letters for text, not symbols
             val containsLetters = display.text.any { it.isLetter() }
+            val containsNumbers = display.text.any { it.isDigit() }
 
             // If its a letter key, use the hide letter setting
-            val showKey =
+            val hideKey =
                 if (containsLetters) {
-                    !hideLetters
+                    hideLetters
                 } else {
-                    !hideSymbols
+                    if (containsNumbers) {
+                        false
+                    } else {
+                        hideSymbols
+                    }
                 }
-            if (showKey) {
+            if (!hideKey) {
                 Text(
                     text = display.text,
                     fontWeight = FontWeight.Bold,
