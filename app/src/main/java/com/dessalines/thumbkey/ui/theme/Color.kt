@@ -731,7 +731,7 @@ fun ancom(): Pair<ColorScheme, ColorScheme> {
     val md_theme_dark_inverseSurface = Color(0xFFE0E0E0)
     val md_theme_dark_inversePrimary = Color(0xFF404040)
     val md_theme_dark_shadow = Color(0xFF000000)
-    val md_theme_dark_surfaceTint = Color(0x000000)
+    val md_theme_dark_surfaceTint = Color(0xFF000000)
     val md_theme_dark_outlineVariant = Color(0xFF404040)
     val md_theme_dark_scrim = Color(0xFF000000)
 

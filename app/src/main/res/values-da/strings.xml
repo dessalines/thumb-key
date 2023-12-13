@@ -32,7 +32,6 @@
     <string name="source_code">Kildekode</string>
     <string name="source_code_subtitle">Tommeltast er libre open-source software, licenseret under GNU Affero General Public License v3.0</string>
     <string name="look_and_feel">Udseende og tilpasning</string>
-    <string name="behavior"></string>
     <string name="layouts">Tastaturer</string>
     <string name="theme">Tema</string>
     <string name="theme_color">Tema farve</string>
