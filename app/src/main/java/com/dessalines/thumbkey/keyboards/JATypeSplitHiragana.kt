@@ -91,13 +91,13 @@ val KB_JA_TYPESPLIT_HIRAGANA_MAIN =
                         mapOf(
                             SwipeDirection.RIGHT to
                                 KeyC(
-                                    display = KeyDisplay.TextDisplay("ゆ"),
+                                    display = null,
                                     action = KeyAction.CommitText("ゆ"),
                                 ),
                             SwipeDirection.LEFT to
                                 KeyC(
                                     display = null,
-                                    action = KeyAction.CommitText("ゆ"),
+                                    action = KeyAction.CommitText("よ"),
                                 ),
                             SwipeDirection.BOTTOM to
                                 KeyC(
@@ -106,7 +106,7 @@ val KB_JA_TYPESPLIT_HIRAGANA_MAIN =
                                 ),
                             SwipeDirection.TOP to
                                 KeyC(
-                                    display = null,
+                                    display = KeyDisplay.TextDisplay("ゆ"),
                                     action = KeyAction.CommitText("ゆ"),
                                 ),
                         ),

@@ -91,13 +91,13 @@ val KB_JA_TYPESPLIT_KATAKANA_MAIN =
                         mapOf(
                             SwipeDirection.RIGHT to
                                 KeyC(
-                                    display = KeyDisplay.TextDisplay("ユ"),
+                                    display = null,
                                     action = KeyAction.CommitText("ユ"),
                                 ),
                             SwipeDirection.LEFT to
                                 KeyC(
                                     display = null,
-                                    action = KeyAction.CommitText("ユ"),
+                                    action = KeyAction.CommitText("ヨ"),
                                 ),
                             SwipeDirection.BOTTOM to
                                 KeyC(
@@ -106,7 +106,7 @@ val KB_JA_TYPESPLIT_KATAKANA_MAIN =
                                 ),
                             SwipeDirection.TOP to
                                 KeyC(
-                                    display = null,
+                                    display = KeyDisplay.TextDisplay("ユ"),
                                     action = KeyAction.CommitText("ユ"),
                                 ),
                         ),
