@@ -67,13 +67,13 @@ val KB_JA_TYPESPLIT_KATAKANA_MAIN =
                                 ),
                             SwipeDirection.BOTTOM to
                                 KeyC(
-                                    display = KeyDisplay.TextDisplay("オ"),
-                                    action = KeyAction.CommitText("オ"),
+                                    display = KeyDisplay.TextDisplay("ト"),
+                                    action = KeyAction.CommitText("ト"),
                                 ),
                             SwipeDirection.TOP to
                                 KeyC(
-                                    display = KeyDisplay.TextDisplay("ウ"),
-                                    action = KeyAction.CommitText("ウ"),
+                                    display = KeyDisplay.TextDisplay("ツ"),
+                                    action = KeyAction.CommitText("ツ"),
                                 ),
                         ),
                 ),

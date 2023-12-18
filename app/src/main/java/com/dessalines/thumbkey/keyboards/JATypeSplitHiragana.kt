@@ -67,13 +67,13 @@ val KB_JA_TYPESPLIT_HIRAGANA_MAIN =
                                 ),
                             SwipeDirection.BOTTOM to
                                 KeyC(
-                                    display = KeyDisplay.TextDisplay("お"),
-                                    action = KeyAction.CommitText("お"),
+                                    display = KeyDisplay.TextDisplay("と"),
+                                    action = KeyAction.CommitText("と"),
                                 ),
                             SwipeDirection.TOP to
                                 KeyC(
-                                    display = KeyDisplay.TextDisplay("う"),
-                                    action = KeyAction.CommitText("う"),
+                                    display = KeyDisplay.TextDisplay("つ"),
+                                    action = KeyAction.CommitText("つ"),
                                 ),
                         ),
                 ),
