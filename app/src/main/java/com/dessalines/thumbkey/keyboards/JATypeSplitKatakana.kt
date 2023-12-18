@@ -296,21 +296,25 @@ val KB_JA_TYPESPLIT_KATAKANA_MAIN =
                                 KeyC(
                                     display = KeyDisplay.TextDisplay("」"),
                                     action = KeyAction.CommitText("」"),
+                                    color = ColorVariant.MUTED,
                                 ),
                             SwipeDirection.LEFT to
                                 KeyC(
                                     display = KeyDisplay.TextDisplay("「"),
                                     action = KeyAction.CommitText("「"),
+                                    color = ColorVariant.MUTED,
                                 ),
                             SwipeDirection.BOTTOM to
                                 KeyC(
                                     display = KeyDisplay.TextDisplay("ー"),
                                     action = KeyAction.CommitText("ー"),
+                                    color = ColorVariant.MUTED,
                                 ),
                             SwipeDirection.TOP to
                                 KeyC(
                                     display = KeyDisplay.TextDisplay("～"),
                                     action = KeyAction.CommitText("～"),
+                                    color = ColorVariant.MUTED,
                                 ),
                         ),
                 ),
@@ -329,21 +333,25 @@ val KB_JA_TYPESPLIT_KATAKANA_MAIN =
                                 KeyC(
                                     display = KeyDisplay.TextDisplay("？"),
                                     action = KeyAction.CommitText("？"),
+                                    color = ColorVariant.MUTED,
                                 ),
                             SwipeDirection.LEFT to
                                 KeyC(
                                     display = KeyDisplay.TextDisplay("！"),
                                     action = KeyAction.CommitText("！"),
+                                    color = ColorVariant.MUTED,
                                 ),
                             SwipeDirection.BOTTOM to
                                 KeyC(
                                     display = KeyDisplay.TextDisplay("："),
                                     action = KeyAction.CommitText("："),
+                                    color = ColorVariant.MUTED,
                                 ),
                             SwipeDirection.TOP to
                                 KeyC(
                                     display = KeyDisplay.TextDisplay("…"),
                                     action = KeyAction.CommitText("…"),
+                                    color = ColorVariant.MUTED,
                                 ),
                         ),
                 ),
@@ -396,25 +404,21 @@ val KB_JA_TYPESPLIT_KATAKANA_MAIN =
                                 KeyC(
                                     display = KeyDisplay.TextDisplay("メ"),
                                     action = KeyAction.CommitText("メ"),
-                                    color = ColorVariant.MUTED,
                                 ),
                             SwipeDirection.LEFT to
                                 KeyC(
                                     display = KeyDisplay.TextDisplay("ミ"),
                                     action = KeyAction.CommitText("ミ"),
-                                    color = ColorVariant.MUTED,
                                 ),
                             SwipeDirection.BOTTOM to
                                 KeyC(
                                     display = KeyDisplay.TextDisplay("モ"),
                                     action = KeyAction.CommitText("モ"),
-                                    color = ColorVariant.MUTED,
                                 ),
                             SwipeDirection.TOP to
                                 KeyC(
                                     display = KeyDisplay.TextDisplay("ム"),
                                     action = KeyAction.CommitText("ム"),
-                                    color = ColorVariant.MUTED,
                                 ),
                         ),
                 ),
