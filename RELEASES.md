@@ -1,3 +1,17 @@
+# Thumb-Key 2.6.4 (2023-12-18)
+
+## What's Changed
+
+- Upgrading deps. by @dessalines in https://github.com/dessalines/thumb-key/pull/588
+- Make sure DB is initialized before building routes. Fixes #589 by @dessalines in https://github.com/dessalines/thumb-key/pull/591
+- Fix issues with Japanese TypeSplit layouts by @Phidica in https://github.com/dessalines/thumb-key/pull/590
+
+## New Contributors
+
+- @Phidica made their first contribution in https://github.com/dessalines/thumb-key/pull/590
+
+**Full Changelog**: https://github.com/dessalines/thumb-key/compare/2.6.3...2.6.4
+
 # Thumb-Key 2.6.3 (2023-12-01)
 
 ## What's Changed
