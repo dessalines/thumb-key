@@ -68,49 +68,51 @@ class MainActivity : AppCompatActivity() {
             ThumbkeyTheme(
                 settings = settings,
             ) {
-                val navController = rememberNavController()
+                if (appSettingsViewModel.appSettings.isInitialized) {
+                    val navController = rememberNavController()
 
-                ShowChangelog(appSettingsViewModel = appSettingsViewModel)
+                    ShowChangelog(appSettingsViewModel = appSettingsViewModel)
 
-                NavHost(
-                    navController = navController,
-                    startDestination = startDestination,
-                ) {
-                    composable(
-                        route = "setup",
+                    NavHost(
+                        navController = navController,
+                        startDestination = startDestination,
                     ) {
-                        SetupActivity(
-                            navController = navController,
-                            thumbkeyEnabled = thumbkeyEnabled,
-                            thumbkeySelected = thumbkeySelected,
-                        )
-                    }
-                    composable(route = "settings") {
-                        SettingsActivity(
-                            navController = navController,
-                            appSettingsViewModel = appSettingsViewModel,
-                            thumbkeyEnabled = thumbkeyEnabled,
-                            thumbkeySelected = thumbkeySelected,
-                        )
-                    }
-                    composable(route = "lookAndFeel") {
-                        LookAndFeelActivity(
-                            navController = navController,
-                            appSettingsViewModel = appSettingsViewModel,
-                        )
-                    }
-                    composable(route = "behavior") {
-                        BehaviorActivity(
-                            navController = navController,
-                            appSettingsViewModel = appSettingsViewModel,
-                        )
-                    }
-                    composable(
-                        route = "about",
-                    ) {
-                        AboutActivity(
-                            navController = navController,
-                        )
+                        composable(
+                            route = "setup",
+                        ) {
+                            SetupActivity(
+                                navController = navController,
+                                thumbkeyEnabled = thumbkeyEnabled,
+                                thumbkeySelected = thumbkeySelected,
+                            )
+                        }
+                        composable(route = "settings") {
+                            SettingsActivity(
+                                navController = navController,
+                                appSettingsViewModel = appSettingsViewModel,
+                                thumbkeyEnabled = thumbkeyEnabled,
+                                thumbkeySelected = thumbkeySelected,
+                            )
+                        }
+                        composable(route = "lookAndFeel") {
+                            LookAndFeelActivity(
+                                navController = navController,
+                                appSettingsViewModel = appSettingsViewModel,
+                            )
+                        }
+                        composable(route = "behavior") {
+                            BehaviorActivity(
+                                navController = navController,
+                                appSettingsViewModel = appSettingsViewModel,
+                            )
+                        }
+                        composable(
+                            route = "about",
+                        ) {
+                            AboutActivity(
+                                navController = navController,
+                            )
+                        }
                     }
                 }
             }
