@@ -67,13 +67,13 @@ val KB_JA_TYPESPLIT_HIRAGANA_MAIN =
                                 ),
                             SwipeDirection.BOTTOM to
                                 KeyC(
-                                    display = KeyDisplay.TextDisplay("お"),
-                                    action = KeyAction.CommitText("お"),
+                                    display = KeyDisplay.TextDisplay("と"),
+                                    action = KeyAction.CommitText("と"),
                                 ),
                             SwipeDirection.TOP to
                                 KeyC(
-                                    display = KeyDisplay.TextDisplay("う"),
-                                    action = KeyAction.CommitText("う"),
+                                    display = KeyDisplay.TextDisplay("つ"),
+                                    action = KeyAction.CommitText("つ"),
                                 ),
                         ),
                 ),
@@ -91,13 +91,13 @@ val KB_JA_TYPESPLIT_HIRAGANA_MAIN =
                         mapOf(
                             SwipeDirection.RIGHT to
                                 KeyC(
-                                    display = KeyDisplay.TextDisplay("ゆ"),
+                                    display = null,
                                     action = KeyAction.CommitText("ゆ"),
                                 ),
                             SwipeDirection.LEFT to
                                 KeyC(
                                     display = null,
-                                    action = KeyAction.CommitText("ゆ"),
+                                    action = KeyAction.CommitText("よ"),
                                 ),
                             SwipeDirection.BOTTOM to
                                 KeyC(
@@ -106,7 +106,7 @@ val KB_JA_TYPESPLIT_HIRAGANA_MAIN =
                                 ),
                             SwipeDirection.TOP to
                                 KeyC(
-                                    display = null,
+                                    display = KeyDisplay.TextDisplay("ゆ"),
                                     action = KeyAction.CommitText("ゆ"),
                                 ),
                         ),
@@ -296,21 +296,25 @@ val KB_JA_TYPESPLIT_HIRAGANA_MAIN =
                                 KeyC(
                                     display = KeyDisplay.TextDisplay("」"),
                                     action = KeyAction.CommitText("」"),
+                                    color = ColorVariant.MUTED,
                                 ),
                             SwipeDirection.LEFT to
                                 KeyC(
                                     display = KeyDisplay.TextDisplay("「"),
                                     action = KeyAction.CommitText("「"),
+                                    color = ColorVariant.MUTED,
                                 ),
                             SwipeDirection.BOTTOM to
                                 KeyC(
                                     display = KeyDisplay.TextDisplay("ー"),
                                     action = KeyAction.CommitText("ー"),
+                                    color = ColorVariant.MUTED,
                                 ),
                             SwipeDirection.TOP to
                                 KeyC(
                                     display = KeyDisplay.TextDisplay("～"),
                                     action = KeyAction.CommitText("～"),
+                                    color = ColorVariant.MUTED,
                                 ),
                         ),
                 ),
@@ -329,21 +333,25 @@ val KB_JA_TYPESPLIT_HIRAGANA_MAIN =
                                 KeyC(
                                     display = KeyDisplay.TextDisplay("？"),
                                     action = KeyAction.CommitText("？"),
+                                    color = ColorVariant.MUTED,
                                 ),
                             SwipeDirection.LEFT to
                                 KeyC(
                                     display = KeyDisplay.TextDisplay("！"),
                                     action = KeyAction.CommitText("！"),
+                                    color = ColorVariant.MUTED,
                                 ),
                             SwipeDirection.BOTTOM to
                                 KeyC(
                                     display = KeyDisplay.TextDisplay("："),
                                     action = KeyAction.CommitText("："),
+                                    color = ColorVariant.MUTED,
                                 ),
                             SwipeDirection.TOP to
                                 KeyC(
                                     display = KeyDisplay.TextDisplay("…"),
                                     action = KeyAction.CommitText("…"),
+                                    color = ColorVariant.MUTED,
                                 ),
                         ),
                 ),
@@ -396,25 +404,21 @@ val KB_JA_TYPESPLIT_HIRAGANA_MAIN =
                                 KeyC(
                                     display = KeyDisplay.TextDisplay("め"),
                                     action = KeyAction.CommitText("め"),
-                                    color = ColorVariant.MUTED,
                                 ),
                             SwipeDirection.LEFT to
                                 KeyC(
                                     display = KeyDisplay.TextDisplay("み"),
                                     action = KeyAction.CommitText("み"),
-                                    color = ColorVariant.MUTED,
                                 ),
                             SwipeDirection.BOTTOM to
                                 KeyC(
                                     display = KeyDisplay.TextDisplay("も"),
                                     action = KeyAction.CommitText("も"),
-                                    color = ColorVariant.MUTED,
                                 ),
                             SwipeDirection.TOP to
                                 KeyC(
                                     display = KeyDisplay.TextDisplay("む"),
                                     action = KeyAction.CommitText("む"),
-                                    color = ColorVariant.MUTED,
                                 ),
                         ),
                 ),
@@ -434,19 +438,67 @@ val KB_JA_TYPESPLIT_HIRAGANA_SHIFTED =
                 KeyItemC(
                     center =
                         KeyC(
-                            display = KeyDisplay.TextDisplay("ゔ"),
-                            action = KeyAction.CommitText("ゔ"),
+                            display = KeyDisplay.TextDisplay("¥"),
+                            action = KeyAction.CommitText("¥"),
                             size = FontSizeVariant.LARGE,
                             color = ColorVariant.PRIMARY,
+                        ),
+                    swipeType = SwipeNWay.FOUR_WAY_CROSS,
+                    swipes =
+                        mapOf(
+                            SwipeDirection.RIGHT to
+                                KeyC(
+                                    display = null,
+                                    action = KeyAction.CommitText("※"),
+                                ),
+                            SwipeDirection.LEFT to
+                                KeyC(
+                                    display = KeyDisplay.TextDisplay("※"),
+                                    action = KeyAction.CommitText("※"),
+                                ),
+                            SwipeDirection.BOTTOM to
+                                KeyC(
+                                    display = KeyDisplay.TextDisplay("ヶ"),
+                                    action = KeyAction.CommitText("ヶ"),
+                                ),
+                            SwipeDirection.TOP to
+                                KeyC(
+                                    display = KeyDisplay.TextDisplay("ヵ"),
+                                    action = KeyAction.CommitText("ヵ"),
+                                ),
                         ),
                 ),
                 KeyItemC(
                     center =
                         KeyC(
-                            display = KeyDisplay.TextDisplay("っ"),
-                            action = KeyAction.CommitText("っ"),
+                            display = KeyDisplay.TextDisplay("だ"),
+                            action = KeyAction.CommitText("だ"),
                             size = FontSizeVariant.LARGE,
                             color = ColorVariant.PRIMARY,
+                        ),
+                    swipeType = SwipeNWay.FOUR_WAY_CROSS,
+                    swipes =
+                        mapOf(
+                            SwipeDirection.RIGHT to
+                                KeyC(
+                                    display = KeyDisplay.TextDisplay("で"),
+                                    action = KeyAction.CommitText("で"),
+                                ),
+                            SwipeDirection.LEFT to
+                                KeyC(
+                                    display = KeyDisplay.TextDisplay("ぢ"),
+                                    action = KeyAction.CommitText("ぢ"),
+                                ),
+                            SwipeDirection.BOTTOM to
+                                KeyC(
+                                    display = KeyDisplay.TextDisplay("ど"),
+                                    action = KeyAction.CommitText("ど"),
+                                ),
+                            SwipeDirection.TOP to
+                                KeyC(
+                                    display = KeyDisplay.TextDisplay("づ"),
+                                    action = KeyAction.CommitText("づ"),
+                                ),
                         ),
                 ),
                 EMOJI_KEY_ITEM,
@@ -463,13 +515,13 @@ val KB_JA_TYPESPLIT_HIRAGANA_SHIFTED =
                         mapOf(
                             SwipeDirection.RIGHT to
                                 KeyC(
-                                    display = KeyDisplay.TextDisplay("ゅ"),
+                                    display = null,
                                     action = KeyAction.CommitText("ゅ"),
                                 ),
                             SwipeDirection.LEFT to
                                 KeyC(
                                     display = null,
-                                    action = KeyAction.CommitText("ゅ"),
+                                    action = KeyAction.CommitText("ょ"),
                                 ),
                             SwipeDirection.BOTTOM to
                                 KeyC(
@@ -478,7 +530,7 @@ val KB_JA_TYPESPLIT_HIRAGANA_SHIFTED =
                                 ),
                             SwipeDirection.TOP to
                                 KeyC(
-                                    display = null,
+                                    display = KeyDisplay.TextDisplay("ゅ"),
                                     action = KeyAction.CommitText("ゅ"),
                                 ),
                         ),
@@ -486,34 +538,10 @@ val KB_JA_TYPESPLIT_HIRAGANA_SHIFTED =
                 KeyItemC(
                     center =
                         KeyC(
-                            display = KeyDisplay.TextDisplay("ぱ"),
-                            action = KeyAction.CommitText("ぱ"),
+                            display = KeyDisplay.TextDisplay("ゔ"),
+                            action = KeyAction.CommitText("ゔ"),
                             size = FontSizeVariant.LARGE,
                             color = ColorVariant.PRIMARY,
-                        ),
-                    swipeType = SwipeNWay.FOUR_WAY_CROSS,
-                    swipes =
-                        mapOf(
-                            SwipeDirection.RIGHT to
-                                KeyC(
-                                    display = KeyDisplay.TextDisplay("ぺ"),
-                                    action = KeyAction.CommitText("ぺ"),
-                                ),
-                            SwipeDirection.LEFT to
-                                KeyC(
-                                    display = KeyDisplay.TextDisplay("ぴ"),
-                                    action = KeyAction.CommitText("ぴ"),
-                                ),
-                            SwipeDirection.BOTTOM to
-                                KeyC(
-                                    display = KeyDisplay.TextDisplay("ぽ"),
-                                    action = KeyAction.CommitText("ぽ"),
-                                ),
-                            SwipeDirection.TOP to
-                                KeyC(
-                                    display = KeyDisplay.TextDisplay("ぷ"),
-                                    action = KeyAction.CommitText("ぷ"),
-                                ),
                         ),
                 ),
             ),
@@ -554,8 +582,8 @@ val KB_JA_TYPESPLIT_HIRAGANA_SHIFTED =
                 KeyItemC(
                     center =
                         KeyC(
-                            display = KeyDisplay.TextDisplay("だ"),
-                            action = KeyAction.CommitText("だ"),
+                            display = KeyDisplay.TextDisplay("ざ"),
+                            action = KeyAction.CommitText("ざ"),
                             size = FontSizeVariant.LARGE,
                             color = ColorVariant.PRIMARY,
                         ),
@@ -564,27 +592,60 @@ val KB_JA_TYPESPLIT_HIRAGANA_SHIFTED =
                         mapOf(
                             SwipeDirection.RIGHT to
                                 KeyC(
-                                    display = KeyDisplay.TextDisplay("で"),
-                                    action = KeyAction.CommitText("で"),
+                                    display = KeyDisplay.TextDisplay("ぜ"),
+                                    action = KeyAction.CommitText("ぜ"),
                                 ),
                             SwipeDirection.LEFT to
                                 KeyC(
-                                    display = KeyDisplay.TextDisplay("ぢ"),
-                                    action = KeyAction.CommitText("ぢ"),
+                                    display = KeyDisplay.TextDisplay("じ"),
+                                    action = KeyAction.CommitText("じ"),
                                 ),
                             SwipeDirection.BOTTOM to
                                 KeyC(
-                                    display = KeyDisplay.TextDisplay("ど"),
-                                    action = KeyAction.CommitText("ど"),
+                                    display = KeyDisplay.TextDisplay("ぞ"),
+                                    action = KeyAction.CommitText("ぞ"),
                                 ),
                             SwipeDirection.TOP to
                                 KeyC(
-                                    display = KeyDisplay.TextDisplay("づ"),
-                                    action = KeyAction.CommitText("づ"),
+                                    display = KeyDisplay.TextDisplay("ず"),
+                                    action = KeyAction.CommitText("ず"),
                                 ),
                         ),
                 ),
                 SPACEBAR_TYPESPLIT_MIDDLE_KEY_ITEM,
+                KeyItemC(
+                    center =
+                        KeyC(
+                            display = KeyDisplay.TextDisplay("ば"),
+                            action = KeyAction.CommitText("ば"),
+                            size = FontSizeVariant.LARGE,
+                            color = ColorVariant.PRIMARY,
+                        ),
+                    swipeType = SwipeNWay.FOUR_WAY_CROSS,
+                    swipes =
+                        mapOf(
+                            SwipeDirection.RIGHT to
+                                KeyC(
+                                    display = KeyDisplay.TextDisplay("び"),
+                                    action = KeyAction.CommitText("び"),
+                                ),
+                            SwipeDirection.LEFT to
+                                KeyC(
+                                    display = KeyDisplay.TextDisplay("べ"),
+                                    action = KeyAction.CommitText("べ"),
+                                ),
+                            SwipeDirection.BOTTOM to
+                                KeyC(
+                                    display = KeyDisplay.TextDisplay("ぼ"),
+                                    action = KeyAction.CommitText("ぼ"),
+                                ),
+                            SwipeDirection.TOP to
+                                KeyC(
+                                    display = KeyDisplay.TextDisplay("ぶ"),
+                                    action = KeyAction.CommitText("ぶ"),
+                                ),
+                        ),
+                ),
                 KeyItemC(
                     center =
                         KeyC(
@@ -598,13 +659,13 @@ val KB_JA_TYPESPLIT_HIRAGANA_SHIFTED =
                         mapOf(
                             SwipeDirection.RIGHT to
                                 KeyC(
-                                    display = KeyDisplay.TextDisplay("ぎ"),
-                                    action = KeyAction.CommitText("ぎ"),
+                                    display = KeyDisplay.TextDisplay("げ"),
+                                    action = KeyAction.CommitText("げ"),
                                 ),
                             SwipeDirection.LEFT to
                                 KeyC(
-                                    display = KeyDisplay.TextDisplay("げ"),
-                                    action = KeyAction.CommitText("げ"),
+                                    display = KeyDisplay.TextDisplay("ぎ"),
+                                    action = KeyAction.CommitText("ぎ"),
                                 ),
                             SwipeDirection.BOTTOM to
                                 KeyC(
@@ -618,6 +679,8 @@ val KB_JA_TYPESPLIT_HIRAGANA_SHIFTED =
                                 ),
                         ),
                 ),
+            ),
+            listOf(
                 KeyItemC(
                     center =
                         KeyC(
@@ -633,123 +696,25 @@ val KB_JA_TYPESPLIT_HIRAGANA_SHIFTED =
                                 KeyC(
                                     display = KeyDisplay.TextDisplay("】"),
                                     action = KeyAction.CommitText("】"),
+                                    color = ColorVariant.MUTED,
                                 ),
                             SwipeDirection.LEFT to
                                 KeyC(
                                     display = KeyDisplay.TextDisplay("【"),
                                     action = KeyAction.CommitText("【"),
+                                    color = ColorVariant.MUTED,
                                 ),
                             SwipeDirection.BOTTOM to
                                 KeyC(
                                     display = KeyDisplay.TextDisplay("："),
                                     action = KeyAction.CommitText("："),
+                                    color = ColorVariant.MUTED,
                                 ),
                             SwipeDirection.TOP to
                                 KeyC(
                                     display = KeyDisplay.TextDisplay("〃"),
                                     action = KeyAction.CommitText("〃"),
-                                ),
-                        ),
-                ),
-            ),
-            listOf(
-                KeyItemC(
-                    center =
-                        KeyC(
-                            display = KeyDisplay.TextDisplay("ざ"),
-                            action = KeyAction.CommitText("ざ"),
-                            size = FontSizeVariant.LARGE,
-                            color = ColorVariant.PRIMARY,
-                        ),
-                    swipeType = SwipeNWay.FOUR_WAY_CROSS,
-                    swipes =
-                        mapOf(
-                            SwipeDirection.RIGHT to
-                                KeyC(
-                                    display = KeyDisplay.TextDisplay("じ"),
-                                    action = KeyAction.CommitText("じ"),
-                                ),
-                            SwipeDirection.LEFT to
-                                KeyC(
-                                    display = KeyDisplay.TextDisplay("ぜ"),
-                                    action = KeyAction.CommitText("ぜ"),
-                                ),
-                            SwipeDirection.BOTTOM to
-                                KeyC(
-                                    display = KeyDisplay.TextDisplay("ぞ"),
-                                    action = KeyAction.CommitText("ぞ"),
-                                ),
-                            SwipeDirection.TOP to
-                                KeyC(
-                                    display = KeyDisplay.TextDisplay("ず"),
-                                    action = KeyAction.CommitText("ず"),
-                                ),
-                        ),
-                ),
-                KeyItemC(
-                    center =
-                        KeyC(
-                            display = KeyDisplay.TextDisplay("ば"),
-                            action = KeyAction.CommitText("ば"),
-                            size = FontSizeVariant.LARGE,
-                            color = ColorVariant.PRIMARY,
-                        ),
-                    swipeType = SwipeNWay.FOUR_WAY_CROSS,
-                    swipes =
-                        mapOf(
-                            SwipeDirection.RIGHT to
-                                KeyC(
-                                    display = KeyDisplay.TextDisplay("べ"),
-                                    action = KeyAction.CommitText("べ"),
-                                ),
-                            SwipeDirection.LEFT to
-                                KeyC(
-                                    display = KeyDisplay.TextDisplay("び"),
-                                    action = KeyAction.CommitText("び"),
-                                ),
-                            SwipeDirection.BOTTOM to
-                                KeyC(
-                                    display = KeyDisplay.TextDisplay("ぼ"),
-                                    action = KeyAction.CommitText("ぼ"),
-                                ),
-                            SwipeDirection.TOP to
-                                KeyC(
-                                    display = KeyDisplay.TextDisplay("ぶ"),
-                                    action = KeyAction.CommitText("ぶ"),
-                                ),
-                        ),
-                ),
-                SPACEBAR_TYPESPLIT_BOTTOM_KEY_ITEM,
-                KeyItemC(
-                    center =
-                        KeyC(
-                            display = KeyDisplay.TextDisplay("¥"),
-                            action = KeyAction.CommitText("¥"),
-                            size = FontSizeVariant.LARGE,
-                            color = ColorVariant.PRIMARY,
-                        ),
-                    swipeType = SwipeNWay.FOUR_WAY_CROSS,
-                    swipes =
-                        mapOf(
-                            SwipeDirection.RIGHT to
-                                KeyC(
-                                    display = KeyDisplay.TextDisplay("※"),
-                                    action = KeyAction.CommitText("※"),
-                                ),
-                            SwipeDirection.LEFT to
-                                KeyC(
-                                    display = null,
-                                    action = KeyAction.CommitText("※"),
-                                ),
-                            SwipeDirection.BOTTOM to
-                                KeyC(
-                                    display = KeyDisplay.TextDisplay("ヶ"),
-                                    action = KeyAction.CommitText("ヶ"),
-                                ),
-                            SwipeDirection.TOP to
-                                KeyC(
-                                    display = KeyDisplay.TextDisplay("ヵ"),
-                                    action = KeyAction.CommitText("ヵ"),
+                                    color = ColorVariant.MUTED,
                                 ),
                         ),
                 ),
@@ -766,14 +731,14 @@ val KB_JA_TYPESPLIT_HIRAGANA_SHIFTED =
                         mapOf(
                             SwipeDirection.RIGHT to
                                 KeyC(
-                                    display = KeyDisplay.TextDisplay("÷"),
-                                    action = KeyAction.CommitText("÷"),
+                                    display = KeyDisplay.TextDisplay("×"),
+                                    action = KeyAction.CommitText("×"),
                                     color = ColorVariant.MUTED,
                                 ),
                             SwipeDirection.LEFT to
                                 KeyC(
-                                    display = KeyDisplay.TextDisplay("×"),
-                                    action = KeyAction.CommitText("×"),
+                                    display = KeyDisplay.TextDisplay("÷"),
+                                    action = KeyAction.CommitText("÷"),
                                     color = ColorVariant.MUTED,
                                 ),
                             SwipeDirection.BOTTOM to
@@ -788,6 +753,49 @@ val KB_JA_TYPESPLIT_HIRAGANA_SHIFTED =
                                     action = KeyAction.CommitText("－"),
                                     color = ColorVariant.MUTED,
                                 ),
+                        ),
+                ),
+                SPACEBAR_TYPESPLIT_BOTTOM_KEY_ITEM,
+                KeyItemC(
+                    center =
+                        KeyC(
+                            display = KeyDisplay.TextDisplay("ぱ"),
+                            action = KeyAction.CommitText("ぱ"),
+                            size = FontSizeVariant.LARGE,
+                            color = ColorVariant.PRIMARY,
+                        ),
+                    swipeType = SwipeNWay.FOUR_WAY_CROSS,
+                    swipes =
+                        mapOf(
+                            SwipeDirection.RIGHT to
+                                KeyC(
+                                    display = KeyDisplay.TextDisplay("ぴ"),
+                                    action = KeyAction.CommitText("ぴ"),
+                                ),
+                            SwipeDirection.LEFT to
+                                KeyC(
+                                    display = KeyDisplay.TextDisplay("ぺ"),
+                                    action = KeyAction.CommitText("ぺ"),
+                                ),
+                            SwipeDirection.BOTTOM to
+                                KeyC(
+                                    display = KeyDisplay.TextDisplay("ぽ"),
+                                    action = KeyAction.CommitText("ぽ"),
+                                ),
+                            SwipeDirection.TOP to
+                                KeyC(
+                                    display = KeyDisplay.TextDisplay("ぷ"),
+                                    action = KeyAction.CommitText("ぷ"),
+                                ),
+                        ),
+                ),
+                KeyItemC(
+                    center =
+                        KeyC(
+                            display = KeyDisplay.TextDisplay("っ"),
+                            action = KeyAction.CommitText("っ"),
+                            size = FontSizeVariant.LARGE,
+                            color = ColorVariant.PRIMARY,
                         ),
                 ),
             ),
