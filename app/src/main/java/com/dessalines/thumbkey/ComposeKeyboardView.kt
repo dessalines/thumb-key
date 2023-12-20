@@ -4,6 +4,7 @@ import android.annotation.SuppressLint
 import android.content.Context
 import android.widget.Toast
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.getValue
 import androidx.compose.runtime.livedata.observeAsState
 import androidx.compose.ui.platform.AbstractComposeView
 import androidx.lifecycle.lifecycleScope
@@ -24,7 +25,7 @@ class ComposeKeyboardView(
     @Composable
     override fun Content() {
         val settingsState = settingsRepo.appSettings.observeAsState()
-        val settings = settingsState.value
+        val settings by settingsState
         val ctx = context as IMEService
 
         ThumbkeyTheme(

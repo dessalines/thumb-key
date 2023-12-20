@@ -12,8 +12,8 @@ android {
         applicationId "com.dessalines.thumbkey"
         minSdk 21
         targetSdkVersion 34
-        versionCode 46
-        versionName "2.6.3"
+        versionCode 47
+        versionName "2.6.4"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         vectorDrawables {
@@ -71,10 +71,10 @@ android {
 dependencies {
 
     implementation "com.github.jeziellago:compose-markdown:0.3.5"
-    implementation "com.squareup.okhttp3:logging-interceptor:5.0.0-alpha.11"
+    implementation "com.squareup.okhttp3:logging-interceptor:5.0.0-alpha.12"
 
     implementation 'androidx.navigation:navigation-compose:2.7.6'
-    implementation 'com.github.alorma:compose-settings-ui-m3:1.0.2'
+    implementation 'com.github.alorma:compose-settings-ui-m3:1.0.3'
 
     // To use Kotlin annotation processing tool
     ksp 'androidx.room:room-compiler:2.6.1'
