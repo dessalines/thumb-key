@@ -219,7 +219,7 @@ val KB_EN_MI_THUMBKEY_MAIN =
                             size = FontSizeVariant.LARGE,
                             color = ColorVariant.PRIMARY,
                         ),
-                    swipeType = SwipeNWay.EIGHT_WAY_DIAGONAL,
+                    swipeType = SwipeNWay.EIGHT_WAY,
                     swipes =
                         mapOf(
                             SwipeDirection.TOP to
