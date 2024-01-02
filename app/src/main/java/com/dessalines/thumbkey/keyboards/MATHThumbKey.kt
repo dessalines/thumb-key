@@ -27,7 +27,7 @@ val KB_MATH_THUMBKEY_MAIN =
                             size = FontSizeVariant.LARGE,
                             color = ColorVariant.PRIMARY,
                         ),
-                    swipeType = SwipeNWay.FOUR_WAY_DIAGONAL,
+                    swipeType = SwipeNWay.EIGHT_WAY,
                     swipes =
                         mapOf(
                             SwipeDirection.TOP_LEFT to
@@ -55,7 +55,7 @@ val KB_MATH_THUMBKEY_MAIN =
                             size = FontSizeVariant.LARGE,
                             color = ColorVariant.PRIMARY,
                         ),
-                    swipeType = SwipeNWay.TWO_WAY_VERTICAL,
+                    swipeType = SwipeNWay.EIGHT_WAY,
                     swipes =
                         mapOf(
                             SwipeDirection.LEFT to
@@ -98,7 +98,7 @@ val KB_MATH_THUMBKEY_MAIN =
                             size = FontSizeVariant.LARGE,
                             color = ColorVariant.PRIMARY,
                         ),
-                    swipeType = SwipeNWay.FOUR_WAY_DIAGONAL,
+                    swipeType = SwipeNWay.EIGHT_WAY,
                     swipes =
                         mapOf(
                             SwipeDirection.TOP_RIGHT to
@@ -144,7 +144,7 @@ val KB_MATH_THUMBKEY_MAIN =
                             size = FontSizeVariant.LARGE,
                             color = ColorVariant.PRIMARY,
                         ),
-                    swipeType = SwipeNWay.TWO_WAY_HORIZONTAL,
+                    swipeType = SwipeNWay.EIGHT_WAY,
                     swipes =
                         mapOf(
                             SwipeDirection.TOP_RIGHT to
@@ -214,7 +214,7 @@ val KB_MATH_THUMBKEY_MAIN =
                             size = FontSizeVariant.LARGE,
                             color = ColorVariant.PRIMARY,
                         ),
-                    swipeType = SwipeNWay.FOUR_WAY_CROSS,
+                    swipeType = SwipeNWay.EIGHT_WAY,
                     swipes =
                         mapOf(
                             SwipeDirection.TOP_LEFT to
@@ -261,7 +261,7 @@ val KB_MATH_THUMBKEY_MAIN =
                             size = FontSizeVariant.LARGE,
                             color = ColorVariant.PRIMARY,
                         ),
-                    swipeType = SwipeNWay.FOUR_WAY_DIAGONAL,
+                    swipeType = SwipeNWay.EIGHT_WAY,
                     swipes =
                         mapOf(
                             SwipeDirection.TOP_LEFT to
@@ -372,7 +372,7 @@ val KB_MATH_THUMBKEY_MAIN =
                             size = FontSizeVariant.LARGE,
                             color = ColorVariant.PRIMARY,
                         ),
-                    swipeType = SwipeNWay.FOUR_WAY_DIAGONAL,
+                    swipeType = SwipeNWay.EIGHT_WAY,
                     swipes =
                         mapOf(
                             SwipeDirection.TOP_RIGHT to
@@ -438,7 +438,7 @@ val KB_MATH_THUMBKEY_SLASH =
                             size = FontSizeVariant.LARGE,
                             color = ColorVariant.PRIMARY,
                         ),
-                    swipeType = SwipeNWay.FOUR_WAY_DIAGONAL,
+                    swipeType = SwipeNWay.EIGHT_WAY,
                     swipes =
                         mapOf(
                             SwipeDirection.LEFT to
@@ -461,7 +461,7 @@ val KB_MATH_THUMBKEY_SLASH =
                             size = FontSizeVariant.LARGE,
                             color = ColorVariant.PRIMARY,
                         ),
-                    swipeType = SwipeNWay.TWO_WAY_VERTICAL,
+                    swipeType = SwipeNWay.EIGHT_WAY,
                     swipes =
                         mapOf(
                             SwipeDirection.TOP_LEFT to
@@ -489,7 +489,7 @@ val KB_MATH_THUMBKEY_SLASH =
                             size = FontSizeVariant.LARGE,
                             color = ColorVariant.PRIMARY,
                         ),
-                    swipeType = SwipeNWay.FOUR_WAY_DIAGONAL,
+                    swipeType = SwipeNWay.EIGHT_WAY,
                     swipes =
                         mapOf(
                             SwipeDirection.RIGHT to
@@ -525,7 +525,7 @@ val KB_MATH_THUMBKEY_SLASH =
                             size = FontSizeVariant.LARGE,
                             color = ColorVariant.PRIMARY,
                         ),
-                    swipeType = SwipeNWay.TWO_WAY_HORIZONTAL,
+                    swipeType = SwipeNWay.EIGHT_WAY,
                     swipes = mapOf(),
                 ),
                 KeyItemC(
@@ -563,7 +563,7 @@ val KB_MATH_THUMBKEY_SLASH =
                             size = FontSizeVariant.LARGE,
                             color = ColorVariant.PRIMARY,
                         ),
-                    swipeType = SwipeNWay.FOUR_WAY_CROSS,
+                    swipeType = SwipeNWay.EIGHT_WAY,
                     swipes =
                         mapOf(
                             SwipeDirection.BOTTOM to
@@ -585,7 +585,7 @@ val KB_MATH_THUMBKEY_SLASH =
                             size = FontSizeVariant.LARGE,
                             color = ColorVariant.PRIMARY,
                         ),
-                    swipeType = SwipeNWay.FOUR_WAY_DIAGONAL,
+                    swipeType = SwipeNWay.EIGHT_WAY,
                     swipes =
                         mapOf(
                             SwipeDirection.TOP_LEFT to
@@ -623,7 +623,7 @@ val KB_MATH_THUMBKEY_SLASH =
                             size = FontSizeVariant.LARGE,
                             color = ColorVariant.PRIMARY,
                         ),
-                    swipeType = SwipeNWay.FOUR_WAY_DIAGONAL,
+                    swipeType = SwipeNWay.EIGHT_WAY,
                     swipes =
                         mapOf(
                             SwipeDirection.LEFT to
