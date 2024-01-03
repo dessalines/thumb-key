@@ -85,16 +85,19 @@ val KB_IT_THUMBKEY_MAIN =
                                 KeyC(
                                     display = KeyDisplay.TextDisplay("ù"),
                                     action = KeyAction.CommitText("ù"),
+                                    color = ColorVariant.MUTED,
                                 ),
                             SwipeDirection.RIGHT to
                                 KeyC(
                                     display = KeyDisplay.TextDisplay("ò"),
                                     action = KeyAction.CommitText("ò"),
+                                    color = ColorVariant.MUTED,
                                 ),
                             SwipeDirection.BOTTOM_LEFT to
                                 KeyC(
                                     display = KeyDisplay.TextDisplay("qu"),
                                     action = KeyAction.CommitText("qu"),
+                                    color = ColorVariant.MUTED,
                                 ),
                         ),
                 ),
@@ -185,11 +188,13 @@ val KB_IT_THUMBKEY_MAIN =
                                 KeyC(
                                     display = KeyDisplay.TextDisplay("à"),
                                     action = KeyAction.CommitText("à"),
+                                    color = ColorVariant.MUTED,
                                 ),
                             SwipeDirection.BOTTOM_LEFT to
                                 KeyC(
                                     display = KeyDisplay.TextDisplay("ch"),
                                     action = KeyAction.CommitText("ch"),
+                                    color = ColorVariant.MUTED,
                                 ),
                             SwipeDirection.TOP to
                                 KeyC(
@@ -217,16 +222,19 @@ val KB_IT_THUMBKEY_MAIN =
                                 KeyC(
                                     display = KeyDisplay.TextDisplay("!"),
                                     action = KeyAction.CommitText("!"),
+                                    color = ColorVariant.MUTED,
                                 ),
                             SwipeDirection.BOTTOM_LEFT to
                                 KeyC(
                                     display = KeyDisplay.TextDisplay("?"),
                                     action = KeyAction.CommitText("?"),
+                                    color = ColorVariant.MUTED,
                                 ),
                             SwipeDirection.BOTTOM_RIGHT to
                                 KeyC(
                                     display = KeyDisplay.TextDisplay("@"),
                                     action = KeyAction.CommitText("@"),
+                                    color = ColorVariant.MUTED,
                                 ),
                         ),
                 ),
@@ -244,6 +252,7 @@ val KB_IT_THUMBKEY_MAIN =
                                 KeyC(
                                     display = KeyDisplay.TextDisplay("ì"),
                                     action = KeyAction.CommitText("ì"),
+                                    color = ColorVariant.MUTED,
                                 ),
                             SwipeDirection.TOP_RIGHT to
                                 KeyC(
@@ -285,6 +294,7 @@ val KB_IT_THUMBKEY_MAIN =
                                 KeyC(
                                     display = KeyDisplay.TextDisplay("è"),
                                     action = KeyAction.CommitText("è"),
+                                    color = ColorVariant.MUTED,
                                 ),
                             SwipeDirection.LEFT to
                                 KeyC(
@@ -295,11 +305,13 @@ val KB_IT_THUMBKEY_MAIN =
                                 KeyC(
                                     display = KeyDisplay.TextDisplay("é"),
                                     action = KeyAction.CommitText("é"),
+                                    color = ColorVariant.MUTED,
                                 ),
                             SwipeDirection.TOP_LEFT to
                                 KeyC(
                                     display = KeyDisplay.TextDisplay("ə"),
                                     action = KeyAction.CommitText("ə"),
+                                    color = ColorVariant.MUTED,
                                 ),
                             SwipeDirection.TOP to
                                 KeyC(
@@ -315,11 +327,13 @@ val KB_IT_THUMBKEY_MAIN =
                                 KeyC(
                                     display = KeyDisplay.TextDisplay("gh"),
                                     action = KeyAction.CommitText("gh"),
+                                    color = ColorVariant.MUTED,
                                 ),
                             SwipeDirection.BOTTOM_RIGHT to
                                 KeyC(
                                     display = KeyDisplay.TextDisplay("ɜ"),
                                     action = KeyAction.CommitText("ɜ"),
+                                    color = ColorVariant.MUTED,
                                 ),
                         ),
                 ),
@@ -395,11 +409,13 @@ val KB_IT_THUMBKEY_SHIFTED =
                                 KeyC(
                                     display = KeyDisplay.TextDisplay("Ò"),
                                     action = KeyAction.CommitText("Ò"),
+                                    color = ColorVariant.MUTED,
                                 ),
                             SwipeDirection.BOTTOM_RIGHT to
                                 KeyC(
                                     display = KeyDisplay.TextDisplay("Ù"),
                                     action = KeyAction.CommitText("Ù"),
+                                    color = ColorVariant.MUTED,
                                 ),
                             SwipeDirection.LEFT to
                                 KeyC(
@@ -410,6 +426,7 @@ val KB_IT_THUMBKEY_SHIFTED =
                                 KeyC(
                                     display = KeyDisplay.TextDisplay("Qu"),
                                     action = KeyAction.CommitText("Qu"),
+                                    color = ColorVariant.MUTED,
                                 ),
                         ),
                 ),
@@ -500,11 +517,13 @@ val KB_IT_THUMBKEY_SHIFTED =
                                 KeyC(
                                     display = KeyDisplay.TextDisplay("À"),
                                     action = KeyAction.CommitText("À"),
+                                    color = ColorVariant.MUTED,
                                 ),
                             SwipeDirection.BOTTOM_LEFT to
                                 KeyC(
                                     display = KeyDisplay.TextDisplay("Ch"),
                                     action = KeyAction.CommitText("Ch"),
+                                    color = ColorVariant.MUTED,
                                 ),
                             SwipeDirection.TOP to
                                 KeyC(
@@ -539,16 +558,19 @@ val KB_IT_THUMBKEY_SHIFTED =
                                 KeyC(
                                     display = KeyDisplay.TextDisplay("!"),
                                     action = KeyAction.CommitText("!"),
+                                    color = ColorVariant.MUTED,
                                 ),
                             SwipeDirection.BOTTOM_LEFT to
                                 KeyC(
                                     display = KeyDisplay.TextDisplay("?"),
                                     action = KeyAction.CommitText("?"),
+                                    color = ColorVariant.MUTED,
                                 ),
                             SwipeDirection.BOTTOM_RIGHT to
                                 KeyC(
                                     display = KeyDisplay.TextDisplay("@"),
                                     action = KeyAction.CommitText("@"),
+                                    color = ColorVariant.MUTED,
                                 ),
                         ),
                 ),
@@ -566,6 +588,7 @@ val KB_IT_THUMBKEY_SHIFTED =
                                 KeyC(
                                     display = KeyDisplay.TextDisplay("Ì"),
                                     action = KeyAction.CommitText("Ì"),
+                                    color = ColorVariant.MUTED,
                                 ),
                             SwipeDirection.TOP_RIGHT to
                                 KeyC(
@@ -607,16 +630,19 @@ val KB_IT_THUMBKEY_SHIFTED =
                                 KeyC(
                                     display = KeyDisplay.TextDisplay("È"),
                                     action = KeyAction.CommitText("È"),
+                                    color = ColorVariant.MUTED,
                                 ),
                             SwipeDirection.TOP_RIGHT to
                                 KeyC(
                                     display = KeyDisplay.TextDisplay("É"),
                                     action = KeyAction.CommitText("É"),
+                                    color = ColorVariant.MUTED,
                                 ),
                             SwipeDirection.TOP_LEFT to
                                 KeyC(
                                     display = KeyDisplay.TextDisplay("Ǝ"),
                                     action = KeyAction.CommitText("Ǝ"),
+                                    color = ColorVariant.MUTED,
                                 ),
                             SwipeDirection.TOP to
                                 KeyC(
@@ -637,11 +663,13 @@ val KB_IT_THUMBKEY_SHIFTED =
                                 KeyC(
                                     display = KeyDisplay.TextDisplay("Gh"),
                                     action = KeyAction.CommitText("Gh"),
+                                    color = ColorVariant.MUTED,
                                 ),
                             SwipeDirection.BOTTOM_RIGHT to
                                 KeyC(
                                     display = KeyDisplay.TextDisplay("3"),
                                     action = KeyAction.CommitText("3"),
+                                    color = ColorVariant.MUTED,
                                 ),
                         ),
                 ),
