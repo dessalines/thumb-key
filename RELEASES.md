@@ -1,3 +1,18 @@
+# Thumb-Key 2.6.5 (2024-01-02)
+
+## What's Changed
+
+- Add layout English/Te Reo Māori. by @sslater11 in https://github.com/dessalines/thumb-key/pull/593
+- Add Russian localization by @artemnefedov in https://github.com/dessalines/thumb-key/pull/595
+- Update mathematical keyboard layout by @Kuna42 in https://github.com/dessalines/thumb-key/pull/594
+- Adding ES_CA_MESSAGEEASE keyboard. by @dessalines in https://github.com/dessalines/thumb-key/pull/598
+
+## New Contributors
+
+- @artemnefedov made their first contribution in https://github.com/dessalines/thumb-key/pull/595
+
+**Full Changelog**: https://github.com/dessalines/thumb-key/compare/2.6.4...2.6.5
+
 # Thumb-Key 2.6.4 (2023-12-18)
 
 ## What's Changed
