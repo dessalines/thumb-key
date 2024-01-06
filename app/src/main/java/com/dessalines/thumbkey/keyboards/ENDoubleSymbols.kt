@@ -853,7 +853,7 @@ val KB_EN_DOUBLE_SYMBOLS_MAIN =
             listOf(
                 EMOJI_KEY_ITEM,
                 BACKSPACE_KEY_ITEM,
-                SPACEBAR_KEY_ITEM,
+                SPACEBAR_DOUBLE_KEY_ITEM,
                 NUMERIC_KEY_ITEM,
                 RETURN_KEY_ITEM,
             ),

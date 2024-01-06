@@ -111,7 +111,6 @@ val DOUBLE_NUMERIC_KEYBOARD =
                                 ),
                         ),
                 ),
-                EMOJI_KEY_ITEM,
                 KeyItemC(
                     center =
                         KeyC(
@@ -296,16 +295,6 @@ val DOUBLE_NUMERIC_KEYBOARD =
                 KeyItemC(
                     center =
                         KeyC(
-                            display = KeyDisplay.IconDisplay(Icons.Outlined.Abc),
-                            action = KeyAction.ToggleNumericMode(false),
-                            size = FontSizeVariant.LARGE,
-                            color = ColorVariant.PRIMARY,
-                        ),
-                    backgroundColor = ColorVariant.SURFACE_VARIANT,
-                ),
-                KeyItemC(
-                    center =
-                        KeyC(
                             display = KeyDisplay.TextDisplay("4"),
                             action = KeyAction.CommitText("4"),
                             size = FontSizeVariant.LARGE,
@@ -494,7 +483,6 @@ val DOUBLE_NUMERIC_KEYBOARD =
                                 ),
                         ),
                 ),
-                BACKSPACE_KEY_ITEM,
                 KeyItemC(
                     center =
                         KeyC(
@@ -606,13 +594,24 @@ val DOUBLE_NUMERIC_KEYBOARD =
                 KeyItemC(
                     center =
                         KeyC(
+                            display = KeyDisplay.IconDisplay(Icons.Outlined.Abc),
+                            action = KeyAction.ToggleNumericMode(false),
+                            size = FontSizeVariant.LARGE,
+                            color = ColorVariant.PRIMARY,
+                        ),
+                    backgroundColor = ColorVariant.SURFACE_VARIANT,
+                ),
+                KeyItemC(
+                    center =
+                        KeyC(
                             display = KeyDisplay.TextDisplay("0"),
                             action = KeyAction.CommitText("0"),
                             size = FontSizeVariant.LARGE,
                             color = ColorVariant.PRIMARY,
                         ),
-                    widthMultiplier = 2,
                 ),
+                // EMOJI_KEY_ITEM,
+                BACKSPACE_KEY_ITEM,
                 KeyItemC(
                     center =
                         KeyC(
@@ -628,34 +627,17 @@ val DOUBLE_NUMERIC_KEYBOARD =
                             KeyAction.ReplaceLastText(": "),
                         ),
                     backgroundColor = ColorVariant.SURFACE_VARIANT,
+                ),
+                KeyItemC(
+                    center =
+                        KeyC(
+                            display = KeyDisplay.TextDisplay("0"),
+                            action = KeyAction.CommitText("0"),
+                            size = FontSizeVariant.LARGE,
+                            color = ColorVariant.PRIMARY,
+                        ),
                 ),
                 RETURN_KEY_ITEM,
-                KeyItemC(
-                    center =
-                        KeyC(
-                            display = KeyDisplay.TextDisplay("0"),
-                            action = KeyAction.CommitText("0"),
-                            size = FontSizeVariant.LARGE,
-                            color = ColorVariant.PRIMARY,
-                        ),
-                    widthMultiplier = 2,
-                ),
-                KeyItemC(
-                    center =
-                        KeyC(
-                            display = KeyDisplay.TextDisplay(" "),
-                            action = KeyAction.CommitText(" "),
-                        ),
-                    nextTapActions =
-                        listOf(
-                            KeyAction.ReplaceLastText(". ", trimCount = 1),
-                            KeyAction.ReplaceLastText(", "),
-                            KeyAction.ReplaceLastText("? "),
-                            KeyAction.ReplaceLastText("! "),
-                            KeyAction.ReplaceLastText(": "),
-                        ),
-                    backgroundColor = ColorVariant.SURFACE_VARIANT,
-                ),
             ),
         ),
     )
