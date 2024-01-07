@@ -624,6 +624,7 @@ fun KeyboardKey(
                     fontSizeVariantToFontSize(
                         fontSizeVariant = FontSizeVariant.LARGE,
                         keySize = legendSize.dp,
+                        isUpperCase = false,
                     )
                 releasedKey.value?.let { text ->
                     Text(
@@ -647,7 +648,14 @@ fun KeyText(
     capsLock: Boolean,
 ) {
     val color = colorVariantToColor(colorVariant = key.color)
-    val fontSize = fontSizeVariantToFontSize(fontSizeVariant = key.size, keySize = keySize)
+    val isUpperCase =
+        when (key.display) {
+            is KeyDisplay.TextDisplay -> key.display.text.first().isUpperCase()
+            else -> {
+                false
+            }
+        }
+    val fontSize = fontSizeVariantToFontSize(fontSizeVariant = key.size, keySize = keySize, isUpperCase = isUpperCase)
 
     val display =
         if (capsLock) {
