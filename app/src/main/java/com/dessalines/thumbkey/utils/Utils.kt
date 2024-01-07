@@ -912,8 +912,7 @@ fun Context.getVersionCode(): Int =
 fun startSelection(ime: IMEService): Selection {
     val cursorPosition =
         ime.currentInputConnection.getTextBeforeCursor(
-            // Higher value mens slower execution
-            1000,
+            Integer.MAX_VALUE,
             0,
         )?.length
     cursorPosition?.let {
