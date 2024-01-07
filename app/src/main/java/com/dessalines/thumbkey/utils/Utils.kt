@@ -215,6 +215,7 @@ fun colorVariantToColor(colorVariant: ColorVariant): Color {
 fun fontSizeVariantToFontSize(
     fontSizeVariant: FontSizeVariant,
     keySize: Dp,
+    isUpperCase: Boolean,
 ): TextUnit {
     val divFactor =
         when (fontSizeVariant) {
@@ -222,7 +223,16 @@ fun fontSizeVariantToFontSize(
             FontSizeVariant.SMALL -> 5f
             FontSizeVariant.SMALLEST -> 8f
         }
-    return TextUnit(keySize.value / divFactor, TextUnitType.Sp)
+
+    // Make uppercase letters slightly smaller
+    val upperCaseFactor =
+        if (isUpperCase) {
+            0.8f
+        } else {
+            1f
+        }
+
+    return TextUnit(keySize.value * upperCaseFactor / divFactor, TextUnitType.Sp)
 }
 
 fun keyboardPositionToAlignment(position: KeyboardPosition): Alignment {
