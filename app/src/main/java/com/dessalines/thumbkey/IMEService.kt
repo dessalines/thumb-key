@@ -77,9 +77,8 @@ class IMEService :
         // If the cursor has moved at all vertically, or more than a small amount horizontally, the cursor has changed and multitap should be blocked.
         // The horizontal buffer is because the cursor moves slightly based on the size of some of the characters (i.e '?') moving the cursor a little bit.
         // It would be better to not use a magic number of 15, but I don't know what the ideal buffer is and it seems to work well, even when moving the cursor right before the multitap character
-        if(insertionMarkerBaseline != cursorAnchorInfo.getInsertionMarkerBaseline() ||
-            abs(cursorAnchorInfo.getInsertionMarkerHorizontal() - insertionMarkerHorizontal) > 15f
-            ) {
+        if (insertionMarkerBaseline != cursorAnchorInfo.getInsertionMarkerBaseline() ||
+            abs(cursorAnchorInfo.getInsertionMarkerHorizontal() - insertionMarkerHorizontal) > 15f) {
             cursorMoved = true
             insertionMarkerBaseline = cursorAnchorInfo.getInsertionMarkerBaseline()
         } else {
@@ -87,12 +86,12 @@ class IMEService :
         }
         // Always update the horizontal position. This prevents the movement of the cursor by the first space tap blocking consecutive tap actions.
         insertionMarkerHorizontal = cursorAnchorInfo.getInsertionMarkerHorizontal()
-
     }
 
     fun didCursorMove(): Boolean {
         return cursorMoved
     }
+
     private var cursorMoved: Boolean = false
     private var insertionMarkerBaseline: Float = 0f
     private var insertionMarkerHorizontal: Float = 0f
