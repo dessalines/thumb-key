@@ -1,6 +1,7 @@
 package com.dessalines.thumbkey
 
 import android.inputmethodservice.InputMethodService
+import android.util.Log
 import android.view.View
 import android.view.inputmethod.CursorAnchorInfo
 import android.view.inputmethod.EditorInfo
@@ -15,6 +16,7 @@ import androidx.savedstate.SavedStateRegistry
 import androidx.savedstate.SavedStateRegistryController
 import androidx.savedstate.SavedStateRegistryOwner
 import androidx.savedstate.setViewTreeSavedStateRegistryOwner
+import com.dessalines.thumbkey.utils.TAG
 import kotlin.math.abs
 
 class IMEService :
@@ -82,6 +84,7 @@ class IMEService :
         ) {
             cursorMoved = true
             insertionMarkerBaseline = cursorAnchorInfo.getInsertionMarkerBaseline()
+            Log.d(TAG, "cursor moved")
         } else {
             cursorMoved = false
         }

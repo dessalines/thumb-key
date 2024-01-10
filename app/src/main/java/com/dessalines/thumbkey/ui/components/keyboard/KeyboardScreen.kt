@@ -2,6 +2,7 @@ package com.dessalines.thumbkey.ui.components.keyboard
 
 import android.content.Context
 import android.media.AudioManager
+import android.util.Log
 import android.view.inputmethod.InputConnection.CURSOR_UPDATE_FILTER_INSERTION_MARKER
 import android.view.inputmethod.InputConnection.CURSOR_UPDATE_MONITOR
 import androidx.compose.foundation.background
@@ -62,6 +63,7 @@ import com.dessalines.thumbkey.utils.KeyAction
 import com.dessalines.thumbkey.utils.KeyboardLayout
 import com.dessalines.thumbkey.utils.KeyboardMode
 import com.dessalines.thumbkey.utils.KeyboardPosition
+import com.dessalines.thumbkey.utils.TAG
 import com.dessalines.thumbkey.utils.getKeyboardMode
 import com.dessalines.thumbkey.utils.keyboardPositionToAlignment
 import com.dessalines.thumbkey.utils.toBool
@@ -141,7 +143,7 @@ fun KeyboardScreen(
         val controllerKeys = listOf(EMOJI_BACK_KEY_ITEM, NUMERIC_KEY_ITEM, BACKSPACE_KEY_ITEM, RETURN_KEY_ITEM)
         val keyboardHeight = Dp((keySize * controllerKeys.size) - (keyPadding * 2))
 
-        ctx.currentInputConnection.requestCursorUpdates(0, 0)
+        ctx.currentInputConnection.requestCursorUpdates(0)
 
         Box(
             modifier =
@@ -300,7 +302,11 @@ fun KeyboardScreen(
             }
         }
     } else {
-        ctx.currentInputConnection.requestCursorUpdates(CURSOR_UPDATE_MONITOR, CURSOR_UPDATE_FILTER_INSERTION_MARKER)
+        if (ctx.currentInputConnection.requestCursorUpdates(CURSOR_UPDATE_MONITOR or CURSOR_UPDATE_FILTER_INSERTION_MARKER)) {
+            Log.d(TAG, "request for cursor updates succeeded, cursor updates will be provided")
+        } else {
+            Log.d(TAG, "request for cursor updates failed, cursor updates will not be provided")
+        }
 
         Box(
             contentAlignment = alignment,
