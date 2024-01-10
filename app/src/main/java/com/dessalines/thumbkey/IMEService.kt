@@ -78,7 +78,8 @@ class IMEService :
         // The horizontal buffer is because the cursor moves slightly based on the size of some of the characters (i.e '?') moving the cursor a little bit.
         // It would be better to not use a magic number of 15, but I don't know what the ideal buffer is and it seems to work well, even when moving the cursor right before the multitap character
         if (insertionMarkerBaseline != cursorAnchorInfo.getInsertionMarkerBaseline() ||
-            abs(cursorAnchorInfo.getInsertionMarkerHorizontal() - insertionMarkerHorizontal) > 15f) {
+            abs(cursorAnchorInfo.getInsertionMarkerHorizontal() - insertionMarkerHorizontal) > 15f
+        ) {
             cursorMoved = true
             insertionMarkerBaseline = cursorAnchorInfo.getInsertionMarkerBaseline()
         } else {
