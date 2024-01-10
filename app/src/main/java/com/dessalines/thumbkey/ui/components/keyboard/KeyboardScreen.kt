@@ -2,6 +2,8 @@ package com.dessalines.thumbkey.ui.components.keyboard
 
 import android.content.Context
 import android.media.AudioManager
+import android.view.inputmethod.InputConnection.CURSOR_UPDATE_FILTER_INSERTION_MARKER
+import android.view.inputmethod.InputConnection.CURSOR_UPDATE_MONITOR
 import androidx.compose.foundation.background
 import androidx.compose.foundation.border
 import androidx.compose.foundation.layout.Box
@@ -138,6 +140,8 @@ fun KeyboardScreen(
     if (mode == KeyboardMode.EMOJI) {
         val controllerKeys = listOf(EMOJI_BACK_KEY_ITEM, NUMERIC_KEY_ITEM, BACKSPACE_KEY_ITEM, RETURN_KEY_ITEM)
         val keyboardHeight = Dp((keySize * controllerKeys.size) - (keyPadding * 2))
+
+        ctx.currentInputConnection.requestCursorUpdates(0, 0)
 
         Box(
             modifier =
@@ -296,6 +300,8 @@ fun KeyboardScreen(
             }
         }
     } else {
+        ctx.currentInputConnection.requestCursorUpdates(CURSOR_UPDATE_MONITOR, CURSOR_UPDATE_FILTER_INSERTION_MARKER)
+
         Box(
             contentAlignment = alignment,
             modifier =
