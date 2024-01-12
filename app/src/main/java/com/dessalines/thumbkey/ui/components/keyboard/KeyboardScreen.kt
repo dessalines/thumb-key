@@ -3,7 +3,6 @@ package com.dessalines.thumbkey.ui.components.keyboard
 import android.content.Context
 import android.media.AudioManager
 import android.util.Log
-import android.view.inputmethod.InputConnection.CURSOR_UPDATE_FILTER_INSERTION_MARKER
 import android.view.inputmethod.InputConnection.CURSOR_UPDATE_MONITOR
 import androidx.compose.foundation.background
 import androidx.compose.foundation.border
@@ -302,7 +301,7 @@ fun KeyboardScreen(
             }
         }
     } else {
-        if (ctx.currentInputConnection.requestCursorUpdates(CURSOR_UPDATE_MONITOR or CURSOR_UPDATE_FILTER_INSERTION_MARKER)) {
+        if (ctx.currentInputConnection.requestCursorUpdates(CURSOR_UPDATE_MONITOR)) {
             Log.d(TAG, "request for cursor updates succeeded, cursor updates will be provided")
         } else {
             Log.d(TAG, "request for cursor updates failed, cursor updates will not be provided")
