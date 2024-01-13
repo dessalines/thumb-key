@@ -618,6 +618,7 @@ val KB_DE_THUMBKEY_MULTILINGUAL_SHIFTED =
                                     display = KeyDisplay.TextDisplay("Ø"),
                                     action = KeyAction.CommitText("Ø"),
                                     color = ColorVariant.MUTED,
+                                ),
                             SwipeDirection.LEFT to
                                 KeyC(
                                     display = KeyDisplay.TextDisplay("Ò"),
