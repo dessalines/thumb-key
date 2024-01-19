@@ -1,3 +1,14 @@
+# Thumb-Key 2.6.8 (2024-01-19)
+
+## What's Changed
+
+- Request and handle cursor changes by @jm355 in https://github.com/dessalines/thumb-key/pull/613
+- Fixing crash related to uppercase logic. by @dessalines in https://github.com/dessalines/thumb-key/pull/621
+- Fixing automirrored icons. by @dessalines in https://github.com/dessalines/thumb-key/pull/622
+- Upgrading kotlinter. by @dessalines in https://github.com/dessalines/thumb-key/pull/620
+
+**Full Changelog**: https://github.com/dessalines/thumb-key/compare/2.6.7...2.6.8
+
 # Thumb-Key 2.6.7 (2024-01-18)
 
 ## What's Changed
