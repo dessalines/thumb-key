@@ -47,6 +47,12 @@ val KB_DE_THUMBKEY_MULTILINGUAL_MAIN =
                                     action = KeyAction.CommitText("ç"),
                                     color = ColorVariant.MUTED,
                                 ),
+                            SwipeDirection.BOTTOM to
+                                KeyC(
+                                    display = KeyDisplay.TextDisplay("…"),
+                                    action = KeyAction.CommitText("…"),
+                                    color = ColorVariant.MUTED,
+                                ),
                             SwipeDirection.BOTTOM_RIGHT to
                                 KeyC(
                                     display = KeyDisplay.TextDisplay("c"),
@@ -103,6 +109,18 @@ val KB_DE_THUMBKEY_MULTILINGUAL_MAIN =
                                     action = KeyAction.CommitText("à"),
                                     color = ColorVariant.MUTED,
                                 ),
+                            SwipeDirection.LEFT to
+                                KeyC(
+                                    display = KeyDisplay.TextDisplay("å"),
+                                    action = KeyAction.CommitText("å"),
+                                    color = ColorVariant.MUTED,
+                                ),
+                            SwipeDirection.RIGHT to
+                                KeyC(
+                                    display = KeyDisplay.TextDisplay("æ"),
+                                    action = KeyAction.CommitText("æ"),
+                                    color = ColorVariant.MUTED,
+                                ),
                             SwipeDirection.TOP_LEFT to
                                 KeyC(
                                     display = KeyDisplay.TextDisplay("€"),
@@ -145,6 +163,13 @@ val KB_DE_THUMBKEY_MULTILINGUAL_MAIN =
                                 KeyC(
                                     display = KeyDisplay.TextDisplay("ó"),
                                     action = KeyAction.CommitText("ó"),
+                                    color = ColorVariant.MUTED,
+                                ),
+                            SwipeDirection.BOTTOM_RIGHT to
+                                KeyC(
+                                    display = KeyDisplay.TextDisplay("ø"),
+                                    action = KeyAction.CommitText("ø"),
+                                    color = ColorVariant.MUTED,
                                 ),
                             SwipeDirection.LEFT to
                                 KeyC(
@@ -470,6 +495,12 @@ val KB_DE_THUMBKEY_MULTILINGUAL_SHIFTED =
                                     action = KeyAction.CommitText("Ç"),
                                     color = ColorVariant.MUTED,
                                 ),
+                            SwipeDirection.BOTTOM to
+                                KeyC(
+                                    display = KeyDisplay.TextDisplay("…"),
+                                    action = KeyAction.CommitText("…"),
+                                    color = ColorVariant.MUTED,
+                                ),
                             SwipeDirection.BOTTOM_RIGHT to
                                 KeyC(
                                     display = KeyDisplay.TextDisplay("C"),
@@ -526,6 +557,18 @@ val KB_DE_THUMBKEY_MULTILINGUAL_SHIFTED =
                                     action = KeyAction.CommitText("À"),
                                     color = ColorVariant.MUTED,
                                 ),
+                            SwipeDirection.LEFT to
+                                KeyC(
+                                    display = KeyDisplay.TextDisplay("Å"),
+                                    action = KeyAction.CommitText("Å"),
+                                    color = ColorVariant.MUTED,
+                                ),
+                            SwipeDirection.RIGHT to
+                                KeyC(
+                                    display = KeyDisplay.TextDisplay("Æ"),
+                                    action = KeyAction.CommitText("Æ"),
+                                    color = ColorVariant.MUTED,
+                                ),
                             SwipeDirection.TOP_LEFT to
                                 KeyC(
                                     display = KeyDisplay.TextDisplay("€"),
@@ -568,6 +611,12 @@ val KB_DE_THUMBKEY_MULTILINGUAL_SHIFTED =
                                 KeyC(
                                     display = KeyDisplay.TextDisplay("Ó"),
                                     action = KeyAction.CommitText("Ó"),
+                                    color = ColorVariant.MUTED,
+                                ),
+                            SwipeDirection.BOTTOM_RIGHT to
+                                KeyC(
+                                    display = KeyDisplay.TextDisplay("Ø"),
+                                    action = KeyAction.CommitText("Ø"),
                                     color = ColorVariant.MUTED,
                                 ),
                             SwipeDirection.LEFT to

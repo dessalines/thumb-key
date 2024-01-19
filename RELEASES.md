@@ -1,3 +1,18 @@
+# Thumb-Key 2.6.7 (2024-01-18)
+
+## What's Changed
+
+- Lowering icon size to 108dp by @dessalines in https://github.com/dessalines/thumb-key/pull/615
+- Finnish MessageEase layout by @sashaaaaaaaaa in https://github.com/dessalines/thumb-key/pull/619
+- Added Danish and Norwegian letters to DEThumbKeyMultiLingual.kt by @hcgraf in https://github.com/dessalines/thumb-key/pull/617
+
+## New Contributors
+
+- @sashaaaaaaaaa made their first contribution in https://github.com/dessalines/thumb-key/pull/619
+- @hcgraf made their first contribution in https://github.com/dessalines/thumb-key/pull/617
+
+**Full Changelog**: https://github.com/dessalines/thumb-key/compare/2.6.6...2.6.7
+
 # Thumb-Key 2.6.6 (2024-01-07)
 
 ## What's Changed
