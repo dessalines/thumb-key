@@ -2,10 +2,10 @@ package com.dessalines.thumbkey.keyboards
 
 import android.view.KeyEvent
 import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.automirrored.outlined.KeyboardReturn
 import androidx.compose.material.icons.outlined.ContentCopy
 import androidx.compose.material.icons.outlined.ContentCut
 import androidx.compose.material.icons.outlined.ContentPaste
-import androidx.compose.material.icons.outlined.KeyboardReturn
 import androidx.compose.material.icons.outlined.Language
 import androidx.compose.material.icons.outlined.SelectAll
 import androidx.compose.material.icons.outlined.Settings
@@ -636,7 +636,7 @@ val KB_T9_MAIN =
                 KeyItemC(
                     center =
                         KeyC(
-                            display = KeyDisplay.IconDisplay(Icons.Outlined.KeyboardReturn),
+                            display = KeyDisplay.IconDisplay(Icons.AutoMirrored.Outlined.KeyboardReturn),
                             action = KeyAction.IMECompleteAction,
                             size = FontSizeVariant.LARGE,
                             color = ColorVariant.SECONDARY,
@@ -1294,7 +1294,7 @@ val KB_T9_SHIFTED =
                 KeyItemC(
                     center =
                         KeyC(
-                            display = KeyDisplay.IconDisplay(Icons.Outlined.KeyboardReturn),
+                            display = KeyDisplay.IconDisplay(Icons.AutoMirrored.Outlined.KeyboardReturn),
                             action = KeyAction.IMECompleteAction,
                             size = FontSizeVariant.LARGE,
                             color = ColorVariant.SECONDARY,

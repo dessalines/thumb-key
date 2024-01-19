@@ -1,11 +1,11 @@
 package com.dessalines.thumbkey.keyboards
 
 import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.automirrored.outlined.KeyboardTab
 import androidx.compose.material.icons.outlined.ArrowDropDown
 import androidx.compose.material.icons.outlined.ArrowDropUp
 import androidx.compose.material.icons.outlined.Copyright
 import androidx.compose.material.icons.outlined.KeyboardCapslock
-import androidx.compose.material.icons.outlined.KeyboardTab
 import com.dessalines.thumbkey.utils.ColorVariant
 import com.dessalines.thumbkey.utils.FontSizeVariant
 import com.dessalines.thumbkey.utils.KeyAction
@@ -270,7 +270,7 @@ val KB_EN_THUMBKEY_PROGRAMMER_MAIN =
                                 ),
                             SwipeDirection.RIGHT to
                                 KeyC(
-                                    display = KeyDisplay.IconDisplay(Icons.Outlined.KeyboardTab),
+                                    display = KeyDisplay.IconDisplay(Icons.AutoMirrored.Outlined.KeyboardTab),
                                     action = KeyAction.CommitText("\t"),
                                     color = ColorVariant.MUTED,
                                 ),
@@ -671,7 +671,7 @@ val KB_EN_THUMBKEY_PROGRAMMER_SHIFTED =
                                 ),
                             SwipeDirection.RIGHT to
                                 KeyC(
-                                    display = KeyDisplay.IconDisplay(Icons.Outlined.KeyboardTab),
+                                    display = KeyDisplay.IconDisplay(Icons.AutoMirrored.Outlined.KeyboardTab),
                                     action = KeyAction.CommitText("\t"),
                                     color = ColorVariant.MUTED,
                                 ),

@@ -2,6 +2,10 @@ package com.dessalines.thumbkey.keyboards
 
 import android.view.KeyEvent
 import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.automirrored.outlined.KeyboardBackspace
+import androidx.compose.material.icons.automirrored.outlined.KeyboardReturn
+import androidx.compose.material.icons.automirrored.outlined.Redo
+import androidx.compose.material.icons.automirrored.outlined.Undo
 import androidx.compose.material.icons.outlined.Abc
 import androidx.compose.material.icons.outlined.ArrowDropDown
 import androidx.compose.material.icons.outlined.ArrowDropUp
@@ -10,18 +14,14 @@ import androidx.compose.material.icons.outlined.ContentCut
 import androidx.compose.material.icons.outlined.ContentPaste
 import androidx.compose.material.icons.outlined.Copyright
 import androidx.compose.material.icons.outlined.Keyboard
-import androidx.compose.material.icons.outlined.KeyboardBackspace
 import androidx.compose.material.icons.outlined.KeyboardCapslock
-import androidx.compose.material.icons.outlined.KeyboardReturn
 import androidx.compose.material.icons.outlined.Language
 import androidx.compose.material.icons.outlined.LinearScale
 import androidx.compose.material.icons.outlined.Mic
 import androidx.compose.material.icons.outlined.Mood
 import androidx.compose.material.icons.outlined.Numbers
-import androidx.compose.material.icons.outlined.Redo
 import androidx.compose.material.icons.outlined.SelectAll
 import androidx.compose.material.icons.outlined.Settings
-import androidx.compose.material.icons.outlined.Undo
 import com.dessalines.thumbkey.utils.ColorVariant
 import com.dessalines.thumbkey.utils.FontSizeVariant
 import com.dessalines.thumbkey.utils.KeyAction
@@ -64,13 +64,13 @@ val NUMERIC_KEY_ITEM =
                     ),
                 SwipeDirection.LEFT to
                     KeyC(
-                        display = KeyDisplay.IconDisplay(Icons.Outlined.Undo),
+                        display = KeyDisplay.IconDisplay(Icons.AutoMirrored.Outlined.Undo),
                         action = KeyAction.Undo,
                         color = ColorVariant.MUTED,
                     ),
                 SwipeDirection.RIGHT to
                     KeyC(
-                        display = KeyDisplay.IconDisplay(Icons.Outlined.Redo),
+                        display = KeyDisplay.IconDisplay(Icons.AutoMirrored.Outlined.Redo),
                         action = KeyAction.Redo,
                         color = ColorVariant.MUTED,
                     ),
@@ -146,7 +146,7 @@ val BACKSPACE_KEY_ITEM =
     KeyItemC(
         center =
             KeyC(
-                display = KeyDisplay.IconDisplay(Icons.Outlined.KeyboardBackspace),
+                display = KeyDisplay.IconDisplay(Icons.AutoMirrored.Outlined.KeyboardBackspace),
                 action =
                     KeyAction.SendEvent(
                         KeyEvent(
@@ -311,7 +311,7 @@ val RETURN_KEY_ITEM =
     KeyItemC(
         center =
             KeyC(
-                display = KeyDisplay.IconDisplay(Icons.Outlined.KeyboardReturn),
+                display = KeyDisplay.IconDisplay(Icons.AutoMirrored.Outlined.KeyboardReturn),
                 action = KeyAction.IMECompleteAction,
                 size = FontSizeVariant.LARGE,
                 color = ColorVariant.SECONDARY,
@@ -513,7 +513,7 @@ val BACKSPACE_TYPESPLIT_KEY_ITEM =
     KeyItemC(
         center =
             KeyC(
-                display = KeyDisplay.IconDisplay(Icons.Outlined.KeyboardBackspace),
+                display = KeyDisplay.IconDisplay(Icons.AutoMirrored.Outlined.KeyboardBackspace),
                 action =
                     KeyAction.SendEvent(
                         KeyEvent(

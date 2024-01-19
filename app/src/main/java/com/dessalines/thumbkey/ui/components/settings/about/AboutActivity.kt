@@ -6,9 +6,9 @@ import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.automirrored.outlined.Chat
 import androidx.compose.material.icons.outlined.AttachMoney
 import androidx.compose.material.icons.outlined.BugReport
-import androidx.compose.material.icons.outlined.Chat
 import androidx.compose.material.icons.outlined.Code
 import androidx.compose.material.icons.outlined.NewReleases
 import androidx.compose.material.icons.outlined.TravelExplore
@@ -97,7 +97,7 @@ fun AboutActivity(navController: NavController) {
                     title = { Text(stringResource(R.string.developer_matrix_chatroom)) },
                     icon = {
                         Icon(
-                            imageVector = Icons.Outlined.Chat,
+                            imageVector = Icons.AutoMirrored.Outlined.Chat,
                             contentDescription = stringResource(R.string.developer_matrix_chatroom),
                         )
                     },
