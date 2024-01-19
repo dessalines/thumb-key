@@ -8,8 +8,8 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.automirrored.outlined.Backspace
 import androidx.compose.material.icons.outlined.Abc
-import androidx.compose.material.icons.outlined.Backspace
 import androidx.compose.material.icons.outlined.SpaceBar
 import androidx.compose.material.icons.outlined.SwapHoriz
 import androidx.compose.material.icons.outlined.Swipe
@@ -317,7 +317,7 @@ fun BehaviorActivity(
                     enabled = slideEnabledState.value,
                     icon = {
                         Icon(
-                            imageVector = Icons.Outlined.Backspace,
+                            imageVector = Icons.AutoMirrored.Outlined.Backspace,
                             contentDescription = stringResource(R.string.slide_backspace_deadzone_enable),
                         )
                     },

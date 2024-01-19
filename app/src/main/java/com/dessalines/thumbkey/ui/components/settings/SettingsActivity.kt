@@ -8,7 +8,7 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.outlined.HelpCenter
+import androidx.compose.material.icons.automirrored.outlined.HelpCenter
 import androidx.compose.material.icons.outlined.Info
 import androidx.compose.material.icons.outlined.InstallMobile
 import androidx.compose.material.icons.outlined.KeyboardAlt
@@ -212,7 +212,7 @@ fun SettingsActivity(
                     title = { Text(userGuideStr) },
                     icon = {
                         Icon(
-                            imageVector = Icons.Outlined.HelpCenter,
+                            imageVector = Icons.AutoMirrored.Outlined.HelpCenter,
                             contentDescription = userGuideStr,
                         )
                     },
