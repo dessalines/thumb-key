@@ -1,7 +1,9 @@
 package com.dessalines.thumbkey
 
 import android.inputmethodservice.InputMethodService
+import android.util.Log
 import android.view.View
+import android.view.inputmethod.CursorAnchorInfo
 import android.view.inputmethod.EditorInfo
 import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.LifecycleOwner
@@ -14,6 +16,8 @@ import androidx.savedstate.SavedStateRegistry
 import androidx.savedstate.SavedStateRegistryController
 import androidx.savedstate.SavedStateRegistryOwner
 import androidx.savedstate.setViewTreeSavedStateRegistryOwner
+import com.dessalines.thumbkey.utils.TAG
+import kotlin.math.abs
 
 class IMEService :
     InputMethodService(),
@@ -67,6 +71,34 @@ class IMEService :
         super.onDestroy()
         handleLifecycleEvent(Lifecycle.Event.ON_DESTROY)
     }
+
+    // Cursor update Methods
+    override fun onUpdateCursorAnchorInfo(cursorAnchorInfo: CursorAnchorInfo) {
+        super.onUpdateCursorAnchorInfo(cursorAnchorInfo)
+
+        // If the cursor has moved at all vertically, or more than a small amount horizontally, the cursor has changed and multitap should be blocked.
+        // The horizontal buffer is because the cursor moves slightly based on the size of some of the characters (i.e '?') moving the cursor a little bit.
+        // It would be better to not use a magic number of 15, but I don't know what the ideal buffer is and it seems to work well, even when moving the cursor right before the multitap character
+        if (insertionMarkerBaseline != cursorAnchorInfo.insertionMarkerBaseline ||
+            abs(cursorAnchorInfo.insertionMarkerHorizontal - insertionMarkerHorizontal) > 15f
+        ) {
+            cursorMoved = true
+            insertionMarkerBaseline = cursorAnchorInfo.insertionMarkerBaseline
+            Log.d(TAG, "cursor moved")
+        } else {
+            cursorMoved = false
+        }
+        // Always update the horizontal position. This prevents the movement of the cursor by the first space tap blocking consecutive tap actions.
+        insertionMarkerHorizontal = cursorAnchorInfo.insertionMarkerHorizontal
+    }
+
+    fun didCursorMove(): Boolean {
+        return cursorMoved
+    }
+
+    private var cursorMoved: Boolean = false
+    private var insertionMarkerBaseline: Float = 0f
+    private var insertionMarkerHorizontal: Float = 0f
 
     // ViewModelStore Methods
     override val viewModelStore = ViewModelStore()

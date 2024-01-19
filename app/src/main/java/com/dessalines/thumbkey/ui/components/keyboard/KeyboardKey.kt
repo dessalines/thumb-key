@@ -180,7 +180,7 @@ fun KeyboardKey(
                 // Set the last key info, and the tap count
                 val cAction = key.center.action
                 lastAction.value?.let { lastAction ->
-                    if (lastAction == cAction) {
+                    if (lastAction == cAction && !ime.didCursorMove()) {
                         tapCount += 1
                     } else {
                         tapCount = 0
@@ -226,7 +226,7 @@ fun KeyboardKey(
                         // Spacebar:
                         //      Swipe up/down/left/right
                         //      Slide gesture
-                        //          Wtih slide gesture deadzone to allow normal swipes
+                        //          With slide gesture deadzone to allow normal swipes
                         //          Without deadzone
                         //      Slide up to enter selection mode.
                         // Backspace key:
