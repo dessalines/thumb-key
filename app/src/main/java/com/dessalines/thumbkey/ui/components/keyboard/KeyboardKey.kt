@@ -650,7 +650,7 @@ fun KeyText(
     val color = colorVariantToColor(colorVariant = key.color)
     val isUpperCase =
         when (key.display) {
-            is KeyDisplay.TextDisplay -> key.display.text.first().isUpperCase()
+            is KeyDisplay.TextDisplay -> key.display.text.firstOrNull()?.isUpperCase() ?: false
             else -> {
                 false
             }
