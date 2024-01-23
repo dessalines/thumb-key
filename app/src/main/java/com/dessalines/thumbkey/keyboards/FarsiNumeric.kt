@@ -30,6 +30,11 @@ val FARSI_NUMERIC_KEYBOARD =
                                     display = KeyDisplay.TextDisplay("ـّ"),
                                     action = KeyAction.CommitText("ّ"),
                                 ),
+                            SwipeDirection.BOTTOM to
+                                    KeyC(
+                                        display = KeyDisplay.TextDisplay("٫"),
+                                        action = KeyAction.CommitText("٫"),
+                                    ),
                             SwipeDirection.BOTTOM_LEFT to
                                 KeyC(
                                     display = KeyDisplay.TextDisplay("﷼"),
