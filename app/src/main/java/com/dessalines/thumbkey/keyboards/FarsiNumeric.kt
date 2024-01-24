@@ -25,6 +25,16 @@ val FARSI_NUMERIC_KEYBOARD =
                         ),
                     swipes =
                         mapOf(
+                            SwipeDirection.RIGHT to
+                                KeyC(
+                                    display = KeyDisplay.TextDisplay("ـّ"),
+                                    action = KeyAction.CommitText("ّ"),
+                                ),
+                            SwipeDirection.BOTTOM to
+                                KeyC(
+                                    display = KeyDisplay.TextDisplay("٫"),
+                                    action = KeyAction.CommitText("٫"),
+                                ),
                             SwipeDirection.BOTTOM_LEFT to
                                 KeyC(
                                     display = KeyDisplay.TextDisplay("﷼"),
@@ -154,6 +164,24 @@ val FARSI_NUMERIC_KEYBOARD =
                             size = FontSizeVariant.LARGE,
                             color = ColorVariant.PRIMARY,
                         ),
+                    swipes =
+                        mapOf(
+                            SwipeDirection.TOP_LEFT to
+                                KeyC(
+                                    display = KeyDisplay.TextDisplay("ـُ"),
+                                    action = KeyAction.CommitText("ُ"),
+                                ),
+                            SwipeDirection.TOP_RIGHT to
+                                KeyC(
+                                    display = KeyDisplay.TextDisplay("ـَ"),
+                                    action = KeyAction.CommitText("َ"),
+                                ),
+                            SwipeDirection.BOTTOM to
+                                KeyC(
+                                    display = KeyDisplay.TextDisplay("ـِ"),
+                                    action = KeyAction.CommitText("ِ"),
+                                ),
+                        ),
                 ),
                 KeyItemC(
                     center =
@@ -218,6 +246,11 @@ val FARSI_NUMERIC_KEYBOARD =
                                 KeyC(
                                     display = KeyDisplay.TextDisplay("~"),
                                     action = KeyAction.CommitText("~"),
+                                ),
+                            SwipeDirection.TOP_RIGHT to
+                                KeyC(
+                                    display = KeyDisplay.TextDisplay("ـً"),
+                                    action = KeyAction.CommitText("ً"),
                                 ),
                             SwipeDirection.BOTTOM_RIGHT to
                                 KeyC(
