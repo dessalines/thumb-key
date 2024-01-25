@@ -3,7 +3,6 @@ package com.dessalines.thumbkey.ui.components.keyboard
 import android.content.Context
 import android.media.AudioManager
 import android.util.Log
-import android.view.inputmethod.InputConnection.CURSOR_UPDATE_FILTER_INSERTION_MARKER
 import android.view.inputmethod.InputConnection.CURSOR_UPDATE_MONITOR
 import androidx.compose.foundation.background
 import androidx.compose.foundation.border
@@ -302,7 +301,11 @@ fun KeyboardScreen(
             }
         }
     } else {
-        if (ctx.currentInputConnection.requestCursorUpdates(CURSOR_UPDATE_MONITOR or CURSOR_UPDATE_FILTER_INSERTION_MARKER)) {
+        // NOTE, this should use or CURSOR_UPDATE_FILTER_INSERTION_MARKER , but it doesn't work on
+        // non-compose textfields.
+        // This also requires jetpack compose >= 1.6
+        // See https://github.com/dessalines/thumb-key/issues/242
+        if (ctx.currentInputConnection.requestCursorUpdates(CURSOR_UPDATE_MONITOR)) {
             Log.d(TAG, "request for cursor updates succeeded, cursor updates will be provided")
         } else {
             Log.d(TAG, "request for cursor updates failed, cursor updates will not be provided")
