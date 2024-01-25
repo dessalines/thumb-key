@@ -1,3 +1,18 @@
+# Thumb-Key 2.6.9 (2024-01-25)
+
+## What's Changed
+
+- Add Ukrainian translation by @Sestowner in https://github.com/dessalines/thumb-key/pull/623
+- Add some missing arabic vowel phonemes. by @pxeemo in https://github.com/dessalines/thumb-key/pull/624
+- Fixing some cursor update issues for multitap. #242 by @dessalines in https://github.com/dessalines/thumb-key/pull/627
+- Upgrading deps. by @dessalines in https://github.com/dessalines/thumb-key/pull/628
+
+## New Contributors
+
+- @Sestowner made their first contribution in https://github.com/dessalines/thumb-key/pull/623
+
+**Full Changelog**: https://github.com/dessalines/thumb-key/compare/2.6.8...2.6.9
+
 # Thumb-Key 2.6.8 (2024-01-19)
 
 ## What's Changed
