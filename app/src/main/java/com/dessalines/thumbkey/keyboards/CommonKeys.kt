@@ -319,6 +319,17 @@ val RETURN_KEY_ITEM =
         backgroundColor = ColorVariant.SURFACE_VARIANT,
     )
 
+val RETURN_SHIFTED_KEY_ITEM =
+    RETURN_KEY_ITEM.copy(
+        center =
+        KeyC(
+            display = KeyDisplay.TextDisplay("CR"),
+            action = KeyAction.CommitText("\n"),
+            size = FontSizeVariant.LARGE,
+            color = ColorVariant.SECONDARY,
+        ),
+    )
+
 val SPACEBAR_TYPESPLIT_MIDDLE_KEY_ITEM =
     KeyItemC(
         center =

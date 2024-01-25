@@ -831,7 +831,7 @@ val KB_EN_THUMBKEY_PROGRAMMER_SHIFTED =
             ),
             listOf(
                 SPACEBAR_PROGRAMMER_KEY_ITEM,
-                RETURN_KEY_ITEM,
+                RETURN_SHIFTED_KEY_ITEM,
             ),
         ),
     )
