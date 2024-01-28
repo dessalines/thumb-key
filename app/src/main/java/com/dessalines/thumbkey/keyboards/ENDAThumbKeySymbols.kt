@@ -21,7 +21,7 @@ import com.dessalines.thumbkey.utils.autoCapitalizeI
 import com.dessalines.thumbkey.utils.autoCapitalizeIApostrophe
 
 // Same as 'english symbols thumb-key', with additional Danish letters
-val KB_ENDA_THUMBKEY_SYMBOLS_MAIN =
+val KB_EN_DA_THUMBKEY_SYMBOLS_MAIN =
     KeyboardC(
         listOf(
             listOf(
@@ -466,7 +466,7 @@ val KB_ENDA_THUMBKEY_SYMBOLS_MAIN =
         ),
     )
 
-val KB_ENDA_THUMBKEY_SYMBOLS_SHIFTED =
+val KB_EN_DA_THUMBKEY_SYMBOLS_SHIFTED =
     KeyboardC(
         listOf(
             listOf(
@@ -918,13 +918,13 @@ val KB_ENDA_THUMBKEY_SYMBOLS_SHIFTED =
         ),
     )
 
-val KB_ENDA_THUMBKEY_SYMBOLS: KeyboardDefinition =
+val KB_EN_DA_THUMBKEY_SYMBOLS: KeyboardDefinition =
     KeyboardDefinition(
         title = "english dansk symbols thumb-key",
         modes =
             KeyboardDefinitionModes(
-                main = KB_ENDA_THUMBKEY_SYMBOLS_MAIN,
-                shifted = KB_ENDA_THUMBKEY_SYMBOLS_SHIFTED,
+                main = KB_EN_DA_THUMBKEY_SYMBOLS_MAIN,
+                shifted = KB_EN_DA_THUMBKEY_SYMBOLS_SHIFTED,
                 numeric = NUMERIC_KEYBOARD,
             ),
         settings =
