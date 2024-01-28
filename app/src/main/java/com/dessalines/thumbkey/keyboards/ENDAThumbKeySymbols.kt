@@ -146,6 +146,11 @@ val KB_EN_DA_THUMBKEY_SYMBOLS_MAIN =
                                     action = KeyAction.CommitText("="),
                                     color = ColorVariant.MUTED,
                                 ),
+                            SwipeDirection.TOP to
+                                KeyC(
+                                    display = KeyDisplay.TextDisplay("å"),
+                                    action = KeyAction.CommitText("å"),
+                                ),
                         ),
                 ),
                 EMOJI_KEY_ITEM,
@@ -288,11 +293,6 @@ val KB_EN_DA_THUMBKEY_SYMBOLS_MAIN =
                                     display = KeyDisplay.TextDisplay(")"),
                                     action = KeyAction.CommitText(")"),
                                     color = ColorVariant.MUTED,
-                                ),
-                            SwipeDirection.BOTTOM to
-                                KeyC(
-                                    display = KeyDisplay.TextDisplay("å"),
-                                    action = KeyAction.CommitText("å"),
                                 ),
                             SwipeDirection.BOTTOM_RIGHT to
                                 KeyC(
@@ -591,6 +591,11 @@ val KB_EN_DA_THUMBKEY_SYMBOLS_SHIFTED =
                                     action = KeyAction.CommitText("="),
                                     color = ColorVariant.MUTED,
                                 ),
+                            SwipeDirection.TOP to
+                                KeyC(
+                                    display = KeyDisplay.TextDisplay("Å"),
+                                    action = KeyAction.CommitText("Å"),
+                                ),
                         ),
                 ),
                 EMOJI_KEY_ITEM,
@@ -740,11 +745,6 @@ val KB_EN_DA_THUMBKEY_SYMBOLS_SHIFTED =
                                     display = KeyDisplay.TextDisplay(")"),
                                     action = KeyAction.CommitText(")"),
                                     color = ColorVariant.MUTED,
-                                ),
-                            SwipeDirection.BOTTOM to
-                                KeyC(
-                                    display = KeyDisplay.TextDisplay("Å"),
-                                    action = KeyAction.CommitText("Å"),
                                 ),
                             SwipeDirection.BOTTOM_RIGHT to
                                 KeyC(
