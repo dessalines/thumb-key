@@ -4,6 +4,7 @@ import android.content.Context
 import android.content.Intent
 import android.content.pm.PackageInfo
 import android.content.pm.PackageManager
+import android.content.res.Resources
 import android.net.Uri
 import android.os.Build
 import android.os.Handler
@@ -32,6 +33,7 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.TextUnit
 import androidx.compose.ui.unit.TextUnitType
+import androidx.core.os.ConfigurationCompat
 import androidx.navigation.NavController
 import com.dessalines.thumbkey.IMEService
 import com.dessalines.thumbkey.MainActivity
@@ -40,6 +42,7 @@ import com.dessalines.thumbkey.db.DEFAULT_KEYBOARD_LAYOUT
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
+import java.text.NumberFormat
 import kotlin.math.abs
 import kotlin.math.atan2
 import kotlin.math.max
@@ -929,4 +932,12 @@ fun startSelection(ime: IMEService): Selection {
         return Selection(it, it, true)
     }
     return Selection()
+}
+
+fun getLocalCurrency(): String? {
+    return ConfigurationCompat.getLocales(Resources.getSystem().configuration)[0]?.let {
+        NumberFormat.getCurrencyInstance(
+            it,
+        ).currency?.symbol
+    }
 }
