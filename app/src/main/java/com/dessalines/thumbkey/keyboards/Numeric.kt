@@ -10,6 +10,7 @@ import com.dessalines.thumbkey.utils.KeyDisplay
 import com.dessalines.thumbkey.utils.KeyItemC
 import com.dessalines.thumbkey.utils.KeyboardC
 import com.dessalines.thumbkey.utils.SwipeDirection
+import com.dessalines.thumbkey.utils.getLocalCurrency
 
 val NUMERIC_KEYBOARD =
     KeyboardC(
@@ -24,13 +25,26 @@ val NUMERIC_KEYBOARD =
                             color = ColorVariant.PRIMARY,
                         ),
                     swipes =
-                        mapOf(
-                            SwipeDirection.BOTTOM_LEFT to
+                        buildMap {
+                            put(
+                                SwipeDirection.BOTTOM_LEFT,
                                 KeyC(
                                     display = KeyDisplay.TextDisplay("$"),
                                     action = KeyAction.CommitText("$"),
                                 ),
-                        ),
+                            )
+                            getLocalCurrency()?.let {
+                                if (it !in setOf("$", "£", "€")) {
+                                    put(
+                                        SwipeDirection.BOTTOM_RIGHT,
+                                        KeyC(
+                                            display = KeyDisplay.TextDisplay(it),
+                                            action = KeyAction.CommitText(it),
+                                        ),
+                                    )
+                                }
+                            }
+                        },
                 ),
                 KeyItemC(
                     center =
