@@ -314,7 +314,7 @@ val KB_IT_MESSAGEEASE_SHIFTED =
                                     display = KeyDisplay.TextDisplay("V"),
                                     action = KeyAction.CommitText("V"),
                                 ),
-                            SwipeDirection.BOTTOM_RIGHT to
+                            SwipeDirection.TOP_RIGHT to
                                 KeyC(
                                     display = KeyDisplay.TextDisplay("À"),
                                     action = KeyAction.CommitText("À"),
@@ -493,7 +493,7 @@ val KB_IT_MESSAGEEASE_SHIFTED =
                                     display = KeyDisplay.TextDisplay("Y"),
                                     action = KeyAction.CommitText("Y"),
                                 ),
-                            SwipeDirection.TOP_RIGHT to
+                            SwipeDirection.RIGHT to
                                 KeyC(
                                     display = KeyDisplay.TextDisplay("È"),
                                     action = KeyAction.CommitText("È"),
