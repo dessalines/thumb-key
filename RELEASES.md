@@ -1,3 +1,17 @@
+# Thumb-Key 2.6.10 (2024-01-31)
+
+## What's Changed
+
+- Add 'english dansk symbols thumb-key' by @maximbaz in https://github.com/dessalines/thumb-key/pull/633
+- Fix 'å' shadowing 'unshift' in 'english dansk symbols thumb-key' by @maximbaz in https://github.com/dessalines/thumb-key/pull/634
+- Update ITMessageEase.kt by @flauta in https://github.com/dessalines/thumb-key/pull/637
+
+## New Contributors
+
+- @maximbaz made their first contribution in https://github.com/dessalines/thumb-key/pull/633
+
+**Full Changelog**: https://github.com/dessalines/thumb-key/compare/2.6.9...2.6.10
+
 # Thumb-Key 2.6.9 (2024-01-25)
 
 ## What's Changed
