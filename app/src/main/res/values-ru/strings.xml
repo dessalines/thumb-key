@@ -37,7 +37,7 @@
     <string name="theme">Тема</string>
     <string name="theme_color">Цвет темы</string>
     <string name="position">Положение</string>
-    <string name="vibrate_on_tap">Вибрация при косании</string>
+    <string name="vibrate_on_tap">Вибрация при касании</string>
     <string name="vibrate_warning">Требуется включить вибрацию в настройках системы</string>
     <string name="play_sound_on_tap">Звук при касании</string>
     <string name="auto_capitalize">Автоматические заглавные буквы</string>
