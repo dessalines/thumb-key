@@ -90,6 +90,7 @@ import com.dessalines.thumbkey.keyboards.KB_T9
 import com.dessalines.thumbkey.keyboards.KB_TR_THUMBKEY
 import com.dessalines.thumbkey.keyboards.KB_UK_RU_MESSAGEEASE_SYMBOLS
 import com.dessalines.thumbkey.keyboards.KB_UK_THUMBKEY
+import com.dessalines.thumbkey.keyboards.KB_FI_EE_MESSAGEEASE_SYMBOLS
 
 // Make sure new keyboards have a new index, even if they are in the middle
 // Keyboards are placed in alphabetical order
@@ -184,4 +185,5 @@ enum class KeyboardLayout(val index: Int, val keyboardDefinition: KeyboardDefini
     ENDoubleSymbols(87, KB_EN_DOUBLE_SYMBOLS),
     FIMessageEase(88, KB_FI_MESSAGEEASE),
     ENDAThumbKeySymbols(89, KB_EN_DA_THUMBKEY_SYMBOLS),
+    FIEEMessageEase(90, KB_FI_EE_MESSAGEEASE_SYMBOLS),
 }
