@@ -37,7 +37,7 @@ val DONATION_MARKDOWN =
     ever. 
     
     No one likes recurring donations, but they've proven to be the only 
-    way open source software like Thumb-Key can stay alive. If you find
+    way open-source software like Thumb-Key can stay alive. If you find
     yourself using Thumb-Key every day, please consider donating:
 
     - [Support on Liberapay](https://liberapay.com/dessalines).
