@@ -6,4 +6,4 @@ Au lieu de s'appuyer sur une prédiction des mots et des phrases basée sur le p
 
 Au fur et à mesure, la position des lettres va s'ancrer dans votre mémoire musculaire, et vous pourrez approcher la vitesse rapide de l'écriture au clavier à 10 doigts, sans que vos yeux aient besoin de quitter la zone d'écriture.
 
-Ce projet s'inscrit dans la lignée du clavier <a href="https://www.exideas.com/ME/">MessageEase Keyboard</a>, qui n'est plus maintenu (et n'est pas open source). C'est sa principale source d'inspiration.
+Ce projet s'inscrit dans la lignée du clavier <a href="https://www.exideas.com/ME/">MessageEase Keyboard</a>, qui n'est plus maintenu (et n'est pas open-source). C'est sa principale source d'inspiration.
