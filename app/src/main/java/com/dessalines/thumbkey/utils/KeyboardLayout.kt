@@ -43,6 +43,7 @@ import com.dessalines.thumbkey.keyboards.KB_ES_TYPESPLIT
 import com.dessalines.thumbkey.keyboards.KB_EU_ES_THUMBKEY
 import com.dessalines.thumbkey.keyboards.KB_EU_THUMBKEY
 import com.dessalines.thumbkey.keyboards.KB_FA_THUMBKEY
+import com.dessalines.thumbkey.keyboards.KB_FI_EE_MESSAGEEASE_SYMBOLS
 import com.dessalines.thumbkey.keyboards.KB_FI_MESSAGEEASE
 import com.dessalines.thumbkey.keyboards.KB_FI_THUMBKEY
 import com.dessalines.thumbkey.keyboards.KB_FI_THUMBKEY_WIDE
@@ -90,7 +91,6 @@ import com.dessalines.thumbkey.keyboards.KB_T9
 import com.dessalines.thumbkey.keyboards.KB_TR_THUMBKEY
 import com.dessalines.thumbkey.keyboards.KB_UK_RU_MESSAGEEASE_SYMBOLS
 import com.dessalines.thumbkey.keyboards.KB_UK_THUMBKEY
-import com.dessalines.thumbkey.keyboards.KB_FI_EE_MESSAGEEASE_SYMBOLS
 
 // Make sure new keyboards have a new index, even if they are in the middle
 // Keyboards are placed in alphabetical order
