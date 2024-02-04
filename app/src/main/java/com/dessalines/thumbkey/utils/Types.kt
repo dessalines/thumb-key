@@ -48,7 +48,14 @@ data class KeyItemC(
     val backgroundColor: ColorVariant = ColorVariant.SURFACE,
     val swipeType: SwipeNWay = SwipeNWay.EIGHT_WAY,
     val slideType: SlideType = SlideType.NONE,
-)
+) {
+    fun merge(fallback: KeyItemC): KeyItemC =
+        this.copy(
+            swipes = fallback.swipes.orEmpty().mapValues { it.value.copy(color = ColorVariant.MUTED) }
+                    + swipes.orEmpty(),
+            swipeType = swipeType + fallback.swipeType,
+        )
+}
 
 data class KeyC(
     val display: KeyDisplay?,
@@ -203,7 +210,27 @@ enum class SwipeNWay {
     FOUR_WAY_CROSS,
     FOUR_WAY_DIAGONAL,
     TWO_WAY_VERTICAL,
-    TWO_WAY_HORIZONTAL,
+    TWO_WAY_HORIZONTAL,;
+
+    // Combine two SwipeNWays, in such a way that the new one will be able to recognize
+    // at least all of those directions
+    operator fun plus(other: SwipeNWay): SwipeNWay {
+        // Discard order
+        val x = minOf(this, other)
+        val y = maxOf(this, other)
+        // This means that all checks after this point should be ordered the same way
+        // as in the enum definition
+
+        return if (x == y) {
+            x
+        } else if (x == TWO_WAY_VERTICAL && y == TWO_WAY_HORIZONTAL
+            || x == FOUR_WAY_CROSS && other == TWO_WAY_VERTICAL
+            || x == FOUR_WAY_CROSS && other == TWO_WAY_HORIZONTAL) {
+            FOUR_WAY_CROSS
+        } else {
+            EIGHT_WAY
+        }
+    }
 }
 
 enum class SlideType {

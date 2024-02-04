@@ -106,6 +106,8 @@ fun KeyboardScreen(
             else -> KB_EN_THUMBKEY_MAIN
         }
 
+    val fallbackKeyboard = keyboardDefinition.modes.numeric
+
     val alignment =
         keyboardPositionToAlignment(
             KeyboardPosition.entries[
@@ -340,12 +342,13 @@ fun KeyboardScreen(
                             },
                         ),
             ) {
-                keyboard.arr.forEach { row ->
+                keyboard.arr.forEachIndexed { rowIndex, row ->
                     Row {
-                        row.forEach { key ->
+                        row.forEachIndexed { keyIndex, key ->
+                            val fallbackKey = fallbackKeyboard.arr.getOrNull(rowIndex)?.getOrNull(keyIndex)
                             Column {
                                 KeyboardKey(
-                                    key = key,
+                                    key = if (fallbackKey != null) key.merge(fallbackKey) else key,
                                     lastAction = lastAction,
                                     legendSize = legendSize,
                                     keyPadding = keyPadding,
