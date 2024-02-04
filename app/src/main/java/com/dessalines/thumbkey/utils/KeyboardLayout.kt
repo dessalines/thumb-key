@@ -91,6 +91,7 @@ import com.dessalines.thumbkey.keyboards.KB_SV_MESSAGEEASE
 import com.dessalines.thumbkey.keyboards.KB_SV_THUMBKEY
 import com.dessalines.thumbkey.keyboards.KB_T9
 import com.dessalines.thumbkey.keyboards.KB_TR_THUMBKEY
+import com.dessalines.thumbkey.keyboards.KB_UK_MESSAGEEASE_SYMBOLS
 import com.dessalines.thumbkey.keyboards.KB_UK_RU_MESSAGEEASE_SYMBOLS
 import com.dessalines.thumbkey.keyboards.KB_UK_THUMBKEY
 
@@ -190,4 +191,5 @@ enum class KeyboardLayout(val index: Int, val keyboardDefinition: KeyboardDefini
     FIEEMessageEase(90, KB_FI_EE_MESSAGEEASE_SYMBOLS),
     ENPLThumbkey(91, KB_EN_PL_THUMBKEY),
     BGPhoneticMessagEaseSymbols(92, KB_BG_PHONETIC_MESSAGEASE_SYMBOLS),
+    UKMessageEaseSymbols(93, KB_UK_MESSAGEEASE_SYMBOLS),
 }
