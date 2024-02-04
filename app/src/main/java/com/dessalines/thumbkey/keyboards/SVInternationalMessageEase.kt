@@ -300,20 +300,20 @@ val KB_SV_INTERNATIONAL_MESSAGEEASE_SHIFTED =
                     swipes =
                         mapOf(
                             SwipeDirection.LEFT to
-                                    KeyC(
-                                        display = KeyDisplay.TextDisplay("Ä"),
-                                        action = KeyAction.CommitText("Ä"),
-                                    ),
+                                KeyC(
+                                    display = KeyDisplay.TextDisplay("Ä"),
+                                    action = KeyAction.CommitText("Ä"),
+                                ),
                             SwipeDirection.TOP to
-                                    KeyC(
-                                        display = KeyDisplay.TextDisplay("Ö"),
-                                        action = KeyAction.CommitText("Ö"),
-                                    ),
+                                KeyC(
+                                    display = KeyDisplay.TextDisplay("Ö"),
+                                    action = KeyAction.CommitText("Ö"),
+                                ),
                             SwipeDirection.TOP_RIGHT to
-                                    KeyC(
-                                        display = KeyDisplay.TextDisplay("Å"),
-                                        action = KeyAction.CommitText("Å"),
-                                    ),
+                                KeyC(
+                                    display = KeyDisplay.TextDisplay("Å"),
+                                    action = KeyAction.CommitText("Å"),
+                                ),
                             SwipeDirection.BOTTOM_RIGHT to
                                 KeyC(
                                     display = KeyDisplay.TextDisplay("V"),
