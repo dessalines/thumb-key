@@ -43,6 +43,7 @@ import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 import java.text.NumberFormat
+import java.time.Instant
 import kotlin.math.abs
 import kotlin.math.atan2
 import kotlin.math.max
@@ -822,11 +823,11 @@ fun buildTapActions(keyItem: KeyItemC): List<KeyAction> {
 fun doneKeyAction(
     scope: CoroutineScope,
     action: KeyAction,
-    pressed: MutableState<Boolean>,
+    pressedSince: MutableState<Instant?>,
     releasedKey: MutableState<String?>,
     animationHelperSpeed: Int,
 ) {
-    pressed.value = false
+    pressedSince.value = null
     scope.launch {
         delay(animationHelperSpeed.toLong())
         releasedKey.value = null

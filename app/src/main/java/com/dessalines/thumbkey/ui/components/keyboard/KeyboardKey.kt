@@ -11,6 +11,7 @@ import androidx.compose.foundation.background
 import androidx.compose.foundation.border
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.gestures.detectDragGestures
+import androidx.compose.foundation.gestures.detectTapGestures
 import androidx.compose.foundation.interaction.MutableInteractionSource
 import androidx.compose.foundation.interaction.collectIsPressedAsState
 import androidx.compose.foundation.layout.Box
@@ -26,6 +27,7 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.MutableState
+import androidx.compose.runtime.derivedStateOf
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableFloatStateOf
 import androidx.compose.runtime.mutableIntStateOf
@@ -64,6 +66,10 @@ import com.dessalines.thumbkey.utils.performKeyAction
 import com.dessalines.thumbkey.utils.slideCursorDistance
 import com.dessalines.thumbkey.utils.startSelection
 import com.dessalines.thumbkey.utils.swipeDirection
+import kotlinx.coroutines.async
+import kotlinx.coroutines.awaitAll
+import kotlinx.coroutines.coroutineScope
+import java.time.Instant
 import kotlin.math.abs
 import kotlin.math.max
 import kotlin.math.min
@@ -114,7 +120,8 @@ fun KeyboardKey(
     val interactionSource = remember { MutableInteractionSource() }
     val isPressed by interactionSource.collectIsPressedAsState()
 
-    val isDragged = remember { mutableStateOf(false) }
+    val draggedSince = remember { mutableStateOf<Instant?>(null) }
+    val isDragged = remember { derivedStateOf { draggedSince.value != null } }
     val releasedKey = remember { mutableStateOf<String?>(null) }
 
     var tapCount by remember { mutableIntStateOf(0) }
@@ -204,213 +211,31 @@ fun KeyboardKey(
                     onSwitchLanguage = onSwitchLanguage,
                     onSwitchPosition = onSwitchPosition,
                 )
-                doneKeyAction(scope, action, isDragged, releasedKey, animationHelperSpeed)
+                doneKeyAction(scope, action, draggedSince, releasedKey, animationHelperSpeed)
             }
             // The key1 is necessary, otherwise new swipes wont work
             .pointerInput(key1 = id) {
-                detectDragGestures(
-                    onDragStart = {
-                        isDragged.value = true
-                    },
-                    onDrag = { change, dragAmount ->
-                        change.consume()
-                        val (x, y) = dragAmount
-                        offsetX += x
-                        offsetY += y
-
-                        // First detection is large enough to preserve swipe actions.
-                        val slideOffsetTrigger = (keySize.dp.toPx() * 0.75) + minSwipeLength
-
-                        // These keys have a lot of functionality.
-                        // We can tap; swipe; slide the cursor left/right; select and delete text
-                        // Spacebar:
-                        //      Swipe up/down/left/right
-                        //      Slide gesture
-                        //          With slide gesture deadzone to allow normal swipes
-                        //          Without deadzone
-                        //      Slide up to enter selection mode.
-                        // Backspace key:
-                        //      Swipe left and right to delete whole word
-                        //      Slide gesture delete
-                        //          Wtih slide gesture deadzone to allow normal swipes
-                        //          Without deadzone
-                        if (key.slideType == SlideType.MOVE_CURSOR && slideEnabled) {
-                            val slideSelectionOffsetTrigger = (keySize.dp.toPx() * 1.25) + minSwipeLength
-                            if (abs(offsetY) > slideSelectionOffsetTrigger) {
-                                // If user slides upwards, enable selection
-                                hasSlideMoveCursorTriggered = true
-                                if (!selection.active) {
-                                    // Activate selection
-                                    selection = startSelection(ime)
-                                }
-
-                                val cursorMovement =
-                                    slideCursorDistance(offsetX, timeOfLastAccelerationInput, slideCursorMovementMode, slideSensitivity)
-                                timeOfLastAccelerationInput = System.currentTimeMillis()
-                                if (cursorMovement >= 1 || cursorMovement <= -1) {
-                                    if (cursorMovement < 0.00) {
-                                        selection.left(abs(cursorMovement))
-                                    } else {
-                                        selection.right(abs(cursorMovement))
-                                    }
-                                    ime.currentInputConnection.setSelection(
-                                        selection.start,
-                                        selection.end,
-                                    )
-                                    // reset offsetX, do not reset offsetY when sliding, it will break selecting
-                                    offsetX = 0f
-                                }
-                            } else if ((
-                                    slideSpacebarDeadzoneEnabled &&
-                                        (abs(offsetX) > slideOffsetTrigger) &&
-                                        // if we've gone past the deadzone
-                                        (!hasSlideMoveCursorTriggered)
-                                ) ||
-                                // OR we don't use the deadzone
-                                ((!hasSlideMoveCursorTriggered) && (!slideSpacebarDeadzoneEnabled)) ||
-                                // OR we have already started slide gesture mode.
-                                hasSlideMoveCursorTriggered
-                            ) {
-                                // If user slides horizontally only, move cursor
-
-                                // The first time we enter this, reset offsetX, because of the slideOffsetTrigger
-                                if (!hasSlideMoveCursorTriggered) {
-                                    // reset offsetX, do not reset offsetY when sliding, it will break selecting
-                                    offsetX = 0f
-                                    hasSlideMoveCursorTriggered = true
-                                }
-
-                                var lengthOfSelectedText = 0
-                                if (selection.active) {
-                                    // Move the cursor to the beginning or end of the selection and exit selection.
-                                    val location =
-                                        if (offsetX < 0) {
-                                            min(selection.start, selection.end)
+                coroutineScope {
+                    awaitAll(
+                        async {
+                            detectTapGestures(
+                                // detectTapGestures overwrites clickable,
+                                // so we must redefine it here
+                                onTap = {
+                                    // Set the last key info, and the tap count
+                                    val cAction = key.center.action
+                                    lastAction.value?.let { lastAction ->
+                                        if (lastAction == cAction && !ime.didCursorMove()) {
+                                            tapCount += 1
                                         } else {
-                                            max(selection.start, selection.end)
-                                        }
-
-                                    selection = Selection(location, location, false)
-                                    ime.currentInputConnection.setSelection(
-                                        selection.start,
-                                        selection.end,
-                                    )
-                                } else {
-                                    // Check if any text has been selected, but the selection wasn't done by this keyboard.
-                                    val selectedText = ime.currentInputConnection.getSelectedText(0)
-                                    if ((!selectedText.isNullOrEmpty()) && selectedText.isNotEmpty()) {
-                                        lengthOfSelectedText = selectedText.length
-                                    }
-                                }
-
-                                var cursorMovement =
-                                    slideCursorDistance(offsetX, timeOfLastAccelerationInput, slideCursorMovementMode, slideSensitivity)
-                                timeOfLastAccelerationInput = System.currentTimeMillis()
-                                if (cursorMovement > 0) {
-                                    // Increment distance by one, because a value of 2 moves the cursor by 1 character.
-                                    cursorMovement += 1
-                                }
-
-                                // Move the cursor
-                                // For some reason, '2' moves the cursor to the right by 1 character.
-                                //                 '-1' moves the cursor to the left  by 1 character.
-                                if (cursorMovement >= 2 || cursorMovement <= -1) {
-                                    if (lengthOfSelectedText > 0) {
-                                        // Deselect text that has been selected, but the selection wasn't done by this keyboard.
-                                        selection = startSelection(ime)
-                                        ime.currentInputConnection.setSelection(
-                                            selection.start,
-                                            selection.end,
-                                        )
-                                        // Reset the selection
-                                        selection = Selection()
-
-                                        // Move the cursor to the end of the selection if we swipe right.
-                                        if (cursorMovement >= 2) {
-                                            cursorMovement += lengthOfSelectedText
+                                            tapCount = 0
                                         }
                                     }
-                                    ime.currentInputConnection.commitText("", cursorMovement)
-                                    // reset offsetX, do not reset offsetY when sliding, it will break selecting
-                                    offsetX = 0f
-                                }
-                            }
-                        } else if (key.slideType == SlideType.DELETE && slideEnabled) {
-                            if (!selection.active) {
-                                timeOfLastAccelerationInput = System.currentTimeMillis()
-                                // Activate selection, first detection is large enough to preserve swipe actions.
-                                if (slideBackspaceDeadzoneEnabled && (abs(offsetX) > slideOffsetTrigger) ||
-                                    !slideBackspaceDeadzoneEnabled
-                                ) {
-                                    // reset offsetX, do not reset offsetY when sliding, it will break selecting
-                                    offsetX = 0f
-                                    selection = startSelection(ime)
-                                }
-                            } else {
-                                val cursorMovement =
-                                    slideCursorDistance(offsetX, timeOfLastAccelerationInput, slideCursorMovementMode, slideSensitivity)
-                                timeOfLastAccelerationInput = System.currentTimeMillis()
-                                if (cursorMovement >= 1 || cursorMovement <= -1) {
-                                    if (cursorMovement < 0.00) {
-                                        selection.left(abs(cursorMovement))
-                                    } else {
-                                        selection.right(abs(cursorMovement))
-                                    }
-                                    ime.currentInputConnection.setSelection(
-                                        selection.start,
-                                        selection.end,
-                                    )
-                                    // reset offsetX, do not reset offsetY when sliding, it will break selecting
-                                    offsetX = 0f
-                                }
-                            }
-                        }
-                    },
-                    onDragEnd = {
-                        lateinit var action: KeyAction
-                        if (key.slideType == SlideType.NONE ||
-                            !slideEnabled ||
-                            ((key.slideType == SlideType.DELETE) && !selection.active) ||
-                            ((key.slideType == SlideType.MOVE_CURSOR) && !hasSlideMoveCursorTriggered)
-                        ) {
-                            hasSlideMoveCursorTriggered = false
-                            val swipeDirection =
-                                swipeDirection(offsetX, offsetY, minSwipeLength, key.swipeType)
-                            action = key.swipes?.get(swipeDirection)?.action ?: key.center.action
+                                    lastAction.value = cAction
 
-                            performKeyAction(
-                                action = action,
-                                ime = ime,
-                                autoCapitalize = autoCapitalize,
-                                keyboardSettings = keyboardSettings,
-                                onToggleShiftMode = onToggleShiftMode,
-                                onToggleNumericMode = onToggleNumericMode,
-                                onToggleEmojiMode = onToggleEmojiMode,
-                                onToggleCapsLock = onToggleCapsLock,
-                                onAutoCapitalize = onAutoCapitalize,
-                                onSwitchLanguage = onSwitchLanguage,
-                                onSwitchPosition = onSwitchPosition,
-                            )
-                            doneKeyAction(
-                                scope,
-                                action,
-                                isDragged,
-                                releasedKey,
-                                animationHelperSpeed,
-                            )
-                        } else if (key.slideType == SlideType.DELETE) {
-                            action =
-                                KeyAction.SendEvent(
-                                    KeyEvent(
-                                        KeyEvent.ACTION_DOWN,
-                                        KeyEvent
-                                            .KEYCODE_DEL,
-                                    ),
-                                )
-                            // only delete if valid selection
-                            val sel = ime.currentInputConnection.getSelectedText(0)
-                            sel?.let {
-                                if (it.isNotEmpty()) {
+                                    // Set the correct action
+                                    val action = tapActions[tapCount % tapActions.size]
+
                                     performKeyAction(
                                         action = action,
                                         ime = ime,
@@ -418,51 +243,338 @@ fun KeyboardKey(
                                         keyboardSettings = keyboardSettings,
                                         onToggleShiftMode = onToggleShiftMode,
                                         onToggleNumericMode = onToggleNumericMode,
+                                        onToggleEmojiMode = onToggleEmojiMode,
                                         onToggleCapsLock = onToggleCapsLock,
                                         onAutoCapitalize = onAutoCapitalize,
                                         onSwitchLanguage = onSwitchLanguage,
                                         onSwitchPosition = onSwitchPosition,
-                                        onToggleEmojiMode = onToggleEmojiMode,
                                     )
+                                    doneKeyAction(
+                                        scope,
+                                        action,
+                                        draggedSince,
+                                        releasedKey,
+                                        animationHelperSpeed
+                                    )
+                                },
+                                onLongPress = {
+                                    val action = key.centerHold?.action
+                                    if (action != null) {
+                                        performKeyAction(
+                                            action = action,
+                                            ime = ime,
+                                            autoCapitalize = autoCapitalize,
+                                            keyboardSettings = keyboardSettings,
+                                            onToggleShiftMode = onToggleShiftMode,
+                                            onToggleNumericMode = onToggleNumericMode,
+                                            onToggleEmojiMode = onToggleEmojiMode,
+                                            onToggleCapsLock = onToggleCapsLock,
+                                            onAutoCapitalize = onAutoCapitalize,
+                                            onSwitchLanguage = onSwitchLanguage,
+                                            onSwitchPosition = onSwitchPosition,
+                                        )
+                                        doneKeyAction(
+                                            scope,
+                                            action,
+                                            draggedSince,
+                                            releasedKey,
+                                            animationHelperSpeed,
+                                        )
+                                    }
                                 }
-                            }
-                            doneKeyAction(
-                                scope,
-                                action,
-                                isDragged,
-                                releasedKey,
-                                animationHelperSpeed,
                             )
-                        } else {
-                            hasSlideMoveCursorTriggered = false
-                            action =
-                                KeyAction.SendEvent(
-                                    KeyEvent(
-                                        KeyEvent.ACTION_UP,
-                                        KeyEvent.KEYCODE_DPAD_RIGHT,
-                                    ),
-                                )
-                            doneKeyAction(
-                                scope,
-                                action,
-                                isDragged,
-                                releasedKey,
-                                animationHelperSpeed,
+                        },
+                        async {
+                            detectDragGestures(
+                                onDragStart = {
+                                    draggedSince.value = Instant.now()
+                                    println("start aaaaaa")
+                                },
+                                onDrag = { change, dragAmount ->
+                                    change.consume()
+                                    val (x, y) = dragAmount
+                                    offsetX += x
+                                    offsetY += y
+
+                                    // First detection is large enough to preserve swipe actions.
+                                    val slideOffsetTrigger =
+                                        (keySize.dp.toPx() * 0.75) + minSwipeLength
+
+                                    // These keys have a lot of functionality.
+                                    // We can tap; swipe; slide the cursor left/right; select and delete text
+                                    // Spacebar:
+                                    //      Swipe up/down/left/right
+                                    //      Slide gesture
+                                    //          With slide gesture deadzone to allow normal swipes
+                                    //          Without deadzone
+                                    //      Slide up to enter selection mode.
+                                    // Backspace key:
+                                    //      Swipe left and right to delete whole word
+                                    //      Slide gesture delete
+                                    //          Wtih slide gesture deadzone to allow normal swipes
+                                    //          Without deadzone
+                                    if (key.slideType == SlideType.MOVE_CURSOR && slideEnabled) {
+                                        val slideSelectionOffsetTrigger =
+                                            (keySize.dp.toPx() * 1.25) + minSwipeLength
+                                        if (abs(offsetY) > slideSelectionOffsetTrigger) {
+                                            // If user slides upwards, enable selection
+                                            hasSlideMoveCursorTriggered = true
+                                            if (!selection.active) {
+                                                // Activate selection
+                                                selection = startSelection(ime)
+                                            }
+
+                                            val cursorMovement =
+                                                slideCursorDistance(
+                                                    offsetX,
+                                                    timeOfLastAccelerationInput,
+                                                    slideCursorMovementMode,
+                                                    slideSensitivity
+                                                )
+                                            timeOfLastAccelerationInput = System.currentTimeMillis()
+                                            if (cursorMovement >= 1 || cursorMovement <= -1) {
+                                                if (cursorMovement < 0.00) {
+                                                    selection.left(abs(cursorMovement))
+                                                } else {
+                                                    selection.right(abs(cursorMovement))
+                                                }
+                                                ime.currentInputConnection.setSelection(
+                                                    selection.start,
+                                                    selection.end,
+                                                )
+                                                // reset offsetX, do not reset offsetY when sliding, it will break selecting
+                                                offsetX = 0f
+                                            }
+                                        } else if ((
+                                                    slideSpacebarDeadzoneEnabled &&
+                                                            (abs(offsetX) > slideOffsetTrigger) &&
+                                                            // if we've gone past the deadzone
+                                                            (!hasSlideMoveCursorTriggered)
+                                                    ) ||
+                                            // OR we don't use the deadzone
+                                            ((!hasSlideMoveCursorTriggered) && (!slideSpacebarDeadzoneEnabled)) ||
+                                            // OR we have already started slide gesture mode.
+                                            hasSlideMoveCursorTriggered
+                                        ) {
+                                            // If user slides horizontally only, move cursor
+
+                                            // The first time we enter this, reset offsetX, because of the slideOffsetTrigger
+                                            if (!hasSlideMoveCursorTriggered) {
+                                                // reset offsetX, do not reset offsetY when sliding, it will break selecting
+                                                offsetX = 0f
+                                                hasSlideMoveCursorTriggered = true
+                                            }
+
+                                            var lengthOfSelectedText = 0
+                                            if (selection.active) {
+                                                // Move the cursor to the beginning or end of the selection and exit selection.
+                                                val location =
+                                                    if (offsetX < 0) {
+                                                        min(selection.start, selection.end)
+                                                    } else {
+                                                        max(selection.start, selection.end)
+                                                    }
+
+                                                selection = Selection(location, location, false)
+                                                ime.currentInputConnection.setSelection(
+                                                    selection.start,
+                                                    selection.end,
+                                                )
+                                            } else {
+                                                // Check if any text has been selected, but the selection wasn't done by this keyboard.
+                                                val selectedText =
+                                                    ime.currentInputConnection.getSelectedText(0)
+                                                if ((!selectedText.isNullOrEmpty()) && selectedText.isNotEmpty()) {
+                                                    lengthOfSelectedText = selectedText.length
+                                                }
+                                            }
+
+                                            var cursorMovement =
+                                                slideCursorDistance(
+                                                    offsetX,
+                                                    timeOfLastAccelerationInput,
+                                                    slideCursorMovementMode,
+                                                    slideSensitivity
+                                                )
+                                            timeOfLastAccelerationInput = System.currentTimeMillis()
+                                            if (cursorMovement > 0) {
+                                                // Increment distance by one, because a value of 2 moves the cursor by 1 character.
+                                                cursorMovement += 1
+                                            }
+
+                                            // Move the cursor
+                                            // For some reason, '2' moves the cursor to the right by 1 character.
+                                            //                 '-1' moves the cursor to the left  by 1 character.
+                                            if (cursorMovement >= 2 || cursorMovement <= -1) {
+                                                if (lengthOfSelectedText > 0) {
+                                                    // Deselect text that has been selected, but the selection wasn't done by this keyboard.
+                                                    selection = startSelection(ime)
+                                                    ime.currentInputConnection.setSelection(
+                                                        selection.start,
+                                                        selection.end,
+                                                    )
+                                                    // Reset the selection
+                                                    selection = Selection()
+
+                                                    // Move the cursor to the end of the selection if we swipe right.
+                                                    if (cursorMovement >= 2) {
+                                                        cursorMovement += lengthOfSelectedText
+                                                    }
+                                                }
+                                                ime.currentInputConnection.commitText(
+                                                    "",
+                                                    cursorMovement
+                                                )
+                                                // reset offsetX, do not reset offsetY when sliding, it will break selecting
+                                                offsetX = 0f
+                                            }
+                                        }
+                                    } else if (key.slideType == SlideType.DELETE && slideEnabled) {
+                                        if (!selection.active) {
+                                            timeOfLastAccelerationInput = System.currentTimeMillis()
+                                            // Activate selection, first detection is large enough to preserve swipe actions.
+                                            if (slideBackspaceDeadzoneEnabled && (abs(offsetX) > slideOffsetTrigger) ||
+                                                !slideBackspaceDeadzoneEnabled
+                                            ) {
+                                                // reset offsetX, do not reset offsetY when sliding, it will break selecting
+                                                offsetX = 0f
+                                                selection = startSelection(ime)
+                                            }
+                                        } else {
+                                            val cursorMovement =
+                                                slideCursorDistance(
+                                                    offsetX,
+                                                    timeOfLastAccelerationInput,
+                                                    slideCursorMovementMode,
+                                                    slideSensitivity
+                                                )
+                                            timeOfLastAccelerationInput = System.currentTimeMillis()
+                                            if (cursorMovement >= 1 || cursorMovement <= -1) {
+                                                if (cursorMovement < 0.00) {
+                                                    selection.left(abs(cursorMovement))
+                                                } else {
+                                                    selection.right(abs(cursorMovement))
+                                                }
+                                                ime.currentInputConnection.setSelection(
+                                                    selection.start,
+                                                    selection.end,
+                                                )
+                                                // reset offsetX, do not reset offsetY when sliding, it will break selecting
+                                                offsetX = 0f
+                                            }
+                                        }
+                                    }
+                                },
+                                onDragEnd = {
+                                    lateinit var action: KeyAction
+                                    if (key.slideType == SlideType.NONE ||
+                                        !slideEnabled ||
+                                        ((key.slideType == SlideType.DELETE) && !selection.active) ||
+                                        ((key.slideType == SlideType.MOVE_CURSOR) && !hasSlideMoveCursorTriggered)
+                                    ) {
+                                        hasSlideMoveCursorTriggered = false
+                                        val swipeDirection =
+                                            swipeDirection(
+                                                offsetX,
+                                                offsetY,
+                                                minSwipeLength,
+                                                key.swipeType
+                                            )
+                                        // If the drag ends up not being long enough, fall back to center action
+                                        val holdKey = key.centerHold?.takeIf { Instant.now() > (draggedSince.value?.plusMillis(viewConfiguration.longPressTimeoutMillis) ?: Instant.MIN) }
+                                        action =
+                                            key.swipes?.get(swipeDirection)?.action
+                                                ?: holdKey?.action
+                                                        ?: key.center.action
+
+                                        performKeyAction(
+                                            action = action,
+                                            ime = ime,
+                                            autoCapitalize = autoCapitalize,
+                                            keyboardSettings = keyboardSettings,
+                                            onToggleShiftMode = onToggleShiftMode,
+                                            onToggleNumericMode = onToggleNumericMode,
+                                            onToggleEmojiMode = onToggleEmojiMode,
+                                            onToggleCapsLock = onToggleCapsLock,
+                                            onAutoCapitalize = onAutoCapitalize,
+                                            onSwitchLanguage = onSwitchLanguage,
+                                            onSwitchPosition = onSwitchPosition,
+                                        )
+                                        doneKeyAction(
+                                            scope,
+                                            action,
+                                            draggedSince,
+                                            releasedKey,
+                                            animationHelperSpeed,
+                                        )
+                                    } else if (key.slideType == SlideType.DELETE) {
+                                        action =
+                                            KeyAction.SendEvent(
+                                                KeyEvent(
+                                                    KeyEvent.ACTION_DOWN,
+                                                    KeyEvent
+                                                        .KEYCODE_DEL,
+                                                ),
+                                            )
+                                        // only delete if valid selection
+                                        val sel = ime.currentInputConnection.getSelectedText(0)
+                                        sel?.let {
+                                            if (it.isNotEmpty()) {
+                                                performKeyAction(
+                                                    action = action,
+                                                    ime = ime,
+                                                    autoCapitalize = autoCapitalize,
+                                                    keyboardSettings = keyboardSettings,
+                                                    onToggleShiftMode = onToggleShiftMode,
+                                                    onToggleNumericMode = onToggleNumericMode,
+                                                    onToggleCapsLock = onToggleCapsLock,
+                                                    onAutoCapitalize = onAutoCapitalize,
+                                                    onSwitchLanguage = onSwitchLanguage,
+                                                    onSwitchPosition = onSwitchPosition,
+                                                    onToggleEmojiMode = onToggleEmojiMode,
+                                                )
+                                            }
+                                        }
+                                        doneKeyAction(
+                                            scope,
+                                            action,
+                                            draggedSince,
+                                            releasedKey,
+                                            animationHelperSpeed,
+                                        )
+                                    } else {
+                                        hasSlideMoveCursorTriggered = false
+                                        action =
+                                            KeyAction.SendEvent(
+                                                KeyEvent(
+                                                    KeyEvent.ACTION_UP,
+                                                    KeyEvent.KEYCODE_DPAD_RIGHT,
+                                                ),
+                                            )
+                                        doneKeyAction(
+                                            scope,
+                                            action,
+                                            draggedSince,
+                                            releasedKey,
+                                            animationHelperSpeed,
+                                        )
+                                    }
+
+                                    // Set tapCount and lastAction to avoid issues with multitap after slide
+                                    tapCount = 0
+                                    lastAction.value = action
+
+                                    // Reset the drags
+                                    offsetX = 0f
+                                    offsetY = 0f
+
+                                    // Reset selection
+                                    selection = Selection()
+                                },
                             )
-                        }
-
-                        // Set tapCount and lastAction to avoid issues with multitap after slide
-                        tapCount = 0
-                        lastAction.value = action
-
-                        // Reset the drags
-                        offsetX = 0f
-                        offsetY = 0f
-
-                        // Reset selection
-                        selection = Selection()
-                    },
-                )
+                        },
+                    )
+                }
             }
 
     // a 3x3 grid

@@ -48,12 +48,14 @@ data class KeyItemC(
     val backgroundColor: ColorVariant = ColorVariant.SURFACE,
     val swipeType: SwipeNWay = SwipeNWay.EIGHT_WAY,
     val slideType: SlideType = SlideType.NONE,
+    val centerHold: KeyC? = null,
 ) {
     fun merge(fallback: KeyItemC): KeyItemC =
         this.copy(
             swipes = fallback.swipes.orEmpty().mapValues { it.value.copy(color = ColorVariant.MUTED) }
                     + swipes.orEmpty(),
             swipeType = swipeType + fallback.swipeType,
+            centerHold = centerHold ?: fallback.centerHold ?: fallback.center
         )
 }
 
