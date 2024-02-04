@@ -1,5 +1,6 @@
 package com.dessalines.thumbkey.utils
 
+import com.dessalines.thumbkey.keyboards.KB_BG_PHONETIC_MESSAGEASE_SYMBOLS
 import com.dessalines.thumbkey.keyboards.KB_BG_THUMBKEY_SYMBOLS
 import com.dessalines.thumbkey.keyboards.KB_BY_THUMBKEY
 import com.dessalines.thumbkey.keyboards.KB_BY_THUMBKEY_SYMBOLS
@@ -188,4 +189,5 @@ enum class KeyboardLayout(val index: Int, val keyboardDefinition: KeyboardDefini
     ENDAThumbKeySymbols(89, KB_EN_DA_THUMBKEY_SYMBOLS),
     FIEEMessageEase(90, KB_FI_EE_MESSAGEEASE_SYMBOLS),
     ENPLThumbkey(91, KB_EN_PL_THUMBKEY),
+    BGPhoneticMessagEaseSymbols(92, KB_BG_PHONETIC_MESSAGEASE_SYMBOLS),
 }
