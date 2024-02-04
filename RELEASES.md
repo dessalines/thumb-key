@@ -1,3 +1,24 @@
+# Thumb-Key 2.6.11 (2024-02-04)
+
+## What's Changed
+
+- show locale currency bottom-right to 1 by @priyavrat-misra in https://github.com/dessalines/thumb-key/pull/636
+- Update strings.xml (typo) by @ligurio in https://github.com/dessalines/thumb-key/pull/638
+- Typos by @5atoshiNakamoto in https://github.com/dessalines/thumb-key/pull/644
+- Finnish/Estonian messageease style layout by @Eemilp in https://github.com/dessalines/thumb-key/pull/639
+- Adding english polski thumbkey keyboard. Fixes #654 by @dessalines in https://github.com/dessalines/thumb-key/pull/659
+- Add keyboard bg_phonetic_messagease by @pavlov-p in https://github.com/dessalines/thumb-key/pull/660
+
+## New Contributors
+
+- @priyavrat-misra made their first contribution in https://github.com/dessalines/thumb-key/pull/636
+- @ligurio made their first contribution in https://github.com/dessalines/thumb-key/pull/638
+- @5atoshiNakamoto made their first contribution in https://github.com/dessalines/thumb-key/pull/644
+- @Eemilp made their first contribution in https://github.com/dessalines/thumb-key/pull/639
+- @pavlov-p made their first contribution in https://github.com/dessalines/thumb-key/pull/660
+
+**Full Changelog**: https://github.com/dessalines/thumb-key/compare/2.6.10...2.6.11
+
 # Thumb-Key 2.6.10 (2024-01-31)
 
 ## What's Changed
