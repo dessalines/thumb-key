@@ -48,7 +48,7 @@ This project is a follow-up to the now unmaintained (and closed-source) [Message
 
 - Highly configurable.
 - Customizeable sizing, ThumbKey and MessageEase layouts, dynamic / Material v3 themes, animations, haptic feedback, and audio feedback.
-- Open source, [AGPL License](/LICENSE).
+- Open-source, [AGPL License](/LICENSE).
 
 ## User Guide
 
