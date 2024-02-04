@@ -51,8 +51,9 @@ data class KeyItemC(
 ) {
     fun merge(fallback: KeyItemC): KeyItemC =
         this.copy(
-            swipes = fallback.swipes.orEmpty().mapValues { it.value.copy(color = ColorVariant.MUTED) }
-                    + swipes.orEmpty(),
+            swipes =
+                fallback.swipes.orEmpty().mapValues { it.value.copy(color = ColorVariant.MUTED) } +
+                    swipes.orEmpty(),
             swipeType = swipeType + fallback.swipeType,
         )
 }
@@ -210,7 +211,7 @@ enum class SwipeNWay {
     FOUR_WAY_CROSS,
     FOUR_WAY_DIAGONAL,
     TWO_WAY_VERTICAL,
-    TWO_WAY_HORIZONTAL,;
+    TWO_WAY_HORIZONTAL, ;
 
     // Combine two SwipeNWays, in such a way that the new one will be able to recognize
     // at least all of those directions
@@ -223,9 +224,10 @@ enum class SwipeNWay {
 
         return if (x == y) {
             x
-        } else if (x == TWO_WAY_VERTICAL && y == TWO_WAY_HORIZONTAL
-            || x == FOUR_WAY_CROSS && other == TWO_WAY_VERTICAL
-            || x == FOUR_WAY_CROSS && other == TWO_WAY_HORIZONTAL) {
+        } else if (x == TWO_WAY_VERTICAL && y == TWO_WAY_HORIZONTAL ||
+            x == FOUR_WAY_CROSS && other == TWO_WAY_VERTICAL ||
+            x == FOUR_WAY_CROSS && other == TWO_WAY_HORIZONTAL
+        ) {
             FOUR_WAY_CROSS
         } else {
             EIGHT_WAY
