@@ -32,7 +32,7 @@ val KB_SV_INTERNATIONAL_MESSAGEEASE_MAIN =
                             size = FontSizeVariant.LARGE,
                             color = ColorVariant.PRIMARY,
                         ),
-                    swipeType = SwipeNWay.FOUR_WAY_DIAGONAL,
+                    swipeType = SwipeNWay.EIGHT_WAY,
                     swipes =
                         mapOf(
                             SwipeDirection.LEFT to
@@ -296,7 +296,7 @@ val KB_SV_INTERNATIONAL_MESSAGEEASE_SHIFTED =
                             size = FontSizeVariant.LARGE,
                             color = ColorVariant.PRIMARY,
                         ),
-                    swipeType = SwipeNWay.FOUR_WAY_DIAGONAL,
+                    swipeType = SwipeNWay.EIGHT_WAY,
                     swipes =
                         mapOf(
                             SwipeDirection.LEFT to
