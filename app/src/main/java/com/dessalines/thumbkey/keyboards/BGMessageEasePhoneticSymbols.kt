@@ -173,12 +173,12 @@ val KB_BG_PHONETIC_MESSAGEASE_SYMBOLS_MAIN =
                                 KeyC(
                                     display = KeyDisplay.TextDisplay("ъ"),
                                     action = KeyAction.CommitText("ъ"),
-                                )
+                                ),
                             SwipeDirection.BOTTOM to
                                 KeyC(
                                     display = KeyDisplay.TextDisplay("ь"),
                                     action = KeyAction.CommitText("ь"),
-                                )
+                                ),
                             SwipeDirection.TOP_LEFT to
                                 KeyC(
                                     display = KeyDisplay.TextDisplay("{"),
@@ -620,12 +620,12 @@ val KB_BG_PHONETIC_MESSAGEASE_SYMBOLS_SHIFTED =
                                 KeyC(
                                     display = KeyDisplay.TextDisplay("Ъ"),
                                     action = KeyAction.CommitText("Ъ"),
-                                )
+                                ),
                             SwipeDirection.BOTTOM to
                                 KeyC(
                                     display = KeyDisplay.TextDisplay("Ь"),
                                     action = KeyAction.CommitText("Ь"),
-                                )
+                                ),
                             SwipeDirection.TOP_LEFT to
                                 KeyC(
                                     display = KeyDisplay.TextDisplay("{"),
