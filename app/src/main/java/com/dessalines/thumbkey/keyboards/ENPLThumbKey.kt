@@ -65,6 +65,11 @@ val KB_EN_PL_THUMBKEY_MAIN =
                                     display = KeyDisplay.TextDisplay("ł"),
                                     action = KeyAction.CommitText("ł"),
                                 ),
+                            SwipeDirection.BOTTOM_LEFT to
+                                KeyC(
+                                    display = KeyDisplay.TextDisplay("ć"),
+                                    action = KeyAction.CommitText("ć"),
+                                ),
                         ),
                 ),
                 KeyItemC(
@@ -346,6 +351,11 @@ val KB_EN_PL_THUMBKEY_SHIFTED =
                                 KeyC(
                                     display = KeyDisplay.TextDisplay("Ł"),
                                     action = KeyAction.CommitText("Ł"),
+                                ),
+                            SwipeDirection.BOTTOM_LEFT to
+                                KeyC(
+                                    display = KeyDisplay.TextDisplay("Ć"),
+                                    action = KeyAction.CommitText("Ć"),
                                 ),
                         ),
                 ),
