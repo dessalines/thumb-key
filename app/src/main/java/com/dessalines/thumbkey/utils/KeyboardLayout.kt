@@ -57,6 +57,7 @@ import com.dessalines.thumbkey.keyboards.KB_FR_THUMBKEY_V2
 import com.dessalines.thumbkey.keyboards.KB_FR_TYPESPLIT
 import com.dessalines.thumbkey.keyboards.KB_GR_THUMBKEY
 import com.dessalines.thumbkey.keyboards.KB_HE_MESSAGEEASE
+import com.dessalines.thumbkey.keyboards.KB_HE_MESSAGEEASE_SYMBOLS
 import com.dessalines.thumbkey.keyboards.KB_HE_THUMBKEY
 import com.dessalines.thumbkey.keyboards.KB_HR_THUMBKEY
 import com.dessalines.thumbkey.keyboards.KB_HR_THUMBKEY_SYMBOLS
@@ -194,4 +195,5 @@ enum class KeyboardLayout(val index: Int, val keyboardDefinition: KeyboardDefini
     BGPhoneticMessagEaseSymbols(92, KB_BG_PHONETIC_MESSAGEASE_SYMBOLS),
     UKMessageEaseSymbols(93, KB_UK_MESSAGEEASE_SYMBOLS),
     ENFRMessagEaseSymbols(94, KB_EN_FR_MESSAGEASE_SYMBOLS),
+    HEMessageEaseSymbols(95, KB_HE_MESSAGEEASE_SYMBOLS),
 }
