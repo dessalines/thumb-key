@@ -28,7 +28,7 @@
     <string name="social">Réseaux sociaux</string>
     <string name="join_c_thumbkey">Rejoindre c/thumbkey</string>
     <string name="follow_me_mastodon">Me suivre sur Mastodon</string>
-    <string name="open_source">Open source</string>
+    <string name="open_source">Open-source</string>
     <string name="source_code">Code source</string>
     <string name="source_code_subtitle">Thumb-Key est un logiciel libre et open source, sous la licence GNU Affero General Public License v3.0</string>
     <string name="look_and_feel">Apparence</string>

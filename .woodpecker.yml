@@ -2,7 +2,7 @@ steps:
   prettier_markdown_check:
     image: tmknom/prettier
     commands:
-      - prettier -c "*.md" "*.yml"
+      - prettier -c "**/*.md" "**/*.yml"
 
   check_formatting:
     image: cimg/android:2023.09.1
