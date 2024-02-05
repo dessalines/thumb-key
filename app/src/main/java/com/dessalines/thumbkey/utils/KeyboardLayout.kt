@@ -10,6 +10,7 @@ import com.dessalines.thumbkey.keyboards.KB_CZ_PROG
 import com.dessalines.thumbkey.keyboards.KB_DA_THUMBKEY
 import com.dessalines.thumbkey.keyboards.KB_DE_MESSAGEASE
 import com.dessalines.thumbkey.keyboards.KB_DE_MESSAGEASE_SYMBOLS
+import com.dessalines.thumbkey.keyboards.KB_DE_NORDIC_MESSAGEASE
 import com.dessalines.thumbkey.keyboards.KB_DE_THUMBKEY
 import com.dessalines.thumbkey.keyboards.KB_DE_THUMBKEY_MULTILINGUAL
 import com.dessalines.thumbkey.keyboards.KB_DE_TYPESPLIT
@@ -236,4 +237,5 @@ enum class KeyboardLayout(val keyboardDefinition: KeyboardDefinition) {
     CZprogrammerMessagease(KB_CZ_PROG),
     ENDEThumbKeyV2(KB_EN_DE_THUMBKEY_V2),
     ENESCAThumbKey(KB_EN_ES_CA_THUMBKEY),
+    DENordicMessagEase(KB_DE_NORDIC_MESSAGEASE),
 }
