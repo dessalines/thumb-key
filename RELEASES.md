@@ -1,3 +1,20 @@
+# Thumb-Key 2.6.12 (2024-02-05)
+
+## What's Changed
+
+- Add ukrainian-only messagease symbols layout by @Meetoul in https://github.com/dessalines/thumb-key/pull/666
+- Add layout for English and French by @Zwyx in https://github.com/dessalines/thumb-key/pull/665
+- hebrew messageease style layout with symbols by @yehoshuapw in https://github.com/dessalines/thumb-key/pull/667
+- Adding issue forms instead of markdown templates. Fixes #662 by @dessalines in https://github.com/dessalines/thumb-key/pull/669
+
+## New Contributors
+
+- @Meetoul made their first contribution in https://github.com/dessalines/thumb-key/pull/666
+- @Zwyx made their first contribution in https://github.com/dessalines/thumb-key/pull/665
+- @yehoshuapw made their first contribution in https://github.com/dessalines/thumb-key/pull/667
+
+**Full Changelog**: https://github.com/dessalines/thumb-key/compare/2.6.11...2.6.12
+
 # Thumb-Key 2.6.11 (2024-02-04)
 
 ## What's Changed
