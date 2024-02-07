@@ -263,6 +263,11 @@ val KB_EN_MESSAGEASE_NUMERIC =
                                     display = KeyDisplay.TextDisplay("*"),
                                     action = KeyAction.CommitText("*"),
                                 ),
+                            SwipeDirection.BOTTOM_RIGHT to
+                                KeyC(
+                                    display = KeyDisplay.TextDisplay("⇥"),
+                                    action = KeyAction.CommitText("\t"),
+                                ),
                         ),
                 ),
                 KeyItemC(

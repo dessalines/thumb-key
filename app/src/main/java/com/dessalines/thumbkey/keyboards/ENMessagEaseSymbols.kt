@@ -312,7 +312,6 @@ val KB_EN_MESSAGEASE_SYMBOLS_MAIN =
                             size = FontSizeVariant.LARGE,
                             color = ColorVariant.PRIMARY,
                         ),
-//                swipeType = SwipeNWay.FOUR_WAY_DIAGONAL,
                     swipes =
                         mapOf(
                             SwipeDirection.TOP_RIGHT to
@@ -334,8 +333,8 @@ val KB_EN_MESSAGEASE_SYMBOLS_MAIN =
                                 ),
                             SwipeDirection.BOTTOM_RIGHT to
                                 KeyC(
-                                    display = KeyDisplay.TextDisplay(":"),
-                                    action = KeyAction.CommitText(":"),
+                                    display = KeyDisplay.TextDisplay("⇥"),
+                                    action = KeyAction.CommitText("\t"),
                                     color = ColorVariant.MUTED,
                                 ),
                             SwipeDirection.LEFT to
@@ -356,6 +355,12 @@ val KB_EN_MESSAGEASE_SYMBOLS_MAIN =
                         ),
                     swipes =
                         mapOf(
+                            SwipeDirection.TOP_LEFT to
+                                KeyC(
+                                    display = KeyDisplay.TextDisplay("\""),
+                                    action = KeyAction.CommitText("\""),
+                                    color = ColorVariant.MUTED,
+                                ),
                             SwipeDirection.TOP to
                                 KeyC(
                                     display = KeyDisplay.TextDisplay("w"),
@@ -371,12 +376,6 @@ val KB_EN_MESSAGEASE_SYMBOLS_MAIN =
                                 KeyC(
                                     display = KeyDisplay.TextDisplay("z"),
                                     action = KeyAction.CommitText("z"),
-                                ),
-                            SwipeDirection.TOP_LEFT to
-                                KeyC(
-                                    display = KeyDisplay.TextDisplay("\""),
-                                    action = KeyAction.CommitText("\""),
-                                    color = ColorVariant.MUTED,
                                 ),
                             SwipeDirection.BOTTOM_RIGHT to
                                 KeyC(
@@ -754,7 +753,6 @@ val KB_EN_MESSAGEASE_SYMBOLS_SHIFTED =
                             size = FontSizeVariant.LARGE,
                             color = ColorVariant.PRIMARY,
                         ),
-//                swipeType = SwipeNWay.FOUR_WAY_DIAGONAL,
                     swipes =
                         mapOf(
                             SwipeDirection.TOP_RIGHT to
@@ -782,8 +780,8 @@ val KB_EN_MESSAGEASE_SYMBOLS_SHIFTED =
                                 ),
                             SwipeDirection.BOTTOM_RIGHT to
                                 KeyC(
-                                    display = KeyDisplay.TextDisplay(":"),
-                                    action = KeyAction.CommitText(":"),
+                                    display = KeyDisplay.TextDisplay("⇥"),
+                                    action = KeyAction.CommitText("\t"),
                                     color = ColorVariant.MUTED,
                                 ),
                         ),
@@ -798,6 +796,12 @@ val KB_EN_MESSAGEASE_SYMBOLS_SHIFTED =
                         ),
                     swipes =
                         mapOf(
+                            SwipeDirection.TOP_LEFT to
+                                    KeyC(
+                                        display = KeyDisplay.TextDisplay("\""),
+                                        action = KeyAction.CommitText("\""),
+                                        color = ColorVariant.MUTED,
+                                    ),
                             SwipeDirection.TOP to
                                 KeyC(
                                     display = KeyDisplay.TextDisplay("W"),
@@ -814,10 +818,10 @@ val KB_EN_MESSAGEASE_SYMBOLS_SHIFTED =
                                     display = KeyDisplay.TextDisplay("Z"),
                                     action = KeyAction.CommitText("Z"),
                                 ),
-                            SwipeDirection.TOP_LEFT to
+                            SwipeDirection.BOTTOM_RIGHT to
                                 KeyC(
-                                    display = KeyDisplay.TextDisplay("\""),
-                                    action = KeyAction.CommitText("\""),
+                                    display = KeyDisplay.TextDisplay(":"),
+                                    action = KeyAction.CommitText(":"),
                                     color = ColorVariant.MUTED,
                                 ),
                             SwipeDirection.BOTTOM to
