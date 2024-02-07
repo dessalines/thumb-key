@@ -40,6 +40,12 @@ val KB_EN_MESSAGEEASE_MAIN =
                                     display = KeyDisplay.TextDisplay("v"),
                                     action = KeyAction.CommitText("v"),
                                 ),
+                            SwipeDirection.RIGHT to
+                                KeyC(
+                                    display = KeyDisplay.TextDisplay("-"),
+                                    action = KeyAction.CommitText("-"),
+                                    color = ColorVariant.MUTED,
+                                ),
                         ),
                 ),
                 KeyItemC(
@@ -222,12 +228,6 @@ val KB_EN_MESSAGEEASE_MAIN =
                                     display = KeyDisplay.TextDisplay("z"),
                                     action = KeyAction.CommitText("z"),
                                 ),
-                            SwipeDirection.BOTTOM_RIGHT to
-                                KeyC(
-                                    display = KeyDisplay.TextDisplay("-"),
-                                    action = KeyAction.CommitText("-"),
-                                    color = ColorVariant.MUTED,
-                                ),
                             SwipeDirection.BOTTOM to
                                 KeyC(
                                     display = KeyDisplay.TextDisplay("."),
@@ -288,6 +288,12 @@ val KB_EN_MESSAGEEASE_SHIFTED =
                                 KeyC(
                                     display = KeyDisplay.TextDisplay("V"),
                                     action = KeyAction.CommitText("V"),
+                                ),
+                            SwipeDirection.RIGHT to
+                                KeyC(
+                                    display = KeyDisplay.TextDisplay("-"),
+                                    action = KeyAction.CommitText("-"),
+                                    color = ColorVariant.MUTED,
                                 ),
                         ),
                 ),
@@ -478,12 +484,6 @@ val KB_EN_MESSAGEEASE_SHIFTED =
                                     display = KeyDisplay.TextDisplay("Z"),
                                     action = KeyAction.CommitText("Z"),
                                 ),
-                            SwipeDirection.BOTTOM_RIGHT to
-                                KeyC(
-                                    display = KeyDisplay.TextDisplay("-"),
-                                    action = KeyAction.CommitText("-"),
-                                    color = ColorVariant.MUTED,
-                                ),
                             SwipeDirection.BOTTOM to
                                 KeyC(
                                     display = KeyDisplay.TextDisplay("."),
@@ -527,12 +527,12 @@ val KB_EN_MESSAGEEASE_SHIFTED =
 
 val KB_EN_MESSAGEEASE: KeyboardDefinition =
     KeyboardDefinition(
-        title = "english messageease",
+        title = "english messagease",
         modes =
             KeyboardDefinitionModes(
                 main = KB_EN_MESSAGEEASE_MAIN,
                 shifted = KB_EN_MESSAGEEASE_SHIFTED,
-                numeric = NUMERIC_KEYBOARD,
+                numeric = NUMERIC_MESSAGEASE,
             ),
         settings =
             KeyboardDefinitionSettings(

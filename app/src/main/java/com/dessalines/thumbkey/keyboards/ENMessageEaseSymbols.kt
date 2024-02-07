@@ -334,8 +334,8 @@ val KB_EN_MESSAGEEASE_SYMBOLS_MAIN =
                                 ),
                             SwipeDirection.BOTTOM_RIGHT to
                                 KeyC(
-                                    display = KeyDisplay.TextDisplay(":"),
-                                    action = KeyAction.CommitText(":"),
+                                    display = KeyDisplay.TextDisplay(">|"),
+                                    action = KeyAction.CommitText("\t"),
                                     color = ColorVariant.MUTED,
                                 ),
                             SwipeDirection.LEFT to
@@ -782,8 +782,8 @@ val KB_EN_MESSAGEEASE_SYMBOLS_SHIFTED =
                                 ),
                             SwipeDirection.BOTTOM_RIGHT to
                                 KeyC(
-                                    display = KeyDisplay.TextDisplay(":"),
-                                    action = KeyAction.CommitText(":"),
+                                    display = KeyDisplay.TextDisplay(">|"),
+                                    action = KeyAction.CommitText("\t"),
                                     color = ColorVariant.MUTED,
                                 ),
                         ),
@@ -892,12 +892,12 @@ val KB_EN_MESSAGEEASE_SYMBOLS_SHIFTED =
 
 val KB_EN_MESSAGEEASE_SYMBOLS: KeyboardDefinition =
     KeyboardDefinition(
-        title = "english symbols messageease",
+        title = "english symbols messagease",
         modes =
             KeyboardDefinitionModes(
                 main = KB_EN_MESSAGEEASE_SYMBOLS_MAIN,
                 shifted = KB_EN_MESSAGEEASE_SYMBOLS_SHIFTED,
-                numeric = NUMERIC_KEYBOARD,
+                numeric = NUMERIC_MESSAGEASE,
             ),
         settings =
             KeyboardDefinitionSettings(
