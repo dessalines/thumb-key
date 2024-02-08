@@ -264,6 +264,12 @@ val KB_ES_MESSAGEEASE_MAIN =
                                     action = KeyAction.CommitText("'"),
                                     color = ColorVariant.MUTED,
                                 ),
+                            SwipeDirection.TOP_LEFT to
+                                    KeyC(
+                                        display = KeyDisplay.TextDisplay("\""),
+                                        action = KeyAction.CommitText("\""),
+                                        color = ColorVariant.MUTED,
+                                    ),
                             SwipeDirection.RIGHT to
                                 KeyC(
                                     display = KeyDisplay.TextDisplay("z"),
@@ -571,6 +577,12 @@ val KB_ES_MESSAGEEASE_SHIFTED =
                                 KeyC(
                                     display = KeyDisplay.TextDisplay("'"),
                                     action = KeyAction.CommitText("'"),
+                                    color = ColorVariant.MUTED,
+                                ),
+                            SwipeDirection.TOP_LEFT to
+                                KeyC(
+                                    display = KeyDisplay.TextDisplay("\""),
+                                    action = KeyAction.CommitText("\""),
                                     color = ColorVariant.MUTED,
                                 ),
                             SwipeDirection.RIGHT to
