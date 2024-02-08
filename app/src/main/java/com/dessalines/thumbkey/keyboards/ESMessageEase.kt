@@ -1,7 +1,6 @@
 package com.dessalines.thumbkey.keyboards
 
 import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.outlined.Abc
 import androidx.compose.material.icons.outlined.ArrowDropDown
 import androidx.compose.material.icons.outlined.ArrowDropUp
 import androidx.compose.material.icons.outlined.Copyright
@@ -17,7 +16,6 @@ import com.dessalines.thumbkey.utils.KeyboardDefinition
 import com.dessalines.thumbkey.utils.KeyboardDefinitionModes
 import com.dessalines.thumbkey.utils.SwipeDirection
 import com.dessalines.thumbkey.utils.SwipeNWay
-import com.dessalines.thumbkey.utils.getLocalCurrency
 
 val KB_ES_MESSAGEEASE_MAIN =
     KeyboardC(
@@ -641,7 +639,6 @@ val KB_ES_MESSAGEEASE_SHIFTED =
             ),
         ),
     )
-
 
 val KB_ES_MESSAGEEASE: KeyboardDefinition =
     KeyboardDefinition(
