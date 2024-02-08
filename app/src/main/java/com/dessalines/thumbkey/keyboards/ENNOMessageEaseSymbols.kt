@@ -170,7 +170,7 @@ val KB_EN_NO_MESSAGEASE_SYMBOLS_MAIN =
                             SwipeDirection.TOP to
                                 KeyC(
                                     display = KeyDisplay.TextDisplay("æ"),
-                                    action = KeyAction.CommitText("Æ"),
+                                    action = KeyAction.CommitText("æ"),
                                 ),
                             SwipeDirection.TOP_RIGHT to
                                 KeyC(
@@ -620,7 +620,7 @@ val KB_EN_NO_MESSAGEASE_SYMBOLS_SHIFTED =
                             SwipeDirection.TOP to
                                 KeyC(
                                     display = KeyDisplay.TextDisplay("Æ"),
-                                    action = KeyAction.CommitText("æ"),
+                                    action = KeyAction.CommitText("Æ"),
                                 ),
                             SwipeDirection.TOP_RIGHT to
                                 KeyC(
