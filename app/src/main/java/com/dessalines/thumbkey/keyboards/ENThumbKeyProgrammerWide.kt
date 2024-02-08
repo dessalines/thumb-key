@@ -943,16 +943,7 @@ val NUMERIC_KEYBOARD_WIDE =
                                 ),
                         ),
                 ),
-                KeyItemC(
-                    center =
-                        KeyC(
-                            display = KeyDisplay.IconDisplay(Icons.Outlined.Abc),
-                            action = KeyAction.ToggleNumericMode(false),
-                            size = FontSizeVariant.LARGE,
-                            color = ColorVariant.PRIMARY,
-                        ),
-                    backgroundColor = ColorVariant.SURFACE_VARIANT,
-                ),
+                ABC_KEY_ITEM,
             ),
             listOf(
                 SPACEBAR_ALL_SYMBOLS,
