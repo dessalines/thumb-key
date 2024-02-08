@@ -1,6 +1,7 @@
 package com.dessalines.thumbkey.keyboards
 
 import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.outlined.Abc
 import androidx.compose.material.icons.outlined.ArrowDropDown
 import androidx.compose.material.icons.outlined.ArrowDropUp
 import androidx.compose.material.icons.outlined.Copyright
@@ -16,6 +17,7 @@ import com.dessalines.thumbkey.utils.KeyboardDefinition
 import com.dessalines.thumbkey.utils.KeyboardDefinitionModes
 import com.dessalines.thumbkey.utils.SwipeDirection
 import com.dessalines.thumbkey.utils.SwipeNWay
+import com.dessalines.thumbkey.utils.getLocalCurrency
 
 val KB_ES_MESSAGEEASE_MAIN =
     KeyboardC(
@@ -41,6 +43,11 @@ val KB_ES_MESSAGEEASE_MAIN =
                                     display = KeyDisplay.TextDisplay("á"),
                                     action = KeyAction.CommitText("á"),
                                 ),
+                            SwipeDirection.RIGHT to
+                                KeyC(
+                                    display = KeyDisplay.TextDisplay("-"),
+                                    action = KeyAction.CommitText("-"),
+                                ),
                         ),
                 ),
                 KeyItemC(
@@ -60,8 +67,8 @@ val KB_ES_MESSAGEEASE_MAIN =
                                 ),
                             SwipeDirection.RIGHT to
                                 KeyC(
-                                    display = KeyDisplay.TextDisplay("¡"),
-                                    action = KeyAction.CommitText("¡"),
+                                    display = KeyDisplay.TextDisplay("!"),
+                                    action = KeyAction.CommitText("!"),
                                     color = ColorVariant.MUTED,
                                 ),
                             SwipeDirection.BOTTOM to
@@ -93,8 +100,8 @@ val KB_ES_MESSAGEEASE_MAIN =
                                 ),
                             SwipeDirection.LEFT to
                                 KeyC(
-                                    display = KeyDisplay.TextDisplay("¿"),
-                                    action = KeyAction.CommitText("¿"),
+                                    display = KeyDisplay.TextDisplay("?"),
+                                    action = KeyAction.CommitText("?"),
                                     color = ColorVariant.MUTED,
                                 ),
                         ),
@@ -122,11 +129,6 @@ val KB_ES_MESSAGEEASE_MAIN =
                                 KeyC(
                                     display = KeyDisplay.TextDisplay("k"),
                                     action = KeyAction.CommitText("k"),
-                                ),
-                            SwipeDirection.BOTTOM to
-                                KeyC(
-                                    display = KeyDisplay.TextDisplay("ç"),
-                                    action = KeyAction.CommitText("ç"),
                                 ),
                         ),
                 ),
@@ -234,6 +236,11 @@ val KB_ES_MESSAGEEASE_MAIN =
                                     display = KeyDisplay.TextDisplay("ó"),
                                     action = KeyAction.CommitText("ó"),
                                 ),
+                            SwipeDirection.RIGHT to
+                                KeyC(
+                                    display = KeyDisplay.TextDisplay("*"),
+                                    action = KeyAction.CommitText("*"),
+                                ),
                         ),
                 ),
                 KeyItemC(
@@ -264,8 +271,8 @@ val KB_ES_MESSAGEEASE_MAIN =
                                 ),
                             SwipeDirection.BOTTOM_RIGHT to
                                 KeyC(
-                                    display = KeyDisplay.TextDisplay("-"),
-                                    action = KeyAction.CommitText("-"),
+                                    display = KeyDisplay.TextDisplay(":"),
+                                    action = KeyAction.CommitText(":"),
                                     color = ColorVariant.MUTED,
                                 ),
                             SwipeDirection.BOTTOM to
@@ -338,6 +345,11 @@ val KB_ES_MESSAGEEASE_SHIFTED =
                                     display = KeyDisplay.TextDisplay("Á"),
                                     action = KeyAction.CommitText("Á"),
                                 ),
+                            SwipeDirection.RIGHT to
+                                    KeyC(
+                                        display = KeyDisplay.TextDisplay("-"),
+                                        action = KeyAction.CommitText("-"),
+                                    ),
                         ),
                 ),
                 KeyItemC(
@@ -357,8 +369,8 @@ val KB_ES_MESSAGEEASE_SHIFTED =
                                 ),
                             SwipeDirection.RIGHT to
                                 KeyC(
-                                    display = KeyDisplay.TextDisplay("¡"),
-                                    action = KeyAction.CommitText("¡"),
+                                    display = KeyDisplay.TextDisplay("!"),
+                                    action = KeyAction.CommitText("!"),
                                     color = ColorVariant.MUTED,
                                 ),
                             SwipeDirection.BOTTOM to
@@ -390,8 +402,8 @@ val KB_ES_MESSAGEEASE_SHIFTED =
                                 ),
                             SwipeDirection.LEFT to
                                 KeyC(
-                                    display = KeyDisplay.TextDisplay("¿"),
-                                    action = KeyAction.CommitText("¿"),
+                                    display = KeyDisplay.TextDisplay("?"),
+                                    action = KeyAction.CommitText("?"),
                                     color = ColorVariant.MUTED,
                                 ),
                         ),
@@ -419,11 +431,6 @@ val KB_ES_MESSAGEEASE_SHIFTED =
                                 KeyC(
                                     display = KeyDisplay.TextDisplay("K"),
                                     action = KeyAction.CommitText("K"),
-                                ),
-                            SwipeDirection.BOTTOM to
-                                KeyC(
-                                    display = KeyDisplay.TextDisplay("Ç"),
-                                    action = KeyAction.CommitText("Ç"),
                                 ),
                         ),
                 ),
@@ -538,6 +545,11 @@ val KB_ES_MESSAGEEASE_SHIFTED =
                                     display = KeyDisplay.TextDisplay("Ó"),
                                     action = KeyAction.CommitText("Ó"),
                                 ),
+                            SwipeDirection.RIGHT to
+                                KeyC(
+                                    display = KeyDisplay.TextDisplay("*"),
+                                    action = KeyAction.CommitText("*"),
+                                ),
                         ),
                 ),
                 KeyItemC(
@@ -568,8 +580,8 @@ val KB_ES_MESSAGEEASE_SHIFTED =
                                 ),
                             SwipeDirection.BOTTOM_RIGHT to
                                 KeyC(
-                                    display = KeyDisplay.TextDisplay("-"),
-                                    action = KeyAction.CommitText("-"),
+                                    display = KeyDisplay.TextDisplay(":"),
+                                    action = KeyAction.CommitText(":"),
                                     color = ColorVariant.MUTED,
                                 ),
                             SwipeDirection.BOTTOM to
@@ -618,6 +630,351 @@ val KB_ES_MESSAGEEASE_SHIFTED =
         ),
     )
 
+val KB_ES_MESSAGEEASE_NUM =
+    KeyboardC(
+        listOf(
+            listOf(
+                KeyItemC(
+                    center =
+                    KeyC(
+                        display = KeyDisplay.TextDisplay("1"),
+                        action = KeyAction.CommitText("1"),
+                        size = FontSizeVariant.LARGE,
+                        color = ColorVariant.PRIMARY,
+                    ),
+                    swipes =
+                    buildMap {
+                        put(
+                            SwipeDirection.BOTTOM_LEFT,
+                            KeyC(
+                                display = KeyDisplay.TextDisplay("$"),
+                                action = KeyAction.CommitText("$"),
+                            ),
+                        )
+                        put(
+                            SwipeDirection.RIGHT,
+                            KeyC(
+                                display = KeyDisplay.TextDisplay("-"),
+                                action = KeyAction.CommitText("-"),
+                            ),
+                        )
+                        getLocalCurrency()?.let {
+                            if (it !in setOf("$", "£", "€")) {
+                                put(
+                                    SwipeDirection.BOTTOM_RIGHT,
+                                    KeyC(
+                                        display = KeyDisplay.TextDisplay(it),
+                                        action = KeyAction.CommitText(it),
+                                    ),
+                                )
+                            }
+                        }
+                    },
+                ),
+                KeyItemC(
+                    center =
+                    KeyC(
+                        display = KeyDisplay.TextDisplay("2"),
+                        action = KeyAction.CommitText("2"),
+                        size = FontSizeVariant.LARGE,
+                        color = ColorVariant.PRIMARY,
+                    ),
+                    swipes =
+                    mapOf(
+                        SwipeDirection.TOP_LEFT to
+                                KeyC(
+                                    display = KeyDisplay.TextDisplay("`"),
+                                    action = KeyAction.CommitText("`"),
+                                ),
+                        SwipeDirection.TOP to
+                                KeyC(
+                                    display = KeyDisplay.TextDisplay("^"),
+                                    action = KeyAction.CommitText("^"),
+                                ),
+                        SwipeDirection.TOP_RIGHT to
+                                KeyC(
+                                    display = KeyDisplay.TextDisplay("´"),
+                                    action = KeyAction.CommitText("´"),
+                                ),
+                        SwipeDirection.RIGHT to
+                                KeyC(
+                                    display = KeyDisplay.TextDisplay("¡"),
+                                    action = KeyAction.CommitText("¡"),
+                                ),
+                        SwipeDirection.BOTTOM_RIGHT to
+                                KeyC(
+                                    display = KeyDisplay.TextDisplay("\\"),
+                                    action = KeyAction.CommitText("\\"),
+                                ),
+                        SwipeDirection.BOTTOM_LEFT to
+                                KeyC(
+                                    display = KeyDisplay.TextDisplay("/"),
+                                    action = KeyAction.CommitText("/"),
+                                ),
+                        SwipeDirection.LEFT to
+                                KeyC(
+                                    display = KeyDisplay.TextDisplay("+"),
+                                    action = KeyAction.CommitText("+"),
+                                ),
+                    ),
+                ),
+                KeyItemC(
+                    center =
+                    KeyC(
+                        display = KeyDisplay.TextDisplay("3"),
+                        action = KeyAction.CommitText("3"),
+                        size = FontSizeVariant.LARGE,
+                        color = ColorVariant.PRIMARY,
+                    ),
+                    swipes =
+                    mapOf(
+                        SwipeDirection.LEFT to
+                                KeyC(
+                                    display = KeyDisplay.TextDisplay("¿"),
+                                    action = KeyAction.CommitText("¿"),
+                                ),
+                        SwipeDirection.BOTTOM_RIGHT to
+                                KeyC(
+                                    display = KeyDisplay.TextDisplay("€"),
+                                    action = KeyAction.CommitText("€"),
+                                ),
+                        SwipeDirection.BOTTOM_LEFT to
+                                KeyC(
+                                    display = KeyDisplay.TextDisplay("£"),
+                                    action = KeyAction.CommitText("£"),
+                                ),
+                        SwipeDirection.BOTTOM to
+                                KeyC(
+                                    display = KeyDisplay.TextDisplay("="),
+                                    action = KeyAction.CommitText("="),
+                                ),
+                    ),
+                ),
+                EMOJI_KEY_ITEM,
+            ),
+            listOf(
+                KeyItemC(
+                    center =
+                    KeyC(
+                        display = KeyDisplay.TextDisplay("4"),
+                        action = KeyAction.CommitText("4"),
+                        size = FontSizeVariant.LARGE,
+                        color = ColorVariant.PRIMARY,
+                    ),
+                    swipes =
+                    mapOf(
+                        SwipeDirection.TOP_LEFT to
+                                KeyC(
+                                    display = KeyDisplay.TextDisplay("{"),
+                                    action = KeyAction.CommitText("{"),
+                                ),
+                        SwipeDirection.TOP_RIGHT to
+                                KeyC(
+                                    display = KeyDisplay.TextDisplay("%"),
+                                    action = KeyAction.CommitText("%"),
+                                ),
+                        SwipeDirection.BOTTOM_RIGHT to
+                                KeyC(
+                                    display = KeyDisplay.TextDisplay("_"),
+                                    action = KeyAction.CommitText("_"),
+                                ),
+                        SwipeDirection.BOTTOM_LEFT to
+                                KeyC(
+                                    display = KeyDisplay.TextDisplay("["),
+                                    action = KeyAction.CommitText("["),
+                                ),
+                        SwipeDirection.LEFT to
+                                KeyC(
+                                    display = KeyDisplay.TextDisplay("("),
+                                    action = KeyAction.CommitText("("),
+                                ),
+                    ),
+                ),
+                KeyItemC(
+                    center =
+                    KeyC(
+                        display = KeyDisplay.TextDisplay("5"),
+                        action = KeyAction.CommitText("5"),
+                        size = FontSizeVariant.LARGE,
+                        color = ColorVariant.PRIMARY,
+                    ),
+                    swipes = mapOf(
+                        SwipeDirection.TOP to
+                            KeyC(
+                                display = KeyDisplay.TextDisplay("¬"),
+                                action = KeyAction.CommitText("¬"),
+                            ),
+                    )
+                ),
+                KeyItemC(
+                    center =
+                    KeyC(
+                        display = KeyDisplay.TextDisplay("6"),
+                        action = KeyAction.CommitText("6"),
+                        size = FontSizeVariant.LARGE,
+                        color = ColorVariant.PRIMARY,
+                    ),
+                    swipes =
+                    mapOf(
+                        SwipeDirection.TOP_LEFT to
+                                KeyC(
+                                    display = KeyDisplay.TextDisplay("|"),
+                                    action = KeyAction.CommitText("|"),
+                                ),
+                        SwipeDirection.TOP_RIGHT to
+                                KeyC(
+                                    display = KeyDisplay.TextDisplay("}"),
+                                    action = KeyAction.CommitText("}"),
+                                ),
+                        SwipeDirection.RIGHT to
+                                KeyC(
+                                    display = KeyDisplay.TextDisplay(")"),
+                                    action = KeyAction.CommitText(")"),
+                                ),
+                        SwipeDirection.BOTTOM_RIGHT to
+                                KeyC(
+                                    display = KeyDisplay.TextDisplay("]"),
+                                    action = KeyAction.CommitText("]"),
+                                ),
+                        SwipeDirection.BOTTOM_LEFT to
+                                KeyC(
+                                    display = KeyDisplay.TextDisplay("@"),
+                                    action = KeyAction.CommitText("@"),
+                                ),
+                    ),
+                ),
+                KeyItemC(
+                    center =
+                    KeyC(
+                        display = KeyDisplay.IconDisplay(Icons.Outlined.Abc),
+                        action = KeyAction.ToggleNumericMode(false),
+                        size = FontSizeVariant.LARGE,
+                        color = ColorVariant.PRIMARY,
+                    ),
+                    backgroundColor = ColorVariant.SURFACE_VARIANT,
+                ),
+            ),
+            listOf(
+                KeyItemC(
+                    center =
+                    KeyC(
+                        display = KeyDisplay.TextDisplay("7"),
+                        action = KeyAction.CommitText("7"),
+                        size = FontSizeVariant.LARGE,
+                        color = ColorVariant.PRIMARY,
+                    ),
+                    swipes =
+                    mapOf(
+                        SwipeDirection.TOP_LEFT to
+                                KeyC(
+                                    display = KeyDisplay.TextDisplay("~"),
+                                    action = KeyAction.CommitText("~"),
+                                ),
+                          SwipeDirection.BOTTOM_LEFT to
+                                KeyC(
+                                    display = KeyDisplay.TextDisplay("<"),
+                                    action = KeyAction.CommitText("<"),
+                                ),
+                        SwipeDirection.RIGHT to
+                            KeyC(
+                                display = KeyDisplay.TextDisplay("*"),
+                                action = KeyAction.CommitText("*"),
+                            ),
+                    ),
+                ),
+                KeyItemC(
+                    center =
+                    KeyC(
+                        display = KeyDisplay.TextDisplay("8"),
+                        action = KeyAction.CommitText("8"),
+                        size = FontSizeVariant.LARGE,
+                        color = ColorVariant.PRIMARY,
+                    ),
+                    swipes =
+                    mapOf(
+                        SwipeDirection.TOP_LEFT to
+                                KeyC(
+                                    display = KeyDisplay.TextDisplay("\""),
+                                    action = KeyAction.CommitText("\""),
+                                ),
+                        SwipeDirection.TOP_RIGHT to
+                                KeyC(
+                                    display = KeyDisplay.TextDisplay("'"),
+                                    action = KeyAction.CommitText("'"),
+                                ),
+                        SwipeDirection.BOTTOM_RIGHT to
+                                KeyC(
+                                    display = KeyDisplay.TextDisplay(":"),
+                                    action = KeyAction.CommitText(":"),
+                                ),
+                        SwipeDirection.BOTTOM to
+                                KeyC(
+                                    display = KeyDisplay.TextDisplay("."),
+                                    action = KeyAction.CommitText("."),
+                                ),
+                        SwipeDirection.BOTTOM_LEFT to
+                                KeyC(
+                                    display = KeyDisplay.TextDisplay(","),
+                                    action = KeyAction.CommitText(","),
+                                ),
+                    ),
+                ),
+                KeyItemC(
+                    center =
+                    KeyC(
+                        display = KeyDisplay.TextDisplay("9"),
+                        action = KeyAction.CommitText("9"),
+                        size = FontSizeVariant.LARGE,
+                        color = ColorVariant.PRIMARY,
+                    ),
+                    swipes =
+                    mapOf(
+                        SwipeDirection.TOP to
+                                KeyC(
+                                    display = KeyDisplay.TextDisplay("&"),
+                                    action = KeyAction.CommitText("&"),
+                                ),
+                        SwipeDirection.TOP_RIGHT to
+                                KeyC(
+                                    display = KeyDisplay.TextDisplay("°"),
+                                    action = KeyAction.CommitText("°"),
+                                ),
+                        SwipeDirection.BOTTOM_RIGHT to
+                                KeyC(
+                                    display = KeyDisplay.TextDisplay(">"),
+                                    action = KeyAction.CommitText(">"),
+                                ),
+                        SwipeDirection.BOTTOM_LEFT to
+                                KeyC(
+                                    display = KeyDisplay.TextDisplay(";"),
+                                    action = KeyAction.CommitText(";"),
+                                ),
+                        SwipeDirection.LEFT to
+                                KeyC(
+                                    display = KeyDisplay.TextDisplay("#"),
+                                    action = KeyAction.CommitText("#"),
+                                ),
+                    ),
+                ),
+                BACKSPACE_KEY_ITEM,
+            ),
+            listOf(
+                KeyItemC(
+                    center =
+                    KeyC(
+                        display = KeyDisplay.TextDisplay("0"),
+                        action = KeyAction.CommitText("0"),
+                        size = FontSizeVariant.LARGE,
+                        color = ColorVariant.PRIMARY,
+                    ),
+                    widthMultiplier = 2,
+                ),
+                SPACEBAR_SKINNY_KEY_ITEM,
+                RETURN_KEY_ITEM,
+            ),
+        ),
+    )
+
 val KB_ES_MESSAGEEASE: KeyboardDefinition =
     KeyboardDefinition(
         title = "español messageease",
@@ -625,6 +982,6 @@ val KB_ES_MESSAGEEASE: KeyboardDefinition =
             KeyboardDefinitionModes(
                 main = KB_ES_MESSAGEEASE_MAIN,
                 shifted = KB_ES_MESSAGEEASE_SHIFTED,
-                numeric = NUMERIC_KEYBOARD,
+                numeric = KB_ES_MESSAGEEASE_NUM,
             ),
     )
