@@ -12,6 +12,7 @@
 local.properties
 app/release
 app/schemas
+app/src/main/assets
 .project
 .settings
 .classpath

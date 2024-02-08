@@ -43,6 +43,8 @@ val DONATION_MARKDOWN =
     - [Support on Liberapay](https://liberapay.com/dessalines).
     - [Support on Patreon](https://www.patreon.com/dessalines).
 
+    ---
+    
     """.trimIndent()
 
 @OptIn(ExperimentalComposeUiApi::class)
@@ -62,7 +64,7 @@ fun ShowChangelog(appSettingsViewModel: AppSettingsViewModel) {
             val scrollState = rememberScrollState()
             val markdown by appSettingsViewModel.changelog.collectAsState()
             LaunchedEffect(appSettingsViewModel) {
-                appSettingsViewModel.updateChangelog()
+                appSettingsViewModel.updateChangelog(ctx)
             }
 
             AlertDialog(
