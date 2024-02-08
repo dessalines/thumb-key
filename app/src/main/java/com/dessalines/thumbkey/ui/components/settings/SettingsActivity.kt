@@ -49,9 +49,10 @@ import com.dessalines.thumbkey.db.DEFAULT_HIDE_SYMBOLS
 import com.dessalines.thumbkey.db.DEFAULT_KEYBOARD_LAYOUT
 import com.dessalines.thumbkey.db.DEFAULT_KEY_BORDERS
 import com.dessalines.thumbkey.db.DEFAULT_KEY_BORDER_WIDTH
+import com.dessalines.thumbkey.db.DEFAULT_KEY_HEIGHT
 import com.dessalines.thumbkey.db.DEFAULT_KEY_PADDING
 import com.dessalines.thumbkey.db.DEFAULT_KEY_RADIUS
-import com.dessalines.thumbkey.db.DEFAULT_KEY_SIZE
+import com.dessalines.thumbkey.db.DEFAULT_KEY_WIDTH
 import com.dessalines.thumbkey.db.DEFAULT_MIN_SWIPE_LENGTH
 import com.dessalines.thumbkey.db.DEFAULT_POSITION
 import com.dessalines.thumbkey.db.DEFAULT_PUSHUP_SIZE
@@ -277,7 +278,8 @@ private fun resetAppSettingsToDefault(
             hideLetters = DEFAULT_HIDE_LETTERS,
             hideSymbols = DEFAULT_HIDE_SYMBOLS,
             keyBorders = DEFAULT_KEY_BORDERS,
-            keySize = DEFAULT_KEY_SIZE,
+            keyHeight = DEFAULT_KEY_HEIGHT,
+            keyWidth = DEFAULT_KEY_WIDTH,
             spacebarMultiTaps = DEFAULT_SPACEBAR_MULTITAPS,
             theme = DEFAULT_THEME,
             themeColor = DEFAULT_THEME_COLOR,

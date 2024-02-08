@@ -27,7 +27,8 @@ import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 import java.util.concurrent.Executors
 
-const val DEFAULT_KEY_SIZE = 64
+const val DEFAULT_KEY_HEIGHT = 64
+const val DEFAULT_KEY_WIDTH = 64
 const val DEFAULT_ANIMATION_SPEED = 250
 const val DEFAULT_ANIMATION_HELPER_SPEED = 250
 const val DEFAULT_POSITION = 0
@@ -57,10 +58,15 @@ const val DEFAULT_KEY_RADIUS = 0
 data class AppSettings(
     @PrimaryKey(autoGenerate = true) val id: Int,
     @ColumnInfo(
-        name = "key_size",
-        defaultValue = DEFAULT_KEY_SIZE.toString(),
+        name = "key_height",
+        defaultValue = DEFAULT_KEY_HEIGHT.toString(),
     )
-    val keySize: Int,
+    val keyHeight: Int,
+    @ColumnInfo(
+        name = "key_width",
+        defaultValue = DEFAULT_KEY_WIDTH.toString(),
+    )
+    val keyWidth: Int,
     @ColumnInfo(
         name = "animation_speed",
         defaultValue = DEFAULT_ANIMATION_SPEED.toString(),
@@ -214,9 +220,13 @@ data class LayoutsUpdate(
 data class LookAndFeelUpdate(
     val id: Int,
     @ColumnInfo(
-        name = "key_size",
+        name = "key_height",
     )
-    val keySize: Int,
+    val keyHeight: Int,
+    @ColumnInfo(
+        name = "key_width",
+    )
+    val keyWidth: Int,
     @ColumnInfo(
         name = "animation_speed",
     )

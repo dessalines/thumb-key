@@ -39,9 +39,10 @@ import com.dessalines.thumbkey.db.DEFAULT_HIDE_LETTERS
 import com.dessalines.thumbkey.db.DEFAULT_HIDE_SYMBOLS
 import com.dessalines.thumbkey.db.DEFAULT_KEYBOARD_LAYOUT
 import com.dessalines.thumbkey.db.DEFAULT_KEY_BORDER_WIDTH
+import com.dessalines.thumbkey.db.DEFAULT_KEY_HEIGHT
 import com.dessalines.thumbkey.db.DEFAULT_KEY_PADDING
 import com.dessalines.thumbkey.db.DEFAULT_KEY_RADIUS
-import com.dessalines.thumbkey.db.DEFAULT_KEY_SIZE
+import com.dessalines.thumbkey.db.DEFAULT_KEY_WIDTH
 import com.dessalines.thumbkey.db.DEFAULT_MIN_SWIPE_LENGTH
 import com.dessalines.thumbkey.db.DEFAULT_POSITION
 import com.dessalines.thumbkey.db.DEFAULT_PUSHUP_SIZE
@@ -130,17 +131,19 @@ fun KeyboardScreen(
     val backdropColor = MaterialTheme.colorScheme.background
     val backdropPadding = 6.dp
     val keyPadding = settings?.keyPadding ?: DEFAULT_KEY_PADDING
-    val legendSize = settings?.keySize ?: DEFAULT_KEY_SIZE
+    val legendHeight = settings?.keyHeight ?: DEFAULT_KEY_HEIGHT
+    val legendWidth = settings?.keyWidth ?: DEFAULT_KEY_WIDTH
     val keyRadius = settings?.keyRadius ?: DEFAULT_KEY_RADIUS
 
     val keyBorderWidthFloat = keyBorderWidth / 10.0f
     val keyBorderColour = MaterialTheme.colorScheme.outline
-    val keySize = legendSize + (keyPadding * 2.0f) + (keyBorderWidthFloat * 2.0f)
-    val cornerRadius = (keyRadius / 100.0f) * (keySize / 2.0f)
+    val keyHeight = legendHeight + (keyPadding * 2.0f) + (keyBorderWidthFloat * 2.0f)
+    val keyWidth = legendWidth + (keyPadding * 2.0f) + (keyBorderWidthFloat * 2.0f)
+    val cornerRadius = (keyRadius / 100.0f) * ((keyWidth + keyHeight) / 4.0f)
 
     if (mode == KeyboardMode.EMOJI) {
         val controllerKeys = listOf(EMOJI_BACK_KEY_ITEM, NUMERIC_KEY_ITEM, BACKSPACE_KEY_ITEM, RETURN_KEY_ITEM)
-        val keyboardHeight = Dp((keySize * controllerKeys.size) - (keyPadding * 2))
+        val keyboardHeight = Dp((keyHeight * controllerKeys.size) - (keyPadding * 2))
 
         ctx.currentInputConnection.requestCursorUpdates(0)
 
@@ -230,7 +233,8 @@ fun KeyboardScreen(
                             KeyboardKey(
                                 key = key,
                                 lastAction = lastAction,
-                                legendSize = legendSize,
+                                legendHeight = legendHeight,
+                                legendWidth = legendWidth,
                                 keyPadding = keyPadding,
                                 keyBorderWidth = keyBorderWidthFloat,
                                 keyRadius = cornerRadius,
@@ -347,7 +351,8 @@ fun KeyboardScreen(
                                 KeyboardKey(
                                     key = key,
                                     lastAction = lastAction,
-                                    legendSize = legendSize,
+                                    legendHeight = legendHeight,
+                                    legendWidth = legendWidth,
                                     keyPadding = keyPadding,
                                     keyBorderWidth = keyBorderWidthFloat,
                                     keyRadius = cornerRadius,

@@ -52,9 +52,10 @@ import com.dessalines.thumbkey.db.DEFAULT_HIDE_LETTERS
 import com.dessalines.thumbkey.db.DEFAULT_HIDE_SYMBOLS
 import com.dessalines.thumbkey.db.DEFAULT_KEY_BORDERS
 import com.dessalines.thumbkey.db.DEFAULT_KEY_BORDER_WIDTH
+import com.dessalines.thumbkey.db.DEFAULT_KEY_HEIGHT
 import com.dessalines.thumbkey.db.DEFAULT_KEY_PADDING
 import com.dessalines.thumbkey.db.DEFAULT_KEY_RADIUS
-import com.dessalines.thumbkey.db.DEFAULT_KEY_SIZE
+import com.dessalines.thumbkey.db.DEFAULT_KEY_WIDTH
 import com.dessalines.thumbkey.db.DEFAULT_POSITION
 import com.dessalines.thumbkey.db.DEFAULT_PUSHUP_SIZE
 import com.dessalines.thumbkey.db.DEFAULT_SOUND_ON_TAP
@@ -82,9 +83,13 @@ fun LookAndFeelActivity(
 
     val settings by appSettingsViewModel.appSettings.observeAsState()
 
-    val keySizeState =
+    val keyHeightState =
         rememberFloatSettingState(
-            (settings?.keySize ?: DEFAULT_KEY_SIZE).toFloat(),
+            (settings?.keyHeight ?: DEFAULT_KEY_HEIGHT).toFloat(),
+        )
+    val keyWidthState =
+        rememberFloatSettingState(
+            (settings?.keyWidth ?: DEFAULT_KEY_WIDTH).toFloat(),
         )
     val pushupSizeState =
         rememberFloatSettingState(
@@ -177,7 +182,8 @@ fun LookAndFeelActivity(
                         themeState.value = i
                         updateLookAndFeel(
                             appSettingsViewModel,
-                            keySizeState,
+                            keyHeightState,
+                            keyWidthState,
                             pushupSizeState,
                             animationSpeedState,
                             animationHelperSpeedState,
@@ -212,7 +218,8 @@ fun LookAndFeelActivity(
                         themeColorState.value = i
                         updateLookAndFeel(
                             appSettingsViewModel,
-                            keySizeState,
+                            keyHeightState,
+                            keyWidthState,
                             pushupSizeState,
                             animationSpeedState,
                             animationHelperSpeedState,
@@ -247,7 +254,8 @@ fun LookAndFeelActivity(
                         positionState.value = i
                         updateLookAndFeel(
                             appSettingsViewModel,
-                            keySizeState,
+                            keyHeightState,
+                            keyWidthState,
                             pushupSizeState,
                             animationSpeedState,
                             animationHelperSpeedState,
@@ -280,7 +288,8 @@ fun LookAndFeelActivity(
                     onCheckedChange = {
                         updateLookAndFeel(
                             appSettingsViewModel,
-                            keySizeState,
+                            keyHeightState,
+                            keyWidthState,
                             pushupSizeState,
                             animationSpeedState,
                             animationHelperSpeedState,
@@ -313,7 +322,8 @@ fun LookAndFeelActivity(
                     onCheckedChange = {
                         updateLookAndFeel(
                             appSettingsViewModel,
-                            keySizeState,
+                            keyHeightState,
+                            keyWidthState,
                             pushupSizeState,
                             animationSpeedState,
                             animationHelperSpeedState,
@@ -346,7 +356,8 @@ fun LookAndFeelActivity(
                     onCheckedChange = {
                         updateLookAndFeel(
                             appSettingsViewModel,
-                            keySizeState,
+                            keyHeightState,
+                            keyWidthState,
                             pushupSizeState,
                             animationSpeedState,
                             animationHelperSpeedState,
@@ -365,10 +376,10 @@ fun LookAndFeelActivity(
                         )
                     },
                 )
-                val keySizeStr = stringResource(R.string.key_size, keySizeState.value.toInt().toString())
+                val keyHeightStr = stringResource(R.string.key_height, keyHeightState.value.toInt().toString())
                 SettingsSlider(
                     valueRange = 10f..200f,
-                    state = keySizeState,
+                    state = keyHeightState,
                     icon = {
                         Icon(
                             imageVector = Icons.Outlined.FormatSize,
@@ -376,12 +387,49 @@ fun LookAndFeelActivity(
                         )
                     },
                     title = {
-                        Text(keySizeStr)
+                        Text(keyHeightStr)
                     },
                     onValueChangeFinished = {
                         updateLookAndFeel(
                             appSettingsViewModel,
-                            keySizeState,
+                            keyHeightState,
+                            keyWidthState,
+                            pushupSizeState,
+                            animationSpeedState,
+                            animationHelperSpeedState,
+                            positionState,
+                            keyBordersState,
+                            vibrateOnTapState,
+                            soundOnTapState,
+                            hideLettersState,
+                            hideSymbolsState,
+                            themeState,
+                            themeColorState,
+                            backdropEnabledState,
+                            keyPaddingState,
+                            keyBorderWidthState,
+                            keyRadiusState,
+                        )
+                    },
+                )
+                val keyWidthStr = stringResource(R.string.key_width, keyWidthState.value.toInt().toString())
+                SettingsSlider(
+                    valueRange = 10f..200f,
+                    state = keyWidthState,
+                    icon = {
+                        Icon(
+                            imageVector = Icons.Outlined.FormatSize,
+                            contentDescription = null,
+                        )
+                    },
+                    title = {
+                        Text(keyWidthStr)
+                    },
+                    onValueChangeFinished = {
+                        updateLookAndFeel(
+                            appSettingsViewModel,
+                            keyHeightState,
+                            keyWidthState,
                             pushupSizeState,
                             animationSpeedState,
                             animationHelperSpeedState,
@@ -416,7 +464,8 @@ fun LookAndFeelActivity(
                     onValueChangeFinished = {
                         updateLookAndFeel(
                             appSettingsViewModel,
-                            keySizeState,
+                            keyHeightState,
+                            keyWidthState,
                             pushupSizeState,
                             animationSpeedState,
                             animationHelperSpeedState,
@@ -451,7 +500,8 @@ fun LookAndFeelActivity(
                     onValueChangeFinished = {
                         updateLookAndFeel(
                             appSettingsViewModel,
-                            keySizeState,
+                            keyHeightState,
+                            keyWidthState,
                             pushupSizeState,
                             animationSpeedState,
                             animationHelperSpeedState,
@@ -486,7 +536,8 @@ fun LookAndFeelActivity(
                     onValueChangeFinished = {
                         updateLookAndFeel(
                             appSettingsViewModel,
-                            keySizeState,
+                            keyHeightState,
+                            keyWidthState,
                             pushupSizeState,
                             animationSpeedState,
                             animationHelperSpeedState,
@@ -521,7 +572,8 @@ fun LookAndFeelActivity(
                     onValueChangeFinished = {
                         updateLookAndFeel(
                             appSettingsViewModel,
-                            keySizeState,
+                            keyHeightState,
+                            keyWidthState,
                             pushupSizeState,
                             animationSpeedState,
                             animationHelperSpeedState,
@@ -556,7 +608,8 @@ fun LookAndFeelActivity(
                     onValueChangeFinished = {
                         updateLookAndFeel(
                             appSettingsViewModel,
-                            keySizeState,
+                            keyHeightState,
+                            keyWidthState,
                             pushupSizeState,
                             animationSpeedState,
                             animationHelperSpeedState,
@@ -597,7 +650,8 @@ fun LookAndFeelActivity(
                     onValueChangeFinished = {
                         updateLookAndFeel(
                             appSettingsViewModel,
-                            keySizeState,
+                            keyHeightState,
+                            keyWidthState,
                             pushupSizeState,
                             animationSpeedState,
                             animationHelperSpeedState,
@@ -634,7 +688,8 @@ fun LookAndFeelActivity(
                     onCheckedChange = {
                         updateLookAndFeel(
                             appSettingsViewModel,
-                            keySizeState,
+                            keyHeightState,
+                            keyWidthState,
                             pushupSizeState,
                             animationSpeedState,
                             animationHelperSpeedState,
@@ -667,7 +722,8 @@ fun LookAndFeelActivity(
                     onCheckedChange = {
                         updateLookAndFeel(
                             appSettingsViewModel,
-                            keySizeState,
+                            keyHeightState,
+                            keyWidthState,
                             pushupSizeState,
                             animationSpeedState,
                             animationHelperSpeedState,
@@ -695,7 +751,8 @@ fun LookAndFeelActivity(
 
 private fun updateLookAndFeel(
     appSettingsViewModel: AppSettingsViewModel,
-    keySizeState: SettingValueState<Float>,
+    keyHeightState: SettingValueState<Float>,
+    keyWidthState: SettingValueState<Float>,
     pushupSizeState: SettingValueState<Float>,
     animationSpeedState: SettingValueState<Float>,
     animationHelperSpeedState: SettingValueState<Float>,
@@ -715,7 +772,8 @@ private fun updateLookAndFeel(
     appSettingsViewModel.updateLookAndFeel(
         LookAndFeelUpdate(
             id = 1,
-            keySize = keySizeState.value.toInt(),
+            keyHeight = keyHeightState.value.toInt(),
+            keyWidth = keyWidthState.value.toInt(),
             pushupSize = pushupSizeState.value.toInt(),
             animationSpeed = animationSpeedState.value.toInt(),
             animationHelperSpeed = animationHelperSpeedState.value.toInt(),
