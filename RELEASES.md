@@ -1,3 +1,18 @@
+# Thumb-Key 2.6.13 (2024-02-08)
+
+## What's Changed
+
+- Added layout: english norwegian symbols messagease by @afreakk in #686
+- Adding local pre-tag changelog generation. by @dessalines in #688
+- Added adaptive icon. by @pxeemo in #672
+- Update ENPLThumbKey.kt by @michal-h-s in #674
+- Add additional prettier checks. by @dessalines in #670
+
+## New Contributors
+
+- @afreakk made their first contribution in #686
+- @michal-h-s made their first contribution in #674
+
 # Thumb-Key 2.6.12 (2024-02-05)
 
 ## What's Changed
