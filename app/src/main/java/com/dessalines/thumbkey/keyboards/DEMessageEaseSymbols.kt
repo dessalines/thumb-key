@@ -1507,7 +1507,7 @@ val KB_DE_MESSAGEEASE_SYMBOLS_NUMERIC_KEYBOARD =
 
 val KB_DE_MESSAGEEASE_SYMBOLS: KeyboardDefinition =
     KeyboardDefinition(
-        title = "deutsch symbols messageease",
+        title = "deutsch symbols messagease",
         modes =
             KeyboardDefinitionModes(
                 main = KB_DE_MESSAGEEASE_SYMBOLS_MAIN,
