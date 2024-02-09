@@ -27,10 +27,37 @@ val NUMERIC_KEYBOARD_MESSAGEASE =
                     swipes =
                         buildMap {
                             put(
+                                SwipeDirection.LEFT,
+                                KeyC(
+                                    display = KeyDisplay.TextDisplay("≤"),
+                                    action = KeyAction.CommitText("≤"),
+                                    color = ColorVariant.MUTED,
+                                ),
+                            )
+                            put(
                                 SwipeDirection.BOTTOM_LEFT,
                                 KeyC(
                                     display = KeyDisplay.TextDisplay("$"),
                                     action = KeyAction.CommitText("$"),
+                                    color = ColorVariant.MUTED,
+                                ),
+                            )
+                            put(
+                                SwipeDirection.TOP,
+                                KeyC(
+                                    // em dash/long minus
+                                    display = KeyDisplay.TextDisplay("—"),
+                                    action = KeyAction.CommitText("—"),
+                                    color = ColorVariant.MUTED,
+                                ),
+                            )
+                            put(
+                                SwipeDirection.TOP_RIGHT,
+                                KeyC(
+                                    // en dash/long minus
+                                    display = KeyDisplay.TextDisplay("–"),
+                                    action = KeyAction.CommitText("–"),
+                                    color = ColorVariant.MUTED,
                                 ),
                             )
                             put(
@@ -38,6 +65,7 @@ val NUMERIC_KEYBOARD_MESSAGEASE =
                                 KeyC(
                                     display = KeyDisplay.TextDisplay("-"),
                                     action = KeyAction.CommitText("-"),
+                                    color = ColorVariant.MUTED,
                                 ),
                             )
                             getLocalCurrency()?.let {
@@ -47,6 +75,7 @@ val NUMERIC_KEYBOARD_MESSAGEASE =
                                         KeyC(
                                             display = KeyDisplay.TextDisplay(it),
                                             action = KeyAction.CommitText(it),
+                                            color = ColorVariant.MUTED,
                                         ),
                                     )
                                 }
@@ -67,36 +96,49 @@ val NUMERIC_KEYBOARD_MESSAGEASE =
                                 KeyC(
                                     display = KeyDisplay.TextDisplay("`"),
                                     action = KeyAction.CommitText("`"),
+                                    color = ColorVariant.MUTED,
                                 ),
                             SwipeDirection.TOP to
                                 KeyC(
                                     display = KeyDisplay.TextDisplay("^"),
                                     action = KeyAction.CommitText("^"),
+                                    color = ColorVariant.MUTED,
                                 ),
                             SwipeDirection.TOP_RIGHT to
                                 KeyC(
                                     display = KeyDisplay.TextDisplay("´"),
                                     action = KeyAction.CommitText("´"),
+                                    color = ColorVariant.MUTED,
                                 ),
                             SwipeDirection.RIGHT to
                                 KeyC(
+                                    display = KeyDisplay.TextDisplay("!"),
+                                    action = KeyAction.CommitText("!"),
+                                    color = ColorVariant.MUTED,
+                                ),
+                            SwipeDirection.BOTTOM to
+                                KeyC(
                                     display = KeyDisplay.TextDisplay("¡"),
                                     action = KeyAction.CommitText("¡"),
+                                    color = ColorVariant.MUTED,
                                 ),
                             SwipeDirection.BOTTOM_RIGHT to
                                 KeyC(
                                     display = KeyDisplay.TextDisplay("\\"),
                                     action = KeyAction.CommitText("\\"),
+                                    color = ColorVariant.MUTED,
                                 ),
                             SwipeDirection.BOTTOM_LEFT to
                                 KeyC(
                                     display = KeyDisplay.TextDisplay("/"),
                                     action = KeyAction.CommitText("/"),
+                                    color = ColorVariant.MUTED,
                                 ),
                             SwipeDirection.LEFT to
                                 KeyC(
                                     display = KeyDisplay.TextDisplay("+"),
                                     action = KeyAction.CommitText("+"),
+                                    color = ColorVariant.MUTED,
                                 ),
                         ),
                 ),
@@ -110,25 +152,41 @@ val NUMERIC_KEYBOARD_MESSAGEASE =
                         ),
                     swipes =
                         mapOf(
-                            SwipeDirection.LEFT to
+                            SwipeDirection.TOP_LEFT to
                                 KeyC(
                                     display = KeyDisplay.TextDisplay("¿"),
                                     action = KeyAction.CommitText("¿"),
+                                    color = ColorVariant.MUTED,
+                                ),
+                            SwipeDirection.LEFT to
+                                KeyC(
+                                    display = KeyDisplay.TextDisplay("?"),
+                                    action = KeyAction.CommitText("?"),
+                                    color = ColorVariant.MUTED,
                                 ),
                             SwipeDirection.BOTTOM_RIGHT to
                                 KeyC(
                                     display = KeyDisplay.TextDisplay("€"),
                                     action = KeyAction.CommitText("€"),
+                                    color = ColorVariant.MUTED,
                                 ),
                             SwipeDirection.BOTTOM_LEFT to
                                 KeyC(
                                     display = KeyDisplay.TextDisplay("£"),
                                     action = KeyAction.CommitText("£"),
+                                    color = ColorVariant.MUTED,
                                 ),
                             SwipeDirection.BOTTOM to
                                 KeyC(
                                     display = KeyDisplay.TextDisplay("="),
                                     action = KeyAction.CommitText("="),
+                                    color = ColorVariant.MUTED,
+                                ),
+                            SwipeDirection.RIGHT to
+                                KeyC(
+                                    display = KeyDisplay.TextDisplay("≥"),
+                                    action = KeyAction.CommitText("≥"),
+                                    color = ColorVariant.MUTED,
                                 ),
                         ),
                 ),
@@ -149,26 +207,31 @@ val NUMERIC_KEYBOARD_MESSAGEASE =
                                 KeyC(
                                     display = KeyDisplay.TextDisplay("{"),
                                     action = KeyAction.CommitText("{"),
+                                    color = ColorVariant.MUTED,
                                 ),
                             SwipeDirection.TOP_RIGHT to
                                 KeyC(
                                     display = KeyDisplay.TextDisplay("%"),
                                     action = KeyAction.CommitText("%"),
+                                    color = ColorVariant.MUTED,
                                 ),
                             SwipeDirection.BOTTOM_RIGHT to
                                 KeyC(
                                     display = KeyDisplay.TextDisplay("_"),
                                     action = KeyAction.CommitText("_"),
+                                    color = ColorVariant.MUTED,
                                 ),
                             SwipeDirection.BOTTOM_LEFT to
                                 KeyC(
                                     display = KeyDisplay.TextDisplay("["),
                                     action = KeyAction.CommitText("["),
+                                    color = ColorVariant.MUTED,
                                 ),
                             SwipeDirection.LEFT to
                                 KeyC(
                                     display = KeyDisplay.TextDisplay("("),
                                     action = KeyAction.CommitText("("),
+                                    color = ColorVariant.MUTED,
                                 ),
                         ),
                 ),
@@ -182,10 +245,29 @@ val NUMERIC_KEYBOARD_MESSAGEASE =
                         ),
                     swipes =
                         mapOf(
+                            SwipeDirection.LEFT to
+                                KeyC(
+                                    display = KeyDisplay.TextDisplay("÷"),
+                                    action = KeyAction.CommitText("÷"),
+                                    color = ColorVariant.MUTED,
+                                ),
                             SwipeDirection.TOP to
                                 KeyC(
                                     display = KeyDisplay.TextDisplay("¬"),
                                     action = KeyAction.CommitText("¬"),
+                                    color = ColorVariant.MUTED,
+                                ),
+                            SwipeDirection.BOTTOM to
+                                KeyC(
+                                    display = KeyDisplay.TextDisplay("×"),
+                                    action = KeyAction.CommitText("×"),
+                                    color = ColorVariant.MUTED,
+                                ),
+                            SwipeDirection.RIGHT to
+                                KeyC(
+                                    display = KeyDisplay.TextDisplay("±"),
+                                    action = KeyAction.CommitText("±"),
+                                    color = ColorVariant.MUTED,
                                 ),
                         ),
                 ),
@@ -203,26 +285,31 @@ val NUMERIC_KEYBOARD_MESSAGEASE =
                                 KeyC(
                                     display = KeyDisplay.TextDisplay("|"),
                                     action = KeyAction.CommitText("|"),
+                                    color = ColorVariant.MUTED,
                                 ),
                             SwipeDirection.TOP_RIGHT to
                                 KeyC(
                                     display = KeyDisplay.TextDisplay("}"),
                                     action = KeyAction.CommitText("}"),
+                                    color = ColorVariant.MUTED,
                                 ),
                             SwipeDirection.RIGHT to
                                 KeyC(
                                     display = KeyDisplay.TextDisplay(")"),
                                     action = KeyAction.CommitText(")"),
+                                    color = ColorVariant.MUTED,
                                 ),
                             SwipeDirection.BOTTOM_RIGHT to
                                 KeyC(
                                     display = KeyDisplay.TextDisplay("]"),
                                     action = KeyAction.CommitText("]"),
+                                    color = ColorVariant.MUTED,
                                 ),
                             SwipeDirection.BOTTOM_LEFT to
                                 KeyC(
                                     display = KeyDisplay.TextDisplay("@"),
                                     action = KeyAction.CommitText("@"),
+                                    color = ColorVariant.MUTED,
                                 ),
                         ),
                 ),
@@ -252,16 +339,19 @@ val NUMERIC_KEYBOARD_MESSAGEASE =
                                 KeyC(
                                     display = KeyDisplay.TextDisplay("~"),
                                     action = KeyAction.CommitText("~"),
+                                    color = ColorVariant.MUTED,
                                 ),
-                            SwipeDirection.BOTTOM_LEFT to
+                            SwipeDirection.LEFT to
                                 KeyC(
                                     display = KeyDisplay.TextDisplay("<"),
                                     action = KeyAction.CommitText("<"),
+                                    color = ColorVariant.MUTED,
                                 ),
                             SwipeDirection.RIGHT to
                                 KeyC(
                                     display = KeyDisplay.TextDisplay("*"),
                                     action = KeyAction.CommitText("*"),
+                                    color = ColorVariant.MUTED,
                                 ),
                         ),
                 ),
@@ -279,26 +369,31 @@ val NUMERIC_KEYBOARD_MESSAGEASE =
                                 KeyC(
                                     display = KeyDisplay.TextDisplay("\""),
                                     action = KeyAction.CommitText("\""),
+                                    color = ColorVariant.MUTED,
                                 ),
                             SwipeDirection.TOP_RIGHT to
                                 KeyC(
                                     display = KeyDisplay.TextDisplay("'"),
                                     action = KeyAction.CommitText("'"),
+                                    color = ColorVariant.MUTED,
                                 ),
                             SwipeDirection.BOTTOM_RIGHT to
                                 KeyC(
                                     display = KeyDisplay.TextDisplay(":"),
                                     action = KeyAction.CommitText(":"),
+                                    color = ColorVariant.MUTED,
                                 ),
                             SwipeDirection.BOTTOM to
                                 KeyC(
                                     display = KeyDisplay.TextDisplay("."),
                                     action = KeyAction.CommitText("."),
+                                    color = ColorVariant.MUTED,
                                 ),
                             SwipeDirection.BOTTOM_LEFT to
                                 KeyC(
                                     display = KeyDisplay.TextDisplay(","),
                                     action = KeyAction.CommitText(","),
+                                    color = ColorVariant.MUTED,
                                 ),
                         ),
                 ),
@@ -316,26 +411,31 @@ val NUMERIC_KEYBOARD_MESSAGEASE =
                                 KeyC(
                                     display = KeyDisplay.TextDisplay("&"),
                                     action = KeyAction.CommitText("&"),
+                                    color = ColorVariant.MUTED,
                                 ),
                             SwipeDirection.TOP_RIGHT to
                                 KeyC(
                                     display = KeyDisplay.TextDisplay("°"),
                                     action = KeyAction.CommitText("°"),
+                                    color = ColorVariant.MUTED,
                                 ),
-                            SwipeDirection.BOTTOM_RIGHT to
+                            SwipeDirection.RIGHT to
                                 KeyC(
                                     display = KeyDisplay.TextDisplay(">"),
                                     action = KeyAction.CommitText(">"),
+                                    color = ColorVariant.MUTED,
                                 ),
                             SwipeDirection.BOTTOM_LEFT to
                                 KeyC(
                                     display = KeyDisplay.TextDisplay(";"),
                                     action = KeyAction.CommitText(";"),
+                                    color = ColorVariant.MUTED,
                                 ),
                             SwipeDirection.LEFT to
                                 KeyC(
                                     display = KeyDisplay.TextDisplay("#"),
                                     action = KeyAction.CommitText("#"),
+                                    color = ColorVariant.MUTED,
                                 ),
                         ),
                 ),
