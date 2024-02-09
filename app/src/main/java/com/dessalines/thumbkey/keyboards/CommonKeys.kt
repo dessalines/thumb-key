@@ -32,17 +32,6 @@ import com.dessalines.thumbkey.utils.SlideType
 import com.dessalines.thumbkey.utils.SwipeDirection
 import com.dessalines.thumbkey.utils.SwipeNWay
 
-// Dummy key used for creating variants
-val DUMMY_KEY =
-    KeyC(
-        action = KeyAction.CommitText(""),
-        display = KeyDisplay.TextDisplay(""),
-    )
-
-val DUMMY_KEYITEM = 
-    KeyItemC(
-        center = DUMMY_KEY
-    )
 
 val NUMERIC_KEY_ITEM =
     KeyItemC(
@@ -590,3 +579,18 @@ val BACKSPACE_TYPESPLIT_SHIFTED_KEY_ITEM =
                     ),
             ),
     )
+
+
+// Dummy items used for creating variants
+val DUMMY_KEY =
+    KeyC(
+        action = KeyAction.CommitText(""),
+        display = KeyDisplay.TextDisplay(""),
+    )
+
+val DUMMY_KEYITEM = 
+    KeyItemC(
+        center = DUMMY_KEY
+    )
+
+val DUMMY_ROW = List(4) { DUMMY_KEYITEM }

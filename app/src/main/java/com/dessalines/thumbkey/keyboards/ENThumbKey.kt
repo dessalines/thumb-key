@@ -525,17 +525,17 @@ val KB_EN_THUMBKEY_SHIFTED =
         ),
     )
 
-val KB_EN_THUMBKEY: KeyboardDefinition =
-    KeyboardDefinition(
-        title = "english thumb-key",
-        modes =
-            KeyboardDefinitionModes(
-                main = KB_EN_THUMBKEY_MAIN,
-                shifted = KB_EN_THUMBKEY_SHIFTED,
-                numeric = NUMERIC_KEYBOARD,
-            ),
-        settings =
-            KeyboardDefinitionSettings(
-                autoCapitalizers = arrayOf(::autoCapitalizeI, ::autoCapitalizeIApostrophe),
-            ),
-    )
+// val KB_EN_THUMBKEY: KeyboardDefinition =
+//     KeyboardDefinition(
+//         title = "english thumb-key",
+//         modes =
+//             KeyboardDefinitionModes(
+//                 main = KB_EN_THUMBKEY_MAIN,
+//                 shifted = KB_EN_THUMBKEY_SHIFTED,
+//                 numeric = NUMERIC_KEYBOARD,
+//             ),
+//         settings =
+//             KeyboardDefinitionSettings(
+//                 autoCapitalizers = arrayOf(::autoCapitalizeI, ::autoCapitalizeIApostrophe),
+//             ),
+//     )

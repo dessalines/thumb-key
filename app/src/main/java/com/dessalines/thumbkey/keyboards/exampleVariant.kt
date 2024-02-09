@@ -1,3 +1,6 @@
+// This file serves as an example for how to create a simple variant of an existing keyboard.
+// This one replaces the middle of the english board with thorn characters on the left, right and center.
+
 package com.dessalines.thumbkey.keyboards
 
 import androidx.compose.material.icons.Icons
@@ -22,30 +25,11 @@ import com.dessalines.thumbkey.utils.makeVariant
 
 
 
-val KB_EN_MESSAGEEASE_SYMBOLS_MAIN_VAR =
+val KB_EN_THUMBKEY_MAIN_THORNY_OVERRIDE =
     KeyboardC(
         listOf(
+            DUMMY_ROW,
             listOf(
-                KeyItemC(
-                    center = DUMMY_KEY
-                ),
-                DUMMY_KEYITEM,
-                DUMMY_KEYITEM,
-                DUMMY_KEYITEM,
-            ),
-            listOf(
-                KeyItemC(
-                    center = KeyC(
-                        display = KeyDisplay.TextDisplay("þ"),
-                        action = KeyAction.CommitText("þ"),
-                    ),
-                ),
-                DUMMY_KEYITEM,
-                DUMMY_KEYITEM,
-                DUMMY_KEYITEM,
-            ),
-            listOf(
-                DUMMY_KEYITEM,
                 DUMMY_KEYITEM,
                 KeyItemC(
                     center = 
@@ -56,12 +40,13 @@ val KB_EN_MESSAGEEASE_SYMBOLS_MAIN_VAR =
                     ),
                     swipes =
                     mapOf(
-                        SwipeDirection.TOP_LEFT to
+                        SwipeDirection.LEFT to
                                 KeyC(
                                     display = KeyDisplay.TextDisplay("þ"),
                                     action = KeyAction.CommitText("þ"),
+                                    color = ColorVariant.PRIMARY,
                                 ),
-                        SwipeDirection.TOP to
+                        SwipeDirection.RIGHT to
                                 KeyC(
                                     display = KeyDisplay.TextDisplay("þ"),
                                     action = KeyAction.CommitText("þ"),
@@ -70,31 +55,35 @@ val KB_EN_MESSAGEEASE_SYMBOLS_MAIN_VAR =
                     ),
                 ),
                 DUMMY_KEYITEM,
-            ),
-            listOf(
                 DUMMY_KEYITEM,
+            ),
+            DUMMY_ROW,
+            listOf(
+                KeyItemC(
+                    center = DUMMY_KEY
+                ),
                 DUMMY_KEYITEM,
             ),
         ),
     )
 
-val KB_EN_MESSAGEEASE_SYMBOLS_VAR = makeVariant(
-    KB_EN_MESSAGEEASE_SYMBOLS_MAIN,
-    KB_EN_MESSAGEEASE_SYMBOLS_MAIN_VAR
+val KB_EN_THUMBKEY_MAIN_THORNY = makeVariant(
+    KB_EN_THUMBKEY_MAIN,
+    KB_EN_THUMBKEY_MAIN_THORNY_OVERRIDE,
 )
 
 
-val KB_EN_MESSAGEEASE_SYMBOLS: KeyboardDefinition =
+val KB_EN_THUMBKEY: KeyboardDefinition =
     KeyboardDefinition(
-        title = "english symbols messageease variant merge test",
+        title = "english thumb-key",
         modes =
-        KeyboardDefinitionModes(
-            main = KB_EN_MESSAGEEASE_SYMBOLS_VAR,
-            shifted = KB_EN_MESSAGEEASE_SYMBOLS_SHIFTED,
-            numeric = NUMERIC_KEYBOARD_MESSAGEASE,
-        ),
+            KeyboardDefinitionModes(
+                main = KB_EN_THUMBKEY_MAIN_THORNY,
+                shifted = KB_EN_THUMBKEY_SHIFTED,
+                numeric = NUMERIC_KEYBOARD,
+            ),
         settings =
-        KeyboardDefinitionSettings(
-            autoCapitalizers = arrayOf(::autoCapitalizeI, ::autoCapitalizeIApostrophe),
-        ),
+            KeyboardDefinitionSettings(
+                autoCapitalizers = arrayOf(::autoCapitalizeI, ::autoCapitalizeIApostrophe),
+            ),
     )
