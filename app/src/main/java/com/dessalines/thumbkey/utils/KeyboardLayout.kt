@@ -98,8 +98,8 @@ import com.dessalines.thumbkey.keyboards.KB_UK_MESSAGEEASE_SYMBOLS
 import com.dessalines.thumbkey.keyboards.KB_UK_RU_MESSAGEEASE_SYMBOLS
 import com.dessalines.thumbkey.keyboards.KB_UK_THUMBKEY
 
-// Make sure new keyboards have a new index, even if they are in the middle
-// Keyboards are placed in alphabetical order
+// Make sure new keyboards are added AT THE END of this list, and have a higher index.
+// DO NOT CHANGE existing indexes.
 enum class KeyboardLayout(val index: Int, val keyboardDefinition: KeyboardDefinition) {
     ENThumbKey(0, KB_EN_THUMBKEY),
     ENThumbKeyProgrammer(1, KB_EN_THUMBKEY_PROGRAMMER),
