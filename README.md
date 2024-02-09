@@ -173,6 +173,25 @@ To add a custom theme:
 - Add a translation string in `strings.xml` for your theme name.
 - Add the theme to the `colorPairs` in `Theme.kt`
 
+If you want to tweak your theme more precisely, these are the colours
+that are used. Please keep the theme in line with [Material Design
+Guidelines](https://m2.material.io/design/color/the-color-system.html)
+where feasibe.
+
+| Coloured element                          | Material colour used          |
+|-------------------------------------------|-------------------------------|
+| Normal key background                     | `surface`                     |
+| Special key (space, emoji etc) background | `surfaceVariant`              |
+| Main key colour                           | `primary`                     |
+| Key animated after press                  | `tertiary`                    |
+| Swipe letter colour                       | `secondary`                   |
+| Swipe symbol colour                       | `secondary`, but at 50% alpha |
+| Keypress flash colour on tap/hold         | `inversePrimary`              |
+| Keypress flash colour on release          | `tertiaryContainer`           |
+| Key outline                               | `outline`                     |
+| Backdrop                                  | `background`                  |
+
+
 ## Support / Donate
 
 Thumb-Key will always remain free, open-source software. We've seen many keyboards (and open-source projects in general) go unmaintained after a few years. **Recurring donations have proven to be the only way these projects can stay alive.**
