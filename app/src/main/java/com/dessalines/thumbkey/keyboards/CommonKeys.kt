@@ -32,6 +32,18 @@ import com.dessalines.thumbkey.utils.SlideType
 import com.dessalines.thumbkey.utils.SwipeDirection
 import com.dessalines.thumbkey.utils.SwipeNWay
 
+// Dummy key used for creating variants
+val DUMMY_KEY =
+    KeyC(
+        action = KeyAction.CommitText(""),
+        display = KeyDisplay.TextDisplay(""),
+    )
+
+val DUMMY_KEYITEM = 
+    KeyItemC(
+        center = DUMMY_KEY
+    )
+
 val NUMERIC_KEY_ITEM =
     KeyItemC(
         center =

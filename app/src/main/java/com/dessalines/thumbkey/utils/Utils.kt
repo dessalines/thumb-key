@@ -39,6 +39,7 @@ import com.dessalines.thumbkey.IMEService
 import com.dessalines.thumbkey.MainActivity
 import com.dessalines.thumbkey.R
 import com.dessalines.thumbkey.db.DEFAULT_KEYBOARD_LAYOUT
+import com.dessalines.thumbkey.keyboards.DUMMY_KEY
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
@@ -940,4 +941,38 @@ fun getLocalCurrency(): String? {
             it,
         ).currency?.symbol
     }
+}
+
+fun makeVariant(source: KeyboardC, variant: KeyboardC): KeyboardC {
+    // Assuming both source and variant have the same structure (same number of rows and columns)
+    val newRows = source.arr.indices.map { rowIndex ->
+        source.arr[rowIndex].indices.map { colIndex ->
+            val sourceKeyItem = source.arr[rowIndex][colIndex]
+            val variantKeyItem = variant.arr[rowIndex][colIndex]
+            mergeKeyItems(sourceKeyItem, variantKeyItem)
+        }
+    }
+    return source.copy(arr = newRows)
+}
+
+fun mergeKeyItems(source: KeyItemC, variant: KeyItemC): KeyItemC {
+    // Determine the new center. If the variant's center is a 'dummy', keep the source's center.
+    val newCenter = if (variant.center == DUMMY_KEY) source.center else variant.center
+
+    // Merge swipes, with variant's swipes overriding source's swipes for the same SwipeDirection
+    val newSwipes = source.swipes.orEmpty().toMutableMap().apply {
+        variant.swipes?.forEach { (direction, keyC) ->
+            this[direction] = keyC
+        }
+    }
+
+    return KeyItemC(
+        center = newCenter,
+        swipes = newSwipes.takeIf { it.isNotEmpty() } ?: source.swipes,
+        nextTapActions = source.nextTapActions, // Keeping source's nextTapActions for simplicity
+        widthMultiplier = source.widthMultiplier,
+        backgroundColor = source.backgroundColor,
+        swipeType = source.swipeType,
+        slideType = source.slideType
+    )
 }
