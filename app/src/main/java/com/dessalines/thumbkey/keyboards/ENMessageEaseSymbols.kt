@@ -890,17 +890,17 @@ val KB_EN_MESSAGEEASE_SYMBOLS_SHIFTED =
         ),
     )
 
-val KB_EN_MESSAGEEASE_SYMBOLS: KeyboardDefinition =
-    KeyboardDefinition(
-        title = "english symbols messageease",
-        modes =
-            KeyboardDefinitionModes(
-                main = KB_EN_MESSAGEEASE_SYMBOLS_MAIN,
-                shifted = KB_EN_MESSAGEEASE_SYMBOLS_SHIFTED,
-                numeric = NUMERIC_KEYBOARD,
-            ),
-        settings =
-            KeyboardDefinitionSettings(
-                autoCapitalizers = arrayOf(::autoCapitalizeI, ::autoCapitalizeIApostrophe),
-            ),
-    )
+// val KB_EN_MESSAGEEASE_SYMBOLS: KeyboardDefinition =
+//     KeyboardDefinition(
+//         title = "english symbols messageease",
+//         modes =
+//             KeyboardDefinitionModes(
+//                 main = KB_EN_MESSAGEEASE_SYMBOLS_MAIN,
+//                 shifted = KB_EN_MESSAGEEASE_SYMBOLS_SHIFTED,
+//                 numeric = NUMERIC_KEYBOARD,
+//             ),
+//         settings =
+//             KeyboardDefinitionSettings(
+//                 autoCapitalizers = arrayOf(::autoCapitalizeI, ::autoCapitalizeIApostrophe),
+//             ),
+//     )
