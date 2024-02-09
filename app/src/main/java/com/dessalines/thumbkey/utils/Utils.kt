@@ -947,6 +947,9 @@ fun makeVariant(
     source: KeyboardC,
     variant: KeyboardC,
 ): KeyboardC {
+    // Returns a variant of a layer created by replacing source keys and swipes
+    // with any non-dummy equivalents in the variant.
+
     // Assuming both source and variant have the same structure (same number of rows and columns)
     val newRows =
         source.arr.indices.map { rowIndex ->
@@ -963,6 +966,11 @@ fun mergeKeyItems(
     source: KeyItemC,
     variant: KeyItemC,
 ): KeyItemC {
+    // Returns merge of keyItems.
+    // If source has swipes of same direction as variant, they'll be replaced.
+    // Same with center, unless it's a dummy key (since a centre key is
+    // mandatory).
+
     // Determine the new center. If the variant's center is a 'dummy', keep the source's center.
     val newCenter = if (variant.center == DUMMY_KEY) source.center else variant.center
 
