@@ -163,6 +163,23 @@ I'd be happy to accept additions to add more languages, and layouts. To start:
 - Add the new keyboard to the [KeyboardLayout.kt file](https://github.com/dessalines/thumb-key/blob/main/app/src/main/java/com/dessalines/thumbkey/utils/KeyboardLayout.kt), with a new higher index.
 - Either open a pull request, or an issue, linking your new keyboard file. I'll handle the rest of the work.
 
+### Creating variants of existing layouts
+
+- Where possible, reference existing `KeyboardC`. For example, the number layer
+is shared between all the Thumb-Key languages, so all of them do this rather
+than specifying a new number layout:
+```
+KeyboardDefinitionModes(
+    ...
+    numeric = NUMERIC_KEYBOARD,
+)
+```
+- Variants can be created easily with the `makeVariant` command.
+Copy the layout, and replace anything you don't want to change with DUMMY items.
+Then merge the two layouts and use that as the final layout.
+- See [this example](https://github.com/dessalines/thumb-key/blob/main/app/src/main/java/com/dessalines/thumbkey/keyboards/exampleVariant.kt)
+for how to create a variant.
+
 ## Theming guide
 
 To add a custom theme:

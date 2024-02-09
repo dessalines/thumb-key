@@ -3,13 +3,7 @@
 
 package com.dessalines.thumbkey.keyboards
 
-import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.outlined.ArrowDropDown
-import androidx.compose.material.icons.outlined.ArrowDropUp
-import androidx.compose.material.icons.outlined.Copyright
-import androidx.compose.material.icons.outlined.KeyboardCapslock
 import com.dessalines.thumbkey.utils.ColorVariant
-import com.dessalines.thumbkey.utils.FontSizeVariant
 import com.dessalines.thumbkey.utils.KeyAction
 import com.dessalines.thumbkey.utils.KeyC
 import com.dessalines.thumbkey.utils.KeyDisplay
@@ -23,8 +17,6 @@ import com.dessalines.thumbkey.utils.autoCapitalizeI
 import com.dessalines.thumbkey.utils.autoCapitalizeIApostrophe
 import com.dessalines.thumbkey.utils.makeVariant
 
-
-
 val KB_EN_THUMBKEY_MAIN_THORNY_OVERRIDE =
     KeyboardC(
         listOf(
@@ -32,27 +24,27 @@ val KB_EN_THUMBKEY_MAIN_THORNY_OVERRIDE =
             listOf(
                 DUMMY_KEYITEM,
                 KeyItemC(
-                    center = 
-                    KeyC(
-                        display = KeyDisplay.TextDisplay("þ"),
-                        action = KeyAction.CommitText("þ"),
-                        color = ColorVariant.PRIMARY,
-                    ),
+                    center =
+                        KeyC(
+                            display = KeyDisplay.TextDisplay("þ"),
+                            action = KeyAction.CommitText("þ"),
+                            color = ColorVariant.PRIMARY,
+                        ),
                     swipes =
-                    mapOf(
-                        SwipeDirection.LEFT to
+                        mapOf(
+                            SwipeDirection.LEFT to
                                 KeyC(
                                     display = KeyDisplay.TextDisplay("þ"),
                                     action = KeyAction.CommitText("þ"),
                                     color = ColorVariant.PRIMARY,
                                 ),
-                        SwipeDirection.RIGHT to
+                            SwipeDirection.RIGHT to
                                 KeyC(
                                     display = KeyDisplay.TextDisplay("þ"),
                                     action = KeyAction.CommitText("þ"),
                                     color = ColorVariant.MUTED,
                                 ),
-                    ),
+                        ),
                 ),
                 DUMMY_KEYITEM,
                 DUMMY_KEYITEM,
@@ -60,22 +52,22 @@ val KB_EN_THUMBKEY_MAIN_THORNY_OVERRIDE =
             DUMMY_ROW,
             listOf(
                 KeyItemC(
-                    center = DUMMY_KEY
+                    center = DUMMY_KEY,
                 ),
                 DUMMY_KEYITEM,
             ),
         ),
     )
 
-val KB_EN_THUMBKEY_MAIN_THORNY = makeVariant(
-    KB_EN_THUMBKEY_MAIN,
-    KB_EN_THUMBKEY_MAIN_THORNY_OVERRIDE,
-)
-
+val KB_EN_THUMBKEY_MAIN_THORNY =
+    makeVariant(
+        KB_EN_THUMBKEY_MAIN,
+        KB_EN_THUMBKEY_MAIN_THORNY_OVERRIDE,
+    )
 
 val KB_EN_THUMBKEY: KeyboardDefinition =
     KeyboardDefinition(
-        title = "english thumb-key",
+        title = "english thumb-key variant",
         modes =
             KeyboardDefinitionModes(
                 main = KB_EN_THUMBKEY_MAIN_THORNY,
