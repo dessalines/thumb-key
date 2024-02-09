@@ -1,10 +1,7 @@
 package com.dessalines.thumbkey.keyboards
 
 import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.outlined.ArrowDropDown
 import androidx.compose.material.icons.outlined.ArrowDropUp
-import androidx.compose.material.icons.outlined.Copyright
-import androidx.compose.material.icons.outlined.KeyboardCapslock
 import com.dessalines.thumbkey.utils.ColorVariant
 import com.dessalines.thumbkey.utils.FontSizeVariant
 import com.dessalines.thumbkey.utils.KeyAction
@@ -289,7 +286,7 @@ val KB_EN_MESSAGEEASE_SHIFTED =
                     DUMMY_KEYITEM,
                 ),
             ),
-        )
+        ),
     )
 
 val KB_EN_MESSAGEEASE: KeyboardDefinition =

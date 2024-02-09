@@ -592,3 +592,23 @@ val DUMMY_KEYITEM =
     )
 
 val DUMMY_ROW = List(4) { DUMMY_KEYITEM }
+val SHIFTED_OVERRIDE_KEYITEM =
+    KeyItemC(
+        center = DUMMY_KEY,
+        swipes =
+            mapOf(
+                SwipeDirection.BOTTOM to
+                    KeyC(
+                        display = KeyDisplay.IconDisplay(Icons.Outlined.ArrowDropDown),
+                        action = KeyAction.ToggleShiftMode(false),
+                        color = ColorVariant.MUTED,
+                    ),
+                SwipeDirection.TOP to
+                    KeyC(
+                        display = KeyDisplay.IconDisplay(Icons.Outlined.KeyboardCapslock),
+                        capsModeDisplay = KeyDisplay.IconDisplay(Icons.Outlined.Copyright),
+                        action = KeyAction.ToggleCapsLock,
+                        color = ColorVariant.MUTED,
+                    ),
+            ),
+    )

@@ -993,7 +993,7 @@ fun mergeKeyItems(
     )
 }
 
-fun capitaliseKeyboardLetters(board: KeyboardC): KeyboardC{
+fun capitaliseKeyboardLetters(board: KeyboardC): KeyboardC  {
     // All letters in layer will be replaced with shifted variants.
     val newRows =
         board.arr.indices.map { rowIndex ->
@@ -1006,32 +1006,36 @@ fun capitaliseKeyboardLetters(board: KeyboardC): KeyboardC{
 
 fun uppercaseKeyItem(keyItem: KeyItemC): KeyItemC {
     // Uppercase the center display and action if they are text
-    val newCenter = keyItem.center.copy(
-        display = keyItem.center.display?.uppercase(),
-        action = keyItem.center.action.uppercase()
-    )
-    
-    // Uppercase swipe actions and displays
-    val newSwipes = keyItem.swipes?.mapValues { (_, keyC) ->
-        keyC.copy(
-            display = keyC.display?.uppercase(),
-            action = keyC.action.uppercase()
+    val newCenter =
+        keyItem.center.copy(
+            display = keyItem.center.display?.uppercase(),
+            action = keyItem.center.action.uppercase(),
         )
-    }
-    
+
+    // Uppercase swipe actions and displays
+    val newSwipes =
+        keyItem.swipes?.mapValues { (_, keyC) ->
+            keyC.copy(
+                display = keyC.display?.uppercase(),
+                action = keyC.action.uppercase(),
+            )
+        }
+
     return keyItem.copy(
         center = newCenter,
-        swipes = newSwipes
+        swipes = newSwipes,
     )
 }
 
 // Helper extension functions to handle the uppercase transformation
-fun KeyDisplay?.uppercase(): KeyDisplay? = when(this) {
-    is KeyDisplay.TextDisplay -> KeyDisplay.TextDisplay(this.text.uppercase())
-    else -> this
-}
+fun KeyDisplay?.uppercase(): KeyDisplay? =
+    when (this) {
+        is KeyDisplay.TextDisplay -> KeyDisplay.TextDisplay(this.text.uppercase())
+        else -> this
+    }
 
-fun KeyAction.uppercase(): KeyAction = when(this) {
-    is KeyAction.CommitText -> KeyAction.CommitText(this.text.uppercase())
-    else -> this
-}
+fun KeyAction.uppercase(): KeyAction =
+    when (this) {
+        is KeyAction.CommitText -> KeyAction.CommitText(this.text.uppercase())
+        else -> this
+    }
