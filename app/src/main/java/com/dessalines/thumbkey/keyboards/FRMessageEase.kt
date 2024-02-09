@@ -364,6 +364,18 @@ val KB_FR_MESSAGEEASE_MAIN =
                                     action = KeyAction.CommitText("\u0009"),
                                     color = ColorVariant.MUTED,
                                 ),
+                            SwipeDirection.BOTTOM to
+                                KeyC(
+                                    display = KeyDisplay.TextDisplay("¨"),
+                                    action = KeyAction.CommitText("\u0308"),
+                                    color = ColorVariant.MUTED,
+                                ),
+                            SwipeDirection.BOTTOM_LEFT to
+                                KeyC(
+                                    display = KeyDisplay.TextDisplay("ñ"),
+                                    action = KeyAction.CommitText("\u0303"),
+                                    color = ColorVariant.MUTED,
+                                ),
                         ),
                 ),
                 KeyItemC(
@@ -832,6 +844,18 @@ val KB_FR_MESSAGEEASE_SHIFTED =
                                 KeyC(
                                     display = KeyDisplay.TextDisplay("␉"),
                                     action = KeyAction.CommitText("\u0009"),
+                                    color = ColorVariant.MUTED,
+                                ),
+                            SwipeDirection.BOTTOM to
+                                KeyC(
+                                    display = KeyDisplay.TextDisplay("¨"),
+                                    action = KeyAction.CommitText("\u0308"),
+                                    color = ColorVariant.MUTED,
+                                ),
+                            SwipeDirection.BOTTOM_LEFT to
+                                KeyC(
+                                    display = KeyDisplay.TextDisplay("ñ"),
+                                    action = KeyAction.CommitText("\u0303"),
                                     color = ColorVariant.MUTED,
                                 ),
                         ),
