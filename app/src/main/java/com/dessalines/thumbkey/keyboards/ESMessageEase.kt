@@ -76,13 +76,12 @@ val KB_ES_MESSAGEEASE_MAIN =
                                     action = KeyAction.CommitText("l"),
                                 ),
                             SwipeDirection.BOTTOM_LEFT to
-                                    KeyC(
-                                        display = KeyDisplay.TextDisplay("/"),
-                                        action = KeyAction.CommitText("/"),
-                                        color = ColorVariant.MUTED,
-                                    ),
-
-                            ),
+                                KeyC(
+                                    display = KeyDisplay.TextDisplay("/"),
+                                    action = KeyAction.CommitText("/"),
+                                    color = ColorVariant.MUTED,
+                                ),
+                        ),
                 ),
                 KeyItemC(
                     center =
@@ -225,11 +224,11 @@ val KB_ES_MESSAGEEASE_MAIN =
                                     color = ColorVariant.MUTED,
                                 ),
                             SwipeDirection.BOTTOM_LEFT to
-                                    KeyC(
-                                        display = KeyDisplay.TextDisplay("@"),
-                                        action = KeyAction.CommitText("@"),
-                                        color = ColorVariant.MUTED,
-                                    ),
+                                KeyC(
+                                    display = KeyDisplay.TextDisplay("@"),
+                                    action = KeyAction.CommitText("@"),
+                                    color = ColorVariant.MUTED,
+                                ),
                         ),
                 ),
                 NUMERIC_KEY_ITEM,
@@ -411,11 +410,11 @@ val KB_ES_MESSAGEEASE_SHIFTED =
                                     action = KeyAction.CommitText("L"),
                                 ),
                             SwipeDirection.BOTTOM_LEFT to
-                                    KeyC(
-                                        display = KeyDisplay.TextDisplay("/"),
-                                        action = KeyAction.CommitText("/"),
-                                        color = ColorVariant.MUTED,
-                                    ),
+                                KeyC(
+                                    display = KeyDisplay.TextDisplay("/"),
+                                    action = KeyAction.CommitText("/"),
+                                    color = ColorVariant.MUTED,
+                                ),
                         ),
                 ),
                 KeyItemC(
@@ -566,11 +565,11 @@ val KB_ES_MESSAGEEASE_SHIFTED =
                                     color = ColorVariant.MUTED,
                                 ),
                             SwipeDirection.BOTTOM_LEFT to
-                                    KeyC(
-                                        display = KeyDisplay.TextDisplay("@"),
-                                        action = KeyAction.CommitText("@"),
-                                        color = ColorVariant.MUTED,
-                                    ),
+                                KeyC(
+                                    display = KeyDisplay.TextDisplay("@"),
+                                    action = KeyAction.CommitText("@"),
+                                    color = ColorVariant.MUTED,
+                                ),
                         ),
                 ),
                 NUMERIC_KEY_ITEM,
