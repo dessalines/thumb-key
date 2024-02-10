@@ -48,6 +48,7 @@ data class KeyItemC(
     val backgroundColor: ColorVariant = ColorVariant.SURFACE,
     val swipeType: SwipeNWay = SwipeNWay.EIGHT_WAY,
     val slideType: SlideType = SlideType.NONE,
+    val longPress: KeyAction? = null,
 )
 
 data class KeyC(

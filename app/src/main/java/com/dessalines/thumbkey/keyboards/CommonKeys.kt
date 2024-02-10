@@ -186,6 +186,7 @@ val BACKSPACE_KEY_ITEM =
                     ),
             ),
         backgroundColor = ColorVariant.SURFACE_VARIANT,
+        longPress = KeyAction.DeleteWordBeforeCursor,
     )
 
 val SPACEBAR_KEY_ITEM =
@@ -329,6 +330,7 @@ val RETURN_KEY_ITEM =
                 color = ColorVariant.SECONDARY,
             ),
         backgroundColor = ColorVariant.SURFACE_VARIANT,
+        longPress = KeyAction.CommitText("\n"),
     )
 
 val SPACEBAR_TYPESPLIT_MIDDLE_KEY_ITEM =
