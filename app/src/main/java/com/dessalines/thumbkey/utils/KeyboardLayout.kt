@@ -18,8 +18,8 @@ import com.dessalines.thumbkey.keyboards.KB_EN_DOUBLE_SYMBOLS
 import com.dessalines.thumbkey.keyboards.KB_EN_EE_THUMBKEY
 import com.dessalines.thumbkey.keyboards.KB_EN_FR_MESSAGEASE_SYMBOLS
 import com.dessalines.thumbkey.keyboards.KB_EN_IT_THUMBKEY
-import com.dessalines.thumbkey.keyboards.KB_EN_MESSAGEEASE
-import com.dessalines.thumbkey.keyboards.KB_EN_MESSAGEEASE_SYMBOLS
+import com.dessalines.thumbkey.keyboards.KB_EN_MESSAGEASE
+import com.dessalines.thumbkey.keyboards.KB_EN_MESSAGEASE_SYMBOLS
 import com.dessalines.thumbkey.keyboards.KB_EN_MI_THUMBKEY
 import com.dessalines.thumbkey.keyboards.KB_EN_MI_THUMBKEY_SYMBOLS
 import com.dessalines.thumbkey.keyboards.KB_EN_NO_MESSAGEASE_SYMBOLS
@@ -41,7 +41,7 @@ import com.dessalines.thumbkey.keyboards.KB_EOENDE_THUMBKEY
 import com.dessalines.thumbkey.keyboards.KB_ES_CA_MESSAGEEASE
 import com.dessalines.thumbkey.keyboards.KB_ES_CA_THUMBKEY
 import com.dessalines.thumbkey.keyboards.KB_ES_EO_THUMBKEY
-import com.dessalines.thumbkey.keyboards.KB_ES_MESSAGEEASE
+import com.dessalines.thumbkey.keyboards.KB_ES_MESSAGEASE
 import com.dessalines.thumbkey.keyboards.KB_ES_THUMBKEY
 import com.dessalines.thumbkey.keyboards.KB_ES_TYPESPLIT
 import com.dessalines.thumbkey.keyboards.KB_EU_ES_THUMBKEY
@@ -117,8 +117,8 @@ enum class KeyboardLayout(val index: Int, val keyboardDefinition: KeyboardDefini
     PTThumbKey(12, KB_PT_THUMBKEY),
     RUThumbKey(13, KB_RU_THUMBKEY),
     UKThumbKey(14, KB_UK_THUMBKEY),
-    ENMessageEase(15, KB_EN_MESSAGEEASE),
-    ENMessageEaseSymbols(16, KB_EN_MESSAGEEASE_SYMBOLS),
+    ENMessagEase(15, KB_EN_MESSAGEASE),
+    ENMessagEaseSymbols(16, KB_EN_MESSAGEASE_SYMBOLS),
     HEMessageEase(17, KB_HE_MESSAGEEASE),
     RUThumbKeySymbols(18, KB_RU_THUMBKEY_SYMBOLS),
     BYThumbKey(19, KB_BY_THUMBKEY),
@@ -155,7 +155,7 @@ enum class KeyboardLayout(val index: Int, val keyboardDefinition: KeyboardDefini
     EOENDEThumbKey(50, KB_EOENDE_THUMBKEY),
     GRThumbKey(51, KB_GR_THUMBKEY),
     ENCZThumbKey(52, KB_EN_CZ_THUMBKEY),
-    ESMessageEase(53, KB_ES_MESSAGEEASE),
+    ESMessagEase(53, KB_ES_MESSAGEASE),
     RUMessageEase(54, KB_RU_MESSAGEEASE),
     BGThumbKeySymbols(55, KB_BG_THUMBKEY_SYMBOLS),
     HRTwoHands(56, KB_HR_TWO_HANDS),
