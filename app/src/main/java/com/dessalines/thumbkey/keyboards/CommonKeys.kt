@@ -592,6 +592,20 @@ val DUMMY_KEYITEM =
     )
 
 val DUMMY_ROW = List(4) { DUMMY_KEYITEM }
+
+val DUMMY_SKIP_KEY =
+    KeyC(
+        action = KeyAction.CommitText(""),
+        display = KeyDisplay.TextDisplay(""),
+    )
+
+val DUMMY_SKIP_KEYITEM =
+    KeyItemC(
+        center = DUMMY_SKIP_KEY,
+    )
+
+val DUMMY_SKIP_ROW = List(4) { DUMMY_SKIP_KEYITEM }
+
 val SHIFTED_OVERRIDE_KEYITEM =
     KeyItemC(
         center = DUMMY_KEY,

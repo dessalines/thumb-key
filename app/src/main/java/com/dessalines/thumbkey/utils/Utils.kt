@@ -40,6 +40,7 @@ import com.dessalines.thumbkey.MainActivity
 import com.dessalines.thumbkey.R
 import com.dessalines.thumbkey.db.DEFAULT_KEYBOARD_LAYOUT
 import com.dessalines.thumbkey.keyboards.DUMMY_KEY
+import com.dessalines.thumbkey.keyboards.DUMMY_SKIP_KEY
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
@@ -970,6 +971,8 @@ fun mergeKeyItems(
     // If source has swipes of same direction as variant, they'll be replaced.
     // Same with center, unless it's a dummy key (since a centre key is
     // mandatory).
+    // DUMMY_SKIP_KEYs will be removed (if you want to blank a spot). Not supported for
+    // center keys, only for swipes.
 
     // Determine the new center. If the variant's center is a 'dummy', keep the source's center.
     val newCenter = if (variant.center == DUMMY_KEY) source.center else variant.center
@@ -978,18 +981,19 @@ fun mergeKeyItems(
     val newSwipes =
         source.swipes.orEmpty().toMutableMap().apply {
             variant.swipes?.forEach { (direction, keyC) ->
-                this[direction] = keyC
+                if (keyC == DUMMY_SKIP_KEY) {
+                    this.remove(direction)
+                } else {
+                    this[direction] = keyC
+                }
             }
         }
 
-    return KeyItemC(
+    return source.copy(
         center = newCenter,
-        swipes = newSwipes.takeIf { it.isNotEmpty() } ?: source.swipes,
-        nextTapActions = source.nextTapActions, // Keeping source's nextTapActions for simplicity
-        widthMultiplier = source.widthMultiplier,
-        backgroundColor = source.backgroundColor,
-        swipeType = source.swipeType,
-        slideType = source.slideType,
+        // if newSwipes is empty, it means all swipes were removed from source.
+        swipes = if (newSwipes.isNotEmpty()) newSwipes else null,
+
     )
 }
 
