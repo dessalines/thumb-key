@@ -898,11 +898,11 @@ fun keyboardLayoutsSetFromTitleIndex(layouts: String?): Set<Int> {
 }
 
 fun keyboardRealIndexFromTitleIndex(index: Int): Int {
-    return KeyboardLayout.entries.sortedBy { it.keyboardDefinition.title }[index].index
+    return KeyboardLayout.entries.sortedBy { it.keyboardDefinition.title }[index].ordinal
 }
 
 fun keyboardTitleIndexFromRealIndex(index: Int): Int {
-    val keyboard = KeyboardLayout.entries.find { it.index == index } ?: KeyboardLayout.ENThumbKey
+    val keyboard = KeyboardLayout.entries.find { it.ordinal == index } ?: KeyboardLayout.ENThumbKey
     return KeyboardLayout.entries.sortedBy { it.keyboardDefinition.title }.indexOf(keyboard)
 }
 
