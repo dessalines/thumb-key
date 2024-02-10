@@ -897,7 +897,7 @@ val KB_EN_MESSAGEEASE_SYMBOLS: KeyboardDefinition =
             KeyboardDefinitionModes(
                 main = KB_EN_MESSAGEEASE_SYMBOLS_MAIN,
                 shifted = KB_EN_MESSAGEEASE_SYMBOLS_SHIFTED,
-                numeric = NUMERIC_KEYBOARD_MESSAGEASE,
+                numeric = KB_EN_MESSAGEEASE_NUMERIC,
             ),
         settings =
             KeyboardDefinitionSettings(
