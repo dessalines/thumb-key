@@ -198,9 +198,4 @@ enum class KeyboardLayout(val keyboardDefinition: KeyboardDefinition) {
     ENFRMessagEaseSymbols(KB_EN_FR_MESSAGEASE_SYMBOLS),
     HEMessageEaseSymbols(KB_HE_MESSAGEEASE_SYMBOLS),
     ENNOMessagEaseSymbols(KB_EN_NO_MESSAGEASE_SYMBOLS),
-
-    ;
-
-    val index: Int
-        get() = ordinal
 }

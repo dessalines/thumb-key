@@ -93,7 +93,7 @@ fun KeyboardScreen(
     val lastAction = remember { mutableStateOf<KeyAction?>(null) }
 
     val keyboardDefinition =
-        KeyboardLayout.entries.sortedBy { it.index }[
+        KeyboardLayout.entries.sortedBy { it.ordinal }[
             settings?.keyboardLayout
                 ?: DEFAULT_KEYBOARD_LAYOUT,
         ].keyboardDefinition
