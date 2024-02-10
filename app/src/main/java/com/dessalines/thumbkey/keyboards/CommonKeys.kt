@@ -615,3 +615,37 @@ val SPACEBAR_FRENCH_TYPESPLIT_BOTTOM_KEY_ITEM =
                 KeyAction.ReplaceLastText(" ; ", trimCount = 3),
             ),
     )
+
+// Dummy items used for creating variants
+val DUMMY_KEY =
+    KeyC(
+        action = KeyAction.CommitText(""),
+        display = KeyDisplay.TextDisplay(""),
+    )
+
+val DUMMY_SKIP_KEY =
+    KeyC(
+        action = KeyAction.CommitText(""),
+        display = KeyDisplay.TextDisplay(""),
+    )
+
+val SHIFTED_OVERRIDE_KEYITEM =
+    KeyItemC(
+        center = DUMMY_KEY,
+        swipes =
+            mapOf(
+                SwipeDirection.BOTTOM to
+                    KeyC(
+                        display = KeyDisplay.IconDisplay(Icons.Outlined.ArrowDropDown),
+                        action = KeyAction.ToggleShiftMode(false),
+                        color = ColorVariant.MUTED,
+                    ),
+                SwipeDirection.TOP to
+                    KeyC(
+                        display = KeyDisplay.IconDisplay(Icons.Outlined.KeyboardCapslock),
+                        capsModeDisplay = KeyDisplay.IconDisplay(Icons.Outlined.Copyright),
+                        action = KeyAction.ToggleCapsLock,
+                        color = ColorVariant.MUTED,
+                    ),
+            ),
+    )
