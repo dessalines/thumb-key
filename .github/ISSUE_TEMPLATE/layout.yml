@@ -1,0 +1,71 @@
+name: ⌨️ Layout
+description: Request a new layout or changes to an existing one
+labels: ["layout"]
+body:
+- type: input
+  id: language
+  attributes: 
+    label: Language
+    description: which language does the layout correspond to?
+    placeholder: "example: English"
+  validations:
+    required: true
+- type: input
+  id: variant
+  attributes: 
+    label: Variant
+    description: If this is a variant, name it here (MessagEase, with symbols, etc.)
+    placeholder: "example: MessagEase"
+  validations:
+    required: false
+
+- type: dropdown
+  id: kind
+  attributes:
+    label: "Kind of request"
+    # description: ""
+    options:
+      - "New Layout"
+      - "Changes on an existing layout"
+  validations:
+    required: true
+
+- type: textarea
+  id: details
+    attributes:
+      label: More details
+      description: If more details are required, write them here
+      placeholder: |
+        If requesting a new layout, information like how the layout should be 
+        made, what it can be based off, if it's a variant of an existing layout, etc.
+        
+        If requesting changes, details on what you're asking for
+    validations:
+      required: false
+
+- type: checkboxes
+  id: acknowledgements
+  attributes:
+    label: Acknowledgements
+    description: Read this carefully, I will close and ignore your issue if you skimmed through this.
+    options:
+      - label: I have written a short but informative title.
+        required: true
+      - label: >-
+          I have searched the existing layouts and issues to confirm that this 
+          layout either does not exist or was not requested already
+        required: true
+      # - label: >-
+      #     This is not a question or a discussion, in which case I should have gone to
+      #     (discussion URL)
+      #   required: true
+      # - label: >-
+      #     I am requesting a **single** layout.
+      #     In case of multiple layouts I will open a separate issue for each one 
+      #     (they can always link to each other if related)
+      #   required: true
+      # - label: I have updated the app **[the latest version](https://github.com/user/repo/releases/latest)**.
+      #   required: true
+      - label: I have admitted that I am a clown by having checked this box, as I have not read these acknowledgements. 🤡
+      - label: I have filled out all of the requested information in this form.
+        required: true
