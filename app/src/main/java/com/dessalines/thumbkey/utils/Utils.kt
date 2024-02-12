@@ -941,3 +941,15 @@ fun getLocalCurrency(): String? {
         ).currency?.symbol
     }
 }
+
+fun lastColKeysToFirst(board: KeyboardC): KeyboardC {
+    val newArr =
+        board.arr.map { row ->
+            if (row.isNotEmpty()) {
+                listOf(row.last()) + row.dropLast(1)
+            } else {
+                row
+            }
+        }
+    return KeyboardC(newArr)
+}

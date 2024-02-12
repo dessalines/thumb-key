@@ -1,7 +1,5 @@
 package com.dessalines.thumbkey.keyboards
 
-import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.outlined.Abc
 import com.dessalines.thumbkey.utils.ColorVariant
 import com.dessalines.thumbkey.utils.FontSizeVariant
 import com.dessalines.thumbkey.utils.KeyAction
@@ -591,16 +589,7 @@ val DOUBLE_NUMERIC_KEYBOARD =
                 ),
             ),
             listOf(
-                KeyItemC(
-                    center =
-                        KeyC(
-                            display = KeyDisplay.IconDisplay(Icons.Outlined.Abc),
-                            action = KeyAction.ToggleNumericMode(false),
-                            size = FontSizeVariant.LARGE,
-                            color = ColorVariant.PRIMARY,
-                        ),
-                    backgroundColor = ColorVariant.SURFACE_VARIANT,
-                ),
+                ABC_KEY_ITEM,
                 KeyItemC(
                     center =
                         KeyC(
