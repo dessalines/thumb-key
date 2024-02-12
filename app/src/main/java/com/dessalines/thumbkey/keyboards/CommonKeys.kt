@@ -32,6 +32,18 @@ import com.dessalines.thumbkey.utils.SlideType
 import com.dessalines.thumbkey.utils.SwipeDirection
 import com.dessalines.thumbkey.utils.SwipeNWay
 
+val ABC_KEY_ITEM =
+    KeyItemC(
+        center =
+            KeyC(
+                display = KeyDisplay.IconDisplay(Icons.Outlined.Abc),
+                action = KeyAction.ToggleNumericMode(false),
+                size = FontSizeVariant.LARGE,
+                color = ColorVariant.PRIMARY,
+            ),
+        backgroundColor = ColorVariant.SURFACE_VARIANT,
+    )
+
 val NUMERIC_KEY_ITEM =
     KeyItemC(
         center =
