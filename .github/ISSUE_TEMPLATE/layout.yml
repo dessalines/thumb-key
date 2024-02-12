@@ -32,16 +32,16 @@ body:
 
 - type: textarea
   id: details
-    attributes:
-      label: More details
-      description: If more details are required, write them here
-      placeholder: |
-        If requesting a new layout, information like how the layout should be 
-        made, what it can be based off, if it's a variant of an existing layout, etc.
-        
-        If requesting changes, details on what you're asking for
-    validations:
-      required: false
+  attributes:
+    label: More details
+    description: If more details are required, write them here
+    placeholder: |
+      If requesting a new layout, information like how the layout should be 
+      made, what it can be based off, if it's a variant of an existing layout, etc.
+      
+      If requesting changes, details on what you're asking for
+  validations:
+    required: false
 
 - type: checkboxes
   id: acknowledgements
