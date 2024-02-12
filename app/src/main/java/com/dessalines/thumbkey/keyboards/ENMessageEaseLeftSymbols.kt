@@ -14,7 +14,7 @@ val KB_EN_MESSAGEEASE_SYMBOLS_LEFT: KeyboardDefinition =
             KeyboardDefinitionModes(
                 main = lastColKeysToFirst(KB_EN_MESSAGEEASE_SYMBOLS_MAIN),
                 shifted = lastColKeysToFirst(KB_EN_MESSAGEEASE_SYMBOLS_SHIFTED),
-                numeric = lastColKeysToFirst(KB_EN_MESSAGEEASE_SYMBOLS_NUMBERS),
+                numeric = lastColKeysToFirst(NUMERIC_KEYBOARD_MESSAGEASE),
             ),
         settings =
             KeyboardDefinitionSettings(
