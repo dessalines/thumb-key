@@ -2,7 +2,6 @@ package com.dessalines.thumbkey.keyboards
 
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.automirrored.outlined.KeyboardTab
-import androidx.compose.material.icons.outlined.Abc
 import androidx.compose.material.icons.outlined.ArrowDropDown
 import androidx.compose.material.icons.outlined.ArrowDropUp
 import androidx.compose.material.icons.outlined.Copyright
