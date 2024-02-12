@@ -1203,3 +1203,39 @@ fun highContrastColorful(): Pair<ColorScheme, ColorScheme> {
         )
     return Pair(light, dark)
 }
+
+fun matrix(): Pair<ColorScheme, ColorScheme> {
+    val dark =
+        darkColorScheme(
+            primary = Color(0xFF00E630),
+            onPrimary = Color(0xFF003A05),
+            primaryContainer = Color(0xFF00530A),
+            onPrimaryContainer = Color(0xFF74FF6C),
+            secondary = Color(0xFF69DF8C),
+            onSecondary = Color(0xFF003A03),
+            secondaryContainer = Color(0xFF005306),
+            onSecondaryContainer = Color(0xFF85FD75),
+            tertiary = Color(0xFF96D784),
+            onTertiary = Color(0xFF003A00),
+            tertiaryContainer = Color(0xFF102D0F),
+            onTertiaryContainer = Color(0xFFB1F49D),
+            error = Color(0xFFFFB4AB),
+            errorContainer = Color(0xFF93000A),
+            onError = Color(0xFF690005),
+            onErrorContainer = Color(0xFFFFDAD6),
+            background = Color(0xFF000000),
+            onBackground = Color(0xFFFFFFFF),
+            surface = Color(0xFF000000),
+            onSurface = Color(0xFFFFFFFF),
+            surfaceVariant = Color(0xFF001000),
+            onSurfaceVariant = Color(0xFFC2C8BC),
+            outline = Color(0xFF42493F),
+            inverseOnSurface = Color(0xFF000000),
+            inverseSurface = Color(0xFFFFD9E4),
+            inversePrimary = Color(0xFF002006),
+            surfaceTint = Color(0xFF00E630),
+            outlineVariant = Color(0xFF32392F),
+            scrim = Color(0xFF000000),
+        )
+    return Pair(dark, dark)
+}

@@ -35,6 +35,7 @@ fun ThumbkeyTheme(
             ThemeColor.Dynamic -> dynamicPair
             ThemeColor.Green -> green()
             ThemeColor.Pink -> pink()
+            ThemeColor.Matrix -> matrix()
             ThemeColor.Srcery -> srcery()
             ThemeColor.Blue -> blue()
             ThemeColor.Dracula -> dracula()
