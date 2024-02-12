@@ -179,7 +179,7 @@ Guidelines](https://m3.material.io/styles/color/system/overview)
 where feasibe.
 
 | Coloured element                          | Material colour used          |
-|-------------------------------------------|-------------------------------|
+| ----------------------------------------- | ----------------------------- |
 | Normal key background                     | `surface`                     |
 | Special key (space, emoji etc) background | `surfaceVariant`              |
 | Main key colour                           | `primary`                     |
@@ -190,7 +190,6 @@ where feasibe.
 | Keypress flash colour on release          | `tertiaryContainer`           |
 | Key outline                               | `outline`                     |
 | Backdrop                                  | `background`                  |
-
 
 ## Support / Donate
 
