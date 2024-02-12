@@ -2,49 +2,49 @@ name: 🌟 Feature request
 description: Suggest a feature to improve the app
 labels: [feature]
 body:
-- type: textarea
-  id: feature-description
-  attributes:
-    label: Describe your suggested feature
-    description: How can the app be improved?
-    placeholder: |
-      Example:
-        "It should work like this..."
-  validations:
-    required: true
+  - type: textarea
+    id: feature-description
+    attributes:
+      label: Describe your suggested feature
+      description: How can the app be improved?
+      placeholder: |
+        Example:
+          "It should work like this..."
+    validations:
+      required: true
 
-- type: textarea
-  id: other-details
-  attributes:
-    label: Other details
-    placeholder: Additional details and attachments.
+  - type: textarea
+    id: other-details
+    attributes:
+      label: Other details
+      placeholder: Additional details and attachments.
 
-- type: checkboxes
-  id: acknowledgements
-  attributes:
-    label: Acknowledgements
-    description: >-
-      Read this carefully, we will close and ignore your issue if you skimmed through this.
-    options:
-    - label: I have written a short but informative title.
-      required: true
-    - label: I have updated the app to **[the latest version](https://github.com/user/repo/releases/latest)**.
-      required: true
-    - label: I have checked through the app settings for my feature.
-      required: true
-    - label: >-
-        I have searched the existing issues and this is a new one, **NOT** a 
-        duplicate or related to another open issue.
-      required: true
-    - label: >-
-        This is a **single** feature request, in case of multiple feature 
-        requests I will open a separate issue for each one
-        (they can always link to each other if related)
-      required: true
-    - label: >-
-        This is not a question or a discussion, in which case I should have 
-        gone to [lemmy.ml/c/thumbkey](https://lemmy.ml/c/thumbkey)
-      required: true
-    - label: I have admitted that I am a clown by having checked this box, as I have not read these acknowledgements. 🤡
-    - label: I will fill out all of the requested information in this form.
-      required: true
+  - type: checkboxes
+    id: acknowledgements
+    attributes:
+      label: Acknowledgements
+      description: >-
+        Read this carefully, we will close and ignore your issue if you skimmed through this.
+      options:
+        - label: I have written a short but informative title.
+          required: true
+        - label: I have updated the app to **[the latest version](https://github.com/user/repo/releases/latest)**.
+          required: true
+        - label: I have checked through the app settings for my feature.
+          required: true
+        - label: >-
+            I have searched the existing issues and this is a new one, **NOT** a 
+            duplicate or related to another open issue.
+          required: true
+        - label: >-
+            This is a **single** feature request, in case of multiple feature 
+            requests I will open a separate issue for each one
+            (they can always link to each other if related)
+          required: true
+        - label: >-
+            This is not a question or a discussion, in which case I should have 
+            gone to [lemmy.ml/c/thumbkey](https://lemmy.ml/c/thumbkey)
+          required: true
+        - label: I have admitted that I am a clown by having checked this box, as I have not read these acknowledgements. 🤡
+        - label: I will fill out all of the requested information in this form.
+          required: true
