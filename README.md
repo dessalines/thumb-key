@@ -175,7 +175,7 @@ To add a custom theme:
 
 If you want to tweak your theme more precisely, these are the colours
 that are used. Please keep the theme in line with [Material Design
-Guidelines](https://m2.material.io/design/color/the-color-system.html)
+Guidelines](https://m3.material.io/styles/color/system/overview)
 where feasibe.
 
 | Coloured element                          | Material colour used          |
