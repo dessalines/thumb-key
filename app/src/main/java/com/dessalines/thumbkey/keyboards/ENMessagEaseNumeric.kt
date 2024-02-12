@@ -1,7 +1,5 @@
 package com.dessalines.thumbkey.keyboards
 
-import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.outlined.Abc
 import com.dessalines.thumbkey.utils.ColorVariant
 import com.dessalines.thumbkey.utils.FontSizeVariant
 import com.dessalines.thumbkey.utils.KeyAction
@@ -226,16 +224,7 @@ val KB_EN_MESSAGEASE_NUMERIC =
                                 ),
                         ),
                 ),
-                KeyItemC(
-                    center =
-                        KeyC(
-                            display = KeyDisplay.IconDisplay(Icons.Outlined.Abc),
-                            action = KeyAction.ToggleNumericMode(false),
-                            size = FontSizeVariant.LARGE,
-                            color = ColorVariant.PRIMARY,
-                        ),
-                    backgroundColor = ColorVariant.SURFACE_VARIANT,
-                ),
+                ABC_KEY_ITEM,
             ),
             listOf(
                 KeyItemC(
@@ -253,7 +242,7 @@ val KB_EN_MESSAGEASE_NUMERIC =
                                     display = KeyDisplay.TextDisplay("~"),
                                     action = KeyAction.CommitText("~"),
                                 ),
-                            SwipeDirection.BOTTOM_LEFT to
+                            SwipeDirection.LEFT to
                                 KeyC(
                                     display = KeyDisplay.TextDisplay("<"),
                                     action = KeyAction.CommitText("<"),
@@ -262,6 +251,11 @@ val KB_EN_MESSAGEASE_NUMERIC =
                                 KeyC(
                                     display = KeyDisplay.TextDisplay("*"),
                                     action = KeyAction.CommitText("*"),
+                                ),
+                            SwipeDirection.BOTTOM_RIGHT to
+                                KeyC(
+                                    display = KeyDisplay.TextDisplay("⇥"),
+                                    action = KeyAction.CommitText("\t"),
                                 ),
                         ),
                 ),
