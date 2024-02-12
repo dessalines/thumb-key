@@ -23,7 +23,7 @@ body:
   id: kind
   attributes:
     label: "Kind of request"
-    # description: ""
+    description: "Is this a new layout, or changes on an existing one?"
     options:
       - "New Layout"
       - "Changes on an existing layout"
