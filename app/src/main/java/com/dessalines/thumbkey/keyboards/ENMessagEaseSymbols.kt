@@ -797,11 +797,11 @@ val KB_EN_MESSAGEASE_SYMBOLS_SHIFTED =
                     swipes =
                         mapOf(
                             SwipeDirection.TOP_LEFT to
-                                    KeyC(
-                                        display = KeyDisplay.TextDisplay("\""),
-                                        action = KeyAction.CommitText("\""),
-                                        color = ColorVariant.MUTED,
-                                    ),
+                                KeyC(
+                                    display = KeyDisplay.TextDisplay("\""),
+                                    action = KeyAction.CommitText("\""),
+                                    color = ColorVariant.MUTED,
+                                ),
                             SwipeDirection.TOP to
                                 KeyC(
                                     display = KeyDisplay.TextDisplay("W"),
