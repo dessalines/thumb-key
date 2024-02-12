@@ -7,14 +7,14 @@ import com.dessalines.thumbkey.utils.autoCapitalizeI
 import com.dessalines.thumbkey.utils.autoCapitalizeIApostrophe
 import com.dessalines.thumbkey.utils.lastColKeysToFirst
 
-val KB_EN_MESSAGEEASE_LEFT: KeyboardDefinition =
+val KB_EN_MESSAGEASE_LEFT: KeyboardDefinition =
     KeyboardDefinition(
-        title = "english messageease left-handed",
+        title = "english MessagEase left-handed",
         modes =
             KeyboardDefinitionModes(
-                main = lastColKeysToFirst(KB_EN_MESSAGEEASE_MAIN),
-                shifted = lastColKeysToFirst(KB_EN_MESSAGEEASE_SHIFTED),
-                numeric = lastColKeysToFirst(NUMERIC_KEYBOARD),
+                main = lastColKeysToFirst(KB_EN_MESSAGEASE_MAIN),
+                shifted = lastColKeysToFirst(KB_EN_MESSAGEASE_SHIFTED),
+                numeric = lastColKeysToFirst(KB_EN_MESSAGEASE_NUMERIC),
             ),
         settings =
             KeyboardDefinitionSettings(
