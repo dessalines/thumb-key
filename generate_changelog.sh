@@ -10,4 +10,4 @@ git cliff "$last_tag"..HEAD --tag "$new_tag" --output app/src/main/assets/RELEAS
 
 # Prepending to the RELEASES.md
 git cliff "$last_tag"..HEAD --tag "$new_tag" --prepend RELEASES.md
-prettier -w RELEASES.md
+prettier -w RELEASES.md app/src/main/assets/RELEASES.md
