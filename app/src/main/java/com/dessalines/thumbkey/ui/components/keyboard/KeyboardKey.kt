@@ -226,6 +226,12 @@ fun KeyboardKey(
                             onSwitchPosition = onSwitchPosition,
                         )
                         doneKeyAction(scope, action, isDragged, releasedKey, animationHelperSpeed)
+                        if (vibrateOnTap) {
+                            haptic.performHapticFeedback(HapticFeedbackType.LongPress)
+                        }
+                        if (soundOnTap) {
+                            audioManager.playSoundEffect(AudioManager.FX_KEY_CLICK, .1f)
+                        }
                     }
                 },
             )
