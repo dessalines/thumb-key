@@ -323,15 +323,25 @@ val KB_JA_THUMBKEY_HIRAGANA_MAIN =
                     swipeType = SwipeNWay.FOUR_WAY_CROSS,
                     swipes =
                         mapOf(
+                            SwipeDirection.BOTTOM to
+                                KeyC(
+                                    display = KeyDisplay.TextDisplay("ゐ"),
+                                    action = KeyAction.CommitText("ゐ"),
+                                ),
+                            SwipeDirection.LEFT to
+                                KeyC(
+                                    display = KeyDisplay.TextDisplay("ん"),
+                                    action = KeyAction.CommitText("ん"),
+                                ),
+                            SwipeDirection.TOP to
+                                KeyC(
+                                    display = KeyDisplay.TextDisplay("ゑ"),
+                                    action = KeyAction.CommitText("ゑ"),
+                                ),
                             SwipeDirection.RIGHT to
                                 KeyC(
                                     display = KeyDisplay.TextDisplay("を"),
                                     action = KeyAction.CommitText("を"),
-                                ),
-                            SwipeDirection.TOP to
-                                KeyC(
-                                    display = KeyDisplay.TextDisplay("ん"),
-                                    action = KeyAction.CommitText("ん"),
                                 ),
                         ),
                 ),
@@ -573,15 +583,6 @@ val KB_JA_THUMBKEY_HIRAGANA_SHIFTED =
                 KeyItemC(
                     center =
                         KeyC(
-                            display = KeyDisplay.TextDisplay("っ"),
-                            action = KeyAction.CommitText("っ"),
-                            size = FontSizeVariant.LARGE,
-                            color = ColorVariant.PRIMARY,
-                        ),
-                ),
-                KeyItemC(
-                    center =
-                        KeyC(
                             display = KeyDisplay.TextDisplay("、"),
                             action = KeyAction.CommitText("、"),
                             size = FontSizeVariant.LARGE,
@@ -592,19 +593,28 @@ val KB_JA_THUMBKEY_HIRAGANA_SHIFTED =
                         mapOf(
                             SwipeDirection.BOTTOM to
                                 KeyC(
-                                    display = KeyDisplay.TextDisplay("。"),
-                                    action = KeyAction.CommitText("。"),
+                                    display = KeyDisplay.TextDisplay("？"),
+                                    action = KeyAction.CommitText("？"),
                                 ),
-                            SwipeDirection.LEFT to
+                            SwipeDirection.TOP to
                                 KeyC(
                                     display = KeyDisplay.TextDisplay("！"),
                                     action = KeyAction.CommitText("！"),
                                 ),
                             SwipeDirection.RIGHT to
                                 KeyC(
-                                    display = KeyDisplay.TextDisplay("？"),
-                                    action = KeyAction.CommitText("？"),
+                                    display = KeyDisplay.TextDisplay("。"),
+                                    action = KeyAction.CommitText("。"),
                                 ),
+                        ),
+                ),
+                KeyItemC(
+                    center =
+                        KeyC(
+                            display = KeyDisplay.TextDisplay("っ"),
+                            action = KeyAction.CommitText("っ"),
+                            size = FontSizeVariant.LARGE,
+                            color = ColorVariant.PRIMARY,
                         ),
                 ),
                 KeyItemC(
