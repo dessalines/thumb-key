@@ -243,10 +243,10 @@ val KB_ES_MESSAGEASE_NUMERIC =
                                     action = KeyAction.CommitText("~"),
                                 ),
                             SwipeDirection.TOP to
-                                    KeyC(
-                                        display = KeyDisplay.TextDisplay("¨"),
-                                        action = KeyAction.CommitText("¨"),
-                                    ),
+                                KeyC(
+                                    display = KeyDisplay.TextDisplay("¨"),
+                                    action = KeyAction.CommitText("¨"),
+                                ),
                             SwipeDirection.LEFT to
                                 KeyC(
                                     display = KeyDisplay.TextDisplay("<"),
