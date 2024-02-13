@@ -62,22 +62,22 @@ This project is a follow-up to the now unmaintained (and closed-source) [Message
 
 ### Emoji Key
 
-- **Tap** to access the emoji picker
-- **Swipe up** to configure Thumb-key
-- **Swipe right** to change keyboard position
-- **Swipe down** to access IME switcher (switch between Thumb-key and other keyboards)
+- **Tap** to access the emoji picker.
+- **Swipe up** to configure Thumb-key.
+- **Swipe right** to change keyboard position.
+- **Swipe down** to access IME switcher (switch between Thumb-key and other keyboards).
 - **Swipe left** to cycle between selected layouts (languages).
 - **Swipe to bottom-left** to toggle voice input. Requires [FUTO Voice Input](https://play.google.com/store/apps/details?id=org.futo.voiceinput).
 
 ### Symbols / Letters Key
 
-- **Tap** to access numbers & symbols. **Tap again** to return to letters
-- **Swipe to top-left** to select all
+- **Tap** to access numbers & symbols. **Tap again** to return to letters.
+- **Swipe to top-left** to select all.
 - **Swipe up** to copy - If nothing is selected, all the text will be copied.
 - **Swipe to top-right** to cut - If nothing is selected, all the text will be selected and cut.
-- **Swipe right** to redo
-- **Swipe down** to paste
-- **Swipe left** to undo
+- **Swipe right** to redo.
+- **Swipe down** to paste.
+- **Swipe left** to undo.
 
 ### Slide gestures
 
