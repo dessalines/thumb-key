@@ -242,7 +242,12 @@ val KB_ES_MESSAGEASE_NUMERIC =
                                     display = KeyDisplay.TextDisplay("~"),
                                     action = KeyAction.CommitText("~"),
                                 ),
-                            SwipeDirection.BOTTOM_LEFT to
+                            SwipeDirection.TOP to
+                                KeyC(
+                                    display = KeyDisplay.TextDisplay("¨"),
+                                    action = KeyAction.CommitText("¨"),
+                                ),
+                            SwipeDirection.LEFT to
                                 KeyC(
                                     display = KeyDisplay.TextDisplay("<"),
                                     action = KeyAction.CommitText("<"),
@@ -311,7 +316,7 @@ val KB_ES_MESSAGEASE_NUMERIC =
                                     display = KeyDisplay.TextDisplay("°"),
                                     action = KeyAction.CommitText("°"),
                                 ),
-                            SwipeDirection.BOTTOM_RIGHT to
+                            SwipeDirection.RIGHT to
                                 KeyC(
                                     display = KeyDisplay.TextDisplay(">"),
                                     action = KeyAction.CommitText(">"),
