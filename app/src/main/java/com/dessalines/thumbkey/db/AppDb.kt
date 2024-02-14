@@ -27,8 +27,7 @@ import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 import java.util.concurrent.Executors
 
-const val DEFAULT_KEY_HEIGHT = 64
-const val DEFAULT_KEY_WIDTH = 64
+const val DEFAULT_KEY_SIZE = 64
 const val DEFAULT_ANIMATION_SPEED = 250
 const val DEFAULT_ANIMATION_HELPER_SPEED = 250
 const val DEFAULT_POSITION = 0
@@ -58,13 +57,13 @@ const val DEFAULT_KEY_RADIUS = 0
 data class AppSettings(
     @PrimaryKey(autoGenerate = true) val id: Int,
     @ColumnInfo(
-        name = "key_height",
-        defaultValue = DEFAULT_KEY_HEIGHT.toString(),
+        name = "key_size",
+        defaultValue = DEFAULT_KEY_SIZE.toString(),
     )
-    val keyHeight: Int,
+    val keySize: Int,
     @ColumnInfo(
         name = "key_width",
-        defaultValue = DEFAULT_KEY_WIDTH.toString(),
+        defaultValue = "0",
     )
     val keyWidth: Int,
     @ColumnInfo(
@@ -220,9 +219,9 @@ data class LayoutsUpdate(
 data class LookAndFeelUpdate(
     val id: Int,
     @ColumnInfo(
-        name = "key_height",
+        name = "key_size",
     )
-    val keyHeight: Int,
+    val keySize: Int,
     @ColumnInfo(
         name = "key_width",
     )
@@ -504,8 +503,17 @@ val MIGRATION_12_13 =
         }
     }
 
+val MIGRATION_13_14 =
+    object : Migration(13, 14) {
+        override fun migrate(db: SupportSQLiteDatabase) {
+            db.execSQL(
+                "alter table AppSettings add column key_width INTEGER NOT NULL default 0",
+            )
+        }
+    }
+
 @Database(
-    version = 13,
+    version = 14,
     entities = [AppSettings::class],
     exportSchema = true,
 )
@@ -540,6 +548,7 @@ abstract class AppDB : RoomDatabase() {
                             MIGRATION_10_11,
                             MIGRATION_11_12,
                             MIGRATION_12_13,
+                            MIGRATION_13_14,
                         )
                         // Necessary because it can't insert data on creation
                         .addCallback(

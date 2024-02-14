@@ -39,10 +39,9 @@ import com.dessalines.thumbkey.db.DEFAULT_HIDE_LETTERS
 import com.dessalines.thumbkey.db.DEFAULT_HIDE_SYMBOLS
 import com.dessalines.thumbkey.db.DEFAULT_KEYBOARD_LAYOUT
 import com.dessalines.thumbkey.db.DEFAULT_KEY_BORDER_WIDTH
-import com.dessalines.thumbkey.db.DEFAULT_KEY_HEIGHT
 import com.dessalines.thumbkey.db.DEFAULT_KEY_PADDING
 import com.dessalines.thumbkey.db.DEFAULT_KEY_RADIUS
-import com.dessalines.thumbkey.db.DEFAULT_KEY_WIDTH
+import com.dessalines.thumbkey.db.DEFAULT_KEY_SIZE
 import com.dessalines.thumbkey.db.DEFAULT_MIN_SWIPE_LENGTH
 import com.dessalines.thumbkey.db.DEFAULT_POSITION
 import com.dessalines.thumbkey.db.DEFAULT_PUSHUP_SIZE
@@ -131,8 +130,8 @@ fun KeyboardScreen(
     val backdropColor = MaterialTheme.colorScheme.background
     val backdropPadding = 6.dp
     val keyPadding = settings?.keyPadding ?: DEFAULT_KEY_PADDING
-    val legendHeight = settings?.keyHeight ?: DEFAULT_KEY_HEIGHT
-    val legendWidth = settings?.keyWidth ?: DEFAULT_KEY_WIDTH
+    val legendHeight = settings?.keySize ?: DEFAULT_KEY_SIZE
+    val legendWidth = (if ((settings?.keyWidth ?: 0) > 0) settings?.keyWidth else legendHeight) ?: legendHeight
     val keyRadius = settings?.keyRadius ?: DEFAULT_KEY_RADIUS
 
     val keyBorderWidthFloat = keyBorderWidth / 10.0f

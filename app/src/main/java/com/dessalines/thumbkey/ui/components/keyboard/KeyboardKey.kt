@@ -146,6 +146,7 @@ fun KeyboardKey(
     val keyHeight = legendHeight + (keyPadding * 2.0) + (keyBorderWidth * 2.0)
     val keyWidth = legendWidth + (keyPadding * 2.0) + (keyBorderWidth * 2.0)
     val keySize = (keyHeight + keyWidth) / 2.0
+    val legendSize = (legendHeight + legendWidth) / 2
     val legendPadding = 4.dp + keyBorderWidth.dp
 
     val haptic = LocalHapticFeedback.current
@@ -519,7 +520,7 @@ fun KeyboardKey(
                     ),
         ) {
             key.swipes?.get(SwipeDirection.TOP_LEFT)?.let {
-                KeyText(it, (legendWidth - keyBorderWidth).dp, hideLetters, hideSymbols, capsLock)
+                KeyText(it, (legendSize - keyBorderWidth).dp, hideLetters, hideSymbols, capsLock)
             }
         }
         Box(
@@ -530,7 +531,7 @@ fun KeyboardKey(
                     .padding(vertical = yPadding),
         ) {
             key.swipes?.get(SwipeDirection.TOP)?.let {
-                KeyText(it, (legendWidth - keyBorderWidth).dp, hideLetters, hideSymbols, capsLock)
+                KeyText(it, (legendSize - keyBorderWidth).dp, hideLetters, hideSymbols, capsLock)
             }
         }
         Box(
@@ -544,7 +545,7 @@ fun KeyboardKey(
                     ),
         ) {
             key.swipes?.get(SwipeDirection.TOP_RIGHT)?.let {
-                KeyText(it, (legendWidth - keyBorderWidth).dp, hideLetters, hideSymbols, capsLock)
+                KeyText(it, (legendSize - keyBorderWidth).dp, hideLetters, hideSymbols, capsLock)
             }
         }
         Box(
@@ -555,7 +556,7 @@ fun KeyboardKey(
                     .padding(horizontal = legendPadding),
         ) {
             key.swipes?.get(SwipeDirection.LEFT)?.let {
-                KeyText(it, (legendWidth - keyBorderWidth).dp, hideLetters, hideSymbols, capsLock)
+                KeyText(it, (legendSize - keyBorderWidth).dp, hideLetters, hideSymbols, capsLock)
             }
         }
         Box(
@@ -565,7 +566,7 @@ fun KeyboardKey(
                     .fillMaxSize()
                     .padding(legendPadding),
         ) {
-            KeyText(key.center, (legendWidth - keyBorderWidth).dp, hideLetters, hideSymbols, capsLock)
+            KeyText(key.center, (legendSize - keyBorderWidth).dp, hideLetters, hideSymbols, capsLock)
         }
 
         Box(
@@ -576,7 +577,7 @@ fun KeyboardKey(
                     .padding(horizontal = legendPadding),
         ) {
             key.swipes?.get(SwipeDirection.RIGHT)?.let {
-                KeyText(it, (legendWidth - keyBorderWidth).dp, hideLetters, hideSymbols, capsLock)
+                KeyText(it, (legendSize - keyBorderWidth).dp, hideLetters, hideSymbols, capsLock)
             }
         }
         Box(
@@ -590,7 +591,7 @@ fun KeyboardKey(
                     ),
         ) {
             key.swipes?.get(SwipeDirection.BOTTOM_LEFT)?.let {
-                KeyText(it, (legendWidth - keyBorderWidth).dp, hideLetters, hideSymbols, capsLock)
+                KeyText(it, (legendSize - keyBorderWidth).dp, hideLetters, hideSymbols, capsLock)
             }
         }
         Box(
@@ -601,7 +602,7 @@ fun KeyboardKey(
                     .padding(vertical = yPadding),
         ) {
             key.swipes?.get(SwipeDirection.BOTTOM)?.let {
-                KeyText(it, (legendWidth - keyBorderWidth).dp, hideLetters, hideSymbols, capsLock)
+                KeyText(it, (legendSize - keyBorderWidth).dp, hideLetters, hideSymbols, capsLock)
             }
         }
         Box(
@@ -615,7 +616,7 @@ fun KeyboardKey(
                     ),
         ) {
             key.swipes?.get(SwipeDirection.BOTTOM_RIGHT)?.let {
-                KeyText(it, (legendWidth - keyBorderWidth).dp, hideLetters, hideSymbols, capsLock)
+                KeyText(it, (legendSize - keyBorderWidth).dp, hideLetters, hideSymbols, capsLock)
             }
         }
 
