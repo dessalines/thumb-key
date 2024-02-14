@@ -20,7 +20,7 @@ import com.dessalines.thumbkey.utils.SwipeNWay
 import com.dessalines.thumbkey.utils.autoCapitalizeI
 import com.dessalines.thumbkey.utils.autoCapitalizeIApostrophe
 
-val KB_EN_MESSAGEEASE_MAIN =
+val KB_EN_MESSAGEASE_MAIN =
     KeyboardC(
         listOf(
             listOf(
@@ -224,8 +224,8 @@ val KB_EN_MESSAGEEASE_MAIN =
                                 ),
                             SwipeDirection.BOTTOM_RIGHT to
                                 KeyC(
-                                    display = KeyDisplay.TextDisplay("-"),
-                                    action = KeyAction.CommitText("-"),
+                                    display = KeyDisplay.TextDisplay(":"),
+                                    action = KeyAction.CommitText(":"),
                                     color = ColorVariant.MUTED,
                                 ),
                             SwipeDirection.BOTTOM to
@@ -269,7 +269,7 @@ val KB_EN_MESSAGEEASE_MAIN =
         ),
     )
 
-val KB_EN_MESSAGEEASE_SHIFTED =
+val KB_EN_MESSAGEASE_SHIFTED =
     KeyboardC(
         listOf(
             listOf(
@@ -480,8 +480,8 @@ val KB_EN_MESSAGEEASE_SHIFTED =
                                 ),
                             SwipeDirection.BOTTOM_RIGHT to
                                 KeyC(
-                                    display = KeyDisplay.TextDisplay("-"),
-                                    action = KeyAction.CommitText("-"),
+                                    display = KeyDisplay.TextDisplay(":"),
+                                    action = KeyAction.CommitText(":"),
                                     color = ColorVariant.MUTED,
                                 ),
                             SwipeDirection.BOTTOM to
@@ -525,14 +525,14 @@ val KB_EN_MESSAGEEASE_SHIFTED =
         ),
     )
 
-val KB_EN_MESSAGEEASE: KeyboardDefinition =
+val KB_EN_MESSAGEASE: KeyboardDefinition =
     KeyboardDefinition(
-        title = "english messageease",
+        title = "English MessagEase",
         modes =
             KeyboardDefinitionModes(
-                main = KB_EN_MESSAGEEASE_MAIN,
-                shifted = KB_EN_MESSAGEEASE_SHIFTED,
-                numeric = NUMERIC_KEYBOARD,
+                main = KB_EN_MESSAGEASE_MAIN,
+                shifted = KB_EN_MESSAGEASE_SHIFTED,
+                numeric = KB_EN_MESSAGEASE_NUMERIC,
             ),
         settings =
             KeyboardDefinitionSettings(

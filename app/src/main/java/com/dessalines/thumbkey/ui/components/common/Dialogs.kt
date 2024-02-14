@@ -37,12 +37,14 @@ val DONATION_MARKDOWN =
     ever. 
     
     No one likes recurring donations, but they've proven to be the only 
-    way open source software like Thumb-Key can stay alive. If you find
+    way open-source software like Thumb-Key can stay alive. If you find
     yourself using Thumb-Key every day, please consider donating:
 
     - [Support on Liberapay](https://liberapay.com/dessalines).
     - [Support on Patreon](https://www.patreon.com/dessalines).
 
+    ---
+    
     """.trimIndent()
 
 @OptIn(ExperimentalComposeUiApi::class)
@@ -62,7 +64,7 @@ fun ShowChangelog(appSettingsViewModel: AppSettingsViewModel) {
             val scrollState = rememberScrollState()
             val markdown by appSettingsViewModel.changelog.collectAsState()
             LaunchedEffect(appSettingsViewModel) {
-                appSettingsViewModel.updateChangelog()
+                appSettingsViewModel.updateChangelog(ctx)
             }
 
             AlertDialog(

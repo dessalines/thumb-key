@@ -48,7 +48,7 @@ This project is a follow-up to the now unmaintained (and closed-source) [Message
 
 - Highly configurable.
 - Customizeable sizing, ThumbKey and MessageEase layouts, dynamic / Material v3 themes, animations, haptic feedback, and audio feedback.
-- Open source, [AGPL License](/LICENSE).
+- Open-source, [AGPL License](/LICENSE).
 
 ## User Guide
 
@@ -56,28 +56,29 @@ This project is a follow-up to the now unmaintained (and closed-source) [Message
 - **Swipe up** or **down** on `A` to capitalize. (If you changed the layout, the button next to `#`)  
   <img width=60px height=60px src="https://i.postimg.cc/Znt2Ft9G/thumbkey-1-1.png">
 - **Double tap** the space bar to type a comma, triple tap to type a period. More taps have more punctuation.
-- **Swipe left** on the backspace key to delete whole words to the left of the cursor.
+- **Swipe left** or **long press** on the backspace key to delete whole words to the left of the cursor.
 - **Swipe right** on the backspace key to delete whole words to the right of the cursor.
 - **Swipe left** or **right** on the spacebar to move the cursor by 1 character.
+- **Long press** the return key to insert a line break
 
 ### Emoji Key
 
-- **Tap** to access the emoji picker
-- **Swipe up** to configure Thumb-key
-- **Swipe right** to change keyboard position
-- **Swipe down** to access IME switcher (switch between Thumb-key and other keyboards)
+- **Tap** to access the emoji picker.
+- **Swipe up** to configure Thumb-key.
+- **Swipe right** to change keyboard position.
+- **Swipe down** to access IME switcher (switch between Thumb-key and other keyboards).
 - **Swipe left** to cycle between selected layouts (languages).
 - **Swipe to bottom-left** to toggle voice input. Requires [FUTO Voice Input](https://play.google.com/store/apps/details?id=org.futo.voiceinput).
 
-### Symbol (`#`) Key
+### Symbols / Letters Key
 
-- **Tap** to access numbers & symbols
-- **Swipe to top-left** to select all
+- **Tap** to access numbers & symbols. **Tap again** to return to letters.
+- **Swipe to top-left** to select all.
 - **Swipe up** to copy - If nothing is selected, all the text will be copied.
 - **Swipe to top-right** to cut - If nothing is selected, all the text will be selected and cut.
-- **Swipe right** to redo
-- **Swipe down** to paste
-- **Swipe left** to undo
+- **Swipe right** to redo.
+- **Swipe down** to paste.
+- **Swipe left** to undo.
 
 ### Slide gestures
 
@@ -160,7 +161,7 @@ I'd be happy to accept additions to add more languages, and layouts. To start:
   - Change the characters to whatever you'd like.
   - This file contains both a _shifted_, and _non-shifted_ keyboard, so make sure you take care of both.
   - You can also add or subtract columns if you want, but the layout must remain a grid. I **highly recommend** sticking with the 3x3 layout.
-- Add the new keyboard to the [KeyboardLayout.kt file](https://github.com/dessalines/thumb-key/blob/main/app/src/main/java/com/dessalines/thumbkey/utils/KeyboardLayout.kt), with a new higher index.
+- Add the new keyboard to the end of [KeyboardLayout.kt file](https://github.com/dessalines/thumb-key/blob/main/app/src/main/java/com/dessalines/thumbkey/utils/KeyboardLayout.kt).
 - Either open a pull request, or an issue, linking your new keyboard file. I'll handle the rest of the work.
 
 ## Theming guide
@@ -172,6 +173,24 @@ To add a custom theme:
 - Add the theme to the `ThemeColor` enum in `Types.kt`
 - Add a translation string in `strings.xml` for your theme name.
 - Add the theme to the `colorPairs` in `Theme.kt`
+
+If you want to tweak your theme more precisely, these are the colours
+that are used. Please keep the theme in line with [Material Design
+Guidelines](https://m3.material.io/styles/color/system/overview)
+where feasibe.
+
+| Coloured element                          | Material colour used          |
+| ----------------------------------------- | ----------------------------- |
+| Normal key background                     | `surface`                     |
+| Special key (space, emoji etc) background | `surfaceVariant`              |
+| Main key colour                           | `primary`                     |
+| Key animated after press                  | `tertiary`                    |
+| Swipe letter colour                       | `secondary`                   |
+| Swipe symbol colour                       | `secondary`, but at 50% alpha |
+| Keypress flash colour on tap/hold         | `inversePrimary`              |
+| Keypress flash colour on release          | `tertiaryContainer`           |
+| Key outline                               | `outline`                     |
+| Backdrop                                  | `background`                  |
 
 ## Support / Donate
 

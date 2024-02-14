@@ -1,3 +1,93 @@
+# Thumb-Key 2.6.15 (2024-02-13)
+
+## What's Changed
+
+- CommonKeys.kt: Show swipes on NUMERIC_KEY_ITEM also on ABC_KEY_ITEM by @mpsijm in #720
+- Add long-press actions to keys by @ShortCircuit908 in #711
+- Fixes for English MessagEase keyboard by @mpsijm in #719
+- Enhancements on issue forms by @asdkant in #717
+- Adding RELEASES.md in assets folder. #400 by @dessalines in #716
+- Add left handed EN messagease by @BlueDrink9 in #696
+- Add Matrix-AMOLED theme by @BlueDrink9 in #699
+
+## New Contributors
+
+- @mpsijm made their first contribution in #720
+- @ShortCircuit908 made their first contribution in #711
+
+# Thumb-Key 2.6.14 (2024-02-10)
+
+## What's Changed
+
+- Remove need to manually index layouts by @BlueDrink9 in #701
+- MessagEase fixes by @asdkant in #709
+- Adding slovenscina symbols MessagEase. Fixes #706 by @dessalines in #707
+- Added missing combine keys for french messageease keyboard by @yorikvanhavre in #705
+- Use messagease symbol layout for messagease number board by @BlueDrink9 in #695
+- Fixing comment for keyboard layout. by @dessalines in #698
+- Me es layout by @asdkant in #689
+- fix ENNOMessageEaseSymbols: wrong capitalization on Æ by @afreakk in #694
+- Adding a few proguard rules fixes. by @dessalines in #693
+
+## New Contributors
+
+- @BlueDrink9 made their first contribution in #701
+- @asdkant made their first contribution in #709
+- @yorikvanhavre made their first contribution in #705
+
+# Thumb-Key 2.6.13 (2024-02-08)
+
+## What's Changed
+
+- Added layout: english norwegian symbols messagease by @afreakk in #686
+- Adding local pre-tag changelog generation. by @dessalines in #688
+- Added adaptive icon. by @pxeemo in #672
+- Update ENPLThumbKey.kt by @michal-h-s in #674
+- Add additional prettier checks. by @dessalines in #670
+
+## New Contributors
+
+- @afreakk made their first contribution in #686
+- @michal-h-s made their first contribution in #674
+
+# Thumb-Key 2.6.12 (2024-02-05)
+
+## What's Changed
+
+- Add ukrainian-only messagease symbols layout by @Meetoul in https://github.com/dessalines/thumb-key/pull/666
+- Add layout for English and French by @Zwyx in https://github.com/dessalines/thumb-key/pull/665
+- hebrew messageease style layout with symbols by @yehoshuapw in https://github.com/dessalines/thumb-key/pull/667
+- Adding issue forms instead of markdown templates. Fixes #662 by @dessalines in https://github.com/dessalines/thumb-key/pull/669
+
+## New Contributors
+
+- @Meetoul made their first contribution in https://github.com/dessalines/thumb-key/pull/666
+- @Zwyx made their first contribution in https://github.com/dessalines/thumb-key/pull/665
+- @yehoshuapw made their first contribution in https://github.com/dessalines/thumb-key/pull/667
+
+**Full Changelog**: https://github.com/dessalines/thumb-key/compare/2.6.11...2.6.12
+
+# Thumb-Key 2.6.11 (2024-02-04)
+
+## What's Changed
+
+- show locale currency bottom-right to 1 by @priyavrat-misra in https://github.com/dessalines/thumb-key/pull/636
+- Update strings.xml (typo) by @ligurio in https://github.com/dessalines/thumb-key/pull/638
+- Typos by @5atoshiNakamoto in https://github.com/dessalines/thumb-key/pull/644
+- Finnish/Estonian messageease style layout by @Eemilp in https://github.com/dessalines/thumb-key/pull/639
+- Adding english polski thumbkey keyboard. Fixes #654 by @dessalines in https://github.com/dessalines/thumb-key/pull/659
+- Add keyboard bg_phonetic_messagease by @pavlov-p in https://github.com/dessalines/thumb-key/pull/660
+
+## New Contributors
+
+- @priyavrat-misra made their first contribution in https://github.com/dessalines/thumb-key/pull/636
+- @ligurio made their first contribution in https://github.com/dessalines/thumb-key/pull/638
+- @5atoshiNakamoto made their first contribution in https://github.com/dessalines/thumb-key/pull/644
+- @Eemilp made their first contribution in https://github.com/dessalines/thumb-key/pull/639
+- @pavlov-p made their first contribution in https://github.com/dessalines/thumb-key/pull/660
+
+**Full Changelog**: https://github.com/dessalines/thumb-key/compare/2.6.10...2.6.11
+
 # Thumb-Key 2.6.10 (2024-01-31)
 
 ## What's Changed

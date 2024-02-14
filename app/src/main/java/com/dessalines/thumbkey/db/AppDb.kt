@@ -25,11 +25,7 @@ import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
-import okhttp3.HttpUrl.Companion.toHttpUrl
-import okhttp3.OkHttpClient
-import okhttp3.Request
 import java.util.concurrent.Executors
-import java.util.concurrent.TimeUnit
 
 const val DEFAULT_KEY_SIZE = 64
 const val DEFAULT_ANIMATION_SPEED = 250
@@ -360,28 +356,11 @@ class AppSettingsRepository(private val appSettingsDao: AppSettingsDao) {
     }
 
     @WorkerThread
-    suspend fun updateChangelog() {
+    suspend fun updateChangelog(ctx: Context) {
         withContext(Dispatchers.IO) {
             try {
-                val httpClient: OkHttpClient =
-                    OkHttpClient.Builder()
-                        .connectTimeout(30, TimeUnit.SECONDS)
-                        .writeTimeout(30, TimeUnit.SECONDS)
-                        .readTimeout(30, TimeUnit.SECONDS)
-                        .addNetworkInterceptor { chain ->
-                            chain.request().newBuilder()
-                                .header("User-Agent", "Thumb-Key")
-                                .build()
-                                .let(chain::proceed)
-                        }
-                        .build()
-                Log.d("thumb-key", "Fetching RELEASES.md ...")
-                // Fetch the markdown text
-                val releasesUrl =
-                    "https://raw.githubusercontent.com/dessalines/thumb-key/main/RELEASES.md".toHttpUrl()
-                val req = Request.Builder().url(releasesUrl).build()
-                val res = httpClient.newCall(req).execute()
-                _changelog.value = res.body.string()
+                val releasesStr = ctx.assets.open("RELEASES.md").bufferedReader().use { it.readText() }
+                _changelog.value = releasesStr
             } catch (e: Exception) {
                 Log.e("thumb-key", "Failed to load changelog: $e")
             }
@@ -607,9 +586,9 @@ class AppSettingsViewModel(private val repository: AppSettingsRepository) : View
             repository.updateLastVersionCodeViewed(versionCode)
         }
 
-    fun updateChangelog() =
+    fun updateChangelog(ctx: Context) =
         viewModelScope.launch {
-            repository.updateChangelog()
+            repository.updateChangelog(ctx)
         }
 }
 
