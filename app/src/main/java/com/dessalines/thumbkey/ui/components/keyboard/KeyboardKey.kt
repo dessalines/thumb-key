@@ -21,6 +21,8 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.outlined.ArrowDropUp
 import androidx.compose.material3.Icon
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
@@ -695,12 +697,14 @@ fun KeyText(
 
     when (display) {
         is KeyDisplay.IconDisplay -> {
-            Icon(
-                imageVector = display.icon,
-                contentDescription = display.icon.name,
-                tint = color,
-                modifier = Modifier.size(fontSize.value.dp),
-            )
+            if (!hideLetters || display.icon != Icons.Outlined.ArrowDropUp) {
+                Icon(
+                    imageVector = display.icon,
+                    contentDescription = display.icon.name,
+                    tint = color,
+                    modifier = Modifier.size(fontSize.value.dp),
+                )
+            }
         }
         is KeyDisplay.TextDisplay -> {
             // Only  hide the letters for text, not symbols
