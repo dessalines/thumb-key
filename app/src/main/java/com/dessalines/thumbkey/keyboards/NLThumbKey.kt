@@ -255,6 +255,21 @@ val KB_NL_THUMBKEY_MAIN =
                                     display = KeyDisplay.TextDisplay("d"),
                                     action = KeyAction.CommitText("d"),
                                 ),
+                            SwipeDirection.TOP to
+                                KeyC(
+                                    display = KeyDisplay.TextDisplay("ë"),
+                                    action = KeyAction.CommitText("ë"),
+                                ),
+                            SwipeDirection.RIGHT to
+                                KeyC(
+                                    display = KeyDisplay.TextDisplay("é"),
+                                    action = KeyAction.CommitText("é"),
+                                ),
+                            SwipeDirection.LEFT to
+                                KeyC(
+                                    display = KeyDisplay.TextDisplay("è"),
+                                    action = KeyAction.CommitText("è"),
+                                ),
                         ),
                 ),
                 BACKSPACE_KEY_ITEM,
@@ -510,6 +525,21 @@ val KB_NL_THUMBKEY_SHIFTED =
                                 KeyC(
                                     display = KeyDisplay.TextDisplay("D"),
                                     action = KeyAction.CommitText("D"),
+                                ),
+                            SwipeDirection.TOP to
+                                KeyC(
+                                    display = KeyDisplay.TextDisplay("Ë"),
+                                    action = KeyAction.CommitText("Ë"),
+                                ),
+                            SwipeDirection.RIGHT to
+                                KeyC(
+                                    display = KeyDisplay.TextDisplay("É"),
+                                    action = KeyAction.CommitText("É"),
+                                ),
+                            SwipeDirection.LEFT to
+                                KeyC(
+                                    display = KeyDisplay.TextDisplay("È"),
+                                    action = KeyAction.CommitText("È"),
                                 ),
                         ),
                 ),
