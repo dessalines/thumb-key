@@ -89,7 +89,7 @@ fun LookAndFeelActivity(
         )
     val keyWidthState =
         rememberFloatSettingState(
-            ((if ((settings?.keyWidth ?: 0) > 0) settings?.keyWidth else keySizeState.value) ?: keySizeState.value).toFloat(),
+            (settings?.keyWidth ?: keySizeState.value).toFloat(),
         )
     val nonSquareKeysState =
         rememberBooleanSettingState(
@@ -835,7 +835,7 @@ private fun updateLookAndFeel(
         LookAndFeelUpdate(
             id = 1,
             keySize = keySizeState.value.toInt(),
-            keyWidth = if (nonSquareKeysState.value) keyWidthState.value.toInt() else 0,
+            keyWidth = if (nonSquareKeysState.value) keyWidthState.value.toInt() else null,
             pushupSize = pushupSizeState.value.toInt(),
             animationSpeed = animationSpeedState.value.toInt(),
             animationHelperSpeed = animationHelperSpeedState.value.toInt(),

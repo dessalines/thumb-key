@@ -63,9 +63,8 @@ data class AppSettings(
     val keySize: Int,
     @ColumnInfo(
         name = "key_width",
-        defaultValue = "0",
     )
-    val keyWidth: Int,
+    val keyWidth: Int?,
     @ColumnInfo(
         name = "animation_speed",
         defaultValue = DEFAULT_ANIMATION_SPEED.toString(),
@@ -225,7 +224,7 @@ data class LookAndFeelUpdate(
     @ColumnInfo(
         name = "key_width",
     )
-    val keyWidth: Int,
+    val keyWidth: Int?,
     @ColumnInfo(
         name = "animation_speed",
     )
@@ -507,7 +506,7 @@ val MIGRATION_13_14 =
     object : Migration(13, 14) {
         override fun migrate(db: SupportSQLiteDatabase) {
             db.execSQL(
-                "alter table AppSettings add column key_width INTEGER NOT NULL default 0",
+                "alter table AppSettings add column key_width INTEGER",
             )
         }
     }

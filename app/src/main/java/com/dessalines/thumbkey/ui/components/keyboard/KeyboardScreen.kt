@@ -131,7 +131,7 @@ fun KeyboardScreen(
     val backdropPadding = 6.dp
     val keyPadding = settings?.keyPadding ?: DEFAULT_KEY_PADDING
     val legendHeight = settings?.keySize ?: DEFAULT_KEY_SIZE
-    val legendWidth = (if ((settings?.keyWidth ?: 0) > 0) settings?.keyWidth else legendHeight) ?: legendHeight
+    val legendWidth = settings?.keyWidth ?: legendHeight
     val keyRadius = settings?.keyRadius ?: DEFAULT_KEY_RADIUS
 
     val keyBorderWidthFloat = keyBorderWidth / 10.0f
