@@ -37,24 +37,14 @@ body:
     validations:
       required: true
 
-  # - type: textarea
-  #   id: crash-logs
-  #   attributes:
-  #     label: Crash logs
-  #     description: |
-  #       If you're experiencing crashes, share the crash logs from **More → Settings → Advanced** then press **Dump crash logs**.
-  #     placeholder: |
-  #       You can paste the crash logs in pure text or upload it as an attachment.
-
-  # - type: input
-  #   id: version
-  #   attributes:
-  #     label: version of the program
-  #     description: "."
-  #     placeholder: |
-  #       Example: "1.5.8"
-  #   validations:
-  #     required: true
+  - type: input
+    id: version
+    attributes:
+      label: version of the program
+      placeholder: >-
+        Example: "2.6.14"
+    validations:
+      required: true
 
   - type: input
     id: android-version
@@ -86,24 +76,26 @@ body:
     id: acknowledgements
     attributes:
       label: Acknowledgements
-      description: Read this carefully, I will close and ignore your issue if you skimmed through this.
+      description: >-
+        Read this carefully, I will close and ignore your issue if you skimmed through this.
       options:
-        - label: >-
-            I have searched the existing issues and this is a new one, **NOT** a duplicate or related to another open issue.
-          required: true
-        - label: >-
-            This is not a question or a discussion, in which case I should have gone to
-            [lemmy.ml/c/thumbkey](https://lemmy.ml/c/thumbkey)
-          required: true
-        - label: >-
-            This is a **single** bug report, 
-            in case of multiple bugs I will open a separate issue for each one 
-            (they can always link to each other if related)
-          required: true
         - label: I have written a short but informative title.
           required: true
-        # - label: I have updated the app **[the latest version](https://github.com/user/repo/releases/latest)**.
-        #   required: true
+        - label: I have updated the app to **[the latest version](https://github.com/user/repo/releases/latest)**.
+          required: true
+        - label: >-
+            I have searched the existing issues and this is a new one, **NOT** a 
+            duplicate or related to another open issue.
+          required: true
+        - label: >-
+            This is not a question or a discussion, in which case I should have 
+            gone to [lemmy.ml/c/thumbkey](https://lemmy.ml/c/thumbkey)
+          required: true
+        - label: >-
+            This is a **single** bug report, in case of multiple bugs I will open 
+            a separate issue for each one 
+            (they can always link to each other if related)
+          required: true
         - label: I have admitted that I am a clown by having checked this box, as I have not read these acknowledgements. 🤡
         - label: I have filled out all of the requested information in this form.
           required: true

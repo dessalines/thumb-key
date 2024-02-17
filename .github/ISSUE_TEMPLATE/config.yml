@@ -1,1 +1,5 @@
 blank_issues_enabled: false
+contact_links:
+  - name: Discussion
+    url: https://lemmy.ml/c/thumbkey
+    about: Discussion board

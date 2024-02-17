@@ -48,6 +48,7 @@ data class KeyItemC(
     val backgroundColor: ColorVariant = ColorVariant.SURFACE,
     val swipeType: SwipeNWay = SwipeNWay.EIGHT_WAY,
     val slideType: SlideType = SlideType.NONE,
+    val longPress: KeyAction? = null,
 )
 
 data class KeyC(
@@ -178,6 +179,7 @@ enum class ThemeColor(private val stringId: Int) {
     HighContrast(R.string.high_contrast),
     HighContrastColorful(R.string.high_contrast_colorful),
     Ancom(R.string.ancom),
+    Matrix(R.string.matrix),
     ;
 
     @Composable

@@ -7,9 +7,10 @@ import androidx.compose.animation.EnterTransition
 import androidx.compose.animation.core.tween
 import androidx.compose.animation.fadeOut
 import androidx.compose.animation.slideInVertically
+import androidx.compose.foundation.ExperimentalFoundationApi
 import androidx.compose.foundation.background
 import androidx.compose.foundation.border
-import androidx.compose.foundation.clickable
+import androidx.compose.foundation.combinedClickable
 import androidx.compose.foundation.gestures.detectDragGestures
 import androidx.compose.foundation.interaction.MutableInteractionSource
 import androidx.compose.foundation.interaction.collectIsPressedAsState
@@ -68,6 +69,7 @@ import kotlin.math.abs
 import kotlin.math.max
 import kotlin.math.min
 
+@OptIn(ExperimentalFoundationApi::class)
 @Composable
 fun KeyboardKey(
     key: KeyItemC,
@@ -176,36 +178,63 @@ fun KeyboardKey(
             )
             .background(color = backgroundColor)
             // Note: pointerInput has a delay when switching keyboards, so you must use this
-            .clickable(interactionSource = interactionSource, indication = null) {
-                // Set the last key info, and the tap count
-                val cAction = key.center.action
-                lastAction.value?.let { lastAction ->
-                    if (lastAction == cAction && !ime.didCursorMove()) {
-                        tapCount += 1
-                    } else {
-                        tapCount = 0
+            .combinedClickable(
+                interactionSource = interactionSource,
+                indication = null,
+                onClick = {
+                    // Set the last key info, and the tap count
+                    val cAction = key.center.action
+                    lastAction.value?.let { lastAction ->
+                        if (lastAction == cAction && !ime.didCursorMove()) {
+                            tapCount += 1
+                        } else {
+                            tapCount = 0
+                        }
                     }
-                }
-                lastAction.value = cAction
+                    lastAction.value = cAction
 
-                // Set the correct action
-                val action = tapActions[tapCount % tapActions.size]
-
-                performKeyAction(
-                    action = action,
-                    ime = ime,
-                    autoCapitalize = autoCapitalize,
-                    keyboardSettings = keyboardSettings,
-                    onToggleShiftMode = onToggleShiftMode,
-                    onToggleNumericMode = onToggleNumericMode,
-                    onToggleEmojiMode = onToggleEmojiMode,
-                    onToggleCapsLock = onToggleCapsLock,
-                    onAutoCapitalize = onAutoCapitalize,
-                    onSwitchLanguage = onSwitchLanguage,
-                    onSwitchPosition = onSwitchPosition,
-                )
-                doneKeyAction(scope, action, isDragged, releasedKey, animationHelperSpeed)
-            }
+                    // Set the correct action
+                    val action = tapActions[tapCount % tapActions.size]
+                    performKeyAction(
+                        action = action,
+                        ime = ime,
+                        autoCapitalize = autoCapitalize,
+                        keyboardSettings = keyboardSettings,
+                        onToggleShiftMode = onToggleShiftMode,
+                        onToggleNumericMode = onToggleNumericMode,
+                        onToggleEmojiMode = onToggleEmojiMode,
+                        onToggleCapsLock = onToggleCapsLock,
+                        onAutoCapitalize = onAutoCapitalize,
+                        onSwitchLanguage = onSwitchLanguage,
+                        onSwitchPosition = onSwitchPosition,
+                    )
+                    doneKeyAction(scope, action, isDragged, releasedKey, animationHelperSpeed)
+                },
+                onLongClick = {
+                    key.longPress?.let { action ->
+                        performKeyAction(
+                            action = action,
+                            ime = ime,
+                            autoCapitalize = autoCapitalize,
+                            keyboardSettings = keyboardSettings,
+                            onToggleShiftMode = onToggleShiftMode,
+                            onToggleNumericMode = onToggleNumericMode,
+                            onToggleEmojiMode = onToggleEmojiMode,
+                            onToggleCapsLock = onToggleCapsLock,
+                            onAutoCapitalize = onAutoCapitalize,
+                            onSwitchLanguage = onSwitchLanguage,
+                            onSwitchPosition = onSwitchPosition,
+                        )
+                        doneKeyAction(scope, action, isDragged, releasedKey, animationHelperSpeed)
+                        if (vibrateOnTap) {
+                            haptic.performHapticFeedback(HapticFeedbackType.LongPress)
+                        }
+                        if (soundOnTap) {
+                            audioManager.playSoundEffect(AudioManager.FX_KEY_CLICK, .1f)
+                        }
+                    }
+                },
+            )
             // The key1 is necessary, otherwise new swipes wont work
             .pointerInput(key1 = id) {
                 detectDragGestures(

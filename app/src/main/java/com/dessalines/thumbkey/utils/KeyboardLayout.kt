@@ -19,7 +19,9 @@ import com.dessalines.thumbkey.keyboards.KB_EN_EE_THUMBKEY
 import com.dessalines.thumbkey.keyboards.KB_EN_FR_MESSAGEASE_SYMBOLS
 import com.dessalines.thumbkey.keyboards.KB_EN_IT_THUMBKEY
 import com.dessalines.thumbkey.keyboards.KB_EN_MESSAGEASE
+import com.dessalines.thumbkey.keyboards.KB_EN_MESSAGEASE_LEFT
 import com.dessalines.thumbkey.keyboards.KB_EN_MESSAGEASE_SYMBOLS
+import com.dessalines.thumbkey.keyboards.KB_EN_MESSAGEASE_SYMBOLS_LEFT
 import com.dessalines.thumbkey.keyboards.KB_EN_MI_THUMBKEY
 import com.dessalines.thumbkey.keyboards.KB_EN_MI_THUMBKEY_SYMBOLS
 import com.dessalines.thumbkey.keyboards.KB_EN_NO_MESSAGEASE_SYMBOLS
@@ -200,4 +202,6 @@ enum class KeyboardLayout(val keyboardDefinition: KeyboardDefinition) {
     HEMessageEaseSymbols(KB_HE_MESSAGEEASE_SYMBOLS),
     ENNOMessagEaseSymbols(KB_EN_NO_MESSAGEASE_SYMBOLS),
     SLMessagEaseSymbols(KB_SL_MESSAGEEASE_SYMBOLS),
+    ENMessagEaseLeft(KB_EN_MESSAGEASE_LEFT),
+    ENMessagEaseSymbolsLeft(KB_EN_MESSAGEASE_SYMBOLS_LEFT),
 }

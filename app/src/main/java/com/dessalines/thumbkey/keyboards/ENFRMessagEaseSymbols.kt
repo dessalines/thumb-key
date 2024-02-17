@@ -1,7 +1,6 @@
 package com.dessalines.thumbkey.keyboards
 
 import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.outlined.Abc
 import androidx.compose.material.icons.outlined.ArrowDropDown
 import androidx.compose.material.icons.outlined.ArrowDropUp
 import androidx.compose.material.icons.outlined.Copyright
@@ -1006,16 +1005,7 @@ val KB_EN_FR_NUMERIC =
                                 ),
                         ),
                 ),
-                KeyItemC(
-                    center =
-                        KeyC(
-                            display = KeyDisplay.IconDisplay(Icons.Outlined.Abc),
-                            action = KeyAction.ToggleNumericMode(false),
-                            size = FontSizeVariant.LARGE,
-                            color = ColorVariant.PRIMARY,
-                        ),
-                    backgroundColor = ColorVariant.SURFACE_VARIANT,
-                ),
+                ABC_KEY_ITEM,
             ),
             listOf(
                 KeyItemC(
