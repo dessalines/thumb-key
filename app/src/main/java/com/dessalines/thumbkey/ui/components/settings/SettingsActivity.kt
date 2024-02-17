@@ -278,6 +278,7 @@ private fun resetAppSettingsToDefault(
             hideSymbols = DEFAULT_HIDE_SYMBOLS,
             keyBorders = DEFAULT_KEY_BORDERS,
             keySize = DEFAULT_KEY_SIZE,
+            keyWidth = null,
             spacebarMultiTaps = DEFAULT_SPACEBAR_MULTITAPS,
             theme = DEFAULT_THEME,
             themeColor = DEFAULT_THEME_COLOR,

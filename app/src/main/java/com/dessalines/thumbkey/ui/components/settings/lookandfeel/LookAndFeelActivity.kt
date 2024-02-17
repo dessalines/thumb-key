@@ -11,6 +11,7 @@ import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.outlined.Animation
 import androidx.compose.material.icons.outlined.BorderOuter
 import androidx.compose.material.icons.outlined.Colorize
+import androidx.compose.material.icons.outlined.Crop75
 import androidx.compose.material.icons.outlined.FormatSize
 import androidx.compose.material.icons.outlined.HideImage
 import androidx.compose.material.icons.outlined.LinearScale
@@ -85,6 +86,14 @@ fun LookAndFeelActivity(
     val keySizeState =
         rememberFloatSettingState(
             (settings?.keySize ?: DEFAULT_KEY_SIZE).toFloat(),
+        )
+    val keyWidthState =
+        rememberFloatSettingState(
+            (settings?.keyWidth ?: keySizeState.value).toFloat(),
+        )
+    val nonSquareKeysState =
+        rememberBooleanSettingState(
+            keySizeState.value != keyWidthState.value,
         )
     val pushupSizeState =
         rememberFloatSettingState(
@@ -178,6 +187,8 @@ fun LookAndFeelActivity(
                         updateLookAndFeel(
                             appSettingsViewModel,
                             keySizeState,
+                            nonSquareKeysState,
+                            keyWidthState,
                             pushupSizeState,
                             animationSpeedState,
                             animationHelperSpeedState,
@@ -213,6 +224,8 @@ fun LookAndFeelActivity(
                         updateLookAndFeel(
                             appSettingsViewModel,
                             keySizeState,
+                            nonSquareKeysState,
+                            keyWidthState,
                             pushupSizeState,
                             animationSpeedState,
                             animationHelperSpeedState,
@@ -248,6 +261,8 @@ fun LookAndFeelActivity(
                         updateLookAndFeel(
                             appSettingsViewModel,
                             keySizeState,
+                            nonSquareKeysState,
+                            keyWidthState,
                             pushupSizeState,
                             animationSpeedState,
                             animationHelperSpeedState,
@@ -281,6 +296,8 @@ fun LookAndFeelActivity(
                         updateLookAndFeel(
                             appSettingsViewModel,
                             keySizeState,
+                            nonSquareKeysState,
+                            keyWidthState,
                             pushupSizeState,
                             animationSpeedState,
                             animationHelperSpeedState,
@@ -314,6 +331,8 @@ fun LookAndFeelActivity(
                         updateLookAndFeel(
                             appSettingsViewModel,
                             keySizeState,
+                            nonSquareKeysState,
+                            keyWidthState,
                             pushupSizeState,
                             animationSpeedState,
                             animationHelperSpeedState,
@@ -347,6 +366,8 @@ fun LookAndFeelActivity(
                         updateLookAndFeel(
                             appSettingsViewModel,
                             keySizeState,
+                            nonSquareKeysState,
+                            keyWidthState,
                             pushupSizeState,
                             animationSpeedState,
                             animationHelperSpeedState,
@@ -365,7 +386,11 @@ fun LookAndFeelActivity(
                         )
                     },
                 )
-                val keySizeStr = stringResource(R.string.key_size, keySizeState.value.toInt().toString())
+                val keyHeightStr =
+                    stringResource(
+                        if (nonSquareKeysState.value) R.string.key_height else R.string.key_size,
+                        keySizeState.value.toInt().toString(),
+                    )
                 SettingsSlider(
                     valueRange = 10f..200f,
                     state = keySizeState,
@@ -376,12 +401,14 @@ fun LookAndFeelActivity(
                         )
                     },
                     title = {
-                        Text(keySizeStr)
+                        Text(keyHeightStr)
                     },
                     onValueChangeFinished = {
                         updateLookAndFeel(
                             appSettingsViewModel,
                             keySizeState,
+                            nonSquareKeysState,
+                            keyWidthState,
                             pushupSizeState,
                             animationSpeedState,
                             animationHelperSpeedState,
@@ -400,6 +427,80 @@ fun LookAndFeelActivity(
                         )
                     },
                 )
+                SettingsCheckbox(
+                    state = nonSquareKeysState,
+                    icon = {
+                        Icon(
+                            imageVector = Icons.Outlined.Crop75,
+                            contentDescription = null,
+                        )
+                    },
+                    title = {
+                        Text(stringResource(R.string.key_non_square))
+                    },
+                    onCheckedChange = {
+                        updateLookAndFeel(
+                            appSettingsViewModel,
+                            keySizeState,
+                            nonSquareKeysState,
+                            keyWidthState,
+                            pushupSizeState,
+                            animationSpeedState,
+                            animationHelperSpeedState,
+                            positionState,
+                            keyBordersState,
+                            vibrateOnTapState,
+                            soundOnTapState,
+                            hideLettersState,
+                            hideSymbolsState,
+                            themeState,
+                            themeColorState,
+                            backdropEnabledState,
+                            keyPaddingState,
+                            keyBorderWidthState,
+                            keyRadiusState,
+                        )
+                    },
+                )
+                if (nonSquareKeysState.value) {
+                    val keyWidthStr = stringResource(R.string.key_width, keyWidthState.value.toInt().toString())
+                    SettingsSlider(
+                        valueRange = 10f..200f,
+                        state = keyWidthState,
+                        icon = {
+                            Icon(
+                                imageVector = Icons.Outlined.Crop75,
+                                contentDescription = null,
+                            )
+                        },
+                        title = {
+                            Text(keyWidthStr)
+                        },
+                        onValueChangeFinished = {
+                            updateLookAndFeel(
+                                appSettingsViewModel,
+                                keySizeState,
+                                nonSquareKeysState,
+                                keyWidthState,
+                                pushupSizeState,
+                                animationSpeedState,
+                                animationHelperSpeedState,
+                                positionState,
+                                keyBordersState,
+                                vibrateOnTapState,
+                                soundOnTapState,
+                                hideLettersState,
+                                hideSymbolsState,
+                                themeState,
+                                themeColorState,
+                                backdropEnabledState,
+                                keyPaddingState,
+                                keyBorderWidthState,
+                                keyRadiusState,
+                            )
+                        },
+                    )
+                }
                 val keyPaddingStr = stringResource(R.string.key_padding, keyPaddingState.value.toInt().toString())
                 SettingsSlider(
                     valueRange = 0f..10f,
@@ -417,6 +518,8 @@ fun LookAndFeelActivity(
                         updateLookAndFeel(
                             appSettingsViewModel,
                             keySizeState,
+                            nonSquareKeysState,
+                            keyWidthState,
                             pushupSizeState,
                             animationSpeedState,
                             animationHelperSpeedState,
@@ -452,6 +555,8 @@ fun LookAndFeelActivity(
                         updateLookAndFeel(
                             appSettingsViewModel,
                             keySizeState,
+                            nonSquareKeysState,
+                            keyWidthState,
                             pushupSizeState,
                             animationSpeedState,
                             animationHelperSpeedState,
@@ -487,6 +592,8 @@ fun LookAndFeelActivity(
                         updateLookAndFeel(
                             appSettingsViewModel,
                             keySizeState,
+                            nonSquareKeysState,
+                            keyWidthState,
                             pushupSizeState,
                             animationSpeedState,
                             animationHelperSpeedState,
@@ -522,6 +629,8 @@ fun LookAndFeelActivity(
                         updateLookAndFeel(
                             appSettingsViewModel,
                             keySizeState,
+                            nonSquareKeysState,
+                            keyWidthState,
                             pushupSizeState,
                             animationSpeedState,
                             animationHelperSpeedState,
@@ -557,6 +666,8 @@ fun LookAndFeelActivity(
                         updateLookAndFeel(
                             appSettingsViewModel,
                             keySizeState,
+                            nonSquareKeysState,
+                            keyWidthState,
                             pushupSizeState,
                             animationSpeedState,
                             animationHelperSpeedState,
@@ -598,6 +709,8 @@ fun LookAndFeelActivity(
                         updateLookAndFeel(
                             appSettingsViewModel,
                             keySizeState,
+                            nonSquareKeysState,
+                            keyWidthState,
                             pushupSizeState,
                             animationSpeedState,
                             animationHelperSpeedState,
@@ -635,6 +748,8 @@ fun LookAndFeelActivity(
                         updateLookAndFeel(
                             appSettingsViewModel,
                             keySizeState,
+                            nonSquareKeysState,
+                            keyWidthState,
                             pushupSizeState,
                             animationSpeedState,
                             animationHelperSpeedState,
@@ -668,6 +783,8 @@ fun LookAndFeelActivity(
                         updateLookAndFeel(
                             appSettingsViewModel,
                             keySizeState,
+                            nonSquareKeysState,
+                            keyWidthState,
                             pushupSizeState,
                             animationSpeedState,
                             animationHelperSpeedState,
@@ -696,6 +813,8 @@ fun LookAndFeelActivity(
 private fun updateLookAndFeel(
     appSettingsViewModel: AppSettingsViewModel,
     keySizeState: SettingValueState<Float>,
+    nonSquareKeysState: SettingValueState<Boolean>,
+    keyWidthState: SettingValueState<Float>,
     pushupSizeState: SettingValueState<Float>,
     animationSpeedState: SettingValueState<Float>,
     animationHelperSpeedState: SettingValueState<Float>,
@@ -716,6 +835,7 @@ private fun updateLookAndFeel(
         LookAndFeelUpdate(
             id = 1,
             keySize = keySizeState.value.toInt(),
+            keyWidth = if (nonSquareKeysState.value) keyWidthState.value.toInt() else null,
             pushupSize = pushupSizeState.value.toInt(),
             animationSpeed = animationSpeedState.value.toInt(),
             animationHelperSpeed = animationHelperSpeedState.value.toInt(),

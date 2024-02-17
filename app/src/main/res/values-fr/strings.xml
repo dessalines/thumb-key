@@ -78,4 +78,7 @@
     <string name="key_padding">Espacement des touches : %1$s</string>
     <string name="key_border_width">Bordure des touches : %1$s</string>
     <string name="key_radius">Arrondi des touches : %1$s</string>
+    <string name="key_non_square">Touches non carrées</string>
+    <string name="key_width">Largeur des touches : %1$s</string>
+    <string name="key_height">Hauteur des touches : %1$s</string>
 </resources>

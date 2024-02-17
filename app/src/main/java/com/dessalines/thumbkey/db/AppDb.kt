@@ -62,6 +62,10 @@ data class AppSettings(
     )
     val keySize: Int,
     @ColumnInfo(
+        name = "key_width",
+    )
+    val keyWidth: Int?,
+    @ColumnInfo(
         name = "animation_speed",
         defaultValue = DEFAULT_ANIMATION_SPEED.toString(),
     )
@@ -217,6 +221,10 @@ data class LookAndFeelUpdate(
         name = "key_size",
     )
     val keySize: Int,
+    @ColumnInfo(
+        name = "key_width",
+    )
+    val keyWidth: Int?,
     @ColumnInfo(
         name = "animation_speed",
     )
@@ -494,8 +502,17 @@ val MIGRATION_12_13 =
         }
     }
 
+val MIGRATION_13_14 =
+    object : Migration(13, 14) {
+        override fun migrate(db: SupportSQLiteDatabase) {
+            db.execSQL(
+                "alter table AppSettings add column key_width INTEGER",
+            )
+        }
+    }
+
 @Database(
-    version = 13,
+    version = 14,
     entities = [AppSettings::class],
     exportSchema = true,
 )
@@ -530,6 +547,7 @@ abstract class AppDB : RoomDatabase() {
                             MIGRATION_10_11,
                             MIGRATION_11_12,
                             MIGRATION_12_13,
+                            MIGRATION_13_14,
                         )
                         // Necessary because it can't insert data on creation
                         .addCallback(

@@ -43,6 +43,9 @@
     <string name="play_sound_on_tap">Play sound on tap</string>
     <string name="auto_capitalize">Auto-Capitalize</string>
     <string name="key_size">Key Size: %1$s</string>
+    <string name="key_non_square">Use Non-Square Keys</string>
+    <string name="key_height">Key Height: %1$s</string>
+    <string name="key_width">Key Width: %1$s</string>
     <string name="bottom_offset">Bottom Offset: %1$s</string>
     <string name="min_swipe_length">Minimum Swipe Length: %1$s</string>
     <string name="animation_speed">Animation Speed: %1$s</string>

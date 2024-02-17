@@ -84,7 +84,8 @@ fun KeyboardKey(
     hideLetters: Boolean,
     hideSymbols: Boolean,
     capsLock: Boolean,
-    legendSize: Int,
+    legendHeight: Int,
+    legendWidth: Int,
     keyPadding: Int,
     keyBorderWidth: Float,
     keyRadius: Float,
@@ -105,7 +106,7 @@ fun KeyboardKey(
     // Necessary for swipe settings to get updated correctly
     val id =
         key.toString() + animationHelperSpeed + animationSpeed + autoCapitalize +
-            vibrateOnTap + soundOnTap + legendSize + minSwipeLength + slideSensitivity +
+            vibrateOnTap + soundOnTap + legendHeight + legendWidth + minSwipeLength + slideSensitivity +
             slideEnabled + slideCursorMovementMode + slideSpacebarDeadzoneEnabled +
             slideBackspaceDeadzoneEnabled
 
@@ -142,7 +143,10 @@ fun KeyboardKey(
         }
 
     val keyBorderColour = MaterialTheme.colorScheme.outline
-    val keySize = legendSize + (keyPadding * 2.0) + (keyBorderWidth * 2.0)
+    val keyHeight = legendHeight + (keyPadding * 2.0) + (keyBorderWidth * 2.0)
+    val keyWidth = legendWidth + (keyPadding * 2.0) + (keyBorderWidth * 2.0)
+    val keySize = (keyHeight + keyWidth) / 2.0
+    val legendSize = (legendHeight + legendWidth) / 2
     val legendPadding = 4.dp + keyBorderWidth.dp
 
     val haptic = LocalHapticFeedback.current
@@ -161,8 +165,8 @@ fun KeyboardKey(
 
     val keyboardKeyModifier =
         Modifier
-            .height(keySize.dp)
-            .width(keySize.dp * key.widthMultiplier)
+            .height(keyHeight.dp)
+            .width(keyWidth.dp * key.widthMultiplier)
             .padding(keyPadding.dp)
             .clip(RoundedCornerShape(keyRadius.dp))
             .then(
@@ -652,7 +656,7 @@ fun KeyboardKey(
                 val fontSize =
                     fontSizeVariantToFontSize(
                         fontSizeVariant = FontSizeVariant.LARGE,
-                        keySize = legendSize.dp,
+                        keySize = (legendHeight * legendWidth / 2.0).dp,
                         isUpperCase = false,
                     )
                 releasedKey.value?.let { text ->
