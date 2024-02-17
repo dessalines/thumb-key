@@ -794,23 +794,19 @@ fun isUriOrEmailOrPasswordField(ime: IMEService): Boolean {
 fun deleteWordBeforeCursor(ime: IMEService) {
     val wordsBeforeCursor = ime.currentInputConnection.getTextBeforeCursor(9999, 0)
 
-    val trailingSpacesLength = wordsBeforeCursor?.length?.minus(wordsBeforeCursor.trimEnd().length) ?: 0
-    val trimmed = wordsBeforeCursor?.trim()
-    val lastWordLength = trimmed?.split("\\s".toRegex())?.lastOrNull()?.length ?: 1
-    val minDelete = lastWordLength + trailingSpacesLength
+    val pattern = Regex("(\\w+\\W?|[^\\s\\w]+)?\\s*$")
+    val lastWordLength = wordsBeforeCursor?.let { pattern.find(it)?.value?.length } ?: 0
 
-    ime.currentInputConnection.deleteSurroundingText(minDelete, 0)
+    ime.currentInputConnection.deleteSurroundingText(lastWordLength, 0)
 }
 
 fun deleteWordAfterCursor(ime: IMEService) {
     val wordsAfterCursor = ime.currentInputConnection.getTextAfterCursor(9999, 0)
 
-    val trailingSpacesLength = wordsAfterCursor?.length?.minus(wordsAfterCursor.trimStart().length) ?: 0
-    val trimmed = wordsAfterCursor?.trim()
-    val nextWordLength = trimmed?.split("\\s".toRegex())?.firstOrNull()?.length ?: 1
-    val minDelete = nextWordLength + trailingSpacesLength
+    val pattern = Regex("^\\s?(\\w+\\W?|[^\\s\\w]+|\\s+)")
+    val nextWordLength = wordsAfterCursor?.let { pattern.find(it)?.value?.length } ?: 0
 
-    ime.currentInputConnection.deleteSurroundingText(0, minDelete)
+    ime.currentInputConnection.deleteSurroundingText(0, nextWordLength)
 }
 
 fun buildTapActions(keyItem: KeyItemC): List<KeyAction> {
