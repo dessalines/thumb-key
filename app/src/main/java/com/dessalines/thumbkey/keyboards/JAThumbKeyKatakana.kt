@@ -385,7 +385,8 @@ val KB_JA_THUMBKEY_KATAKANA_MAIN =
 val KB_JA_THUMBKEY_KATAKANA_SHIFTED =
     KeyboardC(
         listOf(
-            KeyItemC(
+            listOf(
+                KeyItemC(
                     center =
                         KeyC(
                             display = KeyDisplay.TextDisplay("「"),
