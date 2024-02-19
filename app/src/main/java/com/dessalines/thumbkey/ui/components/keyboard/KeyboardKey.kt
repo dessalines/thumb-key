@@ -656,7 +656,7 @@ fun KeyboardKey(
                 val fontSize =
                     fontSizeVariantToFontSize(
                         fontSizeVariant = FontSizeVariant.LARGE,
-                        keySize = (legendHeight * legendWidth / 2.0).dp,
+                        keySize = legendSize.dp,
                         isUpperCase = false,
                     )
                 releasedKey.value?.let { text ->
