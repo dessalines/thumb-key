@@ -739,7 +739,7 @@ val KB_SV_MESSAGEEASE_SHIFTED =
 
 val KB_SV_MESSAGEEASE: KeyboardDefinition =
     KeyboardDefinition(
-        title = "svenska messageease",
+        title = "svenska messagease",
         modes =
             KeyboardDefinitionModes(
                 main = KB_SV_MESSAGEEASE_MAIN,

@@ -675,7 +675,7 @@ val KB_ES_CA_MESSAGEEASE_SHIFTED =
 
 val KB_ES_CA_MESSAGEEASE: KeyboardDefinition =
     KeyboardDefinition(
-        title = "español català messageease",
+        title = "español català messagease",
         modes =
             KeyboardDefinitionModes(
                 main = KB_ES_CA_MESSAGEEASE_MAIN,

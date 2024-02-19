@@ -9,7 +9,7 @@ import com.dessalines.thumbkey.utils.lastColKeysToFirst
 
 val KB_EN_MESSAGEASE_LEFT: KeyboardDefinition =
     KeyboardDefinition(
-        title = "english MessagEase left-handed",
+        title = "english left-handed messagease",
         modes =
             KeyboardDefinitionModes(
                 main = lastColKeysToFirst(KB_EN_MESSAGEASE_MAIN),
