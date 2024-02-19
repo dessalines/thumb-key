@@ -427,41 +427,6 @@ fun LookAndFeelActivity(
                         )
                     },
                 )
-                SettingsCheckbox(
-                    state = nonSquareKeysState,
-                    icon = {
-                        Icon(
-                            imageVector = Icons.Outlined.Crop75,
-                            contentDescription = null,
-                        )
-                    },
-                    title = {
-                        Text(stringResource(R.string.key_non_square))
-                    },
-                    onCheckedChange = {
-                        updateLookAndFeel(
-                            appSettingsViewModel,
-                            keySizeState,
-                            nonSquareKeysState,
-                            keyWidthState,
-                            pushupSizeState,
-                            animationSpeedState,
-                            animationHelperSpeedState,
-                            positionState,
-                            keyBordersState,
-                            vibrateOnTapState,
-                            soundOnTapState,
-                            hideLettersState,
-                            hideSymbolsState,
-                            themeState,
-                            themeColorState,
-                            backdropEnabledState,
-                            keyPaddingState,
-                            keyBorderWidthState,
-                            keyRadiusState,
-                        )
-                    },
-                )
                 if (nonSquareKeysState.value) {
                     val keyWidthStr = stringResource(R.string.key_width, keyWidthState.value.toInt().toString())
                     SettingsSlider(
@@ -501,6 +466,41 @@ fun LookAndFeelActivity(
                         },
                     )
                 }
+                SettingsCheckbox(
+                    state = nonSquareKeysState,
+                    icon = {
+                        Icon(
+                            imageVector = Icons.Outlined.Crop75,
+                            contentDescription = null,
+                        )
+                    },
+                    title = {
+                        Text(stringResource(R.string.key_non_square))
+                    },
+                    onCheckedChange = {
+                        updateLookAndFeel(
+                            appSettingsViewModel,
+                            keySizeState,
+                            nonSquareKeysState,
+                            keyWidthState,
+                            pushupSizeState,
+                            animationSpeedState,
+                            animationHelperSpeedState,
+                            positionState,
+                            keyBordersState,
+                            vibrateOnTapState,
+                            soundOnTapState,
+                            hideLettersState,
+                            hideSymbolsState,
+                            themeState,
+                            themeColorState,
+                            backdropEnabledState,
+                            keyPaddingState,
+                            keyBorderWidthState,
+                            keyRadiusState,
+                        )
+                    },
+                )
                 val keyPaddingStr = stringResource(R.string.key_padding, keyPaddingState.value.toInt().toString())
                 SettingsSlider(
                     valueRange = 0f..10f,
