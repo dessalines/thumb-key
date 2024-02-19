@@ -933,7 +933,7 @@ val KB_SL_MESSAGEEASE_SYMBOLS_SHIFTED =
 
 val KB_SL_MESSAGEEASE_SYMBOLS: KeyboardDefinition =
     KeyboardDefinition(
-        title = "slovenščina symbols messageease",
+        title = "slovenščina symbols messagease",
         modes =
             KeyboardDefinitionModes(
                 main = KB_SL_MESSAGEEASE_SYMBOLS_MAIN,

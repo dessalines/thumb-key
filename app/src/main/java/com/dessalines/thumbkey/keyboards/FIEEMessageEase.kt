@@ -958,7 +958,7 @@ val KB_FI_EE_MESSAGEEASE_SYMBOLS_SHIFTED =
 
 val KB_FI_EE_MESSAGEEASE_SYMBOLS: KeyboardDefinition =
     KeyboardDefinition(
-        title = "suomi eesti messageease",
+        title = "suomi eesti messagease",
         modes =
             KeyboardDefinitionModes(
                 main = KB_FI_EE_MESSAGEEASE_SYMBOLS_MAIN,

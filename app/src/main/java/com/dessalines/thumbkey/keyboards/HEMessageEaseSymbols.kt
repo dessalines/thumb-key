@@ -400,7 +400,7 @@ val KB_HE_MESSAGEASE_SYMBOLS_MAIN =
 
 val KB_HE_MESSAGEEASE_SYMBOLS: KeyboardDefinition =
     KeyboardDefinition(
-        title = "messageease symbols עברית",
+        title = "messagease symbols עברית",
         modes =
             KeyboardDefinitionModes(
                 main = KB_HE_MESSAGEASE_SYMBOLS_MAIN,

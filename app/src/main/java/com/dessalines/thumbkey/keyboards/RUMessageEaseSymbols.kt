@@ -939,7 +939,7 @@ val KB_RU_MESSAGEEASE_SYMBOLS_SHIFTED =
 
 val KB_RU_MESSAGEEASE_SYMBOLS: KeyboardDefinition =
     KeyboardDefinition(
-        title = "русский symbols messageease",
+        title = "русский symbols messagease",
         modes =
             KeyboardDefinitionModes(
                 main = KB_RU_MESSAGEEASE_SYMBOLS_MAIN,

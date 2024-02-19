@@ -1089,7 +1089,7 @@ val KB_ENEO_MESSAGEEASE_SYMBOLS_SHIFTED =
 
 val KB_ENEO_MESSAGEEASE_SYMBOLS: KeyboardDefinition =
     KeyboardDefinition(
-        title = "english esperanto symbols messageease",
+        title = "english esperanto symbols messagease",
         modes =
             KeyboardDefinitionModes(
                 main = KB_ENEO_MESSAGEEASE_SYMBOLS_MAIN,
