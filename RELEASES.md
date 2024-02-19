@@ -1,3 +1,12 @@
+# Thumb-Key 2.6.17 (2024-02-19)
+
+## What's Changed in 2.6.17
+
+- Fixing animations. Fixes #732 by @dessalines in [#735](https://github.com/dessalines/thumb-key/pull/735)
+- Fixing layout names. Fixes #733 by @dessalines in [#734](https://github.com/dessalines/thumb-key/pull/734)
+- Update Ukrainian translation by @Sestowner in [#730](https://github.com/dessalines/thumb-key/pull/730)
+- MessagEase Hebrew: use MessagEase numeric by @yehoshuapw in [#731](https://github.com/dessalines/thumb-key/pull/731)
+
 # Thumb-Key 2.6.16 (2024-02-17)
 
 ## What's Changed in 2.6.16
