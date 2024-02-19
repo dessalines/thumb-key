@@ -1,7 +1,5 @@
 package com.dessalines.thumbkey.keyboards
 
-import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.outlined.ArrowDropUp
 import com.dessalines.thumbkey.utils.ColorVariant
 import com.dessalines.thumbkey.utils.FontSizeVariant
 import com.dessalines.thumbkey.utils.KeyAction
@@ -188,12 +186,6 @@ val KB_HE_MESSAGEASE_SYMBOLS_MAIN =
                     swipeType = SwipeNWay.FOUR_WAY_DIAGONAL,
                     swipes =
                         mapOf(
-                            SwipeDirection.TOP to
-                                KeyC(
-                                    display = KeyDisplay.IconDisplay(Icons.Outlined.ArrowDropUp),
-                                    action = KeyAction.ToggleShiftMode(true),
-                                    color = ColorVariant.MUTED,
-                                ),
                             SwipeDirection.TOP_LEFT to
                                 KeyC(
                                     display = KeyDisplay.TextDisplay("ף"),
