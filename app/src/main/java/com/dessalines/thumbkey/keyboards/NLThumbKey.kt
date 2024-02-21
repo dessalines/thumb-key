@@ -247,7 +247,6 @@ val KB_NL_THUMBKEY_MAIN =
                             size = FontSizeVariant.LARGE,
                             color = ColorVariant.PRIMARY,
                         ),
-                    swipeType = SwipeNWay.FOUR_WAY_DIAGONAL,
                     swipes =
                         mapOf(
                             SwipeDirection.TOP_LEFT to
@@ -259,16 +258,19 @@ val KB_NL_THUMBKEY_MAIN =
                                 KeyC(
                                     display = KeyDisplay.TextDisplay("ë"),
                                     action = KeyAction.CommitText("ë"),
+                                    color = ColorVariant.MUTED,
                                 ),
                             SwipeDirection.RIGHT to
                                 KeyC(
                                     display = KeyDisplay.TextDisplay("é"),
                                     action = KeyAction.CommitText("é"),
+                                    color = ColorVariant.MUTED,
                                 ),
                             SwipeDirection.LEFT to
                                 KeyC(
                                     display = KeyDisplay.TextDisplay("è"),
                                     action = KeyAction.CommitText("è"),
+                                    color = ColorVariant.MUTED,
                                 ),
                         ),
                 ),
@@ -518,7 +520,6 @@ val KB_NL_THUMBKEY_SHIFTED =
                             size = FontSizeVariant.LARGE,
                             color = ColorVariant.PRIMARY,
                         ),
-                    swipeType = SwipeNWay.FOUR_WAY_DIAGONAL,
                     swipes =
                         mapOf(
                             SwipeDirection.TOP_LEFT to
@@ -530,16 +531,19 @@ val KB_NL_THUMBKEY_SHIFTED =
                                 KeyC(
                                     display = KeyDisplay.TextDisplay("Ë"),
                                     action = KeyAction.CommitText("Ë"),
+                                    color = ColorVariant.MUTED,
                                 ),
                             SwipeDirection.RIGHT to
                                 KeyC(
                                     display = KeyDisplay.TextDisplay("É"),
                                     action = KeyAction.CommitText("É"),
+                                    color = ColorVariant.MUTED,
                                 ),
                             SwipeDirection.LEFT to
                                 KeyC(
                                     display = KeyDisplay.TextDisplay("È"),
                                     action = KeyAction.CommitText("È"),
+                                    color = ColorVariant.MUTED,
                                 ),
                         ),
                 ),
