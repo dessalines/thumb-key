@@ -29,7 +29,7 @@ val KB_EO_CYRILLIC_THUMBKEY_MAIN =
                             size = FontSizeVariant.LARGE,
                             color = ColorVariant.PRIMARY,
                         ),
-                    swipeType = SwipeNWay.FOUR_WAY_DIAGONAL,
+                    swipeType = SwipeNWay.FOUR_WAY_CROSS,
                     swipes =
                         mapOf(
                             SwipeDirection.BOTTOM to
@@ -62,7 +62,7 @@ val KB_EO_CYRILLIC_THUMBKEY_MAIN =
                             size = FontSizeVariant.LARGE,
                             color = ColorVariant.PRIMARY,
                         ),
-                    swipeType = SwipeNWay.TWO_WAY_VERTICAL,
+                    swipeType = SwipeNWay.FOUR_WAY_CROSS,
                     swipes =
                         mapOf(
                             SwipeDirection.BOTTOM to
@@ -95,7 +95,7 @@ val KB_EO_CYRILLIC_THUMBKEY_MAIN =
                             size = FontSizeVariant.LARGE,
                             color = ColorVariant.PRIMARY,
                         ),
-                    swipeType = SwipeNWay.FOUR_WAY_DIAGONAL,
+                    swipeType = SwipeNWay.FOUR_WAY_CROSS,
                     swipes =
                         mapOf(
                             SwipeDirection.BOTTOM to
@@ -131,7 +131,7 @@ val KB_EO_CYRILLIC_THUMBKEY_MAIN =
                             size = FontSizeVariant.LARGE,
                             color = ColorVariant.PRIMARY,
                         ),
-                    swipeType = SwipeNWay.TWO_WAY_HORIZONTAL,
+                    swipeType = SwipeNWay.FOUR_WAY_CROSS,
                     swipes =
                         mapOf(
                             SwipeDirection.BOTTOM to
@@ -164,6 +164,7 @@ val KB_EO_CYRILLIC_THUMBKEY_MAIN =
                             size = FontSizeVariant.LARGE,
                             color = ColorVariant.PRIMARY,
                         ),
+                    swipeType = SwipeNWay.FOUR_WAY_CROSS,
                     swipes =
                         mapOf(
                             SwipeDirection.BOTTOM to
@@ -233,7 +234,7 @@ val KB_EO_CYRILLIC_THUMBKEY_MAIN =
                             size = FontSizeVariant.LARGE,
                             color = ColorVariant.PRIMARY,
                         ),
-                    swipeType = SwipeNWay.FOUR_WAY_DIAGONAL,
+                    swipeType = SwipeNWay.FOUR_WAY_CROSS,
                     swipes =
                         mapOf(
                             SwipeDirection.BOTTOM to
@@ -261,6 +262,7 @@ val KB_EO_CYRILLIC_THUMBKEY_MAIN =
                             size = FontSizeVariant.LARGE,
                             color = ColorVariant.PRIMARY,
                         ),
+                    swipeType = SwipeNWay.FOUR_WAY_CROSS,
                     swipes =
                         mapOf(
                             SwipeDirection.BOTTOM to
@@ -288,7 +290,7 @@ val KB_EO_CYRILLIC_THUMBKEY_MAIN =
                             size = FontSizeVariant.LARGE,
                             color = ColorVariant.PRIMARY,
                         ),
-                    swipeType = SwipeNWay.FOUR_WAY_DIAGONAL,
+                    swipeType = SwipeNWay.FOUR_WAY_CROSS,
                     swipes =
                         mapOf(
                             SwipeDirection.BOTTOM to
@@ -324,7 +326,7 @@ val KB_EO_CYRILLIC_THUMBKEY_SHIFTED =
                             size = FontSizeVariant.LARGE,
                             color = ColorVariant.PRIMARY,
                         ),
-                    swipeType = SwipeNWay.FOUR_WAY_DIAGONAL,
+                    swipeType = SwipeNWay.FOUR_WAY_CROSS,
                     swipes =
                         mapOf(
                             SwipeDirection.BOTTOM to
@@ -357,7 +359,7 @@ val KB_EO_CYRILLIC_THUMBKEY_SHIFTED =
                             size = FontSizeVariant.LARGE,
                             color = ColorVariant.PRIMARY,
                         ),
-                    swipeType = SwipeNWay.TWO_WAY_VERTICAL,
+                    swipeType = SwipeNWay.FOUR_WAY_CROSS,
                     swipes =
                         mapOf(
                             SwipeDirection.BOTTOM to
@@ -390,7 +392,7 @@ val KB_EO_CYRILLIC_THUMBKEY_SHIFTED =
                             size = FontSizeVariant.LARGE,
                             color = ColorVariant.PRIMARY,
                         ),
-                    swipeType = SwipeNWay.FOUR_WAY_DIAGONAL,
+                    swipeType = SwipeNWay.FOUR_WAY_CROSS,
                     swipes =
                         mapOf(
                             SwipeDirection.BOTTOM to
@@ -426,7 +428,7 @@ val KB_EO_CYRILLIC_THUMBKEY_SHIFTED =
                             size = FontSizeVariant.LARGE,
                             color = ColorVariant.PRIMARY,
                         ),
-                    swipeType = SwipeNWay.TWO_WAY_HORIZONTAL,
+                    swipeType = SwipeNWay.FOUR_WAY_CROSS,
                     swipes =
                         mapOf(
                             SwipeDirection.BOTTOM to
@@ -459,6 +461,7 @@ val KB_EO_CYRILLIC_THUMBKEY_SHIFTED =
                             size = FontSizeVariant.LARGE,
                             color = ColorVariant.PRIMARY,
                         ),
+                    swipeType = SwipeNWay.FOUR_WAY_CROSS,
                     swipes =
                         mapOf(
                             SwipeDirection.BOTTOM to
@@ -528,7 +531,7 @@ val KB_EO_CYRILLIC_THUMBKEY_SHIFTED =
                             size = FontSizeVariant.LARGE,
                             color = ColorVariant.PRIMARY,
                         ),
-                    swipeType = SwipeNWay.FOUR_WAY_DIAGONAL,
+                    swipeType = SwipeNWay.FOUR_WAY_CROSS,
                     swipes =
                         mapOf(
                             SwipeDirection.BOTTOM to
@@ -556,6 +559,7 @@ val KB_EO_CYRILLIC_THUMBKEY_SHIFTED =
                             size = FontSizeVariant.LARGE,
                             color = ColorVariant.PRIMARY,
                         ),
+                    swipeType = SwipeNWay.FOUR_WAY_CROSS,
                     swipes =
                         mapOf(
                             SwipeDirection.BOTTOM to
@@ -583,7 +587,7 @@ val KB_EO_CYRILLIC_THUMBKEY_SHIFTED =
                             size = FontSizeVariant.LARGE,
                             color = ColorVariant.PRIMARY,
                         ),
-                    swipeType = SwipeNWay.FOUR_WAY_DIAGONAL,
+                    swipeType = SwipeNWay.FOUR_WAY_CROSS,
                     swipes =
                         mapOf(
                             SwipeDirection.BOTTOM to
