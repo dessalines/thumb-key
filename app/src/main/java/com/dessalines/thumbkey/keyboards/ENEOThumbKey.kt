@@ -77,8 +77,8 @@ val KB_EN_EO_THUMBKEY_MAIN =
                                 ),
                             SwipeDirection.LEFT to
                                 KeyC(
-                                    display = KeyDisplay.TextDisplay("$"),
-                                    action = KeyAction.CommitText("$"),
+                                    display = KeyDisplay.TextDisplay("ϗ"),
+                                    action = KeyAction.CommitText("ϗ"),
                                 ),
                             SwipeDirection.RIGHT to
                                 KeyC(
@@ -392,8 +392,8 @@ val KB_EN_EO_THUMBKEY_SHIFTED =
                                 ),
                             SwipeDirection.LEFT to
                                 KeyC(
-                                    display = KeyDisplay.TextDisplay("$"),
-                                    action = KeyAction.CommitText("$"),
+                                    display = KeyDisplay.TextDisplay("ϗ"),
+                                    action = KeyAction.CommitText("ϗ"),
                                 ),
                             SwipeDirection.RIGHT to
                                 KeyC(
