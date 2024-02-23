@@ -1,3 +1,12 @@
+# Thumb-Key 2.6.18 (2024-02-21)
+
+## What's Changed in 2.6.18
+
+- [NLThumbKey] Accented letters didn't work yet and made them muted by @GuyKlaassen in [#742](https://github.com/dessalines/thumb-key/pull/742)
+- Adding english tagalog messagease. Fixes #743 by @dessalines in [#747](https://github.com/dessalines/thumb-key/pull/747)
+- Hebrew MessagEase symbols: remove shift by @yehoshuapw in [#738](https://github.com/dessalines/thumb-key/pull/738)
+- Adding english esperanto thumb-key keyboard. Fixes #736 by @dessalines in [#739](https://github.com/dessalines/thumb-key/pull/739)
+
 # Thumb-Key 2.6.17 (2024-02-19)
 
 ## What's Changed in 2.6.17
