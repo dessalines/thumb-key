@@ -1,3 +1,20 @@
+# Thumb-Key 2.6.19 (2024-02-24)
+
+## What's Changed in 2.6.19
+
+- Update ENPHMessageEase.kt by @Lysalana in [#760](https://github.com/dessalines/thumb-key/pull/760)
+- Added Hungarian Type-split layout by @KnockoffFeline in [#761](https://github.com/dessalines/thumb-key/pull/761)
+- Feature/rework es me by @asdkant in [#762](https://github.com/dessalines/thumb-key/pull/762)
+- Hebrew symbols messageease fixup by @yehoshuapw in [#753](https://github.com/dessalines/thumb-key/pull/753)
+- Fix EOCyrillicThumbKey.kt by @imthehumanoid in [#750](https://github.com/dessalines/thumb-key/pull/750)
+- Fixed English Esperanto keyboard layout by @imthehumanoid in [#749](https://github.com/dessalines/thumb-key/pull/749)
+- Eo cyrillic by @dessalines in [#748](https://github.com/dessalines/thumb-key/pull/748)
+
+## New Contributors
+
+- @Lysalana made their first contribution in [#760](https://github.com/dessalines/thumb-key/pull/760)
+- @imthehumanoid made their first contribution in [#750](https://github.com/dessalines/thumb-key/pull/750)
+
 # Thumb-Key 2.6.18 (2024-02-21)
 
 ## What's Changed in 2.6.18
