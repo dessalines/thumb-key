@@ -9,7 +9,6 @@ import com.dessalines.thumbkey.utils.KeyItemC
 import com.dessalines.thumbkey.utils.KeyboardC
 import com.dessalines.thumbkey.utils.KeyboardDefinition
 import com.dessalines.thumbkey.utils.KeyboardDefinitionModes
-import com.dessalines.thumbkey.utils.KeyboardDefinitionSettings
 import com.dessalines.thumbkey.utils.SwipeDirection
 import com.dessalines.thumbkey.utils.SwipeNWay
 
@@ -90,7 +89,7 @@ val KB_HU_TYPESPLIT_MAIN =
                                     display = KeyDisplay.TextDisplay("u"),
                                     action = KeyAction.CommitText("u"),
                                 ),
-							SwipeDirection.TOP to
+                            SwipeDirection.TOP to
                                 KeyC(
                                     display = KeyDisplay.TextDisplay("ü"),
                                     action = KeyAction.CommitText("ü"),
@@ -123,7 +122,7 @@ val KB_HU_TYPESPLIT_MAIN =
                                     display = KeyDisplay.TextDisplay("p"),
                                     action = KeyAction.CommitText("p"),
                                 ),
-							SwipeDirection.TOP to
+                            SwipeDirection.TOP to
                                 KeyC(
                                     display = KeyDisplay.TextDisplay("ó"),
                                     action = KeyAction.CommitText("ó"),
@@ -406,7 +405,7 @@ val KB_HU_TYPESPLIT_SHIFTED =
                                     display = KeyDisplay.TextDisplay("U"),
                                     action = KeyAction.CommitText("U"),
                                 ),
-							SwipeDirection.TOP to
+                            SwipeDirection.TOP to
                                 KeyC(
                                     display = KeyDisplay.TextDisplay("Ü"),
                                     action = KeyAction.CommitText("Ü"),
@@ -439,7 +438,7 @@ val KB_HU_TYPESPLIT_SHIFTED =
                                     display = KeyDisplay.TextDisplay("P"),
                                     action = KeyAction.CommitText("P"),
                                 ),
-							SwipeDirection.TOP to
+                            SwipeDirection.TOP to
                                 KeyC(
                                     display = KeyDisplay.TextDisplay("Ó"),
                                     action = KeyAction.CommitText("Ó"),
@@ -561,7 +560,7 @@ val KB_HU_TYPESPLIT_SHIFTED =
                                 ),
                             SwipeDirection.LEFT to
                                 KeyC(
-                                    display = KeyAction.TextDisplay("Í"),
+                                    display = KeyDisplay.TextDisplay("Í"),
                                     action = KeyAction.CommitText("Í"),
                                 ),
                             SwipeDirection.BOTTOM to
@@ -654,5 +653,4 @@ val KB_HU_TYPESPLIT: KeyboardDefinition =
                 shifted = KB_HU_TYPESPLIT_SHIFTED,
                 numeric = TYPESPLIT_NUMERIC_KEYBOARD,
             ),
-        ),
     )
