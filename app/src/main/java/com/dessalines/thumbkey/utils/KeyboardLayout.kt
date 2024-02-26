@@ -31,6 +31,7 @@ import com.dessalines.thumbkey.keyboards.KB_EN_NO_TYPESPLIT
 import com.dessalines.thumbkey.keyboards.KB_EN_PH_MESSAGEASE
 import com.dessalines.thumbkey.keyboards.KB_EN_PL_THUMBKEY
 import com.dessalines.thumbkey.keyboards.KB_EN_QWERTYFOUR
+import com.dessalines.thumbkey.keyboards.KB_EN_RO_THUMBKEY
 import com.dessalines.thumbkey.keyboards.KB_EN_SK_THUMBKEY
 import com.dessalines.thumbkey.keyboards.KB_EN_THUMBKEY
 import com.dessalines.thumbkey.keyboards.KB_EN_THUMBKEY_COMPOSE
@@ -212,4 +213,5 @@ enum class KeyboardLayout(val keyboardDefinition: KeyboardDefinition) {
     ENPHMessagEase(KB_EN_PH_MESSAGEASE),
     EOCyrillicThumbKey(KB_EO_CYRILLIC_THUMBKEY),
     HUTypeSplit(KB_HU_TYPESPLIT),
+    ENROThumbKey(KB_EN_RO_THUMBKEY),
 }
