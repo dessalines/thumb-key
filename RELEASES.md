@@ -1,3 +1,15 @@
+# Thumb-Key 2.6.20 (2024-02-26)
+
+## What's Changed in 2.6.20
+
+- Remove up down spacebar swipes. Fixes #766 by @dessalines in [#768](https://github.com/dessalines/thumb-key/pull/768)
+- Create english română thumb-key by @MGreek in [#767](https://github.com/dessalines/thumb-key/pull/767)
+- Fixed Hungarian Type-split layout by @KnockoffFeline in [#764](https://github.com/dessalines/thumb-key/pull/764)
+
+## New Contributors
+
+- @MGreek made their first contribution in [#767](https://github.com/dessalines/thumb-key/pull/767)
+
 # Thumb-Key 2.6.19 (2024-02-24)
 
 ## What's Changed in 2.6.19
