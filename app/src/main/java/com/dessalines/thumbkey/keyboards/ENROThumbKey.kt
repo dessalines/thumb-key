@@ -41,10 +41,10 @@ val KB_EN_RO_THUMBKEY_MAIN =
                                     action = KeyAction.CommitText("w"),
                                 ),
                             SwipeDirection.BOTTOM to
-                                    KeyC(
-                                        display = KeyDisplay.TextDisplay("ș"),
-                                        action = KeyAction.CommitText("ș"),
-                                    ),
+                                KeyC(
+                                    display = KeyDisplay.TextDisplay("ș"),
+                                    action = KeyAction.CommitText("ș"),
+                                ),
                         ),
                 ),
                 KeyItemC(
@@ -82,15 +82,15 @@ val KB_EN_RO_THUMBKEY_MAIN =
                                     action = KeyAction.CommitText("u"),
                                 ),
                             SwipeDirection.BOTTOM to
-                                    KeyC(
-                                        display = KeyDisplay.TextDisplay("â"),
-                                        action = KeyAction.CommitText("â"),
-                                    ),
+                                KeyC(
+                                    display = KeyDisplay.TextDisplay("â"),
+                                    action = KeyAction.CommitText("â"),
+                                ),
                             SwipeDirection.TOP to
-                                    KeyC(
-                                        display = KeyDisplay.TextDisplay("î"),
-                                        action = KeyAction.CommitText("î"),
-                                    ),
+                                KeyC(
+                                    display = KeyDisplay.TextDisplay("î"),
+                                    action = KeyAction.CommitText("î"),
+                                ),
                         ),
                 ),
                 EMOJI_KEY_ITEM,
@@ -189,10 +189,10 @@ val KB_EN_RO_THUMBKEY_MAIN =
                                     color = ColorVariant.MUTED,
                                 ),
                             SwipeDirection.RIGHT to
-                                    KeyC(
-                                        display = KeyDisplay.TextDisplay("ă"),
-                                        action = KeyAction.CommitText("ă"),
-                                    ),
+                                KeyC(
+                                    display = KeyDisplay.TextDisplay("ă"),
+                                    action = KeyAction.CommitText("ă"),
+                                ),
                         ),
                 ),
                 NUMERIC_KEY_ITEM,
@@ -215,10 +215,10 @@ val KB_EN_RO_THUMBKEY_MAIN =
                                     action = KeyAction.CommitText("c"),
                                 ),
                             SwipeDirection.TOP to
-                                    KeyC(
-                                        display = KeyDisplay.TextDisplay("ț"),
-                                        action = KeyAction.CommitText("ț"),
-                                    ),
+                                KeyC(
+                                    display = KeyDisplay.TextDisplay("ț"),
+                                    action = KeyAction.CommitText("ț"),
+                                ),
                         ),
                 ),
                 KeyItemC(
@@ -315,10 +315,10 @@ val KB_EN_RO_THUMBKEY_SHIFTED =
                                     action = KeyAction.CommitText("W"),
                                 ),
                             SwipeDirection.BOTTOM to
-                                    KeyC(
-                                        display = KeyDisplay.TextDisplay("Ș"),
-                                        action = KeyAction.CommitText("Ș"),
-                                    ),
+                                KeyC(
+                                    display = KeyDisplay.TextDisplay("Ș"),
+                                    action = KeyAction.CommitText("Ș"),
+                                ),
                         ),
                 ),
                 KeyItemC(
@@ -356,15 +356,15 @@ val KB_EN_RO_THUMBKEY_SHIFTED =
                                     action = KeyAction.CommitText("U"),
                                 ),
                             SwipeDirection.BOTTOM to
-                                    KeyC(
-                                        display = KeyDisplay.TextDisplay("Â"),
-                                        action = KeyAction.CommitText("Â"),
-                                    ),
+                                KeyC(
+                                    display = KeyDisplay.TextDisplay("Â"),
+                                    action = KeyAction.CommitText("Â"),
+                                ),
                             SwipeDirection.TOP to
-                                    KeyC(
-                                        display = KeyDisplay.TextDisplay("Î"),
-                                        action = KeyAction.CommitText("Î"),
-                                    ),
+                                KeyC(
+                                    display = KeyDisplay.TextDisplay("Î"),
+                                    action = KeyAction.CommitText("Î"),
+                                ),
                         ),
                 ),
                 EMOJI_KEY_ITEM,
@@ -470,10 +470,10 @@ val KB_EN_RO_THUMBKEY_SHIFTED =
                                     color = ColorVariant.MUTED,
                                 ),
                             SwipeDirection.RIGHT to
-                                    KeyC(
-                                        display = KeyDisplay.TextDisplay("Ă"),
-                                        action = KeyAction.CommitText("Ă"),
-                                    ),
+                                KeyC(
+                                    display = KeyDisplay.TextDisplay("Ă"),
+                                    action = KeyAction.CommitText("Ă"),
+                                ),
                         ),
                 ),
                 NUMERIC_KEY_ITEM,
@@ -496,10 +496,10 @@ val KB_EN_RO_THUMBKEY_SHIFTED =
                                     action = KeyAction.CommitText("C"),
                                 ),
                             SwipeDirection.TOP to
-                                    KeyC(
-                                        display = KeyDisplay.TextDisplay("Ț"),
-                                        action = KeyAction.CommitText("Ț"),
-                                    ),
+                                KeyC(
+                                    display = KeyDisplay.TextDisplay("Ț"),
+                                    action = KeyAction.CommitText("Ț"),
+                                ),
                         ),
                 ),
                 KeyItemC(
