@@ -162,7 +162,6 @@ enum class KeyboardLayout(val keyboardDefinition: KeyboardDefinition) {
     EOENDEThumbKey(KB_EOENDE_THUMBKEY),
     GRThumbKey(KB_GR_THUMBKEY),
     ENCZThumbKey(KB_EN_CZ_THUMBKEY),
-    ENROThumbKey(KB_EN_RO_THUMBKEY),
     ESMessageEase(KB_ES_MESSAGEASE),
     RUMessageEase(KB_RU_MESSAGEEASE),
     BGThumbKeySymbols(KB_BG_THUMBKEY_SYMBOLS),
@@ -214,4 +213,5 @@ enum class KeyboardLayout(val keyboardDefinition: KeyboardDefinition) {
     ENPHMessagEase(KB_EN_PH_MESSAGEASE),
     EOCyrillicThumbKey(KB_EO_CYRILLIC_THUMBKEY),
     HUTypeSplit(KB_HU_TYPESPLIT),
+    ENROThumbKey(KB_EN_RO_THUMBKEY),
 }
