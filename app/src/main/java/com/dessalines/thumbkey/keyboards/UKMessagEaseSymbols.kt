@@ -16,7 +16,7 @@ import com.dessalines.thumbkey.utils.KeyboardDefinition
 import com.dessalines.thumbkey.utils.KeyboardDefinitionModes
 import com.dessalines.thumbkey.utils.SwipeDirection
 
-val KB_UK_MESSAGEEASE_SYMBOLS_MAIN =
+val KB_UK_MESSAGEASE_SYMBOLS_MAIN =
     KeyboardC(
         listOf(
             listOf(
@@ -461,7 +461,7 @@ val KB_UK_MESSAGEEASE_SYMBOLS_MAIN =
         ),
     )
 
-val KB_UK_MESSAGEEASE_SYMBOLS_SHIFTED =
+val KB_UK_MESSAGEASE_SYMBOLS_SHIFTED =
     KeyboardC(
         listOf(
             listOf(
@@ -913,13 +913,13 @@ val KB_UK_MESSAGEEASE_SYMBOLS_SHIFTED =
         ),
     )
 
-val KB_UK_MESSAGEEASE_SYMBOLS: KeyboardDefinition =
+val KB_UK_MESSAGEASE_SYMBOLS: KeyboardDefinition =
     KeyboardDefinition(
         title = "українська мова symbols messagease",
         modes =
             KeyboardDefinitionModes(
-                main = KB_UK_MESSAGEEASE_SYMBOLS_MAIN,
-                shifted = KB_UK_MESSAGEEASE_SYMBOLS_SHIFTED,
+                main = KB_UK_MESSAGEASE_SYMBOLS_MAIN,
+                shifted = KB_UK_MESSAGEASE_SYMBOLS_SHIFTED,
                 numeric = NUMERIC_KEYBOARD,
             ),
     )

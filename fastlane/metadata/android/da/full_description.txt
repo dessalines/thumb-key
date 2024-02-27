@@ -6,4 +6,4 @@ I stedet for at være afhænging af profitdreven og privatlivskrænkende forudsi
 
 Efterhånden som tasternes positioner bliver indgroede i din fingre, vil du nå samme hastighed som ved normal tastning uden at behøve at kigge på tastaturet, mens du skriver.
 
-Dette projekt er en efterfølger til det nu forladte (og closed-source) <a href="https://www.exideas.com/ME/">MessageEase Tastatur</a>, hvilket er projektes største inspirationskilde.
+Dette projekt er en efterfølger til det nu forladte (og closed-source) <a href="https://www.exideas.com/ME/">MessagEase Tastatur</a>, hvilket er projektes største inspirationskilde.

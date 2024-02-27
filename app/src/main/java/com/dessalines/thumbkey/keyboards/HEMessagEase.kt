@@ -258,7 +258,7 @@ val KB_HE_MESSAGEASE_MAIN =
         ),
     )
 
-val KB_HE_MESSAGEEASE: KeyboardDefinition =
+val KB_HE_MESSAGEASE: KeyboardDefinition =
     KeyboardDefinition(
         title = "messagease עברית",
         modes =

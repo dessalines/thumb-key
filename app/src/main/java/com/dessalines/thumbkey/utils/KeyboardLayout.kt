@@ -6,12 +6,12 @@ import com.dessalines.thumbkey.keyboards.KB_BY_THUMBKEY
 import com.dessalines.thumbkey.keyboards.KB_BY_THUMBKEY_SYMBOLS
 import com.dessalines.thumbkey.keyboards.KB_CA_THUMBKEY
 import com.dessalines.thumbkey.keyboards.KB_DA_THUMBKEY
-import com.dessalines.thumbkey.keyboards.KB_DE_MESSAGEEASE
-import com.dessalines.thumbkey.keyboards.KB_DE_MESSAGEEASE_SYMBOLS
+import com.dessalines.thumbkey.keyboards.KB_DE_MESSAGEASE
+import com.dessalines.thumbkey.keyboards.KB_DE_MESSAGEASE_SYMBOLS
 import com.dessalines.thumbkey.keyboards.KB_DE_THUMBKEY
 import com.dessalines.thumbkey.keyboards.KB_DE_THUMBKEY_MULTILINGUAL
 import com.dessalines.thumbkey.keyboards.KB_DE_TYPESPLIT
-import com.dessalines.thumbkey.keyboards.KB_ENEO_MESSAGEEASE_SYMBOLS
+import com.dessalines.thumbkey.keyboards.KB_ENEO_MESSAGEASE_SYMBOLS
 import com.dessalines.thumbkey.keyboards.KB_EN_CZ_THUMBKEY
 import com.dessalines.thumbkey.keyboards.KB_EN_DA_THUMBKEY_SYMBOLS
 import com.dessalines.thumbkey.keyboards.KB_EN_DOUBLE_SYMBOLS
@@ -44,7 +44,7 @@ import com.dessalines.thumbkey.keyboards.KB_EN_TWO_HANDS_SYMBOLS_NUMBERS
 import com.dessalines.thumbkey.keyboards.KB_EN_TYPESPLIT
 import com.dessalines.thumbkey.keyboards.KB_EOENDE_THUMBKEY
 import com.dessalines.thumbkey.keyboards.KB_EO_CYRILLIC_THUMBKEY
-import com.dessalines.thumbkey.keyboards.KB_ES_CA_MESSAGEEASE
+import com.dessalines.thumbkey.keyboards.KB_ES_CA_MESSAGEASE
 import com.dessalines.thumbkey.keyboards.KB_ES_CA_THUMBKEY
 import com.dessalines.thumbkey.keyboards.KB_ES_EO_THUMBKEY
 import com.dessalines.thumbkey.keyboards.KB_ES_MESSAGEASE
@@ -53,18 +53,18 @@ import com.dessalines.thumbkey.keyboards.KB_ES_TYPESPLIT
 import com.dessalines.thumbkey.keyboards.KB_EU_ES_THUMBKEY
 import com.dessalines.thumbkey.keyboards.KB_EU_THUMBKEY
 import com.dessalines.thumbkey.keyboards.KB_FA_THUMBKEY
-import com.dessalines.thumbkey.keyboards.KB_FI_EE_MESSAGEEASE_SYMBOLS
-import com.dessalines.thumbkey.keyboards.KB_FI_MESSAGEEASE
+import com.dessalines.thumbkey.keyboards.KB_FI_EE_MESSAGEASE_SYMBOLS
+import com.dessalines.thumbkey.keyboards.KB_FI_MESSAGEASE
 import com.dessalines.thumbkey.keyboards.KB_FI_THUMBKEY
 import com.dessalines.thumbkey.keyboards.KB_FI_THUMBKEY_WIDE
 import com.dessalines.thumbkey.keyboards.KB_FI_TYPESPLIT
-import com.dessalines.thumbkey.keyboards.KB_FR_MESSAGEEASE
+import com.dessalines.thumbkey.keyboards.KB_FR_MESSAGEASE
 import com.dessalines.thumbkey.keyboards.KB_FR_THUMBKEY_V1
 import com.dessalines.thumbkey.keyboards.KB_FR_THUMBKEY_V2
 import com.dessalines.thumbkey.keyboards.KB_FR_TYPESPLIT
 import com.dessalines.thumbkey.keyboards.KB_GR_THUMBKEY
-import com.dessalines.thumbkey.keyboards.KB_HE_MESSAGEEASE
-import com.dessalines.thumbkey.keyboards.KB_HE_MESSAGEEASE_SYMBOLS
+import com.dessalines.thumbkey.keyboards.KB_HE_MESSAGEASE
+import com.dessalines.thumbkey.keyboards.KB_HE_MESSAGEASE_SYMBOLS
 import com.dessalines.thumbkey.keyboards.KB_HE_THUMBKEY
 import com.dessalines.thumbkey.keyboards.KB_HR_THUMBKEY
 import com.dessalines.thumbkey.keyboards.KB_HR_THUMBKEY_SYMBOLS
@@ -74,7 +74,7 @@ import com.dessalines.thumbkey.keyboards.KB_HU_TYPESPLIT
 import com.dessalines.thumbkey.keyboards.KB_ID_THUMBKEY_SYMBOLS_NUMERIC_V1
 import com.dessalines.thumbkey.keyboards.KB_ID_THUMBKEY_SYMBOLS_V1
 import com.dessalines.thumbkey.keyboards.KB_ID_THUMBKEY_SYMBOLS_V2
-import com.dessalines.thumbkey.keyboards.KB_IT_MESSAGEEASE
+import com.dessalines.thumbkey.keyboards.KB_IT_MESSAGEASE
 import com.dessalines.thumbkey.keyboards.KB_IT_THUMBKEY
 import com.dessalines.thumbkey.keyboards.KB_IT_TYPESPLIT
 import com.dessalines.thumbkey.keyboards.KB_JA_THUMBKEY_HIRAGANA
@@ -92,18 +92,18 @@ import com.dessalines.thumbkey.keyboards.KB_PL_THUMBKEY
 import com.dessalines.thumbkey.keyboards.KB_PL_TYPESPLIT
 import com.dessalines.thumbkey.keyboards.KB_PT_THUMBKEY
 import com.dessalines.thumbkey.keyboards.KB_PT_TYPESPLIT
-import com.dessalines.thumbkey.keyboards.KB_RU_MESSAGEEASE
-import com.dessalines.thumbkey.keyboards.KB_RU_MESSAGEEASE_SYMBOLS
+import com.dessalines.thumbkey.keyboards.KB_RU_MESSAGEASE
+import com.dessalines.thumbkey.keyboards.KB_RU_MESSAGEASE_SYMBOLS
 import com.dessalines.thumbkey.keyboards.KB_RU_THUMBKEY
 import com.dessalines.thumbkey.keyboards.KB_RU_THUMBKEY_SYMBOLS
 import com.dessalines.thumbkey.keyboards.KB_SK_THUMBKEY
-import com.dessalines.thumbkey.keyboards.KB_SL_MESSAGEEASE_SYMBOLS
-import com.dessalines.thumbkey.keyboards.KB_SV_MESSAGEEASE
+import com.dessalines.thumbkey.keyboards.KB_SL_MESSAGEASE_SYMBOLS
+import com.dessalines.thumbkey.keyboards.KB_SV_MESSAGEASE
 import com.dessalines.thumbkey.keyboards.KB_SV_THUMBKEY
 import com.dessalines.thumbkey.keyboards.KB_T9
 import com.dessalines.thumbkey.keyboards.KB_TR_THUMBKEY
-import com.dessalines.thumbkey.keyboards.KB_UK_MESSAGEEASE_SYMBOLS
-import com.dessalines.thumbkey.keyboards.KB_UK_RU_MESSAGEEASE_SYMBOLS
+import com.dessalines.thumbkey.keyboards.KB_UK_MESSAGEASE_SYMBOLS
+import com.dessalines.thumbkey.keyboards.KB_UK_RU_MESSAGEASE_SYMBOLS
 import com.dessalines.thumbkey.keyboards.KB_UK_THUMBKEY
 
 // Make sure new keyboards are added AT THE END of this list, and have a higher index.
@@ -124,21 +124,21 @@ enum class KeyboardLayout(val keyboardDefinition: KeyboardDefinition) {
     PTThumbKey(KB_PT_THUMBKEY),
     RUThumbKey(KB_RU_THUMBKEY),
     UKThumbKey(KB_UK_THUMBKEY),
-    ENMessageEase(KB_EN_MESSAGEASE),
-    ENMessageEaseSymbols(KB_EN_MESSAGEASE_SYMBOLS),
-    HEMessageEase(KB_HE_MESSAGEEASE),
+    ENMessagEase(KB_EN_MESSAGEASE),
+    ENMessagEaseSymbols(KB_EN_MESSAGEASE_SYMBOLS),
+    HEMessagEase(KB_HE_MESSAGEASE),
     RUThumbKeySymbols(KB_RU_THUMBKEY_SYMBOLS),
     BYThumbKey(KB_BY_THUMBKEY),
     BYThumbKeySymbols(KB_BY_THUMBKEY_SYMBOLS),
     ENThumbKeySymbols(KB_EN_THUMBKEY_SYMBOLS),
     FIThumbKeyWide(KB_FI_THUMBKEY_WIDE),
-    DEMessageEase(KB_DE_MESSAGEEASE),
+    DEMessagEase(KB_DE_MESSAGEASE),
     NOThumbKey(KB_NO_THUMBKEY),
     DEThumbKeyMultiLingual(KB_DE_THUMBKEY_MULTILINGUAL),
     KAThumbKey(KB_KA_THUMBKEY),
     IDThumbKeySymbolsV1(KB_ID_THUMBKEY_SYMBOLS_V1),
-    FRMessageEase(KB_FR_MESSAGEEASE),
-    RUMessageEaseSymbols(KB_RU_MESSAGEEASE_SYMBOLS),
+    FRMessagEase(KB_FR_MESSAGEASE),
+    RUMessagEaseSymbols(KB_RU_MESSAGEASE_SYMBOLS),
     T9(KB_T9),
     JAThumbKeyHiragana(KB_JA_THUMBKEY_HIRAGANA),
     JAThumbKeyKatakana(KB_JA_THUMBKEY_KATAKANA),
@@ -156,14 +156,14 @@ enum class KeyboardLayout(val keyboardDefinition: KeyboardDefinition) {
     ENThumbKeyProgrammerWide(KB_EN_THUMBKEY_PROGRAMMER_WIDE),
     HUThumbKey(KB_HU_THUMBKEY),
     ESEOThumbKey(KB_ES_EO_THUMBKEY),
-    ITMessageEase(KB_IT_MESSAGEEASE),
+    ITMessagEase(KB_IT_MESSAGEASE),
     ENSKThumbKey(KB_EN_SK_THUMBKEY),
     HEThumbKey(KB_HE_THUMBKEY),
     EOENDEThumbKey(KB_EOENDE_THUMBKEY),
     GRThumbKey(KB_GR_THUMBKEY),
     ENCZThumbKey(KB_EN_CZ_THUMBKEY),
-    ESMessageEase(KB_ES_MESSAGEASE),
-    RUMessageEase(KB_RU_MESSAGEEASE),
+    ESMessagEase(KB_ES_MESSAGEASE),
+    RUMessagEase(KB_RU_MESSAGEASE),
     BGThumbKeySymbols(KB_BG_THUMBKEY_SYMBOLS),
     HRTwoHands(KB_HR_TWO_HANDS),
     HRThumbKey(KB_HR_THUMBKEY),
@@ -175,9 +175,9 @@ enum class KeyboardLayout(val keyboardDefinition: KeyboardDefinition) {
     IDThumbKeySymbolsNumeric(KB_ID_THUMBKEY_SYMBOLS_NUMERIC_V1),
     ESCAThumbKey(KB_ES_CA_THUMBKEY),
     ENITThumbKey(KB_EN_IT_THUMBKEY),
-    ENEOMessageEaseSymbols(KB_ENEO_MESSAGEEASE_SYMBOLS),
-    UKRUMessageEaseSymbols(KB_UK_RU_MESSAGEEASE_SYMBOLS),
-    DEMessageEaseSymbols(KB_DE_MESSAGEEASE_SYMBOLS),
+    ENEOMessagEaseSymbols(KB_ENEO_MESSAGEASE_SYMBOLS),
+    UKRUMessagEaseSymbols(KB_UK_RU_MESSAGEASE_SYMBOLS),
+    DEMessagEaseSymbols(KB_DE_MESSAGEASE_SYMBOLS),
     CAThumbKey(KB_CA_THUMBKEY),
     MATHThumbKey(KB_MATH_THUMBKEY),
     ENEEThumbKey(KB_EN_EE_THUMBKEY),
@@ -194,19 +194,19 @@ enum class KeyboardLayout(val keyboardDefinition: KeyboardDefinition) {
     KZThumbKey(KB_KZ_THUMBKEY),
     ENMIThumbKey(KB_EN_MI_THUMBKEY),
     ENMIThumbKeySymbols(KB_EN_MI_THUMBKEY_SYMBOLS),
-    ESCAMessageEase(KB_ES_CA_MESSAGEEASE),
-    SVMessageEase(KB_SV_MESSAGEEASE),
+    ESCAMessagEase(KB_ES_CA_MESSAGEASE),
+    SVMessagEase(KB_SV_MESSAGEASE),
     ENDoubleSymbols(KB_EN_DOUBLE_SYMBOLS),
-    FIMessageEase(KB_FI_MESSAGEEASE),
+    FIMessagEase(KB_FI_MESSAGEASE),
     ENDAThumbKeySymbols(KB_EN_DA_THUMBKEY_SYMBOLS),
-    FIEEMessageEase(KB_FI_EE_MESSAGEEASE_SYMBOLS),
+    FIEEMessagEase(KB_FI_EE_MESSAGEASE_SYMBOLS),
     ENPLThumbkey(KB_EN_PL_THUMBKEY),
     BGPhoneticMessagEaseSymbols(KB_BG_PHONETIC_MESSAGEASE_SYMBOLS),
-    UKMessageEaseSymbols(KB_UK_MESSAGEEASE_SYMBOLS),
+    UKMessagEaseSymbols(KB_UK_MESSAGEASE_SYMBOLS),
     ENFRMessagEaseSymbols(KB_EN_FR_MESSAGEASE_SYMBOLS),
-    HEMessageEaseSymbols(KB_HE_MESSAGEEASE_SYMBOLS),
+    HEMessagEaseSymbols(KB_HE_MESSAGEASE_SYMBOLS),
     ENNOMessagEaseSymbols(KB_EN_NO_MESSAGEASE_SYMBOLS),
-    SLMessagEaseSymbols(KB_SL_MESSAGEEASE_SYMBOLS),
+    SLMessagEaseSymbols(KB_SL_MESSAGEASE_SYMBOLS),
     ENMessagEaseLeft(KB_EN_MESSAGEASE_LEFT),
     ENMessagEaseSymbolsLeft(KB_EN_MESSAGEASE_SYMBOLS_LEFT),
     ENEOThumbKey(KB_EN_EO_THUMBKEY),

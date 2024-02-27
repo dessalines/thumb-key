@@ -14,10 +14,10 @@
 
 ## What's Changed in 2.6.19
 
-- Update ENPHMessageEase.kt by @Lysalana in [#760](https://github.com/dessalines/thumb-key/pull/760)
+- Update ENPHMessagEase.kt by @Lysalana in [#760](https://github.com/dessalines/thumb-key/pull/760)
 - Added Hungarian Type-split layout by @KnockoffFeline in [#761](https://github.com/dessalines/thumb-key/pull/761)
 - Feature/rework es me by @asdkant in [#762](https://github.com/dessalines/thumb-key/pull/762)
-- Hebrew symbols messageease fixup by @yehoshuapw in [#753](https://github.com/dessalines/thumb-key/pull/753)
+- Hebrew symbols messagease fixup by @yehoshuapw in [#753](https://github.com/dessalines/thumb-key/pull/753)
 - Fix EOCyrillicThumbKey.kt by @imthehumanoid in [#750](https://github.com/dessalines/thumb-key/pull/750)
 - Fixed English Esperanto keyboard layout by @imthehumanoid in [#749](https://github.com/dessalines/thumb-key/pull/749)
 - Eo cyrillic by @dessalines in [#748](https://github.com/dessalines/thumb-key/pull/748)
@@ -84,11 +84,11 @@
 - Remove need to manually index layouts by @BlueDrink9 in #701
 - MessagEase fixes by @asdkant in #709
 - Adding slovenscina symbols MessagEase. Fixes #706 by @dessalines in #707
-- Added missing combine keys for french messageease keyboard by @yorikvanhavre in #705
+- Added missing combine keys for french messagease keyboard by @yorikvanhavre in #705
 - Use messagease symbol layout for messagease number board by @BlueDrink9 in #695
 - Fixing comment for keyboard layout. by @dessalines in #698
 - Me es layout by @asdkant in #689
-- fix ENNOMessageEaseSymbols: wrong capitalization on Æ by @afreakk in #694
+- fix ENNOMessagEaseSymbols: wrong capitalization on Æ by @afreakk in #694
 - Adding a few proguard rules fixes. by @dessalines in #693
 
 ## New Contributors
@@ -118,7 +118,7 @@
 
 - Add ukrainian-only messagease symbols layout by @Meetoul in https://github.com/dessalines/thumb-key/pull/666
 - Add layout for English and French by @Zwyx in https://github.com/dessalines/thumb-key/pull/665
-- hebrew messageease style layout with symbols by @yehoshuapw in https://github.com/dessalines/thumb-key/pull/667
+- hebrew messagease style layout with symbols by @yehoshuapw in https://github.com/dessalines/thumb-key/pull/667
 - Adding issue forms instead of markdown templates. Fixes #662 by @dessalines in https://github.com/dessalines/thumb-key/pull/669
 
 ## New Contributors
@@ -136,7 +136,7 @@
 - show locale currency bottom-right to 1 by @priyavrat-misra in https://github.com/dessalines/thumb-key/pull/636
 - Update strings.xml (typo) by @ligurio in https://github.com/dessalines/thumb-key/pull/638
 - Typos by @5atoshiNakamoto in https://github.com/dessalines/thumb-key/pull/644
-- Finnish/Estonian messageease style layout by @Eemilp in https://github.com/dessalines/thumb-key/pull/639
+- Finnish/Estonian messagease style layout by @Eemilp in https://github.com/dessalines/thumb-key/pull/639
 - Adding english polski thumbkey keyboard. Fixes #654 by @dessalines in https://github.com/dessalines/thumb-key/pull/659
 - Add keyboard bg_phonetic_messagease by @pavlov-p in https://github.com/dessalines/thumb-key/pull/660
 
@@ -156,7 +156,7 @@
 
 - Add 'english dansk symbols thumb-key' by @maximbaz in https://github.com/dessalines/thumb-key/pull/633
 - Fix 'å' shadowing 'unshift' in 'english dansk symbols thumb-key' by @maximbaz in https://github.com/dessalines/thumb-key/pull/634
-- Update ITMessageEase.kt by @flauta in https://github.com/dessalines/thumb-key/pull/637
+- Update ITMessagEase.kt by @flauta in https://github.com/dessalines/thumb-key/pull/637
 
 ## New Contributors
 
@@ -195,7 +195,7 @@
 ## What's Changed
 
 - Lowering icon size to 108dp by @dessalines in https://github.com/dessalines/thumb-key/pull/615
-- Finnish MessageEase layout by @sashaaaaaaaaa in https://github.com/dessalines/thumb-key/pull/619
+- Finnish MessagEase layout by @sashaaaaaaaaa in https://github.com/dessalines/thumb-key/pull/619
 - Added Danish and Norwegian letters to DEThumbKeyMultiLingual.kt by @hcgraf in https://github.com/dessalines/thumb-key/pull/617
 
 ## New Contributors
@@ -210,7 +210,7 @@
 ## What's Changed
 
 - Update ITThumbKey.kt by @flauta in https://github.com/dessalines/thumb-key/pull/603
-- Adding svenska messageease. Fixes #601 by @dessalines in https://github.com/dessalines/thumb-key/pull/605
+- Adding svenska messagease. Fixes #601 by @dessalines in https://github.com/dessalines/thumb-key/pull/605
 - double symbols prototype by @alensiljak in https://github.com/dessalines/thumb-key/pull/608
 - Upgrading compose to 1.5.7 by @dessalines in https://github.com/dessalines/thumb-key/pull/609
 - Added Italian translation by @flauta in https://github.com/dessalines/thumb-key/pull/610
@@ -230,7 +230,7 @@
 - Add layout English/Te Reo Māori. by @sslater11 in https://github.com/dessalines/thumb-key/pull/593
 - Add Russian localization by @artemnefedov in https://github.com/dessalines/thumb-key/pull/595
 - Update mathematical keyboard layout by @Kuna42 in https://github.com/dessalines/thumb-key/pull/594
-- Adding ES_CA_MESSAGEEASE keyboard. by @dessalines in https://github.com/dessalines/thumb-key/pull/598
+- Adding ES_CA_MESSAGEASE keyboard. by @dessalines in https://github.com/dessalines/thumb-key/pull/598
 
 ## New Contributors
 
@@ -289,7 +289,7 @@
 - fix apostrophe autocorrect in the other two-handed layouts by @Kommynct in https://github.com/dessalines/thumb-key/pull/553
 - Update ITTypeSplit.kt by @flauta in https://github.com/dessalines/thumb-key/pull/558
 - Update Danish Loc by @Limfjorden in https://github.com/dessalines/thumb-key/pull/555
-- Update ENEOMessageEaseSymbols.kt by @uxintro in https://github.com/dessalines/thumb-key/pull/561
+- Update ENEOMessagEaseSymbols.kt by @uxintro in https://github.com/dessalines/thumb-key/pull/561
 - Upgrading deps, running new kotlinter. by @dessalines in https://github.com/dessalines/thumb-key/pull/564
 - Fix EUESThumbKey layout by @zgll2022 in https://github.com/dessalines/thumb-key/pull/563
 
@@ -319,7 +319,7 @@
 
 ## What's Changed
 
-- Small issues with DEMessageEaseSymbols and UKRUMessageEaseSymbols layouts by @Crandel in https://github.com/dessalines/thumb-key/pull/535
+- Small issues with DEMessagEaseSymbols and UKRUMessagEaseSymbols layouts by @Crandel in https://github.com/dessalines/thumb-key/pull/535
 - Update Danish Keyboard by @Limfjorden in https://github.com/dessalines/thumb-key/pull/537
 - Redone Lithuanian layout by @MariusTrap in https://github.com/dessalines/thumb-key/pull/542
 - Fixing DB warnings. by @dessalines in https://github.com/dessalines/thumb-key/pull/543
@@ -410,12 +410,12 @@
 ## What's Changed
 
 - Fixing settings intent. by @dessalines in https://github.com/dessalines/thumb-key/pull/461
-- Update MessageEaseENEOSymbols.kt by @uxintro in https://github.com/dessalines/thumb-key/pull/462
+- Update MessagEaseENEOSymbols.kt by @uxintro in https://github.com/dessalines/thumb-key/pull/462
 - Use common spacebar in numeric keyboard by @cjparsons74 in https://github.com/dessalines/thumb-key/pull/463
 - Adding a backdrop for the keyboard by @WadeWT in https://github.com/dessalines/thumb-key/pull/464
 - Add UA-RU and DE keyboards with symbols by @Crandel in https://github.com/dessalines/thumb-key/pull/465
 - Created layout for Canadian Aboriginal Syllabics by @CarolineHusky in https://github.com/dessalines/thumb-key/pull/472
-- More fixes to MessageEaseFR by @pulkomandy in https://github.com/dessalines/thumb-key/pull/474
+- More fixes to MessagEaseFR by @pulkomandy in https://github.com/dessalines/thumb-key/pull/474
 - Adding new theme by @WadeWT in https://github.com/dessalines/thumb-key/pull/475
 - Key customisation by @WadeWT in https://github.com/dessalines/thumb-key/pull/473
 
@@ -438,7 +438,7 @@
 - Upgrading deps. by @dessalines in https://github.com/dessalines/thumb-key/pull/457
 - Upgrade deps 14 by @dessalines in https://github.com/dessalines/thumb-key/pull/459
 - Add voice input button to emoji key by @storvik in https://github.com/dessalines/thumb-key/pull/454
-- Add messageease en eo symbols by @dessalines in https://github.com/dessalines/thumb-key/pull/458
+- Add messagease en eo symbols by @dessalines in https://github.com/dessalines/thumb-key/pull/458
 - Refactoring settings. by @dessalines in https://github.com/dessalines/thumb-key/pull/460
 
 ## New Contributors
@@ -453,7 +453,7 @@
 
 - Better User Guide section in README by @KraXen72 in https://github.com/dessalines/thumb-key/pull/430
 - Fix IDv1SN bug + renaming Indonesian layout sort problem by @Matyeyev in https://github.com/dessalines/thumb-key/pull/438
-- Complete MessageEaseFR keyboard (main level) by @pulkomandy in https://github.com/dessalines/thumb-key/pull/435
+- Complete MessagEaseFR keyboard (main level) by @pulkomandy in https://github.com/dessalines/thumb-key/pull/435
 
 ## New Contributors
 
@@ -495,11 +495,11 @@
 ## What's Changed
 
 - lithuanian layout by @MariusTrap in https://github.com/dessalines/thumb-key/pull/395
-- Update MessageEaseIT.kt by @flauta in https://github.com/dessalines/thumb-key/pull/404
+- Update MessagEaseIT.kt by @flauta in https://github.com/dessalines/thumb-key/pull/404
 - Add support for moving cursor on spacebar slide. Fixes #91 by @storvik in https://github.com/dessalines/thumb-key/pull/401
 - add the old idv1symbol to be v2. by @Matyeyev in https://github.com/dessalines/thumb-key/pull/405
 - Fixing delete whole word. Fixes #398 by @dessalines in https://github.com/dessalines/thumb-key/pull/406
-- Update MessageEaseDE.kt by @Saturo78 in https://github.com/dessalines/thumb-key/pull/402
+- Update MessagEaseDE.kt by @Saturo78 in https://github.com/dessalines/thumb-key/pull/402
 
 ## New Contributors
 
@@ -513,7 +513,7 @@
 ## What's Changed
 
 - fix: Czech keyboard - ě, č and Caps Lock by @Lastaapps in https://github.com/dessalines/thumb-key/pull/377
-- Update MessageEaseDE.kt by @Saturo78 in https://github.com/dessalines/thumb-key/pull/384
+- Update MessagEaseDE.kt by @Saturo78 in https://github.com/dessalines/thumb-key/pull/384
 - Fixed missing and overlapping keys on CZ keyboard by @Michael36500 in https://github.com/dessalines/thumb-key/pull/386
 - Update ThumbKeyUKv1.kt - fix Ґ and Д conflict by @plugnburn in https://github.com/dessalines/thumb-key/pull/385
 - Added Dracula Theme by @0xFOSSMan in https://github.com/dessalines/thumb-key/pull/376
@@ -567,7 +567,7 @@
 - Added greek layout by @iByteABit256 in https://github.com/dessalines/thumb-key/pull/357
 - created czech layout by @Michael36500 in https://github.com/dessalines/thumb-key/pull/355
 - Add MessagEase spanish layout by @gmartineza in https://github.com/dessalines/thumb-key/pull/336
-- Adding MessageEase RU. Fixes #356 by @dessalines in https://github.com/dessalines/thumb-key/pull/359
+- Adding MessagEase RU. Fixes #356 by @dessalines in https://github.com/dessalines/thumb-key/pull/359
 - Upgrading deps. by @dessalines in https://github.com/dessalines/thumb-key/pull/358
 - Fix settings crash 1 by @dessalines in https://github.com/dessalines/thumb-key/pull/360
 - Update TypeSplitESv1.1.kt by @racuna in https://github.com/dessalines/thumb-key/pull/361
@@ -602,7 +602,7 @@
 - Adding hungarian layout. Fixes #325 by @dessalines in https://github.com/dessalines/thumb-key/pull/330
 - Upgrading deps. by @dessalines in https://github.com/dessalines/thumb-key/pull/331
 - Add spanish esperanto by @dessalines in https://github.com/dessalines/thumb-key/pull/332
-- Add messageease it by @dessalines in https://github.com/dessalines/thumb-key/pull/333
+- Add messagease it by @dessalines in https://github.com/dessalines/thumb-key/pull/333
 
 **Full Changelog**: https://github.com/dessalines/thumb-key/compare/1.9.1...1.10.0
 
@@ -612,7 +612,7 @@
 
 - Rectified issue of "TwoHands" layout by @Lavin-tom in https://github.com/dessalines/thumb-key/pull/313
 - Capital letters when layout changed by @niccokunzmann in https://github.com/dessalines/thumb-key/pull/322
-- Add single quote to MessageEase German by @meliache in https://github.com/dessalines/thumb-key/pull/323
+- Add single quote to MessagEase German by @meliache in https://github.com/dessalines/thumb-key/pull/323
 - まみむめも=>ゔ by @K0baU in https://github.com/dessalines/thumb-key/pull/326
 
 ## New Contributors
@@ -692,7 +692,7 @@
 
 ## What's Changed
 
-- Update MessageEaseFR.kt by @cosminribo in https://github.com/dessalines/thumb-key/pull/256
+- Update MessagEaseFR.kt by @cosminribo in https://github.com/dessalines/thumb-key/pull/256
 - Upgrade deps. by @dessalines in https://github.com/dessalines/thumb-key/pull/265
 - Add T9 keyboard. Fixes #263 by @dessalines in https://github.com/dessalines/thumb-key/pull/264
 - T symbol fix by @dessalines in https://github.com/dessalines/thumb-key/pull/266
@@ -700,7 +700,7 @@
 - Hiragana by @dessalines in https://github.com/dessalines/thumb-key/pull/267
 - Added Japanese kana(hiragana/katakana) by @K0baU in https://github.com/dessalines/thumb-key/pull/261
 - Ru four way by @dessalines in https://github.com/dessalines/thumb-key/pull/268
-- Fix the MessageEaseRUSymbols layout by removing FOUR_WAY_DIAGONAL by @last5bits in https://github.com/dessalines/thumb-key/pull/258
+- Fix the MessagEaseRUSymbols layout by removing FOUR_WAY_DIAGONAL by @last5bits in https://github.com/dessalines/thumb-key/pull/258
 - Fr v2 breversa by @dessalines in https://github.com/dessalines/thumb-key/pull/269
 - French keymap by @breversa in https://github.com/dessalines/thumb-key/pull/257
 - De multiling fix by @dessalines in https://github.com/dessalines/thumb-key/pull/270
@@ -722,7 +722,7 @@
 ## What's Changed
 
 - Update ThumbKeyIDv1Symbols.kt by @awandepan in https://github.com/dessalines/thumb-key/pull/248
-- Adding French and Russian MessageEase Keyboards. by @dessalines in https://github.com/dessalines/thumb-key/pull/255
+- Adding French and Russian MessagEase Keyboards. by @dessalines in https://github.com/dessalines/thumb-key/pull/255
 
 ## New Contributors
 
@@ -734,7 +734,7 @@
 
 ## What's Changed
 
-- MessageEaseENSymbols corrected by @FranciscoTrigo in https://github.com/dessalines/thumb-key/pull/239
+- MessagEaseENSymbols corrected by @FranciscoTrigo in https://github.com/dessalines/thumb-key/pull/239
 - Add Georgian keyboard layout by @gvalson in https://github.com/dessalines/thumb-key/pull/240
 - Adding indonesian keyboard. Fixes #241 by @dessalines in https://github.com/dessalines/thumb-key/pull/245
 - Upgrade deps by @dessalines in https://github.com/dessalines/thumb-key/pull/246
@@ -767,7 +767,7 @@
 - Adding a build CI. by @dessalines in https://github.com/dessalines/thumb-key/pull/225
 - Adding google play link. by @dessalines in https://github.com/dessalines/thumb-key/pull/227
 - Moving from arrays to lists. Running upgraded kotlinter by @dessalines in https://github.com/dessalines/thumb-key/pull/229
-- Adding messageease DE keyboard. Fixes #219 by @dessalines in https://github.com/dessalines/thumb-key/pull/230
+- Adding messagease DE keyboard. Fixes #219 by @dessalines in https://github.com/dessalines/thumb-key/pull/230
 
 ## New Contributors
 
@@ -799,7 +799,7 @@
 
 ## What's Changed
 
-- Fix Capital V in MessageEaseENSymbols.kt by @reneald in https://github.com/dessalines/thumb-key/pull/205
+- Fix Capital V in MessagEaseENSymbols.kt by @reneald in https://github.com/dessalines/thumb-key/pull/205
 - Comprehensive delimiter for deleting last word. by @mockballed in https://github.com/dessalines/thumb-key/pull/206
 - KeyAction.CommitText to better handle Shifted mode. by @mockballed in https://github.com/dessalines/thumb-key/pull/207
 - Upgrading deps. by @dessalines in https://github.com/dessalines/thumb-key/pull/208
@@ -870,7 +870,7 @@
 
 - Add f-droid links. Fixes #8 by @dessalines in https://github.com/dessalines/thumb-key/pull/139
 - Create Danish keyboard file and add Danish translation by @Limfjorden in https://github.com/dessalines/thumb-key/pull/137
-- Adding messageease symbols keyboard. Fixes #106 by @dessalines in https://github.com/dessalines/thumb-key/pull/140
+- Adding messagease symbols keyboard. Fixes #106 by @dessalines in https://github.com/dessalines/thumb-key/pull/140
 - Fixing a few caps issues. #132 by @dessalines in https://github.com/dessalines/thumb-key/pull/144
 - Upgrading deps. by @dessalines in https://github.com/dessalines/thumb-key/pull/145
 
@@ -970,7 +970,7 @@
 - Extracting some common keys. by @dessalines in https://github.com/dessalines/thumb-key/pull/62
 - Adding + to numeric keyboard. Fixes #60 by @dessalines in https://github.com/dessalines/thumb-key/pull/61
 - Swiping on the spacebar moves the cursor. Fixes #59 by @dessalines in https://github.com/dessalines/thumb-key/pull/63
-- Fixing messageease keys by @dessalines in https://github.com/dessalines/thumb-key/pull/66
+- Fixing messagease keys by @dessalines in https://github.com/dessalines/thumb-key/pull/66
 
 ## New Contributors
 

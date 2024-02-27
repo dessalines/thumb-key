@@ -3,6 +3,8 @@ package com.dessalines.thumbkey.keyboards
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.outlined.ArrowDropDown
 import androidx.compose.material.icons.outlined.ArrowDropUp
+import androidx.compose.material.icons.outlined.Copyright
+import androidx.compose.material.icons.outlined.KeyboardCapslock
 import com.dessalines.thumbkey.utils.ColorVariant
 import com.dessalines.thumbkey.utils.FontSizeVariant
 import com.dessalines.thumbkey.utils.KeyAction
@@ -12,12 +14,9 @@ import com.dessalines.thumbkey.utils.KeyItemC
 import com.dessalines.thumbkey.utils.KeyboardC
 import com.dessalines.thumbkey.utils.KeyboardDefinition
 import com.dessalines.thumbkey.utils.KeyboardDefinitionModes
-import com.dessalines.thumbkey.utils.KeyboardDefinitionSettings
 import com.dessalines.thumbkey.utils.SwipeDirection
-import com.dessalines.thumbkey.utils.autoCapitalizeI
-import com.dessalines.thumbkey.utils.autoCapitalizeIApostrophe
 
-val KB_ENEO_MESSAGEEASE_SYMBOLS_MAIN =
+val KB_DE_MESSAGEASE_SYMBOLS_MAIN =
     KeyboardC(
         listOf(
             listOf(
@@ -31,50 +30,26 @@ val KB_ENEO_MESSAGEEASE_SYMBOLS_MAIN =
                         ),
                     swipes =
                         mapOf(
+                            SwipeDirection.BOTTOM_LEFT to
+                                KeyC(
+                                    display = KeyDisplay.TextDisplay("$"),
+                                    action = KeyAction.CommitText("$"),
+                                    color = ColorVariant.MUTED,
+                                ),
+                            SwipeDirection.BOTTOM to
+                                KeyC(
+                                    display = KeyDisplay.TextDisplay("ä"),
+                                    action = KeyAction.CommitText("ä"),
+                                ),
                             SwipeDirection.BOTTOM_RIGHT to
                                 KeyC(
                                     display = KeyDisplay.TextDisplay("v"),
                                     action = KeyAction.CommitText("v"),
                                 ),
-                            SwipeDirection.BOTTOM to
-                                KeyC(
-                                    display = KeyDisplay.TextDisplay("👍"),
-                                    action = KeyAction.CommitText("👍"),
-                                    color = ColorVariant.MUTED,
-                                ),
-                            SwipeDirection.LEFT to
-                                KeyC(
-                                    display = KeyDisplay.TextDisplay("🙁"),
-                                    action = KeyAction.CommitText("🙁"),
-                                    color = ColorVariant.MUTED,
-                                ),
-                            SwipeDirection.TOP_LEFT to
-                                KeyC(
-                                    display = KeyDisplay.TextDisplay("🙂"),
-                                    action = KeyAction.CommitText("🙂"),
-                                    color = ColorVariant.MUTED,
-                                ),
-                            SwipeDirection.TOP to
-                                KeyC(
-                                    display = KeyDisplay.TextDisplay("ŭ"),
-                                    action = KeyAction.CommitText("ŭ"),
-                                ),
-                            SwipeDirection.TOP_RIGHT to
-                                KeyC(
-                                    display = KeyDisplay.TextDisplay("♥"),
-                                    action = KeyAction.CommitText("♥"),
-                                    color = ColorVariant.MUTED,
-                                ),
                             SwipeDirection.RIGHT to
                                 KeyC(
                                     display = KeyDisplay.TextDisplay("-"),
                                     action = KeyAction.CommitText("-"),
-                                    color = ColorVariant.MUTED,
-                                ),
-                            SwipeDirection.BOTTOM_LEFT to
-                                KeyC(
-                                    display = KeyDisplay.TextDisplay("$"),
-                                    action = KeyAction.CommitText("$"),
                                     color = ColorVariant.MUTED,
                                 ),
                         ),
@@ -89,10 +64,11 @@ val KB_ENEO_MESSAGEEASE_SYMBOLS_MAIN =
                         ),
                     swipes =
                         mapOf(
-                            SwipeDirection.BOTTOM to
+                            SwipeDirection.TOP to
                                 KeyC(
-                                    display = KeyDisplay.TextDisplay("l"),
-                                    action = KeyAction.CommitText("l"),
+                                    display = KeyDisplay.TextDisplay("^"),
+                                    action = KeyAction.CommitText("^"),
+                                    color = ColorVariant.MUTED,
                                 ),
                             SwipeDirection.TOP_LEFT to
                                 KeyC(
@@ -100,28 +76,10 @@ val KB_ENEO_MESSAGEEASE_SYMBOLS_MAIN =
                                     action = KeyAction.CommitText("`"),
                                     color = ColorVariant.MUTED,
                                 ),
-                            SwipeDirection.TOP to
+                            SwipeDirection.LEFT to
                                 KeyC(
-                                    display = KeyDisplay.TextDisplay("^"),
-                                    action = KeyAction.CommitText("^"),
-                                    color = ColorVariant.MUTED,
-                                ),
-                            SwipeDirection.TOP_RIGHT to
-                                KeyC(
-                                    display = KeyDisplay.TextDisplay("´"),
-                                    action = KeyAction.CommitText("´"),
-                                    color = ColorVariant.MUTED,
-                                ),
-                            SwipeDirection.RIGHT to
-                                KeyC(
-                                    display = KeyDisplay.TextDisplay("!"),
-                                    action = KeyAction.CommitText("!"),
-                                    color = ColorVariant.MUTED,
-                                ),
-                            SwipeDirection.BOTTOM_RIGHT to
-                                KeyC(
-                                    display = KeyDisplay.TextDisplay("\\"),
-                                    action = KeyAction.CommitText("\\"),
+                                    display = KeyDisplay.TextDisplay("+"),
+                                    action = KeyAction.CommitText("+"),
                                     color = ColorVariant.MUTED,
                                 ),
                             SwipeDirection.BOTTOM_LEFT to
@@ -130,10 +88,27 @@ val KB_ENEO_MESSAGEEASE_SYMBOLS_MAIN =
                                     action = KeyAction.CommitText("/"),
                                     color = ColorVariant.MUTED,
                                 ),
-                            SwipeDirection.LEFT to
+                            SwipeDirection.BOTTOM to
                                 KeyC(
-                                    display = KeyDisplay.TextDisplay("+"),
-                                    action = KeyAction.CommitText("+"),
+                                    display = KeyDisplay.TextDisplay("l"),
+                                    action = KeyAction.CommitText("l"),
+                                ),
+                            SwipeDirection.BOTTOM_RIGHT to
+                                KeyC(
+                                    display = KeyDisplay.TextDisplay("\\"),
+                                    action = KeyAction.CommitText("\\"),
+                                    color = ColorVariant.MUTED,
+                                ),
+                            SwipeDirection.RIGHT to
+                                KeyC(
+                                    display = KeyDisplay.TextDisplay("!"),
+                                    action = KeyAction.CommitText("!"),
+                                    color = ColorVariant.MUTED,
+                                ),
+                            SwipeDirection.TOP_RIGHT to
+                                KeyC(
+                                    display = KeyDisplay.TextDisplay("´"),
+                                    action = KeyAction.CommitText("´"),
                                     color = ColorVariant.MUTED,
                                 ),
                         ),
@@ -148,51 +123,27 @@ val KB_ENEO_MESSAGEEASE_SYMBOLS_MAIN =
                         ),
                     swipes =
                         mapOf(
-                            SwipeDirection.BOTTOM_LEFT to
-                                KeyC(
-                                    display = KeyDisplay.TextDisplay("x"),
-                                    action = KeyAction.CommitText("x"),
-                                ),
                             SwipeDirection.LEFT to
                                 KeyC(
                                     display = KeyDisplay.TextDisplay("?"),
                                     action = KeyAction.CommitText("?"),
                                     color = ColorVariant.MUTED,
                                 ),
-                            SwipeDirection.BOTTOM_RIGHT to
+                            SwipeDirection.BOTTOM_LEFT to
                                 KeyC(
-                                    display = KeyDisplay.TextDisplay("€"),
-                                    action = KeyAction.CommitText("€"),
-                                    color = ColorVariant.MUTED,
-                                ),
-                            SwipeDirection.TOP_LEFT to
-                                KeyC(
-                                    display = KeyDisplay.TextDisplay("👎"),
-                                    action = KeyAction.CommitText("👎"),
-                                    color = ColorVariant.MUTED,
-                                ),
-                            SwipeDirection.TOP to
-                                KeyC(
-                                    display = KeyDisplay.TextDisplay("😂"),
-                                    action = KeyAction.CommitText("😂"),
-                                    color = ColorVariant.MUTED,
-                                ),
-                            SwipeDirection.TOP_RIGHT to
-                                KeyC(
-                                    display = KeyDisplay.TextDisplay("🤣"),
-                                    action = KeyAction.CommitText("🤣"),
-                                    color = ColorVariant.MUTED,
-                                ),
-                            SwipeDirection.RIGHT to
-                                KeyC(
-                                    display = KeyDisplay.TextDisplay("🔥"),
-                                    action = KeyAction.CommitText("🔥"),
-                                    color = ColorVariant.MUTED,
+                                    display = KeyDisplay.TextDisplay("x"),
+                                    action = KeyAction.CommitText("x"),
                                 ),
                             SwipeDirection.BOTTOM to
                                 KeyC(
                                     display = KeyDisplay.TextDisplay("="),
                                     action = KeyAction.CommitText("="),
+                                    color = ColorVariant.MUTED,
+                                ),
+                            SwipeDirection.BOTTOM_RIGHT to
+                                KeyC(
+                                    display = KeyDisplay.TextDisplay("€"),
+                                    action = KeyAction.CommitText("€"),
                                     color = ColorVariant.MUTED,
                                 ),
                         ),
@@ -210,10 +161,10 @@ val KB_ENEO_MESSAGEEASE_SYMBOLS_MAIN =
                         ),
                     swipes =
                         mapOf(
-                            SwipeDirection.RIGHT to
+                            SwipeDirection.TOP to
                                 KeyC(
-                                    display = KeyDisplay.TextDisplay("k"),
-                                    action = KeyAction.CommitText("k"),
+                                    display = KeyDisplay.TextDisplay("ü"),
+                                    action = KeyAction.CommitText("ü"),
                                 ),
                             SwipeDirection.TOP_LEFT to
                                 KeyC(
@@ -221,16 +172,10 @@ val KB_ENEO_MESSAGEEASE_SYMBOLS_MAIN =
                                     action = KeyAction.CommitText("{"),
                                     color = ColorVariant.MUTED,
                                 ),
-                            SwipeDirection.TOP_RIGHT to
+                            SwipeDirection.LEFT to
                                 KeyC(
-                                    display = KeyDisplay.TextDisplay("%"),
-                                    action = KeyAction.CommitText("%"),
-                                    color = ColorVariant.MUTED,
-                                ),
-                            SwipeDirection.BOTTOM_RIGHT to
-                                KeyC(
-                                    display = KeyDisplay.TextDisplay("_"),
-                                    action = KeyAction.CommitText("_"),
+                                    display = KeyDisplay.TextDisplay("("),
+                                    action = KeyAction.CommitText("("),
                                     color = ColorVariant.MUTED,
                                 ),
                             SwipeDirection.BOTTOM_LEFT to
@@ -239,20 +184,26 @@ val KB_ENEO_MESSAGEEASE_SYMBOLS_MAIN =
                                     action = KeyAction.CommitText("["),
                                     color = ColorVariant.MUTED,
                                 ),
-                            SwipeDirection.TOP to
-                                KeyC(
-                                    display = KeyDisplay.TextDisplay("ĥ"),
-                                    action = KeyAction.CommitText("ĥ"),
-                                ),
                             SwipeDirection.BOTTOM to
                                 KeyC(
-                                    display = KeyDisplay.TextDisplay("ĉ"),
-                                    action = KeyAction.CommitText("ĉ"),
+                                    display = KeyDisplay.TextDisplay("ö"),
+                                    action = KeyAction.CommitText("ö"),
                                 ),
-                            SwipeDirection.LEFT to
+                            SwipeDirection.BOTTOM_RIGHT to
                                 KeyC(
-                                    display = KeyDisplay.TextDisplay("("),
-                                    action = KeyAction.CommitText("("),
+                                    display = KeyDisplay.TextDisplay("_"),
+                                    action = KeyAction.CommitText("_"),
+                                    color = ColorVariant.MUTED,
+                                ),
+                            SwipeDirection.RIGHT to
+                                KeyC(
+                                    display = KeyDisplay.TextDisplay("k"),
+                                    action = KeyAction.CommitText("k"),
+                                ),
+                            SwipeDirection.TOP_RIGHT to
+                                KeyC(
+                                    display = KeyDisplay.TextDisplay("%"),
+                                    action = KeyAction.CommitText("%"),
                                     color = ColorVariant.MUTED,
                                 ),
                         ),
@@ -260,52 +211,52 @@ val KB_ENEO_MESSAGEEASE_SYMBOLS_MAIN =
                 KeyItemC(
                     center =
                         KeyC(
-                            display = KeyDisplay.TextDisplay("o"),
-                            action = KeyAction.CommitText("o"),
+                            display = KeyDisplay.TextDisplay("d"),
+                            action = KeyAction.CommitText("d"),
                             size = FontSizeVariant.LARGE,
                             color = ColorVariant.PRIMARY,
                         ),
                     swipes =
                         mapOf(
-                            SwipeDirection.TOP_LEFT to
-                                KeyC(
-                                    display = KeyDisplay.TextDisplay("q"),
-                                    action = KeyAction.CommitText("q"),
-                                ),
                             SwipeDirection.TOP to
                                 KeyC(
                                     display = KeyDisplay.TextDisplay("u"),
                                     action = KeyAction.CommitText("u"),
                                 ),
-                            SwipeDirection.TOP_RIGHT to
+                            SwipeDirection.TOP_LEFT to
                                 KeyC(
-                                    display = KeyDisplay.TextDisplay("p"),
-                                    action = KeyAction.CommitText("p"),
+                                    display = KeyDisplay.TextDisplay("q"),
+                                    action = KeyAction.CommitText("q"),
                                 ),
-                            SwipeDirection.RIGHT to
+                            SwipeDirection.LEFT to
                                 KeyC(
-                                    display = KeyDisplay.TextDisplay("b"),
-                                    action = KeyAction.CommitText("b"),
-                                ),
-                            SwipeDirection.BOTTOM_RIGHT to
-                                KeyC(
-                                    display = KeyDisplay.TextDisplay("j"),
-                                    action = KeyAction.CommitText("j"),
-                                ),
-                            SwipeDirection.BOTTOM to
-                                KeyC(
-                                    display = KeyDisplay.TextDisplay("d"),
-                                    action = KeyAction.CommitText("d"),
+                                    display = KeyDisplay.TextDisplay("c"),
+                                    action = KeyAction.CommitText("c"),
                                 ),
                             SwipeDirection.BOTTOM_LEFT to
                                 KeyC(
                                     display = KeyDisplay.TextDisplay("g"),
                                     action = KeyAction.CommitText("g"),
                                 ),
-                            SwipeDirection.LEFT to
+                            SwipeDirection.BOTTOM to
                                 KeyC(
-                                    display = KeyDisplay.TextDisplay("c"),
-                                    action = KeyAction.CommitText("c"),
+                                    display = KeyDisplay.TextDisplay("o"),
+                                    action = KeyAction.CommitText("o"),
+                                ),
+                            SwipeDirection.BOTTOM_RIGHT to
+                                KeyC(
+                                    display = KeyDisplay.TextDisplay("j"),
+                                    action = KeyAction.CommitText("j"),
+                                ),
+                            SwipeDirection.RIGHT to
+                                KeyC(
+                                    display = KeyDisplay.TextDisplay("b"),
+                                    action = KeyAction.CommitText("b"),
+                                ),
+                            SwipeDirection.TOP_RIGHT to
+                                KeyC(
+                                    display = KeyDisplay.TextDisplay("p"),
+                                    action = KeyAction.CommitText("p"),
                                 ),
                         ),
                 ),
@@ -319,21 +270,10 @@ val KB_ENEO_MESSAGEEASE_SYMBOLS_MAIN =
                         ),
                     swipes =
                         mapOf(
-                            SwipeDirection.LEFT to
-                                KeyC(
-                                    display = KeyDisplay.TextDisplay("m"),
-                                    action = KeyAction.CommitText("m"),
-                                ),
                             SwipeDirection.TOP to
                                 KeyC(
                                     display = KeyDisplay.IconDisplay(Icons.Outlined.ArrowDropUp),
                                     action = KeyAction.ToggleShiftMode(true),
-                                    color = ColorVariant.MUTED,
-                                ),
-                            SwipeDirection.BOTTOM to
-                                KeyC(
-                                    display = KeyDisplay.IconDisplay(Icons.Outlined.ArrowDropDown),
-                                    action = KeyAction.ToggleShiftMode(false),
                                     color = ColorVariant.MUTED,
                                 ),
                             SwipeDirection.TOP_LEFT to
@@ -342,16 +282,15 @@ val KB_ENEO_MESSAGEEASE_SYMBOLS_MAIN =
                                     action = KeyAction.CommitText("|"),
                                     color = ColorVariant.MUTED,
                                 ),
-                            SwipeDirection.TOP_RIGHT to
+                            SwipeDirection.LEFT to
                                 KeyC(
-                                    display = KeyDisplay.TextDisplay("}"),
-                                    action = KeyAction.CommitText("}"),
-                                    color = ColorVariant.MUTED,
+                                    display = KeyDisplay.TextDisplay("m"),
+                                    action = KeyAction.CommitText("m"),
                                 ),
-                            SwipeDirection.RIGHT to
+                            SwipeDirection.BOTTOM_LEFT to
                                 KeyC(
-                                    display = KeyDisplay.TextDisplay(")"),
-                                    action = KeyAction.CommitText(")"),
+                                    display = KeyDisplay.TextDisplay("@"),
+                                    action = KeyAction.CommitText("@"),
                                     color = ColorVariant.MUTED,
                                 ),
                             SwipeDirection.BOTTOM_RIGHT to
@@ -360,10 +299,16 @@ val KB_ENEO_MESSAGEEASE_SYMBOLS_MAIN =
                                     action = KeyAction.CommitText("]"),
                                     color = ColorVariant.MUTED,
                                 ),
-                            SwipeDirection.BOTTOM_LEFT to
+                            SwipeDirection.RIGHT to
                                 KeyC(
-                                    display = KeyDisplay.TextDisplay("@"),
-                                    action = KeyAction.CommitText("@"),
+                                    display = KeyDisplay.TextDisplay(")"),
+                                    action = KeyAction.CommitText(")"),
+                                    color = ColorVariant.MUTED,
+                                ),
+                            SwipeDirection.TOP_RIGHT to
+                                KeyC(
+                                    display = KeyDisplay.TextDisplay("}"),
+                                    action = KeyAction.CommitText("}"),
                                     color = ColorVariant.MUTED,
                                 ),
                         ),
@@ -379,48 +324,12 @@ val KB_ENEO_MESSAGEEASE_SYMBOLS_MAIN =
                             size = FontSizeVariant.LARGE,
                             color = ColorVariant.PRIMARY,
                         ),
-//                swipeType = SwipeNWay.FOUR_WAY_DIAGONAL,
                     swipes =
                         mapOf(
-                            SwipeDirection.TOP_RIGHT to
-                                KeyC(
-                                    display = KeyDisplay.TextDisplay("y"),
-                                    action = KeyAction.CommitText("y"),
-                                ),
                             SwipeDirection.TOP_LEFT to
                                 KeyC(
                                     display = KeyDisplay.TextDisplay("~"),
                                     action = KeyAction.CommitText("~"),
-                                    color = ColorVariant.MUTED,
-                                ),
-                            SwipeDirection.RIGHT to
-                                KeyC(
-                                    display = KeyDisplay.TextDisplay("*"),
-                                    action = KeyAction.CommitText("*"),
-                                    color = ColorVariant.MUTED,
-                                ),
-                            SwipeDirection.BOTTOM_RIGHT to
-                                KeyC(
-                                    display = KeyDisplay.TextDisplay(":"),
-                                    action = KeyAction.CommitText(":"),
-                                    color = ColorVariant.MUTED,
-                                ),
-                            SwipeDirection.TOP to
-                                KeyC(
-                                    display = KeyDisplay.TextDisplay("😍"),
-                                    action = KeyAction.CommitText("😍"),
-                                    color = ColorVariant.MUTED,
-                                ),
-                            SwipeDirection.BOTTOM_LEFT to
-                                KeyC(
-                                    display = KeyDisplay.TextDisplay("✨"),
-                                    action = KeyAction.CommitText("✨"),
-                                    color = ColorVariant.MUTED,
-                                ),
-                            SwipeDirection.BOTTOM to
-                                KeyC(
-                                    display = KeyDisplay.TextDisplay("ĵ"),
-                                    action = KeyAction.CommitText("ĵ"),
                                     color = ColorVariant.MUTED,
                                 ),
                             SwipeDirection.LEFT to
@@ -428,6 +337,22 @@ val KB_ENEO_MESSAGEEASE_SYMBOLS_MAIN =
                                     display = KeyDisplay.TextDisplay("<"),
                                     action = KeyAction.CommitText("<"),
                                     color = ColorVariant.MUTED,
+                                ),
+                            SwipeDirection.BOTTOM to
+                                KeyC(
+                                    display = KeyDisplay.TextDisplay("ß"),
+                                    action = KeyAction.CommitText("ß"),
+                                ),
+                            SwipeDirection.RIGHT to
+                                KeyC(
+                                    display = KeyDisplay.TextDisplay("*"),
+                                    action = KeyAction.CommitText("*"),
+                                    color = ColorVariant.MUTED,
+                                ),
+                            SwipeDirection.TOP_RIGHT to
+                                KeyC(
+                                    display = KeyDisplay.TextDisplay("y"),
+                                    action = KeyAction.CommitText("y"),
                                 ),
                         ),
                 ),
@@ -446,27 +371,16 @@ val KB_ENEO_MESSAGEEASE_SYMBOLS_MAIN =
                                     display = KeyDisplay.TextDisplay("w"),
                                     action = KeyAction.CommitText("w"),
                                 ),
-                            SwipeDirection.TOP_RIGHT to
-                                KeyC(
-                                    display = KeyDisplay.TextDisplay("'"),
-                                    action = KeyAction.CommitText("'"),
-                                    color = ColorVariant.MUTED,
-                                ),
-                            SwipeDirection.RIGHT to
-                                KeyC(
-                                    display = KeyDisplay.TextDisplay("z"),
-                                    action = KeyAction.CommitText("z"),
-                                ),
                             SwipeDirection.TOP_LEFT to
                                 KeyC(
                                     display = KeyDisplay.TextDisplay("\""),
                                     action = KeyAction.CommitText("\""),
                                     color = ColorVariant.MUTED,
                                 ),
-                            SwipeDirection.BOTTOM_RIGHT to
+                            SwipeDirection.BOTTOM_LEFT to
                                 KeyC(
-                                    display = KeyDisplay.TextDisplay(":"),
-                                    action = KeyAction.CommitText(":"),
+                                    display = KeyDisplay.TextDisplay(","),
+                                    action = KeyAction.CommitText(","),
                                     color = ColorVariant.MUTED,
                                 ),
                             SwipeDirection.BOTTOM to
@@ -475,15 +389,21 @@ val KB_ENEO_MESSAGEEASE_SYMBOLS_MAIN =
                                     action = KeyAction.CommitText("."),
                                     color = ColorVariant.MUTED,
                                 ),
-                            SwipeDirection.LEFT to
+                            SwipeDirection.BOTTOM_RIGHT to
                                 KeyC(
-                                    display = KeyDisplay.TextDisplay("ĝ"),
-                                    action = KeyAction.CommitText("ĝ"),
+                                    display = KeyDisplay.TextDisplay(":"),
+                                    action = KeyAction.CommitText(":"),
+                                    color = ColorVariant.MUTED,
                                 ),
-                            SwipeDirection.BOTTOM_LEFT to
+                            SwipeDirection.RIGHT to
                                 KeyC(
-                                    display = KeyDisplay.TextDisplay(","),
-                                    action = KeyAction.CommitText(","),
+                                    display = KeyDisplay.TextDisplay("z"),
+                                    action = KeyAction.CommitText("z"),
+                                ),
+                            SwipeDirection.TOP_RIGHT to
+                                KeyC(
+                                    display = KeyDisplay.TextDisplay("'"),
+                                    action = KeyAction.CommitText("'"),
                                     color = ColorVariant.MUTED,
                                 ),
                         ),
@@ -498,27 +418,21 @@ val KB_ENEO_MESSAGEEASE_SYMBOLS_MAIN =
                         ),
                     swipes =
                         mapOf(
-                            SwipeDirection.TOP_LEFT to
-                                KeyC(
-                                    display = KeyDisplay.TextDisplay("f"),
-                                    action = KeyAction.CommitText("f"),
-                                ),
                             SwipeDirection.TOP to
                                 KeyC(
                                     display = KeyDisplay.TextDisplay("&"),
                                     action = KeyAction.CommitText("&"),
                                     color = ColorVariant.MUTED,
                                 ),
-                            SwipeDirection.TOP_RIGHT to
+                            SwipeDirection.TOP_LEFT to
                                 KeyC(
-                                    display = KeyDisplay.TextDisplay("°"),
-                                    action = KeyAction.CommitText("°"),
-                                    color = ColorVariant.MUTED,
+                                    display = KeyDisplay.TextDisplay("f"),
+                                    action = KeyAction.CommitText("f"),
                                 ),
-                            SwipeDirection.RIGHT to
+                            SwipeDirection.LEFT to
                                 KeyC(
-                                    display = KeyDisplay.TextDisplay(">"),
-                                    action = KeyAction.CommitText(">"),
+                                    display = KeyDisplay.TextDisplay("#"),
+                                    action = KeyAction.CommitText("#"),
                                     color = ColorVariant.MUTED,
                                 ),
                             SwipeDirection.BOTTOM_LEFT to
@@ -527,21 +441,16 @@ val KB_ENEO_MESSAGEEASE_SYMBOLS_MAIN =
                                     action = KeyAction.CommitText(";"),
                                     color = ColorVariant.MUTED,
                                 ),
-                            SwipeDirection.BOTTOM to
+                            SwipeDirection.RIGHT to
                                 KeyC(
-                                    display = KeyDisplay.TextDisplay("ŝ"),
-                                    action = KeyAction.CommitText("ŝ"),
-                                ),
-                            SwipeDirection.LEFT to
-                                KeyC(
-                                    display = KeyDisplay.TextDisplay("🇦🇺"),
-                                    action = KeyAction.CommitText("🇦🇺"),
+                                    display = KeyDisplay.TextDisplay(">"),
+                                    action = KeyAction.CommitText(">"),
                                     color = ColorVariant.MUTED,
                                 ),
-                            SwipeDirection.LEFT to
+                            SwipeDirection.TOP_RIGHT to
                                 KeyC(
-                                    display = KeyDisplay.TextDisplay("#"),
-                                    action = KeyAction.CommitText("#"),
+                                    display = KeyDisplay.TextDisplay("°"),
+                                    action = KeyAction.CommitText("°"),
                                     color = ColorVariant.MUTED,
                                 ),
                         ),
@@ -555,7 +464,7 @@ val KB_ENEO_MESSAGEEASE_SYMBOLS_MAIN =
         ),
     )
 
-val KB_ENEO_MESSAGEEASE_SYMBOLS_SHIFTED =
+val KB_DE_MESSAGEASE_SYMBOLS_SHIFTED =
     KeyboardC(
         listOf(
             listOf(
@@ -569,50 +478,26 @@ val KB_ENEO_MESSAGEEASE_SYMBOLS_SHIFTED =
                         ),
                     swipes =
                         mapOf(
+                            SwipeDirection.BOTTOM_LEFT to
+                                KeyC(
+                                    display = KeyDisplay.TextDisplay("$"),
+                                    action = KeyAction.CommitText("$"),
+                                    color = ColorVariant.MUTED,
+                                ),
+                            SwipeDirection.BOTTOM to
+                                KeyC(
+                                    display = KeyDisplay.TextDisplay("Ä"),
+                                    action = KeyAction.CommitText("Ä"),
+                                ),
                             SwipeDirection.BOTTOM_RIGHT to
                                 KeyC(
                                     display = KeyDisplay.TextDisplay("V"),
                                     action = KeyAction.CommitText("V"),
                                 ),
-                            SwipeDirection.BOTTOM to
-                                KeyC(
-                                    display = KeyDisplay.TextDisplay("👍"),
-                                    action = KeyAction.CommitText("👍"),
-                                    color = ColorVariant.MUTED,
-                                ),
-                            SwipeDirection.LEFT to
-                                KeyC(
-                                    display = KeyDisplay.TextDisplay("🙁"),
-                                    action = KeyAction.CommitText("🙁"),
-                                    color = ColorVariant.MUTED,
-                                ),
-                            SwipeDirection.TOP_LEFT to
-                                KeyC(
-                                    display = KeyDisplay.TextDisplay("🙂"),
-                                    action = KeyAction.CommitText("🙂"),
-                                    color = ColorVariant.MUTED,
-                                ),
-                            SwipeDirection.TOP to
-                                KeyC(
-                                    display = KeyDisplay.TextDisplay("Ŭ"),
-                                    action = KeyAction.CommitText("Ŭ"),
-                                ),
-                            SwipeDirection.TOP_RIGHT to
-                                KeyC(
-                                    display = KeyDisplay.TextDisplay("♥"),
-                                    action = KeyAction.CommitText("♥"),
-                                    color = ColorVariant.MUTED,
-                                ),
                             SwipeDirection.RIGHT to
                                 KeyC(
                                     display = KeyDisplay.TextDisplay("-"),
                                     action = KeyAction.CommitText("-"),
-                                    color = ColorVariant.MUTED,
-                                ),
-                            SwipeDirection.BOTTOM_LEFT to
-                                KeyC(
-                                    display = KeyDisplay.TextDisplay("$"),
-                                    action = KeyAction.CommitText("$"),
                                     color = ColorVariant.MUTED,
                                 ),
                         ),
@@ -627,10 +512,11 @@ val KB_ENEO_MESSAGEEASE_SYMBOLS_SHIFTED =
                         ),
                     swipes =
                         mapOf(
-                            SwipeDirection.BOTTOM to
+                            SwipeDirection.TOP to
                                 KeyC(
-                                    display = KeyDisplay.TextDisplay("L"),
-                                    action = KeyAction.CommitText("L"),
+                                    display = KeyDisplay.TextDisplay("^"),
+                                    action = KeyAction.CommitText("^"),
+                                    color = ColorVariant.MUTED,
                                 ),
                             SwipeDirection.TOP_LEFT to
                                 KeyC(
@@ -638,28 +524,10 @@ val KB_ENEO_MESSAGEEASE_SYMBOLS_SHIFTED =
                                     action = KeyAction.CommitText("`"),
                                     color = ColorVariant.MUTED,
                                 ),
-                            SwipeDirection.TOP to
+                            SwipeDirection.LEFT to
                                 KeyC(
-                                    display = KeyDisplay.TextDisplay("^"),
-                                    action = KeyAction.CommitText("^"),
-                                    color = ColorVariant.MUTED,
-                                ),
-                            SwipeDirection.TOP_RIGHT to
-                                KeyC(
-                                    display = KeyDisplay.TextDisplay("´"),
-                                    action = KeyAction.CommitText("´"),
-                                    color = ColorVariant.MUTED,
-                                ),
-                            SwipeDirection.RIGHT to
-                                KeyC(
-                                    display = KeyDisplay.TextDisplay("!"),
-                                    action = KeyAction.CommitText("!"),
-                                    color = ColorVariant.MUTED,
-                                ),
-                            SwipeDirection.BOTTOM_RIGHT to
-                                KeyC(
-                                    display = KeyDisplay.TextDisplay("\\"),
-                                    action = KeyAction.CommitText("\\"),
+                                    display = KeyDisplay.TextDisplay("+"),
+                                    action = KeyAction.CommitText("+"),
                                     color = ColorVariant.MUTED,
                                 ),
                             SwipeDirection.BOTTOM_LEFT to
@@ -668,10 +536,27 @@ val KB_ENEO_MESSAGEEASE_SYMBOLS_SHIFTED =
                                     action = KeyAction.CommitText("/"),
                                     color = ColorVariant.MUTED,
                                 ),
-                            SwipeDirection.LEFT to
+                            SwipeDirection.BOTTOM to
                                 KeyC(
-                                    display = KeyDisplay.TextDisplay("+"),
-                                    action = KeyAction.CommitText("+"),
+                                    display = KeyDisplay.TextDisplay("L"),
+                                    action = KeyAction.CommitText("L"),
+                                ),
+                            SwipeDirection.BOTTOM_RIGHT to
+                                KeyC(
+                                    display = KeyDisplay.TextDisplay("\\"),
+                                    action = KeyAction.CommitText("\\"),
+                                    color = ColorVariant.MUTED,
+                                ),
+                            SwipeDirection.RIGHT to
+                                KeyC(
+                                    display = KeyDisplay.TextDisplay("!"),
+                                    action = KeyAction.CommitText("!"),
+                                    color = ColorVariant.MUTED,
+                                ),
+                            SwipeDirection.TOP_RIGHT to
+                                KeyC(
+                                    display = KeyDisplay.TextDisplay("´"),
+                                    action = KeyAction.CommitText("´"),
                                     color = ColorVariant.MUTED,
                                 ),
                         ),
@@ -686,51 +571,27 @@ val KB_ENEO_MESSAGEEASE_SYMBOLS_SHIFTED =
                         ),
                     swipes =
                         mapOf(
-                            SwipeDirection.BOTTOM_LEFT to
-                                KeyC(
-                                    display = KeyDisplay.TextDisplay("X"),
-                                    action = KeyAction.CommitText("X"),
-                                ),
                             SwipeDirection.LEFT to
                                 KeyC(
                                     display = KeyDisplay.TextDisplay("?"),
                                     action = KeyAction.CommitText("?"),
                                     color = ColorVariant.MUTED,
                                 ),
-                            SwipeDirection.BOTTOM_RIGHT to
+                            SwipeDirection.BOTTOM_LEFT to
                                 KeyC(
-                                    display = KeyDisplay.TextDisplay("€"),
-                                    action = KeyAction.CommitText("€"),
-                                    color = ColorVariant.MUTED,
-                                ),
-                            SwipeDirection.TOP_LEFT to
-                                KeyC(
-                                    display = KeyDisplay.TextDisplay("👎"),
-                                    action = KeyAction.CommitText("👎"),
-                                    color = ColorVariant.MUTED,
-                                ),
-                            SwipeDirection.TOP to
-                                KeyC(
-                                    display = KeyDisplay.TextDisplay("😂"),
-                                    action = KeyAction.CommitText("😂"),
-                                    color = ColorVariant.MUTED,
-                                ),
-                            SwipeDirection.TOP_RIGHT to
-                                KeyC(
-                                    display = KeyDisplay.TextDisplay("🤣"),
-                                    action = KeyAction.CommitText("🤣"),
-                                    color = ColorVariant.MUTED,
-                                ),
-                            SwipeDirection.RIGHT to
-                                KeyC(
-                                    display = KeyDisplay.TextDisplay("🔥"),
-                                    action = KeyAction.CommitText("🔥"),
-                                    color = ColorVariant.MUTED,
+                                    display = KeyDisplay.TextDisplay("X"),
+                                    action = KeyAction.CommitText("X"),
                                 ),
                             SwipeDirection.BOTTOM to
                                 KeyC(
                                     display = KeyDisplay.TextDisplay("="),
                                     action = KeyAction.CommitText("="),
+                                    color = ColorVariant.MUTED,
+                                ),
+                            SwipeDirection.BOTTOM_RIGHT to
+                                KeyC(
+                                    display = KeyDisplay.TextDisplay("€"),
+                                    action = KeyAction.CommitText("€"),
                                     color = ColorVariant.MUTED,
                                 ),
                         ),
@@ -748,10 +609,10 @@ val KB_ENEO_MESSAGEEASE_SYMBOLS_SHIFTED =
                         ),
                     swipes =
                         mapOf(
-                            SwipeDirection.RIGHT to
+                            SwipeDirection.TOP to
                                 KeyC(
-                                    display = KeyDisplay.TextDisplay("K"),
-                                    action = KeyAction.CommitText("K"),
+                                    display = KeyDisplay.TextDisplay("Ü"),
+                                    action = KeyAction.CommitText("Ü"),
                                 ),
                             SwipeDirection.TOP_LEFT to
                                 KeyC(
@@ -759,16 +620,10 @@ val KB_ENEO_MESSAGEEASE_SYMBOLS_SHIFTED =
                                     action = KeyAction.CommitText("{"),
                                     color = ColorVariant.MUTED,
                                 ),
-                            SwipeDirection.TOP_RIGHT to
+                            SwipeDirection.LEFT to
                                 KeyC(
-                                    display = KeyDisplay.TextDisplay("%"),
-                                    action = KeyAction.CommitText("%"),
-                                    color = ColorVariant.MUTED,
-                                ),
-                            SwipeDirection.BOTTOM_RIGHT to
-                                KeyC(
-                                    display = KeyDisplay.TextDisplay("_"),
-                                    action = KeyAction.CommitText("_"),
+                                    display = KeyDisplay.TextDisplay("("),
+                                    action = KeyAction.CommitText("("),
                                     color = ColorVariant.MUTED,
                                 ),
                             SwipeDirection.BOTTOM_LEFT to
@@ -777,20 +632,26 @@ val KB_ENEO_MESSAGEEASE_SYMBOLS_SHIFTED =
                                     action = KeyAction.CommitText("["),
                                     color = ColorVariant.MUTED,
                                 ),
-                            SwipeDirection.TOP to
-                                KeyC(
-                                    display = KeyDisplay.TextDisplay("Ĥ"),
-                                    action = KeyAction.CommitText("Ĥ"),
-                                ),
                             SwipeDirection.BOTTOM to
                                 KeyC(
-                                    display = KeyDisplay.TextDisplay("Ĉ"),
-                                    action = KeyAction.CommitText("Ĉ"),
+                                    display = KeyDisplay.TextDisplay("Ö"),
+                                    action = KeyAction.CommitText("Ö"),
                                 ),
-                            SwipeDirection.LEFT to
+                            SwipeDirection.BOTTOM_RIGHT to
                                 KeyC(
-                                    display = KeyDisplay.TextDisplay("("),
-                                    action = KeyAction.CommitText("("),
+                                    display = KeyDisplay.TextDisplay("_"),
+                                    action = KeyAction.CommitText("_"),
+                                    color = ColorVariant.MUTED,
+                                ),
+                            SwipeDirection.RIGHT to
+                                KeyC(
+                                    display = KeyDisplay.TextDisplay("K"),
+                                    action = KeyAction.CommitText("K"),
+                                ),
+                            SwipeDirection.TOP_RIGHT to
+                                KeyC(
+                                    display = KeyDisplay.TextDisplay("%"),
+                                    action = KeyAction.CommitText("%"),
                                     color = ColorVariant.MUTED,
                                 ),
                         ),
@@ -798,52 +659,52 @@ val KB_ENEO_MESSAGEEASE_SYMBOLS_SHIFTED =
                 KeyItemC(
                     center =
                         KeyC(
-                            display = KeyDisplay.TextDisplay("O"),
-                            action = KeyAction.CommitText("O"),
+                            display = KeyDisplay.TextDisplay("D"),
+                            action = KeyAction.CommitText("D"),
                             size = FontSizeVariant.LARGE,
                             color = ColorVariant.PRIMARY,
                         ),
                     swipes =
                         mapOf(
-                            SwipeDirection.TOP_LEFT to
-                                KeyC(
-                                    display = KeyDisplay.TextDisplay("Q"),
-                                    action = KeyAction.CommitText("Q"),
-                                ),
                             SwipeDirection.TOP to
                                 KeyC(
                                     display = KeyDisplay.TextDisplay("U"),
                                     action = KeyAction.CommitText("U"),
                                 ),
-                            SwipeDirection.TOP_RIGHT to
+                            SwipeDirection.TOP_LEFT to
                                 KeyC(
-                                    display = KeyDisplay.TextDisplay("P"),
-                                    action = KeyAction.CommitText("P"),
+                                    display = KeyDisplay.TextDisplay("Q"),
+                                    action = KeyAction.CommitText("Q"),
                                 ),
-                            SwipeDirection.RIGHT to
+                            SwipeDirection.LEFT to
                                 KeyC(
-                                    display = KeyDisplay.TextDisplay("B"),
-                                    action = KeyAction.CommitText("B"),
-                                ),
-                            SwipeDirection.BOTTOM_RIGHT to
-                                KeyC(
-                                    display = KeyDisplay.TextDisplay("J"),
-                                    action = KeyAction.CommitText("J"),
-                                ),
-                            SwipeDirection.BOTTOM to
-                                KeyC(
-                                    display = KeyDisplay.TextDisplay("D"),
-                                    action = KeyAction.CommitText("D"),
+                                    display = KeyDisplay.TextDisplay("C"),
+                                    action = KeyAction.CommitText("C"),
                                 ),
                             SwipeDirection.BOTTOM_LEFT to
                                 KeyC(
                                     display = KeyDisplay.TextDisplay("G"),
                                     action = KeyAction.CommitText("G"),
                                 ),
-                            SwipeDirection.LEFT to
+                            SwipeDirection.BOTTOM to
                                 KeyC(
-                                    display = KeyDisplay.TextDisplay("C"),
-                                    action = KeyAction.CommitText("C"),
+                                    display = KeyDisplay.TextDisplay("O"),
+                                    action = KeyAction.CommitText("O"),
+                                ),
+                            SwipeDirection.BOTTOM_RIGHT to
+                                KeyC(
+                                    display = KeyDisplay.TextDisplay("J"),
+                                    action = KeyAction.CommitText("J"),
+                                ),
+                            SwipeDirection.RIGHT to
+                                KeyC(
+                                    display = KeyDisplay.TextDisplay("B"),
+                                    action = KeyAction.CommitText("B"),
+                                ),
+                            SwipeDirection.TOP_RIGHT to
+                                KeyC(
+                                    display = KeyDisplay.TextDisplay("P"),
+                                    action = KeyAction.CommitText("P"),
                                 ),
                         ),
                 ),
@@ -857,21 +718,11 @@ val KB_ENEO_MESSAGEEASE_SYMBOLS_SHIFTED =
                         ),
                     swipes =
                         mapOf(
-                            SwipeDirection.LEFT to
-                                KeyC(
-                                    display = KeyDisplay.TextDisplay("M"),
-                                    action = KeyAction.CommitText("M"),
-                                ),
                             SwipeDirection.TOP to
                                 KeyC(
-                                    display = KeyDisplay.IconDisplay(Icons.Outlined.ArrowDropUp),
-                                    action = KeyAction.ToggleShiftMode(true),
-                                    color = ColorVariant.MUTED,
-                                ),
-                            SwipeDirection.BOTTOM to
-                                KeyC(
-                                    display = KeyDisplay.IconDisplay(Icons.Outlined.ArrowDropDown),
-                                    action = KeyAction.ToggleShiftMode(false),
+                                    display = KeyDisplay.IconDisplay(Icons.Outlined.KeyboardCapslock),
+                                    capsModeDisplay = KeyDisplay.IconDisplay(Icons.Outlined.Copyright),
+                                    action = KeyAction.ToggleCapsLock,
                                     color = ColorVariant.MUTED,
                                 ),
                             SwipeDirection.TOP_LEFT to
@@ -880,16 +731,21 @@ val KB_ENEO_MESSAGEEASE_SYMBOLS_SHIFTED =
                                     action = KeyAction.CommitText("|"),
                                     color = ColorVariant.MUTED,
                                 ),
-                            SwipeDirection.TOP_RIGHT to
+                            SwipeDirection.LEFT to
                                 KeyC(
-                                    display = KeyDisplay.TextDisplay("}"),
-                                    action = KeyAction.CommitText("}"),
+                                    display = KeyDisplay.TextDisplay("M"),
+                                    action = KeyAction.CommitText("M"),
+                                ),
+                            SwipeDirection.BOTTOM_LEFT to
+                                KeyC(
+                                    display = KeyDisplay.TextDisplay("@"),
+                                    action = KeyAction.CommitText("@"),
                                     color = ColorVariant.MUTED,
                                 ),
-                            SwipeDirection.RIGHT to
+                            SwipeDirection.BOTTOM to
                                 KeyC(
-                                    display = KeyDisplay.TextDisplay(")"),
-                                    action = KeyAction.CommitText(")"),
+                                    display = KeyDisplay.IconDisplay(Icons.Outlined.ArrowDropDown),
+                                    action = KeyAction.ToggleShiftMode(false),
                                     color = ColorVariant.MUTED,
                                 ),
                             SwipeDirection.BOTTOM_RIGHT to
@@ -898,10 +754,16 @@ val KB_ENEO_MESSAGEEASE_SYMBOLS_SHIFTED =
                                     action = KeyAction.CommitText("]"),
                                     color = ColorVariant.MUTED,
                                 ),
-                            SwipeDirection.BOTTOM_LEFT to
+                            SwipeDirection.RIGHT to
                                 KeyC(
-                                    display = KeyDisplay.TextDisplay("@"),
-                                    action = KeyAction.CommitText("@"),
+                                    display = KeyDisplay.TextDisplay(")"),
+                                    action = KeyAction.CommitText(")"),
+                                    color = ColorVariant.MUTED,
+                                ),
+                            SwipeDirection.TOP_RIGHT to
+                                KeyC(
+                                    display = KeyDisplay.TextDisplay("}"),
+                                    action = KeyAction.CommitText("}"),
                                     color = ColorVariant.MUTED,
                                 ),
                         ),
@@ -917,48 +779,12 @@ val KB_ENEO_MESSAGEEASE_SYMBOLS_SHIFTED =
                             size = FontSizeVariant.LARGE,
                             color = ColorVariant.PRIMARY,
                         ),
-//                swipeType = SwipeNWay.FOUR_WAY_DIAGONAL,
                     swipes =
                         mapOf(
-                            SwipeDirection.TOP_RIGHT to
-                                KeyC(
-                                    display = KeyDisplay.TextDisplay("Y"),
-                                    action = KeyAction.CommitText("Y"),
-                                ),
                             SwipeDirection.TOP_LEFT to
                                 KeyC(
                                     display = KeyDisplay.TextDisplay("~"),
                                     action = KeyAction.CommitText("~"),
-                                    color = ColorVariant.MUTED,
-                                ),
-                            SwipeDirection.RIGHT to
-                                KeyC(
-                                    display = KeyDisplay.TextDisplay("*"),
-                                    action = KeyAction.CommitText("*"),
-                                    color = ColorVariant.MUTED,
-                                ),
-                            SwipeDirection.TOP to
-                                KeyC(
-                                    display = KeyDisplay.TextDisplay("😍"),
-                                    action = KeyAction.CommitText("😍"),
-                                    color = ColorVariant.MUTED,
-                                ),
-                            SwipeDirection.BOTTOM_LEFT to
-                                KeyC(
-                                    display = KeyDisplay.TextDisplay("✨"),
-                                    action = KeyAction.CommitText("✨"),
-                                    color = ColorVariant.MUTED,
-                                ),
-                            SwipeDirection.BOTTOM to
-                                KeyC(
-                                    display = KeyDisplay.TextDisplay("Ĵ"),
-                                    action = KeyAction.CommitText("Ĵ"),
-                                    color = ColorVariant.MUTED,
-                                ),
-                            SwipeDirection.BOTTOM_RIGHT to
-                                KeyC(
-                                    display = KeyDisplay.TextDisplay(":"),
-                                    action = KeyAction.CommitText(":"),
                                     color = ColorVariant.MUTED,
                                 ),
                             SwipeDirection.LEFT to
@@ -966,6 +792,22 @@ val KB_ENEO_MESSAGEEASE_SYMBOLS_SHIFTED =
                                     display = KeyDisplay.TextDisplay("<"),
                                     action = KeyAction.CommitText("<"),
                                     color = ColorVariant.MUTED,
+                                ),
+                            SwipeDirection.BOTTOM to
+                                KeyC(
+                                    display = KeyDisplay.TextDisplay("ẞ"),
+                                    action = KeyAction.CommitText("ẞ"),
+                                ),
+                            SwipeDirection.RIGHT to
+                                KeyC(
+                                    display = KeyDisplay.TextDisplay("*"),
+                                    action = KeyAction.CommitText("*"),
+                                    color = ColorVariant.MUTED,
+                                ),
+                            SwipeDirection.TOP_RIGHT to
+                                KeyC(
+                                    display = KeyDisplay.TextDisplay("Y"),
+                                    action = KeyAction.CommitText("Y"),
                                 ),
                         ),
                 ),
@@ -984,32 +826,16 @@ val KB_ENEO_MESSAGEEASE_SYMBOLS_SHIFTED =
                                     display = KeyDisplay.TextDisplay("W"),
                                     action = KeyAction.CommitText("W"),
                                 ),
-                            SwipeDirection.TOP_RIGHT to
-                                KeyC(
-                                    display = KeyDisplay.TextDisplay("'"),
-                                    action = KeyAction.CommitText("'"),
-                                    color = ColorVariant.MUTED,
-                                ),
-                            SwipeDirection.RIGHT to
-                                KeyC(
-                                    display = KeyDisplay.TextDisplay("Z"),
-                                    action = KeyAction.CommitText("Z"),
-                                ),
-                            SwipeDirection.LEFT to
-                                KeyC(
-                                    display = KeyDisplay.TextDisplay("Ĝ"),
-                                    action = KeyAction.CommitText("Ĝ"),
-                                ),
                             SwipeDirection.TOP_LEFT to
                                 KeyC(
                                     display = KeyDisplay.TextDisplay("\""),
                                     action = KeyAction.CommitText("\""),
                                     color = ColorVariant.MUTED,
                                 ),
-                            SwipeDirection.BOTTOM_RIGHT to
+                            SwipeDirection.BOTTOM_LEFT to
                                 KeyC(
-                                    display = KeyDisplay.TextDisplay(":"),
-                                    action = KeyAction.CommitText(":"),
+                                    display = KeyDisplay.TextDisplay(","),
+                                    action = KeyAction.CommitText(","),
                                     color = ColorVariant.MUTED,
                                 ),
                             SwipeDirection.BOTTOM to
@@ -1018,10 +844,21 @@ val KB_ENEO_MESSAGEEASE_SYMBOLS_SHIFTED =
                                     action = KeyAction.CommitText("."),
                                     color = ColorVariant.MUTED,
                                 ),
-                            SwipeDirection.BOTTOM_LEFT to
+                            SwipeDirection.BOTTOM_RIGHT to
                                 KeyC(
-                                    display = KeyDisplay.TextDisplay(","),
-                                    action = KeyAction.CommitText(","),
+                                    display = KeyDisplay.TextDisplay(":"),
+                                    action = KeyAction.CommitText(":"),
+                                    color = ColorVariant.MUTED,
+                                ),
+                            SwipeDirection.RIGHT to
+                                KeyC(
+                                    display = KeyDisplay.TextDisplay("Z"),
+                                    action = KeyAction.CommitText("Z"),
+                                ),
+                            SwipeDirection.TOP_RIGHT to
+                                KeyC(
+                                    display = KeyDisplay.TextDisplay("'"),
+                                    action = KeyAction.CommitText("'"),
                                     color = ColorVariant.MUTED,
                                 ),
                         ),
@@ -1036,32 +873,21 @@ val KB_ENEO_MESSAGEEASE_SYMBOLS_SHIFTED =
                         ),
                     swipes =
                         mapOf(
-                            SwipeDirection.TOP_LEFT to
-                                KeyC(
-                                    display = KeyDisplay.TextDisplay("F"),
-                                    action = KeyAction.CommitText("F"),
-                                ),
-                            SwipeDirection.BOTTOM to
-                                KeyC(
-                                    display = KeyDisplay.TextDisplay("Ŝ"),
-                                    action = KeyAction.CommitText("Ŝ"),
-                                ),
                             SwipeDirection.TOP to
                                 KeyC(
                                     display = KeyDisplay.TextDisplay("&"),
                                     action = KeyAction.CommitText("&"),
                                     color = ColorVariant.MUTED,
                                 ),
-                            SwipeDirection.TOP_RIGHT to
+                            SwipeDirection.TOP_LEFT to
                                 KeyC(
-                                    display = KeyDisplay.TextDisplay("°"),
-                                    action = KeyAction.CommitText("°"),
-                                    color = ColorVariant.MUTED,
+                                    display = KeyDisplay.TextDisplay("F"),
+                                    action = KeyAction.CommitText("F"),
                                 ),
-                            SwipeDirection.RIGHT to
+                            SwipeDirection.LEFT to
                                 KeyC(
-                                    display = KeyDisplay.TextDisplay(">"),
-                                    action = KeyAction.CommitText(">"),
+                                    display = KeyDisplay.TextDisplay("#"),
+                                    action = KeyAction.CommitText("#"),
                                     color = ColorVariant.MUTED,
                                 ),
                             SwipeDirection.BOTTOM_LEFT to
@@ -1070,10 +896,16 @@ val KB_ENEO_MESSAGEEASE_SYMBOLS_SHIFTED =
                                     action = KeyAction.CommitText(";"),
                                     color = ColorVariant.MUTED,
                                 ),
-                            SwipeDirection.LEFT to
+                            SwipeDirection.RIGHT to
                                 KeyC(
-                                    display = KeyDisplay.TextDisplay("#"),
-                                    action = KeyAction.CommitText("#"),
+                                    display = KeyDisplay.TextDisplay(">"),
+                                    action = KeyAction.CommitText(">"),
+                                    color = ColorVariant.MUTED,
+                                ),
+                            SwipeDirection.TOP_RIGHT to
+                                KeyC(
+                                    display = KeyDisplay.TextDisplay("°"),
+                                    action = KeyAction.CommitText("°"),
                                     color = ColorVariant.MUTED,
                                 ),
                         ),
@@ -1087,17 +919,13 @@ val KB_ENEO_MESSAGEEASE_SYMBOLS_SHIFTED =
         ),
     )
 
-val KB_ENEO_MESSAGEEASE_SYMBOLS: KeyboardDefinition =
+val KB_DE_MESSAGEASE_SYMBOLS: KeyboardDefinition =
     KeyboardDefinition(
-        title = "english esperanto symbols messagease",
+        title = "deutsch symbols messagease",
         modes =
             KeyboardDefinitionModes(
-                main = KB_ENEO_MESSAGEEASE_SYMBOLS_MAIN,
-                shifted = KB_ENEO_MESSAGEEASE_SYMBOLS_SHIFTED,
+                main = KB_DE_MESSAGEASE_SYMBOLS_MAIN,
+                shifted = KB_DE_MESSAGEASE_SYMBOLS_SHIFTED,
                 numeric = NUMERIC_KEYBOARD,
-            ),
-        settings =
-            KeyboardDefinitionSettings(
-                autoCapitalizers = arrayOf(::autoCapitalizeI, ::autoCapitalizeIApostrophe),
             ),
     )

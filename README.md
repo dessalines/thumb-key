@@ -42,12 +42,12 @@ Instead of relying on profit-driven, privacy-offending word and sentence predict
 
 As the key positions get ingrained into your muscle memory, eventually you'll be able to approximate the fast speeds of [touch-typing](https://en.m.wikipedia.org/wiki/Touch_typing), your eyes never having to leave the text edit area.
 
-This project is a follow-up to the now unmaintained (and closed-source) [MessageEase Keyboard](https://www.exideas.com/ME/), which is its main inspiration.
+This project is a follow-up to the now unmaintained (and closed-source) [MessagEase Keyboard](https://www.exideas.com/ME/), which is its main inspiration.
 
 ### Features
 
 - Highly configurable.
-- Customizeable sizing, ThumbKey and MessageEase layouts, dynamic / Material v3 themes, animations, haptic feedback, and audio feedback.
+- Customizeable sizing, ThumbKey and MessagEase layouts, dynamic / Material v3 themes, animations, haptic feedback, and audio feedback.
 - Open-source, [AGPL License](/LICENSE).
 
 ## User Guide
@@ -122,15 +122,15 @@ The lack of innovation on phone keyboard design, is best explained by the _poten
 
 As of today, phone keyboards are in such an abysmal state of privacy, that there aren't many keyboards left that can guarantee **not to be logging all of your keystrokes.**
 
-#### MessageEase
+#### MessagEase
 
 As a testament to the stunning lack of innovation on both desktop and phone keyboards, the _QWERTY_ layout from the 1880s is still the dominant layout, even on smartphones in the 21st century.
 
-One company named Exideas created a keyboard app called [MessageEase](https://www.exideas.com/ME/), which relied on the original large 9-key grid of old phones, and managed to achieve comparable fast typing speeds to other keyboards, without relying on big-data-powered word-prediction.
+One company named Exideas created a keyboard app called [MessagEase](https://www.exideas.com/ME/), which relied on the original large 9-key grid of old phones, and managed to achieve comparable fast typing speeds to other keyboards, without relying on big-data-powered word-prediction.
 
-[Much research went into MessageEase's design](https://www.exideas.com/ME/ICMI2003Paper.pdf), and many of its users can do > 50 words per minute.
+[Much research went into MessagEase's design](https://www.exideas.com/ME/ICMI2003Paper.pdf), and many of its users can do > 50 words per minute.
 
-MessageEase is unfortunately unmaintained, and Thumb-Key uses a better alternating-thumb layout letter position (although the original MessageEase Keyboard layout is available in the settings).
+MessagEase is unfortunately unmaintained, and Thumb-Key uses a better alternating-thumb layout letter position (although the original MessagEase Keyboard layout is available in the settings).
 
 ### Thumb-Key Letter Positions
 

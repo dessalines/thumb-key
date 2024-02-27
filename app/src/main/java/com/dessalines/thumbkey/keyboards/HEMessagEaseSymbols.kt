@@ -444,7 +444,7 @@ val KB_HE_MESSAGEASE_SYMBOLS_MAIN =
         ),
     )
 
-val KB_HE_MESSAGEEASE_SYMBOLS: KeyboardDefinition =
+val KB_HE_MESSAGEASE_SYMBOLS: KeyboardDefinition =
     KeyboardDefinition(
         title = "messagease symbols עברית",
         modes =
