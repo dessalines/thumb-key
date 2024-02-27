@@ -3,8 +3,6 @@ package com.dessalines.thumbkey.keyboards
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.outlined.ArrowDropDown
 import androidx.compose.material.icons.outlined.ArrowDropUp
-import androidx.compose.material.icons.outlined.Copyright
-import androidx.compose.material.icons.outlined.KeyboardCapslock
 import com.dessalines.thumbkey.utils.ColorVariant
 import com.dessalines.thumbkey.utils.FontSizeVariant
 import com.dessalines.thumbkey.utils.KeyAction
@@ -14,37 +12,64 @@ import com.dessalines.thumbkey.utils.KeyItemC
 import com.dessalines.thumbkey.utils.KeyboardC
 import com.dessalines.thumbkey.utils.KeyboardDefinition
 import com.dessalines.thumbkey.utils.KeyboardDefinitionModes
+import com.dessalines.thumbkey.utils.KeyboardDefinitionSettings
 import com.dessalines.thumbkey.utils.SwipeDirection
+import com.dessalines.thumbkey.utils.autoCapitalizeI
+import com.dessalines.thumbkey.utils.autoCapitalizeIApostrophe
 
-val KB_UK_RU_MESSAGEEASE_SYMBOLS_MAIN =
+val KB_ENEO_MESSAGEASE_SYMBOLS_MAIN =
     KeyboardC(
         listOf(
             listOf(
                 KeyItemC(
                     center =
                         KeyC(
-                            display = KeyDisplay.TextDisplay("с"),
-                            action = KeyAction.CommitText("с"),
+                            display = KeyDisplay.TextDisplay("a"),
+                            action = KeyAction.CommitText("a"),
                             size = FontSizeVariant.LARGE,
                             color = ColorVariant.PRIMARY,
                         ),
                     swipes =
                         mapOf(
+                            SwipeDirection.BOTTOM_RIGHT to
+                                KeyC(
+                                    display = KeyDisplay.TextDisplay("v"),
+                                    action = KeyAction.CommitText("v"),
+                                ),
+                            SwipeDirection.BOTTOM to
+                                KeyC(
+                                    display = KeyDisplay.TextDisplay("👍"),
+                                    action = KeyAction.CommitText("👍"),
+                                    color = ColorVariant.MUTED,
+                                ),
+                            SwipeDirection.LEFT to
+                                KeyC(
+                                    display = KeyDisplay.TextDisplay("🙁"),
+                                    action = KeyAction.CommitText("🙁"),
+                                    color = ColorVariant.MUTED,
+                                ),
+                            SwipeDirection.TOP_LEFT to
+                                KeyC(
+                                    display = KeyDisplay.TextDisplay("🙂"),
+                                    action = KeyAction.CommitText("🙂"),
+                                    color = ColorVariant.MUTED,
+                                ),
+                            SwipeDirection.TOP to
+                                KeyC(
+                                    display = KeyDisplay.TextDisplay("ŭ"),
+                                    action = KeyAction.CommitText("ŭ"),
+                                ),
+                            SwipeDirection.TOP_RIGHT to
+                                KeyC(
+                                    display = KeyDisplay.TextDisplay("♥"),
+                                    action = KeyAction.CommitText("♥"),
+                                    color = ColorVariant.MUTED,
+                                ),
                             SwipeDirection.RIGHT to
                                 KeyC(
                                     display = KeyDisplay.TextDisplay("-"),
                                     action = KeyAction.CommitText("-"),
                                     color = ColorVariant.MUTED,
-                                ),
-                            SwipeDirection.BOTTOM_RIGHT to
-                                KeyC(
-                                    display = KeyDisplay.TextDisplay("п"),
-                                    action = KeyAction.CommitText("п"),
-                                ),
-                            SwipeDirection.BOTTOM to
-                                KeyC(
-                                    display = KeyDisplay.TextDisplay("ц"),
-                                    action = KeyAction.CommitText("ц"),
                                 ),
                             SwipeDirection.BOTTOM_LEFT to
                                 KeyC(
@@ -57,27 +82,28 @@ val KB_UK_RU_MESSAGEEASE_SYMBOLS_MAIN =
                 KeyItemC(
                     center =
                         KeyC(
-                            display = KeyDisplay.TextDisplay("и"),
-                            action = KeyAction.CommitText("и"),
+                            display = KeyDisplay.TextDisplay("n"),
+                            action = KeyAction.CommitText("n"),
                             size = FontSizeVariant.LARGE,
                             color = ColorVariant.PRIMARY,
                         ),
                     swipes =
                         mapOf(
-                            SwipeDirection.TOP to
-                                KeyC(
-                                    display = KeyDisplay.TextDisplay("й"),
-                                    action = KeyAction.CommitText("й"),
-                                ),
                             SwipeDirection.BOTTOM to
                                 KeyC(
-                                    display = KeyDisplay.TextDisplay("к"),
-                                    action = KeyAction.CommitText("к"),
+                                    display = KeyDisplay.TextDisplay("l"),
+                                    action = KeyAction.CommitText("l"),
                                 ),
                             SwipeDirection.TOP_LEFT to
                                 KeyC(
                                     display = KeyDisplay.TextDisplay("`"),
                                     action = KeyAction.CommitText("`"),
+                                    color = ColorVariant.MUTED,
+                                ),
+                            SwipeDirection.TOP to
+                                KeyC(
+                                    display = KeyDisplay.TextDisplay("^"),
+                                    action = KeyAction.CommitText("^"),
                                     color = ColorVariant.MUTED,
                                 ),
                             SwipeDirection.TOP_RIGHT to
@@ -115,8 +141,8 @@ val KB_UK_RU_MESSAGEEASE_SYMBOLS_MAIN =
                 KeyItemC(
                     center =
                         KeyC(
-                            display = KeyDisplay.TextDisplay("т"),
-                            action = KeyAction.CommitText("т"),
+                            display = KeyDisplay.TextDisplay("i"),
+                            action = KeyAction.CommitText("i"),
                             size = FontSizeVariant.LARGE,
                             color = ColorVariant.PRIMARY,
                         ),
@@ -124,8 +150,8 @@ val KB_UK_RU_MESSAGEEASE_SYMBOLS_MAIN =
                         mapOf(
                             SwipeDirection.BOTTOM_LEFT to
                                 KeyC(
-                                    display = KeyDisplay.TextDisplay("ь"),
-                                    action = KeyAction.CommitText("ь"),
+                                    display = KeyDisplay.TextDisplay("x"),
+                                    action = KeyAction.CommitText("x"),
                                 ),
                             SwipeDirection.LEFT to
                                 KeyC(
@@ -135,8 +161,33 @@ val KB_UK_RU_MESSAGEEASE_SYMBOLS_MAIN =
                                 ),
                             SwipeDirection.BOTTOM_RIGHT to
                                 KeyC(
-                                    display = KeyDisplay.TextDisplay("э"),
-                                    action = KeyAction.CommitText("э"),
+                                    display = KeyDisplay.TextDisplay("€"),
+                                    action = KeyAction.CommitText("€"),
+                                    color = ColorVariant.MUTED,
+                                ),
+                            SwipeDirection.TOP_LEFT to
+                                KeyC(
+                                    display = KeyDisplay.TextDisplay("👎"),
+                                    action = KeyAction.CommitText("👎"),
+                                    color = ColorVariant.MUTED,
+                                ),
+                            SwipeDirection.TOP to
+                                KeyC(
+                                    display = KeyDisplay.TextDisplay("😂"),
+                                    action = KeyAction.CommitText("😂"),
+                                    color = ColorVariant.MUTED,
+                                ),
+                            SwipeDirection.TOP_RIGHT to
+                                KeyC(
+                                    display = KeyDisplay.TextDisplay("🤣"),
+                                    action = KeyAction.CommitText("🤣"),
+                                    color = ColorVariant.MUTED,
+                                ),
+                            SwipeDirection.RIGHT to
+                                KeyC(
+                                    display = KeyDisplay.TextDisplay("🔥"),
+                                    action = KeyAction.CommitText("🔥"),
+                                    color = ColorVariant.MUTED,
                                 ),
                             SwipeDirection.BOTTOM to
                                 KeyC(
@@ -152,27 +203,17 @@ val KB_UK_RU_MESSAGEEASE_SYMBOLS_MAIN =
                 KeyItemC(
                     center =
                         KeyC(
-                            display = KeyDisplay.TextDisplay("в"),
-                            action = KeyAction.CommitText("в"),
+                            display = KeyDisplay.TextDisplay("h"),
+                            action = KeyAction.CommitText("h"),
                             size = FontSizeVariant.LARGE,
                             color = ColorVariant.PRIMARY,
                         ),
                     swipes =
                         mapOf(
-                            SwipeDirection.TOP to
-                                KeyC(
-                                    display = KeyDisplay.TextDisplay("б"),
-                                    action = KeyAction.CommitText("б"),
-                                ),
                             SwipeDirection.RIGHT to
                                 KeyC(
-                                    display = KeyDisplay.TextDisplay("ы"),
-                                    action = KeyAction.CommitText("ы"),
-                                ),
-                            SwipeDirection.BOTTOM to
-                                KeyC(
-                                    display = KeyDisplay.TextDisplay("і"),
-                                    action = KeyAction.CommitText("і"),
+                                    display = KeyDisplay.TextDisplay("k"),
+                                    action = KeyAction.CommitText("k"),
                                 ),
                             SwipeDirection.TOP_LEFT to
                                 KeyC(
@@ -198,6 +239,16 @@ val KB_UK_RU_MESSAGEEASE_SYMBOLS_MAIN =
                                     action = KeyAction.CommitText("["),
                                     color = ColorVariant.MUTED,
                                 ),
+                            SwipeDirection.TOP to
+                                KeyC(
+                                    display = KeyDisplay.TextDisplay("ĥ"),
+                                    action = KeyAction.CommitText("ĥ"),
+                                ),
+                            SwipeDirection.BOTTOM to
+                                KeyC(
+                                    display = KeyDisplay.TextDisplay("ĉ"),
+                                    action = KeyAction.CommitText("ĉ"),
+                                ),
                             SwipeDirection.LEFT to
                                 KeyC(
                                     display = KeyDisplay.TextDisplay("("),
@@ -209,8 +260,8 @@ val KB_UK_RU_MESSAGEEASE_SYMBOLS_MAIN =
                 KeyItemC(
                     center =
                         KeyC(
-                            display = KeyDisplay.TextDisplay("о"),
-                            action = KeyAction.CommitText("о"),
+                            display = KeyDisplay.TextDisplay("o"),
+                            action = KeyAction.CommitText("o"),
                             size = FontSizeVariant.LARGE,
                             color = ColorVariant.PRIMARY,
                         ),
@@ -218,51 +269,51 @@ val KB_UK_RU_MESSAGEEASE_SYMBOLS_MAIN =
                         mapOf(
                             SwipeDirection.TOP_LEFT to
                                 KeyC(
-                                    display = KeyDisplay.TextDisplay("ч"),
-                                    action = KeyAction.CommitText("ч"),
+                                    display = KeyDisplay.TextDisplay("q"),
+                                    action = KeyAction.CommitText("q"),
                                 ),
                             SwipeDirection.TOP to
                                 KeyC(
-                                    display = KeyDisplay.TextDisplay("м"),
-                                    action = KeyAction.CommitText("м"),
+                                    display = KeyDisplay.TextDisplay("u"),
+                                    action = KeyAction.CommitText("u"),
                                 ),
                             SwipeDirection.TOP_RIGHT to
                                 KeyC(
-                                    display = KeyDisplay.TextDisplay("х"),
-                                    action = KeyAction.CommitText("х"),
+                                    display = KeyDisplay.TextDisplay("p"),
+                                    action = KeyAction.CommitText("p"),
                                 ),
                             SwipeDirection.RIGHT to
                                 KeyC(
-                                    display = KeyDisplay.TextDisplay("г"),
-                                    action = KeyAction.CommitText("г"),
+                                    display = KeyDisplay.TextDisplay("b"),
+                                    action = KeyAction.CommitText("b"),
                                 ),
                             SwipeDirection.BOTTOM_RIGHT to
                                 KeyC(
-                                    display = KeyDisplay.TextDisplay("ш"),
-                                    action = KeyAction.CommitText("ш"),
+                                    display = KeyDisplay.TextDisplay("j"),
+                                    action = KeyAction.CommitText("j"),
                                 ),
                             SwipeDirection.BOTTOM to
                                 KeyC(
-                                    display = KeyDisplay.TextDisplay("я"),
-                                    action = KeyAction.CommitText("я"),
+                                    display = KeyDisplay.TextDisplay("d"),
+                                    action = KeyAction.CommitText("d"),
                                 ),
                             SwipeDirection.BOTTOM_LEFT to
                                 KeyC(
-                                    display = KeyDisplay.TextDisplay("щ"),
-                                    action = KeyAction.CommitText("щ"),
+                                    display = KeyDisplay.TextDisplay("g"),
+                                    action = KeyAction.CommitText("g"),
                                 ),
                             SwipeDirection.LEFT to
                                 KeyC(
-                                    display = KeyDisplay.TextDisplay("ж"),
-                                    action = KeyAction.CommitText("ж"),
+                                    display = KeyDisplay.TextDisplay("c"),
+                                    action = KeyAction.CommitText("c"),
                                 ),
                         ),
                 ),
                 KeyItemC(
                     center =
                         KeyC(
-                            display = KeyDisplay.TextDisplay("а"),
-                            action = KeyAction.CommitText("а"),
+                            display = KeyDisplay.TextDisplay("r"),
+                            action = KeyAction.CommitText("r"),
                             size = FontSizeVariant.LARGE,
                             color = ColorVariant.PRIMARY,
                         ),
@@ -270,8 +321,8 @@ val KB_UK_RU_MESSAGEEASE_SYMBOLS_MAIN =
                         mapOf(
                             SwipeDirection.LEFT to
                                 KeyC(
-                                    display = KeyDisplay.TextDisplay("л"),
-                                    action = KeyAction.CommitText("л"),
+                                    display = KeyDisplay.TextDisplay("m"),
+                                    action = KeyAction.CommitText("m"),
                                 ),
                             SwipeDirection.TOP to
                                 KeyC(
@@ -279,6 +330,12 @@ val KB_UK_RU_MESSAGEEASE_SYMBOLS_MAIN =
                                     action = KeyAction.ToggleShiftMode(true),
                                     color = ColorVariant.MUTED,
                                 ),
+                            SwipeDirection.BOTTOM to
+                                KeyC(
+                                    display = KeyDisplay.IconDisplay(Icons.Outlined.ArrowDropDown),
+                                    action = KeyAction.ToggleShiftMode(false),
+                                    color = ColorVariant.MUTED,
+                                ),
                             SwipeDirection.TOP_LEFT to
                                 KeyC(
                                     display = KeyDisplay.TextDisplay("|"),
@@ -317,27 +374,18 @@ val KB_UK_RU_MESSAGEEASE_SYMBOLS_MAIN =
                 KeyItemC(
                     center =
                         KeyC(
-                            display = KeyDisplay.TextDisplay("е"),
-                            action = KeyAction.CommitText("е"),
+                            display = KeyDisplay.TextDisplay("t"),
+                            action = KeyAction.CommitText("t"),
                             size = FontSizeVariant.LARGE,
                             color = ColorVariant.PRIMARY,
                         ),
+//                swipeType = SwipeNWay.FOUR_WAY_DIAGONAL,
                     swipes =
                         mapOf(
-                            SwipeDirection.TOP to
-                                KeyC(
-                                    display = KeyDisplay.TextDisplay("ї"),
-                                    action = KeyAction.CommitText("ї"),
-                                ),
                             SwipeDirection.TOP_RIGHT to
                                 KeyC(
-                                    display = KeyDisplay.TextDisplay("д"),
-                                    action = KeyAction.CommitText("д"),
-                                ),
-                            SwipeDirection.RIGHT to
-                                KeyC(
-                                    display = KeyDisplay.TextDisplay("є"),
-                                    action = KeyAction.CommitText("є"),
+                                    display = KeyDisplay.TextDisplay("y"),
+                                    action = KeyAction.CommitText("y"),
                                 ),
                             SwipeDirection.TOP_LEFT to
                                 KeyC(
@@ -345,10 +393,34 @@ val KB_UK_RU_MESSAGEEASE_SYMBOLS_MAIN =
                                     action = KeyAction.CommitText("~"),
                                     color = ColorVariant.MUTED,
                                 ),
-                            SwipeDirection.BOTTOM_RIGHT to
+                            SwipeDirection.RIGHT to
                                 KeyC(
                                     display = KeyDisplay.TextDisplay("*"),
                                     action = KeyAction.CommitText("*"),
+                                    color = ColorVariant.MUTED,
+                                ),
+                            SwipeDirection.BOTTOM_RIGHT to
+                                KeyC(
+                                    display = KeyDisplay.TextDisplay(":"),
+                                    action = KeyAction.CommitText(":"),
+                                    color = ColorVariant.MUTED,
+                                ),
+                            SwipeDirection.TOP to
+                                KeyC(
+                                    display = KeyDisplay.TextDisplay("😍"),
+                                    action = KeyAction.CommitText("😍"),
+                                    color = ColorVariant.MUTED,
+                                ),
+                            SwipeDirection.BOTTOM_LEFT to
+                                KeyC(
+                                    display = KeyDisplay.TextDisplay("✨"),
+                                    action = KeyAction.CommitText("✨"),
+                                    color = ColorVariant.MUTED,
+                                ),
+                            SwipeDirection.BOTTOM to
+                                KeyC(
+                                    display = KeyDisplay.TextDisplay("ĵ"),
+                                    action = KeyAction.CommitText("ĵ"),
                                     color = ColorVariant.MUTED,
                                 ),
                             SwipeDirection.LEFT to
@@ -362,8 +434,8 @@ val KB_UK_RU_MESSAGEEASE_SYMBOLS_MAIN =
                 KeyItemC(
                     center =
                         KeyC(
-                            display = KeyDisplay.TextDisplay("р"),
-                            action = KeyAction.CommitText("р"),
+                            display = KeyDisplay.TextDisplay("e"),
+                            action = KeyAction.CommitText("e"),
                             size = FontSizeVariant.LARGE,
                             color = ColorVariant.PRIMARY,
                         ),
@@ -371,24 +443,19 @@ val KB_UK_RU_MESSAGEEASE_SYMBOLS_MAIN =
                         mapOf(
                             SwipeDirection.TOP to
                                 KeyC(
-                                    display = KeyDisplay.TextDisplay("у"),
-                                    action = KeyAction.CommitText("у"),
-                                ),
-                            SwipeDirection.RIGHT to
-                                KeyC(
-                                    display = KeyDisplay.TextDisplay("з"),
-                                    action = KeyAction.CommitText("з"),
-                                ),
-                            SwipeDirection.LEFT to
-                                KeyC(
-                                    display = KeyDisplay.TextDisplay("ю"),
-                                    action = KeyAction.CommitText("ю"),
+                                    display = KeyDisplay.TextDisplay("w"),
+                                    action = KeyAction.CommitText("w"),
                                 ),
                             SwipeDirection.TOP_RIGHT to
                                 KeyC(
                                     display = KeyDisplay.TextDisplay("'"),
                                     action = KeyAction.CommitText("'"),
                                     color = ColorVariant.MUTED,
+                                ),
+                            SwipeDirection.RIGHT to
+                                KeyC(
+                                    display = KeyDisplay.TextDisplay("z"),
+                                    action = KeyAction.CommitText("z"),
                                 ),
                             SwipeDirection.TOP_LEFT to
                                 KeyC(
@@ -408,6 +475,11 @@ val KB_UK_RU_MESSAGEEASE_SYMBOLS_MAIN =
                                     action = KeyAction.CommitText("."),
                                     color = ColorVariant.MUTED,
                                 ),
+                            SwipeDirection.LEFT to
+                                KeyC(
+                                    display = KeyDisplay.TextDisplay("ĝ"),
+                                    action = KeyAction.CommitText("ĝ"),
+                                ),
                             SwipeDirection.BOTTOM_LEFT to
                                 KeyC(
                                     display = KeyDisplay.TextDisplay(","),
@@ -419,8 +491,8 @@ val KB_UK_RU_MESSAGEEASE_SYMBOLS_MAIN =
                 KeyItemC(
                     center =
                         KeyC(
-                            display = KeyDisplay.TextDisplay("н"),
-                            action = KeyAction.CommitText("н"),
+                            display = KeyDisplay.TextDisplay("s"),
+                            action = KeyAction.CommitText("s"),
                             size = FontSizeVariant.LARGE,
                             color = ColorVariant.PRIMARY,
                         ),
@@ -428,8 +500,8 @@ val KB_UK_RU_MESSAGEEASE_SYMBOLS_MAIN =
                         mapOf(
                             SwipeDirection.TOP_LEFT to
                                 KeyC(
-                                    display = KeyDisplay.TextDisplay("ф"),
-                                    action = KeyAction.CommitText("ф"),
+                                    display = KeyDisplay.TextDisplay("f"),
+                                    action = KeyAction.CommitText("f"),
                                 ),
                             SwipeDirection.TOP to
                                 KeyC(
@@ -439,8 +511,9 @@ val KB_UK_RU_MESSAGEEASE_SYMBOLS_MAIN =
                                 ),
                             SwipeDirection.TOP_RIGHT to
                                 KeyC(
-                                    display = KeyDisplay.TextDisplay("ё"),
-                                    action = KeyAction.CommitText("ё"),
+                                    display = KeyDisplay.TextDisplay("°"),
+                                    action = KeyAction.CommitText("°"),
+                                    color = ColorVariant.MUTED,
                                 ),
                             SwipeDirection.RIGHT to
                                 KeyC(
@@ -452,6 +525,17 @@ val KB_UK_RU_MESSAGEEASE_SYMBOLS_MAIN =
                                 KeyC(
                                     display = KeyDisplay.TextDisplay(";"),
                                     action = KeyAction.CommitText(";"),
+                                    color = ColorVariant.MUTED,
+                                ),
+                            SwipeDirection.BOTTOM to
+                                KeyC(
+                                    display = KeyDisplay.TextDisplay("ŝ"),
+                                    action = KeyAction.CommitText("ŝ"),
+                                ),
+                            SwipeDirection.LEFT to
+                                KeyC(
+                                    display = KeyDisplay.TextDisplay("🇦🇺"),
+                                    action = KeyAction.CommitText("🇦🇺"),
                                     color = ColorVariant.MUTED,
                                 ),
                             SwipeDirection.LEFT to
@@ -471,35 +555,59 @@ val KB_UK_RU_MESSAGEEASE_SYMBOLS_MAIN =
         ),
     )
 
-val KB_UK_RU_MESSAGEEASE_SYMBOLS_SHIFTED =
+val KB_ENEO_MESSAGEASE_SYMBOLS_SHIFTED =
     KeyboardC(
         listOf(
             listOf(
                 KeyItemC(
                     center =
                         KeyC(
-                            display = KeyDisplay.TextDisplay("С"),
-                            action = KeyAction.CommitText("С"),
+                            display = KeyDisplay.TextDisplay("A"),
+                            action = KeyAction.CommitText("A"),
                             size = FontSizeVariant.LARGE,
                             color = ColorVariant.PRIMARY,
                         ),
                     swipes =
                         mapOf(
+                            SwipeDirection.BOTTOM_RIGHT to
+                                KeyC(
+                                    display = KeyDisplay.TextDisplay("V"),
+                                    action = KeyAction.CommitText("V"),
+                                ),
+                            SwipeDirection.BOTTOM to
+                                KeyC(
+                                    display = KeyDisplay.TextDisplay("👍"),
+                                    action = KeyAction.CommitText("👍"),
+                                    color = ColorVariant.MUTED,
+                                ),
+                            SwipeDirection.LEFT to
+                                KeyC(
+                                    display = KeyDisplay.TextDisplay("🙁"),
+                                    action = KeyAction.CommitText("🙁"),
+                                    color = ColorVariant.MUTED,
+                                ),
+                            SwipeDirection.TOP_LEFT to
+                                KeyC(
+                                    display = KeyDisplay.TextDisplay("🙂"),
+                                    action = KeyAction.CommitText("🙂"),
+                                    color = ColorVariant.MUTED,
+                                ),
+                            SwipeDirection.TOP to
+                                KeyC(
+                                    display = KeyDisplay.TextDisplay("Ŭ"),
+                                    action = KeyAction.CommitText("Ŭ"),
+                                ),
+                            SwipeDirection.TOP_RIGHT to
+                                KeyC(
+                                    display = KeyDisplay.TextDisplay("♥"),
+                                    action = KeyAction.CommitText("♥"),
+                                    color = ColorVariant.MUTED,
+                                ),
                             SwipeDirection.RIGHT to
                                 KeyC(
                                     display = KeyDisplay.TextDisplay("-"),
                                     action = KeyAction.CommitText("-"),
                                     color = ColorVariant.MUTED,
-                                ),
-                            SwipeDirection.BOTTOM_RIGHT to
-                                KeyC(
-                                    display = KeyDisplay.TextDisplay("П"),
-                                    action = KeyAction.CommitText("П"),
-                                ),
-                            SwipeDirection.BOTTOM to
-                                KeyC(
-                                    display = KeyDisplay.TextDisplay("Ц"),
-                                    action = KeyAction.CommitText("Ц"),
                                 ),
                             SwipeDirection.BOTTOM_LEFT to
                                 KeyC(
@@ -512,27 +620,28 @@ val KB_UK_RU_MESSAGEEASE_SYMBOLS_SHIFTED =
                 KeyItemC(
                     center =
                         KeyC(
-                            display = KeyDisplay.TextDisplay("И"),
-                            action = KeyAction.CommitText("И"),
+                            display = KeyDisplay.TextDisplay("N"),
+                            action = KeyAction.CommitText("N"),
                             size = FontSizeVariant.LARGE,
                             color = ColorVariant.PRIMARY,
                         ),
                     swipes =
                         mapOf(
-                            SwipeDirection.TOP to
-                                KeyC(
-                                    display = KeyDisplay.TextDisplay("Й"),
-                                    action = KeyAction.CommitText("Й"),
-                                ),
                             SwipeDirection.BOTTOM to
                                 KeyC(
-                                    display = KeyDisplay.TextDisplay("К"),
-                                    action = KeyAction.CommitText("К"),
+                                    display = KeyDisplay.TextDisplay("L"),
+                                    action = KeyAction.CommitText("L"),
                                 ),
                             SwipeDirection.TOP_LEFT to
                                 KeyC(
                                     display = KeyDisplay.TextDisplay("`"),
                                     action = KeyAction.CommitText("`"),
+                                    color = ColorVariant.MUTED,
+                                ),
+                            SwipeDirection.TOP to
+                                KeyC(
+                                    display = KeyDisplay.TextDisplay("^"),
+                                    action = KeyAction.CommitText("^"),
                                     color = ColorVariant.MUTED,
                                 ),
                             SwipeDirection.TOP_RIGHT to
@@ -570,8 +679,8 @@ val KB_UK_RU_MESSAGEEASE_SYMBOLS_SHIFTED =
                 KeyItemC(
                     center =
                         KeyC(
-                            display = KeyDisplay.TextDisplay("Т"),
-                            action = KeyAction.CommitText("Т"),
+                            display = KeyDisplay.TextDisplay("I"),
+                            action = KeyAction.CommitText("I"),
                             size = FontSizeVariant.LARGE,
                             color = ColorVariant.PRIMARY,
                         ),
@@ -579,8 +688,8 @@ val KB_UK_RU_MESSAGEEASE_SYMBOLS_SHIFTED =
                         mapOf(
                             SwipeDirection.BOTTOM_LEFT to
                                 KeyC(
-                                    display = KeyDisplay.TextDisplay("Ь"),
-                                    action = KeyAction.CommitText("Ь"),
+                                    display = KeyDisplay.TextDisplay("X"),
+                                    action = KeyAction.CommitText("X"),
                                 ),
                             SwipeDirection.LEFT to
                                 KeyC(
@@ -590,8 +699,33 @@ val KB_UK_RU_MESSAGEEASE_SYMBOLS_SHIFTED =
                                 ),
                             SwipeDirection.BOTTOM_RIGHT to
                                 KeyC(
-                                    display = KeyDisplay.TextDisplay("Э"),
-                                    action = KeyAction.CommitText("Э"),
+                                    display = KeyDisplay.TextDisplay("€"),
+                                    action = KeyAction.CommitText("€"),
+                                    color = ColorVariant.MUTED,
+                                ),
+                            SwipeDirection.TOP_LEFT to
+                                KeyC(
+                                    display = KeyDisplay.TextDisplay("👎"),
+                                    action = KeyAction.CommitText("👎"),
+                                    color = ColorVariant.MUTED,
+                                ),
+                            SwipeDirection.TOP to
+                                KeyC(
+                                    display = KeyDisplay.TextDisplay("😂"),
+                                    action = KeyAction.CommitText("😂"),
+                                    color = ColorVariant.MUTED,
+                                ),
+                            SwipeDirection.TOP_RIGHT to
+                                KeyC(
+                                    display = KeyDisplay.TextDisplay("🤣"),
+                                    action = KeyAction.CommitText("🤣"),
+                                    color = ColorVariant.MUTED,
+                                ),
+                            SwipeDirection.RIGHT to
+                                KeyC(
+                                    display = KeyDisplay.TextDisplay("🔥"),
+                                    action = KeyAction.CommitText("🔥"),
+                                    color = ColorVariant.MUTED,
                                 ),
                             SwipeDirection.BOTTOM to
                                 KeyC(
@@ -607,27 +741,17 @@ val KB_UK_RU_MESSAGEEASE_SYMBOLS_SHIFTED =
                 KeyItemC(
                     center =
                         KeyC(
-                            display = KeyDisplay.TextDisplay("В"),
-                            action = KeyAction.CommitText("В"),
+                            display = KeyDisplay.TextDisplay("H"),
+                            action = KeyAction.CommitText("H"),
                             size = FontSizeVariant.LARGE,
                             color = ColorVariant.PRIMARY,
                         ),
                     swipes =
                         mapOf(
-                            SwipeDirection.TOP to
-                                KeyC(
-                                    display = KeyDisplay.TextDisplay("Б"),
-                                    action = KeyAction.CommitText("Б"),
-                                ),
                             SwipeDirection.RIGHT to
                                 KeyC(
-                                    display = KeyDisplay.TextDisplay("Ы"),
-                                    action = KeyAction.CommitText("Ы"),
-                                ),
-                            SwipeDirection.BOTTOM to
-                                KeyC(
-                                    display = KeyDisplay.TextDisplay("І"),
-                                    action = KeyAction.CommitText("І"),
+                                    display = KeyDisplay.TextDisplay("K"),
+                                    action = KeyAction.CommitText("K"),
                                 ),
                             SwipeDirection.TOP_LEFT to
                                 KeyC(
@@ -653,6 +777,16 @@ val KB_UK_RU_MESSAGEEASE_SYMBOLS_SHIFTED =
                                     action = KeyAction.CommitText("["),
                                     color = ColorVariant.MUTED,
                                 ),
+                            SwipeDirection.TOP to
+                                KeyC(
+                                    display = KeyDisplay.TextDisplay("Ĥ"),
+                                    action = KeyAction.CommitText("Ĥ"),
+                                ),
+                            SwipeDirection.BOTTOM to
+                                KeyC(
+                                    display = KeyDisplay.TextDisplay("Ĉ"),
+                                    action = KeyAction.CommitText("Ĉ"),
+                                ),
                             SwipeDirection.LEFT to
                                 KeyC(
                                     display = KeyDisplay.TextDisplay("("),
@@ -664,8 +798,8 @@ val KB_UK_RU_MESSAGEEASE_SYMBOLS_SHIFTED =
                 KeyItemC(
                     center =
                         KeyC(
-                            display = KeyDisplay.TextDisplay("О"),
-                            action = KeyAction.CommitText("О"),
+                            display = KeyDisplay.TextDisplay("O"),
+                            action = KeyAction.CommitText("O"),
                             size = FontSizeVariant.LARGE,
                             color = ColorVariant.PRIMARY,
                         ),
@@ -673,51 +807,51 @@ val KB_UK_RU_MESSAGEEASE_SYMBOLS_SHIFTED =
                         mapOf(
                             SwipeDirection.TOP_LEFT to
                                 KeyC(
-                                    display = KeyDisplay.TextDisplay("Ч"),
-                                    action = KeyAction.CommitText("Ч"),
+                                    display = KeyDisplay.TextDisplay("Q"),
+                                    action = KeyAction.CommitText("Q"),
                                 ),
                             SwipeDirection.TOP to
                                 KeyC(
-                                    display = KeyDisplay.TextDisplay("М"),
-                                    action = KeyAction.CommitText("М"),
+                                    display = KeyDisplay.TextDisplay("U"),
+                                    action = KeyAction.CommitText("U"),
                                 ),
                             SwipeDirection.TOP_RIGHT to
                                 KeyC(
-                                    display = KeyDisplay.TextDisplay("Х"),
-                                    action = KeyAction.CommitText("Х"),
+                                    display = KeyDisplay.TextDisplay("P"),
+                                    action = KeyAction.CommitText("P"),
                                 ),
                             SwipeDirection.RIGHT to
                                 KeyC(
-                                    display = KeyDisplay.TextDisplay("Г"),
-                                    action = KeyAction.CommitText("Г"),
+                                    display = KeyDisplay.TextDisplay("B"),
+                                    action = KeyAction.CommitText("B"),
                                 ),
                             SwipeDirection.BOTTOM_RIGHT to
                                 KeyC(
-                                    display = KeyDisplay.TextDisplay("Ш"),
-                                    action = KeyAction.CommitText("Ш"),
+                                    display = KeyDisplay.TextDisplay("J"),
+                                    action = KeyAction.CommitText("J"),
                                 ),
                             SwipeDirection.BOTTOM to
                                 KeyC(
-                                    display = KeyDisplay.TextDisplay("Я"),
-                                    action = KeyAction.CommitText("Я"),
+                                    display = KeyDisplay.TextDisplay("D"),
+                                    action = KeyAction.CommitText("D"),
                                 ),
                             SwipeDirection.BOTTOM_LEFT to
                                 KeyC(
-                                    display = KeyDisplay.TextDisplay("Щ"),
-                                    action = KeyAction.CommitText("Щ"),
+                                    display = KeyDisplay.TextDisplay("G"),
+                                    action = KeyAction.CommitText("G"),
                                 ),
                             SwipeDirection.LEFT to
                                 KeyC(
-                                    display = KeyDisplay.TextDisplay("Ж"),
-                                    action = KeyAction.CommitText("Ж"),
+                                    display = KeyDisplay.TextDisplay("C"),
+                                    action = KeyAction.CommitText("C"),
                                 ),
                         ),
                 ),
                 KeyItemC(
                     center =
                         KeyC(
-                            display = KeyDisplay.TextDisplay("А"),
-                            action = KeyAction.CommitText("А"),
+                            display = KeyDisplay.TextDisplay("R"),
+                            action = KeyAction.CommitText("R"),
                             size = FontSizeVariant.LARGE,
                             color = ColorVariant.PRIMARY,
                         ),
@@ -725,20 +859,19 @@ val KB_UK_RU_MESSAGEEASE_SYMBOLS_SHIFTED =
                         mapOf(
                             SwipeDirection.LEFT to
                                 KeyC(
-                                    display = KeyDisplay.TextDisplay("Л"),
-                                    action = KeyAction.CommitText("Л"),
+                                    display = KeyDisplay.TextDisplay("M"),
+                                    action = KeyAction.CommitText("M"),
+                                ),
+                            SwipeDirection.TOP to
+                                KeyC(
+                                    display = KeyDisplay.IconDisplay(Icons.Outlined.ArrowDropUp),
+                                    action = KeyAction.ToggleShiftMode(true),
+                                    color = ColorVariant.MUTED,
                                 ),
                             SwipeDirection.BOTTOM to
                                 KeyC(
                                     display = KeyDisplay.IconDisplay(Icons.Outlined.ArrowDropDown),
                                     action = KeyAction.ToggleShiftMode(false),
-                                    color = ColorVariant.MUTED,
-                                ),
-                            SwipeDirection.TOP to
-                                KeyC(
-                                    display = KeyDisplay.IconDisplay(Icons.Outlined.KeyboardCapslock),
-                                    capsModeDisplay = KeyDisplay.IconDisplay(Icons.Outlined.Copyright),
-                                    action = KeyAction.ToggleCapsLock,
                                     color = ColorVariant.MUTED,
                                 ),
                             SwipeDirection.TOP_LEFT to
@@ -779,27 +912,18 @@ val KB_UK_RU_MESSAGEEASE_SYMBOLS_SHIFTED =
                 KeyItemC(
                     center =
                         KeyC(
-                            display = KeyDisplay.TextDisplay("Е"),
-                            action = KeyAction.CommitText("Е"),
+                            display = KeyDisplay.TextDisplay("T"),
+                            action = KeyAction.CommitText("T"),
                             size = FontSizeVariant.LARGE,
                             color = ColorVariant.PRIMARY,
                         ),
+//                swipeType = SwipeNWay.FOUR_WAY_DIAGONAL,
                     swipes =
                         mapOf(
-                            SwipeDirection.TOP to
-                                KeyC(
-                                    display = KeyDisplay.TextDisplay("Ї"),
-                                    action = KeyAction.CommitText("Ї"),
-                                ),
                             SwipeDirection.TOP_RIGHT to
                                 KeyC(
-                                    display = KeyDisplay.TextDisplay("Д"),
-                                    action = KeyAction.CommitText("Д"),
-                                ),
-                            SwipeDirection.RIGHT to
-                                KeyC(
-                                    display = KeyDisplay.TextDisplay("Є"),
-                                    action = KeyAction.CommitText("Є"),
+                                    display = KeyDisplay.TextDisplay("Y"),
+                                    action = KeyAction.CommitText("Y"),
                                 ),
                             SwipeDirection.TOP_LEFT to
                                 KeyC(
@@ -807,10 +931,34 @@ val KB_UK_RU_MESSAGEEASE_SYMBOLS_SHIFTED =
                                     action = KeyAction.CommitText("~"),
                                     color = ColorVariant.MUTED,
                                 ),
-                            SwipeDirection.BOTTOM_RIGHT to
+                            SwipeDirection.RIGHT to
                                 KeyC(
                                     display = KeyDisplay.TextDisplay("*"),
                                     action = KeyAction.CommitText("*"),
+                                    color = ColorVariant.MUTED,
+                                ),
+                            SwipeDirection.TOP to
+                                KeyC(
+                                    display = KeyDisplay.TextDisplay("😍"),
+                                    action = KeyAction.CommitText("😍"),
+                                    color = ColorVariant.MUTED,
+                                ),
+                            SwipeDirection.BOTTOM_LEFT to
+                                KeyC(
+                                    display = KeyDisplay.TextDisplay("✨"),
+                                    action = KeyAction.CommitText("✨"),
+                                    color = ColorVariant.MUTED,
+                                ),
+                            SwipeDirection.BOTTOM to
+                                KeyC(
+                                    display = KeyDisplay.TextDisplay("Ĵ"),
+                                    action = KeyAction.CommitText("Ĵ"),
+                                    color = ColorVariant.MUTED,
+                                ),
+                            SwipeDirection.BOTTOM_RIGHT to
+                                KeyC(
+                                    display = KeyDisplay.TextDisplay(":"),
+                                    action = KeyAction.CommitText(":"),
                                     color = ColorVariant.MUTED,
                                 ),
                             SwipeDirection.LEFT to
@@ -824,8 +972,8 @@ val KB_UK_RU_MESSAGEEASE_SYMBOLS_SHIFTED =
                 KeyItemC(
                     center =
                         KeyC(
-                            display = KeyDisplay.TextDisplay("Р"),
-                            action = KeyAction.CommitText("Р"),
+                            display = KeyDisplay.TextDisplay("E"),
+                            action = KeyAction.CommitText("E"),
                             size = FontSizeVariant.LARGE,
                             color = ColorVariant.PRIMARY,
                         ),
@@ -833,24 +981,24 @@ val KB_UK_RU_MESSAGEEASE_SYMBOLS_SHIFTED =
                         mapOf(
                             SwipeDirection.TOP to
                                 KeyC(
-                                    display = KeyDisplay.TextDisplay("У"),
-                                    action = KeyAction.CommitText("У"),
-                                ),
-                            SwipeDirection.RIGHT to
-                                KeyC(
-                                    display = KeyDisplay.TextDisplay("З"),
-                                    action = KeyAction.CommitText("З"),
-                                ),
-                            SwipeDirection.LEFT to
-                                KeyC(
-                                    display = KeyDisplay.TextDisplay("Ю"),
-                                    action = KeyAction.CommitText("Ю"),
+                                    display = KeyDisplay.TextDisplay("W"),
+                                    action = KeyAction.CommitText("W"),
                                 ),
                             SwipeDirection.TOP_RIGHT to
                                 KeyC(
                                     display = KeyDisplay.TextDisplay("'"),
                                     action = KeyAction.CommitText("'"),
                                     color = ColorVariant.MUTED,
+                                ),
+                            SwipeDirection.RIGHT to
+                                KeyC(
+                                    display = KeyDisplay.TextDisplay("Z"),
+                                    action = KeyAction.CommitText("Z"),
+                                ),
+                            SwipeDirection.LEFT to
+                                KeyC(
+                                    display = KeyDisplay.TextDisplay("Ĝ"),
+                                    action = KeyAction.CommitText("Ĝ"),
                                 ),
                             SwipeDirection.TOP_LEFT to
                                 KeyC(
@@ -881,8 +1029,8 @@ val KB_UK_RU_MESSAGEEASE_SYMBOLS_SHIFTED =
                 KeyItemC(
                     center =
                         KeyC(
-                            display = KeyDisplay.TextDisplay("Н"),
-                            action = KeyAction.CommitText("Н"),
+                            display = KeyDisplay.TextDisplay("S"),
+                            action = KeyAction.CommitText("S"),
                             size = FontSizeVariant.LARGE,
                             color = ColorVariant.PRIMARY,
                         ),
@@ -890,8 +1038,13 @@ val KB_UK_RU_MESSAGEEASE_SYMBOLS_SHIFTED =
                         mapOf(
                             SwipeDirection.TOP_LEFT to
                                 KeyC(
-                                    display = KeyDisplay.TextDisplay("Ф"),
-                                    action = KeyAction.CommitText("Ф"),
+                                    display = KeyDisplay.TextDisplay("F"),
+                                    action = KeyAction.CommitText("F"),
+                                ),
+                            SwipeDirection.BOTTOM to
+                                KeyC(
+                                    display = KeyDisplay.TextDisplay("Ŝ"),
+                                    action = KeyAction.CommitText("Ŝ"),
                                 ),
                             SwipeDirection.TOP to
                                 KeyC(
@@ -901,8 +1054,9 @@ val KB_UK_RU_MESSAGEEASE_SYMBOLS_SHIFTED =
                                 ),
                             SwipeDirection.TOP_RIGHT to
                                 KeyC(
-                                    display = KeyDisplay.TextDisplay("Ё"),
-                                    action = KeyAction.CommitText("Ё"),
+                                    display = KeyDisplay.TextDisplay("°"),
+                                    action = KeyAction.CommitText("°"),
+                                    color = ColorVariant.MUTED,
                                 ),
                             SwipeDirection.RIGHT to
                                 KeyC(
@@ -933,13 +1087,17 @@ val KB_UK_RU_MESSAGEEASE_SYMBOLS_SHIFTED =
         ),
     )
 
-val KB_UK_RU_MESSAGEEASE_SYMBOLS: KeyboardDefinition =
+val KB_ENEO_MESSAGEASE_SYMBOLS: KeyboardDefinition =
     KeyboardDefinition(
-        title = "русский українська мова symbols messagease",
+        title = "english esperanto symbols messagease",
         modes =
             KeyboardDefinitionModes(
-                main = KB_UK_RU_MESSAGEEASE_SYMBOLS_MAIN,
-                shifted = KB_UK_RU_MESSAGEEASE_SYMBOLS_SHIFTED,
+                main = KB_ENEO_MESSAGEASE_SYMBOLS_MAIN,
+                shifted = KB_ENEO_MESSAGEASE_SYMBOLS_SHIFTED,
                 numeric = NUMERIC_KEYBOARD,
+            ),
+        settings =
+            KeyboardDefinitionSettings(
+                autoCapitalizers = arrayOf(::autoCapitalizeI, ::autoCapitalizeIApostrophe),
             ),
     )

@@ -6,4 +6,4 @@ Instead of relying on profit-driven, privacy-offending word and sentence predict
 
 As the key positions get ingrained into your muscle memory, eventually you'll be able to appromixate the fast speeds of touch-typing, your eyes never having to leave the text edit area.
 
-This project is a follow-up to the now unmaintained (and closed-source) <a href="https://www.exideas.com/ME/">MessageEase Keyboard</a>, which is its main inspiration.
+This project is a follow-up to the now unmaintained (and closed-source) <a href="https://www.exideas.com/ME/">MessagEase Keyboard</a>, which is its main inspiration.

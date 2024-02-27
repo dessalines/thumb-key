@@ -17,7 +17,7 @@ import com.dessalines.thumbkey.utils.KeyboardDefinitionModes
 import com.dessalines.thumbkey.utils.SwipeDirection
 import com.dessalines.thumbkey.utils.SwipeNWay
 
-val KB_RU_MESSAGEEASE_MAIN =
+val KB_RU_MESSAGEASE_MAIN =
     KeyboardC(
         listOf(
             listOf(
@@ -293,7 +293,7 @@ val KB_RU_MESSAGEEASE_MAIN =
         ),
     )
 
-val KB_RU_MESSAGEEASE_SHIFTED =
+val KB_RU_MESSAGEASE_SHIFTED =
     KeyboardC(
         listOf(
             listOf(
@@ -570,13 +570,13 @@ val KB_RU_MESSAGEEASE_SHIFTED =
         ),
     )
 
-val KB_RU_MESSAGEEASE: KeyboardDefinition =
+val KB_RU_MESSAGEASE: KeyboardDefinition =
     KeyboardDefinition(
         title = "русский messagease",
         modes =
             KeyboardDefinitionModes(
-                main = KB_RU_MESSAGEEASE_MAIN,
-                shifted = KB_RU_MESSAGEEASE_SHIFTED,
+                main = KB_RU_MESSAGEASE_MAIN,
+                shifted = KB_RU_MESSAGEASE_SHIFTED,
                 numeric = NUMERIC_KEYBOARD,
             ),
     )
