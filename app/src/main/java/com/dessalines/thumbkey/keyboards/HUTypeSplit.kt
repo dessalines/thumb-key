@@ -177,9 +177,19 @@ val KB_HU_TYPESPLIT_MAIN =
                             size = FontSizeVariant.LARGE,
                             color = ColorVariant.PRIMARY,
                         ),
-                    swipeType = SwipeNWay.TWO_WAY_VERTICAL,
+                    swipeType = SwipeNWay.FOUR_WAY_CROSS,
                     swipes =
                         mapOf(
+                            SwipeDirection.LEFT to
+                                KeyC(
+                                    display = null,
+                                    action = KeyAction.CommitText("j"),
+                                ),
+                            SwipeDirection.RIGHT to
+                                KeyC(
+                                    display = KeyDisplay.TextDisplay("j"),
+                                    action = KeyAction.CommitText("j"),
+                                ),
                             SwipeDirection.BOTTOM to
                                 KeyC(
                                     display = KeyDisplay.TextDisplay("g"),
@@ -195,9 +205,10 @@ val KB_HU_TYPESPLIT_MAIN =
                             size = FontSizeVariant.LARGE,
                             color = ColorVariant.PRIMARY,
                         ),
+                    swipeType = SwipeNWay.FOUR_WAY_CROSS,
                     swipes =
                         mapOf(
-                            SwipeDirection.TOP_LEFT to
+                            SwipeDirection.LEFT to
                                 KeyC(
                                     display = KeyDisplay.TextDisplay("é"),
                                     action = KeyAction.CommitText("é"),
@@ -211,11 +222,6 @@ val KB_HU_TYPESPLIT_MAIN =
                                 KeyC(
                                     display = KeyDisplay.TextDisplay("ű"),
                                     action = KeyAction.CommitText("ű"),
-                                ),
-                            SwipeDirection.LEFT to
-                                KeyC(
-                                    display = KeyDisplay.TextDisplay("j"),
-                                    action = KeyAction.CommitText("j"),
                                 ),
                             SwipeDirection.BOTTOM to
                                 KeyC(
@@ -493,9 +499,19 @@ val KB_HU_TYPESPLIT_SHIFTED =
                             size = FontSizeVariant.LARGE,
                             color = ColorVariant.PRIMARY,
                         ),
-                    swipeType = SwipeNWay.TWO_WAY_VERTICAL,
+                    swipeType = SwipeNWay.FOUR_WAY_CROSS,
                     swipes =
                         mapOf(
+                            SwipeDirection.RIGHT to
+                                KeyC(
+                                    display = KeyDisplay.TextDisplay("J"),
+                                    action = KeyAction.CommitText("J"),
+                                ),
+                            SwipeDirection.LEFT to
+                                KeyC(
+                                    display = null,
+                                    action = KeyAction.CommitText("J"),
+                                ),
                             SwipeDirection.BOTTOM to
                                 KeyC(
                                     display = KeyDisplay.TextDisplay("G"),
@@ -511,9 +527,10 @@ val KB_HU_TYPESPLIT_SHIFTED =
                             size = FontSizeVariant.LARGE,
                             color = ColorVariant.PRIMARY,
                         ),
+                    swipeType = SwipeNWay.FOUR_WAY_CROSS,
                     swipes =
                         mapOf(
-                            SwipeDirection.TOP_LEFT to
+                            SwipeDirection.LEFT to
                                 KeyC(
                                     display = KeyDisplay.TextDisplay("É"),
                                     action = KeyAction.CommitText("É"),
@@ -527,11 +544,6 @@ val KB_HU_TYPESPLIT_SHIFTED =
                                 KeyC(
                                     display = KeyDisplay.TextDisplay("Ű"),
                                     action = KeyAction.CommitText("Ű"),
-                                ),
-                            SwipeDirection.LEFT to
-                                KeyC(
-                                    display = KeyDisplay.TextDisplay("J"),
-                                    action = KeyAction.CommitText("J"),
                                 ),
                             SwipeDirection.BOTTOM to
                                 KeyC(
