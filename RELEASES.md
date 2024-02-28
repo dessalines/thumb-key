@@ -1,3 +1,11 @@
+# Thumb-Key 2.6.21 (2024-02-28)
+
+## What's Changed in 2.6.21
+
+- Create english latina thumb-key by @MGreek in [#773](https://github.com/dessalines/thumb-key/pull/773)
+- Rename MessageEase to MessagEase. Fixes #769 by @dessalines in [#771](https://github.com/dessalines/thumb-key/pull/771)
+- Improved Hungarian Type-split swipemaps by @KnockoffFeline in [#770](https://github.com/dessalines/thumb-key/pull/770)
+
 # Thumb-Key 2.6.20 (2024-02-26)
 
 ## What's Changed in 2.6.20
