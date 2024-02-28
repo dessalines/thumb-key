@@ -1,10 +1,7 @@
 package com.dessalines.thumbkey.keyboards
 
 import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.outlined.ArrowDropDown
 import androidx.compose.material.icons.outlined.ArrowDropUp
-import androidx.compose.material.icons.outlined.Copyright
-import androidx.compose.material.icons.outlined.KeyboardCapslock
 import com.dessalines.thumbkey.utils.ColorVariant
 import com.dessalines.thumbkey.utils.FontSizeVariant
 import com.dessalines.thumbkey.utils.KeyAction
@@ -17,7 +14,7 @@ import com.dessalines.thumbkey.utils.KeyboardDefinitionModes
 import com.dessalines.thumbkey.utils.SwipeDirection
 import com.dessalines.thumbkey.utils.SwipeNWay
 
-val KB_PL_MESSAGEEASE_MAIN =
+val KB_PL_MESSAGEASE_MAIN =
     KeyboardC(
         listOf(
             listOf(
@@ -106,7 +103,6 @@ val KB_PL_MESSAGEEASE_MAIN =
                                     action = KeyAction.CommitText("`"),
                                     color = ColorVariant.MUTED,
                                 ),
-                            
                         ),
                 ),
                 KeyItemC(
@@ -148,7 +144,6 @@ val KB_PL_MESSAGEEASE_MAIN =
                                     display = KeyDisplay.TextDisplay("ł"),
                                     action = KeyAction.CommitText("ł"),
                                 ),
-                            
                         ),
                 ),
                 EMOJI_KEY_ITEM,
@@ -471,7 +466,7 @@ val KB_PL_MESSAGEEASE_MAIN =
         ),
     )
 
-val KB_PL_MESSAGEEASE_SHIFTED =
+val KB_PL_MESSAGEASE_SHIFTED =
     KeyboardC(
         listOf(
             listOf(
@@ -923,7 +918,7 @@ val KB_PL_MESSAGEEASE_SHIFTED =
         ),
     )
 
-val KB_PL_MESSAGEEASE_NUMERIC =
+val KB_PL_MESSAGEASE_NUMERIC =
     KeyboardC(
         listOf(
             listOf(
@@ -1261,13 +1256,13 @@ val KB_PL_MESSAGEEASE_NUMERIC =
         ),
     )
 
-val KB_PL_MESSAGEEASE: KeyboardDefinition =
+val KB_PL_MESSAGEASE: KeyboardDefinition =
     KeyboardDefinition(
-        title = "polski messageease",
+        title = "polski messagease",
         modes =
             KeyboardDefinitionModes(
-                main = KB_PL_MESSAGEEASE_MAIN,
-                shifted = KB_PL_MESSAGEEASE_SHIFTED,
-                numeric = KB_PL_MESSAGEEASE_NUMERIC,
+                main = KB_PL_MESSAGEASE_MAIN,
+                shifted = KB_PL_MESSAGEASE_SHIFTED,
+                numeric = KB_PL_MESSAGEASE_NUMERIC,
             ),
     )
