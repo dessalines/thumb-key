@@ -1,3 +1,15 @@
+# Thumb-Key 2.6.22 (2024-02-29)
+
+## What's Changed in 2.6.22
+
+- Fixing pl_messagease numeric spacebar. by @dessalines in [#777](https://github.com/dessalines/thumb-key/pull/777)
+- Add Polish MessagEase layout by @Blackweather in [#774](https://github.com/dessalines/thumb-key/pull/774)
+- Adding NL Typesplit. Fixes #775 by @dessalines in [#776](https://github.com/dessalines/thumb-key/pull/776)
+
+## New Contributors
+
+- @Blackweather made their first contribution in [#774](https://github.com/dessalines/thumb-key/pull/774)
+
 # Thumb-Key 2.6.21 (2024-02-28)
 
 ## What's Changed in 2.6.21
