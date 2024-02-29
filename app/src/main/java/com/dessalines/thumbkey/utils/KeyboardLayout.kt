@@ -155,7 +155,6 @@ enum class KeyboardLayout(val keyboardDefinition: KeyboardDefinition) {
     ITTypeSplit(KB_IT_TYPESPLIT),
     PTTypeSplit(KB_PT_TYPESPLIT),
     PLTypeSplit(KB_PL_TYPESPLIT),
-    PLMessagease(KB_PL_MESSAGEASE),
     ENTwoHands(KB_EN_TWO_HANDS),
     ENThumbKeyProgrammerWide(KB_EN_THUMBKEY_PROGRAMMER_WIDE),
     HUThumbKey(KB_HU_THUMBKEY),
@@ -220,4 +219,5 @@ enum class KeyboardLayout(val keyboardDefinition: KeyboardDefinition) {
     ENROThumbKey(KB_EN_RO_THUMBKEY),
     ENLAThumbKey(KB_EN_LA_THUMBKEY),
     NLTypeSplit(KB_NL_TYPESPLIT),
+    PLMessagEase(KB_PL_MESSAGEASE),
 }
