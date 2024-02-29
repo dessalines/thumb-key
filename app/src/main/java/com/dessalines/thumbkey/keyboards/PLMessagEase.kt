@@ -1,7 +1,10 @@
 package com.dessalines.thumbkey.keyboards
 
 import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.outlined.ArrowDropDown
 import androidx.compose.material.icons.outlined.ArrowDropUp
+import androidx.compose.material.icons.outlined.Copyright
+import androidx.compose.material.icons.outlined.KeyboardCapslock
 import com.dessalines.thumbkey.utils.ColorVariant
 import com.dessalines.thumbkey.utils.FontSizeVariant
 import com.dessalines.thumbkey.utils.KeyAction
@@ -12,7 +15,6 @@ import com.dessalines.thumbkey.utils.KeyboardC
 import com.dessalines.thumbkey.utils.KeyboardDefinition
 import com.dessalines.thumbkey.utils.KeyboardDefinitionModes
 import com.dessalines.thumbkey.utils.SwipeDirection
-import com.dessalines.thumbkey.utils.SwipeNWay
 
 val KB_PL_MESSAGEASE_MAIN =
     KeyboardC(
@@ -26,7 +28,6 @@ val KB_PL_MESSAGEASE_MAIN =
                             size = FontSizeVariant.LARGE,
                             color = ColorVariant.PRIMARY,
                         ),
-                    swipeType = SwipeNWay.FOUR_WAY_DIAGONAL,
                     swipes =
                         mapOf(
                             SwipeDirection.RIGHT to
@@ -103,6 +104,12 @@ val KB_PL_MESSAGEASE_MAIN =
                                     action = KeyAction.CommitText("`"),
                                     color = ColorVariant.MUTED,
                                 ),
+                            SwipeDirection.TOP_RIGHT to
+                                KeyC(
+                                    display = KeyDisplay.TextDisplay("´"),
+                                    action = KeyAction.CommitText("´"),
+                                    color = ColorVariant.MUTED,
+                                ),
                         ),
                 ),
                 KeyItemC(
@@ -113,7 +120,6 @@ val KB_PL_MESSAGEASE_MAIN =
                             size = FontSizeVariant.LARGE,
                             color = ColorVariant.PRIMARY,
                         ),
-                    swipeType = SwipeNWay.FOUR_WAY_DIAGONAL,
                     swipes =
                         mapOf(
                             SwipeDirection.BOTTOM_RIGHT to
@@ -201,7 +207,7 @@ val KB_PL_MESSAGEASE_MAIN =
                             SwipeDirection.TOP_LEFT to
                                 KeyC(
                                     display = KeyDisplay.TextDisplay("{"),
-                                    action = KeyAction.CommitText("}"),
+                                    action = KeyAction.CommitText("{"),
                                     color = ColorVariant.MUTED,
                                 ),
                         ),
@@ -322,7 +328,6 @@ val KB_PL_MESSAGEASE_MAIN =
                             size = FontSizeVariant.LARGE,
                             color = ColorVariant.PRIMARY,
                         ),
-                    swipeType = SwipeNWay.FOUR_WAY_DIAGONAL,
                     swipes =
                         mapOf(
                             SwipeDirection.TOP_RIGHT to
@@ -350,6 +355,12 @@ val KB_PL_MESSAGEASE_MAIN =
                                 KeyC(
                                     display = KeyDisplay.TextDisplay("~"),
                                     action = KeyAction.CommitText("~"),
+                                    color = ColorVariant.MUTED,
+                                ),
+                            SwipeDirection.BOTTOM_RIGHT to
+                                KeyC(
+                                    display = KeyDisplay.TextDisplay("⇥"),
+                                    action = KeyAction.CommitText("\t"),
                                     color = ColorVariant.MUTED,
                                 ),
                         ),
@@ -419,7 +430,6 @@ val KB_PL_MESSAGEASE_MAIN =
                             size = FontSizeVariant.LARGE,
                             color = ColorVariant.PRIMARY,
                         ),
-                    swipeType = SwipeNWay.FOUR_WAY_DIAGONAL,
                     swipes =
                         mapOf(
                             SwipeDirection.TOP to
@@ -432,6 +442,7 @@ val KB_PL_MESSAGEASE_MAIN =
                                 KeyC(
                                     display = KeyDisplay.TextDisplay("°"),
                                     action = KeyAction.CommitText("°"),
+                                    color = ColorVariant.MUTED,
                                 ),
                             SwipeDirection.RIGHT to
                                 KeyC(
@@ -478,7 +489,6 @@ val KB_PL_MESSAGEASE_SHIFTED =
                             size = FontSizeVariant.LARGE,
                             color = ColorVariant.PRIMARY,
                         ),
-                    swipeType = SwipeNWay.FOUR_WAY_DIAGONAL,
                     swipes =
                         mapOf(
                             SwipeDirection.RIGHT to
@@ -555,6 +565,11 @@ val KB_PL_MESSAGEASE_SHIFTED =
                                     action = KeyAction.CommitText("`"),
                                     color = ColorVariant.MUTED,
                                 ),
+                            SwipeDirection.TOP_RIGHT to
+                                KeyC(
+                                    display = KeyDisplay.TextDisplay("´"),
+                                    action = KeyAction.CommitText("´"),
+                                ),
                         ),
                 ),
                 KeyItemC(
@@ -565,7 +580,6 @@ val KB_PL_MESSAGEASE_SHIFTED =
                             size = FontSizeVariant.LARGE,
                             color = ColorVariant.PRIMARY,
                         ),
-                    swipeType = SwipeNWay.FOUR_WAY_DIAGONAL,
                     swipes =
                         mapOf(
                             SwipeDirection.BOTTOM_RIGHT to
@@ -635,8 +649,8 @@ val KB_PL_MESSAGEASE_SHIFTED =
                                 ),
                             SwipeDirection.BOTTOM to
                                 KeyC(
-                                    display = KeyDisplay.TextDisplay("ć"),
-                                    action = KeyAction.CommitText("ć"),
+                                    display = KeyDisplay.TextDisplay("Ć"),
+                                    action = KeyAction.CommitText("Ć"),
                                 ),
                             SwipeDirection.BOTTOM_LEFT to
                                 KeyC(
@@ -653,7 +667,7 @@ val KB_PL_MESSAGEASE_SHIFTED =
                             SwipeDirection.TOP_LEFT to
                                 KeyC(
                                     display = KeyDisplay.TextDisplay("{"),
-                                    action = KeyAction.CommitText("}"),
+                                    action = KeyAction.CommitText("{"),
                                     color = ColorVariant.MUTED,
                                 ),
                         ),
@@ -720,10 +734,17 @@ val KB_PL_MESSAGEASE_SHIFTED =
                         ),
                     swipes =
                         mapOf(
+                            SwipeDirection.BOTTOM to
+                                KeyC(
+                                    display = KeyDisplay.IconDisplay(Icons.Outlined.ArrowDropDown),
+                                    action = KeyAction.ToggleShiftMode(false),
+                                    color = ColorVariant.MUTED,
+                                ),
                             SwipeDirection.TOP to
                                 KeyC(
-                                    display = KeyDisplay.IconDisplay(Icons.Outlined.ArrowDropUp),
-                                    action = KeyAction.ToggleShiftMode(true),
+                                    display = KeyDisplay.IconDisplay(Icons.Outlined.KeyboardCapslock),
+                                    capsModeDisplay = KeyDisplay.IconDisplay(Icons.Outlined.Copyright),
+                                    action = KeyAction.ToggleCapsLock,
                                     color = ColorVariant.MUTED,
                                 ),
                             SwipeDirection.TOP_RIGHT to
@@ -774,7 +795,6 @@ val KB_PL_MESSAGEASE_SHIFTED =
                             size = FontSizeVariant.LARGE,
                             color = ColorVariant.PRIMARY,
                         ),
-                    swipeType = SwipeNWay.FOUR_WAY_DIAGONAL,
                     swipes =
                         mapOf(
                             SwipeDirection.TOP_RIGHT to
@@ -802,6 +822,12 @@ val KB_PL_MESSAGEASE_SHIFTED =
                                 KeyC(
                                     display = KeyDisplay.TextDisplay("~"),
                                     action = KeyAction.CommitText("~"),
+                                    color = ColorVariant.MUTED,
+                                ),
+                            SwipeDirection.BOTTOM_RIGHT to
+                                KeyC(
+                                    display = KeyDisplay.TextDisplay("⇥"),
+                                    action = KeyAction.CommitText("\t"),
                                     color = ColorVariant.MUTED,
                                 ),
                         ),
@@ -871,7 +897,6 @@ val KB_PL_MESSAGEASE_SHIFTED =
                             size = FontSizeVariant.LARGE,
                             color = ColorVariant.PRIMARY,
                         ),
-                    swipeType = SwipeNWay.FOUR_WAY_DIAGONAL,
                     swipes =
                         mapOf(
                             SwipeDirection.TOP to
@@ -930,7 +955,6 @@ val KB_PL_MESSAGEASE_NUMERIC =
                             size = FontSizeVariant.LARGE,
                             color = ColorVariant.PRIMARY,
                         ),
-                    swipeType = SwipeNWay.FOUR_WAY_DIAGONAL,
                     swipes =
                         mapOf(
                             SwipeDirection.RIGHT to
@@ -993,6 +1017,11 @@ val KB_PL_MESSAGEASE_NUMERIC =
                                     action = KeyAction.CommitText("`"),
                                     color = ColorVariant.MUTED,
                                 ),
+                            SwipeDirection.TOP_RIGHT to
+                                KeyC(
+                                    display = KeyDisplay.TextDisplay("´"),
+                                    action = KeyAction.CommitText("´"),
+                                ),
                         ),
                 ),
                 KeyItemC(
@@ -1003,7 +1032,6 @@ val KB_PL_MESSAGEASE_NUMERIC =
                             size = FontSizeVariant.LARGE,
                             color = ColorVariant.PRIMARY,
                         ),
-                    swipeType = SwipeNWay.FOUR_WAY_DIAGONAL,
                     swipes =
                         mapOf(
                             SwipeDirection.BOTTOM_RIGHT to
@@ -1066,7 +1094,7 @@ val KB_PL_MESSAGEASE_NUMERIC =
                             SwipeDirection.TOP_LEFT to
                                 KeyC(
                                     display = KeyDisplay.TextDisplay("{"),
-                                    action = KeyAction.CommitText("}"),
+                                    action = KeyAction.CommitText("{"),
                                     color = ColorVariant.MUTED,
                                 ),
                         ),
@@ -1133,13 +1161,13 @@ val KB_PL_MESSAGEASE_NUMERIC =
                             size = FontSizeVariant.LARGE,
                             color = ColorVariant.PRIMARY,
                         ),
-                    swipeType = SwipeNWay.FOUR_WAY_DIAGONAL,
                     swipes =
                         mapOf(
                             SwipeDirection.RIGHT to
                                 KeyC(
                                     display = KeyDisplay.TextDisplay("*"),
                                     action = KeyAction.CommitText("*"),
+                                    color = ColorVariant.MUTED,
                                 ),
                             SwipeDirection.LEFT to
                                 KeyC(
@@ -1151,6 +1179,12 @@ val KB_PL_MESSAGEASE_NUMERIC =
                                 KeyC(
                                     display = KeyDisplay.TextDisplay("~"),
                                     action = KeyAction.CommitText("~"),
+                                    color = ColorVariant.MUTED,
+                                ),
+                            SwipeDirection.BOTTOM_RIGHT to
+                                KeyC(
+                                    display = KeyDisplay.TextDisplay("⇥"),
+                                    action = KeyAction.CommitText("\t"),
                                     color = ColorVariant.MUTED,
                                 ),
                         ),
@@ -1205,7 +1239,6 @@ val KB_PL_MESSAGEASE_NUMERIC =
                             size = FontSizeVariant.LARGE,
                             color = ColorVariant.PRIMARY,
                         ),
-                    swipeType = SwipeNWay.FOUR_WAY_DIAGONAL,
                     swipes =
                         mapOf(
                             SwipeDirection.TOP to
@@ -1235,6 +1268,7 @@ val KB_PL_MESSAGEASE_NUMERIC =
                                 KeyC(
                                     display = KeyDisplay.TextDisplay("#"),
                                     action = KeyAction.CommitText("#"),
+                                    color = ColorVariant.MUTED,
                                 ),
                         ),
                 ),
