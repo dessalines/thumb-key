@@ -574,3 +574,41 @@ val BACKSPACE_TYPESPLIT_SHIFTED_KEY_ITEM =
                     ),
             ),
     )
+
+val SPACEBAR_FRENCH_KEY_ITEM = SPACEBAR_KEY_ITEM.copy(
+    nextTapActions =
+    listOf(
+        KeyAction.ReplaceLastText(", ", trimCount = 1),
+        KeyAction.ReplaceLastText(". "),
+        KeyAction.ReplaceLastText(" ? "),
+        KeyAction.ReplaceLastText(" ! ", trimCount = 3),
+        KeyAction.ReplaceLastText(" : ", trimCount = 3),
+        KeyAction.ReplaceLastText(" ; ", trimCount = 3),
+    ),
+)
+
+val SPACEBAR_FRENCH_SKINNY_KEY_ITEM = SPACEBAR_FRENCH_KEY_ITEM.copy(widthMultiplier = 1)
+
+val SPACEBAR_FRENCH_TYPESPLIT_MIDDLE_KEY_ITEM = SPACEBAR_TYPESPLIT_MIDDLE_KEY_ITEM.copy(
+    nextTapActions =
+    listOf(
+        KeyAction.ReplaceLastText(", ", trimCount = 1),
+        KeyAction.ReplaceLastText(". "),
+        KeyAction.ReplaceLastText(" ? "),
+        KeyAction.ReplaceLastText(" ! ", trimCount = 3),
+        KeyAction.ReplaceLastText(" : ", trimCount = 3),
+        KeyAction.ReplaceLastText(" ; ", trimCount = 3),
+    ),
+)
+
+val SPACEBAR_FRENCH_TYPESPLIT_BOTTOM_KEY_ITEM = SPACEBAR_TYPESPLIT_BOTTOM_KEY_ITEM.copy(
+    nextTapActions =
+    listOf(
+        KeyAction.ReplaceLastText(", ", trimCount = 1),
+        KeyAction.ReplaceLastText(". "),
+        KeyAction.ReplaceLastText(" ? "),
+        KeyAction.ReplaceLastText(" ! ", trimCount = 3),
+        KeyAction.ReplaceLastText(" : ", trimCount = 3),
+        KeyAction.ReplaceLastText(" ; ", trimCount = 3),
+    ),
+)

@@ -218,7 +218,7 @@ val KB_FR_TYPESPLIT_MAIN =
                                 ),
                         ),
                 ),
-                SPACEBAR_TYPESPLIT_MIDDLE_KEY_ITEM,
+                SPACEBAR_FRENCH_TYPESPLIT_MIDDLE_KEY_ITEM,
                 KeyItemC(
                     center =
                         KeyC(
@@ -317,7 +317,7 @@ val KB_FR_TYPESPLIT_MAIN =
                             color = ColorVariant.PRIMARY,
                         ),
                 ),
-                SPACEBAR_TYPESPLIT_BOTTOM_KEY_ITEM,
+                SPACEBAR_FRENCH_TYPESPLIT_BOTTOM_KEY_ITEM,
                 KeyItemC(
                     center =
                         KeyC(
@@ -579,7 +579,7 @@ val KB_FR_TYPESPLIT_SHIFTED =
                                 ),
                         ),
                 ),
-                SPACEBAR_TYPESPLIT_MIDDLE_KEY_ITEM,
+                SPACEBAR_FRENCH_TYPESPLIT_MIDDLE_KEY_ITEM,
                 KeyItemC(
                     center =
                         KeyC(
@@ -678,7 +678,7 @@ val KB_FR_TYPESPLIT_SHIFTED =
                             color = ColorVariant.PRIMARY,
                         ),
                 ),
-                SPACEBAR_TYPESPLIT_BOTTOM_KEY_ITEM,
+                SPACEBAR_FRENCH_TYPESPLIT_BOTTOM_KEY_ITEM,
                 KeyItemC(
                     center =
                         KeyC(
@@ -741,6 +741,6 @@ val KB_FR_TYPESPLIT: KeyboardDefinition =
             KeyboardDefinitionModes(
                 main = KB_FR_TYPESPLIT_MAIN,
                 shifted = KB_FR_TYPESPLIT_SHIFTED,
-                numeric = TYPESPLIT_NUMERIC_KEYBOARD,
+                numeric = FRENCH_TYPESPLIT_NUMERIC_KEYBOARD,
             ),
     )
