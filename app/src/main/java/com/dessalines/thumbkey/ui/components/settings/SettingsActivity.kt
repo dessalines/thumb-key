@@ -34,7 +34,7 @@ import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.stringResource
 import androidx.navigation.NavController
 import com.alorma.compose.settings.storage.base.SettingValueState
-import com.alorma.compose.settings.storage.base.rememberIntSetSettingState
+import com.alorma.compose.settings.storage.disk.rememberIntSetSettingState
 import com.alorma.compose.settings.ui.SettingsListMultiSelect
 import com.alorma.compose.settings.ui.SettingsMenuLink
 import com.dessalines.thumbkey.R
@@ -97,7 +97,8 @@ fun SettingsActivity(
 
     val layoutsState =
         rememberIntSetSettingState(
-            keyboardLayoutsSetFromTitleIndex(settings?.keyboardLayouts),
+            key = "layouts",
+            defaultValue = keyboardLayoutsSetFromTitleIndex(settings?.keyboardLayouts),
         )
 
     Scaffold(
