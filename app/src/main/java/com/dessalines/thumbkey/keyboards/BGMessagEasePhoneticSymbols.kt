@@ -838,7 +838,6 @@ val KB_BG_PHONETIC_MESSAGEASE_SYMBOLS_SHIFTED =
                                 KeyC(
                                     display = KeyDisplay.TextDisplay("Щ"),
                                     action = KeyAction.CommitText("Щ"),
-                                    color = ColorVariant.MUTED,
                                 ),
                             SwipeDirection.RIGHT to
                                 KeyC(
