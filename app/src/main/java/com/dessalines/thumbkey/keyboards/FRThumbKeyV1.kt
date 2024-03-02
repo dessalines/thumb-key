@@ -331,7 +331,7 @@ val KB_FR_THUMBKEY_V1_MAIN =
                 BACKSPACE_KEY_ITEM,
             ),
             listOf(
-                SPACEBAR_KEY_ITEM,
+                SPACEBAR_FRENCH_KEY_ITEM,
                 RETURN_KEY_ITEM,
             ),
         ),
@@ -658,7 +658,7 @@ val KB_FR_THUMBKEY_V1_SHIFTED =
                 BACKSPACE_KEY_ITEM,
             ),
             listOf(
-                SPACEBAR_KEY_ITEM,
+                SPACEBAR_FRENCH_KEY_ITEM,
                 RETURN_KEY_ITEM,
             ),
         ),
@@ -671,6 +671,6 @@ val KB_FR_THUMBKEY_V1: KeyboardDefinition =
             KeyboardDefinitionModes(
                 main = KB_FR_THUMBKEY_V1_MAIN,
                 shifted = KB_FR_THUMBKEY_V1_SHIFTED,
-                numeric = NUMERIC_KEYBOARD,
+                numeric = FRENCH_NUMERIC_KEYBOARD,
             ),
     )

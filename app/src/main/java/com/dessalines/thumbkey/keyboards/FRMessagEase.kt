@@ -485,7 +485,7 @@ val KB_FR_MESSAGEASE_MAIN =
                 BACKSPACE_KEY_ITEM,
             ),
             listOf(
-                SPACEBAR_KEY_ITEM,
+                SPACEBAR_FRENCH_KEY_ITEM,
                 RETURN_KEY_ITEM,
             ),
         ),
@@ -973,7 +973,7 @@ val KB_FR_MESSAGEASE_SHIFTED =
                 BACKSPACE_KEY_ITEM,
             ),
             listOf(
-                SPACEBAR_KEY_ITEM,
+                SPACEBAR_FRENCH_KEY_ITEM,
                 RETURN_KEY_ITEM,
             ),
         ),
@@ -986,6 +986,6 @@ val KB_FR_MESSAGEASE: KeyboardDefinition =
             KeyboardDefinitionModes(
                 main = KB_FR_MESSAGEASE_MAIN,
                 shifted = KB_FR_MESSAGEASE_SHIFTED,
-                numeric = NUMERIC_KEYBOARD,
+                numeric = FRENCH_NUMERIC_KEYBOARD,
             ),
     )
