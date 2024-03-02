@@ -555,6 +555,8 @@ fun performKeyAction(
                         }
                     "\$" ->
                         when (textBefore) {
+                            "c" -> "¢"
+                            "C" -> "¢"
                             "e" -> "€"
                             "E" -> "€"
                             "f" -> "₣"
