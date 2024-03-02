@@ -349,7 +349,7 @@ val KB_JA_THUMBKEY_HIRAGANA_MAIN =
                     center =
                         KeyC(
                             display = KeyDisplay.TextDisplay("゛"),
-                            action = KeyAction.CommitText("\u3099"),
+                            action = KeyAction.ComposeLastKey("゛"),
                             size = FontSizeVariant.LARGE,
                             color = ColorVariant.PRIMARY,
                         ),
@@ -365,7 +365,7 @@ val KB_JA_THUMBKEY_HIRAGANA_MAIN =
                             SwipeDirection.TOP to
                                 KeyC(
                                     display = KeyDisplay.TextDisplay("゜"),
-                                    action = KeyAction.CommitText("\u309a"),
+                                    action = KeyAction.ComposeLastKey("゜"),
                                 ),
                         ),
                 ),
