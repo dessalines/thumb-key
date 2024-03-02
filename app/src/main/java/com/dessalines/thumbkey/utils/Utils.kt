@@ -447,6 +447,7 @@ fun performKeyAction(
                             "Y" -> "Ý"
                             "z" -> "ź"
                             "Z" -> "Ź"
+                            "'" -> "”"
                             " " -> "'"
                             else -> textBefore
                         }
@@ -470,6 +471,7 @@ fun performKeyAction(
                             "W" -> "Ẁ"
                             "y" -> "ỳ"
                             "Y" -> "Ỳ"
+                            "`" -> "“"
                             " " -> "`"
                             else -> textBefore
                         }
@@ -552,6 +554,12 @@ fun performKeyAction(
                             "S" -> "ẞ"
                             "!" -> "¡"
                             "?" -> "¿"
+                            "`" -> "“"
+                            "´" -> "”"
+                            "\"" -> "“"
+                            "'" -> "”"
+                            "<" -> "«"
+                            ">" -> "»"
                             " " -> "!"
                             else -> textBefore
                         }
