@@ -28,9 +28,9 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
 import androidx.navigation.NavController
 import com.alorma.compose.settings.storage.base.SettingValueState
-import com.alorma.compose.settings.storage.base.rememberBooleanSettingState
-import com.alorma.compose.settings.storage.base.rememberFloatSettingState
-import com.alorma.compose.settings.storage.base.rememberIntSettingState
+import com.alorma.compose.settings.storage.disk.rememberBooleanSettingState
+import com.alorma.compose.settings.storage.disk.rememberFloatSettingState
+import com.alorma.compose.settings.storage.disk.rememberIntSettingState
 import com.alorma.compose.settings.ui.SettingsCheckbox
 import com.alorma.compose.settings.ui.SettingsList
 import com.alorma.compose.settings.ui.SettingsSlider
@@ -65,35 +65,43 @@ fun BehaviorActivity(
 
     val minSwipeLengthState =
         rememberFloatSettingState(
-            (settings?.minSwipeLength ?: DEFAULT_MIN_SWIPE_LENGTH).toFloat(),
+            key = "minSwipeLength",
+            defaultValue = (settings?.minSwipeLength ?: DEFAULT_MIN_SWIPE_LENGTH).toFloat(),
         )
     val slideSensitivityState =
         rememberFloatSettingState(
-            (settings?.slideSensitivity ?: DEFAULT_SLIDE_SENSITIVITY).toFloat(),
+            key = "slideSensitivity",
+            defaultValue = (settings?.slideSensitivity ?: DEFAULT_SLIDE_SENSITIVITY).toFloat(),
         )
     val slideCursorMovementModeState =
         rememberIntSettingState(
-            (settings?.slideCursorMovementMode ?: DEFAULT_SLIDE_CURSOR_MOVEMENT_MODE),
+            key = "slideCursorMovementMode",
+            defaultValue = (settings?.slideCursorMovementMode ?: DEFAULT_SLIDE_CURSOR_MOVEMENT_MODE),
         )
     val slideEnabledState =
         rememberBooleanSettingState(
-            (settings?.slideEnabled ?: DEFAULT_SLIDE_ENABLED).toBool(),
+            key = "slideEnabled",
+            defaultValue = (settings?.slideEnabled ?: DEFAULT_SLIDE_ENABLED).toBool(),
         )
     val slideSpacebarDeadzoneEnabledState =
         rememberBooleanSettingState(
-            (settings?.slideSpacebarDeadzoneEnabled ?: DEFAULT_SLIDE_SPACEBAR_DEADZONE_ENABLED).toBool(),
+            key = "slideSpacebarDeadzone",
+            defaultValue = (settings?.slideSpacebarDeadzoneEnabled ?: DEFAULT_SLIDE_SPACEBAR_DEADZONE_ENABLED).toBool(),
         )
     val slideBackspaceDeadzoneEnabledState =
         rememberBooleanSettingState(
-            (settings?.slideBackspaceDeadzoneEnabled ?: DEFAULT_SLIDE_BACKSPACE_DEADZONE_ENABLED).toBool(),
+            key = "slideBackspaceDeadZone",
+            defaultValue = (settings?.slideBackspaceDeadzoneEnabled ?: DEFAULT_SLIDE_BACKSPACE_DEADZONE_ENABLED).toBool(),
         )
     val autoCapitalizeState =
         rememberBooleanSettingState(
-            ((settings?.autoCapitalize ?: DEFAULT_AUTO_CAPITALIZE).toBool()),
+            key = "autoCapitalize",
+            defaultValue = ((settings?.autoCapitalize ?: DEFAULT_AUTO_CAPITALIZE).toBool()),
         )
     val spacebarMultiTapsState =
         rememberBooleanSettingState(
-            ((settings?.spacebarMultiTaps ?: DEFAULT_SPACEBAR_MULTITAPS).toBool()),
+            key = "spacebarMultiTaps",
+            defaultValue = ((settings?.spacebarMultiTaps ?: DEFAULT_SPACEBAR_MULTITAPS).toBool()),
         )
 
     val snackbarHostState = remember { SnackbarHostState() }

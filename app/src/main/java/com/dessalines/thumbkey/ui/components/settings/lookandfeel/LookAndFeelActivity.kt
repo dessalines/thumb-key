@@ -38,9 +38,9 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
 import androidx.navigation.NavController
 import com.alorma.compose.settings.storage.base.SettingValueState
-import com.alorma.compose.settings.storage.base.rememberBooleanSettingState
-import com.alorma.compose.settings.storage.base.rememberFloatSettingState
-import com.alorma.compose.settings.storage.base.rememberIntSettingState
+import com.alorma.compose.settings.storage.disk.rememberBooleanSettingState
+import com.alorma.compose.settings.storage.disk.rememberFloatSettingState
+import com.alorma.compose.settings.storage.disk.rememberIntSettingState
 import com.alorma.compose.settings.ui.SettingsCheckbox
 import com.alorma.compose.settings.ui.SettingsList
 import com.alorma.compose.settings.ui.SettingsSlider
@@ -85,76 +85,100 @@ fun LookAndFeelActivity(
 
     val keySizeState =
         rememberFloatSettingState(
-            (settings?.keySize ?: DEFAULT_KEY_SIZE).toFloat(),
+            key = "keySize",
+            defaultValue = (settings?.keySize ?: DEFAULT_KEY_SIZE).toFloat(),
         )
     val keyWidthState =
         rememberFloatSettingState(
-            (settings?.keyWidth ?: keySizeState.value).toFloat(),
+            key = "keyWidth",
+            defaultValue = (settings?.keyWidth ?: keySizeState.value).toFloat(),
         )
     val nonSquareKeysState =
         rememberBooleanSettingState(
-            keySizeState.value != keyWidthState.value,
+            key = "nonSquare",
+            defaultValue = keySizeState.value != keyWidthState.value,
         )
     val pushupSizeState =
         rememberFloatSettingState(
-            (settings?.pushupSize ?: DEFAULT_PUSHUP_SIZE).toFloat(),
+            key = "pushupSize",
+            defaultValue = (settings?.pushupSize ?: DEFAULT_PUSHUP_SIZE).toFloat(),
         )
     val animationSpeedState =
         rememberFloatSettingState(
-            (settings?.animationSpeed ?: DEFAULT_ANIMATION_SPEED).toFloat(),
+            key = "animationSpeed",
+            defaultValue = (settings?.animationSpeed ?: DEFAULT_ANIMATION_SPEED).toFloat(),
         )
     val animationHelperSpeedState =
         rememberFloatSettingState(
-            (settings?.animationHelperSpeed ?: DEFAULT_ANIMATION_HELPER_SPEED).toFloat(),
+            key = "animationHelperSpeed",
+            defaultValue = (settings?.animationHelperSpeed ?: DEFAULT_ANIMATION_HELPER_SPEED).toFloat(),
         )
     val positionState =
         rememberIntSettingState(
-            settings?.position ?: DEFAULT_POSITION,
+            key = "position",
+            defaultValue = settings?.position ?: DEFAULT_POSITION,
         )
     val vibrateOnTapState =
         rememberBooleanSettingState(
-            ((settings?.vibrateOnTap ?: DEFAULT_VIBRATE_ON_TAP).toBool()),
+            key = "vibrateOnTap",
+            defaultValue = ((settings?.vibrateOnTap ?: DEFAULT_VIBRATE_ON_TAP).toBool()),
         )
     val soundOnTapState =
         rememberBooleanSettingState(
-            ((settings?.soundOnTap ?: DEFAULT_SOUND_ON_TAP).toBool()),
+            key = "soundOnTap",
+            defaultValue = ((settings?.soundOnTap ?: DEFAULT_SOUND_ON_TAP).toBool()),
         )
     val hideLettersState =
         rememberBooleanSettingState(
-            ((settings?.hideLetters ?: DEFAULT_HIDE_LETTERS).toBool()),
+            key = "hideLetters",
+            defaultValue = ((settings?.hideLetters ?: DEFAULT_HIDE_LETTERS).toBool()),
         )
     val hideSymbolsState =
         rememberBooleanSettingState(
-            ((settings?.hideSymbols ?: DEFAULT_HIDE_SYMBOLS).toBool()),
+            key = "hideSymbols",
+            defaultValue = ((settings?.hideSymbols ?: DEFAULT_HIDE_SYMBOLS).toBool()),
         )
 
-    val themeState = rememberIntSettingState(settings?.theme ?: DEFAULT_THEME)
-    val themeColorState = rememberIntSettingState(settings?.themeColor ?: DEFAULT_THEME_COLOR)
+    val themeState =
+        rememberIntSettingState(
+            key = "theme",
+            defaultValue = settings?.theme ?: DEFAULT_THEME,
+        )
+    val themeColorState =
+        rememberIntSettingState(
+            key = "themeColor",
+            defaultValue = settings?.themeColor ?: DEFAULT_THEME_COLOR,
+        )
     val keyBordersState =
         rememberBooleanSettingState(
-            ((settings?.keyBorders ?: DEFAULT_KEY_BORDERS).toBool()),
+            key = "keyBorders",
+            defaultValue = ((settings?.keyBorders ?: DEFAULT_KEY_BORDERS).toBool()),
+        )
+
+    val backdropEnabledState =
+        rememberBooleanSettingState(
+            key = "backdropEnabled",
+            defaultValue = ((settings?.backdropEnabled ?: DEFAULT_BACKDROP_ENABLED).toBool()),
+        )
+    val keyPaddingState =
+        rememberFloatSettingState(
+            key = "keyPadding",
+            defaultValue = (settings?.keyPadding ?: DEFAULT_KEY_PADDING).toFloat(),
+        )
+    val keyBorderWidthState =
+        rememberFloatSettingState(
+            key = "keyBorderWidth",
+            defaultValue = (settings?.keyBorderWidth ?: DEFAULT_KEY_BORDER_WIDTH).toFloat(),
+        )
+    val keyRadiusState =
+        rememberFloatSettingState(
+            key = "keyRadius",
+            defaultValue = (settings?.keyRadius ?: DEFAULT_KEY_RADIUS).toFloat(),
         )
 
     val snackbarHostState = remember { SnackbarHostState() }
 
     val scrollState = rememberScrollState()
-
-    val backdropEnabledState =
-        rememberBooleanSettingState(
-            ((settings?.backdropEnabled ?: DEFAULT_BACKDROP_ENABLED).toBool()),
-        )
-    val keyPaddingState =
-        rememberFloatSettingState(
-            (settings?.keyPadding ?: DEFAULT_KEY_PADDING).toFloat(),
-        )
-    val keyBorderWidthState =
-        rememberFloatSettingState(
-            (settings?.keyBorderWidth ?: DEFAULT_KEY_BORDER_WIDTH).toFloat(),
-        )
-    val keyRadiusState =
-        rememberFloatSettingState(
-            (settings?.keyRadius ?: DEFAULT_KEY_RADIUS).toFloat(),
-        )
 
     Scaffold(
         snackbarHost = { SnackbarHost(snackbarHostState) },

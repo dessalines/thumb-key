@@ -12,8 +12,8 @@ import androidx.compose.material.icons.outlined.BugReport
 import androidx.compose.material.icons.outlined.Code
 import androidx.compose.material.icons.outlined.NewReleases
 import androidx.compose.material.icons.outlined.TravelExplore
-import androidx.compose.material3.Divider
 import androidx.compose.material3.ExperimentalMaterial3Api
+import androidx.compose.material3.HorizontalDivider
 import androidx.compose.material3.Icon
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Scaffold
@@ -169,7 +169,7 @@ fun AboutActivity(navController: NavController) {
 
 @Composable
 fun SettingsDivider() {
-    Divider(modifier = Modifier.padding(vertical = 10.dp))
+    HorizontalDivider(modifier = Modifier.padding(vertical = 10.dp))
 }
 
 @Composable
