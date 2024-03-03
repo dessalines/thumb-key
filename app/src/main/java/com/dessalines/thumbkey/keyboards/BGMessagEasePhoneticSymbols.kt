@@ -347,8 +347,8 @@ val KB_BG_PHONETIC_MESSAGEASE_SYMBOLS_MAIN =
                                 ),
                             SwipeDirection.BOTTOM_RIGHT to
                                 KeyC(
-                                    display = KeyDisplay.TextDisplay(":"),
-                                    action = KeyAction.CommitText(":"),
+                                    display = KeyDisplay.TextDisplay("⇥"),
+                                    action = KeyAction.CommitText("\t"),
                                     color = ColorVariant.MUTED,
                                 ),
                             SwipeDirection.LEFT to
@@ -384,10 +384,16 @@ val KB_BG_PHONETIC_MESSAGEASE_SYMBOLS_MAIN =
                                     display = KeyDisplay.TextDisplay("з"),
                                     action = KeyAction.CommitText("з"),
                                 ),
+                            SwipeDirection.LEFT to
+                                KeyC(
+                                    display = KeyDisplay.TextDisplay("„"),
+                                    action = KeyAction.CommitText("„"),
+                                    color = ColorVariant.MUTED,
+                                ),
                             SwipeDirection.TOP_LEFT to
                                 KeyC(
-                                    display = KeyDisplay.TextDisplay("\""),
-                                    action = KeyAction.CommitText("\""),
+                                    display = KeyDisplay.TextDisplay("“"),
+                                    action = KeyAction.CommitText("“"),
                                     color = ColorVariant.MUTED,
                                 ),
                             SwipeDirection.BOTTOM_RIGHT to
@@ -807,8 +813,8 @@ val KB_BG_PHONETIC_MESSAGEASE_SYMBOLS_SHIFTED =
                                 ),
                             SwipeDirection.BOTTOM_RIGHT to
                                 KeyC(
-                                    display = KeyDisplay.TextDisplay(":"),
-                                    action = KeyAction.CommitText(":"),
+                                    display = KeyDisplay.TextDisplay("⇥"),
+                                    action = KeyAction.CommitText("\t"),
                                     color = ColorVariant.MUTED,
                                 ),
                         ),
@@ -832,17 +838,22 @@ val KB_BG_PHONETIC_MESSAGEASE_SYMBOLS_SHIFTED =
                                 KeyC(
                                     display = KeyDisplay.TextDisplay("Щ"),
                                     action = KeyAction.CommitText("Щ"),
-                                    color = ColorVariant.MUTED,
                                 ),
                             SwipeDirection.RIGHT to
                                 KeyC(
                                     display = KeyDisplay.TextDisplay("З"),
                                     action = KeyAction.CommitText("З"),
                                 ),
+                            SwipeDirection.LEFT to
+                                KeyC(
+                                    display = KeyDisplay.TextDisplay("„"),
+                                    action = KeyAction.CommitText("„"),
+                                    color = ColorVariant.MUTED,
+                                ),
                             SwipeDirection.TOP_LEFT to
                                 KeyC(
-                                    display = KeyDisplay.TextDisplay("\""),
-                                    action = KeyAction.CommitText("\""),
+                                    display = KeyDisplay.TextDisplay("“"),
+                                    action = KeyAction.CommitText("“"),
                                     color = ColorVariant.MUTED,
                                 ),
                             SwipeDirection.BOTTOM_RIGHT to
@@ -928,7 +939,7 @@ val KB_BG_PHONETIC_MESSAGEASE_SYMBOLS: KeyboardDefinition =
             KeyboardDefinitionModes(
                 main = KB_BG_PHONETIC_MESSAGEASE_SYMBOLS_MAIN,
                 shifted = KB_BG_PHONETIC_MESSAGEASE_SYMBOLS_SHIFTED,
-                numeric = NUMERIC_KEYBOARD,
+                numeric = KB_EN_MESSAGEASE_NUMERIC,
             ),
         settings =
             KeyboardDefinitionSettings(
