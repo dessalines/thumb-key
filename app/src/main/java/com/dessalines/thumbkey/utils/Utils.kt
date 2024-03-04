@@ -219,7 +219,7 @@ fun fontSizeVariantToFontSize(
     fontSizeVariant: FontSizeVariant,
     keySize: Dp,
     isUpperCase: Boolean,
-): TextUnit {
+): Dp {
     val divFactor =
         when (fontSizeVariant) {
             FontSizeVariant.LARGE -> 2.5f
@@ -235,8 +235,11 @@ fun fontSizeVariantToFontSize(
             1f
         }
 
-    return TextUnit(keySize.value * upperCaseFactor / divFactor, TextUnitType.Sp)
+    return keySize.times(upperCaseFactor).div(divFactor)
 }
+
+val Dp.toPx get() = (this * Resources.getSystem().displayMetrics.density).value
+val Float.pxToSp get() = TextUnit(this / Resources.getSystem().displayMetrics.scaledDensity, TextUnitType.Sp)
 
 fun keyboardPositionToAlignment(position: KeyboardPosition): Alignment {
     return when (position) {
