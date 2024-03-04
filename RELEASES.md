@@ -1,7 +1,17 @@
+# Thumb-Key 2.6.24 (2024-03-04)
+
+## What's Changed in 2.6.24
+
+- Fixing corner size. Fixes #789 by @dessalines in [#791](https://github.com/dessalines/thumb-key/pull/791)
+- Update quotes and numbers on BG ME Phonetic Symbols by @pavlov-p in [#787](https://github.com/dessalines/thumb-key/pull/787)
+
+**Full Changelog**: https://github.com/dessalines/thumb-key/compare/2.6.23...2.6.24
+
 # Thumb-Key 2.6.23 (2024-03-02)
 
 ## What's Changed in 2.6.23
 
+- Upping version. by @dessalines
 - Still working on upgrading deps. by @dessalines in [#785](https://github.com/dessalines/thumb-key/pull/785)
 - Add english composed messagease based on the symbols variant by @shtrom in [#786](https://github.com/dessalines/thumb-key/pull/786)
 - Fix dakuten and handakuten not composing by @LortalHost in [#782](https://github.com/dessalines/thumb-key/pull/782)
@@ -205,7 +215,6 @@
 
 ## New Contributors
 
-- @pavlov-p made their first contribution in [#660](https://github.com/dessalines/thumb-key/pull/660)
 - @Eemilp made their first contribution in [#639](https://github.com/dessalines/thumb-key/pull/639)
 - @5atoshiNakamoto made their first contribution in [#644](https://github.com/dessalines/thumb-key/pull/644)
 - @ligurio made their first contribution in [#638](https://github.com/dessalines/thumb-key/pull/638)
