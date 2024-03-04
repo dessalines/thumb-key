@@ -62,9 +62,11 @@ import com.dessalines.thumbkey.utils.colorVariantToColor
 import com.dessalines.thumbkey.utils.doneKeyAction
 import com.dessalines.thumbkey.utils.fontSizeVariantToFontSize
 import com.dessalines.thumbkey.utils.performKeyAction
+import com.dessalines.thumbkey.utils.pxToSp
 import com.dessalines.thumbkey.utils.slideCursorDistance
 import com.dessalines.thumbkey.utils.startSelection
 import com.dessalines.thumbkey.utils.swipeDirection
+import com.dessalines.thumbkey.utils.toPx
 import kotlin.math.abs
 import kotlin.math.max
 import kotlin.math.min
@@ -87,6 +89,8 @@ fun KeyboardKey(
     legendHeight: Int,
     legendWidth: Int,
     keyPadding: Int,
+    keyHeight: Float,
+    keyWidth: Float,
     keyBorderWidth: Float,
     keyRadius: Float,
     minSwipeLength: Int,
@@ -143,12 +147,7 @@ fun KeyboardKey(
         }
 
     val keyBorderColour = MaterialTheme.colorScheme.outline
-    val keyHeight = legendHeight + (keyPadding * 2.0) + (keyBorderWidth * 2.0)
-    val keyWidth = legendWidth + (keyPadding * 2.0) + (keyBorderWidth * 2.0)
     val keySize = (keyHeight + keyWidth) / 2.0
-    val legendSize = (legendHeight + legendWidth) / 2
-    val legendPadding = 4.dp + keyBorderWidth.dp
-
     val haptic = LocalHapticFeedback.current
     val audioManager = ctx.getSystemService(Context.AUDIO_SERVICE) as AudioManager
 
@@ -501,10 +500,24 @@ fun KeyboardKey(
     // a 3x3 grid
     // Use box so they can overlap
     // Some magic padding numbers so that large radii don't obscure the legends
-    val radiusPercent = keyRadius / 100.toFloat()
-    val yPadding = 0.dp + keyBorderWidth.dp
-    val diagonalXPadding = lerp(legendPadding, 11.dp + keyBorderWidth.dp, radiusPercent)
-    val diagonalYPadding = lerp(yPadding, 6.dp + keyBorderWidth.dp, radiusPercent)
+    val radiusPercent = keyRadius / 100F
+    val keyRadiusAdd = 20.dp
+    val xPadding = (2 + keyBorderWidth).dp
+    val yPadding = (0 + keyBorderWidth).dp
+
+    val diagonalXPadding =
+        lerp(
+            xPadding,
+            xPadding +
+                keyRadiusAdd,
+            radiusPercent,
+        )
+    val diagonalYPadding =
+        lerp(
+            yPadding,
+            yPadding + keyRadiusAdd,
+            radiusPercent,
+        )
 
     Box(
         modifier = keyboardKeyModifier,
@@ -520,7 +533,7 @@ fun KeyboardKey(
                     ),
         ) {
             key.swipes?.get(SwipeDirection.TOP_LEFT)?.let {
-                KeyText(it, (legendSize - keyBorderWidth).dp, hideLetters, hideSymbols, capsLock)
+                KeyText(it, (keySize - keyBorderWidth).dp, hideLetters, hideSymbols, capsLock)
             }
         }
         Box(
@@ -531,7 +544,7 @@ fun KeyboardKey(
                     .padding(vertical = yPadding),
         ) {
             key.swipes?.get(SwipeDirection.TOP)?.let {
-                KeyText(it, (legendSize - keyBorderWidth).dp, hideLetters, hideSymbols, capsLock)
+                KeyText(it, (keySize - keyBorderWidth).dp, hideLetters, hideSymbols, capsLock)
             }
         }
         Box(
@@ -545,7 +558,7 @@ fun KeyboardKey(
                     ),
         ) {
             key.swipes?.get(SwipeDirection.TOP_RIGHT)?.let {
-                KeyText(it, (legendSize - keyBorderWidth).dp, hideLetters, hideSymbols, capsLock)
+                KeyText(it, (keySize - keyBorderWidth).dp, hideLetters, hideSymbols, capsLock)
             }
         }
         Box(
@@ -553,20 +566,19 @@ fun KeyboardKey(
             modifier =
                 Modifier
                     .fillMaxSize()
-                    .padding(horizontal = legendPadding),
+                    .padding(horizontal = xPadding),
         ) {
             key.swipes?.get(SwipeDirection.LEFT)?.let {
-                KeyText(it, (legendSize - keyBorderWidth).dp, hideLetters, hideSymbols, capsLock)
+                KeyText(it, (keySize - keyBorderWidth).dp, hideLetters, hideSymbols, capsLock)
             }
         }
         Box(
             contentAlignment = Alignment.Center,
             modifier =
                 Modifier
-                    .fillMaxSize()
-                    .padding(legendPadding),
+                    .fillMaxSize(),
         ) {
-            KeyText(key.center, (legendSize - keyBorderWidth).dp, hideLetters, hideSymbols, capsLock)
+            KeyText(key.center, (keySize - keyBorderWidth).dp, hideLetters, hideSymbols, capsLock)
         }
 
         Box(
@@ -574,10 +586,10 @@ fun KeyboardKey(
             modifier =
                 Modifier
                     .fillMaxSize()
-                    .padding(horizontal = legendPadding),
+                    .padding(horizontal = xPadding),
         ) {
             key.swipes?.get(SwipeDirection.RIGHT)?.let {
-                KeyText(it, (legendSize - keyBorderWidth).dp, hideLetters, hideSymbols, capsLock)
+                KeyText(it, (keySize - keyBorderWidth).dp, hideLetters, hideSymbols, capsLock)
             }
         }
         Box(
@@ -591,7 +603,7 @@ fun KeyboardKey(
                     ),
         ) {
             key.swipes?.get(SwipeDirection.BOTTOM_LEFT)?.let {
-                KeyText(it, (legendSize - keyBorderWidth).dp, hideLetters, hideSymbols, capsLock)
+                KeyText(it, (keySize - keyBorderWidth).dp, hideLetters, hideSymbols, capsLock)
             }
         }
         Box(
@@ -602,7 +614,7 @@ fun KeyboardKey(
                     .padding(vertical = yPadding),
         ) {
             key.swipes?.get(SwipeDirection.BOTTOM)?.let {
-                KeyText(it, (legendSize - keyBorderWidth).dp, hideLetters, hideSymbols, capsLock)
+                KeyText(it, (keySize - keyBorderWidth).dp, hideLetters, hideSymbols, capsLock)
             }
         }
         Box(
@@ -616,7 +628,7 @@ fun KeyboardKey(
                     ),
         ) {
             key.swipes?.get(SwipeDirection.BOTTOM_RIGHT)?.let {
-                KeyText(it, (legendSize - keyBorderWidth).dp, hideLetters, hideSymbols, capsLock)
+                KeyText(it, (keySize - keyBorderWidth).dp, hideLetters, hideSymbols, capsLock)
             }
         }
 
@@ -653,17 +665,18 @@ fun KeyboardKey(
                 contentAlignment = Alignment.Center,
                 modifier = Modifier.fillMaxSize(),
             ) {
-                val fontSize =
+                val spSize =
                     fontSizeVariantToFontSize(
                         fontSizeVariant = FontSizeVariant.LARGE,
-                        keySize = legendSize.dp,
+                        keySize = keySize.dp,
                         isUpperCase = false,
-                    )
+                    ).toPx.pxToSp
                 releasedKey.value?.let { text ->
                     Text(
                         text = text,
                         fontWeight = FontWeight.Bold,
-                        fontSize = fontSize,
+                        fontSize = spSize,
+                        lineHeight = spSize,
                         color = MaterialTheme.colorScheme.tertiary,
                     )
                 }
@@ -688,7 +701,12 @@ fun KeyText(
                 false
             }
         }
-    val fontSize = fontSizeVariantToFontSize(fontSizeVariant = key.size, keySize = keySize, isUpperCase = isUpperCase)
+    val fontSize =
+        fontSizeVariantToFontSize(
+            fontSizeVariant = key.size,
+            keySize = keySize,
+            isUpperCase = isUpperCase,
+        )
 
     val display =
         if (capsLock) {
@@ -703,7 +721,7 @@ fun KeyText(
                 imageVector = display.icon,
                 contentDescription = display.icon.name,
                 tint = color,
-                modifier = Modifier.size(fontSize.value.dp),
+                modifier = Modifier.size(fontSize),
             )
         }
         is KeyDisplay.TextDisplay -> {
@@ -723,10 +741,12 @@ fun KeyText(
                     }
                 }
             if (!hideKey) {
+                val spSize = fontSize.toPx.pxToSp
                 Text(
                     text = display.text,
                     fontWeight = FontWeight.Bold,
-                    fontSize = fontSize,
+                    fontSize = spSize,
+                    lineHeight = spSize,
                     color = color,
                 )
             }
