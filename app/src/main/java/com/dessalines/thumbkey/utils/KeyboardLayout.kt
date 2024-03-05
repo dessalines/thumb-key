@@ -2,6 +2,7 @@ package com.dessalines.thumbkey.utils
 
 import com.dessalines.thumbkey.keyboards.KB_BG_PHONETIC_MESSAGEASE_SYMBOLS
 import com.dessalines.thumbkey.keyboards.KB_BG_THUMBKEY_SYMBOLS
+import com.dessalines.thumbkey.keyboards.KB_BR_FR_THUMBKEY
 import com.dessalines.thumbkey.keyboards.KB_BY_THUMBKEY
 import com.dessalines.thumbkey.keyboards.KB_BY_THUMBKEY_SYMBOLS
 import com.dessalines.thumbkey.keyboards.KB_CA_THUMBKEY
@@ -222,4 +223,5 @@ enum class KeyboardLayout(val keyboardDefinition: KeyboardDefinition) {
     NLTypeSplit(KB_NL_TYPESPLIT),
     PLMessagEase(KB_PL_MESSAGEASE),
     ENMessagEaseCompose(KB_EN_MESSAGEASE_COMPOSE),
+    BRFRThumbKey(KB_BR_FR_THUMBKEY),
 }
