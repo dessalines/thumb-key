@@ -353,7 +353,7 @@ val KB_EOENDE_THUMBKEY_SHIFTED =
                                     action = KeyAction.CommitText("K"),
                                 ),
                             SwipeDirection.BOTTOM_LEFT to
-			        KeyC(
+                                KeyC(
                                     display = KeyDisplay.TextDisplay("X"),
                                     action = KeyAction.CommitText("X"),
                                 ),
