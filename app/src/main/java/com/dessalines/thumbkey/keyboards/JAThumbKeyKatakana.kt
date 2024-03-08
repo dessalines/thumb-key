@@ -356,16 +356,21 @@ val KB_JA_THUMBKEY_KATAKANA_MAIN =
                     swipeType = SwipeNWay.FOUR_WAY_CROSS,
                     swipes =
                         mapOf(
-                            SwipeDirection.RIGHT to
+                            SwipeDirection.LEFT to
                                 KeyC(
-                                    display = KeyDisplay.TextDisplay("、"),
-                                    action = KeyAction.ToggleShiftMode(true),
-                                    color = ColorVariant.MUTED,
+                                    display = KeyDisplay.TextDisplay("。"),
+                                    action = KeyAction.CommitText("。"),
                                 ),
                             SwipeDirection.TOP to
                                 KeyC(
-                                    display = KeyDisplay.TextDisplay("゜"),
-                                    action = KeyAction.ComposeLastKey("゜"),
+                                    display = KeyDisplay.TextDisplay("？"),
+                                    action = KeyAction.ToggleShiftMode(true),
+                                    color = ColorVariant.MUTED,
+                                ),
+                            SwipeDirection.RIGHT to
+                                KeyC(
+                                    display = KeyDisplay.TextDisplay("、"),
+                                    action = KeyAction.CommitText("、"),
                                 ),
                         ),
                 ),
@@ -476,70 +481,28 @@ val KB_JA_THUMBKEY_KATAKANA_SHIFTED =
                 KeyItemC(
                     center =
                         KeyC(
-                            display = KeyDisplay.TextDisplay("ャ"),
-                            action = KeyAction.CommitText("ャ"),
+                            display = KeyDisplay.TextDisplay("（"),
+                            action = KeyAction.CommitText("（"),
                             size = FontSizeVariant.LARGE,
                             color = ColorVariant.PRIMARY,
-                        ),
-                    swipeType = SwipeNWay.FOUR_WAY_CROSS,
-                    swipes =
-                        mapOf(
-                            SwipeDirection.BOTTOM to
-                                KeyC(
-                                    display = KeyDisplay.TextDisplay("ュ"),
-                                    action = KeyAction.CommitText("ュ"),
-                                ),
-                            SwipeDirection.RIGHT to
-                                KeyC(
-                                    display = KeyDisplay.TextDisplay("ョ"),
-                                    action = KeyAction.CommitText("ョ"),
-                                ),
                         ),
                 ),
                 KeyItemC(
                     center =
                         KeyC(
-                            display = KeyDisplay.TextDisplay("、"),
-                            action = KeyAction.CommitText("、"),
+                            display = KeyDisplay.TextDisplay("！"),
+                            action = KeyAction.CommitText("！"),
                             size = FontSizeVariant.LARGE,
                             color = ColorVariant.PRIMARY,
-                        ),
-                    swipeType = SwipeNWay.FOUR_WAY_CROSS,
-                    swipes =
-                        mapOf(
-                            SwipeDirection.BOTTOM to
-                                KeyC(
-                                    display = KeyDisplay.TextDisplay("。"),
-                                    action = KeyAction.CommitText("。"),
-                                ),
-                            SwipeDirection.LEFT to
-                                KeyC(
-                                    display = KeyDisplay.TextDisplay("！"),
-                                    action = KeyAction.CommitText("！"),
-                                ),
-                            SwipeDirection.RIGHT to
-                                KeyC(
-                                    display = KeyDisplay.TextDisplay("？"),
-                                    action = KeyAction.CommitText("？"),
-                                ),
                         ),
                 ),
                 KeyItemC(
                     center =
                         KeyC(
-                            display = KeyDisplay.TextDisplay("ヵ"),
-                            action = KeyAction.CommitText("ヵ"),
+                            display = KeyDisplay.TextDisplay("）"),
+                            action = KeyAction.CommitText("）"),
                             size = FontSizeVariant.LARGE,
                             color = ColorVariant.PRIMARY,
-                        ),
-                    swipeType = SwipeNWay.TWO_WAY_VERTICAL,
-                    swipes =
-                        mapOf(
-                            SwipeDirection.TOP to
-                                KeyC(
-                                    display = KeyDisplay.TextDisplay("ヶ"),
-                                    action = KeyAction.CommitText("ヶ"),
-                                ),
                         ),
                 ),
                 NUMERIC_KEY_ITEM,
@@ -548,8 +511,8 @@ val KB_JA_THUMBKEY_KATAKANA_SHIFTED =
                 KeyItemC(
                     center =
                         KeyC(
-                            display = KeyDisplay.TextDisplay("ヮ"),
-                            action = KeyAction.CommitText("ヮ"),
+                            display = KeyDisplay.TextDisplay("ヿ"),
+                            action = KeyAction.CommitText("ヿ"),
                             size = FontSizeVariant.LARGE,
                             color = ColorVariant.PRIMARY,
                         ),
@@ -557,8 +520,8 @@ val KB_JA_THUMBKEY_KATAKANA_SHIFTED =
                 KeyItemC(
                     center =
                         KeyC(
-                            display = KeyDisplay.TextDisplay("ッ"),
-                            action = KeyAction.CommitText("ッ"),
+                            display = KeyDisplay.TextDisplay("？"),
+                            action = KeyAction.CommitText("？"),
                             size = FontSizeVariant.LARGE,
                             color = ColorVariant.PRIMARY,
                         ),
@@ -566,34 +529,10 @@ val KB_JA_THUMBKEY_KATAKANA_SHIFTED =
                 KeyItemC(
                     center =
                         KeyC(
-                            display = KeyDisplay.TextDisplay("ァ"),
-                            action = KeyAction.CommitText("ァ"),
+                            display = KeyDisplay.TextDisplay("ヽ"),
+                            action = KeyAction.CommitText("ヽ"),
                             size = FontSizeVariant.LARGE,
                             color = ColorVariant.PRIMARY,
-                        ),
-                    swipeType = SwipeNWay.FOUR_WAY_CROSS,
-                    swipes =
-                        mapOf(
-                            SwipeDirection.BOTTOM to
-                                KeyC(
-                                    display = KeyDisplay.TextDisplay("ィ"),
-                                    action = KeyAction.CommitText("ィ"),
-                                ),
-                            SwipeDirection.LEFT to
-                                KeyC(
-                                    display = KeyDisplay.TextDisplay("ゥ"),
-                                    action = KeyAction.CommitText("ゥ"),
-                                ),
-                            SwipeDirection.TOP to
-                                KeyC(
-                                    display = KeyDisplay.TextDisplay("ェ"),
-                                    action = KeyAction.CommitText("ェ"),
-                                ),
-                            SwipeDirection.RIGHT to
-                                KeyC(
-                                    display = KeyDisplay.TextDisplay("ォ"),
-                                    action = KeyAction.CommitText("ォ"),
-                                ),
                         ),
                 ),
                 BACKSPACE_KEY_ITEM,
