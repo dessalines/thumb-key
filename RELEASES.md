@@ -1,7 +1,25 @@
+# Thumb-Key 2.6.25 (2024-03-08)
+
+## What's Changed in 2.6.25
+
+- Add Chinese Simplified Translation by @WeiguangTWK in [#794](https://github.com/dessalines/thumb-key/pull/794)
+- Use dakuten key for more characters by @K0baU in [#797](https://github.com/dessalines/thumb-key/pull/797)
+- Update EO/EN/DE layout to make shift/capslock behavior match other layouts by @slashdevslashurandom in [#795](https://github.com/dessalines/thumb-key/pull/795)
+- Add Breton French keyboard by @zeecho in [#793](https://github.com/dessalines/thumb-key/pull/793)
+
+## New Contributors
+
+- @WeiguangTWK made their first contribution in [#794](https://github.com/dessalines/thumb-key/pull/794)
+- @slashdevslashurandom made their first contribution in [#795](https://github.com/dessalines/thumb-key/pull/795)
+- @zeecho made their first contribution in [#793](https://github.com/dessalines/thumb-key/pull/793)
+
+**Full Changelog**: https://github.com/dessalines/thumb-key/compare/2.6.24...2.6.25
+
 # Thumb-Key 2.6.24 (2024-03-04)
 
 ## What's Changed in 2.6.24
 
+- Upping version. by @dessalines
 - Fixing corner size. Fixes #789 by @dessalines in [#791](https://github.com/dessalines/thumb-key/pull/791)
 - Update quotes and numbers on BG ME Phonetic Symbols by @pavlov-p in [#787](https://github.com/dessalines/thumb-key/pull/787)
 
