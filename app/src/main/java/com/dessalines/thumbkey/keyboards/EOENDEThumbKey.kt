@@ -42,6 +42,11 @@ val KB_EOENDE_THUMBKEY_MAIN =
                                     display = KeyDisplay.TextDisplay("ß"),
                                     action = KeyAction.CommitText("ß"),
                                 ),
+                            SwipeDirection.BOTTOM_LEFT to
+                                KeyC(
+                                    display = KeyDisplay.TextDisplay("x"),
+                                    action = KeyAction.CommitText("x"),
+                                ),
                             SwipeDirection.BOTTOM_RIGHT to
                                 KeyC(
                                     display = KeyDisplay.TextDisplay("k"),
@@ -196,24 +201,19 @@ val KB_EOENDE_THUMBKEY_MAIN =
                         mapOf(
                             SwipeDirection.LEFT to
                                 KeyC(
-                                    display = KeyDisplay.TextDisplay("g"),
-                                    action = KeyAction.CommitText("g"),
+                                    display = KeyDisplay.TextDisplay("m"),
+                                    action = KeyAction.CommitText("m"),
                                 ),
                             SwipeDirection.RIGHT to
                                 KeyC(
-                                    display = KeyDisplay.TextDisplay("ĝ"),
-                                    action = KeyAction.CommitText("ĝ"),
+                                    display = KeyDisplay.TextDisplay("ä"),
+                                    action = KeyAction.CommitText("ä"),
                                 ),
                             SwipeDirection.TOP to
                                 KeyC(
                                     display = KeyDisplay.IconDisplay(Icons.Outlined.ArrowDropUp),
                                     action = KeyAction.ToggleShiftMode(true),
                                     color = ColorVariant.MUTED,
-                                ),
-                            SwipeDirection.BOTTOM to
-                                KeyC(
-                                    display = KeyDisplay.TextDisplay("ä"),
-                                    action = KeyAction.CommitText("ä"),
                                 ),
                         ),
                 ),
@@ -233,13 +233,13 @@ val KB_EOENDE_THUMBKEY_MAIN =
                         mapOf(
                             SwipeDirection.TOP_RIGHT to
                                 KeyC(
-                                    display = KeyDisplay.TextDisplay("m"),
-                                    action = KeyAction.CommitText("m"),
+                                    display = KeyDisplay.TextDisplay("g"),
+                                    action = KeyAction.CommitText("g"),
                                 ),
                             SwipeDirection.BOTTOM_LEFT to
                                 KeyC(
-                                    display = KeyDisplay.TextDisplay("x"),
-                                    action = KeyAction.CommitText("x"),
+                                    display = KeyDisplay.TextDisplay("ĝ"),
+                                    action = KeyAction.CommitText("ĝ"),
                                 ),
                         ),
                 ),
@@ -352,6 +352,11 @@ val KB_EOENDE_THUMBKEY_SHIFTED =
                                     display = KeyDisplay.TextDisplay("K"),
                                     action = KeyAction.CommitText("K"),
                                 ),
+                            SwipeDirection.BOTTOM_LEFT to
+                                KeyC(
+                                    display = KeyDisplay.TextDisplay("X"),
+                                    action = KeyAction.CommitText("X"),
+                                ),
                         ),
                 ),
                 KeyItemC(
@@ -421,7 +426,7 @@ val KB_EOENDE_THUMBKEY_SHIFTED =
                             size = FontSizeVariant.LARGE,
                             color = ColorVariant.PRIMARY,
                         ),
-                    swipeType = SwipeNWay.FOUR_WAY_CROSS,
+                    swipeType = SwipeNWay.TWO_WAY_HORIZONTAL,
                     swipes =
                         mapOf(
                             SwipeDirection.LEFT to
@@ -433,13 +438,6 @@ val KB_EOENDE_THUMBKEY_SHIFTED =
                                 KeyC(
                                     display = KeyDisplay.TextDisplay("J"),
                                     action = KeyAction.CommitText("J"),
-                                ),
-                            SwipeDirection.TOP to
-                                KeyC(
-                                    display = KeyDisplay.IconDisplay(Icons.Outlined.KeyboardCapslock),
-                                    capsModeDisplay = KeyDisplay.IconDisplay(Icons.Outlined.Copyright),
-                                    action = KeyAction.ToggleCapsLock,
-                                    color = ColorVariant.MUTED,
                                 ),
                         ),
                 ),
@@ -508,23 +506,25 @@ val KB_EOENDE_THUMBKEY_SHIFTED =
                         mapOf(
                             SwipeDirection.LEFT to
                                 KeyC(
-                                    display = KeyDisplay.TextDisplay("G"),
-                                    action = KeyAction.CommitText("G"),
+                                    display = KeyDisplay.TextDisplay("M"),
+                                    action = KeyAction.CommitText("M"),
                                 ),
                             SwipeDirection.RIGHT to
-                                KeyC(
-                                    display = KeyDisplay.TextDisplay("Ĝ"),
-                                    action = KeyAction.CommitText("Ĝ"),
-                                ),
-                            SwipeDirection.BOTTOM to
                                 KeyC(
                                     display = KeyDisplay.TextDisplay("Ä"),
                                     action = KeyAction.CommitText("Ä"),
                                 ),
-                            SwipeDirection.TOP to
+                            SwipeDirection.BOTTOM to
                                 KeyC(
                                     display = KeyDisplay.IconDisplay(Icons.Outlined.ArrowDropDown),
                                     action = KeyAction.ToggleShiftMode(false),
+                                    color = ColorVariant.MUTED,
+                                ),
+                            SwipeDirection.TOP to
+                                KeyC(
+                                    display = KeyDisplay.IconDisplay(Icons.Outlined.KeyboardCapslock),
+                                    capsModeDisplay = KeyDisplay.IconDisplay(Icons.Outlined.Copyright),
+                                    action = KeyAction.ToggleCapsLock,
                                     color = ColorVariant.MUTED,
                                 ),
                         ),
@@ -545,13 +545,13 @@ val KB_EOENDE_THUMBKEY_SHIFTED =
                         mapOf(
                             SwipeDirection.TOP_RIGHT to
                                 KeyC(
-                                    display = KeyDisplay.TextDisplay("M"),
-                                    action = KeyAction.CommitText("M"),
+                                    display = KeyDisplay.TextDisplay("G"),
+                                    action = KeyAction.CommitText("G"),
                                 ),
                             SwipeDirection.BOTTOM_LEFT to
                                 KeyC(
-                                    display = KeyDisplay.TextDisplay("X"),
-                                    action = KeyAction.CommitText("X"),
+                                    display = KeyDisplay.TextDisplay("Ĝ"),
+                                    action = KeyAction.CommitText("Ĝ"),
                                 ),
                         ),
                 ),
