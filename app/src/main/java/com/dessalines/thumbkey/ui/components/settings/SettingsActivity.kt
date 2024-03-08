@@ -9,6 +9,7 @@ import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.automirrored.outlined.HelpCenter
+import androidx.compose.material.icons.filled.Delete
 import androidx.compose.material.icons.outlined.Info
 import androidx.compose.material.icons.outlined.InstallMobile
 import androidx.compose.material.icons.outlined.KeyboardAlt
@@ -19,6 +20,7 @@ import androidx.compose.material3.AlertDialog
 import androidx.compose.material3.Button
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.Icon
+import androidx.compose.material3.IconButton
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.SnackbarHost
@@ -29,6 +31,7 @@ import androidx.compose.runtime.getValue
 import androidx.compose.runtime.livedata.observeAsState
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
+import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.stringResource
@@ -101,6 +104,8 @@ fun SettingsActivity(
             defaultValue = keyboardLayoutsSetFromTitleIndex(settings?.keyboardLayouts),
         )
 
+    var showLayoutsDialog by remember { mutableStateOf(false) }
+
     Scaffold(
         snackbarHost = { SnackbarHost(snackbarHostState) },
         topBar = {
@@ -163,6 +168,57 @@ fun SettingsActivity(
                         },
                     )
                 }
+                val layoutsStr = stringResource(R.string.layouts)
+                val layoutItems = KeyboardLayout.entries.sortedBy { it.keyboardDefinition.title}
+                SettingsMenuLink(
+                    title = { Text(layoutsStr) },
+                    subtitle = {
+                        val selectedItems = layoutItems.filter { layoutsState.value.contains(it.ordinal) }
+                        if (selectedItems.isEmpty()) {
+                            Text(text = "No item selected")
+                        } else if (selectedItems.size == 1) {
+                            Text(text = "Item selected: ${selectedItems.first().keyboardDefinition.title}")
+                        } else {
+                            Text(text = "Items selected: ${selectedItems.joinToString(", ") { it.keyboardDefinition.title}}")
+                        }
+                    },
+                    onClick = { showLayoutsDialog = true },
+                    icon = {
+                        Icon(
+                            imageVector = Icons.Outlined.KeyboardAlt,
+                            contentDescription = layoutsStr,
+                        )
+                    },
+                    action = if (layoutsState.value == null) {
+                        null
+                    } else {
+                        {
+                            IconButton(
+                                onClick = {
+                                    layoutsState.value = setOf(keyboardTitleIndexFromRealIndex(DEFAULT_KEYBOARD_LAYOUT))
+                                    },
+                            ) {
+                                Icon(
+                                    imageVector = Icons.Default.Delete,
+                                    contentDescription = null,
+                                )
+                            }
+                        }
+                    },
+                )
+
+                if (showLayoutsDialog) {
+                    MultiChoiceAlertDialog(
+                        items = items.toImmutableList(),
+                        selectedItemKeys = selectMultipleChoiceDisk.value?.split("|").orEmpty().toImmutableList(),
+                        onItemsSelected = { selectedItemKey ->
+                            selectMultipleChoiceDisk.value = selectedItemKey.joinToString("|")
+                            showMultiChoiceDialog.value = false
+                        },
+                    )
+                }
+            }
+
                 SettingsListMultiSelect(
                     state = layoutsState,
                     items = KeyboardLayout.entries.sortedBy { it.keyboardDefinition.title }.map { it.keyboardDefinition.title },
