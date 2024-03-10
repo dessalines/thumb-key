@@ -99,6 +99,10 @@ Enabling `Backspace: Allow normal swipes to work with slide gestures`, in keyboa
 - Swipe left to delete whole words to the left of the cursor.
 - Swipe right to delete whole words to the right of the cursor.
 
+### Coming from MessagEase Keyboard Tips
+
+- For those use to tapping on the hand key to hide the MessagEase Keyboard and make more screen real estate available, this can be done by using the Android back key or on Android 10 and higher using the guesture navigation for back.
+
 ### Other
 
 - Practice typing, and check your words per minute, using [monkeytype.com](https://monkeytype.com)
