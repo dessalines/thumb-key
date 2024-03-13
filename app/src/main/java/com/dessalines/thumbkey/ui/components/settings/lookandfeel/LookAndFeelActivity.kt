@@ -33,17 +33,14 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.livedata.observeAsState
+import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
+import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.stringResource
+import androidx.compose.ui.text.AnnotatedString
 import androidx.navigation.NavController
-import com.alorma.compose.settings.storage.base.SettingValueState
-import com.alorma.compose.settings.storage.disk.rememberBooleanSettingState
-import com.alorma.compose.settings.storage.disk.rememberFloatSettingState
-import com.alorma.compose.settings.storage.disk.rememberIntSettingState
-import com.alorma.compose.settings.ui.SettingsCheckbox
-import com.alorma.compose.settings.ui.SettingsList
-import com.alorma.compose.settings.ui.SettingsSlider
 import com.dessalines.thumbkey.R
 import com.dessalines.thumbkey.db.AppSettingsViewModel
 import com.dessalines.thumbkey.db.DEFAULT_ANIMATION_HELPER_SPEED
@@ -51,7 +48,6 @@ import com.dessalines.thumbkey.db.DEFAULT_ANIMATION_SPEED
 import com.dessalines.thumbkey.db.DEFAULT_BACKDROP_ENABLED
 import com.dessalines.thumbkey.db.DEFAULT_HIDE_LETTERS
 import com.dessalines.thumbkey.db.DEFAULT_HIDE_SYMBOLS
-import com.dessalines.thumbkey.db.DEFAULT_KEY_BORDERS
 import com.dessalines.thumbkey.db.DEFAULT_KEY_BORDER_WIDTH
 import com.dessalines.thumbkey.db.DEFAULT_KEY_PADDING
 import com.dessalines.thumbkey.db.DEFAULT_KEY_RADIUS
@@ -72,6 +68,11 @@ import com.dessalines.thumbkey.utils.ThemeColor
 import com.dessalines.thumbkey.utils.ThemeMode
 import com.dessalines.thumbkey.utils.toBool
 import com.dessalines.thumbkey.utils.toInt
+import me.zhanghai.compose.preference.ListPreference
+import me.zhanghai.compose.preference.ListPreferenceType
+import me.zhanghai.compose.preference.ProvidePreferenceTheme
+import me.zhanghai.compose.preference.SliderPreference
+import me.zhanghai.compose.preference.SwitchPreference
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
@@ -82,99 +83,72 @@ fun LookAndFeelActivity(
     Log.d(TAG, "Got to lookAndFeel activity")
 
     val settings by appSettingsViewModel.appSettings.observeAsState()
+    var themeState by remember { mutableStateOf(ThemeMode.entries[settings?.theme ?: DEFAULT_THEME]) }
+    var themeColorState by remember { mutableStateOf(ThemeColor.entries[settings?.themeColor ?: DEFAULT_THEME_COLOR]) }
+    var keySizeState by remember { mutableStateOf((settings?.keySize ?: DEFAULT_KEY_SIZE).toFloat()) }
+    var keySizeSliderState by remember { mutableStateOf(keySizeState) }
+    var keyWidthState by remember { mutableStateOf(settings?.keyWidth?.toFloat()) }
+    var keyWidthSliderState by remember { mutableStateOf(keyWidthState) }
 
-    val keySizeState =
-        rememberFloatSettingState(
-            key = "keySize",
-            defaultValue = (settings?.keySize ?: DEFAULT_KEY_SIZE).toFloat(),
-        )
-    val keyWidthState =
-        rememberFloatSettingState(
-            key = "keyWidth",
-            defaultValue = (settings?.keyWidth ?: keySizeState.value).toFloat(),
-        )
-    val nonSquareKeysState =
-        rememberBooleanSettingState(
-            key = "nonSquare",
-            defaultValue = keySizeState.value != keyWidthState.value,
-        )
-    val pushupSizeState =
-        rememberFloatSettingState(
-            key = "pushupSize",
-            defaultValue = (settings?.pushupSize ?: DEFAULT_PUSHUP_SIZE).toFloat(),
-        )
-    val animationSpeedState =
-        rememberFloatSettingState(
-            key = "animationSpeed",
-            defaultValue = (settings?.animationSpeed ?: DEFAULT_ANIMATION_SPEED).toFloat(),
-        )
-    val animationHelperSpeedState =
-        rememberFloatSettingState(
-            key = "animationHelperSpeed",
-            defaultValue = (settings?.animationHelperSpeed ?: DEFAULT_ANIMATION_HELPER_SPEED).toFloat(),
-        )
-    val positionState =
-        rememberIntSettingState(
-            key = "position",
-            defaultValue = settings?.position ?: DEFAULT_POSITION,
-        )
-    val vibrateOnTapState =
-        rememberBooleanSettingState(
-            key = "vibrateOnTap",
-            defaultValue = ((settings?.vibrateOnTap ?: DEFAULT_VIBRATE_ON_TAP).toBool()),
-        )
-    val soundOnTapState =
-        rememberBooleanSettingState(
-            key = "soundOnTap",
-            defaultValue = ((settings?.soundOnTap ?: DEFAULT_SOUND_ON_TAP).toBool()),
-        )
-    val hideLettersState =
-        rememberBooleanSettingState(
-            key = "hideLetters",
-            defaultValue = ((settings?.hideLetters ?: DEFAULT_HIDE_LETTERS).toBool()),
-        )
-    val hideSymbolsState =
-        rememberBooleanSettingState(
-            key = "hideSymbols",
-            defaultValue = ((settings?.hideSymbols ?: DEFAULT_HIDE_SYMBOLS).toBool()),
-        )
+    // Need to coerce key width = null to be the same size as the keyHeight
+    val nonSquareKeysState = remember { mutableStateOf(settings?.keySize !== (settings?.keyWidth ?: settings?.keySize)) }
 
-    val themeState =
-        rememberIntSettingState(
-            key = "theme",
-            defaultValue = settings?.theme ?: DEFAULT_THEME,
-        )
-    val themeColorState =
-        rememberIntSettingState(
-            key = "themeColor",
-            defaultValue = settings?.themeColor ?: DEFAULT_THEME_COLOR,
-        )
-    val keyBordersState =
-        rememberBooleanSettingState(
-            key = "keyBorders",
-            defaultValue = ((settings?.keyBorders ?: DEFAULT_KEY_BORDERS).toBool()),
-        )
+    var pushupSizeState by remember { mutableStateOf((settings?.pushupSize ?: DEFAULT_PUSHUP_SIZE).toFloat()) }
+    var pushupSizeSliderState by remember { mutableStateOf(pushupSizeState) }
 
-    val backdropEnabledState =
-        rememberBooleanSettingState(
-            key = "backdropEnabled",
-            defaultValue = ((settings?.backdropEnabled ?: DEFAULT_BACKDROP_ENABLED).toBool()),
+    var animationSpeedState by remember { mutableStateOf((settings?.animationSpeed ?: DEFAULT_ANIMATION_SPEED).toFloat()) }
+    var animationSpeedSliderState by remember { mutableStateOf(animationSpeedState) }
+
+    var animationHelperSpeedState by remember {
+        mutableStateOf(
+            (settings?.animationHelperSpeed ?: DEFAULT_ANIMATION_HELPER_SPEED).toFloat(),
         )
-    val keyPaddingState =
-        rememberFloatSettingState(
-            key = "keyPadding",
-            defaultValue = (settings?.keyPadding ?: DEFAULT_KEY_PADDING).toFloat(),
+    }
+    var animationHelperSpeedSliderState by remember { mutableStateOf(animationHelperSpeedState) }
+
+    var keyPaddingState by remember { mutableStateOf((settings?.keyPadding ?: DEFAULT_KEY_PADDING).toFloat()) }
+    var keyPaddingSliderState by remember { mutableStateOf(keyPaddingState) }
+
+    var keyBorderWidthState by remember { mutableStateOf((settings?.keyBorderWidth ?: DEFAULT_KEY_BORDER_WIDTH).toFloat()) }
+    var keyBorderWidthSliderState by remember { mutableStateOf(keyBorderWidthState) }
+
+    var keyRadiusState by remember { mutableStateOf((settings?.keyRadius ?: DEFAULT_KEY_RADIUS).toFloat()) }
+    var keyRadiusSliderState by remember { mutableStateOf(keyRadiusState) }
+
+    var positionState by remember { mutableStateOf(KeyboardPosition.entries[settings?.position ?: DEFAULT_POSITION]) }
+
+    var vibrateOnTapState by remember { mutableStateOf((settings?.vibrateOnTap ?: DEFAULT_VIBRATE_ON_TAP).toBool()) }
+    var soundOnTapState by remember { mutableStateOf((settings?.soundOnTap ?: DEFAULT_SOUND_ON_TAP).toBool()) }
+    var hideLettersState by remember { mutableStateOf((settings?.hideLetters ?: DEFAULT_HIDE_LETTERS).toBool()) }
+    var hideSymbolsState by remember { mutableStateOf((settings?.hideSymbols ?: DEFAULT_HIDE_SYMBOLS).toBool()) }
+
+    var backdropEnabledState by remember { mutableStateOf((settings?.backdropEnabled ?: DEFAULT_BACKDROP_ENABLED).toBool()) }
+
+    fun updateLookAndFeel() {
+        appSettingsViewModel.updateLookAndFeel(
+            LookAndFeelUpdate(
+                id = 1,
+                keySize = keySizeState.toInt(),
+                keyWidth = if (nonSquareKeysState.value) keyWidthState?.toInt() else null,
+                pushupSize = pushupSizeState.toInt(),
+                animationSpeed = animationSpeedState.toInt(),
+                animationHelperSpeed = animationHelperSpeedState.toInt(),
+                position = positionState.ordinal,
+                vibrateOnTap = vibrateOnTapState.toInt(),
+                soundOnTap = soundOnTapState.toInt(),
+                hideLetters = hideLettersState.toInt(),
+                hideSymbols = hideSymbolsState.toInt(),
+                theme = themeState.ordinal,
+                themeColor = themeColorState.ordinal,
+                backdropEnabled = backdropEnabledState.toInt(),
+                keyPadding = keyPaddingState.toInt(),
+                keyBorderWidth = keyBorderWidthState.toInt(),
+                keyRadius = keyRadiusState.toInt(),
+            ),
         )
-    val keyBorderWidthState =
-        rememberFloatSettingState(
-            key = "keyBorderWidth",
-            defaultValue = (settings?.keyBorderWidth ?: DEFAULT_KEY_BORDER_WIDTH).toFloat(),
-        )
-    val keyRadiusState =
-        rememberFloatSettingState(
-            key = "keyRadius",
-            defaultValue = (settings?.keyRadius ?: DEFAULT_KEY_RADIUS).toFloat(),
-        )
+    }
+
+    val ctx = LocalContext.current
 
     val snackbarHostState = remember { SnackbarHostState() }
 
@@ -194,687 +168,360 @@ fun LookAndFeelActivity(
                         .background(color = MaterialTheme.colorScheme.surface)
                         .imePadding(),
             ) {
-                SettingsList(
-                    state = themeState,
-                    items = ThemeMode.entries.map { it.title() },
-                    icon = {
-                        Icon(
-                            imageVector = Icons.Outlined.Palette,
-                            contentDescription = null,
-                        )
-                    },
-                    title = {
-                        Text(stringResource(R.string.theme))
-                    },
-                    onItemSelected = { i, _ ->
-                        themeState.value = i
-                        updateLookAndFeel(
-                            appSettingsViewModel,
-                            keySizeState,
-                            nonSquareKeysState,
-                            keyWidthState,
-                            pushupSizeState,
-                            animationSpeedState,
-                            animationHelperSpeedState,
-                            positionState,
-                            keyBordersState,
-                            vibrateOnTapState,
-                            soundOnTapState,
-                            hideLettersState,
-                            hideSymbolsState,
-                            themeState,
-                            themeColorState,
-                            backdropEnabledState,
-                            keyPaddingState,
-                            keyBorderWidthState,
-                            keyRadiusState,
-                        )
-                    },
-                )
-                SettingsList(
-                    state = themeColorState,
-                    items = ThemeColor.entries.map { it.title() },
-                    icon = {
-                        Icon(
-                            imageVector = Icons.Outlined.Colorize,
-                            contentDescription = null,
-                        )
-                    },
-                    title = {
-                        Text(stringResource(R.string.theme_color))
-                    },
-                    onItemSelected = { i, _ ->
-                        themeColorState.value = i
-                        updateLookAndFeel(
-                            appSettingsViewModel,
-                            keySizeState,
-                            nonSquareKeysState,
-                            keyWidthState,
-                            pushupSizeState,
-                            animationSpeedState,
-                            animationHelperSpeedState,
-                            positionState,
-                            keyBordersState,
-                            vibrateOnTapState,
-                            soundOnTapState,
-                            hideLettersState,
-                            hideSymbolsState,
-                            themeState,
-                            themeColorState,
-                            backdropEnabledState,
-                            keyPaddingState,
-                            keyBorderWidthState,
-                            keyRadiusState,
-                        )
-                    },
-                )
-                SettingsList(
-                    state = positionState,
-                    items = KeyboardPosition.entries.map { it.title() },
-                    icon = {
-                        Icon(
-                            imageVector = Icons.Outlined.LinearScale,
-                            contentDescription = null,
-                        )
-                    },
-                    title = {
-                        Text(stringResource(R.string.position))
-                    },
-                    onItemSelected = { i, _ ->
-                        positionState.value = i
-                        updateLookAndFeel(
-                            appSettingsViewModel,
-                            keySizeState,
-                            nonSquareKeysState,
-                            keyWidthState,
-                            pushupSizeState,
-                            animationSpeedState,
-                            animationHelperSpeedState,
-                            positionState,
-                            keyBordersState,
-                            vibrateOnTapState,
-                            soundOnTapState,
-                            hideLettersState,
-                            hideSymbolsState,
-                            themeState,
-                            themeColorState,
-                            backdropEnabledState,
-                            keyPaddingState,
-                            keyBorderWidthState,
-                            keyRadiusState,
-                        )
-                    },
-                )
-                SettingsCheckbox(
-                    state = hideLettersState,
-                    icon = {
-                        Icon(
-                            imageVector = Icons.Outlined.HideImage,
-                            contentDescription = null,
-                        )
-                    },
-                    title = {
-                        Text(stringResource(R.string.hide_letters))
-                    },
-                    onCheckedChange = {
-                        updateLookAndFeel(
-                            appSettingsViewModel,
-                            keySizeState,
-                            nonSquareKeysState,
-                            keyWidthState,
-                            pushupSizeState,
-                            animationSpeedState,
-                            animationHelperSpeedState,
-                            positionState,
-                            keyBordersState,
-                            vibrateOnTapState,
-                            soundOnTapState,
-                            hideLettersState,
-                            hideSymbolsState,
-                            themeState,
-                            themeColorState,
-                            backdropEnabledState,
-                            keyPaddingState,
-                            keyBorderWidthState,
-                            keyRadiusState,
-                        )
-                    },
-                )
-                SettingsCheckbox(
-                    state = hideSymbolsState,
-                    icon = {
-                        Icon(
-                            imageVector = Icons.Outlined.HideImage,
-                            contentDescription = null,
-                        )
-                    },
-                    title = {
-                        Text(stringResource(R.string.hide_symbols))
-                    },
-                    onCheckedChange = {
-                        updateLookAndFeel(
-                            appSettingsViewModel,
-                            keySizeState,
-                            nonSquareKeysState,
-                            keyWidthState,
-                            pushupSizeState,
-                            animationSpeedState,
-                            animationHelperSpeedState,
-                            positionState,
-                            keyBordersState,
-                            vibrateOnTapState,
-                            soundOnTapState,
-                            hideLettersState,
-                            hideSymbolsState,
-                            themeState,
-                            themeColorState,
-                            backdropEnabledState,
-                            keyPaddingState,
-                            keyBorderWidthState,
-                            keyRadiusState,
-                        )
-                    },
-                )
-                SettingsCheckbox(
-                    state = backdropEnabledState,
-                    icon = {
-                        Icon(
-                            imageVector = Icons.Outlined.ViewDay,
-                            contentDescription = null,
-                        )
-                    },
-                    title = {
-                        Text(stringResource(R.string.backdrop))
-                    },
-                    onCheckedChange = {
-                        updateLookAndFeel(
-                            appSettingsViewModel,
-                            keySizeState,
-                            nonSquareKeysState,
-                            keyWidthState,
-                            pushupSizeState,
-                            animationSpeedState,
-                            animationHelperSpeedState,
-                            positionState,
-                            keyBordersState,
-                            vibrateOnTapState,
-                            soundOnTapState,
-                            hideLettersState,
-                            hideSymbolsState,
-                            themeState,
-                            themeColorState,
-                            backdropEnabledState,
-                            keyPaddingState,
-                            keyBorderWidthState,
-                            keyRadiusState,
-                        )
-                    },
-                )
-                val keyHeightStr =
-                    stringResource(
-                        if (nonSquareKeysState.value) R.string.key_height else R.string.key_size,
-                        keySizeState.value.toInt().toString(),
+                ProvidePreferenceTheme {
+                    ListPreference(
+                        type = ListPreferenceType.DROPDOWN_MENU,
+                        value = themeState,
+                        onValueChange = {
+                            themeState = it
+                            updateLookAndFeel()
+                        },
+                        values = ThemeMode.entries,
+                        valueToText = {
+                            AnnotatedString(ctx.getString(it.resId))
+                        },
+                        title = {
+                            Text(stringResource(R.string.theme))
+                        },
+                        summary = {
+                            Text(stringResource(themeState.resId))
+                        },
+                        icon = {
+                            Icon(
+                                imageVector = Icons.Outlined.Palette,
+                                contentDescription = null,
+                            )
+                        },
                     )
-                SettingsSlider(
-                    valueRange = 10f..200f,
-                    state = keySizeState,
-                    icon = {
-                        Icon(
-                            imageVector = Icons.Outlined.FormatSize,
-                            contentDescription = null,
-                        )
-                    },
-                    title = {
-                        Text(keyHeightStr)
-                    },
-                    onValueChangeFinished = {
-                        updateLookAndFeel(
-                            appSettingsViewModel,
-                            keySizeState,
-                            nonSquareKeysState,
-                            keyWidthState,
-                            pushupSizeState,
-                            animationSpeedState,
-                            animationHelperSpeedState,
-                            positionState,
-                            keyBordersState,
-                            vibrateOnTapState,
-                            soundOnTapState,
-                            hideLettersState,
-                            hideSymbolsState,
-                            themeState,
-                            themeColorState,
-                            backdropEnabledState,
-                            keyPaddingState,
-                            keyBorderWidthState,
-                            keyRadiusState,
-                        )
-                    },
-                )
-                if (nonSquareKeysState.value) {
-                    val keyWidthStr = stringResource(R.string.key_width, keyWidthState.value.toInt().toString())
-                    SettingsSlider(
+
+                    ListPreference(
+                        type = ListPreferenceType.DROPDOWN_MENU,
+                        value = themeColorState,
+                        onValueChange = {
+                            themeColorState = it
+                            updateLookAndFeel()
+                        },
+                        values = ThemeColor.entries,
+                        valueToText = {
+                            AnnotatedString(ctx.getString(it.resId))
+                        },
+                        title = {
+                            Text(stringResource(R.string.theme_color))
+                        },
+                        summary = {
+                            Text(stringResource(themeColorState.resId))
+                        },
+                        icon = {
+                            Icon(
+                                imageVector = Icons.Outlined.Colorize,
+                                contentDescription = null,
+                            )
+                        },
+                    )
+
+                    ListPreference(
+                        type = ListPreferenceType.DROPDOWN_MENU,
+                        value = positionState,
+                        onValueChange = {
+                            positionState = it
+                            updateLookAndFeel()
+                        },
+                        values = KeyboardPosition.entries,
+                        valueToText = {
+                            AnnotatedString(ctx.getString(it.resId))
+                        },
+                        summary = {
+                            Text(stringResource(positionState.resId))
+                        },
+                        title = {
+                            Text(stringResource(R.string.position))
+                        },
+                        icon = {
+                            Icon(
+                                imageVector = Icons.Outlined.LinearScale,
+                                contentDescription = null,
+                            )
+                        },
+                    )
+
+                    SwitchPreference(
+                        value = hideLettersState,
+                        onValueChange = {
+                            hideLettersState = it
+                            updateLookAndFeel()
+                        },
+                        title = {
+                            Text(stringResource(R.string.hide_letters))
+                        },
+                        icon = {
+                            Icon(
+                                imageVector = Icons.Outlined.HideImage,
+                                contentDescription = null,
+                            )
+                        },
+                    )
+
+                    SwitchPreference(
+                        value = hideSymbolsState,
+                        onValueChange = {
+                            hideSymbolsState = it
+                            updateLookAndFeel()
+                        },
+                        title = {
+                            Text(stringResource(R.string.hide_symbols))
+                        },
+                        icon = {
+                            Icon(
+                                imageVector = Icons.Outlined.HideImage,
+                                contentDescription = null,
+                            )
+                        },
+                    )
+                    SwitchPreference(
+                        value = backdropEnabledState,
+                        onValueChange = {
+                            backdropEnabledState = it
+                            updateLookAndFeel()
+                        },
+                        title = {
+                            Text(stringResource(R.string.backdrop))
+                        },
+                        icon = {
+                            Icon(
+                                imageVector = Icons.Outlined.ViewDay,
+                                contentDescription = null,
+                            )
+                        },
+                    )
+                    SliderPreference(
+                        value = keySizeState,
+                        sliderValue = keySizeSliderState,
+                        onValueChange = {
+                            keySizeState = it
+                            updateLookAndFeel()
+                        },
+                        onSliderValueChange = { keySizeSliderState = it },
                         valueRange = 10f..200f,
-                        state = keyWidthState,
+                        title = {
+                            val keyHeightStr =
+                                stringResource(
+                                    if (nonSquareKeysState.value) R.string.key_height else R.string.key_size,
+                                    keySizeSliderState.toInt().toString(),
+                                )
+
+                            Text(keyHeightStr)
+                        },
+                        icon = {
+                            Icon(
+                                imageVector = Icons.Outlined.FormatSize,
+                                contentDescription = null,
+                            )
+                        },
+                    )
+                    if (nonSquareKeysState.value) {
+                        SliderPreference(
+                            value = keyWidthState ?: DEFAULT_KEY_SIZE.toFloat(),
+                            sliderValue = keyWidthSliderState ?: DEFAULT_KEY_SIZE.toFloat(),
+                            onValueChange = {
+                                keyWidthState = it
+                                updateLookAndFeel()
+                            },
+                            onSliderValueChange = { keyWidthSliderState = it },
+                            valueRange = 10f..200f,
+                            title = {
+                                val keyWidthStr = stringResource(R.string.key_width, keyWidthSliderState?.toInt().toString())
+                                Text(keyWidthStr)
+                            },
+                            icon = {
+                                Icon(
+                                    imageVector = Icons.Outlined.Crop75,
+                                    contentDescription = null,
+                                )
+                            },
+                        )
+                    }
+
+                    SwitchPreference(
+                        value = nonSquareKeysState.value,
+                        onValueChange = {
+                            nonSquareKeysState.value = it
+                            updateLookAndFeel()
+                        },
+                        title = {
+                            Text(stringResource(R.string.key_non_square))
+                        },
                         icon = {
                             Icon(
                                 imageVector = Icons.Outlined.Crop75,
                                 contentDescription = null,
                             )
                         },
-                        title = {
-                            Text(keyWidthStr)
+                    )
+                    SliderPreference(
+                        value = keyPaddingState,
+                        sliderValue = keyPaddingSliderState,
+                        onValueChange = {
+                            keyPaddingState = it
+                            updateLookAndFeel()
                         },
-                        onValueChangeFinished = {
-                            updateLookAndFeel(
-                                appSettingsViewModel,
-                                keySizeState,
-                                nonSquareKeysState,
-                                keyWidthState,
-                                pushupSizeState,
-                                animationSpeedState,
-                                animationHelperSpeedState,
-                                positionState,
-                                keyBordersState,
-                                vibrateOnTapState,
-                                soundOnTapState,
-                                hideLettersState,
-                                hideSymbolsState,
-                                themeState,
-                                themeColorState,
-                                backdropEnabledState,
-                                keyPaddingState,
-                                keyBorderWidthState,
-                                keyRadiusState,
+                        onSliderValueChange = { keyPaddingSliderState = it },
+                        valueRange = 0f..10f,
+                        title = {
+                            val keyPaddingStr = stringResource(R.string.key_padding, keyPaddingSliderState.toInt().toString())
+                            Text(keyPaddingStr)
+                        },
+                        icon = {
+                            Icon(
+                                imageVector = Icons.Outlined.Padding,
+                                contentDescription = null,
                             )
                         },
                     )
-                }
-                SettingsCheckbox(
-                    state = nonSquareKeysState,
-                    icon = {
-                        Icon(
-                            imageVector = Icons.Outlined.Crop75,
-                            contentDescription = null,
-                        )
-                    },
-                    title = {
-                        Text(stringResource(R.string.key_non_square))
-                    },
-                    onCheckedChange = {
-                        updateLookAndFeel(
-                            appSettingsViewModel,
-                            keySizeState,
-                            nonSquareKeysState,
-                            keyWidthState,
-                            pushupSizeState,
-                            animationSpeedState,
-                            animationHelperSpeedState,
-                            positionState,
-                            keyBordersState,
-                            vibrateOnTapState,
-                            soundOnTapState,
-                            hideLettersState,
-                            hideSymbolsState,
-                            themeState,
-                            themeColorState,
-                            backdropEnabledState,
-                            keyPaddingState,
-                            keyBorderWidthState,
-                            keyRadiusState,
-                        )
-                    },
-                )
-                val keyPaddingStr = stringResource(R.string.key_padding, keyPaddingState.value.toInt().toString())
-                SettingsSlider(
-                    valueRange = 0f..10f,
-                    state = keyPaddingState,
-                    icon = {
-                        Icon(
-                            imageVector = Icons.Outlined.Padding,
-                            contentDescription = null,
-                        )
-                    },
-                    title = {
-                        Text(keyPaddingStr)
-                    },
-                    onValueChangeFinished = {
-                        updateLookAndFeel(
-                            appSettingsViewModel,
-                            keySizeState,
-                            nonSquareKeysState,
-                            keyWidthState,
-                            pushupSizeState,
-                            animationSpeedState,
-                            animationHelperSpeedState,
-                            positionState,
-                            keyBordersState,
-                            vibrateOnTapState,
-                            soundOnTapState,
-                            hideLettersState,
-                            hideSymbolsState,
-                            themeState,
-                            themeColorState,
-                            backdropEnabledState,
-                            keyPaddingState,
-                            keyBorderWidthState,
-                            keyRadiusState,
-                        )
-                    },
-                )
-                val keyBorderWidthStr = stringResource(R.string.key_border_width, keyBorderWidthState.value.toInt().toString())
-                SettingsSlider(
-                    valueRange = 0f..50f,
-                    state = keyBorderWidthState,
-                    icon = {
-                        Icon(
-                            imageVector = Icons.Outlined.BorderOuter,
-                            contentDescription = null,
-                        )
-                    },
-                    title = {
-                        Text(keyBorderWidthStr)
-                    },
-                    onValueChangeFinished = {
-                        updateLookAndFeel(
-                            appSettingsViewModel,
-                            keySizeState,
-                            nonSquareKeysState,
-                            keyWidthState,
-                            pushupSizeState,
-                            animationSpeedState,
-                            animationHelperSpeedState,
-                            positionState,
-                            keyBordersState,
-                            vibrateOnTapState,
-                            soundOnTapState,
-                            hideLettersState,
-                            hideSymbolsState,
-                            themeState,
-                            themeColorState,
-                            backdropEnabledState,
-                            keyPaddingState,
-                            keyBorderWidthState,
-                            keyRadiusState,
-                        )
-                    },
-                )
-                val keyRadiusStr = stringResource(R.string.key_radius, keyRadiusState.value.toInt().toString())
-                SettingsSlider(
-                    valueRange = 0f..100f,
-                    state = keyRadiusState,
-                    icon = {
-                        Icon(
-                            imageVector = Icons.Outlined.RoundedCorner,
-                            contentDescription = null,
-                        )
-                    },
-                    title = {
-                        Text(keyRadiusStr)
-                    },
-                    onValueChangeFinished = {
-                        updateLookAndFeel(
-                            appSettingsViewModel,
-                            keySizeState,
-                            nonSquareKeysState,
-                            keyWidthState,
-                            pushupSizeState,
-                            animationSpeedState,
-                            animationHelperSpeedState,
-                            positionState,
-                            keyBordersState,
-                            vibrateOnTapState,
-                            soundOnTapState,
-                            hideLettersState,
-                            hideSymbolsState,
-                            themeState,
-                            themeColorState,
-                            backdropEnabledState,
-                            keyPaddingState,
-                            keyBorderWidthState,
-                            keyRadiusState,
-                        )
-                    },
-                )
-                val bottomOffsetStr = stringResource(R.string.bottom_offset, pushupSizeState.value.toInt().toString())
-                SettingsSlider(
-                    valueRange = 0f..200f,
-                    state = pushupSizeState,
-                    icon = {
-                        Icon(
-                            imageVector = Icons.Outlined.VerticalAlignTop,
-                            contentDescription = null,
-                        )
-                    },
-                    title = {
-                        Text(bottomOffsetStr)
-                    },
-                    onValueChangeFinished = {
-                        updateLookAndFeel(
-                            appSettingsViewModel,
-                            keySizeState,
-                            nonSquareKeysState,
-                            keyWidthState,
-                            pushupSizeState,
-                            animationSpeedState,
-                            animationHelperSpeedState,
-                            positionState,
-                            keyBordersState,
-                            vibrateOnTapState,
-                            soundOnTapState,
-                            hideLettersState,
-                            hideSymbolsState,
-                            themeState,
-                            themeColorState,
-                            backdropEnabledState,
-                            keyPaddingState,
-                            keyBorderWidthState,
-                            keyRadiusState,
-                        )
-                    },
-                )
-                val animationSpeedStr = stringResource(R.string.animation_speed, animationSpeedState.value.toInt().toString())
-                SettingsSlider(
-                    valueRange = 0f..500f,
-                    state = animationSpeedState,
-                    icon = {
-                        Icon(
-                            imageVector = Icons.Outlined.Animation,
-                            contentDescription = null,
-                        )
-                    },
-                    title = {
-                        Text(animationSpeedStr)
-                    },
-                    onValueChangeFinished = {
-                        updateLookAndFeel(
-                            appSettingsViewModel,
-                            keySizeState,
-                            nonSquareKeysState,
-                            keyWidthState,
-                            pushupSizeState,
-                            animationSpeedState,
-                            animationHelperSpeedState,
-                            positionState,
-                            keyBordersState,
-                            vibrateOnTapState,
-                            soundOnTapState,
-                            hideLettersState,
-                            hideSymbolsState,
-                            themeState,
-                            themeColorState,
-                            backdropEnabledState,
-                            keyPaddingState,
-                            keyBorderWidthState,
-                            keyRadiusState,
-                        )
-                    },
-                )
-                val animationHelperSpeedStr =
-                    stringResource(
-                        R.string.animation_helper_speed,
-                        animationHelperSpeedState
-                            .value
-                            .toInt().toString(),
+                    SliderPreference(
+                        value = keyBorderWidthState,
+                        sliderValue = keyBorderWidthSliderState,
+                        onValueChange = {
+                            keyBorderWidthState = it
+                            updateLookAndFeel()
+                        },
+                        onSliderValueChange = { keyBorderWidthSliderState = it },
+                        valueRange = 0f..50f,
+                        title = {
+                            val keyBorderWidthStr = stringResource(R.string.key_border_width, keyBorderWidthSliderState.toInt().toString())
+                            Text(keyBorderWidthStr)
+                        },
+                        icon = {
+                            Icon(
+                                imageVector = Icons.Outlined.BorderOuter,
+                                contentDescription = null,
+                            )
+                        },
                     )
-                SettingsSlider(
-                    valueRange = 0f..500f,
-                    state = animationHelperSpeedState,
-                    icon = {
-                        Icon(
-                            imageVector = Icons.Outlined.Visibility,
-                            contentDescription = null,
-                        )
-                    },
-                    title = {
-                        Text(animationHelperSpeedStr)
-                    },
-                    onValueChangeFinished = {
-                        updateLookAndFeel(
-                            appSettingsViewModel,
-                            keySizeState,
-                            nonSquareKeysState,
-                            keyWidthState,
-                            pushupSizeState,
-                            animationSpeedState,
-                            animationHelperSpeedState,
-                            positionState,
-                            keyBordersState,
-                            vibrateOnTapState,
-                            soundOnTapState,
-                            hideLettersState,
-                            hideSymbolsState,
-                            themeState,
-                            themeColorState,
-                            backdropEnabledState,
-                            keyPaddingState,
-                            keyBorderWidthState,
-                            keyRadiusState,
-                        )
-                    },
-                )
-                SettingsDivider()
-                SettingsCheckbox(
-                    state = vibrateOnTapState,
-                    icon = {
-                        Icon(
-                            imageVector = Icons.Outlined.Vibration,
-                            contentDescription = null,
-                        )
-                    },
-                    title = {
-                        Text(stringResource(R.string.vibrate_on_tap))
-                    },
-                    subtitle = {
-                        Text(stringResource(R.string.vibrate_warning))
-                    },
-                    onCheckedChange = {
-                        updateLookAndFeel(
-                            appSettingsViewModel,
-                            keySizeState,
-                            nonSquareKeysState,
-                            keyWidthState,
-                            pushupSizeState,
-                            animationSpeedState,
-                            animationHelperSpeedState,
-                            positionState,
-                            keyBordersState,
-                            vibrateOnTapState,
-                            soundOnTapState,
-                            hideLettersState,
-                            hideSymbolsState,
-                            themeState,
-                            themeColorState,
-                            backdropEnabledState,
-                            keyPaddingState,
-                            keyBorderWidthState,
-                            keyRadiusState,
-                        )
-                    },
-                )
-                SettingsCheckbox(
-                    state = soundOnTapState,
-                    icon = {
-                        Icon(
-                            imageVector = Icons.Outlined.MusicNote,
-                            contentDescription = null,
-                        )
-                    },
-                    title = {
-                        Text(stringResource(R.string.play_sound_on_tap))
-                    },
-                    onCheckedChange = {
-                        updateLookAndFeel(
-                            appSettingsViewModel,
-                            keySizeState,
-                            nonSquareKeysState,
-                            keyWidthState,
-                            pushupSizeState,
-                            animationSpeedState,
-                            animationHelperSpeedState,
-                            positionState,
-                            keyBordersState,
-                            vibrateOnTapState,
-                            soundOnTapState,
-                            hideLettersState,
-                            hideSymbolsState,
-                            themeState,
-                            themeColorState,
-                            backdropEnabledState,
-                            keyPaddingState,
-                            keyBorderWidthState,
-                            keyRadiusState,
-                        )
-                    },
-                )
-                SettingsDivider()
-                TestOutTextField()
+                    SliderPreference(
+                        value = keyRadiusState,
+                        sliderValue = keyRadiusSliderState,
+                        onValueChange = {
+                            keyRadiusState = it
+                            updateLookAndFeel()
+                        },
+                        onSliderValueChange = { keyRadiusSliderState = it },
+                        valueRange = 0f..100f,
+                        title = {
+                            val keyRadiusStr = stringResource(R.string.key_radius, keyRadiusSliderState.toInt().toString())
+                            Text(keyRadiusStr)
+                        },
+                        icon = {
+                            Icon(
+                                imageVector = Icons.Outlined.RoundedCorner,
+                                contentDescription = null,
+                            )
+                        },
+                    )
+                    SliderPreference(
+                        value = pushupSizeState,
+                        sliderValue = pushupSizeSliderState,
+                        onValueChange = {
+                            pushupSizeState = it
+                            updateLookAndFeel()
+                        },
+                        onSliderValueChange = { pushupSizeSliderState = it },
+                        valueRange = 0f..200f,
+                        title = {
+                            val bottomOffsetStr = stringResource(R.string.bottom_offset, pushupSizeSliderState.toInt().toString())
+                            Text(bottomOffsetStr)
+                        },
+                        icon = {
+                            Icon(
+                                imageVector = Icons.Outlined.VerticalAlignTop,
+                                contentDescription = null,
+                            )
+                        },
+                    )
+                    SliderPreference(
+                        value = animationSpeedState,
+                        sliderValue = animationSpeedSliderState,
+                        onValueChange = {
+                            animationSpeedState = it
+                            updateLookAndFeel()
+                        },
+                        onSliderValueChange = { animationSpeedSliderState = it },
+                        valueRange = 0f..500f,
+                        title = {
+                            val animationSpeedStr = stringResource(R.string.animation_speed, animationSpeedSliderState.toInt().toString())
+                            Text(animationSpeedStr)
+                        },
+                        icon = {
+                            Icon(
+                                imageVector = Icons.Outlined.Animation,
+                                contentDescription = null,
+                            )
+                        },
+                    )
+                    SliderPreference(
+                        value = animationHelperSpeedState,
+                        sliderValue = animationHelperSpeedSliderState,
+                        onValueChange = {
+                            animationHelperSpeedState = it
+                            updateLookAndFeel()
+                        },
+                        onSliderValueChange = { animationHelperSpeedSliderState = it },
+                        valueRange = 0f..500f,
+                        title = {
+                            val animationHelperSpeedStr =
+                                stringResource(
+                                    R.string.animation_helper_speed,
+                                    animationHelperSpeedSliderState
+                                        .toInt().toString(),
+                                )
+                            Text(animationHelperSpeedStr)
+                        },
+                        icon = {
+                            Icon(
+                                imageVector = Icons.Outlined.Visibility,
+                                contentDescription = null,
+                            )
+                        },
+                    )
+                    SettingsDivider()
+                    SwitchPreference(
+                        value = vibrateOnTapState,
+                        onValueChange = {
+                            vibrateOnTapState = it
+                            updateLookAndFeel()
+                        },
+                        title = {
+                            Text(stringResource(R.string.vibrate_on_tap))
+                        },
+                        summary = {
+                            Text(stringResource(R.string.vibrate_warning))
+                        },
+                        icon = {
+                            Icon(
+                                imageVector = Icons.Outlined.Vibration,
+                                contentDescription = null,
+                            )
+                        },
+                    )
+                    SwitchPreference(
+                        value = soundOnTapState,
+                        onValueChange = {
+                            soundOnTapState = it
+                            updateLookAndFeel()
+                        },
+                        title = {
+                            Text(stringResource(R.string.play_sound_on_tap))
+                        },
+                        icon = {
+                            Icon(
+                                imageVector = Icons.Outlined.MusicNote,
+                                contentDescription = null,
+                            )
+                        },
+                    )
+                    SettingsDivider()
+                    TestOutTextField()
+                }
             }
         },
-    )
-}
-
-private fun updateLookAndFeel(
-    appSettingsViewModel: AppSettingsViewModel,
-    keySizeState: SettingValueState<Float>,
-    nonSquareKeysState: SettingValueState<Boolean>,
-    keyWidthState: SettingValueState<Float>,
-    pushupSizeState: SettingValueState<Float>,
-    animationSpeedState: SettingValueState<Float>,
-    animationHelperSpeedState: SettingValueState<Float>,
-    positionState: SettingValueState<Int>,
-    keyBordersState: SettingValueState<Boolean>,
-    vibrateOnTapState: SettingValueState<Boolean>,
-    soundOnTapState: SettingValueState<Boolean>,
-    hideLettersState: SettingValueState<Boolean>,
-    hideSymbolsState: SettingValueState<Boolean>,
-    themeState: SettingValueState<Int>,
-    themeColorState: SettingValueState<Int>,
-    backdropEnabledState: SettingValueState<Boolean>,
-    keyPaddingState: SettingValueState<Float>,
-    keyBorderWidthState: SettingValueState<Float>,
-    keyRadiusState: SettingValueState<Float>,
-) {
-    appSettingsViewModel.updateLookAndFeel(
-        LookAndFeelUpdate(
-            id = 1,
-            keySize = keySizeState.value.toInt(),
-            keyWidth = if (nonSquareKeysState.value) keyWidthState.value.toInt() else null,
-            pushupSize = pushupSizeState.value.toInt(),
-            animationSpeed = animationSpeedState.value.toInt(),
-            animationHelperSpeed = animationHelperSpeedState.value.toInt(),
-            position = positionState.value,
-            keyBorders = keyBordersState.value.toInt(),
-            vibrateOnTap = vibrateOnTapState.value.toInt(),
-            soundOnTap = soundOnTapState.value.toInt(),
-            hideLetters = hideLettersState.value.toInt(),
-            hideSymbols = hideSymbolsState.value.toInt(),
-            theme = themeState.value,
-            themeColor = themeColorState.value,
-            backdropEnabled = backdropEnabledState.value.toInt(),
-            keyPadding = keyPaddingState.value.toInt(),
-            keyBorderWidth = keyBorderWidthState.value.toInt(),
-            keyRadius = keyRadiusState.value.toInt(),
-        ),
     )
 }

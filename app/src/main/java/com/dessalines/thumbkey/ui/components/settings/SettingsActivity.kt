@@ -25,18 +25,17 @@ import androidx.compose.material3.SnackbarHost
 import androidx.compose.material3.SnackbarHostState
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.MutableState
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.livedata.observeAsState
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
+import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.stringResource
+import androidx.compose.ui.text.AnnotatedString
 import androidx.navigation.NavController
-import com.alorma.compose.settings.storage.base.SettingValueState
-import com.alorma.compose.settings.storage.disk.rememberIntSetSettingState
-import com.alorma.compose.settings.ui.SettingsListMultiSelect
-import com.alorma.compose.settings.ui.SettingsMenuLink
 import com.dessalines.thumbkey.R
 import com.dessalines.thumbkey.db.AppSettings
 import com.dessalines.thumbkey.db.AppSettingsViewModel
@@ -72,10 +71,11 @@ import com.dessalines.thumbkey.ui.components.settings.about.USER_GUIDE_URL
 import com.dessalines.thumbkey.utils.KeyboardLayout
 import com.dessalines.thumbkey.utils.SimpleTopAppBar
 import com.dessalines.thumbkey.utils.TAG
-import com.dessalines.thumbkey.utils.keyboardLayoutsSetFromTitleIndex
-import com.dessalines.thumbkey.utils.keyboardRealIndexFromTitleIndex
-import com.dessalines.thumbkey.utils.keyboardTitleIndexFromRealIndex
+import com.dessalines.thumbkey.utils.keyboardLayoutsSetFromDbIndexString
 import com.dessalines.thumbkey.utils.openLink
+import me.zhanghai.compose.preference.MultiSelectListPreference
+import me.zhanghai.compose.preference.Preference
+import me.zhanghai.compose.preference.ProvidePreferenceTheme
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
@@ -93,13 +93,45 @@ fun SettingsActivity(
     val settings by appSettingsViewModel.appSettings.observeAsState()
 
     val scrollState = rememberScrollState()
-    val showConfirmResetDialog = remember { mutableStateOf(false) }
+    var showConfirmResetDialog by remember { mutableStateOf(false) }
 
-    val layoutsState =
-        rememberIntSetSettingState(
-            key = "layouts",
-            defaultValue = keyboardLayoutsSetFromTitleIndex(settings?.keyboardLayouts),
+    val layoutsState = remember { mutableStateOf(keyboardLayoutsSetFromDbIndexString(settings?.keyboardLayouts)) }
+
+    if (showConfirmResetDialog) {
+        AlertDialog(
+            onDismissRequest = {
+                showConfirmResetDialog = false
+            },
+            title = {
+                Text(stringResource(R.string.reset_to_defaults))
+            },
+            text = {
+                Text(stringResource(R.string.reset_to_defaults_msg))
+            },
+            confirmButton = {
+                Button(
+                    onClick = {
+                        showConfirmResetDialog = false
+                        resetAppSettingsToDefault(
+                            appSettingsViewModel,
+                            layoutsState,
+                        )
+                    },
+                ) {
+                    Text(stringResource(R.string.reset_to_defaults_confirm))
+                }
+            },
+            dismissButton = {
+                Button(
+                    onClick = {
+                        showConfirmResetDialog = false
+                    },
+                ) {
+                    Text(stringResource(R.string.cancel))
+                }
+            },
         )
+    }
 
     Scaffold(
         snackbarHost = { SnackbarHost(snackbarHostState) },
@@ -115,139 +147,114 @@ fun SettingsActivity(
                         .background(color = MaterialTheme.colorScheme.surface)
                         .imePadding(),
             ) {
-                if (!(thumbkeyEnabled || thumbkeySelected)) {
-                    val setupStr = stringResource(R.string.setup)
-                    SettingsMenuLink(
-                        title = { Text(setupStr) },
-                        icon = {
-                            Icon(
-                                imageVector = Icons.Outlined.InstallMobile,
-                                contentDescription = setupStr,
+                ProvidePreferenceTheme {
+                    if (!(thumbkeyEnabled || thumbkeySelected)) {
+                        Preference(
+                            title = {
+                                val setupStr = stringResource(R.string.setup)
+                                Text(setupStr)
+                            },
+                            icon = {
+                                Icon(
+                                    imageVector = Icons.Outlined.InstallMobile,
+                                    contentDescription = null,
+                                )
+                            },
+                            onClick = { navController.navigate("setup") },
+                        )
+                    }
+
+                    MultiSelectListPreference(
+                        value = layoutsState.value,
+                        values = KeyboardLayout.entries.sortedBy { it.keyboardDefinition.title },
+                        valueToText = {
+                            AnnotatedString(it.keyboardDefinition.title)
+                        },
+                        onValueChange = {
+                            if (it.isEmpty()) {
+                                layoutsState.value = keyboardLayoutsSetFromDbIndexString(DEFAULT_KEYBOARD_LAYOUT.toString())
+                            } else {
+                                layoutsState.value = it
+                            }
+
+                            updateLayouts(
+                                appSettingsViewModel,
+                                layoutsState,
                             )
                         },
-                        onClick = { navController.navigate("setup") },
-                    )
-                }
-                if (showConfirmResetDialog.value) {
-                    AlertDialog(
-                        onDismissRequest = {
-                            showConfirmResetDialog.value = false
+                        icon = {
+                            Icon(
+                                imageVector = Icons.Outlined.KeyboardAlt,
+                                contentDescription = null,
+                            )
                         },
+                        title = {
+                            Text(stringResource(R.string.layouts))
+                        },
+                        summary = {
+                            val layoutsStr = layoutsState.value.joinToString(", ") { it.keyboardDefinition.title }
+                            Text(layoutsStr)
+                        },
+                    )
+                    Preference(
+                        title = { Text(stringResource(R.string.look_and_feel)) },
+                        icon = {
+                            Icon(
+                                imageVector = Icons.Outlined.Palette,
+                                contentDescription = null,
+                            )
+                        },
+                        onClick = { navController.navigate("lookAndFeel") },
+                    )
+                    Preference(
+                        title = { Text(stringResource(R.string.behavior)) },
+                        icon = {
+                            Icon(
+                                imageVector = Icons.Outlined.TouchApp,
+                                contentDescription = null,
+                            )
+                        },
+                        onClick = { navController.navigate("behavior") },
+                    )
+                    Preference(
+                        title = { Text(stringResource(R.string.user_guide)) },
+                        icon = {
+                            Icon(
+                                imageVector = Icons.AutoMirrored.Outlined.HelpCenter,
+                                contentDescription = null,
+                            )
+                        },
+                        onClick = {
+                            openLink(USER_GUIDE_URL, ctx)
+                        },
+                    )
+                    Preference(
+                        title = { Text(stringResource(R.string.about)) },
+                        icon = {
+                            Icon(
+                                imageVector = Icons.Outlined.Info,
+                                contentDescription = null,
+                            )
+                        },
+                        onClick = { navController.navigate("about") },
+                    )
+                    Preference(
                         title = {
                             Text(stringResource(R.string.reset_to_defaults))
                         },
-                        text = {
-                            Text(stringResource(R.string.reset_to_defaults_msg))
+                        icon = {
+                            Icon(
+                                imageVector = Icons.Outlined.ResetTv,
+                                contentDescription = null,
+                            )
                         },
-                        confirmButton = {
-                            Button(
-                                onClick = {
-                                    showConfirmResetDialog.value = false
-                                    resetAppSettingsToDefault(
-                                        appSettingsViewModel,
-                                        layoutsState,
-                                    )
-                                },
-                            ) {
-                                Text(stringResource(R.string.reset_to_defaults_confirm))
-                            }
-                        },
-                        dismissButton = {
-                            Button(
-                                onClick = {
-                                    showConfirmResetDialog.value = false
-                                },
-                            ) {
-                                Text(stringResource(R.string.cancel))
-                            }
+                        onClick = {
+                            showConfirmResetDialog = true
                         },
                     )
+                    SettingsDivider()
+                    TestOutTextField()
                 }
-                SettingsListMultiSelect(
-                    state = layoutsState,
-                    items = KeyboardLayout.entries.sortedBy { it.keyboardDefinition.title }.map { it.keyboardDefinition.title },
-                    icon = {
-                        Icon(
-                            imageVector = Icons.Outlined.KeyboardAlt,
-                            contentDescription = null,
-                        )
-                    },
-                    title = {
-                        Text(stringResource(R.string.layouts))
-                    },
-                    confirmButton = stringResource(R.string.save),
-                    onItemsSelected = { saved ->
-                        if (saved.isEmpty()) {
-                            layoutsState.value = setOf(keyboardTitleIndexFromRealIndex(DEFAULT_KEYBOARD_LAYOUT))
-                        }
-                        updateLayouts(
-                            appSettingsViewModel,
-                            layoutsState,
-                        )
-                    },
-                )
-                val lookAndFeelStr = stringResource(R.string.look_and_feel)
-                SettingsMenuLink(
-                    title = { Text(lookAndFeelStr) },
-                    icon = {
-                        Icon(
-                            imageVector = Icons.Outlined.Palette,
-                            contentDescription = lookAndFeelStr,
-                        )
-                    },
-                    onClick = { navController.navigate("lookAndFeel") },
-                )
-                val behaviorStr = stringResource(R.string.behavior)
-                SettingsMenuLink(
-                    title = { Text(behaviorStr) },
-                    icon = {
-                        Icon(
-                            imageVector = Icons.Outlined.TouchApp,
-                            contentDescription = behaviorStr,
-                        )
-                    },
-                    onClick = { navController.navigate("behavior") },
-                )
-                val userGuideStr = stringResource(R.string.user_guide)
-                SettingsMenuLink(
-                    title = { Text(userGuideStr) },
-                    icon = {
-                        Icon(
-                            imageVector = Icons.AutoMirrored.Outlined.HelpCenter,
-                            contentDescription = userGuideStr,
-                        )
-                    },
-                    onClick = {
-                        openLink(USER_GUIDE_URL, ctx)
-                    },
-                )
-                val aboutStr = stringResource(R.string.about)
-                SettingsMenuLink(
-                    title = { Text(aboutStr) },
-                    icon = {
-                        Icon(
-                            imageVector = Icons.Outlined.Info,
-                            contentDescription = aboutStr,
-                        )
-                    },
-                    onClick = { navController.navigate("about") },
-                )
-                SettingsMenuLink(
-                    title = {
-                        Text(stringResource(R.string.reset_to_defaults))
-                    },
-                    icon = {
-                        Icon(
-                            imageVector = Icons.Outlined.ResetTv,
-                            contentDescription = null,
-                        )
-                    },
-                    onClick = {
-                        showConfirmResetDialog.value = true
-                    },
-                )
-                SettingsDivider()
-                TestOutTextField()
             }
         },
     )
@@ -255,9 +262,9 @@ fun SettingsActivity(
 
 private fun resetAppSettingsToDefault(
     appSettingsViewModel: AppSettingsViewModel,
-    layoutsState: SettingValueState<Set<Int>>,
+    layoutsState: MutableState<Set<KeyboardLayout>>,
 ) {
-    layoutsState.value = setOf(keyboardTitleIndexFromRealIndex(DEFAULT_KEYBOARD_LAYOUT))
+    layoutsState.value = keyboardLayoutsSetFromDbIndexString(DEFAULT_KEYBOARD_LAYOUT.toString())
     appSettingsViewModel.update(
         AppSettings(
             id = 1,
@@ -296,15 +303,15 @@ private fun resetAppSettingsToDefault(
 
 private fun updateLayouts(
     appSettingsViewModel: AppSettingsViewModel,
-    layoutsState: SettingValueState<Set<Int>>,
+    layoutsState: MutableState<Set<KeyboardLayout>>,
 ) {
     appSettingsViewModel.updateLayouts(
         LayoutsUpdate(
             id = 1,
             // Set the current to the first
-            keyboardLayout = keyboardRealIndexFromTitleIndex(layoutsState.value.first()),
+            keyboardLayout = layoutsState.value.first().ordinal,
             keyboardLayouts =
-                layoutsState.value.map { keyboardRealIndexFromTitleIndex(it) }
+                layoutsState.value.map { it.ordinal }
                     .joinToString(),
         ),
     )

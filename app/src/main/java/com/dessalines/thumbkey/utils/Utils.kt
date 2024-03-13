@@ -980,27 +980,14 @@ fun Int.toBool() = this == 1
 
 fun Boolean.toInt() = this.compareTo(false)
 
-fun keyboardLayoutsSetFromString(layouts: String?): Set<Int> {
-    return layouts?.split(",")?.map { it.trim().toInt() }?.toSet()
+/**
+ * The layouts there are whats stored in the DB, a string comma set of title index numbers
+ */
+fun keyboardLayoutsSetFromDbIndexString(layouts: String?): Set<KeyboardLayout> {
+    return layouts?.split(",")?.map { KeyboardLayout.entries[it.trim().toInt()] }?.toSet()
         ?: setOf(
-            DEFAULT_KEYBOARD_LAYOUT,
+            KeyboardLayout.entries[DEFAULT_KEYBOARD_LAYOUT],
         )
-}
-
-fun keyboardLayoutsSetFromTitleIndex(layouts: String?): Set<Int> {
-    return layouts?.split(",")?.map { keyboardTitleIndexFromRealIndex(it.trim().toInt()) }?.toSet()
-        ?: setOf(
-            keyboardTitleIndexFromRealIndex(DEFAULT_KEYBOARD_LAYOUT),
-        )
-}
-
-fun keyboardRealIndexFromTitleIndex(index: Int): Int {
-    return KeyboardLayout.entries.sortedBy { it.keyboardDefinition.title }[index].ordinal
-}
-
-fun keyboardTitleIndexFromRealIndex(index: Int): Int {
-    val keyboard = KeyboardLayout.entries.find { it.ordinal == index } ?: KeyboardLayout.ENThumbKey
-    return KeyboardLayout.entries.sortedBy { it.keyboardDefinition.title }.indexOf(keyboard)
 }
 
 fun Context.getPackageInfo(): PackageInfo {

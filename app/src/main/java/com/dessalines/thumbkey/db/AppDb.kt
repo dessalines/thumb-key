@@ -161,6 +161,7 @@ data class AppSettings(
         defaultValue = "$DEFAULT_KEYBOARD_LAYOUT",
     )
     val keyboardLayouts: String,
+    // TODO this needs to be gotten rid of in the next DB update
     @ColumnInfo(
         name = "key_borders",
         defaultValue = DEFAULT_KEY_BORDERS.toString(),
@@ -261,10 +262,6 @@ data class LookAndFeelUpdate(
         name = "hide_letters",
     )
     val hideLetters: Int,
-    @ColumnInfo(
-        name = "key_borders",
-    )
-    val keyBorders: Int,
     @ColumnInfo(
         name = "hide_symbols",
     )

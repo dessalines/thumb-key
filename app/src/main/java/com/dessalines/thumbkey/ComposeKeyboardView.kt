@@ -11,8 +11,7 @@ import androidx.lifecycle.lifecycleScope
 import com.dessalines.thumbkey.db.AppSettingsRepository
 import com.dessalines.thumbkey.ui.components.keyboard.KeyboardScreen
 import com.dessalines.thumbkey.ui.theme.ThumbkeyTheme
-import com.dessalines.thumbkey.utils.KeyboardLayout
-import com.dessalines.thumbkey.utils.keyboardLayoutsSetFromString
+import com.dessalines.thumbkey.utils.keyboardLayoutsSetFromDbIndexString
 import kotlinx.coroutines.launch
 
 @SuppressLint("ViewConstructor")
@@ -39,17 +38,17 @@ class ComposeKeyboardView(
                         val state = settingsState.value
                         state?.let { s ->
 
-                            val layouts = keyboardLayoutsSetFromString(s.keyboardLayouts).toList()
+                            val layouts = keyboardLayoutsSetFromDbIndexString(s.keyboardLayouts).toList()
                             val currentLayout = s.keyboardLayout
-                            val index = layouts.indexOf(currentLayout)
+                            val index = layouts.map { it.ordinal }.indexOf(currentLayout)
                             val nextIndex = (index + 1).mod(layouts.size)
                             val nextLayout = layouts.getOrNull(nextIndex)
                             nextLayout?.let { layout ->
-                                val s2 = s.copy(keyboardLayout = layout)
+                                val s2 = s.copy(keyboardLayout = layout.ordinal)
                                 settingsRepo.update(s2)
 
                                 // Display the new layout's name on the screen
-                                val layoutName = KeyboardLayout.entries.find { it.ordinal == nextLayout }?.keyboardDefinition?.title
+                                val layoutName = layout.keyboardDefinition.title
                                 Toast.makeText(context, layoutName, Toast.LENGTH_SHORT).show()
                             }
                         }
