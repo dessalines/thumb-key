@@ -1,9 +1,8 @@
 package com.dessalines.thumbkey.utils
 
 import android.view.KeyEvent
-import androidx.compose.runtime.Composable
+import androidx.annotation.StringRes
 import androidx.compose.ui.graphics.vector.ImageVector
-import androidx.compose.ui.res.stringResource
 import com.dessalines.thumbkey.R
 
 data class KeyboardDefinitionModes(
@@ -111,17 +110,13 @@ sealed class KeyAction {
     data object SwitchIMEVoice : KeyAction()
 }
 
-enum class CursorAccelerationMode(private val stringId: Int) {
+enum class CursorAccelerationMode(
+    @StringRes val resId: Int,
+) {
     LINEAR(R.string.slide_cursor_acceleration_linear),
     QUADRATIC(R.string.slide_cursor_acceleration_quadratic),
     THRESHOLD(R.string.slide_cursor_acceleration_threshold_acceleration),
     CONSTANT(R.string.slide_cursor_acceleration_constant),
-    ;
-
-    @Composable
-    fun title(): String {
-        return stringResource(this.stringId)
-    }
 }
 
 enum class KeyboardMode {
@@ -156,19 +151,17 @@ enum class FontSizeVariant {
     SMALLEST,
 }
 
-enum class ThemeMode(private val stringId: Int) {
+enum class ThemeMode(
+    @StringRes val resId: Int,
+) {
     System(R.string.system),
     Light(R.string.light),
     Dark(R.string.dark),
-    ;
-
-    @Composable
-    fun title(): String {
-        return stringResource(this.stringId)
-    }
 }
 
-enum class ThemeColor(private val stringId: Int) {
+enum class ThemeColor(
+    @StringRes val resId: Int,
+) {
     Dynamic(R.string.dynamic),
     Green(R.string.green),
     Pink(R.string.pink),
@@ -180,24 +173,14 @@ enum class ThemeColor(private val stringId: Int) {
     HighContrastColorful(R.string.high_contrast_colorful),
     Ancom(R.string.ancom),
     Matrix(R.string.matrix),
-    ;
-
-    @Composable
-    fun title(): String {
-        return stringResource(this.stringId)
-    }
 }
 
-enum class KeyboardPosition(private val stringId: Int) {
+enum class KeyboardPosition(
+    @StringRes val resId: Int,
+) {
     Center(R.string.center),
     Right(R.string.right),
     Left(R.string.left),
-    ;
-
-    @Composable
-    fun title(): String {
-        return stringResource(this.stringId)
-    }
 }
 
 enum class SwipeNWay {
