@@ -1,7 +1,22 @@
+# Thumb-Key 2.7.0 (2024-03-13)
+
+## What's Changed in 2.7.0
+
+- Move to another preferences library, upgrade deps. by @dessalines in [#804](https://github.com/dessalines/thumb-key/pull/804)
+- Update Russian translation by @ligurio in [#801](https://github.com/dessalines/thumb-key/pull/801)
+- Added MessagEase Keyboard Tips section to README.md per comment in #745. by @frederickjh in [#799](https://github.com/dessalines/thumb-key/pull/799)
+
+## New Contributors
+
+- @frederickjh made their first contribution in [#799](https://github.com/dessalines/thumb-key/pull/799)
+
+**Full Changelog**: https://github.com/dessalines/thumb-key/compare/2.6.25...2.7.0
+
 # Thumb-Key 2.6.25 (2024-03-08)
 
 ## What's Changed in 2.6.25
 
+- Upping version. by @dessalines
 - Add Chinese Simplified Translation by @WeiguangTWK in [#794](https://github.com/dessalines/thumb-key/pull/794)
 - Use dakuten key for more characters by @K0baU in [#797](https://github.com/dessalines/thumb-key/pull/797)
 - Update EO/EN/DE layout to make shift/capslock behavior match other layouts by @slashdevslashurandom in [#795](https://github.com/dessalines/thumb-key/pull/795)
@@ -235,7 +250,6 @@
 
 - @Eemilp made their first contribution in [#639](https://github.com/dessalines/thumb-key/pull/639)
 - @5atoshiNakamoto made their first contribution in [#644](https://github.com/dessalines/thumb-key/pull/644)
-- @ligurio made their first contribution in [#638](https://github.com/dessalines/thumb-key/pull/638)
 - @priyavrat-misra made their first contribution in [#636](https://github.com/dessalines/thumb-key/pull/636)
 
 **Full Changelog**: https://github.com/dessalines/thumb-key/compare/2.6.10...2.6.11
