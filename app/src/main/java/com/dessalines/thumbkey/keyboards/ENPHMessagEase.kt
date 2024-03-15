@@ -557,6 +557,6 @@ val KB_EN_PH_MESSAGEASE: KeyboardDefinition =
             KeyboardDefinitionModes(
                 main = KB_EN_PH_MESSAGEASE_MAIN,
                 shifted = KB_EN_PH_MESSAGEASE_SHIFTED,
-                numeric = NUMERIC_KEYBOARD,
+                numeric = KB_EN_MESSAGEASE_NUMERIC,
             ),
     )
