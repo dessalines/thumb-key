@@ -380,7 +380,7 @@ val KB_TR_THUMBKEY_MAIN =
         ),
     )
 
-val KB_TR_THUMBKEY_MAIN =
+val KB_TR_THUMBKEY_SHIFTED =
     KeyboardC(
         listOf(
             listOf(
