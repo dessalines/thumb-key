@@ -669,6 +669,294 @@ fun performKeyAction(
                             "ヽ" -> "ヾ"
                             else -> textBefore
                         }
+                    "丶" ->
+                        when (textBefore) {
+                            "丁" -> "下"
+                            "王" -> "玉"
+                            "ノ" -> "入"
+                            " " -> "丶"
+                            else -> textBefore + "丶"
+                        }
+                    "丨" ->
+                        when (textBefore) {
+                            "口" -> "中"
+                            "ノ" -> "川"
+                            " " -> "丨"
+                            else -> textBefore + "丨"
+                        }
+                    "一" ->
+                        when (textBefore) {
+                            "一" -> "天"
+                            "𠂉" -> "気"
+                            "木" -> "本"
+                            "ト" -> "上"
+                            " " -> "一"
+                            else -> textBefore + "一"
+                        }
+                    "二" ->
+                        when (textBefore) {
+                            " " -> "二"
+                            else -> textBefore + "二"
+                        }
+                    "三" ->
+                        when (textBefore) {
+                            " " -> "三"
+                            else -> textBefore + "三"
+                        }
+                    "十" ->
+                        when (textBefore) {
+                            "𠂉" -> "午"
+                            "ノ" -> "千"
+                            "日" -> "早"
+                            " " -> "十"
+                            else -> textBefore + "十"
+                        }
+                    "ノ" ->
+                        when (textBefore) {
+                            "乚" -> "女"
+                            " " -> "ノ"
+                            else -> textBefore + "ノ"
+                        }
+                    "乛" ->
+                        when (textBefore) {
+                            "丁" -> "五"
+                            " " -> "乛"
+                            else -> textBefore + "乛"
+                        }
+                    "乚" ->
+                        when (textBefore) {
+                            "一" -> "七"
+                            "ノ" -> "九"
+                            " " -> "乚"
+                            else -> textBefore + "乚"
+                        }
+                    "𠂉" ->
+                        when (textBefore) {
+                            " " -> "𠂉"
+                            else -> textBefore + "𠂉"
+                        }
+                    "人" ->
+                        when (textBefore) {
+                            "草" -> "花"
+                            "目" -> "見"
+                            " " -> "人"
+                            else -> textBefore + "人"
+                        }
+                    "子" ->
+                        when (textBefore) {
+                            "宀" -> "字"
+                            " " -> "子"
+                            else -> textBefore + "子"
+                        }
+                    "王" ->
+                        when (textBefore) {
+                            "ノ" -> "生"
+                            "目" -> "見"
+                            " " -> "王"
+                            else -> textBefore + "王"
+                        }
+                    "犬" ->
+                        when (textBefore) {
+                            " " -> "犬"
+                            else -> textBefore + "犬"
+                        }
+                    "山" ->
+                        when (textBefore) {
+                            "山" -> "出"
+                            " " -> "山"
+                            else -> textBefore + "山"
+                        }
+                    "虫" ->
+                        when (textBefore) {
+                            " " -> "虫"
+                            else -> textBefore + "虫"
+                        }
+                    "木" ->
+                        when (textBefore) {
+                            "木" -> "林"
+                            "林" -> "森"
+                            "人" -> "休"
+                            " " -> "木"
+                            else -> textBefore + "木"
+                        }
+                    "草" ->
+                        when (textBefore) {
+                            " " -> "草"
+                            else -> textBefore + "草"
+                        }
+                    "竹" ->
+                        when (textBefore) {
+                            " " -> "竹"
+                            else -> textBefore + "竹"
+                        }
+                    "火" ->
+                        when (textBefore) {
+                            "土" -> "赤"
+                            " " -> "火"
+                            else -> textBefore + "火"
+                        }
+                    "土" ->
+                        when (textBefore) {
+                            "ノ" -> "先"
+                            " " -> "土"
+                            else -> textBefore + "土"
+                        }
+                    "金" ->
+                        when (textBefore) {
+                            " " -> "金"
+                            else -> textBefore + "金"
+                        }
+                    "水" ->
+                        when (textBefore) {
+                            " " -> "水"
+                            else -> textBefore + "水"
+                        }
+                    "雨" ->
+                        when (textBefore) {
+                            " " -> "雨"
+                            else -> textBefore + "雨"
+                        }
+                    "貝" ->
+                        when (textBefore) {
+                            " " -> "貝"
+                            else -> textBefore + "貝"
+                        }
+                    "口" ->
+                        when (textBefore) {
+                            "ナ" -> "右"
+                            "タ" -> "名"
+                            "厂" -> "石"
+                            " " -> "口"
+                            else -> textBefore + "口"
+                        }
+                    "日" ->
+                        when (textBefore) {
+                            "一" -> "車"
+                            "立" -> "音"
+                            " " -> "日"
+                            else -> textBefore + "日"
+                        }
+                    "白" ->
+                        when (textBefore) {
+                            "一" -> "百"
+                            " " -> "白"
+                            else -> textBefore + "白"
+                        }
+                    "目" ->
+                        when (textBefore) {
+                            " " -> "目"
+                            else -> textBefore + "目"
+                        }
+                    "月" ->
+                        when (textBefore) {
+                            "王" -> "青"
+                            " " -> "月"
+                            else -> textBefore + "月"
+                        }
+                    "亠" ->
+                        when (textBefore) {
+                            "冂" -> "円"
+                            "午" -> "年"
+                            "木" -> "校"
+                            " " -> "亠"
+                            else -> textBefore + "亠"
+                        }
+                    "厂" ->
+                        when (textBefore) {
+                            " " -> "厂"
+                            else -> textBefore + "厂"
+                        }
+                    "冂" ->
+                        when (textBefore) {
+                            "ツ" -> "学"
+                            "亠" -> "宀"
+                            " " -> "冂"
+                            else -> textBefore + "冂"
+                        }
+                    "止" ->
+                        when (textBefore) {
+                            "一" -> "正"
+                            "口" -> "足"
+                            " " -> "止"
+                            else -> textBefore + "止"
+                        }
+                    "手" ->
+                        when (textBefore) {
+                            " " -> "手"
+                            else -> textBefore + "手"
+                        }
+                    "耳" ->
+                        when (textBefore) {
+                            " " -> "耳"
+                            else -> textBefore + "耳"
+                        }
+                    "糸" ->
+                        when (textBefore) {
+                            " " -> "糸"
+                            else -> textBefore + "糸"
+                        }
+                    "寸" ->
+                        when (textBefore) {
+                            "木" -> "村"
+                            " " -> "寸"
+                            else -> textBefore + "寸"
+                        }
+                    "丁" ->
+                        when (textBefore) {
+                            "田" -> "町"
+                            " " -> "丁"
+                            else -> textBefore + "丁"
+                        }
+                    "カ" ->
+                        when (textBefore) {
+                            "田" -> "男"
+                            " " -> "力"
+                            else -> textBefore + "力"
+                        }
+                    "エ" ->
+                        when (textBefore) {
+                            "ナ" -> "左"
+                            "穴" -> "空"
+                            " " -> "エ"
+                            else -> textBefore + "エ"
+                        }
+                    "タ" ->
+                        when (textBefore) {
+                            " " -> "夕"
+                            else -> textBefore + "夕"
+                        }
+                    "メ" ->
+                        when (textBefore) {
+                            "亠" -> "文"
+                            "穴" -> "空"
+                            " " -> "エ"
+                            else -> textBefore + "エ"
+                        }
+                    "ハ" ->
+                        when (textBefore) {
+                            "口" -> "四"
+                            "亠" -> "六"
+                            "宀" -> "穴"
+                            "丨" -> "小"
+                            " " -> "八"
+                            else -> textBefore + "八"
+                        }
+                    "ソ" ->
+                        when (textBefore) {
+                            "亠" -> "立"
+                            " " -> "ソ"
+                            else -> textBefore + "ソ"
+                        }
+                    "ツ" ->
+                        when (textBefore) {
+                            " " -> "ツ"
+                            else -> textBefore + "ツ"
+                        }
+                    "ト" ->
+                        when (textBefore) {
+                            " " -> "ト"
+                            else -> textBefore + "ト"
+                        }
                     else -> throw IllegalStateException("Invalid key modifier")
                 }
 
