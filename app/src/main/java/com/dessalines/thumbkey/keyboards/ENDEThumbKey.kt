@@ -79,7 +79,7 @@ val KB_ENDE_THUMBKEY_MAIN =
                                     display = KeyDisplay.TextDisplay("l"),
                                     action = KeyAction.CommitText("l"),
                                 ),
-                          SwipeDirection.LEFT to
+                            SwipeDirection.LEFT to
                                 KeyC(
                                     display = KeyDisplay.TextDisplay("ö"),
                                     action = KeyAction.CommitText("ö"),
@@ -340,7 +340,7 @@ val KB_ENDE_THUMBKEY_SHIFTED =
                         ),
                     swipes =
                         mapOf(
-                           SwipeDirection.LEFT to
+                            SwipeDirection.LEFT to
                                 KeyC(
                                     display = KeyDisplay.TextDisplay("Ö"),
                                     action = KeyAction.CommitText("Ö"),
