@@ -1072,3 +1072,75 @@ fun mergeKeyItems(
         swipes = if (newSwipes.isNotEmpty()) newSwipes else null,
     )
 }
+
+fun getKeyItemCFromTextLayoutSquare(
+    textLayout: Array<String>,
+    startX: Int,
+    startY: Int,
+): KeyItemC {
+    // Always return 3x3 string - worst case scenario its full of spaces
+    val ourSquare =
+        (startY..startY + 3).map {
+            val currentRow = textLayout.getOrElse(it) { "|   |   |   |" }
+            (startX..startX + 3).map { currentRow.getOrElse(it) { ' ' } }
+        }
+
+    return KeyItemC(
+        center =
+            if (ourSquare[1][1] == ' ') {
+                DUMMY_KEY
+            } else {
+                KeyC(
+                    display = KeyDisplay.TextDisplay(ourSquare[1][1].toString()),
+                    action = KeyAction.CommitText(ourSquare[1][1].toString()),
+                    size = FontSizeVariant.LARGE,
+                    color = ColorVariant.PRIMARY,
+                )
+            },
+        swipes =
+            mapOf(
+                SwipeDirection.LEFT to ourSquare[1][0],
+                SwipeDirection.TOP_LEFT to ourSquare[0][0],
+                SwipeDirection.TOP to ourSquare[0][1],
+                SwipeDirection.TOP_RIGHT to ourSquare[0][2],
+                SwipeDirection.RIGHT to ourSquare[1][2],
+                SwipeDirection.BOTTOM_RIGHT to ourSquare[2][2],
+                SwipeDirection.BOTTOM to ourSquare[2][1],
+                SwipeDirection.BOTTOM_LEFT to ourSquare[2][0],
+            )
+                .filter { (_, letter) -> letter != ' ' }
+                .map { (direction, letter) ->
+                    direction to
+                        KeyC(
+                            display = KeyDisplay.TextDisplay(letter.toString()),
+                            action = KeyAction.CommitText(letter.toString()),
+                            color = if (letter.isLetter()) ColorVariant.SECONDARY else ColorVariant.MUTED,
+                        )
+                }
+                .toMap(),
+    )
+}
+
+fun getKeyboardFromTextLayout(textLayout: String): KeyboardC {
+    val lines = textLayout.split("\n").toTypedArray<String>()
+
+    return KeyboardC(
+        listOf(
+            listOf(
+                getKeyItemCFromTextLayoutSquare(lines, 1, 1),
+                getKeyItemCFromTextLayoutSquare(lines, 5, 1),
+                getKeyItemCFromTextLayoutSquare(lines, 9, 1),
+            ),
+            listOf(
+                getKeyItemCFromTextLayoutSquare(lines, 1, 5),
+                getKeyItemCFromTextLayoutSquare(lines, 5, 5),
+                getKeyItemCFromTextLayoutSquare(lines, 9, 5),
+            ),
+            listOf(
+                getKeyItemCFromTextLayoutSquare(lines, 1, 9),
+                getKeyItemCFromTextLayoutSquare(lines, 5, 9),
+                getKeyItemCFromTextLayoutSquare(lines, 9, 9),
+            ),
+        ),
+    )
+}
