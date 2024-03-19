@@ -649,3 +649,17 @@ val SHIFTED_OVERRIDE_KEYITEM =
                     ),
             ),
     )
+
+val SHIFT_OVERRIDE_KEYITEM =
+    KeyItemC(
+        center = DUMMY_KEY,
+        swipes =
+            mapOf(
+                SwipeDirection.TOP to
+                    KeyC(
+                        display = KeyDisplay.IconDisplay(Icons.Outlined.ArrowDropUp),
+                        action = KeyAction.ToggleShiftMode(true),
+                        color = ColorVariant.MUTED,
+                    ),
+            ),
+    )
