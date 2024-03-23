@@ -1,7 +1,23 @@
+# Thumb-Key 2.7.1 (2024-03-22)
+
+## What's Changed in 2.7.1
+
+- Upgrading deps. by @dessalines in [#813](https://github.com/dessalines/thumb-key/pull/813)
+- English Deutsch ThumbKey Layout by @queer-coding in [#810](https://github.com/dessalines/thumb-key/pull/810)
+- Adding en_twohands_messagease. Fixes #806 by @dessalines in [#808](https://github.com/dessalines/thumb-key/pull/808)
+- Numeric keyboard update to ENPHMessagEase.kt by @Lysalana in [#807](https://github.com/dessalines/thumb-key/pull/807)
+
+## New Contributors
+
+- @queer-coding made their first contribution in [#810](https://github.com/dessalines/thumb-key/pull/810)
+
+**Full Changelog**: https://github.com/dessalines/thumb-key/compare/2.7.0...2.7.1
+
 # Thumb-Key 2.7.0 (2024-03-13)
 
 ## What's Changed in 2.7.0
 
+- Upping version. by @dessalines
 - Move to another preferences library, upgrade deps. by @dessalines in [#804](https://github.com/dessalines/thumb-key/pull/804)
 - Update Russian translation by @ligurio in [#801](https://github.com/dessalines/thumb-key/pull/801)
 - Added MessagEase Keyboard Tips section to README.md per comment in #745. by @frederickjh in [#799](https://github.com/dessalines/thumb-key/pull/799)
@@ -114,7 +130,6 @@
 
 ## New Contributors
 
-- @Lysalana made their first contribution in [#760](https://github.com/dessalines/thumb-key/pull/760)
 - @imthehumanoid made their first contribution in [#750](https://github.com/dessalines/thumb-key/pull/750)
 
 **Full Changelog**: https://github.com/dessalines/thumb-key/compare/2.6.18...2.6.19
