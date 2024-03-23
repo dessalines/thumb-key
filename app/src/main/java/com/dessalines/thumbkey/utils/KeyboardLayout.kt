@@ -84,6 +84,7 @@ import com.dessalines.thumbkey.keyboards.KB_IT_THUMBKEY
 import com.dessalines.thumbkey.keyboards.KB_IT_TYPESPLIT
 import com.dessalines.thumbkey.keyboards.KB_JA_THUMBKEY_HIRAGANA
 import com.dessalines.thumbkey.keyboards.KB_JA_THUMBKEY_KATAKANA
+import com.dessalines.thumbkey.keyboards.KB_JA_COMPOSE_KANJI
 import com.dessalines.thumbkey.keyboards.KB_JA_TYPESPLIT_HIRAGANA
 import com.dessalines.thumbkey.keyboards.KB_JA_TYPESPLIT_KATAKANA
 import com.dessalines.thumbkey.keyboards.KB_KA_THUMBKEY
@@ -228,4 +229,5 @@ enum class KeyboardLayout(val keyboardDefinition: KeyboardDefinition) {
     BRFRThumbKey(KB_BR_FR_THUMBKEY),
     ENTwoHandsMessagEase(KB_EN_TWO_HANDS_MESSAGEASE),
     ENDEThumbKey(KB_ENDE_THUMBKEY),
+    JAComposeKanji(KB_JA_COMPOSE_KANJI),
 }
