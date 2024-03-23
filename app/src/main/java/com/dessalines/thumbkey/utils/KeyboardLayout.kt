@@ -83,7 +83,6 @@ import com.dessalines.thumbkey.keyboards.KB_IT_THUMBKEY
 import com.dessalines.thumbkey.keyboards.KB_IT_TYPESPLIT
 import com.dessalines.thumbkey.keyboards.KB_JA_THUMBKEY_HIRAGANA
 import com.dessalines.thumbkey.keyboards.KB_JA_THUMBKEY_KATAKANA
-import com.dessalines.thumbkey.keyboards.KB_JA_COMPOSE_KANJI
 import com.dessalines.thumbkey.keyboards.KB_JA_TYPESPLIT_HIRAGANA
 import com.dessalines.thumbkey.keyboards.KB_JA_TYPESPLIT_KATAKANA
 import com.dessalines.thumbkey.keyboards.KB_KA_THUMBKEY
