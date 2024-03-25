@@ -316,7 +316,7 @@ val KB_JA_COMPOSE_KANJI_MAIN =
                                     display = KeyDisplay.TextDisplay("日"),
                                     action = KeyAction.ComposeLastKey("日"),
                                 ),
-                            SwipeDirection.RIGHT_BOTTOM to
+                            SwipeDirection.BOTTOM_RIGHT to
                                 KeyC(
                                     display = KeyDisplay.TextDisplay("目"),
                                     action = KeyAction.ComposeLastKey("目"),
