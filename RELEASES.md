@@ -1,7 +1,17 @@
+# Thumb-Key 2.7.2 (2024-03-27)
+
+## What's Changed in 2.7.2
+
+- Fixing woodpecker. by @dessalines in [#816](https://github.com/dessalines/thumb-key/pull/816)
+- Update symbols for ukrainian-only messagease layout by @Meetoul in [#814](https://github.com/dessalines/thumb-key/pull/814)
+
+**Full Changelog**: https://github.com/dessalines/thumb-key/compare/2.7.1...2.7.2
+
 # Thumb-Key 2.7.1 (2024-03-22)
 
 ## What's Changed in 2.7.1
 
+- Upping version. by @dessalines
 - Upgrading deps. by @dessalines in [#813](https://github.com/dessalines/thumb-key/pull/813)
 - English Deutsch ThumbKey Layout by @queer-coding in [#810](https://github.com/dessalines/thumb-key/pull/810)
 - Adding en_twohands_messagease. Fixes #806 by @dessalines in [#808](https://github.com/dessalines/thumb-key/pull/808)
@@ -241,10 +251,6 @@
 - Add layout for English and French by @Zwyx in [#665](https://github.com/dessalines/thumb-key/pull/665)
 - Add ukrainian-only messagease symbols layout by @Meetoul in [#666](https://github.com/dessalines/thumb-key/pull/666)
 - Adding release notes. by @dessalines
-
-## New Contributors
-
-- @Meetoul made their first contribution in [#666](https://github.com/dessalines/thumb-key/pull/666)
 
 **Full Changelog**: https://github.com/dessalines/thumb-key/compare/2.6.11...2.6.12
 
