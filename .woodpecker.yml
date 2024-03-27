@@ -3,6 +3,8 @@ steps:
     image: tmknom/prettier
     commands:
       - prettier -c "**/*.md" "**/*.yml"
+    when:
+      - event: pull_request
 
   check_formatting:
     image: cimg/android:2023.09.1
@@ -11,6 +13,8 @@ steps:
       - ./gradlew lintKotlin
     environment:
       GRADLE_USER_HOME: ".gradle"
+    when:
+      - event: pull_request
 
   build_project:
     image: cimg/android:2023.09.1
@@ -19,6 +23,8 @@ steps:
       - ./gradlew assembleDebug
     environment:
       GRADLE_USER_HOME: ".gradle"
+    when:
+      - event: pull_request
 
   notify:
     image: alpine:3
@@ -26,4 +32,5 @@ steps:
       - apk add curl
       - "curl -d'Thumb-Key build ${CI_PIPELINE_STATUS}: ${CI_PIPELINE_URL}' ntfy.sh/thumbkey_ci"
     when:
-      status: [failure, success]
+      - event: pull_request
+        status: [failure, success]
