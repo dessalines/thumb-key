@@ -63,7 +63,7 @@ android {
         compose true
     }
     composeOptions {
-        kotlinCompilerExtensionVersion = "1.5.10"
+        kotlinCompilerExtensionVersion = "1.5.11"
     }
     namespace 'com.dessalines.thumbkey'
 }
@@ -94,7 +94,7 @@ dependencies {
     implementation 'androidx.compose.runtime:runtime-livedata:1.6.4'
     implementation "androidx.lifecycle:lifecycle-runtime-compose:2.7.0"
 
-    implementation 'org.jetbrains.kotlin:kotlin-stdlib:1.9.22'
+    implementation 'org.jetbrains.kotlin:kotlin-stdlib:1.9.23'
     implementation 'androidx.appcompat:appcompat:1.6.1'
     implementation 'androidx.compose.ui:ui:1.6.4'
     implementation 'androidx.compose.material3:material3:1.2.1'
