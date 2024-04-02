@@ -1,7 +1,25 @@
+# Thumb-Key 2.7.3 (2024-04-02)
+
+## What's Changed in 2.7.3
+
+- added standart english layout with german umlauts by @philipp8101 in [#818](https://github.com/dessalines/thumb-key/pull/818)
+- Add CZ programmer Messagease keyboard layout by @ondrachwiedziuk in [#821](https://github.com/dessalines/thumb-key/pull/821)
+- Add EN HR MessageEase Variant by @ssaric in [#823](https://github.com/dessalines/thumb-key/pull/823)
+- Upgrading deps. by @dessalines in [#819](https://github.com/dessalines/thumb-key/pull/819)
+
+## New Contributors
+
+- @philipp8101 made their first contribution in [#818](https://github.com/dessalines/thumb-key/pull/818)
+- @ondrachwiedziuk made their first contribution in [#821](https://github.com/dessalines/thumb-key/pull/821)
+- @ssaric made their first contribution in [#823](https://github.com/dessalines/thumb-key/pull/823)
+
+**Full Changelog**: https://github.com/dessalines/thumb-key/compare/2.7.2...2.7.3
+
 # Thumb-Key 2.7.2 (2024-03-27)
 
 ## What's Changed in 2.7.2
 
+- Upping version. by @dessalines
 - Fixing woodpecker. by @dessalines in [#816](https://github.com/dessalines/thumb-key/pull/816)
 - Update symbols for ukrainian-only messagease layout by @Meetoul in [#814](https://github.com/dessalines/thumb-key/pull/814)
 
