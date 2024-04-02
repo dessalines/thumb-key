@@ -3,7 +3,6 @@ package com.dessalines.thumbkey.keyboards
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.outlined.ArrowDropDown
 import androidx.compose.material.icons.outlined.ArrowDropUp
-import androidx.compose.material.icons.outlined.Copyright
 import androidx.compose.material.icons.outlined.KeyboardCapslock
 import com.dessalines.thumbkey.utils.ColorVariant
 import com.dessalines.thumbkey.utils.FontSizeVariant
@@ -15,7 +14,6 @@ import com.dessalines.thumbkey.utils.KeyboardC
 import com.dessalines.thumbkey.utils.KeyboardDefinition
 import com.dessalines.thumbkey.utils.KeyboardDefinitionModes
 import com.dessalines.thumbkey.utils.SwipeDirection
-import com.dessalines.thumbkey.utils.SwipeNWay
 
 val KB_CZ_PROG_MAIN =
     KeyboardC(
@@ -77,7 +75,7 @@ val KB_CZ_PROG_MAIN =
                                 KeyC(
                                     display = KeyDisplay.TextDisplay("ó"),
                                     action = KeyAction.CommitText("ó"),
-                        ),
+                                ),
                             SwipeDirection.TOP to
                                 KeyC(
                                     display = KeyDisplay.TextDisplay("ů"),
@@ -284,7 +282,7 @@ val KB_CZ_PROG_MAIN =
                                     display = KeyDisplay.IconDisplay(Icons.Outlined.ArrowDropUp),
                                     action = KeyAction.ToggleShiftMode(true),
                                     color = ColorVariant.MUTED,
-                            ),
+                                ),
                             SwipeDirection.RIGHT to
                                 KeyC(
                                     display = KeyDisplay.TextDisplay(")"),
@@ -893,7 +891,7 @@ val KB_CZ_PROG_SHIFTED =
 
 val KB_CZ_PROG: KeyboardDefinition =
     KeyboardDefinition(
-        title = "czech programming MessagEase",
+        title = "čeština programming nessagease",
         modes =
             KeyboardDefinitionModes(
                 main = KB_CZ_PROG_MAIN,
