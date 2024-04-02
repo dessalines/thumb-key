@@ -20,7 +20,7 @@ import com.dessalines.thumbkey.utils.SwipeNWay
 import com.dessalines.thumbkey.utils.autoCapitalizeI
 import com.dessalines.thumbkey.utils.autoCapitalizeIApostrophe
 
-val KB_EN_MESSAGEASE_MAIN =
+val KB_EN_HR_MESSAGEASE_MAIN =
         KeyboardC(
                 listOf(
                         listOf(
@@ -294,7 +294,7 @@ val KB_EN_MESSAGEASE_MAIN =
                 ),
         )
 
-val KB_EN_MESSAGEASE_SHIFTED =
+val KB_EN_HR_MESSAGEASE_SHIFTED =
         KeyboardC(
                 listOf(
                         listOf(
@@ -550,13 +550,13 @@ val KB_EN_MESSAGEASE_SHIFTED =
                 ),
         )
 
-val KB_EN_MESSAGEASE: KeyboardDefinition =
+val KB_EN_HR_MESSAGEASE: KeyboardDefinition =
         KeyboardDefinition(
-                title = "english messagease",
+                title = "english messagease with croatian guillemets",
                 modes =
                 KeyboardDefinitionModes(
-                        main = KB_EN_MESSAGEASE_MAIN,
-                        shifted = KB_EN_MESSAGEASE_SHIFTED,
+                        main = KB_EN_HR_MESSAGEASE_MAIN,
+                        shifted = KB_EN_HR_MESSAGEASE_SHIFTED,
                         numeric = KB_EN_MESSAGEASE_NUMERIC,
                 ),
                 settings =
