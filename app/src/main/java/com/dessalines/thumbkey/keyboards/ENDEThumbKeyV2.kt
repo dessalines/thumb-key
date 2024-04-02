@@ -20,7 +20,7 @@ import com.dessalines.thumbkey.utils.SwipeNWay
 import com.dessalines.thumbkey.utils.autoCapitalizeI
 import com.dessalines.thumbkey.utils.autoCapitalizeIApostrophe
 
-val KB_EN_WITH_UMLAUT_THUMBKEY_MAIN =
+val KB_EN_DE_THUMBKEY_V2_MAIN =
     KeyboardC(
         listOf(
             listOf(
@@ -289,7 +289,7 @@ val KB_EN_WITH_UMLAUT_THUMBKEY_MAIN =
         ),
     )
 
-val KB_EN_WITH_UMLAUT_THUMBKEY_SHIFTED =
+val KB_EN_DE_THUMBKEY_V2_SHIFTED =
     KeyboardC(
         listOf(
             listOf(
@@ -560,13 +560,13 @@ val KB_EN_WITH_UMLAUT_THUMBKEY_SHIFTED =
         ),
     )
 
-val KB_EN_WITH_UMLAUT_THUMBKEY: KeyboardDefinition =
+val KB_EN_DE_THUMBKEY_V2: KeyboardDefinition =
     KeyboardDefinition(
-        title = "english thumb-key with german umlauts",
+        title = "english deutsch thumb-key v2",
         modes =
             KeyboardDefinitionModes(
-                main = KB_EN_WITH_UMLAUT_THUMBKEY_MAIN,
-                shifted = KB_EN_WITH_UMLAUT_THUMBKEY_SHIFTED,
+                main = KB_EN_DE_THUMBKEY_V2_MAIN,
+                shifted = KB_EN_DE_THUMBKEY_V2_SHIFTED,
                 numeric = NUMERIC_KEYBOARD,
             ),
         settings =
