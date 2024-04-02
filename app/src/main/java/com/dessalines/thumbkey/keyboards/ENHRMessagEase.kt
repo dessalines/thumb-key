@@ -552,7 +552,7 @@ val KB_EN_HR_MESSAGEASE_SHIFTED =
 
 val KB_EN_HR_MESSAGEASE: KeyboardDefinition =
         KeyboardDefinition(
-                title = "english messagease with croatian guillemets",
+                title = "english croatian messagease",
                 modes =
                 KeyboardDefinitionModes(
                         main = KB_EN_HR_MESSAGEASE_MAIN,
