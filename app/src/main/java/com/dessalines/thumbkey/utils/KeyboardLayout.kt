@@ -13,10 +13,11 @@ import com.dessalines.thumbkey.keyboards.KB_DE_MESSAGEASE_SYMBOLS
 import com.dessalines.thumbkey.keyboards.KB_DE_THUMBKEY
 import com.dessalines.thumbkey.keyboards.KB_DE_THUMBKEY_MULTILINGUAL
 import com.dessalines.thumbkey.keyboards.KB_DE_TYPESPLIT
-import com.dessalines.thumbkey.keyboards.KB_ENDE_THUMBKEY
 import com.dessalines.thumbkey.keyboards.KB_ENEO_MESSAGEASE_SYMBOLS
 import com.dessalines.thumbkey.keyboards.KB_EN_CZ_THUMBKEY
 import com.dessalines.thumbkey.keyboards.KB_EN_DA_THUMBKEY_SYMBOLS
+import com.dessalines.thumbkey.keyboards.KB_EN_DE_THUMBKEY
+import com.dessalines.thumbkey.keyboards.KB_EN_DE_THUMBKEY_V2
 import com.dessalines.thumbkey.keyboards.KB_EN_DOUBLE_SYMBOLS
 import com.dessalines.thumbkey.keyboards.KB_EN_EE_THUMBKEY
 import com.dessalines.thumbkey.keyboards.KB_EN_EO_THUMBKEY
@@ -229,7 +230,8 @@ enum class KeyboardLayout(val keyboardDefinition: KeyboardDefinition) {
     ENMessagEaseCompose(KB_EN_MESSAGEASE_COMPOSE),
     BRFRThumbKey(KB_BR_FR_THUMBKEY),
     ENTwoHandsMessagEase(KB_EN_TWO_HANDS_MESSAGEASE),
-    ENDEThumbKey(KB_ENDE_THUMBKEY),
+    ENDEThumbKey(KB_EN_DE_THUMBKEY),
     ENHRMessagEase(KB_EN_HR_MESSAGEASE),
     CZprogrammerMessagease(KB_CZ_PROG),
+    ENDEThumbKeyV2(KB_EN_DE_THUMBKEY_V2),
 }
