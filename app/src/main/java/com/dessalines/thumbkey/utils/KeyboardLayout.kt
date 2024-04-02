@@ -6,6 +6,7 @@ import com.dessalines.thumbkey.keyboards.KB_BR_FR_THUMBKEY
 import com.dessalines.thumbkey.keyboards.KB_BY_THUMBKEY
 import com.dessalines.thumbkey.keyboards.KB_BY_THUMBKEY_SYMBOLS
 import com.dessalines.thumbkey.keyboards.KB_CA_THUMBKEY
+import com.dessalines.thumbkey.keyboards.KB_CZ_PROG
 import com.dessalines.thumbkey.keyboards.KB_DA_THUMBKEY
 import com.dessalines.thumbkey.keyboards.KB_DE_MESSAGEASE
 import com.dessalines.thumbkey.keyboards.KB_DE_MESSAGEASE_SYMBOLS
@@ -230,4 +231,5 @@ enum class KeyboardLayout(val keyboardDefinition: KeyboardDefinition) {
     ENTwoHandsMessagEase(KB_EN_TWO_HANDS_MESSAGEASE),
     ENDEThumbKey(KB_ENDE_THUMBKEY),
     ENHRMessagEase(KB_EN_HR_MESSAGEASE),
+    CZprogrammerMessagease(KB_CZ_PROG),
 }
