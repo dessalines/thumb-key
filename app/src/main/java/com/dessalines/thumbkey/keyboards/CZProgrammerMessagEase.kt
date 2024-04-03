@@ -28,7 +28,7 @@ val KB_CZ_PROG_MAIN =
                             size = FontSizeVariant.LARGE,
                             color = ColorVariant.PRIMARY,
                         ),
-                    longPress = KeyAction.CommitText("1")
+                    longPress = KeyAction.CommitText("1"),
                     swipes =
                         mapOf(
                             SwipeDirection.TOP_RIGHT to
