@@ -28,10 +28,7 @@ val KB_CZ_PROG_MAIN =
                             size = FontSizeVariant.LARGE,
                             color = ColorVariant.PRIMARY,
                         ),
-                    longPress =
-                        KeyC(
-                            action = KeyAction.CommitText("1"),
-                        ),
+                    longPress = KeyAction.CommitText("1")
                     swipes =
                         mapOf(
                             SwipeDirection.TOP_RIGHT to
@@ -83,10 +80,7 @@ val KB_CZ_PROG_MAIN =
                             size = FontSizeVariant.LARGE,
                             color = ColorVariant.PRIMARY,
                         ),
-                    longPress =
-                        KeyC(
-                            action = KeyAction.CommitText("2"),
-                        ),
+                    longPress = KeyAction.CommitText("2"),
                     swipes =
                         mapOf(
                             SwipeDirection.TOP_LEFT to
@@ -143,10 +137,7 @@ val KB_CZ_PROG_MAIN =
                             size = FontSizeVariant.LARGE,
                             color = ColorVariant.PRIMARY,
                         ),
-                    longPress =
-                        KeyC(
-                            action = KeyAction.CommitText("3"),
-                        ),
+                    longPress = KeyAction.CommitText("3"),
                     swipes =
                         mapOf(
                             SwipeDirection.TOP to
@@ -203,10 +194,7 @@ val KB_CZ_PROG_MAIN =
                             size = FontSizeVariant.LARGE,
                             color = ColorVariant.PRIMARY,
                         ),
-                    longPress =
-                        KeyC(
-                            action = KeyAction.CommitText("4"),
-                        ),
+                    longPress = KeyAction.CommitText("4"),
                     swipes =
                         mapOf(
                             SwipeDirection.TOP to
@@ -265,10 +253,7 @@ val KB_CZ_PROG_MAIN =
                             size = FontSizeVariant.LARGE,
                             color = ColorVariant.PRIMARY,
                         ),
-                    longPress =
-                        KeyC(
-                            action = KeyAction.CommitText("5"),
-                        ),
+                    longPress = KeyAction.CommitText("5"),
                     swipes =
                         mapOf(
                             SwipeDirection.TOP to
@@ -321,10 +306,7 @@ val KB_CZ_PROG_MAIN =
                             size = FontSizeVariant.LARGE,
                             color = ColorVariant.PRIMARY,
                         ),
-                    longPress =
-                        KeyC(
-                            action = KeyAction.CommitText("6"),
-                        ),
+                    longPress = KeyAction.CommitText("6"),
                     swipes =
                         mapOf(
                             SwipeDirection.TOP_LEFT to
@@ -386,10 +368,7 @@ val KB_CZ_PROG_MAIN =
                             size = FontSizeVariant.LARGE,
                             color = ColorVariant.PRIMARY,
                         ),
-                    longPress =
-                        KeyC(
-                            action = KeyAction.CommitText("7"),
-                        ),
+                    longPress = KeyAction.CommitText("7"),
                     swipes =
                         mapOf(
                             SwipeDirection.TOP to
@@ -430,10 +409,7 @@ val KB_CZ_PROG_MAIN =
                             size = FontSizeVariant.LARGE,
                             color = ColorVariant.PRIMARY,
                         ),
-                    longPress =
-                        KeyC(
-                            action = KeyAction.CommitText("8"),
-                        ),
+                    longPress = KeyAction.CommitText("8"),
                     swipes =
                         mapOf(
                             SwipeDirection.TOP_LEFT to
@@ -490,10 +466,7 @@ val KB_CZ_PROG_MAIN =
                             size = FontSizeVariant.LARGE,
                             color = ColorVariant.PRIMARY,
                         ),
-                    longPress =
-                        KeyC(
-                            action = KeyAction.CommitText("9"),
-                        ),
+                    longPress = KeyAction.CommitText("9"),
                     swipes =
                         mapOf(
                             SwipeDirection.TOP to
@@ -558,10 +531,7 @@ val KB_CZ_PROG_SHIFTED =
                             size = FontSizeVariant.LARGE,
                             color = ColorVariant.PRIMARY,
                         ),
-                    longPress =
-                        KeyC(
-                            action = KeyAction.CommitText("1"),
-                        ),
+                    longPress = KeyAction.CommitText("1"),
                     swipes =
                         mapOf(
                             SwipeDirection.TOP_RIGHT to
@@ -613,10 +583,7 @@ val KB_CZ_PROG_SHIFTED =
                             size = FontSizeVariant.LARGE,
                             color = ColorVariant.PRIMARY,
                         ),
-                    longPress =
-                        KeyC(
-                            action = KeyAction.CommitText("2"),
-                        ),
+                    longPress = KeyAction.CommitText("2"),
                     swipes =
                         mapOf(
                             SwipeDirection.TOP_LEFT to
@@ -673,10 +640,7 @@ val KB_CZ_PROG_SHIFTED =
                             size = FontSizeVariant.LARGE,
                             color = ColorVariant.PRIMARY,
                         ),
-                    longPress =
-                        KeyC(
-                            action = KeyAction.CommitText("3"),
-                        ),
+                    longPress = KeyAction.CommitText("3"),
                     swipes =
                         mapOf(
                             SwipeDirection.TOP to
@@ -733,10 +697,7 @@ val KB_CZ_PROG_SHIFTED =
                             size = FontSizeVariant.LARGE,
                             color = ColorVariant.PRIMARY,
                         ),
-                    longPress =
-                        KeyC(
-                            action = KeyAction.CommitText("4"),
-                        ),
+                    longPress = KeyAction.CommitText("4"),
                     swipes =
                         mapOf(
                             SwipeDirection.TOP to
@@ -795,10 +756,7 @@ val KB_CZ_PROG_SHIFTED =
                             size = FontSizeVariant.LARGE,
                             color = ColorVariant.PRIMARY,
                         ),
-                    longPress =
-                        KeyC(
-                            action = KeyAction.CommitText("5"),
-                        ),
+                    longPress = KeyAction.CommitText("5"),
                     swipes =
                         mapOf(
                             SwipeDirection.TOP to
@@ -851,10 +809,7 @@ val KB_CZ_PROG_SHIFTED =
                             size = FontSizeVariant.LARGE,
                             color = ColorVariant.PRIMARY,
                         ),
-                    longPress =
-                        KeyC(
-                            action = KeyAction.CommitText("6"),
-                        ),
+                    longPress = KeyAction.CommitText("6"),
                     swipes =
                         mapOf(
                             SwipeDirection.TOP_LEFT to
@@ -923,10 +878,7 @@ val KB_CZ_PROG_SHIFTED =
                             size = FontSizeVariant.LARGE,
                             color = ColorVariant.PRIMARY,
                         ),
-                    longPress =
-                        KeyC(
-                            action = KeyAction.CommitText("7"),
-                        ),
+                    longPress = KeyAction.CommitText("7"),
                     swipes =
                         mapOf(
                             SwipeDirection.TOP to
@@ -967,10 +919,7 @@ val KB_CZ_PROG_SHIFTED =
                             size = FontSizeVariant.LARGE,
                             color = ColorVariant.PRIMARY,
                         ),
-                    longPress =
-                        KeyC(
-                            action = KeyAction.CommitText("8"),
-                        ),
+                    longPress = KeyAction.CommitText("8"),
                     swipes =
                         mapOf(
                             SwipeDirection.TOP to
@@ -1022,10 +971,7 @@ val KB_CZ_PROG_SHIFTED =
                             size = FontSizeVariant.LARGE,
                             color = ColorVariant.PRIMARY,
                         ),
-                    longPress =
-                        KeyC(
-                            action = KeyAction.CommitText("9"),
-                        ),
+                    longPress = KeyAction.CommitText("9"),
                     swipes =
                         mapOf(
                             SwipeDirection.TOP to
