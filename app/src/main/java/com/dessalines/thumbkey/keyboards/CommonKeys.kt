@@ -615,3 +615,5 @@ val SPACEBAR_FRENCH_TYPESPLIT_BOTTOM_KEY_ITEM =
                 KeyAction.ReplaceLastText(" ; ", trimCount = 3),
             ),
     )
+
+val SPACEBAR_ZERO_KEY_ITEM = SPACEBAR_KEY_ITEM.copy(longPress = KeyAction.CommitText("0"))

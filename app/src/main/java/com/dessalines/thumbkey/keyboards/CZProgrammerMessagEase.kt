@@ -28,6 +28,10 @@ val KB_CZ_PROG_MAIN =
                             size = FontSizeVariant.LARGE,
                             color = ColorVariant.PRIMARY,
                         ),
+                    longPress =
+                        KeyC(
+                            action = KeyAction.CommitText("1"),
+                        ),
                     swipes =
                         mapOf(
                             SwipeDirection.TOP_RIGHT to
@@ -39,6 +43,7 @@ val KB_CZ_PROG_MAIN =
                                 KeyC(
                                     display = KeyDisplay.TextDisplay("-"),
                                     action = KeyAction.CommitText("-"),
+                                    color = ColorVariant.MUTED,
                                 ),
                             SwipeDirection.BOTTOM_RIGHT to
                                 KeyC(
@@ -49,17 +54,25 @@ val KB_CZ_PROG_MAIN =
                                 KeyC(
                                     display = KeyDisplay.TextDisplay("$"),
                                     action = KeyAction.CommitText("$"),
+                                    color = ColorVariant.MUTED,
                                 ),
                             SwipeDirection.TOP to
                                 KeyC(
                                     display = KeyDisplay.TextDisplay("°"),
                                     action = KeyAction.CommitText("°"),
+                                    color = ColorVariant.MUTED,
                                 ),
-                            SwipeDirection.LEFT to
+                            SwipeDirection.TOP_LEFT to
                                 KeyC(
                                     display = KeyDisplay.TextDisplay("`"),
                                     action = KeyAction.CommitText("`"),
+                                    color = ColorVariant.MUTED,
                                 ),
+                            SwipeDirection.LEFT to
+                                KeyC(
+                                    display = KeyDisplay.TextDisplay("q"),
+                                    action = KeyAction.CommitText("q"),
+                                )
                         ),
                 ),
                 KeyItemC(
@@ -69,6 +82,10 @@ val KB_CZ_PROG_MAIN =
                             action = KeyAction.CommitText("n"),
                             size = FontSizeVariant.LARGE,
                             color = ColorVariant.PRIMARY,
+                        ),
+                    longPress =
+                        KeyC(
+                            action = KeyAction.CommitText("2"),
                         ),
                     swipes =
                         mapOf(
@@ -91,11 +108,13 @@ val KB_CZ_PROG_MAIN =
                                 KeyC(
                                     display = KeyDisplay.TextDisplay("!"),
                                     action = KeyAction.CommitText("!"),
+                                    color = ColorVariant.MUTED,
                                 ),
                             SwipeDirection.BOTTOM_RIGHT to
                                 KeyC(
                                     display = KeyDisplay.TextDisplay("\\"),
                                     action = KeyAction.CommitText("\\"),
+                                    color = ColorVariant.MUTED,
                                 ),
                             SwipeDirection.BOTTOM to
                                 KeyC(
@@ -106,11 +125,13 @@ val KB_CZ_PROG_MAIN =
                                 KeyC(
                                     display = KeyDisplay.TextDisplay("/"),
                                     action = KeyAction.CommitText("/"),
+                                    color = ColorVariant.MUTED,
                                 ),
                             SwipeDirection.LEFT to
                                 KeyC(
                                     display = KeyDisplay.TextDisplay("+"),
                                     action = KeyAction.CommitText("+"),
+                                    color = ColorVariant.MUTED,
                                 ),
                         ),
                 ),
@@ -122,12 +143,17 @@ val KB_CZ_PROG_MAIN =
                             size = FontSizeVariant.LARGE,
                             color = ColorVariant.PRIMARY,
                         ),
+                    longPress =
+                        KeyC(
+                            action = KeyAction.CommitText("3"),
+                        ),
                     swipes =
                         mapOf(
                             SwipeDirection.TOP to
                                 KeyC(
                                     display = KeyDisplay.TextDisplay("^"),
                                     action = KeyAction.CommitText("^"),
+                                    color = ColorVariant.MUTED,
                                 ),
                             SwipeDirection.TOP_LEFT to
                                 KeyC(
@@ -137,27 +163,32 @@ val KB_CZ_PROG_MAIN =
                             SwipeDirection.BOTTOM_LEFT to
                                 KeyC(
                                     display = KeyDisplay.TextDisplay("ˇ"),
-                                    action = KeyAction.CommitText("ˇ"),
+                                    action = KeyAction.ComposeLastKey("ˇ"),
+                                    color = ColorVariant.MUTED,
                                 ),
                             SwipeDirection.LEFT to
                                 KeyC(
                                     display = KeyDisplay.TextDisplay("?"),
                                     action = KeyAction.CommitText("?"),
+                                    color = ColorVariant.MUTED,
                                 ),
                             SwipeDirection.BOTTOM to
                                 KeyC(
                                     display = KeyDisplay.TextDisplay("="),
                                     action = KeyAction.CommitText("="),
+                                    color = ColorVariant.MUTED,
                                 ),
                             SwipeDirection.TOP_RIGHT to
                                 KeyC(
                                     display = KeyDisplay.TextDisplay("¨"),
-                                    action = KeyAction.CommitText("¨"),
+                                    action = KeyAction.ComposeLastKey("¨"),
+                                    color = ColorVariant.MUTED,
                                 ),
                             SwipeDirection.BOTTOM_RIGHT to
                                 KeyC(
                                     display = KeyDisplay.TextDisplay("´"),
-                                    action = KeyAction.CommitText("´"),
+                                    action = KeyAction.ComposeLastKey("´"),
+                                    color = ColorVariant.MUTED,
                                 ),
                         ),
                 ),
@@ -171,6 +202,10 @@ val KB_CZ_PROG_MAIN =
                             action = KeyAction.CommitText("h"),
                             size = FontSizeVariant.LARGE,
                             color = ColorVariant.PRIMARY,
+                        ),
+                    longPress =
+                        KeyC(
+                            action = KeyAction.CommitText("4"),
                         ),
                     swipes =
                         mapOf(
@@ -188,21 +223,37 @@ val KB_CZ_PROG_MAIN =
                                 KeyC(
                                     display = KeyDisplay.TextDisplay("'"),
                                     action = KeyAction.CommitText("'"),
+                                    color = ColorVariant.MUTED,
+                                ),
+                            SwipeDirection.TOP_LEFT to
+                                KeyC(
+                                    display = KeyDisplay.TextDisplay("{"),
+                                    action = KeyAction.CommitText("{"),
+                                    color = ColorVariant.MUTED,
                                 ),
                             SwipeDirection.LEFT to
                                 KeyC(
                                     display = KeyDisplay.TextDisplay("("),
                                     action = KeyAction.CommitText("("),
+                                    color = ColorVariant.MUTED,
+                                ),
+                            SwipeDirection.BOTTOM_LEFT to
+                                KeyC(
+                                    display = KeyDisplay.TextDisplay("["),
+                                    action = KeyAction.CommitText("["),
+                                    color = ColorVariant.MUTED,
                                 ),
                             SwipeDirection.BOTTOM_RIGHT to
                                 KeyC(
                                     display = KeyDisplay.TextDisplay("_"),
                                     action = KeyAction.CommitText("_"),
+                                    color = ColorVariant.MUTED,
                                 ),
                             SwipeDirection.TOP_RIGHT to
                                 KeyC(
                                     display = KeyDisplay.TextDisplay("%"),
                                     action = KeyAction.CommitText("%"),
+                                    color = ColorVariant.MUTED,
                                 ),
                         ),
                 ),
@@ -213,6 +264,10 @@ val KB_CZ_PROG_MAIN =
                             action = KeyAction.CommitText("o"),
                             size = FontSizeVariant.LARGE,
                             color = ColorVariant.PRIMARY,
+                        ),
+                    longPress =
+                        KeyC(
+                            action = KeyAction.CommitText("5"),
                         ),
                     swipes =
                         mapOf(
@@ -266,6 +321,10 @@ val KB_CZ_PROG_MAIN =
                             size = FontSizeVariant.LARGE,
                             color = ColorVariant.PRIMARY,
                         ),
+                    longPress =
+                        KeyC(
+                            action = KeyAction.CommitText("6"),
+                        ),
                     swipes =
                         mapOf(
                             SwipeDirection.TOP_LEFT to
@@ -284,20 +343,35 @@ val KB_CZ_PROG_MAIN =
                                     action = KeyAction.ToggleShiftMode(true),
                                     color = ColorVariant.MUTED,
                                 ),
+                            SwipeDirection.TOP_RIGHT to
+                                KeyC(
+                                    display = KeyDisplay.TextDisplay("}"),
+                                    action = KeyAction.CommitText("}"),
+                                    color = ColorVariant.MUTED,
+                                ),
+                            SwipeDirection.BOTTOM_RIGHT to
+                                KeyC(
+                                    display = KeyDisplay.TextDisplay("]"),
+                                    action = KeyAction.CommitText("]"),
+                                    color = ColorVariant.MUTED,
+                                ),
                             SwipeDirection.RIGHT to
                                 KeyC(
                                     display = KeyDisplay.TextDisplay(")"),
                                     action = KeyAction.CommitText(")"),
+                                    color = ColorVariant.MUTED,
                                 ),
                             SwipeDirection.BOTTOM_LEFT to
                                 KeyC(
                                     display = KeyDisplay.TextDisplay("@"),
                                     action = KeyAction.CommitText("@"),
+                                    color = ColorVariant.MUTED,
                                 ),
-                            SwipeDirection.TOP_RIGHT to
+                            SwipeDirection.BOTTOM to
                                 KeyC(
                                     display = KeyDisplay.TextDisplay("|"),
                                     action = KeyAction.CommitText("|"),
+                                    color = ColorVariant.MUTED,
                                 ),
                         ),
                 ),
@@ -311,6 +385,10 @@ val KB_CZ_PROG_MAIN =
                             action = KeyAction.CommitText("t"),
                             size = FontSizeVariant.LARGE,
                             color = ColorVariant.PRIMARY,
+                        ),
+                    longPress =
+                        KeyC(
+                            action = KeyAction.CommitText("7"),
                         ),
                     swipes =
                         mapOf(
@@ -328,16 +406,19 @@ val KB_CZ_PROG_MAIN =
                                 KeyC(
                                     display = KeyDisplay.TextDisplay("<"),
                                     action = KeyAction.CommitText("<"),
+                                    color = ColorVariant.MUTED,
                                 ),
                             SwipeDirection.TOP_LEFT to
                                 KeyC(
                                     display = KeyDisplay.TextDisplay("~"),
                                     action = KeyAction.CommitText("~"),
+                                    color = ColorVariant.MUTED,
                                 ),
                             SwipeDirection.RIGHT to
                                 KeyC(
                                     display = KeyDisplay.TextDisplay("*"),
                                     action = KeyAction.CommitText("*"),
+                                    color = ColorVariant.MUTED,
                                 ),
                         ),
                 ),
@@ -349,12 +430,17 @@ val KB_CZ_PROG_MAIN =
                             size = FontSizeVariant.LARGE,
                             color = ColorVariant.PRIMARY,
                         ),
+                    longPress =
+                        KeyC(
+                            action = KeyAction.CommitText("8"),
+                        ),
                     swipes =
                         mapOf(
                             SwipeDirection.TOP_LEFT to
                                 KeyC(
                                     display = KeyDisplay.TextDisplay("\""),
                                     action = KeyAction.CommitText("\""),
+                                    color = ColorVariant.MUTED,
                                 ),
                             SwipeDirection.TOP to
                                 KeyC(
@@ -404,6 +490,10 @@ val KB_CZ_PROG_MAIN =
                             size = FontSizeVariant.LARGE,
                             color = ColorVariant.PRIMARY,
                         ),
+                    longPress =
+                        KeyC(
+                            action = KeyAction.CommitText("9"),
+                        ),
                     swipes =
                         mapOf(
                             SwipeDirection.TOP to
@@ -420,6 +510,7 @@ val KB_CZ_PROG_MAIN =
                                 KeyC(
                                     display = KeyDisplay.TextDisplay("&"),
                                     action = KeyAction.CommitText("&"),
+                                    color = ColorVariant.MUTED,
                                 ),
                             SwipeDirection.LEFT to
                                 KeyC(
@@ -430,23 +521,26 @@ val KB_CZ_PROG_MAIN =
                                 KeyC(
                                     display = KeyDisplay.TextDisplay(";"),
                                     action = KeyAction.CommitText(";"),
+                                    color = ColorVariant.MUTED,
                                 ),
                             SwipeDirection.RIGHT to
                                 KeyC(
                                     display = KeyDisplay.TextDisplay(">"),
                                     action = KeyAction.CommitText(">"),
+                                    color = ColorVariant.MUTED,
                                 ),
                             SwipeDirection.BOTTOM to
                                 KeyC(
                                     display = KeyDisplay.TextDisplay("#"),
                                     action = KeyAction.CommitText("#"),
+                                    color = ColorVariant.MUTED,
                                 ),
                         ),
                 ),
                 BACKSPACE_KEY_ITEM,
             ),
             listOf(
-                SPACEBAR_KEY_ITEM,
+                SPACEBAR_ZERO_KEY_ITEM,
                 RETURN_KEY_ITEM,
             ),
         ),
@@ -464,6 +558,10 @@ val KB_CZ_PROG_SHIFTED =
                             size = FontSizeVariant.LARGE,
                             color = ColorVariant.PRIMARY,
                         ),
+                    longPress =
+                        KeyC(
+                            action = KeyAction.CommitText("1"),
+                        ),
                     swipes =
                         mapOf(
                             SwipeDirection.TOP_RIGHT to
@@ -475,6 +573,7 @@ val KB_CZ_PROG_SHIFTED =
                                 KeyC(
                                     display = KeyDisplay.TextDisplay("-"),
                                     action = KeyAction.CommitText("-"),
+                                    color = ColorVariant.MUTED,
                                 ),
                             SwipeDirection.BOTTOM_RIGHT to
                                 KeyC(
@@ -485,17 +584,25 @@ val KB_CZ_PROG_SHIFTED =
                                 KeyC(
                                     display = KeyDisplay.TextDisplay("$"),
                                     action = KeyAction.CommitText("$"),
+                                    color = ColorVariant.MUTED,
                                 ),
                             SwipeDirection.TOP to
                                 KeyC(
                                     display = KeyDisplay.TextDisplay("°"),
                                     action = KeyAction.CommitText("°"),
+                                    color = ColorVariant.MUTED,
                                 ),
-                            SwipeDirection.LEFT to
+                            SwipeDirection.TOP_LEFT to
                                 KeyC(
                                     display = KeyDisplay.TextDisplay("`"),
                                     action = KeyAction.CommitText("`"),
+                                    color = ColorVariant.MUTED,
                                 ),
+                            SwipeDirection.LEFT to
+                                KeyC(
+                                    display = KeyDisplay.TextDisplay("Q"),
+                                    action = KeyAction.CommitText("Q"),
+                                )
                         ),
                 ),
                 KeyItemC(
@@ -505,6 +612,10 @@ val KB_CZ_PROG_SHIFTED =
                             action = KeyAction.CommitText("N"),
                             size = FontSizeVariant.LARGE,
                             color = ColorVariant.PRIMARY,
+                        ),
+                    longPress =
+                        KeyC(
+                            action = KeyAction.CommitText("2"),
                         ),
                     swipes =
                         mapOf(
@@ -527,11 +638,13 @@ val KB_CZ_PROG_SHIFTED =
                                 KeyC(
                                     display = KeyDisplay.TextDisplay("!"),
                                     action = KeyAction.CommitText("!"),
+                                    color = ColorVariant.MUTED,
                                 ),
                             SwipeDirection.BOTTOM_RIGHT to
                                 KeyC(
                                     display = KeyDisplay.TextDisplay("\\"),
                                     action = KeyAction.CommitText("\\"),
+                                    color = ColorVariant.MUTED,
                                 ),
                             SwipeDirection.BOTTOM to
                                 KeyC(
@@ -542,11 +655,13 @@ val KB_CZ_PROG_SHIFTED =
                                 KeyC(
                                     display = KeyDisplay.TextDisplay("/"),
                                     action = KeyAction.CommitText("/"),
+                                    color = ColorVariant.MUTED,
                                 ),
                             SwipeDirection.LEFT to
                                 KeyC(
                                     display = KeyDisplay.TextDisplay("+"),
                                     action = KeyAction.CommitText("+"),
+                                    color = ColorVariant.MUTED,
                                 ),
                         ),
                 ),
@@ -558,12 +673,17 @@ val KB_CZ_PROG_SHIFTED =
                             size = FontSizeVariant.LARGE,
                             color = ColorVariant.PRIMARY,
                         ),
+                    longPress =
+                        KeyC(
+                            action = KeyAction.CommitText("3"),
+                        ),
                     swipes =
                         mapOf(
                             SwipeDirection.TOP to
                                 KeyC(
                                     display = KeyDisplay.TextDisplay("^"),
                                     action = KeyAction.CommitText("^"),
+                                    color = ColorVariant.MUTED,
                                 ),
                             SwipeDirection.TOP_LEFT to
                                 KeyC(
@@ -573,27 +693,32 @@ val KB_CZ_PROG_SHIFTED =
                             SwipeDirection.BOTTOM_LEFT to
                                 KeyC(
                                     display = KeyDisplay.TextDisplay("ˇ"),
-                                    action = KeyAction.CommitText("ˇ"),
+                                    action = KeyAction.ComposeLastKey("ˇ"),
+                                    color = ColorVariant.MUTED,
                                 ),
                             SwipeDirection.LEFT to
                                 KeyC(
                                     display = KeyDisplay.TextDisplay("?"),
                                     action = KeyAction.CommitText("?"),
+                                    color = ColorVariant.MUTED,
                                 ),
                             SwipeDirection.BOTTOM to
                                 KeyC(
                                     display = KeyDisplay.TextDisplay("="),
                                     action = KeyAction.CommitText("="),
+                                    color = ColorVariant.MUTED,
                                 ),
                             SwipeDirection.TOP_RIGHT to
                                 KeyC(
                                     display = KeyDisplay.TextDisplay("¨"),
-                                    action = KeyAction.CommitText("¨"),
+                                    action = KeyAction.ComposeLastKey("¨"),
+                                    color = ColorVariant.MUTED,
                                 ),
                             SwipeDirection.BOTTOM_RIGHT to
                                 KeyC(
                                     display = KeyDisplay.TextDisplay("´"),
-                                    action = KeyAction.CommitText("´"),
+                                    action = KeyAction.ComposeLastKey("´"),
+                                    color = ColorVariant.MUTED,
                                 ),
                         ),
                 ),
@@ -607,6 +732,10 @@ val KB_CZ_PROG_SHIFTED =
                             action = KeyAction.CommitText("H"),
                             size = FontSizeVariant.LARGE,
                             color = ColorVariant.PRIMARY,
+                        ),
+                    longPress =
+                        KeyC(
+                            action = KeyAction.CommitText("4"),
                         ),
                     swipes =
                         mapOf(
@@ -624,21 +753,37 @@ val KB_CZ_PROG_SHIFTED =
                                 KeyC(
                                     display = KeyDisplay.TextDisplay("'"),
                                     action = KeyAction.CommitText("'"),
+                                    color = ColorVariant.MUTED,
+                                ),
+                            SwipeDirection.TOP_LEFT to
+                                KeyC(
+                                    display = KeyDisplay.TextDisplay("{"),
+                                    action = KeyAction.CommitText("{"),
+                                    color = ColorVariant.MUTED,
                                 ),
                             SwipeDirection.LEFT to
                                 KeyC(
                                     display = KeyDisplay.TextDisplay("("),
                                     action = KeyAction.CommitText("("),
+                                    color = ColorVariant.MUTED,
+                                ),
+                            SwipeDirection.BOTTOM_LEFT to
+                                KeyC(
+                                    display = KeyDisplay.TextDisplay("["),
+                                    action = KeyAction.CommitText("["),
+                                    color = ColorVariant.MUTED,
                                 ),
                             SwipeDirection.BOTTOM_RIGHT to
                                 KeyC(
                                     display = KeyDisplay.TextDisplay("_"),
                                     action = KeyAction.CommitText("_"),
+                                    color = ColorVariant.MUTED,
                                 ),
                             SwipeDirection.TOP_RIGHT to
                                 KeyC(
                                     display = KeyDisplay.TextDisplay("%"),
                                     action = KeyAction.CommitText("%"),
+                                    color = ColorVariant.MUTED,
                                 ),
                         ),
                 ),
@@ -649,6 +794,10 @@ val KB_CZ_PROG_SHIFTED =
                             action = KeyAction.CommitText("O"),
                             size = FontSizeVariant.LARGE,
                             color = ColorVariant.PRIMARY,
+                        ),
+                    longPress =
+                        KeyC(
+                            action = KeyAction.CommitText("5"),
                         ),
                     swipes =
                         mapOf(
@@ -702,6 +851,10 @@ val KB_CZ_PROG_SHIFTED =
                             size = FontSizeVariant.LARGE,
                             color = ColorVariant.PRIMARY,
                         ),
+                    longPress =
+                        KeyC(
+                            action = KeyAction.CommitText("6"),
+                        ),
                     swipes =
                         mapOf(
                             SwipeDirection.TOP_LEFT to
@@ -727,20 +880,35 @@ val KB_CZ_PROG_SHIFTED =
                                     action = KeyAction.ToggleShiftMode(false),
                                     color = ColorVariant.MUTED,
                                 ),
+                            SwipeDirection.TOP_RIGHT to
+                                KeyC(
+                                    display = KeyDisplay.TextDisplay("}"),
+                                    action = KeyAction.CommitText("}"),
+                                    color = ColorVariant.MUTED,
+                                ),
+                            SwipeDirection.BOTTOM_RIGHT to
+                                KeyC(
+                                    display = KeyDisplay.TextDisplay("]"),
+                                    action = KeyAction.CommitText("]"),
+                                    color = ColorVariant.MUTED,
+                                ),
                             SwipeDirection.RIGHT to
                                 KeyC(
                                     display = KeyDisplay.TextDisplay(")"),
                                     action = KeyAction.CommitText(")"),
+                                    color = ColorVariant.MUTED,
                                 ),
                             SwipeDirection.BOTTOM_LEFT to
                                 KeyC(
                                     display = KeyDisplay.TextDisplay("@"),
                                     action = KeyAction.CommitText("@"),
+                                    color = ColorVariant.MUTED,
                                 ),
-                            SwipeDirection.TOP_RIGHT to
+                            SwipeDirection.BOTTOM to
                                 KeyC(
                                     display = KeyDisplay.TextDisplay("|"),
                                     action = KeyAction.CommitText("|"),
+                                    color = ColorVariant.MUTED,
                                 ),
                         ),
                 ),
@@ -754,6 +922,10 @@ val KB_CZ_PROG_SHIFTED =
                             action = KeyAction.CommitText("T"),
                             size = FontSizeVariant.LARGE,
                             color = ColorVariant.PRIMARY,
+                        ),
+                    longPress =
+                        KeyC(
+                            action = KeyAction.CommitText("7"),
                         ),
                     swipes =
                         mapOf(
@@ -771,16 +943,19 @@ val KB_CZ_PROG_SHIFTED =
                                 KeyC(
                                     display = KeyDisplay.TextDisplay("<"),
                                     action = KeyAction.CommitText("<"),
+                                    color = ColorVariant.MUTED,
                                 ),
                             SwipeDirection.TOP_LEFT to
                                 KeyC(
                                     display = KeyDisplay.TextDisplay("~"),
                                     action = KeyAction.CommitText("~"),
+                                    color = ColorVariant.MUTED,
                                 ),
                             SwipeDirection.RIGHT to
                                 KeyC(
                                     display = KeyDisplay.TextDisplay("*"),
                                     action = KeyAction.CommitText("*"),
+                                    color = ColorVariant.MUTED,
                                 ),
                         ),
                 ),
@@ -791,6 +966,10 @@ val KB_CZ_PROG_SHIFTED =
                             action = KeyAction.CommitText("E"),
                             size = FontSizeVariant.LARGE,
                             color = ColorVariant.PRIMARY,
+                        ),
+                    longPress =
+                        KeyC(
+                            action = KeyAction.CommitText("8"),
                         ),
                     swipes =
                         mapOf(
@@ -819,6 +998,7 @@ val KB_CZ_PROG_SHIFTED =
                                     display = KeyDisplay.TextDisplay(":"),
                                     action = KeyAction.CommitText(":"),
                                     color = ColorVariant.MUTED,
+                                    color = ColorVariant.MUTED,
                                 ),
                             SwipeDirection.BOTTOM to
                                 KeyC(
@@ -842,6 +1022,10 @@ val KB_CZ_PROG_SHIFTED =
                             size = FontSizeVariant.LARGE,
                             color = ColorVariant.PRIMARY,
                         ),
+                    longPress =
+                        KeyC(
+                            action = KeyAction.CommitText("9"),
+                        ),
                     swipes =
                         mapOf(
                             SwipeDirection.TOP to
@@ -858,6 +1042,7 @@ val KB_CZ_PROG_SHIFTED =
                                 KeyC(
                                     display = KeyDisplay.TextDisplay("&"),
                                     action = KeyAction.CommitText("&"),
+                                    color = ColorVariant.MUTED,
                                 ),
                             SwipeDirection.LEFT to
                                 KeyC(
@@ -868,23 +1053,26 @@ val KB_CZ_PROG_SHIFTED =
                                 KeyC(
                                     display = KeyDisplay.TextDisplay(";"),
                                     action = KeyAction.CommitText(";"),
+                                    color = ColorVariant.MUTED,
                                 ),
                             SwipeDirection.RIGHT to
                                 KeyC(
                                     display = KeyDisplay.TextDisplay(">"),
                                     action = KeyAction.CommitText(">"),
+                                    color = ColorVariant.MUTED,
                                 ),
                             SwipeDirection.BOTTOM to
                                 KeyC(
                                     display = KeyDisplay.TextDisplay("#"),
                                     action = KeyAction.CommitText("#"),
+                                    color = ColorVariant.MUTED,
                                 ),
                         ),
                 ),
                 BACKSPACE_KEY_ITEM,
             ),
             listOf(
-                SPACEBAR_KEY_ITEM,
+                SPACEBAR_ZERO_KEY_ITEM,
                 RETURN_KEY_ITEM,
             ),
         ),
@@ -892,7 +1080,7 @@ val KB_CZ_PROG_SHIFTED =
 
 val KB_CZ_PROG: KeyboardDefinition =
     KeyboardDefinition(
-        title = "čeština programming nessagease",
+        title = "čeština programming messagease",
         modes =
             KeyboardDefinitionModes(
                 main = KB_CZ_PROG_MAIN,
