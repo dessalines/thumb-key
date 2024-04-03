@@ -947,7 +947,6 @@ val KB_CZ_PROG_SHIFTED =
                                     display = KeyDisplay.TextDisplay(":"),
                                     action = KeyAction.CommitText(":"),
                                     color = ColorVariant.MUTED,
-                                    color = ColorVariant.MUTED,
                                 ),
                             SwipeDirection.BOTTOM to
                                 KeyC(
