@@ -72,7 +72,7 @@ val KB_CZ_PROG_MAIN =
                                 KeyC(
                                     display = KeyDisplay.TextDisplay("q"),
                                     action = KeyAction.CommitText("q"),
-                                )
+                                ),
                         ),
                 ),
                 KeyItemC(
@@ -602,7 +602,7 @@ val KB_CZ_PROG_SHIFTED =
                                 KeyC(
                                     display = KeyDisplay.TextDisplay("Q"),
                                     action = KeyAction.CommitText("Q"),
-                                )
+                                ),
                         ),
                 ),
                 KeyItemC(
