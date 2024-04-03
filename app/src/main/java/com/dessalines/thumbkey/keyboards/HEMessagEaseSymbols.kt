@@ -42,6 +42,11 @@ val KB_HE_MESSAGEASE_SYMBOLS_MAIN =
                                     action = KeyAction.CommitText("$"),
                                     color = ColorVariant.MUTED,
                                 ),
+							SwipeDirection.BOTTOM to
+                                KeyC(
+                                    display = KeyDisplay.TextDisplay("ץ"),
+                                    action = KeyAction.CommitText("ץ"),
+                                ),
                         ),
                 ),
                 KeyItemC(
@@ -120,8 +125,8 @@ val KB_HE_MESSAGEASE_SYMBOLS_MAIN =
                                 ),
                             SwipeDirection.LEFT to
                                 KeyC(
-                                    display = KeyDisplay.TextDisplay("ץ"),
-                                    action = KeyAction.CommitText("ץ"),
+                                    display = KeyDisplay.TextDisplay("?"),
+                                    action = KeyAction.CommitText("?"),
                                 ),
                             SwipeDirection.BOTTOM to
                                 KeyC(
