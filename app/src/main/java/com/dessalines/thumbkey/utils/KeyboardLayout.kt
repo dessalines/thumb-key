@@ -235,5 +235,5 @@ enum class KeyboardLayout(val keyboardDefinition: KeyboardDefinition) {
     ENHRMessagEase(KB_EN_HR_MESSAGEASE),
     CZprogrammerMessagease(KB_CZ_PROG),
     ENDEThumbKeyV2(KB_EN_DE_THUMBKEY_V2),
-    ENESCA_THUMBKEY(KB_EN_ES_CA_THUMBKEY),
+    ENESCAThumbKey(KB_EN_ES_CA_THUMBKEY),
 }
