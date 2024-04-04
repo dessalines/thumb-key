@@ -1,7 +1,6 @@
 package com.dessalines.thumbkey.keyboards
 
 import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.outlined.ArrowDropDown
 import androidx.compose.material.icons.outlined.ArrowDropUp
 import androidx.compose.material.icons.outlined.Copyright
 import androidx.compose.material.icons.outlined.KeyboardCapslock
@@ -52,7 +51,7 @@ val KB_EN_ES_CA_THUMBKEY_MAIN =
                         ),
                     swipes =
                         mapOf(
-                           SwipeDirection.TOP_LEFT to
+                            SwipeDirection.TOP_LEFT to
                                 KeyC(
                                     display = KeyDisplay.TextDisplay("¡"),
                                     action = KeyAction.CommitText("¡"),
@@ -62,7 +61,7 @@ val KB_EN_ES_CA_THUMBKEY_MAIN =
                                     display = KeyDisplay.TextDisplay("!"),
                                     action = KeyAction.CommitText("!"),
                                 ),
-                             SwipeDirection.BOTTOM to
+                            SwipeDirection.BOTTOM to
                                 KeyC(
                                     display = KeyDisplay.TextDisplay("g"),
                                     action = KeyAction.CommitText("g"),
@@ -140,7 +139,6 @@ val KB_EN_ES_CA_THUMBKEY_MAIN =
                                     display = KeyDisplay.TextDisplay("ñ"),
                                     action = KeyAction.CommitText("ñ"),
                                 ),
-
                         ),
                 ),
                 KeyItemC(
@@ -215,7 +213,7 @@ val KB_EN_ES_CA_THUMBKEY_MAIN =
                                     display = KeyDisplay.TextDisplay("á"),
                                     action = KeyAction.CommitText("á"),
                                 ),
-                              SwipeDirection.LEFT to
+                            SwipeDirection.LEFT to
                                 KeyC(
                                     display = KeyDisplay.TextDisplay("l"),
                                     action = KeyAction.CommitText("l"),
@@ -225,7 +223,7 @@ val KB_EN_ES_CA_THUMBKEY_MAIN =
                                     display = KeyDisplay.TextDisplay("l·l"),
                                     action = KeyAction.CommitText("l·l"),
                                 ),
-                             SwipeDirection.TOP to
+                            SwipeDirection.TOP to
                                 KeyC(
                                     display = KeyDisplay.IconDisplay(Icons.Outlined.ArrowDropUp),
                                     action = KeyAction.ToggleShiftMode(true),
@@ -257,7 +255,7 @@ val KB_EN_ES_CA_THUMBKEY_MAIN =
                                     display = KeyDisplay.TextDisplay("ç"),
                                     action = KeyAction.CommitText("ç"),
                                 ),
-                         ),
+                        ),
                 ),
                 KeyItemC(
                     center =
@@ -308,7 +306,7 @@ val KB_EN_ES_CA_THUMBKEY_MAIN =
                                     display = KeyDisplay.TextDisplay("í"),
                                     action = KeyAction.CommitText("í"),
                                 ),
-                         ),
+                        ),
                 ),
                 KeyItemC(
                     center =
@@ -335,7 +333,7 @@ val KB_EN_ES_CA_THUMBKEY_MAIN =
                                     display = KeyDisplay.TextDisplay("è"),
                                     action = KeyAction.CommitText("è"),
                                 ),
-                         ),
+                        ),
                 ),
                 BACKSPACE_KEY_ITEM,
             ),
@@ -378,7 +376,7 @@ val KB_EN_ES_CA_HUMBKEY_SHIFTED =
                         ),
                     swipes =
                         mapOf(
-                           SwipeDirection.TOP_LEFT to
+                            SwipeDirection.TOP_LEFT to
                                 KeyC(
                                     display = KeyDisplay.TextDisplay("¡"),
                                     action = KeyAction.CommitText("¡"),
@@ -388,7 +386,7 @@ val KB_EN_ES_CA_HUMBKEY_SHIFTED =
                                     display = KeyDisplay.TextDisplay("!"),
                                     action = KeyAction.CommitText("!"),
                                 ),
-                              SwipeDirection.BOTTOM to
+                            SwipeDirection.BOTTOM to
                                 KeyC(
                                     display = KeyDisplay.TextDisplay("G"),
                                     action = KeyAction.CommitText("G"),
@@ -440,7 +438,7 @@ val KB_EN_ES_CA_HUMBKEY_SHIFTED =
                                     display = KeyDisplay.TextDisplay("?"),
                                     action = KeyAction.CommitText("?"),
                                 ),
-                         ),
+                        ),
                 ),
                 EMOJI_KEY_ITEM,
             ),
@@ -466,7 +464,6 @@ val KB_EN_ES_CA_HUMBKEY_SHIFTED =
                                     display = KeyDisplay.TextDisplay("Ñ"),
                                     action = KeyAction.CommitText("Ñ"),
                                 ),
-
                         ),
                 ),
                 KeyItemC(
@@ -541,7 +538,7 @@ val KB_EN_ES_CA_HUMBKEY_SHIFTED =
                                     display = KeyDisplay.TextDisplay("Á"),
                                     action = KeyAction.CommitText("Á"),
                                 ),
-                              SwipeDirection.LEFT to
+                            SwipeDirection.LEFT to
                                 KeyC(
                                     display = KeyDisplay.TextDisplay("L"),
                                     action = KeyAction.CommitText("L"),
@@ -584,7 +581,7 @@ val KB_EN_ES_CA_HUMBKEY_SHIFTED =
                                     display = KeyDisplay.TextDisplay("Ç"),
                                     action = KeyAction.CommitText("Ç"),
                                 ),
-                         ),
+                        ),
                 ),
                 KeyItemC(
                     center =
@@ -635,7 +632,7 @@ val KB_EN_ES_CA_HUMBKEY_SHIFTED =
                                     display = KeyDisplay.TextDisplay("Í"),
                                     action = KeyAction.CommitText("Í"),
                                 ),
-                         ),
+                        ),
                 ),
                 KeyItemC(
                     center =
@@ -662,7 +659,7 @@ val KB_EN_ES_CA_HUMBKEY_SHIFTED =
                                     display = KeyDisplay.TextDisplay("È"),
                                     action = KeyAction.CommitText("È"),
                                 ),
-                         ),
+                        ),
                 ),
                 BACKSPACE_KEY_ITEM,
             ),
