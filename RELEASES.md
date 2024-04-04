@@ -1,7 +1,25 @@
+# Thumb-Key 2.7.4 (2024-04-04)
+
+## What's Changed in 2.7.4
+
+- New Keyboard layout English Spanish Catalan by @Norgus in [#826](https://github.com/dessalines/thumb-key/pull/826)
+- Fix add layout instructions. by @dessalines in [#828](https://github.com/dessalines/thumb-key/pull/828)
+- He messag ease symbols add qmark by @BoredGeo in [#825](https://github.com/dessalines/thumb-key/pull/825)
+- Fix some errors in CZProgrammerMessagEase by @ondrachwiedziuk in [#827](https://github.com/dessalines/thumb-key/pull/827)
+- Removing cardano, this was never used. by @dessalines in [#824](https://github.com/dessalines/thumb-key/pull/824)
+
+## New Contributors
+
+- @Norgus made their first contribution in [#826](https://github.com/dessalines/thumb-key/pull/826)
+- @BoredGeo made their first contribution in [#825](https://github.com/dessalines/thumb-key/pull/825)
+
+**Full Changelog**: https://github.com/dessalines/thumb-key/compare/2.7.3...2.7.4
+
 # Thumb-Key 2.7.3 (2024-04-02)
 
 ## What's Changed in 2.7.3
 
+- Upping version. by @dessalines
 - added standart english layout with german umlauts by @philipp8101 in [#818](https://github.com/dessalines/thumb-key/pull/818)
 - Add CZ programmer Messagease keyboard layout by @ondrachwiedziuk in [#821](https://github.com/dessalines/thumb-key/pull/821)
 - Add EN HR MessageEase Variant by @ssaric in [#823](https://github.com/dessalines/thumb-key/pull/823)
@@ -10,7 +28,6 @@
 ## New Contributors
 
 - @philipp8101 made their first contribution in [#818](https://github.com/dessalines/thumb-key/pull/818)
-- @ondrachwiedziuk made their first contribution in [#821](https://github.com/dessalines/thumb-key/pull/821)
 - @ssaric made their first contribution in [#823](https://github.com/dessalines/thumb-key/pull/823)
 
 **Full Changelog**: https://github.com/dessalines/thumb-key/compare/2.7.2...2.7.3
