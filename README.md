@@ -165,7 +165,7 @@ I'd be happy to accept additions to add more languages, and layouts. To start:
   - Change the characters to whatever you'd like.
   - This file contains both a _shifted_, and _non-shifted_ keyboard, so make sure you take care of both.
   - You can also add or subtract columns if you want, but the layout must remain a grid. I **highly recommend** sticking with the 3x3 layout.
-- Add the new keyboard to the end of [KeyboardLayout.kt file](https://github.com/dessalines/thumb-key/blob/main/app/src/main/java/com/dessalines/thumbkey/utils/KeyboardLayout.kt).
+- Add the new keyboard to the end of [KeyboardLayout.kt file](https://github.com/dessalines/thumb-key/blob/main/app/src/main/java/com/dessalines/thumbkey/utils/KeyboardLayout.kt). If you don't know how to do this, skip to the next step.
 - Either open a pull request, or an issue, linking your new keyboard file. I'll handle the rest of the work.
 
 ## Theming guide
