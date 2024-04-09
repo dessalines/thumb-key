@@ -707,7 +707,7 @@ val KB_VN_THUMBKEY_SHIFTED =
 
 val KB_VN_THUMBKEY: KeyboardDefinition =
     KeyboardDefinition(
-        title = "tiếng Việt thumb-key",
+        title = "tiếng việt thumb-key",
         modes =
             KeyboardDefinitionModes(
                 main = KB_VN_THUMBKEY_MAIN,
