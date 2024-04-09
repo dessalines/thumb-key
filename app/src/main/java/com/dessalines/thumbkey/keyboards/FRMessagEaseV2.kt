@@ -16,7 +16,7 @@ import com.dessalines.thumbkey.utils.KeyboardDefinition
 import com.dessalines.thumbkey.utils.KeyboardDefinitionModes
 import com.dessalines.thumbkey.utils.SwipeDirection
 
-val KB_FR_MESSAGEASE_MAIN =
+val KB_FR_MESSAGEASE_V2_MAIN =
     KeyboardC(
         listOf(
             listOf(
@@ -191,8 +191,8 @@ val KB_FR_MESSAGEASE_MAIN =
                                 ),
                             SwipeDirection.TOP to
                                 KeyC(
-                                    display = KeyDisplay.TextDisplay("û"),
-                                    action = KeyAction.CommitText("û"),
+                                    display = KeyDisplay.TextDisplay("ô"),
+                                    action = KeyAction.CommitText("ô"),
                                 ),
                             SwipeDirection.BOTTOM_LEFT to
                                 KeyC(
@@ -366,8 +366,9 @@ val KB_FR_MESSAGEASE_MAIN =
                                 ),
                             SwipeDirection.BOTTOM to
                                 KeyC(
-                                    display = KeyDisplay.TextDisplay("ù"),
-                                    action = KeyAction.CommitText("ù"),
+                                    display = KeyDisplay.TextDisplay("¨"),
+                                    action = KeyAction.CommitText("\u0308"),
+                                    color = ColorVariant.MUTED,
                                 ),
                             SwipeDirection.BOTTOM_LEFT to
                                 KeyC(
@@ -479,12 +480,6 @@ val KB_FR_MESSAGEASE_MAIN =
                                     action = KeyAction.CommitText(";"),
                                     color = ColorVariant.MUTED,
                                 ),
-                            SwipeDirection.BOTTOM to
-                                KeyC(
-                                    display = KeyDisplay.TextDisplay("¨"),
-                                    action = KeyAction.CommitText("\u0308"),
-                                    color = ColorVariant.MUTED,
-                                ),
                         ),
                 ),
                 BACKSPACE_KEY_ITEM,
@@ -496,7 +491,7 @@ val KB_FR_MESSAGEASE_MAIN =
         ),
     )
 
-val KB_FR_MESSAGEASE_SHIFTED =
+val KB_FR_MESSAGEASE_V2_SHIFTED =
     KeyboardC(
         listOf(
             listOf(
@@ -671,8 +666,8 @@ val KB_FR_MESSAGEASE_SHIFTED =
                                 ),
                             SwipeDirection.TOP to
                                 KeyC(
-                                    display = KeyDisplay.TextDisplay("Û"),
-                                    action = KeyAction.CommitText("Û"),
+                                    display = KeyDisplay.TextDisplay("Ô"),
+                                    action = KeyAction.CommitText("Ô"),
                                 ),
                             SwipeDirection.BOTTOM_LEFT to
                                 KeyC(
@@ -853,8 +848,9 @@ val KB_FR_MESSAGEASE_SHIFTED =
                                 ),
                             SwipeDirection.BOTTOM to
                                 KeyC(
-                                    display = KeyDisplay.TextDisplay("Ù"),
-                                    action = KeyAction.CommitText("Ù"),
+                                    display = KeyDisplay.TextDisplay("¨"),
+                                    action = KeyAction.CommitText("\u0308"),
+                                    color = ColorVariant.MUTED,
                                 ),
                             SwipeDirection.BOTTOM_LEFT to
                                 KeyC(
@@ -972,12 +968,6 @@ val KB_FR_MESSAGEASE_SHIFTED =
                                     action = KeyAction.CommitText(";"),
                                     color = ColorVariant.MUTED,
                                 ),
-                            SwipeDirection.BOTTOM to
-                                KeyC(
-                                    display = KeyDisplay.TextDisplay("¨"),
-                                    action = KeyAction.CommitText("\u0308"),
-                                    color = ColorVariant.MUTED,
-                                ),
                         ),
                 ),
                 BACKSPACE_KEY_ITEM,
@@ -989,13 +979,13 @@ val KB_FR_MESSAGEASE_SHIFTED =
         ),
     )
 
-val KB_FR_MESSAGEASE: KeyboardDefinition =
+val KB_FR_MESSAGEASE_V2: KeyboardDefinition =
     KeyboardDefinition(
-        title = "français messagease",
+        title = "français messagease v2",
         modes =
             KeyboardDefinitionModes(
-                main = KB_FR_MESSAGEASE_MAIN,
-                shifted = KB_FR_MESSAGEASE_SHIFTED,
+                main = KB_FR_MESSAGEASE_V2_MAIN,
+                shifted = KB_FR_MESSAGEASE_V2_SHIFTED,
                 numeric = FRENCH_NUMERIC_KEYBOARD,
             ),
     )
