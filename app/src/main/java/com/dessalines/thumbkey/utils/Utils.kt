@@ -589,7 +589,23 @@ fun performKeyAction(
                             " " -> "°"
                             else -> textBefore
                         }
-
+                    "˘" ->
+                        when (textBefore) {
+                            "a" -> "ă"
+                            "A" -> "Ă"
+                            "e" -> "ĕ"
+                            "E" -> "Ĕ"
+                            "g" -> "ğ"
+                            "G" -> "Ğ"
+                            "i" -> "ĭ"
+                            "I" -> "Ĭ"
+                            "o" -> "ŏ"
+                            "O" -> "Ŏ"
+                            "u" -> "ŭ"
+                            "U" -> "Ŭ"
+                            " " -> "˘"
+                            else -> textBefore
+                        }
                     "!" ->
                         when (textBefore) {
                             "a" -> "æ"
