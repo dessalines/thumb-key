@@ -121,6 +121,12 @@ val KB_EN_MESSAGEASE_COMPOSED_MAIN =
                         ),
                     swipes =
                         mapOf(
+                            SwipeDirection.TOP to
+                                KeyC(
+                                    display = KeyDisplay.TextDisplay("˘"),
+                                    action = KeyAction.ComposeLastKey("˘"),
+                                    color = ColorVariant.MUTED,
+                                ),
                             SwipeDirection.TOP_RIGHT to
                                 KeyC(
                                     display = KeyDisplay.TextDisplay("\$"),
