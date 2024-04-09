@@ -33,6 +33,12 @@ val KB_EN_MESSAGEASE_COMPOSED_MAIN =
                         ),
                     swipes =
                         mapOf(
+                            SwipeDirection.TOP_RIGHT to
+                                KeyC(
+                                    display = KeyDisplay.TextDisplay("¿¡"),
+                                    action = KeyAction.ComposeLastKey("!"),
+                                    color = ColorVariant.MUTED,
+                                ),
                             SwipeDirection.BOTTOM_RIGHT to
                                 KeyC(
                                     display = KeyDisplay.TextDisplay("v"),
@@ -343,12 +349,6 @@ val KB_EN_MESSAGEASE_COMPOSED_MAIN =
                                     action = KeyAction.CommitText("*"),
                                     color = ColorVariant.MUTED,
                                 ),
-                            SwipeDirection.BOTTOM_LEFT to
-                                KeyC(
-                                    display = KeyDisplay.TextDisplay("¿¡"),
-                                    action = KeyAction.ComposeLastKey("!"),
-                                    color = ColorVariant.MUTED,
-                                ),
                             SwipeDirection.BOTTOM_RIGHT to
                                 KeyC(
                                     display = KeyDisplay.TextDisplay("⇥"),
@@ -485,6 +485,12 @@ val KB_EN_MESSAGEASE_COMPOSED_SHIFTED =
                         ),
                     swipes =
                         mapOf(
+                            SwipeDirection.TOP_RIGHT to
+                                KeyC(
+                                    display = KeyDisplay.TextDisplay("¿¡"),
+                                    action = KeyAction.ComposeLastKey("!"),
+                                    color = ColorVariant.MUTED,
+                                ),
                             SwipeDirection.BOTTOM_RIGHT to
                                 KeyC(
                                     display = KeyDisplay.TextDisplay("V"),
@@ -502,6 +508,7 @@ val KB_EN_MESSAGEASE_COMPOSED_SHIFTED =
                                     action = KeyAction.CommitText("$"),
                                     color = ColorVariant.MUTED,
                                 ),
+                        ),
                         ),
                 ),
                 KeyItemC(
@@ -573,6 +580,12 @@ val KB_EN_MESSAGEASE_COMPOSED_SHIFTED =
                         ),
                     swipes =
                         mapOf(
+                            SwipeDirection.TOP to
+                                KeyC(
+                                    display = KeyDisplay.TextDisplay("˘"),
+                                    action = KeyAction.ComposeLastKey("˘"),
+                                    color = ColorVariant.MUTED,
+                                ),
                             SwipeDirection.TOP_RIGHT to
                                 KeyC(
                                     display = KeyDisplay.TextDisplay("\$"),
@@ -800,12 +813,6 @@ val KB_EN_MESSAGEASE_COMPOSED_SHIFTED =
                                 KeyC(
                                     display = KeyDisplay.TextDisplay("<"),
                                     action = KeyAction.CommitText("<"),
-                                    color = ColorVariant.MUTED,
-                                ),
-                            SwipeDirection.BOTTOM_LEFT to
-                                KeyC(
-                                    display = KeyDisplay.TextDisplay("¿¡"),
-                                    action = KeyAction.ComposeLastKey("!"),
                                     color = ColorVariant.MUTED,
                                 ),
                             SwipeDirection.BOTTOM_RIGHT to

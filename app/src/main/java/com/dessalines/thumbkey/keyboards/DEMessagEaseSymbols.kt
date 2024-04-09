@@ -52,6 +52,12 @@ val KB_DE_MESSAGEASE_SYMBOLS_MAIN =
                                     action = KeyAction.CommitText("-"),
                                     color = ColorVariant.MUTED,
                                 ),
+                            SwipeDirection.TOP_RIGHT to
+                                KeyC(
+                                    display = KeyDisplay.TextDisplay("¿¡"),
+                                    action = KeyAction.ComposeLastKey("!"),
+                                    color = ColorVariant.MUTED,
+                                ),
                         ),
                 ),
                 KeyItemC(
@@ -67,13 +73,13 @@ val KB_DE_MESSAGEASE_SYMBOLS_MAIN =
                             SwipeDirection.TOP to
                                 KeyC(
                                     display = KeyDisplay.TextDisplay("^"),
-                                    action = KeyAction.CommitText("^"),
+                                    action = KeyAction.ComposeLastKey("^"),
                                     color = ColorVariant.MUTED,
                                 ),
                             SwipeDirection.TOP_LEFT to
                                 KeyC(
                                     display = KeyDisplay.TextDisplay("`"),
-                                    action = KeyAction.CommitText("`"),
+                                    action = KeyAction.ComposeLastKey("`"),
                                     color = ColorVariant.MUTED,
                                 ),
                             SwipeDirection.LEFT to
@@ -108,7 +114,7 @@ val KB_DE_MESSAGEASE_SYMBOLS_MAIN =
                             SwipeDirection.TOP_RIGHT to
                                 KeyC(
                                     display = KeyDisplay.TextDisplay("´"),
-                                    action = KeyAction.CommitText("´"),
+                                    action = KeyAction.ComposeLastKey("'"),
                                     color = ColorVariant.MUTED,
                                 ),
                         ),
@@ -123,6 +129,12 @@ val KB_DE_MESSAGEASE_SYMBOLS_MAIN =
                         ),
                     swipes =
                         mapOf(
+                            SwipeDirection.TOP to
+                                KeyC(
+                                    display = KeyDisplay.TextDisplay("˘"),
+                                    action = KeyAction.ComposeLastKey("˘"),
+                                    color = ColorVariant.MUTED,
+                                ),
                             SwipeDirection.LEFT to
                                 KeyC(
                                     display = KeyDisplay.TextDisplay("?"),
@@ -329,7 +341,7 @@ val KB_DE_MESSAGEASE_SYMBOLS_MAIN =
                             SwipeDirection.TOP_LEFT to
                                 KeyC(
                                     display = KeyDisplay.TextDisplay("~"),
-                                    action = KeyAction.CommitText("~"),
+                                    action = KeyAction.ComposeLastKey("~"),
                                     color = ColorVariant.MUTED,
                                 ),
                             SwipeDirection.LEFT to
@@ -374,7 +386,7 @@ val KB_DE_MESSAGEASE_SYMBOLS_MAIN =
                             SwipeDirection.TOP_LEFT to
                                 KeyC(
                                     display = KeyDisplay.TextDisplay("\""),
-                                    action = KeyAction.CommitText("\""),
+                                    action = KeyAction.ComposeLastKey("\""),
                                     color = ColorVariant.MUTED,
                                 ),
                             SwipeDirection.BOTTOM_LEFT to
@@ -450,7 +462,7 @@ val KB_DE_MESSAGEASE_SYMBOLS_MAIN =
                             SwipeDirection.TOP_RIGHT to
                                 KeyC(
                                     display = KeyDisplay.TextDisplay("°"),
-                                    action = KeyAction.CommitText("°"),
+                                    action = KeyAction.ComposeLastKey("°"),
                                     color = ColorVariant.MUTED,
                                 ),
                         ),
@@ -500,6 +512,12 @@ val KB_DE_MESSAGEASE_SYMBOLS_SHIFTED =
                                     action = KeyAction.CommitText("-"),
                                     color = ColorVariant.MUTED,
                                 ),
+                            SwipeDirection.TOP_RIGHT to
+                                KeyC(
+                                    display = KeyDisplay.TextDisplay("¿¡"),
+                                    action = KeyAction.ComposeLastKey("!"),
+                                    color = ColorVariant.MUTED,
+                                ),
                         ),
                 ),
                 KeyItemC(
@@ -515,13 +533,13 @@ val KB_DE_MESSAGEASE_SYMBOLS_SHIFTED =
                             SwipeDirection.TOP to
                                 KeyC(
                                     display = KeyDisplay.TextDisplay("^"),
-                                    action = KeyAction.CommitText("^"),
+                                    action = KeyAction.ComposeLastKey("^"),
                                     color = ColorVariant.MUTED,
                                 ),
                             SwipeDirection.TOP_LEFT to
                                 KeyC(
                                     display = KeyDisplay.TextDisplay("`"),
-                                    action = KeyAction.CommitText("`"),
+                                    action = KeyAction.ComposeLastKey("`"),
                                     color = ColorVariant.MUTED,
                                 ),
                             SwipeDirection.LEFT to
@@ -556,7 +574,7 @@ val KB_DE_MESSAGEASE_SYMBOLS_SHIFTED =
                             SwipeDirection.TOP_RIGHT to
                                 KeyC(
                                     display = KeyDisplay.TextDisplay("´"),
-                                    action = KeyAction.CommitText("´"),
+                                    action = KeyAction.ComposeLastKey("'"),
                                     color = ColorVariant.MUTED,
                                 ),
                         ),
@@ -571,6 +589,12 @@ val KB_DE_MESSAGEASE_SYMBOLS_SHIFTED =
                         ),
                     swipes =
                         mapOf(
+                            SwipeDirection.TOP to
+                                KeyC(
+                                    display = KeyDisplay.TextDisplay("˘"),
+                                    action = KeyAction.ComposeLastKey("˘"),
+                                    color = ColorVariant.MUTED,
+                                ),
                             SwipeDirection.LEFT to
                                 KeyC(
                                     display = KeyDisplay.TextDisplay("?"),
@@ -784,7 +808,7 @@ val KB_DE_MESSAGEASE_SYMBOLS_SHIFTED =
                             SwipeDirection.TOP_LEFT to
                                 KeyC(
                                     display = KeyDisplay.TextDisplay("~"),
-                                    action = KeyAction.CommitText("~"),
+                                    action = KeyAction.ComposeLastKey("~"),
                                     color = ColorVariant.MUTED,
                                 ),
                             SwipeDirection.LEFT to
@@ -829,7 +853,7 @@ val KB_DE_MESSAGEASE_SYMBOLS_SHIFTED =
                             SwipeDirection.TOP_LEFT to
                                 KeyC(
                                     display = KeyDisplay.TextDisplay("\""),
-                                    action = KeyAction.CommitText("\""),
+                                    action = KeyAction.ComposeLastKey("\""),
                                     color = ColorVariant.MUTED,
                                 ),
                             SwipeDirection.BOTTOM_LEFT to
@@ -905,7 +929,7 @@ val KB_DE_MESSAGEASE_SYMBOLS_SHIFTED =
                             SwipeDirection.TOP_RIGHT to
                                 KeyC(
                                     display = KeyDisplay.TextDisplay("°"),
-                                    action = KeyAction.CommitText("°"),
+                                    action = KeyAction.ComposeLastKey("°"),
                                     color = ColorVariant.MUTED,
                                 ),
                         ),
