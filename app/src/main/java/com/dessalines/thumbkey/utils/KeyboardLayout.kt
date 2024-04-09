@@ -117,6 +117,7 @@ import com.dessalines.thumbkey.keyboards.KB_TR_THUMBKEY
 import com.dessalines.thumbkey.keyboards.KB_UK_MESSAGEASE_SYMBOLS
 import com.dessalines.thumbkey.keyboards.KB_UK_RU_MESSAGEASE_SYMBOLS
 import com.dessalines.thumbkey.keyboards.KB_UK_THUMBKEY
+import com.dessalines.thumbkey.keyboards.KB_VN_THUMBKEY
 
 // Make sure new keyboards are added AT THE END of this list, and have a higher index.
 // DO NOT put them in the middle of the list!
@@ -238,4 +239,5 @@ enum class KeyboardLayout(val keyboardDefinition: KeyboardDefinition) {
     ENDEThumbKeyV2(KB_EN_DE_THUMBKEY_V2),
     ENESCAThumbKey(KB_EN_ES_CA_THUMBKEY),
     DENordicMessagEase(KB_DE_NORDIC_MESSAGEASE),
+    VNThumbKey(KB_VN_THUMBKEY),
 }
