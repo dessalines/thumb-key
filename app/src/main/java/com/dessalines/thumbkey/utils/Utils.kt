@@ -239,7 +239,12 @@ fun fontSizeVariantToFontSize(
 }
 
 val Dp.toPx get() = (this * Resources.getSystem().displayMetrics.density).value
-val Float.pxToSp get() = TextUnit(this / Resources.getSystem().displayMetrics.scaledDensity, TextUnitType.Sp)
+val Float.pxToSp
+    get() =
+        TextUnit(
+            this / Resources.getSystem().displayMetrics.scaledDensity,
+            TextUnitType.Sp,
+        )
 
 fun keyboardPositionToAlignment(position: KeyboardPosition): Alignment {
     return when (position) {
@@ -412,14 +417,21 @@ fun performKeyAction(
                             " " -> "\""
                             else -> textBefore
                         }
+
                     "'" ->
                         when (textBefore) {
                             "a" -> "á"
                             "A" -> "Á"
+                            "â" -> "ấ"
+                            "Â" -> "Ấ"
+                            "ă" -> "ắ"
+                            "Ă" -> "Ắ"
                             "c" -> "ć"
                             "C" -> "Ć"
                             "e" -> "é"
                             "E" -> "É"
+                            "ê" -> "ế"
+                            "Ê" -> "Ế"
                             "g" -> "ǵ"
                             "G" -> "Ǵ"
                             "i" -> "í"
@@ -436,6 +448,10 @@ fun performKeyAction(
                             "N" -> "Ń"
                             "o" -> "ó"
                             "O" -> "Ó"
+                            "ô" -> "ố"
+                            "Ô" -> "Ố"
+                            "ơ" -> "ớ"
+                            "Ơ" -> "Ớ"
                             "p" -> "ṕ"
                             "P" -> "Ṕ"
                             "r" -> "ŕ"
@@ -444,6 +460,8 @@ fun performKeyAction(
                             "S" -> "Ś"
                             "u" -> "ú"
                             "U" -> "Ú"
+                            "ư" -> "ứ"
+                            "Ư" -> "Ứ"
                             "w" -> "ẃ"
                             "W" -> "Ẃ"
                             "y" -> "ý"
@@ -454,20 +472,33 @@ fun performKeyAction(
                             " " -> "'"
                             else -> textBefore
                         }
+
                     "`" ->
                         when (textBefore) {
                             "a" -> "à"
                             "A" -> "À"
+                            "â" -> "ầ"
+                            "Â" -> "Ầ"
+                            "ă" -> "ằ"
+                            "Ă" -> "Ằ"
                             "e" -> "è"
                             "E" -> "È"
+                            "ê" -> "ề"
+                            "Ê" -> "Ề"
                             "i" -> "ì"
                             "I" -> "Ì"
                             "n" -> "ǹ"
                             "N" -> "Ǹ"
                             "o" -> "ò"
                             "O" -> "Ò"
+                            "ô" -> "ồ"
+                            "Ô" -> "Ồ"
+                            "ơ" -> "ờ"
+                            "Ờ" -> "Ờ"
                             "u" -> "ù"
                             "U" -> "Ù"
+                            "ư" -> "ừ"
+                            "Ư" -> "Ừ"
                             "ü" -> "ǜ"
                             "Ü" -> "Ǜ"
                             "w" -> "ẁ"
@@ -478,6 +509,7 @@ fun performKeyAction(
                             " " -> "`"
                             else -> textBefore
                         }
+
                     "^" ->
                         when (textBefore) {
                             "a" -> "â"
@@ -509,22 +541,35 @@ fun performKeyAction(
                             " " -> "^"
                             else -> textBefore
                         }
+
                     "~" ->
                         when (textBefore) {
                             "a" -> "ã"
                             "A" -> "Ã"
+                            "â" -> "ẫ"
+                            "Â" -> "Ẫ"
+                            "ă" -> "ẵ"
+                            "Ă" -> "Ẵ"
                             "c" -> "ç"
                             "C" -> "Ç"
                             "e" -> "ẽ"
                             "E" -> "Ẽ"
+                            "ê" -> "ễ"
+                            "Ê" -> "Ễ"
                             "i" -> "ĩ"
                             "I" -> "Ĩ"
                             "n" -> "ñ"
                             "N" -> "Ñ"
                             "o" -> "õ"
                             "O" -> "Õ"
+                            "ô" -> "ỗ"
+                            "Ô" -> "Ỗ"
+                            "ơ" -> "ỡ"
+                            "Ơ" -> "Ỡ"
                             "u" -> "ũ"
                             "U" -> "Ũ"
+                            "ư" -> "ữ"
+                            "Ư" -> "Ữ"
                             "v" -> "ṽ"
                             "V" -> "Ṽ"
                             "y" -> "ỹ"
@@ -532,6 +577,7 @@ fun performKeyAction(
                             " " -> "~"
                             else -> textBefore
                         }
+
                     "°" ->
                         when (textBefore) {
                             "a" -> "å"
@@ -543,6 +589,7 @@ fun performKeyAction(
                             " " -> "°"
                             else -> textBefore
                         }
+
                     "!" ->
                         when (textBefore) {
                             "a" -> "æ"
@@ -566,6 +613,7 @@ fun performKeyAction(
                             " " -> "!"
                             else -> textBefore
                         }
+
                     "\$" ->
                         when (textBefore) {
                             "c" -> "¢"
@@ -583,6 +631,7 @@ fun performKeyAction(
                             " " -> "\$"
                             else -> textBefore
                         }
+
                     "゛" ->
                         when (textBefore) {
                             "あ" -> "ぁ"
@@ -669,6 +718,61 @@ fun performKeyAction(
                             "ヽ" -> "ヾ"
                             else -> textBefore
                         }
+
+                    "?" ->
+                        when (textBefore) {
+                            "a" -> "ả"
+                            "A" -> "Ả"
+                            "â" -> "ẩ"
+                            "Â" -> "Ẩ"
+                            "ă" -> "ẳ"
+                            "Ă" -> "Ẳ"
+                            "o" -> "ỏ"
+                            "O" -> "Ỏ"
+                            "ô" -> "ổ"
+                            "Ô" -> "Ổ"
+                            "ơ" -> "ở"
+                            "Ơ" -> "Ở"
+                            "u" -> "ủ"
+                            "U" -> "Ủ"
+                            "ư" -> "ử"
+                            "Ư" -> "Ử"
+                            "i" -> "ỉ"
+                            "I" -> "Ỉ"
+                            "e" -> "ẻ"
+                            "E" -> "Ẻ"
+                            "ê" -> "ể"
+                            "Ê" -> "Ể"
+                            else -> textBefore
+                        }
+
+                    "*" ->
+                        when (textBefore) {
+                            "a" -> "ạ"
+                            "A" -> "Ạ"
+                            "â" -> "ậ"
+                            "Â" -> "Ậ"
+                            "ă" -> "ặ"
+                            "Ă" -> "Ặ"
+                            "o" -> "ọ"
+                            "O" -> "Ọ"
+                            "ô" -> "ộ"
+                            "Ô" -> "Ộ"
+                            "ơ" -> "ợ"
+                            "Ơ" -> "Ợ"
+                            "u" -> "ụ"
+                            "U" -> "Ụ"
+                            "ư" -> "ự"
+                            "Ư" -> "Ự"
+                            "i" -> "ị"
+                            "I" -> "Ị"
+                            "e" -> "ẹ"
+                            "E" -> "Ẹ"
+                            "ê" -> "ệ"
+                            "Ê" -> "Ệ"
+                            else -> textBefore
+                        }
+
                     else -> throw IllegalStateException("Invalid key modifier")
                 }
 
@@ -677,6 +781,7 @@ fun performKeyAction(
                 ime.currentInputConnection.commitText(textNew, 1)
             }
         }
+
         is KeyAction.ToggleShiftMode -> {
             val enable = action.enable
             Log.d(TAG, "Toggling Shifted: $enable")
@@ -709,6 +814,7 @@ fun performKeyAction(
                 IME_ACTION_CUSTOM_LABEL -> {
                     ime.currentInputConnection.performEditorAction(ime.currentInputEditorInfo.actionId)
                 }
+
                 EditorInfo.IME_ACTION_NONE -> {
                     ime.currentInputConnection.sendKeyEvent(
                         KeyEvent(
@@ -717,6 +823,7 @@ fun performKeyAction(
                         ),
                     )
                 }
+
                 else -> {
                     ime.currentInputConnection.performEditorAction(imeAction)
                 }
@@ -729,6 +836,7 @@ fun performKeyAction(
             // https://developer.android.com/reference/android/R.id
             ime.currentInputConnection.performContextMenuAction(android.R.id.selectAll)
         }
+
         KeyAction.Cut -> {
             if (ime.currentInputConnection.getSelectedText(0).isNullOrEmpty()) {
                 // Nothing selected, so cut all the text
@@ -742,6 +850,7 @@ fun performKeyAction(
                 ime.currentInputConnection.performContextMenuAction(android.R.id.cut)
             }
         }
+
         KeyAction.Copy -> {
             if (ime.currentInputConnection.getSelectedText(0).isNullOrEmpty()) {
                 // Nothing selected, so copy all the text
@@ -758,17 +867,27 @@ fun performKeyAction(
             val message = ime.getString(R.string.copy)
             Toast.makeText(ime, message, Toast.LENGTH_SHORT).show()
         }
+
         KeyAction.Paste -> {
             ime.currentInputConnection.performContextMenuAction(android.R.id.paste)
         }
+
         KeyAction.Undo -> {
             ime.currentInputConnection.sendKeyEvent(
                 KeyEvent(0, 0, KeyEvent.ACTION_DOWN, KeyEvent.KEYCODE_Z, 0, KeyEvent.META_CTRL_ON),
             )
         }
+
         KeyAction.Redo -> {
             ime.currentInputConnection.sendKeyEvent(
-                KeyEvent(0, 0, KeyEvent.ACTION_DOWN, KeyEvent.KEYCODE_Z, 0, (KeyEvent.META_CTRL_ON or KeyEvent.META_SHIFT_ON)),
+                KeyEvent(
+                    0,
+                    0,
+                    KeyEvent.ACTION_DOWN,
+                    KeyEvent.KEYCODE_Z,
+                    0,
+                    (KeyEvent.META_CTRL_ON or KeyEvent.META_SHIFT_ON),
+                ),
             )
         }
 
@@ -779,6 +898,7 @@ fun performKeyAction(
                 ime.getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
             imeManager.showInputMethodPicker()
         }
+
         KeyAction.SwitchIMEVoice -> {
             val imeManager =
                 ime.getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
