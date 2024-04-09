@@ -1,7 +1,23 @@
+# Thumb-Key 2.7.5 (2024-04-09)
+
+## What's Changed in 2.7.5
+
+- Vn thumbkey by @dessalines in [#837](https://github.com/dessalines/thumb-key/pull/837)
+- Add German+ÅÆØ compatibility layout with MessageEase by @RolKau in [#832](https://github.com/dessalines/thumb-key/pull/832)
+- Add breve supersign to compose layout by @mensogulo in [#836](https://github.com/dessalines/thumb-key/pull/836)
+
+## New Contributors
+
+- @RolKau made their first contribution in [#832](https://github.com/dessalines/thumb-key/pull/832)
+- @mensogulo made their first contribution in [#836](https://github.com/dessalines/thumb-key/pull/836)
+
+**Full Changelog**: https://github.com/dessalines/thumb-key/compare/2.7.4...2.7.5
+
 # Thumb-Key 2.7.4 (2024-04-04)
 
 ## What's Changed in 2.7.4
 
+- Upping version. by @dessalines
 - New Keyboard layout English Spanish Catalan by @Norgus in [#826](https://github.com/dessalines/thumb-key/pull/826)
 - Fix add layout instructions. by @dessalines in [#828](https://github.com/dessalines/thumb-key/pull/828)
 - He messag ease symbols add qmark by @BoredGeo in [#825](https://github.com/dessalines/thumb-key/pull/825)
