@@ -191,8 +191,8 @@ val KB_FR_MESSAGEASE_MAIN =
                                 ),
                             SwipeDirection.TOP to
                                 KeyC(
-                                    display = KeyDisplay.TextDisplay("ô"),
-                                    action = KeyAction.CommitText("ô"),
+                                    display = KeyDisplay.TextDisplay("û"),
+                                    action = KeyAction.CommitText("û"),
                                 ),
                             SwipeDirection.BOTTOM_LEFT to
                                 KeyC(
@@ -366,9 +366,8 @@ val KB_FR_MESSAGEASE_MAIN =
                                 ),
                             SwipeDirection.BOTTOM to
                                 KeyC(
-                                    display = KeyDisplay.TextDisplay("¨"),
-                                    action = KeyAction.CommitText("\u0308"),
-                                    color = ColorVariant.MUTED,
+                                    display = KeyDisplay.TextDisplay("ù"),
+                                    action = KeyAction.CommitText("ù"),
                                 ),
                             SwipeDirection.BOTTOM_LEFT to
                                 KeyC(
@@ -478,6 +477,12 @@ val KB_FR_MESSAGEASE_MAIN =
                                 KeyC(
                                     display = KeyDisplay.TextDisplay(";"),
                                     action = KeyAction.CommitText(";"),
+                                    color = ColorVariant.MUTED,
+                                ),
+                            SwipeDirection.BOTTOM to
+                                KeyC(
+                                    display = KeyDisplay.TextDisplay("¨"),
+                                    action = KeyAction.CommitText("\u0308"),
                                     color = ColorVariant.MUTED,
                                 ),
                         ),
@@ -666,8 +671,8 @@ val KB_FR_MESSAGEASE_SHIFTED =
                                 ),
                             SwipeDirection.TOP to
                                 KeyC(
-                                    display = KeyDisplay.TextDisplay("Ô"),
-                                    action = KeyAction.CommitText("Ô"),
+                                    display = KeyDisplay.TextDisplay("Û"),
+                                    action = KeyAction.CommitText("Û"),
                                 ),
                             SwipeDirection.BOTTOM_LEFT to
                                 KeyC(
@@ -848,9 +853,8 @@ val KB_FR_MESSAGEASE_SHIFTED =
                                 ),
                             SwipeDirection.BOTTOM to
                                 KeyC(
-                                    display = KeyDisplay.TextDisplay("¨"),
-                                    action = KeyAction.CommitText("\u0308"),
-                                    color = ColorVariant.MUTED,
+                                    display = KeyDisplay.TextDisplay("Ù"),
+                                    action = KeyAction.CommitText("Ù"),
                                 ),
                             SwipeDirection.BOTTOM_LEFT to
                                 KeyC(
@@ -966,6 +970,12 @@ val KB_FR_MESSAGEASE_SHIFTED =
                                 KeyC(
                                     display = KeyDisplay.TextDisplay(";"),
                                     action = KeyAction.CommitText(";"),
+                                    color = ColorVariant.MUTED,
+                                ),
+                            SwipeDirection.BOTTOM to
+                                KeyC(
+                                    display = KeyDisplay.TextDisplay("¨"),
+                                    action = KeyAction.CommitText("\u0308"),
                                     color = ColorVariant.MUTED,
                                 ),
                         ),
