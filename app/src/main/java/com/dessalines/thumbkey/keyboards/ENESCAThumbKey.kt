@@ -301,10 +301,15 @@ val KB_EN_ES_CA_THUMBKEY_MAIN =
                                     action = KeyAction.CommitText("*"),
                                     color = ColorVariant.MUTED,
                                 ),
-                            SwipeDirection.RIGHT to
+                            SwipeDirection.LEFT to
                                 KeyC(
                                     display = KeyDisplay.TextDisplay("í"),
                                     action = KeyAction.CommitText("í"),
+                                ),
+                            SwipeDirection.TOP_LEFT to
+                                KeyC(
+                                    display = KeyDisplay.TextDisplay("ï"),
+                                    action = KeyAction.CommitText("ï"),
                                 ),
                         ),
                 ),
@@ -555,6 +560,12 @@ val KB_EN_ES_CA_HUMBKEY_SHIFTED =
                                     action = KeyAction.ToggleCapsLock,
                                     color = ColorVariant.MUTED,
                                 ),
+                            SwipeDirection.BOTTOM to
+                                KeyC(
+                                    display = KeyDisplay.IconDisplay(Icons.Outlined.ArrowDropDown),
+                                    action = KeyAction.ToggleShiftMode(false),
+                                    color = ColorVariant.MUTED,
+                                ),
                         ),
                 ),
                 NUMERIC_KEY_ITEM,
@@ -627,10 +638,15 @@ val KB_EN_ES_CA_HUMBKEY_SHIFTED =
                                     action = KeyAction.CommitText("*"),
                                     color = ColorVariant.MUTED,
                                 ),
-                            SwipeDirection.RIGHT to
+                            SwipeDirection.LEFT to
                                 KeyC(
                                     display = KeyDisplay.TextDisplay("Í"),
                                     action = KeyAction.CommitText("Í"),
+                                ),
+                            SwipeDirection.TOP_LEFT to
+                                KeyC(
+                                    display = KeyDisplay.TextDisplay("Ï"),
+                                    action = KeyAction.CommitText("Ï"),
                                 ),
                         ),
                 ),
