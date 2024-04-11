@@ -1,7 +1,24 @@
+# Thumb-Key 2.7.6 (2024-04-11)
+
+## What's Changed in 2.7.6
+
+- Upgrade deps 27 by @dessalines in [#846](https://github.com/dessalines/thumb-key/pull/846)
+- Fixes to the Eng-Esp-Cat thumbkey layout by @Norgus in [#845](https://github.com/dessalines/thumb-key/pull/845)
+- Update composing and add it to DEMessagEaseSymbols by @mensogulo in [#844](https://github.com/dessalines/thumb-key/pull/844)
+- Correct default French MessagEase layout (#830) by @glm4610 in [#840](https://github.com/dessalines/thumb-key/pull/840)
+- Fixing vietnamese keyboard name. by @dessalines in [#842](https://github.com/dessalines/thumb-key/pull/842)
+
+## New Contributors
+
+- @glm4610 made their first contribution in [#840](https://github.com/dessalines/thumb-key/pull/840)
+
+**Full Changelog**: https://github.com/dessalines/thumb-key/compare/2.7.5...2.7.6
+
 # Thumb-Key 2.7.5 (2024-04-09)
 
 ## What's Changed in 2.7.5
 
+- Upping version. by @dessalines
 - Vn thumbkey by @dessalines in [#837](https://github.com/dessalines/thumb-key/pull/837)
 - Add German+ÅÆØ compatibility layout with MessageEase by @RolKau in [#832](https://github.com/dessalines/thumb-key/pull/832)
 - Add breve supersign to compose layout by @mensogulo in [#836](https://github.com/dessalines/thumb-key/pull/836)
@@ -9,7 +26,6 @@
 ## New Contributors
 
 - @RolKau made their first contribution in [#832](https://github.com/dessalines/thumb-key/pull/832)
-- @mensogulo made their first contribution in [#836](https://github.com/dessalines/thumb-key/pull/836)
 
 **Full Changelog**: https://github.com/dessalines/thumb-key/compare/2.7.4...2.7.5
 
@@ -26,7 +42,6 @@
 
 ## New Contributors
 
-- @Norgus made their first contribution in [#826](https://github.com/dessalines/thumb-key/pull/826)
 - @BoredGeo made their first contribution in [#825](https://github.com/dessalines/thumb-key/pull/825)
 
 **Full Changelog**: https://github.com/dessalines/thumb-key/compare/2.7.3...2.7.4
