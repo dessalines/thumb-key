@@ -52,10 +52,11 @@ data class KeyItemC(
 
 data class KeyC(
     val action: KeyAction,
-    val display: KeyDisplay? = when (action) {
-        is KeyAction.CommitText -> KeyDisplay.TextDisplay(action.text)
-        else -> null
-    },
+    val display: KeyDisplay? =
+        when (action) {
+            is KeyAction.CommitText -> KeyDisplay.TextDisplay(action.text)
+            else -> null
+        },
     val capsModeDisplay: KeyDisplay? = null,
     val color: ColorVariant = ColorVariant.SECONDARY,
     val size: FontSizeVariant = FontSizeVariant.SMALL,
