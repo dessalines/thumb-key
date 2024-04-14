@@ -52,7 +52,6 @@ import kotlin.math.sqrt
 
 const val TAG = "com.thumbkey"
 
-const val THUMBKEY_IME_NAME = "com.dessalines.thumbkey/.IMEService"
 const val IME_ACTION_CUSTOM_LABEL = EditorInfo.IME_MASK_ACTION + 1
 
 fun accelCurve(
@@ -1147,6 +1146,15 @@ fun Context.getVersionCode(): Int =
         @Suppress("DEPRECATION")
         getPackageInfo().versionCode
     }
+
+/**
+ * The debug and app IME names act strange, so you need to check both
+ */
+fun Context.getImeNames(): List<String> =
+    listOf(
+        "$packageName/com.dessalines.thumbkey.IMEService",
+        "$packageName/.IMEService",
+    )
 
 fun startSelection(ime: IMEService): Selection {
     val cursorPosition =

@@ -51,7 +51,8 @@ val DONATION_MARKDOWN =
 @Composable
 fun ShowChangelog(appSettingsViewModel: AppSettingsViewModel) {
     val ctx = LocalContext.current
-    val lastVersionCodeViewed = appSettingsViewModel.appSettings.observeAsState().value?.lastVersionCodeViewed
+    val lastVersionCodeViewed =
+        appSettingsViewModel.appSettings.observeAsState().value?.lastVersionCodeViewed
 
     // Make sure its initialized
     lastVersionCodeViewed?.also { lastViewed ->

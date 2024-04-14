@@ -33,6 +33,7 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.livedata.observeAsState
+import androidx.compose.runtime.mutableFloatStateOf
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
@@ -83,46 +84,42 @@ fun LookAndFeelActivity(
     Log.d(TAG, "Got to lookAndFeel activity")
 
     val settings by appSettingsViewModel.appSettings.observeAsState()
-    var themeState by remember { mutableStateOf(ThemeMode.entries[settings?.theme ?: DEFAULT_THEME]) }
-    var themeColorState by remember { mutableStateOf(ThemeColor.entries[settings?.themeColor ?: DEFAULT_THEME_COLOR]) }
-    var keySizeState by remember { mutableStateOf((settings?.keySize ?: DEFAULT_KEY_SIZE).toFloat()) }
-    var keySizeSliderState by remember { mutableStateOf(keySizeState) }
-    var keyWidthState by remember { mutableStateOf(settings?.keyWidth?.toFloat()) }
+    var themeState = ThemeMode.entries[settings?.theme ?: DEFAULT_THEME]
+    var themeColorState = ThemeColor.entries[settings?.themeColor ?: DEFAULT_THEME_COLOR]
+    var keySizeState = (settings?.keySize ?: DEFAULT_KEY_SIZE).toFloat()
+    var keySizeSliderState by remember { mutableFloatStateOf(keySizeState) }
+    var keyWidthState = settings?.keyWidth?.toFloat()
     var keyWidthSliderState by remember { mutableStateOf(keyWidthState) }
 
     // Need to coerce key width = null to be the same size as the keyHeight
     val nonSquareKeysState = remember { mutableStateOf(settings?.keySize !== (settings?.keyWidth ?: settings?.keySize)) }
 
-    var pushupSizeState by remember { mutableStateOf((settings?.pushupSize ?: DEFAULT_PUSHUP_SIZE).toFloat()) }
-    var pushupSizeSliderState by remember { mutableStateOf(pushupSizeState) }
+    var pushupSizeState = (settings?.pushupSize ?: DEFAULT_PUSHUP_SIZE).toFloat()
+    var pushupSizeSliderState = pushupSizeState
 
-    var animationSpeedState by remember { mutableStateOf((settings?.animationSpeed ?: DEFAULT_ANIMATION_SPEED).toFloat()) }
-    var animationSpeedSliderState by remember { mutableStateOf(animationSpeedState) }
+    var animationSpeedState = (settings?.animationSpeed ?: DEFAULT_ANIMATION_SPEED).toFloat()
+    var animationSpeedSliderState by remember { mutableFloatStateOf(animationSpeedState) }
 
-    var animationHelperSpeedState by remember {
-        mutableStateOf(
-            (settings?.animationHelperSpeed ?: DEFAULT_ANIMATION_HELPER_SPEED).toFloat(),
-        )
-    }
-    var animationHelperSpeedSliderState by remember { mutableStateOf(animationHelperSpeedState) }
+    var animationHelperSpeedState = (settings?.animationHelperSpeed ?: DEFAULT_ANIMATION_HELPER_SPEED).toFloat()
+    var animationHelperSpeedSliderState by remember { mutableFloatStateOf(animationHelperSpeedState) }
 
-    var keyPaddingState by remember { mutableStateOf((settings?.keyPadding ?: DEFAULT_KEY_PADDING).toFloat()) }
-    var keyPaddingSliderState by remember { mutableStateOf(keyPaddingState) }
+    var keyPaddingState = (settings?.keyPadding ?: DEFAULT_KEY_PADDING).toFloat()
+    var keyPaddingSliderState by remember { mutableFloatStateOf(keyPaddingState) }
 
-    var keyBorderWidthState by remember { mutableStateOf((settings?.keyBorderWidth ?: DEFAULT_KEY_BORDER_WIDTH).toFloat()) }
-    var keyBorderWidthSliderState by remember { mutableStateOf(keyBorderWidthState) }
+    var keyBorderWidthState = (settings?.keyBorderWidth ?: DEFAULT_KEY_BORDER_WIDTH).toFloat()
+    var keyBorderWidthSliderState by remember { mutableFloatStateOf(keyBorderWidthState) }
 
-    var keyRadiusState by remember { mutableStateOf((settings?.keyRadius ?: DEFAULT_KEY_RADIUS).toFloat()) }
-    var keyRadiusSliderState by remember { mutableStateOf(keyRadiusState) }
+    var keyRadiusState = (settings?.keyRadius ?: DEFAULT_KEY_RADIUS).toFloat()
+    var keyRadiusSliderState by remember { mutableFloatStateOf(keyRadiusState) }
 
-    var positionState by remember { mutableStateOf(KeyboardPosition.entries[settings?.position ?: DEFAULT_POSITION]) }
+    var positionState = KeyboardPosition.entries[settings?.position ?: DEFAULT_POSITION]
 
-    var vibrateOnTapState by remember { mutableStateOf((settings?.vibrateOnTap ?: DEFAULT_VIBRATE_ON_TAP).toBool()) }
-    var soundOnTapState by remember { mutableStateOf((settings?.soundOnTap ?: DEFAULT_SOUND_ON_TAP).toBool()) }
-    var hideLettersState by remember { mutableStateOf((settings?.hideLetters ?: DEFAULT_HIDE_LETTERS).toBool()) }
-    var hideSymbolsState by remember { mutableStateOf((settings?.hideSymbols ?: DEFAULT_HIDE_SYMBOLS).toBool()) }
+    var vibrateOnTapState = (settings?.vibrateOnTap ?: DEFAULT_VIBRATE_ON_TAP).toBool()
+    var soundOnTapState = (settings?.soundOnTap ?: DEFAULT_SOUND_ON_TAP).toBool()
+    var hideLettersState = (settings?.hideLetters ?: DEFAULT_HIDE_LETTERS).toBool()
+    var hideSymbolsState = (settings?.hideSymbols ?: DEFAULT_HIDE_SYMBOLS).toBool()
 
-    var backdropEnabledState by remember { mutableStateOf((settings?.backdropEnabled ?: DEFAULT_BACKDROP_ENABLED).toBool()) }
+    var backdropEnabledState = (settings?.backdropEnabled ?: DEFAULT_BACKDROP_ENABLED).toBool()
 
     fun updateLookAndFeel() {
         appSettingsViewModel.updateLookAndFeel(

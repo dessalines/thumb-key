@@ -23,7 +23,7 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.livedata.observeAsState
-import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.mutableFloatStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
@@ -65,25 +65,20 @@ fun BehaviorActivity(
 
     val settings by appSettingsViewModel.appSettings.observeAsState()
 
-    var minSwipeLengthState by remember { mutableStateOf((settings?.minSwipeLength ?: DEFAULT_MIN_SWIPE_LENGTH).toFloat()) }
-    var minSwipeLengthSliderState by remember { mutableStateOf(minSwipeLengthState) }
+    var minSwipeLengthState = (settings?.minSwipeLength ?: DEFAULT_MIN_SWIPE_LENGTH).toFloat()
+    var minSwipeLengthSliderState by remember { mutableFloatStateOf(minSwipeLengthState) }
 
-    var slideSensitivityState by remember { mutableStateOf((settings?.slideSensitivity ?: DEFAULT_SLIDE_SENSITIVITY).toFloat()) }
-    var slideSensitivitySliderState by remember { mutableStateOf(slideSensitivityState) }
+    var slideSensitivityState = (settings?.slideSensitivity ?: DEFAULT_SLIDE_SENSITIVITY).toFloat()
+    var slideSensitivitySliderState by remember { mutableFloatStateOf(slideSensitivityState) }
 
-    var slideCursorMovementModeState by remember {
-        mutableStateOf(CursorAccelerationMode.entries[settings?.slideCursorMovementMode ?: DEFAULT_SLIDE_CURSOR_MOVEMENT_MODE])
-    }
+    var slideCursorMovementModeState =
+        CursorAccelerationMode.entries[settings?.slideCursorMovementMode ?: DEFAULT_SLIDE_CURSOR_MOVEMENT_MODE]
 
-    var slideEnabledState by remember { mutableStateOf((settings?.slideEnabled ?: DEFAULT_SLIDE_ENABLED).toBool()) }
-    var slideSpacebarDeadzoneEnabledState by remember {
-        mutableStateOf((settings?.slideSpacebarDeadzoneEnabled ?: DEFAULT_SLIDE_SPACEBAR_DEADZONE_ENABLED).toBool())
-    }
-    var slideBackspaceDeadzoneEnabledState by remember {
-        mutableStateOf((settings?.slideBackspaceDeadzoneEnabled ?: DEFAULT_SLIDE_BACKSPACE_DEADZONE_ENABLED).toBool())
-    }
-    var autoCapitalizeState by remember { mutableStateOf((settings?.autoCapitalize ?: DEFAULT_AUTO_CAPITALIZE).toBool()) }
-    var spacebarMultiTapsState by remember { mutableStateOf((settings?.spacebarMultiTaps ?: DEFAULT_SPACEBAR_MULTITAPS).toBool()) }
+    var slideEnabledState = (settings?.slideEnabled ?: DEFAULT_SLIDE_ENABLED).toBool()
+    var slideSpacebarDeadzoneEnabledState = (settings?.slideSpacebarDeadzoneEnabled ?: DEFAULT_SLIDE_SPACEBAR_DEADZONE_ENABLED).toBool()
+    var slideBackspaceDeadzoneEnabledState = (settings?.slideBackspaceDeadzoneEnabled ?: DEFAULT_SLIDE_BACKSPACE_DEADZONE_ENABLED).toBool()
+    var autoCapitalizeState = (settings?.autoCapitalize ?: DEFAULT_AUTO_CAPITALIZE).toBool()
+    var spacebarMultiTapsState = (settings?.spacebarMultiTaps ?: DEFAULT_SPACEBAR_MULTITAPS).toBool()
 
     val snackbarHostState = remember { SnackbarHostState() }
 

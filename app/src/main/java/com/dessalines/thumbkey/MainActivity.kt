@@ -25,7 +25,7 @@ import com.dessalines.thumbkey.ui.components.settings.behavior.BehaviorActivity
 import com.dessalines.thumbkey.ui.components.settings.lookandfeel.LookAndFeelActivity
 import com.dessalines.thumbkey.ui.components.setup.SetupActivity
 import com.dessalines.thumbkey.ui.theme.ThumbkeyTheme
-import com.dessalines.thumbkey.utils.THUMBKEY_IME_NAME
+import com.dessalines.thumbkey.utils.getImeNames
 import splitties.systemservices.inputMethodManager
 
 class ThumbkeyApplication : Application() {
@@ -43,17 +43,19 @@ class MainActivity : AppCompatActivity() {
 
         setContent {
             val settings by appSettingsViewModel.appSettings.observeAsState()
-
             val ctx = LocalContext.current
+            val imeNames = ctx.getImeNames()
+
             val thumbkeyEnabled =
                 inputMethodManager.enabledInputMethodList.any {
-                    it.id == THUMBKEY_IME_NAME
+                    imeNames.contains(it.id)
                 }
-            val thumbkeySelected =
+            val selectedName =
                 Settings.Secure.getString(
                     ctx.contentResolver,
                     Settings.Secure.DEFAULT_INPUT_METHOD,
-                ) == THUMBKEY_IME_NAME
+                )
+            val thumbkeySelected = imeNames.contains(selectedName)
 
             val startDestination by remember {
                 mutableStateOf(
@@ -68,51 +70,51 @@ class MainActivity : AppCompatActivity() {
             ThumbkeyTheme(
                 settings = settings,
             ) {
-                if (appSettingsViewModel.appSettings.isInitialized) {
-                    val navController = rememberNavController()
+                val navController = rememberNavController()
 
+                if (startDestination == "settings") {
                     ShowChangelog(appSettingsViewModel = appSettingsViewModel)
+                }
 
-                    NavHost(
-                        navController = navController,
-                        startDestination = startDestination,
+                NavHost(
+                    navController = navController,
+                    startDestination = startDestination,
+                ) {
+                    composable(
+                        route = "setup",
                     ) {
-                        composable(
-                            route = "setup",
-                        ) {
-                            SetupActivity(
-                                navController = navController,
-                                thumbkeyEnabled = thumbkeyEnabled,
-                                thumbkeySelected = thumbkeySelected,
-                            )
-                        }
-                        composable(route = "settings") {
-                            SettingsActivity(
-                                navController = navController,
-                                appSettingsViewModel = appSettingsViewModel,
-                                thumbkeyEnabled = thumbkeyEnabled,
-                                thumbkeySelected = thumbkeySelected,
-                            )
-                        }
-                        composable(route = "lookAndFeel") {
-                            LookAndFeelActivity(
-                                navController = navController,
-                                appSettingsViewModel = appSettingsViewModel,
-                            )
-                        }
-                        composable(route = "behavior") {
-                            BehaviorActivity(
-                                navController = navController,
-                                appSettingsViewModel = appSettingsViewModel,
-                            )
-                        }
-                        composable(
-                            route = "about",
-                        ) {
-                            AboutActivity(
-                                navController = navController,
-                            )
-                        }
+                        SetupActivity(
+                            navController = navController,
+                            thumbkeyEnabled = thumbkeyEnabled,
+                            thumbkeySelected = thumbkeySelected,
+                        )
+                    }
+                    composable(route = "settings") {
+                        SettingsActivity(
+                            navController = navController,
+                            appSettingsViewModel = appSettingsViewModel,
+                            thumbkeyEnabled = thumbkeyEnabled,
+                            thumbkeySelected = thumbkeySelected,
+                        )
+                    }
+                    composable(route = "lookAndFeel") {
+                        LookAndFeelActivity(
+                            navController = navController,
+                            appSettingsViewModel = appSettingsViewModel,
+                        )
+                    }
+                    composable(route = "behavior") {
+                        BehaviorActivity(
+                            navController = navController,
+                            appSettingsViewModel = appSettingsViewModel,
+                        )
+                    }
+                    composable(
+                        route = "about",
+                    ) {
+                        AboutActivity(
+                            navController = navController,
+                        )
                     }
                 }
             }
