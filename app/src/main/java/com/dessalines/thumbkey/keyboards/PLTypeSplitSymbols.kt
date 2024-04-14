@@ -749,17 +749,17 @@ val KB_PL_TYPESPLIT_SYMBOLS_SHIFTED =
                                     action = KeyAction.CommitText("X"),
                                 ),
                             SwipeDirection.TOP_LEFT to
-                                    KeyC(
-                                        display = KeyDisplay.TextDisplay("["),
-                                        action = KeyAction.CommitText("["),
-                                        color = ColorVariant.MUTED,
-                                    ),
+                                KeyC(
+                                    display = KeyDisplay.TextDisplay("["),
+                                    action = KeyAction.CommitText("["),
+                                    color = ColorVariant.MUTED,
+                                ),
                             SwipeDirection.BOTTOM_LEFT to
-                                    KeyC(
-                                        display = KeyDisplay.TextDisplay("<"),
-                                        action = KeyAction.CommitText("<"),
-                                        color = ColorVariant.MUTED,
-                                    ),
+                                KeyC(
+                                    display = KeyDisplay.TextDisplay("<"),
+                                    action = KeyAction.CommitText("<"),
+                                    color = ColorVariant.MUTED,
+                                ),
                         ),
                 ),
                 KeyItemC(
