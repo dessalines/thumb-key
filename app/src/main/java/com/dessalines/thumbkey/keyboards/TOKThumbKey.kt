@@ -25,7 +25,6 @@ val KB_TOK_THUMBKEY_MAIN =
                         KeyC(
                             display = KeyDisplay.TextDisplay("❌"),
                             action = KeyAction.CommitText("ala"),
-                            color = ColorVariant.PRIMARY,
                         ),
                     swipes =
                         mapOf(
@@ -76,7 +75,6 @@ val KB_TOK_THUMBKEY_MAIN =
                         KeyC(
                             display = KeyDisplay.TextDisplay("👉"),
                             action = KeyAction.CommitText("sina"),
-                            color = ColorVariant.PRIMARY,
                         ),
                     swipes =
                         mapOf(
@@ -127,7 +125,6 @@ val KB_TOK_THUMBKEY_MAIN =
                         KeyC(
                             display = KeyDisplay.TextDisplay("↪️"),
                             action = KeyAction.CommitText("tawa"),
-                            color = ColorVariant.PRIMARY,
                         ),
                     swipes =
                         mapOf(
@@ -181,7 +178,6 @@ val KB_TOK_THUMBKEY_MAIN =
                         KeyC(
                             display = KeyDisplay.TextDisplay("🔼"),
                             action = KeyAction.CommitText("la"),
-                            color = ColorVariant.PRIMARY,
                         ),
                     swipes =
                         mapOf(
@@ -232,7 +228,6 @@ val KB_TOK_THUMBKEY_MAIN =
                         KeyC(
                             display = KeyDisplay.TextDisplay("👇"),
                             action = KeyAction.CommitText("ni"),
-                            color = ColorVariant.PRIMARY,
                         ),
                     swipes =
                         mapOf(
@@ -283,7 +278,6 @@ val KB_TOK_THUMBKEY_MAIN =
                         KeyC(
                             display = KeyDisplay.TextDisplay("👤"),
                             action = KeyAction.CommitText("jan"),
-                            color = ColorVariant.PRIMARY,
                         ),
                     swipes =
                         mapOf(
@@ -337,7 +331,6 @@ val KB_TOK_THUMBKEY_MAIN =
                         KeyC(
                             display = KeyDisplay.TextDisplay("👈"),
                             action = KeyAction.CommitText("mi"),
-                            color = ColorVariant.PRIMARY,
                         ),
                     swipes =
                         mapOf(
@@ -388,7 +381,6 @@ val KB_TOK_THUMBKEY_MAIN =
                         KeyC(
                             display = KeyDisplay.TextDisplay("⏩"),
                             action = KeyAction.CommitText("e"),
-                            color = ColorVariant.PRIMARY,
                         ),
                     swipes =
                         mapOf(
@@ -442,7 +434,6 @@ val KB_TOK_THUMBKEY_MAIN =
                         KeyC(
                             display = KeyDisplay.TextDisplay("▶️"),
                             action = KeyAction.CommitText("li"),
-                            color = ColorVariant.PRIMARY,
                         ),
                     swipes =
                         mapOf(

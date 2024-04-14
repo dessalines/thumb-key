@@ -24,7 +24,6 @@ val KB_TOK_SITELEN_EMOJI_THUMBKEY_MAIN =
                     center =
                         KeyC(
                             action = KeyAction.CommitText("❌"),
-                            color = ColorVariant.PRIMARY,
                         ),
                     swipes =
                         mapOf(
@@ -66,7 +65,6 @@ val KB_TOK_SITELEN_EMOJI_THUMBKEY_MAIN =
                     center =
                         KeyC(
                             action = KeyAction.CommitText("👉"),
-                            color = ColorVariant.PRIMARY,
                         ),
                     swipes =
                         mapOf(
@@ -108,7 +106,6 @@ val KB_TOK_SITELEN_EMOJI_THUMBKEY_MAIN =
                     center =
                         KeyC(
                             action = KeyAction.CommitText("↪️"),
-                            color = ColorVariant.PRIMARY,
                         ),
                     swipes =
                         mapOf(
@@ -153,7 +150,6 @@ val KB_TOK_SITELEN_EMOJI_THUMBKEY_MAIN =
                     center =
                         KeyC(
                             action = KeyAction.CommitText("🔼"),
-                            color = ColorVariant.PRIMARY,
                         ),
                     swipes =
                         mapOf(
@@ -195,7 +191,6 @@ val KB_TOK_SITELEN_EMOJI_THUMBKEY_MAIN =
                     center =
                         KeyC(
                             action = KeyAction.CommitText("👇"),
-                            color = ColorVariant.PRIMARY,
                         ),
                     swipes =
                         mapOf(
@@ -237,7 +232,6 @@ val KB_TOK_SITELEN_EMOJI_THUMBKEY_MAIN =
                     center =
                         KeyC(
                             action = KeyAction.CommitText("👤"),
-                            color = ColorVariant.PRIMARY,
                         ),
                     swipes =
                         mapOf(
@@ -282,7 +276,6 @@ val KB_TOK_SITELEN_EMOJI_THUMBKEY_MAIN =
                     center =
                         KeyC(
                             action = KeyAction.CommitText("👈"),
-                            color = ColorVariant.PRIMARY,
                         ),
                     swipes =
                         mapOf(
@@ -324,7 +317,6 @@ val KB_TOK_SITELEN_EMOJI_THUMBKEY_MAIN =
                     center =
                         KeyC(
                             action = KeyAction.CommitText("⏩"),
-                            color = ColorVariant.PRIMARY,
                         ),
                     swipes =
                         mapOf(
@@ -370,7 +362,6 @@ val KB_TOK_SITELEN_EMOJI_THUMBKEY_MAIN =
                     center =
                         KeyC(
                             action = KeyAction.CommitText("▶️"),
-                            color = ColorVariant.PRIMARY,
                         ),
                     swipes =
                         mapOf(
