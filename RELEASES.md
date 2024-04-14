@@ -1,7 +1,18 @@
+# Thumb-Key 3.0.0 (2024-04-14)
+
+## What's Changed in 3.0.0
+
+- Fixing black-screen on startup. by @dessalines in [#850](https://github.com/dessalines/thumb-key/pull/850)
+- Adding toki pona and sitelen emoji keyboards. by @dessalines in [#849](https://github.com/dessalines/thumb-key/pull/849)
+- Simplifying KeyC default. by @dessalines in [#848](https://github.com/dessalines/thumb-key/pull/848)
+
+**Full Changelog**: https://github.com/dessalines/thumb-key/compare/2.7.6...3.0.0
+
 # Thumb-Key 2.7.6 (2024-04-11)
 
 ## What's Changed in 2.7.6
 
+- Upping version. by @dessalines
 - Upgrade deps 27 by @dessalines in [#846](https://github.com/dessalines/thumb-key/pull/846)
 - Fixes to the Eng-Esp-Cat thumbkey layout by @Norgus in [#845](https://github.com/dessalines/thumb-key/pull/845)
 - Update composing and add it to DEMessagEaseSymbols by @mensogulo in [#844](https://github.com/dessalines/thumb-key/pull/844)
