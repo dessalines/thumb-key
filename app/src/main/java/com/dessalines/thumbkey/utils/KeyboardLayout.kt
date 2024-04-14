@@ -102,6 +102,7 @@ import com.dessalines.thumbkey.keyboards.KB_NO_THUMBKEY
 import com.dessalines.thumbkey.keyboards.KB_PL_MESSAGEASE
 import com.dessalines.thumbkey.keyboards.KB_PL_THUMBKEY
 import com.dessalines.thumbkey.keyboards.KB_PL_TYPESPLIT
+import com.dessalines.thumbkey.keyboards.KB_PL_TYPESPLIT_SYMBOLS
 import com.dessalines.thumbkey.keyboards.KB_PT_THUMBKEY
 import com.dessalines.thumbkey.keyboards.KB_PT_TYPESPLIT
 import com.dessalines.thumbkey.keyboards.KB_RU_MESSAGEASE
@@ -244,4 +245,5 @@ enum class KeyboardLayout(val keyboardDefinition: KeyboardDefinition) {
     VNThumbKey(KB_VN_THUMBKEY),
     TOKThumbKey(KB_TOK_THUMBKEY),
     TOKSitelenEmojiThumbKey(KB_TOK_SITELEN_EMOJI_THUMBKEY),
+    PLTypeSplitSymbols(KB_PL_TYPESPLIT_SYMBOLS),
 }
