@@ -95,7 +95,7 @@ fun LookAndFeelActivity(
     val nonSquareKeysState = remember { mutableStateOf(settings?.keySize !== (settings?.keyWidth ?: settings?.keySize)) }
 
     var pushupSizeState = (settings?.pushupSize ?: DEFAULT_PUSHUP_SIZE).toFloat()
-    var pushupSizeSliderState = pushupSizeState
+    var pushupSizeSliderState by remember { mutableFloatStateOf(pushupSizeState) }
 
     var animationSpeedState = (settings?.animationSpeed ?: DEFAULT_ANIMATION_SPEED).toFloat()
     var animationSpeedSliderState by remember { mutableFloatStateOf(animationSpeedState) }
