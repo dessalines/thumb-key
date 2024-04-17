@@ -38,6 +38,7 @@ import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
+import androidx.compose.ui.geometry.Offset
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.hapticfeedback.HapticFeedbackType
 import androidx.compose.ui.input.pointer.pointerInput
@@ -48,6 +49,8 @@ import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.lerp
 import com.dessalines.thumbkey.IMEService
+import com.dessalines.thumbkey.utils.CircularDirection
+import com.dessalines.thumbkey.utils.CircularDragAction
 import com.dessalines.thumbkey.utils.FontSizeVariant
 import com.dessalines.thumbkey.utils.KeyAction
 import com.dessalines.thumbkey.utils.KeyC
@@ -58,6 +61,7 @@ import com.dessalines.thumbkey.utils.Selection
 import com.dessalines.thumbkey.utils.SlideType
 import com.dessalines.thumbkey.utils.SwipeDirection
 import com.dessalines.thumbkey.utils.buildTapActions
+import com.dessalines.thumbkey.utils.circularDirection
 import com.dessalines.thumbkey.utils.colorVariantToColor
 import com.dessalines.thumbkey.utils.doneKeyAction
 import com.dessalines.thumbkey.utils.fontSizeVariantToFontSize
@@ -106,13 +110,20 @@ fun KeyboardKey(
     onAutoCapitalize: (enable: Boolean) -> Unit,
     onSwitchLanguage: () -> Unit,
     onSwitchPosition: () -> Unit,
+    secondaryKey: KeyItemC? = null,
+    tertiaryKey: KeyItemC? = null,
+    dragReturnEnabled: Boolean,
+    circularDragEnabled: Boolean,
+    clockwiseDragAction: CircularDragAction,
+    counterclockwiseDragAction: CircularDragAction,
 ) {
     // Necessary for swipe settings to get updated correctly
     val id =
         key.toString() + animationHelperSpeed + animationSpeed + autoCapitalize +
             vibrateOnTap + soundOnTap + legendHeight + legendWidth + minSwipeLength + slideSensitivity +
             slideEnabled + slideCursorMovementMode + slideSpacebarDeadzoneEnabled +
-            slideBackspaceDeadzoneEnabled
+            slideBackspaceDeadzoneEnabled + dragReturnEnabled + circularDragEnabled +
+            clockwiseDragAction.ordinal + counterclockwiseDragAction.ordinal
 
     val ctx = LocalContext.current
     val ime = ctx as IMEService
@@ -136,6 +147,8 @@ fun KeyboardKey(
     var offsetY by remember { mutableFloatStateOf(0f) }
     var hasSlideMoveCursorTriggered by remember { mutableStateOf(false) }
     var timeOfLastAccelerationInput by remember { mutableLongStateOf(0L) }
+    var positions by remember { mutableStateOf(listOf<Offset>()) }
+    var maxOffset by remember { mutableStateOf(Offset(0f, 0f)) }
 
     var selection by remember { mutableStateOf(Selection()) }
 
@@ -249,6 +262,9 @@ fun KeyboardKey(
                         val (x, y) = dragAmount
                         offsetX += x
                         offsetY += y
+                        val offset = Offset(offsetX, offsetY)
+                        positions += offset
+                        if (offset.getDistanceSquared() > maxOffset.getDistanceSquared()) maxOffset = offset
 
                         // First detection is large enough to preserve swipe actions.
                         val slideOffsetTrigger = (keySize.dp.toPx() * 0.75) + minSwipeLength
@@ -400,15 +416,52 @@ fun KeyboardKey(
                     },
                     onDragEnd = {
                         lateinit var action: KeyAction
+
                         if (key.slideType == SlideType.NONE ||
                             !slideEnabled ||
                             ((key.slideType == SlideType.DELETE) && !selection.active) ||
                             ((key.slideType == SlideType.MOVE_CURSOR) && !hasSlideMoveCursorTriggered)
                         ) {
                             hasSlideMoveCursorTriggered = false
-                            val swipeDirection =
-                                swipeDirection(offsetX, offsetY, minSwipeLength, key.swipeType)
-                            action = key.swipes?.get(swipeDirection)?.action ?: key.center.action
+
+                            val finalOffset = positions.last()
+                            val maxOffsetBigEnough = maxOffset.getDistanceSquared() >= (finalOffset * 2f).getDistanceSquared()
+                            val finalOffsetSmallEnough = finalOffset.getDistance() <= keySize.dp.toPx() / 2
+                            action =
+                                (
+                                    if (maxOffsetBigEnough && finalOffsetSmallEnough) {
+                                        (
+                                            if (circularDragEnabled) {
+                                                val circularDragActions =
+                                                    mapOf(
+                                                        CircularDragAction.OppositeCase to secondaryKey?.center?.action,
+                                                        CircularDragAction.Numeric to tertiaryKey?.center?.action,
+                                                    )
+                                                circularDirection(positions, keySize)?.let {
+                                                    when (it) {
+                                                        CircularDirection.Clockwise -> circularDragActions[clockwiseDragAction]
+                                                        CircularDirection.Counterclockwise ->
+                                                            circularDragActions[counterclockwiseDragAction]
+                                                    }
+                                                }
+                                            } else {
+                                                null
+                                            }
+                                        ) ?: (
+                                            if (dragReturnEnabled) {
+                                                val swipeDirection =
+                                                    swipeDirection(maxOffset.x, maxOffset.y, minSwipeLength, key.swipeType)
+                                                secondaryKey?.swipes?.get(swipeDirection)?.action
+                                            } else {
+                                                null
+                                            }
+                                        )
+                                    } else {
+                                        val swipeDirection =
+                                            swipeDirection(offsetX, offsetY, minSwipeLength, key.swipeType)
+                                        key.swipes?.get(swipeDirection)?.action
+                                    }
+                                ) ?: key.center.action
 
                             performKeyAction(
                                 action = action,
@@ -490,6 +543,8 @@ fun KeyboardKey(
                         // Reset the drags
                         offsetX = 0f
                         offsetY = 0f
+                        maxOffset = Offset(0f, 0f)
+                        positions = listOf()
 
                         // Reset selection
                         selection = Selection()

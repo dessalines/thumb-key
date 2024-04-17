@@ -42,6 +42,10 @@ import com.dessalines.thumbkey.db.DEFAULT_ANIMATION_HELPER_SPEED
 import com.dessalines.thumbkey.db.DEFAULT_ANIMATION_SPEED
 import com.dessalines.thumbkey.db.DEFAULT_AUTO_CAPITALIZE
 import com.dessalines.thumbkey.db.DEFAULT_BACKDROP_ENABLED
+import com.dessalines.thumbkey.db.DEFAULT_CIRCULAR_DRAG_ENABLED
+import com.dessalines.thumbkey.db.DEFAULT_CLOCKWISE_DRAG_ACTION
+import com.dessalines.thumbkey.db.DEFAULT_COUNTERCLOCKWISE_DRAG_ACTION
+import com.dessalines.thumbkey.db.DEFAULT_DRAG_RETURN_ENABLED
 import com.dessalines.thumbkey.db.DEFAULT_HIDE_LETTERS
 import com.dessalines.thumbkey.db.DEFAULT_HIDE_SYMBOLS
 import com.dessalines.thumbkey.db.DEFAULT_KEYBOARD_LAYOUT
@@ -298,6 +302,10 @@ private fun resetAppSettingsToDefault(appSettingsViewModel: AppSettingsViewModel
             keyPadding = DEFAULT_KEY_PADDING,
             keyBorderWidth = DEFAULT_KEY_BORDER_WIDTH,
             keyRadius = DEFAULT_KEY_RADIUS,
+            dragReturnEnabled = DEFAULT_DRAG_RETURN_ENABLED,
+            circularDragEnabled = DEFAULT_CIRCULAR_DRAG_ENABLED,
+            clockwiseDragAction = DEFAULT_CLOCKWISE_DRAG_ACTION,
+            counterclockwiseDragAction = DEFAULT_COUNTERCLOCKWISE_DRAG_ACTION,
         ),
     )
 }
