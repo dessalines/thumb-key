@@ -489,7 +489,7 @@ val KB_EN_HR_MESSAGEASE_SHIFTED =
                                     display = KeyDisplay.TextDisplay("Y"),
                                     action = KeyAction.CommitText("Y"),
                                 ),
-                             SwipeDirection.TOP to
+                            SwipeDirection.TOP to
                                 KeyC(
                                     display = KeyDisplay.TextDisplay("Ž"),
                                     action = KeyAction.CommitText("Ž"),
