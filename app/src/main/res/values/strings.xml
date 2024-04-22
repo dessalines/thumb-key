@@ -82,8 +82,8 @@
     <string name="key_border_width">Key Border Width: %1$s</string>
     <string name="key_radius">Key Radius: %1$s</string>
     <string name="drag_return_enable">Drag-and-Return</string>
-    <string name="counterclockwise_drag_action">Counterclockwise circular drag</string>
-    <string name="clockwise_drag_action">Clockwise circular drag</string>
+    <string name="counterclockwise_drag_action">Counterclockwise drag action</string>
+    <string name="clockwise_drag_action">Clockwise drag action</string>
     <string name="send_oppsite_case">Send letter of opposite case</string>
     <string name="send_numeric">Send equivalent number of numeric keyboard</string>
     <string name="circular_drag_enable">Circular drag</string>
