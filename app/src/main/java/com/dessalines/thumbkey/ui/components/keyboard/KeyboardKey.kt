@@ -110,8 +110,8 @@ fun KeyboardKey(
     onAutoCapitalize: (enable: Boolean) -> Unit,
     onSwitchLanguage: () -> Unit,
     onSwitchPosition: () -> Unit,
-    secondaryKey: KeyItemC? = null,
-    tertiaryKey: KeyItemC? = null,
+    oppositeCaseKey: KeyItemC? = null,
+    numericKey: KeyItemC? = null,
     dragReturnEnabled: Boolean,
     circularDragEnabled: Boolean,
     clockwiseDragAction: CircularDragAction,
@@ -434,8 +434,8 @@ fun KeyboardKey(
                                             if (circularDragEnabled) {
                                                 val circularDragActions =
                                                     mapOf(
-                                                        CircularDragAction.OppositeCase to secondaryKey?.center?.action,
-                                                        CircularDragAction.Numeric to tertiaryKey?.center?.action,
+                                                        CircularDragAction.OppositeCase to oppositeCaseKey?.center?.action,
+                                                        CircularDragAction.Numeric to numericKey?.center?.action,
                                                     )
                                                 circularDirection(positions, keySize)?.let {
                                                     when (it) {
@@ -451,7 +451,7 @@ fun KeyboardKey(
                                             if (dragReturnEnabled) {
                                                 val swipeDirection =
                                                     swipeDirection(maxOffset.x, maxOffset.y, minSwipeLength, key.swipeType)
-                                                secondaryKey?.swipes?.get(swipeDirection)?.action
+                                                oppositeCaseKey?.swipes?.get(swipeDirection)?.action
                                             } else {
                                                 null
                                             }

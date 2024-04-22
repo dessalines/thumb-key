@@ -103,22 +103,12 @@ fun KeyboardScreen(
                 ?: DEFAULT_KEYBOARD_LAYOUT,
         ].keyboardDefinition
 
-    val (keyboard, secondaryKeyboard, tertiaryKeyboard) =
+    val keyboard =
         when (mode) {
-            KeyboardMode.MAIN ->
-                Triple(
-                    keyboardDefinition.modes.main,
-                    keyboardDefinition.modes.shifted,
-                    keyboardDefinition.modes.numeric,
-                )
-            KeyboardMode.SHIFTED ->
-                Triple(
-                    keyboardDefinition.modes.shifted,
-                    keyboardDefinition.modes.main,
-                    keyboardDefinition.modes.numeric,
-                )
-            KeyboardMode.NUMERIC -> Triple(keyboardDefinition.modes.numeric, null, null)
-            else -> Triple(KB_EN_THUMBKEY_MAIN, null, null)
+            KeyboardMode.MAIN -> keyboardDefinition.modes.main
+            KeyboardMode.SHIFTED -> keyboardDefinition.modes.shifted
+            KeyboardMode.NUMERIC -> keyboardDefinition.modes.numeric
+            else -> KB_EN_THUMBKEY_MAIN
         }
 
     val alignment =
@@ -443,8 +433,17 @@ fun KeyboardScreen(
                                     },
                                     onSwitchLanguage = onSwitchLanguage,
                                     onSwitchPosition = onSwitchPosition,
-                                    secondaryKey = secondaryKeyboard?.arr?.getOrNull(i)?.getOrNull(j),
-                                    tertiaryKey = tertiaryKeyboard?.arr?.getOrNull(i)?.getOrNull(j),
+                                    oppositeCaseKey =
+                                        when (mode) {
+                                            KeyboardMode.MAIN -> keyboardDefinition.modes.shifted
+                                            KeyboardMode.SHIFTED -> keyboardDefinition.modes.main
+                                            else -> null
+                                        }?.arr?.get(i)?.get(j),
+                                    numericKey =
+                                        when (mode) {
+                                            KeyboardMode.MAIN, KeyboardMode.SHIFTED -> keyboardDefinition.modes.numeric.arr[i][j]
+                                            else -> null
+                                        },
                                     dragReturnEnabled = dragReturnEnabled,
                                     circularDragEnabled = circularDragEnabled,
                                     clockwiseDragAction = clockwiseDragAction,
