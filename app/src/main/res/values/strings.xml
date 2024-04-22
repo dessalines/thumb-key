@@ -84,7 +84,7 @@
     <string name="drag_return_enable">Drag-and-Return</string>
     <string name="counterclockwise_drag_action">Counterclockwise drag action</string>
     <string name="clockwise_drag_action">Clockwise drag action</string>
-    <string name="send_oppsite_case">Send letter of opposite case</string>
-    <string name="send_numeric">Send equivalent number of numeric keyboard</string>
+    <string name="send_oppsite_case">Opposite case letter</string>
+    <string name="send_numeric">Number key</string>
     <string name="circular_drag_enable">Circular drag</string>
 </resources>
