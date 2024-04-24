@@ -9,10 +9,14 @@ import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.automirrored.outlined.Backspace
+import androidx.compose.material.icons.automirrored.outlined.RotateLeft
+import androidx.compose.material.icons.automirrored.outlined.RotateRight
 import androidx.compose.material.icons.outlined.Abc
+import androidx.compose.material.icons.outlined.Circle
 import androidx.compose.material.icons.outlined.SpaceBar
 import androidx.compose.material.icons.outlined.SwapHoriz
 import androidx.compose.material.icons.outlined.Swipe
+import androidx.compose.material.icons.outlined.UTurnRight
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.Icon
 import androidx.compose.material3.MaterialTheme
@@ -35,6 +39,10 @@ import com.dessalines.thumbkey.R
 import com.dessalines.thumbkey.db.AppSettingsViewModel
 import com.dessalines.thumbkey.db.BehaviorUpdate
 import com.dessalines.thumbkey.db.DEFAULT_AUTO_CAPITALIZE
+import com.dessalines.thumbkey.db.DEFAULT_CIRCULAR_DRAG_ENABLED
+import com.dessalines.thumbkey.db.DEFAULT_CLOCKWISE_DRAG_ACTION
+import com.dessalines.thumbkey.db.DEFAULT_COUNTERCLOCKWISE_DRAG_ACTION
+import com.dessalines.thumbkey.db.DEFAULT_DRAG_RETURN_ENABLED
 import com.dessalines.thumbkey.db.DEFAULT_MIN_SWIPE_LENGTH
 import com.dessalines.thumbkey.db.DEFAULT_SLIDE_BACKSPACE_DEADZONE_ENABLED
 import com.dessalines.thumbkey.db.DEFAULT_SLIDE_CURSOR_MOVEMENT_MODE
@@ -44,6 +52,7 @@ import com.dessalines.thumbkey.db.DEFAULT_SLIDE_SPACEBAR_DEADZONE_ENABLED
 import com.dessalines.thumbkey.db.DEFAULT_SPACEBAR_MULTITAPS
 import com.dessalines.thumbkey.ui.components.common.TestOutTextField
 import com.dessalines.thumbkey.ui.components.settings.about.SettingsDivider
+import com.dessalines.thumbkey.utils.CircularDragAction
 import com.dessalines.thumbkey.utils.CursorAccelerationMode
 import com.dessalines.thumbkey.utils.SimpleTopAppBar
 import com.dessalines.thumbkey.utils.TAG
@@ -80,6 +89,12 @@ fun BehaviorActivity(
     var autoCapitalizeState = (settings?.autoCapitalize ?: DEFAULT_AUTO_CAPITALIZE).toBool()
     var spacebarMultiTapsState = (settings?.spacebarMultiTaps ?: DEFAULT_SPACEBAR_MULTITAPS).toBool()
 
+    var dragReturnEnabledState = (settings?.dragReturnEnabled ?: DEFAULT_DRAG_RETURN_ENABLED).toBool()
+    var circularDragEnabledState = (settings?.circularDragEnabled ?: DEFAULT_CIRCULAR_DRAG_ENABLED).toBool()
+    var clockwiseDragActionState = CircularDragAction.entries[settings?.clockwiseDragAction ?: DEFAULT_CLOCKWISE_DRAG_ACTION]
+    var counterclockwiseDragActionState =
+        CircularDragAction.entries[settings?.counterclockwiseDragAction ?: DEFAULT_COUNTERCLOCKWISE_DRAG_ACTION]
+
     val snackbarHostState = remember { SnackbarHostState() }
 
     val scrollState = rememberScrollState()
@@ -98,6 +113,10 @@ fun BehaviorActivity(
                 slideBackspaceDeadzoneEnabled = slideBackspaceDeadzoneEnabledState.toInt(),
                 autoCapitalize = autoCapitalizeState.toInt(),
                 spacebarMultiTaps = spacebarMultiTapsState.toInt(),
+                dragReturnEnabled = dragReturnEnabledState.toInt(),
+                circularDragEnabled = circularDragEnabledState.toInt(),
+                clockwiseDragAction = clockwiseDragActionState.ordinal,
+                counterclockwiseDragAction = counterclockwiseDragActionState.ordinal,
             ),
         )
     }
@@ -275,6 +294,89 @@ fun BehaviorActivity(
                             Icon(
                                 imageVector = Icons.AutoMirrored.Outlined.Backspace,
                                 contentDescription = stringResource(R.string.slide_backspace_deadzone_enable),
+                            )
+                        },
+                    )
+                    SettingsDivider()
+                    SwitchPreference(
+                        value = dragReturnEnabledState,
+                        onValueChange = {
+                            dragReturnEnabledState = it
+                            updateBehavior()
+                        },
+                        title = {
+                            Text(stringResource(R.string.drag_return_enable))
+                        },
+                        icon = {
+                            Icon(
+                                imageVector = Icons.Outlined.UTurnRight,
+                                contentDescription = stringResource(R.string.drag_return_enable),
+                            )
+                        },
+                    )
+                    SwitchPreference(
+                        value = circularDragEnabledState,
+                        onValueChange = {
+                            circularDragEnabledState = it
+                            updateBehavior()
+                        },
+                        title = {
+                            Text(stringResource(R.string.circular_drag_enable))
+                        },
+                        icon = {
+                            Icon(
+                                imageVector = Icons.Outlined.Circle,
+                                contentDescription = stringResource(R.string.circular_drag_enable),
+                            )
+                        },
+                    )
+                    ListPreference(
+                        enabled = circularDragEnabledState,
+                        type = ListPreferenceType.DROPDOWN_MENU,
+                        value = clockwiseDragActionState,
+                        onValueChange = {
+                            clockwiseDragActionState = it
+                            updateBehavior()
+                        },
+                        values = CircularDragAction.entries,
+                        valueToText = {
+                            AnnotatedString(ctx.getString(it.resId))
+                        },
+                        title = {
+                            Text(stringResource(R.string.clockwise_drag_action))
+                        },
+                        summary = {
+                            Text(stringResource(clockwiseDragActionState.resId))
+                        },
+                        icon = {
+                            Icon(
+                                imageVector = Icons.AutoMirrored.Outlined.RotateRight,
+                                contentDescription = stringResource(R.string.clockwise_drag_action),
+                            )
+                        },
+                    )
+                    ListPreference(
+                        enabled = circularDragEnabledState,
+                        type = ListPreferenceType.DROPDOWN_MENU,
+                        value = counterclockwiseDragActionState,
+                        onValueChange = {
+                            counterclockwiseDragActionState = it
+                            updateBehavior()
+                        },
+                        values = CircularDragAction.entries,
+                        valueToText = {
+                            AnnotatedString(ctx.getString(it.resId))
+                        },
+                        title = {
+                            Text(stringResource(R.string.counterclockwise_drag_action))
+                        },
+                        summary = {
+                            Text(stringResource(counterclockwiseDragActionState.resId))
+                        },
+                        icon = {
+                            Icon(
+                                imageVector = Icons.AutoMirrored.Outlined.RotateLeft,
+                                contentDescription = stringResource(R.string.counterclockwise_drag_action),
                             )
                         },
                     )

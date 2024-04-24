@@ -35,6 +35,10 @@ import com.dessalines.thumbkey.db.DEFAULT_ANIMATION_HELPER_SPEED
 import com.dessalines.thumbkey.db.DEFAULT_ANIMATION_SPEED
 import com.dessalines.thumbkey.db.DEFAULT_AUTO_CAPITALIZE
 import com.dessalines.thumbkey.db.DEFAULT_BACKDROP_ENABLED
+import com.dessalines.thumbkey.db.DEFAULT_CIRCULAR_DRAG_ENABLED
+import com.dessalines.thumbkey.db.DEFAULT_CLOCKWISE_DRAG_ACTION
+import com.dessalines.thumbkey.db.DEFAULT_COUNTERCLOCKWISE_DRAG_ACTION
+import com.dessalines.thumbkey.db.DEFAULT_DRAG_RETURN_ENABLED
 import com.dessalines.thumbkey.db.DEFAULT_HIDE_LETTERS
 import com.dessalines.thumbkey.db.DEFAULT_HIDE_SYMBOLS
 import com.dessalines.thumbkey.db.DEFAULT_KEYBOARD_LAYOUT
@@ -58,6 +62,7 @@ import com.dessalines.thumbkey.keyboards.EMOJI_BACK_KEY_ITEM
 import com.dessalines.thumbkey.keyboards.KB_EN_THUMBKEY_MAIN
 import com.dessalines.thumbkey.keyboards.NUMERIC_KEY_ITEM
 import com.dessalines.thumbkey.keyboards.RETURN_KEY_ITEM
+import com.dessalines.thumbkey.utils.CircularDragAction
 import com.dessalines.thumbkey.utils.KeyAction
 import com.dessalines.thumbkey.utils.KeyboardLayout
 import com.dessalines.thumbkey.utils.KeyboardMode
@@ -133,6 +138,11 @@ fun KeyboardScreen(
     val legendHeight = settings?.keySize ?: DEFAULT_KEY_SIZE
     val legendWidth = settings?.keyWidth ?: legendHeight
     val keyRadius = settings?.keyRadius ?: DEFAULT_KEY_RADIUS
+    val dragReturnEnabled = (settings?.dragReturnEnabled ?: DEFAULT_DRAG_RETURN_ENABLED).toBool()
+    val circularDragEnabled = (settings?.circularDragEnabled ?: DEFAULT_CIRCULAR_DRAG_ENABLED).toBool()
+    val clockwiseDragAction = CircularDragAction.entries[settings?.clockwiseDragAction ?: DEFAULT_CLOCKWISE_DRAG_ACTION]
+    val counterclockwiseDragAction =
+        CircularDragAction.entries[settings?.counterclockwiseDragAction ?: DEFAULT_COUNTERCLOCKWISE_DRAG_ACTION]
 
     val keyBorderWidthFloat = keyBorderWidth / 10.0f
     val keyBorderColour = MaterialTheme.colorScheme.outline
@@ -299,6 +309,10 @@ fun KeyboardScreen(
                                 },
                                 onSwitchLanguage = onSwitchLanguage,
                                 onSwitchPosition = onSwitchPosition,
+                                dragReturnEnabled = dragReturnEnabled,
+                                circularDragEnabled = circularDragEnabled,
+                                clockwiseDragAction = clockwiseDragAction,
+                                counterclockwiseDragAction = counterclockwiseDragAction,
                             )
                         }
                     }
@@ -345,9 +359,9 @@ fun KeyboardScreen(
                             },
                         ),
             ) {
-                keyboard.arr.forEach { row ->
+                keyboard.arr.forEachIndexed { i, row ->
                     Row {
-                        row.forEach { key ->
+                        row.forEachIndexed { j, key ->
                             Column {
                                 KeyboardKey(
                                     key = key,
@@ -419,6 +433,21 @@ fun KeyboardScreen(
                                     },
                                     onSwitchLanguage = onSwitchLanguage,
                                     onSwitchPosition = onSwitchPosition,
+                                    oppositeCaseKey =
+                                        when (mode) {
+                                            KeyboardMode.MAIN -> keyboardDefinition.modes.shifted
+                                            KeyboardMode.SHIFTED -> keyboardDefinition.modes.main
+                                            else -> null
+                                        }?.arr?.get(i)?.get(j),
+                                    numericKey =
+                                        when (mode) {
+                                            KeyboardMode.MAIN, KeyboardMode.SHIFTED -> keyboardDefinition.modes.numeric.arr[i][j]
+                                            else -> null
+                                        },
+                                    dragReturnEnabled = dragReturnEnabled,
+                                    circularDragEnabled = circularDragEnabled,
+                                    clockwiseDragAction = clockwiseDragAction,
+                                    counterclockwiseDragAction = counterclockwiseDragAction,
                                 )
                             }
                         }

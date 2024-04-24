@@ -224,3 +224,15 @@ data class Selection(
         end += index
     }
 }
+
+enum class CircularDirection {
+    Clockwise,
+    Counterclockwise,
+}
+
+enum class CircularDragAction(
+    @StringRes val resId: Int,
+) {
+    OppositeCase(R.string.send_oppsite_case),
+    Numeric(R.string.send_numeric),
+}

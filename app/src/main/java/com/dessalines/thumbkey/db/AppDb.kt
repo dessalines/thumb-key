@@ -52,6 +52,10 @@ const val DEFAULT_BACKDROP_ENABLED = 0
 const val DEFAULT_KEY_PADDING = 0
 const val DEFAULT_KEY_BORDER_WIDTH = 1
 const val DEFAULT_KEY_RADIUS = 0
+const val DEFAULT_DRAG_RETURN_ENABLED = 1
+const val DEFAULT_CIRCULAR_DRAG_ENABLED = 1
+const val DEFAULT_CLOCKWISE_DRAG_ACTION = 0
+const val DEFAULT_COUNTERCLOCKWISE_DRAG_ACTION = 1
 
 @Entity
 data class AppSettings(
@@ -202,6 +206,26 @@ data class AppSettings(
         defaultValue = DEFAULT_KEY_RADIUS.toString(),
     )
     val keyRadius: Int,
+    @ColumnInfo(
+        name = "drag_return_enabled",
+        defaultValue = DEFAULT_DRAG_RETURN_ENABLED.toString(),
+    )
+    val dragReturnEnabled: Int,
+    @ColumnInfo(
+        name = "circular_drag_enabled",
+        defaultValue = DEFAULT_CIRCULAR_DRAG_ENABLED.toString(),
+    )
+    val circularDragEnabled: Int,
+    @ColumnInfo(
+        name = "clockwise_drag_action",
+        defaultValue = DEFAULT_CLOCKWISE_DRAG_ACTION.toString(),
+    )
+    val clockwiseDragAction: Int,
+    @ColumnInfo(
+        name = "counterclockwise_drag_action",
+        defaultValue = DEFAULT_COUNTERCLOCKWISE_DRAG_ACTION.toString(),
+    )
+    val counterclockwiseDragAction: Int,
 )
 
 data class LayoutsUpdate(
@@ -302,6 +326,14 @@ data class BehaviorUpdate(
     val autoCapitalize: Int,
     @ColumnInfo(name = "spacebar_multitaps")
     val spacebarMultiTaps: Int,
+    @ColumnInfo(name = "drag_return_enabled")
+    val dragReturnEnabled: Int,
+    @ColumnInfo(name = "circular_drag_enabled")
+    val circularDragEnabled: Int,
+    @ColumnInfo(name = "clockwise_drag_action")
+    val clockwiseDragAction: Int,
+    @ColumnInfo(name = "counterclockwise_drag_action")
+    val counterclockwiseDragAction: Int,
 )
 
 @Dao
@@ -508,8 +540,27 @@ val MIGRATION_13_14 =
         }
     }
 
+val MIGRATION_14_15 =
+    object : Migration(14, 15) {
+        override fun migrate(db: SupportSQLiteDatabase) {
+            db.execSQL(
+                "alter table AppSettings add column drag_return_enabled INTEGER NOT NULL default $DEFAULT_DRAG_RETURN_ENABLED",
+            )
+            db.execSQL(
+                "alter table AppSettings add column circular_drag_enabled INTEGER NOT NULL default $DEFAULT_CIRCULAR_DRAG_ENABLED",
+            )
+            db.execSQL(
+                "alter table AppSettings add column clockwise_drag_action INTEGER NOT NULL default $DEFAULT_CLOCKWISE_DRAG_ACTION",
+            )
+            db.execSQL(
+                "alter table AppSettings add column counterclockwise_drag_action INTEGER NOT NULL " +
+                    "default $DEFAULT_COUNTERCLOCKWISE_DRAG_ACTION",
+            )
+        }
+    }
+
 @Database(
-    version = 14,
+    version = 15,
     entities = [AppSettings::class],
     exportSchema = true,
 )
@@ -545,6 +596,7 @@ abstract class AppDB : RoomDatabase() {
                             MIGRATION_11_12,
                             MIGRATION_12_13,
                             MIGRATION_13_14,
+                            MIGRATION_14_15,
                         )
                         // Necessary because it can't insert data on creation
                         .addCallback(
