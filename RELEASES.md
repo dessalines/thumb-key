@@ -1,7 +1,26 @@
+# Thumb-Key 3.1.0 (2024-04-24)
+
+## What's Changed in 3.1.0
+
+- Upgrading deps. by @dessalines in [#857](https://github.com/dessalines/thumb-key/pull/857)
+- Adding slovak v2 keyboard. Fixes #151 by @dessalines in [#856](https://github.com/dessalines/thumb-key/pull/856)
+- Implement Drag-and-return & Circular drag by @feathecutie in [#854](https://github.com/dessalines/thumb-key/pull/854)
+- Fix swipe direction and update Capital keyboard for EN_HR by @ssaric in [#853](https://github.com/dessalines/thumb-key/pull/853)
+- Fixing bottom offset slider. by @dessalines in [#852](https://github.com/dessalines/thumb-key/pull/852)
+- Add PLTypeSplitSymbols by @kkard2 in [#851](https://github.com/dessalines/thumb-key/pull/851)
+
+## New Contributors
+
+- @feathecutie made their first contribution in [#854](https://github.com/dessalines/thumb-key/pull/854)
+- @kkard2 made their first contribution in [#851](https://github.com/dessalines/thumb-key/pull/851)
+
+**Full Changelog**: https://github.com/dessalines/thumb-key/compare/3.0.0...3.1.0
+
 # Thumb-Key 3.0.0 (2024-04-14)
 
 ## What's Changed in 3.0.0
 
+- Upping version. by @dessalines
 - Fixing black-screen on startup. by @dessalines in [#850](https://github.com/dessalines/thumb-key/pull/850)
 - Adding toki pona and sitelen emoji keyboards. by @dessalines in [#849](https://github.com/dessalines/thumb-key/pull/849)
 - Simplifying KeyC default. by @dessalines in [#848](https://github.com/dessalines/thumb-key/pull/848)
@@ -70,7 +89,6 @@
 ## New Contributors
 
 - @philipp8101 made their first contribution in [#818](https://github.com/dessalines/thumb-key/pull/818)
-- @ssaric made their first contribution in [#823](https://github.com/dessalines/thumb-key/pull/823)
 
 **Full Changelog**: https://github.com/dessalines/thumb-key/compare/2.7.2...2.7.3
 
