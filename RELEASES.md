@@ -1,7 +1,17 @@
+# Thumb-Key 3.1.1 (2024-04-25)
+
+## What's Changed in 3.1.1
+
+- Making haptic feedback use KEYBOARD_TAP constant. Fixes #862 by @dessalines in [#863](https://github.com/dessalines/thumb-key/pull/863)
+- Fix crash when using Japanese thumb-key (fixes #858) by @glm4610 in [#861](https://github.com/dessalines/thumb-key/pull/861)
+
+**Full Changelog**: https://github.com/dessalines/thumb-key/compare/3.1.0...3.1.1
+
 # Thumb-Key 3.1.0 (2024-04-24)
 
 ## What's Changed in 3.1.0
 
+- Upping version. by @dessalines
 - Upgrading deps. by @dessalines in [#857](https://github.com/dessalines/thumb-key/pull/857)
 - Adding slovak v2 keyboard. Fixes #151 by @dessalines in [#856](https://github.com/dessalines/thumb-key/pull/856)
 - Implement Drag-and-return & Circular drag by @feathecutie in [#854](https://github.com/dessalines/thumb-key/pull/854)
@@ -37,10 +47,6 @@
 - Update composing and add it to DEMessagEaseSymbols by @mensogulo in [#844](https://github.com/dessalines/thumb-key/pull/844)
 - Correct default French MessagEase layout (#830) by @glm4610 in [#840](https://github.com/dessalines/thumb-key/pull/840)
 - Fixing vietnamese keyboard name. by @dessalines in [#842](https://github.com/dessalines/thumb-key/pull/842)
-
-## New Contributors
-
-- @glm4610 made their first contribution in [#840](https://github.com/dessalines/thumb-key/pull/840)
 
 **Full Changelog**: https://github.com/dessalines/thumb-key/compare/2.7.5...2.7.6
 
