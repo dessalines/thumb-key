@@ -3,6 +3,7 @@ package com.dessalines.thumbkey.ui.components.keyboard
 import android.content.Context
 import android.media.AudioManager
 import android.util.Log
+import android.view.HapticFeedbackConstants
 import android.view.inputmethod.InputConnection.CURSOR_UPDATE_MONITOR
 import androidx.compose.foundation.background
 import androidx.compose.foundation.border
@@ -22,9 +23,8 @@ import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
-import androidx.compose.ui.hapticfeedback.HapticFeedbackType
 import androidx.compose.ui.platform.LocalContext
-import androidx.compose.ui.platform.LocalHapticFeedback
+import androidx.compose.ui.platform.LocalView
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.viewinterop.AndroidView
@@ -210,7 +210,7 @@ fun KeyboardScreen(
                             )
                             .background(MaterialTheme.colorScheme.surface),
                 ) {
-                    val haptic = LocalHapticFeedback.current
+                    val view = LocalView.current
                     val audioManager = ctx.getSystemService(Context.AUDIO_SERVICE) as AudioManager
                     AndroidView(
                         // Write the emoji to our text box when we tap one.
@@ -218,7 +218,7 @@ fun KeyboardScreen(
                             val emojiPicker = EmojiPickerView(context)
                             emojiPicker.setOnEmojiPickedListener {
                                 if (vibrateOnTap) {
-                                    haptic.performHapticFeedback(HapticFeedbackType.LongPress)
+                                    view.performHapticFeedback(HapticFeedbackConstants.KEYBOARD_TAP)
                                 }
                                 if (soundOnTap) {
                                     audioManager.playSoundEffect(AudioManager.FX_KEY_CLICK, .1f)
