@@ -1,6 +1,7 @@
 package com.dessalines.thumbkey.ui.components.keyboard
 import android.content.Context
 import android.media.AudioManager
+import android.view.HapticFeedbackConstants
 import android.view.KeyEvent
 import androidx.compose.animation.AnimatedVisibility
 import androidx.compose.animation.EnterTransition
@@ -40,10 +41,9 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.geometry.Offset
 import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.hapticfeedback.HapticFeedbackType
 import androidx.compose.ui.input.pointer.pointerInput
 import androidx.compose.ui.platform.LocalContext
-import androidx.compose.ui.platform.LocalHapticFeedback
+import androidx.compose.ui.platform.LocalView
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
@@ -161,13 +161,15 @@ fun KeyboardKey(
 
     val keyBorderColour = MaterialTheme.colorScheme.outline
     val keySize = (keyHeight + keyWidth) / 2.0
-    val haptic = LocalHapticFeedback.current
+    val view = LocalView.current
     val audioManager = ctx.getSystemService(Context.AUDIO_SERVICE) as AudioManager
 
     LaunchedEffect(key1 = isPressed) {
         if (isPressed) {
             if (vibrateOnTap) {
-                haptic.performHapticFeedback(HapticFeedbackType.LongPress)
+                // This is a workaround for only having LongPress
+                // https://stackoverflow.com/questions/68333741/how-to-perform-a-haptic-feedback-in-jetpack-compose
+                view.performHapticFeedback(HapticFeedbackConstants.KEYBOARD_TAP)
             }
             if (soundOnTap) {
                 audioManager.playSoundEffect(AudioManager.FX_KEY_CLICK, .1f)
@@ -243,7 +245,7 @@ fun KeyboardKey(
                         )
                         doneKeyAction(scope, action, isDragged, releasedKey, animationHelperSpeed)
                         if (vibrateOnTap) {
-                            haptic.performHapticFeedback(HapticFeedbackType.LongPress)
+                            view.performHapticFeedback(HapticFeedbackConstants.KEYBOARD_TAP)
                         }
                         if (soundOnTap) {
                             audioManager.playSoundEffect(AudioManager.FX_KEY_CLICK, .1f)
