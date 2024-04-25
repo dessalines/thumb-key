@@ -438,10 +438,12 @@ fun KeyboardScreen(
                                             KeyboardMode.MAIN -> keyboardDefinition.modes.shifted
                                             KeyboardMode.SHIFTED -> keyboardDefinition.modes.main
                                             else -> null
-                                        }?.arr?.get(i)?.get(j),
+                                        }?.arr?.getOrNull(i)?.getOrNull(j),
                                     numericKey =
                                         when (mode) {
-                                            KeyboardMode.MAIN, KeyboardMode.SHIFTED -> keyboardDefinition.modes.numeric.arr[i][j]
+                                            KeyboardMode.MAIN, KeyboardMode.SHIFTED ->
+                                                keyboardDefinition.modes.numeric.arr
+                                                    .getOrNull(i)?.getOrNull(j)
                                             else -> null
                                         },
                                     dragReturnEnabled = dragReturnEnabled,
