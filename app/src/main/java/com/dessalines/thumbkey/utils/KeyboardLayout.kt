@@ -85,6 +85,7 @@ import com.dessalines.thumbkey.keyboards.KB_ID_THUMBKEY_SYMBOLS_NUMERIC_V1
 import com.dessalines.thumbkey.keyboards.KB_ID_THUMBKEY_SYMBOLS_V1
 import com.dessalines.thumbkey.keyboards.KB_ID_THUMBKEY_SYMBOLS_V2
 import com.dessalines.thumbkey.keyboards.KB_IT_MESSAGEASE
+import com.dessalines.thumbkey.keyboards.KB_IT_MESSAGEASE_SYMBOLS
 import com.dessalines.thumbkey.keyboards.KB_IT_THUMBKEY
 import com.dessalines.thumbkey.keyboards.KB_IT_TYPESPLIT
 import com.dessalines.thumbkey.keyboards.KB_JA_THUMBKEY_HIRAGANA
@@ -248,4 +249,5 @@ enum class KeyboardLayout(val keyboardDefinition: KeyboardDefinition) {
     TOKSitelenEmojiThumbKey(KB_TOK_SITELEN_EMOJI_THUMBKEY),
     PLTypeSplitSymbols(KB_PL_TYPESPLIT_SYMBOLS),
     SKThumbKeyV3(KB_SK_THUMBKEY_V2),
+    ITMessagEaseSymbols(KB_IT_MESSAGEASE_SYMBOLS),
 }
