@@ -87,4 +87,6 @@
     <string name="send_oppsite_case">Opposite case letter</string>
     <string name="send_numeric">Number key</string>
     <string name="circular_drag_enable">Circular drag</string>
+    <string name="circle_threshold">Circle Threshold: +%1$s%%</string>
+    <string name="circle_threshold_summary">Threshold to detect gestures as circlular drag instead of drag-and-return</string>
 </resources>

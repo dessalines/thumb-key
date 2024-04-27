@@ -35,6 +35,7 @@ import com.dessalines.thumbkey.db.DEFAULT_ANIMATION_HELPER_SPEED
 import com.dessalines.thumbkey.db.DEFAULT_ANIMATION_SPEED
 import com.dessalines.thumbkey.db.DEFAULT_AUTO_CAPITALIZE
 import com.dessalines.thumbkey.db.DEFAULT_BACKDROP_ENABLED
+import com.dessalines.thumbkey.db.DEFAULT_CIRCLE_THRESHOLD
 import com.dessalines.thumbkey.db.DEFAULT_CIRCULAR_DRAG_ENABLED
 import com.dessalines.thumbkey.db.DEFAULT_CLOCKWISE_DRAG_ACTION
 import com.dessalines.thumbkey.db.DEFAULT_COUNTERCLOCKWISE_DRAG_ACTION
@@ -143,6 +144,7 @@ fun KeyboardScreen(
     val clockwiseDragAction = CircularDragAction.entries[settings?.clockwiseDragAction ?: DEFAULT_CLOCKWISE_DRAG_ACTION]
     val counterclockwiseDragAction =
         CircularDragAction.entries[settings?.counterclockwiseDragAction ?: DEFAULT_COUNTERCLOCKWISE_DRAG_ACTION]
+    val circleThreshold = (settings?.circleThreshold ?: DEFAULT_CIRCLE_THRESHOLD).toFloat()
 
     val keyBorderWidthFloat = keyBorderWidth / 10.0f
     val keyBorderColour = MaterialTheme.colorScheme.outline
@@ -313,6 +315,7 @@ fun KeyboardScreen(
                                 circularDragEnabled = circularDragEnabled,
                                 clockwiseDragAction = clockwiseDragAction,
                                 counterclockwiseDragAction = counterclockwiseDragAction,
+                                circleThreshold = circleThreshold,
                             )
                         }
                     }
@@ -450,6 +453,7 @@ fun KeyboardScreen(
                                     circularDragEnabled = circularDragEnabled,
                                     clockwiseDragAction = clockwiseDragAction,
                                     counterclockwiseDragAction = counterclockwiseDragAction,
+                                    circleThreshold = circleThreshold,
                                 )
                             }
                         }

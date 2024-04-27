@@ -42,6 +42,7 @@ import com.dessalines.thumbkey.db.DEFAULT_ANIMATION_HELPER_SPEED
 import com.dessalines.thumbkey.db.DEFAULT_ANIMATION_SPEED
 import com.dessalines.thumbkey.db.DEFAULT_AUTO_CAPITALIZE
 import com.dessalines.thumbkey.db.DEFAULT_BACKDROP_ENABLED
+import com.dessalines.thumbkey.db.DEFAULT_CIRCLE_THRESHOLD
 import com.dessalines.thumbkey.db.DEFAULT_CIRCULAR_DRAG_ENABLED
 import com.dessalines.thumbkey.db.DEFAULT_CLOCKWISE_DRAG_ACTION
 import com.dessalines.thumbkey.db.DEFAULT_COUNTERCLOCKWISE_DRAG_ACTION
@@ -306,6 +307,7 @@ private fun resetAppSettingsToDefault(appSettingsViewModel: AppSettingsViewModel
             circularDragEnabled = DEFAULT_CIRCULAR_DRAG_ENABLED,
             clockwiseDragAction = DEFAULT_CLOCKWISE_DRAG_ACTION,
             counterclockwiseDragAction = DEFAULT_COUNTERCLOCKWISE_DRAG_ACTION,
+            circleThreshold = DEFAULT_CIRCLE_THRESHOLD,
         ),
     )
 }

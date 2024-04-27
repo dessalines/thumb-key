@@ -1193,12 +1193,15 @@ fun lastColKeysToFirst(board: KeyboardC): KeyboardC {
 
 fun circularDirection(
     positions: List<Offset>,
-    keySize: Double,
+    threshold: Float,
 ): CircularDirection? {
     val center = positions.reduce(Offset::plus) / positions.count().toFloat()
     val radii = positions.map { it.getDistanceTo(center) }
     val averageRadius = radii.sum() / positions.count().toFloat()
-    val similarRadii = radii.all { it in (averageRadius - keySize)..(averageRadius + keySize) }
+    val similarRadii =
+        radii.all {
+            it in (averageRadius * (1 - (threshold / 100f))..(averageRadius * (1 + (threshold / 100f))))
+        }
     if (!similarRadii) return null
     val angleDifferences =
         positions
@@ -1215,7 +1218,7 @@ fun circularDirection(
                 }
             }
     val rotationSum = angleDifferences.sum()
-    val sumThreshold = angleDifferences.count().toDouble() * 0.9
+    val sumThreshold = angleDifferences.count().toDouble() * 0.8
     return when {
         rotationSum >= sumThreshold -> CircularDirection.Clockwise
         rotationSum <= -sumThreshold -> CircularDirection.Counterclockwise

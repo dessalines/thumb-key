@@ -39,6 +39,7 @@ import com.dessalines.thumbkey.R
 import com.dessalines.thumbkey.db.AppSettingsViewModel
 import com.dessalines.thumbkey.db.BehaviorUpdate
 import com.dessalines.thumbkey.db.DEFAULT_AUTO_CAPITALIZE
+import com.dessalines.thumbkey.db.DEFAULT_CIRCLE_THRESHOLD
 import com.dessalines.thumbkey.db.DEFAULT_CIRCULAR_DRAG_ENABLED
 import com.dessalines.thumbkey.db.DEFAULT_CLOCKWISE_DRAG_ACTION
 import com.dessalines.thumbkey.db.DEFAULT_COUNTERCLOCKWISE_DRAG_ACTION
@@ -95,6 +96,9 @@ fun BehaviorActivity(
     var counterclockwiseDragActionState =
         CircularDragAction.entries[settings?.counterclockwiseDragAction ?: DEFAULT_COUNTERCLOCKWISE_DRAG_ACTION]
 
+    var circleThresholdState = (settings?.circleThreshold ?: DEFAULT_CIRCLE_THRESHOLD).toFloat()
+    var circleThresholdSliderState by remember { mutableFloatStateOf(circleThresholdState) }
+
     val snackbarHostState = remember { SnackbarHostState() }
 
     val scrollState = rememberScrollState()
@@ -117,6 +121,7 @@ fun BehaviorActivity(
                 circularDragEnabled = circularDragEnabledState.toInt(),
                 clockwiseDragAction = clockwiseDragActionState.ordinal,
                 counterclockwiseDragAction = counterclockwiseDragActionState.ordinal,
+                circleThreshold = circleThresholdState.toInt(),
             ),
         )
     }
@@ -377,6 +382,33 @@ fun BehaviorActivity(
                             Icon(
                                 imageVector = Icons.AutoMirrored.Outlined.RotateLeft,
                                 contentDescription = stringResource(R.string.counterclockwise_drag_action),
+                            )
+                        },
+                    )
+                    SliderPreference(
+                        value = circleThresholdState,
+                        sliderValue = circleThresholdSliderState,
+                        onValueChange = {
+                            circleThresholdState = it
+                            updateBehavior()
+                        },
+                        onSliderValueChange = { circleThresholdSliderState = it },
+                        valueRange = 50f..300f,
+                        title = {
+                            Text(
+                                stringResource(
+                                    R.string.circle_threshold,
+                                    circleThresholdSliderState.toInt().toString(),
+                                ),
+                            )
+                        },
+                        summary = {
+                            Text(stringResource(R.string.circle_threshold_summary))
+                        },
+                        icon = {
+                            Icon(
+                                imageVector = Icons.Outlined.Circle,
+                                contentDescription = null,
                             )
                         },
                     )

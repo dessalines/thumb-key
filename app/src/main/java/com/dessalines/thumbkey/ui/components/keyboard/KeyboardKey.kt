@@ -116,6 +116,7 @@ fun KeyboardKey(
     circularDragEnabled: Boolean,
     clockwiseDragAction: CircularDragAction,
     counterclockwiseDragAction: CircularDragAction,
+    circleThreshold: Float,
 ) {
     // Necessary for swipe settings to get updated correctly
     val id =
@@ -282,7 +283,7 @@ fun KeyboardKey(
                         // Backspace key:
                         //      Swipe left and right to delete whole word
                         //      Slide gesture delete
-                        //          Wtih slide gesture deadzone to allow normal swipes
+                        //          With slide gesture deadzone to allow normal swipes
                         //          Without deadzone
                         if (key.slideType == SlideType.MOVE_CURSOR && slideEnabled) {
                             val slideSelectionOffsetTrigger = (keySize.dp.toPx() * 1.25) + minSwipeLength
@@ -439,7 +440,7 @@ fun KeyboardKey(
                                                         CircularDragAction.OppositeCase to oppositeCaseKey?.center?.action,
                                                         CircularDragAction.Numeric to numericKey?.center?.action,
                                                     )
-                                                circularDirection(positions, keySize)?.let {
+                                                circularDirection(positions, circleThreshold)?.let {
                                                     when (it) {
                                                         CircularDirection.Clockwise -> circularDragActions[clockwiseDragAction]
                                                         CircularDirection.Counterclockwise ->
