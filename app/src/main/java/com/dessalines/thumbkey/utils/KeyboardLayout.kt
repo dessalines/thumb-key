@@ -50,6 +50,7 @@ import com.dessalines.thumbkey.keyboards.KB_EN_THUMBKEY_PROGRAMMER_WIDE
 import com.dessalines.thumbkey.keyboards.KB_EN_THUMBKEY_SYMBOLS
 import com.dessalines.thumbkey.keyboards.KB_EN_TWO_HANDS
 import com.dessalines.thumbkey.keyboards.KB_EN_TWO_HANDS_MESSAGEASE
+import com.dessalines.thumbkey.keyboards.KB_EN_TWO_HANDS_QWERTEASE
 import com.dessalines.thumbkey.keyboards.KB_EN_TWO_HANDS_SYMBOLS
 import com.dessalines.thumbkey.keyboards.KB_EN_TWO_HANDS_SYMBOLS_NUMBERS
 import com.dessalines.thumbkey.keyboards.KB_EN_TYPESPLIT
@@ -252,4 +253,5 @@ enum class KeyboardLayout(val keyboardDefinition: KeyboardDefinition) {
     SKThumbKeyV3(KB_SK_THUMBKEY_V2),
     ITMessagEaseSymbols(KB_IT_MESSAGEASE_SYMBOLS),
     ENQwertease(KB_EN_QWERTEASE),
+    ENQTwoHandsQwertease(KB_EN_TWO_HANDS_QWERTEASE),
 }
