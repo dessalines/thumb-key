@@ -428,7 +428,7 @@ val KB_EN_TWO_HANDS_QWERTEASE_MAIN =
                                     display = KeyDisplay.TextDisplay(";"),
                                     action = KeyAction.CommitText(";"),
                                     color = ColorVariant.MUTED,
-                                )
+                                ),
                         ),
                 ),
                 BACKSPACE_KEY_ITEM,
@@ -528,7 +528,7 @@ val KB_EN_TWO_HANDS_QWERTEASE_MAIN =
                                     display = KeyDisplay.TextDisplay(";"),
                                     action = KeyAction.CommitText(";"),
                                     color = ColorVariant.MUTED,
-                                )
+                                ),
                         ),
                 ),
             ),
@@ -964,7 +964,7 @@ val KB_EN_TWO_HANDS_QWERTEASE_SHIFTED =
                                     display = KeyDisplay.TextDisplay(";"),
                                     action = KeyAction.CommitText(";"),
                                     color = ColorVariant.MUTED,
-                                )
+                                ),
                         ),
                 ),
                 BACKSPACE_KEY_ITEM,
@@ -1064,7 +1064,7 @@ val KB_EN_TWO_HANDS_QWERTEASE_SHIFTED =
                                     display = KeyDisplay.TextDisplay(";"),
                                     action = KeyAction.CommitText(";"),
                                     color = ColorVariant.MUTED,
-                                )
+                                ),
                         ),
                 ),
             ),
