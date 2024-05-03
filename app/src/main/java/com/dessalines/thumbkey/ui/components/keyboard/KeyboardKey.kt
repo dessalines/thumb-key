@@ -65,6 +65,7 @@ import com.dessalines.thumbkey.utils.circularDirection
 import com.dessalines.thumbkey.utils.colorVariantToColor
 import com.dessalines.thumbkey.utils.doneKeyAction
 import com.dessalines.thumbkey.utils.fontSizeVariantToFontSize
+import com.dessalines.thumbkey.utils.isPasswordField
 import com.dessalines.thumbkey.utils.performKeyAction
 import com.dessalines.thumbkey.utils.pxToSp
 import com.dessalines.thumbkey.utils.slideCursorDistance
@@ -128,6 +129,9 @@ fun KeyboardKey(
     val ctx = LocalContext.current
     val ime = ctx as IMEService
     val scope = rememberCoroutineScope()
+
+    // Don't show animations for password fields
+    val isPasswordField by remember { mutableStateOf(isPasswordField(ime)) }
 
     val interactionSource = remember { MutableInteractionSource() }
     val isPressed by interactionSource.collectIsPressedAsState()
@@ -695,7 +699,7 @@ fun KeyboardKey(
                 Modifier
                     .fillMaxSize()
                     .background(color = Color(0, 0, 0, 0)),
-            visible = releasedKey.value != null,
+            visible = releasedKey.value != null && !isPasswordField,
             enter = EnterTransition.None,
             exit = fadeOut(tween(animationSpeed)),
         ) {
@@ -714,7 +718,7 @@ fun KeyboardKey(
                 Modifier
                     .fillMaxSize()
                     .background(color = Color(0, 0, 0, 0)),
-            visible = releasedKey.value != null,
+            visible = releasedKey.value != null && !isPasswordField,
             enter = slideInVertically(tween(animationSpeed)),
             exit = fadeOut(tween(animationSpeed)),
         ) {
