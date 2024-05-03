@@ -22,7 +22,7 @@ android {
         ksp { arg('room.schemaLocation', "$projectDir/schemas") }
     }
 
-    if(project.hasProperty("RELEASE_STORE_FILE")) {
+    if (project.hasProperty("RELEASE_STORE_FILE")) {
         signingConfigs {
             release {
                 storeFile file(RELEASE_STORE_FILE)
@@ -42,7 +42,7 @@ android {
             minifyEnabled true
             shrinkResources true
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
-            if(project.hasProperty("RELEASE_STORE_FILE")) {
+            if (project.hasProperty("RELEASE_STORE_FILE")) {
                 signingConfig signingConfigs.release
             }
         }
@@ -63,48 +63,52 @@ android {
         compose true
     }
     composeOptions {
-        kotlinCompilerExtensionVersion = "1.5.12"
+        kotlinCompilerExtensionVersion = "1.5.13"
     }
     namespace 'com.dessalines.thumbkey'
 }
 
 dependencies {
+    // Compose BOM
+    implementation platform('androidx.compose:compose-bom:2024.05.00')
+    implementation 'androidx.compose.ui:ui'
+    implementation 'androidx.compose.material3:material3'
+    implementation 'androidx.compose.material:material-icons-extended-desktop'
+    implementation 'androidx.compose.material3:material3-window-size-class'
+    implementation 'androidx.compose.ui:ui-tooling'
+    implementation 'androidx.compose.runtime:runtime-livedata'
 
+    // Activities
+    implementation 'androidx.activity:activity-compose:1.9.0'
+
+    // LiveData
+    implementation "androidx.lifecycle:lifecycle-runtime-compose"
+
+    // Navigation
+    implementation 'androidx.navigation:navigation-compose:2.7.7'
+
+    // Emoji Picker
+    implementation "androidx.emoji2:emoji2-emojipicker:1.4.0"
+
+    // Markdown
     implementation "com.github.jeziellago:compose-markdown:0.3.5"
 
-    implementation 'androidx.navigation:navigation-compose:2.7.7'
+    // Preferences
     implementation 'me.zhanghai.compose.preference:library:1.0.0'
 
+    // Input switcher
+    implementation "com.louiscad.splitties:splitties-systemservices:3.0.0"
+    implementation "com.louiscad.splitties:splitties-views:3.0.0"
+
+    // Room
     // To use Kotlin annotation processing tool
     ksp 'androidx.room:room-compiler:2.6.1'
-
     implementation 'androidx.room:room-runtime:2.6.1'
     annotationProcessor 'androidx.room:room-compiler:2.6.1'
 
     // optional - Kotlin Extensions and Coroutines support for Room
     implementation 'androidx.room:room-ktx:2.6.1'
 
-    // optional - Test helpers
-    testImplementation 'androidx.room:room-testing:2.6.1'
-
-    // optional - Paging 3 Integration
-    implementation 'androidx.room:room-paging:2.6.1'
-
-    // LiveData
-    implementation 'androidx.compose.runtime:runtime-livedata:1.6.6'
-    implementation "androidx.lifecycle:lifecycle-runtime-compose:2.7.0"
-
-    implementation 'org.jetbrains.kotlin:kotlin-stdlib:1.9.23'
+    // App compat
     implementation 'androidx.appcompat:appcompat:1.6.1'
-    implementation 'androidx.compose.ui:ui:1.6.6'
-    implementation 'androidx.compose.material3:material3:1.2.1'
-    implementation 'androidx.compose.material:material-icons-extended-desktop:1.6.6'
-    implementation 'androidx.compose.material3:material3-window-size-class:1.2.1'
-    implementation 'androidx.compose.ui:ui-tooling:1.6.6'
-    implementation 'androidx.activity:activity-compose:1.9.0'
-    implementation "com.louiscad.splitties:splitties-systemservices:3.0.0"
-    implementation "com.louiscad.splitties:splitties-views:3.0.0"
-
-    // Emoji Picker
-    implementation "androidx.emoji2:emoji2-emojipicker:1.4.0"
 }
