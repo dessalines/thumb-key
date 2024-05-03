@@ -1036,6 +1036,15 @@ fun isUriOrEmailOrPasswordField(ime: IMEService): Boolean {
     ).contains(inputType) || ime.currentInputEditorInfo.inputType == EditorInfo.TYPE_NULL
 }
 
+fun isPasswordField(ime: IMEService): Boolean {
+    val inputType = ime.currentInputEditorInfo.inputType and (InputType.TYPE_MASK_VARIATION)
+    return listOf(
+        InputType.TYPE_TEXT_VARIATION_PASSWORD,
+        InputType.TYPE_TEXT_VARIATION_WEB_PASSWORD,
+        InputType.TYPE_NUMBER_VARIATION_PASSWORD,
+    ).contains(inputType) || ime.currentInputEditorInfo.inputType == EditorInfo.TYPE_NULL
+}
+
 fun deleteWordBeforeCursor(ime: IMEService) {
     val wordsBeforeCursor = ime.currentInputConnection.getTextBeforeCursor(9999, 0)
 
