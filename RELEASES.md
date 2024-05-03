@@ -1,7 +1,18 @@
+# Thumb-Key 3.1.3 (2024-05-03)
+
+## What's Changed in 3.1.3
+
+- Fixes and improvements in br-fr layout by @zeecho in [#875](https://github.com/dessalines/thumb-key/pull/875)
+- Update ENQwertEase.kt by @Lysalana in [#873](https://github.com/dessalines/thumb-key/pull/873)
+- Update ENTwoHandsQwertEase.kt by @Lysalana in [#874](https://github.com/dessalines/thumb-key/pull/874)
+
+**Full Changelog**: https://github.com/dessalines/thumb-key/compare/3.1.2...3.1.3
+
 # Thumb-Key 3.1.2 (2024-05-01)
 
 ## What's Changed in 3.1.2
 
+- Upping version. by @dessalines
 - Two-hands QwertEase by @Lysalana in [#871](https://github.com/dessalines/thumb-key/pull/871)
 - Create ENQwertEase.kt by @Lysalana in [#870](https://github.com/dessalines/thumb-key/pull/870)
 - Updated numeric keyboard for "italiano messagease" by @DrOliver94 in [#864](https://github.com/dessalines/thumb-key/pull/864)
@@ -171,7 +182,6 @@
 
 - @WeiguangTWK made their first contribution in [#794](https://github.com/dessalines/thumb-key/pull/794)
 - @slashdevslashurandom made their first contribution in [#795](https://github.com/dessalines/thumb-key/pull/795)
-- @zeecho made their first contribution in [#793](https://github.com/dessalines/thumb-key/pull/793)
 
 **Full Changelog**: https://github.com/dessalines/thumb-key/compare/2.6.24...2.6.25
 
