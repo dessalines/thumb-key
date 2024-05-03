@@ -146,8 +146,8 @@ fun KeyboardScreen(
 
     val keyBorderWidthFloat = keyBorderWidth / 10.0f
     val keyBorderColour = MaterialTheme.colorScheme.outline
-    val keyHeight = legendHeight + (keyPadding * 2.0f) + (keyBorderWidthFloat * 2.0f)
-    val keyWidth = legendWidth + (keyPadding * 2.0f) + (keyBorderWidthFloat * 2.0f)
+    val keyHeight = legendHeight.toFloat()
+    val keyWidth = legendWidth.toFloat()
     val cornerRadius = (keyRadius / 100.0f) * ((keyWidth + keyHeight) / 4.0f)
 
     if (mode == KeyboardMode.EMOJI) {
