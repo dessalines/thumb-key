@@ -79,6 +79,12 @@ val KB_FA_THUMBKEY_MAIN =
                         ),
                     swipes =
                         mapOf(
+                            SwipeDirection.TOP_RIGHT to
+                                KeyC(
+                                    display = KeyDisplay.TextDisplay("‹"),
+                                    action = KeyAction.CommitText("\u200F"), // Right-to-Left Mark (RLM)
+                                    color = ColorVariant.MUTED,
+                                ),
                             SwipeDirection.BOTTOM to
                                 KeyC(
                                     display = KeyDisplay.TextDisplay("ء"),
@@ -233,7 +239,7 @@ val KB_FA_THUMBKEY_MAIN =
                             SwipeDirection.TOP to
                                 KeyC(
                                     display = KeyDisplay.TextDisplay("‹›"),
-                                    action = KeyAction.CommitText("‌"),
+                                    action = KeyAction.CommitText("\u200C"), // Zero Width Non-Joiner (ZWNJ)
                                     color = ColorVariant.MUTED,
                                 ),
                             SwipeDirection.RIGHT to
