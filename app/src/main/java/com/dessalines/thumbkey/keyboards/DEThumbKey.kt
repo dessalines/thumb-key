@@ -199,6 +199,11 @@ val KB_DE_THUMBKEY_MAIN =
                                     display = KeyDisplay.TextDisplay("g"),
                                     action = KeyAction.CommitText("g"),
                                 ),
+                            SwipeDirection.BOTTOM_RIGHT to
+                                KeyC(
+                                    display = KeyDisplay.TextDisplay(":"),
+                                    action = KeyAction.CommitText(":"),
+                                ),
                         ),
                 ),
                 KeyItemC(
