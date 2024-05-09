@@ -1,7 +1,22 @@
+# Thumb-Key 3.1.5 (2024-05-09)
+
+## What's Changed in 3.1.5
+
+- Revert compose in DEMessagEaseSymbols layout by @Crandel in [#888](https://github.com/dessalines/thumb-key/pull/888)
+- German thumbkey symbols `:` and `"` (Closes #882 #883) by @sphh in [#886](https://github.com/dessalines/thumb-key/pull/886)
+- Add RLM character to FAThumbKey by @pxeemo in [#880](https://github.com/dessalines/thumb-key/pull/880)
+
+## New Contributors
+
+- @sphh made their first contribution in [#886](https://github.com/dessalines/thumb-key/pull/886)
+
+**Full Changelog**: https://github.com/dessalines/thumb-key/compare/3.1.4...3.1.5
+
 # Thumb-Key 3.1.4 (2024-05-03)
 
 ## What's Changed in 3.1.4
 
+- Upping version. by @dessalines
 - Don't show animations for password fields. Fixes #800 by @dessalines in [#879](https://github.com/dessalines/thumb-key/pull/879)
 - Simplify key width code. Fixes #643 by @dessalines in [#878](https://github.com/dessalines/thumb-key/pull/878)
 - Cleaning up imports. by @dessalines in [#877](https://github.com/dessalines/thumb-key/pull/877)
