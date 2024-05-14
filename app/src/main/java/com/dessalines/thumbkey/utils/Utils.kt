@@ -10,6 +10,7 @@ import android.os.Build
 import android.os.Handler
 import android.os.Looper
 import android.text.InputType
+import android.text.TextUtils
 import android.util.Log
 import android.view.KeyEvent
 import android.view.inputmethod.EditorInfo
@@ -1002,22 +1003,7 @@ private fun autoCapitalize(
 }
 
 fun autoCapitalizeCheck(ime: IMEService): Boolean {
-    return isEmptyField(ime) || isPunctuationEnd(ime)
-}
-
-/**
- * Checks if the field is empty
- */
-fun isEmptyField(ime: IMEService): Boolean {
-    return ime.currentInputConnection.getTextBeforeCursor(1, 0).isNullOrEmpty()
-}
-
-/**
- * Checks if the field ends with a punctuation
- */
-fun isPunctuationEnd(ime: IMEService): Boolean {
-    val textBefore = ime.currentInputConnection.getTextBeforeCursor(2, 0)
-    return (listOf(". ", "? ", "! ").contains(textBefore))
+    return ime.currentInputConnection.getCursorCapsMode(TextUtils.CAP_MODE_SENTENCES) > 0
 }
 
 /**
