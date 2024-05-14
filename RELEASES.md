@@ -1,7 +1,21 @@
+# Thumb-Key 3.1.6 (2024-05-14)
+
+## What's Changed in 3.1.6
+
+- Fix #304: Improve Utils.autoCapitalizeCheck by @mpsijm in [#890](https://github.com/dessalines/thumb-key/pull/890)
+- Wide version of ThumbKey by @randomguy3 in [#889](https://github.com/dessalines/thumb-key/pull/889)
+
+## New Contributors
+
+- @randomguy3 made their first contribution in [#889](https://github.com/dessalines/thumb-key/pull/889)
+
+**Full Changelog**: https://github.com/dessalines/thumb-key/compare/3.1.5...3.1.6
+
 # Thumb-Key 3.1.5 (2024-05-09)
 
 ## What's Changed in 3.1.5
 
+- Upping version. by @dessalines
 - Revert compose in DEMessagEaseSymbols layout by @Crandel in [#888](https://github.com/dessalines/thumb-key/pull/888)
 - German thumbkey symbols `:` and `"` (Closes #882 #883) by @sphh in [#886](https://github.com/dessalines/thumb-key/pull/886)
 - Add RLM character to FAThumbKey by @pxeemo in [#880](https://github.com/dessalines/thumb-key/pull/880)
@@ -352,7 +366,6 @@
 
 ## New Contributors
 
-- @mpsijm made their first contribution in [#720](https://github.com/dessalines/thumb-key/pull/720)
 - @ShortCircuit908 made their first contribution in [#711](https://github.com/dessalines/thumb-key/pull/711)
 
 **Full Changelog**: https://github.com/dessalines/thumb-key/compare/2.6.14...2.6.15
