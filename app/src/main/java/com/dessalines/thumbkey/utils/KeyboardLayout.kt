@@ -48,6 +48,7 @@ import com.dessalines.thumbkey.keyboards.KB_EN_THUMBKEY_COMPOSE
 import com.dessalines.thumbkey.keyboards.KB_EN_THUMBKEY_PROGRAMMER
 import com.dessalines.thumbkey.keyboards.KB_EN_THUMBKEY_PROGRAMMER_WIDE
 import com.dessalines.thumbkey.keyboards.KB_EN_THUMBKEY_SYMBOLS
+import com.dessalines.thumbkey.keyboards.KB_EN_THUMBKEY_WIDE
 import com.dessalines.thumbkey.keyboards.KB_EN_TWO_HANDS
 import com.dessalines.thumbkey.keyboards.KB_EN_TWO_HANDS_MESSAGEASE
 import com.dessalines.thumbkey.keyboards.KB_EN_TWO_HANDS_QWERTEASE
@@ -254,4 +255,5 @@ enum class KeyboardLayout(val keyboardDefinition: KeyboardDefinition) {
     ITMessagEaseSymbols(KB_IT_MESSAGEASE_SYMBOLS),
     ENQwertease(KB_EN_QWERTEASE),
     ENQTwoHandsQwertease(KB_EN_TWO_HANDS_QWERTEASE),
+    ENThumbKeyWide(KB_EN_THUMBKEY_WIDE),
 }
