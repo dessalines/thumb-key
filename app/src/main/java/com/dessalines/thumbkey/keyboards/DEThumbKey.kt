@@ -49,6 +49,12 @@ val KB_DE_THUMBKEY_MAIN =
                     swipeType = SwipeNWay.TWO_WAY_VERTICAL,
                     swipes =
                         mapOf(
+                            SwipeDirection.RIGHT to
+                                KeyC(
+                                    display = KeyDisplay.TextDisplay("!"),
+                                    action = KeyAction.CommitText("!"),
+                                    color = ColorVariant.MUTED,
+                                ),
                             SwipeDirection.BOTTOM to
                                 KeyC(
                                     display = KeyDisplay.TextDisplay("f"),
@@ -329,6 +335,12 @@ val KB_DE_THUMBKEY_SHIFTED =
                     swipeType = SwipeNWay.TWO_WAY_VERTICAL,
                     swipes =
                         mapOf(
+                            SwipeDirection.RIGHT to
+                                KeyC(
+                                    display = KeyDisplay.TextDisplay("!"),
+                                    action = KeyAction.CommitText("!"),
+                                    color = ColorVariant.MUTED,
+                                ),
                             SwipeDirection.BOTTOM to
                                 KeyC(
                                     display = KeyDisplay.TextDisplay("F"),
