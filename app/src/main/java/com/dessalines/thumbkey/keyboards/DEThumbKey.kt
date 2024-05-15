@@ -575,6 +575,6 @@ val KB_DE_THUMBKEY: KeyboardDefinition =
             KeyboardDefinitionModes(
                 main = KB_DE_THUMBKEY_MAIN,
                 shifted = KB_DE_THUMBKEY_SHIFTED,
-                numeric = NUMERIC_KEYBOARD,
+                numeric = DE_NUMERIC_KEYBOARD,
             ),
     )
