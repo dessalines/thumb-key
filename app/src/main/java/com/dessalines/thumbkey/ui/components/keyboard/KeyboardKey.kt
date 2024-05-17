@@ -430,9 +430,10 @@ fun KeyboardKey(
                         ) {
                             hasSlideMoveCursorTriggered = false
 
+                            val finalOffsetThreshold = keySize.dp.toPx() * 0.6f // magic number found from trial and error
                             val finalOffset = positions.last()
-                            val maxOffsetBigEnough = maxOffset.getDistanceSquared() >= (finalOffset * 2f).getDistanceSquared()
-                            val finalOffsetSmallEnough = finalOffset.getDistance() <= keySize.dp.toPx() / 2
+                            val maxOffsetBigEnough = maxOffset.getDistance() >= 2 * finalOffsetThreshold
+                            val finalOffsetSmallEnough = finalOffset.getDistance() <= finalOffsetThreshold
                             action =
                                 (
                                     if (maxOffsetBigEnough && finalOffsetSmallEnough) {

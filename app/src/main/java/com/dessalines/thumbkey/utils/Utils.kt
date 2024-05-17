@@ -51,7 +51,6 @@ import kotlin.math.atan2
 import kotlin.math.max
 import kotlin.math.min
 import kotlin.math.pow
-import kotlin.math.sign
 import kotlin.math.sqrt
 
 const val TAG = "com.thumbkey"
@@ -592,6 +591,7 @@ fun performKeyAction(
                             " " -> "°"
                             else -> textBefore
                         }
+
                     "˘" ->
                         when (textBefore) {
                             "a" -> "ă"
@@ -609,6 +609,7 @@ fun performKeyAction(
                             " " -> "˘"
                             else -> textBefore
                         }
+
                     "!" ->
                         when (textBefore) {
                             "a" -> "æ"
@@ -1194,30 +1195,30 @@ fun circularDirection(
     val radii = positions.map { it.getDistanceTo(center) }
     val averageRadius = radii.sum() / positions.count().toFloat()
     val similarRadii = radii.all { it in (averageRadius - keySize)..(averageRadius + keySize) }
-    if (!similarRadii) return null
-    val angleDifferences =
+    if (!similarRadii) {
+        return null
+    }
+    val spannedAngle =
         positions
-            .windowed(2)
-            .map { (a, b) -> a.getAngleTo(b) }
+            .asSequence()
+            .map { it - center } // transform center into origin
             .windowed(2)
             .map { (a, b) ->
-                val unshiftedDifference = (b - a).toDouble()
-                val shiftedDifference = (b.mod(2 * PI)) - (a.mod(2 * PI))
-                if (abs(unshiftedDifference) <= abs(shiftedDifference)) {
-                    unshiftedDifference.sign
-                } else {
-                    shiftedDifference.sign
-                }
-            }
-    val rotationSum = angleDifferences.sum()
-    val sumThreshold = angleDifferences.count().toDouble() * 0.9
+                val (xa, ya) = a
+                val (xb, yb) = b
+                // angle between two vectors
+                atan2(
+                    xa * yb - ya * xb,
+                    xa * xb + ya * yb,
+                )
+            }.sum()
+
+    val angleThreshold = 2 * PI * (1 - keySize / (averageRadius * 1.5))
     return when {
-        rotationSum >= sumThreshold -> CircularDirection.Clockwise
-        rotationSum <= -sumThreshold -> CircularDirection.Counterclockwise
+        spannedAngle >= angleThreshold -> CircularDirection.Clockwise
+        spannedAngle <= -angleThreshold -> CircularDirection.Counterclockwise
         else -> null
     }
 }
-
-fun Offset.getAngleTo(other: Offset) = atan2(other.y - y, other.x - x)
 
 fun Offset.getDistanceTo(other: Offset) = (other - this).getDistance()
