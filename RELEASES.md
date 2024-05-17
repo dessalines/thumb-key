@@ -1,7 +1,29 @@
+# Thumb-Key 3.1.7 (2024-05-17)
+
+## What's Changed in 3.1.7
+
+- Tweak circular drag detection algorithm (fixes #894) by @glm4610 in [#904](https://github.com/dessalines/thumb-key/pull/904)
+- Update plugin com.google.devtools.ksp to v1.9.24-1.0.20 by @renovate[bot] in [#897](https://github.com/dessalines/thumb-key/pull/897)
+- Update dependency composeOptions to v1.5.14 by @renovate[bot] in [#896](https://github.com/dessalines/thumb-key/pull/896)
+- Update plugin org.jetbrains.kotlin.android to v1.9.24 by @renovate[bot] in [#898](https://github.com/dessalines/thumb-key/pull/898)
+- Update cimg/android Docker tag to v2024 by @renovate[bot] in [#903](https://github.com/dessalines/thumb-key/pull/903)
+- Update plugin com.android.application to v8.4.0 by @renovate[bot] in [#901](https://github.com/dessalines/thumb-key/pull/901)
+- Update plugin com.android.library to v8.4.0 by @renovate[bot] in [#902](https://github.com/dessalines/thumb-key/pull/902)
+- Update dependency com.github.jeziellago:compose-markdown to v0.5.0 by @renovate[bot] in [#900](https://github.com/dessalines/thumb-key/pull/900)
+- Adding renovate. by @dessalines
+- Improves symbols in main DEThumbKey keyboard. by @sphh in [#892](https://github.com/dessalines/thumb-key/pull/892)
+
+## New Contributors
+
+- @renovate[bot] made their first contribution in [#897](https://github.com/dessalines/thumb-key/pull/897)
+
+**Full Changelog**: https://github.com/dessalines/thumb-key/compare/3.1.6...3.1.7
+
 # Thumb-Key 3.1.6 (2024-05-14)
 
 ## What's Changed in 3.1.6
 
+- Upping version. by @dessalines
 - Fix #304: Improve Utils.autoCapitalizeCheck by @mpsijm in [#890](https://github.com/dessalines/thumb-key/pull/890)
 - Wide version of ThumbKey by @randomguy3 in [#889](https://github.com/dessalines/thumb-key/pull/889)
 
@@ -19,10 +41,6 @@
 - Revert compose in DEMessagEaseSymbols layout by @Crandel in [#888](https://github.com/dessalines/thumb-key/pull/888)
 - German thumbkey symbols `:` and `"` (Closes #882 #883) by @sphh in [#886](https://github.com/dessalines/thumb-key/pull/886)
 - Add RLM character to FAThumbKey by @pxeemo in [#880](https://github.com/dessalines/thumb-key/pull/880)
-
-## New Contributors
-
-- @sphh made their first contribution in [#886](https://github.com/dessalines/thumb-key/pull/886)
 
 **Full Changelog**: https://github.com/dessalines/thumb-key/compare/3.1.4...3.1.5
 
