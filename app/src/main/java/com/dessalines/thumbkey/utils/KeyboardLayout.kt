@@ -39,6 +39,8 @@ import com.dessalines.thumbkey.keyboards.KB_EN_NO_THUMBKEY
 import com.dessalines.thumbkey.keyboards.KB_EN_NO_TYPESPLIT
 import com.dessalines.thumbkey.keyboards.KB_EN_PH_MESSAGEASE
 import com.dessalines.thumbkey.keyboards.KB_EN_PL_THUMBKEY
+import com.dessalines.thumbkey.keyboards.KB_EN_QBASED
+import com.dessalines.thumbkey.keyboards.KB_EN_QBASED_LEFT
 import com.dessalines.thumbkey.keyboards.KB_EN_QWERTEASE
 import com.dessalines.thumbkey.keyboards.KB_EN_QWERTYFOUR
 import com.dessalines.thumbkey.keyboards.KB_EN_RO_THUMBKEY
@@ -126,8 +128,6 @@ import com.dessalines.thumbkey.keyboards.KB_UK_MESSAGEASE_SYMBOLS
 import com.dessalines.thumbkey.keyboards.KB_UK_RU_MESSAGEASE_SYMBOLS
 import com.dessalines.thumbkey.keyboards.KB_UK_THUMBKEY
 import com.dessalines.thumbkey.keyboards.KB_VN_THUMBKEY
-import com.dessalines.thumbkey.keyboards.KB_EN_QBASED
-import com.dessalines.thumbkey.keyboards.KB_EN_QBASED_LEFT
 
 // Make sure new keyboards are added AT THE END of this list, and have a higher index.
 // DO NOT put them in the middle of the list!
@@ -259,5 +259,5 @@ enum class KeyboardLayout(val keyboardDefinition: KeyboardDefinition) {
     ENQTwoHandsQwertease(KB_EN_TWO_HANDS_QWERTEASE),
     ENThumbKeyWide(KB_EN_THUMBKEY_WIDE),
     ENQBased(KB_EN_QBASED),
-    ENQBasedLeft(KB_EN_QBASED_LEFT)
+    ENQBasedLeft(KB_EN_QBASED_LEFT),
 }
