@@ -643,7 +643,7 @@ val KB_EN_QBASED_SHIFTED =
 
 val KB_EN_QBASED: KeyboardDefinition =
     KeyboardDefinition(
-        title = "English QBased",
+        title = "english qbased",
         modes =
         KeyboardDefinitionModes(
             main = KB_EN_QBASED_MAIN,

@@ -9,7 +9,7 @@ import com.dessalines.thumbkey.utils.lastColKeysToFirst
 
 val KB_EN_QBASED_LEFT: KeyboardDefinition =
     KeyboardDefinition(
-        title = "english QBased left-handed",
+        title = "english qbased left-handed",
         modes =
             KeyboardDefinitionModes(
                 main = lastColKeysToFirst(KB_EN_QBASED_MAIN),
