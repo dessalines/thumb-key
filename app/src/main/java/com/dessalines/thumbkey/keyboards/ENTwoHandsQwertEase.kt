@@ -41,9 +41,13 @@ val KB_EN_TWO_HANDS_QWERTEASE_MAIN =
                                 ),
                             SwipeDirection.RIGHT to
                                 KeyC(
-                                    display = KeyDisplay.TextDisplay("-"),
-                                    action = KeyAction.CommitText("-"),
-                                    color = ColorVariant.MUTED,
+                                    display = KeyDisplay.TextDisplay("☆"),
+                                    action = KeyAction.CommitText("t"),
+                                ),
+                            SwipeDirection.BOTTOM to
+                                KeyC(
+                                    display = KeyDisplay.TextDisplay("☆"),
+                                    action = KeyAction.CommitText("t"),
                                 ),
                         ),
                 ),
@@ -55,6 +59,7 @@ val KB_EN_TWO_HANDS_QWERTEASE_MAIN =
                             size = FontSizeVariant.LARGE,
                             color = ColorVariant.PRIMARY,
                         ),
+                    swipeType = SwipeNWay.TWO_WAY_VERTICAL,
                     swipes =
                         mapOf(
                             SwipeDirection.BOTTOM to
@@ -78,6 +83,22 @@ val KB_EN_TWO_HANDS_QWERTEASE_MAIN =
                                 KeyC(
                                     display = KeyDisplay.TextDisplay("y"),
                                     action = KeyAction.CommitText("y"),
+                                ),
+                                SwipeDirection.BOTTOM to
+                                KeyC(
+                                    display = KeyDisplay.TextDisplay(" "),
+                                    action = KeyAction.CommitText("y"),
+                                ),
+                                SwipeDirection.LEFT to
+                                KeyC(
+                                    display = KeyDisplay.TextDisplay(" "),
+                                    action = KeyAction.CommitText("y"),
+                                ),
+                                SwipeDirection.RIGHT to
+                                KeyC(
+                                    display = KeyDisplay.TextDisplay("-"),
+                                    action = KeyAction.CommitText("-"),
+                                    color = ColorVariant.MUTED,
                                 ),
                         ),
                 ),
@@ -99,9 +120,13 @@ val KB_EN_TWO_HANDS_QWERTEASE_MAIN =
                                 ),
                             SwipeDirection.RIGHT to
                                 KeyC(
-                                    display = KeyDisplay.TextDisplay("-"),
-                                    action = KeyAction.CommitText("-"),
-                                    color = ColorVariant.MUTED,
+                                    display = KeyDisplay.TextDisplay("☆"),
+                                    action = KeyAction.CommitText("t"),
+                                ),
+                            SwipeDirection.BOTTOM to
+                                KeyC(
+                                    display = KeyDisplay.TextDisplay("☆"),
+                                    action = KeyAction.CommitText("t"),
                                 ),
                         ),
                 ),
@@ -113,6 +138,7 @@ val KB_EN_TWO_HANDS_QWERTEASE_MAIN =
                             size = FontSizeVariant.LARGE,
                             color = ColorVariant.PRIMARY,
                         ),
+                    swipeType = SwipeNWay.TWO_WAY_VERTICAL,
                     swipes =
                         mapOf(
                             SwipeDirection.BOTTOM to
@@ -136,6 +162,22 @@ val KB_EN_TWO_HANDS_QWERTEASE_MAIN =
                                 KeyC(
                                     display = KeyDisplay.TextDisplay("y"),
                                     action = KeyAction.CommitText("y"),
+                                ),
+                                SwipeDirection.BOTTOM to
+                                KeyC(
+                                    display = KeyDisplay.TextDisplay(" "),
+                                    action = KeyAction.CommitText("y"),
+                                ),
+                                SwipeDirection.LEFT to
+                                KeyC(
+                                    display = KeyDisplay.TextDisplay(" "),
+                                    action = KeyAction.CommitText("y"),
+                                ),
+                                SwipeDirection.RIGHT to
+                                KeyC(
+                                    display = KeyDisplay.TextDisplay("-"),
+                                    action = KeyAction.CommitText("-"),
+                                    color = ColorVariant.MUTED,
                                 ),
                         ),
                 ),
@@ -561,9 +603,13 @@ val KB_EN_TWO_HANDS_QWERTEASE_SHIFTED =
                                 ),
                             SwipeDirection.RIGHT to
                                 KeyC(
-                                    display = KeyDisplay.TextDisplay("-"),
-                                    action = KeyAction.CommitText("-"),
-                                    color = ColorVariant.MUTED,
+                                    display = KeyDisplay.TextDisplay("★"),
+                                    action = KeyAction.CommitText("T"),
+                                ),
+                            SwipeDirection.BOTTOM to
+                                KeyC(
+                                    display = KeyDisplay.TextDisplay("★"),
+                                    action = KeyAction.CommitText("T"),
                                 ),
                         ),
                 ),
@@ -575,6 +621,7 @@ val KB_EN_TWO_HANDS_QWERTEASE_SHIFTED =
                             size = FontSizeVariant.LARGE,
                             color = ColorVariant.PRIMARY,
                         ),
+                    swipeType = SwipeNWay.TWO_WAY_VERTICAL,
                     swipes =
                         mapOf(
                             SwipeDirection.BOTTOM to
@@ -598,6 +645,22 @@ val KB_EN_TWO_HANDS_QWERTEASE_SHIFTED =
                                 KeyC(
                                     display = KeyDisplay.TextDisplay("Y"),
                                     action = KeyAction.CommitText("Y"),
+                                ),
+                            SwipeDirection.BOTTOM to
+                                KeyC(
+                                    display = KeyDisplay.TextDisplay(" "),
+                                    action = KeyAction.CommitText("Y"),
+                                ),
+                            SwipeDirection.LEFT to
+                                KeyC(
+                                    display = KeyDisplay.TextDisplay(" "),
+                                    action = KeyAction.CommitText("Y"),
+                                ),
+                            SwipeDirection.RIGHT to
+                                KeyC(
+                                    display = KeyDisplay.TextDisplay("-"),
+                                    action = KeyAction.CommitText("-"),
+                                    color = ColorVariant.MUTED,
                                 ),
                         ),
                 ),
@@ -619,9 +682,13 @@ val KB_EN_TWO_HANDS_QWERTEASE_SHIFTED =
                                 ),
                             SwipeDirection.RIGHT to
                                 KeyC(
-                                    display = KeyDisplay.TextDisplay("-"),
-                                    action = KeyAction.CommitText("-"),
-                                    color = ColorVariant.MUTED,
+                                    display = KeyDisplay.TextDisplay("★"),
+                                    action = KeyAction.CommitText("T"),
+                                ),
+                            SwipeDirection.BOTTOM to
+                                KeyC(
+                                    display = KeyDisplay.TextDisplay("★"),
+                                    action = KeyAction.CommitText("T"),
                                 ),
                         ),
                 ),
@@ -633,6 +700,7 @@ val KB_EN_TWO_HANDS_QWERTEASE_SHIFTED =
                             size = FontSizeVariant.LARGE,
                             color = ColorVariant.PRIMARY,
                         ),
+                    swipeType = SwipeNWay.TWO_WAY_VERTICAL,
                     swipes =
                         mapOf(
                             SwipeDirection.BOTTOM to
@@ -656,6 +724,22 @@ val KB_EN_TWO_HANDS_QWERTEASE_SHIFTED =
                                 KeyC(
                                     display = KeyDisplay.TextDisplay("Y"),
                                     action = KeyAction.CommitText("Y"),
+                                ),
+                            SwipeDirection.BOTTOM to
+                                KeyC(
+                                    display = KeyDisplay.TextDisplay(" "),
+                                    action = KeyAction.CommitText("Y"),
+                                ),
+                            SwipeDirection.LEFT to
+                                KeyC(
+                                    display = KeyDisplay.TextDisplay(" "),
+                                    action = KeyAction.CommitText("Y"),
+                                ),
+                            SwipeDirection.RIGHT to
+                                KeyC(
+                                    display = KeyDisplay.TextDisplay("-"),
+                                    action = KeyAction.CommitText("-"),
+                                    color = ColorVariant.MUTED,
                                 ),
                         ),
                 ),
@@ -1081,7 +1165,7 @@ val KB_EN_TWO_HANDS_QWERTEASE: KeyboardDefinition =
             KeyboardDefinitionModes(
                 main = KB_EN_TWO_HANDS_QWERTEASE_MAIN,
                 shifted = KB_EN_TWO_HANDS_QWERTEASE_SHIFTED,
-                numeric = KB_EN_TWO_HANDS_MESSAGEASE_NUMERIC,
+                numeric = KB_EN_TWO_HANDS_QWERTEASE_NUMERIC,
             ),
         KeyboardDefinitionSettings(
             autoCapitalizers = arrayOf(::autoCapitalizeI, ::autoCapitalizeIApostrophe),
