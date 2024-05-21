@@ -609,6 +609,6 @@ val KB_EN_QWERTEASE: KeyboardDefinition =
             KeyboardDefinitionModes(
                 main = KB_EN_QWERTEASE_MAIN,
                 shifted = KB_EN_QWERTEASE_SHIFTED,
-                numeric = KB_EN_QWERTEASE_NUMERIC,
+                numeric = KB_EN_MESSAGEASE_NUMERIC,
             ),
     )
