@@ -10,7 +10,6 @@ import android.os.Build
 import android.os.Handler
 import android.os.Looper
 import android.text.InputType
-import android.text.TextUtils
 import android.util.Log
 import android.view.KeyEvent
 import android.view.inputmethod.EditorInfo
@@ -1004,7 +1003,7 @@ private fun autoCapitalize(
 }
 
 fun autoCapitalizeCheck(ime: IMEService): Boolean {
-    return ime.currentInputConnection.getCursorCapsMode(TextUtils.CAP_MODE_SENTENCES) > 0
+    return ime.currentInputConnection.getCursorCapsMode(ime.currentInputEditorInfo.inputType) > 0
 }
 
 /**
