@@ -1,7 +1,27 @@
+# Thumb-Key 3.1.8 (2024-05-22)
+
+## What's Changed in 3.1.8
+
+- Revert "Update plugin org.jetbrains.kotlin.android to v2" by @dessalines in [#921](https://github.com/dessalines/thumb-key/pull/921)
+- Update plugin org.jetbrains.kotlin.android to v2 by @renovate[bot] in [#920](https://github.com/dessalines/thumb-key/pull/920)
+- Update plugin com.android.application to v8.4.1 by @renovate[bot] in [#918](https://github.com/dessalines/thumb-key/pull/918)
+- Make cursor movement detection index-based (fixes #881) by @glm4610 in [#917](https://github.com/dessalines/thumb-key/pull/917)
+- Fix #304 (take two): In Utils.autoCapitalizeCheck, use input type of current editor by @mpsijm in [#909](https://github.com/dessalines/thumb-key/pull/909)
+- Update plugin com.android.library to v8.4.1 by @renovate[bot] in [#908](https://github.com/dessalines/thumb-key/pull/908)
+- Fixing donation line. by @dessalines in [#906](https://github.com/dessalines/thumb-key/pull/906)
+- Add QBased a qwerty based keyboard by @APainfulMemory in [#905](https://github.com/dessalines/thumb-key/pull/905)
+
+## New Contributors
+
+- @APainfulMemory made their first contribution in [#905](https://github.com/dessalines/thumb-key/pull/905)
+
+**Full Changelog**: https://github.com/dessalines/thumb-key/compare/3.1.7...3.1.8
+
 # Thumb-Key 3.1.7 (2024-05-17)
 
 ## What's Changed in 3.1.7
 
+- Upping version. by @dessalines
 - Tweak circular drag detection algorithm (fixes #894) by @glm4610 in [#904](https://github.com/dessalines/thumb-key/pull/904)
 - Update plugin com.google.devtools.ksp to v1.9.24-1.0.20 by @renovate[bot] in [#897](https://github.com/dessalines/thumb-key/pull/897)
 - Update dependency composeOptions to v1.5.14 by @renovate[bot] in [#896](https://github.com/dessalines/thumb-key/pull/896)
@@ -12,10 +32,6 @@
 - Update dependency com.github.jeziellago:compose-markdown to v0.5.0 by @renovate[bot] in [#900](https://github.com/dessalines/thumb-key/pull/900)
 - Adding renovate. by @dessalines
 - Improves symbols in main DEThumbKey keyboard. by @sphh in [#892](https://github.com/dessalines/thumb-key/pull/892)
-
-## New Contributors
-
-- @renovate[bot] made their first contribution in [#897](https://github.com/dessalines/thumb-key/pull/897)
 
 **Full Changelog**: https://github.com/dessalines/thumb-key/compare/3.1.6...3.1.7
 
