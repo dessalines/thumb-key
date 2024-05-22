@@ -37,6 +37,7 @@ val DONATION_MARKDOWN =
     - [Support on Liberapay](https://liberapay.com/dessalines).
     - [Support on Patreon](https://www.patreon.com/dessalines).
     ---
+    
     """.trimIndent()
 
 @OptIn(ExperimentalComposeUiApi::class)
@@ -71,7 +72,6 @@ fun ShowChangelog(appSettingsViewModel: AppSettingsViewModel) {
                         val markdownText = DONATION_MARKDOWN + markdown
                         MarkdownText(
                             markdown = markdownText,
-                            color = MaterialTheme.colorScheme.onBackground,
                             linkColor = MaterialTheme.colorScheme.primary,
                         )
                     }
