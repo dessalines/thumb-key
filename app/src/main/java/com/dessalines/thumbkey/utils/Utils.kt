@@ -337,6 +337,7 @@ fun performKeyAction(
         is KeyAction.CommitText -> {
             val text = action.text
             Log.d(TAG, "committing key text: $text")
+            ime.ignoreNextCursorMove()
             ime.currentInputConnection.commitText(
                 text,
                 1,
@@ -373,6 +374,7 @@ fun performKeyAction(
             Log.d(TAG, "replacing last word")
             val text = action.text
 
+            ime.ignoreNextCursorMove()
             ime.currentInputConnection.deleteSurroundingText(action.trimCount, 0)
             ime.currentInputConnection.commitText(
                 text,
