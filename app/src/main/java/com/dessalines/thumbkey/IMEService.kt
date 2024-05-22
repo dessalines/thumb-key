@@ -17,7 +17,6 @@ import androidx.savedstate.SavedStateRegistryController
 import androidx.savedstate.SavedStateRegistryOwner
 import androidx.savedstate.setViewTreeSavedStateRegistryOwner
 import com.dessalines.thumbkey.utils.TAG
-import kotlin.math.abs
 
 class IMEService :
     InputMethodService(),
@@ -57,8 +56,7 @@ class IMEService :
     // Lifecycle Methods
     private var lifecycleRegistry: LifecycleRegistry = LifecycleRegistry(this)
 
-    private fun handleLifecycleEvent(event: Lifecycle.Event) =
-        lifecycleRegistry.handleLifecycleEvent(event)
+    private fun handleLifecycleEvent(event: Lifecycle.Event) = lifecycleRegistry.handleLifecycleEvent(event)
 
     override val lifecycle = lifecycleRegistry
 
@@ -77,14 +75,15 @@ class IMEService :
     override fun onUpdateCursorAnchorInfo(cursorAnchorInfo: CursorAnchorInfo) {
         super.onUpdateCursorAnchorInfo(cursorAnchorInfo)
 
-        cursorMoved = if (ignoreCursorMove) {
-            ignoreCursorMove = false
-            false
-        } else {
-            Log.d(TAG, "cursor moved")
-            cursorAnchorInfo.selectionStart != selectionStart
-                    || cursorAnchorInfo.selectionEnd != selectionEnd
-        }
+        cursorMoved =
+            if (ignoreCursorMove) {
+                ignoreCursorMove = false
+                false
+            } else {
+                Log.d(TAG, "cursor moved")
+                cursorAnchorInfo.selectionStart != selectionStart ||
+                    cursorAnchorInfo.selectionEnd != selectionEnd
+            }
 
         selectionStart = cursorAnchorInfo.selectionStart
         selectionEnd = cursorAnchorInfo.selectionEnd
