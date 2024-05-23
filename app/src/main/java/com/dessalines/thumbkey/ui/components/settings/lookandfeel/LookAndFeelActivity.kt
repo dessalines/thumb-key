@@ -92,7 +92,7 @@ fun LookAndFeelActivity(
     var keyWidthSliderState by remember { mutableStateOf(keyWidthState) }
 
     // Need to coerce key width = null to be the same size as the keyHeight
-    val nonSquareKeysState = remember { mutableStateOf(settings?.keySize !== (settings?.keyWidth ?: settings?.keySize)) }
+    val nonSquareKeysState = remember { mutableStateOf(settings?.keySize != (settings?.keyWidth ?: settings?.keySize)) }
 
     var pushupSizeState = (settings?.pushupSize ?: DEFAULT_PUSHUP_SIZE).toFloat()
     var pushupSizeSliderState by remember { mutableFloatStateOf(pushupSizeState) }
