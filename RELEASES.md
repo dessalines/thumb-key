@@ -1,7 +1,19 @@
+# Thumb-Key 3.1.9 (2024-05-23)
+
+## What's Changed in 3.1.9
+
+- Enable strong skipping. by @dessalines in [#925](https://github.com/dessalines/thumb-key/pull/925)
+- Update plugin org.jetbrains.kotlin.android to v2 by @renovate[bot] in [#924](https://github.com/dessalines/thumb-key/pull/924)
+- Removing renovate schedule. by @dessalines in [#923](https://github.com/dessalines/thumb-key/pull/923)
+- Upgrading to 2.0.0 compiler. by @dessalines in [#922](https://github.com/dessalines/thumb-key/pull/922)
+
+**Full Changelog**: https://github.com/dessalines/thumb-key/compare/3.1.8...3.1.9
+
 # Thumb-Key 3.1.8 (2024-05-22)
 
 ## What's Changed in 3.1.8
 
+- Upping version. by @dessalines
 - Revert "Update plugin org.jetbrains.kotlin.android to v2" by @dessalines in [#921](https://github.com/dessalines/thumb-key/pull/921)
 - Update plugin org.jetbrains.kotlin.android to v2 by @renovate[bot] in [#920](https://github.com/dessalines/thumb-key/pull/920)
 - Update plugin com.android.application to v8.4.1 by @renovate[bot] in [#918](https://github.com/dessalines/thumb-key/pull/918)
