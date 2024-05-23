@@ -66,6 +66,10 @@ android {
     namespace 'com.dessalines.thumbkey'
 }
 
+composeCompiler {
+    enableStrongSkippingMode = true
+}
+
 dependencies {
     // Compose BOM
     implementation platform('androidx.compose:compose-bom:2024.05.00')
