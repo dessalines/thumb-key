@@ -1,7 +1,17 @@
+# Thumb-Key 3.2.0 (2024-05-28)
+
+## What's Changed in 3.2.0
+
+- Tweak circular drag and drag-and-return gestures (fixes #926) by @glm4610 in [#928](https://github.com/dessalines/thumb-key/pull/928)
+- Removing some unused strings. by @dessalines in [#929](https://github.com/dessalines/thumb-key/pull/929)
+
+**Full Changelog**: https://github.com/dessalines/thumb-key/compare/3.1.9...3.2.0
+
 # Thumb-Key 3.1.9 (2024-05-23)
 
 ## What's Changed in 3.1.9
 
+- Upping version. by @dessalines
 - Enable strong skipping. by @dessalines in [#925](https://github.com/dessalines/thumb-key/pull/925)
 - Update plugin org.jetbrains.kotlin.android to v2 by @renovate[bot] in [#924](https://github.com/dessalines/thumb-key/pull/924)
 - Removing renovate schedule. by @dessalines in [#923](https://github.com/dessalines/thumb-key/pull/923)
