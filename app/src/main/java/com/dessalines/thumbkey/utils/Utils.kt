@@ -1190,12 +1190,18 @@ fun lastColKeysToFirst(board: KeyboardC): KeyboardC {
 
 fun circularDirection(
     positions: List<Offset>,
-    keySize: Double,
+    circleCompletionTolerance: Float,
 ): CircularDirection? {
     val center = positions.reduce(Offset::plus) / positions.count().toFloat()
     val radii = positions.map { it.getDistanceTo(center) }
-    val averageRadius = radii.sum() / positions.count().toFloat()
-    val similarRadii = radii.all { it in (averageRadius - keySize)..(averageRadius + keySize) }
+    val maxRadius = radii.reduce { acc, it -> if (it > acc) it else acc }
+    // This is similar to accepting an ellipse with aspect ratio 3:1
+    val minRadius = maxRadius / 3
+    val similarRadii =
+        radii.all {
+            it in minRadius..maxRadius
+        }
+
     if (!similarRadii) {
         return null
     }
@@ -1214,7 +1220,9 @@ fun circularDirection(
                 )
             }.sum()
 
-    val angleThreshold = 2 * PI * (1 - keySize / (averageRadius * 1.5))
+    val averageRadius = (minRadius + maxRadius) / 2
+    // The threshold is a full circumference minus the arc with length equal to the tolerance
+    val angleThreshold = 2 * PI * (1 - circleCompletionTolerance / averageRadius)
     return when {
         spannedAngle >= angleThreshold -> CircularDirection.Clockwise
         spannedAngle <= -angleThreshold -> CircularDirection.Counterclockwise

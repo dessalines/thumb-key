@@ -430,10 +430,14 @@ fun KeyboardKey(
                         ) {
                             hasSlideMoveCursorTriggered = false
 
-                            val finalOffsetThreshold = keySize.dp.toPx() * 0.6f // magic number found from trial and error
+                            val finalOffsetThreshold = keySize.dp.toPx() * 0.71f // magic number found from trial and error
+                            val maxOffsetThreshold = 1.5 * finalOffsetThreshold
+
                             val finalOffset = positions.last()
-                            val maxOffsetBigEnough = maxOffset.getDistance() >= 2 * finalOffsetThreshold
                             val finalOffsetSmallEnough = finalOffset.getDistance() <= finalOffsetThreshold
+
+                            val maxOffsetDistance = maxOffset.getDistance().toDouble()
+                            val maxOffsetBigEnough = maxOffsetDistance >= maxOffsetThreshold
                             action =
                                 (
                                     if (maxOffsetBigEnough && finalOffsetSmallEnough) {
@@ -444,7 +448,7 @@ fun KeyboardKey(
                                                         CircularDragAction.OppositeCase to oppositeCaseKey?.center?.action,
                                                         CircularDragAction.Numeric to numericKey?.center?.action,
                                                     )
-                                                circularDirection(positions, keySize)?.let {
+                                                circularDirection(positions, finalOffsetThreshold)?.let {
                                                     when (it) {
                                                         CircularDirection.Clockwise -> circularDragActions[clockwiseDragAction]
                                                         CircularDirection.Counterclockwise ->
