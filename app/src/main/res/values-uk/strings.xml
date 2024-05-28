@@ -73,8 +73,6 @@
     <string name="copy">Виділений текст скопійовано</string>
     <string name="hide_letters">Приховати літери</string>
     <string name="hide_symbols">Приховати символи</string>
-    <string name="save">Зберегти</string>
-    <string name="key_borders">Границі клавіші</string>
     <string name="spacebar_multitaps">Мультинатиснення пробілу</string>
     <string name="done">Готово</string>
     <string name="backdrop">Фон клавіатури</string>

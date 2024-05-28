@@ -70,8 +70,6 @@
     <string name="copy">Texte copié</string>
     <string name="hide_letters">Masquer les lettres</string>
     <string name="hide_symbols">Masquer les symboles</string>
-    <string name="save">Enregistrer</string>
-    <string name="key_borders">Bordure des touches</string>
     <string name="spacebar_multitaps">Barre d\'espace : appuis multiples</string>
     <string name="done">Fermer</string>
     <string name="backdrop">Arrière-plan du clavier</string>

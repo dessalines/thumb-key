@@ -74,8 +74,6 @@
     <string name="copy">选中文本已复制</string>
     <string name="hide_letters">隐藏字符</string>
     <string name="hide_symbols">隐藏标点</string>
-    <string name="save">保存</string>
-    <string name="key_borders">按键边缘</string>
     <string name="spacebar_multitaps">连击空格键</string>
     <string name="done">完成</string>
     <string name="backdrop">键盘背景同步变色</string>

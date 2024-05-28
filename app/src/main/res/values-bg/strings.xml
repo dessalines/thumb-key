@@ -49,7 +49,5 @@
     <string name="select_thumbkey">Избери Thumb-Key</string>
     <string name="finish_setup">Завърши настройването</string>
     <string name="hide_letters">Скриване на буквите</string>
-    <string name="save">Запазване</string>
-    <string name="key_borders">Рамки на клавишите</string>
     <string name="spacebar_multitaps">Интервал Многокр-докосв.</string>
 </resources>

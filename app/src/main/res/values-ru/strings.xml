@@ -70,8 +70,6 @@
     <string name="copy">Скопированный текст</string>
     <string name="hide_letters">Скрыть буквы</string>
     <string name="hide_symbols">Скрыть символы</string>
-    <string name="save">Сохранить</string>
-    <string name="key_borders">Границы клавиш</string>
     <string name="spacebar_multitaps">Мультитап пробела</string>
     <string name="done">Готово</string>
     <string name="backdrop">Фон клавиатуры</string>

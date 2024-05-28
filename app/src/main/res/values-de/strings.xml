@@ -51,7 +51,5 @@
     <string name="finish_setup">Einrichtung abschließen</string>
     <string name="hide_letters">Buchstaben verstecken</string>
     <string name="hide_symbols">Symbole verstecken</string>
-    <string name="save">speichern</string>
-    <string name="key_borders">Tastengrenzen</string>
     <string name="spacebar_multitaps">Leertasten Multi-taps</string>
 </resources>
