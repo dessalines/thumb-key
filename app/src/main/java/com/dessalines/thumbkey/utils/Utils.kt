@@ -1195,8 +1195,8 @@ fun circularDirection(
     val center = positions.reduce(Offset::plus) / positions.count().toFloat()
     val radii = positions.map { it.getDistanceTo(center) }
     val maxRadius = radii.reduce { acc, it -> if (it > acc) it else acc }
-    // This is similar to accepting an ellipse with aspect ratio 2:1
-    val minRadius = maxRadius / 2
+    // This is similar to accepting an ellipse with aspect ratio 3:1
+    val minRadius = maxRadius / 3
     val similarRadii =
         radii.all {
             it in minRadius..maxRadius
