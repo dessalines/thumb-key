@@ -172,13 +172,13 @@ val KB_CZ_PROG_MAIN =
                             SwipeDirection.TOP_RIGHT to
                                 KeyC(
                                     display = KeyDisplay.TextDisplay("¨"),
-                                    action = KeyAction.ComposeLastKey("¨"),
+                                    action = KeyAction.ComposeLastKey("\""),
                                     color = ColorVariant.MUTED,
                                 ),
                             SwipeDirection.BOTTOM_RIGHT to
                                 KeyC(
                                     display = KeyDisplay.TextDisplay("´"),
-                                    action = KeyAction.ComposeLastKey("´"),
+                                    action = KeyAction.ComposeLastKey("'"),
                                     color = ColorVariant.MUTED,
                                 ),
                         ),
@@ -349,12 +349,6 @@ val KB_CZ_PROG_MAIN =
                                     action = KeyAction.CommitText("@"),
                                     color = ColorVariant.MUTED,
                                 ),
-                            SwipeDirection.BOTTOM to
-                                KeyC(
-                                    display = KeyDisplay.TextDisplay("|"),
-                                    action = KeyAction.CommitText("|"),
-                                    color = ColorVariant.MUTED,
-                                ),
                         ),
                 ),
                 NUMERIC_KEY_ITEM,
@@ -397,6 +391,12 @@ val KB_CZ_PROG_MAIN =
                                 KeyC(
                                     display = KeyDisplay.TextDisplay("*"),
                                     action = KeyAction.CommitText("*"),
+                                    color = ColorVariant.MUTED,
+                                ),
+                            SwipeDirection.BOTTOM to
+                                KeyC(
+                                    display = KeyDisplay.TextDisplay("|"),
+                                    action = KeyAction.CommitText("|"),
                                     color = ColorVariant.MUTED,
                                 ),
                         ),
@@ -675,13 +675,13 @@ val KB_CZ_PROG_SHIFTED =
                             SwipeDirection.TOP_RIGHT to
                                 KeyC(
                                     display = KeyDisplay.TextDisplay("¨"),
-                                    action = KeyAction.ComposeLastKey("¨"),
+                                    action = KeyAction.ComposeLastKey("\""),
                                     color = ColorVariant.MUTED,
                                 ),
                             SwipeDirection.BOTTOM_RIGHT to
                                 KeyC(
                                     display = KeyDisplay.TextDisplay("´"),
-                                    action = KeyAction.ComposeLastKey("´"),
+                                    action = KeyAction.ComposeLastKey("'"),
                                     color = ColorVariant.MUTED,
                                 ),
                         ),
@@ -859,12 +859,6 @@ val KB_CZ_PROG_SHIFTED =
                                     action = KeyAction.CommitText("@"),
                                     color = ColorVariant.MUTED,
                                 ),
-                            SwipeDirection.BOTTOM to
-                                KeyC(
-                                    display = KeyDisplay.TextDisplay("|"),
-                                    action = KeyAction.CommitText("|"),
-                                    color = ColorVariant.MUTED,
-                                ),
                         ),
                 ),
                 NUMERIC_KEY_ITEM,
@@ -907,6 +901,12 @@ val KB_CZ_PROG_SHIFTED =
                                 KeyC(
                                     display = KeyDisplay.TextDisplay("*"),
                                     action = KeyAction.CommitText("*"),
+                                    color = ColorVariant.MUTED,
+                                ),
+                            SwipeDirection.BOTTOM to
+                                KeyC(
+                                    display = KeyDisplay.TextDisplay("|"),
+                                    action = KeyAction.CommitText("|"),
                                     color = ColorVariant.MUTED,
                                 ),
                         ),
