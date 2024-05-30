@@ -822,6 +822,7 @@ fun performKeyAction(
                             "Z" -> "Ž"
                             " " -> "ˇ"
                             else -> textBefore
+                        }
 
                     else -> throw IllegalStateException("Invalid key modifier")
                 }
