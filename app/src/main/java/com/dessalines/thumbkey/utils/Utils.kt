@@ -800,7 +800,7 @@ fun performKeyAction(
                             else -> textBefore
                         }
 
-                    "ˇ" -> 
+                    "ˇ" ->
                         when (textBefore) {
                             "c" -> "č"
                             "d" -> "ď"
