@@ -799,7 +799,7 @@ fun performKeyAction(
                             "Ê" -> "Ệ"
                             else -> textBefore
                         }
-                    
+
                     "ˇ" -> 
                         when (textBefore) {
                             "c" -> "č"
