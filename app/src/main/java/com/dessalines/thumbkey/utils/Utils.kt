@@ -799,6 +799,29 @@ fun performKeyAction(
                             "Ê" -> "Ệ"
                             else -> textBefore
                         }
+                    
+                    "ˇ" -> 
+                        when (textBefore) {
+                            "c" -> "č"
+                            "d" -> "ď"
+                            "e" -> "ě"
+                            "l" -> "ľ"
+                            "n" -> "ň"
+                            "r" -> "ř"
+                            "s" -> "š"
+                            "t" -> "ť"
+                            "z" -> "ž"
+                            "C" -> "Č"
+                            "D" -> "Ď"
+                            "E" -> "Ě"
+                            "L" -> "Ľ"
+                            "N" -> "Ň"
+                            "R" -> "Ř"
+                            "S" -> "Š"
+                            "T" -> "Ť"
+                            "Z" -> "Ž"
+                            " " -> "ˇ"
+                            else -> textBefore
 
                     else -> throw IllegalStateException("Invalid key modifier")
                 }

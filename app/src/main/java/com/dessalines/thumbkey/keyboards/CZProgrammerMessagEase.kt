@@ -172,13 +172,13 @@ val KB_CZ_PROG_MAIN =
                             SwipeDirection.TOP_RIGHT to
                                 KeyC(
                                     display = KeyDisplay.TextDisplay("¨"),
-                                    action = KeyAction.ComposeLastKey("¨"),
+                                    action = KeyAction.ComposeLastKey("\""),
                                     color = ColorVariant.MUTED,
                                 ),
                             SwipeDirection.BOTTOM_RIGHT to
                                 KeyC(
                                     display = KeyDisplay.TextDisplay("´"),
-                                    action = KeyAction.ComposeLastKey("´"),
+                                    action = KeyAction.ComposeLastKey("'"),
                                     color = ColorVariant.MUTED,
                                 ),
                         ),
@@ -675,13 +675,13 @@ val KB_CZ_PROG_SHIFTED =
                             SwipeDirection.TOP_RIGHT to
                                 KeyC(
                                     display = KeyDisplay.TextDisplay("¨"),
-                                    action = KeyAction.ComposeLastKey("¨"),
+                                    action = KeyAction.ComposeLastKey("\""),
                                     color = ColorVariant.MUTED,
                                 ),
                             SwipeDirection.BOTTOM_RIGHT to
                                 KeyC(
                                     display = KeyDisplay.TextDisplay("´"),
-                                    action = KeyAction.ComposeLastKey("´"),
+                                    action = KeyAction.ComposeLastKey("'"),
                                     color = ColorVariant.MUTED,
                                 ),
                         ),
