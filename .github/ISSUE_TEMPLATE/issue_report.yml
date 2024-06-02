@@ -81,7 +81,7 @@ body:
       options:
         - label: I have written a short but informative title.
           required: true
-        - label: I have updated the app to **[the latest version](https://github.com/user/repo/releases/latest)**.
+        - label: I have updated the app to **[the latest version](https://github.com/dessalines/thumb-key/releases/latest)**.
           required: true
         - label: >-
             I have searched the existing issues and this is a new one, **NOT** a 
