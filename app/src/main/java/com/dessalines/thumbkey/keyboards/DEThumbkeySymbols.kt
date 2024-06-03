@@ -510,7 +510,7 @@ val KB_DE_THUMBKEY_SYMBOLS_MAIN =
         ),
     )
 
-val KB_DE_MESSAGEASE_SYMBOLS_SHIFTED =
+val KB_DE_THUMBKEY_SYMBOLS_SHIFTED =
     KeyboardC(
         listOf(
             listOf(
