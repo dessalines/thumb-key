@@ -191,7 +191,7 @@ val KB_DE_MESSAGEASE_SYMBOLS_MAIN =
                         mapOf(
                             SwipeDirection.TOP to
                                 KeyC(
-                                    display = KeyDisplay.TextDisplay("sch"), // mi 
+                                    display = KeyDisplay.TextDisplay("sch"), // mi
                                     action = KeyAction.CommitText("sch"),
                                 ),
                             SwipeDirection.TOP_LEFT to
