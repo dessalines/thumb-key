@@ -16,7 +16,7 @@ import com.dessalines.thumbkey.utils.KeyboardDefinition
 import com.dessalines.thumbkey.utils.KeyboardDefinitionModes
 import com.dessalines.thumbkey.utils.SwipeDirection
 
-val KB_DE_MESSAGEASE_SYMBOLS_MAIN =
+val KB_DE_THUMBKEY_SYMBOLS_MAIN =
     KeyboardC(
         listOf(
             listOf(
