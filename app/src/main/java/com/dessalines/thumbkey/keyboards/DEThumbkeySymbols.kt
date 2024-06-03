@@ -191,8 +191,8 @@ val KB_DE_MESSAGEASE_SYMBOLS_MAIN =
                         mapOf(
                             SwipeDirection.TOP to
                                 KeyC(
-                                    display = KeyDisplay.TextDisplay("ü"), //mi
-                                    action = KeyAction.CommitText("ü"),
+                                    display = KeyDisplay.TextDisplay("sch"), //mi
+                                    action = KeyAction.CommitText("sch"),
                                 ),
                             SwipeDirection.TOP_LEFT to
                                 KeyC(
@@ -214,8 +214,8 @@ val KB_DE_MESSAGEASE_SYMBOLS_MAIN =
                                 ),
                             SwipeDirection.BOTTOM to
                                 KeyC(
-                                    display = KeyDisplay.TextDisplay("ö"), //mi
-                                    action = KeyAction.CommitText("ö"),
+                                    display = KeyDisplay.TextDisplay("ch"), //mi
+                                    action = KeyAction.CommitText("ch"),
                                 ),
                             SwipeDirection.BOTTOM_RIGHT to
                                 KeyC(
@@ -687,8 +687,8 @@ val KB_DE_MESSAGEASE_SYMBOLS_SHIFTED =
                         mapOf(
                             SwipeDirection.TOP to
                                 KeyC(
-                                    display = KeyDisplay.TextDisplay("Ü"), //mi
-                                    action = KeyAction.CommitText("Ü"),
+                                    display = KeyDisplay.TextDisplay("Sch"),
+                                    action = KeyAction.CommitText("Sch"),
                                 ),
                             SwipeDirection.TOP_LEFT to
                                 KeyC(
@@ -710,8 +710,8 @@ val KB_DE_MESSAGEASE_SYMBOLS_SHIFTED =
                                 ),
                             SwipeDirection.BOTTOM to
                                 KeyC(
-                                    display = KeyDisplay.TextDisplay("Ö"), //mi
-                                    action = KeyAction.CommitText("Ö"),
+                                    display = KeyDisplay.TextDisplay("Ch"),
+                                    action = KeyAction.CommitText("Ch"),
                                 ),
                             SwipeDirection.BOTTOM_RIGHT to
                                 KeyC(

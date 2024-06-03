@@ -261,5 +261,5 @@ enum class KeyboardLayout(val keyboardDefinition: KeyboardDefinition) {
     ENThumbKeyWide(KB_EN_THUMBKEY_WIDE),
     ENQBased(KB_EN_QBASED),
     ENQBasedLeft(KB_EN_QBASED_LEFT),
-    DEThumbkeySymbols(KB_DE_THUMBKEY_SYMBOLS)
+    DEThumbkeySymbols(KB_DE_THUMBKEY_SYMBOLS),
 }
