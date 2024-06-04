@@ -1,7 +1,25 @@
+# Thumb-Key 3.2.2 (2024-06-04)
+
+## What's Changed in 3.2.2
+
+- Force LTR KeyboardScreen by @pxeemo in [#940](https://github.com/dessalines/thumb-key/pull/940)
+- add DEThumbkeySymbols by @Ingegneus in [#939](https://github.com/dessalines/thumb-key/pull/939)
+- Add letter K to "Italiano type-split" keyboard by @DvCCC66 in [#938](https://github.com/dessalines/thumb-key/pull/938)
+- Fix "latest version" links in issue forms by @StevenH237 in [#936](https://github.com/dessalines/thumb-key/pull/936)
+
+## New Contributors
+
+- @Ingegneus made their first contribution in [#939](https://github.com/dessalines/thumb-key/pull/939)
+- @DvCCC66 made their first contribution in [#938](https://github.com/dessalines/thumb-key/pull/938)
+- @StevenH237 made their first contribution in [#936](https://github.com/dessalines/thumb-key/pull/936)
+
+**Full Changelog**: https://github.com/dessalines/thumb-key/compare/3.2.1...3.2.2
+
 # Thumb-Key 3.2.1 (2024-06-01)
 
 ## What's Changed in 3.2.1
 
+- Upping version. by @dessalines
 - Adding a few more compose-boms. by @dessalines in [#934](https://github.com/dessalines/thumb-key/pull/934)
 - Update dependency gradle to v8.8 by @renovate[bot] in [#933](https://github.com/dessalines/thumb-key/pull/933)
 - Fix errors in CZProgrammerMessagEase by @ondrachwiedziuk in [#932](https://github.com/dessalines/thumb-key/pull/932)
