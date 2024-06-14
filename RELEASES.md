@@ -1,7 +1,21 @@
+# Thumb-Key 3.2.4 (2024-06-14)
+
+## What's Changed in 3.2.4
+
+- Increasing gradle memory.
+- Update plugin com.android.application to v8.5.0 by @renovate[bot] in [#951](https://github.com/dessalines/thumb-key/pull/951)
+- Update plugin com.android.library to v8.5.0 by @renovate[bot] in [#952](https://github.com/dessalines/thumb-key/pull/952)
+- Update dependency androidx.compose:compose-bom to v2024.06.00 by @renovate[bot] in [#949](https://github.com/dessalines/thumb-key/pull/949)
+- Update dependency androidx.compose.material:material-icons-extended-desktop to v1.6.8 - autoclosed by @renovate[bot] in [#948](https://github.com/dessalines/thumb-key/pull/948)
+- Per-app language preference by @pxeemo in [#947](https://github.com/dessalines/thumb-key/pull/947)
+
+**Full Changelog**: https://github.com/dessalines/thumb-key/compare/3.2.3...3.2.4
+
 # Thumb-Key 3.2.3 (2024-06-11)
 
 ## What's Changed in 3.2.3
 
+- Upping version. by @dessalines
 - Update plugin com.android.application to v8.4.2 by @renovate[bot] in [#945](https://github.com/dessalines/thumb-key/pull/945)
 - Update plugin com.android.library to v8.4.2 by @renovate[bot] in [#946](https://github.com/dessalines/thumb-key/pull/946)
 - Hebrew: added shifted layer using final letters by @yehoshuapw in [#944](https://github.com/dessalines/thumb-key/pull/944)
