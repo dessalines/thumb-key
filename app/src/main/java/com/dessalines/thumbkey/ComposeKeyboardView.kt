@@ -21,9 +21,7 @@ import kotlinx.coroutines.launch
 class ComposeKeyboardView(
     context: Context,
     private val settingsRepo: AppSettingsRepository,
-) :
-    AbstractComposeView
-        (context) {
+) : AbstractComposeView(context) {
     @Composable
     override fun Content() {
         val settingsState = settingsRepo.appSettings.observeAsState()
@@ -54,7 +52,8 @@ class ComposeKeyboardView(
 
                                     // Display the new layout's name on the screen
                                     val layoutName = layout.keyboardDefinition.title
-                                    Toast.makeText(context, layoutName, Toast.LENGTH_SHORT)
+                                    Toast
+                                        .makeText(context, layoutName, Toast.LENGTH_SHORT)
                                         .show()
                                 }
                             }

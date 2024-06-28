@@ -252,7 +252,8 @@ fun BehaviorActivity(
                                 stringResource(
                                     R.string.slide_sensitivity,
                                     slideSensitivitySliderState
-                                        .toInt().toString(),
+                                        .toInt()
+                                        .toString(),
                                 )
                             Text(slideSensitivityStr)
                         },

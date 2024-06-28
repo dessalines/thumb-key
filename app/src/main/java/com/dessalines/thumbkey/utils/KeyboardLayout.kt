@@ -132,7 +132,9 @@ import com.dessalines.thumbkey.keyboards.KB_VN_THUMBKEY
 
 // Make sure new keyboards are added AT THE END of this list, and have a higher index.
 // DO NOT put them in the middle of the list!
-enum class KeyboardLayout(val keyboardDefinition: KeyboardDefinition) {
+enum class KeyboardLayout(
+    val keyboardDefinition: KeyboardDefinition,
+) {
     ENThumbKey(KB_EN_THUMBKEY),
     ENThumbKeyProgrammer(KB_EN_THUMBKEY_PROGRAMMER),
     DEThumbKey(KB_DE_THUMBKEY),

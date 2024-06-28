@@ -45,7 +45,10 @@ val DONATION_MARKDOWN =
 fun ShowChangelog(appSettingsViewModel: AppSettingsViewModel) {
     val ctx = LocalContext.current
     val lastVersionCodeViewed =
-        appSettingsViewModel.appSettings.observeAsState().value?.lastVersionCodeViewed
+        appSettingsViewModel.appSettings
+            .observeAsState()
+            .value
+            ?.lastVersionCodeViewed
 
     // Make sure its initialized
     lastVersionCodeViewed?.also { lastViewed ->

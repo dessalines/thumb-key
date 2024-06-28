@@ -468,7 +468,8 @@ fun LookAndFeelActivity(
                                 stringResource(
                                     R.string.animation_helper_speed,
                                     animationHelperSpeedSliderState
-                                        .toInt().toString(),
+                                        .toInt()
+                                        .toString(),
                                 )
                             Text(animationHelperSpeedStr)
                         },
