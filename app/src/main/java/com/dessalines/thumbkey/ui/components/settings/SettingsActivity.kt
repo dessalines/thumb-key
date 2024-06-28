@@ -320,7 +320,8 @@ private fun updateLayouts(
             // Set the current to the first
             keyboardLayout = layoutsState.first().ordinal,
             keyboardLayouts =
-                layoutsState.map { it.ordinal }
+                layoutsState
+                    .map { it.ordinal }
                     .joinToString(),
         ),
     )

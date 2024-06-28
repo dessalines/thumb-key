@@ -23,9 +23,7 @@ data class KeyboardDefinitionSettings(
         return autoCapitalizers.contentEquals(other.autoCapitalizers)
     }
 
-    override fun hashCode(): Int {
-        return autoCapitalizers.contentHashCode()
-    }
+    override fun hashCode(): Int = autoCapitalizers.contentHashCode()
 }
 
 data class KeyboardDefinition(
@@ -63,25 +61,44 @@ data class KeyC(
 )
 
 sealed class KeyDisplay {
-    class TextDisplay(val text: String) : KeyDisplay()
+    class TextDisplay(
+        val text: String,
+    ) : KeyDisplay()
 
-    class IconDisplay(val icon: ImageVector) : KeyDisplay()
+    class IconDisplay(
+        val icon: ImageVector,
+    ) : KeyDisplay()
 }
 
 sealed class KeyAction {
-    class CommitText(val text: String) : KeyAction()
+    class CommitText(
+        val text: String,
+    ) : KeyAction()
 
-    class SendEvent(val event: KeyEvent) : KeyAction()
+    class SendEvent(
+        val event: KeyEvent,
+    ) : KeyAction()
 
-    class ReplaceLastText(val text: String, val trimCount: Int = 2) : KeyAction()
+    class ReplaceLastText(
+        val text: String,
+        val trimCount: Int = 2,
+    ) : KeyAction()
 
-    class ToggleShiftMode(val enable: Boolean) : KeyAction()
+    class ToggleShiftMode(
+        val enable: Boolean,
+    ) : KeyAction()
 
-    class ToggleNumericMode(val enable: Boolean) : KeyAction()
+    class ToggleNumericMode(
+        val enable: Boolean,
+    ) : KeyAction()
 
-    class ToggleEmojiMode(val enable: Boolean) : KeyAction()
+    class ToggleEmojiMode(
+        val enable: Boolean,
+    ) : KeyAction()
 
-    class ComposeLastKey(val text: String) : KeyAction()
+    class ComposeLastKey(
+        val text: String,
+    ) : KeyAction()
 
     data object DeleteWordBeforeCursor : KeyAction()
 

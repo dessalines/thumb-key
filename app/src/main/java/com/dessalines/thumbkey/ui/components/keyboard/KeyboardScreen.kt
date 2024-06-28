@@ -207,8 +207,7 @@ fun KeyboardScreen(
                                 } else {
                                     (Modifier)
                                 },
-                            )
-                            .background(MaterialTheme.colorScheme.surface),
+                            ).background(MaterialTheme.colorScheme.surface),
                 ) {
                     val view = LocalView.current
                     val audioManager = ctx.getSystemService(Context.AUDIO_SERVICE) as AudioManager
@@ -443,7 +442,8 @@ fun KeyboardScreen(
                                         when (mode) {
                                             KeyboardMode.MAIN, KeyboardMode.SHIFTED ->
                                                 keyboardDefinition.modes.numeric.arr
-                                                    .getOrNull(i)?.getOrNull(j)
+                                                    .getOrNull(i)
+                                                    ?.getOrNull(j)
                                             else -> null
                                         },
                                     dragReturnEnabled = dragReturnEnabled,

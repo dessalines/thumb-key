@@ -197,8 +197,7 @@ fun KeyboardKey(
                 } else {
                     (Modifier)
                 },
-            )
-            .background(color = backgroundColor)
+            ).background(color = backgroundColor)
             // Note: pointerInput has a delay when switching keyboards, so you must use this
             .combinedClickable(
                 interactionSource = interactionSource,
@@ -393,7 +392,8 @@ fun KeyboardKey(
                             if (!selection.active) {
                                 timeOfLastAccelerationInput = System.currentTimeMillis()
                                 // Activate selection, first detection is large enough to preserve swipe actions.
-                                if (slideBackspaceDeadzoneEnabled && (abs(offsetX) > slideOffsetTrigger) ||
+                                if (slideBackspaceDeadzoneEnabled &&
+                                    (abs(offsetX) > slideOffsetTrigger) ||
                                     !slideBackspaceDeadzoneEnabled
                                 ) {
                                     // reset offsetX, do not reset offsetY when sliding, it will break selecting
@@ -762,7 +762,10 @@ fun KeyText(
     val color = colorVariantToColor(colorVariant = key.color)
     val isUpperCase =
         when (key.display) {
-            is KeyDisplay.TextDisplay -> key.display.text.firstOrNull()?.isUpperCase() ?: false
+            is KeyDisplay.TextDisplay ->
+                key.display.text
+                    .firstOrNull()
+                    ?.isUpperCase() ?: false
             else -> {
                 false
             }

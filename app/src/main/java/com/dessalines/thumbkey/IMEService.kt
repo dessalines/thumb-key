@@ -89,9 +89,7 @@ class IMEService :
         selectionEnd = cursorAnchorInfo.selectionEnd
     }
 
-    fun didCursorMove(): Boolean {
-        return cursorMoved
-    }
+    fun didCursorMove(): Boolean = cursorMoved
 
     fun ignoreNextCursorMove() {
         // This gets reset on the next call to `onUpdateCursorAnchorInfo`
