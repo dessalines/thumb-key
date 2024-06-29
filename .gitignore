@@ -15,3 +15,4 @@ app/schemas
 .project
 .settings
 .classpath
+build.sh
