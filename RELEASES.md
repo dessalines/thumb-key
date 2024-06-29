@@ -1,12 +1,24 @@
+# Thumb-Key 3.2.5 (2024-06-29)
+
+## What's Changed in 3.2.5
+
+- Ignoring build.sh by @dessalines
+- Revert "Hebrew: added shifted layer using final letters" by @dessalines in [#958](https://github.com/dessalines/thumb-key/pull/958)
+- Removing renovate from git cliff by @dessalines in [#954](https://github.com/dessalines/thumb-key/pull/954)
+- Update layout english deutsch thumb-key v2 to fix #868 by @roomfullofcommits in [#955](https://github.com/dessalines/thumb-key/pull/955)
+
+## New Contributors
+
+- @roomfullofcommits made their first contribution in [#955](https://github.com/dessalines/thumb-key/pull/955)
+
+**Full Changelog**: https://github.com/dessalines/thumb-key/compare/3.2.4...3.2.5
+
 # Thumb-Key 3.2.4 (2024-06-14)
 
 ## What's Changed in 3.2.4
 
-- Increasing gradle memory.
-- Update plugin com.android.application to v8.5.0 by @renovate[bot] in [#951](https://github.com/dessalines/thumb-key/pull/951)
-- Update plugin com.android.library to v8.5.0 by @renovate[bot] in [#952](https://github.com/dessalines/thumb-key/pull/952)
-- Update dependency androidx.compose:compose-bom to v2024.06.00 by @renovate[bot] in [#949](https://github.com/dessalines/thumb-key/pull/949)
-- Update dependency androidx.compose.material:material-icons-extended-desktop to v1.6.8 - autoclosed by @renovate[bot] in [#948](https://github.com/dessalines/thumb-key/pull/948)
+- Upping version. by @dessalines
+- Increasing gradle memory. by @dessalines
 - Per-app language preference by @pxeemo in [#947](https://github.com/dessalines/thumb-key/pull/947)
 
 **Full Changelog**: https://github.com/dessalines/thumb-key/compare/3.2.3...3.2.4
@@ -16,10 +28,7 @@
 ## What's Changed in 3.2.3
 
 - Upping version. by @dessalines
-- Update plugin com.android.application to v8.4.2 by @renovate[bot] in [#945](https://github.com/dessalines/thumb-key/pull/945)
-- Update plugin com.android.library to v8.4.2 by @renovate[bot] in [#946](https://github.com/dessalines/thumb-key/pull/946)
 - Hebrew: added shifted layer using final letters by @yehoshuapw in [#944](https://github.com/dessalines/thumb-key/pull/944)
-- Update plugin com.google.devtools.ksp to v2.0.0-1.0.22 by @renovate[bot] in [#942](https://github.com/dessalines/thumb-key/pull/942)
 - DEThumbKey keyboard: Fixes exclamation mark. by @sphh in [#941](https://github.com/dessalines/thumb-key/pull/941)
 
 **Full Changelog**: https://github.com/dessalines/thumb-key/compare/3.2.2...3.2.3
@@ -48,10 +57,7 @@
 
 - Upping version. by @dessalines
 - Adding a few more compose-boms. by @dessalines in [#934](https://github.com/dessalines/thumb-key/pull/934)
-- Update dependency gradle to v8.8 by @renovate[bot] in [#933](https://github.com/dessalines/thumb-key/pull/933)
 - Fix errors in CZProgrammerMessagEase by @ondrachwiedziuk in [#932](https://github.com/dessalines/thumb-key/pull/932)
-- Update dependency androidx.appcompat:appcompat to v1.7.0 - autoclosed by @renovate[bot] in [#931](https://github.com/dessalines/thumb-key/pull/931)
-- Update dependency androidx.lifecycle:lifecycle-runtime-compose to v2.8.1 by @renovate[bot] in [#930](https://github.com/dessalines/thumb-key/pull/930)
 
 **Full Changelog**: https://github.com/dessalines/thumb-key/compare/3.2.0...3.2.1
 
@@ -73,7 +79,6 @@
 
 - Upping version. by @dessalines
 - Enable strong skipping. by @dessalines in [#925](https://github.com/dessalines/thumb-key/pull/925)
-- Update plugin org.jetbrains.kotlin.android to v2 by @renovate[bot] in [#924](https://github.com/dessalines/thumb-key/pull/924)
 - Removing renovate schedule. by @dessalines in [#923](https://github.com/dessalines/thumb-key/pull/923)
 - Upgrading to 2.0.0 compiler. by @dessalines in [#922](https://github.com/dessalines/thumb-key/pull/922)
 
@@ -85,11 +90,8 @@
 
 - Upping version. by @dessalines
 - Revert "Update plugin org.jetbrains.kotlin.android to v2" by @dessalines in [#921](https://github.com/dessalines/thumb-key/pull/921)
-- Update plugin org.jetbrains.kotlin.android to v2 by @renovate[bot] in [#920](https://github.com/dessalines/thumb-key/pull/920)
-- Update plugin com.android.application to v8.4.1 by @renovate[bot] in [#918](https://github.com/dessalines/thumb-key/pull/918)
 - Make cursor movement detection index-based (fixes #881) by @glm4610 in [#917](https://github.com/dessalines/thumb-key/pull/917)
 - Fix #304 (take two): In Utils.autoCapitalizeCheck, use input type of current editor by @mpsijm in [#909](https://github.com/dessalines/thumb-key/pull/909)
-- Update plugin com.android.library to v8.4.1 by @renovate[bot] in [#908](https://github.com/dessalines/thumb-key/pull/908)
 - Fixing donation line. by @dessalines in [#906](https://github.com/dessalines/thumb-key/pull/906)
 - Add QBased a qwerty based keyboard by @APainfulMemory in [#905](https://github.com/dessalines/thumb-key/pull/905)
 
@@ -105,13 +107,6 @@
 
 - Upping version. by @dessalines
 - Tweak circular drag detection algorithm (fixes #894) by @glm4610 in [#904](https://github.com/dessalines/thumb-key/pull/904)
-- Update plugin com.google.devtools.ksp to v1.9.24-1.0.20 by @renovate[bot] in [#897](https://github.com/dessalines/thumb-key/pull/897)
-- Update dependency composeOptions to v1.5.14 by @renovate[bot] in [#896](https://github.com/dessalines/thumb-key/pull/896)
-- Update plugin org.jetbrains.kotlin.android to v1.9.24 by @renovate[bot] in [#898](https://github.com/dessalines/thumb-key/pull/898)
-- Update cimg/android Docker tag to v2024 by @renovate[bot] in [#903](https://github.com/dessalines/thumb-key/pull/903)
-- Update plugin com.android.application to v8.4.0 by @renovate[bot] in [#901](https://github.com/dessalines/thumb-key/pull/901)
-- Update plugin com.android.library to v8.4.0 by @renovate[bot] in [#902](https://github.com/dessalines/thumb-key/pull/902)
-- Update dependency com.github.jeziellago:compose-markdown to v0.5.0 by @renovate[bot] in [#900](https://github.com/dessalines/thumb-key/pull/900)
 - Adding renovate. by @dessalines
 - Improves symbols in main DEThumbKey keyboard. by @sphh in [#892](https://github.com/dessalines/thumb-key/pull/892)
 
