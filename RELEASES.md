@@ -1,7 +1,21 @@
+# Thumb-Key 3.2.6 (2024-07-02)
+
+## What's Changed in 3.2.6
+
+- MessageEase layouts: use numerics from MessageEase too by @gmelikov in [#960](https://github.com/dessalines/thumb-key/pull/960)
+- RUMessagEaseSymbols: use messagease numerics by @gmelikov in [#959](https://github.com/dessalines/thumb-key/pull/959)
+
+## New Contributors
+
+- @gmelikov made their first contribution in [#960](https://github.com/dessalines/thumb-key/pull/960)
+
+**Full Changelog**: https://github.com/dessalines/thumb-key/compare/3.2.5...3.2.6
+
 # Thumb-Key 3.2.5 (2024-06-29)
 
 ## What's Changed in 3.2.5
 
+- Upping version. by @dessalines
 - Ignoring build.sh by @dessalines
 - Revert "Hebrew: added shifted layer using final letters" by @dessalines in [#958](https://github.com/dessalines/thumb-key/pull/958)
 - Removing renovate from git cliff by @dessalines in [#954](https://github.com/dessalines/thumb-key/pull/954)
