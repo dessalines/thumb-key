@@ -1030,6 +1030,6 @@ val KB_CZ_PROG: KeyboardDefinition =
             KeyboardDefinitionModes(
                 main = KB_CZ_PROG_MAIN,
                 shifted = KB_CZ_PROG_SHIFTED,
-                numeric = NUMERIC_KEYBOARD,
+                numeric = KB_EN_MESSAGEASE_NUMERIC,
             ),
     )
