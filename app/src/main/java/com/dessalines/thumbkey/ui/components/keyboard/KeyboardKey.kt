@@ -60,6 +60,7 @@ import com.dessalines.thumbkey.utils.KeyboardDefinitionSettings
 import com.dessalines.thumbkey.utils.Selection
 import com.dessalines.thumbkey.utils.SlideType
 import com.dessalines.thumbkey.utils.SwipeDirection
+import com.dessalines.thumbkey.utils.SwipeNWay
 import com.dessalines.thumbkey.utils.buildTapActions
 import com.dessalines.thumbkey.utils.circularDirection
 import com.dessalines.thumbkey.utils.colorVariantToColor
@@ -80,6 +81,7 @@ import kotlin.math.min
 @Composable
 fun KeyboardKey(
     key: KeyItemC,
+    ghostKey: KeyItemC? = null,
     lastAction: MutableState<KeyAction?>,
     animationHelperSpeed: Int,
     animationSpeed: Int,
@@ -120,7 +122,7 @@ fun KeyboardKey(
 ) {
     // Necessary for swipe settings to get updated correctly
     val id =
-        key.toString() + animationHelperSpeed + animationSpeed + autoCapitalize +
+        key.toString() + ghostKey.toString() + animationHelperSpeed + animationSpeed + autoCapitalize +
             vibrateOnTap + soundOnTap + legendHeight + legendWidth + minSwipeLength + slideSensitivity +
             slideEnabled + slideCursorMovementMode + slideSpacebarDeadzoneEnabled +
             slideBackspaceDeadzoneEnabled + dragReturnEnabled + circularDragEnabled +
@@ -469,8 +471,10 @@ fun KeyboardKey(
                                         )
                                     } else {
                                         val swipeDirection =
-                                            swipeDirection(offsetX, offsetY, minSwipeLength, key.swipeType)
-                                        key.swipes?.get(swipeDirection)?.action
+                                            swipeDirection(offsetX, offsetY, minSwipeLength, key.swipeType, ghostKey?.swipeType)
+                                        key.swipes?.get(swipeDirection)?.action ?: (
+                                            ghostKey?.swipes?.get(swipeDirection)?.action
+                                        )
                                     }
                                 ) ?: key.center.action
 
