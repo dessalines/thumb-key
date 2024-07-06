@@ -218,7 +218,6 @@ enum class KeyboardLayout(
     JATypeSplitKatakana(KB_JA_TYPESPLIT_KATAKANA),
     EUESThumbKey(KB_EU_ES_THUMBKEY),
     ENQwertyFour(KB_EN_QWERTYFOUR),
-    ENQwertyFourCompose(KB_EN_QWERTYFOUR_COMPOSE),
     KZThumbKey(KB_KZ_THUMBKEY),
     ENMIThumbKey(KB_EN_MI_THUMBKEY),
     ENMIThumbKeySymbols(KB_EN_MI_THUMBKEY_SYMBOLS),
@@ -266,4 +265,5 @@ enum class KeyboardLayout(
     ENQBased(KB_EN_QBASED),
     ENQBasedLeft(KB_EN_QBASED_LEFT),
     DEThumbkeySymbols(KB_DE_THUMBKEY_SYMBOLS),
+    ENQwertyFourCompose(KB_EN_QWERTYFOUR_COMPOSE),
 }
