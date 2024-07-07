@@ -1,7 +1,22 @@
+# Thumb-Key 3.3.0 (2024-07-07)
+
+## What's Changed in 3.3.0
+
+- Added ghost key functionality. by @matthew-sirman in [#961](https://github.com/dessalines/thumb-key/pull/961)
+- Add composed qwertyfour layout by @sirlan-ff00ff in [#962](https://github.com/dessalines/thumb-key/pull/962)
+
+## New Contributors
+
+- @matthew-sirman made their first contribution in [#961](https://github.com/dessalines/thumb-key/pull/961)
+- @sirlan-ff00ff made their first contribution in [#962](https://github.com/dessalines/thumb-key/pull/962)
+
+**Full Changelog**: https://github.com/dessalines/thumb-key/compare/3.2.6...3.3.0
+
 # Thumb-Key 3.2.6 (2024-07-02)
 
 ## What's Changed in 3.2.6
 
+- Upping version. by @dessalines
 - MessageEase layouts: use numerics from MessageEase too by @gmelikov in [#960](https://github.com/dessalines/thumb-key/pull/960)
 - RUMessagEaseSymbols: use messagease numerics by @gmelikov in [#959](https://github.com/dessalines/thumb-key/pull/959)
 
