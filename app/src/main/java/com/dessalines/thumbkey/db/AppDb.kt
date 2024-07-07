@@ -56,6 +56,7 @@ const val DEFAULT_DRAG_RETURN_ENABLED = 1
 const val DEFAULT_CIRCULAR_DRAG_ENABLED = 1
 const val DEFAULT_CLOCKWISE_DRAG_ACTION = 0
 const val DEFAULT_COUNTERCLOCKWISE_DRAG_ACTION = 1
+const val DEFAULT_GHOST_KEYS_ENABLED = 0
 
 @Entity
 data class AppSettings(
@@ -226,6 +227,11 @@ data class AppSettings(
         defaultValue = DEFAULT_COUNTERCLOCKWISE_DRAG_ACTION.toString(),
     )
     val counterclockwiseDragAction: Int,
+    @ColumnInfo(
+        name = "ghost_keys_enabled",
+        defaultValue = DEFAULT_GHOST_KEYS_ENABLED.toString(),
+    )
+    val ghostKeysEnabled: Int,
 )
 
 data class LayoutsUpdate(
@@ -334,6 +340,8 @@ data class BehaviorUpdate(
     val clockwiseDragAction: Int,
     @ColumnInfo(name = "counterclockwise_drag_action")
     val counterclockwiseDragAction: Int,
+    @ColumnInfo(name = "ghost_keys_enabled")
+    val ghostKeysEnabled: Int,
 )
 
 @Dao
@@ -565,8 +573,17 @@ val MIGRATION_14_15 =
         }
     }
 
+val MIGRATION_15_16 =
+    object : Migration(15, 16) {
+        override fun migrate(db: SupportSQLiteDatabase) {
+            db.execSQL(
+                "alter table AppSettings add column ghost_keys_enabled INTEGER NOT NULL default $DEFAULT_GHOST_KEYS_ENABLED",
+            )
+        }
+    }
+
 @Database(
-    version = 15,
+    version = 16,
     entities = [AppSettings::class],
     exportSchema = true,
 )
@@ -603,6 +620,7 @@ abstract class AppDB : RoomDatabase() {
                             MIGRATION_12_13,
                             MIGRATION_13_14,
                             MIGRATION_14_15,
+                            MIGRATION_15_16,
                         )
                         // Necessary because it can't insert data on creation
                         .addCallback(

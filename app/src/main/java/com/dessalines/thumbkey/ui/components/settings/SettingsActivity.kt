@@ -46,6 +46,7 @@ import com.dessalines.thumbkey.db.DEFAULT_CIRCULAR_DRAG_ENABLED
 import com.dessalines.thumbkey.db.DEFAULT_CLOCKWISE_DRAG_ACTION
 import com.dessalines.thumbkey.db.DEFAULT_COUNTERCLOCKWISE_DRAG_ACTION
 import com.dessalines.thumbkey.db.DEFAULT_DRAG_RETURN_ENABLED
+import com.dessalines.thumbkey.db.DEFAULT_GHOST_KEYS_ENABLED
 import com.dessalines.thumbkey.db.DEFAULT_HIDE_LETTERS
 import com.dessalines.thumbkey.db.DEFAULT_HIDE_SYMBOLS
 import com.dessalines.thumbkey.db.DEFAULT_KEYBOARD_LAYOUT
@@ -306,6 +307,7 @@ private fun resetAppSettingsToDefault(appSettingsViewModel: AppSettingsViewModel
             circularDragEnabled = DEFAULT_CIRCULAR_DRAG_ENABLED,
             clockwiseDragAction = DEFAULT_CLOCKWISE_DRAG_ACTION,
             counterclockwiseDragAction = DEFAULT_COUNTERCLOCKWISE_DRAG_ACTION,
+            ghostKeysEnabled = DEFAULT_GHOST_KEYS_ENABLED,
         ),
     )
 }

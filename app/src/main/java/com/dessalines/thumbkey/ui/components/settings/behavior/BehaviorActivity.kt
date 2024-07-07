@@ -12,6 +12,7 @@ import androidx.compose.material.icons.automirrored.outlined.Backspace
 import androidx.compose.material.icons.automirrored.outlined.RotateLeft
 import androidx.compose.material.icons.automirrored.outlined.RotateRight
 import androidx.compose.material.icons.outlined.Abc
+import androidx.compose.material.icons.outlined.BorderInner
 import androidx.compose.material.icons.outlined.Circle
 import androidx.compose.material.icons.outlined.SpaceBar
 import androidx.compose.material.icons.outlined.SwapHoriz
@@ -43,6 +44,7 @@ import com.dessalines.thumbkey.db.DEFAULT_CIRCULAR_DRAG_ENABLED
 import com.dessalines.thumbkey.db.DEFAULT_CLOCKWISE_DRAG_ACTION
 import com.dessalines.thumbkey.db.DEFAULT_COUNTERCLOCKWISE_DRAG_ACTION
 import com.dessalines.thumbkey.db.DEFAULT_DRAG_RETURN_ENABLED
+import com.dessalines.thumbkey.db.DEFAULT_GHOST_KEYS_ENABLED
 import com.dessalines.thumbkey.db.DEFAULT_MIN_SWIPE_LENGTH
 import com.dessalines.thumbkey.db.DEFAULT_SLIDE_BACKSPACE_DEADZONE_ENABLED
 import com.dessalines.thumbkey.db.DEFAULT_SLIDE_CURSOR_MOVEMENT_MODE
@@ -94,6 +96,7 @@ fun BehaviorActivity(
     var clockwiseDragActionState = CircularDragAction.entries[settings?.clockwiseDragAction ?: DEFAULT_CLOCKWISE_DRAG_ACTION]
     var counterclockwiseDragActionState =
         CircularDragAction.entries[settings?.counterclockwiseDragAction ?: DEFAULT_COUNTERCLOCKWISE_DRAG_ACTION]
+    var ghostKeysEnabledState = (settings?.ghostKeysEnabled ?: DEFAULT_GHOST_KEYS_ENABLED).toBool()
 
     val snackbarHostState = remember { SnackbarHostState() }
 
@@ -117,6 +120,7 @@ fun BehaviorActivity(
                 circularDragEnabled = circularDragEnabledState.toInt(),
                 clockwiseDragAction = clockwiseDragActionState.ordinal,
                 counterclockwiseDragAction = counterclockwiseDragActionState.ordinal,
+                ghostKeysEnabled = ghostKeysEnabledState.toInt(),
             ),
         )
     }
@@ -378,6 +382,25 @@ fun BehaviorActivity(
                             Icon(
                                 imageVector = Icons.AutoMirrored.Outlined.RotateLeft,
                                 contentDescription = stringResource(R.string.counterclockwise_drag_action),
+                            )
+                        },
+                    )
+                    SwitchPreference(
+                        value = ghostKeysEnabledState,
+                        onValueChange = {
+                            ghostKeysEnabledState = it
+                            updateBehavior()
+                        },
+                        title = {
+                            Text(stringResource(R.string.ghost_keys_enable))
+                        },
+                        summary = {
+                            Text(stringResource(R.string.ghost_keys_description))
+                        },
+                        icon = {
+                            Icon(
+                                imageVector = Icons.Outlined.BorderInner,
+                                contentDescription = stringResource(R.string.ghost_keys_enable),
                             )
                         },
                     )
