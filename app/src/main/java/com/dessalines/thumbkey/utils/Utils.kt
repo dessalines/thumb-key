@@ -261,45 +261,11 @@ fun swipeDirection(
     y: Float,
     minSwipeLength: Int,
     swipeType: SwipeNWay = SwipeNWay.EIGHT_WAY,
-    ghostSwipeType: SwipeNWay? = null,
 ): SwipeDirection? {
     val xD = x.toDouble()
     val yD = y.toDouble()
 
     val swipeLength = sqrt(xD.pow(2) + yD.pow(2))
-
-    val compositeSwipeType =
-        ghostSwipeType?.let {
-            when (swipeType) {
-                SwipeNWay.EIGHT_WAY -> SwipeNWay.EIGHT_WAY
-                SwipeNWay.FOUR_WAY_CROSS ->
-                    when (it) {
-                        SwipeNWay.FOUR_WAY_CROSS,
-                        SwipeNWay.TWO_WAY_VERTICAL,
-                        SwipeNWay.TWO_WAY_HORIZONTAL -> SwipeNWay.FOUR_WAY_CROSS
-                        else -> SwipeNWay.EIGHT_WAY
-                    }
-                SwipeNWay.FOUR_WAY_DIAGONAL ->
-                    when (it) {
-                        SwipeNWay.FOUR_WAY_DIAGONAL -> SwipeNWay.FOUR_WAY_DIAGONAL
-                        else -> SwipeNWay.EIGHT_WAY
-                    }
-                SwipeNWay.TWO_WAY_HORIZONTAL ->
-                    when (it) {
-                        SwipeNWay.TWO_WAY_HORIZONTAL -> SwipeNWay.TWO_WAY_HORIZONTAL
-                        SwipeNWay.TWO_WAY_VERTICAL,
-                            SwipeNWay.FOUR_WAY_CROSS -> SwipeNWay.FOUR_WAY_CROSS
-                        else -> SwipeNWay.EIGHT_WAY
-                    }
-                SwipeNWay.TWO_WAY_VERTICAL ->
-                    when (it) {
-                        SwipeNWay.TWO_WAY_VERTICAL -> SwipeNWay.TWO_WAY_VERTICAL
-                        SwipeNWay.TWO_WAY_HORIZONTAL,
-                        SwipeNWay.FOUR_WAY_CROSS -> SwipeNWay.FOUR_WAY_CROSS
-                        else -> SwipeNWay.EIGHT_WAY
-                    }
-            }
-        } ?: swipeType
 
     if (swipeLength > minSwipeLength) {
         val angleDir = (atan2(xD, yD) / Math.PI * 180)
@@ -310,7 +276,7 @@ fun swipeDirection(
                 angleDir
             }
 
-        when (compositeSwipeType) {
+        when (swipeType) {
             // 0 degrees = down, increasing counter-clockwise
             SwipeNWay.EIGHT_WAY -> return when (angle) {
                 in 22.5..67.5 -> SwipeDirection.BOTTOM_RIGHT

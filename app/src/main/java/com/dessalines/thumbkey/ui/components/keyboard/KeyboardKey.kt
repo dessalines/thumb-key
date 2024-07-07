@@ -81,6 +81,9 @@ import kotlin.math.min
 @Composable
 fun KeyboardKey(
     key: KeyItemC,
+    // Hidden background key to detect swipes for. When a swipe isn't captured by the key, the ghost
+    // key will attempt to capture it instead. This is derived automatically from the keyboard
+    // layout, and should not be set directly in the keyboard definition.
     ghostKey: KeyItemC? = null,
     lastAction: MutableState<KeyAction?>,
     animationHelperSpeed: Int,
@@ -471,7 +474,12 @@ fun KeyboardKey(
                                         )
                                     } else {
                                         val swipeDirection =
-                                            swipeDirection(offsetX, offsetY, minSwipeLength, key.swipeType, ghostKey?.swipeType)
+                                            swipeDirection(
+                                                offsetX,
+                                                offsetY,
+                                                minSwipeLength,
+                                                if (ghostKey == null) key.swipeType else SwipeNWay.EIGHT_WAY,
+                                            )
                                         key.swipes?.get(swipeDirection)?.action ?: (
                                             ghostKey?.swipes?.get(swipeDirection)?.action
                                         )

@@ -86,4 +86,5 @@
     <string name="send_numeric">Number key</string>
     <string name="circular_drag_enable">Circular drag</string>
     <string name="ghost_keys_enable">Ghost keys</string>
+    <string name="ghost_keys_description">Access hidden symbol keys without switching to numeric view</string>
 </resources>

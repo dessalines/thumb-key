@@ -573,7 +573,6 @@ val MIGRATION_14_15 =
         }
     }
 
-
 val MIGRATION_15_16 =
     object : Migration(15, 16) {
         override fun migrate(db: SupportSQLiteDatabase) {

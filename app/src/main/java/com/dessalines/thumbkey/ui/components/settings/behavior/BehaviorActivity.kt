@@ -120,7 +120,7 @@ fun BehaviorActivity(
                 circularDragEnabled = circularDragEnabledState.toInt(),
                 clockwiseDragAction = clockwiseDragActionState.ordinal,
                 counterclockwiseDragAction = counterclockwiseDragActionState.ordinal,
-                ghostKeysEnabled = ghostKeysEnabledState.toInt()
+                ghostKeysEnabled = ghostKeysEnabledState.toInt(),
             ),
         )
     }
@@ -393,6 +393,9 @@ fun BehaviorActivity(
                         },
                         title = {
                             Text(stringResource(R.string.ghost_keys_enable))
+                        },
+                        summary = {
+                            Text(stringResource(R.string.ghost_keys_description))
                         },
                         icon = {
                             Icon(
