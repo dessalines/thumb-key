@@ -944,6 +944,6 @@ val KB_RU_MESSAGEASE_SYMBOLS: KeyboardDefinition =
             KeyboardDefinitionModes(
                 main = KB_RU_MESSAGEASE_SYMBOLS_MAIN,
                 shifted = KB_RU_MESSAGEASE_SYMBOLS_SHIFTED,
-                numeric = NUMERIC_KEYBOARD,
+                numeric = KB_EN_MESSAGEASE_NUMERIC,
             ),
     )

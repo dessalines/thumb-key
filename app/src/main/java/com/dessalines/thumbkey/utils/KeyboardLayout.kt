@@ -44,6 +44,7 @@ import com.dessalines.thumbkey.keyboards.KB_EN_QBASED
 import com.dessalines.thumbkey.keyboards.KB_EN_QBASED_LEFT
 import com.dessalines.thumbkey.keyboards.KB_EN_QWERTEASE
 import com.dessalines.thumbkey.keyboards.KB_EN_QWERTYFOUR
+import com.dessalines.thumbkey.keyboards.KB_EN_QWERTYFOUR_COMPOSE
 import com.dessalines.thumbkey.keyboards.KB_EN_RO_THUMBKEY
 import com.dessalines.thumbkey.keyboards.KB_EN_SK_THUMBKEY
 import com.dessalines.thumbkey.keyboards.KB_EN_THUMBKEY
@@ -264,4 +265,5 @@ enum class KeyboardLayout(
     ENQBased(KB_EN_QBASED),
     ENQBasedLeft(KB_EN_QBASED_LEFT),
     DEThumbkeySymbols(KB_DE_THUMBKEY_SYMBOLS),
+    ENQwertyFourCompose(KB_EN_QWERTYFOUR_COMPOSE),
 }
