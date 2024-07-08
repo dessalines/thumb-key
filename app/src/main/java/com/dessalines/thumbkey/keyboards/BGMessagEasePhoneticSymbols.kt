@@ -319,7 +319,6 @@ val KB_BG_PHONETIC_MESSAGEASE_SYMBOLS_MAIN =
                                     action = KeyAction.ToggleShiftMode(false),
                                     swipeReturnAction = KeyAction.ToggleCurrentWordCapitalization(false),
                                 ),
-
                         ),
                 ),
                 NUMERIC_KEY_ITEM,

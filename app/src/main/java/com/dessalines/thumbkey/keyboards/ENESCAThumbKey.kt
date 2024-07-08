@@ -220,10 +220,10 @@ val KB_EN_ES_CA_THUMBKEY_MAIN =
                                     action = KeyAction.CommitText("l"),
                                 ),
                             SwipeDirection.BOTTOM to
-                                    KeyC(
-                                        action = KeyAction.ToggleShiftMode(false),
-                                        swipeReturnAction = KeyAction.ToggleCurrentWordCapitalization(false),
-                                    ),
+                                KeyC(
+                                    action = KeyAction.ToggleShiftMode(false),
+                                    swipeReturnAction = KeyAction.ToggleCurrentWordCapitalization(false),
+                                ),
                             SwipeDirection.BOTTOM_LEFT to
                                 KeyC(
                                     display = KeyDisplay.TextDisplay("l·l"),

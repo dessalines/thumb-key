@@ -159,7 +159,7 @@ val KB_EN_THUMBKEY_MAIN =
                                 KeyC(
                                     action = KeyAction.ToggleShiftMode(false),
                                     swipeReturnAction = KeyAction.ToggleCurrentWordCapitalization(false),
-                                )
+                                ),
                         ),
                 ),
                 NUMERIC_KEY_ITEM,

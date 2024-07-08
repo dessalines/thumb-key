@@ -971,22 +971,28 @@ fun performKeyAction(
             val maxLength = 100
             val wordBorderCharacters = ".,;:!?\"'()-—[]{}<>/\\|#$%^_+=~`"
             val textBeforeCursor = ime.currentInputConnection.getTextBeforeCursor(maxLength, 0)
-            if(!textBeforeCursor.isNullOrEmpty()) {
-                val startWordIndex = textBeforeCursor.toString().indexOfLast { it.isWhitespace() || wordBorderCharacters.contains(it) }.plus(1)
-                if(startWordIndex<textBeforeCursor.length) {
-                    val replacementText = if (action.toggleUp) {
-                        if (textBeforeCursor[startWordIndex].isUpperCase()) {
-                            textBeforeCursor.substring(startWordIndex).uppercase()
+            if (!textBeforeCursor.isNullOrEmpty()) {
+                val startWordIndex =
+                    textBeforeCursor
+                        .toString()
+                        .indexOfLast { it.isWhitespace() || wordBorderCharacters.contains(it) }
+                        .plus(1)
+                if (startWordIndex < textBeforeCursor.length) {
+                    val replacementText =
+                        if (action.toggleUp) {
+                            if (textBeforeCursor[startWordIndex].isUpperCase()) {
+                                textBeforeCursor.substring(startWordIndex).uppercase()
+                            } else {
+                                textBeforeCursor
+                                    .substring(startWordIndex, startWordIndex + 1)
+                                    .uppercase() + textBeforeCursor.substring(startWordIndex + 1)
+                            }
                         } else {
-                            textBeforeCursor.substring(startWordIndex, startWordIndex + 1)
-                                .uppercase() + textBeforeCursor.substring(startWordIndex + 1)
+                            textBeforeCursor.substring(startWordIndex).lowercase()
                         }
-                    } else {
-                        textBeforeCursor.substring(startWordIndex).lowercase()
-                    }
                     ime.currentInputConnection.deleteSurroundingText(
                         textBeforeCursor.length - startWordIndex,
-                        0
+                        0,
                     )
                     ime.currentInputConnection.commitText(replacementText, 1)
                 }
