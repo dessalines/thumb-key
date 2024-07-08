@@ -23,6 +23,14 @@ android {
         ksp { arg('room.schemaLocation', "$projectDir/schemas") }
     }
 
+    // Necessary for izzyondroid releases
+    dependenciesInfo {
+        // Disables dependency metadata when building APKs.
+        includeInApk = false
+        // Disables dependency metadata when building Android App Bundles.
+        includeInBundle = false
+    }
+
     if (project.hasProperty("RELEASE_STORE_FILE")) {
         signingConfigs {
             release {
