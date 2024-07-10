@@ -3,6 +3,7 @@ package com.dessalines.thumbkey.ui.components.keyboard
 import android.content.Context
 import android.media.AudioManager
 import android.util.Log
+import android.view.HapticFeedbackConstants
 import android.view.inputmethod.InputConnection.CURSOR_UPDATE_MONITOR
 import androidx.compose.foundation.background
 import androidx.compose.foundation.border
@@ -22,9 +23,8 @@ import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
-import androidx.compose.ui.hapticfeedback.HapticFeedbackType
 import androidx.compose.ui.platform.LocalContext
-import androidx.compose.ui.platform.LocalHapticFeedback
+import androidx.compose.ui.platform.LocalView
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.viewinterop.AndroidView
@@ -35,6 +35,11 @@ import com.dessalines.thumbkey.db.DEFAULT_ANIMATION_HELPER_SPEED
 import com.dessalines.thumbkey.db.DEFAULT_ANIMATION_SPEED
 import com.dessalines.thumbkey.db.DEFAULT_AUTO_CAPITALIZE
 import com.dessalines.thumbkey.db.DEFAULT_BACKDROP_ENABLED
+import com.dessalines.thumbkey.db.DEFAULT_CIRCULAR_DRAG_ENABLED
+import com.dessalines.thumbkey.db.DEFAULT_CLOCKWISE_DRAG_ACTION
+import com.dessalines.thumbkey.db.DEFAULT_COUNTERCLOCKWISE_DRAG_ACTION
+import com.dessalines.thumbkey.db.DEFAULT_DRAG_RETURN_ENABLED
+import com.dessalines.thumbkey.db.DEFAULT_GHOST_KEYS_ENABLED
 import com.dessalines.thumbkey.db.DEFAULT_HIDE_LETTERS
 import com.dessalines.thumbkey.db.DEFAULT_HIDE_SYMBOLS
 import com.dessalines.thumbkey.db.DEFAULT_KEYBOARD_LAYOUT
@@ -58,6 +63,7 @@ import com.dessalines.thumbkey.keyboards.EMOJI_BACK_KEY_ITEM
 import com.dessalines.thumbkey.keyboards.KB_EN_THUMBKEY_MAIN
 import com.dessalines.thumbkey.keyboards.NUMERIC_KEY_ITEM
 import com.dessalines.thumbkey.keyboards.RETURN_KEY_ITEM
+import com.dessalines.thumbkey.utils.CircularDragAction
 import com.dessalines.thumbkey.utils.KeyAction
 import com.dessalines.thumbkey.utils.KeyboardLayout
 import com.dessalines.thumbkey.utils.KeyboardMode
@@ -130,17 +136,25 @@ fun KeyboardScreen(
     val backdropColor = MaterialTheme.colorScheme.background
     val backdropPadding = 6.dp
     val keyPadding = settings?.keyPadding ?: DEFAULT_KEY_PADDING
-    val legendSize = settings?.keySize ?: DEFAULT_KEY_SIZE
+    val legendHeight = settings?.keySize ?: DEFAULT_KEY_SIZE
+    val legendWidth = settings?.keyWidth ?: legendHeight
     val keyRadius = settings?.keyRadius ?: DEFAULT_KEY_RADIUS
+    val dragReturnEnabled = (settings?.dragReturnEnabled ?: DEFAULT_DRAG_RETURN_ENABLED).toBool()
+    val circularDragEnabled = (settings?.circularDragEnabled ?: DEFAULT_CIRCULAR_DRAG_ENABLED).toBool()
+    val clockwiseDragAction = CircularDragAction.entries[settings?.clockwiseDragAction ?: DEFAULT_CLOCKWISE_DRAG_ACTION]
+    val counterclockwiseDragAction =
+        CircularDragAction.entries[settings?.counterclockwiseDragAction ?: DEFAULT_COUNTERCLOCKWISE_DRAG_ACTION]
+    val ghostKeysEnabled = (settings?.ghostKeysEnabled ?: DEFAULT_GHOST_KEYS_ENABLED).toBool()
 
     val keyBorderWidthFloat = keyBorderWidth / 10.0f
     val keyBorderColour = MaterialTheme.colorScheme.outline
-    val keySize = legendSize + (keyPadding * 2.0f) + (keyBorderWidthFloat * 2.0f)
-    val cornerRadius = (keyRadius / 100.0f) * (keySize / 2.0f)
+    val keyHeight = legendHeight.toFloat()
+    val keyWidth = legendWidth.toFloat()
+    val cornerRadius = (keyRadius / 100.0f) * ((keyWidth + keyHeight) / 4.0f)
 
     if (mode == KeyboardMode.EMOJI) {
         val controllerKeys = listOf(EMOJI_BACK_KEY_ITEM, NUMERIC_KEY_ITEM, BACKSPACE_KEY_ITEM, RETURN_KEY_ITEM)
-        val keyboardHeight = Dp((keySize * controllerKeys.size) - (keyPadding * 2))
+        val keyboardHeight = Dp((keyHeight * controllerKeys.size) - (keyPadding * 2))
 
         ctx.currentInputConnection.requestCursorUpdates(0)
 
@@ -195,10 +209,9 @@ fun KeyboardScreen(
                                 } else {
                                     (Modifier)
                                 },
-                            )
-                            .background(MaterialTheme.colorScheme.surface),
+                            ).background(MaterialTheme.colorScheme.surface),
                 ) {
-                    val haptic = LocalHapticFeedback.current
+                    val view = LocalView.current
                     val audioManager = ctx.getSystemService(Context.AUDIO_SERVICE) as AudioManager
                     AndroidView(
                         // Write the emoji to our text box when we tap one.
@@ -206,7 +219,7 @@ fun KeyboardScreen(
                             val emojiPicker = EmojiPickerView(context)
                             emojiPicker.setOnEmojiPickedListener {
                                 if (vibrateOnTap) {
-                                    haptic.performHapticFeedback(HapticFeedbackType.LongPress)
+                                    view.performHapticFeedback(HapticFeedbackConstants.KEYBOARD_TAP)
                                 }
                                 if (soundOnTap) {
                                     audioManager.playSoundEffect(AudioManager.FX_KEY_CLICK, .1f)
@@ -230,7 +243,10 @@ fun KeyboardScreen(
                             KeyboardKey(
                                 key = key,
                                 lastAction = lastAction,
-                                legendSize = legendSize,
+                                legendHeight = legendHeight,
+                                legendWidth = legendWidth,
+                                keyHeight = keyHeight,
+                                keyWidth = keyWidth,
                                 keyPadding = keyPadding,
                                 keyBorderWidth = keyBorderWidthFloat,
                                 keyRadius = cornerRadius,
@@ -294,6 +310,10 @@ fun KeyboardScreen(
                                 },
                                 onSwitchLanguage = onSwitchLanguage,
                                 onSwitchPosition = onSwitchPosition,
+                                dragReturnEnabled = dragReturnEnabled,
+                                circularDragEnabled = circularDragEnabled,
+                                clockwiseDragAction = clockwiseDragAction,
+                                counterclockwiseDragAction = counterclockwiseDragAction,
                             )
                         }
                     }
@@ -340,14 +360,28 @@ fun KeyboardScreen(
                             },
                         ),
             ) {
-                keyboard.arr.forEach { row ->
+                keyboard.arr.forEachIndexed { i, row ->
                     Row {
-                        row.forEach { key ->
+                        row.forEachIndexed { j, key ->
                             Column {
+                                val ghostKey =
+                                    if (ghostKeysEnabled) {
+                                        when (mode) {
+                                            KeyboardMode.MAIN -> keyboardDefinition.modes.numeric
+                                            KeyboardMode.SHIFTED -> keyboardDefinition.modes.numeric
+                                            else -> null
+                                        }?.arr?.getOrNull(i)?.getOrNull(j)
+                                    } else {
+                                        null
+                                    }
                                 KeyboardKey(
                                     key = key,
+                                    ghostKey = ghostKey,
                                     lastAction = lastAction,
-                                    legendSize = legendSize,
+                                    legendHeight = legendHeight,
+                                    legendWidth = legendWidth,
+                                    keyHeight = keyHeight,
+                                    keyWidth = keyWidth,
                                     keyPadding = keyPadding,
                                     keyBorderWidth = keyBorderWidthFloat,
                                     keyRadius = cornerRadius,
@@ -411,6 +445,24 @@ fun KeyboardScreen(
                                     },
                                     onSwitchLanguage = onSwitchLanguage,
                                     onSwitchPosition = onSwitchPosition,
+                                    oppositeCaseKey =
+                                        when (mode) {
+                                            KeyboardMode.MAIN -> keyboardDefinition.modes.shifted
+                                            KeyboardMode.SHIFTED -> keyboardDefinition.modes.main
+                                            else -> null
+                                        }?.arr?.getOrNull(i)?.getOrNull(j),
+                                    numericKey =
+                                        when (mode) {
+                                            KeyboardMode.MAIN, KeyboardMode.SHIFTED ->
+                                                keyboardDefinition.modes.numeric.arr
+                                                    .getOrNull(i)
+                                                    ?.getOrNull(j)
+                                            else -> null
+                                        },
+                                    dragReturnEnabled = dragReturnEnabled,
+                                    circularDragEnabled = circularDragEnabled,
+                                    clockwiseDragAction = clockwiseDragAction,
+                                    counterclockwiseDragAction = counterclockwiseDragAction,
                                 )
                             }
                         }

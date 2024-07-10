@@ -13,6 +13,8 @@ body = """
 # Thumb-Key {{ version }} ({{ timestamp | date(format="%Y-%m-%d") }})
 
 ## What's Changed
+
+{%- if version %} in {{ version }}{%- endif -%}
 {% for commit in commits %}
   {% if commit.github.pr_title -%}
     {%- set commit_message = commit.github.pr_title -%}
@@ -21,24 +23,35 @@ body = """
   {%- endif -%}
   * {{ commit_message | split(pat="\n") | first | trim }}\
     {% if commit.github.username %} by @{{ commit.github.username }}{%- endif -%}
-    {% if commit.github.pr_number %} in #{{ commit.github.pr_number }}{%- endif %}
+    {% if commit.github.pr_number %} in \
+      [#{{ commit.github.pr_number }}]({{ self::remote_url() }}/pull/{{ commit.github.pr_number }}) \
+    {%- endif %}
 {%- endfor -%}
 
+{%- if github -%}
 {% if github.contributors | filter(attribute="is_first_time", value=true) | length != 0 %}
   {% raw %}\n{% endraw -%}
   ## New Contributors
 {%- endif %}\
 {% for contributor in github.contributors | filter(attribute="is_first_time", value=true) %}
-  * @{{ contributor.username }} made their first contribution in #{{ contributor.pr_number }}
+  * @{{ contributor.username }} made their first contribution
+    {%- if contributor.pr_number %} in \
+      [#{{ contributor.pr_number }}]({{ self::remote_url() }}/pull/{{ contributor.pr_number }}) \
+    {%- endif %}
 {%- endfor -%}
+{%- endif -%}
 
 {% if version %}
     {% if previous.version %}
-      **Full Changelog**: https://github.com/{{ remote.github.owner }}/{{ remote.github.repo }}/compare/{{ previous.version }}...{{ version }}
+      **Full Changelog**: {{ self::remote_url() }}/compare/{{ previous.version }}...{{ version }}
     {% endif %}
 {% else -%}
   {% raw %}\n{% endraw %}
 {% endif %}
+
+{%- macro remote_url() -%}
+  https://github.com/{{ remote.github.owner }}/{{ remote.github.repo }}
+{%- endmacro -%}
 """
 # remove the leading and trailing whitespace from the template
 trim = true
@@ -61,12 +74,15 @@ commit_preprocessors = [
   # remove issue numbers from commits
   { pattern = '\((\w+\s)?#([0-9]+)\)', replace = "" },
 ]
+commit_parsers = [
+  { field = "author.name", pattern = "renovate", skip = true },
+]
 # protect breaking changes from being skipped due to matching a skipping commit_parser
 protect_breaking_commits = false
 # filter out the commits that are not matched by commit parsers
 filter_commits = false
 # regex for matching git tags
-tag_pattern = "v[0-9].*"
+tag_pattern = "[0-9].*"
 # regex for skipping tags
 skip_tags = "beta|alpha"
 # regex for ignoring tags

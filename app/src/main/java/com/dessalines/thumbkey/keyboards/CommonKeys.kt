@@ -204,28 +204,6 @@ val SPACEBAR_KEY_ITEM =
         slideType = SlideType.MOVE_CURSOR,
         swipes =
             mapOf(
-                SwipeDirection.TOP to
-                    KeyC(
-                        action =
-                            KeyAction.SendEvent(
-                                KeyEvent(
-                                    KeyEvent.ACTION_DOWN,
-                                    KeyEvent.KEYCODE_DPAD_UP,
-                                ),
-                            ),
-                        display = null,
-                    ),
-                SwipeDirection.BOTTOM to
-                    KeyC(
-                        action =
-                            KeyAction.SendEvent(
-                                KeyEvent(
-                                    KeyEvent.ACTION_DOWN,
-                                    KeyEvent.KEYCODE_DPAD_DOWN,
-                                ),
-                            ),
-                        display = null,
-                    ),
                 SwipeDirection.LEFT to
                     KeyC(
                         action =
@@ -596,3 +574,46 @@ val BACKSPACE_TYPESPLIT_SHIFTED_KEY_ITEM =
                     ),
             ),
     )
+
+val SPACEBAR_FRENCH_KEY_ITEM =
+    SPACEBAR_KEY_ITEM.copy(
+        nextTapActions =
+            listOf(
+                KeyAction.ReplaceLastText(", ", trimCount = 1),
+                KeyAction.ReplaceLastText(". "),
+                KeyAction.ReplaceLastText(" ? "),
+                KeyAction.ReplaceLastText(" ! ", trimCount = 3),
+                KeyAction.ReplaceLastText(" : ", trimCount = 3),
+                KeyAction.ReplaceLastText(" ; ", trimCount = 3),
+            ),
+    )
+
+val SPACEBAR_FRENCH_SKINNY_KEY_ITEM = SPACEBAR_FRENCH_KEY_ITEM.copy(widthMultiplier = 1)
+
+val SPACEBAR_FRENCH_TYPESPLIT_MIDDLE_KEY_ITEM =
+    SPACEBAR_TYPESPLIT_MIDDLE_KEY_ITEM.copy(
+        nextTapActions =
+            listOf(
+                KeyAction.ReplaceLastText(", ", trimCount = 1),
+                KeyAction.ReplaceLastText(". "),
+                KeyAction.ReplaceLastText(" ? "),
+                KeyAction.ReplaceLastText(" ! ", trimCount = 3),
+                KeyAction.ReplaceLastText(" : ", trimCount = 3),
+                KeyAction.ReplaceLastText(" ; ", trimCount = 3),
+            ),
+    )
+
+val SPACEBAR_FRENCH_TYPESPLIT_BOTTOM_KEY_ITEM =
+    SPACEBAR_TYPESPLIT_BOTTOM_KEY_ITEM.copy(
+        nextTapActions =
+            listOf(
+                KeyAction.ReplaceLastText(", ", trimCount = 1),
+                KeyAction.ReplaceLastText(". "),
+                KeyAction.ReplaceLastText(" ? "),
+                KeyAction.ReplaceLastText(" ! ", trimCount = 3),
+                KeyAction.ReplaceLastText(" : ", trimCount = 3),
+                KeyAction.ReplaceLastText(" ; ", trimCount = 3),
+            ),
+    )
+
+val SPACEBAR_ZERO_KEY_ITEM = SPACEBAR_KEY_ITEM.copy(longPress = KeyAction.CommitText("0"))

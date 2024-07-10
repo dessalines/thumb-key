@@ -278,6 +278,11 @@ val KB_IT_TYPESPLIT_MAIN =
                                     action = KeyAction.CommitText("ch"),
                                     color = ColorVariant.MUTED,
                                 ),
+                            SwipeDirection.TOP to
+                                KeyC(
+                                    display = KeyDisplay.TextDisplay("k"),
+                                    action = KeyAction.CommitText("k"),
+                                ),
                         ),
                 ),
                 SPACEBAR_TYPESPLIT_BOTTOM_KEY_ITEM,
@@ -610,6 +615,11 @@ val KB_IT_TYPESPLIT_SHIFTED =
                                     display = KeyDisplay.TextDisplay("Ch"),
                                     action = KeyAction.CommitText("Ch"),
                                     color = ColorVariant.MUTED,
+                                ),
+                            SwipeDirection.TOP to
+                                KeyC(
+                                    display = KeyDisplay.TextDisplay("K"),
+                                    action = KeyAction.CommitText("K"),
                                 ),
                         ),
                 ),

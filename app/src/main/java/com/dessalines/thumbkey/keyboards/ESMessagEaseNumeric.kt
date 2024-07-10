@@ -10,6 +10,16 @@ import com.dessalines.thumbkey.utils.KeyboardC
 import com.dessalines.thumbkey.utils.SwipeDirection
 import com.dessalines.thumbkey.utils.getLocalCurrency
 
+// this val is so we can can use mapOf in the key with currency symbol
+val KB_ES_MESSAGEASE_CURRENCY_SYMBOL: String =
+    getLocalCurrency()?.let {
+        if (it !in setOf("$", "£", "€")) {
+            it
+        } else {
+            "$"
+        }
+    }!!
+
 val KB_ES_MESSAGEASE_NUMERIC =
     KeyboardC(
         listOf(
@@ -23,33 +33,14 @@ val KB_ES_MESSAGEASE_NUMERIC =
                             color = ColorVariant.PRIMARY,
                         ),
                     swipes =
-                        buildMap {
-                            put(
-                                SwipeDirection.BOTTOM_LEFT,
+                        mapOf(
+                            SwipeDirection.RIGHT to KeyC(display = KeyDisplay.TextDisplay("-"), action = KeyAction.CommitText("-")),
+                            SwipeDirection.BOTTOM_LEFT to
                                 KeyC(
-                                    display = KeyDisplay.TextDisplay("$"),
-                                    action = KeyAction.CommitText("$"),
+                                    display = KeyDisplay.TextDisplay(KB_ES_MESSAGEASE_CURRENCY_SYMBOL),
+                                    action = KeyAction.CommitText(KB_ES_MESSAGEASE_CURRENCY_SYMBOL),
                                 ),
-                            )
-                            put(
-                                SwipeDirection.RIGHT,
-                                KeyC(
-                                    display = KeyDisplay.TextDisplay("-"),
-                                    action = KeyAction.CommitText("-"),
-                                ),
-                            )
-                            getLocalCurrency()?.let {
-                                if (it !in setOf("$", "£", "€")) {
-                                    put(
-                                        SwipeDirection.BOTTOM_RIGHT,
-                                        KeyC(
-                                            display = KeyDisplay.TextDisplay(it),
-                                            action = KeyAction.CommitText(it),
-                                        ),
-                                    )
-                                }
-                            }
-                        },
+                        ),
                 ),
                 KeyItemC(
                     center =
@@ -61,26 +52,10 @@ val KB_ES_MESSAGEASE_NUMERIC =
                         ),
                     swipes =
                         mapOf(
-                            SwipeDirection.TOP_LEFT to
-                                KeyC(
-                                    display = KeyDisplay.TextDisplay("`"),
-                                    action = KeyAction.CommitText("`"),
-                                ),
-                            SwipeDirection.TOP to
-                                KeyC(
-                                    display = KeyDisplay.TextDisplay("^"),
-                                    action = KeyAction.CommitText("^"),
-                                ),
-                            SwipeDirection.TOP_RIGHT to
-                                KeyC(
-                                    display = KeyDisplay.TextDisplay("´"),
-                                    action = KeyAction.CommitText("´"),
-                                ),
-                            SwipeDirection.RIGHT to
-                                KeyC(
-                                    display = KeyDisplay.TextDisplay("¡"),
-                                    action = KeyAction.CommitText("¡"),
-                                ),
+                            SwipeDirection.TOP_LEFT to KeyC(display = KeyDisplay.TextDisplay("`"), action = KeyAction.CommitText("`")),
+                            SwipeDirection.TOP to KeyC(display = KeyDisplay.TextDisplay("^"), action = KeyAction.CommitText("^")),
+                            SwipeDirection.TOP_RIGHT to KeyC(display = KeyDisplay.TextDisplay("´"), action = KeyAction.CommitText("´")),
+                            SwipeDirection.RIGHT to KeyC(display = KeyDisplay.TextDisplay("!"), action = KeyAction.CommitText("!")),
                             SwipeDirection.BOTTOM_RIGHT to
                                 KeyC(
                                     display = KeyDisplay.TextDisplay("\\"),
@@ -91,11 +66,7 @@ val KB_ES_MESSAGEASE_NUMERIC =
                                     display = KeyDisplay.TextDisplay("/"),
                                     action = KeyAction.CommitText("/"),
                                 ),
-                            SwipeDirection.LEFT to
-                                KeyC(
-                                    display = KeyDisplay.TextDisplay("+"),
-                                    action = KeyAction.CommitText("+"),
-                                ),
+                            SwipeDirection.LEFT to KeyC(display = KeyDisplay.TextDisplay("+"), action = KeyAction.CommitText("+")),
                         ),
                 ),
                 KeyItemC(
@@ -108,26 +79,12 @@ val KB_ES_MESSAGEASE_NUMERIC =
                         ),
                     swipes =
                         mapOf(
-                            SwipeDirection.LEFT to
-                                KeyC(
-                                    display = KeyDisplay.TextDisplay("¿"),
-                                    action = KeyAction.CommitText("¿"),
-                                ),
-                            SwipeDirection.BOTTOM_RIGHT to
-                                KeyC(
-                                    display = KeyDisplay.TextDisplay("€"),
-                                    action = KeyAction.CommitText("€"),
-                                ),
-                            SwipeDirection.BOTTOM_LEFT to
-                                KeyC(
-                                    display = KeyDisplay.TextDisplay("£"),
-                                    action = KeyAction.CommitText("£"),
-                                ),
-                            SwipeDirection.BOTTOM to
-                                KeyC(
-                                    display = KeyDisplay.TextDisplay("="),
-                                    action = KeyAction.CommitText("="),
-                                ),
+                            SwipeDirection.TOP_RIGHT to KeyC(display = KeyDisplay.TextDisplay("¡"), action = KeyAction.CommitText("¡")),
+                            SwipeDirection.LEFT to KeyC(display = KeyDisplay.TextDisplay("?"), action = KeyAction.CommitText("?")),
+                            SwipeDirection.RIGHT to KeyC(display = KeyDisplay.TextDisplay("¿"), action = KeyAction.CommitText("¿")),
+                            SwipeDirection.BOTTOM_RIGHT to KeyC(display = KeyDisplay.TextDisplay("€"), action = KeyAction.CommitText("€")),
+                            SwipeDirection.BOTTOM_LEFT to KeyC(display = KeyDisplay.TextDisplay("£"), action = KeyAction.CommitText("£")),
+                            SwipeDirection.BOTTOM to KeyC(display = KeyDisplay.TextDisplay("="), action = KeyAction.CommitText("=")),
                         ),
                 ),
                 EMOJI_KEY_ITEM,
@@ -143,31 +100,11 @@ val KB_ES_MESSAGEASE_NUMERIC =
                         ),
                     swipes =
                         mapOf(
-                            SwipeDirection.TOP_LEFT to
-                                KeyC(
-                                    display = KeyDisplay.TextDisplay("{"),
-                                    action = KeyAction.CommitText("{"),
-                                ),
-                            SwipeDirection.TOP_RIGHT to
-                                KeyC(
-                                    display = KeyDisplay.TextDisplay("%"),
-                                    action = KeyAction.CommitText("%"),
-                                ),
-                            SwipeDirection.BOTTOM_RIGHT to
-                                KeyC(
-                                    display = KeyDisplay.TextDisplay("_"),
-                                    action = KeyAction.CommitText("_"),
-                                ),
-                            SwipeDirection.BOTTOM_LEFT to
-                                KeyC(
-                                    display = KeyDisplay.TextDisplay("["),
-                                    action = KeyAction.CommitText("["),
-                                ),
-                            SwipeDirection.LEFT to
-                                KeyC(
-                                    display = KeyDisplay.TextDisplay("("),
-                                    action = KeyAction.CommitText("("),
-                                ),
+                            SwipeDirection.TOP_LEFT to KeyC(display = KeyDisplay.TextDisplay("{"), action = KeyAction.CommitText("{")),
+                            SwipeDirection.TOP_RIGHT to KeyC(display = KeyDisplay.TextDisplay("%"), action = KeyAction.CommitText("%")),
+                            SwipeDirection.BOTTOM_RIGHT to KeyC(display = KeyDisplay.TextDisplay("_"), action = KeyAction.CommitText("_")),
+                            SwipeDirection.BOTTOM_LEFT to KeyC(display = KeyDisplay.TextDisplay("["), action = KeyAction.CommitText("[")),
+                            SwipeDirection.LEFT to KeyC(display = KeyDisplay.TextDisplay("("), action = KeyAction.CommitText("(")),
                         ),
                 ),
                 KeyItemC(
@@ -179,13 +116,7 @@ val KB_ES_MESSAGEASE_NUMERIC =
                             color = ColorVariant.PRIMARY,
                         ),
                     swipes =
-                        mapOf(
-                            SwipeDirection.TOP to
-                                KeyC(
-                                    display = KeyDisplay.TextDisplay("¬"),
-                                    action = KeyAction.CommitText("¬"),
-                                ),
-                        ),
+                        mapOf(SwipeDirection.TOP to KeyC(display = KeyDisplay.TextDisplay("¬"), action = KeyAction.CommitText("¬"))),
                 ),
                 KeyItemC(
                     center =
@@ -197,31 +128,11 @@ val KB_ES_MESSAGEASE_NUMERIC =
                         ),
                     swipes =
                         mapOf(
-                            SwipeDirection.TOP_LEFT to
-                                KeyC(
-                                    display = KeyDisplay.TextDisplay("|"),
-                                    action = KeyAction.CommitText("|"),
-                                ),
-                            SwipeDirection.TOP_RIGHT to
-                                KeyC(
-                                    display = KeyDisplay.TextDisplay("}"),
-                                    action = KeyAction.CommitText("}"),
-                                ),
-                            SwipeDirection.RIGHT to
-                                KeyC(
-                                    display = KeyDisplay.TextDisplay(")"),
-                                    action = KeyAction.CommitText(")"),
-                                ),
-                            SwipeDirection.BOTTOM_RIGHT to
-                                KeyC(
-                                    display = KeyDisplay.TextDisplay("]"),
-                                    action = KeyAction.CommitText("]"),
-                                ),
-                            SwipeDirection.BOTTOM_LEFT to
-                                KeyC(
-                                    display = KeyDisplay.TextDisplay("@"),
-                                    action = KeyAction.CommitText("@"),
-                                ),
+                            SwipeDirection.TOP_LEFT to KeyC(display = KeyDisplay.TextDisplay("|"), action = KeyAction.CommitText("|")),
+                            SwipeDirection.TOP_RIGHT to KeyC(display = KeyDisplay.TextDisplay("}"), action = KeyAction.CommitText("}")),
+                            SwipeDirection.RIGHT to KeyC(display = KeyDisplay.TextDisplay(")"), action = KeyAction.CommitText(")")),
+                            SwipeDirection.BOTTOM_RIGHT to KeyC(display = KeyDisplay.TextDisplay("]"), action = KeyAction.CommitText("]")),
+                            SwipeDirection.BOTTOM_LEFT to KeyC(display = KeyDisplay.TextDisplay("@"), action = KeyAction.CommitText("@")),
                         ),
                 ),
                 ABC_KEY_ITEM,
@@ -237,26 +148,10 @@ val KB_ES_MESSAGEASE_NUMERIC =
                         ),
                     swipes =
                         mapOf(
-                            SwipeDirection.TOP_LEFT to
-                                KeyC(
-                                    display = KeyDisplay.TextDisplay("~"),
-                                    action = KeyAction.CommitText("~"),
-                                ),
-                            SwipeDirection.TOP to
-                                KeyC(
-                                    display = KeyDisplay.TextDisplay("¨"),
-                                    action = KeyAction.CommitText("¨"),
-                                ),
-                            SwipeDirection.LEFT to
-                                KeyC(
-                                    display = KeyDisplay.TextDisplay("<"),
-                                    action = KeyAction.CommitText("<"),
-                                ),
-                            SwipeDirection.RIGHT to
-                                KeyC(
-                                    display = KeyDisplay.TextDisplay("*"),
-                                    action = KeyAction.CommitText("*"),
-                                ),
+                            SwipeDirection.TOP_LEFT to KeyC(display = KeyDisplay.TextDisplay("~"), action = KeyAction.CommitText("~")),
+                            SwipeDirection.TOP to KeyC(display = KeyDisplay.TextDisplay("¨"), action = KeyAction.CommitText("¨")),
+                            SwipeDirection.LEFT to KeyC(display = KeyDisplay.TextDisplay("<"), action = KeyAction.CommitText("<")),
+                            SwipeDirection.RIGHT to KeyC(display = KeyDisplay.TextDisplay("*"), action = KeyAction.CommitText("*")),
                         ),
                 ),
                 KeyItemC(
@@ -269,31 +164,11 @@ val KB_ES_MESSAGEASE_NUMERIC =
                         ),
                     swipes =
                         mapOf(
-                            SwipeDirection.TOP_LEFT to
-                                KeyC(
-                                    display = KeyDisplay.TextDisplay("\""),
-                                    action = KeyAction.CommitText("\""),
-                                ),
-                            SwipeDirection.TOP_RIGHT to
-                                KeyC(
-                                    display = KeyDisplay.TextDisplay("'"),
-                                    action = KeyAction.CommitText("'"),
-                                ),
-                            SwipeDirection.BOTTOM_RIGHT to
-                                KeyC(
-                                    display = KeyDisplay.TextDisplay(":"),
-                                    action = KeyAction.CommitText(":"),
-                                ),
-                            SwipeDirection.BOTTOM to
-                                KeyC(
-                                    display = KeyDisplay.TextDisplay("."),
-                                    action = KeyAction.CommitText("."),
-                                ),
-                            SwipeDirection.BOTTOM_LEFT to
-                                KeyC(
-                                    display = KeyDisplay.TextDisplay(","),
-                                    action = KeyAction.CommitText(","),
-                                ),
+                            SwipeDirection.TOP_LEFT to KeyC(display = KeyDisplay.TextDisplay("\""), action = KeyAction.CommitText("\"")),
+                            SwipeDirection.TOP_RIGHT to KeyC(display = KeyDisplay.TextDisplay("'"), action = KeyAction.CommitText("'")),
+                            SwipeDirection.BOTTOM_RIGHT to KeyC(display = KeyDisplay.TextDisplay(":"), action = KeyAction.CommitText(":")),
+                            SwipeDirection.BOTTOM to KeyC(display = KeyDisplay.TextDisplay("."), action = KeyAction.CommitText(".")),
+                            SwipeDirection.BOTTOM_LEFT to KeyC(display = KeyDisplay.TextDisplay(","), action = KeyAction.CommitText(",")),
                         ),
                 ),
                 KeyItemC(
@@ -306,31 +181,11 @@ val KB_ES_MESSAGEASE_NUMERIC =
                         ),
                     swipes =
                         mapOf(
-                            SwipeDirection.TOP to
-                                KeyC(
-                                    display = KeyDisplay.TextDisplay("&"),
-                                    action = KeyAction.CommitText("&"),
-                                ),
-                            SwipeDirection.TOP_RIGHT to
-                                KeyC(
-                                    display = KeyDisplay.TextDisplay("°"),
-                                    action = KeyAction.CommitText("°"),
-                                ),
-                            SwipeDirection.RIGHT to
-                                KeyC(
-                                    display = KeyDisplay.TextDisplay(">"),
-                                    action = KeyAction.CommitText(">"),
-                                ),
-                            SwipeDirection.BOTTOM_LEFT to
-                                KeyC(
-                                    display = KeyDisplay.TextDisplay(";"),
-                                    action = KeyAction.CommitText(";"),
-                                ),
-                            SwipeDirection.LEFT to
-                                KeyC(
-                                    display = KeyDisplay.TextDisplay("#"),
-                                    action = KeyAction.CommitText("#"),
-                                ),
+                            SwipeDirection.TOP to KeyC(display = KeyDisplay.TextDisplay("&"), action = KeyAction.CommitText("&")),
+                            SwipeDirection.TOP_RIGHT to KeyC(display = KeyDisplay.TextDisplay("°"), action = KeyAction.CommitText("°")),
+                            SwipeDirection.RIGHT to KeyC(display = KeyDisplay.TextDisplay(">"), action = KeyAction.CommitText(">")),
+                            SwipeDirection.BOTTOM_LEFT to KeyC(display = KeyDisplay.TextDisplay(";"), action = KeyAction.CommitText(";")),
+                            SwipeDirection.LEFT to KeyC(display = KeyDisplay.TextDisplay("#"), action = KeyAction.CommitText("#")),
                         ),
                 ),
                 BACKSPACE_KEY_ITEM,

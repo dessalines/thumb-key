@@ -7,6 +7,7 @@
     <string name="dynamic">Динамічний</string>
     <string name="green">Зелений</string>
     <string name="pink">Рожевий</string>
+    <string name="matrix">Матриця-AMOLED</string>
     <string name="srcery">Srcery</string>
     <string name="blue">Блакитний</string>
     <string name="dracula">Дракула</string>
@@ -42,6 +43,9 @@
     <string name="play_sound_on_tap">Відтворення звуку при дотику</string>
     <string name="auto_capitalize">Автоматично використовувати великі літери</string>
     <string name="key_size">Розмір клавіші: %1$s</string>
+    <string name="key_non_square">Використовувати неквадратні клавіші</string>
+    <string name="key_height">Висота клавіші: %1$s</string>
+    <string name="key_width">Ширина клавіші %1$s</string>
     <string name="bottom_offset">Нижнє зміщення: %1$s</string>
     <string name="min_swipe_length">Мінімальна довжина проведення: %1$s</string>
     <string name="animation_speed">Швидкість анімації: %1$s</string>
@@ -69,8 +73,6 @@
     <string name="copy">Виділений текст скопійовано</string>
     <string name="hide_letters">Приховати літери</string>
     <string name="hide_symbols">Приховати символи</string>
-    <string name="save">Зберегти</string>
-    <string name="key_borders">Границі клавіші</string>
     <string name="spacebar_multitaps">Мультинатиснення пробілу</string>
     <string name="done">Готово</string>
     <string name="backdrop">Фон клавіатури</string>

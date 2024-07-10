@@ -27,7 +27,7 @@
     <string name="follow_me_mastodon">Folge mir auf Mastodon</string>
     <string name="open_source">Open source</string>
     <string name="source_code">Quellcode</string>
-    <string name="source_code_subtitle">Thumb-Key ist eine libre open-source software, lizensiert unter der GNU Affero General Public License v3.0</string>
+    <string name="source_code_subtitle">Thumb-Key ist eine libre open-source software, lizenziert unter der GNU Affero General Public License v3.0</string>
     <string name="look_and_feel">Aussehen</string>
     <string name="layouts">Layouts</string>
     <string name="theme">Design</string>
@@ -48,10 +48,8 @@
     <string name="setup_thumbkey">Richte Thumb-Key ein</string>
     <string name="enable_thumbkey">Aktiviere Thumb-Key</string>
     <string name="select_thumbkey">Wähle Thumb-Key aus</string>
-    <string name="finish_setup">Einrichtung abschliessen</string>
+    <string name="finish_setup">Einrichtung abschließen</string>
     <string name="hide_letters">Buchstaben verstecken</string>
     <string name="hide_symbols">Symbole verstecken</string>
-    <string name="save">speichern</string>
-    <string name="key_borders">Tastengrenzen</string>
     <string name="spacebar_multitaps">Leertasten Multi-taps</string>
 </resources>

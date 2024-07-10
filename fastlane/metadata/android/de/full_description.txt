@@ -6,5 +6,5 @@ Anders als profit-orientiert, privatsphären-verletzende autokorrektur zu sehen 
 
 Sobald die Tastenpositionen drauf hast wirst du fast so schnell sein wie mit einer herkömmlichen touch-tastatur. Deine Augen müssen nie wieder vom Text wegsehen.
 
-Diese Projekt ist eine fortsetzung vom mittlerweile eingestellten (und nicht Quelloffenen-Projekt) <a href="https://www.exideas.com/ME/">MessageEase Keyboard</a>, welche die Hauptinspiration ist.
-This project is a follow-up to the now unmaintained (and closed-source) <a href="https://www.exideas.com/ME/">MessageEase Keyboard</a>, which is its main inspiration.
+Diese Projekt ist eine fortsetzung vom mittlerweile eingestellten (und nicht Quelloffenen-Projekt) <a href="https://www.exideas.com/ME/">MessagEase Keyboard</a>, welche die Hauptinspiration ist.
+This project is a follow-up to the now unmaintained (and closed-source) <a href="https://www.exideas.com/ME/">MessagEase Keyboard</a>, which is its main inspiration.

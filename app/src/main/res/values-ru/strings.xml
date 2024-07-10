@@ -12,7 +12,7 @@
     <string name="blue">Голубая</string>
     <string name="dracula">Dracula</string>
     <string name="twilight">Сумерки</string>
-    <string name="high_contrast">Высокоий контраст</string>
+    <string name="high_contrast">Высокий контраст</string>
     <string name="high_contrast_colorful">Высокий контраст с яркими цветами</string>
     <string name="ancom">Анархо-коммунистические цвета</string>
     <string name="center">Центр</string>
@@ -31,7 +31,7 @@
     <string name="follow_me_mastodon">Подписаться на меня в Mastodon</string>
     <string name="open_source">Открытый исходный код</string>
     <string name="source_code">Исходный код</string>
-    <string name="source_code_subtitle">Thumb-Key — свободное программное обеспечение с открытым исходным кодом, лицензированное по GNU Affero General Public License v3.0</string>
+    <string name="source_code_subtitle">Thumb-Key —  свободное программное обеспечение с открытым исходным кодом, лицензированное по GNU Affero General Public License v3.0</string>
     <string name="look_and_feel">Внешний вид</string>
     <string name="behavior">Поведение</string>
     <string name="layouts">Раскладки</string>
@@ -49,15 +49,15 @@
     <string name="animation_helper_speed">Скорость вспомогательной анимации: %1$s</string>
     <string name="slide_enable">Жесты свайпа</string>
     <string name="slide_cursor_movement_mode">Режим перемещения курсора свайпом</string>
-    <string name="slide_sensitivity">Чувствительность савйпа: %1$s</string>
+    <string name="slide_sensitivity">Чувствительность свайпа: %1$s</string>
     <string name="slide_cursor_acceleration_constant">Без ускорения / Постоянная скорость</string>
     <string name="slide_cursor_acceleration_linear">Линейное ускорение</string>
     <string name="slide_cursor_acceleration_quadratic">Квадратичное ускорение</string>
     <string name="slide_cursor_acceleration_threshold_acceleration">Пороговое ускорение</string>
-    <string name="slide_spacebar_deadzone_enable">Пробел: Совмещать обычнае свайпы и свайпы жестов</string>
-    <string name="slide_backspace_deadzone_enable">Backspace: Совмещать обычнае свайпы и свайпы жестов</string>
+    <string name="slide_spacebar_deadzone_enable">Пробел: Совмещать обычные свайпы и свайпы жестов</string>
+    <string name="slide_backspace_deadzone_enable">Backspace: Совмещать обычные свайпы и свайпы жестов</string>
     <string name="reset_to_defaults">Сбросить настройки</string>
-    <string name="reset_to_defaults_msg">Вы хотите вернутся к настройкам по умолчанию?</string>
+    <string name="reset_to_defaults_msg">Вы хотите вернуться к настройкам по умолчанию?</string>
     <string name="reset_to_defaults_confirm">Сбросить</string>
     <string name="cancel">Отмена</string>
     <string name="test_out_thumbkey">Тест Thumb-Key</string>
@@ -70,8 +70,6 @@
     <string name="copy">Скопированный текст</string>
     <string name="hide_letters">Скрыть буквы</string>
     <string name="hide_symbols">Скрыть символы</string>
-    <string name="save">Сохранить</string>
-    <string name="key_borders">Границы клавиш</string>
     <string name="spacebar_multitaps">Мультитап пробела</string>
     <string name="done">Готово</string>
     <string name="backdrop">Фон клавиатуры</string>

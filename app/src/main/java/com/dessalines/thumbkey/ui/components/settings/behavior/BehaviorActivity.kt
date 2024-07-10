@@ -9,10 +9,15 @@ import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.automirrored.outlined.Backspace
+import androidx.compose.material.icons.automirrored.outlined.RotateLeft
+import androidx.compose.material.icons.automirrored.outlined.RotateRight
 import androidx.compose.material.icons.outlined.Abc
+import androidx.compose.material.icons.outlined.BorderInner
+import androidx.compose.material.icons.outlined.Circle
 import androidx.compose.material.icons.outlined.SpaceBar
 import androidx.compose.material.icons.outlined.SwapHoriz
 import androidx.compose.material.icons.outlined.Swipe
+import androidx.compose.material.icons.outlined.UTurnRight
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.Icon
 import androidx.compose.material3.MaterialTheme
@@ -23,21 +28,23 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.livedata.observeAsState
+import androidx.compose.runtime.mutableFloatStateOf
 import androidx.compose.runtime.remember
+import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.stringResource
+import androidx.compose.ui.text.AnnotatedString
 import androidx.navigation.NavController
-import com.alorma.compose.settings.storage.base.SettingValueState
-import com.alorma.compose.settings.storage.base.rememberBooleanSettingState
-import com.alorma.compose.settings.storage.base.rememberFloatSettingState
-import com.alorma.compose.settings.storage.base.rememberIntSettingState
-import com.alorma.compose.settings.ui.SettingsCheckbox
-import com.alorma.compose.settings.ui.SettingsList
-import com.alorma.compose.settings.ui.SettingsSlider
 import com.dessalines.thumbkey.R
 import com.dessalines.thumbkey.db.AppSettingsViewModel
 import com.dessalines.thumbkey.db.BehaviorUpdate
 import com.dessalines.thumbkey.db.DEFAULT_AUTO_CAPITALIZE
+import com.dessalines.thumbkey.db.DEFAULT_CIRCULAR_DRAG_ENABLED
+import com.dessalines.thumbkey.db.DEFAULT_CLOCKWISE_DRAG_ACTION
+import com.dessalines.thumbkey.db.DEFAULT_COUNTERCLOCKWISE_DRAG_ACTION
+import com.dessalines.thumbkey.db.DEFAULT_DRAG_RETURN_ENABLED
+import com.dessalines.thumbkey.db.DEFAULT_GHOST_KEYS_ENABLED
 import com.dessalines.thumbkey.db.DEFAULT_MIN_SWIPE_LENGTH
 import com.dessalines.thumbkey.db.DEFAULT_SLIDE_BACKSPACE_DEADZONE_ENABLED
 import com.dessalines.thumbkey.db.DEFAULT_SLIDE_CURSOR_MOVEMENT_MODE
@@ -47,11 +54,17 @@ import com.dessalines.thumbkey.db.DEFAULT_SLIDE_SPACEBAR_DEADZONE_ENABLED
 import com.dessalines.thumbkey.db.DEFAULT_SPACEBAR_MULTITAPS
 import com.dessalines.thumbkey.ui.components.common.TestOutTextField
 import com.dessalines.thumbkey.ui.components.settings.about.SettingsDivider
+import com.dessalines.thumbkey.utils.CircularDragAction
 import com.dessalines.thumbkey.utils.CursorAccelerationMode
 import com.dessalines.thumbkey.utils.SimpleTopAppBar
 import com.dessalines.thumbkey.utils.TAG
 import com.dessalines.thumbkey.utils.toBool
 import com.dessalines.thumbkey.utils.toInt
+import me.zhanghai.compose.preference.ListPreference
+import me.zhanghai.compose.preference.ListPreferenceType
+import me.zhanghai.compose.preference.ProvidePreferenceTheme
+import me.zhanghai.compose.preference.SliderPreference
+import me.zhanghai.compose.preference.SwitchPreference
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
@@ -63,42 +76,54 @@ fun BehaviorActivity(
 
     val settings by appSettingsViewModel.appSettings.observeAsState()
 
-    val minSwipeLengthState =
-        rememberFloatSettingState(
-            (settings?.minSwipeLength ?: DEFAULT_MIN_SWIPE_LENGTH).toFloat(),
-        )
-    val slideSensitivityState =
-        rememberFloatSettingState(
-            (settings?.slideSensitivity ?: DEFAULT_SLIDE_SENSITIVITY).toFloat(),
-        )
-    val slideCursorMovementModeState =
-        rememberIntSettingState(
-            (settings?.slideCursorMovementMode ?: DEFAULT_SLIDE_CURSOR_MOVEMENT_MODE),
-        )
-    val slideEnabledState =
-        rememberBooleanSettingState(
-            (settings?.slideEnabled ?: DEFAULT_SLIDE_ENABLED).toBool(),
-        )
-    val slideSpacebarDeadzoneEnabledState =
-        rememberBooleanSettingState(
-            (settings?.slideSpacebarDeadzoneEnabled ?: DEFAULT_SLIDE_SPACEBAR_DEADZONE_ENABLED).toBool(),
-        )
-    val slideBackspaceDeadzoneEnabledState =
-        rememberBooleanSettingState(
-            (settings?.slideBackspaceDeadzoneEnabled ?: DEFAULT_SLIDE_BACKSPACE_DEADZONE_ENABLED).toBool(),
-        )
-    val autoCapitalizeState =
-        rememberBooleanSettingState(
-            ((settings?.autoCapitalize ?: DEFAULT_AUTO_CAPITALIZE).toBool()),
-        )
-    val spacebarMultiTapsState =
-        rememberBooleanSettingState(
-            ((settings?.spacebarMultiTaps ?: DEFAULT_SPACEBAR_MULTITAPS).toBool()),
-        )
+    var minSwipeLengthState = (settings?.minSwipeLength ?: DEFAULT_MIN_SWIPE_LENGTH).toFloat()
+    var minSwipeLengthSliderState by remember { mutableFloatStateOf(minSwipeLengthState) }
+
+    var slideSensitivityState = (settings?.slideSensitivity ?: DEFAULT_SLIDE_SENSITIVITY).toFloat()
+    var slideSensitivitySliderState by remember { mutableFloatStateOf(slideSensitivityState) }
+
+    var slideCursorMovementModeState =
+        CursorAccelerationMode.entries[settings?.slideCursorMovementMode ?: DEFAULT_SLIDE_CURSOR_MOVEMENT_MODE]
+
+    var slideEnabledState = (settings?.slideEnabled ?: DEFAULT_SLIDE_ENABLED).toBool()
+    var slideSpacebarDeadzoneEnabledState = (settings?.slideSpacebarDeadzoneEnabled ?: DEFAULT_SLIDE_SPACEBAR_DEADZONE_ENABLED).toBool()
+    var slideBackspaceDeadzoneEnabledState = (settings?.slideBackspaceDeadzoneEnabled ?: DEFAULT_SLIDE_BACKSPACE_DEADZONE_ENABLED).toBool()
+    var autoCapitalizeState = (settings?.autoCapitalize ?: DEFAULT_AUTO_CAPITALIZE).toBool()
+    var spacebarMultiTapsState = (settings?.spacebarMultiTaps ?: DEFAULT_SPACEBAR_MULTITAPS).toBool()
+
+    var dragReturnEnabledState = (settings?.dragReturnEnabled ?: DEFAULT_DRAG_RETURN_ENABLED).toBool()
+    var circularDragEnabledState = (settings?.circularDragEnabled ?: DEFAULT_CIRCULAR_DRAG_ENABLED).toBool()
+    var clockwiseDragActionState = CircularDragAction.entries[settings?.clockwiseDragAction ?: DEFAULT_CLOCKWISE_DRAG_ACTION]
+    var counterclockwiseDragActionState =
+        CircularDragAction.entries[settings?.counterclockwiseDragAction ?: DEFAULT_COUNTERCLOCKWISE_DRAG_ACTION]
+    var ghostKeysEnabledState = (settings?.ghostKeysEnabled ?: DEFAULT_GHOST_KEYS_ENABLED).toBool()
 
     val snackbarHostState = remember { SnackbarHostState() }
 
     val scrollState = rememberScrollState()
+
+    val ctx = LocalContext.current
+
+    fun updateBehavior() {
+        appSettingsViewModel.updateBehavior(
+            BehaviorUpdate(
+                id = 1,
+                minSwipeLength = minSwipeLengthState.toInt(),
+                slideSensitivity = slideSensitivityState.toInt(),
+                slideEnabled = slideEnabledState.toInt(),
+                slideCursorMovementMode = slideCursorMovementModeState.ordinal,
+                slideSpacebarDeadzoneEnabled = slideSpacebarDeadzoneEnabledState.toInt(),
+                slideBackspaceDeadzoneEnabled = slideBackspaceDeadzoneEnabledState.toInt(),
+                autoCapitalize = autoCapitalizeState.toInt(),
+                spacebarMultiTaps = spacebarMultiTapsState.toInt(),
+                dragReturnEnabled = dragReturnEnabledState.toInt(),
+                circularDragEnabled = circularDragEnabledState.toInt(),
+                clockwiseDragAction = clockwiseDragActionState.ordinal,
+                counterclockwiseDragAction = counterclockwiseDragActionState.ordinal,
+                ghostKeysEnabled = ghostKeysEnabledState.toInt(),
+            ),
+        )
+    }
 
     Scaffold(
         snackbarHost = { SnackbarHost(snackbarHostState) },
@@ -117,256 +142,272 @@ fun BehaviorActivity(
                         .background(color = MaterialTheme.colorScheme.surface)
                         .imePadding(),
             ) {
-                SettingsCheckbox(
-                    state = autoCapitalizeState,
-                    icon = {
-                        Icon(
-                            imageVector = Icons.Outlined.Abc,
-                            contentDescription = null,
-                        )
-                    },
-                    title = {
-                        Text(stringResource(R.string.auto_capitalize))
-                    },
-                    onCheckedChange = {
-                        updateBehavior(
-                            appSettingsViewModel,
-                            minSwipeLengthState,
-                            slideSensitivityState,
-                            slideEnabledState,
-                            slideCursorMovementModeState,
-                            slideSpacebarDeadzoneEnabledState,
-                            slideBackspaceDeadzoneEnabledState,
-                            autoCapitalizeState,
-                            spacebarMultiTapsState,
-                        )
-                    },
-                )
-                SettingsCheckbox(
-                    state = spacebarMultiTapsState,
-                    icon = {
-                        Icon(
-                            imageVector = Icons.Outlined.SpaceBar,
-                            contentDescription = null,
-                        )
-                    },
-                    title = {
-                        Text(stringResource(R.string.spacebar_multitaps))
-                    },
-                    onCheckedChange = {
-                        updateBehavior(
-                            appSettingsViewModel,
-                            minSwipeLengthState,
-                            slideSensitivityState,
-                            slideEnabledState,
-                            slideCursorMovementModeState,
-                            slideSpacebarDeadzoneEnabledState,
-                            slideBackspaceDeadzoneEnabledState,
-                            autoCapitalizeState,
-                            spacebarMultiTapsState,
-                        )
-                    },
-                )
-                val minSwipeLengthStr =
-                    stringResource(
-                        R.string.min_swipe_length,
-                        minSwipeLengthState.value.toInt().toString(),
+                ProvidePreferenceTheme {
+                    SwitchPreference(
+                        value = autoCapitalizeState,
+                        onValueChange = {
+                            autoCapitalizeState = it
+                            updateBehavior()
+                        },
+                        title = {
+                            Text(stringResource(R.string.auto_capitalize))
+                        },
+                        icon = {
+                            Icon(
+                                imageVector = Icons.Outlined.Abc,
+                                contentDescription = null,
+                            )
+                        },
                     )
-                SettingsSlider(
-                    valueRange = 0f..200f,
-                    state = minSwipeLengthState,
-                    icon = {
-                        Icon(
-                            imageVector = Icons.Outlined.Swipe,
-                            contentDescription = null,
-                        )
-                    },
-                    title = {
-                        Text(minSwipeLengthStr)
-                    },
-                    onValueChangeFinished = {
-                        updateBehavior(
-                            appSettingsViewModel,
-                            minSwipeLengthState,
-                            slideSensitivityState,
-                            slideEnabledState,
-                            slideCursorMovementModeState,
-                            slideSpacebarDeadzoneEnabledState,
-                            slideBackspaceDeadzoneEnabledState,
-                            autoCapitalizeState,
-                            spacebarMultiTapsState,
-                        )
-                    },
-                )
-                val slideSensitivityStr =
-                    stringResource(
-                        R.string.slide_sensitivity,
-                        slideSensitivityState
-                            .value
-                            .toInt().toString(),
+                    SwitchPreference(
+                        value = spacebarMultiTapsState,
+                        onValueChange = {
+                            spacebarMultiTapsState = it
+                            updateBehavior()
+                        },
+                        title = {
+                            Text(stringResource(R.string.spacebar_multitaps))
+                        },
+                        icon = {
+                            Icon(
+                                imageVector = Icons.Outlined.SpaceBar,
+                                contentDescription = null,
+                            )
+                        },
                     )
-                SettingsDivider()
-                SettingsCheckbox(
-                    state = slideEnabledState,
-                    icon = {
-                        Icon(
-                            imageVector = Icons.Outlined.SpaceBar,
-                            contentDescription = stringResource(R.string.slide_enable),
-                        )
-                    },
-                    title = {
-                        Text(stringResource(R.string.slide_enable))
-                    },
-                    onCheckedChange = {
-                        updateBehavior(
-                            appSettingsViewModel,
-                            minSwipeLengthState,
-                            slideSensitivityState,
-                            slideEnabledState,
-                            slideCursorMovementModeState,
-                            slideSpacebarDeadzoneEnabledState,
-                            slideBackspaceDeadzoneEnabledState,
-                            autoCapitalizeState,
-                            spacebarMultiTapsState,
-                        )
-                    },
-                )
-                SettingsList(
-                    state = slideCursorMovementModeState,
-                    enabled = slideEnabledState.value,
-                    items = CursorAccelerationMode.entries.map { it.title() },
-                    icon = {
-                        Icon(
-                            imageVector = Icons.Outlined.SwapHoriz,
-                            contentDescription = null,
-                        )
-                    },
-                    title = {
-                        Text(stringResource(R.string.slide_cursor_movement_mode))
-                    },
-                    onItemSelected = { i, _ ->
-                        slideCursorMovementModeState.value = i
-                        updateBehavior(
-                            appSettingsViewModel,
-                            minSwipeLengthState,
-                            slideSensitivityState,
-                            slideEnabledState,
-                            slideCursorMovementModeState,
-                            slideSpacebarDeadzoneEnabledState,
-                            slideBackspaceDeadzoneEnabledState,
-                            autoCapitalizeState,
-                            spacebarMultiTapsState,
-                        )
-                    },
-                )
-                SettingsSlider(
-                    valueRange = 1f..50f,
-                    state = slideSensitivityState,
-                    enabled = slideEnabledState.value,
-                    icon = {
-                        Icon(
-                            imageVector = Icons.Outlined.SwapHoriz,
-                            contentDescription = slideSensitivityStr,
-                        )
-                    },
-                    title = {
-                        Text(slideSensitivityStr)
-                    },
-                    onValueChangeFinished = {
-                        updateBehavior(
-                            appSettingsViewModel,
-                            minSwipeLengthState,
-                            slideSensitivityState,
-                            slideEnabledState,
-                            slideCursorMovementModeState,
-                            slideSpacebarDeadzoneEnabledState,
-                            slideBackspaceDeadzoneEnabledState,
-                            autoCapitalizeState,
-                            spacebarMultiTapsState,
-                        )
-                    },
-                )
-                SettingsCheckbox(
-                    state = slideSpacebarDeadzoneEnabledState,
-                    enabled = slideEnabledState.value,
-                    icon = {
-                        Icon(
-                            imageVector = Icons.Outlined.SpaceBar,
-                            contentDescription = stringResource(R.string.slide_spacebar_deadzone_enable),
-                        )
-                    },
-                    title = {
-                        Text(stringResource(R.string.slide_spacebar_deadzone_enable))
-                    },
-                    onCheckedChange = {
-                        updateBehavior(
-                            appSettingsViewModel,
-                            minSwipeLengthState,
-                            slideSensitivityState,
-                            slideEnabledState,
-                            slideCursorMovementModeState,
-                            slideSpacebarDeadzoneEnabledState,
-                            slideBackspaceDeadzoneEnabledState,
-                            autoCapitalizeState,
-                            spacebarMultiTapsState,
-                        )
-                    },
-                )
-                SettingsCheckbox(
-                    state = slideBackspaceDeadzoneEnabledState,
-                    enabled = slideEnabledState.value,
-                    icon = {
-                        Icon(
-                            imageVector = Icons.AutoMirrored.Outlined.Backspace,
-                            contentDescription = stringResource(R.string.slide_backspace_deadzone_enable),
-                        )
-                    },
-                    title = {
-                        Text(stringResource(R.string.slide_backspace_deadzone_enable))
-                    },
-                    onCheckedChange = {
-                        updateBehavior(
-                            appSettingsViewModel,
-                            minSwipeLengthState,
-                            slideSensitivityState,
-                            slideEnabledState,
-                            slideCursorMovementModeState,
-                            slideSpacebarDeadzoneEnabledState,
-                            slideBackspaceDeadzoneEnabledState,
-                            autoCapitalizeState,
-                            spacebarMultiTapsState,
-                        )
-                    },
-                )
-                SettingsDivider()
-                TestOutTextField()
+                    SliderPreference(
+                        value = minSwipeLengthState,
+                        sliderValue = minSwipeLengthSliderState,
+                        onValueChange = {
+                            minSwipeLengthState = it
+                            updateBehavior()
+                        },
+                        onSliderValueChange = { minSwipeLengthSliderState = it },
+                        valueRange = 0f..200f,
+                        title = {
+                            val minSwipeLengthStr =
+                                stringResource(
+                                    R.string.min_swipe_length,
+                                    minSwipeLengthSliderState.toInt().toString(),
+                                )
+                            Text(minSwipeLengthStr)
+                        },
+                        icon = {
+                            Icon(
+                                imageVector = Icons.Outlined.Swipe,
+                                contentDescription = null,
+                            )
+                        },
+                    )
+                    SettingsDivider()
+                    SwitchPreference(
+                        value = slideEnabledState,
+                        onValueChange = {
+                            slideEnabledState = it
+                            updateBehavior()
+                        },
+                        title = {
+                            Text(stringResource(R.string.slide_enable))
+                        },
+                        icon = {
+                            Icon(
+                                imageVector = Icons.Outlined.SpaceBar,
+                                contentDescription = stringResource(R.string.slide_enable),
+                            )
+                        },
+                    )
+                    ListPreference(
+                        enabled = slideEnabledState,
+                        type = ListPreferenceType.DROPDOWN_MENU,
+                        value = slideCursorMovementModeState,
+                        onValueChange = {
+                            slideCursorMovementModeState = it
+                            updateBehavior()
+                        },
+                        values = CursorAccelerationMode.entries,
+                        valueToText = {
+                            AnnotatedString(ctx.getString(it.resId))
+                        },
+                        title = {
+                            Text(stringResource(R.string.slide_cursor_movement_mode))
+                        },
+                        summary = {
+                            Text(stringResource(slideCursorMovementModeState.resId))
+                        },
+                        icon = {
+                            Icon(
+                                imageVector = Icons.Outlined.SwapHoriz,
+                                contentDescription = null,
+                            )
+                        },
+                    )
+                    SliderPreference(
+                        valueRange = 1f..50f,
+                        value = slideSensitivityState,
+                        sliderValue = slideSensitivitySliderState,
+                        onSliderValueChange = { slideSensitivitySliderState = it },
+                        onValueChange = {
+                            slideSensitivityState = it
+                            updateBehavior()
+                        },
+                        enabled = slideEnabledState,
+                        title = {
+                            val slideSensitivityStr =
+                                stringResource(
+                                    R.string.slide_sensitivity,
+                                    slideSensitivitySliderState
+                                        .toInt()
+                                        .toString(),
+                                )
+                            Text(slideSensitivityStr)
+                        },
+                        icon = {
+                            Icon(
+                                imageVector = Icons.Outlined.SwapHoriz,
+                                contentDescription = null,
+                            )
+                        },
+                    )
+                    SwitchPreference(
+                        value = slideSpacebarDeadzoneEnabledState,
+                        onValueChange = {
+                            slideSpacebarDeadzoneEnabledState = it
+                            updateBehavior()
+                        },
+                        enabled = slideEnabledState,
+                        title = {
+                            Text(stringResource(R.string.slide_spacebar_deadzone_enable))
+                        },
+                        icon = {
+                            Icon(
+                                imageVector = Icons.Outlined.SpaceBar,
+                                contentDescription = stringResource(R.string.slide_spacebar_deadzone_enable),
+                            )
+                        },
+                    )
+                    SwitchPreference(
+                        value = slideBackspaceDeadzoneEnabledState,
+                        onValueChange = {
+                            slideBackspaceDeadzoneEnabledState = it
+                            updateBehavior()
+                        },
+                        enabled = slideEnabledState,
+                        title = {
+                            Text(stringResource(R.string.slide_backspace_deadzone_enable))
+                        },
+                        icon = {
+                            Icon(
+                                imageVector = Icons.AutoMirrored.Outlined.Backspace,
+                                contentDescription = stringResource(R.string.slide_backspace_deadzone_enable),
+                            )
+                        },
+                    )
+                    SettingsDivider()
+                    SwitchPreference(
+                        value = dragReturnEnabledState,
+                        onValueChange = {
+                            dragReturnEnabledState = it
+                            updateBehavior()
+                        },
+                        title = {
+                            Text(stringResource(R.string.drag_return_enable))
+                        },
+                        icon = {
+                            Icon(
+                                imageVector = Icons.Outlined.UTurnRight,
+                                contentDescription = stringResource(R.string.drag_return_enable),
+                            )
+                        },
+                    )
+                    SwitchPreference(
+                        value = circularDragEnabledState,
+                        onValueChange = {
+                            circularDragEnabledState = it
+                            updateBehavior()
+                        },
+                        title = {
+                            Text(stringResource(R.string.circular_drag_enable))
+                        },
+                        icon = {
+                            Icon(
+                                imageVector = Icons.Outlined.Circle,
+                                contentDescription = stringResource(R.string.circular_drag_enable),
+                            )
+                        },
+                    )
+                    ListPreference(
+                        enabled = circularDragEnabledState,
+                        type = ListPreferenceType.DROPDOWN_MENU,
+                        value = clockwiseDragActionState,
+                        onValueChange = {
+                            clockwiseDragActionState = it
+                            updateBehavior()
+                        },
+                        values = CircularDragAction.entries,
+                        valueToText = {
+                            AnnotatedString(ctx.getString(it.resId))
+                        },
+                        title = {
+                            Text(stringResource(R.string.clockwise_drag_action))
+                        },
+                        summary = {
+                            Text(stringResource(clockwiseDragActionState.resId))
+                        },
+                        icon = {
+                            Icon(
+                                imageVector = Icons.AutoMirrored.Outlined.RotateRight,
+                                contentDescription = stringResource(R.string.clockwise_drag_action),
+                            )
+                        },
+                    )
+                    ListPreference(
+                        enabled = circularDragEnabledState,
+                        type = ListPreferenceType.DROPDOWN_MENU,
+                        value = counterclockwiseDragActionState,
+                        onValueChange = {
+                            counterclockwiseDragActionState = it
+                            updateBehavior()
+                        },
+                        values = CircularDragAction.entries,
+                        valueToText = {
+                            AnnotatedString(ctx.getString(it.resId))
+                        },
+                        title = {
+                            Text(stringResource(R.string.counterclockwise_drag_action))
+                        },
+                        summary = {
+                            Text(stringResource(counterclockwiseDragActionState.resId))
+                        },
+                        icon = {
+                            Icon(
+                                imageVector = Icons.AutoMirrored.Outlined.RotateLeft,
+                                contentDescription = stringResource(R.string.counterclockwise_drag_action),
+                            )
+                        },
+                    )
+                    SwitchPreference(
+                        value = ghostKeysEnabledState,
+                        onValueChange = {
+                            ghostKeysEnabledState = it
+                            updateBehavior()
+                        },
+                        title = {
+                            Text(stringResource(R.string.ghost_keys_enable))
+                        },
+                        summary = {
+                            Text(stringResource(R.string.ghost_keys_description))
+                        },
+                        icon = {
+                            Icon(
+                                imageVector = Icons.Outlined.BorderInner,
+                                contentDescription = stringResource(R.string.ghost_keys_enable),
+                            )
+                        },
+                    )
+                    SettingsDivider()
+                    TestOutTextField()
+                }
             }
         },
-    )
-}
-
-private fun updateBehavior(
-    appSettingsViewModel: AppSettingsViewModel,
-    minSwipeLengthState: SettingValueState<Float>,
-    slideSensitivityState: SettingValueState<Float>,
-    slideEnabledState: SettingValueState<Boolean>,
-    slideCursorMovementModeState: SettingValueState<Int>,
-    slideSpacebarDeadzoneEnabledState: SettingValueState<Boolean>,
-    slideBackspaceDeadzoneEnabledState: SettingValueState<Boolean>,
-    autoCapitalizeState: SettingValueState<Boolean>,
-    spacebarMultiTapsState: SettingValueState<Boolean>,
-) {
-    appSettingsViewModel.updateBehavior(
-        BehaviorUpdate(
-            id = 1,
-            minSwipeLength = minSwipeLengthState.value.toInt(),
-            slideSensitivity = slideSensitivityState.value.toInt(),
-            slideEnabled = slideEnabledState.value.toInt(),
-            slideCursorMovementMode = slideCursorMovementModeState.value,
-            slideSpacebarDeadzoneEnabled = slideSpacebarDeadzoneEnabledState.value.toInt(),
-            slideBackspaceDeadzoneEnabled = slideBackspaceDeadzoneEnabledState.value.toInt(),
-            autoCapitalize = autoCapitalizeState.value.toInt(),
-            spacebarMultiTaps = spacebarMultiTapsState.value.toInt(),
-        ),
     )
 }

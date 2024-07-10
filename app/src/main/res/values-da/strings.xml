@@ -69,8 +69,6 @@
     <string name="copy">Kopierede valgte tekst</string>
     <string name="hide_letters">Skjul bogstaer</string>
     <string name="hide_symbols">Skjul symboler</string>
-    <string name="save">Gem</string>
-    <string name="key_borders">Kanter</string>
     <string name="spacebar_multitaps">Multi-tryk på mellemrumstasten</string>
     <string name="done">Færdig</string>
     <string name="backdrop">Tastaturbaggrund</string>

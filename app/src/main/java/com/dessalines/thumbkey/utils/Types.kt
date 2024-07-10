@@ -1,9 +1,8 @@
 package com.dessalines.thumbkey.utils
 
 import android.view.KeyEvent
-import androidx.compose.runtime.Composable
+import androidx.annotation.StringRes
 import androidx.compose.ui.graphics.vector.ImageVector
-import androidx.compose.ui.res.stringResource
 import com.dessalines.thumbkey.R
 
 data class KeyboardDefinitionModes(
@@ -24,9 +23,7 @@ data class KeyboardDefinitionSettings(
         return autoCapitalizers.contentEquals(other.autoCapitalizers)
     }
 
-    override fun hashCode(): Int {
-        return autoCapitalizers.contentHashCode()
-    }
+    override fun hashCode(): Int = autoCapitalizers.contentHashCode()
 }
 
 data class KeyboardDefinition(
@@ -52,33 +49,56 @@ data class KeyItemC(
 )
 
 data class KeyC(
-    val display: KeyDisplay?,
-    val capsModeDisplay: KeyDisplay? = null,
     val action: KeyAction,
+    val display: KeyDisplay? =
+        when (action) {
+            is KeyAction.CommitText -> KeyDisplay.TextDisplay(action.text)
+            else -> null
+        },
+    val capsModeDisplay: KeyDisplay? = null,
     val color: ColorVariant = ColorVariant.SECONDARY,
     val size: FontSizeVariant = FontSizeVariant.SMALL,
 )
 
 sealed class KeyDisplay {
-    class TextDisplay(val text: String) : KeyDisplay()
+    class TextDisplay(
+        val text: String,
+    ) : KeyDisplay()
 
-    class IconDisplay(val icon: ImageVector) : KeyDisplay()
+    class IconDisplay(
+        val icon: ImageVector,
+    ) : KeyDisplay()
 }
 
 sealed class KeyAction {
-    class CommitText(val text: String) : KeyAction()
+    class CommitText(
+        val text: String,
+    ) : KeyAction()
 
-    class SendEvent(val event: KeyEvent) : KeyAction()
+    class SendEvent(
+        val event: KeyEvent,
+    ) : KeyAction()
 
-    class ReplaceLastText(val text: String, val trimCount: Int = 2) : KeyAction()
+    class ReplaceLastText(
+        val text: String,
+        val trimCount: Int = 2,
+    ) : KeyAction()
 
-    class ToggleShiftMode(val enable: Boolean) : KeyAction()
+    class ToggleShiftMode(
+        val enable: Boolean,
+    ) : KeyAction()
 
-    class ToggleNumericMode(val enable: Boolean) : KeyAction()
+    class ToggleNumericMode(
+        val enable: Boolean,
+    ) : KeyAction()
 
-    class ToggleEmojiMode(val enable: Boolean) : KeyAction()
+    class ToggleEmojiMode(
+        val enable: Boolean,
+    ) : KeyAction()
 
-    class ComposeLastKey(val text: String) : KeyAction()
+    class ComposeLastKey(
+        val text: String,
+    ) : KeyAction()
 
     data object DeleteWordBeforeCursor : KeyAction()
 
@@ -111,17 +131,13 @@ sealed class KeyAction {
     data object SwitchIMEVoice : KeyAction()
 }
 
-enum class CursorAccelerationMode(private val stringId: Int) {
+enum class CursorAccelerationMode(
+    @StringRes val resId: Int,
+) {
     LINEAR(R.string.slide_cursor_acceleration_linear),
     QUADRATIC(R.string.slide_cursor_acceleration_quadratic),
     THRESHOLD(R.string.slide_cursor_acceleration_threshold_acceleration),
     CONSTANT(R.string.slide_cursor_acceleration_constant),
-    ;
-
-    @Composable
-    fun title(): String {
-        return stringResource(this.stringId)
-    }
 }
 
 enum class KeyboardMode {
@@ -156,19 +172,17 @@ enum class FontSizeVariant {
     SMALLEST,
 }
 
-enum class ThemeMode(private val stringId: Int) {
+enum class ThemeMode(
+    @StringRes val resId: Int,
+) {
     System(R.string.system),
     Light(R.string.light),
     Dark(R.string.dark),
-    ;
-
-    @Composable
-    fun title(): String {
-        return stringResource(this.stringId)
-    }
 }
 
-enum class ThemeColor(private val stringId: Int) {
+enum class ThemeColor(
+    @StringRes val resId: Int,
+) {
     Dynamic(R.string.dynamic),
     Green(R.string.green),
     Pink(R.string.pink),
@@ -180,24 +194,14 @@ enum class ThemeColor(private val stringId: Int) {
     HighContrastColorful(R.string.high_contrast_colorful),
     Ancom(R.string.ancom),
     Matrix(R.string.matrix),
-    ;
-
-    @Composable
-    fun title(): String {
-        return stringResource(this.stringId)
-    }
 }
 
-enum class KeyboardPosition(private val stringId: Int) {
+enum class KeyboardPosition(
+    @StringRes val resId: Int,
+) {
     Center(R.string.center),
     Right(R.string.right),
     Left(R.string.left),
-    ;
-
-    @Composable
-    fun title(): String {
-        return stringResource(this.stringId)
-    }
 }
 
 enum class SwipeNWay {
@@ -236,4 +240,16 @@ data class Selection(
     fun right(index: Int) {
         end += index
     }
+}
+
+enum class CircularDirection {
+    Clockwise,
+    Counterclockwise,
+}
+
+enum class CircularDragAction(
+    @StringRes val resId: Int,
+) {
+    OppositeCase(R.string.send_oppsite_case),
+    Numeric(R.string.send_numeric),
 }

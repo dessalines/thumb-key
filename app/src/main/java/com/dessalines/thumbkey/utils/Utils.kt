@@ -28,6 +28,7 @@ import androidx.compose.material3.TopAppBarScrollBehavior
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.MutableState
 import androidx.compose.ui.Alignment
+import androidx.compose.ui.geometry.Offset
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.Dp
@@ -43,6 +44,7 @@ import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 import java.text.NumberFormat
+import kotlin.math.PI
 import kotlin.math.abs
 import kotlin.math.atan2
 import kotlin.math.max
@@ -52,7 +54,6 @@ import kotlin.math.sqrt
 
 const val TAG = "com.thumbkey"
 
-const val THUMBKEY_IME_NAME = "com.dessalines.thumbkey/.IMEService"
 const val IME_ACTION_CUSTOM_LABEL = EditorInfo.IME_MASK_ACTION + 1
 
 fun accelCurve(
@@ -205,21 +206,20 @@ fun acceleratingCursorDistanceQuadratic(
 }
 
 @Composable
-fun colorVariantToColor(colorVariant: ColorVariant): Color {
-    return when (colorVariant) {
+fun colorVariantToColor(colorVariant: ColorVariant): Color =
+    when (colorVariant) {
         ColorVariant.SURFACE -> MaterialTheme.colorScheme.surface
         ColorVariant.SURFACE_VARIANT -> MaterialTheme.colorScheme.surfaceVariant
         ColorVariant.PRIMARY -> MaterialTheme.colorScheme.primary
         ColorVariant.SECONDARY -> MaterialTheme.colorScheme.secondary
         ColorVariant.MUTED -> MaterialTheme.colorScheme.secondary.copy(alpha = 0.5F)
     }
-}
 
 fun fontSizeVariantToFontSize(
     fontSizeVariant: FontSizeVariant,
     keySize: Dp,
     isUpperCase: Boolean,
-): TextUnit {
+): Dp {
     val divFactor =
         when (fontSizeVariant) {
             FontSizeVariant.LARGE -> 2.5f
@@ -235,16 +235,23 @@ fun fontSizeVariantToFontSize(
             1f
         }
 
-    return TextUnit(keySize.value * upperCaseFactor / divFactor, TextUnitType.Sp)
+    return keySize.times(upperCaseFactor).div(divFactor)
 }
 
-fun keyboardPositionToAlignment(position: KeyboardPosition): Alignment {
-    return when (position) {
+val Dp.toPx get() = (this * Resources.getSystem().displayMetrics.density).value
+val Float.pxToSp
+    get() =
+        TextUnit(
+            this / Resources.getSystem().displayMetrics.scaledDensity,
+            TextUnitType.Sp,
+        )
+
+fun keyboardPositionToAlignment(position: KeyboardPosition): Alignment =
+    when (position) {
         KeyboardPosition.Right -> Alignment.BottomEnd
         KeyboardPosition.Center -> Alignment.BottomCenter
         KeyboardPosition.Left -> Alignment.BottomStart
     }
-}
 
 /**
  * If this doesn't meet the minimum swipe length, it returns null
@@ -328,6 +335,7 @@ fun performKeyAction(
         is KeyAction.CommitText -> {
             val text = action.text
             Log.d(TAG, "committing key text: $text")
+            ime.ignoreNextCursorMove()
             ime.currentInputConnection.commitText(
                 text,
                 1,
@@ -364,6 +372,7 @@ fun performKeyAction(
             Log.d(TAG, "replacing last word")
             val text = action.text
 
+            ime.ignoreNextCursorMove()
             ime.currentInputConnection.deleteSurroundingText(action.trimCount, 0)
             ime.currentInputConnection.commitText(
                 text,
@@ -409,14 +418,21 @@ fun performKeyAction(
                             " " -> "\""
                             else -> textBefore
                         }
+
                     "'" ->
                         when (textBefore) {
                             "a" -> "á"
                             "A" -> "Á"
+                            "â" -> "ấ"
+                            "Â" -> "Ấ"
+                            "ă" -> "ắ"
+                            "Ă" -> "Ắ"
                             "c" -> "ć"
                             "C" -> "Ć"
                             "e" -> "é"
                             "E" -> "É"
+                            "ê" -> "ế"
+                            "Ê" -> "Ế"
                             "g" -> "ǵ"
                             "G" -> "Ǵ"
                             "i" -> "í"
@@ -433,6 +449,10 @@ fun performKeyAction(
                             "N" -> "Ń"
                             "o" -> "ó"
                             "O" -> "Ó"
+                            "ô" -> "ố"
+                            "Ô" -> "Ố"
+                            "ơ" -> "ớ"
+                            "Ơ" -> "Ớ"
                             "p" -> "ṕ"
                             "P" -> "Ṕ"
                             "r" -> "ŕ"
@@ -441,38 +461,56 @@ fun performKeyAction(
                             "S" -> "Ś"
                             "u" -> "ú"
                             "U" -> "Ú"
+                            "ư" -> "ứ"
+                            "Ư" -> "Ứ"
                             "w" -> "ẃ"
                             "W" -> "Ẃ"
                             "y" -> "ý"
                             "Y" -> "Ý"
                             "z" -> "ź"
                             "Z" -> "Ź"
+                            "'" -> "”"
                             " " -> "'"
                             else -> textBefore
                         }
+
                     "`" ->
                         when (textBefore) {
                             "a" -> "à"
                             "A" -> "À"
+                            "â" -> "ầ"
+                            "Â" -> "Ầ"
+                            "ă" -> "ằ"
+                            "Ă" -> "Ằ"
                             "e" -> "è"
                             "E" -> "È"
+                            "ê" -> "ề"
+                            "Ê" -> "Ề"
                             "i" -> "ì"
                             "I" -> "Ì"
                             "n" -> "ǹ"
                             "N" -> "Ǹ"
                             "o" -> "ò"
                             "O" -> "Ò"
+                            "ô" -> "ồ"
+                            "Ô" -> "Ồ"
+                            "ơ" -> "ờ"
+                            "Ờ" -> "Ờ"
                             "u" -> "ù"
                             "U" -> "Ù"
+                            "ư" -> "ừ"
+                            "Ư" -> "Ừ"
                             "ü" -> "ǜ"
                             "Ü" -> "Ǜ"
                             "w" -> "ẁ"
                             "W" -> "Ẁ"
                             "y" -> "ỳ"
                             "Y" -> "Ỳ"
+                            "`" -> "“"
                             " " -> "`"
                             else -> textBefore
                         }
+
                     "^" ->
                         when (textBefore) {
                             "a" -> "â"
@@ -504,22 +542,35 @@ fun performKeyAction(
                             " " -> "^"
                             else -> textBefore
                         }
+
                     "~" ->
                         when (textBefore) {
                             "a" -> "ã"
                             "A" -> "Ã"
+                            "â" -> "ẫ"
+                            "Â" -> "Ẫ"
+                            "ă" -> "ẵ"
+                            "Ă" -> "Ẵ"
                             "c" -> "ç"
                             "C" -> "Ç"
                             "e" -> "ẽ"
                             "E" -> "Ẽ"
+                            "ê" -> "ễ"
+                            "Ê" -> "Ễ"
                             "i" -> "ĩ"
                             "I" -> "Ĩ"
                             "n" -> "ñ"
                             "N" -> "Ñ"
                             "o" -> "õ"
                             "O" -> "Õ"
+                            "ô" -> "ỗ"
+                            "Ô" -> "Ỗ"
+                            "ơ" -> "ỡ"
+                            "Ơ" -> "Ỡ"
                             "u" -> "ũ"
                             "U" -> "Ũ"
+                            "ư" -> "ữ"
+                            "Ư" -> "Ữ"
                             "v" -> "ṽ"
                             "V" -> "Ṽ"
                             "y" -> "ỹ"
@@ -527,6 +578,7 @@ fun performKeyAction(
                             " " -> "~"
                             else -> textBefore
                         }
+
                     "°" ->
                         when (textBefore) {
                             "a" -> "å"
@@ -538,23 +590,59 @@ fun performKeyAction(
                             " " -> "°"
                             else -> textBefore
                         }
+
+                    "˘" ->
+                        when (textBefore) {
+                            "a" -> "ă"
+                            "A" -> "Ă"
+                            "e" -> "ĕ"
+                            "E" -> "Ĕ"
+                            "g" -> "ğ"
+                            "G" -> "Ğ"
+                            "i" -> "ĭ"
+                            "I" -> "Ĭ"
+                            "o" -> "ŏ"
+                            "O" -> "Ŏ"
+                            "u" -> "ŭ"
+                            "U" -> "Ŭ"
+                            " " -> "˘"
+                            else -> textBefore
+                        }
+
                     "!" ->
                         when (textBefore) {
                             "a" -> "æ"
                             "A" -> "Æ"
+                            "æ" -> "ą"
+                            "Æ" -> "Ą"
                             "c" -> "ç"
                             "C" -> "Ç"
-                            "e" -> "æ"
-                            "E" -> "Æ"
+                            "e" -> "ę"
+                            "E" -> "Ę"
+                            "l" -> "ł"
+                            "L" -> "Ł"
+                            "o" -> "œ"
+                            "O" -> "Œ"
                             "s" -> "ß"
                             "S" -> "ẞ"
+                            "z" -> "ż"
+                            "Z" -> "Ż"
                             "!" -> "¡"
                             "?" -> "¿"
+                            "`" -> "“"
+                            "´" -> "”"
+                            "\"" -> "“"
+                            "'" -> "”"
+                            "<" -> "«"
+                            ">" -> "»"
                             " " -> "!"
                             else -> textBefore
                         }
+
                     "\$" ->
                         when (textBefore) {
+                            "c" -> "¢"
+                            "C" -> "¢"
                             "e" -> "€"
                             "E" -> "€"
                             "f" -> "₣"
@@ -568,6 +656,172 @@ fun performKeyAction(
                             " " -> "\$"
                             else -> textBefore
                         }
+
+                    "゛" ->
+                        when (textBefore) {
+                            "あ" -> "ぁ"
+                            "い" -> "ぃ"
+                            "う" -> "ぅ"
+                            "え" -> "ぇ"
+                            "お" -> "ぉ"
+                            "ぅ" -> "ゔ"
+                            "か" -> "が"
+                            "き" -> "ぎ"
+                            "く" -> "ぐ"
+                            "け" -> "げ"
+                            "こ" -> "ご"
+                            "が" -> "ゕ"
+                            "げ" -> "ゖ"
+                            "さ" -> "ざ"
+                            "し" -> "じ"
+                            "す" -> "ず"
+                            "せ" -> "ぜ"
+                            "そ" -> "ぞ"
+                            "た" -> "だ"
+                            "ち" -> "ぢ"
+                            "つ" -> "づ"
+                            "て" -> "で"
+                            "と" -> "ど"
+                            "づ" -> "っ"
+                            "は" -> "ば"
+                            "ひ" -> "び"
+                            "ふ" -> "ぶ"
+                            "へ" -> "べ"
+                            "ほ" -> "ぼ"
+                            "ば" -> "ぱ"
+                            "び" -> "ぴ"
+                            "ぶ" -> "ぷ"
+                            "べ" -> "ぺ"
+                            "ぼ" -> "ぽ"
+                            "や" -> "ゃ"
+                            "ゆ" -> "ゅ"
+                            "よ" -> "ょ"
+                            "わ" -> "ゎ"
+                            "ゝ" -> "ゞ"
+                            "ア" -> "ァ"
+                            "イ" -> "ィ"
+                            "ウ" -> "ゥ"
+                            "エ" -> "ェ"
+                            "オ" -> "ォ"
+                            "ゥ" -> "ヴ"
+                            "カ" -> "ガ"
+                            "キ" -> "ギ"
+                            "ク" -> "グ"
+                            "ケ" -> "ゲ"
+                            "コ" -> "ゴ"
+                            "ガ" -> "ヵ"
+                            "ゲ" -> "ヶ"
+                            "サ" -> "ザ"
+                            "シ" -> "ジ"
+                            "ス" -> "ズ"
+                            "セ" -> "ゼ"
+                            "ソ" -> "ゾ"
+                            "タ" -> "ダ"
+                            "チ" -> "ヂ"
+                            "ツ" -> "ヅ"
+                            "テ" -> "デ"
+                            "ト" -> "ド"
+                            "ヅ" -> "ッ"
+                            "ハ" -> "バ"
+                            "ヒ" -> "ビ"
+                            "フ" -> "ブ"
+                            "ヘ" -> "ベ"
+                            "ホ" -> "ボ"
+                            "バ" -> "パ"
+                            "ビ" -> "ピ"
+                            "ブ" -> "プ"
+                            "ベ" -> "ペ"
+                            "ボ" -> "ポ"
+                            "ヤ" -> "ャ"
+                            "ユ" -> "ュ"
+                            "ヨ" -> "ョ"
+                            "ワ" -> "ヷ"
+                            "ヰ" -> "ヸ"
+                            "ヱ" -> "ヹ"
+                            "ヲ" -> "ヺ"
+                            "ヷ" -> "ヮ"
+                            "ヽ" -> "ヾ"
+                            else -> textBefore
+                        }
+
+                    "?" ->
+                        when (textBefore) {
+                            "a" -> "ả"
+                            "A" -> "Ả"
+                            "â" -> "ẩ"
+                            "Â" -> "Ẩ"
+                            "ă" -> "ẳ"
+                            "Ă" -> "Ẳ"
+                            "o" -> "ỏ"
+                            "O" -> "Ỏ"
+                            "ô" -> "ổ"
+                            "Ô" -> "Ổ"
+                            "ơ" -> "ở"
+                            "Ơ" -> "Ở"
+                            "u" -> "ủ"
+                            "U" -> "Ủ"
+                            "ư" -> "ử"
+                            "Ư" -> "Ử"
+                            "i" -> "ỉ"
+                            "I" -> "Ỉ"
+                            "e" -> "ẻ"
+                            "E" -> "Ẻ"
+                            "ê" -> "ể"
+                            "Ê" -> "Ể"
+                            else -> textBefore
+                        }
+
+                    "*" ->
+                        when (textBefore) {
+                            "a" -> "ạ"
+                            "A" -> "Ạ"
+                            "â" -> "ậ"
+                            "Â" -> "Ậ"
+                            "ă" -> "ặ"
+                            "Ă" -> "Ặ"
+                            "o" -> "ọ"
+                            "O" -> "Ọ"
+                            "ô" -> "ộ"
+                            "Ô" -> "Ộ"
+                            "ơ" -> "ợ"
+                            "Ơ" -> "Ợ"
+                            "u" -> "ụ"
+                            "U" -> "Ụ"
+                            "ư" -> "ự"
+                            "Ư" -> "Ự"
+                            "i" -> "ị"
+                            "I" -> "Ị"
+                            "e" -> "ẹ"
+                            "E" -> "Ẹ"
+                            "ê" -> "ệ"
+                            "Ê" -> "Ệ"
+                            else -> textBefore
+                        }
+
+                    "ˇ" ->
+                        when (textBefore) {
+                            "c" -> "č"
+                            "d" -> "ď"
+                            "e" -> "ě"
+                            "l" -> "ľ"
+                            "n" -> "ň"
+                            "r" -> "ř"
+                            "s" -> "š"
+                            "t" -> "ť"
+                            "z" -> "ž"
+                            "C" -> "Č"
+                            "D" -> "Ď"
+                            "E" -> "Ě"
+                            "L" -> "Ľ"
+                            "N" -> "Ň"
+                            "R" -> "Ř"
+                            "S" -> "Š"
+                            "T" -> "Ť"
+                            "Z" -> "Ž"
+                            " " -> "ˇ"
+                            else -> textBefore
+                        }
+
                     else -> throw IllegalStateException("Invalid key modifier")
                 }
 
@@ -576,6 +830,7 @@ fun performKeyAction(
                 ime.currentInputConnection.commitText(textNew, 1)
             }
         }
+
         is KeyAction.ToggleShiftMode -> {
             val enable = action.enable
             Log.d(TAG, "Toggling Shifted: $enable")
@@ -608,6 +863,7 @@ fun performKeyAction(
                 IME_ACTION_CUSTOM_LABEL -> {
                     ime.currentInputConnection.performEditorAction(ime.currentInputEditorInfo.actionId)
                 }
+
                 EditorInfo.IME_ACTION_NONE -> {
                     ime.currentInputConnection.sendKeyEvent(
                         KeyEvent(
@@ -616,6 +872,7 @@ fun performKeyAction(
                         ),
                     )
                 }
+
                 else -> {
                     ime.currentInputConnection.performEditorAction(imeAction)
                 }
@@ -628,6 +885,7 @@ fun performKeyAction(
             // https://developer.android.com/reference/android/R.id
             ime.currentInputConnection.performContextMenuAction(android.R.id.selectAll)
         }
+
         KeyAction.Cut -> {
             if (ime.currentInputConnection.getSelectedText(0).isNullOrEmpty()) {
                 // Nothing selected, so cut all the text
@@ -641,6 +899,7 @@ fun performKeyAction(
                 ime.currentInputConnection.performContextMenuAction(android.R.id.cut)
             }
         }
+
         KeyAction.Copy -> {
             if (ime.currentInputConnection.getSelectedText(0).isNullOrEmpty()) {
                 // Nothing selected, so copy all the text
@@ -657,17 +916,27 @@ fun performKeyAction(
             val message = ime.getString(R.string.copy)
             Toast.makeText(ime, message, Toast.LENGTH_SHORT).show()
         }
+
         KeyAction.Paste -> {
             ime.currentInputConnection.performContextMenuAction(android.R.id.paste)
         }
+
         KeyAction.Undo -> {
             ime.currentInputConnection.sendKeyEvent(
                 KeyEvent(0, 0, KeyEvent.ACTION_DOWN, KeyEvent.KEYCODE_Z, 0, KeyEvent.META_CTRL_ON),
             )
         }
+
         KeyAction.Redo -> {
             ime.currentInputConnection.sendKeyEvent(
-                KeyEvent(0, 0, KeyEvent.ACTION_DOWN, KeyEvent.KEYCODE_Z, 0, (KeyEvent.META_CTRL_ON or KeyEvent.META_SHIFT_ON)),
+                KeyEvent(
+                    0,
+                    0,
+                    KeyEvent.ACTION_DOWN,
+                    KeyEvent.KEYCODE_Z,
+                    0,
+                    (KeyEvent.META_CTRL_ON or KeyEvent.META_SHIFT_ON),
+                ),
             )
         }
 
@@ -678,6 +947,7 @@ fun performKeyAction(
                 ime.getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
             imeManager.showInputMethodPicker()
         }
+
         KeyAction.SwitchIMEVoice -> {
             val imeManager =
                 ime.getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
@@ -756,24 +1026,7 @@ private fun autoCapitalize(
     }
 }
 
-fun autoCapitalizeCheck(ime: IMEService): Boolean {
-    return isEmptyField(ime) || isPunctuationEnd(ime)
-}
-
-/**
- * Checks if the field is empty
- */
-fun isEmptyField(ime: IMEService): Boolean {
-    return ime.currentInputConnection.getTextBeforeCursor(1, 0).isNullOrEmpty()
-}
-
-/**
- * Checks if the field ends with a punctuation
- */
-fun isPunctuationEnd(ime: IMEService): Boolean {
-    val textBefore = ime.currentInputConnection.getTextBeforeCursor(2, 0)
-    return (listOf(". ", "? ", "! ").contains(textBefore))
-}
+fun autoCapitalizeCheck(ime: IMEService): Boolean = ime.currentInputConnection.getCursorCapsMode(ime.currentInputEditorInfo.inputType) > 0
 
 /**
  * Avoid capitalizing or switching to shifted mode in certain edit boxes
@@ -788,29 +1041,36 @@ fun isUriOrEmailOrPasswordField(ime: IMEService): Boolean {
         InputType.TYPE_TEXT_VARIATION_WEB_PASSWORD,
         InputType.TYPE_TEXT_VARIATION_VISIBLE_PASSWORD,
         InputType.TYPE_NUMBER_VARIATION_PASSWORD,
-    ).contains(inputType) || ime.currentInputEditorInfo.inputType == EditorInfo.TYPE_NULL
+    ).contains(inputType) ||
+        ime.currentInputEditorInfo.inputType == EditorInfo.TYPE_NULL
+}
+
+fun isPasswordField(ime: IMEService): Boolean {
+    val inputType = ime.currentInputEditorInfo.inputType and (InputType.TYPE_MASK_VARIATION)
+    return listOf(
+        InputType.TYPE_TEXT_VARIATION_PASSWORD,
+        InputType.TYPE_TEXT_VARIATION_WEB_PASSWORD,
+        InputType.TYPE_NUMBER_VARIATION_PASSWORD,
+    ).contains(inputType) ||
+        ime.currentInputEditorInfo.inputType == EditorInfo.TYPE_NULL
 }
 
 fun deleteWordBeforeCursor(ime: IMEService) {
     val wordsBeforeCursor = ime.currentInputConnection.getTextBeforeCursor(9999, 0)
 
-    val trailingSpacesLength = wordsBeforeCursor?.length?.minus(wordsBeforeCursor.trimEnd().length) ?: 0
-    val trimmed = wordsBeforeCursor?.trim()
-    val lastWordLength = trimmed?.split("\\s".toRegex())?.lastOrNull()?.length ?: 1
-    val minDelete = lastWordLength + trailingSpacesLength
+    val pattern = Regex("(\\w+\\W?|[^\\s\\w]+)?\\s*$")
+    val lastWordLength = wordsBeforeCursor?.let { pattern.find(it)?.value?.length } ?: 0
 
-    ime.currentInputConnection.deleteSurroundingText(minDelete, 0)
+    ime.currentInputConnection.deleteSurroundingText(lastWordLength, 0)
 }
 
 fun deleteWordAfterCursor(ime: IMEService) {
     val wordsAfterCursor = ime.currentInputConnection.getTextAfterCursor(9999, 0)
 
-    val trailingSpacesLength = wordsAfterCursor?.length?.minus(wordsAfterCursor.trimStart().length) ?: 0
-    val trimmed = wordsAfterCursor?.trim()
-    val nextWordLength = trimmed?.split("\\s".toRegex())?.firstOrNull()?.length ?: 1
-    val minDelete = nextWordLength + trailingSpacesLength
+    val pattern = Regex("^\\s?(\\w+\\W?|[^\\s\\w]+|\\s+)")
+    val nextWordLength = wordsAfterCursor?.let { pattern.find(it)?.value?.length } ?: 0
 
-    ime.currentInputConnection.deleteSurroundingText(0, minDelete)
+    ime.currentInputConnection.deleteSurroundingText(0, nextWordLength)
 }
 
 fun buildTapActions(keyItem: KeyItemC): List<KeyAction> {
@@ -883,36 +1143,21 @@ fun Int.toBool() = this == 1
 
 fun Boolean.toInt() = this.compareTo(false)
 
-fun keyboardLayoutsSetFromString(layouts: String?): Set<Int> {
-    return layouts?.split(",")?.map { it.trim().toInt() }?.toSet()
+/**
+ * The layouts there are whats stored in the DB, a string comma set of title index numbers
+ */
+fun keyboardLayoutsSetFromDbIndexString(layouts: String?): Set<KeyboardLayout> =
+    layouts?.split(",")?.map { KeyboardLayout.entries[it.trim().toInt()] }?.toSet()
         ?: setOf(
-            DEFAULT_KEYBOARD_LAYOUT,
+            KeyboardLayout.entries[DEFAULT_KEYBOARD_LAYOUT],
         )
-}
 
-fun keyboardLayoutsSetFromTitleIndex(layouts: String?): Set<Int> {
-    return layouts?.split(",")?.map { keyboardTitleIndexFromRealIndex(it.trim().toInt()) }?.toSet()
-        ?: setOf(
-            keyboardTitleIndexFromRealIndex(DEFAULT_KEYBOARD_LAYOUT),
-        )
-}
-
-fun keyboardRealIndexFromTitleIndex(index: Int): Int {
-    return KeyboardLayout.entries.sortedBy { it.keyboardDefinition.title }[index].ordinal
-}
-
-fun keyboardTitleIndexFromRealIndex(index: Int): Int {
-    val keyboard = KeyboardLayout.entries.find { it.ordinal == index } ?: KeyboardLayout.ENThumbKey
-    return KeyboardLayout.entries.sortedBy { it.keyboardDefinition.title }.indexOf(keyboard)
-}
-
-fun Context.getPackageInfo(): PackageInfo {
-    return if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
+fun Context.getPackageInfo(): PackageInfo =
+    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
         packageManager.getPackageInfo(packageName, PackageManager.PackageInfoFlags.of(0))
     } else {
         packageManager.getPackageInfo(packageName, 0)
     }
-}
 
 fun Context.getVersionCode(): Int =
     if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.P) {
@@ -922,25 +1167,36 @@ fun Context.getVersionCode(): Int =
         getPackageInfo().versionCode
     }
 
+/**
+ * The debug and app IME names act strange, so you need to check both
+ */
+fun Context.getImeNames(): List<String> =
+    listOf(
+        "$packageName/com.dessalines.thumbkey.IMEService",
+        "$packageName/.IMEService",
+    )
+
 fun startSelection(ime: IMEService): Selection {
     val cursorPosition =
-        ime.currentInputConnection.getTextBeforeCursor(
-            Integer.MAX_VALUE,
-            0,
-        )?.length
+        ime.currentInputConnection
+            .getTextBeforeCursor(
+                Integer.MAX_VALUE,
+                0,
+            )?.length
     cursorPosition?.let {
         return Selection(it, it, true)
     }
     return Selection()
 }
 
-fun getLocalCurrency(): String? {
-    return ConfigurationCompat.getLocales(Resources.getSystem().configuration)[0]?.let {
-        NumberFormat.getCurrencyInstance(
-            it,
-        ).currency?.symbol
+fun getLocalCurrency(): String? =
+    ConfigurationCompat.getLocales(Resources.getSystem().configuration)[0]?.let {
+        NumberFormat
+            .getCurrencyInstance(
+                it,
+            ).currency
+            ?.symbol
     }
-}
 
 fun lastColKeysToFirst(board: KeyboardC): KeyboardC {
     val newArr =
@@ -953,3 +1209,47 @@ fun lastColKeysToFirst(board: KeyboardC): KeyboardC {
         }
     return KeyboardC(newArr)
 }
+
+fun circularDirection(
+    positions: List<Offset>,
+    circleCompletionTolerance: Float,
+): CircularDirection? {
+    val center = positions.reduce(Offset::plus) / positions.count().toFloat()
+    val radii = positions.map { it.getDistanceTo(center) }
+    val maxRadius = radii.reduce { acc, it -> if (it > acc) it else acc }
+    // This is similar to accepting an ellipse with aspect ratio 3:1
+    val minRadius = maxRadius / 3
+    val similarRadii =
+        radii.all {
+            it in minRadius..maxRadius
+        }
+
+    if (!similarRadii) {
+        return null
+    }
+    val spannedAngle =
+        positions
+            .asSequence()
+            .map { it - center } // transform center into origin
+            .windowed(2)
+            .map { (a, b) ->
+                val (xa, ya) = a
+                val (xb, yb) = b
+                // angle between two vectors
+                atan2(
+                    xa * yb - ya * xb,
+                    xa * xb + ya * yb,
+                )
+            }.sum()
+
+    val averageRadius = (minRadius + maxRadius) / 2
+    // The threshold is a full circumference minus the arc with length equal to the tolerance
+    val angleThreshold = 2 * PI * (1 - circleCompletionTolerance / averageRadius)
+    return when {
+        spannedAngle >= angleThreshold -> CircularDirection.Clockwise
+        spannedAngle <= -angleThreshold -> CircularDirection.Counterclockwise
+        else -> null
+    }
+}
+
+fun Offset.getDistanceTo(other: Offset) = (other - this).getDistance()
