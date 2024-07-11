@@ -53,6 +53,7 @@ import com.dessalines.thumbkey.keyboards.KB_EN_THUMBKEY_PROGRAMMER
 import com.dessalines.thumbkey.keyboards.KB_EN_THUMBKEY_PROGRAMMER_WIDE
 import com.dessalines.thumbkey.keyboards.KB_EN_THUMBKEY_SYMBOLS
 import com.dessalines.thumbkey.keyboards.KB_EN_THUMBKEY_WIDE
+import com.dessalines.thumbkey.keyboards.KB_EN_THUMBKEY_WRITER
 import com.dessalines.thumbkey.keyboards.KB_EN_TWO_HANDS
 import com.dessalines.thumbkey.keyboards.KB_EN_TWO_HANDS_MESSAGEASE
 import com.dessalines.thumbkey.keyboards.KB_EN_TWO_HANDS_QWERTEASE
@@ -266,4 +267,5 @@ enum class KeyboardLayout(
     ENQBasedLeft(KB_EN_QBASED_LEFT),
     DEThumbkeySymbols(KB_DE_THUMBKEY_SYMBOLS),
     ENQwertyFourCompose(KB_EN_QWERTYFOUR_COMPOSE),
+    ENThumbKeyWriter(KB_EN_THUMBKEY_WRITER),
 }
