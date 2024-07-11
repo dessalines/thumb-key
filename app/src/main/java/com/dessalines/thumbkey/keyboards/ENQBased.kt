@@ -264,6 +264,7 @@ val KB_EN_QBASED_MAIN =
                                 KeyC(
                                     display = KeyDisplay.IconDisplay(Icons.Outlined.ArrowDropUp),
                                     action = KeyAction.ToggleShiftMode(true),
+                                    swipeReturnAction = KeyAction.ToggleCurrentWordCapitalization(true),
                                 ),
                         ),
                 ),
@@ -575,11 +576,13 @@ val KB_EN_QBASED_SHIFTED =
                                     display = KeyDisplay.IconDisplay(Icons.Outlined.KeyboardCapslock),
                                     capsModeDisplay = KeyDisplay.IconDisplay(Icons.Outlined.Copyright),
                                     action = KeyAction.ToggleCapsLock,
+                                    swipeReturnAction = KeyAction.ToggleCurrentWordCapitalization(true),
                                 ),
                             SwipeDirection.LEFT to
                                 KeyC(
                                     display = KeyDisplay.IconDisplay(Icons.Outlined.ArrowDropDown),
                                     action = KeyAction.ToggleShiftMode(false),
+                                    swipeReturnAction = KeyAction.ToggleCurrentWordCapitalization(false),
                                 ),
                         ),
                 ),

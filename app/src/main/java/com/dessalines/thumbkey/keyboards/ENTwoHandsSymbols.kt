@@ -380,6 +380,7 @@ val KB_EN_TWO_HANDS_SYMBOLS_MAIN =
                                 KeyC(
                                     display = KeyDisplay.IconDisplay(Icons.Outlined.ArrowDropUp),
                                     action = KeyAction.ToggleShiftMode(true),
+                                    swipeReturnAction = KeyAction.ToggleCurrentWordCapitalization(true),
                                     color = ColorVariant.MUTED,
                                 ),
                             SwipeDirection.TOP_LEFT to
@@ -399,6 +400,11 @@ val KB_EN_TWO_HANDS_SYMBOLS_MAIN =
                                     display = KeyDisplay.TextDisplay(")"),
                                     action = KeyAction.CommitText(")"),
                                     color = ColorVariant.MUTED,
+                                ),
+                            SwipeDirection.BOTTOM to
+                                KeyC(
+                                    action = KeyAction.ToggleShiftMode(false),
+                                    swipeReturnAction = KeyAction.ToggleCurrentWordCapitalization(false),
                                 ),
                             SwipeDirection.BOTTOM_RIGHT to
                                 KeyC(
@@ -533,6 +539,7 @@ val KB_EN_TWO_HANDS_SYMBOLS_MAIN =
                                 KeyC(
                                     display = KeyDisplay.IconDisplay(Icons.Outlined.ArrowDropUp),
                                     action = KeyAction.ToggleShiftMode(true),
+                                    swipeReturnAction = KeyAction.ToggleCurrentWordCapitalization(true),
                                     color = ColorVariant.MUTED,
                                 ),
                             SwipeDirection.TOP_LEFT to
@@ -552,6 +559,11 @@ val KB_EN_TWO_HANDS_SYMBOLS_MAIN =
                                     display = KeyDisplay.TextDisplay(")"),
                                     action = KeyAction.CommitText(")"),
                                     color = ColorVariant.MUTED,
+                                ),
+                            SwipeDirection.BOTTOM to
+                                KeyC(
+                                    action = KeyAction.ToggleShiftMode(false),
+                                    swipeReturnAction = KeyAction.ToggleCurrentWordCapitalization(false),
                                 ),
                             SwipeDirection.BOTTOM_RIGHT to
                                 KeyC(
@@ -1225,12 +1237,14 @@ val KB_EN_TWO_HANDS_SYMBOLS_SHIFTED =
                                     display = KeyDisplay.IconDisplay(Icons.Outlined.KeyboardCapslock),
                                     capsModeDisplay = KeyDisplay.IconDisplay(Icons.Outlined.ArrowDropUp),
                                     action = KeyAction.ToggleCapsLock,
+                                    swipeReturnAction = KeyAction.ToggleCurrentWordCapitalization(true),
                                     color = ColorVariant.MUTED,
                                 ),
                             SwipeDirection.BOTTOM to
                                 KeyC(
                                     display = KeyDisplay.IconDisplay(Icons.Outlined.ArrowDropDown),
                                     action = KeyAction.ToggleShiftMode(false),
+                                    swipeReturnAction = KeyAction.ToggleCurrentWordCapitalization(false),
                                     color = ColorVariant.MUTED,
                                 ),
                             SwipeDirection.TOP_LEFT to
@@ -1385,12 +1399,14 @@ val KB_EN_TWO_HANDS_SYMBOLS_SHIFTED =
                                     display = KeyDisplay.IconDisplay(Icons.Outlined.KeyboardCapslock),
                                     capsModeDisplay = KeyDisplay.IconDisplay(Icons.Outlined.ArrowDropUp),
                                     action = KeyAction.ToggleCapsLock,
+                                    swipeReturnAction = KeyAction.ToggleCurrentWordCapitalization(true),
                                     color = ColorVariant.MUTED,
                                 ),
                             SwipeDirection.BOTTOM to
                                 KeyC(
                                     display = KeyDisplay.IconDisplay(Icons.Outlined.ArrowDropDown),
                                     action = KeyAction.ToggleShiftMode(false),
+                                    swipeReturnAction = KeyAction.ToggleCurrentWordCapitalization(false),
                                     color = ColorVariant.MUTED,
                                 ),
                             SwipeDirection.TOP_LEFT to

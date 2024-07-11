@@ -467,7 +467,8 @@ fun KeyboardKey(
                                             if (dragReturnEnabled) {
                                                 val swipeDirection =
                                                     swipeDirection(maxOffset.x, maxOffset.y, minSwipeLength, key.swipeType)
-                                                oppositeCaseKey?.swipes?.get(swipeDirection)?.action
+                                                key.swipes?.get(swipeDirection)?.swipeReturnAction
+                                                    ?: oppositeCaseKey?.swipes?.get(swipeDirection)?.action
                                             } else {
                                                 null
                                             }

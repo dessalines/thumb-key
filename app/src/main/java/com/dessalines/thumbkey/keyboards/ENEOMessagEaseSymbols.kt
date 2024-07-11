@@ -328,12 +328,14 @@ val KB_ENEO_MESSAGEASE_SYMBOLS_MAIN =
                                 KeyC(
                                     display = KeyDisplay.IconDisplay(Icons.Outlined.ArrowDropUp),
                                     action = KeyAction.ToggleShiftMode(true),
+                                    swipeReturnAction = KeyAction.ToggleCurrentWordCapitalization(true),
                                     color = ColorVariant.MUTED,
                                 ),
                             SwipeDirection.BOTTOM to
                                 KeyC(
                                     display = KeyDisplay.IconDisplay(Icons.Outlined.ArrowDropDown),
                                     action = KeyAction.ToggleShiftMode(false),
+                                    swipeReturnAction = KeyAction.ToggleCurrentWordCapitalization(false),
                                     color = ColorVariant.MUTED,
                                 ),
                             SwipeDirection.TOP_LEFT to
@@ -866,12 +868,14 @@ val KB_ENEO_MESSAGEASE_SYMBOLS_SHIFTED =
                                 KeyC(
                                     display = KeyDisplay.IconDisplay(Icons.Outlined.ArrowDropUp),
                                     action = KeyAction.ToggleShiftMode(true),
+                                    swipeReturnAction = KeyAction.ToggleCurrentWordCapitalization(true),
                                     color = ColorVariant.MUTED,
                                 ),
                             SwipeDirection.BOTTOM to
                                 KeyC(
                                     display = KeyDisplay.IconDisplay(Icons.Outlined.ArrowDropDown),
                                     action = KeyAction.ToggleShiftMode(false),
+                                    swipeReturnAction = KeyAction.ToggleCurrentWordCapitalization(false),
                                     color = ColorVariant.MUTED,
                                 ),
                             SwipeDirection.TOP_LEFT to

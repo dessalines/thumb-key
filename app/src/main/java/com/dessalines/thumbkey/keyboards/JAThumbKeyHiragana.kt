@@ -365,7 +365,13 @@ val KB_JA_THUMBKEY_HIRAGANA_MAIN =
                                 KeyC(
                                     display = KeyDisplay.TextDisplay("？"),
                                     action = KeyAction.ToggleShiftMode(true),
+                                    swipeReturnAction = KeyAction.ToggleCurrentWordCapitalization(true),
                                     color = ColorVariant.MUTED,
+                                ),
+                            SwipeDirection.BOTTOM to
+                                KeyC(
+                                    action = KeyAction.ToggleShiftMode(false),
+                                    swipeReturnAction = KeyAction.ToggleCurrentWordCapitalization(false),
                                 ),
                             SwipeDirection.RIGHT to
                                 KeyC(
