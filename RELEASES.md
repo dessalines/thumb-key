@@ -1,7 +1,23 @@
+# Thumb-Key 3.3.1 (2024-07-11)
+
+## What's Changed in 3.3.1
+
+- Added ENThumbKeyWriter layout by @locrianz in [#970](https://github.com/dessalines/thumb-key/pull/970)
+- Added swipe-and-return gesture to capitalize words (#964) by @gitterrost4 in [#966](https://github.com/dessalines/thumb-key/pull/966)
+- Adding dependenciesInfo for f-droid builds by @dessalines in [#965](https://github.com/dessalines/thumb-key/pull/965)
+
+## New Contributors
+
+- @locrianz made their first contribution in [#970](https://github.com/dessalines/thumb-key/pull/970)
+- @gitterrost4 made their first contribution in [#966](https://github.com/dessalines/thumb-key/pull/966)
+
+**Full Changelog**: https://github.com/dessalines/thumb-key/compare/3.3.0...3.3.1
+
 # Thumb-Key 3.3.0 (2024-07-07)
 
 ## What's Changed in 3.3.0
 
+- Upping version. by @dessalines
 - Added ghost key functionality. by @matthew-sirman in [#961](https://github.com/dessalines/thumb-key/pull/961)
 - Add composed qwertyfour layout by @sirlan-ff00ff in [#962](https://github.com/dessalines/thumb-key/pull/962)
 
