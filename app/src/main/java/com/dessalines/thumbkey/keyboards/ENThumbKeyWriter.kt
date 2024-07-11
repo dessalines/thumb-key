@@ -21,7 +21,7 @@ import com.dessalines.thumbkey.utils.autoCapitalizeI
 import com.dessalines.thumbkey.utils.autoCapitalizeIApostrophe
 
 // Adds more punctuation options to the main screen to reduce switches to the numeric keyboard
-val KB_EN_THUMBKEY_SYMBOLS_MAIN =
+val KB_EN_THUMBKEY_WRITER_MAIN =
     KeyboardC(
         listOf(
             listOf(
@@ -491,7 +491,7 @@ val KB_EN_THUMBKEY_SYMBOLS_MAIN =
         ),
     )
 
-val KB_EN_THUMBKEY_SYMBOLS_SHIFTED =
+val KB_EN_THUMBKEY_WRITER_SHIFTED =
     KeyboardC(
         listOf(
             listOf(
@@ -928,13 +928,13 @@ val KB_EN_THUMBKEY_SYMBOLS_SHIFTED =
         ),
     )
 
-val KB_EN_THUMBKEY_SYMBOLS: KeyboardDefinition =
+val KB_EN_THUMBKEY_WRITER: KeyboardDefinition =
     KeyboardDefinition(
-        title = "english symbols thumb-key",
+        title = "english writer thumb-key",
         modes =
             KeyboardDefinitionModes(
-                main = KB_EN_THUMBKEY_SYMBOLS_MAIN,
-                shifted = KB_EN_THUMBKEY_SYMBOLS_SHIFTED,
+                main = KB_EN_THUMBKEY_WRITER_MAIN,
+                shifted = KB_EN_THUMBKEY_WRITER_SHIFTED,
                 numeric = NUMERIC_KEYBOARD,
             ),
         settings =
