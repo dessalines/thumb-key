@@ -50,6 +50,7 @@ data class KeyItemC(
 
 data class KeyC(
     val action: KeyAction,
+    val swipeReturnAction: KeyAction? = null,
     val display: KeyDisplay? =
         when (action) {
             is KeyAction.CommitText -> KeyDisplay.TextDisplay(action.text)
@@ -86,6 +87,10 @@ sealed class KeyAction {
 
     class ToggleShiftMode(
         val enable: Boolean,
+    ) : KeyAction()
+
+    class ToggleCurrentWordCapitalization(
+        val toggleUp: Boolean,
     ) : KeyAction()
 
     class ToggleNumericMode(
