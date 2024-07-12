@@ -649,6 +649,12 @@ val KB_EN_THUMBKEY_WRITER_SHIFTED =
                                     action = KeyAction.CommitText("_"),
                                     color = ColorVariant.MUTED,
                                 ),
+                            SwipeDirection.BOTTOM to
+                                KeyC(
+                                    display = KeyDisplay.TextDisplay("…"),
+                                    action = KeyAction.CommitText("…"),
+                                    color = ColorVariant.MUTED,
+                                ),
                             SwipeDirection.BOTTOM_LEFT to
                                 KeyC(
                                     display = KeyDisplay.TextDisplay("["),
@@ -794,10 +800,34 @@ val KB_EN_THUMBKEY_WRITER_SHIFTED =
                                     display = KeyDisplay.TextDisplay("C"),
                                     action = KeyAction.CommitText("C"),
                                 ),
+                            SwipeDirection.TOP to
+                                KeyC(
+                                    display = KeyDisplay.TextDisplay("–"),
+                                    action = KeyAction.CommitText("–"),
+                                    color = ColorVariant.MUTED,
+                                ),
                             SwipeDirection.TOP_LEFT to
+                                KeyC(
+                                    display = KeyDisplay.TextDisplay("“"),
+                                    action = KeyAction.CommitText("“"),
+                                    color = ColorVariant.MUTED,
+                                ),
+                            SwipeDirection.LEFT to
+                                KeyC(
+                                    display = KeyDisplay.TextDisplay("‘"),
+                                    action = KeyAction.CommitText("‘"),
+                                    color = ColorVariant.MUTED,
+                                ),
+                            SwipeDirection.RIGHT to
                                 KeyC(
                                     display = KeyDisplay.TextDisplay("~"),
                                     action = KeyAction.CommitText("~"),
+                                    color = ColorVariant.MUTED,
+                                ),
+                            SwipeDirection.BOTTOM to
+                                KeyC(
+                                    display = KeyDisplay.TextDisplay("—"),
+                                    action = KeyAction.CommitText("—"),
                                     color = ColorVariant.MUTED,
                                 ),
                             SwipeDirection.BOTTOM_RIGHT to
@@ -894,6 +924,16 @@ val KB_EN_THUMBKEY_WRITER_SHIFTED =
                                     color = ColorVariant.MUTED,
                                 ),
                             SwipeDirection.TOP_RIGHT to
+                                KeyC(
+                                    display = KeyDisplay.TextDisplay("”"),
+                                    action = KeyAction.CommitText("”"),
+                                ),
+                            SwipeDirection.RIGHT to
+                                KeyC(
+                                    display = KeyDisplay.TextDisplay("’"),
+                                    action = KeyAction.CommitText("’"),
+                                ),
+                            SwipeDirection.BOTTOM to
                                 KeyC(
                                     display = KeyDisplay.TextDisplay("°"),
                                     action = KeyAction.CommitText("°"),
