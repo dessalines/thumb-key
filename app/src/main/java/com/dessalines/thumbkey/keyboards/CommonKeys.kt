@@ -616,4 +616,19 @@ val SPACEBAR_FRENCH_TYPESPLIT_BOTTOM_KEY_ITEM =
             ),
     )
 
+val SPACEBAR_FARSI_KEY_ITEM =
+    SPACEBAR_KEY_ITEM.copy(
+        nextTapActions =
+            listOf(
+                KeyAction.ReplaceLastText("، ", trimCount = 1),
+                KeyAction.ReplaceLastText(". "),
+                KeyAction.ReplaceLastText("؟ "),
+                KeyAction.ReplaceLastText("! "),
+                KeyAction.ReplaceLastText(": "),
+                KeyAction.ReplaceLastText("؛ "),
+            ),
+    )
+
+val SPACEBAR_FARSI_SKINNY_KEY_ITEM = SPACEBAR_FARSI_KEY_ITEM.copy(widthMultiplier = 1)
+
 val SPACEBAR_ZERO_KEY_ITEM = SPACEBAR_KEY_ITEM.copy(longPress = KeyAction.CommitText("0"))
