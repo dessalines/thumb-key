@@ -355,7 +355,7 @@ val FARSI_NUMERIC_KEYBOARD =
                         ),
                     widthMultiplier = 2,
                 ),
-                SPACEBAR_SKINNY_KEY_ITEM,
+                SPACEBAR_FARSI_SKINNY_KEY_ITEM,
                 RETURN_KEY_ITEM,
             ),
         ),
