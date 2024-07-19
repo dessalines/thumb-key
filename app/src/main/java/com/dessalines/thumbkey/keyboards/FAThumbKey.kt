@@ -303,7 +303,7 @@ val KB_FA_THUMBKEY_MAIN =
                 BACKSPACE_KEY_ITEM,
             ),
             listOf(
-                SPACEBAR_KEY_ITEM,
+                SPACEBAR_FARSI_KEY_ITEM,
                 RETURN_KEY_ITEM,
             ),
         ),
