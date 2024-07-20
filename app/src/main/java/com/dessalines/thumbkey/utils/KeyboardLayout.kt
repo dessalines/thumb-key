@@ -145,7 +145,6 @@ enum class KeyboardLayout(
     ESThumbKey(KB_ES_THUMBKEY),
     EUThumbKey(KB_EU_THUMBKEY),
     FAThumbKey(KB_FA_THUMBKEY),
-    FAThumbKeySamsung(KB_FA_THUMBKEY_SAMSUNG),
     FIThumbKey(KB_FI_THUMBKEY),
     FRThumbKeyV1(KB_FR_THUMBKEY_V1),
     ITThumbKey(KB_IT_THUMBKEY),
@@ -270,4 +269,5 @@ enum class KeyboardLayout(
     DEThumbkeySymbols(KB_DE_THUMBKEY_SYMBOLS),
     ENQwertyFourCompose(KB_EN_QWERTYFOUR_COMPOSE),
     ENThumbKeyWriter(KB_EN_THUMBKEY_WRITER),
+    FAThumbKeySamsung(KB_FA_THUMBKEY_SAMSUNG),    
 }
