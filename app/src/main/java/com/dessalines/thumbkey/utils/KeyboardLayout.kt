@@ -71,6 +71,7 @@ import com.dessalines.thumbkey.keyboards.KB_ES_TYPESPLIT
 import com.dessalines.thumbkey.keyboards.KB_EU_ES_THUMBKEY
 import com.dessalines.thumbkey.keyboards.KB_EU_THUMBKEY
 import com.dessalines.thumbkey.keyboards.KB_FA_THUMBKEY
+import com.dessalines.thumbkey.keyboards.KB_FA_THUMBKEY_SAMSUNG
 import com.dessalines.thumbkey.keyboards.KB_FI_EE_MESSAGEASE_SYMBOLS
 import com.dessalines.thumbkey.keyboards.KB_FI_MESSAGEASE
 import com.dessalines.thumbkey.keyboards.KB_FI_THUMBKEY
@@ -144,6 +145,7 @@ enum class KeyboardLayout(
     ESThumbKey(KB_ES_THUMBKEY),
     EUThumbKey(KB_EU_THUMBKEY),
     FAThumbKey(KB_FA_THUMBKEY),
+    FAThumbKeySamsung(KB_FA_THUMBKEY_SAMSUNG),    
     FIThumbKey(KB_FI_THUMBKEY),
     FRThumbKeyV1(KB_FR_THUMBKEY_V1),
     ITThumbKey(KB_IT_THUMBKEY),
