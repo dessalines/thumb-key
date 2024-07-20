@@ -12,7 +12,7 @@ import com.dessalines.thumbkey.utils.KeyboardDefinitionModes
 import com.dessalines.thumbkey.utils.SwipeDirection
 import com.dessalines.thumbkey.utils.SwipeNWay
 
-val KB_JA_THUMBKEY_HIRAGANA =
+val KB_JA_THUMBKEY_KANA_HIRAGANA =
     KeyboardC(
         listOf(
             listOf(
@@ -426,7 +426,7 @@ val KB_JA_THUMBKEY_HIRAGANA =
         ),
     )
 
-val KB_JA_THUMBKEY_KATAKANA =
+val KB_JA_THUMBKEY_KANA_KATAKANA =
     KeyboardC(
         listOf(
             listOf(
@@ -845,8 +845,8 @@ val KB_JA_THUMBKEY_KANA: KeyboardDefinition =
         title = "japanese kana thumb-key ",
         modes =
             KeyboardDefinitionModes(
-                main = KB_JA_THUMBKEY_HIRAGANA,
-                shifted = KB_JA_THUMBKEY_KATAKANA,
+                main = KB_JA_THUMBKEY_KANA_HIRAGANA,
+                shifted = KB_JA_THUMBKEY_KANA_KATAKANA,
                 numeric = NUMERIC_KEYBOARD,
             ),
     )
