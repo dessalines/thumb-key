@@ -427,7 +427,7 @@ val KB_JA_THUMBKEY_HIRAGANA =
     )
 
 val KB_JA_THUMBKEY_KATAKANA =
-        KeyboardC(
+    KeyboardC(
         listOf(
             listOf(
                 KeyItemC(
