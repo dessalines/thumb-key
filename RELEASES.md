@@ -1,7 +1,22 @@
+# Thumb-Key 3.3.3 (2024-07-20)
+
+## What's Changed in 3.3.3
+
+- Farsi/Persian for Samsung devices by @Tirbod in [#984](https://github.com/dessalines/thumb-key/pull/984)
+- Merge hiragana and katakana by @K0baU in [#985](https://github.com/dessalines/thumb-key/pull/985)
+- Farsi/Persian Spacebar Multi-taps by @Tirbod in [#983](https://github.com/dessalines/thumb-key/pull/983)
+
+## New Contributors
+
+- @Tirbod made their first contribution in [#984](https://github.com/dessalines/thumb-key/pull/984)
+
+**Full Changelog**: https://github.com/dessalines/thumb-key/compare/3.3.2...3.3.3
+
 # Thumb-Key 3.3.2 (2024-07-16)
 
 ## What's Changed in 3.3.2
 
+- Upping version. by @dessalines
 - Fixed swipetype on EN Writer keyboard by @locrianz in [#977](https://github.com/dessalines/thumb-key/pull/977)
 - Fixed EN Writer keyboard by @locrianz in [#975](https://github.com/dessalines/thumb-key/pull/975)
 
