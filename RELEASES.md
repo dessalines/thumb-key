@@ -1,7 +1,17 @@
+# Thumb-Key 3.3.4 (2024-07-26)
+
+## What's Changed in 3.3.4
+
+- Adding DE + EN + AE keyboard. by @dessalines in [#991](https://github.com/dessalines/thumb-key/pull/991)
+- Adding screen transitions. by @dessalines in [#990](https://github.com/dessalines/thumb-key/pull/990)
+
+**Full Changelog**: https://github.com/dessalines/thumb-key/compare/3.3.3...3.3.4
+
 # Thumb-Key 3.3.3 (2024-07-20)
 
 ## What's Changed in 3.3.3
 
+- Upping version. by @dessalines
 - Farsi/Persian for Samsung devices by @Tirbod in [#984](https://github.com/dessalines/thumb-key/pull/984)
 - Merge hiragana and katakana by @K0baU in [#985](https://github.com/dessalines/thumb-key/pull/985)
 - Farsi/Persian Spacebar Multi-taps by @Tirbod in [#983](https://github.com/dessalines/thumb-key/pull/983)
