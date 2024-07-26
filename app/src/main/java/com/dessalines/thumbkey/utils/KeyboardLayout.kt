@@ -8,6 +8,7 @@ import com.dessalines.thumbkey.keyboards.KB_BY_THUMBKEY_SYMBOLS
 import com.dessalines.thumbkey.keyboards.KB_CA_THUMBKEY
 import com.dessalines.thumbkey.keyboards.KB_CZ_PROG
 import com.dessalines.thumbkey.keyboards.KB_DA_THUMBKEY
+import com.dessalines.thumbkey.keyboards.KB_DE_EN_AE_THUMBKEY
 import com.dessalines.thumbkey.keyboards.KB_DE_MESSAGEASE
 import com.dessalines.thumbkey.keyboards.KB_DE_MESSAGEASE_SYMBOLS
 import com.dessalines.thumbkey.keyboards.KB_DE_NORDIC_MESSAGEASE
@@ -272,4 +273,5 @@ enum class KeyboardLayout(
     ENThumbKeyWriter(KB_EN_THUMBKEY_WRITER),
     JAThumbKeyKana(KB_JA_THUMBKEY_KANA),
     FAThumbKeySamsung(KB_FA_THUMBKEY_SAMSUNG),
+    DEENAEThumbkey(KB_DE_EN_AE_THUMBKEY),
 }
