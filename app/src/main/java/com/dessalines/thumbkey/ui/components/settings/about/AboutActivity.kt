@@ -5,6 +5,8 @@ import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
+import androidx.compose.foundation.rememberScrollState
+import androidx.compose.foundation.verticalScroll
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.automirrored.outlined.Chat
 import androidx.compose.material.icons.outlined.AttachMoney
@@ -55,6 +57,7 @@ fun AboutActivity(navController: NavController) {
     val version = ctx.packageManager.getPackageInfo(ctx.packageName, 0).versionName
 
     val snackbarHostState = remember { SnackbarHostState() }
+    val scrollState = rememberScrollState()
 
     Scaffold(
         snackbarHost = { SnackbarHost(snackbarHostState) },
@@ -66,6 +69,7 @@ fun AboutActivity(navController: NavController) {
                 modifier =
                     Modifier
                         .padding(padding)
+                        .verticalScroll(scrollState)
                         .background(color = MaterialTheme.colorScheme.surface),
             ) {
                 ProvidePreferenceTheme {
