@@ -123,6 +123,7 @@ import com.dessalines.thumbkey.keyboards.KB_RU_THUMBKEY
 import com.dessalines.thumbkey.keyboards.KB_RU_THUMBKEY_SYMBOLS
 import com.dessalines.thumbkey.keyboards.KB_SK_THUMBKEY
 import com.dessalines.thumbkey.keyboards.KB_SK_THUMBKEY_V2
+import com.dessalines.thumbkey.keyboards.KB_SK_THUMBKEY_V3
 import com.dessalines.thumbkey.keyboards.KB_SL_MESSAGEASE_SYMBOLS
 import com.dessalines.thumbkey.keyboards.KB_SV_MESSAGEASE
 import com.dessalines.thumbkey.keyboards.KB_SV_THUMBKEY
@@ -261,7 +262,7 @@ enum class KeyboardLayout(
     TOKThumbKey(KB_TOK_THUMBKEY),
     TOKSitelenEmojiThumbKey(KB_TOK_SITELEN_EMOJI_THUMBKEY),
     PLTypeSplitSymbols(KB_PL_TYPESPLIT_SYMBOLS),
-    SKThumbKeyV3(KB_SK_THUMBKEY_V2),
+    SKThumbKeyV2(KB_SK_THUMBKEY_V2),
     ITMessagEaseSymbols(KB_IT_MESSAGEASE_SYMBOLS),
     ENQwertease(KB_EN_QWERTEASE),
     ENQTwoHandsQwertease(KB_EN_TWO_HANDS_QWERTEASE),
@@ -274,4 +275,5 @@ enum class KeyboardLayout(
     JAThumbKeyKana(KB_JA_THUMBKEY_KANA),
     FAThumbKeySamsung(KB_FA_THUMBKEY_SAMSUNG),
     DEENAEThumbkey(KB_DE_EN_AE_THUMBKEY),
+    SKThumbKeyV3(KB_SK_THUMBKEY_V3),
 }
