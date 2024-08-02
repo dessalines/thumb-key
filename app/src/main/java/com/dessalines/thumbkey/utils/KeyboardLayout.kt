@@ -69,6 +69,7 @@ import com.dessalines.thumbkey.keyboards.KB_ES_EO_THUMBKEY
 import com.dessalines.thumbkey.keyboards.KB_ES_MESSAGEASE
 import com.dessalines.thumbkey.keyboards.KB_ES_THUMBKEY
 import com.dessalines.thumbkey.keyboards.KB_ES_TYPESPLIT
+import com.dessalines.thumbkey.keyboards.KB_EUROPE_THUMBKEY
 import com.dessalines.thumbkey.keyboards.KB_EU_ES_THUMBKEY
 import com.dessalines.thumbkey.keyboards.KB_EU_THUMBKEY
 import com.dessalines.thumbkey.keyboards.KB_FA_THUMBKEY
@@ -276,4 +277,5 @@ enum class KeyboardLayout(
     FAThumbKeySamsung(KB_FA_THUMBKEY_SAMSUNG),
     DEENAEThumbkey(KB_DE_EN_AE_THUMBKEY),
     SKThumbKeyV3(KB_SK_THUMBKEY_V3),
+    EuropeThumbkey(KB_EUROPE_THUMBKEY),
 }
