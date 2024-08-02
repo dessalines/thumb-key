@@ -1,7 +1,22 @@
+# Thumb-Key 3.3.5 (2024-08-02)
+
+## What's Changed in 3.3.5
+
+- European Thumb-Key layout by @marekjm in [#998](https://github.com/dessalines/thumb-key/pull/998)
+- Adding simplified slovak layout, slovak thumbkey v3. by @dessalines in [#996](https://github.com/dessalines/thumb-key/pull/996)
+- Adding renovate automerge. by @dessalines
+
+## New Contributors
+
+- @marekjm made their first contribution in [#998](https://github.com/dessalines/thumb-key/pull/998)
+
+**Full Changelog**: https://github.com/dessalines/thumb-key/compare/3.3.4...3.3.5
+
 # Thumb-Key 3.3.4 (2024-07-26)
 
 ## What's Changed in 3.3.4
 
+- Upping version. by @dessalines
 - Adding DE + EN + AE keyboard. by @dessalines in [#991](https://github.com/dessalines/thumb-key/pull/991)
 - Adding screen transitions. by @dessalines in [#990](https://github.com/dessalines/thumb-key/pull/990)
 
@@ -120,13 +135,13 @@
 - Force LTR KeyboardScreen by @pxeemo in [#940](https://github.com/dessalines/thumb-key/pull/940)
 - add DEThumbkeySymbols by @Ingegneus in [#939](https://github.com/dessalines/thumb-key/pull/939)
 - Add letter K to "Italiano type-split" keyboard by @DvCCC66 in [#938](https://github.com/dessalines/thumb-key/pull/938)
-- Fix "latest version" links in issue forms by @StevenH237 in [#936](https://github.com/dessalines/thumb-key/pull/936)
+- Fix "latest version" links in issue forms by @Nixill in [#936](https://github.com/dessalines/thumb-key/pull/936)
 
 ## New Contributors
 
 - @Ingegneus made their first contribution in [#939](https://github.com/dessalines/thumb-key/pull/939)
 - @DvCCC66 made their first contribution in [#938](https://github.com/dessalines/thumb-key/pull/938)
-- @StevenH237 made their first contribution in [#936](https://github.com/dessalines/thumb-key/pull/936)
+- @Nixill made their first contribution in [#936](https://github.com/dessalines/thumb-key/pull/936)
 
 **Full Changelog**: https://github.com/dessalines/thumb-key/compare/3.2.1...3.2.2
 
