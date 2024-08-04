@@ -47,6 +47,12 @@ val TYPESPLIT_NUMERIC_KEYBOARD =
                                     display = KeyDisplay.TextDisplay("$"),
                                     action = KeyAction.CommitText("$"),
                                 ),
+                            SwipeDirection.TOP to
+                                KeyC(
+                                    display = KeyDisplay.TextDisplay("¯\\_(ツ)_/¯"),
+                                    action = KeyAction.CommitText("¯\\_(ツ)_/¯"),
+                                    size = FontSizeVariant.SMALLEST,
+                                ),
                         ),
                 ),
                 KeyItemC(
