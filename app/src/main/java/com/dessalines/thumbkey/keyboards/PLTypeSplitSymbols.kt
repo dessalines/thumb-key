@@ -616,7 +616,7 @@ val KB_PL_TYPESPLIT_SYMBOLS_SHIFTED =
                             size = FontSizeVariant.LARGE,
                             color = ColorVariant.PRIMARY,
                         ),
-                    swipeType = SwipeNWay.TWO_WAY_HORIZONTAL,
+                    swipeType = SwipeNWay.FOUR_WAY_CROSS,
                     swipes =
                         mapOf(
                             SwipeDirection.RIGHT to
