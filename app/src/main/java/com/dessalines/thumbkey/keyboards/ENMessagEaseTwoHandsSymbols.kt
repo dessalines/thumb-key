@@ -54,12 +54,13 @@ val KB_EN_MESSAGEASE_TWO_HANDS_SYMBOLS: KeyboardDefinition =
     KeyboardDefinition(
         title = "english messagease two-hands symbols",
         modes =
-        KeyboardDefinitionModes(
-            main = KB_EN_MESSAGEASE_TWO_HANDS_SYMBOLS_MAIN,
-            shifted = KB_EN_MESSAGEASE_TWO_HANDS_SYMBOLS_SHIFTED,
-            numeric = NUMERIC_KEYBOARD_MESSAGEASE_TWO_HANDS,
-        ),
-        KeyboardDefinitionSettings(
-            autoCapitalizers = arrayOf(::autoCapitalizeI, ::autoCapitalizeIApostrophe),
-        ),
+            KeyboardDefinitionModes(
+                main = KB_EN_MESSAGEASE_TWO_HANDS_SYMBOLS_MAIN,
+                shifted = KB_EN_MESSAGEASE_TWO_HANDS_SYMBOLS_SHIFTED,
+                numeric = NUMERIC_KEYBOARD_MESSAGEASE_TWO_HANDS,
+            ),
+        settings =
+            KeyboardDefinitionSettings(
+                autoCapitalizers = arrayOf(::autoCapitalizeI, ::autoCapitalizeIApostrophe),
+            ),
     )

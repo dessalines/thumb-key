@@ -1099,7 +1099,8 @@ val KB_EN_TWO_HANDS_QWERTEASE: KeyboardDefinition =
                 shifted = KB_EN_TWO_HANDS_QWERTEASE_SHIFTED,
                 numeric = KB_EN_TWO_HANDS_MESSAGEASE_NUMERIC,
             ),
-        KeyboardDefinitionSettings(
-            autoCapitalizers = arrayOf(::autoCapitalizeI, ::autoCapitalizeIApostrophe),
-        ),
+        settings =
+            KeyboardDefinitionSettings(
+                autoCapitalizers = arrayOf(::autoCapitalizeI, ::autoCapitalizeIApostrophe),
+            ),
     )
