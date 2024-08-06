@@ -816,7 +816,7 @@ val KB_EUROPE_THUMBKEY_SHIFTED =
 
 val KB_EUROPE_THUMBKEY: KeyboardDefinition =
     KeyboardDefinition(
-        title = "European thumb-key",
+        title = "european thumb-key",
         modes =
             KeyboardDefinitionModes(
                 main = KB_EUROPE_THUMBKEY_MAIN,
