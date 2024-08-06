@@ -1033,7 +1033,7 @@ val KB_CZ_PROG_SHIFTED =
 
 val KB_CZ_PROG: KeyboardDefinition =
     KeyboardDefinition(
-        title = "čeština programming messagease",
+        title = "čeština messagease programming",
         modes =
             KeyboardDefinitionModes(
                 main = KB_CZ_PROG_MAIN,

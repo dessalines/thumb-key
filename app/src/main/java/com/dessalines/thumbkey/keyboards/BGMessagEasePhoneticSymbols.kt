@@ -942,7 +942,7 @@ val KB_BG_PHONETIC_MESSAGEASE_SYMBOLS_SHIFTED =
 
 val KB_BG_PHONETIC_MESSAGEASE_SYMBOLS: KeyboardDefinition =
     KeyboardDefinition(
-        title = "bulgarian symbols phonetic messagease",
+        title = "bulgarian messagease phonetic symbols",
         modes =
             KeyboardDefinitionModes(
                 main = KB_BG_PHONETIC_MESSAGEASE_SYMBOLS_MAIN,

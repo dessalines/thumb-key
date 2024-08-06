@@ -980,7 +980,7 @@ val KB_EN_THUMBKEY_WRITER_SHIFTED =
 
 val KB_EN_THUMBKEY_WRITER: KeyboardDefinition =
     KeyboardDefinition(
-        title = "english writer thumb-key",
+        title = "english thumb-key writer",
         modes =
             KeyboardDefinitionModes(
                 main = KB_EN_THUMBKEY_WRITER_MAIN,

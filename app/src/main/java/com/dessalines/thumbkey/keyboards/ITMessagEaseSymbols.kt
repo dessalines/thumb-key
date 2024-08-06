@@ -961,7 +961,7 @@ val KB_IT_MESSAGEASE_SYMBOLS_SHIFTED =
 
 val KB_IT_MESSAGEASE_SYMBOLS: KeyboardDefinition =
     KeyboardDefinition(
-        title = "italiano symbols messagease",
+        title = "italiano messagease symbols",
         modes =
             KeyboardDefinitionModes(
                 main = KB_IT_MESSAGEASE_SYMBOLS_MAIN,

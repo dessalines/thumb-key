@@ -687,7 +687,7 @@ val KB_SK_THUMBKEY_SHIFTED =
 
 val KB_SK_THUMBKEY: KeyboardDefinition =
     KeyboardDefinition(
-        title = "slovenčina thumb-key",
+        title = "slovenčina thumb-key v1",
         modes =
             KeyboardDefinitionModes(
                 main = KB_SK_THUMBKEY_MAIN,

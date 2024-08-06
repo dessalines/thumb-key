@@ -719,7 +719,7 @@ val KB_TOK_SITELEN_EMOJI_THUMBKEY_SHIFTED =
 
 val KB_TOK_SITELEN_EMOJI_THUMBKEY: KeyboardDefinition =
     KeyboardDefinition(
-        title = "toki pona sitelen emoji thumb-key",
+        title = "toki pona sitelen thumb-key emoji",
         modes =
             KeyboardDefinitionModes(
                 main = KB_TOK_SITELEN_EMOJI_THUMBKEY_MAIN,

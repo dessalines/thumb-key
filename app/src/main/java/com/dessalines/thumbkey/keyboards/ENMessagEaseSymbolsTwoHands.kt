@@ -52,7 +52,7 @@ val NUMERIC_KEYBOARD_MESSAGEASE_TWO_HANDS =
 
 val KB_EN_MESSAGEASE_TWO_HANDS_SYMBOLS: KeyboardDefinition =
     KeyboardDefinition(
-        title = "english messagease two-hands symbols",
+        title = "english messagease symbols two-hands",
         modes =
             KeyboardDefinitionModes(
                 main = KB_EN_MESSAGEASE_TWO_HANDS_SYMBOLS_MAIN,

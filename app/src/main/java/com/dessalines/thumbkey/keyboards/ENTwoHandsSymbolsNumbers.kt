@@ -1999,7 +1999,7 @@ val KB_EN_TWO_HANDS_SYMBOLS_NUMBERS_SHIFTED =
 
 val KB_EN_TWO_HANDS_SYMBOLS_NUMBERS: KeyboardDefinition =
     KeyboardDefinition(
-        title = "english two-hands symbols-numbers",
+        title = "english symbols-numbers two-hands",
         modes =
             KeyboardDefinitionModes(
                 main = KB_EN_TWO_HANDS_SYMBOLS_NUMBERS_MAIN,

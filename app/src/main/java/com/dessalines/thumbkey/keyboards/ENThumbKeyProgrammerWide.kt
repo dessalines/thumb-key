@@ -1150,7 +1150,7 @@ val NUMERIC_KEYBOARD_WIDE =
 
 val KB_EN_THUMBKEY_PROGRAMMER_WIDE: KeyboardDefinition =
     KeyboardDefinition(
-        title = "english wide programmer thumb-key",
+        title = "english thumb-key programming wide",
         modes =
             KeyboardDefinitionModes(
                 main = KB_EN_THUMBKEY_PROGRAMMER_WIDE_MAIN,

@@ -983,7 +983,7 @@ val KB_DE_EN_AE_THUMBKEY_SHIFTED =
 
 val KB_DE_EN_AE_THUMBKEY =
     KeyboardDefinition(
-        title = "deutsch english +Æ thumb-key",
+        title = "english deutsch thumb-key +æ",
         modes =
             KeyboardDefinitionModes(
                 main = KB_DE_EN_AE_THUMBKEY_MAIN,

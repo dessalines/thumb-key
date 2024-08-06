@@ -928,7 +928,7 @@ val KB_EN_DA_THUMBKEY_SYMBOLS_SHIFTED =
 
 val KB_EN_DA_THUMBKEY_SYMBOLS: KeyboardDefinition =
     KeyboardDefinition(
-        title = "english dansk symbols thumb-key",
+        title = "english dansk thumb-key symbols",
         modes =
             KeyboardDefinitionModes(
                 main = KB_EN_DA_THUMBKEY_SYMBOLS_MAIN,

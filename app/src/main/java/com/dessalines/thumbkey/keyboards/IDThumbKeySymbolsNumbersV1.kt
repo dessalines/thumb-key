@@ -992,7 +992,7 @@ val KB_ID_THUMBKEY_SYMBOLS_NUMERIC_V1_SHIFTED =
 
 val KB_ID_THUMBKEY_SYMBOLS_NUMERIC_V1: KeyboardDefinition =
     KeyboardDefinition(
-        title = "bahasa indonesia symbols numeric v1 thumb-key",
+        title = "bahasa indonesia thumb-key symbols-numbers v1",
         modes =
             KeyboardDefinitionModes(
                 main = KB_ID_THUMBKEY_SYMBOLS_NUMERIC_V1_MAIN,

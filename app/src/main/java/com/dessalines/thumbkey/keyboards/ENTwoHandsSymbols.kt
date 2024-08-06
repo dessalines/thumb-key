@@ -1739,7 +1739,7 @@ val KB_EN_TWO_HANDS_SYMBOLS_SHIFTED =
 
 val KB_EN_TWO_HANDS_SYMBOLS: KeyboardDefinition =
     KeyboardDefinition(
-        title = "english two-hands symbols",
+        title = "english symbols two-hands",
         modes =
             KeyboardDefinitionModes(
                 main = KB_EN_TWO_HANDS_SYMBOLS_MAIN,

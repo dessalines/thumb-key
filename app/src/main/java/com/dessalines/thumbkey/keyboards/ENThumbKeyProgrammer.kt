@@ -842,7 +842,7 @@ val KB_EN_THUMBKEY_PROGRAMMER_SHIFTED =
 
 val KB_EN_THUMBKEY_PROGRAMMER: KeyboardDefinition =
     KeyboardDefinition(
-        title = "english programmer thumb-key",
+        title = "english thumb-key programmer",
         modes =
             KeyboardDefinitionModes(
                 main = KB_EN_THUMBKEY_PROGRAMMER_MAIN,

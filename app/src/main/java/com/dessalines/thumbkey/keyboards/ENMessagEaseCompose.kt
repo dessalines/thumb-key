@@ -940,7 +940,7 @@ val KB_EN_MESSAGEASE_COMPOSED_SHIFTED =
 
 val KB_EN_MESSAGEASE_COMPOSE: KeyboardDefinition =
     KeyboardDefinition(
-        title = "english composed messagease",
+        title = "english messagease compose",
         modes =
             KeyboardDefinitionModes(
                 main = KB_EN_MESSAGEASE_COMPOSED_MAIN,
