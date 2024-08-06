@@ -1,7 +1,22 @@
+# Thumb-Key 3.3.6 (2024-08-06)
+
+## What's Changed in 3.3.6
+
+- Fix european keyboard name. by @dessalines
+- Add layout: English MessagEase two-hands symbols by @mpsijm in [#1002](https://github.com/dessalines/thumb-key/pull/1002)
+- ESThumbKey.kt exclamation and question mark by @ZePotente in [#1001](https://github.com/dessalines/thumb-key/pull/1001)
+
+## New Contributors
+
+- @ZePotente made their first contribution in [#1001](https://github.com/dessalines/thumb-key/pull/1001)
+
+**Full Changelog**: https://github.com/dessalines/thumb-key/compare/3.3.5...3.3.6
+
 # Thumb-Key 3.3.5 (2024-08-02)
 
 ## What's Changed in 3.3.5
 
+- Upping version. by @dessalines
 - European Thumb-Key layout by @marekjm in [#998](https://github.com/dessalines/thumb-key/pull/998)
 - Adding simplified slovak layout, slovak thumbkey v3. by @dessalines in [#996](https://github.com/dessalines/thumb-key/pull/996)
 - Adding renovate automerge. by @dessalines
