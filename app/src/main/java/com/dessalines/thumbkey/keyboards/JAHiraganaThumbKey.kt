@@ -12,7 +12,7 @@ import com.dessalines.thumbkey.utils.KeyboardDefinitionModes
 import com.dessalines.thumbkey.utils.SwipeDirection
 import com.dessalines.thumbkey.utils.SwipeNWay
 
-val KB_JA_THUMBKEY_HIRAGANA_MAIN =
+val KB_JA_HIRAGANA_THUMBKEY_MAIN =
     KeyboardC(
         listOf(
             listOf(
@@ -393,7 +393,7 @@ val KB_JA_THUMBKEY_HIRAGANA_MAIN =
         ),
     )
 
-val KB_JA_THUMBKEY_HIRAGANA_SHIFTED =
+val KB_JA_HIRAGANA_THUMBKEY_SHIFTED =
     KeyboardC(
         listOf(
             listOf(
@@ -589,13 +589,13 @@ val KB_JA_THUMBKEY_HIRAGANA_SHIFTED =
         ),
     )
 
-val KB_JA_THUMBKEY_HIRAGANA: KeyboardDefinition =
+val KB_JA_HIRAGANA_THUMBKEY: KeyboardDefinition =
     KeyboardDefinition(
         title = "japanese hiragana thumb-key",
         modes =
             KeyboardDefinitionModes(
-                main = KB_JA_THUMBKEY_HIRAGANA_MAIN,
-                shifted = KB_JA_THUMBKEY_HIRAGANA_SHIFTED,
+                main = KB_JA_HIRAGANA_THUMBKEY_MAIN,
+                shifted = KB_JA_HIRAGANA_THUMBKEY_SHIFTED,
                 numeric = NUMERIC_KEYBOARD,
             ),
     )

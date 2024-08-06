@@ -17,7 +17,7 @@ import com.dessalines.thumbkey.utils.KeyboardDefinitionModes
 import com.dessalines.thumbkey.utils.SwipeDirection
 import com.dessalines.thumbkey.utils.SwipeNWay
 
-val KB_SK_THUMBKEY_MAIN =
+val KB_SK_THUMBKEY_V1_MAIN =
     KeyboardC(
         listOf(
             listOf(
@@ -350,7 +350,7 @@ val KB_SK_THUMBKEY_MAIN =
         ),
     )
 
-val KB_SK_THUMBKEY_SHIFTED =
+val KB_SK_THUMBKEY_V1_SHIFTED =
     KeyboardC(
         listOf(
             listOf(
@@ -685,13 +685,13 @@ val KB_SK_THUMBKEY_SHIFTED =
         ),
     )
 
-val KB_SK_THUMBKEY: KeyboardDefinition =
+val KB_SK_THUMBKEY_V1: KeyboardDefinition =
     KeyboardDefinition(
         title = "slovenčina thumb-key v1",
         modes =
             KeyboardDefinitionModes(
-                main = KB_SK_THUMBKEY_MAIN,
-                shifted = KB_SK_THUMBKEY_SHIFTED,
+                main = KB_SK_THUMBKEY_V1_MAIN,
+                shifted = KB_SK_THUMBKEY_V1_SHIFTED,
                 numeric = NUMERIC_KEYBOARD,
             ),
     )

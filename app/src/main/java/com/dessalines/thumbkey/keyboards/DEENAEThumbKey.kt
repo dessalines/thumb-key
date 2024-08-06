@@ -15,7 +15,7 @@ import com.dessalines.thumbkey.utils.KeyboardDefinition
 import com.dessalines.thumbkey.utils.KeyboardDefinitionModes
 import com.dessalines.thumbkey.utils.SwipeDirection
 
-val KB_DE_EN_AE_THUMBKEY_MAIN =
+val KB_EN_DE_THUMBKEY_AE_MAIN =
     KeyboardC(
         listOf(
             listOf(
@@ -498,7 +498,7 @@ val KB_DE_EN_AE_THUMBKEY_MAIN =
         ),
     )
 
-val KB_DE_EN_AE_THUMBKEY_SHIFTED =
+val KB_EN_DE_THUMBKEY_AE_SHIFTED =
     KeyboardC(
         listOf(
             listOf(
@@ -981,13 +981,13 @@ val KB_DE_EN_AE_THUMBKEY_SHIFTED =
         ),
     )
 
-val KB_DE_EN_AE_THUMBKEY =
+val KB_EN_DE_THUMBKEY_AE =
     KeyboardDefinition(
         title = "english deutsch thumb-key +æ",
         modes =
             KeyboardDefinitionModes(
-                main = KB_DE_EN_AE_THUMBKEY_MAIN,
-                shifted = KB_DE_EN_AE_THUMBKEY_SHIFTED,
+                main = KB_EN_DE_THUMBKEY_AE_MAIN,
+                shifted = KB_EN_DE_THUMBKEY_AE_SHIFTED,
                 numeric = NUMERIC_KEYBOARD,
             ),
     )

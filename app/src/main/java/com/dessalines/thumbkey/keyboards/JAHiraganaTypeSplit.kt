@@ -12,7 +12,7 @@ import com.dessalines.thumbkey.utils.KeyboardDefinitionModes
 import com.dessalines.thumbkey.utils.SwipeDirection
 import com.dessalines.thumbkey.utils.SwipeNWay
 
-val KB_JA_TYPESPLIT_HIRAGANA_MAIN =
+val KB_JA_HIRAGANA_TYPESPLIT_MAIN =
     KeyboardC(
         listOf(
             listOf(
@@ -431,7 +431,7 @@ val KB_JA_TYPESPLIT_HIRAGANA_MAIN =
         ),
     )
 
-val KB_JA_TYPESPLIT_HIRAGANA_SHIFTED =
+val KB_JA_HIRAGANA_TYPESPLIT_SHIFTED =
     KeyboardC(
         listOf(
             listOf(
@@ -807,13 +807,13 @@ val KB_JA_TYPESPLIT_HIRAGANA_SHIFTED =
         ),
     )
 
-val KB_JA_TYPESPLIT_HIRAGANA: KeyboardDefinition =
+val KB_JA_HIRAGANA_TYPESPLIT: KeyboardDefinition =
     KeyboardDefinition(
         title = "japanese hiragana type-split",
         modes =
             KeyboardDefinitionModes(
-                main = KB_JA_TYPESPLIT_HIRAGANA_MAIN,
-                shifted = KB_JA_TYPESPLIT_HIRAGANA_SHIFTED,
+                main = KB_JA_HIRAGANA_TYPESPLIT_MAIN,
+                shifted = KB_JA_HIRAGANA_TYPESPLIT_SHIFTED,
                 numeric = TYPESPLIT_NUMERIC_KEYBOARD,
             ),
     )

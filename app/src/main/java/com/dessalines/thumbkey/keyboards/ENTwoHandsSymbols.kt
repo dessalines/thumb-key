@@ -19,7 +19,7 @@ import com.dessalines.thumbkey.utils.SwipeNWay
 import com.dessalines.thumbkey.utils.autoCapitalizeI
 import com.dessalines.thumbkey.utils.autoCapitalizeIApostrophe
 
-val KB_EN_TWO_HANDS_SYMBOLS_MAIN =
+val KB_EN_SYMBOLS_TWO_HANDS_MAIN =
     KeyboardC(
         listOf(
             listOf(
@@ -875,7 +875,7 @@ val KB_EN_TWO_HANDS_SYMBOLS_MAIN =
         ),
     )
 
-val KB_EN_TWO_HANDS_SYMBOLS_SHIFTED =
+val KB_EN_SYMBOLS_TWO_HANDS_SHIFTED =
     KeyboardC(
         listOf(
             listOf(
@@ -1737,13 +1737,13 @@ val KB_EN_TWO_HANDS_SYMBOLS_SHIFTED =
         ),
     )
 
-val KB_EN_TWO_HANDS_SYMBOLS: KeyboardDefinition =
+val KB_EN_SYMBOLS_TWO_HANDS: KeyboardDefinition =
     KeyboardDefinition(
         title = "english symbols two-hands",
         modes =
             KeyboardDefinitionModes(
-                main = KB_EN_TWO_HANDS_SYMBOLS_MAIN,
-                shifted = KB_EN_TWO_HANDS_SYMBOLS_SHIFTED,
+                main = KB_EN_SYMBOLS_TWO_HANDS_MAIN,
+                shifted = KB_EN_SYMBOLS_TWO_HANDS_SHIFTED,
                 numeric = TWO_HANDS_NUMERIC_KEYBOARD,
             ),
         settings =

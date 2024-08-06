@@ -17,7 +17,7 @@ import com.dessalines.thumbkey.utils.KeyboardDefinitionModes
 import com.dessalines.thumbkey.utils.SwipeDirection
 import com.dessalines.thumbkey.utils.SwipeNWay
 
-val KB_EOENDE_THUMBKEY_MAIN =
+val KB_EO_EN_DE_THUMBKEY_MAIN =
     KeyboardC(
         listOf(
             listOf(
@@ -328,7 +328,7 @@ val KB_EOENDE_THUMBKEY_MAIN =
         ),
     )
 
-val KB_EOENDE_THUMBKEY_SHIFTED =
+val KB_EO_EN_DE_THUMBKEY_SHIFTED =
     KeyboardC(
         listOf(
             listOf(
@@ -642,13 +642,13 @@ val KB_EOENDE_THUMBKEY_SHIFTED =
         ),
     )
 
-val KB_EOENDE_THUMBKEY: KeyboardDefinition =
+val KB_EO_EN_DE_THUMBKEY: KeyboardDefinition =
     KeyboardDefinition(
         title = "esperanto english deutsch thumb-key",
         modes =
             KeyboardDefinitionModes(
-                main = KB_EOENDE_THUMBKEY_MAIN,
-                shifted = KB_EOENDE_THUMBKEY_SHIFTED,
+                main = KB_EO_EN_DE_THUMBKEY_MAIN,
+                shifted = KB_EO_EN_DE_THUMBKEY_SHIFTED,
                 numeric = NUMERIC_KEYBOARD,
             ),
     )

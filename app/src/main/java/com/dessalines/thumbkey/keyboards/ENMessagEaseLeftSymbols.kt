@@ -7,7 +7,7 @@ import com.dessalines.thumbkey.utils.autoCapitalizeI
 import com.dessalines.thumbkey.utils.autoCapitalizeIApostrophe
 import com.dessalines.thumbkey.utils.lastColKeysToFirst
 
-val KB_EN_MESSAGEASE_SYMBOLS_LEFT: KeyboardDefinition =
+val KB_EN_MESSAGEASE_LEFT_SYMBOLS: KeyboardDefinition =
     KeyboardDefinition(
         title = "english messagease left-handed symbols",
         modes =
