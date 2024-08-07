@@ -280,4 +280,5 @@ enum class KeyboardLayout(
     SKThumbKeyV3(KB_SK_THUMBKEY_V3),
     EuropeThumbkey(KB_EUROPE_THUMBKEY),
     ENTwoHandsMessagEaseSymbols(KB_EN_MESSAGEASE_TWO_HANDS_SYMBOLS),
+    RUThumbKeyWriter(KB_RU_THUMBKEY_WRITER),
 }
