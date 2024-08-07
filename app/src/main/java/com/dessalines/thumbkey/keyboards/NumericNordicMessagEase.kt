@@ -12,7 +12,7 @@ import com.dessalines.thumbkey.utils.KeyboardC
 import com.dessalines.thumbkey.utils.SwipeDirection
 import com.dessalines.thumbkey.utils.getLocalCurrency
 
-val KB_DE_NORDIC_MESSAGEASE_NUMERIC =
+val KB_NORDIC_MESSAGEASE_NUMERIC =
     KeyboardC(
         listOf(
             listOf(

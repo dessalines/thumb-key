@@ -16,7 +16,7 @@ import com.dessalines.thumbkey.utils.SwipeDirection
 // Frequencies from here: https://www.reddit.com/r/tokipona/comments/cxlpt5/frequency_list_of_toki_pona_words_from_tatoeba
 // Since these aren't vowels, no need to alternate, just do bottom right to left, bottom to top
 
-val KB_TOK_SITELEN_EMOJI_THUMBKEY_MAIN =
+val KB_TOK_SITELEN_THUMBKEY_EMOJI_MAIN =
     KeyboardC(
         listOf(
             listOf(
@@ -409,7 +409,7 @@ val KB_TOK_SITELEN_EMOJI_THUMBKEY_MAIN =
         ),
     )
 
-val KB_TOK_SITELEN_EMOJI_THUMBKEY_SHIFTED =
+val KB_TOK_SITELEN_THUMBKEY_EMOJI_SHIFTED =
     KeyboardC(
         listOf(
             listOf(
@@ -717,13 +717,13 @@ val KB_TOK_SITELEN_EMOJI_THUMBKEY_SHIFTED =
         ),
     )
 
-val KB_TOK_SITELEN_EMOJI_THUMBKEY: KeyboardDefinition =
+val KB_TOK_SITELEN_THUMBKEY_EMOJI: KeyboardDefinition =
     KeyboardDefinition(
-        title = "toki pona sitelen emoji thumb-key",
+        title = "toki pona sitelen thumb-key emoji",
         modes =
             KeyboardDefinitionModes(
-                main = KB_TOK_SITELEN_EMOJI_THUMBKEY_MAIN,
-                shifted = KB_TOK_SITELEN_EMOJI_THUMBKEY_SHIFTED,
+                main = KB_TOK_SITELEN_THUMBKEY_EMOJI_MAIN,
+                shifted = KB_TOK_SITELEN_THUMBKEY_EMOJI_SHIFTED,
                 numeric = NUMERIC_KEYBOARD,
             ),
     )

@@ -20,7 +20,7 @@ import com.dessalines.thumbkey.utils.SwipeNWay
 import com.dessalines.thumbkey.utils.autoCapitalizeI
 import com.dessalines.thumbkey.utils.autoCapitalizeIApostrophe
 
-val KB_EN_TWO_HANDS_QWERTEASE_MAIN =
+val KB_EN_QWERTEASE_TWO_HANDS_MAIN =
     KeyboardC(
         listOf(
             listOf(
@@ -552,7 +552,7 @@ val KB_EN_TWO_HANDS_QWERTEASE_MAIN =
         ),
     )
 
-val KB_EN_TWO_HANDS_QWERTEASE_SHIFTED =
+val KB_EN_QWERTEASE_TWO_HANDS_SHIFTED =
     KeyboardC(
         listOf(
             listOf(
@@ -1090,14 +1090,14 @@ val KB_EN_TWO_HANDS_QWERTEASE_SHIFTED =
         ),
     )
 
-val KB_EN_TWO_HANDS_QWERTEASE: KeyboardDefinition =
+val KB_EN_QWERTEASE_TWO_HANDS: KeyboardDefinition =
     KeyboardDefinition(
         title = "english qwertease two-hands",
         modes =
             KeyboardDefinitionModes(
-                main = KB_EN_TWO_HANDS_QWERTEASE_MAIN,
-                shifted = KB_EN_TWO_HANDS_QWERTEASE_SHIFTED,
-                numeric = KB_EN_TWO_HANDS_MESSAGEASE_NUMERIC,
+                main = KB_EN_QWERTEASE_TWO_HANDS_MAIN,
+                shifted = KB_EN_QWERTEASE_TWO_HANDS_SHIFTED,
+                numeric = KB_EN_MESSAGEASE_TWO_HANDS_NUMERIC,
             ),
         settings =
             KeyboardDefinitionSettings(

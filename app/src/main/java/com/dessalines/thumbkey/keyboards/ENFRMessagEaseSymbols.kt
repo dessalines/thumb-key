@@ -1183,7 +1183,7 @@ val KB_EN_FR_NUMERIC =
 
 val KB_EN_FR_MESSAGEASE_SYMBOLS: KeyboardDefinition =
     KeyboardDefinition(
-        title = "english français symbols messagease",
+        title = "english français messagease symbols",
         modes =
             KeyboardDefinitionModes(
                 main = KB_EN_FR_MAIN,

@@ -10,7 +10,7 @@ import com.dessalines.thumbkey.utils.KeyboardC
 import com.dessalines.thumbkey.utils.SwipeDirection
 import com.dessalines.thumbkey.utils.getLocalCurrency
 
-val KB_EN_TWO_HANDS_MESSAGEASE_NUMERIC =
+val KB_EN_MESSAGEASE_TWO_HANDS_NUMERIC =
     KeyboardC(
         listOf(
             listOf(

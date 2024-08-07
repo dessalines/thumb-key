@@ -12,7 +12,7 @@ import com.dessalines.thumbkey.utils.KeyboardDefinitionModes
 import com.dessalines.thumbkey.utils.SwipeDirection
 import com.dessalines.thumbkey.utils.SwipeNWay
 
-val KB_JA_THUMBKEY_KATAKANA_MAIN =
+val KB_JA_KATAKANA_THUMBKEY_MAIN =
     KeyboardC(
         listOf(
             listOf(
@@ -388,7 +388,7 @@ val KB_JA_THUMBKEY_KATAKANA_MAIN =
         ),
     )
 
-val KB_JA_THUMBKEY_KATAKANA_SHIFTED =
+val KB_JA_KATAKANA_THUMBKEY_SHIFTED =
     KeyboardC(
         listOf(
             listOf(
@@ -584,13 +584,13 @@ val KB_JA_THUMBKEY_KATAKANA_SHIFTED =
         ),
     )
 
-val KB_JA_THUMBKEY_KATAKANA: KeyboardDefinition =
+val KB_JA_KATAKANA_THUMBKEY: KeyboardDefinition =
     KeyboardDefinition(
         title = "japanese katakana thumb-key",
         modes =
             KeyboardDefinitionModes(
-                main = KB_JA_THUMBKEY_KATAKANA_MAIN,
-                shifted = KB_JA_THUMBKEY_KATAKANA_SHIFTED,
+                main = KB_JA_KATAKANA_THUMBKEY_MAIN,
+                shifted = KB_JA_KATAKANA_THUMBKEY_SHIFTED,
                 numeric = NUMERIC_KEYBOARD,
             ),
     )

@@ -21,8 +21,8 @@ import com.dessalines.thumbkey.utils.SwipeNWay
 import com.dessalines.thumbkey.utils.autoCapitalizeI
 import com.dessalines.thumbkey.utils.autoCapitalizeIApostrophe
 
-// uses programmer layout but moves spacebar to the left column in order to make a more aspect ration friendly layout. this grid is 5x3 which is closer to the average phone aspect ration of 16:9 than 4x4 keyboard.
-val KB_EN_THUMBKEY_PROGRAMMER_WIDE_MAIN =
+// uses programming layout but moves spacebar to the left column in order to make a more aspect ration friendly layout. this grid is 5x3 which is closer to the average phone aspect ration of 16:9 than 4x4 keyboard.
+val KB_EN_THUMBKEY_PROGRAMMING_WIDE_MAIN =
     KeyboardC(
         listOf(
             listOf(
@@ -423,7 +423,7 @@ val KB_EN_THUMBKEY_PROGRAMMER_WIDE_MAIN =
         ),
     )
 
-val KB_EN_THUMBKEY_PROGRAMMER_WIDE_SHIFTED =
+val KB_EN_THUMBKEY_PROGRAMMING_WIDE_SHIFTED =
     KeyboardC(
         listOf(
             listOf(
@@ -1148,13 +1148,13 @@ val NUMERIC_KEYBOARD_WIDE =
         ),
     )
 
-val KB_EN_THUMBKEY_PROGRAMMER_WIDE: KeyboardDefinition =
+val KB_EN_THUMBKEY_PROGRAMMING_WIDE: KeyboardDefinition =
     KeyboardDefinition(
-        title = "english wide programmer thumb-key",
+        title = "english thumb-key programming wide",
         modes =
             KeyboardDefinitionModes(
-                main = KB_EN_THUMBKEY_PROGRAMMER_WIDE_MAIN,
-                shifted = KB_EN_THUMBKEY_PROGRAMMER_WIDE_SHIFTED,
+                main = KB_EN_THUMBKEY_PROGRAMMING_WIDE_MAIN,
+                shifted = KB_EN_THUMBKEY_PROGRAMMING_WIDE_SHIFTED,
                 numeric = NUMERIC_KEYBOARD_WIDE,
             ),
         settings =

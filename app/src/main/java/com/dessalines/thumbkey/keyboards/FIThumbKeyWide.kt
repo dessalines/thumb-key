@@ -560,7 +560,7 @@ val KB_FI_THUMBKEY_WIDE_SHIFTED =
 
 val KB_FI_THUMBKEY_WIDE: KeyboardDefinition =
     KeyboardDefinition(
-        title = "suomi wide thumb-key",
+        title = "suomi thumb-key wide",
         modes =
             KeyboardDefinitionModes(
                 main = KB_FI_THUMBKEY_WIDE_MAIN,

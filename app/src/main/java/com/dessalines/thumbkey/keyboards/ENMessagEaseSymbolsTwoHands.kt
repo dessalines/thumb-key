@@ -7,7 +7,7 @@ import com.dessalines.thumbkey.utils.KeyboardDefinitionSettings
 import com.dessalines.thumbkey.utils.autoCapitalizeI
 import com.dessalines.thumbkey.utils.autoCapitalizeIApostrophe
 
-val KB_EN_MESSAGEASE_TWO_HANDS_SYMBOLS_MAIN =
+val KB_EN_MESSAGEASE_SYMBOLS_TWO_HANDS_MAIN =
     KeyboardC(
         listOf(
             KB_EN_MESSAGEASE_SYMBOLS_MAIN.arr[0] +
@@ -21,7 +21,7 @@ val KB_EN_MESSAGEASE_TWO_HANDS_SYMBOLS_MAIN =
         ),
     )
 
-val KB_EN_MESSAGEASE_TWO_HANDS_SYMBOLS_SHIFTED =
+val KB_EN_MESSAGEASE_SYMBOLS_TWO_HANDS_SHIFTED =
     KeyboardC(
         listOf(
             KB_EN_MESSAGEASE_SYMBOLS_SHIFTED.arr[0] +
@@ -50,13 +50,13 @@ val NUMERIC_KEYBOARD_MESSAGEASE_TWO_HANDS =
         ),
     )
 
-val KB_EN_MESSAGEASE_TWO_HANDS_SYMBOLS: KeyboardDefinition =
+val KB_EN_MESSAGEASE_SYMBOLS_TWO_HANDS: KeyboardDefinition =
     KeyboardDefinition(
-        title = "english messagease two-hands symbols",
+        title = "english messagease symbols two-hands",
         modes =
             KeyboardDefinitionModes(
-                main = KB_EN_MESSAGEASE_TWO_HANDS_SYMBOLS_MAIN,
-                shifted = KB_EN_MESSAGEASE_TWO_HANDS_SYMBOLS_SHIFTED,
+                main = KB_EN_MESSAGEASE_SYMBOLS_TWO_HANDS_MAIN,
+                shifted = KB_EN_MESSAGEASE_SYMBOLS_TWO_HANDS_SHIFTED,
                 numeric = NUMERIC_KEYBOARD_MESSAGEASE_TWO_HANDS,
             ),
         settings =

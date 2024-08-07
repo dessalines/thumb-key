@@ -5,7 +5,7 @@ import com.dessalines.thumbkey.utils.KeyboardDefinitionModes
 
 val KB_FA_THUMBKEY_SAMSUNG: KeyboardDefinition =
     KeyboardDefinition(
-        title = "thumb-key فارسی samsung",
+        title = "فارسی thumb-key samsung",
         modes =
             KeyboardDefinitionModes(
                 main = KB_FA_THUMBKEY_MAIN,

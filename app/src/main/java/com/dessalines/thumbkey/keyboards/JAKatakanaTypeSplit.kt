@@ -12,7 +12,7 @@ import com.dessalines.thumbkey.utils.KeyboardDefinitionModes
 import com.dessalines.thumbkey.utils.SwipeDirection
 import com.dessalines.thumbkey.utils.SwipeNWay
 
-val KB_JA_TYPESPLIT_KATAKANA_MAIN =
+val KB_JA_KATAKANA_TYPESPLIT_MAIN =
     KeyboardC(
         listOf(
             listOf(
@@ -431,7 +431,7 @@ val KB_JA_TYPESPLIT_KATAKANA_MAIN =
         ),
     )
 
-val KB_JA_TYPESPLIT_KATAKANA_SHIFTED =
+val KB_JA_KATAKANA_TYPESPLIT_SHIFTED =
     KeyboardC(
         listOf(
             listOf(
@@ -807,13 +807,13 @@ val KB_JA_TYPESPLIT_KATAKANA_SHIFTED =
         ),
     )
 
-val KB_JA_TYPESPLIT_KATAKANA: KeyboardDefinition =
+val KB_JA_KATAKANA_TYPESPLIT: KeyboardDefinition =
     KeyboardDefinition(
         title = "japanese katakana type-split",
         modes =
             KeyboardDefinitionModes(
-                main = KB_JA_TYPESPLIT_KATAKANA_MAIN,
-                shifted = KB_JA_TYPESPLIT_KATAKANA_SHIFTED,
+                main = KB_JA_KATAKANA_TYPESPLIT_MAIN,
+                shifted = KB_JA_KATAKANA_TYPESPLIT_SHIFTED,
                 numeric = TYPESPLIT_NUMERIC_KEYBOARD,
             ),
     )

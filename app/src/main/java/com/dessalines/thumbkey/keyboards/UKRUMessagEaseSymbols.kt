@@ -943,7 +943,7 @@ val KB_UK_RU_MESSAGEASE_SYMBOLS_SHIFTED =
 
 val KB_UK_RU_MESSAGEASE_SYMBOLS: KeyboardDefinition =
     KeyboardDefinition(
-        title = "русский українська мова symbols messagease",
+        title = "українська русский messagease symbols",
         modes =
             KeyboardDefinitionModes(
                 main = KB_UK_RU_MESSAGEASE_SYMBOLS_MAIN,

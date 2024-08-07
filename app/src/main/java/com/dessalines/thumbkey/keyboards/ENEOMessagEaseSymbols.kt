@@ -17,7 +17,7 @@ import com.dessalines.thumbkey.utils.SwipeDirection
 import com.dessalines.thumbkey.utils.autoCapitalizeI
 import com.dessalines.thumbkey.utils.autoCapitalizeIApostrophe
 
-val KB_ENEO_MESSAGEASE_SYMBOLS_MAIN =
+val KB_EN_EO_MESSAGEASE_SYMBOLS_MAIN =
     KeyboardC(
         listOf(
             listOf(
@@ -557,7 +557,7 @@ val KB_ENEO_MESSAGEASE_SYMBOLS_MAIN =
         ),
     )
 
-val KB_ENEO_MESSAGEASE_SYMBOLS_SHIFTED =
+val KB_EN_EO_MESSAGEASE_SYMBOLS_SHIFTED =
     KeyboardC(
         listOf(
             listOf(
@@ -1091,13 +1091,13 @@ val KB_ENEO_MESSAGEASE_SYMBOLS_SHIFTED =
         ),
     )
 
-val KB_ENEO_MESSAGEASE_SYMBOLS: KeyboardDefinition =
+val KB_EN_EO_MESSAGEASE_SYMBOLS: KeyboardDefinition =
     KeyboardDefinition(
-        title = "english esperanto symbols messagease",
+        title = "english esperanto messagease symbols",
         modes =
             KeyboardDefinitionModes(
-                main = KB_ENEO_MESSAGEASE_SYMBOLS_MAIN,
-                shifted = KB_ENEO_MESSAGEASE_SYMBOLS_SHIFTED,
+                main = KB_EN_EO_MESSAGEASE_SYMBOLS_MAIN,
+                shifted = KB_EN_EO_MESSAGEASE_SYMBOLS_SHIFTED,
                 numeric = KB_EN_MESSAGEASE_NUMERIC,
             ),
         settings =

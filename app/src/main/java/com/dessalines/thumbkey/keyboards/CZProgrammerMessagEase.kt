@@ -16,7 +16,7 @@ import com.dessalines.thumbkey.utils.KeyboardDefinition
 import com.dessalines.thumbkey.utils.KeyboardDefinitionModes
 import com.dessalines.thumbkey.utils.SwipeDirection
 
-val KB_CZ_PROG_MAIN =
+val KB_CZ_MESSAGEASE_PROGRAMMING_MAIN =
     KeyboardC(
         listOf(
             listOf(
@@ -525,7 +525,7 @@ val KB_CZ_PROG_MAIN =
         ),
     )
 
-val KB_CZ_PROG_SHIFTED =
+val KB_CZ_MESSAGEASE_PROGRAMMING_SHIFTED =
     KeyboardC(
         listOf(
             listOf(
@@ -1031,13 +1031,13 @@ val KB_CZ_PROG_SHIFTED =
         ),
     )
 
-val KB_CZ_PROG: KeyboardDefinition =
+val KB_CZ_MESSAGEASE_PROGRAMMING: KeyboardDefinition =
     KeyboardDefinition(
-        title = "čeština programming messagease",
+        title = "čeština messagease programming",
         modes =
             KeyboardDefinitionModes(
-                main = KB_CZ_PROG_MAIN,
-                shifted = KB_CZ_PROG_SHIFTED,
+                main = KB_CZ_MESSAGEASE_PROGRAMMING_MAIN,
+                shifted = KB_CZ_MESSAGEASE_PROGRAMMING_SHIFTED,
                 numeric = KB_EN_MESSAGEASE_NUMERIC,
             ),
     )

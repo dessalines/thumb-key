@@ -17,7 +17,7 @@ import com.dessalines.thumbkey.utils.KeyboardDefinitionModes
 import com.dessalines.thumbkey.utils.SwipeDirection
 
 // Adds more punctuation options to the main screen to reduce switches to the numeric keyboard
-val KB_ID_THUMBKEY_SYMBOLS_NUMERIC_V1_MAIN =
+val KB_ID_THUMBKEY_SYMBOLS_NUMBERS_V1_MAIN =
     KeyboardC(
         listOf(
             listOf(
@@ -503,7 +503,7 @@ val KB_ID_THUMBKEY_SYMBOLS_NUMERIC_V1_MAIN =
         ),
     )
 
-val KB_ID_THUMBKEY_SYMBOLS_NUMERIC_V1_SHIFTED =
+val KB_ID_THUMBKEY_SYMBOLS_NUMBERS_V1_SHIFTED =
     KeyboardC(
         listOf(
             listOf(
@@ -990,13 +990,13 @@ val KB_ID_THUMBKEY_SYMBOLS_NUMERIC_V1_SHIFTED =
         ),
     )
 
-val KB_ID_THUMBKEY_SYMBOLS_NUMERIC_V1: KeyboardDefinition =
+val KB_ID_THUMBKEY_SYMBOLS_NUMBERS_V1: KeyboardDefinition =
     KeyboardDefinition(
-        title = "bahasa indonesia symbols numeric v1 thumb-key",
+        title = "bahasa indonesia thumb-key symbols-numbers v1",
         modes =
             KeyboardDefinitionModes(
-                main = KB_ID_THUMBKEY_SYMBOLS_NUMERIC_V1_MAIN,
-                shifted = KB_ID_THUMBKEY_SYMBOLS_NUMERIC_V1_SHIFTED,
+                main = KB_ID_THUMBKEY_SYMBOLS_NUMBERS_V1_MAIN,
+                shifted = KB_ID_THUMBKEY_SYMBOLS_NUMBERS_V1_SHIFTED,
                 numeric = NUMERIC_KEYBOARD,
             ),
     )

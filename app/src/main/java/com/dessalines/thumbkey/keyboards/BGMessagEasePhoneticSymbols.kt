@@ -19,7 +19,7 @@ import com.dessalines.thumbkey.utils.SwipeDirection
 import com.dessalines.thumbkey.utils.autoCapitalizeI
 import com.dessalines.thumbkey.utils.autoCapitalizeIApostrophe
 
-val KB_BG_PHONETIC_MESSAGEASE_SYMBOLS_MAIN =
+val KB_BG_MESSAGEASE_PHONETIC_SYMBOLS_MAIN =
     KeyboardC(
         listOf(
             listOf(
@@ -478,7 +478,7 @@ val KB_BG_PHONETIC_MESSAGEASE_SYMBOLS_MAIN =
         ),
     )
 
-val KB_BG_PHONETIC_MESSAGEASE_SYMBOLS_SHIFTED =
+val KB_BG_MESSAGEASE_PHONETIC_SYMBOLS_SHIFTED =
     KeyboardC(
         listOf(
             listOf(
@@ -940,13 +940,13 @@ val KB_BG_PHONETIC_MESSAGEASE_SYMBOLS_SHIFTED =
         ),
     )
 
-val KB_BG_PHONETIC_MESSAGEASE_SYMBOLS: KeyboardDefinition =
+val KB_BG_MESSAGEASE_PHONETIC_SYMBOLS: KeyboardDefinition =
     KeyboardDefinition(
-        title = "bulgarian symbols phonetic messagease",
+        title = "bulgarian messagease phonetic symbols",
         modes =
             KeyboardDefinitionModes(
-                main = KB_BG_PHONETIC_MESSAGEASE_SYMBOLS_MAIN,
-                shifted = KB_BG_PHONETIC_MESSAGEASE_SYMBOLS_SHIFTED,
+                main = KB_BG_MESSAGEASE_PHONETIC_SYMBOLS_MAIN,
+                shifted = KB_BG_MESSAGEASE_PHONETIC_SYMBOLS_SHIFTED,
                 numeric = KB_EN_MESSAGEASE_NUMERIC,
             ),
         settings =
