@@ -16,7 +16,7 @@ import com.dessalines.thumbkey.utils.KeyboardDefinition
 import com.dessalines.thumbkey.utils.KeyboardDefinitionModes
 import com.dessalines.thumbkey.utils.SwipeDirection
 
-val KB_RU_THUMBKEY_SYMBOLS_MAIN =
+val KB_RU_THUMBKEY_WRITER_MAIN =
     KeyboardC(
         listOf(
             listOf(
@@ -529,7 +529,7 @@ val KB_RU_THUMBKEY_SYMBOLS_MAIN =
         ),
     )
 
-val KB_RU_THUMBKEY_SYMBOLS_SHIFTED =
+val KB_RU_THUMBKEY_WRITER_SHIFTED =
     KeyboardC(
         listOf(
             listOf(
@@ -1043,13 +1043,13 @@ val KB_RU_THUMBKEY_SYMBOLS_SHIFTED =
         ),
     )
 
-val KB_RU_THUMBKEY_SYMBOLS: KeyboardDefinition =
+val KB_RU_THUMBKEY_WRITER: KeyboardDefinition =
     KeyboardDefinition(
-        title = "русский symbols thumb-key",
+        title = "русский writer thumb-key",
         modes =
             KeyboardDefinitionModes(
-                main = KB_RU_THUMBKEY_SYMBOLS_MAIN,
-                shifted = KB_RU_THUMBKEY_SYMBOLS_SHIFTED,
+                main = KB_RU_THUMBKEY_WRITER_MAIN,
+                shifted = KB_RU_THUMBKEY_WRITER_SHIFTED,
                 numeric = NUMERIC_KEYBOARD,
             ),
     )
