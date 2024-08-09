@@ -1,7 +1,22 @@
+# Thumb-Key 3.4.0 (2024-08-09)
+
+## What's Changed in 3.4.0
+
+- #702 Rewrite titles of layouts to `[languages] [base] [qualifiers] [version]` by @mpsijm in [#1007](https://github.com/dessalines/thumb-key/pull/1007)
+- Create RUThumbKeyWriter.kt by @Defrobe in [#1005](https://github.com/dessalines/thumb-key/pull/1005)
+- Swipe-and-return gesture to capitalize words on EN Writer layout by @Defrobe in [#1004](https://github.com/dessalines/thumb-key/pull/1004)
+
+## New Contributors
+
+- @Defrobe made their first contribution in [#1005](https://github.com/dessalines/thumb-key/pull/1005)
+
+**Full Changelog**: https://github.com/dessalines/thumb-key/compare/3.3.6...3.4.0
+
 # Thumb-Key 3.3.6 (2024-08-06)
 
 ## What's Changed in 3.3.6
 
+- Upping version. by @dessalines
 - Fix european keyboard name. by @dessalines
 - Add layout: English MessagEase two-hands symbols by @mpsijm in [#1002](https://github.com/dessalines/thumb-key/pull/1002)
 - ESThumbKey.kt exclamation and question mark by @ZePotente in [#1001](https://github.com/dessalines/thumb-key/pull/1001)
