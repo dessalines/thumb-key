@@ -36,6 +36,7 @@ import com.dessalines.thumbkey.keyboards.KB_EN_MESSAGEASE_LEFT_SYMBOLS
 import com.dessalines.thumbkey.keyboards.KB_EN_MESSAGEASE_SYMBOLS
 import com.dessalines.thumbkey.keyboards.KB_EN_MESSAGEASE_SYMBOLS_TWO_HANDS
 import com.dessalines.thumbkey.keyboards.KB_EN_MESSAGEASE_TWO_HANDS
+import com.dessalines.thumbkey.keyboards.KB_EN_MESSAGEASE_WRITER
 import com.dessalines.thumbkey.keyboards.KB_EN_MI_THUMBKEY
 import com.dessalines.thumbkey.keyboards.KB_EN_MI_THUMBKEY_SYMBOLS
 import com.dessalines.thumbkey.keyboards.KB_EN_NO_MESSAGEASE_SYMBOLS
@@ -121,6 +122,7 @@ import com.dessalines.thumbkey.keyboards.KB_PT_THUMBKEY
 import com.dessalines.thumbkey.keyboards.KB_PT_TYPESPLIT
 import com.dessalines.thumbkey.keyboards.KB_RU_MESSAGEASE
 import com.dessalines.thumbkey.keyboards.KB_RU_MESSAGEASE_SYMBOLS
+import com.dessalines.thumbkey.keyboards.KB_RU_MESSAGEASE_WRITER
 import com.dessalines.thumbkey.keyboards.KB_RU_THUMBKEY
 import com.dessalines.thumbkey.keyboards.KB_RU_THUMBKEY_SYMBOLS
 import com.dessalines.thumbkey.keyboards.KB_RU_THUMBKEY_WRITER
@@ -282,4 +284,6 @@ enum class KeyboardLayout(
     EuropeThumbkey(KB_EUROPE_THUMBKEY),
     ENMessagEaseSymbolsTwoHands(KB_EN_MESSAGEASE_SYMBOLS_TWO_HANDS),
     RUThumbKeyWriter(KB_RU_THUMBKEY_WRITER),
+    ENMessagEaseWriter(KB_EN_MESSAGEASE_WRITER),
+    RUMessagEaseWriter(KB_RU_MESSAGEASE_WRITER),
 }
