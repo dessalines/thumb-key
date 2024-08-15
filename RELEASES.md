@@ -1,14 +1,19 @@
+# Thumb-Key 3.4.1 (2024-08-15)
+
+## What's Changed in 3.4.1
+
+- En/Ru MessagEasy Writer layouts by @Defrobe in [#1015](https://github.com/dessalines/thumb-key/pull/1015)
+
+**Full Changelog**: https://github.com/dessalines/thumb-key/compare/3.4.0...3.4.1
+
 # Thumb-Key 3.4.0 (2024-08-09)
 
 ## What's Changed in 3.4.0
 
+- Upping version. by @dessalines
 - #702 Rewrite titles of layouts to `[languages] [base] [qualifiers] [version]` by @mpsijm in [#1007](https://github.com/dessalines/thumb-key/pull/1007)
 - Create RUThumbKeyWriter.kt by @Defrobe in [#1005](https://github.com/dessalines/thumb-key/pull/1005)
 - Swipe-and-return gesture to capitalize words on EN Writer layout by @Defrobe in [#1004](https://github.com/dessalines/thumb-key/pull/1004)
-
-## New Contributors
-
-- @Defrobe made their first contribution in [#1005](https://github.com/dessalines/thumb-key/pull/1005)
 
 **Full Changelog**: https://github.com/dessalines/thumb-key/compare/3.3.6...3.4.0
 
