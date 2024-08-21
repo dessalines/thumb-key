@@ -32,7 +32,7 @@ import com.dessalines.thumbkey.utils.SlideType
 import com.dessalines.thumbkey.utils.SwipeDirection
 import com.dessalines.thumbkey.utils.SwipeNWay
 
-val ABC_OR_NUMERIC_SWIPES =
+val TEXT_EDIT_SWIPES =
     mapOf(
         SwipeDirection.TOP to
             KeyC(
@@ -72,6 +72,40 @@ val ABC_OR_NUMERIC_SWIPES =
             ),
     )
 
+val SPECIAL_ACTIONS_SWIPES =
+    mapOf(
+        SwipeDirection.TOP to
+            KeyC(
+                display = KeyDisplay.IconDisplay(Icons.Outlined.Settings),
+                action = KeyAction.GotoSettings,
+                color = ColorVariant.MUTED,
+            ),
+        SwipeDirection.BOTTOM to
+            KeyC(
+                display = KeyDisplay.IconDisplay(Icons.Outlined.Keyboard),
+                action = KeyAction.SwitchIME,
+                color = ColorVariant.MUTED,
+            ),
+        SwipeDirection.BOTTOM_LEFT to
+            KeyC(
+                display = KeyDisplay.IconDisplay(Icons.Outlined.Mic),
+                action = KeyAction.SwitchIMEVoice,
+                color = ColorVariant.MUTED,
+            ),
+        SwipeDirection.LEFT to
+            KeyC(
+                display = KeyDisplay.IconDisplay(Icons.Outlined.Language),
+                action = KeyAction.SwitchLanguage,
+                color = ColorVariant.MUTED,
+            ),
+        SwipeDirection.RIGHT to
+            KeyC(
+                display = KeyDisplay.IconDisplay(Icons.Outlined.LinearScale),
+                action = KeyAction.SwitchPosition,
+                color = ColorVariant.MUTED,
+            ),
+    )
+
 val ABC_KEY_ITEM =
     KeyItemC(
         center =
@@ -82,7 +116,7 @@ val ABC_KEY_ITEM =
                 color = ColorVariant.PRIMARY,
             ),
         swipeType = SwipeNWay.EIGHT_WAY,
-        swipes = ABC_OR_NUMERIC_SWIPES,
+        swipes = TEXT_EDIT_SWIPES,
         backgroundColor = ColorVariant.SURFACE_VARIANT,
     )
 
@@ -96,7 +130,7 @@ val NUMERIC_KEY_ITEM =
                 color = ColorVariant.SECONDARY,
             ),
         swipeType = SwipeNWay.EIGHT_WAY,
-        swipes = ABC_OR_NUMERIC_SWIPES,
+        swipes = TEXT_EDIT_SWIPES,
         backgroundColor = ColorVariant.SURFACE_VARIANT,
     )
 
@@ -110,39 +144,7 @@ val EMOJI_KEY_ITEM =
                 color = ColorVariant.SECONDARY,
             ),
         swipeType = SwipeNWay.EIGHT_WAY,
-        swipes =
-            mapOf(
-                SwipeDirection.TOP to
-                    KeyC(
-                        display = KeyDisplay.IconDisplay(Icons.Outlined.Settings),
-                        action = KeyAction.GotoSettings,
-                        color = ColorVariant.MUTED,
-                    ),
-                SwipeDirection.BOTTOM to
-                    KeyC(
-                        display = KeyDisplay.IconDisplay(Icons.Outlined.Keyboard),
-                        action = KeyAction.SwitchIME,
-                        color = ColorVariant.MUTED,
-                    ),
-                SwipeDirection.BOTTOM_LEFT to
-                    KeyC(
-                        display = KeyDisplay.IconDisplay(Icons.Outlined.Mic),
-                        action = KeyAction.SwitchIMEVoice,
-                        color = ColorVariant.MUTED,
-                    ),
-                SwipeDirection.LEFT to
-                    KeyC(
-                        display = KeyDisplay.IconDisplay(Icons.Outlined.Language),
-                        action = KeyAction.SwitchLanguage,
-                        color = ColorVariant.MUTED,
-                    ),
-                SwipeDirection.RIGHT to
-                    KeyC(
-                        display = KeyDisplay.IconDisplay(Icons.Outlined.LinearScale),
-                        action = KeyAction.SwitchPosition,
-                        color = ColorVariant.MUTED,
-                    ),
-            ),
+        swipes = SPECIAL_ACTIONS_SWIPES,
         backgroundColor = ColorVariant.SURFACE_VARIANT,
     )
 
@@ -157,6 +159,10 @@ val EMOJI_BACK_KEY_ITEM =
             ),
         backgroundColor = ColorVariant.SURFACE_VARIANT,
     )
+
+val ABC_KEY_ITEM_ALT = ABC_KEY_ITEM.copy(swipes = SPECIAL_ACTIONS_SWIPES)
+val NUMERIC_KEY_ITEM_ALT = NUMERIC_KEY_ITEM.copy(swipes = SPECIAL_ACTIONS_SWIPES)
+val EMOJI_KEY_ITEM_ALT = EMOJI_KEY_ITEM.copy(swipes = TEXT_EDIT_SWIPES)
 
 val BACKSPACE_KEY_ITEM =
     KeyItemC(

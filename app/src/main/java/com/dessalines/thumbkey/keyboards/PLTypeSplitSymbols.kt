@@ -139,7 +139,7 @@ val KB_PL_TYPESPLIT_SYMBOlS_MAIN =
                                 ),
                         ),
                 ),
-                EMOJI_KEY_ITEM,
+                EMOJI_KEY_ITEM_ALT,
                 KeyItemC(
                     center =
                         KeyC(
@@ -523,7 +523,7 @@ val KB_PL_TYPESPLIT_SYMBOlS_MAIN =
                 ),
             ),
             listOf(
-                NUMERIC_KEY_ITEM,
+                NUMERIC_KEY_ITEM_ALT,
                 BACKSPACE_TYPESPLIT_KEY_ITEM,
                 RETURN_KEY_ITEM,
             ),
@@ -605,7 +605,7 @@ val KB_PL_TYPESPLIT_SYMBOLS_SHIFTED =
                                 ),
                         ),
                 ),
-                EMOJI_KEY_ITEM,
+                EMOJI_KEY_ITEM_ALT,
                 KeyItemC(
                     center =
                         KeyC(
@@ -989,7 +989,7 @@ val KB_PL_TYPESPLIT_SYMBOLS_SHIFTED =
                 ),
             ),
             listOf(
-                NUMERIC_KEY_ITEM,
+                NUMERIC_KEY_ITEM_ALT,
                 BACKSPACE_TYPESPLIT_SHIFTED_KEY_ITEM,
                 RETURN_KEY_ITEM,
             ),

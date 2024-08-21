@@ -1,7 +1,5 @@
 package com.dessalines.thumbkey.keyboards
 
-import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.outlined.Settings
 import com.dessalines.thumbkey.utils.ColorVariant
 import com.dessalines.thumbkey.utils.FontSizeVariant
 import com.dessalines.thumbkey.utils.KeyAction
@@ -21,15 +19,7 @@ val FRENCH_TYPESPLIT_NUMERIC_KEYBOARD =
                             display = KeyDisplay.TextDisplay(" "),
                             action = KeyAction.CommitText(" "),
                         ),
-                    swipes =
-                        mapOf(
-                            SwipeDirection.TOP to
-                                KeyC(
-                                    display = KeyDisplay.IconDisplay(Icons.Outlined.Settings),
-                                    action = KeyAction.GotoSettings,
-                                    color = ColorVariant.SECONDARY,
-                                ),
-                        ),
+                    swipes = TEXT_EDIT_SWIPES,
                     backgroundColor = ColorVariant.SURFACE_VARIANT,
                 ),
                 KeyItemC(
@@ -358,7 +348,7 @@ val FRENCH_TYPESPLIT_NUMERIC_KEYBOARD =
                 ),
             ),
             listOf(
-                ABC_KEY_ITEM,
+                ABC_KEY_ITEM_ALT,
                 BACKSPACE_TYPESPLIT_SHIFTED_KEY_ITEM,
                 RETURN_KEY_ITEM,
             ),

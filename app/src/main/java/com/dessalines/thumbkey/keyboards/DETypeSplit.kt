@@ -53,7 +53,7 @@ val KB_DE_TYPESPLIT_MAIN =
                             color = ColorVariant.PRIMARY,
                         ),
                 ),
-                EMOJI_KEY_ITEM,
+                EMOJI_KEY_ITEM_ALT,
                 KeyItemC(
                     center =
                         KeyC(
@@ -331,7 +331,7 @@ val KB_DE_TYPESPLIT_MAIN =
                 ),
             ),
             listOf(
-                NUMERIC_KEY_ITEM,
+                NUMERIC_KEY_ITEM_ALT,
                 BACKSPACE_TYPESPLIT_KEY_ITEM,
                 RETURN_KEY_ITEM,
             ),
@@ -379,7 +379,7 @@ val KB_DE_TYPESPLIT_SHIFTED =
                             color = ColorVariant.PRIMARY,
                         ),
                 ),
-                EMOJI_KEY_ITEM,
+                EMOJI_KEY_ITEM_ALT,
                 KeyItemC(
                     center =
                         KeyC(
@@ -657,7 +657,7 @@ val KB_DE_TYPESPLIT_SHIFTED =
                 ),
             ),
             listOf(
-                NUMERIC_KEY_ITEM,
+                NUMERIC_KEY_ITEM_ALT,
                 BACKSPACE_TYPESPLIT_SHIFTED_KEY_ITEM,
                 RETURN_KEY_ITEM,
             ),
