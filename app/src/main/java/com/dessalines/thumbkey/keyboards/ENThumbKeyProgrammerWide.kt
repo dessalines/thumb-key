@@ -427,7 +427,7 @@ val KB_EN_THUMBKEY_PROGRAMMING_WIDE_SHIFTED =
     KeyboardC(
         listOf(
             listOf(
-                EMOJI_BACK_KEY_ITEM,
+                EMOJI_KEY_ITEM,
                 KeyItemC(
                     center =
                         KeyC(
