@@ -1,7 +1,20 @@
+# Thumb-Key 3.4.2 (2024-08-26)
+
+## What's Changed in 3.4.2
+
+- Show emoji key while in Shift mode in Programmer Wide layout by @kidhanis in [#1018](https://github.com/dessalines/thumb-key/pull/1018)
+
+## New Contributors
+
+- @kidhanis made their first contribution in [#1018](https://github.com/dessalines/thumb-key/pull/1018)
+
+**Full Changelog**: https://github.com/dessalines/thumb-key/compare/3.4.1...3.4.2
+
 # Thumb-Key 3.4.1 (2024-08-15)
 
 ## What's Changed in 3.4.1
 
+- Upping version. by @dessalines
 - En/Ru MessagEasy Writer layouts by @Defrobe in [#1015](https://github.com/dessalines/thumb-key/pull/1015)
 
 **Full Changelog**: https://github.com/dessalines/thumb-key/compare/3.4.0...3.4.1
@@ -222,11 +235,11 @@
 - Make cursor movement detection index-based (fixes #881) by @glm4610 in [#917](https://github.com/dessalines/thumb-key/pull/917)
 - Fix #304 (take two): In Utils.autoCapitalizeCheck, use input type of current editor by @mpsijm in [#909](https://github.com/dessalines/thumb-key/pull/909)
 - Fixing donation line. by @dessalines in [#906](https://github.com/dessalines/thumb-key/pull/906)
-- Add QBased a qwerty based keyboard by @APainfulMemory in [#905](https://github.com/dessalines/thumb-key/pull/905)
+- Add QBased a qwerty based keyboard by @AWillfulMemory in [#905](https://github.com/dessalines/thumb-key/pull/905)
 
 ## New Contributors
 
-- @APainfulMemory made their first contribution in [#905](https://github.com/dessalines/thumb-key/pull/905)
+- @AWillfulMemory made their first contribution in [#905](https://github.com/dessalines/thumb-key/pull/905)
 
 **Full Changelog**: https://github.com/dessalines/thumb-key/compare/3.1.7...3.1.8
 
