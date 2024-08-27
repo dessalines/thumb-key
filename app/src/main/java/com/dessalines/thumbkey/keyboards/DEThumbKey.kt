@@ -577,8 +577,8 @@ val KB_DE_THUMBKEY_SHIFTED =
                                 ),
                             SwipeDirection.LEFT to
                                 KeyC(
-                                    display = KeyDisplay.TextDisplay("ß"),
-                                    action = KeyAction.CommitText("ß"),
+                                    display = KeyDisplay.TextDisplay("ẞ"),
+                                    action = KeyAction.CommitText("ẞ"),
                                 ),
                         ),
                 ),

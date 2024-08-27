@@ -646,8 +646,8 @@ val KB_DE_MESSAGEASE_SHIFTED =
                                 ),
                             SwipeDirection.BOTTOM to
                                 KeyC(
-                                    display = KeyDisplay.TextDisplay("ß"),
-                                    action = KeyAction.CommitText("ß"),
+                                    display = KeyDisplay.TextDisplay("ẞ"),
+                                    action = KeyAction.CommitText("ẞ"),
                                 ),
                             SwipeDirection.RIGHT to
                                 KeyC(
