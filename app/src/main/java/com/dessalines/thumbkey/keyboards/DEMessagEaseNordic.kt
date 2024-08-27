@@ -169,8 +169,8 @@ val KB_DE_NORDIC_MESSAGEASE_MAIN =
                         mapOf(
                             SwipeDirection.TOP to
                                 KeyC(
-                                    display = KeyDisplay.TextDisplay("æ"),
-                                    action = KeyAction.CommitText("æ"),
+                                    display = KeyDisplay.TextDisplay("ü"),
+                                    action = KeyAction.CommitText("ü"),
                                 ),
                             SwipeDirection.TOP_LEFT to
                                 KeyC(
@@ -366,6 +366,11 @@ val KB_DE_NORDIC_MESSAGEASE_MAIN =
                                     display = KeyDisplay.TextDisplay("ø"),
                                     action = KeyAction.CommitText("ø"),
                                 ),
+                            SwipeDirection.BOTTOM to
+                                KeyC(
+                                    display = KeyDisplay.TextDisplay("ß"),
+                                    action = KeyAction.CommitText("ß"),
+                                ),
                             SwipeDirection.BOTTOM_RIGHT to
                                 KeyC(
                                     display = KeyDisplay.IconDisplay(Icons.AutoMirrored.Outlined.KeyboardTab),
@@ -394,6 +399,11 @@ val KB_DE_NORDIC_MESSAGEASE_MAIN =
                                     display = KeyDisplay.TextDisplay("\""),
                                     action = KeyAction.CommitText("\""),
                                     color = ColorVariant.MUTED,
+                                ),
+                            SwipeDirection.LEFT to
+                                KeyC(
+                                    display = KeyDisplay.TextDisplay("æ"),
+                                    action = KeyAction.CommitText("æ"),
                                 ),
                             SwipeDirection.BOTTOM_LEFT to
                                 KeyC(
@@ -634,8 +644,8 @@ val KB_DE_NORDIC_MESSAGEASE_SHIFTED =
                         mapOf(
                             SwipeDirection.TOP to
                                 KeyC(
-                                    display = KeyDisplay.TextDisplay("Æ"),
-                                    action = KeyAction.CommitText("Æ"),
+                                    display = KeyDisplay.TextDisplay("Ü"),
+                                    action = KeyAction.CommitText("Ü"),
                                 ),
                             SwipeDirection.TOP_LEFT to
                                 KeyC(
@@ -834,6 +844,11 @@ val KB_DE_NORDIC_MESSAGEASE_SHIFTED =
                                     display = KeyDisplay.TextDisplay("Ø"),
                                     action = KeyAction.CommitText("Ø"),
                                 ),
+                            SwipeDirection.BOTTOM to
+                                KeyC(
+                                    display = KeyDisplay.TextDisplay("ẞ"),
+                                    action = KeyAction.CommitText("ẞ"),
+                                ),
                             SwipeDirection.BOTTOM_RIGHT to
                                 KeyC(
                                     display = KeyDisplay.IconDisplay(Icons.AutoMirrored.Outlined.KeyboardTab),
@@ -862,6 +877,11 @@ val KB_DE_NORDIC_MESSAGEASE_SHIFTED =
                                     display = KeyDisplay.TextDisplay("\""),
                                     action = KeyAction.CommitText("\""),
                                     color = ColorVariant.MUTED,
+                                ),
+                            SwipeDirection.LEFT to
+                                KeyC(
+                                    display = KeyDisplay.TextDisplay("Æ"),
+                                    action = KeyAction.CommitText("Æ"),
                                 ),
                             SwipeDirection.BOTTOM_LEFT to
                                 KeyC(
