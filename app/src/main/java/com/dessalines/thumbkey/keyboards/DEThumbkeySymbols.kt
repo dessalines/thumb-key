@@ -415,7 +415,7 @@ val KB_DE_THUMBKEY_SYMBOLS_MAIN =
                             SwipeDirection.LEFT to
                                 KeyC(
                                     display = KeyDisplay.TextDisplay("ß"),
-                                    action = KeyAction.CommitText("ß,"),
+                                    action = KeyAction.CommitText("ß"),
                                     color = ColorVariant.MUTED,
                                 ),
                             SwipeDirection.BOTTOM_LEFT to
