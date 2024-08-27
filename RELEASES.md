@@ -1,7 +1,20 @@
+# Thumb-Key 3.4.3 (2024-08-27)
+
+## What's Changed in 3.4.3
+
+- Added üÜ and ßẞ to DEMessagEaseNordic.kt, shifted ßẞ correctly in german keyboards by @MarvinBaral in [#1028](https://github.com/dessalines/thumb-key/pull/1028)
+
+## New Contributors
+
+- @MarvinBaral made their first contribution in [#1028](https://github.com/dessalines/thumb-key/pull/1028)
+
+**Full Changelog**: https://github.com/dessalines/thumb-key/compare/3.4.2...3.4.3
+
 # Thumb-Key 3.4.2 (2024-08-26)
 
 ## What's Changed in 3.4.2
 
+- Upping version. by @dessalines
 - Show emoji key while in Shift mode in Programmer Wide layout by @kidhanis in [#1018](https://github.com/dessalines/thumb-key/pull/1018)
 
 ## New Contributors
