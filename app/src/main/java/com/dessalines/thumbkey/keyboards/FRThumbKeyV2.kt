@@ -141,13 +141,13 @@ val KB_FR_THUMBKEY_V2_MAIN =
                             color = ColorVariant.PRIMARY,
                         ),
                     swipes =
-                        mapOf(                            
-                                SwipeDirection.LEFT to
-                                    KeyC(
-                                        display = KeyDisplay.TextDisplay("-"),
-                                        action = KeyAction.CommitText("-"),
-                                        color = ColorVariant.MUTED,
-                                    ),
+                        mapOf(
+                            SwipeDirection.LEFT to
+                                KeyC(
+                                    display = KeyDisplay.TextDisplay("-"),
+                                    action = KeyAction.CommitText("-"),
+                                    color = ColorVariant.MUTED,
+                                ),
                             SwipeDirection.RIGHT to
                                 KeyC(
                                     display = KeyDisplay.TextDisplay("v"),
@@ -511,11 +511,11 @@ val KB_FR_THUMBKEY_V2_SHIFTED =
                     swipes =
                         mapOf(
                             SwipeDirection.LEFT to
-                                    KeyC(
-                                        display = KeyDisplay.TextDisplay("-"),
-                                        action = KeyAction.CommitText("-"),
-                                        color = ColorVariant.MUTED,
-                                    ),
+                                KeyC(
+                                    display = KeyDisplay.TextDisplay("-"),
+                                    action = KeyAction.CommitText("-"),
+                                    color = ColorVariant.MUTED,
+                                ),
                             SwipeDirection.RIGHT to
                                 KeyC(
                                     display = KeyDisplay.TextDisplay("V"),
