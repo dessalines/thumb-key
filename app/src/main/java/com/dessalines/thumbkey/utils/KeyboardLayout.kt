@@ -71,6 +71,7 @@ import com.dessalines.thumbkey.keyboards.KB_ES_CA_THUMBKEY
 import com.dessalines.thumbkey.keyboards.KB_ES_EO_THUMBKEY
 import com.dessalines.thumbkey.keyboards.KB_ES_MESSAGEASE
 import com.dessalines.thumbkey.keyboards.KB_ES_THUMBKEY
+import com.dessalines.thumbkey.keyboards.KB_ES_THUMBKEY_SYMBOLS
 import com.dessalines.thumbkey.keyboards.KB_ES_TYPESPLIT
 import com.dessalines.thumbkey.keyboards.KB_EUROPE_THUMBKEY
 import com.dessalines.thumbkey.keyboards.KB_EU_ES_THUMBKEY
@@ -141,7 +142,6 @@ import com.dessalines.thumbkey.keyboards.KB_UK_MESSAGEASE_SYMBOLS
 import com.dessalines.thumbkey.keyboards.KB_UK_RU_MESSAGEASE_SYMBOLS
 import com.dessalines.thumbkey.keyboards.KB_UK_THUMBKEY
 import com.dessalines.thumbkey.keyboards.KB_VN_THUMBKEY
-import com.dessalines.thumbkey.keyboards.KB_ES_THUMBKEY_SYMBOLS
 
 // Make sure new keyboards are added AT THE END of this list, and have a higher index.
 // DO NOT put them in the middle of the list!
