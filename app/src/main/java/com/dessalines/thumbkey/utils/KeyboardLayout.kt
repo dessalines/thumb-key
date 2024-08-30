@@ -141,6 +141,7 @@ import com.dessalines.thumbkey.keyboards.KB_UK_MESSAGEASE_SYMBOLS
 import com.dessalines.thumbkey.keyboards.KB_UK_RU_MESSAGEASE_SYMBOLS
 import com.dessalines.thumbkey.keyboards.KB_UK_THUMBKEY
 import com.dessalines.thumbkey.keyboards.KB_VN_THUMBKEY
+import com.dessalines.thumbkey.keyboards.KB_ES_THUMBKEY_SYMBOLS
 
 // Make sure new keyboards are added AT THE END of this list, and have a higher index.
 // DO NOT put them in the middle of the list!
@@ -288,4 +289,5 @@ enum class KeyboardLayout(
     ENMessagEaseWriter(KB_EN_MESSAGEASE_WRITER),
     RUMessagEaseWriter(KB_RU_MESSAGEASE_WRITER),
     ENSVThumbKeyProgramming(KB_EN_SV_THUMBKEY_PROGRAMMING),
+    ESThumbKeySymbols(KB_ES_THUMBKEY_SYMBOLS),
 }
