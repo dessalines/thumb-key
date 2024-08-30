@@ -1,7 +1,21 @@
+# Thumb-Key 3.4.4 (2024-08-30)
+
+## What's Changed in 3.4.4
+
+- add hyphen `-` to the first layer of FRThumbKeyV2.kt by @foldfree in [#1031](https://github.com/dessalines/thumb-key/pull/1031)
+- Adding en + sv + programmer layout. by @dessalines in [#1030](https://github.com/dessalines/thumb-key/pull/1030)
+
+## New Contributors
+
+- @foldfree made their first contribution in [#1031](https://github.com/dessalines/thumb-key/pull/1031)
+
+**Full Changelog**: https://github.com/dessalines/thumb-key/compare/3.4.3...3.4.4
+
 # Thumb-Key 3.4.3 (2024-08-27)
 
 ## What's Changed in 3.4.3
 
+- Upping version. by @dessalines
 - Added üÜ and ßẞ to DEMessagEaseNordic.kt, shifted ßẞ correctly in german keyboards by @MarvinBaral in [#1028](https://github.com/dessalines/thumb-key/pull/1028)
 
 ## New Contributors
