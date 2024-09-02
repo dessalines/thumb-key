@@ -1,7 +1,21 @@
+# Thumb-Key 3.4.5 (2024-09-02)
+
+## What's Changed in 3.4.5
+
+- Adding EN Thumbkey Words. by @dessalines in [#1039](https://github.com/dessalines/thumb-key/pull/1039)
+- Added ES thumb-key symbols layout by @DiegoLpVn in [#1035](https://github.com/dessalines/thumb-key/pull/1035)
+
+## New Contributors
+
+- @DiegoLpVn made their first contribution in [#1035](https://github.com/dessalines/thumb-key/pull/1035)
+
+**Full Changelog**: https://github.com/dessalines/thumb-key/compare/3.4.4...3.4.5
+
 # Thumb-Key 3.4.4 (2024-08-30)
 
 ## What's Changed in 3.4.4
 
+- Upping version. by @dessalines
 - add hyphen `-` to the first layer of FRThumbKeyV2.kt by @foldfree in [#1031](https://github.com/dessalines/thumb-key/pull/1031)
 - Adding en + sv + programmer layout. by @dessalines in [#1030](https://github.com/dessalines/thumb-key/pull/1030)
 
