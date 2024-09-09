@@ -90,7 +90,7 @@ dependencies {
 
     // Activities
     implementation 'androidx.activity:activity-compose:1.9.2'
-    implementation 'androidx.activity:activity-ktx:1.9.1'
+    implementation 'androidx.activity:activity-ktx:1.9.2'
 
     // LiveData
     implementation 'androidx.lifecycle:lifecycle-runtime-compose'
