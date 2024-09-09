@@ -8,7 +8,6 @@ import com.dessalines.thumbkey.utils.KeyDisplay
 import com.dessalines.thumbkey.utils.KeyItemC
 import com.dessalines.thumbkey.utils.KeyboardC
 import com.dessalines.thumbkey.utils.SwipeDirection
-import com.dessalines.thumbkey.utils.getLocalCurrency
 
 val NUMERIC_ENDENL_KEYBOARD =
     KeyboardC(
