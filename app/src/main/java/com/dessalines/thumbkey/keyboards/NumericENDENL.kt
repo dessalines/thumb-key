@@ -15,37 +15,36 @@ val NUMERIC_ENDENL_KEYBOARD =
             listOf(
                 KeyItemC(
                     center =
-                    KeyC(
-                        display = KeyDisplay.TextDisplay("1"),
-                        action = KeyAction.CommitText("1"),
-                        size = FontSizeVariant.LARGE,
-                        color = ColorVariant.PRIMARY,
-                    ),
+                        KeyC(
+                            display = KeyDisplay.TextDisplay("1"),
+                            action = KeyAction.CommitText("1"),
+                            size = FontSizeVariant.LARGE,
+                            color = ColorVariant.PRIMARY,
+                        ),
                     swipes =
-                    mapOf(
-                        SwipeDirection.TOP_LEFT to
+                        mapOf(
+                            SwipeDirection.TOP_LEFT to
                                 KeyC(
                                     display = KeyDisplay.TextDisplay("@"),
                                     action = KeyAction.CommitText("@"),
                                 ),
-                        SwipeDirection.TOP_RIGHT to
+                            SwipeDirection.TOP_RIGHT to
                                 KeyC(
                                     display = KeyDisplay.TextDisplay("\$"),
                                     action = KeyAction.CommitText("\$"),
                                 ),
-                        SwipeDirection.BOTTOM_RIGHT to
+                            SwipeDirection.BOTTOM_RIGHT to
                                 KeyC(
                                     display = KeyDisplay.TextDisplay("£"),
                                     action = KeyAction.CommitText("£"),
                                 ),
-                        SwipeDirection.BOTTOM_LEFT to
+                            SwipeDirection.BOTTOM_LEFT to
                                 KeyC(
                                     display = KeyDisplay.TextDisplay("€"),
                                     action = KeyAction.CommitText("€"),
                                 ),
-                    ),
+                        ),
                 ),
-
                 KeyItemC(
                     center =
                         KeyC(
