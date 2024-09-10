@@ -349,7 +349,7 @@ val FRENCH_TYPESPLIT_NUMERIC_KEYBOARD =
             ),
             listOf(
                 ABC_KEY_ITEM_ALT,
-                BACKSPACE_TYPESPLIT_SHIFTED_KEY_ITEM,
+                BACKSPACE_WIDE_KEY_ITEM,
                 RETURN_KEY_ITEM,
             ),
         ),

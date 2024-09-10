@@ -199,6 +199,8 @@ val BACKSPACE_KEY_ITEM =
         longPress = KeyAction.DeleteWordBeforeCursor,
     )
 
+val BACKSPACE_WIDE_KEY_ITEM = BACKSPACE_KEY_ITEM.copy(widthMultiplier = 3)
+
 val SPACEBAR_KEY_ITEM =
     KeyItemC(
         center =
