@@ -17,6 +17,7 @@ import com.dessalines.thumbkey.keyboards.KB_DE_THUMBKEY_SYMBOLS
 import com.dessalines.thumbkey.keyboards.KB_DE_TYPESPLIT
 import com.dessalines.thumbkey.keyboards.KB_EN_CZ_THUMBKEY
 import com.dessalines.thumbkey.keyboards.KB_EN_DA_THUMBKEY_SYMBOLS
+import com.dessalines.thumbkey.keyboards.KB_EN_DE_NL_THUMBKEY
 import com.dessalines.thumbkey.keyboards.KB_EN_DE_THUMBKEY
 import com.dessalines.thumbkey.keyboards.KB_EN_DE_THUMBKEY_AE
 import com.dessalines.thumbkey.keyboards.KB_EN_DE_THUMBKEY_V2
@@ -292,4 +293,5 @@ enum class KeyboardLayout(
     ENSVThumbKeyProgramming(KB_EN_SV_THUMBKEY_PROGRAMMING),
     ESThumbKeySymbols(KB_ES_THUMBKEY_SYMBOLS),
     ENThumbKeyWords(KB_EN_THUMBKEY_WORDS),
+    ENDENLThumbKey(KB_EN_DE_NL_THUMBKEY),
 }
