@@ -1,7 +1,22 @@
+# Thumb-Key 3.4.6 (2024-09-10)
+
+## What's Changed in 3.4.6
+
+- New Layout EN / DE / NL incl new Numerical Layout by @freekvdmeer in [#1045](https://github.com/dessalines/thumb-key/pull/1045)
+- Type split improvements by @h67ma in [#1054](https://github.com/dessalines/thumb-key/pull/1054)
+
+## New Contributors
+
+- @freekvdmeer made their first contribution in [#1045](https://github.com/dessalines/thumb-key/pull/1045)
+- @h67ma made their first contribution in [#1054](https://github.com/dessalines/thumb-key/pull/1054)
+
+**Full Changelog**: https://github.com/dessalines/thumb-key/compare/3.4.5...3.4.6
+
 # Thumb-Key 3.4.5 (2024-09-02)
 
 ## What's Changed in 3.4.5
 
+- Upping version. by @dessalines
 - Adding EN Thumbkey Words. by @dessalines in [#1039](https://github.com/dessalines/thumb-key/pull/1039)
 - Added ES thumb-key symbols layout by @DiegoLpVn in [#1035](https://github.com/dessalines/thumb-key/pull/1035)
 
