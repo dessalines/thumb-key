@@ -52,6 +52,7 @@ import com.dessalines.thumbkey.keyboards.KB_EN_QWERTEASE_TWO_HANDS
 import com.dessalines.thumbkey.keyboards.KB_EN_QWERTYFOUR
 import com.dessalines.thumbkey.keyboards.KB_EN_QWERTYFOUR_COMPOSE
 import com.dessalines.thumbkey.keyboards.KB_EN_RO_THUMBKEY
+import com.dessalines.thumbkey.keyboards.KB_EN_RSINOA
 import com.dessalines.thumbkey.keyboards.KB_EN_SK_THUMBKEY
 import com.dessalines.thumbkey.keyboards.KB_EN_SV_THUMBKEY_PROGRAMMING
 import com.dessalines.thumbkey.keyboards.KB_EN_SYMBOLS_NUMBERS_TWO_HANDS
@@ -294,4 +295,5 @@ enum class KeyboardLayout(
     ESThumbKeySymbols(KB_ES_THUMBKEY_SYMBOLS),
     ENThumbKeyWords(KB_EN_THUMBKEY_WORDS),
     ENDENLThumbKey(KB_EN_DE_NL_THUMBKEY),
+    ENRsinoa(KB_EN_RSINOA),
 }

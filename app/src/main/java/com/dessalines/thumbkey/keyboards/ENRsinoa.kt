@@ -1,10 +1,7 @@
 package com.dessalines.thumbkey.keyboards
 
 import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.outlined.ArrowDropDown
 import androidx.compose.material.icons.outlined.ArrowDropUp
-import androidx.compose.material.icons.outlined.Copyright
-import androidx.compose.material.icons.outlined.KeyboardCapslock
 import com.dessalines.thumbkey.utils.ColorVariant
 import com.dessalines.thumbkey.utils.FontSizeVariant
 import com.dessalines.thumbkey.utils.KeyAction
@@ -127,7 +124,7 @@ val KB_EN_RSINOA_MAIN =
                                     ),
                             SwipeDirection.BOTTOM to
                                     KeyC(
-                                        action = KeyAction.CommitText("b"),
+                                        action = KeyAction.CommitText("g"),
                                     ),
                             SwipeDirection.TOP to
                                     KeyC(
@@ -349,7 +346,7 @@ val KB_EN_RSINOA_SHIFTED =
                                 ),
                         SwipeDirection.BOTTOM to
                                 KeyC(
-                                    action = KeyAction.CommitText("B"),
+                                    action = KeyAction.CommitText("G"),
                                 ),
                         SwipeDirection.TOP to
                                 KeyC(
@@ -466,11 +463,11 @@ val KB_EN_RSINOA_SHIFTED =
 
 val KB_EN_RSINOA: KeyboardDefinition =
     KeyboardDefinition(
-        title = "english thumb-key",
+        title = "english rsinoa",
         modes =
             KeyboardDefinitionModes(
-                main = KB_EN_THUMBKEY_MAIN,
-                shifted = KB_EN_THUMBKEY_SHIFTED,
+                main = KB_EN_RSINOA_MAIN,
+                shifted = KB_EN_RSINOA_SHIFTED,
                 numeric = NUMERIC_KEYBOARD,
             ),
         settings =
