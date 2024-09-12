@@ -1,5 +1,20 @@
 # Contributing to Thumb-Key
 
+<!-- prettier-ignore-start -->
+<!-- toc -->
+
+- [Ways to contribute](#ways-to-contribute)
+- [How do I add my language or layout?](#how-do-i-add-my-language-or-layout)
+- [Theming guide](#theming-guide)
+- [Application structure](#application-structure)
+- [Code contributions](#code-contributions)
+  * [Kotlin](#kotlin)
+  * [Code quality](#code-quality)
+- [Adding translations](#adding-translations)
+
+<!-- tocstop -->
+<!-- prettier-ignore-end -->
+
 ## Ways to contribute
 
 - Add a new keyboard layout.

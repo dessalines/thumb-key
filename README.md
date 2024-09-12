@@ -32,6 +32,37 @@
   </p>
 </p>
 
+<!-- prettier-ignore-start -->
+
+<!-- toc -->
+
+- [About Thumb-Key](#about-thumb-key)
+  * [Features](#features)
+- [User Guide](#user-guide)
+  * [Emoji Key](#emoji-key)
+  * [Symbols / Letters Key](#symbols--letters-key)
+  * [Slide gestures](#slide-gestures)
+  * [Drag-and-return](#drag-and-return)
+  * [Ghost keys](#ghost-keys)
+  * [Coming from MessagEase Keyboard Tips](#coming-from-messagease-keyboard-tips)
+  * [Other](#other)
+- [Thumb-Key Design](#thumb-key-design)
+  * [A History of Phone Keyboards](#a-history-of-phone-keyboards)
+    + [When phone keyboards became Keyloggers](#when-phone-keyboards-became-keyloggers)
+    + [MessagEase](#messagease)
+  * [Thumb-Key Letter Positions](#thumb-key-letter-positions)
+  * [Built With](#built-with)
+- [Installation / Releases](#installation--releases)
+- [Contributing](#contributing)
+- [Support / Donate](#support--donate)
+  * [Crypto](#crypto)
+- [Social / Contact](#social--contact)
+- [Android IME Resources](#android-ime-resources)
+
+<!-- tocstop -->
+
+<!-- prettier-ignore-end -->
+
 ## About Thumb-Key
 
 Thumb-Key is a _privacy-conscious_ smart keyboard, made specifically for your thumbs.
