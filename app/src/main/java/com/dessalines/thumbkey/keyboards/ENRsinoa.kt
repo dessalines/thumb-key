@@ -52,9 +52,9 @@ val KB_EN_RSINOA_MAIN =
                                     action = KeyAction.CommitText("k"),
                                 ),
                             SwipeDirection.RIGHT to
-                                    KeyC(
-                                        action = KeyAction.CommitText("z"),
-                                    ),
+                                KeyC(
+                                    action = KeyAction.CommitText("z"),
+                                ),
                         ),
                 ),
                 KeyItemC(
@@ -68,17 +68,17 @@ val KB_EN_RSINOA_MAIN =
                     swipes =
                         mapOf(
                             SwipeDirection.TOP to
-                                    KeyC(
-                                        display = KeyDisplay.IconDisplay(Icons.Outlined.ArrowDropUp),
-                                        action = KeyAction.ToggleShiftMode(true),
-                                        swipeReturnAction = KeyAction.ToggleCurrentWordCapitalization(true),
-                                        color = ColorVariant.MUTED,
-                                    ),
+                                KeyC(
+                                    display = KeyDisplay.IconDisplay(Icons.Outlined.ArrowDropUp),
+                                    action = KeyAction.ToggleShiftMode(true),
+                                    swipeReturnAction = KeyAction.ToggleCurrentWordCapitalization(true),
+                                    color = ColorVariant.MUTED,
+                                ),
                             SwipeDirection.BOTTOM to
-                                    KeyC(
-                                        action = KeyAction.ToggleShiftMode(false),
-                                        swipeReturnAction = KeyAction.ToggleCurrentWordCapitalization(false),
-                                    ),
+                                KeyC(
+                                    action = KeyAction.ToggleShiftMode(false),
+                                    swipeReturnAction = KeyAction.ToggleCurrentWordCapitalization(false),
+                                ),
                         ),
                 ),
                 EMOJI_KEY_ITEM,
@@ -99,13 +99,13 @@ val KB_EN_RSINOA_MAIN =
                                     action = KeyAction.CommitText("l"),
                                 ),
                             SwipeDirection.BOTTOM to
-                                    KeyC(
-                                        action = KeyAction.CommitText("x"),
-                                    ),
+                                KeyC(
+                                    action = KeyAction.CommitText("x"),
+                                ),
                             SwipeDirection.TOP to
-                                    KeyC(
-                                        action = KeyAction.CommitText("j"),
-                                    ),
+                                KeyC(
+                                    action = KeyAction.CommitText("j"),
+                                ),
                         ),
                 ),
                 KeyItemC(
@@ -119,17 +119,17 @@ val KB_EN_RSINOA_MAIN =
                     swipes =
                         mapOf(
                             SwipeDirection.RIGHT to
-                                    KeyC(
-                                        action = KeyAction.CommitText("f"),
-                                    ),
+                                KeyC(
+                                    action = KeyAction.CommitText("f"),
+                                ),
                             SwipeDirection.BOTTOM to
-                                    KeyC(
-                                        action = KeyAction.CommitText("g"),
-                                    ),
+                                KeyC(
+                                    action = KeyAction.CommitText("g"),
+                                ),
                             SwipeDirection.TOP to
-                                    KeyC(
-                                        action = KeyAction.CommitText("p"),
-                                    ),
+                                KeyC(
+                                    action = KeyAction.CommitText("p"),
+                                ),
                         ),
                 ),
                 KeyItemC(
@@ -170,9 +170,9 @@ val KB_EN_RSINOA_MAIN =
                                     action = KeyAction.CommitText("c"),
                                 ),
                             SwipeDirection.RIGHT to
-                                    KeyC(
-                                        action = KeyAction.CommitText("m"),
-                                    ),
+                                KeyC(
+                                    action = KeyAction.CommitText("m"),
+                                ),
                         ),
                 ),
                 KeyItemC(
@@ -186,10 +186,10 @@ val KB_EN_RSINOA_MAIN =
                     swipes =
                         mapOf(
                             SwipeDirection.TOP_RIGHT to
-                                    KeyC(
-                                        action = KeyAction.CommitText("w"),
-                                        color = ColorVariant.MUTED,
-                                    ),
+                                KeyC(
+                                    action = KeyAction.CommitText("w"),
+                                    color = ColorVariant.MUTED,
+                                ),
                             SwipeDirection.TOP_LEFT to
                                 KeyC(
                                     action = KeyAction.CommitText("b"),
@@ -221,13 +221,13 @@ val KB_EN_RSINOA_MAIN =
                                     action = KeyAction.CommitText("q"),
                                 ),
                             SwipeDirection.LEFT to
-                                    KeyC(
-                                        action = KeyAction.CommitText("'"),
-                                    ),
+                                KeyC(
+                                    action = KeyAction.CommitText("'"),
+                                ),
                             SwipeDirection.BOTTOM to
-                                    KeyC(
-                                        action = KeyAction.CommitText(","),
-                                    ),
+                                KeyC(
+                                    action = KeyAction.CommitText(","),
+                                ),
                         ),
                 ),
                 BACKSPACE_KEY_ITEM,
@@ -245,212 +245,212 @@ val KB_EN_RSINOA_SHIFTED =
             listOf(
                 KeyItemC(
                     center =
-                    KeyC(
-                        action = KeyAction.CommitText("R"),
-                        size = FontSizeVariant.LARGE,
-                        color = ColorVariant.PRIMARY,
-                    ),
+                        KeyC(
+                            action = KeyAction.CommitText("R"),
+                            size = FontSizeVariant.LARGE,
+                            color = ColorVariant.PRIMARY,
+                        ),
                     swipeType = SwipeNWay.FOUR_WAY_DIAGONAL,
                     swipes =
-                    mapOf(
-                        SwipeDirection.BOTTOM_RIGHT to
+                        mapOf(
+                            SwipeDirection.BOTTOM_RIGHT to
                                 KeyC(
                                     action = KeyAction.CommitText("V"),
                                 ),
-                    ),
+                        ),
                 ),
                 KeyItemC(
                     center =
-                    KeyC(
-                        action = KeyAction.CommitText("S"),
-                        size = FontSizeVariant.LARGE,
-                        color = ColorVariant.PRIMARY,
-                    ),
+                        KeyC(
+                            action = KeyAction.CommitText("S"),
+                            size = FontSizeVariant.LARGE,
+                            color = ColorVariant.PRIMARY,
+                        ),
                     swipeType = SwipeNWay.FOUR_WAY_CROSS,
                     swipes =
-                    mapOf(
-                        SwipeDirection.BOTTOM to
+                        mapOf(
+                            SwipeDirection.BOTTOM to
                                 KeyC(
                                     action = KeyAction.CommitText("K"),
                                 ),
-                        SwipeDirection.RIGHT to
+                            SwipeDirection.RIGHT to
                                 KeyC(
                                     action = KeyAction.CommitText("Z"),
                                 ),
-                    ),
+                        ),
                 ),
                 KeyItemC(
                     center =
-                    KeyC(
-                        action = KeyAction.CommitText("I"),
-                        size = FontSizeVariant.LARGE,
-                        color = ColorVariant.PRIMARY,
-                    ),
+                        KeyC(
+                            action = KeyAction.CommitText("I"),
+                            size = FontSizeVariant.LARGE,
+                            color = ColorVariant.PRIMARY,
+                        ),
                     swipeType = SwipeNWay.FOUR_WAY_CROSS,
                     swipes =
-                    mapOf(
-                        SwipeDirection.TOP to
+                        mapOf(
+                            SwipeDirection.TOP to
                                 KeyC(
                                     display = KeyDisplay.IconDisplay(Icons.Outlined.ArrowDropUp),
                                     action = KeyAction.ToggleShiftMode(true),
                                     swipeReturnAction = KeyAction.ToggleCurrentWordCapitalization(true),
                                     color = ColorVariant.MUTED,
                                 ),
-                        SwipeDirection.BOTTOM to
+                            SwipeDirection.BOTTOM to
                                 KeyC(
                                     action = KeyAction.ToggleShiftMode(false),
                                     swipeReturnAction = KeyAction.ToggleCurrentWordCapitalization(false),
                                 ),
-                    ),
+                        ),
                 ),
                 EMOJI_KEY_ITEM,
             ),
             listOf(
                 KeyItemC(
                     center =
-                    KeyC(
-                        action = KeyAction.CommitText("N"),
-                        size = FontSizeVariant.LARGE,
-                        color = ColorVariant.PRIMARY,
-                    ),
+                        KeyC(
+                            action = KeyAction.CommitText("N"),
+                            size = FontSizeVariant.LARGE,
+                            color = ColorVariant.PRIMARY,
+                        ),
                     swipeType = SwipeNWay.FOUR_WAY_CROSS,
                     swipes =
-                    mapOf(
-                        SwipeDirection.RIGHT to
+                        mapOf(
+                            SwipeDirection.RIGHT to
                                 KeyC(
                                     action = KeyAction.CommitText("L"),
                                 ),
-                        SwipeDirection.BOTTOM to
+                            SwipeDirection.BOTTOM to
                                 KeyC(
                                     action = KeyAction.CommitText("X"),
                                 ),
-                        SwipeDirection.TOP to
+                            SwipeDirection.TOP to
                                 KeyC(
                                     action = KeyAction.CommitText("J"),
                                 ),
-                    ),
+                        ),
                 ),
                 KeyItemC(
                     center =
-                    KeyC(
-                        action = KeyAction.CommitText("O"),
-                        size = FontSizeVariant.LARGE,
-                        color = ColorVariant.PRIMARY,
-                    ),
+                        KeyC(
+                            action = KeyAction.CommitText("O"),
+                            size = FontSizeVariant.LARGE,
+                            color = ColorVariant.PRIMARY,
+                        ),
                     swipeType = SwipeNWay.FOUR_WAY_CROSS,
                     swipes =
-                    mapOf(
-                        SwipeDirection.RIGHT to
+                        mapOf(
+                            SwipeDirection.RIGHT to
                                 KeyC(
                                     action = KeyAction.CommitText("F"),
                                 ),
-                        SwipeDirection.BOTTOM to
+                            SwipeDirection.BOTTOM to
                                 KeyC(
                                     action = KeyAction.CommitText("G"),
                                 ),
-                        SwipeDirection.TOP to
+                            SwipeDirection.TOP to
                                 KeyC(
                                     action = KeyAction.CommitText("P"),
                                 ),
-                    ),
+                        ),
                 ),
                 KeyItemC(
                     center =
-                    KeyC(
-                        action = KeyAction.CommitText("A"),
-                        size = FontSizeVariant.LARGE,
-                        color = ColorVariant.PRIMARY,
-                    ),
+                        KeyC(
+                            action = KeyAction.CommitText("A"),
+                            size = FontSizeVariant.LARGE,
+                            color = ColorVariant.PRIMARY,
+                        ),
                     swipeType = SwipeNWay.FOUR_WAY_CROSS,
                     swipes =
-                    mapOf(
-                        SwipeDirection.LEFT to
+                        mapOf(
+                            SwipeDirection.LEFT to
                                 KeyC(
                                     action = KeyAction.CommitText("U"),
                                 ),
-                        SwipeDirection.BOTTOM to
+                            SwipeDirection.BOTTOM to
                                 KeyC(
                                     action = KeyAction.CommitText("Y"),
                                 ),
-                    ),
+                        ),
                 ),
                 NUMERIC_KEY_ITEM,
             ),
             listOf(
                 KeyItemC(
                     center =
-                    KeyC(
-                        action = KeyAction.CommitText("H"),
-                        size = FontSizeVariant.LARGE,
-                        color = ColorVariant.PRIMARY,
-                    ),
+                        KeyC(
+                            action = KeyAction.CommitText("H"),
+                            size = FontSizeVariant.LARGE,
+                            color = ColorVariant.PRIMARY,
+                        ),
                     swipeType = SwipeNWay.FOUR_WAY_CROSS,
                     swipes =
-                    mapOf(
-                        SwipeDirection.TOP to
+                        mapOf(
+                            SwipeDirection.TOP to
                                 KeyC(
                                     action = KeyAction.CommitText("C"),
                                 ),
-                        SwipeDirection.RIGHT to
+                            SwipeDirection.RIGHT to
                                 KeyC(
                                     action = KeyAction.CommitText("M"),
                                 ),
-                    ),
+                        ),
                 ),
                 KeyItemC(
                     center =
-                    KeyC(
-                        action = KeyAction.CommitText("T"),
-                        size = FontSizeVariant.LARGE,
-                        color = ColorVariant.PRIMARY,
-                    ),
+                        KeyC(
+                            action = KeyAction.CommitText("T"),
+                            size = FontSizeVariant.LARGE,
+                            color = ColorVariant.PRIMARY,
+                        ),
                     swipeType = SwipeNWay.FOUR_WAY_DIAGONAL,
                     swipes =
-                    mapOf(
-                        SwipeDirection.TOP_RIGHT to
+                        mapOf(
+                            SwipeDirection.TOP_RIGHT to
                                 KeyC(
                                     action = KeyAction.CommitText("W"),
                                     color = ColorVariant.MUTED,
                                 ),
-                        SwipeDirection.TOP_LEFT to
+                            SwipeDirection.TOP_LEFT to
                                 KeyC(
                                     action = KeyAction.CommitText("B"),
                                 ),
-                        SwipeDirection.BOTTOM_RIGHT to
+                            SwipeDirection.BOTTOM_RIGHT to
                                 KeyC(
                                     action = KeyAction.CommitText("D"),
                                     color = ColorVariant.MUTED,
                                 ),
-                        SwipeDirection.BOTTOM_LEFT to
+                            SwipeDirection.BOTTOM_LEFT to
                                 KeyC(
                                     action = KeyAction.CommitText("."),
                                     color = ColorVariant.MUTED,
                                 ),
-                    ),
+                        ),
                 ),
                 KeyItemC(
                     center =
-                    KeyC(
-                        action = KeyAction.CommitText("E"),
-                        size = FontSizeVariant.LARGE,
-                        color = ColorVariant.PRIMARY,
-                    ),
+                        KeyC(
+                            action = KeyAction.CommitText("E"),
+                            size = FontSizeVariant.LARGE,
+                            color = ColorVariant.PRIMARY,
+                        ),
                     swipeType = SwipeNWay.FOUR_WAY_CROSS,
                     swipes =
-                    mapOf(
-                        SwipeDirection.TOP to
+                        mapOf(
+                            SwipeDirection.TOP to
                                 KeyC(
                                     action = KeyAction.CommitText("Q"),
                                 ),
-                        SwipeDirection.LEFT to
+                            SwipeDirection.LEFT to
                                 KeyC(
                                     action = KeyAction.CommitText("'"),
                                 ),
-                        SwipeDirection.BOTTOM to
+                            SwipeDirection.BOTTOM to
                                 KeyC(
                                     action = KeyAction.CommitText(","),
                                 ),
-                    ),
+                        ),
                 ),
                 BACKSPACE_KEY_ITEM,
             ),
