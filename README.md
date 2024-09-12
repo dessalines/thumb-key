@@ -32,6 +32,37 @@
   </p>
 </p>
 
+<!-- prettier-ignore-start -->
+
+<!-- toc -->
+
+- [About Thumb-Key](#about-thumb-key)
+  * [Features](#features)
+- [User Guide](#user-guide)
+  * [Emoji Key](#emoji-key)
+  * [Symbols / Letters Key](#symbols--letters-key)
+  * [Slide gestures](#slide-gestures)
+  * [Drag-and-return](#drag-and-return)
+  * [Ghost keys](#ghost-keys)
+  * [Coming from MessagEase Keyboard Tips](#coming-from-messagease-keyboard-tips)
+  * [Other](#other)
+- [Thumb-Key Design](#thumb-key-design)
+  * [A History of Phone Keyboards](#a-history-of-phone-keyboards)
+    + [When phone keyboards became Keyloggers](#when-phone-keyboards-became-keyloggers)
+    + [MessagEase](#messagease)
+  * [Thumb-Key Letter Positions](#thumb-key-letter-positions)
+  * [Built With](#built-with)
+- [Installation / Releases](#installation--releases)
+- [Contributing](#contributing)
+- [Support / Donate](#support--donate)
+  * [Crypto](#crypto)
+- [Social / Contact](#social--contact)
+- [Android IME Resources](#android-ime-resources)
+
+<!-- tocstop -->
+
+<!-- prettier-ignore-end -->
+
 ## About Thumb-Key
 
 Thumb-Key is a _privacy-conscious_ smart keyboard, made specifically for your thumbs.
@@ -164,47 +195,9 @@ MessagEase is unfortunately unmaintained, and Thumb-Key uses a better alternatin
 - [F-Droid](https://f-droid.org/en/packages/com.dessalines.thumbkey/)
 - [Google Play](https://play.google.com/store/apps/details?id=com.dessalines.thumbkey)
 
-## How do I add my language or layout?
+## Contributing
 
-I'd be happy to accept additions to add more languages, and layouts. To start:
-
-- Read the letter position guidelines above. This means you'll likely need a letter frequency chart for text written in your language.
-  - The general rule is: popular vowels on the right, bottom to top, consonants on the left.
-- Copy [this file](https://github.com/dessalines/thumb-key/blob/main/app/src/main/java/com/dessalines/thumbkey/keyboards/ENThumbKey.kt), or another sample keyboard from the same folder.
-  - The title of the new layout should be lowercase and follow the following format: `[languages] [base] [qualifiers]? [version]?` (see also [#702](https://github.com/dessalines/thumb-key/issues/702)).
-  - Change the characters to whatever you'd like.
-  - This file contains both a _shifted_, and _non-shifted_ keyboard, so make sure you take care of both.
-  - You can also add or subtract columns if you want, but the layout must remain a grid. I **highly recommend** sticking with the 3x3 layout.
-- Add the new keyboard to the end of [KeyboardLayout.kt file](https://github.com/dessalines/thumb-key/blob/main/app/src/main/java/com/dessalines/thumbkey/utils/KeyboardLayout.kt). If you don't know how to do this, skip to the next step.
-- Either open a pull request, or an issue, linking your new keyboard file. I'll handle the rest of the work.
-
-## Theming guide
-
-To add a custom theme:
-
-- Use google's [Material 3 custom theme generator](https://m3.material.io/theme-builder#/custom), and save your `Theme.kt` file.
-- Copy the theme into `Color.kt` like the others.
-- Add the theme to the `ThemeColor` enum in `Types.kt`
-- Add a translation string in `strings.xml` for your theme name.
-- Add the theme to the `colorPairs` in `Theme.kt`
-
-If you want to tweak your theme more precisely, these are the colours
-that are used. Please keep the theme in line with [Material Design
-Guidelines](https://m3.material.io/styles/color/system/overview)
-where feasibe.
-
-| Coloured element                          | Material colour used          |
-| ----------------------------------------- | ----------------------------- |
-| Normal key background                     | `surface`                     |
-| Special key (space, emoji etc) background | `surfaceVariant`              |
-| Main key colour                           | `primary`                     |
-| Key animated after press                  | `tertiary`                    |
-| Swipe letter colour                       | `secondary`                   |
-| Swipe symbol colour                       | `secondary`, but at 50% alpha |
-| Keypress flash colour on tap/hold         | `inversePrimary`              |
-| Keypress flash colour on release          | `tertiaryContainer`           |
-| Key outline                               | `outline`                     |
-| Backdrop                                  | `background`                  |
+See [Contributing.md](CONTRIBUTING.md) for how to add keyboard layouts, and themes.
 
 ## Support / Donate
 
