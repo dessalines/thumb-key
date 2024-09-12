@@ -1,7 +1,21 @@
+# Thumb-Key 3.4.7 (2024-09-12)
+
+## What's Changed in 3.4.7
+
+- Rsinoa layout by @lrvideckis in [#1057](https://github.com/dessalines/thumb-key/pull/1057)
+- Adding CONTRIBUTING.md by @dessalines in [#1062](https://github.com/dessalines/thumb-key/pull/1062)
+
+## New Contributors
+
+- @lrvideckis made their first contribution in [#1057](https://github.com/dessalines/thumb-key/pull/1057)
+
+**Full Changelog**: https://github.com/dessalines/thumb-key/compare/3.4.6...3.4.7
+
 # Thumb-Key 3.4.6 (2024-09-10)
 
 ## What's Changed in 3.4.6
 
+- Upping version. by @dessalines
 - New Layout EN / DE / NL incl new Numerical Layout by @freekvdmeer in [#1045](https://github.com/dessalines/thumb-key/pull/1045)
 - Type split improvements by @h67ma in [#1054](https://github.com/dessalines/thumb-key/pull/1054)
 
@@ -586,7 +600,7 @@
 ## What's Changed in 2.6.21
 
 - Upping version. by @dessalines
-- Create english latina thumb-key by @MGreek in [#773](https://github.com/dessalines/thumb-key/pull/773)
+- Create english latina thumb-key in [#773](https://github.com/dessalines/thumb-key/pull/773)
 - Rename MessageEase to MessagEase. Fixes #769 by @dessalines in [#771](https://github.com/dessalines/thumb-key/pull/771)
 - Improved Hungarian Type-split swipemaps by @KnockoffFeline in [#770](https://github.com/dessalines/thumb-key/pull/770)
 
@@ -598,7 +612,7 @@
 
 - Upping version. by @dessalines
 - Remove up down spacebar swipes. Fixes #766 by @dessalines in [#768](https://github.com/dessalines/thumb-key/pull/768)
-- Create english română thumb-key by @MGreek in [#767](https://github.com/dessalines/thumb-key/pull/767)
+- Create english română thumb-key in [#767](https://github.com/dessalines/thumb-key/pull/767)
 - Fixed Hungarian Type-split layout by @KnockoffFeline in [#764](https://github.com/dessalines/thumb-key/pull/764)
 
 **Full Changelog**: https://github.com/dessalines/thumb-key/compare/2.6.19...2.6.20
