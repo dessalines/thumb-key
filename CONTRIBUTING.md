@@ -106,13 +106,3 @@ You can open it in android studio, right click and click open translations edito
 directly edit the files.
 
 If you add a new locale. Also add it in `locales_config.xml`. Don't forget to escape `'` in translations.
-
-## Theming guide
-
-To add a custom theme:
-
-- Use google's [Material 3 custom theme generator](https://m3.material.io/theme-builder#/custom), and save your `Theme.kt` file.
-- Copy the theme into `Color.kt` like the others.
-- Add the theme to the `ThemeColor` enum in `Types.kt`
-- Add a translation string in `strings.xml` for your theme name.
-- Add the theme to the `colorPairs` in `Theme.kt`
