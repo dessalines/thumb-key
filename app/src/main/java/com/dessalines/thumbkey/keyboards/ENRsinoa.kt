@@ -1,7 +1,10 @@
 package com.dessalines.thumbkey.keyboards
 
 import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.outlined.ArrowDropDown
 import androidx.compose.material.icons.outlined.ArrowDropUp
+import androidx.compose.material.icons.outlined.Copyright
+import androidx.compose.material.icons.outlined.KeyboardCapslock
 import com.dessalines.thumbkey.utils.ColorVariant
 import com.dessalines.thumbkey.utils.FontSizeVariant
 import com.dessalines.thumbkey.utils.KeyAction
@@ -33,7 +36,7 @@ val KB_EN_RSINOA_MAIN =
                         mapOf(
                             SwipeDirection.BOTTOM_RIGHT to
                                 KeyC(
-                                    action = KeyAction.CommitText("v"),
+                                    action = KeyAction.CommitText("c"),
                                 ),
                         ),
                 ),
@@ -100,11 +103,11 @@ val KB_EN_RSINOA_MAIN =
                                 ),
                             SwipeDirection.BOTTOM to
                                 KeyC(
-                                    action = KeyAction.CommitText("x"),
+                                    action = KeyAction.CommitText("v"),
                                 ),
                             SwipeDirection.TOP to
                                 KeyC(
-                                    action = KeyAction.CommitText("j"),
+                                    action = KeyAction.CommitText("x"),
                                 ),
                         ),
                 ),
@@ -115,20 +118,24 @@ val KB_EN_RSINOA_MAIN =
                             size = FontSizeVariant.LARGE,
                             color = ColorVariant.PRIMARY,
                         ),
-                    swipeType = SwipeNWay.FOUR_WAY_CROSS,
+                    swipeType = SwipeNWay.FOUR_WAY_DIAGONAL,
                     swipes =
                         mapOf(
-                            SwipeDirection.RIGHT to
+                            SwipeDirection.TOP_RIGHT to
                                 KeyC(
                                     action = KeyAction.CommitText("f"),
                                 ),
-                            SwipeDirection.BOTTOM to
-                                KeyC(
-                                    action = KeyAction.CommitText("g"),
-                                ),
-                            SwipeDirection.TOP to
+                            SwipeDirection.TOP_LEFT to
                                 KeyC(
                                     action = KeyAction.CommitText("p"),
+                                ),
+                            SwipeDirection.BOTTOM_RIGHT to
+                                KeyC(
+                                    action = KeyAction.CommitText("d"),
+                                ),
+                            SwipeDirection.BOTTOM_LEFT to
+                                KeyC(
+                                    action = KeyAction.CommitText("g"),
                                 ),
                         ),
                 ),
@@ -167,7 +174,7 @@ val KB_EN_RSINOA_MAIN =
                         mapOf(
                             SwipeDirection.TOP to
                                 KeyC(
-                                    action = KeyAction.CommitText("c"),
+                                    action = KeyAction.CommitText("j"),
                                 ),
                             SwipeDirection.RIGHT to
                                 KeyC(
@@ -188,7 +195,6 @@ val KB_EN_RSINOA_MAIN =
                             SwipeDirection.TOP_RIGHT to
                                 KeyC(
                                     action = KeyAction.CommitText("w"),
-                                    color = ColorVariant.MUTED,
                                 ),
                             SwipeDirection.TOP_LEFT to
                                 KeyC(
@@ -196,12 +202,7 @@ val KB_EN_RSINOA_MAIN =
                                 ),
                             SwipeDirection.BOTTOM_RIGHT to
                                 KeyC(
-                                    action = KeyAction.CommitText("d"),
-                                    color = ColorVariant.MUTED,
-                                ),
-                            SwipeDirection.BOTTOM_LEFT to
-                                KeyC(
-                                    action = KeyAction.CommitText("."),
+                                    action = KeyAction.CommitText(","),
                                     color = ColorVariant.MUTED,
                                 ),
                         ),
@@ -213,20 +214,22 @@ val KB_EN_RSINOA_MAIN =
                             size = FontSizeVariant.LARGE,
                             color = ColorVariant.PRIMARY,
                         ),
-                    swipeType = SwipeNWay.FOUR_WAY_CROSS,
+                    swipeType = SwipeNWay.EIGHT_WAY,
                     swipes =
                         mapOf(
-                            SwipeDirection.TOP to
+                            SwipeDirection.TOP_RIGHT to
                                 KeyC(
                                     action = KeyAction.CommitText("q"),
                                 ),
-                            SwipeDirection.LEFT to
+                            SwipeDirection.TOP_LEFT to
                                 KeyC(
                                     action = KeyAction.CommitText("'"),
+                                    color = ColorVariant.MUTED,
                                 ),
                             SwipeDirection.BOTTOM to
                                 KeyC(
-                                    action = KeyAction.CommitText(","),
+                                    action = KeyAction.CommitText("."),
+                                    color = ColorVariant.MUTED,
                                 ),
                         ),
                 ),
@@ -255,7 +258,7 @@ val KB_EN_RSINOA_SHIFTED =
                         mapOf(
                             SwipeDirection.BOTTOM_RIGHT to
                                 KeyC(
-                                    action = KeyAction.CommitText("V"),
+                                    action = KeyAction.CommitText("C"),
                                 ),
                         ),
                 ),
@@ -289,17 +292,20 @@ val KB_EN_RSINOA_SHIFTED =
                     swipeType = SwipeNWay.FOUR_WAY_CROSS,
                     swipes =
                         mapOf(
-                            SwipeDirection.TOP to
-                                KeyC(
-                                    display = KeyDisplay.IconDisplay(Icons.Outlined.ArrowDropUp),
-                                    action = KeyAction.ToggleShiftMode(true),
-                                    swipeReturnAction = KeyAction.ToggleCurrentWordCapitalization(true),
-                                    color = ColorVariant.MUTED,
-                                ),
                             SwipeDirection.BOTTOM to
                                 KeyC(
+                                    display = KeyDisplay.IconDisplay(Icons.Outlined.ArrowDropDown),
                                     action = KeyAction.ToggleShiftMode(false),
                                     swipeReturnAction = KeyAction.ToggleCurrentWordCapitalization(false),
+                                    color = ColorVariant.MUTED,
+                                ),
+                            SwipeDirection.TOP to
+                                KeyC(
+                                    display = KeyDisplay.IconDisplay(Icons.Outlined.KeyboardCapslock),
+                                    capsModeDisplay = KeyDisplay.IconDisplay(Icons.Outlined.Copyright),
+                                    action = KeyAction.ToggleCapsLock,
+                                    swipeReturnAction = KeyAction.ToggleCurrentWordCapitalization(true),
+                                    color = ColorVariant.MUTED,
                                 ),
                         ),
                 ),
@@ -322,11 +328,11 @@ val KB_EN_RSINOA_SHIFTED =
                                 ),
                             SwipeDirection.BOTTOM to
                                 KeyC(
-                                    action = KeyAction.CommitText("X"),
+                                    action = KeyAction.CommitText("V"),
                                 ),
                             SwipeDirection.TOP to
                                 KeyC(
-                                    action = KeyAction.CommitText("J"),
+                                    action = KeyAction.CommitText("X"),
                                 ),
                         ),
                 ),
@@ -337,20 +343,24 @@ val KB_EN_RSINOA_SHIFTED =
                             size = FontSizeVariant.LARGE,
                             color = ColorVariant.PRIMARY,
                         ),
-                    swipeType = SwipeNWay.FOUR_WAY_CROSS,
+                    swipeType = SwipeNWay.FOUR_WAY_DIAGONAL,
                     swipes =
                         mapOf(
-                            SwipeDirection.RIGHT to
+                            SwipeDirection.TOP_RIGHT to
                                 KeyC(
                                     action = KeyAction.CommitText("F"),
                                 ),
-                            SwipeDirection.BOTTOM to
-                                KeyC(
-                                    action = KeyAction.CommitText("G"),
-                                ),
-                            SwipeDirection.TOP to
+                            SwipeDirection.TOP_LEFT to
                                 KeyC(
                                     action = KeyAction.CommitText("P"),
+                                ),
+                            SwipeDirection.BOTTOM_RIGHT to
+                                KeyC(
+                                    action = KeyAction.CommitText("D"),
+                                ),
+                            SwipeDirection.BOTTOM_LEFT to
+                                KeyC(
+                                    action = KeyAction.CommitText("G"),
                                 ),
                         ),
                 ),
@@ -389,7 +399,7 @@ val KB_EN_RSINOA_SHIFTED =
                         mapOf(
                             SwipeDirection.TOP to
                                 KeyC(
-                                    action = KeyAction.CommitText("C"),
+                                    action = KeyAction.CommitText("J"),
                                 ),
                             SwipeDirection.RIGHT to
                                 KeyC(
@@ -410,7 +420,6 @@ val KB_EN_RSINOA_SHIFTED =
                             SwipeDirection.TOP_RIGHT to
                                 KeyC(
                                     action = KeyAction.CommitText("W"),
-                                    color = ColorVariant.MUTED,
                                 ),
                             SwipeDirection.TOP_LEFT to
                                 KeyC(
@@ -418,12 +427,7 @@ val KB_EN_RSINOA_SHIFTED =
                                 ),
                             SwipeDirection.BOTTOM_RIGHT to
                                 KeyC(
-                                    action = KeyAction.CommitText("D"),
-                                    color = ColorVariant.MUTED,
-                                ),
-                            SwipeDirection.BOTTOM_LEFT to
-                                KeyC(
-                                    action = KeyAction.CommitText("."),
+                                    action = KeyAction.CommitText(","),
                                     color = ColorVariant.MUTED,
                                 ),
                         ),
@@ -435,20 +439,22 @@ val KB_EN_RSINOA_SHIFTED =
                             size = FontSizeVariant.LARGE,
                             color = ColorVariant.PRIMARY,
                         ),
-                    swipeType = SwipeNWay.FOUR_WAY_CROSS,
+                    swipeType = SwipeNWay.EIGHT_WAY,
                     swipes =
                         mapOf(
-                            SwipeDirection.TOP to
+                            SwipeDirection.TOP_RIGHT to
                                 KeyC(
                                     action = KeyAction.CommitText("Q"),
                                 ),
-                            SwipeDirection.LEFT to
+                            SwipeDirection.TOP_LEFT to
                                 KeyC(
                                     action = KeyAction.CommitText("'"),
+                                    color = ColorVariant.MUTED,
                                 ),
                             SwipeDirection.BOTTOM to
                                 KeyC(
-                                    action = KeyAction.CommitText(","),
+                                    action = KeyAction.CommitText("."),
+                                    color = ColorVariant.MUTED,
                                 ),
                         ),
                 ),
