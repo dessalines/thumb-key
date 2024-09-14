@@ -1,13 +1,19 @@
+# Thumb-Key 3.4.8 (2024-09-14)
+
+## What's Changed in 3.4.8
+
+- Change duplicate : to tab in ENNOMessagEaseSymbols by @afreakk in [#1066](https://github.com/dessalines/thumb-key/pull/1066)
+- update to new best layout by @lrvideckis in [#1063](https://github.com/dessalines/thumb-key/pull/1063)
+
+**Full Changelog**: https://github.com/dessalines/thumb-key/compare/3.4.7...3.4.8
+
 # Thumb-Key 3.4.7 (2024-09-12)
 
 ## What's Changed in 3.4.7
 
+- Upping version. by @dessalines
 - Rsinoa layout by @lrvideckis in [#1057](https://github.com/dessalines/thumb-key/pull/1057)
 - Adding CONTRIBUTING.md by @dessalines in [#1062](https://github.com/dessalines/thumb-key/pull/1062)
-
-## New Contributors
-
-- @lrvideckis made their first contribution in [#1057](https://github.com/dessalines/thumb-key/pull/1057)
 
 **Full Changelog**: https://github.com/dessalines/thumb-key/compare/3.4.6...3.4.7
 
