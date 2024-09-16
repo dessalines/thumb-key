@@ -297,5 +297,5 @@ enum class KeyboardLayout(
     ENThumbKeyWords(KB_EN_THUMBKEY_WORDS),
     ENDENLThumbKey(KB_EN_DE_NL_THUMBKEY),
     ENRsinoa(KB_EN_RSINOA),
-    ENTypeSplitShort(KB_EN_TYPESPLIT_SHORT)
+    ENTypeSplitShort(KB_EN_TYPESPLIT_SHORT),
 }
