@@ -1,7 +1,21 @@
+# Thumb-Key 3.4.9 (2024-09-16)
+
+## What's Changed in 3.4.9
+
+- English TypeSplit Short layout by @ChrisLHall in [#1069](https://github.com/dessalines/thumb-key/pull/1069)
+- Update Danish translation by @Limfjorden in [#1067](https://github.com/dessalines/thumb-key/pull/1067)
+
+## New Contributors
+
+- @ChrisLHall made their first contribution in [#1069](https://github.com/dessalines/thumb-key/pull/1069)
+
+**Full Changelog**: https://github.com/dessalines/thumb-key/compare/3.4.8...3.4.9
+
 # Thumb-Key 3.4.8 (2024-09-14)
 
 ## What's Changed in 3.4.8
 
+- Upping version. by @dessalines
 - Change duplicate : to tab in ENNOMessagEaseSymbols by @afreakk in [#1066](https://github.com/dessalines/thumb-key/pull/1066)
 - update to new best layout by @lrvideckis in [#1063](https://github.com/dessalines/thumb-key/pull/1063)
 
