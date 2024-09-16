@@ -67,6 +67,7 @@ import com.dessalines.thumbkey.keyboards.KB_EN_THUMBKEY_WORDS
 import com.dessalines.thumbkey.keyboards.KB_EN_THUMBKEY_WRITER
 import com.dessalines.thumbkey.keyboards.KB_EN_TWO_HANDS
 import com.dessalines.thumbkey.keyboards.KB_EN_TYPESPLIT
+import com.dessalines.thumbkey.keyboards.KB_EN_TYPESPLIT_SHORT
 import com.dessalines.thumbkey.keyboards.KB_EO_CYRILLIC_THUMBKEY
 import com.dessalines.thumbkey.keyboards.KB_EO_EN_DE_THUMBKEY
 import com.dessalines.thumbkey.keyboards.KB_ES_CA_MESSAGEASE
@@ -296,4 +297,5 @@ enum class KeyboardLayout(
     ENThumbKeyWords(KB_EN_THUMBKEY_WORDS),
     ENDENLThumbKey(KB_EN_DE_NL_THUMBKEY),
     ENRsinoa(KB_EN_RSINOA),
+    ENTypeSplitShort(KB_EN_TYPESPLIT_SHORT),
 }
