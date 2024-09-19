@@ -122,8 +122,10 @@ import com.dessalines.thumbkey.keyboards.KB_NL_TYPESPLIT
 import com.dessalines.thumbkey.keyboards.KB_NO_THUMBKEY
 import com.dessalines.thumbkey.keyboards.KB_PL_MESSAGEASE
 import com.dessalines.thumbkey.keyboards.KB_PL_THUMBKEY
-import com.dessalines.thumbkey.keyboards.KB_PL_TYPESPLIT
-import com.dessalines.thumbkey.keyboards.KB_PL_TYPESPLIT_SYMBOLS
+import com.dessalines.thumbkey.keyboards.KB_PL_TYPESPLIT_V1
+import com.dessalines.thumbkey.keyboards.KB_PL_TYPESPLIT_V2
+import com.dessalines.thumbkey.keyboards.KB_PL_TYPESPLIT_SYMBOLS_V1
+import com.dessalines.thumbkey.keyboards.KB_PL_TYPESPLIT_SYMBOLS_V2
 import com.dessalines.thumbkey.keyboards.KB_PT_THUMBKEY
 import com.dessalines.thumbkey.keyboards.KB_PT_TYPESPLIT
 import com.dessalines.thumbkey.keyboards.KB_RU_MESSAGEASE
@@ -194,7 +196,7 @@ enum class KeyboardLayout(
     FRTypeSplit(KB_FR_TYPESPLIT),
     ITTypeSplit(KB_IT_TYPESPLIT),
     PTTypeSplit(KB_PT_TYPESPLIT),
-    PLTypeSplit(KB_PL_TYPESPLIT),
+    PLTypeSplitV2(KB_PL_TYPESPLIT_V2),
     ENTwoHands(KB_EN_TWO_HANDS),
     ENThumbKeyProgrammingWide(KB_EN_THUMBKEY_PROGRAMMING_WIDE),
     HUThumbKey(KB_HU_THUMBKEY),
@@ -272,7 +274,7 @@ enum class KeyboardLayout(
     VNThumbKey(KB_VN_THUMBKEY),
     TOKThumbKey(KB_TOK_THUMBKEY),
     TOKSitelenThumbKeyEmoji(KB_TOK_SITELEN_THUMBKEY_EMOJI),
-    PLTypeSplitSymbols(KB_PL_TYPESPLIT_SYMBOLS),
+    PLTypeSplitSymbolsV2(KB_PL_TYPESPLIT_SYMBOLS_V2),
     SKThumbKeyV2(KB_SK_THUMBKEY_V2),
     ITMessagEaseSymbols(KB_IT_MESSAGEASE_SYMBOLS),
     ENQwertease(KB_EN_QWERTEASE),
@@ -298,4 +300,6 @@ enum class KeyboardLayout(
     ENDENLThumbKey(KB_EN_DE_NL_THUMBKEY),
     ENRsinoa(KB_EN_RSINOA),
     ENTypeSplitShort(KB_EN_TYPESPLIT_SHORT),
+    PLTypeSplitV1(KB_PL_TYPESPLIT_V1),
+    PLTypeSplitSymbolsV1(KB_PL_TYPESPLIT_SYMBOLS_V1),
 }
