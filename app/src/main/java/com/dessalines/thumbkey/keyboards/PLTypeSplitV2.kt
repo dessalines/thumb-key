@@ -12,7 +12,7 @@ import com.dessalines.thumbkey.utils.KeyboardDefinitionModes
 import com.dessalines.thumbkey.utils.SwipeDirection
 import com.dessalines.thumbkey.utils.SwipeNWay
 
-val KB_PL_TYPESPLIT_MAIN =
+val KB_PL_TYPESPLIT_V2_MAIN =
     KeyboardC(
         listOf(
             listOf(
@@ -375,7 +375,7 @@ val KB_PL_TYPESPLIT_MAIN =
         ),
     )
 
-val KB_PL_TYPESPLIT_SHIFTED =
+val KB_PL_TYPESPLIT_V2_SHIFTED =
     KeyboardC(
         listOf(
             listOf(
@@ -738,13 +738,13 @@ val KB_PL_TYPESPLIT_SHIFTED =
         ),
     )
 
-val KB_PL_TYPESPLIT: KeyboardDefinition =
+val KB_PL_TYPESPLIT_V2: KeyboardDefinition =
     KeyboardDefinition(
-        title = "polski type-split",
+        title = "polski type-split v2",
         modes =
             KeyboardDefinitionModes(
-                main = KB_PL_TYPESPLIT_MAIN,
-                shifted = KB_PL_TYPESPLIT_SHIFTED,
+                main = KB_PL_TYPESPLIT_V2_MAIN,
+                shifted = KB_PL_TYPESPLIT_V2_SHIFTED,
                 numeric = TYPESPLIT_NUMERIC_KEYBOARD,
             ),
     )
