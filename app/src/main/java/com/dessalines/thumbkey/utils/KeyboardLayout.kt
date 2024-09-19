@@ -122,10 +122,10 @@ import com.dessalines.thumbkey.keyboards.KB_NL_TYPESPLIT
 import com.dessalines.thumbkey.keyboards.KB_NO_THUMBKEY
 import com.dessalines.thumbkey.keyboards.KB_PL_MESSAGEASE
 import com.dessalines.thumbkey.keyboards.KB_PL_THUMBKEY
-import com.dessalines.thumbkey.keyboards.KB_PL_TYPESPLIT_V1
-import com.dessalines.thumbkey.keyboards.KB_PL_TYPESPLIT_V2
 import com.dessalines.thumbkey.keyboards.KB_PL_TYPESPLIT_SYMBOLS_V1
 import com.dessalines.thumbkey.keyboards.KB_PL_TYPESPLIT_SYMBOLS_V2
+import com.dessalines.thumbkey.keyboards.KB_PL_TYPESPLIT_V1
+import com.dessalines.thumbkey.keyboards.KB_PL_TYPESPLIT_V2
 import com.dessalines.thumbkey.keyboards.KB_PT_THUMBKEY
 import com.dessalines.thumbkey.keyboards.KB_PT_TYPESPLIT
 import com.dessalines.thumbkey.keyboards.KB_RU_MESSAGEASE
