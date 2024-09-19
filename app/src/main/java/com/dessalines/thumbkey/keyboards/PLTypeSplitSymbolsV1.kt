@@ -12,7 +12,7 @@ import com.dessalines.thumbkey.utils.KeyboardDefinitionModes
 import com.dessalines.thumbkey.utils.SwipeDirection
 import com.dessalines.thumbkey.utils.SwipeNWay
 
-val KB_PL_TYPESPLIT_SYMBOlS_V1_MAIN =
+val KB_PL_TYPESPLIT_SYMBOLS_V1_MAIN =
     KeyboardC(
         listOf(
             listOf(
@@ -923,7 +923,7 @@ val KB_PL_TYPESPLIT_SYMBOLS_V1: KeyboardDefinition =
         title = "polski symbols type-split v1",
         modes =
             KeyboardDefinitionModes(
-                main = KB_PL_TYPESPLIT_SYMBOlS_V1_MAIN,
+                main = KB_PL_TYPESPLIT_SYMBOLS_V1_MAIN,
                 shifted = KB_PL_TYPESPLIT_SYMBOLS_V1_SHIFTED,
                 numeric = TYPESPLIT_NUMERIC_KEYBOARD,
             ),

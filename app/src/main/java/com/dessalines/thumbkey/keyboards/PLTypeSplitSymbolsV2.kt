@@ -64,7 +64,7 @@ val TYPESPLIT_SYMBOLS_MIDDLE_KEY =
         backgroundColor = ColorVariant.SURFACE_VARIANT,
     )
 
-val KB_PL_TYPESPLIT_SYMBOlS_V2_MAIN =
+val KB_PL_TYPESPLIT_SYMBOLS_V2_MAIN =
     KeyboardC(
         listOf(
             listOf(
@@ -1001,7 +1001,7 @@ val KB_PL_TYPESPLIT_SYMBOLS_V2: KeyboardDefinition =
         title = "polski symbols type-split v2",
         modes =
             KeyboardDefinitionModes(
-                main = KB_PL_TYPESPLIT_SYMBOlS_V2_MAIN,
+                main = KB_PL_TYPESPLIT_SYMBOLS_V2_MAIN,
                 shifted = KB_PL_TYPESPLIT_SYMBOLS_V2_SHIFTED,
                 numeric = TYPESPLIT_NUMERIC_KEYBOARD,
             ),
