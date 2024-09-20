@@ -1,7 +1,17 @@
+# Thumb-Key 3.4.10 (2024-09-20)
+
+## What's Changed in 3.4.10
+
+- Add spaces after toki pona words. by @dessalines in [#1072](https://github.com/dessalines/thumb-key/pull/1072)
+- Add old polish type-split layouts back by @kkard2 in [#1070](https://github.com/dessalines/thumb-key/pull/1070)
+
+**Full Changelog**: https://github.com/dessalines/thumb-key/compare/3.4.9...3.4.10
+
 # Thumb-Key 3.4.9 (2024-09-16)
 
 ## What's Changed in 3.4.9
 
+- Upping version. by @dessalines
 - English TypeSplit Short layout by @ChrisLHall in [#1069](https://github.com/dessalines/thumb-key/pull/1069)
 - Update Danish translation by @Limfjorden in [#1067](https://github.com/dessalines/thumb-key/pull/1067)
 
@@ -434,7 +444,6 @@
 ## New Contributors
 
 - @feathecutie made their first contribution in [#854](https://github.com/dessalines/thumb-key/pull/854)
-- @kkard2 made their first contribution in [#851](https://github.com/dessalines/thumb-key/pull/851)
 
 **Full Changelog**: https://github.com/dessalines/thumb-key/compare/3.0.0...3.1.0
 
