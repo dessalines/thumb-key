@@ -91,6 +91,7 @@ import com.dessalines.thumbkey.keyboards.KB_FR_MESSAGEASE
 import com.dessalines.thumbkey.keyboards.KB_FR_THUMBKEY_V1
 import com.dessalines.thumbkey.keyboards.KB_FR_THUMBKEY_V2
 import com.dessalines.thumbkey.keyboards.KB_FR_TYPESPLIT
+import com.dessalines.thumbkey.keyboards.KB_GLAGOLITIC_THUMBKEY
 import com.dessalines.thumbkey.keyboards.KB_GR_THUMBKEY
 import com.dessalines.thumbkey.keyboards.KB_HE_MESSAGEASE
 import com.dessalines.thumbkey.keyboards.KB_HE_MESSAGEASE_SYMBOLS
@@ -302,4 +303,5 @@ enum class KeyboardLayout(
     ENTypeSplitShort(KB_EN_TYPESPLIT_SHORT),
     PLTypeSplitV1(KB_PL_TYPESPLIT_V1),
     PLTypeSplitSymbolsV1(KB_PL_TYPESPLIT_SYMBOLS_V1),
+    GlagoliticThumbkey(KB_GLAGOLITIC_THUMBKEY),
 }
