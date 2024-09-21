@@ -15,6 +15,8 @@ import com.dessalines.thumbkey.keyboards.KB_DE_THUMBKEY
 import com.dessalines.thumbkey.keyboards.KB_DE_THUMBKEY_MULTILINGUAL
 import com.dessalines.thumbkey.keyboards.KB_DE_THUMBKEY_SYMBOLS
 import com.dessalines.thumbkey.keyboards.KB_DE_TYPESPLIT
+import com.dessalines.thumbkey.keyboards.KB_EN_COLUMNAR
+import com.dessalines.thumbkey.keyboards.KB_EN_COLUMNAR_QUICK
 import com.dessalines.thumbkey.keyboards.KB_EN_CZ_THUMBKEY
 import com.dessalines.thumbkey.keyboards.KB_EN_DA_THUMBKEY_SYMBOLS
 import com.dessalines.thumbkey.keyboards.KB_EN_DE_NL_THUMBKEY
@@ -304,4 +306,6 @@ enum class KeyboardLayout(
     PLTypeSplitV1(KB_PL_TYPESPLIT_V1),
     PLTypeSplitSymbolsV1(KB_PL_TYPESPLIT_SYMBOLS_V1),
     GlagoliticThumbkey(KB_GLAGOLITIC_THUMBKEY),
+    ENColumnar(KB_EN_COLUMNAR),
+    ENColumnarQuick(KB_EN_COLUMNAR_QUICK),
 }
