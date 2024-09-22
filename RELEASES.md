@@ -1,7 +1,22 @@
+# Thumb-Key 3.4.11 (2024-09-22)
+
+## What's Changed in 3.4.11
+
+- Add QWERTY-Columnar layouts by @SED4906 in [#1075](https://github.com/dessalines/thumb-key/pull/1075)
+- Add glagolitic layout by @adiee5 in [#1074](https://github.com/dessalines/thumb-key/pull/1074)
+
+## New Contributors
+
+- @SED4906 made their first contribution in [#1075](https://github.com/dessalines/thumb-key/pull/1075)
+- @adiee5 made their first contribution in [#1074](https://github.com/dessalines/thumb-key/pull/1074)
+
+**Full Changelog**: https://github.com/dessalines/thumb-key/compare/3.4.10...3.4.11
+
 # Thumb-Key 3.4.10 (2024-09-20)
 
 ## What's Changed in 3.4.10
 
+- Upping version. by @dessalines
 - Add spaces after toki pona words. by @dessalines in [#1072](https://github.com/dessalines/thumb-key/pull/1072)
 - Add old polish type-split layouts back by @kkard2 in [#1070](https://github.com/dessalines/thumb-key/pull/1070)
 

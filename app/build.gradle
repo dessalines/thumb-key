@@ -13,8 +13,8 @@ android {
         applicationId "com.dessalines.thumbkey"
         minSdk 21
         targetSdkVersion 34
-        versionCode 111
-        versionName "3.4.10"
+        versionCode 112
+        versionName "3.4.11"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         vectorDrawables {
