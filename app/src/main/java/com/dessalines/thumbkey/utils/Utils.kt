@@ -417,6 +417,7 @@ fun performKeyAction(
                             "y" -> "ÿ"
                             "Y" -> "Ÿ"
                             " " -> "\""
+                            "'" -> "\""
                             else -> textBefore
                         }
 
@@ -472,6 +473,7 @@ fun performKeyAction(
                             "Z" -> "Ź"
                             "'" -> "”"
                             " " -> "'"
+                            "\"" -> "'"
                             else -> textBefore
                         }
 

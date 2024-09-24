@@ -117,13 +117,15 @@ val KB_EN_THUMBKEY_COMPOSE_MAIN =
                                 ),
                             SwipeDirection.TOP_RIGHT to
                                 KeyC(
-                                    display = KeyDisplay.TextDisplay(""),
-                                    action = KeyAction.CommitText("m"),
+                                    display = KeyDisplay.TextDisplay("ˇ"),
+                                    action = KeyAction.ComposeLastKey("ˇ"),
+                                    color = ColorVariant.MUTED,
                                 ),
                             SwipeDirection.BOTTOM_RIGHT to
                                 KeyC(
-                                    display = KeyDisplay.TextDisplay(""),
-                                    action = KeyAction.CommitText("m"),
+                                    display = KeyDisplay.TextDisplay("˘"),
+                                    action = KeyAction.ComposeLastKey("˘"),
+                                    color = ColorVariant.MUTED,
                                 ),
                             SwipeDirection.BOTTOM_LEFT to
                                 KeyC(
@@ -248,7 +250,7 @@ val KB_EN_THUMBKEY_COMPOSE_MAIN =
                                 ),
                             SwipeDirection.BOTTOM_LEFT to
                                 KeyC(
-                                    display = KeyDisplay.TextDisplay("¿¡"),
+                                    display = KeyDisplay.TextDisplay("¿¡ßç"),
                                     action = KeyAction.ComposeLastKey("!"),
                                     color = ColorVariant.MUTED,
                                 ),
@@ -275,11 +277,15 @@ val KB_EN_THUMBKEY_COMPOSE_MAIN =
                                     display = KeyDisplay.TextDisplay("f"),
                                     action = KeyAction.CommitText("f"),
                                 ),
+                            SwipeDirection.TOP_LEFT to
+                                KeyC(
+                                    display = KeyDisplay.TextDisplay(" "),
+                                    action = KeyAction.CommitText("f"),
+                                ),
                             SwipeDirection.TOP_RIGHT to
                                 KeyC(
                                     display = KeyDisplay.TextDisplay("'"),
                                     action = KeyAction.CommitText("'"),
-                                    color = ColorVariant.MUTED,
                                 ),
                             SwipeDirection.RIGHT to
                                 KeyC(
@@ -290,19 +296,16 @@ val KB_EN_THUMBKEY_COMPOSE_MAIN =
                                 KeyC(
                                     display = KeyDisplay.TextDisplay("-"),
                                     action = KeyAction.CommitText("-"),
-                                    color = ColorVariant.MUTED,
                                 ),
                             SwipeDirection.BOTTOM to
                                 KeyC(
                                     display = KeyDisplay.TextDisplay("."),
                                     action = KeyAction.CommitText("."),
-                                    color = ColorVariant.MUTED,
                                 ),
                             SwipeDirection.BOTTOM_LEFT to
                                 KeyC(
                                     display = KeyDisplay.TextDisplay("*"),
                                     action = KeyAction.CommitText("*"),
-                                    color = ColorVariant.MUTED,
                                 ),
                         ),
                 ),
@@ -430,13 +433,15 @@ val KB_EN_THUMBKEY_COMPOSE_SHIFTED =
                                 ),
                             SwipeDirection.TOP_RIGHT to
                                 KeyC(
-                                    display = KeyDisplay.TextDisplay(""),
-                                    action = KeyAction.CommitText("M"),
+                                    display = KeyDisplay.TextDisplay("ˇ"),
+                                    action = KeyAction.ComposeLastKey("ˇ"),
+                                    color = ColorVariant.MUTED,
                                 ),
                             SwipeDirection.BOTTOM_RIGHT to
                                 KeyC(
-                                    display = KeyDisplay.TextDisplay(""),
-                                    action = KeyAction.CommitText("M"),
+                                    display = KeyDisplay.TextDisplay("˘"),
+                                    action = KeyAction.ComposeLastKey("˘"),
+                                    color = ColorVariant.MUTED,
                                 ),
                             SwipeDirection.TOP_LEFT to
                                 KeyC(
@@ -564,7 +569,7 @@ val KB_EN_THUMBKEY_COMPOSE_SHIFTED =
                                 ),
                             SwipeDirection.BOTTOM_LEFT to
                                 KeyC(
-                                    display = KeyDisplay.TextDisplay("¿¡"),
+                                    display = KeyDisplay.TextDisplay("¿¡ßÇ"),
                                     action = KeyAction.ComposeLastKey("!"),
                                     color = ColorVariant.MUTED,
                                 ),
@@ -591,11 +596,15 @@ val KB_EN_THUMBKEY_COMPOSE_SHIFTED =
                                     display = KeyDisplay.TextDisplay("F"),
                                     action = KeyAction.CommitText("F"),
                                 ),
+                            SwipeDirection.TOP_LEFT to
+                                KeyC(
+                                    display = KeyDisplay.TextDisplay(" "),
+                                    action = KeyAction.CommitText("F"),
+                                ),
                             SwipeDirection.TOP_RIGHT to
                                 KeyC(
                                     display = KeyDisplay.TextDisplay("'"),
                                     action = KeyAction.CommitText("'"),
-                                    color = ColorVariant.MUTED,
                                 ),
                             SwipeDirection.RIGHT to
                                 KeyC(
@@ -606,19 +615,16 @@ val KB_EN_THUMBKEY_COMPOSE_SHIFTED =
                                 KeyC(
                                     display = KeyDisplay.TextDisplay("-"),
                                     action = KeyAction.CommitText("-"),
-                                    color = ColorVariant.MUTED,
                                 ),
                             SwipeDirection.BOTTOM to
                                 KeyC(
                                     display = KeyDisplay.TextDisplay("."),
                                     action = KeyAction.CommitText("."),
-                                    color = ColorVariant.MUTED,
                                 ),
                             SwipeDirection.BOTTOM_LEFT to
                                 KeyC(
                                     display = KeyDisplay.TextDisplay("*"),
                                     action = KeyAction.CommitText("*"),
-                                    color = ColorVariant.MUTED,
                                 ),
                         ),
                 ),
