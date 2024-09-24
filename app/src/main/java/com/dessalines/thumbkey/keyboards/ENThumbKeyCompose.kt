@@ -277,6 +277,11 @@ val KB_EN_THUMBKEY_COMPOSE_MAIN =
                                     display = KeyDisplay.TextDisplay("f"),
                                     action = KeyAction.CommitText("f"),
                                 ),
+                            SwipeDirection.TOP_LEFT to
+                                    KeyC(
+                                        display = KeyDisplay.TextDisplay(" "),
+                                        action = KeyAction.CommitText("f"),
+                                    ),
                             SwipeDirection.TOP_RIGHT to
                                 KeyC(
                                     display = KeyDisplay.TextDisplay("'"),
@@ -589,6 +594,11 @@ val KB_EN_THUMBKEY_COMPOSE_SHIFTED =
                             SwipeDirection.TOP to
                                 KeyC(
                                     display = KeyDisplay.TextDisplay("F"),
+                                    action = KeyAction.CommitText("F"),
+                                ),
+                            SwipeDirection.TOP_LEFT to
+                                KeyC(
+                                    display = KeyDisplay.TextDisplay(" "),
                                     action = KeyAction.CommitText("F"),
                                 ),
                             SwipeDirection.TOP_RIGHT to
