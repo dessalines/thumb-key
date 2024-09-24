@@ -1,7 +1,17 @@
+# Thumb-Key 3.4.12 (2024-09-24)
+
+## What's Changed in 3.4.12
+
+- Add compose keys (caron, breve), quote sign toggle by @mpice-mn in [#1086](https://github.com/dessalines/thumb-key/pull/1086)
+- Add renovate more often. by @dessalines in [#1084](https://github.com/dessalines/thumb-key/pull/1084)
+
+**Full Changelog**: https://github.com/dessalines/thumb-key/compare/3.4.11...3.4.12
+
 # Thumb-Key 3.4.11 (2024-09-22)
 
 ## What's Changed in 3.4.11
 
+- Upping version. by @dessalines
 - Add QWERTY-Columnar layouts by @SED4906 in [#1075](https://github.com/dessalines/thumb-key/pull/1075)
 - Add glagolitic layout by @adiee5 in [#1074](https://github.com/dessalines/thumb-key/pull/1074)
 
