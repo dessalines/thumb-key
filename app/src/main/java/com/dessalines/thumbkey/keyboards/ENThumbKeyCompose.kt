@@ -278,10 +278,10 @@ val KB_EN_THUMBKEY_COMPOSE_MAIN =
                                     action = KeyAction.CommitText("f"),
                                 ),
                             SwipeDirection.TOP_LEFT to
-                                    KeyC(
-                                        display = KeyDisplay.TextDisplay(" "),
-                                        action = KeyAction.CommitText("f"),
-                                    ),
+                                KeyC(
+                                    display = KeyDisplay.TextDisplay(" "),
+                                    action = KeyAction.CommitText("f"),
+                                ),
                             SwipeDirection.TOP_RIGHT to
                                 KeyC(
                                     display = KeyDisplay.TextDisplay("'"),
@@ -432,17 +432,17 @@ val KB_EN_THUMBKEY_COMPOSE_SHIFTED =
                                     action = KeyAction.CommitText("M"),
                                 ),
                             SwipeDirection.TOP_RIGHT to
-                                    KeyC(
-                                        display = KeyDisplay.TextDisplay("ˇ"),
-                                        action = KeyAction.ComposeLastKey("ˇ"),
-                                        color = ColorVariant.MUTED,
-                                    ),
+                                KeyC(
+                                    display = KeyDisplay.TextDisplay("ˇ"),
+                                    action = KeyAction.ComposeLastKey("ˇ"),
+                                    color = ColorVariant.MUTED,
+                                ),
                             SwipeDirection.BOTTOM_RIGHT to
-                                    KeyC(
-                                        display = KeyDisplay.TextDisplay("˘"),
-                                        action = KeyAction.ComposeLastKey("˘"),
-                                        color = ColorVariant.MUTED,
-                                    ),
+                                KeyC(
+                                    display = KeyDisplay.TextDisplay("˘"),
+                                    action = KeyAction.ComposeLastKey("˘"),
+                                    color = ColorVariant.MUTED,
+                                ),
                             SwipeDirection.TOP_LEFT to
                                 KeyC(
                                     display = KeyDisplay.TextDisplay("'"),
