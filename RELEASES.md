@@ -1,3 +1,14 @@
+## What's Changed in 3.4.13
+
+- Updating git cliff. by @dessalines in [#1091](https://github.com/dessalines/thumb-key/pull/1091)
+- Add UK+BY+RU ThumbKey layout by @josemam in [#1089](https://github.com/dessalines/thumb-key/pull/1089)
+
+## New Contributors
+
+- @josemam made their first contribution in [#1089](https://github.com/dessalines/thumb-key/pull/1089)
+
+**Full Changelog**: https://github.com/dessalines/thumb-key/compare/3.4.12...3.4.13
+
 ## What's Changed in 3.4.12
 
 - Add compose keys (caron, breve), quote sign toggle by @mpice-mn in [#1086](https://github.com/dessalines/thumb-key/pull/1086)
