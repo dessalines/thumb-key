@@ -1,4 +1,13 @@
-# Thumb-Key 3.4.12 (2024-09-24)
+## What's Changed in 3.4.13
+
+- Updating git cliff. by @dessalines in [#1091](https://github.com/dessalines/thumb-key/pull/1091)
+- Add UK+BY+RU ThumbKey layout by @josemam in [#1089](https://github.com/dessalines/thumb-key/pull/1089)
+
+## New Contributors
+
+- @josemam made their first contribution in [#1089](https://github.com/dessalines/thumb-key/pull/1089)
+
+**Full Changelog**: https://github.com/dessalines/thumb-key/compare/3.4.12...3.4.13
 
 ## What's Changed in 3.4.12
 
@@ -7,11 +16,8 @@
 
 **Full Changelog**: https://github.com/dessalines/thumb-key/compare/3.4.11...3.4.12
 
-# Thumb-Key 3.4.11 (2024-09-22)
-
 ## What's Changed in 3.4.11
 
-- Upping version. by @dessalines
 - Add QWERTY-Columnar layouts by @SED4906 in [#1075](https://github.com/dessalines/thumb-key/pull/1075)
 - Add glagolitic layout by @adiee5 in [#1074](https://github.com/dessalines/thumb-key/pull/1074)
 
@@ -22,21 +28,15 @@
 
 **Full Changelog**: https://github.com/dessalines/thumb-key/compare/3.4.10...3.4.11
 
-# Thumb-Key 3.4.10 (2024-09-20)
-
 ## What's Changed in 3.4.10
 
-- Upping version. by @dessalines
 - Add spaces after toki pona words. by @dessalines in [#1072](https://github.com/dessalines/thumb-key/pull/1072)
 - Add old polish type-split layouts back by @kkard2 in [#1070](https://github.com/dessalines/thumb-key/pull/1070)
 
 **Full Changelog**: https://github.com/dessalines/thumb-key/compare/3.4.9...3.4.10
 
-# Thumb-Key 3.4.9 (2024-09-16)
-
 ## What's Changed in 3.4.9
 
-- Upping version. by @dessalines
 - English TypeSplit Short layout by @ChrisLHall in [#1069](https://github.com/dessalines/thumb-key/pull/1069)
 - Update Danish translation by @Limfjorden in [#1067](https://github.com/dessalines/thumb-key/pull/1067)
 
@@ -46,31 +46,22 @@
 
 **Full Changelog**: https://github.com/dessalines/thumb-key/compare/3.4.8...3.4.9
 
-# Thumb-Key 3.4.8 (2024-09-14)
-
 ## What's Changed in 3.4.8
 
-- Upping version. by @dessalines
 - Change duplicate : to tab in ENNOMessagEaseSymbols by @afreakk in [#1066](https://github.com/dessalines/thumb-key/pull/1066)
 - update to new best layout by @lrvideckis in [#1063](https://github.com/dessalines/thumb-key/pull/1063)
 
 **Full Changelog**: https://github.com/dessalines/thumb-key/compare/3.4.7...3.4.8
 
-# Thumb-Key 3.4.7 (2024-09-12)
-
 ## What's Changed in 3.4.7
 
-- Upping version. by @dessalines
 - Rsinoa layout by @lrvideckis in [#1057](https://github.com/dessalines/thumb-key/pull/1057)
 - Adding CONTRIBUTING.md by @dessalines in [#1062](https://github.com/dessalines/thumb-key/pull/1062)
 
 **Full Changelog**: https://github.com/dessalines/thumb-key/compare/3.4.6...3.4.7
 
-# Thumb-Key 3.4.6 (2024-09-10)
-
 ## What's Changed in 3.4.6
 
-- Upping version. by @dessalines
 - New Layout EN / DE / NL incl new Numerical Layout by @freekvdmeer in [#1045](https://github.com/dessalines/thumb-key/pull/1045)
 - Type split improvements by @h67ma in [#1054](https://github.com/dessalines/thumb-key/pull/1054)
 
@@ -81,11 +72,8 @@
 
 **Full Changelog**: https://github.com/dessalines/thumb-key/compare/3.4.5...3.4.6
 
-# Thumb-Key 3.4.5 (2024-09-02)
-
 ## What's Changed in 3.4.5
 
-- Upping version. by @dessalines
 - Adding EN Thumbkey Words. by @dessalines in [#1039](https://github.com/dessalines/thumb-key/pull/1039)
 - Added ES thumb-key symbols layout by @DiegoLpVn in [#1035](https://github.com/dessalines/thumb-key/pull/1035)
 
@@ -95,11 +83,8 @@
 
 **Full Changelog**: https://github.com/dessalines/thumb-key/compare/3.4.4...3.4.5
 
-# Thumb-Key 3.4.4 (2024-08-30)
-
 ## What's Changed in 3.4.4
 
-- Upping version. by @dessalines
 - add hyphen `-` to the first layer of FRThumbKeyV2.kt by @foldfree in [#1031](https://github.com/dessalines/thumb-key/pull/1031)
 - Adding en + sv + programmer layout. by @dessalines in [#1030](https://github.com/dessalines/thumb-key/pull/1030)
 
@@ -109,11 +94,8 @@
 
 **Full Changelog**: https://github.com/dessalines/thumb-key/compare/3.4.3...3.4.4
 
-# Thumb-Key 3.4.3 (2024-08-27)
-
 ## What's Changed in 3.4.3
 
-- Upping version. by @dessalines
 - Added üÜ and ßẞ to DEMessagEaseNordic.kt, shifted ßẞ correctly in german keyboards by @MarvinBaral in [#1028](https://github.com/dessalines/thumb-key/pull/1028)
 
 ## New Contributors
@@ -122,11 +104,8 @@
 
 **Full Changelog**: https://github.com/dessalines/thumb-key/compare/3.4.2...3.4.3
 
-# Thumb-Key 3.4.2 (2024-08-26)
-
 ## What's Changed in 3.4.2
 
-- Upping version. by @dessalines
 - Show emoji key while in Shift mode in Programmer Wide layout by @kidhanis in [#1018](https://github.com/dessalines/thumb-key/pull/1018)
 
 ## New Contributors
@@ -135,31 +114,22 @@
 
 **Full Changelog**: https://github.com/dessalines/thumb-key/compare/3.4.1...3.4.2
 
-# Thumb-Key 3.4.1 (2024-08-15)
-
 ## What's Changed in 3.4.1
 
-- Upping version. by @dessalines
 - En/Ru MessagEasy Writer layouts by @Defrobe in [#1015](https://github.com/dessalines/thumb-key/pull/1015)
 
 **Full Changelog**: https://github.com/dessalines/thumb-key/compare/3.4.0...3.4.1
 
-# Thumb-Key 3.4.0 (2024-08-09)
-
 ## What's Changed in 3.4.0
 
-- Upping version. by @dessalines
 - #702 Rewrite titles of layouts to `[languages] [base] [qualifiers] [version]` by @mpsijm in [#1007](https://github.com/dessalines/thumb-key/pull/1007)
 - Create RUThumbKeyWriter.kt by @Defrobe in [#1005](https://github.com/dessalines/thumb-key/pull/1005)
 - Swipe-and-return gesture to capitalize words on EN Writer layout by @Defrobe in [#1004](https://github.com/dessalines/thumb-key/pull/1004)
 
 **Full Changelog**: https://github.com/dessalines/thumb-key/compare/3.3.6...3.4.0
 
-# Thumb-Key 3.3.6 (2024-08-06)
-
 ## What's Changed in 3.3.6
 
-- Upping version. by @dessalines
 - Fix european keyboard name. by @dessalines
 - Add layout: English MessagEase two-hands symbols by @mpsijm in [#1002](https://github.com/dessalines/thumb-key/pull/1002)
 - ESThumbKey.kt exclamation and question mark by @ZePotente in [#1001](https://github.com/dessalines/thumb-key/pull/1001)
@@ -170,11 +140,8 @@
 
 **Full Changelog**: https://github.com/dessalines/thumb-key/compare/3.3.5...3.3.6
 
-# Thumb-Key 3.3.5 (2024-08-02)
-
 ## What's Changed in 3.3.5
 
-- Upping version. by @dessalines
 - European Thumb-Key layout by @marekjm in [#998](https://github.com/dessalines/thumb-key/pull/998)
 - Adding simplified slovak layout, slovak thumbkey v3. by @dessalines in [#996](https://github.com/dessalines/thumb-key/pull/996)
 - Adding renovate automerge. by @dessalines
@@ -185,21 +152,15 @@
 
 **Full Changelog**: https://github.com/dessalines/thumb-key/compare/3.3.4...3.3.5
 
-# Thumb-Key 3.3.4 (2024-07-26)
-
 ## What's Changed in 3.3.4
 
-- Upping version. by @dessalines
 - Adding DE + EN + AE keyboard. by @dessalines in [#991](https://github.com/dessalines/thumb-key/pull/991)
 - Adding screen transitions. by @dessalines in [#990](https://github.com/dessalines/thumb-key/pull/990)
 
 **Full Changelog**: https://github.com/dessalines/thumb-key/compare/3.3.3...3.3.4
 
-# Thumb-Key 3.3.3 (2024-07-20)
-
 ## What's Changed in 3.3.3
 
-- Upping version. by @dessalines
 - Farsi/Persian for Samsung devices by @Tirbod in [#984](https://github.com/dessalines/thumb-key/pull/984)
 - Merge hiragana and katakana by @K0baU in [#985](https://github.com/dessalines/thumb-key/pull/985)
 - Farsi/Persian Spacebar Multi-taps by @Tirbod in [#983](https://github.com/dessalines/thumb-key/pull/983)
@@ -210,21 +171,15 @@
 
 **Full Changelog**: https://github.com/dessalines/thumb-key/compare/3.3.2...3.3.3
 
-# Thumb-Key 3.3.2 (2024-07-16)
-
 ## What's Changed in 3.3.2
 
-- Upping version. by @dessalines
 - Fixed swipetype on EN Writer keyboard by @locrianz in [#977](https://github.com/dessalines/thumb-key/pull/977)
 - Fixed EN Writer keyboard by @locrianz in [#975](https://github.com/dessalines/thumb-key/pull/975)
 
 **Full Changelog**: https://github.com/dessalines/thumb-key/compare/3.3.1...3.3.2
 
-# Thumb-Key 3.3.1 (2024-07-11)
-
 ## What's Changed in 3.3.1
 
-- Upping version. by @dessalines
 - Added ENThumbKeyWriter layout by @locrianz in [#970](https://github.com/dessalines/thumb-key/pull/970)
 - Added swipe-and-return gesture to capitalize words (#964) by @gitterrost4 in [#966](https://github.com/dessalines/thumb-key/pull/966)
 - Adding dependenciesInfo for f-droid builds by @dessalines in [#965](https://github.com/dessalines/thumb-key/pull/965)
@@ -235,11 +190,8 @@
 
 **Full Changelog**: https://github.com/dessalines/thumb-key/compare/3.3.0...3.3.1
 
-# Thumb-Key 3.3.0 (2024-07-07)
-
 ## What's Changed in 3.3.0
 
-- Upping version. by @dessalines
 - Added ghost key functionality. by @matthew-sirman in [#961](https://github.com/dessalines/thumb-key/pull/961)
 - Add composed qwertyfour layout by @sirlan-ff00ff in [#962](https://github.com/dessalines/thumb-key/pull/962)
 
@@ -250,11 +202,8 @@
 
 **Full Changelog**: https://github.com/dessalines/thumb-key/compare/3.2.6...3.3.0
 
-# Thumb-Key 3.2.6 (2024-07-02)
-
 ## What's Changed in 3.2.6
 
-- Upping version. by @dessalines
 - MessageEase layouts: use numerics from MessageEase too by @gmelikov in [#960](https://github.com/dessalines/thumb-key/pull/960)
 - RUMessagEaseSymbols: use messagease numerics by @gmelikov in [#959](https://github.com/dessalines/thumb-key/pull/959)
 
@@ -264,11 +213,8 @@
 
 **Full Changelog**: https://github.com/dessalines/thumb-key/compare/3.2.5...3.2.6
 
-# Thumb-Key 3.2.5 (2024-06-29)
-
 ## What's Changed in 3.2.5
 
-- Upping version. by @dessalines
 - Ignoring build.sh by @dessalines
 - Revert "Hebrew: added shifted layer using final letters" by @dessalines in [#958](https://github.com/dessalines/thumb-key/pull/958)
 - Removing renovate from git cliff by @dessalines in [#954](https://github.com/dessalines/thumb-key/pull/954)
@@ -280,31 +226,22 @@
 
 **Full Changelog**: https://github.com/dessalines/thumb-key/compare/3.2.4...3.2.5
 
-# Thumb-Key 3.2.4 (2024-06-14)
-
 ## What's Changed in 3.2.4
 
-- Upping version. by @dessalines
 - Increasing gradle memory. by @dessalines
 - Per-app language preference by @pxeemo in [#947](https://github.com/dessalines/thumb-key/pull/947)
 
 **Full Changelog**: https://github.com/dessalines/thumb-key/compare/3.2.3...3.2.4
 
-# Thumb-Key 3.2.3 (2024-06-11)
-
 ## What's Changed in 3.2.3
 
-- Upping version. by @dessalines
 - Hebrew: added shifted layer using final letters by @yehoshuapw in [#944](https://github.com/dessalines/thumb-key/pull/944)
 - DEThumbKey keyboard: Fixes exclamation mark. by @sphh in [#941](https://github.com/dessalines/thumb-key/pull/941)
 
 **Full Changelog**: https://github.com/dessalines/thumb-key/compare/3.2.2...3.2.3
 
-# Thumb-Key 3.2.2 (2024-06-04)
-
 ## What's Changed in 3.2.2
 
-- Upping version. by @dessalines
 - Force LTR KeyboardScreen by @pxeemo in [#940](https://github.com/dessalines/thumb-key/pull/940)
 - add DEThumbkeySymbols by @Ingegneus in [#939](https://github.com/dessalines/thumb-key/pull/939)
 - Add letter K to "Italiano type-split" keyboard by @DvCCC66 in [#938](https://github.com/dessalines/thumb-key/pull/938)
@@ -318,44 +255,32 @@
 
 **Full Changelog**: https://github.com/dessalines/thumb-key/compare/3.2.1...3.2.2
 
-# Thumb-Key 3.2.1 (2024-06-01)
-
 ## What's Changed in 3.2.1
 
-- Upping version. by @dessalines
 - Adding a few more compose-boms. by @dessalines in [#934](https://github.com/dessalines/thumb-key/pull/934)
 - Fix errors in CZProgrammerMessagEase by @ondrachwiedziuk in [#932](https://github.com/dessalines/thumb-key/pull/932)
 
 **Full Changelog**: https://github.com/dessalines/thumb-key/compare/3.2.0...3.2.1
 
-# Thumb-Key 3.2.0 (2024-05-28)
-
 ## What's Changed in 3.2.0
 
 - Forgot another change. by @dessalines
 - Removing unused strings. by @dessalines
-- Upping version. by @dessalines
 - Tweak circular drag and drag-and-return gestures (fixes #926) by @glm4610 in [#928](https://github.com/dessalines/thumb-key/pull/928)
 - Removing some unused strings. by @dessalines in [#929](https://github.com/dessalines/thumb-key/pull/929)
 
 **Full Changelog**: https://github.com/dessalines/thumb-key/compare/3.1.9...3.2.0
 
-# Thumb-Key 3.1.9 (2024-05-23)
-
 ## What's Changed in 3.1.9
 
-- Upping version. by @dessalines
 - Enable strong skipping. by @dessalines in [#925](https://github.com/dessalines/thumb-key/pull/925)
 - Removing renovate schedule. by @dessalines in [#923](https://github.com/dessalines/thumb-key/pull/923)
 - Upgrading to 2.0.0 compiler. by @dessalines in [#922](https://github.com/dessalines/thumb-key/pull/922)
 
 **Full Changelog**: https://github.com/dessalines/thumb-key/compare/3.1.8...3.1.9
 
-# Thumb-Key 3.1.8 (2024-05-22)
-
 ## What's Changed in 3.1.8
 
-- Upping version. by @dessalines
 - Revert "Update plugin org.jetbrains.kotlin.android to v2" by @dessalines in [#921](https://github.com/dessalines/thumb-key/pull/921)
 - Make cursor movement detection index-based (fixes #881) by @glm4610 in [#917](https://github.com/dessalines/thumb-key/pull/917)
 - Fix #304 (take two): In Utils.autoCapitalizeCheck, use input type of current editor by @mpsijm in [#909](https://github.com/dessalines/thumb-key/pull/909)
@@ -368,22 +293,16 @@
 
 **Full Changelog**: https://github.com/dessalines/thumb-key/compare/3.1.7...3.1.8
 
-# Thumb-Key 3.1.7 (2024-05-17)
-
 ## What's Changed in 3.1.7
 
-- Upping version. by @dessalines
 - Tweak circular drag detection algorithm (fixes #894) by @glm4610 in [#904](https://github.com/dessalines/thumb-key/pull/904)
 - Adding renovate. by @dessalines
 - Improves symbols in main DEThumbKey keyboard. by @sphh in [#892](https://github.com/dessalines/thumb-key/pull/892)
 
 **Full Changelog**: https://github.com/dessalines/thumb-key/compare/3.1.6...3.1.7
 
-# Thumb-Key 3.1.6 (2024-05-14)
-
 ## What's Changed in 3.1.6
 
-- Upping version. by @dessalines
 - Fix #304: Improve Utils.autoCapitalizeCheck by @mpsijm in [#890](https://github.com/dessalines/thumb-key/pull/890)
 - Wide version of ThumbKey by @randomguy3 in [#889](https://github.com/dessalines/thumb-key/pull/889)
 
@@ -393,44 +312,32 @@
 
 **Full Changelog**: https://github.com/dessalines/thumb-key/compare/3.1.5...3.1.6
 
-# Thumb-Key 3.1.5 (2024-05-09)
-
 ## What's Changed in 3.1.5
 
-- Upping version. by @dessalines
 - Revert compose in DEMessagEaseSymbols layout by @Crandel in [#888](https://github.com/dessalines/thumb-key/pull/888)
 - German thumbkey symbols `:` and `"` (Closes #882 #883) by @sphh in [#886](https://github.com/dessalines/thumb-key/pull/886)
 - Add RLM character to FAThumbKey by @pxeemo in [#880](https://github.com/dessalines/thumb-key/pull/880)
 
 **Full Changelog**: https://github.com/dessalines/thumb-key/compare/3.1.4...3.1.5
 
-# Thumb-Key 3.1.4 (2024-05-03)
-
 ## What's Changed in 3.1.4
 
-- Upping version. by @dessalines
 - Don't show animations for password fields. Fixes #800 by @dessalines in [#879](https://github.com/dessalines/thumb-key/pull/879)
 - Simplify key width code. Fixes #643 by @dessalines in [#878](https://github.com/dessalines/thumb-key/pull/878)
 - Cleaning up imports. by @dessalines in [#877](https://github.com/dessalines/thumb-key/pull/877)
 
 **Full Changelog**: https://github.com/dessalines/thumb-key/compare/3.1.3...3.1.4
 
-# Thumb-Key 3.1.3 (2024-05-03)
-
 ## What's Changed in 3.1.3
 
-- Upping version. by @dessalines
 - Fixes and improvements in br-fr layout by @zeecho in [#875](https://github.com/dessalines/thumb-key/pull/875)
 - Update ENQwertEase.kt by @Lysalana in [#873](https://github.com/dessalines/thumb-key/pull/873)
 - Update ENTwoHandsQwertEase.kt by @Lysalana in [#874](https://github.com/dessalines/thumb-key/pull/874)
 
 **Full Changelog**: https://github.com/dessalines/thumb-key/compare/3.1.2...3.1.3
 
-# Thumb-Key 3.1.2 (2024-05-01)
-
 ## What's Changed in 3.1.2
 
-- Upping version. by @dessalines
 - Two-hands QwertEase by @Lysalana in [#871](https://github.com/dessalines/thumb-key/pull/871)
 - Create ENQwertEase.kt by @Lysalana in [#870](https://github.com/dessalines/thumb-key/pull/870)
 - Updated numeric keyboard for "italiano messagease" by @DrOliver94 in [#864](https://github.com/dessalines/thumb-key/pull/864)
@@ -444,21 +351,15 @@
 
 **Full Changelog**: https://github.com/dessalines/thumb-key/compare/3.1.1...3.1.2
 
-# Thumb-Key 3.1.1 (2024-04-25)
-
 ## What's Changed in 3.1.1
 
-- Upping version. by @dessalines
 - Making haptic feedback use KEYBOARD_TAP constant. Fixes #862 by @dessalines in [#863](https://github.com/dessalines/thumb-key/pull/863)
 - Fix crash when using Japanese thumb-key (fixes #858) by @glm4610 in [#861](https://github.com/dessalines/thumb-key/pull/861)
 
 **Full Changelog**: https://github.com/dessalines/thumb-key/compare/3.1.0...3.1.1
 
-# Thumb-Key 3.1.0 (2024-04-24)
-
 ## What's Changed in 3.1.0
 
-- Upping version. by @dessalines
 - Upgrading deps. by @dessalines in [#857](https://github.com/dessalines/thumb-key/pull/857)
 - Adding slovak v2 keyboard. Fixes #151 by @dessalines in [#856](https://github.com/dessalines/thumb-key/pull/856)
 - Implement Drag-and-return & Circular drag by @feathecutie in [#854](https://github.com/dessalines/thumb-key/pull/854)
@@ -472,22 +373,16 @@
 
 **Full Changelog**: https://github.com/dessalines/thumb-key/compare/3.0.0...3.1.0
 
-# Thumb-Key 3.0.0 (2024-04-14)
-
 ## What's Changed in 3.0.0
 
-- Upping version. by @dessalines
 - Fixing black-screen on startup. by @dessalines in [#850](https://github.com/dessalines/thumb-key/pull/850)
 - Adding toki pona and sitelen emoji keyboards. by @dessalines in [#849](https://github.com/dessalines/thumb-key/pull/849)
 - Simplifying KeyC default. by @dessalines in [#848](https://github.com/dessalines/thumb-key/pull/848)
 
 **Full Changelog**: https://github.com/dessalines/thumb-key/compare/2.7.6...3.0.0
 
-# Thumb-Key 2.7.6 (2024-04-11)
-
 ## What's Changed in 2.7.6
 
-- Upping version. by @dessalines
 - Upgrade deps 27 by @dessalines in [#846](https://github.com/dessalines/thumb-key/pull/846)
 - Fixes to the Eng-Esp-Cat thumbkey layout by @Norgus in [#845](https://github.com/dessalines/thumb-key/pull/845)
 - Update composing and add it to DEMessagEaseSymbols by @mensogulo in [#844](https://github.com/dessalines/thumb-key/pull/844)
@@ -496,11 +391,8 @@
 
 **Full Changelog**: https://github.com/dessalines/thumb-key/compare/2.7.5...2.7.6
 
-# Thumb-Key 2.7.5 (2024-04-09)
-
 ## What's Changed in 2.7.5
 
-- Upping version. by @dessalines
 - Vn thumbkey by @dessalines in [#837](https://github.com/dessalines/thumb-key/pull/837)
 - Add German+ÅÆØ compatibility layout with MessageEase by @RolKau in [#832](https://github.com/dessalines/thumb-key/pull/832)
 - Add breve supersign to compose layout by @mensogulo in [#836](https://github.com/dessalines/thumb-key/pull/836)
@@ -511,11 +403,8 @@
 
 **Full Changelog**: https://github.com/dessalines/thumb-key/compare/2.7.4...2.7.5
 
-# Thumb-Key 2.7.4 (2024-04-04)
-
 ## What's Changed in 2.7.4
 
-- Upping version. by @dessalines
 - New Keyboard layout English Spanish Catalan by @Norgus in [#826](https://github.com/dessalines/thumb-key/pull/826)
 - Fix add layout instructions. by @dessalines in [#828](https://github.com/dessalines/thumb-key/pull/828)
 - He messag ease symbols add qmark by @BoredGeo in [#825](https://github.com/dessalines/thumb-key/pull/825)
@@ -528,11 +417,8 @@
 
 **Full Changelog**: https://github.com/dessalines/thumb-key/compare/2.7.3...2.7.4
 
-# Thumb-Key 2.7.3 (2024-04-02)
-
 ## What's Changed in 2.7.3
 
-- Upping version. by @dessalines
 - added standart english layout with german umlauts by @philipp8101 in [#818](https://github.com/dessalines/thumb-key/pull/818)
 - Add CZ programmer Messagease keyboard layout by @ondrachwiedziuk in [#821](https://github.com/dessalines/thumb-key/pull/821)
 - Add EN HR MessageEase Variant by @ssaric in [#823](https://github.com/dessalines/thumb-key/pull/823)
@@ -544,21 +430,15 @@
 
 **Full Changelog**: https://github.com/dessalines/thumb-key/compare/2.7.2...2.7.3
 
-# Thumb-Key 2.7.2 (2024-03-27)
-
 ## What's Changed in 2.7.2
 
-- Upping version. by @dessalines
 - Fixing woodpecker. by @dessalines in [#816](https://github.com/dessalines/thumb-key/pull/816)
 - Update symbols for ukrainian-only messagease layout by @Meetoul in [#814](https://github.com/dessalines/thumb-key/pull/814)
 
 **Full Changelog**: https://github.com/dessalines/thumb-key/compare/2.7.1...2.7.2
 
-# Thumb-Key 2.7.1 (2024-03-22)
-
 ## What's Changed in 2.7.1
 
-- Upping version. by @dessalines
 - Upgrading deps. by @dessalines in [#813](https://github.com/dessalines/thumb-key/pull/813)
 - English Deutsch ThumbKey Layout by @queer-coding in [#810](https://github.com/dessalines/thumb-key/pull/810)
 - Adding en_twohands_messagease. Fixes #806 by @dessalines in [#808](https://github.com/dessalines/thumb-key/pull/808)
@@ -570,11 +450,8 @@
 
 **Full Changelog**: https://github.com/dessalines/thumb-key/compare/2.7.0...2.7.1
 
-# Thumb-Key 2.7.0 (2024-03-13)
-
 ## What's Changed in 2.7.0
 
-- Upping version. by @dessalines
 - Move to another preferences library, upgrade deps. by @dessalines in [#804](https://github.com/dessalines/thumb-key/pull/804)
 - Update Russian translation by @ligurio in [#801](https://github.com/dessalines/thumb-key/pull/801)
 - Added MessagEase Keyboard Tips section to README.md per comment in #745. by @frederickjh in [#799](https://github.com/dessalines/thumb-key/pull/799)
@@ -585,11 +462,8 @@
 
 **Full Changelog**: https://github.com/dessalines/thumb-key/compare/2.6.25...2.7.0
 
-# Thumb-Key 2.6.25 (2024-03-08)
-
 ## What's Changed in 2.6.25
 
-- Upping version. by @dessalines
 - Add Chinese Simplified Translation by @WeiguangTWK in [#794](https://github.com/dessalines/thumb-key/pull/794)
 - Use dakuten key for more characters by @K0baU in [#797](https://github.com/dessalines/thumb-key/pull/797)
 - Update EO/EN/DE layout to make shift/capslock behavior match other layouts by @slashdevslashurandom in [#795](https://github.com/dessalines/thumb-key/pull/795)
@@ -602,21 +476,15 @@
 
 **Full Changelog**: https://github.com/dessalines/thumb-key/compare/2.6.24...2.6.25
 
-# Thumb-Key 2.6.24 (2024-03-04)
-
 ## What's Changed in 2.6.24
 
-- Upping version. by @dessalines
 - Fixing corner size. Fixes #789 by @dessalines in [#791](https://github.com/dessalines/thumb-key/pull/791)
 - Update quotes and numbers on BG ME Phonetic Symbols by @pavlov-p in [#787](https://github.com/dessalines/thumb-key/pull/787)
 
 **Full Changelog**: https://github.com/dessalines/thumb-key/compare/2.6.23...2.6.24
 
-# Thumb-Key 2.6.23 (2024-03-02)
-
 ## What's Changed in 2.6.23
 
-- Upping version. by @dessalines
 - Still working on upgrading deps. by @dessalines in [#785](https://github.com/dessalines/thumb-key/pull/785)
 - Add english composed messagease based on the symbols variant by @shtrom in [#786](https://github.com/dessalines/thumb-key/pull/786)
 - Fix dakuten and handakuten not composing by @LortalHost in [#782](https://github.com/dessalines/thumb-key/pull/782)
@@ -634,11 +502,8 @@
 
 **Full Changelog**: https://github.com/dessalines/thumb-key/compare/2.6.22...2.6.23
 
-# Thumb-Key 2.6.22 (2024-02-29)
-
 ## What's Changed in 2.6.22
 
-- Upping version. by @dessalines
 - Fixing pl_messagease numeric spacebar. by @dessalines in [#777](https://github.com/dessalines/thumb-key/pull/777)
 - Add Polish MessagEase layout by @Blackweather in [#774](https://github.com/dessalines/thumb-key/pull/774)
 - Adding NL Typesplit. Fixes #775 by @dessalines in [#776](https://github.com/dessalines/thumb-key/pull/776)
@@ -649,40 +514,30 @@
 
 **Full Changelog**: https://github.com/dessalines/thumb-key/compare/2.6.21...2.6.22
 
-# Thumb-Key 2.6.21 (2024-02-28)
-
 ## What's Changed in 2.6.21
 
-- Upping version. by @dessalines
 - Create english latina thumb-key in [#773](https://github.com/dessalines/thumb-key/pull/773)
 - Rename MessageEase to MessagEase. Fixes #769 by @dessalines in [#771](https://github.com/dessalines/thumb-key/pull/771)
 - Improved Hungarian Type-split swipemaps by @KnockoffFeline in [#770](https://github.com/dessalines/thumb-key/pull/770)
 
 **Full Changelog**: https://github.com/dessalines/thumb-key/compare/2.6.20...2.6.21
 
-# Thumb-Key 2.6.20 (2024-02-26)
-
 ## What's Changed in 2.6.20
 
-- Upping version. by @dessalines
 - Remove up down spacebar swipes. Fixes #766 by @dessalines in [#768](https://github.com/dessalines/thumb-key/pull/768)
 - Create english română thumb-key in [#767](https://github.com/dessalines/thumb-key/pull/767)
 - Fixed Hungarian Type-split layout by @KnockoffFeline in [#764](https://github.com/dessalines/thumb-key/pull/764)
 
 **Full Changelog**: https://github.com/dessalines/thumb-key/compare/2.6.19...2.6.20
 
-# Thumb-Key 2.6.19 (2024-02-24)
-
 ## What's Changed in 2.6.19
 
-- Upping version. by @dessalines
 - Update ENPHMessageEase.kt by @Lysalana in [#760](https://github.com/dessalines/thumb-key/pull/760)
 - Added Hungarian Type-split layout by @KnockoffFeline in [#761](https://github.com/dessalines/thumb-key/pull/761)
 - Feature/rework es me by @asdkant in [#762](https://github.com/dessalines/thumb-key/pull/762)
 - Hebrew symbols messageease fixup by @yehoshuapw in [#753](https://github.com/dessalines/thumb-key/pull/753)
 - Fix EOCyrillicThumbKey.kt by @imthehumanoid in [#750](https://github.com/dessalines/thumb-key/pull/750)
 - Fixed English Esperanto keyboard layout by @imthehumanoid in [#749](https://github.com/dessalines/thumb-key/pull/749)
-- Eo cyrillic by @dessalines in [#748](https://github.com/dessalines/thumb-key/pull/748)
 
 ## New Contributors
 
@@ -690,11 +545,8 @@
 
 **Full Changelog**: https://github.com/dessalines/thumb-key/compare/2.6.18...2.6.19
 
-# Thumb-Key 2.6.18 (2024-02-21)
-
 ## What's Changed in 2.6.18
 
-- Upping version. by @dessalines
 - [NLThumbKey] Accented letters didn't work yet and made them muted by @GuyKlaassen in [#742](https://github.com/dessalines/thumb-key/pull/742)
 - Adding english tagalog messagease. Fixes #743 by @dessalines in [#747](https://github.com/dessalines/thumb-key/pull/747)
 - Hebrew MessagEase symbols: remove shift by @yehoshuapw in [#738](https://github.com/dessalines/thumb-key/pull/738)
@@ -702,11 +554,8 @@
 
 **Full Changelog**: https://github.com/dessalines/thumb-key/compare/2.6.17...2.6.18
 
-# Thumb-Key 2.6.17 (2024-02-19)
-
 ## What's Changed in 2.6.17
 
-- Upping version. by @dessalines
 - Fixing animations. Fixes #732 by @dessalines in [#735](https://github.com/dessalines/thumb-key/pull/735)
 - Fixing layout names. Fixes #733 by @dessalines in [#734](https://github.com/dessalines/thumb-key/pull/734)
 - Update Ukrainian translation by @Sestowner in [#730](https://github.com/dessalines/thumb-key/pull/730)
@@ -714,11 +563,8 @@
 
 **Full Changelog**: https://github.com/dessalines/thumb-key/compare/2.6.16...2.6.17
 
-# Thumb-Key 2.6.16 (2024-02-17)
-
 ## What's Changed in 2.6.16
 
-- Upping version. by @dessalines
 - better swipe to delete word by @pxeemo in [#725](https://github.com/dessalines/thumb-key/pull/725)
 - Implement non-square keys by @Zwyx in [#692](https://github.com/dessalines/thumb-key/pull/692)
 - Use combine characters for dakuten/handakuten by @K0baU in [#721](https://github.com/dessalines/thumb-key/pull/721)
@@ -728,11 +574,8 @@
 
 **Full Changelog**: https://github.com/dessalines/thumb-key/compare/2.6.15...2.6.16
 
-# Thumb-Key 2.6.15 (2024-02-13)
-
 ## What's Changed in 2.6.15
 
-- Upping version. by @dessalines
 - CommonKeys.kt: Show swipes on NUMERIC_KEY_ITEM also on ABC_KEY_ITEM by @mpsijm in [#720](https://github.com/dessalines/thumb-key/pull/720)
 - Add long-press actions to keys by @ShortCircuit908 in [#711](https://github.com/dessalines/thumb-key/pull/711)
 - Fixes for English MessagEase keyboard by @mpsijm in [#719](https://github.com/dessalines/thumb-key/pull/719)
@@ -747,11 +590,8 @@
 
 **Full Changelog**: https://github.com/dessalines/thumb-key/compare/2.6.14...2.6.15
 
-# Thumb-Key 2.6.14 (2024-02-10)
-
 ## What's Changed in 2.6.14
 
-- Upping version. by @dessalines
 - Remove need to manually index layouts by @BlueDrink9 in [#701](https://github.com/dessalines/thumb-key/pull/701)
 - MessagEase fixes by @asdkant in [#709](https://github.com/dessalines/thumb-key/pull/709)
 - Adding slovenscina symbols MessagEase. Fixes #706 by @dessalines in [#707](https://github.com/dessalines/thumb-key/pull/707)
@@ -768,11 +608,8 @@
 
 **Full Changelog**: https://github.com/dessalines/thumb-key/compare/2.6.13...2.6.14
 
-# Thumb-Key 2.6.13 (2024-02-08)
-
 ## What's Changed in 2.6.13
 
-- Upping version. by @dessalines
 - Added layout: english norwegian symbols messagease by @afreakk in [#686](https://github.com/dessalines/thumb-key/pull/686)
 - Adding local pre-tag changelog generation. by @dessalines in [#688](https://github.com/dessalines/thumb-key/pull/688)
 - Added adaptive icon. by @pxeemo in [#672](https://github.com/dessalines/thumb-key/pull/672)
@@ -786,11 +623,8 @@
 
 **Full Changelog**: https://github.com/dessalines/thumb-key/compare/2.6.12...2.6.13
 
-# Thumb-Key 2.6.12 (2024-02-05)
-
 ## What's Changed in 2.6.12
 
-- Upping version. by @dessalines
 - Adding issue forms instead of markdown templates. Fixes #662 by @dessalines in [#669](https://github.com/dessalines/thumb-key/pull/669)
 - hebrew messageease style layout with symbols by @yehoshuapw in [#667](https://github.com/dessalines/thumb-key/pull/667)
 - Add layout for English and French by @Zwyx in [#665](https://github.com/dessalines/thumb-key/pull/665)
@@ -799,11 +633,8 @@
 
 **Full Changelog**: https://github.com/dessalines/thumb-key/compare/2.6.11...2.6.12
 
-# Thumb-Key 2.6.11 (2024-02-04)
-
 ## What's Changed in 2.6.11
 
-- Upping version. by @dessalines
 - Add keyboard bg_phonetic_messagease by @pavlov-p in [#660](https://github.com/dessalines/thumb-key/pull/660)
 - Adding english polski thumbkey keyboard. Fixes #654 by @dessalines in [#659](https://github.com/dessalines/thumb-key/pull/659)
 - Finnish/Estonian messageease style layout by @Eemilp in [#639](https://github.com/dessalines/thumb-key/pull/639)
@@ -820,11 +651,8 @@
 
 **Full Changelog**: https://github.com/dessalines/thumb-key/compare/2.6.10...2.6.11
 
-# Thumb-Key 2.6.10 (2024-01-31)
-
 ## What's Changed in 2.6.10
 
-- Upping version. by @dessalines
 - Update ITMessageEase.kt by @flauta in [#637](https://github.com/dessalines/thumb-key/pull/637)
 - Fix 'å' shadowing 'unshift' in 'english dansk symbols thumb-key' by @maximbaz in [#634](https://github.com/dessalines/thumb-key/pull/634)
 - Add 'english dansk symbols thumb-key' by @maximbaz in [#633](https://github.com/dessalines/thumb-key/pull/633)
@@ -836,11 +664,8 @@
 
 **Full Changelog**: https://github.com/dessalines/thumb-key/compare/2.6.9...2.6.10
 
-# Thumb-Key 2.6.9 (2024-01-25)
-
 ## What's Changed in 2.6.9
 
-- Upping version. by @dessalines
 - Upgrading deps. by @dessalines in [#628](https://github.com/dessalines/thumb-key/pull/628)
 - Fixing some cursor update issues for multitap. #242 by @dessalines in [#627](https://github.com/dessalines/thumb-key/pull/627)
 - Add some missing arabic vowel phonemes. by @pxeemo in [#624](https://github.com/dessalines/thumb-key/pull/624)
@@ -849,11 +674,8 @@
 
 **Full Changelog**: https://github.com/dessalines/thumb-key/compare/2.6.8...2.6.9
 
-# Thumb-Key 2.6.8 (2024-01-19)
-
 ## What's Changed in 2.6.8
 
-- Upping version. by @dessalines
 - Upgrading kotlinter. by @dessalines in [#620](https://github.com/dessalines/thumb-key/pull/620)
 - Fixing automirrored icons. by @dessalines in [#622](https://github.com/dessalines/thumb-key/pull/622)
 - Fixing crash related to uppercase logic. by @dessalines in [#621](https://github.com/dessalines/thumb-key/pull/621)
@@ -861,8 +683,6 @@
 - Adding release notes. by @dessalines
 
 **Full Changelog**: https://github.com/dessalines/thumb-key/compare/2.6.7...2.6.8
-
-# Thumb-Key 2.6.7 (2024-01-19)
 
 ## What's Changed in 2.6.7
 
@@ -879,11 +699,8 @@
 
 **Full Changelog**: https://github.com/dessalines/thumb-key/compare/2.6.6...2.6.7
 
-# Thumb-Key 2.6.6 (2024-01-07)
-
 ## What's Changed in 2.6.6
 
-- Upping version. by @dessalines
 - Fix slide jumping after 1k characters. Fixes #566 by @dessalines in [#612](https://github.com/dessalines/thumb-key/pull/612)
 - Scaling down uppercase letters. Fixes #109 by @dessalines in [#611](https://github.com/dessalines/thumb-key/pull/611)
 - Added Italian translation by @flauta in [#610](https://github.com/dessalines/thumb-key/pull/610)
@@ -899,11 +716,8 @@
 
 **Full Changelog**: https://github.com/dessalines/thumb-key/compare/2.6.5...2.6.6
 
-# Thumb-Key 2.6.5 (2024-01-02)
-
 ## What's Changed in 2.6.5
 
-- Upping version. by @dessalines
 - Adding ES_CA_MESSAGEEASE keyboard. by @dessalines in [#598](https://github.com/dessalines/thumb-key/pull/598)
 - Update mathematical keyboard layout by @Kuna42 in [#594](https://github.com/dessalines/thumb-key/pull/594)
 - Add Russian localization by @artemnefedov in [#595](https://github.com/dessalines/thumb-key/pull/595)
@@ -916,11 +730,8 @@
 
 **Full Changelog**: https://github.com/dessalines/thumb-key/compare/2.6.4...2.6.5
 
-# Thumb-Key 2.6.4 (2023-12-19)
-
 ## What's Changed in 2.6.4
 
-- Upping version. by @dessalines
 - Fix issues with Japanese TypeSplit layouts by @Phidica in [#590](https://github.com/dessalines/thumb-key/pull/590)
 - Make sure DB is initialized before building routes. Fixes #589 by @dessalines in [#591](https://github.com/dessalines/thumb-key/pull/591)
 - Upgrading deps. by @dessalines in [#588](https://github.com/dessalines/thumb-key/pull/588)
@@ -932,11 +743,8 @@
 
 **Full Changelog**: https://github.com/dessalines/thumb-key/compare/2.6.3...2.6.4
 
-# Thumb-Key 2.6.3 (2023-12-01)
-
 ## What's Changed in 2.6.3
 
-- Upping version. by @dessalines
 - Dont hide numbers. Fixes #501 by @dessalines in [#584](https://github.com/dessalines/thumb-key/pull/584)
 - Upgrading deps. by @dessalines in [#583](https://github.com/dessalines/thumb-key/pull/583)
 - Increasing maximum bottom offset. Fixes #575 by @dessalines in [#582](https://github.com/dessalines/thumb-key/pull/582)
@@ -947,11 +755,8 @@
 
 **Full Changelog**: https://github.com/dessalines/thumb-key/compare/2.6.2...2.6.3
 
-# Thumb-Key 2.6.2 (2023-11-26)
-
 ## What's Changed in 2.6.2
 
-- Upping version. by @dessalines
 - Upgrading deps. by @dessalines in [#577](https://github.com/dessalines/thumb-key/pull/577)
 - fixed autocapitalization by @Kommynct in [#572](https://github.com/dessalines/thumb-key/pull/572)
 - Added qwerty-like layout by @Housies in [#569](https://github.com/dessalines/thumb-key/pull/569)
@@ -965,11 +770,8 @@
 
 **Full Changelog**: https://github.com/dessalines/thumb-key/compare/2.6.1...2.6.2
 
-# Thumb-Key 2.6.1 (2023-11-14)
-
 ## What's Changed in 2.6.1
 
-- Upping version. by @dessalines
 - Fix EUESThumbKey layout by @dessalines in [#563](https://github.com/dessalines/thumb-key/pull/563)
 - Fix EUESThumbKey layout by @zgll2022
 - Upgrading deps, running new kotlinter. by @dessalines in [#564](https://github.com/dessalines/thumb-key/pull/564)
@@ -981,11 +783,8 @@
 
 **Full Changelog**: https://github.com/dessalines/thumb-key/compare/2.6.0...2.6.1
 
-# Thumb-Key 2.6.0 (2023-11-08)
-
 ## What's Changed in 2.6.0
 
-- Upping version. by @dessalines
 - Add EU ES keyboard by @zgll2022 in [#551](https://github.com/dessalines/thumb-key/pull/551)
 - AutoCapitalize "i\'" ("I'm" and "I'd") by @jm355 in [#534](https://github.com/dessalines/thumb-key/pull/534)
 - Update ITTypeSplit.kt by @flauta in [#540](https://github.com/dessalines/thumb-key/pull/540)
@@ -1002,11 +801,8 @@
 
 **Full Changelog**: https://github.com/dessalines/thumb-key/compare/2.5.2...2.6.0
 
-# Thumb-Key 2.5.2 (2023-11-02)
-
 ## What's Changed in 2.5.2
 
-- Upping version. by @dessalines
 - Upping gradle wrapper jar. by @dessalines
 - Upgrading gradle to 8.4 by @dessalines in [#544](https://github.com/dessalines/thumb-key/pull/544)
 - Fixing DB warnings. by @dessalines in [#543](https://github.com/dessalines/thumb-key/pull/543)
@@ -1017,11 +813,8 @@
 
 **Full Changelog**: https://github.com/dessalines/thumb-key/compare/2.5.1...2.5.2
 
-# Thumb-Key 2.5.1 (2023-10-24)
-
 ## What's Changed in 2.5.1
 
-- Upping version. by @dessalines
 - Upgrading deps. by @dessalines in [#532](https://github.com/dessalines/thumb-key/pull/532)
 - Fixing keyboard names. Fixes #523 by @dessalines in [#526](https://github.com/dessalines/thumb-key/pull/526)
 - Added emoji key to Type-Split layout. Fixes #432 by @sslater11 in [#524](https://github.com/dessalines/thumb-key/pull/524)
@@ -1030,11 +823,8 @@
 
 **Full Changelog**: https://github.com/dessalines/thumb-key/compare/2.5.0...2.5.1
 
-# Thumb-Key 2.5.0 (2023-10-21)
-
 ## What's Changed in 2.5.0
 
-- Upping version by @dessalines
 - Added slide gestures to Type-Split layouts by @sslater11 in [#521](https://github.com/dessalines/thumb-key/pull/521)
 - Updated readme with new features/settings by @sslater11 in [#522](https://github.com/dessalines/thumb-key/pull/522)
 - Backspace swipe right to delete word and Slide gestures improvements by @sslater11 in [#439](https://github.com/dessalines/thumb-key/pull/439)
@@ -1054,11 +844,8 @@
 
 **Full Changelog**: https://github.com/dessalines/thumb-key/compare/2.4.1...2.5.0
 
-# Thumb-Key 2.4.1 (2023-10-16)
-
 ## What's Changed in 2.4.1
 
-- Upping version by @dessalines
 - Type Split English with Norwegian characters added by @henrikx in [#502](https://github.com/dessalines/thumb-key/pull/502)
 - fix inconsistent layout naming by @KraXen72 in [#497](https://github.com/dessalines/thumb-key/pull/497)
 - Adding keyboard PR instruction. by @dessalines in [#507](https://github.com/dessalines/thumb-key/pull/507)
@@ -1072,11 +859,8 @@
 
 **Full Changelog**: https://github.com/dessalines/thumb-key/compare/2.4.0...2.4.1
 
-# Thumb-Key 2.4.0 (2023-10-14)
-
 ## What's Changed in 2.4.0
 
-- Upping version by @dessalines
 - Try to lower memory to fix CI. by @dessalines in [#493](https://github.com/dessalines/thumb-key/pull/493)
 - Code cleanup: Getting rid of null asserts. by @dessalines in [#491](https://github.com/dessalines/thumb-key/pull/491)
 - Adding slovak layout. Fixes #487 by @dessalines in [#490](https://github.com/dessalines/thumb-key/pull/490)
@@ -1094,11 +878,8 @@
 
 **Full Changelog**: https://github.com/dessalines/thumb-key/compare/2.3.0...2.4.0
 
-# Thumb-Key 2.3.0 (2023-10-10)
-
 ## What's Changed in 2.3.0
 
-- Upping version by @dessalines
 - Key customisation by @WadeWT in [#473](https://github.com/dessalines/thumb-key/pull/473)
 - Adding new theme by @WadeWT in [#475](https://github.com/dessalines/thumb-key/pull/475)
 - More fixes to MessageEaseFR by @pulkomandy in [#474](https://github.com/dessalines/thumb-key/pull/474)
@@ -1115,8 +896,6 @@
 - @cjparsons74 made their first contribution in [#463](https://github.com/dessalines/thumb-key/pull/463)
 
 **Full Changelog**: https://github.com/dessalines/thumb-key/compare/2.2.0...2.3.0
-
-# Thumb-Key 2.2.0 (2023-10-04)
 
 ## What's Changed in 2.2.0
 
@@ -1138,11 +917,8 @@
 
 **Full Changelog**: https://github.com/dessalines/thumb-key/compare/2.1.1...2.2.0
 
-# Thumb-Key 2.1.1 (2023-09-27)
-
 ## What's Changed in 2.1.1
 
-- Upping version by @dessalines
 - Complete MessageEaseFR keyboard (main level) by @pulkomandy in [#435](https://github.com/dessalines/thumb-key/pull/435)
 - Fix IDv1SN bug + renaming Indonesian layout sort problem by @Matyeyev in [#438](https://github.com/dessalines/thumb-key/pull/438)
 - Better User Guide section in README by @KraXen72 in [#430](https://github.com/dessalines/thumb-key/pull/430)
@@ -1150,11 +926,8 @@
 
 **Full Changelog**: https://github.com/dessalines/thumb-key/compare/2.1.0...2.1.1
 
-# Thumb-Key 2.1.0 (2023-09-20)
-
 ## What's Changed in 2.1.0
 
-- Upping version. by @dessalines
 - Adding haptic feedback warning. Fixes #420 by @dessalines in [#428](https://github.com/dessalines/thumb-key/pull/428)
 - Add slide selection and deletion by @storvik in [#424](https://github.com/dessalines/thumb-key/pull/424)
 - Fixing markdown view colors to use M3 theme. Fixes #409 by @dessalines in [#427](https://github.com/dessalines/thumb-key/pull/427)
@@ -1168,11 +941,8 @@
 
 **Full Changelog**: https://github.com/dessalines/thumb-key/compare/2.0.0...2.1.0
 
-# Thumb-Key 2.0.0 (2023-09-18)
-
 ## What's Changed in 2.0.0
 
-- Upping version. by @dessalines
 - Adding spanish-catalan keyboard. Fixes #418 by @dessalines in [#419](https://github.com/dessalines/thumb-key/pull/419)
 - Emoji Picker by @sslater11 in [#415](https://github.com/dessalines/thumb-key/pull/415)
 - Add Indonesian Layout Symbols v1 with Number. by @Matyeyev in [#416](https://github.com/dessalines/thumb-key/pull/416)
@@ -1183,11 +953,8 @@
 
 **Full Changelog**: https://github.com/dessalines/thumb-key/compare/1.15.0...2.0.0
 
-# Thumb-Key 1.15.0 (2023-09-15)
-
 ## What's Changed in 1.15.0
 
-- Upping version. by @dessalines
 - Update MessageEaseDE.kt by @Saturo78 in [#402](https://github.com/dessalines/thumb-key/pull/402)
 - Fixing delete whole word. Fixes #398 by @dessalines in [#406](https://github.com/dessalines/thumb-key/pull/406)
 - add the old idv1symbol to be v2. by @Matyeyev in [#405](https://github.com/dessalines/thumb-key/pull/405)
@@ -1198,11 +965,8 @@
 
 **Full Changelog**: https://github.com/dessalines/thumb-key/compare/1.14.0...1.15.0
 
-# Thumb-Key 1.14.0 (2023-09-09)
-
 ## What's Changed in 1.14.0
 
-- Upping version. by @dessalines
 - Adding a changelog popup. Fixes #375 by @dessalines in [#394](https://github.com/dessalines/thumb-key/pull/394)
 - Nulling icon descriptions. Fixes #382 by @dessalines in [#393](https://github.com/dessalines/thumb-key/pull/393)
 - Upgrading deps. by @dessalines in [#392](https://github.com/dessalines/thumb-key/pull/392)
@@ -1224,11 +988,8 @@
 
 **Full Changelog**: https://github.com/dessalines/thumb-key/compare/1.13.0...1.14.0
 
-# Thumb-Key 1.13.0 (2023-09-01)
-
 ## What's Changed in 1.13.0
 
-- Upping version. by @dessalines
 - Upgrading deps. by @dessalines in [#374](https://github.com/dessalines/thumb-key/pull/374)
 - Typesplit fi by @dessalines in [#373](https://github.com/dessalines/thumb-key/pull/373)
 - make "hide letters" only hide letters, add new toggle "hide symbols" (fixes #299) by @nejni-marji in [#370](https://github.com/dessalines/thumb-key/pull/370)
@@ -1244,11 +1005,8 @@
 
 **Full Changelog**: https://github.com/dessalines/thumb-key/compare/1.12.0...1.13.0
 
-# Thumb-Key 1.12.0 (2023-08-23)
-
 ## What's Changed in 1.12.0
 
-- Upping version. by @dessalines
 - Update TypeSplitESv1.1.kt by @racuna in [#361](https://github.com/dessalines/thumb-key/pull/361)
 - Fix settings crash 1 by @dessalines in [#360](https://github.com/dessalines/thumb-key/pull/360)
 - Upgrading deps. by @dessalines in [#358](https://github.com/dessalines/thumb-key/pull/358)
@@ -1271,11 +1029,8 @@
 
 **Full Changelog**: https://github.com/dessalines/thumb-key/compare/1.11.0...1.12.0
 
-# Thumb-Key 1.11.0 (2023-08-03)
-
 ## What's Changed in 1.11.0
 
-- Upping version. by @dessalines
 - Add Hebrew layout based on letter position guidelines by @roihershberg in [#335](https://github.com/dessalines/thumb-key/pull/335)
 - Numeric layout for type-split. by @mockballed in [#337](https://github.com/dessalines/thumb-key/pull/337)
 - Add ENv4MultiLayout by @KraXen72 in [#327](https://github.com/dessalines/thumb-key/pull/327)
@@ -1283,11 +1038,8 @@
 
 **Full Changelog**: https://github.com/dessalines/thumb-key/compare/1.10.0...1.11.0
 
-# Thumb-Key 1.10.0 (2023-07-27)
-
 ## What's Changed in 1.10.0
 
-- Upping version. by @dessalines
 - Add messageease it by @dessalines in [#333](https://github.com/dessalines/thumb-key/pull/333)
 - Add spanish esperanto by @dessalines in [#332](https://github.com/dessalines/thumb-key/pull/332)
 - Upgrading deps. by @dessalines in [#331](https://github.com/dessalines/thumb-key/pull/331)
@@ -1296,11 +1048,8 @@
 
 **Full Changelog**: https://github.com/dessalines/thumb-key/compare/1.9.1...1.10.0
 
-# Thumb-Key 1.9.1 (2023-07-26)
-
 ## What's Changed in 1.9.1
 
-- Upping version. by @dessalines
 - Merge remote-tracking branch 'refs/remotes/origin/main' by @dessalines
 - まみむめも=>ゔ by @K0baU in [#326](https://github.com/dessalines/thumb-key/pull/326)
 - Add single quote to MessageEase German by @meliache in [#323](https://github.com/dessalines/thumb-key/pull/323)
@@ -1315,22 +1064,16 @@
 
 **Full Changelog**: https://github.com/dessalines/thumb-key/compare/1.9.0...1.9.1
 
-# Thumb-Key 1.9.0 (2023-07-12)
-
 ## What's Changed in 1.9.0
 
-- Upping version. by @dessalines
 - Added wide layout by @thedroppedpocket in [#308](https://github.com/dessalines/thumb-key/pull/308)
 - Added Two-Hands layout by @Lavin-tom in [#306](https://github.com/dessalines/thumb-key/pull/306)
 - Adding release notes. by @dessalines
 
 **Full Changelog**: https://github.com/dessalines/thumb-key/compare/1.8.0...1.9.0
 
-# Thumb-Key 1.8.0 (2023-07-06)
-
 ## What's Changed in 1.8.0
 
-- Upping version. by @dessalines
 - Fix bug in deleteLastWord by @tbhno in [#305](https://github.com/dessalines/thumb-key/pull/305)
 - New "Type-Split" layouts. by @mockballed in [#296](https://github.com/dessalines/thumb-key/pull/296)
 - ThumbKeyFRv2: Fix key "U" writing "uU". by @mockballed in [#298](https://github.com/dessalines/thumb-key/pull/298)
@@ -1342,11 +1085,8 @@
 
 **Full Changelog**: https://github.com/dessalines/thumb-key/compare/1.7.0...1.8.0
 
-# Thumb-Key 1.7.0 (2023-06-18)
-
 ## What's Changed in 1.7.0
 
-- Upping version. by @dessalines
 - Add debug mode. by @dessalines in [#294](https://github.com/dessalines/thumb-key/pull/294)
 - New layout: "Four columns" (English). by @mockballed in [#292](https://github.com/dessalines/thumb-key/pull/292)
 - Update ThumbKeyIDv1Symbols.kt by @awandepan in [#289](https://github.com/dessalines/thumb-key/pull/289)
@@ -1360,11 +1100,8 @@
 
 **Full Changelog**: https://github.com/dessalines/thumb-key/compare/1.6.1...1.7.0
 
-# Thumb-Key 1.6.1 (2023-06-11)
-
 ## What's Changed in 1.6.1
 
-- Upping version. by @dessalines
 - Fixing NO keyboard. Fixes #282 by @dessalines in [#285](https://github.com/dessalines/thumb-key/pull/285)
 - Finishing adding turkish. by @dessalines
 - Adding Turkish Keyboard by @dessalines in [#283](https://github.com/dessalines/thumb-key/pull/283)
@@ -1386,11 +1123,8 @@
 
 **Full Changelog**: https://github.com/dessalines/thumb-key/compare/1.6.0...1.6.1
 
-# Thumb-Key 1.6.0 (2023-06-04)
-
 ## What's Changed in 1.6.0
 
-- Upping version. by @dessalines
 - Fixing spacebar multitap reset. Fixes #242 by @dessalines in [#271](https://github.com/dessalines/thumb-key/pull/271)
 - De multiling fix by @dessalines in [#270](https://github.com/dessalines/thumb-key/pull/270)
 - Fix formatting issues. by @dessalines
@@ -1439,17 +1173,12 @@
 
 **Full Changelog**: https://github.com/dessalines/thumb-key/compare/1.5.0...1.6.0
 
-# Thumb-Key 1.5.0 (2023-05-29)
-
 ## What's Changed in 1.5.0
 
-- Upping version. by @dessalines
 - Adding French and Russian MessageEase Keyboards. by @dessalines in [#255](https://github.com/dessalines/thumb-key/pull/255)
 - Update ThumbKeyIDv1Symbols.kt by @awandepan in [#248](https://github.com/dessalines/thumb-key/pull/248)
 
 **Full Changelog**: https://github.com/dessalines/thumb-key/compare/1.4.1...1.5.0
-
-# Thumb-Key 1.4.1 (2023-05-25)
 
 ## What's Changed in 1.4.1
 
@@ -1458,11 +1187,8 @@
 
 **Full Changelog**: https://github.com/dessalines/thumb-key/compare/1.4.0...1.4.1
 
-# Thumb-Key 1.4.0 (2023-05-25)
-
 ## What's Changed in 1.4.0
 
-- Upping version. by @dessalines
 - Upgrade deps by @dessalines in [#246](https://github.com/dessalines/thumb-key/pull/246)
 - Adding indonesian keyboard. Fixes #241 by @dessalines in [#245](https://github.com/dessalines/thumb-key/pull/245)
 - Better notify. by @dessalines
@@ -1486,22 +1212,16 @@
 
 **Full Changelog**: https://github.com/dessalines/thumb-key/compare/1.3.0...1.4.0
 
-# Thumb-Key 1.3.0 (2023-05-21)
-
 ## What's Changed in 1.3.0
 
-- Upping version. by @dessalines
 - De multiling 2 by @dessalines in [#237](https://github.com/dessalines/thumb-key/pull/237)
 - Adding Norwegian keyboard. Fixes #232 by @dessalines in [#236](https://github.com/dessalines/thumb-key/pull/236)
 - Adding release notes. by @dessalines
 
 **Full Changelog**: https://github.com/dessalines/thumb-key/compare/1.2.0...1.3.0
 
-# Thumb-Key 1.2.0 (2023-05-17)
-
 ## What's Changed in 1.2.0
 
-- Upping version. by @dessalines
 - Adding messageease DE keyboard. Fixes #219 by @dessalines in [#230](https://github.com/dessalines/thumb-key/pull/230)
 - Moving from arrays to lists. Running upgraded kotlinter by @dessalines in [#229](https://github.com/dessalines/thumb-key/pull/229)
 - Adding google play link. by @dessalines in [#227](https://github.com/dessalines/thumb-key/pull/227)
@@ -1519,11 +1239,8 @@
 
 **Full Changelog**: https://github.com/dessalines/thumb-key/compare/1.1.0...1.2.0
 
-# Thumb-Key 1.1.0 (2023-05-11)
-
 ## What's Changed in 1.1.0
 
-- Upping version. by @dessalines
 - Merge branch 'belarus_1' by @dessalines
 - Adding to KeyboardModes, fixing some issues. by @dessalines
 - Added belarusian layout, as well as some other changes :) in [#211](https://github.com/dessalines/thumb-key/pull/211)
@@ -1552,11 +1269,8 @@
 
 **Full Changelog**: https://github.com/dessalines/thumb-key/compare/1.0.0...1.1.0
 
-# Thumb-Key 1.0.0 (2023-05-05)
-
 ## What's Changed in 1.0.0
 
-- Upping version. by @dessalines
 - Upgrading deps. by @dessalines in [#208](https://github.com/dessalines/thumb-key/pull/208)
 - Merge branch 'autoshift_fix_1' by @dessalines
 - Fix formatting. by @dessalines
@@ -1571,11 +1285,8 @@
 
 **Full Changelog**: https://github.com/dessalines/thumb-key/compare/0.0.14...1.0.0
 
-# Thumb-Key 0.0.14 (2023-05-02)
-
 ## What's Changed in 0.0.14
 
-- Upping version. by @dessalines
 - Adding a markdown check to CI. by @dessalines in [#202](https://github.com/dessalines/thumb-key/pull/202)
 - Adding a swipe gesture to change keyboard position. Fixes #96 by @dessalines in [#203](https://github.com/dessalines/thumb-key/pull/203)
 - Pexemo persian fixes by @dessalines in [#201](https://github.com/dessalines/thumb-key/pull/201)
@@ -1590,11 +1301,8 @@
 
 **Full Changelog**: https://github.com/dessalines/thumb-key/compare/0.0.13...0.0.14
 
-# Thumb-Key 0.0.13 (2023-04-21)
-
 ## What's Changed in 0.0.13
 
-- Upping version. by @dessalines
 - Removing comment. by @dessalines
 - Fixing wrong layouts chosen after adding new ones. Fixes #167 by @dessalines
 - Fixing wrong layouts chosen after adding new ones. Fixes #167 by @dessalines in [#188](https://github.com/dessalines/thumb-key/pull/188)
@@ -1612,11 +1320,8 @@
 
 **Full Changelog**: https://github.com/dessalines/thumb-key/compare/0.0.12...0.0.13
 
-# Thumb-Key 0.0.12 (2023-04-18)
-
 ## What's Changed in 0.0.12
 
-- Upping version. by @dessalines
 - Fix scrolling language selection. Fixes #130 by @dessalines in [#176](https://github.com/dessalines/thumb-key/pull/176)
 - Add spanish layout. Fixes #142 by @dessalines in [#175](https://github.com/dessalines/thumb-key/pull/175)
 - Adding polish layout. Fixes #173 by @dessalines in [#174](https://github.com/dessalines/thumb-key/pull/174)
@@ -1640,11 +1345,8 @@
 
 **Full Changelog**: https://github.com/dessalines/thumb-key/compare/0.0.11...0.0.12
 
-# Thumb-Key 0.0.11 (2023-04-13)
-
 ## What's Changed in 0.0.11
 
-- Upping version. by @dessalines
 - Upgrading deps. by @dessalines in [#145](https://github.com/dessalines/thumb-key/pull/145)
 - Fixing a few caps issues. #132 by @dessalines in [#144](https://github.com/dessalines/thumb-key/pull/144)
 - Adding messageease symbols keyboard. Fixes #106 by @dessalines in [#140](https://github.com/dessalines/thumb-key/pull/140)
@@ -1658,11 +1360,8 @@
 
 **Full Changelog**: https://github.com/dessalines/thumb-key/compare/0.0.10...0.0.11
 
-# Thumb-Key 0.0.10 (2023-04-04)
-
 ## What's Changed in 0.0.10
 
-- Upping version. by @dessalines
 - Adding multiple default languages. Fixes #42 by @dessalines in [#123](https://github.com/dessalines/thumb-key/pull/123)
 - Adding a capslock mode indicator. Fixes #97 by @dessalines in [#122](https://github.com/dessalines/thumb-key/pull/122)
 - Hide letters by @dessalines in [#121](https://github.com/dessalines/thumb-key/pull/121)
@@ -1675,11 +1374,8 @@
 
 **Full Changelog**: https://github.com/dessalines/thumb-key/compare/0.0.9...0.0.10
 
-# Thumb-Key 0.0.9 (2023-04-03)
-
 ## What's Changed in 0.0.9
 
-- Upping version by @dessalines
 - Update ThumbKeyITv1.kt by @morellik in [#119](https://github.com/dessalines/thumb-key/pull/119)
 - Fix persian language typo. #110 by @dessalines
 - Merge branch 'montdor-add_hebrew_keyboard' by @dessalines
@@ -1689,11 +1385,8 @@
 
 **Full Changelog**: https://github.com/dessalines/thumb-key/compare/0.0.8...0.0.9
 
-# Thumb-Key 0.0.8 (2023-03-31)
-
 ## What's Changed in 0.0.8
 
-- Upping version by @dessalines
 - Upgrading deps by @dessalines in [#114](https://github.com/dessalines/thumb-key/pull/114)
 - Merge remote-tracking branch 'origin/main' by @dessalines
 - Adding farsi layout. Fixes #110 by @dessalines in [#113](https://github.com/dessalines/thumb-key/pull/113)
@@ -1707,8 +1400,6 @@
 - Updating releases.md by @dessalines
 
 **Full Changelog**: https://github.com/dessalines/thumb-key/compare/0.0.7...0.0.8
-
-# Thumb-Key 0.0.7 (2023-03-27)
 
 ## What's Changed in 0.0.7
 
@@ -1726,11 +1417,8 @@
 
 **Full Changelog**: https://github.com/dessalines/thumb-key/compare/0.0.6...0.0.7
 
-# Thumb-Key 0.0.6 (2023-03-24)
-
 ## What's Changed in 0.0.6
 
-- Upping version. by @dessalines
 - Fixing newline / autocorrect glitch. Fixes #79 by @dessalines in [#81](https://github.com/dessalines/thumb-key/pull/81)
 - Merge branch 'rickcrash-patch-2' by @dessalines
 - A few fixes. by @dessalines
@@ -1749,11 +1437,8 @@
 
 **Full Changelog**: https://github.com/dessalines/thumb-key/compare/0.0.5...0.0.6
 
-# Thumb-Key 0.0.5 (2023-03-22)
-
 ## What's Changed in 0.0.5
 
-- Upping version. by @dessalines
 - Fixing messageease keys by @dessalines in [#66](https://github.com/dessalines/thumb-key/pull/66)
 - Swiping on the spacebar moves the cursor. Fixes #59 by @dessalines in [#63](https://github.com/dessalines/thumb-key/pull/63)
 - Adding + to numeric keyboard. Fixes #60 by @dessalines in [#61](https://github.com/dessalines/thumb-key/pull/61)
@@ -1764,11 +1449,8 @@
 
 **Full Changelog**: https://github.com/dessalines/thumb-key/compare/0.0.4...0.0.5
 
-# Thumb-Key 0.0.4 (2023-03-20)
-
 ## What's Changed in 0.0.4
 
-- Upping version. by @dessalines
 - changed double 'г' to 'к' by @DobriniaMerk in [#56](https://github.com/dessalines/thumb-key/pull/56)
 - Fixing substring crash for strange text fields. Fixes #45 by @dessalines in [#55](https://github.com/dessalines/thumb-key/pull/55)
 - Adding portuguese language layout. Fixes #47 by @dessalines in [#54](https://github.com/dessalines/thumb-key/pull/54)
@@ -1786,11 +1468,8 @@
 
 **Full Changelog**: https://github.com/dessalines/thumb-key/compare/0.0.3...0.0.4
 
-# Thumb-Key 0.0.3 (2023-03-19)
-
 ## What's Changed in 0.0.3
 
-- Upping version by @dessalines
 - Merge remote-tracking branch 'origin/main' by @dessalines
 - Add russian and ukrainian layouts by @dessalines in [#41](https://github.com/dessalines/thumb-key/pull/41)
 - Fix issue with IME padding. by @dessalines
@@ -1807,11 +1486,8 @@
 
 **Full Changelog**: https://github.com/dessalines/thumb-key/compare/0.0.2...0.0.3
 
-# Thumb-Key 0.0.2 (2023-03-17)
-
 ## What's Changed in 0.0.2
 
-- Upping version. by @dessalines
 - Adding a minimum swipe length. Fixes #14 by @dessalines in [#22](https://github.com/dessalines/thumb-key/pull/22)
 - Changing default space next tap action to comma. #18 by @dessalines in [#20](https://github.com/dessalines/thumb-key/pull/20)
 - Swapping out \* for - , which is more common. Fixes #13 by @dessalines in [#19](https://github.com/dessalines/thumb-key/pull/19)
@@ -1819,8 +1495,6 @@
 - Fixing fastlane full description. by @dessalines
 
 **Full Changelog**: https://github.com/dessalines/thumb-key/compare/0.0.1...0.0.2
-
-# Thumb-Key 0.0.1 (2023-03-16)
 
 ## What's Changed in 0.0.1
 

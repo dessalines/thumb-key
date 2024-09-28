@@ -147,6 +147,7 @@ import com.dessalines.thumbkey.keyboards.KB_T9
 import com.dessalines.thumbkey.keyboards.KB_TOK_SITELEN_THUMBKEY_EMOJI
 import com.dessalines.thumbkey.keyboards.KB_TOK_THUMBKEY
 import com.dessalines.thumbkey.keyboards.KB_TR_THUMBKEY
+import com.dessalines.thumbkey.keyboards.KB_UK_BY_RU_THUMBKEY
 import com.dessalines.thumbkey.keyboards.KB_UK_MESSAGEASE_SYMBOLS
 import com.dessalines.thumbkey.keyboards.KB_UK_RU_MESSAGEASE_SYMBOLS
 import com.dessalines.thumbkey.keyboards.KB_UK_THUMBKEY
@@ -308,4 +309,5 @@ enum class KeyboardLayout(
     GlagoliticThumbkey(KB_GLAGOLITIC_THUMBKEY),
     ENColumnar(KB_EN_COLUMNAR),
     ENColumnarQuick(KB_EN_COLUMNAR_QUICK),
+    UKBYRUThumbKey(KB_UK_BY_RU_THUMBKEY),
 }
