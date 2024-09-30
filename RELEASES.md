@@ -1,3 +1,14 @@
+## What's Changed in 3.4.14
+
+- Adding database exporting and importing. by @dessalines in [#1094](https://github.com/dessalines/thumb-key/pull/1094)
+- Fixed ESCAMessagEase.kt by @co00co in [#1093](https://github.com/dessalines/thumb-key/pull/1093)
+
+## New Contributors
+
+- @co00co made their first contribution in [#1093](https://github.com/dessalines/thumb-key/pull/1093)
+
+**Full Changelog**: https://github.com/dessalines/thumb-key/compare/3.4.13...3.4.14
+
 ## What's Changed in 3.4.13
 
 - Updating git cliff. by @dessalines in [#1091](https://github.com/dessalines/thumb-key/pull/1091)
