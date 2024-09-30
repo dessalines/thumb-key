@@ -87,4 +87,9 @@
     <string name="circular_drag_enable">Circular drag</string>
     <string name="ghost_keys_enable">Ghost keys</string>
     <string name="ghost_keys_description">Access hidden symbol keys without switching to numeric view</string>
+    <string name="backup_database">Backup Database</string>
+    <string name="restore_database">Restore Database</string>
+    <string name="restore_database_warning">Warning: This will clear out your current database</string>
+    <string name="database_restored">Database Restored.</string>
+    <string name="database_backed_up">Database Backed up.</string>
 </resources>
