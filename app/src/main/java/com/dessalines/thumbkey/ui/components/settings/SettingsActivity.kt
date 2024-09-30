@@ -1,6 +1,10 @@
 package com.dessalines.thumbkey.ui.components.settings
 
+import android.os.Build
 import android.util.Log
+import android.widget.Toast
+import androidx.activity.compose.rememberLauncherForActivityResult
+import androidx.activity.result.contract.ActivityResultContracts
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.imePadding
@@ -14,6 +18,8 @@ import androidx.compose.material.icons.outlined.InstallMobile
 import androidx.compose.material.icons.outlined.KeyboardAlt
 import androidx.compose.material.icons.outlined.Palette
 import androidx.compose.material.icons.outlined.ResetTv
+import androidx.compose.material.icons.outlined.Restore
+import androidx.compose.material.icons.outlined.Save
 import androidx.compose.material.icons.outlined.TouchApp
 import androidx.compose.material3.AlertDialog
 import androidx.compose.material3.Button
@@ -36,6 +42,7 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.AnnotatedString
 import androidx.navigation.NavController
 import com.dessalines.thumbkey.R
+import com.dessalines.thumbkey.db.AppDB
 import com.dessalines.thumbkey.db.AppSettings
 import com.dessalines.thumbkey.db.AppSettingsViewModel
 import com.dessalines.thumbkey.db.DEFAULT_ANIMATION_HELPER_SPEED
@@ -77,6 +84,7 @@ import com.dessalines.thumbkey.utils.SimpleTopAppBar
 import com.dessalines.thumbkey.utils.TAG
 import com.dessalines.thumbkey.utils.keyboardLayoutsSetFromDbIndexString
 import com.dessalines.thumbkey.utils.openLink
+import com.roomdbexportimport.RoomDBExportImport
 import me.zhanghai.compose.preference.MultiSelectListPreference
 import me.zhanghai.compose.preference.Preference
 import me.zhanghai.compose.preference.ProvidePreferenceTheme
@@ -100,6 +108,35 @@ fun SettingsActivity(
     var showConfirmResetDialog by remember { mutableStateOf(false) }
 
     val layoutsState = keyboardLayoutsSetFromDbIndexString(settings?.keyboardLayouts)
+
+    val dbSavedText = stringResource(R.string.database_backed_up)
+    val dbRestoredText = stringResource(R.string.database_restored)
+
+    val dbHelper = RoomDBExportImport(AppDB.getDatabase(ctx).openHelper)
+
+    val exportDbLauncher =
+        rememberLauncherForActivityResult(
+            ActivityResultContracts.CreateDocument("application/zip"),
+        ) {
+            it?.also {
+                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+                    dbHelper.export(ctx, it)
+                    Toast.makeText(ctx, dbSavedText, Toast.LENGTH_SHORT).show()
+                }
+            }
+        }
+
+    val importDbLauncher =
+        rememberLauncherForActivityResult(
+            ActivityResultContracts.OpenDocument(),
+        ) {
+            it?.also {
+                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+                    dbHelper.import(ctx, it, true)
+                    Toast.makeText(ctx, dbRestoredText, Toast.LENGTH_SHORT).show()
+                }
+            }
+        }
 
     if (showConfirmResetDialog) {
         AlertDialog(
@@ -257,6 +294,33 @@ fun SettingsActivity(
                         },
                         onClick = {
                             showConfirmResetDialog = true
+                        },
+                    )
+                    Preference(
+                        title = { Text(stringResource(R.string.backup_database)) },
+                        icon = {
+                            Icon(
+                                imageVector = Icons.Outlined.Save,
+                                contentDescription = null,
+                            )
+                        },
+                        onClick = {
+                            exportDbLauncher.launch("thumb-key")
+                        },
+                    )
+                    Preference(
+                        title = { Text(stringResource(R.string.restore_database)) },
+                        summary = {
+                            Text(stringResource(R.string.restore_database_warning))
+                        },
+                        icon = {
+                            Icon(
+                                imageVector = Icons.Outlined.Restore,
+                                contentDescription = null,
+                            )
+                        },
+                        onClick = {
+                            importDbLauncher.launch(arrayOf("application/zip"))
                         },
                     )
                     SettingsDivider()
