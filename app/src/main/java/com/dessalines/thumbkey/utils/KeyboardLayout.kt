@@ -129,6 +129,7 @@ import com.dessalines.thumbkey.keyboards.KB_PL_TYPESPLIT_SYMBOLS_V1
 import com.dessalines.thumbkey.keyboards.KB_PL_TYPESPLIT_SYMBOLS_V2
 import com.dessalines.thumbkey.keyboards.KB_PL_TYPESPLIT_V1
 import com.dessalines.thumbkey.keyboards.KB_PL_TYPESPLIT_V2
+import com.dessalines.thumbkey.keyboards.KB_PT_EN_THUMBKEY
 import com.dessalines.thumbkey.keyboards.KB_PT_THUMBKEY
 import com.dessalines.thumbkey.keyboards.KB_PT_TYPESPLIT
 import com.dessalines.thumbkey.keyboards.KB_RU_MESSAGEASE
@@ -310,4 +311,5 @@ enum class KeyboardLayout(
     ENColumnar(KB_EN_COLUMNAR),
     ENColumnarQuick(KB_EN_COLUMNAR_QUICK),
     UKBYRUThumbKey(KB_UK_BY_RU_THUMBKEY),
+    PTENThumbKey(KB_PT_EN_THUMBKEY),
 }
