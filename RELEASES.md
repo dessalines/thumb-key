@@ -1,3 +1,10 @@
+## What's Changed in 3.4.15
+
+- Re-organizing backup and restore into its own screen. by @dessalines in [#1100](https://github.com/dessalines/thumb-key/pull/1100)
+- Adding portuguese + english thumbkey layout. by @dessalines in [#1096](https://github.com/dessalines/thumb-key/pull/1096)
+
+**Full Changelog**: https://github.com/dessalines/thumb-key/compare/3.4.14...3.4.15
+
 ## What's Changed in 3.4.14
 
 - Adding database exporting and importing. by @dessalines in [#1094](https://github.com/dessalines/thumb-key/pull/1094)
