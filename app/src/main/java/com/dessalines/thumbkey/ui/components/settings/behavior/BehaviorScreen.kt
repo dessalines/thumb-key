@@ -68,7 +68,7 @@ import me.zhanghai.compose.preference.SwitchPreference
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun BehaviorActivity(
+fun BehaviorScreen(
     navController: NavController,
     appSettingsViewModel: AppSettingsViewModel,
 ) {

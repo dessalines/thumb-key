@@ -77,7 +77,7 @@ import me.zhanghai.compose.preference.SwitchPreference
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun LookAndFeelActivity(
+fun LookAndFeelScreen(
     navController: NavController,
     appSettingsViewModel: AppSettingsViewModel,
 ) {
