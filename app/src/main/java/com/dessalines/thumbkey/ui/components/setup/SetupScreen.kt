@@ -27,7 +27,7 @@ import splitties.systemservices.inputMethodManager
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun SetupActivity(
+fun SetupScreen(
     navController: NavController,
     thumbkeyEnabled: Boolean,
     thumbkeySelected: Boolean,

@@ -1,45 +1,34 @@
-package com.dessalines.thumbkey.ui.components.settings
+package com.dessalines.thumbkey.ui.components.settings.backupandrestore
 
 import android.os.Build
 import android.util.Log
 import android.widget.Toast
 import androidx.activity.compose.rememberLauncherForActivityResult
 import androidx.activity.result.contract.ActivityResultContracts
-import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Column
-import androidx.compose.foundation.layout.imePadding
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.automirrored.outlined.HelpCenter
-import androidx.compose.material.icons.outlined.Info
-import androidx.compose.material.icons.outlined.InstallMobile
-import androidx.compose.material.icons.outlined.KeyboardAlt
-import androidx.compose.material.icons.outlined.Palette
 import androidx.compose.material.icons.outlined.ResetTv
 import androidx.compose.material.icons.outlined.Restore
 import androidx.compose.material.icons.outlined.Save
-import androidx.compose.material.icons.outlined.TouchApp
 import androidx.compose.material3.AlertDialog
 import androidx.compose.material3.Button
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.Icon
-import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.SnackbarHost
 import androidx.compose.material3.SnackbarHostState
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
-import androidx.compose.runtime.livedata.observeAsState
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.stringResource
-import androidx.compose.ui.text.AnnotatedString
 import androidx.navigation.NavController
 import com.dessalines.thumbkey.R
 import com.dessalines.thumbkey.db.AppDB
@@ -75,39 +64,25 @@ import com.dessalines.thumbkey.db.DEFAULT_SPACEBAR_MULTITAPS
 import com.dessalines.thumbkey.db.DEFAULT_THEME
 import com.dessalines.thumbkey.db.DEFAULT_THEME_COLOR
 import com.dessalines.thumbkey.db.DEFAULT_VIBRATE_ON_TAP
-import com.dessalines.thumbkey.db.LayoutsUpdate
-import com.dessalines.thumbkey.ui.components.common.TestOutTextField
-import com.dessalines.thumbkey.ui.components.settings.about.SettingsDivider
-import com.dessalines.thumbkey.ui.components.settings.about.USER_GUIDE_URL
-import com.dessalines.thumbkey.utils.KeyboardLayout
 import com.dessalines.thumbkey.utils.SimpleTopAppBar
-import com.dessalines.thumbkey.utils.TAG
 import com.dessalines.thumbkey.utils.keyboardLayoutsSetFromDbIndexString
-import com.dessalines.thumbkey.utils.openLink
+import com.dessalines.thumbkey.utils.updateLayouts
 import com.roomdbexportimport.RoomDBExportImport
-import me.zhanghai.compose.preference.MultiSelectListPreference
 import me.zhanghai.compose.preference.Preference
 import me.zhanghai.compose.preference.ProvidePreferenceTheme
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun SettingsActivity(
+fun BackupAndRestoreScreen(
     navController: NavController,
     appSettingsViewModel: AppSettingsViewModel,
-    thumbkeyEnabled: Boolean,
-    thumbkeySelected: Boolean,
 ) {
-    Log.d(TAG, "Got to settings activity")
+    Log.d("thumb key", "Got to Backup and Restore screen")
 
-    val snackbarHostState = remember { SnackbarHostState() }
     val ctx = LocalContext.current
+    val snackbarHostState = remember { SnackbarHostState() }
 
-    val settings by appSettingsViewModel.appSettings.observeAsState()
-
-    val scrollState = rememberScrollState()
     var showConfirmResetDialog by remember { mutableStateOf(false) }
-
-    val layoutsState = keyboardLayoutsSetFromDbIndexString(settings?.keyboardLayouts)
 
     val dbSavedText = stringResource(R.string.database_backed_up)
     val dbRestoredText = stringResource(R.string.database_restored)
@@ -176,126 +151,16 @@ fun SettingsActivity(
     Scaffold(
         snackbarHost = { SnackbarHost(snackbarHostState) },
         topBar = {
-            SimpleTopAppBar(
-                text = stringResource(R.string.app_name),
-                navController = navController,
-                showBack = false,
-            )
+            SimpleTopAppBar(text = stringResource(R.string.backup_and_restore), navController = navController)
         },
         content = { padding ->
             Column(
                 modifier =
                     Modifier
-                        .padding(padding)
-                        .verticalScroll(scrollState)
-                        .background(color = MaterialTheme.colorScheme.surface)
-                        .imePadding(),
+                        .verticalScroll(rememberScrollState())
+                        .padding(padding),
             ) {
                 ProvidePreferenceTheme {
-                    if (!(thumbkeyEnabled || thumbkeySelected)) {
-                        Preference(
-                            title = {
-                                val setupStr = stringResource(R.string.setup)
-                                Text(setupStr)
-                            },
-                            icon = {
-                                Icon(
-                                    imageVector = Icons.Outlined.InstallMobile,
-                                    contentDescription = null,
-                                )
-                            },
-                            onClick = { navController.navigate("setup") },
-                        )
-                    }
-
-                    MultiSelectListPreference(
-                        value = layoutsState,
-                        values = KeyboardLayout.entries.sortedBy { it.keyboardDefinition.title },
-                        valueToText = {
-                            AnnotatedString(it.keyboardDefinition.title)
-                        },
-                        onValueChange = {
-                            val update =
-                                it.ifEmpty {
-                                    keyboardLayoutsSetFromDbIndexString(DEFAULT_KEYBOARD_LAYOUT.toString())
-                                }
-
-                            updateLayouts(
-                                appSettingsViewModel,
-                                update,
-                            )
-                        },
-                        icon = {
-                            Icon(
-                                imageVector = Icons.Outlined.KeyboardAlt,
-                                contentDescription = null,
-                            )
-                        },
-                        title = {
-                            Text(stringResource(R.string.layouts))
-                        },
-                        summary = {
-                            val layoutsStr =
-                                layoutsState.joinToString(", ") { it.keyboardDefinition.title }
-                            Text(layoutsStr)
-                        },
-                    )
-                    Preference(
-                        title = { Text(stringResource(R.string.look_and_feel)) },
-                        icon = {
-                            Icon(
-                                imageVector = Icons.Outlined.Palette,
-                                contentDescription = null,
-                            )
-                        },
-                        onClick = { navController.navigate("lookAndFeel") },
-                    )
-                    Preference(
-                        title = { Text(stringResource(R.string.behavior)) },
-                        icon = {
-                            Icon(
-                                imageVector = Icons.Outlined.TouchApp,
-                                contentDescription = null,
-                            )
-                        },
-                        onClick = { navController.navigate("behavior") },
-                    )
-                    Preference(
-                        title = { Text(stringResource(R.string.user_guide)) },
-                        icon = {
-                            Icon(
-                                imageVector = Icons.AutoMirrored.Outlined.HelpCenter,
-                                contentDescription = null,
-                            )
-                        },
-                        onClick = {
-                            openLink(USER_GUIDE_URL, ctx)
-                        },
-                    )
-                    Preference(
-                        title = { Text(stringResource(R.string.about)) },
-                        icon = {
-                            Icon(
-                                imageVector = Icons.Outlined.Info,
-                                contentDescription = null,
-                            )
-                        },
-                        onClick = { navController.navigate("about") },
-                    )
-                    Preference(
-                        title = {
-                            Text(stringResource(R.string.reset_to_defaults))
-                        },
-                        icon = {
-                            Icon(
-                                imageVector = Icons.Outlined.ResetTv,
-                                contentDescription = null,
-                            )
-                        },
-                        onClick = {
-                            showConfirmResetDialog = true
-                        },
-                    )
                     Preference(
                         title = { Text(stringResource(R.string.backup_database)) },
                         icon = {
@@ -323,8 +188,20 @@ fun SettingsActivity(
                             importDbLauncher.launch(arrayOf("application/zip"))
                         },
                     )
-                    SettingsDivider()
-                    TestOutTextField()
+                    Preference(
+                        title = {
+                            Text(stringResource(R.string.reset_to_defaults))
+                        },
+                        icon = {
+                            Icon(
+                                imageVector = Icons.Outlined.ResetTv,
+                                contentDescription = null,
+                            )
+                        },
+                        onClick = {
+                            showConfirmResetDialog = true
+                        },
+                    )
                 }
             }
         },
@@ -372,23 +249,6 @@ private fun resetAppSettingsToDefault(appSettingsViewModel: AppSettingsViewModel
             clockwiseDragAction = DEFAULT_CLOCKWISE_DRAG_ACTION,
             counterclockwiseDragAction = DEFAULT_COUNTERCLOCKWISE_DRAG_ACTION,
             ghostKeysEnabled = DEFAULT_GHOST_KEYS_ENABLED,
-        ),
-    )
-}
-
-private fun updateLayouts(
-    appSettingsViewModel: AppSettingsViewModel,
-    layoutsState: Set<KeyboardLayout>,
-) {
-    appSettingsViewModel.updateLayouts(
-        LayoutsUpdate(
-            id = 1,
-            // Set the current to the first
-            keyboardLayout = layoutsState.first().ordinal,
-            keyboardLayouts =
-                layoutsState
-                    .map { it.ordinal }
-                    .joinToString(),
         ),
     )
 }

@@ -49,7 +49,7 @@ const val MASTODON_URL = "https://mastodon.social/@dessalines"
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun AboutActivity(navController: NavController) {
+fun AboutScreen(navController: NavController) {
     Log.d(TAG, "Got to About activity")
 
     val ctx = LocalContext.current
@@ -189,5 +189,5 @@ fun SettingsDivider() {
 @Preview
 @Composable
 fun AboutPreview() {
-    AboutActivity(navController = rememberNavController())
+    AboutScreen(navController = rememberNavController())
 }

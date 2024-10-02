@@ -39,7 +39,9 @@ import androidx.navigation.NavController
 import com.dessalines.thumbkey.IMEService
 import com.dessalines.thumbkey.MainActivity
 import com.dessalines.thumbkey.R
+import com.dessalines.thumbkey.db.AppSettingsViewModel
 import com.dessalines.thumbkey.db.DEFAULT_KEYBOARD_LAYOUT
+import com.dessalines.thumbkey.db.LayoutsUpdate
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
@@ -1288,3 +1290,20 @@ fun circularDirection(
 }
 
 fun Offset.getDistanceTo(other: Offset) = (other - this).getDistance()
+
+fun updateLayouts(
+    appSettingsViewModel: AppSettingsViewModel,
+    layoutsState: Set<KeyboardLayout>,
+) {
+    appSettingsViewModel.updateLayouts(
+        LayoutsUpdate(
+            id = 1,
+            // Set the current to the first
+            keyboardLayout = layoutsState.first().ordinal,
+            keyboardLayouts =
+                layoutsState
+                    .map { it.ordinal }
+                    .joinToString(),
+        ),
+    )
+}
