@@ -198,7 +198,7 @@ val KB_NL_TYPESPLIT_MAIN =
                                 ),
                         ),
                 ),
-                SPACEBAR_TYPESPLIT_MIDDLE_KEY_ITEM,
+                SPACEBAR_ALL_DIRECTIONS,
                 KeyItemC(
                     center =
                         KeyC(
@@ -302,7 +302,7 @@ val KB_NL_TYPESPLIT_MAIN =
                                 ),
                         ),
                 ),
-                SPACEBAR_TYPESPLIT_BOTTOM_KEY_ITEM,
+                SPACEBAR_ALL_SYMBOLS,
                 KeyItemC(
                     center =
                         KeyC(
