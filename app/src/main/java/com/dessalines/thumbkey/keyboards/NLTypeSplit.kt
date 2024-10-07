@@ -71,7 +71,7 @@ val KB_NL_TYPESPLIT_MAIN =
                                     display = KeyDisplay.TextDisplay("ï"),
                                     action = KeyAction.CommitText("ï"),
                                 ),
-                            SwipeDirection.TOP_LEFT to
+                            SwipeDirection.TOP_RIGHT to
                                 KeyC(
                                     display = KeyDisplay.TextDisplay("í"),
                                     action = KeyAction.CommitText("í"),
@@ -681,7 +681,7 @@ val KB_NL_TYPESPLIT_SHIFTED =
             ),
             listOf(
                 NUMERIC_KEY_ITEM_ALT,
-                BACKSPACE_TYPESPLIT_KEY_ITEM,
+                BACKSPACE_TYPESPLIT_SHIFTED_KEY_ITEM,
                 RETURN_KEY_ITEM,
             ),
         ),
@@ -695,9 +695,5 @@ val KB_NL_TYPESPLIT: KeyboardDefinition =
                 main = KB_NL_TYPESPLIT_MAIN,
                 shifted = KB_NL_TYPESPLIT_SHIFTED,
                 numeric = TYPESPLIT_NUMERIC_KEYBOARD,
-            ),
-        settings =
-            KeyboardDefinitionSettings(
-                autoCapitalizers = arrayOf(::autoCapitalizeI, ::autoCapitalizeIApostrophe),
             ),
     )
