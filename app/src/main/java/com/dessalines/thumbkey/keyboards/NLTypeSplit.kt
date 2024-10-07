@@ -9,11 +9,8 @@ import com.dessalines.thumbkey.utils.KeyItemC
 import com.dessalines.thumbkey.utils.KeyboardC
 import com.dessalines.thumbkey.utils.KeyboardDefinition
 import com.dessalines.thumbkey.utils.KeyboardDefinitionModes
-import com.dessalines.thumbkey.utils.KeyboardDefinitionSettings
 import com.dessalines.thumbkey.utils.SwipeDirection
 import com.dessalines.thumbkey.utils.SwipeNWay
-import com.dessalines.thumbkey.utils.autoCapitalizeI
-import com.dessalines.thumbkey.utils.autoCapitalizeIApostrophe
 
 val KB_NL_TYPESPLIT_MAIN =
     KeyboardC(
@@ -33,21 +30,25 @@ val KB_NL_TYPESPLIT_MAIN =
                                 KeyC(
                                     display = KeyDisplay.TextDisplay("ú"),
                                     action = KeyAction.CommitText("ú"),
+                                    color = ColorVariant.MUTED,
                                 ),
                             SwipeDirection.LEFT to
                                 KeyC(
                                     display = KeyDisplay.TextDisplay("ü"),
                                     action = KeyAction.CommitText("ü"),
+                                    color = ColorVariant.MUTED,
                                 ),
                             SwipeDirection.TOP_LEFT to
                                 KeyC(
                                     display = KeyDisplay.TextDisplay("ù"),
                                     action = KeyAction.CommitText("ù"),
+                                    color = ColorVariant.MUTED,
                                 ),
                             SwipeDirection.BOTTOM to
                                 KeyC(
                                     display = KeyDisplay.TextDisplay(";"),
                                     action = KeyAction.CommitText(";"),
+                                    color = ColorVariant.MUTED,
                                 ),
                         ),
                 ),
@@ -65,21 +66,25 @@ val KB_NL_TYPESPLIT_MAIN =
                                 KeyC(
                                     display = KeyDisplay.TextDisplay("ì"),
                                     action = KeyAction.CommitText("ì"),
+                                    color = ColorVariant.MUTED,
                                 ),
                             SwipeDirection.RIGHT to
                                 KeyC(
                                     display = KeyDisplay.TextDisplay("ï"),
                                     action = KeyAction.CommitText("ï"),
+                                    color = ColorVariant.MUTED,
                                 ),
-                            SwipeDirection.TOP_LEFT to
+                            SwipeDirection.TOP_RIGHT to
                                 KeyC(
                                     display = KeyDisplay.TextDisplay("í"),
                                     action = KeyAction.CommitText("í"),
+                                    color = ColorVariant.MUTED,
                                 ),
                             SwipeDirection.BOTTOM to
                                 KeyC(
                                     display = KeyDisplay.TextDisplay(":"),
                                     action = KeyAction.CommitText(":"),
+                                    color = ColorVariant.MUTED,
                                 ),
                         ),
                 ),
@@ -141,6 +146,7 @@ val KB_NL_TYPESPLIT_MAIN =
                                 KeyC(
                                     display = KeyDisplay.TextDisplay("ó"),
                                     action = KeyAction.CommitText("ó"),
+                                    color = ColorVariant.MUTED,
                                 ),
                             SwipeDirection.RIGHT to
                                 KeyC(
@@ -151,11 +157,13 @@ val KB_NL_TYPESPLIT_MAIN =
                                 KeyC(
                                     display = KeyDisplay.TextDisplay("ò"),
                                     action = KeyAction.CommitText("ò"),
+                                    color = ColorVariant.MUTED,
                                 ),
                             SwipeDirection.LEFT to
                                 KeyC(
                                     display = KeyDisplay.TextDisplay("ö"),
                                     action = KeyAction.CommitText("ö"),
+                                    color = ColorVariant.MUTED,
                                 ),
                         ),
                 ),
@@ -178,6 +186,7 @@ val KB_NL_TYPESPLIT_MAIN =
                                 KeyC(
                                     display = KeyDisplay.TextDisplay("è"),
                                     action = KeyAction.CommitText("è"),
+                                    color = ColorVariant.MUTED,
                                 ),
                             SwipeDirection.LEFT to
                                 KeyC(
@@ -188,6 +197,7 @@ val KB_NL_TYPESPLIT_MAIN =
                                 KeyC(
                                     display = KeyDisplay.TextDisplay("é"),
                                     action = KeyAction.CommitText("é"),
+                                    color = ColorVariant.MUTED,
                                 ),
                             SwipeDirection.BOTTOM to
                                 KeyC(
@@ -198,10 +208,11 @@ val KB_NL_TYPESPLIT_MAIN =
                                 KeyC(
                                     display = KeyDisplay.TextDisplay("ë"),
                                     action = KeyAction.CommitText("ë"),
+                                    color = ColorVariant.MUTED,
                                 ),
                         ),
                 ),
-                SPACEBAR_TYPESPLIT_MIDDLE_KEY_ITEM,
+                SPACEBAR_ALL_DIRECTIONS,
                 KeyItemC(
                     center =
                         KeyC(
@@ -270,6 +281,7 @@ val KB_NL_TYPESPLIT_MAIN =
                                 KeyC(
                                     display = KeyDisplay.TextDisplay("!"),
                                     action = KeyAction.CommitText("!"),
+                                    color = ColorVariant.MUTED,
                                 ),
                         ),
                 ),
@@ -287,25 +299,29 @@ val KB_NL_TYPESPLIT_MAIN =
                                 KeyC(
                                     display = KeyDisplay.TextDisplay("?"),
                                     action = KeyAction.CommitText("?"),
+                                    color = ColorVariant.MUTED,
                                 ),
                             SwipeDirection.BOTTOM_RIGHT to
                                 KeyC(
                                     display = KeyDisplay.TextDisplay("à"),
                                     action = KeyAction.CommitText("à"),
+                                    color = ColorVariant.MUTED,
                                 ),
                             SwipeDirection.RIGHT to
                                 KeyC(
                                     display = KeyDisplay.TextDisplay("ä"),
                                     action = KeyAction.CommitText("ä"),
+                                    color = ColorVariant.MUTED,
                                 ),
                             SwipeDirection.TOP_RIGHT to
                                 KeyC(
                                     display = KeyDisplay.TextDisplay("á"),
                                     action = KeyAction.CommitText("á"),
+                                    color = ColorVariant.MUTED,
                                 ),
                         ),
                 ),
-                SPACEBAR_TYPESPLIT_BOTTOM_KEY_ITEM,
+                SPACEBAR_ALL_SYMBOLS,
                 KeyItemC(
                     center =
                         KeyC(
@@ -369,21 +385,25 @@ val KB_NL_TYPESPLIT_SHIFTED =
                                 KeyC(
                                     display = KeyDisplay.TextDisplay("Ú"),
                                     action = KeyAction.CommitText("Ú"),
+                                    color = ColorVariant.MUTED,
                                 ),
                             SwipeDirection.LEFT to
                                 KeyC(
                                     display = KeyDisplay.TextDisplay("Ü"),
                                     action = KeyAction.CommitText("Ü"),
+                                    color = ColorVariant.MUTED,
                                 ),
                             SwipeDirection.TOP_LEFT to
                                 KeyC(
                                     display = KeyDisplay.TextDisplay("Ù"),
                                     action = KeyAction.CommitText("Ù"),
+                                    color = ColorVariant.MUTED,
                                 ),
                             SwipeDirection.BOTTOM to
                                 KeyC(
                                     display = KeyDisplay.TextDisplay(";"),
                                     action = KeyAction.CommitText(";"),
+                                    color = ColorVariant.MUTED,
                                 ),
                         ),
                 ),
@@ -401,21 +421,25 @@ val KB_NL_TYPESPLIT_SHIFTED =
                                 KeyC(
                                     display = KeyDisplay.TextDisplay("Ì"),
                                     action = KeyAction.CommitText("Ì"),
+                                    color = ColorVariant.MUTED,
                                 ),
                             SwipeDirection.RIGHT to
                                 KeyC(
                                     display = KeyDisplay.TextDisplay("Ï"),
                                     action = KeyAction.CommitText("Ï"),
+                                    color = ColorVariant.MUTED,
                                 ),
                             SwipeDirection.TOP_RIGHT to
                                 KeyC(
                                     display = KeyDisplay.TextDisplay("Í"),
                                     action = KeyAction.CommitText("Í"),
+                                    color = ColorVariant.MUTED,
                                 ),
                             SwipeDirection.BOTTOM to
                                 KeyC(
                                     display = KeyDisplay.TextDisplay(":"),
                                     action = KeyAction.CommitText(":"),
+                                    color = ColorVariant.MUTED,
                                 ),
                         ),
                 ),
@@ -477,6 +501,7 @@ val KB_NL_TYPESPLIT_SHIFTED =
                                 KeyC(
                                     display = KeyDisplay.TextDisplay("Ó"),
                                     action = KeyAction.CommitText("Ó"),
+                                    color = ColorVariant.MUTED,
                                 ),
                             SwipeDirection.RIGHT to
                                 KeyC(
@@ -487,11 +512,13 @@ val KB_NL_TYPESPLIT_SHIFTED =
                                 KeyC(
                                     display = KeyDisplay.TextDisplay("Ò"),
                                     action = KeyAction.CommitText("Ò"),
+                                    color = ColorVariant.MUTED,
                                 ),
                             SwipeDirection.LEFT to
                                 KeyC(
                                     display = KeyDisplay.TextDisplay("Ö"),
                                     action = KeyAction.CommitText("Ö"),
+                                    color = ColorVariant.MUTED,
                                 ),
                         ),
                 ),
@@ -514,6 +541,7 @@ val KB_NL_TYPESPLIT_SHIFTED =
                                 KeyC(
                                     display = KeyDisplay.TextDisplay("È"),
                                     action = KeyAction.CommitText("È"),
+                                    color = ColorVariant.MUTED,
                                 ),
                             SwipeDirection.LEFT to
                                 KeyC(
@@ -524,6 +552,7 @@ val KB_NL_TYPESPLIT_SHIFTED =
                                 KeyC(
                                     display = KeyDisplay.TextDisplay("É"),
                                     action = KeyAction.CommitText("É"),
+                                    color = ColorVariant.MUTED,
                                 ),
                             SwipeDirection.BOTTOM to
                                 KeyC(
@@ -534,6 +563,7 @@ val KB_NL_TYPESPLIT_SHIFTED =
                                 KeyC(
                                     display = KeyDisplay.TextDisplay("Ë"),
                                     action = KeyAction.CommitText("Ë"),
+                                    color = ColorVariant.MUTED,
                                 ),
                         ),
                 ),
@@ -606,6 +636,7 @@ val KB_NL_TYPESPLIT_SHIFTED =
                                 KeyC(
                                     display = KeyDisplay.TextDisplay("!"),
                                     action = KeyAction.CommitText("!"),
+                                    color = ColorVariant.MUTED,
                                 ),
                         ),
                 ),
@@ -623,21 +654,25 @@ val KB_NL_TYPESPLIT_SHIFTED =
                                 KeyC(
                                     display = KeyDisplay.TextDisplay("?"),
                                     action = KeyAction.CommitText("?"),
+                                    color = ColorVariant.MUTED,
                                 ),
                             SwipeDirection.BOTTOM_RIGHT to
                                 KeyC(
                                     display = KeyDisplay.TextDisplay("À"),
                                     action = KeyAction.CommitText("À"),
+                                    color = ColorVariant.MUTED,
                                 ),
                             SwipeDirection.RIGHT to
                                 KeyC(
                                     display = KeyDisplay.TextDisplay("Ä"),
                                     action = KeyAction.CommitText("Ä"),
+                                    color = ColorVariant.MUTED,
                                 ),
                             SwipeDirection.TOP_RIGHT to
                                 KeyC(
                                     display = KeyDisplay.TextDisplay("Á"),
                                     action = KeyAction.CommitText("Á"),
+                                    color = ColorVariant.MUTED,
                                 ),
                         ),
                 ),
@@ -681,7 +716,7 @@ val KB_NL_TYPESPLIT_SHIFTED =
             ),
             listOf(
                 NUMERIC_KEY_ITEM_ALT,
-                BACKSPACE_TYPESPLIT_KEY_ITEM,
+                BACKSPACE_TYPESPLIT_SHIFTED_KEY_ITEM,
                 RETURN_KEY_ITEM,
             ),
         ),
@@ -695,9 +730,5 @@ val KB_NL_TYPESPLIT: KeyboardDefinition =
                 main = KB_NL_TYPESPLIT_MAIN,
                 shifted = KB_NL_TYPESPLIT_SHIFTED,
                 numeric = TYPESPLIT_NUMERIC_KEYBOARD,
-            ),
-        settings =
-            KeyboardDefinitionSettings(
-                autoCapitalizers = arrayOf(::autoCapitalizeI, ::autoCapitalizeIApostrophe),
             ),
     )
