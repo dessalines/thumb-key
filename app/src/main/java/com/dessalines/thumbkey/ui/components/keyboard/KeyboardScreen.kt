@@ -72,6 +72,7 @@ import com.dessalines.thumbkey.utils.TAG
 import com.dessalines.thumbkey.utils.getKeyboardMode
 import com.dessalines.thumbkey.utils.keyboardPositionToAlignment
 import com.dessalines.thumbkey.utils.toBool
+import kotlin.time.TimeMark
 
 @Composable
 fun KeyboardScreen(
@@ -96,7 +97,7 @@ fun KeyboardScreen(
     }
 
     // TODO get rid of this crap
-    val lastAction = remember { mutableStateOf<KeyAction?>(null) }
+    val lastAction = remember { mutableStateOf<Pair<KeyAction, TimeMark>?>(null) }
 
     val keyboardDefinition =
         KeyboardLayout.entries.sortedBy { it.ordinal }[
