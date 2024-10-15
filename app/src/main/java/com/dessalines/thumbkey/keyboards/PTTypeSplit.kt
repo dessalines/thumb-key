@@ -15,219 +15,107 @@ val KB_PT_TYPESPLIT_MAIN =
         listOf(
             listOf(
                 KeyItemC(
-                    center =
-                        KeyC(
-                            KeyAction.CommitText("e"),
-                            size = FontSizeVariant.LARGE,
-                        ),
+                    center = KeyC("e", size = FontSizeVariant.LARGE),
                     swipeType = SwipeNWay.FOUR_WAY_CROSS,
-                    right =
-                        KeyC(
-                            KeyAction.CommitText("é"),
-                            color = ColorVariant.MUTED,
-                        ),
-                    left =
-                        KeyC(
-                            KeyAction.CommitText("ê"),
-                            color = ColorVariant.MUTED,
-                        ),
-                    bottom = KeyC(KeyAction.CommitText("q")),
-                    top = KeyC(KeyAction.CommitText("w")),
+                    right = KeyC("é", color = ColorVariant.MUTED),
+                    left = KeyC("ê", color = ColorVariant.MUTED),
+                    bottom = KeyC("q"),
+                    top = KeyC("w"),
                 ),
                 KeyItemC(
-                    center =
-                        KeyC(
-                            KeyAction.CommitText("r"),
-                            size = FontSizeVariant.LARGE,
-                        ),
+                    center = KeyC("r", size = FontSizeVariant.LARGE),
                     swipeType = SwipeNWay.FOUR_WAY_CROSS,
                     right =
                         KeyC(
                             display = null,
                             action = KeyAction.CommitText("y"),
                         ),
-                    left = KeyC(KeyAction.CommitText("y")),
-                    bottom = KeyC(KeyAction.CommitText("t")),
+                    left = KeyC("y"),
+                    bottom = KeyC("t"),
                 ),
                 EMOJI_KEY_ITEM_ALT,
                 KeyItemC(
-                    center =
-                        KeyC(
-                            KeyAction.CommitText("i"),
-                            size = FontSizeVariant.LARGE,
-                        ),
+                    center = KeyC("i", size = FontSizeVariant.LARGE),
                     swipeType = SwipeNWay.FOUR_WAY_CROSS,
-                    right =
-                        KeyC(
-                            KeyAction.CommitText("í"),
-                            color = ColorVariant.MUTED,
-                        ),
-                    left =
-                        KeyC(
-                            KeyAction.CommitText("ú"),
-                            color = ColorVariant.MUTED,
-                        ),
-                    bottom = KeyC(KeyAction.CommitText("u")),
+                    right = KeyC("í", color = ColorVariant.MUTED),
+                    left = KeyC("ú", color = ColorVariant.MUTED),
+                    bottom = KeyC("u"),
                 ),
                 KeyItemC(
-                    center =
-                        KeyC(
-                            KeyAction.CommitText("o"),
-                            size = FontSizeVariant.LARGE,
-                        ),
+                    center = KeyC("o", size = FontSizeVariant.LARGE),
                     swipeType = SwipeNWay.FOUR_WAY_CROSS,
-                    right =
-                        KeyC(
-                            KeyAction.CommitText("ô"),
-                            color = ColorVariant.MUTED,
-                        ),
-                    left =
-                        KeyC(
-                            KeyAction.CommitText("ó"),
-                            color = ColorVariant.MUTED,
-                        ),
-                    bottom = KeyC(KeyAction.CommitText("p")),
-                    top =
-                        KeyC(
-                            KeyAction.CommitText("õ"),
-                            color = ColorVariant.MUTED,
-                        ),
+                    right = KeyC("ô", color = ColorVariant.MUTED),
+                    left = KeyC("ó", color = ColorVariant.MUTED),
+                    bottom = KeyC("p"),
+                    top = KeyC("õ", color = ColorVariant.MUTED),
                 ),
             ),
             listOf(
                 KeyItemC(
-                    center =
-                        KeyC(
-                            KeyAction.CommitText("a"),
-                            size = FontSizeVariant.LARGE,
-                        ),
+                    center = KeyC("a", size = FontSizeVariant.LARGE),
                     swipeType = SwipeNWay.FOUR_WAY_CROSS,
-                    right =
-                        KeyC(
-                            KeyAction.CommitText("á"),
-                            color = ColorVariant.MUTED,
-                        ),
-                    left =
-                        KeyC(
-                            KeyAction.CommitText("â"),
-                            color = ColorVariant.MUTED,
-                        ),
-                    bottom =
-                        KeyC(
-                            KeyAction.CommitText("ã"),
-                            color = ColorVariant.MUTED,
-                        ),
-                    top =
-                        KeyC(
-                            KeyAction.CommitText("à"),
-                            color = ColorVariant.MUTED,
-                        ),
+                    right = KeyC("á", color = ColorVariant.MUTED),
+                    left = KeyC("â", color = ColorVariant.MUTED),
+                    bottom = KeyC("ã", color = ColorVariant.MUTED),
+                    top = KeyC("à", color = ColorVariant.MUTED),
                 ),
                 KeyItemC(
-                    center =
-                        KeyC(
-                            KeyAction.CommitText("s"),
-                            size = FontSizeVariant.LARGE,
-                        ),
+                    center = KeyC("s", size = FontSizeVariant.LARGE),
                 ),
                 SPACEBAR_TYPESPLIT_MIDDLE_KEY_ITEM,
                 KeyItemC(
-                    center =
-                        KeyC(
-                            KeyAction.CommitText("d"),
-                            size = FontSizeVariant.LARGE,
-                        ),
+                    center = KeyC("d", size = FontSizeVariant.LARGE),
                     swipeType = SwipeNWay.FOUR_WAY_CROSS,
-                    right = KeyC(KeyAction.CommitText("f")),
+                    right = KeyC("f"),
                     left =
                         KeyC(
                             display = null,
                             action = KeyAction.CommitText("f"),
                         ),
-                    bottom = KeyC(KeyAction.CommitText("g")),
+                    bottom = KeyC("g"),
                 ),
                 KeyItemC(
-                    center =
-                        KeyC(
-                            KeyAction.CommitText("l"),
-                            size = FontSizeVariant.LARGE,
-                        ),
+                    center = KeyC("l", size = FontSizeVariant.LARGE),
                     swipeType = SwipeNWay.FOUR_WAY_CROSS,
                     right =
                         KeyC(
                             display = null,
                             action = KeyAction.CommitText("j"),
                         ),
-                    left = KeyC(KeyAction.CommitText("j")),
-                    bottom = KeyC(KeyAction.CommitText("h")),
-                    top = KeyC(KeyAction.CommitText("k")),
+                    left = KeyC("j"),
+                    bottom = KeyC("h"),
+                    top = KeyC("k"),
                 ),
             ),
             listOf(
                 KeyItemC(
-                    center =
-                        KeyC(
-                            KeyAction.CommitText("c"),
-                            size = FontSizeVariant.LARGE,
-                        ),
+                    center = KeyC("c", size = FontSizeVariant.LARGE),
                     swipeType = SwipeNWay.FOUR_WAY_CROSS,
-                    right = KeyC(KeyAction.CommitText("z")),
+                    right = KeyC("z"),
                     left =
                         KeyC(
                             display = null,
                             action = KeyAction.CommitText("z"),
                         ),
-                    bottom =
-                        KeyC(
-                            KeyAction.CommitText("ç"),
-                            color = ColorVariant.MUTED,
-                        ),
-                    top = KeyC(KeyAction.CommitText("x")),
+                    bottom = KeyC("ç", color = ColorVariant.MUTED),
+                    top = KeyC("x"),
                 ),
                 KeyItemC(
-                    center =
-                        KeyC(
-                            KeyAction.CommitText("v"),
-                            size = FontSizeVariant.LARGE,
-                        ),
+                    center = KeyC("v", size = FontSizeVariant.LARGE),
                     swipeType = SwipeNWay.TWO_WAY_VERTICAL,
-                    bottom = KeyC(KeyAction.CommitText("b")),
+                    bottom = KeyC("b"),
                 ),
                 SPACEBAR_TYPESPLIT_BOTTOM_KEY_ITEM,
                 KeyItemC(
-                    center =
-                        KeyC(
-                            KeyAction.CommitText("n"),
-                            size = FontSizeVariant.LARGE,
-                        ),
+                    center = KeyC("n", size = FontSizeVariant.LARGE),
                 ),
                 KeyItemC(
-                    center =
-                        KeyC(
-                            KeyAction.CommitText("m"),
-                            size = FontSizeVariant.LARGE,
-                        ),
+                    center = KeyC("m", size = FontSizeVariant.LARGE),
                     swipeType = SwipeNWay.FOUR_WAY_CROSS,
-                    right =
-                        KeyC(
-                            KeyAction.CommitText("?"),
-                            color = ColorVariant.MUTED,
-                        ),
-                    left =
-                        KeyC(
-                            KeyAction.CommitText("!"),
-                            color = ColorVariant.MUTED,
-                        ),
-                    bottom =
-                        KeyC(
-                            KeyAction.CommitText(":"),
-                            color = ColorVariant.MUTED,
-                        ),
-                    top =
-                        KeyC(
-                            KeyAction.CommitText(";"),
-                            color = ColorVariant.MUTED,
-                        ),
+                    right = KeyC("?", color = ColorVariant.MUTED),
+                    left = KeyC("!", color = ColorVariant.MUTED),
+                    bottom = KeyC(":", color = ColorVariant.MUTED),
+                    top = KeyC(";", color = ColorVariant.MUTED),
                 ),
             ),
             listOf(
@@ -243,219 +131,107 @@ val KB_PT_TYPESPLIT_SHIFTED =
         listOf(
             listOf(
                 KeyItemC(
-                    center =
-                        KeyC(
-                            KeyAction.CommitText("E"),
-                            size = FontSizeVariant.LARGE,
-                        ),
+                    center = KeyC("E", size = FontSizeVariant.LARGE),
                     swipeType = SwipeNWay.FOUR_WAY_CROSS,
-                    right =
-                        KeyC(
-                            KeyAction.CommitText("É"),
-                            color = ColorVariant.MUTED,
-                        ),
-                    left =
-                        KeyC(
-                            KeyAction.CommitText("Ê"),
-                            color = ColorVariant.MUTED,
-                        ),
-                    bottom = KeyC(KeyAction.CommitText("Q")),
-                    top = KeyC(KeyAction.CommitText("W")),
+                    right = KeyC("É", color = ColorVariant.MUTED),
+                    left = KeyC("Ê", color = ColorVariant.MUTED),
+                    bottom = KeyC("Q"),
+                    top = KeyC("W"),
                 ),
                 KeyItemC(
-                    center =
-                        KeyC(
-                            KeyAction.CommitText("R"),
-                            size = FontSizeVariant.LARGE,
-                        ),
+                    center = KeyC("R", size = FontSizeVariant.LARGE),
                     swipeType = SwipeNWay.FOUR_WAY_CROSS,
                     right =
                         KeyC(
                             display = null,
                             action = KeyAction.CommitText("Y"),
                         ),
-                    left = KeyC(KeyAction.CommitText("Y")),
-                    bottom = KeyC(KeyAction.CommitText("T")),
+                    left = KeyC("Y"),
+                    bottom = KeyC("T"),
                 ),
                 EMOJI_KEY_ITEM_ALT,
                 KeyItemC(
-                    center =
-                        KeyC(
-                            KeyAction.CommitText("I"),
-                            size = FontSizeVariant.LARGE,
-                        ),
+                    center = KeyC("I", size = FontSizeVariant.LARGE),
                     swipeType = SwipeNWay.FOUR_WAY_CROSS,
-                    right =
-                        KeyC(
-                            KeyAction.CommitText("Í"),
-                            color = ColorVariant.MUTED,
-                        ),
-                    left =
-                        KeyC(
-                            KeyAction.CommitText("Ú"),
-                            color = ColorVariant.MUTED,
-                        ),
-                    bottom = KeyC(KeyAction.CommitText("U")),
+                    right = KeyC("Í", color = ColorVariant.MUTED),
+                    left = KeyC("Ú", color = ColorVariant.MUTED),
+                    bottom = KeyC("U"),
                 ),
                 KeyItemC(
-                    center =
-                        KeyC(
-                            KeyAction.CommitText("O"),
-                            size = FontSizeVariant.LARGE,
-                        ),
+                    center = KeyC("O", size = FontSizeVariant.LARGE),
                     swipeType = SwipeNWay.FOUR_WAY_CROSS,
-                    right =
-                        KeyC(
-                            KeyAction.CommitText("Ô"),
-                            color = ColorVariant.MUTED,
-                        ),
-                    left =
-                        KeyC(
-                            KeyAction.CommitText("Ó"),
-                            color = ColorVariant.MUTED,
-                        ),
-                    bottom = KeyC(KeyAction.CommitText("P")),
-                    top =
-                        KeyC(
-                            KeyAction.CommitText("Õ"),
-                            color = ColorVariant.MUTED,
-                        ),
+                    right = KeyC("Ô", color = ColorVariant.MUTED),
+                    left = KeyC("Ó", color = ColorVariant.MUTED),
+                    bottom = KeyC("P"),
+                    top = KeyC("Õ", color = ColorVariant.MUTED),
                 ),
             ),
             listOf(
                 KeyItemC(
-                    center =
-                        KeyC(
-                            KeyAction.CommitText("A"),
-                            size = FontSizeVariant.LARGE,
-                        ),
+                    center = KeyC("A", size = FontSizeVariant.LARGE),
                     swipeType = SwipeNWay.FOUR_WAY_CROSS,
-                    right =
-                        KeyC(
-                            KeyAction.CommitText("Á"),
-                            color = ColorVariant.MUTED,
-                        ),
-                    left =
-                        KeyC(
-                            KeyAction.CommitText("Â"),
-                            color = ColorVariant.MUTED,
-                        ),
-                    bottom =
-                        KeyC(
-                            KeyAction.CommitText("Ã"),
-                            color = ColorVariant.MUTED,
-                        ),
-                    top =
-                        KeyC(
-                            KeyAction.CommitText("À"),
-                            color = ColorVariant.MUTED,
-                        ),
+                    right = KeyC("Á", color = ColorVariant.MUTED),
+                    left = KeyC("Â", color = ColorVariant.MUTED),
+                    bottom = KeyC("Ã", color = ColorVariant.MUTED),
+                    top = KeyC("À", color = ColorVariant.MUTED),
                 ),
                 KeyItemC(
-                    center =
-                        KeyC(
-                            KeyAction.CommitText("S"),
-                            size = FontSizeVariant.LARGE,
-                        ),
+                    center = KeyC("S", size = FontSizeVariant.LARGE),
                 ),
                 SPACEBAR_TYPESPLIT_MIDDLE_KEY_ITEM,
                 KeyItemC(
-                    center =
-                        KeyC(
-                            KeyAction.CommitText("D"),
-                            size = FontSizeVariant.LARGE,
-                        ),
+                    center = KeyC("D", size = FontSizeVariant.LARGE),
                     swipeType = SwipeNWay.FOUR_WAY_CROSS,
-                    right = KeyC(KeyAction.CommitText("F")),
+                    right = KeyC("F"),
                     left =
                         KeyC(
                             display = null,
                             action = KeyAction.CommitText("F"),
                         ),
-                    bottom = KeyC(KeyAction.CommitText("G")),
+                    bottom = KeyC("G"),
                 ),
                 KeyItemC(
-                    center =
-                        KeyC(
-                            KeyAction.CommitText("L"),
-                            size = FontSizeVariant.LARGE,
-                        ),
+                    center = KeyC("L", size = FontSizeVariant.LARGE),
                     swipeType = SwipeNWay.FOUR_WAY_CROSS,
                     right =
                         KeyC(
                             display = null,
                             action = KeyAction.CommitText("J"),
                         ),
-                    left = KeyC(KeyAction.CommitText("J")),
-                    bottom = KeyC(KeyAction.CommitText("H")),
-                    top = KeyC(KeyAction.CommitText("K")),
+                    left = KeyC("J"),
+                    bottom = KeyC("H"),
+                    top = KeyC("K"),
                 ),
             ),
             listOf(
                 KeyItemC(
-                    center =
-                        KeyC(
-                            KeyAction.CommitText("C"),
-                            size = FontSizeVariant.LARGE,
-                        ),
+                    center = KeyC("C", size = FontSizeVariant.LARGE),
                     swipeType = SwipeNWay.FOUR_WAY_CROSS,
-                    right = KeyC(KeyAction.CommitText("Z")),
+                    right = KeyC("Z"),
                     left =
                         KeyC(
                             display = null,
                             action = KeyAction.CommitText("Z"),
                         ),
-                    bottom =
-                        KeyC(
-                            KeyAction.CommitText("Ç"),
-                            color = ColorVariant.MUTED,
-                        ),
-                    top = KeyC(KeyAction.CommitText("X")),
+                    bottom = KeyC("Ç", color = ColorVariant.MUTED),
+                    top = KeyC("X"),
                 ),
                 KeyItemC(
-                    center =
-                        KeyC(
-                            KeyAction.CommitText("V"),
-                            size = FontSizeVariant.LARGE,
-                        ),
+                    center = KeyC("V", size = FontSizeVariant.LARGE),
                     swipeType = SwipeNWay.TWO_WAY_VERTICAL,
-                    bottom = KeyC(KeyAction.CommitText("B")),
+                    bottom = KeyC("B"),
                 ),
                 SPACEBAR_TYPESPLIT_BOTTOM_KEY_ITEM,
                 KeyItemC(
-                    center =
-                        KeyC(
-                            KeyAction.CommitText("N"),
-                            size = FontSizeVariant.LARGE,
-                        ),
+                    center = KeyC("N", size = FontSizeVariant.LARGE),
                 ),
                 KeyItemC(
-                    center =
-                        KeyC(
-                            KeyAction.CommitText("M"),
-                            size = FontSizeVariant.LARGE,
-                        ),
+                    center = KeyC("M", size = FontSizeVariant.LARGE),
                     swipeType = SwipeNWay.FOUR_WAY_CROSS,
-                    right =
-                        KeyC(
-                            KeyAction.CommitText("?"),
-                            color = ColorVariant.MUTED,
-                        ),
-                    left =
-                        KeyC(
-                            KeyAction.CommitText("!"),
-                            color = ColorVariant.MUTED,
-                        ),
-                    bottom =
-                        KeyC(
-                            KeyAction.CommitText(":"),
-                            color = ColorVariant.MUTED,
-                        ),
-                    top =
-                        KeyC(
-                            KeyAction.CommitText(";"),
-                            color = ColorVariant.MUTED,
-                        ),
+                    right = KeyC("?", color = ColorVariant.MUTED),
+                    left = KeyC("!", color = ColorVariant.MUTED),
+                    bottom = KeyC(":", color = ColorVariant.MUTED),
+                    top = KeyC(";", color = ColorVariant.MUTED),
                 ),
             ),
             listOf(

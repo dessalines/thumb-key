@@ -20,376 +20,96 @@ val KB_TOK_THUMBKEY_MAIN =
         listOf(
             listOf(
                 KeyItemC(
-                    center =
-                        KeyC(
-                            display = KeyDisplay.TextDisplay("❌"),
-                            action = KeyAction.CommitText("ala "),
-                        ),
-                    topLeft =
-                        KeyC(
-                            display = KeyDisplay.TextDisplay("🛒"),
-                            action = KeyAction.CommitText("esun "),
-                        ),
-                    top =
-                        KeyC(
-                            display = KeyDisplay.TextDisplay("👥"),
-                            action = KeyAction.CommitText("kulupu "),
-                        ),
-                    topRight =
-                        KeyC(
-                            display = KeyDisplay.TextDisplay("👂"),
-                            action = KeyAction.CommitText("kute "),
-                        ),
-                    right =
-                        KeyC(
-                            display = KeyDisplay.TextDisplay("🏋️"),
-                            action = KeyAction.CommitText("sijelo "),
-                        ),
-                    bottomRight =
-                        KeyC(
-                            display = KeyDisplay.TextDisplay("💀"),
-                            action = KeyAction.CommitText("moli "),
-                        ),
-                    bottom =
-                        KeyC(
-                            display = KeyDisplay.TextDisplay("⚫"),
-                            action = KeyAction.CommitText("pimeja "),
-                        ),
-                    bottomLeft =
-                        KeyC(
-                            display = KeyDisplay.TextDisplay("🛏️"),
-                            action = KeyAction.CommitText("supa "),
-                        ),
-                    left =
-                        KeyC(
-                            display = KeyDisplay.TextDisplay("⚔️"),
-                            action = KeyAction.CommitText("utala "),
-                        ),
+                    center = KeyC("ala ", displayText = "❌"),
+                    topLeft = KeyC("esun ", displayText = "🛒"),
+                    top = KeyC("kulupu ", displayText = "👥"),
+                    topRight = KeyC("kute ", displayText = "👂"),
+                    right = KeyC("sijelo ", displayText = "🏋️"),
+                    bottomRight = KeyC("moli ", displayText = "💀"),
+                    bottom = KeyC("pimeja ", displayText = "⚫"),
+                    bottomLeft = KeyC("supa ", displayText = "🛏️"),
+                    left = KeyC("utala ", displayText = "⚔️"),
                 ),
                 KeyItemC(
-                    center =
-                        KeyC(
-                            display = KeyDisplay.TextDisplay("👉"),
-                            action = KeyAction.CommitText("sina "),
-                        ),
-                    topLeft =
-                        KeyC(
-                            display = KeyDisplay.TextDisplay("🔈"),
-                            action = KeyAction.CommitText("kalama "),
-                        ),
-                    top =
-                        KeyC(
-                            display = KeyDisplay.TextDisplay("😴"),
-                            action = KeyAction.CommitText("lape "),
-                        ),
-                    topRight =
-                        KeyC(
-                            display = KeyDisplay.TextDisplay("👪"),
-                            action = KeyAction.CommitText("mama "),
-                        ),
-                    right =
-                        KeyC(
-                            display = KeyDisplay.TextDisplay("💰"),
-                            action = KeyAction.CommitText("mani "),
-                        ),
-                    bottomRight =
-                        KeyC(
-                            display = KeyDisplay.TextDisplay("↔️"),
-                            action = KeyAction.CommitText("poka "),
-                        ),
-                    bottom =
-                        KeyC(
-                            display = KeyDisplay.TextDisplay("⭕"),
-                            action = KeyAction.CommitText("sike "),
-                        ),
-                    bottomLeft =
-                        KeyC(
-                            display = KeyDisplay.TextDisplay("📄"),
-                            action = KeyAction.CommitText("lipu "),
-                        ),
-                    left =
-                        KeyC(
-                            display = KeyDisplay.TextDisplay("➕"),
-                            action = KeyAction.CommitText("en "),
-                        ),
+                    center = KeyC("sina ", displayText = "👉"),
+                    topLeft = KeyC("kalama ", displayText = "🔈"),
+                    top = KeyC("lape ", displayText = "😴"),
+                    topRight = KeyC("mama ", displayText = "👪"),
+                    right = KeyC("mani ", displayText = "💰"),
+                    bottomRight = KeyC("poka ", displayText = "↔️"),
+                    bottom = KeyC("sike ", displayText = "⭕"),
+                    bottomLeft = KeyC("lipu ", displayText = "📄"),
+                    left = KeyC("en ", displayText = "➕"),
                 ),
                 KeyItemC(
-                    center =
-                        KeyC(
-                            display = KeyDisplay.TextDisplay("↪️"),
-                            action = KeyAction.CommitText("tawa "),
-                        ),
-                    topLeft =
-                        KeyC(
-                            display = KeyDisplay.TextDisplay("🐒"),
-                            action = KeyAction.CommitText("soweli "),
-                        ),
-                    top =
-                        KeyC(
-                            display = KeyDisplay.TextDisplay("💥"),
-                            action = KeyAction.CommitText("pakala "),
-                        ),
-                    topRight =
-                        KeyC(
-                            display = KeyDisplay.TextDisplay("⚓"),
-                            action = KeyAction.CommitText("awen "),
-                        ),
-                    right =
-                        KeyC(
-                            display = KeyDisplay.TextDisplay("✌️"),
-                            action = KeyAction.CommitText("tu "),
-                        ),
-                    bottomRight =
-                        KeyC(
-                            display = KeyDisplay.TextDisplay("🌀"),
-                            action = KeyAction.CommitText("nasa "),
-                        ),
-                    bottom =
-                        KeyC(
-                            display = KeyDisplay.TextDisplay("🔀"),
-                            action = KeyAction.CommitText("ante "),
-                        ),
-                    bottomLeft =
-                        KeyC(
-                            display = KeyDisplay.TextDisplay("☝️"),
-                            action = KeyAction.CommitText("wan "),
-                        ),
-                    left =
-                        KeyC(
-                            display = KeyDisplay.TextDisplay("🛫"),
-                            action = KeyAction.CommitText("weka "),
-                        ),
+                    center = KeyC("tawa ", displayText = "↪️"),
+                    topLeft = KeyC("soweli ", displayText = "🐒"),
+                    top = KeyC("pakala ", displayText = "💥"),
+                    topRight = KeyC("awen ", displayText = "⚓"),
+                    right = KeyC("tu ", displayText = "✌️"),
+                    bottomRight = KeyC("nasa ", displayText = "🌀"),
+                    bottom = KeyC("ante ", displayText = "🔀"),
+                    bottomLeft = KeyC("wan ", displayText = "☝️"),
+                    left = KeyC("weka ", displayText = "🛫"),
                 ),
                 EMOJI_KEY_ITEM,
             ),
             listOf(
                 KeyItemC(
-                    center =
-                        KeyC(
-                            display = KeyDisplay.TextDisplay("🔼"),
-                            action = KeyAction.CommitText("la "),
-                        ),
-                    topLeft =
-                        KeyC(
-                            display = KeyDisplay.TextDisplay("❕"),
-                            action = KeyAction.CommitText("kin "),
-                        ),
-                    top =
-                        KeyC(
-                            display = KeyDisplay.TextDisplay("🎁"),
-                            action = KeyAction.CommitText("sin "),
-                        ),
-                    topRight =
-                        KeyC(
-                            display = KeyDisplay.TextDisplay("⚡"),
-                            action = KeyAction.CommitText("wawa "),
-                        ),
-                    right =
-                        KeyC(
-                            display = KeyDisplay.TextDisplay("🛣️"),
-                            action = KeyAction.CommitText("nasin "),
-                        ),
-                    bottomRight =
-                        KeyC(
-                            display = KeyDisplay.TextDisplay("😃"),
-                            action = KeyAction.CommitText("musi "),
-                        ),
-                    bottom =
-                        KeyC(
-                            display = KeyDisplay.TextDisplay("🖼️"),
-                            action = KeyAction.CommitText("sitelen "),
-                        ),
-                    bottomLeft =
-                        KeyC(
-                            display = KeyDisplay.TextDisplay("👨"),
-                            action = KeyAction.CommitText("mije "),
-                        ),
-                    left =
-                        KeyC(
-                            display = KeyDisplay.TextDisplay("⬆️"),
-                            action = KeyAction.CommitText("sewi "),
-                        ),
+                    center = KeyC("la ", displayText = "🔼"),
+                    topLeft = KeyC("kin ", displayText = "❕"),
+                    top = KeyC("sin ", displayText = "🎁"),
+                    topRight = KeyC("wawa ", displayText = "⚡"),
+                    right = KeyC("nasin ", displayText = "🛣️"),
+                    bottomRight = KeyC("musi ", displayText = "😃"),
+                    bottom = KeyC("sitelen ", displayText = "🖼️"),
+                    bottomLeft = KeyC("mije ", displayText = "👨"),
+                    left = KeyC("sewi ", displayText = "⬆️"),
                 ),
                 KeyItemC(
-                    center =
-                        KeyC(
-                            display = KeyDisplay.TextDisplay("👇"),
-                            action = KeyAction.CommitText("ni "),
-                        ),
-                    topLeft =
-                        KeyC(
-                            display = KeyDisplay.TextDisplay("🤔"),
-                            action = KeyAction.CommitText("taso "),
-                        ),
-                    top =
-                        KeyC(
-                            display = KeyDisplay.TextDisplay("👧"),
-                            action = KeyAction.CommitText("meli "),
-                        ),
-                    topRight =
-                        KeyC(
-                            display = KeyDisplay.TextDisplay("😶"),
-                            action = KeyAction.CommitText("lawa "),
-                        ),
-                    right =
-                        KeyC(
-                            display = KeyDisplay.TextDisplay("🐘"),
-                            action = KeyAction.CommitText("suli "),
-                        ),
-                    bottomRight =
-                        KeyC(
-                            display = KeyDisplay.TextDisplay("☯️"),
-                            action = KeyAction.CommitText("anu "),
-                        ),
-                    bottom =
-                        KeyC(
-                            display = KeyDisplay.TextDisplay("⚙️"),
-                            action = KeyAction.CommitText("ilo "),
-                        ),
-                    bottomLeft =
-                        KeyC(
-                            display = KeyDisplay.TextDisplay("☀️"),
-                            action = KeyAction.CommitText("suno "),
-                        ),
-                    left =
-                        KeyC(
-                            display = KeyDisplay.TextDisplay("🍽️"),
-                            action = KeyAction.CommitText("moku "),
-                        ),
+                    center = KeyC("ni ", displayText = "👇"),
+                    topLeft = KeyC("taso ", displayText = "🤔"),
+                    top = KeyC("meli ", displayText = "👧"),
+                    topRight = KeyC("lawa ", displayText = "😶"),
+                    right = KeyC("suli ", displayText = "🐘"),
+                    bottomRight = KeyC("anu ", displayText = "☯️"),
+                    bottom = KeyC("ilo ", displayText = "⚙️"),
+                    bottomLeft = KeyC("suno ", displayText = "☀️"),
+                    left = KeyC("moku ", displayText = "🍽️"),
                 ),
                 KeyItemC(
-                    center =
-                        KeyC(
-                            display = KeyDisplay.TextDisplay("👤"),
-                            action = KeyAction.CommitText("jan "),
-                        ),
-                    topLeft =
-                        KeyC(
-                            display = KeyDisplay.TextDisplay("🐚"),
-                            action = KeyAction.CommitText("ijo "),
-                        ),
-                    top =
-                        KeyC(
-                            display = KeyDisplay.TextDisplay("⚖️"),
-                            action = KeyAction.CommitText("sama "),
-                        ),
-                    topRight =
-                        KeyC(
-                            display = KeyDisplay.TextDisplay("💧"),
-                            action = KeyAction.CommitText("telo "),
-                        ),
-                    right =
-                        KeyC(
-                            display = KeyDisplay.TextDisplay("📤"),
-                            action = KeyAction.CommitText("pana "),
-                        ),
-                    bottomRight =
-                        KeyC(
-                            display = KeyDisplay.TextDisplay("🔧"),
-                            action = KeyAction.CommitText("kepeken "),
-                        ),
-                    bottom =
-                        KeyC(
-                            display = KeyDisplay.TextDisplay("👎"),
-                            action = KeyAction.CommitText("ike "),
-                        ),
-                    bottomLeft =
-                        KeyC(
-                            display = KeyDisplay.TextDisplay("♾️"),
-                            action = KeyAction.CommitText("ale "),
-                        ),
-                    left =
-                        KeyC(
-                            display = KeyDisplay.TextDisplay("🏝️"),
-                            action = KeyAction.CommitText("ma "),
-                        ),
+                    center = KeyC("jan ", displayText = "👤"),
+                    topLeft = KeyC("ijo ", displayText = "🐚"),
+                    top = KeyC("sama ", displayText = "⚖️"),
+                    topRight = KeyC("telo ", displayText = "💧"),
+                    right = KeyC("pana ", displayText = "📤"),
+                    bottomRight = KeyC("kepeken ", displayText = "🔧"),
+                    bottom = KeyC("ike ", displayText = "👎"),
+                    bottomLeft = KeyC("ale ", displayText = "♾️"),
+                    left = KeyC("ma ", displayText = "🏝️"),
                 ),
                 NUMERIC_KEY_ITEM,
             ),
             listOf(
                 KeyItemC(
-                    center =
-                        KeyC(
-                            display = KeyDisplay.TextDisplay("👈"),
-                            action = KeyAction.CommitText("mi "),
-                        ),
-                    topLeft =
-                        KeyC(
-                            display = KeyDisplay.TextDisplay("🏁"),
-                            action = KeyAction.CommitText("pini "),
-                        ),
-                    top =
-                        KeyC(
-                            display = KeyDisplay.TextDisplay("🐭"),
-                            action = KeyAction.CommitText("lili "),
-                        ),
-                    topRight =
-                        KeyC(
-                            display = KeyDisplay.TextDisplay("❤️"),
-                            action = KeyAction.CommitText("pilin "),
-                        ),
-                    right =
-                        KeyC(
-                            display = KeyDisplay.TextDisplay("👜"),
-                            action = KeyAction.CommitText("jo "),
-                        ),
-                    bottomRight =
-                        KeyC(
-                            display = KeyDisplay.TextDisplay("✊"),
-                            action = KeyAction.CommitText("pali "),
-                        ),
-                    bottom =
-                        KeyC(
-                            display = KeyDisplay.TextDisplay("👀"),
-                            action = KeyAction.CommitText("lukin "),
-                        ),
-                    bottomLeft =
-                        KeyC(
-                            display = KeyDisplay.TextDisplay("↩️"),
-                            action = KeyAction.CommitText("tan "),
-                        ),
-                    left =
-                        KeyC(
-                            display = KeyDisplay.TextDisplay("🏠"),
-                            action = KeyAction.CommitText("tomo "),
-                        ),
+                    center = KeyC("mi ", displayText = "👈"),
+                    topLeft = KeyC("pini ", displayText = "🏁"),
+                    top = KeyC("lili ", displayText = "🐭"),
+                    topRight = KeyC("pilin ", displayText = "❤️"),
+                    right = KeyC("jo ", displayText = "👜"),
+                    bottomRight = KeyC("pali ", displayText = "✊"),
+                    bottom = KeyC("lukin ", displayText = "👀"),
+                    bottomLeft = KeyC("tan ", displayText = "↩️"),
+                    left = KeyC("tomo ", displayText = "🏠"),
                 ),
                 KeyItemC(
-                    center =
-                        KeyC(
-                            display = KeyDisplay.TextDisplay("⏩"),
-                            action = KeyAction.CommitText("e "),
-                        ),
-                    topLeft =
-                        KeyC(
-                            display = KeyDisplay.TextDisplay("🧠"),
-                            action = KeyAction.CommitText("sona "),
-                        ),
-                    top =
-                        KeyC(
-                            display = KeyDisplay.TextDisplay("💪"),
-                            action = KeyAction.CommitText("ken "),
-                        ),
-                    topRight =
-                        KeyC(
-                            display = KeyDisplay.TextDisplay("👋"),
-                            action = KeyAction.CommitText("o "),
-                        ),
-                    right =
-                        KeyC(
-                            display = KeyDisplay.TextDisplay("💭"),
-                            action = KeyAction.CommitText("wile "),
-                        ),
-                    bottomRight =
-                        KeyC(
-                            KeyAction.CommitText(","),
-                            color = ColorVariant.MUTED,
-                        ),
-                    bottom =
-                        KeyC(
-                            KeyAction.CommitText("."),
-                            color = ColorVariant.MUTED,
-                        ),
+                    center = KeyC("e ", displayText = "⏩"),
+                    topLeft = KeyC("sona ", displayText = "🧠"),
+                    top = KeyC("ken ", displayText = "💪"),
+                    topRight = KeyC("o ", displayText = "👋"),
+                    right = KeyC("wile ", displayText = "💭"),
+                    bottomRight = KeyC(",", color = ColorVariant.MUTED),
+                    bottom = KeyC(".", color = ColorVariant.MUTED),
                     bottomLeft =
                         KeyC(
                             display = KeyDisplay.IconDisplay(Icons.Outlined.ArrowDropUp),
@@ -397,58 +117,18 @@ val KB_TOK_THUMBKEY_MAIN =
                             swipeReturnAction = KeyAction.ToggleCurrentWordCapitalization(true),
                             color = ColorVariant.MUTED,
                         ),
-                    left =
-                        KeyC(
-                            display = KeyDisplay.TextDisplay("🗣️"),
-                            action = KeyAction.CommitText("toki "),
-                        ),
+                    left = KeyC("toki ", displayText = "🗣️"),
                 ),
                 KeyItemC(
-                    center =
-                        KeyC(
-                            display = KeyDisplay.TextDisplay("▶️"),
-                            action = KeyAction.CommitText("li "),
-                        ),
-                    topLeft =
-                        KeyC(
-                            display = KeyDisplay.TextDisplay("❓"),
-                            action = KeyAction.CommitText("seme "),
-                        ),
-                    top =
-                        KeyC(
-                            display = KeyDisplay.TextDisplay("🚶"),
-                            action = KeyAction.CommitText("kama "),
-                        ),
-                    topRight =
-                        KeyC(
-                            display = KeyDisplay.TextDisplay("👍"),
-                            action = KeyAction.CommitText("pona "),
-                        ),
-                    right =
-                        KeyC(
-                            display = KeyDisplay.TextDisplay("👐"),
-                            action = KeyAction.CommitText("mute "),
-                        ),
-                    bottomRight =
-                        KeyC(
-                            display = KeyDisplay.TextDisplay("⏰"),
-                            action = KeyAction.CommitText("tenpo "),
-                        ),
-                    bottom =
-                        KeyC(
-                            display = KeyDisplay.TextDisplay("👆"),
-                            action = KeyAction.CommitText("ona "),
-                        ),
-                    bottomLeft =
-                        KeyC(
-                            display = KeyDisplay.TextDisplay("⏹️"),
-                            action = KeyAction.CommitText("pi "),
-                        ),
-                    left =
-                        KeyC(
-                            display = KeyDisplay.TextDisplay("📍"),
-                            action = KeyAction.CommitText("lon "),
-                        ),
+                    center = KeyC("li ", displayText = "▶️"),
+                    topLeft = KeyC("seme ", displayText = "❓"),
+                    top = KeyC("kama ", displayText = "🚶"),
+                    topRight = KeyC("pona ", displayText = "👍"),
+                    right = KeyC("mute ", displayText = "👐"),
+                    bottomRight = KeyC("tenpo ", displayText = "⏰"),
+                    bottom = KeyC("ona ", displayText = "👆"),
+                    bottomLeft = KeyC("pi ", displayText = "⏹️"),
+                    left = KeyC("lon ", displayText = "📍"),
                 ),
                 BACKSPACE_KEY_ITEM,
             ),
@@ -464,277 +144,77 @@ val KB_TOK_THUMBKEY_SHIFTED =
         listOf(
             listOf(
                 KeyItemC(
-                    center =
-                        KeyC(
-                            display = KeyDisplay.TextDisplay("⏺️"),
-                            action = KeyAction.CommitText("insa "),
-                        ),
+                    center = KeyC("insa ", displayText = "⏺️"),
                 ),
                 KeyItemC(
-                    center =
-                        KeyC(
-                            display = KeyDisplay.TextDisplay("💬"),
-                            action = KeyAction.CommitText("nimi "),
-                        ),
+                    center = KeyC("nimi ", displayText = "💬"),
                 ),
                 KeyItemC(
-                    center =
-                        KeyC(
-                            display = KeyDisplay.TextDisplay("🔥"),
-                            action = KeyAction.CommitText("seli "),
-                        ),
+                    center = KeyC("seli ", displayText = "🔥"),
                     // Last char added here
-                    bottomRight =
-                        KeyC(
-                            display = KeyDisplay.TextDisplay("♐"),
-                            action = KeyAction.CommitText("tonsi "),
-                        ),
-                    bottom =
-                        KeyC(
-                            display = KeyDisplay.TextDisplay("🍄"),
-                            action = KeyAction.CommitText("soko "),
-                        ),
-                    bottomLeft =
-                        KeyC(
-                            display = KeyDisplay.TextDisplay("👁️"),
-                            action = KeyAction.CommitText("oko "),
-                        ),
-                    left =
-                        KeyC(
-                            display = KeyDisplay.TextDisplay("🧂"),
-                            action = KeyAction.CommitText("namako "),
-                        ),
+                    bottomRight = KeyC("tonsi ", displayText = "♐"),
+                    bottom = KeyC("soko ", displayText = "🍄"),
+                    bottomLeft = KeyC("oko ", displayText = "👁️"),
+                    left = KeyC("namako ", displayText = "🧂"),
                 ),
                 EMOJI_KEY_ITEM,
             ),
             listOf(
                 KeyItemC(
-                    center =
-                        KeyC(
-                            display = KeyDisplay.TextDisplay("🌴"),
-                            action = KeyAction.CommitText("kasi "),
-                        ),
-                    topLeft =
-                        KeyC(
-                            display = KeyDisplay.TextDisplay("👹"),
-                            action = KeyAction.CommitText("monsuta "),
-                        ),
-                    top =
-                        KeyC(
-                            display = KeyDisplay.TextDisplay("💊"),
-                            action = KeyAction.CommitText("misikeke "),
-                        ),
-                    topRight =
-                        KeyC(
-                            display = KeyDisplay.TextDisplay("⛿"),
-                            action = KeyAction.CommitText("meso "),
-                        ),
-                    right =
-                        KeyC(
-                            display = KeyDisplay.TextDisplay("🧱"),
-                            action = KeyAction.CommitText("leko "),
-                        ),
-                    bottomRight =
-                        KeyC(
-                            display = KeyDisplay.TextDisplay("🫳"),
-                            action = KeyAction.CommitText("lanpan "),
-                        ),
-                    bottom =
-                        KeyC(
-                            display = KeyDisplay.TextDisplay("📕"),
-                            action = KeyAction.CommitText("ku "),
-                        ),
-                    bottomLeft =
-                        KeyC(
-                            display = KeyDisplay.TextDisplay("🐊"),
-                            action = KeyAction.CommitText("kokosila "),
-                        ),
-                    left =
-                        KeyC(
-                            display = KeyDisplay.TextDisplay("✂️"),
-                            action = KeyAction.CommitText("kipisi "),
-                        ),
+                    center = KeyC("kasi ", displayText = "🌴"),
+                    topLeft = KeyC("monsuta ", displayText = "👹"),
+                    top = KeyC("misikeke ", displayText = "💊"),
+                    topRight = KeyC("meso ", displayText = "⛿"),
+                    right = KeyC("leko ", displayText = "🧱"),
+                    bottomRight = KeyC("lanpan ", displayText = "🫳"),
+                    bottom = KeyC("ku ", displayText = "📕"),
+                    bottomLeft = KeyC("kokosila ", displayText = "🐊"),
+                    left = KeyC("kipisi ", displayText = "✂️"),
                 ),
                 KeyItemC(
-                    center =
-                        KeyC(
-                            display = KeyDisplay.TextDisplay("✋"),
-                            action = KeyAction.CommitText("luka "),
-                        ),
-                    topLeft =
-                        KeyC(
-                            display = KeyDisplay.TextDisplay("🦝"),
-                            action = KeyAction.CommitText("kijetesantakalu "),
-                        ),
-                    top =
-                        KeyC(
-                            display = KeyDisplay.TextDisplay("🪞"),
-                            action = KeyAction.CommitText("jasima "),
-                        ),
-                    topRight =
-                        KeyC(
-                            display = KeyDisplay.TextDisplay("😎"),
-                            action = KeyAction.CommitText("epiku "),
-                        ),
-                    right =
-                        KeyC(
-                            display = KeyDisplay.TextDisplay("📖"),
-                            action = KeyAction.CommitText("pu "),
-                        ),
-                    bottomRight =
-                        KeyC(
-                            display = KeyDisplay.TextDisplay("😹"),
-                            action = KeyAction.CommitText("mu "),
-                        ),
-                    bottom =
-                        KeyC(
-                            display = KeyDisplay.TextDisplay("🍆"),
-                            action = KeyAction.CommitText("unpa "),
-                        ),
-                    bottomLeft =
-                        KeyC(
-                            display = KeyDisplay.TextDisplay("🔵"),
-                            action = KeyAction.CommitText("laso "),
-                        ),
-                    left =
-                        KeyC(
-                            display = KeyDisplay.TextDisplay("🐟"),
-                            action = KeyAction.CommitText("kala "),
-                        ),
+                    center = KeyC("luka ", displayText = "✋"),
+                    topLeft = KeyC("kijetesantakalu ", displayText = "🦝"),
+                    top = KeyC("jasima ", displayText = "🪞"),
+                    topRight = KeyC("epiku ", displayText = "😎"),
+                    right = KeyC("pu ", displayText = "📖"),
+                    bottomRight = KeyC("mu ", displayText = "😹"),
+                    bottom = KeyC("unpa ", displayText = "🍆"),
+                    bottomLeft = KeyC("laso ", displayText = "🔵"),
+                    left = KeyC("kala ", displayText = "🐟"),
                 ),
                 KeyItemC(
-                    center =
-                        KeyC(
-                            display = KeyDisplay.TextDisplay("💨"),
-                            action = KeyAction.CommitText("kon "),
-                        ),
-                    topLeft =
-                        KeyC(
-                            display = KeyDisplay.TextDisplay("💛"),
-                            action = KeyAction.CommitText("jelo "),
-                        ),
-                    top =
-                        KeyC(
-                            display = KeyDisplay.TextDisplay("🏹"),
-                            action = KeyAction.CommitText("alasa "),
-                        ),
-                    topRight =
-                        KeyC(
-                            display = KeyDisplay.TextDisplay("📏"),
-                            action = KeyAction.CommitText("palisa "),
-                        ),
-                    right =
-                        KeyC(
-                            display = KeyDisplay.TextDisplay("🌙"),
-                            action = KeyAction.CommitText("mun "),
-                        ),
-                    bottomRight =
-                        KeyC(
-                            display = KeyDisplay.TextDisplay("🍞"),
-                            action = KeyAction.CommitText("pan "),
-                        ),
-                    bottom =
-                        KeyC(
-                            display = KeyDisplay.TextDisplay("🐞"),
-                            action = KeyAction.CommitText("pipi "),
-                        ),
-                    bottomLeft =
-                        KeyC(
-                            display = KeyDisplay.TextDisplay("🗻"),
-                            action = KeyAction.CommitText("nena "),
-                        ),
-                    left =
-                        KeyC(
-                            display = KeyDisplay.TextDisplay("🦅"),
-                            action = KeyAction.CommitText("waso "),
-                        ),
+                    center = KeyC("kon ", displayText = "💨"),
+                    topLeft = KeyC("jelo ", displayText = "💛"),
+                    top = KeyC("alasa ", displayText = "🏹"),
+                    topRight = KeyC("palisa ", displayText = "📏"),
+                    right = KeyC("mun ", displayText = "🌙"),
+                    bottomRight = KeyC("pan ", displayText = "🍞"),
+                    bottom = KeyC("pipi ", displayText = "🐞"),
+                    bottomLeft = KeyC("nena ", displayText = "🗻"),
+                    left = KeyC("waso ", displayText = "🦅"),
                 ),
                 NUMERIC_KEY_ITEM,
             ),
             listOf(
                 KeyItemC(
-                    center =
-                        KeyC(
-                            display = KeyDisplay.TextDisplay("👕"),
-                            action = KeyAction.CommitText("len "),
-                        ),
-                    topLeft =
-                        KeyC(
-                            display = KeyDisplay.TextDisplay("🔴"),
-                            action = KeyAction.CommitText("loje "),
-                        ),
-                    top =
-                        KeyC(
-                            display = KeyDisplay.TextDisplay("🍦"),
-                            action = KeyAction.CommitText("ko "),
-                        ),
-                    topRight =
-                        KeyC(
-                            display = KeyDisplay.TextDisplay("💩"),
-                            action = KeyAction.CommitText("jaki "),
-                        ),
-                    right =
-                        KeyC(
-                            display = KeyDisplay.TextDisplay("🍎"),
-                            action = KeyAction.CommitText("kili "),
-                        ),
-                    bottomRight =
-                        KeyC(
-                            display = KeyDisplay.TextDisplay("⚪"),
-                            action = KeyAction.CommitText("walo "),
-                        ),
-                    bottom =
-                        KeyC(
-                            display = KeyDisplay.TextDisplay("🔲"),
-                            action = KeyAction.CommitText("selo "),
-                        ),
-                    bottomLeft =
-                        KeyC(
-                            display = KeyDisplay.TextDisplay("❗"),
-                            action = KeyAction.CommitText("a "),
-                        ),
-                    left =
-                        KeyC(
-                            display = KeyDisplay.TextDisplay("⬅️"),
-                            action = KeyAction.CommitText("monsi "),
-                        ),
+                    center = KeyC("len ", displayText = "👕"),
+                    topLeft = KeyC("loje ", displayText = "🔴"),
+                    top = KeyC("ko ", displayText = "🍦"),
+                    topRight = KeyC("jaki ", displayText = "💩"),
+                    right = KeyC("kili ", displayText = "🍎"),
+                    bottomRight = KeyC("walo ", displayText = "⚪"),
+                    bottom = KeyC("selo ", displayText = "🔲"),
+                    bottomLeft = KeyC("a ", displayText = "❗"),
+                    left = KeyC("monsi ", displayText = "⬅️"),
                 ),
                 KeyItemC(
-                    center =
-                        KeyC(
-                            display = KeyDisplay.TextDisplay("💕"),
-                            action = KeyAction.CommitText("olin "),
-                        ),
-                    topLeft =
-                        KeyC(
-                            display = KeyDisplay.TextDisplay("🕳️"),
-                            action = KeyAction.CommitText("lupa "),
-                        ),
-                    top =
-                        KeyC(
-                            display = KeyDisplay.TextDisplay("🌈"),
-                            action = KeyAction.CommitText("kule "),
-                        ),
-                    topRight =
-                        KeyC(
-                            display = KeyDisplay.TextDisplay("🦎"),
-                            action = KeyAction.CommitText("akesi "),
-                        ),
-                    right =
-                        KeyC(
-                            display = KeyDisplay.TextDisplay("❄️"),
-                            action = KeyAction.CommitText("lete "),
-                        ),
-                    bottomRight =
-                        KeyC(
-                            KeyAction.CommitText(","),
-                            color = ColorVariant.MUTED,
-                        ),
-                    bottom =
-                        KeyC(
-                            KeyAction.CommitText("."),
-                            color = ColorVariant.MUTED,
-                        ),
+                    center = KeyC("olin ", displayText = "💕"),
+                    topLeft = KeyC("lupa ", displayText = "🕳️"),
+                    top = KeyC("kule ", displayText = "🌈"),
+                    topRight = KeyC("akesi ", displayText = "🦎"),
+                    right = KeyC("lete ", displayText = "❄️"),
+                    bottomRight = KeyC(",", color = ColorVariant.MUTED),
+                    bottom = KeyC(".", color = ColorVariant.MUTED),
                     bottomLeft =
                         KeyC(
                             display = KeyDisplay.IconDisplay(Icons.Outlined.ArrowDropDown),
@@ -742,58 +222,18 @@ val KB_TOK_THUMBKEY_SHIFTED =
                             swipeReturnAction = KeyAction.ToggleCurrentWordCapitalization(false),
                             color = ColorVariant.MUTED,
                         ),
-                    left =
-                        KeyC(
-                            display = KeyDisplay.TextDisplay("👄"),
-                            action = KeyAction.CommitText("uta "),
-                        ),
+                    left = KeyC("uta ", displayText = "👄"),
                 ),
                 KeyItemC(
-                    center =
-                        KeyC(
-                            display = KeyDisplay.TextDisplay("🔓"),
-                            action = KeyAction.CommitText("open "),
-                        ),
-                    topLeft =
-                        KeyC(
-                            display = KeyDisplay.TextDisplay("🦵"),
-                            action = KeyAction.CommitText("noka "),
-                        ),
-                    top =
-                        KeyC(
-                            display = KeyDisplay.TextDisplay("〰️"),
-                            action = KeyAction.CommitText("linja "),
-                        ),
-                    topRight =
-                        KeyC(
-                            display = KeyDisplay.TextDisplay("#️⃣"),
-                            action = KeyAction.CommitText("nanpa "),
-                        ),
-                    right =
-                        KeyC(
-                            display = KeyDisplay.TextDisplay("⬇️"),
-                            action = KeyAction.CommitText("anpa "),
-                        ),
-                    bottomRight =
-                        KeyC(
-                            display = KeyDisplay.TextDisplay("💎"),
-                            action = KeyAction.CommitText("kiwen "),
-                        ),
-                    bottom =
-                        KeyC(
-                            display = KeyDisplay.TextDisplay("🍭"),
-                            action = KeyAction.CommitText("suwi "),
-                        ),
-                    bottomLeft =
-                        KeyC(
-                            display = KeyDisplay.TextDisplay("➡️"),
-                            action = KeyAction.CommitText("sinpin "),
-                        ),
-                    left =
-                        KeyC(
-                            display = KeyDisplay.TextDisplay("📦"),
-                            action = KeyAction.CommitText("poki "),
-                        ),
+                    center = KeyC("open ", displayText = "🔓"),
+                    topLeft = KeyC("noka ", displayText = "🦵"),
+                    top = KeyC("linja ", displayText = "〰️"),
+                    topRight = KeyC("nanpa ", displayText = "#️⃣"),
+                    right = KeyC("anpa ", displayText = "⬇️"),
+                    bottomRight = KeyC("kiwen ", displayText = "💎"),
+                    bottom = KeyC("suwi ", displayText = "🍭"),
+                    bottomLeft = KeyC("sinpin ", displayText = "➡️"),
+                    left = KeyC("poki ", displayText = "📦"),
                 ),
                 BACKSPACE_KEY_ITEM,
             ),

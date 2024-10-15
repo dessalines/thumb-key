@@ -2,7 +2,6 @@ package com.dessalines.thumbkey.keyboards
 
 import com.dessalines.thumbkey.utils.ColorVariant
 import com.dessalines.thumbkey.utils.FontSizeVariant
-import com.dessalines.thumbkey.utils.KeyAction
 import com.dessalines.thumbkey.utils.KeyC
 import com.dessalines.thumbkey.utils.KeyItemC
 import com.dessalines.thumbkey.utils.KeyboardC
@@ -15,142 +14,70 @@ val KB_HE_THUMBKEY_MAIN =
         listOf(
             listOf(
                 KeyItemC(
-                    center =
-                        KeyC(
-                            KeyAction.CommitText("מ"),
-                            size = FontSizeVariant.LARGE,
-                        ),
-                    bottomRight = KeyC(KeyAction.CommitText("נ")),
+                    center = KeyC("מ", size = FontSizeVariant.LARGE),
+                    bottomRight = KeyC("נ"),
                     swipeType = SwipeNWay.FOUR_WAY_DIAGONAL,
                 ),
                 KeyItemC(
-                    center =
-                        KeyC(
-                            KeyAction.CommitText("ב"),
-                            size = FontSizeVariant.LARGE,
-                        ),
-                    bottom = KeyC(KeyAction.CommitText("ע")),
+                    center = KeyC("ב", size = FontSizeVariant.LARGE),
+                    bottom = KeyC("ע"),
                     swipeType = SwipeNWay.TWO_WAY_VERTICAL,
                 ),
                 KeyItemC(
-                    center =
-                        KeyC(
-                            KeyAction.CommitText("א"),
-                            size = FontSizeVariant.LARGE,
-                        ),
-                    bottomLeft = KeyC(KeyAction.CommitText("כ")),
+                    center = KeyC("א", size = FontSizeVariant.LARGE),
+                    bottomLeft = KeyC("כ"),
                     swipeType = SwipeNWay.FOUR_WAY_DIAGONAL,
                 ),
                 EMOJI_KEY_ITEM,
             ),
             listOf(
                 KeyItemC(
-                    center =
-                        KeyC(
-                            KeyAction.CommitText("ת"),
-                            size = FontSizeVariant.LARGE,
-                        ),
-                    right = KeyC(KeyAction.CommitText("ם")),
-                    left = KeyC(KeyAction.CommitText("ץ")),
+                    center = KeyC("ת", size = FontSizeVariant.LARGE),
+                    right = KeyC("ם"),
+                    left = KeyC("ץ"),
                     swipeType = SwipeNWay.TWO_WAY_HORIZONTAL,
                 ),
                 KeyItemC(
-                    center =
-                        KeyC(
-                            KeyAction.CommitText("ל"),
-                            size = FontSizeVariant.LARGE,
-                        ),
-                    topLeft = KeyC(KeyAction.CommitText("ט")),
-                    top = KeyC(KeyAction.CommitText("ך")),
-                    topRight = KeyC(KeyAction.CommitText("ק")),
-                    right = KeyC(KeyAction.CommitText("צ")),
-                    bottomRight = KeyC(KeyAction.CommitText("ס")),
-                    bottom = KeyC(KeyAction.CommitText("ז")),
-                    bottomLeft = KeyC(KeyAction.CommitText("ג")),
-                    left = KeyC(KeyAction.CommitText("ן")),
+                    center = KeyC("ל", size = FontSizeVariant.LARGE),
+                    topLeft = KeyC("ט"),
+                    top = KeyC("ך"),
+                    topRight = KeyC("ק"),
+                    right = KeyC("צ"),
+                    bottomRight = KeyC("ס"),
+                    bottom = KeyC("ז"),
+                    bottomLeft = KeyC("ג"),
+                    left = KeyC("ן"),
                 ),
                 KeyItemC(
-                    center =
-                        KeyC(
-                            KeyAction.CommitText("ו"),
-                            size = FontSizeVariant.LARGE,
-                        ),
-                    left = KeyC(KeyAction.CommitText("פ")),
-                    right = KeyC(KeyAction.CommitText("ף")),
+                    center = KeyC("ו", size = FontSizeVariant.LARGE),
+                    left = KeyC("פ"),
+                    right = KeyC("ף"),
                     swipeType = SwipeNWay.TWO_WAY_HORIZONTAL,
                 ),
                 NUMERIC_KEY_ITEM,
             ),
             listOf(
                 KeyItemC(
-                    center =
-                        KeyC(
-                            KeyAction.CommitText("ר"),
-                            size = FontSizeVariant.LARGE,
-                        ),
-                    topRight = KeyC(KeyAction.CommitText("ש")),
-                    bottomRight =
-                        KeyC(
-                            KeyAction.CommitText("”"),
-                            color = ColorVariant.MUTED,
-                        ),
+                    center = KeyC("ר", size = FontSizeVariant.LARGE),
+                    topRight = KeyC("ש"),
+                    bottomRight = KeyC("”", color = ColorVariant.MUTED),
                     swipeType = SwipeNWay.FOUR_WAY_DIAGONAL,
                 ),
                 KeyItemC(
-                    center =
-                        KeyC(
-                            KeyAction.CommitText("ה"),
-                            size = FontSizeVariant.LARGE,
-                        ),
-                    topLeft =
-                        KeyC(
-                            KeyAction.CommitText("״"),
-                            color = ColorVariant.MUTED,
-                        ),
-                    top = KeyC(KeyAction.CommitText("ד")),
-                    topRight =
-                        KeyC(
-                            KeyAction.CommitText("׳"),
-                            color = ColorVariant.MUTED,
-                        ),
-                    right =
-                        KeyC(
-                            KeyAction.CommitText("–"),
-                            color = ColorVariant.MUTED,
-                        ),
-                    bottomRight =
-                        KeyC(
-                            KeyAction.CommitText("…"),
-                            color = ColorVariant.MUTED,
-                        ),
-                    bottom =
-                        KeyC(
-                            KeyAction.CommitText("."),
-                            color = ColorVariant.MUTED,
-                        ),
-                    bottomLeft =
-                        KeyC(
-                            KeyAction.CommitText(","),
-                            color = ColorVariant.MUTED,
-                        ),
-                    left =
-                        KeyC(
-                            KeyAction.CommitText("־"),
-                            color = ColorVariant.MUTED,
-                        ),
+                    center = KeyC("ה", size = FontSizeVariant.LARGE),
+                    topLeft = KeyC("״", color = ColorVariant.MUTED),
+                    top = KeyC("ד"),
+                    topRight = KeyC("׳", color = ColorVariant.MUTED),
+                    right = KeyC("–", color = ColorVariant.MUTED),
+                    bottomRight = KeyC("…", color = ColorVariant.MUTED),
+                    bottom = KeyC(".", color = ColorVariant.MUTED),
+                    bottomLeft = KeyC(",", color = ColorVariant.MUTED),
+                    left = KeyC("־", color = ColorVariant.MUTED),
                 ),
                 KeyItemC(
-                    center =
-                        KeyC(
-                            KeyAction.CommitText("י"),
-                            size = FontSizeVariant.LARGE,
-                        ),
-                    topLeft = KeyC(KeyAction.CommitText("ח")),
-                    bottomLeft =
-                        KeyC(
-                            KeyAction.CommitText("’"),
-                            color = ColorVariant.MUTED,
-                        ),
+                    center = KeyC("י", size = FontSizeVariant.LARGE),
+                    topLeft = KeyC("ח"),
+                    bottomLeft = KeyC("’", color = ColorVariant.MUTED),
                     swipeType = SwipeNWay.FOUR_WAY_DIAGONAL,
                 ),
                 BACKSPACE_KEY_ITEM,

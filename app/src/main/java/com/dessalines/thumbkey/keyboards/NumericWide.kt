@@ -18,35 +18,35 @@ val WIDE_NUMERIC_KEYBOARD =
             listOf(
                 EMOJI_KEY_ITEM,
                 KeyItemC(
-                    center = KeyC(KeyAction.CommitText("1"), size = FontSizeVariant.LARGE),
+                    center = KeyC("1", size = FontSizeVariant.LARGE),
                     swipeType = SwipeNWay.FOUR_WAY_DIAGONAL,
-                    topLeft = KeyC(KeyAction.CommitText("¬")),
+                    topLeft = KeyC("¬"),
                     topRight =
                         KeyC(
                             // secret! (to avoid excessive visual noise)
                             display = KeyDisplay.TextDisplay(""),
                             action = KeyAction.CommitText("¹"),
                         ),
-                    bottomLeft = KeyC(KeyAction.CommitText("_")),
-                    bottomRight = KeyC(KeyAction.CommitText("|")),
+                    bottomLeft = KeyC("_"),
+                    bottomRight = KeyC("|"),
                 ),
                 KeyItemC(
-                    center = KeyC(KeyAction.CommitText("2"), size = FontSizeVariant.LARGE),
+                    center = KeyC("2", size = FontSizeVariant.LARGE),
                     swipeType = SwipeNWay.FOUR_WAY_DIAGONAL,
-                    topLeft = KeyC(KeyAction.CommitText("°")),
+                    topLeft = KeyC("°"),
                     topRight =
                         KeyC(
                             // secret! (to avoid excessive visual noise)
                             display = KeyDisplay.TextDisplay(""),
                             action = KeyAction.CommitText("²"),
                         ),
-                    bottomLeft = KeyC(KeyAction.CommitText(":")),
-                    bottomRight = KeyC(KeyAction.CommitText(";")),
+                    bottomLeft = KeyC(":"),
+                    bottomRight = KeyC(";"),
                 ),
                 KeyItemC(
-                    center = KeyC(KeyAction.CommitText("3"), size = FontSizeVariant.LARGE),
+                    center = KeyC("3", size = FontSizeVariant.LARGE),
                     swipeType = SwipeNWay.FOUR_WAY_DIAGONAL,
-                    topLeft = KeyC(KeyAction.CommitText("^")),
+                    topLeft = KeyC("^"),
                     topRight =
                         KeyC(
                             // secret! (to avoid excessive visual noise)
@@ -58,48 +58,48 @@ val WIDE_NUMERIC_KEYBOARD =
             ),
             listOf(
                 KeyItemC(
-                    center = KeyC(KeyAction.CommitText("("), size = FontSizeVariant.LARGE),
+                    center = KeyC("(", size = FontSizeVariant.LARGE),
                     swipeType = SwipeNWay.FOUR_WAY_CROSS,
-                    top = KeyC(KeyAction.CommitText("<")),
-                    left = KeyC(KeyAction.CommitText("{")),
-                    right = KeyC(KeyAction.CommitText("[")),
+                    top = KeyC("<"),
+                    left = KeyC("{"),
+                    right = KeyC("["),
                 ),
                 KeyItemC(
-                    center = KeyC(KeyAction.CommitText("4"), size = FontSizeVariant.LARGE),
+                    center = KeyC("4", size = FontSizeVariant.LARGE),
                     swipeType = SwipeNWay.FOUR_WAY_DIAGONAL,
-                    topLeft = KeyC(KeyAction.CommitText("€")),
-                    bottomLeft = KeyC(KeyAction.CommitText("$")),
+                    topLeft = KeyC("€"),
+                    bottomLeft = KeyC("$"),
                     bottomRight =
                         getLocalCurrency()?.let {
                             if (it !in setOf("$", "£", "€")) {
-                                KeyC(KeyAction.CommitText(it))
+                                KeyC(it)
                             } else {
-                                KeyC(KeyAction.CommitText("£"))
+                                KeyC("£")
                             }
                         },
                 ),
                 KeyItemC(
-                    center = KeyC(KeyAction.CommitText("5"), size = FontSizeVariant.LARGE),
+                    center = KeyC("5", size = FontSizeVariant.LARGE),
                     swipeType = SwipeNWay.FOUR_WAY_DIAGONAL,
-                    topLeft = KeyC(KeyAction.CommitText("!")),
-                    topRight = KeyC(KeyAction.CommitText("?")),
-                    bottomRight = KeyC(KeyAction.CommitText(".")),
-                    bottomLeft = KeyC(KeyAction.CommitText(",")),
+                    topLeft = KeyC("!"),
+                    topRight = KeyC("?"),
+                    bottomRight = KeyC("."),
+                    bottomLeft = KeyC(","),
                 ),
                 KeyItemC(
-                    center = KeyC(KeyAction.CommitText("6"), size = FontSizeVariant.LARGE),
+                    center = KeyC("6", size = FontSizeVariant.LARGE),
                     swipeType = SwipeNWay.FOUR_WAY_DIAGONAL,
-                    topLeft = KeyC(KeyAction.CommitText("`")),
-                    topRight = KeyC(KeyAction.CommitText("´")),
-                    bottomLeft = KeyC(KeyAction.CommitText("\"")),
-                    bottomRight = KeyC(KeyAction.CommitText("'")),
+                    topLeft = KeyC("`"),
+                    topRight = KeyC("´"),
+                    bottomLeft = KeyC("\""),
+                    bottomRight = KeyC("'"),
                 ),
                 KeyItemC(
-                    center = KeyC(KeyAction.CommitText(")"), size = FontSizeVariant.LARGE),
+                    center = KeyC(")", size = FontSizeVariant.LARGE),
                     swipeType = SwipeNWay.FOUR_WAY_CROSS,
-                    top = KeyC(KeyAction.CommitText(">")),
-                    left = KeyC(KeyAction.CommitText("]")),
-                    right = KeyC(KeyAction.CommitText("}")),
+                    top = KeyC(">"),
+                    left = KeyC("]"),
+                    right = KeyC("}"),
                 ),
             ),
             listOf(
@@ -113,27 +113,27 @@ val WIDE_NUMERIC_KEYBOARD =
                     backgroundColor = ColorVariant.SURFACE_VARIANT,
                 ),
                 KeyItemC(
-                    center = KeyC(KeyAction.CommitText("7"), size = FontSizeVariant.LARGE),
+                    center = KeyC("7", size = FontSizeVariant.LARGE),
                     swipeType = SwipeNWay.FOUR_WAY_DIAGONAL,
-                    topLeft = KeyC(KeyAction.CommitText("=")),
-                    topRight = KeyC(KeyAction.CommitText("%")),
-                    bottomLeft = KeyC(KeyAction.CommitText("-")),
-                    bottomRight = KeyC(KeyAction.CommitText("+")),
+                    topLeft = KeyC("="),
+                    topRight = KeyC("%"),
+                    bottomLeft = KeyC("-"),
+                    bottomRight = KeyC("+"),
                 ),
                 KeyItemC(
-                    center = KeyC(KeyAction.CommitText("8"), size = FontSizeVariant.LARGE),
+                    center = KeyC("8", size = FontSizeVariant.LARGE),
                     swipeType = SwipeNWay.FOUR_WAY_DIAGONAL,
-                    topLeft = KeyC(KeyAction.CommitText("@")),
-                    topRight = KeyC(KeyAction.CommitText("&")),
-                    bottomLeft = KeyC(KeyAction.CommitText("*")),
-                    bottomRight = KeyC(KeyAction.CommitText("#")),
+                    topLeft = KeyC("@"),
+                    topRight = KeyC("&"),
+                    bottomLeft = KeyC("*"),
+                    bottomRight = KeyC("#"),
                 ),
                 KeyItemC(
-                    center = KeyC(KeyAction.CommitText("9"), size = FontSizeVariant.LARGE),
+                    center = KeyC("9", size = FontSizeVariant.LARGE),
                     swipeType = SwipeNWay.FOUR_WAY_DIAGONAL,
-                    topLeft = KeyC(KeyAction.CommitText("~")),
-                    bottomLeft = KeyC(KeyAction.CommitText("\\")),
-                    bottomRight = KeyC(KeyAction.CommitText("/")),
+                    topLeft = KeyC("~"),
+                    bottomLeft = KeyC("\\"),
+                    bottomRight = KeyC("/"),
                 ),
                 KeyItemC(
                     center =
@@ -149,7 +149,7 @@ val WIDE_NUMERIC_KEYBOARD =
                 BACKSPACE_KEY_ITEM,
                 SPACEBAR_SKINNY_KEY_ITEM,
                 KeyItemC(
-                    center = KeyC(KeyAction.CommitText("0"), size = FontSizeVariant.LARGE),
+                    center = KeyC("0", size = FontSizeVariant.LARGE),
                 ),
                 SPACEBAR_SKINNY_KEY_ITEM,
                 RETURN_KEY_ITEM,

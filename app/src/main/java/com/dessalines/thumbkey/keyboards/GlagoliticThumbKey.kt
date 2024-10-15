@@ -21,80 +21,56 @@ val KB_GLAGOLITIC_THUMBKEY_MAIN =
         listOf(
             listOf(
                 KeyItemC(
-                    center =
-                        KeyC(
-                            KeyAction.CommitText("ⱄ"),
-                            size = FontSizeVariant.LARGE,
-                        ),
-                    right = KeyC(KeyAction.CommitText("ⱋ")),
-                    bottomRight = KeyC(KeyAction.CommitText("ⰹ")),
-                    bottom = KeyC(KeyAction.CommitText("ⰷ")),
-                    bottomLeft = KeyC(KeyAction.CommitText("ⱊ")),
+                    center = KeyC("ⱄ", size = FontSizeVariant.LARGE),
+                    right = KeyC("ⱋ"),
+                    bottomRight = KeyC("ⰹ"),
+                    bottom = KeyC("ⰷ"),
+                    bottomLeft = KeyC("ⱊ"),
                 ),
                 KeyItemC(
-                    center =
-                        KeyC(
-                            KeyAction.CommitText("ⱃ"),
-                            size = FontSizeVariant.LARGE,
-                        ),
-                    bottom = KeyC(KeyAction.CommitText("ⱈ")),
-                    bottomLeft = KeyC(KeyAction.CommitText("ⱒ")),
-                    bottomRight = KeyC(KeyAction.CommitText("ⱜ")),
+                    center = KeyC("ⱃ", size = FontSizeVariant.LARGE),
+                    bottom = KeyC("ⱈ"),
+                    bottomLeft = KeyC("ⱒ"),
+                    bottomRight = KeyC("ⱜ"),
                 ),
                 KeyItemC(
-                    center =
-                        KeyC(
-                            KeyAction.CommitText("ⰵ"),
-                            size = FontSizeVariant.LARGE,
-                        ),
-                    bottomLeft = KeyC(KeyAction.CommitText("ⰶ")),
-                    left = KeyC(KeyAction.CommitText("ⱑ")),
-                    bottom = KeyC(KeyAction.CommitText("ⱔ")),
-                    bottomRight = KeyC(KeyAction.CommitText("ⱕ")),
-                    top = KeyC(KeyAction.CommitText("ⱗ")),
+                    center = KeyC("ⰵ", size = FontSizeVariant.LARGE),
+                    bottomLeft = KeyC("ⰶ"),
+                    left = KeyC("ⱑ"),
+                    bottom = KeyC("ⱔ"),
+                    bottomRight = KeyC("ⱕ"),
+                    top = KeyC("ⱗ"),
                 ),
                 EMOJI_KEY_ITEM,
             ),
             listOf(
                 KeyItemC(
-                    center =
-                        KeyC(
-                            KeyAction.CommitText("ⱀ"),
-                            size = FontSizeVariant.LARGE,
-                        ),
-                    right = KeyC(KeyAction.CommitText("ⰿ")),
-                    bottom = KeyC(KeyAction.CommitText("ⰾ")),
-                    topRight = KeyC(KeyAction.CommitText("ⱞ")),
+                    center = KeyC("ⱀ", size = FontSizeVariant.LARGE),
+                    right = KeyC("ⰿ"),
+                    bottom = KeyC("ⰾ"),
+                    topRight = KeyC("ⱞ"),
                     bottomRight =
                         KeyC(
                             // this character often lacks proper font support, but is technically part of Unicode
                             action = KeyAction.CommitText("ⱟ"),
                         ),
-                    top = KeyC(KeyAction.CommitText("ⱛ")),
+                    top = KeyC("ⱛ"),
                 ),
                 KeyItemC(
-                    center =
-                        KeyC(
-                            KeyAction.CommitText("ⰲ"),
-                            size = FontSizeVariant.LARGE,
-                        ),
-                    topLeft = KeyC(KeyAction.CommitText("ⰼ")),
-                    top = KeyC(KeyAction.CommitText("ⰺ")),
-                    topRight = KeyC(KeyAction.CommitText("ⱐ")),
-                    right = KeyC(KeyAction.CommitText("ⱂ")),
-                    bottomRight = KeyC(KeyAction.CommitText("ⱆ")),
-                    bottom = KeyC(KeyAction.CommitText("ⰸ")),
-                    bottomLeft = KeyC(KeyAction.CommitText("ⰳ")),
-                    left = KeyC(KeyAction.CommitText("ⰽ")),
+                    center = KeyC("ⰲ", size = FontSizeVariant.LARGE),
+                    topLeft = KeyC("ⰼ"),
+                    top = KeyC("ⰺ"),
+                    topRight = KeyC("ⱐ"),
+                    right = KeyC("ⱂ"),
+                    bottomRight = KeyC("ⱆ"),
+                    bottom = KeyC("ⰸ"),
+                    bottomLeft = KeyC("ⰳ"),
+                    left = KeyC("ⰽ"),
                 ),
                 KeyItemC(
-                    center =
-                        KeyC(
-                            KeyAction.CommitText("ⰰ"),
-                            size = FontSizeVariant.LARGE,
-                        ),
+                    center = KeyC("ⰰ", size = FontSizeVariant.LARGE),
                     swipeType = SwipeNWay.FOUR_WAY_CROSS,
-                    left = KeyC(KeyAction.CommitText("ⱇ")),
+                    left = KeyC("ⱇ"),
                     top =
                         KeyC(
                             display = KeyDisplay.IconDisplay(Icons.Outlined.ArrowDropUp),
@@ -107,73 +83,37 @@ val KB_GLAGOLITIC_THUMBKEY_MAIN =
                             KeyAction.ToggleShiftMode(false),
                             swipeReturnAction = KeyAction.ToggleCurrentWordCapitalization(false),
                         ),
-                    right = KeyC(KeyAction.CommitText("ⱝ")),
+                    right = KeyC("ⱝ"),
                 ),
                 NUMERIC_KEY_ITEM,
             ),
             listOf(
                 KeyItemC(
-                    center =
-                        KeyC(
-                            KeyAction.CommitText("ⱅ"),
-                            size = FontSizeVariant.LARGE,
-                        ),
-                    topRight = KeyC(KeyAction.CommitText("ⱍ")),
-                    top = KeyC(KeyAction.CommitText("ⱎ")),
-                    right = KeyC(KeyAction.CommitText("ⱏ")),
-                    topLeft = KeyC(KeyAction.CommitText("ⱚ")),
+                    center = KeyC("ⱅ", size = FontSizeVariant.LARGE),
+                    topRight = KeyC("ⱍ"),
+                    top = KeyC("ⱎ"),
+                    right = KeyC("ⱏ"),
+                    topLeft = KeyC("ⱚ"),
                 ),
                 KeyItemC(
-                    center =
-                        KeyC(
-                            KeyAction.CommitText("ⰻ"),
-                            size = FontSizeVariant.LARGE,
-                        ),
-                    top = KeyC(KeyAction.CommitText("ⰱ")),
-                    right = KeyC(KeyAction.CommitText("ⱌ")),
-                    topLeft =
-                        KeyC(
-                            KeyAction.CommitText("\""),
-                            color = ColorVariant.MUTED,
-                        ),
-                    topRight =
-                        KeyC(
-                            KeyAction.CommitText("'"),
-                            color = ColorVariant.MUTED,
-                        ),
-                    bottomRight =
-                        KeyC(
-                            KeyAction.CommitText("-"),
-                            color = ColorVariant.MUTED,
-                        ),
-                    bottom =
-                        KeyC(
-                            KeyAction.CommitText("."),
-                            color = ColorVariant.MUTED,
-                        ),
-                    bottomLeft =
-                        KeyC(
-                            KeyAction.CommitText("*"),
-                            color = ColorVariant.MUTED,
-                        ),
-                    left =
-                        KeyC(
-                            KeyAction.CommitText(","),
-                            color = ColorVariant.MUTED,
-                        ),
+                    center = KeyC("ⰻ", size = FontSizeVariant.LARGE),
+                    top = KeyC("ⰱ"),
+                    right = KeyC("ⱌ"),
+                    topLeft = KeyC("\"", color = ColorVariant.MUTED),
+                    topRight = KeyC("'", color = ColorVariant.MUTED),
+                    bottomRight = KeyC("-", color = ColorVariant.MUTED),
+                    bottom = KeyC(".", color = ColorVariant.MUTED),
+                    bottomLeft = KeyC("*", color = ColorVariant.MUTED),
+                    left = KeyC(",", color = ColorVariant.MUTED),
                 ),
                 KeyItemC(
-                    center =
-                        KeyC(
-                            KeyAction.CommitText("ⱁ"),
-                            size = FontSizeVariant.LARGE,
-                        ),
-                    topLeft = KeyC(KeyAction.CommitText("ⰴ")),
-                    bottom = KeyC(KeyAction.CommitText("ⱓ")),
-                    right = KeyC(KeyAction.CommitText("ⱖ")),
-                    top = KeyC(KeyAction.CommitText("ⱉ")),
-                    left = KeyC(KeyAction.CommitText("ⱘ")),
-                    bottomLeft = KeyC(KeyAction.CommitText("ⱙ")),
+                    center = KeyC("ⱁ", size = FontSizeVariant.LARGE),
+                    topLeft = KeyC("ⰴ"),
+                    bottom = KeyC("ⱓ"),
+                    right = KeyC("ⱖ"),
+                    top = KeyC("ⱉ"),
+                    left = KeyC("ⱘ"),
+                    bottomLeft = KeyC("ⱙ"),
                 ),
                 BACKSPACE_KEY_ITEM,
             ),
@@ -189,80 +129,56 @@ val KB_GLAGOLITIC_THUMBKEY_SHIFTED =
         listOf(
             listOf(
                 KeyItemC(
-                    center =
-                        KeyC(
-                            KeyAction.CommitText("Ⱄ"),
-                            size = FontSizeVariant.LARGE,
-                        ),
-                    right = KeyC(KeyAction.CommitText("Ⱋ")),
-                    bottomRight = KeyC(KeyAction.CommitText("Ⰹ")),
-                    bottom = KeyC(KeyAction.CommitText("Ⰷ")),
-                    bottomLeft = KeyC(KeyAction.CommitText("Ⱊ")),
+                    center = KeyC("Ⱄ", size = FontSizeVariant.LARGE),
+                    right = KeyC("Ⱋ"),
+                    bottomRight = KeyC("Ⰹ"),
+                    bottom = KeyC("Ⰷ"),
+                    bottomLeft = KeyC("Ⱊ"),
                 ),
                 KeyItemC(
-                    center =
-                        KeyC(
-                            KeyAction.CommitText("Ⱃ"),
-                            size = FontSizeVariant.LARGE,
-                        ),
-                    bottom = KeyC(KeyAction.CommitText("Ⱈ")),
-                    bottomLeft = KeyC(KeyAction.CommitText("Ⱒ")),
-                    bottomRight = KeyC(KeyAction.CommitText("Ⱜ")),
+                    center = KeyC("Ⱃ", size = FontSizeVariant.LARGE),
+                    bottom = KeyC("Ⱈ"),
+                    bottomLeft = KeyC("Ⱒ"),
+                    bottomRight = KeyC("Ⱜ"),
                 ),
                 KeyItemC(
-                    center =
-                        KeyC(
-                            KeyAction.CommitText("Ⰵ"),
-                            size = FontSizeVariant.LARGE,
-                        ),
-                    bottomLeft = KeyC(KeyAction.CommitText("Ⰶ")),
-                    left = KeyC(KeyAction.CommitText("Ⱑ")),
-                    bottom = KeyC(KeyAction.CommitText("Ⱔ")),
-                    bottomRight = KeyC(KeyAction.CommitText("Ⱕ")),
-                    top = KeyC(KeyAction.CommitText("Ⱗ")),
+                    center = KeyC("Ⰵ", size = FontSizeVariant.LARGE),
+                    bottomLeft = KeyC("Ⰶ"),
+                    left = KeyC("Ⱑ"),
+                    bottom = KeyC("Ⱔ"),
+                    bottomRight = KeyC("Ⱕ"),
+                    top = KeyC("Ⱗ"),
                 ),
                 EMOJI_KEY_ITEM,
             ),
             listOf(
                 KeyItemC(
-                    center =
-                        KeyC(
-                            KeyAction.CommitText("Ⱀ"),
-                            size = FontSizeVariant.LARGE,
-                        ),
-                    right = KeyC(KeyAction.CommitText("Ⰿ")),
-                    bottom = KeyC(KeyAction.CommitText("Ⰾ")),
-                    topRight = KeyC(KeyAction.CommitText("Ⱞ")),
+                    center = KeyC("Ⱀ", size = FontSizeVariant.LARGE),
+                    right = KeyC("Ⰿ"),
+                    bottom = KeyC("Ⰾ"),
+                    topRight = KeyC("Ⱞ"),
                     bottomRight =
                         KeyC(
                             // this character often lacks proper font support, but is technically part of Unicode
                             action = KeyAction.CommitText("Ⱟ"),
                         ),
-                    top = KeyC(KeyAction.CommitText("Ⱛ")),
+                    top = KeyC("Ⱛ"),
                 ),
                 KeyItemC(
-                    center =
-                        KeyC(
-                            KeyAction.CommitText("Ⰲ"),
-                            size = FontSizeVariant.LARGE,
-                        ),
-                    topLeft = KeyC(KeyAction.CommitText("Ⰼ")),
-                    top = KeyC(KeyAction.CommitText("Ⰺ")),
-                    topRight = KeyC(KeyAction.CommitText("Ⱐ")),
-                    right = KeyC(KeyAction.CommitText("Ⱂ")),
-                    bottomRight = KeyC(KeyAction.CommitText("Ⱆ")),
-                    bottom = KeyC(KeyAction.CommitText("Ⰸ")),
-                    bottomLeft = KeyC(KeyAction.CommitText("Ⰳ")),
-                    left = KeyC(KeyAction.CommitText("Ⰽ")),
+                    center = KeyC("Ⰲ", size = FontSizeVariant.LARGE),
+                    topLeft = KeyC("Ⰼ"),
+                    top = KeyC("Ⰺ"),
+                    topRight = KeyC("Ⱐ"),
+                    right = KeyC("Ⱂ"),
+                    bottomRight = KeyC("Ⱆ"),
+                    bottom = KeyC("Ⰸ"),
+                    bottomLeft = KeyC("Ⰳ"),
+                    left = KeyC("Ⰽ"),
                 ),
                 KeyItemC(
-                    center =
-                        KeyC(
-                            KeyAction.CommitText("Ⰰ"),
-                            size = FontSizeVariant.LARGE,
-                        ),
+                    center = KeyC("Ⰰ", size = FontSizeVariant.LARGE),
                     swipeType = SwipeNWay.FOUR_WAY_CROSS,
-                    left = KeyC(KeyAction.CommitText("Ⱇ")),
+                    left = KeyC("Ⱇ"),
                     top =
                         KeyC(
                             display = KeyDisplay.IconDisplay(Icons.Outlined.KeyboardCapslock),
@@ -278,74 +194,37 @@ val KB_GLAGOLITIC_THUMBKEY_SHIFTED =
                             swipeReturnAction = KeyAction.ToggleCurrentWordCapitalization(false),
                             color = ColorVariant.MUTED,
                         ),
-                    right = KeyC(KeyAction.CommitText("Ⱝ")),
+                    right = KeyC("Ⱝ"),
                 ),
                 NUMERIC_KEY_ITEM,
             ),
             listOf(
                 KeyItemC(
-                    center =
-                        KeyC(
-                            KeyAction.CommitText("Ⱅ"),
-                            size = FontSizeVariant.LARGE,
-                        ),
-                    topRight = KeyC(KeyAction.CommitText("Ⱍ")),
-                    top = KeyC(KeyAction.CommitText("Ⱎ")),
-                    right = KeyC(KeyAction.CommitText("Ⱏ")),
-                    topLeft = KeyC(KeyAction.CommitText("Ⱚ")),
+                    center = KeyC("Ⱅ", size = FontSizeVariant.LARGE),
+                    topRight = KeyC("Ⱍ"),
+                    top = KeyC("Ⱎ"),
+                    right = KeyC("Ⱏ"),
+                    topLeft = KeyC("Ⱚ"),
                 ),
                 KeyItemC(
-                    center =
-                        KeyC(
-                            display = KeyDisplay.TextDisplay(" Ⰻ"),
-                            action = KeyAction.CommitText("Ⰻ"),
-                            size = FontSizeVariant.LARGE,
-                        ),
-                    top = KeyC(KeyAction.CommitText("Ⰱ")),
-                    right = KeyC(KeyAction.CommitText("Ⱌ")),
-                    topLeft =
-                        KeyC(
-                            KeyAction.CommitText("\""),
-                            color = ColorVariant.MUTED,
-                        ),
-                    topRight =
-                        KeyC(
-                            KeyAction.CommitText("'"),
-                            color = ColorVariant.MUTED,
-                        ),
-                    bottomRight =
-                        KeyC(
-                            KeyAction.CommitText("-"),
-                            color = ColorVariant.MUTED,
-                        ),
-                    bottom =
-                        KeyC(
-                            KeyAction.CommitText("."),
-                            color = ColorVariant.MUTED,
-                        ),
-                    bottomLeft =
-                        KeyC(
-                            KeyAction.CommitText("*"),
-                            color = ColorVariant.MUTED,
-                        ),
-                    left =
-                        KeyC(
-                            KeyAction.CommitText(","),
-                            color = ColorVariant.MUTED,
-                        ),
+                    center = KeyC("Ⰻ", size = FontSizeVariant.LARGE),
+                    top = KeyC("Ⰱ"),
+                    right = KeyC("Ⱌ"),
+                    topLeft = KeyC("\"", color = ColorVariant.MUTED),
+                    topRight = KeyC("'", color = ColorVariant.MUTED),
+                    bottomRight = KeyC("-", color = ColorVariant.MUTED),
+                    bottom = KeyC(".", color = ColorVariant.MUTED),
+                    bottomLeft = KeyC("*", color = ColorVariant.MUTED),
+                    left = KeyC(",", color = ColorVariant.MUTED),
                 ),
                 KeyItemC(
-                    center =
-                        KeyC(
-                            KeyAction.CommitText("Ⱁ"),
-                            size = FontSizeVariant.LARGE,
-                        ),
-                    topLeft = KeyC(KeyAction.CommitText("Ⰴ")),
-                    bottom = KeyC(KeyAction.CommitText("Ⱓ")),
-                    right = KeyC(KeyAction.CommitText("Ⱖ")),
-                    top = KeyC(KeyAction.CommitText("Ⱉ")),
-                    left = KeyC(KeyAction.CommitText("Ⱘ")),
-                    bottomLeft = KeyC(KeyAction.CommitText("Ⱙ")),
+                    center = KeyC("Ⱁ", size = FontSizeVariant.LARGE),
+                    topLeft = KeyC("Ⰴ"),
+                    bottom = KeyC("Ⱓ"),
+                    right = KeyC("Ⱖ"),
+                    top = KeyC("Ⱉ"),
+                    left = KeyC("Ⱘ"),
+                    bottomLeft = KeyC("Ⱙ"),
                 ),
                 BACKSPACE_KEY_ITEM,
             ),

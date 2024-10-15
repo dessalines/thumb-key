@@ -21,72 +21,48 @@ val KB_KZ_THUMBKEY_MAIN =
         listOf(
             listOf(
                 KeyItemC(
-                    center =
-                        KeyC(
-                            KeyAction.CommitText("с"),
-                            size = FontSizeVariant.LARGE,
-                        ),
-                    right = KeyC(KeyAction.CommitText("щ")),
-                    bottomRight = KeyC(KeyAction.CommitText("й")),
-                    bottom = KeyC(KeyAction.CommitText("э")),
+                    center = KeyC("с", size = FontSizeVariant.LARGE),
+                    right = KeyC("щ"),
+                    bottomRight = KeyC("й"),
+                    bottom = KeyC("э"),
                 ),
                 KeyItemC(
-                    center =
-                        KeyC(
-                            KeyAction.CommitText("р"),
-                            size = FontSizeVariant.LARGE,
-                        ),
+                    center = KeyC("р", size = FontSizeVariant.LARGE),
                     swipeType = SwipeNWay.TWO_WAY_VERTICAL,
-                    bottom = KeyC(KeyAction.CommitText("х")),
+                    bottom = KeyC("х"),
                 ),
                 KeyItemC(
-                    center =
-                        KeyC(
-                            KeyAction.CommitText("а"),
-                            size = FontSizeVariant.LARGE,
-                        ),
+                    center = KeyC("а", size = FontSizeVariant.LARGE),
                     swipeType = SwipeNWay.FOUR_WAY_DIAGONAL,
-                    bottomLeft = KeyC(KeyAction.CommitText("ж")),
-                    topRight = KeyC(KeyAction.CommitText("ә")),
-                    bottomRight = KeyC(KeyAction.CommitText("і")),
+                    bottomLeft = KeyC("ж"),
+                    topRight = KeyC("ә"),
+                    bottomRight = KeyC("і"),
                 ),
                 EMOJI_KEY_ITEM,
             ),
             listOf(
                 KeyItemC(
-                    center =
-                        KeyC(
-                            KeyAction.CommitText("н"),
-                            size = FontSizeVariant.LARGE,
-                        ),
-                    right = KeyC(KeyAction.CommitText("м")),
-                    bottom = KeyC(KeyAction.CommitText("л")),
-                    bottomRight = KeyC(KeyAction.CommitText("ғ")),
-                    topRight = KeyC(KeyAction.CommitText("қ")),
-                    bottomLeft = KeyC(KeyAction.CommitText("ң")),
+                    center = KeyC("н", size = FontSizeVariant.LARGE),
+                    right = KeyC("м"),
+                    bottom = KeyC("л"),
+                    bottomRight = KeyC("ғ"),
+                    topRight = KeyC("қ"),
+                    bottomLeft = KeyC("ң"),
                 ),
                 KeyItemC(
-                    center =
-                        KeyC(
-                            KeyAction.CommitText("в"),
-                            size = FontSizeVariant.LARGE,
-                        ),
-                    topLeft = KeyC(KeyAction.CommitText("я")),
-                    top = KeyC(KeyAction.CommitText("ы")),
-                    topRight = KeyC(KeyAction.CommitText("ь")),
-                    right = KeyC(KeyAction.CommitText("п")),
-                    bottomRight = KeyC(KeyAction.CommitText("у")),
-                    bottom = KeyC(KeyAction.CommitText("з")),
-                    bottomLeft = KeyC(KeyAction.CommitText("г")),
-                    left = KeyC(KeyAction.CommitText("к")),
+                    center = KeyC("в", size = FontSizeVariant.LARGE),
+                    topLeft = KeyC("я"),
+                    top = KeyC("ы"),
+                    topRight = KeyC("ь"),
+                    right = KeyC("п"),
+                    bottomRight = KeyC("у"),
+                    bottom = KeyC("з"),
+                    bottomLeft = KeyC("г"),
+                    left = KeyC("к"),
                 ),
                 KeyItemC(
-                    center =
-                        KeyC(
-                            KeyAction.CommitText("е"),
-                            size = FontSizeVariant.LARGE,
-                        ),
-                    left = KeyC(KeyAction.CommitText("ф")),
+                    center = KeyC("е", size = FontSizeVariant.LARGE),
+                    left = KeyC("ф"),
                     top =
                         KeyC(
                             display = KeyDisplay.IconDisplay(Icons.Outlined.ArrowDropUp),
@@ -101,71 +77,35 @@ val KB_KZ_THUMBKEY_MAIN =
                             swipeReturnAction = KeyAction.ToggleCurrentWordCapitalization(false),
                             color = ColorVariant.MUTED,
                         ),
-                    bottomRight = KeyC(KeyAction.CommitText("ү")),
-                    topRight = KeyC(KeyAction.CommitText("ұ")),
+                    bottomRight = KeyC("ү"),
+                    topRight = KeyC("ұ"),
                 ),
                 NUMERIC_KEY_ITEM,
             ),
             listOf(
                 KeyItemC(
-                    center =
-                        KeyC(
-                            KeyAction.CommitText("т"),
-                            size = FontSizeVariant.LARGE,
-                        ),
-                    topRight = KeyC(KeyAction.CommitText("ч")),
-                    top = KeyC(KeyAction.CommitText("ш")),
-                    right = KeyC(KeyAction.CommitText("ъ")),
+                    center = KeyC("т", size = FontSizeVariant.LARGE),
+                    topRight = KeyC("ч"),
+                    top = KeyC("ш"),
+                    right = KeyC("ъ"),
                 ),
                 KeyItemC(
-                    center =
-                        KeyC(
-                            KeyAction.CommitText("и"),
-                            size = FontSizeVariant.LARGE,
-                        ),
-                    top = KeyC(KeyAction.CommitText("б")),
-                    right = KeyC(KeyAction.CommitText("ц")),
-                    topLeft =
-                        KeyC(
-                            KeyAction.CommitText("\""),
-                            color = ColorVariant.MUTED,
-                        ),
-                    topRight =
-                        KeyC(
-                            KeyAction.CommitText("'"),
-                            color = ColorVariant.MUTED,
-                        ),
-                    bottomRight =
-                        KeyC(
-                            KeyAction.CommitText("-"),
-                            color = ColorVariant.MUTED,
-                        ),
-                    bottom =
-                        KeyC(
-                            KeyAction.CommitText("."),
-                            color = ColorVariant.MUTED,
-                        ),
-                    bottomLeft =
-                        KeyC(
-                            KeyAction.CommitText("*"),
-                            color = ColorVariant.MUTED,
-                        ),
-                    left =
-                        KeyC(
-                            KeyAction.CommitText(","),
-                            color = ColorVariant.MUTED,
-                        ),
+                    center = KeyC("и", size = FontSizeVariant.LARGE),
+                    top = KeyC("б"),
+                    right = KeyC("ц"),
+                    topLeft = KeyC("\"", color = ColorVariant.MUTED),
+                    topRight = KeyC("'", color = ColorVariant.MUTED),
+                    bottomRight = KeyC("-", color = ColorVariant.MUTED),
+                    bottom = KeyC(".", color = ColorVariant.MUTED),
+                    bottomLeft = KeyC("*", color = ColorVariant.MUTED),
+                    left = KeyC(",", color = ColorVariant.MUTED),
                 ),
                 KeyItemC(
-                    center =
-                        KeyC(
-                            KeyAction.CommitText("о"),
-                            size = FontSizeVariant.LARGE,
-                        ),
-                    topLeft = KeyC(KeyAction.CommitText("д")),
-                    bottom = KeyC(KeyAction.CommitText("ю")),
-                    right = KeyC(KeyAction.CommitText("ё")),
-                    bottomRight = KeyC(KeyAction.CommitText("ө")),
+                    center = KeyC("о", size = FontSizeVariant.LARGE),
+                    topLeft = KeyC("д"),
+                    bottom = KeyC("ю"),
+                    right = KeyC("ё"),
+                    bottomRight = KeyC("ө"),
                 ),
                 BACKSPACE_KEY_ITEM,
             ),
@@ -181,72 +121,48 @@ val KB_KZ_THUMBKEY_SHIFTED =
         listOf(
             listOf(
                 KeyItemC(
-                    center =
-                        KeyC(
-                            KeyAction.CommitText("С"),
-                            size = FontSizeVariant.LARGE,
-                        ),
-                    right = KeyC(KeyAction.CommitText("Щ")),
-                    bottomRight = KeyC(KeyAction.CommitText("Й")),
-                    bottom = KeyC(KeyAction.CommitText("Э")),
+                    center = KeyC("С", size = FontSizeVariant.LARGE),
+                    right = KeyC("Щ"),
+                    bottomRight = KeyC("Й"),
+                    bottom = KeyC("Э"),
                 ),
                 KeyItemC(
-                    center =
-                        KeyC(
-                            KeyAction.CommitText("Р"),
-                            size = FontSizeVariant.LARGE,
-                        ),
+                    center = KeyC("Р", size = FontSizeVariant.LARGE),
                     swipeType = SwipeNWay.TWO_WAY_VERTICAL,
-                    bottom = KeyC(KeyAction.CommitText("Х")),
+                    bottom = KeyC("Х"),
                 ),
                 KeyItemC(
-                    center =
-                        KeyC(
-                            KeyAction.CommitText("А"),
-                            size = FontSizeVariant.LARGE,
-                        ),
+                    center = KeyC("А", size = FontSizeVariant.LARGE),
                     swipeType = SwipeNWay.FOUR_WAY_DIAGONAL,
-                    bottomLeft = KeyC(KeyAction.CommitText("Ж")),
-                    topRight = KeyC(KeyAction.CommitText("Ә")),
-                    bottomRight = KeyC(KeyAction.CommitText("І")),
+                    bottomLeft = KeyC("Ж"),
+                    topRight = KeyC("Ә"),
+                    bottomRight = KeyC("І"),
                 ),
                 EMOJI_KEY_ITEM,
             ),
             listOf(
                 KeyItemC(
-                    center =
-                        KeyC(
-                            KeyAction.CommitText("Н"),
-                            size = FontSizeVariant.LARGE,
-                        ),
-                    right = KeyC(KeyAction.CommitText("М")),
-                    bottom = KeyC(KeyAction.CommitText("Л")),
-                    bottomRight = KeyC(KeyAction.CommitText("Ғ")),
-                    topRight = KeyC(KeyAction.CommitText("Қ")),
-                    bottomLeft = KeyC(KeyAction.CommitText("Ң")),
+                    center = KeyC("Н", size = FontSizeVariant.LARGE),
+                    right = KeyC("М"),
+                    bottom = KeyC("Л"),
+                    bottomRight = KeyC("Ғ"),
+                    topRight = KeyC("Қ"),
+                    bottomLeft = KeyC("Ң"),
                 ),
                 KeyItemC(
-                    center =
-                        KeyC(
-                            KeyAction.CommitText("В"),
-                            size = FontSizeVariant.LARGE,
-                        ),
-                    topLeft = KeyC(KeyAction.CommitText("Я")),
-                    top = KeyC(KeyAction.CommitText("Ы")),
-                    topRight = KeyC(KeyAction.CommitText("Ь")),
-                    right = KeyC(KeyAction.CommitText("П")),
-                    bottomRight = KeyC(KeyAction.CommitText("У")),
-                    bottom = KeyC(KeyAction.CommitText("З")),
-                    bottomLeft = KeyC(KeyAction.CommitText("Г")),
-                    left = KeyC(KeyAction.CommitText("К")),
+                    center = KeyC("В", size = FontSizeVariant.LARGE),
+                    topLeft = KeyC("Я"),
+                    top = KeyC("Ы"),
+                    topRight = KeyC("Ь"),
+                    right = KeyC("П"),
+                    bottomRight = KeyC("У"),
+                    bottom = KeyC("З"),
+                    bottomLeft = KeyC("Г"),
+                    left = KeyC("К"),
                 ),
                 KeyItemC(
-                    center =
-                        KeyC(
-                            KeyAction.CommitText("Е"),
-                            size = FontSizeVariant.LARGE,
-                        ),
-                    left = KeyC(KeyAction.CommitText("Ф")),
+                    center = KeyC("Е", size = FontSizeVariant.LARGE),
+                    left = KeyC("Ф"),
                     top =
                         KeyC(
                             display = KeyDisplay.IconDisplay(Icons.Outlined.KeyboardCapslock),
@@ -262,71 +178,35 @@ val KB_KZ_THUMBKEY_SHIFTED =
                             swipeReturnAction = KeyAction.ToggleCurrentWordCapitalization(false),
                             color = ColorVariant.MUTED,
                         ),
-                    bottomRight = KeyC(KeyAction.CommitText("Ү")),
-                    topRight = KeyC(KeyAction.CommitText("Ұ")),
+                    bottomRight = KeyC("Ү"),
+                    topRight = KeyC("Ұ"),
                 ),
                 NUMERIC_KEY_ITEM,
             ),
             listOf(
                 KeyItemC(
-                    center =
-                        KeyC(
-                            KeyAction.CommitText("Т"),
-                            size = FontSizeVariant.LARGE,
-                        ),
-                    topRight = KeyC(KeyAction.CommitText("Ч")),
-                    top = KeyC(KeyAction.CommitText("Ш")),
-                    right = KeyC(KeyAction.CommitText("Ъ")),
+                    center = KeyC("Т", size = FontSizeVariant.LARGE),
+                    topRight = KeyC("Ч"),
+                    top = KeyC("Ш"),
+                    right = KeyC("Ъ"),
                 ),
                 KeyItemC(
-                    center =
-                        KeyC(
-                            KeyAction.CommitText("И"),
-                            size = FontSizeVariant.LARGE,
-                        ),
-                    top = KeyC(KeyAction.CommitText("Б")),
-                    right = KeyC(KeyAction.CommitText("Ц")),
-                    topLeft =
-                        KeyC(
-                            KeyAction.CommitText("\""),
-                            color = ColorVariant.MUTED,
-                        ),
-                    topRight =
-                        KeyC(
-                            KeyAction.CommitText("'"),
-                            color = ColorVariant.MUTED,
-                        ),
-                    bottomRight =
-                        KeyC(
-                            KeyAction.CommitText("-"),
-                            color = ColorVariant.MUTED,
-                        ),
-                    bottom =
-                        KeyC(
-                            KeyAction.CommitText("."),
-                            color = ColorVariant.MUTED,
-                        ),
-                    bottomLeft =
-                        KeyC(
-                            KeyAction.CommitText("*"),
-                            color = ColorVariant.MUTED,
-                        ),
-                    left =
-                        KeyC(
-                            KeyAction.CommitText(","),
-                            color = ColorVariant.MUTED,
-                        ),
+                    center = KeyC("И", size = FontSizeVariant.LARGE),
+                    top = KeyC("Б"),
+                    right = KeyC("Ц"),
+                    topLeft = KeyC("\"", color = ColorVariant.MUTED),
+                    topRight = KeyC("'", color = ColorVariant.MUTED),
+                    bottomRight = KeyC("-", color = ColorVariant.MUTED),
+                    bottom = KeyC(".", color = ColorVariant.MUTED),
+                    bottomLeft = KeyC("*", color = ColorVariant.MUTED),
+                    left = KeyC(",", color = ColorVariant.MUTED),
                 ),
                 KeyItemC(
-                    center =
-                        KeyC(
-                            KeyAction.CommitText("О"),
-                            size = FontSizeVariant.LARGE,
-                        ),
-                    topLeft = KeyC(KeyAction.CommitText("Д")),
-                    bottom = KeyC(KeyAction.CommitText("Ю")),
-                    right = KeyC(KeyAction.CommitText("Ё")),
-                    bottomRight = KeyC(KeyAction.CommitText("Ө")),
+                    center = KeyC("О", size = FontSizeVariant.LARGE),
+                    topLeft = KeyC("Д"),
+                    bottom = KeyC("Ю"),
+                    right = KeyC("Ё"),
+                    bottomRight = KeyC("Ө"),
                 ),
                 BACKSPACE_KEY_ITEM,
             ),

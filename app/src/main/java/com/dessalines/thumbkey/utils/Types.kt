@@ -77,13 +77,34 @@ data class KeyC(
             else -> null
         },
     val capsModeDisplay: KeyDisplay? = null,
+    val size: FontSizeVariant = FontSizeVariant.SMALL,
     val color: ColorVariant =
         when (size) {
             FontSizeVariant.LARGE -> ColorVariant.PRIMARY
             else -> ColorVariant.SECONDARY
         },
-    val size: FontSizeVariant = FontSizeVariant.SMALL,
-)
+) {
+    constructor(
+        text: String,
+        displayText: String = text,
+        swipeReturnAction: KeyAction? = null,
+        display: KeyDisplay = KeyDisplay.TextDisplay(displayText),
+        capsModeDisplay: KeyDisplay? = null,
+        size: FontSizeVariant = FontSizeVariant.SMALL,
+        color: ColorVariant =
+            when (size) {
+                FontSizeVariant.LARGE -> ColorVariant.PRIMARY
+                else -> ColorVariant.SECONDARY
+            },
+    ) : this(
+        KeyAction.CommitText(text),
+        swipeReturnAction,
+        display,
+        capsModeDisplay,
+        size,
+        color,
+    )
+}
 
 sealed class KeyDisplay {
     class TextDisplay(

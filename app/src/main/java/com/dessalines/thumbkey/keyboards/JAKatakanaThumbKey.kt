@@ -16,131 +16,91 @@ val KB_JA_KATAKANA_THUMBKEY_MAIN =
         listOf(
             listOf(
                 KeyItemC(
-                    center =
-                        KeyC(
-                            KeyAction.CommitText("マ"),
-                            size = FontSizeVariant.LARGE,
-                        ),
+                    center = KeyC("マ", size = FontSizeVariant.LARGE),
                     swipeType = SwipeNWay.FOUR_WAY_CROSS,
-                    bottom = KeyC(KeyAction.CommitText("ミ")),
-                    left = KeyC(KeyAction.CommitText("ム")),
-                    top = KeyC(KeyAction.CommitText("メ")),
-                    right = KeyC(KeyAction.CommitText("モ")),
+                    bottom = KeyC("ミ"),
+                    left = KeyC("ム"),
+                    top = KeyC("メ"),
+                    right = KeyC("モ"),
                 ),
                 KeyItemC(
-                    center =
-                        KeyC(
-                            KeyAction.CommitText("ハ"),
-                            size = FontSizeVariant.LARGE,
-                        ),
+                    center = KeyC("ハ", size = FontSizeVariant.LARGE),
                     swipeType = SwipeNWay.FOUR_WAY_CROSS,
-                    bottom = KeyC(KeyAction.CommitText("ヒ")),
-                    left = KeyC(KeyAction.CommitText("フ")),
-                    top = KeyC(KeyAction.CommitText("ヘ")),
-                    right = KeyC(KeyAction.CommitText("ホ")),
+                    bottom = KeyC("ヒ"),
+                    left = KeyC("フ"),
+                    top = KeyC("ヘ"),
+                    right = KeyC("ホ"),
                 ),
                 KeyItemC(
-                    center =
-                        KeyC(
-                            KeyAction.CommitText("サ"),
-                            size = FontSizeVariant.LARGE,
-                        ),
+                    center = KeyC("サ", size = FontSizeVariant.LARGE),
                     swipeType = SwipeNWay.FOUR_WAY_CROSS,
-                    bottom = KeyC(KeyAction.CommitText("シ")),
-                    left = KeyC(KeyAction.CommitText("ス")),
-                    top = KeyC(KeyAction.CommitText("セ")),
-                    right = KeyC(KeyAction.CommitText("ソ")),
+                    bottom = KeyC("シ"),
+                    left = KeyC("ス"),
+                    top = KeyC("セ"),
+                    right = KeyC("ソ"),
                 ),
                 EMOJI_KEY_ITEM,
             ),
             listOf(
                 KeyItemC(
-                    center =
-                        KeyC(
-                            KeyAction.CommitText("ヤ"),
-                            size = FontSizeVariant.LARGE,
-                        ),
+                    center = KeyC("ヤ", size = FontSizeVariant.LARGE),
                     swipeType = SwipeNWay.FOUR_WAY_CROSS,
-                    bottom = KeyC(KeyAction.CommitText("ユ")),
-                    right = KeyC(KeyAction.CommitText("ヨ")),
+                    bottom = KeyC("ユ"),
+                    right = KeyC("ヨ"),
                 ),
                 KeyItemC(
-                    center =
-                        KeyC(
-                            KeyAction.CommitText("ナ"),
-                            size = FontSizeVariant.LARGE,
-                        ),
+                    center = KeyC("ナ", size = FontSizeVariant.LARGE),
                     swipeType = SwipeNWay.FOUR_WAY_CROSS,
-                    bottom = KeyC(KeyAction.CommitText("ニ")),
-                    left = KeyC(KeyAction.CommitText("ヌ")),
-                    top = KeyC(KeyAction.CommitText("ネ")),
-                    right = KeyC(KeyAction.CommitText("ノ")),
+                    bottom = KeyC("ニ"),
+                    left = KeyC("ヌ"),
+                    top = KeyC("ネ"),
+                    right = KeyC("ノ"),
                 ),
                 KeyItemC(
-                    center =
-                        KeyC(
-                            KeyAction.CommitText("カ"),
-                            size = FontSizeVariant.LARGE,
-                        ),
+                    center = KeyC("カ", size = FontSizeVariant.LARGE),
                     swipeType = SwipeNWay.FOUR_WAY_CROSS,
-                    bottom = KeyC(KeyAction.CommitText("キ")),
-                    left = KeyC(KeyAction.CommitText("ク")),
-                    top = KeyC(KeyAction.CommitText("ケ")),
-                    right = KeyC(KeyAction.CommitText("コ")),
+                    bottom = KeyC("キ"),
+                    left = KeyC("ク"),
+                    top = KeyC("ケ"),
+                    right = KeyC("コ"),
                 ),
                 NUMERIC_KEY_ITEM,
             ),
             listOf(
                 KeyItemC(
-                    center =
-                        KeyC(
-                            KeyAction.CommitText("ラ"),
-                            size = FontSizeVariant.LARGE,
-                        ),
+                    center = KeyC("ラ", size = FontSizeVariant.LARGE),
                     swipeType = SwipeNWay.FOUR_WAY_CROSS,
-                    bottom = KeyC(KeyAction.CommitText("リ")),
-                    left = KeyC(KeyAction.CommitText("ル")),
-                    top = KeyC(KeyAction.CommitText("レ")),
-                    right = KeyC(KeyAction.CommitText("ロ")),
+                    bottom = KeyC("リ"),
+                    left = KeyC("ル"),
+                    top = KeyC("レ"),
+                    right = KeyC("ロ"),
                 ),
                 KeyItemC(
-                    center =
-                        KeyC(
-                            KeyAction.CommitText("タ"),
-                            size = FontSizeVariant.LARGE,
-                        ),
+                    center = KeyC("タ", size = FontSizeVariant.LARGE),
                     swipeType = SwipeNWay.FOUR_WAY_CROSS,
-                    bottom = KeyC(KeyAction.CommitText("チ")),
-                    left = KeyC(KeyAction.CommitText("ツ")),
-                    top = KeyC(KeyAction.CommitText("テ")),
-                    right = KeyC(KeyAction.CommitText("ト")),
+                    bottom = KeyC("チ"),
+                    left = KeyC("ツ"),
+                    top = KeyC("テ"),
+                    right = KeyC("ト"),
                 ),
                 KeyItemC(
-                    center =
-                        KeyC(
-                            KeyAction.CommitText("ア"),
-                            size = FontSizeVariant.LARGE,
-                        ),
+                    center = KeyC("ア", size = FontSizeVariant.LARGE),
                     swipeType = SwipeNWay.FOUR_WAY_CROSS,
-                    bottom = KeyC(KeyAction.CommitText("イ")),
-                    left = KeyC(KeyAction.CommitText("ウ")),
-                    top = KeyC(KeyAction.CommitText("エ")),
-                    right = KeyC(KeyAction.CommitText("オ")),
+                    bottom = KeyC("イ"),
+                    left = KeyC("ウ"),
+                    top = KeyC("エ"),
+                    right = KeyC("オ"),
                 ),
                 BACKSPACE_KEY_ITEM,
             ),
             listOf(
                 KeyItemC(
-                    center =
-                        KeyC(
-                            KeyAction.CommitText("ワ"),
-                            size = FontSizeVariant.LARGE,
-                        ),
+                    center = KeyC("ワ", size = FontSizeVariant.LARGE),
                     swipeType = SwipeNWay.FOUR_WAY_CROSS,
-                    bottom = KeyC(KeyAction.CommitText("ヰ")),
-                    left = KeyC(KeyAction.CommitText("ン")),
-                    top = KeyC(KeyAction.CommitText("ヱ")),
-                    right = KeyC(KeyAction.CommitText("ヲ")),
+                    bottom = KeyC("ヰ"),
+                    left = KeyC("ン"),
+                    top = KeyC("ヱ"),
+                    right = KeyC("ヲ"),
                 ),
                 KeyItemC(
                     center =
@@ -150,7 +110,7 @@ val KB_JA_KATAKANA_THUMBKEY_MAIN =
                             size = FontSizeVariant.LARGE,
                         ),
                     swipeType = SwipeNWay.FOUR_WAY_CROSS,
-                    left = KeyC(KeyAction.CommitText("。")),
+                    left = KeyC("。"),
                     top =
                         KeyC(
                             display = KeyDisplay.TextDisplay("？"),
@@ -158,10 +118,10 @@ val KB_JA_KATAKANA_THUMBKEY_MAIN =
                             swipeReturnAction = KeyAction.ToggleCurrentWordCapitalization(true),
                             color = ColorVariant.MUTED,
                         ),
-                    right = KeyC(KeyAction.CommitText("、")),
+                    right = KeyC("、"),
                 ),
                 KeyItemC(
-                    center = KeyC(KeyAction.CommitText(" ")),
+                    center = KeyC(" "),
                     backgroundColor = ColorVariant.SURFACE_VARIANT,
                 ),
                 RETURN_KEY_ITEM,
@@ -174,98 +134,58 @@ val KB_JA_KATAKANA_THUMBKEY_SHIFTED =
         listOf(
             listOf(
                 KeyItemC(
-                    center =
-                        KeyC(
-                            KeyAction.CommitText("「"),
-                            size = FontSizeVariant.LARGE,
-                        ),
+                    center = KeyC("「", size = FontSizeVariant.LARGE),
                     swipeType = SwipeNWay.FOUR_WAY_CROSS,
-                    bottom = KeyC(KeyAction.CommitText("【")),
-                    left = KeyC(KeyAction.CommitText("〔")),
-                    top = KeyC(KeyAction.CommitText("〖")),
-                    right = KeyC(KeyAction.CommitText("『")),
+                    bottom = KeyC("【"),
+                    left = KeyC("〔"),
+                    top = KeyC("〖"),
+                    right = KeyC("『"),
                 ),
                 KeyItemC(
-                    center =
-                        KeyC(
-                            KeyAction.CommitText("・"),
-                            size = FontSizeVariant.LARGE,
-                        ),
+                    center = KeyC("・", size = FontSizeVariant.LARGE),
                     swipeType = SwipeNWay.TWO_WAY_VERTICAL,
-                    bottom = KeyC(KeyAction.CommitText("※")),
+                    bottom = KeyC("※"),
                 ),
                 KeyItemC(
-                    center =
-                        KeyC(
-                            KeyAction.CommitText("」"),
-                            size = FontSizeVariant.LARGE,
-                        ),
+                    center = KeyC("」", size = FontSizeVariant.LARGE),
                     swipeType = SwipeNWay.FOUR_WAY_CROSS,
-                    bottom = KeyC(KeyAction.CommitText("】")),
-                    left = KeyC(KeyAction.CommitText("』")),
-                    top = KeyC(KeyAction.CommitText("〗")),
-                    right = KeyC(KeyAction.CommitText("〕")),
+                    bottom = KeyC("】"),
+                    left = KeyC("』"),
+                    top = KeyC("〗"),
+                    right = KeyC("〕"),
                 ),
                 EMOJI_KEY_ITEM,
             ),
             listOf(
                 KeyItemC(
-                    center =
-                        KeyC(
-                            KeyAction.CommitText("（"),
-                            size = FontSizeVariant.LARGE,
-                        ),
+                    center = KeyC("（", size = FontSizeVariant.LARGE),
                 ),
                 KeyItemC(
-                    center =
-                        KeyC(
-                            KeyAction.CommitText("！"),
-                            size = FontSizeVariant.LARGE,
-                        ),
+                    center = KeyC("！", size = FontSizeVariant.LARGE),
                 ),
                 KeyItemC(
-                    center =
-                        KeyC(
-                            KeyAction.CommitText("）"),
-                            size = FontSizeVariant.LARGE,
-                        ),
+                    center = KeyC("）", size = FontSizeVariant.LARGE),
                 ),
                 NUMERIC_KEY_ITEM,
             ),
             listOf(
                 KeyItemC(
-                    center =
-                        KeyC(
-                            KeyAction.CommitText("ヿ"),
-                            size = FontSizeVariant.LARGE,
-                        ),
+                    center = KeyC("ヿ", size = FontSizeVariant.LARGE),
                 ),
                 KeyItemC(
-                    center =
-                        KeyC(
-                            KeyAction.CommitText("？"),
-                            size = FontSizeVariant.LARGE,
-                        ),
+                    center = KeyC("？", size = FontSizeVariant.LARGE),
                 ),
                 KeyItemC(
-                    center =
-                        KeyC(
-                            KeyAction.CommitText("ヽ"),
-                            size = FontSizeVariant.LARGE,
-                        ),
+                    center = KeyC("ヽ", size = FontSizeVariant.LARGE),
                 ),
                 BACKSPACE_KEY_ITEM,
             ),
             listOf(
                 KeyItemC(
-                    center =
-                        KeyC(
-                            KeyAction.CommitText("ー"),
-                            size = FontSizeVariant.LARGE,
-                        ),
+                    center = KeyC("ー", size = FontSizeVariant.LARGE),
                     swipeType = SwipeNWay.FOUR_WAY_CROSS,
-                    right = KeyC(KeyAction.CommitText("〜")),
-                    top = KeyC(KeyAction.CommitText("…")),
+                    right = KeyC("〜"),
+                    top = KeyC("…"),
                 ),
                 KeyItemC(
                     center =
@@ -277,7 +197,7 @@ val KB_JA_KATAKANA_THUMBKEY_SHIFTED =
                         ),
                 ),
                 KeyItemC(
-                    center = KeyC(KeyAction.CommitText(" ")),
+                    center = KeyC(" "),
                     backgroundColor = ColorVariant.SURFACE_VARIANT,
                 ),
                 RETURN_KEY_ITEM,

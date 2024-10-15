@@ -194,7 +194,7 @@ val BACKSPACE_WIDE_KEY_ITEM = BACKSPACE_KEY_ITEM.copy(widthMultiplier = 3)
 
 val SPACEBAR_KEY_ITEM =
     KeyItemC(
-        center = KeyC(KeyAction.CommitText(" ")),
+        center = KeyC(" "),
         swipeType = SwipeNWay.FOUR_WAY_CROSS,
         slideType = SlideType.MOVE_CURSOR,
         left =
@@ -236,7 +236,7 @@ val SPACEBAR_DOUBLE_KEY_ITEM = SPACEBAR_KEY_ITEM.copy(widthMultiplier = 2)
 
 val SPACEBAR_PROGRAMMING_KEY_ITEM =
     KeyItemC(
-        center = KeyC(KeyAction.CommitText(" ")),
+        center = KeyC(" "),
         swipeType = SwipeNWay.FOUR_WAY_CROSS,
         slideType = SlideType.MOVE_CURSOR,
         left =
@@ -302,7 +302,7 @@ val RETURN_KEY_ITEM =
 
 val SPACEBAR_TYPESPLIT_MIDDLE_KEY_ITEM =
     KeyItemC(
-        center = KeyC(KeyAction.CommitText(" ")),
+        center = KeyC(" "),
         swipeType = SwipeNWay.FOUR_WAY_CROSS,
         slideType = SlideType.MOVE_CURSOR,
         left =
@@ -327,16 +327,8 @@ val SPACEBAR_TYPESPLIT_MIDDLE_KEY_ITEM =
                     ),
                 display = null,
             ),
-        top =
-            KeyC(
-                KeyAction.CommitText("'"),
-                color = ColorVariant.MUTED,
-            ),
-        bottom =
-            KeyC(
-                KeyAction.CommitText(","),
-                color = ColorVariant.MUTED,
-            ),
+        top = KeyC("'", color = ColorVariant.MUTED),
+        bottom = KeyC(",", color = ColorVariant.MUTED),
         nextTapActions =
             listOf(
                 KeyAction.ReplaceLastText(", ", trimCount = 1),
@@ -373,45 +365,17 @@ val SPACEBAR_TYPESPLIT_BOTTOM_KEY_ITEM =
                     ),
                 display = null,
             ),
-        top =
-            KeyC(
-                KeyAction.CommitText("-"),
-                color = ColorVariant.MUTED,
-            ),
-        bottom =
-            KeyC(
-                KeyAction.CommitText("."),
-                color = ColorVariant.MUTED,
-            ),
-        bottomLeft =
-            KeyC(
-                KeyAction.CommitText("*"),
-                color = ColorVariant.MUTED,
-            ),
+        top = KeyC("-", color = ColorVariant.MUTED),
+        bottom = KeyC(".", color = ColorVariant.MUTED),
+        bottomLeft = KeyC("*", color = ColorVariant.MUTED),
     )
 
 val SPACEBAR_ALL_SYMBOLS =
     SPACEBAR_TYPESPLIT_MIDDLE_KEY_ITEM.copy(
-        left =
-            KeyC(
-                KeyAction.CommitText(","),
-                color = ColorVariant.MUTED,
-            ),
-        right =
-            KeyC(
-                KeyAction.CommitText("'"),
-                color = ColorVariant.MUTED,
-            ),
-        top =
-            KeyC(
-                KeyAction.CommitText("-"),
-                color = ColorVariant.MUTED,
-            ),
-        bottom =
-            KeyC(
-                KeyAction.CommitText("."),
-                color = ColorVariant.MUTED,
-            ),
+        left = KeyC(",", color = ColorVariant.MUTED),
+        right = KeyC("'", color = ColorVariant.MUTED),
+        top = KeyC("-", color = ColorVariant.MUTED),
+        bottom = KeyC(".", color = ColorVariant.MUTED),
     )
 val SPACEBAR_ALL_DIRECTIONS =
     SPACEBAR_TYPESPLIT_MIDDLE_KEY_ITEM.copy(
