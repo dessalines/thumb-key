@@ -25,47 +25,47 @@ val KB_ES_MESSAGEASE_NUMERIC =
                 KeyItemC(
                     center =
                         KeyC(
-                            action = KeyAction.CommitText("1"),
+                            KeyAction.CommitText("1"),
                             size = FontSizeVariant.LARGE,
                         ),
-                    right = KeyC(action = KeyAction.CommitText("-")),
+                    right = KeyC(KeyAction.CommitText("-")),
                     bottomLeft =
                         KeyC(
-                            action = KeyAction.CommitText(KB_ES_MESSAGEASE_CURRENCY_SYMBOL),
+                            KeyAction.CommitText(KB_ES_MESSAGEASE_CURRENCY_SYMBOL),
                         ),
                 ),
                 KeyItemC(
                     center =
                         KeyC(
-                            action = KeyAction.CommitText("2"),
+                            KeyAction.CommitText("2"),
                             size = FontSizeVariant.LARGE,
                         ),
-                    topLeft = KeyC(action = KeyAction.CommitText("`")),
-                    top = KeyC(action = KeyAction.CommitText("^")),
-                    topRight = KeyC(action = KeyAction.CommitText("´")),
-                    right = KeyC(action = KeyAction.CommitText("!")),
+                    topLeft = KeyC(KeyAction.CommitText("`")),
+                    top = KeyC(KeyAction.CommitText("^")),
+                    topRight = KeyC(KeyAction.CommitText("´")),
+                    right = KeyC(KeyAction.CommitText("!")),
                     bottomRight =
                         KeyC(
-                            action = KeyAction.CommitText("\\"),
+                            KeyAction.CommitText("\\"),
                         ),
                     bottomLeft =
                         KeyC(
-                            action = KeyAction.CommitText("/"),
+                            KeyAction.CommitText("/"),
                         ),
-                    left = KeyC(action = KeyAction.CommitText("+")),
+                    left = KeyC(KeyAction.CommitText("+")),
                 ),
                 KeyItemC(
                     center =
                         KeyC(
-                            action = KeyAction.CommitText("3"),
+                            KeyAction.CommitText("3"),
                             size = FontSizeVariant.LARGE,
                         ),
-                    topRight = KeyC(action = KeyAction.CommitText("¡")),
-                    left = KeyC(action = KeyAction.CommitText("?")),
-                    right = KeyC(action = KeyAction.CommitText("¿")),
-                    bottomRight = KeyC(action = KeyAction.CommitText("€")),
-                    bottomLeft = KeyC(action = KeyAction.CommitText("£")),
-                    bottom = KeyC(action = KeyAction.CommitText("=")),
+                    topRight = KeyC(KeyAction.CommitText("¡")),
+                    left = KeyC(KeyAction.CommitText("?")),
+                    right = KeyC(KeyAction.CommitText("¿")),
+                    bottomRight = KeyC(KeyAction.CommitText("€")),
+                    bottomLeft = KeyC(KeyAction.CommitText("£")),
+                    bottom = KeyC(KeyAction.CommitText("=")),
                 ),
                 EMOJI_KEY_ITEM,
             ),
@@ -73,34 +73,34 @@ val KB_ES_MESSAGEASE_NUMERIC =
                 KeyItemC(
                     center =
                         KeyC(
-                            action = KeyAction.CommitText("4"),
+                            KeyAction.CommitText("4"),
                             size = FontSizeVariant.LARGE,
                         ),
-                    topLeft = KeyC(action = KeyAction.CommitText("{")),
-                    topRight = KeyC(action = KeyAction.CommitText("%")),
-                    bottomRight = KeyC(action = KeyAction.CommitText("_")),
-                    bottomLeft = KeyC(action = KeyAction.CommitText("[")),
-                    left = KeyC(action = KeyAction.CommitText("(")),
+                    topLeft = KeyC(KeyAction.CommitText("{")),
+                    topRight = KeyC(KeyAction.CommitText("%")),
+                    bottomRight = KeyC(KeyAction.CommitText("_")),
+                    bottomLeft = KeyC(KeyAction.CommitText("[")),
+                    left = KeyC(KeyAction.CommitText("(")),
                 ),
                 KeyItemC(
                     center =
                         KeyC(
-                            action = KeyAction.CommitText("5"),
+                            KeyAction.CommitText("5"),
                             size = FontSizeVariant.LARGE,
                         ),
-                    top = KeyC(action = KeyAction.CommitText("¬")),
+                    top = KeyC(KeyAction.CommitText("¬")),
                 ),
                 KeyItemC(
                     center =
                         KeyC(
-                            action = KeyAction.CommitText("6"),
+                            KeyAction.CommitText("6"),
                             size = FontSizeVariant.LARGE,
                         ),
-                    topLeft = KeyC(action = KeyAction.CommitText("|")),
-                    topRight = KeyC(action = KeyAction.CommitText("}")),
-                    right = KeyC(action = KeyAction.CommitText(")")),
-                    bottomRight = KeyC(action = KeyAction.CommitText("]")),
-                    bottomLeft = KeyC(action = KeyAction.CommitText("@")),
+                    topLeft = KeyC(KeyAction.CommitText("|")),
+                    topRight = KeyC(KeyAction.CommitText("}")),
+                    right = KeyC(KeyAction.CommitText(")")),
+                    bottomRight = KeyC(KeyAction.CommitText("]")),
+                    bottomLeft = KeyC(KeyAction.CommitText("@")),
                 ),
                 ABC_KEY_ITEM,
             ),
@@ -108,37 +108,37 @@ val KB_ES_MESSAGEASE_NUMERIC =
                 KeyItemC(
                     center =
                         KeyC(
-                            action = KeyAction.CommitText("7"),
+                            KeyAction.CommitText("7"),
                             size = FontSizeVariant.LARGE,
                         ),
-                    topLeft = KeyC(action = KeyAction.CommitText("~")),
-                    top = KeyC(action = KeyAction.CommitText("¨")),
-                    left = KeyC(action = KeyAction.CommitText("<")),
-                    right = KeyC(action = KeyAction.CommitText("*")),
+                    topLeft = KeyC(KeyAction.CommitText("~")),
+                    top = KeyC(KeyAction.CommitText("¨")),
+                    left = KeyC(KeyAction.CommitText("<")),
+                    right = KeyC(KeyAction.CommitText("*")),
                 ),
                 KeyItemC(
                     center =
                         KeyC(
-                            action = KeyAction.CommitText("8"),
+                            KeyAction.CommitText("8"),
                             size = FontSizeVariant.LARGE,
                         ),
-                    topLeft = KeyC(action = KeyAction.CommitText("\"")),
-                    topRight = KeyC(action = KeyAction.CommitText("'")),
-                    bottomRight = KeyC(action = KeyAction.CommitText(":")),
-                    bottom = KeyC(action = KeyAction.CommitText(".")),
-                    bottomLeft = KeyC(action = KeyAction.CommitText(",")),
+                    topLeft = KeyC(KeyAction.CommitText("\"")),
+                    topRight = KeyC(KeyAction.CommitText("'")),
+                    bottomRight = KeyC(KeyAction.CommitText(":")),
+                    bottom = KeyC(KeyAction.CommitText(".")),
+                    bottomLeft = KeyC(KeyAction.CommitText(",")),
                 ),
                 KeyItemC(
                     center =
                         KeyC(
-                            action = KeyAction.CommitText("9"),
+                            KeyAction.CommitText("9"),
                             size = FontSizeVariant.LARGE,
                         ),
-                    top = KeyC(action = KeyAction.CommitText("&")),
-                    topRight = KeyC(action = KeyAction.CommitText("°")),
-                    right = KeyC(action = KeyAction.CommitText(">")),
-                    bottomLeft = KeyC(action = KeyAction.CommitText(";")),
-                    left = KeyC(action = KeyAction.CommitText("#")),
+                    top = KeyC(KeyAction.CommitText("&")),
+                    topRight = KeyC(KeyAction.CommitText("°")),
+                    right = KeyC(KeyAction.CommitText(">")),
+                    bottomLeft = KeyC(KeyAction.CommitText(";")),
+                    left = KeyC(KeyAction.CommitText("#")),
                 ),
                 BACKSPACE_KEY_ITEM,
             ),
@@ -146,7 +146,7 @@ val KB_ES_MESSAGEASE_NUMERIC =
                 KeyItemC(
                     center =
                         KeyC(
-                            action = KeyAction.CommitText("0"),
+                            KeyAction.CommitText("0"),
                             size = FontSizeVariant.LARGE,
                         ),
                     widthMultiplier = 2,

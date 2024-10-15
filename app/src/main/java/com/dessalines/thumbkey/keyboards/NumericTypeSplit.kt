@@ -14,75 +14,75 @@ val TYPESPLIT_NUMERIC_KEYBOARD =
                 textEditKeyItem(
                     center =
                         KeyC(
-                            action = KeyAction.CommitText(" "),
+                            KeyAction.CommitText(" "),
                         ),
                 ),
                 KeyItemC(
                     center =
                         KeyC(
-                            action = KeyAction.CommitText("1"),
+                            KeyAction.CommitText("1"),
                             size = FontSizeVariant.LARGE,
                         ),
                     bottomRight =
                         KeyC(
-                            action = KeyAction.CommitText("!"),
+                            KeyAction.CommitText("!"),
                         ),
                     top =
                         KeyC(
-                            action = KeyAction.CommitText("¯\\_(ツ)_/¯"),
+                            KeyAction.CommitText("¯\\_(ツ)_/¯"),
                             size = FontSizeVariant.SMALLEST,
                         ),
                     bottom =
                         KeyC(
-                            action = KeyAction.CommitText("~"),
+                            KeyAction.CommitText("~"),
                         ),
                     left =
                         KeyC(
-                            action = KeyAction.CommitText("{"),
+                            KeyAction.CommitText("{"),
                         ),
                 ),
                 KeyItemC(
                     center =
                         KeyC(
-                            action = KeyAction.CommitText("2"),
+                            KeyAction.CommitText("2"),
                             size = FontSizeVariant.LARGE,
                         ),
                     bottom =
                         KeyC(
-                            action = KeyAction.CommitText("@"),
+                            KeyAction.CommitText("@"),
                         ),
                     topLeft =
                         KeyC(
-                            action = KeyAction.CommitText("`"),
+                            KeyAction.CommitText("`"),
                         ),
                     topRight =
                         KeyC(
-                            action = KeyAction.CommitText("´"),
+                            KeyAction.CommitText("´"),
                         ),
                 ),
                 KeyItemC(
                     center =
                         KeyC(
-                            action = KeyAction.CommitText("3"),
+                            KeyAction.CommitText("3"),
                             size = FontSizeVariant.LARGE,
                         ),
                     right =
                         KeyC(
-                            action = KeyAction.CommitText("}"),
+                            KeyAction.CommitText("}"),
                         ),
                     topRight =
                         KeyC(
-                            action = KeyAction.CommitText("°"),
+                            KeyAction.CommitText("°"),
                         ),
                     bottomLeft =
                         KeyC(
-                            action = KeyAction.CommitText("#"),
+                            KeyAction.CommitText("#"),
                         ),
                 ),
                 KeyItemC(
                     center =
                         KeyC(
-                            action = KeyAction.CommitText("."),
+                            KeyAction.CommitText("."),
                             size = FontSizeVariant.LARGE,
                         ),
                 ),
@@ -91,95 +91,95 @@ val TYPESPLIT_NUMERIC_KEYBOARD =
                 KeyItemC(
                     center =
                         KeyC(
-                            action = KeyAction.CommitText(" "),
+                            KeyAction.CommitText(" "),
                         ),
                     top =
                         KeyC(
-                            action = KeyAction.CommitText("+"),
+                            KeyAction.CommitText("+"),
                         ),
                     bottom =
                         KeyC(
-                            action = KeyAction.CommitText("="),
+                            KeyAction.CommitText("="),
                         ),
                     left =
                         KeyC(
-                            action = KeyAction.CommitText("-"),
+                            KeyAction.CommitText("-"),
                         ),
                     right =
                         KeyC(
-                            action = KeyAction.CommitText("_"),
+                            KeyAction.CommitText("_"),
                         ),
                     backgroundColor = ColorVariant.SURFACE_VARIANT,
                 ),
                 KeyItemC(
                     center =
                         KeyC(
-                            action = KeyAction.CommitText("4"),
+                            KeyAction.CommitText("4"),
                             size = FontSizeVariant.LARGE,
                         ),
                     top =
                         KeyC(
-                            action = KeyAction.CommitText("\""),
+                            KeyAction.CommitText("\""),
                         ),
                     bottom =
                         KeyC(
-                            action = KeyAction.CommitText(":"),
+                            KeyAction.CommitText(":"),
                         ),
                     left =
                         KeyC(
-                            action = KeyAction.CommitText("("),
+                            KeyAction.CommitText("("),
                         ),
                     right =
                         KeyC(
-                            action = KeyAction.CommitText("$"),
+                            KeyAction.CommitText("$"),
                         ),
                 ),
                 KeyItemC(
                     center =
                         KeyC(
-                            action = KeyAction.CommitText("5"),
+                            KeyAction.CommitText("5"),
                             size = FontSizeVariant.LARGE,
                         ),
                     left =
                         KeyC(
-                            action = KeyAction.CommitText("€"),
+                            KeyAction.CommitText("€"),
                         ),
                     right =
                         KeyC(
-                            action = KeyAction.CommitText("£"),
+                            KeyAction.CommitText("£"),
                         ),
                     bottom =
                         KeyC(
-                            action = KeyAction.CommitText("%"),
+                            KeyAction.CommitText("%"),
                         ),
                 ),
                 KeyItemC(
                     center =
                         KeyC(
-                            action = KeyAction.CommitText("6"),
+                            KeyAction.CommitText("6"),
                             size = FontSizeVariant.LARGE,
                         ),
                     top =
                         KeyC(
-                            action = KeyAction.CommitText("'"),
+                            KeyAction.CommitText("'"),
                         ),
                     bottom =
                         KeyC(
-                            action = KeyAction.CommitText(";"),
+                            KeyAction.CommitText(";"),
                         ),
                     left =
                         KeyC(
-                            action = KeyAction.CommitText("^"),
+                            KeyAction.CommitText("^"),
                         ),
                     right =
                         KeyC(
-                            action = KeyAction.CommitText(")"),
+                            KeyAction.CommitText(")"),
                         ),
                 ),
                 KeyItemC(
                     center =
                         KeyC(
-                            action = KeyAction.CommitText(","),
+                            KeyAction.CommitText(","),
                             size = FontSizeVariant.LARGE,
                         ),
                 ),
@@ -189,68 +189,68 @@ val TYPESPLIT_NUMERIC_KEYBOARD =
                 KeyItemC(
                     center =
                         KeyC(
-                            action = KeyAction.CommitText("7"),
+                            KeyAction.CommitText("7"),
                             size = FontSizeVariant.LARGE,
                         ),
                     topLeft =
                         KeyC(
-                            action = KeyAction.CommitText("["),
+                            KeyAction.CommitText("["),
                         ),
                     topRight =
                         KeyC(
-                            action = KeyAction.CommitText("&"),
+                            KeyAction.CommitText("&"),
                         ),
                     bottomLeft =
                         KeyC(
-                            action = KeyAction.CommitText("<"),
+                            KeyAction.CommitText("<"),
                         ),
                 ),
                 KeyItemC(
                     center =
                         KeyC(
-                            action = KeyAction.CommitText("8"),
+                            KeyAction.CommitText("8"),
                             size = FontSizeVariant.LARGE,
                         ),
                     top =
                         KeyC(
-                            action = KeyAction.CommitText("*"),
+                            KeyAction.CommitText("*"),
                         ),
                     bottom =
                         KeyC(
-                            action = KeyAction.CommitText("?"),
+                            KeyAction.CommitText("?"),
                         ),
                     left =
                         KeyC(
-                            action = KeyAction.CommitText("/"),
+                            KeyAction.CommitText("/"),
                         ),
                     right =
                         KeyC(
-                            action = KeyAction.CommitText("\\"),
+                            KeyAction.CommitText("\\"),
                         ),
                 ),
                 KeyItemC(
                     center =
                         KeyC(
-                            action = KeyAction.CommitText("9"),
+                            KeyAction.CommitText("9"),
                             size = FontSizeVariant.LARGE,
                         ),
                     left =
                         KeyC(
-                            action = KeyAction.CommitText("|"),
+                            KeyAction.CommitText("|"),
                         ),
                     topRight =
                         KeyC(
-                            action = KeyAction.CommitText("]"),
+                            KeyAction.CommitText("]"),
                         ),
                     bottomRight =
                         KeyC(
-                            action = KeyAction.CommitText(">"),
+                            KeyAction.CommitText(">"),
                         ),
                 ),
                 KeyItemC(
                     center =
                         KeyC(
-                            action = KeyAction.CommitText("0"),
+                            KeyAction.CommitText("0"),
                             size = FontSizeVariant.LARGE,
                         ),
                 ),

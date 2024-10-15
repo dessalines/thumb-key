@@ -17,36 +17,36 @@ val KB_HE_THUMBKEY_MAIN =
                 KeyItemC(
                     center =
                         KeyC(
-                            action = KeyAction.CommitText("מ"),
+                            KeyAction.CommitText("מ"),
                             size = FontSizeVariant.LARGE,
                         ),
                     bottomRight =
                         KeyC(
-                            action = KeyAction.CommitText("נ"),
+                            KeyAction.CommitText("נ"),
                         ),
                     swipeType = SwipeNWay.FOUR_WAY_DIAGONAL,
                 ),
                 KeyItemC(
                     center =
                         KeyC(
-                            action = KeyAction.CommitText("ב"),
+                            KeyAction.CommitText("ב"),
                             size = FontSizeVariant.LARGE,
                         ),
                     bottom =
                         KeyC(
-                            action = KeyAction.CommitText("ע"),
+                            KeyAction.CommitText("ע"),
                         ),
                     swipeType = SwipeNWay.TWO_WAY_VERTICAL,
                 ),
                 KeyItemC(
                     center =
                         KeyC(
-                            action = KeyAction.CommitText("א"),
+                            KeyAction.CommitText("א"),
                             size = FontSizeVariant.LARGE,
                         ),
                     bottomLeft =
                         KeyC(
-                            action = KeyAction.CommitText("כ"),
+                            KeyAction.CommitText("כ"),
                         ),
                     swipeType = SwipeNWay.FOUR_WAY_DIAGONAL,
                 ),
@@ -56,71 +56,71 @@ val KB_HE_THUMBKEY_MAIN =
                 KeyItemC(
                     center =
                         KeyC(
-                            action = KeyAction.CommitText("ת"),
+                            KeyAction.CommitText("ת"),
                             size = FontSizeVariant.LARGE,
                         ),
                     right =
                         KeyC(
-                            action = KeyAction.CommitText("ם"),
+                            KeyAction.CommitText("ם"),
                         ),
                     left =
                         KeyC(
-                            action = KeyAction.CommitText("ץ"),
+                            KeyAction.CommitText("ץ"),
                         ),
                     swipeType = SwipeNWay.TWO_WAY_HORIZONTAL,
                 ),
                 KeyItemC(
                     center =
                         KeyC(
-                            action = KeyAction.CommitText("ל"),
+                            KeyAction.CommitText("ל"),
                             size = FontSizeVariant.LARGE,
                         ),
                     topLeft =
                         KeyC(
-                            action = KeyAction.CommitText("ט"),
+                            KeyAction.CommitText("ט"),
                         ),
                     top =
                         KeyC(
-                            action = KeyAction.CommitText("ך"),
+                            KeyAction.CommitText("ך"),
                         ),
                     topRight =
                         KeyC(
-                            action = KeyAction.CommitText("ק"),
+                            KeyAction.CommitText("ק"),
                         ),
                     right =
                         KeyC(
-                            action = KeyAction.CommitText("צ"),
+                            KeyAction.CommitText("צ"),
                         ),
                     bottomRight =
                         KeyC(
-                            action = KeyAction.CommitText("ס"),
+                            KeyAction.CommitText("ס"),
                         ),
                     bottom =
                         KeyC(
-                            action = KeyAction.CommitText("ז"),
+                            KeyAction.CommitText("ז"),
                         ),
                     bottomLeft =
                         KeyC(
-                            action = KeyAction.CommitText("ג"),
+                            KeyAction.CommitText("ג"),
                         ),
                     left =
                         KeyC(
-                            action = KeyAction.CommitText("ן"),
+                            KeyAction.CommitText("ן"),
                         ),
                 ),
                 KeyItemC(
                     center =
                         KeyC(
-                            action = KeyAction.CommitText("ו"),
+                            KeyAction.CommitText("ו"),
                             size = FontSizeVariant.LARGE,
                         ),
                     left =
                         KeyC(
-                            action = KeyAction.CommitText("פ"),
+                            KeyAction.CommitText("פ"),
                         ),
                     right =
                         KeyC(
-                            action = KeyAction.CommitText("ף"),
+                            KeyAction.CommitText("ף"),
                         ),
                     swipeType = SwipeNWay.TWO_WAY_HORIZONTAL,
                 ),
@@ -130,16 +130,16 @@ val KB_HE_THUMBKEY_MAIN =
                 KeyItemC(
                     center =
                         KeyC(
-                            action = KeyAction.CommitText("ר"),
+                            KeyAction.CommitText("ר"),
                             size = FontSizeVariant.LARGE,
                         ),
                     topRight =
                         KeyC(
-                            action = KeyAction.CommitText("ש"),
+                            KeyAction.CommitText("ש"),
                         ),
                     bottomRight =
                         KeyC(
-                            action = KeyAction.CommitText("”"),
+                            KeyAction.CommitText("”"),
                             color = ColorVariant.MUTED,
                         ),
                     swipeType = SwipeNWay.FOUR_WAY_DIAGONAL,
@@ -147,62 +147,62 @@ val KB_HE_THUMBKEY_MAIN =
                 KeyItemC(
                     center =
                         KeyC(
-                            action = KeyAction.CommitText("ה"),
+                            KeyAction.CommitText("ה"),
                             size = FontSizeVariant.LARGE,
                         ),
                     topLeft =
                         KeyC(
-                            action = KeyAction.CommitText("״"),
+                            KeyAction.CommitText("״"),
                             color = ColorVariant.MUTED,
                         ),
                     top =
                         KeyC(
-                            action = KeyAction.CommitText("ד"),
+                            KeyAction.CommitText("ד"),
                         ),
                     topRight =
                         KeyC(
-                            action = KeyAction.CommitText("׳"),
+                            KeyAction.CommitText("׳"),
                             color = ColorVariant.MUTED,
                         ),
                     right =
                         KeyC(
-                            action = KeyAction.CommitText("–"),
+                            KeyAction.CommitText("–"),
                             color = ColorVariant.MUTED,
                         ),
                     bottomRight =
                         KeyC(
-                            action = KeyAction.CommitText("…"),
+                            KeyAction.CommitText("…"),
                             color = ColorVariant.MUTED,
                         ),
                     bottom =
                         KeyC(
-                            action = KeyAction.CommitText("."),
+                            KeyAction.CommitText("."),
                             color = ColorVariant.MUTED,
                         ),
                     bottomLeft =
                         KeyC(
-                            action = KeyAction.CommitText(","),
+                            KeyAction.CommitText(","),
                             color = ColorVariant.MUTED,
                         ),
                     left =
                         KeyC(
-                            action = KeyAction.CommitText("־"),
+                            KeyAction.CommitText("־"),
                             color = ColorVariant.MUTED,
                         ),
                 ),
                 KeyItemC(
                     center =
                         KeyC(
-                            action = KeyAction.CommitText("י"),
+                            KeyAction.CommitText("י"),
                             size = FontSizeVariant.LARGE,
                         ),
                     topLeft =
                         KeyC(
-                            action = KeyAction.CommitText("ח"),
+                            KeyAction.CommitText("ח"),
                         ),
                     bottomLeft =
                         KeyC(
-                            action = KeyAction.CommitText("’"),
+                            KeyAction.CommitText("’"),
                             color = ColorVariant.MUTED,
                         ),
                     swipeType = SwipeNWay.FOUR_WAY_DIAGONAL,

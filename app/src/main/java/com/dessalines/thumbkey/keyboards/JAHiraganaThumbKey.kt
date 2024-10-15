@@ -18,73 +18,73 @@ val KB_JA_HIRAGANA_THUMBKEY_MAIN =
                 KeyItemC(
                     center =
                         KeyC(
-                            action = KeyAction.CommitText("ま"),
+                            KeyAction.CommitText("ま"),
                             size = FontSizeVariant.LARGE,
                         ),
                     swipeType = SwipeNWay.FOUR_WAY_CROSS,
                     bottom =
                         KeyC(
-                            action = KeyAction.CommitText("み"),
+                            KeyAction.CommitText("み"),
                         ),
                     left =
                         KeyC(
-                            action = KeyAction.CommitText("む"),
+                            KeyAction.CommitText("む"),
                         ),
                     top =
                         KeyC(
-                            action = KeyAction.CommitText("め"),
+                            KeyAction.CommitText("め"),
                         ),
                     right =
                         KeyC(
-                            action = KeyAction.CommitText("も"),
+                            KeyAction.CommitText("も"),
                         ),
                 ),
                 KeyItemC(
                     center =
                         KeyC(
-                            action = KeyAction.CommitText("は"),
+                            KeyAction.CommitText("は"),
                             size = FontSizeVariant.LARGE,
                         ),
                     swipeType = SwipeNWay.FOUR_WAY_CROSS,
                     bottom =
                         KeyC(
-                            action = KeyAction.CommitText("ひ"),
+                            KeyAction.CommitText("ひ"),
                         ),
                     left =
                         KeyC(
-                            action = KeyAction.CommitText("ふ"),
+                            KeyAction.CommitText("ふ"),
                         ),
                     top =
                         KeyC(
-                            action = KeyAction.CommitText("へ"),
+                            KeyAction.CommitText("へ"),
                         ),
                     right =
                         KeyC(
-                            action = KeyAction.CommitText("ほ"),
+                            KeyAction.CommitText("ほ"),
                         ),
                 ),
                 KeyItemC(
                     center =
                         KeyC(
-                            action = KeyAction.CommitText("さ"),
+                            KeyAction.CommitText("さ"),
                             size = FontSizeVariant.LARGE,
                         ),
                     swipeType = SwipeNWay.FOUR_WAY_CROSS,
                     bottom =
                         KeyC(
-                            action = KeyAction.CommitText("し"),
+                            KeyAction.CommitText("し"),
                         ),
                     left =
                         KeyC(
-                            action = KeyAction.CommitText("す"),
+                            KeyAction.CommitText("す"),
                         ),
                     top =
                         KeyC(
-                            action = KeyAction.CommitText("せ"),
+                            KeyAction.CommitText("せ"),
                         ),
                     right =
                         KeyC(
-                            action = KeyAction.CommitText("そ"),
+                            KeyAction.CommitText("そ"),
                         ),
                 ),
                 EMOJI_KEY_ITEM,
@@ -93,65 +93,65 @@ val KB_JA_HIRAGANA_THUMBKEY_MAIN =
                 KeyItemC(
                     center =
                         KeyC(
-                            action = KeyAction.CommitText("や"),
+                            KeyAction.CommitText("や"),
                             size = FontSizeVariant.LARGE,
                         ),
                     swipeType = SwipeNWay.FOUR_WAY_CROSS,
                     bottom =
                         KeyC(
-                            action = KeyAction.CommitText("ゆ"),
+                            KeyAction.CommitText("ゆ"),
                         ),
                     right =
                         KeyC(
-                            action = KeyAction.CommitText("よ"),
+                            KeyAction.CommitText("よ"),
                         ),
                 ),
                 KeyItemC(
                     center =
                         KeyC(
-                            action = KeyAction.CommitText("な"),
+                            KeyAction.CommitText("な"),
                             size = FontSizeVariant.LARGE,
                         ),
                     swipeType = SwipeNWay.FOUR_WAY_CROSS,
                     bottom =
                         KeyC(
-                            action = KeyAction.CommitText("に"),
+                            KeyAction.CommitText("に"),
                         ),
                     left =
                         KeyC(
-                            action = KeyAction.CommitText("ぬ"),
+                            KeyAction.CommitText("ぬ"),
                         ),
                     top =
                         KeyC(
-                            action = KeyAction.CommitText("ね"),
+                            KeyAction.CommitText("ね"),
                         ),
                     right =
                         KeyC(
-                            action = KeyAction.CommitText("の"),
+                            KeyAction.CommitText("の"),
                         ),
                 ),
                 KeyItemC(
                     center =
                         KeyC(
-                            action = KeyAction.CommitText("か"),
+                            KeyAction.CommitText("か"),
                             size = FontSizeVariant.LARGE,
                         ),
                     swipeType = SwipeNWay.FOUR_WAY_CROSS,
                     bottom =
                         KeyC(
-                            action = KeyAction.CommitText("き"),
+                            KeyAction.CommitText("き"),
                         ),
                     left =
                         KeyC(
-                            action = KeyAction.CommitText("く"),
+                            KeyAction.CommitText("く"),
                         ),
                     top =
                         KeyC(
-                            action = KeyAction.CommitText("け"),
+                            KeyAction.CommitText("け"),
                         ),
                     right =
                         KeyC(
-                            action = KeyAction.CommitText("こ"),
+                            KeyAction.CommitText("こ"),
                         ),
                 ),
                 NUMERIC_KEY_ITEM,
@@ -160,73 +160,73 @@ val KB_JA_HIRAGANA_THUMBKEY_MAIN =
                 KeyItemC(
                     center =
                         KeyC(
-                            action = KeyAction.CommitText("ら"),
+                            KeyAction.CommitText("ら"),
                             size = FontSizeVariant.LARGE,
                         ),
                     swipeType = SwipeNWay.FOUR_WAY_CROSS,
                     bottom =
                         KeyC(
-                            action = KeyAction.CommitText("り"),
+                            KeyAction.CommitText("り"),
                         ),
                     left =
                         KeyC(
-                            action = KeyAction.CommitText("る"),
+                            KeyAction.CommitText("る"),
                         ),
                     top =
                         KeyC(
-                            action = KeyAction.CommitText("れ"),
+                            KeyAction.CommitText("れ"),
                         ),
                     right =
                         KeyC(
-                            action = KeyAction.CommitText("ろ"),
+                            KeyAction.CommitText("ろ"),
                         ),
                 ),
                 KeyItemC(
                     center =
                         KeyC(
-                            action = KeyAction.CommitText("た"),
+                            KeyAction.CommitText("た"),
                             size = FontSizeVariant.LARGE,
                         ),
                     swipeType = SwipeNWay.FOUR_WAY_CROSS,
                     bottom =
                         KeyC(
-                            action = KeyAction.CommitText("ち"),
+                            KeyAction.CommitText("ち"),
                         ),
                     left =
                         KeyC(
-                            action = KeyAction.CommitText("つ"),
+                            KeyAction.CommitText("つ"),
                         ),
                     top =
                         KeyC(
-                            action = KeyAction.CommitText("て"),
+                            KeyAction.CommitText("て"),
                         ),
                     right =
                         KeyC(
-                            action = KeyAction.CommitText("と"),
+                            KeyAction.CommitText("と"),
                         ),
                 ),
                 KeyItemC(
                     center =
                         KeyC(
-                            action = KeyAction.CommitText("あ"),
+                            KeyAction.CommitText("あ"),
                             size = FontSizeVariant.LARGE,
                         ),
                     swipeType = SwipeNWay.FOUR_WAY_CROSS,
                     bottom =
                         KeyC(
-                            action = KeyAction.CommitText("い"),
+                            KeyAction.CommitText("い"),
                         ),
                     left =
                         KeyC(
-                            action = KeyAction.CommitText("う"),
+                            KeyAction.CommitText("う"),
                         ),
                     top =
                         KeyC(
-                            action = KeyAction.CommitText("え"),
+                            KeyAction.CommitText("え"),
                         ),
                     right =
                         KeyC(
-                            action = KeyAction.CommitText("お"),
+                            KeyAction.CommitText("お"),
                         ),
                 ),
                 BACKSPACE_KEY_ITEM,
@@ -235,25 +235,25 @@ val KB_JA_HIRAGANA_THUMBKEY_MAIN =
                 KeyItemC(
                     center =
                         KeyC(
-                            action = KeyAction.CommitText("わ"),
+                            KeyAction.CommitText("わ"),
                             size = FontSizeVariant.LARGE,
                         ),
                     swipeType = SwipeNWay.FOUR_WAY_CROSS,
                     bottom =
                         KeyC(
-                            action = KeyAction.CommitText("ゐ"),
+                            KeyAction.CommitText("ゐ"),
                         ),
                     left =
                         KeyC(
-                            action = KeyAction.CommitText("ん"),
+                            KeyAction.CommitText("ん"),
                         ),
                     top =
                         KeyC(
-                            action = KeyAction.CommitText("ゑ"),
+                            KeyAction.CommitText("ゑ"),
                         ),
                     right =
                         KeyC(
-                            action = KeyAction.CommitText("を"),
+                            KeyAction.CommitText("を"),
                         ),
                 ),
                 KeyItemC(
@@ -266,7 +266,7 @@ val KB_JA_HIRAGANA_THUMBKEY_MAIN =
                     swipeType = SwipeNWay.FOUR_WAY_CROSS,
                     left =
                         KeyC(
-                            action = KeyAction.CommitText("。"),
+                            KeyAction.CommitText("。"),
                         ),
                     top =
                         KeyC(
@@ -277,18 +277,18 @@ val KB_JA_HIRAGANA_THUMBKEY_MAIN =
                         ),
                     bottom =
                         KeyC(
-                            action = KeyAction.ToggleShiftMode(false),
+                            KeyAction.ToggleShiftMode(false),
                             swipeReturnAction = KeyAction.ToggleCurrentWordCapitalization(false),
                         ),
                     right =
                         KeyC(
-                            action = KeyAction.CommitText("、"),
+                            KeyAction.CommitText("、"),
                         ),
                 ),
                 KeyItemC(
                     center =
                         KeyC(
-                            action = KeyAction.CommitText(" "),
+                            KeyAction.CommitText(" "),
                         ),
                     backgroundColor = ColorVariant.SURFACE_VARIANT,
                 ),
@@ -304,61 +304,61 @@ val KB_JA_HIRAGANA_THUMBKEY_SHIFTED =
                 KeyItemC(
                     center =
                         KeyC(
-                            action = KeyAction.CommitText("「"),
+                            KeyAction.CommitText("「"),
                             size = FontSizeVariant.LARGE,
                         ),
                     swipeType = SwipeNWay.FOUR_WAY_CROSS,
                     bottom =
                         KeyC(
-                            action = KeyAction.CommitText("【"),
+                            KeyAction.CommitText("【"),
                         ),
                     left =
                         KeyC(
-                            action = KeyAction.CommitText("〔"),
+                            KeyAction.CommitText("〔"),
                         ),
                     top =
                         KeyC(
-                            action = KeyAction.CommitText("〖"),
+                            KeyAction.CommitText("〖"),
                         ),
                     right =
                         KeyC(
-                            action = KeyAction.CommitText("『"),
+                            KeyAction.CommitText("『"),
                         ),
                 ),
                 KeyItemC(
                     center =
                         KeyC(
-                            action = KeyAction.CommitText("・"),
+                            KeyAction.CommitText("・"),
                             size = FontSizeVariant.LARGE,
                         ),
                     swipeType = SwipeNWay.TWO_WAY_VERTICAL,
                     bottom =
                         KeyC(
-                            action = KeyAction.CommitText("※"),
+                            KeyAction.CommitText("※"),
                         ),
                 ),
                 KeyItemC(
                     center =
                         KeyC(
-                            action = KeyAction.CommitText("」"),
+                            KeyAction.CommitText("」"),
                             size = FontSizeVariant.LARGE,
                         ),
                     swipeType = SwipeNWay.FOUR_WAY_CROSS,
                     bottom =
                         KeyC(
-                            action = KeyAction.CommitText("】"),
+                            KeyAction.CommitText("】"),
                         ),
                     left =
                         KeyC(
-                            action = KeyAction.CommitText("』"),
+                            KeyAction.CommitText("』"),
                         ),
                     top =
                         KeyC(
-                            action = KeyAction.CommitText("〗"),
+                            KeyAction.CommitText("〗"),
                         ),
                     right =
                         KeyC(
-                            action = KeyAction.CommitText("〕"),
+                            KeyAction.CommitText("〕"),
                         ),
                 ),
                 EMOJI_KEY_ITEM,
@@ -367,21 +367,21 @@ val KB_JA_HIRAGANA_THUMBKEY_SHIFTED =
                 KeyItemC(
                     center =
                         KeyC(
-                            action = KeyAction.CommitText("（"),
+                            KeyAction.CommitText("（"),
                             size = FontSizeVariant.LARGE,
                         ),
                 ),
                 KeyItemC(
                     center =
                         KeyC(
-                            action = KeyAction.CommitText("！"),
+                            KeyAction.CommitText("！"),
                             size = FontSizeVariant.LARGE,
                         ),
                 ),
                 KeyItemC(
                     center =
                         KeyC(
-                            action = KeyAction.CommitText("）"),
+                            KeyAction.CommitText("）"),
                             size = FontSizeVariant.LARGE,
                         ),
                 ),
@@ -391,21 +391,21 @@ val KB_JA_HIRAGANA_THUMBKEY_SHIFTED =
                 KeyItemC(
                     center =
                         KeyC(
-                            action = KeyAction.CommitText("ゟ"),
+                            KeyAction.CommitText("ゟ"),
                             size = FontSizeVariant.LARGE,
                         ),
                 ),
                 KeyItemC(
                     center =
                         KeyC(
-                            action = KeyAction.CommitText("？"),
+                            KeyAction.CommitText("？"),
                             size = FontSizeVariant.LARGE,
                         ),
                 ),
                 KeyItemC(
                     center =
                         KeyC(
-                            action = KeyAction.CommitText("ゝ"),
+                            KeyAction.CommitText("ゝ"),
                             size = FontSizeVariant.LARGE,
                         ),
                 ),
@@ -415,17 +415,17 @@ val KB_JA_HIRAGANA_THUMBKEY_SHIFTED =
                 KeyItemC(
                     center =
                         KeyC(
-                            action = KeyAction.CommitText("ー"),
+                            KeyAction.CommitText("ー"),
                             size = FontSizeVariant.LARGE,
                         ),
                     swipeType = SwipeNWay.FOUR_WAY_CROSS,
                     right =
                         KeyC(
-                            action = KeyAction.CommitText("〜"),
+                            KeyAction.CommitText("〜"),
                         ),
                     top =
                         KeyC(
-                            action = KeyAction.CommitText("…"),
+                            KeyAction.CommitText("…"),
                         ),
                 ),
                 KeyItemC(
@@ -440,7 +440,7 @@ val KB_JA_HIRAGANA_THUMBKEY_SHIFTED =
                 KeyItemC(
                     center =
                         KeyC(
-                            action = KeyAction.CommitText(" "),
+                            KeyAction.CommitText(" "),
                         ),
                     backgroundColor = ColorVariant.SURFACE_VARIANT,
                 ),

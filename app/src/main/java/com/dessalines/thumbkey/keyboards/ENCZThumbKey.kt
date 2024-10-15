@@ -23,57 +23,57 @@ val KB_EN_CZ_THUMBKEY_MAIN =
                 KeyItemC(
                     center =
                         KeyC(
-                            action = KeyAction.CommitText("s"),
+                            KeyAction.CommitText("s"),
                             size = FontSizeVariant.LARGE,
                         ),
                     swipeType = SwipeNWay.FOUR_WAY_DIAGONAL,
                     bottomRight =
                         KeyC(
-                            action = KeyAction.CommitText("w"),
+                            KeyAction.CommitText("w"),
                         ),
                     topRight =
                         KeyC(
-                            action = KeyAction.CommitText("š"),
+                            KeyAction.CommitText("š"),
                         ),
                 ),
                 KeyItemC(
                     center =
                         KeyC(
-                            action = KeyAction.CommitText("r"),
+                            KeyAction.CommitText("r"),
                             size = FontSizeVariant.LARGE,
                         ),
                     swipeType = SwipeNWay.TWO_WAY_VERTICAL,
                     bottom =
                         KeyC(
-                            action = KeyAction.CommitText("g"),
+                            KeyAction.CommitText("g"),
                         ),
                     top =
                         KeyC(
-                            action = KeyAction.CommitText("ř"),
+                            KeyAction.CommitText("ř"),
                         ),
                 ),
                 KeyItemC(
                     center =
                         KeyC(
-                            action = KeyAction.CommitText("o"),
+                            KeyAction.CommitText("o"),
                             size = FontSizeVariant.LARGE,
                         ),
                     swipeType = SwipeNWay.FOUR_WAY_DIAGONAL,
                     bottomLeft =
                         KeyC(
-                            action = KeyAction.CommitText("u"),
+                            KeyAction.CommitText("u"),
                         ),
                     topRight =
                         KeyC(
-                            action = KeyAction.CommitText("ó"),
+                            KeyAction.CommitText("ó"),
                         ),
                     bottomRight =
                         KeyC(
-                            action = KeyAction.CommitText("ů"),
+                            KeyAction.CommitText("ů"),
                         ),
                     topLeft =
                         KeyC(
-                            action = KeyAction.CommitText("ú"),
+                            KeyAction.CommitText("ú"),
                         ),
                 ),
                 EMOJI_KEY_ITEM,
@@ -82,72 +82,72 @@ val KB_EN_CZ_THUMBKEY_MAIN =
                 KeyItemC(
                     center =
                         KeyC(
-                            action = KeyAction.CommitText("n"),
+                            KeyAction.CommitText("n"),
                             size = FontSizeVariant.LARGE,
                         ),
                     swipeType = SwipeNWay.FOUR_WAY_CROSS,
                     right =
                         KeyC(
-                            action = KeyAction.CommitText("m"),
+                            KeyAction.CommitText("m"),
                         ),
                     top =
                         KeyC(
-                            action = KeyAction.CommitText("ň"),
+                            KeyAction.CommitText("ň"),
                         ),
                 ),
                 KeyItemC(
                     center =
                         KeyC(
-                            action = KeyAction.CommitText("h"),
+                            KeyAction.CommitText("h"),
                             size = FontSizeVariant.LARGE,
                         ),
                     topLeft =
                         KeyC(
-                            action = KeyAction.CommitText("j"),
+                            KeyAction.CommitText("j"),
                         ),
                     top =
                         KeyC(
-                            action = KeyAction.CommitText("q"),
+                            KeyAction.CommitText("q"),
                         ),
                     topRight =
                         KeyC(
-                            action = KeyAction.CommitText("b"),
+                            KeyAction.CommitText("b"),
                         ),
                     right =
                         KeyC(
-                            action = KeyAction.CommitText("p"),
+                            KeyAction.CommitText("p"),
                         ),
                     bottomRight =
                         KeyC(
-                            action = KeyAction.CommitText("y"),
+                            KeyAction.CommitText("y"),
                         ),
                     bottom =
                         KeyC(
-                            action = KeyAction.CommitText("x"),
+                            KeyAction.CommitText("x"),
                         ),
                     bottomLeft =
                         KeyC(
-                            action = KeyAction.CommitText("v"),
+                            KeyAction.CommitText("v"),
                         ),
                     left =
                         KeyC(
-                            action = KeyAction.CommitText("k"),
+                            KeyAction.CommitText("k"),
                         ),
                 ),
                 KeyItemC(
                     center =
                         KeyC(
-                            action = KeyAction.CommitText("a"),
+                            KeyAction.CommitText("a"),
                             size = FontSizeVariant.LARGE,
                         ),
                     swipeType = SwipeNWay.FOUR_WAY_CROSS,
                     left =
                         KeyC(
-                            action = KeyAction.CommitText("l"),
+                            KeyAction.CommitText("l"),
                         ),
                     right =
                         KeyC(
-                            action = KeyAction.CommitText("á"),
+                            KeyAction.CommitText("á"),
                         ),
                     top =
                         KeyC(
@@ -158,7 +158,7 @@ val KB_EN_CZ_THUMBKEY_MAIN =
                         ),
                     bottom =
                         KeyC(
-                            action = KeyAction.ToggleShiftMode(false),
+                            KeyAction.ToggleShiftMode(false),
                             swipeReturnAction = KeyAction.ToggleCurrentWordCapitalization(false),
                         ),
                 ),
@@ -168,85 +168,85 @@ val KB_EN_CZ_THUMBKEY_MAIN =
                 KeyItemC(
                     center =
                         KeyC(
-                            action = KeyAction.CommitText("t"),
+                            KeyAction.CommitText("t"),
                             size = FontSizeVariant.LARGE,
                         ),
                     topRight =
                         KeyC(
-                            action = KeyAction.CommitText("c"),
+                            KeyAction.CommitText("c"),
                         ),
                     right =
                         KeyC(
-                            action = KeyAction.CommitText("č"),
+                            KeyAction.CommitText("č"),
                         ),
                     top =
                         KeyC(
-                            action = KeyAction.CommitText("ť"),
+                            KeyAction.CommitText("ť"),
                         ),
                 ),
                 KeyItemC(
                     center =
                         KeyC(
-                            action = KeyAction.CommitText("i"),
+                            KeyAction.CommitText("i"),
                             size = FontSizeVariant.LARGE,
                         ),
                     top =
                         KeyC(
-                            action = KeyAction.CommitText("f"),
+                            KeyAction.CommitText("f"),
                         ),
                     topRight =
                         KeyC(
-                            action = KeyAction.CommitText("í"),
+                            KeyAction.CommitText("í"),
                         ),
                     topLeft =
                         KeyC(
-                            action = KeyAction.CommitText("ý"),
+                            KeyAction.CommitText("ý"),
                         ),
                     right =
                         KeyC(
-                            action = KeyAction.CommitText("z"),
+                            KeyAction.CommitText("z"),
                         ),
                     left =
                         KeyC(
-                            action = KeyAction.CommitText("ž"),
+                            KeyAction.CommitText("ž"),
                         ),
                     bottomRight =
                         KeyC(
-                            action = KeyAction.CommitText("-"),
+                            KeyAction.CommitText("-"),
                             color = ColorVariant.MUTED,
                         ),
                     bottom =
                         KeyC(
-                            action = KeyAction.CommitText("."),
+                            KeyAction.CommitText("."),
                             color = ColorVariant.MUTED,
                         ),
                     bottomLeft =
                         KeyC(
-                            action = KeyAction.CommitText("*"),
+                            KeyAction.CommitText("*"),
                             color = ColorVariant.MUTED,
                         ),
                 ),
                 KeyItemC(
                     center =
                         KeyC(
-                            action = KeyAction.CommitText("e"),
+                            KeyAction.CommitText("e"),
                             size = FontSizeVariant.LARGE,
                         ),
                     topLeft =
                         KeyC(
-                            action = KeyAction.CommitText("d"),
+                            KeyAction.CommitText("d"),
                         ),
                     top =
                         KeyC(
-                            action = KeyAction.CommitText("é"),
+                            KeyAction.CommitText("é"),
                         ),
                     right =
                         KeyC(
-                            action = KeyAction.CommitText("ď"),
+                            KeyAction.CommitText("ď"),
                         ),
                     left =
                         KeyC(
-                            action = KeyAction.CommitText("ě"),
+                            KeyAction.CommitText("ě"),
                         ),
                 ),
                 BACKSPACE_KEY_ITEM,
@@ -265,57 +265,57 @@ val KB_EN_CZ_THUMBKEY_SHIFTED =
                 KeyItemC(
                     center =
                         KeyC(
-                            action = KeyAction.CommitText("S"),
+                            KeyAction.CommitText("S"),
                             size = FontSizeVariant.LARGE,
                         ),
                     swipeType = SwipeNWay.FOUR_WAY_DIAGONAL,
                     bottomRight =
                         KeyC(
-                            action = KeyAction.CommitText("W"),
+                            KeyAction.CommitText("W"),
                         ),
                     topRight =
                         KeyC(
-                            action = KeyAction.CommitText("Š"),
+                            KeyAction.CommitText("Š"),
                         ),
                 ),
                 KeyItemC(
                     center =
                         KeyC(
-                            action = KeyAction.CommitText("R"),
+                            KeyAction.CommitText("R"),
                             size = FontSizeVariant.LARGE,
                         ),
                     swipeType = SwipeNWay.TWO_WAY_VERTICAL,
                     bottom =
                         KeyC(
-                            action = KeyAction.CommitText("G"),
+                            KeyAction.CommitText("G"),
                         ),
                     top =
                         KeyC(
-                            action = KeyAction.CommitText("Ř"),
+                            KeyAction.CommitText("Ř"),
                         ),
                 ),
                 KeyItemC(
                     center =
                         KeyC(
-                            action = KeyAction.CommitText("O"),
+                            KeyAction.CommitText("O"),
                             size = FontSizeVariant.LARGE,
                         ),
                     swipeType = SwipeNWay.FOUR_WAY_DIAGONAL,
                     bottomLeft =
                         KeyC(
-                            action = KeyAction.CommitText("U"),
+                            KeyAction.CommitText("U"),
                         ),
                     topRight =
                         KeyC(
-                            action = KeyAction.CommitText("Ó"),
+                            KeyAction.CommitText("Ó"),
                         ),
                     bottomRight =
                         KeyC(
-                            action = KeyAction.CommitText("Ů"),
+                            KeyAction.CommitText("Ů"),
                         ),
                     topLeft =
                         KeyC(
-                            action = KeyAction.CommitText("Ú"),
+                            KeyAction.CommitText("Ú"),
                         ),
                 ),
                 EMOJI_KEY_ITEM,
@@ -324,72 +324,72 @@ val KB_EN_CZ_THUMBKEY_SHIFTED =
                 KeyItemC(
                     center =
                         KeyC(
-                            action = KeyAction.CommitText("N"),
+                            KeyAction.CommitText("N"),
                             size = FontSizeVariant.LARGE,
                         ),
                     swipeType = SwipeNWay.FOUR_WAY_CROSS,
                     right =
                         KeyC(
-                            action = KeyAction.CommitText("M"),
+                            KeyAction.CommitText("M"),
                         ),
                     top =
                         KeyC(
-                            action = KeyAction.CommitText("Ň"),
+                            KeyAction.CommitText("Ň"),
                         ),
                 ),
                 KeyItemC(
                     center =
                         KeyC(
-                            action = KeyAction.CommitText("H"),
+                            KeyAction.CommitText("H"),
                             size = FontSizeVariant.LARGE,
                         ),
                     topLeft =
                         KeyC(
-                            action = KeyAction.CommitText("J"),
+                            KeyAction.CommitText("J"),
                         ),
                     top =
                         KeyC(
-                            action = KeyAction.CommitText("Q"),
+                            KeyAction.CommitText("Q"),
                         ),
                     topRight =
                         KeyC(
-                            action = KeyAction.CommitText("B"),
+                            KeyAction.CommitText("B"),
                         ),
                     right =
                         KeyC(
-                            action = KeyAction.CommitText("P"),
+                            KeyAction.CommitText("P"),
                         ),
                     bottomRight =
                         KeyC(
-                            action = KeyAction.CommitText("Y"),
+                            KeyAction.CommitText("Y"),
                         ),
                     bottom =
                         KeyC(
-                            action = KeyAction.CommitText("X"),
+                            KeyAction.CommitText("X"),
                         ),
                     bottomLeft =
                         KeyC(
-                            action = KeyAction.CommitText("V"),
+                            KeyAction.CommitText("V"),
                         ),
                     left =
                         KeyC(
-                            action = KeyAction.CommitText("K"),
+                            KeyAction.CommitText("K"),
                         ),
                 ),
                 KeyItemC(
                     center =
                         KeyC(
-                            action = KeyAction.CommitText("A"),
+                            KeyAction.CommitText("A"),
                             size = FontSizeVariant.LARGE,
                         ),
                     swipeType = SwipeNWay.FOUR_WAY_CROSS,
                     left =
                         KeyC(
-                            action = KeyAction.CommitText("L"),
+                            KeyAction.CommitText("L"),
                         ),
                     right =
                         KeyC(
-                            action = KeyAction.CommitText("Á"),
+                            KeyAction.CommitText("Á"),
                         ),
                     top =
                         KeyC(
@@ -413,86 +413,86 @@ val KB_EN_CZ_THUMBKEY_SHIFTED =
                 KeyItemC(
                     center =
                         KeyC(
-                            action = KeyAction.CommitText("T"),
+                            KeyAction.CommitText("T"),
                             size = FontSizeVariant.LARGE,
                         ),
                     topRight =
                         KeyC(
-                            action = KeyAction.CommitText("C"),
+                            KeyAction.CommitText("C"),
                         ),
                     right =
                         KeyC(
-                            action = KeyAction.CommitText("Č"),
+                            KeyAction.CommitText("Č"),
                         ),
                     top =
                         KeyC(
-                            action = KeyAction.CommitText("Ť"),
+                            KeyAction.CommitText("Ť"),
                         ),
                 ),
                 KeyItemC(
                     center =
                         KeyC(
-                            action = KeyAction.CommitText("I"),
+                            KeyAction.CommitText("I"),
                             size = FontSizeVariant.LARGE,
                         ),
                     top =
                         KeyC(
-                            action = KeyAction.CommitText("F"),
+                            KeyAction.CommitText("F"),
                         ),
                     topRight =
                         KeyC(
-                            action = KeyAction.CommitText("Í"),
+                            KeyAction.CommitText("Í"),
                         ),
                     topLeft =
                         KeyC(
-                            action = KeyAction.CommitText("Ý"),
+                            KeyAction.CommitText("Ý"),
                         ),
                     right =
                         KeyC(
-                            action = KeyAction.CommitText("Z"),
+                            KeyAction.CommitText("Z"),
                         ),
                     left =
                         KeyC(
-                            action = KeyAction.CommitText("Ž"),
+                            KeyAction.CommitText("Ž"),
                         ),
                     bottomRight =
                         KeyC(
-                            action = KeyAction.CommitText("-"),
+                            KeyAction.CommitText("-"),
                             color = ColorVariant.MUTED,
                         ),
                     bottom =
                         KeyC(
-                            action = KeyAction.CommitText("."),
+                            KeyAction.CommitText("."),
                             color = ColorVariant.MUTED,
                         ),
                     bottomLeft =
                         KeyC(
-                            action = KeyAction.CommitText("*"),
+                            KeyAction.CommitText("*"),
                             color = ColorVariant.MUTED,
                         ),
                 ),
                 KeyItemC(
                     center =
                         KeyC(
-                            action = KeyAction.CommitText("E"),
+                            KeyAction.CommitText("E"),
                             size = FontSizeVariant.LARGE,
                         ),
                     swipeType = SwipeNWay.EIGHT_WAY,
                     topLeft =
                         KeyC(
-                            action = KeyAction.CommitText("D"),
+                            KeyAction.CommitText("D"),
                         ),
                     top =
                         KeyC(
-                            action = KeyAction.CommitText("É"),
+                            KeyAction.CommitText("É"),
                         ),
                     right =
                         KeyC(
-                            action = KeyAction.CommitText("Ď"),
+                            KeyAction.CommitText("Ď"),
                         ),
                     left =
                         KeyC(
-                            action = KeyAction.CommitText("Ě"),
+                            KeyAction.CommitText("Ě"),
                         ),
                 ),
                 BACKSPACE_KEY_ITEM,

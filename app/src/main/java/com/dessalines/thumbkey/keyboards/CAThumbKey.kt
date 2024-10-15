@@ -17,114 +17,114 @@ val KB_CA_THUMBKEY_MAIN =
                 KeyItemC(
                     center =
                         KeyC(
-                            action = KeyAction.CommitText("ᑊ"),
+                            KeyAction.CommitText("ᑊ"),
                         ),
                     top =
                         KeyC(
-                            action = KeyAction.CommitText("ᐱ"),
+                            KeyAction.CommitText("ᐱ"),
                             color = ColorVariant.PRIMARY,
                         ),
                     topRight =
                         KeyC(
-                            action = KeyAction.CommitText("ᐯ"),
+                            KeyAction.CommitText("ᐯ"),
                             color = ColorVariant.PRIMARY,
                         ),
                     right =
                         KeyC(
-                            action = KeyAction.CommitText("ᕑ"),
+                            KeyAction.CommitText("ᕑ"),
                         ),
                     bottom =
                         KeyC(
-                            action = KeyAction.CommitText("ᐸ"),
+                            KeyAction.CommitText("ᐸ"),
                             color = ColorVariant.PRIMARY,
                         ),
                     bottomRight =
                         KeyC(
-                            action = KeyAction.CommitText("ᐳ"),
+                            KeyAction.CommitText("ᐳ"),
                             color = ColorVariant.PRIMARY,
                         ),
                 ),
                 KeyItemC(
                     center =
                         KeyC(
-                            action = KeyAction.CommitText("ᐨ"),
+                            KeyAction.CommitText("ᐨ"),
                         ),
                     topLeft =
                         KeyC(
-                            action = KeyAction.CommitText("ᒋ"),
+                            KeyAction.CommitText("ᒋ"),
                             size = FontSizeVariant.LARGE,
                         ),
                     top =
                         KeyC(
-                            action = KeyAction.CommitText("ᕠ"),
+                            KeyAction.CommitText("ᕠ"),
                         ),
                     topRight =
                         KeyC(
-                            action = KeyAction.CommitText("ᒉ"),
+                            KeyAction.CommitText("ᒉ"),
                             size = FontSizeVariant.LARGE,
                         ),
                     left =
                         KeyC(
-                            action = KeyAction.CommitText("ᕦ"),
+                            KeyAction.CommitText("ᕦ"),
                         ),
                     right =
                         KeyC(
-                            action = KeyAction.CommitText("ᕤ"),
+                            KeyAction.CommitText("ᕤ"),
                         ),
                     bottomLeft =
                         KeyC(
-                            action = KeyAction.CommitText("ᒐ"),
+                            KeyAction.CommitText("ᒐ"),
                             size = FontSizeVariant.LARGE,
                         ),
                     bottom =
                         KeyC(
-                            action = KeyAction.CommitText("ᕞ"),
+                            KeyAction.CommitText("ᕞ"),
                         ),
                     bottomRight =
                         KeyC(
-                            action = KeyAction.CommitText("ᒍ"),
+                            KeyAction.CommitText("ᒍ"),
                             size = FontSizeVariant.LARGE,
                         ),
                 ),
                 KeyItemC(
                     center =
                         KeyC(
-                            action = KeyAction.CommitText("ᐢ"),
+                            KeyAction.CommitText("ᐢ"),
                         ),
                     topLeft =
                         KeyC(
-                            action = KeyAction.CommitText("ᓯ"),
+                            KeyAction.CommitText("ᓯ"),
                             size = FontSizeVariant.LARGE,
                         ),
                     top =
                         KeyC(
-                            action = KeyAction.CommitText("ᔑ"),
+                            KeyAction.CommitText("ᔑ"),
                         ),
                     topRight =
                         KeyC(
-                            action = KeyAction.CommitText("ᓭ"),
+                            KeyAction.CommitText("ᓭ"),
                             size = FontSizeVariant.LARGE,
                         ),
                     left =
                         KeyC(
-                            action = KeyAction.CommitText("ᔕ"),
+                            KeyAction.CommitText("ᔕ"),
                         ),
                     right =
                         KeyC(
-                            action = KeyAction.CommitText("ᔓ"),
+                            KeyAction.CommitText("ᔓ"),
                         ),
                     bottomLeft =
                         KeyC(
-                            action = KeyAction.CommitText("ᓴ"),
+                            KeyAction.CommitText("ᓴ"),
                             size = FontSizeVariant.LARGE,
                         ),
                     bottom =
                         KeyC(
-                            action = KeyAction.CommitText("ᔐ"),
+                            KeyAction.CommitText("ᔐ"),
                         ),
                     bottomRight =
                         KeyC(
-                            action = KeyAction.CommitText("ᓱ"),
+                            KeyAction.CommitText("ᓱ"),
                             size = FontSizeVariant.LARGE,
                         ),
                 ),
@@ -134,114 +134,114 @@ val KB_CA_THUMBKEY_MAIN =
                 KeyItemC(
                     center =
                         KeyC(
-                            action = KeyAction.CommitText("ᐟ"),
+                            KeyAction.CommitText("ᐟ"),
                         ),
                     top =
                         KeyC(
-                            action = KeyAction.CommitText("ᑎ"),
+                            KeyAction.CommitText("ᑎ"),
                             color = ColorVariant.PRIMARY,
                         ),
                     topRight =
                         KeyC(
-                            action = KeyAction.CommitText("ᑌ"),
+                            KeyAction.CommitText("ᑌ"),
                             color = ColorVariant.PRIMARY,
                         ),
                     right =
                         KeyC(
-                            action = KeyAction.CommitText("ᓫ"),
+                            KeyAction.CommitText("ᓫ"),
                         ),
                     bottom =
                         KeyC(
-                            action = KeyAction.CommitText("ᑕ"),
+                            KeyAction.CommitText("ᑕ"),
                             color = ColorVariant.PRIMARY,
                         ),
                     bottomRight =
                         KeyC(
-                            action = KeyAction.CommitText("ᑐ"),
+                            KeyAction.CommitText("ᑐ"),
                             color = ColorVariant.PRIMARY,
                         ),
                 ),
                 KeyItemC(
                     center =
                         KeyC(
-                            action = KeyAction.CommitText("ᐩ"),
+                            KeyAction.CommitText("ᐩ"),
                         ),
                     topLeft =
                         KeyC(
-                            action = KeyAction.CommitText("ᔨ"),
+                            KeyAction.CommitText("ᔨ"),
                             size = FontSizeVariant.LARGE,
                         ),
                     top =
                         KeyC(
-                            action = KeyAction.CommitText("ᕕ"),
+                            KeyAction.CommitText("ᕕ"),
                         ),
                     topRight =
                         KeyC(
-                            action = KeyAction.CommitText("ᔦ"),
+                            KeyAction.CommitText("ᔦ"),
                             size = FontSizeVariant.LARGE,
                         ),
                     left =
                         KeyC(
-                            action = KeyAction.CommitText("ᕙ"),
+                            KeyAction.CommitText("ᕙ"),
                         ),
                     right =
                         KeyC(
-                            action = KeyAction.CommitText("ᕗ"),
+                            KeyAction.CommitText("ᕗ"),
                         ),
                     bottomLeft =
                         KeyC(
-                            action = KeyAction.CommitText("ᔭ"),
+                            KeyAction.CommitText("ᔭ"),
                             size = FontSizeVariant.LARGE,
                         ),
                     bottom =
                         KeyC(
-                            action = KeyAction.CommitText("ᕓ"),
+                            KeyAction.CommitText("ᕓ"),
                         ),
                     bottomRight =
                         KeyC(
-                            action = KeyAction.CommitText("ᔪ"),
+                            KeyAction.CommitText("ᔪ"),
                             size = FontSizeVariant.LARGE,
                         ),
                 ),
                 KeyItemC(
                     center =
                         KeyC(
-                            action = KeyAction.CommitText("ᒼ"),
+                            KeyAction.CommitText("ᒼ"),
                         ),
                     topLeft =
                         KeyC(
-                            action = KeyAction.CommitText("ᒥ"),
+                            KeyAction.CommitText("ᒥ"),
                             size = FontSizeVariant.LARGE,
                         ),
                     top =
                         KeyC(
-                            action = KeyAction.CommitText("ᕆ"),
+                            KeyAction.CommitText("ᕆ"),
                         ),
                     topRight =
                         KeyC(
-                            action = KeyAction.CommitText("ᒣ"),
+                            KeyAction.CommitText("ᒣ"),
                             size = FontSizeVariant.LARGE,
                         ),
                     left =
                         KeyC(
-                            action = KeyAction.CommitText("ᕋ"),
+                            KeyAction.CommitText("ᕋ"),
                         ),
                     right =
                         KeyC(
-                            action = KeyAction.CommitText("ᕈ"),
+                            KeyAction.CommitText("ᕈ"),
                         ),
                     bottomLeft =
                         KeyC(
-                            action = KeyAction.CommitText("ᒪ"),
+                            KeyAction.CommitText("ᒪ"),
                             size = FontSizeVariant.LARGE,
                         ),
                     bottom =
                         KeyC(
-                            action = KeyAction.CommitText("ᕃ"),
+                            KeyAction.CommitText("ᕃ"),
                         ),
                     bottomRight =
                         KeyC(
-                            action = KeyAction.CommitText("ᒧ"),
+                            KeyAction.CommitText("ᒧ"),
                             size = FontSizeVariant.LARGE,
                         ),
                 ),
@@ -251,41 +251,41 @@ val KB_CA_THUMBKEY_MAIN =
                 KeyItemC(
                     center =
                         KeyC(
-                            action = KeyAction.CommitText("ᐤ"),
+                            KeyAction.CommitText("ᐤ"),
                         ),
                     top =
                         KeyC(
-                            action = KeyAction.CommitText("ᐃ"),
+                            KeyAction.CommitText("ᐃ"),
                             color = ColorVariant.PRIMARY,
                         ),
                     topRight =
                         KeyC(
-                            action = KeyAction.CommitText("ᐁ"),
+                            KeyAction.CommitText("ᐁ"),
                             color = ColorVariant.PRIMARY,
                         ),
                     right =
                         KeyC(
-                            action = KeyAction.CommitText("ᕽ"),
+                            KeyAction.CommitText("ᕽ"),
                         ),
                     bottom =
                         KeyC(
-                            action = KeyAction.CommitText("ᐊ"),
+                            KeyAction.CommitText("ᐊ"),
                             color = ColorVariant.PRIMARY,
                         ),
                     bottomRight =
                         KeyC(
-                            action = KeyAction.CommitText("ᐅ"),
+                            KeyAction.CommitText("ᐅ"),
                             color = ColorVariant.PRIMARY,
                         ),
                 ),
                 KeyItemC(
                     center =
                         KeyC(
-                            action = KeyAction.CommitText("ᐠ"),
+                            KeyAction.CommitText("ᐠ"),
                         ),
                     topLeft =
                         KeyC(
-                            action = KeyAction.CommitText("ᑭ"),
+                            KeyAction.CommitText("ᑭ"),
                             size = FontSizeVariant.LARGE,
                         ),
                     top =
@@ -297,71 +297,71 @@ val KB_CA_THUMBKEY_MAIN =
                         ),
                     topRight =
                         KeyC(
-                            action = KeyAction.CommitText("ᑫ"),
+                            KeyAction.CommitText("ᑫ"),
                             size = FontSizeVariant.LARGE,
                         ),
                     left =
                         KeyC(
-                            action = KeyAction.CommitText("·"),
+                            KeyAction.CommitText("·"),
                         ),
                     right =
                         KeyC(
-                            action = KeyAction.CommitText("᐀"),
+                            KeyAction.CommitText("᐀"),
                         ),
                     bottomLeft =
                         KeyC(
-                            action = KeyAction.CommitText("ᑲ"),
+                            KeyAction.CommitText("ᑲ"),
                             size = FontSizeVariant.LARGE,
                         ),
                     bottom =
                         KeyC(
-                            action = KeyAction.CommitText("ᐞ"),
+                            KeyAction.CommitText("ᐞ"),
                         ),
                     bottomRight =
                         KeyC(
-                            action = KeyAction.CommitText("ᑯ"),
+                            KeyAction.CommitText("ᑯ"),
                             size = FontSizeVariant.LARGE,
                         ),
                 ),
                 KeyItemC(
                     center =
                         KeyC(
-                            action = KeyAction.CommitText("ᐣ"),
+                            KeyAction.CommitText("ᐣ"),
                         ),
                     topLeft =
                         KeyC(
-                            action = KeyAction.CommitText("ᓂ"),
+                            KeyAction.CommitText("ᓂ"),
                             size = FontSizeVariant.LARGE,
                         ),
                     top =
                         KeyC(
-                            action = KeyAction.CommitText("ᓕ"),
+                            KeyAction.CommitText("ᓕ"),
                         ),
                     topRight =
                         KeyC(
-                            action = KeyAction.CommitText("ᓀ"),
+                            KeyAction.CommitText("ᓀ"),
                             size = FontSizeVariant.LARGE,
                         ),
                     left =
                         KeyC(
-                            action = KeyAction.CommitText("ᓚ"),
+                            KeyAction.CommitText("ᓚ"),
                         ),
                     right =
                         KeyC(
-                            action = KeyAction.CommitText("ᓗ"),
+                            KeyAction.CommitText("ᓗ"),
                         ),
                     bottomLeft =
                         KeyC(
-                            action = KeyAction.CommitText("ᓇ"),
+                            KeyAction.CommitText("ᓇ"),
                             size = FontSizeVariant.LARGE,
                         ),
                     bottom =
                         KeyC(
-                            action = KeyAction.CommitText("ᓓ"),
+                            KeyAction.CommitText("ᓓ"),
                         ),
                     bottomRight =
                         KeyC(
-                            action = KeyAction.CommitText("ᓄ"),
+                            KeyAction.CommitText("ᓄ"),
                             size = FontSizeVariant.LARGE,
                         ),
                 ),
@@ -381,114 +381,114 @@ val KB_CA_THUMBKEY_SHIFTED =
                 KeyItemC(
                     center =
                         KeyC(
-                            action = KeyAction.CommitText("ᐰ"),
+                            KeyAction.CommitText("ᐰ"),
                         ),
                     top =
                         KeyC(
-                            action = KeyAction.CommitText("ᐲ"),
+                            KeyAction.CommitText("ᐲ"),
                             color = ColorVariant.PRIMARY,
                         ),
                     topRight =
                         KeyC(
-                            action = KeyAction.CommitText("ᐶ"),
+                            KeyAction.CommitText("ᐶ"),
                             color = ColorVariant.PRIMARY,
                         ),
                     right =
                         KeyC(
-                            action = KeyAction.CommitText("ᐷ"),
+                            KeyAction.CommitText("ᐷ"),
                         ),
                     bottom =
                         KeyC(
-                            action = KeyAction.CommitText("ᐹ"),
+                            KeyAction.CommitText("ᐹ"),
                             color = ColorVariant.PRIMARY,
                         ),
                     bottomRight =
                         KeyC(
-                            action = KeyAction.CommitText("ᐴ"),
+                            KeyAction.CommitText("ᐴ"),
                             color = ColorVariant.PRIMARY,
                         ),
                 ),
                 KeyItemC(
                     center =
                         KeyC(
-                            action = KeyAction.CommitText("ᕪ"),
+                            KeyAction.CommitText("ᕪ"),
                         ),
                     topLeft =
                         KeyC(
-                            action = KeyAction.CommitText("ᒌ"),
+                            KeyAction.CommitText("ᒌ"),
                             size = FontSizeVariant.LARGE,
                         ),
                     top =
                         KeyC(
-                            action = KeyAction.CommitText("ᕢ"),
+                            KeyAction.CommitText("ᕢ"),
                         ),
                     topRight =
                         KeyC(
-                            action = KeyAction.CommitText("ᒊ"),
+                            KeyAction.CommitText("ᒊ"),
                             size = FontSizeVariant.LARGE,
                         ),
                     left =
                         KeyC(
-                            action = KeyAction.CommitText("ᕧ"),
+                            KeyAction.CommitText("ᕧ"),
                         ),
                     right =
                         KeyC(
-                            action = KeyAction.CommitText("ᕥ"),
+                            KeyAction.CommitText("ᕥ"),
                         ),
                     bottomLeft =
                         KeyC(
-                            action = KeyAction.CommitText("ᒑ"),
+                            KeyAction.CommitText("ᒑ"),
                             size = FontSizeVariant.LARGE,
                         ),
                     bottom =
                         KeyC(
-                            action = KeyAction.CommitText("ᕐ"),
+                            KeyAction.CommitText("ᕐ"),
                         ),
                     bottomRight =
                         KeyC(
-                            action = KeyAction.CommitText("ᒎ"),
+                            KeyAction.CommitText("ᒎ"),
                             size = FontSizeVariant.LARGE,
                         ),
                 ),
                 KeyItemC(
                     center =
                         KeyC(
-                            action = KeyAction.CommitText("ᐡ"),
+                            KeyAction.CommitText("ᐡ"),
                         ),
                     topLeft =
                         KeyC(
-                            action = KeyAction.CommitText("ᓰ"),
+                            KeyAction.CommitText("ᓰ"),
                             size = FontSizeVariant.LARGE,
                         ),
                     top =
                         KeyC(
-                            action = KeyAction.CommitText("ᔒ"),
+                            KeyAction.CommitText("ᔒ"),
                         ),
                     topRight =
                         KeyC(
-                            action = KeyAction.CommitText("ᓮ"),
+                            KeyAction.CommitText("ᓮ"),
                             size = FontSizeVariant.LARGE,
                         ),
                     left =
                         KeyC(
-                            action = KeyAction.CommitText("ᔖ"),
+                            KeyAction.CommitText("ᔖ"),
                         ),
                     right =
                         KeyC(
-                            action = KeyAction.CommitText("ᔔ"),
+                            KeyAction.CommitText("ᔔ"),
                         ),
                     bottomLeft =
                         KeyC(
-                            action = KeyAction.CommitText("ᓵ"),
+                            KeyAction.CommitText("ᓵ"),
                             size = FontSizeVariant.LARGE,
                         ),
                     bottom =
                         KeyC(
-                            action = KeyAction.CommitText("ᖕ"),
+                            KeyAction.CommitText("ᖕ"),
                         ),
                     bottomRight =
                         KeyC(
-                            action = KeyAction.CommitText("ᓲ"),
+                            KeyAction.CommitText("ᓲ"),
                             size = FontSizeVariant.LARGE,
                         ),
                 ),
@@ -498,114 +498,114 @@ val KB_CA_THUMBKEY_SHIFTED =
                 KeyItemC(
                     center =
                         KeyC(
-                            action = KeyAction.CommitText("ᑍ"),
+                            KeyAction.CommitText("ᑍ"),
                         ),
                     top =
                         KeyC(
-                            action = KeyAction.CommitText("ᑏ"),
+                            KeyAction.CommitText("ᑏ"),
                             color = ColorVariant.PRIMARY,
                         ),
                     topRight =
                         KeyC(
-                            action = KeyAction.CommitText("ᑓ"),
+                            KeyAction.CommitText("ᑓ"),
                             color = ColorVariant.PRIMARY,
                         ),
                     right =
                         KeyC(
-                            action = KeyAction.CommitText("ᑔ"),
+                            KeyAction.CommitText("ᑔ"),
                         ),
                     bottom =
                         KeyC(
-                            action = KeyAction.CommitText("ᑖ"),
+                            KeyAction.CommitText("ᑖ"),
                             color = ColorVariant.PRIMARY,
                         ),
                     bottomRight =
                         KeyC(
-                            action = KeyAction.CommitText("ᑑ"),
+                            KeyAction.CommitText("ᑑ"),
                             color = ColorVariant.PRIMARY,
                         ),
                 ),
                 KeyItemC(
                     center =
                         KeyC(
-                            action = KeyAction.CommitText("ᕝ"),
+                            KeyAction.CommitText("ᕝ"),
                         ),
                     topLeft =
                         KeyC(
-                            action = KeyAction.CommitText("ᔩ"),
+                            KeyAction.CommitText("ᔩ"),
                             size = FontSizeVariant.LARGE,
                         ),
                     top =
                         KeyC(
-                            action = KeyAction.CommitText("ᕖ"),
+                            KeyAction.CommitText("ᕖ"),
                         ),
                     topRight =
                         KeyC(
-                            action = KeyAction.CommitText("ᔧ"),
+                            KeyAction.CommitText("ᔧ"),
                             size = FontSizeVariant.LARGE,
                         ),
                     left =
                         KeyC(
-                            action = KeyAction.CommitText("ᕚ"),
+                            KeyAction.CommitText("ᕚ"),
                         ),
                     right =
                         KeyC(
-                            action = KeyAction.CommitText("ᕘ"),
+                            KeyAction.CommitText("ᕘ"),
                         ),
                     bottomLeft =
                         KeyC(
-                            action = KeyAction.CommitText("ᔮ"),
+                            KeyAction.CommitText("ᔮ"),
                             size = FontSizeVariant.LARGE,
                         ),
                     bottom =
                         KeyC(
-                            action = KeyAction.CommitText("ᕔ"),
+                            KeyAction.CommitText("ᕔ"),
                         ),
                     bottomRight =
                         KeyC(
-                            action = KeyAction.CommitText("ᔫ"),
+                            KeyAction.CommitText("ᔫ"),
                             size = FontSizeVariant.LARGE,
                         ),
                 ),
                 KeyItemC(
                     center =
                         KeyC(
-                            action = KeyAction.CommitText("ᔆ"),
+                            KeyAction.CommitText("ᔆ"),
                         ),
                     topLeft =
                         KeyC(
-                            action = KeyAction.CommitText("ᒦ"),
+                            KeyAction.CommitText("ᒦ"),
                             size = FontSizeVariant.LARGE,
                         ),
                     top =
                         KeyC(
-                            action = KeyAction.CommitText("ᕇ"),
+                            KeyAction.CommitText("ᕇ"),
                         ),
                     topRight =
                         KeyC(
-                            action = KeyAction.CommitText("ᒤ"),
+                            KeyAction.CommitText("ᒤ"),
                             size = FontSizeVariant.LARGE,
                         ),
                     left =
                         KeyC(
-                            action = KeyAction.CommitText("ᕌ"),
+                            KeyAction.CommitText("ᕌ"),
                         ),
                     right =
                         KeyC(
-                            action = KeyAction.CommitText("ᕉ"),
+                            KeyAction.CommitText("ᕉ"),
                         ),
                     bottomLeft =
                         KeyC(
-                            action = KeyAction.CommitText("ᒫ"),
+                            KeyAction.CommitText("ᒫ"),
                             size = FontSizeVariant.LARGE,
                         ),
                     bottom =
                         KeyC(
-                            action = KeyAction.CommitText("ᕅ"),
+                            KeyAction.CommitText("ᕅ"),
                         ),
                     bottomRight =
                         KeyC(
-                            action = KeyAction.CommitText("ᒨ"),
+                            KeyAction.CommitText("ᒨ"),
                             size = FontSizeVariant.LARGE,
                         ),
                 ),
@@ -615,41 +615,41 @@ val KB_CA_THUMBKEY_SHIFTED =
                 KeyItemC(
                     center =
                         KeyC(
-                            action = KeyAction.CommitText("ᐂ"),
+                            KeyAction.CommitText("ᐂ"),
                         ),
                     top =
                         KeyC(
-                            action = KeyAction.CommitText("ᐄ"),
+                            KeyAction.CommitText("ᐄ"),
                             color = ColorVariant.PRIMARY,
                         ),
                     topRight =
                         KeyC(
-                            action = KeyAction.CommitText("ᐈ"),
+                            KeyAction.CommitText("ᐈ"),
                             color = ColorVariant.PRIMARY,
                         ),
                     right =
                         KeyC(
-                            action = KeyAction.CommitText("ᐉ"),
+                            KeyAction.CommitText("ᐉ"),
                         ),
                     bottom =
                         KeyC(
-                            action = KeyAction.CommitText("ᐋ"),
+                            KeyAction.CommitText("ᐋ"),
                             color = ColorVariant.PRIMARY,
                         ),
                     bottomRight =
                         KeyC(
-                            action = KeyAction.CommitText("ᐆ"),
+                            KeyAction.CommitText("ᐆ"),
                             color = ColorVariant.PRIMARY,
                         ),
                 ),
                 KeyItemC(
                     center =
                         KeyC(
-                            action = KeyAction.CommitText("ᐬ"),
+                            KeyAction.CommitText("ᐬ"),
                         ),
                     topLeft =
                         KeyC(
-                            action = KeyAction.CommitText("ᑮ"),
+                            KeyAction.CommitText("ᑮ"),
                             size = FontSizeVariant.LARGE,
                         ),
                     top =
@@ -661,71 +661,71 @@ val KB_CA_THUMBKEY_SHIFTED =
                         ),
                     topRight =
                         KeyC(
-                            action = KeyAction.CommitText("ᑬ"),
+                            KeyAction.CommitText("ᑬ"),
                             size = FontSizeVariant.LARGE,
                         ),
                     left =
                         KeyC(
-                            action = KeyAction.CommitText("ᐮ"),
+                            KeyAction.CommitText("ᐮ"),
                         ),
                     right =
                         KeyC(
-                            action = KeyAction.CommitText("ᐭ"),
+                            KeyAction.CommitText("ᐭ"),
                         ),
                     bottomLeft =
                         KeyC(
-                            action = KeyAction.CommitText("ᑳ"),
+                            KeyAction.CommitText("ᑳ"),
                             size = FontSizeVariant.LARGE,
                         ),
                     bottom =
                         KeyC(
-                            action = KeyAction.CommitText("ᐫ"),
+                            KeyAction.CommitText("ᐫ"),
                         ),
                     bottomRight =
                         KeyC(
-                            action = KeyAction.CommitText("ᑰ"),
+                            KeyAction.CommitText("ᑰ"),
                             size = FontSizeVariant.LARGE,
                         ),
                 ),
                 KeyItemC(
                     center =
                         KeyC(
-                            action = KeyAction.CommitText("ᐪ"),
+                            KeyAction.CommitText("ᐪ"),
                         ),
                     topLeft =
                         KeyC(
-                            action = KeyAction.CommitText("ᓃ"),
+                            KeyAction.CommitText("ᓃ"),
                             size = FontSizeVariant.LARGE,
                         ),
                     top =
                         KeyC(
-                            action = KeyAction.CommitText("ᓖ"),
+                            KeyAction.CommitText("ᓖ"),
                         ),
                     topRight =
                         KeyC(
-                            action = KeyAction.CommitText("ᓁ"),
+                            KeyAction.CommitText("ᓁ"),
                             size = FontSizeVariant.LARGE,
                         ),
                     left =
                         KeyC(
-                            action = KeyAction.CommitText("ᓛ"),
+                            KeyAction.CommitText("ᓛ"),
                         ),
                     right =
                         KeyC(
-                            action = KeyAction.CommitText("ᓘ"),
+                            KeyAction.CommitText("ᓘ"),
                         ),
                     bottomLeft =
                         KeyC(
-                            action = KeyAction.CommitText("ᓈ"),
+                            KeyAction.CommitText("ᓈ"),
                             size = FontSizeVariant.LARGE,
                         ),
                     bottom =
                         KeyC(
-                            action = KeyAction.CommitText("ᓔ"),
+                            KeyAction.CommitText("ᓔ"),
                         ),
                     bottomRight =
                         KeyC(
-                            action = KeyAction.CommitText("ᓅ"),
+                            KeyAction.CommitText("ᓅ"),
                             size = FontSizeVariant.LARGE,
                         ),
                 ),

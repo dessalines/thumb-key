@@ -17,45 +17,45 @@ val KB_FA_THUMBKEY_MAIN =
                 KeyItemC(
                     center =
                         KeyC(
-                            action = KeyAction.CommitText("د"),
+                            KeyAction.CommitText("د"),
                             size = FontSizeVariant.LARGE,
                         ),
                     bottomRight =
                         KeyC(
-                            action = KeyAction.CommitText("ص"),
+                            KeyAction.CommitText("ص"),
                         ),
                     bottom =
                         KeyC(
-                            action = KeyAction.CommitText("ض"),
+                            KeyAction.CommitText("ض"),
                         ),
                 ),
                 KeyItemC(
                     center =
                         KeyC(
-                            action = KeyAction.CommitText("ر"),
+                            KeyAction.CommitText("ر"),
                             size = FontSizeVariant.LARGE,
                         ),
                     right =
                         KeyC(
-                            action = KeyAction.CommitText("ژ"),
+                            KeyAction.CommitText("ژ"),
                         ),
                     bottomRight =
                         KeyC(
-                            action = KeyAction.CommitText("ف"),
+                            KeyAction.CommitText("ف"),
                         ),
                     bottom =
                         KeyC(
-                            action = KeyAction.CommitText("ز"),
+                            KeyAction.CommitText("ز"),
                         ),
                     bottomLeft =
                         KeyC(
-                            action = KeyAction.CommitText("ق"),
+                            KeyAction.CommitText("ق"),
                         ),
                 ),
                 KeyItemC(
                     center =
                         KeyC(
-                            action = KeyAction.CommitText("و"),
+                            KeyAction.CommitText("و"),
                             size = FontSizeVariant.LARGE,
                         ),
                     topRight =
@@ -66,11 +66,11 @@ val KB_FA_THUMBKEY_MAIN =
                         ),
                     bottom =
                         KeyC(
-                            action = KeyAction.CommitText("ء"),
+                            KeyAction.CommitText("ء"),
                         ),
                     bottomLeft =
                         KeyC(
-                            action = KeyAction.CommitText("ع"),
+                            KeyAction.CommitText("ع"),
                         ),
                 ),
                 EMOJI_KEY_ITEM,
@@ -79,78 +79,78 @@ val KB_FA_THUMBKEY_MAIN =
                 KeyItemC(
                     center =
                         KeyC(
-                            action = KeyAction.CommitText("ن"),
+                            KeyAction.CommitText("ن"),
                             size = FontSizeVariant.LARGE,
                         ),
                     right =
                         KeyC(
-                            action = KeyAction.CommitText("ج"),
+                            KeyAction.CommitText("ج"),
                         ),
                     topRight =
                         KeyC(
-                            action = KeyAction.CommitText("ح"),
+                            KeyAction.CommitText("ح"),
                         ),
                     bottomRight =
                         KeyC(
-                            action = KeyAction.CommitText("چ"),
+                            KeyAction.CommitText("چ"),
                         ),
                 ),
                 KeyItemC(
                     center =
                         KeyC(
-                            action = KeyAction.CommitText("ا"),
+                            KeyAction.CommitText("ا"),
                             size = FontSizeVariant.LARGE,
                         ),
                     topLeft =
                         KeyC(
-                            action = KeyAction.CommitText("ذ"),
+                            KeyAction.CommitText("ذ"),
                         ),
                     top =
                         KeyC(
-                            action = KeyAction.CommitText("ب"),
+                            KeyAction.CommitText("ب"),
                         ),
                     topRight =
                         KeyC(
-                            action = KeyAction.CommitText("پ"),
+                            KeyAction.CommitText("پ"),
                         ),
                     right =
                         KeyC(
-                            action = KeyAction.CommitText("س"),
+                            KeyAction.CommitText("س"),
                         ),
                     bottomRight =
                         KeyC(
-                            action = KeyAction.CommitText("ش"),
+                            KeyAction.CommitText("ش"),
                         ),
                     bottom =
                         KeyC(
-                            action = KeyAction.CommitText("ل"),
+                            KeyAction.CommitText("ل"),
                         ),
                     bottomLeft =
                         KeyC(
-                            action = KeyAction.CommitText("آ"),
+                            KeyAction.CommitText("آ"),
                         ),
                     left =
                         KeyC(
-                            action = KeyAction.CommitText("خ"),
+                            KeyAction.CommitText("خ"),
                         ),
                 ),
                 KeyItemC(
                     center =
                         KeyC(
-                            action = KeyAction.CommitText("م"),
+                            KeyAction.CommitText("م"),
                             size = FontSizeVariant.LARGE,
                         ),
                     bottomLeft =
                         KeyC(
-                            action = KeyAction.CommitText("گ"),
+                            KeyAction.CommitText("گ"),
                         ),
                     left =
                         KeyC(
-                            action = KeyAction.CommitText("ک"),
+                            KeyAction.CommitText("ک"),
                         ),
                     topLeft =
                         KeyC(
-                            action = KeyAction.CommitText("غ"),
+                            KeyAction.CommitText("غ"),
                         ),
                 ),
                 NUMERIC_KEY_ITEM,
@@ -159,18 +159,18 @@ val KB_FA_THUMBKEY_MAIN =
                 KeyItemC(
                     center =
                         KeyC(
-                            action = KeyAction.CommitText("ت"),
+                            KeyAction.CommitText("ت"),
                             size = FontSizeVariant.LARGE,
                         ),
                     topRight =
                         KeyC(
-                            action = KeyAction.CommitText("ث"),
+                            KeyAction.CommitText("ث"),
                         ),
                 ),
                 KeyItemC(
                     center =
                         KeyC(
-                            action = KeyAction.CommitText("ی"),
+                            KeyAction.CommitText("ی"),
                             size = FontSizeVariant.LARGE,
                         ),
                     top =
@@ -181,46 +181,46 @@ val KB_FA_THUMBKEY_MAIN =
                         ),
                     right =
                         KeyC(
-                            action = KeyAction.CommitText("ئ"),
+                            KeyAction.CommitText("ئ"),
                         ),
                     bottomRight =
                         KeyC(
-                            action = KeyAction.CommitText("ـ"),
+                            KeyAction.CommitText("ـ"),
                             color = ColorVariant.MUTED,
                         ),
                     bottom =
                         KeyC(
-                            action = KeyAction.CommitText("."),
+                            KeyAction.CommitText("."),
                             color = ColorVariant.MUTED,
                         ),
                     left =
                         KeyC(
-                            action = KeyAction.CommitText("؟"),
+                            KeyAction.CommitText("؟"),
                             color = ColorVariant.MUTED,
                         ),
                     bottomLeft =
                         KeyC(
-                            action = KeyAction.CommitText("*"),
+                            KeyAction.CommitText("*"),
                             color = ColorVariant.MUTED,
                         ),
                 ),
                 KeyItemC(
                     center =
                         KeyC(
-                            action = KeyAction.CommitText("ه"),
+                            KeyAction.CommitText("ه"),
                             size = FontSizeVariant.LARGE,
                         ),
                     topLeft =
                         KeyC(
-                            action = KeyAction.CommitText("ط"),
+                            KeyAction.CommitText("ط"),
                         ),
                     top =
                         KeyC(
-                            action = KeyAction.CommitText("ظ"),
+                            KeyAction.CommitText("ظ"),
                         ),
                     left =
                         KeyC(
-                            action = KeyAction.CommitText("ۀ"),
+                            KeyAction.CommitText("ۀ"),
                         ),
                 ),
                 BACKSPACE_KEY_ITEM,

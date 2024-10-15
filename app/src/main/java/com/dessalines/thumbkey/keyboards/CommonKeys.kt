@@ -178,12 +178,12 @@ val BACKSPACE_KEY_ITEM =
         slideType = SlideType.DELETE,
         left =
             KeyC(
-                action = KeyAction.DeleteWordBeforeCursor,
+                KeyAction.DeleteWordBeforeCursor,
                 display = null,
             ),
         right =
             KeyC(
-                action = KeyAction.DeleteWordAfterCursor,
+                KeyAction.DeleteWordAfterCursor,
                 display = null,
             ),
         backgroundColor = ColorVariant.SURFACE_VARIANT,
@@ -196,7 +196,7 @@ val SPACEBAR_KEY_ITEM =
     KeyItemC(
         center =
             KeyC(
-                action = KeyAction.CommitText(" "),
+                KeyAction.CommitText(" "),
             ),
         swipeType = SwipeNWay.FOUR_WAY_CROSS,
         slideType = SlideType.MOVE_CURSOR,
@@ -241,7 +241,7 @@ val SPACEBAR_PROGRAMMING_KEY_ITEM =
     KeyItemC(
         center =
             KeyC(
-                action = KeyAction.CommitText(" "),
+                KeyAction.CommitText(" "),
             ),
         swipeType = SwipeNWay.FOUR_WAY_CROSS,
         slideType = SlideType.MOVE_CURSOR,
@@ -310,7 +310,7 @@ val SPACEBAR_TYPESPLIT_MIDDLE_KEY_ITEM =
     KeyItemC(
         center =
             KeyC(
-                action = KeyAction.CommitText(" "),
+                KeyAction.CommitText(" "),
             ),
         swipeType = SwipeNWay.FOUR_WAY_CROSS,
         slideType = SlideType.MOVE_CURSOR,
@@ -338,12 +338,12 @@ val SPACEBAR_TYPESPLIT_MIDDLE_KEY_ITEM =
             ),
         top =
             KeyC(
-                action = KeyAction.CommitText("'"),
+                KeyAction.CommitText("'"),
                 color = ColorVariant.MUTED,
             ),
         bottom =
             KeyC(
-                action = KeyAction.CommitText(","),
+                KeyAction.CommitText(","),
                 color = ColorVariant.MUTED,
             ),
         nextTapActions =
@@ -384,17 +384,17 @@ val SPACEBAR_TYPESPLIT_BOTTOM_KEY_ITEM =
             ),
         top =
             KeyC(
-                action = KeyAction.CommitText("-"),
+                KeyAction.CommitText("-"),
                 color = ColorVariant.MUTED,
             ),
         bottom =
             KeyC(
-                action = KeyAction.CommitText("."),
+                KeyAction.CommitText("."),
                 color = ColorVariant.MUTED,
             ),
         bottomLeft =
             KeyC(
-                action = KeyAction.CommitText("*"),
+                KeyAction.CommitText("*"),
                 color = ColorVariant.MUTED,
             ),
     )
@@ -403,22 +403,22 @@ val SPACEBAR_ALL_SYMBOLS =
     SPACEBAR_TYPESPLIT_MIDDLE_KEY_ITEM.copy(
         left =
             KeyC(
-                action = KeyAction.CommitText(","),
+                KeyAction.CommitText(","),
                 color = ColorVariant.MUTED,
             ),
         right =
             KeyC(
-                action = KeyAction.CommitText("'"),
+                KeyAction.CommitText("'"),
                 color = ColorVariant.MUTED,
             ),
         top =
             KeyC(
-                action = KeyAction.CommitText("-"),
+                KeyAction.CommitText("-"),
                 color = ColorVariant.MUTED,
             ),
         bottom =
             KeyC(
-                action = KeyAction.CommitText("."),
+                KeyAction.CommitText("."),
                 color = ColorVariant.MUTED,
             ),
     )
@@ -494,12 +494,12 @@ val BACKSPACE_TYPESPLIT_KEY_ITEM =
         slideType = SlideType.DELETE,
         left =
             KeyC(
-                action = KeyAction.DeleteWordBeforeCursor,
+                KeyAction.DeleteWordBeforeCursor,
                 display = null,
             ),
         right =
             KeyC(
-                action = KeyAction.DeleteWordAfterCursor,
+                KeyAction.DeleteWordAfterCursor,
                 display = null,
             ),
         top =
@@ -515,12 +515,12 @@ val BACKSPACE_TYPESPLIT_SHIFTED_KEY_ITEM =
     BACKSPACE_TYPESPLIT_KEY_ITEM.copy(
         left =
             KeyC(
-                action = KeyAction.DeleteWordBeforeCursor,
+                KeyAction.DeleteWordBeforeCursor,
                 display = null,
             ),
         right =
             KeyC(
-                action = KeyAction.DeleteWordAfterCursor,
+                KeyAction.DeleteWordAfterCursor,
                 display = null,
             ),
         top =

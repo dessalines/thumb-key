@@ -17,13 +17,13 @@ val KB_JA_KATAKANA_TYPESPLIT_MAIN =
                 KeyItemC(
                     center =
                         KeyC(
-                            action = KeyAction.CommitText("ワ"),
+                            KeyAction.CommitText("ワ"),
                             size = FontSizeVariant.LARGE,
                         ),
                     swipeType = SwipeNWay.FOUR_WAY_CROSS,
                     right =
                         KeyC(
-                            action = KeyAction.CommitText("ン"),
+                            KeyAction.CommitText("ン"),
                         ),
                     left =
                         KeyC(
@@ -32,38 +32,38 @@ val KB_JA_KATAKANA_TYPESPLIT_MAIN =
                         ),
                     bottom =
                         KeyC(
-                            action = KeyAction.CommitText("ヲ"),
+                            KeyAction.CommitText("ヲ"),
                         ),
                 ),
                 KeyItemC(
                     center =
                         KeyC(
-                            action = KeyAction.CommitText("タ"),
+                            KeyAction.CommitText("タ"),
                             size = FontSizeVariant.LARGE,
                         ),
                     swipeType = SwipeNWay.FOUR_WAY_CROSS,
                     right =
                         KeyC(
-                            action = KeyAction.CommitText("テ"),
+                            KeyAction.CommitText("テ"),
                         ),
                     left =
                         KeyC(
-                            action = KeyAction.CommitText("チ"),
+                            KeyAction.CommitText("チ"),
                         ),
                     bottom =
                         KeyC(
-                            action = KeyAction.CommitText("ト"),
+                            KeyAction.CommitText("ト"),
                         ),
                     top =
                         KeyC(
-                            action = KeyAction.CommitText("ツ"),
+                            KeyAction.CommitText("ツ"),
                         ),
                 ),
                 EMOJI_KEY_ITEM_ALT,
                 KeyItemC(
                     center =
                         KeyC(
-                            action = KeyAction.CommitText("ヤ"),
+                            KeyAction.CommitText("ヤ"),
                             size = FontSizeVariant.LARGE,
                         ),
                     swipeType = SwipeNWay.FOUR_WAY_CROSS,
@@ -79,35 +79,35 @@ val KB_JA_KATAKANA_TYPESPLIT_MAIN =
                         ),
                     bottom =
                         KeyC(
-                            action = KeyAction.CommitText("ヨ"),
+                            KeyAction.CommitText("ヨ"),
                         ),
                     top =
                         KeyC(
-                            action = KeyAction.CommitText("ユ"),
+                            KeyAction.CommitText("ユ"),
                         ),
                 ),
                 KeyItemC(
                     center =
                         KeyC(
-                            action = KeyAction.CommitText("ラ"),
+                            KeyAction.CommitText("ラ"),
                             size = FontSizeVariant.LARGE,
                         ),
                     swipeType = SwipeNWay.FOUR_WAY_CROSS,
                     right =
                         KeyC(
-                            action = KeyAction.CommitText("レ"),
+                            KeyAction.CommitText("レ"),
                         ),
                     left =
                         KeyC(
-                            action = KeyAction.CommitText("リ"),
+                            KeyAction.CommitText("リ"),
                         ),
                     bottom =
                         KeyC(
-                            action = KeyAction.CommitText("ロ"),
+                            KeyAction.CommitText("ロ"),
                         ),
                     top =
                         KeyC(
-                            action = KeyAction.CommitText("ル"),
+                            KeyAction.CommitText("ル"),
                         ),
                 ),
             ),
@@ -115,98 +115,98 @@ val KB_JA_KATAKANA_TYPESPLIT_MAIN =
                 KeyItemC(
                     center =
                         KeyC(
-                            action = KeyAction.CommitText("ア"),
+                            KeyAction.CommitText("ア"),
                             size = FontSizeVariant.LARGE,
                         ),
                     swipeType = SwipeNWay.FOUR_WAY_CROSS,
                     right =
                         KeyC(
-                            action = KeyAction.CommitText("イ"),
+                            KeyAction.CommitText("イ"),
                         ),
                     left =
                         KeyC(
-                            action = KeyAction.CommitText("エ"),
+                            KeyAction.CommitText("エ"),
                         ),
                     bottom =
                         KeyC(
-                            action = KeyAction.CommitText("オ"),
+                            KeyAction.CommitText("オ"),
                         ),
                     top =
                         KeyC(
-                            action = KeyAction.CommitText("ウ"),
+                            KeyAction.CommitText("ウ"),
                         ),
                 ),
                 KeyItemC(
                     center =
                         KeyC(
-                            action = KeyAction.CommitText("サ"),
+                            KeyAction.CommitText("サ"),
                             size = FontSizeVariant.LARGE,
                         ),
                     swipeType = SwipeNWay.FOUR_WAY_CROSS,
                     right =
                         KeyC(
-                            action = KeyAction.CommitText("セ"),
+                            KeyAction.CommitText("セ"),
                         ),
                     left =
                         KeyC(
-                            action = KeyAction.CommitText("シ"),
+                            KeyAction.CommitText("シ"),
                         ),
                     bottom =
                         KeyC(
-                            action = KeyAction.CommitText("ソ"),
+                            KeyAction.CommitText("ソ"),
                         ),
                     top =
                         KeyC(
-                            action = KeyAction.CommitText("ス"),
+                            KeyAction.CommitText("ス"),
                         ),
                 ),
                 SPACEBAR_TYPESPLIT_MIDDLE_KEY_ITEM,
                 KeyItemC(
                     center =
                         KeyC(
-                            action = KeyAction.CommitText("ハ"),
+                            KeyAction.CommitText("ハ"),
                             size = FontSizeVariant.LARGE,
                         ),
                     swipeType = SwipeNWay.FOUR_WAY_CROSS,
                     right =
                         KeyC(
-                            action = KeyAction.CommitText("ヒ"),
+                            KeyAction.CommitText("ヒ"),
                         ),
                     left =
                         KeyC(
-                            action = KeyAction.CommitText("ヘ"),
+                            KeyAction.CommitText("ヘ"),
                         ),
                     bottom =
                         KeyC(
-                            action = KeyAction.CommitText("ホ"),
+                            KeyAction.CommitText("ホ"),
                         ),
                     top =
                         KeyC(
-                            action = KeyAction.CommitText("フ"),
+                            KeyAction.CommitText("フ"),
                         ),
                 ),
                 KeyItemC(
                     center =
                         KeyC(
-                            action = KeyAction.CommitText("カ"),
+                            KeyAction.CommitText("カ"),
                             size = FontSizeVariant.LARGE,
                         ),
                     swipeType = SwipeNWay.FOUR_WAY_CROSS,
                     right =
                         KeyC(
-                            action = KeyAction.CommitText("ケ"),
+                            KeyAction.CommitText("ケ"),
                         ),
                     left =
                         KeyC(
-                            action = KeyAction.CommitText("キ"),
+                            KeyAction.CommitText("キ"),
                         ),
                     bottom =
                         KeyC(
-                            action = KeyAction.CommitText("コ"),
+                            KeyAction.CommitText("コ"),
                         ),
                     top =
                         KeyC(
-                            action = KeyAction.CommitText("ク"),
+                            KeyAction.CommitText("ク"),
                         ),
                 ),
             ),
@@ -214,56 +214,56 @@ val KB_JA_KATAKANA_TYPESPLIT_MAIN =
                 KeyItemC(
                     center =
                         KeyC(
-                            action = KeyAction.CommitText("、"),
+                            KeyAction.CommitText("、"),
                             size = FontSizeVariant.LARGE,
                         ),
                     swipeType = SwipeNWay.FOUR_WAY_CROSS,
                     right =
                         KeyC(
-                            action = KeyAction.CommitText("」"),
+                            KeyAction.CommitText("」"),
                             color = ColorVariant.MUTED,
                         ),
                     left =
                         KeyC(
-                            action = KeyAction.CommitText("「"),
+                            KeyAction.CommitText("「"),
                             color = ColorVariant.MUTED,
                         ),
                     bottom =
                         KeyC(
-                            action = KeyAction.CommitText("ー"),
+                            KeyAction.CommitText("ー"),
                             color = ColorVariant.MUTED,
                         ),
                     top =
                         KeyC(
-                            action = KeyAction.CommitText("～"),
+                            KeyAction.CommitText("～"),
                             color = ColorVariant.MUTED,
                         ),
                 ),
                 KeyItemC(
                     center =
                         KeyC(
-                            action = KeyAction.CommitText("。"),
+                            KeyAction.CommitText("。"),
                             size = FontSizeVariant.LARGE,
                         ),
                     swipeType = SwipeNWay.FOUR_WAY_CROSS,
                     right =
                         KeyC(
-                            action = KeyAction.CommitText("？"),
+                            KeyAction.CommitText("？"),
                             color = ColorVariant.MUTED,
                         ),
                     left =
                         KeyC(
-                            action = KeyAction.CommitText("！"),
+                            KeyAction.CommitText("！"),
                             color = ColorVariant.MUTED,
                         ),
                     bottom =
                         KeyC(
-                            action = KeyAction.CommitText("："),
+                            KeyAction.CommitText("："),
                             color = ColorVariant.MUTED,
                         ),
                     top =
                         KeyC(
-                            action = KeyAction.CommitText("…"),
+                            KeyAction.CommitText("…"),
                             color = ColorVariant.MUTED,
                         ),
                 ),
@@ -271,49 +271,49 @@ val KB_JA_KATAKANA_TYPESPLIT_MAIN =
                 KeyItemC(
                     center =
                         KeyC(
-                            action = KeyAction.CommitText("ナ"),
+                            KeyAction.CommitText("ナ"),
                             size = FontSizeVariant.LARGE,
                         ),
                     swipeType = SwipeNWay.FOUR_WAY_CROSS,
                     right =
                         KeyC(
-                            action = KeyAction.CommitText("ニ"),
+                            KeyAction.CommitText("ニ"),
                         ),
                     left =
                         KeyC(
-                            action = KeyAction.CommitText("ネ"),
+                            KeyAction.CommitText("ネ"),
                         ),
                     bottom =
                         KeyC(
-                            action = KeyAction.CommitText("ノ"),
+                            KeyAction.CommitText("ノ"),
                         ),
                     top =
                         KeyC(
-                            action = KeyAction.CommitText("ヌ"),
+                            KeyAction.CommitText("ヌ"),
                         ),
                 ),
                 KeyItemC(
                     center =
                         KeyC(
-                            action = KeyAction.CommitText("マ"),
+                            KeyAction.CommitText("マ"),
                             size = FontSizeVariant.LARGE,
                         ),
                     swipeType = SwipeNWay.FOUR_WAY_CROSS,
                     right =
                         KeyC(
-                            action = KeyAction.CommitText("メ"),
+                            KeyAction.CommitText("メ"),
                         ),
                     left =
                         KeyC(
-                            action = KeyAction.CommitText("ミ"),
+                            KeyAction.CommitText("ミ"),
                         ),
                     bottom =
                         KeyC(
-                            action = KeyAction.CommitText("モ"),
+                            KeyAction.CommitText("モ"),
                         ),
                     top =
                         KeyC(
-                            action = KeyAction.CommitText("ム"),
+                            KeyAction.CommitText("ム"),
                         ),
                 ),
             ),
@@ -332,7 +332,7 @@ val KB_JA_KATAKANA_TYPESPLIT_SHIFTED =
                 KeyItemC(
                     center =
                         KeyC(
-                            action = KeyAction.CommitText("¥"),
+                            KeyAction.CommitText("¥"),
                             size = FontSizeVariant.LARGE,
                         ),
                     swipeType = SwipeNWay.FOUR_WAY_CROSS,
@@ -343,46 +343,46 @@ val KB_JA_KATAKANA_TYPESPLIT_SHIFTED =
                         ),
                     left =
                         KeyC(
-                            action = KeyAction.CommitText("※"),
+                            KeyAction.CommitText("※"),
                         ),
                     bottom =
                         KeyC(
-                            action = KeyAction.CommitText("ヶ"),
+                            KeyAction.CommitText("ヶ"),
                         ),
                     top =
                         KeyC(
-                            action = KeyAction.CommitText("ヵ"),
+                            KeyAction.CommitText("ヵ"),
                         ),
                 ),
                 KeyItemC(
                     center =
                         KeyC(
-                            action = KeyAction.CommitText("ダ"),
+                            KeyAction.CommitText("ダ"),
                             size = FontSizeVariant.LARGE,
                         ),
                     swipeType = SwipeNWay.FOUR_WAY_CROSS,
                     right =
                         KeyC(
-                            action = KeyAction.CommitText("デ"),
+                            KeyAction.CommitText("デ"),
                         ),
                     left =
                         KeyC(
-                            action = KeyAction.CommitText("ヂ"),
+                            KeyAction.CommitText("ヂ"),
                         ),
                     bottom =
                         KeyC(
-                            action = KeyAction.CommitText("ド"),
+                            KeyAction.CommitText("ド"),
                         ),
                     top =
                         KeyC(
-                            action = KeyAction.CommitText("ヅ"),
+                            KeyAction.CommitText("ヅ"),
                         ),
                 ),
                 EMOJI_KEY_ITEM_ALT,
                 KeyItemC(
                     center =
                         KeyC(
-                            action = KeyAction.CommitText("ャ"),
+                            KeyAction.CommitText("ャ"),
                             size = FontSizeVariant.LARGE,
                         ),
                     swipeType = SwipeNWay.FOUR_WAY_CROSS,
@@ -398,17 +398,17 @@ val KB_JA_KATAKANA_TYPESPLIT_SHIFTED =
                         ),
                     bottom =
                         KeyC(
-                            action = KeyAction.CommitText("ョ"),
+                            KeyAction.CommitText("ョ"),
                         ),
                     top =
                         KeyC(
-                            action = KeyAction.CommitText("ュ"),
+                            KeyAction.CommitText("ュ"),
                         ),
                 ),
                 KeyItemC(
                     center =
                         KeyC(
-                            action = KeyAction.CommitText("ヴ"),
+                            KeyAction.CommitText("ヴ"),
                             size = FontSizeVariant.LARGE,
                         ),
                 ),
@@ -417,98 +417,98 @@ val KB_JA_KATAKANA_TYPESPLIT_SHIFTED =
                 KeyItemC(
                     center =
                         KeyC(
-                            action = KeyAction.CommitText("ァ"),
+                            KeyAction.CommitText("ァ"),
                             size = FontSizeVariant.LARGE,
                         ),
                     swipeType = SwipeNWay.FOUR_WAY_CROSS,
                     right =
                         KeyC(
-                            action = KeyAction.CommitText("ィ"),
+                            KeyAction.CommitText("ィ"),
                         ),
                     left =
                         KeyC(
-                            action = KeyAction.CommitText("ェ"),
+                            KeyAction.CommitText("ェ"),
                         ),
                     bottom =
                         KeyC(
-                            action = KeyAction.CommitText("ォ"),
+                            KeyAction.CommitText("ォ"),
                         ),
                     top =
                         KeyC(
-                            action = KeyAction.CommitText("ゥ"),
+                            KeyAction.CommitText("ゥ"),
                         ),
                 ),
                 KeyItemC(
                     center =
                         KeyC(
-                            action = KeyAction.CommitText("ザ"),
+                            KeyAction.CommitText("ザ"),
                             size = FontSizeVariant.LARGE,
                         ),
                     swipeType = SwipeNWay.FOUR_WAY_CROSS,
                     right =
                         KeyC(
-                            action = KeyAction.CommitText("ゼ"),
+                            KeyAction.CommitText("ゼ"),
                         ),
                     left =
                         KeyC(
-                            action = KeyAction.CommitText("ジ"),
+                            KeyAction.CommitText("ジ"),
                         ),
                     bottom =
                         KeyC(
-                            action = KeyAction.CommitText("ゾ"),
+                            KeyAction.CommitText("ゾ"),
                         ),
                     top =
                         KeyC(
-                            action = KeyAction.CommitText("ズ"),
+                            KeyAction.CommitText("ズ"),
                         ),
                 ),
                 SPACEBAR_TYPESPLIT_MIDDLE_KEY_ITEM,
                 KeyItemC(
                     center =
                         KeyC(
-                            action = KeyAction.CommitText("バ"),
+                            KeyAction.CommitText("バ"),
                             size = FontSizeVariant.LARGE,
                         ),
                     swipeType = SwipeNWay.FOUR_WAY_CROSS,
                     right =
                         KeyC(
-                            action = KeyAction.CommitText("ビ"),
+                            KeyAction.CommitText("ビ"),
                         ),
                     left =
                         KeyC(
-                            action = KeyAction.CommitText("ベ"),
+                            KeyAction.CommitText("ベ"),
                         ),
                     bottom =
                         KeyC(
-                            action = KeyAction.CommitText("ボ"),
+                            KeyAction.CommitText("ボ"),
                         ),
                     top =
                         KeyC(
-                            action = KeyAction.CommitText("ブ"),
+                            KeyAction.CommitText("ブ"),
                         ),
                 ),
                 KeyItemC(
                     center =
                         KeyC(
-                            action = KeyAction.CommitText("ガ"),
+                            KeyAction.CommitText("ガ"),
                             size = FontSizeVariant.LARGE,
                         ),
                     swipeType = SwipeNWay.FOUR_WAY_CROSS,
                     right =
                         KeyC(
-                            action = KeyAction.CommitText("ゲ"),
+                            KeyAction.CommitText("ゲ"),
                         ),
                     left =
                         KeyC(
-                            action = KeyAction.CommitText("ギ"),
+                            KeyAction.CommitText("ギ"),
                         ),
                     bottom =
                         KeyC(
-                            action = KeyAction.CommitText("ゴ"),
+                            KeyAction.CommitText("ゴ"),
                         ),
                     top =
                         KeyC(
-                            action = KeyAction.CommitText("グ"),
+                            KeyAction.CommitText("グ"),
                         ),
                 ),
             ),
@@ -516,56 +516,56 @@ val KB_JA_KATAKANA_TYPESPLIT_SHIFTED =
                 KeyItemC(
                     center =
                         KeyC(
-                            action = KeyAction.CommitText("・"),
+                            KeyAction.CommitText("・"),
                             size = FontSizeVariant.LARGE,
                         ),
                     swipeType = SwipeNWay.FOUR_WAY_CROSS,
                     right =
                         KeyC(
-                            action = KeyAction.CommitText("】"),
+                            KeyAction.CommitText("】"),
                             color = ColorVariant.MUTED,
                         ),
                     left =
                         KeyC(
-                            action = KeyAction.CommitText("【"),
+                            KeyAction.CommitText("【"),
                             color = ColorVariant.MUTED,
                         ),
                     bottom =
                         KeyC(
-                            action = KeyAction.CommitText("："),
+                            KeyAction.CommitText("："),
                             color = ColorVariant.MUTED,
                         ),
                     top =
                         KeyC(
-                            action = KeyAction.CommitText("〃"),
+                            KeyAction.CommitText("〃"),
                             color = ColorVariant.MUTED,
                         ),
                 ),
                 KeyItemC(
                     center =
                         KeyC(
-                            action = KeyAction.CommitText("＝"),
+                            KeyAction.CommitText("＝"),
                             size = FontSizeVariant.LARGE,
                         ),
                     swipeType = SwipeNWay.FOUR_WAY_CROSS,
                     right =
                         KeyC(
-                            action = KeyAction.CommitText("×"),
+                            KeyAction.CommitText("×"),
                             color = ColorVariant.MUTED,
                         ),
                     left =
                         KeyC(
-                            action = KeyAction.CommitText("÷"),
+                            KeyAction.CommitText("÷"),
                             color = ColorVariant.MUTED,
                         ),
                     bottom =
                         KeyC(
-                            action = KeyAction.CommitText("＋"),
+                            KeyAction.CommitText("＋"),
                             color = ColorVariant.MUTED,
                         ),
                     top =
                         KeyC(
-                            action = KeyAction.CommitText("－"),
+                            KeyAction.CommitText("－"),
                             color = ColorVariant.MUTED,
                         ),
                 ),
@@ -573,31 +573,31 @@ val KB_JA_KATAKANA_TYPESPLIT_SHIFTED =
                 KeyItemC(
                     center =
                         KeyC(
-                            action = KeyAction.CommitText("パ"),
+                            KeyAction.CommitText("パ"),
                             size = FontSizeVariant.LARGE,
                         ),
                     swipeType = SwipeNWay.FOUR_WAY_CROSS,
                     right =
                         KeyC(
-                            action = KeyAction.CommitText("ピ"),
+                            KeyAction.CommitText("ピ"),
                         ),
                     left =
                         KeyC(
-                            action = KeyAction.CommitText("ペ"),
+                            KeyAction.CommitText("ペ"),
                         ),
                     bottom =
                         KeyC(
-                            action = KeyAction.CommitText("ポ"),
+                            KeyAction.CommitText("ポ"),
                         ),
                     top =
                         KeyC(
-                            action = KeyAction.CommitText("プ"),
+                            KeyAction.CommitText("プ"),
                         ),
                 ),
                 KeyItemC(
                     center =
                         KeyC(
-                            action = KeyAction.CommitText("ッ"),
+                            KeyAction.CommitText("ッ"),
                             size = FontSizeVariant.LARGE,
                         ),
                 ),
