@@ -18,7 +18,6 @@ val KB_HE_MESSAGEASE_SYMBOLS_MAIN =
                 KeyItemC(
                     center =
                         KeyC(
-                            display = KeyDisplay.TextDisplay("ר"),
                             action = KeyAction.CommitText("ר"),
                             size = FontSizeVariant.LARGE,
                             color = ColorVariant.PRIMARY,
@@ -27,24 +26,20 @@ val KB_HE_MESSAGEASE_SYMBOLS_MAIN =
                         mapOf(
                             SwipeDirection.BOTTOM_RIGHT to
                                 KeyC(
-                                    display = KeyDisplay.TextDisplay("ן"),
                                     action = KeyAction.CommitText("ן"),
                                 ),
                             SwipeDirection.RIGHT to
                                 KeyC(
-                                    display = KeyDisplay.TextDisplay("-"),
                                     action = KeyAction.CommitText("-"),
                                     color = ColorVariant.MUTED,
                                 ),
                             SwipeDirection.BOTTOM_LEFT to
                                 KeyC(
-                                    display = KeyDisplay.TextDisplay("$"),
                                     action = KeyAction.CommitText("$"),
                                     color = ColorVariant.MUTED,
                                 ),
                             SwipeDirection.BOTTOM to
                                 KeyC(
-                                    display = KeyDisplay.TextDisplay("ץ"),
                                     action = KeyAction.CommitText("ץ"),
                                 ),
                         ),
@@ -52,7 +47,6 @@ val KB_HE_MESSAGEASE_SYMBOLS_MAIN =
                 KeyItemC(
                     center =
                         KeyC(
-                            display = KeyDisplay.TextDisplay("ב"),
                             action = KeyAction.CommitText("ב"),
                             size = FontSizeVariant.LARGE,
                             color = ColorVariant.PRIMARY,
@@ -61,48 +55,40 @@ val KB_HE_MESSAGEASE_SYMBOLS_MAIN =
                         mapOf(
                             SwipeDirection.BOTTOM to
                                 KeyC(
-                                    display = KeyDisplay.TextDisplay("ג"),
                                     action = KeyAction.CommitText("ג"),
                                 ),
                             SwipeDirection.TOP_LEFT to
                                 KeyC(
-                                    display = KeyDisplay.TextDisplay("`"),
                                     action = KeyAction.CommitText("`"),
                                     color = ColorVariant.MUTED,
                                 ),
                             SwipeDirection.TOP to
                                 KeyC(
-                                    display = KeyDisplay.TextDisplay("^"),
                                     action = KeyAction.CommitText("^"),
                                     color = ColorVariant.MUTED,
                                 ),
                             SwipeDirection.TOP_RIGHT to
                                 KeyC(
-                                    display = KeyDisplay.TextDisplay("´"),
                                     action = KeyAction.CommitText("´"),
                                     color = ColorVariant.MUTED,
                                 ),
                             SwipeDirection.RIGHT to
                                 KeyC(
-                                    display = KeyDisplay.TextDisplay("!"),
                                     action = KeyAction.CommitText("!"),
                                     color = ColorVariant.MUTED,
                                 ),
                             SwipeDirection.BOTTOM_RIGHT to
                                 KeyC(
-                                    display = KeyDisplay.TextDisplay("\\"),
                                     action = KeyAction.CommitText("\\"),
                                     color = ColorVariant.MUTED,
                                 ),
                             SwipeDirection.BOTTOM_LEFT to
                                 KeyC(
-                                    display = KeyDisplay.TextDisplay("/"),
                                     action = KeyAction.CommitText("/"),
                                     color = ColorVariant.MUTED,
                                 ),
                             SwipeDirection.LEFT to
                                 KeyC(
-                                    display = KeyDisplay.TextDisplay("+"),
                                     action = KeyAction.CommitText("+"),
                                     color = ColorVariant.MUTED,
                                 ),
@@ -111,7 +97,6 @@ val KB_HE_MESSAGEASE_SYMBOLS_MAIN =
                 KeyItemC(
                     center =
                         KeyC(
-                            display = KeyDisplay.TextDisplay("א"),
                             action = KeyAction.CommitText("א"),
                             size = FontSizeVariant.LARGE,
                             color = ColorVariant.PRIMARY,
@@ -120,17 +105,14 @@ val KB_HE_MESSAGEASE_SYMBOLS_MAIN =
                         mapOf(
                             SwipeDirection.BOTTOM_LEFT to
                                 KeyC(
-                                    display = KeyDisplay.TextDisplay("צ"),
                                     action = KeyAction.CommitText("צ"),
                                 ),
                             SwipeDirection.LEFT to
                                 KeyC(
-                                    display = KeyDisplay.TextDisplay("?"),
                                     action = KeyAction.CommitText("?"),
                                 ),
                             SwipeDirection.BOTTOM to
                                 KeyC(
-                                    display = KeyDisplay.TextDisplay("="),
                                     action = KeyAction.CommitText("="),
                                     color = ColorVariant.MUTED,
                                 ),
@@ -142,7 +124,6 @@ val KB_HE_MESSAGEASE_SYMBOLS_MAIN =
                 KeyItemC(
                     center =
                         KeyC(
-                            display = KeyDisplay.TextDisplay("מ"),
                             action = KeyAction.CommitText("מ"),
                             size = FontSizeVariant.LARGE,
                             color = ColorVariant.PRIMARY,
@@ -151,7 +132,6 @@ val KB_HE_MESSAGEASE_SYMBOLS_MAIN =
                         mapOf(
                             SwipeDirection.RIGHT to
                                 KeyC(
-                                    display = KeyDisplay.TextDisplay("ם"),
                                     action = KeyAction.CommitText("ם"),
                                 ),
                             SwipeDirection.TOP_LEFT to
@@ -162,13 +142,11 @@ val KB_HE_MESSAGEASE_SYMBOLS_MAIN =
                                 ),
                             SwipeDirection.TOP_RIGHT to
                                 KeyC(
-                                    display = KeyDisplay.TextDisplay("%"),
                                     action = KeyAction.CommitText("%"),
                                     color = ColorVariant.MUTED,
                                 ),
                             SwipeDirection.BOTTOM_RIGHT to
                                 KeyC(
-                                    display = KeyDisplay.TextDisplay("ך"),
                                     action = KeyAction.CommitText("ך"),
                                 ),
                             SwipeDirection.BOTTOM_LEFT to
@@ -188,7 +166,6 @@ val KB_HE_MESSAGEASE_SYMBOLS_MAIN =
                 KeyItemC(
                     center =
                         KeyC(
-                            display = KeyDisplay.TextDisplay("י"),
                             action = KeyAction.CommitText("י"),
                             size = FontSizeVariant.LARGE,
                             color = ColorVariant.PRIMARY,
@@ -197,42 +174,34 @@ val KB_HE_MESSAGEASE_SYMBOLS_MAIN =
                         mapOf(
                             SwipeDirection.TOP_LEFT to
                                 KeyC(
-                                    display = KeyDisplay.TextDisplay("ק"),
                                     action = KeyAction.CommitText("ק"),
                                 ),
                             SwipeDirection.TOP to
                                 KeyC(
-                                    display = KeyDisplay.TextDisplay("ח"),
                                     action = KeyAction.CommitText("ח"),
                                 ),
                             SwipeDirection.TOP_RIGHT to
                                 KeyC(
-                                    display = KeyDisplay.TextDisplay("פ"),
                                     action = KeyAction.CommitText("פ"),
                                 ),
                             SwipeDirection.RIGHT to
                                 KeyC(
-                                    display = KeyDisplay.TextDisplay("ד"),
                                     action = KeyAction.CommitText("ד"),
                                 ),
                             SwipeDirection.BOTTOM_RIGHT to
                                 KeyC(
-                                    display = KeyDisplay.TextDisplay("ש"),
                                     action = KeyAction.CommitText("ש"),
                                 ),
                             SwipeDirection.BOTTOM to
                                 KeyC(
-                                    display = KeyDisplay.TextDisplay("נ"),
                                     action = KeyAction.CommitText("נ"),
                                 ),
                             SwipeDirection.BOTTOM_LEFT to
                                 KeyC(
-                                    display = KeyDisplay.TextDisplay("כ"),
                                     action = KeyAction.CommitText("כ"),
                                 ),
                             SwipeDirection.LEFT to
                                 KeyC(
-                                    display = KeyDisplay.TextDisplay("ע"),
                                     action = KeyAction.CommitText("ע"),
                                 ),
                         ),
@@ -240,7 +209,6 @@ val KB_HE_MESSAGEASE_SYMBOLS_MAIN =
                 KeyItemC(
                     center =
                         KeyC(
-                            display = KeyDisplay.TextDisplay("ו"),
                             action = KeyAction.CommitText("ו"),
                             size = FontSizeVariant.LARGE,
                             color = ColorVariant.PRIMARY,
@@ -249,7 +217,6 @@ val KB_HE_MESSAGEASE_SYMBOLS_MAIN =
                         mapOf(
                             SwipeDirection.TOP_LEFT to
                                 KeyC(
-                                    display = KeyDisplay.TextDisplay("ף"),
                                     action = KeyAction.CommitText("ף"),
                                 ),
                             SwipeDirection.TOP_RIGHT to
@@ -272,7 +239,6 @@ val KB_HE_MESSAGEASE_SYMBOLS_MAIN =
                                 ),
                             SwipeDirection.BOTTOM_LEFT to
                                 KeyC(
-                                    display = KeyDisplay.TextDisplay("@"),
                                     action = KeyAction.CommitText("@"),
                                     color = ColorVariant.MUTED,
                                 ),
@@ -284,7 +250,6 @@ val KB_HE_MESSAGEASE_SYMBOLS_MAIN =
                 KeyItemC(
                     center =
                         KeyC(
-                            display = KeyDisplay.TextDisplay("ת"),
                             action = KeyAction.CommitText("ת"),
                             size = FontSizeVariant.LARGE,
                             color = ColorVariant.PRIMARY,
@@ -293,18 +258,15 @@ val KB_HE_MESSAGEASE_SYMBOLS_MAIN =
                         mapOf(
                             SwipeDirection.TOP_RIGHT to
                                 KeyC(
-                                    display = KeyDisplay.TextDisplay("ז"),
                                     action = KeyAction.CommitText("ז"),
                                 ),
                             SwipeDirection.TOP_LEFT to
                                 KeyC(
-                                    display = KeyDisplay.TextDisplay("~"),
                                     action = KeyAction.CommitText("~"),
                                     color = ColorVariant.MUTED,
                                 ),
                             SwipeDirection.RIGHT to
                                 KeyC(
-                                    display = KeyDisplay.TextDisplay("*"),
                                     action = KeyAction.CommitText("*"),
                                     color = ColorVariant.MUTED,
                                 ),
@@ -316,7 +278,6 @@ val KB_HE_MESSAGEASE_SYMBOLS_MAIN =
                                 ),
                             SwipeDirection.LEFT to
                                 KeyC(
-                                    display = KeyDisplay.TextDisplay("<"),
                                     action = KeyAction.CommitText("<"),
                                     color = ColorVariant.MUTED,
                                 ),
@@ -325,7 +286,6 @@ val KB_HE_MESSAGEASE_SYMBOLS_MAIN =
                 KeyItemC(
                     center =
                         KeyC(
-                            display = KeyDisplay.TextDisplay("ה"),
                             action = KeyAction.CommitText("ה"),
                             size = FontSizeVariant.LARGE,
                             color = ColorVariant.PRIMARY,
@@ -334,36 +294,30 @@ val KB_HE_MESSAGEASE_SYMBOLS_MAIN =
                         mapOf(
                             SwipeDirection.TOP_LEFT to
                                 KeyC(
-                                    display = KeyDisplay.TextDisplay("\""),
                                     action = KeyAction.CommitText("\""),
                                     color = ColorVariant.MUTED,
                                 ),
                             SwipeDirection.TOP to
                                 KeyC(
-                                    display = KeyDisplay.TextDisplay("ס"),
                                     action = KeyAction.CommitText("ס"),
                                 ),
                             SwipeDirection.TOP_RIGHT to
                                 KeyC(
-                                    display = KeyDisplay.TextDisplay("'"),
                                     action = KeyAction.CommitText("'"),
                                     color = ColorVariant.MUTED,
                                 ),
                             SwipeDirection.BOTTOM_RIGHT to
                                 KeyC(
-                                    display = KeyDisplay.TextDisplay(":"),
                                     action = KeyAction.CommitText(":"),
                                     color = ColorVariant.MUTED,
                                 ),
                             SwipeDirection.BOTTOM to
                                 KeyC(
-                                    display = KeyDisplay.TextDisplay("."),
                                     action = KeyAction.CommitText("."),
                                     color = ColorVariant.MUTED,
                                 ),
                             SwipeDirection.BOTTOM_LEFT to
                                 KeyC(
-                                    display = KeyDisplay.TextDisplay(","),
                                     action = KeyAction.CommitText(","),
                                     color = ColorVariant.MUTED,
                                 ),
@@ -372,7 +326,6 @@ val KB_HE_MESSAGEASE_SYMBOLS_MAIN =
                 KeyItemC(
                     center =
                         KeyC(
-                            display = KeyDisplay.TextDisplay("ל"),
                             action = KeyAction.CommitText("ל"),
                             size = FontSizeVariant.LARGE,
                             color = ColorVariant.PRIMARY,
@@ -381,36 +334,30 @@ val KB_HE_MESSAGEASE_SYMBOLS_MAIN =
                         mapOf(
                             SwipeDirection.TOP_LEFT to
                                 KeyC(
-                                    display = KeyDisplay.TextDisplay("ט"),
                                     action = KeyAction.CommitText("ט"),
                                 ),
                             SwipeDirection.TOP to
                                 KeyC(
-                                    display = KeyDisplay.TextDisplay("&"),
                                     action = KeyAction.CommitText("&"),
                                     color = ColorVariant.MUTED,
                                 ),
                             SwipeDirection.TOP_RIGHT to
                                 KeyC(
-                                    display = KeyDisplay.TextDisplay("°"),
                                     action = KeyAction.CommitText("°"),
                                     color = ColorVariant.MUTED,
                                 ),
                             SwipeDirection.RIGHT to
                                 KeyC(
-                                    display = KeyDisplay.TextDisplay(">"),
                                     action = KeyAction.CommitText(">"),
                                     color = ColorVariant.MUTED,
                                 ),
                             SwipeDirection.BOTTOM_LEFT to
                                 KeyC(
-                                    display = KeyDisplay.TextDisplay(";"),
                                     action = KeyAction.CommitText(";"),
                                     color = ColorVariant.MUTED,
                                 ),
                             SwipeDirection.LEFT to
                                 KeyC(
-                                    display = KeyDisplay.TextDisplay("#"),
                                     action = KeyAction.CommitText("#"),
                                     color = ColorVariant.MUTED,
                                 ),

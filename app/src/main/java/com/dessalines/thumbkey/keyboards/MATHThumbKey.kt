@@ -22,7 +22,6 @@ val KB_MATH_THUMBKEY_MAIN =
                 KeyItemC(
                     center =
                         KeyC(
-                            display = KeyDisplay.TextDisplay("∀"),
                             action = KeyAction.CommitText("∀"),
                             size = FontSizeVariant.LARGE,
                             color = ColorVariant.PRIMARY,
@@ -32,17 +31,14 @@ val KB_MATH_THUMBKEY_MAIN =
                         mapOf(
                             SwipeDirection.TOP_LEFT to
                                 KeyC(
-                                    display = KeyDisplay.TextDisplay("⊊"),
                                     action = KeyAction.CommitText("⊊"),
                                 ),
                             SwipeDirection.LEFT to
                                 KeyC(
-                                    display = KeyDisplay.TextDisplay("⊆"),
                                     action = KeyAction.CommitText("⊆"),
                                 ),
                             SwipeDirection.BOTTOM_LEFT to
                                 KeyC(
-                                    display = KeyDisplay.TextDisplay("⊂"),
                                     action = KeyAction.CommitText("⊂"),
                                 ),
                         ),
@@ -50,7 +46,6 @@ val KB_MATH_THUMBKEY_MAIN =
                 KeyItemC(
                     center =
                         KeyC(
-                            display = KeyDisplay.TextDisplay("∫"),
                             action = KeyAction.CommitText("∫"),
                             size = FontSizeVariant.LARGE,
                             color = ColorVariant.PRIMARY,
@@ -60,32 +55,26 @@ val KB_MATH_THUMBKEY_MAIN =
                         mapOf(
                             SwipeDirection.LEFT to
                                 KeyC(
-                                    display = KeyDisplay.TextDisplay("+"),
                                     action = KeyAction.CommitText("+"),
                                 ),
                             SwipeDirection.TOP_LEFT to
                                 KeyC(
-                                    display = KeyDisplay.TextDisplay("±"),
                                     action = KeyAction.CommitText("±"),
                                 ),
                             SwipeDirection.RIGHT to
                                 KeyC(
-                                    display = KeyDisplay.TextDisplay("!"),
                                     action = KeyAction.CommitText("!"),
                                 ),
                             SwipeDirection.BOTTOM_LEFT to
                                 KeyC(
-                                    display = KeyDisplay.TextDisplay("∋"),
                                     action = KeyAction.CommitText("∋"),
                                 ),
                             SwipeDirection.BOTTOM_RIGHT to
                                 KeyC(
-                                    display = KeyDisplay.TextDisplay("∈"),
                                     action = KeyAction.CommitText("∈"),
                                 ),
                             SwipeDirection.BOTTOM to
                                 KeyC(
-                                    display = KeyDisplay.TextDisplay("∂"),
                                     action = KeyAction.CommitText("∂"),
                                 ),
                         ),
@@ -93,7 +82,6 @@ val KB_MATH_THUMBKEY_MAIN =
                 KeyItemC(
                     center =
                         KeyC(
-                            display = KeyDisplay.TextDisplay("∃"),
                             action = KeyAction.CommitText("∃"),
                             size = FontSizeVariant.LARGE,
                             color = ColorVariant.PRIMARY,
@@ -103,32 +91,26 @@ val KB_MATH_THUMBKEY_MAIN =
                         mapOf(
                             SwipeDirection.TOP_RIGHT to
                                 KeyC(
-                                    display = KeyDisplay.TextDisplay("⊋"),
                                     action = KeyAction.CommitText("⊋"),
                                 ),
                             SwipeDirection.RIGHT to
                                 KeyC(
-                                    display = KeyDisplay.TextDisplay("⊇"),
                                     action = KeyAction.CommitText("⊇"),
                                 ),
                             SwipeDirection.BOTTOM_RIGHT to
                                 KeyC(
-                                    display = KeyDisplay.TextDisplay("⊃"),
                                     action = KeyAction.CommitText("⊃"),
                                 ),
                             SwipeDirection.BOTTOM to
                                 KeyC(
-                                    display = KeyDisplay.TextDisplay("="),
                                     action = KeyAction.CommitText("="),
                                 ),
                             SwipeDirection.BOTTOM_LEFT to
                                 KeyC(
-                                    display = KeyDisplay.TextDisplay("∣"),
                                     action = KeyAction.CommitText("∣"),
                                 ),
                             SwipeDirection.LEFT to
                                 KeyC(
-                                    display = KeyDisplay.TextDisplay("≡"),
                                     action = KeyAction.CommitText("≡"),
                                 ),
                         ),
@@ -139,7 +121,6 @@ val KB_MATH_THUMBKEY_MAIN =
                 KeyItemC(
                     center =
                         KeyC(
-                            display = KeyDisplay.TextDisplay("∅"),
                             action = KeyAction.CommitText("∅"),
                             size = FontSizeVariant.LARGE,
                             color = ColorVariant.PRIMARY,
@@ -149,32 +130,26 @@ val KB_MATH_THUMBKEY_MAIN =
                         mapOf(
                             SwipeDirection.TOP_RIGHT to
                                 KeyC(
-                                    display = KeyDisplay.TextDisplay("∩"),
                                     action = KeyAction.CommitText("∩"),
                                 ),
                             SwipeDirection.RIGHT to
                                 KeyC(
-                                    display = KeyDisplay.TextDisplay("∪"),
                                     action = KeyAction.CommitText("∪"),
                                 ),
                             SwipeDirection.BOTTOM_RIGHT to
                                 KeyC(
-                                    display = KeyDisplay.TextDisplay("⊍"),
                                     action = KeyAction.CommitText("⊍"),
                                 ),
                             SwipeDirection.TOP_LEFT to
                                 KeyC(
-                                    display = KeyDisplay.TextDisplay("{"),
                                     action = KeyAction.CommitText("{"),
                                 ),
                             SwipeDirection.LEFT to
                                 KeyC(
-                                    display = KeyDisplay.TextDisplay("("),
                                     action = KeyAction.CommitText("("),
                                 ),
                             SwipeDirection.BOTTOM to
                                 KeyC(
-                                    display = KeyDisplay.TextDisplay("𝒫"),
                                     action = KeyAction.CommitText("𝒫"),
                                 ),
                         ),
@@ -182,7 +157,6 @@ val KB_MATH_THUMBKEY_MAIN =
                 KeyItemC(
                     center =
                         KeyC(
-                            display = KeyDisplay.TextDisplay("∎"),
                             action = KeyAction.CommitText("∎"),
                             size = FontSizeVariant.LARGE,
                             color = ColorVariant.PRIMARY,
@@ -191,17 +165,14 @@ val KB_MATH_THUMBKEY_MAIN =
                         mapOf(
                             SwipeDirection.BOTTOM_RIGHT to
                                 KeyC(
-                                    display = KeyDisplay.TextDisplay("⇒"),
                                     action = KeyAction.CommitText("⇒"),
                                 ),
                             SwipeDirection.BOTTOM to
                                 KeyC(
-                                    display = KeyDisplay.TextDisplay("⇔"),
                                     action = KeyAction.CommitText("⇔"),
                                 ),
                             SwipeDirection.BOTTOM_LEFT to
                                 KeyC(
-                                    display = KeyDisplay.TextDisplay("⇐"),
                                     action = KeyAction.CommitText("⇐"),
                                 ),
                         ),
@@ -209,7 +180,6 @@ val KB_MATH_THUMBKEY_MAIN =
                 KeyItemC(
                     center =
                         KeyC(
-                            display = KeyDisplay.TextDisplay("¬"),
                             action = KeyAction.CommitText("¬"),
                             size = FontSizeVariant.LARGE,
                             color = ColorVariant.PRIMARY,
@@ -219,17 +189,14 @@ val KB_MATH_THUMBKEY_MAIN =
                         mapOf(
                             SwipeDirection.TOP_LEFT to
                                 KeyC(
-                                    display = KeyDisplay.TextDisplay("∧"),
                                     action = KeyAction.CommitText("∧"),
                                 ),
                             SwipeDirection.LEFT to
                                 KeyC(
-                                    display = KeyDisplay.TextDisplay("∨"),
                                     action = KeyAction.CommitText("∨"),
                                 ),
                             SwipeDirection.BOTTOM_LEFT to
                                 KeyC(
-                                    display = KeyDisplay.TextDisplay("⩒"),
                                     action = KeyAction.CommitText("⩒"),
                                 ),
                             SwipeDirection.TOP to
@@ -241,12 +208,10 @@ val KB_MATH_THUMBKEY_MAIN =
                                 ),
                             SwipeDirection.TOP_RIGHT to
                                 KeyC(
-                                    display = KeyDisplay.TextDisplay("}"),
                                     action = KeyAction.CommitText("}"),
                                 ),
                             SwipeDirection.RIGHT to
                                 KeyC(
-                                    display = KeyDisplay.TextDisplay(")"),
                                     action = KeyAction.CommitText(")"),
                                 ),
                             SwipeDirection.BOTTOM to
@@ -262,7 +227,6 @@ val KB_MATH_THUMBKEY_MAIN =
                 KeyItemC(
                     center =
                         KeyC(
-                            display = KeyDisplay.TextDisplay("→"),
                             action = KeyAction.CommitText("→"),
                             size = FontSizeVariant.LARGE,
                             color = ColorVariant.PRIMARY,
@@ -272,42 +236,34 @@ val KB_MATH_THUMBKEY_MAIN =
                         mapOf(
                             SwipeDirection.TOP_LEFT to
                                 KeyC(
-                                    display = KeyDisplay.TextDisplay("~"),
                                     action = KeyAction.CommitText("~"),
                                 ),
                             SwipeDirection.LEFT to
                                 KeyC(
-                                    display = KeyDisplay.TextDisplay("≤"),
                                     action = KeyAction.CommitText("≤"),
                                 ),
                             SwipeDirection.BOTTOM_LEFT to
                                 KeyC(
-                                    display = KeyDisplay.TextDisplay("<"),
                                     action = KeyAction.CommitText("<"),
                                 ),
                             SwipeDirection.BOTTOM to
                                 KeyC(
-                                    display = KeyDisplay.TextDisplay("÷"),
                                     action = KeyAction.CommitText("÷"),
                                 ),
                             SwipeDirection.BOTTOM_RIGHT to
                                 KeyC(
-                                    display = KeyDisplay.TextDisplay(":"),
                                     action = KeyAction.CommitText(":"),
                                 ),
                             SwipeDirection.RIGHT to
                                 KeyC(
-                                    display = KeyDisplay.TextDisplay("↦"),
                                     action = KeyAction.CommitText("↦"),
                                 ),
                             SwipeDirection.TOP to
                                 KeyC(
-                                    display = KeyDisplay.TextDisplay("∘"),
                                     action = KeyAction.CommitText("∘"),
                                 ),
                             SwipeDirection.TOP_RIGHT to
                                 KeyC(
-                                    display = KeyDisplay.TextDisplay("⋅"),
                                     action = KeyAction.CommitText("⋅"),
                                 ),
                         ),
@@ -315,7 +271,6 @@ val KB_MATH_THUMBKEY_MAIN =
                 KeyItemC(
                     center =
                         KeyC(
-                            display = KeyDisplay.TextDisplay("∑"),
                             action = KeyAction.CommitText("∑"),
                             size = FontSizeVariant.LARGE,
                             color = ColorVariant.PRIMARY,
@@ -324,47 +279,39 @@ val KB_MATH_THUMBKEY_MAIN =
                         mapOf(
                             SwipeDirection.TOP to
                                 KeyC(
-                                    display = KeyDisplay.TextDisplay("⨯"),
                                     action = KeyAction.CommitText("⨯"),
                                 ),
                             SwipeDirection.TOP_RIGHT to
                                 KeyC(
-                                    display = KeyDisplay.TextDisplay("'"),
                                     action = KeyAction.CommitText("'"),
                                     color = ColorVariant.MUTED,
                                 ),
                             SwipeDirection.LEFT to
                                 KeyC(
-                                    display = KeyDisplay.TextDisplay(","),
                                     action = KeyAction.CommitText(","),
                                 ),
                             SwipeDirection.BOTTOM_RIGHT to
                                 KeyC(
-                                    display = KeyDisplay.TextDisplay("-"),
                                     action = KeyAction.CommitText("-"),
                                     color = ColorVariant.MUTED,
                                 ),
                             SwipeDirection.BOTTOM to
                                 KeyC(
-                                    display = KeyDisplay.TextDisplay("."),
                                     action = KeyAction.CommitText("."),
                                     color = ColorVariant.MUTED,
                                 ),
                             SwipeDirection.BOTTOM_LEFT to
                                 KeyC(
-                                    display = KeyDisplay.TextDisplay("*"),
                                     action = KeyAction.CommitText("*"),
                                     color = ColorVariant.MUTED,
                                 ),
                             SwipeDirection.RIGHT to
                                 KeyC(
-                                    display = KeyDisplay.TextDisplay("∏"),
                                     action = KeyAction.CommitText("∏"),
                                     color = ColorVariant.MUTED,
                                 ),
                             SwipeDirection.TOP_LEFT to
                                 KeyC(
-                                    display = KeyDisplay.TextDisplay("∞"),
                                     action = KeyAction.CommitText("∞"),
                                     color = ColorVariant.MUTED,
                                 ),
@@ -373,7 +320,6 @@ val KB_MATH_THUMBKEY_MAIN =
                 KeyItemC(
                     center =
                         KeyC(
-                            display = KeyDisplay.TextDisplay("ℕ"),
                             action = KeyAction.CommitText("ℕ"),
                             size = FontSizeVariant.LARGE,
                             color = ColorVariant.PRIMARY,
@@ -383,42 +329,34 @@ val KB_MATH_THUMBKEY_MAIN =
                         mapOf(
                             SwipeDirection.TOP_RIGHT to
                                 KeyC(
-                                    display = KeyDisplay.TextDisplay("°"),
                                     action = KeyAction.CommitText("°"),
                                 ),
                             SwipeDirection.RIGHT to
                                 KeyC(
-                                    display = KeyDisplay.TextDisplay("≥"),
                                     action = KeyAction.CommitText("≥"),
                                 ),
                             SwipeDirection.BOTTOM_RIGHT to
                                 KeyC(
-                                    display = KeyDisplay.TextDisplay(">"),
                                     action = KeyAction.CommitText(">"),
                                 ),
                             SwipeDirection.TOP to
                                 KeyC(
-                                    display = KeyDisplay.TextDisplay("ℂ"),
                                     action = KeyAction.CommitText("ℂ"),
                                 ),
                             SwipeDirection.TOP_LEFT to
                                 KeyC(
-                                    display = KeyDisplay.TextDisplay("ℝ"),
                                     action = KeyAction.CommitText("ℝ"),
                                 ),
                             SwipeDirection.LEFT to
                                 KeyC(
-                                    display = KeyDisplay.TextDisplay("ℚ"),
                                     action = KeyAction.CommitText("ℚ"),
                                 ),
                             SwipeDirection.BOTTOM_LEFT to
                                 KeyC(
-                                    display = KeyDisplay.TextDisplay("ℙ"),
                                     action = KeyAction.CommitText("ℙ"),
                                 ),
                             SwipeDirection.BOTTOM to
                                 KeyC(
-                                    display = KeyDisplay.TextDisplay("ℤ"),
                                     action = KeyAction.CommitText("ℤ"),
                                 ),
                         ),
@@ -439,7 +377,6 @@ val KB_MATH_THUMBKEY_SLASH =
                 KeyItemC(
                     center =
                         KeyC(
-                            display = KeyDisplay.TextDisplay(""),
                             action = KeyAction.CommitText(""),
                             size = FontSizeVariant.LARGE,
                             color = ColorVariant.PRIMARY,
@@ -449,12 +386,10 @@ val KB_MATH_THUMBKEY_SLASH =
                         mapOf(
                             SwipeDirection.LEFT to
                                 KeyC(
-                                    display = KeyDisplay.TextDisplay("⊈"),
                                     action = KeyAction.CommitText("⊈"),
                                 ),
                             SwipeDirection.BOTTOM_LEFT to
                                 KeyC(
-                                    display = KeyDisplay.TextDisplay("⊄"),
                                     action = KeyAction.CommitText("⊄"),
                                 ),
                         ),
@@ -462,7 +397,6 @@ val KB_MATH_THUMBKEY_SLASH =
                 KeyItemC(
                     center =
                         KeyC(
-                            display = KeyDisplay.TextDisplay("∮"),
                             action = KeyAction.CommitText("∮"),
                             size = FontSizeVariant.LARGE,
                             color = ColorVariant.PRIMARY,
@@ -472,17 +406,14 @@ val KB_MATH_THUMBKEY_SLASH =
                         mapOf(
                             SwipeDirection.TOP_LEFT to
                                 KeyC(
-                                    display = KeyDisplay.TextDisplay("∓"),
                                     action = KeyAction.CommitText("∓"),
                                 ),
                             SwipeDirection.BOTTOM_LEFT to
                                 KeyC(
-                                    display = KeyDisplay.TextDisplay("∌"),
                                     action = KeyAction.CommitText("∌"),
                                 ),
                             SwipeDirection.BOTTOM_RIGHT to
                                 KeyC(
-                                    display = KeyDisplay.TextDisplay("∉"),
                                     action = KeyAction.CommitText("∉"),
                                 ),
                         ),
@@ -490,7 +421,6 @@ val KB_MATH_THUMBKEY_SLASH =
                 KeyItemC(
                     center =
                         KeyC(
-                            display = KeyDisplay.TextDisplay("∄"),
                             action = KeyAction.CommitText("∄"),
                             size = FontSizeVariant.LARGE,
                             color = ColorVariant.PRIMARY,
@@ -500,22 +430,18 @@ val KB_MATH_THUMBKEY_SLASH =
                         mapOf(
                             SwipeDirection.RIGHT to
                                 KeyC(
-                                    display = KeyDisplay.TextDisplay("⊉"),
                                     action = KeyAction.CommitText("⊉"),
                                 ),
                             SwipeDirection.BOTTOM_RIGHT to
                                 KeyC(
-                                    display = KeyDisplay.TextDisplay("⊅"),
                                     action = KeyAction.CommitText("⊅"),
                                 ),
                             SwipeDirection.BOTTOM to
                                 KeyC(
-                                    display = KeyDisplay.TextDisplay("≠"),
                                     action = KeyAction.CommitText("≠"),
                                 ),
                             SwipeDirection.BOTTOM_LEFT to
                                 KeyC(
-                                    display = KeyDisplay.TextDisplay("∤"),
                                     action = KeyAction.CommitText("∤"),
                                 ),
                         ),
@@ -526,7 +452,6 @@ val KB_MATH_THUMBKEY_SLASH =
                 KeyItemC(
                     center =
                         KeyC(
-                            display = KeyDisplay.TextDisplay("∅"),
                             action = KeyAction.CommitText("∅"),
                             size = FontSizeVariant.LARGE,
                             color = ColorVariant.PRIMARY,
@@ -537,7 +462,6 @@ val KB_MATH_THUMBKEY_SLASH =
                 KeyItemC(
                     center =
                         KeyC(
-                            display = KeyDisplay.TextDisplay("↯"),
                             action = KeyAction.CommitText("↯"),
                             size = FontSizeVariant.LARGE,
                             color = ColorVariant.PRIMARY,
@@ -546,17 +470,14 @@ val KB_MATH_THUMBKEY_SLASH =
                         mapOf(
                             SwipeDirection.BOTTOM_RIGHT to
                                 KeyC(
-                                    display = KeyDisplay.TextDisplay("⇏"),
                                     action = KeyAction.CommitText("⇏"),
                                 ),
                             SwipeDirection.BOTTOM to
                                 KeyC(
-                                    display = KeyDisplay.TextDisplay("⇎"),
                                     action = KeyAction.CommitText("⇎"),
                                 ),
                             SwipeDirection.BOTTOM_LEFT to
                                 KeyC(
-                                    display = KeyDisplay.TextDisplay("⇍"),
                                     action = KeyAction.CommitText("⇍"),
                                 ),
                         ),
@@ -564,7 +485,6 @@ val KB_MATH_THUMBKEY_SLASH =
                 KeyItemC(
                     center =
                         KeyC(
-                            display = KeyDisplay.TextDisplay("¬"),
                             action = KeyAction.CommitText("¬"),
                             size = FontSizeVariant.LARGE,
                             color = ColorVariant.PRIMARY,
@@ -587,7 +507,6 @@ val KB_MATH_THUMBKEY_SLASH =
                 KeyItemC(
                     center =
                         KeyC(
-                            display = KeyDisplay.TextDisplay("↛"),
                             action = KeyAction.CommitText("↛"),
                             size = FontSizeVariant.LARGE,
                             color = ColorVariant.PRIMARY,
@@ -597,17 +516,14 @@ val KB_MATH_THUMBKEY_SLASH =
                         mapOf(
                             SwipeDirection.TOP_LEFT to
                                 KeyC(
-                                    display = KeyDisplay.TextDisplay("≁"),
                                     action = KeyAction.CommitText("≁"),
                                 ),
                             SwipeDirection.LEFT to
                                 KeyC(
-                                    display = KeyDisplay.TextDisplay("≰"),
                                     action = KeyAction.CommitText("≰"),
                                 ),
                             SwipeDirection.BOTTOM_LEFT to
                                 KeyC(
-                                    display = KeyDisplay.TextDisplay("≮"),
                                     action = KeyAction.CommitText("≮"),
                                 ),
                         ),
@@ -615,7 +531,6 @@ val KB_MATH_THUMBKEY_SLASH =
                 KeyItemC(
                     center =
                         KeyC(
-                            display = KeyDisplay.TextDisplay(""),
                             action = KeyAction.CommitText(""),
                             size = FontSizeVariant.LARGE,
                             color = ColorVariant.PRIMARY,
@@ -625,7 +540,6 @@ val KB_MATH_THUMBKEY_SLASH =
                 KeyItemC(
                     center =
                         KeyC(
-                            display = KeyDisplay.TextDisplay(""),
                             action = KeyAction.CommitText(""),
                             size = FontSizeVariant.LARGE,
                             color = ColorVariant.PRIMARY,
@@ -635,12 +549,10 @@ val KB_MATH_THUMBKEY_SLASH =
                         mapOf(
                             SwipeDirection.LEFT to
                                 KeyC(
-                                    display = KeyDisplay.TextDisplay("≱"),
                                     action = KeyAction.CommitText("≱"),
                                 ),
                             SwipeDirection.BOTTOM_LEFT to
                                 KeyC(
-                                    display = KeyDisplay.TextDisplay("≯"),
                                     action = KeyAction.CommitText("≯"),
                                 ),
                         ),

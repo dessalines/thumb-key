@@ -406,13 +406,11 @@ val KB_TOK_THUMBKEY_MAIN =
                                 ),
                             SwipeDirection.BOTTOM_RIGHT to
                                 KeyC(
-                                    display = KeyDisplay.TextDisplay(","),
                                     action = KeyAction.CommitText(","),
                                     color = ColorVariant.MUTED,
                                 ),
                             SwipeDirection.BOTTOM to
                                 KeyC(
-                                    display = KeyDisplay.TextDisplay("."),
                                     action = KeyAction.CommitText("."),
                                     color = ColorVariant.MUTED,
                                 ),
@@ -774,13 +772,11 @@ val KB_TOK_THUMBKEY_SHIFTED =
                                 ),
                             SwipeDirection.BOTTOM_RIGHT to
                                 KeyC(
-                                    display = KeyDisplay.TextDisplay(","),
                                     action = KeyAction.CommitText(","),
                                     color = ColorVariant.MUTED,
                                 ),
                             SwipeDirection.BOTTOM to
                                 KeyC(
-                                    display = KeyDisplay.TextDisplay("."),
                                     action = KeyAction.CommitText("."),
                                     color = ColorVariant.MUTED,
                                 ),

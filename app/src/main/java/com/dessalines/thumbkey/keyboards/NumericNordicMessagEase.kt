@@ -19,7 +19,6 @@ val KB_NORDIC_MESSAGEASE_NUMERIC =
                 KeyItemC(
                     center =
                         KeyC(
-                            display = KeyDisplay.TextDisplay("1"),
                             action = KeyAction.CommitText("1"),
                             size = FontSizeVariant.LARGE,
                             color = ColorVariant.PRIMARY,
@@ -29,7 +28,6 @@ val KB_NORDIC_MESSAGEASE_NUMERIC =
                             put(
                                 SwipeDirection.BOTTOM_LEFT,
                                 KeyC(
-                                    display = KeyDisplay.TextDisplay("$"),
                                     action = KeyAction.CommitText("$"),
                                     color = ColorVariant.MUTED,
                                 ),
@@ -37,7 +35,6 @@ val KB_NORDIC_MESSAGEASE_NUMERIC =
                             put(
                                 SwipeDirection.RIGHT,
                                 KeyC(
-                                    display = KeyDisplay.TextDisplay("-"),
                                     action = KeyAction.CommitText("-"),
                                     color = ColorVariant.MUTED,
                                 ),
@@ -47,7 +44,6 @@ val KB_NORDIC_MESSAGEASE_NUMERIC =
                                     put(
                                         SwipeDirection.BOTTOM_RIGHT,
                                         KeyC(
-                                            display = KeyDisplay.TextDisplay(it),
                                             action = KeyAction.CommitText(it),
                                             color = ColorVariant.MUTED,
                                         ),
@@ -59,7 +55,6 @@ val KB_NORDIC_MESSAGEASE_NUMERIC =
                 KeyItemC(
                     center =
                         KeyC(
-                            display = KeyDisplay.TextDisplay("2"),
                             action = KeyAction.CommitText("2"),
                             size = FontSizeVariant.LARGE,
                             color = ColorVariant.PRIMARY,
@@ -68,43 +63,36 @@ val KB_NORDIC_MESSAGEASE_NUMERIC =
                         mapOf(
                             SwipeDirection.TOP_LEFT to
                                 KeyC(
-                                    display = KeyDisplay.TextDisplay("`"),
                                     action = KeyAction.CommitText("`"),
                                     color = ColorVariant.MUTED,
                                 ),
                             SwipeDirection.TOP to
                                 KeyC(
-                                    display = KeyDisplay.TextDisplay("^"),
                                     action = KeyAction.CommitText("^"),
                                     color = ColorVariant.MUTED,
                                 ),
                             SwipeDirection.TOP_RIGHT to
                                 KeyC(
-                                    display = KeyDisplay.TextDisplay("´"),
                                     action = KeyAction.CommitText("´"),
                                     color = ColorVariant.MUTED,
                                 ),
                             SwipeDirection.RIGHT to
                                 KeyC(
-                                    display = KeyDisplay.TextDisplay("!"),
                                     action = KeyAction.CommitText("!"),
                                     color = ColorVariant.MUTED,
                                 ),
                             SwipeDirection.BOTTOM_RIGHT to
                                 KeyC(
-                                    display = KeyDisplay.TextDisplay("\\"),
                                     action = KeyAction.CommitText("\\"),
                                     color = ColorVariant.MUTED,
                                 ),
                             SwipeDirection.BOTTOM_LEFT to
                                 KeyC(
-                                    display = KeyDisplay.TextDisplay("/"),
                                     action = KeyAction.CommitText("/"),
                                     color = ColorVariant.MUTED,
                                 ),
                             SwipeDirection.LEFT to
                                 KeyC(
-                                    display = KeyDisplay.TextDisplay("+"),
                                     action = KeyAction.CommitText("+"),
                                     color = ColorVariant.MUTED,
                                 ),
@@ -113,7 +101,6 @@ val KB_NORDIC_MESSAGEASE_NUMERIC =
                 KeyItemC(
                     center =
                         KeyC(
-                            display = KeyDisplay.TextDisplay("3"),
                             action = KeyAction.CommitText("3"),
                             size = FontSizeVariant.LARGE,
                             color = ColorVariant.PRIMARY,
@@ -122,25 +109,21 @@ val KB_NORDIC_MESSAGEASE_NUMERIC =
                         mapOf(
                             SwipeDirection.LEFT to
                                 KeyC(
-                                    display = KeyDisplay.TextDisplay("?"),
                                     action = KeyAction.CommitText("?"),
                                     color = ColorVariant.MUTED,
                                 ),
                             SwipeDirection.BOTTOM_RIGHT to
                                 KeyC(
-                                    display = KeyDisplay.TextDisplay("€"),
                                     action = KeyAction.CommitText("€"),
                                     color = ColorVariant.MUTED,
                                 ),
                             SwipeDirection.BOTTOM_LEFT to
                                 KeyC(
-                                    display = KeyDisplay.TextDisplay("£"),
                                     action = KeyAction.CommitText("£"),
                                     color = ColorVariant.MUTED,
                                 ),
                             SwipeDirection.BOTTOM to
                                 KeyC(
-                                    display = KeyDisplay.TextDisplay("="),
                                     action = KeyAction.CommitText("="),
                                     color = ColorVariant.MUTED,
                                 ),
@@ -152,7 +135,6 @@ val KB_NORDIC_MESSAGEASE_NUMERIC =
                 KeyItemC(
                     center =
                         KeyC(
-                            display = KeyDisplay.TextDisplay("4"),
                             action = KeyAction.CommitText("4"),
                             size = FontSizeVariant.LARGE,
                             color = ColorVariant.PRIMARY,
@@ -161,31 +143,26 @@ val KB_NORDIC_MESSAGEASE_NUMERIC =
                         mapOf(
                             SwipeDirection.TOP_LEFT to
                                 KeyC(
-                                    display = KeyDisplay.TextDisplay("{"),
                                     action = KeyAction.CommitText("{"),
                                     color = ColorVariant.MUTED,
                                 ),
                             SwipeDirection.TOP_RIGHT to
                                 KeyC(
-                                    display = KeyDisplay.TextDisplay("%"),
                                     action = KeyAction.CommitText("%"),
                                     color = ColorVariant.MUTED,
                                 ),
                             SwipeDirection.BOTTOM_RIGHT to
                                 KeyC(
-                                    display = KeyDisplay.TextDisplay("_"),
                                     action = KeyAction.CommitText("_"),
                                     color = ColorVariant.MUTED,
                                 ),
                             SwipeDirection.BOTTOM_LEFT to
                                 KeyC(
-                                    display = KeyDisplay.TextDisplay("["),
                                     action = KeyAction.CommitText("["),
                                     color = ColorVariant.MUTED,
                                 ),
                             SwipeDirection.LEFT to
                                 KeyC(
-                                    display = KeyDisplay.TextDisplay("("),
                                     action = KeyAction.CommitText("("),
                                     color = ColorVariant.MUTED,
                                 ),
@@ -194,7 +171,6 @@ val KB_NORDIC_MESSAGEASE_NUMERIC =
                 KeyItemC(
                     center =
                         KeyC(
-                            display = KeyDisplay.TextDisplay("5"),
                             action = KeyAction.CommitText("5"),
                             size = FontSizeVariant.LARGE,
                             color = ColorVariant.PRIMARY,
@@ -203,7 +179,6 @@ val KB_NORDIC_MESSAGEASE_NUMERIC =
                 KeyItemC(
                     center =
                         KeyC(
-                            display = KeyDisplay.TextDisplay("6"),
                             action = KeyAction.CommitText("6"),
                             size = FontSizeVariant.LARGE,
                             color = ColorVariant.PRIMARY,
@@ -212,31 +187,26 @@ val KB_NORDIC_MESSAGEASE_NUMERIC =
                         mapOf(
                             SwipeDirection.TOP_LEFT to
                                 KeyC(
-                                    display = KeyDisplay.TextDisplay("|"),
                                     action = KeyAction.CommitText("|"),
                                     color = ColorVariant.MUTED,
                                 ),
                             SwipeDirection.TOP_RIGHT to
                                 KeyC(
-                                    display = KeyDisplay.TextDisplay("}"),
                                     action = KeyAction.CommitText("}"),
                                     color = ColorVariant.MUTED,
                                 ),
                             SwipeDirection.RIGHT to
                                 KeyC(
-                                    display = KeyDisplay.TextDisplay(")"),
                                     action = KeyAction.CommitText(")"),
                                     color = ColorVariant.MUTED,
                                 ),
                             SwipeDirection.BOTTOM_RIGHT to
                                 KeyC(
-                                    display = KeyDisplay.TextDisplay("]"),
                                     action = KeyAction.CommitText("]"),
                                     color = ColorVariant.MUTED,
                                 ),
                             SwipeDirection.BOTTOM_LEFT to
                                 KeyC(
-                                    display = KeyDisplay.TextDisplay("@"),
                                     action = KeyAction.CommitText("@"),
                                     color = ColorVariant.MUTED,
                                 ),
@@ -248,7 +218,6 @@ val KB_NORDIC_MESSAGEASE_NUMERIC =
                 KeyItemC(
                     center =
                         KeyC(
-                            display = KeyDisplay.TextDisplay("7"),
                             action = KeyAction.CommitText("7"),
                             size = FontSizeVariant.LARGE,
                             color = ColorVariant.PRIMARY,
@@ -257,7 +226,6 @@ val KB_NORDIC_MESSAGEASE_NUMERIC =
                         mapOf(
                             SwipeDirection.TOP_LEFT to
                                 KeyC(
-                                    display = KeyDisplay.TextDisplay("~"),
                                     action = KeyAction.CommitText("~"),
                                     color = ColorVariant.MUTED,
                                 ),
@@ -269,7 +237,6 @@ val KB_NORDIC_MESSAGEASE_NUMERIC =
                                 ),
                             SwipeDirection.LEFT to
                                 KeyC(
-                                    display = KeyDisplay.TextDisplay("<"),
                                     action = KeyAction.CommitText("<"),
                                     color = ColorVariant.MUTED,
                                 ),
@@ -281,7 +248,6 @@ val KB_NORDIC_MESSAGEASE_NUMERIC =
                                 ),
                             SwipeDirection.RIGHT to
                                 KeyC(
-                                    display = KeyDisplay.TextDisplay("*"),
                                     action = KeyAction.CommitText("*"),
                                     color = ColorVariant.MUTED,
                                 ),
@@ -290,7 +256,6 @@ val KB_NORDIC_MESSAGEASE_NUMERIC =
                 KeyItemC(
                     center =
                         KeyC(
-                            display = KeyDisplay.TextDisplay("8"),
                             action = KeyAction.CommitText("8"),
                             size = FontSizeVariant.LARGE,
                             color = ColorVariant.PRIMARY,
@@ -299,31 +264,26 @@ val KB_NORDIC_MESSAGEASE_NUMERIC =
                         mapOf(
                             SwipeDirection.TOP_LEFT to
                                 KeyC(
-                                    display = KeyDisplay.TextDisplay("\""),
                                     action = KeyAction.CommitText("\""),
                                     color = ColorVariant.MUTED,
                                 ),
                             SwipeDirection.TOP_RIGHT to
                                 KeyC(
-                                    display = KeyDisplay.TextDisplay("'"),
                                     action = KeyAction.CommitText("'"),
                                     color = ColorVariant.SECONDARY,
                                 ),
                             SwipeDirection.BOTTOM_RIGHT to
                                 KeyC(
-                                    display = KeyDisplay.TextDisplay(":"),
                                     action = KeyAction.CommitText(":"),
                                     color = ColorVariant.SECONDARY,
                                 ),
                             SwipeDirection.BOTTOM to
                                 KeyC(
-                                    display = KeyDisplay.TextDisplay("."),
                                     action = KeyAction.CommitText("."),
                                     color = ColorVariant.SECONDARY,
                                 ),
                             SwipeDirection.BOTTOM_LEFT to
                                 KeyC(
-                                    display = KeyDisplay.TextDisplay(","),
                                     action = KeyAction.CommitText(","),
                                     color = ColorVariant.SECONDARY,
                                 ),
@@ -332,7 +292,6 @@ val KB_NORDIC_MESSAGEASE_NUMERIC =
                 KeyItemC(
                     center =
                         KeyC(
-                            display = KeyDisplay.TextDisplay("9"),
                             action = KeyAction.CommitText("9"),
                             size = FontSizeVariant.LARGE,
                             color = ColorVariant.PRIMARY,
@@ -341,31 +300,26 @@ val KB_NORDIC_MESSAGEASE_NUMERIC =
                         mapOf(
                             SwipeDirection.TOP to
                                 KeyC(
-                                    display = KeyDisplay.TextDisplay("&"),
                                     action = KeyAction.CommitText("&"),
                                     color = ColorVariant.MUTED,
                                 ),
                             SwipeDirection.TOP_RIGHT to
                                 KeyC(
-                                    display = KeyDisplay.TextDisplay("°"),
                                     action = KeyAction.CommitText("°"),
                                     color = ColorVariant.MUTED,
                                 ),
                             SwipeDirection.RIGHT to
                                 KeyC(
-                                    display = KeyDisplay.TextDisplay(">"),
                                     action = KeyAction.CommitText(">"),
                                     color = ColorVariant.MUTED,
                                 ),
                             SwipeDirection.BOTTOM_LEFT to
                                 KeyC(
-                                    display = KeyDisplay.TextDisplay(";"),
                                     action = KeyAction.CommitText(";"),
                                     color = ColorVariant.MUTED,
                                 ),
                             SwipeDirection.LEFT to
                                 KeyC(
-                                    display = KeyDisplay.TextDisplay("#"),
                                     action = KeyAction.CommitText("#"),
                                     color = ColorVariant.MUTED,
                                 ),
@@ -377,7 +331,6 @@ val KB_NORDIC_MESSAGEASE_NUMERIC =
                 KeyItemC(
                     center =
                         KeyC(
-                            display = KeyDisplay.TextDisplay("0"),
                             action = KeyAction.CommitText("0"),
                             size = FontSizeVariant.LARGE,
                             color = ColorVariant.PRIMARY,

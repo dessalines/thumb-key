@@ -40,21 +40,18 @@ val KB_EN_THUMBKEY_WORDS_MAIN =
                                 ),
                             SwipeDirection.TOP_RIGHT to
                                 KeyC(
-                                    display = KeyDisplay.TextDisplay("make"),
                                     action = KeyAction.CommitText("make"),
                                     color = ColorVariant.MUTED,
                                     size = FontSizeVariant.SMALLEST,
                                 ),
                             SwipeDirection.RIGHT to
                                 KeyC(
-                                    display = KeyDisplay.TextDisplay("will"),
                                     action = KeyAction.CommitText("will"),
                                     color = ColorVariant.MUTED,
                                     size = FontSizeVariant.SMALLEST,
                                 ),
                             SwipeDirection.BOTTOM to
                                 KeyC(
-                                    display = KeyDisplay.TextDisplay("what"),
                                     action = KeyAction.CommitText("what"),
                                     color = ColorVariant.MUTED,
                                     size = FontSizeVariant.SMALLEST,
@@ -76,42 +73,36 @@ val KB_EN_THUMBKEY_WORDS_MAIN =
                                 ),
                             SwipeDirection.TOP_LEFT to
                                 KeyC(
-                                    display = KeyDisplay.TextDisplay("when"),
                                     action = KeyAction.CommitText("when"),
                                     color = ColorVariant.MUTED,
                                     size = FontSizeVariant.SMALLEST,
                                 ),
                             SwipeDirection.LEFT to
                                 KeyC(
-                                    display = KeyDisplay.TextDisplay("which"),
                                     action = KeyAction.CommitText("which"),
                                     color = ColorVariant.MUTED,
                                     size = FontSizeVariant.SMALLEST,
                                 ),
                             SwipeDirection.BOTTOM_LEFT to
                                 KeyC(
-                                    display = KeyDisplay.TextDisplay("with"),
                                     action = KeyAction.CommitText("with"),
                                     color = ColorVariant.MUTED,
                                     size = FontSizeVariant.SMALLEST,
                                 ),
                             SwipeDirection.TOP_RIGHT to
                                 KeyC(
-                                    display = KeyDisplay.TextDisplay("just"),
                                     action = KeyAction.CommitText("just"),
                                     color = ColorVariant.MUTED,
                                     size = FontSizeVariant.SMALLEST,
                                 ),
                             SwipeDirection.RIGHT to
                                 KeyC(
-                                    display = KeyDisplay.TextDisplay("from"),
                                     action = KeyAction.CommitText("from"),
                                     color = ColorVariant.MUTED,
                                     size = FontSizeVariant.SMALLEST,
                                 ),
                             SwipeDirection.BOTTOM_RIGHT to
                                 KeyC(
-                                    display = KeyDisplay.TextDisplay("be"),
                                     action = KeyAction.CommitText("be"),
                                     color = ColorVariant.MUTED,
                                     size = FontSizeVariant.SMALLEST,
@@ -133,49 +124,42 @@ val KB_EN_THUMBKEY_WORDS_MAIN =
                                 ),
                             SwipeDirection.TOP_LEFT to
                                 KeyC(
-                                    display = KeyDisplay.TextDisplay("ould"),
                                     action = KeyAction.CommitText("ould"),
                                     color = ColorVariant.MUTED,
                                     size = FontSizeVariant.SMALLEST,
                                 ),
                             SwipeDirection.TOP to
                                 KeyC(
-                                    display = KeyDisplay.TextDisplay("'ll"),
                                     action = KeyAction.CommitText("'ll"),
                                     color = ColorVariant.MUTED,
                                     size = FontSizeVariant.SMALLEST,
                                 ),
                             SwipeDirection.TOP_RIGHT to
                                 KeyC(
-                                    display = KeyDisplay.TextDisplay("'re"),
                                     action = KeyAction.CommitText("'re"),
                                     color = ColorVariant.MUTED,
                                     size = FontSizeVariant.SMALLEST,
                                 ),
                             SwipeDirection.RIGHT to
                                 KeyC(
-                                    display = KeyDisplay.TextDisplay("about"),
                                     action = KeyAction.CommitText("about"),
                                     color = ColorVariant.MUTED,
                                     size = FontSizeVariant.SMALLEST,
                                 ),
                             SwipeDirection.BOTTOM_RIGHT to
                                 KeyC(
-                                    display = KeyDisplay.TextDisplay("n't"),
                                     action = KeyAction.CommitText("n't"),
                                     color = ColorVariant.MUTED,
                                     size = FontSizeVariant.SMALLEST,
                                 ),
                             SwipeDirection.BOTTOM to
                                 KeyC(
-                                    display = KeyDisplay.TextDisplay("'t"),
                                     action = KeyAction.CommitText("'t"),
                                     color = ColorVariant.MUTED,
                                     size = FontSizeVariant.SMALLEST,
                                 ),
                             SwipeDirection.LEFT to
                                 KeyC(
-                                    display = KeyDisplay.TextDisplay("'s"),
                                     action = KeyAction.CommitText("'s"),
                                     color = ColorVariant.MUTED,
                                     size = FontSizeVariant.SMALLEST,
@@ -200,28 +184,24 @@ val KB_EN_THUMBKEY_WORDS_MAIN =
                                 ),
                             SwipeDirection.TOP to
                                 KeyC(
-                                    display = KeyDisplay.TextDisplay("like"),
                                     action = KeyAction.CommitText("like"),
                                     color = ColorVariant.MUTED,
                                     size = FontSizeVariant.SMALLEST,
                                 ),
                             SwipeDirection.TOP_RIGHT to
                                 KeyC(
-                                    display = KeyDisplay.TextDisplay("not"),
                                     action = KeyAction.CommitText("not"),
                                     color = ColorVariant.MUTED,
                                     size = FontSizeVariant.SMALLEST,
                                 ),
                             SwipeDirection.BOTTOM_RIGHT to
                                 KeyC(
-                                    display = KeyDisplay.TextDisplay("and"),
                                     action = KeyAction.CommitText("and"),
                                     color = ColorVariant.MUTED,
                                     size = FontSizeVariant.SMALLEST,
                                 ),
                             SwipeDirection.BOTTOM to
                                 KeyC(
-                                    display = KeyDisplay.TextDisplay("know"),
                                     action = KeyAction.CommitText("know"),
                                     color = ColorVariant.MUTED,
                                     size = FontSizeVariant.SMALLEST,
@@ -317,21 +297,18 @@ val KB_EN_THUMBKEY_WORDS_MAIN =
                                 ),
                             SwipeDirection.TOP to
                                 KeyC(
-                                    display = KeyDisplay.TextDisplay("have"),
                                     action = KeyAction.CommitText("have"),
                                     color = ColorVariant.MUTED,
                                     size = FontSizeVariant.SMALLEST,
                                 ),
                             SwipeDirection.RIGHT to
                                 KeyC(
-                                    display = KeyDisplay.TextDisplay("can"),
                                     action = KeyAction.CommitText("can"),
                                     color = ColorVariant.MUTED,
                                     size = FontSizeVariant.SMALLEST,
                                 ),
                             SwipeDirection.BOTTOM_RIGHT to
                                 KeyC(
-                                    display = KeyDisplay.TextDisplay("but"),
                                     action = KeyAction.CommitText("but"),
                                     color = ColorVariant.MUTED,
                                     size = FontSizeVariant.SMALLEST,
@@ -372,21 +349,18 @@ val KB_EN_THUMBKEY_WORDS_MAIN =
                                 ),
                             SwipeDirection.TOP_LEFT to
                                 KeyC(
-                                    display = KeyDisplay.TextDisplay("this"),
                                     action = KeyAction.CommitText("this"),
                                     color = ColorVariant.MUTED,
                                     size = FontSizeVariant.SMALLEST,
                                 ),
                             SwipeDirection.TOP_RIGHT to
                                 KeyC(
-                                    display = KeyDisplay.TextDisplay("that"),
                                     action = KeyAction.CommitText("that"),
                                     color = ColorVariant.MUTED,
                                     size = FontSizeVariant.SMALLEST,
                                 ),
                             SwipeDirection.LEFT to
                                 KeyC(
-                                    display = KeyDisplay.TextDisplay("I'm"),
                                     action = KeyAction.CommitText("I'm"),
                                     color = ColorVariant.MUTED,
                                     size = FontSizeVariant.SMALLEST,
@@ -408,28 +382,24 @@ val KB_EN_THUMBKEY_WORDS_MAIN =
                                 ),
                             SwipeDirection.TOP to
                                 KeyC(
-                                    display = KeyDisplay.TextDisplay("the"),
                                     action = KeyAction.CommitText("the"),
                                     color = ColorVariant.MUTED,
                                     size = FontSizeVariant.SMALLEST,
                                 ),
                             SwipeDirection.TOP_RIGHT to
                                 KeyC(
-                                    display = KeyDisplay.TextDisplay("for"),
                                     action = KeyAction.CommitText("for"),
                                     color = ColorVariant.MUTED,
                                     size = FontSizeVariant.SMALLEST,
                                 ),
                             SwipeDirection.BOTTOM_LEFT to
                                 KeyC(
-                                    display = KeyDisplay.TextDisplay("do"),
                                     action = KeyAction.CommitText("do"),
                                     color = ColorVariant.MUTED,
                                     size = FontSizeVariant.SMALLEST,
                                 ),
                             SwipeDirection.LEFT to
                                 KeyC(
-                                    display = KeyDisplay.TextDisplay("you"),
                                     action = KeyAction.CommitText("you"),
                                     color = ColorVariant.MUTED,
                                     size = FontSizeVariant.SMALLEST,
@@ -464,21 +434,18 @@ val KB_EN_THUMBKEY_WORDS_SHIFTED =
                                 ),
                             SwipeDirection.TOP_RIGHT to
                                 KeyC(
-                                    display = KeyDisplay.TextDisplay("Make"),
                                     action = KeyAction.CommitText("Make"),
                                     color = ColorVariant.MUTED,
                                     size = FontSizeVariant.SMALLEST,
                                 ),
                             SwipeDirection.RIGHT to
                                 KeyC(
-                                    display = KeyDisplay.TextDisplay("Will"),
                                     action = KeyAction.CommitText("Will"),
                                     color = ColorVariant.MUTED,
                                     size = FontSizeVariant.SMALLEST,
                                 ),
                             SwipeDirection.BOTTOM to
                                 KeyC(
-                                    display = KeyDisplay.TextDisplay("What"),
                                     action = KeyAction.CommitText("What"),
                                     color = ColorVariant.MUTED,
                                     size = FontSizeVariant.SMALLEST,
@@ -500,42 +467,36 @@ val KB_EN_THUMBKEY_WORDS_SHIFTED =
                                 ),
                             SwipeDirection.TOP_LEFT to
                                 KeyC(
-                                    display = KeyDisplay.TextDisplay("When"),
                                     action = KeyAction.CommitText("When"),
                                     color = ColorVariant.MUTED,
                                     size = FontSizeVariant.SMALLEST,
                                 ),
                             SwipeDirection.LEFT to
                                 KeyC(
-                                    display = KeyDisplay.TextDisplay("Which"),
                                     action = KeyAction.CommitText("Which"),
                                     color = ColorVariant.MUTED,
                                     size = FontSizeVariant.SMALLEST,
                                 ),
                             SwipeDirection.BOTTOM_LEFT to
                                 KeyC(
-                                    display = KeyDisplay.TextDisplay("With"),
                                     action = KeyAction.CommitText("With"),
                                     color = ColorVariant.MUTED,
                                     size = FontSizeVariant.SMALLEST,
                                 ),
                             SwipeDirection.TOP_RIGHT to
                                 KeyC(
-                                    display = KeyDisplay.TextDisplay("Just"),
                                     action = KeyAction.CommitText("Just"),
                                     color = ColorVariant.MUTED,
                                     size = FontSizeVariant.SMALLEST,
                                 ),
                             SwipeDirection.RIGHT to
                                 KeyC(
-                                    display = KeyDisplay.TextDisplay("From"),
                                     action = KeyAction.CommitText("From"),
                                     color = ColorVariant.MUTED,
                                     size = FontSizeVariant.SMALLEST,
                                 ),
                             SwipeDirection.BOTTOM_RIGHT to
                                 KeyC(
-                                    display = KeyDisplay.TextDisplay("Be"),
                                     action = KeyAction.CommitText("Be"),
                                     color = ColorVariant.MUTED,
                                     size = FontSizeVariant.SMALLEST,
@@ -557,49 +518,42 @@ val KB_EN_THUMBKEY_WORDS_SHIFTED =
                                 ),
                             SwipeDirection.TOP_LEFT to
                                 KeyC(
-                                    display = KeyDisplay.TextDisplay("ould"),
                                     action = KeyAction.CommitText("ould"),
                                     color = ColorVariant.MUTED,
                                     size = FontSizeVariant.SMALLEST,
                                 ),
                             SwipeDirection.TOP to
                                 KeyC(
-                                    display = KeyDisplay.TextDisplay("'ll"),
                                     action = KeyAction.CommitText("'ll"),
                                     color = ColorVariant.MUTED,
                                     size = FontSizeVariant.SMALLEST,
                                 ),
                             SwipeDirection.TOP_RIGHT to
                                 KeyC(
-                                    display = KeyDisplay.TextDisplay("'re"),
                                     action = KeyAction.CommitText("'re"),
                                     color = ColorVariant.MUTED,
                                     size = FontSizeVariant.SMALLEST,
                                 ),
                             SwipeDirection.RIGHT to
                                 KeyC(
-                                    display = KeyDisplay.TextDisplay("About"),
                                     action = KeyAction.CommitText("About"),
                                     color = ColorVariant.MUTED,
                                     size = FontSizeVariant.SMALLEST,
                                 ),
                             SwipeDirection.BOTTOM_RIGHT to
                                 KeyC(
-                                    display = KeyDisplay.TextDisplay("n't"),
                                     action = KeyAction.CommitText("n't"),
                                     color = ColorVariant.MUTED,
                                     size = FontSizeVariant.SMALLEST,
                                 ),
                             SwipeDirection.BOTTOM to
                                 KeyC(
-                                    display = KeyDisplay.TextDisplay("'t"),
                                     action = KeyAction.CommitText("'t"),
                                     color = ColorVariant.MUTED,
                                     size = FontSizeVariant.SMALLEST,
                                 ),
                             SwipeDirection.LEFT to
                                 KeyC(
-                                    display = KeyDisplay.TextDisplay("'s"),
                                     action = KeyAction.CommitText("'s"),
                                     color = ColorVariant.MUTED,
                                     size = FontSizeVariant.SMALLEST,
@@ -624,28 +578,24 @@ val KB_EN_THUMBKEY_WORDS_SHIFTED =
                                 ),
                             SwipeDirection.TOP to
                                 KeyC(
-                                    display = KeyDisplay.TextDisplay("Like"),
                                     action = KeyAction.CommitText("Like"),
                                     color = ColorVariant.MUTED,
                                     size = FontSizeVariant.SMALLEST,
                                 ),
                             SwipeDirection.TOP_RIGHT to
                                 KeyC(
-                                    display = KeyDisplay.TextDisplay("Not"),
                                     action = KeyAction.CommitText("Not"),
                                     color = ColorVariant.MUTED,
                                     size = FontSizeVariant.SMALLEST,
                                 ),
                             SwipeDirection.BOTTOM_RIGHT to
                                 KeyC(
-                                    display = KeyDisplay.TextDisplay("And"),
                                     action = KeyAction.CommitText("And"),
                                     color = ColorVariant.MUTED,
                                     size = FontSizeVariant.SMALLEST,
                                 ),
                             SwipeDirection.BOTTOM to
                                 KeyC(
-                                    display = KeyDisplay.TextDisplay("Know"),
                                     action = KeyAction.CommitText("Know"),
                                     color = ColorVariant.MUTED,
                                     size = FontSizeVariant.SMALLEST,
@@ -744,21 +694,18 @@ val KB_EN_THUMBKEY_WORDS_SHIFTED =
                                 ),
                             SwipeDirection.TOP to
                                 KeyC(
-                                    display = KeyDisplay.TextDisplay("Have"),
                                     action = KeyAction.CommitText("Have"),
                                     color = ColorVariant.MUTED,
                                     size = FontSizeVariant.SMALLEST,
                                 ),
                             SwipeDirection.RIGHT to
                                 KeyC(
-                                    display = KeyDisplay.TextDisplay("Can"),
                                     action = KeyAction.CommitText("Can"),
                                     color = ColorVariant.MUTED,
                                     size = FontSizeVariant.SMALLEST,
                                 ),
                             SwipeDirection.BOTTOM_RIGHT to
                                 KeyC(
-                                    display = KeyDisplay.TextDisplay("But"),
                                     action = KeyAction.CommitText("But"),
                                     color = ColorVariant.MUTED,
                                     size = FontSizeVariant.SMALLEST,
@@ -804,14 +751,12 @@ val KB_EN_THUMBKEY_WORDS_SHIFTED =
                                 ),
                             SwipeDirection.TOP_LEFT to
                                 KeyC(
-                                    display = KeyDisplay.TextDisplay("This"),
                                     action = KeyAction.CommitText("This"),
                                     color = ColorVariant.MUTED,
                                     size = FontSizeVariant.SMALLEST,
                                 ),
                             SwipeDirection.LEFT to
                                 KeyC(
-                                    display = KeyDisplay.TextDisplay("I'm"),
                                     action = KeyAction.CommitText("I'm"),
                                     color = ColorVariant.MUTED,
                                     size = FontSizeVariant.SMALLEST,
@@ -833,28 +778,24 @@ val KB_EN_THUMBKEY_WORDS_SHIFTED =
                                 ),
                             SwipeDirection.TOP to
                                 KeyC(
-                                    display = KeyDisplay.TextDisplay("The"),
                                     action = KeyAction.CommitText("The"),
                                     color = ColorVariant.MUTED,
                                     size = FontSizeVariant.SMALLEST,
                                 ),
                             SwipeDirection.TOP_RIGHT to
                                 KeyC(
-                                    display = KeyDisplay.TextDisplay("For"),
                                     action = KeyAction.CommitText("For"),
                                     color = ColorVariant.MUTED,
                                     size = FontSizeVariant.SMALLEST,
                                 ),
                             SwipeDirection.BOTTOM_LEFT to
                                 KeyC(
-                                    display = KeyDisplay.TextDisplay("Do"),
                                     action = KeyAction.CommitText("Do"),
                                     color = ColorVariant.MUTED,
                                     size = FontSizeVariant.SMALLEST,
                                 ),
                             SwipeDirection.LEFT to
                                 KeyC(
-                                    display = KeyDisplay.TextDisplay("You"),
                                     action = KeyAction.CommitText("You"),
                                     color = ColorVariant.MUTED,
                                     size = FontSizeVariant.SMALLEST,

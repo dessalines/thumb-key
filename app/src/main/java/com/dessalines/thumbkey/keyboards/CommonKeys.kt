@@ -205,7 +205,6 @@ val SPACEBAR_KEY_ITEM =
     KeyItemC(
         center =
             KeyC(
-                display = KeyDisplay.TextDisplay(" "),
                 action = KeyAction.CommitText(" "),
             ),
         swipeType = SwipeNWay.FOUR_WAY_CROSS,
@@ -254,7 +253,6 @@ val SPACEBAR_PROGRAMMING_KEY_ITEM =
     KeyItemC(
         center =
             KeyC(
-                display = KeyDisplay.TextDisplay(" "),
                 action = KeyAction.CommitText(" "),
             ),
         swipeType = SwipeNWay.FOUR_WAY_CROSS,
@@ -327,7 +325,6 @@ val SPACEBAR_TYPESPLIT_MIDDLE_KEY_ITEM =
     KeyItemC(
         center =
             KeyC(
-                display = KeyDisplay.TextDisplay(" "),
                 action = KeyAction.CommitText(" "),
             ),
         swipeType = SwipeNWay.FOUR_WAY_CROSS,
@@ -358,13 +355,11 @@ val SPACEBAR_TYPESPLIT_MIDDLE_KEY_ITEM =
                     ),
                 SwipeDirection.TOP to
                     KeyC(
-                        display = KeyDisplay.TextDisplay("'"),
                         action = KeyAction.CommitText("'"),
                         color = ColorVariant.MUTED,
                     ),
                 SwipeDirection.BOTTOM to
                     KeyC(
-                        display = KeyDisplay.TextDisplay(","),
                         action = KeyAction.CommitText(","),
                         color = ColorVariant.MUTED,
                     ),
@@ -409,19 +404,16 @@ val SPACEBAR_TYPESPLIT_BOTTOM_KEY_ITEM =
                     ),
                 SwipeDirection.TOP to
                     KeyC(
-                        display = KeyDisplay.TextDisplay("-"),
                         action = KeyAction.CommitText("-"),
                         color = ColorVariant.MUTED,
                     ),
                 SwipeDirection.BOTTOM to
                     KeyC(
-                        display = KeyDisplay.TextDisplay("."),
                         action = KeyAction.CommitText("."),
                         color = ColorVariant.MUTED,
                     ),
                 SwipeDirection.BOTTOM_LEFT to
                     KeyC(
-                        display = KeyDisplay.TextDisplay("*"),
                         action = KeyAction.CommitText("*"),
                         color = ColorVariant.MUTED,
                     ),
@@ -434,25 +426,21 @@ val SPACEBAR_ALL_SYMBOLS =
             mapOf(
                 SwipeDirection.LEFT to
                     KeyC(
-                        display = KeyDisplay.TextDisplay(","),
                         action = KeyAction.CommitText(","),
                         color = ColorVariant.MUTED,
                     ),
                 SwipeDirection.RIGHT to
                     KeyC(
-                        display = KeyDisplay.TextDisplay("'"),
                         action = KeyAction.CommitText("'"),
                         color = ColorVariant.MUTED,
                     ),
                 SwipeDirection.TOP to
                     KeyC(
-                        display = KeyDisplay.TextDisplay("-"),
                         action = KeyAction.CommitText("-"),
                         color = ColorVariant.MUTED,
                     ),
                 SwipeDirection.BOTTOM to
                     KeyC(
-                        display = KeyDisplay.TextDisplay("."),
                         action = KeyAction.CommitText("."),
                         color = ColorVariant.MUTED,
                     ),
