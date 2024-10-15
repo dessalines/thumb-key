@@ -470,8 +470,8 @@ fun KeyboardKey(
                                             if (dragReturnEnabled) {
                                                 val swipeDirection =
                                                     swipeDirection(maxOffset.x, maxOffset.y, minSwipeLength, key.swipeType)
-                                                key.swipes?.get(swipeDirection)?.swipeReturnAction
-                                                    ?: oppositeCaseKey?.swipes?.get(swipeDirection)?.action
+                                                key.getSwipe(swipeDirection)?.swipeReturnAction
+                                                    ?: oppositeCaseKey?.getSwipe(swipeDirection)?.action
                                             } else {
                                                 null
                                             }
@@ -484,8 +484,8 @@ fun KeyboardKey(
                                                 minSwipeLength,
                                                 if (ghostKey == null) key.swipeType else SwipeNWay.EIGHT_WAY,
                                             )
-                                        key.swipes?.get(swipeDirection)?.action ?: (
-                                            ghostKey?.swipes?.get(swipeDirection)?.action
+                                        key.getSwipe(swipeDirection)?.action ?: (
+                                            ghostKey?.getSwipe(swipeDirection)?.action
                                         )
                                     }
                                 ) ?: key.center.action
@@ -614,7 +614,7 @@ fun KeyboardKey(
                         vertical = diagonalYPadding,
                     ),
         ) {
-            key.swipes?.get(SwipeDirection.TOP_LEFT)?.let {
+            key.getSwipe(SwipeDirection.TOP_LEFT)?.let {
                 KeyText(it, (keySize - keyBorderWidth).dp, hideLetters, hideSymbols, capsLock)
             }
         }
@@ -625,7 +625,7 @@ fun KeyboardKey(
                     .fillMaxSize()
                     .padding(vertical = yPadding),
         ) {
-            key.swipes?.get(SwipeDirection.TOP)?.let {
+            key.getSwipe(SwipeDirection.TOP)?.let {
                 KeyText(it, (keySize - keyBorderWidth).dp, hideLetters, hideSymbols, capsLock)
             }
         }
@@ -639,7 +639,7 @@ fun KeyboardKey(
                         vertical = diagonalYPadding,
                     ),
         ) {
-            key.swipes?.get(SwipeDirection.TOP_RIGHT)?.let {
+            key.getSwipe(SwipeDirection.TOP_RIGHT)?.let {
                 KeyText(it, (keySize - keyBorderWidth).dp, hideLetters, hideSymbols, capsLock)
             }
         }
@@ -650,7 +650,7 @@ fun KeyboardKey(
                     .fillMaxSize()
                     .padding(horizontal = xPadding),
         ) {
-            key.swipes?.get(SwipeDirection.LEFT)?.let {
+            key.getSwipe(SwipeDirection.LEFT)?.let {
                 KeyText(it, (keySize - keyBorderWidth).dp, hideLetters, hideSymbols, capsLock)
             }
         }
@@ -670,7 +670,7 @@ fun KeyboardKey(
                     .fillMaxSize()
                     .padding(horizontal = xPadding),
         ) {
-            key.swipes?.get(SwipeDirection.RIGHT)?.let {
+            key.getSwipe(SwipeDirection.RIGHT)?.let {
                 KeyText(it, (keySize - keyBorderWidth).dp, hideLetters, hideSymbols, capsLock)
             }
         }
@@ -684,7 +684,7 @@ fun KeyboardKey(
                         vertical = diagonalYPadding,
                     ),
         ) {
-            key.swipes?.get(SwipeDirection.BOTTOM_LEFT)?.let {
+            key.getSwipe(SwipeDirection.BOTTOM_LEFT)?.let {
                 KeyText(it, (keySize - keyBorderWidth).dp, hideLetters, hideSymbols, capsLock)
             }
         }
@@ -695,7 +695,7 @@ fun KeyboardKey(
                     .fillMaxSize()
                     .padding(vertical = yPadding),
         ) {
-            key.swipes?.get(SwipeDirection.BOTTOM)?.let {
+            key.getSwipe(SwipeDirection.BOTTOM)?.let {
                 KeyText(it, (keySize - keyBorderWidth).dp, hideLetters, hideSymbols, capsLock)
             }
         }
@@ -709,7 +709,7 @@ fun KeyboardKey(
                         vertical = diagonalYPadding,
                     ),
         ) {
-            key.swipes?.get(SwipeDirection.BOTTOM_RIGHT)?.let {
+            key.getSwipe(SwipeDirection.BOTTOM_RIGHT)?.let {
                 KeyText(it, (keySize - keyBorderWidth).dp, hideLetters, hideSymbols, capsLock)
             }
         }

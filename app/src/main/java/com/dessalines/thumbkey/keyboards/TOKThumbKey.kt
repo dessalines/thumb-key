@@ -1,17 +1,14 @@
+@file:Suppress("ktlint:standard:no-wildcard-imports")
+
 package com.dessalines.thumbkey.keyboards
 
 import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.outlined.ArrowDropDown
-import androidx.compose.material.icons.outlined.ArrowDropUp
-import com.dessalines.thumbkey.utils.ColorVariant
-import com.dessalines.thumbkey.utils.KeyAction
-import com.dessalines.thumbkey.utils.KeyC
-import com.dessalines.thumbkey.utils.KeyDisplay
-import com.dessalines.thumbkey.utils.KeyItemC
-import com.dessalines.thumbkey.utils.KeyboardC
-import com.dessalines.thumbkey.utils.KeyboardDefinition
-import com.dessalines.thumbkey.utils.KeyboardDefinitionModes
-import com.dessalines.thumbkey.utils.SwipeDirection
+import androidx.compose.material.icons.outlined.*
+import com.dessalines.thumbkey.utils.*
+import com.dessalines.thumbkey.utils.ColorVariant.*
+import com.dessalines.thumbkey.utils.FontSizeVariant.*
+import com.dessalines.thumbkey.utils.KeyAction.*
+import com.dessalines.thumbkey.utils.SwipeNWay.*
 
 // Frequencies from here: https://www.reddit.com/r/tokipona/comments/cxlpt5/frequency_list_of_toki_pona_words_from_tatoeba
 // Since these aren't vowels, no need to alternate, just do bottom right to left, bottom to top
@@ -21,464 +18,115 @@ val KB_TOK_THUMBKEY_MAIN =
         listOf(
             listOf(
                 KeyItemC(
-                    center =
-                        KeyC(
-                            display = KeyDisplay.TextDisplay("❌"),
-                            action = KeyAction.CommitText("ala "),
-                        ),
-                    swipes =
-                        mapOf(
-                            SwipeDirection.TOP_LEFT to
-                                KeyC(
-                                    display = KeyDisplay.TextDisplay("🛒"),
-                                    action = KeyAction.CommitText("esun "),
-                                ),
-                            SwipeDirection.TOP to
-                                KeyC(
-                                    display = KeyDisplay.TextDisplay("👥"),
-                                    action = KeyAction.CommitText("kulupu "),
-                                ),
-                            SwipeDirection.TOP_RIGHT to
-                                KeyC(
-                                    display = KeyDisplay.TextDisplay("👂"),
-                                    action = KeyAction.CommitText("kute "),
-                                ),
-                            SwipeDirection.RIGHT to
-                                KeyC(
-                                    display = KeyDisplay.TextDisplay("🏋️"),
-                                    action = KeyAction.CommitText("sijelo "),
-                                ),
-                            SwipeDirection.BOTTOM_RIGHT to
-                                KeyC(
-                                    display = KeyDisplay.TextDisplay("💀"),
-                                    action = KeyAction.CommitText("moli "),
-                                ),
-                            SwipeDirection.BOTTOM to
-                                KeyC(
-                                    display = KeyDisplay.TextDisplay("⚫"),
-                                    action = KeyAction.CommitText("pimeja "),
-                                ),
-                            SwipeDirection.BOTTOM_LEFT to
-                                KeyC(
-                                    display = KeyDisplay.TextDisplay("🛏️"),
-                                    action = KeyAction.CommitText("supa "),
-                                ),
-                            SwipeDirection.LEFT to
-                                KeyC(
-                                    display = KeyDisplay.TextDisplay("⚔️"),
-                                    action = KeyAction.CommitText("utala "),
-                                ),
-                        ),
+                    center = KeyC("ala ", displayText = "❌"),
+                    topLeft = KeyC("esun ", displayText = "🛒"),
+                    top = KeyC("kulupu ", displayText = "👥"),
+                    topRight = KeyC("kute ", displayText = "👂"),
+                    right = KeyC("sijelo ", displayText = "🏋️"),
+                    bottomRight = KeyC("moli ", displayText = "💀"),
+                    bottom = KeyC("pimeja ", displayText = "⚫"),
+                    bottomLeft = KeyC("supa ", displayText = "🛏️"),
+                    left = KeyC("utala ", displayText = "⚔️"),
                 ),
                 KeyItemC(
-                    center =
-                        KeyC(
-                            display = KeyDisplay.TextDisplay("👉"),
-                            action = KeyAction.CommitText("sina "),
-                        ),
-                    swipes =
-                        mapOf(
-                            SwipeDirection.TOP_LEFT to
-                                KeyC(
-                                    display = KeyDisplay.TextDisplay("🔈"),
-                                    action = KeyAction.CommitText("kalama "),
-                                ),
-                            SwipeDirection.TOP to
-                                KeyC(
-                                    display = KeyDisplay.TextDisplay("😴"),
-                                    action = KeyAction.CommitText("lape "),
-                                ),
-                            SwipeDirection.TOP_RIGHT to
-                                KeyC(
-                                    display = KeyDisplay.TextDisplay("👪"),
-                                    action = KeyAction.CommitText("mama "),
-                                ),
-                            SwipeDirection.RIGHT to
-                                KeyC(
-                                    display = KeyDisplay.TextDisplay("💰"),
-                                    action = KeyAction.CommitText("mani "),
-                                ),
-                            SwipeDirection.BOTTOM_RIGHT to
-                                KeyC(
-                                    display = KeyDisplay.TextDisplay("↔️"),
-                                    action = KeyAction.CommitText("poka "),
-                                ),
-                            SwipeDirection.BOTTOM to
-                                KeyC(
-                                    display = KeyDisplay.TextDisplay("⭕"),
-                                    action = KeyAction.CommitText("sike "),
-                                ),
-                            SwipeDirection.BOTTOM_LEFT to
-                                KeyC(
-                                    display = KeyDisplay.TextDisplay("📄"),
-                                    action = KeyAction.CommitText("lipu "),
-                                ),
-                            SwipeDirection.LEFT to
-                                KeyC(
-                                    display = KeyDisplay.TextDisplay("➕"),
-                                    action = KeyAction.CommitText("en "),
-                                ),
-                        ),
+                    center = KeyC("sina ", displayText = "👉"),
+                    topLeft = KeyC("kalama ", displayText = "🔈"),
+                    top = KeyC("lape ", displayText = "😴"),
+                    topRight = KeyC("mama ", displayText = "👪"),
+                    right = KeyC("mani ", displayText = "💰"),
+                    bottomRight = KeyC("poka ", displayText = "↔️"),
+                    bottom = KeyC("sike ", displayText = "⭕"),
+                    bottomLeft = KeyC("lipu ", displayText = "📄"),
+                    left = KeyC("en ", displayText = "➕"),
                 ),
                 KeyItemC(
-                    center =
-                        KeyC(
-                            display = KeyDisplay.TextDisplay("↪️"),
-                            action = KeyAction.CommitText("tawa "),
-                        ),
-                    swipes =
-                        mapOf(
-                            SwipeDirection.TOP_LEFT to
-                                KeyC(
-                                    display = KeyDisplay.TextDisplay("🐒"),
-                                    action = KeyAction.CommitText("soweli "),
-                                ),
-                            SwipeDirection.TOP to
-                                KeyC(
-                                    display = KeyDisplay.TextDisplay("💥"),
-                                    action = KeyAction.CommitText("pakala "),
-                                ),
-                            SwipeDirection.TOP_RIGHT to
-                                KeyC(
-                                    display = KeyDisplay.TextDisplay("⚓"),
-                                    action = KeyAction.CommitText("awen "),
-                                ),
-                            SwipeDirection.RIGHT to
-                                KeyC(
-                                    display = KeyDisplay.TextDisplay("✌️"),
-                                    action = KeyAction.CommitText("tu "),
-                                ),
-                            SwipeDirection.BOTTOM_RIGHT to
-                                KeyC(
-                                    display = KeyDisplay.TextDisplay("🌀"),
-                                    action = KeyAction.CommitText("nasa "),
-                                ),
-                            SwipeDirection.BOTTOM to
-                                KeyC(
-                                    display = KeyDisplay.TextDisplay("🔀"),
-                                    action = KeyAction.CommitText("ante "),
-                                ),
-                            SwipeDirection.BOTTOM_LEFT to
-                                KeyC(
-                                    display = KeyDisplay.TextDisplay("☝️"),
-                                    action = KeyAction.CommitText("wan "),
-                                ),
-                            SwipeDirection.LEFT to
-                                KeyC(
-                                    display = KeyDisplay.TextDisplay("🛫"),
-                                    action = KeyAction.CommitText("weka "),
-                                ),
-                        ),
+                    center = KeyC("tawa ", displayText = "↪️"),
+                    topLeft = KeyC("soweli ", displayText = "🐒"),
+                    top = KeyC("pakala ", displayText = "💥"),
+                    topRight = KeyC("awen ", displayText = "⚓"),
+                    right = KeyC("tu ", displayText = "✌️"),
+                    bottomRight = KeyC("nasa ", displayText = "🌀"),
+                    bottom = KeyC("ante ", displayText = "🔀"),
+                    bottomLeft = KeyC("wan ", displayText = "☝️"),
+                    left = KeyC("weka ", displayText = "🛫"),
                 ),
                 EMOJI_KEY_ITEM,
             ),
             listOf(
                 KeyItemC(
-                    center =
-                        KeyC(
-                            display = KeyDisplay.TextDisplay("🔼"),
-                            action = KeyAction.CommitText("la "),
-                        ),
-                    swipes =
-                        mapOf(
-                            SwipeDirection.TOP_LEFT to
-                                KeyC(
-                                    display = KeyDisplay.TextDisplay("❕"),
-                                    action = KeyAction.CommitText("kin "),
-                                ),
-                            SwipeDirection.TOP to
-                                KeyC(
-                                    display = KeyDisplay.TextDisplay("🎁"),
-                                    action = KeyAction.CommitText("sin "),
-                                ),
-                            SwipeDirection.TOP_RIGHT to
-                                KeyC(
-                                    display = KeyDisplay.TextDisplay("⚡"),
-                                    action = KeyAction.CommitText("wawa "),
-                                ),
-                            SwipeDirection.RIGHT to
-                                KeyC(
-                                    display = KeyDisplay.TextDisplay("🛣️"),
-                                    action = KeyAction.CommitText("nasin "),
-                                ),
-                            SwipeDirection.BOTTOM_RIGHT to
-                                KeyC(
-                                    display = KeyDisplay.TextDisplay("😃"),
-                                    action = KeyAction.CommitText("musi "),
-                                ),
-                            SwipeDirection.BOTTOM to
-                                KeyC(
-                                    display = KeyDisplay.TextDisplay("🖼️"),
-                                    action = KeyAction.CommitText("sitelen "),
-                                ),
-                            SwipeDirection.BOTTOM_LEFT to
-                                KeyC(
-                                    display = KeyDisplay.TextDisplay("👨"),
-                                    action = KeyAction.CommitText("mije "),
-                                ),
-                            SwipeDirection.LEFT to
-                                KeyC(
-                                    display = KeyDisplay.TextDisplay("⬆️"),
-                                    action = KeyAction.CommitText("sewi "),
-                                ),
-                        ),
+                    center = KeyC("la ", displayText = "🔼"),
+                    topLeft = KeyC("kin ", displayText = "❕"),
+                    top = KeyC("sin ", displayText = "🎁"),
+                    topRight = KeyC("wawa ", displayText = "⚡"),
+                    right = KeyC("nasin ", displayText = "🛣️"),
+                    bottomRight = KeyC("musi ", displayText = "😃"),
+                    bottom = KeyC("sitelen ", displayText = "🖼️"),
+                    bottomLeft = KeyC("mije ", displayText = "👨"),
+                    left = KeyC("sewi ", displayText = "⬆️"),
                 ),
                 KeyItemC(
-                    center =
-                        KeyC(
-                            display = KeyDisplay.TextDisplay("👇"),
-                            action = KeyAction.CommitText("ni "),
-                        ),
-                    swipes =
-                        mapOf(
-                            SwipeDirection.TOP_LEFT to
-                                KeyC(
-                                    display = KeyDisplay.TextDisplay("🤔"),
-                                    action = KeyAction.CommitText("taso "),
-                                ),
-                            SwipeDirection.TOP to
-                                KeyC(
-                                    display = KeyDisplay.TextDisplay("👧"),
-                                    action = KeyAction.CommitText("meli "),
-                                ),
-                            SwipeDirection.TOP_RIGHT to
-                                KeyC(
-                                    display = KeyDisplay.TextDisplay("😶"),
-                                    action = KeyAction.CommitText("lawa "),
-                                ),
-                            SwipeDirection.RIGHT to
-                                KeyC(
-                                    display = KeyDisplay.TextDisplay("🐘"),
-                                    action = KeyAction.CommitText("suli "),
-                                ),
-                            SwipeDirection.BOTTOM_RIGHT to
-                                KeyC(
-                                    display = KeyDisplay.TextDisplay("☯️"),
-                                    action = KeyAction.CommitText("anu "),
-                                ),
-                            SwipeDirection.BOTTOM to
-                                KeyC(
-                                    display = KeyDisplay.TextDisplay("⚙️"),
-                                    action = KeyAction.CommitText("ilo "),
-                                ),
-                            SwipeDirection.BOTTOM_LEFT to
-                                KeyC(
-                                    display = KeyDisplay.TextDisplay("☀️"),
-                                    action = KeyAction.CommitText("suno "),
-                                ),
-                            SwipeDirection.LEFT to
-                                KeyC(
-                                    display = KeyDisplay.TextDisplay("🍽️"),
-                                    action = KeyAction.CommitText("moku "),
-                                ),
-                        ),
+                    center = KeyC("ni ", displayText = "👇"),
+                    topLeft = KeyC("taso ", displayText = "🤔"),
+                    top = KeyC("meli ", displayText = "👧"),
+                    topRight = KeyC("lawa ", displayText = "😶"),
+                    right = KeyC("suli ", displayText = "🐘"),
+                    bottomRight = KeyC("anu ", displayText = "☯️"),
+                    bottom = KeyC("ilo ", displayText = "⚙️"),
+                    bottomLeft = KeyC("suno ", displayText = "☀️"),
+                    left = KeyC("moku ", displayText = "🍽️"),
                 ),
                 KeyItemC(
-                    center =
-                        KeyC(
-                            display = KeyDisplay.TextDisplay("👤"),
-                            action = KeyAction.CommitText("jan "),
-                        ),
-                    swipes =
-                        mapOf(
-                            SwipeDirection.TOP_LEFT to
-                                KeyC(
-                                    display = KeyDisplay.TextDisplay("🐚"),
-                                    action = KeyAction.CommitText("ijo "),
-                                ),
-                            SwipeDirection.TOP to
-                                KeyC(
-                                    display = KeyDisplay.TextDisplay("⚖️"),
-                                    action = KeyAction.CommitText("sama "),
-                                ),
-                            SwipeDirection.TOP_RIGHT to
-                                KeyC(
-                                    display = KeyDisplay.TextDisplay("💧"),
-                                    action = KeyAction.CommitText("telo "),
-                                ),
-                            SwipeDirection.RIGHT to
-                                KeyC(
-                                    display = KeyDisplay.TextDisplay("📤"),
-                                    action = KeyAction.CommitText("pana "),
-                                ),
-                            SwipeDirection.BOTTOM_RIGHT to
-                                KeyC(
-                                    display = KeyDisplay.TextDisplay("🔧"),
-                                    action = KeyAction.CommitText("kepeken "),
-                                ),
-                            SwipeDirection.BOTTOM to
-                                KeyC(
-                                    display = KeyDisplay.TextDisplay("👎"),
-                                    action = KeyAction.CommitText("ike "),
-                                ),
-                            SwipeDirection.BOTTOM_LEFT to
-                                KeyC(
-                                    display = KeyDisplay.TextDisplay("♾️"),
-                                    action = KeyAction.CommitText("ale "),
-                                ),
-                            SwipeDirection.LEFT to
-                                KeyC(
-                                    display = KeyDisplay.TextDisplay("🏝️"),
-                                    action = KeyAction.CommitText("ma "),
-                                ),
-                        ),
+                    center = KeyC("jan ", displayText = "👤"),
+                    topLeft = KeyC("ijo ", displayText = "🐚"),
+                    top = KeyC("sama ", displayText = "⚖️"),
+                    topRight = KeyC("telo ", displayText = "💧"),
+                    right = KeyC("pana ", displayText = "📤"),
+                    bottomRight = KeyC("kepeken ", displayText = "🔧"),
+                    bottom = KeyC("ike ", displayText = "👎"),
+                    bottomLeft = KeyC("ale ", displayText = "♾️"),
+                    left = KeyC("ma ", displayText = "🏝️"),
                 ),
                 NUMERIC_KEY_ITEM,
             ),
             listOf(
                 KeyItemC(
-                    center =
-                        KeyC(
-                            display = KeyDisplay.TextDisplay("👈"),
-                            action = KeyAction.CommitText("mi "),
-                        ),
-                    swipes =
-                        mapOf(
-                            SwipeDirection.TOP_LEFT to
-                                KeyC(
-                                    display = KeyDisplay.TextDisplay("🏁"),
-                                    action = KeyAction.CommitText("pini "),
-                                ),
-                            SwipeDirection.TOP to
-                                KeyC(
-                                    display = KeyDisplay.TextDisplay("🐭"),
-                                    action = KeyAction.CommitText("lili "),
-                                ),
-                            SwipeDirection.TOP_RIGHT to
-                                KeyC(
-                                    display = KeyDisplay.TextDisplay("❤️"),
-                                    action = KeyAction.CommitText("pilin "),
-                                ),
-                            SwipeDirection.RIGHT to
-                                KeyC(
-                                    display = KeyDisplay.TextDisplay("👜"),
-                                    action = KeyAction.CommitText("jo "),
-                                ),
-                            SwipeDirection.BOTTOM_RIGHT to
-                                KeyC(
-                                    display = KeyDisplay.TextDisplay("✊"),
-                                    action = KeyAction.CommitText("pali "),
-                                ),
-                            SwipeDirection.BOTTOM to
-                                KeyC(
-                                    display = KeyDisplay.TextDisplay("👀"),
-                                    action = KeyAction.CommitText("lukin "),
-                                ),
-                            SwipeDirection.BOTTOM_LEFT to
-                                KeyC(
-                                    display = KeyDisplay.TextDisplay("↩️"),
-                                    action = KeyAction.CommitText("tan "),
-                                ),
-                            SwipeDirection.LEFT to
-                                KeyC(
-                                    display = KeyDisplay.TextDisplay("🏠"),
-                                    action = KeyAction.CommitText("tomo "),
-                                ),
-                        ),
+                    center = KeyC("mi ", displayText = "👈"),
+                    topLeft = KeyC("pini ", displayText = "🏁"),
+                    top = KeyC("lili ", displayText = "🐭"),
+                    topRight = KeyC("pilin ", displayText = "❤️"),
+                    right = KeyC("jo ", displayText = "👜"),
+                    bottomRight = KeyC("pali ", displayText = "✊"),
+                    bottom = KeyC("lukin ", displayText = "👀"),
+                    bottomLeft = KeyC("tan ", displayText = "↩️"),
+                    left = KeyC("tomo ", displayText = "🏠"),
                 ),
                 KeyItemC(
-                    center =
+                    center = KeyC("e ", displayText = "⏩"),
+                    topLeft = KeyC("sona ", displayText = "🧠"),
+                    top = KeyC("ken ", displayText = "💪"),
+                    topRight = KeyC("o ", displayText = "👋"),
+                    right = KeyC("wile ", displayText = "💭"),
+                    bottomRight = KeyC(",", color = MUTED),
+                    bottom = KeyC(".", color = MUTED),
+                    bottomLeft =
                         KeyC(
-                            display = KeyDisplay.TextDisplay("⏩"),
-                            action = KeyAction.CommitText("e "),
+                            display = KeyDisplay.IconDisplay(Icons.Outlined.ArrowDropUp),
+                            action = ToggleShiftMode(true),
+                            swipeReturnAction = ToggleCurrentWordCapitalization(true),
+                            color = MUTED,
                         ),
-                    swipes =
-                        mapOf(
-                            SwipeDirection.TOP_LEFT to
-                                KeyC(
-                                    display = KeyDisplay.TextDisplay("🧠"),
-                                    action = KeyAction.CommitText("sona "),
-                                ),
-                            SwipeDirection.TOP to
-                                KeyC(
-                                    display = KeyDisplay.TextDisplay("💪"),
-                                    action = KeyAction.CommitText("ken "),
-                                ),
-                            SwipeDirection.TOP_RIGHT to
-                                KeyC(
-                                    display = KeyDisplay.TextDisplay("👋"),
-                                    action = KeyAction.CommitText("o "),
-                                ),
-                            SwipeDirection.RIGHT to
-                                KeyC(
-                                    display = KeyDisplay.TextDisplay("💭"),
-                                    action = KeyAction.CommitText("wile "),
-                                ),
-                            SwipeDirection.BOTTOM_RIGHT to
-                                KeyC(
-                                    display = KeyDisplay.TextDisplay(","),
-                                    action = KeyAction.CommitText(","),
-                                    color = ColorVariant.MUTED,
-                                ),
-                            SwipeDirection.BOTTOM to
-                                KeyC(
-                                    display = KeyDisplay.TextDisplay("."),
-                                    action = KeyAction.CommitText("."),
-                                    color = ColorVariant.MUTED,
-                                ),
-                            SwipeDirection.BOTTOM_LEFT to
-                                KeyC(
-                                    display = KeyDisplay.IconDisplay(Icons.Outlined.ArrowDropUp),
-                                    action = KeyAction.ToggleShiftMode(true),
-                                    swipeReturnAction = KeyAction.ToggleCurrentWordCapitalization(true),
-                                    color = ColorVariant.MUTED,
-                                ),
-                            SwipeDirection.LEFT to
-                                KeyC(
-                                    display = KeyDisplay.TextDisplay("🗣️"),
-                                    action = KeyAction.CommitText("toki "),
-                                ),
-                        ),
+                    left = KeyC("toki ", displayText = "🗣️"),
                 ),
                 KeyItemC(
-                    center =
-                        KeyC(
-                            display = KeyDisplay.TextDisplay("▶️"),
-                            action = KeyAction.CommitText("li "),
-                        ),
-                    swipes =
-                        mapOf(
-                            SwipeDirection.TOP_LEFT to
-                                KeyC(
-                                    display = KeyDisplay.TextDisplay("❓"),
-                                    action = KeyAction.CommitText("seme "),
-                                ),
-                            SwipeDirection.TOP to
-                                KeyC(
-                                    display = KeyDisplay.TextDisplay("🚶"),
-                                    action = KeyAction.CommitText("kama "),
-                                ),
-                            SwipeDirection.TOP_RIGHT to
-                                KeyC(
-                                    display = KeyDisplay.TextDisplay("👍"),
-                                    action = KeyAction.CommitText("pona "),
-                                ),
-                            SwipeDirection.RIGHT to
-                                KeyC(
-                                    display = KeyDisplay.TextDisplay("👐"),
-                                    action = KeyAction.CommitText("mute "),
-                                ),
-                            SwipeDirection.BOTTOM_RIGHT to
-                                KeyC(
-                                    display = KeyDisplay.TextDisplay("⏰"),
-                                    action = KeyAction.CommitText("tenpo "),
-                                ),
-                            SwipeDirection.BOTTOM to
-                                KeyC(
-                                    display = KeyDisplay.TextDisplay("👆"),
-                                    action = KeyAction.CommitText("ona "),
-                                ),
-                            SwipeDirection.BOTTOM_LEFT to
-                                KeyC(
-                                    display = KeyDisplay.TextDisplay("⏹️"),
-                                    action = KeyAction.CommitText("pi "),
-                                ),
-                            SwipeDirection.LEFT to
-                                KeyC(
-                                    display = KeyDisplay.TextDisplay("📍"),
-                                    action = KeyAction.CommitText("lon "),
-                                ),
-                        ),
+                    center = KeyC("li ", displayText = "▶️"),
+                    topLeft = KeyC("seme ", displayText = "❓"),
+                    top = KeyC("kama ", displayText = "🚶"),
+                    topRight = KeyC("pona ", displayText = "👍"),
+                    right = KeyC("mute ", displayText = "👐"),
+                    bottomRight = KeyC("tenpo ", displayText = "⏰"),
+                    bottom = KeyC("ona ", displayText = "👆"),
+                    bottomLeft = KeyC("pi ", displayText = "⏹️"),
+                    left = KeyC("lon ", displayText = "📍"),
                 ),
                 BACKSPACE_KEY_ITEM,
             ),
@@ -494,359 +142,96 @@ val KB_TOK_THUMBKEY_SHIFTED =
         listOf(
             listOf(
                 KeyItemC(
-                    center =
-                        KeyC(
-                            display = KeyDisplay.TextDisplay("⏺️"),
-                            action = KeyAction.CommitText("insa "),
-                        ),
+                    center = KeyC("insa ", displayText = "⏺️"),
                 ),
                 KeyItemC(
-                    center =
-                        KeyC(
-                            display = KeyDisplay.TextDisplay("💬"),
-                            action = KeyAction.CommitText("nimi "),
-                        ),
+                    center = KeyC("nimi ", displayText = "💬"),
                 ),
                 KeyItemC(
-                    center =
-                        KeyC(
-                            display = KeyDisplay.TextDisplay("🔥"),
-                            action = KeyAction.CommitText("seli "),
-                        ),
-                    swipes =
-                        mapOf(
-                            // Last char added here
-                            SwipeDirection.BOTTOM_RIGHT to
-                                KeyC(
-                                    display = KeyDisplay.TextDisplay("♐"),
-                                    action = KeyAction.CommitText("tonsi "),
-                                ),
-                            SwipeDirection.BOTTOM to
-                                KeyC(
-                                    display = KeyDisplay.TextDisplay("🍄"),
-                                    action = KeyAction.CommitText("soko "),
-                                ),
-                            SwipeDirection.BOTTOM_LEFT to
-                                KeyC(
-                                    display = KeyDisplay.TextDisplay("👁️"),
-                                    action = KeyAction.CommitText("oko "),
-                                ),
-                            SwipeDirection.LEFT to
-                                KeyC(
-                                    display = KeyDisplay.TextDisplay("🧂"),
-                                    action = KeyAction.CommitText("namako "),
-                                ),
-                        ),
+                    center = KeyC("seli ", displayText = "🔥"),
+                    // Last char added here
+                    bottomRight = KeyC("tonsi ", displayText = "♐"),
+                    bottom = KeyC("soko ", displayText = "🍄"),
+                    bottomLeft = KeyC("oko ", displayText = "👁️"),
+                    left = KeyC("namako ", displayText = "🧂"),
                 ),
                 EMOJI_KEY_ITEM,
             ),
             listOf(
                 KeyItemC(
-                    center =
-                        KeyC(
-                            display = KeyDisplay.TextDisplay("🌴"),
-                            action = KeyAction.CommitText("kasi "),
-                        ),
-                    swipes =
-                        mapOf(
-                            SwipeDirection.TOP_LEFT to
-                                KeyC(
-                                    display = KeyDisplay.TextDisplay("👹"),
-                                    action = KeyAction.CommitText("monsuta "),
-                                ),
-                            SwipeDirection.TOP to
-                                KeyC(
-                                    display = KeyDisplay.TextDisplay("💊"),
-                                    action = KeyAction.CommitText("misikeke "),
-                                ),
-                            SwipeDirection.TOP_RIGHT to
-                                KeyC(
-                                    display = KeyDisplay.TextDisplay("⛿"),
-                                    action = KeyAction.CommitText("meso "),
-                                ),
-                            SwipeDirection.RIGHT to
-                                KeyC(
-                                    display = KeyDisplay.TextDisplay("🧱"),
-                                    action = KeyAction.CommitText("leko "),
-                                ),
-                            SwipeDirection.BOTTOM_RIGHT to
-                                KeyC(
-                                    display = KeyDisplay.TextDisplay("🫳"),
-                                    action = KeyAction.CommitText("lanpan "),
-                                ),
-                            SwipeDirection.BOTTOM to
-                                KeyC(
-                                    display = KeyDisplay.TextDisplay("📕"),
-                                    action = KeyAction.CommitText("ku "),
-                                ),
-                            SwipeDirection.BOTTOM_LEFT to
-                                KeyC(
-                                    display = KeyDisplay.TextDisplay("🐊"),
-                                    action = KeyAction.CommitText("kokosila "),
-                                ),
-                            SwipeDirection.LEFT to
-                                KeyC(
-                                    display = KeyDisplay.TextDisplay("✂️"),
-                                    action = KeyAction.CommitText("kipisi "),
-                                ),
-                        ),
+                    center = KeyC("kasi ", displayText = "🌴"),
+                    topLeft = KeyC("monsuta ", displayText = "👹"),
+                    top = KeyC("misikeke ", displayText = "💊"),
+                    topRight = KeyC("meso ", displayText = "⛿"),
+                    right = KeyC("leko ", displayText = "🧱"),
+                    bottomRight = KeyC("lanpan ", displayText = "🫳"),
+                    bottom = KeyC("ku ", displayText = "📕"),
+                    bottomLeft = KeyC("kokosila ", displayText = "🐊"),
+                    left = KeyC("kipisi ", displayText = "✂️"),
                 ),
                 KeyItemC(
-                    center =
-                        KeyC(
-                            display = KeyDisplay.TextDisplay("✋"),
-                            action = KeyAction.CommitText("luka "),
-                        ),
-                    swipes =
-                        mapOf(
-                            SwipeDirection.TOP_LEFT to
-                                KeyC(
-                                    display = KeyDisplay.TextDisplay("🦝"),
-                                    action = KeyAction.CommitText("kijetesantakalu "),
-                                ),
-                            SwipeDirection.TOP to
-                                KeyC(
-                                    display = KeyDisplay.TextDisplay("🪞"),
-                                    action = KeyAction.CommitText("jasima "),
-                                ),
-                            SwipeDirection.TOP_RIGHT to
-                                KeyC(
-                                    display = KeyDisplay.TextDisplay("😎"),
-                                    action = KeyAction.CommitText("epiku "),
-                                ),
-                            SwipeDirection.RIGHT to
-                                KeyC(
-                                    display = KeyDisplay.TextDisplay("📖"),
-                                    action = KeyAction.CommitText("pu "),
-                                ),
-                            SwipeDirection.BOTTOM_RIGHT to
-                                KeyC(
-                                    display = KeyDisplay.TextDisplay("😹"),
-                                    action = KeyAction.CommitText("mu "),
-                                ),
-                            SwipeDirection.BOTTOM to
-                                KeyC(
-                                    display = KeyDisplay.TextDisplay("🍆"),
-                                    action = KeyAction.CommitText("unpa "),
-                                ),
-                            SwipeDirection.BOTTOM_LEFT to
-                                KeyC(
-                                    display = KeyDisplay.TextDisplay("🔵"),
-                                    action = KeyAction.CommitText("laso "),
-                                ),
-                            SwipeDirection.LEFT to
-                                KeyC(
-                                    display = KeyDisplay.TextDisplay("🐟"),
-                                    action = KeyAction.CommitText("kala "),
-                                ),
-                        ),
+                    center = KeyC("luka ", displayText = "✋"),
+                    topLeft = KeyC("kijetesantakalu ", displayText = "🦝"),
+                    top = KeyC("jasima ", displayText = "🪞"),
+                    topRight = KeyC("epiku ", displayText = "😎"),
+                    right = KeyC("pu ", displayText = "📖"),
+                    bottomRight = KeyC("mu ", displayText = "😹"),
+                    bottom = KeyC("unpa ", displayText = "🍆"),
+                    bottomLeft = KeyC("laso ", displayText = "🔵"),
+                    left = KeyC("kala ", displayText = "🐟"),
                 ),
                 KeyItemC(
-                    center =
-                        KeyC(
-                            display = KeyDisplay.TextDisplay("💨"),
-                            action = KeyAction.CommitText("kon "),
-                        ),
-                    swipes =
-                        mapOf(
-                            SwipeDirection.TOP_LEFT to
-                                KeyC(
-                                    display = KeyDisplay.TextDisplay("💛"),
-                                    action = KeyAction.CommitText("jelo "),
-                                ),
-                            SwipeDirection.TOP to
-                                KeyC(
-                                    display = KeyDisplay.TextDisplay("🏹"),
-                                    action = KeyAction.CommitText("alasa "),
-                                ),
-                            SwipeDirection.TOP_RIGHT to
-                                KeyC(
-                                    display = KeyDisplay.TextDisplay("📏"),
-                                    action = KeyAction.CommitText("palisa "),
-                                ),
-                            SwipeDirection.RIGHT to
-                                KeyC(
-                                    display = KeyDisplay.TextDisplay("🌙"),
-                                    action = KeyAction.CommitText("mun "),
-                                ),
-                            SwipeDirection.BOTTOM_RIGHT to
-                                KeyC(
-                                    display = KeyDisplay.TextDisplay("🍞"),
-                                    action = KeyAction.CommitText("pan "),
-                                ),
-                            SwipeDirection.BOTTOM to
-                                KeyC(
-                                    display = KeyDisplay.TextDisplay("🐞"),
-                                    action = KeyAction.CommitText("pipi "),
-                                ),
-                            SwipeDirection.BOTTOM_LEFT to
-                                KeyC(
-                                    display = KeyDisplay.TextDisplay("🗻"),
-                                    action = KeyAction.CommitText("nena "),
-                                ),
-                            SwipeDirection.LEFT to
-                                KeyC(
-                                    display = KeyDisplay.TextDisplay("🦅"),
-                                    action = KeyAction.CommitText("waso "),
-                                ),
-                        ),
+                    center = KeyC("kon ", displayText = "💨"),
+                    topLeft = KeyC("jelo ", displayText = "💛"),
+                    top = KeyC("alasa ", displayText = "🏹"),
+                    topRight = KeyC("palisa ", displayText = "📏"),
+                    right = KeyC("mun ", displayText = "🌙"),
+                    bottomRight = KeyC("pan ", displayText = "🍞"),
+                    bottom = KeyC("pipi ", displayText = "🐞"),
+                    bottomLeft = KeyC("nena ", displayText = "🗻"),
+                    left = KeyC("waso ", displayText = "🦅"),
                 ),
                 NUMERIC_KEY_ITEM,
             ),
             listOf(
                 KeyItemC(
-                    center =
-                        KeyC(
-                            display = KeyDisplay.TextDisplay("👕"),
-                            action = KeyAction.CommitText("len "),
-                        ),
-                    swipes =
-                        mapOf(
-                            SwipeDirection.TOP_LEFT to
-                                KeyC(
-                                    display = KeyDisplay.TextDisplay("🔴"),
-                                    action = KeyAction.CommitText("loje "),
-                                ),
-                            SwipeDirection.TOP to
-                                KeyC(
-                                    display = KeyDisplay.TextDisplay("🍦"),
-                                    action = KeyAction.CommitText("ko "),
-                                ),
-                            SwipeDirection.TOP_RIGHT to
-                                KeyC(
-                                    display = KeyDisplay.TextDisplay("💩"),
-                                    action = KeyAction.CommitText("jaki "),
-                                ),
-                            SwipeDirection.RIGHT to
-                                KeyC(
-                                    display = KeyDisplay.TextDisplay("🍎"),
-                                    action = KeyAction.CommitText("kili "),
-                                ),
-                            SwipeDirection.BOTTOM_RIGHT to
-                                KeyC(
-                                    display = KeyDisplay.TextDisplay("⚪"),
-                                    action = KeyAction.CommitText("walo "),
-                                ),
-                            SwipeDirection.BOTTOM to
-                                KeyC(
-                                    display = KeyDisplay.TextDisplay("🔲"),
-                                    action = KeyAction.CommitText("selo "),
-                                ),
-                            SwipeDirection.BOTTOM_LEFT to
-                                KeyC(
-                                    display = KeyDisplay.TextDisplay("❗"),
-                                    action = KeyAction.CommitText("a "),
-                                ),
-                            SwipeDirection.LEFT to
-                                KeyC(
-                                    display = KeyDisplay.TextDisplay("⬅️"),
-                                    action = KeyAction.CommitText("monsi "),
-                                ),
-                        ),
+                    center = KeyC("len ", displayText = "👕"),
+                    topLeft = KeyC("loje ", displayText = "🔴"),
+                    top = KeyC("ko ", displayText = "🍦"),
+                    topRight = KeyC("jaki ", displayText = "💩"),
+                    right = KeyC("kili ", displayText = "🍎"),
+                    bottomRight = KeyC("walo ", displayText = "⚪"),
+                    bottom = KeyC("selo ", displayText = "🔲"),
+                    bottomLeft = KeyC("a ", displayText = "❗"),
+                    left = KeyC("monsi ", displayText = "⬅️"),
                 ),
                 KeyItemC(
-                    center =
+                    center = KeyC("olin ", displayText = "💕"),
+                    topLeft = KeyC("lupa ", displayText = "🕳️"),
+                    top = KeyC("kule ", displayText = "🌈"),
+                    topRight = KeyC("akesi ", displayText = "🦎"),
+                    right = KeyC("lete ", displayText = "❄️"),
+                    bottomRight = KeyC(",", color = MUTED),
+                    bottom = KeyC(".", color = MUTED),
+                    bottomLeft =
                         KeyC(
-                            display = KeyDisplay.TextDisplay("💕"),
-                            action = KeyAction.CommitText("olin "),
+                            display = KeyDisplay.IconDisplay(Icons.Outlined.ArrowDropDown),
+                            action = ToggleShiftMode(false),
+                            swipeReturnAction = ToggleCurrentWordCapitalization(false),
+                            color = MUTED,
                         ),
-                    swipes =
-                        mapOf(
-                            SwipeDirection.TOP_LEFT to
-                                KeyC(
-                                    display = KeyDisplay.TextDisplay("🕳️"),
-                                    action = KeyAction.CommitText("lupa "),
-                                ),
-                            SwipeDirection.TOP to
-                                KeyC(
-                                    display = KeyDisplay.TextDisplay("🌈"),
-                                    action = KeyAction.CommitText("kule "),
-                                ),
-                            SwipeDirection.TOP_RIGHT to
-                                KeyC(
-                                    display = KeyDisplay.TextDisplay("🦎"),
-                                    action = KeyAction.CommitText("akesi "),
-                                ),
-                            SwipeDirection.RIGHT to
-                                KeyC(
-                                    display = KeyDisplay.TextDisplay("❄️"),
-                                    action = KeyAction.CommitText("lete "),
-                                ),
-                            SwipeDirection.BOTTOM_RIGHT to
-                                KeyC(
-                                    display = KeyDisplay.TextDisplay(","),
-                                    action = KeyAction.CommitText(","),
-                                    color = ColorVariant.MUTED,
-                                ),
-                            SwipeDirection.BOTTOM to
-                                KeyC(
-                                    display = KeyDisplay.TextDisplay("."),
-                                    action = KeyAction.CommitText("."),
-                                    color = ColorVariant.MUTED,
-                                ),
-                            SwipeDirection.BOTTOM_LEFT to
-                                KeyC(
-                                    display = KeyDisplay.IconDisplay(Icons.Outlined.ArrowDropDown),
-                                    action = KeyAction.ToggleShiftMode(false),
-                                    swipeReturnAction = KeyAction.ToggleCurrentWordCapitalization(false),
-                                    color = ColorVariant.MUTED,
-                                ),
-                            SwipeDirection.LEFT to
-                                KeyC(
-                                    display = KeyDisplay.TextDisplay("👄"),
-                                    action = KeyAction.CommitText("uta "),
-                                ),
-                        ),
+                    left = KeyC("uta ", displayText = "👄"),
                 ),
                 KeyItemC(
-                    center =
-                        KeyC(
-                            display = KeyDisplay.TextDisplay("🔓"),
-                            action = KeyAction.CommitText("open "),
-                        ),
-                    swipes =
-                        mapOf(
-                            SwipeDirection.TOP_LEFT to
-                                KeyC(
-                                    display = KeyDisplay.TextDisplay("🦵"),
-                                    action = KeyAction.CommitText("noka "),
-                                ),
-                            SwipeDirection.TOP to
-                                KeyC(
-                                    display = KeyDisplay.TextDisplay("〰️"),
-                                    action = KeyAction.CommitText("linja "),
-                                ),
-                            SwipeDirection.TOP_RIGHT to
-                                KeyC(
-                                    display = KeyDisplay.TextDisplay("#️⃣"),
-                                    action = KeyAction.CommitText("nanpa "),
-                                ),
-                            SwipeDirection.RIGHT to
-                                KeyC(
-                                    display = KeyDisplay.TextDisplay("⬇️"),
-                                    action = KeyAction.CommitText("anpa "),
-                                ),
-                            SwipeDirection.BOTTOM_RIGHT to
-                                KeyC(
-                                    display = KeyDisplay.TextDisplay("💎"),
-                                    action = KeyAction.CommitText("kiwen "),
-                                ),
-                            SwipeDirection.BOTTOM to
-                                KeyC(
-                                    display = KeyDisplay.TextDisplay("🍭"),
-                                    action = KeyAction.CommitText("suwi "),
-                                ),
-                            SwipeDirection.BOTTOM_LEFT to
-                                KeyC(
-                                    display = KeyDisplay.TextDisplay("➡️"),
-                                    action = KeyAction.CommitText("sinpin "),
-                                ),
-                            SwipeDirection.LEFT to
-                                KeyC(
-                                    display = KeyDisplay.TextDisplay("📦"),
-                                    action = KeyAction.CommitText("poki "),
-                                ),
-                        ),
+                    center = KeyC("open ", displayText = "🔓"),
+                    topLeft = KeyC("noka ", displayText = "🦵"),
+                    top = KeyC("linja ", displayText = "〰️"),
+                    topRight = KeyC("nanpa ", displayText = "#️⃣"),
+                    right = KeyC("anpa ", displayText = "⬇️"),
+                    bottomRight = KeyC("kiwen ", displayText = "💎"),
+                    bottom = KeyC("suwi ", displayText = "🍭"),
+                    bottomLeft = KeyC("sinpin ", displayText = "➡️"),
+                    left = KeyC("poki ", displayText = "📦"),
                 ),
                 BACKSPACE_KEY_ITEM,
             ),

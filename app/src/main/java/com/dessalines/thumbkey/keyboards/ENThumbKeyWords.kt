@@ -1,24 +1,14 @@
+@file:Suppress("ktlint:standard:no-wildcard-imports")
+
 package com.dessalines.thumbkey.keyboards
 
 import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.outlined.ArrowDropDown
-import androidx.compose.material.icons.outlined.ArrowDropUp
-import androidx.compose.material.icons.outlined.Copyright
-import androidx.compose.material.icons.outlined.KeyboardCapslock
-import com.dessalines.thumbkey.utils.ColorVariant
-import com.dessalines.thumbkey.utils.FontSizeVariant
-import com.dessalines.thumbkey.utils.KeyAction
-import com.dessalines.thumbkey.utils.KeyC
-import com.dessalines.thumbkey.utils.KeyDisplay
-import com.dessalines.thumbkey.utils.KeyItemC
-import com.dessalines.thumbkey.utils.KeyboardC
-import com.dessalines.thumbkey.utils.KeyboardDefinition
-import com.dessalines.thumbkey.utils.KeyboardDefinitionModes
-import com.dessalines.thumbkey.utils.KeyboardDefinitionSettings
-import com.dessalines.thumbkey.utils.SwipeDirection
-import com.dessalines.thumbkey.utils.SwipeNWay
-import com.dessalines.thumbkey.utils.autoCapitalizeI
-import com.dessalines.thumbkey.utils.autoCapitalizeIApostrophe
+import androidx.compose.material.icons.outlined.*
+import com.dessalines.thumbkey.utils.*
+import com.dessalines.thumbkey.utils.ColorVariant.*
+import com.dessalines.thumbkey.utils.FontSizeVariant.*
+import com.dessalines.thumbkey.utils.KeyAction.*
+import com.dessalines.thumbkey.utils.SwipeNWay.*
 
 // Adds common English words to main screen to reduce amount of taps required when typing
 val KB_EN_THUMBKEY_WORDS_MAIN =
@@ -26,415 +16,100 @@ val KB_EN_THUMBKEY_WORDS_MAIN =
         listOf(
             listOf(
                 KeyItemC(
-                    center =
-                        KeyC(
-                            action = KeyAction.CommitText("s"),
-                            size = FontSizeVariant.LARGE,
-                            color = ColorVariant.PRIMARY,
-                        ),
-                    swipes =
-                        mapOf(
-                            SwipeDirection.BOTTOM_RIGHT to
-                                KeyC(
-                                    action = KeyAction.CommitText("w"),
-                                ),
-                            SwipeDirection.TOP_RIGHT to
-                                KeyC(
-                                    display = KeyDisplay.TextDisplay("make"),
-                                    action = KeyAction.CommitText("make"),
-                                    color = ColorVariant.MUTED,
-                                    size = FontSizeVariant.SMALLEST,
-                                ),
-                            SwipeDirection.RIGHT to
-                                KeyC(
-                                    display = KeyDisplay.TextDisplay("will"),
-                                    action = KeyAction.CommitText("will"),
-                                    color = ColorVariant.MUTED,
-                                    size = FontSizeVariant.SMALLEST,
-                                ),
-                            SwipeDirection.BOTTOM to
-                                KeyC(
-                                    display = KeyDisplay.TextDisplay("what"),
-                                    action = KeyAction.CommitText("what"),
-                                    color = ColorVariant.MUTED,
-                                    size = FontSizeVariant.SMALLEST,
-                                ),
-                        ),
+                    center = KeyC("s", size = LARGE),
+                    bottomRight = KeyC("w"),
+                    topRight = KeyC("make", color = MUTED, size = SMALLEST),
+                    right = KeyC("will", color = MUTED, size = SMALLEST),
+                    bottom = KeyC("what", color = MUTED, size = SMALLEST),
                 ),
                 KeyItemC(
-                    center =
-                        KeyC(
-                            action = KeyAction.CommitText("r"),
-                            size = FontSizeVariant.LARGE,
-                            color = ColorVariant.PRIMARY,
-                        ),
-                    swipes =
-                        mapOf(
-                            SwipeDirection.BOTTOM to
-                                KeyC(
-                                    action = KeyAction.CommitText("g"),
-                                ),
-                            SwipeDirection.TOP_LEFT to
-                                KeyC(
-                                    display = KeyDisplay.TextDisplay("when"),
-                                    action = KeyAction.CommitText("when"),
-                                    color = ColorVariant.MUTED,
-                                    size = FontSizeVariant.SMALLEST,
-                                ),
-                            SwipeDirection.LEFT to
-                                KeyC(
-                                    display = KeyDisplay.TextDisplay("which"),
-                                    action = KeyAction.CommitText("which"),
-                                    color = ColorVariant.MUTED,
-                                    size = FontSizeVariant.SMALLEST,
-                                ),
-                            SwipeDirection.BOTTOM_LEFT to
-                                KeyC(
-                                    display = KeyDisplay.TextDisplay("with"),
-                                    action = KeyAction.CommitText("with"),
-                                    color = ColorVariant.MUTED,
-                                    size = FontSizeVariant.SMALLEST,
-                                ),
-                            SwipeDirection.TOP_RIGHT to
-                                KeyC(
-                                    display = KeyDisplay.TextDisplay("just"),
-                                    action = KeyAction.CommitText("just"),
-                                    color = ColorVariant.MUTED,
-                                    size = FontSizeVariant.SMALLEST,
-                                ),
-                            SwipeDirection.RIGHT to
-                                KeyC(
-                                    display = KeyDisplay.TextDisplay("from"),
-                                    action = KeyAction.CommitText("from"),
-                                    color = ColorVariant.MUTED,
-                                    size = FontSizeVariant.SMALLEST,
-                                ),
-                            SwipeDirection.BOTTOM_RIGHT to
-                                KeyC(
-                                    display = KeyDisplay.TextDisplay("be"),
-                                    action = KeyAction.CommitText("be"),
-                                    color = ColorVariant.MUTED,
-                                    size = FontSizeVariant.SMALLEST,
-                                ),
-                        ),
+                    center = KeyC("r", size = LARGE),
+                    bottom = KeyC("g"),
+                    topLeft = KeyC("when", color = MUTED, size = SMALLEST),
+                    left = KeyC("which", color = MUTED, size = SMALLEST),
+                    bottomLeft = KeyC("with", color = MUTED, size = SMALLEST),
+                    topRight = KeyC("just", color = MUTED, size = SMALLEST),
+                    right = KeyC("from", color = MUTED, size = SMALLEST),
+                    bottomRight = KeyC("be", color = MUTED, size = SMALLEST),
                 ),
                 KeyItemC(
-                    center =
-                        KeyC(
-                            action = KeyAction.CommitText("o"),
-                            size = FontSizeVariant.LARGE,
-                            color = ColorVariant.PRIMARY,
-                        ),
-                    swipes =
-                        mapOf(
-                            SwipeDirection.BOTTOM_LEFT to
-                                KeyC(
-                                    action = KeyAction.CommitText("u"),
-                                ),
-                            SwipeDirection.TOP_LEFT to
-                                KeyC(
-                                    display = KeyDisplay.TextDisplay("ould"),
-                                    action = KeyAction.CommitText("ould"),
-                                    color = ColorVariant.MUTED,
-                                    size = FontSizeVariant.SMALLEST,
-                                ),
-                            SwipeDirection.TOP to
-                                KeyC(
-                                    display = KeyDisplay.TextDisplay("'ll"),
-                                    action = KeyAction.CommitText("'ll"),
-                                    color = ColorVariant.MUTED,
-                                    size = FontSizeVariant.SMALLEST,
-                                ),
-                            SwipeDirection.TOP_RIGHT to
-                                KeyC(
-                                    display = KeyDisplay.TextDisplay("'re"),
-                                    action = KeyAction.CommitText("'re"),
-                                    color = ColorVariant.MUTED,
-                                    size = FontSizeVariant.SMALLEST,
-                                ),
-                            SwipeDirection.RIGHT to
-                                KeyC(
-                                    display = KeyDisplay.TextDisplay("about"),
-                                    action = KeyAction.CommitText("about"),
-                                    color = ColorVariant.MUTED,
-                                    size = FontSizeVariant.SMALLEST,
-                                ),
-                            SwipeDirection.BOTTOM_RIGHT to
-                                KeyC(
-                                    display = KeyDisplay.TextDisplay("n't"),
-                                    action = KeyAction.CommitText("n't"),
-                                    color = ColorVariant.MUTED,
-                                    size = FontSizeVariant.SMALLEST,
-                                ),
-                            SwipeDirection.BOTTOM to
-                                KeyC(
-                                    display = KeyDisplay.TextDisplay("'t"),
-                                    action = KeyAction.CommitText("'t"),
-                                    color = ColorVariant.MUTED,
-                                    size = FontSizeVariant.SMALLEST,
-                                ),
-                            SwipeDirection.LEFT to
-                                KeyC(
-                                    display = KeyDisplay.TextDisplay("'s"),
-                                    action = KeyAction.CommitText("'s"),
-                                    color = ColorVariant.MUTED,
-                                    size = FontSizeVariant.SMALLEST,
-                                ),
-                        ),
+                    center = KeyC("o", size = LARGE),
+                    bottomLeft = KeyC("u"),
+                    topLeft = KeyC("ould", color = MUTED, size = SMALLEST),
+                    top = KeyC("'ll", color = MUTED, size = SMALLEST),
+                    topRight = KeyC("'re", color = MUTED, size = SMALLEST),
+                    right = KeyC("about", color = MUTED, size = SMALLEST),
+                    bottomRight = KeyC("n't", color = MUTED, size = SMALLEST),
+                    bottom = KeyC("'t", color = MUTED, size = SMALLEST),
+                    left = KeyC("'s", color = MUTED, size = SMALLEST),
                 ),
                 EMOJI_KEY_ITEM,
             ),
             listOf(
                 KeyItemC(
-                    center =
-                        KeyC(
-                            action = KeyAction.CommitText("n"),
-                            size = FontSizeVariant.LARGE,
-                            color = ColorVariant.PRIMARY,
-                        ),
-                    swipes =
-                        mapOf(
-                            SwipeDirection.RIGHT to
-                                KeyC(
-                                    action = KeyAction.CommitText("m"),
-                                ),
-                            SwipeDirection.TOP to
-                                KeyC(
-                                    display = KeyDisplay.TextDisplay("like"),
-                                    action = KeyAction.CommitText("like"),
-                                    color = ColorVariant.MUTED,
-                                    size = FontSizeVariant.SMALLEST,
-                                ),
-                            SwipeDirection.TOP_RIGHT to
-                                KeyC(
-                                    display = KeyDisplay.TextDisplay("not"),
-                                    action = KeyAction.CommitText("not"),
-                                    color = ColorVariant.MUTED,
-                                    size = FontSizeVariant.SMALLEST,
-                                ),
-                            SwipeDirection.BOTTOM_RIGHT to
-                                KeyC(
-                                    display = KeyDisplay.TextDisplay("and"),
-                                    action = KeyAction.CommitText("and"),
-                                    color = ColorVariant.MUTED,
-                                    size = FontSizeVariant.SMALLEST,
-                                ),
-                            SwipeDirection.BOTTOM to
-                                KeyC(
-                                    display = KeyDisplay.TextDisplay("know"),
-                                    action = KeyAction.CommitText("know"),
-                                    color = ColorVariant.MUTED,
-                                    size = FontSizeVariant.SMALLEST,
-                                ),
-                        ),
+                    center = KeyC("n", size = LARGE),
+                    right = KeyC("m"),
+                    top = KeyC("like", color = MUTED, size = SMALLEST),
+                    topRight = KeyC("not", color = MUTED, size = SMALLEST),
+                    bottomRight = KeyC("and", color = MUTED, size = SMALLEST),
+                    bottom = KeyC("know", color = MUTED, size = SMALLEST),
                 ),
                 KeyItemC(
-                    center =
-                        KeyC(
-                            action = KeyAction.CommitText("h"),
-                            size = FontSizeVariant.LARGE,
-                            color = ColorVariant.PRIMARY,
-                        ),
-                    swipes =
-                        mapOf(
-                            SwipeDirection.TOP_LEFT to
-                                KeyC(
-                                    action = KeyAction.CommitText("j"),
-                                ),
-                            SwipeDirection.TOP to
-                                KeyC(
-                                    action = KeyAction.CommitText("q"),
-                                ),
-                            SwipeDirection.TOP_RIGHT to
-                                KeyC(
-                                    action = KeyAction.CommitText("b"),
-                                ),
-                            SwipeDirection.RIGHT to
-                                KeyC(
-                                    action = KeyAction.CommitText("p"),
-                                ),
-                            SwipeDirection.BOTTOM_RIGHT to
-                                KeyC(
-                                    action = KeyAction.CommitText("y"),
-                                ),
-                            SwipeDirection.BOTTOM to
-                                KeyC(
-                                    action = KeyAction.CommitText("x"),
-                                ),
-                            SwipeDirection.BOTTOM_LEFT to
-                                KeyC(
-                                    action = KeyAction.CommitText("v"),
-                                ),
-                            SwipeDirection.LEFT to
-                                KeyC(
-                                    action = KeyAction.CommitText("k"),
-                                ),
-                        ),
+                    center = KeyC("h", size = LARGE),
+                    topLeft = KeyC("j"),
+                    top = KeyC("q"),
+                    topRight = KeyC("b"),
+                    right = KeyC("p"),
+                    bottomRight = KeyC("y"),
+                    bottom = KeyC("x"),
+                    bottomLeft = KeyC("v"),
+                    left = KeyC("k"),
                 ),
                 KeyItemC(
-                    center =
+                    center = KeyC("a", size = LARGE),
+                    swipeType = FOUR_WAY_CROSS,
+                    left = KeyC("l"),
+                    top =
                         KeyC(
-                            action = KeyAction.CommitText("a"),
-                            size = FontSizeVariant.LARGE,
-                            color = ColorVariant.PRIMARY,
+                            display = KeyDisplay.IconDisplay(Icons.Outlined.ArrowDropUp),
+                            action = ToggleShiftMode(true),
+                            swipeReturnAction = ToggleCurrentWordCapitalization(true),
+                            color = MUTED,
                         ),
-                    swipeType = SwipeNWay.FOUR_WAY_CROSS,
-                    swipes =
-                        mapOf(
-                            SwipeDirection.LEFT to
-                                KeyC(
-                                    action = KeyAction.CommitText("l"),
-                                ),
-                            SwipeDirection.TOP to
-                                KeyC(
-                                    display = KeyDisplay.IconDisplay(Icons.Outlined.ArrowDropUp),
-                                    action = KeyAction.ToggleShiftMode(true),
-                                    swipeReturnAction = KeyAction.ToggleCurrentWordCapitalization(true),
-                                    color = ColorVariant.MUTED,
-                                ),
-                            SwipeDirection.BOTTOM to
-                                KeyC(
-                                    action = KeyAction.ToggleShiftMode(false),
-                                    swipeReturnAction = KeyAction.ToggleCurrentWordCapitalization(false),
-                                ),
+                    bottom =
+                        KeyC(
+                            ToggleShiftMode(false),
+                            swipeReturnAction = ToggleCurrentWordCapitalization(false),
                         ),
                 ),
                 NUMERIC_KEY_ITEM,
             ),
             listOf(
                 KeyItemC(
-                    center =
-                        KeyC(
-                            action = KeyAction.CommitText("t"),
-                            size = FontSizeVariant.LARGE,
-                            color = ColorVariant.PRIMARY,
-                        ),
-                    swipes =
-                        mapOf(
-                            SwipeDirection.TOP_RIGHT to
-                                KeyC(
-                                    action = KeyAction.CommitText("c"),
-                                ),
-                            SwipeDirection.TOP to
-                                KeyC(
-                                    display = KeyDisplay.TextDisplay("have"),
-                                    action = KeyAction.CommitText("have"),
-                                    color = ColorVariant.MUTED,
-                                    size = FontSizeVariant.SMALLEST,
-                                ),
-                            SwipeDirection.RIGHT to
-                                KeyC(
-                                    display = KeyDisplay.TextDisplay("can"),
-                                    action = KeyAction.CommitText("can"),
-                                    color = ColorVariant.MUTED,
-                                    size = FontSizeVariant.SMALLEST,
-                                ),
-                            SwipeDirection.BOTTOM_RIGHT to
-                                KeyC(
-                                    display = KeyDisplay.TextDisplay("but"),
-                                    action = KeyAction.CommitText("but"),
-                                    color = ColorVariant.MUTED,
-                                    size = FontSizeVariant.SMALLEST,
-                                ),
-                        ),
+                    center = KeyC("t", size = LARGE),
+                    topRight = KeyC("c"),
+                    top = KeyC("have", color = MUTED, size = SMALLEST),
+                    right = KeyC("can", color = MUTED, size = SMALLEST),
+                    bottomRight = KeyC("but", color = MUTED, size = SMALLEST),
                 ),
                 KeyItemC(
-                    center =
-                        KeyC(
-                            action = KeyAction.CommitText("i"),
-                            size = FontSizeVariant.LARGE,
-                            color = ColorVariant.PRIMARY,
-                        ),
-                    swipes =
-                        mapOf(
-                            SwipeDirection.TOP to
-                                KeyC(
-                                    action = KeyAction.CommitText("f"),
-                                ),
-                            SwipeDirection.RIGHT to
-                                KeyC(
-                                    action = KeyAction.CommitText("z"),
-                                ),
-                            SwipeDirection.BOTTOM_RIGHT to
-                                KeyC(
-                                    action = KeyAction.CommitText("-"),
-                                    color = ColorVariant.MUTED,
-                                ),
-                            SwipeDirection.BOTTOM to
-                                KeyC(
-                                    action = KeyAction.CommitText("."),
-                                    color = ColorVariant.MUTED,
-                                ),
-                            SwipeDirection.BOTTOM_LEFT to
-                                KeyC(
-                                    action = KeyAction.CommitText("*"),
-                                    color = ColorVariant.MUTED,
-                                ),
-                            SwipeDirection.TOP_LEFT to
-                                KeyC(
-                                    display = KeyDisplay.TextDisplay("this"),
-                                    action = KeyAction.CommitText("this"),
-                                    color = ColorVariant.MUTED,
-                                    size = FontSizeVariant.SMALLEST,
-                                ),
-                            SwipeDirection.TOP_RIGHT to
-                                KeyC(
-                                    display = KeyDisplay.TextDisplay("that"),
-                                    action = KeyAction.CommitText("that"),
-                                    color = ColorVariant.MUTED,
-                                    size = FontSizeVariant.SMALLEST,
-                                ),
-                            SwipeDirection.LEFT to
-                                KeyC(
-                                    display = KeyDisplay.TextDisplay("I'm"),
-                                    action = KeyAction.CommitText("I'm"),
-                                    color = ColorVariant.MUTED,
-                                    size = FontSizeVariant.SMALLEST,
-                                ),
-                        ),
+                    center = KeyC("i", size = LARGE),
+                    top = KeyC("f"),
+                    right = KeyC("z"),
+                    bottomRight = KeyC("-", color = MUTED),
+                    bottom = KeyC(".", color = MUTED),
+                    bottomLeft = KeyC("*", color = MUTED),
+                    topLeft = KeyC("this", color = MUTED, size = SMALLEST),
+                    topRight = KeyC("that", color = MUTED, size = SMALLEST),
+                    left = KeyC("I'm", color = MUTED, size = SMALLEST),
                 ),
                 KeyItemC(
-                    center =
-                        KeyC(
-                            action = KeyAction.CommitText("e"),
-                            size = FontSizeVariant.LARGE,
-                            color = ColorVariant.PRIMARY,
-                        ),
-                    swipes =
-                        mapOf(
-                            SwipeDirection.TOP_LEFT to
-                                KeyC(
-                                    action = KeyAction.CommitText("d"),
-                                ),
-                            SwipeDirection.TOP to
-                                KeyC(
-                                    display = KeyDisplay.TextDisplay("the"),
-                                    action = KeyAction.CommitText("the"),
-                                    color = ColorVariant.MUTED,
-                                    size = FontSizeVariant.SMALLEST,
-                                ),
-                            SwipeDirection.TOP_RIGHT to
-                                KeyC(
-                                    display = KeyDisplay.TextDisplay("for"),
-                                    action = KeyAction.CommitText("for"),
-                                    color = ColorVariant.MUTED,
-                                    size = FontSizeVariant.SMALLEST,
-                                ),
-                            SwipeDirection.BOTTOM_LEFT to
-                                KeyC(
-                                    display = KeyDisplay.TextDisplay("do"),
-                                    action = KeyAction.CommitText("do"),
-                                    color = ColorVariant.MUTED,
-                                    size = FontSizeVariant.SMALLEST,
-                                ),
-                            SwipeDirection.LEFT to
-                                KeyC(
-                                    display = KeyDisplay.TextDisplay("you"),
-                                    action = KeyAction.CommitText("you"),
-                                    color = ColorVariant.MUTED,
-                                    size = FontSizeVariant.SMALLEST,
-                                ),
-                        ),
+                    center = KeyC("e", size = LARGE),
+                    topLeft = KeyC("d"),
+                    top = KeyC("the", color = MUTED, size = SMALLEST),
+                    topRight = KeyC("for", color = MUTED, size = SMALLEST),
+                    bottomLeft = KeyC("do", color = MUTED, size = SMALLEST),
+                    left = KeyC("you", color = MUTED, size = SMALLEST),
                 ),
                 BACKSPACE_KEY_ITEM,
             ),
@@ -450,423 +125,103 @@ val KB_EN_THUMBKEY_WORDS_SHIFTED =
         listOf(
             listOf(
                 KeyItemC(
-                    center =
-                        KeyC(
-                            action = KeyAction.CommitText("S"),
-                            size = FontSizeVariant.LARGE,
-                            color = ColorVariant.PRIMARY,
-                        ),
-                    swipes =
-                        mapOf(
-                            SwipeDirection.BOTTOM_RIGHT to
-                                KeyC(
-                                    action = KeyAction.CommitText("W"),
-                                ),
-                            SwipeDirection.TOP_RIGHT to
-                                KeyC(
-                                    display = KeyDisplay.TextDisplay("Make"),
-                                    action = KeyAction.CommitText("Make"),
-                                    color = ColorVariant.MUTED,
-                                    size = FontSizeVariant.SMALLEST,
-                                ),
-                            SwipeDirection.RIGHT to
-                                KeyC(
-                                    display = KeyDisplay.TextDisplay("Will"),
-                                    action = KeyAction.CommitText("Will"),
-                                    color = ColorVariant.MUTED,
-                                    size = FontSizeVariant.SMALLEST,
-                                ),
-                            SwipeDirection.BOTTOM to
-                                KeyC(
-                                    display = KeyDisplay.TextDisplay("What"),
-                                    action = KeyAction.CommitText("What"),
-                                    color = ColorVariant.MUTED,
-                                    size = FontSizeVariant.SMALLEST,
-                                ),
-                        ),
+                    center = KeyC("S", size = LARGE),
+                    bottomRight = KeyC("W"),
+                    topRight = KeyC("Make", color = MUTED, size = SMALLEST),
+                    right = KeyC("Will", color = MUTED, size = SMALLEST),
+                    bottom = KeyC("What", color = MUTED, size = SMALLEST),
                 ),
                 KeyItemC(
-                    center =
-                        KeyC(
-                            action = KeyAction.CommitText("R"),
-                            size = FontSizeVariant.LARGE,
-                            color = ColorVariant.PRIMARY,
-                        ),
-                    swipes =
-                        mapOf(
-                            SwipeDirection.BOTTOM to
-                                KeyC(
-                                    action = KeyAction.CommitText("G"),
-                                ),
-                            SwipeDirection.TOP_LEFT to
-                                KeyC(
-                                    display = KeyDisplay.TextDisplay("When"),
-                                    action = KeyAction.CommitText("When"),
-                                    color = ColorVariant.MUTED,
-                                    size = FontSizeVariant.SMALLEST,
-                                ),
-                            SwipeDirection.LEFT to
-                                KeyC(
-                                    display = KeyDisplay.TextDisplay("Which"),
-                                    action = KeyAction.CommitText("Which"),
-                                    color = ColorVariant.MUTED,
-                                    size = FontSizeVariant.SMALLEST,
-                                ),
-                            SwipeDirection.BOTTOM_LEFT to
-                                KeyC(
-                                    display = KeyDisplay.TextDisplay("With"),
-                                    action = KeyAction.CommitText("With"),
-                                    color = ColorVariant.MUTED,
-                                    size = FontSizeVariant.SMALLEST,
-                                ),
-                            SwipeDirection.TOP_RIGHT to
-                                KeyC(
-                                    display = KeyDisplay.TextDisplay("Just"),
-                                    action = KeyAction.CommitText("Just"),
-                                    color = ColorVariant.MUTED,
-                                    size = FontSizeVariant.SMALLEST,
-                                ),
-                            SwipeDirection.RIGHT to
-                                KeyC(
-                                    display = KeyDisplay.TextDisplay("From"),
-                                    action = KeyAction.CommitText("From"),
-                                    color = ColorVariant.MUTED,
-                                    size = FontSizeVariant.SMALLEST,
-                                ),
-                            SwipeDirection.BOTTOM_RIGHT to
-                                KeyC(
-                                    display = KeyDisplay.TextDisplay("Be"),
-                                    action = KeyAction.CommitText("Be"),
-                                    color = ColorVariant.MUTED,
-                                    size = FontSizeVariant.SMALLEST,
-                                ),
-                        ),
+                    center = KeyC("R", size = LARGE),
+                    bottom = KeyC("G"),
+                    topLeft = KeyC("When", color = MUTED, size = SMALLEST),
+                    left = KeyC("Which", color = MUTED, size = SMALLEST),
+                    bottomLeft = KeyC("With", color = MUTED, size = SMALLEST),
+                    topRight = KeyC("Just", color = MUTED, size = SMALLEST),
+                    right = KeyC("From", color = MUTED, size = SMALLEST),
+                    bottomRight = KeyC("Be", color = MUTED, size = SMALLEST),
                 ),
                 KeyItemC(
-                    center =
-                        KeyC(
-                            action = KeyAction.CommitText("O"),
-                            size = FontSizeVariant.LARGE,
-                            color = ColorVariant.PRIMARY,
-                        ),
-                    swipes =
-                        mapOf(
-                            SwipeDirection.BOTTOM_LEFT to
-                                KeyC(
-                                    action = KeyAction.CommitText("U"),
-                                ),
-                            SwipeDirection.TOP_LEFT to
-                                KeyC(
-                                    display = KeyDisplay.TextDisplay("ould"),
-                                    action = KeyAction.CommitText("ould"),
-                                    color = ColorVariant.MUTED,
-                                    size = FontSizeVariant.SMALLEST,
-                                ),
-                            SwipeDirection.TOP to
-                                KeyC(
-                                    display = KeyDisplay.TextDisplay("'ll"),
-                                    action = KeyAction.CommitText("'ll"),
-                                    color = ColorVariant.MUTED,
-                                    size = FontSizeVariant.SMALLEST,
-                                ),
-                            SwipeDirection.TOP_RIGHT to
-                                KeyC(
-                                    display = KeyDisplay.TextDisplay("'re"),
-                                    action = KeyAction.CommitText("'re"),
-                                    color = ColorVariant.MUTED,
-                                    size = FontSizeVariant.SMALLEST,
-                                ),
-                            SwipeDirection.RIGHT to
-                                KeyC(
-                                    display = KeyDisplay.TextDisplay("About"),
-                                    action = KeyAction.CommitText("About"),
-                                    color = ColorVariant.MUTED,
-                                    size = FontSizeVariant.SMALLEST,
-                                ),
-                            SwipeDirection.BOTTOM_RIGHT to
-                                KeyC(
-                                    display = KeyDisplay.TextDisplay("n't"),
-                                    action = KeyAction.CommitText("n't"),
-                                    color = ColorVariant.MUTED,
-                                    size = FontSizeVariant.SMALLEST,
-                                ),
-                            SwipeDirection.BOTTOM to
-                                KeyC(
-                                    display = KeyDisplay.TextDisplay("'t"),
-                                    action = KeyAction.CommitText("'t"),
-                                    color = ColorVariant.MUTED,
-                                    size = FontSizeVariant.SMALLEST,
-                                ),
-                            SwipeDirection.LEFT to
-                                KeyC(
-                                    display = KeyDisplay.TextDisplay("'s"),
-                                    action = KeyAction.CommitText("'s"),
-                                    color = ColorVariant.MUTED,
-                                    size = FontSizeVariant.SMALLEST,
-                                ),
-                        ),
+                    center = KeyC("O", size = LARGE),
+                    bottomLeft = KeyC("U"),
+                    topLeft = KeyC("ould", color = MUTED, size = SMALLEST),
+                    top = KeyC("'ll", color = MUTED, size = SMALLEST),
+                    topRight = KeyC("'re", color = MUTED, size = SMALLEST),
+                    right = KeyC("About", color = MUTED, size = SMALLEST),
+                    bottomRight = KeyC("n't", color = MUTED, size = SMALLEST),
+                    bottom = KeyC("'t", color = MUTED, size = SMALLEST),
+                    left = KeyC("'s", color = MUTED, size = SMALLEST),
                 ),
                 EMOJI_KEY_ITEM,
             ),
             listOf(
                 KeyItemC(
-                    center =
-                        KeyC(
-                            action = KeyAction.CommitText("N"),
-                            size = FontSizeVariant.LARGE,
-                            color = ColorVariant.PRIMARY,
-                        ),
-                    swipes =
-                        mapOf(
-                            SwipeDirection.RIGHT to
-                                KeyC(
-                                    action = KeyAction.CommitText("M"),
-                                ),
-                            SwipeDirection.TOP to
-                                KeyC(
-                                    display = KeyDisplay.TextDisplay("Like"),
-                                    action = KeyAction.CommitText("Like"),
-                                    color = ColorVariant.MUTED,
-                                    size = FontSizeVariant.SMALLEST,
-                                ),
-                            SwipeDirection.TOP_RIGHT to
-                                KeyC(
-                                    display = KeyDisplay.TextDisplay("Not"),
-                                    action = KeyAction.CommitText("Not"),
-                                    color = ColorVariant.MUTED,
-                                    size = FontSizeVariant.SMALLEST,
-                                ),
-                            SwipeDirection.BOTTOM_RIGHT to
-                                KeyC(
-                                    display = KeyDisplay.TextDisplay("And"),
-                                    action = KeyAction.CommitText("And"),
-                                    color = ColorVariant.MUTED,
-                                    size = FontSizeVariant.SMALLEST,
-                                ),
-                            SwipeDirection.BOTTOM to
-                                KeyC(
-                                    display = KeyDisplay.TextDisplay("Know"),
-                                    action = KeyAction.CommitText("Know"),
-                                    color = ColorVariant.MUTED,
-                                    size = FontSizeVariant.SMALLEST,
-                                ),
-                        ),
+                    center = KeyC("N", size = LARGE),
+                    right = KeyC("M"),
+                    top = KeyC("Like", color = MUTED, size = SMALLEST),
+                    topRight = KeyC("Not", color = MUTED, size = SMALLEST),
+                    bottomRight = KeyC("And", color = MUTED, size = SMALLEST),
+                    bottom = KeyC("Know", color = MUTED, size = SMALLEST),
                 ),
                 KeyItemC(
-                    center =
-                        KeyC(
-                            action = KeyAction.CommitText("H"),
-                            size = FontSizeVariant.LARGE,
-                            color = ColorVariant.PRIMARY,
-                        ),
-                    swipes =
-                        mapOf(
-                            SwipeDirection.TOP_LEFT to
-                                KeyC(
-                                    action = KeyAction.CommitText("J"),
-                                ),
-                            SwipeDirection.TOP to
-                                KeyC(
-                                    action = KeyAction.CommitText("Q"),
-                                ),
-                            SwipeDirection.TOP_RIGHT to
-                                KeyC(
-                                    action = KeyAction.CommitText("B"),
-                                ),
-                            SwipeDirection.RIGHT to
-                                KeyC(
-                                    action = KeyAction.CommitText("P"),
-                                ),
-                            SwipeDirection.BOTTOM_RIGHT to
-                                KeyC(
-                                    action = KeyAction.CommitText("Y"),
-                                ),
-                            SwipeDirection.BOTTOM to
-                                KeyC(
-                                    action = KeyAction.CommitText("X"),
-                                ),
-                            SwipeDirection.BOTTOM_LEFT to
-                                KeyC(
-                                    action = KeyAction.CommitText("V"),
-                                ),
-                            SwipeDirection.LEFT to
-                                KeyC(
-                                    action = KeyAction.CommitText("K"),
-                                ),
-                        ),
+                    center = KeyC("H", size = LARGE),
+                    topLeft = KeyC("J"),
+                    top = KeyC("Q"),
+                    topRight = KeyC("B"),
+                    right = KeyC("P"),
+                    bottomRight = KeyC("Y"),
+                    bottom = KeyC("X"),
+                    bottomLeft = KeyC("V"),
+                    left = KeyC("K"),
                 ),
                 KeyItemC(
-                    center =
+                    center = KeyC("A", size = LARGE),
+                    swipeType = FOUR_WAY_CROSS,
+                    left = KeyC("L"),
+                    bottom =
                         KeyC(
-                            action = KeyAction.CommitText("A"),
-                            size = FontSizeVariant.LARGE,
-                            color = ColorVariant.PRIMARY,
+                            display = KeyDisplay.IconDisplay(Icons.Outlined.ArrowDropDown),
+                            action = ToggleShiftMode(false),
+                            swipeReturnAction = ToggleCurrentWordCapitalization(false),
+                            color = MUTED,
                         ),
-                    swipeType = SwipeNWay.FOUR_WAY_CROSS,
-                    swipes =
-                        mapOf(
-                            SwipeDirection.LEFT to
-                                KeyC(
-                                    action = KeyAction.CommitText("L"),
-                                ),
-                            SwipeDirection.BOTTOM to
-                                KeyC(
-                                    display = KeyDisplay.IconDisplay(Icons.Outlined.ArrowDropDown),
-                                    action = KeyAction.ToggleShiftMode(false),
-                                    swipeReturnAction = KeyAction.ToggleCurrentWordCapitalization(false),
-                                    color = ColorVariant.MUTED,
-                                ),
-                            SwipeDirection.TOP to
-                                KeyC(
-                                    display = KeyDisplay.IconDisplay(Icons.Outlined.KeyboardCapslock),
-                                    capsModeDisplay = KeyDisplay.IconDisplay(Icons.Outlined.Copyright),
-                                    action = KeyAction.ToggleCapsLock,
-                                    swipeReturnAction = KeyAction.ToggleCurrentWordCapitalization(true),
-                                    color = ColorVariant.MUTED,
-                                ),
+                    top =
+                        KeyC(
+                            display = KeyDisplay.IconDisplay(Icons.Outlined.KeyboardCapslock),
+                            capsModeDisplay = KeyDisplay.IconDisplay(Icons.Outlined.Copyright),
+                            action = ToggleCapsLock,
+                            swipeReturnAction = ToggleCurrentWordCapitalization(true),
+                            color = MUTED,
                         ),
                 ),
                 NUMERIC_KEY_ITEM,
             ),
             listOf(
                 KeyItemC(
-                    center =
-                        KeyC(
-                            action = KeyAction.CommitText("T"),
-                            size = FontSizeVariant.LARGE,
-                            color = ColorVariant.PRIMARY,
-                        ),
-                    swipes =
-                        mapOf(
-                            SwipeDirection.TOP_RIGHT to
-                                KeyC(
-                                    action = KeyAction.CommitText("C"),
-                                ),
-                            SwipeDirection.TOP to
-                                KeyC(
-                                    display = KeyDisplay.TextDisplay("Have"),
-                                    action = KeyAction.CommitText("Have"),
-                                    color = ColorVariant.MUTED,
-                                    size = FontSizeVariant.SMALLEST,
-                                ),
-                            SwipeDirection.RIGHT to
-                                KeyC(
-                                    display = KeyDisplay.TextDisplay("Can"),
-                                    action = KeyAction.CommitText("Can"),
-                                    color = ColorVariant.MUTED,
-                                    size = FontSizeVariant.SMALLEST,
-                                ),
-                            SwipeDirection.BOTTOM_RIGHT to
-                                KeyC(
-                                    display = KeyDisplay.TextDisplay("But"),
-                                    action = KeyAction.CommitText("But"),
-                                    color = ColorVariant.MUTED,
-                                    size = FontSizeVariant.SMALLEST,
-                                ),
-                        ),
+                    center = KeyC("T", size = LARGE),
+                    topRight = KeyC("C"),
+                    top = KeyC("Have", color = MUTED, size = SMALLEST),
+                    right = KeyC("Can", color = MUTED, size = SMALLEST),
+                    bottomRight = KeyC("But", color = MUTED, size = SMALLEST),
                 ),
                 KeyItemC(
-                    center =
-                        KeyC(
-                            action = KeyAction.CommitText("I"),
-                            size = FontSizeVariant.LARGE,
-                            color = ColorVariant.PRIMARY,
-                        ),
-                    swipes =
-                        mapOf(
-                            SwipeDirection.TOP to
-                                KeyC(
-                                    action = KeyAction.CommitText("F"),
-                                ),
-                            SwipeDirection.TOP_RIGHT to
-                                KeyC(
-                                    action = KeyAction.CommitText("'"),
-                                    color = ColorVariant.MUTED,
-                                ),
-                            SwipeDirection.RIGHT to
-                                KeyC(
-                                    action = KeyAction.CommitText("Z"),
-                                ),
-                            SwipeDirection.BOTTOM_RIGHT to
-                                KeyC(
-                                    action = KeyAction.CommitText("-"),
-                                    color = ColorVariant.MUTED,
-                                ),
-                            SwipeDirection.BOTTOM to
-                                KeyC(
-                                    action = KeyAction.CommitText("."),
-                                    color = ColorVariant.MUTED,
-                                ),
-                            SwipeDirection.BOTTOM_LEFT to
-                                KeyC(
-                                    action = KeyAction.CommitText("*"),
-                                    color = ColorVariant.MUTED,
-                                ),
-                            SwipeDirection.TOP_LEFT to
-                                KeyC(
-                                    display = KeyDisplay.TextDisplay("This"),
-                                    action = KeyAction.CommitText("This"),
-                                    color = ColorVariant.MUTED,
-                                    size = FontSizeVariant.SMALLEST,
-                                ),
-                            SwipeDirection.TOP_RIGHT to
-                                KeyC(
-                                    display = KeyDisplay.TextDisplay("That"),
-                                    action = KeyAction.CommitText("That"),
-                                    color = ColorVariant.MUTED,
-                                    size = FontSizeVariant.SMALLEST,
-                                ),
-                            SwipeDirection.LEFT to
-                                KeyC(
-                                    display = KeyDisplay.TextDisplay("I'm"),
-                                    action = KeyAction.CommitText("I'm"),
-                                    color = ColorVariant.MUTED,
-                                    size = FontSizeVariant.SMALLEST,
-                                ),
-                        ),
+                    center = KeyC("I", size = LARGE),
+                    top = KeyC("F"),
+                    topRight = KeyC("'", color = MUTED),
+                    right = KeyC("Z"),
+                    bottomRight = KeyC("-", color = MUTED),
+                    bottom = KeyC(".", color = MUTED),
+                    bottomLeft = KeyC("*", color = MUTED),
+                    topLeft = KeyC("This", color = MUTED, size = SMALLEST),
+                    left = KeyC("I'm", color = MUTED, size = SMALLEST),
                 ),
                 KeyItemC(
-                    center =
-                        KeyC(
-                            action = KeyAction.CommitText("E"),
-                            size = FontSizeVariant.LARGE,
-                            color = ColorVariant.PRIMARY,
-                        ),
-                    swipes =
-                        mapOf(
-                            SwipeDirection.TOP_LEFT to
-                                KeyC(
-                                    action = KeyAction.CommitText("D"),
-                                ),
-                            SwipeDirection.TOP to
-                                KeyC(
-                                    display = KeyDisplay.TextDisplay("The"),
-                                    action = KeyAction.CommitText("The"),
-                                    color = ColorVariant.MUTED,
-                                    size = FontSizeVariant.SMALLEST,
-                                ),
-                            SwipeDirection.TOP_RIGHT to
-                                KeyC(
-                                    display = KeyDisplay.TextDisplay("For"),
-                                    action = KeyAction.CommitText("For"),
-                                    color = ColorVariant.MUTED,
-                                    size = FontSizeVariant.SMALLEST,
-                                ),
-                            SwipeDirection.BOTTOM_LEFT to
-                                KeyC(
-                                    display = KeyDisplay.TextDisplay("Do"),
-                                    action = KeyAction.CommitText("Do"),
-                                    color = ColorVariant.MUTED,
-                                    size = FontSizeVariant.SMALLEST,
-                                ),
-                            SwipeDirection.LEFT to
-                                KeyC(
-                                    display = KeyDisplay.TextDisplay("You"),
-                                    action = KeyAction.CommitText("You"),
-                                    color = ColorVariant.MUTED,
-                                    size = FontSizeVariant.SMALLEST,
-                                ),
-                        ),
+                    center = KeyC("E", size = LARGE),
+                    topLeft = KeyC("D"),
+                    top = KeyC("The", color = MUTED, size = SMALLEST),
+                    topRight = KeyC("For", color = MUTED, size = SMALLEST),
+                    bottomLeft = KeyC("Do", color = MUTED, size = SMALLEST),
+                    left = KeyC("You", color = MUTED, size = SMALLEST),
                 ),
                 BACKSPACE_KEY_ITEM,
             ),

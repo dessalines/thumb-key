@@ -1,14 +1,12 @@
+@file:Suppress("ktlint:standard:no-wildcard-imports")
+
 package com.dessalines.thumbkey.keyboards
 
-import com.dessalines.thumbkey.utils.ColorVariant
-import com.dessalines.thumbkey.utils.FontSizeVariant
-import com.dessalines.thumbkey.utils.KeyAction
-import com.dessalines.thumbkey.utils.KeyC
-import com.dessalines.thumbkey.utils.KeyDisplay
-import com.dessalines.thumbkey.utils.KeyItemC
-import com.dessalines.thumbkey.utils.KeyboardC
-import com.dessalines.thumbkey.utils.SwipeDirection
-import com.dessalines.thumbkey.utils.getLocalCurrency
+import com.dessalines.thumbkey.utils.*
+import com.dessalines.thumbkey.utils.ColorVariant.*
+import com.dessalines.thumbkey.utils.FontSizeVariant.*
+import com.dessalines.thumbkey.utils.KeyAction.*
+import com.dessalines.thumbkey.utils.SwipeNWay.*
 
 // this val is so we can can use mapOf in the key with currency symbol
 val KB_ES_MESSAGEASE_CURRENCY_SYMBOL: String =
@@ -25,180 +23,83 @@ val KB_ES_MESSAGEASE_NUMERIC =
         listOf(
             listOf(
                 KeyItemC(
-                    center =
-                        KeyC(
-                            display = KeyDisplay.TextDisplay("1"),
-                            action = KeyAction.CommitText("1"),
-                            size = FontSizeVariant.LARGE,
-                            color = ColorVariant.PRIMARY,
-                        ),
-                    swipes =
-                        mapOf(
-                            SwipeDirection.RIGHT to KeyC(display = KeyDisplay.TextDisplay("-"), action = KeyAction.CommitText("-")),
-                            SwipeDirection.BOTTOM_LEFT to
-                                KeyC(
-                                    display = KeyDisplay.TextDisplay(KB_ES_MESSAGEASE_CURRENCY_SYMBOL),
-                                    action = KeyAction.CommitText(KB_ES_MESSAGEASE_CURRENCY_SYMBOL),
-                                ),
-                        ),
+                    center = KeyC("1", size = LARGE),
+                    right = KeyC("-"),
+                    bottomLeft = KeyC(KB_ES_MESSAGEASE_CURRENCY_SYMBOL),
                 ),
                 KeyItemC(
-                    center =
-                        KeyC(
-                            display = KeyDisplay.TextDisplay("2"),
-                            action = KeyAction.CommitText("2"),
-                            size = FontSizeVariant.LARGE,
-                            color = ColorVariant.PRIMARY,
-                        ),
-                    swipes =
-                        mapOf(
-                            SwipeDirection.TOP_LEFT to KeyC(display = KeyDisplay.TextDisplay("`"), action = KeyAction.CommitText("`")),
-                            SwipeDirection.TOP to KeyC(display = KeyDisplay.TextDisplay("^"), action = KeyAction.CommitText("^")),
-                            SwipeDirection.TOP_RIGHT to KeyC(display = KeyDisplay.TextDisplay("´"), action = KeyAction.CommitText("´")),
-                            SwipeDirection.RIGHT to KeyC(display = KeyDisplay.TextDisplay("!"), action = KeyAction.CommitText("!")),
-                            SwipeDirection.BOTTOM_RIGHT to
-                                KeyC(
-                                    display = KeyDisplay.TextDisplay("\\"),
-                                    action = KeyAction.CommitText("\\"),
-                                ),
-                            SwipeDirection.BOTTOM_LEFT to
-                                KeyC(
-                                    display = KeyDisplay.TextDisplay("/"),
-                                    action = KeyAction.CommitText("/"),
-                                ),
-                            SwipeDirection.LEFT to KeyC(display = KeyDisplay.TextDisplay("+"), action = KeyAction.CommitText("+")),
-                        ),
+                    center = KeyC("2", size = LARGE),
+                    topLeft = KeyC("`"),
+                    top = KeyC("^"),
+                    topRight = KeyC("´"),
+                    right = KeyC("!"),
+                    bottomRight = KeyC("\\"),
+                    bottomLeft = KeyC("/"),
+                    left = KeyC("+"),
                 ),
                 KeyItemC(
-                    center =
-                        KeyC(
-                            display = KeyDisplay.TextDisplay("3"),
-                            action = KeyAction.CommitText("3"),
-                            size = FontSizeVariant.LARGE,
-                            color = ColorVariant.PRIMARY,
-                        ),
-                    swipes =
-                        mapOf(
-                            SwipeDirection.TOP_RIGHT to KeyC(display = KeyDisplay.TextDisplay("¡"), action = KeyAction.CommitText("¡")),
-                            SwipeDirection.LEFT to KeyC(display = KeyDisplay.TextDisplay("?"), action = KeyAction.CommitText("?")),
-                            SwipeDirection.RIGHT to KeyC(display = KeyDisplay.TextDisplay("¿"), action = KeyAction.CommitText("¿")),
-                            SwipeDirection.BOTTOM_RIGHT to KeyC(display = KeyDisplay.TextDisplay("€"), action = KeyAction.CommitText("€")),
-                            SwipeDirection.BOTTOM_LEFT to KeyC(display = KeyDisplay.TextDisplay("£"), action = KeyAction.CommitText("£")),
-                            SwipeDirection.BOTTOM to KeyC(display = KeyDisplay.TextDisplay("="), action = KeyAction.CommitText("=")),
-                        ),
+                    center = KeyC("3", size = LARGE),
+                    topRight = KeyC("¡"),
+                    left = KeyC("?"),
+                    right = KeyC("¿"),
+                    bottomRight = KeyC("€"),
+                    bottomLeft = KeyC("£"),
+                    bottom = KeyC("="),
                 ),
                 EMOJI_KEY_ITEM,
             ),
             listOf(
                 KeyItemC(
-                    center =
-                        KeyC(
-                            display = KeyDisplay.TextDisplay("4"),
-                            action = KeyAction.CommitText("4"),
-                            size = FontSizeVariant.LARGE,
-                            color = ColorVariant.PRIMARY,
-                        ),
-                    swipes =
-                        mapOf(
-                            SwipeDirection.TOP_LEFT to KeyC(display = KeyDisplay.TextDisplay("{"), action = KeyAction.CommitText("{")),
-                            SwipeDirection.TOP_RIGHT to KeyC(display = KeyDisplay.TextDisplay("%"), action = KeyAction.CommitText("%")),
-                            SwipeDirection.BOTTOM_RIGHT to KeyC(display = KeyDisplay.TextDisplay("_"), action = KeyAction.CommitText("_")),
-                            SwipeDirection.BOTTOM_LEFT to KeyC(display = KeyDisplay.TextDisplay("["), action = KeyAction.CommitText("[")),
-                            SwipeDirection.LEFT to KeyC(display = KeyDisplay.TextDisplay("("), action = KeyAction.CommitText("(")),
-                        ),
+                    center = KeyC("4", size = LARGE),
+                    topLeft = KeyC("{"),
+                    topRight = KeyC("%"),
+                    bottomRight = KeyC("_"),
+                    bottomLeft = KeyC("["),
+                    left = KeyC("("),
                 ),
                 KeyItemC(
-                    center =
-                        KeyC(
-                            display = KeyDisplay.TextDisplay("5"),
-                            action = KeyAction.CommitText("5"),
-                            size = FontSizeVariant.LARGE,
-                            color = ColorVariant.PRIMARY,
-                        ),
-                    swipes =
-                        mapOf(SwipeDirection.TOP to KeyC(display = KeyDisplay.TextDisplay("¬"), action = KeyAction.CommitText("¬"))),
+                    center = KeyC("5", size = LARGE),
+                    top = KeyC("¬"),
                 ),
                 KeyItemC(
-                    center =
-                        KeyC(
-                            display = KeyDisplay.TextDisplay("6"),
-                            action = KeyAction.CommitText("6"),
-                            size = FontSizeVariant.LARGE,
-                            color = ColorVariant.PRIMARY,
-                        ),
-                    swipes =
-                        mapOf(
-                            SwipeDirection.TOP_LEFT to KeyC(display = KeyDisplay.TextDisplay("|"), action = KeyAction.CommitText("|")),
-                            SwipeDirection.TOP_RIGHT to KeyC(display = KeyDisplay.TextDisplay("}"), action = KeyAction.CommitText("}")),
-                            SwipeDirection.RIGHT to KeyC(display = KeyDisplay.TextDisplay(")"), action = KeyAction.CommitText(")")),
-                            SwipeDirection.BOTTOM_RIGHT to KeyC(display = KeyDisplay.TextDisplay("]"), action = KeyAction.CommitText("]")),
-                            SwipeDirection.BOTTOM_LEFT to KeyC(display = KeyDisplay.TextDisplay("@"), action = KeyAction.CommitText("@")),
-                        ),
+                    center = KeyC("6", size = LARGE),
+                    topLeft = KeyC("|"),
+                    topRight = KeyC("}"),
+                    right = KeyC(")"),
+                    bottomRight = KeyC("]"),
+                    bottomLeft = KeyC("@"),
                 ),
                 ABC_KEY_ITEM,
             ),
             listOf(
                 KeyItemC(
-                    center =
-                        KeyC(
-                            display = KeyDisplay.TextDisplay("7"),
-                            action = KeyAction.CommitText("7"),
-                            size = FontSizeVariant.LARGE,
-                            color = ColorVariant.PRIMARY,
-                        ),
-                    swipes =
-                        mapOf(
-                            SwipeDirection.TOP_LEFT to KeyC(display = KeyDisplay.TextDisplay("~"), action = KeyAction.CommitText("~")),
-                            SwipeDirection.TOP to KeyC(display = KeyDisplay.TextDisplay("¨"), action = KeyAction.CommitText("¨")),
-                            SwipeDirection.LEFT to KeyC(display = KeyDisplay.TextDisplay("<"), action = KeyAction.CommitText("<")),
-                            SwipeDirection.RIGHT to KeyC(display = KeyDisplay.TextDisplay("*"), action = KeyAction.CommitText("*")),
-                        ),
+                    center = KeyC("7", size = LARGE),
+                    topLeft = KeyC("~"),
+                    top = KeyC("¨"),
+                    left = KeyC("<"),
+                    right = KeyC("*"),
                 ),
                 KeyItemC(
-                    center =
-                        KeyC(
-                            display = KeyDisplay.TextDisplay("8"),
-                            action = KeyAction.CommitText("8"),
-                            size = FontSizeVariant.LARGE,
-                            color = ColorVariant.PRIMARY,
-                        ),
-                    swipes =
-                        mapOf(
-                            SwipeDirection.TOP_LEFT to KeyC(display = KeyDisplay.TextDisplay("\""), action = KeyAction.CommitText("\"")),
-                            SwipeDirection.TOP_RIGHT to KeyC(display = KeyDisplay.TextDisplay("'"), action = KeyAction.CommitText("'")),
-                            SwipeDirection.BOTTOM_RIGHT to KeyC(display = KeyDisplay.TextDisplay(":"), action = KeyAction.CommitText(":")),
-                            SwipeDirection.BOTTOM to KeyC(display = KeyDisplay.TextDisplay("."), action = KeyAction.CommitText(".")),
-                            SwipeDirection.BOTTOM_LEFT to KeyC(display = KeyDisplay.TextDisplay(","), action = KeyAction.CommitText(",")),
-                        ),
+                    center = KeyC("8", size = LARGE),
+                    topLeft = KeyC("\""),
+                    topRight = KeyC("'"),
+                    bottomRight = KeyC(":"),
+                    bottom = KeyC("."),
+                    bottomLeft = KeyC(","),
                 ),
                 KeyItemC(
-                    center =
-                        KeyC(
-                            display = KeyDisplay.TextDisplay("9"),
-                            action = KeyAction.CommitText("9"),
-                            size = FontSizeVariant.LARGE,
-                            color = ColorVariant.PRIMARY,
-                        ),
-                    swipes =
-                        mapOf(
-                            SwipeDirection.TOP to KeyC(display = KeyDisplay.TextDisplay("&"), action = KeyAction.CommitText("&")),
-                            SwipeDirection.TOP_RIGHT to KeyC(display = KeyDisplay.TextDisplay("°"), action = KeyAction.CommitText("°")),
-                            SwipeDirection.RIGHT to KeyC(display = KeyDisplay.TextDisplay(">"), action = KeyAction.CommitText(">")),
-                            SwipeDirection.BOTTOM_LEFT to KeyC(display = KeyDisplay.TextDisplay(";"), action = KeyAction.CommitText(";")),
-                            SwipeDirection.LEFT to KeyC(display = KeyDisplay.TextDisplay("#"), action = KeyAction.CommitText("#")),
-                        ),
+                    center = KeyC("9", size = LARGE),
+                    top = KeyC("&"),
+                    topRight = KeyC("°"),
+                    right = KeyC(">"),
+                    bottomLeft = KeyC(";"),
+                    left = KeyC("#"),
                 ),
                 BACKSPACE_KEY_ITEM,
             ),
             listOf(
                 KeyItemC(
-                    center =
-                        KeyC(
-                            display = KeyDisplay.TextDisplay("0"),
-                            action = KeyAction.CommitText("0"),
-                            size = FontSizeVariant.LARGE,
-                            color = ColorVariant.PRIMARY,
-                        ),
+                    center = KeyC("0", size = LARGE),
                     widthMultiplier = 2,
                 ),
                 SPACEBAR_SKINNY_KEY_ITEM,
