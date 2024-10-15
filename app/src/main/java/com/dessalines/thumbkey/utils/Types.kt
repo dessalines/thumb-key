@@ -77,7 +77,11 @@ data class KeyC(
             else -> null
         },
     val capsModeDisplay: KeyDisplay? = null,
-    val color: ColorVariant = ColorVariant.SECONDARY,
+    val color: ColorVariant =
+        when (size) {
+            FontSizeVariant.LARGE -> ColorVariant.PRIMARY
+            else -> ColorVariant.SECONDARY
+        },
     val size: FontSizeVariant = FontSizeVariant.SMALL,
 )
 

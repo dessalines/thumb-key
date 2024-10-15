@@ -53,7 +53,6 @@ val KB_CA_THUMBKEY_MAIN =
                         KeyC(
                             action = KeyAction.CommitText("ᒋ"),
                             size = FontSizeVariant.LARGE,
-                            color = ColorVariant.PRIMARY,
                         ),
                     top =
                         KeyC(
@@ -63,7 +62,6 @@ val KB_CA_THUMBKEY_MAIN =
                         KeyC(
                             action = KeyAction.CommitText("ᒉ"),
                             size = FontSizeVariant.LARGE,
-                            color = ColorVariant.PRIMARY,
                         ),
                     left =
                         KeyC(
@@ -77,7 +75,6 @@ val KB_CA_THUMBKEY_MAIN =
                         KeyC(
                             action = KeyAction.CommitText("ᒐ"),
                             size = FontSizeVariant.LARGE,
-                            color = ColorVariant.PRIMARY,
                         ),
                     bottom =
                         KeyC(
@@ -87,7 +84,6 @@ val KB_CA_THUMBKEY_MAIN =
                         KeyC(
                             action = KeyAction.CommitText("ᒍ"),
                             size = FontSizeVariant.LARGE,
-                            color = ColorVariant.PRIMARY,
                         ),
                 ),
                 KeyItemC(
@@ -99,7 +95,6 @@ val KB_CA_THUMBKEY_MAIN =
                         KeyC(
                             action = KeyAction.CommitText("ᓯ"),
                             size = FontSizeVariant.LARGE,
-                            color = ColorVariant.PRIMARY,
                         ),
                     top =
                         KeyC(
@@ -109,7 +104,6 @@ val KB_CA_THUMBKEY_MAIN =
                         KeyC(
                             action = KeyAction.CommitText("ᓭ"),
                             size = FontSizeVariant.LARGE,
-                            color = ColorVariant.PRIMARY,
                         ),
                     left =
                         KeyC(
@@ -123,7 +117,6 @@ val KB_CA_THUMBKEY_MAIN =
                         KeyC(
                             action = KeyAction.CommitText("ᓴ"),
                             size = FontSizeVariant.LARGE,
-                            color = ColorVariant.PRIMARY,
                         ),
                     bottom =
                         KeyC(
@@ -133,7 +126,6 @@ val KB_CA_THUMBKEY_MAIN =
                         KeyC(
                             action = KeyAction.CommitText("ᓱ"),
                             size = FontSizeVariant.LARGE,
-                            color = ColorVariant.PRIMARY,
                         ),
                 ),
                 EMOJI_KEY_ITEM,
@@ -178,7 +170,6 @@ val KB_CA_THUMBKEY_MAIN =
                         KeyC(
                             action = KeyAction.CommitText("ᔨ"),
                             size = FontSizeVariant.LARGE,
-                            color = ColorVariant.PRIMARY,
                         ),
                     top =
                         KeyC(
@@ -188,7 +179,6 @@ val KB_CA_THUMBKEY_MAIN =
                         KeyC(
                             action = KeyAction.CommitText("ᔦ"),
                             size = FontSizeVariant.LARGE,
-                            color = ColorVariant.PRIMARY,
                         ),
                     left =
                         KeyC(
@@ -202,7 +192,6 @@ val KB_CA_THUMBKEY_MAIN =
                         KeyC(
                             action = KeyAction.CommitText("ᔭ"),
                             size = FontSizeVariant.LARGE,
-                            color = ColorVariant.PRIMARY,
                         ),
                     bottom =
                         KeyC(
@@ -212,7 +201,6 @@ val KB_CA_THUMBKEY_MAIN =
                         KeyC(
                             action = KeyAction.CommitText("ᔪ"),
                             size = FontSizeVariant.LARGE,
-                            color = ColorVariant.PRIMARY,
                         ),
                 ),
                 KeyItemC(
@@ -224,7 +212,6 @@ val KB_CA_THUMBKEY_MAIN =
                         KeyC(
                             action = KeyAction.CommitText("ᒥ"),
                             size = FontSizeVariant.LARGE,
-                            color = ColorVariant.PRIMARY,
                         ),
                     top =
                         KeyC(
@@ -234,7 +221,6 @@ val KB_CA_THUMBKEY_MAIN =
                         KeyC(
                             action = KeyAction.CommitText("ᒣ"),
                             size = FontSizeVariant.LARGE,
-                            color = ColorVariant.PRIMARY,
                         ),
                     left =
                         KeyC(
@@ -248,7 +234,6 @@ val KB_CA_THUMBKEY_MAIN =
                         KeyC(
                             action = KeyAction.CommitText("ᒪ"),
                             size = FontSizeVariant.LARGE,
-                            color = ColorVariant.PRIMARY,
                         ),
                     bottom =
                         KeyC(
@@ -258,7 +243,6 @@ val KB_CA_THUMBKEY_MAIN =
                         KeyC(
                             action = KeyAction.CommitText("ᒧ"),
                             size = FontSizeVariant.LARGE,
-                            color = ColorVariant.PRIMARY,
                         ),
                 ),
                 NUMERIC_KEY_ITEM,
@@ -303,7 +287,6 @@ val KB_CA_THUMBKEY_MAIN =
                         KeyC(
                             action = KeyAction.CommitText("ᑭ"),
                             size = FontSizeVariant.LARGE,
-                            color = ColorVariant.PRIMARY,
                         ),
                     top =
                         KeyC(
@@ -316,7 +299,6 @@ val KB_CA_THUMBKEY_MAIN =
                         KeyC(
                             action = KeyAction.CommitText("ᑫ"),
                             size = FontSizeVariant.LARGE,
-                            color = ColorVariant.PRIMARY,
                         ),
                     left =
                         KeyC(
@@ -330,7 +312,6 @@ val KB_CA_THUMBKEY_MAIN =
                         KeyC(
                             action = KeyAction.CommitText("ᑲ"),
                             size = FontSizeVariant.LARGE,
-                            color = ColorVariant.PRIMARY,
                         ),
                     bottom =
                         KeyC(
@@ -340,7 +321,6 @@ val KB_CA_THUMBKEY_MAIN =
                         KeyC(
                             action = KeyAction.CommitText("ᑯ"),
                             size = FontSizeVariant.LARGE,
-                            color = ColorVariant.PRIMARY,
                         ),
                 ),
                 KeyItemC(
@@ -352,7 +332,6 @@ val KB_CA_THUMBKEY_MAIN =
                         KeyC(
                             action = KeyAction.CommitText("ᓂ"),
                             size = FontSizeVariant.LARGE,
-                            color = ColorVariant.PRIMARY,
                         ),
                     top =
                         KeyC(
@@ -362,7 +341,6 @@ val KB_CA_THUMBKEY_MAIN =
                         KeyC(
                             action = KeyAction.CommitText("ᓀ"),
                             size = FontSizeVariant.LARGE,
-                            color = ColorVariant.PRIMARY,
                         ),
                     left =
                         KeyC(
@@ -376,7 +354,6 @@ val KB_CA_THUMBKEY_MAIN =
                         KeyC(
                             action = KeyAction.CommitText("ᓇ"),
                             size = FontSizeVariant.LARGE,
-                            color = ColorVariant.PRIMARY,
                         ),
                     bottom =
                         KeyC(
@@ -386,7 +363,6 @@ val KB_CA_THUMBKEY_MAIN =
                         KeyC(
                             action = KeyAction.CommitText("ᓄ"),
                             size = FontSizeVariant.LARGE,
-                            color = ColorVariant.PRIMARY,
                         ),
                 ),
                 BACKSPACE_KEY_ITEM,
@@ -441,7 +417,6 @@ val KB_CA_THUMBKEY_SHIFTED =
                         KeyC(
                             action = KeyAction.CommitText("ᒌ"),
                             size = FontSizeVariant.LARGE,
-                            color = ColorVariant.PRIMARY,
                         ),
                     top =
                         KeyC(
@@ -451,7 +426,6 @@ val KB_CA_THUMBKEY_SHIFTED =
                         KeyC(
                             action = KeyAction.CommitText("ᒊ"),
                             size = FontSizeVariant.LARGE,
-                            color = ColorVariant.PRIMARY,
                         ),
                     left =
                         KeyC(
@@ -465,7 +439,6 @@ val KB_CA_THUMBKEY_SHIFTED =
                         KeyC(
                             action = KeyAction.CommitText("ᒑ"),
                             size = FontSizeVariant.LARGE,
-                            color = ColorVariant.PRIMARY,
                         ),
                     bottom =
                         KeyC(
@@ -475,7 +448,6 @@ val KB_CA_THUMBKEY_SHIFTED =
                         KeyC(
                             action = KeyAction.CommitText("ᒎ"),
                             size = FontSizeVariant.LARGE,
-                            color = ColorVariant.PRIMARY,
                         ),
                 ),
                 KeyItemC(
@@ -487,7 +459,6 @@ val KB_CA_THUMBKEY_SHIFTED =
                         KeyC(
                             action = KeyAction.CommitText("ᓰ"),
                             size = FontSizeVariant.LARGE,
-                            color = ColorVariant.PRIMARY,
                         ),
                     top =
                         KeyC(
@@ -497,7 +468,6 @@ val KB_CA_THUMBKEY_SHIFTED =
                         KeyC(
                             action = KeyAction.CommitText("ᓮ"),
                             size = FontSizeVariant.LARGE,
-                            color = ColorVariant.PRIMARY,
                         ),
                     left =
                         KeyC(
@@ -511,7 +481,6 @@ val KB_CA_THUMBKEY_SHIFTED =
                         KeyC(
                             action = KeyAction.CommitText("ᓵ"),
                             size = FontSizeVariant.LARGE,
-                            color = ColorVariant.PRIMARY,
                         ),
                     bottom =
                         KeyC(
@@ -521,7 +490,6 @@ val KB_CA_THUMBKEY_SHIFTED =
                         KeyC(
                             action = KeyAction.CommitText("ᓲ"),
                             size = FontSizeVariant.LARGE,
-                            color = ColorVariant.PRIMARY,
                         ),
                 ),
                 EMOJI_KEY_ITEM,
@@ -566,7 +534,6 @@ val KB_CA_THUMBKEY_SHIFTED =
                         KeyC(
                             action = KeyAction.CommitText("ᔩ"),
                             size = FontSizeVariant.LARGE,
-                            color = ColorVariant.PRIMARY,
                         ),
                     top =
                         KeyC(
@@ -576,7 +543,6 @@ val KB_CA_THUMBKEY_SHIFTED =
                         KeyC(
                             action = KeyAction.CommitText("ᔧ"),
                             size = FontSizeVariant.LARGE,
-                            color = ColorVariant.PRIMARY,
                         ),
                     left =
                         KeyC(
@@ -590,7 +556,6 @@ val KB_CA_THUMBKEY_SHIFTED =
                         KeyC(
                             action = KeyAction.CommitText("ᔮ"),
                             size = FontSizeVariant.LARGE,
-                            color = ColorVariant.PRIMARY,
                         ),
                     bottom =
                         KeyC(
@@ -600,7 +565,6 @@ val KB_CA_THUMBKEY_SHIFTED =
                         KeyC(
                             action = KeyAction.CommitText("ᔫ"),
                             size = FontSizeVariant.LARGE,
-                            color = ColorVariant.PRIMARY,
                         ),
                 ),
                 KeyItemC(
@@ -612,7 +576,6 @@ val KB_CA_THUMBKEY_SHIFTED =
                         KeyC(
                             action = KeyAction.CommitText("ᒦ"),
                             size = FontSizeVariant.LARGE,
-                            color = ColorVariant.PRIMARY,
                         ),
                     top =
                         KeyC(
@@ -622,7 +585,6 @@ val KB_CA_THUMBKEY_SHIFTED =
                         KeyC(
                             action = KeyAction.CommitText("ᒤ"),
                             size = FontSizeVariant.LARGE,
-                            color = ColorVariant.PRIMARY,
                         ),
                     left =
                         KeyC(
@@ -636,7 +598,6 @@ val KB_CA_THUMBKEY_SHIFTED =
                         KeyC(
                             action = KeyAction.CommitText("ᒫ"),
                             size = FontSizeVariant.LARGE,
-                            color = ColorVariant.PRIMARY,
                         ),
                     bottom =
                         KeyC(
@@ -646,7 +607,6 @@ val KB_CA_THUMBKEY_SHIFTED =
                         KeyC(
                             action = KeyAction.CommitText("ᒨ"),
                             size = FontSizeVariant.LARGE,
-                            color = ColorVariant.PRIMARY,
                         ),
                 ),
                 NUMERIC_KEY_ITEM,
@@ -691,7 +651,6 @@ val KB_CA_THUMBKEY_SHIFTED =
                         KeyC(
                             action = KeyAction.CommitText("ᑮ"),
                             size = FontSizeVariant.LARGE,
-                            color = ColorVariant.PRIMARY,
                         ),
                     top =
                         KeyC(
@@ -704,7 +663,6 @@ val KB_CA_THUMBKEY_SHIFTED =
                         KeyC(
                             action = KeyAction.CommitText("ᑬ"),
                             size = FontSizeVariant.LARGE,
-                            color = ColorVariant.PRIMARY,
                         ),
                     left =
                         KeyC(
@@ -718,7 +676,6 @@ val KB_CA_THUMBKEY_SHIFTED =
                         KeyC(
                             action = KeyAction.CommitText("ᑳ"),
                             size = FontSizeVariant.LARGE,
-                            color = ColorVariant.PRIMARY,
                         ),
                     bottom =
                         KeyC(
@@ -728,7 +685,6 @@ val KB_CA_THUMBKEY_SHIFTED =
                         KeyC(
                             action = KeyAction.CommitText("ᑰ"),
                             size = FontSizeVariant.LARGE,
-                            color = ColorVariant.PRIMARY,
                         ),
                 ),
                 KeyItemC(
@@ -740,7 +696,6 @@ val KB_CA_THUMBKEY_SHIFTED =
                         KeyC(
                             action = KeyAction.CommitText("ᓃ"),
                             size = FontSizeVariant.LARGE,
-                            color = ColorVariant.PRIMARY,
                         ),
                     top =
                         KeyC(
@@ -750,7 +705,6 @@ val KB_CA_THUMBKEY_SHIFTED =
                         KeyC(
                             action = KeyAction.CommitText("ᓁ"),
                             size = FontSizeVariant.LARGE,
-                            color = ColorVariant.PRIMARY,
                         ),
                     left =
                         KeyC(
@@ -764,7 +718,6 @@ val KB_CA_THUMBKEY_SHIFTED =
                         KeyC(
                             action = KeyAction.CommitText("ᓈ"),
                             size = FontSizeVariant.LARGE,
-                            color = ColorVariant.PRIMARY,
                         ),
                     bottom =
                         KeyC(
@@ -774,7 +727,6 @@ val KB_CA_THUMBKEY_SHIFTED =
                         KeyC(
                             action = KeyAction.CommitText("ᓅ"),
                             size = FontSizeVariant.LARGE,
-                            color = ColorVariant.PRIMARY,
                         ),
                 ),
                 BACKSPACE_KEY_ITEM,

@@ -19,7 +19,6 @@ val KB_HE_MESSAGEASE_SYMBOLS_MAIN =
                         KeyC(
                             action = KeyAction.CommitText("ר"),
                             size = FontSizeVariant.LARGE,
-                            color = ColorVariant.PRIMARY,
                         ),
                     bottomRight =
                         KeyC(
@@ -45,7 +44,6 @@ val KB_HE_MESSAGEASE_SYMBOLS_MAIN =
                         KeyC(
                             action = KeyAction.CommitText("ב"),
                             size = FontSizeVariant.LARGE,
-                            color = ColorVariant.PRIMARY,
                         ),
                     bottom =
                         KeyC(
@@ -92,7 +90,6 @@ val KB_HE_MESSAGEASE_SYMBOLS_MAIN =
                         KeyC(
                             action = KeyAction.CommitText("א"),
                             size = FontSizeVariant.LARGE,
-                            color = ColorVariant.PRIMARY,
                         ),
                     bottomLeft =
                         KeyC(
@@ -116,7 +113,6 @@ val KB_HE_MESSAGEASE_SYMBOLS_MAIN =
                         KeyC(
                             action = KeyAction.CommitText("מ"),
                             size = FontSizeVariant.LARGE,
-                            color = ColorVariant.PRIMARY,
                         ),
                     right =
                         KeyC(
@@ -155,7 +151,6 @@ val KB_HE_MESSAGEASE_SYMBOLS_MAIN =
                         KeyC(
                             action = KeyAction.CommitText("י"),
                             size = FontSizeVariant.LARGE,
-                            color = ColorVariant.PRIMARY,
                         ),
                     topLeft =
                         KeyC(
@@ -195,7 +190,6 @@ val KB_HE_MESSAGEASE_SYMBOLS_MAIN =
                         KeyC(
                             action = KeyAction.CommitText("ו"),
                             size = FontSizeVariant.LARGE,
-                            color = ColorVariant.PRIMARY,
                         ),
                     topLeft =
                         KeyC(
@@ -233,7 +227,6 @@ val KB_HE_MESSAGEASE_SYMBOLS_MAIN =
                         KeyC(
                             action = KeyAction.CommitText("ת"),
                             size = FontSizeVariant.LARGE,
-                            color = ColorVariant.PRIMARY,
                         ),
                     topRight =
                         KeyC(
@@ -266,7 +259,6 @@ val KB_HE_MESSAGEASE_SYMBOLS_MAIN =
                         KeyC(
                             action = KeyAction.CommitText("ה"),
                             size = FontSizeVariant.LARGE,
-                            color = ColorVariant.PRIMARY,
                         ),
                     topLeft =
                         KeyC(
@@ -303,7 +295,6 @@ val KB_HE_MESSAGEASE_SYMBOLS_MAIN =
                         KeyC(
                             action = KeyAction.CommitText("ל"),
                             size = FontSizeVariant.LARGE,
-                            color = ColorVariant.PRIMARY,
                         ),
                     topLeft =
                         KeyC(

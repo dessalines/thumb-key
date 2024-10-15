@@ -25,7 +25,6 @@ val KB_ES_MESSAGEASE_MAIN =
                         KeyC(
                             action = KeyAction.CommitText("a"),
                             size = FontSizeVariant.LARGE,
-                            color = ColorVariant.PRIMARY,
                         ),
                     bottomLeft =
                         KeyC(
@@ -47,7 +46,6 @@ val KB_ES_MESSAGEASE_MAIN =
                         KeyC(
                             action = KeyAction.CommitText("n"),
                             size = FontSizeVariant.LARGE,
-                            color = ColorVariant.PRIMARY,
                         ),
                     left =
                         KeyC(
@@ -72,7 +70,6 @@ val KB_ES_MESSAGEASE_MAIN =
                         KeyC(
                             action = KeyAction.CommitText("i"),
                             size = FontSizeVariant.LARGE,
-                            color = ColorVariant.PRIMARY,
                         ),
                     topLeft = KeyC(action = KeyAction.CommitText("í")),
                     bottomLeft = KeyC(action = KeyAction.CommitText("x")),
@@ -100,7 +97,6 @@ val KB_ES_MESSAGEASE_MAIN =
                         KeyC(
                             action = KeyAction.CommitText("d"),
                             size = FontSizeVariant.LARGE,
-                            color = ColorVariant.PRIMARY,
                         ),
                     swipeType = SwipeNWay.FOUR_WAY_CROSS,
                     left =
@@ -116,7 +112,6 @@ val KB_ES_MESSAGEASE_MAIN =
                         KeyC(
                             action = KeyAction.CommitText("o"),
                             size = FontSizeVariant.LARGE,
-                            color = ColorVariant.PRIMARY,
                         ),
                     topLeft = KeyC(action = KeyAction.CommitText("q")),
                     top = KeyC(action = KeyAction.CommitText("u")),
@@ -132,7 +127,6 @@ val KB_ES_MESSAGEASE_MAIN =
                         KeyC(
                             action = KeyAction.CommitText("r"),
                             size = FontSizeVariant.LARGE,
-                            color = ColorVariant.PRIMARY,
                         ),
                     left = KeyC(action = KeyAction.CommitText("m")),
                     top =
@@ -166,7 +160,6 @@ val KB_ES_MESSAGEASE_MAIN =
                         KeyC(
                             action = KeyAction.CommitText("t"),
                             size = FontSizeVariant.LARGE,
-                            color = ColorVariant.PRIMARY,
                         ),
                     topRight = KeyC(action = KeyAction.CommitText("y")),
                     top = KeyC(action = KeyAction.CommitText("ú")),
@@ -182,7 +175,6 @@ val KB_ES_MESSAGEASE_MAIN =
                         KeyC(
                             action = KeyAction.CommitText("e"),
                             size = FontSizeVariant.LARGE,
-                            color = ColorVariant.PRIMARY,
                         ),
                     top = KeyC(action = KeyAction.CommitText("w")),
                     topRight =
@@ -219,7 +211,6 @@ val KB_ES_MESSAGEASE_MAIN =
                         KeyC(
                             action = KeyAction.CommitText("s"),
                             size = FontSizeVariant.LARGE,
-                            color = ColorVariant.PRIMARY,
                         ),
                     swipeType = SwipeNWay.FOUR_WAY_DIAGONAL,
                     topLeft = KeyC(action = KeyAction.CommitText("f")),
@@ -239,7 +230,6 @@ val KB_ES_MESSAGEASE_SHIFTED =
                         KeyC(
                             action = KeyAction.CommitText("A"),
                             size = FontSizeVariant.LARGE,
-                            color = ColorVariant.PRIMARY,
                         ),
                     bottomLeft =
                         KeyC(
@@ -262,7 +252,6 @@ val KB_ES_MESSAGEASE_SHIFTED =
                         KeyC(
                             action = KeyAction.CommitText("N"),
                             size = FontSizeVariant.LARGE,
-                            color = ColorVariant.PRIMARY,
                         ),
                     left =
                         KeyC(
@@ -287,7 +276,6 @@ val KB_ES_MESSAGEASE_SHIFTED =
                         KeyC(
                             action = KeyAction.CommitText("I"),
                             size = FontSizeVariant.LARGE,
-                            color = ColorVariant.PRIMARY,
                         ),
                     topLeft = KeyC(action = KeyAction.CommitText("Í")),
                     bottomLeft = KeyC(action = KeyAction.CommitText("X")),
@@ -315,7 +303,6 @@ val KB_ES_MESSAGEASE_SHIFTED =
                         KeyC(
                             action = KeyAction.CommitText("D"),
                             size = FontSizeVariant.LARGE,
-                            color = ColorVariant.PRIMARY,
                         ),
                     swipeType = SwipeNWay.FOUR_WAY_CROSS,
                     left =
@@ -331,7 +318,6 @@ val KB_ES_MESSAGEASE_SHIFTED =
                         KeyC(
                             action = KeyAction.CommitText("O"),
                             size = FontSizeVariant.LARGE,
-                            color = ColorVariant.PRIMARY,
                         ),
                     topLeft = KeyC(action = KeyAction.CommitText("Q")),
                     top = KeyC(action = KeyAction.CommitText("U")),
@@ -347,7 +333,6 @@ val KB_ES_MESSAGEASE_SHIFTED =
                         KeyC(
                             action = KeyAction.CommitText("R"),
                             size = FontSizeVariant.LARGE,
-                            color = ColorVariant.PRIMARY,
                         ),
                     left = KeyC(action = KeyAction.CommitText("M")),
                     bottom =
@@ -384,7 +369,6 @@ val KB_ES_MESSAGEASE_SHIFTED =
                         KeyC(
                             action = KeyAction.CommitText("T"),
                             size = FontSizeVariant.LARGE,
-                            color = ColorVariant.PRIMARY,
                         ),
                     topRight = KeyC(action = KeyAction.CommitText("Y")),
                     top = KeyC(action = KeyAction.CommitText("Ú")),
@@ -400,7 +384,6 @@ val KB_ES_MESSAGEASE_SHIFTED =
                         KeyC(
                             action = KeyAction.CommitText("E"),
                             size = FontSizeVariant.LARGE,
-                            color = ColorVariant.PRIMARY,
                         ),
                     top = KeyC(action = KeyAction.CommitText("W")),
                     topRight =
@@ -439,7 +422,6 @@ val KB_ES_MESSAGEASE_SHIFTED =
                         KeyC(
                             action = KeyAction.CommitText("S"),
                             size = FontSizeVariant.LARGE,
-                            color = ColorVariant.PRIMARY,
                         ),
                     swipeType = SwipeNWay.FOUR_WAY_DIAGONAL,
                     topLeft = KeyC(action = KeyAction.CommitText("F")),

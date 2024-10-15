@@ -16,7 +16,6 @@ val DOUBLE_NUMERIC_KEYBOARD =
                         KeyC(
                             action = KeyAction.CommitText("1"),
                             size = FontSizeVariant.LARGE,
-                            color = ColorVariant.PRIMARY,
                         ),
                     bottomLeft =
                         KeyC(
@@ -28,7 +27,6 @@ val DOUBLE_NUMERIC_KEYBOARD =
                         KeyC(
                             action = KeyAction.CommitText("2"),
                             size = FontSizeVariant.LARGE,
-                            color = ColorVariant.PRIMARY,
                         ),
                     topLeft =
                         KeyC(
@@ -64,7 +62,6 @@ val DOUBLE_NUMERIC_KEYBOARD =
                         KeyC(
                             action = KeyAction.CommitText("3"),
                             size = FontSizeVariant.LARGE,
-                            color = ColorVariant.PRIMARY,
                         ),
                     left =
                         KeyC(
@@ -88,7 +85,6 @@ val DOUBLE_NUMERIC_KEYBOARD =
                         KeyC(
                             action = KeyAction.CommitText("1"),
                             size = FontSizeVariant.LARGE,
-                            color = ColorVariant.PRIMARY,
                         ),
                     bottomLeft =
                         KeyC(
@@ -100,7 +96,6 @@ val DOUBLE_NUMERIC_KEYBOARD =
                         KeyC(
                             action = KeyAction.CommitText("2"),
                             size = FontSizeVariant.LARGE,
-                            color = ColorVariant.PRIMARY,
                         ),
                     topLeft =
                         KeyC(
@@ -136,7 +131,6 @@ val DOUBLE_NUMERIC_KEYBOARD =
                         KeyC(
                             action = KeyAction.CommitText("3"),
                             size = FontSizeVariant.LARGE,
-                            color = ColorVariant.PRIMARY,
                         ),
                     left =
                         KeyC(
@@ -162,7 +156,6 @@ val DOUBLE_NUMERIC_KEYBOARD =
                         KeyC(
                             action = KeyAction.CommitText("4"),
                             size = FontSizeVariant.LARGE,
-                            color = ColorVariant.PRIMARY,
                         ),
                     topLeft =
                         KeyC(
@@ -190,7 +183,6 @@ val DOUBLE_NUMERIC_KEYBOARD =
                         KeyC(
                             action = KeyAction.CommitText("5"),
                             size = FontSizeVariant.LARGE,
-                            color = ColorVariant.PRIMARY,
                         ),
                 ),
                 KeyItemC(
@@ -198,7 +190,6 @@ val DOUBLE_NUMERIC_KEYBOARD =
                         KeyC(
                             action = KeyAction.CommitText("6"),
                             size = FontSizeVariant.LARGE,
-                            color = ColorVariant.PRIMARY,
                         ),
                     topLeft =
                         KeyC(
@@ -226,7 +217,6 @@ val DOUBLE_NUMERIC_KEYBOARD =
                         KeyC(
                             action = KeyAction.CommitText("4"),
                             size = FontSizeVariant.LARGE,
-                            color = ColorVariant.PRIMARY,
                         ),
                     topLeft =
                         KeyC(
@@ -254,7 +244,6 @@ val DOUBLE_NUMERIC_KEYBOARD =
                         KeyC(
                             action = KeyAction.CommitText("5"),
                             size = FontSizeVariant.LARGE,
-                            color = ColorVariant.PRIMARY,
                         ),
                 ),
                 KeyItemC(
@@ -262,7 +251,6 @@ val DOUBLE_NUMERIC_KEYBOARD =
                         KeyC(
                             action = KeyAction.CommitText("6"),
                             size = FontSizeVariant.LARGE,
-                            color = ColorVariant.PRIMARY,
                         ),
                     topLeft =
                         KeyC(
@@ -292,7 +280,6 @@ val DOUBLE_NUMERIC_KEYBOARD =
                         KeyC(
                             action = KeyAction.CommitText("7"),
                             size = FontSizeVariant.LARGE,
-                            color = ColorVariant.PRIMARY,
                         ),
                     topLeft =
                         KeyC(
@@ -312,7 +299,6 @@ val DOUBLE_NUMERIC_KEYBOARD =
                         KeyC(
                             action = KeyAction.CommitText("8"),
                             size = FontSizeVariant.LARGE,
-                            color = ColorVariant.PRIMARY,
                         ),
                     topLeft =
                         KeyC(
@@ -344,7 +330,6 @@ val DOUBLE_NUMERIC_KEYBOARD =
                         KeyC(
                             action = KeyAction.CommitText("9"),
                             size = FontSizeVariant.LARGE,
-                            color = ColorVariant.PRIMARY,
                         ),
                     top =
                         KeyC(
@@ -372,7 +357,6 @@ val DOUBLE_NUMERIC_KEYBOARD =
                         KeyC(
                             action = KeyAction.CommitText("7"),
                             size = FontSizeVariant.LARGE,
-                            color = ColorVariant.PRIMARY,
                         ),
                     topLeft =
                         KeyC(
@@ -392,7 +376,6 @@ val DOUBLE_NUMERIC_KEYBOARD =
                         KeyC(
                             action = KeyAction.CommitText("8"),
                             size = FontSizeVariant.LARGE,
-                            color = ColorVariant.PRIMARY,
                         ),
                     topLeft =
                         KeyC(
@@ -424,7 +407,6 @@ val DOUBLE_NUMERIC_KEYBOARD =
                         KeyC(
                             action = KeyAction.CommitText("9"),
                             size = FontSizeVariant.LARGE,
-                            color = ColorVariant.PRIMARY,
                         ),
                     top =
                         KeyC(
@@ -455,7 +437,6 @@ val DOUBLE_NUMERIC_KEYBOARD =
                         KeyC(
                             action = KeyAction.CommitText("0"),
                             size = FontSizeVariant.LARGE,
-                            color = ColorVariant.PRIMARY,
                         ),
                 ),
                 // EMOJI_KEY_ITEM,
@@ -480,7 +461,6 @@ val DOUBLE_NUMERIC_KEYBOARD =
                         KeyC(
                             action = KeyAction.CommitText("0"),
                             size = FontSizeVariant.LARGE,
-                            color = ColorVariant.PRIMARY,
                         ),
                 ),
                 RETURN_KEY_ITEM,

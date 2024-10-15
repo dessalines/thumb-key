@@ -19,7 +19,6 @@ val KB_PL_TYPESPLIT_V2_MAIN =
                         KeyC(
                             action = KeyAction.CommitText("e"),
                             size = FontSizeVariant.LARGE,
-                            color = ColorVariant.PRIMARY,
                         ),
                     swipeType = SwipeNWay.FOUR_WAY_CROSS,
                     right =
@@ -46,7 +45,6 @@ val KB_PL_TYPESPLIT_V2_MAIN =
                         KeyC(
                             action = KeyAction.CommitText("r"),
                             size = FontSizeVariant.LARGE,
-                            color = ColorVariant.PRIMARY,
                         ),
                     swipeType = SwipeNWay.TWO_WAY_VERTICAL,
                     bottom =
@@ -60,7 +58,6 @@ val KB_PL_TYPESPLIT_V2_MAIN =
                         KeyC(
                             action = KeyAction.CommitText("i"),
                             size = FontSizeVariant.LARGE,
-                            color = ColorVariant.PRIMARY,
                         ),
                     swipeType = SwipeNWay.FOUR_WAY_CROSS,
                     right =
@@ -82,7 +79,6 @@ val KB_PL_TYPESPLIT_V2_MAIN =
                         KeyC(
                             action = KeyAction.CommitText("o"),
                             size = FontSizeVariant.LARGE,
-                            color = ColorVariant.PRIMARY,
                         ),
                     swipeType = SwipeNWay.FOUR_WAY_CROSS,
                     right =
@@ -107,7 +103,6 @@ val KB_PL_TYPESPLIT_V2_MAIN =
                         KeyC(
                             action = KeyAction.CommitText("a"),
                             size = FontSizeVariant.LARGE,
-                            color = ColorVariant.PRIMARY,
                         ),
                     swipeType = SwipeNWay.TWO_WAY_HORIZONTAL,
                     right =
@@ -126,7 +121,6 @@ val KB_PL_TYPESPLIT_V2_MAIN =
                         KeyC(
                             action = KeyAction.CommitText("s"),
                             size = FontSizeVariant.LARGE,
-                            color = ColorVariant.PRIMARY,
                         ),
                     swipeType = SwipeNWay.FOUR_WAY_CROSS,
                     right =
@@ -154,7 +148,6 @@ val KB_PL_TYPESPLIT_V2_MAIN =
                         KeyC(
                             action = KeyAction.CommitText("d"),
                             size = FontSizeVariant.LARGE,
-                            color = ColorVariant.PRIMARY,
                         ),
                     swipeType = SwipeNWay.TWO_WAY_HORIZONTAL,
                     right =
@@ -171,7 +164,6 @@ val KB_PL_TYPESPLIT_V2_MAIN =
                         KeyC(
                             action = KeyAction.CommitText("k"),
                             size = FontSizeVariant.LARGE,
-                            color = ColorVariant.PRIMARY,
                         ),
                     swipeType = SwipeNWay.TWO_WAY_VERTICAL,
                     bottom =
@@ -190,7 +182,6 @@ val KB_PL_TYPESPLIT_V2_MAIN =
                         KeyC(
                             action = KeyAction.CommitText("z"),
                             size = FontSizeVariant.LARGE,
-                            color = ColorVariant.PRIMARY,
                         ),
                     swipeType = SwipeNWay.FOUR_WAY_CROSS,
                     right =
@@ -218,7 +209,6 @@ val KB_PL_TYPESPLIT_V2_MAIN =
                         KeyC(
                             action = KeyAction.CommitText("c"),
                             size = FontSizeVariant.LARGE,
-                            color = ColorVariant.PRIMARY,
                         ),
                     swipeType = SwipeNWay.FOUR_WAY_CROSS,
                     right =
@@ -246,7 +236,6 @@ val KB_PL_TYPESPLIT_V2_MAIN =
                         KeyC(
                             action = KeyAction.CommitText("n"),
                             size = FontSizeVariant.LARGE,
-                            color = ColorVariant.PRIMARY,
                         ),
                     swipeType = SwipeNWay.TWO_WAY_HORIZONTAL,
                     right =
@@ -265,7 +254,6 @@ val KB_PL_TYPESPLIT_V2_MAIN =
                         KeyC(
                             action = KeyAction.CommitText("m"),
                             size = FontSizeVariant.LARGE,
-                            color = ColorVariant.PRIMARY,
                         ),
                     swipeType = SwipeNWay.FOUR_WAY_CROSS,
                     right =
@@ -307,7 +295,6 @@ val KB_PL_TYPESPLIT_V2_SHIFTED =
                         KeyC(
                             action = KeyAction.CommitText("E"),
                             size = FontSizeVariant.LARGE,
-                            color = ColorVariant.PRIMARY,
                         ),
                     swipeType = SwipeNWay.FOUR_WAY_CROSS,
                     right =
@@ -334,7 +321,6 @@ val KB_PL_TYPESPLIT_V2_SHIFTED =
                         KeyC(
                             action = KeyAction.CommitText("R"),
                             size = FontSizeVariant.LARGE,
-                            color = ColorVariant.PRIMARY,
                         ),
                     swipeType = SwipeNWay.TWO_WAY_VERTICAL,
                     bottom =
@@ -348,7 +334,6 @@ val KB_PL_TYPESPLIT_V2_SHIFTED =
                         KeyC(
                             action = KeyAction.CommitText("I"),
                             size = FontSizeVariant.LARGE,
-                            color = ColorVariant.PRIMARY,
                         ),
                     swipeType = SwipeNWay.FOUR_WAY_CROSS,
                     right =
@@ -370,7 +355,6 @@ val KB_PL_TYPESPLIT_V2_SHIFTED =
                         KeyC(
                             action = KeyAction.CommitText("O"),
                             size = FontSizeVariant.LARGE,
-                            color = ColorVariant.PRIMARY,
                         ),
                     swipeType = SwipeNWay.FOUR_WAY_CROSS,
                     right =
@@ -395,7 +379,6 @@ val KB_PL_TYPESPLIT_V2_SHIFTED =
                         KeyC(
                             action = KeyAction.CommitText("A"),
                             size = FontSizeVariant.LARGE,
-                            color = ColorVariant.PRIMARY,
                         ),
                     swipeType = SwipeNWay.TWO_WAY_HORIZONTAL,
                     right =
@@ -414,7 +397,6 @@ val KB_PL_TYPESPLIT_V2_SHIFTED =
                         KeyC(
                             action = KeyAction.CommitText("S"),
                             size = FontSizeVariant.LARGE,
-                            color = ColorVariant.PRIMARY,
                         ),
                     swipeType = SwipeNWay.FOUR_WAY_CROSS,
                     right =
@@ -442,7 +424,6 @@ val KB_PL_TYPESPLIT_V2_SHIFTED =
                         KeyC(
                             action = KeyAction.CommitText("D"),
                             size = FontSizeVariant.LARGE,
-                            color = ColorVariant.PRIMARY,
                         ),
                     swipeType = SwipeNWay.TWO_WAY_HORIZONTAL,
                     right =
@@ -459,7 +440,6 @@ val KB_PL_TYPESPLIT_V2_SHIFTED =
                         KeyC(
                             action = KeyAction.CommitText("K"),
                             size = FontSizeVariant.LARGE,
-                            color = ColorVariant.PRIMARY,
                         ),
                     swipeType = SwipeNWay.TWO_WAY_VERTICAL,
                     bottom =
@@ -478,7 +458,6 @@ val KB_PL_TYPESPLIT_V2_SHIFTED =
                         KeyC(
                             action = KeyAction.CommitText("Z"),
                             size = FontSizeVariant.LARGE,
-                            color = ColorVariant.PRIMARY,
                         ),
                     swipeType = SwipeNWay.FOUR_WAY_CROSS,
                     right =
@@ -506,7 +485,6 @@ val KB_PL_TYPESPLIT_V2_SHIFTED =
                         KeyC(
                             action = KeyAction.CommitText("C"),
                             size = FontSizeVariant.LARGE,
-                            color = ColorVariant.PRIMARY,
                         ),
                     swipeType = SwipeNWay.FOUR_WAY_CROSS,
                     right =
@@ -534,7 +512,6 @@ val KB_PL_TYPESPLIT_V2_SHIFTED =
                         KeyC(
                             action = KeyAction.CommitText("N"),
                             size = FontSizeVariant.LARGE,
-                            color = ColorVariant.PRIMARY,
                         ),
                     swipeType = SwipeNWay.TWO_WAY_HORIZONTAL,
                     right =
@@ -553,7 +530,6 @@ val KB_PL_TYPESPLIT_V2_SHIFTED =
                         KeyC(
                             action = KeyAction.CommitText("M"),
                             size = FontSizeVariant.LARGE,
-                            color = ColorVariant.PRIMARY,
                         ),
                     swipeType = SwipeNWay.FOUR_WAY_CROSS,
                     right =

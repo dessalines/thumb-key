@@ -24,7 +24,6 @@ val KB_IT_MESSAGEASE_SYMBOLS_MAIN =
                         KeyC(
                             action = KeyAction.CommitText("a"),
                             size = FontSizeVariant.LARGE,
-                            color = ColorVariant.PRIMARY,
                         ),
                     bottomRight =
                         KeyC(
@@ -50,7 +49,6 @@ val KB_IT_MESSAGEASE_SYMBOLS_MAIN =
                         KeyC(
                             action = KeyAction.CommitText("n"),
                             size = FontSizeVariant.LARGE,
-                            color = ColorVariant.PRIMARY,
                         ),
                     bottom =
                         KeyC(
@@ -97,7 +95,6 @@ val KB_IT_MESSAGEASE_SYMBOLS_MAIN =
                         KeyC(
                             action = KeyAction.CommitText("i"),
                             size = FontSizeVariant.LARGE,
-                            color = ColorVariant.PRIMARY,
                         ),
                     bottomLeft =
                         KeyC(
@@ -131,7 +128,6 @@ val KB_IT_MESSAGEASE_SYMBOLS_MAIN =
                         KeyC(
                             action = KeyAction.CommitText("l"),
                             size = FontSizeVariant.LARGE,
-                            color = ColorVariant.PRIMARY,
                         ),
                     right =
                         KeyC(
@@ -176,7 +172,6 @@ val KB_IT_MESSAGEASE_SYMBOLS_MAIN =
                         KeyC(
                             action = KeyAction.CommitText("o"),
                             size = FontSizeVariant.LARGE,
-                            color = ColorVariant.PRIMARY,
                         ),
                     topLeft =
                         KeyC(
@@ -216,7 +211,6 @@ val KB_IT_MESSAGEASE_SYMBOLS_MAIN =
                         KeyC(
                             action = KeyAction.CommitText("r"),
                             size = FontSizeVariant.LARGE,
-                            color = ColorVariant.PRIMARY,
                         ),
                     left =
                         KeyC(
@@ -268,7 +262,6 @@ val KB_IT_MESSAGEASE_SYMBOLS_MAIN =
                         KeyC(
                             action = KeyAction.CommitText("t"),
                             size = FontSizeVariant.LARGE,
-                            color = ColorVariant.PRIMARY,
                         ),
                     topRight =
                         KeyC(
@@ -305,7 +298,6 @@ val KB_IT_MESSAGEASE_SYMBOLS_MAIN =
                         KeyC(
                             action = KeyAction.CommitText("e"),
                             size = FontSizeVariant.LARGE,
-                            color = ColorVariant.PRIMARY,
                         ),
                     topLeft =
                         KeyC(
@@ -350,7 +342,6 @@ val KB_IT_MESSAGEASE_SYMBOLS_MAIN =
                         KeyC(
                             action = KeyAction.CommitText("s"),
                             size = FontSizeVariant.LARGE,
-                            color = ColorVariant.PRIMARY,
                         ),
                     topLeft =
                         KeyC(
@@ -400,7 +391,6 @@ val KB_IT_MESSAGEASE_SYMBOLS_SHIFTED =
                         KeyC(
                             action = KeyAction.CommitText("A"),
                             size = FontSizeVariant.LARGE,
-                            color = ColorVariant.PRIMARY,
                         ),
                     bottomRight =
                         KeyC(
@@ -426,7 +416,6 @@ val KB_IT_MESSAGEASE_SYMBOLS_SHIFTED =
                         KeyC(
                             action = KeyAction.CommitText("N"),
                             size = FontSizeVariant.LARGE,
-                            color = ColorVariant.PRIMARY,
                         ),
                     bottom =
                         KeyC(
@@ -473,7 +462,6 @@ val KB_IT_MESSAGEASE_SYMBOLS_SHIFTED =
                         KeyC(
                             action = KeyAction.CommitText("I"),
                             size = FontSizeVariant.LARGE,
-                            color = ColorVariant.PRIMARY,
                         ),
                     bottomLeft =
                         KeyC(
@@ -507,7 +495,6 @@ val KB_IT_MESSAGEASE_SYMBOLS_SHIFTED =
                         KeyC(
                             action = KeyAction.CommitText("L"),
                             size = FontSizeVariant.LARGE,
-                            color = ColorVariant.PRIMARY,
                         ),
                     right =
                         KeyC(
@@ -552,7 +539,6 @@ val KB_IT_MESSAGEASE_SYMBOLS_SHIFTED =
                         KeyC(
                             action = KeyAction.CommitText("O"),
                             size = FontSizeVariant.LARGE,
-                            color = ColorVariant.PRIMARY,
                         ),
                     topLeft =
                         KeyC(
@@ -592,7 +578,6 @@ val KB_IT_MESSAGEASE_SYMBOLS_SHIFTED =
                         KeyC(
                             action = KeyAction.CommitText("R"),
                             size = FontSizeVariant.LARGE,
-                            color = ColorVariant.PRIMARY,
                         ),
                     left =
                         KeyC(
@@ -647,7 +632,6 @@ val KB_IT_MESSAGEASE_SYMBOLS_SHIFTED =
                         KeyC(
                             action = KeyAction.CommitText("T"),
                             size = FontSizeVariant.LARGE,
-                            color = ColorVariant.PRIMARY,
                         ),
                     topRight =
                         KeyC(
@@ -684,7 +668,6 @@ val KB_IT_MESSAGEASE_SYMBOLS_SHIFTED =
                         KeyC(
                             action = KeyAction.CommitText("E"),
                             size = FontSizeVariant.LARGE,
-                            color = ColorVariant.PRIMARY,
                         ),
                     topLeft =
                         KeyC(
@@ -729,7 +712,6 @@ val KB_IT_MESSAGEASE_SYMBOLS_SHIFTED =
                         KeyC(
                             action = KeyAction.CommitText("S"),
                             size = FontSizeVariant.LARGE,
-                            color = ColorVariant.PRIMARY,
                         ),
                     topLeft =
                         KeyC(

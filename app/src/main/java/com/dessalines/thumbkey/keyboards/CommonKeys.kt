@@ -118,7 +118,6 @@ val ABC_KEY_ITEM =
                 display = KeyDisplay.IconDisplay(Icons.Outlined.Abc),
                 action = KeyAction.ToggleNumericMode(false),
                 size = FontSizeVariant.LARGE,
-                color = ColorVariant.PRIMARY,
             ),
     )
 
@@ -151,7 +150,6 @@ val EMOJI_BACK_KEY_ITEM =
                 display = KeyDisplay.IconDisplay(Icons.Outlined.Abc),
                 action = KeyAction.ToggleEmojiMode(false),
                 size = FontSizeVariant.LARGE,
-                color = ColorVariant.PRIMARY,
             ),
         backgroundColor = ColorVariant.SURFACE_VARIANT,
     )

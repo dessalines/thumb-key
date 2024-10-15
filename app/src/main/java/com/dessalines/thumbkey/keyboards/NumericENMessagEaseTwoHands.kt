@@ -18,7 +18,6 @@ val KB_EN_MESSAGEASE_TWO_HANDS_NUMERIC =
                         KeyC(
                             action = KeyAction.CommitText("1"),
                             size = FontSizeVariant.LARGE,
-                            color = ColorVariant.PRIMARY,
                         ),
                     bottomLeft =
                         KeyC(
@@ -44,7 +43,6 @@ val KB_EN_MESSAGEASE_TWO_HANDS_NUMERIC =
                         KeyC(
                             action = KeyAction.CommitText("2"),
                             size = FontSizeVariant.LARGE,
-                            color = ColorVariant.PRIMARY,
                         ),
                     topLeft =
                         KeyC(
@@ -80,7 +78,6 @@ val KB_EN_MESSAGEASE_TWO_HANDS_NUMERIC =
                         KeyC(
                             action = KeyAction.CommitText("3"),
                             size = FontSizeVariant.LARGE,
-                            color = ColorVariant.PRIMARY,
                         ),
                     left =
                         KeyC(
@@ -105,7 +102,6 @@ val KB_EN_MESSAGEASE_TWO_HANDS_NUMERIC =
                         KeyC(
                             action = KeyAction.CommitText("1"),
                             size = FontSizeVariant.LARGE,
-                            color = ColorVariant.PRIMARY,
                         ),
                     bottomLeft =
                         KeyC(
@@ -131,7 +127,6 @@ val KB_EN_MESSAGEASE_TWO_HANDS_NUMERIC =
                         KeyC(
                             action = KeyAction.CommitText("2"),
                             size = FontSizeVariant.LARGE,
-                            color = ColorVariant.PRIMARY,
                         ),
                     topLeft =
                         KeyC(
@@ -167,7 +162,6 @@ val KB_EN_MESSAGEASE_TWO_HANDS_NUMERIC =
                         KeyC(
                             action = KeyAction.CommitText("3"),
                             size = FontSizeVariant.LARGE,
-                            color = ColorVariant.PRIMARY,
                         ),
                     left =
                         KeyC(
@@ -193,7 +187,6 @@ val KB_EN_MESSAGEASE_TWO_HANDS_NUMERIC =
                         KeyC(
                             action = KeyAction.CommitText("4"),
                             size = FontSizeVariant.LARGE,
-                            color = ColorVariant.PRIMARY,
                         ),
                     topLeft =
                         KeyC(
@@ -221,7 +214,6 @@ val KB_EN_MESSAGEASE_TWO_HANDS_NUMERIC =
                         KeyC(
                             action = KeyAction.CommitText("5"),
                             size = FontSizeVariant.LARGE,
-                            color = ColorVariant.PRIMARY,
                         ),
                     top =
                         KeyC(
@@ -233,7 +225,6 @@ val KB_EN_MESSAGEASE_TWO_HANDS_NUMERIC =
                         KeyC(
                             action = KeyAction.CommitText("6"),
                             size = FontSizeVariant.LARGE,
-                            color = ColorVariant.PRIMARY,
                         ),
                     topLeft =
                         KeyC(
@@ -262,7 +253,6 @@ val KB_EN_MESSAGEASE_TWO_HANDS_NUMERIC =
                         KeyC(
                             action = KeyAction.CommitText("4"),
                             size = FontSizeVariant.LARGE,
-                            color = ColorVariant.PRIMARY,
                         ),
                     topLeft =
                         KeyC(
@@ -290,7 +280,6 @@ val KB_EN_MESSAGEASE_TWO_HANDS_NUMERIC =
                         KeyC(
                             action = KeyAction.CommitText("5"),
                             size = FontSizeVariant.LARGE,
-                            color = ColorVariant.PRIMARY,
                         ),
                     top =
                         KeyC(
@@ -302,7 +291,6 @@ val KB_EN_MESSAGEASE_TWO_HANDS_NUMERIC =
                         KeyC(
                             action = KeyAction.CommitText("6"),
                             size = FontSizeVariant.LARGE,
-                            color = ColorVariant.PRIMARY,
                         ),
                     topLeft =
                         KeyC(
@@ -332,7 +320,6 @@ val KB_EN_MESSAGEASE_TWO_HANDS_NUMERIC =
                         KeyC(
                             action = KeyAction.CommitText("7"),
                             size = FontSizeVariant.LARGE,
-                            color = ColorVariant.PRIMARY,
                         ),
                     topLeft =
                         KeyC(
@@ -357,7 +344,6 @@ val KB_EN_MESSAGEASE_TWO_HANDS_NUMERIC =
                         KeyC(
                             action = KeyAction.CommitText("8"),
                             size = FontSizeVariant.LARGE,
-                            color = ColorVariant.PRIMARY,
                         ),
                     topLeft =
                         KeyC(
@@ -385,7 +371,6 @@ val KB_EN_MESSAGEASE_TWO_HANDS_NUMERIC =
                         KeyC(
                             action = KeyAction.CommitText("9"),
                             size = FontSizeVariant.LARGE,
-                            color = ColorVariant.PRIMARY,
                         ),
                     top =
                         KeyC(
@@ -414,7 +399,6 @@ val KB_EN_MESSAGEASE_TWO_HANDS_NUMERIC =
                         KeyC(
                             action = KeyAction.CommitText("7"),
                             size = FontSizeVariant.LARGE,
-                            color = ColorVariant.PRIMARY,
                         ),
                     topLeft =
                         KeyC(
@@ -439,7 +423,6 @@ val KB_EN_MESSAGEASE_TWO_HANDS_NUMERIC =
                         KeyC(
                             action = KeyAction.CommitText("8"),
                             size = FontSizeVariant.LARGE,
-                            color = ColorVariant.PRIMARY,
                         ),
                     topLeft =
                         KeyC(
@@ -467,7 +450,6 @@ val KB_EN_MESSAGEASE_TWO_HANDS_NUMERIC =
                         KeyC(
                             action = KeyAction.CommitText("9"),
                             size = FontSizeVariant.LARGE,
-                            color = ColorVariant.PRIMARY,
                         ),
                     top =
                         KeyC(
@@ -497,7 +479,6 @@ val KB_EN_MESSAGEASE_TWO_HANDS_NUMERIC =
                         KeyC(
                             action = KeyAction.CommitText("0"),
                             size = FontSizeVariant.LARGE,
-                            color = ColorVariant.PRIMARY,
                         ),
                     widthMultiplier = 2,
                 ),
@@ -522,7 +503,6 @@ val KB_EN_MESSAGEASE_TWO_HANDS_NUMERIC =
                         KeyC(
                             action = KeyAction.CommitText("0"),
                             size = FontSizeVariant.LARGE,
-                            color = ColorVariant.PRIMARY,
                         ),
                     widthMultiplier = 2,
                 ),

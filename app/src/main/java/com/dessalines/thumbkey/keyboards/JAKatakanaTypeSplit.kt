@@ -19,7 +19,6 @@ val KB_JA_KATAKANA_TYPESPLIT_MAIN =
                         KeyC(
                             action = KeyAction.CommitText("ワ"),
                             size = FontSizeVariant.LARGE,
-                            color = ColorVariant.PRIMARY,
                         ),
                     swipeType = SwipeNWay.FOUR_WAY_CROSS,
                     right =
@@ -41,7 +40,6 @@ val KB_JA_KATAKANA_TYPESPLIT_MAIN =
                         KeyC(
                             action = KeyAction.CommitText("タ"),
                             size = FontSizeVariant.LARGE,
-                            color = ColorVariant.PRIMARY,
                         ),
                     swipeType = SwipeNWay.FOUR_WAY_CROSS,
                     right =
@@ -67,7 +65,6 @@ val KB_JA_KATAKANA_TYPESPLIT_MAIN =
                         KeyC(
                             action = KeyAction.CommitText("ヤ"),
                             size = FontSizeVariant.LARGE,
-                            color = ColorVariant.PRIMARY,
                         ),
                     swipeType = SwipeNWay.FOUR_WAY_CROSS,
                     right =
@@ -94,7 +91,6 @@ val KB_JA_KATAKANA_TYPESPLIT_MAIN =
                         KeyC(
                             action = KeyAction.CommitText("ラ"),
                             size = FontSizeVariant.LARGE,
-                            color = ColorVariant.PRIMARY,
                         ),
                     swipeType = SwipeNWay.FOUR_WAY_CROSS,
                     right =
@@ -121,7 +117,6 @@ val KB_JA_KATAKANA_TYPESPLIT_MAIN =
                         KeyC(
                             action = KeyAction.CommitText("ア"),
                             size = FontSizeVariant.LARGE,
-                            color = ColorVariant.PRIMARY,
                         ),
                     swipeType = SwipeNWay.FOUR_WAY_CROSS,
                     right =
@@ -146,7 +141,6 @@ val KB_JA_KATAKANA_TYPESPLIT_MAIN =
                         KeyC(
                             action = KeyAction.CommitText("サ"),
                             size = FontSizeVariant.LARGE,
-                            color = ColorVariant.PRIMARY,
                         ),
                     swipeType = SwipeNWay.FOUR_WAY_CROSS,
                     right =
@@ -172,7 +166,6 @@ val KB_JA_KATAKANA_TYPESPLIT_MAIN =
                         KeyC(
                             action = KeyAction.CommitText("ハ"),
                             size = FontSizeVariant.LARGE,
-                            color = ColorVariant.PRIMARY,
                         ),
                     swipeType = SwipeNWay.FOUR_WAY_CROSS,
                     right =
@@ -197,7 +190,6 @@ val KB_JA_KATAKANA_TYPESPLIT_MAIN =
                         KeyC(
                             action = KeyAction.CommitText("カ"),
                             size = FontSizeVariant.LARGE,
-                            color = ColorVariant.PRIMARY,
                         ),
                     swipeType = SwipeNWay.FOUR_WAY_CROSS,
                     right =
@@ -224,7 +216,6 @@ val KB_JA_KATAKANA_TYPESPLIT_MAIN =
                         KeyC(
                             action = KeyAction.CommitText("、"),
                             size = FontSizeVariant.LARGE,
-                            color = ColorVariant.PRIMARY,
                         ),
                     swipeType = SwipeNWay.FOUR_WAY_CROSS,
                     right =
@@ -253,7 +244,6 @@ val KB_JA_KATAKANA_TYPESPLIT_MAIN =
                         KeyC(
                             action = KeyAction.CommitText("。"),
                             size = FontSizeVariant.LARGE,
-                            color = ColorVariant.PRIMARY,
                         ),
                     swipeType = SwipeNWay.FOUR_WAY_CROSS,
                     right =
@@ -283,7 +273,6 @@ val KB_JA_KATAKANA_TYPESPLIT_MAIN =
                         KeyC(
                             action = KeyAction.CommitText("ナ"),
                             size = FontSizeVariant.LARGE,
-                            color = ColorVariant.PRIMARY,
                         ),
                     swipeType = SwipeNWay.FOUR_WAY_CROSS,
                     right =
@@ -308,7 +297,6 @@ val KB_JA_KATAKANA_TYPESPLIT_MAIN =
                         KeyC(
                             action = KeyAction.CommitText("マ"),
                             size = FontSizeVariant.LARGE,
-                            color = ColorVariant.PRIMARY,
                         ),
                     swipeType = SwipeNWay.FOUR_WAY_CROSS,
                     right =
@@ -346,7 +334,6 @@ val KB_JA_KATAKANA_TYPESPLIT_SHIFTED =
                         KeyC(
                             action = KeyAction.CommitText("¥"),
                             size = FontSizeVariant.LARGE,
-                            color = ColorVariant.PRIMARY,
                         ),
                     swipeType = SwipeNWay.FOUR_WAY_CROSS,
                     right =
@@ -372,7 +359,6 @@ val KB_JA_KATAKANA_TYPESPLIT_SHIFTED =
                         KeyC(
                             action = KeyAction.CommitText("ダ"),
                             size = FontSizeVariant.LARGE,
-                            color = ColorVariant.PRIMARY,
                         ),
                     swipeType = SwipeNWay.FOUR_WAY_CROSS,
                     right =
@@ -398,7 +384,6 @@ val KB_JA_KATAKANA_TYPESPLIT_SHIFTED =
                         KeyC(
                             action = KeyAction.CommitText("ャ"),
                             size = FontSizeVariant.LARGE,
-                            color = ColorVariant.PRIMARY,
                         ),
                     swipeType = SwipeNWay.FOUR_WAY_CROSS,
                     right =
@@ -425,7 +410,6 @@ val KB_JA_KATAKANA_TYPESPLIT_SHIFTED =
                         KeyC(
                             action = KeyAction.CommitText("ヴ"),
                             size = FontSizeVariant.LARGE,
-                            color = ColorVariant.PRIMARY,
                         ),
                 ),
             ),
@@ -435,7 +419,6 @@ val KB_JA_KATAKANA_TYPESPLIT_SHIFTED =
                         KeyC(
                             action = KeyAction.CommitText("ァ"),
                             size = FontSizeVariant.LARGE,
-                            color = ColorVariant.PRIMARY,
                         ),
                     swipeType = SwipeNWay.FOUR_WAY_CROSS,
                     right =
@@ -460,7 +443,6 @@ val KB_JA_KATAKANA_TYPESPLIT_SHIFTED =
                         KeyC(
                             action = KeyAction.CommitText("ザ"),
                             size = FontSizeVariant.LARGE,
-                            color = ColorVariant.PRIMARY,
                         ),
                     swipeType = SwipeNWay.FOUR_WAY_CROSS,
                     right =
@@ -486,7 +468,6 @@ val KB_JA_KATAKANA_TYPESPLIT_SHIFTED =
                         KeyC(
                             action = KeyAction.CommitText("バ"),
                             size = FontSizeVariant.LARGE,
-                            color = ColorVariant.PRIMARY,
                         ),
                     swipeType = SwipeNWay.FOUR_WAY_CROSS,
                     right =
@@ -511,7 +492,6 @@ val KB_JA_KATAKANA_TYPESPLIT_SHIFTED =
                         KeyC(
                             action = KeyAction.CommitText("ガ"),
                             size = FontSizeVariant.LARGE,
-                            color = ColorVariant.PRIMARY,
                         ),
                     swipeType = SwipeNWay.FOUR_WAY_CROSS,
                     right =
@@ -538,7 +518,6 @@ val KB_JA_KATAKANA_TYPESPLIT_SHIFTED =
                         KeyC(
                             action = KeyAction.CommitText("・"),
                             size = FontSizeVariant.LARGE,
-                            color = ColorVariant.PRIMARY,
                         ),
                     swipeType = SwipeNWay.FOUR_WAY_CROSS,
                     right =
@@ -567,7 +546,6 @@ val KB_JA_KATAKANA_TYPESPLIT_SHIFTED =
                         KeyC(
                             action = KeyAction.CommitText("＝"),
                             size = FontSizeVariant.LARGE,
-                            color = ColorVariant.PRIMARY,
                         ),
                     swipeType = SwipeNWay.FOUR_WAY_CROSS,
                     right =
@@ -597,7 +575,6 @@ val KB_JA_KATAKANA_TYPESPLIT_SHIFTED =
                         KeyC(
                             action = KeyAction.CommitText("パ"),
                             size = FontSizeVariant.LARGE,
-                            color = ColorVariant.PRIMARY,
                         ),
                     swipeType = SwipeNWay.FOUR_WAY_CROSS,
                     right =
@@ -622,7 +599,6 @@ val KB_JA_KATAKANA_TYPESPLIT_SHIFTED =
                         KeyC(
                             action = KeyAction.CommitText("ッ"),
                             size = FontSizeVariant.LARGE,
-                            color = ColorVariant.PRIMARY,
                         ),
                 ),
             ),

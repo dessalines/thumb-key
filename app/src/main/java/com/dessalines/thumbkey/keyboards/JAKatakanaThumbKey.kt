@@ -20,7 +20,6 @@ val KB_JA_KATAKANA_THUMBKEY_MAIN =
                         KeyC(
                             action = KeyAction.CommitText("マ"),
                             size = FontSizeVariant.LARGE,
-                            color = ColorVariant.PRIMARY,
                         ),
                     swipeType = SwipeNWay.FOUR_WAY_CROSS,
                     bottom =
@@ -45,7 +44,6 @@ val KB_JA_KATAKANA_THUMBKEY_MAIN =
                         KeyC(
                             action = KeyAction.CommitText("ハ"),
                             size = FontSizeVariant.LARGE,
-                            color = ColorVariant.PRIMARY,
                         ),
                     swipeType = SwipeNWay.FOUR_WAY_CROSS,
                     bottom =
@@ -70,7 +68,6 @@ val KB_JA_KATAKANA_THUMBKEY_MAIN =
                         KeyC(
                             action = KeyAction.CommitText("サ"),
                             size = FontSizeVariant.LARGE,
-                            color = ColorVariant.PRIMARY,
                         ),
                     swipeType = SwipeNWay.FOUR_WAY_CROSS,
                     bottom =
@@ -98,7 +95,6 @@ val KB_JA_KATAKANA_THUMBKEY_MAIN =
                         KeyC(
                             action = KeyAction.CommitText("ヤ"),
                             size = FontSizeVariant.LARGE,
-                            color = ColorVariant.PRIMARY,
                         ),
                     swipeType = SwipeNWay.FOUR_WAY_CROSS,
                     bottom =
@@ -115,7 +111,6 @@ val KB_JA_KATAKANA_THUMBKEY_MAIN =
                         KeyC(
                             action = KeyAction.CommitText("ナ"),
                             size = FontSizeVariant.LARGE,
-                            color = ColorVariant.PRIMARY,
                         ),
                     swipeType = SwipeNWay.FOUR_WAY_CROSS,
                     bottom =
@@ -140,7 +135,6 @@ val KB_JA_KATAKANA_THUMBKEY_MAIN =
                         KeyC(
                             action = KeyAction.CommitText("カ"),
                             size = FontSizeVariant.LARGE,
-                            color = ColorVariant.PRIMARY,
                         ),
                     swipeType = SwipeNWay.FOUR_WAY_CROSS,
                     bottom =
@@ -168,7 +162,6 @@ val KB_JA_KATAKANA_THUMBKEY_MAIN =
                         KeyC(
                             action = KeyAction.CommitText("ラ"),
                             size = FontSizeVariant.LARGE,
-                            color = ColorVariant.PRIMARY,
                         ),
                     swipeType = SwipeNWay.FOUR_WAY_CROSS,
                     bottom =
@@ -193,7 +186,6 @@ val KB_JA_KATAKANA_THUMBKEY_MAIN =
                         KeyC(
                             action = KeyAction.CommitText("タ"),
                             size = FontSizeVariant.LARGE,
-                            color = ColorVariant.PRIMARY,
                         ),
                     swipeType = SwipeNWay.FOUR_WAY_CROSS,
                     bottom =
@@ -218,7 +210,6 @@ val KB_JA_KATAKANA_THUMBKEY_MAIN =
                         KeyC(
                             action = KeyAction.CommitText("ア"),
                             size = FontSizeVariant.LARGE,
-                            color = ColorVariant.PRIMARY,
                         ),
                     swipeType = SwipeNWay.FOUR_WAY_CROSS,
                     bottom =
@@ -246,7 +237,6 @@ val KB_JA_KATAKANA_THUMBKEY_MAIN =
                         KeyC(
                             action = KeyAction.CommitText("ワ"),
                             size = FontSizeVariant.LARGE,
-                            color = ColorVariant.PRIMARY,
                         ),
                     swipeType = SwipeNWay.FOUR_WAY_CROSS,
                     bottom =
@@ -272,7 +262,6 @@ val KB_JA_KATAKANA_THUMBKEY_MAIN =
                             display = KeyDisplay.TextDisplay("゛"),
                             action = KeyAction.ComposeLastKey("゛"),
                             size = FontSizeVariant.LARGE,
-                            color = ColorVariant.PRIMARY,
                         ),
                     swipeType = SwipeNWay.FOUR_WAY_CROSS,
                     left =
@@ -312,7 +301,6 @@ val KB_JA_KATAKANA_THUMBKEY_SHIFTED =
                         KeyC(
                             action = KeyAction.CommitText("「"),
                             size = FontSizeVariant.LARGE,
-                            color = ColorVariant.PRIMARY,
                         ),
                     swipeType = SwipeNWay.FOUR_WAY_CROSS,
                     bottom =
@@ -337,7 +325,6 @@ val KB_JA_KATAKANA_THUMBKEY_SHIFTED =
                         KeyC(
                             action = KeyAction.CommitText("・"),
                             size = FontSizeVariant.LARGE,
-                            color = ColorVariant.PRIMARY,
                         ),
                     swipeType = SwipeNWay.TWO_WAY_VERTICAL,
                     bottom =
@@ -350,7 +337,6 @@ val KB_JA_KATAKANA_THUMBKEY_SHIFTED =
                         KeyC(
                             action = KeyAction.CommitText("」"),
                             size = FontSizeVariant.LARGE,
-                            color = ColorVariant.PRIMARY,
                         ),
                     swipeType = SwipeNWay.FOUR_WAY_CROSS,
                     bottom =
@@ -378,7 +364,6 @@ val KB_JA_KATAKANA_THUMBKEY_SHIFTED =
                         KeyC(
                             action = KeyAction.CommitText("（"),
                             size = FontSizeVariant.LARGE,
-                            color = ColorVariant.PRIMARY,
                         ),
                 ),
                 KeyItemC(
@@ -386,7 +371,6 @@ val KB_JA_KATAKANA_THUMBKEY_SHIFTED =
                         KeyC(
                             action = KeyAction.CommitText("！"),
                             size = FontSizeVariant.LARGE,
-                            color = ColorVariant.PRIMARY,
                         ),
                 ),
                 KeyItemC(
@@ -394,7 +378,6 @@ val KB_JA_KATAKANA_THUMBKEY_SHIFTED =
                         KeyC(
                             action = KeyAction.CommitText("）"),
                             size = FontSizeVariant.LARGE,
-                            color = ColorVariant.PRIMARY,
                         ),
                 ),
                 NUMERIC_KEY_ITEM,
@@ -405,7 +388,6 @@ val KB_JA_KATAKANA_THUMBKEY_SHIFTED =
                         KeyC(
                             action = KeyAction.CommitText("ヿ"),
                             size = FontSizeVariant.LARGE,
-                            color = ColorVariant.PRIMARY,
                         ),
                 ),
                 KeyItemC(
@@ -413,7 +395,6 @@ val KB_JA_KATAKANA_THUMBKEY_SHIFTED =
                         KeyC(
                             action = KeyAction.CommitText("？"),
                             size = FontSizeVariant.LARGE,
-                            color = ColorVariant.PRIMARY,
                         ),
                 ),
                 KeyItemC(
@@ -421,7 +402,6 @@ val KB_JA_KATAKANA_THUMBKEY_SHIFTED =
                         KeyC(
                             action = KeyAction.CommitText("ヽ"),
                             size = FontSizeVariant.LARGE,
-                            color = ColorVariant.PRIMARY,
                         ),
                 ),
                 BACKSPACE_KEY_ITEM,
@@ -432,7 +412,6 @@ val KB_JA_KATAKANA_THUMBKEY_SHIFTED =
                         KeyC(
                             action = KeyAction.CommitText("ー"),
                             size = FontSizeVariant.LARGE,
-                            color = ColorVariant.PRIMARY,
                         ),
                     swipeType = SwipeNWay.FOUR_WAY_CROSS,
                     right =

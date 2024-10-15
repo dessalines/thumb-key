@@ -24,7 +24,6 @@ val KB_CZ_MESSAGEASE_PROGRAMMING_MAIN =
                         KeyC(
                             action = KeyAction.CommitText("a"),
                             size = FontSizeVariant.LARGE,
-                            color = ColorVariant.PRIMARY,
                         ),
                     longPress = KeyAction.CommitText("1"),
                     topRight =
@@ -65,7 +64,6 @@ val KB_CZ_MESSAGEASE_PROGRAMMING_MAIN =
                         KeyC(
                             action = KeyAction.CommitText("n"),
                             size = FontSizeVariant.LARGE,
-                            color = ColorVariant.PRIMARY,
                         ),
                     longPress = KeyAction.CommitText("2"),
                     topLeft =
@@ -110,7 +108,6 @@ val KB_CZ_MESSAGEASE_PROGRAMMING_MAIN =
                         KeyC(
                             action = KeyAction.CommitText("i"),
                             size = FontSizeVariant.LARGE,
-                            color = ColorVariant.PRIMARY,
                         ),
                     longPress = KeyAction.CommitText("3"),
                     top =
@@ -159,7 +156,6 @@ val KB_CZ_MESSAGEASE_PROGRAMMING_MAIN =
                         KeyC(
                             action = KeyAction.CommitText("h"),
                             size = FontSizeVariant.LARGE,
-                            color = ColorVariant.PRIMARY,
                         ),
                     longPress = KeyAction.CommitText("4"),
                     top =
@@ -206,7 +202,6 @@ val KB_CZ_MESSAGEASE_PROGRAMMING_MAIN =
                         KeyC(
                             action = KeyAction.CommitText("o"),
                             size = FontSizeVariant.LARGE,
-                            color = ColorVariant.PRIMARY,
                         ),
                     longPress = KeyAction.CommitText("5"),
                     top =
@@ -247,7 +242,6 @@ val KB_CZ_MESSAGEASE_PROGRAMMING_MAIN =
                         KeyC(
                             action = KeyAction.CommitText("r"),
                             size = FontSizeVariant.LARGE,
-                            color = ColorVariant.PRIMARY,
                         ),
                     longPress = KeyAction.CommitText("6"),
                     topLeft =
@@ -299,7 +293,6 @@ val KB_CZ_MESSAGEASE_PROGRAMMING_MAIN =
                         KeyC(
                             action = KeyAction.CommitText("t"),
                             size = FontSizeVariant.LARGE,
-                            color = ColorVariant.PRIMARY,
                         ),
                     longPress = KeyAction.CommitText("7"),
                     top =
@@ -336,7 +329,6 @@ val KB_CZ_MESSAGEASE_PROGRAMMING_MAIN =
                         KeyC(
                             action = KeyAction.CommitText("e"),
                             size = FontSizeVariant.LARGE,
-                            color = ColorVariant.PRIMARY,
                         ),
                     longPress = KeyAction.CommitText("8"),
                     topLeft =
@@ -381,7 +373,6 @@ val KB_CZ_MESSAGEASE_PROGRAMMING_MAIN =
                         KeyC(
                             action = KeyAction.CommitText("s"),
                             size = FontSizeVariant.LARGE,
-                            color = ColorVariant.PRIMARY,
                         ),
                     longPress = KeyAction.CommitText("9"),
                     top =
@@ -435,7 +426,6 @@ val KB_CZ_MESSAGEASE_PROGRAMMING_SHIFTED =
                         KeyC(
                             action = KeyAction.CommitText("A"),
                             size = FontSizeVariant.LARGE,
-                            color = ColorVariant.PRIMARY,
                         ),
                     longPress = KeyAction.CommitText("1"),
                     topRight =
@@ -476,7 +466,6 @@ val KB_CZ_MESSAGEASE_PROGRAMMING_SHIFTED =
                         KeyC(
                             action = KeyAction.CommitText("N"),
                             size = FontSizeVariant.LARGE,
-                            color = ColorVariant.PRIMARY,
                         ),
                     longPress = KeyAction.CommitText("2"),
                     topLeft =
@@ -521,7 +510,6 @@ val KB_CZ_MESSAGEASE_PROGRAMMING_SHIFTED =
                         KeyC(
                             action = KeyAction.CommitText("I"),
                             size = FontSizeVariant.LARGE,
-                            color = ColorVariant.PRIMARY,
                         ),
                     longPress = KeyAction.CommitText("3"),
                     top =
@@ -570,7 +558,6 @@ val KB_CZ_MESSAGEASE_PROGRAMMING_SHIFTED =
                         KeyC(
                             action = KeyAction.CommitText("H"),
                             size = FontSizeVariant.LARGE,
-                            color = ColorVariant.PRIMARY,
                         ),
                     longPress = KeyAction.CommitText("4"),
                     top =
@@ -617,7 +604,6 @@ val KB_CZ_MESSAGEASE_PROGRAMMING_SHIFTED =
                         KeyC(
                             action = KeyAction.CommitText("O"),
                             size = FontSizeVariant.LARGE,
-                            color = ColorVariant.PRIMARY,
                         ),
                     longPress = KeyAction.CommitText("5"),
                     top =
@@ -658,7 +644,6 @@ val KB_CZ_MESSAGEASE_PROGRAMMING_SHIFTED =
                         KeyC(
                             action = KeyAction.CommitText("R"),
                             size = FontSizeVariant.LARGE,
-                            color = ColorVariant.PRIMARY,
                         ),
                     longPress = KeyAction.CommitText("6"),
                     topLeft =
@@ -713,7 +698,6 @@ val KB_CZ_MESSAGEASE_PROGRAMMING_SHIFTED =
                         KeyC(
                             action = KeyAction.CommitText("T"),
                             size = FontSizeVariant.LARGE,
-                            color = ColorVariant.PRIMARY,
                         ),
                     longPress = KeyAction.CommitText("7"),
                     top =
@@ -750,7 +734,6 @@ val KB_CZ_MESSAGEASE_PROGRAMMING_SHIFTED =
                         KeyC(
                             action = KeyAction.CommitText("E"),
                             size = FontSizeVariant.LARGE,
-                            color = ColorVariant.PRIMARY,
                         ),
                     longPress = KeyAction.CommitText("8"),
                     top =
@@ -790,7 +773,6 @@ val KB_CZ_MESSAGEASE_PROGRAMMING_SHIFTED =
                         KeyC(
                             action = KeyAction.CommitText("S"),
                             size = FontSizeVariant.LARGE,
-                            color = ColorVariant.PRIMARY,
                         ),
                     longPress = KeyAction.CommitText("9"),
                     top =

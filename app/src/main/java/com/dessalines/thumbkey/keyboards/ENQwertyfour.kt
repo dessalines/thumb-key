@@ -28,7 +28,6 @@ val KB_EN_QWERTYFOUR_MAIN =
                         KeyC(
                             action = KeyAction.CommitText("e"),
                             size = FontSizeVariant.LARGE,
-                            color = ColorVariant.PRIMARY,
                         ),
                     swipeType = SwipeNWay.FOUR_WAY_CROSS,
                     top =
@@ -55,7 +54,6 @@ val KB_EN_QWERTYFOUR_MAIN =
                         KeyC(
                             action = KeyAction.CommitText("t"),
                             size = FontSizeVariant.LARGE,
-                            color = ColorVariant.PRIMARY,
                         ),
                     swipeType = SwipeNWay.FOUR_WAY_CROSS,
                     top =
@@ -81,7 +79,6 @@ val KB_EN_QWERTYFOUR_MAIN =
                         KeyC(
                             action = KeyAction.CommitText("o"),
                             size = FontSizeVariant.LARGE,
-                            color = ColorVariant.PRIMARY,
                         ),
                     swipeType = SwipeNWay.FOUR_WAY_CROSS,
                     top =
@@ -111,7 +108,6 @@ val KB_EN_QWERTYFOUR_MAIN =
                         KeyC(
                             action = KeyAction.CommitText("a"),
                             size = FontSizeVariant.LARGE,
-                            color = ColorVariant.PRIMARY,
                         ),
                     swipeType = SwipeNWay.FOUR_WAY_CROSS,
                     top =
@@ -137,7 +133,6 @@ val KB_EN_QWERTYFOUR_MAIN =
                         KeyC(
                             action = KeyAction.CommitText("h"),
                             size = FontSizeVariant.LARGE,
-                            color = ColorVariant.PRIMARY,
                         ),
                     swipeType = SwipeNWay.FOUR_WAY_CROSS,
                     right =
@@ -158,7 +153,6 @@ val KB_EN_QWERTYFOUR_MAIN =
                         KeyC(
                             action = KeyAction.CommitText("l"),
                             size = FontSizeVariant.LARGE,
-                            color = ColorVariant.PRIMARY,
                         ),
                     swipeType = SwipeNWay.FOUR_WAY_CROSS,
                     top =
@@ -191,7 +185,6 @@ val KB_EN_QWERTYFOUR_MAIN =
                         KeyC(
                             action = KeyAction.CommitText("c"),
                             size = FontSizeVariant.LARGE,
-                            color = ColorVariant.PRIMARY,
                         ),
                     swipeType = SwipeNWay.FOUR_WAY_CROSS,
                     top =
@@ -214,7 +207,6 @@ val KB_EN_QWERTYFOUR_MAIN =
                         KeyC(
                             action = KeyAction.CommitText("n"),
                             size = FontSizeVariant.LARGE,
-                            color = ColorVariant.PRIMARY,
                         ),
                     swipeType = SwipeNWay.FOUR_WAY_CROSS,
                     top =
@@ -254,7 +246,6 @@ val KB_EN_QWERTYFOUR_SHIFTED =
                         KeyC(
                             action = KeyAction.CommitText("E"),
                             size = FontSizeVariant.LARGE,
-                            color = ColorVariant.PRIMARY,
                         ),
                     swipeType = SwipeNWay.FOUR_WAY_CROSS,
                     top =
@@ -281,7 +272,6 @@ val KB_EN_QWERTYFOUR_SHIFTED =
                         KeyC(
                             action = KeyAction.CommitText("T"),
                             size = FontSizeVariant.LARGE,
-                            color = ColorVariant.PRIMARY,
                         ),
                     swipeType = SwipeNWay.FOUR_WAY_CROSS,
                     top =
@@ -307,7 +297,6 @@ val KB_EN_QWERTYFOUR_SHIFTED =
                         KeyC(
                             action = KeyAction.CommitText("O"),
                             size = FontSizeVariant.LARGE,
-                            color = ColorVariant.PRIMARY,
                         ),
                     swipeType = SwipeNWay.FOUR_WAY_CROSS,
                     top =
@@ -337,7 +326,6 @@ val KB_EN_QWERTYFOUR_SHIFTED =
                         KeyC(
                             action = KeyAction.CommitText("A"),
                             size = FontSizeVariant.LARGE,
-                            color = ColorVariant.PRIMARY,
                         ),
                     swipeType = SwipeNWay.FOUR_WAY_CROSS,
                     top =
@@ -363,7 +351,6 @@ val KB_EN_QWERTYFOUR_SHIFTED =
                         KeyC(
                             action = KeyAction.CommitText("H"),
                             size = FontSizeVariant.LARGE,
-                            color = ColorVariant.PRIMARY,
                         ),
                     swipeType = SwipeNWay.FOUR_WAY_CROSS,
                     right =
@@ -384,7 +371,6 @@ val KB_EN_QWERTYFOUR_SHIFTED =
                         KeyC(
                             action = KeyAction.CommitText("L"),
                             size = FontSizeVariant.LARGE,
-                            color = ColorVariant.PRIMARY,
                         ),
                     swipeType = SwipeNWay.FOUR_WAY_CROSS,
                     top =
@@ -420,7 +406,6 @@ val KB_EN_QWERTYFOUR_SHIFTED =
                         KeyC(
                             action = KeyAction.CommitText("C"),
                             size = FontSizeVariant.LARGE,
-                            color = ColorVariant.PRIMARY,
                         ),
                     swipeType = SwipeNWay.FOUR_WAY_CROSS,
                     top =
@@ -443,7 +428,6 @@ val KB_EN_QWERTYFOUR_SHIFTED =
                         KeyC(
                             action = KeyAction.CommitText("N"),
                             size = FontSizeVariant.LARGE,
-                            color = ColorVariant.PRIMARY,
                         ),
                     swipeType = SwipeNWay.FOUR_WAY_CROSS,
                     top =

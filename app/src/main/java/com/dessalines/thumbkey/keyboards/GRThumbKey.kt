@@ -25,7 +25,6 @@ val KB_GR_THUMBKEY_MAIN =
                         KeyC(
                             action = KeyAction.CommitText("ν"),
                             size = FontSizeVariant.LARGE,
-                            color = ColorVariant.PRIMARY,
                         ),
                     swipeType = SwipeNWay.FOUR_WAY_DIAGONAL,
                     bottomRight =
@@ -38,7 +37,6 @@ val KB_GR_THUMBKEY_MAIN =
                         KeyC(
                             action = KeyAction.CommitText("υ"),
                             size = FontSizeVariant.LARGE,
-                            color = ColorVariant.PRIMARY,
                         ),
                     swipeType = SwipeNWay.FOUR_WAY_CROSS,
                     top =
@@ -63,7 +61,6 @@ val KB_GR_THUMBKEY_MAIN =
                         KeyC(
                             action = KeyAction.CommitText("ι"),
                             size = FontSizeVariant.LARGE,
-                            color = ColorVariant.PRIMARY,
                         ),
                     top =
                         KeyC(
@@ -94,7 +91,6 @@ val KB_GR_THUMBKEY_MAIN =
                         KeyC(
                             action = KeyAction.CommitText("σ"),
                             size = FontSizeVariant.LARGE,
-                            color = ColorVariant.PRIMARY,
                         ),
                     swipeType = SwipeNWay.FOUR_WAY_CROSS,
                     right =
@@ -111,7 +107,6 @@ val KB_GR_THUMBKEY_MAIN =
                         KeyC(
                             action = KeyAction.CommitText("η"),
                             size = FontSizeVariant.LARGE,
-                            color = ColorVariant.PRIMARY,
                         ),
                     topLeft =
                         KeyC(
@@ -151,7 +146,6 @@ val KB_GR_THUMBKEY_MAIN =
                         KeyC(
                             action = KeyAction.CommitText("ο"),
                             size = FontSizeVariant.LARGE,
-                            color = ColorVariant.PRIMARY,
                         ),
                     swipeType = SwipeNWay.FOUR_WAY_CROSS,
                     left =
@@ -183,7 +177,6 @@ val KB_GR_THUMBKEY_MAIN =
                         KeyC(
                             action = KeyAction.CommitText("τ"),
                             size = FontSizeVariant.LARGE,
-                            color = ColorVariant.PRIMARY,
                         ),
                     swipeType = SwipeNWay.FOUR_WAY_DIAGONAL,
                     topRight =
@@ -196,7 +189,6 @@ val KB_GR_THUMBKEY_MAIN =
                         KeyC(
                             action = KeyAction.CommitText("ε"),
                             size = FontSizeVariant.LARGE,
-                            color = ColorVariant.PRIMARY,
                         ),
                     top =
                         KeyC(
@@ -232,7 +224,6 @@ val KB_GR_THUMBKEY_MAIN =
                         KeyC(
                             action = KeyAction.CommitText("α"),
                             size = FontSizeVariant.LARGE,
-                            color = ColorVariant.PRIMARY,
                         ),
                     swipeType = SwipeNWay.FOUR_WAY_DIAGONAL,
                     topLeft =
@@ -262,7 +253,6 @@ val KB_GR_THUMBKEY_SHIFTED =
                         KeyC(
                             action = KeyAction.CommitText("Ν"),
                             size = FontSizeVariant.LARGE,
-                            color = ColorVariant.PRIMARY,
                         ),
                     swipeType = SwipeNWay.FOUR_WAY_DIAGONAL,
                     bottomRight =
@@ -275,7 +265,6 @@ val KB_GR_THUMBKEY_SHIFTED =
                         KeyC(
                             action = KeyAction.CommitText("Υ"),
                             size = FontSizeVariant.LARGE,
-                            color = ColorVariant.PRIMARY,
                         ),
                     swipeType = SwipeNWay.FOUR_WAY_CROSS,
                     top =
@@ -300,7 +289,6 @@ val KB_GR_THUMBKEY_SHIFTED =
                         KeyC(
                             action = KeyAction.CommitText("Ι"),
                             size = FontSizeVariant.LARGE,
-                            color = ColorVariant.PRIMARY,
                         ),
                     top =
                         KeyC(
@@ -331,7 +319,6 @@ val KB_GR_THUMBKEY_SHIFTED =
                         KeyC(
                             action = KeyAction.CommitText("Σ"),
                             size = FontSizeVariant.LARGE,
-                            color = ColorVariant.PRIMARY,
                         ),
                     swipeType = SwipeNWay.TWO_WAY_HORIZONTAL,
                     right =
@@ -344,7 +331,6 @@ val KB_GR_THUMBKEY_SHIFTED =
                         KeyC(
                             action = KeyAction.CommitText("Η"),
                             size = FontSizeVariant.LARGE,
-                            color = ColorVariant.PRIMARY,
                         ),
                     topLeft =
                         KeyC(
@@ -384,7 +370,6 @@ val KB_GR_THUMBKEY_SHIFTED =
                         KeyC(
                             action = KeyAction.CommitText("Ο"),
                             size = FontSizeVariant.LARGE,
-                            color = ColorVariant.PRIMARY,
                         ),
                     swipeType = SwipeNWay.FOUR_WAY_CROSS,
                     left =
@@ -419,7 +404,6 @@ val KB_GR_THUMBKEY_SHIFTED =
                         KeyC(
                             action = KeyAction.CommitText("Τ"),
                             size = FontSizeVariant.LARGE,
-                            color = ColorVariant.PRIMARY,
                         ),
                     swipeType = SwipeNWay.FOUR_WAY_DIAGONAL,
                     topRight =
@@ -432,7 +416,6 @@ val KB_GR_THUMBKEY_SHIFTED =
                         KeyC(
                             action = KeyAction.CommitText("Ε"),
                             size = FontSizeVariant.LARGE,
-                            color = ColorVariant.PRIMARY,
                         ),
                     top =
                         KeyC(
@@ -468,7 +451,6 @@ val KB_GR_THUMBKEY_SHIFTED =
                         KeyC(
                             action = KeyAction.CommitText("Α"),
                             size = FontSizeVariant.LARGE,
-                            color = ColorVariant.PRIMARY,
                         ),
                     swipeType = SwipeNWay.FOUR_WAY_DIAGONAL,
                     topLeft =

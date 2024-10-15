@@ -22,7 +22,6 @@ val TYPESPLIT_NUMERIC_KEYBOARD =
                         KeyC(
                             action = KeyAction.CommitText("1"),
                             size = FontSizeVariant.LARGE,
-                            color = ColorVariant.PRIMARY,
                         ),
                     bottomRight =
                         KeyC(
@@ -47,7 +46,6 @@ val TYPESPLIT_NUMERIC_KEYBOARD =
                         KeyC(
                             action = KeyAction.CommitText("2"),
                             size = FontSizeVariant.LARGE,
-                            color = ColorVariant.PRIMARY,
                         ),
                     bottom =
                         KeyC(
@@ -67,7 +65,6 @@ val TYPESPLIT_NUMERIC_KEYBOARD =
                         KeyC(
                             action = KeyAction.CommitText("3"),
                             size = FontSizeVariant.LARGE,
-                            color = ColorVariant.PRIMARY,
                         ),
                     right =
                         KeyC(
@@ -87,7 +84,6 @@ val TYPESPLIT_NUMERIC_KEYBOARD =
                         KeyC(
                             action = KeyAction.CommitText("."),
                             size = FontSizeVariant.LARGE,
-                            color = ColorVariant.PRIMARY,
                         ),
                 ),
             ),
@@ -120,7 +116,6 @@ val TYPESPLIT_NUMERIC_KEYBOARD =
                         KeyC(
                             action = KeyAction.CommitText("4"),
                             size = FontSizeVariant.LARGE,
-                            color = ColorVariant.PRIMARY,
                         ),
                     top =
                         KeyC(
@@ -144,7 +139,6 @@ val TYPESPLIT_NUMERIC_KEYBOARD =
                         KeyC(
                             action = KeyAction.CommitText("5"),
                             size = FontSizeVariant.LARGE,
-                            color = ColorVariant.PRIMARY,
                         ),
                     left =
                         KeyC(
@@ -164,7 +158,6 @@ val TYPESPLIT_NUMERIC_KEYBOARD =
                         KeyC(
                             action = KeyAction.CommitText("6"),
                             size = FontSizeVariant.LARGE,
-                            color = ColorVariant.PRIMARY,
                         ),
                     top =
                         KeyC(
@@ -188,7 +181,6 @@ val TYPESPLIT_NUMERIC_KEYBOARD =
                         KeyC(
                             action = KeyAction.CommitText(","),
                             size = FontSizeVariant.LARGE,
-                            color = ColorVariant.PRIMARY,
                         ),
                 ),
             ),
@@ -199,7 +191,6 @@ val TYPESPLIT_NUMERIC_KEYBOARD =
                         KeyC(
                             action = KeyAction.CommitText("7"),
                             size = FontSizeVariant.LARGE,
-                            color = ColorVariant.PRIMARY,
                         ),
                     topLeft =
                         KeyC(
@@ -219,7 +210,6 @@ val TYPESPLIT_NUMERIC_KEYBOARD =
                         KeyC(
                             action = KeyAction.CommitText("8"),
                             size = FontSizeVariant.LARGE,
-                            color = ColorVariant.PRIMARY,
                         ),
                     top =
                         KeyC(
@@ -243,7 +233,6 @@ val TYPESPLIT_NUMERIC_KEYBOARD =
                         KeyC(
                             action = KeyAction.CommitText("9"),
                             size = FontSizeVariant.LARGE,
-                            color = ColorVariant.PRIMARY,
                         ),
                     left =
                         KeyC(
@@ -263,7 +252,6 @@ val TYPESPLIT_NUMERIC_KEYBOARD =
                         KeyC(
                             action = KeyAction.CommitText("0"),
                             size = FontSizeVariant.LARGE,
-                            color = ColorVariant.PRIMARY,
                         ),
                 ),
             ),

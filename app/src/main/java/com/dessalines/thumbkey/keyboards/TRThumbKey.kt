@@ -26,7 +26,6 @@ val KB_TR_THUMBKEY_MAIN =
                         KeyC(
                             action = KeyAction.CommitText("ö"),
                             size = FontSizeVariant.LARGE,
-                            color = ColorVariant.PRIMARY,
                         ),
                     left =
                         KeyC(
@@ -66,7 +65,6 @@ val KB_TR_THUMBKEY_MAIN =
                         KeyC(
                             action = KeyAction.CommitText("g"),
                             size = FontSizeVariant.LARGE,
-                            color = ColorVariant.PRIMARY,
                         ),
                     bottom =
                         KeyC(
@@ -98,7 +96,6 @@ val KB_TR_THUMBKEY_MAIN =
                         KeyC(
                             action = KeyAction.CommitText("l"),
                             size = FontSizeVariant.LARGE,
-                            color = ColorVariant.PRIMARY,
                         ),
                     swipeType = SwipeNWay.FOUR_WAY_DIAGONAL,
                     bottomLeft =
@@ -129,7 +126,6 @@ val KB_TR_THUMBKEY_MAIN =
                         KeyC(
                             action = KeyAction.CommitText("y"),
                             size = FontSizeVariant.LARGE,
-                            color = ColorVariant.PRIMARY,
                         ),
                     topRight =
                         KeyC(
@@ -169,7 +165,6 @@ val KB_TR_THUMBKEY_MAIN =
                         KeyC(
                             action = KeyAction.CommitText("m"),
                             size = FontSizeVariant.LARGE,
-                            color = ColorVariant.PRIMARY,
                         ),
                     topLeft =
                         KeyC(
@@ -201,7 +196,6 @@ val KB_TR_THUMBKEY_MAIN =
                         KeyC(
                             action = KeyAction.CommitText("r"),
                             size = FontSizeVariant.LARGE,
-                            color = ColorVariant.PRIMARY,
                         ),
                     topLeft =
                         KeyC(
@@ -244,7 +238,6 @@ val KB_TR_THUMBKEY_MAIN =
                         KeyC(
                             action = KeyAction.CommitText("a"),
                             size = FontSizeVariant.LARGE,
-                            color = ColorVariant.PRIMARY,
                         ),
                     topRight =
                         KeyC(
@@ -276,7 +269,6 @@ val KB_TR_THUMBKEY_MAIN =
                         KeyC(
                             action = KeyAction.CommitText("k"),
                             size = FontSizeVariant.LARGE,
-                            color = ColorVariant.PRIMARY,
                         ),
                     top =
                         KeyC(
@@ -317,7 +309,6 @@ val KB_TR_THUMBKEY_MAIN =
                         KeyC(
                             action = KeyAction.CommitText("i"),
                             size = FontSizeVariant.LARGE,
-                            color = ColorVariant.PRIMARY,
                         ),
                     topLeft =
                         KeyC(
@@ -370,7 +361,6 @@ val KB_TR_THUMBKEY_SHIFTED =
                         KeyC(
                             action = KeyAction.CommitText("Ö"),
                             size = FontSizeVariant.LARGE,
-                            color = ColorVariant.PRIMARY,
                         ),
                     left =
                         KeyC(
@@ -410,7 +400,6 @@ val KB_TR_THUMBKEY_SHIFTED =
                         KeyC(
                             action = KeyAction.CommitText("G"),
                             size = FontSizeVariant.LARGE,
-                            color = ColorVariant.PRIMARY,
                         ),
                     bottom =
                         KeyC(
@@ -442,7 +431,6 @@ val KB_TR_THUMBKEY_SHIFTED =
                         KeyC(
                             action = KeyAction.CommitText("L"),
                             size = FontSizeVariant.LARGE,
-                            color = ColorVariant.PRIMARY,
                         ),
                     swipeType = SwipeNWay.FOUR_WAY_DIAGONAL,
                     bottomLeft =
@@ -473,7 +461,6 @@ val KB_TR_THUMBKEY_SHIFTED =
                         KeyC(
                             action = KeyAction.CommitText("Y"),
                             size = FontSizeVariant.LARGE,
-                            color = ColorVariant.PRIMARY,
                         ),
                     topRight =
                         KeyC(
@@ -513,7 +500,6 @@ val KB_TR_THUMBKEY_SHIFTED =
                         KeyC(
                             action = KeyAction.CommitText("M"),
                             size = FontSizeVariant.LARGE,
-                            color = ColorVariant.PRIMARY,
                         ),
                     topLeft =
                         KeyC(
@@ -545,7 +531,6 @@ val KB_TR_THUMBKEY_SHIFTED =
                         KeyC(
                             action = KeyAction.CommitText("R"),
                             size = FontSizeVariant.LARGE,
-                            color = ColorVariant.PRIMARY,
                         ),
                     topLeft =
                         KeyC(
@@ -589,7 +574,6 @@ val KB_TR_THUMBKEY_SHIFTED =
                         KeyC(
                             action = KeyAction.CommitText("A"),
                             size = FontSizeVariant.LARGE,
-                            color = ColorVariant.PRIMARY,
                         ),
                     topRight =
                         KeyC(
@@ -627,7 +611,6 @@ val KB_TR_THUMBKEY_SHIFTED =
                         KeyC(
                             action = KeyAction.CommitText("K"),
                             size = FontSizeVariant.LARGE,
-                            color = ColorVariant.PRIMARY,
                         ),
                     top =
                         KeyC(
@@ -667,7 +650,6 @@ val KB_TR_THUMBKEY_SHIFTED =
                         KeyC(
                             action = KeyAction.CommitText("İ"),
                             size = FontSizeVariant.LARGE,
-                            color = ColorVariant.PRIMARY,
                         ),
                     topLeft =
                         KeyC(

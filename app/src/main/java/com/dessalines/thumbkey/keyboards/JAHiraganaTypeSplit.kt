@@ -19,7 +19,6 @@ val KB_JA_HIRAGANA_TYPESPLIT_MAIN =
                         KeyC(
                             action = KeyAction.CommitText("わ"),
                             size = FontSizeVariant.LARGE,
-                            color = ColorVariant.PRIMARY,
                         ),
                     swipeType = SwipeNWay.FOUR_WAY_CROSS,
                     right =
@@ -41,7 +40,6 @@ val KB_JA_HIRAGANA_TYPESPLIT_MAIN =
                         KeyC(
                             action = KeyAction.CommitText("た"),
                             size = FontSizeVariant.LARGE,
-                            color = ColorVariant.PRIMARY,
                         ),
                     swipeType = SwipeNWay.FOUR_WAY_CROSS,
                     right =
@@ -67,7 +65,6 @@ val KB_JA_HIRAGANA_TYPESPLIT_MAIN =
                         KeyC(
                             action = KeyAction.CommitText("や"),
                             size = FontSizeVariant.LARGE,
-                            color = ColorVariant.PRIMARY,
                         ),
                     swipeType = SwipeNWay.FOUR_WAY_CROSS,
                     right =
@@ -94,7 +91,6 @@ val KB_JA_HIRAGANA_TYPESPLIT_MAIN =
                         KeyC(
                             action = KeyAction.CommitText("ら"),
                             size = FontSizeVariant.LARGE,
-                            color = ColorVariant.PRIMARY,
                         ),
                     swipeType = SwipeNWay.FOUR_WAY_CROSS,
                     right =
@@ -121,7 +117,6 @@ val KB_JA_HIRAGANA_TYPESPLIT_MAIN =
                         KeyC(
                             action = KeyAction.CommitText("あ"),
                             size = FontSizeVariant.LARGE,
-                            color = ColorVariant.PRIMARY,
                         ),
                     swipeType = SwipeNWay.FOUR_WAY_CROSS,
                     right =
@@ -146,7 +141,6 @@ val KB_JA_HIRAGANA_TYPESPLIT_MAIN =
                         KeyC(
                             action = KeyAction.CommitText("さ"),
                             size = FontSizeVariant.LARGE,
-                            color = ColorVariant.PRIMARY,
                         ),
                     swipeType = SwipeNWay.FOUR_WAY_CROSS,
                     right =
@@ -172,7 +166,6 @@ val KB_JA_HIRAGANA_TYPESPLIT_MAIN =
                         KeyC(
                             action = KeyAction.CommitText("は"),
                             size = FontSizeVariant.LARGE,
-                            color = ColorVariant.PRIMARY,
                         ),
                     swipeType = SwipeNWay.FOUR_WAY_CROSS,
                     right =
@@ -197,7 +190,6 @@ val KB_JA_HIRAGANA_TYPESPLIT_MAIN =
                         KeyC(
                             action = KeyAction.CommitText("か"),
                             size = FontSizeVariant.LARGE,
-                            color = ColorVariant.PRIMARY,
                         ),
                     swipeType = SwipeNWay.FOUR_WAY_CROSS,
                     right =
@@ -224,7 +216,6 @@ val KB_JA_HIRAGANA_TYPESPLIT_MAIN =
                         KeyC(
                             action = KeyAction.CommitText("、"),
                             size = FontSizeVariant.LARGE,
-                            color = ColorVariant.PRIMARY,
                         ),
                     swipeType = SwipeNWay.FOUR_WAY_CROSS,
                     right =
@@ -253,7 +244,6 @@ val KB_JA_HIRAGANA_TYPESPLIT_MAIN =
                         KeyC(
                             action = KeyAction.CommitText("。"),
                             size = FontSizeVariant.LARGE,
-                            color = ColorVariant.PRIMARY,
                         ),
                     swipeType = SwipeNWay.FOUR_WAY_CROSS,
                     right =
@@ -283,7 +273,6 @@ val KB_JA_HIRAGANA_TYPESPLIT_MAIN =
                         KeyC(
                             action = KeyAction.CommitText("な"),
                             size = FontSizeVariant.LARGE,
-                            color = ColorVariant.PRIMARY,
                         ),
                     swipeType = SwipeNWay.FOUR_WAY_CROSS,
                     right =
@@ -308,7 +297,6 @@ val KB_JA_HIRAGANA_TYPESPLIT_MAIN =
                         KeyC(
                             action = KeyAction.CommitText("ま"),
                             size = FontSizeVariant.LARGE,
-                            color = ColorVariant.PRIMARY,
                         ),
                     swipeType = SwipeNWay.FOUR_WAY_CROSS,
                     right =
@@ -346,7 +334,6 @@ val KB_JA_HIRAGANA_TYPESPLIT_SHIFTED =
                         KeyC(
                             action = KeyAction.CommitText("¥"),
                             size = FontSizeVariant.LARGE,
-                            color = ColorVariant.PRIMARY,
                         ),
                     swipeType = SwipeNWay.FOUR_WAY_CROSS,
                     right =
@@ -372,7 +359,6 @@ val KB_JA_HIRAGANA_TYPESPLIT_SHIFTED =
                         KeyC(
                             action = KeyAction.CommitText("だ"),
                             size = FontSizeVariant.LARGE,
-                            color = ColorVariant.PRIMARY,
                         ),
                     swipeType = SwipeNWay.FOUR_WAY_CROSS,
                     right =
@@ -398,7 +384,6 @@ val KB_JA_HIRAGANA_TYPESPLIT_SHIFTED =
                         KeyC(
                             action = KeyAction.CommitText("ゃ"),
                             size = FontSizeVariant.LARGE,
-                            color = ColorVariant.PRIMARY,
                         ),
                     swipeType = SwipeNWay.FOUR_WAY_CROSS,
                     right =
@@ -425,7 +410,6 @@ val KB_JA_HIRAGANA_TYPESPLIT_SHIFTED =
                         KeyC(
                             action = KeyAction.CommitText("ゔ"),
                             size = FontSizeVariant.LARGE,
-                            color = ColorVariant.PRIMARY,
                         ),
                 ),
             ),
@@ -435,7 +419,6 @@ val KB_JA_HIRAGANA_TYPESPLIT_SHIFTED =
                         KeyC(
                             action = KeyAction.CommitText("ぁ"),
                             size = FontSizeVariant.LARGE,
-                            color = ColorVariant.PRIMARY,
                         ),
                     swipeType = SwipeNWay.FOUR_WAY_CROSS,
                     right =
@@ -460,7 +443,6 @@ val KB_JA_HIRAGANA_TYPESPLIT_SHIFTED =
                         KeyC(
                             action = KeyAction.CommitText("ざ"),
                             size = FontSizeVariant.LARGE,
-                            color = ColorVariant.PRIMARY,
                         ),
                     swipeType = SwipeNWay.FOUR_WAY_CROSS,
                     right =
@@ -486,7 +468,6 @@ val KB_JA_HIRAGANA_TYPESPLIT_SHIFTED =
                         KeyC(
                             action = KeyAction.CommitText("ば"),
                             size = FontSizeVariant.LARGE,
-                            color = ColorVariant.PRIMARY,
                         ),
                     swipeType = SwipeNWay.FOUR_WAY_CROSS,
                     right =
@@ -511,7 +492,6 @@ val KB_JA_HIRAGANA_TYPESPLIT_SHIFTED =
                         KeyC(
                             action = KeyAction.CommitText("が"),
                             size = FontSizeVariant.LARGE,
-                            color = ColorVariant.PRIMARY,
                         ),
                     swipeType = SwipeNWay.FOUR_WAY_CROSS,
                     right =
@@ -538,7 +518,6 @@ val KB_JA_HIRAGANA_TYPESPLIT_SHIFTED =
                         KeyC(
                             action = KeyAction.CommitText("・"),
                             size = FontSizeVariant.LARGE,
-                            color = ColorVariant.PRIMARY,
                         ),
                     swipeType = SwipeNWay.FOUR_WAY_CROSS,
                     right =
@@ -567,7 +546,6 @@ val KB_JA_HIRAGANA_TYPESPLIT_SHIFTED =
                         KeyC(
                             action = KeyAction.CommitText("＝"),
                             size = FontSizeVariant.LARGE,
-                            color = ColorVariant.PRIMARY,
                         ),
                     swipeType = SwipeNWay.FOUR_WAY_CROSS,
                     right =
@@ -597,7 +575,6 @@ val KB_JA_HIRAGANA_TYPESPLIT_SHIFTED =
                         KeyC(
                             action = KeyAction.CommitText("ぱ"),
                             size = FontSizeVariant.LARGE,
-                            color = ColorVariant.PRIMARY,
                         ),
                     swipeType = SwipeNWay.FOUR_WAY_CROSS,
                     right =
@@ -622,7 +599,6 @@ val KB_JA_HIRAGANA_TYPESPLIT_SHIFTED =
                         KeyC(
                             action = KeyAction.CommitText("っ"),
                             size = FontSizeVariant.LARGE,
-                            color = ColorVariant.PRIMARY,
                         ),
                 ),
             ),

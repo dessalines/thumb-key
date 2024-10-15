@@ -28,7 +28,6 @@ val KB_EN_COLUMNAR_MAIN =
                         KeyC(
                             action = KeyAction.CommitText("a"),
                             size = FontSizeVariant.LARGE,
-                            color = ColorVariant.PRIMARY,
                         ),
                     swipeType = SwipeNWay.TWO_WAY_VERTICAL,
                     top =
@@ -45,7 +44,6 @@ val KB_EN_COLUMNAR_MAIN =
                         KeyC(
                             action = KeyAction.CommitText("s"),
                             size = FontSizeVariant.LARGE,
-                            color = ColorVariant.PRIMARY,
                         ),
                     swipeType = SwipeNWay.TWO_WAY_VERTICAL,
                     top =
@@ -62,7 +60,6 @@ val KB_EN_COLUMNAR_MAIN =
                         KeyC(
                             action = KeyAction.CommitText("d"),
                             size = FontSizeVariant.LARGE,
-                            color = ColorVariant.PRIMARY,
                         ),
                     swipeType = SwipeNWay.TWO_WAY_VERTICAL,
                     top =
@@ -82,7 +79,6 @@ val KB_EN_COLUMNAR_MAIN =
                         KeyC(
                             action = KeyAction.CommitText("f"),
                             size = FontSizeVariant.LARGE,
-                            color = ColorVariant.PRIMARY,
                         ),
                     swipeType = SwipeNWay.TWO_WAY_VERTICAL,
                     top =
@@ -99,7 +95,6 @@ val KB_EN_COLUMNAR_MAIN =
                         KeyC(
                             action = KeyAction.CommitText("g"),
                             size = FontSizeVariant.LARGE,
-                            color = ColorVariant.PRIMARY,
                         ),
                     swipeType = SwipeNWay.TWO_WAY_VERTICAL,
                     top =
@@ -116,7 +111,6 @@ val KB_EN_COLUMNAR_MAIN =
                         KeyC(
                             action = KeyAction.CommitText("h"),
                             size = FontSizeVariant.LARGE,
-                            color = ColorVariant.PRIMARY,
                         ),
                     swipeType = SwipeNWay.FOUR_WAY_CROSS,
                     left =
@@ -154,7 +148,6 @@ val KB_EN_COLUMNAR_MAIN =
                         KeyC(
                             action = KeyAction.CommitText("j"),
                             size = FontSizeVariant.LARGE,
-                            color = ColorVariant.PRIMARY,
                         ),
                     swipeType = SwipeNWay.TWO_WAY_VERTICAL,
                     top =
@@ -171,7 +164,6 @@ val KB_EN_COLUMNAR_MAIN =
                         KeyC(
                             action = KeyAction.CommitText("k"),
                             size = FontSizeVariant.LARGE,
-                            color = ColorVariant.PRIMARY,
                         ),
                     swipeType = SwipeNWay.TWO_WAY_VERTICAL,
                     top =
@@ -188,7 +180,6 @@ val KB_EN_COLUMNAR_MAIN =
                         KeyC(
                             action = KeyAction.CommitText("l"),
                             size = FontSizeVariant.LARGE,
-                            color = ColorVariant.PRIMARY,
                         ),
                     swipeType = SwipeNWay.TWO_WAY_VERTICAL,
                     top =
@@ -218,7 +209,6 @@ val KB_EN_COLUMNAR_SHIFTED =
                         KeyC(
                             action = KeyAction.CommitText("A"),
                             size = FontSizeVariant.LARGE,
-                            color = ColorVariant.PRIMARY,
                         ),
                     swipeType = SwipeNWay.TWO_WAY_VERTICAL,
                     top =
@@ -235,7 +225,6 @@ val KB_EN_COLUMNAR_SHIFTED =
                         KeyC(
                             action = KeyAction.CommitText("S"),
                             size = FontSizeVariant.LARGE,
-                            color = ColorVariant.PRIMARY,
                         ),
                     swipeType = SwipeNWay.TWO_WAY_VERTICAL,
                     top =
@@ -252,7 +241,6 @@ val KB_EN_COLUMNAR_SHIFTED =
                         KeyC(
                             action = KeyAction.CommitText("D"),
                             size = FontSizeVariant.LARGE,
-                            color = ColorVariant.PRIMARY,
                         ),
                     swipeType = SwipeNWay.TWO_WAY_VERTICAL,
                     top =
@@ -272,7 +260,6 @@ val KB_EN_COLUMNAR_SHIFTED =
                         KeyC(
                             action = KeyAction.CommitText("F"),
                             size = FontSizeVariant.LARGE,
-                            color = ColorVariant.PRIMARY,
                         ),
                     swipeType = SwipeNWay.TWO_WAY_VERTICAL,
                     top =
@@ -289,7 +276,6 @@ val KB_EN_COLUMNAR_SHIFTED =
                         KeyC(
                             action = KeyAction.CommitText("G"),
                             size = FontSizeVariant.LARGE,
-                            color = ColorVariant.PRIMARY,
                         ),
                     swipeType = SwipeNWay.TWO_WAY_VERTICAL,
                     top =
@@ -306,7 +292,6 @@ val KB_EN_COLUMNAR_SHIFTED =
                         KeyC(
                             action = KeyAction.CommitText("H"),
                             size = FontSizeVariant.LARGE,
-                            color = ColorVariant.PRIMARY,
                         ),
                     swipeType = SwipeNWay.FOUR_WAY_CROSS,
                     left =
@@ -347,7 +332,6 @@ val KB_EN_COLUMNAR_SHIFTED =
                         KeyC(
                             action = KeyAction.CommitText("J"),
                             size = FontSizeVariant.LARGE,
-                            color = ColorVariant.PRIMARY,
                         ),
                     swipeType = SwipeNWay.TWO_WAY_VERTICAL,
                     top =
@@ -364,7 +348,6 @@ val KB_EN_COLUMNAR_SHIFTED =
                         KeyC(
                             action = KeyAction.CommitText("K"),
                             size = FontSizeVariant.LARGE,
-                            color = ColorVariant.PRIMARY,
                         ),
                     swipeType = SwipeNWay.TWO_WAY_VERTICAL,
                     top =
@@ -381,7 +364,6 @@ val KB_EN_COLUMNAR_SHIFTED =
                         KeyC(
                             action = KeyAction.CommitText("L"),
                             size = FontSizeVariant.LARGE,
-                            color = ColorVariant.PRIMARY,
                         ),
                     swipeType = SwipeNWay.TWO_WAY_VERTICAL,
                     top =

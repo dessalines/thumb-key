@@ -24,7 +24,6 @@ val KB_RU_MESSAGEASE_SYMBOLS_MAIN =
                         KeyC(
                             action = KeyAction.CommitText("с"),
                             size = FontSizeVariant.LARGE,
-                            color = ColorVariant.PRIMARY,
                         ),
                     right =
                         KeyC(
@@ -50,7 +49,6 @@ val KB_RU_MESSAGEASE_SYMBOLS_MAIN =
                         KeyC(
                             action = KeyAction.CommitText("и"),
                             size = FontSizeVariant.LARGE,
-                            color = ColorVariant.PRIMARY,
                         ),
                     top =
                         KeyC(
@@ -96,7 +94,6 @@ val KB_RU_MESSAGEASE_SYMBOLS_MAIN =
                         KeyC(
                             action = KeyAction.CommitText("т"),
                             size = FontSizeVariant.LARGE,
-                            color = ColorVariant.PRIMARY,
                         ),
                     bottomLeft =
                         KeyC(
@@ -126,7 +123,6 @@ val KB_RU_MESSAGEASE_SYMBOLS_MAIN =
                         KeyC(
                             action = KeyAction.CommitText("в"),
                             size = FontSizeVariant.LARGE,
-                            color = ColorVariant.PRIMARY,
                         ),
                     top =
                         KeyC(
@@ -171,7 +167,6 @@ val KB_RU_MESSAGEASE_SYMBOLS_MAIN =
                         KeyC(
                             action = KeyAction.CommitText("о"),
                             size = FontSizeVariant.LARGE,
-                            color = ColorVariant.PRIMARY,
                         ),
                     topLeft =
                         KeyC(
@@ -211,7 +206,6 @@ val KB_RU_MESSAGEASE_SYMBOLS_MAIN =
                         KeyC(
                             action = KeyAction.CommitText("а"),
                             size = FontSizeVariant.LARGE,
-                            color = ColorVariant.PRIMARY,
                         ),
                     left =
                         KeyC(
@@ -263,7 +257,6 @@ val KB_RU_MESSAGEASE_SYMBOLS_MAIN =
                         KeyC(
                             action = KeyAction.CommitText("е"),
                             size = FontSizeVariant.LARGE,
-                            color = ColorVariant.PRIMARY,
                         ),
                     top =
                         KeyC(
@@ -298,7 +291,6 @@ val KB_RU_MESSAGEASE_SYMBOLS_MAIN =
                         KeyC(
                             action = KeyAction.CommitText("р"),
                             size = FontSizeVariant.LARGE,
-                            color = ColorVariant.PRIMARY,
                         ),
                     top =
                         KeyC(
@@ -343,7 +335,6 @@ val KB_RU_MESSAGEASE_SYMBOLS_MAIN =
                         KeyC(
                             action = KeyAction.CommitText("н"),
                             size = FontSizeVariant.LARGE,
-                            color = ColorVariant.PRIMARY,
                         ),
                     topLeft =
                         KeyC(
@@ -393,7 +384,6 @@ val KB_RU_MESSAGEASE_SYMBOLS_SHIFTED =
                         KeyC(
                             action = KeyAction.CommitText("С"),
                             size = FontSizeVariant.LARGE,
-                            color = ColorVariant.PRIMARY,
                         ),
                     right =
                         KeyC(
@@ -419,7 +409,6 @@ val KB_RU_MESSAGEASE_SYMBOLS_SHIFTED =
                         KeyC(
                             action = KeyAction.CommitText("И"),
                             size = FontSizeVariant.LARGE,
-                            color = ColorVariant.PRIMARY,
                         ),
                     top =
                         KeyC(
@@ -465,7 +454,6 @@ val KB_RU_MESSAGEASE_SYMBOLS_SHIFTED =
                         KeyC(
                             action = KeyAction.CommitText("Т"),
                             size = FontSizeVariant.LARGE,
-                            color = ColorVariant.PRIMARY,
                         ),
                     bottomLeft =
                         KeyC(
@@ -495,7 +483,6 @@ val KB_RU_MESSAGEASE_SYMBOLS_SHIFTED =
                         KeyC(
                             action = KeyAction.CommitText("В"),
                             size = FontSizeVariant.LARGE,
-                            color = ColorVariant.PRIMARY,
                         ),
                     top =
                         KeyC(
@@ -540,7 +527,6 @@ val KB_RU_MESSAGEASE_SYMBOLS_SHIFTED =
                         KeyC(
                             action = KeyAction.CommitText("О"),
                             size = FontSizeVariant.LARGE,
-                            color = ColorVariant.PRIMARY,
                         ),
                     topLeft =
                         KeyC(
@@ -580,7 +566,6 @@ val KB_RU_MESSAGEASE_SYMBOLS_SHIFTED =
                         KeyC(
                             action = KeyAction.CommitText("А"),
                             size = FontSizeVariant.LARGE,
-                            color = ColorVariant.PRIMARY,
                         ),
                     left =
                         KeyC(
@@ -635,7 +620,6 @@ val KB_RU_MESSAGEASE_SYMBOLS_SHIFTED =
                         KeyC(
                             action = KeyAction.CommitText("Е"),
                             size = FontSizeVariant.LARGE,
-                            color = ColorVariant.PRIMARY,
                         ),
                     top =
                         KeyC(
@@ -670,7 +654,6 @@ val KB_RU_MESSAGEASE_SYMBOLS_SHIFTED =
                         KeyC(
                             action = KeyAction.CommitText("Р"),
                             size = FontSizeVariant.LARGE,
-                            color = ColorVariant.PRIMARY,
                         ),
                     top =
                         KeyC(
@@ -715,7 +698,6 @@ val KB_RU_MESSAGEASE_SYMBOLS_SHIFTED =
                         KeyC(
                             action = KeyAction.CommitText("Н"),
                             size = FontSizeVariant.LARGE,
-                            color = ColorVariant.PRIMARY,
                         ),
                     topLeft =
                         KeyC(

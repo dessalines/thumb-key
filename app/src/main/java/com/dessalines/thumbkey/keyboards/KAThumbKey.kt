@@ -19,7 +19,6 @@ val KB_KA_THUMBKEY_MAIN =
                         KeyC(
                             action = KeyAction.CommitText("მ"),
                             size = FontSizeVariant.LARGE,
-                            color = ColorVariant.PRIMARY,
                         ),
                     right =
                         KeyC(
@@ -39,7 +38,6 @@ val KB_KA_THUMBKEY_MAIN =
                         KeyC(
                             action = KeyAction.CommitText("ბ"),
                             size = FontSizeVariant.LARGE,
-                            color = ColorVariant.PRIMARY,
                         ),
                     swipeType = SwipeNWay.TWO_WAY_VERTICAL,
                     bottom =
@@ -52,7 +50,6 @@ val KB_KA_THUMBKEY_MAIN =
                         KeyC(
                             action = KeyAction.CommitText("ე"),
                             size = FontSizeVariant.LARGE,
-                            color = ColorVariant.PRIMARY,
                         ),
                     swipeType = SwipeNWay.FOUR_WAY_DIAGONAL,
                     bottomLeft =
@@ -72,7 +69,6 @@ val KB_KA_THUMBKEY_MAIN =
                         KeyC(
                             action = KeyAction.CommitText("ს"),
                             size = FontSizeVariant.LARGE,
-                            color = ColorVariant.PRIMARY,
                         ),
                     swipeType = SwipeNWay.FOUR_WAY_CROSS,
                     right =
@@ -89,7 +85,6 @@ val KB_KA_THUMBKEY_MAIN =
                         KeyC(
                             action = KeyAction.CommitText("დ"),
                             size = FontSizeVariant.LARGE,
-                            color = ColorVariant.PRIMARY,
                         ),
                     topLeft =
                         KeyC(
@@ -129,7 +124,6 @@ val KB_KA_THUMBKEY_MAIN =
                         KeyC(
                             action = KeyAction.CommitText("ი"),
                             size = FontSizeVariant.LARGE,
-                            color = ColorVariant.PRIMARY,
                         ),
                     swipeType = SwipeNWay.FOUR_WAY_CROSS,
                     left =
@@ -145,7 +139,6 @@ val KB_KA_THUMBKEY_MAIN =
                         KeyC(
                             action = KeyAction.CommitText("რ"),
                             size = FontSizeVariant.LARGE,
-                            color = ColorVariant.PRIMARY,
                         ),
                     topRight =
                         KeyC(
@@ -165,7 +158,6 @@ val KB_KA_THUMBKEY_MAIN =
                         KeyC(
                             action = KeyAction.CommitText("ო"),
                             size = FontSizeVariant.LARGE,
-                            color = ColorVariant.PRIMARY,
                         ),
                     top =
                         KeyC(
@@ -211,7 +203,6 @@ val KB_KA_THUMBKEY_MAIN =
                         KeyC(
                             action = KeyAction.CommitText("ა"),
                             size = FontSizeVariant.LARGE,
-                            color = ColorVariant.PRIMARY,
                         ),
                     topLeft =
                         KeyC(

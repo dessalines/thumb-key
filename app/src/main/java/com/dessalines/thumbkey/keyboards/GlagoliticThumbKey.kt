@@ -25,7 +25,6 @@ val KB_GLAGOLITIC_THUMBKEY_MAIN =
                         KeyC(
                             action = KeyAction.CommitText("ⱄ"),
                             size = FontSizeVariant.LARGE,
-                            color = ColorVariant.PRIMARY,
                         ),
                     right =
                         KeyC(
@@ -49,7 +48,6 @@ val KB_GLAGOLITIC_THUMBKEY_MAIN =
                         KeyC(
                             action = KeyAction.CommitText("ⱃ"),
                             size = FontSizeVariant.LARGE,
-                            color = ColorVariant.PRIMARY,
                         ),
                     bottom =
                         KeyC(
@@ -69,7 +67,6 @@ val KB_GLAGOLITIC_THUMBKEY_MAIN =
                         KeyC(
                             action = KeyAction.CommitText("ⰵ"),
                             size = FontSizeVariant.LARGE,
-                            color = ColorVariant.PRIMARY,
                         ),
                     bottomLeft =
                         KeyC(
@@ -100,7 +97,6 @@ val KB_GLAGOLITIC_THUMBKEY_MAIN =
                         KeyC(
                             action = KeyAction.CommitText("ⱀ"),
                             size = FontSizeVariant.LARGE,
-                            color = ColorVariant.PRIMARY,
                         ),
                     right =
                         KeyC(
@@ -129,7 +125,6 @@ val KB_GLAGOLITIC_THUMBKEY_MAIN =
                         KeyC(
                             action = KeyAction.CommitText("ⰲ"),
                             size = FontSizeVariant.LARGE,
-                            color = ColorVariant.PRIMARY,
                         ),
                     topLeft =
                         KeyC(
@@ -169,7 +164,6 @@ val KB_GLAGOLITIC_THUMBKEY_MAIN =
                         KeyC(
                             action = KeyAction.CommitText("ⰰ"),
                             size = FontSizeVariant.LARGE,
-                            color = ColorVariant.PRIMARY,
                         ),
                     swipeType = SwipeNWay.FOUR_WAY_CROSS,
                     left =
@@ -201,7 +195,6 @@ val KB_GLAGOLITIC_THUMBKEY_MAIN =
                         KeyC(
                             action = KeyAction.CommitText("ⱅ"),
                             size = FontSizeVariant.LARGE,
-                            color = ColorVariant.PRIMARY,
                         ),
                     topRight =
                         KeyC(
@@ -225,7 +218,6 @@ val KB_GLAGOLITIC_THUMBKEY_MAIN =
                         KeyC(
                             action = KeyAction.CommitText("ⰻ"),
                             size = FontSizeVariant.LARGE,
-                            color = ColorVariant.PRIMARY,
                         ),
                     top =
                         KeyC(
@@ -271,7 +263,6 @@ val KB_GLAGOLITIC_THUMBKEY_MAIN =
                         KeyC(
                             action = KeyAction.CommitText("ⱁ"),
                             size = FontSizeVariant.LARGE,
-                            color = ColorVariant.PRIMARY,
                         ),
                     topLeft =
                         KeyC(
@@ -316,7 +307,6 @@ val KB_GLAGOLITIC_THUMBKEY_SHIFTED =
                         KeyC(
                             action = KeyAction.CommitText("Ⱄ"),
                             size = FontSizeVariant.LARGE,
-                            color = ColorVariant.PRIMARY,
                         ),
                     right =
                         KeyC(
@@ -340,7 +330,6 @@ val KB_GLAGOLITIC_THUMBKEY_SHIFTED =
                         KeyC(
                             action = KeyAction.CommitText("Ⱃ"),
                             size = FontSizeVariant.LARGE,
-                            color = ColorVariant.PRIMARY,
                         ),
                     bottom =
                         KeyC(
@@ -360,7 +349,6 @@ val KB_GLAGOLITIC_THUMBKEY_SHIFTED =
                         KeyC(
                             action = KeyAction.CommitText("Ⰵ"),
                             size = FontSizeVariant.LARGE,
-                            color = ColorVariant.PRIMARY,
                         ),
                     bottomLeft =
                         KeyC(
@@ -391,7 +379,6 @@ val KB_GLAGOLITIC_THUMBKEY_SHIFTED =
                         KeyC(
                             action = KeyAction.CommitText("Ⱀ"),
                             size = FontSizeVariant.LARGE,
-                            color = ColorVariant.PRIMARY,
                         ),
                     right =
                         KeyC(
@@ -420,7 +407,6 @@ val KB_GLAGOLITIC_THUMBKEY_SHIFTED =
                         KeyC(
                             action = KeyAction.CommitText("Ⰲ"),
                             size = FontSizeVariant.LARGE,
-                            color = ColorVariant.PRIMARY,
                         ),
                     topLeft =
                         KeyC(
@@ -460,7 +446,6 @@ val KB_GLAGOLITIC_THUMBKEY_SHIFTED =
                         KeyC(
                             action = KeyAction.CommitText("Ⰰ"),
                             size = FontSizeVariant.LARGE,
-                            color = ColorVariant.PRIMARY,
                         ),
                     swipeType = SwipeNWay.FOUR_WAY_CROSS,
                     left =
@@ -495,7 +480,6 @@ val KB_GLAGOLITIC_THUMBKEY_SHIFTED =
                         KeyC(
                             action = KeyAction.CommitText("Ⱅ"),
                             size = FontSizeVariant.LARGE,
-                            color = ColorVariant.PRIMARY,
                         ),
                     topRight =
                         KeyC(
@@ -520,7 +504,6 @@ val KB_GLAGOLITIC_THUMBKEY_SHIFTED =
                             display = KeyDisplay.TextDisplay(" Ⰻ"),
                             action = KeyAction.CommitText("Ⰻ"),
                             size = FontSizeVariant.LARGE,
-                            color = ColorVariant.PRIMARY,
                         ),
                     top =
                         KeyC(
@@ -566,7 +549,6 @@ val KB_GLAGOLITIC_THUMBKEY_SHIFTED =
                         KeyC(
                             action = KeyAction.CommitText("Ⱁ"),
                             size = FontSizeVariant.LARGE,
-                            color = ColorVariant.PRIMARY,
                         ),
                     topLeft =
                         KeyC(

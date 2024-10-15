@@ -1,6 +1,5 @@
 package com.dessalines.thumbkey.keyboards
 
-import com.dessalines.thumbkey.utils.ColorVariant
 import com.dessalines.thumbkey.utils.FontSizeVariant
 import com.dessalines.thumbkey.utils.KeyAction
 import com.dessalines.thumbkey.utils.KeyC
@@ -17,7 +16,6 @@ val FARSI_NUMERIC_KEYBOARD =
                         KeyC(
                             action = KeyAction.CommitText("۱"),
                             size = FontSizeVariant.LARGE,
-                            color = ColorVariant.PRIMARY,
                         ),
                     right =
                         KeyC(
@@ -38,7 +36,6 @@ val FARSI_NUMERIC_KEYBOARD =
                         KeyC(
                             action = KeyAction.CommitText("۲"),
                             size = FontSizeVariant.LARGE,
-                            color = ColorVariant.PRIMARY,
                         ),
                     topLeft =
                         KeyC(
@@ -74,7 +71,6 @@ val FARSI_NUMERIC_KEYBOARD =
                         KeyC(
                             action = KeyAction.CommitText("۳"),
                             size = FontSizeVariant.LARGE,
-                            color = ColorVariant.PRIMARY,
                         ),
                     left =
                         KeyC(
@@ -97,7 +93,6 @@ val FARSI_NUMERIC_KEYBOARD =
                         KeyC(
                             action = KeyAction.CommitText("۴"),
                             size = FontSizeVariant.LARGE,
-                            color = ColorVariant.PRIMARY,
                         ),
                     topLeft =
                         KeyC(
@@ -128,7 +123,6 @@ val FARSI_NUMERIC_KEYBOARD =
                         KeyC(
                             action = KeyAction.CommitText("۵"),
                             size = FontSizeVariant.LARGE,
-                            color = ColorVariant.PRIMARY,
                         ),
                     topLeft =
                         KeyC(
@@ -151,7 +145,6 @@ val FARSI_NUMERIC_KEYBOARD =
                         KeyC(
                             action = KeyAction.CommitText("۶"),
                             size = FontSizeVariant.LARGE,
-                            color = ColorVariant.PRIMARY,
                         ),
                     topLeft =
                         KeyC(
@@ -185,7 +178,6 @@ val FARSI_NUMERIC_KEYBOARD =
                         KeyC(
                             action = KeyAction.CommitText("۷"),
                             size = FontSizeVariant.LARGE,
-                            color = ColorVariant.PRIMARY,
                         ),
                     topLeft =
                         KeyC(
@@ -216,7 +208,6 @@ val FARSI_NUMERIC_KEYBOARD =
                         KeyC(
                             action = KeyAction.CommitText("۸"),
                             size = FontSizeVariant.LARGE,
-                            color = ColorVariant.PRIMARY,
                         ),
                     topLeft =
                         KeyC(
@@ -248,7 +239,6 @@ val FARSI_NUMERIC_KEYBOARD =
                         KeyC(
                             action = KeyAction.CommitText("۹"),
                             size = FontSizeVariant.LARGE,
-                            color = ColorVariant.PRIMARY,
                         ),
                     top =
                         KeyC(
@@ -285,7 +275,6 @@ val FARSI_NUMERIC_KEYBOARD =
                         KeyC(
                             action = KeyAction.CommitText("۰"),
                             size = FontSizeVariant.LARGE,
-                            color = ColorVariant.PRIMARY,
                         ),
                     widthMultiplier = 2,
                 ),

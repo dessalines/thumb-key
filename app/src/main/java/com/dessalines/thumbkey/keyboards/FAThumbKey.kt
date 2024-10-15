@@ -19,7 +19,6 @@ val KB_FA_THUMBKEY_MAIN =
                         KeyC(
                             action = KeyAction.CommitText("د"),
                             size = FontSizeVariant.LARGE,
-                            color = ColorVariant.PRIMARY,
                         ),
                     bottomRight =
                         KeyC(
@@ -35,7 +34,6 @@ val KB_FA_THUMBKEY_MAIN =
                         KeyC(
                             action = KeyAction.CommitText("ر"),
                             size = FontSizeVariant.LARGE,
-                            color = ColorVariant.PRIMARY,
                         ),
                     right =
                         KeyC(
@@ -59,7 +57,6 @@ val KB_FA_THUMBKEY_MAIN =
                         KeyC(
                             action = KeyAction.CommitText("و"),
                             size = FontSizeVariant.LARGE,
-                            color = ColorVariant.PRIMARY,
                         ),
                     topRight =
                         KeyC(
@@ -84,7 +81,6 @@ val KB_FA_THUMBKEY_MAIN =
                         KeyC(
                             action = KeyAction.CommitText("ن"),
                             size = FontSizeVariant.LARGE,
-                            color = ColorVariant.PRIMARY,
                         ),
                     right =
                         KeyC(
@@ -104,7 +100,6 @@ val KB_FA_THUMBKEY_MAIN =
                         KeyC(
                             action = KeyAction.CommitText("ا"),
                             size = FontSizeVariant.LARGE,
-                            color = ColorVariant.PRIMARY,
                         ),
                     topLeft =
                         KeyC(
@@ -144,7 +139,6 @@ val KB_FA_THUMBKEY_MAIN =
                         KeyC(
                             action = KeyAction.CommitText("م"),
                             size = FontSizeVariant.LARGE,
-                            color = ColorVariant.PRIMARY,
                         ),
                     bottomLeft =
                         KeyC(
@@ -167,7 +161,6 @@ val KB_FA_THUMBKEY_MAIN =
                         KeyC(
                             action = KeyAction.CommitText("ت"),
                             size = FontSizeVariant.LARGE,
-                            color = ColorVariant.PRIMARY,
                         ),
                     topRight =
                         KeyC(
@@ -179,7 +172,6 @@ val KB_FA_THUMBKEY_MAIN =
                         KeyC(
                             action = KeyAction.CommitText("ی"),
                             size = FontSizeVariant.LARGE,
-                            color = ColorVariant.PRIMARY,
                         ),
                     top =
                         KeyC(
@@ -217,7 +209,6 @@ val KB_FA_THUMBKEY_MAIN =
                         KeyC(
                             action = KeyAction.CommitText("ه"),
                             size = FontSizeVariant.LARGE,
-                            color = ColorVariant.PRIMARY,
                         ),
                     topLeft =
                         KeyC(
