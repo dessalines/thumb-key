@@ -29,42 +29,44 @@ import com.dessalines.thumbkey.utils.KeyC
 import com.dessalines.thumbkey.utils.KeyDisplay
 import com.dessalines.thumbkey.utils.KeyItemC
 import com.dessalines.thumbkey.utils.SlideType
-import com.dessalines.thumbkey.utils.SwipeDirection
 import com.dessalines.thumbkey.utils.SwipeNWay
 
-val TEXT_EDIT_SWIPES =
-    mapOf(
-        SwipeDirection.TOP to
+fun textEditKeyItem(center: KeyC) =
+    KeyItemC(
+        backgroundColor = ColorVariant.SURFACE_VARIANT,
+        swipeType = SwipeNWay.EIGHT_WAY,
+        center = center,
+        top =
             KeyC(
                 display = KeyDisplay.IconDisplay(Icons.Outlined.ContentCopy),
                 action = KeyAction.Copy,
                 color = ColorVariant.MUTED,
             ),
-        SwipeDirection.TOP_LEFT to
+        topLeft =
             KeyC(
                 display = KeyDisplay.IconDisplay(Icons.Outlined.SelectAll),
                 action = KeyAction.SelectAll,
                 color = ColorVariant.MUTED,
             ),
-        SwipeDirection.TOP_RIGHT to
+        topRight =
             KeyC(
                 display = KeyDisplay.IconDisplay(Icons.Outlined.ContentCut),
                 action = KeyAction.Cut,
                 color = ColorVariant.MUTED,
             ),
-        SwipeDirection.LEFT to
+        left =
             KeyC(
                 display = KeyDisplay.IconDisplay(Icons.AutoMirrored.Outlined.Undo),
                 action = KeyAction.Undo,
                 color = ColorVariant.MUTED,
             ),
-        SwipeDirection.RIGHT to
+        right =
             KeyC(
                 display = KeyDisplay.IconDisplay(Icons.AutoMirrored.Outlined.Redo),
                 action = KeyAction.Redo,
                 color = ColorVariant.MUTED,
             ),
-        SwipeDirection.BOTTOM to
+        bottom =
             KeyC(
                 display = KeyDisplay.IconDisplay(Icons.Outlined.ContentPaste),
                 action = KeyAction.Paste,
@@ -72,33 +74,36 @@ val TEXT_EDIT_SWIPES =
             ),
     )
 
-val SPECIAL_ACTIONS_SWIPES =
-    mapOf(
-        SwipeDirection.TOP to
+fun specialActionKeyItem(center: KeyC) =
+    KeyItemC(
+        backgroundColor = ColorVariant.SURFACE_VARIANT,
+        swipeType = SwipeNWay.EIGHT_WAY,
+        center = center,
+        top =
             KeyC(
                 display = KeyDisplay.IconDisplay(Icons.Outlined.Settings),
                 action = KeyAction.GotoSettings,
                 color = ColorVariant.MUTED,
             ),
-        SwipeDirection.BOTTOM to
+        bottom =
             KeyC(
                 display = KeyDisplay.IconDisplay(Icons.Outlined.Keyboard),
                 action = KeyAction.SwitchIME,
                 color = ColorVariant.MUTED,
             ),
-        SwipeDirection.BOTTOM_LEFT to
+        bottomLeft =
             KeyC(
                 display = KeyDisplay.IconDisplay(Icons.Outlined.Mic),
                 action = KeyAction.SwitchIMEVoice,
                 color = ColorVariant.MUTED,
             ),
-        SwipeDirection.LEFT to
+        left =
             KeyC(
                 display = KeyDisplay.IconDisplay(Icons.Outlined.Language),
                 action = KeyAction.SwitchLanguage,
                 color = ColorVariant.MUTED,
             ),
-        SwipeDirection.RIGHT to
+        right =
             KeyC(
                 display = KeyDisplay.IconDisplay(Icons.Outlined.LinearScale),
                 action = KeyAction.SwitchPosition,
@@ -107,7 +112,7 @@ val SPECIAL_ACTIONS_SWIPES =
     )
 
 val ABC_KEY_ITEM =
-    KeyItemC(
+    textEditKeyItem(
         center =
             KeyC(
                 display = KeyDisplay.IconDisplay(Icons.Outlined.Abc),
@@ -115,13 +120,10 @@ val ABC_KEY_ITEM =
                 size = FontSizeVariant.LARGE,
                 color = ColorVariant.PRIMARY,
             ),
-        swipeType = SwipeNWay.EIGHT_WAY,
-        swipes = TEXT_EDIT_SWIPES,
-        backgroundColor = ColorVariant.SURFACE_VARIANT,
     )
 
 val NUMERIC_KEY_ITEM =
-    KeyItemC(
+    textEditKeyItem(
         center =
             KeyC(
                 display = KeyDisplay.IconDisplay(Icons.Outlined.Numbers),
@@ -129,13 +131,10 @@ val NUMERIC_KEY_ITEM =
                 size = FontSizeVariant.LARGE,
                 color = ColorVariant.SECONDARY,
             ),
-        swipeType = SwipeNWay.EIGHT_WAY,
-        swipes = TEXT_EDIT_SWIPES,
-        backgroundColor = ColorVariant.SURFACE_VARIANT,
     )
 
 val EMOJI_KEY_ITEM =
-    KeyItemC(
+    specialActionKeyItem(
         center =
             KeyC(
                 display = KeyDisplay.IconDisplay(Icons.Outlined.Mood),
@@ -143,9 +142,6 @@ val EMOJI_KEY_ITEM =
                 size = FontSizeVariant.LARGE,
                 color = ColorVariant.SECONDARY,
             ),
-        swipeType = SwipeNWay.EIGHT_WAY,
-        swipes = SPECIAL_ACTIONS_SWIPES,
-        backgroundColor = ColorVariant.SURFACE_VARIANT,
     )
 
 val EMOJI_BACK_KEY_ITEM =
@@ -160,9 +156,9 @@ val EMOJI_BACK_KEY_ITEM =
         backgroundColor = ColorVariant.SURFACE_VARIANT,
     )
 
-val ABC_KEY_ITEM_ALT = ABC_KEY_ITEM.copy(swipes = SPECIAL_ACTIONS_SWIPES)
-val NUMERIC_KEY_ITEM_ALT = NUMERIC_KEY_ITEM.copy(swipes = SPECIAL_ACTIONS_SWIPES)
-val EMOJI_KEY_ITEM_ALT = EMOJI_KEY_ITEM.copy(swipes = TEXT_EDIT_SWIPES)
+val ABC_KEY_ITEM_ALT = specialActionKeyItem(center = ABC_KEY_ITEM.center)
+val NUMERIC_KEY_ITEM_ALT = specialActionKeyItem(center = NUMERIC_KEY_ITEM.center)
+val EMOJI_KEY_ITEM_ALT = textEditKeyItem(center = EMOJI_KEY_ITEM.center)
 
 val BACKSPACE_KEY_ITEM =
     KeyItemC(
@@ -182,18 +178,15 @@ val BACKSPACE_KEY_ITEM =
             ),
         swipeType = SwipeNWay.TWO_WAY_HORIZONTAL,
         slideType = SlideType.DELETE,
-        swipes =
-            mapOf(
-                SwipeDirection.LEFT to
-                    KeyC(
-                        action = KeyAction.DeleteWordBeforeCursor,
-                        display = null,
-                    ),
-                SwipeDirection.RIGHT to
-                    KeyC(
-                        action = KeyAction.DeleteWordAfterCursor,
-                        display = null,
-                    ),
+        left =
+            KeyC(
+                action = KeyAction.DeleteWordBeforeCursor,
+                display = null,
+            ),
+        right =
+            KeyC(
+                action = KeyAction.DeleteWordAfterCursor,
+                display = null,
             ),
         backgroundColor = ColorVariant.SURFACE_VARIANT,
         longPress = KeyAction.DeleteWordBeforeCursor,
@@ -209,30 +202,27 @@ val SPACEBAR_KEY_ITEM =
             ),
         swipeType = SwipeNWay.FOUR_WAY_CROSS,
         slideType = SlideType.MOVE_CURSOR,
-        swipes =
-            mapOf(
-                SwipeDirection.LEFT to
-                    KeyC(
-                        action =
-                            KeyAction.SendEvent(
-                                KeyEvent(
-                                    KeyEvent.ACTION_DOWN,
-                                    KeyEvent.KEYCODE_DPAD_LEFT,
-                                ),
-                            ),
-                        display = null,
+        left =
+            KeyC(
+                action =
+                    KeyAction.SendEvent(
+                        KeyEvent(
+                            KeyEvent.ACTION_DOWN,
+                            KeyEvent.KEYCODE_DPAD_LEFT,
+                        ),
                     ),
-                SwipeDirection.RIGHT to
-                    KeyC(
-                        action =
-                            KeyAction.SendEvent(
-                                KeyEvent(
-                                    KeyEvent.ACTION_DOWN,
-                                    KeyEvent.KEYCODE_DPAD_RIGHT,
-                                ),
-                            ),
-                        display = null,
+                display = null,
+            ),
+        right =
+            KeyC(
+                action =
+                    KeyAction.SendEvent(
+                        KeyEvent(
+                            KeyEvent.ACTION_DOWN,
+                            KeyEvent.KEYCODE_DPAD_RIGHT,
+                        ),
                     ),
+                display = null,
             ),
         nextTapActions =
             listOf(
@@ -257,52 +247,49 @@ val SPACEBAR_PROGRAMMING_KEY_ITEM =
             ),
         swipeType = SwipeNWay.FOUR_WAY_CROSS,
         slideType = SlideType.MOVE_CURSOR,
-        swipes =
-            mapOf(
-                SwipeDirection.LEFT to
-                    KeyC(
-                        action =
-                            KeyAction.SendEvent(
-                                KeyEvent(
-                                    KeyEvent.ACTION_DOWN,
-                                    KeyEvent.KEYCODE_DPAD_LEFT,
-                                ),
-                            ),
-                        display = null,
+        left =
+            KeyC(
+                action =
+                    KeyAction.SendEvent(
+                        KeyEvent(
+                            KeyEvent.ACTION_DOWN,
+                            KeyEvent.KEYCODE_DPAD_LEFT,
+                        ),
                     ),
-                SwipeDirection.RIGHT to
-                    KeyC(
-                        action =
-                            KeyAction.SendEvent(
-                                KeyEvent(
-                                    KeyEvent.ACTION_DOWN,
-                                    KeyEvent.KEYCODE_DPAD_RIGHT,
-                                ),
-                            ),
-                        display = null,
+                display = null,
+            ),
+        right =
+            KeyC(
+                action =
+                    KeyAction.SendEvent(
+                        KeyEvent(
+                            KeyEvent.ACTION_DOWN,
+                            KeyEvent.KEYCODE_DPAD_RIGHT,
+                        ),
                     ),
-                SwipeDirection.TOP to
-                    KeyC(
-                        action =
-                            KeyAction.SendEvent(
-                                KeyEvent(
-                                    KeyEvent.ACTION_DOWN,
-                                    KeyEvent.KEYCODE_DPAD_UP,
-                                ),
-                            ),
-                        display = null,
+                display = null,
+            ),
+        top =
+            KeyC(
+                action =
+                    KeyAction.SendEvent(
+                        KeyEvent(
+                            KeyEvent.ACTION_DOWN,
+                            KeyEvent.KEYCODE_DPAD_UP,
+                        ),
                     ),
-                SwipeDirection.BOTTOM to
-                    KeyC(
-                        action =
-                            KeyAction.SendEvent(
-                                KeyEvent(
-                                    KeyEvent.ACTION_DOWN,
-                                    KeyEvent.KEYCODE_DPAD_DOWN,
-                                ),
-                            ),
-                        display = null,
+                display = null,
+            ),
+        bottom =
+            KeyC(
+                action =
+                    KeyAction.SendEvent(
+                        KeyEvent(
+                            KeyEvent.ACTION_DOWN,
+                            KeyEvent.KEYCODE_DPAD_DOWN,
+                        ),
                     ),
+                display = null,
             ),
         backgroundColor = ColorVariant.SURFACE_VARIANT,
         widthMultiplier = 3,
@@ -329,40 +316,37 @@ val SPACEBAR_TYPESPLIT_MIDDLE_KEY_ITEM =
             ),
         swipeType = SwipeNWay.FOUR_WAY_CROSS,
         slideType = SlideType.MOVE_CURSOR,
-        swipes =
-            mapOf(
-                SwipeDirection.LEFT to
-                    KeyC(
-                        action =
-                            KeyAction.SendEvent(
-                                KeyEvent(
-                                    KeyEvent.ACTION_DOWN,
-                                    KeyEvent.KEYCODE_DPAD_LEFT,
-                                ),
-                            ),
-                        display = null,
+        left =
+            KeyC(
+                action =
+                    KeyAction.SendEvent(
+                        KeyEvent(
+                            KeyEvent.ACTION_DOWN,
+                            KeyEvent.KEYCODE_DPAD_LEFT,
+                        ),
                     ),
-                SwipeDirection.RIGHT to
-                    KeyC(
-                        action =
-                            KeyAction.SendEvent(
-                                KeyEvent(
-                                    KeyEvent.ACTION_DOWN,
-                                    KeyEvent.KEYCODE_DPAD_RIGHT,
-                                ),
-                            ),
-                        display = null,
+                display = null,
+            ),
+        right =
+            KeyC(
+                action =
+                    KeyAction.SendEvent(
+                        KeyEvent(
+                            KeyEvent.ACTION_DOWN,
+                            KeyEvent.KEYCODE_DPAD_RIGHT,
+                        ),
                     ),
-                SwipeDirection.TOP to
-                    KeyC(
-                        action = KeyAction.CommitText("'"),
-                        color = ColorVariant.MUTED,
-                    ),
-                SwipeDirection.BOTTOM to
-                    KeyC(
-                        action = KeyAction.CommitText(","),
-                        color = ColorVariant.MUTED,
-                    ),
+                display = null,
+            ),
+        top =
+            KeyC(
+                action = KeyAction.CommitText("'"),
+                color = ColorVariant.MUTED,
+            ),
+        bottom =
+            KeyC(
+                action = KeyAction.CommitText(","),
+                color = ColorVariant.MUTED,
             ),
         nextTapActions =
             listOf(
@@ -378,126 +362,117 @@ val SPACEBAR_TYPESPLIT_MIDDLE_KEY_ITEM =
 val SPACEBAR_TYPESPLIT_BOTTOM_KEY_ITEM =
     SPACEBAR_TYPESPLIT_MIDDLE_KEY_ITEM.copy(
         swipeType = SwipeNWay.EIGHT_WAY,
-        swipes =
-            mapOf(
-                SwipeDirection.LEFT to
-                    KeyC(
-                        action =
-                            KeyAction.SendEvent(
-                                KeyEvent(
-                                    KeyEvent.ACTION_DOWN,
-                                    KeyEvent.KEYCODE_DPAD_LEFT,
-                                ),
-                            ),
-                        display = null,
+        left =
+            KeyC(
+                action =
+                    KeyAction.SendEvent(
+                        KeyEvent(
+                            KeyEvent.ACTION_DOWN,
+                            KeyEvent.KEYCODE_DPAD_LEFT,
+                        ),
                     ),
-                SwipeDirection.RIGHT to
-                    KeyC(
-                        action =
-                            KeyAction.SendEvent(
-                                KeyEvent(
-                                    KeyEvent.ACTION_DOWN,
-                                    KeyEvent.KEYCODE_DPAD_RIGHT,
-                                ),
-                            ),
-                        display = null,
+                display = null,
+            ),
+        right =
+            KeyC(
+                action =
+                    KeyAction.SendEvent(
+                        KeyEvent(
+                            KeyEvent.ACTION_DOWN,
+                            KeyEvent.KEYCODE_DPAD_RIGHT,
+                        ),
                     ),
-                SwipeDirection.TOP to
-                    KeyC(
-                        action = KeyAction.CommitText("-"),
-                        color = ColorVariant.MUTED,
-                    ),
-                SwipeDirection.BOTTOM to
-                    KeyC(
-                        action = KeyAction.CommitText("."),
-                        color = ColorVariant.MUTED,
-                    ),
-                SwipeDirection.BOTTOM_LEFT to
-                    KeyC(
-                        action = KeyAction.CommitText("*"),
-                        color = ColorVariant.MUTED,
-                    ),
+                display = null,
+            ),
+        top =
+            KeyC(
+                action = KeyAction.CommitText("-"),
+                color = ColorVariant.MUTED,
+            ),
+        bottom =
+            KeyC(
+                action = KeyAction.CommitText("."),
+                color = ColorVariant.MUTED,
+            ),
+        bottomLeft =
+            KeyC(
+                action = KeyAction.CommitText("*"),
+                color = ColorVariant.MUTED,
             ),
     )
 
 val SPACEBAR_ALL_SYMBOLS =
     SPACEBAR_TYPESPLIT_MIDDLE_KEY_ITEM.copy(
-        swipes =
-            mapOf(
-                SwipeDirection.LEFT to
-                    KeyC(
-                        action = KeyAction.CommitText(","),
-                        color = ColorVariant.MUTED,
-                    ),
-                SwipeDirection.RIGHT to
-                    KeyC(
-                        action = KeyAction.CommitText("'"),
-                        color = ColorVariant.MUTED,
-                    ),
-                SwipeDirection.TOP to
-                    KeyC(
-                        action = KeyAction.CommitText("-"),
-                        color = ColorVariant.MUTED,
-                    ),
-                SwipeDirection.BOTTOM to
-                    KeyC(
-                        action = KeyAction.CommitText("."),
-                        color = ColorVariant.MUTED,
-                    ),
+        left =
+            KeyC(
+                action = KeyAction.CommitText(","),
+                color = ColorVariant.MUTED,
+            ),
+        right =
+            KeyC(
+                action = KeyAction.CommitText("'"),
+                color = ColorVariant.MUTED,
+            ),
+        top =
+            KeyC(
+                action = KeyAction.CommitText("-"),
+                color = ColorVariant.MUTED,
+            ),
+        bottom =
+            KeyC(
+                action = KeyAction.CommitText("."),
+                color = ColorVariant.MUTED,
             ),
     )
 val SPACEBAR_ALL_DIRECTIONS =
     SPACEBAR_TYPESPLIT_MIDDLE_KEY_ITEM.copy(
-        swipes =
-            mapOf(
-                SwipeDirection.LEFT to
-                    KeyC(
-                        display = KeyDisplay.TextDisplay("←"),
-                        action =
-                            KeyAction.SendEvent(
-                                KeyEvent(
-                                    KeyEvent.ACTION_DOWN,
-                                    KeyEvent.KEYCODE_DPAD_LEFT,
-                                ),
-                            ),
-                        color = ColorVariant.MUTED,
+        left =
+            KeyC(
+                display = KeyDisplay.TextDisplay("←"),
+                action =
+                    KeyAction.SendEvent(
+                        KeyEvent(
+                            KeyEvent.ACTION_DOWN,
+                            KeyEvent.KEYCODE_DPAD_LEFT,
+                        ),
                     ),
-                SwipeDirection.RIGHT to
-                    KeyC(
-                        display = KeyDisplay.TextDisplay("→"),
-                        action =
-                            KeyAction.SendEvent(
-                                KeyEvent(
-                                    KeyEvent.ACTION_DOWN,
-                                    KeyEvent.KEYCODE_DPAD_RIGHT,
-                                ),
-                            ),
-                        color = ColorVariant.MUTED,
+                color = ColorVariant.MUTED,
+            ),
+        right =
+            KeyC(
+                display = KeyDisplay.TextDisplay("→"),
+                action =
+                    KeyAction.SendEvent(
+                        KeyEvent(
+                            KeyEvent.ACTION_DOWN,
+                            KeyEvent.KEYCODE_DPAD_RIGHT,
+                        ),
                     ),
-                SwipeDirection.TOP to
-                    KeyC(
-                        display = KeyDisplay.TextDisplay("↑"),
-                        action =
-                            KeyAction.SendEvent(
-                                KeyEvent(
-                                    KeyEvent.ACTION_DOWN,
-                                    KeyEvent.KEYCODE_DPAD_UP,
-                                ),
-                            ),
-                        color = ColorVariant.MUTED,
+                color = ColorVariant.MUTED,
+            ),
+        top =
+            KeyC(
+                display = KeyDisplay.TextDisplay("↑"),
+                action =
+                    KeyAction.SendEvent(
+                        KeyEvent(
+                            KeyEvent.ACTION_DOWN,
+                            KeyEvent.KEYCODE_DPAD_UP,
+                        ),
                     ),
-                SwipeDirection.BOTTOM to
-                    KeyC(
-                        display = KeyDisplay.TextDisplay("↓"),
-                        action =
-                            KeyAction.SendEvent(
-                                KeyEvent(
-                                    KeyEvent.ACTION_DOWN,
-                                    KeyEvent.KEYCODE_DPAD_DOWN,
-                                ),
-                            ),
-                        color = ColorVariant.MUTED,
+                color = ColorVariant.MUTED,
+            ),
+        bottom =
+            KeyC(
+                display = KeyDisplay.TextDisplay("↓"),
+                action =
+                    KeyAction.SendEvent(
+                        KeyEvent(
+                            KeyEvent.ACTION_DOWN,
+                            KeyEvent.KEYCODE_DPAD_DOWN,
+                        ),
                     ),
+                color = ColorVariant.MUTED,
             ),
     )
 
@@ -519,55 +494,49 @@ val BACKSPACE_TYPESPLIT_KEY_ITEM =
             ),
         swipeType = SwipeNWay.FOUR_WAY_CROSS,
         slideType = SlideType.DELETE,
-        swipes =
-            mapOf(
-                SwipeDirection.LEFT to
-                    KeyC(
-                        action = KeyAction.DeleteWordBeforeCursor,
-                        display = null,
-                    ),
-                SwipeDirection.RIGHT to
-                    KeyC(
-                        action = KeyAction.DeleteWordAfterCursor,
-                        display = null,
-                    ),
-                SwipeDirection.TOP to
-                    KeyC(
-                        display = KeyDisplay.IconDisplay(Icons.Outlined.ArrowDropUp),
-                        action = KeyAction.ToggleShiftMode(true),
-                        color = ColorVariant.SECONDARY,
-                    ),
+        left =
+            KeyC(
+                action = KeyAction.DeleteWordBeforeCursor,
+                display = null,
+            ),
+        right =
+            KeyC(
+                action = KeyAction.DeleteWordAfterCursor,
+                display = null,
+            ),
+        top =
+            KeyC(
+                display = KeyDisplay.IconDisplay(Icons.Outlined.ArrowDropUp),
+                action = KeyAction.ToggleShiftMode(true),
+                color = ColorVariant.SECONDARY,
             ),
         widthMultiplier = 3,
         backgroundColor = ColorVariant.SURFACE_VARIANT,
     )
 val BACKSPACE_TYPESPLIT_SHIFTED_KEY_ITEM =
     BACKSPACE_TYPESPLIT_KEY_ITEM.copy(
-        swipes =
-            mapOf(
-                SwipeDirection.LEFT to
-                    KeyC(
-                        action = KeyAction.DeleteWordBeforeCursor,
-                        display = null,
-                    ),
-                SwipeDirection.RIGHT to
-                    KeyC(
-                        action = KeyAction.DeleteWordAfterCursor,
-                        display = null,
-                    ),
-                SwipeDirection.TOP to
-                    KeyC(
-                        display = KeyDisplay.IconDisplay(Icons.Outlined.KeyboardCapslock),
-                        capsModeDisplay = KeyDisplay.IconDisplay(Icons.Outlined.Copyright),
-                        action = KeyAction.ToggleCapsLock,
-                        color = ColorVariant.SECONDARY,
-                    ),
-                SwipeDirection.BOTTOM to
-                    KeyC(
-                        display = KeyDisplay.IconDisplay(Icons.Outlined.ArrowDropDown),
-                        action = KeyAction.ToggleShiftMode(false),
-                        color = ColorVariant.SECONDARY,
-                    ),
+        left =
+            KeyC(
+                action = KeyAction.DeleteWordBeforeCursor,
+                display = null,
+            ),
+        right =
+            KeyC(
+                action = KeyAction.DeleteWordAfterCursor,
+                display = null,
+            ),
+        top =
+            KeyC(
+                display = KeyDisplay.IconDisplay(Icons.Outlined.KeyboardCapslock),
+                capsModeDisplay = KeyDisplay.IconDisplay(Icons.Outlined.Copyright),
+                action = KeyAction.ToggleCapsLock,
+                color = ColorVariant.SECONDARY,
+            ),
+        bottom =
+            KeyC(
+                display = KeyDisplay.IconDisplay(Icons.Outlined.ArrowDropDown),
+                action = KeyAction.ToggleShiftMode(false),
+                color = ColorVariant.SECONDARY,
             ),
     )
 

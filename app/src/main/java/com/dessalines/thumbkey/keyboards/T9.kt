@@ -18,7 +18,6 @@ import com.dessalines.thumbkey.utils.KeyItemC
 import com.dessalines.thumbkey.utils.KeyboardC
 import com.dessalines.thumbkey.utils.KeyboardDefinition
 import com.dessalines.thumbkey.utils.KeyboardDefinitionModes
-import com.dessalines.thumbkey.utils.SwipeDirection
 
 val KB_T9_MAIN =
     KeyboardC(
@@ -31,33 +30,30 @@ val KB_T9_MAIN =
                             size = FontSizeVariant.LARGE,
                             color = ColorVariant.PRIMARY,
                         ),
-                    swipes =
-                        mapOf(
-                            SwipeDirection.TOP_LEFT to
-                                KeyC(
-                                    action = KeyAction.CommitText("$"),
-                                    color = ColorVariant.MUTED,
-                                ),
-                            SwipeDirection.TOP to
-                                KeyC(
-                                    action = KeyAction.CommitText("%"),
-                                    color = ColorVariant.MUTED,
-                                ),
-                            SwipeDirection.TOP_RIGHT to
-                                KeyC(
-                                    action = KeyAction.CommitText("&"),
-                                    color = ColorVariant.MUTED,
-                                ),
-                            SwipeDirection.BOTTOM_LEFT to
-                                KeyC(
-                                    action = KeyAction.CommitText("£"),
-                                    color = ColorVariant.MUTED,
-                                ),
-                            SwipeDirection.LEFT to
-                                KeyC(
-                                    action = KeyAction.CommitText("€"),
-                                    color = ColorVariant.MUTED,
-                                ),
+                    topLeft =
+                        KeyC(
+                            action = KeyAction.CommitText("$"),
+                            color = ColorVariant.MUTED,
+                        ),
+                    top =
+                        KeyC(
+                            action = KeyAction.CommitText("%"),
+                            color = ColorVariant.MUTED,
+                        ),
+                    topRight =
+                        KeyC(
+                            action = KeyAction.CommitText("&"),
+                            color = ColorVariant.MUTED,
+                        ),
+                    bottomLeft =
+                        KeyC(
+                            action = KeyAction.CommitText("£"),
+                            color = ColorVariant.MUTED,
+                        ),
+                    left =
+                        KeyC(
+                            action = KeyAction.CommitText("€"),
+                            color = ColorVariant.MUTED,
                         ),
                 ),
                 KeyItemC(
@@ -67,35 +63,32 @@ val KB_T9_MAIN =
                             size = FontSizeVariant.LARGE,
                             color = ColorVariant.PRIMARY,
                         ),
-                    swipes =
-                        mapOf(
-                            SwipeDirection.TOP_LEFT to
-                                KeyC(
-                                    action = KeyAction.CommitText("~"),
-                                    color = ColorVariant.MUTED,
-                                ),
-                            SwipeDirection.TOP to
-                                KeyC(
-                                    action = KeyAction.CommitText("`"),
-                                    color = ColorVariant.MUTED,
-                                ),
-                            SwipeDirection.TOP_RIGHT to
-                                KeyC(
-                                    action = KeyAction.CommitText("^"),
-                                    color = ColorVariant.MUTED,
-                                ),
-                            SwipeDirection.BOTTOM_RIGHT to
-                                KeyC(
-                                    action = KeyAction.CommitText("c"),
-                                ),
-                            SwipeDirection.BOTTOM to
-                                KeyC(
-                                    action = KeyAction.CommitText("b"),
-                                ),
-                            SwipeDirection.BOTTOM_LEFT to
-                                KeyC(
-                                    action = KeyAction.CommitText("a"),
-                                ),
+                    topLeft =
+                        KeyC(
+                            action = KeyAction.CommitText("~"),
+                            color = ColorVariant.MUTED,
+                        ),
+                    top =
+                        KeyC(
+                            action = KeyAction.CommitText("`"),
+                            color = ColorVariant.MUTED,
+                        ),
+                    topRight =
+                        KeyC(
+                            action = KeyAction.CommitText("^"),
+                            color = ColorVariant.MUTED,
+                        ),
+                    bottomRight =
+                        KeyC(
+                            action = KeyAction.CommitText("c"),
+                        ),
+                    bottom =
+                        KeyC(
+                            action = KeyAction.CommitText("b"),
+                        ),
+                    bottomLeft =
+                        KeyC(
+                            action = KeyAction.CommitText("a"),
                         ),
                 ),
                 KeyItemC(
@@ -105,40 +98,37 @@ val KB_T9_MAIN =
                             size = FontSizeVariant.LARGE,
                             color = ColorVariant.PRIMARY,
                         ),
-                    swipes =
-                        mapOf(
-                            SwipeDirection.TOP_LEFT to
-                                KeyC(
-                                    action = KeyAction.CommitText("@"),
-                                    color = ColorVariant.MUTED,
-                                ),
-                            SwipeDirection.TOP to
-                                KeyC(
-                                    action = KeyAction.CommitText(":"),
-                                    color = ColorVariant.MUTED,
-                                ),
-                            SwipeDirection.TOP_RIGHT to
-                                KeyC(
-                                    action = KeyAction.CommitText(";"),
-                                    color = ColorVariant.MUTED,
-                                ),
-                            SwipeDirection.BOTTOM_RIGHT to
-                                KeyC(
-                                    action = KeyAction.CommitText("f"),
-                                ),
-                            SwipeDirection.BOTTOM to
-                                KeyC(
-                                    action = KeyAction.CommitText("e"),
-                                ),
-                            SwipeDirection.BOTTOM_LEFT to
-                                KeyC(
-                                    action = KeyAction.CommitText("d"),
-                                ),
-                            SwipeDirection.LEFT to
-                                KeyC(
-                                    action = KeyAction.CommitText("#"),
-                                    color = ColorVariant.MUTED,
-                                ),
+                    topLeft =
+                        KeyC(
+                            action = KeyAction.CommitText("@"),
+                            color = ColorVariant.MUTED,
+                        ),
+                    top =
+                        KeyC(
+                            action = KeyAction.CommitText(":"),
+                            color = ColorVariant.MUTED,
+                        ),
+                    topRight =
+                        KeyC(
+                            action = KeyAction.CommitText(";"),
+                            color = ColorVariant.MUTED,
+                        ),
+                    bottomRight =
+                        KeyC(
+                            action = KeyAction.CommitText("f"),
+                        ),
+                    bottom =
+                        KeyC(
+                            action = KeyAction.CommitText("e"),
+                        ),
+                    bottomLeft =
+                        KeyC(
+                            action = KeyAction.CommitText("d"),
+                        ),
+                    left =
+                        KeyC(
+                            action = KeyAction.CommitText("#"),
+                            color = ColorVariant.MUTED,
                         ),
                 ),
                 KeyItemC(
@@ -148,48 +138,45 @@ val KB_T9_MAIN =
                             size = FontSizeVariant.LARGE,
                             color = ColorVariant.SECONDARY,
                         ),
-                    swipes =
-                        mapOf(
-                            SwipeDirection.TOP_LEFT to
-                                KeyC(
-                                    action = KeyAction.CommitText("/"),
-                                    color = ColorVariant.MUTED,
-                                ),
-                            SwipeDirection.TOP to
-                                KeyC(
-                                    action = KeyAction.CommitText("*"),
-                                    color = ColorVariant.MUTED,
-                                ),
-                            SwipeDirection.TOP_RIGHT to
-                                KeyC(
-                                    action = KeyAction.CommitText("\\"),
-                                    color = ColorVariant.MUTED,
-                                ),
-                            SwipeDirection.RIGHT to
-                                KeyC(
-                                    action = KeyAction.CommitText("="),
-                                    color = ColorVariant.MUTED,
-                                ),
-                            SwipeDirection.BOTTOM_RIGHT to
-                                KeyC(
-                                    action = KeyAction.CommitText(">"),
-                                    color = ColorVariant.MUTED,
-                                ),
-                            SwipeDirection.BOTTOM to
-                                KeyC(
-                                    action = KeyAction.CommitText("_"),
-                                    color = ColorVariant.MUTED,
-                                ),
-                            SwipeDirection.BOTTOM_LEFT to
-                                KeyC(
-                                    action = KeyAction.CommitText("<"),
-                                    color = ColorVariant.MUTED,
-                                ),
-                            SwipeDirection.LEFT to
-                                KeyC(
-                                    action = KeyAction.CommitText("+"),
-                                    color = ColorVariant.MUTED,
-                                ),
+                    topLeft =
+                        KeyC(
+                            action = KeyAction.CommitText("/"),
+                            color = ColorVariant.MUTED,
+                        ),
+                    top =
+                        KeyC(
+                            action = KeyAction.CommitText("*"),
+                            color = ColorVariant.MUTED,
+                        ),
+                    topRight =
+                        KeyC(
+                            action = KeyAction.CommitText("\\"),
+                            color = ColorVariant.MUTED,
+                        ),
+                    right =
+                        KeyC(
+                            action = KeyAction.CommitText("="),
+                            color = ColorVariant.MUTED,
+                        ),
+                    bottomRight =
+                        KeyC(
+                            action = KeyAction.CommitText(">"),
+                            color = ColorVariant.MUTED,
+                        ),
+                    bottom =
+                        KeyC(
+                            action = KeyAction.CommitText("_"),
+                            color = ColorVariant.MUTED,
+                        ),
+                    bottomLeft =
+                        KeyC(
+                            action = KeyAction.CommitText("<"),
+                            color = ColorVariant.MUTED,
+                        ),
+                    left =
+                        KeyC(
+                            action = KeyAction.CommitText("+"),
+                            color = ColorVariant.MUTED,
                         ),
                     backgroundColor = ColorVariant.SURFACE_VARIANT,
                 ),
@@ -202,20 +189,17 @@ val KB_T9_MAIN =
                             size = FontSizeVariant.LARGE,
                             color = ColorVariant.PRIMARY,
                         ),
-                    swipes =
-                        mapOf(
-                            SwipeDirection.BOTTOM_RIGHT to
-                                KeyC(
-                                    action = KeyAction.CommitText("i"),
-                                ),
-                            SwipeDirection.BOTTOM to
-                                KeyC(
-                                    action = KeyAction.CommitText("h"),
-                                ),
-                            SwipeDirection.BOTTOM_LEFT to
-                                KeyC(
-                                    action = KeyAction.CommitText("g"),
-                                ),
+                    bottomRight =
+                        KeyC(
+                            action = KeyAction.CommitText("i"),
+                        ),
+                    bottom =
+                        KeyC(
+                            action = KeyAction.CommitText("h"),
+                        ),
+                    bottomLeft =
+                        KeyC(
+                            action = KeyAction.CommitText("g"),
                         ),
                 ),
                 KeyItemC(
@@ -225,20 +209,17 @@ val KB_T9_MAIN =
                             size = FontSizeVariant.LARGE,
                             color = ColorVariant.PRIMARY,
                         ),
-                    swipes =
-                        mapOf(
-                            SwipeDirection.BOTTOM_RIGHT to
-                                KeyC(
-                                    action = KeyAction.CommitText("l"),
-                                ),
-                            SwipeDirection.BOTTOM to
-                                KeyC(
-                                    action = KeyAction.CommitText("k"),
-                                ),
-                            SwipeDirection.BOTTOM_LEFT to
-                                KeyC(
-                                    action = KeyAction.CommitText("j"),
-                                ),
+                    bottomRight =
+                        KeyC(
+                            action = KeyAction.CommitText("l"),
+                        ),
+                    bottom =
+                        KeyC(
+                            action = KeyAction.CommitText("k"),
+                        ),
+                    bottomLeft =
+                        KeyC(
+                            action = KeyAction.CommitText("j"),
                         ),
                 ),
                 KeyItemC(
@@ -248,20 +229,17 @@ val KB_T9_MAIN =
                             size = FontSizeVariant.LARGE,
                             color = ColorVariant.PRIMARY,
                         ),
-                    swipes =
-                        mapOf(
-                            SwipeDirection.BOTTOM_RIGHT to
-                                KeyC(
-                                    action = KeyAction.CommitText("o"),
-                                ),
-                            SwipeDirection.BOTTOM to
-                                KeyC(
-                                    action = KeyAction.CommitText("n"),
-                                ),
-                            SwipeDirection.BOTTOM_LEFT to
-                                KeyC(
-                                    action = KeyAction.CommitText("m"),
-                                ),
+                    bottomRight =
+                        KeyC(
+                            action = KeyAction.CommitText("o"),
+                        ),
+                    bottom =
+                        KeyC(
+                            action = KeyAction.CommitText("n"),
+                        ),
+                    bottomLeft =
+                        KeyC(
+                            action = KeyAction.CommitText("m"),
                         ),
                 ),
                 KeyItemC(
@@ -283,24 +261,21 @@ val KB_T9_MAIN =
                             size = FontSizeVariant.LARGE,
                             color = ColorVariant.PRIMARY,
                         ),
-                    swipes =
-                        mapOf(
-                            SwipeDirection.BOTTOM_RIGHT to
-                                KeyC(
-                                    action = KeyAction.CommitText("s"),
-                                ),
-                            SwipeDirection.BOTTOM to
-                                KeyC(
-                                    action = KeyAction.CommitText("r"),
-                                ),
-                            SwipeDirection.BOTTOM_LEFT to
-                                KeyC(
-                                    action = KeyAction.CommitText("q"),
-                                ),
-                            SwipeDirection.LEFT to
-                                KeyC(
-                                    action = KeyAction.CommitText("p"),
-                                ),
+                    bottomRight =
+                        KeyC(
+                            action = KeyAction.CommitText("s"),
+                        ),
+                    bottom =
+                        KeyC(
+                            action = KeyAction.CommitText("r"),
+                        ),
+                    bottomLeft =
+                        KeyC(
+                            action = KeyAction.CommitText("q"),
+                        ),
+                    left =
+                        KeyC(
+                            action = KeyAction.CommitText("p"),
                         ),
                 ),
                 KeyItemC(
@@ -310,20 +285,17 @@ val KB_T9_MAIN =
                             size = FontSizeVariant.LARGE,
                             color = ColorVariant.PRIMARY,
                         ),
-                    swipes =
-                        mapOf(
-                            SwipeDirection.BOTTOM_RIGHT to
-                                KeyC(
-                                    action = KeyAction.CommitText("v"),
-                                ),
-                            SwipeDirection.BOTTOM to
-                                KeyC(
-                                    action = KeyAction.CommitText("u"),
-                                ),
-                            SwipeDirection.BOTTOM_LEFT to
-                                KeyC(
-                                    action = KeyAction.CommitText("t"),
-                                ),
+                    bottomRight =
+                        KeyC(
+                            action = KeyAction.CommitText("v"),
+                        ),
+                    bottom =
+                        KeyC(
+                            action = KeyAction.CommitText("u"),
+                        ),
+                    bottomLeft =
+                        KeyC(
+                            action = KeyAction.CommitText("t"),
                         ),
                 ),
                 KeyItemC(
@@ -333,24 +305,21 @@ val KB_T9_MAIN =
                             size = FontSizeVariant.LARGE,
                             color = ColorVariant.PRIMARY,
                         ),
-                    swipes =
-                        mapOf(
-                            SwipeDirection.RIGHT to
-                                KeyC(
-                                    action = KeyAction.CommitText("z"),
-                                ),
-                            SwipeDirection.BOTTOM_RIGHT to
-                                KeyC(
-                                    action = KeyAction.CommitText("y"),
-                                ),
-                            SwipeDirection.BOTTOM to
-                                KeyC(
-                                    action = KeyAction.CommitText("x"),
-                                ),
-                            SwipeDirection.BOTTOM_LEFT to
-                                KeyC(
-                                    action = KeyAction.CommitText("w"),
-                                ),
+                    right =
+                        KeyC(
+                            action = KeyAction.CommitText("z"),
+                        ),
+                    bottomRight =
+                        KeyC(
+                            action = KeyAction.CommitText("y"),
+                        ),
+                    bottom =
+                        KeyC(
+                            action = KeyAction.CommitText("x"),
+                        ),
+                    bottomLeft =
+                        KeyC(
+                            action = KeyAction.CommitText("w"),
                         ),
                 ),
                 KeyItemC(
@@ -368,44 +337,41 @@ val KB_T9_MAIN =
                             size = FontSizeVariant.LARGE,
                             color = ColorVariant.SECONDARY,
                         ),
-                    swipes =
-                        mapOf(
-                            SwipeDirection.TOP_LEFT to
-                                KeyC(
-                                    display = KeyDisplay.IconDisplay(Icons.Outlined.SelectAll),
-                                    action = KeyAction.SelectAll,
-                                    color = ColorVariant.MUTED,
-                                ),
-                            SwipeDirection.TOP to
-                                KeyC(
-                                    display = KeyDisplay.IconDisplay(Icons.Outlined.ContentCopy),
-                                    action = KeyAction.Copy,
-                                    color = ColorVariant.MUTED,
-                                ),
-                            SwipeDirection.TOP_RIGHT to
-                                KeyC(
-                                    display = KeyDisplay.IconDisplay(Icons.Outlined.ContentCut),
-                                    action = KeyAction.Cut,
-                                    color = ColorVariant.MUTED,
-                                ),
-                            SwipeDirection.RIGHT to
-                                KeyC(
-                                    display = KeyDisplay.TextDisplay("⇥"),
-                                    action = KeyAction.DeleteWordAfterCursor,
-                                    color = ColorVariant.MUTED,
-                                ),
-                            SwipeDirection.BOTTOM to
-                                KeyC(
-                                    display = KeyDisplay.IconDisplay(Icons.Outlined.ContentPaste),
-                                    action = KeyAction.Paste,
-                                    color = ColorVariant.MUTED,
-                                ),
-                            SwipeDirection.LEFT to
-                                KeyC(
-                                    display = KeyDisplay.TextDisplay("⇤"),
-                                    action = KeyAction.DeleteWordBeforeCursor,
-                                    color = ColorVariant.MUTED,
-                                ),
+                    topLeft =
+                        KeyC(
+                            display = KeyDisplay.IconDisplay(Icons.Outlined.SelectAll),
+                            action = KeyAction.SelectAll,
+                            color = ColorVariant.MUTED,
+                        ),
+                    top =
+                        KeyC(
+                            display = KeyDisplay.IconDisplay(Icons.Outlined.ContentCopy),
+                            action = KeyAction.Copy,
+                            color = ColorVariant.MUTED,
+                        ),
+                    topRight =
+                        KeyC(
+                            display = KeyDisplay.IconDisplay(Icons.Outlined.ContentCut),
+                            action = KeyAction.Cut,
+                            color = ColorVariant.MUTED,
+                        ),
+                    right =
+                        KeyC(
+                            display = KeyDisplay.TextDisplay("⇥"),
+                            action = KeyAction.DeleteWordAfterCursor,
+                            color = ColorVariant.MUTED,
+                        ),
+                    bottom =
+                        KeyC(
+                            display = KeyDisplay.IconDisplay(Icons.Outlined.ContentPaste),
+                            action = KeyAction.Paste,
+                            color = ColorVariant.MUTED,
+                        ),
+                    left =
+                        KeyC(
+                            display = KeyDisplay.TextDisplay("⇤"),
+                            action = KeyAction.DeleteWordBeforeCursor,
+                            color = ColorVariant.MUTED,
                         ),
                     backgroundColor = ColorVariant.SURFACE_VARIANT,
                 ),
@@ -418,56 +384,53 @@ val KB_T9_MAIN =
                             action = KeyAction.CommitText(" "),
                             color = ColorVariant.SECONDARY,
                         ),
-                    swipes =
-                        mapOf(
-                            SwipeDirection.TOP to
-                                KeyC(
-                                    display = KeyDisplay.TextDisplay("↑"),
-                                    action =
-                                        KeyAction.SendEvent(
-                                            KeyEvent(
-                                                KeyEvent.ACTION_DOWN,
-                                                KeyEvent.KEYCODE_DPAD_UP,
-                                            ),
-                                        ),
-                                    color = ColorVariant.MUTED,
+                    top =
+                        KeyC(
+                            display = KeyDisplay.TextDisplay("↑"),
+                            action =
+                                KeyAction.SendEvent(
+                                    KeyEvent(
+                                        KeyEvent.ACTION_DOWN,
+                                        KeyEvent.KEYCODE_DPAD_UP,
+                                    ),
                                 ),
-                            SwipeDirection.RIGHT to
-                                KeyC(
-                                    display = KeyDisplay.TextDisplay("→"),
-                                    action =
-                                        KeyAction.SendEvent(
-                                            KeyEvent(
-                                                KeyEvent.ACTION_DOWN,
-                                                KeyEvent.KEYCODE_DPAD_RIGHT,
-                                            ),
-                                        ),
-                                    color = ColorVariant.MUTED,
+                            color = ColorVariant.MUTED,
+                        ),
+                    right =
+                        KeyC(
+                            display = KeyDisplay.TextDisplay("→"),
+                            action =
+                                KeyAction.SendEvent(
+                                    KeyEvent(
+                                        KeyEvent.ACTION_DOWN,
+                                        KeyEvent.KEYCODE_DPAD_RIGHT,
+                                    ),
                                 ),
-                            SwipeDirection.BOTTOM to
-                                KeyC(
-                                    display = KeyDisplay.TextDisplay("↓"),
-                                    action =
-                                        KeyAction.SendEvent(
-                                            KeyEvent(
-                                                KeyEvent.ACTION_DOWN,
-                                                KeyEvent.KEYCODE_DPAD_DOWN,
-                                            ),
-                                        ),
-                                    color = ColorVariant.MUTED,
+                            color = ColorVariant.MUTED,
+                        ),
+                    bottom =
+                        KeyC(
+                            display = KeyDisplay.TextDisplay("↓"),
+                            action =
+                                KeyAction.SendEvent(
+                                    KeyEvent(
+                                        KeyEvent.ACTION_DOWN,
+                                        KeyEvent.KEYCODE_DPAD_DOWN,
+                                    ),
                                 ),
-                            SwipeDirection.LEFT to
-                                KeyC(
-                                    display = KeyDisplay.TextDisplay("←"),
-                                    action =
-                                        KeyAction.SendEvent(
-                                            KeyEvent(
-                                                KeyEvent.ACTION_DOWN,
-                                                KeyEvent.KEYCODE_DPAD_LEFT,
-                                            ),
-                                        ),
-                                    color = ColorVariant.MUTED,
+                            color = ColorVariant.MUTED,
+                        ),
+                    left =
+                        KeyC(
+                            display = KeyDisplay.TextDisplay("←"),
+                            action =
+                                KeyAction.SendEvent(
+                                    KeyEvent(
+                                        KeyEvent.ACTION_DOWN,
+                                        KeyEvent.KEYCODE_DPAD_LEFT,
+                                    ),
                                 ),
+                            color = ColorVariant.MUTED,
                         ),
                     backgroundColor = ColorVariant.SURFACE_VARIANT,
                     nextTapActions =
@@ -487,43 +450,40 @@ val KB_T9_MAIN =
                             size = FontSizeVariant.LARGE,
                             color = ColorVariant.PRIMARY,
                         ),
-                    swipes =
-                        mapOf(
-                            SwipeDirection.TOP_LEFT to
-                                KeyC(
-                                    action = KeyAction.CommitText("{"),
-                                    color = ColorVariant.MUTED,
-                                ),
-                            SwipeDirection.TOP_RIGHT to
-                                KeyC(
-                                    action = KeyAction.CommitText("}"),
-                                    color = ColorVariant.MUTED,
-                                ),
-                            SwipeDirection.RIGHT to
-                                KeyC(
-                                    action = KeyAction.CommitText(")"),
-                                    color = ColorVariant.MUTED,
-                                ),
-                            SwipeDirection.BOTTOM_RIGHT to
-                                KeyC(
-                                    action = KeyAction.CommitText("]"),
-                                    color = ColorVariant.MUTED,
-                                ),
-                            SwipeDirection.BOTTOM to
-                                KeyC(
-                                    action = KeyAction.CommitText("|"),
-                                    color = ColorVariant.MUTED,
-                                ),
-                            SwipeDirection.BOTTOM_LEFT to
-                                KeyC(
-                                    action = KeyAction.CommitText("["),
-                                    color = ColorVariant.MUTED,
-                                ),
-                            SwipeDirection.LEFT to
-                                KeyC(
-                                    action = KeyAction.CommitText("("),
-                                    color = ColorVariant.MUTED,
-                                ),
+                    topLeft =
+                        KeyC(
+                            action = KeyAction.CommitText("{"),
+                            color = ColorVariant.MUTED,
+                        ),
+                    topRight =
+                        KeyC(
+                            action = KeyAction.CommitText("}"),
+                            color = ColorVariant.MUTED,
+                        ),
+                    right =
+                        KeyC(
+                            action = KeyAction.CommitText(")"),
+                            color = ColorVariant.MUTED,
+                        ),
+                    bottomRight =
+                        KeyC(
+                            action = KeyAction.CommitText("]"),
+                            color = ColorVariant.MUTED,
+                        ),
+                    bottom =
+                        KeyC(
+                            action = KeyAction.CommitText("|"),
+                            color = ColorVariant.MUTED,
+                        ),
+                    bottomLeft =
+                        KeyC(
+                            action = KeyAction.CommitText("["),
+                            color = ColorVariant.MUTED,
+                        ),
+                    left =
+                        KeyC(
+                            action = KeyAction.CommitText("("),
+                            color = ColorVariant.MUTED,
                         ),
                 ),
                 KeyItemC(
@@ -533,33 +493,30 @@ val KB_T9_MAIN =
                             size = FontSizeVariant.LARGE,
                             color = ColorVariant.SECONDARY,
                         ),
-                    swipes =
-                        mapOf(
-                            SwipeDirection.TOP_LEFT to
-                                KeyC(
-                                    action = KeyAction.CommitText("'"),
-                                    color = ColorVariant.MUTED,
-                                ),
-                            SwipeDirection.TOP_RIGHT to
-                                KeyC(
-                                    action = KeyAction.CommitText("\""),
-                                    color = ColorVariant.MUTED,
-                                ),
-                            SwipeDirection.BOTTOM_RIGHT to
-                                KeyC(
-                                    action = KeyAction.CommitText("?"),
-                                    color = ColorVariant.MUTED,
-                                ),
-                            SwipeDirection.BOTTOM to
-                                KeyC(
-                                    action = KeyAction.CommitText(","),
-                                    color = ColorVariant.MUTED,
-                                ),
-                            SwipeDirection.BOTTOM_LEFT to
-                                KeyC(
-                                    action = KeyAction.CommitText("!"),
-                                    color = ColorVariant.MUTED,
-                                ),
+                    topLeft =
+                        KeyC(
+                            action = KeyAction.CommitText("'"),
+                            color = ColorVariant.MUTED,
+                        ),
+                    topRight =
+                        KeyC(
+                            action = KeyAction.CommitText("\""),
+                            color = ColorVariant.MUTED,
+                        ),
+                    bottomRight =
+                        KeyC(
+                            action = KeyAction.CommitText("?"),
+                            color = ColorVariant.MUTED,
+                        ),
+                    bottom =
+                        KeyC(
+                            action = KeyAction.CommitText(","),
+                            color = ColorVariant.MUTED,
+                        ),
+                    bottomLeft =
+                        KeyC(
+                            action = KeyAction.CommitText("!"),
+                            color = ColorVariant.MUTED,
                         ),
                     backgroundColor = ColorVariant.SURFACE_VARIANT,
                 ),
@@ -571,26 +528,23 @@ val KB_T9_MAIN =
                             size = FontSizeVariant.LARGE,
                             color = ColorVariant.SECONDARY,
                         ),
-                    swipes =
-                        mapOf(
-                            SwipeDirection.TOP_RIGHT to
-                                KeyC(
-                                    display = KeyDisplay.IconDisplay(Icons.Outlined.Settings),
-                                    action = KeyAction.GotoSettings,
-                                    color = ColorVariant.MUTED,
-                                ),
-                            SwipeDirection.RIGHT to
-                                KeyC(
-                                    display = KeyDisplay.IconDisplay(Icons.Outlined.Language),
-                                    action = KeyAction.SwitchLanguage,
-                                    color = ColorVariant.MUTED,
-                                ),
-                            SwipeDirection.BOTTOM_RIGHT to
-                                KeyC(
-                                    display = KeyDisplay.TextDisplay("↔"),
-                                    action = KeyAction.SwitchPosition,
-                                    color = ColorVariant.MUTED,
-                                ),
+                    topRight =
+                        KeyC(
+                            display = KeyDisplay.IconDisplay(Icons.Outlined.Settings),
+                            action = KeyAction.GotoSettings,
+                            color = ColorVariant.MUTED,
+                        ),
+                    right =
+                        KeyC(
+                            display = KeyDisplay.IconDisplay(Icons.Outlined.Language),
+                            action = KeyAction.SwitchLanguage,
+                            color = ColorVariant.MUTED,
+                        ),
+                    bottomRight =
+                        KeyC(
+                            display = KeyDisplay.TextDisplay("↔"),
+                            action = KeyAction.SwitchPosition,
+                            color = ColorVariant.MUTED,
                         ),
                     backgroundColor = ColorVariant.SURFACE_VARIANT,
                 ),
@@ -609,33 +563,30 @@ val KB_T9_SHIFTED =
                             size = FontSizeVariant.LARGE,
                             color = ColorVariant.PRIMARY,
                         ),
-                    swipes =
-                        mapOf(
-                            SwipeDirection.TOP_LEFT to
-                                KeyC(
-                                    action = KeyAction.CommitText("$"),
-                                    color = ColorVariant.MUTED,
-                                ),
-                            SwipeDirection.TOP to
-                                KeyC(
-                                    action = KeyAction.CommitText("%"),
-                                    color = ColorVariant.MUTED,
-                                ),
-                            SwipeDirection.TOP_RIGHT to
-                                KeyC(
-                                    action = KeyAction.CommitText("&"),
-                                    color = ColorVariant.MUTED,
-                                ),
-                            SwipeDirection.BOTTOM_LEFT to
-                                KeyC(
-                                    action = KeyAction.CommitText("£"),
-                                    color = ColorVariant.MUTED,
-                                ),
-                            SwipeDirection.LEFT to
-                                KeyC(
-                                    action = KeyAction.CommitText("€"),
-                                    color = ColorVariant.MUTED,
-                                ),
+                    topLeft =
+                        KeyC(
+                            action = KeyAction.CommitText("$"),
+                            color = ColorVariant.MUTED,
+                        ),
+                    top =
+                        KeyC(
+                            action = KeyAction.CommitText("%"),
+                            color = ColorVariant.MUTED,
+                        ),
+                    topRight =
+                        KeyC(
+                            action = KeyAction.CommitText("&"),
+                            color = ColorVariant.MUTED,
+                        ),
+                    bottomLeft =
+                        KeyC(
+                            action = KeyAction.CommitText("£"),
+                            color = ColorVariant.MUTED,
+                        ),
+                    left =
+                        KeyC(
+                            action = KeyAction.CommitText("€"),
+                            color = ColorVariant.MUTED,
                         ),
                 ),
                 KeyItemC(
@@ -645,35 +596,32 @@ val KB_T9_SHIFTED =
                             size = FontSizeVariant.LARGE,
                             color = ColorVariant.PRIMARY,
                         ),
-                    swipes =
-                        mapOf(
-                            SwipeDirection.TOP_LEFT to
-                                KeyC(
-                                    action = KeyAction.CommitText("~"),
-                                    color = ColorVariant.MUTED,
-                                ),
-                            SwipeDirection.TOP to
-                                KeyC(
-                                    action = KeyAction.CommitText("`"),
-                                    color = ColorVariant.MUTED,
-                                ),
-                            SwipeDirection.TOP_RIGHT to
-                                KeyC(
-                                    action = KeyAction.CommitText("^"),
-                                    color = ColorVariant.MUTED,
-                                ),
-                            SwipeDirection.BOTTOM_RIGHT to
-                                KeyC(
-                                    action = KeyAction.CommitText("C"),
-                                ),
-                            SwipeDirection.BOTTOM to
-                                KeyC(
-                                    action = KeyAction.CommitText("B"),
-                                ),
-                            SwipeDirection.BOTTOM_LEFT to
-                                KeyC(
-                                    action = KeyAction.CommitText("A"),
-                                ),
+                    topLeft =
+                        KeyC(
+                            action = KeyAction.CommitText("~"),
+                            color = ColorVariant.MUTED,
+                        ),
+                    top =
+                        KeyC(
+                            action = KeyAction.CommitText("`"),
+                            color = ColorVariant.MUTED,
+                        ),
+                    topRight =
+                        KeyC(
+                            action = KeyAction.CommitText("^"),
+                            color = ColorVariant.MUTED,
+                        ),
+                    bottomRight =
+                        KeyC(
+                            action = KeyAction.CommitText("C"),
+                        ),
+                    bottom =
+                        KeyC(
+                            action = KeyAction.CommitText("B"),
+                        ),
+                    bottomLeft =
+                        KeyC(
+                            action = KeyAction.CommitText("A"),
                         ),
                 ),
                 KeyItemC(
@@ -683,40 +631,37 @@ val KB_T9_SHIFTED =
                             size = FontSizeVariant.LARGE,
                             color = ColorVariant.PRIMARY,
                         ),
-                    swipes =
-                        mapOf(
-                            SwipeDirection.TOP_LEFT to
-                                KeyC(
-                                    action = KeyAction.CommitText("@"),
-                                    color = ColorVariant.MUTED,
-                                ),
-                            SwipeDirection.TOP to
-                                KeyC(
-                                    action = KeyAction.CommitText(":"),
-                                    color = ColorVariant.MUTED,
-                                ),
-                            SwipeDirection.TOP_RIGHT to
-                                KeyC(
-                                    action = KeyAction.CommitText(";"),
-                                    color = ColorVariant.MUTED,
-                                ),
-                            SwipeDirection.BOTTOM_RIGHT to
-                                KeyC(
-                                    action = KeyAction.CommitText("F"),
-                                ),
-                            SwipeDirection.BOTTOM to
-                                KeyC(
-                                    action = KeyAction.CommitText("E"),
-                                ),
-                            SwipeDirection.BOTTOM_LEFT to
-                                KeyC(
-                                    action = KeyAction.CommitText("D"),
-                                ),
-                            SwipeDirection.LEFT to
-                                KeyC(
-                                    action = KeyAction.CommitText("#"),
-                                    color = ColorVariant.MUTED,
-                                ),
+                    topLeft =
+                        KeyC(
+                            action = KeyAction.CommitText("@"),
+                            color = ColorVariant.MUTED,
+                        ),
+                    top =
+                        KeyC(
+                            action = KeyAction.CommitText(":"),
+                            color = ColorVariant.MUTED,
+                        ),
+                    topRight =
+                        KeyC(
+                            action = KeyAction.CommitText(";"),
+                            color = ColorVariant.MUTED,
+                        ),
+                    bottomRight =
+                        KeyC(
+                            action = KeyAction.CommitText("F"),
+                        ),
+                    bottom =
+                        KeyC(
+                            action = KeyAction.CommitText("E"),
+                        ),
+                    bottomLeft =
+                        KeyC(
+                            action = KeyAction.CommitText("D"),
+                        ),
+                    left =
+                        KeyC(
+                            action = KeyAction.CommitText("#"),
+                            color = ColorVariant.MUTED,
                         ),
                 ),
                 KeyItemC(
@@ -726,48 +671,45 @@ val KB_T9_SHIFTED =
                             size = FontSizeVariant.LARGE,
                             color = ColorVariant.SECONDARY,
                         ),
-                    swipes =
-                        mapOf(
-                            SwipeDirection.TOP_LEFT to
-                                KeyC(
-                                    action = KeyAction.CommitText("/"),
-                                    color = ColorVariant.MUTED,
-                                ),
-                            SwipeDirection.TOP to
-                                KeyC(
-                                    action = KeyAction.CommitText("*"),
-                                    color = ColorVariant.MUTED,
-                                ),
-                            SwipeDirection.TOP_RIGHT to
-                                KeyC(
-                                    action = KeyAction.CommitText("\\"),
-                                    color = ColorVariant.MUTED,
-                                ),
-                            SwipeDirection.RIGHT to
-                                KeyC(
-                                    action = KeyAction.CommitText("="),
-                                    color = ColorVariant.MUTED,
-                                ),
-                            SwipeDirection.BOTTOM_RIGHT to
-                                KeyC(
-                                    action = KeyAction.CommitText(">"),
-                                    color = ColorVariant.MUTED,
-                                ),
-                            SwipeDirection.BOTTOM to
-                                KeyC(
-                                    action = KeyAction.CommitText("_"),
-                                    color = ColorVariant.MUTED,
-                                ),
-                            SwipeDirection.BOTTOM_LEFT to
-                                KeyC(
-                                    action = KeyAction.CommitText("<"),
-                                    color = ColorVariant.MUTED,
-                                ),
-                            SwipeDirection.LEFT to
-                                KeyC(
-                                    action = KeyAction.CommitText("+"),
-                                    color = ColorVariant.MUTED,
-                                ),
+                    topLeft =
+                        KeyC(
+                            action = KeyAction.CommitText("/"),
+                            color = ColorVariant.MUTED,
+                        ),
+                    top =
+                        KeyC(
+                            action = KeyAction.CommitText("*"),
+                            color = ColorVariant.MUTED,
+                        ),
+                    topRight =
+                        KeyC(
+                            action = KeyAction.CommitText("\\"),
+                            color = ColorVariant.MUTED,
+                        ),
+                    right =
+                        KeyC(
+                            action = KeyAction.CommitText("="),
+                            color = ColorVariant.MUTED,
+                        ),
+                    bottomRight =
+                        KeyC(
+                            action = KeyAction.CommitText(">"),
+                            color = ColorVariant.MUTED,
+                        ),
+                    bottom =
+                        KeyC(
+                            action = KeyAction.CommitText("_"),
+                            color = ColorVariant.MUTED,
+                        ),
+                    bottomLeft =
+                        KeyC(
+                            action = KeyAction.CommitText("<"),
+                            color = ColorVariant.MUTED,
+                        ),
+                    left =
+                        KeyC(
+                            action = KeyAction.CommitText("+"),
+                            color = ColorVariant.MUTED,
                         ),
                     backgroundColor = ColorVariant.SURFACE_VARIANT,
                 ),
@@ -780,20 +722,17 @@ val KB_T9_SHIFTED =
                             size = FontSizeVariant.LARGE,
                             color = ColorVariant.PRIMARY,
                         ),
-                    swipes =
-                        mapOf(
-                            SwipeDirection.BOTTOM_RIGHT to
-                                KeyC(
-                                    action = KeyAction.CommitText("I"),
-                                ),
-                            SwipeDirection.BOTTOM to
-                                KeyC(
-                                    action = KeyAction.CommitText("H"),
-                                ),
-                            SwipeDirection.BOTTOM_LEFT to
-                                KeyC(
-                                    action = KeyAction.CommitText("G"),
-                                ),
+                    bottomRight =
+                        KeyC(
+                            action = KeyAction.CommitText("I"),
+                        ),
+                    bottom =
+                        KeyC(
+                            action = KeyAction.CommitText("H"),
+                        ),
+                    bottomLeft =
+                        KeyC(
+                            action = KeyAction.CommitText("G"),
                         ),
                 ),
                 KeyItemC(
@@ -803,20 +742,17 @@ val KB_T9_SHIFTED =
                             size = FontSizeVariant.LARGE,
                             color = ColorVariant.PRIMARY,
                         ),
-                    swipes =
-                        mapOf(
-                            SwipeDirection.BOTTOM_RIGHT to
-                                KeyC(
-                                    action = KeyAction.CommitText("L"),
-                                ),
-                            SwipeDirection.BOTTOM to
-                                KeyC(
-                                    action = KeyAction.CommitText("K"),
-                                ),
-                            SwipeDirection.BOTTOM_LEFT to
-                                KeyC(
-                                    action = KeyAction.CommitText("J"),
-                                ),
+                    bottomRight =
+                        KeyC(
+                            action = KeyAction.CommitText("L"),
+                        ),
+                    bottom =
+                        KeyC(
+                            action = KeyAction.CommitText("K"),
+                        ),
+                    bottomLeft =
+                        KeyC(
+                            action = KeyAction.CommitText("J"),
                         ),
                 ),
                 KeyItemC(
@@ -826,20 +762,17 @@ val KB_T9_SHIFTED =
                             size = FontSizeVariant.LARGE,
                             color = ColorVariant.PRIMARY,
                         ),
-                    swipes =
-                        mapOf(
-                            SwipeDirection.BOTTOM_RIGHT to
-                                KeyC(
-                                    action = KeyAction.CommitText("O"),
-                                ),
-                            SwipeDirection.BOTTOM to
-                                KeyC(
-                                    action = KeyAction.CommitText("N"),
-                                ),
-                            SwipeDirection.BOTTOM_LEFT to
-                                KeyC(
-                                    action = KeyAction.CommitText("M"),
-                                ),
+                    bottomRight =
+                        KeyC(
+                            action = KeyAction.CommitText("O"),
+                        ),
+                    bottom =
+                        KeyC(
+                            action = KeyAction.CommitText("N"),
+                        ),
+                    bottomLeft =
+                        KeyC(
+                            action = KeyAction.CommitText("M"),
                         ),
                 ),
                 KeyItemC(
@@ -850,15 +783,12 @@ val KB_T9_SHIFTED =
                             size = FontSizeVariant.LARGE,
                             color = ColorVariant.SECONDARY,
                         ),
-                    swipes =
-                        mapOf(
-                            SwipeDirection.TOP to
-                                KeyC(
-                                    display = KeyDisplay.TextDisplay("⇪"),
-                                    capsModeDisplay = KeyDisplay.TextDisplay("⇧"),
-                                    action = KeyAction.ToggleCapsLock,
-                                    color = ColorVariant.MUTED,
-                                ),
+                    top =
+                        KeyC(
+                            display = KeyDisplay.TextDisplay("⇪"),
+                            capsModeDisplay = KeyDisplay.TextDisplay("⇧"),
+                            action = KeyAction.ToggleCapsLock,
+                            color = ColorVariant.MUTED,
                         ),
                     backgroundColor = ColorVariant.SURFACE_VARIANT,
                 ),
@@ -871,24 +801,21 @@ val KB_T9_SHIFTED =
                             size = FontSizeVariant.LARGE,
                             color = ColorVariant.PRIMARY,
                         ),
-                    swipes =
-                        mapOf(
-                            SwipeDirection.BOTTOM_RIGHT to
-                                KeyC(
-                                    action = KeyAction.CommitText("S"),
-                                ),
-                            SwipeDirection.BOTTOM to
-                                KeyC(
-                                    action = KeyAction.CommitText("R"),
-                                ),
-                            SwipeDirection.BOTTOM_LEFT to
-                                KeyC(
-                                    action = KeyAction.CommitText("Q"),
-                                ),
-                            SwipeDirection.LEFT to
-                                KeyC(
-                                    action = KeyAction.CommitText("P"),
-                                ),
+                    bottomRight =
+                        KeyC(
+                            action = KeyAction.CommitText("S"),
+                        ),
+                    bottom =
+                        KeyC(
+                            action = KeyAction.CommitText("R"),
+                        ),
+                    bottomLeft =
+                        KeyC(
+                            action = KeyAction.CommitText("Q"),
+                        ),
+                    left =
+                        KeyC(
+                            action = KeyAction.CommitText("P"),
                         ),
                 ),
                 KeyItemC(
@@ -898,20 +825,17 @@ val KB_T9_SHIFTED =
                             size = FontSizeVariant.LARGE,
                             color = ColorVariant.PRIMARY,
                         ),
-                    swipes =
-                        mapOf(
-                            SwipeDirection.BOTTOM_RIGHT to
-                                KeyC(
-                                    action = KeyAction.CommitText("V"),
-                                ),
-                            SwipeDirection.BOTTOM to
-                                KeyC(
-                                    action = KeyAction.CommitText("U"),
-                                ),
-                            SwipeDirection.BOTTOM_LEFT to
-                                KeyC(
-                                    action = KeyAction.CommitText("T"),
-                                ),
+                    bottomRight =
+                        KeyC(
+                            action = KeyAction.CommitText("V"),
+                        ),
+                    bottom =
+                        KeyC(
+                            action = KeyAction.CommitText("U"),
+                        ),
+                    bottomLeft =
+                        KeyC(
+                            action = KeyAction.CommitText("T"),
                         ),
                 ),
                 KeyItemC(
@@ -921,24 +845,21 @@ val KB_T9_SHIFTED =
                             size = FontSizeVariant.LARGE,
                             color = ColorVariant.PRIMARY,
                         ),
-                    swipes =
-                        mapOf(
-                            SwipeDirection.RIGHT to
-                                KeyC(
-                                    action = KeyAction.CommitText("Z"),
-                                ),
-                            SwipeDirection.BOTTOM_RIGHT to
-                                KeyC(
-                                    action = KeyAction.CommitText("Y"),
-                                ),
-                            SwipeDirection.BOTTOM to
-                                KeyC(
-                                    action = KeyAction.CommitText("X"),
-                                ),
-                            SwipeDirection.BOTTOM_LEFT to
-                                KeyC(
-                                    action = KeyAction.CommitText("W"),
-                                ),
+                    right =
+                        KeyC(
+                            action = KeyAction.CommitText("Z"),
+                        ),
+                    bottomRight =
+                        KeyC(
+                            action = KeyAction.CommitText("Y"),
+                        ),
+                    bottom =
+                        KeyC(
+                            action = KeyAction.CommitText("X"),
+                        ),
+                    bottomLeft =
+                        KeyC(
+                            action = KeyAction.CommitText("W"),
                         ),
                 ),
                 KeyItemC(
@@ -956,44 +877,41 @@ val KB_T9_SHIFTED =
                             size = FontSizeVariant.LARGE,
                             color = ColorVariant.SECONDARY,
                         ),
-                    swipes =
-                        mapOf(
-                            SwipeDirection.TOP_LEFT to
-                                KeyC(
-                                    display = KeyDisplay.IconDisplay(Icons.Outlined.SelectAll),
-                                    action = KeyAction.SelectAll,
-                                    color = ColorVariant.MUTED,
-                                ),
-                            SwipeDirection.TOP to
-                                KeyC(
-                                    display = KeyDisplay.IconDisplay(Icons.Outlined.ContentCopy),
-                                    action = KeyAction.Copy,
-                                    color = ColorVariant.MUTED,
-                                ),
-                            SwipeDirection.TOP_RIGHT to
-                                KeyC(
-                                    display = KeyDisplay.IconDisplay(Icons.Outlined.ContentCut),
-                                    action = KeyAction.Cut,
-                                    color = ColorVariant.MUTED,
-                                ),
-                            SwipeDirection.RIGHT to
-                                KeyC(
-                                    display = KeyDisplay.TextDisplay("⇥"),
-                                    action = KeyAction.DeleteWordAfterCursor,
-                                    color = ColorVariant.MUTED,
-                                ),
-                            SwipeDirection.BOTTOM to
-                                KeyC(
-                                    display = KeyDisplay.IconDisplay(Icons.Outlined.ContentPaste),
-                                    action = KeyAction.Paste,
-                                    color = ColorVariant.MUTED,
-                                ),
-                            SwipeDirection.LEFT to
-                                KeyC(
-                                    display = KeyDisplay.TextDisplay("⇤"),
-                                    action = KeyAction.DeleteWordBeforeCursor,
-                                    color = ColorVariant.MUTED,
-                                ),
+                    topLeft =
+                        KeyC(
+                            display = KeyDisplay.IconDisplay(Icons.Outlined.SelectAll),
+                            action = KeyAction.SelectAll,
+                            color = ColorVariant.MUTED,
+                        ),
+                    top =
+                        KeyC(
+                            display = KeyDisplay.IconDisplay(Icons.Outlined.ContentCopy),
+                            action = KeyAction.Copy,
+                            color = ColorVariant.MUTED,
+                        ),
+                    topRight =
+                        KeyC(
+                            display = KeyDisplay.IconDisplay(Icons.Outlined.ContentCut),
+                            action = KeyAction.Cut,
+                            color = ColorVariant.MUTED,
+                        ),
+                    right =
+                        KeyC(
+                            display = KeyDisplay.TextDisplay("⇥"),
+                            action = KeyAction.DeleteWordAfterCursor,
+                            color = ColorVariant.MUTED,
+                        ),
+                    bottom =
+                        KeyC(
+                            display = KeyDisplay.IconDisplay(Icons.Outlined.ContentPaste),
+                            action = KeyAction.Paste,
+                            color = ColorVariant.MUTED,
+                        ),
+                    left =
+                        KeyC(
+                            display = KeyDisplay.TextDisplay("⇤"),
+                            action = KeyAction.DeleteWordBeforeCursor,
+                            color = ColorVariant.MUTED,
                         ),
                     backgroundColor = ColorVariant.SURFACE_VARIANT,
                 ),
@@ -1006,56 +924,53 @@ val KB_T9_SHIFTED =
                             action = KeyAction.CommitText(" "),
                             color = ColorVariant.SECONDARY,
                         ),
-                    swipes =
-                        mapOf(
-                            SwipeDirection.TOP to
-                                KeyC(
-                                    display = KeyDisplay.TextDisplay("↑"),
-                                    action =
-                                        KeyAction.SendEvent(
-                                            KeyEvent(
-                                                KeyEvent.ACTION_DOWN,
-                                                KeyEvent.KEYCODE_DPAD_UP,
-                                            ),
-                                        ),
-                                    color = ColorVariant.MUTED,
+                    top =
+                        KeyC(
+                            display = KeyDisplay.TextDisplay("↑"),
+                            action =
+                                KeyAction.SendEvent(
+                                    KeyEvent(
+                                        KeyEvent.ACTION_DOWN,
+                                        KeyEvent.KEYCODE_DPAD_UP,
+                                    ),
                                 ),
-                            SwipeDirection.RIGHT to
-                                KeyC(
-                                    display = KeyDisplay.TextDisplay("→"),
-                                    action =
-                                        KeyAction.SendEvent(
-                                            KeyEvent(
-                                                KeyEvent.ACTION_DOWN,
-                                                KeyEvent.KEYCODE_DPAD_RIGHT,
-                                            ),
-                                        ),
-                                    color = ColorVariant.MUTED,
+                            color = ColorVariant.MUTED,
+                        ),
+                    right =
+                        KeyC(
+                            display = KeyDisplay.TextDisplay("→"),
+                            action =
+                                KeyAction.SendEvent(
+                                    KeyEvent(
+                                        KeyEvent.ACTION_DOWN,
+                                        KeyEvent.KEYCODE_DPAD_RIGHT,
+                                    ),
                                 ),
-                            SwipeDirection.BOTTOM to
-                                KeyC(
-                                    display = KeyDisplay.TextDisplay("↓"),
-                                    action =
-                                        KeyAction.SendEvent(
-                                            KeyEvent(
-                                                KeyEvent.ACTION_DOWN,
-                                                KeyEvent.KEYCODE_DPAD_DOWN,
-                                            ),
-                                        ),
-                                    color = ColorVariant.MUTED,
+                            color = ColorVariant.MUTED,
+                        ),
+                    bottom =
+                        KeyC(
+                            display = KeyDisplay.TextDisplay("↓"),
+                            action =
+                                KeyAction.SendEvent(
+                                    KeyEvent(
+                                        KeyEvent.ACTION_DOWN,
+                                        KeyEvent.KEYCODE_DPAD_DOWN,
+                                    ),
                                 ),
-                            SwipeDirection.LEFT to
-                                KeyC(
-                                    display = KeyDisplay.TextDisplay("←"),
-                                    action =
-                                        KeyAction.SendEvent(
-                                            KeyEvent(
-                                                KeyEvent.ACTION_DOWN,
-                                                KeyEvent.KEYCODE_DPAD_LEFT,
-                                            ),
-                                        ),
-                                    color = ColorVariant.MUTED,
+                            color = ColorVariant.MUTED,
+                        ),
+                    left =
+                        KeyC(
+                            display = KeyDisplay.TextDisplay("←"),
+                            action =
+                                KeyAction.SendEvent(
+                                    KeyEvent(
+                                        KeyEvent.ACTION_DOWN,
+                                        KeyEvent.KEYCODE_DPAD_LEFT,
+                                    ),
                                 ),
+                            color = ColorVariant.MUTED,
                         ),
                     backgroundColor = ColorVariant.SURFACE_VARIANT,
                     nextTapActions =
@@ -1075,43 +990,40 @@ val KB_T9_SHIFTED =
                             size = FontSizeVariant.LARGE,
                             color = ColorVariant.PRIMARY,
                         ),
-                    swipes =
-                        mapOf(
-                            SwipeDirection.TOP_LEFT to
-                                KeyC(
-                                    action = KeyAction.CommitText("{"),
-                                    color = ColorVariant.MUTED,
-                                ),
-                            SwipeDirection.TOP_RIGHT to
-                                KeyC(
-                                    action = KeyAction.CommitText("}"),
-                                    color = ColorVariant.MUTED,
-                                ),
-                            SwipeDirection.RIGHT to
-                                KeyC(
-                                    action = KeyAction.CommitText(")"),
-                                    color = ColorVariant.MUTED,
-                                ),
-                            SwipeDirection.BOTTOM_RIGHT to
-                                KeyC(
-                                    action = KeyAction.CommitText("]"),
-                                    color = ColorVariant.MUTED,
-                                ),
-                            SwipeDirection.BOTTOM to
-                                KeyC(
-                                    action = KeyAction.CommitText("|"),
-                                    color = ColorVariant.MUTED,
-                                ),
-                            SwipeDirection.BOTTOM_LEFT to
-                                KeyC(
-                                    action = KeyAction.CommitText("["),
-                                    color = ColorVariant.MUTED,
-                                ),
-                            SwipeDirection.LEFT to
-                                KeyC(
-                                    action = KeyAction.CommitText("("),
-                                    color = ColorVariant.MUTED,
-                                ),
+                    topLeft =
+                        KeyC(
+                            action = KeyAction.CommitText("{"),
+                            color = ColorVariant.MUTED,
+                        ),
+                    topRight =
+                        KeyC(
+                            action = KeyAction.CommitText("}"),
+                            color = ColorVariant.MUTED,
+                        ),
+                    right =
+                        KeyC(
+                            action = KeyAction.CommitText(")"),
+                            color = ColorVariant.MUTED,
+                        ),
+                    bottomRight =
+                        KeyC(
+                            action = KeyAction.CommitText("]"),
+                            color = ColorVariant.MUTED,
+                        ),
+                    bottom =
+                        KeyC(
+                            action = KeyAction.CommitText("|"),
+                            color = ColorVariant.MUTED,
+                        ),
+                    bottomLeft =
+                        KeyC(
+                            action = KeyAction.CommitText("["),
+                            color = ColorVariant.MUTED,
+                        ),
+                    left =
+                        KeyC(
+                            action = KeyAction.CommitText("("),
+                            color = ColorVariant.MUTED,
                         ),
                 ),
                 KeyItemC(
@@ -1121,33 +1033,30 @@ val KB_T9_SHIFTED =
                             size = FontSizeVariant.LARGE,
                             color = ColorVariant.SECONDARY,
                         ),
-                    swipes =
-                        mapOf(
-                            SwipeDirection.TOP_LEFT to
-                                KeyC(
-                                    action = KeyAction.CommitText("'"),
-                                    color = ColorVariant.MUTED,
-                                ),
-                            SwipeDirection.TOP_RIGHT to
-                                KeyC(
-                                    action = KeyAction.CommitText("\""),
-                                    color = ColorVariant.MUTED,
-                                ),
-                            SwipeDirection.BOTTOM_RIGHT to
-                                KeyC(
-                                    action = KeyAction.CommitText("?"),
-                                    color = ColorVariant.MUTED,
-                                ),
-                            SwipeDirection.BOTTOM to
-                                KeyC(
-                                    action = KeyAction.CommitText(","),
-                                    color = ColorVariant.MUTED,
-                                ),
-                            SwipeDirection.BOTTOM_LEFT to
-                                KeyC(
-                                    action = KeyAction.CommitText("!"),
-                                    color = ColorVariant.MUTED,
-                                ),
+                    topLeft =
+                        KeyC(
+                            action = KeyAction.CommitText("'"),
+                            color = ColorVariant.MUTED,
+                        ),
+                    topRight =
+                        KeyC(
+                            action = KeyAction.CommitText("\""),
+                            color = ColorVariant.MUTED,
+                        ),
+                    bottomRight =
+                        KeyC(
+                            action = KeyAction.CommitText("?"),
+                            color = ColorVariant.MUTED,
+                        ),
+                    bottom =
+                        KeyC(
+                            action = KeyAction.CommitText(","),
+                            color = ColorVariant.MUTED,
+                        ),
+                    bottomLeft =
+                        KeyC(
+                            action = KeyAction.CommitText("!"),
+                            color = ColorVariant.MUTED,
                         ),
                     backgroundColor = ColorVariant.SURFACE_VARIANT,
                 ),
@@ -1159,26 +1068,23 @@ val KB_T9_SHIFTED =
                             size = FontSizeVariant.LARGE,
                             color = ColorVariant.SECONDARY,
                         ),
-                    swipes =
-                        mapOf(
-                            SwipeDirection.TOP_RIGHT to
-                                KeyC(
-                                    display = KeyDisplay.IconDisplay(Icons.Outlined.Settings),
-                                    action = KeyAction.GotoSettings,
-                                    color = ColorVariant.MUTED,
-                                ),
-                            SwipeDirection.RIGHT to
-                                KeyC(
-                                    display = KeyDisplay.IconDisplay(Icons.Outlined.Language),
-                                    action = KeyAction.SwitchLanguage,
-                                    color = ColorVariant.MUTED,
-                                ),
-                            SwipeDirection.BOTTOM_RIGHT to
-                                KeyC(
-                                    display = KeyDisplay.TextDisplay("↔"),
-                                    action = KeyAction.SwitchPosition,
-                                    color = ColorVariant.MUTED,
-                                ),
+                    topRight =
+                        KeyC(
+                            display = KeyDisplay.IconDisplay(Icons.Outlined.Settings),
+                            action = KeyAction.GotoSettings,
+                            color = ColorVariant.MUTED,
+                        ),
+                    right =
+                        KeyC(
+                            display = KeyDisplay.IconDisplay(Icons.Outlined.Language),
+                            action = KeyAction.SwitchLanguage,
+                            color = ColorVariant.MUTED,
+                        ),
+                    bottomRight =
+                        KeyC(
+                            display = KeyDisplay.TextDisplay("↔"),
+                            action = KeyAction.SwitchPosition,
+                            color = ColorVariant.MUTED,
                         ),
                     backgroundColor = ColorVariant.SURFACE_VARIANT,
                 ),

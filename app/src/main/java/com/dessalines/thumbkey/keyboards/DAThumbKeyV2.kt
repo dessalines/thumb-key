@@ -14,7 +14,6 @@ import com.dessalines.thumbkey.utils.KeyItemC
 import com.dessalines.thumbkey.utils.KeyboardC
 import com.dessalines.thumbkey.utils.KeyboardDefinition
 import com.dessalines.thumbkey.utils.KeyboardDefinitionModes
-import com.dessalines.thumbkey.utils.SwipeDirection
 import com.dessalines.thumbkey.utils.SwipeNWay
 
 val KB_DA_THUMBKEY_MAIN =
@@ -29,16 +28,13 @@ val KB_DA_THUMBKEY_MAIN =
                             color = ColorVariant.PRIMARY,
                         ),
                     swipeType = SwipeNWay.FOUR_WAY_DIAGONAL,
-                    swipes =
-                        mapOf(
-                            SwipeDirection.BOTTOM_RIGHT to
-                                KeyC(
-                                    action = KeyAction.CommitText("v"),
-                                ),
-                            SwipeDirection.TOP_LEFT to
-                                KeyC(
-                                    action = KeyAction.CommitText("w"),
-                                ),
+                    bottomRight =
+                        KeyC(
+                            action = KeyAction.CommitText("v"),
+                        ),
+                    topLeft =
+                        KeyC(
+                            action = KeyAction.CommitText("w"),
                         ),
                 ),
                 KeyItemC(
@@ -49,12 +45,9 @@ val KB_DA_THUMBKEY_MAIN =
                             color = ColorVariant.PRIMARY,
                         ),
                     swipeType = SwipeNWay.TWO_WAY_VERTICAL,
-                    swipes =
-                        mapOf(
-                            SwipeDirection.BOTTOM to
-                                KeyC(
-                                    action = KeyAction.CommitText("f"),
-                                ),
+                    bottom =
+                        KeyC(
+                            action = KeyAction.CommitText("f"),
                         ),
                 ),
                 KeyItemC(
@@ -65,16 +58,13 @@ val KB_DA_THUMBKEY_MAIN =
                             color = ColorVariant.PRIMARY,
                         ),
                     swipeType = SwipeNWay.FOUR_WAY_DIAGONAL,
-                    swipes =
-                        mapOf(
-                            SwipeDirection.BOTTOM_LEFT to
-                                KeyC(
-                                    action = KeyAction.CommitText("h"),
-                                ),
-                            SwipeDirection.TOP_RIGHT to
-                                KeyC(
-                                    action = KeyAction.CommitText("y"),
-                                ),
+                    bottomLeft =
+                        KeyC(
+                            action = KeyAction.CommitText("h"),
+                        ),
+                    topRight =
+                        KeyC(
+                            action = KeyAction.CommitText("y"),
                         ),
                 ),
                 EMOJI_KEY_ITEM,
@@ -88,12 +78,9 @@ val KB_DA_THUMBKEY_MAIN =
                             color = ColorVariant.PRIMARY,
                         ),
                     swipeType = SwipeNWay.TWO_WAY_HORIZONTAL,
-                    swipes =
-                        mapOf(
-                            SwipeDirection.RIGHT to
-                                KeyC(
-                                    action = KeyAction.CommitText("m"),
-                                ),
+                    right =
+                        KeyC(
+                            action = KeyAction.CommitText("m"),
                         ),
                 ),
                 KeyItemC(
@@ -103,40 +90,37 @@ val KB_DA_THUMBKEY_MAIN =
                             size = FontSizeVariant.LARGE,
                             color = ColorVariant.PRIMARY,
                         ),
-                    swipes =
-                        mapOf(
-                            SwipeDirection.TOP_LEFT to
-                                KeyC(
-                                    action = KeyAction.CommitText("q"),
-                                ),
-                            SwipeDirection.TOP to
-                                KeyC(
-                                    action = KeyAction.CommitText("x"),
-                                ),
-                            SwipeDirection.TOP_RIGHT to
-                                KeyC(
-                                    action = KeyAction.CommitText("æ"),
-                                ),
-                            SwipeDirection.RIGHT to
-                                KeyC(
-                                    action = KeyAction.CommitText("ø"),
-                                ),
-                            SwipeDirection.BOTTOM_RIGHT to
-                                KeyC(
-                                    action = KeyAction.CommitText("å"),
-                                ),
-                            SwipeDirection.BOTTOM to
-                                KeyC(
-                                    action = KeyAction.CommitText("l"),
-                                ),
-                            SwipeDirection.BOTTOM_LEFT to
-                                KeyC(
-                                    action = KeyAction.CommitText("b"),
-                                ),
-                            SwipeDirection.LEFT to
-                                KeyC(
-                                    action = KeyAction.CommitText("p"),
-                                ),
+                    topLeft =
+                        KeyC(
+                            action = KeyAction.CommitText("q"),
+                        ),
+                    top =
+                        KeyC(
+                            action = KeyAction.CommitText("x"),
+                        ),
+                    topRight =
+                        KeyC(
+                            action = KeyAction.CommitText("æ"),
+                        ),
+                    right =
+                        KeyC(
+                            action = KeyAction.CommitText("ø"),
+                        ),
+                    bottomRight =
+                        KeyC(
+                            action = KeyAction.CommitText("å"),
+                        ),
+                    bottom =
+                        KeyC(
+                            action = KeyAction.CommitText("l"),
+                        ),
+                    bottomLeft =
+                        KeyC(
+                            action = KeyAction.CommitText("b"),
+                        ),
+                    left =
+                        KeyC(
+                            action = KeyAction.CommitText("p"),
                         ),
                 ),
                 KeyItemC(
@@ -147,24 +131,21 @@ val KB_DA_THUMBKEY_MAIN =
                             color = ColorVariant.PRIMARY,
                         ),
                     swipeType = SwipeNWay.FOUR_WAY_CROSS,
-                    swipes =
-                        mapOf(
-                            SwipeDirection.LEFT to
-                                KeyC(
-                                    action = KeyAction.CommitText("u"),
-                                ),
-                            SwipeDirection.TOP to
-                                KeyC(
-                                    display = KeyDisplay.IconDisplay(Icons.Outlined.ArrowDropUp),
-                                    action = KeyAction.ToggleShiftMode(true),
-                                    swipeReturnAction = KeyAction.ToggleCurrentWordCapitalization(true),
-                                    color = ColorVariant.MUTED,
-                                ),
-                            SwipeDirection.BOTTOM to
-                                KeyC(
-                                    action = KeyAction.ToggleShiftMode(false),
-                                    swipeReturnAction = KeyAction.ToggleCurrentWordCapitalization(false),
-                                ),
+                    left =
+                        KeyC(
+                            action = KeyAction.CommitText("u"),
+                        ),
+                    top =
+                        KeyC(
+                            display = KeyDisplay.IconDisplay(Icons.Outlined.ArrowDropUp),
+                            action = KeyAction.ToggleShiftMode(true),
+                            swipeReturnAction = KeyAction.ToggleCurrentWordCapitalization(true),
+                            color = ColorVariant.MUTED,
+                        ),
+                    bottom =
+                        KeyC(
+                            action = KeyAction.ToggleShiftMode(false),
+                            swipeReturnAction = KeyAction.ToggleCurrentWordCapitalization(false),
                         ),
                 ),
                 NUMERIC_KEY_ITEM,
@@ -178,16 +159,13 @@ val KB_DA_THUMBKEY_MAIN =
                             color = ColorVariant.PRIMARY,
                         ),
                     swipeType = SwipeNWay.FOUR_WAY_DIAGONAL,
-                    swipes =
-                        mapOf(
-                            SwipeDirection.TOP_RIGHT to
-                                KeyC(
-                                    action = KeyAction.CommitText("g"),
-                                ),
-                            SwipeDirection.BOTTOM_LEFT to
-                                KeyC(
-                                    action = KeyAction.CommitText("z"),
-                                ),
+                    topRight =
+                        KeyC(
+                            action = KeyAction.CommitText("g"),
+                        ),
+                    bottomLeft =
+                        KeyC(
+                            action = KeyAction.CommitText("z"),
                         ),
                 ),
                 KeyItemC(
@@ -197,36 +175,33 @@ val KB_DA_THUMBKEY_MAIN =
                             size = FontSizeVariant.LARGE,
                             color = ColorVariant.PRIMARY,
                         ),
-                    swipes =
-                        mapOf(
-                            SwipeDirection.TOP to
-                                KeyC(
-                                    action = KeyAction.CommitText("k"),
-                                ),
-                            SwipeDirection.TOP_RIGHT to
-                                KeyC(
-                                    action = KeyAction.CommitText("c"),
-                                    color = ColorVariant.MUTED,
-                                ),
-                            SwipeDirection.RIGHT to
-                                KeyC(
-                                    action = KeyAction.CommitText("'"),
-                                ),
-                            SwipeDirection.BOTTOM_RIGHT to
-                                KeyC(
-                                    action = KeyAction.CommitText("-"),
-                                    color = ColorVariant.MUTED,
-                                ),
-                            SwipeDirection.BOTTOM to
-                                KeyC(
-                                    action = KeyAction.CommitText("."),
-                                    color = ColorVariant.MUTED,
-                                ),
-                            SwipeDirection.BOTTOM_LEFT to
-                                KeyC(
-                                    action = KeyAction.CommitText(","),
-                                    color = ColorVariant.MUTED,
-                                ),
+                    top =
+                        KeyC(
+                            action = KeyAction.CommitText("k"),
+                        ),
+                    topRight =
+                        KeyC(
+                            action = KeyAction.CommitText("c"),
+                            color = ColorVariant.MUTED,
+                        ),
+                    right =
+                        KeyC(
+                            action = KeyAction.CommitText("'"),
+                        ),
+                    bottomRight =
+                        KeyC(
+                            action = KeyAction.CommitText("-"),
+                            color = ColorVariant.MUTED,
+                        ),
+                    bottom =
+                        KeyC(
+                            action = KeyAction.CommitText("."),
+                            color = ColorVariant.MUTED,
+                        ),
+                    bottomLeft =
+                        KeyC(
+                            action = KeyAction.CommitText(","),
+                            color = ColorVariant.MUTED,
                         ),
                 ),
                 KeyItemC(
@@ -237,12 +212,9 @@ val KB_DA_THUMBKEY_MAIN =
                             color = ColorVariant.PRIMARY,
                         ),
                     swipeType = SwipeNWay.FOUR_WAY_DIAGONAL,
-                    swipes =
-                        mapOf(
-                            SwipeDirection.TOP_LEFT to
-                                KeyC(
-                                    action = KeyAction.CommitText("o"),
-                                ),
+                    topLeft =
+                        KeyC(
+                            action = KeyAction.CommitText("o"),
                         ),
                 ),
                 BACKSPACE_KEY_ITEM,
@@ -266,16 +238,13 @@ val KB_DA_THUMBKEY_SHIFTED =
                             color = ColorVariant.PRIMARY,
                         ),
                     swipeType = SwipeNWay.FOUR_WAY_DIAGONAL,
-                    swipes =
-                        mapOf(
-                            SwipeDirection.BOTTOM_RIGHT to
-                                KeyC(
-                                    action = KeyAction.CommitText("V"),
-                                ),
-                            SwipeDirection.TOP_LEFT to
-                                KeyC(
-                                    action = KeyAction.CommitText("W"),
-                                ),
+                    bottomRight =
+                        KeyC(
+                            action = KeyAction.CommitText("V"),
+                        ),
+                    topLeft =
+                        KeyC(
+                            action = KeyAction.CommitText("W"),
                         ),
                 ),
                 KeyItemC(
@@ -286,12 +255,9 @@ val KB_DA_THUMBKEY_SHIFTED =
                             color = ColorVariant.PRIMARY,
                         ),
                     swipeType = SwipeNWay.TWO_WAY_VERTICAL,
-                    swipes =
-                        mapOf(
-                            SwipeDirection.BOTTOM to
-                                KeyC(
-                                    action = KeyAction.CommitText("F"),
-                                ),
+                    bottom =
+                        KeyC(
+                            action = KeyAction.CommitText("F"),
                         ),
                 ),
                 KeyItemC(
@@ -302,16 +268,13 @@ val KB_DA_THUMBKEY_SHIFTED =
                             color = ColorVariant.PRIMARY,
                         ),
                     swipeType = SwipeNWay.FOUR_WAY_DIAGONAL,
-                    swipes =
-                        mapOf(
-                            SwipeDirection.BOTTOM_LEFT to
-                                KeyC(
-                                    action = KeyAction.CommitText("H"),
-                                ),
-                            SwipeDirection.TOP_RIGHT to
-                                KeyC(
-                                    action = KeyAction.CommitText("Y"),
-                                ),
+                    bottomLeft =
+                        KeyC(
+                            action = KeyAction.CommitText("H"),
+                        ),
+                    topRight =
+                        KeyC(
+                            action = KeyAction.CommitText("Y"),
                         ),
                 ),
                 EMOJI_KEY_ITEM,
@@ -325,12 +288,9 @@ val KB_DA_THUMBKEY_SHIFTED =
                             color = ColorVariant.PRIMARY,
                         ),
                     swipeType = SwipeNWay.TWO_WAY_HORIZONTAL,
-                    swipes =
-                        mapOf(
-                            SwipeDirection.RIGHT to
-                                KeyC(
-                                    action = KeyAction.CommitText("M"),
-                                ),
+                    right =
+                        KeyC(
+                            action = KeyAction.CommitText("M"),
                         ),
                 ),
                 KeyItemC(
@@ -340,40 +300,37 @@ val KB_DA_THUMBKEY_SHIFTED =
                             size = FontSizeVariant.LARGE,
                             color = ColorVariant.PRIMARY,
                         ),
-                    swipes =
-                        mapOf(
-                            SwipeDirection.TOP_LEFT to
-                                KeyC(
-                                    action = KeyAction.CommitText("Q"),
-                                ),
-                            SwipeDirection.TOP to
-                                KeyC(
-                                    action = KeyAction.CommitText("X"),
-                                ),
-                            SwipeDirection.TOP_RIGHT to
-                                KeyC(
-                                    action = KeyAction.CommitText("Æ"),
-                                ),
-                            SwipeDirection.RIGHT to
-                                KeyC(
-                                    action = KeyAction.CommitText("Ø"),
-                                ),
-                            SwipeDirection.BOTTOM_RIGHT to
-                                KeyC(
-                                    action = KeyAction.CommitText("Å"),
-                                ),
-                            SwipeDirection.BOTTOM to
-                                KeyC(
-                                    action = KeyAction.CommitText("L"),
-                                ),
-                            SwipeDirection.BOTTOM_LEFT to
-                                KeyC(
-                                    action = KeyAction.CommitText("B"),
-                                ),
-                            SwipeDirection.LEFT to
-                                KeyC(
-                                    action = KeyAction.CommitText("P"),
-                                ),
+                    topLeft =
+                        KeyC(
+                            action = KeyAction.CommitText("Q"),
+                        ),
+                    top =
+                        KeyC(
+                            action = KeyAction.CommitText("X"),
+                        ),
+                    topRight =
+                        KeyC(
+                            action = KeyAction.CommitText("Æ"),
+                        ),
+                    right =
+                        KeyC(
+                            action = KeyAction.CommitText("Ø"),
+                        ),
+                    bottomRight =
+                        KeyC(
+                            action = KeyAction.CommitText("Å"),
+                        ),
+                    bottom =
+                        KeyC(
+                            action = KeyAction.CommitText("L"),
+                        ),
+                    bottomLeft =
+                        KeyC(
+                            action = KeyAction.CommitText("B"),
+                        ),
+                    left =
+                        KeyC(
+                            action = KeyAction.CommitText("P"),
                         ),
                 ),
                 KeyItemC(
@@ -384,27 +341,24 @@ val KB_DA_THUMBKEY_SHIFTED =
                             color = ColorVariant.PRIMARY,
                         ),
                     swipeType = SwipeNWay.FOUR_WAY_CROSS,
-                    swipes =
-                        mapOf(
-                            SwipeDirection.LEFT to
-                                KeyC(
-                                    action = KeyAction.CommitText("U"),
-                                ),
-                            SwipeDirection.BOTTOM to
-                                KeyC(
-                                    display = KeyDisplay.IconDisplay(Icons.Outlined.ArrowDropDown),
-                                    action = KeyAction.ToggleShiftMode(false),
-                                    swipeReturnAction = KeyAction.ToggleCurrentWordCapitalization(false),
-                                    color = ColorVariant.MUTED,
-                                ),
-                            SwipeDirection.TOP to
-                                KeyC(
-                                    display = KeyDisplay.IconDisplay(Icons.Outlined.KeyboardCapslock),
-                                    capsModeDisplay = KeyDisplay.IconDisplay(Icons.Outlined.Copyright),
-                                    action = KeyAction.ToggleCapsLock,
-                                    swipeReturnAction = KeyAction.ToggleCurrentWordCapitalization(true),
-                                    color = ColorVariant.MUTED,
-                                ),
+                    left =
+                        KeyC(
+                            action = KeyAction.CommitText("U"),
+                        ),
+                    bottom =
+                        KeyC(
+                            display = KeyDisplay.IconDisplay(Icons.Outlined.ArrowDropDown),
+                            action = KeyAction.ToggleShiftMode(false),
+                            swipeReturnAction = KeyAction.ToggleCurrentWordCapitalization(false),
+                            color = ColorVariant.MUTED,
+                        ),
+                    top =
+                        KeyC(
+                            display = KeyDisplay.IconDisplay(Icons.Outlined.KeyboardCapslock),
+                            capsModeDisplay = KeyDisplay.IconDisplay(Icons.Outlined.Copyright),
+                            action = KeyAction.ToggleCapsLock,
+                            swipeReturnAction = KeyAction.ToggleCurrentWordCapitalization(true),
+                            color = ColorVariant.MUTED,
                         ),
                 ),
                 NUMERIC_KEY_ITEM,
@@ -418,16 +372,13 @@ val KB_DA_THUMBKEY_SHIFTED =
                             color = ColorVariant.PRIMARY,
                         ),
                     swipeType = SwipeNWay.FOUR_WAY_DIAGONAL,
-                    swipes =
-                        mapOf(
-                            SwipeDirection.TOP_RIGHT to
-                                KeyC(
-                                    action = KeyAction.CommitText("G"),
-                                ),
-                            SwipeDirection.BOTTOM_LEFT to
-                                KeyC(
-                                    action = KeyAction.CommitText("Z"),
-                                ),
+                    topRight =
+                        KeyC(
+                            action = KeyAction.CommitText("G"),
+                        ),
+                    bottomLeft =
+                        KeyC(
+                            action = KeyAction.CommitText("Z"),
                         ),
                 ),
                 KeyItemC(
@@ -437,36 +388,33 @@ val KB_DA_THUMBKEY_SHIFTED =
                             size = FontSizeVariant.LARGE,
                             color = ColorVariant.PRIMARY,
                         ),
-                    swipes =
-                        mapOf(
-                            SwipeDirection.TOP to
-                                KeyC(
-                                    action = KeyAction.CommitText("K"),
-                                ),
-                            SwipeDirection.TOP_RIGHT to
-                                KeyC(
-                                    action = KeyAction.CommitText("C"),
-                                    color = ColorVariant.MUTED,
-                                ),
-                            SwipeDirection.RIGHT to
-                                KeyC(
-                                    action = KeyAction.CommitText("'"),
-                                ),
-                            SwipeDirection.BOTTOM_RIGHT to
-                                KeyC(
-                                    action = KeyAction.CommitText("-"),
-                                    color = ColorVariant.MUTED,
-                                ),
-                            SwipeDirection.BOTTOM to
-                                KeyC(
-                                    action = KeyAction.CommitText("."),
-                                    color = ColorVariant.MUTED,
-                                ),
-                            SwipeDirection.BOTTOM_LEFT to
-                                KeyC(
-                                    action = KeyAction.CommitText("*"),
-                                    color = ColorVariant.MUTED,
-                                ),
+                    top =
+                        KeyC(
+                            action = KeyAction.CommitText("K"),
+                        ),
+                    topRight =
+                        KeyC(
+                            action = KeyAction.CommitText("C"),
+                            color = ColorVariant.MUTED,
+                        ),
+                    right =
+                        KeyC(
+                            action = KeyAction.CommitText("'"),
+                        ),
+                    bottomRight =
+                        KeyC(
+                            action = KeyAction.CommitText("-"),
+                            color = ColorVariant.MUTED,
+                        ),
+                    bottom =
+                        KeyC(
+                            action = KeyAction.CommitText("."),
+                            color = ColorVariant.MUTED,
+                        ),
+                    bottomLeft =
+                        KeyC(
+                            action = KeyAction.CommitText("*"),
+                            color = ColorVariant.MUTED,
                         ),
                 ),
                 KeyItemC(
@@ -477,12 +425,9 @@ val KB_DA_THUMBKEY_SHIFTED =
                             color = ColorVariant.PRIMARY,
                         ),
                     swipeType = SwipeNWay.FOUR_WAY_DIAGONAL,
-                    swipes =
-                        mapOf(
-                            SwipeDirection.TOP_LEFT to
-                                KeyC(
-                                    action = KeyAction.CommitText("O"),
-                                ),
+                    topLeft =
+                        KeyC(
+                            action = KeyAction.CommitText("O"),
                         ),
                 ),
                 BACKSPACE_KEY_ITEM,

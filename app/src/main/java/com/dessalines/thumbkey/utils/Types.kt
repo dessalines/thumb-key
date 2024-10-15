@@ -39,14 +39,34 @@ data class KeyboardC(
 
 data class KeyItemC(
     val center: KeyC,
-    val swipes: Map<SwipeDirection, KeyC>? = null,
+    val left: KeyC? = null,
+    val topLeft: KeyC? = null,
+    val top: KeyC? = null,
+    val topRight: KeyC? = null,
+    val right: KeyC? = null,
+    val bottomRight: KeyC? = null,
+    val bottom: KeyC? = null,
+    val bottomLeft: KeyC? = null,
     val nextTapActions: List<KeyAction>? = null,
     val widthMultiplier: Int = 1,
     val backgroundColor: ColorVariant = ColorVariant.SURFACE,
     val swipeType: SwipeNWay = SwipeNWay.EIGHT_WAY,
     val slideType: SlideType = SlideType.NONE,
     val longPress: KeyAction? = null,
-)
+) {
+    fun getSwipe(dir: SwipeDirection?) =
+        when (dir) {
+            null -> null
+            SwipeDirection.LEFT -> left
+            SwipeDirection.TOP_LEFT -> topLeft
+            SwipeDirection.TOP -> top
+            SwipeDirection.TOP_RIGHT -> topRight
+            SwipeDirection.RIGHT -> right
+            SwipeDirection.BOTTOM_RIGHT -> bottomRight
+            SwipeDirection.BOTTOM -> bottom
+            SwipeDirection.BOTTOM_LEFT -> bottomLeft
+        }
+}
 
 data class KeyC(
     val action: KeyAction,

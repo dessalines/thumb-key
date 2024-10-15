@@ -14,7 +14,6 @@ import com.dessalines.thumbkey.utils.KeyItemC
 import com.dessalines.thumbkey.utils.KeyboardC
 import com.dessalines.thumbkey.utils.KeyboardDefinition
 import com.dessalines.thumbkey.utils.KeyboardDefinitionModes
-import com.dessalines.thumbkey.utils.SwipeDirection
 import com.dessalines.thumbkey.utils.SwipeNWay
 
 val KB_GLAGOLITIC_THUMBKEY_MAIN =
@@ -28,24 +27,21 @@ val KB_GLAGOLITIC_THUMBKEY_MAIN =
                             size = FontSizeVariant.LARGE,
                             color = ColorVariant.PRIMARY,
                         ),
-                    swipes =
-                        mapOf(
-                            SwipeDirection.RIGHT to
-                                KeyC(
-                                    action = KeyAction.CommitText("ⱋ"),
-                                ),
-                            SwipeDirection.BOTTOM_RIGHT to
-                                KeyC(
-                                    action = KeyAction.CommitText("ⰹ"),
-                                ),
-                            SwipeDirection.BOTTOM to
-                                KeyC(
-                                    action = KeyAction.CommitText("ⰷ"),
-                                ),
-                            SwipeDirection.BOTTOM_LEFT to
-                                KeyC(
-                                    action = KeyAction.CommitText("ⱊ"),
-                                ),
+                    right =
+                        KeyC(
+                            action = KeyAction.CommitText("ⱋ"),
+                        ),
+                    bottomRight =
+                        KeyC(
+                            action = KeyAction.CommitText("ⰹ"),
+                        ),
+                    bottom =
+                        KeyC(
+                            action = KeyAction.CommitText("ⰷ"),
+                        ),
+                    bottomLeft =
+                        KeyC(
+                            action = KeyAction.CommitText("ⱊ"),
                         ),
                 ),
                 KeyItemC(
@@ -55,20 +51,17 @@ val KB_GLAGOLITIC_THUMBKEY_MAIN =
                             size = FontSizeVariant.LARGE,
                             color = ColorVariant.PRIMARY,
                         ),
-                    swipes =
-                        mapOf(
-                            SwipeDirection.BOTTOM to
-                                KeyC(
-                                    action = KeyAction.CommitText("ⱈ"),
-                                ),
-                            SwipeDirection.BOTTOM_LEFT to
-                                KeyC(
-                                    action = KeyAction.CommitText("ⱒ"),
-                                ),
-                            SwipeDirection.BOTTOM_RIGHT to
-                                KeyC(
-                                    action = KeyAction.CommitText("ⱜ"),
-                                ),
+                    bottom =
+                        KeyC(
+                            action = KeyAction.CommitText("ⱈ"),
+                        ),
+                    bottomLeft =
+                        KeyC(
+                            action = KeyAction.CommitText("ⱒ"),
+                        ),
+                    bottomRight =
+                        KeyC(
+                            action = KeyAction.CommitText("ⱜ"),
                         ),
                 ),
                 KeyItemC(
@@ -78,28 +71,25 @@ val KB_GLAGOLITIC_THUMBKEY_MAIN =
                             size = FontSizeVariant.LARGE,
                             color = ColorVariant.PRIMARY,
                         ),
-                    swipes =
-                        mapOf(
-                            SwipeDirection.BOTTOM_LEFT to
-                                KeyC(
-                                    action = KeyAction.CommitText("ⰶ"),
-                                ),
-                            SwipeDirection.LEFT to
-                                KeyC(
-                                    action = KeyAction.CommitText("ⱑ"),
-                                ),
-                            SwipeDirection.BOTTOM to
-                                KeyC(
-                                    action = KeyAction.CommitText("ⱔ"),
-                                ),
-                            SwipeDirection.BOTTOM_RIGHT to
-                                KeyC(
-                                    action = KeyAction.CommitText("ⱕ"),
-                                ),
-                            SwipeDirection.TOP to
-                                KeyC(
-                                    action = KeyAction.CommitText("ⱗ"),
-                                ),
+                    bottomLeft =
+                        KeyC(
+                            action = KeyAction.CommitText("ⰶ"),
+                        ),
+                    left =
+                        KeyC(
+                            action = KeyAction.CommitText("ⱑ"),
+                        ),
+                    bottom =
+                        KeyC(
+                            action = KeyAction.CommitText("ⱔ"),
+                        ),
+                    bottomRight =
+                        KeyC(
+                            action = KeyAction.CommitText("ⱕ"),
+                        ),
+                    top =
+                        KeyC(
+                            action = KeyAction.CommitText("ⱗ"),
                         ),
                 ),
                 EMOJI_KEY_ITEM,
@@ -112,29 +102,26 @@ val KB_GLAGOLITIC_THUMBKEY_MAIN =
                             size = FontSizeVariant.LARGE,
                             color = ColorVariant.PRIMARY,
                         ),
-                    swipes =
-                        mapOf(
-                            SwipeDirection.RIGHT to
-                                KeyC(
-                                    action = KeyAction.CommitText("ⰿ"),
-                                ),
-                            SwipeDirection.BOTTOM to
-                                KeyC(
-                                    action = KeyAction.CommitText("ⰾ"),
-                                ),
-                            SwipeDirection.TOP_RIGHT to
-                                KeyC(
-                                    action = KeyAction.CommitText("ⱞ"),
-                                ),
-                            SwipeDirection.BOTTOM_RIGHT to
-                                KeyC(
-                                    // this character often lacks proper font support, but is technically part of Unicode
-                                    action = KeyAction.CommitText("ⱟ"),
-                                ),
-                            SwipeDirection.TOP to
-                                KeyC(
-                                    action = KeyAction.CommitText("ⱛ"),
-                                ),
+                    right =
+                        KeyC(
+                            action = KeyAction.CommitText("ⰿ"),
+                        ),
+                    bottom =
+                        KeyC(
+                            action = KeyAction.CommitText("ⰾ"),
+                        ),
+                    topRight =
+                        KeyC(
+                            action = KeyAction.CommitText("ⱞ"),
+                        ),
+                    bottomRight =
+                        KeyC(
+                            // this character often lacks proper font support, but is technically part of Unicode
+                            action = KeyAction.CommitText("ⱟ"),
+                        ),
+                    top =
+                        KeyC(
+                            action = KeyAction.CommitText("ⱛ"),
                         ),
                 ),
                 KeyItemC(
@@ -144,40 +131,37 @@ val KB_GLAGOLITIC_THUMBKEY_MAIN =
                             size = FontSizeVariant.LARGE,
                             color = ColorVariant.PRIMARY,
                         ),
-                    swipes =
-                        mapOf(
-                            SwipeDirection.TOP_LEFT to
-                                KeyC(
-                                    action = KeyAction.CommitText("ⰼ"),
-                                ),
-                            SwipeDirection.TOP to
-                                KeyC(
-                                    action = KeyAction.CommitText("ⰺ"),
-                                ),
-                            SwipeDirection.TOP_RIGHT to
-                                KeyC(
-                                    action = KeyAction.CommitText("ⱐ"),
-                                ),
-                            SwipeDirection.RIGHT to
-                                KeyC(
-                                    action = KeyAction.CommitText("ⱂ"),
-                                ),
-                            SwipeDirection.BOTTOM_RIGHT to
-                                KeyC(
-                                    action = KeyAction.CommitText("ⱆ"),
-                                ),
-                            SwipeDirection.BOTTOM to
-                                KeyC(
-                                    action = KeyAction.CommitText("ⰸ"),
-                                ),
-                            SwipeDirection.BOTTOM_LEFT to
-                                KeyC(
-                                    action = KeyAction.CommitText("ⰳ"),
-                                ),
-                            SwipeDirection.LEFT to
-                                KeyC(
-                                    action = KeyAction.CommitText("ⰽ"),
-                                ),
+                    topLeft =
+                        KeyC(
+                            action = KeyAction.CommitText("ⰼ"),
+                        ),
+                    top =
+                        KeyC(
+                            action = KeyAction.CommitText("ⰺ"),
+                        ),
+                    topRight =
+                        KeyC(
+                            action = KeyAction.CommitText("ⱐ"),
+                        ),
+                    right =
+                        KeyC(
+                            action = KeyAction.CommitText("ⱂ"),
+                        ),
+                    bottomRight =
+                        KeyC(
+                            action = KeyAction.CommitText("ⱆ"),
+                        ),
+                    bottom =
+                        KeyC(
+                            action = KeyAction.CommitText("ⰸ"),
+                        ),
+                    bottomLeft =
+                        KeyC(
+                            action = KeyAction.CommitText("ⰳ"),
+                        ),
+                    left =
+                        KeyC(
+                            action = KeyAction.CommitText("ⰽ"),
                         ),
                 ),
                 KeyItemC(
@@ -188,28 +172,25 @@ val KB_GLAGOLITIC_THUMBKEY_MAIN =
                             color = ColorVariant.PRIMARY,
                         ),
                     swipeType = SwipeNWay.FOUR_WAY_CROSS,
-                    swipes =
-                        mapOf(
-                            SwipeDirection.LEFT to
-                                KeyC(
-                                    action = KeyAction.CommitText("ⱇ"),
-                                ),
-                            SwipeDirection.TOP to
-                                KeyC(
-                                    display = KeyDisplay.IconDisplay(Icons.Outlined.ArrowDropUp),
-                                    action = KeyAction.ToggleShiftMode(true),
-                                    swipeReturnAction = KeyAction.ToggleCurrentWordCapitalization(true),
-                                    color = ColorVariant.MUTED,
-                                ),
-                            SwipeDirection.BOTTOM to
-                                KeyC(
-                                    action = KeyAction.ToggleShiftMode(false),
-                                    swipeReturnAction = KeyAction.ToggleCurrentWordCapitalization(false),
-                                ),
-                            SwipeDirection.RIGHT to
-                                KeyC(
-                                    action = KeyAction.CommitText("ⱝ"),
-                                ),
+                    left =
+                        KeyC(
+                            action = KeyAction.CommitText("ⱇ"),
+                        ),
+                    top =
+                        KeyC(
+                            display = KeyDisplay.IconDisplay(Icons.Outlined.ArrowDropUp),
+                            action = KeyAction.ToggleShiftMode(true),
+                            swipeReturnAction = KeyAction.ToggleCurrentWordCapitalization(true),
+                            color = ColorVariant.MUTED,
+                        ),
+                    bottom =
+                        KeyC(
+                            action = KeyAction.ToggleShiftMode(false),
+                            swipeReturnAction = KeyAction.ToggleCurrentWordCapitalization(false),
+                        ),
+                    right =
+                        KeyC(
+                            action = KeyAction.CommitText("ⱝ"),
                         ),
                 ),
                 NUMERIC_KEY_ITEM,
@@ -222,24 +203,21 @@ val KB_GLAGOLITIC_THUMBKEY_MAIN =
                             size = FontSizeVariant.LARGE,
                             color = ColorVariant.PRIMARY,
                         ),
-                    swipes =
-                        mapOf(
-                            SwipeDirection.TOP_RIGHT to
-                                KeyC(
-                                    action = KeyAction.CommitText("ⱍ"),
-                                ),
-                            SwipeDirection.TOP to
-                                KeyC(
-                                    action = KeyAction.CommitText("ⱎ"),
-                                ),
-                            SwipeDirection.RIGHT to
-                                KeyC(
-                                    action = KeyAction.CommitText("ⱏ"),
-                                ),
-                            SwipeDirection.TOP_LEFT to
-                                KeyC(
-                                    action = KeyAction.CommitText("ⱚ"),
-                                ),
+                    topRight =
+                        KeyC(
+                            action = KeyAction.CommitText("ⱍ"),
+                        ),
+                    top =
+                        KeyC(
+                            action = KeyAction.CommitText("ⱎ"),
+                        ),
+                    right =
+                        KeyC(
+                            action = KeyAction.CommitText("ⱏ"),
+                        ),
+                    topLeft =
+                        KeyC(
+                            action = KeyAction.CommitText("ⱚ"),
                         ),
                 ),
                 KeyItemC(
@@ -249,46 +227,43 @@ val KB_GLAGOLITIC_THUMBKEY_MAIN =
                             size = FontSizeVariant.LARGE,
                             color = ColorVariant.PRIMARY,
                         ),
-                    swipes =
-                        mapOf(
-                            SwipeDirection.TOP to
-                                KeyC(
-                                    action = KeyAction.CommitText("ⰱ"),
-                                ),
-                            SwipeDirection.RIGHT to
-                                KeyC(
-                                    action = KeyAction.CommitText("ⱌ"),
-                                ),
-                            SwipeDirection.TOP_LEFT to
-                                KeyC(
-                                    action = KeyAction.CommitText("\""),
-                                    color = ColorVariant.MUTED,
-                                ),
-                            SwipeDirection.TOP_RIGHT to
-                                KeyC(
-                                    action = KeyAction.CommitText("'"),
-                                    color = ColorVariant.MUTED,
-                                ),
-                            SwipeDirection.BOTTOM_RIGHT to
-                                KeyC(
-                                    action = KeyAction.CommitText("-"),
-                                    color = ColorVariant.MUTED,
-                                ),
-                            SwipeDirection.BOTTOM to
-                                KeyC(
-                                    action = KeyAction.CommitText("."),
-                                    color = ColorVariant.MUTED,
-                                ),
-                            SwipeDirection.BOTTOM_LEFT to
-                                KeyC(
-                                    action = KeyAction.CommitText("*"),
-                                    color = ColorVariant.MUTED,
-                                ),
-                            SwipeDirection.LEFT to
-                                KeyC(
-                                    action = KeyAction.CommitText(","),
-                                    color = ColorVariant.MUTED,
-                                ),
+                    top =
+                        KeyC(
+                            action = KeyAction.CommitText("ⰱ"),
+                        ),
+                    right =
+                        KeyC(
+                            action = KeyAction.CommitText("ⱌ"),
+                        ),
+                    topLeft =
+                        KeyC(
+                            action = KeyAction.CommitText("\""),
+                            color = ColorVariant.MUTED,
+                        ),
+                    topRight =
+                        KeyC(
+                            action = KeyAction.CommitText("'"),
+                            color = ColorVariant.MUTED,
+                        ),
+                    bottomRight =
+                        KeyC(
+                            action = KeyAction.CommitText("-"),
+                            color = ColorVariant.MUTED,
+                        ),
+                    bottom =
+                        KeyC(
+                            action = KeyAction.CommitText("."),
+                            color = ColorVariant.MUTED,
+                        ),
+                    bottomLeft =
+                        KeyC(
+                            action = KeyAction.CommitText("*"),
+                            color = ColorVariant.MUTED,
+                        ),
+                    left =
+                        KeyC(
+                            action = KeyAction.CommitText(","),
+                            color = ColorVariant.MUTED,
                         ),
                 ),
                 KeyItemC(
@@ -298,32 +273,29 @@ val KB_GLAGOLITIC_THUMBKEY_MAIN =
                             size = FontSizeVariant.LARGE,
                             color = ColorVariant.PRIMARY,
                         ),
-                    swipes =
-                        mapOf(
-                            SwipeDirection.TOP_LEFT to
-                                KeyC(
-                                    action = KeyAction.CommitText("ⰴ"),
-                                ),
-                            SwipeDirection.BOTTOM to
-                                KeyC(
-                                    action = KeyAction.CommitText("ⱓ"),
-                                ),
-                            SwipeDirection.RIGHT to
-                                KeyC(
-                                    action = KeyAction.CommitText("ⱖ"),
-                                ),
-                            SwipeDirection.TOP to
-                                KeyC(
-                                    action = KeyAction.CommitText("ⱉ"),
-                                ),
-                            SwipeDirection.LEFT to
-                                KeyC(
-                                    action = KeyAction.CommitText("ⱘ"),
-                                ),
-                            SwipeDirection.BOTTOM_LEFT to
-                                KeyC(
-                                    action = KeyAction.CommitText("ⱙ"),
-                                ),
+                    topLeft =
+                        KeyC(
+                            action = KeyAction.CommitText("ⰴ"),
+                        ),
+                    bottom =
+                        KeyC(
+                            action = KeyAction.CommitText("ⱓ"),
+                        ),
+                    right =
+                        KeyC(
+                            action = KeyAction.CommitText("ⱖ"),
+                        ),
+                    top =
+                        KeyC(
+                            action = KeyAction.CommitText("ⱉ"),
+                        ),
+                    left =
+                        KeyC(
+                            action = KeyAction.CommitText("ⱘ"),
+                        ),
+                    bottomLeft =
+                        KeyC(
+                            action = KeyAction.CommitText("ⱙ"),
                         ),
                 ),
                 BACKSPACE_KEY_ITEM,
@@ -346,24 +318,21 @@ val KB_GLAGOLITIC_THUMBKEY_SHIFTED =
                             size = FontSizeVariant.LARGE,
                             color = ColorVariant.PRIMARY,
                         ),
-                    swipes =
-                        mapOf(
-                            SwipeDirection.RIGHT to
-                                KeyC(
-                                    action = KeyAction.CommitText("Ⱋ"),
-                                ),
-                            SwipeDirection.BOTTOM_RIGHT to
-                                KeyC(
-                                    action = KeyAction.CommitText("Ⰹ"),
-                                ),
-                            SwipeDirection.BOTTOM to
-                                KeyC(
-                                    action = KeyAction.CommitText("Ⰷ"),
-                                ),
-                            SwipeDirection.BOTTOM_LEFT to
-                                KeyC(
-                                    action = KeyAction.CommitText("Ⱊ"),
-                                ),
+                    right =
+                        KeyC(
+                            action = KeyAction.CommitText("Ⱋ"),
+                        ),
+                    bottomRight =
+                        KeyC(
+                            action = KeyAction.CommitText("Ⰹ"),
+                        ),
+                    bottom =
+                        KeyC(
+                            action = KeyAction.CommitText("Ⰷ"),
+                        ),
+                    bottomLeft =
+                        KeyC(
+                            action = KeyAction.CommitText("Ⱊ"),
                         ),
                 ),
                 KeyItemC(
@@ -373,20 +342,17 @@ val KB_GLAGOLITIC_THUMBKEY_SHIFTED =
                             size = FontSizeVariant.LARGE,
                             color = ColorVariant.PRIMARY,
                         ),
-                    swipes =
-                        mapOf(
-                            SwipeDirection.BOTTOM to
-                                KeyC(
-                                    action = KeyAction.CommitText("Ⱈ"),
-                                ),
-                            SwipeDirection.BOTTOM_LEFT to
-                                KeyC(
-                                    action = KeyAction.CommitText("Ⱒ"),
-                                ),
-                            SwipeDirection.BOTTOM_RIGHT to
-                                KeyC(
-                                    action = KeyAction.CommitText("Ⱜ"),
-                                ),
+                    bottom =
+                        KeyC(
+                            action = KeyAction.CommitText("Ⱈ"),
+                        ),
+                    bottomLeft =
+                        KeyC(
+                            action = KeyAction.CommitText("Ⱒ"),
+                        ),
+                    bottomRight =
+                        KeyC(
+                            action = KeyAction.CommitText("Ⱜ"),
                         ),
                 ),
                 KeyItemC(
@@ -396,28 +362,25 @@ val KB_GLAGOLITIC_THUMBKEY_SHIFTED =
                             size = FontSizeVariant.LARGE,
                             color = ColorVariant.PRIMARY,
                         ),
-                    swipes =
-                        mapOf(
-                            SwipeDirection.BOTTOM_LEFT to
-                                KeyC(
-                                    action = KeyAction.CommitText("Ⰶ"),
-                                ),
-                            SwipeDirection.LEFT to
-                                KeyC(
-                                    action = KeyAction.CommitText("Ⱑ"),
-                                ),
-                            SwipeDirection.BOTTOM to
-                                KeyC(
-                                    action = KeyAction.CommitText("Ⱔ"),
-                                ),
-                            SwipeDirection.BOTTOM_RIGHT to
-                                KeyC(
-                                    action = KeyAction.CommitText("Ⱕ"),
-                                ),
-                            SwipeDirection.TOP to
-                                KeyC(
-                                    action = KeyAction.CommitText("Ⱗ"),
-                                ),
+                    bottomLeft =
+                        KeyC(
+                            action = KeyAction.CommitText("Ⰶ"),
+                        ),
+                    left =
+                        KeyC(
+                            action = KeyAction.CommitText("Ⱑ"),
+                        ),
+                    bottom =
+                        KeyC(
+                            action = KeyAction.CommitText("Ⱔ"),
+                        ),
+                    bottomRight =
+                        KeyC(
+                            action = KeyAction.CommitText("Ⱕ"),
+                        ),
+                    top =
+                        KeyC(
+                            action = KeyAction.CommitText("Ⱗ"),
                         ),
                 ),
                 EMOJI_KEY_ITEM,
@@ -430,29 +393,26 @@ val KB_GLAGOLITIC_THUMBKEY_SHIFTED =
                             size = FontSizeVariant.LARGE,
                             color = ColorVariant.PRIMARY,
                         ),
-                    swipes =
-                        mapOf(
-                            SwipeDirection.RIGHT to
-                                KeyC(
-                                    action = KeyAction.CommitText("Ⰿ"),
-                                ),
-                            SwipeDirection.BOTTOM to
-                                KeyC(
-                                    action = KeyAction.CommitText("Ⰾ"),
-                                ),
-                            SwipeDirection.TOP_RIGHT to
-                                KeyC(
-                                    action = KeyAction.CommitText("Ⱞ"),
-                                ),
-                            SwipeDirection.BOTTOM_RIGHT to
-                                KeyC(
-                                    // this character often lacks proper font support, but is technically part of Unicode
-                                    action = KeyAction.CommitText("Ⱟ"),
-                                ),
-                            SwipeDirection.TOP to
-                                KeyC(
-                                    action = KeyAction.CommitText("Ⱛ"),
-                                ),
+                    right =
+                        KeyC(
+                            action = KeyAction.CommitText("Ⰿ"),
+                        ),
+                    bottom =
+                        KeyC(
+                            action = KeyAction.CommitText("Ⰾ"),
+                        ),
+                    topRight =
+                        KeyC(
+                            action = KeyAction.CommitText("Ⱞ"),
+                        ),
+                    bottomRight =
+                        KeyC(
+                            // this character often lacks proper font support, but is technically part of Unicode
+                            action = KeyAction.CommitText("Ⱟ"),
+                        ),
+                    top =
+                        KeyC(
+                            action = KeyAction.CommitText("Ⱛ"),
                         ),
                 ),
                 KeyItemC(
@@ -462,40 +422,37 @@ val KB_GLAGOLITIC_THUMBKEY_SHIFTED =
                             size = FontSizeVariant.LARGE,
                             color = ColorVariant.PRIMARY,
                         ),
-                    swipes =
-                        mapOf(
-                            SwipeDirection.TOP_LEFT to
-                                KeyC(
-                                    action = KeyAction.CommitText("Ⰼ"),
-                                ),
-                            SwipeDirection.TOP to
-                                KeyC(
-                                    action = KeyAction.CommitText("Ⰺ"),
-                                ),
-                            SwipeDirection.TOP_RIGHT to
-                                KeyC(
-                                    action = KeyAction.CommitText("Ⱐ"),
-                                ),
-                            SwipeDirection.RIGHT to
-                                KeyC(
-                                    action = KeyAction.CommitText("Ⱂ"),
-                                ),
-                            SwipeDirection.BOTTOM_RIGHT to
-                                KeyC(
-                                    action = KeyAction.CommitText("Ⱆ"),
-                                ),
-                            SwipeDirection.BOTTOM to
-                                KeyC(
-                                    action = KeyAction.CommitText("Ⰸ"),
-                                ),
-                            SwipeDirection.BOTTOM_LEFT to
-                                KeyC(
-                                    action = KeyAction.CommitText("Ⰳ"),
-                                ),
-                            SwipeDirection.LEFT to
-                                KeyC(
-                                    action = KeyAction.CommitText("Ⰽ"),
-                                ),
+                    topLeft =
+                        KeyC(
+                            action = KeyAction.CommitText("Ⰼ"),
+                        ),
+                    top =
+                        KeyC(
+                            action = KeyAction.CommitText("Ⰺ"),
+                        ),
+                    topRight =
+                        KeyC(
+                            action = KeyAction.CommitText("Ⱐ"),
+                        ),
+                    right =
+                        KeyC(
+                            action = KeyAction.CommitText("Ⱂ"),
+                        ),
+                    bottomRight =
+                        KeyC(
+                            action = KeyAction.CommitText("Ⱆ"),
+                        ),
+                    bottom =
+                        KeyC(
+                            action = KeyAction.CommitText("Ⰸ"),
+                        ),
+                    bottomLeft =
+                        KeyC(
+                            action = KeyAction.CommitText("Ⰳ"),
+                        ),
+                    left =
+                        KeyC(
+                            action = KeyAction.CommitText("Ⰽ"),
                         ),
                 ),
                 KeyItemC(
@@ -506,31 +463,28 @@ val KB_GLAGOLITIC_THUMBKEY_SHIFTED =
                             color = ColorVariant.PRIMARY,
                         ),
                     swipeType = SwipeNWay.FOUR_WAY_CROSS,
-                    swipes =
-                        mapOf(
-                            SwipeDirection.LEFT to
-                                KeyC(
-                                    action = KeyAction.CommitText("Ⱇ"),
-                                ),
-                            SwipeDirection.TOP to
-                                KeyC(
-                                    display = KeyDisplay.IconDisplay(Icons.Outlined.KeyboardCapslock),
-                                    capsModeDisplay = KeyDisplay.IconDisplay(Icons.Outlined.Copyright),
-                                    action = KeyAction.ToggleCapsLock,
-                                    swipeReturnAction = KeyAction.ToggleCurrentWordCapitalization(true),
-                                    color = ColorVariant.MUTED,
-                                ),
-                            SwipeDirection.BOTTOM to
-                                KeyC(
-                                    display = KeyDisplay.IconDisplay(Icons.Outlined.ArrowDropDown),
-                                    action = KeyAction.ToggleShiftMode(false),
-                                    swipeReturnAction = KeyAction.ToggleCurrentWordCapitalization(false),
-                                    color = ColorVariant.MUTED,
-                                ),
-                            SwipeDirection.RIGHT to
-                                KeyC(
-                                    action = KeyAction.CommitText("Ⱝ"),
-                                ),
+                    left =
+                        KeyC(
+                            action = KeyAction.CommitText("Ⱇ"),
+                        ),
+                    top =
+                        KeyC(
+                            display = KeyDisplay.IconDisplay(Icons.Outlined.KeyboardCapslock),
+                            capsModeDisplay = KeyDisplay.IconDisplay(Icons.Outlined.Copyright),
+                            action = KeyAction.ToggleCapsLock,
+                            swipeReturnAction = KeyAction.ToggleCurrentWordCapitalization(true),
+                            color = ColorVariant.MUTED,
+                        ),
+                    bottom =
+                        KeyC(
+                            display = KeyDisplay.IconDisplay(Icons.Outlined.ArrowDropDown),
+                            action = KeyAction.ToggleShiftMode(false),
+                            swipeReturnAction = KeyAction.ToggleCurrentWordCapitalization(false),
+                            color = ColorVariant.MUTED,
+                        ),
+                    right =
+                        KeyC(
+                            action = KeyAction.CommitText("Ⱝ"),
                         ),
                 ),
                 NUMERIC_KEY_ITEM,
@@ -543,24 +497,21 @@ val KB_GLAGOLITIC_THUMBKEY_SHIFTED =
                             size = FontSizeVariant.LARGE,
                             color = ColorVariant.PRIMARY,
                         ),
-                    swipes =
-                        mapOf(
-                            SwipeDirection.TOP_RIGHT to
-                                KeyC(
-                                    action = KeyAction.CommitText("Ⱍ"),
-                                ),
-                            SwipeDirection.TOP to
-                                KeyC(
-                                    action = KeyAction.CommitText("Ⱎ"),
-                                ),
-                            SwipeDirection.RIGHT to
-                                KeyC(
-                                    action = KeyAction.CommitText("Ⱏ"),
-                                ),
-                            SwipeDirection.TOP_LEFT to
-                                KeyC(
-                                    action = KeyAction.CommitText("Ⱚ"),
-                                ),
+                    topRight =
+                        KeyC(
+                            action = KeyAction.CommitText("Ⱍ"),
+                        ),
+                    top =
+                        KeyC(
+                            action = KeyAction.CommitText("Ⱎ"),
+                        ),
+                    right =
+                        KeyC(
+                            action = KeyAction.CommitText("Ⱏ"),
+                        ),
+                    topLeft =
+                        KeyC(
+                            action = KeyAction.CommitText("Ⱚ"),
                         ),
                 ),
                 KeyItemC(
@@ -571,46 +522,43 @@ val KB_GLAGOLITIC_THUMBKEY_SHIFTED =
                             size = FontSizeVariant.LARGE,
                             color = ColorVariant.PRIMARY,
                         ),
-                    swipes =
-                        mapOf(
-                            SwipeDirection.TOP to
-                                KeyC(
-                                    action = KeyAction.CommitText("Ⰱ"),
-                                ),
-                            SwipeDirection.RIGHT to
-                                KeyC(
-                                    action = KeyAction.CommitText("Ⱌ"),
-                                ),
-                            SwipeDirection.TOP_LEFT to
-                                KeyC(
-                                    action = KeyAction.CommitText("\""),
-                                    color = ColorVariant.MUTED,
-                                ),
-                            SwipeDirection.TOP_RIGHT to
-                                KeyC(
-                                    action = KeyAction.CommitText("'"),
-                                    color = ColorVariant.MUTED,
-                                ),
-                            SwipeDirection.BOTTOM_RIGHT to
-                                KeyC(
-                                    action = KeyAction.CommitText("-"),
-                                    color = ColorVariant.MUTED,
-                                ),
-                            SwipeDirection.BOTTOM to
-                                KeyC(
-                                    action = KeyAction.CommitText("."),
-                                    color = ColorVariant.MUTED,
-                                ),
-                            SwipeDirection.BOTTOM_LEFT to
-                                KeyC(
-                                    action = KeyAction.CommitText("*"),
-                                    color = ColorVariant.MUTED,
-                                ),
-                            SwipeDirection.LEFT to
-                                KeyC(
-                                    action = KeyAction.CommitText(","),
-                                    color = ColorVariant.MUTED,
-                                ),
+                    top =
+                        KeyC(
+                            action = KeyAction.CommitText("Ⰱ"),
+                        ),
+                    right =
+                        KeyC(
+                            action = KeyAction.CommitText("Ⱌ"),
+                        ),
+                    topLeft =
+                        KeyC(
+                            action = KeyAction.CommitText("\""),
+                            color = ColorVariant.MUTED,
+                        ),
+                    topRight =
+                        KeyC(
+                            action = KeyAction.CommitText("'"),
+                            color = ColorVariant.MUTED,
+                        ),
+                    bottomRight =
+                        KeyC(
+                            action = KeyAction.CommitText("-"),
+                            color = ColorVariant.MUTED,
+                        ),
+                    bottom =
+                        KeyC(
+                            action = KeyAction.CommitText("."),
+                            color = ColorVariant.MUTED,
+                        ),
+                    bottomLeft =
+                        KeyC(
+                            action = KeyAction.CommitText("*"),
+                            color = ColorVariant.MUTED,
+                        ),
+                    left =
+                        KeyC(
+                            action = KeyAction.CommitText(","),
+                            color = ColorVariant.MUTED,
                         ),
                 ),
                 KeyItemC(
@@ -620,32 +568,29 @@ val KB_GLAGOLITIC_THUMBKEY_SHIFTED =
                             size = FontSizeVariant.LARGE,
                             color = ColorVariant.PRIMARY,
                         ),
-                    swipes =
-                        mapOf(
-                            SwipeDirection.TOP_LEFT to
-                                KeyC(
-                                    action = KeyAction.CommitText("Ⰴ"),
-                                ),
-                            SwipeDirection.BOTTOM to
-                                KeyC(
-                                    action = KeyAction.CommitText("Ⱓ"),
-                                ),
-                            SwipeDirection.RIGHT to
-                                KeyC(
-                                    action = KeyAction.CommitText("Ⱖ"),
-                                ),
-                            SwipeDirection.TOP to
-                                KeyC(
-                                    action = KeyAction.CommitText("Ⱉ"),
-                                ),
-                            SwipeDirection.LEFT to
-                                KeyC(
-                                    action = KeyAction.CommitText("Ⱘ"),
-                                ),
-                            SwipeDirection.BOTTOM_LEFT to
-                                KeyC(
-                                    action = KeyAction.CommitText("Ⱙ"),
-                                ),
+                    topLeft =
+                        KeyC(
+                            action = KeyAction.CommitText("Ⰴ"),
+                        ),
+                    bottom =
+                        KeyC(
+                            action = KeyAction.CommitText("Ⱓ"),
+                        ),
+                    right =
+                        KeyC(
+                            action = KeyAction.CommitText("Ⱖ"),
+                        ),
+                    top =
+                        KeyC(
+                            action = KeyAction.CommitText("Ⱉ"),
+                        ),
+                    left =
+                        KeyC(
+                            action = KeyAction.CommitText("Ⱘ"),
+                        ),
+                    bottomLeft =
+                        KeyC(
+                            action = KeyAction.CommitText("Ⱙ"),
                         ),
                 ),
                 BACKSPACE_KEY_ITEM,

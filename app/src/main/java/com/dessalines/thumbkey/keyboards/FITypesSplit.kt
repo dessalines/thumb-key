@@ -8,7 +8,6 @@ import com.dessalines.thumbkey.utils.KeyItemC
 import com.dessalines.thumbkey.utils.KeyboardC
 import com.dessalines.thumbkey.utils.KeyboardDefinition
 import com.dessalines.thumbkey.utils.KeyboardDefinitionModes
-import com.dessalines.thumbkey.utils.SwipeDirection
 import com.dessalines.thumbkey.utils.SwipeNWay
 
 val KB_FI_TYPESPLIT_MAIN =
@@ -23,21 +22,18 @@ val KB_FI_TYPESPLIT_MAIN =
                             color = ColorVariant.PRIMARY,
                         ),
                     swipeType = SwipeNWay.FOUR_WAY_CROSS,
-                    swipes =
-                        mapOf(
-                            SwipeDirection.RIGHT to
-                                KeyC(
-                                    action = KeyAction.CommitText("c"),
-                                ),
-                            SwipeDirection.LEFT to
-                                KeyC(
-                                    display = null,
-                                    action = KeyAction.CommitText("c"),
-                                ),
-                            SwipeDirection.BOTTOM to
-                                KeyC(
-                                    action = KeyAction.CommitText("j"),
-                                ),
+                    right =
+                        KeyC(
+                            action = KeyAction.CommitText("c"),
+                        ),
+                    left =
+                        KeyC(
+                            display = null,
+                            action = KeyAction.CommitText("c"),
+                        ),
+                    bottom =
+                        KeyC(
+                            action = KeyAction.CommitText("j"),
                         ),
                 ),
                 KeyItemC(
@@ -48,21 +44,18 @@ val KB_FI_TYPESPLIT_MAIN =
                             color = ColorVariant.PRIMARY,
                         ),
                     swipeType = SwipeNWay.FOUR_WAY_CROSS,
-                    swipes =
-                        mapOf(
-                            SwipeDirection.RIGHT to
-                                KeyC(
-                                    action = KeyAction.CommitText("z"),
-                                ),
-                            SwipeDirection.LEFT to
-                                KeyC(
-                                    display = null,
-                                    action = KeyAction.CommitText("z"),
-                                ),
-                            SwipeDirection.BOTTOM to
-                                KeyC(
-                                    action = KeyAction.CommitText("d"),
-                                ),
+                    right =
+                        KeyC(
+                            action = KeyAction.CommitText("z"),
+                        ),
+                    left =
+                        KeyC(
+                            display = null,
+                            action = KeyAction.CommitText("z"),
+                        ),
+                    bottom =
+                        KeyC(
+                            action = KeyAction.CommitText("d"),
                         ),
                 ),
                 EMOJI_KEY_ITEM_ALT,
@@ -82,21 +75,18 @@ val KB_FI_TYPESPLIT_MAIN =
                             color = ColorVariant.PRIMARY,
                         ),
                     swipeType = SwipeNWay.FOUR_WAY_CROSS,
-                    swipes =
-                        mapOf(
-                            SwipeDirection.RIGHT to
-                                KeyC(
-                                    display = null,
-                                    action = KeyAction.CommitText(";"),
-                                ),
-                            SwipeDirection.LEFT to
-                                KeyC(
-                                    action = KeyAction.CommitText(";"),
-                                ),
-                            SwipeDirection.BOTTOM to
-                                KeyC(
-                                    action = KeyAction.CommitText(":"),
-                                ),
+                    right =
+                        KeyC(
+                            display = null,
+                            action = KeyAction.CommitText(";"),
+                        ),
+                    left =
+                        KeyC(
+                            action = KeyAction.CommitText(";"),
+                        ),
+                    bottom =
+                        KeyC(
+                            action = KeyAction.CommitText(":"),
                         ),
                 ),
             ),
@@ -109,20 +99,17 @@ val KB_FI_TYPESPLIT_MAIN =
                             color = ColorVariant.PRIMARY,
                         ),
                     swipeType = SwipeNWay.FOUR_WAY_CROSS,
-                    swipes =
-                        mapOf(
-                            SwipeDirection.RIGHT to
-                                KeyC(
-                                    action = KeyAction.CommitText("b"),
-                                ),
-                            SwipeDirection.LEFT to
-                                KeyC(
-                                    action = KeyAction.CommitText("q"),
-                                ),
-                            SwipeDirection.BOTTOM to
-                                KeyC(
-                                    action = KeyAction.CommitText("v"),
-                                ),
+                    right =
+                        KeyC(
+                            action = KeyAction.CommitText("b"),
+                        ),
+                    left =
+                        KeyC(
+                            action = KeyAction.CommitText("q"),
+                        ),
+                    bottom =
+                        KeyC(
+                            action = KeyAction.CommitText("v"),
                         ),
                 ),
                 KeyItemC(
@@ -133,21 +120,18 @@ val KB_FI_TYPESPLIT_MAIN =
                             color = ColorVariant.PRIMARY,
                         ),
                     swipeType = SwipeNWay.FOUR_WAY_CROSS,
-                    swipes =
-                        mapOf(
-                            SwipeDirection.RIGHT to
-                                KeyC(
-                                    action = KeyAction.CommitText("w"),
-                                ),
-                            SwipeDirection.LEFT to
-                                KeyC(
-                                    display = null,
-                                    action = KeyAction.CommitText("w"),
-                                ),
-                            SwipeDirection.BOTTOM to
-                                KeyC(
-                                    action = KeyAction.CommitText("p"),
-                                ),
+                    right =
+                        KeyC(
+                            action = KeyAction.CommitText("w"),
+                        ),
+                    left =
+                        KeyC(
+                            display = null,
+                            action = KeyAction.CommitText("w"),
+                        ),
+                    bottom =
+                        KeyC(
+                            action = KeyAction.CommitText("p"),
                         ),
                 ),
                 SPACEBAR_TYPESPLIT_MIDDLE_KEY_ITEM,
@@ -167,21 +151,18 @@ val KB_FI_TYPESPLIT_MAIN =
                             color = ColorVariant.PRIMARY,
                         ),
                     swipeType = SwipeNWay.FOUR_WAY_CROSS,
-                    swipes =
-                        mapOf(
-                            SwipeDirection.RIGHT to
-                                KeyC(
-                                    display = null,
-                                    action = KeyAction.CommitText("!"),
-                                ),
-                            SwipeDirection.LEFT to
-                                KeyC(
-                                    action = KeyAction.CommitText("!"),
-                                ),
-                            SwipeDirection.BOTTOM to
-                                KeyC(
-                                    action = KeyAction.CommitText("?"),
-                                ),
+                    right =
+                        KeyC(
+                            display = null,
+                            action = KeyAction.CommitText("!"),
+                        ),
+                    left =
+                        KeyC(
+                            action = KeyAction.CommitText("!"),
+                        ),
+                    bottom =
+                        KeyC(
+                            action = KeyAction.CommitText("?"),
                         ),
                 ),
             ),
@@ -194,20 +175,17 @@ val KB_FI_TYPESPLIT_MAIN =
                             color = ColorVariant.PRIMARY,
                         ),
                     swipeType = SwipeNWay.FOUR_WAY_CROSS,
-                    swipes =
-                        mapOf(
-                            SwipeDirection.RIGHT to
-                                KeyC(
-                                    action = KeyAction.CommitText("g"),
-                                ),
-                            SwipeDirection.LEFT to
-                                KeyC(
-                                    action = KeyAction.CommitText("x"),
-                                ),
-                            SwipeDirection.BOTTOM to
-                                KeyC(
-                                    action = KeyAction.CommitText("r"),
-                                ),
+                    right =
+                        KeyC(
+                            action = KeyAction.CommitText("g"),
+                        ),
+                    left =
+                        KeyC(
+                            action = KeyAction.CommitText("x"),
+                        ),
+                    bottom =
+                        KeyC(
+                            action = KeyAction.CommitText("r"),
                         ),
                 ),
                 KeyItemC(
@@ -218,21 +196,18 @@ val KB_FI_TYPESPLIT_MAIN =
                             color = ColorVariant.PRIMARY,
                         ),
                     swipeType = SwipeNWay.FOUR_WAY_CROSS,
-                    swipes =
-                        mapOf(
-                            SwipeDirection.RIGHT to
-                                KeyC(
-                                    action = KeyAction.CommitText("f"),
-                                ),
-                            SwipeDirection.LEFT to
-                                KeyC(
-                                    display = null,
-                                    action = KeyAction.CommitText("f"),
-                                ),
-                            SwipeDirection.BOTTOM to
-                                KeyC(
-                                    action = KeyAction.CommitText("h"),
-                                ),
+                    right =
+                        KeyC(
+                            action = KeyAction.CommitText("f"),
+                        ),
+                    left =
+                        KeyC(
+                            display = null,
+                            action = KeyAction.CommitText("f"),
+                        ),
+                    bottom =
+                        KeyC(
+                            action = KeyAction.CommitText("h"),
                         ),
                 ),
                 SPACEBAR_TYPESPLIT_BOTTOM_KEY_ITEM,
@@ -244,12 +219,9 @@ val KB_FI_TYPESPLIT_MAIN =
                             color = ColorVariant.PRIMARY,
                         ),
                     swipeType = SwipeNWay.TWO_WAY_VERTICAL,
-                    swipes =
-                        mapOf(
-                            SwipeDirection.BOTTOM to
-                                KeyC(
-                                    action = KeyAction.CommitText("ö"),
-                                ),
+                    bottom =
+                        KeyC(
+                            action = KeyAction.CommitText("ö"),
                         ),
                 ),
                 KeyItemC(
@@ -260,24 +232,21 @@ val KB_FI_TYPESPLIT_MAIN =
                             color = ColorVariant.PRIMARY,
                         ),
                     swipeType = SwipeNWay.FOUR_WAY_CROSS,
-                    swipes =
-                        mapOf(
-                            SwipeDirection.RIGHT to
-                                KeyC(
-                                    display = null,
-                                    action = KeyAction.CommitText("å"),
-                                    color = ColorVariant.MUTED,
-                                ),
-                            SwipeDirection.LEFT to
-                                KeyC(
-                                    action = KeyAction.CommitText("å"),
-                                    color = ColorVariant.MUTED,
-                                ),
-                            SwipeDirection.BOTTOM to
-                                KeyC(
-                                    action = KeyAction.CommitText("ä"),
-                                    color = ColorVariant.MUTED,
-                                ),
+                    right =
+                        KeyC(
+                            display = null,
+                            action = KeyAction.CommitText("å"),
+                            color = ColorVariant.MUTED,
+                        ),
+                    left =
+                        KeyC(
+                            action = KeyAction.CommitText("å"),
+                            color = ColorVariant.MUTED,
+                        ),
+                    bottom =
+                        KeyC(
+                            action = KeyAction.CommitText("ä"),
+                            color = ColorVariant.MUTED,
                         ),
                 ),
             ),
@@ -301,21 +270,18 @@ val KB_FI_TYPESPLIT_SHIFTED =
                             color = ColorVariant.PRIMARY,
                         ),
                     swipeType = SwipeNWay.FOUR_WAY_CROSS,
-                    swipes =
-                        mapOf(
-                            SwipeDirection.RIGHT to
-                                KeyC(
-                                    action = KeyAction.CommitText("C"),
-                                ),
-                            SwipeDirection.LEFT to
-                                KeyC(
-                                    display = null,
-                                    action = KeyAction.CommitText("C"),
-                                ),
-                            SwipeDirection.BOTTOM to
-                                KeyC(
-                                    action = KeyAction.CommitText("J"),
-                                ),
+                    right =
+                        KeyC(
+                            action = KeyAction.CommitText("C"),
+                        ),
+                    left =
+                        KeyC(
+                            display = null,
+                            action = KeyAction.CommitText("C"),
+                        ),
+                    bottom =
+                        KeyC(
+                            action = KeyAction.CommitText("J"),
                         ),
                 ),
                 KeyItemC(
@@ -326,21 +292,18 @@ val KB_FI_TYPESPLIT_SHIFTED =
                             color = ColorVariant.PRIMARY,
                         ),
                     swipeType = SwipeNWay.FOUR_WAY_CROSS,
-                    swipes =
-                        mapOf(
-                            SwipeDirection.RIGHT to
-                                KeyC(
-                                    action = KeyAction.CommitText("Z"),
-                                ),
-                            SwipeDirection.LEFT to
-                                KeyC(
-                                    display = null,
-                                    action = KeyAction.CommitText("Z"),
-                                ),
-                            SwipeDirection.BOTTOM to
-                                KeyC(
-                                    action = KeyAction.CommitText("D"),
-                                ),
+                    right =
+                        KeyC(
+                            action = KeyAction.CommitText("Z"),
+                        ),
+                    left =
+                        KeyC(
+                            display = null,
+                            action = KeyAction.CommitText("Z"),
+                        ),
+                    bottom =
+                        KeyC(
+                            action = KeyAction.CommitText("D"),
                         ),
                 ),
                 EMOJI_KEY_ITEM_ALT,
@@ -360,21 +323,18 @@ val KB_FI_TYPESPLIT_SHIFTED =
                             color = ColorVariant.PRIMARY,
                         ),
                     swipeType = SwipeNWay.FOUR_WAY_CROSS,
-                    swipes =
-                        mapOf(
-                            SwipeDirection.RIGHT to
-                                KeyC(
-                                    display = null,
-                                    action = KeyAction.CommitText(";"),
-                                ),
-                            SwipeDirection.LEFT to
-                                KeyC(
-                                    action = KeyAction.CommitText(";"),
-                                ),
-                            SwipeDirection.BOTTOM to
-                                KeyC(
-                                    action = KeyAction.CommitText(":"),
-                                ),
+                    right =
+                        KeyC(
+                            display = null,
+                            action = KeyAction.CommitText(";"),
+                        ),
+                    left =
+                        KeyC(
+                            action = KeyAction.CommitText(";"),
+                        ),
+                    bottom =
+                        KeyC(
+                            action = KeyAction.CommitText(":"),
                         ),
                 ),
             ),
@@ -387,20 +347,17 @@ val KB_FI_TYPESPLIT_SHIFTED =
                             color = ColorVariant.PRIMARY,
                         ),
                     swipeType = SwipeNWay.FOUR_WAY_CROSS,
-                    swipes =
-                        mapOf(
-                            SwipeDirection.RIGHT to
-                                KeyC(
-                                    action = KeyAction.CommitText("B"),
-                                ),
-                            SwipeDirection.LEFT to
-                                KeyC(
-                                    action = KeyAction.CommitText("Q"),
-                                ),
-                            SwipeDirection.BOTTOM to
-                                KeyC(
-                                    action = KeyAction.CommitText("V"),
-                                ),
+                    right =
+                        KeyC(
+                            action = KeyAction.CommitText("B"),
+                        ),
+                    left =
+                        KeyC(
+                            action = KeyAction.CommitText("Q"),
+                        ),
+                    bottom =
+                        KeyC(
+                            action = KeyAction.CommitText("V"),
                         ),
                 ),
                 KeyItemC(
@@ -411,21 +368,18 @@ val KB_FI_TYPESPLIT_SHIFTED =
                             color = ColorVariant.PRIMARY,
                         ),
                     swipeType = SwipeNWay.FOUR_WAY_CROSS,
-                    swipes =
-                        mapOf(
-                            SwipeDirection.RIGHT to
-                                KeyC(
-                                    action = KeyAction.CommitText("W"),
-                                ),
-                            SwipeDirection.LEFT to
-                                KeyC(
-                                    display = null,
-                                    action = KeyAction.CommitText("W"),
-                                ),
-                            SwipeDirection.BOTTOM to
-                                KeyC(
-                                    action = KeyAction.CommitText("P"),
-                                ),
+                    right =
+                        KeyC(
+                            action = KeyAction.CommitText("W"),
+                        ),
+                    left =
+                        KeyC(
+                            display = null,
+                            action = KeyAction.CommitText("W"),
+                        ),
+                    bottom =
+                        KeyC(
+                            action = KeyAction.CommitText("P"),
                         ),
                 ),
                 SPACEBAR_TYPESPLIT_MIDDLE_KEY_ITEM,
@@ -445,21 +399,18 @@ val KB_FI_TYPESPLIT_SHIFTED =
                             color = ColorVariant.PRIMARY,
                         ),
                     swipeType = SwipeNWay.FOUR_WAY_CROSS,
-                    swipes =
-                        mapOf(
-                            SwipeDirection.RIGHT to
-                                KeyC(
-                                    display = null,
-                                    action = KeyAction.CommitText("!"),
-                                ),
-                            SwipeDirection.LEFT to
-                                KeyC(
-                                    action = KeyAction.CommitText("!"),
-                                ),
-                            SwipeDirection.BOTTOM to
-                                KeyC(
-                                    action = KeyAction.CommitText("?"),
-                                ),
+                    right =
+                        KeyC(
+                            display = null,
+                            action = KeyAction.CommitText("!"),
+                        ),
+                    left =
+                        KeyC(
+                            action = KeyAction.CommitText("!"),
+                        ),
+                    bottom =
+                        KeyC(
+                            action = KeyAction.CommitText("?"),
                         ),
                 ),
             ),
@@ -472,20 +423,17 @@ val KB_FI_TYPESPLIT_SHIFTED =
                             color = ColorVariant.PRIMARY,
                         ),
                     swipeType = SwipeNWay.FOUR_WAY_CROSS,
-                    swipes =
-                        mapOf(
-                            SwipeDirection.RIGHT to
-                                KeyC(
-                                    action = KeyAction.CommitText("G"),
-                                ),
-                            SwipeDirection.LEFT to
-                                KeyC(
-                                    action = KeyAction.CommitText("X"),
-                                ),
-                            SwipeDirection.BOTTOM to
-                                KeyC(
-                                    action = KeyAction.CommitText("R"),
-                                ),
+                    right =
+                        KeyC(
+                            action = KeyAction.CommitText("G"),
+                        ),
+                    left =
+                        KeyC(
+                            action = KeyAction.CommitText("X"),
+                        ),
+                    bottom =
+                        KeyC(
+                            action = KeyAction.CommitText("R"),
                         ),
                 ),
                 KeyItemC(
@@ -496,21 +444,18 @@ val KB_FI_TYPESPLIT_SHIFTED =
                             color = ColorVariant.PRIMARY,
                         ),
                     swipeType = SwipeNWay.FOUR_WAY_CROSS,
-                    swipes =
-                        mapOf(
-                            SwipeDirection.RIGHT to
-                                KeyC(
-                                    action = KeyAction.CommitText("F"),
-                                ),
-                            SwipeDirection.LEFT to
-                                KeyC(
-                                    display = null,
-                                    action = KeyAction.CommitText("F"),
-                                ),
-                            SwipeDirection.BOTTOM to
-                                KeyC(
-                                    action = KeyAction.CommitText("H"),
-                                ),
+                    right =
+                        KeyC(
+                            action = KeyAction.CommitText("F"),
+                        ),
+                    left =
+                        KeyC(
+                            display = null,
+                            action = KeyAction.CommitText("F"),
+                        ),
+                    bottom =
+                        KeyC(
+                            action = KeyAction.CommitText("H"),
                         ),
                 ),
                 SPACEBAR_TYPESPLIT_BOTTOM_KEY_ITEM,
@@ -522,12 +467,9 @@ val KB_FI_TYPESPLIT_SHIFTED =
                             color = ColorVariant.PRIMARY,
                         ),
                     swipeType = SwipeNWay.TWO_WAY_VERTICAL,
-                    swipes =
-                        mapOf(
-                            SwipeDirection.BOTTOM to
-                                KeyC(
-                                    action = KeyAction.CommitText("Ö"),
-                                ),
+                    bottom =
+                        KeyC(
+                            action = KeyAction.CommitText("Ö"),
                         ),
                 ),
                 KeyItemC(
@@ -538,24 +480,21 @@ val KB_FI_TYPESPLIT_SHIFTED =
                             color = ColorVariant.PRIMARY,
                         ),
                     swipeType = SwipeNWay.FOUR_WAY_CROSS,
-                    swipes =
-                        mapOf(
-                            SwipeDirection.RIGHT to
-                                KeyC(
-                                    display = null,
-                                    action = KeyAction.CommitText("Å"),
-                                    color = ColorVariant.MUTED,
-                                ),
-                            SwipeDirection.LEFT to
-                                KeyC(
-                                    action = KeyAction.CommitText("Å"),
-                                    color = ColorVariant.MUTED,
-                                ),
-                            SwipeDirection.BOTTOM to
-                                KeyC(
-                                    action = KeyAction.CommitText("Ä"),
-                                    color = ColorVariant.MUTED,
-                                ),
+                    right =
+                        KeyC(
+                            display = null,
+                            action = KeyAction.CommitText("Å"),
+                            color = ColorVariant.MUTED,
+                        ),
+                    left =
+                        KeyC(
+                            action = KeyAction.CommitText("Å"),
+                            color = ColorVariant.MUTED,
+                        ),
+                    bottom =
+                        KeyC(
+                            action = KeyAction.CommitText("Ä"),
+                            color = ColorVariant.MUTED,
                         ),
                 ),
             ),

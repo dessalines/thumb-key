@@ -11,7 +11,6 @@ import com.dessalines.thumbkey.utils.KeyItemC
 import com.dessalines.thumbkey.utils.KeyboardC
 import com.dessalines.thumbkey.utils.KeyboardDefinition
 import com.dessalines.thumbkey.utils.KeyboardDefinitionModes
-import com.dessalines.thumbkey.utils.SwipeDirection
 
 // Frequencies from here: https://www.reddit.com/r/tokipona/comments/cxlpt5/frequency_list_of_toki_pona_words_from_tatoeba
 // Since these aren't vowels, no need to alternate, just do bottom right to left, bottom to top
@@ -25,40 +24,37 @@ val KB_TOK_SITELEN_THUMBKEY_EMOJI_MAIN =
                         KeyC(
                             action = KeyAction.CommitText("❌"),
                         ),
-                    swipes =
-                        mapOf(
-                            SwipeDirection.TOP_LEFT to
-                                KeyC(
-                                    action = KeyAction.CommitText("🛒"),
-                                ),
-                            SwipeDirection.TOP to
-                                KeyC(
-                                    action = KeyAction.CommitText("👥"),
-                                ),
-                            SwipeDirection.TOP_RIGHT to
-                                KeyC(
-                                    action = KeyAction.CommitText("👂"),
-                                ),
-                            SwipeDirection.RIGHT to
-                                KeyC(
-                                    action = KeyAction.CommitText("🏋️"),
-                                ),
-                            SwipeDirection.BOTTOM_RIGHT to
-                                KeyC(
-                                    action = KeyAction.CommitText("💀"),
-                                ),
-                            SwipeDirection.BOTTOM to
-                                KeyC(
-                                    action = KeyAction.CommitText("⚫"),
-                                ),
-                            SwipeDirection.BOTTOM_LEFT to
-                                KeyC(
-                                    action = KeyAction.CommitText("🛏️"),
-                                ),
-                            SwipeDirection.LEFT to
-                                KeyC(
-                                    action = KeyAction.CommitText("⚔️"),
-                                ),
+                    topLeft =
+                        KeyC(
+                            action = KeyAction.CommitText("🛒"),
+                        ),
+                    top =
+                        KeyC(
+                            action = KeyAction.CommitText("👥"),
+                        ),
+                    topRight =
+                        KeyC(
+                            action = KeyAction.CommitText("👂"),
+                        ),
+                    right =
+                        KeyC(
+                            action = KeyAction.CommitText("🏋️"),
+                        ),
+                    bottomRight =
+                        KeyC(
+                            action = KeyAction.CommitText("💀"),
+                        ),
+                    bottom =
+                        KeyC(
+                            action = KeyAction.CommitText("⚫"),
+                        ),
+                    bottomLeft =
+                        KeyC(
+                            action = KeyAction.CommitText("🛏️"),
+                        ),
+                    left =
+                        KeyC(
+                            action = KeyAction.CommitText("⚔️"),
                         ),
                 ),
                 KeyItemC(
@@ -66,40 +62,37 @@ val KB_TOK_SITELEN_THUMBKEY_EMOJI_MAIN =
                         KeyC(
                             action = KeyAction.CommitText("👉"),
                         ),
-                    swipes =
-                        mapOf(
-                            SwipeDirection.TOP_LEFT to
-                                KeyC(
-                                    action = KeyAction.CommitText("🔈"),
-                                ),
-                            SwipeDirection.TOP to
-                                KeyC(
-                                    action = KeyAction.CommitText("😴"),
-                                ),
-                            SwipeDirection.TOP_RIGHT to
-                                KeyC(
-                                    action = KeyAction.CommitText("👪"),
-                                ),
-                            SwipeDirection.RIGHT to
-                                KeyC(
-                                    action = KeyAction.CommitText("💰"),
-                                ),
-                            SwipeDirection.BOTTOM_RIGHT to
-                                KeyC(
-                                    action = KeyAction.CommitText("↔️"),
-                                ),
-                            SwipeDirection.BOTTOM to
-                                KeyC(
-                                    action = KeyAction.CommitText("⭕"),
-                                ),
-                            SwipeDirection.BOTTOM_LEFT to
-                                KeyC(
-                                    action = KeyAction.CommitText("📄"),
-                                ),
-                            SwipeDirection.LEFT to
-                                KeyC(
-                                    action = KeyAction.CommitText("➕"),
-                                ),
+                    topLeft =
+                        KeyC(
+                            action = KeyAction.CommitText("🔈"),
+                        ),
+                    top =
+                        KeyC(
+                            action = KeyAction.CommitText("😴"),
+                        ),
+                    topRight =
+                        KeyC(
+                            action = KeyAction.CommitText("👪"),
+                        ),
+                    right =
+                        KeyC(
+                            action = KeyAction.CommitText("💰"),
+                        ),
+                    bottomRight =
+                        KeyC(
+                            action = KeyAction.CommitText("↔️"),
+                        ),
+                    bottom =
+                        KeyC(
+                            action = KeyAction.CommitText("⭕"),
+                        ),
+                    bottomLeft =
+                        KeyC(
+                            action = KeyAction.CommitText("📄"),
+                        ),
+                    left =
+                        KeyC(
+                            action = KeyAction.CommitText("➕"),
                         ),
                 ),
                 KeyItemC(
@@ -107,40 +100,37 @@ val KB_TOK_SITELEN_THUMBKEY_EMOJI_MAIN =
                         KeyC(
                             action = KeyAction.CommitText("↪️"),
                         ),
-                    swipes =
-                        mapOf(
-                            SwipeDirection.TOP_LEFT to
-                                KeyC(
-                                    action = KeyAction.CommitText("🐒"),
-                                ),
-                            SwipeDirection.TOP to
-                                KeyC(
-                                    action = KeyAction.CommitText("💥"),
-                                ),
-                            SwipeDirection.TOP_RIGHT to
-                                KeyC(
-                                    action = KeyAction.CommitText("⚓"),
-                                ),
-                            SwipeDirection.RIGHT to
-                                KeyC(
-                                    action = KeyAction.CommitText("✌️"),
-                                ),
-                            SwipeDirection.BOTTOM_RIGHT to
-                                KeyC(
-                                    action = KeyAction.CommitText("🌀"),
-                                ),
-                            SwipeDirection.BOTTOM to
-                                KeyC(
-                                    action = KeyAction.CommitText("🔀"),
-                                ),
-                            SwipeDirection.BOTTOM_LEFT to
-                                KeyC(
-                                    action = KeyAction.CommitText("☝️"),
-                                ),
-                            SwipeDirection.LEFT to
-                                KeyC(
-                                    action = KeyAction.CommitText("🛫"),
-                                ),
+                    topLeft =
+                        KeyC(
+                            action = KeyAction.CommitText("🐒"),
+                        ),
+                    top =
+                        KeyC(
+                            action = KeyAction.CommitText("💥"),
+                        ),
+                    topRight =
+                        KeyC(
+                            action = KeyAction.CommitText("⚓"),
+                        ),
+                    right =
+                        KeyC(
+                            action = KeyAction.CommitText("✌️"),
+                        ),
+                    bottomRight =
+                        KeyC(
+                            action = KeyAction.CommitText("🌀"),
+                        ),
+                    bottom =
+                        KeyC(
+                            action = KeyAction.CommitText("🔀"),
+                        ),
+                    bottomLeft =
+                        KeyC(
+                            action = KeyAction.CommitText("☝️"),
+                        ),
+                    left =
+                        KeyC(
+                            action = KeyAction.CommitText("🛫"),
                         ),
                 ),
                 EMOJI_KEY_ITEM,
@@ -151,40 +141,37 @@ val KB_TOK_SITELEN_THUMBKEY_EMOJI_MAIN =
                         KeyC(
                             action = KeyAction.CommitText("🔼"),
                         ),
-                    swipes =
-                        mapOf(
-                            SwipeDirection.TOP_LEFT to
-                                KeyC(
-                                    action = KeyAction.CommitText("❕"),
-                                ),
-                            SwipeDirection.TOP to
-                                KeyC(
-                                    action = KeyAction.CommitText("🎁"),
-                                ),
-                            SwipeDirection.TOP_RIGHT to
-                                KeyC(
-                                    action = KeyAction.CommitText("⚡"),
-                                ),
-                            SwipeDirection.RIGHT to
-                                KeyC(
-                                    action = KeyAction.CommitText("🛣️"),
-                                ),
-                            SwipeDirection.BOTTOM_RIGHT to
-                                KeyC(
-                                    action = KeyAction.CommitText("😃"),
-                                ),
-                            SwipeDirection.BOTTOM to
-                                KeyC(
-                                    action = KeyAction.CommitText("🖼️"),
-                                ),
-                            SwipeDirection.BOTTOM_LEFT to
-                                KeyC(
-                                    action = KeyAction.CommitText("👨"),
-                                ),
-                            SwipeDirection.LEFT to
-                                KeyC(
-                                    action = KeyAction.CommitText("⬆️"),
-                                ),
+                    topLeft =
+                        KeyC(
+                            action = KeyAction.CommitText("❕"),
+                        ),
+                    top =
+                        KeyC(
+                            action = KeyAction.CommitText("🎁"),
+                        ),
+                    topRight =
+                        KeyC(
+                            action = KeyAction.CommitText("⚡"),
+                        ),
+                    right =
+                        KeyC(
+                            action = KeyAction.CommitText("🛣️"),
+                        ),
+                    bottomRight =
+                        KeyC(
+                            action = KeyAction.CommitText("😃"),
+                        ),
+                    bottom =
+                        KeyC(
+                            action = KeyAction.CommitText("🖼️"),
+                        ),
+                    bottomLeft =
+                        KeyC(
+                            action = KeyAction.CommitText("👨"),
+                        ),
+                    left =
+                        KeyC(
+                            action = KeyAction.CommitText("⬆️"),
                         ),
                 ),
                 KeyItemC(
@@ -192,40 +179,37 @@ val KB_TOK_SITELEN_THUMBKEY_EMOJI_MAIN =
                         KeyC(
                             action = KeyAction.CommitText("👇"),
                         ),
-                    swipes =
-                        mapOf(
-                            SwipeDirection.TOP_LEFT to
-                                KeyC(
-                                    action = KeyAction.CommitText("🤔"),
-                                ),
-                            SwipeDirection.TOP to
-                                KeyC(
-                                    action = KeyAction.CommitText("👧"),
-                                ),
-                            SwipeDirection.TOP_RIGHT to
-                                KeyC(
-                                    action = KeyAction.CommitText("😶"),
-                                ),
-                            SwipeDirection.RIGHT to
-                                KeyC(
-                                    action = KeyAction.CommitText("🐘"),
-                                ),
-                            SwipeDirection.BOTTOM_RIGHT to
-                                KeyC(
-                                    action = KeyAction.CommitText("☯️"),
-                                ),
-                            SwipeDirection.BOTTOM to
-                                KeyC(
-                                    action = KeyAction.CommitText("⚙️"),
-                                ),
-                            SwipeDirection.BOTTOM_LEFT to
-                                KeyC(
-                                    action = KeyAction.CommitText("☀️"),
-                                ),
-                            SwipeDirection.LEFT to
-                                KeyC(
-                                    action = KeyAction.CommitText("🍽️"),
-                                ),
+                    topLeft =
+                        KeyC(
+                            action = KeyAction.CommitText("🤔"),
+                        ),
+                    top =
+                        KeyC(
+                            action = KeyAction.CommitText("👧"),
+                        ),
+                    topRight =
+                        KeyC(
+                            action = KeyAction.CommitText("😶"),
+                        ),
+                    right =
+                        KeyC(
+                            action = KeyAction.CommitText("🐘"),
+                        ),
+                    bottomRight =
+                        KeyC(
+                            action = KeyAction.CommitText("☯️"),
+                        ),
+                    bottom =
+                        KeyC(
+                            action = KeyAction.CommitText("⚙️"),
+                        ),
+                    bottomLeft =
+                        KeyC(
+                            action = KeyAction.CommitText("☀️"),
+                        ),
+                    left =
+                        KeyC(
+                            action = KeyAction.CommitText("🍽️"),
                         ),
                 ),
                 KeyItemC(
@@ -233,40 +217,37 @@ val KB_TOK_SITELEN_THUMBKEY_EMOJI_MAIN =
                         KeyC(
                             action = KeyAction.CommitText("👤"),
                         ),
-                    swipes =
-                        mapOf(
-                            SwipeDirection.TOP_LEFT to
-                                KeyC(
-                                    action = KeyAction.CommitText("🐚"),
-                                ),
-                            SwipeDirection.TOP to
-                                KeyC(
-                                    action = KeyAction.CommitText("⚖️"),
-                                ),
-                            SwipeDirection.TOP_RIGHT to
-                                KeyC(
-                                    action = KeyAction.CommitText("💧"),
-                                ),
-                            SwipeDirection.RIGHT to
-                                KeyC(
-                                    action = KeyAction.CommitText("📤"),
-                                ),
-                            SwipeDirection.BOTTOM_RIGHT to
-                                KeyC(
-                                    action = KeyAction.CommitText("🔧"),
-                                ),
-                            SwipeDirection.BOTTOM to
-                                KeyC(
-                                    action = KeyAction.CommitText("👎"),
-                                ),
-                            SwipeDirection.BOTTOM_LEFT to
-                                KeyC(
-                                    action = KeyAction.CommitText("♾️"),
-                                ),
-                            SwipeDirection.LEFT to
-                                KeyC(
-                                    action = KeyAction.CommitText("🏝️"),
-                                ),
+                    topLeft =
+                        KeyC(
+                            action = KeyAction.CommitText("🐚"),
+                        ),
+                    top =
+                        KeyC(
+                            action = KeyAction.CommitText("⚖️"),
+                        ),
+                    topRight =
+                        KeyC(
+                            action = KeyAction.CommitText("💧"),
+                        ),
+                    right =
+                        KeyC(
+                            action = KeyAction.CommitText("📤"),
+                        ),
+                    bottomRight =
+                        KeyC(
+                            action = KeyAction.CommitText("🔧"),
+                        ),
+                    bottom =
+                        KeyC(
+                            action = KeyAction.CommitText("👎"),
+                        ),
+                    bottomLeft =
+                        KeyC(
+                            action = KeyAction.CommitText("♾️"),
+                        ),
+                    left =
+                        KeyC(
+                            action = KeyAction.CommitText("🏝️"),
                         ),
                 ),
                 NUMERIC_KEY_ITEM,
@@ -277,40 +258,37 @@ val KB_TOK_SITELEN_THUMBKEY_EMOJI_MAIN =
                         KeyC(
                             action = KeyAction.CommitText("👈"),
                         ),
-                    swipes =
-                        mapOf(
-                            SwipeDirection.TOP_LEFT to
-                                KeyC(
-                                    action = KeyAction.CommitText("🏁"),
-                                ),
-                            SwipeDirection.TOP to
-                                KeyC(
-                                    action = KeyAction.CommitText("🐭"),
-                                ),
-                            SwipeDirection.TOP_RIGHT to
-                                KeyC(
-                                    action = KeyAction.CommitText("❤️"),
-                                ),
-                            SwipeDirection.RIGHT to
-                                KeyC(
-                                    action = KeyAction.CommitText("👜"),
-                                ),
-                            SwipeDirection.BOTTOM_RIGHT to
-                                KeyC(
-                                    action = KeyAction.CommitText("✊"),
-                                ),
-                            SwipeDirection.BOTTOM to
-                                KeyC(
-                                    action = KeyAction.CommitText("👀"),
-                                ),
-                            SwipeDirection.BOTTOM_LEFT to
-                                KeyC(
-                                    action = KeyAction.CommitText("↩️"),
-                                ),
-                            SwipeDirection.LEFT to
-                                KeyC(
-                                    action = KeyAction.CommitText("🏠"),
-                                ),
+                    topLeft =
+                        KeyC(
+                            action = KeyAction.CommitText("🏁"),
+                        ),
+                    top =
+                        KeyC(
+                            action = KeyAction.CommitText("🐭"),
+                        ),
+                    topRight =
+                        KeyC(
+                            action = KeyAction.CommitText("❤️"),
+                        ),
+                    right =
+                        KeyC(
+                            action = KeyAction.CommitText("👜"),
+                        ),
+                    bottomRight =
+                        KeyC(
+                            action = KeyAction.CommitText("✊"),
+                        ),
+                    bottom =
+                        KeyC(
+                            action = KeyAction.CommitText("👀"),
+                        ),
+                    bottomLeft =
+                        KeyC(
+                            action = KeyAction.CommitText("↩️"),
+                        ),
+                    left =
+                        KeyC(
+                            action = KeyAction.CommitText("🏠"),
                         ),
                 ),
                 KeyItemC(
@@ -318,45 +296,42 @@ val KB_TOK_SITELEN_THUMBKEY_EMOJI_MAIN =
                         KeyC(
                             action = KeyAction.CommitText("⏩"),
                         ),
-                    swipes =
-                        mapOf(
-                            SwipeDirection.TOP_LEFT to
-                                KeyC(
-                                    action = KeyAction.CommitText("🧠"),
-                                ),
-                            SwipeDirection.TOP to
-                                KeyC(
-                                    action = KeyAction.CommitText("💪"),
-                                ),
-                            SwipeDirection.TOP_RIGHT to
-                                KeyC(
-                                    action = KeyAction.CommitText("👋"),
-                                ),
-                            SwipeDirection.RIGHT to
-                                KeyC(
-                                    action = KeyAction.CommitText("💭"),
-                                ),
-                            SwipeDirection.BOTTOM_RIGHT to
-                                KeyC(
-                                    action = KeyAction.CommitText(","),
-                                    color = ColorVariant.MUTED,
-                                ),
-                            SwipeDirection.BOTTOM to
-                                KeyC(
-                                    action = KeyAction.CommitText("."),
-                                    color = ColorVariant.MUTED,
-                                ),
-                            SwipeDirection.BOTTOM_LEFT to
-                                KeyC(
-                                    display = KeyDisplay.IconDisplay(Icons.Outlined.ArrowDropUp),
-                                    action = KeyAction.ToggleShiftMode(true),
-                                    swipeReturnAction = KeyAction.ToggleCurrentWordCapitalization(true),
-                                    color = ColorVariant.MUTED,
-                                ),
-                            SwipeDirection.LEFT to
-                                KeyC(
-                                    action = KeyAction.CommitText("🗣️"),
-                                ),
+                    topLeft =
+                        KeyC(
+                            action = KeyAction.CommitText("🧠"),
+                        ),
+                    top =
+                        KeyC(
+                            action = KeyAction.CommitText("💪"),
+                        ),
+                    topRight =
+                        KeyC(
+                            action = KeyAction.CommitText("👋"),
+                        ),
+                    right =
+                        KeyC(
+                            action = KeyAction.CommitText("💭"),
+                        ),
+                    bottomRight =
+                        KeyC(
+                            action = KeyAction.CommitText(","),
+                            color = ColorVariant.MUTED,
+                        ),
+                    bottom =
+                        KeyC(
+                            action = KeyAction.CommitText("."),
+                            color = ColorVariant.MUTED,
+                        ),
+                    bottomLeft =
+                        KeyC(
+                            display = KeyDisplay.IconDisplay(Icons.Outlined.ArrowDropUp),
+                            action = KeyAction.ToggleShiftMode(true),
+                            swipeReturnAction = KeyAction.ToggleCurrentWordCapitalization(true),
+                            color = ColorVariant.MUTED,
+                        ),
+                    left =
+                        KeyC(
+                            action = KeyAction.CommitText("🗣️"),
                         ),
                 ),
                 KeyItemC(
@@ -364,40 +339,37 @@ val KB_TOK_SITELEN_THUMBKEY_EMOJI_MAIN =
                         KeyC(
                             action = KeyAction.CommitText("▶️"),
                         ),
-                    swipes =
-                        mapOf(
-                            SwipeDirection.TOP_LEFT to
-                                KeyC(
-                                    action = KeyAction.CommitText("❓"),
-                                ),
-                            SwipeDirection.TOP to
-                                KeyC(
-                                    action = KeyAction.CommitText("🚶"),
-                                ),
-                            SwipeDirection.TOP_RIGHT to
-                                KeyC(
-                                    action = KeyAction.CommitText("👍"),
-                                ),
-                            SwipeDirection.RIGHT to
-                                KeyC(
-                                    action = KeyAction.CommitText("👐"),
-                                ),
-                            SwipeDirection.BOTTOM_RIGHT to
-                                KeyC(
-                                    action = KeyAction.CommitText("⏰"),
-                                ),
-                            SwipeDirection.BOTTOM to
-                                KeyC(
-                                    action = KeyAction.CommitText("👆"),
-                                ),
-                            SwipeDirection.BOTTOM_LEFT to
-                                KeyC(
-                                    action = KeyAction.CommitText("⏹️"),
-                                ),
-                            SwipeDirection.LEFT to
-                                KeyC(
-                                    action = KeyAction.CommitText("📍"),
-                                ),
+                    topLeft =
+                        KeyC(
+                            action = KeyAction.CommitText("❓"),
+                        ),
+                    top =
+                        KeyC(
+                            action = KeyAction.CommitText("🚶"),
+                        ),
+                    topRight =
+                        KeyC(
+                            action = KeyAction.CommitText("👍"),
+                        ),
+                    right =
+                        KeyC(
+                            action = KeyAction.CommitText("👐"),
+                        ),
+                    bottomRight =
+                        KeyC(
+                            action = KeyAction.CommitText("⏰"),
+                        ),
+                    bottom =
+                        KeyC(
+                            action = KeyAction.CommitText("👆"),
+                        ),
+                    bottomLeft =
+                        KeyC(
+                            action = KeyAction.CommitText("⏹️"),
+                        ),
+                    left =
+                        KeyC(
+                            action = KeyAction.CommitText("📍"),
                         ),
                 ),
                 BACKSPACE_KEY_ITEM,
@@ -430,25 +402,22 @@ val KB_TOK_SITELEN_THUMBKEY_EMOJI_SHIFTED =
                         KeyC(
                             action = KeyAction.CommitText("🔥"),
                         ),
-                    swipes =
-                        mapOf(
-                            // Last char added here
-                            SwipeDirection.BOTTOM_RIGHT to
-                                KeyC(
-                                    action = KeyAction.CommitText("♐"),
-                                ),
-                            SwipeDirection.BOTTOM to
-                                KeyC(
-                                    action = KeyAction.CommitText("🍄"),
-                                ),
-                            SwipeDirection.BOTTOM_LEFT to
-                                KeyC(
-                                    action = KeyAction.CommitText("👁️"),
-                                ),
-                            SwipeDirection.LEFT to
-                                KeyC(
-                                    action = KeyAction.CommitText("🧂"),
-                                ),
+                    // Last char added here
+                    bottomRight =
+                        KeyC(
+                            action = KeyAction.CommitText("♐"),
+                        ),
+                    bottom =
+                        KeyC(
+                            action = KeyAction.CommitText("🍄"),
+                        ),
+                    bottomLeft =
+                        KeyC(
+                            action = KeyAction.CommitText("👁️"),
+                        ),
+                    left =
+                        KeyC(
+                            action = KeyAction.CommitText("🧂"),
                         ),
                 ),
                 EMOJI_KEY_ITEM,
@@ -459,40 +428,37 @@ val KB_TOK_SITELEN_THUMBKEY_EMOJI_SHIFTED =
                         KeyC(
                             action = KeyAction.CommitText("🌴"),
                         ),
-                    swipes =
-                        mapOf(
-                            SwipeDirection.TOP_LEFT to
-                                KeyC(
-                                    action = KeyAction.CommitText("👹"),
-                                ),
-                            SwipeDirection.TOP to
-                                KeyC(
-                                    action = KeyAction.CommitText("💊"),
-                                ),
-                            SwipeDirection.TOP_RIGHT to
-                                KeyC(
-                                    action = KeyAction.CommitText("⛿"),
-                                ),
-                            SwipeDirection.RIGHT to
-                                KeyC(
-                                    action = KeyAction.CommitText("🧱"),
-                                ),
-                            SwipeDirection.BOTTOM_RIGHT to
-                                KeyC(
-                                    action = KeyAction.CommitText("🫳"),
-                                ),
-                            SwipeDirection.BOTTOM to
-                                KeyC(
-                                    action = KeyAction.CommitText("📕"),
-                                ),
-                            SwipeDirection.BOTTOM_LEFT to
-                                KeyC(
-                                    action = KeyAction.CommitText("🐊"),
-                                ),
-                            SwipeDirection.LEFT to
-                                KeyC(
-                                    action = KeyAction.CommitText("✂️"),
-                                ),
+                    topLeft =
+                        KeyC(
+                            action = KeyAction.CommitText("👹"),
+                        ),
+                    top =
+                        KeyC(
+                            action = KeyAction.CommitText("💊"),
+                        ),
+                    topRight =
+                        KeyC(
+                            action = KeyAction.CommitText("⛿"),
+                        ),
+                    right =
+                        KeyC(
+                            action = KeyAction.CommitText("🧱"),
+                        ),
+                    bottomRight =
+                        KeyC(
+                            action = KeyAction.CommitText("🫳"),
+                        ),
+                    bottom =
+                        KeyC(
+                            action = KeyAction.CommitText("📕"),
+                        ),
+                    bottomLeft =
+                        KeyC(
+                            action = KeyAction.CommitText("🐊"),
+                        ),
+                    left =
+                        KeyC(
+                            action = KeyAction.CommitText("✂️"),
                         ),
                 ),
                 KeyItemC(
@@ -500,40 +466,37 @@ val KB_TOK_SITELEN_THUMBKEY_EMOJI_SHIFTED =
                         KeyC(
                             action = KeyAction.CommitText("✋"),
                         ),
-                    swipes =
-                        mapOf(
-                            SwipeDirection.TOP_LEFT to
-                                KeyC(
-                                    action = KeyAction.CommitText("🦝"),
-                                ),
-                            SwipeDirection.TOP to
-                                KeyC(
-                                    action = KeyAction.CommitText("🪞"),
-                                ),
-                            SwipeDirection.TOP_RIGHT to
-                                KeyC(
-                                    action = KeyAction.CommitText("😎"),
-                                ),
-                            SwipeDirection.RIGHT to
-                                KeyC(
-                                    action = KeyAction.CommitText("📖"),
-                                ),
-                            SwipeDirection.BOTTOM_RIGHT to
-                                KeyC(
-                                    action = KeyAction.CommitText("😹"),
-                                ),
-                            SwipeDirection.BOTTOM to
-                                KeyC(
-                                    action = KeyAction.CommitText("🍆"),
-                                ),
-                            SwipeDirection.BOTTOM_LEFT to
-                                KeyC(
-                                    action = KeyAction.CommitText("🔵"),
-                                ),
-                            SwipeDirection.LEFT to
-                                KeyC(
-                                    action = KeyAction.CommitText("🐟"),
-                                ),
+                    topLeft =
+                        KeyC(
+                            action = KeyAction.CommitText("🦝"),
+                        ),
+                    top =
+                        KeyC(
+                            action = KeyAction.CommitText("🪞"),
+                        ),
+                    topRight =
+                        KeyC(
+                            action = KeyAction.CommitText("😎"),
+                        ),
+                    right =
+                        KeyC(
+                            action = KeyAction.CommitText("📖"),
+                        ),
+                    bottomRight =
+                        KeyC(
+                            action = KeyAction.CommitText("😹"),
+                        ),
+                    bottom =
+                        KeyC(
+                            action = KeyAction.CommitText("🍆"),
+                        ),
+                    bottomLeft =
+                        KeyC(
+                            action = KeyAction.CommitText("🔵"),
+                        ),
+                    left =
+                        KeyC(
+                            action = KeyAction.CommitText("🐟"),
                         ),
                 ),
                 KeyItemC(
@@ -541,40 +504,37 @@ val KB_TOK_SITELEN_THUMBKEY_EMOJI_SHIFTED =
                         KeyC(
                             action = KeyAction.CommitText("💨"),
                         ),
-                    swipes =
-                        mapOf(
-                            SwipeDirection.TOP_LEFT to
-                                KeyC(
-                                    action = KeyAction.CommitText("💛"),
-                                ),
-                            SwipeDirection.TOP to
-                                KeyC(
-                                    action = KeyAction.CommitText("🏹"),
-                                ),
-                            SwipeDirection.TOP_RIGHT to
-                                KeyC(
-                                    action = KeyAction.CommitText("📏"),
-                                ),
-                            SwipeDirection.RIGHT to
-                                KeyC(
-                                    action = KeyAction.CommitText("🌙"),
-                                ),
-                            SwipeDirection.BOTTOM_RIGHT to
-                                KeyC(
-                                    action = KeyAction.CommitText("🍞"),
-                                ),
-                            SwipeDirection.BOTTOM to
-                                KeyC(
-                                    action = KeyAction.CommitText("🐞"),
-                                ),
-                            SwipeDirection.BOTTOM_LEFT to
-                                KeyC(
-                                    action = KeyAction.CommitText("🗻"),
-                                ),
-                            SwipeDirection.LEFT to
-                                KeyC(
-                                    action = KeyAction.CommitText("🦅"),
-                                ),
+                    topLeft =
+                        KeyC(
+                            action = KeyAction.CommitText("💛"),
+                        ),
+                    top =
+                        KeyC(
+                            action = KeyAction.CommitText("🏹"),
+                        ),
+                    topRight =
+                        KeyC(
+                            action = KeyAction.CommitText("📏"),
+                        ),
+                    right =
+                        KeyC(
+                            action = KeyAction.CommitText("🌙"),
+                        ),
+                    bottomRight =
+                        KeyC(
+                            action = KeyAction.CommitText("🍞"),
+                        ),
+                    bottom =
+                        KeyC(
+                            action = KeyAction.CommitText("🐞"),
+                        ),
+                    bottomLeft =
+                        KeyC(
+                            action = KeyAction.CommitText("🗻"),
+                        ),
+                    left =
+                        KeyC(
+                            action = KeyAction.CommitText("🦅"),
                         ),
                 ),
                 NUMERIC_KEY_ITEM,
@@ -585,40 +545,37 @@ val KB_TOK_SITELEN_THUMBKEY_EMOJI_SHIFTED =
                         KeyC(
                             action = KeyAction.CommitText("👕"),
                         ),
-                    swipes =
-                        mapOf(
-                            SwipeDirection.TOP_LEFT to
-                                KeyC(
-                                    action = KeyAction.CommitText("🔴"),
-                                ),
-                            SwipeDirection.TOP to
-                                KeyC(
-                                    action = KeyAction.CommitText("🍦"),
-                                ),
-                            SwipeDirection.TOP_RIGHT to
-                                KeyC(
-                                    action = KeyAction.CommitText("💩"),
-                                ),
-                            SwipeDirection.RIGHT to
-                                KeyC(
-                                    action = KeyAction.CommitText("🍎"),
-                                ),
-                            SwipeDirection.BOTTOM_RIGHT to
-                                KeyC(
-                                    action = KeyAction.CommitText("⚪"),
-                                ),
-                            SwipeDirection.BOTTOM to
-                                KeyC(
-                                    action = KeyAction.CommitText("🔲"),
-                                ),
-                            SwipeDirection.BOTTOM_LEFT to
-                                KeyC(
-                                    action = KeyAction.CommitText("❗"),
-                                ),
-                            SwipeDirection.LEFT to
-                                KeyC(
-                                    action = KeyAction.CommitText("⬅️"),
-                                ),
+                    topLeft =
+                        KeyC(
+                            action = KeyAction.CommitText("🔴"),
+                        ),
+                    top =
+                        KeyC(
+                            action = KeyAction.CommitText("🍦"),
+                        ),
+                    topRight =
+                        KeyC(
+                            action = KeyAction.CommitText("💩"),
+                        ),
+                    right =
+                        KeyC(
+                            action = KeyAction.CommitText("🍎"),
+                        ),
+                    bottomRight =
+                        KeyC(
+                            action = KeyAction.CommitText("⚪"),
+                        ),
+                    bottom =
+                        KeyC(
+                            action = KeyAction.CommitText("🔲"),
+                        ),
+                    bottomLeft =
+                        KeyC(
+                            action = KeyAction.CommitText("❗"),
+                        ),
+                    left =
+                        KeyC(
+                            action = KeyAction.CommitText("⬅️"),
                         ),
                 ),
                 KeyItemC(
@@ -626,45 +583,42 @@ val KB_TOK_SITELEN_THUMBKEY_EMOJI_SHIFTED =
                         KeyC(
                             action = KeyAction.CommitText("💕"),
                         ),
-                    swipes =
-                        mapOf(
-                            SwipeDirection.TOP_LEFT to
-                                KeyC(
-                                    action = KeyAction.CommitText("🕳️"),
-                                ),
-                            SwipeDirection.TOP to
-                                KeyC(
-                                    action = KeyAction.CommitText("🌈"),
-                                ),
-                            SwipeDirection.TOP_RIGHT to
-                                KeyC(
-                                    action = KeyAction.CommitText("🦎"),
-                                ),
-                            SwipeDirection.RIGHT to
-                                KeyC(
-                                    action = KeyAction.CommitText("❄️"),
-                                ),
-                            SwipeDirection.BOTTOM_RIGHT to
-                                KeyC(
-                                    action = KeyAction.CommitText(","),
-                                    color = ColorVariant.MUTED,
-                                ),
-                            SwipeDirection.BOTTOM to
-                                KeyC(
-                                    action = KeyAction.CommitText("."),
-                                    color = ColorVariant.MUTED,
-                                ),
-                            SwipeDirection.BOTTOM_LEFT to
-                                KeyC(
-                                    display = KeyDisplay.IconDisplay(Icons.Outlined.ArrowDropDown),
-                                    action = KeyAction.ToggleShiftMode(false),
-                                    swipeReturnAction = KeyAction.ToggleCurrentWordCapitalization(false),
-                                    color = ColorVariant.MUTED,
-                                ),
-                            SwipeDirection.LEFT to
-                                KeyC(
-                                    action = KeyAction.CommitText("👄"),
-                                ),
+                    topLeft =
+                        KeyC(
+                            action = KeyAction.CommitText("🕳️"),
+                        ),
+                    top =
+                        KeyC(
+                            action = KeyAction.CommitText("🌈"),
+                        ),
+                    topRight =
+                        KeyC(
+                            action = KeyAction.CommitText("🦎"),
+                        ),
+                    right =
+                        KeyC(
+                            action = KeyAction.CommitText("❄️"),
+                        ),
+                    bottomRight =
+                        KeyC(
+                            action = KeyAction.CommitText(","),
+                            color = ColorVariant.MUTED,
+                        ),
+                    bottom =
+                        KeyC(
+                            action = KeyAction.CommitText("."),
+                            color = ColorVariant.MUTED,
+                        ),
+                    bottomLeft =
+                        KeyC(
+                            display = KeyDisplay.IconDisplay(Icons.Outlined.ArrowDropDown),
+                            action = KeyAction.ToggleShiftMode(false),
+                            swipeReturnAction = KeyAction.ToggleCurrentWordCapitalization(false),
+                            color = ColorVariant.MUTED,
+                        ),
+                    left =
+                        KeyC(
+                            action = KeyAction.CommitText("👄"),
                         ),
                 ),
                 KeyItemC(
@@ -672,40 +626,37 @@ val KB_TOK_SITELEN_THUMBKEY_EMOJI_SHIFTED =
                         KeyC(
                             action = KeyAction.CommitText("🔓"),
                         ),
-                    swipes =
-                        mapOf(
-                            SwipeDirection.TOP_LEFT to
-                                KeyC(
-                                    action = KeyAction.CommitText("🦵"),
-                                ),
-                            SwipeDirection.TOP to
-                                KeyC(
-                                    action = KeyAction.CommitText("〰️"),
-                                ),
-                            SwipeDirection.TOP_RIGHT to
-                                KeyC(
-                                    action = KeyAction.CommitText("#️⃣"),
-                                ),
-                            SwipeDirection.RIGHT to
-                                KeyC(
-                                    action = KeyAction.CommitText("⬇️"),
-                                ),
-                            SwipeDirection.BOTTOM_RIGHT to
-                                KeyC(
-                                    action = KeyAction.CommitText("💎"),
-                                ),
-                            SwipeDirection.BOTTOM to
-                                KeyC(
-                                    action = KeyAction.CommitText("🍭"),
-                                ),
-                            SwipeDirection.BOTTOM_LEFT to
-                                KeyC(
-                                    action = KeyAction.CommitText("➡️"),
-                                ),
-                            SwipeDirection.LEFT to
-                                KeyC(
-                                    action = KeyAction.CommitText("📦"),
-                                ),
+                    topLeft =
+                        KeyC(
+                            action = KeyAction.CommitText("🦵"),
+                        ),
+                    top =
+                        KeyC(
+                            action = KeyAction.CommitText("〰️"),
+                        ),
+                    topRight =
+                        KeyC(
+                            action = KeyAction.CommitText("#️⃣"),
+                        ),
+                    right =
+                        KeyC(
+                            action = KeyAction.CommitText("⬇️"),
+                        ),
+                    bottomRight =
+                        KeyC(
+                            action = KeyAction.CommitText("💎"),
+                        ),
+                    bottom =
+                        KeyC(
+                            action = KeyAction.CommitText("🍭"),
+                        ),
+                    bottomLeft =
+                        KeyC(
+                            action = KeyAction.CommitText("➡️"),
+                        ),
+                    left =
+                        KeyC(
+                            action = KeyAction.CommitText("📦"),
                         ),
                 ),
                 BACKSPACE_KEY_ITEM,

@@ -12,7 +12,6 @@ import com.dessalines.thumbkey.utils.KeyboardC
 import com.dessalines.thumbkey.utils.KeyboardDefinition
 import com.dessalines.thumbkey.utils.KeyboardDefinitionModes
 import com.dessalines.thumbkey.utils.KeyboardDefinitionSettings
-import com.dessalines.thumbkey.utils.SwipeDirection
 import com.dessalines.thumbkey.utils.SwipeNWay
 import com.dessalines.thumbkey.utils.autoCapitalizeI
 import com.dessalines.thumbkey.utils.autoCapitalizeIApostrophe
@@ -29,24 +28,21 @@ val KB_EO_CYRILLIC_THUMBKEY_MAIN =
                             color = ColorVariant.PRIMARY,
                         ),
                     swipeType = SwipeNWay.FOUR_WAY_CROSS,
-                    swipes =
-                        mapOf(
-                            SwipeDirection.BOTTOM to
-                                KeyC(
-                                    action = KeyAction.CommitText("к"),
-                                ),
-                            SwipeDirection.TOP to
-                                KeyC(
-                                    action = KeyAction.CommitText("м"),
-                                ),
-                            SwipeDirection.LEFT to
-                                KeyC(
-                                    action = KeyAction.CommitText("'"),
-                                ),
-                            SwipeDirection.RIGHT to
-                                KeyC(
-                                    action = KeyAction.CommitText("@"),
-                                ),
+                    bottom =
+                        KeyC(
+                            action = KeyAction.CommitText("к"),
+                        ),
+                    top =
+                        KeyC(
+                            action = KeyAction.CommitText("м"),
+                        ),
+                    left =
+                        KeyC(
+                            action = KeyAction.CommitText("'"),
+                        ),
+                    right =
+                        KeyC(
+                            action = KeyAction.CommitText("@"),
                         ),
                 ),
                 KeyItemC(
@@ -57,24 +53,21 @@ val KB_EO_CYRILLIC_THUMBKEY_MAIN =
                             color = ColorVariant.PRIMARY,
                         ),
                     swipeType = SwipeNWay.FOUR_WAY_CROSS,
-                    swipes =
-                        mapOf(
-                            SwipeDirection.BOTTOM to
-                                KeyC(
-                                    action = KeyAction.CommitText("ш"),
-                                ),
-                            SwipeDirection.TOP to
-                                KeyC(
-                                    action = KeyAction.CommitText("п"),
-                                ),
-                            SwipeDirection.LEFT to
-                                KeyC(
-                                    action = KeyAction.CommitText("ϗ"),
-                                ),
-                            SwipeDirection.RIGHT to
-                                KeyC(
-                                    action = KeyAction.CommitText("₷"),
-                                ),
+                    bottom =
+                        KeyC(
+                            action = KeyAction.CommitText("ш"),
+                        ),
+                    top =
+                        KeyC(
+                            action = KeyAction.CommitText("п"),
+                        ),
+                    left =
+                        KeyC(
+                            action = KeyAction.CommitText("ϗ"),
+                        ),
+                    right =
+                        KeyC(
+                            action = KeyAction.CommitText("₷"),
                         ),
                 ),
                 KeyItemC(
@@ -85,24 +78,21 @@ val KB_EO_CYRILLIC_THUMBKEY_MAIN =
                             color = ColorVariant.PRIMARY,
                         ),
                     swipeType = SwipeNWay.FOUR_WAY_CROSS,
-                    swipes =
-                        mapOf(
-                            SwipeDirection.BOTTOM to
-                                KeyC(
-                                    action = KeyAction.CommitText("х"),
-                                ),
-                            SwipeDirection.TOP to
-                                KeyC(
-                                    action = KeyAction.CommitText("һ"),
-                                ),
-                            SwipeDirection.LEFT to
-                                KeyC(
-                                    action = KeyAction.CommitText("#"),
-                                ),
-                            SwipeDirection.RIGHT to
-                                KeyC(
-                                    action = KeyAction.CommitText(":"),
-                                ),
+                    bottom =
+                        KeyC(
+                            action = KeyAction.CommitText("х"),
+                        ),
+                    top =
+                        KeyC(
+                            action = KeyAction.CommitText("һ"),
+                        ),
+                    left =
+                        KeyC(
+                            action = KeyAction.CommitText("#"),
+                        ),
+                    right =
+                        KeyC(
+                            action = KeyAction.CommitText(":"),
                         ),
                 ),
                 EMOJI_KEY_ITEM,
@@ -116,24 +106,21 @@ val KB_EO_CYRILLIC_THUMBKEY_MAIN =
                             color = ColorVariant.PRIMARY,
                         ),
                     swipeType = SwipeNWay.FOUR_WAY_CROSS,
-                    swipes =
-                        mapOf(
-                            SwipeDirection.BOTTOM to
-                                KeyC(
-                                    action = KeyAction.CommitText("ж"),
-                                ),
-                            SwipeDirection.TOP to
-                                KeyC(
-                                    action = KeyAction.CommitText("j"),
-                                ),
-                            SwipeDirection.LEFT to
-                                KeyC(
-                                    action = KeyAction.CommitText("."),
-                                ),
-                            SwipeDirection.RIGHT to
-                                KeyC(
-                                    action = KeyAction.CommitText(","),
-                                ),
+                    bottom =
+                        KeyC(
+                            action = KeyAction.CommitText("ж"),
+                        ),
+                    top =
+                        KeyC(
+                            action = KeyAction.CommitText("j"),
+                        ),
+                    left =
+                        KeyC(
+                            action = KeyAction.CommitText("."),
+                        ),
+                    right =
+                        KeyC(
+                            action = KeyAction.CommitText(","),
                         ),
                 ),
                 KeyItemC(
@@ -144,24 +131,21 @@ val KB_EO_CYRILLIC_THUMBKEY_MAIN =
                             color = ColorVariant.PRIMARY,
                         ),
                     swipeType = SwipeNWay.FOUR_WAY_CROSS,
-                    swipes =
-                        mapOf(
-                            SwipeDirection.BOTTOM to
-                                KeyC(
-                                    action = KeyAction.CommitText("в"),
-                                ),
-                            SwipeDirection.TOP to
-                                KeyC(
-                                    action = KeyAction.CommitText("ф"),
-                                ),
-                            SwipeDirection.LEFT to
-                                KeyC(
-                                    action = KeyAction.CommitText("?"),
-                                ),
-                            SwipeDirection.RIGHT to
-                                KeyC(
-                                    action = KeyAction.CommitText("!"),
-                                ),
+                    bottom =
+                        KeyC(
+                            action = KeyAction.CommitText("в"),
+                        ),
+                    top =
+                        KeyC(
+                            action = KeyAction.CommitText("ф"),
+                        ),
+                    left =
+                        KeyC(
+                            action = KeyAction.CommitText("?"),
+                        ),
+                    right =
+                        KeyC(
+                            action = KeyAction.CommitText("!"),
                         ),
                 ),
                 KeyItemC(
@@ -172,27 +156,24 @@ val KB_EO_CYRILLIC_THUMBKEY_MAIN =
                             color = ColorVariant.PRIMARY,
                         ),
                     swipeType = SwipeNWay.FOUR_WAY_CROSS,
-                    swipes =
-                        mapOf(
-                            SwipeDirection.BOTTOM to
-                                KeyC(
-                                    action = KeyAction.CommitText("д"),
-                                ),
-                            SwipeDirection.LEFT to
-                                KeyC(
-                                    action = KeyAction.CommitText("("),
-                                ),
-                            SwipeDirection.RIGHT to
-                                KeyC(
-                                    action = KeyAction.CommitText(")"),
-                                ),
-                            SwipeDirection.TOP to
-                                KeyC(
-                                    display = KeyDisplay.IconDisplay(Icons.Outlined.ArrowDropUp),
-                                    action = KeyAction.ToggleShiftMode(true),
-                                    swipeReturnAction = KeyAction.ToggleCurrentWordCapitalization(true),
-                                    color = ColorVariant.MUTED,
-                                ),
+                    bottom =
+                        KeyC(
+                            action = KeyAction.CommitText("д"),
+                        ),
+                    left =
+                        KeyC(
+                            action = KeyAction.CommitText("("),
+                        ),
+                    right =
+                        KeyC(
+                            action = KeyAction.CommitText(")"),
+                        ),
+                    top =
+                        KeyC(
+                            display = KeyDisplay.IconDisplay(Icons.Outlined.ArrowDropUp),
+                            action = KeyAction.ToggleShiftMode(true),
+                            swipeReturnAction = KeyAction.ToggleCurrentWordCapitalization(true),
+                            color = ColorVariant.MUTED,
                         ),
                 ),
                 NUMERIC_KEY_ITEM,
@@ -206,20 +187,17 @@ val KB_EO_CYRILLIC_THUMBKEY_MAIN =
                             color = ColorVariant.PRIMARY,
                         ),
                     swipeType = SwipeNWay.FOUR_WAY_CROSS,
-                    swipes =
-                        mapOf(
-                            SwipeDirection.BOTTOM to
-                                KeyC(
-                                    action = KeyAction.CommitText("ч"),
-                                ),
-                            SwipeDirection.TOP to
-                                KeyC(
-                                    action = KeyAction.CommitText("ц"),
-                                ),
-                            SwipeDirection.LEFT to
-                                KeyC(
-                                    action = KeyAction.CommitText("б"),
-                                ),
+                    bottom =
+                        KeyC(
+                            action = KeyAction.CommitText("ч"),
+                        ),
+                    top =
+                        KeyC(
+                            action = KeyAction.CommitText("ц"),
+                        ),
+                    left =
+                        KeyC(
+                            action = KeyAction.CommitText("б"),
                         ),
                 ),
                 KeyItemC(
@@ -230,20 +208,17 @@ val KB_EO_CYRILLIC_THUMBKEY_MAIN =
                             color = ColorVariant.PRIMARY,
                         ),
                     swipeType = SwipeNWay.FOUR_WAY_CROSS,
-                    swipes =
-                        mapOf(
-                            SwipeDirection.BOTTOM to
-                                KeyC(
-                                    action = KeyAction.CommitText("џ"),
-                                ),
-                            SwipeDirection.TOP to
-                                KeyC(
-                                    action = KeyAction.CommitText("г"),
-                                ),
-                            SwipeDirection.RIGHT to
-                                KeyC(
-                                    action = KeyAction.CommitText("з"),
-                                ),
+                    bottom =
+                        KeyC(
+                            action = KeyAction.CommitText("џ"),
+                        ),
+                    top =
+                        KeyC(
+                            action = KeyAction.CommitText("г"),
+                        ),
+                    right =
+                        KeyC(
+                            action = KeyAction.CommitText("з"),
                         ),
                 ),
                 KeyItemC(
@@ -254,16 +229,13 @@ val KB_EO_CYRILLIC_THUMBKEY_MAIN =
                             color = ColorVariant.PRIMARY,
                         ),
                     swipeType = SwipeNWay.FOUR_WAY_CROSS,
-                    swipes =
-                        mapOf(
-                            SwipeDirection.BOTTOM to
-                                KeyC(
-                                    action = KeyAction.CommitText("ў"),
-                                ),
-                            SwipeDirection.TOP to
-                                KeyC(
-                                    action = KeyAction.CommitText("у"),
-                                ),
+                    bottom =
+                        KeyC(
+                            action = KeyAction.CommitText("ў"),
+                        ),
+                    top =
+                        KeyC(
+                            action = KeyAction.CommitText("у"),
                         ),
                 ),
                 BACKSPACE_KEY_ITEM,
@@ -287,24 +259,21 @@ val KB_EO_CYRILLIC_THUMBKEY_SHIFTED =
                             color = ColorVariant.PRIMARY,
                         ),
                     swipeType = SwipeNWay.FOUR_WAY_CROSS,
-                    swipes =
-                        mapOf(
-                            SwipeDirection.BOTTOM to
-                                KeyC(
-                                    action = KeyAction.CommitText("К"),
-                                ),
-                            SwipeDirection.TOP to
-                                KeyC(
-                                    action = KeyAction.CommitText("М"),
-                                ),
-                            SwipeDirection.LEFT to
-                                KeyC(
-                                    action = KeyAction.CommitText("'"),
-                                ),
-                            SwipeDirection.RIGHT to
-                                KeyC(
-                                    action = KeyAction.CommitText("@"),
-                                ),
+                    bottom =
+                        KeyC(
+                            action = KeyAction.CommitText("К"),
+                        ),
+                    top =
+                        KeyC(
+                            action = KeyAction.CommitText("М"),
+                        ),
+                    left =
+                        KeyC(
+                            action = KeyAction.CommitText("'"),
+                        ),
+                    right =
+                        KeyC(
+                            action = KeyAction.CommitText("@"),
                         ),
                 ),
                 KeyItemC(
@@ -315,24 +284,21 @@ val KB_EO_CYRILLIC_THUMBKEY_SHIFTED =
                             color = ColorVariant.PRIMARY,
                         ),
                     swipeType = SwipeNWay.FOUR_WAY_CROSS,
-                    swipes =
-                        mapOf(
-                            SwipeDirection.BOTTOM to
-                                KeyC(
-                                    action = KeyAction.CommitText("Ш"),
-                                ),
-                            SwipeDirection.TOP to
-                                KeyC(
-                                    action = KeyAction.CommitText("П"),
-                                ),
-                            SwipeDirection.LEFT to
-                                KeyC(
-                                    action = KeyAction.CommitText("ϗ"),
-                                ),
-                            SwipeDirection.RIGHT to
-                                KeyC(
-                                    action = KeyAction.CommitText("₷"),
-                                ),
+                    bottom =
+                        KeyC(
+                            action = KeyAction.CommitText("Ш"),
+                        ),
+                    top =
+                        KeyC(
+                            action = KeyAction.CommitText("П"),
+                        ),
+                    left =
+                        KeyC(
+                            action = KeyAction.CommitText("ϗ"),
+                        ),
+                    right =
+                        KeyC(
+                            action = KeyAction.CommitText("₷"),
                         ),
                 ),
                 KeyItemC(
@@ -343,24 +309,21 @@ val KB_EO_CYRILLIC_THUMBKEY_SHIFTED =
                             color = ColorVariant.PRIMARY,
                         ),
                     swipeType = SwipeNWay.FOUR_WAY_CROSS,
-                    swipes =
-                        mapOf(
-                            SwipeDirection.BOTTOM to
-                                KeyC(
-                                    action = KeyAction.CommitText("Х"),
-                                ),
-                            SwipeDirection.TOP to
-                                KeyC(
-                                    action = KeyAction.CommitText("Һ"),
-                                ),
-                            SwipeDirection.LEFT to
-                                KeyC(
-                                    action = KeyAction.CommitText("#"),
-                                ),
-                            SwipeDirection.RIGHT to
-                                KeyC(
-                                    action = KeyAction.CommitText(":"),
-                                ),
+                    bottom =
+                        KeyC(
+                            action = KeyAction.CommitText("Х"),
+                        ),
+                    top =
+                        KeyC(
+                            action = KeyAction.CommitText("Һ"),
+                        ),
+                    left =
+                        KeyC(
+                            action = KeyAction.CommitText("#"),
+                        ),
+                    right =
+                        KeyC(
+                            action = KeyAction.CommitText(":"),
                         ),
                 ),
                 EMOJI_KEY_ITEM,
@@ -374,24 +337,21 @@ val KB_EO_CYRILLIC_THUMBKEY_SHIFTED =
                             color = ColorVariant.PRIMARY,
                         ),
                     swipeType = SwipeNWay.FOUR_WAY_CROSS,
-                    swipes =
-                        mapOf(
-                            SwipeDirection.BOTTOM to
-                                KeyC(
-                                    action = KeyAction.CommitText("Ж"),
-                                ),
-                            SwipeDirection.TOP to
-                                KeyC(
-                                    action = KeyAction.CommitText("J"),
-                                ),
-                            SwipeDirection.LEFT to
-                                KeyC(
-                                    action = KeyAction.CommitText("."),
-                                ),
-                            SwipeDirection.RIGHT to
-                                KeyC(
-                                    action = KeyAction.CommitText(","),
-                                ),
+                    bottom =
+                        KeyC(
+                            action = KeyAction.CommitText("Ж"),
+                        ),
+                    top =
+                        KeyC(
+                            action = KeyAction.CommitText("J"),
+                        ),
+                    left =
+                        KeyC(
+                            action = KeyAction.CommitText("."),
+                        ),
+                    right =
+                        KeyC(
+                            action = KeyAction.CommitText(","),
                         ),
                 ),
                 KeyItemC(
@@ -402,24 +362,21 @@ val KB_EO_CYRILLIC_THUMBKEY_SHIFTED =
                             color = ColorVariant.PRIMARY,
                         ),
                     swipeType = SwipeNWay.FOUR_WAY_CROSS,
-                    swipes =
-                        mapOf(
-                            SwipeDirection.BOTTOM to
-                                KeyC(
-                                    action = KeyAction.CommitText("В"),
-                                ),
-                            SwipeDirection.TOP to
-                                KeyC(
-                                    action = KeyAction.CommitText("Ф"),
-                                ),
-                            SwipeDirection.LEFT to
-                                KeyC(
-                                    action = KeyAction.CommitText("?"),
-                                ),
-                            SwipeDirection.RIGHT to
-                                KeyC(
-                                    action = KeyAction.CommitText("‽"),
-                                ),
+                    bottom =
+                        KeyC(
+                            action = KeyAction.CommitText("В"),
+                        ),
+                    top =
+                        KeyC(
+                            action = KeyAction.CommitText("Ф"),
+                        ),
+                    left =
+                        KeyC(
+                            action = KeyAction.CommitText("?"),
+                        ),
+                    right =
+                        KeyC(
+                            action = KeyAction.CommitText("‽"),
                         ),
                 ),
                 KeyItemC(
@@ -430,27 +387,24 @@ val KB_EO_CYRILLIC_THUMBKEY_SHIFTED =
                             color = ColorVariant.PRIMARY,
                         ),
                     swipeType = SwipeNWay.FOUR_WAY_CROSS,
-                    swipes =
-                        mapOf(
-                            SwipeDirection.BOTTOM to
-                                KeyC(
-                                    action = KeyAction.CommitText("Д"),
-                                ),
-                            SwipeDirection.LEFT to
-                                KeyC(
-                                    action = KeyAction.CommitText("("),
-                                ),
-                            SwipeDirection.RIGHT to
-                                KeyC(
-                                    action = KeyAction.CommitText(")"),
-                                ),
-                            SwipeDirection.TOP to
-                                KeyC(
-                                    display = KeyDisplay.IconDisplay(Icons.Outlined.ArrowDropUp),
-                                    action = KeyAction.ToggleShiftMode(false),
-                                    swipeReturnAction = KeyAction.ToggleCurrentWordCapitalization(false),
-                                    color = ColorVariant.MUTED,
-                                ),
+                    bottom =
+                        KeyC(
+                            action = KeyAction.CommitText("Д"),
+                        ),
+                    left =
+                        KeyC(
+                            action = KeyAction.CommitText("("),
+                        ),
+                    right =
+                        KeyC(
+                            action = KeyAction.CommitText(")"),
+                        ),
+                    top =
+                        KeyC(
+                            display = KeyDisplay.IconDisplay(Icons.Outlined.ArrowDropUp),
+                            action = KeyAction.ToggleShiftMode(false),
+                            swipeReturnAction = KeyAction.ToggleCurrentWordCapitalization(false),
+                            color = ColorVariant.MUTED,
                         ),
                 ),
                 NUMERIC_KEY_ITEM,
@@ -464,20 +418,17 @@ val KB_EO_CYRILLIC_THUMBKEY_SHIFTED =
                             color = ColorVariant.PRIMARY,
                         ),
                     swipeType = SwipeNWay.FOUR_WAY_CROSS,
-                    swipes =
-                        mapOf(
-                            SwipeDirection.BOTTOM to
-                                KeyC(
-                                    action = KeyAction.CommitText("Ч"),
-                                ),
-                            SwipeDirection.TOP to
-                                KeyC(
-                                    action = KeyAction.CommitText("Ц"),
-                                ),
-                            SwipeDirection.LEFT to
-                                KeyC(
-                                    action = KeyAction.CommitText("Б"),
-                                ),
+                    bottom =
+                        KeyC(
+                            action = KeyAction.CommitText("Ч"),
+                        ),
+                    top =
+                        KeyC(
+                            action = KeyAction.CommitText("Ц"),
+                        ),
+                    left =
+                        KeyC(
+                            action = KeyAction.CommitText("Б"),
                         ),
                 ),
                 KeyItemC(
@@ -488,20 +439,17 @@ val KB_EO_CYRILLIC_THUMBKEY_SHIFTED =
                             color = ColorVariant.PRIMARY,
                         ),
                     swipeType = SwipeNWay.FOUR_WAY_CROSS,
-                    swipes =
-                        mapOf(
-                            SwipeDirection.BOTTOM to
-                                KeyC(
-                                    action = KeyAction.CommitText("Џ"),
-                                ),
-                            SwipeDirection.TOP to
-                                KeyC(
-                                    action = KeyAction.CommitText("Г"),
-                                ),
-                            SwipeDirection.RIGHT to
-                                KeyC(
-                                    action = KeyAction.CommitText("З"),
-                                ),
+                    bottom =
+                        KeyC(
+                            action = KeyAction.CommitText("Џ"),
+                        ),
+                    top =
+                        KeyC(
+                            action = KeyAction.CommitText("Г"),
+                        ),
+                    right =
+                        KeyC(
+                            action = KeyAction.CommitText("З"),
                         ),
                 ),
                 KeyItemC(
@@ -512,16 +460,13 @@ val KB_EO_CYRILLIC_THUMBKEY_SHIFTED =
                             color = ColorVariant.PRIMARY,
                         ),
                     swipeType = SwipeNWay.FOUR_WAY_CROSS,
-                    swipes =
-                        mapOf(
-                            SwipeDirection.BOTTOM to
-                                KeyC(
-                                    action = KeyAction.CommitText("Ў"),
-                                ),
-                            SwipeDirection.TOP to
-                                KeyC(
-                                    action = KeyAction.CommitText("У"),
-                                ),
+                    bottom =
+                        KeyC(
+                            action = KeyAction.CommitText("Ў"),
+                        ),
+                    top =
+                        KeyC(
+                            action = KeyAction.CommitText("У"),
                         ),
                 ),
                 BACKSPACE_KEY_ITEM,
