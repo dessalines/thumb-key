@@ -367,30 +367,6 @@ val KB_HE_MESSAGEASE_SYMBOLS_MAIN =
                                     action = KeyAction.CommitText(","),
                                     color = ColorVariant.MUTED,
                                 ),
-                            SwipeDirection.TOP_RIGHT to
-                                KeyC(
-                                    display = KeyDisplay.TextDisplay("'"),
-                                    action = KeyAction.CommitText("'"),
-                                    color = ColorVariant.MUTED,
-                                ),
-                            SwipeDirection.TOP_LEFT to
-                                KeyC(
-                                    display = KeyDisplay.TextDisplay("\""),
-                                    action = KeyAction.CommitText("\""),
-                                    color = ColorVariant.MUTED,
-                                ),
-                            SwipeDirection.BOTTOM to
-                                KeyC(
-                                    display = KeyDisplay.TextDisplay("."),
-                                    action = KeyAction.CommitText("."),
-                                    color = ColorVariant.MUTED,
-                                ),
-                            SwipeDirection.BOTTOM_LEFT to
-                                KeyC(
-                                    display = KeyDisplay.TextDisplay(","),
-                                    action = KeyAction.CommitText(","),
-                                    color = ColorVariant.MUTED,
-                                ),
                         ),
                 ),
                 KeyItemC(

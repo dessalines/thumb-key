@@ -809,13 +809,6 @@ val KB_EN_THUMBKEY_WORDS_SHIFTED =
                                     color = ColorVariant.MUTED,
                                     size = FontSizeVariant.SMALLEST,
                                 ),
-                            SwipeDirection.TOP_RIGHT to
-                                KeyC(
-                                    display = KeyDisplay.TextDisplay("That"),
-                                    action = KeyAction.CommitText("That"),
-                                    color = ColorVariant.MUTED,
-                                    size = FontSizeVariant.SMALLEST,
-                                ),
                             SwipeDirection.LEFT to
                                 KeyC(
                                     display = KeyDisplay.TextDisplay("I'm"),

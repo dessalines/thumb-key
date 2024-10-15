@@ -269,7 +269,7 @@ val KB_DE_THUMBKEY_MULTILINGUAL_MAIN =
                                     action = KeyAction.CommitText("ì"),
                                     color = ColorVariant.MUTED,
                                 ),
-                            SwipeDirection.RIGHT to
+                            SwipeDirection.BOTTOM_RIGHT to
                                 KeyC(
                                     display = KeyDisplay.TextDisplay("î"),
                                     action = KeyAction.CommitText("î"),
@@ -706,7 +706,7 @@ val KB_DE_THUMBKEY_MULTILINGUAL_SHIFTED =
                         ),
                     swipes =
                         mapOf(
-                            SwipeDirection.BOTTOM to
+                            SwipeDirection.BOTTOM_LEFT to
                                 KeyC(
                                     display = KeyDisplay.TextDisplay("Ï"),
                                     action = KeyAction.CommitText("Ï"),

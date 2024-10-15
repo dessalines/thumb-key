@@ -915,12 +915,6 @@ val KB_FR_MESSAGEASE_SHIFTED =
                                     action = KeyAction.CommitText("-"),
                                     color = ColorVariant.MUTED,
                                 ),
-                            SwipeDirection.BOTTOM_RIGHT to
-                                KeyC(
-                                    display = KeyDisplay.TextDisplay(":"),
-                                    action = KeyAction.CommitText(":"),
-                                    color = ColorVariant.MUTED,
-                                ),
                             SwipeDirection.BOTTOM to
                                 KeyC(
                                     display = KeyDisplay.TextDisplay("."),

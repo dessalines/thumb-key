@@ -540,7 +540,7 @@ val KB_EN_EO_MESSAGEASE_SYMBOLS_MAIN =
                                     action = KeyAction.CommitText("🇦🇺"),
                                     color = ColorVariant.MUTED,
                                 ),
-                            SwipeDirection.LEFT to
+                            SwipeDirection.BOTTOM_RIGHT to
                                 KeyC(
                                     display = KeyDisplay.TextDisplay("#"),
                                     action = KeyAction.CommitText("#"),

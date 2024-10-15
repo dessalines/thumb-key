@@ -304,11 +304,6 @@ val KB_ES_THUMBKEY_SYMBOLS_MAIN =
                                     action = KeyAction.ToggleShiftMode(false),
                                     swipeReturnAction = KeyAction.ToggleCurrentWordCapitalization(false),
                                 ),
-                            SwipeDirection.BOTTOM to
-                                KeyC(
-                                    display = KeyDisplay.TextDisplay(")"),
-                                    action = KeyAction.CommitText(")"),
-                                ),
                             SwipeDirection.BOTTOM_RIGHT to
                                 KeyC(
                                     display = KeyDisplay.TextDisplay("]"),
