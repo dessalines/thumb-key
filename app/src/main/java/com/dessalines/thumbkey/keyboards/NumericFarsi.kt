@@ -1,22 +1,25 @@
+@file:Suppress("ktlint:standard:no-wildcard-imports")
+
 package com.dessalines.thumbkey.keyboards
 
-import com.dessalines.thumbkey.utils.FontSizeVariant
-import com.dessalines.thumbkey.utils.KeyC
-import com.dessalines.thumbkey.utils.KeyItemC
-import com.dessalines.thumbkey.utils.KeyboardC
+import com.dessalines.thumbkey.utils.*
+import com.dessalines.thumbkey.utils.ColorVariant.*
+import com.dessalines.thumbkey.utils.FontSizeVariant.*
+import com.dessalines.thumbkey.utils.KeyAction.*
+import com.dessalines.thumbkey.utils.SwipeNWay.*
 
 val FARSI_NUMERIC_KEYBOARD =
     KeyboardC(
         listOf(
             listOf(
                 KeyItemC(
-                    center = KeyC("۱", size = FontSizeVariant.LARGE),
+                    center = KeyC("۱", size = LARGE),
                     right = KeyC("ّ", displayText = "ـّ"),
                     bottom = KeyC("٫"),
                     bottomLeft = KeyC("﷼"),
                 ),
                 KeyItemC(
-                    center = KeyC("۲", size = FontSizeVariant.LARGE),
+                    center = KeyC("۲", size = LARGE),
                     topLeft = KeyC("`"),
                     top = KeyC("^"),
                     topRight = KeyC("´"),
@@ -26,7 +29,7 @@ val FARSI_NUMERIC_KEYBOARD =
                     left = KeyC("+"),
                 ),
                 KeyItemC(
-                    center = KeyC("۳", size = FontSizeVariant.LARGE),
+                    center = KeyC("۳", size = LARGE),
                     left = KeyC("؟"),
                     bottomRight = KeyC("$"),
                     bottom = KeyC("="),
@@ -35,7 +38,7 @@ val FARSI_NUMERIC_KEYBOARD =
             ),
             listOf(
                 KeyItemC(
-                    center = KeyC("۴", size = FontSizeVariant.LARGE),
+                    center = KeyC("۴", size = LARGE),
                     topLeft = KeyC("}", displayText = "{"),
                     topRight = KeyC("٪"),
                     bottomRight = KeyC("_"),
@@ -43,13 +46,13 @@ val FARSI_NUMERIC_KEYBOARD =
                     left = KeyC(")", displayText = "("),
                 ),
                 KeyItemC(
-                    center = KeyC("۵", size = FontSizeVariant.LARGE),
+                    center = KeyC("۵", size = LARGE),
                     topLeft = KeyC("ُ", displayText = "ـُ"),
                     topRight = KeyC("َ", displayText = "ـَ"),
                     bottom = KeyC("ِ", displayText = "ـِ"),
                 ),
                 KeyItemC(
-                    center = KeyC("۶", size = FontSizeVariant.LARGE),
+                    center = KeyC("۶", size = LARGE),
                     topLeft = KeyC("|"),
                     topRight = KeyC("{", displayText = "}"),
                     right = KeyC("(", displayText = ")"),
@@ -60,7 +63,7 @@ val FARSI_NUMERIC_KEYBOARD =
             ),
             listOf(
                 KeyItemC(
-                    center = KeyC("۷", size = FontSizeVariant.LARGE),
+                    center = KeyC("۷", size = LARGE),
                     topLeft = KeyC("~"),
                     topRight = KeyC("ً", displayText = "ـً"),
                     bottomRight = KeyC(":"),
@@ -68,7 +71,7 @@ val FARSI_NUMERIC_KEYBOARD =
                     left = KeyC("»", displayText = "«"),
                 ),
                 KeyItemC(
-                    center = KeyC("۸", size = FontSizeVariant.LARGE),
+                    center = KeyC("۸", size = LARGE),
                     topLeft = KeyC("\""),
                     topRight = KeyC("'"),
                     bottomRight = KeyC("-"),
@@ -77,7 +80,7 @@ val FARSI_NUMERIC_KEYBOARD =
                     left = KeyC("،"),
                 ),
                 KeyItemC(
-                    center = KeyC("۹", size = FontSizeVariant.LARGE),
+                    center = KeyC("۹", size = LARGE),
                     top = KeyC("&"),
                     topRight = KeyC("°"),
                     right = KeyC("«", displayText = "»"),
@@ -89,7 +92,7 @@ val FARSI_NUMERIC_KEYBOARD =
             ),
             listOf(
                 KeyItemC(
-                    center = KeyC("۰", size = FontSizeVariant.LARGE),
+                    center = KeyC("۰", size = LARGE),
                     widthMultiplier = 2,
                 ),
                 SPACEBAR_FARSI_SKINNY_KEY_ITEM,

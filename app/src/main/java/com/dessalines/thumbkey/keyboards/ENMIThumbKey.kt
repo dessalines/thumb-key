@@ -1,41 +1,32 @@
+@file:Suppress("ktlint:standard:no-wildcard-imports")
+
 package com.dessalines.thumbkey.keyboards
 
 import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.outlined.ArrowDropDown
-import androidx.compose.material.icons.outlined.ArrowDropUp
-import androidx.compose.material.icons.outlined.Copyright
-import androidx.compose.material.icons.outlined.KeyboardCapslock
-import com.dessalines.thumbkey.utils.ColorVariant
-import com.dessalines.thumbkey.utils.FontSizeVariant
-import com.dessalines.thumbkey.utils.KeyAction
-import com.dessalines.thumbkey.utils.KeyC
-import com.dessalines.thumbkey.utils.KeyDisplay
-import com.dessalines.thumbkey.utils.KeyItemC
-import com.dessalines.thumbkey.utils.KeyboardC
-import com.dessalines.thumbkey.utils.KeyboardDefinition
-import com.dessalines.thumbkey.utils.KeyboardDefinitionModes
-import com.dessalines.thumbkey.utils.KeyboardDefinitionSettings
-import com.dessalines.thumbkey.utils.SwipeNWay
-import com.dessalines.thumbkey.utils.autoCapitalizeI
-import com.dessalines.thumbkey.utils.autoCapitalizeIApostrophe
+import androidx.compose.material.icons.outlined.*
+import com.dessalines.thumbkey.utils.*
+import com.dessalines.thumbkey.utils.ColorVariant.*
+import com.dessalines.thumbkey.utils.FontSizeVariant.*
+import com.dessalines.thumbkey.utils.KeyAction.*
+import com.dessalines.thumbkey.utils.SwipeNWay.*
 
 val KB_EN_MI_THUMBKEY_MAIN =
     KeyboardC(
         listOf(
             listOf(
                 KeyItemC(
-                    center = KeyC("s", size = FontSizeVariant.LARGE),
-                    swipeType = SwipeNWay.FOUR_WAY_DIAGONAL,
+                    center = KeyC("s", size = LARGE),
+                    swipeType = FOUR_WAY_DIAGONAL,
                     bottomRight = KeyC("w"),
                 ),
                 KeyItemC(
-                    center = KeyC("r", size = FontSizeVariant.LARGE),
-                    swipeType = SwipeNWay.TWO_WAY_VERTICAL,
+                    center = KeyC("r", size = LARGE),
+                    swipeType = TWO_WAY_VERTICAL,
                     bottom = KeyC("g"),
                 ),
                 KeyItemC(
-                    center = KeyC("o", size = FontSizeVariant.LARGE),
-                    swipeType = SwipeNWay.EIGHT_WAY,
+                    center = KeyC("o", size = LARGE),
+                    swipeType = EIGHT_WAY,
                     right = KeyC("ō"),
                     bottom = KeyC("ū"),
                     bottomLeft = KeyC("u"),
@@ -44,12 +35,12 @@ val KB_EN_MI_THUMBKEY_MAIN =
             ),
             listOf(
                 KeyItemC(
-                    center = KeyC("n", size = FontSizeVariant.LARGE),
-                    swipeType = SwipeNWay.TWO_WAY_HORIZONTAL,
+                    center = KeyC("n", size = LARGE),
+                    swipeType = TWO_WAY_HORIZONTAL,
                     right = KeyC("m"),
                 ),
                 KeyItemC(
-                    center = KeyC("h", size = FontSizeVariant.LARGE),
+                    center = KeyC("h", size = LARGE),
                     topLeft = KeyC("j"),
                     top = KeyC("q"),
                     topRight = KeyC("b"),
@@ -60,45 +51,45 @@ val KB_EN_MI_THUMBKEY_MAIN =
                     left = KeyC("k"),
                 ),
                 KeyItemC(
-                    center = KeyC("a", size = FontSizeVariant.LARGE),
-                    swipeType = SwipeNWay.FOUR_WAY_CROSS,
+                    center = KeyC("a", size = LARGE),
+                    swipeType = FOUR_WAY_CROSS,
                     left = KeyC("l"),
                     right = KeyC("ā"),
                     top =
                         KeyC(
                             display = KeyDisplay.IconDisplay(Icons.Outlined.ArrowDropUp),
-                            action = KeyAction.ToggleShiftMode(true),
-                            swipeReturnAction = KeyAction.ToggleCurrentWordCapitalization(true),
-                            color = ColorVariant.MUTED,
+                            action = ToggleShiftMode(true),
+                            swipeReturnAction = ToggleCurrentWordCapitalization(true),
+                            color = MUTED,
                         ),
                     bottom =
                         KeyC(
-                            KeyAction.ToggleShiftMode(false),
-                            swipeReturnAction = KeyAction.ToggleCurrentWordCapitalization(false),
+                            ToggleShiftMode(false),
+                            swipeReturnAction = ToggleCurrentWordCapitalization(false),
                         ),
                 ),
                 NUMERIC_KEY_ITEM,
             ),
             listOf(
                 KeyItemC(
-                    center = KeyC("t", size = FontSizeVariant.LARGE),
-                    swipeType = SwipeNWay.FOUR_WAY_DIAGONAL,
+                    center = KeyC("t", size = LARGE),
+                    swipeType = FOUR_WAY_DIAGONAL,
                     topRight = KeyC("c"),
                 ),
                 KeyItemC(
-                    center = KeyC("i", size = FontSizeVariant.LARGE),
-                    swipeType = SwipeNWay.EIGHT_WAY,
+                    center = KeyC("i", size = LARGE),
+                    swipeType = EIGHT_WAY,
                     top = KeyC("f"),
-                    topRight = KeyC("'", color = ColorVariant.MUTED),
+                    topRight = KeyC("'", color = MUTED),
                     right = KeyC("z"),
-                    bottomRight = KeyC("-", color = ColorVariant.MUTED),
-                    bottom = KeyC(".", color = ColorVariant.MUTED),
-                    bottomLeft = KeyC("*", color = ColorVariant.MUTED),
+                    bottomRight = KeyC("-", color = MUTED),
+                    bottom = KeyC(".", color = MUTED),
+                    bottomLeft = KeyC("*", color = MUTED),
                     left = KeyC("ī"),
                 ),
                 KeyItemC(
-                    center = KeyC("e", size = FontSizeVariant.LARGE),
-                    swipeType = SwipeNWay.EIGHT_WAY,
+                    center = KeyC("e", size = LARGE),
+                    swipeType = EIGHT_WAY,
                     right = KeyC("ē"),
                     topLeft = KeyC("d"),
                 ),
@@ -116,18 +107,18 @@ val KB_EN_MI_THUMBKEY_SHIFTED =
         listOf(
             listOf(
                 KeyItemC(
-                    center = KeyC("S", size = FontSizeVariant.LARGE),
-                    swipeType = SwipeNWay.FOUR_WAY_DIAGONAL,
+                    center = KeyC("S", size = LARGE),
+                    swipeType = FOUR_WAY_DIAGONAL,
                     bottomRight = KeyC("W"),
                 ),
                 KeyItemC(
-                    center = KeyC("R", size = FontSizeVariant.LARGE),
-                    swipeType = SwipeNWay.TWO_WAY_VERTICAL,
+                    center = KeyC("R", size = LARGE),
+                    swipeType = TWO_WAY_VERTICAL,
                     bottom = KeyC("G"),
                 ),
                 KeyItemC(
-                    center = KeyC("O", size = FontSizeVariant.LARGE),
-                    swipeType = SwipeNWay.EIGHT_WAY,
+                    center = KeyC("O", size = LARGE),
+                    swipeType = EIGHT_WAY,
                     right = KeyC("Ō"),
                     bottom = KeyC("Ū"),
                     bottomLeft = KeyC("U"),
@@ -136,12 +127,12 @@ val KB_EN_MI_THUMBKEY_SHIFTED =
             ),
             listOf(
                 KeyItemC(
-                    center = KeyC("N", size = FontSizeVariant.LARGE),
-                    swipeType = SwipeNWay.TWO_WAY_HORIZONTAL,
+                    center = KeyC("N", size = LARGE),
+                    swipeType = TWO_WAY_HORIZONTAL,
                     right = KeyC("M"),
                 ),
                 KeyItemC(
-                    center = KeyC("H", size = FontSizeVariant.LARGE),
+                    center = KeyC("H", size = LARGE),
                     topLeft = KeyC("J"),
                     top = KeyC("Q"),
                     topRight = KeyC("B"),
@@ -152,47 +143,47 @@ val KB_EN_MI_THUMBKEY_SHIFTED =
                     left = KeyC("K"),
                 ),
                 KeyItemC(
-                    center = KeyC("A", size = FontSizeVariant.LARGE),
-                    swipeType = SwipeNWay.FOUR_WAY_CROSS,
+                    center = KeyC("A", size = LARGE),
+                    swipeType = FOUR_WAY_CROSS,
                     left = KeyC("L"),
                     right = KeyC("Ā"),
                     bottom =
                         KeyC(
                             display = KeyDisplay.IconDisplay(Icons.Outlined.ArrowDropDown),
-                            action = KeyAction.ToggleShiftMode(false),
-                            swipeReturnAction = KeyAction.ToggleCurrentWordCapitalization(false),
-                            color = ColorVariant.MUTED,
+                            action = ToggleShiftMode(false),
+                            swipeReturnAction = ToggleCurrentWordCapitalization(false),
+                            color = MUTED,
                         ),
                     top =
                         KeyC(
                             display = KeyDisplay.IconDisplay(Icons.Outlined.KeyboardCapslock),
                             capsModeDisplay = KeyDisplay.IconDisplay(Icons.Outlined.Copyright),
-                            action = KeyAction.ToggleCapsLock,
-                            swipeReturnAction = KeyAction.ToggleCurrentWordCapitalization(true),
-                            color = ColorVariant.MUTED,
+                            action = ToggleCapsLock,
+                            swipeReturnAction = ToggleCurrentWordCapitalization(true),
+                            color = MUTED,
                         ),
                 ),
                 NUMERIC_KEY_ITEM,
             ),
             listOf(
                 KeyItemC(
-                    center = KeyC("T", size = FontSizeVariant.LARGE),
-                    swipeType = SwipeNWay.FOUR_WAY_DIAGONAL,
+                    center = KeyC("T", size = LARGE),
+                    swipeType = FOUR_WAY_DIAGONAL,
                     topRight = KeyC("C"),
                 ),
                 KeyItemC(
-                    center = KeyC("I", size = FontSizeVariant.LARGE),
+                    center = KeyC("I", size = LARGE),
                     top = KeyC("F"),
-                    topRight = KeyC("'", color = ColorVariant.MUTED),
+                    topRight = KeyC("'", color = MUTED),
                     right = KeyC("Z"),
-                    bottomRight = KeyC("-", color = ColorVariant.MUTED),
-                    bottom = KeyC(".", color = ColorVariant.MUTED),
-                    bottomLeft = KeyC("*", color = ColorVariant.MUTED),
+                    bottomRight = KeyC("-", color = MUTED),
+                    bottom = KeyC(".", color = MUTED),
+                    bottomLeft = KeyC("*", color = MUTED),
                     left = KeyC("Ī"),
                 ),
                 KeyItemC(
-                    center = KeyC("E", size = FontSizeVariant.LARGE),
-                    swipeType = SwipeNWay.FOUR_WAY_DIAGONAL,
+                    center = KeyC("E", size = LARGE),
+                    swipeType = FOUR_WAY_DIAGONAL,
                     topLeft = KeyC("D"),
                     right = KeyC("Ē"),
                 ),

@@ -1,30 +1,29 @@
+@file:Suppress("ktlint:standard:no-wildcard-imports")
+
 package com.dessalines.thumbkey.keyboards
 
-import com.dessalines.thumbkey.utils.ColorVariant
-import com.dessalines.thumbkey.utils.FontSizeVariant
-import com.dessalines.thumbkey.utils.KeyC
-import com.dessalines.thumbkey.utils.KeyItemC
-import com.dessalines.thumbkey.utils.KeyboardC
-import com.dessalines.thumbkey.utils.KeyboardDefinition
-import com.dessalines.thumbkey.utils.KeyboardDefinitionModes
-import com.dessalines.thumbkey.utils.SwipeNWay
+import com.dessalines.thumbkey.utils.*
+import com.dessalines.thumbkey.utils.ColorVariant.*
+import com.dessalines.thumbkey.utils.FontSizeVariant.*
+import com.dessalines.thumbkey.utils.KeyAction.*
+import com.dessalines.thumbkey.utils.SwipeNWay.*
 
 val KB_HE_MESSAGEASE_MAIN =
     KeyboardC(
         listOf(
             listOf(
                 KeyItemC(
-                    center = KeyC("ר", size = FontSizeVariant.LARGE),
-                    swipeType = SwipeNWay.FOUR_WAY_DIAGONAL,
+                    center = KeyC("ר", size = LARGE),
+                    swipeType = FOUR_WAY_DIAGONAL,
                     bottomRight = KeyC("ן"),
                 ),
                 KeyItemC(
-                    center = KeyC("ב", size = FontSizeVariant.LARGE),
-                    swipeType = SwipeNWay.TWO_WAY_VERTICAL,
+                    center = KeyC("ב", size = LARGE),
+                    swipeType = TWO_WAY_VERTICAL,
                     bottom = KeyC("ג"),
                 ),
                 KeyItemC(
-                    center = KeyC("א", size = FontSizeVariant.LARGE),
+                    center = KeyC("א", size = LARGE),
                     bottomLeft = KeyC("צ"),
                     left = KeyC("ץ"),
                 ),
@@ -32,12 +31,12 @@ val KB_HE_MESSAGEASE_MAIN =
             ),
             listOf(
                 KeyItemC(
-                    center = KeyC("מ", size = FontSizeVariant.LARGE),
+                    center = KeyC("מ", size = LARGE),
                     right = KeyC("ם"),
                     bottomRight = KeyC("ך"),
                 ),
                 KeyItemC(
-                    center = KeyC("י", size = FontSizeVariant.LARGE),
+                    center = KeyC("י", size = LARGE),
                     topLeft = KeyC("ק"),
                     top = KeyC("ח"),
                     topRight = KeyC("פ"),
@@ -48,29 +47,29 @@ val KB_HE_MESSAGEASE_MAIN =
                     left = KeyC("ע"),
                 ),
                 KeyItemC(
-                    center = KeyC("ו", size = FontSizeVariant.LARGE),
-                    swipeType = SwipeNWay.FOUR_WAY_DIAGONAL,
+                    center = KeyC("ו", size = LARGE),
+                    swipeType = FOUR_WAY_DIAGONAL,
                     topLeft = KeyC("ף"),
                 ),
                 NUMERIC_KEY_ITEM,
             ),
             listOf(
                 KeyItemC(
-                    center = KeyC("ת", size = FontSizeVariant.LARGE),
-                    swipeType = SwipeNWay.FOUR_WAY_DIAGONAL,
+                    center = KeyC("ת", size = LARGE),
+                    swipeType = FOUR_WAY_DIAGONAL,
                     topRight = KeyC("ז"),
                 ),
                 KeyItemC(
-                    center = KeyC("ה", size = FontSizeVariant.LARGE),
+                    center = KeyC("ה", size = LARGE),
                     top = KeyC("ס"),
-                    topRight = KeyC("'", color = ColorVariant.MUTED),
-                    bottomRight = KeyC("-", color = ColorVariant.MUTED),
-                    bottom = KeyC(".", color = ColorVariant.MUTED),
-                    bottomLeft = KeyC(",", color = ColorVariant.MUTED),
+                    topRight = KeyC("'", color = MUTED),
+                    bottomRight = KeyC("-", color = MUTED),
+                    bottom = KeyC(".", color = MUTED),
+                    bottomLeft = KeyC(",", color = MUTED),
                 ),
                 KeyItemC(
-                    center = KeyC("ל", size = FontSizeVariant.LARGE),
-                    swipeType = SwipeNWay.FOUR_WAY_DIAGONAL,
+                    center = KeyC("ל", size = LARGE),
+                    swipeType = FOUR_WAY_DIAGONAL,
                     topLeft = KeyC("ט"),
                 ),
                 BACKSPACE_KEY_ITEM,

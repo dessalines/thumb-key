@@ -1,33 +1,31 @@
+@file:Suppress("ktlint:standard:no-wildcard-imports")
+
 package com.dessalines.thumbkey.keyboards
 
-import com.dessalines.thumbkey.utils.ColorVariant
-import com.dessalines.thumbkey.utils.FontSizeVariant
-import com.dessalines.thumbkey.utils.KeyAction
-import com.dessalines.thumbkey.utils.KeyC
-import com.dessalines.thumbkey.utils.KeyItemC
-import com.dessalines.thumbkey.utils.KeyboardC
-import com.dessalines.thumbkey.utils.KeyboardDefinition
-import com.dessalines.thumbkey.utils.KeyboardDefinitionModes
-import com.dessalines.thumbkey.utils.SwipeNWay
+import com.dessalines.thumbkey.utils.*
+import com.dessalines.thumbkey.utils.ColorVariant.*
+import com.dessalines.thumbkey.utils.FontSizeVariant.*
+import com.dessalines.thumbkey.utils.KeyAction.*
+import com.dessalines.thumbkey.utils.SwipeNWay.*
 
 val KB_JA_HIRAGANA_TYPESPLIT_MAIN =
     KeyboardC(
         listOf(
             listOf(
                 KeyItemC(
-                    center = KeyC("わ", size = FontSizeVariant.LARGE),
-                    swipeType = SwipeNWay.FOUR_WAY_CROSS,
+                    center = KeyC("わ", size = LARGE),
+                    swipeType = FOUR_WAY_CROSS,
                     right = KeyC("ん"),
                     left =
                         KeyC(
                             display = null,
-                            action = KeyAction.CommitText("ん"),
+                            action = CommitText("ん"),
                         ),
                     bottom = KeyC("を"),
                 ),
                 KeyItemC(
-                    center = KeyC("た", size = FontSizeVariant.LARGE),
-                    swipeType = SwipeNWay.FOUR_WAY_CROSS,
+                    center = KeyC("た", size = LARGE),
+                    swipeType = FOUR_WAY_CROSS,
                     right = KeyC("て"),
                     left = KeyC("ち"),
                     bottom = KeyC("と"),
@@ -35,24 +33,24 @@ val KB_JA_HIRAGANA_TYPESPLIT_MAIN =
                 ),
                 EMOJI_KEY_ITEM_ALT,
                 KeyItemC(
-                    center = KeyC("や", size = FontSizeVariant.LARGE),
-                    swipeType = SwipeNWay.FOUR_WAY_CROSS,
+                    center = KeyC("や", size = LARGE),
+                    swipeType = FOUR_WAY_CROSS,
                     right =
                         KeyC(
                             display = null,
-                            action = KeyAction.CommitText("ゆ"),
+                            action = CommitText("ゆ"),
                         ),
                     left =
                         KeyC(
                             display = null,
-                            action = KeyAction.CommitText("よ"),
+                            action = CommitText("よ"),
                         ),
                     bottom = KeyC("よ"),
                     top = KeyC("ゆ"),
                 ),
                 KeyItemC(
-                    center = KeyC("ら", size = FontSizeVariant.LARGE),
-                    swipeType = SwipeNWay.FOUR_WAY_CROSS,
+                    center = KeyC("ら", size = LARGE),
+                    swipeType = FOUR_WAY_CROSS,
                     right = KeyC("れ"),
                     left = KeyC("り"),
                     bottom = KeyC("ろ"),
@@ -61,16 +59,16 @@ val KB_JA_HIRAGANA_TYPESPLIT_MAIN =
             ),
             listOf(
                 KeyItemC(
-                    center = KeyC("あ", size = FontSizeVariant.LARGE),
-                    swipeType = SwipeNWay.FOUR_WAY_CROSS,
+                    center = KeyC("あ", size = LARGE),
+                    swipeType = FOUR_WAY_CROSS,
                     right = KeyC("い"),
                     left = KeyC("え"),
                     bottom = KeyC("お"),
                     top = KeyC("う"),
                 ),
                 KeyItemC(
-                    center = KeyC("さ", size = FontSizeVariant.LARGE),
-                    swipeType = SwipeNWay.FOUR_WAY_CROSS,
+                    center = KeyC("さ", size = LARGE),
+                    swipeType = FOUR_WAY_CROSS,
                     right = KeyC("せ"),
                     left = KeyC("し"),
                     bottom = KeyC("そ"),
@@ -78,16 +76,16 @@ val KB_JA_HIRAGANA_TYPESPLIT_MAIN =
                 ),
                 SPACEBAR_TYPESPLIT_MIDDLE_KEY_ITEM,
                 KeyItemC(
-                    center = KeyC("は", size = FontSizeVariant.LARGE),
-                    swipeType = SwipeNWay.FOUR_WAY_CROSS,
+                    center = KeyC("は", size = LARGE),
+                    swipeType = FOUR_WAY_CROSS,
                     right = KeyC("ひ"),
                     left = KeyC("へ"),
                     bottom = KeyC("ほ"),
                     top = KeyC("ふ"),
                 ),
                 KeyItemC(
-                    center = KeyC("か", size = FontSizeVariant.LARGE),
-                    swipeType = SwipeNWay.FOUR_WAY_CROSS,
+                    center = KeyC("か", size = LARGE),
+                    swipeType = FOUR_WAY_CROSS,
                     right = KeyC("け"),
                     left = KeyC("き"),
                     bottom = KeyC("こ"),
@@ -96,33 +94,33 @@ val KB_JA_HIRAGANA_TYPESPLIT_MAIN =
             ),
             listOf(
                 KeyItemC(
-                    center = KeyC("、", size = FontSizeVariant.LARGE),
-                    swipeType = SwipeNWay.FOUR_WAY_CROSS,
-                    right = KeyC("」", color = ColorVariant.MUTED),
-                    left = KeyC("「", color = ColorVariant.MUTED),
-                    bottom = KeyC("ー", color = ColorVariant.MUTED),
-                    top = KeyC("～", color = ColorVariant.MUTED),
+                    center = KeyC("、", size = LARGE),
+                    swipeType = FOUR_WAY_CROSS,
+                    right = KeyC("」", color = MUTED),
+                    left = KeyC("「", color = MUTED),
+                    bottom = KeyC("ー", color = MUTED),
+                    top = KeyC("～", color = MUTED),
                 ),
                 KeyItemC(
-                    center = KeyC("。", size = FontSizeVariant.LARGE),
-                    swipeType = SwipeNWay.FOUR_WAY_CROSS,
-                    right = KeyC("？", color = ColorVariant.MUTED),
-                    left = KeyC("！", color = ColorVariant.MUTED),
-                    bottom = KeyC("：", color = ColorVariant.MUTED),
-                    top = KeyC("…", color = ColorVariant.MUTED),
+                    center = KeyC("。", size = LARGE),
+                    swipeType = FOUR_WAY_CROSS,
+                    right = KeyC("？", color = MUTED),
+                    left = KeyC("！", color = MUTED),
+                    bottom = KeyC("：", color = MUTED),
+                    top = KeyC("…", color = MUTED),
                 ),
                 SPACEBAR_TYPESPLIT_BOTTOM_KEY_ITEM,
                 KeyItemC(
-                    center = KeyC("な", size = FontSizeVariant.LARGE),
-                    swipeType = SwipeNWay.FOUR_WAY_CROSS,
+                    center = KeyC("な", size = LARGE),
+                    swipeType = FOUR_WAY_CROSS,
                     right = KeyC("に"),
                     left = KeyC("ね"),
                     bottom = KeyC("の"),
                     top = KeyC("ぬ"),
                 ),
                 KeyItemC(
-                    center = KeyC("ま", size = FontSizeVariant.LARGE),
-                    swipeType = SwipeNWay.FOUR_WAY_CROSS,
+                    center = KeyC("ま", size = LARGE),
+                    swipeType = FOUR_WAY_CROSS,
                     right = KeyC("め"),
                     left = KeyC("み"),
                     bottom = KeyC("も"),
@@ -142,20 +140,20 @@ val KB_JA_HIRAGANA_TYPESPLIT_SHIFTED =
         listOf(
             listOf(
                 KeyItemC(
-                    center = KeyC("¥", size = FontSizeVariant.LARGE),
-                    swipeType = SwipeNWay.FOUR_WAY_CROSS,
+                    center = KeyC("¥", size = LARGE),
+                    swipeType = FOUR_WAY_CROSS,
                     right =
                         KeyC(
                             display = null,
-                            action = KeyAction.CommitText("※"),
+                            action = CommitText("※"),
                         ),
                     left = KeyC("※"),
                     bottom = KeyC("ヶ"),
                     top = KeyC("ヵ"),
                 ),
                 KeyItemC(
-                    center = KeyC("だ", size = FontSizeVariant.LARGE),
-                    swipeType = SwipeNWay.FOUR_WAY_CROSS,
+                    center = KeyC("だ", size = LARGE),
+                    swipeType = FOUR_WAY_CROSS,
                     right = KeyC("で"),
                     left = KeyC("ぢ"),
                     bottom = KeyC("ど"),
@@ -163,37 +161,37 @@ val KB_JA_HIRAGANA_TYPESPLIT_SHIFTED =
                 ),
                 EMOJI_KEY_ITEM_ALT,
                 KeyItemC(
-                    center = KeyC("ゃ", size = FontSizeVariant.LARGE),
-                    swipeType = SwipeNWay.FOUR_WAY_CROSS,
+                    center = KeyC("ゃ", size = LARGE),
+                    swipeType = FOUR_WAY_CROSS,
                     right =
                         KeyC(
                             display = null,
-                            action = KeyAction.CommitText("ゅ"),
+                            action = CommitText("ゅ"),
                         ),
                     left =
                         KeyC(
                             display = null,
-                            action = KeyAction.CommitText("ょ"),
+                            action = CommitText("ょ"),
                         ),
                     bottom = KeyC("ょ"),
                     top = KeyC("ゅ"),
                 ),
                 KeyItemC(
-                    center = KeyC("ゔ", size = FontSizeVariant.LARGE),
+                    center = KeyC("ゔ", size = LARGE),
                 ),
             ),
             listOf(
                 KeyItemC(
-                    center = KeyC("ぁ", size = FontSizeVariant.LARGE),
-                    swipeType = SwipeNWay.FOUR_WAY_CROSS,
+                    center = KeyC("ぁ", size = LARGE),
+                    swipeType = FOUR_WAY_CROSS,
                     right = KeyC("ぃ"),
                     left = KeyC("ぇ"),
                     bottom = KeyC("ぉ"),
                     top = KeyC("ぅ"),
                 ),
                 KeyItemC(
-                    center = KeyC("ざ", size = FontSizeVariant.LARGE),
-                    swipeType = SwipeNWay.FOUR_WAY_CROSS,
+                    center = KeyC("ざ", size = LARGE),
+                    swipeType = FOUR_WAY_CROSS,
                     right = KeyC("ぜ"),
                     left = KeyC("じ"),
                     bottom = KeyC("ぞ"),
@@ -201,16 +199,16 @@ val KB_JA_HIRAGANA_TYPESPLIT_SHIFTED =
                 ),
                 SPACEBAR_TYPESPLIT_MIDDLE_KEY_ITEM,
                 KeyItemC(
-                    center = KeyC("ば", size = FontSizeVariant.LARGE),
-                    swipeType = SwipeNWay.FOUR_WAY_CROSS,
+                    center = KeyC("ば", size = LARGE),
+                    swipeType = FOUR_WAY_CROSS,
                     right = KeyC("び"),
                     left = KeyC("べ"),
                     bottom = KeyC("ぼ"),
                     top = KeyC("ぶ"),
                 ),
                 KeyItemC(
-                    center = KeyC("が", size = FontSizeVariant.LARGE),
-                    swipeType = SwipeNWay.FOUR_WAY_CROSS,
+                    center = KeyC("が", size = LARGE),
+                    swipeType = FOUR_WAY_CROSS,
                     right = KeyC("げ"),
                     left = KeyC("ぎ"),
                     bottom = KeyC("ご"),
@@ -219,32 +217,32 @@ val KB_JA_HIRAGANA_TYPESPLIT_SHIFTED =
             ),
             listOf(
                 KeyItemC(
-                    center = KeyC("・", size = FontSizeVariant.LARGE),
-                    swipeType = SwipeNWay.FOUR_WAY_CROSS,
-                    right = KeyC("】", color = ColorVariant.MUTED),
-                    left = KeyC("【", color = ColorVariant.MUTED),
-                    bottom = KeyC("：", color = ColorVariant.MUTED),
-                    top = KeyC("〃", color = ColorVariant.MUTED),
+                    center = KeyC("・", size = LARGE),
+                    swipeType = FOUR_WAY_CROSS,
+                    right = KeyC("】", color = MUTED),
+                    left = KeyC("【", color = MUTED),
+                    bottom = KeyC("：", color = MUTED),
+                    top = KeyC("〃", color = MUTED),
                 ),
                 KeyItemC(
-                    center = KeyC("＝", size = FontSizeVariant.LARGE),
-                    swipeType = SwipeNWay.FOUR_WAY_CROSS,
-                    right = KeyC("×", color = ColorVariant.MUTED),
-                    left = KeyC("÷", color = ColorVariant.MUTED),
-                    bottom = KeyC("＋", color = ColorVariant.MUTED),
-                    top = KeyC("－", color = ColorVariant.MUTED),
+                    center = KeyC("＝", size = LARGE),
+                    swipeType = FOUR_WAY_CROSS,
+                    right = KeyC("×", color = MUTED),
+                    left = KeyC("÷", color = MUTED),
+                    bottom = KeyC("＋", color = MUTED),
+                    top = KeyC("－", color = MUTED),
                 ),
                 SPACEBAR_TYPESPLIT_BOTTOM_KEY_ITEM,
                 KeyItemC(
-                    center = KeyC("ぱ", size = FontSizeVariant.LARGE),
-                    swipeType = SwipeNWay.FOUR_WAY_CROSS,
+                    center = KeyC("ぱ", size = LARGE),
+                    swipeType = FOUR_WAY_CROSS,
                     right = KeyC("ぴ"),
                     left = KeyC("ぺ"),
                     bottom = KeyC("ぽ"),
                     top = KeyC("ぷ"),
                 ),
                 KeyItemC(
-                    center = KeyC("っ", size = FontSizeVariant.LARGE),
+                    center = KeyC("っ", size = LARGE),
                 ),
             ),
             listOf(

@@ -1,18 +1,19 @@
+@file:Suppress("ktlint:standard:no-wildcard-imports")
+
 package com.dessalines.thumbkey.keyboards
 
-import com.dessalines.thumbkey.utils.ColorVariant
-import com.dessalines.thumbkey.utils.FontSizeVariant
-import com.dessalines.thumbkey.utils.KeyC
-import com.dessalines.thumbkey.utils.KeyItemC
-import com.dessalines.thumbkey.utils.KeyboardC
-import com.dessalines.thumbkey.utils.getLocalCurrency
+import com.dessalines.thumbkey.utils.*
+import com.dessalines.thumbkey.utils.ColorVariant.*
+import com.dessalines.thumbkey.utils.FontSizeVariant.*
+import com.dessalines.thumbkey.utils.KeyAction.*
+import com.dessalines.thumbkey.utils.SwipeNWay.*
 
 val NUMERIC_PT_EN_KEYBOARD =
     KeyboardC(
         listOf(
             listOf(
                 KeyItemC(
-                    center = KeyC("1", size = FontSizeVariant.LARGE),
+                    center = KeyC("1", size = LARGE),
                     bottomLeft = KeyC("$"),
                     bottomRight =
                         getLocalCurrency()?.let {
@@ -24,7 +25,7 @@ val NUMERIC_PT_EN_KEYBOARD =
                         },
                 ),
                 KeyItemC(
-                    center = KeyC("2", size = FontSizeVariant.LARGE),
+                    center = KeyC("2", size = LARGE),
                     topLeft = KeyC("`"),
                     top = KeyC("^"),
                     topRight = KeyC("´"),
@@ -34,12 +35,12 @@ val NUMERIC_PT_EN_KEYBOARD =
                     left = KeyC("+"),
                 ),
                 KeyItemC(
-                    center = KeyC("3", size = FontSizeVariant.LARGE),
-                    topLeft = KeyC("ù", color = ColorVariant.MUTED),
-                    top = KeyC("ü", color = ColorVariant.MUTED),
-                    topRight = KeyC("ũ", color = ColorVariant.MUTED),
+                    center = KeyC("3", size = LARGE),
+                    topLeft = KeyC("ù", color = MUTED),
+                    top = KeyC("ü", color = MUTED),
+                    topRight = KeyC("ũ", color = MUTED),
                     left = KeyC("?"),
-                    right = KeyC("ò", color = ColorVariant.MUTED),
+                    right = KeyC("ò", color = MUTED),
                     bottomLeft = KeyC("£"),
                     bottom = KeyC("="),
                     bottomRight = KeyC("€"),
@@ -48,19 +49,19 @@ val NUMERIC_PT_EN_KEYBOARD =
             ),
             listOf(
                 KeyItemC(
-                    center = KeyC("4", size = FontSizeVariant.LARGE),
+                    center = KeyC("4", size = LARGE),
                     topLeft = KeyC("{"),
                     topRight = KeyC("%"),
                     left = KeyC("("),
                     bottomLeft = KeyC("["),
-                    bottom = KeyC("@", color = ColorVariant.MUTED),
+                    bottom = KeyC("@", color = MUTED),
                     bottomRight = KeyC("_"),
                 ),
                 KeyItemC(
-                    center = KeyC("5", size = FontSizeVariant.LARGE),
+                    center = KeyC("5", size = LARGE),
                 ),
                 KeyItemC(
-                    center = KeyC("6", size = FontSizeVariant.LARGE),
+                    center = KeyC("6", size = LARGE),
                     topLeft = KeyC("|"),
                     topRight = KeyC("}"),
                     right = KeyC(")"),
@@ -71,25 +72,25 @@ val NUMERIC_PT_EN_KEYBOARD =
             ),
             listOf(
                 KeyItemC(
-                    center = KeyC("7", size = FontSizeVariant.LARGE),
+                    center = KeyC("7", size = LARGE),
                     topLeft = KeyC("~"),
                     bottomRight = KeyC(":"),
                     bottomLeft = KeyC("<"),
                 ),
                 KeyItemC(
-                    center = KeyC("8", size = FontSizeVariant.LARGE),
+                    center = KeyC("8", size = LARGE),
                     topLeft = KeyC("\""),
-                    top = KeyC("ì", color = ColorVariant.MUTED),
+                    top = KeyC("ì", color = MUTED),
                     topRight = KeyC("'"),
                     left = KeyC(","),
-                    right = KeyC("î", color = ColorVariant.MUTED),
+                    right = KeyC("î", color = MUTED),
                     bottomLeft = KeyC("*"),
                     bottom = KeyC("."),
                     bottomRight = KeyC("-"),
                 ),
                 KeyItemC(
-                    center = KeyC("9", size = FontSizeVariant.LARGE),
-                    topLeft = KeyC("è", color = ColorVariant.MUTED),
+                    center = KeyC("9", size = LARGE),
+                    topLeft = KeyC("è", color = MUTED),
                     top = KeyC("&"),
                     topRight = KeyC("°"),
                     bottomRight = KeyC(">"),
@@ -100,7 +101,7 @@ val NUMERIC_PT_EN_KEYBOARD =
             ),
             listOf(
                 KeyItemC(
-                    center = KeyC("0", size = FontSizeVariant.LARGE),
+                    center = KeyC("0", size = LARGE),
                     widthMultiplier = 2,
                 ),
                 SPACEBAR_SKINNY_KEY_ITEM,

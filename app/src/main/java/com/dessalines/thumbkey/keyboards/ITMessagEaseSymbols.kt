@@ -1,196 +1,191 @@
+@file:Suppress("ktlint:standard:no-wildcard-imports")
+
 package com.dessalines.thumbkey.keyboards
 
 import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.outlined.ArrowDropDown
-import androidx.compose.material.icons.outlined.ArrowDropUp
-import androidx.compose.material.icons.outlined.Copyright
-import androidx.compose.material.icons.outlined.KeyboardCapslock
-import com.dessalines.thumbkey.utils.ColorVariant
-import com.dessalines.thumbkey.utils.FontSizeVariant
-import com.dessalines.thumbkey.utils.KeyAction
-import com.dessalines.thumbkey.utils.KeyC
-import com.dessalines.thumbkey.utils.KeyDisplay
-import com.dessalines.thumbkey.utils.KeyItemC
-import com.dessalines.thumbkey.utils.KeyboardC
-import com.dessalines.thumbkey.utils.KeyboardDefinition
-import com.dessalines.thumbkey.utils.KeyboardDefinitionModes
+import androidx.compose.material.icons.outlined.*
+import com.dessalines.thumbkey.utils.*
+import com.dessalines.thumbkey.utils.ColorVariant.*
+import com.dessalines.thumbkey.utils.FontSizeVariant.*
+import com.dessalines.thumbkey.utils.KeyAction.*
+import com.dessalines.thumbkey.utils.SwipeNWay.*
 
 val KB_IT_MESSAGEASE_SYMBOLS_MAIN =
     KeyboardC(
         listOf(
             listOf(
                 KeyItemC(
-                    center = KeyC("a", size = FontSizeVariant.LARGE),
+                    center = KeyC("a", size = LARGE),
                     bottomRight =
                         KeyC(
-                            KeyAction.CommitText("v"),
+                            CommitText("v"),
                         ),
-                    right = KeyC("-", color = ColorVariant.MUTED),
-                    bottomLeft = KeyC("$", color = ColorVariant.MUTED),
+                    right = KeyC("-", color = MUTED),
+                    bottomLeft = KeyC("$", color = MUTED),
                     topRight =
                         KeyC(
-                            KeyAction.CommitText("à"),
+                            CommitText("à"),
                         ),
                 ),
                 KeyItemC(
-                    center = KeyC("n", size = FontSizeVariant.LARGE),
+                    center = KeyC("n", size = LARGE),
                     bottom =
                         KeyC(
-                            KeyAction.CommitText("h"),
+                            CommitText("h"),
                         ),
-                    topLeft = KeyC("`", color = ColorVariant.MUTED),
-                    top = KeyC("^", color = ColorVariant.MUTED),
-                    topRight = KeyC("´", color = ColorVariant.MUTED),
-                    right = KeyC("!", color = ColorVariant.MUTED),
-                    bottomRight = KeyC("\\", color = ColorVariant.MUTED),
-                    bottomLeft = KeyC("/", color = ColorVariant.MUTED),
-                    left = KeyC("+", color = ColorVariant.MUTED),
+                    topLeft = KeyC("`", color = MUTED),
+                    top = KeyC("^", color = MUTED),
+                    topRight = KeyC("´", color = MUTED),
+                    right = KeyC("!", color = MUTED),
+                    bottomRight = KeyC("\\", color = MUTED),
+                    bottomLeft = KeyC("/", color = MUTED),
+                    left = KeyC("+", color = MUTED),
                 ),
                 KeyItemC(
-                    center = KeyC("i", size = FontSizeVariant.LARGE),
+                    center = KeyC("i", size = LARGE),
                     bottomLeft =
                         KeyC(
-                            KeyAction.CommitText("x"),
+                            CommitText("x"),
                         ),
-                    left = KeyC("?", color = ColorVariant.MUTED),
-                    bottomRight = KeyC("€", color = ColorVariant.MUTED),
-                    bottom = KeyC("=", color = ColorVariant.MUTED),
+                    left = KeyC("?", color = MUTED),
+                    bottomRight = KeyC("€", color = MUTED),
+                    bottom = KeyC("=", color = MUTED),
                     topLeft =
                         KeyC(
-                            KeyAction.CommitText("ì"),
+                            CommitText("ì"),
                         ),
                 ),
                 EMOJI_KEY_ITEM,
             ),
             listOf(
                 KeyItemC(
-                    center = KeyC("l", size = FontSizeVariant.LARGE),
+                    center = KeyC("l", size = LARGE),
                     right =
                         KeyC(
-                            KeyAction.CommitText("k"),
+                            CommitText("k"),
                         ),
-                    topLeft = KeyC("{", color = ColorVariant.MUTED),
-                    topRight = KeyC("%", color = ColorVariant.MUTED),
-                    bottomRight = KeyC("_", color = ColorVariant.MUTED),
-                    bottomLeft = KeyC("[", color = ColorVariant.MUTED),
-                    left = KeyC("(", color = ColorVariant.MUTED),
+                    topLeft = KeyC("{", color = MUTED),
+                    topRight = KeyC("%", color = MUTED),
+                    bottomRight = KeyC("_", color = MUTED),
+                    bottomLeft = KeyC("[", color = MUTED),
+                    left = KeyC("(", color = MUTED),
                     top =
                         KeyC(
-                            KeyAction.CommitText("ù"),
+                            CommitText("ù"),
                         ),
                     bottom =
                         KeyC(
-                            KeyAction.CommitText("ò"),
+                            CommitText("ò"),
                         ),
                 ),
                 KeyItemC(
-                    center = KeyC("o", size = FontSizeVariant.LARGE),
+                    center = KeyC("o", size = LARGE),
                     topLeft =
                         KeyC(
-                            KeyAction.CommitText("q"),
+                            CommitText("q"),
                         ),
                     top =
                         KeyC(
-                            KeyAction.CommitText("u"),
+                            CommitText("u"),
                         ),
                     topRight =
                         KeyC(
-                            KeyAction.CommitText("p"),
+                            CommitText("p"),
                         ),
                     right =
                         KeyC(
-                            KeyAction.CommitText("b"),
+                            CommitText("b"),
                         ),
                     bottomRight =
                         KeyC(
-                            KeyAction.CommitText("j"),
+                            CommitText("j"),
                         ),
                     bottom =
                         KeyC(
-                            KeyAction.CommitText("d"),
+                            CommitText("d"),
                         ),
                     bottomLeft =
                         KeyC(
-                            KeyAction.CommitText("g"),
+                            CommitText("g"),
                         ),
                     left =
                         KeyC(
-                            KeyAction.CommitText("c"),
+                            CommitText("c"),
                         ),
                 ),
                 KeyItemC(
-                    center = KeyC("r", size = FontSizeVariant.LARGE),
+                    center = KeyC("r", size = LARGE),
                     left =
                         KeyC(
-                            KeyAction.CommitText("m"),
+                            CommitText("m"),
                         ),
                     top =
                         KeyC(
                             display = KeyDisplay.IconDisplay(Icons.Outlined.ArrowDropUp),
-                            action = KeyAction.ToggleShiftMode(true),
-                            swipeReturnAction = KeyAction.ToggleCurrentWordCapitalization(true),
-                            color = ColorVariant.MUTED,
+                            action = ToggleShiftMode(true),
+                            swipeReturnAction = ToggleCurrentWordCapitalization(true),
+                            color = MUTED,
                         ),
-                    topLeft = KeyC("|", color = ColorVariant.MUTED),
-                    topRight = KeyC("}", color = ColorVariant.MUTED),
-                    right = KeyC(")", color = ColorVariant.MUTED),
+                    topLeft = KeyC("|", color = MUTED),
+                    topRight = KeyC("}", color = MUTED),
+                    right = KeyC(")", color = MUTED),
                     bottom =
                         KeyC(
-                            KeyAction.ToggleShiftMode(false),
-                            swipeReturnAction = KeyAction.ToggleCurrentWordCapitalization(false),
+                            ToggleShiftMode(false),
+                            swipeReturnAction = ToggleCurrentWordCapitalization(false),
                         ),
-                    bottomRight = KeyC("]", color = ColorVariant.MUTED),
-                    bottomLeft = KeyC("@", color = ColorVariant.MUTED),
+                    bottomRight = KeyC("]", color = MUTED),
+                    bottomLeft = KeyC("@", color = MUTED),
                 ),
                 NUMERIC_KEY_ITEM,
             ),
             listOf(
                 KeyItemC(
-                    center = KeyC("t", size = FontSizeVariant.LARGE),
+                    center = KeyC("t", size = LARGE),
                     topRight =
                         KeyC(
-                            KeyAction.CommitText("y"),
+                            CommitText("y"),
                         ),
-                    topLeft = KeyC("~", color = ColorVariant.MUTED),
+                    topLeft = KeyC("~", color = MUTED),
                     right =
                         KeyC(
-                            KeyAction.CommitText("è"),
+                            CommitText("è"),
                         ),
-                    bottomRight = KeyC("\t", displayText = "⇥", color = ColorVariant.MUTED),
-                    left = KeyC("<", color = ColorVariant.MUTED),
-                    top = KeyC("*", color = ColorVariant.MUTED),
+                    bottomRight = KeyC("\t", displayText = "⇥", color = MUTED),
+                    left = KeyC("<", color = MUTED),
+                    top = KeyC("*", color = MUTED),
                 ),
                 KeyItemC(
-                    center = KeyC("e", size = FontSizeVariant.LARGE),
-                    topLeft = KeyC("\"", color = ColorVariant.MUTED),
+                    center = KeyC("e", size = LARGE),
+                    topLeft = KeyC("\"", color = MUTED),
                     top =
                         KeyC(
-                            KeyAction.CommitText("w"),
+                            CommitText("w"),
                         ),
-                    topRight = KeyC("'", color = ColorVariant.MUTED),
+                    topRight = KeyC("'", color = MUTED),
                     right =
                         KeyC(
-                            KeyAction.CommitText("z"),
+                            CommitText("z"),
                         ),
-                    bottomRight = KeyC(":", color = ColorVariant.MUTED),
-                    bottom = KeyC(".", color = ColorVariant.MUTED),
-                    bottomLeft = KeyC(",", color = ColorVariant.MUTED),
+                    bottomRight = KeyC(":", color = MUTED),
+                    bottom = KeyC(".", color = MUTED),
+                    bottomLeft = KeyC(",", color = MUTED),
                     left =
                         KeyC(
-                            KeyAction.CommitText("é"),
+                            CommitText("é"),
                         ),
                 ),
                 KeyItemC(
-                    center = KeyC("s", size = FontSizeVariant.LARGE),
+                    center = KeyC("s", size = LARGE),
                     topLeft =
                         KeyC(
-                            KeyAction.CommitText("f"),
+                            CommitText("f"),
                         ),
-                    top = KeyC("&", color = ColorVariant.MUTED),
-                    topRight = KeyC("°", color = ColorVariant.MUTED),
-                    right = KeyC(">", color = ColorVariant.MUTED),
-                    bottomLeft = KeyC(";", color = ColorVariant.MUTED),
-                    left = KeyC("#", color = ColorVariant.MUTED),
+                    top = KeyC("&", color = MUTED),
+                    topRight = KeyC("°", color = MUTED),
+                    right = KeyC(">", color = MUTED),
+                    bottomLeft = KeyC(";", color = MUTED),
+                    left = KeyC("#", color = MUTED),
                 ),
                 BACKSPACE_KEY_ITEM,
             ),
@@ -206,180 +201,180 @@ val KB_IT_MESSAGEASE_SYMBOLS_SHIFTED =
         listOf(
             listOf(
                 KeyItemC(
-                    center = KeyC("A", size = FontSizeVariant.LARGE),
+                    center = KeyC("A", size = LARGE),
                     bottomRight =
                         KeyC(
-                            KeyAction.CommitText("V"),
+                            CommitText("V"),
                         ),
-                    right = KeyC("-", color = ColorVariant.MUTED),
-                    bottomLeft = KeyC("$", color = ColorVariant.MUTED),
+                    right = KeyC("-", color = MUTED),
+                    bottomLeft = KeyC("$", color = MUTED),
                     topRight =
                         KeyC(
-                            KeyAction.CommitText("À"),
+                            CommitText("À"),
                         ),
                 ),
                 KeyItemC(
-                    center = KeyC("N", size = FontSizeVariant.LARGE),
+                    center = KeyC("N", size = LARGE),
                     bottom =
                         KeyC(
-                            KeyAction.CommitText("H"),
+                            CommitText("H"),
                         ),
-                    topLeft = KeyC("`", color = ColorVariant.MUTED),
-                    top = KeyC("^", color = ColorVariant.MUTED),
-                    topRight = KeyC("´", color = ColorVariant.MUTED),
-                    right = KeyC("!", color = ColorVariant.MUTED),
-                    bottomRight = KeyC("\\", color = ColorVariant.MUTED),
-                    bottomLeft = KeyC("/", color = ColorVariant.MUTED),
-                    left = KeyC("+", color = ColorVariant.MUTED),
+                    topLeft = KeyC("`", color = MUTED),
+                    top = KeyC("^", color = MUTED),
+                    topRight = KeyC("´", color = MUTED),
+                    right = KeyC("!", color = MUTED),
+                    bottomRight = KeyC("\\", color = MUTED),
+                    bottomLeft = KeyC("/", color = MUTED),
+                    left = KeyC("+", color = MUTED),
                 ),
                 KeyItemC(
-                    center = KeyC("I", size = FontSizeVariant.LARGE),
+                    center = KeyC("I", size = LARGE),
                     bottomLeft =
                         KeyC(
-                            KeyAction.CommitText("X"),
+                            CommitText("X"),
                         ),
-                    left = KeyC("?", color = ColorVariant.MUTED),
-                    bottomRight = KeyC("€", color = ColorVariant.MUTED),
-                    bottom = KeyC("=", color = ColorVariant.MUTED),
+                    left = KeyC("?", color = MUTED),
+                    bottomRight = KeyC("€", color = MUTED),
+                    bottom = KeyC("=", color = MUTED),
                     topLeft =
                         KeyC(
-                            KeyAction.CommitText("Ì"),
+                            CommitText("Ì"),
                         ),
                 ),
                 EMOJI_KEY_ITEM,
             ),
             listOf(
                 KeyItemC(
-                    center = KeyC("L", size = FontSizeVariant.LARGE),
+                    center = KeyC("L", size = LARGE),
                     right =
                         KeyC(
-                            KeyAction.CommitText("K"),
+                            CommitText("K"),
                         ),
-                    topLeft = KeyC("{", color = ColorVariant.MUTED),
-                    topRight = KeyC("%", color = ColorVariant.MUTED),
-                    bottomRight = KeyC("_", color = ColorVariant.MUTED),
-                    bottomLeft = KeyC("[", color = ColorVariant.MUTED),
-                    left = KeyC("(", color = ColorVariant.MUTED),
+                    topLeft = KeyC("{", color = MUTED),
+                    topRight = KeyC("%", color = MUTED),
+                    bottomRight = KeyC("_", color = MUTED),
+                    bottomLeft = KeyC("[", color = MUTED),
+                    left = KeyC("(", color = MUTED),
                     top =
                         KeyC(
-                            KeyAction.CommitText("Ù"),
+                            CommitText("Ù"),
                         ),
                     bottom =
                         KeyC(
-                            KeyAction.CommitText("Ò"),
+                            CommitText("Ò"),
                         ),
                 ),
                 KeyItemC(
-                    center = KeyC("O", size = FontSizeVariant.LARGE),
+                    center = KeyC("O", size = LARGE),
                     topLeft =
                         KeyC(
-                            KeyAction.CommitText("Q"),
+                            CommitText("Q"),
                         ),
                     top =
                         KeyC(
-                            KeyAction.CommitText("U"),
+                            CommitText("U"),
                         ),
                     topRight =
                         KeyC(
-                            KeyAction.CommitText("P"),
+                            CommitText("P"),
                         ),
                     right =
                         KeyC(
-                            KeyAction.CommitText("B"),
+                            CommitText("B"),
                         ),
                     bottomRight =
                         KeyC(
-                            KeyAction.CommitText("J"),
+                            CommitText("J"),
                         ),
                     bottom =
                         KeyC(
-                            KeyAction.CommitText("D"),
+                            CommitText("D"),
                         ),
                     bottomLeft =
                         KeyC(
-                            KeyAction.CommitText("G"),
+                            CommitText("G"),
                         ),
                     left =
                         KeyC(
-                            KeyAction.CommitText("C"),
+                            CommitText("C"),
                         ),
                 ),
                 KeyItemC(
-                    center = KeyC("R", size = FontSizeVariant.LARGE),
+                    center = KeyC("R", size = LARGE),
                     left =
                         KeyC(
-                            KeyAction.CommitText("M"),
+                            CommitText("M"),
                         ),
                     bottom =
                         KeyC(
                             display = KeyDisplay.IconDisplay(Icons.Outlined.ArrowDropDown),
-                            action = KeyAction.ToggleShiftMode(false),
-                            swipeReturnAction = KeyAction.ToggleCurrentWordCapitalization(false),
-                            color = ColorVariant.MUTED,
+                            action = ToggleShiftMode(false),
+                            swipeReturnAction = ToggleCurrentWordCapitalization(false),
+                            color = MUTED,
                         ),
                     top =
                         KeyC(
                             display = KeyDisplay.IconDisplay(Icons.Outlined.KeyboardCapslock),
                             capsModeDisplay = KeyDisplay.IconDisplay(Icons.Outlined.Copyright),
-                            action = KeyAction.ToggleCapsLock,
-                            swipeReturnAction = KeyAction.ToggleCurrentWordCapitalization(true),
-                            color = ColorVariant.MUTED,
+                            action = ToggleCapsLock,
+                            swipeReturnAction = ToggleCurrentWordCapitalization(true),
+                            color = MUTED,
                         ),
-                    topLeft = KeyC("|", color = ColorVariant.MUTED),
-                    topRight = KeyC("}", color = ColorVariant.MUTED),
-                    right = KeyC(")", color = ColorVariant.MUTED),
-                    bottomRight = KeyC("]", color = ColorVariant.MUTED),
-                    bottomLeft = KeyC("@", color = ColorVariant.MUTED),
+                    topLeft = KeyC("|", color = MUTED),
+                    topRight = KeyC("}", color = MUTED),
+                    right = KeyC(")", color = MUTED),
+                    bottomRight = KeyC("]", color = MUTED),
+                    bottomLeft = KeyC("@", color = MUTED),
                 ),
                 NUMERIC_KEY_ITEM,
             ),
             listOf(
                 KeyItemC(
-                    center = KeyC("T", size = FontSizeVariant.LARGE),
+                    center = KeyC("T", size = LARGE),
                     topRight =
                         KeyC(
-                            KeyAction.CommitText("Y"),
+                            CommitText("Y"),
                         ),
-                    topLeft = KeyC("~", color = ColorVariant.MUTED),
+                    topLeft = KeyC("~", color = MUTED),
                     right =
                         KeyC(
-                            KeyAction.CommitText("È"),
+                            CommitText("È"),
                         ),
-                    left = KeyC("<", color = ColorVariant.MUTED),
-                    bottomRight = KeyC("\t", displayText = "⇥", color = ColorVariant.MUTED),
-                    top = KeyC("*", color = ColorVariant.MUTED),
+                    left = KeyC("<", color = MUTED),
+                    bottomRight = KeyC("\t", displayText = "⇥", color = MUTED),
+                    top = KeyC("*", color = MUTED),
                 ),
                 KeyItemC(
-                    center = KeyC("E", size = FontSizeVariant.LARGE),
-                    topLeft = KeyC("\"", color = ColorVariant.MUTED),
+                    center = KeyC("E", size = LARGE),
+                    topLeft = KeyC("\"", color = MUTED),
                     top =
                         KeyC(
-                            KeyAction.CommitText("W"),
+                            CommitText("W"),
                         ),
-                    topRight = KeyC("'", color = ColorVariant.MUTED),
+                    topRight = KeyC("'", color = MUTED),
                     right =
                         KeyC(
-                            KeyAction.CommitText("Z"),
+                            CommitText("Z"),
                         ),
-                    bottomRight = KeyC(":", color = ColorVariant.MUTED),
-                    bottom = KeyC(".", color = ColorVariant.MUTED),
-                    bottomLeft = KeyC(",", color = ColorVariant.MUTED),
+                    bottomRight = KeyC(":", color = MUTED),
+                    bottom = KeyC(".", color = MUTED),
+                    bottomLeft = KeyC(",", color = MUTED),
                     left =
                         KeyC(
-                            KeyAction.CommitText("É"),
+                            CommitText("É"),
                         ),
                 ),
                 KeyItemC(
-                    center = KeyC("S", size = FontSizeVariant.LARGE),
+                    center = KeyC("S", size = LARGE),
                     topLeft =
                         KeyC(
-                            KeyAction.CommitText("F"),
+                            CommitText("F"),
                         ),
-                    top = KeyC("&", color = ColorVariant.MUTED),
-                    topRight = KeyC("°", color = ColorVariant.MUTED),
-                    right = KeyC(">", color = ColorVariant.MUTED),
-                    bottomLeft = KeyC(";", color = ColorVariant.MUTED),
-                    left = KeyC("#", color = ColorVariant.MUTED),
+                    top = KeyC("&", color = MUTED),
+                    topRight = KeyC("°", color = MUTED),
+                    right = KeyC(">", color = MUTED),
+                    bottomLeft = KeyC(";", color = MUTED),
+                    left = KeyC("#", color = MUTED),
                 ),
                 BACKSPACE_KEY_ITEM,
             ),

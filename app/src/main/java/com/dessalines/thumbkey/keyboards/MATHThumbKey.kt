@@ -1,33 +1,29 @@
+@file:Suppress("ktlint:standard:no-wildcard-imports")
+
 package com.dessalines.thumbkey.keyboards
 
 import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.outlined.ArrowDropDown
-import androidx.compose.material.icons.outlined.ArrowDropUp
-import com.dessalines.thumbkey.utils.ColorVariant
-import com.dessalines.thumbkey.utils.FontSizeVariant
-import com.dessalines.thumbkey.utils.KeyAction
-import com.dessalines.thumbkey.utils.KeyC
-import com.dessalines.thumbkey.utils.KeyDisplay
-import com.dessalines.thumbkey.utils.KeyItemC
-import com.dessalines.thumbkey.utils.KeyboardC
-import com.dessalines.thumbkey.utils.KeyboardDefinition
-import com.dessalines.thumbkey.utils.KeyboardDefinitionModes
-import com.dessalines.thumbkey.utils.SwipeNWay
+import androidx.compose.material.icons.outlined.*
+import com.dessalines.thumbkey.utils.*
+import com.dessalines.thumbkey.utils.ColorVariant.*
+import com.dessalines.thumbkey.utils.FontSizeVariant.*
+import com.dessalines.thumbkey.utils.KeyAction.*
+import com.dessalines.thumbkey.utils.SwipeNWay.*
 
 val KB_MATH_THUMBKEY_MAIN =
     KeyboardC(
         listOf(
             listOf(
                 KeyItemC(
-                    center = KeyC("∀", size = FontSizeVariant.LARGE),
-                    swipeType = SwipeNWay.EIGHT_WAY,
+                    center = KeyC("∀", size = LARGE),
+                    swipeType = EIGHT_WAY,
                     topLeft = KeyC("⊊"),
                     left = KeyC("⊆"),
                     bottomLeft = KeyC("⊂"),
                 ),
                 KeyItemC(
-                    center = KeyC("∫", size = FontSizeVariant.LARGE),
-                    swipeType = SwipeNWay.EIGHT_WAY,
+                    center = KeyC("∫", size = LARGE),
+                    swipeType = EIGHT_WAY,
                     left = KeyC("+"),
                     topLeft = KeyC("±"),
                     right = KeyC("!"),
@@ -36,8 +32,8 @@ val KB_MATH_THUMBKEY_MAIN =
                     bottom = KeyC("∂"),
                 ),
                 KeyItemC(
-                    center = KeyC("∃", size = FontSizeVariant.LARGE),
-                    swipeType = SwipeNWay.EIGHT_WAY,
+                    center = KeyC("∃", size = LARGE),
+                    swipeType = EIGHT_WAY,
                     topRight = KeyC("⊋"),
                     right = KeyC("⊇"),
                     bottomRight = KeyC("⊃"),
@@ -49,8 +45,8 @@ val KB_MATH_THUMBKEY_MAIN =
             ),
             listOf(
                 KeyItemC(
-                    center = KeyC("∅", size = FontSizeVariant.LARGE),
-                    swipeType = SwipeNWay.EIGHT_WAY,
+                    center = KeyC("∅", size = LARGE),
+                    swipeType = EIGHT_WAY,
                     topRight = KeyC("∩"),
                     right = KeyC("∪"),
                     bottomRight = KeyC("⊍"),
@@ -59,38 +55,38 @@ val KB_MATH_THUMBKEY_MAIN =
                     bottom = KeyC("𝒫"),
                 ),
                 KeyItemC(
-                    center = KeyC("∎", size = FontSizeVariant.LARGE),
+                    center = KeyC("∎", size = LARGE),
                     bottomRight = KeyC("⇒"),
                     bottom = KeyC("⇔"),
                     bottomLeft = KeyC("⇐"),
                 ),
                 KeyItemC(
-                    center = KeyC("¬", size = FontSizeVariant.LARGE),
-                    swipeType = SwipeNWay.EIGHT_WAY,
+                    center = KeyC("¬", size = LARGE),
+                    swipeType = EIGHT_WAY,
                     topLeft = KeyC("∧"),
                     left = KeyC("∨"),
                     bottomLeft = KeyC("⩒"),
                     top =
                         KeyC(
                             display = KeyDisplay.IconDisplay(Icons.Outlined.ArrowDropUp),
-                            action = KeyAction.ToggleShiftMode(true),
-                            swipeReturnAction = KeyAction.ToggleCurrentWordCapitalization(true),
-                            color = ColorVariant.MUTED,
+                            action = ToggleShiftMode(true),
+                            swipeReturnAction = ToggleCurrentWordCapitalization(true),
+                            color = MUTED,
                         ),
                     topRight = KeyC("}"),
                     right = KeyC(")"),
                     bottom =
                         KeyC(
-                            KeyAction.ToggleShiftMode(false),
-                            swipeReturnAction = KeyAction.ToggleCurrentWordCapitalization(false),
+                            ToggleShiftMode(false),
+                            swipeReturnAction = ToggleCurrentWordCapitalization(false),
                         ),
                 ),
                 NUMERIC_KEY_ITEM,
             ),
             listOf(
                 KeyItemC(
-                    center = KeyC("→", size = FontSizeVariant.LARGE),
-                    swipeType = SwipeNWay.EIGHT_WAY,
+                    center = KeyC("→", size = LARGE),
+                    swipeType = EIGHT_WAY,
                     topLeft = KeyC("~"),
                     left = KeyC("≤"),
                     bottomLeft = KeyC("<"),
@@ -101,19 +97,19 @@ val KB_MATH_THUMBKEY_MAIN =
                     topRight = KeyC("⋅"),
                 ),
                 KeyItemC(
-                    center = KeyC("∑", size = FontSizeVariant.LARGE),
+                    center = KeyC("∑", size = LARGE),
                     top = KeyC("⨯"),
-                    topRight = KeyC("'", color = ColorVariant.MUTED),
+                    topRight = KeyC("'", color = MUTED),
                     left = KeyC(","),
-                    bottomRight = KeyC("-", color = ColorVariant.MUTED),
-                    bottom = KeyC(".", color = ColorVariant.MUTED),
-                    bottomLeft = KeyC("*", color = ColorVariant.MUTED),
-                    right = KeyC("∏", color = ColorVariant.MUTED),
-                    topLeft = KeyC("∞", color = ColorVariant.MUTED),
+                    bottomRight = KeyC("-", color = MUTED),
+                    bottom = KeyC(".", color = MUTED),
+                    bottomLeft = KeyC("*", color = MUTED),
+                    right = KeyC("∏", color = MUTED),
+                    topLeft = KeyC("∞", color = MUTED),
                 ),
                 KeyItemC(
-                    center = KeyC("ℕ", size = FontSizeVariant.LARGE),
-                    swipeType = SwipeNWay.EIGHT_WAY,
+                    center = KeyC("ℕ", size = LARGE),
+                    swipeType = EIGHT_WAY,
                     topRight = KeyC("°"),
                     right = KeyC("≥"),
                     bottomRight = KeyC(">"),
@@ -137,21 +133,21 @@ val KB_MATH_THUMBKEY_SLASH =
         listOf(
             listOf(
                 KeyItemC(
-                    center = KeyC("", size = FontSizeVariant.LARGE),
-                    swipeType = SwipeNWay.EIGHT_WAY,
+                    center = KeyC("", size = LARGE),
+                    swipeType = EIGHT_WAY,
                     left = KeyC("⊈"),
                     bottomLeft = KeyC("⊄"),
                 ),
                 KeyItemC(
-                    center = KeyC("∮", size = FontSizeVariant.LARGE),
-                    swipeType = SwipeNWay.EIGHT_WAY,
+                    center = KeyC("∮", size = LARGE),
+                    swipeType = EIGHT_WAY,
                     topLeft = KeyC("∓"),
                     bottomLeft = KeyC("∌"),
                     bottomRight = KeyC("∉"),
                 ),
                 KeyItemC(
-                    center = KeyC("∄", size = FontSizeVariant.LARGE),
-                    swipeType = SwipeNWay.EIGHT_WAY,
+                    center = KeyC("∄", size = LARGE),
+                    swipeType = EIGHT_WAY,
                     right = KeyC("⊉"),
                     bottomRight = KeyC("⊅"),
                     bottom = KeyC("≠"),
@@ -161,42 +157,42 @@ val KB_MATH_THUMBKEY_SLASH =
             ),
             listOf(
                 KeyItemC(
-                    center = KeyC("∅", size = FontSizeVariant.LARGE),
-                    swipeType = SwipeNWay.EIGHT_WAY,
+                    center = KeyC("∅", size = LARGE),
+                    swipeType = EIGHT_WAY,
                 ),
                 KeyItemC(
-                    center = KeyC("↯", size = FontSizeVariant.LARGE),
+                    center = KeyC("↯", size = LARGE),
                     bottomRight = KeyC("⇏"),
                     bottom = KeyC("⇎"),
                     bottomLeft = KeyC("⇍"),
                 ),
                 KeyItemC(
-                    center = KeyC("¬", size = FontSizeVariant.LARGE),
-                    swipeType = SwipeNWay.EIGHT_WAY,
+                    center = KeyC("¬", size = LARGE),
+                    swipeType = EIGHT_WAY,
                     bottom =
                         KeyC(
                             display = KeyDisplay.IconDisplay(Icons.Outlined.ArrowDropDown),
-                            action = KeyAction.ToggleShiftMode(false),
-                            swipeReturnAction = KeyAction.ToggleCurrentWordCapitalization(false),
-                            color = ColorVariant.MUTED,
+                            action = ToggleShiftMode(false),
+                            swipeReturnAction = ToggleCurrentWordCapitalization(false),
+                            color = MUTED,
                         ),
                 ),
                 NUMERIC_KEY_ITEM,
             ),
             listOf(
                 KeyItemC(
-                    center = KeyC("↛", size = FontSizeVariant.LARGE),
-                    swipeType = SwipeNWay.EIGHT_WAY,
+                    center = KeyC("↛", size = LARGE),
+                    swipeType = EIGHT_WAY,
                     topLeft = KeyC("≁"),
                     left = KeyC("≰"),
                     bottomLeft = KeyC("≮"),
                 ),
                 KeyItemC(
-                    center = KeyC("", size = FontSizeVariant.LARGE),
+                    center = KeyC("", size = LARGE),
                 ),
                 KeyItemC(
-                    center = KeyC("", size = FontSizeVariant.LARGE),
-                    swipeType = SwipeNWay.EIGHT_WAY,
+                    center = KeyC("", size = LARGE),
+                    swipeType = EIGHT_WAY,
                     left = KeyC("≱"),
                     bottomLeft = KeyC("≯"),
                 ),

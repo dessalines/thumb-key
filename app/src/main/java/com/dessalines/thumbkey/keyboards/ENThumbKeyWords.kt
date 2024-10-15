@@ -1,23 +1,14 @@
+@file:Suppress("ktlint:standard:no-wildcard-imports")
+
 package com.dessalines.thumbkey.keyboards
 
 import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.outlined.ArrowDropDown
-import androidx.compose.material.icons.outlined.ArrowDropUp
-import androidx.compose.material.icons.outlined.Copyright
-import androidx.compose.material.icons.outlined.KeyboardCapslock
-import com.dessalines.thumbkey.utils.ColorVariant
-import com.dessalines.thumbkey.utils.FontSizeVariant
-import com.dessalines.thumbkey.utils.KeyAction
-import com.dessalines.thumbkey.utils.KeyC
-import com.dessalines.thumbkey.utils.KeyDisplay
-import com.dessalines.thumbkey.utils.KeyItemC
-import com.dessalines.thumbkey.utils.KeyboardC
-import com.dessalines.thumbkey.utils.KeyboardDefinition
-import com.dessalines.thumbkey.utils.KeyboardDefinitionModes
-import com.dessalines.thumbkey.utils.KeyboardDefinitionSettings
-import com.dessalines.thumbkey.utils.SwipeNWay
-import com.dessalines.thumbkey.utils.autoCapitalizeI
-import com.dessalines.thumbkey.utils.autoCapitalizeIApostrophe
+import androidx.compose.material.icons.outlined.*
+import com.dessalines.thumbkey.utils.*
+import com.dessalines.thumbkey.utils.ColorVariant.*
+import com.dessalines.thumbkey.utils.FontSizeVariant.*
+import com.dessalines.thumbkey.utils.KeyAction.*
+import com.dessalines.thumbkey.utils.SwipeNWay.*
 
 // Adds common English words to main screen to reduce amount of taps required when typing
 val KB_EN_THUMBKEY_WORDS_MAIN =
@@ -25,46 +16,46 @@ val KB_EN_THUMBKEY_WORDS_MAIN =
         listOf(
             listOf(
                 KeyItemC(
-                    center = KeyC("s", size = FontSizeVariant.LARGE),
+                    center = KeyC("s", size = LARGE),
                     bottomRight = KeyC("w"),
-                    topRight = KeyC("make", color = ColorVariant.MUTED, size = FontSizeVariant.SMALLEST),
-                    right = KeyC("will", color = ColorVariant.MUTED, size = FontSizeVariant.SMALLEST),
-                    bottom = KeyC("what", color = ColorVariant.MUTED, size = FontSizeVariant.SMALLEST),
+                    topRight = KeyC("make", color = MUTED, size = SMALLEST),
+                    right = KeyC("will", color = MUTED, size = SMALLEST),
+                    bottom = KeyC("what", color = MUTED, size = SMALLEST),
                 ),
                 KeyItemC(
-                    center = KeyC("r", size = FontSizeVariant.LARGE),
+                    center = KeyC("r", size = LARGE),
                     bottom = KeyC("g"),
-                    topLeft = KeyC("when", color = ColorVariant.MUTED, size = FontSizeVariant.SMALLEST),
-                    left = KeyC("which", color = ColorVariant.MUTED, size = FontSizeVariant.SMALLEST),
-                    bottomLeft = KeyC("with", color = ColorVariant.MUTED, size = FontSizeVariant.SMALLEST),
-                    topRight = KeyC("just", color = ColorVariant.MUTED, size = FontSizeVariant.SMALLEST),
-                    right = KeyC("from", color = ColorVariant.MUTED, size = FontSizeVariant.SMALLEST),
-                    bottomRight = KeyC("be", color = ColorVariant.MUTED, size = FontSizeVariant.SMALLEST),
+                    topLeft = KeyC("when", color = MUTED, size = SMALLEST),
+                    left = KeyC("which", color = MUTED, size = SMALLEST),
+                    bottomLeft = KeyC("with", color = MUTED, size = SMALLEST),
+                    topRight = KeyC("just", color = MUTED, size = SMALLEST),
+                    right = KeyC("from", color = MUTED, size = SMALLEST),
+                    bottomRight = KeyC("be", color = MUTED, size = SMALLEST),
                 ),
                 KeyItemC(
-                    center = KeyC("o", size = FontSizeVariant.LARGE),
+                    center = KeyC("o", size = LARGE),
                     bottomLeft = KeyC("u"),
-                    topLeft = KeyC("ould", color = ColorVariant.MUTED, size = FontSizeVariant.SMALLEST),
-                    top = KeyC("'ll", color = ColorVariant.MUTED, size = FontSizeVariant.SMALLEST),
-                    topRight = KeyC("'re", color = ColorVariant.MUTED, size = FontSizeVariant.SMALLEST),
-                    right = KeyC("about", color = ColorVariant.MUTED, size = FontSizeVariant.SMALLEST),
-                    bottomRight = KeyC("n't", color = ColorVariant.MUTED, size = FontSizeVariant.SMALLEST),
-                    bottom = KeyC("'t", color = ColorVariant.MUTED, size = FontSizeVariant.SMALLEST),
-                    left = KeyC("'s", color = ColorVariant.MUTED, size = FontSizeVariant.SMALLEST),
+                    topLeft = KeyC("ould", color = MUTED, size = SMALLEST),
+                    top = KeyC("'ll", color = MUTED, size = SMALLEST),
+                    topRight = KeyC("'re", color = MUTED, size = SMALLEST),
+                    right = KeyC("about", color = MUTED, size = SMALLEST),
+                    bottomRight = KeyC("n't", color = MUTED, size = SMALLEST),
+                    bottom = KeyC("'t", color = MUTED, size = SMALLEST),
+                    left = KeyC("'s", color = MUTED, size = SMALLEST),
                 ),
                 EMOJI_KEY_ITEM,
             ),
             listOf(
                 KeyItemC(
-                    center = KeyC("n", size = FontSizeVariant.LARGE),
+                    center = KeyC("n", size = LARGE),
                     right = KeyC("m"),
-                    top = KeyC("like", color = ColorVariant.MUTED, size = FontSizeVariant.SMALLEST),
-                    topRight = KeyC("not", color = ColorVariant.MUTED, size = FontSizeVariant.SMALLEST),
-                    bottomRight = KeyC("and", color = ColorVariant.MUTED, size = FontSizeVariant.SMALLEST),
-                    bottom = KeyC("know", color = ColorVariant.MUTED, size = FontSizeVariant.SMALLEST),
+                    top = KeyC("like", color = MUTED, size = SMALLEST),
+                    topRight = KeyC("not", color = MUTED, size = SMALLEST),
+                    bottomRight = KeyC("and", color = MUTED, size = SMALLEST),
+                    bottom = KeyC("know", color = MUTED, size = SMALLEST),
                 ),
                 KeyItemC(
-                    center = KeyC("h", size = FontSizeVariant.LARGE),
+                    center = KeyC("h", size = LARGE),
                     topLeft = KeyC("j"),
                     top = KeyC("q"),
                     topRight = KeyC("b"),
@@ -75,50 +66,50 @@ val KB_EN_THUMBKEY_WORDS_MAIN =
                     left = KeyC("k"),
                 ),
                 KeyItemC(
-                    center = KeyC("a", size = FontSizeVariant.LARGE),
-                    swipeType = SwipeNWay.FOUR_WAY_CROSS,
+                    center = KeyC("a", size = LARGE),
+                    swipeType = FOUR_WAY_CROSS,
                     left = KeyC("l"),
                     top =
                         KeyC(
                             display = KeyDisplay.IconDisplay(Icons.Outlined.ArrowDropUp),
-                            action = KeyAction.ToggleShiftMode(true),
-                            swipeReturnAction = KeyAction.ToggleCurrentWordCapitalization(true),
-                            color = ColorVariant.MUTED,
+                            action = ToggleShiftMode(true),
+                            swipeReturnAction = ToggleCurrentWordCapitalization(true),
+                            color = MUTED,
                         ),
                     bottom =
                         KeyC(
-                            KeyAction.ToggleShiftMode(false),
-                            swipeReturnAction = KeyAction.ToggleCurrentWordCapitalization(false),
+                            ToggleShiftMode(false),
+                            swipeReturnAction = ToggleCurrentWordCapitalization(false),
                         ),
                 ),
                 NUMERIC_KEY_ITEM,
             ),
             listOf(
                 KeyItemC(
-                    center = KeyC("t", size = FontSizeVariant.LARGE),
+                    center = KeyC("t", size = LARGE),
                     topRight = KeyC("c"),
-                    top = KeyC("have", color = ColorVariant.MUTED, size = FontSizeVariant.SMALLEST),
-                    right = KeyC("can", color = ColorVariant.MUTED, size = FontSizeVariant.SMALLEST),
-                    bottomRight = KeyC("but", color = ColorVariant.MUTED, size = FontSizeVariant.SMALLEST),
+                    top = KeyC("have", color = MUTED, size = SMALLEST),
+                    right = KeyC("can", color = MUTED, size = SMALLEST),
+                    bottomRight = KeyC("but", color = MUTED, size = SMALLEST),
                 ),
                 KeyItemC(
-                    center = KeyC("i", size = FontSizeVariant.LARGE),
+                    center = KeyC("i", size = LARGE),
                     top = KeyC("f"),
                     right = KeyC("z"),
-                    bottomRight = KeyC("-", color = ColorVariant.MUTED),
-                    bottom = KeyC(".", color = ColorVariant.MUTED),
-                    bottomLeft = KeyC("*", color = ColorVariant.MUTED),
-                    topLeft = KeyC("this", color = ColorVariant.MUTED, size = FontSizeVariant.SMALLEST),
-                    topRight = KeyC("that", color = ColorVariant.MUTED, size = FontSizeVariant.SMALLEST),
-                    left = KeyC("I'm", color = ColorVariant.MUTED, size = FontSizeVariant.SMALLEST),
+                    bottomRight = KeyC("-", color = MUTED),
+                    bottom = KeyC(".", color = MUTED),
+                    bottomLeft = KeyC("*", color = MUTED),
+                    topLeft = KeyC("this", color = MUTED, size = SMALLEST),
+                    topRight = KeyC("that", color = MUTED, size = SMALLEST),
+                    left = KeyC("I'm", color = MUTED, size = SMALLEST),
                 ),
                 KeyItemC(
-                    center = KeyC("e", size = FontSizeVariant.LARGE),
+                    center = KeyC("e", size = LARGE),
                     topLeft = KeyC("d"),
-                    top = KeyC("the", color = ColorVariant.MUTED, size = FontSizeVariant.SMALLEST),
-                    topRight = KeyC("for", color = ColorVariant.MUTED, size = FontSizeVariant.SMALLEST),
-                    bottomLeft = KeyC("do", color = ColorVariant.MUTED, size = FontSizeVariant.SMALLEST),
-                    left = KeyC("you", color = ColorVariant.MUTED, size = FontSizeVariant.SMALLEST),
+                    top = KeyC("the", color = MUTED, size = SMALLEST),
+                    topRight = KeyC("for", color = MUTED, size = SMALLEST),
+                    bottomLeft = KeyC("do", color = MUTED, size = SMALLEST),
+                    left = KeyC("you", color = MUTED, size = SMALLEST),
                 ),
                 BACKSPACE_KEY_ITEM,
             ),
@@ -134,46 +125,46 @@ val KB_EN_THUMBKEY_WORDS_SHIFTED =
         listOf(
             listOf(
                 KeyItemC(
-                    center = KeyC("S", size = FontSizeVariant.LARGE),
+                    center = KeyC("S", size = LARGE),
                     bottomRight = KeyC("W"),
-                    topRight = KeyC("Make", color = ColorVariant.MUTED, size = FontSizeVariant.SMALLEST),
-                    right = KeyC("Will", color = ColorVariant.MUTED, size = FontSizeVariant.SMALLEST),
-                    bottom = KeyC("What", color = ColorVariant.MUTED, size = FontSizeVariant.SMALLEST),
+                    topRight = KeyC("Make", color = MUTED, size = SMALLEST),
+                    right = KeyC("Will", color = MUTED, size = SMALLEST),
+                    bottom = KeyC("What", color = MUTED, size = SMALLEST),
                 ),
                 KeyItemC(
-                    center = KeyC("R", size = FontSizeVariant.LARGE),
+                    center = KeyC("R", size = LARGE),
                     bottom = KeyC("G"),
-                    topLeft = KeyC("When", color = ColorVariant.MUTED, size = FontSizeVariant.SMALLEST),
-                    left = KeyC("Which", color = ColorVariant.MUTED, size = FontSizeVariant.SMALLEST),
-                    bottomLeft = KeyC("With", color = ColorVariant.MUTED, size = FontSizeVariant.SMALLEST),
-                    topRight = KeyC("Just", color = ColorVariant.MUTED, size = FontSizeVariant.SMALLEST),
-                    right = KeyC("From", color = ColorVariant.MUTED, size = FontSizeVariant.SMALLEST),
-                    bottomRight = KeyC("Be", color = ColorVariant.MUTED, size = FontSizeVariant.SMALLEST),
+                    topLeft = KeyC("When", color = MUTED, size = SMALLEST),
+                    left = KeyC("Which", color = MUTED, size = SMALLEST),
+                    bottomLeft = KeyC("With", color = MUTED, size = SMALLEST),
+                    topRight = KeyC("Just", color = MUTED, size = SMALLEST),
+                    right = KeyC("From", color = MUTED, size = SMALLEST),
+                    bottomRight = KeyC("Be", color = MUTED, size = SMALLEST),
                 ),
                 KeyItemC(
-                    center = KeyC("O", size = FontSizeVariant.LARGE),
+                    center = KeyC("O", size = LARGE),
                     bottomLeft = KeyC("U"),
-                    topLeft = KeyC("ould", color = ColorVariant.MUTED, size = FontSizeVariant.SMALLEST),
-                    top = KeyC("'ll", color = ColorVariant.MUTED, size = FontSizeVariant.SMALLEST),
-                    topRight = KeyC("'re", color = ColorVariant.MUTED, size = FontSizeVariant.SMALLEST),
-                    right = KeyC("About", color = ColorVariant.MUTED, size = FontSizeVariant.SMALLEST),
-                    bottomRight = KeyC("n't", color = ColorVariant.MUTED, size = FontSizeVariant.SMALLEST),
-                    bottom = KeyC("'t", color = ColorVariant.MUTED, size = FontSizeVariant.SMALLEST),
-                    left = KeyC("'s", color = ColorVariant.MUTED, size = FontSizeVariant.SMALLEST),
+                    topLeft = KeyC("ould", color = MUTED, size = SMALLEST),
+                    top = KeyC("'ll", color = MUTED, size = SMALLEST),
+                    topRight = KeyC("'re", color = MUTED, size = SMALLEST),
+                    right = KeyC("About", color = MUTED, size = SMALLEST),
+                    bottomRight = KeyC("n't", color = MUTED, size = SMALLEST),
+                    bottom = KeyC("'t", color = MUTED, size = SMALLEST),
+                    left = KeyC("'s", color = MUTED, size = SMALLEST),
                 ),
                 EMOJI_KEY_ITEM,
             ),
             listOf(
                 KeyItemC(
-                    center = KeyC("N", size = FontSizeVariant.LARGE),
+                    center = KeyC("N", size = LARGE),
                     right = KeyC("M"),
-                    top = KeyC("Like", color = ColorVariant.MUTED, size = FontSizeVariant.SMALLEST),
-                    topRight = KeyC("Not", color = ColorVariant.MUTED, size = FontSizeVariant.SMALLEST),
-                    bottomRight = KeyC("And", color = ColorVariant.MUTED, size = FontSizeVariant.SMALLEST),
-                    bottom = KeyC("Know", color = ColorVariant.MUTED, size = FontSizeVariant.SMALLEST),
+                    top = KeyC("Like", color = MUTED, size = SMALLEST),
+                    topRight = KeyC("Not", color = MUTED, size = SMALLEST),
+                    bottomRight = KeyC("And", color = MUTED, size = SMALLEST),
+                    bottom = KeyC("Know", color = MUTED, size = SMALLEST),
                 ),
                 KeyItemC(
-                    center = KeyC("H", size = FontSizeVariant.LARGE),
+                    center = KeyC("H", size = LARGE),
                     topLeft = KeyC("J"),
                     top = KeyC("Q"),
                     topRight = KeyC("B"),
@@ -184,53 +175,53 @@ val KB_EN_THUMBKEY_WORDS_SHIFTED =
                     left = KeyC("K"),
                 ),
                 KeyItemC(
-                    center = KeyC("A", size = FontSizeVariant.LARGE),
-                    swipeType = SwipeNWay.FOUR_WAY_CROSS,
+                    center = KeyC("A", size = LARGE),
+                    swipeType = FOUR_WAY_CROSS,
                     left = KeyC("L"),
                     bottom =
                         KeyC(
                             display = KeyDisplay.IconDisplay(Icons.Outlined.ArrowDropDown),
-                            action = KeyAction.ToggleShiftMode(false),
-                            swipeReturnAction = KeyAction.ToggleCurrentWordCapitalization(false),
-                            color = ColorVariant.MUTED,
+                            action = ToggleShiftMode(false),
+                            swipeReturnAction = ToggleCurrentWordCapitalization(false),
+                            color = MUTED,
                         ),
                     top =
                         KeyC(
                             display = KeyDisplay.IconDisplay(Icons.Outlined.KeyboardCapslock),
                             capsModeDisplay = KeyDisplay.IconDisplay(Icons.Outlined.Copyright),
-                            action = KeyAction.ToggleCapsLock,
-                            swipeReturnAction = KeyAction.ToggleCurrentWordCapitalization(true),
-                            color = ColorVariant.MUTED,
+                            action = ToggleCapsLock,
+                            swipeReturnAction = ToggleCurrentWordCapitalization(true),
+                            color = MUTED,
                         ),
                 ),
                 NUMERIC_KEY_ITEM,
             ),
             listOf(
                 KeyItemC(
-                    center = KeyC("T", size = FontSizeVariant.LARGE),
+                    center = KeyC("T", size = LARGE),
                     topRight = KeyC("C"),
-                    top = KeyC("Have", color = ColorVariant.MUTED, size = FontSizeVariant.SMALLEST),
-                    right = KeyC("Can", color = ColorVariant.MUTED, size = FontSizeVariant.SMALLEST),
-                    bottomRight = KeyC("But", color = ColorVariant.MUTED, size = FontSizeVariant.SMALLEST),
+                    top = KeyC("Have", color = MUTED, size = SMALLEST),
+                    right = KeyC("Can", color = MUTED, size = SMALLEST),
+                    bottomRight = KeyC("But", color = MUTED, size = SMALLEST),
                 ),
                 KeyItemC(
-                    center = KeyC("I", size = FontSizeVariant.LARGE),
+                    center = KeyC("I", size = LARGE),
                     top = KeyC("F"),
-                    topRight = KeyC("'", color = ColorVariant.MUTED),
+                    topRight = KeyC("'", color = MUTED),
                     right = KeyC("Z"),
-                    bottomRight = KeyC("-", color = ColorVariant.MUTED),
-                    bottom = KeyC(".", color = ColorVariant.MUTED),
-                    bottomLeft = KeyC("*", color = ColorVariant.MUTED),
-                    topLeft = KeyC("This", color = ColorVariant.MUTED, size = FontSizeVariant.SMALLEST),
-                    left = KeyC("I'm", color = ColorVariant.MUTED, size = FontSizeVariant.SMALLEST),
+                    bottomRight = KeyC("-", color = MUTED),
+                    bottom = KeyC(".", color = MUTED),
+                    bottomLeft = KeyC("*", color = MUTED),
+                    topLeft = KeyC("This", color = MUTED, size = SMALLEST),
+                    left = KeyC("I'm", color = MUTED, size = SMALLEST),
                 ),
                 KeyItemC(
-                    center = KeyC("E", size = FontSizeVariant.LARGE),
+                    center = KeyC("E", size = LARGE),
                     topLeft = KeyC("D"),
-                    top = KeyC("The", color = ColorVariant.MUTED, size = FontSizeVariant.SMALLEST),
-                    topRight = KeyC("For", color = ColorVariant.MUTED, size = FontSizeVariant.SMALLEST),
-                    bottomLeft = KeyC("Do", color = ColorVariant.MUTED, size = FontSizeVariant.SMALLEST),
-                    left = KeyC("You", color = ColorVariant.MUTED, size = FontSizeVariant.SMALLEST),
+                    top = KeyC("The", color = MUTED, size = SMALLEST),
+                    topRight = KeyC("For", color = MUTED, size = SMALLEST),
+                    bottomLeft = KeyC("Do", color = MUTED, size = SMALLEST),
+                    left = KeyC("You", color = MUTED, size = SMALLEST),
                 ),
                 BACKSPACE_KEY_ITEM,
             ),

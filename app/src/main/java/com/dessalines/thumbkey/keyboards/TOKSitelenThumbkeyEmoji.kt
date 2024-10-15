@@ -1,16 +1,14 @@
+@file:Suppress("ktlint:standard:no-wildcard-imports")
+
 package com.dessalines.thumbkey.keyboards
 
 import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.outlined.ArrowDropDown
-import androidx.compose.material.icons.outlined.ArrowDropUp
-import com.dessalines.thumbkey.utils.ColorVariant
-import com.dessalines.thumbkey.utils.KeyAction
-import com.dessalines.thumbkey.utils.KeyC
-import com.dessalines.thumbkey.utils.KeyDisplay
-import com.dessalines.thumbkey.utils.KeyItemC
-import com.dessalines.thumbkey.utils.KeyboardC
-import com.dessalines.thumbkey.utils.KeyboardDefinition
-import com.dessalines.thumbkey.utils.KeyboardDefinitionModes
+import androidx.compose.material.icons.outlined.*
+import com.dessalines.thumbkey.utils.*
+import com.dessalines.thumbkey.utils.ColorVariant.*
+import com.dessalines.thumbkey.utils.FontSizeVariant.*
+import com.dessalines.thumbkey.utils.KeyAction.*
+import com.dessalines.thumbkey.utils.SwipeNWay.*
 
 // Frequencies from here: https://www.reddit.com/r/tokipona/comments/cxlpt5/frequency_list_of_toki_pona_words_from_tatoeba
 // Since these aren't vowels, no need to alternate, just do bottom right to left, bottom to top
@@ -108,14 +106,14 @@ val KB_TOK_SITELEN_THUMBKEY_EMOJI_MAIN =
                     top = KeyC("💪"),
                     topRight = KeyC("👋"),
                     right = KeyC("💭"),
-                    bottomRight = KeyC(",", color = ColorVariant.MUTED),
-                    bottom = KeyC(".", color = ColorVariant.MUTED),
+                    bottomRight = KeyC(",", color = MUTED),
+                    bottom = KeyC(".", color = MUTED),
                     bottomLeft =
                         KeyC(
                             display = KeyDisplay.IconDisplay(Icons.Outlined.ArrowDropUp),
-                            action = KeyAction.ToggleShiftMode(true),
-                            swipeReturnAction = KeyAction.ToggleCurrentWordCapitalization(true),
-                            color = ColorVariant.MUTED,
+                            action = ToggleShiftMode(true),
+                            swipeReturnAction = ToggleCurrentWordCapitalization(true),
+                            color = MUTED,
                         ),
                     left = KeyC("🗣️"),
                 ),
@@ -213,14 +211,14 @@ val KB_TOK_SITELEN_THUMBKEY_EMOJI_SHIFTED =
                     top = KeyC("🌈"),
                     topRight = KeyC("🦎"),
                     right = KeyC("❄️"),
-                    bottomRight = KeyC(",", color = ColorVariant.MUTED),
-                    bottom = KeyC(".", color = ColorVariant.MUTED),
+                    bottomRight = KeyC(",", color = MUTED),
+                    bottom = KeyC(".", color = MUTED),
                     bottomLeft =
                         KeyC(
                             display = KeyDisplay.IconDisplay(Icons.Outlined.ArrowDropDown),
-                            action = KeyAction.ToggleShiftMode(false),
-                            swipeReturnAction = KeyAction.ToggleCurrentWordCapitalization(false),
-                            color = ColorVariant.MUTED,
+                            action = ToggleShiftMode(false),
+                            swipeReturnAction = ToggleCurrentWordCapitalization(false),
+                            color = MUTED,
                         ),
                     left = KeyC("👄"),
                 ),

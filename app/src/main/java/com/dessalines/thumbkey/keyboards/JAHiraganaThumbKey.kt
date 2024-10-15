@@ -1,39 +1,36 @@
+@file:Suppress("ktlint:standard:no-wildcard-imports")
+
 package com.dessalines.thumbkey.keyboards
 
-import com.dessalines.thumbkey.utils.ColorVariant
-import com.dessalines.thumbkey.utils.FontSizeVariant
-import com.dessalines.thumbkey.utils.KeyAction
-import com.dessalines.thumbkey.utils.KeyC
-import com.dessalines.thumbkey.utils.KeyDisplay
-import com.dessalines.thumbkey.utils.KeyItemC
-import com.dessalines.thumbkey.utils.KeyboardC
-import com.dessalines.thumbkey.utils.KeyboardDefinition
-import com.dessalines.thumbkey.utils.KeyboardDefinitionModes
-import com.dessalines.thumbkey.utils.SwipeNWay
+import com.dessalines.thumbkey.utils.*
+import com.dessalines.thumbkey.utils.ColorVariant.*
+import com.dessalines.thumbkey.utils.FontSizeVariant.*
+import com.dessalines.thumbkey.utils.KeyAction.*
+import com.dessalines.thumbkey.utils.SwipeNWay.*
 
 val KB_JA_HIRAGANA_THUMBKEY_MAIN =
     KeyboardC(
         listOf(
             listOf(
                 KeyItemC(
-                    center = KeyC("ま", size = FontSizeVariant.LARGE),
-                    swipeType = SwipeNWay.FOUR_WAY_CROSS,
+                    center = KeyC("ま", size = LARGE),
+                    swipeType = FOUR_WAY_CROSS,
                     bottom = KeyC("み"),
                     left = KeyC("む"),
                     top = KeyC("め"),
                     right = KeyC("も"),
                 ),
                 KeyItemC(
-                    center = KeyC("は", size = FontSizeVariant.LARGE),
-                    swipeType = SwipeNWay.FOUR_WAY_CROSS,
+                    center = KeyC("は", size = LARGE),
+                    swipeType = FOUR_WAY_CROSS,
                     bottom = KeyC("ひ"),
                     left = KeyC("ふ"),
                     top = KeyC("へ"),
                     right = KeyC("ほ"),
                 ),
                 KeyItemC(
-                    center = KeyC("さ", size = FontSizeVariant.LARGE),
-                    swipeType = SwipeNWay.FOUR_WAY_CROSS,
+                    center = KeyC("さ", size = LARGE),
+                    swipeType = FOUR_WAY_CROSS,
                     bottom = KeyC("し"),
                     left = KeyC("す"),
                     top = KeyC("せ"),
@@ -43,22 +40,22 @@ val KB_JA_HIRAGANA_THUMBKEY_MAIN =
             ),
             listOf(
                 KeyItemC(
-                    center = KeyC("や", size = FontSizeVariant.LARGE),
-                    swipeType = SwipeNWay.FOUR_WAY_CROSS,
+                    center = KeyC("や", size = LARGE),
+                    swipeType = FOUR_WAY_CROSS,
                     bottom = KeyC("ゆ"),
                     right = KeyC("よ"),
                 ),
                 KeyItemC(
-                    center = KeyC("な", size = FontSizeVariant.LARGE),
-                    swipeType = SwipeNWay.FOUR_WAY_CROSS,
+                    center = KeyC("な", size = LARGE),
+                    swipeType = FOUR_WAY_CROSS,
                     bottom = KeyC("に"),
                     left = KeyC("ぬ"),
                     top = KeyC("ね"),
                     right = KeyC("の"),
                 ),
                 KeyItemC(
-                    center = KeyC("か", size = FontSizeVariant.LARGE),
-                    swipeType = SwipeNWay.FOUR_WAY_CROSS,
+                    center = KeyC("か", size = LARGE),
+                    swipeType = FOUR_WAY_CROSS,
                     bottom = KeyC("き"),
                     left = KeyC("く"),
                     top = KeyC("け"),
@@ -68,24 +65,24 @@ val KB_JA_HIRAGANA_THUMBKEY_MAIN =
             ),
             listOf(
                 KeyItemC(
-                    center = KeyC("ら", size = FontSizeVariant.LARGE),
-                    swipeType = SwipeNWay.FOUR_WAY_CROSS,
+                    center = KeyC("ら", size = LARGE),
+                    swipeType = FOUR_WAY_CROSS,
                     bottom = KeyC("り"),
                     left = KeyC("る"),
                     top = KeyC("れ"),
                     right = KeyC("ろ"),
                 ),
                 KeyItemC(
-                    center = KeyC("た", size = FontSizeVariant.LARGE),
-                    swipeType = SwipeNWay.FOUR_WAY_CROSS,
+                    center = KeyC("た", size = LARGE),
+                    swipeType = FOUR_WAY_CROSS,
                     bottom = KeyC("ち"),
                     left = KeyC("つ"),
                     top = KeyC("て"),
                     right = KeyC("と"),
                 ),
                 KeyItemC(
-                    center = KeyC("あ", size = FontSizeVariant.LARGE),
-                    swipeType = SwipeNWay.FOUR_WAY_CROSS,
+                    center = KeyC("あ", size = LARGE),
+                    swipeType = FOUR_WAY_CROSS,
                     bottom = KeyC("い"),
                     left = KeyC("う"),
                     top = KeyC("え"),
@@ -95,8 +92,8 @@ val KB_JA_HIRAGANA_THUMBKEY_MAIN =
             ),
             listOf(
                 KeyItemC(
-                    center = KeyC("わ", size = FontSizeVariant.LARGE),
-                    swipeType = SwipeNWay.FOUR_WAY_CROSS,
+                    center = KeyC("わ", size = LARGE),
+                    swipeType = FOUR_WAY_CROSS,
                     bottom = KeyC("ゐ"),
                     left = KeyC("ん"),
                     top = KeyC("ゑ"),
@@ -106,28 +103,28 @@ val KB_JA_HIRAGANA_THUMBKEY_MAIN =
                     center =
                         KeyC(
                             display = KeyDisplay.TextDisplay("゛"),
-                            action = KeyAction.ComposeLastKey("゛"),
-                            size = FontSizeVariant.LARGE,
+                            action = ComposeLastKey("゛"),
+                            size = LARGE,
                         ),
-                    swipeType = SwipeNWay.FOUR_WAY_CROSS,
+                    swipeType = FOUR_WAY_CROSS,
                     left = KeyC("。"),
                     top =
                         KeyC(
                             display = KeyDisplay.TextDisplay("？"),
-                            action = KeyAction.ToggleShiftMode(true),
-                            swipeReturnAction = KeyAction.ToggleCurrentWordCapitalization(true),
-                            color = ColorVariant.MUTED,
+                            action = ToggleShiftMode(true),
+                            swipeReturnAction = ToggleCurrentWordCapitalization(true),
+                            color = MUTED,
                         ),
                     bottom =
                         KeyC(
-                            KeyAction.ToggleShiftMode(false),
-                            swipeReturnAction = KeyAction.ToggleCurrentWordCapitalization(false),
+                            ToggleShiftMode(false),
+                            swipeReturnAction = ToggleCurrentWordCapitalization(false),
                         ),
                     right = KeyC("、"),
                 ),
                 KeyItemC(
                     center = KeyC(" "),
-                    backgroundColor = ColorVariant.SURFACE_VARIANT,
+                    backgroundColor = SURFACE_VARIANT,
                 ),
                 RETURN_KEY_ITEM,
             ),
@@ -139,21 +136,21 @@ val KB_JA_HIRAGANA_THUMBKEY_SHIFTED =
         listOf(
             listOf(
                 KeyItemC(
-                    center = KeyC("「", size = FontSizeVariant.LARGE),
-                    swipeType = SwipeNWay.FOUR_WAY_CROSS,
+                    center = KeyC("「", size = LARGE),
+                    swipeType = FOUR_WAY_CROSS,
                     bottom = KeyC("【"),
                     left = KeyC("〔"),
                     top = KeyC("〖"),
                     right = KeyC("『"),
                 ),
                 KeyItemC(
-                    center = KeyC("・", size = FontSizeVariant.LARGE),
-                    swipeType = SwipeNWay.TWO_WAY_VERTICAL,
+                    center = KeyC("・", size = LARGE),
+                    swipeType = TWO_WAY_VERTICAL,
                     bottom = KeyC("※"),
                 ),
                 KeyItemC(
-                    center = KeyC("」", size = FontSizeVariant.LARGE),
-                    swipeType = SwipeNWay.FOUR_WAY_CROSS,
+                    center = KeyC("」", size = LARGE),
+                    swipeType = FOUR_WAY_CROSS,
                     bottom = KeyC("】"),
                     left = KeyC("』"),
                     top = KeyC("〗"),
@@ -163,32 +160,32 @@ val KB_JA_HIRAGANA_THUMBKEY_SHIFTED =
             ),
             listOf(
                 KeyItemC(
-                    center = KeyC("（", size = FontSizeVariant.LARGE),
+                    center = KeyC("（", size = LARGE),
                 ),
                 KeyItemC(
-                    center = KeyC("！", size = FontSizeVariant.LARGE),
+                    center = KeyC("！", size = LARGE),
                 ),
                 KeyItemC(
-                    center = KeyC("）", size = FontSizeVariant.LARGE),
+                    center = KeyC("）", size = LARGE),
                 ),
                 NUMERIC_KEY_ITEM,
             ),
             listOf(
                 KeyItemC(
-                    center = KeyC("ゟ", size = FontSizeVariant.LARGE),
+                    center = KeyC("ゟ", size = LARGE),
                 ),
                 KeyItemC(
-                    center = KeyC("？", size = FontSizeVariant.LARGE),
+                    center = KeyC("？", size = LARGE),
                 ),
                 KeyItemC(
-                    center = KeyC("ゝ", size = FontSizeVariant.LARGE),
+                    center = KeyC("ゝ", size = LARGE),
                 ),
                 BACKSPACE_KEY_ITEM,
             ),
             listOf(
                 KeyItemC(
-                    center = KeyC("ー", size = FontSizeVariant.LARGE),
-                    swipeType = SwipeNWay.FOUR_WAY_CROSS,
+                    center = KeyC("ー", size = LARGE),
+                    swipeType = FOUR_WAY_CROSS,
                     right = KeyC("〜"),
                     top = KeyC("…"),
                 ),
@@ -196,14 +193,14 @@ val KB_JA_HIRAGANA_THUMBKEY_SHIFTED =
                     center =
                         KeyC(
                             display = KeyDisplay.TextDisplay("あ"),
-                            action = KeyAction.ToggleShiftMode(false),
-                            size = FontSizeVariant.LARGE,
-                            color = ColorVariant.MUTED,
+                            action = ToggleShiftMode(false),
+                            size = LARGE,
+                            color = MUTED,
                         ),
                 ),
                 KeyItemC(
                     center = KeyC(" "),
-                    backgroundColor = ColorVariant.SURFACE_VARIANT,
+                    backgroundColor = SURFACE_VARIANT,
                 ),
                 RETURN_KEY_ITEM,
             ),

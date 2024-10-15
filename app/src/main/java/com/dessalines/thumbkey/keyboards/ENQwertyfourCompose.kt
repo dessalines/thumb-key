@@ -1,49 +1,40 @@
+@file:Suppress("ktlint:standard:no-wildcard-imports")
+
 package com.dessalines.thumbkey.keyboards
 
 import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.outlined.ArrowDropDown
-import androidx.compose.material.icons.outlined.ArrowDropUp
-import androidx.compose.material.icons.outlined.Copyright
-import androidx.compose.material.icons.outlined.KeyboardCapslock
-import com.dessalines.thumbkey.utils.ColorVariant
-import com.dessalines.thumbkey.utils.FontSizeVariant
-import com.dessalines.thumbkey.utils.KeyAction
-import com.dessalines.thumbkey.utils.KeyC
-import com.dessalines.thumbkey.utils.KeyDisplay
-import com.dessalines.thumbkey.utils.KeyItemC
-import com.dessalines.thumbkey.utils.KeyboardC
-import com.dessalines.thumbkey.utils.KeyboardDefinition
-import com.dessalines.thumbkey.utils.KeyboardDefinitionModes
-import com.dessalines.thumbkey.utils.KeyboardDefinitionSettings
-import com.dessalines.thumbkey.utils.SwipeNWay
-import com.dessalines.thumbkey.utils.autoCapitalizeI
-import com.dessalines.thumbkey.utils.autoCapitalizeIApostrophe
+import androidx.compose.material.icons.outlined.*
+import com.dessalines.thumbkey.utils.*
+import com.dessalines.thumbkey.utils.ColorVariant.*
+import com.dessalines.thumbkey.utils.FontSizeVariant.*
+import com.dessalines.thumbkey.utils.KeyAction.*
+import com.dessalines.thumbkey.utils.SwipeNWay.*
 
 val KB_EN_QWERTYFOUR_COMPOSE_MAIN =
     KeyboardC(
         listOf(
             listOf(
                 KeyItemC(
-                    center = KeyC("e", size = FontSizeVariant.LARGE),
-                    swipeType = SwipeNWay.FOUR_WAY_CROSS,
-                    top = KeyC("\"", color = ColorVariant.MUTED),
+                    center = KeyC("e", size = LARGE),
+                    swipeType = FOUR_WAY_CROSS,
+                    top = KeyC("\"", color = MUTED),
                     right = KeyC("w"),
                     bottom = KeyC("q"),
-                    left = KeyC(":", color = ColorVariant.MUTED),
+                    left = KeyC(":", color = MUTED),
                 ),
                 KeyItemC(
-                    center = KeyC("t", size = FontSizeVariant.LARGE),
-                    swipeType = SwipeNWay.FOUR_WAY_CROSS,
-                    top = KeyC("'", color = ColorVariant.MUTED),
+                    center = KeyC("t", size = LARGE),
+                    swipeType = FOUR_WAY_CROSS,
+                    top = KeyC("'", color = MUTED),
                     right = KeyC("u"),
                     bottom = KeyC("y"),
                     left = KeyC("r"),
                 ),
                 KeyItemC(
-                    center = KeyC("o", size = FontSizeVariant.LARGE),
-                    swipeType = SwipeNWay.FOUR_WAY_CROSS,
-                    top = KeyC(".", color = ColorVariant.MUTED),
-                    right = KeyC(",", color = ColorVariant.MUTED),
+                    center = KeyC("o", size = LARGE),
+                    swipeType = FOUR_WAY_CROSS,
+                    top = KeyC(".", color = MUTED),
+                    right = KeyC(",", color = MUTED),
                     bottom = KeyC("p"),
                     left = KeyC("i"),
                 ),
@@ -51,105 +42,105 @@ val KB_EN_QWERTYFOUR_COMPOSE_MAIN =
             ),
             listOf(
                 KeyItemC(
-                    center = KeyC("a", size = FontSizeVariant.LARGE),
-                    swipeType = SwipeNWay.FOUR_WAY_CROSS,
+                    center = KeyC("a", size = LARGE),
+                    swipeType = FOUR_WAY_CROSS,
                     top = KeyC("d"),
                     right = KeyC("s"),
                     bottom = KeyC("f"),
-                    left = KeyC(";", color = ColorVariant.MUTED),
+                    left = KeyC(";", color = MUTED),
                 ),
                 KeyItemC(
-                    center = KeyC("h", size = FontSizeVariant.LARGE),
+                    center = KeyC("h", size = LARGE),
                     topLeft =
                         KeyC(
                             display = KeyDisplay.TextDisplay("~"),
-                            action = KeyAction.ComposeLastKey("~"),
-                            color = ColorVariant.MUTED,
+                            action = ComposeLastKey("~"),
+                            color = MUTED,
                         ),
                     topRight =
                         KeyC(
                             display = KeyDisplay.TextDisplay("´"),
-                            action = KeyAction.ComposeLastKey("'"),
-                            color = ColorVariant.MUTED,
+                            action = ComposeLastKey("'"),
+                            color = MUTED,
                         ),
                     right = KeyC("j"),
                     left = KeyC("g"),
                     bottomLeft =
                         KeyC(
                             display = KeyDisplay.TextDisplay("`"),
-                            action = KeyAction.ComposeLastKey("`"),
-                            color = ColorVariant.MUTED,
+                            action = ComposeLastKey("`"),
+                            color = MUTED,
                         ),
                     bottomRight =
                         KeyC(
                             display = KeyDisplay.TextDisplay("^"),
-                            action = KeyAction.ComposeLastKey("^"),
-                            color = ColorVariant.MUTED,
+                            action = ComposeLastKey("^"),
+                            color = MUTED,
                         ),
                 ),
                 KeyItemC(
-                    center = KeyC("l", size = FontSizeVariant.LARGE),
-                    swipeType = SwipeNWay.FOUR_WAY_CROSS,
+                    center = KeyC("l", size = LARGE),
+                    swipeType = FOUR_WAY_CROSS,
                     top =
                         KeyC(
                             display = KeyDisplay.IconDisplay(Icons.Outlined.ArrowDropUp),
-                            action = KeyAction.ToggleShiftMode(true),
-                            swipeReturnAction = KeyAction.ToggleCurrentWordCapitalization(true),
-                            color = ColorVariant.MUTED,
+                            action = ToggleShiftMode(true),
+                            swipeReturnAction = ToggleCurrentWordCapitalization(true),
+                            color = MUTED,
                         ),
-                    right = KeyC("/", color = ColorVariant.MUTED),
+                    right = KeyC("/", color = MUTED),
                     left = KeyC("k"),
                     bottom =
                         KeyC(
-                            KeyAction.ToggleShiftMode(false),
-                            swipeReturnAction = KeyAction.ToggleCurrentWordCapitalization(false),
+                            ToggleShiftMode(false),
+                            swipeReturnAction = ToggleCurrentWordCapitalization(false),
                         ),
                 ),
                 NUMERIC_KEY_ITEM,
             ),
             listOf(
                 KeyItemC(
-                    center = KeyC("c", size = FontSizeVariant.LARGE),
-                    swipeType = SwipeNWay.FOUR_WAY_CROSS,
+                    center = KeyC("c", size = LARGE),
+                    swipeType = FOUR_WAY_CROSS,
                     top = KeyC("z"),
-                    left = KeyC("*", color = ColorVariant.MUTED),
+                    left = KeyC("*", color = MUTED),
                     right = KeyC("x"),
-                    bottom = KeyC("@", color = ColorVariant.MUTED),
+                    bottom = KeyC("@", color = MUTED),
                 ),
                 KeyItemC(
-                    center = KeyC("v", size = FontSizeVariant.LARGE),
+                    center = KeyC("v", size = LARGE),
                     topLeft =
                         KeyC(
                             display = KeyDisplay.TextDisplay("°"),
-                            action = KeyAction.ComposeLastKey("°"),
-                            color = ColorVariant.MUTED,
+                            action = ComposeLastKey("°"),
+                            color = MUTED,
                         ),
                     topRight =
                         KeyC(
                             display = KeyDisplay.TextDisplay("¿"),
-                            action = KeyAction.ComposeLastKey("!"),
-                            color = ColorVariant.MUTED,
+                            action = ComposeLastKey("!"),
+                            color = MUTED,
                         ),
                     bottomLeft =
                         KeyC(
                             display = KeyDisplay.TextDisplay("\$"),
-                            action = KeyAction.ComposeLastKey("\$"),
-                            color = ColorVariant.MUTED,
+                            action = ComposeLastKey("\$"),
+                            color = MUTED,
                         ),
-                    bottom = KeyC("-", color = ColorVariant.MUTED),
+                    bottom = KeyC("-", color = MUTED),
                     bottomRight =
                         KeyC(
                             display = KeyDisplay.TextDisplay("¨"),
-                            action = KeyAction.ComposeLastKey("\""),
-                            color = ColorVariant.MUTED,
+                            action = ComposeLastKey("\""),
+                            color = MUTED,
                         ),
                 ),
                 KeyItemC(
-                    center = KeyC("n", size = FontSizeVariant.LARGE),
-                    swipeType = SwipeNWay.FOUR_WAY_CROSS,
+                    center = KeyC("n", size = LARGE),
+                    swipeType = FOUR_WAY_CROSS,
                     top = KeyC("m"),
-                    right = KeyC("?", color = ColorVariant.MUTED),
-                    bottom = KeyC("!", color = ColorVariant.MUTED),
+                    right = KeyC("?", color = MUTED),
+                    bottom = KeyC("!", color = MUTED),
                     left = KeyC("b"),
                 ),
                 BACKSPACE_KEY_ITEM,
@@ -166,26 +157,26 @@ val KB_EN_QWERTYFOUR_COMPOSE_SHIFTED =
         listOf(
             listOf(
                 KeyItemC(
-                    center = KeyC("E", size = FontSizeVariant.LARGE),
-                    swipeType = SwipeNWay.FOUR_WAY_CROSS,
-                    top = KeyC("\"", color = ColorVariant.MUTED),
+                    center = KeyC("E", size = LARGE),
+                    swipeType = FOUR_WAY_CROSS,
+                    top = KeyC("\"", color = MUTED),
                     right = KeyC("W"),
                     bottom = KeyC("Q"),
-                    left = KeyC(":", color = ColorVariant.MUTED),
+                    left = KeyC(":", color = MUTED),
                 ),
                 KeyItemC(
-                    center = KeyC("T", size = FontSizeVariant.LARGE),
-                    swipeType = SwipeNWay.FOUR_WAY_CROSS,
-                    top = KeyC("'", color = ColorVariant.MUTED),
+                    center = KeyC("T", size = LARGE),
+                    swipeType = FOUR_WAY_CROSS,
+                    top = KeyC("'", color = MUTED),
                     right = KeyC("U"),
                     bottom = KeyC("Y"),
                     left = KeyC("R"),
                 ),
                 KeyItemC(
-                    center = KeyC("O", size = FontSizeVariant.LARGE),
-                    swipeType = SwipeNWay.FOUR_WAY_CROSS,
-                    top = KeyC(".", color = ColorVariant.MUTED),
-                    right = KeyC(",", color = ColorVariant.MUTED),
+                    center = KeyC("O", size = LARGE),
+                    swipeType = FOUR_WAY_CROSS,
+                    top = KeyC(".", color = MUTED),
+                    right = KeyC(",", color = MUTED),
                     bottom = KeyC("P"),
                     left = KeyC("I"),
                 ),
@@ -193,60 +184,60 @@ val KB_EN_QWERTYFOUR_COMPOSE_SHIFTED =
             ),
             listOf(
                 KeyItemC(
-                    center = KeyC("A", size = FontSizeVariant.LARGE),
-                    swipeType = SwipeNWay.FOUR_WAY_CROSS,
+                    center = KeyC("A", size = LARGE),
+                    swipeType = FOUR_WAY_CROSS,
                     top = KeyC("D"),
                     right = KeyC("S"),
                     bottom = KeyC("F"),
-                    left = KeyC(";", color = ColorVariant.MUTED),
+                    left = KeyC(";", color = MUTED),
                 ),
                 KeyItemC(
-                    center = KeyC("H", size = FontSizeVariant.LARGE),
+                    center = KeyC("H", size = LARGE),
                     topLeft =
                         KeyC(
                             display = KeyDisplay.TextDisplay("~"),
-                            action = KeyAction.ComposeLastKey("~"),
-                            color = ColorVariant.MUTED,
+                            action = ComposeLastKey("~"),
+                            color = MUTED,
                         ),
                     topRight =
                         KeyC(
                             display = KeyDisplay.TextDisplay("´"),
-                            action = KeyAction.ComposeLastKey("'"),
-                            color = ColorVariant.MUTED,
+                            action = ComposeLastKey("'"),
+                            color = MUTED,
                         ),
                     right = KeyC("J"),
                     left = KeyC("G"),
                     bottomLeft =
                         KeyC(
                             display = KeyDisplay.TextDisplay("`"),
-                            action = KeyAction.ComposeLastKey("`"),
-                            color = ColorVariant.MUTED,
+                            action = ComposeLastKey("`"),
+                            color = MUTED,
                         ),
                     bottomRight =
                         KeyC(
                             display = KeyDisplay.TextDisplay("^"),
-                            action = KeyAction.ComposeLastKey("^"),
-                            color = ColorVariant.MUTED,
+                            action = ComposeLastKey("^"),
+                            color = MUTED,
                         ),
                 ),
                 KeyItemC(
-                    center = KeyC("L", size = FontSizeVariant.LARGE),
-                    swipeType = SwipeNWay.FOUR_WAY_CROSS,
+                    center = KeyC("L", size = LARGE),
+                    swipeType = FOUR_WAY_CROSS,
                     top =
                         KeyC(
                             display = KeyDisplay.IconDisplay(Icons.Outlined.KeyboardCapslock),
                             capsModeDisplay = KeyDisplay.IconDisplay(Icons.Outlined.Copyright),
-                            action = KeyAction.ToggleCapsLock,
-                            swipeReturnAction = KeyAction.ToggleCurrentWordCapitalization(true),
-                            color = ColorVariant.MUTED,
+                            action = ToggleCapsLock,
+                            swipeReturnAction = ToggleCurrentWordCapitalization(true),
+                            color = MUTED,
                         ),
-                    right = KeyC("/", color = ColorVariant.MUTED),
+                    right = KeyC("/", color = MUTED),
                     bottom =
                         KeyC(
                             display = KeyDisplay.IconDisplay(Icons.Outlined.ArrowDropDown),
-                            action = KeyAction.ToggleShiftMode(false),
-                            swipeReturnAction = KeyAction.ToggleCurrentWordCapitalization(false),
-                            color = ColorVariant.MUTED,
+                            action = ToggleShiftMode(false),
+                            swipeReturnAction = ToggleCurrentWordCapitalization(false),
+                            color = MUTED,
                         ),
                     left = KeyC("K"),
                 ),
@@ -254,47 +245,47 @@ val KB_EN_QWERTYFOUR_COMPOSE_SHIFTED =
             ),
             listOf(
                 KeyItemC(
-                    center = KeyC("C", size = FontSizeVariant.LARGE),
-                    swipeType = SwipeNWay.FOUR_WAY_CROSS,
+                    center = KeyC("C", size = LARGE),
+                    swipeType = FOUR_WAY_CROSS,
                     top = KeyC("Z"),
-                    left = KeyC("*", color = ColorVariant.MUTED),
+                    left = KeyC("*", color = MUTED),
                     right = KeyC("X"),
-                    bottom = KeyC("@", color = ColorVariant.MUTED),
+                    bottom = KeyC("@", color = MUTED),
                 ),
                 KeyItemC(
-                    center = KeyC("V", size = FontSizeVariant.LARGE),
+                    center = KeyC("V", size = LARGE),
                     topLeft =
                         KeyC(
                             display = KeyDisplay.TextDisplay("°"),
-                            action = KeyAction.ComposeLastKey("°"),
-                            color = ColorVariant.MUTED,
+                            action = ComposeLastKey("°"),
+                            color = MUTED,
                         ),
                     topRight =
                         KeyC(
                             display = KeyDisplay.TextDisplay("¿"),
-                            action = KeyAction.ComposeLastKey("!"),
-                            color = ColorVariant.MUTED,
+                            action = ComposeLastKey("!"),
+                            color = MUTED,
                         ),
                     bottomLeft =
                         KeyC(
                             display = KeyDisplay.TextDisplay("\$"),
-                            action = KeyAction.ComposeLastKey("\$"),
-                            color = ColorVariant.MUTED,
+                            action = ComposeLastKey("\$"),
+                            color = MUTED,
                         ),
-                    bottom = KeyC("-", color = ColorVariant.MUTED),
+                    bottom = KeyC("-", color = MUTED),
                     bottomRight =
                         KeyC(
                             display = KeyDisplay.TextDisplay("¨"),
-                            action = KeyAction.ComposeLastKey("\""),
-                            color = ColorVariant.MUTED,
+                            action = ComposeLastKey("\""),
+                            color = MUTED,
                         ),
                 ),
                 KeyItemC(
-                    center = KeyC("N", size = FontSizeVariant.LARGE),
-                    swipeType = SwipeNWay.FOUR_WAY_CROSS,
+                    center = KeyC("N", size = LARGE),
+                    swipeType = FOUR_WAY_CROSS,
                     top = KeyC("M"),
-                    right = KeyC("?", color = ColorVariant.MUTED),
-                    bottom = KeyC("!", color = ColorVariant.MUTED),
+                    right = KeyC("?", color = MUTED),
+                    bottom = KeyC("!", color = MUTED),
                     left = KeyC("B"),
                 ),
                 BACKSPACE_KEY_ITEM,

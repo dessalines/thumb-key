@@ -1,57 +1,52 @@
+@file:Suppress("ktlint:standard:no-wildcard-imports")
+
 package com.dessalines.thumbkey.keyboards
 
 import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.outlined.ArrowDropDown
-import androidx.compose.material.icons.outlined.ArrowDropUp
-import androidx.compose.material.icons.outlined.Copyright
-import androidx.compose.material.icons.outlined.KeyboardCapslock
-import com.dessalines.thumbkey.utils.ColorVariant
-import com.dessalines.thumbkey.utils.FontSizeVariant
-import com.dessalines.thumbkey.utils.KeyAction
-import com.dessalines.thumbkey.utils.KeyC
-import com.dessalines.thumbkey.utils.KeyDisplay
-import com.dessalines.thumbkey.utils.KeyItemC
-import com.dessalines.thumbkey.utils.KeyboardC
-import com.dessalines.thumbkey.utils.KeyboardDefinition
-import com.dessalines.thumbkey.utils.KeyboardDefinitionModes
+import androidx.compose.material.icons.outlined.*
+import com.dessalines.thumbkey.utils.*
+import com.dessalines.thumbkey.utils.ColorVariant.*
+import com.dessalines.thumbkey.utils.FontSizeVariant.*
+import com.dessalines.thumbkey.utils.KeyAction.*
+import com.dessalines.thumbkey.utils.SwipeNWay.*
 
 val KB_SV_MESSAGEASE_MAIN =
     KeyboardC(
         listOf(
             listOf(
                 KeyItemC(
-                    center = KeyC("a", size = FontSizeVariant.LARGE),
+                    center = KeyC("a", size = LARGE),
                     bottomRight = KeyC("v"),
                     bottom = KeyC("ä"),
-                    right = KeyC("å", color = ColorVariant.MUTED),
+                    right = KeyC("å", color = MUTED),
                 ),
                 KeyItemC(
-                    center = KeyC("n", size = FontSizeVariant.LARGE),
+                    center = KeyC("n", size = LARGE),
                     bottom = KeyC("l"),
-                    left = KeyC("+", color = ColorVariant.MUTED),
-                    bottomLeft = KeyC("/", color = ColorVariant.MUTED),
-                    right = KeyC("!", color = ColorVariant.MUTED),
+                    left = KeyC("+", color = MUTED),
+                    bottomLeft = KeyC("/", color = MUTED),
+                    right = KeyC("!", color = MUTED),
                 ),
                 KeyItemC(
-                    center = KeyC("i", size = FontSizeVariant.LARGE),
+                    center = KeyC("i", size = LARGE),
                     bottomLeft = KeyC("x"),
-                    left = KeyC("?", color = ColorVariant.MUTED),
-                    bottom = KeyC("=", color = ColorVariant.MUTED),
-                    bottomRight = KeyC("€", color = ColorVariant.MUTED),
-                    right = KeyC("-", color = ColorVariant.MUTED),
+                    left = KeyC("?", color = MUTED),
+                    bottom = KeyC("=", color = MUTED),
+                    bottomRight = KeyC("€", color = MUTED),
+                    right = KeyC("-", color = MUTED),
                 ),
                 EMOJI_KEY_ITEM,
             ),
             listOf(
                 KeyItemC(
-                    center = KeyC("h", size = FontSizeVariant.LARGE),
+                    center = KeyC("h", size = LARGE),
                     right = KeyC("k"),
                     bottom = KeyC("ö"),
-                    left = KeyC("(", color = ColorVariant.MUTED),
-                    topRight = KeyC("%", color = ColorVariant.MUTED),
+                    left = KeyC("(", color = MUTED),
+                    topRight = KeyC("%", color = MUTED),
                 ),
                 KeyItemC(
-                    center = KeyC("d", size = FontSizeVariant.LARGE),
+                    center = KeyC("d", size = LARGE),
                     topLeft = KeyC("q"),
                     top = KeyC("u"),
                     topRight = KeyC("p"),
@@ -62,33 +57,33 @@ val KB_SV_MESSAGEASE_MAIN =
                     left = KeyC("c"),
                 ),
                 KeyItemC(
-                    center = KeyC("r", size = FontSizeVariant.LARGE),
+                    center = KeyC("r", size = LARGE),
                     left = KeyC("m"),
                     top =
                         KeyC(
                             display = KeyDisplay.IconDisplay(Icons.Outlined.ArrowDropUp),
-                            action = KeyAction.ToggleShiftMode(true),
-                            swipeReturnAction = KeyAction.ToggleCurrentWordCapitalization(true),
-                            color = ColorVariant.MUTED,
+                            action = ToggleShiftMode(true),
+                            swipeReturnAction = ToggleCurrentWordCapitalization(true),
+                            color = MUTED,
                         ),
-                    bottomLeft = KeyC("@", color = ColorVariant.MUTED),
-                    right = KeyC(")", color = ColorVariant.MUTED),
+                    bottomLeft = KeyC("@", color = MUTED),
+                    right = KeyC(")", color = MUTED),
                     bottom =
                         KeyC(
-                            KeyAction.ToggleShiftMode(false),
-                            swipeReturnAction = KeyAction.ToggleCurrentWordCapitalization(false),
+                            ToggleShiftMode(false),
+                            swipeReturnAction = ToggleCurrentWordCapitalization(false),
                         ),
                 ),
                 NUMERIC_KEY_ITEM,
             ),
             listOf(
                 KeyItemC(
-                    center = KeyC("t", size = FontSizeVariant.LARGE),
+                    center = KeyC("t", size = LARGE),
                     topRight = KeyC("y"),
-                    right = KeyC("*", color = ColorVariant.MUTED),
+                    right = KeyC("*", color = MUTED),
                 ),
                 KeyItemC(
-                    center = KeyC("e", size = FontSizeVariant.LARGE),
+                    center = KeyC("e", size = LARGE),
                     top = KeyC("w"),
                     right = KeyC("z"),
                     topLeft =
@@ -98,22 +93,22 @@ val KB_SV_MESSAGEASE_MAIN =
                                     "\"",
                                 ),
                             action =
-                                KeyAction.CommitText(
+                                CommitText(
                                     "\"",
                                 ),
-                            color = ColorVariant.MUTED,
+                            color = MUTED,
                         ),
-                    topRight = KeyC("'", color = ColorVariant.MUTED),
-                    bottomLeft = KeyC(",", color = ColorVariant.MUTED),
-                    bottom = KeyC(".", color = ColorVariant.MUTED),
-                    bottomRight = KeyC(":", color = ColorVariant.MUTED),
+                    topRight = KeyC("'", color = MUTED),
+                    bottomLeft = KeyC(",", color = MUTED),
+                    bottom = KeyC(".", color = MUTED),
+                    bottomRight = KeyC(":", color = MUTED),
                 ),
                 KeyItemC(
-                    center = KeyC("s", size = FontSizeVariant.LARGE),
+                    center = KeyC("s", size = LARGE),
                     topLeft = KeyC("f"),
-                    top = KeyC("&", color = ColorVariant.MUTED),
-                    topRight = KeyC("°", color = ColorVariant.MUTED),
-                    bottomLeft = KeyC(";", color = ColorVariant.MUTED),
+                    top = KeyC("&", color = MUTED),
+                    topRight = KeyC("°", color = MUTED),
+                    bottomLeft = KeyC(";", color = MUTED),
                 ),
                 BACKSPACE_KEY_ITEM,
             ),
@@ -129,38 +124,38 @@ val KB_SV_MESSAGEASE_SHIFTED =
         listOf(
             listOf(
                 KeyItemC(
-                    center = KeyC("A", size = FontSizeVariant.LARGE),
+                    center = KeyC("A", size = LARGE),
                     bottomRight = KeyC("V"),
                     bottom = KeyC("Ä"),
-                    right = KeyC("Å", color = ColorVariant.MUTED),
+                    right = KeyC("Å", color = MUTED),
                 ),
                 KeyItemC(
-                    center = KeyC("N", size = FontSizeVariant.LARGE),
+                    center = KeyC("N", size = LARGE),
                     bottom = KeyC("L"),
-                    left = KeyC("+", color = ColorVariant.MUTED),
-                    bottomLeft = KeyC("/", color = ColorVariant.MUTED),
-                    right = KeyC("!", color = ColorVariant.MUTED),
+                    left = KeyC("+", color = MUTED),
+                    bottomLeft = KeyC("/", color = MUTED),
+                    right = KeyC("!", color = MUTED),
                 ),
                 KeyItemC(
-                    center = KeyC("I", size = FontSizeVariant.LARGE),
+                    center = KeyC("I", size = LARGE),
                     bottomLeft = KeyC("X"),
-                    left = KeyC("?", color = ColorVariant.MUTED),
-                    right = KeyC("-", color = ColorVariant.MUTED),
-                    bottom = KeyC("=", color = ColorVariant.MUTED),
-                    bottomRight = KeyC("€", color = ColorVariant.MUTED),
+                    left = KeyC("?", color = MUTED),
+                    right = KeyC("-", color = MUTED),
+                    bottom = KeyC("=", color = MUTED),
+                    bottomRight = KeyC("€", color = MUTED),
                 ),
                 EMOJI_KEY_ITEM,
             ),
             listOf(
                 KeyItemC(
-                    center = KeyC("H", size = FontSizeVariant.LARGE),
+                    center = KeyC("H", size = LARGE),
                     right = KeyC("K"),
                     bottom = KeyC("Ö"),
-                    left = KeyC("(", color = ColorVariant.MUTED),
-                    topRight = KeyC("%", color = ColorVariant.MUTED),
+                    left = KeyC("(", color = MUTED),
+                    topRight = KeyC("%", color = MUTED),
                 ),
                 KeyItemC(
-                    center = KeyC("D", size = FontSizeVariant.LARGE),
+                    center = KeyC("D", size = LARGE),
                     topLeft = KeyC("Q"),
                     top = KeyC("U"),
                     topRight = KeyC("P"),
@@ -171,50 +166,50 @@ val KB_SV_MESSAGEASE_SHIFTED =
                     left = KeyC("C"),
                 ),
                 KeyItemC(
-                    center = KeyC("R", size = FontSizeVariant.LARGE),
+                    center = KeyC("R", size = LARGE),
                     left = KeyC("M"),
-                    bottomLeft = KeyC("@", color = ColorVariant.MUTED),
-                    right = KeyC(")", color = ColorVariant.MUTED),
+                    bottomLeft = KeyC("@", color = MUTED),
+                    right = KeyC(")", color = MUTED),
                     top =
                         KeyC(
                             display = KeyDisplay.IconDisplay(Icons.Outlined.KeyboardCapslock),
                             capsModeDisplay = KeyDisplay.IconDisplay(Icons.Outlined.Copyright),
-                            action = KeyAction.ToggleCapsLock,
-                            swipeReturnAction = KeyAction.ToggleCurrentWordCapitalization(true),
-                            color = ColorVariant.MUTED,
+                            action = ToggleCapsLock,
+                            swipeReturnAction = ToggleCurrentWordCapitalization(true),
+                            color = MUTED,
                         ),
                     bottom =
                         KeyC(
                             display = KeyDisplay.IconDisplay(Icons.Outlined.ArrowDropDown),
-                            action = KeyAction.ToggleShiftMode(false),
-                            swipeReturnAction = KeyAction.ToggleCurrentWordCapitalization(false),
-                            color = ColorVariant.MUTED,
+                            action = ToggleShiftMode(false),
+                            swipeReturnAction = ToggleCurrentWordCapitalization(false),
+                            color = MUTED,
                         ),
                 ),
                 NUMERIC_KEY_ITEM,
             ),
             listOf(
                 KeyItemC(
-                    center = KeyC("T", size = FontSizeVariant.LARGE),
+                    center = KeyC("T", size = LARGE),
                     topRight = KeyC("Y"),
-                    right = KeyC("*", color = ColorVariant.MUTED),
+                    right = KeyC("*", color = MUTED),
                 ),
                 KeyItemC(
-                    center = KeyC("E", size = FontSizeVariant.LARGE),
+                    center = KeyC("E", size = LARGE),
                     top = KeyC("W"),
                     right = KeyC("Z"),
-                    topLeft = KeyC("\"", color = ColorVariant.MUTED),
-                    topRight = KeyC("'", color = ColorVariant.MUTED),
-                    bottomLeft = KeyC(",", color = ColorVariant.MUTED),
-                    bottom = KeyC(".", color = ColorVariant.MUTED),
-                    bottomRight = KeyC(":", color = ColorVariant.MUTED),
+                    topLeft = KeyC("\"", color = MUTED),
+                    topRight = KeyC("'", color = MUTED),
+                    bottomLeft = KeyC(",", color = MUTED),
+                    bottom = KeyC(".", color = MUTED),
+                    bottomRight = KeyC(":", color = MUTED),
                 ),
                 KeyItemC(
-                    center = KeyC("S", size = FontSizeVariant.LARGE),
+                    center = KeyC("S", size = LARGE),
                     topLeft = KeyC("F"),
-                    bottomLeft = KeyC(";", color = ColorVariant.MUTED),
-                    top = KeyC("&", color = ColorVariant.MUTED),
-                    topRight = KeyC("°", color = ColorVariant.MUTED),
+                    bottomLeft = KeyC(";", color = MUTED),
+                    top = KeyC("&", color = MUTED),
+                    topRight = KeyC("°", color = MUTED),
                 ),
                 BACKSPACE_KEY_ITEM,
             ),

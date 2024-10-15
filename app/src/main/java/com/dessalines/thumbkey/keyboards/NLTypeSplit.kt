@@ -1,99 +1,98 @@
+@file:Suppress("ktlint:standard:no-wildcard-imports")
+
 package com.dessalines.thumbkey.keyboards
 
-import com.dessalines.thumbkey.utils.ColorVariant
-import com.dessalines.thumbkey.utils.FontSizeVariant
-import com.dessalines.thumbkey.utils.KeyC
-import com.dessalines.thumbkey.utils.KeyItemC
-import com.dessalines.thumbkey.utils.KeyboardC
-import com.dessalines.thumbkey.utils.KeyboardDefinition
-import com.dessalines.thumbkey.utils.KeyboardDefinitionModes
-import com.dessalines.thumbkey.utils.SwipeNWay
+import com.dessalines.thumbkey.utils.*
+import com.dessalines.thumbkey.utils.ColorVariant.*
+import com.dessalines.thumbkey.utils.FontSizeVariant.*
+import com.dessalines.thumbkey.utils.KeyAction.*
+import com.dessalines.thumbkey.utils.SwipeNWay.*
 
 val KB_NL_TYPESPLIT_MAIN =
     KeyboardC(
         listOf(
             listOf(
                 KeyItemC(
-                    center = KeyC("u", size = FontSizeVariant.LARGE),
-                    bottomLeft = KeyC("ú", color = ColorVariant.MUTED),
-                    left = KeyC("ü", color = ColorVariant.MUTED),
-                    topLeft = KeyC("ù", color = ColorVariant.MUTED),
-                    bottom = KeyC(";", color = ColorVariant.MUTED),
+                    center = KeyC("u", size = LARGE),
+                    bottomLeft = KeyC("ú", color = MUTED),
+                    left = KeyC("ü", color = MUTED),
+                    topLeft = KeyC("ù", color = MUTED),
+                    bottom = KeyC(";", color = MUTED),
                 ),
                 KeyItemC(
-                    center = KeyC("i", size = FontSizeVariant.LARGE),
-                    bottomRight = KeyC("ì", color = ColorVariant.MUTED),
-                    right = KeyC("ï", color = ColorVariant.MUTED),
-                    topRight = KeyC("í", color = ColorVariant.MUTED),
-                    bottom = KeyC(":", color = ColorVariant.MUTED),
+                    center = KeyC("i", size = LARGE),
+                    bottomRight = KeyC("ì", color = MUTED),
+                    right = KeyC("ï", color = MUTED),
+                    topRight = KeyC("í", color = MUTED),
+                    bottom = KeyC(":", color = MUTED),
                 ),
                 EMOJI_KEY_ITEM_ALT,
                 KeyItemC(
-                    center = KeyC("s", size = FontSizeVariant.LARGE),
-                    swipeType = SwipeNWay.TWO_WAY_VERTICAL,
+                    center = KeyC("s", size = LARGE),
+                    swipeType = TWO_WAY_VERTICAL,
                     bottom = KeyC("h"),
                 ),
                 KeyItemC(
-                    center = KeyC("l", size = FontSizeVariant.LARGE),
-                    swipeType = SwipeNWay.TWO_WAY_VERTICAL,
+                    center = KeyC("l", size = LARGE),
+                    swipeType = TWO_WAY_VERTICAL,
                     bottom = KeyC("z"),
                 ),
             ),
             listOf(
                 KeyItemC(
-                    center = KeyC("o", size = FontSizeVariant.LARGE),
+                    center = KeyC("o", size = LARGE),
                     top = KeyC("q"),
-                    bottomLeft = KeyC("ó", color = ColorVariant.MUTED),
+                    bottomLeft = KeyC("ó", color = MUTED),
                     right = KeyC("f"),
-                    topLeft = KeyC("ò", color = ColorVariant.MUTED),
-                    left = KeyC("ö", color = ColorVariant.MUTED),
+                    topLeft = KeyC("ò", color = MUTED),
+                    left = KeyC("ö", color = MUTED),
                 ),
                 KeyItemC(
-                    center = KeyC("e", size = FontSizeVariant.LARGE),
+                    center = KeyC("e", size = LARGE),
                     top = KeyC("y"),
-                    bottomRight = KeyC("è", color = ColorVariant.MUTED),
+                    bottomRight = KeyC("è", color = MUTED),
                     left = KeyC("x"),
-                    topRight = KeyC("é", color = ColorVariant.MUTED),
+                    topRight = KeyC("é", color = MUTED),
                     bottom = KeyC("c"),
-                    right = KeyC("ë", color = ColorVariant.MUTED),
+                    right = KeyC("ë", color = MUTED),
                 ),
                 SPACEBAR_ALL_DIRECTIONS,
                 KeyItemC(
-                    center = KeyC("t", size = FontSizeVariant.LARGE),
-                    swipeType = SwipeNWay.FOUR_WAY_CROSS,
+                    center = KeyC("t", size = LARGE),
+                    swipeType = FOUR_WAY_CROSS,
                     top = KeyC("v"),
                     right = KeyC("m"),
                     bottom = KeyC("w"),
                 ),
                 KeyItemC(
-                    center = KeyC("n", size = FontSizeVariant.LARGE),
-                    swipeType = SwipeNWay.FOUR_WAY_CROSS,
+                    center = KeyC("n", size = LARGE),
+                    swipeType = FOUR_WAY_CROSS,
                     bottom = KeyC("g"),
                     left = KeyC("j"),
                 ),
             ),
             listOf(
                 KeyItemC(
-                    center = KeyC("p", size = FontSizeVariant.LARGE),
-                    swipeType = SwipeNWay.TWO_WAY_VERTICAL,
-                    top = KeyC("!", color = ColorVariant.MUTED),
+                    center = KeyC("p", size = LARGE),
+                    swipeType = TWO_WAY_VERTICAL,
+                    top = KeyC("!", color = MUTED),
                 ),
                 KeyItemC(
-                    center = KeyC("a", size = FontSizeVariant.LARGE),
-                    top = KeyC("?", color = ColorVariant.MUTED),
-                    bottomRight = KeyC("à", color = ColorVariant.MUTED),
-                    right = KeyC("ä", color = ColorVariant.MUTED),
-                    topRight = KeyC("á", color = ColorVariant.MUTED),
+                    center = KeyC("a", size = LARGE),
+                    top = KeyC("?", color = MUTED),
+                    bottomRight = KeyC("à", color = MUTED),
+                    right = KeyC("ä", color = MUTED),
+                    topRight = KeyC("á", color = MUTED),
                 ),
                 SPACEBAR_ALL_SYMBOLS,
                 KeyItemC(
-                    center = KeyC("r", size = FontSizeVariant.LARGE),
-                    swipeType = SwipeNWay.TWO_WAY_VERTICAL,
+                    center = KeyC("r", size = LARGE),
+                    swipeType = TWO_WAY_VERTICAL,
                     top = KeyC("k"),
                 ),
                 KeyItemC(
-                    center = KeyC("d", size = FontSizeVariant.LARGE),
-                    swipeType = SwipeNWay.TWO_WAY_VERTICAL,
+                    center = KeyC("d", size = LARGE),
+                    swipeType = TWO_WAY_VERTICAL,
                     top = KeyC("b"),
                 ),
             ),
@@ -110,86 +109,86 @@ val KB_NL_TYPESPLIT_SHIFTED =
         listOf(
             listOf(
                 KeyItemC(
-                    center = KeyC("U", size = FontSizeVariant.LARGE),
-                    bottomLeft = KeyC("Ú", color = ColorVariant.MUTED),
-                    left = KeyC("Ü", color = ColorVariant.MUTED),
-                    topLeft = KeyC("Ù", color = ColorVariant.MUTED),
-                    bottom = KeyC(";", color = ColorVariant.MUTED),
+                    center = KeyC("U", size = LARGE),
+                    bottomLeft = KeyC("Ú", color = MUTED),
+                    left = KeyC("Ü", color = MUTED),
+                    topLeft = KeyC("Ù", color = MUTED),
+                    bottom = KeyC(";", color = MUTED),
                 ),
                 KeyItemC(
-                    center = KeyC("I", size = FontSizeVariant.LARGE),
-                    bottomRight = KeyC("Ì", color = ColorVariant.MUTED),
-                    right = KeyC("Ï", color = ColorVariant.MUTED),
-                    topRight = KeyC("Í", color = ColorVariant.MUTED),
-                    bottom = KeyC(":", color = ColorVariant.MUTED),
+                    center = KeyC("I", size = LARGE),
+                    bottomRight = KeyC("Ì", color = MUTED),
+                    right = KeyC("Ï", color = MUTED),
+                    topRight = KeyC("Í", color = MUTED),
+                    bottom = KeyC(":", color = MUTED),
                 ),
                 EMOJI_KEY_ITEM_ALT,
                 KeyItemC(
-                    center = KeyC("S", size = FontSizeVariant.LARGE),
-                    swipeType = SwipeNWay.TWO_WAY_VERTICAL,
+                    center = KeyC("S", size = LARGE),
+                    swipeType = TWO_WAY_VERTICAL,
                     bottom = KeyC("H"),
                 ),
                 KeyItemC(
-                    center = KeyC("L", size = FontSizeVariant.LARGE),
-                    swipeType = SwipeNWay.TWO_WAY_VERTICAL,
+                    center = KeyC("L", size = LARGE),
+                    swipeType = TWO_WAY_VERTICAL,
                     bottom = KeyC("Z"),
                 ),
             ),
             listOf(
                 KeyItemC(
-                    center = KeyC("O", size = FontSizeVariant.LARGE),
+                    center = KeyC("O", size = LARGE),
                     top = KeyC("Q"),
-                    bottomLeft = KeyC("Ó", color = ColorVariant.MUTED),
+                    bottomLeft = KeyC("Ó", color = MUTED),
                     right = KeyC("F"),
-                    topLeft = KeyC("Ò", color = ColorVariant.MUTED),
-                    left = KeyC("Ö", color = ColorVariant.MUTED),
+                    topLeft = KeyC("Ò", color = MUTED),
+                    left = KeyC("Ö", color = MUTED),
                 ),
                 KeyItemC(
-                    center = KeyC("E", size = FontSizeVariant.LARGE),
+                    center = KeyC("E", size = LARGE),
                     top = KeyC("Y"),
-                    bottomRight = KeyC("È", color = ColorVariant.MUTED),
+                    bottomRight = KeyC("È", color = MUTED),
                     left = KeyC("X"),
-                    topRight = KeyC("É", color = ColorVariant.MUTED),
+                    topRight = KeyC("É", color = MUTED),
                     bottom = KeyC("C"),
-                    right = KeyC("Ë", color = ColorVariant.MUTED),
+                    right = KeyC("Ë", color = MUTED),
                 ),
                 SPACEBAR_TYPESPLIT_MIDDLE_KEY_ITEM,
                 KeyItemC(
-                    center = KeyC("T", size = FontSizeVariant.LARGE),
-                    swipeType = SwipeNWay.FOUR_WAY_CROSS,
+                    center = KeyC("T", size = LARGE),
+                    swipeType = FOUR_WAY_CROSS,
                     top = KeyC("V"),
                     right = KeyC("M"),
                     bottom = KeyC("W"),
                 ),
                 KeyItemC(
-                    center = KeyC("N", size = FontSizeVariant.LARGE),
-                    swipeType = SwipeNWay.FOUR_WAY_CROSS,
+                    center = KeyC("N", size = LARGE),
+                    swipeType = FOUR_WAY_CROSS,
                     bottom = KeyC("G"),
                     left = KeyC("J"),
                 ),
             ),
             listOf(
                 KeyItemC(
-                    center = KeyC("P", size = FontSizeVariant.LARGE),
-                    swipeType = SwipeNWay.TWO_WAY_VERTICAL,
-                    top = KeyC("!", color = ColorVariant.MUTED),
+                    center = KeyC("P", size = LARGE),
+                    swipeType = TWO_WAY_VERTICAL,
+                    top = KeyC("!", color = MUTED),
                 ),
                 KeyItemC(
-                    center = KeyC("A", size = FontSizeVariant.LARGE),
-                    top = KeyC("?", color = ColorVariant.MUTED),
-                    bottomRight = KeyC("À", color = ColorVariant.MUTED),
-                    right = KeyC("Ä", color = ColorVariant.MUTED),
-                    topRight = KeyC("Á", color = ColorVariant.MUTED),
+                    center = KeyC("A", size = LARGE),
+                    top = KeyC("?", color = MUTED),
+                    bottomRight = KeyC("À", color = MUTED),
+                    right = KeyC("Ä", color = MUTED),
+                    topRight = KeyC("Á", color = MUTED),
                 ),
                 SPACEBAR_TYPESPLIT_BOTTOM_KEY_ITEM,
                 KeyItemC(
-                    center = KeyC("R", size = FontSizeVariant.LARGE),
-                    swipeType = SwipeNWay.TWO_WAY_VERTICAL,
+                    center = KeyC("R", size = LARGE),
+                    swipeType = TWO_WAY_VERTICAL,
                     top = KeyC("K"),
                 ),
                 KeyItemC(
-                    center = KeyC("D", size = FontSizeVariant.LARGE),
-                    swipeType = SwipeNWay.TWO_WAY_VERTICAL,
+                    center = KeyC("D", size = LARGE),
+                    swipeType = TWO_WAY_VERTICAL,
                     top = KeyC("B"),
                 ),
             ),

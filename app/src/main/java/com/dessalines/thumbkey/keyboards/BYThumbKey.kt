@@ -1,52 +1,46 @@
+@file:Suppress("ktlint:standard:no-wildcard-imports")
+
 package com.dessalines.thumbkey.keyboards
 
 import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.outlined.ArrowDropDown
-import androidx.compose.material.icons.outlined.ArrowDropUp
-import androidx.compose.material.icons.outlined.Copyright
-import androidx.compose.material.icons.outlined.KeyboardCapslock
-import com.dessalines.thumbkey.utils.ColorVariant
-import com.dessalines.thumbkey.utils.FontSizeVariant
-import com.dessalines.thumbkey.utils.KeyAction
-import com.dessalines.thumbkey.utils.KeyC
-import com.dessalines.thumbkey.utils.KeyDisplay
-import com.dessalines.thumbkey.utils.KeyItemC
-import com.dessalines.thumbkey.utils.KeyboardC
-import com.dessalines.thumbkey.utils.KeyboardDefinition
-import com.dessalines.thumbkey.utils.KeyboardDefinitionModes
-import com.dessalines.thumbkey.utils.SwipeNWay
+import androidx.compose.material.icons.outlined.*
+import com.dessalines.thumbkey.utils.*
+import com.dessalines.thumbkey.utils.ColorVariant.*
+import com.dessalines.thumbkey.utils.FontSizeVariant.*
+import com.dessalines.thumbkey.utils.KeyAction.*
+import com.dessalines.thumbkey.utils.SwipeNWay.*
 
 val KB_BY_THUMBKEY_MAIN =
     KeyboardC(
         listOf(
             listOf(
                 KeyItemC(
-                    center = KeyC("с", size = FontSizeVariant.LARGE),
+                    center = KeyC("с", size = LARGE),
                     right = KeyC("ў"),
                     bottomRight = KeyC("й"),
                     bottom = KeyC("э"),
                 ),
                 KeyItemC(
-                    center = KeyC("р", size = FontSizeVariant.LARGE),
-                    swipeType = SwipeNWay.TWO_WAY_VERTICAL,
+                    center = KeyC("р", size = LARGE),
+                    swipeType = TWO_WAY_VERTICAL,
                     bottom = KeyC("х"),
                 ),
                 KeyItemC(
-                    center = KeyC("а", size = FontSizeVariant.LARGE),
-                    swipeType = SwipeNWay.FOUR_WAY_DIAGONAL,
+                    center = KeyC("а", size = LARGE),
+                    swipeType = FOUR_WAY_DIAGONAL,
                     bottomLeft = KeyC("ж"),
                 ),
                 EMOJI_KEY_ITEM,
             ),
             listOf(
                 KeyItemC(
-                    center = KeyC("н", size = FontSizeVariant.LARGE),
-                    swipeType = SwipeNWay.FOUR_WAY_CROSS,
+                    center = KeyC("н", size = LARGE),
+                    swipeType = FOUR_WAY_CROSS,
                     right = KeyC("м"),
                     bottom = KeyC("л"),
                 ),
                 KeyItemC(
-                    center = KeyC("в", size = FontSizeVariant.LARGE),
+                    center = KeyC("в", size = LARGE),
                     topLeft = KeyC("я"),
                     top = KeyC("ы"),
                     topRight = KeyC("ь"),
@@ -57,45 +51,45 @@ val KB_BY_THUMBKEY_MAIN =
                     left = KeyC("к"),
                 ),
                 KeyItemC(
-                    center = KeyC("е", size = FontSizeVariant.LARGE),
-                    swipeType = SwipeNWay.FOUR_WAY_CROSS,
+                    center = KeyC("е", size = LARGE),
+                    swipeType = FOUR_WAY_CROSS,
                     left = KeyC("ф"),
                     top =
                         KeyC(
                             display = KeyDisplay.IconDisplay(Icons.Outlined.ArrowDropUp),
-                            action = KeyAction.ToggleShiftMode(true),
-                            swipeReturnAction = KeyAction.ToggleCurrentWordCapitalization(true),
-                            color = ColorVariant.MUTED,
+                            action = ToggleShiftMode(true),
+                            swipeReturnAction = ToggleCurrentWordCapitalization(true),
+                            color = MUTED,
                         ),
                     bottom =
                         KeyC(
                             display = KeyDisplay.IconDisplay(Icons.Outlined.ArrowDropDown),
-                            action = KeyAction.ToggleShiftMode(false),
-                            swipeReturnAction = KeyAction.ToggleCurrentWordCapitalization(false),
-                            color = ColorVariant.MUTED,
+                            action = ToggleShiftMode(false),
+                            swipeReturnAction = ToggleCurrentWordCapitalization(false),
+                            color = MUTED,
                         ),
                 ),
                 NUMERIC_KEY_ITEM,
             ),
             listOf(
                 KeyItemC(
-                    center = KeyC("т", size = FontSizeVariant.LARGE),
+                    center = KeyC("т", size = LARGE),
                     topRight = KeyC("ч"),
                     top = KeyC("ш"),
                 ),
                 KeyItemC(
-                    center = KeyC("і", size = FontSizeVariant.LARGE),
+                    center = KeyC("і", size = LARGE),
                     top = KeyC("б"),
                     right = KeyC("ц"),
-                    topLeft = KeyC("\"", color = ColorVariant.MUTED),
+                    topLeft = KeyC("\"", color = MUTED),
                     topRight = KeyC("'"),
-                    bottomRight = KeyC("-", color = ColorVariant.MUTED),
-                    bottom = KeyC(".", color = ColorVariant.MUTED),
-                    bottomLeft = KeyC("*", color = ColorVariant.MUTED),
-                    left = KeyC(",", color = ColorVariant.MUTED),
+                    bottomRight = KeyC("-", color = MUTED),
+                    bottom = KeyC(".", color = MUTED),
+                    bottomLeft = KeyC("*", color = MUTED),
+                    left = KeyC(",", color = MUTED),
                 ),
                 KeyItemC(
-                    center = KeyC("о", size = FontSizeVariant.LARGE),
+                    center = KeyC("о", size = LARGE),
                     topLeft = KeyC("д"),
                     bottom = KeyC("ю"),
                     right = KeyC("ё"),
@@ -114,32 +108,32 @@ val KB_BY_THUMBKEY_SHIFTED =
         listOf(
             listOf(
                 KeyItemC(
-                    center = KeyC("С", size = FontSizeVariant.LARGE),
+                    center = KeyC("С", size = LARGE),
                     right = KeyC("Ў"),
                     bottomRight = KeyC("Й"),
                     bottom = KeyC("Э"),
                 ),
                 KeyItemC(
-                    center = KeyC("Р", size = FontSizeVariant.LARGE),
-                    swipeType = SwipeNWay.TWO_WAY_VERTICAL,
+                    center = KeyC("Р", size = LARGE),
+                    swipeType = TWO_WAY_VERTICAL,
                     bottom = KeyC("Х"),
                 ),
                 KeyItemC(
-                    center = KeyC("А", size = FontSizeVariant.LARGE),
-                    swipeType = SwipeNWay.FOUR_WAY_DIAGONAL,
+                    center = KeyC("А", size = LARGE),
+                    swipeType = FOUR_WAY_DIAGONAL,
                     bottomLeft = KeyC("Ж"),
                 ),
                 EMOJI_KEY_ITEM,
             ),
             listOf(
                 KeyItemC(
-                    center = KeyC("Н", size = FontSizeVariant.LARGE),
-                    swipeType = SwipeNWay.FOUR_WAY_CROSS,
+                    center = KeyC("Н", size = LARGE),
+                    swipeType = FOUR_WAY_CROSS,
                     right = KeyC("М"),
                     bottom = KeyC("Л"),
                 ),
                 KeyItemC(
-                    center = KeyC("В", size = FontSizeVariant.LARGE),
+                    center = KeyC("В", size = LARGE),
                     topLeft = KeyC("Я"),
                     top = KeyC("Ы"),
                     topRight = KeyC("Ь"),
@@ -150,46 +144,46 @@ val KB_BY_THUMBKEY_SHIFTED =
                     left = KeyC("К"),
                 ),
                 KeyItemC(
-                    center = KeyC("Е", size = FontSizeVariant.LARGE),
-                    swipeType = SwipeNWay.FOUR_WAY_CROSS,
+                    center = KeyC("Е", size = LARGE),
+                    swipeType = FOUR_WAY_CROSS,
                     left = KeyC("Ф"),
                     top =
                         KeyC(
                             display = KeyDisplay.IconDisplay(Icons.Outlined.KeyboardCapslock),
                             capsModeDisplay = KeyDisplay.IconDisplay(Icons.Outlined.Copyright),
-                            action = KeyAction.ToggleCapsLock,
-                            swipeReturnAction = KeyAction.ToggleCurrentWordCapitalization(true),
-                            color = ColorVariant.MUTED,
+                            action = ToggleCapsLock,
+                            swipeReturnAction = ToggleCurrentWordCapitalization(true),
+                            color = MUTED,
                         ),
                     bottom =
                         KeyC(
                             display = KeyDisplay.IconDisplay(Icons.Outlined.ArrowDropDown),
-                            action = KeyAction.ToggleShiftMode(false),
-                            swipeReturnAction = KeyAction.ToggleCurrentWordCapitalization(false),
-                            color = ColorVariant.MUTED,
+                            action = ToggleShiftMode(false),
+                            swipeReturnAction = ToggleCurrentWordCapitalization(false),
+                            color = MUTED,
                         ),
                 ),
                 NUMERIC_KEY_ITEM,
             ),
             listOf(
                 KeyItemC(
-                    center = KeyC("Т", size = FontSizeVariant.LARGE),
+                    center = KeyC("Т", size = LARGE),
                     topRight = KeyC("Ч"),
                     top = KeyC("Ш"),
                 ),
                 KeyItemC(
-                    center = KeyC("І", size = FontSizeVariant.LARGE),
+                    center = KeyC("І", size = LARGE),
                     top = KeyC("Б"),
                     right = KeyC("Ц"),
-                    topLeft = KeyC("\"", color = ColorVariant.MUTED),
+                    topLeft = KeyC("\"", color = MUTED),
                     topRight = KeyC("'"),
-                    bottomRight = KeyC("-", color = ColorVariant.MUTED),
-                    bottom = KeyC(".", color = ColorVariant.MUTED),
-                    bottomLeft = KeyC("*", color = ColorVariant.MUTED),
-                    left = KeyC(",", color = ColorVariant.MUTED),
+                    bottomRight = KeyC("-", color = MUTED),
+                    bottom = KeyC(".", color = MUTED),
+                    bottomLeft = KeyC("*", color = MUTED),
+                    left = KeyC(",", color = MUTED),
                 ),
                 KeyItemC(
-                    center = KeyC("О", size = FontSizeVariant.LARGE),
+                    center = KeyC("О", size = LARGE),
                     topLeft = KeyC("Д"),
                     bottom = KeyC("Ю"),
                     right = KeyC("Ё"),
