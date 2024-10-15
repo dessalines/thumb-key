@@ -1,3 +1,16 @@
+## What's Changed in 3.4.16
+
+- reset multi-tap state after one second delay by @iliazeus in [#1106](https://github.com/dessalines/thumb-key/pull/1106)
+- Re-add leading space before composed opening double quote by @shtrom in [#1108](https://github.com/dessalines/thumb-key/pull/1108)
+- Tweak nederlands type-split by @harmtemolder in [#1107](https://github.com/dessalines/thumb-key/pull/1107)
+
+## New Contributors
+
+- @iliazeus made their first contribution in [#1106](https://github.com/dessalines/thumb-key/pull/1106)
+- @harmtemolder made their first contribution in [#1107](https://github.com/dessalines/thumb-key/pull/1107)
+
+**Full Changelog**: https://github.com/dessalines/thumb-key/compare/3.4.15...3.4.16
+
 ## What's Changed in 3.4.15
 
 - Re-organizing backup and restore into its own screen. by @dessalines in [#1100](https://github.com/dessalines/thumb-key/pull/1100)
@@ -513,7 +526,6 @@
 
 ## New Contributors
 
-- @shtrom made their first contribution in [#786](https://github.com/dessalines/thumb-key/pull/786)
 - @LortalHost made their first contribution in [#782](https://github.com/dessalines/thumb-key/pull/782)
 - @orhun made their first contribution in [#781](https://github.com/dessalines/thumb-key/pull/781)
 - @zworek made their first contribution in [#778](https://github.com/dessalines/thumb-key/pull/778)
