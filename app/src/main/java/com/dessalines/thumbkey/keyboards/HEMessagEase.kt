@@ -21,10 +21,7 @@ val KB_HE_MESSAGEASE_MAIN =
                             size = FontSizeVariant.LARGE,
                         ),
                     swipeType = SwipeNWay.FOUR_WAY_DIAGONAL,
-                    bottomRight =
-                        KeyC(
-                            KeyAction.CommitText("ן"),
-                        ),
+                    bottomRight = KeyC(KeyAction.CommitText("ן")),
                 ),
                 KeyItemC(
                     center =
@@ -33,10 +30,7 @@ val KB_HE_MESSAGEASE_MAIN =
                             size = FontSizeVariant.LARGE,
                         ),
                     swipeType = SwipeNWay.TWO_WAY_VERTICAL,
-                    bottom =
-                        KeyC(
-                            KeyAction.CommitText("ג"),
-                        ),
+                    bottom = KeyC(KeyAction.CommitText("ג")),
                 ),
                 KeyItemC(
                     center =
@@ -44,14 +38,8 @@ val KB_HE_MESSAGEASE_MAIN =
                             KeyAction.CommitText("א"),
                             size = FontSizeVariant.LARGE,
                         ),
-                    bottomLeft =
-                        KeyC(
-                            KeyAction.CommitText("צ"),
-                        ),
-                    left =
-                        KeyC(
-                            KeyAction.CommitText("ץ"),
-                        ),
+                    bottomLeft = KeyC(KeyAction.CommitText("צ")),
+                    left = KeyC(KeyAction.CommitText("ץ")),
                 ),
                 EMOJI_KEY_ITEM,
             ),
@@ -62,14 +50,8 @@ val KB_HE_MESSAGEASE_MAIN =
                             KeyAction.CommitText("מ"),
                             size = FontSizeVariant.LARGE,
                         ),
-                    right =
-                        KeyC(
-                            KeyAction.CommitText("ם"),
-                        ),
-                    bottomRight =
-                        KeyC(
-                            KeyAction.CommitText("ך"),
-                        ),
+                    right = KeyC(KeyAction.CommitText("ם")),
+                    bottomRight = KeyC(KeyAction.CommitText("ך")),
                 ),
                 KeyItemC(
                     center =
@@ -77,38 +59,14 @@ val KB_HE_MESSAGEASE_MAIN =
                             KeyAction.CommitText("י"),
                             size = FontSizeVariant.LARGE,
                         ),
-                    topLeft =
-                        KeyC(
-                            KeyAction.CommitText("ק"),
-                        ),
-                    top =
-                        KeyC(
-                            KeyAction.CommitText("ח"),
-                        ),
-                    topRight =
-                        KeyC(
-                            KeyAction.CommitText("פ"),
-                        ),
-                    right =
-                        KeyC(
-                            KeyAction.CommitText("ד"),
-                        ),
-                    bottomRight =
-                        KeyC(
-                            KeyAction.CommitText("ש"),
-                        ),
-                    bottom =
-                        KeyC(
-                            KeyAction.CommitText("נ"),
-                        ),
-                    bottomLeft =
-                        KeyC(
-                            KeyAction.CommitText("כ"),
-                        ),
-                    left =
-                        KeyC(
-                            KeyAction.CommitText("ע"),
-                        ),
+                    topLeft = KeyC(KeyAction.CommitText("ק")),
+                    top = KeyC(KeyAction.CommitText("ח")),
+                    topRight = KeyC(KeyAction.CommitText("פ")),
+                    right = KeyC(KeyAction.CommitText("ד")),
+                    bottomRight = KeyC(KeyAction.CommitText("ש")),
+                    bottom = KeyC(KeyAction.CommitText("נ")),
+                    bottomLeft = KeyC(KeyAction.CommitText("כ")),
+                    left = KeyC(KeyAction.CommitText("ע")),
                 ),
                 KeyItemC(
                     center =
@@ -117,10 +75,7 @@ val KB_HE_MESSAGEASE_MAIN =
                             size = FontSizeVariant.LARGE,
                         ),
                     swipeType = SwipeNWay.FOUR_WAY_DIAGONAL,
-                    topLeft =
-                        KeyC(
-                            KeyAction.CommitText("ף"),
-                        ),
+                    topLeft = KeyC(KeyAction.CommitText("ף")),
                 ),
                 NUMERIC_KEY_ITEM,
             ),
@@ -132,10 +87,7 @@ val KB_HE_MESSAGEASE_MAIN =
                             size = FontSizeVariant.LARGE,
                         ),
                     swipeType = SwipeNWay.FOUR_WAY_DIAGONAL,
-                    topRight =
-                        KeyC(
-                            KeyAction.CommitText("ז"),
-                        ),
+                    topRight = KeyC(KeyAction.CommitText("ז")),
                 ),
                 KeyItemC(
                     center =
@@ -143,10 +95,7 @@ val KB_HE_MESSAGEASE_MAIN =
                             KeyAction.CommitText("ה"),
                             size = FontSizeVariant.LARGE,
                         ),
-                    top =
-                        KeyC(
-                            KeyAction.CommitText("ס"),
-                        ),
+                    top = KeyC(KeyAction.CommitText("ס")),
                     topRight =
                         KeyC(
                             KeyAction.CommitText("'"),
@@ -175,10 +124,7 @@ val KB_HE_MESSAGEASE_MAIN =
                             size = FontSizeVariant.LARGE,
                         ),
                     swipeType = SwipeNWay.FOUR_WAY_DIAGONAL,
-                    topLeft =
-                        KeyC(
-                            KeyAction.CommitText("ט"),
-                        ),
+                    topLeft = KeyC(KeyAction.CommitText("ט")),
                 ),
                 BACKSPACE_KEY_ITEM,
             ),

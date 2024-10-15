@@ -16,11 +16,7 @@ val KB_NORDIC_MESSAGEASE_NUMERIC =
         listOf(
             listOf(
                 KeyItemC(
-                    center =
-                        KeyC(
-                            KeyAction.CommitText("1"),
-                            size = FontSizeVariant.LARGE,
-                        ),
+                    center = KeyC(KeyAction.CommitText("1"), size = FontSizeVariant.LARGE),
                     bottomLeft =
                         KeyC(
                             KeyAction.CommitText("$"),
@@ -44,11 +40,7 @@ val KB_NORDIC_MESSAGEASE_NUMERIC =
                         },
                 ),
                 KeyItemC(
-                    center =
-                        KeyC(
-                            KeyAction.CommitText("2"),
-                            size = FontSizeVariant.LARGE,
-                        ),
+                    center = KeyC(KeyAction.CommitText("2"), size = FontSizeVariant.LARGE),
                     topLeft =
                         KeyC(
                             KeyAction.CommitText("`"),
@@ -86,11 +78,7 @@ val KB_NORDIC_MESSAGEASE_NUMERIC =
                         ),
                 ),
                 KeyItemC(
-                    center =
-                        KeyC(
-                            KeyAction.CommitText("3"),
-                            size = FontSizeVariant.LARGE,
-                        ),
+                    center = KeyC(KeyAction.CommitText("3"), size = FontSizeVariant.LARGE),
                     left =
                         KeyC(
                             KeyAction.CommitText("?"),
@@ -116,11 +104,7 @@ val KB_NORDIC_MESSAGEASE_NUMERIC =
             ),
             listOf(
                 KeyItemC(
-                    center =
-                        KeyC(
-                            KeyAction.CommitText("4"),
-                            size = FontSizeVariant.LARGE,
-                        ),
+                    center = KeyC(KeyAction.CommitText("4"), size = FontSizeVariant.LARGE),
                     topLeft =
                         KeyC(
                             KeyAction.CommitText("{"),
@@ -148,18 +132,10 @@ val KB_NORDIC_MESSAGEASE_NUMERIC =
                         ),
                 ),
                 KeyItemC(
-                    center =
-                        KeyC(
-                            KeyAction.CommitText("5"),
-                            size = FontSizeVariant.LARGE,
-                        ),
+                    center = KeyC(KeyAction.CommitText("5"), size = FontSizeVariant.LARGE),
                 ),
                 KeyItemC(
-                    center =
-                        KeyC(
-                            KeyAction.CommitText("6"),
-                            size = FontSizeVariant.LARGE,
-                        ),
+                    center = KeyC(KeyAction.CommitText("6"), size = FontSizeVariant.LARGE),
                     topLeft =
                         KeyC(
                             KeyAction.CommitText("|"),
@@ -190,11 +166,7 @@ val KB_NORDIC_MESSAGEASE_NUMERIC =
             ),
             listOf(
                 KeyItemC(
-                    center =
-                        KeyC(
-                            KeyAction.CommitText("7"),
-                            size = FontSizeVariant.LARGE,
-                        ),
+                    center = KeyC(KeyAction.CommitText("7"), size = FontSizeVariant.LARGE),
                     topLeft =
                         KeyC(
                             KeyAction.CommitText("~"),
@@ -224,11 +196,7 @@ val KB_NORDIC_MESSAGEASE_NUMERIC =
                         ),
                 ),
                 KeyItemC(
-                    center =
-                        KeyC(
-                            KeyAction.CommitText("8"),
-                            size = FontSizeVariant.LARGE,
-                        ),
+                    center = KeyC(KeyAction.CommitText("8"), size = FontSizeVariant.LARGE),
                     topLeft =
                         KeyC(
                             KeyAction.CommitText("\""),
@@ -256,11 +224,7 @@ val KB_NORDIC_MESSAGEASE_NUMERIC =
                         ),
                 ),
                 KeyItemC(
-                    center =
-                        KeyC(
-                            KeyAction.CommitText("9"),
-                            size = FontSizeVariant.LARGE,
-                        ),
+                    center = KeyC(KeyAction.CommitText("9"), size = FontSizeVariant.LARGE),
                     top =
                         KeyC(
                             KeyAction.CommitText("&"),
@@ -291,11 +255,7 @@ val KB_NORDIC_MESSAGEASE_NUMERIC =
             ),
             listOf(
                 KeyItemC(
-                    center =
-                        KeyC(
-                            KeyAction.CommitText("0"),
-                            size = FontSizeVariant.LARGE,
-                        ),
+                    center = KeyC(KeyAction.CommitText("0"), size = FontSizeVariant.LARGE),
                     widthMultiplier = 2,
                 ),
                 SPACEBAR_SKINNY_KEY_ITEM,

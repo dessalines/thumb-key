@@ -44,10 +44,7 @@ val KB_DE_THUMBKEY_MULTILINGUAL_MAIN =
                             KeyAction.CommitText("…"),
                             color = ColorVariant.MUTED,
                         ),
-                    bottomRight =
-                        KeyC(
-                            KeyAction.CommitText("c"),
-                        ),
+                    bottomRight = KeyC(KeyAction.CommitText("c")),
                 ),
                 KeyItemC(
                     center =
@@ -55,14 +52,8 @@ val KB_DE_THUMBKEY_MULTILINGUAL_MAIN =
                             KeyAction.CommitText("d"),
                             size = FontSizeVariant.LARGE,
                         ),
-                    bottom =
-                        KeyC(
-                            KeyAction.CommitText("f"),
-                        ),
-                    bottomRight =
-                        KeyC(
-                            KeyAction.CommitText("l"),
-                        ),
+                    bottom = KeyC(KeyAction.CommitText("f")),
+                    bottomRight = KeyC(KeyAction.CommitText("l")),
                 ),
                 KeyItemC(
                     center =
@@ -70,10 +61,7 @@ val KB_DE_THUMBKEY_MULTILINGUAL_MAIN =
                             KeyAction.CommitText("a"),
                             size = FontSizeVariant.LARGE,
                         ),
-                    bottomLeft =
-                        KeyC(
-                            KeyAction.CommitText("ä"),
-                        ),
+                    bottomLeft = KeyC(KeyAction.CommitText("ä")),
                     bottomRight =
                         KeyC(
                             KeyAction.CommitText("â"),
@@ -119,10 +107,7 @@ val KB_DE_THUMBKEY_MULTILINGUAL_MAIN =
                             KeyAction.CommitText("r"),
                             size = FontSizeVariant.LARGE,
                         ),
-                    right =
-                        KeyC(
-                            KeyAction.CommitText("m"),
-                        ),
+                    right = KeyC(KeyAction.CommitText("m")),
                     bottomLeft =
                         KeyC(
                             KeyAction.CommitText("ó"),
@@ -138,19 +123,13 @@ val KB_DE_THUMBKEY_MULTILINGUAL_MAIN =
                             KeyAction.CommitText("ò"),
                             color = ColorVariant.MUTED,
                         ),
-                    topLeft =
-                        KeyC(
-                            KeyAction.CommitText("ö"),
-                        ),
+                    topLeft = KeyC(KeyAction.CommitText("ö")),
                     top =
                         KeyC(
                             KeyAction.CommitText("ô"),
                             color = ColorVariant.MUTED,
                         ),
-                    topRight =
-                        KeyC(
-                            KeyAction.CommitText("o"),
-                        ),
+                    topRight = KeyC(KeyAction.CommitText("o")),
                 ),
                 KeyItemC(
                     center =
@@ -158,38 +137,14 @@ val KB_DE_THUMBKEY_MULTILINGUAL_MAIN =
                             KeyAction.CommitText("h"),
                             size = FontSizeVariant.LARGE,
                         ),
-                    topLeft =
-                        KeyC(
-                            KeyAction.CommitText("j"),
-                        ),
-                    top =
-                        KeyC(
-                            KeyAction.CommitText("q"),
-                        ),
-                    topRight =
-                        KeyC(
-                            KeyAction.CommitText("z"),
-                        ),
-                    right =
-                        KeyC(
-                            KeyAction.CommitText("k"),
-                        ),
-                    bottomRight =
-                        KeyC(
-                            KeyAction.CommitText("w"),
-                        ),
-                    bottom =
-                        KeyC(
-                            KeyAction.CommitText("x"),
-                        ),
-                    bottomLeft =
-                        KeyC(
-                            KeyAction.CommitText("v"),
-                        ),
-                    left =
-                        KeyC(
-                            KeyAction.CommitText("p"),
-                        ),
+                    topLeft = KeyC(KeyAction.CommitText("j")),
+                    top = KeyC(KeyAction.CommitText("q")),
+                    topRight = KeyC(KeyAction.CommitText("z")),
+                    right = KeyC(KeyAction.CommitText("k")),
+                    bottomRight = KeyC(KeyAction.CommitText("w")),
+                    bottom = KeyC(KeyAction.CommitText("x")),
+                    bottomLeft = KeyC(KeyAction.CommitText("v")),
+                    left = KeyC(KeyAction.CommitText("p")),
                 ),
                 KeyItemC(
                     center =
@@ -229,23 +184,14 @@ val KB_DE_THUMBKEY_MULTILINGUAL_MAIN =
                             KeyAction.CommitText("n"),
                             size = FontSizeVariant.LARGE,
                         ),
-                    right =
-                        KeyC(
-                            KeyAction.CommitText("g"),
-                        ),
-                    topRight =
-                        KeyC(
-                            KeyAction.CommitText("u"),
-                        ),
+                    right = KeyC(KeyAction.CommitText("g")),
+                    topRight = KeyC(KeyAction.CommitText("u")),
                     top =
                         KeyC(
                             KeyAction.CommitText("û"),
                             color = ColorVariant.MUTED,
                         ),
-                    topLeft =
-                        KeyC(
-                            KeyAction.CommitText("ü"),
-                        ),
+                    topLeft = KeyC(KeyAction.CommitText("ü")),
                     left =
                         KeyC(
                             KeyAction.CommitText("ù"),
@@ -273,19 +219,13 @@ val KB_DE_THUMBKEY_MULTILINGUAL_MAIN =
                             KeyAction.CommitText("s"),
                             size = FontSizeVariant.LARGE,
                         ),
-                    top =
-                        KeyC(
-                            KeyAction.CommitText("b"),
-                        ),
+                    top = KeyC(KeyAction.CommitText("b")),
                     topRight =
                         KeyC(
                             KeyAction.CommitText("'"),
                             color = ColorVariant.MUTED,
                         ),
-                    right =
-                        KeyC(
-                            KeyAction.CommitText("y"),
-                        ),
+                    right = KeyC(KeyAction.CommitText("y")),
                     bottomRight =
                         KeyC(
                             KeyAction.CommitText("-"),
@@ -301,10 +241,7 @@ val KB_DE_THUMBKEY_MULTILINGUAL_MAIN =
                             KeyAction.CommitText(","),
                             color = ColorVariant.MUTED,
                         ),
-                    left =
-                        KeyC(
-                            KeyAction.CommitText("ß"),
-                        ),
+                    left = KeyC(KeyAction.CommitText("ß")),
                 ),
                 KeyItemC(
                     center =
@@ -392,10 +329,7 @@ val KB_DE_THUMBKEY_MULTILINGUAL_SHIFTED =
                             KeyAction.CommitText("…"),
                             color = ColorVariant.MUTED,
                         ),
-                    bottomRight =
-                        KeyC(
-                            KeyAction.CommitText("C"),
-                        ),
+                    bottomRight = KeyC(KeyAction.CommitText("C")),
                 ),
                 KeyItemC(
                     center =
@@ -403,14 +337,8 @@ val KB_DE_THUMBKEY_MULTILINGUAL_SHIFTED =
                             KeyAction.CommitText("D"),
                             size = FontSizeVariant.LARGE,
                         ),
-                    bottom =
-                        KeyC(
-                            KeyAction.CommitText("F"),
-                        ),
-                    bottomRight =
-                        KeyC(
-                            KeyAction.CommitText("L"),
-                        ),
+                    bottom = KeyC(KeyAction.CommitText("F")),
+                    bottomRight = KeyC(KeyAction.CommitText("L")),
                 ),
                 KeyItemC(
                     center =
@@ -418,10 +346,7 @@ val KB_DE_THUMBKEY_MULTILINGUAL_SHIFTED =
                             KeyAction.CommitText("A"),
                             size = FontSizeVariant.LARGE,
                         ),
-                    bottomLeft =
-                        KeyC(
-                            KeyAction.CommitText("Ä"),
-                        ),
+                    bottomLeft = KeyC(KeyAction.CommitText("Ä")),
                     bottomRight =
                         KeyC(
                             KeyAction.CommitText("Â"),
@@ -467,10 +392,7 @@ val KB_DE_THUMBKEY_MULTILINGUAL_SHIFTED =
                             KeyAction.CommitText("R"),
                             size = FontSizeVariant.LARGE,
                         ),
-                    right =
-                        KeyC(
-                            KeyAction.CommitText("M"),
-                        ),
+                    right = KeyC(KeyAction.CommitText("M")),
                     bottomLeft =
                         KeyC(
                             KeyAction.CommitText("Ó"),
@@ -486,19 +408,13 @@ val KB_DE_THUMBKEY_MULTILINGUAL_SHIFTED =
                             KeyAction.CommitText("Ò"),
                             color = ColorVariant.MUTED,
                         ),
-                    topLeft =
-                        KeyC(
-                            KeyAction.CommitText("Ö"),
-                        ),
+                    topLeft = KeyC(KeyAction.CommitText("Ö")),
                     top =
                         KeyC(
                             KeyAction.CommitText("Ô"),
                             color = ColorVariant.MUTED,
                         ),
-                    topRight =
-                        KeyC(
-                            KeyAction.CommitText("O"),
-                        ),
+                    topRight = KeyC(KeyAction.CommitText("O")),
                 ),
                 KeyItemC(
                     center =
@@ -506,38 +422,14 @@ val KB_DE_THUMBKEY_MULTILINGUAL_SHIFTED =
                             KeyAction.CommitText("H"),
                             size = FontSizeVariant.LARGE,
                         ),
-                    topLeft =
-                        KeyC(
-                            KeyAction.CommitText("J"),
-                        ),
-                    top =
-                        KeyC(
-                            KeyAction.CommitText("Q"),
-                        ),
-                    topRight =
-                        KeyC(
-                            KeyAction.CommitText("Z"),
-                        ),
-                    right =
-                        KeyC(
-                            KeyAction.CommitText("K"),
-                        ),
-                    bottomRight =
-                        KeyC(
-                            KeyAction.CommitText("W"),
-                        ),
-                    bottom =
-                        KeyC(
-                            KeyAction.CommitText("X"),
-                        ),
-                    bottomLeft =
-                        KeyC(
-                            KeyAction.CommitText("V"),
-                        ),
-                    left =
-                        KeyC(
-                            KeyAction.CommitText("P"),
-                        ),
+                    topLeft = KeyC(KeyAction.CommitText("J")),
+                    top = KeyC(KeyAction.CommitText("Q")),
+                    topRight = KeyC(KeyAction.CommitText("Z")),
+                    right = KeyC(KeyAction.CommitText("K")),
+                    bottomRight = KeyC(KeyAction.CommitText("W")),
+                    bottom = KeyC(KeyAction.CommitText("X")),
+                    bottomLeft = KeyC(KeyAction.CommitText("V")),
+                    left = KeyC(KeyAction.CommitText("P")),
                 ),
                 KeyItemC(
                     center =
@@ -584,23 +476,14 @@ val KB_DE_THUMBKEY_MULTILINGUAL_SHIFTED =
                             KeyAction.CommitText("N"),
                             size = FontSizeVariant.LARGE,
                         ),
-                    right =
-                        KeyC(
-                            KeyAction.CommitText("G"),
-                        ),
-                    topRight =
-                        KeyC(
-                            KeyAction.CommitText("U"),
-                        ),
+                    right = KeyC(KeyAction.CommitText("G")),
+                    topRight = KeyC(KeyAction.CommitText("U")),
                     top =
                         KeyC(
                             KeyAction.CommitText("Û"),
                             color = ColorVariant.MUTED,
                         ),
-                    topLeft =
-                        KeyC(
-                            KeyAction.CommitText("Ü"),
-                        ),
+                    topLeft = KeyC(KeyAction.CommitText("Ü")),
                     left =
                         KeyC(
                             KeyAction.CommitText("Ù"),
@@ -628,19 +511,13 @@ val KB_DE_THUMBKEY_MULTILINGUAL_SHIFTED =
                             KeyAction.CommitText("S"),
                             size = FontSizeVariant.LARGE,
                         ),
-                    top =
-                        KeyC(
-                            KeyAction.CommitText("B"),
-                        ),
+                    top = KeyC(KeyAction.CommitText("B")),
                     topRight =
                         KeyC(
                             KeyAction.CommitText("'"),
                             color = ColorVariant.MUTED,
                         ),
-                    right =
-                        KeyC(
-                            KeyAction.CommitText("Y"),
-                        ),
+                    right = KeyC(KeyAction.CommitText("Y")),
                     bottomRight =
                         KeyC(
                             KeyAction.CommitText("-"),
@@ -656,10 +533,7 @@ val KB_DE_THUMBKEY_MULTILINGUAL_SHIFTED =
                             KeyAction.CommitText(","),
                             color = ColorVariant.MUTED,
                         ),
-                    left =
-                        KeyC(
-                            KeyAction.CommitText("ẞ"),
-                        ),
+                    left = KeyC(KeyAction.CommitText("ẞ")),
                 ),
                 KeyItemC(
                     center =

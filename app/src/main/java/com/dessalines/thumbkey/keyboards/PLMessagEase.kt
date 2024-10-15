@@ -30,14 +30,8 @@ val KB_PL_MESSAGEASE_MAIN =
                             KeyAction.CommitText("-"),
                             color = ColorVariant.MUTED,
                         ),
-                    bottomRight =
-                        KeyC(
-                            KeyAction.CommitText("v"),
-                        ),
-                    bottom =
-                        KeyC(
-                            KeyAction.CommitText("ą"),
-                        ),
+                    bottomRight = KeyC(KeyAction.CommitText("v")),
+                    bottom = KeyC(KeyAction.CommitText("ą")),
                     bottomLeft =
                         KeyC(
                             KeyAction.CommitText("$"),
@@ -50,10 +44,7 @@ val KB_PL_MESSAGEASE_MAIN =
                             KeyAction.CommitText("n"),
                             size = FontSizeVariant.LARGE,
                         ),
-                    top =
-                        KeyC(
-                            KeyAction.CommitText("ń"),
-                        ),
+                    top = KeyC(KeyAction.CommitText("ń")),
                     right =
                         KeyC(
                             KeyAction.CommitText("!"),
@@ -64,10 +55,7 @@ val KB_PL_MESSAGEASE_MAIN =
                             KeyAction.CommitText("\\"),
                             color = ColorVariant.MUTED,
                         ),
-                    bottom =
-                        KeyC(
-                            KeyAction.CommitText("l"),
-                        ),
+                    bottom = KeyC(KeyAction.CommitText("l")),
                     bottomLeft =
                         KeyC(
                             KeyAction.CommitText("/"),
@@ -105,19 +93,13 @@ val KB_PL_MESSAGEASE_MAIN =
                             KeyAction.CommitText("="),
                             color = ColorVariant.MUTED,
                         ),
-                    bottomLeft =
-                        KeyC(
-                            KeyAction.CommitText("x"),
-                        ),
+                    bottomLeft = KeyC(KeyAction.CommitText("x")),
                     left =
                         KeyC(
                             KeyAction.CommitText("?"),
                             color = ColorVariant.MUTED,
                         ),
-                    topLeft =
-                        KeyC(
-                            KeyAction.CommitText("ł"),
-                        ),
+                    topLeft = KeyC(KeyAction.CommitText("ł")),
                 ),
                 EMOJI_KEY_ITEM,
             ),
@@ -128,28 +110,19 @@ val KB_PL_MESSAGEASE_MAIN =
                             KeyAction.CommitText("w"),
                             size = FontSizeVariant.LARGE,
                         ),
-                    top =
-                        KeyC(
-                            KeyAction.CommitText("ó"),
-                        ),
+                    top = KeyC(KeyAction.CommitText("ó")),
                     topRight =
                         KeyC(
                             KeyAction.CommitText("%"),
                             color = ColorVariant.MUTED,
                         ),
-                    right =
-                        KeyC(
-                            KeyAction.CommitText("k"),
-                        ),
+                    right = KeyC(KeyAction.CommitText("k")),
                     bottomRight =
                         KeyC(
                             KeyAction.CommitText("_"),
                             color = ColorVariant.MUTED,
                         ),
-                    bottom =
-                        KeyC(
-                            KeyAction.CommitText("ć"),
-                        ),
+                    bottom = KeyC(KeyAction.CommitText("ć")),
                     bottomLeft =
                         KeyC(
                             KeyAction.CommitText("["),
@@ -172,38 +145,14 @@ val KB_PL_MESSAGEASE_MAIN =
                             KeyAction.CommitText("o"),
                             size = FontSizeVariant.LARGE,
                         ),
-                    top =
-                        KeyC(
-                            KeyAction.CommitText("u"),
-                        ),
-                    topRight =
-                        KeyC(
-                            KeyAction.CommitText("p"),
-                        ),
-                    right =
-                        KeyC(
-                            KeyAction.CommitText("b"),
-                        ),
-                    bottomRight =
-                        KeyC(
-                            KeyAction.CommitText("j"),
-                        ),
-                    bottom =
-                        KeyC(
-                            KeyAction.CommitText("d"),
-                        ),
-                    bottomLeft =
-                        KeyC(
-                            KeyAction.CommitText("g"),
-                        ),
-                    left =
-                        KeyC(
-                            KeyAction.CommitText("c"),
-                        ),
-                    topLeft =
-                        KeyC(
-                            KeyAction.CommitText("q"),
-                        ),
+                    top = KeyC(KeyAction.CommitText("u")),
+                    topRight = KeyC(KeyAction.CommitText("p")),
+                    right = KeyC(KeyAction.CommitText("b")),
+                    bottomRight = KeyC(KeyAction.CommitText("j")),
+                    bottom = KeyC(KeyAction.CommitText("d")),
+                    bottomLeft = KeyC(KeyAction.CommitText("g")),
+                    left = KeyC(KeyAction.CommitText("c")),
+                    topLeft = KeyC(KeyAction.CommitText("q")),
                 ),
                 KeyItemC(
                     center =
@@ -243,10 +192,7 @@ val KB_PL_MESSAGEASE_MAIN =
                             KeyAction.CommitText("@"),
                             color = ColorVariant.MUTED,
                         ),
-                    left =
-                        KeyC(
-                            KeyAction.CommitText("m"),
-                        ),
+                    left = KeyC(KeyAction.CommitText("m")),
                     topLeft =
                         KeyC(
                             KeyAction.CommitText("|"),
@@ -262,18 +208,9 @@ val KB_PL_MESSAGEASE_MAIN =
                             KeyAction.CommitText("z"),
                             size = FontSizeVariant.LARGE,
                         ),
-                    topRight =
-                        KeyC(
-                            KeyAction.CommitText("y"),
-                        ),
-                    right =
-                        KeyC(
-                            KeyAction.CommitText("ź"),
-                        ),
-                    bottom =
-                        KeyC(
-                            KeyAction.CommitText("ę"),
-                        ),
+                    topRight = KeyC(KeyAction.CommitText("y")),
+                    right = KeyC(KeyAction.CommitText("ź")),
+                    bottom = KeyC(KeyAction.CommitText("ę")),
                     left =
                         KeyC(
                             KeyAction.CommitText("<"),
@@ -297,19 +234,13 @@ val KB_PL_MESSAGEASE_MAIN =
                             KeyAction.CommitText("e"),
                             size = FontSizeVariant.LARGE,
                         ),
-                    top =
-                        KeyC(
-                            KeyAction.CommitText("h"),
-                        ),
+                    top = KeyC(KeyAction.CommitText("h")),
                     topRight =
                         KeyC(
                             KeyAction.CommitText("\'"),
                             color = ColorVariant.MUTED,
                         ),
-                    right =
-                        KeyC(
-                            KeyAction.CommitText("t"),
-                        ),
+                    right = KeyC(KeyAction.CommitText("t")),
                     bottomRight =
                         KeyC(
                             KeyAction.CommitText(":"),
@@ -325,10 +256,7 @@ val KB_PL_MESSAGEASE_MAIN =
                             KeyAction.CommitText(","),
                             color = ColorVariant.MUTED,
                         ),
-                    left =
-                        KeyC(
-                            KeyAction.CommitText("ż"),
-                        ),
+                    left = KeyC(KeyAction.CommitText("ż")),
                     topLeft =
                         KeyC(
                             KeyAction.CommitText("\""),
@@ -361,14 +289,8 @@ val KB_PL_MESSAGEASE_MAIN =
                             KeyAction.CommitText(";"),
                             color = ColorVariant.MUTED,
                         ),
-                    left =
-                        KeyC(
-                            KeyAction.CommitText("ś"),
-                        ),
-                    topLeft =
-                        KeyC(
-                            KeyAction.CommitText("f"),
-                        ),
+                    left = KeyC(KeyAction.CommitText("ś")),
+                    topLeft = KeyC(KeyAction.CommitText("f")),
                 ),
                 BACKSPACE_KEY_ITEM,
             ),
@@ -394,14 +316,8 @@ val KB_PL_MESSAGEASE_SHIFTED =
                             KeyAction.CommitText("-"),
                             color = ColorVariant.MUTED,
                         ),
-                    bottomRight =
-                        KeyC(
-                            KeyAction.CommitText("V"),
-                        ),
-                    bottom =
-                        KeyC(
-                            KeyAction.CommitText("Ą"),
-                        ),
+                    bottomRight = KeyC(KeyAction.CommitText("V")),
+                    bottom = KeyC(KeyAction.CommitText("Ą")),
                     bottomLeft =
                         KeyC(
                             KeyAction.CommitText("$"),
@@ -414,10 +330,7 @@ val KB_PL_MESSAGEASE_SHIFTED =
                             KeyAction.CommitText("N"),
                             size = FontSizeVariant.LARGE,
                         ),
-                    top =
-                        KeyC(
-                            KeyAction.CommitText("Ń"),
-                        ),
+                    top = KeyC(KeyAction.CommitText("Ń")),
                     right =
                         KeyC(
                             KeyAction.CommitText("!"),
@@ -428,10 +341,7 @@ val KB_PL_MESSAGEASE_SHIFTED =
                             KeyAction.CommitText("\\"),
                             color = ColorVariant.MUTED,
                         ),
-                    bottom =
-                        KeyC(
-                            KeyAction.CommitText("L"),
-                        ),
+                    bottom = KeyC(KeyAction.CommitText("L")),
                     bottomLeft =
                         KeyC(
                             KeyAction.CommitText("/"),
@@ -447,10 +357,7 @@ val KB_PL_MESSAGEASE_SHIFTED =
                             KeyAction.CommitText("`"),
                             color = ColorVariant.MUTED,
                         ),
-                    topRight =
-                        KeyC(
-                            KeyAction.CommitText("´"),
-                        ),
+                    topRight = KeyC(KeyAction.CommitText("´")),
                 ),
                 KeyItemC(
                     center =
@@ -468,19 +375,13 @@ val KB_PL_MESSAGEASE_SHIFTED =
                             KeyAction.CommitText("="),
                             color = ColorVariant.MUTED,
                         ),
-                    bottomLeft =
-                        KeyC(
-                            KeyAction.CommitText("X"),
-                        ),
+                    bottomLeft = KeyC(KeyAction.CommitText("X")),
                     left =
                         KeyC(
                             KeyAction.CommitText("?"),
                             color = ColorVariant.MUTED,
                         ),
-                    topLeft =
-                        KeyC(
-                            KeyAction.CommitText("Ł"),
-                        ),
+                    topLeft = KeyC(KeyAction.CommitText("Ł")),
                 ),
                 EMOJI_KEY_ITEM,
             ),
@@ -491,28 +392,19 @@ val KB_PL_MESSAGEASE_SHIFTED =
                             KeyAction.CommitText("W"),
                             size = FontSizeVariant.LARGE,
                         ),
-                    top =
-                        KeyC(
-                            KeyAction.CommitText("Ó"),
-                        ),
+                    top = KeyC(KeyAction.CommitText("Ó")),
                     topRight =
                         KeyC(
                             KeyAction.CommitText("%"),
                             color = ColorVariant.MUTED,
                         ),
-                    right =
-                        KeyC(
-                            KeyAction.CommitText("K"),
-                        ),
+                    right = KeyC(KeyAction.CommitText("K")),
                     bottomRight =
                         KeyC(
                             KeyAction.CommitText("_"),
                             color = ColorVariant.MUTED,
                         ),
-                    bottom =
-                        KeyC(
-                            KeyAction.CommitText("Ć"),
-                        ),
+                    bottom = KeyC(KeyAction.CommitText("Ć")),
                     bottomLeft =
                         KeyC(
                             KeyAction.CommitText("["),
@@ -535,38 +427,14 @@ val KB_PL_MESSAGEASE_SHIFTED =
                             KeyAction.CommitText("O"),
                             size = FontSizeVariant.LARGE,
                         ),
-                    top =
-                        KeyC(
-                            KeyAction.CommitText("U"),
-                        ),
-                    topRight =
-                        KeyC(
-                            KeyAction.CommitText("P"),
-                        ),
-                    right =
-                        KeyC(
-                            KeyAction.CommitText("B"),
-                        ),
-                    bottomRight =
-                        KeyC(
-                            KeyAction.CommitText("J"),
-                        ),
-                    bottom =
-                        KeyC(
-                            KeyAction.CommitText("D"),
-                        ),
-                    bottomLeft =
-                        KeyC(
-                            KeyAction.CommitText("G"),
-                        ),
-                    left =
-                        KeyC(
-                            KeyAction.CommitText("C"),
-                        ),
-                    topLeft =
-                        KeyC(
-                            KeyAction.CommitText("Q"),
-                        ),
+                    top = KeyC(KeyAction.CommitText("U")),
+                    topRight = KeyC(KeyAction.CommitText("P")),
+                    right = KeyC(KeyAction.CommitText("B")),
+                    bottomRight = KeyC(KeyAction.CommitText("J")),
+                    bottom = KeyC(KeyAction.CommitText("D")),
+                    bottomLeft = KeyC(KeyAction.CommitText("G")),
+                    left = KeyC(KeyAction.CommitText("C")),
+                    topLeft = KeyC(KeyAction.CommitText("Q")),
                 ),
                 KeyItemC(
                     center =
@@ -609,10 +477,7 @@ val KB_PL_MESSAGEASE_SHIFTED =
                             KeyAction.CommitText("@"),
                             color = ColorVariant.MUTED,
                         ),
-                    left =
-                        KeyC(
-                            KeyAction.CommitText("M"),
-                        ),
+                    left = KeyC(KeyAction.CommitText("M")),
                     topLeft =
                         KeyC(
                             KeyAction.CommitText("|"),
@@ -628,18 +493,9 @@ val KB_PL_MESSAGEASE_SHIFTED =
                             KeyAction.CommitText("Z"),
                             size = FontSizeVariant.LARGE,
                         ),
-                    topRight =
-                        KeyC(
-                            KeyAction.CommitText("Y"),
-                        ),
-                    right =
-                        KeyC(
-                            KeyAction.CommitText("Ź"),
-                        ),
-                    bottom =
-                        KeyC(
-                            KeyAction.CommitText("Ę"),
-                        ),
+                    topRight = KeyC(KeyAction.CommitText("Y")),
+                    right = KeyC(KeyAction.CommitText("Ź")),
+                    bottom = KeyC(KeyAction.CommitText("Ę")),
                     left =
                         KeyC(
                             KeyAction.CommitText("<"),
@@ -663,19 +519,13 @@ val KB_PL_MESSAGEASE_SHIFTED =
                             KeyAction.CommitText("E"),
                             size = FontSizeVariant.LARGE,
                         ),
-                    top =
-                        KeyC(
-                            KeyAction.CommitText("H"),
-                        ),
+                    top = KeyC(KeyAction.CommitText("H")),
                     topRight =
                         KeyC(
                             KeyAction.CommitText("\'"),
                             color = ColorVariant.MUTED,
                         ),
-                    right =
-                        KeyC(
-                            KeyAction.CommitText("T"),
-                        ),
+                    right = KeyC(KeyAction.CommitText("T")),
                     bottomRight =
                         KeyC(
                             KeyAction.CommitText(":"),
@@ -691,10 +541,7 @@ val KB_PL_MESSAGEASE_SHIFTED =
                             KeyAction.CommitText(","),
                             color = ColorVariant.MUTED,
                         ),
-                    left =
-                        KeyC(
-                            KeyAction.CommitText("Ż"),
-                        ),
+                    left = KeyC(KeyAction.CommitText("Ż")),
                     topLeft =
                         KeyC(
                             KeyAction.CommitText("\""),
@@ -712,10 +559,7 @@ val KB_PL_MESSAGEASE_SHIFTED =
                             KeyAction.CommitText("&"),
                             color = ColorVariant.MUTED,
                         ),
-                    topRight =
-                        KeyC(
-                            KeyAction.CommitText("°"),
-                        ),
+                    topRight = KeyC(KeyAction.CommitText("°")),
                     right =
                         KeyC(
                             KeyAction.CommitText(">"),
@@ -726,14 +570,8 @@ val KB_PL_MESSAGEASE_SHIFTED =
                             KeyAction.CommitText(";"),
                             color = ColorVariant.MUTED,
                         ),
-                    left =
-                        KeyC(
-                            KeyAction.CommitText("Ś"),
-                        ),
-                    topLeft =
-                        KeyC(
-                            KeyAction.CommitText("F"),
-                        ),
+                    left = KeyC(KeyAction.CommitText("Ś")),
+                    topLeft = KeyC(KeyAction.CommitText("F")),
                 ),
                 BACKSPACE_KEY_ITEM,
             ),
@@ -801,10 +639,7 @@ val KB_PL_MESSAGEASE_NUMERIC =
                             KeyAction.CommitText("`"),
                             color = ColorVariant.MUTED,
                         ),
-                    topRight =
-                        KeyC(
-                            KeyAction.CommitText("´"),
-                        ),
+                    topRight = KeyC(KeyAction.CommitText("´")),
                 ),
                 KeyItemC(
                     center =
@@ -976,10 +811,7 @@ val KB_PL_MESSAGEASE_NUMERIC =
                             KeyAction.CommitText("&"),
                             color = ColorVariant.MUTED,
                         ),
-                    topRight =
-                        KeyC(
-                            KeyAction.CommitText("°"),
-                        ),
+                    topRight = KeyC(KeyAction.CommitText("°")),
                     right =
                         KeyC(
                             KeyAction.CommitText(">"),

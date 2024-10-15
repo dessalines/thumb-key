@@ -35,14 +35,8 @@ val KB_SL_MESSAGEASE_SYMBOLS_MAIN =
                             KeyAction.CommitText("$"),
                             color = ColorVariant.MUTED,
                         ),
-                    bottom =
-                        KeyC(
-                            KeyAction.CommitText("š"),
-                        ),
-                    bottomRight =
-                        KeyC(
-                            KeyAction.CommitText("v"),
-                        ),
+                    bottom = KeyC(KeyAction.CommitText("š")),
+                    bottomRight = KeyC(KeyAction.CommitText("v")),
                     right =
                         KeyC(
                             KeyAction.CommitText("-"),
@@ -75,10 +69,7 @@ val KB_SL_MESSAGEASE_SYMBOLS_MAIN =
                             KeyAction.CommitText("/"),
                             color = ColorVariant.MUTED,
                         ),
-                    bottom =
-                        KeyC(
-                            KeyAction.CommitText("l"),
-                        ),
+                    bottom = KeyC(KeyAction.CommitText("l")),
                     bottomRight =
                         KeyC(
                             KeyAction.CommitText("\\"),
@@ -106,10 +97,7 @@ val KB_SL_MESSAGEASE_SYMBOLS_MAIN =
                             KeyAction.CommitText("?"),
                             color = ColorVariant.MUTED,
                         ),
-                    bottomLeft =
-                        KeyC(
-                            KeyAction.CommitText("x"),
-                        ),
+                    bottomLeft = KeyC(KeyAction.CommitText("x")),
                     bottom =
                         KeyC(
                             KeyAction.CommitText("="),
@@ -130,10 +118,7 @@ val KB_SL_MESSAGEASE_SYMBOLS_MAIN =
                             KeyAction.CommitText("h"),
                             size = FontSizeVariant.LARGE,
                         ),
-                    top =
-                        KeyC(
-                            KeyAction.CommitText("ć"),
-                        ),
+                    top = KeyC(KeyAction.CommitText("ć")),
                     topLeft =
                         KeyC(
                             KeyAction.CommitText("{"),
@@ -149,19 +134,13 @@ val KB_SL_MESSAGEASE_SYMBOLS_MAIN =
                             KeyAction.CommitText("["),
                             color = ColorVariant.MUTED,
                         ),
-                    bottom =
-                        KeyC(
-                            KeyAction.CommitText("č"),
-                        ),
+                    bottom = KeyC(KeyAction.CommitText("č")),
                     bottomRight =
                         KeyC(
                             KeyAction.CommitText("_"),
                             color = ColorVariant.MUTED,
                         ),
-                    right =
-                        KeyC(
-                            KeyAction.CommitText("k"),
-                        ),
+                    right = KeyC(KeyAction.CommitText("k")),
                     topRight =
                         KeyC(
                             KeyAction.CommitText("%"),
@@ -174,38 +153,14 @@ val KB_SL_MESSAGEASE_SYMBOLS_MAIN =
                             KeyAction.CommitText("o"),
                             size = FontSizeVariant.LARGE,
                         ),
-                    topLeft =
-                        KeyC(
-                            KeyAction.CommitText("q"),
-                        ),
-                    top =
-                        KeyC(
-                            KeyAction.CommitText("u"),
-                        ),
-                    topRight =
-                        KeyC(
-                            KeyAction.CommitText("p"),
-                        ),
-                    left =
-                        KeyC(
-                            KeyAction.CommitText("c"),
-                        ),
-                    right =
-                        KeyC(
-                            KeyAction.CommitText("b"),
-                        ),
-                    bottomLeft =
-                        KeyC(
-                            KeyAction.CommitText("g"),
-                        ),
-                    bottom =
-                        KeyC(
-                            KeyAction.CommitText("d"),
-                        ),
-                    bottomRight =
-                        KeyC(
-                            KeyAction.CommitText("j"),
-                        ),
+                    topLeft = KeyC(KeyAction.CommitText("q")),
+                    top = KeyC(KeyAction.CommitText("u")),
+                    topRight = KeyC(KeyAction.CommitText("p")),
+                    left = KeyC(KeyAction.CommitText("c")),
+                    right = KeyC(KeyAction.CommitText("b")),
+                    bottomLeft = KeyC(KeyAction.CommitText("g")),
+                    bottom = KeyC(KeyAction.CommitText("d")),
+                    bottomRight = KeyC(KeyAction.CommitText("j")),
                 ),
                 KeyItemC(
                     center =
@@ -225,10 +180,7 @@ val KB_SL_MESSAGEASE_SYMBOLS_MAIN =
                             KeyAction.CommitText("|"),
                             color = ColorVariant.MUTED,
                         ),
-                    left =
-                        KeyC(
-                            KeyAction.CommitText("m"),
-                        ),
+                    left = KeyC(KeyAction.CommitText("m")),
                     bottomLeft =
                         KeyC(
                             KeyAction.CommitText("@"),
@@ -269,10 +221,7 @@ val KB_SL_MESSAGEASE_SYMBOLS_MAIN =
                             KeyAction.CommitText("~"),
                             color = ColorVariant.MUTED,
                         ),
-                    top =
-                        KeyC(
-                            KeyAction.CommitText("ž"),
-                        ),
+                    top = KeyC(KeyAction.CommitText("ž")),
                     left =
                         KeyC(
                             KeyAction.CommitText("<"),
@@ -283,10 +232,7 @@ val KB_SL_MESSAGEASE_SYMBOLS_MAIN =
                             KeyAction.CommitText("*"),
                             color = ColorVariant.MUTED,
                         ),
-                    topRight =
-                        KeyC(
-                            KeyAction.CommitText("y"),
-                        ),
+                    topRight = KeyC(KeyAction.CommitText("y")),
                 ),
                 KeyItemC(
                     center =
@@ -294,10 +240,7 @@ val KB_SL_MESSAGEASE_SYMBOLS_MAIN =
                             KeyAction.CommitText("e"),
                             size = FontSizeVariant.LARGE,
                         ),
-                    top =
-                        KeyC(
-                            KeyAction.CommitText("w"),
-                        ),
+                    top = KeyC(KeyAction.CommitText("w")),
                     topLeft =
                         KeyC(
                             KeyAction.CommitText("\""),
@@ -318,10 +261,7 @@ val KB_SL_MESSAGEASE_SYMBOLS_MAIN =
                             KeyAction.CommitText(":"),
                             color = ColorVariant.MUTED,
                         ),
-                    right =
-                        KeyC(
-                            KeyAction.CommitText("z"),
-                        ),
+                    right = KeyC(KeyAction.CommitText("z")),
                     topRight =
                         KeyC(
                             KeyAction.CommitText("'"),
@@ -339,10 +279,7 @@ val KB_SL_MESSAGEASE_SYMBOLS_MAIN =
                             KeyAction.CommitText("&"),
                             color = ColorVariant.MUTED,
                         ),
-                    topLeft =
-                        KeyC(
-                            KeyAction.CommitText("f"),
-                        ),
+                    topLeft = KeyC(KeyAction.CommitText("f")),
                     left =
                         KeyC(
                             KeyAction.CommitText("#"),
@@ -393,14 +330,8 @@ val KB_SL_MESSAGEASE_SYMBOLS_SHIFTED =
                             KeyAction.CommitText("$"),
                             color = ColorVariant.MUTED,
                         ),
-                    bottom =
-                        KeyC(
-                            KeyAction.CommitText("Š"),
-                        ),
-                    bottomRight =
-                        KeyC(
-                            KeyAction.CommitText("V"),
-                        ),
+                    bottom = KeyC(KeyAction.CommitText("Š")),
+                    bottomRight = KeyC(KeyAction.CommitText("V")),
                     right =
                         KeyC(
                             KeyAction.CommitText("-"),
@@ -433,10 +364,7 @@ val KB_SL_MESSAGEASE_SYMBOLS_SHIFTED =
                             KeyAction.CommitText("/"),
                             color = ColorVariant.MUTED,
                         ),
-                    bottom =
-                        KeyC(
-                            KeyAction.CommitText("L"),
-                        ),
+                    bottom = KeyC(KeyAction.CommitText("L")),
                     bottomRight =
                         KeyC(
                             KeyAction.CommitText("\\"),
@@ -464,10 +392,7 @@ val KB_SL_MESSAGEASE_SYMBOLS_SHIFTED =
                             KeyAction.CommitText("?"),
                             color = ColorVariant.MUTED,
                         ),
-                    bottomLeft =
-                        KeyC(
-                            KeyAction.CommitText("X"),
-                        ),
+                    bottomLeft = KeyC(KeyAction.CommitText("X")),
                     bottom =
                         KeyC(
                             KeyAction.CommitText("="),
@@ -488,10 +413,7 @@ val KB_SL_MESSAGEASE_SYMBOLS_SHIFTED =
                             KeyAction.CommitText("H"),
                             size = FontSizeVariant.LARGE,
                         ),
-                    top =
-                        KeyC(
-                            KeyAction.CommitText("Ć"),
-                        ),
+                    top = KeyC(KeyAction.CommitText("Ć")),
                     topLeft =
                         KeyC(
                             KeyAction.CommitText("{"),
@@ -507,19 +429,13 @@ val KB_SL_MESSAGEASE_SYMBOLS_SHIFTED =
                             KeyAction.CommitText("["),
                             color = ColorVariant.MUTED,
                         ),
-                    bottom =
-                        KeyC(
-                            KeyAction.CommitText("Č"),
-                        ),
+                    bottom = KeyC(KeyAction.CommitText("Č")),
                     bottomRight =
                         KeyC(
                             KeyAction.CommitText("_"),
                             color = ColorVariant.MUTED,
                         ),
-                    right =
-                        KeyC(
-                            KeyAction.CommitText("K"),
-                        ),
+                    right = KeyC(KeyAction.CommitText("K")),
                     topRight =
                         KeyC(
                             KeyAction.CommitText("%"),
@@ -532,38 +448,14 @@ val KB_SL_MESSAGEASE_SYMBOLS_SHIFTED =
                             KeyAction.CommitText("O"),
                             size = FontSizeVariant.LARGE,
                         ),
-                    topLeft =
-                        KeyC(
-                            KeyAction.CommitText("Q"),
-                        ),
-                    top =
-                        KeyC(
-                            KeyAction.CommitText("U"),
-                        ),
-                    topRight =
-                        KeyC(
-                            KeyAction.CommitText("P"),
-                        ),
-                    left =
-                        KeyC(
-                            KeyAction.CommitText("C"),
-                        ),
-                    right =
-                        KeyC(
-                            KeyAction.CommitText("B"),
-                        ),
-                    bottomLeft =
-                        KeyC(
-                            KeyAction.CommitText("G"),
-                        ),
-                    bottom =
-                        KeyC(
-                            KeyAction.CommitText("D"),
-                        ),
-                    bottomRight =
-                        KeyC(
-                            KeyAction.CommitText("J"),
-                        ),
+                    topLeft = KeyC(KeyAction.CommitText("Q")),
+                    top = KeyC(KeyAction.CommitText("U")),
+                    topRight = KeyC(KeyAction.CommitText("P")),
+                    left = KeyC(KeyAction.CommitText("C")),
+                    right = KeyC(KeyAction.CommitText("B")),
+                    bottomLeft = KeyC(KeyAction.CommitText("G")),
+                    bottom = KeyC(KeyAction.CommitText("D")),
+                    bottomRight = KeyC(KeyAction.CommitText("J")),
                 ),
                 KeyItemC(
                     center =
@@ -584,10 +476,7 @@ val KB_SL_MESSAGEASE_SYMBOLS_SHIFTED =
                             KeyAction.CommitText("|"),
                             color = ColorVariant.MUTED,
                         ),
-                    left =
-                        KeyC(
-                            KeyAction.CommitText("M"),
-                        ),
+                    left = KeyC(KeyAction.CommitText("M")),
                     bottomLeft =
                         KeyC(
                             KeyAction.CommitText("@"),
@@ -630,10 +519,7 @@ val KB_SL_MESSAGEASE_SYMBOLS_SHIFTED =
                             KeyAction.CommitText("~"),
                             color = ColorVariant.MUTED,
                         ),
-                    top =
-                        KeyC(
-                            KeyAction.CommitText("ž"),
-                        ),
+                    top = KeyC(KeyAction.CommitText("ž")),
                     left =
                         KeyC(
                             KeyAction.CommitText("<"),
@@ -644,10 +530,7 @@ val KB_SL_MESSAGEASE_SYMBOLS_SHIFTED =
                             KeyAction.CommitText("*"),
                             color = ColorVariant.MUTED,
                         ),
-                    topRight =
-                        KeyC(
-                            KeyAction.CommitText("Y"),
-                        ),
+                    topRight = KeyC(KeyAction.CommitText("Y")),
                 ),
                 KeyItemC(
                     center =
@@ -655,10 +538,7 @@ val KB_SL_MESSAGEASE_SYMBOLS_SHIFTED =
                             KeyAction.CommitText("E"),
                             size = FontSizeVariant.LARGE,
                         ),
-                    top =
-                        KeyC(
-                            KeyAction.CommitText("W"),
-                        ),
+                    top = KeyC(KeyAction.CommitText("W")),
                     topLeft =
                         KeyC(
                             KeyAction.CommitText("\""),
@@ -679,10 +559,7 @@ val KB_SL_MESSAGEASE_SYMBOLS_SHIFTED =
                             KeyAction.CommitText(":"),
                             color = ColorVariant.MUTED,
                         ),
-                    right =
-                        KeyC(
-                            KeyAction.CommitText("Z"),
-                        ),
+                    right = KeyC(KeyAction.CommitText("Z")),
                     topRight =
                         KeyC(
                             KeyAction.CommitText("'"),
@@ -700,10 +577,7 @@ val KB_SL_MESSAGEASE_SYMBOLS_SHIFTED =
                             KeyAction.CommitText("&"),
                             color = ColorVariant.MUTED,
                         ),
-                    topLeft =
-                        KeyC(
-                            KeyAction.CommitText("F"),
-                        ),
+                    topLeft = KeyC(KeyAction.CommitText("F")),
                     left =
                         KeyC(
                             KeyAction.CommitText("#"),

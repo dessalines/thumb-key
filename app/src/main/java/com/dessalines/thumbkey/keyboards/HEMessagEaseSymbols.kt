@@ -20,10 +20,7 @@ val KB_HE_MESSAGEASE_SYMBOLS_MAIN =
                             KeyAction.CommitText("ר"),
                             size = FontSizeVariant.LARGE,
                         ),
-                    bottomRight =
-                        KeyC(
-                            KeyAction.CommitText("ן"),
-                        ),
+                    bottomRight = KeyC(KeyAction.CommitText("ן")),
                     right =
                         KeyC(
                             KeyAction.CommitText("-"),
@@ -34,10 +31,7 @@ val KB_HE_MESSAGEASE_SYMBOLS_MAIN =
                             KeyAction.CommitText("$"),
                             color = ColorVariant.MUTED,
                         ),
-                    bottom =
-                        KeyC(
-                            KeyAction.CommitText("ץ"),
-                        ),
+                    bottom = KeyC(KeyAction.CommitText("ץ")),
                 ),
                 KeyItemC(
                     center =
@@ -45,10 +39,7 @@ val KB_HE_MESSAGEASE_SYMBOLS_MAIN =
                             KeyAction.CommitText("ב"),
                             size = FontSizeVariant.LARGE,
                         ),
-                    bottom =
-                        KeyC(
-                            KeyAction.CommitText("ג"),
-                        ),
+                    bottom = KeyC(KeyAction.CommitText("ג")),
                     topLeft =
                         KeyC(
                             KeyAction.CommitText("`"),
@@ -91,14 +82,8 @@ val KB_HE_MESSAGEASE_SYMBOLS_MAIN =
                             KeyAction.CommitText("א"),
                             size = FontSizeVariant.LARGE,
                         ),
-                    bottomLeft =
-                        KeyC(
-                            KeyAction.CommitText("צ"),
-                        ),
-                    left =
-                        KeyC(
-                            KeyAction.CommitText("?"),
-                        ),
+                    bottomLeft = KeyC(KeyAction.CommitText("צ")),
+                    left = KeyC(KeyAction.CommitText("?")),
                     bottom =
                         KeyC(
                             KeyAction.CommitText("="),
@@ -114,10 +99,7 @@ val KB_HE_MESSAGEASE_SYMBOLS_MAIN =
                             KeyAction.CommitText("מ"),
                             size = FontSizeVariant.LARGE,
                         ),
-                    right =
-                        KeyC(
-                            KeyAction.CommitText("ם"),
-                        ),
+                    right = KeyC(KeyAction.CommitText("ם")),
                     topLeft =
                         KeyC(
                             display = KeyDisplay.TextDisplay("{"),
@@ -129,10 +111,7 @@ val KB_HE_MESSAGEASE_SYMBOLS_MAIN =
                             KeyAction.CommitText("%"),
                             color = ColorVariant.MUTED,
                         ),
-                    bottomRight =
-                        KeyC(
-                            KeyAction.CommitText("ך"),
-                        ),
+                    bottomRight = KeyC(KeyAction.CommitText("ך")),
                     bottomLeft =
                         KeyC(
                             display = KeyDisplay.TextDisplay("["),
@@ -152,38 +131,14 @@ val KB_HE_MESSAGEASE_SYMBOLS_MAIN =
                             KeyAction.CommitText("י"),
                             size = FontSizeVariant.LARGE,
                         ),
-                    topLeft =
-                        KeyC(
-                            KeyAction.CommitText("ק"),
-                        ),
-                    top =
-                        KeyC(
-                            KeyAction.CommitText("ח"),
-                        ),
-                    topRight =
-                        KeyC(
-                            KeyAction.CommitText("פ"),
-                        ),
-                    right =
-                        KeyC(
-                            KeyAction.CommitText("ד"),
-                        ),
-                    bottomRight =
-                        KeyC(
-                            KeyAction.CommitText("ש"),
-                        ),
-                    bottom =
-                        KeyC(
-                            KeyAction.CommitText("נ"),
-                        ),
-                    bottomLeft =
-                        KeyC(
-                            KeyAction.CommitText("כ"),
-                        ),
-                    left =
-                        KeyC(
-                            KeyAction.CommitText("ע"),
-                        ),
+                    topLeft = KeyC(KeyAction.CommitText("ק")),
+                    top = KeyC(KeyAction.CommitText("ח")),
+                    topRight = KeyC(KeyAction.CommitText("פ")),
+                    right = KeyC(KeyAction.CommitText("ד")),
+                    bottomRight = KeyC(KeyAction.CommitText("ש")),
+                    bottom = KeyC(KeyAction.CommitText("נ")),
+                    bottomLeft = KeyC(KeyAction.CommitText("כ")),
+                    left = KeyC(KeyAction.CommitText("ע")),
                 ),
                 KeyItemC(
                     center =
@@ -191,10 +146,7 @@ val KB_HE_MESSAGEASE_SYMBOLS_MAIN =
                             KeyAction.CommitText("ו"),
                             size = FontSizeVariant.LARGE,
                         ),
-                    topLeft =
-                        KeyC(
-                            KeyAction.CommitText("ף"),
-                        ),
+                    topLeft = KeyC(KeyAction.CommitText("ף")),
                     topRight =
                         KeyC(
                             display = KeyDisplay.TextDisplay("}"),
@@ -228,10 +180,7 @@ val KB_HE_MESSAGEASE_SYMBOLS_MAIN =
                             KeyAction.CommitText("ת"),
                             size = FontSizeVariant.LARGE,
                         ),
-                    topRight =
-                        KeyC(
-                            KeyAction.CommitText("ז"),
-                        ),
+                    topRight = KeyC(KeyAction.CommitText("ז")),
                     topLeft =
                         KeyC(
                             KeyAction.CommitText("~"),
@@ -265,10 +214,7 @@ val KB_HE_MESSAGEASE_SYMBOLS_MAIN =
                             KeyAction.CommitText("\""),
                             color = ColorVariant.MUTED,
                         ),
-                    top =
-                        KeyC(
-                            KeyAction.CommitText("ס"),
-                        ),
+                    top = KeyC(KeyAction.CommitText("ס")),
                     topRight =
                         KeyC(
                             KeyAction.CommitText("'"),
@@ -296,10 +242,7 @@ val KB_HE_MESSAGEASE_SYMBOLS_MAIN =
                             KeyAction.CommitText("ל"),
                             size = FontSizeVariant.LARGE,
                         ),
-                    topLeft =
-                        KeyC(
-                            KeyAction.CommitText("ט"),
-                        ),
+                    topLeft = KeyC(KeyAction.CommitText("ט")),
                     top =
                         KeyC(
                             KeyAction.CommitText("&"),

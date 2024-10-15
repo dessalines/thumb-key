@@ -35,14 +35,8 @@ val KB_EN_QWERTYFOUR_COMPOSE_MAIN =
                             KeyAction.CommitText("\""),
                             color = ColorVariant.MUTED,
                         ),
-                    right =
-                        KeyC(
-                            KeyAction.CommitText("w"),
-                        ),
-                    bottom =
-                        KeyC(
-                            KeyAction.CommitText("q"),
-                        ),
+                    right = KeyC(KeyAction.CommitText("w")),
+                    bottom = KeyC(KeyAction.CommitText("q")),
                     left =
                         KeyC(
                             KeyAction.CommitText(":"),
@@ -61,18 +55,9 @@ val KB_EN_QWERTYFOUR_COMPOSE_MAIN =
                             KeyAction.CommitText("'"),
                             color = ColorVariant.MUTED,
                         ),
-                    right =
-                        KeyC(
-                            KeyAction.CommitText("u"),
-                        ),
-                    bottom =
-                        KeyC(
-                            KeyAction.CommitText("y"),
-                        ),
-                    left =
-                        KeyC(
-                            KeyAction.CommitText("r"),
-                        ),
+                    right = KeyC(KeyAction.CommitText("u")),
+                    bottom = KeyC(KeyAction.CommitText("y")),
+                    left = KeyC(KeyAction.CommitText("r")),
                 ),
                 KeyItemC(
                     center =
@@ -91,14 +76,8 @@ val KB_EN_QWERTYFOUR_COMPOSE_MAIN =
                             KeyAction.CommitText(","),
                             color = ColorVariant.MUTED,
                         ),
-                    bottom =
-                        KeyC(
-                            KeyAction.CommitText("p"),
-                        ),
-                    left =
-                        KeyC(
-                            KeyAction.CommitText("i"),
-                        ),
+                    bottom = KeyC(KeyAction.CommitText("p")),
+                    left = KeyC(KeyAction.CommitText("i")),
                 ),
                 EMOJI_KEY_ITEM,
             ),
@@ -110,18 +89,9 @@ val KB_EN_QWERTYFOUR_COMPOSE_MAIN =
                             size = FontSizeVariant.LARGE,
                         ),
                     swipeType = SwipeNWay.FOUR_WAY_CROSS,
-                    top =
-                        KeyC(
-                            KeyAction.CommitText("d"),
-                        ),
-                    right =
-                        KeyC(
-                            KeyAction.CommitText("s"),
-                        ),
-                    bottom =
-                        KeyC(
-                            KeyAction.CommitText("f"),
-                        ),
+                    top = KeyC(KeyAction.CommitText("d")),
+                    right = KeyC(KeyAction.CommitText("s")),
+                    bottom = KeyC(KeyAction.CommitText("f")),
                     left =
                         KeyC(
                             KeyAction.CommitText(";"),
@@ -146,14 +116,8 @@ val KB_EN_QWERTYFOUR_COMPOSE_MAIN =
                             action = KeyAction.ComposeLastKey("'"),
                             color = ColorVariant.MUTED,
                         ),
-                    right =
-                        KeyC(
-                            KeyAction.CommitText("j"),
-                        ),
-                    left =
-                        KeyC(
-                            KeyAction.CommitText("g"),
-                        ),
+                    right = KeyC(KeyAction.CommitText("j")),
+                    left = KeyC(KeyAction.CommitText("g")),
                     bottomLeft =
                         KeyC(
                             display = KeyDisplay.TextDisplay("`"),
@@ -186,10 +150,7 @@ val KB_EN_QWERTYFOUR_COMPOSE_MAIN =
                             KeyAction.CommitText("/"),
                             color = ColorVariant.MUTED,
                         ),
-                    left =
-                        KeyC(
-                            KeyAction.CommitText("k"),
-                        ),
+                    left = KeyC(KeyAction.CommitText("k")),
                     bottom =
                         KeyC(
                             KeyAction.ToggleShiftMode(false),
@@ -206,19 +167,13 @@ val KB_EN_QWERTYFOUR_COMPOSE_MAIN =
                             size = FontSizeVariant.LARGE,
                         ),
                     swipeType = SwipeNWay.FOUR_WAY_CROSS,
-                    top =
-                        KeyC(
-                            KeyAction.CommitText("z"),
-                        ),
+                    top = KeyC(KeyAction.CommitText("z")),
                     left =
                         KeyC(
                             KeyAction.CommitText("*"),
                             color = ColorVariant.MUTED,
                         ),
-                    right =
-                        KeyC(
-                            KeyAction.CommitText("x"),
-                        ),
+                    right = KeyC(KeyAction.CommitText("x")),
                     bottom =
                         KeyC(
                             KeyAction.CommitText("@"),
@@ -268,10 +223,7 @@ val KB_EN_QWERTYFOUR_COMPOSE_MAIN =
                             size = FontSizeVariant.LARGE,
                         ),
                     swipeType = SwipeNWay.FOUR_WAY_CROSS,
-                    top =
-                        KeyC(
-                            KeyAction.CommitText("m"),
-                        ),
+                    top = KeyC(KeyAction.CommitText("m")),
                     right =
                         KeyC(
                             KeyAction.CommitText("?"),
@@ -282,10 +234,7 @@ val KB_EN_QWERTYFOUR_COMPOSE_MAIN =
                             KeyAction.CommitText("!"),
                             color = ColorVariant.MUTED,
                         ),
-                    left =
-                        KeyC(
-                            KeyAction.CommitText("b"),
-                        ),
+                    left = KeyC(KeyAction.CommitText("b")),
                 ),
                 BACKSPACE_KEY_ITEM,
             ),
@@ -312,14 +261,8 @@ val KB_EN_QWERTYFOUR_COMPOSE_SHIFTED =
                             KeyAction.CommitText("\""),
                             color = ColorVariant.MUTED,
                         ),
-                    right =
-                        KeyC(
-                            KeyAction.CommitText("W"),
-                        ),
-                    bottom =
-                        KeyC(
-                            KeyAction.CommitText("Q"),
-                        ),
+                    right = KeyC(KeyAction.CommitText("W")),
+                    bottom = KeyC(KeyAction.CommitText("Q")),
                     left =
                         KeyC(
                             KeyAction.CommitText(":"),
@@ -338,18 +281,9 @@ val KB_EN_QWERTYFOUR_COMPOSE_SHIFTED =
                             KeyAction.CommitText("'"),
                             color = ColorVariant.MUTED,
                         ),
-                    right =
-                        KeyC(
-                            KeyAction.CommitText("U"),
-                        ),
-                    bottom =
-                        KeyC(
-                            KeyAction.CommitText("Y"),
-                        ),
-                    left =
-                        KeyC(
-                            KeyAction.CommitText("R"),
-                        ),
+                    right = KeyC(KeyAction.CommitText("U")),
+                    bottom = KeyC(KeyAction.CommitText("Y")),
+                    left = KeyC(KeyAction.CommitText("R")),
                 ),
                 KeyItemC(
                     center =
@@ -368,14 +302,8 @@ val KB_EN_QWERTYFOUR_COMPOSE_SHIFTED =
                             KeyAction.CommitText(","),
                             color = ColorVariant.MUTED,
                         ),
-                    bottom =
-                        KeyC(
-                            KeyAction.CommitText("P"),
-                        ),
-                    left =
-                        KeyC(
-                            KeyAction.CommitText("I"),
-                        ),
+                    bottom = KeyC(KeyAction.CommitText("P")),
+                    left = KeyC(KeyAction.CommitText("I")),
                 ),
                 EMOJI_KEY_ITEM,
             ),
@@ -387,18 +315,9 @@ val KB_EN_QWERTYFOUR_COMPOSE_SHIFTED =
                             size = FontSizeVariant.LARGE,
                         ),
                     swipeType = SwipeNWay.FOUR_WAY_CROSS,
-                    top =
-                        KeyC(
-                            KeyAction.CommitText("D"),
-                        ),
-                    right =
-                        KeyC(
-                            KeyAction.CommitText("S"),
-                        ),
-                    bottom =
-                        KeyC(
-                            KeyAction.CommitText("F"),
-                        ),
+                    top = KeyC(KeyAction.CommitText("D")),
+                    right = KeyC(KeyAction.CommitText("S")),
+                    bottom = KeyC(KeyAction.CommitText("F")),
                     left =
                         KeyC(
                             KeyAction.CommitText(";"),
@@ -423,14 +342,8 @@ val KB_EN_QWERTYFOUR_COMPOSE_SHIFTED =
                             action = KeyAction.ComposeLastKey("'"),
                             color = ColorVariant.MUTED,
                         ),
-                    right =
-                        KeyC(
-                            KeyAction.CommitText("J"),
-                        ),
-                    left =
-                        KeyC(
-                            KeyAction.CommitText("G"),
-                        ),
+                    right = KeyC(KeyAction.CommitText("J")),
+                    left = KeyC(KeyAction.CommitText("G")),
                     bottomLeft =
                         KeyC(
                             display = KeyDisplay.TextDisplay("`"),
@@ -471,10 +384,7 @@ val KB_EN_QWERTYFOUR_COMPOSE_SHIFTED =
                             swipeReturnAction = KeyAction.ToggleCurrentWordCapitalization(false),
                             color = ColorVariant.MUTED,
                         ),
-                    left =
-                        KeyC(
-                            KeyAction.CommitText("K"),
-                        ),
+                    left = KeyC(KeyAction.CommitText("K")),
                 ),
                 NUMERIC_KEY_ITEM,
             ),
@@ -486,19 +396,13 @@ val KB_EN_QWERTYFOUR_COMPOSE_SHIFTED =
                             size = FontSizeVariant.LARGE,
                         ),
                     swipeType = SwipeNWay.FOUR_WAY_CROSS,
-                    top =
-                        KeyC(
-                            KeyAction.CommitText("Z"),
-                        ),
+                    top = KeyC(KeyAction.CommitText("Z")),
                     left =
                         KeyC(
                             KeyAction.CommitText("*"),
                             color = ColorVariant.MUTED,
                         ),
-                    right =
-                        KeyC(
-                            KeyAction.CommitText("X"),
-                        ),
+                    right = KeyC(KeyAction.CommitText("X")),
                     bottom =
                         KeyC(
                             KeyAction.CommitText("@"),
@@ -548,10 +452,7 @@ val KB_EN_QWERTYFOUR_COMPOSE_SHIFTED =
                             size = FontSizeVariant.LARGE,
                         ),
                     swipeType = SwipeNWay.FOUR_WAY_CROSS,
-                    top =
-                        KeyC(
-                            KeyAction.CommitText("M"),
-                        ),
+                    top = KeyC(KeyAction.CommitText("M")),
                     right =
                         KeyC(
                             KeyAction.CommitText("?"),
@@ -562,10 +463,7 @@ val KB_EN_QWERTYFOUR_COMPOSE_SHIFTED =
                             KeyAction.CommitText("!"),
                             color = ColorVariant.MUTED,
                         ),
-                    left =
-                        KeyC(
-                            KeyAction.CommitText("B"),
-                        ),
+                    left = KeyC(KeyAction.CommitText("B")),
                 ),
                 BACKSPACE_KEY_ITEM,
             ),

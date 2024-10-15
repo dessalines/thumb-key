@@ -30,10 +30,7 @@ val KB_EN_RSINOA_MAIN =
                             size = FontSizeVariant.LARGE,
                         ),
                     swipeType = SwipeNWay.FOUR_WAY_DIAGONAL,
-                    bottomRight =
-                        KeyC(
-                            KeyAction.CommitText("c"),
-                        ),
+                    bottomRight = KeyC(KeyAction.CommitText("c")),
                 ),
                 KeyItemC(
                     center =
@@ -42,14 +39,8 @@ val KB_EN_RSINOA_MAIN =
                             size = FontSizeVariant.LARGE,
                         ),
                     swipeType = SwipeNWay.FOUR_WAY_CROSS,
-                    bottom =
-                        KeyC(
-                            KeyAction.CommitText("k"),
-                        ),
-                    right =
-                        KeyC(
-                            KeyAction.CommitText("z"),
-                        ),
+                    bottom = KeyC(KeyAction.CommitText("k")),
+                    right = KeyC(KeyAction.CommitText("z")),
                 ),
                 KeyItemC(
                     center =
@@ -81,18 +72,9 @@ val KB_EN_RSINOA_MAIN =
                             size = FontSizeVariant.LARGE,
                         ),
                     swipeType = SwipeNWay.FOUR_WAY_CROSS,
-                    right =
-                        KeyC(
-                            KeyAction.CommitText("l"),
-                        ),
-                    bottom =
-                        KeyC(
-                            KeyAction.CommitText("v"),
-                        ),
-                    top =
-                        KeyC(
-                            KeyAction.CommitText("x"),
-                        ),
+                    right = KeyC(KeyAction.CommitText("l")),
+                    bottom = KeyC(KeyAction.CommitText("v")),
+                    top = KeyC(KeyAction.CommitText("x")),
                 ),
                 KeyItemC(
                     center =
@@ -101,22 +83,10 @@ val KB_EN_RSINOA_MAIN =
                             size = FontSizeVariant.LARGE,
                         ),
                     swipeType = SwipeNWay.FOUR_WAY_DIAGONAL,
-                    topRight =
-                        KeyC(
-                            KeyAction.CommitText("f"),
-                        ),
-                    topLeft =
-                        KeyC(
-                            KeyAction.CommitText("p"),
-                        ),
-                    bottomRight =
-                        KeyC(
-                            KeyAction.CommitText("d"),
-                        ),
-                    bottomLeft =
-                        KeyC(
-                            KeyAction.CommitText("g"),
-                        ),
+                    topRight = KeyC(KeyAction.CommitText("f")),
+                    topLeft = KeyC(KeyAction.CommitText("p")),
+                    bottomRight = KeyC(KeyAction.CommitText("d")),
+                    bottomLeft = KeyC(KeyAction.CommitText("g")),
                 ),
                 KeyItemC(
                     center =
@@ -125,14 +95,8 @@ val KB_EN_RSINOA_MAIN =
                             size = FontSizeVariant.LARGE,
                         ),
                     swipeType = SwipeNWay.FOUR_WAY_CROSS,
-                    left =
-                        KeyC(
-                            KeyAction.CommitText("u"),
-                        ),
-                    bottom =
-                        KeyC(
-                            KeyAction.CommitText("y"),
-                        ),
+                    left = KeyC(KeyAction.CommitText("u")),
+                    bottom = KeyC(KeyAction.CommitText("y")),
                 ),
                 NUMERIC_KEY_ITEM,
             ),
@@ -144,14 +108,8 @@ val KB_EN_RSINOA_MAIN =
                             size = FontSizeVariant.LARGE,
                         ),
                     swipeType = SwipeNWay.FOUR_WAY_CROSS,
-                    top =
-                        KeyC(
-                            KeyAction.CommitText("j"),
-                        ),
-                    right =
-                        KeyC(
-                            KeyAction.CommitText("m"),
-                        ),
+                    top = KeyC(KeyAction.CommitText("j")),
+                    right = KeyC(KeyAction.CommitText("m")),
                 ),
                 KeyItemC(
                     center =
@@ -160,14 +118,8 @@ val KB_EN_RSINOA_MAIN =
                             size = FontSizeVariant.LARGE,
                         ),
                     swipeType = SwipeNWay.FOUR_WAY_DIAGONAL,
-                    topRight =
-                        KeyC(
-                            KeyAction.CommitText("w"),
-                        ),
-                    topLeft =
-                        KeyC(
-                            KeyAction.CommitText("b"),
-                        ),
+                    topRight = KeyC(KeyAction.CommitText("w")),
+                    topLeft = KeyC(KeyAction.CommitText("b")),
                     bottomRight =
                         KeyC(
                             KeyAction.CommitText(","),
@@ -181,10 +133,7 @@ val KB_EN_RSINOA_MAIN =
                             size = FontSizeVariant.LARGE,
                         ),
                     swipeType = SwipeNWay.EIGHT_WAY,
-                    topRight =
-                        KeyC(
-                            KeyAction.CommitText("q"),
-                        ),
+                    topRight = KeyC(KeyAction.CommitText("q")),
                     topLeft =
                         KeyC(
                             KeyAction.CommitText("'"),
@@ -216,10 +165,7 @@ val KB_EN_RSINOA_SHIFTED =
                             size = FontSizeVariant.LARGE,
                         ),
                     swipeType = SwipeNWay.FOUR_WAY_DIAGONAL,
-                    bottomRight =
-                        KeyC(
-                            KeyAction.CommitText("C"),
-                        ),
+                    bottomRight = KeyC(KeyAction.CommitText("C")),
                 ),
                 KeyItemC(
                     center =
@@ -228,14 +174,8 @@ val KB_EN_RSINOA_SHIFTED =
                             size = FontSizeVariant.LARGE,
                         ),
                     swipeType = SwipeNWay.FOUR_WAY_CROSS,
-                    bottom =
-                        KeyC(
-                            KeyAction.CommitText("K"),
-                        ),
-                    right =
-                        KeyC(
-                            KeyAction.CommitText("Z"),
-                        ),
+                    bottom = KeyC(KeyAction.CommitText("K")),
+                    right = KeyC(KeyAction.CommitText("Z")),
                 ),
                 KeyItemC(
                     center =
@@ -270,18 +210,9 @@ val KB_EN_RSINOA_SHIFTED =
                             size = FontSizeVariant.LARGE,
                         ),
                     swipeType = SwipeNWay.FOUR_WAY_CROSS,
-                    right =
-                        KeyC(
-                            KeyAction.CommitText("L"),
-                        ),
-                    bottom =
-                        KeyC(
-                            KeyAction.CommitText("V"),
-                        ),
-                    top =
-                        KeyC(
-                            KeyAction.CommitText("X"),
-                        ),
+                    right = KeyC(KeyAction.CommitText("L")),
+                    bottom = KeyC(KeyAction.CommitText("V")),
+                    top = KeyC(KeyAction.CommitText("X")),
                 ),
                 KeyItemC(
                     center =
@@ -290,22 +221,10 @@ val KB_EN_RSINOA_SHIFTED =
                             size = FontSizeVariant.LARGE,
                         ),
                     swipeType = SwipeNWay.FOUR_WAY_DIAGONAL,
-                    topRight =
-                        KeyC(
-                            KeyAction.CommitText("F"),
-                        ),
-                    topLeft =
-                        KeyC(
-                            KeyAction.CommitText("P"),
-                        ),
-                    bottomRight =
-                        KeyC(
-                            KeyAction.CommitText("D"),
-                        ),
-                    bottomLeft =
-                        KeyC(
-                            KeyAction.CommitText("G"),
-                        ),
+                    topRight = KeyC(KeyAction.CommitText("F")),
+                    topLeft = KeyC(KeyAction.CommitText("P")),
+                    bottomRight = KeyC(KeyAction.CommitText("D")),
+                    bottomLeft = KeyC(KeyAction.CommitText("G")),
                 ),
                 KeyItemC(
                     center =
@@ -314,14 +233,8 @@ val KB_EN_RSINOA_SHIFTED =
                             size = FontSizeVariant.LARGE,
                         ),
                     swipeType = SwipeNWay.FOUR_WAY_CROSS,
-                    left =
-                        KeyC(
-                            KeyAction.CommitText("U"),
-                        ),
-                    bottom =
-                        KeyC(
-                            KeyAction.CommitText("Y"),
-                        ),
+                    left = KeyC(KeyAction.CommitText("U")),
+                    bottom = KeyC(KeyAction.CommitText("Y")),
                 ),
                 NUMERIC_KEY_ITEM,
             ),
@@ -333,14 +246,8 @@ val KB_EN_RSINOA_SHIFTED =
                             size = FontSizeVariant.LARGE,
                         ),
                     swipeType = SwipeNWay.FOUR_WAY_CROSS,
-                    top =
-                        KeyC(
-                            KeyAction.CommitText("J"),
-                        ),
-                    right =
-                        KeyC(
-                            KeyAction.CommitText("M"),
-                        ),
+                    top = KeyC(KeyAction.CommitText("J")),
+                    right = KeyC(KeyAction.CommitText("M")),
                 ),
                 KeyItemC(
                     center =
@@ -349,14 +256,8 @@ val KB_EN_RSINOA_SHIFTED =
                             size = FontSizeVariant.LARGE,
                         ),
                     swipeType = SwipeNWay.FOUR_WAY_DIAGONAL,
-                    topRight =
-                        KeyC(
-                            KeyAction.CommitText("W"),
-                        ),
-                    topLeft =
-                        KeyC(
-                            KeyAction.CommitText("B"),
-                        ),
+                    topRight = KeyC(KeyAction.CommitText("W")),
+                    topLeft = KeyC(KeyAction.CommitText("B")),
                     bottomRight =
                         KeyC(
                             KeyAction.CommitText(","),
@@ -370,10 +271,7 @@ val KB_EN_RSINOA_SHIFTED =
                             size = FontSizeVariant.LARGE,
                         ),
                     swipeType = SwipeNWay.EIGHT_WAY,
-                    topRight =
-                        KeyC(
-                            KeyAction.CommitText("Q"),
-                        ),
+                    topRight = KeyC(KeyAction.CommitText("Q")),
                     topLeft =
                         KeyC(
                             KeyAction.CommitText("'"),

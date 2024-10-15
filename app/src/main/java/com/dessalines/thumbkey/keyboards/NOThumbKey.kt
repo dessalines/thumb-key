@@ -27,10 +27,7 @@ val KB_NO_THUMBKEY_MAIN =
                             size = FontSizeVariant.LARGE,
                         ),
                     swipeType = SwipeNWay.FOUR_WAY_DIAGONAL,
-                    bottomRight =
-                        KeyC(
-                            KeyAction.CommitText("p"),
-                        ),
+                    bottomRight = KeyC(KeyAction.CommitText("p")),
                 ),
                 KeyItemC(
                     center =
@@ -38,18 +35,9 @@ val KB_NO_THUMBKEY_MAIN =
                             KeyAction.CommitText("r"),
                             size = FontSizeVariant.LARGE,
                         ),
-                    bottom =
-                        KeyC(
-                            KeyAction.CommitText("h"),
-                        ),
-                    left =
-                        KeyC(
-                            KeyAction.CommitText("z"),
-                        ),
-                    right =
-                        KeyC(
-                            KeyAction.CommitText("q"),
-                        ),
+                    bottom = KeyC(KeyAction.CommitText("h")),
+                    left = KeyC(KeyAction.CommitText("z")),
+                    right = KeyC(KeyAction.CommitText("q")),
                 ),
                 KeyItemC(
                     center =
@@ -58,10 +46,7 @@ val KB_NO_THUMBKEY_MAIN =
                             size = FontSizeVariant.LARGE,
                         ),
                     swipeType = SwipeNWay.FOUR_WAY_DIAGONAL,
-                    bottomLeft =
-                        KeyC(
-                            KeyAction.CommitText("u"),
-                        ),
+                    bottomLeft = KeyC(KeyAction.CommitText("u")),
                 ),
                 EMOJI_KEY_ITEM,
             ),
@@ -73,10 +58,7 @@ val KB_NO_THUMBKEY_MAIN =
                             size = FontSizeVariant.LARGE,
                         ),
                     swipeType = SwipeNWay.TWO_WAY_HORIZONTAL,
-                    right =
-                        KeyC(
-                            KeyAction.CommitText("v"),
-                        ),
+                    right = KeyC(KeyAction.CommitText("v")),
                 ),
                 KeyItemC(
                     center =
@@ -84,38 +66,14 @@ val KB_NO_THUMBKEY_MAIN =
                             KeyAction.CommitText("d"),
                             size = FontSizeVariant.LARGE,
                         ),
-                    topLeft =
-                        KeyC(
-                            KeyAction.CommitText("j"),
-                        ),
-                    top =
-                        KeyC(
-                            KeyAction.CommitText("y"),
-                        ),
-                    topRight =
-                        KeyC(
-                            KeyAction.CommitText("ø"),
-                        ),
-                    right =
-                        KeyC(
-                            KeyAction.CommitText("å"),
-                        ),
-                    bottomRight =
-                        KeyC(
-                            KeyAction.CommitText("æ"),
-                        ),
-                    bottom =
-                        KeyC(
-                            KeyAction.CommitText("f"),
-                        ),
-                    bottomLeft =
-                        KeyC(
-                            KeyAction.CommitText("b"),
-                        ),
-                    left =
-                        KeyC(
-                            KeyAction.CommitText("c"),
-                        ),
+                    topLeft = KeyC(KeyAction.CommitText("j")),
+                    top = KeyC(KeyAction.CommitText("y")),
+                    topRight = KeyC(KeyAction.CommitText("ø")),
+                    right = KeyC(KeyAction.CommitText("å")),
+                    bottomRight = KeyC(KeyAction.CommitText("æ")),
+                    bottom = KeyC(KeyAction.CommitText("f")),
+                    bottomLeft = KeyC(KeyAction.CommitText("b")),
+                    left = KeyC(KeyAction.CommitText("c")),
                 ),
                 KeyItemC(
                     center =
@@ -124,10 +82,7 @@ val KB_NO_THUMBKEY_MAIN =
                             size = FontSizeVariant.LARGE,
                         ),
                     swipeType = SwipeNWay.FOUR_WAY_CROSS,
-                    left =
-                        KeyC(
-                            KeyAction.CommitText("g"),
-                        ),
+                    left = KeyC(KeyAction.CommitText("g")),
                     top =
                         KeyC(
                             display = KeyDisplay.IconDisplay(Icons.Outlined.ArrowDropUp),
@@ -151,10 +106,7 @@ val KB_NO_THUMBKEY_MAIN =
                             size = FontSizeVariant.LARGE,
                         ),
                     swipeType = SwipeNWay.FOUR_WAY_DIAGONAL,
-                    topRight =
-                        KeyC(
-                            KeyAction.CommitText("m"),
-                        ),
+                    topRight = KeyC(KeyAction.CommitText("m")),
                 ),
                 KeyItemC(
                     center =
@@ -162,23 +114,14 @@ val KB_NO_THUMBKEY_MAIN =
                             KeyAction.CommitText("i"),
                             size = FontSizeVariant.LARGE,
                         ),
-                    top =
-                        KeyC(
-                            KeyAction.CommitText("k"),
-                        ),
+                    top = KeyC(KeyAction.CommitText("k")),
                     topRight =
                         KeyC(
                             KeyAction.CommitText("'"),
                             color = ColorVariant.MUTED,
                         ),
-                    right =
-                        KeyC(
-                            KeyAction.CommitText("x"),
-                        ),
-                    left =
-                        KeyC(
-                            KeyAction.CommitText("w"),
-                        ),
+                    right = KeyC(KeyAction.CommitText("x")),
+                    left = KeyC(KeyAction.CommitText("w")),
                     bottomRight =
                         KeyC(
                             KeyAction.CommitText("-"),
@@ -202,10 +145,7 @@ val KB_NO_THUMBKEY_MAIN =
                             size = FontSizeVariant.LARGE,
                         ),
                     swipeType = SwipeNWay.FOUR_WAY_DIAGONAL,
-                    topLeft =
-                        KeyC(
-                            KeyAction.CommitText("l"),
-                        ),
+                    topLeft = KeyC(KeyAction.CommitText("l")),
                 ),
                 BACKSPACE_KEY_ITEM,
             ),
@@ -227,10 +167,7 @@ val KB_NO_THUMBKEY_SHIFTED =
                             size = FontSizeVariant.LARGE,
                         ),
                     swipeType = SwipeNWay.FOUR_WAY_DIAGONAL,
-                    bottomRight =
-                        KeyC(
-                            KeyAction.CommitText("P"),
-                        ),
+                    bottomRight = KeyC(KeyAction.CommitText("P")),
                 ),
                 KeyItemC(
                     center =
@@ -238,18 +175,9 @@ val KB_NO_THUMBKEY_SHIFTED =
                             KeyAction.CommitText("R"),
                             size = FontSizeVariant.LARGE,
                         ),
-                    bottom =
-                        KeyC(
-                            KeyAction.CommitText("H"),
-                        ),
-                    left =
-                        KeyC(
-                            KeyAction.CommitText("Z"),
-                        ),
-                    right =
-                        KeyC(
-                            KeyAction.CommitText("Q"),
-                        ),
+                    bottom = KeyC(KeyAction.CommitText("H")),
+                    left = KeyC(KeyAction.CommitText("Z")),
+                    right = KeyC(KeyAction.CommitText("Q")),
                 ),
                 KeyItemC(
                     center =
@@ -258,10 +186,7 @@ val KB_NO_THUMBKEY_SHIFTED =
                             size = FontSizeVariant.LARGE,
                         ),
                     swipeType = SwipeNWay.FOUR_WAY_DIAGONAL,
-                    bottomLeft =
-                        KeyC(
-                            KeyAction.CommitText("U"),
-                        ),
+                    bottomLeft = KeyC(KeyAction.CommitText("U")),
                 ),
                 EMOJI_KEY_ITEM,
             ),
@@ -273,10 +198,7 @@ val KB_NO_THUMBKEY_SHIFTED =
                             size = FontSizeVariant.LARGE,
                         ),
                     swipeType = SwipeNWay.TWO_WAY_HORIZONTAL,
-                    right =
-                        KeyC(
-                            KeyAction.CommitText("V"),
-                        ),
+                    right = KeyC(KeyAction.CommitText("V")),
                 ),
                 KeyItemC(
                     center =
@@ -284,38 +206,14 @@ val KB_NO_THUMBKEY_SHIFTED =
                             KeyAction.CommitText("D"),
                             size = FontSizeVariant.LARGE,
                         ),
-                    topLeft =
-                        KeyC(
-                            KeyAction.CommitText("J"),
-                        ),
-                    top =
-                        KeyC(
-                            KeyAction.CommitText("Y"),
-                        ),
-                    topRight =
-                        KeyC(
-                            KeyAction.CommitText("Ø"),
-                        ),
-                    right =
-                        KeyC(
-                            KeyAction.CommitText("Å"),
-                        ),
-                    bottomRight =
-                        KeyC(
-                            KeyAction.CommitText("Æ"),
-                        ),
-                    bottom =
-                        KeyC(
-                            KeyAction.CommitText("F"),
-                        ),
-                    bottomLeft =
-                        KeyC(
-                            KeyAction.CommitText("B"),
-                        ),
-                    left =
-                        KeyC(
-                            KeyAction.CommitText("C"),
-                        ),
+                    topLeft = KeyC(KeyAction.CommitText("J")),
+                    top = KeyC(KeyAction.CommitText("Y")),
+                    topRight = KeyC(KeyAction.CommitText("Ø")),
+                    right = KeyC(KeyAction.CommitText("Å")),
+                    bottomRight = KeyC(KeyAction.CommitText("Æ")),
+                    bottom = KeyC(KeyAction.CommitText("F")),
+                    bottomLeft = KeyC(KeyAction.CommitText("B")),
+                    left = KeyC(KeyAction.CommitText("C")),
                 ),
                 KeyItemC(
                     center =
@@ -324,10 +222,7 @@ val KB_NO_THUMBKEY_SHIFTED =
                             size = FontSizeVariant.LARGE,
                         ),
                     swipeType = SwipeNWay.FOUR_WAY_CROSS,
-                    left =
-                        KeyC(
-                            KeyAction.CommitText("G"),
-                        ),
+                    left = KeyC(KeyAction.CommitText("G")),
                     bottom =
                         KeyC(
                             display = KeyDisplay.IconDisplay(Icons.Outlined.ArrowDropDown),
@@ -354,10 +249,7 @@ val KB_NO_THUMBKEY_SHIFTED =
                             size = FontSizeVariant.LARGE,
                         ),
                     swipeType = SwipeNWay.FOUR_WAY_DIAGONAL,
-                    topRight =
-                        KeyC(
-                            KeyAction.CommitText("M"),
-                        ),
+                    topRight = KeyC(KeyAction.CommitText("M")),
                 ),
                 KeyItemC(
                     center =
@@ -365,23 +257,14 @@ val KB_NO_THUMBKEY_SHIFTED =
                             KeyAction.CommitText("I"),
                             size = FontSizeVariant.LARGE,
                         ),
-                    top =
-                        KeyC(
-                            KeyAction.CommitText("K"),
-                        ),
+                    top = KeyC(KeyAction.CommitText("K")),
                     topRight =
                         KeyC(
                             KeyAction.CommitText("'"),
                             color = ColorVariant.MUTED,
                         ),
-                    right =
-                        KeyC(
-                            KeyAction.CommitText("X"),
-                        ),
-                    left =
-                        KeyC(
-                            KeyAction.CommitText("W"),
-                        ),
+                    right = KeyC(KeyAction.CommitText("X")),
+                    left = KeyC(KeyAction.CommitText("W")),
                     bottomRight =
                         KeyC(
                             KeyAction.CommitText("-"),
@@ -405,10 +288,7 @@ val KB_NO_THUMBKEY_SHIFTED =
                             size = FontSizeVariant.LARGE,
                         ),
                     swipeType = SwipeNWay.FOUR_WAY_DIAGONAL,
-                    topLeft =
-                        KeyC(
-                            KeyAction.CommitText("L"),
-                        ),
+                    topLeft = KeyC(KeyAction.CommitText("L")),
                 ),
                 BACKSPACE_KEY_ITEM,
             ),

@@ -29,10 +29,7 @@ val KB_EN_SYMBOLS_TWO_HANDS_MAIN =
                             size = FontSizeVariant.LARGE,
                         ),
                     swipeType = SwipeNWay.FOUR_WAY_DIAGONAL,
-                    bottomRight =
-                        KeyC(
-                            KeyAction.CommitText("w"),
-                        ),
+                    bottomRight = KeyC(KeyAction.CommitText("w")),
                     bottomLeft =
                         KeyC(
                             KeyAction.CommitText("$"),
@@ -45,10 +42,7 @@ val KB_EN_SYMBOLS_TWO_HANDS_MAIN =
                             KeyAction.CommitText("r"),
                             size = FontSizeVariant.LARGE,
                         ),
-                    bottom =
-                        KeyC(
-                            KeyAction.CommitText("g"),
-                        ),
+                    bottom = KeyC(KeyAction.CommitText("g")),
                     topLeft =
                         KeyC(
                             KeyAction.CommitText("`"),
@@ -91,10 +85,7 @@ val KB_EN_SYMBOLS_TWO_HANDS_MAIN =
                             KeyAction.CommitText("o"),
                             size = FontSizeVariant.LARGE,
                         ),
-                    bottomLeft =
-                        KeyC(
-                            KeyAction.CommitText("u"),
-                        ),
+                    bottomLeft = KeyC(KeyAction.CommitText("u")),
                     left =
                         KeyC(
                             KeyAction.CommitText("?"),
@@ -119,10 +110,7 @@ val KB_EN_SYMBOLS_TWO_HANDS_MAIN =
                             size = FontSizeVariant.LARGE,
                         ),
                     swipeType = SwipeNWay.FOUR_WAY_DIAGONAL,
-                    bottomRight =
-                        KeyC(
-                            KeyAction.CommitText("w"),
-                        ),
+                    bottomRight = KeyC(KeyAction.CommitText("w")),
                     bottomLeft =
                         KeyC(
                             KeyAction.CommitText("$"),
@@ -135,10 +123,7 @@ val KB_EN_SYMBOLS_TWO_HANDS_MAIN =
                             KeyAction.CommitText("r"),
                             size = FontSizeVariant.LARGE,
                         ),
-                    bottom =
-                        KeyC(
-                            KeyAction.CommitText("g"),
-                        ),
+                    bottom = KeyC(KeyAction.CommitText("g")),
                     topLeft =
                         KeyC(
                             KeyAction.CommitText("`"),
@@ -181,10 +166,7 @@ val KB_EN_SYMBOLS_TWO_HANDS_MAIN =
                             KeyAction.CommitText("o"),
                             size = FontSizeVariant.LARGE,
                         ),
-                    bottomLeft =
-                        KeyC(
-                            KeyAction.CommitText("u"),
-                        ),
+                    bottomLeft = KeyC(KeyAction.CommitText("u")),
                     left =
                         KeyC(
                             KeyAction.CommitText("?"),
@@ -209,10 +191,7 @@ val KB_EN_SYMBOLS_TWO_HANDS_MAIN =
                             KeyAction.CommitText("n"),
                             size = FontSizeVariant.LARGE,
                         ),
-                    right =
-                        KeyC(
-                            KeyAction.CommitText("m"),
-                        ),
+                    right = KeyC(KeyAction.CommitText("m")),
                     topLeft =
                         KeyC(
                             KeyAction.CommitText("{"),
@@ -245,38 +224,14 @@ val KB_EN_SYMBOLS_TWO_HANDS_MAIN =
                             KeyAction.CommitText("h"),
                             size = FontSizeVariant.LARGE,
                         ),
-                    topLeft =
-                        KeyC(
-                            KeyAction.CommitText("j"),
-                        ),
-                    top =
-                        KeyC(
-                            KeyAction.CommitText("q"),
-                        ),
-                    topRight =
-                        KeyC(
-                            KeyAction.CommitText("b"),
-                        ),
-                    right =
-                        KeyC(
-                            KeyAction.CommitText("p"),
-                        ),
-                    bottomRight =
-                        KeyC(
-                            KeyAction.CommitText("y"),
-                        ),
-                    bottom =
-                        KeyC(
-                            KeyAction.CommitText("x"),
-                        ),
-                    bottomLeft =
-                        KeyC(
-                            KeyAction.CommitText("v"),
-                        ),
-                    left =
-                        KeyC(
-                            KeyAction.CommitText("k"),
-                        ),
+                    topLeft = KeyC(KeyAction.CommitText("j")),
+                    top = KeyC(KeyAction.CommitText("q")),
+                    topRight = KeyC(KeyAction.CommitText("b")),
+                    right = KeyC(KeyAction.CommitText("p")),
+                    bottomRight = KeyC(KeyAction.CommitText("y")),
+                    bottom = KeyC(KeyAction.CommitText("x")),
+                    bottomLeft = KeyC(KeyAction.CommitText("v")),
+                    left = KeyC(KeyAction.CommitText("k")),
                 ),
                 KeyItemC(
                     center =
@@ -284,10 +239,7 @@ val KB_EN_SYMBOLS_TWO_HANDS_MAIN =
                             KeyAction.CommitText("a"),
                             size = FontSizeVariant.LARGE,
                         ),
-                    left =
-                        KeyC(
-                            KeyAction.CommitText("l"),
-                        ),
+                    left = KeyC(KeyAction.CommitText("l")),
                     top =
                         KeyC(
                             display = KeyDisplay.IconDisplay(Icons.Outlined.ArrowDropUp),
@@ -333,10 +285,7 @@ val KB_EN_SYMBOLS_TWO_HANDS_MAIN =
                             KeyAction.CommitText("n"),
                             size = FontSizeVariant.LARGE,
                         ),
-                    right =
-                        KeyC(
-                            KeyAction.CommitText("m"),
-                        ),
+                    right = KeyC(KeyAction.CommitText("m")),
                     topLeft =
                         KeyC(
                             KeyAction.CommitText("{"),
@@ -369,38 +318,14 @@ val KB_EN_SYMBOLS_TWO_HANDS_MAIN =
                             KeyAction.CommitText("h"),
                             size = FontSizeVariant.LARGE,
                         ),
-                    topLeft =
-                        KeyC(
-                            KeyAction.CommitText("j"),
-                        ),
-                    top =
-                        KeyC(
-                            KeyAction.CommitText("q"),
-                        ),
-                    topRight =
-                        KeyC(
-                            KeyAction.CommitText("b"),
-                        ),
-                    right =
-                        KeyC(
-                            KeyAction.CommitText("p"),
-                        ),
-                    bottomRight =
-                        KeyC(
-                            KeyAction.CommitText("y"),
-                        ),
-                    bottom =
-                        KeyC(
-                            KeyAction.CommitText("x"),
-                        ),
-                    bottomLeft =
-                        KeyC(
-                            KeyAction.CommitText("v"),
-                        ),
-                    left =
-                        KeyC(
-                            KeyAction.CommitText("k"),
-                        ),
+                    topLeft = KeyC(KeyAction.CommitText("j")),
+                    top = KeyC(KeyAction.CommitText("q")),
+                    topRight = KeyC(KeyAction.CommitText("b")),
+                    right = KeyC(KeyAction.CommitText("p")),
+                    bottomRight = KeyC(KeyAction.CommitText("y")),
+                    bottom = KeyC(KeyAction.CommitText("x")),
+                    bottomLeft = KeyC(KeyAction.CommitText("v")),
+                    left = KeyC(KeyAction.CommitText("k")),
                 ),
                 KeyItemC(
                     center =
@@ -408,10 +333,7 @@ val KB_EN_SYMBOLS_TWO_HANDS_MAIN =
                             KeyAction.CommitText("a"),
                             size = FontSizeVariant.LARGE,
                         ),
-                    left =
-                        KeyC(
-                            KeyAction.CommitText("l"),
-                        ),
+                    left = KeyC(KeyAction.CommitText("l")),
                     top =
                         KeyC(
                             display = KeyDisplay.IconDisplay(Icons.Outlined.ArrowDropUp),
@@ -459,10 +381,7 @@ val KB_EN_SYMBOLS_TWO_HANDS_MAIN =
                             size = FontSizeVariant.LARGE,
                         ),
                     swipeType = SwipeNWay.FOUR_WAY_DIAGONAL,
-                    topRight =
-                        KeyC(
-                            KeyAction.CommitText("c"),
-                        ),
+                    topRight = KeyC(KeyAction.CommitText("c")),
                     topLeft =
                         KeyC(
                             KeyAction.CommitText("~"),
@@ -485,14 +404,8 @@ val KB_EN_SYMBOLS_TWO_HANDS_MAIN =
                             KeyAction.CommitText("i"),
                             size = FontSizeVariant.LARGE,
                         ),
-                    top =
-                        KeyC(
-                            KeyAction.CommitText("f"),
-                        ),
-                    right =
-                        KeyC(
-                            KeyAction.CommitText("z"),
-                        ),
+                    top = KeyC(KeyAction.CommitText("f")),
+                    right = KeyC(KeyAction.CommitText("z")),
                     topLeft =
                         KeyC(
                             KeyAction.CommitText("\""),
@@ -530,10 +443,7 @@ val KB_EN_SYMBOLS_TWO_HANDS_MAIN =
                             KeyAction.CommitText("e"),
                             size = FontSizeVariant.LARGE,
                         ),
-                    topLeft =
-                        KeyC(
-                            KeyAction.CommitText("d"),
-                        ),
+                    topLeft = KeyC(KeyAction.CommitText("d")),
                     top =
                         KeyC(
                             KeyAction.CommitText("&"),
@@ -568,10 +478,7 @@ val KB_EN_SYMBOLS_TWO_HANDS_MAIN =
                             size = FontSizeVariant.LARGE,
                         ),
                     swipeType = SwipeNWay.FOUR_WAY_DIAGONAL,
-                    topRight =
-                        KeyC(
-                            KeyAction.CommitText("c"),
-                        ),
+                    topRight = KeyC(KeyAction.CommitText("c")),
                     topLeft =
                         KeyC(
                             KeyAction.CommitText("~"),
@@ -594,14 +501,8 @@ val KB_EN_SYMBOLS_TWO_HANDS_MAIN =
                             KeyAction.CommitText("i"),
                             size = FontSizeVariant.LARGE,
                         ),
-                    top =
-                        KeyC(
-                            KeyAction.CommitText("f"),
-                        ),
-                    right =
-                        KeyC(
-                            KeyAction.CommitText("z"),
-                        ),
+                    top = KeyC(KeyAction.CommitText("f")),
+                    right = KeyC(KeyAction.CommitText("z")),
                     topLeft =
                         KeyC(
                             KeyAction.CommitText("\""),
@@ -639,10 +540,7 @@ val KB_EN_SYMBOLS_TWO_HANDS_MAIN =
                             KeyAction.CommitText("e"),
                             size = FontSizeVariant.LARGE,
                         ),
-                    topLeft =
-                        KeyC(
-                            KeyAction.CommitText("d"),
-                        ),
+                    topLeft = KeyC(KeyAction.CommitText("d")),
                     top =
                         KeyC(
                             KeyAction.CommitText("&"),
@@ -691,10 +589,7 @@ val KB_EN_SYMBOLS_TWO_HANDS_SHIFTED =
                             size = FontSizeVariant.LARGE,
                         ),
                     swipeType = SwipeNWay.FOUR_WAY_DIAGONAL,
-                    bottomRight =
-                        KeyC(
-                            KeyAction.CommitText("W"),
-                        ),
+                    bottomRight = KeyC(KeyAction.CommitText("W")),
                     bottomLeft =
                         KeyC(
                             KeyAction.CommitText("$"),
@@ -707,10 +602,7 @@ val KB_EN_SYMBOLS_TWO_HANDS_SHIFTED =
                             KeyAction.CommitText("R"),
                             size = FontSizeVariant.LARGE,
                         ),
-                    bottom =
-                        KeyC(
-                            KeyAction.CommitText("G"),
-                        ),
+                    bottom = KeyC(KeyAction.CommitText("G")),
                     topLeft =
                         KeyC(
                             KeyAction.CommitText("`"),
@@ -753,10 +645,7 @@ val KB_EN_SYMBOLS_TWO_HANDS_SHIFTED =
                             KeyAction.CommitText("O"),
                             size = FontSizeVariant.LARGE,
                         ),
-                    bottomLeft =
-                        KeyC(
-                            KeyAction.CommitText("U"),
-                        ),
+                    bottomLeft = KeyC(KeyAction.CommitText("U")),
                     left =
                         KeyC(
                             KeyAction.CommitText("?"),
@@ -781,10 +670,7 @@ val KB_EN_SYMBOLS_TWO_HANDS_SHIFTED =
                             size = FontSizeVariant.LARGE,
                         ),
                     swipeType = SwipeNWay.FOUR_WAY_DIAGONAL,
-                    bottomRight =
-                        KeyC(
-                            KeyAction.CommitText("W"),
-                        ),
+                    bottomRight = KeyC(KeyAction.CommitText("W")),
                     bottomLeft =
                         KeyC(
                             KeyAction.CommitText("$"),
@@ -797,10 +683,7 @@ val KB_EN_SYMBOLS_TWO_HANDS_SHIFTED =
                             KeyAction.CommitText("R"),
                             size = FontSizeVariant.LARGE,
                         ),
-                    bottom =
-                        KeyC(
-                            KeyAction.CommitText("G"),
-                        ),
+                    bottom = KeyC(KeyAction.CommitText("G")),
                     topLeft =
                         KeyC(
                             KeyAction.CommitText("`"),
@@ -843,10 +726,7 @@ val KB_EN_SYMBOLS_TWO_HANDS_SHIFTED =
                             KeyAction.CommitText("O"),
                             size = FontSizeVariant.LARGE,
                         ),
-                    bottomLeft =
-                        KeyC(
-                            KeyAction.CommitText("U"),
-                        ),
+                    bottomLeft = KeyC(KeyAction.CommitText("U")),
                     left =
                         KeyC(
                             KeyAction.CommitText("?"),
@@ -871,10 +751,7 @@ val KB_EN_SYMBOLS_TWO_HANDS_SHIFTED =
                             KeyAction.CommitText("N"),
                             size = FontSizeVariant.LARGE,
                         ),
-                    right =
-                        KeyC(
-                            KeyAction.CommitText("M"),
-                        ),
+                    right = KeyC(KeyAction.CommitText("M")),
                     topLeft =
                         KeyC(
                             KeyAction.CommitText("{"),
@@ -907,38 +784,14 @@ val KB_EN_SYMBOLS_TWO_HANDS_SHIFTED =
                             KeyAction.CommitText("H"),
                             size = FontSizeVariant.LARGE,
                         ),
-                    topLeft =
-                        KeyC(
-                            KeyAction.CommitText("J"),
-                        ),
-                    top =
-                        KeyC(
-                            KeyAction.CommitText("Q"),
-                        ),
-                    topRight =
-                        KeyC(
-                            KeyAction.CommitText("B"),
-                        ),
-                    right =
-                        KeyC(
-                            KeyAction.CommitText("P"),
-                        ),
-                    bottomRight =
-                        KeyC(
-                            KeyAction.CommitText("Y"),
-                        ),
-                    bottom =
-                        KeyC(
-                            KeyAction.CommitText("X"),
-                        ),
-                    bottomLeft =
-                        KeyC(
-                            KeyAction.CommitText("V"),
-                        ),
-                    left =
-                        KeyC(
-                            KeyAction.CommitText("K"),
-                        ),
+                    topLeft = KeyC(KeyAction.CommitText("J")),
+                    top = KeyC(KeyAction.CommitText("Q")),
+                    topRight = KeyC(KeyAction.CommitText("B")),
+                    right = KeyC(KeyAction.CommitText("P")),
+                    bottomRight = KeyC(KeyAction.CommitText("Y")),
+                    bottom = KeyC(KeyAction.CommitText("X")),
+                    bottomLeft = KeyC(KeyAction.CommitText("V")),
+                    left = KeyC(KeyAction.CommitText("K")),
                 ),
                 KeyItemC(
                     center =
@@ -946,10 +799,7 @@ val KB_EN_SYMBOLS_TWO_HANDS_SHIFTED =
                             KeyAction.CommitText("A"),
                             size = FontSizeVariant.LARGE,
                         ),
-                    left =
-                        KeyC(
-                            KeyAction.CommitText("L"),
-                        ),
+                    left = KeyC(KeyAction.CommitText("L")),
                     top =
                         KeyC(
                             display = KeyDisplay.IconDisplay(Icons.Outlined.KeyboardCapslock),
@@ -998,10 +848,7 @@ val KB_EN_SYMBOLS_TWO_HANDS_SHIFTED =
                             KeyAction.CommitText("N"),
                             size = FontSizeVariant.LARGE,
                         ),
-                    right =
-                        KeyC(
-                            KeyAction.CommitText("M"),
-                        ),
+                    right = KeyC(KeyAction.CommitText("M")),
                     topLeft =
                         KeyC(
                             KeyAction.CommitText("{"),
@@ -1034,38 +881,14 @@ val KB_EN_SYMBOLS_TWO_HANDS_SHIFTED =
                             KeyAction.CommitText("H"),
                             size = FontSizeVariant.LARGE,
                         ),
-                    topLeft =
-                        KeyC(
-                            KeyAction.CommitText("J"),
-                        ),
-                    top =
-                        KeyC(
-                            KeyAction.CommitText("Q"),
-                        ),
-                    topRight =
-                        KeyC(
-                            KeyAction.CommitText("B"),
-                        ),
-                    right =
-                        KeyC(
-                            KeyAction.CommitText("P"),
-                        ),
-                    bottomRight =
-                        KeyC(
-                            KeyAction.CommitText("Y"),
-                        ),
-                    bottom =
-                        KeyC(
-                            KeyAction.CommitText("X"),
-                        ),
-                    bottomLeft =
-                        KeyC(
-                            KeyAction.CommitText("V"),
-                        ),
-                    left =
-                        KeyC(
-                            KeyAction.CommitText("K"),
-                        ),
+                    topLeft = KeyC(KeyAction.CommitText("J")),
+                    top = KeyC(KeyAction.CommitText("Q")),
+                    topRight = KeyC(KeyAction.CommitText("B")),
+                    right = KeyC(KeyAction.CommitText("P")),
+                    bottomRight = KeyC(KeyAction.CommitText("Y")),
+                    bottom = KeyC(KeyAction.CommitText("X")),
+                    bottomLeft = KeyC(KeyAction.CommitText("V")),
+                    left = KeyC(KeyAction.CommitText("K")),
                 ),
                 KeyItemC(
                     center =
@@ -1073,10 +896,7 @@ val KB_EN_SYMBOLS_TWO_HANDS_SHIFTED =
                             KeyAction.CommitText("A"),
                             size = FontSizeVariant.LARGE,
                         ),
-                    left =
-                        KeyC(
-                            KeyAction.CommitText("L"),
-                        ),
+                    left = KeyC(KeyAction.CommitText("L")),
                     top =
                         KeyC(
                             display = KeyDisplay.IconDisplay(Icons.Outlined.KeyboardCapslock),
@@ -1127,10 +947,7 @@ val KB_EN_SYMBOLS_TWO_HANDS_SHIFTED =
                             size = FontSizeVariant.LARGE,
                         ),
                     swipeType = SwipeNWay.FOUR_WAY_DIAGONAL,
-                    topRight =
-                        KeyC(
-                            KeyAction.CommitText("C"),
-                        ),
+                    topRight = KeyC(KeyAction.CommitText("C")),
                     topLeft =
                         KeyC(
                             KeyAction.CommitText("~"),
@@ -1153,14 +970,8 @@ val KB_EN_SYMBOLS_TWO_HANDS_SHIFTED =
                             KeyAction.CommitText("I"),
                             size = FontSizeVariant.LARGE,
                         ),
-                    top =
-                        KeyC(
-                            KeyAction.CommitText("F"),
-                        ),
-                    right =
-                        KeyC(
-                            KeyAction.CommitText("Z"),
-                        ),
+                    top = KeyC(KeyAction.CommitText("F")),
+                    right = KeyC(KeyAction.CommitText("Z")),
                     topLeft =
                         KeyC(
                             KeyAction.CommitText("\""),
@@ -1198,10 +1009,7 @@ val KB_EN_SYMBOLS_TWO_HANDS_SHIFTED =
                             KeyAction.CommitText("E"),
                             size = FontSizeVariant.LARGE,
                         ),
-                    topLeft =
-                        KeyC(
-                            KeyAction.CommitText("D"),
-                        ),
+                    topLeft = KeyC(KeyAction.CommitText("D")),
                     top =
                         KeyC(
                             KeyAction.CommitText("&"),
@@ -1236,10 +1044,7 @@ val KB_EN_SYMBOLS_TWO_HANDS_SHIFTED =
                             size = FontSizeVariant.LARGE,
                         ),
                     swipeType = SwipeNWay.FOUR_WAY_DIAGONAL,
-                    topRight =
-                        KeyC(
-                            KeyAction.CommitText("C"),
-                        ),
+                    topRight = KeyC(KeyAction.CommitText("C")),
                     topLeft =
                         KeyC(
                             KeyAction.CommitText("~"),
@@ -1262,14 +1067,8 @@ val KB_EN_SYMBOLS_TWO_HANDS_SHIFTED =
                             KeyAction.CommitText("I"),
                             size = FontSizeVariant.LARGE,
                         ),
-                    top =
-                        KeyC(
-                            KeyAction.CommitText("F"),
-                        ),
-                    right =
-                        KeyC(
-                            KeyAction.CommitText("Z"),
-                        ),
+                    top = KeyC(KeyAction.CommitText("F")),
+                    right = KeyC(KeyAction.CommitText("Z")),
                     topLeft =
                         KeyC(
                             KeyAction.CommitText("\""),
@@ -1307,10 +1106,7 @@ val KB_EN_SYMBOLS_TWO_HANDS_SHIFTED =
                             KeyAction.CommitText("E"),
                             size = FontSizeVariant.LARGE,
                         ),
-                    topLeft =
-                        KeyC(
-                            KeyAction.CommitText("D"),
-                        ),
+                    topLeft = KeyC(KeyAction.CommitText("D")),
                     top =
                         KeyC(
                             KeyAction.CommitText("&"),

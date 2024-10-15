@@ -26,19 +26,13 @@ val KB_CZ_MESSAGEASE_PROGRAMMING_MAIN =
                             size = FontSizeVariant.LARGE,
                         ),
                     longPress = KeyAction.CommitText("1"),
-                    topRight =
-                        KeyC(
-                            KeyAction.CommitText("á"),
-                        ),
+                    topRight = KeyC(KeyAction.CommitText("á")),
                     right =
                         KeyC(
                             KeyAction.CommitText("-"),
                             color = ColorVariant.MUTED,
                         ),
-                    bottomRight =
-                        KeyC(
-                            KeyAction.CommitText("v"),
-                        ),
+                    bottomRight = KeyC(KeyAction.CommitText("v")),
                     bottomLeft =
                         KeyC(
                             KeyAction.CommitText("$"),
@@ -54,10 +48,7 @@ val KB_CZ_MESSAGEASE_PROGRAMMING_MAIN =
                             KeyAction.CommitText("`"),
                             color = ColorVariant.MUTED,
                         ),
-                    left =
-                        KeyC(
-                            KeyAction.CommitText("q"),
-                        ),
+                    left = KeyC(KeyAction.CommitText("q")),
                 ),
                 KeyItemC(
                     center =
@@ -66,18 +57,9 @@ val KB_CZ_MESSAGEASE_PROGRAMMING_MAIN =
                             size = FontSizeVariant.LARGE,
                         ),
                     longPress = KeyAction.CommitText("2"),
-                    topLeft =
-                        KeyC(
-                            KeyAction.CommitText("ó"),
-                        ),
-                    top =
-                        KeyC(
-                            KeyAction.CommitText("ů"),
-                        ),
-                    topRight =
-                        KeyC(
-                            KeyAction.CommitText("ú"),
-                        ),
+                    topLeft = KeyC(KeyAction.CommitText("ó")),
+                    top = KeyC(KeyAction.CommitText("ů")),
+                    topRight = KeyC(KeyAction.CommitText("ú")),
                     right =
                         KeyC(
                             KeyAction.CommitText("!"),
@@ -88,10 +70,7 @@ val KB_CZ_MESSAGEASE_PROGRAMMING_MAIN =
                             KeyAction.CommitText("\\"),
                             color = ColorVariant.MUTED,
                         ),
-                    bottom =
-                        KeyC(
-                            KeyAction.CommitText("l"),
-                        ),
+                    bottom = KeyC(KeyAction.CommitText("l")),
                     bottomLeft =
                         KeyC(
                             KeyAction.CommitText("/"),
@@ -115,10 +94,7 @@ val KB_CZ_MESSAGEASE_PROGRAMMING_MAIN =
                             KeyAction.CommitText("^"),
                             color = ColorVariant.MUTED,
                         ),
-                    topLeft =
-                        KeyC(
-                            KeyAction.CommitText("í"),
-                        ),
+                    topLeft = KeyC(KeyAction.CommitText("í")),
                     bottomLeft =
                         KeyC(
                             display = KeyDisplay.TextDisplay("ˇ"),
@@ -158,14 +134,8 @@ val KB_CZ_MESSAGEASE_PROGRAMMING_MAIN =
                             size = FontSizeVariant.LARGE,
                         ),
                     longPress = KeyAction.CommitText("4"),
-                    top =
-                        KeyC(
-                            KeyAction.CommitText("x"),
-                        ),
-                    right =
-                        KeyC(
-                            KeyAction.CommitText("k"),
-                        ),
+                    top = KeyC(KeyAction.CommitText("x")),
+                    right = KeyC(KeyAction.CommitText("k")),
                     bottom =
                         KeyC(
                             KeyAction.CommitText("'"),
@@ -204,38 +174,14 @@ val KB_CZ_MESSAGEASE_PROGRAMMING_MAIN =
                             size = FontSizeVariant.LARGE,
                         ),
                     longPress = KeyAction.CommitText("5"),
-                    top =
-                        KeyC(
-                            KeyAction.CommitText("u"),
-                        ),
-                    topRight =
-                        KeyC(
-                            KeyAction.CommitText("p"),
-                        ),
-                    right =
-                        KeyC(
-                            KeyAction.CommitText("b"),
-                        ),
-                    bottomRight =
-                        KeyC(
-                            KeyAction.CommitText("j"),
-                        ),
-                    bottom =
-                        KeyC(
-                            KeyAction.CommitText("d"),
-                        ),
-                    bottomLeft =
-                        KeyC(
-                            KeyAction.CommitText("g"),
-                        ),
-                    left =
-                        KeyC(
-                            KeyAction.CommitText("c"),
-                        ),
-                    topLeft =
-                        KeyC(
-                            KeyAction.CommitText("č"),
-                        ),
+                    top = KeyC(KeyAction.CommitText("u")),
+                    topRight = KeyC(KeyAction.CommitText("p")),
+                    right = KeyC(KeyAction.CommitText("b")),
+                    bottomRight = KeyC(KeyAction.CommitText("j")),
+                    bottom = KeyC(KeyAction.CommitText("d")),
+                    bottomLeft = KeyC(KeyAction.CommitText("g")),
+                    left = KeyC(KeyAction.CommitText("c")),
+                    topLeft = KeyC(KeyAction.CommitText("č")),
                 ),
                 KeyItemC(
                     center =
@@ -244,14 +190,8 @@ val KB_CZ_MESSAGEASE_PROGRAMMING_MAIN =
                             size = FontSizeVariant.LARGE,
                         ),
                     longPress = KeyAction.CommitText("6"),
-                    topLeft =
-                        KeyC(
-                            KeyAction.CommitText("ř"),
-                        ),
-                    left =
-                        KeyC(
-                            KeyAction.CommitText("m"),
-                        ),
+                    topLeft = KeyC(KeyAction.CommitText("ř")),
+                    left = KeyC(KeyAction.CommitText("m")),
                     top =
                         KeyC(
                             display = KeyDisplay.IconDisplay(Icons.Outlined.ArrowDropUp),
@@ -295,14 +235,8 @@ val KB_CZ_MESSAGEASE_PROGRAMMING_MAIN =
                             size = FontSizeVariant.LARGE,
                         ),
                     longPress = KeyAction.CommitText("7"),
-                    top =
-                        KeyC(
-                            KeyAction.CommitText("ý"),
-                        ),
-                    topRight =
-                        KeyC(
-                            KeyAction.CommitText("y"),
-                        ),
+                    top = KeyC(KeyAction.CommitText("ý")),
+                    topRight = KeyC(KeyAction.CommitText("y")),
                     left =
                         KeyC(
                             KeyAction.CommitText("<"),
@@ -336,22 +270,10 @@ val KB_CZ_MESSAGEASE_PROGRAMMING_MAIN =
                             KeyAction.CommitText("\""),
                             color = ColorVariant.MUTED,
                         ),
-                    top =
-                        KeyC(
-                            KeyAction.CommitText("ě"),
-                        ),
-                    topRight =
-                        KeyC(
-                            KeyAction.CommitText("é"),
-                        ),
-                    right =
-                        KeyC(
-                            KeyAction.CommitText("z"),
-                        ),
-                    left =
-                        KeyC(
-                            KeyAction.CommitText("w"),
-                        ),
+                    top = KeyC(KeyAction.CommitText("ě")),
+                    topRight = KeyC(KeyAction.CommitText("é")),
+                    right = KeyC(KeyAction.CommitText("z")),
+                    left = KeyC(KeyAction.CommitText("w")),
                     bottomRight =
                         KeyC(
                             KeyAction.CommitText(":"),
@@ -375,23 +297,14 @@ val KB_CZ_MESSAGEASE_PROGRAMMING_MAIN =
                             size = FontSizeVariant.LARGE,
                         ),
                     longPress = KeyAction.CommitText("9"),
-                    top =
-                        KeyC(
-                            KeyAction.CommitText("š"),
-                        ),
-                    topLeft =
-                        KeyC(
-                            KeyAction.CommitText("f"),
-                        ),
+                    top = KeyC(KeyAction.CommitText("š")),
+                    topLeft = KeyC(KeyAction.CommitText("f")),
                     topRight =
                         KeyC(
                             KeyAction.CommitText("&"),
                             color = ColorVariant.MUTED,
                         ),
-                    left =
-                        KeyC(
-                            KeyAction.CommitText("ž"),
-                        ),
+                    left = KeyC(KeyAction.CommitText("ž")),
                     bottomLeft =
                         KeyC(
                             KeyAction.CommitText(";"),
@@ -428,19 +341,13 @@ val KB_CZ_MESSAGEASE_PROGRAMMING_SHIFTED =
                             size = FontSizeVariant.LARGE,
                         ),
                     longPress = KeyAction.CommitText("1"),
-                    topRight =
-                        KeyC(
-                            KeyAction.CommitText("Á"),
-                        ),
+                    topRight = KeyC(KeyAction.CommitText("Á")),
                     right =
                         KeyC(
                             KeyAction.CommitText("-"),
                             color = ColorVariant.MUTED,
                         ),
-                    bottomRight =
-                        KeyC(
-                            KeyAction.CommitText("V"),
-                        ),
+                    bottomRight = KeyC(KeyAction.CommitText("V")),
                     bottomLeft =
                         KeyC(
                             KeyAction.CommitText("$"),
@@ -456,10 +363,7 @@ val KB_CZ_MESSAGEASE_PROGRAMMING_SHIFTED =
                             KeyAction.CommitText("`"),
                             color = ColorVariant.MUTED,
                         ),
-                    left =
-                        KeyC(
-                            KeyAction.CommitText("Q"),
-                        ),
+                    left = KeyC(KeyAction.CommitText("Q")),
                 ),
                 KeyItemC(
                     center =
@@ -468,18 +372,9 @@ val KB_CZ_MESSAGEASE_PROGRAMMING_SHIFTED =
                             size = FontSizeVariant.LARGE,
                         ),
                     longPress = KeyAction.CommitText("2"),
-                    topLeft =
-                        KeyC(
-                            KeyAction.CommitText("Ó"),
-                        ),
-                    top =
-                        KeyC(
-                            KeyAction.CommitText("Ů"),
-                        ),
-                    topRight =
-                        KeyC(
-                            KeyAction.CommitText("Ú"),
-                        ),
+                    topLeft = KeyC(KeyAction.CommitText("Ó")),
+                    top = KeyC(KeyAction.CommitText("Ů")),
+                    topRight = KeyC(KeyAction.CommitText("Ú")),
                     right =
                         KeyC(
                             KeyAction.CommitText("!"),
@@ -490,10 +385,7 @@ val KB_CZ_MESSAGEASE_PROGRAMMING_SHIFTED =
                             KeyAction.CommitText("\\"),
                             color = ColorVariant.MUTED,
                         ),
-                    bottom =
-                        KeyC(
-                            KeyAction.CommitText("L"),
-                        ),
+                    bottom = KeyC(KeyAction.CommitText("L")),
                     bottomLeft =
                         KeyC(
                             KeyAction.CommitText("/"),
@@ -517,10 +409,7 @@ val KB_CZ_MESSAGEASE_PROGRAMMING_SHIFTED =
                             KeyAction.CommitText("^"),
                             color = ColorVariant.MUTED,
                         ),
-                    topLeft =
-                        KeyC(
-                            KeyAction.CommitText("Í"),
-                        ),
+                    topLeft = KeyC(KeyAction.CommitText("Í")),
                     bottomLeft =
                         KeyC(
                             display = KeyDisplay.TextDisplay("ˇ"),
@@ -560,14 +449,8 @@ val KB_CZ_MESSAGEASE_PROGRAMMING_SHIFTED =
                             size = FontSizeVariant.LARGE,
                         ),
                     longPress = KeyAction.CommitText("4"),
-                    top =
-                        KeyC(
-                            KeyAction.CommitText("X"),
-                        ),
-                    right =
-                        KeyC(
-                            KeyAction.CommitText("K"),
-                        ),
+                    top = KeyC(KeyAction.CommitText("X")),
+                    right = KeyC(KeyAction.CommitText("K")),
                     bottom =
                         KeyC(
                             KeyAction.CommitText("'"),
@@ -606,38 +489,14 @@ val KB_CZ_MESSAGEASE_PROGRAMMING_SHIFTED =
                             size = FontSizeVariant.LARGE,
                         ),
                     longPress = KeyAction.CommitText("5"),
-                    top =
-                        KeyC(
-                            KeyAction.CommitText("U"),
-                        ),
-                    topRight =
-                        KeyC(
-                            KeyAction.CommitText("P"),
-                        ),
-                    right =
-                        KeyC(
-                            KeyAction.CommitText("B"),
-                        ),
-                    bottomRight =
-                        KeyC(
-                            KeyAction.CommitText("J"),
-                        ),
-                    bottom =
-                        KeyC(
-                            KeyAction.CommitText("D"),
-                        ),
-                    bottomLeft =
-                        KeyC(
-                            KeyAction.CommitText("G"),
-                        ),
-                    left =
-                        KeyC(
-                            KeyAction.CommitText("C"),
-                        ),
-                    topLeft =
-                        KeyC(
-                            KeyAction.CommitText("Č"),
-                        ),
+                    top = KeyC(KeyAction.CommitText("U")),
+                    topRight = KeyC(KeyAction.CommitText("P")),
+                    right = KeyC(KeyAction.CommitText("B")),
+                    bottomRight = KeyC(KeyAction.CommitText("J")),
+                    bottom = KeyC(KeyAction.CommitText("D")),
+                    bottomLeft = KeyC(KeyAction.CommitText("G")),
+                    left = KeyC(KeyAction.CommitText("C")),
+                    topLeft = KeyC(KeyAction.CommitText("Č")),
                 ),
                 KeyItemC(
                     center =
@@ -646,14 +505,8 @@ val KB_CZ_MESSAGEASE_PROGRAMMING_SHIFTED =
                             size = FontSizeVariant.LARGE,
                         ),
                     longPress = KeyAction.CommitText("6"),
-                    topLeft =
-                        KeyC(
-                            KeyAction.CommitText("Ř"),
-                        ),
-                    left =
-                        KeyC(
-                            KeyAction.CommitText("M"),
-                        ),
+                    topLeft = KeyC(KeyAction.CommitText("Ř")),
+                    left = KeyC(KeyAction.CommitText("M")),
                     top =
                         KeyC(
                             display = KeyDisplay.IconDisplay(Icons.Outlined.KeyboardCapslock),
@@ -700,14 +553,8 @@ val KB_CZ_MESSAGEASE_PROGRAMMING_SHIFTED =
                             size = FontSizeVariant.LARGE,
                         ),
                     longPress = KeyAction.CommitText("7"),
-                    top =
-                        KeyC(
-                            KeyAction.CommitText("Ý"),
-                        ),
-                    topRight =
-                        KeyC(
-                            KeyAction.CommitText("Y"),
-                        ),
+                    top = KeyC(KeyAction.CommitText("Ý")),
+                    topRight = KeyC(KeyAction.CommitText("Y")),
                     left =
                         KeyC(
                             KeyAction.CommitText("<"),
@@ -736,22 +583,10 @@ val KB_CZ_MESSAGEASE_PROGRAMMING_SHIFTED =
                             size = FontSizeVariant.LARGE,
                         ),
                     longPress = KeyAction.CommitText("8"),
-                    top =
-                        KeyC(
-                            KeyAction.CommitText("Ě"),
-                        ),
-                    topRight =
-                        KeyC(
-                            KeyAction.CommitText("É"),
-                        ),
-                    right =
-                        KeyC(
-                            KeyAction.CommitText("Z"),
-                        ),
-                    left =
-                        KeyC(
-                            KeyAction.CommitText("W"),
-                        ),
+                    top = KeyC(KeyAction.CommitText("Ě")),
+                    topRight = KeyC(KeyAction.CommitText("É")),
+                    right = KeyC(KeyAction.CommitText("Z")),
+                    left = KeyC(KeyAction.CommitText("W")),
                     bottomRight =
                         KeyC(
                             KeyAction.CommitText(":"),
@@ -775,23 +610,14 @@ val KB_CZ_MESSAGEASE_PROGRAMMING_SHIFTED =
                             size = FontSizeVariant.LARGE,
                         ),
                     longPress = KeyAction.CommitText("9"),
-                    top =
-                        KeyC(
-                            KeyAction.CommitText("Š"),
-                        ),
-                    topLeft =
-                        KeyC(
-                            KeyAction.CommitText("F"),
-                        ),
+                    top = KeyC(KeyAction.CommitText("Š")),
+                    topLeft = KeyC(KeyAction.CommitText("F")),
                     topRight =
                         KeyC(
                             KeyAction.CommitText("&"),
                             color = ColorVariant.MUTED,
                         ),
-                    left =
-                        KeyC(
-                            KeyAction.CommitText("Ž"),
-                        ),
+                    left = KeyC(KeyAction.CommitText("Ž")),
                     bottomLeft =
                         KeyC(
                             KeyAction.CommitText(";"),

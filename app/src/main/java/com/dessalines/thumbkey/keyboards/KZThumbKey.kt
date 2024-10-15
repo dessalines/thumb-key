@@ -26,18 +26,9 @@ val KB_KZ_THUMBKEY_MAIN =
                             KeyAction.CommitText("с"),
                             size = FontSizeVariant.LARGE,
                         ),
-                    right =
-                        KeyC(
-                            KeyAction.CommitText("щ"),
-                        ),
-                    bottomRight =
-                        KeyC(
-                            KeyAction.CommitText("й"),
-                        ),
-                    bottom =
-                        KeyC(
-                            KeyAction.CommitText("э"),
-                        ),
+                    right = KeyC(KeyAction.CommitText("щ")),
+                    bottomRight = KeyC(KeyAction.CommitText("й")),
+                    bottom = KeyC(KeyAction.CommitText("э")),
                 ),
                 KeyItemC(
                     center =
@@ -46,10 +37,7 @@ val KB_KZ_THUMBKEY_MAIN =
                             size = FontSizeVariant.LARGE,
                         ),
                     swipeType = SwipeNWay.TWO_WAY_VERTICAL,
-                    bottom =
-                        KeyC(
-                            KeyAction.CommitText("х"),
-                        ),
+                    bottom = KeyC(KeyAction.CommitText("х")),
                 ),
                 KeyItemC(
                     center =
@@ -58,18 +46,9 @@ val KB_KZ_THUMBKEY_MAIN =
                             size = FontSizeVariant.LARGE,
                         ),
                     swipeType = SwipeNWay.FOUR_WAY_DIAGONAL,
-                    bottomLeft =
-                        KeyC(
-                            KeyAction.CommitText("ж"),
-                        ),
-                    topRight =
-                        KeyC(
-                            KeyAction.CommitText("ә"),
-                        ),
-                    bottomRight =
-                        KeyC(
-                            KeyAction.CommitText("і"),
-                        ),
+                    bottomLeft = KeyC(KeyAction.CommitText("ж")),
+                    topRight = KeyC(KeyAction.CommitText("ә")),
+                    bottomRight = KeyC(KeyAction.CommitText("і")),
                 ),
                 EMOJI_KEY_ITEM,
             ),
@@ -80,26 +59,11 @@ val KB_KZ_THUMBKEY_MAIN =
                             KeyAction.CommitText("н"),
                             size = FontSizeVariant.LARGE,
                         ),
-                    right =
-                        KeyC(
-                            KeyAction.CommitText("м"),
-                        ),
-                    bottom =
-                        KeyC(
-                            KeyAction.CommitText("л"),
-                        ),
-                    bottomRight =
-                        KeyC(
-                            KeyAction.CommitText("ғ"),
-                        ),
-                    topRight =
-                        KeyC(
-                            KeyAction.CommitText("қ"),
-                        ),
-                    bottomLeft =
-                        KeyC(
-                            KeyAction.CommitText("ң"),
-                        ),
+                    right = KeyC(KeyAction.CommitText("м")),
+                    bottom = KeyC(KeyAction.CommitText("л")),
+                    bottomRight = KeyC(KeyAction.CommitText("ғ")),
+                    topRight = KeyC(KeyAction.CommitText("қ")),
+                    bottomLeft = KeyC(KeyAction.CommitText("ң")),
                 ),
                 KeyItemC(
                     center =
@@ -107,38 +71,14 @@ val KB_KZ_THUMBKEY_MAIN =
                             KeyAction.CommitText("в"),
                             size = FontSizeVariant.LARGE,
                         ),
-                    topLeft =
-                        KeyC(
-                            KeyAction.CommitText("я"),
-                        ),
-                    top =
-                        KeyC(
-                            KeyAction.CommitText("ы"),
-                        ),
-                    topRight =
-                        KeyC(
-                            KeyAction.CommitText("ь"),
-                        ),
-                    right =
-                        KeyC(
-                            KeyAction.CommitText("п"),
-                        ),
-                    bottomRight =
-                        KeyC(
-                            KeyAction.CommitText("у"),
-                        ),
-                    bottom =
-                        KeyC(
-                            KeyAction.CommitText("з"),
-                        ),
-                    bottomLeft =
-                        KeyC(
-                            KeyAction.CommitText("г"),
-                        ),
-                    left =
-                        KeyC(
-                            KeyAction.CommitText("к"),
-                        ),
+                    topLeft = KeyC(KeyAction.CommitText("я")),
+                    top = KeyC(KeyAction.CommitText("ы")),
+                    topRight = KeyC(KeyAction.CommitText("ь")),
+                    right = KeyC(KeyAction.CommitText("п")),
+                    bottomRight = KeyC(KeyAction.CommitText("у")),
+                    bottom = KeyC(KeyAction.CommitText("з")),
+                    bottomLeft = KeyC(KeyAction.CommitText("г")),
+                    left = KeyC(KeyAction.CommitText("к")),
                 ),
                 KeyItemC(
                     center =
@@ -146,10 +86,7 @@ val KB_KZ_THUMBKEY_MAIN =
                             KeyAction.CommitText("е"),
                             size = FontSizeVariant.LARGE,
                         ),
-                    left =
-                        KeyC(
-                            KeyAction.CommitText("ф"),
-                        ),
+                    left = KeyC(KeyAction.CommitText("ф")),
                     top =
                         KeyC(
                             display = KeyDisplay.IconDisplay(Icons.Outlined.ArrowDropUp),
@@ -164,14 +101,8 @@ val KB_KZ_THUMBKEY_MAIN =
                             swipeReturnAction = KeyAction.ToggleCurrentWordCapitalization(false),
                             color = ColorVariant.MUTED,
                         ),
-                    bottomRight =
-                        KeyC(
-                            KeyAction.CommitText("ү"),
-                        ),
-                    topRight =
-                        KeyC(
-                            KeyAction.CommitText("ұ"),
-                        ),
+                    bottomRight = KeyC(KeyAction.CommitText("ү")),
+                    topRight = KeyC(KeyAction.CommitText("ұ")),
                 ),
                 NUMERIC_KEY_ITEM,
             ),
@@ -182,18 +113,9 @@ val KB_KZ_THUMBKEY_MAIN =
                             KeyAction.CommitText("т"),
                             size = FontSizeVariant.LARGE,
                         ),
-                    topRight =
-                        KeyC(
-                            KeyAction.CommitText("ч"),
-                        ),
-                    top =
-                        KeyC(
-                            KeyAction.CommitText("ш"),
-                        ),
-                    right =
-                        KeyC(
-                            KeyAction.CommitText("ъ"),
-                        ),
+                    topRight = KeyC(KeyAction.CommitText("ч")),
+                    top = KeyC(KeyAction.CommitText("ш")),
+                    right = KeyC(KeyAction.CommitText("ъ")),
                 ),
                 KeyItemC(
                     center =
@@ -201,14 +123,8 @@ val KB_KZ_THUMBKEY_MAIN =
                             KeyAction.CommitText("и"),
                             size = FontSizeVariant.LARGE,
                         ),
-                    top =
-                        KeyC(
-                            KeyAction.CommitText("б"),
-                        ),
-                    right =
-                        KeyC(
-                            KeyAction.CommitText("ц"),
-                        ),
+                    top = KeyC(KeyAction.CommitText("б")),
+                    right = KeyC(KeyAction.CommitText("ц")),
                     topLeft =
                         KeyC(
                             KeyAction.CommitText("\""),
@@ -246,22 +162,10 @@ val KB_KZ_THUMBKEY_MAIN =
                             KeyAction.CommitText("о"),
                             size = FontSizeVariant.LARGE,
                         ),
-                    topLeft =
-                        KeyC(
-                            KeyAction.CommitText("д"),
-                        ),
-                    bottom =
-                        KeyC(
-                            KeyAction.CommitText("ю"),
-                        ),
-                    right =
-                        KeyC(
-                            KeyAction.CommitText("ё"),
-                        ),
-                    bottomRight =
-                        KeyC(
-                            KeyAction.CommitText("ө"),
-                        ),
+                    topLeft = KeyC(KeyAction.CommitText("д")),
+                    bottom = KeyC(KeyAction.CommitText("ю")),
+                    right = KeyC(KeyAction.CommitText("ё")),
+                    bottomRight = KeyC(KeyAction.CommitText("ө")),
                 ),
                 BACKSPACE_KEY_ITEM,
             ),
@@ -282,18 +186,9 @@ val KB_KZ_THUMBKEY_SHIFTED =
                             KeyAction.CommitText("С"),
                             size = FontSizeVariant.LARGE,
                         ),
-                    right =
-                        KeyC(
-                            KeyAction.CommitText("Щ"),
-                        ),
-                    bottomRight =
-                        KeyC(
-                            KeyAction.CommitText("Й"),
-                        ),
-                    bottom =
-                        KeyC(
-                            KeyAction.CommitText("Э"),
-                        ),
+                    right = KeyC(KeyAction.CommitText("Щ")),
+                    bottomRight = KeyC(KeyAction.CommitText("Й")),
+                    bottom = KeyC(KeyAction.CommitText("Э")),
                 ),
                 KeyItemC(
                     center =
@@ -302,10 +197,7 @@ val KB_KZ_THUMBKEY_SHIFTED =
                             size = FontSizeVariant.LARGE,
                         ),
                     swipeType = SwipeNWay.TWO_WAY_VERTICAL,
-                    bottom =
-                        KeyC(
-                            KeyAction.CommitText("Х"),
-                        ),
+                    bottom = KeyC(KeyAction.CommitText("Х")),
                 ),
                 KeyItemC(
                     center =
@@ -314,18 +206,9 @@ val KB_KZ_THUMBKEY_SHIFTED =
                             size = FontSizeVariant.LARGE,
                         ),
                     swipeType = SwipeNWay.FOUR_WAY_DIAGONAL,
-                    bottomLeft =
-                        KeyC(
-                            KeyAction.CommitText("Ж"),
-                        ),
-                    topRight =
-                        KeyC(
-                            KeyAction.CommitText("Ә"),
-                        ),
-                    bottomRight =
-                        KeyC(
-                            KeyAction.CommitText("І"),
-                        ),
+                    bottomLeft = KeyC(KeyAction.CommitText("Ж")),
+                    topRight = KeyC(KeyAction.CommitText("Ә")),
+                    bottomRight = KeyC(KeyAction.CommitText("І")),
                 ),
                 EMOJI_KEY_ITEM,
             ),
@@ -336,26 +219,11 @@ val KB_KZ_THUMBKEY_SHIFTED =
                             KeyAction.CommitText("Н"),
                             size = FontSizeVariant.LARGE,
                         ),
-                    right =
-                        KeyC(
-                            KeyAction.CommitText("М"),
-                        ),
-                    bottom =
-                        KeyC(
-                            KeyAction.CommitText("Л"),
-                        ),
-                    bottomRight =
-                        KeyC(
-                            KeyAction.CommitText("Ғ"),
-                        ),
-                    topRight =
-                        KeyC(
-                            KeyAction.CommitText("Қ"),
-                        ),
-                    bottomLeft =
-                        KeyC(
-                            KeyAction.CommitText("Ң"),
-                        ),
+                    right = KeyC(KeyAction.CommitText("М")),
+                    bottom = KeyC(KeyAction.CommitText("Л")),
+                    bottomRight = KeyC(KeyAction.CommitText("Ғ")),
+                    topRight = KeyC(KeyAction.CommitText("Қ")),
+                    bottomLeft = KeyC(KeyAction.CommitText("Ң")),
                 ),
                 KeyItemC(
                     center =
@@ -363,38 +231,14 @@ val KB_KZ_THUMBKEY_SHIFTED =
                             KeyAction.CommitText("В"),
                             size = FontSizeVariant.LARGE,
                         ),
-                    topLeft =
-                        KeyC(
-                            KeyAction.CommitText("Я"),
-                        ),
-                    top =
-                        KeyC(
-                            KeyAction.CommitText("Ы"),
-                        ),
-                    topRight =
-                        KeyC(
-                            KeyAction.CommitText("Ь"),
-                        ),
-                    right =
-                        KeyC(
-                            KeyAction.CommitText("П"),
-                        ),
-                    bottomRight =
-                        KeyC(
-                            KeyAction.CommitText("У"),
-                        ),
-                    bottom =
-                        KeyC(
-                            KeyAction.CommitText("З"),
-                        ),
-                    bottomLeft =
-                        KeyC(
-                            KeyAction.CommitText("Г"),
-                        ),
-                    left =
-                        KeyC(
-                            KeyAction.CommitText("К"),
-                        ),
+                    topLeft = KeyC(KeyAction.CommitText("Я")),
+                    top = KeyC(KeyAction.CommitText("Ы")),
+                    topRight = KeyC(KeyAction.CommitText("Ь")),
+                    right = KeyC(KeyAction.CommitText("П")),
+                    bottomRight = KeyC(KeyAction.CommitText("У")),
+                    bottom = KeyC(KeyAction.CommitText("З")),
+                    bottomLeft = KeyC(KeyAction.CommitText("Г")),
+                    left = KeyC(KeyAction.CommitText("К")),
                 ),
                 KeyItemC(
                     center =
@@ -402,10 +246,7 @@ val KB_KZ_THUMBKEY_SHIFTED =
                             KeyAction.CommitText("Е"),
                             size = FontSizeVariant.LARGE,
                         ),
-                    left =
-                        KeyC(
-                            KeyAction.CommitText("Ф"),
-                        ),
+                    left = KeyC(KeyAction.CommitText("Ф")),
                     top =
                         KeyC(
                             display = KeyDisplay.IconDisplay(Icons.Outlined.KeyboardCapslock),
@@ -421,14 +262,8 @@ val KB_KZ_THUMBKEY_SHIFTED =
                             swipeReturnAction = KeyAction.ToggleCurrentWordCapitalization(false),
                             color = ColorVariant.MUTED,
                         ),
-                    bottomRight =
-                        KeyC(
-                            KeyAction.CommitText("Ү"),
-                        ),
-                    topRight =
-                        KeyC(
-                            KeyAction.CommitText("Ұ"),
-                        ),
+                    bottomRight = KeyC(KeyAction.CommitText("Ү")),
+                    topRight = KeyC(KeyAction.CommitText("Ұ")),
                 ),
                 NUMERIC_KEY_ITEM,
             ),
@@ -439,18 +274,9 @@ val KB_KZ_THUMBKEY_SHIFTED =
                             KeyAction.CommitText("Т"),
                             size = FontSizeVariant.LARGE,
                         ),
-                    topRight =
-                        KeyC(
-                            KeyAction.CommitText("Ч"),
-                        ),
-                    top =
-                        KeyC(
-                            KeyAction.CommitText("Ш"),
-                        ),
-                    right =
-                        KeyC(
-                            KeyAction.CommitText("Ъ"),
-                        ),
+                    topRight = KeyC(KeyAction.CommitText("Ч")),
+                    top = KeyC(KeyAction.CommitText("Ш")),
+                    right = KeyC(KeyAction.CommitText("Ъ")),
                 ),
                 KeyItemC(
                     center =
@@ -458,14 +284,8 @@ val KB_KZ_THUMBKEY_SHIFTED =
                             KeyAction.CommitText("И"),
                             size = FontSizeVariant.LARGE,
                         ),
-                    top =
-                        KeyC(
-                            KeyAction.CommitText("Б"),
-                        ),
-                    right =
-                        KeyC(
-                            KeyAction.CommitText("Ц"),
-                        ),
+                    top = KeyC(KeyAction.CommitText("Б")),
+                    right = KeyC(KeyAction.CommitText("Ц")),
                     topLeft =
                         KeyC(
                             KeyAction.CommitText("\""),
@@ -503,22 +323,10 @@ val KB_KZ_THUMBKEY_SHIFTED =
                             KeyAction.CommitText("О"),
                             size = FontSizeVariant.LARGE,
                         ),
-                    topLeft =
-                        KeyC(
-                            KeyAction.CommitText("Д"),
-                        ),
-                    bottom =
-                        KeyC(
-                            KeyAction.CommitText("Ю"),
-                        ),
-                    right =
-                        KeyC(
-                            KeyAction.CommitText("Ё"),
-                        ),
-                    bottomRight =
-                        KeyC(
-                            KeyAction.CommitText("Ө"),
-                        ),
+                    topLeft = KeyC(KeyAction.CommitText("Д")),
+                    bottom = KeyC(KeyAction.CommitText("Ю")),
+                    right = KeyC(KeyAction.CommitText("Ё")),
+                    bottomRight = KeyC(KeyAction.CommitText("Ө")),
                 ),
                 BACKSPACE_KEY_ITEM,
             ),

@@ -20,10 +20,7 @@ val KB_HE_THUMBKEY_MAIN =
                             KeyAction.CommitText("מ"),
                             size = FontSizeVariant.LARGE,
                         ),
-                    bottomRight =
-                        KeyC(
-                            KeyAction.CommitText("נ"),
-                        ),
+                    bottomRight = KeyC(KeyAction.CommitText("נ")),
                     swipeType = SwipeNWay.FOUR_WAY_DIAGONAL,
                 ),
                 KeyItemC(
@@ -32,10 +29,7 @@ val KB_HE_THUMBKEY_MAIN =
                             KeyAction.CommitText("ב"),
                             size = FontSizeVariant.LARGE,
                         ),
-                    bottom =
-                        KeyC(
-                            KeyAction.CommitText("ע"),
-                        ),
+                    bottom = KeyC(KeyAction.CommitText("ע")),
                     swipeType = SwipeNWay.TWO_WAY_VERTICAL,
                 ),
                 KeyItemC(
@@ -44,10 +38,7 @@ val KB_HE_THUMBKEY_MAIN =
                             KeyAction.CommitText("א"),
                             size = FontSizeVariant.LARGE,
                         ),
-                    bottomLeft =
-                        KeyC(
-                            KeyAction.CommitText("כ"),
-                        ),
+                    bottomLeft = KeyC(KeyAction.CommitText("כ")),
                     swipeType = SwipeNWay.FOUR_WAY_DIAGONAL,
                 ),
                 EMOJI_KEY_ITEM,
@@ -59,14 +50,8 @@ val KB_HE_THUMBKEY_MAIN =
                             KeyAction.CommitText("ת"),
                             size = FontSizeVariant.LARGE,
                         ),
-                    right =
-                        KeyC(
-                            KeyAction.CommitText("ם"),
-                        ),
-                    left =
-                        KeyC(
-                            KeyAction.CommitText("ץ"),
-                        ),
+                    right = KeyC(KeyAction.CommitText("ם")),
+                    left = KeyC(KeyAction.CommitText("ץ")),
                     swipeType = SwipeNWay.TWO_WAY_HORIZONTAL,
                 ),
                 KeyItemC(
@@ -75,38 +60,14 @@ val KB_HE_THUMBKEY_MAIN =
                             KeyAction.CommitText("ל"),
                             size = FontSizeVariant.LARGE,
                         ),
-                    topLeft =
-                        KeyC(
-                            KeyAction.CommitText("ט"),
-                        ),
-                    top =
-                        KeyC(
-                            KeyAction.CommitText("ך"),
-                        ),
-                    topRight =
-                        KeyC(
-                            KeyAction.CommitText("ק"),
-                        ),
-                    right =
-                        KeyC(
-                            KeyAction.CommitText("צ"),
-                        ),
-                    bottomRight =
-                        KeyC(
-                            KeyAction.CommitText("ס"),
-                        ),
-                    bottom =
-                        KeyC(
-                            KeyAction.CommitText("ז"),
-                        ),
-                    bottomLeft =
-                        KeyC(
-                            KeyAction.CommitText("ג"),
-                        ),
-                    left =
-                        KeyC(
-                            KeyAction.CommitText("ן"),
-                        ),
+                    topLeft = KeyC(KeyAction.CommitText("ט")),
+                    top = KeyC(KeyAction.CommitText("ך")),
+                    topRight = KeyC(KeyAction.CommitText("ק")),
+                    right = KeyC(KeyAction.CommitText("צ")),
+                    bottomRight = KeyC(KeyAction.CommitText("ס")),
+                    bottom = KeyC(KeyAction.CommitText("ז")),
+                    bottomLeft = KeyC(KeyAction.CommitText("ג")),
+                    left = KeyC(KeyAction.CommitText("ן")),
                 ),
                 KeyItemC(
                     center =
@@ -114,14 +75,8 @@ val KB_HE_THUMBKEY_MAIN =
                             KeyAction.CommitText("ו"),
                             size = FontSizeVariant.LARGE,
                         ),
-                    left =
-                        KeyC(
-                            KeyAction.CommitText("פ"),
-                        ),
-                    right =
-                        KeyC(
-                            KeyAction.CommitText("ף"),
-                        ),
+                    left = KeyC(KeyAction.CommitText("פ")),
+                    right = KeyC(KeyAction.CommitText("ף")),
                     swipeType = SwipeNWay.TWO_WAY_HORIZONTAL,
                 ),
                 NUMERIC_KEY_ITEM,
@@ -133,10 +88,7 @@ val KB_HE_THUMBKEY_MAIN =
                             KeyAction.CommitText("ר"),
                             size = FontSizeVariant.LARGE,
                         ),
-                    topRight =
-                        KeyC(
-                            KeyAction.CommitText("ש"),
-                        ),
+                    topRight = KeyC(KeyAction.CommitText("ש")),
                     bottomRight =
                         KeyC(
                             KeyAction.CommitText("”"),
@@ -155,10 +107,7 @@ val KB_HE_THUMBKEY_MAIN =
                             KeyAction.CommitText("״"),
                             color = ColorVariant.MUTED,
                         ),
-                    top =
-                        KeyC(
-                            KeyAction.CommitText("ד"),
-                        ),
+                    top = KeyC(KeyAction.CommitText("ד")),
                     topRight =
                         KeyC(
                             KeyAction.CommitText("׳"),
@@ -196,10 +145,7 @@ val KB_HE_THUMBKEY_MAIN =
                             KeyAction.CommitText("י"),
                             size = FontSizeVariant.LARGE,
                         ),
-                    topLeft =
-                        KeyC(
-                            KeyAction.CommitText("ח"),
-                        ),
+                    topLeft = KeyC(KeyAction.CommitText("ח")),
                     bottomLeft =
                         KeyC(
                             KeyAction.CommitText("’"),

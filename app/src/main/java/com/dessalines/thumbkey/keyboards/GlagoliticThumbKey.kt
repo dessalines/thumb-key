@@ -26,22 +26,10 @@ val KB_GLAGOLITIC_THUMBKEY_MAIN =
                             KeyAction.CommitText("ⱄ"),
                             size = FontSizeVariant.LARGE,
                         ),
-                    right =
-                        KeyC(
-                            KeyAction.CommitText("ⱋ"),
-                        ),
-                    bottomRight =
-                        KeyC(
-                            KeyAction.CommitText("ⰹ"),
-                        ),
-                    bottom =
-                        KeyC(
-                            KeyAction.CommitText("ⰷ"),
-                        ),
-                    bottomLeft =
-                        KeyC(
-                            KeyAction.CommitText("ⱊ"),
-                        ),
+                    right = KeyC(KeyAction.CommitText("ⱋ")),
+                    bottomRight = KeyC(KeyAction.CommitText("ⰹ")),
+                    bottom = KeyC(KeyAction.CommitText("ⰷ")),
+                    bottomLeft = KeyC(KeyAction.CommitText("ⱊ")),
                 ),
                 KeyItemC(
                     center =
@@ -49,18 +37,9 @@ val KB_GLAGOLITIC_THUMBKEY_MAIN =
                             KeyAction.CommitText("ⱃ"),
                             size = FontSizeVariant.LARGE,
                         ),
-                    bottom =
-                        KeyC(
-                            KeyAction.CommitText("ⱈ"),
-                        ),
-                    bottomLeft =
-                        KeyC(
-                            KeyAction.CommitText("ⱒ"),
-                        ),
-                    bottomRight =
-                        KeyC(
-                            KeyAction.CommitText("ⱜ"),
-                        ),
+                    bottom = KeyC(KeyAction.CommitText("ⱈ")),
+                    bottomLeft = KeyC(KeyAction.CommitText("ⱒ")),
+                    bottomRight = KeyC(KeyAction.CommitText("ⱜ")),
                 ),
                 KeyItemC(
                     center =
@@ -68,26 +47,11 @@ val KB_GLAGOLITIC_THUMBKEY_MAIN =
                             KeyAction.CommitText("ⰵ"),
                             size = FontSizeVariant.LARGE,
                         ),
-                    bottomLeft =
-                        KeyC(
-                            KeyAction.CommitText("ⰶ"),
-                        ),
-                    left =
-                        KeyC(
-                            KeyAction.CommitText("ⱑ"),
-                        ),
-                    bottom =
-                        KeyC(
-                            KeyAction.CommitText("ⱔ"),
-                        ),
-                    bottomRight =
-                        KeyC(
-                            KeyAction.CommitText("ⱕ"),
-                        ),
-                    top =
-                        KeyC(
-                            KeyAction.CommitText("ⱗ"),
-                        ),
+                    bottomLeft = KeyC(KeyAction.CommitText("ⰶ")),
+                    left = KeyC(KeyAction.CommitText("ⱑ")),
+                    bottom = KeyC(KeyAction.CommitText("ⱔ")),
+                    bottomRight = KeyC(KeyAction.CommitText("ⱕ")),
+                    top = KeyC(KeyAction.CommitText("ⱗ")),
                 ),
                 EMOJI_KEY_ITEM,
             ),
@@ -98,27 +62,15 @@ val KB_GLAGOLITIC_THUMBKEY_MAIN =
                             KeyAction.CommitText("ⱀ"),
                             size = FontSizeVariant.LARGE,
                         ),
-                    right =
-                        KeyC(
-                            KeyAction.CommitText("ⰿ"),
-                        ),
-                    bottom =
-                        KeyC(
-                            KeyAction.CommitText("ⰾ"),
-                        ),
-                    topRight =
-                        KeyC(
-                            KeyAction.CommitText("ⱞ"),
-                        ),
+                    right = KeyC(KeyAction.CommitText("ⰿ")),
+                    bottom = KeyC(KeyAction.CommitText("ⰾ")),
+                    topRight = KeyC(KeyAction.CommitText("ⱞ")),
                     bottomRight =
                         KeyC(
                             // this character often lacks proper font support, but is technically part of Unicode
                             action = KeyAction.CommitText("ⱟ"),
                         ),
-                    top =
-                        KeyC(
-                            KeyAction.CommitText("ⱛ"),
-                        ),
+                    top = KeyC(KeyAction.CommitText("ⱛ")),
                 ),
                 KeyItemC(
                     center =
@@ -126,38 +78,14 @@ val KB_GLAGOLITIC_THUMBKEY_MAIN =
                             KeyAction.CommitText("ⰲ"),
                             size = FontSizeVariant.LARGE,
                         ),
-                    topLeft =
-                        KeyC(
-                            KeyAction.CommitText("ⰼ"),
-                        ),
-                    top =
-                        KeyC(
-                            KeyAction.CommitText("ⰺ"),
-                        ),
-                    topRight =
-                        KeyC(
-                            KeyAction.CommitText("ⱐ"),
-                        ),
-                    right =
-                        KeyC(
-                            KeyAction.CommitText("ⱂ"),
-                        ),
-                    bottomRight =
-                        KeyC(
-                            KeyAction.CommitText("ⱆ"),
-                        ),
-                    bottom =
-                        KeyC(
-                            KeyAction.CommitText("ⰸ"),
-                        ),
-                    bottomLeft =
-                        KeyC(
-                            KeyAction.CommitText("ⰳ"),
-                        ),
-                    left =
-                        KeyC(
-                            KeyAction.CommitText("ⰽ"),
-                        ),
+                    topLeft = KeyC(KeyAction.CommitText("ⰼ")),
+                    top = KeyC(KeyAction.CommitText("ⰺ")),
+                    topRight = KeyC(KeyAction.CommitText("ⱐ")),
+                    right = KeyC(KeyAction.CommitText("ⱂ")),
+                    bottomRight = KeyC(KeyAction.CommitText("ⱆ")),
+                    bottom = KeyC(KeyAction.CommitText("ⰸ")),
+                    bottomLeft = KeyC(KeyAction.CommitText("ⰳ")),
+                    left = KeyC(KeyAction.CommitText("ⰽ")),
                 ),
                 KeyItemC(
                     center =
@@ -166,10 +94,7 @@ val KB_GLAGOLITIC_THUMBKEY_MAIN =
                             size = FontSizeVariant.LARGE,
                         ),
                     swipeType = SwipeNWay.FOUR_WAY_CROSS,
-                    left =
-                        KeyC(
-                            KeyAction.CommitText("ⱇ"),
-                        ),
+                    left = KeyC(KeyAction.CommitText("ⱇ")),
                     top =
                         KeyC(
                             display = KeyDisplay.IconDisplay(Icons.Outlined.ArrowDropUp),
@@ -182,10 +107,7 @@ val KB_GLAGOLITIC_THUMBKEY_MAIN =
                             KeyAction.ToggleShiftMode(false),
                             swipeReturnAction = KeyAction.ToggleCurrentWordCapitalization(false),
                         ),
-                    right =
-                        KeyC(
-                            KeyAction.CommitText("ⱝ"),
-                        ),
+                    right = KeyC(KeyAction.CommitText("ⱝ")),
                 ),
                 NUMERIC_KEY_ITEM,
             ),
@@ -196,22 +118,10 @@ val KB_GLAGOLITIC_THUMBKEY_MAIN =
                             KeyAction.CommitText("ⱅ"),
                             size = FontSizeVariant.LARGE,
                         ),
-                    topRight =
-                        KeyC(
-                            KeyAction.CommitText("ⱍ"),
-                        ),
-                    top =
-                        KeyC(
-                            KeyAction.CommitText("ⱎ"),
-                        ),
-                    right =
-                        KeyC(
-                            KeyAction.CommitText("ⱏ"),
-                        ),
-                    topLeft =
-                        KeyC(
-                            KeyAction.CommitText("ⱚ"),
-                        ),
+                    topRight = KeyC(KeyAction.CommitText("ⱍ")),
+                    top = KeyC(KeyAction.CommitText("ⱎ")),
+                    right = KeyC(KeyAction.CommitText("ⱏ")),
+                    topLeft = KeyC(KeyAction.CommitText("ⱚ")),
                 ),
                 KeyItemC(
                     center =
@@ -219,14 +129,8 @@ val KB_GLAGOLITIC_THUMBKEY_MAIN =
                             KeyAction.CommitText("ⰻ"),
                             size = FontSizeVariant.LARGE,
                         ),
-                    top =
-                        KeyC(
-                            KeyAction.CommitText("ⰱ"),
-                        ),
-                    right =
-                        KeyC(
-                            KeyAction.CommitText("ⱌ"),
-                        ),
+                    top = KeyC(KeyAction.CommitText("ⰱ")),
+                    right = KeyC(KeyAction.CommitText("ⱌ")),
                     topLeft =
                         KeyC(
                             KeyAction.CommitText("\""),
@@ -264,30 +168,12 @@ val KB_GLAGOLITIC_THUMBKEY_MAIN =
                             KeyAction.CommitText("ⱁ"),
                             size = FontSizeVariant.LARGE,
                         ),
-                    topLeft =
-                        KeyC(
-                            KeyAction.CommitText("ⰴ"),
-                        ),
-                    bottom =
-                        KeyC(
-                            KeyAction.CommitText("ⱓ"),
-                        ),
-                    right =
-                        KeyC(
-                            KeyAction.CommitText("ⱖ"),
-                        ),
-                    top =
-                        KeyC(
-                            KeyAction.CommitText("ⱉ"),
-                        ),
-                    left =
-                        KeyC(
-                            KeyAction.CommitText("ⱘ"),
-                        ),
-                    bottomLeft =
-                        KeyC(
-                            KeyAction.CommitText("ⱙ"),
-                        ),
+                    topLeft = KeyC(KeyAction.CommitText("ⰴ")),
+                    bottom = KeyC(KeyAction.CommitText("ⱓ")),
+                    right = KeyC(KeyAction.CommitText("ⱖ")),
+                    top = KeyC(KeyAction.CommitText("ⱉ")),
+                    left = KeyC(KeyAction.CommitText("ⱘ")),
+                    bottomLeft = KeyC(KeyAction.CommitText("ⱙ")),
                 ),
                 BACKSPACE_KEY_ITEM,
             ),
@@ -308,22 +194,10 @@ val KB_GLAGOLITIC_THUMBKEY_SHIFTED =
                             KeyAction.CommitText("Ⱄ"),
                             size = FontSizeVariant.LARGE,
                         ),
-                    right =
-                        KeyC(
-                            KeyAction.CommitText("Ⱋ"),
-                        ),
-                    bottomRight =
-                        KeyC(
-                            KeyAction.CommitText("Ⰹ"),
-                        ),
-                    bottom =
-                        KeyC(
-                            KeyAction.CommitText("Ⰷ"),
-                        ),
-                    bottomLeft =
-                        KeyC(
-                            KeyAction.CommitText("Ⱊ"),
-                        ),
+                    right = KeyC(KeyAction.CommitText("Ⱋ")),
+                    bottomRight = KeyC(KeyAction.CommitText("Ⰹ")),
+                    bottom = KeyC(KeyAction.CommitText("Ⰷ")),
+                    bottomLeft = KeyC(KeyAction.CommitText("Ⱊ")),
                 ),
                 KeyItemC(
                     center =
@@ -331,18 +205,9 @@ val KB_GLAGOLITIC_THUMBKEY_SHIFTED =
                             KeyAction.CommitText("Ⱃ"),
                             size = FontSizeVariant.LARGE,
                         ),
-                    bottom =
-                        KeyC(
-                            KeyAction.CommitText("Ⱈ"),
-                        ),
-                    bottomLeft =
-                        KeyC(
-                            KeyAction.CommitText("Ⱒ"),
-                        ),
-                    bottomRight =
-                        KeyC(
-                            KeyAction.CommitText("Ⱜ"),
-                        ),
+                    bottom = KeyC(KeyAction.CommitText("Ⱈ")),
+                    bottomLeft = KeyC(KeyAction.CommitText("Ⱒ")),
+                    bottomRight = KeyC(KeyAction.CommitText("Ⱜ")),
                 ),
                 KeyItemC(
                     center =
@@ -350,26 +215,11 @@ val KB_GLAGOLITIC_THUMBKEY_SHIFTED =
                             KeyAction.CommitText("Ⰵ"),
                             size = FontSizeVariant.LARGE,
                         ),
-                    bottomLeft =
-                        KeyC(
-                            KeyAction.CommitText("Ⰶ"),
-                        ),
-                    left =
-                        KeyC(
-                            KeyAction.CommitText("Ⱑ"),
-                        ),
-                    bottom =
-                        KeyC(
-                            KeyAction.CommitText("Ⱔ"),
-                        ),
-                    bottomRight =
-                        KeyC(
-                            KeyAction.CommitText("Ⱕ"),
-                        ),
-                    top =
-                        KeyC(
-                            KeyAction.CommitText("Ⱗ"),
-                        ),
+                    bottomLeft = KeyC(KeyAction.CommitText("Ⰶ")),
+                    left = KeyC(KeyAction.CommitText("Ⱑ")),
+                    bottom = KeyC(KeyAction.CommitText("Ⱔ")),
+                    bottomRight = KeyC(KeyAction.CommitText("Ⱕ")),
+                    top = KeyC(KeyAction.CommitText("Ⱗ")),
                 ),
                 EMOJI_KEY_ITEM,
             ),
@@ -380,27 +230,15 @@ val KB_GLAGOLITIC_THUMBKEY_SHIFTED =
                             KeyAction.CommitText("Ⱀ"),
                             size = FontSizeVariant.LARGE,
                         ),
-                    right =
-                        KeyC(
-                            KeyAction.CommitText("Ⰿ"),
-                        ),
-                    bottom =
-                        KeyC(
-                            KeyAction.CommitText("Ⰾ"),
-                        ),
-                    topRight =
-                        KeyC(
-                            KeyAction.CommitText("Ⱞ"),
-                        ),
+                    right = KeyC(KeyAction.CommitText("Ⰿ")),
+                    bottom = KeyC(KeyAction.CommitText("Ⰾ")),
+                    topRight = KeyC(KeyAction.CommitText("Ⱞ")),
                     bottomRight =
                         KeyC(
                             // this character often lacks proper font support, but is technically part of Unicode
                             action = KeyAction.CommitText("Ⱟ"),
                         ),
-                    top =
-                        KeyC(
-                            KeyAction.CommitText("Ⱛ"),
-                        ),
+                    top = KeyC(KeyAction.CommitText("Ⱛ")),
                 ),
                 KeyItemC(
                     center =
@@ -408,38 +246,14 @@ val KB_GLAGOLITIC_THUMBKEY_SHIFTED =
                             KeyAction.CommitText("Ⰲ"),
                             size = FontSizeVariant.LARGE,
                         ),
-                    topLeft =
-                        KeyC(
-                            KeyAction.CommitText("Ⰼ"),
-                        ),
-                    top =
-                        KeyC(
-                            KeyAction.CommitText("Ⰺ"),
-                        ),
-                    topRight =
-                        KeyC(
-                            KeyAction.CommitText("Ⱐ"),
-                        ),
-                    right =
-                        KeyC(
-                            KeyAction.CommitText("Ⱂ"),
-                        ),
-                    bottomRight =
-                        KeyC(
-                            KeyAction.CommitText("Ⱆ"),
-                        ),
-                    bottom =
-                        KeyC(
-                            KeyAction.CommitText("Ⰸ"),
-                        ),
-                    bottomLeft =
-                        KeyC(
-                            KeyAction.CommitText("Ⰳ"),
-                        ),
-                    left =
-                        KeyC(
-                            KeyAction.CommitText("Ⰽ"),
-                        ),
+                    topLeft = KeyC(KeyAction.CommitText("Ⰼ")),
+                    top = KeyC(KeyAction.CommitText("Ⰺ")),
+                    topRight = KeyC(KeyAction.CommitText("Ⱐ")),
+                    right = KeyC(KeyAction.CommitText("Ⱂ")),
+                    bottomRight = KeyC(KeyAction.CommitText("Ⱆ")),
+                    bottom = KeyC(KeyAction.CommitText("Ⰸ")),
+                    bottomLeft = KeyC(KeyAction.CommitText("Ⰳ")),
+                    left = KeyC(KeyAction.CommitText("Ⰽ")),
                 ),
                 KeyItemC(
                     center =
@@ -448,10 +262,7 @@ val KB_GLAGOLITIC_THUMBKEY_SHIFTED =
                             size = FontSizeVariant.LARGE,
                         ),
                     swipeType = SwipeNWay.FOUR_WAY_CROSS,
-                    left =
-                        KeyC(
-                            KeyAction.CommitText("Ⱇ"),
-                        ),
+                    left = KeyC(KeyAction.CommitText("Ⱇ")),
                     top =
                         KeyC(
                             display = KeyDisplay.IconDisplay(Icons.Outlined.KeyboardCapslock),
@@ -467,10 +278,7 @@ val KB_GLAGOLITIC_THUMBKEY_SHIFTED =
                             swipeReturnAction = KeyAction.ToggleCurrentWordCapitalization(false),
                             color = ColorVariant.MUTED,
                         ),
-                    right =
-                        KeyC(
-                            KeyAction.CommitText("Ⱝ"),
-                        ),
+                    right = KeyC(KeyAction.CommitText("Ⱝ")),
                 ),
                 NUMERIC_KEY_ITEM,
             ),
@@ -481,22 +289,10 @@ val KB_GLAGOLITIC_THUMBKEY_SHIFTED =
                             KeyAction.CommitText("Ⱅ"),
                             size = FontSizeVariant.LARGE,
                         ),
-                    topRight =
-                        KeyC(
-                            KeyAction.CommitText("Ⱍ"),
-                        ),
-                    top =
-                        KeyC(
-                            KeyAction.CommitText("Ⱎ"),
-                        ),
-                    right =
-                        KeyC(
-                            KeyAction.CommitText("Ⱏ"),
-                        ),
-                    topLeft =
-                        KeyC(
-                            KeyAction.CommitText("Ⱚ"),
-                        ),
+                    topRight = KeyC(KeyAction.CommitText("Ⱍ")),
+                    top = KeyC(KeyAction.CommitText("Ⱎ")),
+                    right = KeyC(KeyAction.CommitText("Ⱏ")),
+                    topLeft = KeyC(KeyAction.CommitText("Ⱚ")),
                 ),
                 KeyItemC(
                     center =
@@ -505,14 +301,8 @@ val KB_GLAGOLITIC_THUMBKEY_SHIFTED =
                             action = KeyAction.CommitText("Ⰻ"),
                             size = FontSizeVariant.LARGE,
                         ),
-                    top =
-                        KeyC(
-                            KeyAction.CommitText("Ⰱ"),
-                        ),
-                    right =
-                        KeyC(
-                            KeyAction.CommitText("Ⱌ"),
-                        ),
+                    top = KeyC(KeyAction.CommitText("Ⰱ")),
+                    right = KeyC(KeyAction.CommitText("Ⱌ")),
                     topLeft =
                         KeyC(
                             KeyAction.CommitText("\""),
@@ -550,30 +340,12 @@ val KB_GLAGOLITIC_THUMBKEY_SHIFTED =
                             KeyAction.CommitText("Ⱁ"),
                             size = FontSizeVariant.LARGE,
                         ),
-                    topLeft =
-                        KeyC(
-                            KeyAction.CommitText("Ⰴ"),
-                        ),
-                    bottom =
-                        KeyC(
-                            KeyAction.CommitText("Ⱓ"),
-                        ),
-                    right =
-                        KeyC(
-                            KeyAction.CommitText("Ⱖ"),
-                        ),
-                    top =
-                        KeyC(
-                            KeyAction.CommitText("Ⱉ"),
-                        ),
-                    left =
-                        KeyC(
-                            KeyAction.CommitText("Ⱘ"),
-                        ),
-                    bottomLeft =
-                        KeyC(
-                            KeyAction.CommitText("Ⱙ"),
-                        ),
+                    topLeft = KeyC(KeyAction.CommitText("Ⰴ")),
+                    bottom = KeyC(KeyAction.CommitText("Ⱓ")),
+                    right = KeyC(KeyAction.CommitText("Ⱖ")),
+                    top = KeyC(KeyAction.CommitText("Ⱉ")),
+                    left = KeyC(KeyAction.CommitText("Ⱘ")),
+                    bottomLeft = KeyC(KeyAction.CommitText("Ⱙ")),
                 ),
                 BACKSPACE_KEY_ITEM,
             ),

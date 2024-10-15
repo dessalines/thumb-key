@@ -20,298 +20,94 @@ val KB_TOK_SITELEN_THUMBKEY_EMOJI_MAIN =
         listOf(
             listOf(
                 KeyItemC(
-                    center =
-                        KeyC(
-                            KeyAction.CommitText("❌"),
-                        ),
-                    topLeft =
-                        KeyC(
-                            KeyAction.CommitText("🛒"),
-                        ),
-                    top =
-                        KeyC(
-                            KeyAction.CommitText("👥"),
-                        ),
-                    topRight =
-                        KeyC(
-                            KeyAction.CommitText("👂"),
-                        ),
-                    right =
-                        KeyC(
-                            KeyAction.CommitText("🏋️"),
-                        ),
-                    bottomRight =
-                        KeyC(
-                            KeyAction.CommitText("💀"),
-                        ),
-                    bottom =
-                        KeyC(
-                            KeyAction.CommitText("⚫"),
-                        ),
-                    bottomLeft =
-                        KeyC(
-                            KeyAction.CommitText("🛏️"),
-                        ),
-                    left =
-                        KeyC(
-                            KeyAction.CommitText("⚔️"),
-                        ),
+                    center = KeyC(KeyAction.CommitText("❌")),
+                    topLeft = KeyC(KeyAction.CommitText("🛒")),
+                    top = KeyC(KeyAction.CommitText("👥")),
+                    topRight = KeyC(KeyAction.CommitText("👂")),
+                    right = KeyC(KeyAction.CommitText("🏋️")),
+                    bottomRight = KeyC(KeyAction.CommitText("💀")),
+                    bottom = KeyC(KeyAction.CommitText("⚫")),
+                    bottomLeft = KeyC(KeyAction.CommitText("🛏️")),
+                    left = KeyC(KeyAction.CommitText("⚔️")),
                 ),
                 KeyItemC(
-                    center =
-                        KeyC(
-                            KeyAction.CommitText("👉"),
-                        ),
-                    topLeft =
-                        KeyC(
-                            KeyAction.CommitText("🔈"),
-                        ),
-                    top =
-                        KeyC(
-                            KeyAction.CommitText("😴"),
-                        ),
-                    topRight =
-                        KeyC(
-                            KeyAction.CommitText("👪"),
-                        ),
-                    right =
-                        KeyC(
-                            KeyAction.CommitText("💰"),
-                        ),
-                    bottomRight =
-                        KeyC(
-                            KeyAction.CommitText("↔️"),
-                        ),
-                    bottom =
-                        KeyC(
-                            KeyAction.CommitText("⭕"),
-                        ),
-                    bottomLeft =
-                        KeyC(
-                            KeyAction.CommitText("📄"),
-                        ),
-                    left =
-                        KeyC(
-                            KeyAction.CommitText("➕"),
-                        ),
+                    center = KeyC(KeyAction.CommitText("👉")),
+                    topLeft = KeyC(KeyAction.CommitText("🔈")),
+                    top = KeyC(KeyAction.CommitText("😴")),
+                    topRight = KeyC(KeyAction.CommitText("👪")),
+                    right = KeyC(KeyAction.CommitText("💰")),
+                    bottomRight = KeyC(KeyAction.CommitText("↔️")),
+                    bottom = KeyC(KeyAction.CommitText("⭕")),
+                    bottomLeft = KeyC(KeyAction.CommitText("📄")),
+                    left = KeyC(KeyAction.CommitText("➕")),
                 ),
                 KeyItemC(
-                    center =
-                        KeyC(
-                            KeyAction.CommitText("↪️"),
-                        ),
-                    topLeft =
-                        KeyC(
-                            KeyAction.CommitText("🐒"),
-                        ),
-                    top =
-                        KeyC(
-                            KeyAction.CommitText("💥"),
-                        ),
-                    topRight =
-                        KeyC(
-                            KeyAction.CommitText("⚓"),
-                        ),
-                    right =
-                        KeyC(
-                            KeyAction.CommitText("✌️"),
-                        ),
-                    bottomRight =
-                        KeyC(
-                            KeyAction.CommitText("🌀"),
-                        ),
-                    bottom =
-                        KeyC(
-                            KeyAction.CommitText("🔀"),
-                        ),
-                    bottomLeft =
-                        KeyC(
-                            KeyAction.CommitText("☝️"),
-                        ),
-                    left =
-                        KeyC(
-                            KeyAction.CommitText("🛫"),
-                        ),
+                    center = KeyC(KeyAction.CommitText("↪️")),
+                    topLeft = KeyC(KeyAction.CommitText("🐒")),
+                    top = KeyC(KeyAction.CommitText("💥")),
+                    topRight = KeyC(KeyAction.CommitText("⚓")),
+                    right = KeyC(KeyAction.CommitText("✌️")),
+                    bottomRight = KeyC(KeyAction.CommitText("🌀")),
+                    bottom = KeyC(KeyAction.CommitText("🔀")),
+                    bottomLeft = KeyC(KeyAction.CommitText("☝️")),
+                    left = KeyC(KeyAction.CommitText("🛫")),
                 ),
                 EMOJI_KEY_ITEM,
             ),
             listOf(
                 KeyItemC(
-                    center =
-                        KeyC(
-                            KeyAction.CommitText("🔼"),
-                        ),
-                    topLeft =
-                        KeyC(
-                            KeyAction.CommitText("❕"),
-                        ),
-                    top =
-                        KeyC(
-                            KeyAction.CommitText("🎁"),
-                        ),
-                    topRight =
-                        KeyC(
-                            KeyAction.CommitText("⚡"),
-                        ),
-                    right =
-                        KeyC(
-                            KeyAction.CommitText("🛣️"),
-                        ),
-                    bottomRight =
-                        KeyC(
-                            KeyAction.CommitText("😃"),
-                        ),
-                    bottom =
-                        KeyC(
-                            KeyAction.CommitText("🖼️"),
-                        ),
-                    bottomLeft =
-                        KeyC(
-                            KeyAction.CommitText("👨"),
-                        ),
-                    left =
-                        KeyC(
-                            KeyAction.CommitText("⬆️"),
-                        ),
+                    center = KeyC(KeyAction.CommitText("🔼")),
+                    topLeft = KeyC(KeyAction.CommitText("❕")),
+                    top = KeyC(KeyAction.CommitText("🎁")),
+                    topRight = KeyC(KeyAction.CommitText("⚡")),
+                    right = KeyC(KeyAction.CommitText("🛣️")),
+                    bottomRight = KeyC(KeyAction.CommitText("😃")),
+                    bottom = KeyC(KeyAction.CommitText("🖼️")),
+                    bottomLeft = KeyC(KeyAction.CommitText("👨")),
+                    left = KeyC(KeyAction.CommitText("⬆️")),
                 ),
                 KeyItemC(
-                    center =
-                        KeyC(
-                            KeyAction.CommitText("👇"),
-                        ),
-                    topLeft =
-                        KeyC(
-                            KeyAction.CommitText("🤔"),
-                        ),
-                    top =
-                        KeyC(
-                            KeyAction.CommitText("👧"),
-                        ),
-                    topRight =
-                        KeyC(
-                            KeyAction.CommitText("😶"),
-                        ),
-                    right =
-                        KeyC(
-                            KeyAction.CommitText("🐘"),
-                        ),
-                    bottomRight =
-                        KeyC(
-                            KeyAction.CommitText("☯️"),
-                        ),
-                    bottom =
-                        KeyC(
-                            KeyAction.CommitText("⚙️"),
-                        ),
-                    bottomLeft =
-                        KeyC(
-                            KeyAction.CommitText("☀️"),
-                        ),
-                    left =
-                        KeyC(
-                            KeyAction.CommitText("🍽️"),
-                        ),
+                    center = KeyC(KeyAction.CommitText("👇")),
+                    topLeft = KeyC(KeyAction.CommitText("🤔")),
+                    top = KeyC(KeyAction.CommitText("👧")),
+                    topRight = KeyC(KeyAction.CommitText("😶")),
+                    right = KeyC(KeyAction.CommitText("🐘")),
+                    bottomRight = KeyC(KeyAction.CommitText("☯️")),
+                    bottom = KeyC(KeyAction.CommitText("⚙️")),
+                    bottomLeft = KeyC(KeyAction.CommitText("☀️")),
+                    left = KeyC(KeyAction.CommitText("🍽️")),
                 ),
                 KeyItemC(
-                    center =
-                        KeyC(
-                            KeyAction.CommitText("👤"),
-                        ),
-                    topLeft =
-                        KeyC(
-                            KeyAction.CommitText("🐚"),
-                        ),
-                    top =
-                        KeyC(
-                            KeyAction.CommitText("⚖️"),
-                        ),
-                    topRight =
-                        KeyC(
-                            KeyAction.CommitText("💧"),
-                        ),
-                    right =
-                        KeyC(
-                            KeyAction.CommitText("📤"),
-                        ),
-                    bottomRight =
-                        KeyC(
-                            KeyAction.CommitText("🔧"),
-                        ),
-                    bottom =
-                        KeyC(
-                            KeyAction.CommitText("👎"),
-                        ),
-                    bottomLeft =
-                        KeyC(
-                            KeyAction.CommitText("♾️"),
-                        ),
-                    left =
-                        KeyC(
-                            KeyAction.CommitText("🏝️"),
-                        ),
+                    center = KeyC(KeyAction.CommitText("👤")),
+                    topLeft = KeyC(KeyAction.CommitText("🐚")),
+                    top = KeyC(KeyAction.CommitText("⚖️")),
+                    topRight = KeyC(KeyAction.CommitText("💧")),
+                    right = KeyC(KeyAction.CommitText("📤")),
+                    bottomRight = KeyC(KeyAction.CommitText("🔧")),
+                    bottom = KeyC(KeyAction.CommitText("👎")),
+                    bottomLeft = KeyC(KeyAction.CommitText("♾️")),
+                    left = KeyC(KeyAction.CommitText("🏝️")),
                 ),
                 NUMERIC_KEY_ITEM,
             ),
             listOf(
                 KeyItemC(
-                    center =
-                        KeyC(
-                            KeyAction.CommitText("👈"),
-                        ),
-                    topLeft =
-                        KeyC(
-                            KeyAction.CommitText("🏁"),
-                        ),
-                    top =
-                        KeyC(
-                            KeyAction.CommitText("🐭"),
-                        ),
-                    topRight =
-                        KeyC(
-                            KeyAction.CommitText("❤️"),
-                        ),
-                    right =
-                        KeyC(
-                            KeyAction.CommitText("👜"),
-                        ),
-                    bottomRight =
-                        KeyC(
-                            KeyAction.CommitText("✊"),
-                        ),
-                    bottom =
-                        KeyC(
-                            KeyAction.CommitText("👀"),
-                        ),
-                    bottomLeft =
-                        KeyC(
-                            KeyAction.CommitText("↩️"),
-                        ),
-                    left =
-                        KeyC(
-                            KeyAction.CommitText("🏠"),
-                        ),
+                    center = KeyC(KeyAction.CommitText("👈")),
+                    topLeft = KeyC(KeyAction.CommitText("🏁")),
+                    top = KeyC(KeyAction.CommitText("🐭")),
+                    topRight = KeyC(KeyAction.CommitText("❤️")),
+                    right = KeyC(KeyAction.CommitText("👜")),
+                    bottomRight = KeyC(KeyAction.CommitText("✊")),
+                    bottom = KeyC(KeyAction.CommitText("👀")),
+                    bottomLeft = KeyC(KeyAction.CommitText("↩️")),
+                    left = KeyC(KeyAction.CommitText("🏠")),
                 ),
                 KeyItemC(
-                    center =
-                        KeyC(
-                            KeyAction.CommitText("⏩"),
-                        ),
-                    topLeft =
-                        KeyC(
-                            KeyAction.CommitText("🧠"),
-                        ),
-                    top =
-                        KeyC(
-                            KeyAction.CommitText("💪"),
-                        ),
-                    topRight =
-                        KeyC(
-                            KeyAction.CommitText("👋"),
-                        ),
-                    right =
-                        KeyC(
-                            KeyAction.CommitText("💭"),
-                        ),
+                    center = KeyC(KeyAction.CommitText("⏩")),
+                    topLeft = KeyC(KeyAction.CommitText("🧠")),
+                    top = KeyC(KeyAction.CommitText("💪")),
+                    topRight = KeyC(KeyAction.CommitText("👋")),
+                    right = KeyC(KeyAction.CommitText("💭")),
                     bottomRight =
                         KeyC(
                             KeyAction.CommitText(","),
@@ -329,48 +125,18 @@ val KB_TOK_SITELEN_THUMBKEY_EMOJI_MAIN =
                             swipeReturnAction = KeyAction.ToggleCurrentWordCapitalization(true),
                             color = ColorVariant.MUTED,
                         ),
-                    left =
-                        KeyC(
-                            KeyAction.CommitText("🗣️"),
-                        ),
+                    left = KeyC(KeyAction.CommitText("🗣️")),
                 ),
                 KeyItemC(
-                    center =
-                        KeyC(
-                            KeyAction.CommitText("▶️"),
-                        ),
-                    topLeft =
-                        KeyC(
-                            KeyAction.CommitText("❓"),
-                        ),
-                    top =
-                        KeyC(
-                            KeyAction.CommitText("🚶"),
-                        ),
-                    topRight =
-                        KeyC(
-                            KeyAction.CommitText("👍"),
-                        ),
-                    right =
-                        KeyC(
-                            KeyAction.CommitText("👐"),
-                        ),
-                    bottomRight =
-                        KeyC(
-                            KeyAction.CommitText("⏰"),
-                        ),
-                    bottom =
-                        KeyC(
-                            KeyAction.CommitText("👆"),
-                        ),
-                    bottomLeft =
-                        KeyC(
-                            KeyAction.CommitText("⏹️"),
-                        ),
-                    left =
-                        KeyC(
-                            KeyAction.CommitText("📍"),
-                        ),
+                    center = KeyC(KeyAction.CommitText("▶️")),
+                    topLeft = KeyC(KeyAction.CommitText("❓")),
+                    top = KeyC(KeyAction.CommitText("🚶")),
+                    topRight = KeyC(KeyAction.CommitText("👍")),
+                    right = KeyC(KeyAction.CommitText("👐")),
+                    bottomRight = KeyC(KeyAction.CommitText("⏰")),
+                    bottom = KeyC(KeyAction.CommitText("👆")),
+                    bottomLeft = KeyC(KeyAction.CommitText("⏹️")),
+                    left = KeyC(KeyAction.CommitText("📍")),
                 ),
                 BACKSPACE_KEY_ITEM,
             ),
@@ -386,219 +152,75 @@ val KB_TOK_SITELEN_THUMBKEY_EMOJI_SHIFTED =
         listOf(
             listOf(
                 KeyItemC(
-                    center =
-                        KeyC(
-                            KeyAction.CommitText("⏺️"),
-                        ),
+                    center = KeyC(KeyAction.CommitText("⏺️")),
                 ),
                 KeyItemC(
-                    center =
-                        KeyC(
-                            KeyAction.CommitText("💬"),
-                        ),
+                    center = KeyC(KeyAction.CommitText("💬")),
                 ),
                 KeyItemC(
-                    center =
-                        KeyC(
-                            KeyAction.CommitText("🔥"),
-                        ),
+                    center = KeyC(KeyAction.CommitText("🔥")),
                     // Last char added here
-                    bottomRight =
-                        KeyC(
-                            KeyAction.CommitText("♐"),
-                        ),
-                    bottom =
-                        KeyC(
-                            KeyAction.CommitText("🍄"),
-                        ),
-                    bottomLeft =
-                        KeyC(
-                            KeyAction.CommitText("👁️"),
-                        ),
-                    left =
-                        KeyC(
-                            KeyAction.CommitText("🧂"),
-                        ),
+                    bottomRight = KeyC(KeyAction.CommitText("♐")),
+                    bottom = KeyC(KeyAction.CommitText("🍄")),
+                    bottomLeft = KeyC(KeyAction.CommitText("👁️")),
+                    left = KeyC(KeyAction.CommitText("🧂")),
                 ),
                 EMOJI_KEY_ITEM,
             ),
             listOf(
                 KeyItemC(
-                    center =
-                        KeyC(
-                            KeyAction.CommitText("🌴"),
-                        ),
-                    topLeft =
-                        KeyC(
-                            KeyAction.CommitText("👹"),
-                        ),
-                    top =
-                        KeyC(
-                            KeyAction.CommitText("💊"),
-                        ),
-                    topRight =
-                        KeyC(
-                            KeyAction.CommitText("⛿"),
-                        ),
-                    right =
-                        KeyC(
-                            KeyAction.CommitText("🧱"),
-                        ),
-                    bottomRight =
-                        KeyC(
-                            KeyAction.CommitText("🫳"),
-                        ),
-                    bottom =
-                        KeyC(
-                            KeyAction.CommitText("📕"),
-                        ),
-                    bottomLeft =
-                        KeyC(
-                            KeyAction.CommitText("🐊"),
-                        ),
-                    left =
-                        KeyC(
-                            KeyAction.CommitText("✂️"),
-                        ),
+                    center = KeyC(KeyAction.CommitText("🌴")),
+                    topLeft = KeyC(KeyAction.CommitText("👹")),
+                    top = KeyC(KeyAction.CommitText("💊")),
+                    topRight = KeyC(KeyAction.CommitText("⛿")),
+                    right = KeyC(KeyAction.CommitText("🧱")),
+                    bottomRight = KeyC(KeyAction.CommitText("🫳")),
+                    bottom = KeyC(KeyAction.CommitText("📕")),
+                    bottomLeft = KeyC(KeyAction.CommitText("🐊")),
+                    left = KeyC(KeyAction.CommitText("✂️")),
                 ),
                 KeyItemC(
-                    center =
-                        KeyC(
-                            KeyAction.CommitText("✋"),
-                        ),
-                    topLeft =
-                        KeyC(
-                            KeyAction.CommitText("🦝"),
-                        ),
-                    top =
-                        KeyC(
-                            KeyAction.CommitText("🪞"),
-                        ),
-                    topRight =
-                        KeyC(
-                            KeyAction.CommitText("😎"),
-                        ),
-                    right =
-                        KeyC(
-                            KeyAction.CommitText("📖"),
-                        ),
-                    bottomRight =
-                        KeyC(
-                            KeyAction.CommitText("😹"),
-                        ),
-                    bottom =
-                        KeyC(
-                            KeyAction.CommitText("🍆"),
-                        ),
-                    bottomLeft =
-                        KeyC(
-                            KeyAction.CommitText("🔵"),
-                        ),
-                    left =
-                        KeyC(
-                            KeyAction.CommitText("🐟"),
-                        ),
+                    center = KeyC(KeyAction.CommitText("✋")),
+                    topLeft = KeyC(KeyAction.CommitText("🦝")),
+                    top = KeyC(KeyAction.CommitText("🪞")),
+                    topRight = KeyC(KeyAction.CommitText("😎")),
+                    right = KeyC(KeyAction.CommitText("📖")),
+                    bottomRight = KeyC(KeyAction.CommitText("😹")),
+                    bottom = KeyC(KeyAction.CommitText("🍆")),
+                    bottomLeft = KeyC(KeyAction.CommitText("🔵")),
+                    left = KeyC(KeyAction.CommitText("🐟")),
                 ),
                 KeyItemC(
-                    center =
-                        KeyC(
-                            KeyAction.CommitText("💨"),
-                        ),
-                    topLeft =
-                        KeyC(
-                            KeyAction.CommitText("💛"),
-                        ),
-                    top =
-                        KeyC(
-                            KeyAction.CommitText("🏹"),
-                        ),
-                    topRight =
-                        KeyC(
-                            KeyAction.CommitText("📏"),
-                        ),
-                    right =
-                        KeyC(
-                            KeyAction.CommitText("🌙"),
-                        ),
-                    bottomRight =
-                        KeyC(
-                            KeyAction.CommitText("🍞"),
-                        ),
-                    bottom =
-                        KeyC(
-                            KeyAction.CommitText("🐞"),
-                        ),
-                    bottomLeft =
-                        KeyC(
-                            KeyAction.CommitText("🗻"),
-                        ),
-                    left =
-                        KeyC(
-                            KeyAction.CommitText("🦅"),
-                        ),
+                    center = KeyC(KeyAction.CommitText("💨")),
+                    topLeft = KeyC(KeyAction.CommitText("💛")),
+                    top = KeyC(KeyAction.CommitText("🏹")),
+                    topRight = KeyC(KeyAction.CommitText("📏")),
+                    right = KeyC(KeyAction.CommitText("🌙")),
+                    bottomRight = KeyC(KeyAction.CommitText("🍞")),
+                    bottom = KeyC(KeyAction.CommitText("🐞")),
+                    bottomLeft = KeyC(KeyAction.CommitText("🗻")),
+                    left = KeyC(KeyAction.CommitText("🦅")),
                 ),
                 NUMERIC_KEY_ITEM,
             ),
             listOf(
                 KeyItemC(
-                    center =
-                        KeyC(
-                            KeyAction.CommitText("👕"),
-                        ),
-                    topLeft =
-                        KeyC(
-                            KeyAction.CommitText("🔴"),
-                        ),
-                    top =
-                        KeyC(
-                            KeyAction.CommitText("🍦"),
-                        ),
-                    topRight =
-                        KeyC(
-                            KeyAction.CommitText("💩"),
-                        ),
-                    right =
-                        KeyC(
-                            KeyAction.CommitText("🍎"),
-                        ),
-                    bottomRight =
-                        KeyC(
-                            KeyAction.CommitText("⚪"),
-                        ),
-                    bottom =
-                        KeyC(
-                            KeyAction.CommitText("🔲"),
-                        ),
-                    bottomLeft =
-                        KeyC(
-                            KeyAction.CommitText("❗"),
-                        ),
-                    left =
-                        KeyC(
-                            KeyAction.CommitText("⬅️"),
-                        ),
+                    center = KeyC(KeyAction.CommitText("👕")),
+                    topLeft = KeyC(KeyAction.CommitText("🔴")),
+                    top = KeyC(KeyAction.CommitText("🍦")),
+                    topRight = KeyC(KeyAction.CommitText("💩")),
+                    right = KeyC(KeyAction.CommitText("🍎")),
+                    bottomRight = KeyC(KeyAction.CommitText("⚪")),
+                    bottom = KeyC(KeyAction.CommitText("🔲")),
+                    bottomLeft = KeyC(KeyAction.CommitText("❗")),
+                    left = KeyC(KeyAction.CommitText("⬅️")),
                 ),
                 KeyItemC(
-                    center =
-                        KeyC(
-                            KeyAction.CommitText("💕"),
-                        ),
-                    topLeft =
-                        KeyC(
-                            KeyAction.CommitText("🕳️"),
-                        ),
-                    top =
-                        KeyC(
-                            KeyAction.CommitText("🌈"),
-                        ),
-                    topRight =
-                        KeyC(
-                            KeyAction.CommitText("🦎"),
-                        ),
-                    right =
-                        KeyC(
-                            KeyAction.CommitText("❄️"),
-                        ),
+                    center = KeyC(KeyAction.CommitText("💕")),
+                    topLeft = KeyC(KeyAction.CommitText("🕳️")),
+                    top = KeyC(KeyAction.CommitText("🌈")),
+                    topRight = KeyC(KeyAction.CommitText("🦎")),
+                    right = KeyC(KeyAction.CommitText("❄️")),
                     bottomRight =
                         KeyC(
                             KeyAction.CommitText(","),
@@ -616,48 +238,18 @@ val KB_TOK_SITELEN_THUMBKEY_EMOJI_SHIFTED =
                             swipeReturnAction = KeyAction.ToggleCurrentWordCapitalization(false),
                             color = ColorVariant.MUTED,
                         ),
-                    left =
-                        KeyC(
-                            KeyAction.CommitText("👄"),
-                        ),
+                    left = KeyC(KeyAction.CommitText("👄")),
                 ),
                 KeyItemC(
-                    center =
-                        KeyC(
-                            KeyAction.CommitText("🔓"),
-                        ),
-                    topLeft =
-                        KeyC(
-                            KeyAction.CommitText("🦵"),
-                        ),
-                    top =
-                        KeyC(
-                            KeyAction.CommitText("〰️"),
-                        ),
-                    topRight =
-                        KeyC(
-                            KeyAction.CommitText("#️⃣"),
-                        ),
-                    right =
-                        KeyC(
-                            KeyAction.CommitText("⬇️"),
-                        ),
-                    bottomRight =
-                        KeyC(
-                            KeyAction.CommitText("💎"),
-                        ),
-                    bottom =
-                        KeyC(
-                            KeyAction.CommitText("🍭"),
-                        ),
-                    bottomLeft =
-                        KeyC(
-                            KeyAction.CommitText("➡️"),
-                        ),
-                    left =
-                        KeyC(
-                            KeyAction.CommitText("📦"),
-                        ),
+                    center = KeyC(KeyAction.CommitText("🔓")),
+                    topLeft = KeyC(KeyAction.CommitText("🦵")),
+                    top = KeyC(KeyAction.CommitText("〰️")),
+                    topRight = KeyC(KeyAction.CommitText("#️⃣")),
+                    right = KeyC(KeyAction.CommitText("⬇️")),
+                    bottomRight = KeyC(KeyAction.CommitText("💎")),
+                    bottom = KeyC(KeyAction.CommitText("🍭")),
+                    bottomLeft = KeyC(KeyAction.CommitText("➡️")),
+                    left = KeyC(KeyAction.CommitText("📦")),
                 ),
                 BACKSPACE_KEY_ITEM,
             ),

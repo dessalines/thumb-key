@@ -20,14 +20,8 @@ val KB_FA_THUMBKEY_MAIN =
                             KeyAction.CommitText("د"),
                             size = FontSizeVariant.LARGE,
                         ),
-                    bottomRight =
-                        KeyC(
-                            KeyAction.CommitText("ص"),
-                        ),
-                    bottom =
-                        KeyC(
-                            KeyAction.CommitText("ض"),
-                        ),
+                    bottomRight = KeyC(KeyAction.CommitText("ص")),
+                    bottom = KeyC(KeyAction.CommitText("ض")),
                 ),
                 KeyItemC(
                     center =
@@ -35,22 +29,10 @@ val KB_FA_THUMBKEY_MAIN =
                             KeyAction.CommitText("ر"),
                             size = FontSizeVariant.LARGE,
                         ),
-                    right =
-                        KeyC(
-                            KeyAction.CommitText("ژ"),
-                        ),
-                    bottomRight =
-                        KeyC(
-                            KeyAction.CommitText("ف"),
-                        ),
-                    bottom =
-                        KeyC(
-                            KeyAction.CommitText("ز"),
-                        ),
-                    bottomLeft =
-                        KeyC(
-                            KeyAction.CommitText("ق"),
-                        ),
+                    right = KeyC(KeyAction.CommitText("ژ")),
+                    bottomRight = KeyC(KeyAction.CommitText("ف")),
+                    bottom = KeyC(KeyAction.CommitText("ز")),
+                    bottomLeft = KeyC(KeyAction.CommitText("ق")),
                 ),
                 KeyItemC(
                     center =
@@ -64,14 +46,8 @@ val KB_FA_THUMBKEY_MAIN =
                             action = KeyAction.CommitText("\u200F"), // Right-to-Left Mark (RLM)
                             color = ColorVariant.MUTED,
                         ),
-                    bottom =
-                        KeyC(
-                            KeyAction.CommitText("ء"),
-                        ),
-                    bottomLeft =
-                        KeyC(
-                            KeyAction.CommitText("ع"),
-                        ),
+                    bottom = KeyC(KeyAction.CommitText("ء")),
+                    bottomLeft = KeyC(KeyAction.CommitText("ع")),
                 ),
                 EMOJI_KEY_ITEM,
             ),
@@ -82,18 +58,9 @@ val KB_FA_THUMBKEY_MAIN =
                             KeyAction.CommitText("ن"),
                             size = FontSizeVariant.LARGE,
                         ),
-                    right =
-                        KeyC(
-                            KeyAction.CommitText("ج"),
-                        ),
-                    topRight =
-                        KeyC(
-                            KeyAction.CommitText("ح"),
-                        ),
-                    bottomRight =
-                        KeyC(
-                            KeyAction.CommitText("چ"),
-                        ),
+                    right = KeyC(KeyAction.CommitText("ج")),
+                    topRight = KeyC(KeyAction.CommitText("ح")),
+                    bottomRight = KeyC(KeyAction.CommitText("چ")),
                 ),
                 KeyItemC(
                     center =
@@ -101,38 +68,14 @@ val KB_FA_THUMBKEY_MAIN =
                             KeyAction.CommitText("ا"),
                             size = FontSizeVariant.LARGE,
                         ),
-                    topLeft =
-                        KeyC(
-                            KeyAction.CommitText("ذ"),
-                        ),
-                    top =
-                        KeyC(
-                            KeyAction.CommitText("ب"),
-                        ),
-                    topRight =
-                        KeyC(
-                            KeyAction.CommitText("پ"),
-                        ),
-                    right =
-                        KeyC(
-                            KeyAction.CommitText("س"),
-                        ),
-                    bottomRight =
-                        KeyC(
-                            KeyAction.CommitText("ش"),
-                        ),
-                    bottom =
-                        KeyC(
-                            KeyAction.CommitText("ل"),
-                        ),
-                    bottomLeft =
-                        KeyC(
-                            KeyAction.CommitText("آ"),
-                        ),
-                    left =
-                        KeyC(
-                            KeyAction.CommitText("خ"),
-                        ),
+                    topLeft = KeyC(KeyAction.CommitText("ذ")),
+                    top = KeyC(KeyAction.CommitText("ب")),
+                    topRight = KeyC(KeyAction.CommitText("پ")),
+                    right = KeyC(KeyAction.CommitText("س")),
+                    bottomRight = KeyC(KeyAction.CommitText("ش")),
+                    bottom = KeyC(KeyAction.CommitText("ل")),
+                    bottomLeft = KeyC(KeyAction.CommitText("آ")),
+                    left = KeyC(KeyAction.CommitText("خ")),
                 ),
                 KeyItemC(
                     center =
@@ -140,18 +83,9 @@ val KB_FA_THUMBKEY_MAIN =
                             KeyAction.CommitText("م"),
                             size = FontSizeVariant.LARGE,
                         ),
-                    bottomLeft =
-                        KeyC(
-                            KeyAction.CommitText("گ"),
-                        ),
-                    left =
-                        KeyC(
-                            KeyAction.CommitText("ک"),
-                        ),
-                    topLeft =
-                        KeyC(
-                            KeyAction.CommitText("غ"),
-                        ),
+                    bottomLeft = KeyC(KeyAction.CommitText("گ")),
+                    left = KeyC(KeyAction.CommitText("ک")),
+                    topLeft = KeyC(KeyAction.CommitText("غ")),
                 ),
                 NUMERIC_KEY_ITEM,
             ),
@@ -162,10 +96,7 @@ val KB_FA_THUMBKEY_MAIN =
                             KeyAction.CommitText("ت"),
                             size = FontSizeVariant.LARGE,
                         ),
-                    topRight =
-                        KeyC(
-                            KeyAction.CommitText("ث"),
-                        ),
+                    topRight = KeyC(KeyAction.CommitText("ث")),
                 ),
                 KeyItemC(
                     center =
@@ -179,10 +110,7 @@ val KB_FA_THUMBKEY_MAIN =
                             action = KeyAction.CommitText("\u200C"), // Zero Width Non-Joiner (ZWNJ)
                             color = ColorVariant.MUTED,
                         ),
-                    right =
-                        KeyC(
-                            KeyAction.CommitText("ئ"),
-                        ),
+                    right = KeyC(KeyAction.CommitText("ئ")),
                     bottomRight =
                         KeyC(
                             KeyAction.CommitText("ـ"),
@@ -210,18 +138,9 @@ val KB_FA_THUMBKEY_MAIN =
                             KeyAction.CommitText("ه"),
                             size = FontSizeVariant.LARGE,
                         ),
-                    topLeft =
-                        KeyC(
-                            KeyAction.CommitText("ط"),
-                        ),
-                    top =
-                        KeyC(
-                            KeyAction.CommitText("ظ"),
-                        ),
-                    left =
-                        KeyC(
-                            KeyAction.CommitText("ۀ"),
-                        ),
+                    topLeft = KeyC(KeyAction.CommitText("ط")),
+                    top = KeyC(KeyAction.CommitText("ظ")),
+                    left = KeyC(KeyAction.CommitText("ۀ")),
                 ),
                 BACKSPACE_KEY_ITEM,
             ),

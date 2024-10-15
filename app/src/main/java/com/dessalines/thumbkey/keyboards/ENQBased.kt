@@ -39,18 +39,9 @@ val KB_EN_QBASED_MAIN =
                             KeyAction.CommitText("e"),
                             color = ColorVariant.PRIMARY,
                         ),
-                    topLeft =
-                        KeyC(
-                            KeyAction.CommitText("1"),
-                        ),
-                    top =
-                        KeyC(
-                            KeyAction.CommitText("2"),
-                        ),
-                    topRight =
-                        KeyC(
-                            KeyAction.CommitText("3"),
-                        ),
+                    topLeft = KeyC(KeyAction.CommitText("1")),
+                    top = KeyC(KeyAction.CommitText("2")),
+                    topRight = KeyC(KeyAction.CommitText("3")),
                 ),
                 KeyItemC(
                     center =
@@ -73,18 +64,9 @@ val KB_EN_QBASED_MAIN =
                             KeyAction.CommitText("y"),
                             color = ColorVariant.PRIMARY,
                         ),
-                    topLeft =
-                        KeyC(
-                            KeyAction.CommitText("4"),
-                        ),
-                    top =
-                        KeyC(
-                            KeyAction.CommitText("5"),
-                        ),
-                    topRight =
-                        KeyC(
-                            KeyAction.CommitText("6"),
-                        ),
+                    topLeft = KeyC(KeyAction.CommitText("4")),
+                    top = KeyC(KeyAction.CommitText("5")),
+                    topRight = KeyC(KeyAction.CommitText("6")),
                 ),
                 KeyItemC(
                     center =
@@ -102,22 +84,10 @@ val KB_EN_QBASED_MAIN =
                             KeyAction.CommitText("p"),
                             color = ColorVariant.PRIMARY,
                         ),
-                    topLeft =
-                        KeyC(
-                            KeyAction.CommitText("7"),
-                        ),
-                    top =
-                        KeyC(
-                            KeyAction.CommitText("8"),
-                        ),
-                    topRight =
-                        KeyC(
-                            KeyAction.CommitText("9"),
-                        ),
-                    bottomRight =
-                        KeyC(
-                            KeyAction.CommitText("0"),
-                        ),
+                    topLeft = KeyC(KeyAction.CommitText("7")),
+                    top = KeyC(KeyAction.CommitText("8")),
+                    topRight = KeyC(KeyAction.CommitText("9")),
+                    bottomRight = KeyC(KeyAction.CommitText("0")),
                 ),
                 EMOJI_KEY_ITEM,
             ),
@@ -175,14 +145,8 @@ val KB_EN_QBASED_MAIN =
                             KeyAction.CommitText("l"),
                             color = ColorVariant.PRIMARY,
                         ),
-                    top =
-                        KeyC(
-                            KeyAction.CommitText("\""),
-                        ),
-                    bottom =
-                        KeyC(
-                            KeyAction.CommitText("'"),
-                        ),
+                    top = KeyC(KeyAction.CommitText("\"")),
+                    bottom = KeyC(KeyAction.CommitText("'")),
                 ),
                 NUMERIC_KEY_ITEM,
             ),
@@ -223,10 +187,7 @@ val KB_EN_QBASED_MAIN =
                             KeyAction.CommitText("b"),
                             color = ColorVariant.PRIMARY,
                         ),
-                    bottom =
-                        KeyC(
-                            KeyAction.CommitText(","),
-                        ),
+                    bottom = KeyC(KeyAction.CommitText(",")),
                 ),
                 KeyItemC(
                     center =
@@ -235,18 +196,9 @@ val KB_EN_QBASED_MAIN =
                             size = FontSizeVariant.LARGE,
                         ),
                     swipeType = SwipeNWay.FOUR_WAY_CROSS,
-                    right =
-                        KeyC(
-                            KeyAction.CommitText("?"),
-                        ),
-                    top =
-                        KeyC(
-                            KeyAction.CommitText("!"),
-                        ),
-                    bottom =
-                        KeyC(
-                            KeyAction.CommitText("."),
-                        ),
+                    right = KeyC(KeyAction.CommitText("?")),
+                    top = KeyC(KeyAction.CommitText("!")),
+                    bottom = KeyC(KeyAction.CommitText(".")),
                     left =
                         KeyC(
                             KeyAction.CommitText("n"),
@@ -282,18 +234,9 @@ val KB_EN_QBASED_SHIFTED =
                             KeyAction.CommitText("E"),
                             color = ColorVariant.PRIMARY,
                         ),
-                    topLeft =
-                        KeyC(
-                            KeyAction.CommitText("!"),
-                        ),
-                    top =
-                        KeyC(
-                            KeyAction.CommitText("@"),
-                        ),
-                    topRight =
-                        KeyC(
-                            KeyAction.CommitText("#"),
-                        ),
+                    topLeft = KeyC(KeyAction.CommitText("!")),
+                    top = KeyC(KeyAction.CommitText("@")),
+                    topRight = KeyC(KeyAction.CommitText("#")),
                 ),
                 KeyItemC(
                     center =
@@ -316,18 +259,9 @@ val KB_EN_QBASED_SHIFTED =
                             KeyAction.CommitText("Y"),
                             color = ColorVariant.PRIMARY,
                         ),
-                    topLeft =
-                        KeyC(
-                            KeyAction.CommitText("$"),
-                        ),
-                    top =
-                        KeyC(
-                            KeyAction.CommitText("%"),
-                        ),
-                    topRight =
-                        KeyC(
-                            KeyAction.CommitText("^"),
-                        ),
+                    topLeft = KeyC(KeyAction.CommitText("$")),
+                    top = KeyC(KeyAction.CommitText("%")),
+                    topRight = KeyC(KeyAction.CommitText("^")),
                 ),
                 KeyItemC(
                     center =
@@ -345,22 +279,10 @@ val KB_EN_QBASED_SHIFTED =
                             KeyAction.CommitText("P"),
                             color = ColorVariant.PRIMARY,
                         ),
-                    topLeft =
-                        KeyC(
-                            KeyAction.CommitText("&"),
-                        ),
-                    top =
-                        KeyC(
-                            KeyAction.CommitText("*"),
-                        ),
-                    topRight =
-                        KeyC(
-                            KeyAction.CommitText("("),
-                        ),
-                    bottomRight =
-                        KeyC(
-                            KeyAction.CommitText(")"),
-                        ),
+                    topLeft = KeyC(KeyAction.CommitText("&")),
+                    top = KeyC(KeyAction.CommitText("*")),
+                    topRight = KeyC(KeyAction.CommitText("(")),
+                    bottomRight = KeyC(KeyAction.CommitText(")")),
                 ),
                 EMOJI_KEY_ITEM,
             ),
@@ -473,10 +395,7 @@ val KB_EN_QBASED_SHIFTED =
                             size = FontSizeVariant.LARGE,
                         ),
                     swipeType = SwipeNWay.TWO_WAY_HORIZONTAL,
-                    right =
-                        KeyC(
-                            KeyAction.CommitText("/"),
-                        ),
+                    right = KeyC(KeyAction.CommitText("/")),
                     left =
                         KeyC(
                             KeyAction.CommitText("N"),

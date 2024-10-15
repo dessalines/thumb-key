@@ -21,19 +21,13 @@ val KB_HU_TYPESPLIT_MAIN =
                             size = FontSizeVariant.LARGE,
                         ),
                     swipeType = SwipeNWay.FOUR_WAY_CROSS,
-                    right =
-                        KeyC(
-                            KeyAction.CommitText("q"),
-                        ),
+                    right = KeyC(KeyAction.CommitText("q")),
                     left =
                         KeyC(
                             display = null,
                             action = KeyAction.CommitText("q"),
                         ),
-                    bottom =
-                        KeyC(
-                            KeyAction.CommitText("w"),
-                        ),
+                    bottom = KeyC(KeyAction.CommitText("w")),
                 ),
                 KeyItemC(
                     center =
@@ -42,10 +36,7 @@ val KB_HU_TYPESPLIT_MAIN =
                             size = FontSizeVariant.LARGE,
                         ),
                     swipeType = SwipeNWay.TWO_WAY_VERTICAL,
-                    bottom =
-                        KeyC(
-                            KeyAction.CommitText("r"),
-                        ),
+                    bottom = KeyC(KeyAction.CommitText("r")),
                 ),
                 EMOJI_KEY_ITEM_ALT,
                 KeyItemC(
@@ -55,22 +46,10 @@ val KB_HU_TYPESPLIT_MAIN =
                             size = FontSizeVariant.LARGE,
                         ),
                     swipeType = SwipeNWay.FOUR_WAY_CROSS,
-                    right =
-                        KeyC(
-                            KeyAction.CommitText("z"),
-                        ),
-                    left =
-                        KeyC(
-                            KeyAction.CommitText("ö"),
-                        ),
-                    bottom =
-                        KeyC(
-                            KeyAction.CommitText("u"),
-                        ),
-                    top =
-                        KeyC(
-                            KeyAction.CommitText("ü"),
-                        ),
+                    right = KeyC(KeyAction.CommitText("z")),
+                    left = KeyC(KeyAction.CommitText("ö")),
+                    bottom = KeyC(KeyAction.CommitText("u")),
+                    top = KeyC(KeyAction.CommitText("ü")),
                 ),
                 KeyItemC(
                     center =
@@ -79,22 +58,10 @@ val KB_HU_TYPESPLIT_MAIN =
                             size = FontSizeVariant.LARGE,
                         ),
                     swipeType = SwipeNWay.FOUR_WAY_CROSS,
-                    right =
-                        KeyC(
-                            KeyAction.CommitText("ú"),
-                        ),
-                    left =
-                        KeyC(
-                            KeyAction.CommitText("ő"),
-                        ),
-                    bottom =
-                        KeyC(
-                            KeyAction.CommitText("p"),
-                        ),
-                    top =
-                        KeyC(
-                            KeyAction.CommitText("ó"),
-                        ),
+                    right = KeyC(KeyAction.CommitText("ú")),
+                    left = KeyC(KeyAction.CommitText("ő")),
+                    bottom = KeyC(KeyAction.CommitText("p")),
+                    top = KeyC(KeyAction.CommitText("ó")),
                 ),
             ),
             listOf(
@@ -117,14 +84,8 @@ val KB_HU_TYPESPLIT_MAIN =
                             display = null,
                             action = KeyAction.CommitText("f"),
                         ),
-                    left =
-                        KeyC(
-                            KeyAction.CommitText("f"),
-                        ),
-                    bottom =
-                        KeyC(
-                            KeyAction.CommitText("d"),
-                        ),
+                    left = KeyC(KeyAction.CommitText("f")),
+                    bottom = KeyC(KeyAction.CommitText("d")),
                 ),
                 SPACEBAR_TYPESPLIT_MIDDLE_KEY_ITEM,
                 KeyItemC(
@@ -139,14 +100,8 @@ val KB_HU_TYPESPLIT_MAIN =
                             display = null,
                             action = KeyAction.CommitText("j"),
                         ),
-                    right =
-                        KeyC(
-                            KeyAction.CommitText("j"),
-                        ),
-                    bottom =
-                        KeyC(
-                            KeyAction.CommitText("g"),
-                        ),
+                    right = KeyC(KeyAction.CommitText("j")),
+                    bottom = KeyC(KeyAction.CommitText("g")),
                 ),
                 KeyItemC(
                     center =
@@ -155,22 +110,10 @@ val KB_HU_TYPESPLIT_MAIN =
                             size = FontSizeVariant.LARGE,
                         ),
                     swipeType = SwipeNWay.FOUR_WAY_CROSS,
-                    left =
-                        KeyC(
-                            KeyAction.CommitText("é"),
-                        ),
-                    top =
-                        KeyC(
-                            KeyAction.CommitText("á"),
-                        ),
-                    right =
-                        KeyC(
-                            KeyAction.CommitText("ű"),
-                        ),
-                    bottom =
-                        KeyC(
-                            KeyAction.CommitText("k"),
-                        ),
+                    left = KeyC(KeyAction.CommitText("é")),
+                    top = KeyC(KeyAction.CommitText("á")),
+                    right = KeyC(KeyAction.CommitText("ű")),
+                    bottom = KeyC(KeyAction.CommitText("k")),
                 ),
             ),
             listOf(
@@ -181,18 +124,9 @@ val KB_HU_TYPESPLIT_MAIN =
                             size = FontSizeVariant.LARGE,
                         ),
                     swipeType = SwipeNWay.FOUR_WAY_CROSS,
-                    right =
-                        KeyC(
-                            KeyAction.CommitText("y"),
-                        ),
-                    left =
-                        KeyC(
-                            KeyAction.CommitText("í"),
-                        ),
-                    bottom =
-                        KeyC(
-                            KeyAction.CommitText("x"),
-                        ),
+                    right = KeyC(KeyAction.CommitText("y")),
+                    left = KeyC(KeyAction.CommitText("í")),
+                    bottom = KeyC(KeyAction.CommitText("x")),
                 ),
                 KeyItemC(
                     center =
@@ -201,10 +135,7 @@ val KB_HU_TYPESPLIT_MAIN =
                             size = FontSizeVariant.LARGE,
                         ),
                     swipeType = SwipeNWay.TWO_WAY_VERTICAL,
-                    bottom =
-                        KeyC(
-                            KeyAction.CommitText("v"),
-                        ),
+                    bottom = KeyC(KeyAction.CommitText("v")),
                 ),
                 SPACEBAR_TYPESPLIT_BOTTOM_KEY_ITEM,
                 KeyItemC(
@@ -262,19 +193,13 @@ val KB_HU_TYPESPLIT_SHIFTED =
                             size = FontSizeVariant.LARGE,
                         ),
                     swipeType = SwipeNWay.FOUR_WAY_CROSS,
-                    right =
-                        KeyC(
-                            KeyAction.CommitText("Q"),
-                        ),
+                    right = KeyC(KeyAction.CommitText("Q")),
                     left =
                         KeyC(
                             display = null,
                             action = KeyAction.CommitText("Q"),
                         ),
-                    bottom =
-                        KeyC(
-                            KeyAction.CommitText("W"),
-                        ),
+                    bottom = KeyC(KeyAction.CommitText("W")),
                 ),
                 KeyItemC(
                     center =
@@ -283,10 +208,7 @@ val KB_HU_TYPESPLIT_SHIFTED =
                             size = FontSizeVariant.LARGE,
                         ),
                     swipeType = SwipeNWay.TWO_WAY_VERTICAL,
-                    bottom =
-                        KeyC(
-                            KeyAction.CommitText("R"),
-                        ),
+                    bottom = KeyC(KeyAction.CommitText("R")),
                 ),
                 EMOJI_KEY_ITEM_ALT,
                 KeyItemC(
@@ -296,22 +218,10 @@ val KB_HU_TYPESPLIT_SHIFTED =
                             size = FontSizeVariant.LARGE,
                         ),
                     swipeType = SwipeNWay.FOUR_WAY_CROSS,
-                    right =
-                        KeyC(
-                            KeyAction.CommitText("Z"),
-                        ),
-                    left =
-                        KeyC(
-                            KeyAction.CommitText("Ö"),
-                        ),
-                    bottom =
-                        KeyC(
-                            KeyAction.CommitText("U"),
-                        ),
-                    top =
-                        KeyC(
-                            KeyAction.CommitText("Ü"),
-                        ),
+                    right = KeyC(KeyAction.CommitText("Z")),
+                    left = KeyC(KeyAction.CommitText("Ö")),
+                    bottom = KeyC(KeyAction.CommitText("U")),
+                    top = KeyC(KeyAction.CommitText("Ü")),
                 ),
                 KeyItemC(
                     center =
@@ -320,22 +230,10 @@ val KB_HU_TYPESPLIT_SHIFTED =
                             size = FontSizeVariant.LARGE,
                         ),
                     swipeType = SwipeNWay.FOUR_WAY_CROSS,
-                    right =
-                        KeyC(
-                            KeyAction.CommitText("Ú"),
-                        ),
-                    left =
-                        KeyC(
-                            KeyAction.CommitText("Ő"),
-                        ),
-                    bottom =
-                        KeyC(
-                            KeyAction.CommitText("P"),
-                        ),
-                    top =
-                        KeyC(
-                            KeyAction.CommitText("Ó"),
-                        ),
+                    right = KeyC(KeyAction.CommitText("Ú")),
+                    left = KeyC(KeyAction.CommitText("Ő")),
+                    bottom = KeyC(KeyAction.CommitText("P")),
+                    top = KeyC(KeyAction.CommitText("Ó")),
                 ),
             ),
             listOf(
@@ -358,14 +256,8 @@ val KB_HU_TYPESPLIT_SHIFTED =
                             display = null,
                             action = KeyAction.CommitText("F"),
                         ),
-                    left =
-                        KeyC(
-                            KeyAction.CommitText("F"),
-                        ),
-                    bottom =
-                        KeyC(
-                            KeyAction.CommitText("D"),
-                        ),
+                    left = KeyC(KeyAction.CommitText("F")),
+                    bottom = KeyC(KeyAction.CommitText("D")),
                 ),
                 SPACEBAR_TYPESPLIT_MIDDLE_KEY_ITEM,
                 KeyItemC(
@@ -375,19 +267,13 @@ val KB_HU_TYPESPLIT_SHIFTED =
                             size = FontSizeVariant.LARGE,
                         ),
                     swipeType = SwipeNWay.FOUR_WAY_CROSS,
-                    right =
-                        KeyC(
-                            KeyAction.CommitText("J"),
-                        ),
+                    right = KeyC(KeyAction.CommitText("J")),
                     left =
                         KeyC(
                             display = null,
                             action = KeyAction.CommitText("J"),
                         ),
-                    bottom =
-                        KeyC(
-                            KeyAction.CommitText("G"),
-                        ),
+                    bottom = KeyC(KeyAction.CommitText("G")),
                 ),
                 KeyItemC(
                     center =
@@ -396,22 +282,10 @@ val KB_HU_TYPESPLIT_SHIFTED =
                             size = FontSizeVariant.LARGE,
                         ),
                     swipeType = SwipeNWay.FOUR_WAY_CROSS,
-                    left =
-                        KeyC(
-                            KeyAction.CommitText("É"),
-                        ),
-                    top =
-                        KeyC(
-                            KeyAction.CommitText("Á"),
-                        ),
-                    right =
-                        KeyC(
-                            KeyAction.CommitText("Ű"),
-                        ),
-                    bottom =
-                        KeyC(
-                            KeyAction.CommitText("K"),
-                        ),
+                    left = KeyC(KeyAction.CommitText("É")),
+                    top = KeyC(KeyAction.CommitText("Á")),
+                    right = KeyC(KeyAction.CommitText("Ű")),
+                    bottom = KeyC(KeyAction.CommitText("K")),
                 ),
             ),
             listOf(
@@ -422,18 +296,9 @@ val KB_HU_TYPESPLIT_SHIFTED =
                             size = FontSizeVariant.LARGE,
                         ),
                     swipeType = SwipeNWay.FOUR_WAY_CROSS,
-                    right =
-                        KeyC(
-                            KeyAction.CommitText("Y"),
-                        ),
-                    left =
-                        KeyC(
-                            KeyAction.CommitText("Í"),
-                        ),
-                    bottom =
-                        KeyC(
-                            KeyAction.CommitText("X"),
-                        ),
+                    right = KeyC(KeyAction.CommitText("Y")),
+                    left = KeyC(KeyAction.CommitText("Í")),
+                    bottom = KeyC(KeyAction.CommitText("X")),
                 ),
                 KeyItemC(
                     center =
@@ -442,10 +307,7 @@ val KB_HU_TYPESPLIT_SHIFTED =
                             size = FontSizeVariant.LARGE,
                         ),
                     swipeType = SwipeNWay.TWO_WAY_VERTICAL,
-                    bottom =
-                        KeyC(
-                            KeyAction.CommitText("V"),
-                        ),
+                    bottom = KeyC(KeyAction.CommitText("V")),
                 ),
                 SPACEBAR_TYPESPLIT_BOTTOM_KEY_ITEM,
                 KeyItemC(

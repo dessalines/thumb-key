@@ -27,10 +27,7 @@ val KB_UK_THUMBKEY_MAIN =
                             size = FontSizeVariant.LARGE,
                         ),
                     swipeType = SwipeNWay.FOUR_WAY_DIAGONAL,
-                    bottomRight =
-                        KeyC(
-                            KeyAction.CommitText("й"),
-                        ),
+                    bottomRight = KeyC(KeyAction.CommitText("й")),
                 ),
                 KeyItemC(
                     center =
@@ -39,10 +36,7 @@ val KB_UK_THUMBKEY_MAIN =
                             size = FontSizeVariant.LARGE,
                         ),
                     swipeType = SwipeNWay.TWO_WAY_VERTICAL,
-                    bottom =
-                        KeyC(
-                            KeyAction.CommitText("х"),
-                        ),
+                    bottom = KeyC(KeyAction.CommitText("х")),
                 ),
                 KeyItemC(
                     center =
@@ -51,10 +45,7 @@ val KB_UK_THUMBKEY_MAIN =
                             size = FontSizeVariant.LARGE,
                         ),
                     swipeType = SwipeNWay.FOUR_WAY_DIAGONAL,
-                    bottomLeft =
-                        KeyC(
-                            KeyAction.CommitText("ж"),
-                        ),
+                    bottomLeft = KeyC(KeyAction.CommitText("ж")),
                 ),
                 EMOJI_KEY_ITEM,
             ),
@@ -66,10 +57,7 @@ val KB_UK_THUMBKEY_MAIN =
                             size = FontSizeVariant.LARGE,
                         ),
                     swipeType = SwipeNWay.TWO_WAY_HORIZONTAL,
-                    right =
-                        KeyC(
-                            KeyAction.CommitText("м"),
-                        ),
+                    right = KeyC(KeyAction.CommitText("м")),
                 ),
                 KeyItemC(
                     center =
@@ -77,38 +65,14 @@ val KB_UK_THUMBKEY_MAIN =
                             KeyAction.CommitText("в"),
                             size = FontSizeVariant.LARGE,
                         ),
-                    topLeft =
-                        KeyC(
-                            KeyAction.CommitText("я"),
-                        ),
-                    top =
-                        KeyC(
-                            KeyAction.CommitText("ї"),
-                        ),
-                    topRight =
-                        KeyC(
-                            KeyAction.CommitText("ь"),
-                        ),
-                    right =
-                        KeyC(
-                            KeyAction.CommitText("п"),
-                        ),
-                    bottomRight =
-                        KeyC(
-                            KeyAction.CommitText("у"),
-                        ),
-                    bottom =
-                        KeyC(
-                            KeyAction.CommitText("з"),
-                        ),
-                    bottomLeft =
-                        KeyC(
-                            KeyAction.CommitText("г"),
-                        ),
-                    left =
-                        KeyC(
-                            KeyAction.CommitText("к"),
-                        ),
+                    topLeft = KeyC(KeyAction.CommitText("я")),
+                    top = KeyC(KeyAction.CommitText("ї")),
+                    topRight = KeyC(KeyAction.CommitText("ь")),
+                    right = KeyC(KeyAction.CommitText("п")),
+                    bottomRight = KeyC(KeyAction.CommitText("у")),
+                    bottom = KeyC(KeyAction.CommitText("з")),
+                    bottomLeft = KeyC(KeyAction.CommitText("г")),
+                    left = KeyC(KeyAction.CommitText("к")),
                 ),
                 KeyItemC(
                     center =
@@ -116,18 +80,9 @@ val KB_UK_THUMBKEY_MAIN =
                             KeyAction.CommitText("і"),
                             size = FontSizeVariant.LARGE,
                         ),
-                    topLeft =
-                        KeyC(
-                            KeyAction.CommitText("е"),
-                        ),
-                    left =
-                        KeyC(
-                            KeyAction.CommitText("л"),
-                        ),
-                    bottomLeft =
-                        KeyC(
-                            KeyAction.CommitText("ф"),
-                        ),
+                    topLeft = KeyC(KeyAction.CommitText("е")),
+                    left = KeyC(KeyAction.CommitText("л")),
+                    bottomLeft = KeyC(KeyAction.CommitText("ф")),
                     top =
                         KeyC(
                             display = KeyDisplay.IconDisplay(Icons.Outlined.ArrowDropUp),
@@ -150,14 +105,8 @@ val KB_UK_THUMBKEY_MAIN =
                             KeyAction.CommitText("т"),
                             size = FontSizeVariant.LARGE,
                         ),
-                    topRight =
-                        KeyC(
-                            KeyAction.CommitText("ч"),
-                        ),
-                    top =
-                        KeyC(
-                            KeyAction.CommitText("ш"),
-                        ),
+                    topRight = KeyC(KeyAction.CommitText("ч")),
+                    top = KeyC(KeyAction.CommitText("ш")),
                 ),
                 KeyItemC(
                     center =
@@ -165,23 +114,14 @@ val KB_UK_THUMBKEY_MAIN =
                             KeyAction.CommitText("и"),
                             size = FontSizeVariant.LARGE,
                         ),
-                    topLeft =
-                        KeyC(
-                            KeyAction.CommitText("щ"),
-                        ),
-                    top =
-                        KeyC(
-                            KeyAction.CommitText("б"),
-                        ),
+                    topLeft = KeyC(KeyAction.CommitText("щ")),
+                    top = KeyC(KeyAction.CommitText("б")),
                     topRight =
                         KeyC(
                             KeyAction.CommitText("'"),
                             color = ColorVariant.MUTED,
                         ),
-                    right =
-                        KeyC(
-                            KeyAction.CommitText("ц"),
-                        ),
+                    right = KeyC(KeyAction.CommitText("ц")),
                     bottomRight =
                         KeyC(
                             KeyAction.CommitText("-"),
@@ -204,22 +144,10 @@ val KB_UK_THUMBKEY_MAIN =
                             KeyAction.CommitText("о"),
                             size = FontSizeVariant.LARGE,
                         ),
-                    topLeft =
-                        KeyC(
-                            KeyAction.CommitText("д"),
-                        ),
-                    top =
-                        KeyC(
-                            KeyAction.CommitText("ю"),
-                        ),
-                    left =
-                        KeyC(
-                            KeyAction.CommitText("є"),
-                        ),
-                    bottomRight =
-                        KeyC(
-                            KeyAction.CommitText("ґ"),
-                        ),
+                    topLeft = KeyC(KeyAction.CommitText("д")),
+                    top = KeyC(KeyAction.CommitText("ю")),
+                    left = KeyC(KeyAction.CommitText("є")),
+                    bottomRight = KeyC(KeyAction.CommitText("ґ")),
                 ),
                 BACKSPACE_KEY_ITEM,
             ),
@@ -241,10 +169,7 @@ val KB_UK_THUMBKEY_SHIFTED =
                             size = FontSizeVariant.LARGE,
                         ),
                     swipeType = SwipeNWay.FOUR_WAY_DIAGONAL,
-                    bottomRight =
-                        KeyC(
-                            KeyAction.CommitText("Й"),
-                        ),
+                    bottomRight = KeyC(KeyAction.CommitText("Й")),
                 ),
                 KeyItemC(
                     center =
@@ -253,10 +178,7 @@ val KB_UK_THUMBKEY_SHIFTED =
                             size = FontSizeVariant.LARGE,
                         ),
                     swipeType = SwipeNWay.TWO_WAY_VERTICAL,
-                    bottom =
-                        KeyC(
-                            KeyAction.CommitText("Х"),
-                        ),
+                    bottom = KeyC(KeyAction.CommitText("Х")),
                 ),
                 KeyItemC(
                     center =
@@ -265,10 +187,7 @@ val KB_UK_THUMBKEY_SHIFTED =
                             size = FontSizeVariant.LARGE,
                         ),
                     swipeType = SwipeNWay.FOUR_WAY_DIAGONAL,
-                    bottomLeft =
-                        KeyC(
-                            KeyAction.CommitText("Ж"),
-                        ),
+                    bottomLeft = KeyC(KeyAction.CommitText("Ж")),
                 ),
                 EMOJI_KEY_ITEM,
             ),
@@ -280,10 +199,7 @@ val KB_UK_THUMBKEY_SHIFTED =
                             size = FontSizeVariant.LARGE,
                         ),
                     swipeType = SwipeNWay.TWO_WAY_HORIZONTAL,
-                    right =
-                        KeyC(
-                            KeyAction.CommitText("М"),
-                        ),
+                    right = KeyC(KeyAction.CommitText("М")),
                 ),
                 KeyItemC(
                     center =
@@ -291,38 +207,14 @@ val KB_UK_THUMBKEY_SHIFTED =
                             KeyAction.CommitText("В"),
                             size = FontSizeVariant.LARGE,
                         ),
-                    topLeft =
-                        KeyC(
-                            KeyAction.CommitText("Я"),
-                        ),
-                    top =
-                        KeyC(
-                            KeyAction.CommitText("Ї"),
-                        ),
-                    topRight =
-                        KeyC(
-                            KeyAction.CommitText("Ь"),
-                        ),
-                    right =
-                        KeyC(
-                            KeyAction.CommitText("П"),
-                        ),
-                    bottomRight =
-                        KeyC(
-                            KeyAction.CommitText("У"),
-                        ),
-                    bottom =
-                        KeyC(
-                            KeyAction.CommitText("З"),
-                        ),
-                    bottomLeft =
-                        KeyC(
-                            KeyAction.CommitText("Г"),
-                        ),
-                    left =
-                        KeyC(
-                            KeyAction.CommitText("К"),
-                        ),
+                    topLeft = KeyC(KeyAction.CommitText("Я")),
+                    top = KeyC(KeyAction.CommitText("Ї")),
+                    topRight = KeyC(KeyAction.CommitText("Ь")),
+                    right = KeyC(KeyAction.CommitText("П")),
+                    bottomRight = KeyC(KeyAction.CommitText("У")),
+                    bottom = KeyC(KeyAction.CommitText("З")),
+                    bottomLeft = KeyC(KeyAction.CommitText("Г")),
+                    left = KeyC(KeyAction.CommitText("К")),
                 ),
                 KeyItemC(
                     center =
@@ -330,18 +222,9 @@ val KB_UK_THUMBKEY_SHIFTED =
                             KeyAction.CommitText("І"),
                             size = FontSizeVariant.LARGE,
                         ),
-                    topLeft =
-                        KeyC(
-                            KeyAction.CommitText("Е"),
-                        ),
-                    left =
-                        KeyC(
-                            KeyAction.CommitText("Л"),
-                        ),
-                    bottomLeft =
-                        KeyC(
-                            KeyAction.CommitText("Ф"),
-                        ),
+                    topLeft = KeyC(KeyAction.CommitText("Е")),
+                    left = KeyC(KeyAction.CommitText("Л")),
+                    bottomLeft = KeyC(KeyAction.CommitText("Ф")),
                     bottom =
                         KeyC(
                             display = KeyDisplay.IconDisplay(Icons.Outlined.ArrowDropDown),
@@ -367,14 +250,8 @@ val KB_UK_THUMBKEY_SHIFTED =
                             KeyAction.CommitText("Т"),
                             size = FontSizeVariant.LARGE,
                         ),
-                    topRight =
-                        KeyC(
-                            KeyAction.CommitText("Ч"),
-                        ),
-                    top =
-                        KeyC(
-                            KeyAction.CommitText("Ш"),
-                        ),
+                    topRight = KeyC(KeyAction.CommitText("Ч")),
+                    top = KeyC(KeyAction.CommitText("Ш")),
                 ),
                 KeyItemC(
                     center =
@@ -382,23 +259,14 @@ val KB_UK_THUMBKEY_SHIFTED =
                             KeyAction.CommitText("И"),
                             size = FontSizeVariant.LARGE,
                         ),
-                    topLeft =
-                        KeyC(
-                            KeyAction.CommitText("Щ"),
-                        ),
-                    top =
-                        KeyC(
-                            KeyAction.CommitText("Б"),
-                        ),
+                    topLeft = KeyC(KeyAction.CommitText("Щ")),
+                    top = KeyC(KeyAction.CommitText("Б")),
                     topRight =
                         KeyC(
                             KeyAction.CommitText("'"),
                             color = ColorVariant.MUTED,
                         ),
-                    right =
-                        KeyC(
-                            KeyAction.CommitText("Ц"),
-                        ),
+                    right = KeyC(KeyAction.CommitText("Ц")),
                     bottomRight =
                         KeyC(
                             KeyAction.CommitText("-"),
@@ -421,22 +289,10 @@ val KB_UK_THUMBKEY_SHIFTED =
                             KeyAction.CommitText("О"),
                             size = FontSizeVariant.LARGE,
                         ),
-                    topLeft =
-                        KeyC(
-                            KeyAction.CommitText("Д"),
-                        ),
-                    top =
-                        KeyC(
-                            KeyAction.CommitText("Ю"),
-                        ),
-                    left =
-                        KeyC(
-                            KeyAction.CommitText("Є"),
-                        ),
-                    bottomRight =
-                        KeyC(
-                            KeyAction.CommitText("Ґ"),
-                        ),
+                    topLeft = KeyC(KeyAction.CommitText("Д")),
+                    top = KeyC(KeyAction.CommitText("Ю")),
+                    left = KeyC(KeyAction.CommitText("Є")),
+                    bottomRight = KeyC(KeyAction.CommitText("Ґ")),
                 ),
                 BACKSPACE_KEY_ITEM,
             ),
