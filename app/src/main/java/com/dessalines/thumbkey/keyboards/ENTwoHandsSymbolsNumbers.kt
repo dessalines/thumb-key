@@ -8,7 +8,6 @@ import com.dessalines.thumbkey.utils.*
 import com.dessalines.thumbkey.utils.ColorVariant.*
 import com.dessalines.thumbkey.utils.FontSizeVariant.*
 import com.dessalines.thumbkey.utils.KeyAction.*
-import com.dessalines.thumbkey.utils.SwipeNWay.*
 
 val KB_EN_SYMBOLS_NUMBERS_TWO_HANDS_MAIN =
     KeyboardC(
@@ -172,7 +171,6 @@ val KB_EN_SYMBOLS_NUMBERS_TWO_HANDS_MAIN =
             listOf(
                 KeyItemC(
                     center = KeyC("t", size = LARGE),
-                    swipeType = FOUR_WAY_DIAGONAL,
                     topRight = KeyC("c"),
                     topLeft = KeyC("~", color = MUTED),
                     bottomRight = KeyC(":", color = MUTED),
@@ -201,7 +199,6 @@ val KB_EN_SYMBOLS_NUMBERS_TWO_HANDS_MAIN =
                 BACKSPACE_KEY_ITEM,
                 KeyItemC(
                     center = KeyC("t", size = LARGE),
-                    swipeType = FOUR_WAY_DIAGONAL,
                     topRight = KeyC("c"),
                     topLeft = KeyC("~", color = MUTED),
                     bottomRight = KeyC(":", color = MUTED),
@@ -406,7 +403,6 @@ val KB_EN_SYMBOLS_NUMBERS_TWO_HANDS_SHIFTED =
             listOf(
                 KeyItemC(
                     center = KeyC("T", size = LARGE),
-                    swipeType = FOUR_WAY_DIAGONAL,
                     topRight = KeyC("C"),
                     topLeft = KeyC("~", color = MUTED),
                     bottomRight = KeyC(":", color = MUTED),
@@ -435,7 +431,6 @@ val KB_EN_SYMBOLS_NUMBERS_TWO_HANDS_SHIFTED =
                 BACKSPACE_KEY_ITEM,
                 KeyItemC(
                     center = KeyC("T", size = LARGE),
-                    swipeType = FOUR_WAY_DIAGONAL,
                     topRight = KeyC("C"),
                     topLeft = KeyC("~", color = MUTED),
                     bottomRight = KeyC(":", color = MUTED),

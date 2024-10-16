@@ -8,7 +8,6 @@ import com.dessalines.thumbkey.utils.*
 import com.dessalines.thumbkey.utils.ColorVariant.*
 import com.dessalines.thumbkey.utils.FontSizeVariant.*
 import com.dessalines.thumbkey.utils.KeyAction.*
-import com.dessalines.thumbkey.utils.SwipeNWay.*
 
 val KB_PL_THUMBKEY_MAIN =
     KeyboardC(
@@ -16,7 +15,6 @@ val KB_PL_THUMBKEY_MAIN =
             listOf(
                 KeyItemC(
                     center = KeyC("r", size = LARGE),
-                    swipeType = FOUR_WAY_DIAGONAL,
                     bottomRight = KeyC("p"),
                 ),
                 KeyItemC(
@@ -26,7 +24,6 @@ val KB_PL_THUMBKEY_MAIN =
                 ),
                 KeyItemC(
                     center = KeyC("o", size = LARGE),
-                    swipeType = FOUR_WAY_DIAGONAL,
                     bottomLeft = KeyC("u"),
                     bottomRight = KeyC("ó"),
                 ),
@@ -71,7 +68,6 @@ val KB_PL_THUMBKEY_MAIN =
             listOf(
                 KeyItemC(
                     center = KeyC("z", size = LARGE),
-                    swipeType = FOUR_WAY_DIAGONAL,
                     topRight = KeyC("k"),
                     bottomLeft = KeyC("ż"),
                     bottomRight = KeyC("ź"),
@@ -89,7 +85,6 @@ val KB_PL_THUMBKEY_MAIN =
                 ),
                 KeyItemC(
                     center = KeyC("a", size = LARGE),
-                    swipeType = FOUR_WAY_DIAGONAL,
                     topLeft = KeyC("t"),
                     bottomRight = KeyC("ą"),
                 ),
@@ -108,7 +103,6 @@ val KB_PL_THUMBKEY_SHIFTED =
             listOf(
                 KeyItemC(
                     center = KeyC("R", size = LARGE),
-                    swipeType = FOUR_WAY_DIAGONAL,
                     bottomRight = KeyC("P"),
                 ),
                 KeyItemC(
@@ -118,7 +112,6 @@ val KB_PL_THUMBKEY_SHIFTED =
                 ),
                 KeyItemC(
                     center = KeyC("O", size = LARGE),
-                    swipeType = FOUR_WAY_DIAGONAL,
                     bottomLeft = KeyC("U"),
                     bottomRight = KeyC("Ó"),
                 ),
@@ -166,7 +159,6 @@ val KB_PL_THUMBKEY_SHIFTED =
             listOf(
                 KeyItemC(
                     center = KeyC("Z", size = LARGE),
-                    swipeType = FOUR_WAY_DIAGONAL,
                     topRight = KeyC("K"),
                     bottomLeft = KeyC("Ż"),
                     bottomRight = KeyC("Ź"),
@@ -184,7 +176,6 @@ val KB_PL_THUMBKEY_SHIFTED =
                 ),
                 KeyItemC(
                     center = KeyC("A", size = LARGE),
-                    swipeType = FOUR_WAY_DIAGONAL,
                     topLeft = KeyC("T"),
                     bottomRight = KeyC("Ą"),
                 ),

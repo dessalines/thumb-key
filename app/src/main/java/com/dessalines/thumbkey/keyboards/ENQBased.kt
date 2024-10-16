@@ -8,7 +8,6 @@ import com.dessalines.thumbkey.utils.*
 import com.dessalines.thumbkey.utils.ColorVariant.*
 import com.dessalines.thumbkey.utils.FontSizeVariant.*
 import com.dessalines.thumbkey.utils.KeyAction.*
-import com.dessalines.thumbkey.utils.SwipeNWay.*
 
 val KB_EN_QBASED_MAIN =
     KeyboardC(
@@ -45,19 +44,16 @@ val KB_EN_QBASED_MAIN =
             listOf(
                 KeyItemC(
                     center = KeyC("s", size = LARGE),
-                    swipeType = TWO_WAY_HORIZONTAL,
                     left = KeyC("a", color = PRIMARY),
                     right = KeyC("d", color = PRIMARY),
                 ),
                 KeyItemC(
                     center = KeyC("g", size = LARGE),
-                    swipeType = TWO_WAY_HORIZONTAL,
                     left = KeyC("f", color = PRIMARY),
                     right = KeyC("h", color = PRIMARY),
                 ),
                 KeyItemC(
                     center = KeyC("k", size = LARGE),
-                    swipeType = FOUR_WAY_CROSS,
                     left = KeyC("j", color = PRIMARY),
                     right = KeyC("l", color = PRIMARY),
                     top = KeyC("\""),
@@ -68,7 +64,6 @@ val KB_EN_QBASED_MAIN =
             listOf(
                 KeyItemC(
                     center = KeyC("z", size = LARGE),
-                    swipeType = TWO_WAY_HORIZONTAL,
                     right = KeyC("x", color = PRIMARY),
                     left =
                         KeyC(
@@ -79,14 +74,12 @@ val KB_EN_QBASED_MAIN =
                 ),
                 KeyItemC(
                     center = KeyC("v", size = LARGE),
-                    swipeType = FOUR_WAY_CROSS,
                     left = KeyC("c", color = PRIMARY),
                     right = KeyC("b", color = PRIMARY),
                     bottom = KeyC(","),
                 ),
                 KeyItemC(
                     center = KeyC("m", size = LARGE),
-                    swipeType = FOUR_WAY_CROSS,
                     right = KeyC("?"),
                     top = KeyC("!"),
                     bottom = KeyC("."),
@@ -136,19 +129,16 @@ val KB_EN_QBASED_SHIFTED =
             listOf(
                 KeyItemC(
                     center = KeyC("S", size = LARGE),
-                    swipeType = TWO_WAY_HORIZONTAL,
                     left = KeyC("A", color = PRIMARY),
                     right = KeyC("D", color = PRIMARY),
                 ),
                 KeyItemC(
                     center = KeyC("G", size = LARGE),
-                    swipeType = TWO_WAY_HORIZONTAL,
                     left = KeyC("F", color = PRIMARY),
                     right = KeyC("H", color = PRIMARY),
                 ),
                 KeyItemC(
                     center = KeyC("K", size = LARGE),
-                    swipeType = TWO_WAY_HORIZONTAL,
                     left = KeyC("J", color = PRIMARY),
                     right = KeyC("L", color = PRIMARY),
                 ),
@@ -157,7 +147,6 @@ val KB_EN_QBASED_SHIFTED =
             listOf(
                 KeyItemC(
                     center = KeyC("Z", size = LARGE),
-                    swipeType = FOUR_WAY_CROSS,
                     right = KeyC("X", color = PRIMARY),
                     top =
                         KeyC(
@@ -175,13 +164,11 @@ val KB_EN_QBASED_SHIFTED =
                 ),
                 KeyItemC(
                     center = KeyC("V", size = LARGE),
-                    swipeType = TWO_WAY_HORIZONTAL,
                     left = KeyC("C", color = PRIMARY),
                     right = KeyC("B", color = PRIMARY),
                 ),
                 KeyItemC(
                     center = KeyC("M", size = LARGE),
-                    swipeType = TWO_WAY_HORIZONTAL,
                     right = KeyC("/"),
                     left = KeyC("N", color = PRIMARY),
                 ),

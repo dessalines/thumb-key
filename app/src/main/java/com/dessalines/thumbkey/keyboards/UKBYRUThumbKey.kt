@@ -8,7 +8,6 @@ import com.dessalines.thumbkey.utils.*
 import com.dessalines.thumbkey.utils.ColorVariant.*
 import com.dessalines.thumbkey.utils.FontSizeVariant.*
 import com.dessalines.thumbkey.utils.KeyAction.*
-import com.dessalines.thumbkey.utils.SwipeNWay.*
 
 val KB_UK_BY_RU_THUMBKEY_MAIN =
     KeyboardC(
@@ -22,12 +21,10 @@ val KB_UK_BY_RU_THUMBKEY_MAIN =
                 ),
                 KeyItemC(
                     center = KeyC("р", size = LARGE),
-                    swipeType = TWO_WAY_VERTICAL,
                     bottom = KeyC("х"),
                 ),
                 KeyItemC(
                     center = KeyC("а", size = LARGE),
-                    swipeType = FOUR_WAY_DIAGONAL,
                     topRight = KeyC("ы"),
                     bottomLeft = KeyC("ж"),
                 ),
@@ -36,7 +33,6 @@ val KB_UK_BY_RU_THUMBKEY_MAIN =
             listOf(
                 KeyItemC(
                     center = KeyC("н", size = LARGE),
-                    swipeType = TWO_WAY_HORIZONTAL,
                     right = KeyC("м"),
                 ),
                 KeyItemC(
@@ -116,12 +112,10 @@ val KB_UK_BY_RU_THUMBKEY_SHIFTED =
                 ),
                 KeyItemC(
                     center = KeyC("Р", size = LARGE),
-                    swipeType = TWO_WAY_VERTICAL,
                     bottom = KeyC("Х"),
                 ),
                 KeyItemC(
                     center = KeyC("А", size = LARGE),
-                    swipeType = FOUR_WAY_DIAGONAL,
                     topRight = KeyC("Ы"),
                     bottomLeft = KeyC("Ж"),
                 ),
@@ -130,7 +124,6 @@ val KB_UK_BY_RU_THUMBKEY_SHIFTED =
             listOf(
                 KeyItemC(
                     center = KeyC("Н", size = LARGE),
-                    swipeType = TWO_WAY_HORIZONTAL,
                     right = KeyC("М"),
                 ),
                 KeyItemC(

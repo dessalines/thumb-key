@@ -6,7 +6,6 @@ import com.dessalines.thumbkey.utils.*
 import com.dessalines.thumbkey.utils.ColorVariant.*
 import com.dessalines.thumbkey.utils.FontSizeVariant.*
 import com.dessalines.thumbkey.utils.KeyAction.*
-import com.dessalines.thumbkey.utils.SwipeNWay.*
 
 val KB_JA_HIRAGANA_TYPESPLIT_MAIN =
     KeyboardC(
@@ -14,7 +13,6 @@ val KB_JA_HIRAGANA_TYPESPLIT_MAIN =
             listOf(
                 KeyItemC(
                     center = KeyC("わ", size = LARGE),
-                    swipeType = FOUR_WAY_CROSS,
                     right = KeyC("ん"),
                     left =
                         KeyC(
@@ -25,7 +23,6 @@ val KB_JA_HIRAGANA_TYPESPLIT_MAIN =
                 ),
                 KeyItemC(
                     center = KeyC("た", size = LARGE),
-                    swipeType = FOUR_WAY_CROSS,
                     right = KeyC("て"),
                     left = KeyC("ち"),
                     bottom = KeyC("と"),
@@ -34,7 +31,6 @@ val KB_JA_HIRAGANA_TYPESPLIT_MAIN =
                 EMOJI_KEY_ITEM_ALT,
                 KeyItemC(
                     center = KeyC("や", size = LARGE),
-                    swipeType = FOUR_WAY_CROSS,
                     right =
                         KeyC(
                             display = null,
@@ -50,7 +46,6 @@ val KB_JA_HIRAGANA_TYPESPLIT_MAIN =
                 ),
                 KeyItemC(
                     center = KeyC("ら", size = LARGE),
-                    swipeType = FOUR_WAY_CROSS,
                     right = KeyC("れ"),
                     left = KeyC("り"),
                     bottom = KeyC("ろ"),
@@ -60,7 +55,6 @@ val KB_JA_HIRAGANA_TYPESPLIT_MAIN =
             listOf(
                 KeyItemC(
                     center = KeyC("あ", size = LARGE),
-                    swipeType = FOUR_WAY_CROSS,
                     right = KeyC("い"),
                     left = KeyC("え"),
                     bottom = KeyC("お"),
@@ -68,7 +62,6 @@ val KB_JA_HIRAGANA_TYPESPLIT_MAIN =
                 ),
                 KeyItemC(
                     center = KeyC("さ", size = LARGE),
-                    swipeType = FOUR_WAY_CROSS,
                     right = KeyC("せ"),
                     left = KeyC("し"),
                     bottom = KeyC("そ"),
@@ -77,7 +70,6 @@ val KB_JA_HIRAGANA_TYPESPLIT_MAIN =
                 SPACEBAR_TYPESPLIT_MIDDLE_KEY_ITEM,
                 KeyItemC(
                     center = KeyC("は", size = LARGE),
-                    swipeType = FOUR_WAY_CROSS,
                     right = KeyC("ひ"),
                     left = KeyC("へ"),
                     bottom = KeyC("ほ"),
@@ -85,7 +77,6 @@ val KB_JA_HIRAGANA_TYPESPLIT_MAIN =
                 ),
                 KeyItemC(
                     center = KeyC("か", size = LARGE),
-                    swipeType = FOUR_WAY_CROSS,
                     right = KeyC("け"),
                     left = KeyC("き"),
                     bottom = KeyC("こ"),
@@ -95,7 +86,6 @@ val KB_JA_HIRAGANA_TYPESPLIT_MAIN =
             listOf(
                 KeyItemC(
                     center = KeyC("、", size = LARGE),
-                    swipeType = FOUR_WAY_CROSS,
                     right = KeyC("」", color = MUTED),
                     left = KeyC("「", color = MUTED),
                     bottom = KeyC("ー", color = MUTED),
@@ -103,7 +93,6 @@ val KB_JA_HIRAGANA_TYPESPLIT_MAIN =
                 ),
                 KeyItemC(
                     center = KeyC("。", size = LARGE),
-                    swipeType = FOUR_WAY_CROSS,
                     right = KeyC("？", color = MUTED),
                     left = KeyC("！", color = MUTED),
                     bottom = KeyC("：", color = MUTED),
@@ -112,7 +101,6 @@ val KB_JA_HIRAGANA_TYPESPLIT_MAIN =
                 SPACEBAR_TYPESPLIT_BOTTOM_KEY_ITEM,
                 KeyItemC(
                     center = KeyC("な", size = LARGE),
-                    swipeType = FOUR_WAY_CROSS,
                     right = KeyC("に"),
                     left = KeyC("ね"),
                     bottom = KeyC("の"),
@@ -120,7 +108,6 @@ val KB_JA_HIRAGANA_TYPESPLIT_MAIN =
                 ),
                 KeyItemC(
                     center = KeyC("ま", size = LARGE),
-                    swipeType = FOUR_WAY_CROSS,
                     right = KeyC("め"),
                     left = KeyC("み"),
                     bottom = KeyC("も"),
@@ -141,7 +128,6 @@ val KB_JA_HIRAGANA_TYPESPLIT_SHIFTED =
             listOf(
                 KeyItemC(
                     center = KeyC("¥", size = LARGE),
-                    swipeType = FOUR_WAY_CROSS,
                     right =
                         KeyC(
                             display = null,
@@ -153,7 +139,6 @@ val KB_JA_HIRAGANA_TYPESPLIT_SHIFTED =
                 ),
                 KeyItemC(
                     center = KeyC("だ", size = LARGE),
-                    swipeType = FOUR_WAY_CROSS,
                     right = KeyC("で"),
                     left = KeyC("ぢ"),
                     bottom = KeyC("ど"),
@@ -162,7 +147,6 @@ val KB_JA_HIRAGANA_TYPESPLIT_SHIFTED =
                 EMOJI_KEY_ITEM_ALT,
                 KeyItemC(
                     center = KeyC("ゃ", size = LARGE),
-                    swipeType = FOUR_WAY_CROSS,
                     right =
                         KeyC(
                             display = null,
@@ -183,7 +167,6 @@ val KB_JA_HIRAGANA_TYPESPLIT_SHIFTED =
             listOf(
                 KeyItemC(
                     center = KeyC("ぁ", size = LARGE),
-                    swipeType = FOUR_WAY_CROSS,
                     right = KeyC("ぃ"),
                     left = KeyC("ぇ"),
                     bottom = KeyC("ぉ"),
@@ -191,7 +174,6 @@ val KB_JA_HIRAGANA_TYPESPLIT_SHIFTED =
                 ),
                 KeyItemC(
                     center = KeyC("ざ", size = LARGE),
-                    swipeType = FOUR_WAY_CROSS,
                     right = KeyC("ぜ"),
                     left = KeyC("じ"),
                     bottom = KeyC("ぞ"),
@@ -200,7 +182,6 @@ val KB_JA_HIRAGANA_TYPESPLIT_SHIFTED =
                 SPACEBAR_TYPESPLIT_MIDDLE_KEY_ITEM,
                 KeyItemC(
                     center = KeyC("ば", size = LARGE),
-                    swipeType = FOUR_WAY_CROSS,
                     right = KeyC("び"),
                     left = KeyC("べ"),
                     bottom = KeyC("ぼ"),
@@ -208,7 +189,6 @@ val KB_JA_HIRAGANA_TYPESPLIT_SHIFTED =
                 ),
                 KeyItemC(
                     center = KeyC("が", size = LARGE),
-                    swipeType = FOUR_WAY_CROSS,
                     right = KeyC("げ"),
                     left = KeyC("ぎ"),
                     bottom = KeyC("ご"),
@@ -218,7 +198,6 @@ val KB_JA_HIRAGANA_TYPESPLIT_SHIFTED =
             listOf(
                 KeyItemC(
                     center = KeyC("・", size = LARGE),
-                    swipeType = FOUR_WAY_CROSS,
                     right = KeyC("】", color = MUTED),
                     left = KeyC("【", color = MUTED),
                     bottom = KeyC("：", color = MUTED),
@@ -226,7 +205,6 @@ val KB_JA_HIRAGANA_TYPESPLIT_SHIFTED =
                 ),
                 KeyItemC(
                     center = KeyC("＝", size = LARGE),
-                    swipeType = FOUR_WAY_CROSS,
                     right = KeyC("×", color = MUTED),
                     left = KeyC("÷", color = MUTED),
                     bottom = KeyC("＋", color = MUTED),
@@ -235,7 +213,6 @@ val KB_JA_HIRAGANA_TYPESPLIT_SHIFTED =
                 SPACEBAR_TYPESPLIT_BOTTOM_KEY_ITEM,
                 KeyItemC(
                     center = KeyC("ぱ", size = LARGE),
-                    swipeType = FOUR_WAY_CROSS,
                     right = KeyC("ぴ"),
                     left = KeyC("ぺ"),
                     bottom = KeyC("ぽ"),

@@ -8,7 +8,6 @@ import com.dessalines.thumbkey.utils.*
 import com.dessalines.thumbkey.utils.ColorVariant.*
 import com.dessalines.thumbkey.utils.FontSizeVariant.*
 import com.dessalines.thumbkey.utils.KeyAction.*
-import com.dessalines.thumbkey.utils.SwipeNWay.*
 
 val KB_IT_THUMBKEY_MAIN =
     KeyboardC(
@@ -16,7 +15,6 @@ val KB_IT_THUMBKEY_MAIN =
             listOf(
                 KeyItemC(
                     center = KeyC("s", size = LARGE),
-                    swipeType = FOUR_WAY_CROSS,
                     bottom = KeyC("z"),
                     right = KeyC("v"),
                 ),
@@ -37,7 +35,6 @@ val KB_IT_THUMBKEY_MAIN =
             listOf(
                 KeyItemC(
                     center = KeyC("n", size = LARGE),
-                    swipeType = TWO_WAY_HORIZONTAL,
                     right = KeyC("m"),
                 ),
                 KeyItemC(
@@ -73,7 +70,6 @@ val KB_IT_THUMBKEY_MAIN =
             listOf(
                 KeyItemC(
                     center = KeyC("t", size = LARGE),
-                    swipeType = FOUR_WAY_DIAGONAL,
                     topRight = KeyC("!", color = MUTED),
                     bottomLeft = KeyC("?", color = MUTED),
                     bottomRight = KeyC("@", color = MUTED),
@@ -112,7 +108,6 @@ val KB_IT_THUMBKEY_SHIFTED =
             listOf(
                 KeyItemC(
                     center = KeyC("S", size = LARGE),
-                    swipeType = FOUR_WAY_CROSS,
                     bottom = KeyC("Z"),
                     right = KeyC("V"),
                 ),
@@ -133,7 +128,6 @@ val KB_IT_THUMBKEY_SHIFTED =
             listOf(
                 KeyItemC(
                     center = KeyC("N", size = LARGE),
-                    swipeType = TWO_WAY_HORIZONTAL,
                     right = KeyC("M"),
                 ),
                 KeyItemC(
@@ -172,7 +166,6 @@ val KB_IT_THUMBKEY_SHIFTED =
             listOf(
                 KeyItemC(
                     center = KeyC("T", size = LARGE),
-                    swipeType = FOUR_WAY_DIAGONAL,
                     topRight = KeyC("!", color = MUTED),
                     bottomLeft = KeyC("?", color = MUTED),
                     bottomRight = KeyC("@", color = MUTED),

@@ -8,7 +8,6 @@ import com.dessalines.thumbkey.utils.*
 import com.dessalines.thumbkey.utils.ColorVariant.*
 import com.dessalines.thumbkey.utils.FontSizeVariant.*
 import com.dessalines.thumbkey.utils.KeyAction.*
-import com.dessalines.thumbkey.utils.SwipeNWay.*
 
 val KB_MATH_THUMBKEY_MAIN =
     KeyboardC(
@@ -16,14 +15,12 @@ val KB_MATH_THUMBKEY_MAIN =
             listOf(
                 KeyItemC(
                     center = KeyC("∀", size = LARGE),
-                    swipeType = EIGHT_WAY,
                     topLeft = KeyC("⊊"),
                     left = KeyC("⊆"),
                     bottomLeft = KeyC("⊂"),
                 ),
                 KeyItemC(
                     center = KeyC("∫", size = LARGE),
-                    swipeType = EIGHT_WAY,
                     left = KeyC("+"),
                     topLeft = KeyC("±"),
                     right = KeyC("!"),
@@ -33,7 +30,6 @@ val KB_MATH_THUMBKEY_MAIN =
                 ),
                 KeyItemC(
                     center = KeyC("∃", size = LARGE),
-                    swipeType = EIGHT_WAY,
                     topRight = KeyC("⊋"),
                     right = KeyC("⊇"),
                     bottomRight = KeyC("⊃"),
@@ -46,7 +42,6 @@ val KB_MATH_THUMBKEY_MAIN =
             listOf(
                 KeyItemC(
                     center = KeyC("∅", size = LARGE),
-                    swipeType = EIGHT_WAY,
                     topRight = KeyC("∩"),
                     right = KeyC("∪"),
                     bottomRight = KeyC("⊍"),
@@ -62,7 +57,6 @@ val KB_MATH_THUMBKEY_MAIN =
                 ),
                 KeyItemC(
                     center = KeyC("¬", size = LARGE),
-                    swipeType = EIGHT_WAY,
                     topLeft = KeyC("∧"),
                     left = KeyC("∨"),
                     bottomLeft = KeyC("⩒"),
@@ -86,7 +80,6 @@ val KB_MATH_THUMBKEY_MAIN =
             listOf(
                 KeyItemC(
                     center = KeyC("→", size = LARGE),
-                    swipeType = EIGHT_WAY,
                     topLeft = KeyC("~"),
                     left = KeyC("≤"),
                     bottomLeft = KeyC("<"),
@@ -109,7 +102,6 @@ val KB_MATH_THUMBKEY_MAIN =
                 ),
                 KeyItemC(
                     center = KeyC("ℕ", size = LARGE),
-                    swipeType = EIGHT_WAY,
                     topRight = KeyC("°"),
                     right = KeyC("≥"),
                     bottomRight = KeyC(">"),
@@ -134,20 +126,17 @@ val KB_MATH_THUMBKEY_SLASH =
             listOf(
                 KeyItemC(
                     center = KeyC("", size = LARGE),
-                    swipeType = EIGHT_WAY,
                     left = KeyC("⊈"),
                     bottomLeft = KeyC("⊄"),
                 ),
                 KeyItemC(
                     center = KeyC("∮", size = LARGE),
-                    swipeType = EIGHT_WAY,
                     topLeft = KeyC("∓"),
                     bottomLeft = KeyC("∌"),
                     bottomRight = KeyC("∉"),
                 ),
                 KeyItemC(
                     center = KeyC("∄", size = LARGE),
-                    swipeType = EIGHT_WAY,
                     right = KeyC("⊉"),
                     bottomRight = KeyC("⊅"),
                     bottom = KeyC("≠"),
@@ -158,7 +147,6 @@ val KB_MATH_THUMBKEY_SLASH =
             listOf(
                 KeyItemC(
                     center = KeyC("∅", size = LARGE),
-                    swipeType = EIGHT_WAY,
                 ),
                 KeyItemC(
                     center = KeyC("↯", size = LARGE),
@@ -168,7 +156,6 @@ val KB_MATH_THUMBKEY_SLASH =
                 ),
                 KeyItemC(
                     center = KeyC("¬", size = LARGE),
-                    swipeType = EIGHT_WAY,
                     bottom =
                         KeyC(
                             display = KeyDisplay.IconDisplay(Icons.Outlined.ArrowDropDown),
@@ -182,7 +169,6 @@ val KB_MATH_THUMBKEY_SLASH =
             listOf(
                 KeyItemC(
                     center = KeyC("↛", size = LARGE),
-                    swipeType = EIGHT_WAY,
                     topLeft = KeyC("≁"),
                     left = KeyC("≰"),
                     bottomLeft = KeyC("≮"),
@@ -192,7 +178,6 @@ val KB_MATH_THUMBKEY_SLASH =
                 ),
                 KeyItemC(
                     center = KeyC("", size = LARGE),
-                    swipeType = EIGHT_WAY,
                     left = KeyC("≱"),
                     bottomLeft = KeyC("≯"),
                 ),

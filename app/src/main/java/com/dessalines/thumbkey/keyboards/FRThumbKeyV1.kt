@@ -8,7 +8,6 @@ import com.dessalines.thumbkey.utils.*
 import com.dessalines.thumbkey.utils.ColorVariant.*
 import com.dessalines.thumbkey.utils.FontSizeVariant.*
 import com.dessalines.thumbkey.utils.KeyAction.*
-import com.dessalines.thumbkey.utils.SwipeNWay.*
 
 val KB_FR_THUMBKEY_V1_MAIN =
     KeyboardC(
@@ -16,7 +15,6 @@ val KB_FR_THUMBKEY_V1_MAIN =
             listOf(
                 KeyItemC(
                     center = KeyC("r", size = LARGE),
-                    swipeType = FOUR_WAY_DIAGONAL,
                     bottomRight = KeyC("v"),
                 ),
                 KeyItemC(
@@ -38,7 +36,6 @@ val KB_FR_THUMBKEY_V1_MAIN =
             listOf(
                 KeyItemC(
                     center = KeyC("n", size = LARGE),
-                    swipeType = TWO_WAY_HORIZONTAL,
                     right = KeyC("m"),
                 ),
                 KeyItemC(
@@ -75,7 +72,6 @@ val KB_FR_THUMBKEY_V1_MAIN =
             listOf(
                 KeyItemC(
                     center = KeyC("s", size = LARGE),
-                    swipeType = FOUR_WAY_DIAGONAL,
                     topRight = KeyC("p"),
                 ),
                 KeyItemC(
@@ -113,7 +109,6 @@ val KB_FR_THUMBKEY_V1_SHIFTED =
             listOf(
                 KeyItemC(
                     center = KeyC("R", size = LARGE),
-                    swipeType = FOUR_WAY_DIAGONAL,
                     bottomRight = KeyC("V"),
                 ),
                 KeyItemC(
@@ -135,7 +130,6 @@ val KB_FR_THUMBKEY_V1_SHIFTED =
             listOf(
                 KeyItemC(
                     center = KeyC("N", size = LARGE),
-                    swipeType = TWO_WAY_HORIZONTAL,
                     right = KeyC("M"),
                 ),
                 KeyItemC(
@@ -174,7 +168,6 @@ val KB_FR_THUMBKEY_V1_SHIFTED =
             listOf(
                 KeyItemC(
                     center = KeyC("S", size = LARGE),
-                    swipeType = FOUR_WAY_DIAGONAL,
                     topRight = KeyC("P"),
                 ),
                 KeyItemC(

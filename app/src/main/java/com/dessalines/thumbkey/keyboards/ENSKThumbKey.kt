@@ -8,7 +8,6 @@ import com.dessalines.thumbkey.utils.*
 import com.dessalines.thumbkey.utils.ColorVariant.*
 import com.dessalines.thumbkey.utils.FontSizeVariant.*
 import com.dessalines.thumbkey.utils.KeyAction.*
-import com.dessalines.thumbkey.utils.SwipeNWay.*
 
 val KB_EN_SK_THUMBKEY_MAIN =
     KeyboardC(
@@ -16,20 +15,17 @@ val KB_EN_SK_THUMBKEY_MAIN =
             listOf(
                 KeyItemC(
                     center = KeyC("s", size = LARGE),
-                    swipeType = EIGHT_WAY,
                     top = KeyC("š"),
                     bottomRight = KeyC("w"),
                     left = KeyC("ô"),
                 ),
                 KeyItemC(
                     center = KeyC("r", size = LARGE),
-                    swipeType = TWO_WAY_VERTICAL,
                     top = KeyC("ŕ"),
                     bottom = KeyC("g"),
                 ),
                 KeyItemC(
                     center = KeyC("o", size = LARGE),
-                    swipeType = EIGHT_WAY,
                     top = KeyC("ó"),
                     bottomRight = KeyC("ú"),
                     bottomLeft = KeyC("u"),
@@ -39,14 +35,12 @@ val KB_EN_SK_THUMBKEY_MAIN =
             listOf(
                 KeyItemC(
                     center = KeyC("n", size = LARGE),
-                    swipeType = FOUR_WAY_CROSS,
                     top = KeyC("ň"),
                     right = KeyC("m"),
                     left = KeyC("ä"),
                 ),
                 KeyItemC(
                     center = KeyC("h", size = LARGE),
-                    swipeType = EIGHT_WAY,
                     topLeft = KeyC("j"),
                     top = KeyC("q"),
                     topRight = KeyC("b"),
@@ -58,7 +52,6 @@ val KB_EN_SK_THUMBKEY_MAIN =
                 ),
                 KeyItemC(
                     center = KeyC("a", size = LARGE),
-                    swipeType = EIGHT_WAY,
                     topLeft = KeyC("ĺ"),
                     top =
                         KeyC(
@@ -82,14 +75,12 @@ val KB_EN_SK_THUMBKEY_MAIN =
             listOf(
                 KeyItemC(
                     center = KeyC("t", size = LARGE),
-                    swipeType = EIGHT_WAY,
                     top = KeyC("ť"),
                     topRight = KeyC("c"),
                     bottomRight = KeyC("č"),
                 ),
                 KeyItemC(
                     center = KeyC("i", size = LARGE),
-                    swipeType = EIGHT_WAY,
                     topLeft = KeyC("í"),
                     top = KeyC("f"),
                     topRight = KeyC("'", color = MUTED),
@@ -100,7 +91,6 @@ val KB_EN_SK_THUMBKEY_MAIN =
                 ),
                 KeyItemC(
                     center = KeyC("e", size = LARGE),
-                    swipeType = EIGHT_WAY,
                     topLeft = KeyC("d"),
                     top = KeyC("é"),
                     right = KeyC("ž"),
@@ -121,20 +111,17 @@ val KB_EN_SK_THUMBKEY_SHIFTED =
             listOf(
                 KeyItemC(
                     center = KeyC("S", size = LARGE),
-                    swipeType = EIGHT_WAY,
                     top = KeyC("Š"),
                     bottomRight = KeyC("W"),
                     left = KeyC("Ô"),
                 ),
                 KeyItemC(
                     center = KeyC("R", size = LARGE),
-                    swipeType = TWO_WAY_VERTICAL,
                     top = KeyC("Ŕ"),
                     bottom = KeyC("G"),
                 ),
                 KeyItemC(
                     center = KeyC("O", size = LARGE),
-                    swipeType = EIGHT_WAY,
                     top = KeyC("Ó"),
                     bottomRight = KeyC("Ú"),
                     bottomLeft = KeyC("U"),
@@ -144,14 +131,12 @@ val KB_EN_SK_THUMBKEY_SHIFTED =
             listOf(
                 KeyItemC(
                     center = KeyC("N", size = LARGE),
-                    swipeType = FOUR_WAY_CROSS,
                     top = KeyC("Ň"),
                     right = KeyC("M"),
                     left = KeyC("Ä"),
                 ),
                 KeyItemC(
                     center = KeyC("H", size = LARGE),
-                    swipeType = EIGHT_WAY,
                     topLeft = KeyC("J"),
                     top = KeyC("Q"),
                     topRight = KeyC("B"),
@@ -163,7 +148,6 @@ val KB_EN_SK_THUMBKEY_SHIFTED =
                 ),
                 KeyItemC(
                     center = KeyC("A", size = LARGE),
-                    swipeType = EIGHT_WAY,
                     topLeft = KeyC("Ĺ"),
                     top =
                         KeyC(
@@ -190,14 +174,12 @@ val KB_EN_SK_THUMBKEY_SHIFTED =
             listOf(
                 KeyItemC(
                     center = KeyC("T", size = LARGE),
-                    swipeType = EIGHT_WAY,
                     top = KeyC("Ť"),
                     topRight = KeyC("C"),
                     bottomRight = KeyC("Č"),
                 ),
                 KeyItemC(
                     center = KeyC("I", size = LARGE),
-                    swipeType = EIGHT_WAY,
                     topLeft = KeyC("Í"),
                     top = KeyC("F"),
                     topRight = KeyC("'", color = MUTED),
@@ -208,7 +190,6 @@ val KB_EN_SK_THUMBKEY_SHIFTED =
                 ),
                 KeyItemC(
                     center = KeyC("E", size = LARGE),
-                    swipeType = EIGHT_WAY,
                     topLeft = KeyC("D"),
                     top = KeyC("É"),
                     right = KeyC("Ž"),

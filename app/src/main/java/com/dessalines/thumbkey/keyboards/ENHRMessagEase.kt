@@ -8,7 +8,6 @@ import com.dessalines.thumbkey.utils.*
 import com.dessalines.thumbkey.utils.ColorVariant.*
 import com.dessalines.thumbkey.utils.FontSizeVariant.*
 import com.dessalines.thumbkey.utils.KeyAction.*
-import com.dessalines.thumbkey.utils.SwipeNWay.*
 
 val KB_EN_HR_MESSAGEASE_MAIN =
     KeyboardC(
@@ -22,12 +21,10 @@ val KB_EN_HR_MESSAGEASE_MAIN =
                 ),
                 KeyItemC(
                     center = KeyC("n", size = LARGE),
-                    swipeType = TWO_WAY_VERTICAL,
                     bottom = KeyC("l"),
                 ),
                 KeyItemC(
                     center = KeyC("i", size = LARGE),
-                    swipeType = FOUR_WAY_DIAGONAL,
                     bottomLeft = KeyC("x"),
                 ),
                 EMOJI_KEY_ITEM,
@@ -52,7 +49,6 @@ val KB_EN_HR_MESSAGEASE_MAIN =
                 ),
                 KeyItemC(
                     center = KeyC("r", size = LARGE),
-                    swipeType = FOUR_WAY_CROSS,
                     left = KeyC("m"),
                     top =
                         KeyC(
@@ -86,7 +82,6 @@ val KB_EN_HR_MESSAGEASE_MAIN =
                 ),
                 KeyItemC(
                     center = KeyC("s", size = LARGE),
-                    swipeType = FOUR_WAY_DIAGONAL,
                     topLeft = KeyC("f"),
                 ),
                 BACKSPACE_KEY_ITEM,
@@ -110,12 +105,10 @@ val KB_EN_HR_MESSAGEASE_SHIFTED =
                 ),
                 KeyItemC(
                     center = KeyC("N", size = LARGE),
-                    swipeType = TWO_WAY_VERTICAL,
                     bottom = KeyC("L"),
                 ),
                 KeyItemC(
                     center = KeyC("I", size = LARGE),
-                    swipeType = FOUR_WAY_DIAGONAL,
                     bottomLeft = KeyC("X"),
                 ),
                 EMOJI_KEY_ITEM,
@@ -140,7 +133,6 @@ val KB_EN_HR_MESSAGEASE_SHIFTED =
                 ),
                 KeyItemC(
                     center = KeyC("R", size = LARGE),
-                    swipeType = FOUR_WAY_CROSS,
                     left = KeyC("M"),
                     bottom =
                         KeyC(
@@ -177,7 +169,6 @@ val KB_EN_HR_MESSAGEASE_SHIFTED =
                 ),
                 KeyItemC(
                     center = KeyC("S", size = LARGE),
-                    swipeType = FOUR_WAY_DIAGONAL,
                     topLeft = KeyC("F"),
                 ),
                 BACKSPACE_KEY_ITEM,

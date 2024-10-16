@@ -6,7 +6,6 @@ import com.dessalines.thumbkey.utils.*
 import com.dessalines.thumbkey.utils.ColorVariant.*
 import com.dessalines.thumbkey.utils.FontSizeVariant.*
 import com.dessalines.thumbkey.utils.KeyAction.*
-import com.dessalines.thumbkey.utils.SwipeNWay.*
 
 val KB_JA_HIRAGANA_THUMBKEY_MAIN =
     KeyboardC(
@@ -14,7 +13,6 @@ val KB_JA_HIRAGANA_THUMBKEY_MAIN =
             listOf(
                 KeyItemC(
                     center = KeyC("ま", size = LARGE),
-                    swipeType = FOUR_WAY_CROSS,
                     bottom = KeyC("み"),
                     left = KeyC("む"),
                     top = KeyC("め"),
@@ -22,7 +20,6 @@ val KB_JA_HIRAGANA_THUMBKEY_MAIN =
                 ),
                 KeyItemC(
                     center = KeyC("は", size = LARGE),
-                    swipeType = FOUR_WAY_CROSS,
                     bottom = KeyC("ひ"),
                     left = KeyC("ふ"),
                     top = KeyC("へ"),
@@ -30,7 +27,6 @@ val KB_JA_HIRAGANA_THUMBKEY_MAIN =
                 ),
                 KeyItemC(
                     center = KeyC("さ", size = LARGE),
-                    swipeType = FOUR_WAY_CROSS,
                     bottom = KeyC("し"),
                     left = KeyC("す"),
                     top = KeyC("せ"),
@@ -41,13 +37,11 @@ val KB_JA_HIRAGANA_THUMBKEY_MAIN =
             listOf(
                 KeyItemC(
                     center = KeyC("や", size = LARGE),
-                    swipeType = FOUR_WAY_CROSS,
                     bottom = KeyC("ゆ"),
                     right = KeyC("よ"),
                 ),
                 KeyItemC(
                     center = KeyC("な", size = LARGE),
-                    swipeType = FOUR_WAY_CROSS,
                     bottom = KeyC("に"),
                     left = KeyC("ぬ"),
                     top = KeyC("ね"),
@@ -55,7 +49,6 @@ val KB_JA_HIRAGANA_THUMBKEY_MAIN =
                 ),
                 KeyItemC(
                     center = KeyC("か", size = LARGE),
-                    swipeType = FOUR_WAY_CROSS,
                     bottom = KeyC("き"),
                     left = KeyC("く"),
                     top = KeyC("け"),
@@ -66,7 +59,6 @@ val KB_JA_HIRAGANA_THUMBKEY_MAIN =
             listOf(
                 KeyItemC(
                     center = KeyC("ら", size = LARGE),
-                    swipeType = FOUR_WAY_CROSS,
                     bottom = KeyC("り"),
                     left = KeyC("る"),
                     top = KeyC("れ"),
@@ -74,7 +66,6 @@ val KB_JA_HIRAGANA_THUMBKEY_MAIN =
                 ),
                 KeyItemC(
                     center = KeyC("た", size = LARGE),
-                    swipeType = FOUR_WAY_CROSS,
                     bottom = KeyC("ち"),
                     left = KeyC("つ"),
                     top = KeyC("て"),
@@ -82,7 +73,6 @@ val KB_JA_HIRAGANA_THUMBKEY_MAIN =
                 ),
                 KeyItemC(
                     center = KeyC("あ", size = LARGE),
-                    swipeType = FOUR_WAY_CROSS,
                     bottom = KeyC("い"),
                     left = KeyC("う"),
                     top = KeyC("え"),
@@ -93,7 +83,6 @@ val KB_JA_HIRAGANA_THUMBKEY_MAIN =
             listOf(
                 KeyItemC(
                     center = KeyC("わ", size = LARGE),
-                    swipeType = FOUR_WAY_CROSS,
                     bottom = KeyC("ゐ"),
                     left = KeyC("ん"),
                     top = KeyC("ゑ"),
@@ -106,7 +95,6 @@ val KB_JA_HIRAGANA_THUMBKEY_MAIN =
                             action = ComposeLastKey("゛"),
                             size = LARGE,
                         ),
-                    swipeType = FOUR_WAY_CROSS,
                     left = KeyC("。"),
                     top =
                         KeyC(
@@ -137,7 +125,6 @@ val KB_JA_HIRAGANA_THUMBKEY_SHIFTED =
             listOf(
                 KeyItemC(
                     center = KeyC("「", size = LARGE),
-                    swipeType = FOUR_WAY_CROSS,
                     bottom = KeyC("【"),
                     left = KeyC("〔"),
                     top = KeyC("〖"),
@@ -145,12 +132,10 @@ val KB_JA_HIRAGANA_THUMBKEY_SHIFTED =
                 ),
                 KeyItemC(
                     center = KeyC("・", size = LARGE),
-                    swipeType = TWO_WAY_VERTICAL,
                     bottom = KeyC("※"),
                 ),
                 KeyItemC(
                     center = KeyC("」", size = LARGE),
-                    swipeType = FOUR_WAY_CROSS,
                     bottom = KeyC("】"),
                     left = KeyC("』"),
                     top = KeyC("〗"),
@@ -185,7 +170,6 @@ val KB_JA_HIRAGANA_THUMBKEY_SHIFTED =
             listOf(
                 KeyItemC(
                     center = KeyC("ー", size = LARGE),
-                    swipeType = FOUR_WAY_CROSS,
                     right = KeyC("〜"),
                     top = KeyC("…"),
                 ),

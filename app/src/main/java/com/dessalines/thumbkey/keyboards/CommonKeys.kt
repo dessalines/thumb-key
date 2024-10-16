@@ -10,12 +10,10 @@ import com.dessalines.thumbkey.utils.*
 import com.dessalines.thumbkey.utils.ColorVariant.*
 import com.dessalines.thumbkey.utils.FontSizeVariant.*
 import com.dessalines.thumbkey.utils.KeyAction.*
-import com.dessalines.thumbkey.utils.SwipeNWay.*
 
 fun textEditKeyItem(center: KeyC) =
     KeyItemC(
         backgroundColor = SURFACE_VARIANT,
-        swipeType = EIGHT_WAY,
         center = center,
         top =
             KeyC(
@@ -58,7 +56,6 @@ fun textEditKeyItem(center: KeyC) =
 fun specialActionKeyItem(center: KeyC) =
     KeyItemC(
         backgroundColor = SURFACE_VARIANT,
-        swipeType = EIGHT_WAY,
         center = center,
         top =
             KeyC(
@@ -155,7 +152,6 @@ val BACKSPACE_KEY_ITEM =
                 size = LARGE,
                 color = SECONDARY,
             ),
-        swipeType = TWO_WAY_HORIZONTAL,
         slideType = SlideType.DELETE,
         left =
             KeyC(
@@ -176,7 +172,6 @@ val BACKSPACE_WIDE_KEY_ITEM = BACKSPACE_KEY_ITEM.copy(widthMultiplier = 3)
 val SPACEBAR_KEY_ITEM =
     KeyItemC(
         center = KeyC(" "),
-        swipeType = FOUR_WAY_CROSS,
         slideType = SlideType.MOVE_CURSOR,
         left =
             KeyC(
@@ -218,7 +213,6 @@ val SPACEBAR_DOUBLE_KEY_ITEM = SPACEBAR_KEY_ITEM.copy(widthMultiplier = 2)
 val SPACEBAR_PROGRAMMING_KEY_ITEM =
     KeyItemC(
         center = KeyC(" "),
-        swipeType = FOUR_WAY_CROSS,
         slideType = SlideType.MOVE_CURSOR,
         left =
             KeyC(
@@ -284,7 +278,6 @@ val RETURN_KEY_ITEM =
 val SPACEBAR_TYPESPLIT_MIDDLE_KEY_ITEM =
     KeyItemC(
         center = KeyC(" "),
-        swipeType = FOUR_WAY_CROSS,
         slideType = SlideType.MOVE_CURSOR,
         left =
             KeyC(
@@ -323,7 +316,6 @@ val SPACEBAR_TYPESPLIT_MIDDLE_KEY_ITEM =
     )
 val SPACEBAR_TYPESPLIT_BOTTOM_KEY_ITEM =
     SPACEBAR_TYPESPLIT_MIDDLE_KEY_ITEM.copy(
-        swipeType = EIGHT_WAY,
         left =
             KeyC(
                 action =
@@ -426,7 +418,6 @@ val BACKSPACE_TYPESPLIT_KEY_ITEM =
                 size = LARGE,
                 color = SECONDARY,
             ),
-        swipeType = FOUR_WAY_CROSS,
         slideType = SlideType.DELETE,
         left =
             KeyC(

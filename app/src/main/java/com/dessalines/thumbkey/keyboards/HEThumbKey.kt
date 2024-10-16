@@ -6,7 +6,6 @@ import com.dessalines.thumbkey.utils.*
 import com.dessalines.thumbkey.utils.ColorVariant.*
 import com.dessalines.thumbkey.utils.FontSizeVariant.*
 import com.dessalines.thumbkey.utils.KeyAction.*
-import com.dessalines.thumbkey.utils.SwipeNWay.*
 
 val KB_HE_THUMBKEY_MAIN =
     KeyboardC(
@@ -15,17 +14,14 @@ val KB_HE_THUMBKEY_MAIN =
                 KeyItemC(
                     center = KeyC("מ", size = LARGE),
                     bottomRight = KeyC("נ"),
-                    swipeType = FOUR_WAY_DIAGONAL,
                 ),
                 KeyItemC(
                     center = KeyC("ב", size = LARGE),
                     bottom = KeyC("ע"),
-                    swipeType = TWO_WAY_VERTICAL,
                 ),
                 KeyItemC(
                     center = KeyC("א", size = LARGE),
                     bottomLeft = KeyC("כ"),
-                    swipeType = FOUR_WAY_DIAGONAL,
                 ),
                 EMOJI_KEY_ITEM,
             ),
@@ -34,7 +30,6 @@ val KB_HE_THUMBKEY_MAIN =
                     center = KeyC("ת", size = LARGE),
                     right = KeyC("ם"),
                     left = KeyC("ץ"),
-                    swipeType = TWO_WAY_HORIZONTAL,
                 ),
                 KeyItemC(
                     center = KeyC("ל", size = LARGE),
@@ -51,7 +46,6 @@ val KB_HE_THUMBKEY_MAIN =
                     center = KeyC("ו", size = LARGE),
                     left = KeyC("פ"),
                     right = KeyC("ף"),
-                    swipeType = TWO_WAY_HORIZONTAL,
                 ),
                 NUMERIC_KEY_ITEM,
             ),
@@ -60,7 +54,6 @@ val KB_HE_THUMBKEY_MAIN =
                     center = KeyC("ר", size = LARGE),
                     topRight = KeyC("ש"),
                     bottomRight = KeyC("”", color = MUTED),
-                    swipeType = FOUR_WAY_DIAGONAL,
                 ),
                 KeyItemC(
                     center = KeyC("ה", size = LARGE),
@@ -77,7 +70,6 @@ val KB_HE_THUMBKEY_MAIN =
                     center = KeyC("י", size = LARGE),
                     topLeft = KeyC("ח"),
                     bottomLeft = KeyC("’", color = MUTED),
-                    swipeType = FOUR_WAY_DIAGONAL,
                 ),
                 BACKSPACE_KEY_ITEM,
             ),

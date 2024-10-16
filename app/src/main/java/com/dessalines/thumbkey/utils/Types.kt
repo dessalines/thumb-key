@@ -1,5 +1,6 @@
 package com.dessalines.thumbkey.utils
 
+import android.graphics.PointF
 import android.view.KeyEvent
 import androidx.annotation.StringRes
 import androidx.compose.ui.graphics.vector.ImageVector
@@ -50,7 +51,6 @@ data class KeyItemC(
     val nextTapActions: List<KeyAction>? = null,
     val widthMultiplier: Int = 1,
     val backgroundColor: ColorVariant = ColorVariant.SURFACE,
-    val swipeType: SwipeNWay = SwipeNWay.EIGHT_WAY,
     val slideType: SlideType = SlideType.NONE,
     val longPress: KeyAction? = null,
 ) {
@@ -208,6 +208,18 @@ enum class SwipeDirection {
     BOTTOM_LEFT,
 }
 
+fun SwipeDirection.vector() =
+    when (this) {
+        SwipeDirection.LEFT -> PointF(-1f, 0f)
+        SwipeDirection.TOP_LEFT -> PointF(-1f, -1f)
+        SwipeDirection.TOP -> PointF(0f, -1f)
+        SwipeDirection.TOP_RIGHT -> PointF(+1f, -1f)
+        SwipeDirection.RIGHT -> PointF(+1f, 0f)
+        SwipeDirection.BOTTOM_RIGHT -> PointF(+1f, +1f)
+        SwipeDirection.BOTTOM -> PointF(0f, +1f)
+        SwipeDirection.BOTTOM_LEFT -> PointF(-1f, +1f)
+    }
+
 enum class ColorVariant {
     PRIMARY,
     SECONDARY,
@@ -252,14 +264,6 @@ enum class KeyboardPosition(
     Center(R.string.center),
     Right(R.string.right),
     Left(R.string.left),
-}
-
-enum class SwipeNWay {
-    EIGHT_WAY,
-    FOUR_WAY_CROSS,
-    FOUR_WAY_DIAGONAL,
-    TWO_WAY_VERTICAL,
-    TWO_WAY_HORIZONTAL,
 }
 
 enum class SlideType {

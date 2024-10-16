@@ -8,7 +8,6 @@ import com.dessalines.thumbkey.utils.*
 import com.dessalines.thumbkey.utils.ColorVariant.*
 import com.dessalines.thumbkey.utils.FontSizeVariant.*
 import com.dessalines.thumbkey.utils.KeyAction.*
-import com.dessalines.thumbkey.utils.SwipeNWay.*
 
 val KB_ES_MESSAGEASE_MAIN =
     KeyboardC(
@@ -42,7 +41,6 @@ val KB_ES_MESSAGEASE_MAIN =
             listOf(
                 KeyItemC(
                     center = KeyC("d", size = LARGE),
-                    swipeType = FOUR_WAY_CROSS,
                     left = KeyC("(", color = MUTED),
                     top = KeyC("ü"),
                     right = KeyC("k"),
@@ -99,7 +97,6 @@ val KB_ES_MESSAGEASE_MAIN =
                 ),
                 KeyItemC(
                     center = KeyC("s", size = LARGE),
-                    swipeType = FOUR_WAY_DIAGONAL,
                     topLeft = KeyC("f"),
                 ),
                 BACKSPACE_KEY_ITEM,
@@ -140,7 +137,6 @@ val KB_ES_MESSAGEASE_SHIFTED =
             listOf(
                 KeyItemC(
                     center = KeyC("D", size = LARGE),
-                    swipeType = FOUR_WAY_CROSS,
                     left = KeyC("(", color = MUTED),
                     top = KeyC("Ü"),
                     right = KeyC("K"),
@@ -200,7 +196,6 @@ val KB_ES_MESSAGEASE_SHIFTED =
                 ),
                 KeyItemC(
                     center = KeyC("S", size = LARGE),
-                    swipeType = FOUR_WAY_DIAGONAL,
                     topLeft = KeyC("F"),
                 ),
                 BACKSPACE_KEY_ITEM,
