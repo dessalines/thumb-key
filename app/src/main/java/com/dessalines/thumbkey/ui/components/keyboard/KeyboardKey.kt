@@ -429,7 +429,7 @@ fun KeyboardKey(
                         }
                     },
                     onDragEnd = {
-                        lateinit var action: KeyAction
+                        var action: KeyAction? = null
 
                         if (key.slideType == SlideType.NONE ||
                             !slideEnabled ||
@@ -446,49 +446,48 @@ fun KeyboardKey(
 
                             val maxOffsetDistance = maxOffset.getDistance().toDouble()
                             val maxOffsetBigEnough = maxOffsetDistance >= maxOffsetThreshold
-                            action =
-                                (
-                                    if (maxOffsetBigEnough && finalOffsetSmallEnough) {
-                                        (
-                                            if (circularDragEnabled) {
-                                                val circularDragActions =
-                                                    mapOf(
-                                                        CircularDragAction.OppositeCase to oppositeCaseKey?.center?.action,
-                                                        CircularDragAction.Numeric to numericKey?.center?.action,
-                                                    )
-                                                circularDirection(positions, finalOffsetThreshold)?.let {
-                                                    when (it) {
-                                                        CircularDirection.Clockwise -> circularDragActions[clockwiseDragAction]
-                                                        CircularDirection.Counterclockwise ->
-                                                            circularDragActions[counterclockwiseDragAction]
-                                                    }
-                                                }
-                                            } else {
-                                                null
-                                            }
-                                        ) ?: (
-                                            if (dragReturnEnabled) {
-                                                val swipeDirection =
-                                                    swipeDirection(maxOffset.x, maxOffset.y, minSwipeLength, key.swipeType)
-                                                key.getSwipe(swipeDirection)?.swipeReturnAction
-                                                    ?: oppositeCaseKey?.getSwipe(swipeDirection)?.action
-                                            } else {
-                                                null
-                                            }
-                                        )
-                                    } else {
-                                        val swipeDirection =
-                                            swipeDirection(
-                                                offsetX,
-                                                offsetY,
-                                                minSwipeLength,
-                                                if (ghostKey == null) key.swipeType else SwipeNWay.EIGHT_WAY,
-                                            )
-                                        key.getSwipe(swipeDirection)?.action ?: (
-                                            ghostKey?.getSwipe(swipeDirection)?.action
-                                        )
+
+                            if (action == null && circularDragEnabled && maxOffsetBigEnough && finalOffsetSmallEnough) {
+                                val circularDragActions =
+                                    mapOf(
+                                        CircularDragAction.OppositeCase to oppositeCaseKey?.center?.action,
+                                        CircularDragAction.Numeric to numericKey?.center?.action,
+                                    )
+                                action =
+                                    circularDirection(positions, finalOffsetThreshold)?.let {
+                                        when (it) {
+                                            CircularDirection.Clockwise -> circularDragActions[clockwiseDragAction]
+                                            CircularDirection.Counterclockwise ->
+                                                circularDragActions[counterclockwiseDragAction]
+                                        }
                                     }
-                                ) ?: key.center.action
+                            }
+
+                            if (action == null && dragReturnEnabled && maxOffsetBigEnough && finalOffsetSmallEnough) {
+                                val swipeDirection =
+                                    swipeDirection(maxOffset.x, maxOffset.y, minSwipeLength, key.swipeType)
+                                action = key.getSwipe(swipeDirection)?.swipeReturnAction
+                                    ?: oppositeCaseKey?.getSwipe(swipeDirection)?.action
+                            }
+
+                            if (action == null && (!maxOffsetBigEnough || !finalOffsetSmallEnough)) {
+                                val swipeDirection =
+                                    swipeDirection(
+                                        offsetX,
+                                        offsetY,
+                                        minSwipeLength,
+                                        if (ghostKey == null) key.swipeType else SwipeNWay.EIGHT_WAY,
+                                    )
+                                action = key.getSwipe(swipeDirection)?.action ?: (
+                                    ghostKey?.getSwipe(swipeDirection)?.action
+                                )
+                            }
+
+                            if (action == null) {
+                                action = key.center.action
+                            }
+
+                            checkNotNull(action)
 
                             performKeyAction(
                                 action = action,
