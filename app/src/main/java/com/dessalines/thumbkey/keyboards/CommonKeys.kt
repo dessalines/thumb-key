@@ -87,7 +87,7 @@ fun specialActionKeyItem(center: KeyC) =
         right =
             KeyC(
                 display = KeyDisplay.IconDisplay(Icons.Outlined.LinearScale),
-                action = SwitchPosition,
+                action = MoveKeyboard.CycleRight,
                 color = MUTED,
             ),
     )

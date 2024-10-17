@@ -332,7 +332,7 @@ fun performKeyAction(
     onToggleCapsLock: () -> Unit,
     onAutoCapitalize: (enable: Boolean) -> Unit,
     onSwitchLanguage: () -> Unit,
-    onSwitchPosition: () -> Unit,
+    onChangePosition: ((old: KeyboardPosition) -> KeyboardPosition) -> Unit,
 ) {
     when (action) {
         is KeyAction.CommitText -> {
@@ -945,8 +945,39 @@ fun performKeyAction(
             )
         }
 
+        is KeyAction.MoveKeyboard.ToPosition -> onChangePosition { action.position }
+        KeyAction.MoveKeyboard.Left ->
+            onChangePosition {
+                when (it) {
+                    KeyboardPosition.Right -> KeyboardPosition.Center
+                    else -> KeyboardPosition.Left
+                }
+            }
+        KeyAction.MoveKeyboard.Right ->
+            onChangePosition {
+                when (it) {
+                    KeyboardPosition.Left -> KeyboardPosition.Center
+                    else -> KeyboardPosition.Right
+                }
+            }
+        KeyAction.MoveKeyboard.CycleLeft ->
+            onChangePosition {
+                when (it) {
+                    KeyboardPosition.Right -> KeyboardPosition.Center
+                    KeyboardPosition.Center -> KeyboardPosition.Left
+                    KeyboardPosition.Left -> KeyboardPosition.Right
+                }
+            }
+        KeyAction.MoveKeyboard.CycleRight ->
+            onChangePosition {
+                when (it) {
+                    KeyboardPosition.Left -> KeyboardPosition.Center
+                    KeyboardPosition.Center -> KeyboardPosition.Right
+                    KeyboardPosition.Right -> KeyboardPosition.Left
+                }
+            }
+
         KeyAction.SwitchLanguage -> onSwitchLanguage()
-        KeyAction.SwitchPosition -> onSwitchPosition()
         KeyAction.SwitchIME -> {
             val imeManager =
                 ime.getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager

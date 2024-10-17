@@ -78,7 +78,7 @@ import kotlin.time.TimeMark
 fun KeyboardScreen(
     settings: AppSettings?,
     onSwitchLanguage: () -> Unit,
-    onSwitchPosition: () -> Unit,
+    onChangePosition: ((old: KeyboardPosition) -> KeyboardPosition) -> Unit,
 ) {
     val ctx = LocalContext.current as IMEService
 
@@ -310,7 +310,7 @@ fun KeyboardScreen(
                                     }
                                 },
                                 onSwitchLanguage = onSwitchLanguage,
-                                onSwitchPosition = onSwitchPosition,
+                                onChangePosition = onChangePosition,
                                 dragReturnEnabled = dragReturnEnabled,
                                 circularDragEnabled = circularDragEnabled,
                                 clockwiseDragAction = clockwiseDragAction,
@@ -445,7 +445,7 @@ fun KeyboardScreen(
                                         }
                                     },
                                     onSwitchLanguage = onSwitchLanguage,
-                                    onSwitchPosition = onSwitchPosition,
+                                    onChangePosition = onChangePosition,
                                     oppositeCaseKey =
                                         when (mode) {
                                             KeyboardMode.MAIN -> keyboardDefinition.modes.shifted

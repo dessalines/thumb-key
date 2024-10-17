@@ -150,6 +150,20 @@ sealed class KeyAction {
         val text: String,
     ) : KeyAction()
 
+    sealed class MoveKeyboard : KeyAction() {
+        class ToPosition(
+            val position: KeyboardPosition,
+        ) : KeyAction()
+
+        data object Left : KeyAction()
+
+        data object Right : KeyAction()
+
+        data object CycleLeft : KeyAction()
+
+        data object CycleRight : KeyAction()
+    }
+
     data object DeleteWordBeforeCursor : KeyAction()
 
     data object DeleteWordAfterCursor : KeyAction()
@@ -173,8 +187,6 @@ sealed class KeyAction {
     data object Redo : KeyAction()
 
     data object SwitchLanguage : KeyAction()
-
-    data object SwitchPosition : KeyAction()
 
     data object SwitchIME : KeyAction()
 

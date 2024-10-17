@@ -14,6 +14,7 @@ import androidx.lifecycle.lifecycleScope
 import com.dessalines.thumbkey.db.AppSettingsRepository
 import com.dessalines.thumbkey.ui.components.keyboard.KeyboardScreen
 import com.dessalines.thumbkey.ui.theme.ThumbkeyTheme
+import com.dessalines.thumbkey.utils.KeyboardPosition
 import com.dessalines.thumbkey.utils.keyboardLayoutsSetFromDbIndexString
 import kotlinx.coroutines.launch
 
@@ -59,12 +60,11 @@ class ComposeKeyboardView(
                             }
                         }
                     },
-                    onSwitchPosition = {
+                    onChangePosition = { f ->
                         ctx.lifecycleScope.launch {
-                            // Cycle to the next position
                             val state = settingsState.value
                             state?.let { s ->
-                                val nextPosition = (s.position + 1).mod(3)
+                                val nextPosition = f(KeyboardPosition.entries[s.position]).ordinal
                                 val s2 = s.copy(position = nextPosition)
                                 settingsRepo.update(s2)
                             }
