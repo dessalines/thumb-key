@@ -275,7 +275,7 @@ val KB_T9_MAIN =
                     bottomRight =
                         KeyC(
                             display = KeyDisplay.TextDisplay("↔"),
-                            action = SwitchPosition,
+                            action = MoveKeyboard.CycleRight,
                             color = MUTED,
                         ),
                     backgroundColor = SURFACE_VARIANT,
@@ -554,7 +554,7 @@ val KB_T9_SHIFTED =
                     bottomRight =
                         KeyC(
                             display = KeyDisplay.TextDisplay("↔"),
-                            action = SwitchPosition,
+                            action = MoveKeyboard.CycleRight,
                             color = MUTED,
                         ),
                     backgroundColor = SURFACE_VARIANT,

@@ -57,6 +57,7 @@ import com.dessalines.thumbkey.utils.KeyC
 import com.dessalines.thumbkey.utils.KeyDisplay
 import com.dessalines.thumbkey.utils.KeyItemC
 import com.dessalines.thumbkey.utils.KeyboardDefinitionSettings
+import com.dessalines.thumbkey.utils.KeyboardPosition
 import com.dessalines.thumbkey.utils.Selection
 import com.dessalines.thumbkey.utils.SlideType
 import com.dessalines.thumbkey.utils.SwipeDirection
@@ -118,7 +119,7 @@ fun KeyboardKey(
     onToggleCapsLock: () -> Unit,
     onAutoCapitalize: (enable: Boolean) -> Unit,
     onSwitchLanguage: () -> Unit,
-    onSwitchPosition: () -> Unit,
+    onChangePosition: ((old: KeyboardPosition) -> KeyboardPosition) -> Unit,
     oppositeCaseKey: KeyItemC? = null,
     numericKey: KeyItemC? = null,
     dragReturnEnabled: Boolean,
@@ -235,7 +236,7 @@ fun KeyboardKey(
                         onToggleCapsLock = onToggleCapsLock,
                         onAutoCapitalize = onAutoCapitalize,
                         onSwitchLanguage = onSwitchLanguage,
-                        onSwitchPosition = onSwitchPosition,
+                        onChangePosition = onChangePosition,
                     )
                     doneKeyAction(scope, action, isDragged, releasedKey, animationHelperSpeed)
                 },
@@ -252,7 +253,7 @@ fun KeyboardKey(
                             onToggleCapsLock = onToggleCapsLock,
                             onAutoCapitalize = onAutoCapitalize,
                             onSwitchLanguage = onSwitchLanguage,
-                            onSwitchPosition = onSwitchPosition,
+                            onChangePosition = onChangePosition,
                         )
                         doneKeyAction(scope, action, isDragged, releasedKey, animationHelperSpeed)
                         if (vibrateOnTap) {
@@ -501,7 +502,7 @@ fun KeyboardKey(
                                 onToggleCapsLock = onToggleCapsLock,
                                 onAutoCapitalize = onAutoCapitalize,
                                 onSwitchLanguage = onSwitchLanguage,
-                                onSwitchPosition = onSwitchPosition,
+                                onChangePosition = onChangePosition,
                             )
                             doneKeyAction(
                                 scope,
@@ -533,7 +534,7 @@ fun KeyboardKey(
                                         onToggleCapsLock = onToggleCapsLock,
                                         onAutoCapitalize = onAutoCapitalize,
                                         onSwitchLanguage = onSwitchLanguage,
-                                        onSwitchPosition = onSwitchPosition,
+                                        onChangePosition = onChangePosition,
                                         onToggleEmojiMode = onToggleEmojiMode,
                                     )
                                 }
