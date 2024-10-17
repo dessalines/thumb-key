@@ -6,7 +6,6 @@ import com.dessalines.thumbkey.utils.*
 import com.dessalines.thumbkey.utils.ColorVariant.*
 import com.dessalines.thumbkey.utils.FontSizeVariant.*
 import com.dessalines.thumbkey.utils.KeyAction.*
-import com.dessalines.thumbkey.utils.SwipeNWay.*
 
 val KB_HE_MESSAGEASE_MAIN =
     KeyboardC(
@@ -14,12 +13,10 @@ val KB_HE_MESSAGEASE_MAIN =
             listOf(
                 KeyItemC(
                     center = KeyC("ר", size = LARGE),
-                    swipeType = FOUR_WAY_DIAGONAL,
                     bottomRight = KeyC("ן"),
                 ),
                 KeyItemC(
                     center = KeyC("ב", size = LARGE),
-                    swipeType = TWO_WAY_VERTICAL,
                     bottom = KeyC("ג"),
                 ),
                 KeyItemC(
@@ -48,7 +45,6 @@ val KB_HE_MESSAGEASE_MAIN =
                 ),
                 KeyItemC(
                     center = KeyC("ו", size = LARGE),
-                    swipeType = FOUR_WAY_DIAGONAL,
                     topLeft = KeyC("ף"),
                 ),
                 NUMERIC_KEY_ITEM,
@@ -56,7 +52,6 @@ val KB_HE_MESSAGEASE_MAIN =
             listOf(
                 KeyItemC(
                     center = KeyC("ת", size = LARGE),
-                    swipeType = FOUR_WAY_DIAGONAL,
                     topRight = KeyC("ז"),
                 ),
                 KeyItemC(
@@ -69,7 +64,6 @@ val KB_HE_MESSAGEASE_MAIN =
                 ),
                 KeyItemC(
                     center = KeyC("ל", size = LARGE),
-                    swipeType = FOUR_WAY_DIAGONAL,
                     topLeft = KeyC("ט"),
                 ),
                 BACKSPACE_KEY_ITEM,

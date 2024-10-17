@@ -8,7 +8,6 @@ import com.dessalines.thumbkey.utils.*
 import com.dessalines.thumbkey.utils.ColorVariant.*
 import com.dessalines.thumbkey.utils.FontSizeVariant.*
 import com.dessalines.thumbkey.utils.KeyAction.*
-import com.dessalines.thumbkey.utils.SwipeNWay.*
 
 val KB_EN_QWERTYFOUR_COMPOSE_MAIN =
     KeyboardC(
@@ -16,7 +15,6 @@ val KB_EN_QWERTYFOUR_COMPOSE_MAIN =
             listOf(
                 KeyItemC(
                     center = KeyC("e", size = LARGE),
-                    swipeType = FOUR_WAY_CROSS,
                     top = KeyC("\"", color = MUTED),
                     right = KeyC("w"),
                     bottom = KeyC("q"),
@@ -24,7 +22,6 @@ val KB_EN_QWERTYFOUR_COMPOSE_MAIN =
                 ),
                 KeyItemC(
                     center = KeyC("t", size = LARGE),
-                    swipeType = FOUR_WAY_CROSS,
                     top = KeyC("'", color = MUTED),
                     right = KeyC("u"),
                     bottom = KeyC("y"),
@@ -32,7 +29,6 @@ val KB_EN_QWERTYFOUR_COMPOSE_MAIN =
                 ),
                 KeyItemC(
                     center = KeyC("o", size = LARGE),
-                    swipeType = FOUR_WAY_CROSS,
                     top = KeyC(".", color = MUTED),
                     right = KeyC(",", color = MUTED),
                     bottom = KeyC("p"),
@@ -43,7 +39,6 @@ val KB_EN_QWERTYFOUR_COMPOSE_MAIN =
             listOf(
                 KeyItemC(
                     center = KeyC("a", size = LARGE),
-                    swipeType = FOUR_WAY_CROSS,
                     top = KeyC("d"),
                     right = KeyC("s"),
                     bottom = KeyC("f"),
@@ -80,7 +75,6 @@ val KB_EN_QWERTYFOUR_COMPOSE_MAIN =
                 ),
                 KeyItemC(
                     center = KeyC("l", size = LARGE),
-                    swipeType = FOUR_WAY_CROSS,
                     top =
                         KeyC(
                             display = KeyDisplay.IconDisplay(Icons.Outlined.ArrowDropUp),
@@ -101,7 +95,6 @@ val KB_EN_QWERTYFOUR_COMPOSE_MAIN =
             listOf(
                 KeyItemC(
                     center = KeyC("c", size = LARGE),
-                    swipeType = FOUR_WAY_CROSS,
                     top = KeyC("z"),
                     left = KeyC("*", color = MUTED),
                     right = KeyC("x"),
@@ -137,7 +130,6 @@ val KB_EN_QWERTYFOUR_COMPOSE_MAIN =
                 ),
                 KeyItemC(
                     center = KeyC("n", size = LARGE),
-                    swipeType = FOUR_WAY_CROSS,
                     top = KeyC("m"),
                     right = KeyC("?", color = MUTED),
                     bottom = KeyC("!", color = MUTED),
@@ -158,7 +150,6 @@ val KB_EN_QWERTYFOUR_COMPOSE_SHIFTED =
             listOf(
                 KeyItemC(
                     center = KeyC("E", size = LARGE),
-                    swipeType = FOUR_WAY_CROSS,
                     top = KeyC("\"", color = MUTED),
                     right = KeyC("W"),
                     bottom = KeyC("Q"),
@@ -166,7 +157,6 @@ val KB_EN_QWERTYFOUR_COMPOSE_SHIFTED =
                 ),
                 KeyItemC(
                     center = KeyC("T", size = LARGE),
-                    swipeType = FOUR_WAY_CROSS,
                     top = KeyC("'", color = MUTED),
                     right = KeyC("U"),
                     bottom = KeyC("Y"),
@@ -174,7 +164,6 @@ val KB_EN_QWERTYFOUR_COMPOSE_SHIFTED =
                 ),
                 KeyItemC(
                     center = KeyC("O", size = LARGE),
-                    swipeType = FOUR_WAY_CROSS,
                     top = KeyC(".", color = MUTED),
                     right = KeyC(",", color = MUTED),
                     bottom = KeyC("P"),
@@ -185,7 +174,6 @@ val KB_EN_QWERTYFOUR_COMPOSE_SHIFTED =
             listOf(
                 KeyItemC(
                     center = KeyC("A", size = LARGE),
-                    swipeType = FOUR_WAY_CROSS,
                     top = KeyC("D"),
                     right = KeyC("S"),
                     bottom = KeyC("F"),
@@ -222,7 +210,6 @@ val KB_EN_QWERTYFOUR_COMPOSE_SHIFTED =
                 ),
                 KeyItemC(
                     center = KeyC("L", size = LARGE),
-                    swipeType = FOUR_WAY_CROSS,
                     top =
                         KeyC(
                             display = KeyDisplay.IconDisplay(Icons.Outlined.KeyboardCapslock),
@@ -246,7 +233,6 @@ val KB_EN_QWERTYFOUR_COMPOSE_SHIFTED =
             listOf(
                 KeyItemC(
                     center = KeyC("C", size = LARGE),
-                    swipeType = FOUR_WAY_CROSS,
                     top = KeyC("Z"),
                     left = KeyC("*", color = MUTED),
                     right = KeyC("X"),
@@ -282,7 +268,6 @@ val KB_EN_QWERTYFOUR_COMPOSE_SHIFTED =
                 ),
                 KeyItemC(
                     center = KeyC("N", size = LARGE),
-                    swipeType = FOUR_WAY_CROSS,
                     top = KeyC("M"),
                     right = KeyC("?", color = MUTED),
                     bottom = KeyC("!", color = MUTED),

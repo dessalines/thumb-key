@@ -8,7 +8,6 @@ import com.dessalines.thumbkey.utils.*
 import com.dessalines.thumbkey.utils.ColorVariant.*
 import com.dessalines.thumbkey.utils.FontSizeVariant.*
 import com.dessalines.thumbkey.utils.KeyAction.*
-import com.dessalines.thumbkey.utils.SwipeNWay.*
 
 val KB_ES_THUMBKEY_SYMBOLS_MAIN =
     KeyboardC(
@@ -23,7 +22,6 @@ val KB_ES_THUMBKEY_SYMBOLS_MAIN =
                 ),
                 KeyItemC(
                     center = KeyC("l", size = LARGE),
-                    swipeType = FOUR_WAY_CROSS,
                     topLeft = KeyC("`"),
                     top = KeyC("^"),
                     topRight = KeyC("´"),
@@ -49,7 +47,6 @@ val KB_ES_THUMBKEY_SYMBOLS_MAIN =
             listOf(
                 KeyItemC(
                     center = KeyC("r", size = LARGE),
-                    swipeType = TWO_WAY_HORIZONTAL,
                     topLeft = KeyC("{"),
                     topRight = KeyC("%"),
                     right = KeyC("p"),
@@ -70,7 +67,6 @@ val KB_ES_THUMBKEY_SYMBOLS_MAIN =
                 ),
                 KeyItemC(
                     center = KeyC("a", size = LARGE),
-                    swipeType = FOUR_WAY_CROSS,
                     topLeft = KeyC("|"),
                     top =
                         KeyC(
@@ -95,7 +91,6 @@ val KB_ES_THUMBKEY_SYMBOLS_MAIN =
             listOf(
                 KeyItemC(
                     center = KeyC("s", size = LARGE),
-                    swipeType = FOUR_WAY_DIAGONAL,
                     topLeft = KeyC("~"),
                     topRight = KeyC("m"),
                     bottomLeft = KeyC("<"),
@@ -143,7 +138,6 @@ val KB_ES_THUMBKEY_SYMBOLS_SHIFTED =
                 ),
                 KeyItemC(
                     center = KeyC("L", size = LARGE),
-                    swipeType = FOUR_WAY_CROSS,
                     right = KeyC("¡", color = MUTED),
                     bottom = KeyC("V"),
                 ),
@@ -160,7 +154,6 @@ val KB_ES_THUMBKEY_SYMBOLS_SHIFTED =
             listOf(
                 KeyItemC(
                     center = KeyC("R", size = LARGE),
-                    swipeType = TWO_WAY_HORIZONTAL,
                     right = KeyC("P"),
                 ),
                 KeyItemC(
@@ -176,7 +169,6 @@ val KB_ES_THUMBKEY_SYMBOLS_SHIFTED =
                 ),
                 KeyItemC(
                     center = KeyC("A", size = LARGE),
-                    swipeType = FOUR_WAY_CROSS,
                     top =
                         KeyC(
                             display = KeyDisplay.IconDisplay(Icons.Outlined.KeyboardCapslock),
@@ -200,7 +192,6 @@ val KB_ES_THUMBKEY_SYMBOLS_SHIFTED =
             listOf(
                 KeyItemC(
                     center = KeyC("S", size = LARGE),
-                    swipeType = FOUR_WAY_DIAGONAL,
                     topRight = KeyC("M"),
                 ),
                 KeyItemC(

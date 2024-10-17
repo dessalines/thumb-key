@@ -8,7 +8,6 @@ import com.dessalines.thumbkey.utils.*
 import com.dessalines.thumbkey.utils.ColorVariant.*
 import com.dessalines.thumbkey.utils.FontSizeVariant.*
 import com.dessalines.thumbkey.utils.KeyAction.*
-import com.dessalines.thumbkey.utils.SwipeNWay.*
 
 val KB_EN_EO_THUMBKEY_MAIN =
     KeyboardC(
@@ -16,7 +15,6 @@ val KB_EN_EO_THUMBKEY_MAIN =
             listOf(
                 KeyItemC(
                     center = KeyC("o", size = LARGE),
-                    swipeType = FOUR_WAY_CROSS,
                     bottom = KeyC("k"),
                     top = KeyC("m"),
                     left = KeyC("'"),
@@ -24,7 +22,6 @@ val KB_EN_EO_THUMBKEY_MAIN =
                 ),
                 KeyItemC(
                     center = KeyC("s", size = LARGE),
-                    swipeType = FOUR_WAY_CROSS,
                     bottom = KeyC("ŝ"),
                     top = KeyC("p"),
                     left = KeyC("ϗ"),
@@ -32,7 +29,6 @@ val KB_EN_EO_THUMBKEY_MAIN =
                 ),
                 KeyItemC(
                     center = KeyC("e", size = LARGE),
-                    swipeType = FOUR_WAY_CROSS,
                     bottom = KeyC("ĥ"),
                     top = KeyC("h"),
                     left = KeyC("#"),
@@ -43,7 +39,6 @@ val KB_EN_EO_THUMBKEY_MAIN =
             listOf(
                 KeyItemC(
                     center = KeyC("n", size = LARGE),
-                    swipeType = FOUR_WAY_CROSS,
                     bottom = KeyC("ĵ"),
                     top = KeyC("j"),
                     left = KeyC("."),
@@ -51,7 +46,6 @@ val KB_EN_EO_THUMBKEY_MAIN =
                 ),
                 KeyItemC(
                     center = KeyC("r", size = LARGE),
-                    swipeType = FOUR_WAY_CROSS,
                     bottom = KeyC("v"),
                     top = KeyC("f"),
                     left = KeyC("?"),
@@ -59,7 +53,6 @@ val KB_EN_EO_THUMBKEY_MAIN =
                 ),
                 KeyItemC(
                     center = KeyC("a", size = LARGE),
-                    swipeType = FOUR_WAY_CROSS,
                     bottom = KeyC("d"),
                     left = KeyC("("),
                     right = KeyC(")"),
@@ -76,7 +69,6 @@ val KB_EN_EO_THUMBKEY_MAIN =
             listOf(
                 KeyItemC(
                     center = KeyC("t", size = LARGE),
-                    swipeType = FOUR_WAY_CROSS,
                     bottom = KeyC("ĉ"),
                     top = KeyC("c"),
                     left = KeyC("b"),
@@ -84,7 +76,6 @@ val KB_EN_EO_THUMBKEY_MAIN =
                 ),
                 KeyItemC(
                     center = KeyC("l", size = LARGE),
-                    swipeType = FOUR_WAY_CROSS,
                     bottom = KeyC("ĝ"),
                     top = KeyC("g"),
                     left = KeyC("y"),
@@ -92,7 +83,6 @@ val KB_EN_EO_THUMBKEY_MAIN =
                 ),
                 KeyItemC(
                     center = KeyC("i", size = LARGE),
-                    swipeType = FOUR_WAY_CROSS,
                     bottom = KeyC("ŭ"),
                     top = KeyC("u"),
                     left = KeyC("x"),
@@ -113,7 +103,6 @@ val KB_EN_EO_THUMBKEY_SHIFTED =
             listOf(
                 KeyItemC(
                     center = KeyC("O", size = LARGE),
-                    swipeType = FOUR_WAY_CROSS,
                     bottom = KeyC("K"),
                     top = KeyC("M"),
                     left = KeyC("'"),
@@ -121,7 +110,6 @@ val KB_EN_EO_THUMBKEY_SHIFTED =
                 ),
                 KeyItemC(
                     center = KeyC("S", size = LARGE),
-                    swipeType = FOUR_WAY_CROSS,
                     bottom = KeyC("Ŝ"),
                     top = KeyC("P"),
                     left = KeyC("ϗ"),
@@ -129,7 +117,6 @@ val KB_EN_EO_THUMBKEY_SHIFTED =
                 ),
                 KeyItemC(
                     center = KeyC("E", size = LARGE),
-                    swipeType = FOUR_WAY_CROSS,
                     bottom = KeyC("Ĥ"),
                     top = KeyC("H"),
                     left = KeyC("#"),
@@ -140,7 +127,6 @@ val KB_EN_EO_THUMBKEY_SHIFTED =
             listOf(
                 KeyItemC(
                     center = KeyC("N", size = LARGE),
-                    swipeType = FOUR_WAY_CROSS,
                     bottom = KeyC("Ĵ"),
                     top = KeyC("J"),
                     left = KeyC("."),
@@ -148,7 +134,6 @@ val KB_EN_EO_THUMBKEY_SHIFTED =
                 ),
                 KeyItemC(
                     center = KeyC("R", size = LARGE),
-                    swipeType = FOUR_WAY_CROSS,
                     bottom = KeyC("V"),
                     top = KeyC("F"),
                     left = KeyC("?"),
@@ -156,7 +141,6 @@ val KB_EN_EO_THUMBKEY_SHIFTED =
                 ),
                 KeyItemC(
                     center = KeyC("A", size = LARGE),
-                    swipeType = FOUR_WAY_CROSS,
                     bottom = KeyC("D"),
                     left = KeyC("("),
                     right = KeyC(")"),
@@ -173,7 +157,6 @@ val KB_EN_EO_THUMBKEY_SHIFTED =
             listOf(
                 KeyItemC(
                     center = KeyC("T", size = LARGE),
-                    swipeType = FOUR_WAY_CROSS,
                     bottom = KeyC("Ĉ"),
                     top = KeyC("C"),
                     left = KeyC("B"),
@@ -181,7 +164,6 @@ val KB_EN_EO_THUMBKEY_SHIFTED =
                 ),
                 KeyItemC(
                     center = KeyC("L", size = LARGE),
-                    swipeType = FOUR_WAY_CROSS,
                     bottom = KeyC("Ĝ"),
                     top = KeyC("G"),
                     left = KeyC("Y"),
@@ -189,7 +171,6 @@ val KB_EN_EO_THUMBKEY_SHIFTED =
                 ),
                 KeyItemC(
                     center = KeyC("I", size = LARGE),
-                    swipeType = FOUR_WAY_CROSS,
                     bottom = KeyC("Ŭ"),
                     top = KeyC("U"),
                     left = KeyC("X"),

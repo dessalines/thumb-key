@@ -6,7 +6,6 @@ import com.dessalines.thumbkey.utils.*
 import com.dessalines.thumbkey.utils.ColorVariant.*
 import com.dessalines.thumbkey.utils.FontSizeVariant.*
 import com.dessalines.thumbkey.utils.KeyAction.*
-import com.dessalines.thumbkey.utils.SwipeNWay.*
 
 val KB_KA_THUMBKEY_MAIN =
     KeyboardC(
@@ -20,12 +19,10 @@ val KB_KA_THUMBKEY_MAIN =
                 ),
                 KeyItemC(
                     center = KeyC("ბ", size = LARGE),
-                    swipeType = TWO_WAY_VERTICAL,
                     bottom = KeyC("ლ"),
                 ),
                 KeyItemC(
                     center = KeyC("ე", size = LARGE),
-                    swipeType = FOUR_WAY_DIAGONAL,
                     bottomLeft = KeyC("გ"),
                     bottomRight = KeyC("ჰ"),
                 ),
@@ -34,7 +31,6 @@ val KB_KA_THUMBKEY_MAIN =
             listOf(
                 KeyItemC(
                     center = KeyC("ს", size = LARGE),
-                    swipeType = FOUR_WAY_CROSS,
                     right = KeyC("თ"),
                     bottom = KeyC("ნ"),
                 ),
@@ -51,7 +47,6 @@ val KB_KA_THUMBKEY_MAIN =
                 ),
                 KeyItemC(
                     center = KeyC("ი", size = LARGE),
-                    swipeType = FOUR_WAY_CROSS,
                     left = KeyC("კ"),
                 ),
                 NUMERIC_KEY_ITEM,

@@ -8,7 +8,6 @@ import com.dessalines.thumbkey.utils.*
 import com.dessalines.thumbkey.utils.ColorVariant.*
 import com.dessalines.thumbkey.utils.FontSizeVariant.*
 import com.dessalines.thumbkey.utils.KeyAction.*
-import com.dessalines.thumbkey.utils.SwipeNWay.*
 
 val KB_EN_DOUBLE_SYMBOLS_MAIN =
     KeyboardC(
@@ -16,7 +15,6 @@ val KB_EN_DOUBLE_SYMBOLS_MAIN =
             listOf(
                 KeyItemC(
                     center = KeyC("s", size = LARGE),
-                    swipeType = FOUR_WAY_DIAGONAL,
                     bottomRight = KeyC("w"),
                     bottomLeft = KeyC("$", color = MUTED),
                 ),
@@ -40,7 +38,6 @@ val KB_EN_DOUBLE_SYMBOLS_MAIN =
                 ),
                 KeyItemC(
                     center = KeyC("s", size = LARGE),
-                    swipeType = FOUR_WAY_DIAGONAL,
                     bottomRight = KeyC("w"),
                     bottomLeft = KeyC("$", color = MUTED),
                 ),
@@ -150,7 +147,6 @@ val KB_EN_DOUBLE_SYMBOLS_MAIN =
             listOf(
                 KeyItemC(
                     center = KeyC("t", size = LARGE),
-                    swipeType = FOUR_WAY_DIAGONAL,
                     topRight = KeyC("c"),
                     topLeft = KeyC("~", color = MUTED),
                     bottomRight = KeyC(":", color = MUTED),
@@ -178,7 +174,6 @@ val KB_EN_DOUBLE_SYMBOLS_MAIN =
                 ),
                 KeyItemC(
                     center = KeyC("t", size = LARGE),
-                    swipeType = FOUR_WAY_DIAGONAL,
                     topRight = KeyC("c"),
                     topLeft = KeyC("~", color = MUTED),
                     bottomRight = KeyC(":", color = MUTED),
@@ -221,7 +216,6 @@ val KB_EN_DOUBLE_SYMBOLS_SHIFTED =
             listOf(
                 KeyItemC(
                     center = KeyC("S", size = LARGE),
-                    swipeType = FOUR_WAY_DIAGONAL,
                     bottomRight = KeyC("W"),
                     bottomLeft = KeyC("$", color = MUTED),
                 ),
@@ -245,7 +239,6 @@ val KB_EN_DOUBLE_SYMBOLS_SHIFTED =
                 ),
                 KeyItemC(
                     center = KeyC("S", size = LARGE),
-                    swipeType = FOUR_WAY_DIAGONAL,
                     bottomRight = KeyC("W"),
                     bottomLeft = KeyC("$", color = MUTED),
                 ),
@@ -361,7 +354,6 @@ val KB_EN_DOUBLE_SYMBOLS_SHIFTED =
             listOf(
                 KeyItemC(
                     center = KeyC("T", size = LARGE),
-                    swipeType = FOUR_WAY_DIAGONAL,
                     topRight = KeyC("C"),
                     topLeft = KeyC("~", color = MUTED),
                     bottomRight = KeyC(":", color = MUTED),
@@ -389,7 +381,6 @@ val KB_EN_DOUBLE_SYMBOLS_SHIFTED =
                 ),
                 KeyItemC(
                     center = KeyC("T", size = LARGE),
-                    swipeType = FOUR_WAY_DIAGONAL,
                     topRight = KeyC("C"),
                     topLeft = KeyC("~", color = MUTED),
                     bottomRight = KeyC(":", color = MUTED),
