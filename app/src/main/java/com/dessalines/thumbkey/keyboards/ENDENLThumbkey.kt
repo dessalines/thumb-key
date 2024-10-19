@@ -8,7 +8,6 @@ import com.dessalines.thumbkey.utils.*
 import com.dessalines.thumbkey.utils.ColorVariant.*
 import com.dessalines.thumbkey.utils.FontSizeVariant.*
 import com.dessalines.thumbkey.utils.KeyAction.*
-import com.dessalines.thumbkey.utils.SwipeNWay.*
 
 val KB_EN_DE_NL_THUMBKEY_MAIN =
     KeyboardC(
@@ -16,13 +15,11 @@ val KB_EN_DE_NL_THUMBKEY_MAIN =
             listOf(
                 KeyItemC(
                     center = KeyC("s", size = LARGE),
-                    swipeType = FOUR_WAY_DIAGONAL,
                     bottomRight = KeyC("w"),
                     topRight = KeyC("ß", color = MUTED),
                 ),
                 KeyItemC(
                     center = KeyC("r", size = LARGE),
-                    swipeType = TWO_WAY_VERTICAL,
                     bottom = KeyC("g"),
                 ),
                 KeyItemC(
@@ -37,7 +34,6 @@ val KB_EN_DE_NL_THUMBKEY_MAIN =
             listOf(
                 KeyItemC(
                     center = KeyC("n", size = LARGE),
-                    swipeType = TWO_WAY_HORIZONTAL,
                     right = KeyC("m"),
                 ),
                 KeyItemC(
@@ -53,7 +49,6 @@ val KB_EN_DE_NL_THUMBKEY_MAIN =
                 ),
                 KeyItemC(
                     center = KeyC("a", size = LARGE),
-                    swipeType = FOUR_WAY_CROSS,
                     left = KeyC("l"),
                     top =
                         KeyC(
@@ -69,7 +64,6 @@ val KB_EN_DE_NL_THUMBKEY_MAIN =
             listOf(
                 KeyItemC(
                     center = KeyC("t", size = LARGE),
-                    swipeType = FOUR_WAY_DIAGONAL,
                     topRight = KeyC("c"),
                     right = KeyC("ç", color = MUTED),
                     bottomRight = KeyC(":", color = MUTED),
@@ -88,7 +82,6 @@ val KB_EN_DE_NL_THUMBKEY_MAIN =
                 ),
                 KeyItemC(
                     center = KeyC("e", size = LARGE),
-                    swipeType = FOUR_WAY_DIAGONAL,
                     topLeft = KeyC("d"),
                     top = KeyC("è", color = MUTED),
                     topRight = KeyC("é", color = MUTED),
@@ -113,17 +106,14 @@ val KB_EN_DE_NL_THUMBKEY_SHIFTED =
             listOf(
                 KeyItemC(
                     center = KeyC("S", size = LARGE),
-                    swipeType = FOUR_WAY_DIAGONAL,
                     bottomRight = KeyC("W"),
                 ),
                 KeyItemC(
                     center = KeyC("R", size = LARGE),
-                    swipeType = TWO_WAY_VERTICAL,
                     bottom = KeyC("G"),
                 ),
                 KeyItemC(
                     center = KeyC("O", size = LARGE),
-                    swipeType = FOUR_WAY_DIAGONAL,
                     topRight = KeyC("&", color = MUTED),
                     bottomLeft = KeyC("U"),
                     topLeft = KeyC("Ü", color = MUTED),
@@ -134,7 +124,6 @@ val KB_EN_DE_NL_THUMBKEY_SHIFTED =
             listOf(
                 KeyItemC(
                     center = KeyC("N", size = LARGE),
-                    swipeType = TWO_WAY_HORIZONTAL,
                     right = KeyC("M"),
                 ),
                 KeyItemC(
@@ -150,7 +139,6 @@ val KB_EN_DE_NL_THUMBKEY_SHIFTED =
                 ),
                 KeyItemC(
                     center = KeyC("A", size = LARGE),
-                    swipeType = FOUR_WAY_CROSS,
                     left = KeyC("L"),
                     right = KeyC("Ä", color = MUTED),
                     bottom =
@@ -174,7 +162,6 @@ val KB_EN_DE_NL_THUMBKEY_SHIFTED =
             listOf(
                 KeyItemC(
                     center = KeyC("T", size = LARGE),
-                    swipeType = FOUR_WAY_DIAGONAL,
                     topRight = KeyC("C"),
                     right = KeyC("Ç", color = MUTED),
                     bottomRight = KeyC(":", color = MUTED),
@@ -193,7 +180,6 @@ val KB_EN_DE_NL_THUMBKEY_SHIFTED =
                 ),
                 KeyItemC(
                     center = KeyC("E", size = LARGE),
-                    swipeType = FOUR_WAY_DIAGONAL,
                     topLeft = KeyC("D"),
                     top = KeyC("È", color = MUTED),
                     topRight = KeyC("É", color = MUTED),

@@ -8,7 +8,6 @@ import com.dessalines.thumbkey.utils.*
 import com.dessalines.thumbkey.utils.ColorVariant.*
 import com.dessalines.thumbkey.utils.FontSizeVariant.*
 import com.dessalines.thumbkey.utils.KeyAction.*
-import com.dessalines.thumbkey.utils.SwipeNWay.*
 
 // Adds common English words to main screen to reduce amount of taps required when typing
 val KB_EN_THUMBKEY_WORDS_MAIN =
@@ -67,7 +66,6 @@ val KB_EN_THUMBKEY_WORDS_MAIN =
                 ),
                 KeyItemC(
                     center = KeyC("a", size = LARGE),
-                    swipeType = FOUR_WAY_CROSS,
                     left = KeyC("l"),
                     top =
                         KeyC(
@@ -176,7 +174,6 @@ val KB_EN_THUMBKEY_WORDS_SHIFTED =
                 ),
                 KeyItemC(
                     center = KeyC("A", size = LARGE),
-                    swipeType = FOUR_WAY_CROSS,
                     left = KeyC("L"),
                     bottom =
                         KeyC(

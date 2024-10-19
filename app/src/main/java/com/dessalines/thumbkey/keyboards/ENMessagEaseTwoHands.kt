@@ -8,7 +8,6 @@ import com.dessalines.thumbkey.utils.*
 import com.dessalines.thumbkey.utils.ColorVariant.*
 import com.dessalines.thumbkey.utils.FontSizeVariant.*
 import com.dessalines.thumbkey.utils.KeyAction.*
-import com.dessalines.thumbkey.utils.SwipeNWay.*
 
 val KB_EN_MESSAGEASE_TWO_HANDS_MAIN =
     KeyboardC(
@@ -16,40 +15,33 @@ val KB_EN_MESSAGEASE_TWO_HANDS_MAIN =
             listOf(
                 KeyItemC(
                     center = KeyC("a", size = LARGE),
-                    swipeType = FOUR_WAY_DIAGONAL,
                     bottomRight = KeyC("v"),
                 ),
                 KeyItemC(
                     center = KeyC("n", size = LARGE),
-                    swipeType = TWO_WAY_VERTICAL,
                     bottom = KeyC("l"),
                 ),
                 KeyItemC(
                     center = KeyC("i", size = LARGE),
-                    swipeType = FOUR_WAY_DIAGONAL,
                     bottomLeft = KeyC("x"),
                 ),
                 EMOJI_KEY_ITEM,
                 KeyItemC(
                     center = KeyC("a", size = LARGE),
-                    swipeType = FOUR_WAY_DIAGONAL,
                     bottomRight = KeyC("v"),
                 ),
                 KeyItemC(
                     center = KeyC("n", size = LARGE),
-                    swipeType = TWO_WAY_VERTICAL,
                     bottom = KeyC("l"),
                 ),
                 KeyItemC(
                     center = KeyC("i", size = LARGE),
-                    swipeType = FOUR_WAY_DIAGONAL,
                     bottomLeft = KeyC("x"),
                 ),
             ),
             listOf(
                 KeyItemC(
                     center = KeyC("h", size = LARGE),
-                    swipeType = TWO_WAY_HORIZONTAL,
                     right = KeyC("k"),
                 ),
                 KeyItemC(
@@ -65,7 +57,6 @@ val KB_EN_MESSAGEASE_TWO_HANDS_MAIN =
                 ),
                 KeyItemC(
                     center = KeyC("r", size = LARGE),
-                    swipeType = FOUR_WAY_CROSS,
                     left = KeyC("m"),
                     top =
                         KeyC(
@@ -83,7 +74,6 @@ val KB_EN_MESSAGEASE_TWO_HANDS_MAIN =
                 NUMERIC_KEY_ITEM,
                 KeyItemC(
                     center = KeyC("h", size = LARGE),
-                    swipeType = TWO_WAY_HORIZONTAL,
                     right = KeyC("k"),
                 ),
                 KeyItemC(
@@ -99,7 +89,6 @@ val KB_EN_MESSAGEASE_TWO_HANDS_MAIN =
                 ),
                 KeyItemC(
                     center = KeyC("r", size = LARGE),
-                    swipeType = FOUR_WAY_CROSS,
                     left = KeyC("m"),
                     top =
                         KeyC(
@@ -118,7 +107,6 @@ val KB_EN_MESSAGEASE_TWO_HANDS_MAIN =
             listOf(
                 KeyItemC(
                     center = KeyC("t", size = LARGE),
-                    swipeType = FOUR_WAY_DIAGONAL,
                     topRight = KeyC("y"),
                 ),
                 KeyItemC(
@@ -132,13 +120,11 @@ val KB_EN_MESSAGEASE_TWO_HANDS_MAIN =
                 ),
                 KeyItemC(
                     center = KeyC("s", size = LARGE),
-                    swipeType = FOUR_WAY_DIAGONAL,
                     topLeft = KeyC("f"),
                 ),
                 BACKSPACE_KEY_ITEM,
                 KeyItemC(
                     center = KeyC("t", size = LARGE),
-                    swipeType = FOUR_WAY_DIAGONAL,
                     topRight = KeyC("y"),
                 ),
                 KeyItemC(
@@ -152,7 +138,6 @@ val KB_EN_MESSAGEASE_TWO_HANDS_MAIN =
                 ),
                 KeyItemC(
                     center = KeyC("s", size = LARGE),
-                    swipeType = FOUR_WAY_DIAGONAL,
                     topLeft = KeyC("f"),
                 ),
             ),
@@ -172,40 +157,33 @@ val KB_EN_MESSAGEASE_TWO_HANDS_SHIFTED =
             listOf(
                 KeyItemC(
                     center = KeyC("A", size = LARGE),
-                    swipeType = FOUR_WAY_DIAGONAL,
                     bottomRight = KeyC("V"),
                 ),
                 KeyItemC(
                     center = KeyC("N", size = LARGE),
-                    swipeType = TWO_WAY_VERTICAL,
                     bottom = KeyC("L"),
                 ),
                 KeyItemC(
                     center = KeyC("I", size = LARGE),
-                    swipeType = FOUR_WAY_DIAGONAL,
                     bottomLeft = KeyC("X"),
                 ),
                 EMOJI_KEY_ITEM,
                 KeyItemC(
                     center = KeyC("A", size = LARGE),
-                    swipeType = FOUR_WAY_DIAGONAL,
                     bottomRight = KeyC("V"),
                 ),
                 KeyItemC(
                     center = KeyC("N", size = LARGE),
-                    swipeType = TWO_WAY_VERTICAL,
                     bottom = KeyC("L"),
                 ),
                 KeyItemC(
                     center = KeyC("I", size = LARGE),
-                    swipeType = FOUR_WAY_DIAGONAL,
                     bottomLeft = KeyC("X"),
                 ),
             ),
             listOf(
                 KeyItemC(
                     center = KeyC("H", size = LARGE),
-                    swipeType = TWO_WAY_HORIZONTAL,
                     right = KeyC("K"),
                 ),
                 KeyItemC(
@@ -221,7 +199,6 @@ val KB_EN_MESSAGEASE_TWO_HANDS_SHIFTED =
                 ),
                 KeyItemC(
                     center = KeyC("R", size = LARGE),
-                    swipeType = FOUR_WAY_CROSS,
                     left = KeyC("M"),
                     bottom =
                         KeyC(
@@ -242,7 +219,6 @@ val KB_EN_MESSAGEASE_TWO_HANDS_SHIFTED =
                 NUMERIC_KEY_ITEM,
                 KeyItemC(
                     center = KeyC("H", size = LARGE),
-                    swipeType = TWO_WAY_HORIZONTAL,
                     right = KeyC("K"),
                 ),
                 KeyItemC(
@@ -258,7 +234,6 @@ val KB_EN_MESSAGEASE_TWO_HANDS_SHIFTED =
                 ),
                 KeyItemC(
                     center = KeyC("R", size = LARGE),
-                    swipeType = FOUR_WAY_CROSS,
                     left = KeyC("M"),
                     bottom =
                         KeyC(
@@ -280,7 +255,6 @@ val KB_EN_MESSAGEASE_TWO_HANDS_SHIFTED =
             listOf(
                 KeyItemC(
                     center = KeyC("T", size = LARGE),
-                    swipeType = FOUR_WAY_DIAGONAL,
                     topRight = KeyC("Y"),
                 ),
                 KeyItemC(
@@ -294,13 +268,11 @@ val KB_EN_MESSAGEASE_TWO_HANDS_SHIFTED =
                 ),
                 KeyItemC(
                     center = KeyC("S", size = LARGE),
-                    swipeType = FOUR_WAY_DIAGONAL,
                     topLeft = KeyC("F"),
                 ),
                 BACKSPACE_KEY_ITEM,
                 KeyItemC(
                     center = KeyC("T", size = LARGE),
-                    swipeType = FOUR_WAY_DIAGONAL,
                     topRight = KeyC("Y"),
                 ),
                 KeyItemC(
@@ -314,7 +286,6 @@ val KB_EN_MESSAGEASE_TWO_HANDS_SHIFTED =
                 ),
                 KeyItemC(
                     center = KeyC("S", size = LARGE),
-                    swipeType = FOUR_WAY_DIAGONAL,
                     topLeft = KeyC("F"),
                 ),
             ),

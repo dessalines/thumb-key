@@ -8,7 +8,6 @@ import com.dessalines.thumbkey.utils.*
 import com.dessalines.thumbkey.utils.ColorVariant.*
 import com.dessalines.thumbkey.utils.FontSizeVariant.*
 import com.dessalines.thumbkey.utils.KeyAction.*
-import com.dessalines.thumbkey.utils.SwipeNWay.*
 
 val KB_LT_THUMBKEY_MAIN =
     KeyboardC(
@@ -21,7 +20,6 @@ val KB_LT_THUMBKEY_MAIN =
                 ),
                 KeyItemC(
                     center = KeyC("n", size = LARGE),
-                    swipeType = TWO_WAY_VERTICAL,
                     bottom = KeyC("g"),
                 ),
                 KeyItemC(
@@ -52,7 +50,6 @@ val KB_LT_THUMBKEY_MAIN =
                 ),
                 KeyItemC(
                     center = KeyC("a", size = LARGE),
-                    swipeType = FOUR_WAY_CROSS,
                     right = KeyC("ą"),
                     left = KeyC("m"),
                     top =
@@ -111,7 +108,6 @@ val KB_LT_THUMBKEY_SHIFTED =
                 ),
                 KeyItemC(
                     center = KeyC("N", size = LARGE),
-                    swipeType = TWO_WAY_VERTICAL,
                     bottom = KeyC("G"),
                 ),
                 KeyItemC(
@@ -142,7 +138,6 @@ val KB_LT_THUMBKEY_SHIFTED =
                 ),
                 KeyItemC(
                     center = KeyC("A", size = LARGE),
-                    swipeType = FOUR_WAY_CROSS,
                     right = KeyC("Ą"),
                     left = KeyC("M"),
                     bottom =

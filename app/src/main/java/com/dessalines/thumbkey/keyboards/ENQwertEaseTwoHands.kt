@@ -8,7 +8,6 @@ import com.dessalines.thumbkey.utils.*
 import com.dessalines.thumbkey.utils.ColorVariant.*
 import com.dessalines.thumbkey.utils.FontSizeVariant.*
 import com.dessalines.thumbkey.utils.KeyAction.*
-import com.dessalines.thumbkey.utils.SwipeNWay.*
 
 val KB_EN_QWERTEASE_TWO_HANDS_MAIN =
     KeyboardC(
@@ -45,7 +44,6 @@ val KB_EN_QWERTEASE_TWO_HANDS_MAIN =
             listOf(
                 KeyItemC(
                     center = KeyC("h", size = LARGE),
-                    swipeType = TWO_WAY_HORIZONTAL,
                     right = KeyC("k"),
                 ),
                 KeyItemC(
@@ -61,7 +59,6 @@ val KB_EN_QWERTEASE_TWO_HANDS_MAIN =
                 ),
                 KeyItemC(
                     center = KeyC("r", size = LARGE),
-                    swipeType = FOUR_WAY_CROSS,
                     left = KeyC("l"),
                     top =
                         KeyC(
@@ -79,7 +76,6 @@ val KB_EN_QWERTEASE_TWO_HANDS_MAIN =
                 NUMERIC_KEY_ITEM,
                 KeyItemC(
                     center = KeyC("h", size = LARGE),
-                    swipeType = TWO_WAY_HORIZONTAL,
                     right = KeyC("k"),
                 ),
                 KeyItemC(
@@ -95,7 +91,6 @@ val KB_EN_QWERTEASE_TWO_HANDS_MAIN =
                 ),
                 KeyItemC(
                     center = KeyC("r", size = LARGE),
-                    swipeType = FOUR_WAY_CROSS,
                     left = KeyC("l"),
                     top =
                         KeyC(
@@ -199,7 +194,6 @@ val KB_EN_QWERTEASE_TWO_HANDS_SHIFTED =
             listOf(
                 KeyItemC(
                     center = KeyC("H", size = LARGE),
-                    swipeType = TWO_WAY_HORIZONTAL,
                     right = KeyC("K"),
                 ),
                 KeyItemC(
@@ -215,7 +209,6 @@ val KB_EN_QWERTEASE_TWO_HANDS_SHIFTED =
                 ),
                 KeyItemC(
                     center = KeyC("R", size = LARGE),
-                    swipeType = FOUR_WAY_CROSS,
                     left = KeyC("L"),
                     bottom =
                         KeyC(
@@ -236,7 +229,6 @@ val KB_EN_QWERTEASE_TWO_HANDS_SHIFTED =
                 NUMERIC_KEY_ITEM,
                 KeyItemC(
                     center = KeyC("H", size = LARGE),
-                    swipeType = TWO_WAY_HORIZONTAL,
                     right = KeyC("K"),
                 ),
                 KeyItemC(
@@ -252,7 +244,6 @@ val KB_EN_QWERTEASE_TWO_HANDS_SHIFTED =
                 ),
                 KeyItemC(
                     center = KeyC("R", size = LARGE),
-                    swipeType = FOUR_WAY_CROSS,
                     left = KeyC("L"),
                     bottom =
                         KeyC(

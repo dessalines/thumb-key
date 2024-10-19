@@ -8,7 +8,6 @@ import com.dessalines.thumbkey.utils.*
 import com.dessalines.thumbkey.utils.ColorVariant.*
 import com.dessalines.thumbkey.utils.FontSizeVariant.*
 import com.dessalines.thumbkey.utils.KeyAction.*
-import com.dessalines.thumbkey.utils.SwipeNWay.*
 
 // Adds more punctuation options to the main screen to reduce switches to the numeric keyboard
 val KB_ID_THUMBKEY_SYMBOLS_V2_MAIN =
@@ -17,7 +16,6 @@ val KB_ID_THUMBKEY_SYMBOLS_V2_MAIN =
             listOf(
                 KeyItemC(
                     center = KeyC("d", size = LARGE),
-                    swipeType = FOUR_WAY_DIAGONAL,
                     bottomRight = KeyC("h"),
                     bottomLeft = KeyC("$", color = MUTED),
                 ),
@@ -90,7 +88,6 @@ val KB_ID_THUMBKEY_SYMBOLS_V2_MAIN =
             listOf(
                 KeyItemC(
                     center = KeyC("t", size = LARGE),
-                    swipeType = FOUR_WAY_DIAGONAL,
                     topRight = KeyC("p"),
                     topLeft = KeyC("~", color = MUTED),
                     bottomRight = KeyC(":", color = MUTED),
@@ -131,7 +128,6 @@ val KB_ID_THUMBKEY_SYMBOLS_V2_SHIFTED =
             listOf(
                 KeyItemC(
                     center = KeyC("D", size = LARGE),
-                    swipeType = FOUR_WAY_DIAGONAL,
                     bottomRight = KeyC("H"),
                     bottomLeft = KeyC("$", color = MUTED),
                 ),
@@ -205,7 +201,6 @@ val KB_ID_THUMBKEY_SYMBOLS_V2_SHIFTED =
             listOf(
                 KeyItemC(
                     center = KeyC("T", size = LARGE),
-                    swipeType = FOUR_WAY_DIAGONAL,
                     topRight = KeyC("P"),
                     topLeft = KeyC("~", color = MUTED),
                     bottomRight = KeyC(":", color = MUTED),

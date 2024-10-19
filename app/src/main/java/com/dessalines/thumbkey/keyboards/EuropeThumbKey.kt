@@ -8,7 +8,6 @@ import com.dessalines.thumbkey.utils.*
 import com.dessalines.thumbkey.utils.ColorVariant.*
 import com.dessalines.thumbkey.utils.FontSizeVariant.*
 import com.dessalines.thumbkey.utils.KeyAction.*
-import com.dessalines.thumbkey.utils.SwipeNWay.*
 
 val KB_EUROPE_THUMBKEY_MAIN =
     KeyboardC(
@@ -42,7 +41,6 @@ val KB_EUROPE_THUMBKEY_MAIN =
                 ),
                 KeyItemC(
                     center = KeyC("i", size = LARGE),
-                    swipeType = FOUR_WAY_DIAGONAL,
                     topLeft = KeyC("\u0303", displayText = "◌̃"),
                     topRight = KeyC("\u0306", displayText = "◌̆"),
                     bottomLeft =
@@ -259,7 +257,6 @@ val KB_EUROPE_THUMBKEY_SHIFTED =
                 ),
                 KeyItemC(
                     center = KeyC("I", size = LARGE),
-                    swipeType = FOUR_WAY_DIAGONAL,
                     topLeft = KeyC("\u0303", displayText = "◌̃"),
                     topRight = KeyC("\u0306", displayText = "◌̆"),
                     bottomLeft =

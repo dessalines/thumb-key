@@ -8,7 +8,6 @@ import com.dessalines.thumbkey.utils.*
 import com.dessalines.thumbkey.utils.ColorVariant.*
 import com.dessalines.thumbkey.utils.FontSizeVariant.*
 import com.dessalines.thumbkey.utils.KeyAction.*
-import com.dessalines.thumbkey.utils.SwipeNWay.*
 
 val KB_LV_LTG_THUMBKEY_MAIN =
     KeyboardC(
@@ -16,12 +15,10 @@ val KB_LV_LTG_THUMBKEY_MAIN =
             listOf(
                 KeyItemC(
                     center = KeyC("r", size = LARGE),
-                    swipeType = FOUR_WAY_DIAGONAL,
                     bottomRight = KeyC("d"),
                 ),
                 KeyItemC(
                     center = KeyC("k", size = LARGE),
-                    swipeType = TWO_WAY_VERTICAL,
                     top = KeyC("ķ"),
                     bottom = KeyC("v"),
                 ),
@@ -35,7 +32,6 @@ val KB_LV_LTG_THUMBKEY_MAIN =
             listOf(
                 KeyItemC(
                     center = KeyC("t", size = LARGE),
-                    swipeType = FOUR_WAY_CROSS,
                     top = KeyC("ļ"),
                     right = KeyC("l"),
                 ),
@@ -107,12 +103,10 @@ val KB_LV_LTG_THUMBKEY_SHIFTED =
             listOf(
                 KeyItemC(
                     center = KeyC("R", size = LARGE),
-                    swipeType = FOUR_WAY_DIAGONAL,
                     bottomRight = KeyC("D"),
                 ),
                 KeyItemC(
                     center = KeyC("K", size = LARGE),
-                    swipeType = TWO_WAY_VERTICAL,
                     top = KeyC("Ķ"),
                     bottom = KeyC("V"),
                 ),
@@ -126,7 +120,6 @@ val KB_LV_LTG_THUMBKEY_SHIFTED =
             listOf(
                 KeyItemC(
                     center = KeyC("T", size = LARGE),
-                    swipeType = FOUR_WAY_CROSS,
                     top = KeyC("Ļ"),
                     right = KeyC("L"),
                 ),

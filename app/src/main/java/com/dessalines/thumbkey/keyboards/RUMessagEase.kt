@@ -8,7 +8,6 @@ import com.dessalines.thumbkey.utils.*
 import com.dessalines.thumbkey.utils.ColorVariant.*
 import com.dessalines.thumbkey.utils.FontSizeVariant.*
 import com.dessalines.thumbkey.utils.KeyAction.*
-import com.dessalines.thumbkey.utils.SwipeNWay.*
 
 val KB_RU_MESSAGEASE_MAIN =
     KeyboardC(
@@ -22,13 +21,11 @@ val KB_RU_MESSAGEASE_MAIN =
                 ),
                 KeyItemC(
                     center = KeyC("и", size = LARGE),
-                    swipeType = TWO_WAY_VERTICAL,
                     top = KeyC("й"),
                     bottom = KeyC("к"),
                 ),
                 KeyItemC(
                     center = KeyC("т", size = LARGE),
-                    swipeType = FOUR_WAY_DIAGONAL,
                     bottomLeft = KeyC("ь"),
                 ),
                 EMOJI_KEY_ITEM,
@@ -36,7 +33,6 @@ val KB_RU_MESSAGEASE_MAIN =
             listOf(
                 KeyItemC(
                     center = KeyC("в", size = LARGE),
-                    swipeType = FOUR_WAY_CROSS,
                     top = KeyC("б"),
                     right = KeyC("ы"),
                     bottom = KeyC("ъ"),
@@ -54,7 +50,6 @@ val KB_RU_MESSAGEASE_MAIN =
                 ),
                 KeyItemC(
                     center = KeyC("а", size = LARGE),
-                    swipeType = FOUR_WAY_CROSS,
                     left = KeyC("л"),
                     top =
                         KeyC(
@@ -88,7 +83,6 @@ val KB_RU_MESSAGEASE_MAIN =
                 ),
                 KeyItemC(
                     center = KeyC("н", size = LARGE),
-                    swipeType = FOUR_WAY_DIAGONAL,
                     topLeft = KeyC("ф"),
                 ),
                 BACKSPACE_KEY_ITEM,
@@ -111,13 +105,11 @@ val KB_RU_MESSAGEASE_SHIFTED =
                 ),
                 KeyItemC(
                     center = KeyC("И", size = LARGE),
-                    swipeType = TWO_WAY_VERTICAL,
                     top = KeyC("Й"),
                     bottom = KeyC("К"),
                 ),
                 KeyItemC(
                     center = KeyC("Т", size = LARGE),
-                    swipeType = FOUR_WAY_DIAGONAL,
                     bottomLeft = KeyC("Ь"),
                 ),
                 EMOJI_KEY_ITEM,
@@ -125,7 +117,6 @@ val KB_RU_MESSAGEASE_SHIFTED =
             listOf(
                 KeyItemC(
                     center = KeyC("В", size = LARGE),
-                    swipeType = FOUR_WAY_CROSS,
                     top = KeyC("Б"),
                     right = KeyC("Ы"),
                     bottom = KeyC("Ъ"),
@@ -143,7 +134,6 @@ val KB_RU_MESSAGEASE_SHIFTED =
                 ),
                 KeyItemC(
                     center = KeyC("А", size = LARGE),
-                    swipeType = FOUR_WAY_CROSS,
                     left = KeyC("Л"),
                     bottom =
                         KeyC(
@@ -180,7 +170,6 @@ val KB_RU_MESSAGEASE_SHIFTED =
                 ),
                 KeyItemC(
                     center = KeyC("Н", size = LARGE),
-                    swipeType = FOUR_WAY_DIAGONAL,
                     topLeft = KeyC("Ф"),
                 ),
                 BACKSPACE_KEY_ITEM,

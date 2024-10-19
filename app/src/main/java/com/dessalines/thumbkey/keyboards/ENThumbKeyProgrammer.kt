@@ -9,7 +9,6 @@ import com.dessalines.thumbkey.utils.*
 import com.dessalines.thumbkey.utils.ColorVariant.*
 import com.dessalines.thumbkey.utils.FontSizeVariant.*
 import com.dessalines.thumbkey.utils.KeyAction.*
-import com.dessalines.thumbkey.utils.SwipeNWay.*
 
 // Adds more punctuation options to the main screen to reduce switches to the numeric keyboard
 val KB_EN_THUMBKEY_PROGRAMMING_MAIN =
@@ -34,7 +33,6 @@ val KB_EN_THUMBKEY_PROGRAMMING_MAIN =
                 ),
                 KeyItemC(
                     center = KeyC("o", size = LARGE),
-                    swipeType = FOUR_WAY_DIAGONAL,
                     bottomLeft = KeyC("u"),
                     bottomRight = KeyC(")", color = MUTED),
                     topLeft = KeyC("=", color = MUTED),
@@ -64,7 +62,6 @@ val KB_EN_THUMBKEY_PROGRAMMING_MAIN =
                 ),
                 KeyItemC(
                     center = KeyC("a", size = LARGE),
-                    swipeType = FOUR_WAY_CROSS,
                     left = KeyC("l"),
                     top =
                         KeyC(
@@ -147,7 +144,6 @@ val KB_EN_THUMBKEY_PROGRAMMING_SHIFTED =
                 ),
                 KeyItemC(
                     center = KeyC("O", size = LARGE),
-                    swipeType = FOUR_WAY_DIAGONAL,
                     bottomLeft = KeyC("U"),
                     bottomRight = KeyC(")", color = MUTED),
                     topLeft = KeyC("=", color = MUTED),
@@ -177,7 +173,6 @@ val KB_EN_THUMBKEY_PROGRAMMING_SHIFTED =
                 ),
                 KeyItemC(
                     center = KeyC("A", size = LARGE),
-                    swipeType = FOUR_WAY_CROSS,
                     left = KeyC("L"),
                     bottom =
                         KeyC(
