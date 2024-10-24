@@ -1,3 +1,12 @@
+## What's Changed in 4.0.0
+
+- Convert gradle to kotlin by @dessalines in [#1124](https://github.com/dessalines/thumb-key/pull/1124)
+- Add more actions for changing keyboard position by @iliazeus in [#1117](https://github.com/dessalines/thumb-key/pull/1117)
+- Improve keyboard description DSL by @iliazeus in [#1115](https://github.com/dessalines/thumb-key/pull/1115)
+- Changing renovate to every weekend. by @dessalines in [#1112](https://github.com/dessalines/thumb-key/pull/1112)
+
+**Full Changelog**: https://github.com/dessalines/thumb-key/compare/3.4.16...4.0.0
+
 ## What's Changed in 3.4.16
 
 - reset multi-tap state after one second delay by @iliazeus in [#1106](https://github.com/dessalines/thumb-key/pull/1106)
@@ -6,7 +15,6 @@
 
 ## New Contributors
 
-- @iliazeus made their first contribution in [#1106](https://github.com/dessalines/thumb-key/pull/1106)
 - @harmtemolder made their first contribution in [#1107](https://github.com/dessalines/thumb-key/pull/1107)
 
 **Full Changelog**: https://github.com/dessalines/thumb-key/compare/3.4.15...3.4.16
