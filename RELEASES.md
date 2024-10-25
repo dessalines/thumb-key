@@ -1,3 +1,9 @@
+## What's Changed in 4.0.1
+
+- Merge remote-tracking branch 'refs/remotes/origin/main'
+
+**Full Changelog**: https://github.com/dessalines/thumb-key/compare/4.0.0...4.0.1
+
 ## What's Changed in 4.0.0
 
 - Convert gradle to kotlin by @dessalines in [#1124](https://github.com/dessalines/thumb-key/pull/1124)
