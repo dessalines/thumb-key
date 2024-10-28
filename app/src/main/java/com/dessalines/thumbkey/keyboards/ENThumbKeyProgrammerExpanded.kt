@@ -11,18 +11,72 @@ import com.dessalines.thumbkey.utils.FontSizeVariant.*
 import com.dessalines.thumbkey.utils.KeyAction.*
 import com.dessalines.thumbkey.utils.SwipeNWay.*
 
-// uses programming layout but adds numbers to the left side. this grid is 5x4.
-// because this layout contains all the keys from the numeric layout, the key to switch to the numeric layout has been swapped with the key to switch to voice input.
+// uses programming layout but adds numbers to the left side. the grid is 5x4.
+// because this layout contains all the keys from the numeric layout, the key to switch to the numeric layout has been swapped with the key to switch to voice input. I'd have disabled the numeric layout completely, but that doesn't seem to be allowed.
 // additionally, the "move keyboard" button has been relocated from right to bottomLeft, because swiping inward is easier than outward for keys on the edge.
-val KB_EN_THUMBKEY_PROGRAMMING_MAIN =
+
+val EMOJI_KEY_PROGRAMMING_EXPANDED =
+    KeyItemC(
+        backgroundColor = SURFACE_VARIANT,
+        swipeType = EIGHT_WAY,
+        center =
+        KeyC(
+            display = KeyDisplay.IconDisplay(Icons.Outlined.Mood),
+            action = ToggleEmojiMode(true),
+            size = LARGE,
+            color = SECONDARY,
+        ),
+        top =
+        KeyC(
+            display = KeyDisplay.IconDisplay(Icons.Outlined.Settings),
+            action = GotoSettings,
+            color = MUTED,
+        ),
+        bottom =
+        KeyC(
+            display = KeyDisplay.IconDisplay(Icons.Outlined.Keyboard),
+            action = SwitchIME,
+            color = MUTED,
+        ),
+        topLeft =
+        KeyC(
+            display = KeyDisplay.IconDisplay(Icons.Outlined.LinearScale),
+            action = MoveKeyboard.CycleRight,
+            color = MUTED,
+        ),
+        left =
+        KeyC(
+            display = KeyDisplay.IconDisplay(Icons.Outlined.Language),
+            action = SwitchLanguage,
+            color = MUTED,
+        ),
+        bottomLeft =
+        KeyC(
+            display = KeyDisplay.IconDisplay(Icons.Outlined.Numbers),
+            action = ToggleNumericMode(true),
+            color = MUTED,
+        ),
+    )
+val TEXTEDIT_KEY_PROGRAMMING_EXPANDED =
+    textEditKeyItem(
+        center =
+        KeyC(
+            display = KeyDisplay.IconDisplay(Icons.Outlined.Mic),
+            action = SwitchIMEVoice,
+            size = LARGE,
+            color = SECONDARY,
+        ),
+    )
+
+val KB_EN_THUMBKEY_PROGRAMMING_EXPANDED_MAIN =
     KeyboardC(
         listOf(
             listOf(
                 KeyItemC(
                     center = KeyC("3", size = LARGE),
                     swipeType = FOUR_WAY_CROSS,
-                    right = KeyC("6"),
-                    top = KeyC("9"),
+                    right = KeyC("9"),
+                    bottom = KeyC("6"),
                 ),
                 KeyItemC(
                     center = KeyC("s", size = LARGE),
@@ -48,14 +102,14 @@ val KB_EN_THUMBKEY_PROGRAMMING_MAIN =
                     topLeft = KeyC("=", color = MUTED),
                     topRight = KeyC("+", color = MUTED),
                 ),
-                EMOJI_KEY_CUSTOM,
+                EMOJI_KEY_PROGRAMMING_EXPANDED,
             ),
             listOf(
                 KeyItemC(
                     center = KeyC("2", size = LARGE),
                     swipeType = FOUR_WAY_CROSS,
-                    right = KeyC("5"),
-                    top = KeyC("8"),
+                    right = KeyC("8"),
+                    bottom = KeyC("5"),
                 ),
                 KeyItemC(
                     center = KeyC("n", size = LARGE),
@@ -101,14 +155,14 @@ val KB_EN_THUMBKEY_PROGRAMMING_MAIN =
                             color = MUTED,
                         ),
                 ),
-                NUMERIC_KEY_CUSTOM,
+                TEXTEDIT_KEY_PROGRAMMING_EXPANDED,
             ),
             listOf(
                 KeyItemC(
                     center = KeyC("1", size = LARGE),
                     swipeType = FOUR_WAY_CROSS,
-                    right = KeyC("4"),
-                    top = KeyC("7"),
+                    right = KeyC("7"),
+                    bottom = KeyC("4"),
                 ),
                 KeyItemC(
                     center = KeyC("t", size = LARGE),
@@ -141,9 +195,6 @@ val KB_EN_THUMBKEY_PROGRAMMING_MAIN =
             listOf(
                 KeyItemC(
                     center = KeyC("0", size = LARGE),
-                    swipeType = FOUR_WAY_CROSS,
-                    top = KeyC("£"),
-                    right = KeyC("´"),
                 ),
                 SPACEBAR_PROGRAMMING_KEY_ITEM,
                 RETURN_KEY_ITEM,
@@ -151,20 +202,21 @@ val KB_EN_THUMBKEY_PROGRAMMING_MAIN =
         ),
     )
 
-val KB_EN_THUMBKEY_PROGRAMMING_SHIFTED =
+val KB_EN_THUMBKEY_PROGRAMMING_EXPANDED_SHIFTED =
     KeyboardC(
         listOf(
             listOf(
                 KeyItemC(
                     center = KeyC("3", size = LARGE),
                     swipeType = FOUR_WAY_CROSS,
-                    right = KeyC("6"),
-                    top = KeyC("9"),
+                    right = KeyC("9"),
+                    bottom = KeyC("6"),
                 ),
                 KeyItemC(
                     center = KeyC("S", size = LARGE),
                     bottomRight = KeyC("W"),
                     bottomLeft = KeyC("(", color = MUTED),
+                    right = KeyC("´", color = MUTED),
                     topLeft = KeyC("~", color = MUTED),
                     top = KeyC("\\", color = MUTED),
                     topRight = KeyC("%", color = MUTED),
@@ -185,20 +237,21 @@ val KB_EN_THUMBKEY_PROGRAMMING_SHIFTED =
                     topLeft = KeyC("=", color = MUTED),
                     topRight = KeyC("+", color = MUTED),
                 ),
-                EMOJI_KEY_CUSTOM,
+                EMOJI_KEY_PROGRAMMING_EXPANDED,
             ),
             listOf(
                 KeyItemC(
                     center = KeyC("2", size = LARGE),
                     swipeType = FOUR_WAY_CROSS,
-                    right = KeyC("5"),
-                    top = KeyC("8"),
+                    right = KeyC("8"),
+                    bottom = KeyC("5"),
                 ),
                 KeyItemC(
                     center = KeyC("N", size = LARGE),
                     right = KeyC("M"),
                     left = KeyC("#", color = MUTED),
                     top = KeyC("€", color = MUTED),
+                    topRight = KeyC("£", color = MUTED),
                     bottom = KeyC("&", color = MUTED),
                     bottomLeft = KeyC("|", color = MUTED),
                 ),
@@ -239,13 +292,14 @@ val KB_EN_THUMBKEY_PROGRAMMING_SHIFTED =
                             color = MUTED,
                         ),
                 ),
+                TEXTEDIT_KEY_PROGRAMMING_EXPANDED,
             ),
             listOf(
                 KeyItemC(
                     center = KeyC("1", size = LARGE),
                     swipeType = FOUR_WAY_CROSS,
-                    right = KeyC("4"),
-                    top = KeyC("7"),
+                    right = KeyC("7"),
+                    bottom = KeyC("4"),
                 ),
                 KeyItemC(
                     center = KeyC("T", size = LARGE),
@@ -280,9 +334,6 @@ val KB_EN_THUMBKEY_PROGRAMMING_SHIFTED =
             listOf(
                 KeyItemC(
                     center = KeyC("0", size = LARGE),
-                    swipeType = FOUR_WAY_CROSS,
-                    top = KeyC("£"),
-                    right = KeyC("´"),
                 ),
                 SPACEBAR_PROGRAMMING_KEY_ITEM,
                 RETURN_KEY_ITEM,
@@ -290,66 +341,13 @@ val KB_EN_THUMBKEY_PROGRAMMING_SHIFTED =
         ),
     )
 
-val EMOJI_KEY_CUSTOM =
-    KeyItemC(
-        backgroundColor = SURFACE_VARIANT,
-        swipeType = EIGHT_WAY,
-        center =
-            KeyC(
-                display = KeyDisplay.IconDisplay(Icons.Outlined.Mood),
-                action = ToggleEmojiMode(true),
-                size = LARGE,
-                color = SECONDARY,
-            ),
-        top =
-            KeyC(
-                display = KeyDisplay.IconDisplay(Icons.Outlined.Settings),
-                action = GotoSettings,
-                color = MUTED,
-            ),
-        bottom =
-            KeyC(
-                display = KeyDisplay.IconDisplay(Icons.Outlined.Keyboard),
-                action = SwitchIME,
-                color = MUTED,
-            ),
-        bottomLeft =
-            KeyC(
-                display = KeyDisplay.IconDisplay(Icons.Outlined.Numbers),
-                action = ToggleNumericMode(true),
-                color = MUTED,
-            ),
-        left =
-            KeyC(
-                display = KeyDisplay.IconDisplay(Icons.Outlined.Language),
-                action = SwitchLanguage,
-                color = MUTED,
-            ),
-        topLeft =
-            KeyC(
-                display = KeyDisplay.IconDisplay(Icons.Outlined.LinearScale),
-                action = MoveKeyboard.CycleRight,
-                color = MUTED,
-            ),
-    )
-val NUMERIC_KEY_CUSTOM =
-    textEditKeyItem(
-        center =
-            KeyC(
-                display = KeyDisplay.IconDisplay(Icons.Outlined.Mic),
-                action = SwitchIMEVoice,
-                size = LARGE,
-                color = SECONDARY,
-            ),
-    )
-
 val KB_EN_THUMBKEY_PROGRAMMING_EXPANDED: KeyboardDefinition =
     KeyboardDefinition(
         title = "english thumb-key programming expanded",
         modes =
             KeyboardDefinitionModes(
-                main = KB_EN_THUMBKEY_PROGRAMMING_MAIN,
-                shifted = KB_EN_THUMBKEY_PROGRAMMING_SHIFTED,
+                main = KB_EN_THUMBKEY_PROGRAMMING_EXPANDED_MAIN,
+                shifted = KB_EN_THUMBKEY_PROGRAMMING_EXPANDED_SHIFTED,
                 numeric = NUMERIC_KEYBOARD,
             ),
         settings =
