@@ -20,52 +20,52 @@ val EMOJI_KEY_PROGRAMMING_EXPANDED =
         backgroundColor = SURFACE_VARIANT,
         swipeType = EIGHT_WAY,
         center =
-        KeyC(
-            display = KeyDisplay.IconDisplay(Icons.Outlined.Mood),
-            action = ToggleEmojiMode(true),
-            size = LARGE,
-            color = SECONDARY,
-        ),
+            KeyC(
+                display = KeyDisplay.IconDisplay(Icons.Outlined.Mood),
+                action = ToggleEmojiMode(true),
+                size = LARGE,
+                color = SECONDARY,
+            ),
         top =
-        KeyC(
-            display = KeyDisplay.IconDisplay(Icons.Outlined.Settings),
-            action = GotoSettings,
-            color = MUTED,
-        ),
+            KeyC(
+                display = KeyDisplay.IconDisplay(Icons.Outlined.Settings),
+                action = GotoSettings,
+                color = MUTED,
+            ),
         bottom =
-        KeyC(
-            display = KeyDisplay.IconDisplay(Icons.Outlined.Keyboard),
-            action = SwitchIME,
-            color = MUTED,
-        ),
+            KeyC(
+                display = KeyDisplay.IconDisplay(Icons.Outlined.Keyboard),
+                action = SwitchIME,
+                color = MUTED,
+            ),
         topLeft =
-        KeyC(
-            display = KeyDisplay.IconDisplay(Icons.Outlined.LinearScale),
-            action = MoveKeyboard.CycleRight,
-            color = MUTED,
-        ),
+            KeyC(
+                display = KeyDisplay.IconDisplay(Icons.Outlined.LinearScale),
+                action = MoveKeyboard.CycleRight,
+                color = MUTED,
+            ),
         left =
-        KeyC(
-            display = KeyDisplay.IconDisplay(Icons.Outlined.Language),
-            action = SwitchLanguage,
-            color = MUTED,
-        ),
+            KeyC(
+                display = KeyDisplay.IconDisplay(Icons.Outlined.Language),
+                action = SwitchLanguage,
+                color = MUTED,
+            ),
         bottomLeft =
-        KeyC(
-            display = KeyDisplay.IconDisplay(Icons.Outlined.Numbers),
-            action = ToggleNumericMode(true),
-            color = MUTED,
-        ),
+            KeyC(
+                display = KeyDisplay.IconDisplay(Icons.Outlined.Numbers),
+                action = ToggleNumericMode(true),
+                color = MUTED,
+            ),
     )
 val TEXTEDIT_KEY_PROGRAMMING_EXPANDED =
     textEditKeyItem(
         center =
-        KeyC(
-            display = KeyDisplay.IconDisplay(Icons.Outlined.Mic),
-            action = SwitchIMEVoice,
-            size = LARGE,
-            color = SECONDARY,
-        ),
+            KeyC(
+                display = KeyDisplay.IconDisplay(Icons.Outlined.Mic),
+                action = SwitchIMEVoice,
+                size = LARGE,
+                color = SECONDARY,
+            ),
     )
 
 val KB_EN_THUMBKEY_PROGRAMMING_EXPANDED_MAIN =
