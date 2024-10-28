@@ -13,7 +13,7 @@ import com.dessalines.thumbkey.utils.SwipeNWay.*
 
 // uses programming layout but adds numbers to the left side. the grid is 5x4.
 // the layout also adds the few other keys from the numeric layout that the programming layout didn't already have.
-// because this layout contains all the keys from the numeric layout, the key to switch to the numeric layout has been removed.
+// because this layout contains all the keys from the numeric layout, the key to switch to the numeric layout has been replaced with the key to switch to voice input.
 // additionally, the "move keyboard" button has been relocated from right to bottomLeft, because swiping inward is easier than outward for keys on the edge.
 
 val EMOJI_KEY_PROGRAMMING_EXPANDED =
