@@ -62,6 +62,7 @@ import com.dessalines.thumbkey.keyboards.KB_EN_SYMBOLS_TWO_HANDS
 import com.dessalines.thumbkey.keyboards.KB_EN_THUMBKEY
 import com.dessalines.thumbkey.keyboards.KB_EN_THUMBKEY_COMPOSE
 import com.dessalines.thumbkey.keyboards.KB_EN_THUMBKEY_PROGRAMMING
+import com.dessalines.thumbkey.keyboards.KB_EN_THUMBKEY_PROGRAMMING_EXPANDED
 import com.dessalines.thumbkey.keyboards.KB_EN_THUMBKEY_PROGRAMMING_WIDE
 import com.dessalines.thumbkey.keyboards.KB_EN_THUMBKEY_SYMBOLS
 import com.dessalines.thumbkey.keyboards.KB_EN_THUMBKEY_WIDE
@@ -312,4 +313,5 @@ enum class KeyboardLayout(
     ENColumnarQuick(KB_EN_COLUMNAR_QUICK),
     UKBYRUThumbKey(KB_UK_BY_RU_THUMBKEY),
     PTENThumbKey(KB_PT_EN_THUMBKEY),
+    ENThumbKeyProgrammingExpanded(KB_EN_THUMBKEY_PROGRAMMING_EXPANDED),
 }
