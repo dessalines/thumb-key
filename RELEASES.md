@@ -1,6 +1,16 @@
+## What's Changed in 4.0.2
+
+- Adds "english thumb-key programming expanded" layout by @Hate9 in [#1129](https://github.com/dessalines/thumb-key/pull/1129)
+
+## New Contributors
+
+- @Hate9 made their first contribution in [#1129](https://github.com/dessalines/thumb-key/pull/1129)
+
+**Full Changelog**: https://github.com/dessalines/thumb-key/compare/4.0.1...4.0.2
+
 ## What's Changed in 4.0.1
 
-- Merge remote-tracking branch 'refs/remotes/origin/main'
+- Merge remote-tracking branch 'refs/remotes/origin/main' by @dessalines
 
 **Full Changelog**: https://github.com/dessalines/thumb-key/compare/4.0.0...4.0.1
 
