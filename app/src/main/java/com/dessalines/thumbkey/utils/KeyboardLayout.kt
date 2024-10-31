@@ -99,6 +99,7 @@ import com.dessalines.thumbkey.keyboards.KB_GR_THUMBKEY
 import com.dessalines.thumbkey.keyboards.KB_HE_MESSAGEASE
 import com.dessalines.thumbkey.keyboards.KB_HE_MESSAGEASE_SYMBOLS
 import com.dessalines.thumbkey.keyboards.KB_HE_THUMBKEY
+import com.dessalines.thumbkey.keyboards.KB_HI_THUMBKEY
 import com.dessalines.thumbkey.keyboards.KB_HR_THUMBKEY
 import com.dessalines.thumbkey.keyboards.KB_HR_THUMBKEY_SYMBOLS
 import com.dessalines.thumbkey.keyboards.KB_HR_TWO_HANDS
@@ -314,4 +315,5 @@ enum class KeyboardLayout(
     UKBYRUThumbKey(KB_UK_BY_RU_THUMBKEY),
     PTENThumbKey(KB_PT_EN_THUMBKEY),
     ENThumbKeyProgrammingExpanded(KB_EN_THUMBKEY_PROGRAMMING_EXPANDED),
+    HIThumbKey(KB_HI_THUMBKEY),
 }
