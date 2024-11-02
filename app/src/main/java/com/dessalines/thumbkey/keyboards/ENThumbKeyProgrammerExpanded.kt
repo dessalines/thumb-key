@@ -68,10 +68,10 @@ val KB_EN_THUMBKEY_PROGRAMMING_EXPANDED_MAIN =
         listOf(
             listOf(
                 KeyItemC(
-                    center = KeyC("3", size = LARGE),
+                    center = KeyC("3", size = LARGE, color = MUTED),
                     swipeType = FOUR_WAY_CROSS,
-                    right = KeyC("9"),
-                    bottom = KeyC("6"),
+                    right = KeyC("9", color = MUTED),
+                    bottom = KeyC("6", color = MUTED),
                 ),
                 KeyItemC(
                     center = KeyC("s", size = LARGE),
@@ -101,10 +101,10 @@ val KB_EN_THUMBKEY_PROGRAMMING_EXPANDED_MAIN =
             ),
             listOf(
                 KeyItemC(
-                    center = KeyC("2", size = LARGE),
+                    center = KeyC("2", size = LARGE, color = MUTED),
                     swipeType = FOUR_WAY_CROSS,
-                    right = KeyC("8"),
-                    bottom = KeyC("5"),
+                    right = KeyC("8", color = MUTED),
+                    bottom = KeyC("5", color = MUTED),
                 ),
                 KeyItemC(
                     center = KeyC("n", size = LARGE),
@@ -154,10 +154,10 @@ val KB_EN_THUMBKEY_PROGRAMMING_EXPANDED_MAIN =
             ),
             listOf(
                 KeyItemC(
-                    center = KeyC("1", size = LARGE),
+                    center = KeyC("1", size = LARGE, color = MUTED),
                     swipeType = FOUR_WAY_CROSS,
-                    right = KeyC("7"),
-                    bottom = KeyC("4"),
+                    right = KeyC("7", color = MUTED),
+                    bottom = KeyC("4", color = MUTED),
                 ),
                 KeyItemC(
                     center = KeyC("t", size = LARGE),
@@ -189,7 +189,7 @@ val KB_EN_THUMBKEY_PROGRAMMING_EXPANDED_MAIN =
             ),
             listOf(
                 KeyItemC(
-                    center = KeyC("0", size = LARGE),
+                    center = KeyC("0", size = LARGE, color = MUTED),
                 ),
                 SPACEBAR_PROGRAMMING_KEY_ITEM,
                 RETURN_KEY_ITEM,
@@ -202,10 +202,10 @@ val KB_EN_THUMBKEY_PROGRAMMING_EXPANDED_SHIFTED =
         listOf(
             listOf(
                 KeyItemC(
-                    center = KeyC("3", size = LARGE),
+                    center = KeyC("3", size = LARGE, color = MUTED),
                     swipeType = FOUR_WAY_CROSS,
-                    right = KeyC("9"),
-                    bottom = KeyC("6"),
+                    right = KeyC("9", color = MUTED),
+                    bottom = KeyC("6", color = MUTED),
                 ),
                 KeyItemC(
                     center = KeyC("S", size = LARGE),
@@ -236,10 +236,10 @@ val KB_EN_THUMBKEY_PROGRAMMING_EXPANDED_SHIFTED =
             ),
             listOf(
                 KeyItemC(
-                    center = KeyC("2", size = LARGE),
+                    center = KeyC("2", size = LARGE, color = MUTED),
                     swipeType = FOUR_WAY_CROSS,
-                    right = KeyC("8"),
-                    bottom = KeyC("5"),
+                    right = KeyC("8", color = MUTED),
+                    bottom = KeyC("5", color = MUTED),
                 ),
                 KeyItemC(
                     center = KeyC("N", size = LARGE),
@@ -291,10 +291,10 @@ val KB_EN_THUMBKEY_PROGRAMMING_EXPANDED_SHIFTED =
             ),
             listOf(
                 KeyItemC(
-                    center = KeyC("1", size = LARGE),
+                    center = KeyC("1", size = LARGE, color = MUTED),
                     swipeType = FOUR_WAY_CROSS,
-                    right = KeyC("7"),
-                    bottom = KeyC("4"),
+                    right = KeyC("7", color = MUTED),
+                    bottom = KeyC("4", color = MUTED),
                 ),
                 KeyItemC(
                     center = KeyC("T", size = LARGE),
@@ -328,7 +328,7 @@ val KB_EN_THUMBKEY_PROGRAMMING_EXPANDED_SHIFTED =
             ),
             listOf(
                 KeyItemC(
-                    center = KeyC("0", size = LARGE),
+                    center = KeyC("0", size = LARGE, color = MUTED),
                 ),
                 SPACEBAR_PROGRAMMING_KEY_ITEM,
                 RETURN_KEY_ITEM,
