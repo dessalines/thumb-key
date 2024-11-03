@@ -29,8 +29,9 @@ val KB_EN_NL_TYPESPLIT_MAIN =
                 EMOJI_KEY_ITEM_ALT,
                 KeyItemC(
                     center = KeyC("s", size = LARGE),
-                    swipeType = TWO_WAY_VERTICAL,
+                    swipeType = FOUR_WAY_CROSS,
                     bottom = KeyC("c"),
+                    left = KeyC("ç"),
                 ),
                 KeyItemC(
                     center = KeyC("l", size = LARGE),
@@ -121,8 +122,9 @@ val KB_EN_NL_TYPESPLIT_SHIFTED =
                 EMOJI_KEY_ITEM_ALT,
                 KeyItemC(
                     center = KeyC("S", size = LARGE),
-                    swipeType = TWO_WAY_VERTICAL,
+                    swipeType = FOUR_WAY_CROSS,
                     bottom = KeyC("C"),
+                    left = KeyC("'Ç"),
                 ),
                 KeyItemC(
                     center = KeyC("L", size = LARGE),
