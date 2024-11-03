@@ -124,7 +124,7 @@ val KB_EN_NL_TYPESPLIT_SHIFTED =
                     center = KeyC("S", size = LARGE),
                     swipeType = FOUR_WAY_CROSS,
                     bottom = KeyC("C"),
-                    left = KeyC("'Ç"),
+                    left = KeyC("Ç"),
                 ),
                 KeyItemC(
                     center = KeyC("L", size = LARGE),
