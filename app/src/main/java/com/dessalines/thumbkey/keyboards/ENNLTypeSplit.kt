@@ -31,7 +31,7 @@ val KB_EN_NL_TYPESPLIT_MAIN =
                     center = KeyC("s", size = LARGE),
                     swipeType = FOUR_WAY_CROSS,
                     bottom = KeyC("c"),
-                    left = KeyC("ç"),
+                    left = KeyC("ç", color = MUTED),
                 ),
                 KeyItemC(
                     center = KeyC("l", size = LARGE),
@@ -124,7 +124,7 @@ val KB_EN_NL_TYPESPLIT_SHIFTED =
                     center = KeyC("S", size = LARGE),
                     swipeType = FOUR_WAY_CROSS,
                     bottom = KeyC("C"),
-                    left = KeyC("Ç"),
+                    left = KeyC("Ç", color = MUTED),
                 ),
                 KeyItemC(
                     center = KeyC("L", size = LARGE),
