@@ -197,7 +197,7 @@ val KB_HI_THUMBKEY_SHIFTED =
 
 val KB_HI_THUMBKEY: KeyboardDefinition =
     KeyboardDefinition(
-        title = " हिन्दी thumb-key",
+        title = "हिन्दी thumb-key",
         modes =
             KeyboardDefinitionModes(
                 main = KB_HI_THUMBKEY_MAIN,
