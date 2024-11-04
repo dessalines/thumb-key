@@ -152,7 +152,7 @@ val KB_NL_TYPESPLIT_SHIFTED =
                     bottom = KeyC("C"),
                     right = KeyC("Ë", color = MUTED),
                 ),
-                SPACEBAR_TYPESPLIT_MIDDLE_KEY_ITEM,
+                SPACEBAR_ALL_DIRECTIONS,
                 KeyItemC(
                     center = KeyC("T", size = LARGE),
                     swipeType = FOUR_WAY_CROSS,
@@ -180,7 +180,7 @@ val KB_NL_TYPESPLIT_SHIFTED =
                     right = KeyC("Ä", color = MUTED),
                     topRight = KeyC("Á", color = MUTED),
                 ),
-                SPACEBAR_TYPESPLIT_BOTTOM_KEY_ITEM,
+                SPACEBAR_ALL_SYMBOLS,
                 KeyItemC(
                     center = KeyC("R", size = LARGE),
                     swipeType = TWO_WAY_VERTICAL,
