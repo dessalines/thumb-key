@@ -42,6 +42,7 @@ import com.dessalines.thumbkey.keyboards.KB_EN_MESSAGEASE_TWO_HANDS
 import com.dessalines.thumbkey.keyboards.KB_EN_MESSAGEASE_WRITER
 import com.dessalines.thumbkey.keyboards.KB_EN_MI_THUMBKEY
 import com.dessalines.thumbkey.keyboards.KB_EN_MI_THUMBKEY_SYMBOLS
+import com.dessalines.thumbkey.keyboards.KB_EN_NL_TYPESPLIT
 import com.dessalines.thumbkey.keyboards.KB_EN_NO_MESSAGEASE_SYMBOLS
 import com.dessalines.thumbkey.keyboards.KB_EN_NO_THUMBKEY
 import com.dessalines.thumbkey.keyboards.KB_EN_NO_TYPESPLIT
@@ -317,5 +318,6 @@ enum class KeyboardLayout(
     PTENThumbKey(KB_PT_EN_THUMBKEY),
     ENThumbKeyProgrammingExpanded(KB_EN_THUMBKEY_PROGRAMMING_EXPANDED),
     HIThumbKey(KB_HI_THUMBKEY),
+    ENNLTypeSplit(KB_EN_NL_TYPESPLIT),
     HIThumbKeyExtended(KB_HI_THUMBKEY_EXTENDED),
 }
