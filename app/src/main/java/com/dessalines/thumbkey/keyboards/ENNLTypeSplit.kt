@@ -36,7 +36,7 @@ val KB_EN_NL_TYPESPLIT_MAIN =
                 KeyItemC(
                     center = KeyC("l", size = LARGE),
                     bottom = KeyC("j"),
-                    bottomLeft = KeyC("f")
+                    bottomLeft = KeyC("f"),
                 ),
             ),
             listOf(
@@ -60,7 +60,7 @@ val KB_EN_NL_TYPESPLIT_MAIN =
                     right = KeyC("m"),
                     bottom = KeyC("p"),
                     topRight = KeyC("b"),
-                    bottomRight = KeyC("w")
+                    bottomRight = KeyC("w"),
                 ),
                 KeyItemC(
                     center = KeyC("n", size = LARGE),
@@ -129,7 +129,7 @@ val KB_EN_NL_TYPESPLIT_SHIFTED =
                 KeyItemC(
                     center = KeyC("L", size = LARGE),
                     bottom = KeyC("J"),
-                    bottomLeft = KeyC("F")
+                    bottomLeft = KeyC("F"),
                 ),
             ),
             listOf(
@@ -153,7 +153,7 @@ val KB_EN_NL_TYPESPLIT_SHIFTED =
                     right = KeyC("M"),
                     bottom = KeyC("P"),
                     topRight = KeyC("B"),
-                    bottomRight = KeyC("W")
+                    bottomRight = KeyC("W"),
                 ),
                 KeyItemC(
                     center = KeyC("N", size = LARGE),
