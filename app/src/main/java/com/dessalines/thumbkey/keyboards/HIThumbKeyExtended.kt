@@ -73,7 +73,7 @@ val KB_HI_THUMBKEY_EXTENDED_MAIN =
                     left = KeyC("ड़"),
                 ),
                 KeyItemC(
-                  center = KeyC("्", size = LARGE),
+                    center = KeyC("्", size = LARGE),
                     topLeft = KeyC("ृ"),
                     top =
                         KeyC(
@@ -144,26 +144,26 @@ val KB_HI_THUMBKEY_EXTENDED_SHIFTED =
             listOf(
                 KeyItemC(
                     center = KeyC("१", size = LARGE),
-                    bottom = KeyC(";")
+                    bottom = KeyC(";"),
                 ),
                 KeyItemC(
                     center = KeyC("२", size = LARGE),
-                    bottom = KeyC("_")
+                    bottom = KeyC("_"),
                 ),
                 KeyItemC(
                     center = KeyC("३", size = LARGE),
-                    bottom = KeyC("@")
+                    bottom = KeyC("@"),
                 ),
                 EMOJI_KEY_ITEM,
             ),
             listOf(
                 KeyItemC(
                     center = KeyC("४", size = LARGE),
-                    bottom = KeyC("<")
+                    bottom = KeyC("<"),
                 ),
                 KeyItemC(
                     center = KeyC("५", size = LARGE),
-                    bottom = KeyC(">")
+                    bottom = KeyC(">"),
                 ),
                 KeyItemC(
                     center = KeyC("६", size = LARGE),
@@ -188,7 +188,7 @@ val KB_HI_THUMBKEY_EXTENDED_SHIFTED =
             listOf(
                 KeyItemC(
                     center = KeyC("७", size = LARGE),
-                    bottom = KeyC("ॽ")
+                    bottom = KeyC("ॽ"),
                 ),
                 KeyItemC(
                     center = KeyC("८", size = LARGE),
@@ -198,7 +198,7 @@ val KB_HI_THUMBKEY_EXTENDED_SHIFTED =
                 ),
                 KeyItemC(
                     center = KeyC("९", size = LARGE),
-                   bottom = KeyC("'")
+                    bottom = KeyC("'"),
                 ),
                 BACKSPACE_KEY_ITEM,
             ),
