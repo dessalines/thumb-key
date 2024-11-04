@@ -1,10 +1,20 @@
-## What's Changed in 4.0.2
+## What's Changed in 4.0.3
 
-- Adds "english thumb-key programming expanded" layout by @Hate9 in [#1129](https://github.com/dessalines/thumb-key/pull/1129)
+- Hindi layout 2 by @dessalines in [#1142](https://github.com/dessalines/thumb-key/pull/1142)
+- Keep spacebar consistent when shifted by @harmtemolder in [#1141](https://github.com/dessalines/thumb-key/pull/1141)
+- add english nederlands typesplit layout by @renboe in [#1139](https://github.com/dessalines/thumb-key/pull/1139)
+- Switches number keys in expanded developer layout to all use secondary color by @Hate9 in [#1138](https://github.com/dessalines/thumb-key/pull/1138)
+- Adding Hindi Layout. by @dessalines in [#1131](https://github.com/dessalines/thumb-key/pull/1131)
 
 ## New Contributors
 
-- @Hate9 made their first contribution in [#1129](https://github.com/dessalines/thumb-key/pull/1129)
+- @renboe made their first contribution in [#1139](https://github.com/dessalines/thumb-key/pull/1139)
+
+**Full Changelog**: https://github.com/dessalines/thumb-key/compare/4.0.2...4.0.3
+
+## What's Changed in 4.0.2
+
+- Adds "english thumb-key programming expanded" layout by @Hate9 in [#1129](https://github.com/dessalines/thumb-key/pull/1129)
 
 **Full Changelog**: https://github.com/dessalines/thumb-key/compare/4.0.1...4.0.2
 
@@ -28,10 +38,6 @@
 - reset multi-tap state after one second delay by @iliazeus in [#1106](https://github.com/dessalines/thumb-key/pull/1106)
 - Re-add leading space before composed opening double quote by @shtrom in [#1108](https://github.com/dessalines/thumb-key/pull/1108)
 - Tweak nederlands type-split by @harmtemolder in [#1107](https://github.com/dessalines/thumb-key/pull/1107)
-
-## New Contributors
-
-- @harmtemolder made their first contribution in [#1107](https://github.com/dessalines/thumb-key/pull/1107)
 
 **Full Changelog**: https://github.com/dessalines/thumb-key/compare/3.4.15...3.4.16
 
@@ -340,11 +346,11 @@
 - Make cursor movement detection index-based (fixes #881) by @glm4610 in [#917](https://github.com/dessalines/thumb-key/pull/917)
 - Fix #304 (take two): In Utils.autoCapitalizeCheck, use input type of current editor by @mpsijm in [#909](https://github.com/dessalines/thumb-key/pull/909)
 - Fixing donation line. by @dessalines in [#906](https://github.com/dessalines/thumb-key/pull/906)
-- Add QBased a qwerty based keyboard by @AWillfulMemory in [#905](https://github.com/dessalines/thumb-key/pull/905)
+- Add QBased a qwerty based keyboard by @WrenIsWitty in [#905](https://github.com/dessalines/thumb-key/pull/905)
 
 ## New Contributors
 
-- @AWillfulMemory made their first contribution in [#905](https://github.com/dessalines/thumb-key/pull/905)
+- @WrenIsWitty made their first contribution in [#905](https://github.com/dessalines/thumb-key/pull/905)
 
 **Full Changelog**: https://github.com/dessalines/thumb-key/compare/3.1.7...3.1.8
 
