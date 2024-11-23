@@ -81,6 +81,7 @@ val KB_FR_THUMBKEY_V2_MAIN =
                 KeyItemC(
                     center = KeyC("t", size = LARGE),
                     topRight = KeyC("m"),
+                    bottom = KeyC("·", color = MUTED),
                 ),
                 KeyItemC(
                     center = KeyC("s", size = LARGE),
@@ -89,6 +90,7 @@ val KB_FR_THUMBKEY_V2_MAIN =
                     bottomRight = KeyC("*", color = MUTED),
                     bottom = KeyC(".", color = MUTED),
                     bottomLeft = KeyC(",", color = MUTED),
+                    right = KeyC("…", color = MUTED),
                 ),
                 KeyItemC(
                     center = KeyC("e", size = LARGE),
@@ -182,6 +184,7 @@ val KB_FR_THUMBKEY_V2_SHIFTED =
                 KeyItemC(
                     center = KeyC("T", size = LARGE),
                     topRight = KeyC("M"),
+                    bottom = KeyC("·", color = MUTED),
                 ),
                 KeyItemC(
                     center = KeyC("S", size = LARGE),
@@ -190,6 +193,7 @@ val KB_FR_THUMBKEY_V2_SHIFTED =
                     bottomRight = KeyC("*", color = MUTED),
                     bottom = KeyC(".", color = MUTED),
                     bottomLeft = KeyC(",", color = MUTED),
+                    right = KeyC("…", color = MUTED),
                 ),
                 KeyItemC(
                     center = KeyC("E", size = LARGE),
