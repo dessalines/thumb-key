@@ -8,7 +8,6 @@ import com.dessalines.thumbkey.utils.*
 import com.dessalines.thumbkey.utils.ColorVariant.*
 import com.dessalines.thumbkey.utils.FontSizeVariant.*
 import com.dessalines.thumbkey.utils.KeyAction.*
-import com.dessalines.thumbkey.utils.SwipeNWay.*
 
 val KB_FI_THUMBKEY_MAIN =
     KeyboardC(
@@ -16,18 +15,15 @@ val KB_FI_THUMBKEY_MAIN =
             listOf(
                 KeyItemC(
                     center = KeyC("s", size = LARGE),
-                    swipeType = FOUR_WAY_DIAGONAL,
                     bottomRight = KeyC("r"),
                     topLeft = KeyC("z"),
                 ),
                 KeyItemC(
                     center = KeyC("k", size = LARGE),
-                    swipeType = TWO_WAY_VERTICAL,
                     bottom = KeyC("j"),
                 ),
                 KeyItemC(
                     center = KeyC("o", size = LARGE),
-                    swipeType = FOUR_WAY_DIAGONAL,
                     bottomLeft = KeyC("ö"),
                     topRight = KeyC("å"),
                 ),
@@ -36,7 +32,6 @@ val KB_FI_THUMBKEY_MAIN =
             listOf(
                 KeyItemC(
                     center = KeyC("n", size = LARGE),
-                    swipeType = TWO_WAY_HORIZONTAL,
                     right = KeyC("m"),
                 ),
                 KeyItemC(
@@ -52,7 +47,6 @@ val KB_FI_THUMBKEY_MAIN =
                 ),
                 KeyItemC(
                     center = KeyC("a", size = LARGE),
-                    swipeType = FOUR_WAY_CROSS,
                     left = KeyC("ä"),
                     top =
                         KeyC(
@@ -72,7 +66,6 @@ val KB_FI_THUMBKEY_MAIN =
             listOf(
                 KeyItemC(
                     center = KeyC("t", size = LARGE),
-                    swipeType = FOUR_WAY_DIAGONAL,
                     topRight = KeyC("v"),
                     bottomLeft = KeyC("w"),
                 ),
@@ -87,7 +80,6 @@ val KB_FI_THUMBKEY_MAIN =
                 ),
                 KeyItemC(
                     center = KeyC("i", size = LARGE),
-                    swipeType = FOUR_WAY_DIAGONAL,
                     topLeft = KeyC("u"),
                 ),
                 BACKSPACE_KEY_ITEM,
@@ -105,18 +97,15 @@ val KB_FI_THUMBKEY_SHIFTED =
             listOf(
                 KeyItemC(
                     center = KeyC("S", size = LARGE),
-                    swipeType = FOUR_WAY_DIAGONAL,
                     bottomRight = KeyC("R"),
                     topLeft = KeyC("Z"),
                 ),
                 KeyItemC(
                     center = KeyC("K", size = LARGE),
-                    swipeType = TWO_WAY_VERTICAL,
                     bottom = KeyC("J"),
                 ),
                 KeyItemC(
                     center = KeyC("O", size = LARGE),
-                    swipeType = FOUR_WAY_DIAGONAL,
                     bottomLeft = KeyC("Ö"),
                     topRight = KeyC("Å"),
                 ),
@@ -125,7 +114,6 @@ val KB_FI_THUMBKEY_SHIFTED =
             listOf(
                 KeyItemC(
                     center = KeyC("N", size = LARGE),
-                    swipeType = TWO_WAY_HORIZONTAL,
                     right = KeyC("M"),
                 ),
                 KeyItemC(
@@ -141,7 +129,6 @@ val KB_FI_THUMBKEY_SHIFTED =
                 ),
                 KeyItemC(
                     center = KeyC("A", size = LARGE),
-                    swipeType = FOUR_WAY_CROSS,
                     left = KeyC("Ä"),
                     bottom =
                         KeyC(
@@ -164,7 +151,6 @@ val KB_FI_THUMBKEY_SHIFTED =
             listOf(
                 KeyItemC(
                     center = KeyC("T", size = LARGE),
-                    swipeType = FOUR_WAY_DIAGONAL,
                     topRight = KeyC("V"),
                     bottomLeft = KeyC("W"),
                 ),
@@ -179,7 +165,6 @@ val KB_FI_THUMBKEY_SHIFTED =
                 ),
                 KeyItemC(
                     center = KeyC("I", size = LARGE),
-                    swipeType = FOUR_WAY_DIAGONAL,
                     topLeft = KeyC("U"),
                 ),
                 BACKSPACE_KEY_ITEM,

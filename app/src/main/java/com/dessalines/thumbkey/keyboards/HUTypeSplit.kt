@@ -6,7 +6,6 @@ import com.dessalines.thumbkey.utils.*
 import com.dessalines.thumbkey.utils.ColorVariant.*
 import com.dessalines.thumbkey.utils.FontSizeVariant.*
 import com.dessalines.thumbkey.utils.KeyAction.*
-import com.dessalines.thumbkey.utils.SwipeNWay.*
 
 val KB_HU_TYPESPLIT_MAIN =
     KeyboardC(
@@ -14,7 +13,6 @@ val KB_HU_TYPESPLIT_MAIN =
             listOf(
                 KeyItemC(
                     center = KeyC("e", size = LARGE),
-                    swipeType = FOUR_WAY_CROSS,
                     right = KeyC("q"),
                     left =
                         KeyC(
@@ -25,13 +23,11 @@ val KB_HU_TYPESPLIT_MAIN =
                 ),
                 KeyItemC(
                     center = KeyC("t", size = LARGE),
-                    swipeType = TWO_WAY_VERTICAL,
                     bottom = KeyC("r"),
                 ),
                 EMOJI_KEY_ITEM_ALT,
                 KeyItemC(
                     center = KeyC("i", size = LARGE),
-                    swipeType = FOUR_WAY_CROSS,
                     right = KeyC("z"),
                     left = KeyC("ö"),
                     bottom = KeyC("u"),
@@ -39,7 +35,6 @@ val KB_HU_TYPESPLIT_MAIN =
                 ),
                 KeyItemC(
                     center = KeyC("o", size = LARGE),
-                    swipeType = FOUR_WAY_CROSS,
                     right = KeyC("ú"),
                     left = KeyC("ő"),
                     bottom = KeyC("p"),
@@ -52,7 +47,6 @@ val KB_HU_TYPESPLIT_MAIN =
                 ),
                 KeyItemC(
                     center = KeyC("s", size = LARGE),
-                    swipeType = FOUR_WAY_CROSS,
                     right =
                         KeyC(
                             display = null,
@@ -64,7 +58,6 @@ val KB_HU_TYPESPLIT_MAIN =
                 SPACEBAR_TYPESPLIT_MIDDLE_KEY_ITEM,
                 KeyItemC(
                     center = KeyC("h", size = LARGE),
-                    swipeType = FOUR_WAY_CROSS,
                     left =
                         KeyC(
                             display = null,
@@ -75,7 +68,6 @@ val KB_HU_TYPESPLIT_MAIN =
                 ),
                 KeyItemC(
                     center = KeyC("l", size = LARGE),
-                    swipeType = FOUR_WAY_CROSS,
                     left = KeyC("é"),
                     top = KeyC("á"),
                     right = KeyC("ű"),
@@ -85,14 +77,12 @@ val KB_HU_TYPESPLIT_MAIN =
             listOf(
                 KeyItemC(
                     center = KeyC("c", size = LARGE),
-                    swipeType = FOUR_WAY_CROSS,
                     right = KeyC("y"),
                     left = KeyC("í"),
                     bottom = KeyC("x"),
                 ),
                 KeyItemC(
                     center = KeyC("b", size = LARGE),
-                    swipeType = TWO_WAY_VERTICAL,
                     bottom = KeyC("v"),
                 ),
                 SPACEBAR_TYPESPLIT_BOTTOM_KEY_ITEM,
@@ -101,7 +91,6 @@ val KB_HU_TYPESPLIT_MAIN =
                 ),
                 KeyItemC(
                     center = KeyC("m", size = LARGE),
-                    swipeType = FOUR_WAY_CROSS,
                     right = KeyC("?", color = MUTED),
                     left = KeyC("!", color = MUTED),
                     bottom = KeyC(":", color = MUTED),
@@ -122,7 +111,6 @@ val KB_HU_TYPESPLIT_SHIFTED =
             listOf(
                 KeyItemC(
                     center = KeyC("E", size = LARGE),
-                    swipeType = FOUR_WAY_CROSS,
                     right = KeyC("Q"),
                     left =
                         KeyC(
@@ -133,13 +121,11 @@ val KB_HU_TYPESPLIT_SHIFTED =
                 ),
                 KeyItemC(
                     center = KeyC("T", size = LARGE),
-                    swipeType = TWO_WAY_VERTICAL,
                     bottom = KeyC("R"),
                 ),
                 EMOJI_KEY_ITEM_ALT,
                 KeyItemC(
                     center = KeyC("I", size = LARGE),
-                    swipeType = FOUR_WAY_CROSS,
                     right = KeyC("Z"),
                     left = KeyC("Ö"),
                     bottom = KeyC("U"),
@@ -147,7 +133,6 @@ val KB_HU_TYPESPLIT_SHIFTED =
                 ),
                 KeyItemC(
                     center = KeyC("O", size = LARGE),
-                    swipeType = FOUR_WAY_CROSS,
                     right = KeyC("Ú"),
                     left = KeyC("Ő"),
                     bottom = KeyC("P"),
@@ -160,7 +145,6 @@ val KB_HU_TYPESPLIT_SHIFTED =
                 ),
                 KeyItemC(
                     center = KeyC("S", size = LARGE),
-                    swipeType = FOUR_WAY_CROSS,
                     right =
                         KeyC(
                             display = null,
@@ -172,7 +156,6 @@ val KB_HU_TYPESPLIT_SHIFTED =
                 SPACEBAR_TYPESPLIT_MIDDLE_KEY_ITEM,
                 KeyItemC(
                     center = KeyC("H", size = LARGE),
-                    swipeType = FOUR_WAY_CROSS,
                     right = KeyC("J"),
                     left =
                         KeyC(
@@ -183,7 +166,6 @@ val KB_HU_TYPESPLIT_SHIFTED =
                 ),
                 KeyItemC(
                     center = KeyC("L", size = LARGE),
-                    swipeType = FOUR_WAY_CROSS,
                     left = KeyC("É"),
                     top = KeyC("Á"),
                     right = KeyC("Ű"),
@@ -193,14 +175,12 @@ val KB_HU_TYPESPLIT_SHIFTED =
             listOf(
                 KeyItemC(
                     center = KeyC("C", size = LARGE),
-                    swipeType = FOUR_WAY_CROSS,
                     right = KeyC("Y"),
                     left = KeyC("Í"),
                     bottom = KeyC("X"),
                 ),
                 KeyItemC(
                     center = KeyC("B", size = LARGE),
-                    swipeType = TWO_WAY_VERTICAL,
                     bottom = KeyC("V"),
                 ),
                 SPACEBAR_TYPESPLIT_BOTTOM_KEY_ITEM,
@@ -209,7 +189,6 @@ val KB_HU_TYPESPLIT_SHIFTED =
                 ),
                 KeyItemC(
                     center = KeyC("M", size = LARGE),
-                    swipeType = FOUR_WAY_CROSS,
                     right = KeyC("?", color = MUTED),
                     left = KeyC("!", color = MUTED),
                     bottom = KeyC(":", color = MUTED),

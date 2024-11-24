@@ -8,7 +8,6 @@ import com.dessalines.thumbkey.utils.*
 import com.dessalines.thumbkey.utils.ColorVariant.*
 import com.dessalines.thumbkey.utils.FontSizeVariant.*
 import com.dessalines.thumbkey.utils.KeyAction.*
-import com.dessalines.thumbkey.utils.SwipeNWay.*
 
 val WIDE_NUMERIC_KEYBOARD =
     KeyboardC(
@@ -17,7 +16,6 @@ val WIDE_NUMERIC_KEYBOARD =
                 EMOJI_KEY_ITEM,
                 KeyItemC(
                     center = KeyC("1", size = LARGE),
-                    swipeType = FOUR_WAY_DIAGONAL,
                     topLeft = KeyC("¬"),
                     topRight =
                         KeyC(
@@ -30,7 +28,6 @@ val WIDE_NUMERIC_KEYBOARD =
                 ),
                 KeyItemC(
                     center = KeyC("2", size = LARGE),
-                    swipeType = FOUR_WAY_DIAGONAL,
                     topLeft = KeyC("°"),
                     topRight =
                         KeyC(
@@ -43,7 +40,6 @@ val WIDE_NUMERIC_KEYBOARD =
                 ),
                 KeyItemC(
                     center = KeyC("3", size = LARGE),
-                    swipeType = FOUR_WAY_DIAGONAL,
                     topLeft = KeyC("^"),
                     topRight =
                         KeyC(
@@ -57,14 +53,12 @@ val WIDE_NUMERIC_KEYBOARD =
             listOf(
                 KeyItemC(
                     center = KeyC("(", size = LARGE),
-                    swipeType = FOUR_WAY_CROSS,
                     top = KeyC("<"),
                     left = KeyC("{"),
                     right = KeyC("["),
                 ),
                 KeyItemC(
                     center = KeyC("4", size = LARGE),
-                    swipeType = FOUR_WAY_DIAGONAL,
                     topLeft = KeyC("€"),
                     bottomLeft = KeyC("$"),
                     bottomRight =
@@ -78,7 +72,6 @@ val WIDE_NUMERIC_KEYBOARD =
                 ),
                 KeyItemC(
                     center = KeyC("5", size = LARGE),
-                    swipeType = FOUR_WAY_DIAGONAL,
                     topLeft = KeyC("!"),
                     topRight = KeyC("?"),
                     bottomRight = KeyC("."),
@@ -86,7 +79,6 @@ val WIDE_NUMERIC_KEYBOARD =
                 ),
                 KeyItemC(
                     center = KeyC("6", size = LARGE),
-                    swipeType = FOUR_WAY_DIAGONAL,
                     topLeft = KeyC("`"),
                     topRight = KeyC("´"),
                     bottomLeft = KeyC("\""),
@@ -94,7 +86,6 @@ val WIDE_NUMERIC_KEYBOARD =
                 ),
                 KeyItemC(
                     center = KeyC(")", size = LARGE),
-                    swipeType = FOUR_WAY_CROSS,
                     top = KeyC(">"),
                     left = KeyC("]"),
                     right = KeyC("}"),
@@ -112,7 +103,6 @@ val WIDE_NUMERIC_KEYBOARD =
                 ),
                 KeyItemC(
                     center = KeyC("7", size = LARGE),
-                    swipeType = FOUR_WAY_DIAGONAL,
                     topLeft = KeyC("="),
                     topRight = KeyC("%"),
                     bottomLeft = KeyC("-"),
@@ -120,7 +110,6 @@ val WIDE_NUMERIC_KEYBOARD =
                 ),
                 KeyItemC(
                     center = KeyC("8", size = LARGE),
-                    swipeType = FOUR_WAY_DIAGONAL,
                     topLeft = KeyC("@"),
                     topRight = KeyC("&"),
                     bottomLeft = KeyC("*"),
@@ -128,7 +117,6 @@ val WIDE_NUMERIC_KEYBOARD =
                 ),
                 KeyItemC(
                     center = KeyC("9", size = LARGE),
-                    swipeType = FOUR_WAY_DIAGONAL,
                     topLeft = KeyC("~"),
                     bottomLeft = KeyC("\\"),
                     bottomRight = KeyC("/"),
