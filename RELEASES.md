@@ -1,3 +1,13 @@
+## What's Changed in 4.0.4
+
+- Fix #1128 – Add two symbols to FRThumbKeyV2 layout by @Raghnarok in [#1153](https://github.com/dessalines/thumb-key/pull/1153)
+
+## New Contributors
+
+- @Raghnarok made their first contribution in [#1153](https://github.com/dessalines/thumb-key/pull/1153)
+
+**Full Changelog**: https://github.com/dessalines/thumb-key/compare/4.0.3...4.0.4
+
 ## What's Changed in 4.0.3
 
 - Hindi layout 2 by @dessalines in [#1142](https://github.com/dessalines/thumb-key/pull/1142)
@@ -15,6 +25,10 @@
 ## What's Changed in 4.0.2
 
 - Adds "english thumb-key programming expanded" layout by @Hate9 in [#1129](https://github.com/dessalines/thumb-key/pull/1129)
+
+## New Contributors
+
+- @Hate9 made their first contribution in [#1129](https://github.com/dessalines/thumb-key/pull/1129)
 
 **Full Changelog**: https://github.com/dessalines/thumb-key/compare/4.0.1...4.0.2
 
@@ -38,6 +52,11 @@
 - reset multi-tap state after one second delay by @iliazeus in [#1106](https://github.com/dessalines/thumb-key/pull/1106)
 - Re-add leading space before composed opening double quote by @shtrom in [#1108](https://github.com/dessalines/thumb-key/pull/1108)
 - Tweak nederlands type-split by @harmtemolder in [#1107](https://github.com/dessalines/thumb-key/pull/1107)
+
+## New Contributors
+
+- @iliazeus made their first contribution in [#1106](https://github.com/dessalines/thumb-key/pull/1106)
+- @harmtemolder made their first contribution in [#1107](https://github.com/dessalines/thumb-key/pull/1107)
 
 **Full Changelog**: https://github.com/dessalines/thumb-key/compare/3.4.15...3.4.16
 
@@ -119,6 +138,10 @@
 - Rsinoa layout by @lrvideckis in [#1057](https://github.com/dessalines/thumb-key/pull/1057)
 - Adding CONTRIBUTING.md by @dessalines in [#1062](https://github.com/dessalines/thumb-key/pull/1062)
 
+## New Contributors
+
+- @lrvideckis made their first contribution in [#1057](https://github.com/dessalines/thumb-key/pull/1057)
+
 **Full Changelog**: https://github.com/dessalines/thumb-key/compare/3.4.6...3.4.7
 
 ## What's Changed in 3.4.6
@@ -187,6 +210,10 @@
 - Create RUThumbKeyWriter.kt by @Defrobe in [#1005](https://github.com/dessalines/thumb-key/pull/1005)
 - Swipe-and-return gesture to capitalize words on EN Writer layout by @Defrobe in [#1004](https://github.com/dessalines/thumb-key/pull/1004)
 
+## New Contributors
+
+- @Defrobe made their first contribution in [#1005](https://github.com/dessalines/thumb-key/pull/1005)
+
 **Full Changelog**: https://github.com/dessalines/thumb-key/compare/3.3.6...3.4.0
 
 ## What's Changed in 3.3.6
@@ -247,6 +274,7 @@
 
 ## New Contributors
 
+- @locrianz made their first contribution in [#970](https://github.com/dessalines/thumb-key/pull/970)
 - @gitterrost4 made their first contribution in [#966](https://github.com/dessalines/thumb-key/pull/966)
 
 **Full Changelog**: https://github.com/dessalines/thumb-key/compare/3.3.0...3.3.1
@@ -360,6 +388,10 @@
 - Adding renovate. by @dessalines
 - Improves symbols in main DEThumbKey keyboard. by @sphh in [#892](https://github.com/dessalines/thumb-key/pull/892)
 
+## New Contributors
+
+- @renovate[bot] made their first contribution in [#897](https://github.com/dessalines/thumb-key/pull/897)
+
 **Full Changelog**: https://github.com/dessalines/thumb-key/compare/3.1.6...3.1.7
 
 ## What's Changed in 3.1.6
@@ -378,6 +410,10 @@
 - Revert compose in DEMessagEaseSymbols layout by @Crandel in [#888](https://github.com/dessalines/thumb-key/pull/888)
 - German thumbkey symbols `:` and `"` (Closes #882 #883) by @sphh in [#886](https://github.com/dessalines/thumb-key/pull/886)
 - Add RLM character to FAThumbKey by @pxeemo in [#880](https://github.com/dessalines/thumb-key/pull/880)
+
+## New Contributors
+
+- @sphh made their first contribution in [#886](https://github.com/dessalines/thumb-key/pull/886)
 
 **Full Changelog**: https://github.com/dessalines/thumb-key/compare/3.1.4...3.1.5
 
@@ -431,6 +467,7 @@
 ## New Contributors
 
 - @feathecutie made their first contribution in [#854](https://github.com/dessalines/thumb-key/pull/854)
+- @kkard2 made their first contribution in [#851](https://github.com/dessalines/thumb-key/pull/851)
 
 **Full Changelog**: https://github.com/dessalines/thumb-key/compare/3.0.0...3.1.0
 
@@ -450,6 +487,10 @@
 - Correct default French MessagEase layout (#830) by @glm4610 in [#840](https://github.com/dessalines/thumb-key/pull/840)
 - Fixing vietnamese keyboard name. by @dessalines in [#842](https://github.com/dessalines/thumb-key/pull/842)
 
+## New Contributors
+
+- @glm4610 made their first contribution in [#840](https://github.com/dessalines/thumb-key/pull/840)
+
 **Full Changelog**: https://github.com/dessalines/thumb-key/compare/2.7.5...2.7.6
 
 ## What's Changed in 2.7.5
@@ -461,6 +502,7 @@
 ## New Contributors
 
 - @RolKau made their first contribution in [#832](https://github.com/dessalines/thumb-key/pull/832)
+- @mensogulo made their first contribution in [#836](https://github.com/dessalines/thumb-key/pull/836)
 
 **Full Changelog**: https://github.com/dessalines/thumb-key/compare/2.7.4...2.7.5
 
@@ -474,6 +516,7 @@
 
 ## New Contributors
 
+- @Norgus made their first contribution in [#826](https://github.com/dessalines/thumb-key/pull/826)
 - @BoredGeo made their first contribution in [#825](https://github.com/dessalines/thumb-key/pull/825)
 
 **Full Changelog**: https://github.com/dessalines/thumb-key/compare/2.7.3...2.7.4
@@ -488,6 +531,8 @@
 ## New Contributors
 
 - @philipp8101 made their first contribution in [#818](https://github.com/dessalines/thumb-key/pull/818)
+- @ondrachwiedziuk made their first contribution in [#821](https://github.com/dessalines/thumb-key/pull/821)
+- @ssaric made their first contribution in [#823](https://github.com/dessalines/thumb-key/pull/823)
 
 **Full Changelog**: https://github.com/dessalines/thumb-key/compare/2.7.2...2.7.3
 
@@ -534,6 +579,7 @@
 
 - @WeiguangTWK made their first contribution in [#794](https://github.com/dessalines/thumb-key/pull/794)
 - @slashdevslashurandom made their first contribution in [#795](https://github.com/dessalines/thumb-key/pull/795)
+- @zeecho made their first contribution in [#793](https://github.com/dessalines/thumb-key/pull/793)
 
 **Full Changelog**: https://github.com/dessalines/thumb-key/compare/2.6.24...2.6.25
 
@@ -556,6 +602,7 @@
 
 ## New Contributors
 
+- @shtrom made their first contribution in [#786](https://github.com/dessalines/thumb-key/pull/786)
 - @LortalHost made their first contribution in [#782](https://github.com/dessalines/thumb-key/pull/782)
 - @orhun made their first contribution in [#781](https://github.com/dessalines/thumb-key/pull/781)
 - @zworek made their first contribution in [#778](https://github.com/dessalines/thumb-key/pull/778)
@@ -601,6 +648,7 @@
 
 ## New Contributors
 
+- @Lysalana made their first contribution in [#760](https://github.com/dessalines/thumb-key/pull/760)
 - @imthehumanoid made their first contribution in [#750](https://github.com/dessalines/thumb-key/pull/750)
 
 **Full Changelog**: https://github.com/dessalines/thumb-key/compare/2.6.18...2.6.19
@@ -632,6 +680,10 @@
 - Add accented e's to NLThumbKey.kt by @GuyKlaassen in [#727](https://github.com/dessalines/thumb-key/pull/727)
 - MessagEase ES Numeric: add ¨, fix placing of < and > by @asdkant in [#722](https://github.com/dessalines/thumb-key/pull/722)
 
+## New Contributors
+
+- @GuyKlaassen made their first contribution in [#727](https://github.com/dessalines/thumb-key/pull/727)
+
 **Full Changelog**: https://github.com/dessalines/thumb-key/compare/2.6.15...2.6.16
 
 ## What's Changed in 2.6.15
@@ -646,6 +698,7 @@
 
 ## New Contributors
 
+- @mpsijm made their first contribution in [#720](https://github.com/dessalines/thumb-key/pull/720)
 - @ShortCircuit908 made their first contribution in [#711](https://github.com/dessalines/thumb-key/pull/711)
 
 **Full Changelog**: https://github.com/dessalines/thumb-key/compare/2.6.14...2.6.15
@@ -664,6 +717,8 @@
 
 ## New Contributors
 
+- @BlueDrink9 made their first contribution in [#701](https://github.com/dessalines/thumb-key/pull/701)
+- @asdkant made their first contribution in [#709](https://github.com/dessalines/thumb-key/pull/709)
 - @yorikvanhavre made their first contribution in [#705](https://github.com/dessalines/thumb-key/pull/705)
 
 **Full Changelog**: https://github.com/dessalines/thumb-key/compare/2.6.13...2.6.14
@@ -679,6 +734,7 @@
 
 ## New Contributors
 
+- @afreakk made their first contribution in [#686](https://github.com/dessalines/thumb-key/pull/686)
 - @michal-h-s made their first contribution in [#674](https://github.com/dessalines/thumb-key/pull/674)
 
 **Full Changelog**: https://github.com/dessalines/thumb-key/compare/2.6.12...2.6.13
@@ -690,6 +746,12 @@
 - Add layout for English and French by @Zwyx in [#665](https://github.com/dessalines/thumb-key/pull/665)
 - Add ukrainian-only messagease symbols layout by @Meetoul in [#666](https://github.com/dessalines/thumb-key/pull/666)
 - Adding release notes. by @dessalines
+
+## New Contributors
+
+- @yehoshuapw made their first contribution in [#667](https://github.com/dessalines/thumb-key/pull/667)
+- @Zwyx made their first contribution in [#665](https://github.com/dessalines/thumb-key/pull/665)
+- @Meetoul made their first contribution in [#666](https://github.com/dessalines/thumb-key/pull/666)
 
 **Full Changelog**: https://github.com/dessalines/thumb-key/compare/2.6.11...2.6.12
 
@@ -705,8 +767,10 @@
 
 ## New Contributors
 
+- @pavlov-p made their first contribution in [#660](https://github.com/dessalines/thumb-key/pull/660)
 - @Eemilp made their first contribution in [#639](https://github.com/dessalines/thumb-key/pull/639)
 - @5atoshiNakamoto made their first contribution in [#644](https://github.com/dessalines/thumb-key/pull/644)
+- @ligurio made their first contribution in [#638](https://github.com/dessalines/thumb-key/pull/638)
 - @priyavrat-misra made their first contribution in [#636](https://github.com/dessalines/thumb-key/pull/636)
 
 **Full Changelog**: https://github.com/dessalines/thumb-key/compare/2.6.10...2.6.11
@@ -731,6 +795,10 @@
 - Add some missing arabic vowel phonemes. by @pxeemo in [#624](https://github.com/dessalines/thumb-key/pull/624)
 - Add Ukrainian translation by @Sestowner in [#623](https://github.com/dessalines/thumb-key/pull/623)
 - Adding release notes. by @dessalines
+
+## New Contributors
+
+- @Sestowner made their first contribution in [#623](https://github.com/dessalines/thumb-key/pull/623)
 
 **Full Changelog**: https://github.com/dessalines/thumb-key/compare/2.6.8...2.6.9
 
@@ -827,6 +895,7 @@
 ## New Contributors
 
 - @Housies made their first contribution in [#569](https://github.com/dessalines/thumb-key/pull/569)
+- @soupirs made their first contribution in [#574](https://github.com/dessalines/thumb-key/pull/574)
 
 **Full Changelog**: https://github.com/dessalines/thumb-key/compare/2.6.1...2.6.2
 
@@ -856,6 +925,7 @@
 
 ## New Contributors
 
+- @jm355 made their first contribution in [#534](https://github.com/dessalines/thumb-key/pull/534)
 - @sguinetti made their first contribution in [#552](https://github.com/dessalines/thumb-key/pull/552)
 - @petlyh made their first contribution in [#547](https://github.com/dessalines/thumb-key/pull/547)
 
@@ -881,6 +951,10 @@
 - Fix hungarian layout by @KnockoffFeline in [#525](https://github.com/dessalines/thumb-key/pull/525)
 - Adding release notes. by @dessalines
 
+## New Contributors
+
+- @KnockoffFeline made their first contribution in [#525](https://github.com/dessalines/thumb-key/pull/525)
+
 **Full Changelog**: https://github.com/dessalines/thumb-key/compare/2.5.0...2.5.1
 
 ## What's Changed in 2.5.0
@@ -901,6 +975,7 @@
 ## New Contributors
 
 - @Terrance made their first contribution in [#519](https://github.com/dessalines/thumb-key/pull/519)
+- @Kommynct made their first contribution in [#509](https://github.com/dessalines/thumb-key/pull/509)
 
 **Full Changelog**: https://github.com/dessalines/thumb-key/compare/2.4.1...2.5.0
 
@@ -936,6 +1011,10 @@
 - Small fix on the canadian aboriginal keyboard by @CarolineHusky in [#476](https://github.com/dessalines/thumb-key/pull/476)
 - Adding release notes. by @dessalines
 
+## New Contributors
+
+- @Kuna42 made their first contribution in [#482](https://github.com/dessalines/thumb-key/pull/482)
+
 **Full Changelog**: https://github.com/dessalines/thumb-key/compare/2.3.0...2.4.0
 
 ## What's Changed in 2.3.0
@@ -953,7 +1032,11 @@
 
 ## New Contributors
 
+- @WadeWT made their first contribution in [#473](https://github.com/dessalines/thumb-key/pull/473)
+- @CarolineHusky made their first contribution in [#472](https://github.com/dessalines/thumb-key/pull/472)
+- @Crandel made their first contribution in [#465](https://github.com/dessalines/thumb-key/pull/465)
 - @cjparsons74 made their first contribution in [#463](https://github.com/dessalines/thumb-key/pull/463)
+- @uxintro made their first contribution in [#462](https://github.com/dessalines/thumb-key/pull/462)
 
 **Full Changelog**: https://github.com/dessalines/thumb-key/compare/2.2.0...2.3.0
 
@@ -983,6 +1066,10 @@
 - Fix IDv1SN bug + renaming Indonesian layout sort problem by @Matyeyev in [#438](https://github.com/dessalines/thumb-key/pull/438)
 - Better User Guide section in README by @KraXen72 in [#430](https://github.com/dessalines/thumb-key/pull/430)
 - Updating releases.md by @dessalines
+
+## New Contributors
+
+- @pulkomandy made their first contribution in [#435](https://github.com/dessalines/thumb-key/pull/435)
 
 **Full Changelog**: https://github.com/dessalines/thumb-key/compare/2.1.0...2.1.1
 
@@ -1023,6 +1110,11 @@
 - lithuanian layout by @MariusTrap in [#395](https://github.com/dessalines/thumb-key/pull/395)
 - Adding release notes. by @dessalines
 
+## New Contributors
+
+- @Matyeyev made their first contribution in [#405](https://github.com/dessalines/thumb-key/pull/405)
+- @MariusTrap made their first contribution in [#395](https://github.com/dessalines/thumb-key/pull/395)
+
 **Full Changelog**: https://github.com/dessalines/thumb-key/compare/1.14.0...1.15.0
 
 ## What's Changed in 1.14.0
@@ -1043,8 +1135,11 @@
 
 ## New Contributors
 
+- @storvik made their first contribution in [#390](https://github.com/dessalines/thumb-key/pull/390)
 - @0xFOSSMan made their first contribution in [#387](https://github.com/dessalines/thumb-key/pull/387)
 - @plugnburn made their first contribution in [#385](https://github.com/dessalines/thumb-key/pull/385)
+- @Saturo78 made their first contribution in [#384](https://github.com/dessalines/thumb-key/pull/384)
+- @Lastaapps made their first contribution in [#377](https://github.com/dessalines/thumb-key/pull/377)
 
 **Full Changelog**: https://github.com/dessalines/thumb-key/compare/1.13.0...1.14.0
 
@@ -1061,6 +1156,8 @@
 
 ## New Contributors
 
+- @nejni-marji made their first contribution in [#370](https://github.com/dessalines/thumb-key/pull/370)
+- @salif made their first contribution in [#368](https://github.com/dessalines/thumb-key/pull/368)
 - @MV-GH made their first contribution in [#364](https://github.com/dessalines/thumb-key/pull/364)
 
 **Full Changelog**: https://github.com/dessalines/thumb-key/compare/1.12.0...1.13.0
@@ -1085,6 +1182,7 @@
 
 - @racuna made their first contribution in [#361](https://github.com/dessalines/thumb-key/pull/361)
 - @gmartineza made their first contribution in [#336](https://github.com/dessalines/thumb-key/pull/336)
+- @Michael36500 made their first contribution in [#355](https://github.com/dessalines/thumb-key/pull/355)
 - @iByteABit256 made their first contribution in [#357](https://github.com/dessalines/thumb-key/pull/357)
 
 **Full Changelog**: https://github.com/dessalines/thumb-key/compare/1.11.0...1.12.0
@@ -1095,6 +1193,10 @@
 - Numeric layout for type-split. by @mockballed in [#337](https://github.com/dessalines/thumb-key/pull/337)
 - Add ENv4MultiLayout by @KraXen72 in [#327](https://github.com/dessalines/thumb-key/pull/327)
 - Adding release notes. by @dessalines
+
+## New Contributors
+
+- @KraXen72 made their first contribution in [#327](https://github.com/dessalines/thumb-key/pull/327)
 
 **Full Changelog**: https://github.com/dessalines/thumb-key/compare/1.10.0...1.11.0
 
@@ -1129,6 +1231,10 @@
 - Added wide layout by @thedroppedpocket in [#308](https://github.com/dessalines/thumb-key/pull/308)
 - Added Two-Hands layout by @Lavin-tom in [#306](https://github.com/dessalines/thumb-key/pull/306)
 - Adding release notes. by @dessalines
+
+## New Contributors
+
+- @thedroppedpocket made their first contribution in [#308](https://github.com/dessalines/thumb-key/pull/308)
 
 **Full Changelog**: https://github.com/dessalines/thumb-key/compare/1.8.0...1.9.0
 
@@ -1178,7 +1284,9 @@
 
 ## New Contributors
 
+- @flauta made their first contribution in [#281](https://github.com/dessalines/thumb-key/pull/281)
 - @akurone made their first contribution
+- @Lavin-tom made their first contribution in [#280](https://github.com/dessalines/thumb-key/pull/280)
 - @FriedGrregg made their first contribution in [#273](https://github.com/dessalines/thumb-key/pull/273)
 
 **Full Changelog**: https://github.com/dessalines/thumb-key/compare/1.6.0...1.6.1
@@ -1227,6 +1335,8 @@
 
 ## New Contributors
 
+- @FranciscoTrigo made their first contribution
+- @K0baU made their first contribution
 - @last5bits made their first contribution
 - @cosminribo made their first contribution in [#256](https://github.com/dessalines/thumb-key/pull/256)
 - @Falcarragh made their first contribution
@@ -1237,6 +1347,10 @@
 
 - Adding French and Russian MessageEase Keyboards. by @dessalines in [#255](https://github.com/dessalines/thumb-key/pull/255)
 - Update ThumbKeyIDv1Symbols.kt by @awandepan in [#248](https://github.com/dessalines/thumb-key/pull/248)
+
+## New Contributors
+
+- @awandepan made their first contribution in [#248](https://github.com/dessalines/thumb-key/pull/248)
 
 **Full Changelog**: https://github.com/dessalines/thumb-key/compare/1.4.1...1.5.0
 
@@ -1268,6 +1382,7 @@
 
 ## New Contributors
 
+- @breversa made their first contribution
 - @gvalson made their first contribution in [#240](https://github.com/dessalines/thumb-key/pull/240)
 
 **Full Changelog**: https://github.com/dessalines/thumb-key/compare/1.3.0...1.4.0
@@ -1295,6 +1410,7 @@
 
 ## New Contributors
 
+- @roihershberg made their first contribution in [#223](https://github.com/dessalines/thumb-key/pull/223)
 - @Chirikumbrah made their first contribution in [#222](https://github.com/dessalines/thumb-key/pull/222)
 
 **Full Changelog**: https://github.com/dessalines/thumb-key/compare/1.1.0...1.2.0
@@ -1327,6 +1443,11 @@
 - Spanish fixes by @mpice-mn in [#209](https://github.com/dessalines/thumb-key/pull/209)
 - Adding release notes. by @dessalines
 
+## New Contributors
+
+- @sslater11 made their first contribution in [#218](https://github.com/dessalines/thumb-key/pull/218)
+- @mpice-mn made their first contribution in [#214](https://github.com/dessalines/thumb-key/pull/214)
+
 **Full Changelog**: https://github.com/dessalines/thumb-key/compare/1.0.0...1.1.0
 
 ## What's Changed in 1.0.0
@@ -1341,6 +1462,7 @@
 
 ## New Contributors
 
+- @mockballed made their first contribution in [#206](https://github.com/dessalines/thumb-key/pull/206)
 - @reneald made their first contribution in [#205](https://github.com/dessalines/thumb-key/pull/205)
 
 **Full Changelog**: https://github.com/dessalines/thumb-key/compare/0.0.14...1.0.0
@@ -1358,6 +1480,10 @@
 - Changed z position by @morellik in [#193](https://github.com/dessalines/thumb-key/pull/193)
 - Adding release notes. by @dessalines
 - Merge branch 'layout_order_fix' by @dessalines
+
+## New Contributors
+
+- @pxeemo made their first contribution
 
 **Full Changelog**: https://github.com/dessalines/thumb-key/compare/0.0.13...0.0.14
 
@@ -1402,6 +1528,7 @@
 ## New Contributors
 
 - @joerievers made their first contribution in [#166](https://github.com/dessalines/thumb-key/pull/166)
+- @domportera made their first contribution in [#153](https://github.com/dessalines/thumb-key/pull/153)
 
 **Full Changelog**: https://github.com/dessalines/thumb-key/compare/0.0.11...0.0.12
 
@@ -1417,6 +1544,10 @@
 - Create Danish keyboard file by @Limfjorden
 - Add f-droid links. Fixes #8 by @dessalines in [#139](https://github.com/dessalines/thumb-key/pull/139)
 - Updating releases.md by @dessalines
+
+## New Contributors
+
+- @Limfjorden made their first contribution
 
 **Full Changelog**: https://github.com/dessalines/thumb-key/compare/0.0.10...0.0.11
 
@@ -1443,6 +1574,10 @@
 - Adding hebrew (messagease style) layout in [#117](https://github.com/dessalines/thumb-key/pull/117)
 - Adding release notes. by @dessalines
 
+## New Contributors
+
+- @ made their first contribution in [#117](https://github.com/dessalines/thumb-key/pull/117)
+
 **Full Changelog**: https://github.com/dessalines/thumb-key/compare/0.0.8...0.0.9
 
 ## What's Changed in 0.0.8
@@ -1458,6 +1593,11 @@
 - Add basque layout by @zgll2022 in [#107](https://github.com/dessalines/thumb-key/pull/107)
 - fixing accented vowels' location in Portuguese layout by @somehare in [#95](https://github.com/dessalines/thumb-key/pull/95)
 - Updating releases.md by @dessalines
+
+## New Contributors
+
+- @morellik made their first contribution in [#112](https://github.com/dessalines/thumb-key/pull/112)
+- @zgll2022 made their first contribution in [#107](https://github.com/dessalines/thumb-key/pull/107)
 
 **Full Changelog**: https://github.com/dessalines/thumb-key/compare/0.0.7...0.0.8
 
@@ -1493,6 +1633,7 @@
 
 ## New Contributors
 
+- @rickcrash made their first contribution in [#80](https://github.com/dessalines/thumb-key/pull/80)
 - @erjanmx made their first contribution in [#71](https://github.com/dessalines/thumb-key/pull/71)
 
 **Full Changelog**: https://github.com/dessalines/thumb-key/compare/0.0.5...0.0.6
@@ -1506,6 +1647,10 @@
 - Adding internationalized strings. Fixes #31 by @dessalines in [#58](https://github.com/dessalines/thumb-key/pull/58)
 - Correcting special characters location in Portuguese Layout by @somehare in [#57](https://github.com/dessalines/thumb-key/pull/57)
 - Adding release notes. by @dessalines
+
+## New Contributors
+
+- @somehare made their first contribution in [#57](https://github.com/dessalines/thumb-key/pull/57)
 
 **Full Changelog**: https://github.com/dessalines/thumb-key/compare/0.0.4...0.0.5
 
@@ -1524,6 +1669,7 @@
 
 ## New Contributors
 
+- @DobriniaMerk made their first contribution in [#56](https://github.com/dessalines/thumb-key/pull/56)
 - @anevaiopvn made their first contribution
 
 **Full Changelog**: https://github.com/dessalines/thumb-key/compare/0.0.3...0.0.4
@@ -1590,5 +1736,9 @@
 - Reorganizing, adding thumbkey_v4 by @dessalines
 - Running format by @dessalines
 - Initial commit. by @dessalines
+
+## New Contributors
+
+- @dessalines made their first contribution
 
 <!-- generated by git-cliff -->
