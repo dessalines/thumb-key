@@ -446,10 +446,13 @@ fun KeyboardKey(
                             // we also consider the final offset small enough if it's kinda big, but
                             // in a different direction than the max offset. This ensures better
                             // swipe-and-return recognition
-                            val finalOffsetSmallEnough = finalOffset.getDistance() <= finalOffsetThreshold ||
-                                    (swipeDirection(finalOffset.x,finalOffset.y, minSwipeLength, key.swipeType)?.equals(
-                                swipeDirection(maxOffset.x, maxOffset.y, minSwipeLength, key.swipeType))!=true
-                            )
+                            val finalOffsetSmallEnough =
+                                finalOffset.getDistance() <= finalOffsetThreshold ||
+                                    (
+                                        swipeDirection(finalOffset.x, finalOffset.y, minSwipeLength, key.swipeType)?.equals(
+                                            swipeDirection(maxOffset.x, maxOffset.y, minSwipeLength, key.swipeType),
+                                        ) != true
+                                    )
 
                             val maxOffsetDistance = maxOffset.getDistance().toDouble()
                             val maxOffsetBigEnough = maxOffsetDistance >= maxOffsetThreshold

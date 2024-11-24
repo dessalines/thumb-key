@@ -1294,13 +1294,14 @@ fun circularDirection(
     positions: List<Offset>,
     circleCompletionTolerance: Float,
 ): CircularDirection? {
-    //first filter out all run-ups to the start of the circle:
-    //throw away all positions that consecutively get closer to the endpoint of the circle
-    //so that an initial offset of the circle can be accounted for.
-    //This allows for spiralling circles and makes detection quite a bit better
-    val filteredPositions = positions.dropWhileIndexed{ index, position ->
-        index==0 || position.getDistanceTo(positions.last())<=positions[index-1].getDistanceTo(positions.last())
-    }
+    // first filter out all run-ups to the start of the circle:
+    // throw away all positions that consecutively get closer to the endpoint of the circle
+    // so that an initial offset of the circle can be accounted for.
+    // This allows for spiralling circles and makes detection quite a bit better
+    val filteredPositions =
+        positions.dropWhileIndexed { index, position ->
+            index == 0 || position.getDistanceTo(positions.last()) <= positions[index - 1].getDistanceTo(positions.last())
+        }
     val center = filteredPositions.reduce(Offset::plus) / filteredPositions.count().toFloat()
     val radii = filteredPositions.map { it.getDistanceTo(center) }
     val maxRadius = radii.reduce { acc, it -> if (it > acc) it else acc }
