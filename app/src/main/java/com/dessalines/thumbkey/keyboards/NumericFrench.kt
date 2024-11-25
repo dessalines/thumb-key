@@ -75,7 +75,7 @@ val FRENCH_NUMERIC_KEYBOARD =
                 KeyItemC(
                     center = KeyC("8", size = LARGE),
                     topLeft = KeyC("\""),
-                    topRight = KeyC("'"),
+                    topRight = KeyC("'", swipeReturnAction = CommitText("\"")),
                     bottomRight = KeyC("-"),
                     bottom = KeyC("."),
                     bottomLeft = KeyC("*"),
