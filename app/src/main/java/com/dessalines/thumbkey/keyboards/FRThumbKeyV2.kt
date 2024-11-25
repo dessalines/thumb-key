@@ -16,8 +16,8 @@ val KB_FR_THUMBKEY_V2_MAIN =
             listOf(
                 KeyItemC(
                     center = KeyC("l", size = LARGE),
-                    topLeft = KeyC("«", color = MUTED, swipeReturnAction=CommitText("{")),
-                    top = KeyC("»", color = MUTED, swipeReturnAction=CommitText("}")),
+                    topLeft = KeyC("«", color = MUTED, swipeReturnAction = CommitText("{")),
+                    top = KeyC("»", color = MUTED, swipeReturnAction = CommitText("}")),
                     topRight = KeyC("'", color = MUTED),
                     right = KeyC("^", color = MUTED),
                     bottomRight = KeyC("q"),
@@ -43,7 +43,7 @@ val KB_FR_THUMBKEY_V2_MAIN =
                 KeyItemC(
                     center = KeyC("r", size = LARGE),
                     left = KeyC("-", color = MUTED),
-                    topLeft = KeyC("(", color = MUTED, swipeReturnAction=CommitText("[")),
+                    topLeft = KeyC("(", color = MUTED, swipeReturnAction = CommitText("[")),
                     right = KeyC("v"),
                 ),
                 KeyItemC(
@@ -66,7 +66,7 @@ val KB_FR_THUMBKEY_V2_MAIN =
                             swipeReturnAction = ToggleCurrentWordCapitalization(true),
                             color = MUTED,
                         ),
-                    topRight = KeyC(")", color = MUTED, swipeReturnAction=CommitText("]")),
+                    topRight = KeyC(")", color = MUTED, swipeReturnAction = CommitText("]")),
                     right = KeyC("â", color = MUTED),
                     bottom =
                         KeyC(
@@ -91,8 +91,8 @@ val KB_FR_THUMBKEY_V2_MAIN =
                     topLeft = KeyC("ç", color = MUTED),
                     top = KeyC("c"),
                     bottomRight = KeyC("*", color = MUTED),
-                    bottom = KeyC(".", color = MUTED, swipeReturnAction=CommitText(":")),
-                    bottomLeft = KeyC(",", color = MUTED, swipeReturnAction=CommitText(";")),
+                    bottom = KeyC(".", color = MUTED, swipeReturnAction = CommitText(":")),
+                    bottomLeft = KeyC(",", color = MUTED, swipeReturnAction = CommitText(";")),
                     right = KeyC("…", color = MUTED),
                 ),
                 KeyItemC(
@@ -168,7 +168,7 @@ val KB_FR_THUMBKEY_V2_SHIFTED =
                             swipeReturnAction = ToggleCurrentWordCapitalization(true),
                             color = MUTED,
                         ),
-                    topRight = KeyC(")", color = MUTED, swipeReturnAction=CommitText("]")),
+                    topRight = KeyC(")", color = MUTED, swipeReturnAction = CommitText("]")),
                     right = KeyC("Â", color = MUTED),
                     bottomRight = KeyC("À", color = MUTED),
                     bottom =
