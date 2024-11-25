@@ -31,8 +31,8 @@ val FRENCH_NUMERIC_KEYBOARD =
                     topRight = KeyC("´"),
                     right = KeyC("!"),
                     bottomRight = KeyC("\\"),
-                    bottomLeft = KeyC("/"),
-                    left = KeyC("+"),
+                    bottomLeft = KeyC("/", swipeReturnAction = CommitText("\\")),
+                    left = KeyC("+", swipeReturnAction = CommitText("±")),
                 ),
                 KeyItemC(
                     center = KeyC("3", size = LARGE),
