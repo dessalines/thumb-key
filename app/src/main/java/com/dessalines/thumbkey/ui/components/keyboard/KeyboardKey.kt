@@ -470,9 +470,15 @@ fun KeyboardKey(
                                         ) ?: (
                                             if (dragReturnEnabled) {
                                                 val swipeDirection =
-                                                    swipeDirection(maxOffset.x, maxOffset.y, minSwipeLength, key.swipeType)
+                                                    swipeDirection(
+                                                        maxOffset.x,
+                                                        maxOffset.y,
+                                                        minSwipeLength,
+                                                        if (ghostKey == null) key.swipeType else SwipeNWay.EIGHT_WAY,
+                                                    )
                                                 key.getSwipe(swipeDirection)?.swipeReturnAction
                                                     ?: oppositeCaseKey?.getSwipe(swipeDirection)?.action
+                                                    ?: ghostKey?.getSwipe(swipeDirection)?.swipeReturnAction
                                             } else {
                                                 null
                                             }
