@@ -1278,12 +1278,32 @@ fun lastColKeysToFirst(board: KeyboardC): KeyboardC {
     return KeyboardC(newArr)
 }
 
+/**
+ * drop all first elements of a list that satisfy a given predicate
+ */
+inline fun <T> List<T>.dropWhileIndexed(predicate: (index: Int, T) -> Boolean): List<T> {
+    for (i in indices) {
+        if (!predicate(i, this[i])) {
+            return subList(i, size)
+        }
+    }
+    return emptyList()
+}
+
 fun circularDirection(
     positions: List<Offset>,
     circleCompletionTolerance: Float,
 ): CircularDirection? {
-    val center = positions.reduce(Offset::plus) / positions.count().toFloat()
-    val radii = positions.map { it.getDistanceTo(center) }
+    // first filter out all run-ups to the start of the circle:
+    // throw away all positions that consecutively get closer to the endpoint of the circle
+    // so that an initial offset of the circle can be accounted for.
+    // This allows for spiralling circles and makes detection quite a bit better
+    val filteredPositions =
+        positions.dropWhileIndexed { index, position ->
+            index == 0 || position.getDistanceTo(positions.last()) <= positions[index - 1].getDistanceTo(positions.last())
+        }
+    val center = filteredPositions.reduce(Offset::plus) / filteredPositions.count().toFloat()
+    val radii = filteredPositions.map { it.getDistanceTo(center) }
     val maxRadius = radii.reduce { acc, it -> if (it > acc) it else acc }
     // This is similar to accepting an ellipse with aspect ratio 3:1
     val minRadius = maxRadius / 3
@@ -1296,7 +1316,7 @@ fun circularDirection(
         return null
     }
     val spannedAngle =
-        positions
+        filteredPositions
             .asSequence()
             .map { it - center } // transform center into origin
             .windowed(2)
