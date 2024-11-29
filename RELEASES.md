@@ -1,3 +1,14 @@
+## What's Changed in 4.0.6
+
+- Improvements for French language by @salsifis in [#1161](https://github.com/dessalines/thumb-key/pull/1161)
+- Make the backspace key remove text directly instead of sending a DEL keycode by @gitterrost4 in [#1162](https://github.com/dessalines/thumb-key/pull/1162)
+
+## New Contributors
+
+- @salsifis made their first contribution in [#1161](https://github.com/dessalines/thumb-key/pull/1161)
+
+**Full Changelog**: https://github.com/dessalines/thumb-key/compare/4.0.5...4.0.6
+
 ## What's Changed in 4.0.5
 
 - Add some swipeReturn actions to the french ThumbKey v2 layout by @Raghnarok in [#1160](https://github.com/dessalines/thumb-key/pull/1160)
