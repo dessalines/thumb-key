@@ -361,6 +361,14 @@ fun performKeyAction(
             ime.currentInputConnection.sendKeyEvent(ev)
         }
 
+        is KeyAction.DeleteKeyAction -> {
+            if (ime.currentInputConnection.getSelectedText(0)?.isEmpty() != false) {
+                ime.currentInputConnection.deleteSurroundingText(1, 0)
+            } else {
+                ime.currentInputConnection.commitText("", 0)
+            }
+        }
+
         is KeyAction.DeleteWordBeforeCursor -> {
             Log.d(TAG, "deleting last word")
             deleteWordBeforeCursor(ime)
