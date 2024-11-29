@@ -144,14 +144,7 @@ val BACKSPACE_KEY_ITEM =
         center =
             KeyC(
                 display = KeyDisplay.IconDisplay(Icons.AutoMirrored.Outlined.KeyboardBackspace),
-                action =
-                    SendEvent(
-                        KeyEvent(
-                            KeyEvent.ACTION_DOWN,
-                            KeyEvent
-                                .KEYCODE_DEL,
-                        ),
-                    ),
+                action = DeleteKeyAction,
                 size = LARGE,
                 color = SECONDARY,
             ),

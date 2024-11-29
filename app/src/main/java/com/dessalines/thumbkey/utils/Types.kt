@@ -164,6 +164,8 @@ sealed class KeyAction {
         data object CycleRight : KeyAction()
     }
 
+    data object DeleteKeyAction : KeyAction()
+
     data object DeleteWordBeforeCursor : KeyAction()
 
     data object DeleteWordAfterCursor : KeyAction()
