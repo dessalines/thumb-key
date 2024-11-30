@@ -45,6 +45,7 @@ import com.dessalines.thumbkey.db.LayoutsUpdate
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
+import java.text.BreakIterator
 import java.text.NumberFormat
 import kotlin.math.PI
 import kotlin.math.abs
@@ -363,7 +364,15 @@ fun performKeyAction(
 
         is KeyAction.DeleteKeyAction -> {
             if (ime.currentInputConnection.getSelectedText(0)?.isEmpty() != false) {
-                ime.currentInputConnection.deleteSurroundingText(1, 0)
+                val textBeforeCursor = ime.currentInputConnection.getTextBeforeCursor(20, 0)?.toString()
+                if (textBeforeCursor.isNullOrEmpty()) {
+                    return
+                }
+
+                val lastClusterBoundary = findLastGraphemeClusterBoundary(textBeforeCursor)
+                if (lastClusterBoundary != -1) {
+                    ime.currentInputConnection.deleteSurroundingText(textBeforeCursor.length - lastClusterBoundary, 0)
+                }
             } else {
                 ime.currentInputConnection.commitText("", 0)
             }
@@ -1365,4 +1374,34 @@ fun updateLayouts(
                     .joinToString(),
         ),
     )
+}
+
+fun findLastGraphemeClusterBoundary(text: String): Int {
+    val boundary = BreakIterator.getCharacterInstance()
+    boundary.setText(text)
+
+    val end = text.length
+    var lastBoundary = boundary.preceding(end) // Find the previous grapheme boundary
+
+    // Check if this boundary is part of a ZWJ sequence
+    while (lastBoundary > 0 && isPartOfZWJSequence(text, lastBoundary)) {
+        lastBoundary = boundary.preceding(lastBoundary)
+    }
+
+    return lastBoundary
+}
+
+fun isPartOfZWJSequence(
+    text: String,
+    index: Int,
+): Boolean {
+    if (index <= 0 || index >= text.length) return false
+
+    // Check if the character before this boundary is a ZWJ
+    val previousChar = text[index - 1]
+    if (previousChar.code == 0x200D) { // Zero-Width Joiner
+        return true
+    }
+
+    return false
 }
