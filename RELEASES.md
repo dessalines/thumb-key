@@ -1,3 +1,14 @@
+## What's Changed in 4.0.7
+
+- Update FRThumbKeyV1 to add dots, quotation marks and some letters by @terrylaire in [#1174](https://github.com/dessalines/thumb-key/pull/1174)
+- Handle emoji correctly when deleting text by @gitterrost4 in [#1169](https://github.com/dessalines/thumb-key/pull/1169)
+
+## New Contributors
+
+- @terrylaire made their first contribution in [#1174](https://github.com/dessalines/thumb-key/pull/1174)
+
+**Full Changelog**: https://github.com/dessalines/thumb-key/compare/4.0.6...4.0.7
+
 ## What's Changed in 4.0.6
 
 - Improvements for French language by @salsifis in [#1161](https://github.com/dessalines/thumb-key/pull/1161)
