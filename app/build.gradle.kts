@@ -7,12 +7,12 @@ plugins {
 
 android {
     buildToolsVersion = "34.0.0"
-    compileSdk = 34
+    compileSdk = 35
 
     defaultConfig {
         applicationId = "com.dessalines.thumbkey"
         minSdk = 21
-        targetSdk = 34
+        targetSdk = 35
         versionCode = 124
         versionName = "4.0.6"
 
@@ -94,7 +94,7 @@ dependencies {
     implementation("androidx.compose.material:material-icons-extended-desktop:1.7.5")
     implementation("androidx.compose.material3:material3-window-size-class")
     implementation("androidx.compose.ui:ui-tooling")
-    implementation("androidx.compose.runtime:runtime-livedata")
+    implementation("androidx.compose.runtime:runtime-livedata:1.7.5")
 
     // Activities
     implementation("androidx.activity:activity-compose:1.9.3")
