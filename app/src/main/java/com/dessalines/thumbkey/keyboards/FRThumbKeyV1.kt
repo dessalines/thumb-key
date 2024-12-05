@@ -39,6 +39,7 @@ val KB_FR_THUMBKEY_V1_MAIN =
                 KeyItemC(
                     center = KeyC("n", size = LARGE),
                     swipeType = TWO_WAY_HORIZONTAL,
+                    left = KeyC("ñ"),
                     right = KeyC("m"),
                 ),
                 KeyItemC(
@@ -68,6 +69,7 @@ val KB_FR_THUMBKEY_V1_MAIN =
                             swipeReturnAction = ToggleCurrentWordCapitalization(false),
                         ),
                     bottomRight = KeyC("à"),
+                    bottomLeft = KeyC("æ"),
                     left = KeyC("d"),
                 ),
                 NUMERIC_KEY_ITEM,
@@ -75,11 +77,15 @@ val KB_FR_THUMBKEY_V1_MAIN =
             listOf(
                 KeyItemC(
                     center = KeyC("s", size = LARGE),
-                    swipeType = FOUR_WAY_DIAGONAL,
+                    right = KeyC("»", color = MUTED),
                     topRight = KeyC("p"),
+                    bottomRight = KeyC("…", color = MUTED, swipeReturnAction = CommitText(":")),
+                    bottom = KeyC("·", color = MUTED),
+                    left = KeyC("«", color = MUTED),
                 ),
                 KeyItemC(
                     center = KeyC("t", size = LARGE),
+                    topLeft = KeyC("\"", color = MUTED),
                     top = KeyC("q"),
                     topRight = KeyC("'", color = MUTED),
                     right = KeyC("k"),
@@ -91,6 +97,7 @@ val KB_FR_THUMBKEY_V1_MAIN =
                 KeyItemC(
                     center = KeyC("e", size = LARGE),
                     topLeft = KeyC("o"),
+                    top = KeyC("ö"),
                     topRight = KeyC("ë"),
                     right = KeyC("ê"),
                     bottomRight = KeyC("è"),
@@ -136,6 +143,7 @@ val KB_FR_THUMBKEY_V1_SHIFTED =
                 KeyItemC(
                     center = KeyC("N", size = LARGE),
                     swipeType = TWO_WAY_HORIZONTAL,
+                    left = KeyC("Ñ"),
                     right = KeyC("M"),
                 ),
                 KeyItemC(
@@ -167,6 +175,7 @@ val KB_FR_THUMBKEY_V1_SHIFTED =
                             swipeReturnAction = ToggleCurrentWordCapitalization(false),
                             color = MUTED,
                         ),
+                    bottomLeft = KeyC("Æ"),
                     left = KeyC("D"),
                 ),
                 NUMERIC_KEY_ITEM,
@@ -174,11 +183,15 @@ val KB_FR_THUMBKEY_V1_SHIFTED =
             listOf(
                 KeyItemC(
                     center = KeyC("S", size = LARGE),
-                    swipeType = FOUR_WAY_DIAGONAL,
+                    right = KeyC("»", color = MUTED),
                     topRight = KeyC("P"),
+                    bottomRight = KeyC("…", color = MUTED, swipeReturnAction = CommitText(":")),
+                    bottom = KeyC("·", color = MUTED),
+                    left = KeyC("«", color = MUTED),
                 ),
                 KeyItemC(
                     center = KeyC("T", size = LARGE),
+                    topLeft = KeyC("\"", color = MUTED),
                     top = KeyC("Q"),
                     topRight = KeyC("'", color = MUTED),
                     right = KeyC("K"),
@@ -190,6 +203,7 @@ val KB_FR_THUMBKEY_V1_SHIFTED =
                 KeyItemC(
                     center = KeyC("E", size = LARGE),
                     topLeft = KeyC("O"),
+                    top = KeyC("Ö"),
                     topRight = KeyC("Ë"),
                     right = KeyC("Ê"),
                     bottomRight = KeyC("È"),
