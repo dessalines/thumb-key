@@ -75,7 +75,7 @@ fun AboutScreen(navController: NavController) {
                 ProvidePreferenceTheme {
                     Preference(
                         title = { Text(stringResource(R.string.whats_new)) },
-                        summary = { Text(stringResource(R.string.version, version)) },
+                        summary = { Text(stringResource(R.string.version, version.orEmpty())) },
                         icon = {
                             Icon(
                                 imageVector = Icons.Outlined.NewReleases,
