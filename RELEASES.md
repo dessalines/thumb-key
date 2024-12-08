@@ -1,7 +1,16 @@
+## What's Changed in 4.0.8
+
+- Reverting delete key hacks. by @dessalines in [#1183](https://github.com/dessalines/thumb-key/pull/1183)
+- Adding DE_THUMBKEY_SYMNUM by @dessalines in [#1182](https://github.com/dessalines/thumb-key/pull/1182)
+
+**Full Changelog**: https://github.com/dessalines/thumb-key/compare/4.0.7...4.0.8
+
 ## What's Changed in 4.0.7
 
+- Upgrading compile sdk. by @dessalines in [#1175](https://github.com/dessalines/thumb-key/pull/1175)
 - Update FRThumbKeyV1 to add dots, quotation marks and some letters by @terrylaire in [#1174](https://github.com/dessalines/thumb-key/pull/1174)
 - Handle emoji correctly when deleting text by @gitterrost4 in [#1169](https://github.com/dessalines/thumb-key/pull/1169)
+- Revert "Update kotlin monorepo to v2.1.0" by @dessalines in [#1166](https://github.com/dessalines/thumb-key/pull/1166)
 
 ## New Contributors
 
