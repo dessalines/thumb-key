@@ -398,7 +398,8 @@ fun performKeyAction(
         }
 
         is KeyAction.SmartQuotes -> {
-            val textNew = if (ime.currentInputConnection.getTextBeforeCursor(1, 0).matches(Regex("\\S"))) action.end else action.start
+            val textBeforeCursor = ime.currentInputConnection.getTextBeforeCursor(1, 0)?.toString() ?: ""
+            val textNew = if (textBeforeCursor.matches(Regex("\\S"))) action.end else action.start
             ime.currentInputConnection.commitText(textNew, 1)
         }
 
