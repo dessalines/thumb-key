@@ -150,6 +150,11 @@ sealed class KeyAction {
         val text: String,
     ) : KeyAction()
 
+    class SmartQuotes(
+        val start: String,
+        val end: String,
+    ) : KeyAction()
+
     sealed class MoveKeyboard : KeyAction() {
         class ToPosition(
             val position: KeyboardPosition,
