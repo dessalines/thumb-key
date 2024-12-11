@@ -110,7 +110,7 @@ val KB_EN_DE_THUMBKEY_AE_MAIN =
                 ),
                 KeyItemC(
                     center = KeyC("e", size = LARGE),
-                    top = KeyC("œ"),
+                    top = KeyC("æ"),
                     topLeft = KeyC("d"),
                     topRight = KeyC("€", color = MUTED),
                     left = KeyC("@", color = MUTED),
@@ -151,7 +151,7 @@ val KB_EN_DE_THUMBKEY_AE_SHIFTED =
                     left = KeyC("", color = MUTED),
                     right = KeyC("=", color = MUTED),
                     bottomLeft = KeyC("<", color = MUTED),
-                    bottom = KeyC("l"),
+                    bottom = KeyC("L"),
                     bottomRight = KeyC(">", color = MUTED),
                 ),
                 KeyItemC(
@@ -221,7 +221,7 @@ val KB_EN_DE_THUMBKEY_AE_SHIFTED =
                     right = KeyC("", color = MUTED),
                     bottomLeft = KeyC("7", color = MUTED),
                     bottom = KeyC("¿", color = MUTED),
-                    bottomRight = KeyC("", color = MUTED),
+                    bottomRight = KeyC("_", color = MUTED),
                 ),
                 KeyItemC(
                     center = KeyC("I", size = LARGE),
