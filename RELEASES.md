@@ -1,3 +1,15 @@
+## What's Changed in 4.0.9
+
+- Fix keyboard overlapping navigation bar on Android 15 by @juschmitt in [#1190](https://github.com/dessalines/thumb-key/pull/1190)
+- Fix Layout deutsch english + Æ (#1064) by @jackie-jackie in [#1189](https://github.com/dessalines/thumb-key/pull/1189)
+
+## New Contributors
+
+- @juschmitt made their first contribution in [#1190](https://github.com/dessalines/thumb-key/pull/1190)
+- @jackie-jackie made their first contribution in [#1189](https://github.com/dessalines/thumb-key/pull/1189)
+
+**Full Changelog**: https://github.com/dessalines/thumb-key/compare/4.0.8...4.0.9
+
 ## What's Changed in 4.0.8
 
 - Reverting delete key hacks. by @dessalines in [#1183](https://github.com/dessalines/thumb-key/pull/1183)
