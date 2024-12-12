@@ -892,6 +892,12 @@ fun performKeyAction(
         }
 
         KeyAction.ToggleCapsLock -> onToggleCapsLock()
+        is KeyAction.ShiftAndCapsLock -> {
+            val enable = action.enable
+            Log.d(TAG, "Toggling Shifted: $enable")
+            onToggleShiftMode(enable)
+            onToggleCapsLock()
+        }
         KeyAction.SelectAll -> {
             // Check here for the action #s:
             // https://developer.android.com/reference/android/R.id

@@ -134,6 +134,10 @@ sealed class KeyAction {
         val enable: Boolean,
     ) : KeyAction()
 
+    class ShiftAndCapsLock(
+        val enable: Boolean,
+    ) : KeyAction()
+
     class ToggleCurrentWordCapitalization(
         val toggleUp: Boolean,
     ) : KeyAction()
