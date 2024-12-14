@@ -13,8 +13,8 @@ android {
         applicationId = "com.dessalines.thumbkey"
         minSdk = 21
         targetSdk = 35
-        versionCode = 126
-        versionName = "4.0.8"
+        versionCode = 127
+        versionName = "4.0.9"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
         vectorDrawables {
@@ -88,13 +88,13 @@ dependencies {
     implementation("com.github.dessalines:room-db-export-import:0.1.0")
 
     // Compose BOM
-    implementation(platform("androidx.compose:compose-bom:2024.11.00"))
+    implementation(platform("androidx.compose:compose-bom:2024.12.01"))
     implementation("androidx.compose.ui:ui")
     implementation("androidx.compose.material3:material3")
-    implementation("androidx.compose.material:material-icons-extended-desktop:1.7.5")
+    implementation("androidx.compose.material:material-icons-extended-desktop:1.7.6")
     implementation("androidx.compose.material3:material3-window-size-class")
     implementation("androidx.compose.ui:ui-tooling")
-    implementation("androidx.compose.runtime:runtime-livedata:1.7.5")
+    implementation("androidx.compose.runtime:runtime-livedata:1.7.6")
 
     // Activities
     implementation("androidx.activity:activity-compose:1.9.3")
@@ -104,7 +104,7 @@ dependencies {
     implementation("androidx.lifecycle:lifecycle-runtime-compose")
 
     // Navigation
-    implementation("androidx.navigation:navigation-compose:2.8.4")
+    implementation("androidx.navigation:navigation-compose:2.8.5")
 
     // Emoji Picker
     implementation("androidx.emoji2:emoji2-emojipicker:1.5.0")
