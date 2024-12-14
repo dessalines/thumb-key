@@ -230,7 +230,7 @@ val KB_JA_KANA_THUMBKEY_KATAKANA =
                     center =
                         KeyC(
                             display = KeyDisplay.TextDisplay("あ"),
-                            action = ShiftAndCapsLock(true),
+                            action = ShiftAndCapsLock(false),
                             size = LARGE,
                             color = MUTED,
                         ),
