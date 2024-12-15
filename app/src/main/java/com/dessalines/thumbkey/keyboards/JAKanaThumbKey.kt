@@ -105,7 +105,7 @@ val KB_JA_KANA_THUMBKEY_HIRAGANA =
                     center =
                         KeyC(
                             display = KeyDisplay.TextDisplay("ア"),
-                            action = ToggleCapsLock,
+                            action = ShiftAndCapsLock(true),
                             size = LARGE,
                             color = MUTED,
                         ),
@@ -230,7 +230,7 @@ val KB_JA_KANA_THUMBKEY_KATAKANA =
                     center =
                         KeyC(
                             display = KeyDisplay.TextDisplay("あ"),
-                            action = ToggleCapsLock,
+                            action = ShiftAndCapsLock(false),
                             size = LARGE,
                             color = MUTED,
                         ),
