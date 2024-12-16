@@ -154,6 +154,7 @@ import com.dessalines.thumbkey.keyboards.KB_T9
 import com.dessalines.thumbkey.keyboards.KB_TOK_SITELEN_THUMBKEY_EMOJI
 import com.dessalines.thumbkey.keyboards.KB_TOK_THUMBKEY
 import com.dessalines.thumbkey.keyboards.KB_TR_THUMBKEY
+import com.dessalines.thumbkey.keyboards.KB_TR_TYPESPLIT
 import com.dessalines.thumbkey.keyboards.KB_UK_BY_RU_THUMBKEY
 import com.dessalines.thumbkey.keyboards.KB_UK_MESSAGEASE_SYMBOLS
 import com.dessalines.thumbkey.keyboards.KB_UK_RU_MESSAGEASE_SYMBOLS
@@ -207,6 +208,7 @@ enum class KeyboardLayout(
     FRTypeSplit(KB_FR_TYPESPLIT),
     ITTypeSplit(KB_IT_TYPESPLIT),
     PTTypeSplit(KB_PT_TYPESPLIT),
+    TRTypeSplit(KB_TR_TYPESPLIT),
     PLTypeSplitV2(KB_PL_TYPESPLIT_V2),
     ENTwoHands(KB_EN_TWO_HANDS),
     ENThumbKeyProgrammingWide(KB_EN_THUMBKEY_PROGRAMMING_WIDE),
