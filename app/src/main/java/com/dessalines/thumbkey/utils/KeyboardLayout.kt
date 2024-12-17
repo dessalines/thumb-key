@@ -208,7 +208,6 @@ enum class KeyboardLayout(
     FRTypeSplit(KB_FR_TYPESPLIT),
     ITTypeSplit(KB_IT_TYPESPLIT),
     PTTypeSplit(KB_PT_TYPESPLIT),
-    TRTypeSplit(KB_TR_TYPESPLIT),
     PLTypeSplitV2(KB_PL_TYPESPLIT_V2),
     ENTwoHands(KB_EN_TWO_HANDS),
     ENThumbKeyProgrammingWide(KB_EN_THUMBKEY_PROGRAMMING_WIDE),
@@ -326,4 +325,5 @@ enum class KeyboardLayout(
     HIThumbKeyExtended(KB_HI_THUMBKEY_EXTENDED),
     FRThumbKeyV3(KB_FR_THUMBKEY_V3),
     DEThumbkeySymNum(KB_DE_THUMBKEY_SYMNUM),
+    TRTypeSplit(KB_TR_TYPESPLIT),
 }
