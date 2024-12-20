@@ -14,6 +14,7 @@ val KB_HE_THUMBKEY_MAIN =
             listOf(
                 KeyItemC(
                     center = KeyC("מ", size = LARGE),
+                    topLeft = KeyC("\u200E", displayText = "LRM", color = MUTED),
                     bottomRight = KeyC("נ"),
                     swipeType = FOUR_WAY_DIAGONAL,
                 ),
@@ -24,6 +25,7 @@ val KB_HE_THUMBKEY_MAIN =
                 ),
                 KeyItemC(
                     center = KeyC("א", size = LARGE),
+                    topRight = KeyC("\u200F", displayText = "RLM", color = MUTED),
                     bottomLeft = KeyC("כ"),
                     swipeType = FOUR_WAY_DIAGONAL,
                 ),
