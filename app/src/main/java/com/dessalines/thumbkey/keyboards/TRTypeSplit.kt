@@ -16,12 +16,8 @@ val KB_TR_TYPESPLIT_MAIN =
                     center = KeyC("y", size = LARGE),
                     swipeType = FOUR_WAY_CROSS,
                     right = KeyC("x"),
-                    left =
-                        KeyC(
-                            display = null,
-                            action = CommitText("x"),
-                        ),
-                    bottom = KeyC("h"),
+                    left = KeyC("w"),
+                    bottom = KeyC("q"),
                 ),
                 KeyItemC(
                     center = KeyC("t", size = LARGE),
@@ -94,7 +90,7 @@ val KB_TR_TYPESPLIT_MAIN =
                             display = null,
                             action = CommitText("b"),
                         ),
-                    bottom = KeyC("r"),
+                    bottom = KeyC("h"),
                 ),
                 KeyItemC(
                     center = KeyC("a", size = LARGE),
@@ -131,12 +127,8 @@ val KB_TR_TYPESPLIT_SHIFTED =
                     center = KeyC("Y", size = LARGE),
                     swipeType = FOUR_WAY_CROSS,
                     right = KeyC("X"),
-                    left =
-                        KeyC(
-                            display = null,
-                            action = CommitText("X"),
-                        ),
-                    bottom = KeyC("H"),
+                    left = KeyC("W"),
+                    bottom = KeyC("Q"),
                 ),
                 KeyItemC(
                     center = KeyC("T", size = LARGE),
@@ -209,7 +201,7 @@ val KB_TR_TYPESPLIT_SHIFTED =
                             display = null,
                             action = CommitText("B"),
                         ),
-                    bottom = KeyC("R"),
+                    bottom = KeyC("H"),
                 ),
                 KeyItemC(
                     center = KeyC("A", size = LARGE),
