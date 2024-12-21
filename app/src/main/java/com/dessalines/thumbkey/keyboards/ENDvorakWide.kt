@@ -27,7 +27,6 @@ val KB_EN_DVORAK_WIDE_MAIN =
                 KeyItemC(
                     center = KeyC("a", size = LARGE),
                     swipeType = FOUR_WAY_DIAGONAL,
-                    bottomRight = KeyC("z"),
                 ),
                 KeyItemC(
                     center = KeyC("y", size = LARGE),
