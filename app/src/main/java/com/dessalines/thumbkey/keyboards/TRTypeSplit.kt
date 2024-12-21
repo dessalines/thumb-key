@@ -14,7 +14,13 @@ val KB_TR_TYPESPLIT_MAIN =
             listOf(
                 KeyItemC(
                     center = KeyC("y", size = LARGE),
-                    swipeType = TWO_WAY_VERTICAL,
+                    swipeType = FOUR_WAY_CROSS,
+                    right = KeyC("x"),
+                    left =
+                        KeyC(
+                            display = null,
+                            action = CommitText("x"),
+                        ),
                     bottom = KeyC("h"),
                 ),
                 KeyItemC(
@@ -31,14 +37,9 @@ val KB_TR_TYPESPLIT_MAIN =
                 EMOJI_KEY_ITEM_ALT,
                 KeyItemC(
                     center = KeyC("d", size = LARGE),
-                    swipeType = FOUR_WAY_CROSS,
-                    right = KeyC("b"),
-                    left =
-                        KeyC(
-                            display = null,
-                            action = CommitText("b"),
-                        ),
-                    bottom = KeyC("r"),
+                    swipeType = TWO_WAY_VERTICAL,
+                    bottom = KeyC("c"),
+                    top = KeyC("ç"),
                 ),
                 KeyItemC(
                     center = KeyC("m", size = LARGE),
@@ -86,6 +87,14 @@ val KB_TR_TYPESPLIT_MAIN =
             listOf(
                 KeyItemC(
                     center = KeyC("n", size = LARGE),
+                    swipeType = FOUR_WAY_CROSS,
+                    right = KeyC("b"),
+                    left =
+                        KeyC(
+                            display = null,
+                            action = CommitText("b"),
+                        ),
+                    bottom = KeyC("r"),
                 ),
                 KeyItemC(
                     center = KeyC("a", size = LARGE),
@@ -120,7 +129,13 @@ val KB_TR_TYPESPLIT_SHIFTED =
             listOf(
                 KeyItemC(
                     center = KeyC("Y", size = LARGE),
-                    swipeType = TWO_WAY_VERTICAL,
+                    swipeType = FOUR_WAY_CROSS,
+                    right = KeyC("X"),
+                    left =
+                        KeyC(
+                            display = null,
+                            action = CommitText("X"),
+                        ),
                     bottom = KeyC("H"),
                 ),
                 KeyItemC(
@@ -137,14 +152,9 @@ val KB_TR_TYPESPLIT_SHIFTED =
                 EMOJI_KEY_ITEM_ALT,
                 KeyItemC(
                     center = KeyC("D", size = LARGE),
-                    swipeType = FOUR_WAY_CROSS,
-                    right = KeyC("B"),
-                    left =
-                        KeyC(
-                            display = null,
-                            action = CommitText("B"),
-                        ),
-                    bottom = KeyC("R"),
+                    swipeType = TWO_WAY_VERTICAL,
+                    bottom = KeyC("C"),
+                    top = KeyC("Ç"),
                 ),
                 KeyItemC(
                     center = KeyC("M", size = LARGE),
@@ -192,6 +202,14 @@ val KB_TR_TYPESPLIT_SHIFTED =
             listOf(
                 KeyItemC(
                     center = KeyC("N", size = LARGE),
+                    swipeType = FOUR_WAY_CROSS,
+                    right = KeyC("B"),
+                    left =
+                        KeyC(
+                            display = null,
+                            action = CommitText("B"),
+                        ),
+                    bottom = KeyC("R"),
                 ),
                 KeyItemC(
                     center = KeyC("A", size = LARGE),
