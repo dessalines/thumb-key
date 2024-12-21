@@ -93,4 +93,13 @@
     <string name="database_restored">Database Restored.</string>
     <string name="database_backed_up">Database Backed up.</string>
     <string name="backup_and_restore">Backup and restore</string>
+    
+    <!-- Abbreviations -->
+    <string name="abbreviations">Abbreviations</string>
+    <string name="abbreviations_description">Add and manage text abbreviations that will be automatically expanded when you type them followed by a space.</string>
+    <string name="add_abbreviation">Add Abbreviation</string>
+    <string name="edit_abbreviation">Edit Abbreviation</string>
+    <string name="abbreviation">Abbreviation</string>
+    <string name="expansion">Expansion</string>
+    <string name="save">Save</string>
 </resources>

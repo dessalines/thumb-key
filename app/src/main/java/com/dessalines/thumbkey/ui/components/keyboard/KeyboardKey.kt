@@ -1,5 +1,7 @@
 package com.dessalines.thumbkey.ui.components.keyboard
+
 import android.content.Context
+import android.util.Log
 import android.media.AudioManager
 import android.view.HapticFeedbackConstants
 import android.view.KeyEvent
@@ -80,6 +82,8 @@ import kotlin.math.min
 import kotlin.time.Duration.Companion.seconds
 import kotlin.time.TimeMark
 import kotlin.time.TimeSource
+
+private const val TAG = "KeyboardKey"
 
 @OptIn(ExperimentalFoundationApi::class)
 @Composable
@@ -225,19 +229,7 @@ fun KeyboardKey(
 
                     // Set the correct action
                     val action = tapActions[tapCount % tapActions.size]
-                    performKeyAction(
-                        action = action,
-                        ime = ime,
-                        autoCapitalize = autoCapitalize,
-                        keyboardSettings = keyboardSettings,
-                        onToggleShiftMode = onToggleShiftMode,
-                        onToggleNumericMode = onToggleNumericMode,
-                        onToggleEmojiMode = onToggleEmojiMode,
-                        onToggleCapsLock = onToggleCapsLock,
-                        onAutoCapitalize = onAutoCapitalize,
-                        onSwitchLanguage = onSwitchLanguage,
-                        onChangePosition = onChangePosition,
-                    )
+                    ime.handleKeyAction(action)
                     doneKeyAction(scope, action, isDragged, releasedKey, animationHelperSpeed)
                 },
                 onLongClick = {

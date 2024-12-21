@@ -345,6 +345,24 @@ data class BehaviorUpdate(
 )
 
 @Dao
+interface AbbreviationDao {
+    @Query("SELECT * FROM Abbreviation")
+    fun getAllAbbreviations(): LiveData<List<Abbreviation>>
+
+    @Query("SELECT * FROM Abbreviation WHERE lower(abbreviation) = lower(:abbr) LIMIT 1")
+    fun getAbbreviation(abbr: String): Abbreviation?
+
+    @Query("SELECT * FROM Abbreviation WHERE lower(abbreviation) = lower(:abbr) LIMIT 1")
+    suspend fun getAbbreviationAsync(abbr: String): Abbreviation?
+
+    @Query("INSERT OR REPLACE INTO Abbreviation (abbreviation, expansion) VALUES (:abbr, :expansion)")
+    suspend fun insertOrUpdate(abbr: String, expansion: String)
+
+    @Query("DELETE FROM Abbreviation WHERE abbreviation = :abbr")
+    suspend fun delete(abbr: String)
+}
+
+@Dao
 interface AppSettingsDao {
     @Query("SELECT * FROM AppSettings limit 1")
     fun getSettings(): LiveData<AppSettings>
@@ -582,13 +600,41 @@ val MIGRATION_15_16 =
         }
     }
 
+val MIGRATION_16_17 =
+    object : Migration(16, 17) {
+        override fun migrate(db: SupportSQLiteDatabase) {
+            db.execSQL(
+                """
+                CREATE TABLE IF NOT EXISTS Abbreviation (
+                    abbreviation TEXT PRIMARY KEY NOT NULL,
+                    expansion TEXT NOT NULL
+                )
+                """
+            )
+            // Add default abbreviation
+            db.execSQL(
+                """
+                INSERT INTO Abbreviation (abbreviation, expansion) 
+                VALUES ('gm', 'Guten Morgen ')
+                """
+            )
+        }
+    }
+
+@Entity
+data class Abbreviation(
+    @PrimaryKey val abbreviation: String,
+    @ColumnInfo(name = "expansion") val expansion: String,
+)
+
 @Database(
-    version = 16,
-    entities = [AppSettings::class],
+    version = 17,
+    entities = [AppSettings::class, Abbreviation::class],
     exportSchema = true,
 )
 abstract class AppDB : RoomDatabase() {
     abstract fun appSettingsDao(): AppSettingsDao
+    abstract fun abbreviationDao(): AbbreviationDao
 
     companion object {
         @Volatile
@@ -621,7 +667,9 @@ abstract class AppDB : RoomDatabase() {
                             MIGRATION_13_14,
                             MIGRATION_14_15,
                             MIGRATION_15_16,
+                            MIGRATION_16_17,
                         )
+                        .fallbackToDestructiveMigration()
                         // Necessary because it can't insert data on creation
                         .addCallback(
                             object : Callback() {

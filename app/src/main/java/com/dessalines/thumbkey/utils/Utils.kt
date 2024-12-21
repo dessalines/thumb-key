@@ -334,6 +334,7 @@ fun performKeyAction(
     onSwitchLanguage: () -> Unit,
     onChangePosition: ((old: KeyboardPosition) -> KeyboardPosition) -> Unit,
 ) {
+    Log.d(TAG, "performKeyAction: action = $action")
     when (action) {
         is KeyAction.CommitText -> {
             val text = action.text
@@ -1014,6 +1015,11 @@ fun performKeyAction(
                     }
                 }
             }
+        }
+
+        is KeyAction.ExpandAbbreviation -> {
+            val text = action.text
+            ime.currentInputConnection.commitText(text, 1)
         }
 
         is KeyAction.ToggleCurrentWordCapitalization -> {
