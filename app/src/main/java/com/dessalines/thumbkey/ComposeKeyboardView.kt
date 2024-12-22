@@ -2,14 +2,11 @@ package com.dessalines.thumbkey
 
 import android.annotation.SuppressLint
 import android.content.Context
-import android.util.Log
 import android.widget.Toast
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.CompositionLocalProvider
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.livedata.observeAsState
-import androidx.compose.runtime.mutableStateOf
-import androidx.compose.runtime.remember
 import androidx.compose.ui.platform.AbstractComposeView
 import androidx.compose.ui.platform.LocalLayoutDirection
 import androidx.compose.ui.unit.LayoutDirection
@@ -17,9 +14,7 @@ import androidx.lifecycle.lifecycleScope
 import com.dessalines.thumbkey.db.AppSettingsRepository
 import com.dessalines.thumbkey.ui.components.keyboard.KeyboardScreen
 import com.dessalines.thumbkey.ui.theme.ThumbkeyTheme
-import com.dessalines.thumbkey.utils.KeyboardMode
 import com.dessalines.thumbkey.utils.KeyboardPosition
-import com.dessalines.thumbkey.utils.TAG
 import com.dessalines.thumbkey.utils.keyboardLayoutsSetFromDbIndexString
 import kotlinx.coroutines.launch
 
@@ -28,12 +23,12 @@ class ComposeKeyboardView(
     context: Context,
     private val settingsRepo: AppSettingsRepository,
 ) : AbstractComposeView(context) {
-    private val ime = context as IMEService
-
     @Composable
     override fun Content() {
         val settingsState = settingsRepo.appSettings.observeAsState()
         val settings by settingsState
+        val ctx = context as IMEService
+
         ThumbkeyTheme(
             settings = settings,
         ) {
@@ -41,7 +36,7 @@ class ComposeKeyboardView(
                 KeyboardScreen(
                     settings = settings,
                     onSwitchLanguage = {
-                        ime.lifecycleScope.launch {
+                        ctx.lifecycleScope.launch {
                             // Cycle to the next keyboard
                             val state = settingsState.value
                             state?.let { s ->
@@ -66,7 +61,7 @@ class ComposeKeyboardView(
                         }
                     },
                     onChangePosition = { f ->
-                        ime.lifecycleScope.launch {
+                        ctx.lifecycleScope.launch {
                             val state = settingsState.value
                             state?.let { s ->
                                 val nextPosition = f(KeyboardPosition.entries[s.position]).ordinal

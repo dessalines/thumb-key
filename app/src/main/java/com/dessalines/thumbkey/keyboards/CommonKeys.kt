@@ -168,10 +168,7 @@ val BACKSPACE_WIDE_KEY_ITEM = BACKSPACE_KEY_ITEM.copy(widthMultiplier = 3)
 
 val SPACEBAR_KEY_ITEM =
     KeyItemC(
-        center = KeyC(
-            action = KeyAction.CommitText(" "),
-            display = KeyDisplay.TextDisplay(" ")
-        ),
+        center = KeyC(" "),
         swipeType = FOUR_WAY_CROSS,
         slideType = SlideType.MOVE_CURSOR,
         left =
@@ -213,10 +210,7 @@ val SPACEBAR_DOUBLE_KEY_ITEM = SPACEBAR_KEY_ITEM.copy(widthMultiplier = 2)
 
 val SPACEBAR_PROGRAMMING_KEY_ITEM =
     KeyItemC(
-        center = KeyC(
-            action = KeyAction.CommitText(" "),
-            display = KeyDisplay.TextDisplay(" ")
-        ),
+        center = KeyC(" "),
         swipeType = FOUR_WAY_CROSS,
         slideType = SlideType.MOVE_CURSOR,
         left =
@@ -282,10 +276,7 @@ val RETURN_KEY_ITEM =
 
 val SPACEBAR_TYPESPLIT_MIDDLE_KEY_ITEM =
     KeyItemC(
-        center = KeyC(
-            action = KeyAction.CommitText(" "),
-            display = KeyDisplay.TextDisplay(" ")
-        ),
+        center = KeyC(" "),
         swipeType = FOUR_WAY_CROSS,
         slideType = SlideType.MOVE_CURSOR,
         left =

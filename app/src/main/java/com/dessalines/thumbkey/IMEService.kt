@@ -1,11 +1,6 @@
 package com.dessalines.thumbkey
 
-import android.content.Context
-import android.content.Intent
 import android.inputmethodservice.InputMethodService
-import android.view.inputmethod.InputConnection
-import android.view.inputmethod.InputMethodManager
-import com.dessalines.thumbkey.utils.KeyAction
 import android.util.Log
 import android.view.View
 import android.view.inputmethod.CursorAnchorInfo
@@ -21,18 +16,13 @@ import androidx.savedstate.SavedStateRegistry
 import androidx.savedstate.SavedStateRegistryController
 import androidx.savedstate.SavedStateRegistryOwner
 import androidx.savedstate.setViewTreeSavedStateRegistryOwner
-import com.dessalines.thumbkey.utils.KeyboardMode
 import com.dessalines.thumbkey.utils.TAG
-import com.dessalines.thumbkey.utils.getKeyboardMode
-
-private const val IME_ACTION_CUSTOM_LABEL = EditorInfo.IME_MASK_ACTION + 1
 
 class IMEService :
     InputMethodService(),
     LifecycleOwner,
     ViewModelStoreOwner,
     SavedStateRegistryOwner {
-
     private fun setupView(): View {
         val settingsRepo = (application as ThumbkeyApplication).appSettingsRepository
 
@@ -50,6 +40,18 @@ class IMEService :
         return view
     }
 
+    /**
+     * This is called every time the keyboard is brought up.
+     * You can't use onCreate, because that can't pick up new numeric inputs
+     */
+    override fun onStartInput(
+        attribute: EditorInfo?,
+        restarting: Boolean,
+    ) {
+        super.onStartInput(attribute, restarting)
+        val view = this.setupView()
+        this.setInputView(view)
+    }
 
     // Lifecycle Methods
     private var lifecycleRegistry: LifecycleRegistry = LifecycleRegistry(this)
@@ -62,16 +64,6 @@ class IMEService :
         super.onCreate()
         savedStateRegistryController.performRestore(null)
         handleLifecycleEvent(Lifecycle.Event.ON_RESUME)
-        
-    }
-
-    override fun onStartInput(
-        attribute: EditorInfo?,
-        restarting: Boolean,
-    ) {
-        super.onStartInput(attribute, restarting)
-        val view = this.setupView()
-        this.setInputView(view)
     }
 
     override fun onDestroy() {
@@ -88,6 +80,7 @@ class IMEService :
                 ignoreCursorMove = false
                 false
             } else {
+                Log.d(TAG, "cursor moved")
                 cursorAnchorInfo.selectionStart != selectionStart ||
                     cursorAnchorInfo.selectionEnd != selectionEnd
             }
@@ -116,5 +109,4 @@ class IMEService :
     private val savedStateRegistryController = SavedStateRegistryController.create(this)
     override val savedStateRegistry: SavedStateRegistry =
         savedStateRegistryController.savedStateRegistry
-
 }

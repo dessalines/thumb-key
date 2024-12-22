@@ -1,7 +1,5 @@
 package com.dessalines.thumbkey.ui.components.keyboard
-
 import android.content.Context
-import android.util.Log
 import android.media.AudioManager
 import android.view.HapticFeedbackConstants
 import android.view.KeyEvent
@@ -82,8 +80,6 @@ import kotlin.math.min
 import kotlin.time.Duration.Companion.seconds
 import kotlin.time.TimeMark
 import kotlin.time.TimeSource
-
-private const val TAG = "KeyboardKey"
 
 @OptIn(ExperimentalFoundationApi::class)
 @Composable
@@ -218,7 +214,6 @@ fun KeyboardKey(
                 onClick = {
                     // Set the last key info, and the tap count
                     val cAction = key.center.action
-                    Log.d(TAG, "KeyboardKey: Center action: $cAction")
                     lastAction.value?.let { (lastAction, time) ->
                         if (time.elapsedNow() < 1.seconds && lastAction == cAction && !ime.didCursorMove()) {
                             tapCount += 1
@@ -230,7 +225,6 @@ fun KeyboardKey(
 
                     // Set the correct action
                     val action = tapActions[tapCount % tapActions.size]
-                    Log.d(TAG, "KeyboardKey: Executing action: $action")
                     performKeyAction(
                         action = action,
                         ime = ime,
