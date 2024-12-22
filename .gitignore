@@ -17,3 +17,4 @@ app/schemas
 .classpath
 .kotlin
 build.sh
+/original_files*

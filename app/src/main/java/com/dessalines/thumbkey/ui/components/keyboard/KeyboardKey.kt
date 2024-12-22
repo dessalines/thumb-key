@@ -218,6 +218,7 @@ fun KeyboardKey(
                 onClick = {
                     // Set the last key info, and the tap count
                     val cAction = key.center.action
+                    Log.d(TAG, "KeyboardKey: Center action: $cAction")
                     lastAction.value?.let { (lastAction, time) ->
                         if (time.elapsedNow() < 1.seconds && lastAction == cAction && !ime.didCursorMove()) {
                             tapCount += 1
@@ -229,7 +230,20 @@ fun KeyboardKey(
 
                     // Set the correct action
                     val action = tapActions[tapCount % tapActions.size]
-                    ime.handleKeyAction(action)
+                    Log.d(TAG, "KeyboardKey: Executing action: $action")
+                    performKeyAction(
+                        action = action,
+                        ime = ime,
+                        autoCapitalize = autoCapitalize,
+                        keyboardSettings = keyboardSettings,
+                        onToggleShiftMode = onToggleShiftMode,
+                        onToggleNumericMode = onToggleNumericMode,
+                        onToggleEmojiMode = onToggleEmojiMode,
+                        onToggleCapsLock = onToggleCapsLock,
+                        onAutoCapitalize = onAutoCapitalize,
+                        onSwitchLanguage = onSwitchLanguage,
+                        onChangePosition = onChangePosition,
+                    )
                     doneKeyAction(scope, action, isDragged, releasedKey, animationHelperSpeed)
                 },
                 onLongClick = {
