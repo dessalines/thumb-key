@@ -138,6 +138,7 @@ val KB_FR_THUMBKEY_V2_SHIFTED =
                     top = KeyC("Ï", color = MUTED),
                     right = KeyC("Î", color = MUTED),
                     bottomRight = KeyC("K"),
+                    bottom = KeyC("X"),
                     bottomLeft = KeyC("Y"),
                 ),
                 EMOJI_KEY_ITEM,
@@ -147,6 +148,7 @@ val KB_FR_THUMBKEY_V2_SHIFTED =
                     center = KeyC("R", size = LARGE),
                     left = KeyC("-", color = MUTED),
                     right = KeyC("V"),
+                    topLeft = KeyC("(", color = MUTED, swipeReturnAction = CommitText("[")),
                 ),
                 KeyItemC(
                     center = KeyC("N", size = LARGE),
