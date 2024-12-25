@@ -334,7 +334,6 @@ fun performKeyAction(
     onSwitchLanguage: () -> Unit,
     onChangePosition: ((old: KeyboardPosition) -> KeyboardPosition) -> Unit,
 ) {
-    Log.d(TAG, "performKeyAction: action = $action")
     when (action) {
         is KeyAction.CommitText -> {
             val text = action.text
@@ -1099,8 +1098,6 @@ fun getKeyboardMode(
     autoCapitalize: Boolean,
 ): KeyboardMode {
     val inputType = ime.currentInputEditorInfo.inputType and (InputType.TYPE_MASK_CLASS)
-    Log.d(TAG, "getKeyboardMode: Input type: $inputType")
-    Log.d(TAG, "getKeyboardMode: Auto capitalize: $autoCapitalize")
 
     return if (listOf(
             InputType.TYPE_CLASS_NUMBER,
