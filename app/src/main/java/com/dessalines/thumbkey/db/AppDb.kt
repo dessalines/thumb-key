@@ -611,13 +611,6 @@ val MIGRATION_16_17 =
                 )
                 """
             )
-            // Add default abbreviation
-            db.execSQL(
-                """
-                INSERT INTO Abbreviation (abbreviation, expansion) 
-                VALUES ('gm', 'Guten Morgen ')
-                """
-            )
         }
     }
 
