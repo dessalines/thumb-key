@@ -339,18 +339,18 @@ fun performKeyAction(
             val text = action.text
             Log.d(TAG, "committing key text: $text")
             ime.ignoreNextCursorMove()
-            
+
             if (text == " ") {
                 val currentText = ime.currentInputConnection.getTextBeforeCursor(1000, 0)?.toString()
                 if (currentText != null) {
                     val abbreviationManager = AbbreviationManager(ime.applicationContext)
                     val (shouldExpand, expandedText) = abbreviationManager.checkAndExpand(currentText)
-                    
+
                     if (shouldExpand) {
                         // Delete the abbreviation
                         val lastWord = currentText.split(Regex("[ \n]")).last()
                         ime.currentInputConnection.deleteSurroundingText(lastWord.length, 0)
-                        
+
                         // Insert the expansion and a space
                         ime.currentInputConnection.commitText(expandedText + " ", 1)
                     } else {
@@ -1111,7 +1111,7 @@ fun getKeyboardMode(
         val shouldAutoCapitalize = autoCapitalizeCheck(ime)
         Log.d(TAG, "getKeyboardMode: Is URI/Email/Password field: $isUriOrEmail")
         Log.d(TAG, "getKeyboardMode: Should auto capitalize: $shouldAutoCapitalize")
-        
+
         if (autoCapitalize && !isUriOrEmail && shouldAutoCapitalize) {
             Log.d(TAG, "getKeyboardMode: Setting SHIFTED mode due to auto capitalize")
             KeyboardMode.SHIFTED

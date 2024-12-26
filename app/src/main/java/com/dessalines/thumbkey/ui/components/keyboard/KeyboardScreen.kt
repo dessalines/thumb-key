@@ -17,7 +17,6 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.runtime.Composable
-import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
@@ -65,6 +64,7 @@ import com.dessalines.thumbkey.keyboards.EMOJI_BACK_KEY_ITEM
 import com.dessalines.thumbkey.keyboards.KB_EN_THUMBKEY_MAIN
 import com.dessalines.thumbkey.keyboards.NUMERIC_KEY_ITEM
 import com.dessalines.thumbkey.keyboards.RETURN_KEY_ITEM
+import com.dessalines.thumbkey.utils.AbbreviationManager
 import com.dessalines.thumbkey.utils.CircularDragAction
 import com.dessalines.thumbkey.utils.KeyAction
 import com.dessalines.thumbkey.utils.KeyboardLayout
@@ -72,9 +72,8 @@ import com.dessalines.thumbkey.utils.KeyboardMode
 import com.dessalines.thumbkey.utils.KeyboardPosition
 import com.dessalines.thumbkey.utils.TAG
 import com.dessalines.thumbkey.utils.getKeyboardMode
-import com.dessalines.thumbkey.utils.AbbreviationManager
-import com.dessalines.thumbkey.utils.performKeyAction
 import com.dessalines.thumbkey.utils.keyboardPositionToAlignment
+import com.dessalines.thumbkey.utils.performKeyAction
 import com.dessalines.thumbkey.utils.toBool
 import kotlin.time.TimeMark
 
@@ -88,10 +87,11 @@ fun KeyboardScreen(
     val abbreviationManager = remember { AbbreviationManager(ctx.applicationContext) }
 
     var mode by remember {
-        val startMode = getKeyboardMode(
-            ime = ctx,
-            autoCapitalize = settings?.autoCapitalize?.toBool() ?: false,
-        )
+        val startMode =
+            getKeyboardMode(
+                ime = ctx,
+                autoCapitalize = settings?.autoCapitalize?.toBool() ?: false,
+            )
         Log.d(TAG, "KeyboardScreen: Initial keyboard mode: $startMode")
         mutableStateOf(startMode)
     }
@@ -235,16 +235,22 @@ fun KeyboardScreen(
                                     autoCapitalize = autoCapitalize,
                                     keyboardSettings = keyboardDefinition.settings,
                                     onToggleShiftMode = { enable ->
-                                        mode = if (enable) KeyboardMode.SHIFTED else {
-                                            capsLock = false
-                                            KeyboardMode.MAIN
-                                        }
+                                        mode =
+                                            if (enable) {
+                                                KeyboardMode.SHIFTED
+                                            } else {
+                                                capsLock = false
+                                                KeyboardMode.MAIN
+                                            }
                                     },
                                     onToggleNumericMode = { enable ->
-                                        mode = if (enable) KeyboardMode.NUMERIC else {
-                                            capsLock = false
-                                            KeyboardMode.MAIN
-                                        }
+                                        mode =
+                                            if (enable) {
+                                                KeyboardMode.NUMERIC
+                                            } else {
+                                                capsLock = false
+                                                KeyboardMode.MAIN
+                                            }
                                     },
                                     onToggleEmojiMode = { enable ->
                                         mode = if (enable) KeyboardMode.EMOJI else KeyboardMode.MAIN
@@ -304,38 +310,38 @@ fun KeyboardScreen(
                                 slideCursorMovementMode = slideCursorMovementMode,
                                 slideSpacebarDeadzoneEnabled = slideSpacebarDeadzoneEnabled,
                                 slideBackspaceDeadzoneEnabled = slideBackspaceDeadzoneEnabled,
-                                    onToggleShiftMode = { enable ->
-                                        Log.d(TAG, "KeyboardScreen: Toggling shift mode, enable: $enable")
-                                        mode =
-                                            if (enable) {
-                                                KeyboardMode.SHIFTED
-                                            } else {
-                                                capsLock = false
-                                                KeyboardMode.MAIN
-                                            }
-                                        Log.d(TAG, "KeyboardScreen: New keyboard mode: $mode")
-                                    },
-                                    onToggleNumericMode = { enable ->
-                                        Log.d(TAG, "KeyboardScreen: Toggling numeric mode, enable: $enable")
-                                        mode =
-                                            if (enable) {
-                                                KeyboardMode.NUMERIC
-                                            } else {
-                                                capsLock = false
-                                                KeyboardMode.MAIN
-                                            }
-                                        Log.d(TAG, "KeyboardScreen: New keyboard mode: $mode")
-                                    },
-                                    onToggleEmojiMode = { enable ->
-                                        Log.d(TAG, "KeyboardScreen: Toggling emoji mode, enable: $enable")
-                                        mode =
-                                            if (enable) {
-                                                KeyboardMode.EMOJI
-                                            } else {
-                                                KeyboardMode.MAIN
-                                            }
-                                        Log.d(TAG, "KeyboardScreen: New keyboard mode: $mode")
-                                    },
+                                onToggleShiftMode = { enable ->
+                                    Log.d(TAG, "KeyboardScreen: Toggling shift mode, enable: $enable")
+                                    mode =
+                                        if (enable) {
+                                            KeyboardMode.SHIFTED
+                                        } else {
+                                            capsLock = false
+                                            KeyboardMode.MAIN
+                                        }
+                                    Log.d(TAG, "KeyboardScreen: New keyboard mode: $mode")
+                                },
+                                onToggleNumericMode = { enable ->
+                                    Log.d(TAG, "KeyboardScreen: Toggling numeric mode, enable: $enable")
+                                    mode =
+                                        if (enable) {
+                                            KeyboardMode.NUMERIC
+                                        } else {
+                                            capsLock = false
+                                            KeyboardMode.MAIN
+                                        }
+                                    Log.d(TAG, "KeyboardScreen: New keyboard mode: $mode")
+                                },
+                                onToggleEmojiMode = { enable ->
+                                    Log.d(TAG, "KeyboardScreen: Toggling emoji mode, enable: $enable")
+                                    mode =
+                                        if (enable) {
+                                            KeyboardMode.EMOJI
+                                        } else {
+                                            KeyboardMode.MAIN
+                                        }
+                                    Log.d(TAG, "KeyboardScreen: New keyboard mode: $mode")
+                                },
                                 onToggleCapsLock = {
                                     capsLock = !capsLock
                                 },

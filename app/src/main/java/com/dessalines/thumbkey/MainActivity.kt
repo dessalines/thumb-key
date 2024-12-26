@@ -26,9 +26,9 @@ import com.dessalines.thumbkey.ui.components.settings.SettingsScreen
 import com.dessalines.thumbkey.ui.components.settings.about.AboutScreen
 import com.dessalines.thumbkey.ui.components.settings.backupandrestore.BackupAndRestoreScreen
 import com.dessalines.thumbkey.ui.components.settings.behavior.BehaviorScreen
-import com.dessalines.thumbkey.ui.screens.AbbreviationsScreen
 import com.dessalines.thumbkey.ui.components.settings.lookandfeel.LookAndFeelScreen
 import com.dessalines.thumbkey.ui.components.setup.SetupScreen
+import com.dessalines.thumbkey.ui.screens.AbbreviationsScreen
 import com.dessalines.thumbkey.ui.theme.ThumbkeyTheme
 import com.dessalines.thumbkey.utils.ANIMATION_SPEED
 import com.dessalines.thumbkey.utils.getImeNames

@@ -356,10 +356,17 @@ interface AbbreviationDao {
     suspend fun getAbbreviationAsync(abbr: String): Abbreviation?
 
     @Query("UPDATE Abbreviation SET abbreviation = :newAbbr, expansion = :expansion WHERE id = :id")
-    suspend fun update(id: Int, newAbbr: String, expansion: String)
+    suspend fun update(
+        id: Int,
+        newAbbr: String,
+        expansion: String,
+    )
 
     @Query("INSERT INTO Abbreviation (abbreviation, expansion) VALUES (:abbr, :expansion)")
-    suspend fun insert(abbr: String, expansion: String)
+    suspend fun insert(
+        abbr: String,
+        expansion: String,
+    )
 
     @Query("DELETE FROM Abbreviation WHERE id = :id")
     suspend fun deleteById(id: Int)
@@ -612,7 +619,7 @@ val MIGRATION_16_17 =
                     abbreviation TEXT PRIMARY KEY NOT NULL,
                     expansion TEXT NOT NULL
                 )
-                """
+                """,
             )
         }
     }
@@ -624,30 +631,35 @@ data class Abbreviation(
     @ColumnInfo(name = "expansion") val expansion: String,
 )
 
-val MIGRATION_17_18 = object : Migration(17, 18) {
-    override fun migrate(db: SupportSQLiteDatabase) {
-        // Create a temporary table with the new schema
-        db.execSQL("""
+val MIGRATION_17_18 =
+    object : Migration(17, 18) {
+        override fun migrate(db: SupportSQLiteDatabase) {
+            // Create a temporary table with the new schema
+            db.execSQL(
+                """
             CREATE TABLE IF NOT EXISTS Abbreviation_temp (
                 id INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL,
                 abbreviation TEXT NOT NULL,
                 expansion TEXT NOT NULL
             )
-        """)
-        
-        // Copy data from the old table to the new table
-        db.execSQL("""
+        """,
+            )
+
+            // Copy data from the old table to the new table
+            db.execSQL(
+                """
             INSERT INTO Abbreviation_temp (abbreviation, expansion)
             SELECT abbreviation, expansion FROM Abbreviation
-        """)
-        
-        // Drop the old table
-        db.execSQL("DROP TABLE Abbreviation")
-        
-        // Rename the temporary table to the original name
-        db.execSQL("ALTER TABLE Abbreviation_temp RENAME TO Abbreviation")
+        """,
+            )
+
+            // Drop the old table
+            db.execSQL("DROP TABLE Abbreviation")
+
+            // Rename the temporary table to the original name
+            db.execSQL("ALTER TABLE Abbreviation_temp RENAME TO Abbreviation")
+        }
     }
-}
 
 @Database(
     version = 18,
@@ -656,6 +668,7 @@ val MIGRATION_17_18 = object : Migration(17, 18) {
 )
 abstract class AppDB : RoomDatabase() {
     abstract fun appSettingsDao(): AppSettingsDao
+
     abstract fun abbreviationDao(): AbbreviationDao
 
     companion object {
@@ -691,8 +704,7 @@ abstract class AppDB : RoomDatabase() {
                             MIGRATION_15_16,
                             MIGRATION_16_17,
                             MIGRATION_17_18,
-                        )
-                        .fallbackToDestructiveMigration()
+                        ).fallbackToDestructiveMigration()
                         // Necessary because it can't insert data on creation
                         .addCallback(
                             object : Callback() {

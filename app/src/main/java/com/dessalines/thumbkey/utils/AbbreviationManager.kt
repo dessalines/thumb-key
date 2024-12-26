@@ -7,17 +7,20 @@ import com.dessalines.thumbkey.db.AppDB
 
 private const val ABBR_TAG = "AbbreviationManager"
 
-class AbbreviationManager(private val context: Context) {
+class AbbreviationManager(
+    private val context: Context,
+) {
     init {
         Log.d(ABBR_TAG, "Initializing AbbreviationManager")
     }
 
-    private val abbreviationDao: AbbreviationDao = run {
-        Log.d(ABBR_TAG, "Creating AbbreviationDao")
-        AppDB.getDatabase(context).abbreviationDao().also {
-            Log.d(ABBR_TAG, "AbbreviationDao created successfully")
+    private val abbreviationDao: AbbreviationDao =
+        run {
+            Log.d(ABBR_TAG, "Creating AbbreviationDao")
+            AppDB.getDatabase(context).abbreviationDao().also {
+                Log.d(ABBR_TAG, "AbbreviationDao created successfully")
+            }
         }
-    }
 
     @Synchronized
     fun checkAndExpand(text: String): Pair<Boolean, String> {
@@ -33,7 +36,7 @@ class AbbreviationManager(private val context: Context) {
             Log.d(ABBR_TAG, "checkAndExpand: no words found")
             return Pair(false, text)
         }
-        
+
         val lastWord = words.last()
         Log.d(ABBR_TAG, "checkAndExpand: lastWord = '$lastWord'")
         if (lastWord.isEmpty()) {
