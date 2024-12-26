@@ -65,12 +65,14 @@ fun AbbreviationsScreen(
             )
 
             val abbreviations by abbreviationViewModel.allAbbreviations.observeAsState(initial = emptyList())
-            LazyColumn {
+            LazyColumn(
+                contentPadding = PaddingValues(bottom = 80.dp) // Add padding for FAB
+            ) {
                 items(abbreviations) { abbreviation ->
                     AbbreviationItem(
                         abbreviation = abbreviation,
                         onEdit = { abbreviationToEdit = it },
-                        onDelete = { abbreviationViewModel.delete(it.abbreviation) }
+                onDelete = { abbreviationViewModel.delete(it.id) }
                     )
                 }
             }
@@ -92,7 +94,7 @@ fun AbbreviationsScreen(
                 abbreviation = abbreviation,
                 onDismiss = { abbreviationToEdit = null },
                 onSave = { abbr, expansion ->
-                    abbreviationViewModel.insertOrUpdate(abbr, expansion)
+                    abbreviationViewModel.insertOrUpdate(abbr, expansion, abbreviation.id)
                     abbreviationToEdit = null
                 }
             )

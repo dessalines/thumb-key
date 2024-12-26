@@ -11,13 +11,17 @@ class AbbreviationRepository(private val abbreviationDao: AbbreviationDao) {
     val allAbbreviations: LiveData<List<Abbreviation>> = abbreviationDao.getAllAbbreviations()
 
     @WorkerThread
-    suspend fun insertOrUpdate(abbr: String, expansion: String) {
-        abbreviationDao.insertOrUpdate(abbr, expansion)
+    suspend fun insertOrUpdate(abbr: String, expansion: String, id: Int? = null) {
+        if (id != null) {
+            abbreviationDao.update(id, abbr, expansion)
+        } else {
+            abbreviationDao.insert(abbr, expansion)
+        }
     }
 
     @WorkerThread
-    suspend fun delete(abbr: String) {
-        abbreviationDao.delete(abbr)
+    suspend fun delete(id: Int) {
+        abbreviationDao.deleteById(id)
     }
 
     @WorkerThread
@@ -29,12 +33,12 @@ class AbbreviationRepository(private val abbreviationDao: AbbreviationDao) {
 class AbbreviationViewModel(private val repository: AbbreviationRepository) : ViewModel() {
     val allAbbreviations: LiveData<List<Abbreviation>> = repository.allAbbreviations
 
-    fun insertOrUpdate(abbr: String, expansion: String) = viewModelScope.launch {
-        repository.insertOrUpdate(abbr, expansion)
+    fun insertOrUpdate(abbr: String, expansion: String, id: Int? = null) = viewModelScope.launch {
+        repository.insertOrUpdate(abbr, expansion, id)
     }
 
-    fun delete(abbr: String) = viewModelScope.launch {
-        repository.delete(abbr)
+    fun delete(id: Int) = viewModelScope.launch {
+        repository.delete(id)
     }
 
     fun getAbbreviation(abbr: String): Abbreviation? {
