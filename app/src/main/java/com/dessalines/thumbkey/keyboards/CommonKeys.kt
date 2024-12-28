@@ -35,13 +35,13 @@ fun textEditKeyItem(center: KeyC) =
                 action = Cut,
                 color = MUTED,
             ),
-        left =
+        bottomLeft =
             KeyC(
                 display = KeyDisplay.IconDisplay(Icons.AutoMirrored.Outlined.Undo),
                 action = Undo,
                 color = MUTED,
             ),
-        right =
+        bottomRight =
             KeyC(
                 display = KeyDisplay.IconDisplay(Icons.AutoMirrored.Outlined.Redo),
                 action = Redo,
