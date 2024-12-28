@@ -58,7 +58,12 @@ val WIDE_NUMERIC_KEYBOARD =
                     swipeType = FOUR_WAY_CROSS,
                     top = KeyC("<"),
                     topLeft = KeyC("{"),
-                    left = KeyC("(", display=""),
+                    left =
+                        KeyC(
+                            // secret! (to avoid excessive visual noise)
+                            display = KeyDisplay.TextDisplay(""),
+                            action = CommitText("("),
+                        ),
                     bottomLeft = KeyC("["),
                     bottom = KeyC(":"),
                 ),
@@ -97,7 +102,12 @@ val WIDE_NUMERIC_KEYBOARD =
                     swipeType = FOUR_WAY_CROSS,
                     top = KeyC(">"),
                     topRight = KeyC("}"),
-                    right = KeyC(")", display=""),
+                    right =
+                        KeyC(
+                            // secret! (to avoid excessive visual noise)
+                            display = KeyDisplay.TextDisplay(""),
+                            action = CommitText(")"),
+                        ),
                     bottomRight = KeyC("]"),
                     bottom = KeyC(";"),
                 ),
