@@ -25,7 +25,7 @@ val WIDE_NUMERIC_KEYBOARD =
                             display = KeyDisplay.TextDisplay(""),
                             action = CommitText("¹"),
                         ),
-                    bottomLeft = KeyC("_"),
+                    bottom = KeyC("_"),
                     bottomRight = KeyC("|"),
                 ),
                 KeyItemC(
@@ -38,13 +38,11 @@ val WIDE_NUMERIC_KEYBOARD =
                             display = KeyDisplay.TextDisplay(""),
                             action = CommitText("²"),
                         ),
-                    bottomLeft = KeyC(":"),
-                    bottomRight = KeyC(";"),
                 ),
                 KeyItemC(
                     center = KeyC("3", size = LARGE),
                     swipeType = FOUR_WAY_DIAGONAL,
-                    topLeft = KeyC("^"),
+                    bottomLeft = KeyC("^"),
                     topRight =
                         KeyC(
                             // secret! (to avoid excessive visual noise)
@@ -59,8 +57,10 @@ val WIDE_NUMERIC_KEYBOARD =
                     center = KeyC("(", size = LARGE),
                     swipeType = FOUR_WAY_CROSS,
                     top = KeyC("<"),
-                    left = KeyC("{"),
-                    right = KeyC("["),
+                    topLeft = KeyC("{"),
+                    left = KeyC("(", display=""),
+                    bottomLeft = KeyC("["),
+                    bottom = KeyC(":"),
                 ),
                 KeyItemC(
                     center = KeyC("4", size = LARGE),
@@ -96,8 +96,10 @@ val WIDE_NUMERIC_KEYBOARD =
                     center = KeyC(")", size = LARGE),
                     swipeType = FOUR_WAY_CROSS,
                     top = KeyC(">"),
-                    left = KeyC("]"),
-                    right = KeyC("}"),
+                    topRight = KeyC("}"),
+                    right = KeyC(")", display=""),
+                    bottomRight = KeyC("]"),
+                    bottom = KeyC(";"),
                 ),
             ),
             listOf(
@@ -113,23 +115,23 @@ val WIDE_NUMERIC_KEYBOARD =
                 KeyItemC(
                     center = KeyC("7", size = LARGE),
                     swipeType = FOUR_WAY_DIAGONAL,
-                    topLeft = KeyC("="),
+                    left = KeyC("@"),
+                    top = KeyC("&"),
                     topRight = KeyC("%"),
                     bottomLeft = KeyC("-"),
+                    bottom = KeyC("="),
                     bottomRight = KeyC("+"),
                 ),
                 KeyItemC(
                     center = KeyC("8", size = LARGE),
                     swipeType = FOUR_WAY_DIAGONAL,
-                    topLeft = KeyC("@"),
-                    topRight = KeyC("&"),
                     bottomLeft = KeyC("*"),
                     bottomRight = KeyC("#"),
                 ),
                 KeyItemC(
                     center = KeyC("9", size = LARGE),
                     swipeType = FOUR_WAY_DIAGONAL,
-                    topLeft = KeyC("~"),
+                    top = KeyC("~"),
                     bottomLeft = KeyC("\\"),
                     bottomRight = KeyC("/"),
                 ),
