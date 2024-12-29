@@ -1,3 +1,15 @@
+## What's Changed in 4.0.11
+
+- Moving undo/redo to bottom left and bottom right swipes. by @dessalines in [#1210](https://github.com/dessalines/thumb-key/pull/1210)
+- Update NumericWide by @lyluqo in [#1211](https://github.com/dessalines/thumb-key/pull/1211)
+- Add some missing keys on the shifted layout and ! on numeric ? swipeReturn by @Raghnarok in [#1207](https://github.com/dessalines/thumb-key/pull/1207)
+
+## New Contributors
+
+- @lyluqo made their first contribution in [#1211](https://github.com/dessalines/thumb-key/pull/1211)
+
+**Full Changelog**: https://github.com/dessalines/thumb-key/compare/4.0.10...4.0.11
+
 ## What's Changed in 4.0.10
 
 - Added Dvorak style wide keyboard by @iacobo in [#1201](https://github.com/dessalines/thumb-key/pull/1201)
