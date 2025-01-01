@@ -1,3 +1,12 @@
+## What's Changed in 4.0.12
+
+- Adding fastlane generation. by @dessalines in [#1219](https://github.com/dessalines/thumb-key/pull/1219)
+- Using a center-aligned app bar. by @dessalines in [#1217](https://github.com/dessalines/thumb-key/pull/1217)
+- Fixing icon dep. by @dessalines in [#1214](https://github.com/dessalines/thumb-key/pull/1214)
+- Add Layout english dvorak wide compose by @lyluqo in [#1213](https://github.com/dessalines/thumb-key/pull/1213)
+
+**Full Changelog**: https://github.com/dessalines/thumb-key/compare/4.0.11...4.0.12
+
 ## What's Changed in 4.0.11
 
 - Moving undo/redo to bottom left and bottom right swipes. by @dessalines in [#1210](https://github.com/dessalines/thumb-key/pull/1210)
