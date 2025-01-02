@@ -339,10 +339,29 @@ fun performKeyAction(
             val text = action.text
             Log.d(TAG, "committing key text: $text")
             ime.ignoreNextCursorMove()
-            ime.currentInputConnection.commitText(
-                text,
-                1,
-            )
+
+            if (text == " ") {
+                val currentText = ime.currentInputConnection.getTextBeforeCursor(1000, 0)?.toString()
+                if (currentText != null) {
+                    val abbreviationManager = AbbreviationManager(ime.applicationContext)
+                    val (shouldExpand, expandedText) = abbreviationManager.checkAndExpand(currentText)
+
+                    if (shouldExpand) {
+                        // Delete the abbreviation
+                        val lastWord = currentText.split(Regex("[ \n]")).last()
+                        ime.currentInputConnection.deleteSurroundingText(lastWord.length, 0)
+
+                        // Insert the expansion and a space
+                        ime.currentInputConnection.commitText(expandedText + " ", 1)
+                    } else {
+                        ime.currentInputConnection.commitText(" ", 1)
+                    }
+                } else {
+                    ime.currentInputConnection.commitText(" ", 1)
+                }
+            } else {
+                ime.currentInputConnection.commitText(text, 1)
+            }
 
             if (autoCapitalize) {
                 autoCapitalize(
@@ -1016,6 +1035,11 @@ fun performKeyAction(
             }
         }
 
+        is KeyAction.ExpandAbbreviation -> {
+            val text = action.text
+            ime.currentInputConnection.commitText(text, 1)
+        }
+
         is KeyAction.ToggleCurrentWordCapitalization -> {
             val maxLength = 100
             val wordBorderCharacters = ".,;:!?\"'()-—[]{}<>/\\|#$%^_+=~`"
@@ -1054,7 +1078,7 @@ fun performKeyAction(
  * Returns the current IME action, or IME_FLAG_NO_ENTER_ACTION if there is none.
  */
 fun getImeActionCode(ime: IMEService): Int {
-    val ei = ime.currentInputEditorInfo
+    val ei = ime.currentInputEditorInfo ?: return EditorInfo.IME_ACTION_NONE
 
     return if ((ei.imeOptions and EditorInfo.IME_FLAG_NO_ENTER_ACTION) != 0) {
         EditorInfo.IME_ACTION_NONE
@@ -1080,11 +1104,19 @@ fun getKeyboardMode(
             InputType.TYPE_CLASS_PHONE,
         ).contains(inputType)
     ) {
+        Log.d(TAG, "getKeyboardMode: Setting NUMERIC mode due to number/phone input type")
         KeyboardMode.NUMERIC
     } else {
-        if (autoCapitalize && !isUriOrEmailOrPasswordField(ime) && autoCapitalizeCheck(ime)) {
+        val isUriOrEmail = isUriOrEmailOrPasswordField(ime)
+        val shouldAutoCapitalize = autoCapitalizeCheck(ime)
+        Log.d(TAG, "getKeyboardMode: Is URI/Email/Password field: $isUriOrEmail")
+        Log.d(TAG, "getKeyboardMode: Should auto capitalize: $shouldAutoCapitalize")
+
+        if (autoCapitalize && !isUriOrEmail && shouldAutoCapitalize) {
+            Log.d(TAG, "getKeyboardMode: Setting SHIFTED mode due to auto capitalize")
             KeyboardMode.SHIFTED
         } else {
+            Log.d(TAG, "getKeyboardMode: Setting MAIN mode")
             KeyboardMode.MAIN
         }
     }
@@ -1107,13 +1139,18 @@ private fun autoCapitalize(
     }
 }
 
-fun autoCapitalizeCheck(ime: IMEService): Boolean = ime.currentInputConnection.getCursorCapsMode(ime.currentInputEditorInfo.inputType) > 0
+fun autoCapitalizeCheck(ime: IMEService): Boolean {
+    val connection = ime.currentInputConnection ?: return false
+    val editorInfo = ime.currentInputEditorInfo ?: return false
+    return connection.getCursorCapsMode(editorInfo.inputType) > 0
+}
 
 /**
  * Avoid capitalizing or switching to shifted mode in certain edit boxes
  */
 fun isUriOrEmailOrPasswordField(ime: IMEService): Boolean {
-    val inputType = ime.currentInputEditorInfo.inputType and (InputType.TYPE_MASK_VARIATION)
+    val editorInfo = ime.currentInputEditorInfo ?: return false
+    val inputType = editorInfo.inputType and (InputType.TYPE_MASK_VARIATION)
     return listOf(
         InputType.TYPE_TEXT_VARIATION_URI,
         InputType.TYPE_TEXT_VARIATION_WEB_EMAIL_ADDRESS,
@@ -1127,7 +1164,8 @@ fun isUriOrEmailOrPasswordField(ime: IMEService): Boolean {
 }
 
 fun isPasswordField(ime: IMEService): Boolean {
-    val inputType = ime.currentInputEditorInfo.inputType and (InputType.TYPE_MASK_VARIATION)
+    val editorInfo = ime.currentInputEditorInfo ?: return false
+    val inputType = editorInfo.inputType and (InputType.TYPE_MASK_VARIATION)
     return listOf(
         InputType.TYPE_TEXT_VARIATION_PASSWORD,
         InputType.TYPE_TEXT_VARIATION_WEB_PASSWORD,
