@@ -26,6 +26,7 @@ import com.dessalines.thumbkey.keyboards.KB_EN_DE_THUMBKEY_AE
 import com.dessalines.thumbkey.keyboards.KB_EN_DE_THUMBKEY_V2
 import com.dessalines.thumbkey.keyboards.KB_EN_DOUBLE_SYMBOLS
 import com.dessalines.thumbkey.keyboards.KB_EN_DVORAK_WIDE
+import com.dessalines.thumbkey.keyboards.KB_EN_DVORAK_WIDE_COMPOSE
 import com.dessalines.thumbkey.keyboards.KB_EN_EE_THUMBKEY
 import com.dessalines.thumbkey.keyboards.KB_EN_EO_MESSAGEASE_SYMBOLS
 import com.dessalines.thumbkey.keyboards.KB_EN_EO_THUMBKEY
@@ -328,4 +329,5 @@ enum class KeyboardLayout(
     DEThumbkeySymNum(KB_DE_THUMBKEY_SYMNUM),
     TRTypeSplit(KB_TR_TYPESPLIT),
     ENDvorakWide(KB_EN_DVORAK_WIDE),
+    ENDvorakWideCompose(KB_EN_DVORAK_WIDE_COMPOSE),
 }

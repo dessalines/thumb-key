@@ -1,3 +1,24 @@
+## What's Changed in 4.0.12
+
+- Adding fastlane generation. by @dessalines in [#1219](https://github.com/dessalines/thumb-key/pull/1219)
+- Using a center-aligned app bar. by @dessalines in [#1217](https://github.com/dessalines/thumb-key/pull/1217)
+- Fixing icon dep. by @dessalines in [#1214](https://github.com/dessalines/thumb-key/pull/1214)
+- Add Layout english dvorak wide compose by @lyluqo in [#1213](https://github.com/dessalines/thumb-key/pull/1213)
+
+**Full Changelog**: https://github.com/dessalines/thumb-key/compare/4.0.11...4.0.12
+
+## What's Changed in 4.0.11
+
+- Moving undo/redo to bottom left and bottom right swipes. by @dessalines in [#1210](https://github.com/dessalines/thumb-key/pull/1210)
+- Update NumericWide by @lyluqo in [#1211](https://github.com/dessalines/thumb-key/pull/1211)
+- Add some missing keys on the shifted layout and ! on numeric ? swipeReturn by @Raghnarok in [#1207](https://github.com/dessalines/thumb-key/pull/1207)
+
+## New Contributors
+
+- @lyluqo made their first contribution in [#1211](https://github.com/dessalines/thumb-key/pull/1211)
+
+**Full Changelog**: https://github.com/dessalines/thumb-key/compare/4.0.10...4.0.11
+
 ## What's Changed in 4.0.10
 
 - Added Dvorak style wide keyboard by @iacobo in [#1201](https://github.com/dessalines/thumb-key/pull/1201)
