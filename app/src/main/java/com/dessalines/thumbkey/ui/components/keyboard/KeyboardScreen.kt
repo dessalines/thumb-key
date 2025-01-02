@@ -111,6 +111,8 @@ fun KeyboardScreen(
             KeyboardMode.MAIN -> keyboardDefinition.modes.main
             KeyboardMode.SHIFTED -> keyboardDefinition.modes.shifted
             KeyboardMode.NUMERIC -> keyboardDefinition.modes.numeric
+            KeyboardMode.CTRLED -> keyboardDefinition.modes.ctrled!!
+            KeyboardMode.ALTED -> keyboardDefinition.modes.alted!!
             else -> KB_EN_THUMBKEY_MAIN
         }
 
@@ -281,6 +283,22 @@ fun KeyboardScreen(
                                             KeyboardMode.MAIN
                                         }
                                 },
+                                onToggleCtrlMode = { enable ->
+                                    mode =
+                                        if (enable) {
+                                            KeyboardMode.CTRLED
+                                        } else {
+                                            KeyboardMode.MAIN
+                                        }
+                                },
+                                onToggleAltMode = { enable ->
+                                    mode =
+                                        if (enable) {
+                                            KeyboardMode.ALTED
+                                        } else {
+                                            KeyboardMode.MAIN
+                                        }
+                                },
                                 onToggleNumericMode = { enable ->
                                     mode =
                                         if (enable) {
@@ -312,6 +330,12 @@ fun KeyboardScreen(
                                 },
                                 onSwitchLanguage = onSwitchLanguage,
                                 onChangePosition = onChangePosition,
+                                onKeyEvent = {
+                                    when (mode) {
+                                        KeyboardMode.CTRLED, KeyboardMode.ALTED -> mode = KeyboardMode.MAIN
+                                        else -> {}
+                                    }
+                                },
                                 dragReturnEnabled = dragReturnEnabled,
                                 circularDragEnabled = circularDragEnabled,
                                 clockwiseDragAction = clockwiseDragAction,
@@ -370,8 +394,9 @@ fun KeyboardScreen(
                                 val ghostKey =
                                     if (ghostKeysEnabled) {
                                         when (mode) {
-                                            KeyboardMode.MAIN -> keyboardDefinition.modes.numeric
-                                            KeyboardMode.SHIFTED -> keyboardDefinition.modes.numeric
+                                            KeyboardMode.MAIN, KeyboardMode.SHIFTED, KeyboardMode.CTRLED, KeyboardMode.ALTED -> {
+                                                keyboardDefinition.modes.numeric
+                                            }
                                             else -> null
                                         }?.arr?.getOrNull(i)?.getOrNull(j)
                                     } else {
@@ -417,6 +442,22 @@ fun KeyboardScreen(
                                                 KeyboardMode.MAIN
                                             }
                                     },
+                                    onToggleCtrlMode = { enable ->
+                                        mode =
+                                            if (enable) {
+                                                KeyboardMode.CTRLED
+                                            } else {
+                                                KeyboardMode.MAIN
+                                            }
+                                    },
+                                    onToggleAltMode = { enable ->
+                                        mode =
+                                            if (enable) {
+                                                KeyboardMode.ALTED
+                                            } else {
+                                                KeyboardMode.MAIN
+                                            }
+                                    },
                                     onToggleNumericMode = { enable ->
                                         mode =
                                             if (enable) {
@@ -437,6 +478,12 @@ fun KeyboardScreen(
                                     onToggleCapsLock = {
                                         capsLock = !capsLock
                                     },
+                                    onKeyEvent = {
+                                        when (mode) {
+                                            KeyboardMode.CTRLED, KeyboardMode.ALTED -> mode = KeyboardMode.MAIN
+                                            else -> {}
+                                        }
+                                    },
                                     onAutoCapitalize = { enable ->
                                         if (mode !== KeyboardMode.NUMERIC) {
                                             if (enable) {
@@ -456,7 +503,7 @@ fun KeyboardScreen(
                                         }?.arr?.getOrNull(i)?.getOrNull(j),
                                     numericKey =
                                         when (mode) {
-                                            KeyboardMode.MAIN, KeyboardMode.SHIFTED ->
+                                            KeyboardMode.MAIN, KeyboardMode.SHIFTED, KeyboardMode.CTRLED, KeyboardMode.ALTED ->
                                                 keyboardDefinition.modes.numeric.arr
                                                     .getOrNull(i)
                                                     ?.getOrNull(j)

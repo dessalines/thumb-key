@@ -40,6 +40,7 @@ import com.dessalines.thumbkey.keyboards.KB_EN_MESSAGEASE_COMPOSE
 import com.dessalines.thumbkey.keyboards.KB_EN_MESSAGEASE_LEFT
 import com.dessalines.thumbkey.keyboards.KB_EN_MESSAGEASE_LEFT_SYMBOLS
 import com.dessalines.thumbkey.keyboards.KB_EN_MESSAGEASE_SYMBOLS
+import com.dessalines.thumbkey.keyboards.KB_EN_MESSAGEASE_SYMBOLS_MODIFIERS
 import com.dessalines.thumbkey.keyboards.KB_EN_MESSAGEASE_SYMBOLS_TWO_HANDS
 import com.dessalines.thumbkey.keyboards.KB_EN_MESSAGEASE_TWO_HANDS
 import com.dessalines.thumbkey.keyboards.KB_EN_MESSAGEASE_WRITER
@@ -330,4 +331,5 @@ enum class KeyboardLayout(
     TRTypeSplit(KB_TR_TYPESPLIT),
     ENDvorakWide(KB_EN_DVORAK_WIDE),
     ENDvorakWideCompose(KB_EN_DVORAK_WIDE_COMPOSE),
+    ENMessagEaseSymbolsModifiers(KB_EN_MESSAGEASE_SYMBOLS_MODIFIERS),
 }
