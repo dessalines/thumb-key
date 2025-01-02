@@ -394,7 +394,9 @@ fun KeyboardScreen(
                                 val ghostKey =
                                     if (ghostKeysEnabled) {
                                         when (mode) {
-                                            KeyboardMode.MAIN, KeyboardMode.SHIFTED, KeyboardMode.CTRLED, KeyboardMode.ALTED -> keyboardDefinition.modes.numeric
+                                            KeyboardMode.MAIN, KeyboardMode.SHIFTED, KeyboardMode.CTRLED, KeyboardMode.ALTED -> {
+                                                keyboardDefinition.modes.numeric
+                                            }
                                             else -> null
                                         }?.arr?.getOrNull(i)?.getOrNull(j)
                                     } else {
