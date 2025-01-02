@@ -9,6 +9,8 @@ data class KeyboardDefinitionModes(
     val main: KeyboardC,
     val shifted: KeyboardC,
     val numeric: KeyboardC,
+    val ctrled: KeyboardC? = null,
+    val alted: KeyboardC? = null,
 )
 
 data class KeyboardDefinitionSettings(
@@ -104,6 +106,28 @@ data class KeyC(
         size,
         color,
     )
+
+    constructor(
+        flagCode: Int,
+        keyCode: Int,
+        displayText: String,
+        swipeReturnAction: KeyAction? = null,
+        display: KeyDisplay = KeyDisplay.TextDisplay(displayText),
+        capsModeDisplay: KeyDisplay? = null,
+        size: FontSizeVariant = FontSizeVariant.SMALL,
+        color: ColorVariant =
+            when (size) {
+                FontSizeVariant.LARGE -> ColorVariant.PRIMARY
+                else -> ColorVariant.SECONDARY
+            },
+    ) : this(
+        KeyAction.SendEvent(KeyEvent(0, 0, KeyEvent.ACTION_DOWN, keyCode, 0, flagCode)),
+        swipeReturnAction,
+        display,
+        capsModeDisplay,
+        size,
+        color,
+    )
 }
 
 sealed class KeyDisplay {
@@ -131,6 +155,14 @@ sealed class KeyAction {
     ) : KeyAction()
 
     class ToggleShiftMode(
+        val enable: Boolean,
+    ) : KeyAction()
+
+    class ToggleCtrlMode(
+        val enable: Boolean,
+    ) : KeyAction()
+
+    class ToggleAltMode(
         val enable: Boolean,
     ) : KeyAction()
 
@@ -213,6 +245,8 @@ enum class KeyboardMode {
     SHIFTED,
     NUMERIC,
     EMOJI,
+    CTRLED,
+    ALTED,
 }
 
 enum class SwipeDirection {
