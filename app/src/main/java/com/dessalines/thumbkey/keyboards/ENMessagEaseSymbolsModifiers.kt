@@ -9,11 +9,10 @@ import androidx.compose.material.icons.outlined.ArrowDropUp
 import androidx.compose.material.icons.outlined.Copyright
 import androidx.compose.material.icons.outlined.KeyboardCapslock
 import androidx.compose.material.icons.outlined.KeyboardControlKey
-import androidx.compose.material.icons.outlined.KeyboardOptionKey
 import androidx.compose.material.icons.outlined.KeyboardDoubleArrowDown
+import androidx.compose.material.icons.outlined.KeyboardOptionKey
 import com.dessalines.thumbkey.utils.ColorVariant.MUTED
 import com.dessalines.thumbkey.utils.FontSizeVariant.LARGE
-import com.dessalines.thumbkey.utils.KeyAction.SendEvent
 import com.dessalines.thumbkey.utils.KeyAction.ToggleAltMode
 import com.dessalines.thumbkey.utils.KeyAction.ToggleCapsLock
 import com.dessalines.thumbkey.utils.KeyAction.ToggleCtrlMode
@@ -137,11 +136,11 @@ val KB_EN_MESSAGEASE_SYMBOLS_MODIFIERS_MAIN =
                     bottomLeft = KeyC(";", color = MUTED),
                     left = KeyC("#", color = MUTED),
                     bottomRight =
-                    KeyC(
-                        display = KeyDisplay.IconDisplay(Icons.Outlined.KeyboardOptionKey),
-                        action = ToggleAltMode(true),
-                        color = MUTED,
-                    ),
+                        KeyC(
+                            display = KeyDisplay.IconDisplay(Icons.Outlined.KeyboardOptionKey),
+                            action = ToggleAltMode(true),
+                            color = MUTED,
+                        ),
                 ),
                 BACKSPACE_KEY_ITEM,
             ),
@@ -413,11 +412,11 @@ val KB_EN_MESSAGEASE_SYMBOLS_MODIFIERS_ALTED =
                     topLeft = KeyC(KeyEvent.META_ALT_ON, KeyEvent.KEYCODE_F, "f"),
                     bottomLeft = KeyC(KeyEvent.META_ALT_ON, KeyEvent.KEYCODE_SEMICOLON, ";", color = MUTED),
                     bottomRight =
-                    KeyC(
-                        display = KeyDisplay.IconDisplay(Icons.Outlined.KeyboardDoubleArrowDown),
-                        action = ToggleAltMode(false),
-                        color = MUTED,
-                    ),
+                        KeyC(
+                            display = KeyDisplay.IconDisplay(Icons.Outlined.KeyboardDoubleArrowDown),
+                            action = ToggleAltMode(false),
+                            color = MUTED,
+                        ),
                 ),
                 BACKSPACE_KEY_ITEM,
             ),

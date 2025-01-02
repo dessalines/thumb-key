@@ -331,5 +331,5 @@ enum class KeyboardLayout(
     TRTypeSplit(KB_TR_TYPESPLIT),
     ENDvorakWide(KB_EN_DVORAK_WIDE),
     ENDvorakWideCompose(KB_EN_DVORAK_WIDE_COMPOSE),
-    ENMessagEaseSymbolsModifiers(KB_EN_MESSAGEASE_SYMBOLS_MODIFIERS)
+    ENMessagEaseSymbolsModifiers(KB_EN_MESSAGEASE_SYMBOLS_MODIFIERS),
 }

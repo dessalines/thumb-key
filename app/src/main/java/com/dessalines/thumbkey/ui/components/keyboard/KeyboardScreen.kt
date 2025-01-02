@@ -108,11 +108,11 @@ fun KeyboardScreen(
 
     val keyboard =
         when (mode) {
-            KeyboardMode.MAIN    -> keyboardDefinition.modes.main
+            KeyboardMode.MAIN -> keyboardDefinition.modes.main
             KeyboardMode.SHIFTED -> keyboardDefinition.modes.shifted
             KeyboardMode.NUMERIC -> keyboardDefinition.modes.numeric
-            KeyboardMode.CTRLED  -> keyboardDefinition.modes.ctrled!!
-            KeyboardMode.ALTED   -> keyboardDefinition.modes.alted!!
+            KeyboardMode.CTRLED -> keyboardDefinition.modes.ctrled!!
+            KeyboardMode.ALTED -> keyboardDefinition.modes.alted!!
             else -> KB_EN_THUMBKEY_MAIN
         }
 
