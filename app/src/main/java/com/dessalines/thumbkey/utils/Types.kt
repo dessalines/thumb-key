@@ -106,28 +106,6 @@ data class KeyC(
         size,
         color,
     )
-
-    constructor(
-        flagCode: Int,
-        keyCode: Int,
-        displayText: String,
-        swipeReturnAction: KeyAction? = null,
-        display: KeyDisplay = KeyDisplay.TextDisplay(displayText),
-        capsModeDisplay: KeyDisplay? = null,
-        size: FontSizeVariant = FontSizeVariant.SMALL,
-        color: ColorVariant =
-            when (size) {
-                FontSizeVariant.LARGE -> ColorVariant.PRIMARY
-                else -> ColorVariant.SECONDARY
-            },
-    ) : this(
-        KeyAction.SendEvent(KeyEvent(0, 0, KeyEvent.ACTION_DOWN, keyCode, 0, flagCode)),
-        swipeReturnAction,
-        display,
-        capsModeDisplay,
-        size,
-        color,
-    )
 }
 
 sealed class KeyDisplay {

@@ -12,6 +12,7 @@ import androidx.compose.material.icons.outlined.KeyboardControlKey
 import androidx.compose.material.icons.outlined.KeyboardDoubleArrowDown
 import androidx.compose.material.icons.outlined.KeyboardOptionKey
 import com.dessalines.thumbkey.utils.ColorVariant.MUTED
+import com.dessalines.thumbkey.utils.FontSizeVariant
 import com.dessalines.thumbkey.utils.FontSizeVariant.LARGE
 import com.dessalines.thumbkey.utils.KeyAction.ToggleAltMode
 import com.dessalines.thumbkey.utils.KeyAction.ToggleCapsLock
@@ -27,6 +28,29 @@ import com.dessalines.thumbkey.utils.KeyboardDefinitionModes
 import com.dessalines.thumbkey.utils.KeyboardDefinitionSettings
 import com.dessalines.thumbkey.utils.autoCapitalizeI
 import com.dessalines.thumbkey.utils.autoCapitalizeIApostrophe
+
+fun keyCModifier(
+    flagCode: Int,
+    keyCode: Int,
+    displayText: String,
+    swipeReturnAction: KeyAction? = null,
+    display: KeyDisplay = KeyDisplay.TextDisplay(displayText),
+    capsModeDisplay: KeyDisplay? = null,
+    size: FontSizeVariant = FontSizeVariant.SMALL,
+    color: ColorVariant =
+        when (size) {
+            FontSizeVariant.LARGE -> ColorVariant.PRIMARY
+            else -> ColorVariant.SECONDARY
+        },
+): KeyC =
+    KeyC(
+        KeyAction.SendEvent(KeyEvent(0, 0, KeyEvent.ACTION_DOWN, keyCode, 0, flagCode)),
+        swipeReturnAction,
+        display,
+        capsModeDisplay,
+        size,
+        color,
+    )
 
 val KB_EN_MESSAGEASE_SYMBOLS_MODIFIERS_MAIN =
     KeyboardC(
@@ -270,53 +294,53 @@ val KB_EN_MESSAGEASE_SYMBOLS_MODIFIERS_CTRLED =
         listOf(
             listOf(
                 KeyItemC(
-                    center = KeyC(KeyEvent.META_CTRL_ON, KeyEvent.KEYCODE_A, "a", size = LARGE),
-                    bottomRight = KeyC(KeyEvent.META_CTRL_ON, KeyEvent.KEYCODE_V, "v"),
-                    right = KeyC(KeyEvent.META_CTRL_ON, KeyEvent.KEYCODE_MINUS, "-", color = MUTED),
+                    center = keyCModifier(KeyEvent.META_CTRL_ON, KeyEvent.KEYCODE_A, "a", size = LARGE),
+                    bottomRight = keyCModifier(KeyEvent.META_CTRL_ON, KeyEvent.KEYCODE_V, "v"),
+                    right = keyCModifier(KeyEvent.META_CTRL_ON, KeyEvent.KEYCODE_MINUS, "-", color = MUTED),
                 ),
                 KeyItemC(
-                    center = KeyC(KeyEvent.META_CTRL_ON, KeyEvent.KEYCODE_N, "n", size = LARGE),
-                    bottom = KeyC(KeyEvent.META_CTRL_ON, KeyEvent.KEYCODE_L, "l"),
-                    topLeft = KeyC(KeyEvent.META_CTRL_ON, KeyEvent.KEYCODE_GRAVE, "`", color = MUTED),
-                    bottomRight = KeyC(KeyEvent.META_CTRL_ON, KeyEvent.KEYCODE_BACKSLASH, "\\", color = MUTED),
-                    bottomLeft = KeyC(KeyEvent.META_CTRL_ON, KeyEvent.KEYCODE_SLASH, "/", color = MUTED),
+                    center = keyCModifier(KeyEvent.META_CTRL_ON, KeyEvent.KEYCODE_N, "n", size = LARGE),
+                    bottom = keyCModifier(KeyEvent.META_CTRL_ON, KeyEvent.KEYCODE_L, "l"),
+                    topLeft = keyCModifier(KeyEvent.META_CTRL_ON, KeyEvent.KEYCODE_GRAVE, "`", color = MUTED),
+                    bottomRight = keyCModifier(KeyEvent.META_CTRL_ON, KeyEvent.KEYCODE_BACKSLASH, "\\", color = MUTED),
+                    bottomLeft = keyCModifier(KeyEvent.META_CTRL_ON, KeyEvent.KEYCODE_SLASH, "/", color = MUTED),
                 ),
                 KeyItemC(
-                    center = KeyC(KeyEvent.META_CTRL_ON, KeyEvent.KEYCODE_I, "i", size = LARGE),
-                    bottomLeft = KeyC(KeyEvent.META_CTRL_ON, KeyEvent.KEYCODE_X, "x"),
-                    bottom = KeyC(KeyEvent.META_CTRL_ON, KeyEvent.KEYCODE_EQUALS, "=", color = MUTED),
+                    center = keyCModifier(KeyEvent.META_CTRL_ON, KeyEvent.KEYCODE_I, "i", size = LARGE),
+                    bottomLeft = keyCModifier(KeyEvent.META_CTRL_ON, KeyEvent.KEYCODE_X, "x"),
+                    bottom = keyCModifier(KeyEvent.META_CTRL_ON, KeyEvent.KEYCODE_EQUALS, "=", color = MUTED),
                 ),
                 EMOJI_KEY_ITEM,
             ),
             listOf(
                 KeyItemC(
-                    center = KeyC(KeyEvent.META_CTRL_ON, KeyEvent.KEYCODE_H, "h", size = LARGE),
-                    right = KeyC(KeyEvent.META_CTRL_ON, KeyEvent.KEYCODE_K, "k"),
-                    bottomLeft = KeyC(KeyEvent.META_CTRL_ON, KeyEvent.KEYCODE_LEFT_BRACKET, "[", color = MUTED),
+                    center = keyCModifier(KeyEvent.META_CTRL_ON, KeyEvent.KEYCODE_H, "h", size = LARGE),
+                    right = keyCModifier(KeyEvent.META_CTRL_ON, KeyEvent.KEYCODE_K, "k"),
+                    bottomLeft = keyCModifier(KeyEvent.META_CTRL_ON, KeyEvent.KEYCODE_LEFT_BRACKET, "[", color = MUTED),
                 ),
                 KeyItemC(
-                    center = KeyC(KeyEvent.META_CTRL_ON, KeyEvent.KEYCODE_O, "o", size = LARGE),
-                    topLeft = KeyC(KeyEvent.META_CTRL_ON, KeyEvent.KEYCODE_Q, "q"),
-                    top = KeyC(KeyEvent.META_CTRL_ON, KeyEvent.KEYCODE_U, "u"),
-                    topRight = KeyC(KeyEvent.META_CTRL_ON, KeyEvent.KEYCODE_P, "p"),
-                    right = KeyC(KeyEvent.META_CTRL_ON, KeyEvent.KEYCODE_B, "b"),
-                    bottomRight = KeyC(KeyEvent.META_CTRL_ON, KeyEvent.KEYCODE_J, "j"),
-                    bottom = KeyC(KeyEvent.META_CTRL_ON, KeyEvent.KEYCODE_D, "d"),
-                    bottomLeft = KeyC(KeyEvent.META_CTRL_ON, KeyEvent.KEYCODE_G, "g"),
-                    left = KeyC(KeyEvent.META_CTRL_ON, KeyEvent.KEYCODE_C, "c"),
+                    center = keyCModifier(KeyEvent.META_CTRL_ON, KeyEvent.KEYCODE_O, "o", size = LARGE),
+                    topLeft = keyCModifier(KeyEvent.META_CTRL_ON, KeyEvent.KEYCODE_Q, "q"),
+                    top = keyCModifier(KeyEvent.META_CTRL_ON, KeyEvent.KEYCODE_U, "u"),
+                    topRight = keyCModifier(KeyEvent.META_CTRL_ON, KeyEvent.KEYCODE_P, "p"),
+                    right = keyCModifier(KeyEvent.META_CTRL_ON, KeyEvent.KEYCODE_B, "b"),
+                    bottomRight = keyCModifier(KeyEvent.META_CTRL_ON, KeyEvent.KEYCODE_J, "j"),
+                    bottom = keyCModifier(KeyEvent.META_CTRL_ON, KeyEvent.KEYCODE_D, "d"),
+                    bottomLeft = keyCModifier(KeyEvent.META_CTRL_ON, KeyEvent.KEYCODE_G, "g"),
+                    left = keyCModifier(KeyEvent.META_CTRL_ON, KeyEvent.KEYCODE_C, "c"),
                 ),
                 KeyItemC(
-                    center = KeyC(KeyEvent.META_CTRL_ON, KeyEvent.KEYCODE_R, "r", size = LARGE),
-                    left = KeyC(KeyEvent.META_CTRL_ON, KeyEvent.KEYCODE_M, "m"),
-                    bottomRight = KeyC(KeyEvent.META_CTRL_ON, KeyEvent.KEYCODE_RIGHT_BRACKET, "]", color = MUTED),
+                    center = keyCModifier(KeyEvent.META_CTRL_ON, KeyEvent.KEYCODE_R, "r", size = LARGE),
+                    left = keyCModifier(KeyEvent.META_CTRL_ON, KeyEvent.KEYCODE_M, "m"),
+                    bottomRight = keyCModifier(KeyEvent.META_CTRL_ON, KeyEvent.KEYCODE_RIGHT_BRACKET, "]", color = MUTED),
                 ),
                 NUMERIC_KEY_ITEM,
             ),
             listOf(
                 KeyItemC(
-                    center = KeyC(KeyEvent.META_CTRL_ON, KeyEvent.KEYCODE_T, "t", size = LARGE),
-                    topRight = KeyC(KeyEvent.META_CTRL_ON, KeyEvent.KEYCODE_Y, "y"),
-                    bottomRight = KeyC(KeyEvent.META_CTRL_ON, KeyEvent.KEYCODE_TAB, displayText = "⇥", color = MUTED),
+                    center = keyCModifier(KeyEvent.META_CTRL_ON, KeyEvent.KEYCODE_T, "t", size = LARGE),
+                    topRight = keyCModifier(KeyEvent.META_CTRL_ON, KeyEvent.KEYCODE_Y, "y"),
+                    bottomRight = keyCModifier(KeyEvent.META_CTRL_ON, KeyEvent.KEYCODE_TAB, displayText = "⇥", color = MUTED),
                     bottomLeft =
                         KeyC(
                             display = KeyDisplay.IconDisplay(Icons.Outlined.KeyboardDoubleArrowDown),
@@ -325,17 +349,17 @@ val KB_EN_MESSAGEASE_SYMBOLS_MODIFIERS_CTRLED =
                         ),
                 ),
                 KeyItemC(
-                    center = KeyC(KeyEvent.META_CTRL_ON, KeyEvent.KEYCODE_E, "e", size = LARGE),
-                    top = KeyC(KeyEvent.META_CTRL_ON, KeyEvent.KEYCODE_W, "w"),
-                    topRight = KeyC(KeyEvent.META_CTRL_ON, KeyEvent.KEYCODE_APOSTROPHE, "'", color = MUTED),
-                    right = KeyC(KeyEvent.META_CTRL_ON, KeyEvent.KEYCODE_Z, "z"),
-                    bottom = KeyC(KeyEvent.META_CTRL_ON, KeyEvent.KEYCODE_PERIOD, ".", color = MUTED),
-                    bottomLeft = KeyC(KeyEvent.META_CTRL_ON, KeyEvent.KEYCODE_COMMA, ",", color = MUTED),
+                    center = keyCModifier(KeyEvent.META_CTRL_ON, KeyEvent.KEYCODE_E, "e", size = LARGE),
+                    top = keyCModifier(KeyEvent.META_CTRL_ON, KeyEvent.KEYCODE_W, "w"),
+                    topRight = keyCModifier(KeyEvent.META_CTRL_ON, KeyEvent.KEYCODE_APOSTROPHE, "'", color = MUTED),
+                    right = keyCModifier(KeyEvent.META_CTRL_ON, KeyEvent.KEYCODE_Z, "z"),
+                    bottom = keyCModifier(KeyEvent.META_CTRL_ON, KeyEvent.KEYCODE_PERIOD, ".", color = MUTED),
+                    bottomLeft = keyCModifier(KeyEvent.META_CTRL_ON, KeyEvent.KEYCODE_COMMA, ",", color = MUTED),
                 ),
                 KeyItemC(
-                    center = KeyC(KeyEvent.META_CTRL_ON, KeyEvent.KEYCODE_S, "s", size = LARGE),
-                    topLeft = KeyC(KeyEvent.META_CTRL_ON, KeyEvent.KEYCODE_F, "f"),
-                    bottomLeft = KeyC(KeyEvent.META_CTRL_ON, KeyEvent.KEYCODE_SEMICOLON, ";", color = MUTED),
+                    center = keyCModifier(KeyEvent.META_CTRL_ON, KeyEvent.KEYCODE_S, "s", size = LARGE),
+                    topLeft = keyCModifier(KeyEvent.META_CTRL_ON, KeyEvent.KEYCODE_F, "f"),
+                    bottomLeft = keyCModifier(KeyEvent.META_CTRL_ON, KeyEvent.KEYCODE_SEMICOLON, ";", color = MUTED),
                 ),
                 BACKSPACE_KEY_ITEM,
             ),
@@ -351,66 +375,66 @@ val KB_EN_MESSAGEASE_SYMBOLS_MODIFIERS_ALTED =
         listOf(
             listOf(
                 KeyItemC(
-                    center = KeyC(KeyEvent.META_ALT_ON, KeyEvent.KEYCODE_A, "a", size = LARGE),
-                    bottomRight = KeyC(KeyEvent.META_ALT_ON, KeyEvent.KEYCODE_V, "v"),
-                    right = KeyC(KeyEvent.META_ALT_ON, KeyEvent.KEYCODE_MINUS, "-", color = MUTED),
+                    center = keyCModifier(KeyEvent.META_ALT_ON, KeyEvent.KEYCODE_A, "a", size = LARGE),
+                    bottomRight = keyCModifier(KeyEvent.META_ALT_ON, KeyEvent.KEYCODE_V, "v"),
+                    right = keyCModifier(KeyEvent.META_ALT_ON, KeyEvent.KEYCODE_MINUS, "-", color = MUTED),
                 ),
                 KeyItemC(
-                    center = KeyC(KeyEvent.META_ALT_ON, KeyEvent.KEYCODE_N, "n", size = LARGE),
-                    bottom = KeyC(KeyEvent.META_ALT_ON, KeyEvent.KEYCODE_L, "l"),
-                    topLeft = KeyC(KeyEvent.META_ALT_ON, KeyEvent.KEYCODE_GRAVE, "`", color = MUTED),
-                    bottomRight = KeyC(KeyEvent.META_ALT_ON, KeyEvent.KEYCODE_BACKSLASH, "\\", color = MUTED),
-                    bottomLeft = KeyC(KeyEvent.META_ALT_ON, KeyEvent.KEYCODE_SLASH, "/", color = MUTED),
+                    center = keyCModifier(KeyEvent.META_ALT_ON, KeyEvent.KEYCODE_N, "n", size = LARGE),
+                    bottom = keyCModifier(KeyEvent.META_ALT_ON, KeyEvent.KEYCODE_L, "l"),
+                    topLeft = keyCModifier(KeyEvent.META_ALT_ON, KeyEvent.KEYCODE_GRAVE, "`", color = MUTED),
+                    bottomRight = keyCModifier(KeyEvent.META_ALT_ON, KeyEvent.KEYCODE_BACKSLASH, "\\", color = MUTED),
+                    bottomLeft = keyCModifier(KeyEvent.META_ALT_ON, KeyEvent.KEYCODE_SLASH, "/", color = MUTED),
                 ),
                 KeyItemC(
-                    center = KeyC(KeyEvent.META_ALT_ON, KeyEvent.KEYCODE_I, "i", size = LARGE),
-                    bottomLeft = KeyC(KeyEvent.META_ALT_ON, KeyEvent.KEYCODE_X, "x"),
-                    bottom = KeyC(KeyEvent.META_ALT_ON, KeyEvent.KEYCODE_EQUALS, "=", color = MUTED),
+                    center = keyCModifier(KeyEvent.META_ALT_ON, KeyEvent.KEYCODE_I, "i", size = LARGE),
+                    bottomLeft = keyCModifier(KeyEvent.META_ALT_ON, KeyEvent.KEYCODE_X, "x"),
+                    bottom = keyCModifier(KeyEvent.META_ALT_ON, KeyEvent.KEYCODE_EQUALS, "=", color = MUTED),
                 ),
                 EMOJI_KEY_ITEM,
             ),
             listOf(
                 KeyItemC(
-                    center = KeyC(KeyEvent.META_ALT_ON, KeyEvent.KEYCODE_H, "h", size = LARGE),
-                    right = KeyC(KeyEvent.META_ALT_ON, KeyEvent.KEYCODE_K, "k"),
-                    bottomLeft = KeyC(KeyEvent.META_ALT_ON, KeyEvent.KEYCODE_LEFT_BRACKET, "[", color = MUTED),
+                    center = keyCModifier(KeyEvent.META_ALT_ON, KeyEvent.KEYCODE_H, "h", size = LARGE),
+                    right = keyCModifier(KeyEvent.META_ALT_ON, KeyEvent.KEYCODE_K, "k"),
+                    bottomLeft = keyCModifier(KeyEvent.META_ALT_ON, KeyEvent.KEYCODE_LEFT_BRACKET, "[", color = MUTED),
                 ),
                 KeyItemC(
-                    center = KeyC(KeyEvent.META_ALT_ON, KeyEvent.KEYCODE_O, "o", size = LARGE),
-                    topLeft = KeyC(KeyEvent.META_ALT_ON, KeyEvent.KEYCODE_Q, "q"),
-                    top = KeyC(KeyEvent.META_ALT_ON, KeyEvent.KEYCODE_U, "u"),
-                    topRight = KeyC(KeyEvent.META_ALT_ON, KeyEvent.KEYCODE_P, "p"),
-                    right = KeyC(KeyEvent.META_ALT_ON, KeyEvent.KEYCODE_B, "b"),
-                    bottomRight = KeyC(KeyEvent.META_ALT_ON, KeyEvent.KEYCODE_J, "j"),
-                    bottom = KeyC(KeyEvent.META_ALT_ON, KeyEvent.KEYCODE_D, "d"),
-                    bottomLeft = KeyC(KeyEvent.META_ALT_ON, KeyEvent.KEYCODE_G, "g"),
-                    left = KeyC(KeyEvent.META_ALT_ON, KeyEvent.KEYCODE_C, "c"),
+                    center = keyCModifier(KeyEvent.META_ALT_ON, KeyEvent.KEYCODE_O, "o", size = LARGE),
+                    topLeft = keyCModifier(KeyEvent.META_ALT_ON, KeyEvent.KEYCODE_Q, "q"),
+                    top = keyCModifier(KeyEvent.META_ALT_ON, KeyEvent.KEYCODE_U, "u"),
+                    topRight = keyCModifier(KeyEvent.META_ALT_ON, KeyEvent.KEYCODE_P, "p"),
+                    right = keyCModifier(KeyEvent.META_ALT_ON, KeyEvent.KEYCODE_B, "b"),
+                    bottomRight = keyCModifier(KeyEvent.META_ALT_ON, KeyEvent.KEYCODE_J, "j"),
+                    bottom = keyCModifier(KeyEvent.META_ALT_ON, KeyEvent.KEYCODE_D, "d"),
+                    bottomLeft = keyCModifier(KeyEvent.META_ALT_ON, KeyEvent.KEYCODE_G, "g"),
+                    left = keyCModifier(KeyEvent.META_ALT_ON, KeyEvent.KEYCODE_C, "c"),
                 ),
                 KeyItemC(
-                    center = KeyC(KeyEvent.META_ALT_ON, KeyEvent.KEYCODE_R, "r", size = LARGE),
-                    left = KeyC(KeyEvent.META_ALT_ON, KeyEvent.KEYCODE_M, "m"),
-                    bottomRight = KeyC(KeyEvent.META_ALT_ON, KeyEvent.KEYCODE_RIGHT_BRACKET, "]", color = MUTED),
+                    center = keyCModifier(KeyEvent.META_ALT_ON, KeyEvent.KEYCODE_R, "r", size = LARGE),
+                    left = keyCModifier(KeyEvent.META_ALT_ON, KeyEvent.KEYCODE_M, "m"),
+                    bottomRight = keyCModifier(KeyEvent.META_ALT_ON, KeyEvent.KEYCODE_RIGHT_BRACKET, "]", color = MUTED),
                 ),
                 NUMERIC_KEY_ITEM,
             ),
             listOf(
                 KeyItemC(
-                    center = KeyC(KeyEvent.META_ALT_ON, KeyEvent.KEYCODE_T, "t", size = LARGE),
-                    topRight = KeyC(KeyEvent.META_ALT_ON, KeyEvent.KEYCODE_Y, "y"),
-                    bottomRight = KeyC(KeyEvent.META_ALT_ON, KeyEvent.KEYCODE_TAB, displayText = "⇥", color = MUTED),
+                    center = keyCModifier(KeyEvent.META_ALT_ON, KeyEvent.KEYCODE_T, "t", size = LARGE),
+                    topRight = keyCModifier(KeyEvent.META_ALT_ON, KeyEvent.KEYCODE_Y, "y"),
+                    bottomRight = keyCModifier(KeyEvent.META_ALT_ON, KeyEvent.KEYCODE_TAB, displayText = "⇥", color = MUTED),
                 ),
                 KeyItemC(
-                    center = KeyC(KeyEvent.META_ALT_ON, KeyEvent.KEYCODE_E, "e", size = LARGE),
-                    top = KeyC(KeyEvent.META_ALT_ON, KeyEvent.KEYCODE_W, "w"),
-                    topRight = KeyC(KeyEvent.META_ALT_ON, KeyEvent.KEYCODE_APOSTROPHE, "'", color = MUTED),
-                    right = KeyC(KeyEvent.META_ALT_ON, KeyEvent.KEYCODE_Z, "z"),
-                    bottom = KeyC(KeyEvent.META_ALT_ON, KeyEvent.KEYCODE_PERIOD, ".", color = MUTED),
-                    bottomLeft = KeyC(KeyEvent.META_ALT_ON, KeyEvent.KEYCODE_COMMA, ",", color = MUTED),
+                    center = keyCModifier(KeyEvent.META_ALT_ON, KeyEvent.KEYCODE_E, "e", size = LARGE),
+                    top = keyCModifier(KeyEvent.META_ALT_ON, KeyEvent.KEYCODE_W, "w"),
+                    topRight = keyCModifier(KeyEvent.META_ALT_ON, KeyEvent.KEYCODE_APOSTROPHE, "'", color = MUTED),
+                    right = keyCModifier(KeyEvent.META_ALT_ON, KeyEvent.KEYCODE_Z, "z"),
+                    bottom = keyCModifier(KeyEvent.META_ALT_ON, KeyEvent.KEYCODE_PERIOD, ".", color = MUTED),
+                    bottomLeft = keyCModifier(KeyEvent.META_ALT_ON, KeyEvent.KEYCODE_COMMA, ",", color = MUTED),
                 ),
                 KeyItemC(
-                    center = KeyC(KeyEvent.META_ALT_ON, KeyEvent.KEYCODE_S, "s", size = LARGE),
-                    topLeft = KeyC(KeyEvent.META_ALT_ON, KeyEvent.KEYCODE_F, "f"),
-                    bottomLeft = KeyC(KeyEvent.META_ALT_ON, KeyEvent.KEYCODE_SEMICOLON, ";", color = MUTED),
+                    center = keyCModifier(KeyEvent.META_ALT_ON, KeyEvent.KEYCODE_S, "s", size = LARGE),
+                    topLeft = keyCModifier(KeyEvent.META_ALT_ON, KeyEvent.KEYCODE_F, "f"),
+                    bottomLeft = keyCModifier(KeyEvent.META_ALT_ON, KeyEvent.KEYCODE_SEMICOLON, ";", color = MUTED),
                     bottomRight =
                         KeyC(
                             display = KeyDisplay.IconDisplay(Icons.Outlined.KeyboardDoubleArrowDown),
