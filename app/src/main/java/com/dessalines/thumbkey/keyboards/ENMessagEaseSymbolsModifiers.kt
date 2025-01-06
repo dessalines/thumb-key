@@ -11,9 +11,11 @@ import androidx.compose.material.icons.outlined.KeyboardCapslock
 import androidx.compose.material.icons.outlined.KeyboardControlKey
 import androidx.compose.material.icons.outlined.KeyboardDoubleArrowDown
 import androidx.compose.material.icons.outlined.KeyboardOptionKey
+import com.dessalines.thumbkey.utils.ColorVariant
 import com.dessalines.thumbkey.utils.ColorVariant.MUTED
 import com.dessalines.thumbkey.utils.FontSizeVariant
 import com.dessalines.thumbkey.utils.FontSizeVariant.LARGE
+import com.dessalines.thumbkey.utils.KeyAction
 import com.dessalines.thumbkey.utils.KeyAction.ToggleAltMode
 import com.dessalines.thumbkey.utils.KeyAction.ToggleCapsLock
 import com.dessalines.thumbkey.utils.KeyAction.ToggleCtrlMode
