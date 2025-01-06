@@ -9,6 +9,8 @@ data class KeyboardDefinitionModes(
     val main: KeyboardC,
     val shifted: KeyboardC,
     val numeric: KeyboardC,
+    val ctrled: KeyboardC? = null,
+    val alted: KeyboardC? = null,
 )
 
 data class KeyboardDefinitionSettings(
@@ -134,6 +136,14 @@ sealed class KeyAction {
         val enable: Boolean,
     ) : KeyAction()
 
+    class ToggleCtrlMode(
+        val enable: Boolean,
+    ) : KeyAction()
+
+    class ToggleAltMode(
+        val enable: Boolean,
+    ) : KeyAction()
+
     class ShiftAndCapsLock(
         val enable: Boolean,
     ) : KeyAction()
@@ -213,6 +223,8 @@ enum class KeyboardMode {
     SHIFTED,
     NUMERIC,
     EMOJI,
+    CTRLED,
+    ALTED,
 }
 
 enum class SwipeDirection {

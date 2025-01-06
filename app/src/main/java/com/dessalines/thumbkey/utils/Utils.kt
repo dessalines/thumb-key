@@ -327,12 +327,15 @@ fun performKeyAction(
     autoCapitalize: Boolean,
     keyboardSettings: KeyboardDefinitionSettings,
     onToggleShiftMode: (enable: Boolean) -> Unit,
+    onToggleCtrlMode: (enable: Boolean) -> Unit,
+    onToggleAltMode: (enable: Boolean) -> Unit,
     onToggleNumericMode: (enable: Boolean) -> Unit,
     onToggleEmojiMode: (enable: Boolean) -> Unit,
     onToggleCapsLock: () -> Unit,
     onAutoCapitalize: (enable: Boolean) -> Unit,
     onSwitchLanguage: () -> Unit,
     onChangePosition: ((old: KeyboardPosition) -> KeyboardPosition) -> Unit,
+    onKeyEvent: () -> Unit,
 ) {
     when (action) {
         is KeyAction.CommitText -> {
@@ -359,6 +362,7 @@ fun performKeyAction(
             val ev = action.event
             Log.d(TAG, "sending key event: $ev")
             ime.currentInputConnection.sendKeyEvent(ev)
+            onKeyEvent()
         }
 
         // Some apps are having problems with delete key events, and issues need to be opened up
@@ -847,6 +851,18 @@ fun performKeyAction(
             val enable = action.enable
             Log.d(TAG, "Toggling Shifted: $enable")
             onToggleShiftMode(enable)
+        }
+
+        is KeyAction.ToggleCtrlMode -> {
+            val enable = action.enable
+            Log.d(TAG, "Toggling Ctrled: $enable")
+            onToggleCtrlMode(enable)
+        }
+
+        is KeyAction.ToggleAltMode -> {
+            val enable = action.enable
+            Log.d(TAG, "Toggling Alted: $enable")
+            onToggleAltMode(enable)
         }
 
         is KeyAction.ToggleNumericMode -> {
