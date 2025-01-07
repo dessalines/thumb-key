@@ -1,3 +1,14 @@
+## What's Changed in 4.0.13
+
+- Adding Arabic levant thumbkey keyboard. by @dessalines in [#1224](https://github.com/dessalines/thumb-key/pull/1224)
+- Support for CTRL&ALT modified keyboards. ENMessagEaseSymbolsModified. by @W-Bosman in [#1220](https://github.com/dessalines/thumb-key/pull/1220)
+
+## New Contributors
+
+- @W-Bosman made their first contribution in [#1220](https://github.com/dessalines/thumb-key/pull/1220)
+
+**Full Changelog**: https://github.com/dessalines/thumb-key/compare/4.0.12...4.0.13
+
 ## What's Changed in 4.0.12
 
 - Adding fastlane generation. by @dessalines in [#1219](https://github.com/dessalines/thumb-key/pull/1219)
@@ -461,11 +472,11 @@
 - Make cursor movement detection index-based (fixes #881) by @glm4610 in [#917](https://github.com/dessalines/thumb-key/pull/917)
 - Fix #304 (take two): In Utils.autoCapitalizeCheck, use input type of current editor by @mpsijm in [#909](https://github.com/dessalines/thumb-key/pull/909)
 - Fixing donation line. by @dessalines in [#906](https://github.com/dessalines/thumb-key/pull/906)
-- Add QBased a qwerty based keyboard by @WrenIsWitty in [#905](https://github.com/dessalines/thumb-key/pull/905)
+- Add QBased a qwerty based keyboard by @ScaredWhitless in [#905](https://github.com/dessalines/thumb-key/pull/905)
 
 ## New Contributors
 
-- @WrenIsWitty made their first contribution in [#905](https://github.com/dessalines/thumb-key/pull/905)
+- @ScaredWhitless made their first contribution in [#905](https://github.com/dessalines/thumb-key/pull/905)
 
 **Full Changelog**: https://github.com/dessalines/thumb-key/compare/3.1.7...3.1.8
 
