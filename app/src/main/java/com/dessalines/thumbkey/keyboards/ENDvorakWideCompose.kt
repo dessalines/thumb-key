@@ -77,7 +77,7 @@ val KB_EN_DVORAK_WIDE_COMPOSE_MAIN =
                     topRight =
                         KeyC(
                             display = KeyDisplay.TextDisplay("´"),
-                            action = ComposeLastKey("´"),
+                            action = ComposeLastKey("'"),
                             color = MUTED,
                         ),
                 ),
