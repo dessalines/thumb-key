@@ -99,7 +99,7 @@ val WIDE_NUMERIC_KEYBOARD =
                 ),
                 KeyItemC(
                     center = KeyC(")", size = LARGE),
-                    swipeType = FOUR_WAY_CROSS,
+                    swipeType = EIGHT_WAY,
                     top = KeyC(">"),
                     topRight = KeyC("}"),
                     right =
