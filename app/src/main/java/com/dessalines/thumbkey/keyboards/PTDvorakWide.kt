@@ -3,6 +3,7 @@
 package com.dessalines.thumbkey.keyboards
 
 import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.automirrored.outlined.*
 import androidx.compose.material.icons.outlined.*
 import com.dessalines.thumbkey.utils.*
 import com.dessalines.thumbkey.utils.ColorVariant.*
@@ -78,7 +79,7 @@ val KB_PT_DVORAK_WIDE_MAIN =
             listOf(
                 KeyItemC(
                     center = KeyC("e", size = LARGE),
-                    left = KeyC("\x1b", displayText = "⎋", color = MUTED),
+                    // left = KeyC("\x1b", displayText = "⎋", color = MUTED),
                     topRight = KeyC("j"),
                     top = KeyC("õ", color = MUTED),
                     right = KeyC("é", color = MUTED),
@@ -188,7 +189,7 @@ val KB_PT_DVORAK_WIDE_SHIFTED =
             listOf(
                 KeyItemC(
                     center = KeyC("E", size = LARGE),
-                    left = KeyC("\x1b", displayText = "⎋", color = MUTED),
+                    // left = KeyC("\x1b", displayText = "⎋", color = MUTED),
                     topRight = KeyC("J"),
                     top = KeyC("Õ", color = MUTED),
                     right = KeyC("É", color = MUTED),
