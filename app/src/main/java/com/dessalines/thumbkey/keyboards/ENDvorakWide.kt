@@ -74,7 +74,7 @@ val KB_EN_DVORAK_WIDE_MAIN =
                 KeyItemC(
                     center = KeyC("e", size = LARGE),
                     swipeType = FOUR_WAY_DIAGONAL,
-                    left = KeyC("\x1b", displayText = "⎋", color = MUTED),
+                    left = KeyC("\u001b", displayText = "⎋", color = MUTED),
                     topRight = KeyC("j"),
                 ),
                 KeyItemC(
@@ -177,7 +177,7 @@ val KB_EN_DVORAK_WIDE_SHIFTED =
                 KeyItemC(
                     center = KeyC("E", size = LARGE),
                     swipeType = FOUR_WAY_DIAGONAL,
-                    left = KeyC("\x1b", displayText = "⎋", color = MUTED),
+                    left = KeyC("\u001b", displayText = "⎋", color = MUTED),
                     topRight = KeyC("J"),
                 ),
                 KeyItemC(
