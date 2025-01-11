@@ -92,7 +92,7 @@ val KB_EN_DVORAK_WIDE_MAIN =
                     center = KeyC("t", size = LARGE),
                     swipeType = FOUR_WAY_DIAGONAL,
                     topLeft = KeyC("w"),
-                    rignt =
+                    right =
                         KeyC(
                             display = KeyDisplay.IconDisplay(Icons.AutoMirrored.Outlined.KeyboardTab),
                             action = CommitText("\t"),
@@ -195,7 +195,7 @@ val KB_EN_DVORAK_WIDE_SHIFTED =
                     center = KeyC("T", size = LARGE),
                     swipeType = FOUR_WAY_DIAGONAL,
                     topLeft = KeyC("W"),
-                    rignt =
+                    right =
                         KeyC(
                             display = KeyDisplay.IconDisplay(Icons.AutoMirrored.Outlined.KeyboardTab),
                             action = CommitText("\t"),
