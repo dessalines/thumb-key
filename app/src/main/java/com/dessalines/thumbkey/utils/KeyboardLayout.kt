@@ -334,4 +334,5 @@ enum class KeyboardLayout(
     ENDvorakWideCompose(KB_EN_DVORAK_WIDE_COMPOSE),
     ENMessagEaseSymbolsModifiers(KB_EN_MESSAGEASE_SYMBOLS_MODIFIERS),
     ARThumbKeyLevant(KB_AR_THUMBKEY_LEVANT),
+    PTDvorakWide(KB_PT_DVORAK_WIDE),
 }
