@@ -4,7 +4,6 @@ import com.dessalines.thumbkey.keyboards.KB_AR_THUMBKEY_LEVANT
 import com.dessalines.thumbkey.keyboards.KB_BG_MESSAGEASE_PHONETIC_SYMBOLS
 import com.dessalines.thumbkey.keyboards.KB_BG_THUMBKEY_SYMBOLS
 import com.dessalines.thumbkey.keyboards.KB_BR_FR_THUMBKEY
-import com.dessalines.thumbkey.keyboards.KB_BR_FR_THUMBKEY_COMPOSE
 import com.dessalines.thumbkey.keyboards.KB_BY_THUMBKEY
 import com.dessalines.thumbkey.keyboards.KB_BY_THUMBKEY_SYMBOLS
 import com.dessalines.thumbkey.keyboards.KB_CA_THUMBKEY
@@ -29,6 +28,7 @@ import com.dessalines.thumbkey.keyboards.KB_EN_DE_THUMBKEY_V2
 import com.dessalines.thumbkey.keyboards.KB_EN_DOUBLE_SYMBOLS
 import com.dessalines.thumbkey.keyboards.KB_EN_DVORAK_WIDE
 import com.dessalines.thumbkey.keyboards.KB_EN_DVORAK_WIDE_COMPOSE
+import com.dessalines.thumbkey.keyboards.KB_PT_DVORAK_WIDE
 import com.dessalines.thumbkey.keyboards.KB_EN_EE_THUMBKEY
 import com.dessalines.thumbkey.keyboards.KB_EN_EO_MESSAGEASE_SYMBOLS
 import com.dessalines.thumbkey.keyboards.KB_EN_EO_THUMBKEY
@@ -336,5 +336,4 @@ enum class KeyboardLayout(
     ENMessagEaseSymbolsModifiers(KB_EN_MESSAGEASE_SYMBOLS_MODIFIERS),
     ARThumbKeyLevant(KB_AR_THUMBKEY_LEVANT),
     PTDvorakWide(KB_PT_DVORAK_WIDE),
-    BRFRThumbKeyCompose(KB_BR_FR_THUMBKEY_COMPOSE),
 }
