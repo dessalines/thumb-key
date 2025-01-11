@@ -77,7 +77,7 @@ val KB_EN_DVORAK_WIDE_COMPOSE_MAIN =
                     topRight =
                         KeyC(
                             display = KeyDisplay.TextDisplay("´"),
-                            action = ComposeLastKey("'"),
+                            action = ComposeLastKey("´"),
                             color = MUTED,
                         ),
                 ),
@@ -91,6 +91,7 @@ val KB_EN_DVORAK_WIDE_COMPOSE_MAIN =
                 KeyItemC(
                     center = KeyC("e", size = LARGE),
                     swipeType = FOUR_WAY_DIAGONAL,
+                    left = KeyC("\x1b", displayText = "⎋", color = MUTED),
                     topRight = KeyC("j"),
                 ),
                 KeyItemC(
@@ -115,6 +116,12 @@ val KB_EN_DVORAK_WIDE_COMPOSE_MAIN =
                     center = KeyC("t", size = LARGE),
                     swipeType = FOUR_WAY_DIAGONAL,
                     topLeft = KeyC("w"),
+                    rignt =
+                        KeyC(
+                            display = KeyDisplay.IconDisplay(Icons.AutoMirrored.Outlined.KeyboardTab),
+                            action = CommitText("\t"),
+                            color = MUTED,
+                        ),
                     bottomRight = KeyC("z"),
                 ),
             ),
@@ -211,6 +218,7 @@ val KB_EN_DVORAK_WIDE_COMPOSE_SHIFTED =
                 KeyItemC(
                     center = KeyC("E", size = LARGE),
                     swipeType = FOUR_WAY_DIAGONAL,
+                    left = KeyC("\x1b", displayText = "⎋", color = MUTED),
                     topRight = KeyC("J"),
                 ),
                 KeyItemC(
@@ -235,6 +243,12 @@ val KB_EN_DVORAK_WIDE_COMPOSE_SHIFTED =
                     center = KeyC("T", size = LARGE),
                     swipeType = FOUR_WAY_DIAGONAL,
                     topLeft = KeyC("W"),
+                    rignt =
+                        KeyC(
+                            display = KeyDisplay.IconDisplay(Icons.AutoMirrored.Outlined.KeyboardTab),
+                            action = CommitText("\t"),
+                            color = MUTED,
+                        ),
                     bottomRight = KeyC("Z"),
                 ),
             ),
