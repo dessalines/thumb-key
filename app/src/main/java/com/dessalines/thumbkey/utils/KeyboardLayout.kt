@@ -140,6 +140,7 @@ import com.dessalines.thumbkey.keyboards.KB_PL_TYPESPLIT_SYMBOLS_V1
 import com.dessalines.thumbkey.keyboards.KB_PL_TYPESPLIT_SYMBOLS_V2
 import com.dessalines.thumbkey.keyboards.KB_PL_TYPESPLIT_V1
 import com.dessalines.thumbkey.keyboards.KB_PL_TYPESPLIT_V2
+import com.dessalines.thumbkey.keyboards.KB_PT_DVORAK_WIDE
 import com.dessalines.thumbkey.keyboards.KB_PT_EN_THUMBKEY
 import com.dessalines.thumbkey.keyboards.KB_PT_THUMBKEY
 import com.dessalines.thumbkey.keyboards.KB_PT_TYPESPLIT
@@ -335,5 +336,6 @@ enum class KeyboardLayout(
     ENDvorakWideCompose(KB_EN_DVORAK_WIDE_COMPOSE),
     ENMessagEaseSymbolsModifiers(KB_EN_MESSAGEASE_SYMBOLS_MODIFIERS),
     ARThumbKeyLevant(KB_AR_THUMBKEY_LEVANT),
+    PTDvorakWide(KB_PT_DVORAK_WIDE),
     BRFRThumbKeyCompose(KB_BR_FR_THUMBKEY_COMPOSE),
 }
