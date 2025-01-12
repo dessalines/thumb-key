@@ -79,7 +79,7 @@ val KB_PT_DVORAK_WIDE_MAIN =
             listOf(
                 KeyItemC(
                     center = KeyC("e", size = LARGE),
-                    // left = KeyC("\x1b", displayText = "⎋", color = MUTED),
+                    left = KeyC("\u001b", displayText = "⎋", color = MUTED),
                     topRight = KeyC("j"),
                     top = KeyC("õ", color = MUTED),
                     right = KeyC("é", color = MUTED),
@@ -189,7 +189,7 @@ val KB_PT_DVORAK_WIDE_SHIFTED =
             listOf(
                 KeyItemC(
                     center = KeyC("E", size = LARGE),
-                    // left = KeyC("\x1b", displayText = "⎋", color = MUTED),
+                    left = KeyC("\u001b", displayText = "⎋", color = MUTED),
                     topRight = KeyC("J"),
                     top = KeyC("Õ", color = MUTED),
                     right = KeyC("É", color = MUTED),
