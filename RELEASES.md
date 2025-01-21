@@ -1,3 +1,9 @@
+## What's Changed in 4.0.16
+
+- Fix ´ compose in dvorak Shifted by @lyluqo in [#1238](https://github.com/dessalines/thumb-key/pull/1238)
+
+**Full Changelog**: https://github.com/dessalines/thumb-key/compare/4.0.15...4.0.16
+
 ## What's Changed in 4.0.15
 
 - Layout portuguese dvorak wide by @lyluqo in [#1234](https://github.com/dessalines/thumb-key/pull/1234)
