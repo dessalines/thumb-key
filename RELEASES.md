@@ -1,3 +1,10 @@
+## What's Changed in 4.0.17
+
+- Relatively large change to JAKanaThumbKey.kt by @K0baU in [#1241](https://github.com/dessalines/thumb-key/pull/1241)
+- Add Breton translation by @zeecho in [#1240](https://github.com/dessalines/thumb-key/pull/1240)
+
+**Full Changelog**: https://github.com/dessalines/thumb-key/compare/4.0.16...4.0.17
+
 ## What's Changed in 4.0.16
 
 - Fix ´ compose in dvorak Shifted by @lyluqo in [#1238](https://github.com/dessalines/thumb-key/pull/1238)
