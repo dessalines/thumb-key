@@ -116,7 +116,8 @@ prettier --write "*.md" "*.yml"
 
 ## Adding translations
 
-You can find the translations in the `app/src/main/res/values-{locale}/strings.xml` file.
+You can add translations via [weblate](https://hosted.weblate.org/engage/thumb-key/), or add translations manually in the `app/src/main/res/values-{locale}/strings.xml` file.
+
 You can open it in android studio, right click and click open translations editor or you can
 directly edit the files.
 
