@@ -4,7 +4,7 @@
 [![status-badge](https://woodpecker.join-lemmy.org/api/badges/dessalines/thumb-key/status.svg)](https://woodpecker.join-lemmy.org/dessalines/thumb-key)
 [![GitHub issues](https://img.shields.io/github/issues-raw/dessalines/thumb-key.svg)](https://github.com/dessalines/thumb-key/issues)
 [![License](https://img.shields.io/github/license/dessalines/thumb-key.svg)](LICENSE)
-[![Translation status](https://hosted.weblate.org/widget/thumb-key/thumb-key/status-badge.png)](https://hosted.weblate.org/engage/thumb-key/)
+[![Translation status](https://hosted.weblate.org/widget/thumb-key/thumb-key/svg-badge.svg)](https://hosted.weblate.org/engage/thumb-key/)
 ![GitHub stars](https://img.shields.io/github/stars/dessalines/thumb-key?style=social)
 
 </div>
