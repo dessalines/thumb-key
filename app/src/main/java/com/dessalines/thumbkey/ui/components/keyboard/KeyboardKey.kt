@@ -448,9 +448,6 @@ fun KeyboardKey(
                         ) {
                             hasSlideMoveCursorTriggered = false
 
-                            // FIXME: minSwipeLength possibly should be relative to the key size, this is currently not the case.
-                            // FIXME: but I am not familiar with the screen resolution setting and the used distances here
-
                             // offset where we recognize if the swipe is back to the initial key
                             // this offset needs to take the minSwipeLength into consideration. Otherwise
                             // just a little (1px) swipe back would trigger the DragReturn action
