@@ -1322,6 +1322,7 @@ inline fun <T> List<T>.dropWhileIndexed(predicate: (index: Int, T) -> Boolean): 
 fun circularDirection(
     positions: List<Offset>,
     circleCompletionTolerance: Float,
+    minSwipeLength: Int,
 ): CircularDirection? {
     // first filter out all run-ups to the start of the circle:
     // throw away all positions that consecutively get closer to the endpoint of the circle
@@ -1331,11 +1332,22 @@ fun circularDirection(
         positions.dropWhileIndexed { index, position ->
             index == 0 || position.getDistanceTo(positions.last()) <= positions[index - 1].getDistanceTo(positions.last())
         }
+    if (filteredPositions.isEmpty()) {
+        return null
+    }
     val center = filteredPositions.reduce(Offset::plus) / filteredPositions.count().toFloat()
     val radii = filteredPositions.map { it.getDistanceTo(center) }
     val maxRadius = radii.reduce { acc, it -> if (it > acc) it else acc }
-    // This is similar to accepting an ellipse with aspect ratio 3:1
-    val minRadius = maxRadius / 3
+
+    // calculate minRadius to ensure that we at least have some kind of circle
+    val minRadius = radii.reduce { acc, it -> if (it < acc) it else acc }
+
+    // if the drawn circle is smaller then the set minSwipeWidth, we most likely didn't draw
+    // a circle but more a line (DragReturn)
+    if (minRadius <= (minSwipeLength/2)) {
+        return null
+    }
+
     val similarRadii =
         radii.all {
             it in minRadius..maxRadius
