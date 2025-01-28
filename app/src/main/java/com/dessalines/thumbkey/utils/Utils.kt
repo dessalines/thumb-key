@@ -1344,7 +1344,7 @@ fun circularDirection(
 
     // if the drawn circle is smaller then the set minSwipeWidth, we most likely didn't draw
     // a circle but more a line (DragReturn)
-    if (minRadius <= (minSwipeLength/2)) {
+    if (minRadius <= (minSwipeLength / 2)) {
         return null
     }
 
