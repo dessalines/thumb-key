@@ -200,6 +200,8 @@ MessagEase is unfortunately unmaintained, and Thumb-Key uses a better alternatin
 
 See [Contributing.md](CONTRIBUTING.md) for how to add keyboard layouts, and themes.
 
+Translations via [weblate](https://hosted.weblate.org/engage/thumb-key/):
+
 [![Translation status](https://hosted.weblate.org/widget/thumb-key/thumb-key/multi-auto.svg)](https://hosted.weblate.org/engage/thumb-key/)
 
 ## Support / Donate
