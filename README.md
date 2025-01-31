@@ -200,6 +200,10 @@ MessagEase is unfortunately unmaintained, and Thumb-Key uses a better alternatin
 
 See [Contributing.md](CONTRIBUTING.md) for how to add keyboard layouts, and themes.
 
+Translations via [weblate](https://hosted.weblate.org/engage/thumb-key/):
+
+[![Translation status](https://hosted.weblate.org/widget/thumb-key/thumb-key/multi-auto.svg)](https://hosted.weblate.org/engage/thumb-key/)
+
 ## Support / Donate
 
 Thumb-Key will always remain free, open-source software. We've seen many keyboards (and open-source projects in general) go unmaintained after a few years. **Recurring donations have proven to be the only way these projects can stay alive.**
