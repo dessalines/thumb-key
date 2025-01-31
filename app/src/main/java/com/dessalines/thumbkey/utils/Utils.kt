@@ -1324,6 +1324,8 @@ fun circularDirection(
     circleCompletionTolerance: Float,
     minSwipeLength: Int,
 ): CircularDirection? {
+    var result: CircularDirection? = null
+
     // first filter out all run-ups to the start of the circle:
     // throw away all positions that consecutively get closer to the endpoint of the circle
     // so that an initial offset of the circle can be accounted for.
@@ -1332,53 +1334,43 @@ fun circularDirection(
         positions.dropWhileIndexed { index, position ->
             index == 0 || position.getDistanceTo(positions.last()) <= positions[index - 1].getDistanceTo(positions.last())
         }
-    if (filteredPositions.isEmpty()) {
-        return null
-    }
-    val center = filteredPositions.reduce(Offset::plus) / filteredPositions.count().toFloat()
-    val radii = filteredPositions.map { it.getDistanceTo(center) }
-    val maxRadius = radii.reduce { acc, it -> if (it > acc) it else acc }
 
-    // calculate minRadius to ensure that we at least have some kind of circle
-    val minRadius = radii.reduce { acc, it -> if (it < acc) it else acc }
+    if (filteredPositions.isNotEmpty()) {
+        val center = filteredPositions.reduce(Offset::plus) / filteredPositions.count().toFloat()
+        val radii = filteredPositions.map { it.getDistanceTo(center) }
+        val maxRadius = radii.reduce { acc, it -> if (it > acc) it else acc }
+        val minRadius = radii.reduce { acc, it -> if (it < acc) it else acc }
 
-    // if the drawn circle is smaller then the set minSwipeWidth, we most likely didn't draw
-    // a circle but more a line (DragReturn)
-    if (minRadius <= (minSwipeLength / 2)) {
-        return null
-    }
+        val isValidCircle = minRadius > (minSwipeLength / 2)
 
-    val similarRadii =
-        radii.all {
-            it in minRadius..maxRadius
+        if (isValidCircle) {
+            val spannedAngle =
+                filteredPositions
+                    .asSequence()
+                    .map { it - center }
+                    .windowed(2)
+                    .map { (a, b) ->
+                        val (xa, ya) = a
+                        val (xb, yb) = b
+                        atan2(
+                            xa * yb - ya * xb,
+                            xa * xb + ya * yb,
+                        )
+                    }.sum()
+
+            val averageRadius = (minRadius + maxRadius) / 2
+            val angleThreshold = 2 * PI * (1 - circleCompletionTolerance / averageRadius)
+
+            result =
+                when {
+                    spannedAngle >= angleThreshold -> CircularDirection.Clockwise
+                    spannedAngle <= -angleThreshold -> CircularDirection.Counterclockwise
+                    else -> null
+                }
         }
-
-    if (!similarRadii) {
-        return null
     }
-    val spannedAngle =
-        filteredPositions
-            .asSequence()
-            .map { it - center } // transform center into origin
-            .windowed(2)
-            .map { (a, b) ->
-                val (xa, ya) = a
-                val (xb, yb) = b
-                // angle between two vectors
-                atan2(
-                    xa * yb - ya * xb,
-                    xa * xb + ya * yb,
-                )
-            }.sum()
 
-    val averageRadius = (minRadius + maxRadius) / 2
-    // The threshold is a full circumference minus the arc with length equal to the tolerance
-    val angleThreshold = 2 * PI * (1 - circleCompletionTolerance / averageRadius)
-    return when {
-        spannedAngle >= angleThreshold -> CircularDirection.Clockwise
-        spannedAngle <= -angleThreshold -> CircularDirection.Counterclockwise
-        else -> null
-    }
+    return result
 }
 
 fun Offset.getDistanceTo(other: Offset) = (other - this).getDistance()
