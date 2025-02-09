@@ -1204,7 +1204,6 @@ fun highContrastColorful(): Pair<ColorScheme, ColorScheme> {
     return Pair(light, dark)
 }
 
-
 fun matrix(): Pair<ColorScheme, ColorScheme> {
     val dark =
         darkColorScheme(
@@ -1283,7 +1282,7 @@ fun neon(): Pair<ColorScheme, ColorScheme> {
     val md_theme_dark_onSecondaryContainer = Color(0xFFDFE1F9)
     val md_theme_dark_tertiary = md_theme_dark_secondary // Legend Pressed
     val md_theme_dark_onTertiary = Color(0xFF44263E)
-    val md_theme_dark_tertiaryContainer = Color(0x800E539F)  // Key Up
+    val md_theme_dark_tertiaryContainer = Color(0x800E539F) // Key Up
     val md_theme_dark_onTertiaryContainer = Color(0xFFFFD7F2)
     val md_theme_dark_error = Color(0xFFFFB4AB)
     val md_theme_dark_errorContainer = Color(0xFF93000A)
