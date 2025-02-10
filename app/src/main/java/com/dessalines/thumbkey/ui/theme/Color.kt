@@ -1241,7 +1241,7 @@ fun matrix(): Pair<ColorScheme, ColorScheme> {
 }
 
 fun neon(): Pair<ColorScheme, ColorScheme> {
-    val md_theme_light_primary = Color(0xFF6833ff) // Primary Legends
+    val md_theme_light_primary = Color(0xFF5940A6) // Primary Legends
     val md_theme_light_onPrimary = Color(0xFF271446) // Menu Button Text
     val md_theme_light_primaryContainer = Color(0xFF2E4090)
     val md_theme_light_onPrimaryContainer = Color(0xFFDDE1FF)
@@ -1276,7 +1276,7 @@ fun neon(): Pair<ColorScheme, ColorScheme> {
     val md_theme_dark_onPrimary = Color(0xFF271446) // Menu Button Text
     val md_theme_dark_primaryContainer = Color(0xFF2E4090)
     val md_theme_dark_onPrimaryContainer = Color(0xFFDDE1FF)
-    val md_theme_dark_secondary = Color(0xFF6833FF) // Secondary Legends
+    val md_theme_dark_secondary = Color(0xFF5940A6) // Secondary Legends
     val md_theme_dark_onSecondary = Color(0xFF2C2F42)
     val md_theme_dark_secondaryContainer = Color(0xFF434659)
     val md_theme_dark_onSecondaryContainer = Color(0xFFDFE1F9)
