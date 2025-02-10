@@ -1,3 +1,19 @@
+## What's Changed in 4.0.18
+
+- Theme/neon -> slightly mute purple to better fit android app palettes by @bklaase in [#1259](https://github.com/dessalines/thumb-key/pull/1259)
+- Add Neon theme(s) by @bklaase in [#1258](https://github.com/dessalines/thumb-key/pull/1258)
+- Skipping weblate updates for git cliff. by @dessalines
+- Adding more weblate share to readme. by @dessalines in [#1246](https://github.com/dessalines/thumb-key/pull/1246)
+- Use svg badge by @dessalines
+- Adding weblate translations url. by @dessalines in [#1242](https://github.com/dessalines/thumb-key/pull/1242)
+
+## New Contributors
+
+- @bklaase made their first contribution in [#1259](https://github.com/dessalines/thumb-key/pull/1259)
+- @weblate made their first contribution in [#1247](https://github.com/dessalines/thumb-key/pull/1247)
+
+**Full Changelog**: https://github.com/dessalines/thumb-key/compare/4.0.17...4.0.18
+
 ## What's Changed in 4.0.17
 
 - Relatively large change to JAKanaThumbKey.kt by @K0baU in [#1241](https://github.com/dessalines/thumb-key/pull/1241)
