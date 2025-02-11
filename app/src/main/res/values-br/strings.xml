@@ -1,3 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">Thumb-Key</string>
     <string name="settings">Arventennoù</string>
@@ -74,7 +75,7 @@
     <string name="hide_letters">Kuzhat al lizherennoù</string>
     <string name="hide_symbols">Kuzhat an arouezioù</string>
     <string name="spacebar_multitaps">Barrenn esaouiñ liesstok</string>
-    <string name="done">Graet</string>
+    <string name="done">Mat eo</string>
     <string name="backdrop">Foñs ar c\'hlavier</string>
     <string name="key_padding">Esaou etre ar stokelloù: %1$s</string>
     <string name="key_border_width">Led riblenn ar stokelloù: %1$s</string>
