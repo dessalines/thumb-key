@@ -104,7 +104,7 @@ val KB_EN_THUMBKEY_WORDS_SYMBOLS_MAIN =
                     bottomLeft = KeyC("that", color = MUTED, size = SMALLEST),
                 ),
                 KeyItemC(
-                    center = KeyC("i", size = LARGE), 
+                    center = KeyC("i", size = LARGE),
                     top = KeyC("f"),
                     topRight = KeyC("'", color = MUTED),
                     right = KeyC("z"),
@@ -229,7 +229,7 @@ val KB_EN_THUMBKEY_WORDS_SYMBOLS_SHIFTED =
                     bottomLeft = KeyC("That", color = MUTED, size = SMALLEST),
                 ),
                 KeyItemC(
-                    center = KeyC("I", size = LARGE), 
+                    center = KeyC("I", size = LARGE),
                     top = KeyC("F"),
                     topRight = KeyC("'", color = MUTED),
                     right = KeyC("Z"),
