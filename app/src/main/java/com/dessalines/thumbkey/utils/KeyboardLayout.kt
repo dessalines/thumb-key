@@ -317,7 +317,6 @@ enum class KeyboardLayout(
     ENSVThumbKeyProgramming(KB_EN_SV_THUMBKEY_PROGRAMMING),
     ESThumbKeySymbols(KB_ES_THUMBKEY_SYMBOLS),
     ENThumbKeyWords(KB_EN_THUMBKEY_WORDS),
-    ENThumbKeyWordsSymbols(KB_EN_THUMBKEY_WORDS_SYMBOLS),
     ENDENLThumbKey(KB_EN_DE_NL_THUMBKEY),
     ENRsinoa(KB_EN_RSINOA),
     ENTypeSplitShort(KB_EN_TYPESPLIT_SHORT),
@@ -342,4 +341,5 @@ enum class KeyboardLayout(
     PTDvorakWide(KB_PT_DVORAK_WIDE),
     BRFRThumbKeyCompose(KB_BR_FR_THUMBKEY_COMPOSE),
     ENHyper(KB_EN_HYPER),
+    ENThumbKeyWordsSymbols(KB_EN_THUMBKEY_WORDS_SYMBOLS),
 }
