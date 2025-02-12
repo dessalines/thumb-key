@@ -112,7 +112,6 @@ val KB_EN_THUMBKEY_WORDS_SYMBOLS_MAIN =
                     bottom = KeyC(".", color = MUTED),
                     bottomLeft = KeyC("*", color = MUTED),
                     topLeft = KeyC("\"", color = MUTED),
-                    topRight = KeyC("'", color = MUTED),
                     left = KeyC(",", color = MUTED),
                 ),
                 KeyItemC(
@@ -237,7 +236,6 @@ val KB_EN_THUMBKEY_WORDS_SYMBOLS_SHIFTED =
                     bottom = KeyC(".", color = MUTED),
                     bottomLeft = KeyC("*", color = MUTED),
                     topLeft = KeyC("\"", color = MUTED),
-                    topRight = KeyC("'", color = MUTED),
                     left = KeyC(",", color = MUTED),
                 ),
                 KeyItemC(
