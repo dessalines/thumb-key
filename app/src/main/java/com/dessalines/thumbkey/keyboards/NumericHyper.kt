@@ -36,7 +36,7 @@ val HYPER_NUMERIC_KEYBOARD =
                     bottom = KeyC("°"),
                     bottomLeft = KeyC("#"),
                 ),
-                RETURN_KEY_ITEM
+                RETURN_KEY_ITEM,
             ),
             listOf(
                 KeyItemC(
@@ -98,7 +98,7 @@ val HYPER_NUMERIC_KEYBOARD =
                     topRight = KeyC("]"),
                     bottomRight = KeyC(">"),
                 ),
-                EMOJI_KEY_ITEM
+                EMOJI_KEY_ITEM,
             ),
         ),
     )

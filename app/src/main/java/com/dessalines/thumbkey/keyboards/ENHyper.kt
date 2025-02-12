@@ -4,7 +4,6 @@ package com.dessalines.thumbkey.keyboards
 
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.outlined.ArrowDropDown
-import androidx.compose.material.icons.outlined.ArrowDropUp
 import androidx.compose.material.icons.outlined.Copyright
 import androidx.compose.material.icons.outlined.KeyboardCapslock
 import com.dessalines.thumbkey.utils.*
@@ -51,17 +50,17 @@ val KB_EN_HYPER_MAIN =
                     swipeType = FOUR_WAY_CROSS,
                     right = KeyC("k"),
                     top =
-                    KeyC(
-                        display = KeyDisplay.IconDisplay(Icons.Outlined.ArrowDropDown),
-                        action = ToggleShiftMode(true),
-                        swipeReturnAction = ToggleCurrentWordCapitalization(true),
-                        color = MUTED,
-                    ),
+                        KeyC(
+                            display = KeyDisplay.IconDisplay(Icons.Outlined.ArrowDropDown),
+                            action = ToggleShiftMode(true),
+                            swipeReturnAction = ToggleCurrentWordCapitalization(true),
+                            color = MUTED,
+                        ),
                     bottom =
-                    KeyC(
-                        ToggleShiftMode(false),
-                        swipeReturnAction = ToggleCurrentWordCapitalization(false),
-                    ),
+                        KeyC(
+                            ToggleShiftMode(false),
+                            swipeReturnAction = ToggleCurrentWordCapitalization(false),
+                        ),
                 ),
                 KeyItemC(
                     center = KeyC("e", size = LARGE),
@@ -155,20 +154,20 @@ val KB_EN_HYPER_SHIFTED =
                     swipeType = FOUR_WAY_CROSS,
                     right = KeyC("K"),
                     top =
-                    KeyC(
-                        display = KeyDisplay.IconDisplay(Icons.Outlined.KeyboardCapslock),
-                        capsModeDisplay = KeyDisplay.IconDisplay(Icons.Outlined.Copyright),
-                        action = ToggleCapsLock,
-                        swipeReturnAction = ToggleCurrentWordCapitalization(true),
-                        color = MUTED,
-                    ),
+                        KeyC(
+                            display = KeyDisplay.IconDisplay(Icons.Outlined.KeyboardCapslock),
+                            capsModeDisplay = KeyDisplay.IconDisplay(Icons.Outlined.Copyright),
+                            action = ToggleCapsLock,
+                            swipeReturnAction = ToggleCurrentWordCapitalization(true),
+                            color = MUTED,
+                        ),
                     bottom =
-                    KeyC(
-                        display = KeyDisplay.IconDisplay(Icons.Outlined.ArrowDropDown),
-                        action = ToggleShiftMode(false),
-                        swipeReturnAction = ToggleCurrentWordCapitalization(false),
-                        color = MUTED,
-                    ),
+                        KeyC(
+                            display = KeyDisplay.IconDisplay(Icons.Outlined.ArrowDropDown),
+                            action = ToggleShiftMode(false),
+                            swipeReturnAction = ToggleCurrentWordCapitalization(false),
+                            color = MUTED,
+                        ),
                 ),
                 KeyItemC(
                     center = KeyC("E", size = LARGE),
