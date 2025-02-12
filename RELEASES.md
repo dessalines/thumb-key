@@ -1,3 +1,13 @@
+## What's Changed in 4.0.19
+
+- add hyper layout by @luminespire in [#1260](https://github.com/dessalines/thumb-key/pull/1260)
+
+## New Contributors
+
+- @luminespire made their first contribution in [#1260](https://github.com/dessalines/thumb-key/pull/1260)
+
+**Full Changelog**: https://github.com/dessalines/thumb-key/compare/4.0.18...4.0.19
+
 ## What's Changed in 4.0.18
 
 - Theme/neon -> slightly mute purple to better fit android app palettes by @bklaase in [#1259](https://github.com/dessalines/thumb-key/pull/1259)
