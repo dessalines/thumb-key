@@ -258,13 +258,13 @@ val KB_EN_THUMBKEY_WORDS_SYMBOLS_SHIFTED =
         ),
     )
 
-val KB_EN_THUMBKEY_WORDS: KeyboardDefinition =
+val KB_EN_THUMBKEY_WORDS_SYMBOLS: KeyboardDefinition =
     KeyboardDefinition(
         title = "english thumb-key words symbols",
         modes =
             KeyboardDefinitionModes(
-                main = KB_EN_THUMBKEY_WORDS_MAIN,
-                shifted = KB_EN_THUMBKEY_WORDS_SHIFTED,
+                main = KB_EN_THUMBKEY_WORDS_SYMBOLS_MAIN,
+                shifted = KB_EN_THUMBKEY_WORDS_SYMBOLS_SHIFTED,
                 numeric = NUMERIC_KEYBOARD,
             ),
         settings =
