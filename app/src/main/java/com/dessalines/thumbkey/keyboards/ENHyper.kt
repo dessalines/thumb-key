@@ -4,6 +4,7 @@ package com.dessalines.thumbkey.keyboards
 
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.outlined.ArrowDropDown
+import androidx.compose.material.icons.outlined.ArrowDropUp
 import androidx.compose.material.icons.outlined.Copyright
 import androidx.compose.material.icons.outlined.KeyboardCapslock
 import com.dessalines.thumbkey.utils.*
@@ -16,7 +17,7 @@ val KB_EN_HYPER_MAIN =
     KeyboardC(
         listOf(
             listOf(
-                BACKSPACE_KEY_ITEM,
+                RETURN_KEY_ITEM,
                 KeyItemC(
                     center = KeyC("u", size = LARGE),
                     swipeType = FOUR_WAY_CROSS,
@@ -41,7 +42,7 @@ val KB_EN_HYPER_MAIN =
                     left = KeyC("@", color = MUTED),
                     bottom = KeyC("y"),
                 ),
-                RETURN_KEY_ITEM,
+                BACKSPACE_KEY_ITEM,
             ),
             listOf(
                 SPACEBAR_SKINNY_KEY_ITEM,
@@ -51,7 +52,7 @@ val KB_EN_HYPER_MAIN =
                     right = KeyC("k"),
                     top =
                         KeyC(
-                            display = KeyDisplay.IconDisplay(Icons.Outlined.ArrowDropDown),
+                            display = KeyDisplay.IconDisplay(Icons.Outlined.ArrowDropUp),
                             action = ToggleShiftMode(true),
                             swipeReturnAction = ToggleCurrentWordCapitalization(true),
                             color = MUTED,
@@ -120,7 +121,7 @@ val KB_EN_HYPER_SHIFTED =
     KeyboardC(
         listOf(
             listOf(
-                BACKSPACE_KEY_ITEM,
+                RETURN_KEY_ITEM,
                 KeyItemC(
                     center = KeyC("U", size = LARGE),
                     swipeType = FOUR_WAY_CROSS,
@@ -145,7 +146,7 @@ val KB_EN_HYPER_SHIFTED =
                     left = KeyC("@", color = MUTED),
                     bottom = KeyC("Y"),
                 ),
-                RETURN_KEY_ITEM,
+                BACKSPACE_KEY_ITEM,
             ),
             listOf(
                 SPACEBAR_SKINNY_KEY_ITEM,
