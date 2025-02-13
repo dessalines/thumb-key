@@ -12,7 +12,7 @@ val HYPER_NUMERIC_KEYBOARD =
     KeyboardC(
         listOf(
             listOf(
-                BACKSPACE_KEY_ITEM,
+                RETURN_KEY_ITEM,
                 KeyItemC(
                     center = KeyC("!", size = LARGE),
                 ),
@@ -36,7 +36,7 @@ val HYPER_NUMERIC_KEYBOARD =
                     bottom = KeyC("°"),
                     bottomLeft = KeyC("#"),
                 ),
-                RETURN_KEY_ITEM,
+                BACKSPACE_KEY_ITEM,
             ),
             listOf(
                 KeyItemC(
