@@ -168,6 +168,7 @@ import com.dessalines.thumbkey.keyboards.KB_UK_MESSAGEASE_SYMBOLS
 import com.dessalines.thumbkey.keyboards.KB_UK_RU_MESSAGEASE_SYMBOLS
 import com.dessalines.thumbkey.keyboards.KB_UK_THUMBKEY
 import com.dessalines.thumbkey.keyboards.KB_VN_THUMBKEY
+import com.dessalines.thumbkey.keyboards.KB_EN_HYPER_SPACE
 
 // Make sure new keyboards are added AT THE END of this list, and have a higher index.
 // DO NOT put them in the middle of the list!
@@ -342,4 +343,5 @@ enum class KeyboardLayout(
     BRFRThumbKeyCompose(KB_BR_FR_THUMBKEY_COMPOSE),
     ENHyper(KB_EN_HYPER),
     ENThumbKeyWordsSymbols(KB_EN_THUMBKEY_WORDS_SYMBOLS),
+    ENHyperSpace(KB_EN_HYPER_SPACE),
 }
