@@ -36,6 +36,7 @@ import com.dessalines.thumbkey.keyboards.KB_EN_ES_CA_THUMBKEY
 import com.dessalines.thumbkey.keyboards.KB_EN_FR_MESSAGEASE_SYMBOLS
 import com.dessalines.thumbkey.keyboards.KB_EN_HR_MESSAGEASE
 import com.dessalines.thumbkey.keyboards.KB_EN_HYPER
+import com.dessalines.thumbkey.keyboards.KB_EN_HYPER_SPACE
 import com.dessalines.thumbkey.keyboards.KB_EN_IT_THUMBKEY
 import com.dessalines.thumbkey.keyboards.KB_EN_LA_THUMBKEY
 import com.dessalines.thumbkey.keyboards.KB_EN_MESSAGEASE
@@ -342,4 +343,5 @@ enum class KeyboardLayout(
     BRFRThumbKeyCompose(KB_BR_FR_THUMBKEY_COMPOSE),
     ENHyper(KB_EN_HYPER),
     ENThumbKeyWordsSymbols(KB_EN_THUMBKEY_WORDS_SYMBOLS),
+    ENHyperSpace(KB_EN_HYPER_SPACE),
 }

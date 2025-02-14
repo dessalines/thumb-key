@@ -13,7 +13,7 @@ import com.dessalines.thumbkey.utils.FontSizeVariant.*
 import com.dessalines.thumbkey.utils.KeyAction.*
 import com.dessalines.thumbkey.utils.SwipeNWay.*
 
-val KB_EN_HYPER_MAIN =
+val KB_EN_HYPER_SPACE_MAIN =
     KeyboardC(
         listOf(
             listOf(
@@ -45,7 +45,12 @@ val KB_EN_HYPER_MAIN =
                 BACKSPACE_KEY_ITEM,
             ),
             listOf(
-                SPACEBAR_SKINNY_KEY_ITEM,
+                KeyItemC(
+                    center = KeyC("g", size = LARGE),
+                    swipeType = FOUR_WAY_CROSS,
+                    right = KeyC("z"),
+                    top = KeyC("\"", color = MUTED),
+                ),
                 KeyItemC(
                     center = KeyC("o", size = LARGE),
                     swipeType = FOUR_WAY_CROSS,
@@ -84,16 +89,16 @@ val KB_EN_HYPER_MAIN =
                     bottom = KeyC("q"),
                     top = KeyC("-", color = MUTED),
                 ),
-                SPACEBAR_SKINNY_KEY_ITEM,
+                KeyItemC(
+                    center = KeyC("r", size = LARGE),
+                    swipeType = FOUR_WAY_CROSS,
+                    left = KeyC("/", color = MUTED),
+                    top = KeyC("#", color = MUTED),
+                ),
             ),
             listOf(
                 NUMERIC_KEY_ITEM,
-                KeyItemC(
-                    center = KeyC("g", size = LARGE),
-                    swipeType = FOUR_WAY_CROSS,
-                    right = KeyC("\"", color = MUTED),
-                    top = KeyC("z"),
-                ),
+                SPACEBAR_SKINNY_KEY_ITEM,
                 KeyItemC(
                     center = KeyC("i", size = LARGE),
                     swipeType = FOUR_WAY_CROSS,
@@ -106,18 +111,13 @@ val KB_EN_HYPER_MAIN =
                     right = KeyC("f"),
                     top = KeyC("v"),
                 ),
-                KeyItemC(
-                    center = KeyC("r", size = LARGE),
-                    swipeType = FOUR_WAY_CROSS,
-                    left = KeyC("#", color = MUTED),
-                    top = KeyC("/", color = MUTED),
-                ),
+                SPACEBAR_SKINNY_KEY_ITEM,
                 EMOJI_KEY_ITEM,
             ),
         ),
     )
 
-val KB_EN_HYPER_SHIFTED =
+val KB_EN_HYPER_SPACE_SHIFTED =
     KeyboardC(
         listOf(
             listOf(
@@ -149,7 +149,12 @@ val KB_EN_HYPER_SHIFTED =
                 BACKSPACE_KEY_ITEM,
             ),
             listOf(
-                SPACEBAR_SKINNY_KEY_ITEM,
+                KeyItemC(
+                    center = KeyC("G", size = LARGE),
+                    swipeType = FOUR_WAY_CROSS,
+                    right = KeyC("Z"),
+                    top = KeyC("\"", color = MUTED),
+                ),
                 KeyItemC(
                     center = KeyC("O", size = LARGE),
                     swipeType = FOUR_WAY_CROSS,
@@ -191,16 +196,16 @@ val KB_EN_HYPER_SHIFTED =
                     top = KeyC("_", color = MUTED),
                     bottom = KeyC("Q"),
                 ),
-                SPACEBAR_SKINNY_KEY_ITEM,
+                KeyItemC(
+                    center = KeyC("R", size = LARGE),
+                    swipeType = FOUR_WAY_CROSS,
+                    left = KeyC("/", color = MUTED),
+                    top = KeyC("#", color = MUTED),
+                ),
             ),
             listOf(
                 NUMERIC_KEY_ITEM,
-                KeyItemC(
-                    center = KeyC("G", size = LARGE),
-                    swipeType = FOUR_WAY_CROSS,
-                    right = KeyC("\"", color = MUTED),
-                    top = KeyC("Z"),
-                ),
+                SPACEBAR_SKINNY_KEY_ITEM,
                 KeyItemC(
                     center = KeyC("I", size = LARGE),
                     swipeType = FOUR_WAY_CROSS,
@@ -213,24 +218,19 @@ val KB_EN_HYPER_SHIFTED =
                     right = KeyC("F"),
                     top = KeyC("V"),
                 ),
-                KeyItemC(
-                    center = KeyC("R", size = LARGE),
-                    swipeType = FOUR_WAY_CROSS,
-                    left = KeyC("#", color = MUTED),
-                    top = KeyC("/", color = MUTED),
-                ),
+                SPACEBAR_SKINNY_KEY_ITEM,
                 EMOJI_KEY_ITEM,
             ),
         ),
     )
 
-val KB_EN_HYPER: KeyboardDefinition =
+val KB_EN_HYPER_SPACE: KeyboardDefinition =
     KeyboardDefinition(
-        title = "english hyper",
+        title = "english hyper space",
         modes =
             KeyboardDefinitionModes(
-                main = KB_EN_HYPER_MAIN,
-                shifted = KB_EN_HYPER_SHIFTED,
+                main = KB_EN_HYPER_SPACE_MAIN,
+                shifted = KB_EN_HYPER_SPACE_SHIFTED,
                 numeric = HYPER_NUMERIC_KEYBOARD,
             ),
         settings =
