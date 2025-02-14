@@ -12,6 +12,7 @@ import com.dessalines.thumbkey.keyboards.KB_CA_THUMBKEY
 import com.dessalines.thumbkey.keyboards.KB_CZ_MESSAGEASE_PROGRAMMING
 import com.dessalines.thumbkey.keyboards.KB_DA_THUMBKEY
 import com.dessalines.thumbkey.keyboards.KB_DE_MESSAGEASE
+import com.dessalines.thumbkey.keyboards.KB_DE_MESSAGEASE_LEFT
 import com.dessalines.thumbkey.keyboards.KB_DE_MESSAGEASE_SYMBOLS
 import com.dessalines.thumbkey.keyboards.KB_DE_NORDIC_MESSAGEASE
 import com.dessalines.thumbkey.keyboards.KB_DE_THUMBKEY
@@ -364,4 +365,5 @@ enum class KeyboardLayout(
     ENThumbkeyFlippedNumpad(KB_EN_THUMBKEY_FLIPPED_NUMPAD),
     GRThumbKeyNormal(KB_GRNORM_THUMBKEY),
     GRNormThumbKeySymbols(KB_GRNORM_THUMBKEY_SYMBOLS),
+    DEMessagEaseLeft(KB_DE_MESSAGEASE_LEFT),
 }
