@@ -229,7 +229,7 @@ val KB_EN_TYPESPLIT_PROGRAMMING_SHIFTED =
                 KeyItemC(
                     center = KeyC("H", size = LARGE),
                     swipeType = EIGHT_WAY,
-                    left = KeyC("G"),
+                    topLeft = KeyC("G"),
                     bottomRight = KeyC("'", color = MUTED),
                     topRight = KeyC("\"", color = MUTED),
                     bottomLeft = KeyC("|", color = MUTED),
