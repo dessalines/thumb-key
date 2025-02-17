@@ -80,6 +80,7 @@ import com.dessalines.thumbkey.keyboards.KB_EN_THUMBKEY_WORDS_SYMBOLS
 import com.dessalines.thumbkey.keyboards.KB_EN_THUMBKEY_WRITER
 import com.dessalines.thumbkey.keyboards.KB_EN_TWO_HANDS
 import com.dessalines.thumbkey.keyboards.KB_EN_TYPESPLIT
+import com.dessalines.thumbkey.keyboards.KB_EN_TYPESPLIT_PROGRAMMING
 import com.dessalines.thumbkey.keyboards.KB_EN_TYPESPLIT_SHORT
 import com.dessalines.thumbkey.keyboards.KB_EO_CYRILLIC_THUMBKEY
 import com.dessalines.thumbkey.keyboards.KB_EO_EN_DE_THUMBKEY
@@ -344,4 +345,5 @@ enum class KeyboardLayout(
     ENHyper(KB_EN_HYPER),
     ENThumbKeyWordsSymbols(KB_EN_THUMBKEY_WORDS_SYMBOLS),
     ENHyperSpace(KB_EN_HYPER_SPACE),
+    EnTypeSplitProgramming(KB_EN_TYPESPLIT_PROGRAMMING),
 }
