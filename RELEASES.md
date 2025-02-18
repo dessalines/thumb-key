@@ -1,3 +1,13 @@
+## What's Changed in 4.0.20
+
+- Slight tweaks to en typesplit programming layout by @bklaase in [#1274](https://github.com/dessalines/thumb-key/pull/1274)
+- add English Typesplit layout, optimized for programming by @bklaase in [#1272](https://github.com/dessalines/thumb-key/pull/1272)
+- add hyper space and minor fixes to hyper by @luminespire in [#1268](https://github.com/dessalines/thumb-key/pull/1268)
+- Add layout with words and common symbols by @jm355 in [#1262](https://github.com/dessalines/thumb-key/pull/1262)
+- Update README.md to include other voice input option (transcribro) by @jm355 in [#1263](https://github.com/dessalines/thumb-key/pull/1263)
+
+**Full Changelog**: https://github.com/dessalines/thumb-key/compare/4.0.19...4.0.20
+
 ## What's Changed in 4.0.19
 
 - add hyper layout by @luminespire in [#1260](https://github.com/dessalines/thumb-key/pull/1260)
