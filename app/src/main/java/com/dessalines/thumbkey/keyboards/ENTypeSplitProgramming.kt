@@ -31,7 +31,6 @@ val KB_EN_TYPESPLIT_PROGRAMMING_MAIN =
                     swipeType = EIGHT_WAY,
                     bottomLeft = KeyC("r"),
                     bottomRight = KeyC("y"),
-
                     topLeft = KeyC("4", color = MUTED),
                     top = KeyC("5", color = MUTED),
                     topRight = KeyC("6", color = MUTED),
@@ -41,7 +40,6 @@ val KB_EN_TYPESPLIT_PROGRAMMING_MAIN =
                     center = KeyC("i", size = LARGE),
                     swipeType = EIGHT_WAY,
                     bottomRight = KeyC("u"),
-
                     topLeft = KeyC("7", color = MUTED),
                     top = KeyC("8", color = MUTED),
                     topRight = KeyC("9", color = MUTED),
@@ -62,7 +60,6 @@ val KB_EN_TYPESPLIT_PROGRAMMING_MAIN =
                     center = KeyC("a", size = LARGE),
                     swipeType = EIGHT_WAY,
                     topRight = KeyC("d"),
-
                     top =
                         KeyC(
                             display = KeyDisplay.IconDisplay(Icons.Outlined.ArrowDropUp),
@@ -84,7 +81,6 @@ val KB_EN_TYPESPLIT_PROGRAMMING_MAIN =
                     center = KeyC("s", size = LARGE),
                     swipeType = EIGHT_WAY,
                     topLeft = KeyC("f"),
-
                     bottomRight = KeyC("#", color = MUTED),
                     bottomLeft = KeyC("$", color = MUTED),
                     bottom = KeyC("€", color = MUTED),
@@ -122,7 +118,6 @@ val KB_EN_TYPESPLIT_PROGRAMMING_MAIN =
                     center = KeyC("b", size = LARGE),
                     swipeType = EIGHT_WAY,
                     topRight = KeyC("v"),
-
                     topLeft = KeyC("`", color = MUTED),
                     bottomLeft = KeyC("_", color = MUTED),
                     bottomRight = KeyC("&", color = MUTED),
@@ -173,7 +168,6 @@ val KB_EN_TYPESPLIT_PROGRAMMING_SHIFTED =
                     swipeType = EIGHT_WAY,
                     bottomLeft = KeyC("R"),
                     bottomRight = KeyC("Y"),
-
                     topLeft = KeyC("4", color = MUTED),
                     top = KeyC("5", color = MUTED),
                     topRight = KeyC("6", color = MUTED),
@@ -183,7 +177,6 @@ val KB_EN_TYPESPLIT_PROGRAMMING_SHIFTED =
                     center = KeyC("I", size = LARGE),
                     swipeType = EIGHT_WAY,
                     bottomRight = KeyC("U"),
-
                     topLeft = KeyC("7", color = MUTED),
                     top = KeyC("8", color = MUTED),
                     topRight = KeyC("9", color = MUTED),
@@ -204,20 +197,21 @@ val KB_EN_TYPESPLIT_PROGRAMMING_SHIFTED =
                     center = KeyC("A", size = LARGE),
                     swipeType = EIGHT_WAY,
                     topRight = KeyC("D"),
-
-                    top =  KeyC(
-                        display = KeyDisplay.IconDisplay(Icons.Outlined.KeyboardCapslock),
-                        capsModeDisplay = KeyDisplay.IconDisplay(Icons.Outlined.ArrowDropUp),
-                        action = ToggleCapsLock,
-                        swipeReturnAction = ToggleCurrentWordCapitalization(true),
-                        color = MUTED,
-                    ),
-                    bottom = KeyC(
-                        display = KeyDisplay.IconDisplay(Icons.Outlined.ArrowDropDown),
-                        action = ToggleShiftMode(false),
-                        swipeReturnAction = ToggleCurrentWordCapitalization(false),
-                        color = MUTED,
-                    ),
+                    top =
+                        KeyC(
+                            display = KeyDisplay.IconDisplay(Icons.Outlined.KeyboardCapslock),
+                            capsModeDisplay = KeyDisplay.IconDisplay(Icons.Outlined.ArrowDropUp),
+                            action = ToggleCapsLock,
+                            swipeReturnAction = ToggleCurrentWordCapitalization(true),
+                            color = MUTED,
+                        ),
+                    bottom =
+                        KeyC(
+                            display = KeyDisplay.IconDisplay(Icons.Outlined.ArrowDropDown),
+                            action = ToggleShiftMode(false),
+                            swipeReturnAction = ToggleCurrentWordCapitalization(false),
+                            color = MUTED,
+                        ),
                     topLeft = KeyC("{", color = MUTED),
                     left = KeyC("(", color = MUTED),
                     bottomLeft = KeyC("[", color = MUTED),
@@ -227,7 +221,6 @@ val KB_EN_TYPESPLIT_PROGRAMMING_SHIFTED =
                     center = KeyC("S", size = LARGE),
                     swipeType = EIGHT_WAY,
                     topLeft = KeyC("F"),
-
                     bottomRight = KeyC("#", color = MUTED),
                     bottomLeft = KeyC("$", color = MUTED),
                     bottom = KeyC("€", color = MUTED),
@@ -265,7 +258,6 @@ val KB_EN_TYPESPLIT_PROGRAMMING_SHIFTED =
                     center = KeyC("B", size = LARGE),
                     swipeType = EIGHT_WAY,
                     topRight = KeyC("V"),
-
                     topLeft = KeyC("`", color = MUTED),
                     bottomLeft = KeyC("_", color = MUTED),
                     bottomRight = KeyC("&", color = MUTED),
@@ -361,7 +353,6 @@ val KB_EN_TYPESPLIT_PROGRAMMING_NUMERIC =
                     right = KeyC(")"),
                     bottomRight = KeyC("]"),
                     bottomLeft = KeyC("\""),
-
                 ),
             ),
             listOf(
