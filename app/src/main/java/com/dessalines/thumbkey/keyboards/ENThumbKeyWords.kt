@@ -243,6 +243,6 @@ val KB_EN_THUMBKEY_WORDS: KeyboardDefinition =
             ),
         settings =
             KeyboardDefinitionSettings(
-                autoCapitalizers = arrayOf(::autoCapitalizeI, ::autoCapitalizeIApostrophe),
+                autoCapitalizers = arrayOf(::autoCapitalizeI, ::autoCapitalizeIApostrophe, ::autoCapitalizeIApostropheLL),
             ),
     )
