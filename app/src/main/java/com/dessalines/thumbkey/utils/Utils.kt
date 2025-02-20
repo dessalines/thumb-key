@@ -1148,8 +1148,7 @@ fun isPasswordField(ime: IMEService): Boolean {
         InputType.TYPE_TEXT_VARIATION_PASSWORD,
         InputType.TYPE_TEXT_VARIATION_WEB_PASSWORD,
         InputType.TYPE_NUMBER_VARIATION_PASSWORD,
-    ).contains(inputType) ||
-        ime.currentInputEditorInfo.inputType == EditorInfo.TYPE_NULL
+    ).contains(inputType)
 }
 
 fun deleteWordBeforeCursor(ime: IMEService) {
