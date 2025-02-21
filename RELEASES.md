@@ -1,3 +1,11 @@
+## What's Changed in 4.0.21
+
+- adds variant layout: English Twohanded with symbols, numbers, and arrows by @bklaase in [#1278](https://github.com/dessalines/thumb-key/pull/1278)
+- Add "I'll" autocapitalizer for word layout by @jm355 in [#1275](https://github.com/dessalines/thumb-key/pull/1275)
+- neon theme make purple slightly brighter. by @bklaase in [#1276](https://github.com/dessalines/thumb-key/pull/1276)
+
+**Full Changelog**: https://github.com/dessalines/thumb-key/compare/4.0.20...4.0.21
+
 ## What's Changed in 4.0.20
 
 - Slight tweaks to en typesplit programming layout by @bklaase in [#1274](https://github.com/dessalines/thumb-key/pull/1274)
