@@ -345,6 +345,34 @@ data class BehaviorUpdate(
 )
 
 @Dao
+interface AbbreviationDao {
+    @Query("SELECT * FROM Abbreviation")
+    fun getAllAbbreviations(): LiveData<List<Abbreviation>>
+
+    @Query("SELECT * FROM Abbreviation WHERE lower(abbreviation) = lower(:abbr) LIMIT 1")
+    fun getAbbreviation(abbr: String): Abbreviation?
+
+    @Query("SELECT * FROM Abbreviation WHERE lower(abbreviation) = lower(:abbr) LIMIT 1")
+    suspend fun getAbbreviationAsync(abbr: String): Abbreviation?
+
+    @Query("UPDATE Abbreviation SET abbreviation = :newAbbr, expansion = :expansion WHERE id = :id")
+    suspend fun update(
+        id: Int,
+        newAbbr: String,
+        expansion: String,
+    )
+
+    @Query("INSERT INTO Abbreviation (abbreviation, expansion) VALUES (:abbr, :expansion)")
+    suspend fun insert(
+        abbr: String,
+        expansion: String,
+    )
+
+    @Query("DELETE FROM Abbreviation WHERE id = :id")
+    suspend fun deleteById(id: Int)
+}
+
+@Dao
 interface AppSettingsDao {
     @Query("SELECT * FROM AppSettings limit 1")
     fun getSettings(): LiveData<AppSettings>
@@ -582,13 +610,66 @@ val MIGRATION_15_16 =
         }
     }
 
+val MIGRATION_16_17 =
+    object : Migration(16, 17) {
+        override fun migrate(db: SupportSQLiteDatabase) {
+            db.execSQL(
+                """
+                CREATE TABLE IF NOT EXISTS Abbreviation (
+                    abbreviation TEXT PRIMARY KEY NOT NULL,
+                    expansion TEXT NOT NULL
+                )
+                """,
+            )
+        }
+    }
+
+@Entity
+data class Abbreviation(
+    @PrimaryKey(autoGenerate = true) val id: Int = 0,
+    @ColumnInfo(name = "abbreviation") val abbreviation: String,
+    @ColumnInfo(name = "expansion") val expansion: String,
+)
+
+val MIGRATION_17_18 =
+    object : Migration(17, 18) {
+        override fun migrate(db: SupportSQLiteDatabase) {
+            // Create a temporary table with the new schema
+            db.execSQL(
+                """
+            CREATE TABLE IF NOT EXISTS Abbreviation_temp (
+                id INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL,
+                abbreviation TEXT NOT NULL,
+                expansion TEXT NOT NULL
+            )
+        """,
+            )
+
+            // Copy data from the old table to the new table
+            db.execSQL(
+                """
+            INSERT INTO Abbreviation_temp (abbreviation, expansion)
+            SELECT abbreviation, expansion FROM Abbreviation
+        """,
+            )
+
+            // Drop the old table
+            db.execSQL("DROP TABLE Abbreviation")
+
+            // Rename the temporary table to the original name
+            db.execSQL("ALTER TABLE Abbreviation_temp RENAME TO Abbreviation")
+        }
+    }
+
 @Database(
-    version = 16,
-    entities = [AppSettings::class],
+    version = 18,
+    entities = [AppSettings::class, Abbreviation::class],
     exportSchema = true,
 )
 abstract class AppDB : RoomDatabase() {
     abstract fun appSettingsDao(): AppSettingsDao
+
+    abstract fun abbreviationDao(): AbbreviationDao
 
     companion object {
         @Volatile
@@ -621,7 +702,9 @@ abstract class AppDB : RoomDatabase() {
                             MIGRATION_13_14,
                             MIGRATION_14_15,
                             MIGRATION_15_16,
-                        )
+                            MIGRATION_16_17,
+                            MIGRATION_17_18,
+                        ).fallbackToDestructiveMigration()
                         // Necessary because it can't insert data on creation
                         .addCallback(
                             object : Callback() {
