@@ -8,6 +8,7 @@
     <string name="green">Green</string>
     <string name="pink">Pink</string>
     <string name="matrix">Matrix-AMOLED</string>
+    <string name="neon" translatable="false">Neon</string>
     <string name="srcery">Srcery</string>
     <string name="blue">Blue</string>
     <string name="dracula">Dracula</string>

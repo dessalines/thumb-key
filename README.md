@@ -100,7 +100,7 @@ This project is a follow-up to the now unmaintained (and closed-source) [MessagE
 - **Swipe right** to change keyboard position.
 - **Swipe down** to access IME switcher (switch between Thumb-key and other keyboards).
 - **Swipe left** to cycle between selected layouts (languages).
-- **Swipe to bottom-left** to toggle voice input. Requires [FUTO Voice Input](https://play.google.com/store/apps/details?id=org.futo.voiceinput).
+- **Swipe to bottom-left** to toggle voice input. Requires [FUTO Voice Input](https://play.google.com/store/apps/details?id=org.futo.voiceinput), [Transcribro](https://github.com/soupslurpr/Transcribro), or [Whisper IME](https://github.com/woheller69/whisperIME).
 
 ### Symbols / Letters Key
 
@@ -199,6 +199,10 @@ MessagEase is unfortunately unmaintained, and Thumb-Key uses a better alternatin
 ## Contributing
 
 See [Contributing.md](CONTRIBUTING.md) for how to add keyboard layouts, and themes.
+
+Translations via [weblate](https://hosted.weblate.org/engage/thumb-key/):
+
+[![Translation status](https://hosted.weblate.org/widget/thumb-key/thumb-key/multi-auto.svg)](https://hosted.weblate.org/engage/thumb-key/)
 
 ## Support / Donate
 

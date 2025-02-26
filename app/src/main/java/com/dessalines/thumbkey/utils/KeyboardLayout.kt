@@ -35,6 +35,8 @@ import com.dessalines.thumbkey.keyboards.KB_EN_EO_THUMBKEY
 import com.dessalines.thumbkey.keyboards.KB_EN_ES_CA_THUMBKEY
 import com.dessalines.thumbkey.keyboards.KB_EN_FR_MESSAGEASE_SYMBOLS
 import com.dessalines.thumbkey.keyboards.KB_EN_HR_MESSAGEASE
+import com.dessalines.thumbkey.keyboards.KB_EN_HYPER
+import com.dessalines.thumbkey.keyboards.KB_EN_HYPER_SPACE
 import com.dessalines.thumbkey.keyboards.KB_EN_IT_THUMBKEY
 import com.dessalines.thumbkey.keyboards.KB_EN_LA_THUMBKEY
 import com.dessalines.thumbkey.keyboards.KB_EN_MESSAGEASE
@@ -64,6 +66,7 @@ import com.dessalines.thumbkey.keyboards.KB_EN_RO_THUMBKEY
 import com.dessalines.thumbkey.keyboards.KB_EN_RSINOA
 import com.dessalines.thumbkey.keyboards.KB_EN_SK_THUMBKEY
 import com.dessalines.thumbkey.keyboards.KB_EN_SV_THUMBKEY_PROGRAMMING
+import com.dessalines.thumbkey.keyboards.KB_EN_SYMBOLS_NUMBERS_ARROWS_TWO_HANDS
 import com.dessalines.thumbkey.keyboards.KB_EN_SYMBOLS_NUMBERS_TWO_HANDS
 import com.dessalines.thumbkey.keyboards.KB_EN_SYMBOLS_TWO_HANDS
 import com.dessalines.thumbkey.keyboards.KB_EN_THUMBKEY
@@ -74,9 +77,11 @@ import com.dessalines.thumbkey.keyboards.KB_EN_THUMBKEY_PROGRAMMING_WIDE
 import com.dessalines.thumbkey.keyboards.KB_EN_THUMBKEY_SYMBOLS
 import com.dessalines.thumbkey.keyboards.KB_EN_THUMBKEY_WIDE
 import com.dessalines.thumbkey.keyboards.KB_EN_THUMBKEY_WORDS
+import com.dessalines.thumbkey.keyboards.KB_EN_THUMBKEY_WORDS_SYMBOLS
 import com.dessalines.thumbkey.keyboards.KB_EN_THUMBKEY_WRITER
 import com.dessalines.thumbkey.keyboards.KB_EN_TWO_HANDS
 import com.dessalines.thumbkey.keyboards.KB_EN_TYPESPLIT
+import com.dessalines.thumbkey.keyboards.KB_EN_TYPESPLIT_PROGRAMMING
 import com.dessalines.thumbkey.keyboards.KB_EN_TYPESPLIT_SHORT
 import com.dessalines.thumbkey.keyboards.KB_EO_CYRILLIC_THUMBKEY
 import com.dessalines.thumbkey.keyboards.KB_EO_EN_DE_THUMBKEY
@@ -338,4 +343,9 @@ enum class KeyboardLayout(
     ARThumbKeyLevant(KB_AR_THUMBKEY_LEVANT),
     PTDvorakWide(KB_PT_DVORAK_WIDE),
     BRFRThumbKeyCompose(KB_BR_FR_THUMBKEY_COMPOSE),
+    ENHyper(KB_EN_HYPER),
+    ENThumbKeyWordsSymbols(KB_EN_THUMBKEY_WORDS_SYMBOLS),
+    ENHyperSpace(KB_EN_HYPER_SPACE),
+    EnTypeSplitProgramming(KB_EN_TYPESPLIT_PROGRAMMING),
+    ENSymbolsNumbersArrowsTwoHands(KB_EN_SYMBOLS_NUMBERS_ARROWS_TWO_HANDS),
 }

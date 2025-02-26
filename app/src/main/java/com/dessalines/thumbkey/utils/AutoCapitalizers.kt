@@ -31,3 +31,17 @@ fun autoCapitalizeIApostrophe(ime: IMEService) {
         }
     }
 }
+
+fun autoCapitalizeIApostropheLL(ime: IMEService) {
+    // Capitalizes "i'll"
+    val textBefore = ime.currentInputConnection.getTextBeforeCursor(5, 0)
+    if (!textBefore.isNullOrEmpty()) {
+        if (textBefore == " i\'ll") {
+            ime.currentInputConnection.deleteSurroundingText(4, 0)
+            ime.currentInputConnection.commitText(
+                "I\'ll",
+                1,
+            )
+        }
+    }
+}
