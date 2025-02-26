@@ -10,8 +10,8 @@ import com.dessalines.thumbkey.utils.FontSizeVariant.*
 import com.dessalines.thumbkey.utils.KeyAction.*
 import com.dessalines.thumbkey.utils.SwipeNWay.*
 
-// Adds common English words to main screen to reduce amount of taps required when typing
-val KB_EN_THUMBKEY_WORDS_MAIN =
+// Adds common English words to main screen to reduce amount of taps required when typing, while preserving common punctuation and symbols that aren't displaced by words
+val KB_EN_THUMBKEY_WORDS_SYMBOLS_MAIN =
     KeyboardC(
         listOf(
             listOf(
@@ -21,27 +21,29 @@ val KB_EN_THUMBKEY_WORDS_MAIN =
                     topRight = KeyC("make", color = MUTED, size = SMALLEST),
                     right = KeyC("will", color = MUTED, size = SMALLEST),
                     bottom = KeyC("what", color = MUTED, size = SMALLEST),
+                    left = KeyC("'s", color = MUTED),
                 ),
                 KeyItemC(
                     center = KeyC("r", size = LARGE),
                     bottom = KeyC("g"),
+                    top = KeyC("ing", color = MUTED, size = SMALLEST),
                     topLeft = KeyC("when", color = MUTED, size = SMALLEST),
                     left = KeyC("which", color = MUTED, size = SMALLEST),
                     bottomLeft = KeyC("with", color = MUTED, size = SMALLEST),
                     topRight = KeyC("just", color = MUTED, size = SMALLEST),
-                    right = KeyC("from", color = MUTED, size = SMALLEST),
+                    right = KeyC("!", color = MUTED),
                     bottomRight = KeyC("be", color = MUTED, size = SMALLEST),
                 ),
                 KeyItemC(
                     center = KeyC("o", size = LARGE),
                     bottomLeft = KeyC("u"),
                     topLeft = KeyC("ould", color = MUTED, size = SMALLEST),
-                    top = KeyC("'ll", color = MUTED, size = SMALLEST),
-                    topRight = KeyC("'re", color = MUTED, size = SMALLEST),
+                    top = KeyC("'ll", color = MUTED),
+                    topRight = KeyC("'re", color = MUTED),
                     right = KeyC("about", color = MUTED, size = SMALLEST),
-                    bottomRight = KeyC("n't", color = MUTED, size = SMALLEST),
-                    bottom = KeyC("'t", color = MUTED, size = SMALLEST),
-                    left = KeyC("'s", color = MUTED, size = SMALLEST),
+                    bottomRight = KeyC("n't", color = MUTED),
+                    bottom = KeyC("'t", color = MUTED),
+                    left = KeyC("?", color = MUTED),
                 ),
                 EMOJI_KEY_ITEM,
             ),
@@ -49,10 +51,13 @@ val KB_EN_THUMBKEY_WORDS_MAIN =
                 KeyItemC(
                     center = KeyC("n", size = LARGE),
                     right = KeyC("m"),
+                    topLeft = KeyC("{", color = MUTED),
                     top = KeyC("like", color = MUTED, size = SMALLEST),
                     topRight = KeyC("not", color = MUTED, size = SMALLEST),
-                    bottomRight = KeyC("and", color = MUTED, size = SMALLEST),
+                    left = KeyC("(", color = MUTED),
+                    bottomLeft = KeyC("[", color = MUTED),
                     bottom = KeyC("know", color = MUTED, size = SMALLEST),
+                    bottomRight = KeyC("and", color = MUTED, size = SMALLEST),
                 ),
                 KeyItemC(
                     center = KeyC("h", size = LARGE),
@@ -67,8 +72,12 @@ val KB_EN_THUMBKEY_WORDS_MAIN =
                 ),
                 KeyItemC(
                     center = KeyC("a", size = LARGE),
-                    swipeType = FOUR_WAY_CROSS,
+                    bottomLeft = KeyC("@", color = MUTED),
                     left = KeyC("l"),
+                    topLeft = KeyC("/", color = MUTED),
+                    topRight = KeyC("}", color = MUTED),
+                    right = KeyC(")", color = MUTED),
+                    bottomRight = KeyC("]", color = MUTED),
                     top =
                         KeyC(
                             display = KeyDisplay.IconDisplay(Icons.Outlined.ArrowDropUp),
@@ -91,23 +100,26 @@ val KB_EN_THUMBKEY_WORDS_MAIN =
                     top = KeyC("have", color = MUTED, size = SMALLEST),
                     right = KeyC("can", color = MUTED, size = SMALLEST),
                     bottomRight = KeyC("but", color = MUTED, size = SMALLEST),
+                    topLeft = KeyC("this", color = MUTED, size = SMALLEST),
+                    bottomLeft = KeyC("that", color = MUTED, size = SMALLEST),
                 ),
                 KeyItemC(
                     center = KeyC("i", size = LARGE),
                     top = KeyC("f"),
+                    topRight = KeyC("'", color = MUTED),
                     right = KeyC("z"),
-                    bottomRight = KeyC("-", color = MUTED),
+                    bottomRight = KeyC("I'm", color = MUTED),
                     bottom = KeyC(".", color = MUTED),
                     bottomLeft = KeyC("*", color = MUTED),
-                    topLeft = KeyC("this", color = MUTED, size = SMALLEST),
-                    topRight = KeyC("that", color = MUTED, size = SMALLEST),
-                    left = KeyC("I'm", color = MUTED, size = SMALLEST),
+                    topLeft = KeyC("\"", color = MUTED),
+                    left = KeyC(",", color = MUTED),
                 ),
                 KeyItemC(
                     center = KeyC("e", size = LARGE),
                     topLeft = KeyC("d"),
                     top = KeyC("the", color = MUTED, size = SMALLEST),
                     topRight = KeyC("for", color = MUTED, size = SMALLEST),
+                    right = KeyC("from", color = MUTED, size = SMALLEST),
                     bottomLeft = KeyC("do", color = MUTED, size = SMALLEST),
                     left = KeyC("you", color = MUTED, size = SMALLEST),
                 ),
@@ -120,7 +132,7 @@ val KB_EN_THUMBKEY_WORDS_MAIN =
         ),
     )
 
-val KB_EN_THUMBKEY_WORDS_SHIFTED =
+val KB_EN_THUMBKEY_WORDS_SYMBOLS_SHIFTED =
     KeyboardC(
         listOf(
             listOf(
@@ -130,27 +142,29 @@ val KB_EN_THUMBKEY_WORDS_SHIFTED =
                     topRight = KeyC("Make", color = MUTED, size = SMALLEST),
                     right = KeyC("Will", color = MUTED, size = SMALLEST),
                     bottom = KeyC("What", color = MUTED, size = SMALLEST),
+                    left = KeyC("'s", color = MUTED),
                 ),
                 KeyItemC(
                     center = KeyC("R", size = LARGE),
                     bottom = KeyC("G"),
+                    top = KeyC("ing", color = MUTED, size = SMALLEST),
                     topLeft = KeyC("When", color = MUTED, size = SMALLEST),
                     left = KeyC("Which", color = MUTED, size = SMALLEST),
                     bottomLeft = KeyC("With", color = MUTED, size = SMALLEST),
                     topRight = KeyC("Just", color = MUTED, size = SMALLEST),
-                    right = KeyC("From", color = MUTED, size = SMALLEST),
+                    right = KeyC("!", color = MUTED),
                     bottomRight = KeyC("Be", color = MUTED, size = SMALLEST),
                 ),
                 KeyItemC(
                     center = KeyC("O", size = LARGE),
                     bottomLeft = KeyC("U"),
                     topLeft = KeyC("ould", color = MUTED, size = SMALLEST),
-                    top = KeyC("'ll", color = MUTED, size = SMALLEST),
-                    topRight = KeyC("'re", color = MUTED, size = SMALLEST),
+                    top = KeyC("'ll", color = MUTED),
+                    topRight = KeyC("'re", color = MUTED),
                     right = KeyC("About", color = MUTED, size = SMALLEST),
-                    bottomRight = KeyC("n't", color = MUTED, size = SMALLEST),
-                    bottom = KeyC("'t", color = MUTED, size = SMALLEST),
-                    left = KeyC("'s", color = MUTED, size = SMALLEST),
+                    bottomRight = KeyC("n't", color = MUTED),
+                    bottom = KeyC("'t", color = MUTED),
+                    left = KeyC("?", color = MUTED),
                 ),
                 EMOJI_KEY_ITEM,
             ),
@@ -158,10 +172,13 @@ val KB_EN_THUMBKEY_WORDS_SHIFTED =
                 KeyItemC(
                     center = KeyC("N", size = LARGE),
                     right = KeyC("M"),
+                    topLeft = KeyC("{", color = MUTED),
                     top = KeyC("Like", color = MUTED, size = SMALLEST),
                     topRight = KeyC("Not", color = MUTED, size = SMALLEST),
-                    bottomRight = KeyC("And", color = MUTED, size = SMALLEST),
+                    left = KeyC("(", color = MUTED),
+                    bottomLeft = KeyC("[", color = MUTED),
                     bottom = KeyC("Know", color = MUTED, size = SMALLEST),
+                    bottomRight = KeyC("And", color = MUTED, size = SMALLEST),
                 ),
                 KeyItemC(
                     center = KeyC("H", size = LARGE),
@@ -176,8 +193,12 @@ val KB_EN_THUMBKEY_WORDS_SHIFTED =
                 ),
                 KeyItemC(
                     center = KeyC("A", size = LARGE),
-                    swipeType = FOUR_WAY_CROSS,
+                    bottomLeft = KeyC("@", color = MUTED),
                     left = KeyC("L"),
+                    topLeft = KeyC("/", color = MUTED),
+                    topRight = KeyC("}", color = MUTED),
+                    right = KeyC(")", color = MUTED),
+                    bottomRight = KeyC("]", color = MUTED),
                     bottom =
                         KeyC(
                             display = KeyDisplay.IconDisplay(Icons.Outlined.ArrowDropDown),
@@ -203,23 +224,26 @@ val KB_EN_THUMBKEY_WORDS_SHIFTED =
                     top = KeyC("Have", color = MUTED, size = SMALLEST),
                     right = KeyC("Can", color = MUTED, size = SMALLEST),
                     bottomRight = KeyC("But", color = MUTED, size = SMALLEST),
+                    topLeft = KeyC("This", color = MUTED, size = SMALLEST),
+                    bottomLeft = KeyC("That", color = MUTED, size = SMALLEST),
                 ),
                 KeyItemC(
                     center = KeyC("I", size = LARGE),
                     top = KeyC("F"),
                     topRight = KeyC("'", color = MUTED),
                     right = KeyC("Z"),
-                    bottomRight = KeyC("-", color = MUTED),
+                    bottomRight = KeyC("I'm", color = MUTED),
                     bottom = KeyC(".", color = MUTED),
                     bottomLeft = KeyC("*", color = MUTED),
-                    topLeft = KeyC("This", color = MUTED, size = SMALLEST),
-                    left = KeyC("I'm", color = MUTED, size = SMALLEST),
+                    topLeft = KeyC("\"", color = MUTED),
+                    left = KeyC(",", color = MUTED),
                 ),
                 KeyItemC(
                     center = KeyC("E", size = LARGE),
                     topLeft = KeyC("D"),
                     top = KeyC("The", color = MUTED, size = SMALLEST),
                     topRight = KeyC("For", color = MUTED, size = SMALLEST),
+                    right = KeyC("From", color = MUTED, size = SMALLEST),
                     bottomLeft = KeyC("Do", color = MUTED, size = SMALLEST),
                     left = KeyC("You", color = MUTED, size = SMALLEST),
                 ),
@@ -232,13 +256,13 @@ val KB_EN_THUMBKEY_WORDS_SHIFTED =
         ),
     )
 
-val KB_EN_THUMBKEY_WORDS: KeyboardDefinition =
+val KB_EN_THUMBKEY_WORDS_SYMBOLS: KeyboardDefinition =
     KeyboardDefinition(
-        title = "english thumb-key words",
+        title = "english thumb-key words symbols",
         modes =
             KeyboardDefinitionModes(
-                main = KB_EN_THUMBKEY_WORDS_MAIN,
-                shifted = KB_EN_THUMBKEY_WORDS_SHIFTED,
+                main = KB_EN_THUMBKEY_WORDS_SYMBOLS_MAIN,
+                shifted = KB_EN_THUMBKEY_WORDS_SYMBOLS_SHIFTED,
                 numeric = NUMERIC_KEYBOARD,
             ),
         settings =

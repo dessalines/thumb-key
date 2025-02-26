@@ -1,3 +1,55 @@
+## What's Changed in 4.0.22
+
+- Add voice input option to README.md by @jm355 in [#1286](https://github.com/dessalines/thumb-key/pull/1286)
+- Update ENThumbKeyWordsSymbols.kt by @jm355 in [#1282](https://github.com/dessalines/thumb-key/pull/1282)
+- Slightly loosen password field definition for disabling animations by @bklaase in [#1280](https://github.com/dessalines/thumb-key/pull/1280)
+
+**Full Changelog**: https://github.com/dessalines/thumb-key/compare/4.0.21...4.0.22
+
+## What's Changed in 4.0.21
+
+- adds variant layout: English Twohanded with symbols, numbers, and arrows by @bklaase in [#1278](https://github.com/dessalines/thumb-key/pull/1278)
+- Add "I'll" autocapitalizer for word layout by @jm355 in [#1275](https://github.com/dessalines/thumb-key/pull/1275)
+- neon theme make purple slightly brighter. by @bklaase in [#1276](https://github.com/dessalines/thumb-key/pull/1276)
+
+**Full Changelog**: https://github.com/dessalines/thumb-key/compare/4.0.20...4.0.21
+
+## What's Changed in 4.0.20
+
+- Slight tweaks to en typesplit programming layout by @bklaase in [#1274](https://github.com/dessalines/thumb-key/pull/1274)
+- add English Typesplit layout, optimized for programming by @bklaase in [#1272](https://github.com/dessalines/thumb-key/pull/1272)
+- add hyper space and minor fixes to hyper by @luminespire in [#1268](https://github.com/dessalines/thumb-key/pull/1268)
+- Add layout with words and common symbols by @jm355 in [#1262](https://github.com/dessalines/thumb-key/pull/1262)
+- Update README.md to include other voice input option (transcribro) by @jm355 in [#1263](https://github.com/dessalines/thumb-key/pull/1263)
+
+**Full Changelog**: https://github.com/dessalines/thumb-key/compare/4.0.19...4.0.20
+
+## What's Changed in 4.0.19
+
+- add hyper layout by @luminespire in [#1260](https://github.com/dessalines/thumb-key/pull/1260)
+
+## New Contributors
+
+- @luminespire made their first contribution in [#1260](https://github.com/dessalines/thumb-key/pull/1260)
+
+**Full Changelog**: https://github.com/dessalines/thumb-key/compare/4.0.18...4.0.19
+
+## What's Changed in 4.0.18
+
+- Theme/neon -> slightly mute purple to better fit android app palettes by @bklaase in [#1259](https://github.com/dessalines/thumb-key/pull/1259)
+- Add Neon theme(s) by @bklaase in [#1258](https://github.com/dessalines/thumb-key/pull/1258)
+- Skipping weblate updates for git cliff. by @dessalines
+- Adding more weblate share to readme. by @dessalines in [#1246](https://github.com/dessalines/thumb-key/pull/1246)
+- Use svg badge by @dessalines
+- Adding weblate translations url. by @dessalines in [#1242](https://github.com/dessalines/thumb-key/pull/1242)
+
+## New Contributors
+
+- @bklaase made their first contribution in [#1259](https://github.com/dessalines/thumb-key/pull/1259)
+- @weblate made their first contribution in [#1247](https://github.com/dessalines/thumb-key/pull/1247)
+
+**Full Changelog**: https://github.com/dessalines/thumb-key/compare/4.0.17...4.0.18
+
 ## What's Changed in 4.0.17
 
 - Relatively large change to JAKanaThumbKey.kt by @K0baU in [#1241](https://github.com/dessalines/thumb-key/pull/1241)
