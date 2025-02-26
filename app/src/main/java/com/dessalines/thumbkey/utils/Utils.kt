@@ -1363,8 +1363,12 @@ fun circularDirection(
                 spannedAngle <= -angleThreshold -> CircularDirection.Counterclockwise
                 else -> null
             }
-        } else null
-    } else null
+        } else {
+            null
+        }
+    } else {
+        null
+    }
 }
 
 fun Offset.getDistanceTo(other: Offset) = (other - this).getDistance()
