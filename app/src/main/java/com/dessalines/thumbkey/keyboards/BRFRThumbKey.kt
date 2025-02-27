@@ -22,6 +22,7 @@ val KB_BR_FR_THUMBKEY_MAIN =
                     right = KeyC("^", color = MUTED),
                     bottomRight = KeyC("q"),
                     bottom = KeyC("-", color = MUTED),
+                    bottomLeft = KeyC("·", color = MUTED),
                     left = KeyC("\"", color = MUTED),
                 ),
                 KeyItemC(
@@ -127,6 +128,7 @@ val KB_BR_FR_THUMBKEY_SHIFTED =
                     right = KeyC("^", color = MUTED),
                     bottomRight = KeyC("Q"),
                     bottom = KeyC("-", color = MUTED),
+                    bottomLeft = KeyC("·", color = MUTED),
                     left = KeyC("\"", color = MUTED),
                 ),
                 KeyItemC(
