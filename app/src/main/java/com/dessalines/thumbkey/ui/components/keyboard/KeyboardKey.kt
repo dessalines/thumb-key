@@ -448,8 +448,14 @@ fun KeyboardKey(
                         ) {
                             hasSlideMoveCursorTriggered = false
 
-                            val finalOffsetThreshold = keySize.dp.toPx() * 0.71f // magic number found from trial and error
-                            val maxOffsetThreshold = 1.5 * finalOffsetThreshold
+                            // offset where we recognize if the swipe is back to the initial key
+                            // this offset needs to take the minSwipeLength into consideration. Otherwise
+                            // just a little (1px) swipe back would trigger the DragReturn action
+                            val finalOffsetThreshold = minSwipeLength * 0.71f // magic number found from trial and error
+
+                            // offset needed, at which the swipe qualifies for DragReturn or Circular
+                            // depending on minSwipeLength setting to have consistent swipe lengths or circle sizes
+                            val maxOffsetThreshold = minSwipeLength
 
                             val finalOffset = positions.last()
                             // we also consider the final offset small enough if it's kinda big, but
@@ -475,7 +481,7 @@ fun KeyboardKey(
                                                         CircularDragAction.OppositeCase to oppositeCaseKey?.center?.action,
                                                         CircularDragAction.Numeric to numericKey?.center?.action,
                                                     )
-                                                circularDirection(positions, finalOffsetThreshold)?.let {
+                                                circularDirection(positions, finalOffsetThreshold, minSwipeLength)?.let {
                                                     when (it) {
                                                         CircularDirection.Clockwise -> circularDragActions[clockwiseDragAction]
                                                         CircularDirection.Counterclockwise ->
