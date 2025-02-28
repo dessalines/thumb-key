@@ -22,6 +22,7 @@ val KB_BR_FR_THUMBKEY_COMPOSE_MAIN =
                     right = KeyC("^"),
                     bottomRight = KeyC("q"),
                     bottom = KeyC("-"),
+                    bottomLeft = KeyC("·"),
                     left = KeyC("\""),
                 ),
                 KeyItemC(
@@ -188,6 +189,7 @@ val KB_BR_FR_THUMBKEY_COMPOSE_SHIFTED =
                     right = KeyC("^"),
                     bottomRight = KeyC("Q"),
                     bottom = KeyC("-"),
+                    bottomLeft = KeyC("·"),
                     left = KeyC("\""),
                 ),
                 KeyItemC(
@@ -318,8 +320,8 @@ val KB_BR_FR_THUMBKEY_COMPOSE_SHIFTED =
                     center = KeyC("S", size = LARGE),
                     topLeft = KeyC("Ç"),
                     top = KeyC("C"),
-                    topRight = KeyC("C'H"),
-                    right = KeyC("CH"),
+                    topRight = KeyC("C'h"),
+                    right = KeyC("Ch"),
                     bottomRight = KeyC("*"),
                     bottom = KeyC("."),
                     bottomLeft = KeyC(","),

@@ -5,6 +5,7 @@ import com.dessalines.thumbkey.keyboards.KB_BG_MESSAGEASE_PHONETIC_SYMBOLS
 import com.dessalines.thumbkey.keyboards.KB_BG_THUMBKEY_SYMBOLS
 import com.dessalines.thumbkey.keyboards.KB_BR_FR_THUMBKEY
 import com.dessalines.thumbkey.keyboards.KB_BR_FR_THUMBKEY_COMPOSE
+import com.dessalines.thumbkey.keyboards.KB_BR_FR_THUMBKEY_V3
 import com.dessalines.thumbkey.keyboards.KB_BY_THUMBKEY
 import com.dessalines.thumbkey.keyboards.KB_BY_THUMBKEY_SYMBOLS
 import com.dessalines.thumbkey.keyboards.KB_CA_THUMBKEY
@@ -348,4 +349,5 @@ enum class KeyboardLayout(
     ENHyperSpace(KB_EN_HYPER_SPACE),
     EnTypeSplitProgramming(KB_EN_TYPESPLIT_PROGRAMMING),
     ENSymbolsNumbersArrowsTwoHands(KB_EN_SYMBOLS_NUMBERS_ARROWS_TWO_HANDS),
+    BRFRThumbKeyV3(KB_BR_FR_THUMBKEY_V3),
 }
