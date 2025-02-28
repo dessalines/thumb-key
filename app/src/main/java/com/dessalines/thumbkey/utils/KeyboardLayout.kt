@@ -348,4 +348,5 @@ enum class KeyboardLayout(
     ENHyperSpace(KB_EN_HYPER_SPACE),
     EnTypeSplitProgramming(KB_EN_TYPESPLIT_PROGRAMMING),
     ENSymbolsNumbersArrowsTwoHands(KB_EN_SYMBOLS_NUMBERS_ARROWS_TWO_HANDS),
+    BRFRThumbKeyV3(KB_BR_FR_THUMBKEY_V3),
 }
