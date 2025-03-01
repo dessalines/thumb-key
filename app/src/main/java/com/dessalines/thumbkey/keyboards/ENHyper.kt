@@ -26,7 +26,7 @@ val KB_EN_HYPER_MAIN =
                 ),
                 KeyItemC(
                     center = KeyC("a", size = LARGE),
-                    swipeType = FOUR_WAY_CROSS,
+                        swipeType = FOUR_WAY_CROSS,
                     bottom = KeyC("!", color = MUTED),
                     left = KeyC("j"),
                 ),
