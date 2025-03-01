@@ -66,9 +66,9 @@ val KB_EN_HYPER_MAIN =
                 KeyItemC(
                     center = KeyC("e", size = LARGE),
                     swipeType = FOUR_WAY_CROSS,
-                    left = KeyC("?", color = MUTED),
-                    top = KeyC(".", color = MUTED),
-                    bottom = KeyC(",", color = MUTED),
+                    left = KeyC(".", color = MUTED),
+                    top = KeyC(",", color = MUTED),
+                    bottom = KeyC("?", color = MUTED),
                 ),
                 KeyItemC(
                     center = KeyC("t", size = LARGE),
@@ -173,9 +173,9 @@ val KB_EN_HYPER_SHIFTED =
                 KeyItemC(
                     center = KeyC("E", size = LARGE),
                     swipeType = FOUR_WAY_CROSS,
-                    left = KeyC("?", color = MUTED),
-                    top = KeyC(".", color = MUTED),
-                    bottom = KeyC(",", color = MUTED),
+                    left = KeyC(".", color = MUTED),
+                    top = KeyC(",", color = MUTED),
+                    bottom = KeyC("?", color = MUTED),
                 ),
                 KeyItemC(
                     center = KeyC("T", size = LARGE),
