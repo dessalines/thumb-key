@@ -14,38 +14,31 @@ val HYPER_NUMERIC_KEYBOARD =
             listOf(
                 RETURN_KEY_ITEM,
                 KeyItemC(
-                    center = KeyC("!", size = LARGE),
-                ),
-                KeyItemC(
-                    center = KeyC("7", size = LARGE),
-                    bottomRight = KeyC("?"),
+                    center = KeyC("1", size = LARGE),
                     top = KeyC(":(", size = SMALL),
-                    bottom = KeyC("~"),
-                    left = KeyC("{"),
+                    left = KeyC("["),
+                    bottomRight = KeyC("<"),
+                    right = KeyC("\\"),
                 ),
                 KeyItemC(
-                    center = KeyC("8", size = LARGE),
-                    bottom = KeyC("@"),
-                    topLeft = KeyC("`"),
-                    topRight = KeyC("´"),
+                    center = KeyC("2", size = LARGE),
                 ),
                 KeyItemC(
-                    center = KeyC("9", size = LARGE),
+                    center = KeyC("3", size = LARGE),
                     top = KeyC(":)", size = SMALL),
-                    right = KeyC("}"),
-                    bottom = KeyC("°"),
-                    bottomLeft = KeyC("#"),
+                    left = KeyC("|"),
+                    right = KeyC("]"),
+                    bottomLeft = KeyC(">"),
+                ),
+                KeyItemC(
+                    center = KeyC(".", size = LARGE),
+                    bottom = KeyC(","),
+                    left = KeyC("^"),
                 ),
                 BACKSPACE_KEY_ITEM,
             ),
             listOf(
-                KeyItemC(
-                    center = KeyC(".", size = LARGE),
-                    backgroundColor = SURFACE_VARIANT,
-                ),
-                KeyItemC(
-                    center = KeyC("0", size = LARGE),
-                ),
+                SPACEBAR_SKINNY_KEY_ITEM,
                 KeyItemC(
                     center = KeyC("4", size = LARGE),
                     top = KeyC("\""),
@@ -64,8 +57,33 @@ val HYPER_NUMERIC_KEYBOARD =
                     center = KeyC("6", size = LARGE),
                     top = KeyC("'"),
                     bottom = KeyC(";"),
-                    left = KeyC("^"),
+                    left = KeyC("!"),
                     right = KeyC(")"),
+                ),
+                KeyItemC(
+                    center = KeyC("0", size = LARGE),
+                ),
+                SPACEBAR_SKINNY_KEY_ITEM,
+            ),
+            listOf(
+                ABC_KEY_ITEM,
+                KeyItemC(
+                    center = KeyC("7", size = LARGE),
+                    topRight = KeyC("?"),
+                    top = KeyC("~"),
+                    left = KeyC("{"),
+                ),
+                KeyItemC(
+                    center = KeyC("8", size = LARGE),
+                    top = KeyC("@"),
+                    topLeft = KeyC("`"),
+                    topRight = KeyC("´"),
+                ),
+                KeyItemC(
+                    center = KeyC("9", size = LARGE),
+                    right = KeyC("}"),
+                    top = KeyC("°"),
+                    topLeft = KeyC("#"),
                 ),
                 KeyItemC(
                     center = KeyC("="),
@@ -73,30 +91,6 @@ val HYPER_NUMERIC_KEYBOARD =
                     bottom = KeyC("-"),
                     left = KeyC("*"),
                     right = KeyC("/"),
-                    backgroundColor = SURFACE_VARIANT,
-                ),
-            ),
-            listOf(
-                ABC_KEY_ITEM,
-                KeyItemC(
-                    center = KeyC(",", size = LARGE),
-                ),
-                KeyItemC(
-                    center = KeyC("1", size = LARGE),
-                    topLeft = KeyC("["),
-                    bottomLeft = KeyC("<"),
-                ),
-                KeyItemC(
-                    center = KeyC("2", size = LARGE),
-                    top = KeyC("*"),
-                    left = KeyC("/"),
-                    right = KeyC("\\"),
-                ),
-                KeyItemC(
-                    center = KeyC("3", size = LARGE),
-                    left = KeyC("|"),
-                    topRight = KeyC("]"),
-                    bottomRight = KeyC(">"),
                 ),
                 EMOJI_KEY_ITEM,
             ),
