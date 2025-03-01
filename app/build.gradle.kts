@@ -104,7 +104,7 @@ dependencies {
     implementation("androidx.lifecycle:lifecycle-runtime-compose")
 
     // Navigation
-    implementation("androidx.navigation:navigation-compose:2.8.7")
+    implementation("androidx.navigation:navigation-compose:2.8.8")
 
     // Emoji Picker
     implementation("androidx.emoji2:emoji2-emojipicker:1.5.0")
