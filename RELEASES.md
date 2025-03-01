@@ -1,3 +1,15 @@
+## What's Changed in 4.0.23
+
+- Update Hyper symbol layer and punctuation by @luminespire in [#1293](https://github.com/dessalines/thumb-key/pull/1293)
+- Update old br-fr keyboards and create a new BRFRThumbKeyV3 by @zeecho in [#1290](https://github.com/dessalines/thumb-key/pull/1290)
+- Draft: use minSwipeLength setting for DragReturn and Circular detection by @stfstf123 in [#1244](https://github.com/dessalines/thumb-key/pull/1244)
+
+## New Contributors
+
+- @stfstf123 made their first contribution in [#1244](https://github.com/dessalines/thumb-key/pull/1244)
+
+**Full Changelog**: https://github.com/dessalines/thumb-key/compare/4.0.22...4.0.23
+
 ## What's Changed in 4.0.22
 
 - Add voice input option to README.md by @jm355 in [#1286](https://github.com/dessalines/thumb-key/pull/1286)
