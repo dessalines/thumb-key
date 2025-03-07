@@ -34,6 +34,7 @@ import com.dessalines.thumbkey.keyboards.KB_EN_EE_THUMBKEY
 import com.dessalines.thumbkey.keyboards.KB_EN_EO_MESSAGEASE_SYMBOLS
 import com.dessalines.thumbkey.keyboards.KB_EN_EO_THUMBKEY
 import com.dessalines.thumbkey.keyboards.KB_EN_ES_CA_THUMBKEY
+import com.dessalines.thumbkey.keyboards.KB_EN_ES_CA_TWO_HANDS
 import com.dessalines.thumbkey.keyboards.KB_EN_FR_MESSAGEASE_SYMBOLS
 import com.dessalines.thumbkey.keyboards.KB_EN_HR_MESSAGEASE
 import com.dessalines.thumbkey.keyboards.KB_EN_HYPER
@@ -350,4 +351,5 @@ enum class KeyboardLayout(
     EnTypeSplitProgramming(KB_EN_TYPESPLIT_PROGRAMMING),
     ENSymbolsNumbersArrowsTwoHands(KB_EN_SYMBOLS_NUMBERS_ARROWS_TWO_HANDS),
     BRFRThumbKeyV3(KB_BR_FR_THUMBKEY_V3),
+    ENESCAENTwoHands(KB_EN_ES_CA_TWO_HANDS),
 }
