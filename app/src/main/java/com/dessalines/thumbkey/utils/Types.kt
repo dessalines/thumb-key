@@ -207,6 +207,10 @@ sealed class KeyAction {
     data object SwitchIME : KeyAction()
 
     data object SwitchIMEVoice : KeyAction()
+
+    class ExpandAbbreviation(
+        val text: String,
+    ) : KeyAction()
 }
 
 enum class CursorAccelerationMode(
