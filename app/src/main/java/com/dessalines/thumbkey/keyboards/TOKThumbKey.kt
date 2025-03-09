@@ -211,8 +211,8 @@ val KB_TOK_THUMBKEY_SHIFTED =
                     top = KeyC("kule ", displayText = "🌈"),
                     topRight = KeyC("akesi ", displayText = "🦎"),
                     right = KeyC("lete ", displayText = "❄️"),
-                    bottomRight = KeyC(",", color = MUTED),
-                    bottom = KeyC(".", color = MUTED),
+                    bottomRight = KeyC(action = ReplaceTrailingWhitespace(",", 2), color = MUTED),
+                    bottom = KeyC(action = ReplaceTrailingWhitespace(".", 2), color = MUTED),
                     bottomLeft =
                         KeyC(
                             display = KeyDisplay.IconDisplay(Icons.Outlined.ArrowDropDown),
@@ -251,4 +251,5 @@ val KB_TOK_THUMBKEY: KeyboardDefinition =
                 shifted = KB_TOK_THUMBKEY_SHIFTED,
                 numeric = NUMERIC_KEYBOARD,
             ),
+        settings = KeyboardDefinitionSettings()
     )
