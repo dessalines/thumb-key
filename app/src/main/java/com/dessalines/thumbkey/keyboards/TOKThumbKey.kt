@@ -251,5 +251,4 @@ val KB_TOK_THUMBKEY: KeyboardDefinition =
                 shifted = KB_TOK_THUMBKEY_SHIFTED,
                 numeric = NUMERIC_KEYBOARD,
             ),
-        settings = KeyboardDefinitionSettings()
     )
