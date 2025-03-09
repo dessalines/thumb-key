@@ -106,8 +106,16 @@ val KB_TOK_THUMBKEY_MAIN =
                     top = KeyC("ken ", displayText = "💪"),
                     topRight = KeyC("o ", displayText = "👋"),
                     right = KeyC("wile ", displayText = "💭"),
-                    bottomRight = KeyC(action = ReplaceTrailingWhitespace(", ", 2), display = KeyDisplay.TextDisplay(","),  color = MUTED),
-                    bottom = KeyC(action = ReplaceTrailingWhitespace(". ", 2), display = KeyDisplay.TextDisplay("."), color = MUTED),
+                    bottomRight = KeyC(
+                        action = ReplaceTrailingWhitespace(", ", 2),
+                        display = KeyDisplay.TextDisplay(","),
+                        color = MUTED
+                    ),
+                    bottom = KeyC(
+                        action = ReplaceTrailingWhitespace(". ", 2),
+                        display = KeyDisplay.TextDisplay("."),
+                        color = MUTED
+                    ),
                     bottomLeft =
                         KeyC(
                             display = KeyDisplay.IconDisplay(Icons.Outlined.ArrowDropUp),
@@ -211,8 +219,16 @@ val KB_TOK_THUMBKEY_SHIFTED =
                     top = KeyC("kule ", displayText = "🌈"),
                     topRight = KeyC("akesi ", displayText = "🦎"),
                     right = KeyC("lete ", displayText = "❄️"),
-                    bottomRight = KeyC(action = ReplaceTrailingWhitespace(", ", 2), display = KeyDisplay.TextDisplay(","),  color = MUTED),
-                    bottom = KeyC(action = ReplaceTrailingWhitespace(". ", 2), display = KeyDisplay.TextDisplay("."), color = MUTED),
+                    bottomRight = KeyC(
+                        action = ReplaceTrailingWhitespace(", ", 2),
+                        display = KeyDisplay.TextDisplay(","),
+                        color = MUTED
+                    ),
+                    bottom = KeyC(
+                        action = ReplaceTrailingWhitespace(". ", 2),
+                        display = KeyDisplay.TextDisplay("."),
+                        color = MUTED
+                    ),
                     bottomLeft =
                         KeyC(
                             display = KeyDisplay.IconDisplay(Icons.Outlined.ArrowDropDown),

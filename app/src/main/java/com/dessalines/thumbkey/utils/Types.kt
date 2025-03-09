@@ -25,6 +25,7 @@ data class KeyboardDefinitionSettings(
 
         return autoCapitalizers.contentEquals(other.autoCapitalizers)
     }
+
     override fun hashCode(): Int = autoCapitalizers.contentHashCode()
 }
 
@@ -309,7 +310,7 @@ data class Selection(
     var end: Int,
     var active: Boolean,
 ) {
-    constructor() : this (0, 0, false)
+    constructor() : this(0, 0, false)
 
     fun left() {
         end -= 1
