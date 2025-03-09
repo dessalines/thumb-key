@@ -83,11 +83,17 @@ fun KeyboardScreen(
 ) {
     val ctx = LocalContext.current as IMEService
 
+    val keyboardDefinition =
+        KeyboardLayout.entries.sortedBy { it.ordinal }[
+            settings?.keyboardLayout
+                ?: DEFAULT_KEYBOARD_LAYOUT,
+        ].keyboardDefinition
+
     var mode by remember {
         val startMode =
             getKeyboardMode(
                 ime = ctx,
-                autoCapitalize = settings?.autoCapitalize?.toBool() ?: false,
+                autoCapitalize = settings?.autoCapitalize?.toBool() ?: false && !keyboardDefinition.settings.layoutForceNoAutoShift,
             )
 
         mutableStateOf(startMode)
@@ -99,12 +105,6 @@ fun KeyboardScreen(
 
     // TODO get rid of this crap
     val lastAction = remember { mutableStateOf<Pair<KeyAction, TimeMark>?>(null) }
-
-    val keyboardDefinition =
-        KeyboardLayout.entries.sortedBy { it.ordinal }[
-            settings?.keyboardLayout
-                ?: DEFAULT_KEYBOARD_LAYOUT,
-        ].keyboardDefinition
 
     val keyboard =
         when (mode) {
