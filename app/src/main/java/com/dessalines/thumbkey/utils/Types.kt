@@ -15,6 +15,8 @@ data class KeyboardDefinitionModes(
 
 data class KeyboardDefinitionSettings(
     val autoCapitalizers: AutoCapitalizers = arrayOf(),
+    val layoutForceNoAutoShift: Boolean = false,
+    val punctuationDeletesWhitespace: Boolean = false
 ) {
     override fun equals(other: Any?): Boolean {
         if (this === other) return true
@@ -24,7 +26,6 @@ data class KeyboardDefinitionSettings(
 
         return autoCapitalizers.contentEquals(other.autoCapitalizers)
     }
-
     override fun hashCode(): Int = autoCapitalizers.contentHashCode()
 }
 
@@ -130,6 +131,11 @@ sealed class KeyAction {
     class ReplaceLastText(
         val text: String,
         val trimCount: Int = 2,
+    ) : KeyAction()
+
+    class ReplaceTrailingWhitespace(
+        val text: String,
+        val distanceBack: Int,
     ) : KeyAction()
 
     class ToggleShiftMode(
