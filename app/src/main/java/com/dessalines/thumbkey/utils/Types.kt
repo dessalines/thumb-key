@@ -114,7 +114,7 @@ data class KeyC(
 sealed class KeyDisplay {
     class TextDisplay(
         val text: String,
-        val fontFamily: FontFamily? = null
+        val fontFamily: FontFamily? = null,
     ) : KeyDisplay()
 
     class IconDisplay(
