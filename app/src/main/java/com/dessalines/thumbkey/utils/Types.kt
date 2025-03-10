@@ -3,6 +3,7 @@ package com.dessalines.thumbkey.utils
 import android.view.KeyEvent
 import androidx.annotation.StringRes
 import androidx.compose.ui.graphics.vector.ImageVector
+import androidx.compose.ui.text.font.FontFamily
 import com.dessalines.thumbkey.R
 
 data class KeyboardDefinitionModes(
@@ -90,8 +91,9 @@ data class KeyC(
     constructor(
         text: String,
         displayText: String = text,
+        displayFont: FontFamily? = null,
         swipeReturnAction: KeyAction? = null,
-        display: KeyDisplay = KeyDisplay.TextDisplay(displayText),
+        display: KeyDisplay = KeyDisplay.TextDisplay(displayText, fontFamily = displayFont),
         capsModeDisplay: KeyDisplay? = null,
         size: FontSizeVariant = FontSizeVariant.SMALL,
         color: ColorVariant =
@@ -112,6 +114,7 @@ data class KeyC(
 sealed class KeyDisplay {
     class TextDisplay(
         val text: String,
+        val fontFamily: FontFamily? = null
     ) : KeyDisplay()
 
     class IconDisplay(

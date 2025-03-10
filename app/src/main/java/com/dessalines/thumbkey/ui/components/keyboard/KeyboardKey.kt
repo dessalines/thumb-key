@@ -867,6 +867,7 @@ fun KeyText(
                 Text(
                     text = display.text,
                     fontWeight = FontWeight.Bold,
+                    fontFamily = display.fontFamily,
                     fontSize = spSize,
                     lineHeight = spSize,
                     color = color,
