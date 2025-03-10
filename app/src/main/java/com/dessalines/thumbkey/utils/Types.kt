@@ -16,7 +16,7 @@ data class KeyboardDefinitionModes(
 
 data class KeyboardDefinitionSettings(
     val autoCapitalizers: AutoCapitalizers = arrayOf(),
-    val layoutForceNoAutoShift: Boolean = false,
+    val layoutAllowAutoShift: Boolean = true,
 ) {
     override fun equals(other: Any?): Boolean {
         if (this === other) return true

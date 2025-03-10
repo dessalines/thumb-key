@@ -348,7 +348,7 @@ fun performKeyAction(
                 1,
             )
 
-            if (autoCapitalize && !keyboardSettings.layoutForceNoAutoShift) {
+            if (autoCapitalize && keyboardSettings.layoutAllowAutoShift) {
                 autoCapitalize(
                     ime = ime,
                     onAutoCapitalize = onAutoCapitalize,
@@ -393,7 +393,7 @@ fun performKeyAction(
                 text,
                 1,
             )
-            if (autoCapitalize && !keyboardSettings.layoutForceNoAutoShift) {
+            if (autoCapitalize && !keyboardSettings.layoutAllowAutoShift) {
                 autoCapitalize(
                     ime = ime,
                     onAutoCapitalize = onAutoCapitalize,
