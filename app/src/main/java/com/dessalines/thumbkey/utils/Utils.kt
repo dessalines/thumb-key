@@ -402,7 +402,6 @@ fun performKeyAction(
             }
         }
 
-
         is KeyAction.ReplaceTrailingWhitespace -> {
             Log.d(TAG, "replacing trailing whitespace")
             val distanceBack = action.distanceBack
