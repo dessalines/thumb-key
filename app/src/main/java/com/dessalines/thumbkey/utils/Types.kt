@@ -3,6 +3,7 @@ package com.dessalines.thumbkey.utils
 import android.view.KeyEvent
 import androidx.annotation.StringRes
 import androidx.compose.ui.graphics.vector.ImageVector
+import androidx.compose.ui.text.font.FontFamily
 import com.dessalines.thumbkey.R
 
 data class KeyboardDefinitionModes(
@@ -15,6 +16,7 @@ data class KeyboardDefinitionModes(
 
 data class KeyboardDefinitionSettings(
     val autoCapitalizers: AutoCapitalizers = arrayOf(),
+    val autoShift: Boolean = true,
 ) {
     override fun equals(other: Any?): Boolean {
         if (this === other) return true
@@ -89,8 +91,9 @@ data class KeyC(
     constructor(
         text: String,
         displayText: String = text,
+        displayFont: FontFamily? = null,
         swipeReturnAction: KeyAction? = null,
-        display: KeyDisplay = KeyDisplay.TextDisplay(displayText),
+        display: KeyDisplay = KeyDisplay.TextDisplay(displayText, fontFamily = displayFont),
         capsModeDisplay: KeyDisplay? = null,
         size: FontSizeVariant = FontSizeVariant.SMALL,
         color: ColorVariant =
@@ -111,6 +114,7 @@ data class KeyC(
 sealed class KeyDisplay {
     class TextDisplay(
         val text: String,
+        val fontFamily: FontFamily? = null,
     ) : KeyDisplay()
 
     class IconDisplay(
@@ -130,6 +134,11 @@ sealed class KeyAction {
     class ReplaceLastText(
         val text: String,
         val trimCount: Int = 2,
+    ) : KeyAction()
+
+    class ReplaceTrailingWhitespace(
+        val text: String,
+        val distanceBack: Int,
     ) : KeyAction()
 
     class ToggleShiftMode(
@@ -309,7 +318,7 @@ data class Selection(
     var end: Int,
     var active: Boolean,
 ) {
-    constructor() : this (0, 0, false)
+    constructor() : this(0, 0, false)
 
     fun left() {
         end -= 1

@@ -46,6 +46,7 @@ import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 import java.text.NumberFormat
+import java.util.regex.Pattern
 import kotlin.math.PI
 import kotlin.math.abs
 import kotlin.math.atan2
@@ -347,7 +348,7 @@ fun performKeyAction(
                 1,
             )
 
-            if (autoCapitalize) {
+            if (autoCapitalize && keyboardSettings.autoShift) {
                 autoCapitalize(
                     ime = ime,
                     onAutoCapitalize = onAutoCapitalize,
@@ -392,13 +393,30 @@ fun performKeyAction(
                 text,
                 1,
             )
-            if (autoCapitalize) {
+            if (autoCapitalize && !keyboardSettings.autoShift) {
                 autoCapitalize(
                     ime = ime,
                     onAutoCapitalize = onAutoCapitalize,
                     autocapitalizers = keyboardSettings.autoCapitalizers,
                 )
             }
+        }
+
+        is KeyAction.ReplaceTrailingWhitespace -> {
+            Log.d(TAG, "replacing trailing whitespace")
+            val distanceBack = action.distanceBack
+            val text = action.text
+            val ic = ime.currentInputConnection
+
+            val textBeforeCursor = ic.getTextBeforeCursor(distanceBack, 0)?.toString() ?: ""
+
+            val trailingWhitespacePattern = Pattern.compile("\\s+$")
+            val matcher = trailingWhitespacePattern.matcher(textBeforeCursor)
+
+            if (matcher.find()) {
+                ic.deleteSurroundingText(matcher.end() - matcher.start(), 0)
+            }
+            ic.commitText(text, 1)
         }
 
         is KeyAction.SmartQuotes -> {
