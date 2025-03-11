@@ -29,8 +29,8 @@ val KB_DE_THUMBKEY_SYMNUM_MAIN =
                         ),
                     left =
                         KeyC(
-                            display = KeyDisplay.TextDisplay("¿¡"), // mi
-                            action = ComposeLastKey("!"),
+                            display = KeyDisplay.TextDisplay("„“"), // mi
+                            action = SmartQuotes("„", "“"),
                             color = MUTED,
                         ),
                 ),
@@ -165,8 +165,8 @@ val KB_DE_THUMBKEY_SYMNUM_SHIFTED =
                     right = KeyC("-", color = MUTED),
                     left =
                         KeyC(
-                            display = KeyDisplay.TextDisplay("¿¡"), // mi
-                            action = CommitText("!"),
+                            display = KeyDisplay.TextDisplay("„“"), // mi
+                            action = SmartQuotes("„", "“"),
                             color = MUTED,
                         ),
                 ),

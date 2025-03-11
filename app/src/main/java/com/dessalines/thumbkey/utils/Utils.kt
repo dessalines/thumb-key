@@ -402,6 +402,7 @@ fun performKeyAction(
             }
         }
 
+
         is KeyAction.ReplaceTrailingWhitespace -> {
             Log.d(TAG, "replacing trailing whitespace")
             val distanceBack = action.distanceBack
@@ -417,6 +418,12 @@ fun performKeyAction(
                 ic.deleteSurroundingText(matcher.end() - matcher.start(), 0)
             }
             ic.commitText(text, 1)
+        }
+
+        is KeyAction.SmartQuotes -> {
+            val textBeforeCursor = ime.currentInputConnection.getTextBeforeCursor(1, 0)?.toString() ?: ""
+            val textNew = if (textBeforeCursor.matches(Regex("\\S"))) action.end else action.start
+            ime.currentInputConnection.commitText(textNew, 1)
         }
 
         is KeyAction.ComposeLastKey -> {
