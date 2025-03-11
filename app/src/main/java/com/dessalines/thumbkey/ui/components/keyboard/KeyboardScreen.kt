@@ -93,7 +93,7 @@ fun KeyboardScreen(
         val startMode =
             getKeyboardMode(
                 ime = ctx,
-                autoCapitalize = settings?.autoCapitalize?.toBool() ?: false && keyboardDefinition.settings.layoutAllowAutoShift,
+                autoCapitalize = settings?.autoCapitalize?.toBool() ?: false && keyboardDefinition.settings.autoShift,
             )
 
         mutableStateOf(startMode)
