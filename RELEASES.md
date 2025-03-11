@@ -1,3 +1,17 @@
+## What's Changed in 4.0.24
+
+- Toki Pona keyboard improvments by @nfd9001 in [#1308](https://github.com/dessalines/thumb-key/pull/1308)
+- Smart Quotes „“ Tested by @mruncreative in [#1309](https://github.com/dessalines/thumb-key/pull/1309)
+- Add ENESCATwoHands layout by @josereyesjrz in [#1301](https://github.com/dessalines/thumb-key/pull/1301)
+
+## New Contributors
+
+- @nfd9001 made their first contribution in [#1308](https://github.com/dessalines/thumb-key/pull/1308)
+- @mruncreative made their first contribution in [#1309](https://github.com/dessalines/thumb-key/pull/1309)
+- @josereyesjrz made their first contribution in [#1301](https://github.com/dessalines/thumb-key/pull/1301)
+
+**Full Changelog**: https://github.com/dessalines/thumb-key/compare/4.0.23...4.0.24
+
 ## What's Changed in 4.0.23
 
 - Update Hyper symbol layer and punctuation by @luminespire in [#1293](https://github.com/dessalines/thumb-key/pull/1293)
