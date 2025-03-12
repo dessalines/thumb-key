@@ -113,7 +113,7 @@ val KB_JA_KANA_THUMBKEY_HIRAGANA =
                     bottom =
                         KeyC(
                             display = KeyDisplay.TextDisplay("␣"),
-                            action = KeyAction.CommitText(" "),
+                            action = CommitText(" "),
                         ),
                     left = KeyC("「"),
                     top = KeyC("・"),
@@ -242,7 +242,7 @@ val KB_JA_KANA_THUMBKEY_KATAKANA =
                     bottom =
                         KeyC(
                             display = KeyDisplay.TextDisplay("␣"),
-                            action = KeyAction.CommitText(" "),
+                            action = CommitText(" "),
                         ),
                     left = KeyC("「"),
                     top = KeyC("・"),

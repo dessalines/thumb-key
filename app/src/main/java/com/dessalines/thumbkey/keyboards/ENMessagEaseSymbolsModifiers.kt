@@ -41,7 +41,7 @@ fun keyCModifier(
     size: FontSizeVariant = FontSizeVariant.SMALL,
     color: ColorVariant =
         when (size) {
-            FontSizeVariant.LARGE -> ColorVariant.PRIMARY
+            LARGE -> ColorVariant.PRIMARY
             else -> ColorVariant.SECONDARY
         },
 ): KeyC =
