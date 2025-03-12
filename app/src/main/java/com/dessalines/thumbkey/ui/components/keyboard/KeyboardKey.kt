@@ -818,7 +818,7 @@ fun KeyText(
             is KeyDisplay.TextDisplay ->
                 key.display.text
                     .firstOrNull()
-                    ?.isUpperCase() ?: false
+                    ?.isUpperCase() == true
             else -> {
                 false
             }

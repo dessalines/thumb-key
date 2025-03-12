@@ -5,7 +5,6 @@ import android.content.Intent
 import android.content.pm.PackageInfo
 import android.content.pm.PackageManager
 import android.content.res.Resources
-import android.net.Uri
 import android.os.Build
 import android.os.Handler
 import android.os.Looper
@@ -34,6 +33,7 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.TextUnit
 import androidx.compose.ui.unit.TextUnitType
+import androidx.core.net.toUri
 import androidx.core.os.ConfigurationCompat
 import androidx.navigation.NavController
 import com.dessalines.thumbkey.IMEService
@@ -1255,7 +1255,7 @@ fun openLink(
     url: String,
     ctx: Context,
 ) {
-    val intent = Intent(Intent.ACTION_VIEW, Uri.parse(url))
+    val intent = Intent(Intent.ACTION_VIEW, url.toUri())
     ctx.startActivity(intent)
 }
 

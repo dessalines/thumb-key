@@ -44,8 +44,8 @@
   <string name="auto_capitalize">Automatisk stort forbogstav</string>
   <string name="key_size">Tast størrelse: %1$s</string>
   <string name="key_non_square">Ikke-kvadratiske taster</string>
-  <string name="key_height">Højde på taster</string>
-  <string name="key_width">Bredde på taster</string>
+  <string name="key_height">Højde på taster: %1$s</string>
+  <string name="key_width">Bredde på taster: %1$s</string>
   <string name="bottom_offset">Forskydning fra bunden: %1$s</string>
   <string name="min_swipe_length">Minimum svirp længde: %1$s</string>
   <string name="animation_speed">Animationshastighed: %1$s</string>
