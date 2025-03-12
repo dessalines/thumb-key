@@ -18,6 +18,7 @@ import com.dessalines.thumbkey.keyboards.KB_DE_THUMBKEY
 import com.dessalines.thumbkey.keyboards.KB_DE_THUMBKEY_MULTILINGUAL
 import com.dessalines.thumbkey.keyboards.KB_DE_THUMBKEY_SYMBOLS
 import com.dessalines.thumbkey.keyboards.KB_DE_THUMBKEY_SYMNUM
+import com.dessalines.thumbkey.keyboards.KB_DE_THUMBKEY_WORDS
 import com.dessalines.thumbkey.keyboards.KB_DE_TYPESPLIT
 import com.dessalines.thumbkey.keyboards.KB_EN_COLUMNAR
 import com.dessalines.thumbkey.keyboards.KB_EN_COLUMNAR_QUICK
@@ -352,4 +353,5 @@ enum class KeyboardLayout(
     ENSymbolsNumbersArrowsTwoHands(KB_EN_SYMBOLS_NUMBERS_ARROWS_TWO_HANDS),
     BRFRThumbKeyV3(KB_BR_FR_THUMBKEY_V3),
     ENESCAENTwoHands(KB_EN_ES_CA_TWO_HANDS),
+    DEThumbKeyWords(KB_DE_THUMBKEY_WORDS),
 }
