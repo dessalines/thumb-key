@@ -64,6 +64,7 @@ import com.dessalines.thumbkey.keyboards.EMOJI_BACK_KEY_ITEM
 import com.dessalines.thumbkey.keyboards.KB_EN_THUMBKEY_MAIN
 import com.dessalines.thumbkey.keyboards.NUMERIC_KEY_ITEM
 import com.dessalines.thumbkey.keyboards.RETURN_KEY_ITEM
+import com.dessalines.thumbkey.utils.AbbreviationManager
 import com.dessalines.thumbkey.utils.CircularDragAction
 import com.dessalines.thumbkey.utils.KeyAction
 import com.dessalines.thumbkey.utils.KeyboardLayout
@@ -72,6 +73,7 @@ import com.dessalines.thumbkey.utils.KeyboardPosition
 import com.dessalines.thumbkey.utils.TAG
 import com.dessalines.thumbkey.utils.getKeyboardMode
 import com.dessalines.thumbkey.utils.keyboardPositionToAlignment
+import com.dessalines.thumbkey.utils.performKeyAction
 import com.dessalines.thumbkey.utils.toBool
 import kotlin.time.TimeMark
 
@@ -82,6 +84,7 @@ fun KeyboardScreen(
     onChangePosition: ((old: KeyboardPosition) -> KeyboardPosition) -> Unit,
 ) {
     val ctx = LocalContext.current as IMEService
+    val abbreviationManager = remember { AbbreviationManager(ctx.applicationContext) }
 
     val keyboardDefinition =
         KeyboardLayout.entries.sortedBy { it.ordinal }[
@@ -95,7 +98,7 @@ fun KeyboardScreen(
                 ime = ctx,
                 autoCapitalize = settings?.autoCapitalize?.toBool() == true && keyboardDefinition.settings.autoShift,
             )
-
+        Log.d(TAG, "KeyboardScreen: Initial keyboard mode: $startMode")
         mutableStateOf(startMode)
     }
 
@@ -228,9 +231,44 @@ fun KeyboardScreen(
                                 if (soundOnTap) {
                                     audioManager.playSoundEffect(AudioManager.FX_KEY_CLICK, .1f)
                                 }
-                                ctx.currentInputConnection.commitText(
-                                    it.emoji,
-                                    1,
+                                performKeyAction(
+                                    action = KeyAction.CommitText(it.emoji),
+                                    ime = ctx,
+                                    autoCapitalize = autoCapitalize,
+                                    keyboardSettings = keyboardDefinition.settings,
+                                    onToggleShiftMode = { enable ->
+                                        mode =
+                                            if (enable) {
+                                                KeyboardMode.SHIFTED
+                                            } else {
+                                                capsLock = false
+                                                KeyboardMode.MAIN
+                                            }
+                                    },
+                                    onToggleNumericMode = { enable ->
+                                        mode =
+                                            if (enable) {
+                                                KeyboardMode.NUMERIC
+                                            } else {
+                                                capsLock = false
+                                                KeyboardMode.MAIN
+                                            }
+                                    },
+                                    onToggleEmojiMode = { enable ->
+                                        mode = if (enable) KeyboardMode.EMOJI else KeyboardMode.MAIN
+                                    },
+                                    onToggleCapsLock = { capsLock = !capsLock },
+                                    onAutoCapitalize = { enable ->
+                                        if (mode !== KeyboardMode.NUMERIC) {
+                                            if (enable) {
+                                                mode = KeyboardMode.SHIFTED
+                                            } else if (!capsLock) {
+                                                mode = KeyboardMode.MAIN
+                                            }
+                                        }
+                                    },
+                                    onSwitchLanguage = onSwitchLanguage,
+                                    onChangePosition = onChangePosition,
                                 )
                             }
                             emojiPicker
@@ -275,6 +313,7 @@ fun KeyboardScreen(
                                 slideSpacebarDeadzoneEnabled = slideSpacebarDeadzoneEnabled,
                                 slideBackspaceDeadzoneEnabled = slideBackspaceDeadzoneEnabled,
                                 onToggleShiftMode = { enable ->
+                                    Log.d(TAG, "KeyboardScreen: Toggling shift mode, enable: $enable")
                                     mode =
                                         if (enable) {
                                             KeyboardMode.SHIFTED
@@ -282,6 +321,7 @@ fun KeyboardScreen(
                                             capsLock = false
                                             KeyboardMode.MAIN
                                         }
+                                    Log.d(TAG, "KeyboardScreen: New keyboard mode: $mode")
                                 },
                                 onToggleCtrlMode = { enable ->
                                     mode =
@@ -300,6 +340,7 @@ fun KeyboardScreen(
                                         }
                                 },
                                 onToggleNumericMode = { enable ->
+                                    Log.d(TAG, "KeyboardScreen: Toggling numeric mode, enable: $enable")
                                     mode =
                                         if (enable) {
                                             KeyboardMode.NUMERIC
@@ -307,14 +348,17 @@ fun KeyboardScreen(
                                             capsLock = false
                                             KeyboardMode.MAIN
                                         }
+                                    Log.d(TAG, "KeyboardScreen: New keyboard mode: $mode")
                                 },
                                 onToggleEmojiMode = { enable ->
+                                    Log.d(TAG, "KeyboardScreen: Toggling emoji mode, enable: $enable")
                                     mode =
                                         if (enable) {
                                             KeyboardMode.EMOJI
                                         } else {
                                             KeyboardMode.MAIN
                                         }
+                                    Log.d(TAG, "KeyboardScreen: New keyboard mode: $mode")
                                 },
                                 onToggleCapsLock = {
                                     capsLock = !capsLock
