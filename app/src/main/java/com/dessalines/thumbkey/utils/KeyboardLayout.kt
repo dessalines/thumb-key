@@ -120,6 +120,7 @@ import com.dessalines.thumbkey.keyboards.KB_HI_THUMBKEY_EXTENDED
 import com.dessalines.thumbkey.keyboards.KB_HR_THUMBKEY
 import com.dessalines.thumbkey.keyboards.KB_HR_THUMBKEY_SYMBOLS
 import com.dessalines.thumbkey.keyboards.KB_HR_TWO_HANDS
+import com.dessalines.thumbkey.keyboards.KB_HU_HUNGRAM
 import com.dessalines.thumbkey.keyboards.KB_HU_THUMBKEY
 import com.dessalines.thumbkey.keyboards.KB_HU_TYPESPLIT
 import com.dessalines.thumbkey.keyboards.KB_ID_THUMBKEY_SYMBOLS_NUMBERS_V1
@@ -356,4 +357,5 @@ enum class KeyboardLayout(
     ENESCAENTwoHands(KB_EN_ES_CA_TWO_HANDS),
     DEThumbKeyWords(KB_DE_THUMBKEY_WORDS),
     RUMessageOwl(KB_RU_MESSAGE_OWL),
+    HUngram(KB_HU_HUNGRAM),
 }
