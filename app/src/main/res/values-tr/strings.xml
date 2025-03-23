@@ -74,4 +74,22 @@
     <string name="hide_letters">Harfleri gizle</string>
     <string name="hide_symbols">İşaretleri gizle</string>
     <string name="ghost_keys_enable">Görünmez tuşlar</string>
+    <string name="matrix">Matriks-AMOLED</string>
+    <string name="ancom">Anarko-Komünist renkler</string>
+    <string name="issue_tracker">Hata takibi</string>
+    <string name="animation_helper_speed">Animasyon yardımcı hızı: %1$s</string>
+    <string name="slide_cursor_acceleration_linear">Yatay hızlanma</string>
+    <string name="spacebar_multitaps">Boşluk tuşuna birden çok kez tıklama</string>
+    <string name="done">Tamam</string>
+    <string name="backdrop">Klavye arkaplanı</string>
+    <string name="key_radius">Tuş köşe keskinliği: %1$s</string>
+    <string name="drag_return_enable">∩ şeklinde kaydırma</string>
+    <string name="counterclockwise_drag_action">Saat yönünün tersine kaydırma</string>
+    <string name="clockwise_drag_action">Saat yönüne kaydırma</string>
+    <string name="send_oppsite_case">Büyük harf</string>
+    <string name="circular_drag_enable">Dairesel kaydırma</string>
+    <string name="behavior">Davranış</string>
+    <string name="slide_cursor_acceleration_quadratic">X*X hızlanma</string>
+    <string name="bottom_offset">Alt boşluk: %1$s</string>
+    <string name="slide_backspace_deadzone_enable">Geri tuşu: Normal kaydırmalar kaydırma hareketleriyle birlikte çalışabilsin</string>
 </resources>
