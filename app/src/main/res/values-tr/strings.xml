@@ -69,10 +69,10 @@
     <string name="cancel">İptal et</string>
     <string name="ghost_keys_description">Rakamlara geçmeden görünmez tuşlara erişin</string>
     <string name="slide_cursor_acceleration_constant">Hızlanma yok / Sabit hız</string>
-    <string name="slide_spacebar_deadzone_enable">Boşluk tuşu: Normal kaydırmalar kaydırma hareketleriyle birlikte çalışabilsin</string>
+    <string name="slide_spacebar_deadzone_enable">Boşluk tuşu: Normal kaydırmalar kaydırma hareketleriyle birlikte çalışsın</string>
     <string name="slide_cursor_movement_mode">İmleç kaydırma stili</string>
     <string name="hide_letters">Harfleri gizle</string>
-    <string name="hide_symbols">İşaretleri gizle</string>
+    <string name="hide_symbols">Noktalama işaretlerini gizle</string>
     <string name="ghost_keys_enable">Görünmez tuşlar</string>
     <string name="matrix">Matriks-AMOLED</string>
     <string name="ancom">Anarko-Komünist renkler</string>
