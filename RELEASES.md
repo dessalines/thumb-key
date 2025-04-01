@@ -1,13 +1,14 @@
+## What's Changed in 4.0.26
+
+- ENMessagEaseSymbolsModifiers: Enter & Tab by @W-Bosman in [#1331](https://github.com/dessalines/thumb-key/pull/1331)
+
+**Full Changelog**: https://github.com/dessalines/thumb-key/compare/4.0.25...4.0.26
+
 ## What's Changed in 4.0.25
 
-- Add turkish locale.
+- Add turkish locale. by @dessalines
 - A few code fixes. by @dessalines in [#1313](https://github.com/dessalines/thumb-key/pull/1313)
 - Adding DE_THUMBKEY_WORDS layout. by @dessalines in [#1312](https://github.com/dessalines/thumb-key/pull/1312)
-
-## New Contributors
-
-- @weblate made their first contribution in [#1316](https://github.com/dessalines/thumb-key/pull/1316)
-- @dessalines made their first contribution in [#1313](https://github.com/dessalines/thumb-key/pull/1313)
 
 **Full Changelog**: https://github.com/dessalines/thumb-key/compare/4.0.24...4.0.25
 
