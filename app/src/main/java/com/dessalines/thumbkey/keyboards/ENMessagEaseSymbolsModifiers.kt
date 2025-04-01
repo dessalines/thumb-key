@@ -4,6 +4,7 @@ package com.dessalines.thumbkey.keyboards
 
 import android.view.KeyEvent
 import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.automirrored.outlined.KeyboardReturn
 import androidx.compose.material.icons.outlined.ArrowDropDown
 import androidx.compose.material.icons.outlined.ArrowDropUp
 import androidx.compose.material.icons.outlined.Copyright
@@ -13,9 +14,12 @@ import androidx.compose.material.icons.outlined.KeyboardDoubleArrowDown
 import androidx.compose.material.icons.outlined.KeyboardOptionKey
 import com.dessalines.thumbkey.utils.ColorVariant
 import com.dessalines.thumbkey.utils.ColorVariant.MUTED
+import com.dessalines.thumbkey.utils.ColorVariant.SECONDARY
+import com.dessalines.thumbkey.utils.ColorVariant.SURFACE_VARIANT
 import com.dessalines.thumbkey.utils.FontSizeVariant
 import com.dessalines.thumbkey.utils.FontSizeVariant.LARGE
 import com.dessalines.thumbkey.utils.KeyAction
+import com.dessalines.thumbkey.utils.KeyAction.CommitText
 import com.dessalines.thumbkey.utils.KeyAction.ToggleAltMode
 import com.dessalines.thumbkey.utils.KeyAction.ToggleCapsLock
 import com.dessalines.thumbkey.utils.KeyAction.ToggleCtrlMode
@@ -134,7 +138,7 @@ val KB_EN_MESSAGEASE_SYMBOLS_MODIFIERS_MAIN =
                     topRight = KeyC("y"),
                     topLeft = KeyC("~", color = MUTED),
                     right = KeyC("*", color = MUTED),
-                    bottomRight = KeyC("\t", displayText = "⇥", color = MUTED),
+                    bottomRight = keyCModifier(0, KeyEvent.KEYCODE_TAB, displayText = "⇥", color = MUTED),
                     left = KeyC("<", color = MUTED),
                     bottomLeft =
                         KeyC(
@@ -261,7 +265,7 @@ val KB_EN_MESSAGEASE_SYMBOLS_MODIFIERS_SHIFTED =
                     topLeft = KeyC("~", color = MUTED),
                     right = KeyC("*", color = MUTED),
                     left = KeyC("<", color = MUTED),
-                    bottomRight = KeyC("\t", displayText = "⇥", color = MUTED),
+                    bottomRight = keyCModifier(KeyEvent.META_SHIFT_ON, KeyEvent.KEYCODE_TAB, displayText = "⇥", color = MUTED),
                 ),
                 KeyItemC(
                     center = KeyC("E", size = LARGE),
@@ -286,7 +290,19 @@ val KB_EN_MESSAGEASE_SYMBOLS_MODIFIERS_SHIFTED =
             ),
             listOf(
                 SPACEBAR_KEY_ITEM,
-                RETURN_KEY_ITEM,
+                KeyItemC(
+                    center =
+                        keyCModifier(
+                            KeyEvent.META_SHIFT_ON,
+                            KeyEvent.KEYCODE_ENTER,
+                            "",
+                            size = LARGE,
+                            display = KeyDisplay.IconDisplay(Icons.AutoMirrored.Outlined.KeyboardReturn),
+                            color = SECONDARY,
+                        ),
+                    backgroundColor = SURFACE_VARIANT,
+                    longPress = CommitText("\n"),
+                ),
             ),
         ),
     )
@@ -367,7 +383,19 @@ val KB_EN_MESSAGEASE_SYMBOLS_MODIFIERS_CTRLED =
             ),
             listOf(
                 SPACEBAR_KEY_ITEM,
-                RETURN_KEY_ITEM,
+                KeyItemC(
+                    center =
+                        keyCModifier(
+                            KeyEvent.META_CTRL_ON,
+                            KeyEvent.KEYCODE_ENTER,
+                            "",
+                            size = LARGE,
+                            display = KeyDisplay.IconDisplay(Icons.AutoMirrored.Outlined.KeyboardReturn),
+                            color = SECONDARY,
+                        ),
+                    backgroundColor = SURFACE_VARIANT,
+                    longPress = CommitText("\n"),
+                ),
             ),
         ),
     )
@@ -448,7 +476,19 @@ val KB_EN_MESSAGEASE_SYMBOLS_MODIFIERS_ALTED =
             ),
             listOf(
                 SPACEBAR_KEY_ITEM,
-                RETURN_KEY_ITEM,
+                KeyItemC(
+                    center =
+                        keyCModifier(
+                            KeyEvent.META_ALT_ON,
+                            KeyEvent.KEYCODE_ENTER,
+                            "",
+                            size = LARGE,
+                            display = KeyDisplay.IconDisplay(Icons.AutoMirrored.Outlined.KeyboardReturn),
+                            color = SECONDARY,
+                        ),
+                    backgroundColor = SURFACE_VARIANT,
+                    longPress = CommitText("\n"),
+                ),
             ),
         ),
     )
