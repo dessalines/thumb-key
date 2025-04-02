@@ -1,4 +1,31 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="settings">設定</string>
+    <string name="ancom">アナキスト共産主義の色</string>
+    <string name="support">サポート</string>
+    <string name="system">システム</string>
+    <string name="light">ライト</string>
+    <string name="dark">ダーク</string>
+    <string name="dynamic">ダイナミック</string>
+    <string name="green">グリーン</string>
+    <string name="pink">ピンク</string>
+    <string name="matrix">マトリックスAMOLED</string>
+    <string name="srcery">スセリー</string>
+    <string name="center">センター</string>
+    <string name="right">右</string>
+    <string name="left">左</string>
+    <string name="blue">ブルー</string>
+    <string name="dracula">ドラキュラ</string>
+    <string name="twilight">トワイライト</string>
+    <string name="high_contrast">ハイコントラスト</string>
+    <string name="high_contrast_colorful">ハイコントラストカラフル</string>
+    <string name="about">情報</string>
+    <string name="whats_new">新着情報</string>
+    <string name="version">バージョン %1$s</string>
+    <string name="releases">リリース</string>
+    <string name="issue_tracker">イシュート</string>
+    <string name="developer_matrix_chatroom">開発者用Matrixチャットルーム</string>
+    <string name="donate_to_thumbkey">Thumb-Keyに寄付する</string>
+    <string name="social">ソーシャル</string>
+    <string name="join_c_thumbkey">c/thumbkeyに参加する</string>
 </resources>
