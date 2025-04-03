@@ -80,4 +80,19 @@
     <string name="key_padding">按键填充: %1$s</string>
     <string name="key_border_width">按键边缘厚度: %1$s</string>
     <string name="key_radius">按键圆角半径: %1$s</string>
+    <string name="drag_return_enable"></string>
+    <string name="counterclockwise_drag_action"></string>
+    <string name="clockwise_drag_action"></string>
+    <string name="send_numeric"></string>
+    <string name="circular_drag_enable"></string>
+    <string name="ghost_keys_description"></string>
+    <string name="restore_database"></string>
+    <string name="backup_database"></string>
+    <string name="restore_database_warning"></string>
+    <string name="backup_and_restore"></string>
+    <string name="database_backed_up"></string>
+    <string name="ghost_keys_enable"></string>
+    <string name="database_restored"></string>
+    <string name="send_oppsite_case"></string>
+    <string name="neon" translatable="false"></string>
 </resources>
