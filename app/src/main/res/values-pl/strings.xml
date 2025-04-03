@@ -59,4 +59,7 @@
     <string name="database_backed_up">Kopia zapasowa bazy danych została wykonana.</string>
     <string name="green">Zielony</string>
     <string name="test_out_thumbkey">Przetestuj Thumb-Key</string>
+    <string name="issue_tracker">Śledzenie zgłoszeń</string>
+    <string name="setup">Konfiguracja</string>
+    <string name="done">Gotowe</string>
 </resources>
