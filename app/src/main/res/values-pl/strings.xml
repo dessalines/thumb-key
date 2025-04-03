@@ -62,4 +62,37 @@
     <string name="issue_tracker">Śledzenie zgłoszeń</string>
     <string name="setup">Konfiguracja</string>
     <string name="done">Gotowe</string>
+    <string name="finish_setup"></string>
+    <string name="clockwise_drag_action"></string>
+    <string name="key_border_width"></string>
+    <string name="setup_thumbkey"></string>
+    <string name="key_radius"></string>
+    <string name="enable_thumbkey"></string>
+    <string name="key_padding"></string>
+    <string name="ghost_keys_enable"></string>
+    <string name="developer_matrix_chatroom"></string>
+    <string name="neon" translatable="false"></string>
+    <string name="play_sound_on_tap"></string>
+    <string name="animation_helper_speed"></string>
+    <string name="slide_cursor_acceleration_linear"></string>
+    <string name="key_non_square"></string>
+    <string name="slide_spacebar_deadzone_enable"></string>
+    <string name="bottom_offset"></string>
+    <string name="min_swipe_length"></string>
+    <string name="vibrate_on_tap"></string>
+    <string name="slide_enable"></string>
+    <string name="slide_cursor_acceleration_threshold_acceleration"></string>
+    <string name="slide_backspace_deadzone_enable"></string>
+    <string name="slide_sensitivity"></string>
+    <string name="open_source"></string>
+    <string name="slide_cursor_acceleration_quadratic"></string>
+    <string name="spacebar_multitaps"></string>
+    <string name="send_numeric"></string>
+    <string name="drag_return_enable"></string>
+    <string name="backdrop"></string>
+    <string name="ghost_keys_description"></string>
+    <string name="send_oppsite_case"></string>
+    <string name="counterclockwise_drag_action"></string>
+    <string name="circular_drag_enable"></string>
+    <string name="backup_database"></string>
 </resources>
