@@ -40,7 +40,7 @@
     <string name="theme_color">Liv an dodenn</string>
     <string name="position">Lec\'hiadur</string>
     <string name="vibrate_on_tap">Froumal pa stok</string>
-    <string name="vibrate_warning">Dav eo bezañ gweredekaet ar mod "froumal pa stok" en arventennoù reizhiad</string>
+    <string name="vibrate_warning">Dav eo bezañ gweredekaet ar mod froumal pa stok en arventennoù reizhiad</string>
     <string name="play_sound_on_tap">Ober son pa stok</string>
     <string name="auto_capitalize">Pennlizherennoù emgefreek</string>
     <string name="key_size">Ment ar stokelloù: %1$s</string>

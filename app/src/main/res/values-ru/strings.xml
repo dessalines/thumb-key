@@ -1,3 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">Thumb-Key</string>
     <string name="settings">Настройки</string>
@@ -31,7 +32,7 @@
     <string name="follow_me_mastodon">Подписаться на меня в Mastodon</string>
     <string name="open_source">Открытый исходный код</string>
     <string name="source_code">Исходный код</string>
-    <string name="source_code_subtitle">Thumb-Key —  свободное программное обеспечение с открытым исходным кодом, лицензированное по GNU Affero General Public License v3.0</string>
+    <string name="source_code_subtitle">Thumb-Key — свободное программное обеспечение с открытым исходным кодом, лицензированное по GNU Affero General Public License v3.0</string>
     <string name="look_and_feel">Внешний вид</string>
     <string name="behavior">Поведение</string>
     <string name="layouts">Раскладки</string>
