@@ -94,4 +94,5 @@
     <string name="done">完了</string>
     <string name="database_backed_up">データベースがバックアップされました。</string>
     <string name="backup_and_restore">バックアップと復元</string>
+    <string name="neon" translatable="false"></string>
 </resources>
