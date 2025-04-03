@@ -1,3 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">Thumb-Key</string>
     <string name="settings">Paramètres</string>
@@ -93,4 +94,5 @@
     <string name="database_restored">La base de données a été restaurée.</string>
     <string name="database_backed_up">La base de données a été sauvegardée.</string>
     <string name="backup_and_restore">Sauvegarde et restauration</string>
+    <string name="neon" translatable="false"></string>
 </resources>
