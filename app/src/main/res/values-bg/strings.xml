@@ -88,11 +88,4 @@
     <string name="high_contrast">Висок контраст</string>
     <string name="ancom">Анархо-комунистически цветове</string>
     <string name="ghost_keys_description">Достъп до скрити клавиши със символи, без да превключвате на цифров изглед</string>
-    <string name="vibrate_warning"></string>
-    <string name="slide_cursor_movement_mode"></string>
-    <string name="slide_sensitivity"></string>
-    <string name="send_oppsite_case"></string>
-    <string name="neon" translatable="false"></string>
-    <string name="slide_spacebar_deadzone_enable"></string>
-    <string name="slide_backspace_deadzone_enable"></string>
 </resources>

@@ -88,11 +88,4 @@
     <string name="circular_drag_enable">Cirkulært slæb</string>
     <string name="ghost_keys_enable">Spøgelsestaster</string>
     <string name="ghost_keys_description">Tilgå skjulte symboltaster uden at skifte til det numeriske tastatur</string>
-    <string name="restore_database_warning"></string>
-    <string name="neon" translatable="false"></string>
-    <string name="backup_database"></string>
-    <string name="database_backed_up"></string>
-    <string name="restore_database"></string>
-    <string name="database_restored"></string>
-    <string name="backup_and_restore"></string>
 </resources>

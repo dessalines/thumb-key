@@ -62,37 +62,4 @@
     <string name="hide_symbols">نمادها را مخفی کنید</string>
     <string name="spacebar_multitaps">کلید فاصله چند ضربه ای</string>
     <string name="done">تمام</string>
-    <string name="high_contrast"></string>
-    <string name="key_non_square"></string>
-    <string name="key_height"></string>
-    <string name="key_width"></string>
-    <string name="slide_cursor_acceleration_linear"></string>
-    <string name="slide_cursor_acceleration_constant"></string>
-    <string name="slide_spacebar_deadzone_enable"></string>
-    <string name="slide_cursor_acceleration_threshold_acceleration"></string>
-    <string name="slide_backspace_deadzone_enable"></string>
-    <string name="key_padding"></string>
-    <string name="backdrop"></string>
-    <string name="key_border_width"></string>
-    <string name="key_radius"></string>
-    <string name="counterclockwise_drag_action"></string>
-    <string name="send_numeric"></string>
-    <string name="send_oppsite_case"></string>
-    <string name="circular_drag_enable"></string>
-    <string name="ghost_keys_enable"></string>
-    <string name="ghost_keys_description"></string>
-    <string name="backup_database"></string>
-    <string name="restore_database_warning"></string>
-    <string name="database_backed_up"></string>
-    <string name="backup_and_restore"></string>
-    <string name="slide_cursor_acceleration_quadratic"></string>
-    <string name="restore_database"></string>
-    <string name="slide_cursor_movement_mode"></string>
-    <string name="clockwise_drag_action"></string>
-    <string name="database_restored"></string>
-    <string name="drag_return_enable"></string>
-    <string name="neon" translatable="false"></string>
-    <string name="ancom"></string>
-    <string name="twilight"></string>
-    <string name="high_contrast_colorful"></string>
 </resources>

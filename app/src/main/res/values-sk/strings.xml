@@ -84,15 +84,4 @@
     <string name="reset_to_defaults_confirm">Obnoviť</string>
     <string name="hide_symbols">Skryť symboly</string>
     <string name="counterclockwise_drag_action">Akcia pri potiahnutí do protismeru hodinových ručičiek</string>
-    <string name="dracula"></string>
-    <string name="open_source"></string>
-    <string name="neon" translatable="false"></string>
-    <string name="key_padding"></string>
-    <string name="slide_spacebar_deadzone_enable"></string>
-    <string name="slide_backspace_deadzone_enable"></string>
-    <string name="spacebar_multitaps"></string>
-    <string name="select_thumbkey"></string>
-    <string name="send_oppsite_case"></string>
-    <string name="send_numeric"></string>
-    <string name="ghost_keys_enable"></string>
 </resources>

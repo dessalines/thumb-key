@@ -94,5 +94,4 @@
     <string name="key_padding">Tastenfüllung: %1$s</string>
     <string name="key_border_width">Tastenrandbreite: %1$s</string>
     <string name="ghost_keys_enable">Geistertasten</string>
-    <string name="neon" translatable="false"></string>
 </resources>
