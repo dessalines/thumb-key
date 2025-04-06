@@ -176,6 +176,9 @@ val KB_RU_MESSAGE_OWL_SHIFTED =
                             color = ColorVariant.MUTED,
                         ),
                 ),
+                NUMERIC_KEY_ITEM,
+            ),
+            listOf(
                 KeyItemC(
                     swipeType = SwipeNWay.TWO_WAY_VERTICAL,
                     center = KeyC("М", size = FontSizeVariant.LARGE),
