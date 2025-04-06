@@ -22,6 +22,7 @@ val HYPER_NUMERIC_KEYBOARD =
                 ),
                 KeyItemC(
                     center = KeyC("2", size = LARGE),
+                    bottom = KeyC("@"),
                 ),
                 KeyItemC(
                     center = KeyC("3", size = LARGE),
@@ -33,7 +34,7 @@ val HYPER_NUMERIC_KEYBOARD =
                 KeyItemC(
                     center = KeyC(".", size = LARGE),
                     bottom = KeyC(","),
-                    left = KeyC("^"),
+                    left = KeyC("!"),
                 ),
                 BACKSPACE_KEY_ITEM,
             ),
@@ -44,24 +45,25 @@ val HYPER_NUMERIC_KEYBOARD =
                     top = KeyC("\""),
                     bottom = KeyC(":"),
                     left = KeyC("("),
-                    right = KeyC("$"),
+                    right = KeyC("_"),
                 ),
                 KeyItemC(
                     center = KeyC("5", size = LARGE),
                     left = KeyC("€"),
                     right = KeyC("£"),
-                    top = KeyC("&"),
-                    bottom = KeyC("%"),
+                    top = KeyC("$"),
+                    bottom = KeyC("&"),
                 ),
                 KeyItemC(
                     center = KeyC("6", size = LARGE),
                     top = KeyC("'"),
                     bottom = KeyC(";"),
-                    left = KeyC("!"),
+                    left = KeyC("^"),
                     right = KeyC(")"),
                 ),
                 KeyItemC(
                     center = KeyC("0", size = LARGE),
+                    left = KeyC("%"),
                 ),
                 SPACEBAR_SKINNY_KEY_ITEM,
             ),
@@ -75,7 +77,6 @@ val HYPER_NUMERIC_KEYBOARD =
                 ),
                 KeyItemC(
                     center = KeyC("8", size = LARGE),
-                    top = KeyC("@"),
                     topLeft = KeyC("`"),
                     topRight = KeyC("´"),
                 ),
