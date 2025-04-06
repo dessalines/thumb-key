@@ -155,6 +155,7 @@ import com.dessalines.thumbkey.keyboards.KB_PT_TYPESPLIT
 import com.dessalines.thumbkey.keyboards.KB_RU_MESSAGEASE
 import com.dessalines.thumbkey.keyboards.KB_RU_MESSAGEASE_SYMBOLS
 import com.dessalines.thumbkey.keyboards.KB_RU_MESSAGEASE_WRITER
+import com.dessalines.thumbkey.keyboards.KB_RU_MESSAGE_OWL
 import com.dessalines.thumbkey.keyboards.KB_RU_THUMBKEY
 import com.dessalines.thumbkey.keyboards.KB_RU_THUMBKEY_SYMBOLS
 import com.dessalines.thumbkey.keyboards.KB_RU_THUMBKEY_WRITER
@@ -354,4 +355,5 @@ enum class KeyboardLayout(
     BRFRThumbKeyV3(KB_BR_FR_THUMBKEY_V3),
     ENESCAENTwoHands(KB_EN_ES_CA_TWO_HANDS),
     DEThumbKeyWords(KB_DE_THUMBKEY_WORDS),
+    RUMessageOwl(KB_RU_MESSAGE_OWL),
 }
