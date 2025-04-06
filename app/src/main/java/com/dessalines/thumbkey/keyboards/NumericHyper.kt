@@ -18,6 +18,7 @@ val HYPER_NUMERIC_KEYBOARD =
                     top = KeyC(":(", size = SMALL),
                     left = KeyC("["),
                     bottomRight = KeyC("<"),
+                    
                     right = KeyC("\\"),
                 ),
                 KeyItemC(
