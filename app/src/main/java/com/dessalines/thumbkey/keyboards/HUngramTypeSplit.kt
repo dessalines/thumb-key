@@ -2,6 +2,9 @@
 
 package com.dessalines.thumbkey.keyboards
 
+
+import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.outlined.*
 import com.dessalines.thumbkey.utils.*
 import com.dessalines.thumbkey.utils.ColorVariant.*
 import com.dessalines.thumbkey.utils.FontSizeVariant.*
@@ -22,19 +25,23 @@ val KB_HU_HUNGRAM_MAIN =
                 KeyItemC(
                     center = KeyC("z", size = LARGE),
                     swipeType = FOUR_WAY_CROSS,
-                    top = KeyC("c"),
+                    bottom = KeyC("c"),
                     right = KeyC("ó"),
                 ),
                 KeyItemC(
                     center = KeyC("e", size = LARGE),
                     swipeType = FOUR_WAY_CROSS,
-                    top = KeyC("y"),
+                    left = KeyC("&"),
+                    bottom = KeyC("y"),
                     right = KeyC("ú"),
                 ),
                 KeyItemC(
                     center = KeyC("s", size = LARGE),
                     swipeType = FOUR_WAY_CROSS,
-                    top = KeyC("ü"),
+                    bottom = KeyC("ü"),
+                    right = KeyC("+"),
+                    top = KeyC("%"),
+                    left = KeyC("="),
                 ),
                 KeyItemC(
                     center = KeyC("m", size = LARGE),
@@ -61,6 +68,10 @@ val KB_HU_HUNGRAM_MAIN =
                 KeyItemC(
                     center = KeyC("o", size = LARGE),
                     swipeType = FOUR_WAY_CROSS,
+                    top = KeyC("@"),
+                    right = KeyC("\\"),
+                    bottom = KeyC("#"),
+                    left = KeyC("&"),
                 ),
                 KeyItemC(
                     center = KeyC("a", size = LARGE),
@@ -68,6 +79,7 @@ val KB_HU_HUNGRAM_MAIN =
                     left = KeyC(";"),
                     top = KeyC(":"),
                     right = KeyC("-"),
+                    bottom = KeyC("_"),
                 ),
                 KeyItemC(
                     center = KeyC("t", size = LARGE),
@@ -75,10 +87,25 @@ val KB_HU_HUNGRAM_MAIN =
                     left = KeyC("'"),
                     top = KeyC("\""),
                     right = KeyC("*"),
+                    bottom = KeyC("|"),
                 ),
                 KeyItemC(
                     center = KeyC("n", size = LARGE),
                     swipeType = FOUR_WAY_CROSS,
+                    left = KeyC("/"),
+                    right = KeyC("^"),
+                    top =
+                        KeyC(
+                            display = KeyDisplay.IconDisplay(Icons.Outlined.ArrowDropUp),
+                            action = ToggleShiftMode(true),
+                            swipeReturnAction = ToggleCurrentWordCapitalization(true),
+                            color = MUTED,
+                        ),
+                    bottom =
+                        KeyC(
+                            ToggleShiftMode(false),
+                            swipeReturnAction = ToggleCurrentWordCapitalization(false),
+                        ),
                 ),
                 KeyItemC(
                     center = KeyC("l", size = LARGE),
@@ -102,17 +129,19 @@ val KB_HU_HUNGRAM_MAIN =
                     top = KeyC("{"),
                     right = KeyC("["),
                     bottom = KeyC("("),
+                    left = KeyC("<"),
                 ),
                 KeyItemC(
                     center = KeyC("g", size = LARGE),
                     swipeType = FOUR_WAY_CROSS,
                     left = KeyC("]"),
                     top = KeyC("}"),
-                    right = KeyC("v"),
+                    right = KeyC(">"),
                     bottom = KeyC(")"),
                 ),
                 KeyItemC(
                     center = KeyC("f", size = LARGE),
+                    left = KeyC("v"),
                     swipeType = FOUR_WAY_CROSS,
                 ),
                 KeyItemC(
@@ -123,10 +152,11 @@ val KB_HU_HUNGRAM_MAIN =
             ),
             listOf(
                 NUMERIC_KEY_ITEM_ALT,
-                EMOJI_KEY_ITEM_ALT,
-                SPACEBAR_DOUBLE_KEY_ITEM,
-                BACKSPACE_TYPESPLIT_KEY_ITEM,
+                BACKSPACE_KEY_ITEM,
+                SPACEBAR_TYPESPLIT_MIDDLE_KEY_ITEM.copy(widthMultiplier = 2,
+                 top = KeyC(".", color = MUTED),),
                 RETURN_KEY_ITEM,
+                EMOJI_KEY_ITEM_ALT,
             ),
         ),
     )
@@ -145,19 +175,23 @@ val KB_HU_HUNGRAM_SHIFTED =
                 KeyItemC(
                     center = KeyC("Z", size = LARGE),
                     swipeType = FOUR_WAY_CROSS,
-                    top = KeyC("C"),
+                    bottom = KeyC("C"),
                     right = KeyC("Ó"),
                 ),
                 KeyItemC(
                     center = KeyC("E", size = LARGE),
                     swipeType = FOUR_WAY_CROSS,
-                    top = KeyC("Y"),
+                    left = KeyC("&"),
+                    bottom = KeyC("Y"),
                     right = KeyC("Ú"),
                 ),
                 KeyItemC(
                     center = KeyC("S", size = LARGE),
                     swipeType = FOUR_WAY_CROSS,
-                    top = KeyC("Ü"),
+                    bottom = KeyC("Ü"),
+                    right = KeyC("+"),
+                    top = KeyC("%"),
+                    left = KeyC("="),
                 ),
                 KeyItemC(
                     center = KeyC("M", size = LARGE),
@@ -184,6 +218,10 @@ val KB_HU_HUNGRAM_SHIFTED =
                 KeyItemC(
                     center = KeyC("O", size = LARGE),
                     swipeType = FOUR_WAY_CROSS,
+                    top = KeyC("@"),
+                    right = KeyC("\\"),
+                    bottom = KeyC("#"),
+                    left = KeyC("&"),
                 ),
                 KeyItemC(
                     center = KeyC("A", size = LARGE),
@@ -191,6 +229,7 @@ val KB_HU_HUNGRAM_SHIFTED =
                     left = KeyC(";"),
                     top = KeyC(":"),
                     right = KeyC("-"),
+                    bottom = KeyC("_"),
                 ),
                 KeyItemC(
                     center = KeyC("T", size = LARGE),
@@ -198,10 +237,25 @@ val KB_HU_HUNGRAM_SHIFTED =
                     left = KeyC("'"),
                     top = KeyC("\""),
                     right = KeyC("*"),
+                    bottom = KeyC("|"),
                 ),
                 KeyItemC(
                     center = KeyC("N", size = LARGE),
                     swipeType = FOUR_WAY_CROSS,
+                    left = KeyC("/"),
+                    right = KeyC("^"),
+                    top =
+                        KeyC(
+                            display = KeyDisplay.IconDisplay(Icons.Outlined.ArrowDropUp),
+                            action = ToggleShiftMode(true),
+                            swipeReturnAction = ToggleCurrentWordCapitalization(true),
+                            color = MUTED,
+                        ),
+                    bottom =
+                        KeyC(
+                            ToggleShiftMode(false),
+                            swipeReturnAction = ToggleCurrentWordCapitalization(false),
+                        ),
                 ),
                 KeyItemC(
                     center = KeyC("L", size = LARGE),
@@ -225,17 +279,19 @@ val KB_HU_HUNGRAM_SHIFTED =
                     top = KeyC("{"),
                     right = KeyC("["),
                     bottom = KeyC("("),
+                    left = KeyC("<"),
                 ),
                 KeyItemC(
                     center = KeyC("G", size = LARGE),
                     swipeType = FOUR_WAY_CROSS,
                     left = KeyC("]"),
                     top = KeyC("}"),
-                    right = KeyC("v"),
+                    right = KeyC(">"),
                     bottom = KeyC(")"),
                 ),
                 KeyItemC(
                     center = KeyC("F", size = LARGE),
+                    left = KeyC("V"),
                     swipeType = FOUR_WAY_CROSS,
                 ),
                 KeyItemC(
@@ -247,7 +303,8 @@ val KB_HU_HUNGRAM_SHIFTED =
             listOf(
                 NUMERIC_KEY_ITEM_ALT,
                 BACKSPACE_KEY_ITEM,
-                SPACEBAR_DOUBLE_KEY_ITEM,
+                SPACEBAR_TYPESPLIT_MIDDLE_KEY_ITEM.copy(widthMultiplier = 2,
+                 top = KeyC(".", color = MUTED),),
                 RETURN_KEY_ITEM,
                 EMOJI_KEY_ITEM_ALT,
             ),
