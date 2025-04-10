@@ -110,4 +110,7 @@ val KB_KR_TYPESPLIT: KeyboardDefinition =
                 shifted = KB_KR_TYPESPLIT_MAIN,
                 numeric = TYPESPLIT_NUMERIC_KEYBOARD,
             ),
+        settings = KeyboardDefinitionSettings(
+            textProcessor = KoreanTextProcessor()
+        )
     )

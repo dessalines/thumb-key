@@ -9,6 +9,10 @@ private const val UNICODE_BASE = 0xAC00
 private const val LEADING_MULTIPLIER = 588
 private const val VOWEL_MULTIPLIER = 28
 
+interface TextProcessor {
+    fun processInput(ime: IMEService, input: CharSequence)
+}
+
 object KoreanLetters{
     private val leadingConsonants: Set<Char> = setOf(
         'ㄱ', 'ㄲ', 'ㄴ', 'ㄷ', 'ㄸ', 'ㄹ', 'ㅁ', 'ㅂ', 'ㅃ', 'ㅅ', 'ㅆ', 'ㅇ', 'ㅈ', 'ㅉ',
@@ -45,9 +49,9 @@ object KoreanLetters{
         ('ㅂ' to 'ㅅ') to 'ㅄ'
     )
 
-    fun isConsonant(consonant: Char): Boolean = consonant in leadingConsonants
-    fun isVowel(vowel: Char): Boolean = vowel in vowels
-    fun isTrailing(trailing: Char): Boolean = trailing in trailingConsonants
+    fun isConsonant(c: Char): Boolean = c in leadingConsonants
+    fun isVowel(c: Char): Boolean = c in vowels
+    fun isTrailing(c: Char): Boolean = c in trailingConsonants
     fun isComplexConsonant(cons1: Char, cons2: Char): Boolean = Pair(cons1, cons2) in complexConsonants
     fun isDiphthong(vowel1: Char, vowel2: Char): Boolean = Pair(vowel1, vowel2) in diphthongs
 
@@ -72,7 +76,7 @@ enum class CompositionState {
     STANDALONE_VOWEL,
 }
 
-class KoreanComposer {
+class KoreanTextProcessor : TextProcessor {
     private var state: CompositionState = CompositionState.EMPTY
     private var leading = ""
     private var medialVowel = ""
@@ -80,7 +84,7 @@ class KoreanComposer {
     private var standaloneVowel = ""
     private var composedText = ""   // should always contain current value of ComposingText field use this variable instead of temporary ones?
 
-    fun processKoreanText(ime: IMEService, input: CharSequence) {
+    override fun processInput(ime: IMEService, input: CharSequence) {
         val ic = ime.currentInputConnection
         val inputChar = input[0]
 
@@ -111,6 +115,8 @@ class KoreanComposer {
 
     private fun deleteKeyAction(ev: KeyEvent, ime: IMEService) {
         val ic = ime.currentInputConnection
+
+
         when (state) {
             CompositionState.EMPTY -> {
                 ic.sendKeyEvent(ev)
@@ -119,8 +125,14 @@ class KoreanComposer {
                 resetState()
             }
             CompositionState.MEDIAL_VOWEL -> {
-                state = CompositionState.LEADING_CONSONANT
-                composedText = leading
+                if (medialVowel.length == 2) {
+                    medialVowel = medialVowel.dropLast(1)
+                    val unicode = calculateBlockUnicode(leading, medialVowel)
+                    composedText = unicode.toChar().toString()
+                } else {
+                    state = CompositionState.LEADING_CONSONANT
+                    composedText = leading
+                }
             }
             CompositionState.TRAILING_CONSONANT -> {
                 state = CompositionState.MEDIAL_VOWEL
@@ -129,23 +141,29 @@ class KoreanComposer {
             }
             CompositionState.TRAILING_COMPLEX_CONSONANT -> {
                 state = CompositionState.TRAILING_CONSONANT
-                trailing.dropLast(1)
+                trailing = trailing.dropLast(1)
                 val unicode = calculateBlockUnicode(leading, medialVowel, trailing)
                 composedText = unicode.toChar().toString()
             }
             CompositionState.STANDALONE_VOWEL -> {
                 if (standaloneVowel.length > 1) {
-                    standaloneVowel.dropLast(1)
+                    standaloneVowel = standaloneVowel.dropLast(1)
                     composedText = standaloneVowel
                 } else {
                     resetState()
                 }
             }
             CompositionState.STANDALONE_COMPLEX_CONSONANT -> {
-                leading.dropLast(1)
+                leading = leading.dropLast(1)
                 composedText = leading
             }
         }
+
+        Log.d(TAG, "Current state: $state")
+        Log.d(TAG, "text: $composedText")
+        Log.d(TAG, "leading: $leading")
+        Log.d(TAG, "vowel: $medialVowel")
+        Log.d(TAG, "trailing: $trailing")
 
         ic.setComposingText(composedText, 1)
     }
@@ -264,7 +282,7 @@ class KoreanComposer {
                 // if no STANDALONE_DIPHTHONG state, in all cases it stays in STANDALONE_VOWEL
                 if (standaloneVowel.length == 1) {
                     if (KoreanLetters.isDiphthong(standaloneVowel[0], vowel)) {
-                        medialVowel += vowel
+                        standaloneVowel += vowel
                         composedText = KoreanLetters.getDiphthong(standaloneVowel[0], vowel).toString()
                     }
                     else {
