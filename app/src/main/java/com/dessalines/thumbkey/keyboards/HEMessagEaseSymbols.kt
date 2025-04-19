@@ -14,10 +14,9 @@ val KB_HE_MESSAGEASE_SYMBOLS_MAIN =
             listOf(
                 KeyItemC(
                     center = KeyC("ר", size = LARGE),
-                    bottomRight = KeyC("ן"),
+                    bottomRight = KeyC("ן", swipeReturnAction = CommitText("נ")),
                     right = KeyC("-", color = MUTED),
                     bottomLeft = KeyC("$", color = MUTED),
-                    bottom = KeyC("ץ"),
                 ),
                 KeyItemC(
                     center = KeyC("ב", size = LARGE),
@@ -32,7 +31,7 @@ val KB_HE_MESSAGEASE_SYMBOLS_MAIN =
                 ),
                 KeyItemC(
                     center = KeyC("א", size = LARGE),
-                    bottomLeft = KeyC("צ"),
+                    bottomLeft = KeyC("צ", swipeReturnAction = CommitText("ץ")),
                     left = KeyC("?"),
                     bottom = KeyC("=", color = MUTED),
                 ),
@@ -41,7 +40,7 @@ val KB_HE_MESSAGEASE_SYMBOLS_MAIN =
             listOf(
                 KeyItemC(
                     center = KeyC("מ", size = LARGE),
-                    right = KeyC("ם"),
+                    right = KeyC("ם", swipeReturnAction = CommitText("מ")),
                     topLeft = KeyC("}", displayText = "{", color = MUTED),
                     topRight = KeyC("%", color = MUTED),
                     bottomRight = KeyC("ך"),
@@ -52,16 +51,15 @@ val KB_HE_MESSAGEASE_SYMBOLS_MAIN =
                     center = KeyC("י", size = LARGE),
                     topLeft = KeyC("ק"),
                     top = KeyC("ח"),
-                    topRight = KeyC("פ"),
+                    topRight = KeyC("פ", swipeReturnAction = CommitText("ף")),
                     right = KeyC("ד"),
                     bottomRight = KeyC("ש"),
-                    bottom = KeyC("נ"),
-                    bottomLeft = KeyC("כ"),
+                    bottom = KeyC("נ", swipeReturnAction = CommitText("ן")),
+                    bottomLeft = KeyC("כ", swipeReturnAction = CommitText("ך")),
                     left = KeyC("ע"),
                 ),
                 KeyItemC(
                     center = KeyC("ו", size = LARGE),
-                    topLeft = KeyC("ף"),
                     topRight = KeyC("{", displayText = "}", color = MUTED),
                     right = KeyC("(", displayText = ")", color = MUTED),
                     bottomRight = KeyC("[", displayText = "]", color = MUTED),

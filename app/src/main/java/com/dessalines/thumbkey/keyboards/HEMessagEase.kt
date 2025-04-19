@@ -15,7 +15,7 @@ val KB_HE_MESSAGEASE_MAIN =
                 KeyItemC(
                     center = KeyC("ר", size = LARGE),
                     swipeType = FOUR_WAY_DIAGONAL,
-                    bottomRight = KeyC("ן"),
+                    bottomRight = KeyC("ן", swipeReturnAction = CommitText("נ")),
                 ),
                 KeyItemC(
                     center = KeyC("ב", size = LARGE),
@@ -24,32 +24,29 @@ val KB_HE_MESSAGEASE_MAIN =
                 ),
                 KeyItemC(
                     center = KeyC("א", size = LARGE),
-                    bottomLeft = KeyC("צ"),
-                    left = KeyC("ץ"),
+                    bottomLeft = KeyC("צ", swipeReturnAction = CommitText("ץ")),
                 ),
                 EMOJI_KEY_ITEM,
             ),
             listOf(
                 KeyItemC(
                     center = KeyC("מ", size = LARGE),
-                    right = KeyC("ם"),
-                    bottomRight = KeyC("ך"),
+                    right = KeyC("ם", swipeReturnAction = CommitText("מ")),
                 ),
                 KeyItemC(
                     center = KeyC("י", size = LARGE),
                     topLeft = KeyC("ק"),
                     top = KeyC("ח"),
-                    topRight = KeyC("פ"),
+                    topRight = KeyC("פ", swipeReturnAction = CommitText("ף")),
                     right = KeyC("ד"),
                     bottomRight = KeyC("ש"),
-                    bottom = KeyC("נ"),
-                    bottomLeft = KeyC("כ"),
+                    bottom = KeyC("נ", swipeReturnAction = CommitText("ן")),
+                    bottomLeft = KeyC("כ", swipeReturnAction = CommitText("ך")),
                     left = KeyC("ע"),
                 ),
                 KeyItemC(
                     center = KeyC("ו", size = LARGE),
                     swipeType = FOUR_WAY_DIAGONAL,
-                    topLeft = KeyC("ף"),
                 ),
                 NUMERIC_KEY_ITEM,
             ),
