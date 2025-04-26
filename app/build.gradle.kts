@@ -121,7 +121,7 @@ dependencies {
     // Room
     // To use Kotlin annotation processing tool
     ksp("androidx.room:room-compiler:2.7.1")
-    implementation("androidx.room:room-runtime:2.7.0")
+    implementation("androidx.room:room-runtime:2.7.1")
     annotationProcessor("androidx.room:room-compiler:2.7.1")
 
     // optional - Kotlin Extensions and Coroutines support for Room
