@@ -176,12 +176,11 @@ import com.dessalines.thumbkey.keyboards.KB_UK_MESSAGEASE_SYMBOLS
 import com.dessalines.thumbkey.keyboards.KB_UK_RU_MESSAGEASE_SYMBOLS
 import com.dessalines.thumbkey.keyboards.KB_UK_THUMBKEY
 import com.dessalines.thumbkey.keyboards.KB_VN_THUMBKEY
-import java.util.EnumMap
 
 // Make sure new keyboards are added AT THE END of this list, and have a higher index.
 // DO NOT put them in the middle of the list!
 enum class KeyboardLayout(
-    var keyboardDefinition: KeyboardDefinition,
+    val keyboardDefinition: KeyboardDefinition,
 ) {
     ENThumbKey(KB_EN_THUMBKEY),
     ENThumbKeyProgramming(KB_EN_THUMBKEY_PROGRAMMING),
@@ -359,25 +358,4 @@ enum class KeyboardLayout(
     DEThumbKeyWords(KB_DE_THUMBKEY_WORDS),
     RUMessageOwl(KB_RU_MESSAGE_OWL),
     DETypeSplitImproved(KB_DE_TYPESPLIT_IMPROVED),
-    ;
-
-    companion object {
-        val unmodifiedKeyboardDefinitions = EnumMap<KeyboardLayout, KeyboardDefinition>(KeyboardLayout::class.java)
-
-        init {
-            initUnmodifiedKeyboardDefinitions()
-        }
-
-        internal fun initUnmodifiedKeyboardDefinitions() {
-            for (layout in entries) {
-                unmodifiedKeyboardDefinitions[layout] = layout.keyboardDefinition.deepCopy()
-            }
-        }
-
-        fun restoreUnmodifiedKeyboardDefinitions() {
-            for (layout in entries) {
-                layout.keyboardDefinition = unmodifiedKeyboardDefinitions[layout]!!.deepCopy()
-            }
-        }
-    }
 }

@@ -11,7 +11,7 @@ android {
 
     defaultConfig {
         applicationId = "com.dessalines.thumbkey"
-        minSdk = 21
+        minSdk = 24
         targetSdk = 35
         versionCode = 145
         versionName = "4.0.27"
@@ -137,4 +137,7 @@ dependencies {
     // Kotlin Reflect
     implementation("org.jetbrains.kotlin:kotlin-reflect:2.1.20")
 
+    // Arrow-kt for mutating deeply nested data classes
+    implementation("io.arrow-kt:arrow-optics:2.1.0")
+    ksp("io.arrow-kt:arrow-optics-ksp-plugin:2.1.0")
 }

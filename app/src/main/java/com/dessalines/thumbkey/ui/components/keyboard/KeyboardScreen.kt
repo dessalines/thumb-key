@@ -72,6 +72,7 @@ import com.dessalines.thumbkey.utils.KeyboardPosition
 import com.dessalines.thumbkey.utils.TAG
 import com.dessalines.thumbkey.utils.getKeyboardMode
 import com.dessalines.thumbkey.utils.keyboardPositionToAlignment
+import com.dessalines.thumbkey.utils.modifiedKeyboardDefinitions
 import com.dessalines.thumbkey.utils.toBool
 import kotlin.time.TimeMark
 
@@ -83,11 +84,12 @@ fun KeyboardScreen(
 ) {
     val ctx = LocalContext.current as IMEService
 
-    val keyboardDefinition =
+    val layout =
         KeyboardLayout.entries.sortedBy { it.ordinal }[
             settings?.keyboardLayout
                 ?: DEFAULT_KEYBOARD_LAYOUT,
-        ].keyboardDefinition
+        ]
+    val keyboardDefinition = modifiedKeyboardDefinitions[layout] ?: layout.keyboardDefinition
 
     var mode by remember {
         val startMode =

@@ -1,43 +1,53 @@
+@file:Suppress("ktlint:standard:no-wildcard-imports")
+
 package com.dessalines.thumbkey.utils
 
 import android.util.Log
 import androidx.compose.runtime.MutableState
+import arrow.optics.*
 import com.charleskorn.kaml.Yaml
 import com.dessalines.thumbkey.db.AppSettings
 import com.dessalines.thumbkey.utils.KeyAction.CommitText
 import com.dessalines.thumbkey.utils.KeyAction.Noop
 import com.dessalines.thumbkey.utils.KeyDisplay.TextDisplay
-import com.dessalines.thumbkey.utils.KeyboardLayout.Companion.restoreUnmodifiedKeyboardDefinitions
 import kotlinx.serialization.Serializable
 import kotlinx.serialization.builtins.MapSerializer
 import kotlinx.serialization.builtins.serializer
+import java.util.EnumMap
 
-private var changesPreviouslyApplied = false
 private var previousKeyModificationsHash: Int? = null
+var modifiedKeyboardDefinitions = EnumMap<KeyboardLayout, KeyboardDefinition>(KeyboardLayout::class.java)
 
 fun applyKeyModifications(
     settings: AppSettings?,
-    keyModificationsError: MutableState<String?>? = null,
+    keyModificationsErrorState: MutableState<String?>? = null,
 ) {
     try {
-        if (settings == null || settings.keyModifications.hashCode() == previousKeyModificationsHash) {
+        if (settings == null) {
+            resetModifiedKeyboardDefinitions()
             return
         }
 
-        if (changesPreviouslyApplied) {
-            restoreUnmodifiedKeyboardDefinitions()
-            changesPreviouslyApplied = false
+        // When keyModificationsErrorState is not null, let the rest of the function run so that
+        // keyModificationsErrorState will be populated with the appropriate error message
+        val shouldSkipWhenHashEqual = keyModificationsErrorState == null
+        if (shouldSkipWhenHashEqual &&
+            settings.keyModifications.hashCode() == previousKeyModificationsHash
+        ) {
+            return
         }
 
         previousKeyModificationsHash = settings.keyModifications.hashCode()
 
         if (settings.keyModifications.isEmpty()) {
-            keyModificationsError?.value = null
+            resetModifiedKeyboardDefinitions()
+            keyModificationsErrorState?.value = null
             return
         }
 
         val keyModifications = serializeKeyModifications(settings.keyModifications)
         val layouts = keyboardLayoutsSetFromDbIndexString(settings.keyboardLayouts).toList()
+        resetModifiedKeyboardDefinitions()
         for (layout in layouts) {
             if (keyModifications[layout.name] == null) {
                 continue
@@ -45,16 +55,20 @@ fun applyKeyModifications(
 
             val modifications = keyModifications[layout.name]!!
 
-            applyToKeyboardLayout(layout, modifications)
-
-            changesPreviouslyApplied = true
+            modifiedKeyboardDefinitions[layout] = modifyKeyboardDefinition(layout, modifications)
             Log.d(TAG, "key modifications applied to layout ${layout.name}")
         }
-        keyModificationsError?.value = null
+        keyModificationsErrorState?.value = null
     } catch (e: Exception) {
-        keyModificationsError?.value = e.message ?: e.stackTraceToString()
-        Log.d(TAG, "Error applying key modifications: ${keyModificationsError?.value}")
+        val errorMessage = e.message ?: e.stackTraceToString()
+        keyModificationsErrorState?.value = errorMessage
+        Log.d(TAG, "Error applying key modifications: $errorMessage")
+        resetModifiedKeyboardDefinitions()
     }
+}
+
+fun resetModifiedKeyboardDefinitions() {
+    modifiedKeyboardDefinitions = EnumMap<KeyboardLayout, KeyboardDefinition>(KeyboardLayout::class.java)
 }
 
 fun serializeKeyModifications(keyModifications: String): Map<String, KeyboardDefinitionModesSerializable> {
@@ -63,88 +77,92 @@ fun serializeKeyModifications(keyModifications: String): Map<String, KeyboardDef
     return Yaml.default.decodeFromString(serializer, keyModifications)
 }
 
-fun applyToKeyboardLayout(
+fun modifyKeyboardDefinition(
     layout: KeyboardLayout,
     modifications: KeyboardDefinitionModesSerializable,
-) {
-    applyToKeyboardC(layout.keyboardDefinition.modes.main, modifications.main)
-    applyToKeyboardC(layout.keyboardDefinition.modes.shifted, modifications.shifted)
-    applyToKeyboardC(layout.keyboardDefinition.modes.numeric, modifications.numeric)
-    applyToKeyboardC(layout.keyboardDefinition.modes.ctrled, modifications.ctrled)
-    applyToKeyboardC(layout.keyboardDefinition.modes.alted, modifications.alted)
+): KeyboardDefinition {
+    val originalKeyboardDefinition = layout.keyboardDefinition
+
+    val mainShiftedSame = originalKeyboardDefinition.modes.main == originalKeyboardDefinition.modes.shifted
+    val mainModifications = if (!mainShiftedSame) modifications.main else modifications.main ?: modifications.shifted
+    val shiftedModifications = if (!mainShiftedSame) modifications.shifted else modifications.shifted ?: modifications.main
+
+    return originalKeyboardDefinition.copy {
+        inside(KeyboardDefinition.modes) {
+            KeyboardDefinitionModes.main transform { modifyKeyboardC(it, mainModifications) ?: it }
+            KeyboardDefinitionModes.shifted transform { modifyKeyboardC(it, shiftedModifications) ?: it }
+            KeyboardDefinitionModes.numeric transform { modifyKeyboardC(it, modifications.numeric) ?: it }
+            KeyboardDefinitionModes.ctrled transform { modifyKeyboardC(it, modifications.ctrled) }
+            KeyboardDefinitionModes.alted transform { modifyKeyboardC(it, modifications.alted) }
+        }
+    }
 }
 
-fun applyToKeyboardC(
+fun modifyKeyboardC(
     keyboardC: KeyboardC?,
     keyboardCSerializable: KeyboardCSerializable?,
-) {
-    if (keyboardC == null || keyboardCSerializable == null) return
+): KeyboardC? {
+    if (keyboardC == null || keyboardCSerializable == null) return null
 
-    keyboardC.arr.forEachIndexed { i, row ->
-        row.forEachIndexed { j, keyItemC ->
-            val propertyName = "key${i}_$j"
-            val property = KeyboardCSerializable::class.members.find { it.name == propertyName }
-            val keyItemCSerializable = property?.call(keyboardCSerializable) as? KeyItemCSerializable
+    return keyboardC.copy {
+        KeyboardC.arr transform {
+            it.mapIndexed { i, row ->
+                row.mapIndexed { j, keyItemC ->
+                    val propertyName = "key${i}_$j"
+                    val property =
+                        KeyboardCSerializable::class.members.find { it.name == propertyName }
+                    val keyItemCSerializable =
+                        property?.call(keyboardCSerializable) as? KeyItemCSerializable
 
-            keyItemCSerializable?.let {
-                applyToKeyItemC(keyItemC, it)
+                    keyItemC.copy {
+                        keyItemCSerializable?.let { serializable ->
+                            modifyKeyItemC(serializable)
+                        }
+                    }
+                }
             }
         }
     }
 }
 
-private fun applyToKeyItemC(
-    keyItemC: KeyItemC,
-    serializable: KeyItemCSerializable,
-) {
-    keyItemC.topLeft = applyToKeyC(keyItemC.topLeft, serializable.topLeft)
-    keyItemC.top = applyToKeyC(keyItemC.top, serializable.top)
-    keyItemC.topRight = applyToKeyC(keyItemC.topRight, serializable.topRight)
-    keyItemC.left = applyToKeyC(keyItemC.left, serializable.left)
-    keyItemC.center = applyToKeyC(keyItemC.center, serializable.center) ?: KeyC(action = Noop)
-    keyItemC.right = applyToKeyC(keyItemC.right, serializable.right)
-    keyItemC.bottomLeft = applyToKeyC(keyItemC.bottomLeft, serializable.bottomLeft)
-    keyItemC.bottom = applyToKeyC(keyItemC.bottom, serializable.bottom)
-    keyItemC.bottomRight = applyToKeyC(keyItemC.bottomRight, serializable.bottomRight)
+fun Copy<KeyItemC>.modifyKeyItemC(serializable: KeyItemCSerializable) {
+    KeyItemC.topLeft transform { modifyKeyC(it, serializable.topLeft) }
+    KeyItemC.top transform { modifyKeyC(it, serializable.top) }
+    KeyItemC.topRight transform { modifyKeyC(it, serializable.topRight) }
+    KeyItemC.left transform { modifyKeyC(it, serializable.left) }
+    KeyItemC.center transform { modifyKeyC(it, serializable.center) ?: KeyC(action = Noop) }
+    KeyItemC.right transform { modifyKeyC(it, serializable.right) }
+    KeyItemC.bottomLeft transform { modifyKeyC(it, serializable.bottomLeft) }
+    KeyItemC.bottom transform { modifyKeyC(it, serializable.bottom) }
+    KeyItemC.bottomRight transform { modifyKeyC(it, serializable.bottomRight) }
 
-    keyItemC.widthMultiplier = serializable.widthMultiplier ?: keyItemC.widthMultiplier
-    keyItemC.backgroundColor = serializable.backgroundColor ?: keyItemC.backgroundColor
-    keyItemC.swipeType = serializable.swipeType ?: keyItemC.swipeType
-    keyItemC.slideType = serializable.slideType ?: keyItemC.slideType
+    KeyItemC.widthMultiplier transform { serializable.widthMultiplier ?: it }
+    KeyItemC.backgroundColor transform { serializable.backgroundColor ?: it }
+    KeyItemC.swipeType transform { serializable.swipeType ?: it }
+    KeyItemC.slideType transform { serializable.slideType ?: it }
 }
 
-fun applyToKeyC(
+// TODO: add support for other types of KeyAction besides CommitText
+fun modifyKeyC(
     keyC: KeyC?,
     keyCSerializable: KeyCSerializable?,
 ): KeyC? {
-    var returnValue = keyC
     if (keyCSerializable == null) {
-        return returnValue
+        return keyC
     }
     if (keyCSerializable.remove) {
         return null
     }
 
-    val committedText = keyCSerializable.text ?: ""
-    val displayText = keyCSerializable.displayText ?: committedText
-
-    if (keyC == null) {
-        returnValue =
-            KeyC(
-                action = CommitText(committedText),
-                display = TextDisplay(displayText),
-            )
-    } else {
-        returnValue.action = CommitText(committedText)
-        returnValue.display = TextDisplay(displayText)
+    return (keyC ?: KeyC(action = Noop)).copy {
+        keyCSerializable.text?.let {
+            KeyC.action.set(CommitText(it))
+            KeyC.display.set(TextDisplay(it))
+        }
+        keyCSerializable.displayText?.let {
+            KeyC.display.set(TextDisplay(it))
+        }
     }
-
-    // TODO: add support for other types of KeyAction besides CommitText
-
-    returnValue.size = keyCSerializable.size ?: returnValue.size
-    returnValue.color = keyCSerializable.color ?: returnValue.color
-
-    return returnValue
 }
 
 @Serializable
