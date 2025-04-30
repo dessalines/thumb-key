@@ -12,7 +12,28 @@ data class KeyboardDefinitionModes(
     val numeric: KeyboardC,
     val ctrled: KeyboardC? = null,
     val alted: KeyboardC? = null,
-)
+) {
+    fun deepCopy(): KeyboardDefinitionModes {
+        // In some keyboards, the main and shifted reference the same KeyboardC object
+        // so only one deep copy is needed for the two of them
+        val deepCopies =
+            listOf(
+                main,
+                shifted,
+                numeric,
+                ctrled,
+                alted,
+            ).toSet().associate { it to it?.deepCopy() }
+
+        return KeyboardDefinitionModes(
+            main = deepCopies[main]!!,
+            shifted = deepCopies[shifted]!!,
+            numeric = deepCopies[numeric]!!,
+            ctrled = deepCopies[ctrled],
+            alted = deepCopies[alted],
+        )
+    }
+}
 
 data class KeyboardDefinitionSettings(
     val autoCapitalizers: AutoCapitalizers = arrayOf(),
@@ -28,36 +49,73 @@ data class KeyboardDefinitionSettings(
     }
 
     override fun hashCode(): Int = autoCapitalizers.contentHashCode()
+
+    fun deepCopy(): KeyboardDefinitionSettings =
+        KeyboardDefinitionSettings(
+            autoCapitalizers = autoCapitalizers.copyOf(),
+            autoShift = autoShift,
+        )
 }
 
 data class KeyboardDefinition(
     val title: String,
     val modes: KeyboardDefinitionModes,
     val settings: KeyboardDefinitionSettings = KeyboardDefinitionSettings(),
-)
+) {
+    fun deepCopy(): KeyboardDefinition =
+        KeyboardDefinition(
+            title = title,
+            modes = modes.deepCopy(),
+            settings = settings.deepCopy(),
+        )
+}
 
 // Almost a 4x4 grid, but the bottom is mostly spacebar
 data class KeyboardC(
     val arr: List<List<KeyItemC>>,
-)
+) {
+    fun deepCopy(): KeyboardC =
+        KeyboardC(
+            arr = arr.map { row -> row.map { it.deepCopy() } },
+        )
+}
 
 data class KeyItemC(
-    val center: KeyC,
-    val left: KeyC? = null,
-    val topLeft: KeyC? = null,
-    val top: KeyC? = null,
-    val topRight: KeyC? = null,
-    val right: KeyC? = null,
-    val bottomRight: KeyC? = null,
-    val bottom: KeyC? = null,
-    val bottomLeft: KeyC? = null,
-    val nextTapActions: List<KeyAction>? = null,
-    val widthMultiplier: Int = 1,
-    val backgroundColor: ColorVariant = ColorVariant.SURFACE,
-    val swipeType: SwipeNWay = SwipeNWay.EIGHT_WAY,
-    val slideType: SlideType = SlideType.NONE,
-    val longPress: KeyAction? = null,
+    var center: KeyC,
+    var left: KeyC? = null,
+    var topLeft: KeyC? = null,
+    var top: KeyC? = null,
+    var topRight: KeyC? = null,
+    var right: KeyC? = null,
+    var bottomRight: KeyC? = null,
+    var bottom: KeyC? = null,
+    var bottomLeft: KeyC? = null,
+    var nextTapActions: List<KeyAction>? = null,
+    var widthMultiplier: Int = 1,
+    var backgroundColor: ColorVariant = ColorVariant.SURFACE,
+    var swipeType: SwipeNWay = SwipeNWay.EIGHT_WAY,
+    var slideType: SlideType = SlideType.NONE,
+    var longPress: KeyAction? = null,
 ) {
+    fun deepCopy(): KeyItemC =
+        KeyItemC(
+            center = center.deepCopy(),
+            left = left?.deepCopy(),
+            topLeft = topLeft?.deepCopy(),
+            top = top?.deepCopy(),
+            topRight = topRight?.deepCopy(),
+            right = right?.deepCopy(),
+            bottomRight = bottomRight?.deepCopy(),
+            bottom = bottom?.deepCopy(),
+            bottomLeft = bottomLeft?.deepCopy(),
+            nextTapActions = nextTapActions?.map { it.deepCopy() }?.toList(),
+            widthMultiplier = widthMultiplier,
+            backgroundColor = backgroundColor,
+            swipeType = swipeType,
+            slideType = slideType,
+            longPress = longPress,
+        )
+
     fun getSwipe(dir: SwipeDirection?) =
         when (dir) {
             null -> null
@@ -73,21 +131,31 @@ data class KeyItemC(
 }
 
 data class KeyC(
-    val action: KeyAction,
-    val swipeReturnAction: KeyAction? = null,
-    val display: KeyDisplay? =
+    var action: KeyAction,
+    var swipeReturnAction: KeyAction? = null,
+    var display: KeyDisplay? =
         when (action) {
             is KeyAction.CommitText -> KeyDisplay.TextDisplay(action.text)
             else -> null
         },
-    val capsModeDisplay: KeyDisplay? = null,
-    val size: FontSizeVariant = FontSizeVariant.SMALL,
-    val color: ColorVariant =
+    var capsModeDisplay: KeyDisplay? = null,
+    var size: FontSizeVariant = FontSizeVariant.SMALL,
+    var color: ColorVariant =
         when (size) {
             FontSizeVariant.LARGE -> ColorVariant.PRIMARY
             else -> ColorVariant.SECONDARY
         },
 ) {
+    fun deepCopy(): KeyC =
+        KeyC(
+            action = action.deepCopy(),
+            swipeReturnAction = swipeReturnAction?.deepCopy(),
+            display = display?.deepCopy(),
+            capsModeDisplay = capsModeDisplay?.deepCopy(),
+            size = size,
+            color = color,
+        )
+
     constructor(
         text: String,
         displayText: String = text,
@@ -113,75 +181,163 @@ data class KeyC(
 
 sealed class KeyDisplay {
     class TextDisplay(
-        val text: String,
-        val fontFamily: FontFamily? = null,
-    ) : KeyDisplay()
+        var text: String,
+        var fontFamily: FontFamily? = null,
+    ) : KeyDisplay() {
+        override fun deepCopy(): TextDisplay =
+            TextDisplay(
+                text = text,
+                fontFamily = fontFamily,
+            )
+    }
 
     class IconDisplay(
         val icon: ImageVector,
-    ) : KeyDisplay()
+    ) : KeyDisplay() {
+        override fun deepCopy(): IconDisplay =
+            IconDisplay(
+                icon = icon,
+            )
+    }
+
+    open fun deepCopy(): KeyDisplay = this
 }
 
 sealed class KeyAction {
+    open fun deepCopy(): KeyAction = this
+
     class CommitText(
         val text: String,
-    ) : KeyAction()
+    ) : KeyAction() {
+        override fun deepCopy(): CommitText =
+            CommitText(
+                text = text,
+            )
+    }
 
     class SendEvent(
         val event: KeyEvent,
-    ) : KeyAction()
+    ) : KeyAction() {
+        override fun deepCopy(): SendEvent =
+            SendEvent(
+                event = event,
+            )
+    }
 
     class ReplaceLastText(
         val text: String,
         val trimCount: Int = 2,
-    ) : KeyAction()
+    ) : KeyAction() {
+        override fun deepCopy(): ReplaceLastText =
+            ReplaceLastText(
+                text = text,
+                trimCount = trimCount,
+            )
+    }
 
     class ReplaceTrailingWhitespace(
         val text: String,
         val distanceBack: Int,
-    ) : KeyAction()
+    ) : KeyAction() {
+        override fun deepCopy(): ReplaceTrailingWhitespace =
+            ReplaceTrailingWhitespace(
+                text = text,
+                distanceBack = distanceBack,
+            )
+    }
 
     class ToggleShiftMode(
         val enable: Boolean,
-    ) : KeyAction()
+    ) : KeyAction() {
+        override fun deepCopy(): ToggleShiftMode =
+            ToggleShiftMode(
+                enable = enable,
+            )
+    }
 
     class ToggleCtrlMode(
         val enable: Boolean,
-    ) : KeyAction()
+    ) : KeyAction() {
+        override fun deepCopy(): ToggleCtrlMode =
+            ToggleCtrlMode(
+                enable = enable,
+            )
+    }
 
     class ToggleAltMode(
         val enable: Boolean,
-    ) : KeyAction()
+    ) : KeyAction() {
+        override fun deepCopy(): ToggleAltMode =
+            ToggleAltMode(
+                enable = enable,
+            )
+    }
 
     class ShiftAndCapsLock(
         val enable: Boolean,
-    ) : KeyAction()
+    ) : KeyAction() {
+        override fun deepCopy(): ShiftAndCapsLock =
+            ShiftAndCapsLock(
+                enable = enable,
+            )
+    }
 
     class ToggleCurrentWordCapitalization(
         val toggleUp: Boolean,
-    ) : KeyAction()
+    ) : KeyAction() {
+        override fun deepCopy(): ToggleCurrentWordCapitalization =
+            ToggleCurrentWordCapitalization(
+                toggleUp = toggleUp,
+            )
+    }
 
     class ToggleNumericMode(
         val enable: Boolean,
-    ) : KeyAction()
+    ) : KeyAction() {
+        override fun deepCopy(): ToggleNumericMode =
+            ToggleNumericMode(
+                enable = enable,
+            )
+    }
 
     class ToggleEmojiMode(
         val enable: Boolean,
-    ) : KeyAction()
+    ) : KeyAction() {
+        override fun deepCopy(): ToggleEmojiMode =
+            ToggleEmojiMode(
+                enable = enable,
+            )
+    }
 
     class ComposeLastKey(
         val text: String,
-    ) : KeyAction()
+    ) : KeyAction() {
+        override fun deepCopy(): ComposeLastKey =
+            ComposeLastKey(
+                text = text,
+            )
+    }
 
     class SmartQuotes(
         val start: String,
         val end: String,
-    ) : KeyAction()
+    ) : KeyAction() {
+        override fun deepCopy(): SmartQuotes =
+            SmartQuotes(
+                start = start,
+                end = end,
+            )
+    }
 
     sealed class MoveKeyboard : KeyAction() {
         class ToPosition(
             val position: KeyboardPosition,
-        ) : KeyAction()
+        ) : MoveKeyboard() {
+            override fun deepCopy(): ToPosition =
+                ToPosition(
+                    position = position,
+                )
+        }
 
         data object Left : KeyAction()
 
@@ -221,6 +377,8 @@ sealed class KeyAction {
     data object SwitchIME : KeyAction()
 
     data object SwitchIMEVoice : KeyAction()
+
+    data object Noop : KeyAction()
 }
 
 enum class CursorAccelerationMode(

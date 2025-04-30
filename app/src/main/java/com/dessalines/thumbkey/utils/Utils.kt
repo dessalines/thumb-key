@@ -1056,6 +1056,8 @@ fun performKeyAction(
             }
         }
 
+        KeyAction.Noop -> {}
+
         is KeyAction.ToggleCurrentWordCapitalization -> {
             val maxLength = 100
             val wordBorderCharacters = ".,;:!?\"'()-—[]{}<>/\\|#$%^_+=~`"

@@ -816,7 +816,8 @@ fun KeyText(
     val isUpperCase =
         when (key.display) {
             is KeyDisplay.TextDisplay ->
-                key.display.text
+                (key.display as KeyDisplay.TextDisplay)
+                    .text
                     .firstOrNull()
                     ?.isUpperCase() == true
             else -> {
