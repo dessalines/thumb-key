@@ -15,6 +15,7 @@ import com.dessalines.thumbkey.db.AppSettingsRepository
 import com.dessalines.thumbkey.ui.components.keyboard.KeyboardScreen
 import com.dessalines.thumbkey.ui.theme.ThumbkeyTheme
 import com.dessalines.thumbkey.utils.KeyboardPosition
+import com.dessalines.thumbkey.utils.applyKeyModifications
 import com.dessalines.thumbkey.utils.keyboardLayoutsSetFromDbIndexString
 import kotlinx.coroutines.launch
 
@@ -28,6 +29,8 @@ class ComposeKeyboardView(
         val settingsState = settingsRepo.appSettings.observeAsState()
         val settings by settingsState
         val ctx = context as IMEService
+
+        applyKeyModifications(settings)
 
         ThumbkeyTheme(
             settings = settings,

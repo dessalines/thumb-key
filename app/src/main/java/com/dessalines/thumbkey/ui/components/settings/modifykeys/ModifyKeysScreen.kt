@@ -127,6 +127,7 @@ fun ModifyKeysScreen(
                                 errorContainerColor = MaterialTheme.colorScheme.errorContainer,
                             ),
                         trailingIcon = {
+                            Log.d(TAG, "(keyModificationsError.value != null) evaluates to ${keyModificationsError.value != null}")
                             if (keyModificationsError.value != null) {
                                 Icon(
                                     Icons.Filled.Error,
