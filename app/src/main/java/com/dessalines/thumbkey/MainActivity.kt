@@ -27,6 +27,7 @@ import com.dessalines.thumbkey.ui.components.settings.about.AboutScreen
 import com.dessalines.thumbkey.ui.components.settings.backupandrestore.BackupAndRestoreScreen
 import com.dessalines.thumbkey.ui.components.settings.behavior.BehaviorScreen
 import com.dessalines.thumbkey.ui.components.settings.lookandfeel.LookAndFeelScreen
+import com.dessalines.thumbkey.ui.components.settings.modifykeys.ModifyKeysScreen
 import com.dessalines.thumbkey.ui.components.setup.SetupScreen
 import com.dessalines.thumbkey.ui.theme.ThumbkeyTheme
 import com.dessalines.thumbkey.utils.ANIMATION_SPEED
@@ -135,6 +136,12 @@ class MainActivity : AppCompatActivity() {
                     }
                     composable(route = "behavior") {
                         BehaviorScreen(
+                            navController = navController,
+                            appSettingsViewModel = appSettingsViewModel,
+                        )
+                    }
+                    composable(route = "modifyKeys") {
+                        ModifyKeysScreen(
                             navController = navController,
                             appSettingsViewModel = appSettingsViewModel,
                         )
