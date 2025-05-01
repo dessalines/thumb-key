@@ -10,7 +10,6 @@ import com.dessalines.thumbkey.utils.FontSizeVariant.*
 import com.dessalines.thumbkey.utils.KeyAction.*
 import com.dessalines.thumbkey.utils.SwipeNWay.*
 
-
 val KB_EN_THUMBKEY_FLIPPED_NUMPAD_MAIN =
     KeyboardC(
         listOf(
