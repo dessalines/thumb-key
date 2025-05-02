@@ -1,3 +1,16 @@
+## What's Changed in 4.0.28
+
+- added flipped numpad layout for EN thumbkey by @axolotl-being in [#1363](https://github.com/dessalines/thumb-key/pull/1363)
+- Adding DE_TYPESPLIT_IMPROVED. by @dessalines in [#1360](https://github.com/dessalines/thumb-key/pull/1360)
+- fixed Hebrew final letters by @Toldry in [#1349](https://github.com/dessalines/thumb-key/pull/1349)
+
+## New Contributors
+
+- @axolotl-being made their first contribution in [#1363](https://github.com/dessalines/thumb-key/pull/1363)
+- @Toldry made their first contribution in [#1349](https://github.com/dessalines/thumb-key/pull/1349)
+
+**Full Changelog**: https://github.com/dessalines/thumb-key/compare/4.0.27...4.0.28
+
 ## What's Changed in 4.0.27
 
 - Update Hyper's symbol layer with small changes by @luminespire in [#1340](https://github.com/dessalines/thumb-key/pull/1340)
@@ -1379,8 +1392,8 @@
 - Adding an IME switcher button. Fixes #380 by @dessalines in [#391](https://github.com/dessalines/thumb-key/pull/391)
 - Add confirmation dialog before resetting to default settings by @storvik in [#390](https://github.com/dessalines/thumb-key/pull/390)
 - Adding latvian LV+LTG. Fixes #388 by @dessalines in [#389](https://github.com/dessalines/thumb-key/pull/389)
-- Added german translation by @0xFOSSMan in [#387](https://github.com/dessalines/thumb-key/pull/387)
-- Added Dracula Theme by @0xFOSSMan in [#376](https://github.com/dessalines/thumb-key/pull/376)
+- Added german translation by @0xfossman in [#387](https://github.com/dessalines/thumb-key/pull/387)
+- Added Dracula Theme by @0xfossman in [#376](https://github.com/dessalines/thumb-key/pull/376)
 - Update ThumbKeyUKv1.kt - fix Ґ and Д conflict by @plugnburn in [#385](https://github.com/dessalines/thumb-key/pull/385)
 - Fixed missing and overlapping keys on CZ keyboard by @Michael36500 in [#386](https://github.com/dessalines/thumb-key/pull/386)
 - Update MessageEaseDE.kt by @Saturo78 in [#384](https://github.com/dessalines/thumb-key/pull/384)
@@ -1390,7 +1403,7 @@
 ## New Contributors
 
 - @storvik made their first contribution in [#390](https://github.com/dessalines/thumb-key/pull/390)
-- @0xFOSSMan made their first contribution in [#387](https://github.com/dessalines/thumb-key/pull/387)
+- @0xfossman made their first contribution in [#387](https://github.com/dessalines/thumb-key/pull/387)
 - @plugnburn made their first contribution in [#385](https://github.com/dessalines/thumb-key/pull/385)
 - @Saturo78 made their first contribution in [#384](https://github.com/dessalines/thumb-key/pull/384)
 - @Lastaapps made their first contribution in [#377](https://github.com/dessalines/thumb-key/pull/377)
