@@ -75,6 +75,7 @@ import com.dessalines.thumbkey.keyboards.KB_EN_SYMBOLS_NUMBERS_TWO_HANDS
 import com.dessalines.thumbkey.keyboards.KB_EN_SYMBOLS_TWO_HANDS
 import com.dessalines.thumbkey.keyboards.KB_EN_THUMBKEY
 import com.dessalines.thumbkey.keyboards.KB_EN_THUMBKEY_COMPOSE
+import com.dessalines.thumbkey.keyboards.KB_EN_THUMBKEY_FLIPPED_NUMPAD
 import com.dessalines.thumbkey.keyboards.KB_EN_THUMBKEY_PROGRAMMING
 import com.dessalines.thumbkey.keyboards.KB_EN_THUMBKEY_PROGRAMMING_EXPANDED
 import com.dessalines.thumbkey.keyboards.KB_EN_THUMBKEY_PROGRAMMING_WIDE
@@ -358,4 +359,5 @@ enum class KeyboardLayout(
     DEThumbKeyWords(KB_DE_THUMBKEY_WORDS),
     RUMessageOwl(KB_RU_MESSAGE_OWL),
     DETypeSplitImproved(KB_DE_TYPESPLIT_IMPROVED),
+    ENThumbkeyFlippedNumpad(KB_EN_THUMBKEY_FLIPPED_NUMPAD),
 }
