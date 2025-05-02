@@ -40,7 +40,7 @@ import com.dessalines.thumbkey.ui.components.common.TestOutTextField
 import com.dessalines.thumbkey.ui.components.settings.about.SettingsDivider
 import com.dessalines.thumbkey.utils.SimpleTopAppBar
 import com.dessalines.thumbkey.utils.TAG
-import com.dessalines.thumbkey.utils.applyKeyModifications
+import com.dessalines.thumbkey.utils.checkAllKeyboardModifications
 import com.dessalines.thumbkey.utils.openLink
 import kotlinx.coroutines.delay
 import me.zhanghai.compose.preference.Preference
@@ -65,7 +65,7 @@ fun ModifyKeysScreen(
     val scrollState = rememberScrollState()
     val ctx = LocalContext.current
 
-    applyKeyModifications(settings, keyModificationsError)
+    checkAllKeyboardModifications(settings, keyModificationsError)
 
     fun updateKeyModifications() {
         appSettingsViewModel.updateKeyModifications(
@@ -146,9 +146,9 @@ fun ModifyKeysScreen(
                             updateKeyModifications()
                         }
                     }
-                    if (keyModificationsError.value != null) {
+                    keyModificationsError.value?.let {
                         Text(
-                            text = keyModificationsError.value!!,
+                            text = it,
                             color = MaterialTheme.colorScheme.error,
                             style = MaterialTheme.typography.bodyMedium,
                         )

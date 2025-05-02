@@ -13,65 +13,60 @@ import com.dessalines.thumbkey.utils.KeyDisplay.TextDisplay
 import kotlinx.serialization.Serializable
 import kotlinx.serialization.builtins.MapSerializer
 import kotlinx.serialization.builtins.serializer
-import java.util.EnumMap
 
-private var previousKeyModificationsHash: Int? = null
-var modifiedKeyboardDefinitions = EnumMap<KeyboardLayout, KeyboardDefinition>(KeyboardLayout::class.java)
-
-fun applyKeyModifications(
+/**
+ * @param keyboardLayout The layout of the keyboard to be modified.
+ * @param settings The application settings containing key modifications.
+ * @return A modified `KeyboardDefinition` if modifications exist for the layout, else null.
+ */
+fun getModifiedKeyboardDefinition(
+    keyboardLayout: KeyboardLayout,
     settings: AppSettings?,
-    keyModificationsErrorState: MutableState<String?>? = null,
-) {
+): KeyboardDefinition? {
+    if (settings == null || settings.keyModifications.isEmpty()) {
+        return null
+    }
+
     try {
-        if (settings == null) {
-            resetModifiedKeyboardDefinitions()
-            return
-        }
-
-        // When keyModificationsErrorState is not null, let the rest of the function run so that
-        // keyModificationsErrorState will be populated with the appropriate error message
-        val shouldSkipWhenHashEqual = keyModificationsErrorState == null
-        if (shouldSkipWhenHashEqual &&
-            settings.keyModifications.hashCode() == previousKeyModificationsHash
-        ) {
-            return
-        }
-
-        previousKeyModificationsHash = settings.keyModifications.hashCode()
-
-        if (settings.keyModifications.isEmpty()) {
-            resetModifiedKeyboardDefinitions()
-            keyModificationsErrorState?.value = null
-            return
-        }
-
         val keyModifications = serializeKeyModifications(settings.keyModifications)
-        val layouts = keyboardLayoutsSetFromDbIndexString(settings.keyboardLayouts).toList()
-        resetModifiedKeyboardDefinitions()
-        for (layout in layouts) {
-            if (keyModifications[layout.name] == null) {
-                continue
-            }
-
-            val modifications = keyModifications[layout.name]!!
-
-            modifiedKeyboardDefinitions[layout] = modifyKeyboardDefinition(layout, modifications)
-            Log.d(TAG, "key modifications applied to layout ${layout.name}")
+        return keyModifications[keyboardLayout.name]?.let {
+            val modifiedKeyboardDefinition = modifyKeyboardDefinition(keyboardLayout, it)
+            Log.d(TAG, "key modifications applied to layout ${keyboardLayout.name}")
+            return modifiedKeyboardDefinition
         }
-        keyModificationsErrorState?.value = null
     } catch (e: Exception) {
         val errorMessage = e.message ?: e.stackTraceToString()
-        keyModificationsErrorState?.value = errorMessage
         Log.d(TAG, "Error applying key modifications: $errorMessage")
-        resetModifiedKeyboardDefinitions()
+        return null
     }
 }
 
-fun resetModifiedKeyboardDefinitions() {
-    modifiedKeyboardDefinitions = EnumMap<KeyboardLayout, KeyboardDefinition>(KeyboardLayout::class.java)
+fun checkAllKeyboardModifications(
+    settings: AppSettings?,
+    keyModificationsErrorState: MutableState<String?>,
+) {
+    keyModificationsErrorState.value = null
+    if (settings == null || settings.keyModifications.isEmpty()) return
+    try {
+        val keyModifications = serializeKeyModifications(settings.keyModifications)
+        keyModifications.forEach {
+            val keyboardLayout = KeyboardLayout.entries.find { layout -> it.key == layout.name }
+            if (keyboardLayout == null) {
+                // This should never happen
+                keyModificationsErrorState.value = "Keyboard layout '${it.key}' not found."
+                return
+            }
+
+            modifyKeyboardDefinition(keyboardLayout, it.value)
+        }
+    } catch (e: Exception) {
+        val errorMessage = e.message ?: e.stackTraceToString()
+        keyModificationsErrorState.value = errorMessage
+        Log.d(TAG, "Error applying key modifications: $errorMessage")
+    }
 }
 
-fun serializeKeyModifications(keyModifications: String): Map<String, KeyboardDefinitionModesSerializable> {
+fun serializeKeyModifications(keyModifications: String): KeyModifications {
     var serializer =
         MapSerializer(String.serializer(), KeyboardDefinitionModesSerializable.serializer())
     return Yaml.default.decodeFromString(serializer, keyModifications)
@@ -142,7 +137,6 @@ fun Copy<KeyItemC>.modifyKeyItemC(serializable: KeyItemCSerializable) {
     KeyItemC.slideType transform { serializable.slideType ?: it }
 }
 
-// TODO: add support for other types of KeyAction besides CommitText
 fun modifyKeyC(
     keyC: KeyC?,
     keyCSerializable: KeyCSerializable?,
@@ -154,6 +148,7 @@ fun modifyKeyC(
         return null
     }
 
+    // TODO: add support for other types of KeyAction besides CommitText
     return (keyC ?: KeyC(action = Noop)).copy {
         keyCSerializable.text?.let {
             KeyC.action.set(CommitText(it))
@@ -164,6 +159,8 @@ fun modifyKeyC(
         }
     }
 }
+
+typealias KeyModifications = Map<String, KeyboardDefinitionModesSerializable>
 
 @Serializable
 data class KeyboardDefinitionModesSerializable(
