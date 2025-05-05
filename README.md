@@ -46,6 +46,7 @@
   * [Drag-and-return](#drag-and-return)
   * [Ghost keys](#ghost-keys)
   * [Coming from MessagEase Keyboard Tips](#coming-from-messagease-keyboard-tips)
+  * [Modify keys](#modify-keys)
   * [Other](#other)
 - [Thumb-Key Design](#thumb-key-design)
   * [A History of Phone Keyboards](#a-history-of-phone-keyboards)
@@ -143,6 +144,94 @@ Enabling `Ghost keys` in keyboard settings will enable swiping hidden symbol key
 ### Coming from MessagEase Keyboard Tips
 
 - For those use to tapping on the hand key to hide the MessagEase Keyboard and make more screen real estate available, this can be done by using the Android back key or on Android 10 and higher using the guesture navigation for back.
+-
+
+### Modify keys
+
+You can customize individual keyboard keys using a YAML configuration file. This lets you change characters, remove keys, adjust visual size, and other changes.
+
+#### Example 1
+
+```yaml
+ENThumbKey:
+  main:
+    key1_0:
+      center:
+        text: ñ
+```
+
+![](fastlane/metadata/android/en-US/images/userGuideImages/modify_keys_example_1.png)
+This YAML configuration modifies the key in the second row, first column, center letter from 'n' to 'ñ'.
+
+- `ENThumbKey` specifies which keyboard to change. In this case, it's the 'english thumbkey' layout.
+  - [Here](./app/src/main/java/com/dessalines/thumbkey/utils/KeyboardLayout.kt) is a list of all keyboard layouts.
+- `main` specifies the main keyboard layout. Possible values are:
+  - `main`
+  - `shifted`
+  - `numeric`
+  - `ctrled`
+  - `alted`
+- `key1_0` specifies the key to modify. The first number is the row, and the second number is the column. The top row is 0, and the left column is 0.
+- `center` specifies which slide/touch direction of the key to modify. Possible values are:
+  - `center`
+  - `left`
+  - `topLeft`
+  - `top`
+  - `topRight`
+  - `right`
+  - `bottomRight`
+  - `bottom`
+  - `bottomLeft`
+- `text` specifies the text of the key
+
+#### Example 2
+
+```yaml
+ENThumbKey:
+  main:
+    key0_0:
+      right: { text: ê }
+      topRight: { text: è }
+      top: { text: ę }
+  shifted:
+    key0_0:
+      right: { text: Ê }
+      topRight: { text: È }
+      top: { text: Ę }
+
+ESCAMessagEase:
+  main:
+    key0_0:
+      bottom: { text: "( ͡° ͜ʖ ͡°)", size: SMALLEST }
+    key0_1:
+      # Unicode escape sequence can be optionally used for convenience or readability.
+      bottomLeft: { text: "\U000121EB", size: SMALL }
+      # this is equivalent to:
+      # bottomLeft: {text: "𒇫", size: SMALL}
+    key2_2:
+      swipeType: FOUR_WAY_CROSS
+      center: { text: "𓀒", size: LARGE }
+      topLeft: { remove: true }
+      topRight: { remove: true }
+      bottomRight: { remove: true }
+      bottomLeft: { remove: true }
+```
+
+![](fastlane/metadata/android/en-US/images/userGuideImages/modify_keys_example_2.png)
+
+- Two keyboards are modified: `ENThumbKey (english thumbkey)` and `ESCAMessagEase (español català messagease)`.
+- The first keyboard has both `main` and `shifted` modes modified.
+- The second keyboard uses the `size` property to specify the display size of the text. Possible values are:
+  - `LARGE`
+  - `SMALL`
+  - `SMALLEST`
+- The `remove` property is used to remove key-sides.
+- The `swipeType` property is used to modify the directionality of a key. Possible values are:
+  - `EIGHT_WAY`
+  - `FOUR_WAY_CROSS`
+  - `FOUR_WAY_DIAGONAL`
+  - `TWO_WAY_VERTICAL`
+  - `TWO_WAY_HORIZONTAL`
 
 ### Other
 

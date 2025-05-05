@@ -4,20 +4,27 @@ import android.view.KeyEvent
 import androidx.annotation.StringRes
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.text.font.FontFamily
+import arrow.optics.optics
 import com.dessalines.thumbkey.R
 
+@optics
 data class KeyboardDefinitionModes(
     val main: KeyboardC,
     val shifted: KeyboardC,
     val numeric: KeyboardC,
     val ctrled: KeyboardC? = null,
     val alted: KeyboardC? = null,
-)
+) {
+    companion object {}
+}
 
+@optics
 data class KeyboardDefinitionSettings(
     val autoCapitalizers: AutoCapitalizers = arrayOf(),
     val autoShift: Boolean = true,
 ) {
+    companion object {}
+
     override fun equals(other: Any?): Boolean {
         if (this === other) return true
         if (javaClass != other?.javaClass) return false
@@ -30,17 +37,24 @@ data class KeyboardDefinitionSettings(
     override fun hashCode(): Int = autoCapitalizers.contentHashCode()
 }
 
+@optics
 data class KeyboardDefinition(
     val title: String,
     val modes: KeyboardDefinitionModes,
     val settings: KeyboardDefinitionSettings = KeyboardDefinitionSettings(),
-)
+) {
+    companion object {}
+}
 
+@optics
 // Almost a 4x4 grid, but the bottom is mostly spacebar
 data class KeyboardC(
     val arr: List<List<KeyItemC>>,
-)
+) {
+    companion object {}
+}
 
+@optics
 data class KeyItemC(
     val center: KeyC,
     val left: KeyC? = null,
@@ -58,6 +72,8 @@ data class KeyItemC(
     val slideType: SlideType = SlideType.NONE,
     val longPress: KeyAction? = null,
 ) {
+    companion object {}
+
     fun getSwipe(dir: SwipeDirection?) =
         when (dir) {
             null -> null
@@ -72,6 +88,7 @@ data class KeyItemC(
         }
 }
 
+@optics
 data class KeyC(
     val action: KeyAction,
     val swipeReturnAction: KeyAction? = null,
@@ -88,6 +105,8 @@ data class KeyC(
             else -> ColorVariant.SECONDARY
         },
 ) {
+    companion object {}
+
     constructor(
         text: String,
         displayText: String = text,
@@ -221,6 +240,8 @@ sealed class KeyAction {
     data object SwitchIME : KeyAction()
 
     data object SwitchIMEVoice : KeyAction()
+
+    data object Noop : KeyAction()
 }
 
 enum class CursorAccelerationMode(

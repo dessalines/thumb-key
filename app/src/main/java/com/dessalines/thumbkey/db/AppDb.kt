@@ -57,6 +57,7 @@ const val DEFAULT_CIRCULAR_DRAG_ENABLED = 1
 const val DEFAULT_CLOCKWISE_DRAG_ACTION = 0
 const val DEFAULT_COUNTERCLOCKWISE_DRAG_ACTION = 1
 const val DEFAULT_GHOST_KEYS_ENABLED = 0
+const val DEFAULT_KEY_MODIFICATIONS = ""
 
 @Entity
 data class AppSettings(
@@ -232,6 +233,11 @@ data class AppSettings(
         defaultValue = DEFAULT_GHOST_KEYS_ENABLED.toString(),
     )
     val ghostKeysEnabled: Int,
+    @ColumnInfo(
+        name = "key_modifications",
+        defaultValue = "",
+    )
+    val keyModifications: String,
 )
 
 data class LayoutsUpdate(
@@ -344,6 +350,14 @@ data class BehaviorUpdate(
     val ghostKeysEnabled: Int,
 )
 
+data class KeyModificationsUpdate(
+    val id: Int,
+    @ColumnInfo(
+        name = "key_modifications",
+    )
+    val keyModifications: String,
+)
+
 @Dao
 interface AppSettingsDao {
     @Query("SELECT * FROM AppSettings limit 1")
@@ -360,6 +374,9 @@ interface AppSettingsDao {
 
     @Update(entity = AppSettings::class)
     fun updateBehavior(behavior: BehaviorUpdate)
+
+    @Update(entity = AppSettings::class)
+    fun updateKeyModifications(behavior: KeyModificationsUpdate)
 
     @Query("UPDATE AppSettings SET last_version_code_viewed = :versionCode")
     suspend fun updateLastVersionCode(versionCode: Int)
@@ -395,6 +412,11 @@ class AppSettingsRepository(
     @WorkerThread
     fun updateBehavior(behavior: BehaviorUpdate) {
         appSettingsDao.updateBehavior(behavior)
+    }
+
+    @WorkerThread
+    fun updateKeyModifications(behavior: KeyModificationsUpdate) {
+        appSettingsDao.updateKeyModifications(behavior)
     }
 
     @WorkerThread
@@ -582,8 +604,17 @@ val MIGRATION_15_16 =
         }
     }
 
+val MIGRATION_16_17 =
+    object : Migration(16, 17) {
+        override fun migrate(db: SupportSQLiteDatabase) {
+            db.execSQL(
+                "alter table AppSettings add column key_modifications TEXT NOT NULL default ''",
+            )
+        }
+    }
+
 @Database(
-    version = 16,
+    version = 17,
     entities = [AppSettings::class],
     exportSchema = true,
 )
@@ -621,6 +652,7 @@ abstract class AppDB : RoomDatabase() {
                             MIGRATION_13_14,
                             MIGRATION_14_15,
                             MIGRATION_15_16,
+                            MIGRATION_16_17,
                         )
                         // Necessary because it can't insert data on creation
                         .addCallback(
@@ -672,6 +704,11 @@ class AppSettingsViewModel(
     fun updateBehavior(behavior: BehaviorUpdate) =
         viewModelScope.launch {
             repository.updateBehavior(behavior)
+        }
+
+    fun updateKeyModifications(behavior: KeyModificationsUpdate) =
+        viewModelScope.launch {
+            repository.updateKeyModifications(behavior)
         }
 
     fun updateLastVersionCodeViewed(versionCode: Int) =

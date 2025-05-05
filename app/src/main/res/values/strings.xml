@@ -94,4 +94,7 @@
     <string name="database_restored">Database Restored.</string>
     <string name="database_backed_up">Database Backed up.</string>
     <string name="backup_and_restore">Backup and restore</string>
+    <string name="modify_keys">Modify keys</string>
+    <string name="key_modification_placeholder">Enter YAML</string>
+    <string name="how_to_modify_keys">How to modify keys</string>
 </resources>
