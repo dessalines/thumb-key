@@ -65,7 +65,7 @@ fun ModifyKeysScreen(
     val scrollState = rememberScrollState()
     val ctx = LocalContext.current
 
-    checkAllKeyboardModifications(settings, keyModificationsError)
+    checkAllKeyboardModifications(settings?.keyModifications, keyModificationsError)
 
     fun updateKeyModifications() {
         appSettingsViewModel.updateKeyModifications(

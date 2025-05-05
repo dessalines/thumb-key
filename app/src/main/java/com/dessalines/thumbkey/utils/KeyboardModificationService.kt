@@ -6,7 +6,6 @@ import android.util.Log
 import androidx.compose.runtime.MutableState
 import arrow.optics.*
 import com.charleskorn.kaml.Yaml
-import com.dessalines.thumbkey.db.AppSettings
 import com.dessalines.thumbkey.utils.KeyAction.CommitText
 import com.dessalines.thumbkey.utils.KeyAction.Noop
 import com.dessalines.thumbkey.utils.KeyDisplay.TextDisplay
@@ -21,51 +20,54 @@ import kotlinx.serialization.builtins.serializer
  */
 fun getModifiedKeyboardDefinition(
     keyboardLayout: KeyboardLayout,
-    settings: AppSettings?,
-): KeyboardDefinition? {
-    if (settings == null || settings.keyModifications.isEmpty()) {
-        return null
-    }
-
-    try {
-        val keyModifications = serializeKeyModifications(settings.keyModifications)
-        return keyModifications[keyboardLayout.name]?.let {
-            val modifiedKeyboardDefinition = modifyKeyboardDefinition(keyboardLayout, it)
-            Log.d(TAG, "key modifications applied to layout ${keyboardLayout.name}")
-            return modifiedKeyboardDefinition
+    keyModifications: String?,
+): KeyboardDefinition? =
+    keyModifications?.let { keyMods ->
+        try {
+            val keyModifications = serializeKeyModifications(keyMods)
+            keyModifications[keyboardLayout.name]?.let {
+                val modifiedKeyboardDefinition = modifyKeyboardDefinition(keyboardLayout, it)
+                Log.d(TAG, "key modifications applied to layout ${keyboardLayout.name}")
+                modifiedKeyboardDefinition
+            }
+        } catch (e: Exception) {
+            val errorMessage = e.message ?: e.stackTraceToString()
+            Log.d(TAG, "Error applying key modifications: $errorMessage")
+            null
         }
-    } catch (e: Exception) {
-        val errorMessage = e.message ?: e.stackTraceToString()
-        Log.d(TAG, "Error applying key modifications: $errorMessage")
-        return null
+    } ?: run {
+        null
     }
-}
 
 fun checkAllKeyboardModifications(
-    settings: AppSettings?,
+    keyModifications: String?,
     keyModificationsErrorState: MutableState<String?>,
 ) {
     keyModificationsErrorState.value = null
-    if (settings == null || settings.keyModifications.isEmpty()) return
-    try {
-        val keyModifications = serializeKeyModifications(settings.keyModifications)
-        keyModifications.forEach {
-            val keyboardLayout = KeyboardLayout.entries.find { layout -> it.key == layout.name }
-            if (keyboardLayout == null) {
-                // This should never happen
-                keyModificationsErrorState.value = "Keyboard layout '${it.key}' not found."
-                return
-            }
+    keyModifications?.let { keyMods ->
+        try {
+            val keyModifications = serializeKeyModifications(keyMods)
+            keyModifications.forEach {
+                val keyboardLayout = KeyboardLayout.entries.find { layout -> it.key == layout.name }
+                if (keyboardLayout == null) {
+                    // This should never happen
+                    keyModificationsErrorState.value = "Keyboard layout '${it.key}' not found."
+                    return
+                }
 
-            modifyKeyboardDefinition(keyboardLayout, it.value)
+                modifyKeyboardDefinition(keyboardLayout, it.value)
+            }
+        } catch (e: Exception) {
+            val errorMessage = e.message ?: e.stackTraceToString()
+            keyModificationsErrorState.value = errorMessage
+            Log.d(TAG, "Error applying key modifications: $errorMessage")
         }
-    } catch (e: Exception) {
-        val errorMessage = e.message ?: e.stackTraceToString()
-        keyModificationsErrorState.value = errorMessage
-        Log.d(TAG, "Error applying key modifications: $errorMessage")
     }
 }
 
+/**
+ * This can throw an Exception, so it should be wrapped
+ */
 fun serializeKeyModifications(keyModifications: String): KeyModifications {
     var serializer =
         MapSerializer(String.serializer(), KeyboardDefinitionModesSerializable.serializer())
