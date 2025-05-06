@@ -251,7 +251,7 @@ val KB_GR_THUMBKEY_NORMAL_SHIFTED =
                             size = FontSizeVariant.LARGE,
                             color = ColorVariant.PRIMARY,
                         ),
-                        ),
+                ),
                 KeyItemC(
                     center =
                         KeyC(

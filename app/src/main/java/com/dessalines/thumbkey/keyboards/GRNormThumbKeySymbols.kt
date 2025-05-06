@@ -883,7 +883,7 @@ val KB_GRNORM_THUMBKEY_SYMBOLS_SHIFTED =
         ),
     )
 
-val KB_GRNORM_THUMBKEY_SYMBOLS : KeyboardDefinition =
+val KB_GRNORM_THUMBKEY_SYMBOLS: KeyboardDefinition =
     KeyboardDefinition(
         title = "ελληνικά symbols thumb-key",
         modes =

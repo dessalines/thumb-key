@@ -75,9 +75,9 @@ import com.dessalines.thumbkey.keyboards.KB_FR_MESSAGEASE
 import com.dessalines.thumbkey.keyboards.KB_FR_THUMBKEY_V1
 import com.dessalines.thumbkey.keyboards.KB_FR_THUMBKEY_V2
 import com.dessalines.thumbkey.keyboards.KB_FR_TYPESPLIT
+import com.dessalines.thumbkey.keyboards.KB_GRNORM_THUMBKEY_SYMBOLS
 import com.dessalines.thumbkey.keyboards.KB_GR_THUMBKEY
 import com.dessalines.thumbkey.keyboards.KB_GR_THUMBKEY_NORMAL
-import com.dessalines.thumbkey.keyboards.KB_GRNORM_THUMBKEY_SYMBOLS
 import com.dessalines.thumbkey.keyboards.KB_HE_MESSAGEASE
 import com.dessalines.thumbkey.keyboards.KB_HE_MESSAGEASE_SYMBOLS
 import com.dessalines.thumbkey.keyboards.KB_HE_THUMBKEY
@@ -128,7 +128,6 @@ import com.dessalines.thumbkey.keyboards.KB_UK_MESSAGEASE_SYMBOLS
 import com.dessalines.thumbkey.keyboards.KB_UK_RU_MESSAGEASE_SYMBOLS
 import com.dessalines.thumbkey.keyboards.KB_UK_THUMBKEY
 import com.dessalines.thumbkey.keyboards.KB_VN_THUMBKEY
-
 
 // Make sure new keyboards are added AT THE END of this list, and have a higher index.
 // DO NOT put them in the middle of the list!
@@ -185,8 +184,6 @@ enum class KeyboardLayout(val keyboardDefinition: KeyboardDefinition) {
     HEThumbKey(KB_HE_THUMBKEY),
     EOENDEThumbKey(KB_EOENDE_THUMBKEY),
     GRThumbKey(KB_GR_THUMBKEY),
-    GRThumbKeyNormal(KB_GR_THUMBKEY_NORMAL),
-    GRNormThumbKeySymbols(KB_GRNORM_THUMBKEY_SYMBOLS),
     ENCZThumbKey(KB_EN_CZ_THUMBKEY),
     ESMessagEase(KB_ES_MESSAGEASE),
     RUMessagEase(KB_RU_MESSAGEASE),
@@ -261,4 +258,6 @@ enum class KeyboardLayout(val keyboardDefinition: KeyboardDefinition) {
     ENQwertease(KB_EN_QWERTEASE),
     ENQTwoHandsQwertease(KB_EN_TWO_HANDS_QWERTEASE),
     ENThumbKeyWide(KB_EN_THUMBKEY_WIDE),
+    GRThumbKeyNormal(KB_GR_THUMBKEY_NORMAL),
+    GRNormThumbKeySymbols(KB_GRNORM_THUMBKEY_SYMBOLS),
 }
