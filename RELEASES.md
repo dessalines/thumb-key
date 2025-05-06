@@ -1,3 +1,10 @@
+## What's Changed in 4.0.29
+
+- Using lets instead of null and empty checks. by @dessalines in [#1369](https://github.com/dessalines/thumb-key/pull/1369)
+- feature/key_modifications by @Toldry in [#1364](https://github.com/dessalines/thumb-key/pull/1364)
+
+**Full Changelog**: https://github.com/dessalines/thumb-key/compare/4.0.28...4.0.29
+
 ## What's Changed in 4.0.28
 
 - added flipped numpad layout for EN thumbkey by @axolotl-being in [#1363](https://github.com/dessalines/thumb-key/pull/1363)
