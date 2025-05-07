@@ -113,6 +113,8 @@ import com.dessalines.thumbkey.keyboards.KB_FR_THUMBKEY_V2
 import com.dessalines.thumbkey.keyboards.KB_FR_THUMBKEY_V3
 import com.dessalines.thumbkey.keyboards.KB_FR_TYPESPLIT
 import com.dessalines.thumbkey.keyboards.KB_GLAGOLITIC_THUMBKEY
+import com.dessalines.thumbkey.keyboards.KB_GRNORM_THUMBKEY
+import com.dessalines.thumbkey.keyboards.KB_GRNORM_THUMBKEY_SYMBOLS
 import com.dessalines.thumbkey.keyboards.KB_GR_THUMBKEY
 import com.dessalines.thumbkey.keyboards.KB_HE_MESSAGEASE
 import com.dessalines.thumbkey.keyboards.KB_HE_MESSAGEASE_SYMBOLS
@@ -360,4 +362,6 @@ enum class KeyboardLayout(
     RUMessageOwl(KB_RU_MESSAGE_OWL),
     DETypeSplitImproved(KB_DE_TYPESPLIT_IMPROVED),
     ENThumbkeyFlippedNumpad(KB_EN_THUMBKEY_FLIPPED_NUMPAD),
+    GRThumbKeyNormal(KB_GRNORM_THUMBKEY),
+    GRNormThumbKeySymbols(KB_GRNORM_THUMBKEY_SYMBOLS),
 }
