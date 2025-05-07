@@ -10,46 +10,32 @@ import com.dessalines.thumbkey.utils.FontSizeVariant.*
 import com.dessalines.thumbkey.utils.KeyAction.*
 import com.dessalines.thumbkey.utils.SwipeNWay.*
 
-// Adds more punctuation options to the main screen to reduce switches to the numeric keyboard
-val KB_GRNORM_THUMBKEY_SYMBOLS_MAIN =
+val KB_GRNORM_THUMBKEY_MAIN =
     KeyboardC(
         listOf(
             listOf(
                 KeyItemC(
                     center = KeyC("σ", size = LARGE),
                     swipeType = FOUR_WAY_DIAGONAL,
-                    bottomRight = KeyC("ς"),
-                    bottomLeft = KeyC("$", color = MUTED),
+                    bottomRight = KeyC("w"),
                 ),
                 KeyItemC(
                     center = KeyC("ρ", size = LARGE),
+                    swipeType = TWO_WAY_VERTICAL,
                     bottom = KeyC("γ"),
-                    topLeft = KeyC("`", color = MUTED),
-                    top = KeyC("^", color = MUTED),
-                    topRight = KeyC("´", color = MUTED),
-                    right = KeyC("!", color = MUTED),
-                    bottomRight = KeyC("\\", color = MUTED),
-                    bottomLeft = KeyC("/", color = MUTED),
-                    left = KeyC("+", color = MUTED),
                 ),
                 KeyItemC(
                     center = KeyC("ο", size = LARGE),
+                    swipeType = FOUR_WAY_DIAGONAL,
                     bottomLeft = KeyC("θ"),
-                    left = KeyC("?", color = MUTED),
-                    bottomRight = KeyC("€", color = MUTED),
-                    bottom = KeyC("=", color = MUTED),
                 ),
                 EMOJI_KEY_ITEM,
             ),
             listOf(
                 KeyItemC(
                     center = KeyC("ν", size = LARGE),
+                    swipeType = TWO_WAY_HORIZONTAL,
                     right = KeyC("μ"),
-                    topLeft = KeyC("{", color = MUTED),
-                    topRight = KeyC("%", color = MUTED),
-                    bottomRight = KeyC("_", color = MUTED),
-                    bottomLeft = KeyC("[", color = MUTED),
-                    left = KeyC("(", color = MUTED),
                 ),
                 KeyItemC(
                     center = KeyC("η", size = LARGE),
@@ -69,6 +55,7 @@ val KB_GRNORM_THUMBKEY_SYMBOLS_MAIN =
                 ),
                 KeyItemC(
                     center = KeyC("α", size = LARGE),
+                    swipeType = FOUR_WAY_CROSS,
                     left = KeyC("λ"),
                     top =
                         KeyC(
@@ -77,16 +64,11 @@ val KB_GRNORM_THUMBKEY_SYMBOLS_MAIN =
                             swipeReturnAction = ToggleCurrentWordCapitalization(true),
                             color = MUTED,
                         ),
-                    topLeft = KeyC("|", color = MUTED),
-                    topRight = KeyC("}", color = MUTED),
-                    right = KeyC(")", color = MUTED),
                     bottom =
                         KeyC(
                             ToggleShiftMode(false),
                             swipeReturnAction = ToggleCurrentWordCapitalization(false),
                         ),
-                    bottomRight = KeyC("]", color = MUTED),
-                    bottomLeft = KeyC("@", color = MUTED),
                 ),
                 NUMERIC_KEY_ITEM,
             ),
@@ -95,29 +77,20 @@ val KB_GRNORM_THUMBKEY_SYMBOLS_MAIN =
                     center = KeyC("τ", size = LARGE),
                     swipeType = FOUR_WAY_DIAGONAL,
                     topRight = KeyC("ψ"),
-                    topLeft = KeyC("~", color = MUTED),
-                    bottomRight = KeyC(":", color = MUTED),
-                    bottomLeft = KeyC("<", color = MUTED),
                 ),
                 KeyItemC(
                     center = KeyC("ι", size = LARGE),
                     top = KeyC("φ"),
-                    right = KeyC("ζ"),
-                    topLeft = KeyC("\"", color = MUTED),
                     topRight = KeyC("'", color = MUTED),
+                    right = KeyC("ζ"),
                     bottomRight = KeyC("-", color = MUTED),
                     bottom = KeyC(".", color = MUTED),
                     bottomLeft = KeyC("*", color = MUTED),
-                    left = KeyC(",", color = MUTED),
                 ),
                 KeyItemC(
                     center = KeyC("ε", size = LARGE),
+                    swipeType = FOUR_WAY_DIAGONAL,
                     topLeft = KeyC("δ"),
-                    top = KeyC("&", color = MUTED),
-                    topRight = KeyC("°", color = MUTED),
-                    bottomRight = KeyC(">", color = MUTED),
-                    bottomLeft = KeyC(";", color = MUTED),
-                    left = KeyC("#", color = MUTED),
                 ),
                 BACKSPACE_KEY_ITEM,
             ),
@@ -128,44 +101,30 @@ val KB_GRNORM_THUMBKEY_SYMBOLS_MAIN =
         ),
     )
 
-val KB_GRNORM_THUMBKEY_SYMBOLS_SHIFTED =
+val KB_GRNORM_THUMBKEY_SHIFTED =
     KeyboardC(
         listOf(
             listOf(
                 KeyItemC(
                     center = KeyC("Σ", size = LARGE),
-                    swipeType = FOUR_WAY_DIAGONAL,
-                    bottomLeft = KeyC("$", color = MUTED),
                 ),
                 KeyItemC(
                     center = KeyC("Ρ", size = LARGE),
+                    swipeType = TWO_WAY_VERTICAL,
                     bottom = KeyC("Γ"),
-                    topLeft = KeyC("`", color = MUTED),
-                    top = KeyC("^", color = MUTED),
-                    topRight = KeyC("´", color = MUTED),
-                    right = KeyC("!", color = MUTED),
-                    bottomRight = KeyC("\\", color = MUTED),
-                    bottomLeft = KeyC("/", color = MUTED),
-                    left = KeyC("+", color = MUTED),
                 ),
                 KeyItemC(
                     center = KeyC("Ο", size = LARGE),
+                    swipeType = FOUR_WAY_DIAGONAL,
                     bottomLeft = KeyC("Θ"),
-                    left = KeyC("?", color = MUTED),
-                    bottomRight = KeyC("€", color = MUTED),
-                    bottom = KeyC("=", color = MUTED),
                 ),
                 EMOJI_KEY_ITEM,
             ),
             listOf(
                 KeyItemC(
                     center = KeyC("Ν", size = LARGE),
+                    swipeType = TWO_WAY_HORIZONTAL,
                     right = KeyC("Μ"),
-                    topLeft = KeyC("{", color = MUTED),
-                    topRight = KeyC("%", color = MUTED),
-                    bottomRight = KeyC("_", color = MUTED),
-                    bottomLeft = KeyC("[", color = MUTED),
-                    left = KeyC("(", color = MUTED),
                 ),
                 KeyItemC(
                     center = KeyC("Η", size = LARGE),
@@ -185,7 +144,15 @@ val KB_GRNORM_THUMBKEY_SYMBOLS_SHIFTED =
                 ),
                 KeyItemC(
                     center = KeyC("Α", size = LARGE),
+                    swipeType = FOUR_WAY_CROSS,
                     left = KeyC("Λ"),
+                    bottom =
+                        KeyC(
+                            display = KeyDisplay.IconDisplay(Icons.Outlined.ArrowDropDown),
+                            action = ToggleShiftMode(false),
+                            swipeReturnAction = ToggleCurrentWordCapitalization(false),
+                            color = MUTED,
+                        ),
                     top =
                         KeyC(
                             display = KeyDisplay.IconDisplay(Icons.Outlined.KeyboardCapslock),
@@ -194,18 +161,6 @@ val KB_GRNORM_THUMBKEY_SYMBOLS_SHIFTED =
                             swipeReturnAction = ToggleCurrentWordCapitalization(true),
                             color = MUTED,
                         ),
-                    bottom =
-                        KeyC(
-                            display = KeyDisplay.IconDisplay(Icons.Outlined.ArrowDropDown),
-                            action = ToggleShiftMode(false),
-                            swipeReturnAction = ToggleCurrentWordCapitalization(false),
-                            color = MUTED,
-                        ),
-                    topLeft = KeyC("|", color = MUTED),
-                    topRight = KeyC("}", color = MUTED),
-                    right = KeyC(")", color = MUTED),
-                    bottomRight = KeyC("]", color = MUTED),
-                    bottomLeft = KeyC("@", color = MUTED),
                 ),
                 NUMERIC_KEY_ITEM,
             ),
@@ -214,29 +169,20 @@ val KB_GRNORM_THUMBKEY_SYMBOLS_SHIFTED =
                     center = KeyC("Τ", size = LARGE),
                     swipeType = FOUR_WAY_DIAGONAL,
                     topRight = KeyC("Ψ"),
-                    topLeft = KeyC("~", color = MUTED),
-                    bottomRight = KeyC(":", color = MUTED),
-                    bottomLeft = KeyC("<", color = MUTED),
                 ),
                 KeyItemC(
                     center = KeyC("Ι", size = LARGE),
                     top = KeyC("Φ"),
-                    right = KeyC("Ζ"),
-                    topLeft = KeyC("\"", color = MUTED),
                     topRight = KeyC("'", color = MUTED),
+                    right = KeyC("Ζ"),
                     bottomRight = KeyC("-", color = MUTED),
                     bottom = KeyC(".", color = MUTED),
                     bottomLeft = KeyC("*", color = MUTED),
-                    left = KeyC(",", color = MUTED),
                 ),
                 KeyItemC(
                     center = KeyC("Ε", size = LARGE),
+                    swipeType = FOUR_WAY_DIAGONAL,
                     topLeft = KeyC("Δ"),
-                    top = KeyC("&", color = MUTED),
-                    topRight = KeyC("°", color = MUTED),
-                    bottomRight = KeyC(">", color = MUTED),
-                    bottomLeft = KeyC(";", color = MUTED),
-                    left = KeyC("#", color = MUTED),
                 ),
                 BACKSPACE_KEY_ITEM,
             ),
@@ -246,14 +192,13 @@ val KB_GRNORM_THUMBKEY_SYMBOLS_SHIFTED =
             ),
         ),
     )
-
-val KB_GRNORM_THUMBKEY_SYMBOLS: KeyboardDefinition =
+val KB_GRNORM_THUMBKEY: KeyboardDefinition =
     KeyboardDefinition(
-        title = "ελληνικά thumb-key symbols",
+        title = "ελληνικά normal thumb-key",
         modes =
             KeyboardDefinitionModes(
-                main = KB_GRNORM_THUMBKEY_SYMBOLS_MAIN,
-                shifted = KB_GRNORM_THUMBKEY_SYMBOLS_SHIFTED,
+                main = KB_GRNORM_THUMBKEY_MAIN,
+                shifted = KB_GRNORM_THUMBKEY_SHIFTED,
                 numeric = NUMERIC_KEYBOARD,
             ),
         settings =
