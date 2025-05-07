@@ -57,9 +57,11 @@ import com.dessalines.thumbkey.utils.KeyC
 import com.dessalines.thumbkey.utils.KeyDisplay
 import com.dessalines.thumbkey.utils.KeyItemC
 import com.dessalines.thumbkey.utils.KeyboardDefinitionSettings
+import com.dessalines.thumbkey.utils.KeyboardPosition
 import com.dessalines.thumbkey.utils.Selection
 import com.dessalines.thumbkey.utils.SlideType
 import com.dessalines.thumbkey.utils.SwipeDirection
+import com.dessalines.thumbkey.utils.SwipeNWay
 import com.dessalines.thumbkey.utils.buildTapActions
 import com.dessalines.thumbkey.utils.circularDirection
 import com.dessalines.thumbkey.utils.colorVariantToColor
@@ -75,12 +77,19 @@ import com.dessalines.thumbkey.utils.toPx
 import kotlin.math.abs
 import kotlin.math.max
 import kotlin.math.min
+import kotlin.time.Duration.Companion.seconds
+import kotlin.time.TimeMark
+import kotlin.time.TimeSource
 
 @OptIn(ExperimentalFoundationApi::class)
 @Composable
 fun KeyboardKey(
     key: KeyItemC,
-    lastAction: MutableState<KeyAction?>,
+    // Hidden background key to detect swipes for. When a swipe isn't captured by the key, the ghost
+    // key will attempt to capture it instead. This is derived automatically from the keyboard
+    // layout, and should not be set directly in the keyboard definition.
+    ghostKey: KeyItemC? = null,
+    lastAction: MutableState<Pair<KeyAction, TimeMark>?>,
     animationHelperSpeed: Int,
     animationSpeed: Int,
     autoCapitalize: Boolean,
@@ -105,12 +114,15 @@ fun KeyboardKey(
     slideSpacebarDeadzoneEnabled: Boolean,
     slideBackspaceDeadzoneEnabled: Boolean,
     onToggleShiftMode: (enable: Boolean) -> Unit,
+    onToggleCtrlMode: (enable: Boolean) -> Unit,
+    onToggleAltMode: (enable: Boolean) -> Unit,
     onToggleNumericMode: (enable: Boolean) -> Unit,
     onToggleEmojiMode: (enable: Boolean) -> Unit,
     onToggleCapsLock: () -> Unit,
     onAutoCapitalize: (enable: Boolean) -> Unit,
     onSwitchLanguage: () -> Unit,
-    onSwitchPosition: () -> Unit,
+    onChangePosition: ((old: KeyboardPosition) -> KeyboardPosition) -> Unit,
+    onKeyEvent: () -> Unit,
     oppositeCaseKey: KeyItemC? = null,
     numericKey: KeyItemC? = null,
     dragReturnEnabled: Boolean,
@@ -120,7 +132,7 @@ fun KeyboardKey(
 ) {
     // Necessary for swipe settings to get updated correctly
     val id =
-        key.toString() + animationHelperSpeed + animationSpeed + autoCapitalize +
+        key.toString() + ghostKey.toString() + animationHelperSpeed + animationSpeed + autoCapitalize +
             vibrateOnTap + soundOnTap + legendHeight + legendWidth + minSwipeLength + slideSensitivity +
             slideEnabled + slideCursorMovementMode + slideSpacebarDeadzoneEnabled +
             slideBackspaceDeadzoneEnabled + dragReturnEnabled + circularDragEnabled +
@@ -197,8 +209,7 @@ fun KeyboardKey(
                 } else {
                     (Modifier)
                 },
-            )
-            .background(color = backgroundColor)
+            ).background(color = backgroundColor)
             // Note: pointerInput has a delay when switching keyboards, so you must use this
             .combinedClickable(
                 interactionSource = interactionSource,
@@ -206,14 +217,14 @@ fun KeyboardKey(
                 onClick = {
                     // Set the last key info, and the tap count
                     val cAction = key.center.action
-                    lastAction.value?.let { lastAction ->
-                        if (lastAction == cAction && !ime.didCursorMove()) {
+                    lastAction.value?.let { (lastAction, time) ->
+                        if (time.elapsedNow() < 1.seconds && lastAction == cAction && !ime.didCursorMove()) {
                             tapCount += 1
                         } else {
                             tapCount = 0
                         }
                     }
-                    lastAction.value = cAction
+                    lastAction.value = Pair(cAction, TimeSource.Monotonic.markNow())
 
                     // Set the correct action
                     val action = tapActions[tapCount % tapActions.size]
@@ -223,12 +234,15 @@ fun KeyboardKey(
                         autoCapitalize = autoCapitalize,
                         keyboardSettings = keyboardSettings,
                         onToggleShiftMode = onToggleShiftMode,
+                        onToggleCtrlMode = onToggleCtrlMode,
+                        onToggleAltMode = onToggleAltMode,
                         onToggleNumericMode = onToggleNumericMode,
                         onToggleEmojiMode = onToggleEmojiMode,
                         onToggleCapsLock = onToggleCapsLock,
                         onAutoCapitalize = onAutoCapitalize,
                         onSwitchLanguage = onSwitchLanguage,
-                        onSwitchPosition = onSwitchPosition,
+                        onChangePosition = onChangePosition,
+                        onKeyEvent = onKeyEvent,
                     )
                     doneKeyAction(scope, action, isDragged, releasedKey, animationHelperSpeed)
                 },
@@ -240,12 +254,15 @@ fun KeyboardKey(
                             autoCapitalize = autoCapitalize,
                             keyboardSettings = keyboardSettings,
                             onToggleShiftMode = onToggleShiftMode,
+                            onToggleCtrlMode = onToggleCtrlMode,
+                            onToggleAltMode = onToggleAltMode,
                             onToggleNumericMode = onToggleNumericMode,
                             onToggleEmojiMode = onToggleEmojiMode,
                             onToggleCapsLock = onToggleCapsLock,
                             onAutoCapitalize = onAutoCapitalize,
                             onSwitchLanguage = onSwitchLanguage,
-                            onSwitchPosition = onSwitchPosition,
+                            onChangePosition = onChangePosition,
+                            onKeyEvent = onKeyEvent,
                         )
                         doneKeyAction(scope, action, isDragged, releasedKey, animationHelperSpeed)
                         if (vibrateOnTap) {
@@ -393,7 +410,8 @@ fun KeyboardKey(
                             if (!selection.active) {
                                 timeOfLastAccelerationInput = System.currentTimeMillis()
                                 // Activate selection, first detection is large enough to preserve swipe actions.
-                                if (slideBackspaceDeadzoneEnabled && (abs(offsetX) > slideOffsetTrigger) ||
+                                if (slideBackspaceDeadzoneEnabled &&
+                                    (abs(offsetX) > slideOffsetTrigger) ||
                                     !slideBackspaceDeadzoneEnabled
                                 ) {
                                     // reset offsetX, do not reset offsetY when sliding, it will break selecting
@@ -430,10 +448,29 @@ fun KeyboardKey(
                         ) {
                             hasSlideMoveCursorTriggered = false
 
-                            val finalOffsetThreshold = keySize.dp.toPx() * 0.6f // magic number found from trial and error
+                            // offset where we recognize if the swipe is back to the initial key
+                            // this offset needs to take the minSwipeLength into consideration. Otherwise
+                            // just a little (1px) swipe back would trigger the DragReturn action
+                            val finalOffsetThreshold = minSwipeLength * 0.71f // magic number found from trial and error
+
+                            // offset needed, at which the swipe qualifies for DragReturn or Circular
+                            // depending on minSwipeLength setting to have consistent swipe lengths or circle sizes
+                            val maxOffsetThreshold = minSwipeLength
+
                             val finalOffset = positions.last()
-                            val maxOffsetBigEnough = maxOffset.getDistance() >= 2 * finalOffsetThreshold
-                            val finalOffsetSmallEnough = finalOffset.getDistance() <= finalOffsetThreshold
+                            // we also consider the final offset small enough if it's kinda big, but
+                            // in a different direction than the max offset. This ensures better
+                            // swipe-and-return recognition
+                            val finalOffsetSmallEnough =
+                                finalOffset.getDistance() <= finalOffsetThreshold ||
+                                    (
+                                        swipeDirection(finalOffset.x, finalOffset.y, minSwipeLength, key.swipeType)?.equals(
+                                            swipeDirection(maxOffset.x, maxOffset.y, minSwipeLength, key.swipeType),
+                                        ) != true
+                                    )
+
+                            val maxOffsetDistance = maxOffset.getDistance().toDouble()
+                            val maxOffsetBigEnough = maxOffsetDistance >= maxOffsetThreshold
                             action =
                                 (
                                     if (maxOffsetBigEnough && finalOffsetSmallEnough) {
@@ -444,7 +481,7 @@ fun KeyboardKey(
                                                         CircularDragAction.OppositeCase to oppositeCaseKey?.center?.action,
                                                         CircularDragAction.Numeric to numericKey?.center?.action,
                                                     )
-                                                circularDirection(positions, keySize)?.let {
+                                                circularDirection(positions, finalOffsetThreshold, minSwipeLength)?.let {
                                                     when (it) {
                                                         CircularDirection.Clockwise -> circularDragActions[clockwiseDragAction]
                                                         CircularDirection.Counterclockwise ->
@@ -457,16 +494,30 @@ fun KeyboardKey(
                                         ) ?: (
                                             if (dragReturnEnabled) {
                                                 val swipeDirection =
-                                                    swipeDirection(maxOffset.x, maxOffset.y, minSwipeLength, key.swipeType)
-                                                oppositeCaseKey?.swipes?.get(swipeDirection)?.action
+                                                    swipeDirection(
+                                                        maxOffset.x,
+                                                        maxOffset.y,
+                                                        minSwipeLength,
+                                                        if (ghostKey == null) key.swipeType else SwipeNWay.EIGHT_WAY,
+                                                    )
+                                                key.getSwipe(swipeDirection)?.swipeReturnAction
+                                                    ?: oppositeCaseKey?.getSwipe(swipeDirection)?.action
+                                                    ?: ghostKey?.getSwipe(swipeDirection)?.swipeReturnAction
                                             } else {
                                                 null
                                             }
                                         )
                                     } else {
                                         val swipeDirection =
-                                            swipeDirection(offsetX, offsetY, minSwipeLength, key.swipeType)
-                                        key.swipes?.get(swipeDirection)?.action
+                                            swipeDirection(
+                                                offsetX,
+                                                offsetY,
+                                                minSwipeLength,
+                                                if (ghostKey == null) key.swipeType else SwipeNWay.EIGHT_WAY,
+                                            )
+                                        key.getSwipe(swipeDirection)?.action ?: (
+                                            ghostKey?.getSwipe(swipeDirection)?.action
+                                        )
                                     }
                                 ) ?: key.center.action
 
@@ -476,12 +527,15 @@ fun KeyboardKey(
                                 autoCapitalize = autoCapitalize,
                                 keyboardSettings = keyboardSettings,
                                 onToggleShiftMode = onToggleShiftMode,
+                                onToggleCtrlMode = onToggleCtrlMode,
+                                onToggleAltMode = onToggleAltMode,
                                 onToggleNumericMode = onToggleNumericMode,
                                 onToggleEmojiMode = onToggleEmojiMode,
                                 onToggleCapsLock = onToggleCapsLock,
                                 onAutoCapitalize = onAutoCapitalize,
                                 onSwitchLanguage = onSwitchLanguage,
-                                onSwitchPosition = onSwitchPosition,
+                                onChangePosition = onChangePosition,
+                                onKeyEvent = onKeyEvent,
                             )
                             doneKeyAction(
                                 scope,
@@ -509,12 +563,15 @@ fun KeyboardKey(
                                         autoCapitalize = autoCapitalize,
                                         keyboardSettings = keyboardSettings,
                                         onToggleShiftMode = onToggleShiftMode,
+                                        onToggleCtrlMode = onToggleCtrlMode,
+                                        onToggleAltMode = onToggleAltMode,
                                         onToggleNumericMode = onToggleNumericMode,
                                         onToggleCapsLock = onToggleCapsLock,
                                         onAutoCapitalize = onAutoCapitalize,
                                         onSwitchLanguage = onSwitchLanguage,
-                                        onSwitchPosition = onSwitchPosition,
+                                        onChangePosition = onChangePosition,
                                         onToggleEmojiMode = onToggleEmojiMode,
+                                        onKeyEvent = onKeyEvent,
                                     )
                                 }
                             }
@@ -545,7 +602,7 @@ fun KeyboardKey(
 
                         // Set tapCount and lastAction to avoid issues with multitap after slide
                         tapCount = 0
-                        lastAction.value = action
+                        lastAction.value = Pair(action, TimeSource.Monotonic.markNow())
 
                         // Reset the drags
                         offsetX = 0f
@@ -594,7 +651,7 @@ fun KeyboardKey(
                         vertical = diagonalYPadding,
                     ),
         ) {
-            key.swipes?.get(SwipeDirection.TOP_LEFT)?.let {
+            key.getSwipe(SwipeDirection.TOP_LEFT)?.let {
                 KeyText(it, (keySize - keyBorderWidth).dp, hideLetters, hideSymbols, capsLock)
             }
         }
@@ -605,7 +662,7 @@ fun KeyboardKey(
                     .fillMaxSize()
                     .padding(vertical = yPadding),
         ) {
-            key.swipes?.get(SwipeDirection.TOP)?.let {
+            key.getSwipe(SwipeDirection.TOP)?.let {
                 KeyText(it, (keySize - keyBorderWidth).dp, hideLetters, hideSymbols, capsLock)
             }
         }
@@ -619,7 +676,7 @@ fun KeyboardKey(
                         vertical = diagonalYPadding,
                     ),
         ) {
-            key.swipes?.get(SwipeDirection.TOP_RIGHT)?.let {
+            key.getSwipe(SwipeDirection.TOP_RIGHT)?.let {
                 KeyText(it, (keySize - keyBorderWidth).dp, hideLetters, hideSymbols, capsLock)
             }
         }
@@ -630,7 +687,7 @@ fun KeyboardKey(
                     .fillMaxSize()
                     .padding(horizontal = xPadding),
         ) {
-            key.swipes?.get(SwipeDirection.LEFT)?.let {
+            key.getSwipe(SwipeDirection.LEFT)?.let {
                 KeyText(it, (keySize - keyBorderWidth).dp, hideLetters, hideSymbols, capsLock)
             }
         }
@@ -650,7 +707,7 @@ fun KeyboardKey(
                     .fillMaxSize()
                     .padding(horizontal = xPadding),
         ) {
-            key.swipes?.get(SwipeDirection.RIGHT)?.let {
+            key.getSwipe(SwipeDirection.RIGHT)?.let {
                 KeyText(it, (keySize - keyBorderWidth).dp, hideLetters, hideSymbols, capsLock)
             }
         }
@@ -664,7 +721,7 @@ fun KeyboardKey(
                         vertical = diagonalYPadding,
                     ),
         ) {
-            key.swipes?.get(SwipeDirection.BOTTOM_LEFT)?.let {
+            key.getSwipe(SwipeDirection.BOTTOM_LEFT)?.let {
                 KeyText(it, (keySize - keyBorderWidth).dp, hideLetters, hideSymbols, capsLock)
             }
         }
@@ -675,7 +732,7 @@ fun KeyboardKey(
                     .fillMaxSize()
                     .padding(vertical = yPadding),
         ) {
-            key.swipes?.get(SwipeDirection.BOTTOM)?.let {
+            key.getSwipe(SwipeDirection.BOTTOM)?.let {
                 KeyText(it, (keySize - keyBorderWidth).dp, hideLetters, hideSymbols, capsLock)
             }
         }
@@ -689,7 +746,7 @@ fun KeyboardKey(
                         vertical = diagonalYPadding,
                     ),
         ) {
-            key.swipes?.get(SwipeDirection.BOTTOM_RIGHT)?.let {
+            key.getSwipe(SwipeDirection.BOTTOM_RIGHT)?.let {
                 KeyText(it, (keySize - keyBorderWidth).dp, hideLetters, hideSymbols, capsLock)
             }
         }
@@ -758,7 +815,10 @@ fun KeyText(
     val color = colorVariantToColor(colorVariant = key.color)
     val isUpperCase =
         when (key.display) {
-            is KeyDisplay.TextDisplay -> key.display.text.firstOrNull()?.isUpperCase() ?: false
+            is KeyDisplay.TextDisplay ->
+                key.display.text
+                    .firstOrNull()
+                    ?.isUpperCase() == true
             else -> {
                 false
             }
@@ -807,6 +867,7 @@ fun KeyText(
                 Text(
                     text = display.text,
                     fontWeight = FontWeight.Bold,
+                    fontFamily = display.fontFamily,
                     fontSize = spSize,
                     lineHeight = spSize,
                     color = color,

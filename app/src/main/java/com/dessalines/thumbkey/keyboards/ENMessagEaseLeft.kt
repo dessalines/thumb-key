@@ -1,15 +1,16 @@
+@file:Suppress("ktlint:standard:no-wildcard-imports")
+
 package com.dessalines.thumbkey.keyboards
 
-import com.dessalines.thumbkey.utils.KeyboardDefinition
-import com.dessalines.thumbkey.utils.KeyboardDefinitionModes
-import com.dessalines.thumbkey.utils.KeyboardDefinitionSettings
-import com.dessalines.thumbkey.utils.autoCapitalizeI
-import com.dessalines.thumbkey.utils.autoCapitalizeIApostrophe
-import com.dessalines.thumbkey.utils.lastColKeysToFirst
+import com.dessalines.thumbkey.utils.*
+import com.dessalines.thumbkey.utils.ColorVariant.*
+import com.dessalines.thumbkey.utils.FontSizeVariant.*
+import com.dessalines.thumbkey.utils.KeyAction.*
+import com.dessalines.thumbkey.utils.SwipeNWay.*
 
 val KB_EN_MESSAGEASE_LEFT: KeyboardDefinition =
     KeyboardDefinition(
-        title = "english left-handed messagease",
+        title = "english messagease left-handed",
         modes =
             KeyboardDefinitionModes(
                 main = lastColKeysToFirst(KB_EN_MESSAGEASE_MAIN),

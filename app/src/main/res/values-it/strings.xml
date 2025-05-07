@@ -1,3 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">Thumb-Key</string>
     <string name="settings">Parametri</string>
@@ -70,8 +71,6 @@
     <string name="copy">Testo copiato</string>
     <string name="hide_letters">Nascondere le lettere</string>
     <string name="hide_symbols">Nascondere i simboli</string>
-    <string name="save">Salva</string>
-    <string name="key_borders">Bordo dei tasti</string>
     <string name="spacebar_multitaps">Multi-tocco su Barra spazio</string>
     <string name="done">Chiudi</string>
     <string name="backdrop">Sfondo della tastiera</string>

@@ -56,6 +56,8 @@ const val DEFAULT_DRAG_RETURN_ENABLED = 1
 const val DEFAULT_CIRCULAR_DRAG_ENABLED = 1
 const val DEFAULT_CLOCKWISE_DRAG_ACTION = 0
 const val DEFAULT_COUNTERCLOCKWISE_DRAG_ACTION = 1
+const val DEFAULT_GHOST_KEYS_ENABLED = 0
+const val DEFAULT_KEY_MODIFICATIONS = ""
 
 @Entity
 data class AppSettings(
@@ -226,6 +228,16 @@ data class AppSettings(
         defaultValue = DEFAULT_COUNTERCLOCKWISE_DRAG_ACTION.toString(),
     )
     val counterclockwiseDragAction: Int,
+    @ColumnInfo(
+        name = "ghost_keys_enabled",
+        defaultValue = DEFAULT_GHOST_KEYS_ENABLED.toString(),
+    )
+    val ghostKeysEnabled: Int,
+    @ColumnInfo(
+        name = "key_modifications",
+        defaultValue = "",
+    )
+    val keyModifications: String,
 )
 
 data class LayoutsUpdate(
@@ -334,6 +346,16 @@ data class BehaviorUpdate(
     val clockwiseDragAction: Int,
     @ColumnInfo(name = "counterclockwise_drag_action")
     val counterclockwiseDragAction: Int,
+    @ColumnInfo(name = "ghost_keys_enabled")
+    val ghostKeysEnabled: Int,
+)
+
+data class KeyModificationsUpdate(
+    val id: Int,
+    @ColumnInfo(
+        name = "key_modifications",
+    )
+    val keyModifications: String,
 )
 
 @Dao
@@ -353,13 +375,18 @@ interface AppSettingsDao {
     @Update(entity = AppSettings::class)
     fun updateBehavior(behavior: BehaviorUpdate)
 
+    @Update(entity = AppSettings::class)
+    fun updateKeyModifications(behavior: KeyModificationsUpdate)
+
     @Query("UPDATE AppSettings SET last_version_code_viewed = :versionCode")
     suspend fun updateLastVersionCode(versionCode: Int)
 }
 
 // Declares the DAO as a private property in the constructor. Pass in the DAO
 // instead of the whole database, because you only need access to the DAO
-class AppSettingsRepository(private val appSettingsDao: AppSettingsDao) {
+class AppSettingsRepository(
+    private val appSettingsDao: AppSettingsDao,
+) {
     private val _changelog = MutableStateFlow("")
     val changelog = _changelog.asStateFlow()
 
@@ -388,6 +415,11 @@ class AppSettingsRepository(private val appSettingsDao: AppSettingsDao) {
     }
 
     @WorkerThread
+    fun updateKeyModifications(behavior: KeyModificationsUpdate) {
+        appSettingsDao.updateKeyModifications(behavior)
+    }
+
+    @WorkerThread
     suspend fun updateLastVersionCodeViewed(versionCode: Int) {
         appSettingsDao.updateLastVersionCode(versionCode)
     }
@@ -396,7 +428,11 @@ class AppSettingsRepository(private val appSettingsDao: AppSettingsDao) {
     suspend fun updateChangelog(ctx: Context) {
         withContext(Dispatchers.IO) {
             try {
-                val releasesStr = ctx.assets.open("RELEASES.md").bufferedReader().use { it.readText() }
+                val releasesStr =
+                    ctx.assets
+                        .open("RELEASES.md")
+                        .bufferedReader()
+                        .use { it.readText() }
                 _changelog.value = releasesStr
             } catch (e: Exception) {
                 Log.e("thumb-key", "Failed to load changelog: $e")
@@ -559,8 +595,26 @@ val MIGRATION_14_15 =
         }
     }
 
+val MIGRATION_15_16 =
+    object : Migration(15, 16) {
+        override fun migrate(db: SupportSQLiteDatabase) {
+            db.execSQL(
+                "alter table AppSettings add column ghost_keys_enabled INTEGER NOT NULL default $DEFAULT_GHOST_KEYS_ENABLED",
+            )
+        }
+    }
+
+val MIGRATION_16_17 =
+    object : Migration(16, 17) {
+        override fun migrate(db: SupportSQLiteDatabase) {
+            db.execSQL(
+                "alter table AppSettings add column key_modifications TEXT NOT NULL default ''",
+            )
+        }
+    }
+
 @Database(
-    version = 15,
+    version = 17,
     entities = [AppSettings::class],
     exportSchema = true,
 )
@@ -576,12 +630,12 @@ abstract class AppDB : RoomDatabase() {
             // if it is, then create the database
             return instance ?: synchronized(this) {
                 val i =
-                    Room.databaseBuilder(
-                        context.applicationContext,
-                        AppDB::class.java,
-                        "thumbkey",
-                    )
-                        .allowMainThreadQueries()
+                    Room
+                        .databaseBuilder(
+                            context.applicationContext,
+                            AppDB::class.java,
+                            "thumbkey",
+                        ).allowMainThreadQueries()
                         .addMigrations(
                             MIGRATION_1_2,
                             MIGRATION_2_3,
@@ -597,6 +651,8 @@ abstract class AppDB : RoomDatabase() {
                             MIGRATION_12_13,
                             MIGRATION_13_14,
                             MIGRATION_14_15,
+                            MIGRATION_15_16,
+                            MIGRATION_16_17,
                         )
                         // Necessary because it can't insert data on creation
                         .addCallback(
@@ -624,7 +680,9 @@ abstract class AppDB : RoomDatabase() {
     }
 }
 
-class AppSettingsViewModel(private val repository: AppSettingsRepository) : ViewModel() {
+class AppSettingsViewModel(
+    private val repository: AppSettingsRepository,
+) : ViewModel() {
     val appSettings = repository.appSettings
     val changelog = repository.changelog
 
@@ -648,6 +706,11 @@ class AppSettingsViewModel(private val repository: AppSettingsRepository) : View
             repository.updateBehavior(behavior)
         }
 
+    fun updateKeyModifications(behavior: KeyModificationsUpdate) =
+        viewModelScope.launch {
+            repository.updateKeyModifications(behavior)
+        }
+
     fun updateLastVersionCodeViewed(versionCode: Int) =
         viewModelScope.launch {
             repository.updateLastVersionCodeViewed(versionCode)
@@ -659,8 +722,9 @@ class AppSettingsViewModel(private val repository: AppSettingsRepository) : View
         }
 }
 
-class AppSettingsViewModelFactory(private val repository: AppSettingsRepository) :
-    ViewModelProvider.Factory {
+class AppSettingsViewModelFactory(
+    private val repository: AppSettingsRepository,
+) : ViewModelProvider.Factory {
     override fun <T : ViewModel> create(modelClass: Class<T>): T {
         if (modelClass.isAssignableFrom(AppSettingsViewModel::class.java)) {
             @Suppress("UNCHECKED_CAST")

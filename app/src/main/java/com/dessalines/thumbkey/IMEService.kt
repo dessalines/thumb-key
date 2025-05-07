@@ -17,7 +17,6 @@ import androidx.savedstate.SavedStateRegistryController
 import androidx.savedstate.SavedStateRegistryOwner
 import androidx.savedstate.setViewTreeSavedStateRegistryOwner
 import com.dessalines.thumbkey.utils.TAG
-import kotlin.math.abs
 
 class IMEService :
     InputMethodService(),
@@ -76,29 +75,31 @@ class IMEService :
     override fun onUpdateCursorAnchorInfo(cursorAnchorInfo: CursorAnchorInfo) {
         super.onUpdateCursorAnchorInfo(cursorAnchorInfo)
 
-        // If the cursor has moved at all vertically, or more than a small amount horizontally, the cursor has changed and multitap should be blocked.
-        // The horizontal buffer is because the cursor moves slightly based on the size of some of the characters (i.e '?') moving the cursor a little bit.
-        // It would be better to not use a magic number of 15, but I don't know what the ideal buffer is and it seems to work well, even when moving the cursor right before the multitap character
-        if (insertionMarkerBaseline != cursorAnchorInfo.insertionMarkerBaseline ||
-            abs(cursorAnchorInfo.insertionMarkerHorizontal - insertionMarkerHorizontal) > 15f
-        ) {
-            cursorMoved = true
-            insertionMarkerBaseline = cursorAnchorInfo.insertionMarkerBaseline
-            Log.d(TAG, "cursor moved")
-        } else {
-            cursorMoved = false
-        }
-        // Always update the horizontal position. This prevents the movement of the cursor by the first space tap blocking consecutive tap actions.
-        insertionMarkerHorizontal = cursorAnchorInfo.insertionMarkerHorizontal
+        cursorMoved =
+            if (ignoreCursorMove) {
+                ignoreCursorMove = false
+                false
+            } else {
+                Log.d(TAG, "cursor moved")
+                cursorAnchorInfo.selectionStart != selectionStart ||
+                    cursorAnchorInfo.selectionEnd != selectionEnd
+            }
+
+        selectionStart = cursorAnchorInfo.selectionStart
+        selectionEnd = cursorAnchorInfo.selectionEnd
     }
 
-    fun didCursorMove(): Boolean {
-        return cursorMoved
+    fun didCursorMove(): Boolean = cursorMoved
+
+    fun ignoreNextCursorMove() {
+        // This gets reset on the next call to `onUpdateCursorAnchorInfo`
+        ignoreCursorMove = true
     }
 
+    private var ignoreCursorMove: Boolean = false
     private var cursorMoved: Boolean = false
-    private var insertionMarkerBaseline: Float = 0f
-    private var insertionMarkerHorizontal: Float = 0f
+    private var selectionStart: Int = 0
+    private var selectionEnd: Int = 0
 
     // ViewModelStore Methods
     override val viewModelStore = ViewModelStore()
@@ -106,5 +107,6 @@ class IMEService :
     // SaveStateRegistry Methods
 
     private val savedStateRegistryController = SavedStateRegistryController.create(this)
-    override val savedStateRegistry: SavedStateRegistry = savedStateRegistryController.savedStateRegistry
+    override val savedStateRegistry: SavedStateRegistry =
+        savedStateRegistryController.savedStateRegistry
 }

@@ -4,6 +4,7 @@
 [![status-badge](https://woodpecker.join-lemmy.org/api/badges/dessalines/thumb-key/status.svg)](https://woodpecker.join-lemmy.org/dessalines/thumb-key)
 [![GitHub issues](https://img.shields.io/github/issues-raw/dessalines/thumb-key.svg)](https://github.com/dessalines/thumb-key/issues)
 [![License](https://img.shields.io/github/license/dessalines/thumb-key.svg)](LICENSE)
+[![Translation status](https://hosted.weblate.org/widget/thumb-key/thumb-key/svg-badge.svg)](https://hosted.weblate.org/engage/thumb-key/)
 ![GitHub stars](https://img.shields.io/github/stars/dessalines/thumb-key?style=social)
 
 </div>
@@ -27,10 +28,42 @@
   <p align="center">
     <a href="https://apt.izzysoft.de/fdroid/index/apk/com.dessalines.thumbkey"><img src="https://gitlab.com/IzzyOnDroid/repo/-/raw/master/assets/IzzyOnDroid.png" alt="Get it on IzzyOnDroid" height="80"></a>
     <a href="https://f-droid.org/packages/com.dessalines.thumbkey"><img src="https://fdroid.gitlab.io/artwork/badge/get-it-on.png" alt="Get it on F-Droid" height="80"></a>
-    <a href="https://play.google.com/store/apps/details?id=com.dessalines.thumbkey"><img src="https://cdn.rawgit.com/steverichey/google-play-badge-svg/master/img/en_get.svg" height="80"></a>
-    <a href="https://github.com/dessalines/thumb-key/releases/latest"><img src="https://raw.githubusercontent.com/andOTP/andOTP/master/assets/badges/get-it-on-github.png" height="80"></a>
+    <a href="https://play.google.com/store/apps/details?id=com.dessalines.thumbkey"><img src="https://cdn.rawgit.com/steverichey/google-play-badge-svg/master/img/en_get.svg" alt="Get it on the Google play store" height="80"></a>
+    <a href="https://github.com/dessalines/thumb-key/releases/latest"><img src="https://raw.githubusercontent.com/andOTP/andOTP/master/assets/badges/get-it-on-github.png" alt="Get it on Github" height="80"></a>
   </p>
 </p>
+
+<!-- prettier-ignore-start -->
+
+<!-- toc -->
+
+- [About Thumb-Key](#about-thumb-key)
+  * [Features](#features)
+- [User Guide](#user-guide)
+  * [Emoji Key](#emoji-key)
+  * [Symbols / Letters Key](#symbols--letters-key)
+  * [Slide gestures](#slide-gestures)
+  * [Drag-and-return](#drag-and-return)
+  * [Ghost keys](#ghost-keys)
+  * [Coming from MessagEase Keyboard Tips](#coming-from-messagease-keyboard-tips)
+  * [Modify keys](#modify-keys)
+  * [Other](#other)
+- [Thumb-Key Design](#thumb-key-design)
+  * [A History of Phone Keyboards](#a-history-of-phone-keyboards)
+    + [When phone keyboards became Keyloggers](#when-phone-keyboards-became-keyloggers)
+    + [MessagEase](#messagease)
+  * [Thumb-Key Letter Positions](#thumb-key-letter-positions)
+  * [Built With](#built-with)
+- [Installation / Releases](#installation--releases)
+- [Contributing](#contributing)
+- [Support / Donate](#support--donate)
+  * [Crypto](#crypto)
+- [Social / Contact](#social--contact)
+- [Android IME Resources](#android-ime-resources)
+
+<!-- tocstop -->
+
+<!-- prettier-ignore-end -->
 
 ## About Thumb-Key
 
@@ -68,7 +101,7 @@ This project is a follow-up to the now unmaintained (and closed-source) [MessagE
 - **Swipe right** to change keyboard position.
 - **Swipe down** to access IME switcher (switch between Thumb-key and other keyboards).
 - **Swipe left** to cycle between selected layouts (languages).
-- **Swipe to bottom-left** to toggle voice input. Requires [FUTO Voice Input](https://play.google.com/store/apps/details?id=org.futo.voiceinput).
+- **Swipe to bottom-left** to toggle voice input. Requires [FUTO Voice Input](https://play.google.com/store/apps/details?id=org.futo.voiceinput), [Transcribro](https://github.com/soupslurpr/Transcribro), or [Whisper IME](https://github.com/woheller69/whisperIME).
 
 ### Symbols / Letters Key
 
@@ -104,9 +137,101 @@ Enabling `Backspace: Allow normal swipes to work with slide gestures`, in keyboa
 - You can type the opposite-case letter by dragging away from, then back to the original key.
 - Clockwise and counter-clockwise drags can be configured to type the opposite-case letter, or the equivalent center key on the numeric layout.
 
+### Ghost keys
+
+Enabling `Ghost keys` in keyboard settings will enable swiping hidden symbol keys without switching to the numeric layout.
+
 ### Coming from MessagEase Keyboard Tips
 
 - For those use to tapping on the hand key to hide the MessagEase Keyboard and make more screen real estate available, this can be done by using the Android back key or on Android 10 and higher using the guesture navigation for back.
+-
+
+### Modify keys
+
+You can customize individual keyboard keys using a YAML configuration file. This lets you change characters, remove keys, adjust visual size, and other changes.
+
+#### Example 1
+
+```yaml
+ENThumbKey:
+  main:
+    key1_0:
+      center:
+        text: ñ
+```
+
+![](fastlane/metadata/android/en-US/images/userGuideImages/modify_keys_example_1.png)
+This YAML configuration modifies the key in the second row, first column, center letter from 'n' to 'ñ'.
+
+- `ENThumbKey` specifies which keyboard to change. In this case, it's the 'english thumbkey' layout.
+  - [Here](./app/src/main/java/com/dessalines/thumbkey/utils/KeyboardLayout.kt) is a list of all keyboard layouts.
+- `main` specifies the main keyboard layout. Possible values are:
+  - `main`
+  - `shifted`
+  - `numeric`
+  - `ctrled`
+  - `alted`
+- `key1_0` specifies the key to modify. The first number is the row, and the second number is the column. The top row is 0, and the left column is 0.
+- `center` specifies which slide/touch direction of the key to modify. Possible values are:
+  - `center`
+  - `left`
+  - `topLeft`
+  - `top`
+  - `topRight`
+  - `right`
+  - `bottomRight`
+  - `bottom`
+  - `bottomLeft`
+- `text` specifies the text of the key
+
+#### Example 2
+
+```yaml
+ENThumbKey:
+  main:
+    key0_0:
+      right: { text: ê }
+      topRight: { text: è }
+      top: { text: ę }
+  shifted:
+    key0_0:
+      right: { text: Ê }
+      topRight: { text: È }
+      top: { text: Ę }
+
+ESCAMessagEase:
+  main:
+    key0_0:
+      bottom: { text: "( ͡° ͜ʖ ͡°)", size: SMALLEST }
+    key0_1:
+      # Unicode escape sequence can be optionally used for convenience or readability.
+      bottomLeft: { text: "\U000121EB", size: SMALL }
+      # this is equivalent to:
+      # bottomLeft: {text: "𒇫", size: SMALL}
+    key2_2:
+      swipeType: FOUR_WAY_CROSS
+      center: { text: "𓀒", size: LARGE }
+      topLeft: { remove: true }
+      topRight: { remove: true }
+      bottomRight: { remove: true }
+      bottomLeft: { remove: true }
+```
+
+![](fastlane/metadata/android/en-US/images/userGuideImages/modify_keys_example_2.png)
+
+- Two keyboards are modified: `ENThumbKey (english thumbkey)` and `ESCAMessagEase (español català messagease)`.
+- The first keyboard has both `main` and `shifted` modes modified.
+- The second keyboard uses the `size` property to specify the display size of the text. Possible values are:
+  - `LARGE`
+  - `SMALL`
+  - `SMALLEST`
+- The `remove` property is used to remove key-sides.
+- The `swipeType` property is used to modify the directionality of a key. Possible values are:
+  - `EIGHT_WAY`
+  - `FOUR_WAY_CROSS`
+  - `FOUR_WAY_DIAGONAL`
+  - `TWO_WAY_VERTICAL`
+  - `TWO_WAY_HORIZONTAL`
 
 ### Other
 
@@ -160,46 +285,13 @@ MessagEase is unfortunately unmaintained, and Thumb-Key uses a better alternatin
 - [F-Droid](https://f-droid.org/en/packages/com.dessalines.thumbkey/)
 - [Google Play](https://play.google.com/store/apps/details?id=com.dessalines.thumbkey)
 
-## How do I add my language or layout?
+## Contributing
 
-I'd be happy to accept additions to add more languages, and layouts. To start:
+See [Contributing.md](CONTRIBUTING.md) for how to add keyboard layouts, and themes.
 
-- Read the letter position guidelines above. This means you'll likely need a letter frequency chart for text written in your language.
-  - The general rule is: popular vowels on the right, bottom to top, consonants on the left.
-- Copy [this file](https://github.com/dessalines/thumb-key/blob/main/app/src/main/java/com/dessalines/thumbkey/keyboards/ENThumbKey.kt), or another sample keyboard from the same folder.
-  - Change the characters to whatever you'd like.
-  - This file contains both a _shifted_, and _non-shifted_ keyboard, so make sure you take care of both.
-  - You can also add or subtract columns if you want, but the layout must remain a grid. I **highly recommend** sticking with the 3x3 layout.
-- Add the new keyboard to the end of [KeyboardLayout.kt file](https://github.com/dessalines/thumb-key/blob/main/app/src/main/java/com/dessalines/thumbkey/utils/KeyboardLayout.kt). If you don't know how to do this, skip to the next step.
-- Either open a pull request, or an issue, linking your new keyboard file. I'll handle the rest of the work.
+Translations via [weblate](https://hosted.weblate.org/engage/thumb-key/):
 
-## Theming guide
-
-To add a custom theme:
-
-- Use google's [Material 3 custom theme generator](https://m3.material.io/theme-builder#/custom), and save your `Theme.kt` file.
-- Copy the theme into `Color.kt` like the others.
-- Add the theme to the `ThemeColor` enum in `Types.kt`
-- Add a translation string in `strings.xml` for your theme name.
-- Add the theme to the `colorPairs` in `Theme.kt`
-
-If you want to tweak your theme more precisely, these are the colours
-that are used. Please keep the theme in line with [Material Design
-Guidelines](https://m3.material.io/styles/color/system/overview)
-where feasibe.
-
-| Coloured element                          | Material colour used          |
-| ----------------------------------------- | ----------------------------- |
-| Normal key background                     | `surface`                     |
-| Special key (space, emoji etc) background | `surfaceVariant`              |
-| Main key colour                           | `primary`                     |
-| Key animated after press                  | `tertiary`                    |
-| Swipe letter colour                       | `secondary`                   |
-| Swipe symbol colour                       | `secondary`, but at 50% alpha |
-| Keypress flash colour on tap/hold         | `inversePrimary`              |
-| Keypress flash colour on release          | `tertiaryContainer`           |
-| Key outline                               | `outline`                     |
-| Backdrop                                  | `background`                  |
+[![Translation status](https://hosted.weblate.org/widget/thumb-key/thumb-key/multi-auto.svg)](https://hosted.weblate.org/engage/thumb-key/)
 
 ## Support / Donate
 

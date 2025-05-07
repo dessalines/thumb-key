@@ -74,12 +74,10 @@
     <string name="copy">选中文本已复制</string>
     <string name="hide_letters">隐藏字符</string>
     <string name="hide_symbols">隐藏标点</string>
-    <string name="save">保存</string>
-    <string name="key_borders">按键边缘</string>
     <string name="spacebar_multitaps">连击空格键</string>
     <string name="done">完成</string>
     <string name="backdrop">键盘背景同步变色</string>
-    <string name="key_padding">按键填充</string>
-    <string name="key_border_width">按键边缘厚度</string>
-    <string name="key_radius">按键圆角半径</string>
+    <string name="key_padding">按键填充: %1$s</string>
+    <string name="key_border_width">按键边缘厚度: %1$s</string>
+    <string name="key_radius">按键圆角半径: %1$s</string>
 </resources>

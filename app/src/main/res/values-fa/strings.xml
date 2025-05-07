@@ -1,3 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">Thumb-Key</string>
     <string name="settings">تنظیمات</string>
@@ -59,8 +60,6 @@
     <string name="copy">متن مورد نظر کپی شد</string>
     <string name="hide_letters">حروف را مخفی کنید</string>
     <string name="hide_symbols">نمادها را مخفی کنید</string>
-    <string name="save">ذخیره</string>
-    <string name="key_borders">حاشیه کلیدها</string>
     <string name="spacebar_multitaps">کلید فاصله چند ضربه ای</string>
     <string name="done">تمام</string>
 </resources>

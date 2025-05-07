@@ -1,3 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">Thumb-Key</string>
     <string name="settings">Налаштування</string>
@@ -73,8 +74,6 @@
     <string name="copy">Виділений текст скопійовано</string>
     <string name="hide_letters">Приховати літери</string>
     <string name="hide_symbols">Приховати символи</string>
-    <string name="save">Зберегти</string>
-    <string name="key_borders">Границі клавіші</string>
     <string name="spacebar_multitaps">Мультинатиснення пробілу</string>
     <string name="done">Готово</string>
     <string name="backdrop">Фон клавіатури</string>
