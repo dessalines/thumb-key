@@ -360,4 +360,6 @@ enum class KeyboardLayout(
     RUMessageOwl(KB_RU_MESSAGE_OWL),
     DETypeSplitImproved(KB_DE_TYPESPLIT_IMPROVED),
     ENThumbkeyFlippedNumpad(KB_EN_THUMBKEY_FLIPPED_NUMPAD),
+    GRThumbKeyNormal(KB_GR_THUMBKEY_NORMAL),
+    GRNormThumbKeySymbols(KB_GRNORM_THUMBKEY_SYMBOLS),
 }
