@@ -90,7 +90,14 @@ fun KeyboardScreen(
                 ?: DEFAULT_KEYBOARD_LAYOUT,
         ]
 
-    val keyboardDefinition = getModifiedKeyboardDefinition(layout, settings?.keyModifications) ?: layout.keyboardDefinition
+    val keyMods = settings?.keyModifications
+    val keyboardDefinition =
+        if (!keyMods.isNullOrEmpty()) {
+            getModifiedKeyboardDefinition(layout, keyMods)
+                ?: layout.keyboardDefinition
+        } else {
+            layout.keyboardDefinition
+        }
 
     var mode by remember {
         val startMode =
