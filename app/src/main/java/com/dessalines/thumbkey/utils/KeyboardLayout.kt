@@ -113,6 +113,8 @@ import com.dessalines.thumbkey.keyboards.KB_FR_THUMBKEY_V2
 import com.dessalines.thumbkey.keyboards.KB_FR_THUMBKEY_V3
 import com.dessalines.thumbkey.keyboards.KB_FR_TYPESPLIT
 import com.dessalines.thumbkey.keyboards.KB_GLAGOLITIC_THUMBKEY
+import com.dessalines.thumbkey.keyboards.KB_GRNORM_THUMBKEY
+import com.dessalines.thumbkey.keyboards.KB_GRNORM_THUMBKEY_SYMBOLS
 import com.dessalines.thumbkey.keyboards.KB_GR_THUMBKEY
 import com.dessalines.thumbkey.keyboards.KB_HE_MESSAGEASE
 import com.dessalines.thumbkey.keyboards.KB_HE_MESSAGEASE_SYMBOLS
@@ -177,8 +179,7 @@ import com.dessalines.thumbkey.keyboards.KB_UK_MESSAGEASE_SYMBOLS
 import com.dessalines.thumbkey.keyboards.KB_UK_RU_MESSAGEASE_SYMBOLS
 import com.dessalines.thumbkey.keyboards.KB_UK_THUMBKEY
 import com.dessalines.thumbkey.keyboards.KB_VN_THUMBKEY
-import com.dessalines.thumbkey.keyboards.KB_GRNORM_THUMBKEY
-import com.dessalines.thumbkey.keyboards.KB_GRNORM_THUMBKEY_SYMBOLS
+
 // Make sure new keyboards are added AT THE END of this list, and have a higher index.
 // DO NOT put them in the middle of the list!
 enum class KeyboardLayout(
