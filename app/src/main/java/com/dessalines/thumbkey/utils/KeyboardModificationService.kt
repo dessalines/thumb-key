@@ -22,19 +22,21 @@ import kotlinx.serialization.builtins.serializer
 fun getModifiedKeyboardDefinition(
     keyboardLayout: KeyboardLayout,
     keyModifications: String,
-): KeyboardDefinition? =
-    try {
+): KeyboardDefinition? {
+    return try {
+        if (keyModifications.isEmpty()) return null
         val keyMods = serializeKeyModifications(keyModifications)
         keyMods[keyboardLayout.name]?.let {
             val modifiedKeyboardDefinition = modifyKeyboardDefinition(keyboardLayout, it)
             Log.d(TAG, "key modifications applied to layout ${keyboardLayout.name}")
-            modifiedKeyboardDefinition
+            return modifiedKeyboardDefinition
         }
     } catch (e: Exception) {
         val errorMessage = e.message ?: e.stackTraceToString()
         Log.d(TAG, "Error applying key modifications: $errorMessage")
-        null
+        return null
     }
+}
 
 fun checkAllKeyboardModifications(
     keyModifications: String?,
@@ -43,6 +45,7 @@ fun checkAllKeyboardModifications(
     keyModificationsErrorState.value = null
     keyModifications?.let { keyMods ->
         try {
+            if (keyModifications.isEmpty()) return
             val keyModifications = serializeKeyModifications(keyMods)
             keyModifications.forEach {
                 val keyboardLayout = KeyboardLayout.entries.find { layout -> it.key == layout.name }
@@ -63,7 +66,8 @@ fun checkAllKeyboardModifications(
 }
 
 /**
- * This can throw an Exception, so it should be wrapped
+ * @throws kotlinx.serialization.SerializationException if the string cannot be deserialized.
+ * @throws IllegalArgumentException if the [keyModifications] is not a valid instance of [KeyModifications].
  */
 fun serializeKeyModifications(keyModifications: String): KeyModifications {
     var serializer =
