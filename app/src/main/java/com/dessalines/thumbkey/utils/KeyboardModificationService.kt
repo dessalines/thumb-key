@@ -20,22 +20,18 @@ import kotlinx.serialization.builtins.serializer
  */
 fun getModifiedKeyboardDefinition(
     keyboardLayout: KeyboardLayout,
-    keyModifications: String?,
+    keyModifications: String,
 ): KeyboardDefinition? =
-    keyModifications?.let { keyMods ->
-        try {
-            val keyModifications = serializeKeyModifications(keyMods)
-            keyModifications[keyboardLayout.name]?.let {
-                val modifiedKeyboardDefinition = modifyKeyboardDefinition(keyboardLayout, it)
-                Log.d(TAG, "key modifications applied to layout ${keyboardLayout.name}")
-                modifiedKeyboardDefinition
-            }
-        } catch (e: Exception) {
-            val errorMessage = e.message ?: e.stackTraceToString()
-            Log.d(TAG, "Error applying key modifications: $errorMessage")
-            null
+    try {
+        val keyMods = serializeKeyModifications(keyModifications)
+        keyMods[keyboardLayout.name]?.let {
+            val modifiedKeyboardDefinition = modifyKeyboardDefinition(keyboardLayout, it)
+            Log.d(TAG, "key modifications applied to layout ${keyboardLayout.name}")
+            modifiedKeyboardDefinition
         }
-    } ?: run {
+    } catch (e: Exception) {
+        val errorMessage = e.message ?: e.stackTraceToString()
+        Log.d(TAG, "Error applying key modifications: $errorMessage")
         null
     }
 
