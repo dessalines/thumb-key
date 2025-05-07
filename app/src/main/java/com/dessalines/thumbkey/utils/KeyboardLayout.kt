@@ -177,7 +177,8 @@ import com.dessalines.thumbkey.keyboards.KB_UK_MESSAGEASE_SYMBOLS
 import com.dessalines.thumbkey.keyboards.KB_UK_RU_MESSAGEASE_SYMBOLS
 import com.dessalines.thumbkey.keyboards.KB_UK_THUMBKEY
 import com.dessalines.thumbkey.keyboards.KB_VN_THUMBKEY
-
+import com.dessalines.thumbkey.keyboards.KB_GRNORM_THUMBKEY
+import com.dessalines.thumbkey.keyboards.KB_GRNORM_THUMBKEY_SYMBOLS
 // Make sure new keyboards are added AT THE END of this list, and have a higher index.
 // DO NOT put them in the middle of the list!
 enum class KeyboardLayout(
@@ -360,6 +361,6 @@ enum class KeyboardLayout(
     RUMessageOwl(KB_RU_MESSAGE_OWL),
     DETypeSplitImproved(KB_DE_TYPESPLIT_IMPROVED),
     ENThumbkeyFlippedNumpad(KB_EN_THUMBKEY_FLIPPED_NUMPAD),
-    GRThumbKeyNormal(KB_GR_THUMBKEY_NORMAL),
+    GRThumbKeyNormal(KB_GRNORM_THUMBKEY),
     GRNormThumbKeySymbols(KB_GRNORM_THUMBKEY_SYMBOLS),
 }
