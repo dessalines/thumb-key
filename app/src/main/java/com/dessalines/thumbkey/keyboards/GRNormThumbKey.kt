@@ -17,7 +17,7 @@ val KB_GRNORM_THUMBKEY_MAIN =
                 KeyItemC(
                     center = KeyC("σ", size = LARGE),
                     swipeType = FOUR_WAY_DIAGONAL,
-                    bottomRight = KeyC("w"),
+                    bottomRight = KeyC("ς"),
                 ),
                 KeyItemC(
                     center = KeyC("ρ", size = LARGE),
