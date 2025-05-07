@@ -1,3 +1,9 @@
+## What's Changed in 4.0.30
+
+- Fixing key mods. by @dessalines in [#1374](https://github.com/dessalines/thumb-key/pull/1374)
+
+**Full Changelog**: https://github.com/dessalines/thumb-key/compare/4.0.29...4.0.30
+
 ## What's Changed in 4.0.29
 
 - Using lets instead of null and empty checks. by @dessalines in [#1369](https://github.com/dessalines/thumb-key/pull/1369)
