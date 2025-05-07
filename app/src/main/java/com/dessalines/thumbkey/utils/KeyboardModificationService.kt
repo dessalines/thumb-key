@@ -3,6 +3,7 @@
 package com.dessalines.thumbkey.utils
 
 import android.util.Log
+import androidx.annotation.Keep
 import androidx.compose.runtime.MutableState
 import arrow.optics.*
 import com.charleskorn.kaml.Yaml
@@ -161,6 +162,7 @@ fun modifyKeyC(
 typealias KeyModifications = Map<String, KeyboardDefinitionModesSerializable>
 
 @Serializable
+@Keep
 data class KeyboardDefinitionModesSerializable(
     val main: KeyboardCSerializable? = null,
     val shifted: KeyboardCSerializable? = null,
@@ -171,6 +173,7 @@ data class KeyboardDefinitionModesSerializable(
 
 @Serializable
 @Suppress("PropertyName")
+@Keep
 data class KeyboardCSerializable(
     val key0_0: KeyItemCSerializable? = null,
     val key0_1: KeyItemCSerializable? = null,
@@ -191,6 +194,7 @@ data class KeyboardCSerializable(
 )
 
 @Serializable
+@Keep
 data class KeyItemCSerializable(
     val topLeft: KeyCSerializable? = null,
     val top: KeyCSerializable? = null,
@@ -208,6 +212,7 @@ data class KeyItemCSerializable(
 )
 
 @Serializable
+@Keep
 data class KeyCSerializable(
     val text: String? = null,
     val displayText: String? = null,
