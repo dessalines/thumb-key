@@ -37,28 +37,26 @@ fun getModifiedKeyboardDefinition(
     }
 
 fun checkAllKeyboardModifications(
-    keyModifications: String?,
+    keyModifications: String,
     keyModificationsErrorState: MutableState<String?>,
 ) {
     keyModificationsErrorState.value = null
-    keyModifications?.let { keyMods ->
-        try {
-            val keyModifications = serializeKeyModifications(keyMods)
-            keyModifications.forEach {
-                val keyboardLayout = KeyboardLayout.entries.find { layout -> it.key == layout.name }
-                if (keyboardLayout == null) {
-                    // This should never happen
-                    keyModificationsErrorState.value = "Keyboard layout '${it.key}' not found."
-                    return
-                }
-
-                modifyKeyboardDefinition(keyboardLayout, it.value)
+    try {
+        val keyModifications = serializeKeyModifications(keyModifications)
+        keyModifications.forEach {
+            val keyboardLayout = KeyboardLayout.entries.find { layout -> it.key == layout.name }
+            if (keyboardLayout == null) {
+                // This should never happen
+                keyModificationsErrorState.value = "Keyboard layout '${it.key}' not found."
+                return
             }
-        } catch (e: Exception) {
-            val errorMessage = e.message ?: e.stackTraceToString()
-            keyModificationsErrorState.value = errorMessage
-            Log.d(TAG, "Error applying key modifications: $errorMessage")
+
+            modifyKeyboardDefinition(keyboardLayout, it.value)
         }
+    } catch (e: Exception) {
+        val errorMessage = e.message ?: e.stackTraceToString()
+        keyModificationsErrorState.value = errorMessage
+        Log.d(TAG, "Error applying key modifications: $errorMessage")
     }
 }
 
