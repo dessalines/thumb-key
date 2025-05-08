@@ -1,3 +1,21 @@
+## What's Changed in 4.0.32
+
+- Fix issue: key modifications screen shows error by @Toldry in [#1377](https://github.com/dessalines/thumb-key/pull/1377)
+- Added greek keyboards with greek layout and greek character accents by @VMichailidis in [#1376](https://github.com/dessalines/thumb-key/pull/1376)
+
+## New Contributors
+
+- @VMichailidis made their first contribution in [#1376](https://github.com/dessalines/thumb-key/pull/1376)
+
+**Full Changelog**: https://github.com/dessalines/thumb-key/compare/4.0.31...4.0.32
+
+## What's Changed in 4.0.31
+
+- Merge remote-tracking branch 'origin/main' by @dessalines
+- Adding @Keep to fix key_mod data classes. by @dessalines in [#1375](https://github.com/dessalines/thumb-key/pull/1375)
+
+**Full Changelog**: https://github.com/dessalines/thumb-key/compare/4.0.30...4.0.31
+
 ## What's Changed in 4.0.30
 
 - Fixing key mods. by @dessalines in [#1374](https://github.com/dessalines/thumb-key/pull/1374)
