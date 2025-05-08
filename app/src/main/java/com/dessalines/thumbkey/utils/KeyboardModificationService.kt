@@ -22,52 +22,46 @@ import kotlinx.serialization.builtins.serializer
 fun getModifiedKeyboardDefinition(
     keyboardLayout: KeyboardLayout,
     keyModifications: String,
-): KeyboardDefinition? {
-    return try {
-        if (keyModifications.isEmpty()) return null
+): KeyboardDefinition? =
+    try {
         val keyMods = serializeKeyModifications(keyModifications)
         keyMods[keyboardLayout.name]?.let {
             val modifiedKeyboardDefinition = modifyKeyboardDefinition(keyboardLayout, it)
             Log.d(TAG, "key modifications applied to layout ${keyboardLayout.name}")
-            return modifiedKeyboardDefinition
+            modifiedKeyboardDefinition
         }
     } catch (e: Exception) {
         val errorMessage = e.message ?: e.stackTraceToString()
         Log.d(TAG, "Error applying key modifications: $errorMessage")
-        return null
+        null
     }
-}
 
 fun checkAllKeyboardModifications(
-    keyModifications: String?,
+    keyModifications: String,
     keyModificationsErrorState: MutableState<String?>,
 ) {
     keyModificationsErrorState.value = null
-    keyModifications?.let { keyMods ->
-        try {
-            if (keyModifications.isEmpty()) return
-            val keyModifications = serializeKeyModifications(keyMods)
-            keyModifications.forEach {
-                val keyboardLayout = KeyboardLayout.entries.find { layout -> it.key == layout.name }
-                if (keyboardLayout == null) {
-                    // This should never happen
-                    keyModificationsErrorState.value = "Keyboard layout '${it.key}' not found."
-                    return
-                }
-
-                modifyKeyboardDefinition(keyboardLayout, it.value)
+    try {
+        val keyModifications = serializeKeyModifications(keyModifications)
+        keyModifications.forEach {
+            val keyboardLayout = KeyboardLayout.entries.find { layout -> it.key == layout.name }
+            if (keyboardLayout == null) {
+                // This should never happen
+                keyModificationsErrorState.value = "Keyboard layout '${it.key}' not found."
+                return
             }
-        } catch (e: Exception) {
-            val errorMessage = e.message ?: e.stackTraceToString()
-            keyModificationsErrorState.value = errorMessage
-            Log.d(TAG, "Error applying key modifications: $errorMessage")
+
+            modifyKeyboardDefinition(keyboardLayout, it.value)
         }
+    } catch (e: Exception) {
+        val errorMessage = e.message ?: e.stackTraceToString()
+        keyModificationsErrorState.value = errorMessage
+        Log.d(TAG, "Error applying key modifications: $errorMessage")
     }
 }
 
 /**
- * @throws kotlinx.serialization.SerializationException if the string cannot be deserialized.
- * @throws IllegalArgumentException if the [keyModifications] is not a valid instance of [KeyModifications].
+ * This can throw an Exception, so it should be wrapped
  */
 fun serializeKeyModifications(keyModifications: String): KeyModifications {
     var serializer =
