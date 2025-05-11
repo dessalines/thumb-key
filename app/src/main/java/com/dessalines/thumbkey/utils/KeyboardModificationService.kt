@@ -31,7 +31,7 @@ import kotlinx.serialization.builtins.serializer
 
 /**
  * @param keyboardLayout The layout of the keyboard to be modified.
- * @param settings The application settings containing key modifications.
+ * @param keyModifications The key modifications YAML string.
  * @return A modified `KeyboardDefinition` if modifications exist for the layout, else null.
  */
 fun getModifiedKeyboardDefinition(
