@@ -215,7 +215,7 @@ ESCAMessagEase:
       topRight: { remove: true }
       bottomRight: { remove: true }
       bottomLeft: { remove: true }
-``` 
+```
 
 ![](fastlane/metadata/android/en-US/images/userGuideImages/modify_keys_example_2.png)
 
@@ -233,12 +233,12 @@ ESCAMessagEase:
   - `TWO_WAY_VERTICAL`
   - `TWO_WAY_HORIZONTAL`
 
-
 ### Example 3
+
 ```yaml
 ENThumbKey:
   main:
-    key0_3: 
+    key0_3:
       center:
         keyAction: SwitchLanguage
       left:
@@ -248,6 +248,7 @@ ENThumbKey:
 ![](fastlane/metadata/android/en-US/images/userGuideImages/modify_keys_example_3.png)
 
 This swaps the 'switch language' and 'toggle emoji' actions on the top-right key. Possible values for `keyAction` are:
+
 - `ToggleNumericMode`
 - `ToggleEmojiMode`
 - `Left`
@@ -266,6 +267,7 @@ This swaps the 'switch language' and 'toggle emoji' actions on the top-right key
 `keyAction` and `text` cannot be used together.
 
 #### Example 4
+
 ```yaml
 ENThumbKey:
   main:
