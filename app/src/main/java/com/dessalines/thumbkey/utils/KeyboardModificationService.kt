@@ -321,6 +321,7 @@ data class KeyCSerializable(
     val keyAction: KeyActionSerializable? = null,
 )
 
+@Keep
 enum class KeyActionSerializable {
     ToggleNumericMode,
     ToggleEmojiMode,
