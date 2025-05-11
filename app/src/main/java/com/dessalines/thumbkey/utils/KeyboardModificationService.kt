@@ -7,6 +7,21 @@ import androidx.annotation.Keep
 import androidx.compose.runtime.MutableState
 import arrow.optics.*
 import com.charleskorn.kaml.Yaml
+import com.charleskorn.kaml.YamlConfiguration
+import com.dessalines.thumbkey.keyboards.COPY_KEYC
+import com.dessalines.thumbkey.keyboards.CUT_KEYC
+import com.dessalines.thumbkey.keyboards.GOTO_SETTINGS_KEYC
+import com.dessalines.thumbkey.keyboards.PASTE_KEYC
+import com.dessalines.thumbkey.keyboards.REDO_KEYC
+import com.dessalines.thumbkey.keyboards.SELECT_ALL_KEYC
+import com.dessalines.thumbkey.keyboards.SPACEBAR_LEFT_KEYC
+import com.dessalines.thumbkey.keyboards.SPACEBAR_RIGHT_KEYC
+import com.dessalines.thumbkey.keyboards.SWITCH_IME_KEYC
+import com.dessalines.thumbkey.keyboards.SWITCH_IME_VOICE_KEYC
+import com.dessalines.thumbkey.keyboards.SWITCH_LANGUAGE_KEYC
+import com.dessalines.thumbkey.keyboards.TOGGLE_EMOJI_MODE_TRUE_KEYC
+import com.dessalines.thumbkey.keyboards.TOGGLE_NUMERIC_MODE_TRUE_KEYC
+import com.dessalines.thumbkey.keyboards.UNDO_KEYC
 import com.dessalines.thumbkey.utils.KeyAction.CommitText
 import com.dessalines.thumbkey.utils.KeyAction.Noop
 import com.dessalines.thumbkey.utils.KeyDisplay.TextDisplay
@@ -61,7 +76,10 @@ fun checkAllKeyboardModifications(
 }
 
 /**
- * This can throw an Exception, so it should be wrapped
+ * @param keyModifications The YAML string representation of key modifications.
+ * @return A map of keyboard definitions.
+ * @throws kotlinx.serialization.SerializationException - in case of any decoding-specific error.
+ * @throws IllegalArgumentException - if the decoded input is not a valid instance of [KeyModifications].
  */
 fun serializeKeyModifications(keyModifications: String): KeyModifications {
     var serializer =
@@ -128,6 +146,8 @@ fun Copy<KeyItemC>.modifyKeyItemC(serializable: KeyItemCSerializable) {
     KeyItemC.bottom transform { modifyKeyC(it, serializable.bottom) }
     KeyItemC.bottomRight transform { modifyKeyC(it, serializable.bottomRight) }
 
+    KeyItemC.longPress transform { modifyLongPress(it, serializable.longPress) }
+
     KeyItemC.widthMultiplier transform { serializable.widthMultiplier ?: it }
     KeyItemC.backgroundColor transform { serializable.backgroundColor ?: it }
     KeyItemC.swipeType transform { serializable.swipeType ?: it }
@@ -141,21 +161,101 @@ fun modifyKeyC(
     if (keyCSerializable == null) {
         return keyC
     }
+
+    val keyActionKeyC = getCommonKeyCFromKeyAction(keyCSerializable)
+    checkTextAndKeyActionValidity(keyActionKeyC, keyCSerializable)
+
     if (keyCSerializable.remove) {
         return null
     }
 
-    // TODO: add support for other types of KeyAction besides CommitText
     return (keyC ?: KeyC(action = Noop)).copy {
         keyCSerializable.text?.let {
             KeyC.action.set(CommitText(it))
             KeyC.display.set(TextDisplay(it))
         }
+
+        keyActionKeyC?.let {
+            KeyC.action.set(it.action)
+            KeyC.swipeReturnAction.set(it.swipeReturnAction)
+            KeyC.display.set(it.display)
+            KeyC.capsModeDisplay.set(it.capsModeDisplay)
+        }
+
         keyCSerializable.displayText?.let {
             KeyC.display.set(TextDisplay(it))
         }
+        keyCSerializable.color?.let {
+            KeyC.color.set(it)
+        }
+        keyCSerializable.size?.let {
+            KeyC.size.set(it)
+        }
     }
 }
+
+fun modifyLongPress(
+    keyAction: KeyAction?,
+    keyCSerializable: KeyCSerializable?,
+): KeyAction? {
+    if (keyCSerializable == null) {
+        return keyAction
+    }
+
+    val keyActionKeyC = getCommonKeyCFromKeyAction(keyCSerializable)
+    checkTextAndKeyActionValidity(keyActionKeyC, keyCSerializable)
+
+    if (keyCSerializable.remove) {
+        return null
+    }
+
+    keyCSerializable.text?.let {
+        return CommitText(it)
+    }
+
+    keyActionKeyC?.let {
+        return it.action
+    }
+
+    return keyAction
+}
+
+fun checkTextAndKeyActionValidity(
+    keyActionKeyC: KeyC?,
+    keyCSerializable: KeyCSerializable,
+) {
+    if (keyActionKeyC != null && keyCSerializable.text != null) {
+        val yaml = Yaml(configuration = YamlConfiguration(encodeDefaults = false))
+
+        throw IllegalArgumentException(
+            "Properties `text` and `keyAction` cannot both be used:\n${
+                yaml.encodeToString(
+                    KeyCSerializable.serializer() ,
+                    keyCSerializable,
+                )
+            }",
+        )
+    }
+}
+
+fun getCommonKeyCFromKeyAction(keyCSerializable: KeyCSerializable): KeyC? =
+    when (keyCSerializable.keyAction) {
+        KeyActionSerializable.ToggleNumericMode -> TOGGLE_NUMERIC_MODE_TRUE_KEYC
+        KeyActionSerializable.ToggleEmojiMode -> TOGGLE_EMOJI_MODE_TRUE_KEYC
+        KeyActionSerializable.Left -> SPACEBAR_LEFT_KEYC
+        KeyActionSerializable.Right -> SPACEBAR_RIGHT_KEYC
+        KeyActionSerializable.GotoSettings -> GOTO_SETTINGS_KEYC
+        KeyActionSerializable.SelectAll -> SELECT_ALL_KEYC
+        KeyActionSerializable.Cut -> CUT_KEYC
+        KeyActionSerializable.Copy -> COPY_KEYC
+        KeyActionSerializable.Paste -> PASTE_KEYC
+        KeyActionSerializable.Undo -> UNDO_KEYC
+        KeyActionSerializable.Redo -> REDO_KEYC
+        KeyActionSerializable.SwitchLanguage -> SWITCH_LANGUAGE_KEYC
+        KeyActionSerializable.SwitchIME -> SWITCH_IME_KEYC
+        KeyActionSerializable.SwitchIMEVoice -> SWITCH_IME_VOICE_KEYC
+        null -> null
+    }
 
 typealias KeyModifications = Map<String, KeyboardDefinitionModesSerializable>
 
@@ -203,6 +303,7 @@ data class KeyItemCSerializable(
     val bottomLeft: KeyCSerializable? = null,
     val bottom: KeyCSerializable? = null,
     val bottomRight: KeyCSerializable? = null,
+    var longPress: KeyCSerializable? = null,
     var widthMultiplier: Int? = null,
     var backgroundColor: ColorVariant? = null,
     var swipeType: SwipeNWay? = null,
@@ -217,4 +318,22 @@ data class KeyCSerializable(
     val size: FontSizeVariant? = null,
     val color: ColorVariant? = null,
     val remove: Boolean = false,
+    val keyAction: KeyActionSerializable? = null,
 )
+
+enum class KeyActionSerializable {
+    ToggleNumericMode,
+    ToggleEmojiMode,
+    Left,
+    Right,
+    GotoSettings,
+    SelectAll,
+    Cut,
+    Copy,
+    Paste,
+    Undo,
+    Redo,
+    SwitchLanguage,
+    SwitchIME,
+    SwitchIMEVoice,
+}

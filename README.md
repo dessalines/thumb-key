@@ -215,7 +215,7 @@ ESCAMessagEase:
       topRight: { remove: true }
       bottomRight: { remove: true }
       bottomLeft: { remove: true }
-```
+``` 
 
 ![](fastlane/metadata/android/en-US/images/userGuideImages/modify_keys_example_2.png)
 
@@ -232,6 +232,56 @@ ESCAMessagEase:
   - `FOUR_WAY_DIAGONAL`
   - `TWO_WAY_VERTICAL`
   - `TWO_WAY_HORIZONTAL`
+
+
+### Example 3
+```yaml
+ENThumbKey:
+  main:
+    key0_3: 
+      center:
+        keyAction: SwitchLanguage
+      left:
+        keyAction: ToggleEmojiMode
+```
+
+![](fastlane/metadata/android/en-US/images/userGuideImages/modify_keys_example_3.png)
+
+This swaps the 'switch language' and 'toggle emoji' actions on the top-right key. Possible values for `keyAction` are:
+- `ToggleNumericMode`
+- `ToggleEmojiMode`
+- `Left`
+- `Right`
+- `GotoSettings`
+- `SelectAll`
+- `Cut`
+- `Copy`
+- `Paste`
+- `Undo`
+- `Redo`
+- `SwitchLanguage`
+- `SwitchIME`
+- `SwitchIMEVoice`
+
+`keyAction` and `text` cannot be used together.
+
+#### Example 4
+```yaml
+ENThumbKey:
+  main:
+    key0_0: { longPress: { text: "1" } }
+    key0_1: { longPress: { text: "2" } }
+    key0_2: { longPress: { text: "3" } }
+    key1_0: { longPress: { text: "3" } }
+    key1_1: { longPress: { text: "4" } }
+    key1_2: { longPress: { text: "5" } }
+    key2_0: { longPress: { text: "7" } }
+    key2_1: { longPress: { text: "8" } }
+    key2_2: { longPress: { text: "9" } }
+    key3_0: { longPress: { text: "0" } }
+```
+
+This enables long pressing to type digits. `longPress` properties are: `text`, `keyAction`, `remove`. These are used the same way as for `center`, `left`, `topLeft`, etc.
 
 ### Other
 
