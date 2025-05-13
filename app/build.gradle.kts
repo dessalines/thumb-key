@@ -132,7 +132,7 @@ dependencies {
     implementation("androidx.appcompat:appcompat:1.7.0")
 
     // YAML serialization
-    implementation("com.charleskorn.kaml:kaml:0.77.1")
+    implementation("com.charleskorn.kaml:kaml:0.78.0")
 
     // Kotlin Reflect
     implementation("org.jetbrains.kotlin:kotlin-reflect:2.1.20")
