@@ -1,3 +1,10 @@
+## What's Changed in 4.0.33
+
+- modify keys: support keyboards up to size 10x10 by @Toldry in [#1386](https://github.com/dessalines/thumb-key/pull/1386)
+- feat: added `keyAction` to key mods by @Toldry in [#1385](https://github.com/dessalines/thumb-key/pull/1385)
+
+**Full Changelog**: https://github.com/dessalines/thumb-key/compare/4.0.32...4.0.33
+
 ## What's Changed in 4.0.32
 
 - Fix issue: key modifications screen shows error by @Toldry in [#1377](https://github.com/dessalines/thumb-key/pull/1377)
