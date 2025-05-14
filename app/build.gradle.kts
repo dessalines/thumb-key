@@ -69,6 +69,12 @@ android {
         }
     }
 
+    lint {
+        disable += "MissingTranslation"
+        disable += "KtxExtensionAvailable"
+        disable += "UseKtx"
+    }
+
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_17
         targetCompatibility = JavaVersion.VERSION_17
