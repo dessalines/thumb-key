@@ -109,14 +109,14 @@ val KB_VN_THUMBKEY_MAIN =
                     topRight = KeyC("c"),
                     topLeft =
                         KeyC(
-                            display = KeyDisplay.TextDisplay("°/"),
-                            action = ComposeLastKey("°"),
+                            display = KeyDisplay.TextDisplay("◌̉"),
+                            action = ComposeLastKey("?"),
                             color = MUTED,
                         ),
                     bottomLeft =
                         KeyC(
-                            display = KeyDisplay.TextDisplay("¿¡"),
-                            action = ComposeLastKey("!"),
+                            display = KeyDisplay.TextDisplay("◌̣"),
+                            action = ComposeLastKey("*"),
                             color = MUTED,
                         ),
                     bottomRight =

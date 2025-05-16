@@ -847,6 +847,9 @@ fun performKeyAction(
                             "E" -> "Ẻ"
                             "ê" -> "ể"
                             "Ê" -> "Ể"
+                            "y" -> "ỷ"
+                            "Y" -> "Ỷ"
+                            " " -> "?"
                             else -> textBefore
                         }
 
@@ -874,6 +877,9 @@ fun performKeyAction(
                             "E" -> "Ẹ"
                             "ê" -> "ệ"
                             "Ê" -> "Ệ"
+                            "y" -> "ỵ"
+                            "Y" -> "Ỵ"
+                            " " -> "*"
                             else -> textBefore
                         }
 
