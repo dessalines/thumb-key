@@ -14,7 +14,7 @@
     <img width=200px height=200px src="https://raw.githubusercontent.com/dessalines/thumb-key/main/fastlane/metadata/android/en-US/images/phoneScreenshots/1.png" alt="phone_screen" />
   </a>
 
- <h3 align="center"><a href="https://github.com/dessalines/thumb-key">Thumb-Key</a></h3>
+<h3 align="center"><a href="https://github.com/dessalines/thumb-key">Thumb-Key</a></h3>
   <p align="center">
     A privacy-conscious keyboard made for your thumbs
     <br />
@@ -233,7 +233,7 @@ ESCAMessagEase:
   - `TWO_WAY_VERTICAL`
   - `TWO_WAY_HORIZONTAL`
 
-### Example 3
+### Example 3 - key action
 
 ```yaml
 ENThumbKey:
@@ -266,7 +266,7 @@ This swaps the 'switch language' and 'toggle emoji' actions on the top-right key
 
 `keyAction` and `text` cannot be used together.
 
-#### Example 4
+#### Example 4 - long press
 
 ```yaml
 ENThumbKey:
@@ -284,6 +284,23 @@ ENThumbKey:
 ```
 
 This enables long pressing to type digits. `longPress` properties are: `text`, `keyAction`, `remove`. These are used the same way as for `center`, `left`, `topLeft`, etc.
+
+#### Example 5 - combining marks (diacritics)
+
+```yaml
+ENMessagEase:
+  main:
+    key0_0:
+      topLeft:
+        text: "\u0301" # unicode sequence for Combining Acute Accent
+        displayText: "◌́" # Dotted Circle + Combining Acute Accent
+      top:
+        text: "\u0302" # Combining Circumflex Accent
+        displayText: "◌̂"
+      topRight:
+        text: "\u030b" # Combining Double Acute Accent
+        displayText: "◌̋"
+```
 
 ### Other
 
