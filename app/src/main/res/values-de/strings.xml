@@ -94,4 +94,7 @@
     <string name="key_padding">Tastenfüllung: %1$s</string>
     <string name="key_border_width">Tastenrandbreite: %1$s</string>
     <string name="ghost_keys_enable">Geistertasten</string>
+    <string name="modify_keys">Tasten bearbeiten</string>
+    <string name="key_modification_placeholder">YAML eingeben</string>
+    <string name="how_to_modify_keys">Wie werden Tasten bearbeitet</string>
 </resources>
