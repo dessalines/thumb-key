@@ -1,3 +1,15 @@
+## What's Changed in 4.0.34
+
+- added combining marks example by @Toldry in [#1395](https://github.com/dessalines/thumb-key/pull/1395)
+- Adjust Vietnamese layout to use correct tone marks by @3T1C in [#1391](https://github.com/dessalines/thumb-key/pull/1391)
+- Adding android lint. by @dessalines in [#1390](https://github.com/dessalines/thumb-key/pull/1390)
+
+## New Contributors
+
+- @3T1C made their first contribution in [#1391](https://github.com/dessalines/thumb-key/pull/1391)
+
+**Full Changelog**: https://github.com/dessalines/thumb-key/compare/4.0.33...4.0.34
+
 ## What's Changed in 4.0.33
 
 - Merge remote-tracking branch 'refs/remotes/origin/main' by @dessalines
@@ -803,12 +815,12 @@
 
 - Vn thumbkey by @dessalines in [#837](https://github.com/dessalines/thumb-key/pull/837)
 - Add German+ÅÆØ compatibility layout with MessageEase by @RolKau in [#832](https://github.com/dessalines/thumb-key/pull/832)
-- Add breve supersign to compose layout by @mensogulo
+- Add breve supersign to compose layout by @mensogulo in [#836](https://github.com/dessalines/thumb-key/pull/836)
 
 ## New Contributors
 
 - @RolKau made their first contribution in [#832](https://github.com/dessalines/thumb-key/pull/832)
-- @mensogulo made their first contribution
+- @mensogulo made their first contribution in [#836](https://github.com/dessalines/thumb-key/pull/836)
 
 **Full Changelog**: https://github.com/dessalines/thumb-key/compare/2.7.4...2.7.5
 
@@ -1635,15 +1647,16 @@
 - Upgrade deps. by @dessalines
 - Corrected symbols for "T" by @FranciscoTrigo
 - Fixed symbols in "T" key by @FranciscoTrigo
-- Merge branch 'main' into main
-- Update MessageEaseFR.kt
-- Adding release notes.
+- Merge branch 'main' into main by @breversa
+- Update MessageEaseFR.kt by @cosminribo in [#256](https://github.com/dessalines/thumb-key/pull/256)
+- Adding release notes. by @dessalines
 
 ## New Contributors
 
 - @FranciscoTrigo made their first contribution
 - @K0baU made their first contribution
 - @last5bits made their first contribution
+- @cosminribo made their first contribution in [#256](https://github.com/dessalines/thumb-key/pull/256)
 - @Falcarragh made their first contribution
 
 **Full Changelog**: https://github.com/dessalines/thumb-key/compare/1.5.0...1.6.0
@@ -1680,7 +1693,7 @@
 - Modified symbols so that they match messageEase
 - Finishing adding georgian keyboard. by @dessalines
 - Add Georgian keyboard layout by @gvalson in [#240](https://github.com/dessalines/thumb-key/pull/240)
-- Update ThumbKeyFRv2.kt
+- Update ThumbKeyFRv2.kt by @breversa
 - Update ThumbKeyFRv2.kt by @breversa
 - Create ThumbKeyFRv2.kt by @breversa
 - Adding release notes. by @dessalines
