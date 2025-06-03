@@ -13,6 +13,7 @@ import com.dessalines.thumbkey.keyboards.KB_CZ_MESSAGEASE_PROGRAMMING
 import com.dessalines.thumbkey.keyboards.KB_DA_THUMBKEY
 import com.dessalines.thumbkey.keyboards.KB_DE_MESSAGEASE
 import com.dessalines.thumbkey.keyboards.KB_DE_MESSAGEASE_LEFT
+import com.dessalines.thumbkey.keyboards.KB_DE_MESSAGEASE_LEFT_INVERTED_KEYPAD
 import com.dessalines.thumbkey.keyboards.KB_DE_MESSAGEASE_SYMBOLS
 import com.dessalines.thumbkey.keyboards.KB_DE_NORDIC_MESSAGEASE
 import com.dessalines.thumbkey.keyboards.KB_DE_THUMBKEY
@@ -366,4 +367,5 @@ enum class KeyboardLayout(
     GRThumbKeyNormal(KB_GRNORM_THUMBKEY),
     GRNormThumbKeySymbols(KB_GRNORM_THUMBKEY_SYMBOLS),
     DEMessagEaseLeft(KB_DE_MESSAGEASE_LEFT),
+    DEMessagEaseLeftInvertedKeypad(KB_DE_MESSAGEASE_LEFT_INVERTED_KEYPAD),
 }
