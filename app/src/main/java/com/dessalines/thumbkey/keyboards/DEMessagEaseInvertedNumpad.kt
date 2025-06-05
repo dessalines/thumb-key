@@ -11,11 +11,10 @@ import com.dessalines.thumbkey.utils.KeyboardDefinitionModes
 import com.dessalines.thumbkey.utils.getLocalCurrency
 import com.dessalines.thumbkey.utils.lastColKeysToFirst
 
-val KB_DE_MESSAGEASE_LEFT_NUMERIC =
+val KB_DE_MESSAGEASE_INVERTED_NUMPAD_NUMERIC =
     KeyboardC(
         listOf(
             listOf(
-                EMOJI_KEY_ITEM,
                 KeyItemC(
                     center = KeyC("7", size = LARGE),
                     bottomLeft = KeyC("$"),
@@ -46,9 +45,9 @@ val KB_DE_MESSAGEASE_LEFT_NUMERIC =
                     bottomLeft = KeyC("£"),
                     bottom = KeyC("="),
                 ),
+                EMOJI_KEY_ITEM,
             ),
             listOf(
-                ABC_KEY_ITEM,
                 KeyItemC(
                     center = KeyC("4", size = LARGE),
                     topLeft = KeyC("{"),
@@ -69,9 +68,9 @@ val KB_DE_MESSAGEASE_LEFT_NUMERIC =
                     bottomRight = KeyC("]"),
                     bottomLeft = KeyC("@"),
                 ),
+                ABC_KEY_ITEM,
             ),
             listOf(
-                BACKSPACE_KEY_ITEM,
                 KeyItemC(
                     center = KeyC("1", size = LARGE),
                     topLeft = KeyC("~"),
@@ -95,25 +94,26 @@ val KB_DE_MESSAGEASE_LEFT_NUMERIC =
                     bottomLeft = KeyC(";"),
                     left = KeyC("#"),
                 ),
+                BACKSPACE_KEY_ITEM,
             ),
             listOf(
-                RETURN_KEY_ITEM,
                 KeyItemC(
                     center = KeyC("0", size = LARGE),
                     widthMultiplier = 2,
                 ),
                 SPACEBAR_SKINNY_KEY_ITEM,
+                RETURN_KEY_ITEM,
             ),
         ),
     )
 
-val KB_DE_MESSAGEASE_LEFT_INVERTED_KEYPAD: KeyboardDefinition =
+val KB_DE_MESSAGEASE_INVERTED_NUMPAD: KeyboardDefinition =
     KeyboardDefinition(
-        title = "deutsch messagease left-handed, inverted keypad",
+        title = "deutsch messagease, inverted numpad",
         modes =
             KeyboardDefinitionModes(
-                main = lastColKeysToFirst(KB_DE_MESSAGEASE_MAIN),
-                shifted = lastColKeysToFirst(KB_DE_MESSAGEASE_SHIFTED),
-                numeric = KB_DE_MESSAGEASE_LEFT_NUMERIC,
+                main = KB_DE_MESSAGEASE_MAIN,
+                shifted = KB_DE_MESSAGEASE_SHIFTED,
+                numeric = KB_DE_MESSAGEASE_INVERTED_NUMPAD_NUMERIC,
             ),
     )
