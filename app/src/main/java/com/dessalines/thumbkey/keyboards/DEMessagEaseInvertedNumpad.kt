@@ -9,7 +9,6 @@ import com.dessalines.thumbkey.utils.KeyboardC
 import com.dessalines.thumbkey.utils.KeyboardDefinition
 import com.dessalines.thumbkey.utils.KeyboardDefinitionModes
 import com.dessalines.thumbkey.utils.getLocalCurrency
-import com.dessalines.thumbkey.utils.lastColKeysToFirst
 
 val KB_DE_MESSAGEASE_INVERTED_NUMPAD_NUMERIC =
     KeyboardC(

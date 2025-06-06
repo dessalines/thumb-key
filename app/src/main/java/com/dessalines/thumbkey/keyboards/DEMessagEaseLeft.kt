@@ -10,9 +10,9 @@ val KB_DE_MESSAGEASE_LEFT: KeyboardDefinition =
     KeyboardDefinition(
         title = "deutsch messagease left-handed",
         modes =
-        KeyboardDefinitionModes(
-            main = lastColKeysToFirst(KB_DE_MESSAGEASE_MAIN),
-            shifted = lastColKeysToFirst(KB_DE_MESSAGEASE_SHIFTED),
-            numeric = lastColKeysToFirst(KB_EN_MESSAGEASE_NUMERIC),
-        ),
+            KeyboardDefinitionModes(
+                main = lastColKeysToFirst(KB_DE_MESSAGEASE_MAIN),
+                shifted = lastColKeysToFirst(KB_DE_MESSAGEASE_SHIFTED),
+                numeric = lastColKeysToFirst(KB_EN_MESSAGEASE_NUMERIC),
+            ),
     )
