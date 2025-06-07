@@ -197,6 +197,7 @@ fun KeyboardScreen(
             Row(
                 modifier =
                     Modifier
+                        .navigationBarsPadding()
                         .padding(bottom = pushupSizeDp)
                         .fillMaxWidth()
                         .then(
