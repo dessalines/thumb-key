@@ -135,7 +135,7 @@ dependencies {
     implementation("androidx.room:room-ktx:2.7.1")
 
     // App compat
-    implementation("androidx.appcompat:appcompat:1.7.0")
+    implementation("androidx.appcompat:appcompat:1.7.1")
 
     // YAML serialization
     implementation("com.charleskorn.kaml:kaml:0.80.1")
