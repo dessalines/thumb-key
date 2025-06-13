@@ -94,7 +94,7 @@ dependencies {
     implementation("com.github.dessalines:room-db-export-import:0.1.0")
 
     // Compose BOM
-    implementation(platform("androidx.compose:compose-bom:2025.05.01"))
+    implementation(platform("androidx.compose:compose-bom:2025.06.00"))
     implementation("androidx.compose.ui:ui")
     implementation("androidx.compose.material3:material3")
     implementation("androidx.compose.material:material-icons-extended:1.7.8")
@@ -135,7 +135,7 @@ dependencies {
     implementation("androidx.room:room-ktx:2.7.1")
 
     // App compat
-    implementation("androidx.appcompat:appcompat:1.7.0")
+    implementation("androidx.appcompat:appcompat:1.7.1")
 
     // YAML serialization
     implementation("com.charleskorn.kaml:kaml:0.80.1")
