@@ -19,7 +19,7 @@ import com.dessalines.thumbkey.utils.keyboardLayoutsSetFromDbIndexString
 import kotlinx.coroutines.launch
 
 @SuppressLint("ViewConstructor")
-class ComposeKeyboardVieweahtesah(
+class ComposeKeyboardView(
     context: Context,
     private val settingsRepo: AppSettingsRepository,
 ) : AbstractComposeView(context) {
