@@ -40,7 +40,7 @@ steps:
     image: alpine:3
     commands:
       - apk add curl
-      - "curl -H'Title: ${CI_REPO_NAME}/${CI_COMMIT_SOURCE_BRANCH} ${CI_PIPELINE_EVENT} Passed' -d'${CI_PIPELINE_URL}' ntfy.sh/thumbkey_ci"
+      - "curl -H'Title: ✔️ ${CI_REPO_NAME}/${CI_COMMIT_SOURCE_BRANCH}' -d'${CI_PIPELINE_URL}' ntfy.sh/thumbkey_ci"
     when:
       - event: pull_request
         status: [success]
@@ -49,7 +49,7 @@ steps:
     image: alpine:3
     commands:
       - apk add curl
-      - "curl -H'Title: ${CI_REPO_NAME}/${CI_COMMIT_SOURCE_BRANCH} ${CI_PIPELINE_EVENT} Failed' -d'${CI_PIPELINE_URL}' ntfy.sh/thumbkey_ci"
+      - "curl -H'Title: ❌ ${CI_REPO_NAME}/${CI_COMMIT_SOURCE_BRANCH}' -d'${CI_PIPELINE_URL}' ntfy.sh/thumbkey_ci"
     when:
       - event: pull_request
         status: [failure]
