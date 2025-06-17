@@ -169,8 +169,8 @@ val KB_TR_ARTI_MAIN =
                     top = KeyC("f"),
                     topRight = KeyC("°", color = MUTED),
                     right = KeyC("z"),
+                    bottom = KeyC("‽", color = MUTED),
                     left = KeyC("?", color = MUTED),
-                    bottomLeft = KeyC("‽", color = MUTED),
                 ),
                 KeyItemC(
                     swipeType = EIGHT_WAY,
@@ -301,7 +301,7 @@ val KB_TR_ARTI_SHIFTED =
                     top = KeyC("F"),
                     topRight = KeyC("°", color = MUTED),
                     right = KeyC("Z"),
-                    bottomLeft = KeyC("‽", color = MUTED),
+                    bottom = KeyC("‽", color = MUTED),
                     left = KeyC("?", color = MUTED),
                 ),
                 KeyItemC(
@@ -396,7 +396,7 @@ val KB_TR_ARTI_NUMERIC =
                 KeyItemC(
                     center = KeyC("8", size = LARGE),
                     topRight = KeyC("°", color = MUTED),
-                    bottomLeft = KeyC("‽", color = MUTED),
+                    bottom = KeyC("‽", color = MUTED),
                     left = KeyC("?", color = MUTED),
                 ),
                 KeyItemC(
