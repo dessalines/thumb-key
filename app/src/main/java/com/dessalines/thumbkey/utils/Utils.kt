@@ -39,9 +39,11 @@ import androidx.navigation.NavController
 import com.dessalines.thumbkey.IMEService
 import com.dessalines.thumbkey.MainActivity
 import com.dessalines.thumbkey.R
+import com.dessalines.thumbkey.db.AppSettings
 import com.dessalines.thumbkey.db.AppSettingsViewModel
 import com.dessalines.thumbkey.db.DEFAULT_KEYBOARD_LAYOUT
 import com.dessalines.thumbkey.db.LayoutsUpdate
+import com.dessalines.thumbkey.utils.KeyboardLayout
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
@@ -1175,6 +1177,31 @@ fun getKeyboardMode(
             KeyboardMode.MAIN
         }
     }
+}
+
+fun getCurrentLayoutColumnCount(settings: AppSettings): Int {
+    val currentLayoutOrdinal = settings?.keyboardLayout ?: DEFAULT_KEYBOARD_LAYOUT
+    val currentLayout = KeyboardLayout.entries[currentLayoutOrdinal]
+    val keyboardDefinition = currentLayout.keyboardDefinition
+    val mainKeyboard = keyboardDefinition.modes.main
+    val columnCount = mainKeyboard.arr.maxOf { it.size }
+    return columnCount.toInt()
+}
+
+fun getCurrentDisplayWidth(ctx: Context): Int {
+    val displayMetrics = ctx.resources.displayMetrics
+    return (displayMetrics.widthPixels / displayMetrics.density).toInt()
+}
+
+fun getAutoKeyWidth(
+    settings: AppSettings,
+    ctx: Context,
+): Float {
+    val screenWidth = getCurrentDisplayWidth(ctx)
+    val columns = getCurrentLayoutColumnCount(settings)
+    val keyPadding = settings.keyPadding.toInt()
+    val availableWidth = screenWidth - (keyPadding * 2)
+    return (availableWidth / columns).toFloat()
 }
 
 private fun autoCapitalize(

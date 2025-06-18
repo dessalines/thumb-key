@@ -46,6 +46,7 @@ import com.dessalines.thumbkey.R
 import com.dessalines.thumbkey.db.AppSettingsViewModel
 import com.dessalines.thumbkey.db.DEFAULT_ANIMATION_HELPER_SPEED
 import com.dessalines.thumbkey.db.DEFAULT_ANIMATION_SPEED
+import com.dessalines.thumbkey.db.DEFAULT_AUTO_SIZE_KEYS
 import com.dessalines.thumbkey.db.DEFAULT_BACKDROP_ENABLED
 import com.dessalines.thumbkey.db.DEFAULT_HIDE_LETTERS
 import com.dessalines.thumbkey.db.DEFAULT_HIDE_SYMBOLS
@@ -64,6 +65,7 @@ import com.dessalines.thumbkey.ui.components.common.TestOutTextField
 import com.dessalines.thumbkey.ui.components.settings.about.SettingsDivider
 import com.dessalines.thumbkey.utils.KeyboardPosition
 import com.dessalines.thumbkey.utils.SimpleTopAppBar
+import com.dessalines.thumbkey.utils.getAutoKeyWidth
 import com.dessalines.thumbkey.utils.TAG
 import com.dessalines.thumbkey.utils.ThemeColor
 import com.dessalines.thumbkey.utils.ThemeMode
@@ -86,10 +88,11 @@ fun LookAndFeelScreen(
     val settings by appSettingsViewModel.appSettings.observeAsState()
     var themeState = ThemeMode.entries[settings?.theme ?: DEFAULT_THEME]
     var themeColorState = ThemeColor.entries[settings?.themeColor ?: DEFAULT_THEME_COLOR]
+    var autoSizeKeysState = (settings?.autoSizeKeys ?: DEFAULT_AUTO_SIZE_KEYS).toBool()
     var keySizeState = (settings?.keySize ?: DEFAULT_KEY_SIZE).toFloat()
     var keySizeSliderState by remember { mutableFloatStateOf(keySizeState) }
     var keyWidthState = settings?.keyWidth?.toFloat()
-    var keyWidthSliderState by remember { mutableStateOf(keyWidthState) }
+    var keyWidthSliderState by remember { mutableStateOf(keyWidthState ?: DEFAULT_KEY_SIZE.toFloat()) }
 
     // Need to coerce key width = null to be the same size as the keyHeight
     val nonSquareKeysState = remember { mutableStateOf(settings?.keySize != (settings?.keyWidth ?: settings?.keySize)) }
@@ -125,6 +128,7 @@ fun LookAndFeelScreen(
         appSettingsViewModel.updateLookAndFeel(
             LookAndFeelUpdate(
                 id = 1,
+                autoSizeKeys = autoSizeKeysState.toInt(),
                 keySize = keySizeState.toInt(),
                 keyWidth = if (nonSquareKeysState.value) keyWidthState?.toInt() else null,
                 pushupSize = pushupSizeState.toInt(),
@@ -290,14 +294,35 @@ fun LookAndFeelScreen(
                             )
                         },
                     )
+                    SwitchPreference(
+                        value = autoSizeKeysState,
+                        onValueChange = {
+                            autoSizeKeysState = it
+                            if (autoSizeKeysState) {
+                                keySizeState = getAutoKeyWidth(settings!!, ctx)
+                            }
+                            updateLookAndFeel()
+                        },
+                        title = {
+                            Text(stringResource(R.string.auto_size_keys))
+                        },
+                        icon = {
+                            Icon(
+                                imageVector = Icons.Outlined.HideImage,
+                                contentDescription = null,
+                            )
+                        },
+                    )
                     SliderPreference(
                         value = keySizeState,
                         sliderValue = keySizeSliderState,
                         onValueChange = {
-                            keySizeState = it
+                            keySizeState = if (autoSizeKeysState) getAutoKeyWidth(settings!!, ctx) else it
                             updateLookAndFeel()
                         },
-                        onSliderValueChange = { keySizeSliderState = it },
+                        onSliderValueChange = {
+                            keySizeSliderState = if (autoSizeKeysState) getAutoKeyWidth(settings!!, ctx) else it
+                        },
                         valueRange = 10f..200f,
                         title = {
                             val keyHeightStr =
@@ -326,7 +351,7 @@ fun LookAndFeelScreen(
                             onSliderValueChange = { keyWidthSliderState = it },
                             valueRange = 10f..200f,
                             title = {
-                                val keyWidthStr = stringResource(R.string.key_width, keyWidthSliderState?.toInt().toString())
+                                val keyWidthStr = stringResource(R.string.key_width, (keyWidthSliderState ?: DEFAULT_KEY_SIZE.toFloat()).toInt().toString())
                                 Text(keyWidthStr)
                             },
                             icon = {
