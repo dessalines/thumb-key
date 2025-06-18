@@ -22,6 +22,7 @@ data class KeyboardDefinitionModes(
 data class KeyboardDefinitionSettings(
     val autoCapitalizers: AutoCapitalizers = arrayOf(),
     val autoShift: Boolean = true,
+    val isThreeRow: Boolean = false,
 ) {
     companion object {}
 

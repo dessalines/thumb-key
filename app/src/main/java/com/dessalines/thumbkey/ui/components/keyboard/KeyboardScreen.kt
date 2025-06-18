@@ -167,7 +167,13 @@ fun KeyboardScreen(
     val cornerRadius = (keyRadius / 100.0f) * ((keyWidth + keyHeight) / 4.0f)
 
     if (mode == KeyboardMode.EMOJI) {
-        val controllerKeys = listOf(EMOJI_BACK_KEY_ITEM, NUMERIC_KEY_ITEM, BACKSPACE_KEY_ITEM, RETURN_KEY_ITEM)
+        // Default to 4 rows, but reduce to 3 for wide layouts by ditching the numeric mode toggle
+        val controllerKeys =
+            if (keyboardDefinition.settings.isThreeRow) {
+                listOf(EMOJI_BACK_KEY_ITEM, BACKSPACE_KEY_ITEM, RETURN_KEY_ITEM)
+            } else {
+                listOf(EMOJI_BACK_KEY_ITEM, NUMERIC_KEY_ITEM, BACKSPACE_KEY_ITEM, RETURN_KEY_ITEM)
+            }
         val keyboardHeight = Dp((keyHeight * controllerKeys.size) - (keyPadding * 2))
 
         ctx.currentInputConnection.requestCursorUpdates(0)
