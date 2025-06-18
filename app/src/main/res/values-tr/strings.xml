@@ -27,6 +27,7 @@
     <string name="vibrate_on_tap">Titret</string>
     <string name="play_sound_on_tap">Ses çal</string>
     <string name="auto_capitalize">Otomatik büyük harf</string>
+    <string name="auto_size_keys">Ekran genişliğine sığdırmak için büyüt</string>
     <string name="key_size">Tuş boyutu: %1$s</string>
     <string name="key_non_square">Kare olmayan tuşları kullan</string>
     <string name="key_width">Tuş genişliği: %1$s</string>
