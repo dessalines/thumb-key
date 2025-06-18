@@ -37,6 +37,7 @@ import com.dessalines.thumbkey.db.AppSettingsViewModel
 import com.dessalines.thumbkey.db.DEFAULT_ANIMATION_HELPER_SPEED
 import com.dessalines.thumbkey.db.DEFAULT_ANIMATION_SPEED
 import com.dessalines.thumbkey.db.DEFAULT_AUTO_CAPITALIZE
+import com.dessalines.thumbkey.db.DEFAULT_AUTO_SIZE_KEYS
 import com.dessalines.thumbkey.db.DEFAULT_BACKDROP_ENABLED
 import com.dessalines.thumbkey.db.DEFAULT_CIRCULAR_DRAG_ENABLED
 import com.dessalines.thumbkey.db.DEFAULT_CLOCKWISE_DRAG_ACTION
@@ -233,6 +234,7 @@ private fun resetAppSettingsToDefault(appSettingsViewModel: AppSettingsViewModel
             hideLetters = DEFAULT_HIDE_LETTERS,
             hideSymbols = DEFAULT_HIDE_SYMBOLS,
             keyBorders = DEFAULT_KEY_BORDERS,
+            autoSizeKeys = DEFAULT_AUTO_SIZE_KEYS,
             keySize = DEFAULT_KEY_SIZE,
             keyWidth = null,
             spacebarMultiTaps = DEFAULT_SPACEBAR_MULTITAPS,
