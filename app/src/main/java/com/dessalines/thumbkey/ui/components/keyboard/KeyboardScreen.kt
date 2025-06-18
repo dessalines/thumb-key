@@ -167,9 +167,10 @@ fun KeyboardScreen(
     val cornerRadius = (keyRadius / 100.0f) * ((keyWidth + keyHeight) / 4.0f)
 
     if (mode == KeyboardMode.EMOJI) {
-        // Default to 4 rows, but reduce to 3 for wide layouts by ditching the numeric mode toggle
+        // Dynamically determine number of rows based on keyboard structure
+        val rowCount = keyboardDefinition.modes.main.arr.size
         val controllerKeys =
-            if (keyboardDefinition.settings.isThreeRow) {
+            if (rowCount <= 3) {
                 listOf(EMOJI_BACK_KEY_ITEM, BACKSPACE_KEY_ITEM, RETURN_KEY_ITEM)
             } else {
                 listOf(EMOJI_BACK_KEY_ITEM, NUMERIC_KEY_ITEM, BACKSPACE_KEY_ITEM, RETURN_KEY_ITEM)

@@ -426,6 +426,5 @@ val KB_TR_ARTI: KeyboardDefinition =
         settings =
             KeyboardDefinitionSettings(
                 autoCapitalizers = arrayOf(::autoCapitalizeI, ::autoCapitalizeIApostrophe),
-                isThreeRow = true,
             ),
     )

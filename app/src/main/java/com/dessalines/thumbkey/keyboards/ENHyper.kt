@@ -236,6 +236,5 @@ val KB_EN_HYPER: KeyboardDefinition =
         settings =
             KeyboardDefinitionSettings(
                 autoCapitalizers = arrayOf(::autoCapitalizeI, ::autoCapitalizeIApostrophe),
-                isThreeRow = true,
             ),
     )
