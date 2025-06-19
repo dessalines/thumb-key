@@ -13,6 +13,7 @@ import androidx.compose.material.icons.outlined.BorderOuter
 import androidx.compose.material.icons.outlined.Colorize
 import androidx.compose.material.icons.outlined.Crop75
 import androidx.compose.material.icons.outlined.FormatSize
+import androidx.compose.material.icons.outlined.Fullscreen
 import androidx.compose.material.icons.outlined.HideImage
 import androidx.compose.material.icons.outlined.LinearScale
 import androidx.compose.material.icons.outlined.MusicNote
@@ -34,7 +35,6 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.livedata.observeAsState
 import androidx.compose.runtime.mutableFloatStateOf
-import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
@@ -51,9 +51,11 @@ import com.dessalines.thumbkey.db.DEFAULT_BACKDROP_ENABLED
 import com.dessalines.thumbkey.db.DEFAULT_HIDE_LETTERS
 import com.dessalines.thumbkey.db.DEFAULT_HIDE_SYMBOLS
 import com.dessalines.thumbkey.db.DEFAULT_KEY_BORDER_WIDTH
+import com.dessalines.thumbkey.db.DEFAULT_KEY_HEIGHT
 import com.dessalines.thumbkey.db.DEFAULT_KEY_PADDING
 import com.dessalines.thumbkey.db.DEFAULT_KEY_RADIUS
-import com.dessalines.thumbkey.db.DEFAULT_KEY_SIZE
+import com.dessalines.thumbkey.db.DEFAULT_KEY_WIDTH
+import com.dessalines.thumbkey.db.DEFAULT_NON_SQUARE_KEYS
 import com.dessalines.thumbkey.db.DEFAULT_POSITION
 import com.dessalines.thumbkey.db.DEFAULT_PUSHUP_SIZE
 import com.dessalines.thumbkey.db.DEFAULT_SOUND_ON_TAP
@@ -65,7 +67,6 @@ import com.dessalines.thumbkey.ui.components.common.TestOutTextField
 import com.dessalines.thumbkey.ui.components.settings.about.SettingsDivider
 import com.dessalines.thumbkey.utils.KeyboardPosition
 import com.dessalines.thumbkey.utils.SimpleTopAppBar
-import com.dessalines.thumbkey.utils.getAutoKeyWidth
 import com.dessalines.thumbkey.utils.TAG
 import com.dessalines.thumbkey.utils.ThemeColor
 import com.dessalines.thumbkey.utils.ThemeMode
@@ -89,13 +90,11 @@ fun LookAndFeelScreen(
     var themeState = ThemeMode.entries[settings?.theme ?: DEFAULT_THEME]
     var themeColorState = ThemeColor.entries[settings?.themeColor ?: DEFAULT_THEME_COLOR]
     var autoSizeKeysState = (settings?.autoSizeKeys ?: DEFAULT_AUTO_SIZE_KEYS).toBool()
-    var keySizeState = (settings?.keySize ?: DEFAULT_KEY_SIZE).toFloat()
-    var keySizeSliderState by remember { mutableFloatStateOf(keySizeState) }
-    var keyWidthState = settings?.keyWidth?.toFloat()
-    var keyWidthSliderState by remember { mutableStateOf(keyWidthState ?: DEFAULT_KEY_SIZE.toFloat()) }
-
-    // Need to coerce key width = null to be the same size as the keyHeight
-    val nonSquareKeysState = remember { mutableStateOf(settings?.keySize != (settings?.keyWidth ?: settings?.keySize)) }
+    var nonSquareKeysState = (settings?.nonSquareKeys ?: DEFAULT_NON_SQUARE_KEYS).toBool()
+    var keyHeightState = (settings?.keyHeight ?: DEFAULT_KEY_HEIGHT).toFloat()
+    var keyHeightSliderState by remember { mutableFloatStateOf(keyHeightState) }
+    var keyWidthState = (settings?.keyWidth ?: DEFAULT_KEY_WIDTH).toFloat()
+    var keyWidthSliderState by remember { mutableFloatStateOf(keyWidthState) }
 
     var pushupSizeState = (settings?.pushupSize ?: DEFAULT_PUSHUP_SIZE).toFloat()
     var pushupSizeSliderState by remember { mutableFloatStateOf(pushupSizeState) }
@@ -129,8 +128,9 @@ fun LookAndFeelScreen(
             LookAndFeelUpdate(
                 id = 1,
                 autoSizeKeys = autoSizeKeysState.toInt(),
-                keySize = keySizeState.toInt(),
-                keyWidth = if (nonSquareKeysState.value) keyWidthState?.toInt() else null,
+                nonSquareKeys = nonSquareKeysState.toInt(),
+                keyHeight = keyHeightState.toInt(),
+                keyWidth = keyWidthState.toInt(),
                 pushupSize = pushupSizeState.toInt(),
                 animationSpeed = animationSpeedState.toInt(),
                 animationHelperSpeed = animationHelperSpeedState.toInt(),
@@ -294,13 +294,11 @@ fun LookAndFeelScreen(
                             )
                         },
                     )
+
                     SwitchPreference(
                         value = autoSizeKeysState,
                         onValueChange = {
                             autoSizeKeysState = it
-                            if (autoSizeKeysState) {
-                                keySizeState = getAutoKeyWidth(settings!!, ctx)
-                            }
                             updateLookAndFeel()
                         },
                         title = {
@@ -308,55 +306,35 @@ fun LookAndFeelScreen(
                         },
                         icon = {
                             Icon(
-                                imageVector = Icons.Outlined.HideImage,
+                                imageVector = Icons.Outlined.Fullscreen,
                                 contentDescription = null,
                             )
                         },
                     )
-                    SliderPreference(
-                        value = keySizeState,
-                        sliderValue = keySizeSliderState,
-                        onValueChange = {
-                            keySizeState = if (autoSizeKeysState) getAutoKeyWidth(settings!!, ctx) else it
-                            updateLookAndFeel()
-                        },
-                        onSliderValueChange = {
-                            keySizeSliderState = if (autoSizeKeysState) getAutoKeyWidth(settings!!, ctx) else it
-                        },
-                        valueRange = 10f..200f,
-                        title = {
-                            val keyHeightStr =
-                                stringResource(
-                                    if (nonSquareKeysState.value) R.string.key_height else R.string.key_size,
-                                    keySizeSliderState.toInt().toString(),
-                                )
 
-                            Text(keyHeightStr)
-                        },
-                        icon = {
-                            Icon(
-                                imageVector = Icons.Outlined.FormatSize,
-                                contentDescription = null,
-                            )
-                        },
-                    )
-                    if (nonSquareKeysState.value) {
+                    if (!autoSizeKeysState) {
                         SliderPreference(
-                            value = keyWidthState ?: DEFAULT_KEY_SIZE.toFloat(),
-                            sliderValue = keyWidthSliderState ?: DEFAULT_KEY_SIZE.toFloat(),
+                            value = keyWidthState,
+                            sliderValue = keyWidthSliderState,
                             onValueChange = {
                                 keyWidthState = it
                                 updateLookAndFeel()
                             },
-                            onSliderValueChange = { keyWidthSliderState = it },
+                            onSliderValueChange = {
+                                keyWidthSliderState = it
+                            },
                             valueRange = 10f..200f,
                             title = {
-                                val keyWidthStr = stringResource(R.string.key_width, (keyWidthSliderState ?: DEFAULT_KEY_SIZE.toFloat()).toInt().toString())
-                                Text(keyWidthStr)
+                                val keyHeightStr =
+                                    stringResource(
+                                        if (nonSquareKeysState) R.string.key_width else R.string.key_size,
+                                        keyWidthSliderState.toInt().toString(),
+                                    )
+                                Text(keyHeightStr)
                             },
                             icon = {
                                 Icon(
-                                    imageVector = Icons.Outlined.Crop75,
+                                    imageVector = Icons.Outlined.FormatSize,
                                     contentDescription = null,
                                 )
                             },
@@ -364,9 +342,9 @@ fun LookAndFeelScreen(
                     }
 
                     SwitchPreference(
-                        value = nonSquareKeysState.value,
+                        value = nonSquareKeysState,
                         onValueChange = {
-                            nonSquareKeysState.value = it
+                            nonSquareKeysState = it
                             updateLookAndFeel()
                         },
                         title = {
@@ -379,6 +357,36 @@ fun LookAndFeelScreen(
                             )
                         },
                     )
+
+                    if (nonSquareKeysState) {
+                        SliderPreference(
+                            value = keyHeightState ?: DEFAULT_KEY_HEIGHT.toFloat(),
+                            sliderValue = keyHeightSliderState ?: DEFAULT_KEY_HEIGHT.toFloat(),
+                            onValueChange = {
+                                keyHeightState = it
+                                updateLookAndFeel()
+                            },
+                            onSliderValueChange = {
+                                keyHeightSliderState = it
+                            },
+                            valueRange = 10f..200f,
+                            title = {
+                                val keyHeightStr =
+                                    stringResource(
+                                        R.string.key_height,
+                                        (keyHeightSliderState ?: DEFAULT_KEY_HEIGHT.toFloat()).toInt().toString(),
+                                    )
+                                Text(keyHeightStr)
+                            },
+                            icon = {
+                                Icon(
+                                    imageVector = Icons.Outlined.Crop75,
+                                    contentDescription = null,
+                                )
+                            },
+                        )
+                    }
+
                     SliderPreference(
                         value = keyPaddingState,
                         sliderValue = keyPaddingSliderState,

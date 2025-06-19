@@ -46,10 +46,12 @@ import com.dessalines.thumbkey.db.DEFAULT_HIDE_LETTERS
 import com.dessalines.thumbkey.db.DEFAULT_HIDE_SYMBOLS
 import com.dessalines.thumbkey.db.DEFAULT_KEYBOARD_LAYOUT
 import com.dessalines.thumbkey.db.DEFAULT_KEY_BORDER_WIDTH
+import com.dessalines.thumbkey.db.DEFAULT_KEY_HEIGHT
 import com.dessalines.thumbkey.db.DEFAULT_KEY_PADDING
 import com.dessalines.thumbkey.db.DEFAULT_KEY_RADIUS
-import com.dessalines.thumbkey.db.DEFAULT_KEY_SIZE
+import com.dessalines.thumbkey.db.DEFAULT_KEY_WIDTH
 import com.dessalines.thumbkey.db.DEFAULT_MIN_SWIPE_LENGTH
+import com.dessalines.thumbkey.db.DEFAULT_NON_SQUARE_KEYS
 import com.dessalines.thumbkey.db.DEFAULT_POSITION
 import com.dessalines.thumbkey.db.DEFAULT_PUSHUP_SIZE
 import com.dessalines.thumbkey.db.DEFAULT_SLIDE_BACKSPACE_DEADZONE_ENABLED
@@ -153,12 +155,19 @@ fun KeyboardScreen(
     val backdropPadding = 6.dp
     val keyPadding = settings?.keyPadding ?: DEFAULT_KEY_PADDING
     val autoSizeKeys = (settings?.autoSizeKeys ?: DEFAULT_AUTO_SIZE_KEYS).toBool()
-    val legendHeight = if (autoSizeKeys) {
-        getAutoKeyWidth(settings!!, ctx).toInt()
-    } else {
-        settings?.keySize ?: DEFAULT_KEY_SIZE
-    }
-    val legendWidth = settings?.keyWidth ?: legendHeight
+    val nonSquareKeys = (settings?.nonSquareKeys ?: DEFAULT_NON_SQUARE_KEYS).toBool()
+    val legendWidth =
+        if (autoSizeKeys) {
+            getAutoKeyWidth(settings!!, ctx).toInt()
+        } else {
+            settings?.keyWidth ?: DEFAULT_KEY_WIDTH
+        }
+    val legendHeight =
+        if (!nonSquareKeys) {
+            legendWidth
+        } else {
+            settings?.keyHeight ?: DEFAULT_KEY_HEIGHT
+        }
     val keyRadius = settings?.keyRadius ?: DEFAULT_KEY_RADIUS
     val dragReturnEnabled = (settings?.dragReturnEnabled ?: DEFAULT_DRAG_RETURN_ENABLED).toBool()
     val circularDragEnabled = (settings?.circularDragEnabled ?: DEFAULT_CIRCULAR_DRAG_ENABLED).toBool()
