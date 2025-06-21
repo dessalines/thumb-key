@@ -27,7 +27,10 @@ import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 import java.util.concurrent.Executors
 
-const val DEFAULT_KEY_SIZE = 64
+const val DEFAULT_AUTO_SIZE_KEYS = 1
+const val DEFAULT_NON_SQUARE_KEYS = 0
+const val DEFAULT_KEY_WIDTH = 64
+const val DEFAULT_KEY_HEIGHT = DEFAULT_KEY_WIDTH
 const val DEFAULT_ANIMATION_SPEED = 250
 const val DEFAULT_ANIMATION_HELPER_SPEED = 250
 const val DEFAULT_POSITION = 0
@@ -63,14 +66,25 @@ const val DEFAULT_KEY_MODIFICATIONS = ""
 data class AppSettings(
     @PrimaryKey(autoGenerate = true) val id: Int,
     @ColumnInfo(
-        name = "key_size",
-        defaultValue = DEFAULT_KEY_SIZE.toString(),
+        name = "auto_size_keys",
+        defaultValue = DEFAULT_AUTO_SIZE_KEYS.toString(),
     )
-    val keySize: Int,
+    val autoSizeKeys: Int,
+    @ColumnInfo(
+        name = "non_square_keys",
+        defaultValue = DEFAULT_NON_SQUARE_KEYS.toString(),
+    )
+    val nonSquareKeys: Int,
+    @ColumnInfo(
+        name = "key_height",
+        defaultValue = DEFAULT_KEY_HEIGHT.toString(),
+    )
+    val keyHeight: Int,
     @ColumnInfo(
         name = "key_width",
+        defaultValue = DEFAULT_KEY_WIDTH.toString(),
     )
-    val keyWidth: Int?,
+    val keyWidth: Int,
     @ColumnInfo(
         name = "animation_speed",
         defaultValue = DEFAULT_ANIMATION_SPEED.toString(),
@@ -255,13 +269,21 @@ data class LayoutsUpdate(
 data class LookAndFeelUpdate(
     val id: Int,
     @ColumnInfo(
-        name = "key_size",
+        name = "auto_size_keys",
     )
-    val keySize: Int,
+    val autoSizeKeys: Int,
+    @ColumnInfo(
+        name = "non_square_keys",
+    )
+    val nonSquareKeys: Int,
+    @ColumnInfo(
+        name = "key_height",
+    )
+    val keyHeight: Int,
     @ColumnInfo(
         name = "key_width",
     )
-    val keyWidth: Int?,
+    val keyWidth: Int,
     @ColumnInfo(
         name = "animation_speed",
     )
@@ -613,8 +635,41 @@ val MIGRATION_16_17 =
         }
     }
 
+val MIGRATION_17_18 =
+    object : Migration(17, 18) {
+        override fun migrate(db: SupportSQLiteDatabase) {
+            db.execSQL(
+                "ALTER TABLE AppSettings ADD COLUMN auto_size_keys INTEGER NOT NULL DEFAULT $DEFAULT_AUTO_SIZE_KEYS",
+            )
+            // The default for this new setting is *enabled*, but that would be a change for existing users, so if
+            // migrating from a previous dabase version withouth the setting at all, assume the user manually set
+            // the actual size they want to use, hence defaulting legacy users to *disabled* on upgrade.
+            db.execSQL(
+                "UPDATE AppSettings SET auto_size_keys = 0",
+            )
+            db.execSQL(
+                "ALTER TABLE AppSettings ADD COLUMN non_square_keys INTEGER NOT NULL DEFAULT $DEFAULT_NON_SQUARE_KEYS",
+            )
+            db.execSQL(
+                "UPDATE AppSettings SET non_square_keys = 1 WHERE key_width IS NOT NULL",
+            )
+            db.execSQL(
+                "ALTER TABLE AppSettings RENAME COLUMN key_size TO key_height",
+            )
+            db.execSQL(
+                "ALTER TABLE AppSettings MODIFY COLUMN key_height INTEGER NOT NULL default $DEFAULT_KEY_HEIGHT",
+            )
+            db.execSQL(
+                "UPDATE AppSettings SET key_width = $DEFAULT_KEY_WIDTH WHERE key_width IS NULL",
+            )
+            db.execSQL(
+                "ALTER TABLE AppSettings MODIFY COLUMN key_width INTEGER NOT NULL default $DEFAULT_KEY_WIDTH",
+            )
+        }
+    }
+
 @Database(
-    version = 17,
+    version = 18,
     entities = [AppSettings::class],
     exportSchema = true,
 )
@@ -653,6 +708,7 @@ abstract class AppDB : RoomDatabase() {
                             MIGRATION_14_15,
                             MIGRATION_15_16,
                             MIGRATION_16_17,
+                            MIGRATION_17_18,
                         )
                         // Necessary because it can't insert data on creation
                         .addCallback(
