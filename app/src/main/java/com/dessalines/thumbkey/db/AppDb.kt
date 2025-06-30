@@ -66,16 +66,6 @@ const val DEFAULT_KEY_MODIFICATIONS = ""
 data class AppSettings(
     @PrimaryKey(autoGenerate = true) val id: Int,
     @ColumnInfo(
-        name = "auto_size_keys",
-        defaultValue = DEFAULT_AUTO_SIZE_KEYS.toString(),
-    )
-    val autoSizeKeys: Int,
-    @ColumnInfo(
-        name = "non_square_keys",
-        defaultValue = DEFAULT_NON_SQUARE_KEYS.toString(),
-    )
-    val nonSquareKeys: Int,
-    @ColumnInfo(
         name = "key_height",
         defaultValue = DEFAULT_KEY_HEIGHT.toString(),
     )
@@ -252,6 +242,16 @@ data class AppSettings(
         defaultValue = "",
     )
     val keyModifications: String,
+    @ColumnInfo(
+        name = "auto_size_keys",
+        defaultValue = DEFAULT_AUTO_SIZE_KEYS.toString(),
+    )
+    val autoSizeKeys: Int,
+    @ColumnInfo(
+        name = "non_square_keys",
+        defaultValue = DEFAULT_NON_SQUARE_KEYS.toString(),
+    )
+    val nonSquareKeys: Int,
 )
 
 data class LayoutsUpdate(
@@ -268,13 +268,6 @@ data class LayoutsUpdate(
 
 data class LookAndFeelUpdate(
     val id: Int,
-    @ColumnInfo(
-        name = "auto_size_keys",
-    )
-    val autoSizeKeys: Int,
-    @ColumnInfo(
-        name = "non_square_keys",
-    )
     val nonSquareKeys: Int,
     @ColumnInfo(
         name = "key_height",
@@ -340,6 +333,13 @@ data class LookAndFeelUpdate(
         name = "key_radius",
     )
     val keyRadius: Int,
+    @ColumnInfo(
+        name = "auto_size_keys",
+    )
+    val autoSizeKeys: Int,
+    @ColumnInfo(
+        name = "non_square_keys",
+    )
 )
 
 data class BehaviorUpdate(
@@ -641,29 +641,23 @@ val MIGRATION_17_18 =
             db.execSQL(
                 "ALTER TABLE AppSettings ADD COLUMN auto_size_keys INTEGER NOT NULL DEFAULT $DEFAULT_AUTO_SIZE_KEYS",
             )
-            // The default for this new setting is *enabled*, but that would be a change for existing users, so if
-            // migrating from a previous dabase version withouth the setting at all, assume the user manually set
-            // the actual size they want to use, hence defaulting legacy users to *disabled* on upgrade.
-            db.execSQL(
-                "UPDATE AppSettings SET auto_size_keys = 0",
-            )
             db.execSQL(
                 "ALTER TABLE AppSettings ADD COLUMN non_square_keys INTEGER NOT NULL DEFAULT $DEFAULT_NON_SQUARE_KEYS",
+            )
+            db.execSQL(
+                "ALTER TABLE AppSettings ADD COLUMN key_height INTEGER NOT NULL DEFAULT $DEFAULT_KEY_HEIGHT",
             )
             db.execSQL(
                 "UPDATE AppSettings SET non_square_keys = 1 WHERE key_width IS NOT NULL",
             )
             db.execSQL(
-                "ALTER TABLE AppSettings RENAME COLUMN key_size TO key_height",
-            )
-            db.execSQL(
-                "ALTER TABLE AppSettings MODIFY COLUMN key_height INTEGER NOT NULL default $DEFAULT_KEY_HEIGHT",
-            )
-            db.execSQL(
                 "UPDATE AppSettings SET key_width = $DEFAULT_KEY_WIDTH WHERE key_width IS NULL",
             )
             db.execSQL(
-                "ALTER TABLE AppSettings MODIFY COLUMN key_width INTEGER NOT NULL default $DEFAULT_KEY_WIDTH",
+                "ALTER TABLE AppSettings MODIFY COLUMN key_width INTEGER NOT NULL",
+            )
+            db.execSQL(
+                "ALTER TABLE AppSettings MODIFY COLUMN key_width INTEGER SET DEFAULT $DEFAULT_KEY_WIDTH",
             )
         }
     }
