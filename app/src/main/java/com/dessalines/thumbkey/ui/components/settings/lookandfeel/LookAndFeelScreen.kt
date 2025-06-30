@@ -127,10 +127,6 @@ fun LookAndFeelScreen(
         appSettingsViewModel.updateLookAndFeel(
             LookAndFeelUpdate(
                 id = 1,
-                autoSizeKeys = autoSizeKeysState.toInt(),
-                nonSquareKeys = nonSquareKeysState.toInt(),
-                keyHeight = keyHeightState.toInt(),
-                keyWidth = keyWidthState.toInt(),
                 pushupSize = pushupSizeState.toInt(),
                 animationSpeed = animationSpeedState.toInt(),
                 animationHelperSpeed = animationHelperSpeedState.toInt(),
@@ -145,6 +141,10 @@ fun LookAndFeelScreen(
                 keyPadding = keyPaddingState.toInt(),
                 keyBorderWidth = keyBorderWidthState.toInt(),
                 keyRadius = keyRadiusState.toInt(),
+                autoSizeKeys = autoSizeKeysState.toInt(),
+                nonSquareKeys = nonSquareKeysState.toInt(),
+                keyWidth = keyWidthState.toInt(),
+                keyHeight = keyHeightState.toInt(),
             ),
         )
     }

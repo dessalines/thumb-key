@@ -236,10 +236,6 @@ private fun resetAppSettingsToDefault(appSettingsViewModel: AppSettingsViewModel
             hideLetters = DEFAULT_HIDE_LETTERS,
             hideSymbols = DEFAULT_HIDE_SYMBOLS,
             keyBorders = DEFAULT_KEY_BORDERS,
-            autoSizeKeys = DEFAULT_AUTO_SIZE_KEYS,
-            nonSquareKeys = DEFAULT_NON_SQUARE_KEYS,
-            keyHeight = DEFAULT_KEY_HEIGHT,
-            keyWidth = DEFAULT_KEY_WIDTH,
             spacebarMultiTaps = DEFAULT_SPACEBAR_MULTITAPS,
             theme = DEFAULT_THEME,
             themeColor = DEFAULT_THEME_COLOR,
@@ -256,6 +252,10 @@ private fun resetAppSettingsToDefault(appSettingsViewModel: AppSettingsViewModel
             counterclockwiseDragAction = DEFAULT_COUNTERCLOCKWISE_DRAG_ACTION,
             ghostKeysEnabled = DEFAULT_GHOST_KEYS_ENABLED,
             keyModifications = DEFAULT_KEY_MODIFICATIONS,
+            autoSizeKeys = DEFAULT_AUTO_SIZE_KEYS,
+            nonSquareKeys = DEFAULT_NON_SQUARE_KEYS,
+            keyWidth = DEFAULT_KEY_WIDTH,
+            keyHeight = DEFAULT_KEY_HEIGHT,
         ),
     )
 }

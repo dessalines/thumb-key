@@ -39,7 +39,6 @@ import androidx.navigation.NavController
 import com.dessalines.thumbkey.IMEService
 import com.dessalines.thumbkey.MainActivity
 import com.dessalines.thumbkey.R
-import com.dessalines.thumbkey.db.AppSettings
 import com.dessalines.thumbkey.db.AppSettingsViewModel
 import com.dessalines.thumbkey.db.DEFAULT_KEYBOARD_LAYOUT
 import com.dessalines.thumbkey.db.LayoutsUpdate

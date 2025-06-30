@@ -65,26 +65,17 @@ const val DEFAULT_KEY_MODIFICATIONS = ""
 @Entity
 data class AppSettings(
     @PrimaryKey(autoGenerate = true) val id: Int,
+    // These columns exist in the database schema because we can't drop them without recreating tables.
+    // They still have to be handled nearly identically to active columns, but they are actually defunct.
     @ColumnInfo(
-        name = "auto_size_keys",
-        defaultValue = DEFAULT_AUTO_SIZE_KEYS.toString(),
-    )
-    val autoSizeKeys: Int,
-    @ColumnInfo(
-        name = "non_square_keys",
-        defaultValue = DEFAULT_NON_SQUARE_KEYS.toString(),
-    )
-    val nonSquareKeys: Int,
-    @ColumnInfo(
-        name = "key_height",
-        defaultValue = DEFAULT_KEY_HEIGHT.toString(),
-    )
-    val keyHeight: Int,
-    @ColumnInfo(
-        name = "key_width",
+        name = "key_size_defunct",
         defaultValue = DEFAULT_KEY_WIDTH.toString(),
     )
-    val keyWidth: Int,
+    val keySizeDefunct: Int = DEFAULT_KEY_WIDTH,
+    @ColumnInfo(
+        name = "key_width_defunct",
+    )
+    val keyWidthDefunct: Int? = null,
     @ColumnInfo(
         name = "animation_speed",
         defaultValue = DEFAULT_ANIMATION_SPEED.toString(),
@@ -252,6 +243,26 @@ data class AppSettings(
         defaultValue = "",
     )
     val keyModifications: String,
+    @ColumnInfo(
+        name = "auto_size_keys",
+        defaultValue = DEFAULT_AUTO_SIZE_KEYS.toString(),
+    )
+    val autoSizeKeys: Int,
+    @ColumnInfo(
+        name = "non_square_keys",
+        defaultValue = DEFAULT_NON_SQUARE_KEYS.toString(),
+    )
+    val nonSquareKeys: Int,
+    @ColumnInfo(
+        name = "key_width_v18",
+        defaultValue = DEFAULT_KEY_WIDTH.toString(),
+    )
+    val keyWidth: Int,
+    @ColumnInfo(
+        name = "key_height_v18",
+        defaultValue = DEFAULT_KEY_HEIGHT.toString(),
+    )
+    val keyHeight: Int,
 )
 
 data class LayoutsUpdate(
@@ -268,22 +279,6 @@ data class LayoutsUpdate(
 
 data class LookAndFeelUpdate(
     val id: Int,
-    @ColumnInfo(
-        name = "auto_size_keys",
-    )
-    val autoSizeKeys: Int,
-    @ColumnInfo(
-        name = "non_square_keys",
-    )
-    val nonSquareKeys: Int,
-    @ColumnInfo(
-        name = "key_height",
-    )
-    val keyHeight: Int,
-    @ColumnInfo(
-        name = "key_width",
-    )
-    val keyWidth: Int,
     @ColumnInfo(
         name = "animation_speed",
     )
@@ -340,6 +335,22 @@ data class LookAndFeelUpdate(
         name = "key_radius",
     )
     val keyRadius: Int,
+    @ColumnInfo(
+        name = "auto_size_keys",
+    )
+    val autoSizeKeys: Int,
+    @ColumnInfo(
+        name = "non_square_keys",
+    )
+    val nonSquareKeys: Int,
+    @ColumnInfo(
+        name = "key_width_v18",
+    )
+    val keyWidth: Int,
+    @ColumnInfo(
+        name = "key_height_v18",
+    )
+    val keyHeight: Int,
 )
 
 data class BehaviorUpdate(
@@ -639,31 +650,34 @@ val MIGRATION_17_18 =
     object : Migration(17, 18) {
         override fun migrate(db: SupportSQLiteDatabase) {
             db.execSQL(
-                "ALTER TABLE AppSettings ADD COLUMN auto_size_keys INTEGER NOT NULL DEFAULT $DEFAULT_AUTO_SIZE_KEYS",
+                "ALTER TABLE AppSettings RENAME COLUMN key_size TO key_size_defunct",
             )
-            // The default for this new setting is *enabled*, but that would be a change for existing users, so if
-            // migrating from a previous dabase version withouth the setting at all, assume the user manually set
-            // the actual size they want to use, hence defaulting legacy users to *disabled* on upgrade.
             db.execSQL(
-                "UPDATE AppSettings SET auto_size_keys = 0",
+                "ALTER TABLE AppSettings RENAME COLUMN key_width TO key_width_defunct",
+            )
+            db.execSQL(
+                "ALTER TABLE AppSettings ADD COLUMN auto_size_keys INTEGER NOT NULL DEFAULT $DEFAULT_AUTO_SIZE_KEYS",
             )
             db.execSQL(
                 "ALTER TABLE AppSettings ADD COLUMN non_square_keys INTEGER NOT NULL DEFAULT $DEFAULT_NON_SQUARE_KEYS",
             )
             db.execSQL(
-                "UPDATE AppSettings SET non_square_keys = 1 WHERE key_width IS NOT NULL",
+                "ALTER TABLE AppSettings ADD COLUMN key_width_v18 INTEGER NOT NULL DEFAULT $DEFAULT_KEY_WIDTH",
             )
             db.execSQL(
-                "ALTER TABLE AppSettings RENAME COLUMN key_size TO key_height",
+                "ALTER TABLE AppSettings ADD COLUMN key_height_v18 INTEGER NOT NULL DEFAULT $DEFAULT_KEY_HEIGHT",
             )
             db.execSQL(
-                "ALTER TABLE AppSettings MODIFY COLUMN key_height INTEGER NOT NULL default $DEFAULT_KEY_HEIGHT",
+                "UPDATE AppSettings SET auto_size_keys = 0 WHERE key_size_defunct != $DEFAULT_KEY_HEIGHT",
             )
             db.execSQL(
-                "UPDATE AppSettings SET key_width = $DEFAULT_KEY_WIDTH WHERE key_width IS NULL",
+                "UPDATE AppSettings SET non_square_keys = 1 WHERE key_width_defunct != $DEFAULT_KEY_WIDTH",
             )
             db.execSQL(
-                "ALTER TABLE AppSettings MODIFY COLUMN key_width INTEGER NOT NULL default $DEFAULT_KEY_WIDTH",
+                "UPDATE AppSettings SET key_width_v18 = IFNULL(key_width_defunct, $DEFAULT_KEY_WIDTH)",
+            )
+            db.execSQL(
+                "UPDATE AppSettings SET key_height_v18 = IFNULL(key_size_defunct, $DEFAULT_KEY_HEIGHT)",
             )
         }
     }
