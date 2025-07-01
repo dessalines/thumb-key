@@ -10,15 +10,15 @@ import com.dessalines.thumbkey.utils.FontSizeVariant.*
 import com.dessalines.thumbkey.utils.KeyAction.*
 import com.dessalines.thumbkey.utils.SwipeNWay.*
 
-val KB_EN_DE_THUMBKEY_V2_MAIN =
+val KB_SRLATN_THUMBKEY_MAIN =
     KeyboardC(
         listOf(
             listOf(
                 KeyItemC(
                     center = KeyC("s", size = LARGE),
-                    swipeType = FOUR_WAY_DIAGONAL,
                     bottomRight = KeyC("w"),
-                    topRight = KeyC("ß"),
+                    top = KeyC("š"),
+                    bottom = KeyC("ž"),
                 ),
                 KeyItemC(
                     center = KeyC("r", size = LARGE),
@@ -27,9 +27,8 @@ val KB_EN_DE_THUMBKEY_V2_MAIN =
                 ),
                 KeyItemC(
                     center = KeyC("o", size = LARGE),
+                    swipeType = FOUR_WAY_DIAGONAL,
                     bottomLeft = KeyC("u"),
-                    topLeft = KeyC("ü"),
-                    bottom = KeyC("ö"),
                 ),
                 EMOJI_KEY_ITEM,
             ),
@@ -61,15 +60,20 @@ val KB_EN_DE_THUMBKEY_V2_MAIN =
                             swipeReturnAction = ToggleCurrentWordCapitalization(true),
                             color = MUTED,
                         ),
-                    bottom = KeyC("ä"),
+                    bottom =
+                        KeyC(
+                            ToggleShiftMode(false),
+                            swipeReturnAction = ToggleCurrentWordCapitalization(false),
+                        ),
                 ),
                 NUMERIC_KEY_ITEM,
             ),
             listOf(
                 KeyItemC(
                     center = KeyC("t", size = LARGE),
-                    swipeType = FOUR_WAY_DIAGONAL,
                     topRight = KeyC("c"),
+                    top = KeyC("č"),
+                    bottom = KeyC("ć"),
                 ),
                 KeyItemC(
                     center = KeyC("i", size = LARGE),
@@ -82,8 +86,8 @@ val KB_EN_DE_THUMBKEY_V2_MAIN =
                 ),
                 KeyItemC(
                     center = KeyC("e", size = LARGE),
-                    swipeType = FOUR_WAY_DIAGONAL,
                     topLeft = KeyC("d"),
+                    bottom = KeyC("đ"),
                 ),
                 BACKSPACE_KEY_ITEM,
             ),
@@ -94,15 +98,15 @@ val KB_EN_DE_THUMBKEY_V2_MAIN =
         ),
     )
 
-val KB_EN_DE_THUMBKEY_V2_SHIFTED =
+val KB_SRLATN_THUMBKEY_SHIFTED =
     KeyboardC(
         listOf(
             listOf(
                 KeyItemC(
                     center = KeyC("S", size = LARGE),
-                    swipeType = FOUR_WAY_DIAGONAL,
                     bottomRight = KeyC("W"),
-                    topRight = KeyC("ẞ"),
+                    top = KeyC("Š"),
+                    bottom = KeyC("Ž"),
                 ),
                 KeyItemC(
                     center = KeyC("R", size = LARGE),
@@ -113,8 +117,6 @@ val KB_EN_DE_THUMBKEY_V2_SHIFTED =
                     center = KeyC("O", size = LARGE),
                     swipeType = FOUR_WAY_DIAGONAL,
                     bottomLeft = KeyC("U"),
-                    topLeft = KeyC("Ü"),
-                    bottom = KeyC("Ö"),
                 ),
                 EMOJI_KEY_ITEM,
             ),
@@ -139,7 +141,6 @@ val KB_EN_DE_THUMBKEY_V2_SHIFTED =
                     center = KeyC("A", size = LARGE),
                     swipeType = FOUR_WAY_CROSS,
                     left = KeyC("L"),
-                    right = KeyC("Ä"),
                     bottom =
                         KeyC(
                             display = KeyDisplay.IconDisplay(Icons.Outlined.ArrowDropDown),
@@ -161,8 +162,9 @@ val KB_EN_DE_THUMBKEY_V2_SHIFTED =
             listOf(
                 KeyItemC(
                     center = KeyC("T", size = LARGE),
-                    swipeType = FOUR_WAY_DIAGONAL,
                     topRight = KeyC("C"),
+                    top = KeyC("Č"),
+                    bottom = KeyC("Ć"),
                 ),
                 KeyItemC(
                     center = KeyC("I", size = LARGE),
@@ -175,8 +177,8 @@ val KB_EN_DE_THUMBKEY_V2_SHIFTED =
                 ),
                 KeyItemC(
                     center = KeyC("E", size = LARGE),
-                    swipeType = FOUR_WAY_DIAGONAL,
                     topLeft = KeyC("D"),
+                    bottom = KeyC("Đ"),
                 ),
                 BACKSPACE_KEY_ITEM,
             ),
@@ -187,17 +189,13 @@ val KB_EN_DE_THUMBKEY_V2_SHIFTED =
         ),
     )
 
-val KB_EN_DE_THUMBKEY_V2: KeyboardDefinition =
+val KB_SRLATN_THUMBKEY: KeyboardDefinition =
     KeyboardDefinition(
-        title = "english deutsch thumb-key v2",
+        title = "srpski (latinica) thumb-key",
         modes =
             KeyboardDefinitionModes(
-                main = KB_EN_DE_THUMBKEY_V2_MAIN,
-                shifted = KB_EN_DE_THUMBKEY_V2_SHIFTED,
+                main = KB_SRLATN_THUMBKEY_MAIN,
+                shifted = KB_SRLATN_THUMBKEY_SHIFTED,
                 numeric = NUMERIC_KEYBOARD,
-            ),
-        settings =
-            KeyboardDefinitionSettings(
-                autoCapitalizers = arrayOf(::autoCapitalizeI, ::autoCapitalizeIApostrophe),
             ),
     )
