@@ -102,6 +102,7 @@ val KB_EN_DE_THUMBKEY_V2_SHIFTED =
                     center = KeyC("S", size = LARGE),
                     swipeType = FOUR_WAY_DIAGONAL,
                     bottomRight = KeyC("W"),
+                    topRight = KeyC("ẞ"),
                 ),
                 KeyItemC(
                     center = KeyC("R", size = LARGE),
