@@ -170,6 +170,7 @@ import com.dessalines.thumbkey.keyboards.KB_SK_THUMBKEY_V1
 import com.dessalines.thumbkey.keyboards.KB_SK_THUMBKEY_V2
 import com.dessalines.thumbkey.keyboards.KB_SK_THUMBKEY_V3
 import com.dessalines.thumbkey.keyboards.KB_SL_MESSAGEASE_SYMBOLS
+import com.dessalines.thumbkey.keyboards.KB_SRLATN_EN_DE_THUMBKEY
 import com.dessalines.thumbkey.keyboards.KB_SRLATN_THUMBKEY
 import com.dessalines.thumbkey.keyboards.KB_SR_THUMBKEY
 import com.dessalines.thumbkey.keyboards.KB_SV_MESSAGEASE
@@ -376,4 +377,5 @@ enum class KeyboardLayout(
     TRArti(KB_TR_ARTI),
     SRThumbKey(KB_SR_THUMBKEY),
     SRLatnThumbKey(KB_SRLATN_THUMBKEY),
+    SRLatnEnDeThumbKey(KB_SRLATN_EN_DE_THUMBKEY),
 }
