@@ -255,7 +255,7 @@ fun keyboardPositionToAlignment(position: KeyboardPosition): Alignment =
         KeyboardPosition.Right -> Alignment.BottomEnd
         KeyboardPosition.Center -> Alignment.BottomCenter
         KeyboardPosition.Left -> Alignment.BottomStart
-        KeyboardPosition.Split -> Alignment.BottomEnd
+        KeyboardPosition.Split -> Alignment.BottomStart
     }
 
 /**

@@ -381,7 +381,7 @@ fun KeyboardScreen(
                 if (position != KeyboardPosition.Split) {
                     break
                 }
-                tempAlignment = keyboardPositionToAlignment(KeyboardPosition.Left)
+                tempAlignment = keyboardPositionToAlignment(KeyboardPosition.Right)
                 tempBackdropEnabled = false
             } else {
                 tempAlignment = keyboardPositionToAlignment(position)
