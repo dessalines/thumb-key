@@ -410,7 +410,7 @@ fun KeyboardScreen(
                         Modifier
                             .navigationBarsPadding()
                             .then(
-                                if (tempBackdropEnabled) {
+                                if (backdropEnabled) {
                                     Modifier.padding(top = backdropPadding)
                                 } else {
                                     (Modifier)
