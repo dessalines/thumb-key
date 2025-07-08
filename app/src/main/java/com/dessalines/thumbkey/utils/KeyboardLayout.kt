@@ -110,6 +110,7 @@ import com.dessalines.thumbkey.keyboards.KB_FI_MESSAGEASE
 import com.dessalines.thumbkey.keyboards.KB_FI_THUMBKEY
 import com.dessalines.thumbkey.keyboards.KB_FI_THUMBKEY_WIDE
 import com.dessalines.thumbkey.keyboards.KB_FI_TYPESPLIT
+import com.dessalines.thumbkey.keyboards.KB_FR_EN_FRAPPE_FLUIDE_V1
 import com.dessalines.thumbkey.keyboards.KB_FR_MESSAGEASE
 import com.dessalines.thumbkey.keyboards.KB_FR_THUMBKEY_V1
 import com.dessalines.thumbkey.keyboards.KB_FR_THUMBKEY_V2
@@ -378,4 +379,5 @@ enum class KeyboardLayout(
     SRThumbKey(KB_SR_THUMBKEY),
     SRLatnThumbKey(KB_SRLATN_THUMBKEY),
     SRLatnEnDeThumbKey(KB_SRLATN_EN_DE_THUMBKEY),
+    FRENFrappeFluideV1(KB_FR_EN_FRAPPE_FLUIDE_V1),
 }
