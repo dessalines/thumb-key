@@ -6,6 +6,7 @@ import android.util.Log
 import androidx.annotation.Keep
 import androidx.compose.runtime.MutableState
 import arrow.optics.*
+import com.charleskorn.kaml.AnchorsAndAliases
 import com.charleskorn.kaml.Yaml
 import com.charleskorn.kaml.YamlConfiguration
 import com.dessalines.thumbkey.keyboards.COPY_KEYC
@@ -39,7 +40,7 @@ fun getModifiedKeyboardDefinition(
     keyModifications: String,
 ): KeyboardDefinition? =
     try {
-        val keyMods = serializeKeyModifications(keyModifications)
+        val keyMods = deserializeKeyModifications(keyModifications)
         keyMods[keyboardLayout.name]?.let {
             val modifiedKeyboardDefinition = modifyKeyboardDefinition(keyboardLayout, it)
             Log.d(TAG, "key modifications applied to layout ${keyboardLayout.name}")
@@ -57,7 +58,7 @@ fun checkAllKeyboardModifications(
 ) {
     keyModificationsErrorState.value = null
     try {
-        val keyModifications = serializeKeyModifications(keyModifications)
+        val keyModifications = deserializeKeyModifications(keyModifications)
         keyModifications.forEach {
             val keyboardLayout = KeyboardLayout.entries.find { layout -> it.key == layout.name }
             if (keyboardLayout == null) {
@@ -81,10 +82,18 @@ fun checkAllKeyboardModifications(
  * @throws kotlinx.serialization.SerializationException - in case of any decoding-specific error.
  * @throws IllegalArgumentException - if the decoded input is not a valid instance of [KeyModifications].
  */
-fun serializeKeyModifications(keyModifications: String): KeyModifications {
-    var serializer =
+fun deserializeKeyModifications(keyModifications: String): KeyModifications {
+    val serializer =
         MapSerializer(String.serializer(), KeyboardDefinitionModesSerializable.serializer())
-    return Yaml.default.decodeFromString(serializer, keyModifications)
+    val yaml =
+        Yaml(
+            configuration =
+                YamlConfiguration(
+                    anchorsAndAliases = AnchorsAndAliases.Permitted(),
+                ),
+        )
+
+    return yaml.decodeFromString(serializer, keyModifications)
 }
 
 fun modifyKeyboardDefinition(
