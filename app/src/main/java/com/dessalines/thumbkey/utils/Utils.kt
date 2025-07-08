@@ -1178,9 +1178,8 @@ fun getKeyboardMode(
     }
 }
 
-fun getCurrentLayoutColumnCount(settings: AppSettings): Int {
-    val currentLayoutOrdinal = settings?.keyboardLayout ?: DEFAULT_KEYBOARD_LAYOUT
-    val currentLayout = KeyboardLayout.entries[currentLayoutOrdinal]
+fun getCurrentLayoutColumnCount(keyboardLayout: Int): Int {
+    val currentLayout = KeyboardLayout.entries[keyboardLayout]
     val keyboardDefinition = currentLayout.keyboardDefinition
     val mainKeyboard = keyboardDefinition.modes.main
     val columnCount = mainKeyboard.arr.maxOf { it.size }
@@ -1193,14 +1192,14 @@ fun getCurrentDisplayWidth(ctx: Context): Int {
 }
 
 fun getAutoKeyWidth(
-    settings: AppSettings,
+    keyboardLayout: Int,
+    keyPadding: Int,
     ctx: Context,
-): Float {
+): Int {
     val screenWidth = getCurrentDisplayWidth(ctx)
-    val columns = getCurrentLayoutColumnCount(settings)
-    val keyPadding = settings.keyPadding.toInt()
+    val columns = getCurrentLayoutColumnCount(keyboardLayout)
     val availableWidth = screenWidth - (keyPadding * 2)
-    return (availableWidth / columns).toFloat()
+    return (availableWidth / columns).toInt()
 }
 
 private fun autoCapitalize(

@@ -360,8 +360,8 @@ fun LookAndFeelScreen(
 
                     if (nonSquareKeysState) {
                         SliderPreference(
-                            value = keyHeightState ?: DEFAULT_KEY_HEIGHT.toFloat(),
-                            sliderValue = keyHeightSliderState ?: DEFAULT_KEY_HEIGHT.toFloat(),
+                            value = keyHeightState,
+                            sliderValue = keyHeightSliderState,
                             onValueChange = {
                                 keyHeightState = it
                                 updateLookAndFeel()

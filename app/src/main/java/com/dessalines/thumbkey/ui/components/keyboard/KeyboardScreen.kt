@@ -158,7 +158,8 @@ fun KeyboardScreen(
     val nonSquareKeys = (settings?.nonSquareKeys ?: DEFAULT_NON_SQUARE_KEYS).toBool()
     val legendWidth =
         if (autoSizeKeys) {
-            getAutoKeyWidth(settings!!, ctx).toInt()
+            val keyboardLayout = settings?.keyboardLayout ?: DEFAULT_KEYBOARD_LAYOUT
+            getAutoKeyWidth(keyboardLayout, keyPadding, ctx)
         } else {
             settings?.keyWidth ?: DEFAULT_KEY_WIDTH
         }
