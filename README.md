@@ -274,9 +274,9 @@ ENThumbKey:
     key0_0: { longPress: { text: "1" } }
     key0_1: { longPress: { text: "2" } }
     key0_2: { longPress: { text: "3" } }
-    key1_0: { longPress: { text: "3" } }
-    key1_1: { longPress: { text: "4" } }
-    key1_2: { longPress: { text: "5" } }
+    key1_0: { longPress: { text: "4" } }
+    key1_1: { longPress: { text: "5" } }
+    key1_2: { longPress: { text: "6" } }
     key2_0: { longPress: { text: "7" } }
     key2_1: { longPress: { text: "8" } }
     key2_2: { longPress: { text: "9" } }
