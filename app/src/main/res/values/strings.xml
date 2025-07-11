@@ -19,7 +19,7 @@
     <string name="center">Center</string>
     <string name="right">Right</string>
     <string name="left">Left</string>
-    <string name="split">Split</string>
+    <string name="dual">Dual</string>
     <string name="about">About</string>
     <string name="whats_new">What\'s new</string>
     <string name="version">Version %1$s</string>

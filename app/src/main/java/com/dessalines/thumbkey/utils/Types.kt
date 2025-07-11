@@ -318,7 +318,7 @@ enum class KeyboardPosition(
     Center(R.string.center),
     Right(R.string.right),
     Left(R.string.left),
-    Split(R.string.split),
+    Dual(R.string.dual),
 }
 
 enum class SwipeNWay {
