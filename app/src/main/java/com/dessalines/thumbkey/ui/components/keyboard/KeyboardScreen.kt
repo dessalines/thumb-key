@@ -374,28 +374,16 @@ fun KeyboardScreen(
             Log.d(TAG, "request for cursor updates failed, cursor updates will not be provided")
         }
 
-        for (i in 0..1) {
-            var tempAlignment: Alignment
-            var tempBackdropEnabled: Boolean
-            if (i == 1) {
-                if (position != KeyboardPosition.Dual) {
-                    break
-                }
-                tempAlignment = keyboardPositionToAlignment(KeyboardPosition.Right)
-                tempBackdropEnabled = false
-            } else {
-                tempAlignment = keyboardPositionToAlignment(position)
-                tempBackdropEnabled = backdropEnabled
-            }
+        val drawKeyboard = @Composable { alignment: Alignment, drawBackdrop: Boolean ->
             Box(
-                contentAlignment = tempAlignment,
+                contentAlignment = alignment,
                 modifier =
                     Modifier
-                        .then(if (tempBackdropEnabled) Modifier.background(backdropColor) else (Modifier))
+                        .then(if (drawBackdrop) Modifier.background(backdropColor) else (Modifier))
                         .padding(bottom = pushupSizeDp),
             ) {
                 // adds a pretty line if you're using the backdrop
-                if (tempBackdropEnabled) {
+                if (drawBackdrop) {
                     Box(
                         modifier =
                             Modifier
@@ -559,6 +547,11 @@ fun KeyboardScreen(
                     }
                 }
             }
+        }
+
+        drawKeyboard(keyboardPositionToAlignment(position), backdropEnabled)
+        if (position == KeyboardPosition.Dual) {
+            drawKeyboard(keyboardPositionToAlignment(KeyboardPosition.Right), false)
         }
     }
 }
