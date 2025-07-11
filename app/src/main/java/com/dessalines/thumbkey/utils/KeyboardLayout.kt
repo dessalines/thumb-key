@@ -86,6 +86,7 @@ import com.dessalines.thumbkey.keyboards.KB_EN_THUMBKEY_SYMBOLS
 import com.dessalines.thumbkey.keyboards.KB_EN_THUMBKEY_WIDE
 import com.dessalines.thumbkey.keyboards.KB_EN_THUMBKEY_WORDS
 import com.dessalines.thumbkey.keyboards.KB_EN_THUMBKEY_WORDS_SYMBOLS
+import com.dessalines.thumbkey.keyboards.KB_EN_THUMBKEY_WORDS_SYMBOLS_DUAL
 import com.dessalines.thumbkey.keyboards.KB_EN_THUMBKEY_WRITER
 import com.dessalines.thumbkey.keyboards.KB_EN_TWO_HANDS
 import com.dessalines.thumbkey.keyboards.KB_EN_TYPESPLIT
@@ -380,4 +381,5 @@ enum class KeyboardLayout(
     SRLatnThumbKey(KB_SRLATN_THUMBKEY),
     SRLatnEnDeThumbKey(KB_SRLATN_EN_DE_THUMBKEY),
     FRENFrappeFluideV1(KB_FR_EN_FRAPPE_FLUIDE_V1),
+    ENThumbKeyWordsSymbolsDual(KB_EN_THUMBKEY_WORDS_SYMBOLS_DUAL),
 }
