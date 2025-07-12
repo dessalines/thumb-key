@@ -42,6 +42,7 @@ import com.dessalines.thumbkey.R
 import com.dessalines.thumbkey.db.AppSettingsViewModel
 import com.dessalines.thumbkey.db.DEFAULT_KEYBOARD_LAYOUT
 import com.dessalines.thumbkey.db.LayoutsUpdate
+import com.dessalines.thumbkey.utils.KeyboardLayout
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
@@ -1182,6 +1183,36 @@ fun getKeyboardMode(
             KeyboardMode.MAIN
         }
     }
+}
+
+fun getCurrentLayoutColumnCount(keyboardLayout: Int): Int {
+    val currentLayout = KeyboardLayout.entries[keyboardLayout]
+    val keyboardDefinition = currentLayout.keyboardDefinition
+    val mainKeyboard = keyboardDefinition.modes.main
+    val columnCount = mainKeyboard.arr.maxOf { it.size }
+    return columnCount.toInt()
+}
+
+fun getCurrentDisplayWidth(ctx: Context): Int {
+    val displayMetrics = ctx.resources.displayMetrics
+    return (displayMetrics.widthPixels / displayMetrics.density).toInt()
+}
+
+fun getAutoKeyWidth(
+    keyboardLayout: Int,
+    keyPadding: Int,
+    position: KeyboardPosition,
+    ctx: Context,
+): Int {
+    val screenWidth = getCurrentDisplayWidth(ctx)
+    val availableWidth = screenWidth - (keyPadding * 2)
+    val multiplier =
+        when (position) {
+            KeyboardPosition.Dual -> 2
+            else -> 1
+        }
+    val columns = getCurrentLayoutColumnCount(keyboardLayout) * multiplier
+    return (availableWidth / columns).toInt()
 }
 
 private fun autoCapitalize(
