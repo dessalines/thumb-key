@@ -13,6 +13,7 @@ import androidx.compose.material.icons.outlined.BorderOuter
 import androidx.compose.material.icons.outlined.Colorize
 import androidx.compose.material.icons.outlined.Crop75
 import androidx.compose.material.icons.outlined.FormatSize
+import androidx.compose.material.icons.outlined.Fullscreen
 import androidx.compose.material.icons.outlined.HideImage
 import androidx.compose.material.icons.outlined.LinearScale
 import androidx.compose.material.icons.outlined.MusicNote
@@ -34,7 +35,6 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.livedata.observeAsState
 import androidx.compose.runtime.mutableFloatStateOf
-import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
@@ -46,13 +46,16 @@ import com.dessalines.thumbkey.R
 import com.dessalines.thumbkey.db.AppSettingsViewModel
 import com.dessalines.thumbkey.db.DEFAULT_ANIMATION_HELPER_SPEED
 import com.dessalines.thumbkey.db.DEFAULT_ANIMATION_SPEED
+import com.dessalines.thumbkey.db.DEFAULT_AUTO_SIZE_KEYS
 import com.dessalines.thumbkey.db.DEFAULT_BACKDROP_ENABLED
 import com.dessalines.thumbkey.db.DEFAULT_HIDE_LETTERS
 import com.dessalines.thumbkey.db.DEFAULT_HIDE_SYMBOLS
 import com.dessalines.thumbkey.db.DEFAULT_KEY_BORDER_WIDTH
+import com.dessalines.thumbkey.db.DEFAULT_KEY_HEIGHT
 import com.dessalines.thumbkey.db.DEFAULT_KEY_PADDING
 import com.dessalines.thumbkey.db.DEFAULT_KEY_RADIUS
-import com.dessalines.thumbkey.db.DEFAULT_KEY_SIZE
+import com.dessalines.thumbkey.db.DEFAULT_KEY_WIDTH
+import com.dessalines.thumbkey.db.DEFAULT_NON_SQUARE_KEYS
 import com.dessalines.thumbkey.db.DEFAULT_POSITION
 import com.dessalines.thumbkey.db.DEFAULT_PUSHUP_SIZE
 import com.dessalines.thumbkey.db.DEFAULT_SOUND_ON_TAP
@@ -86,13 +89,12 @@ fun LookAndFeelScreen(
     val settings by appSettingsViewModel.appSettings.observeAsState()
     var themeState = ThemeMode.entries[settings?.theme ?: DEFAULT_THEME]
     var themeColorState = ThemeColor.entries[settings?.themeColor ?: DEFAULT_THEME_COLOR]
-    var keySizeState = (settings?.keySize ?: DEFAULT_KEY_SIZE).toFloat()
-    var keySizeSliderState by remember { mutableFloatStateOf(keySizeState) }
-    var keyWidthState = settings?.keyWidth?.toFloat()
-    var keyWidthSliderState by remember { mutableStateOf(keyWidthState) }
-
-    // Need to coerce key width = null to be the same size as the keyHeight
-    val nonSquareKeysState = remember { mutableStateOf(settings?.keySize != (settings?.keyWidth ?: settings?.keySize)) }
+    var autoSizeKeysState = (settings?.autoSizeKeys ?: DEFAULT_AUTO_SIZE_KEYS).toBool()
+    var nonSquareKeysState = (settings?.nonSquareKeys ?: DEFAULT_NON_SQUARE_KEYS).toBool()
+    var keyHeightState = (settings?.keyHeight ?: DEFAULT_KEY_HEIGHT).toFloat()
+    var keyHeightSliderState by remember { mutableFloatStateOf(keyHeightState) }
+    var keyWidthState = (settings?.keyWidth ?: DEFAULT_KEY_WIDTH).toFloat()
+    var keyWidthSliderState by remember { mutableFloatStateOf(keyWidthState) }
 
     var pushupSizeState = (settings?.pushupSize ?: DEFAULT_PUSHUP_SIZE).toFloat()
     var pushupSizeSliderState by remember { mutableFloatStateOf(pushupSizeState) }
@@ -125,8 +127,6 @@ fun LookAndFeelScreen(
         appSettingsViewModel.updateLookAndFeel(
             LookAndFeelUpdate(
                 id = 1,
-                keySize = keySizeState.toInt(),
-                keyWidth = if (nonSquareKeysState.value) keyWidthState?.toInt() else null,
                 pushupSize = pushupSizeState.toInt(),
                 animationSpeed = animationSpeedState.toInt(),
                 animationHelperSpeed = animationHelperSpeedState.toInt(),
@@ -141,6 +141,10 @@ fun LookAndFeelScreen(
                 keyPadding = keyPaddingState.toInt(),
                 keyBorderWidth = keyBorderWidthState.toInt(),
                 keyRadius = keyRadiusState.toInt(),
+                autoSizeKeys = autoSizeKeysState.toInt(),
+                nonSquareKeys = nonSquareKeysState.toInt(),
+                keyWidth = keyWidthState.toInt(),
+                keyHeight = keyHeightState.toInt(),
             ),
         )
     }
@@ -290,48 +294,47 @@ fun LookAndFeelScreen(
                             )
                         },
                     )
-                    SliderPreference(
-                        value = keySizeState,
-                        sliderValue = keySizeSliderState,
+
+                    SwitchPreference(
+                        value = autoSizeKeysState,
                         onValueChange = {
-                            keySizeState = it
+                            autoSizeKeysState = it
                             updateLookAndFeel()
                         },
-                        onSliderValueChange = { keySizeSliderState = it },
-                        valueRange = 10f..200f,
                         title = {
-                            val keyHeightStr =
-                                stringResource(
-                                    if (nonSquareKeysState.value) R.string.key_height else R.string.key_size,
-                                    keySizeSliderState.toInt().toString(),
-                                )
-
-                            Text(keyHeightStr)
+                            Text(stringResource(R.string.auto_size_keys))
                         },
                         icon = {
                             Icon(
-                                imageVector = Icons.Outlined.FormatSize,
+                                imageVector = Icons.Outlined.Fullscreen,
                                 contentDescription = null,
                             )
                         },
                     )
-                    if (nonSquareKeysState.value) {
+
+                    if (!autoSizeKeysState) {
                         SliderPreference(
-                            value = keyWidthState ?: DEFAULT_KEY_SIZE.toFloat(),
-                            sliderValue = keyWidthSliderState ?: DEFAULT_KEY_SIZE.toFloat(),
+                            value = keyWidthState,
+                            sliderValue = keyWidthSliderState,
                             onValueChange = {
                                 keyWidthState = it
                                 updateLookAndFeel()
                             },
-                            onSliderValueChange = { keyWidthSliderState = it },
+                            onSliderValueChange = {
+                                keyWidthSliderState = it
+                            },
                             valueRange = 10f..200f,
                             title = {
-                                val keyWidthStr = stringResource(R.string.key_width, keyWidthSliderState?.toInt().toString())
-                                Text(keyWidthStr)
+                                val keyHeightStr =
+                                    stringResource(
+                                        if (nonSquareKeysState) R.string.key_width else R.string.key_size,
+                                        keyWidthSliderState.toInt().toString(),
+                                    )
+                                Text(keyHeightStr)
                             },
                             icon = {
                                 Icon(
-                                    imageVector = Icons.Outlined.Crop75,
+                                    imageVector = Icons.Outlined.FormatSize,
                                     contentDescription = null,
                                 )
                             },
@@ -339,9 +342,9 @@ fun LookAndFeelScreen(
                     }
 
                     SwitchPreference(
-                        value = nonSquareKeysState.value,
+                        value = nonSquareKeysState,
                         onValueChange = {
-                            nonSquareKeysState.value = it
+                            nonSquareKeysState = it
                             updateLookAndFeel()
                         },
                         title = {
@@ -354,6 +357,36 @@ fun LookAndFeelScreen(
                             )
                         },
                     )
+
+                    if (nonSquareKeysState) {
+                        SliderPreference(
+                            value = keyHeightState,
+                            sliderValue = keyHeightSliderState,
+                            onValueChange = {
+                                keyHeightState = it
+                                updateLookAndFeel()
+                            },
+                            onSliderValueChange = {
+                                keyHeightSliderState = it
+                            },
+                            valueRange = 10f..200f,
+                            title = {
+                                val keyHeightStr =
+                                    stringResource(
+                                        R.string.key_height,
+                                        (keyHeightSliderState ?: DEFAULT_KEY_HEIGHT.toFloat()).toInt().toString(),
+                                    )
+                                Text(keyHeightStr)
+                            },
+                            icon = {
+                                Icon(
+                                    imageVector = Icons.Outlined.Crop75,
+                                    contentDescription = null,
+                                )
+                            },
+                        )
+                    }
+
                     SliderPreference(
                         value = keyPaddingState,
                         sliderValue = keyPaddingSliderState,
