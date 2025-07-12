@@ -12,6 +12,7 @@ import com.charleskorn.kaml.YamlConfiguration
 import com.dessalines.thumbkey.keyboards.COPY_KEYC
 import com.dessalines.thumbkey.keyboards.CUT_KEYC
 import com.dessalines.thumbkey.keyboards.GOTO_SETTINGS_KEYC
+import com.dessalines.thumbkey.keyboards.HIDE_KEYBOARD_KEYC
 import com.dessalines.thumbkey.keyboards.PASTE_KEYC
 import com.dessalines.thumbkey.keyboards.REDO_KEYC
 import com.dessalines.thumbkey.keyboards.SELECT_ALL_KEYC
@@ -23,7 +24,6 @@ import com.dessalines.thumbkey.keyboards.SWITCH_LANGUAGE_KEYC
 import com.dessalines.thumbkey.keyboards.TOGGLE_EMOJI_MODE_TRUE_KEYC
 import com.dessalines.thumbkey.keyboards.TOGGLE_NUMERIC_MODE_TRUE_KEYC
 import com.dessalines.thumbkey.keyboards.UNDO_KEYC
-import com.dessalines.thumbkey.keyboards.HIDE_KEYBOARD_KEYC
 import com.dessalines.thumbkey.utils.KeyAction.CommitText
 import com.dessalines.thumbkey.utils.KeyAction.Noop
 import com.dessalines.thumbkey.utils.KeyDisplay.TextDisplay
