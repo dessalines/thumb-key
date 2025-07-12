@@ -117,8 +117,7 @@ val KB_TR_ARTI_MAIN =
                     top = KeyC("$", color = MUTED),
                     topRight = KeyC("₺", color = MUTED),
                     right = KeyC("m"),
-                    bottomRight = KeyC("₸", color = MUTED),
-                    bottom = KeyC("€", color = MUTED),
+                    bottomRight = KeyC("#", color = MUTED),
                     bottomLeft = KeyC("[", color = MUTED),
                     left = KeyC("(", color = MUTED),
                 ),
@@ -156,7 +155,6 @@ val KB_TR_ARTI_MAIN =
                     topLeft = KeyC("\"", color = MUTED),
                     top = KeyC("ç"),
                     topRight = KeyC("c"),
-                    right = KeyC("!", color = MUTED),
                     bottomRight = KeyC("‹", color = MUTED),
                     bottom = KeyC("«", color = MUTED),
                     bottomLeft = KeyC("←", color = MUTED),
@@ -169,14 +167,14 @@ val KB_TR_ARTI_MAIN =
                     top = KeyC("f"),
                     topRight = KeyC("°", color = MUTED),
                     right = KeyC("z"),
+                    bottomRight = KeyC("!", color = MUTED),
                     bottom = KeyC("‽", color = MUTED),
-                    left = KeyC("?", color = MUTED),
+                    bottomLeft = KeyC("?", color = MUTED),
                 ),
                 KeyItemC(
                     swipeType = EIGHT_WAY,
                     center = KeyC("e", size = LARGE),
                     topLeft = KeyC("d"),
-                    top = KeyC("#", color = MUTED),
                     topRight = KeyC("'", color = MUTED),
                     right = KeyC(">", color = MUTED),
                     bottomRight = KeyC("→", color = MUTED),
@@ -216,6 +214,8 @@ val KB_TR_ARTI_SHIFTED =
         Triple(1, 1) { key ->
             key.copy(
                 center = KeyC("N", size = LARGE),
+                top = KeyC("€", color = MUTED),
+                topRight = KeyC("₸", color = MUTED),
                 right = KeyC("M"),
             )
         },
