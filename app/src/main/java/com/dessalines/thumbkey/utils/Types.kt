@@ -241,6 +241,8 @@ sealed class KeyAction {
 
     data object SwitchIMEVoice : KeyAction()
 
+    data object HideKeyboard : KeyAction()
+
     data object Noop : KeyAction()
 }
 

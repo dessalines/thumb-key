@@ -1105,6 +1105,10 @@ fun performKeyAction(
             }
         }
 
+        KeyAction.HideKeyboard -> {
+            ime.requestHideSelf(0)
+        }
+
         KeyAction.Noop -> {}
 
         is KeyAction.ToggleCurrentWordCapitalization -> {

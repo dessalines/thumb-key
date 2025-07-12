@@ -12,6 +12,7 @@ import com.charleskorn.kaml.YamlConfiguration
 import com.dessalines.thumbkey.keyboards.COPY_KEYC
 import com.dessalines.thumbkey.keyboards.CUT_KEYC
 import com.dessalines.thumbkey.keyboards.GOTO_SETTINGS_KEYC
+import com.dessalines.thumbkey.keyboards.HIDE_KEYBOARD_KEYC
 import com.dessalines.thumbkey.keyboards.PASTE_KEYC
 import com.dessalines.thumbkey.keyboards.REDO_KEYC
 import com.dessalines.thumbkey.keyboards.SELECT_ALL_KEYC
@@ -263,6 +264,7 @@ fun getCommonKeyCFromKeyAction(keyCSerializable: KeyCSerializable): KeyC? =
         KeyActionSerializable.SwitchLanguage -> SWITCH_LANGUAGE_KEYC
         KeyActionSerializable.SwitchIME -> SWITCH_IME_KEYC
         KeyActionSerializable.SwitchIMEVoice -> SWITCH_IME_VOICE_KEYC
+        KeyActionSerializable.HideKeyboard -> HIDE_KEYBOARD_KEYC
         null -> null
     }
 
@@ -430,4 +432,5 @@ enum class KeyActionSerializable {
     SwitchLanguage,
     SwitchIME,
     SwitchIMEVoice,
+    HideKeyboard,
 }
