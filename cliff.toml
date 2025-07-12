@@ -76,6 +76,7 @@ commit_parsers = [
   { field = "author.name", pattern = "renovate", skip = true },
   { field = "author.name", pattern = "Weblate", skip = true },
   { field = "message", pattern = "Upping version", skip = true },
+  { field = "message", pattern = "Merge remote-tracking", skip = true },
 ]
 # filter out the commits that are not matched by commit parsers
 filter_commits = false

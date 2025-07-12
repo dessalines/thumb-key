@@ -2,6 +2,25 @@
 
 All notable changes to this project will be documented in this file.
 
+## What's Changed in 5.0.0
+
+- add hide keyboard action by @pohmelie in [#1456](https://github.com/dessalines/thumb-key/pull/1456)
+- Add option to automatically scale keyboard to screen width by @alerque in [#1424](https://github.com/dessalines/thumb-key/pull/1424)
+- Setup auto-with calculations for new 'Dual' layout position by @alerque
+- Add split keyboard layout to the position cycle by @jm355 in [#1443](https://github.com/dessalines/thumb-key/pull/1443)
+- feat: add anchors to keyboard modifications by @Toldry in [#1452](https://github.com/dessalines/thumb-key/pull/1452)
+- Address CoPilot review issues, improve function signatures by @alerque
+- Overhaul migrations to avoid SQLite & Room limitations by @alerque
+- Fix long press numeric key yaml by @jm355 in [#1453](https://github.com/dessalines/thumb-key/pull/1453)
+- Add FRENFrappeFluideV1 by @antoinepouille in [#1450](https://github.com/dessalines/thumb-key/pull/1450)
+
+## New Contributors
+
+- @pohmelie made their first contribution in [#1456](https://github.com/dessalines/thumb-key/pull/1456)
+- @antoinepouille made their first contribution in [#1450](https://github.com/dessalines/thumb-key/pull/1450)
+
+**Full Changelog**: https://github.com/dessalines/thumb-key/compare/4.0.36...5.0.0
+
 ## What's Changed in 4.0.36
 
 - Add Serbian language layouts, both Cyrillic and Latin scripts by @markokocic in [#1440](https://github.com/dessalines/thumb-key/pull/1440)
@@ -9,6 +28,8 @@ All notable changes to this project will be documented in this file.
 - Implement 3-row emoji picker for wide layout keyboards by @alerque in [#1422](https://github.com/dessalines/thumb-key/pull/1422)
 - Make emoji keyboard row count automatic based on main layout by @alerque
 - Implement 3-row emoji picker for wide layout keyboards by @alerque
+- Deconflate size vs. width vs. height and save user input values by @alerque
+- Add option to calculate key size based on available screen width by @alerque
 - Small follow up tweaks to TR+ keyboard by @alerque in [#1421](https://github.com/dessalines/thumb-key/pull/1421)
 - Add new TR+ keyboard with EN+TR language and typographic symbols by @alerque in [#1420](https://github.com/dessalines/thumb-key/pull/1420)
 - ntfy message fix. by @dessalines in [#1419](https://github.com/dessalines/thumb-key/pull/1419)
@@ -16,14 +37,11 @@ All notable changes to this project will be documented in this file.
 ## New Contributors
 
 - @markokocic made their first contribution in [#1440](https://github.com/dessalines/thumb-key/pull/1440)
-- @alerque made their first contribution in [#1438](https://github.com/dessalines/thumb-key/pull/1438)
 
 **Full Changelog**: https://github.com/dessalines/thumb-key/compare/4.0.35...4.0.36
 
 ## What's Changed in 4.0.35
 
-- Merge remote-tracking branch 'refs/remotes/origin/main' by @dessalines
-- Merge remote-tracking branch 'refs/remotes/origin/main' by @dessalines
 - fix emoji picker ignoring navigationBars in Android 15 by @mruncreative in [#1413](https://github.com/dessalines/thumb-key/pull/1413)
 - Added Keyboard: MessagEase German Left / Inverted Numpad by @beeh5 in [#1408](https://github.com/dessalines/thumb-key/pull/1408)
 
@@ -47,7 +65,6 @@ All notable changes to this project will be documented in this file.
 
 ## What's Changed in 4.0.33
 
-- Merge remote-tracking branch 'refs/remotes/origin/main' by @dessalines
 - modify keys: support keyboards up to size 10x10 by @Toldry in [#1386](https://github.com/dessalines/thumb-key/pull/1386)
 - feat: added `keyAction` to key mods by @Toldry in [#1385](https://github.com/dessalines/thumb-key/pull/1385)
 
@@ -66,7 +83,6 @@ All notable changes to this project will be documented in this file.
 
 ## What's Changed in 4.0.31
 
-- Merge remote-tracking branch 'origin/main' by @dessalines
 - Adding @Keep to fix key_mod data classes. by @dessalines in [#1375](https://github.com/dessalines/thumb-key/pull/1375)
 
 **Full Changelog**: https://github.com/dessalines/thumb-key/compare/4.0.30...4.0.31
@@ -101,7 +117,6 @@ All notable changes to this project will be documented in this file.
 
 - Update Hyper's symbol layer with small changes by @luminespire in [#1340](https://github.com/dessalines/thumb-key/pull/1340)
 - feat: add owl-layout by @owl-from-hogvarts in [#1337](https://github.com/dessalines/thumb-key/pull/1337)
-- Merge remote-tracking branch 'weblate/main' by @dessalines
 - Translated using Weblate (Arabic) by @weblate
 - Translated using Weblate (Polish) by @weblate
 - Translated using Weblate (Turkish) by @weblate
@@ -123,7 +138,6 @@ All notable changes to this project will be documented in this file.
 - Translated using Weblate (Japanese) by @williampiti
 - Translated using Weblate (Polish)
 - Translated using Weblate (Japanese) by @williampiti
-- Merge remote-tracking branch 'refs/remotes/origin/main' by @dessalines
 
 ## New Contributors
 
@@ -384,12 +398,6 @@ All notable changes to this project will be documented in this file.
 - @Hate9 made their first contribution in [#1129](https://github.com/dessalines/thumb-key/pull/1129)
 
 **Full Changelog**: https://github.com/dessalines/thumb-key/compare/4.0.1...4.0.2
-
-## What's Changed in 4.0.1
-
-- Merge remote-tracking branch 'refs/remotes/origin/main' by @dessalines
-
-**Full Changelog**: https://github.com/dessalines/thumb-key/compare/4.0.0...4.0.1
 
 ## What's Changed in 4.0.0
 
@@ -1254,7 +1262,6 @@ All notable changes to this project will be documented in this file.
 
 ## What's Changed in 2.6.1
 
-- Fix EUESThumbKey layout by @dessalines in [#563](https://github.com/dessalines/thumb-key/pull/563)
 - Fix EUESThumbKey layout by @zgll2022
 - Upgrading deps, running new kotlinter. by @dessalines in [#564](https://github.com/dessalines/thumb-key/pull/564)
 - Update ENEOMessageEaseSymbols.kt by @uxintro in [#561](https://github.com/dessalines/thumb-key/pull/561)
@@ -1403,7 +1410,6 @@ All notable changes to this project will be documented in this file.
 - Upgrade deps 14 by @dessalines in [#459](https://github.com/dessalines/thumb-key/pull/459)
 - Upgrading deps. by @dessalines in [#457](https://github.com/dessalines/thumb-key/pull/457)
 - EnglishV4MultiIT keyboard layout by @yuroller in [#449](https://github.com/dessalines/thumb-key/pull/449)
-- Merge remote-tracking branch 'refs/remotes/origin/main' by @dessalines
 - Add Emoji to Wide Layout by @thedroppedpocket in [#448](https://github.com/dessalines/thumb-key/pull/448)
 - Adding release notes. by @dessalines
 
@@ -1543,7 +1549,7 @@ All notable changes to this project will be documented in this file.
 ## What's Changed in 1.11.0
 
 - Add Hebrew layout based on letter position guidelines by @roihershberg in [#335](https://github.com/dessalines/thumb-key/pull/335)
-- Numeric layout for type-split. by @mockballed in [#337](https://github.com/dessalines/thumb-key/pull/337)
+- Numeric layout for type-split. by @mockballd in [#337](https://github.com/dessalines/thumb-key/pull/337)
 - Add ENv4MultiLayout by @KraXen72 in [#327](https://github.com/dessalines/thumb-key/pull/327)
 - Adding release notes. by @dessalines
 
@@ -1565,11 +1571,9 @@ All notable changes to this project will be documented in this file.
 
 ## What's Changed in 1.9.1
 
-- Merge remote-tracking branch 'refs/remotes/origin/main' by @dessalines
 - まみむめも=>ゔ by @K0baU in [#326](https://github.com/dessalines/thumb-key/pull/326)
 - Add single quote to MessageEase German by @meliache in [#323](https://github.com/dessalines/thumb-key/pull/323)
 - Capital letters when layout changed by @niccokunzmann in [#322](https://github.com/dessalines/thumb-key/pull/322)
-- Merge remote-tracking branch 'refs/remotes/origin/main' by @dessalines
 - Rectified issue of "TwoHands" layout by @Lavin-tom in [#313](https://github.com/dessalines/thumb-key/pull/313)
 
 ## New Contributors
@@ -1594,8 +1598,8 @@ All notable changes to this project will be documented in this file.
 ## What's Changed in 1.8.0
 
 - Fix bug in deleteLastWord by @tbhno in [#305](https://github.com/dessalines/thumb-key/pull/305)
-- New "Type-Split" layouts. by @mockballed in [#296](https://github.com/dessalines/thumb-key/pull/296)
-- ThumbKeyFRv2: Fix key "U" writing "uU". by @mockballed in [#298](https://github.com/dessalines/thumb-key/pull/298)
+- New "Type-Split" layouts. by @mockballd in [#296](https://github.com/dessalines/thumb-key/pull/296)
+- ThumbKeyFRv2: Fix key "U" writing "uU". by @mockballd in [#298](https://github.com/dessalines/thumb-key/pull/298)
 - Updating releases.md by @dessalines
 
 ## New Contributors
@@ -1607,7 +1611,7 @@ All notable changes to this project will be documented in this file.
 ## What's Changed in 1.7.0
 
 - Add debug mode. by @dessalines in [#294](https://github.com/dessalines/thumb-key/pull/294)
-- New layout: "Four columns" (English). by @mockballed in [#292](https://github.com/dessalines/thumb-key/pull/292)
+- New layout: "Four columns" (English). by @mockballd in [#292](https://github.com/dessalines/thumb-key/pull/292)
 - Update ThumbKeyIDv1Symbols.kt by @awandepan in [#289](https://github.com/dessalines/thumb-key/pull/289)
 - Fix swedish keyboard by @maxhambraeus in [#287](https://github.com/dessalines/thumb-key/pull/287)
 - Update Danish translation and fix minor errors in the Danish keyboard by @Limfjorden in [#286](https://github.com/dessalines/thumb-key/pull/286)
@@ -1658,7 +1662,6 @@ All notable changes to this project will be documented in this file.
 - Fix the MessageEaseRUSymbols layout by removing FOUR_WAY_DIAGONAL by @dessalines in [#258](https://github.com/dessalines/thumb-key/pull/258)
 - Fix the MessageEaseRUSymbols layout by removing FOUR_WAY_DIAGONAL by @last5bits
 - Fixing lint, adding fr_v2 by @dessalines
-- Merge remote-tracking branch 'origin/main' into fr_v2_breversa by @dessalines
 - Hiragana by @dessalines in [#267](https://github.com/dessalines/thumb-key/pull/267)
 - Merge branch 'main' into hiragana by @dessalines
 - Fixing hiragana. by @dessalines
@@ -1808,14 +1811,14 @@ All notable changes to this project will be documented in this file.
 - Upgrading deps. by @dessalines in [#208](https://github.com/dessalines/thumb-key/pull/208)
 - Merge branch 'autoshift_fix_1' by @dessalines
 - Fix formatting. by @dessalines
-- KeyAction.CommitText to better handle Shifted mode. by @mockballed in [#207](https://github.com/dessalines/thumb-key/pull/207)
-- Comprehensive delimiter for deleting last word. by @mockballed in [#206](https://github.com/dessalines/thumb-key/pull/206)
+- KeyAction.CommitText to better handle Shifted mode. by @mockballd in [#207](https://github.com/dessalines/thumb-key/pull/207)
+- Comprehensive delimiter for deleting last word. by @mockballd in [#206](https://github.com/dessalines/thumb-key/pull/206)
 - Fix Capital V in MessageEaseENSymbols.kt by @reneald in [#205](https://github.com/dessalines/thumb-key/pull/205)
 - Adding release notes. by @dessalines
 
 ## New Contributors
 
-- @mockballed made their first contribution in [#206](https://github.com/dessalines/thumb-key/pull/206)
+- @mockballd made their first contribution in [#206](https://github.com/dessalines/thumb-key/pull/206)
 - @reneald made their first contribution in [#205](https://github.com/dessalines/thumb-key/pull/205)
 
 **Full Changelog**: https://github.com/dessalines/thumb-key/compare/0.0.14...1.0.0
@@ -1936,7 +1939,6 @@ All notable changes to this project will be documented in this file.
 ## What's Changed in 0.0.8
 
 - Upgrading deps by @dessalines in [#114](https://github.com/dessalines/thumb-key/pull/114)
-- Merge remote-tracking branch 'origin/main' by @dessalines
 - Adding farsi layout. Fixes #110 by @dessalines in [#113](https://github.com/dessalines/thumb-key/pull/113)
 - A few fixes. by @dessalines
 - Update ThumbKeyITv1.kt by @morellik in [#112](https://github.com/dessalines/thumb-key/pull/112)
@@ -2029,7 +2031,6 @@ All notable changes to this project will be documented in this file.
 
 ## What's Changed in 0.0.3
 
-- Merge remote-tracking branch 'origin/main' by @dessalines
 - Add russian and ukrainian layouts by @dessalines in [#41](https://github.com/dessalines/thumb-key/pull/41)
 - Fix issue with IME padding. by @dessalines
 - Adding a push up / bottom offset setting. Fixes #28 by @dessalines in [#40](https://github.com/dessalines/thumb-key/pull/40)
@@ -2038,7 +2039,6 @@ All notable changes to this project will be documented in this file.
 - Remove gifs from readme. Double-tap correction. Fixes #33 by @dessalines in [#37](https://github.com/dessalines/thumb-key/pull/37)
 - Fixing 2 links. by @dessalines
 - Add izzyondroid link. by @dessalines
-- Merge remote-tracking branch 'origin/main' by @dessalines
 - Numeric mode input fix by @dessalines in [#24](https://github.com/dessalines/thumb-key/pull/24)
 - Add new language help to readme by @dessalines in [#23](https://github.com/dessalines/thumb-key/pull/23)
 - Adding release notes. by @dessalines
