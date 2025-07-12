@@ -78,6 +78,12 @@ val MOVE_KEYBOARD_CYCLE_RIGHT_KEYC =
         action = MoveKeyboard.CycleRight,
         color = MUTED,
     )
+val HIDE_KEYBOARD_KEYC =
+    KeyC(
+        display = KeyDisplay.IconDisplay(Icons.Outlined.KeyboardDoubleArrowDown),
+        action = HideKeyboard,
+        color = MUTED,
+    )
 
 fun textEditKeyItem(center: KeyC): KeyItemC =
     KeyItemC(

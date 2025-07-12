@@ -23,6 +23,7 @@ import com.dessalines.thumbkey.keyboards.SWITCH_LANGUAGE_KEYC
 import com.dessalines.thumbkey.keyboards.TOGGLE_EMOJI_MODE_TRUE_KEYC
 import com.dessalines.thumbkey.keyboards.TOGGLE_NUMERIC_MODE_TRUE_KEYC
 import com.dessalines.thumbkey.keyboards.UNDO_KEYC
+import com.dessalines.thumbkey.keyboards.HIDE_KEYBOARD_KEYC
 import com.dessalines.thumbkey.utils.KeyAction.CommitText
 import com.dessalines.thumbkey.utils.KeyAction.Noop
 import com.dessalines.thumbkey.utils.KeyDisplay.TextDisplay
@@ -263,6 +264,7 @@ fun getCommonKeyCFromKeyAction(keyCSerializable: KeyCSerializable): KeyC? =
         KeyActionSerializable.SwitchLanguage -> SWITCH_LANGUAGE_KEYC
         KeyActionSerializable.SwitchIME -> SWITCH_IME_KEYC
         KeyActionSerializable.SwitchIMEVoice -> SWITCH_IME_VOICE_KEYC
+        KeyActionSerializable.HideKeyboard -> HIDE_KEYBOARD_KEYC
         null -> null
     }
 
@@ -430,4 +432,5 @@ enum class KeyActionSerializable {
     SwitchLanguage,
     SwitchIME,
     SwitchIMEVoice,
+    HideKeyboard,
 }
