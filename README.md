@@ -149,7 +149,7 @@ Enabling `Ghost keys` in keyboard settings will enable swiping hidden symbol key
 ### Coming from MessagEase Keyboard Tips
 
 - For those use to tapping on the hand key to hide the MessagEase Keyboard and make more screen real estate available, this can be done by using the Android back key or on Android 10 and higher using the guesture navigation for back.
--
+- You can use `Modify keys` and `HideKeyboard` action to achieve MessagEase experience
 
 ### Modify keys
 
