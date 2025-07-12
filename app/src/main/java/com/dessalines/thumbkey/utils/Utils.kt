@@ -1197,11 +1197,17 @@ fun getCurrentDisplayWidth(ctx: Context): Int {
 fun getAutoKeyWidth(
     keyboardLayout: Int,
     keyPadding: Int,
+    position: KeyboardPosition,
     ctx: Context,
 ): Int {
     val screenWidth = getCurrentDisplayWidth(ctx)
-    val columns = getCurrentLayoutColumnCount(keyboardLayout)
     val availableWidth = screenWidth - (keyPadding * 2)
+    val multiplier =
+        when (position) {
+            KeyboardPosition.Dual -> 2
+            else -> 1
+        }
+    val columns = getCurrentLayoutColumnCount(keyboardLayout) * multiplier
     return (availableWidth / columns).toInt()
 }
 

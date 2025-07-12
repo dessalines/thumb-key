@@ -158,7 +158,7 @@ fun KeyboardScreen(
     val legendWidth =
         if (autoSizeKeys) {
             val keyboardLayout = settings?.keyboardLayout ?: DEFAULT_KEYBOARD_LAYOUT
-            getAutoKeyWidth(keyboardLayout, keyPadding, ctx)
+            getAutoKeyWidth(keyboardLayout, keyPadding, position, ctx)
         } else {
             settings?.keyWidth ?: DEFAULT_KEY_WIDTH
         }
