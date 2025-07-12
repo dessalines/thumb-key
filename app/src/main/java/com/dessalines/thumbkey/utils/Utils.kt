@@ -256,6 +256,7 @@ fun keyboardPositionToAlignment(position: KeyboardPosition): Alignment =
         KeyboardPosition.Right -> Alignment.BottomEnd
         KeyboardPosition.Center -> Alignment.BottomCenter
         KeyboardPosition.Left -> Alignment.BottomStart
+        KeyboardPosition.Dual -> Alignment.BottomStart
     }
 
 /**
@@ -1062,17 +1063,19 @@ fun performKeyAction(
         KeyAction.MoveKeyboard.CycleLeft ->
             onChangePosition {
                 when (it) {
-                    KeyboardPosition.Right -> KeyboardPosition.Center
+                    KeyboardPosition.Right -> KeyboardPosition.Dual
                     KeyboardPosition.Center -> KeyboardPosition.Left
                     KeyboardPosition.Left -> KeyboardPosition.Right
+                    KeyboardPosition.Dual -> KeyboardPosition.Center
                 }
             }
         KeyAction.MoveKeyboard.CycleRight ->
             onChangePosition {
                 when (it) {
-                    KeyboardPosition.Left -> KeyboardPosition.Center
+                    KeyboardPosition.Left -> KeyboardPosition.Dual
                     KeyboardPosition.Center -> KeyboardPosition.Right
                     KeyboardPosition.Right -> KeyboardPosition.Left
+                    KeyboardPosition.Dual -> KeyboardPosition.Center
                 }
             }
 
