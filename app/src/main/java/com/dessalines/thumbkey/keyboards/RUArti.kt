@@ -38,6 +38,8 @@ val KB_RU_ARTI_MAIN =
         Triple(1, 1) { key ->
             key.copy(
                 center = KeyC("н", size = LARGE),
+                top = KeyC("€", color = MUTED), // invert from TRarti
+                topRight = KeyC("₸", color = MUTED), // invert from TRarti
                 right = KeyC("м"),
                 bottom = KeyC("л"),
             )
@@ -115,6 +117,8 @@ val KB_RU_ARTI_SHIFTED =
         Triple(1, 1) { key ->
             key.copy(
                 center = KeyC("Н", size = LARGE),
+                top = KeyC("$", color = MUTED), // invert from TRarti
+                topRight = KeyC("₺", color = MUTED), // invert from TRarti
                 right = KeyC("М"),
                 bottom = KeyC("Л"),
             )
