@@ -38,26 +38,31 @@
 <!-- toc -->
 
 - [About Thumb-Key](#about-thumb-key)
-  * [Features](#features)
+  - [Features](#features)
 - [User Guide](#user-guide)
-  * [Emoji Key](#emoji-key)
-  * [Symbols / Letters Key](#symbols--letters-key)
-  * [Slide gestures](#slide-gestures)
-  * [Drag-and-return](#drag-and-return)
-  * [Ghost keys](#ghost-keys)
-  * [Coming from MessagEase Keyboard Tips](#coming-from-messagease-keyboard-tips)
-  * [Modify keys](#modify-keys)
-  * [Other](#other)
+  - [Emoji Key](#emoji-key)
+  - [Symbols / Letters Key](#symbols--letters-key)
+  - [Slide gestures](#slide-gestures)
+  - [Drag-and-return](#drag-and-return)
+  - [Ghost keys](#ghost-keys)
+  - [Coming from MessagEase Keyboard Tips](#coming-from-messagease-keyboard-tips)
+  - [Modify keys](#modify-keys)
+    - [Example 1](#example-1)
+    - [Example 2](#example-2)
+  - [Example 3 - key action](#example-3---key-action)
+    - [Example 4 - long press](#example-4---long-press)
+    - [Example 5 - combining marks (diacritics)](#example-5---combining-marks-diacritics)
+  - [Other](#other)
 - [Thumb-Key Design](#thumb-key-design)
-  * [A History of Phone Keyboards](#a-history-of-phone-keyboards)
-    + [When phone keyboards became Keyloggers](#when-phone-keyboards-became-keyloggers)
-    + [MessagEase](#messagease)
-  * [Thumb-Key Letter Positions](#thumb-key-letter-positions)
-  * [Built With](#built-with)
+  - [A History of Phone Keyboards](#a-history-of-phone-keyboards)
+    - [When phone keyboards became Keyloggers](#when-phone-keyboards-became-keyloggers)
+    - [MessagEase](#messagease)
+  - [Thumb-Key Letter Positions](#thumb-key-letter-positions)
+  - [Built With](#built-with)
 - [Installation / Releases](#installation--releases)
 - [Contributing](#contributing)
 - [Support / Donate](#support--donate)
-  * [Crypto](#crypto)
+  - [Crypto](#crypto)
 - [Social / Contact](#social--contact)
 - [Android IME Resources](#android-ime-resources)
 
@@ -86,7 +91,7 @@ This project is a follow-up to the now unmaintained (and closed-source) [MessagE
 ## User Guide
 
 - **Tap**, or **swipe** to type a letter.
-- **Swipe up** or **down** on `A` to capitalize. (If you changed the layout, the button next to `#`)  
+- **Swipe up** or **down** on `A` to capitalize. (If you changed the layout, the button next to `#`)
   <img width=60px height=60px src="https://i.postimg.cc/Znt2Ft9G/thumbkey-1-1.png">
 - **Double tap** the space bar to type a comma, triple tap to type a period. More taps have more punctuation.
 - **Swipe left** or **long press** on the backspace key to delete whole words to the left of the cursor.
@@ -144,7 +149,7 @@ Enabling `Ghost keys` in keyboard settings will enable swiping hidden symbol key
 ### Coming from MessagEase Keyboard Tips
 
 - For those use to tapping on the hand key to hide the MessagEase Keyboard and make more screen real estate available, this can be done by using the Android back key or on Android 10 and higher using the guesture navigation for back.
--
+- You can use `Modify keys` and `HideKeyboard` action to achieve MessagEase experience
 
 ### Modify keys
 
@@ -263,6 +268,7 @@ This swaps the 'switch language' and 'toggle emoji' actions on the top-right key
 - `SwitchLanguage`
 - `SwitchIME`
 - `SwitchIMEVoice`
+- `HideKeyboard`
 
 `keyAction` and `text` cannot be used together.
 
