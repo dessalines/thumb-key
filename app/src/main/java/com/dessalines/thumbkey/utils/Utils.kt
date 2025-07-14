@@ -1238,8 +1238,7 @@ private fun autoCapitalize(
     }
 }
 
-fun autoCapitalizeCheck(ime: IMEService): Boolean =
-    ime.currentInputConnection.getCursorCapsMode(ime.currentInputEditorInfo.inputType) > 0
+fun autoCapitalizeCheck(ime: IMEService): Boolean = ime.currentInputConnection.getCursorCapsMode(ime.currentInputEditorInfo.inputType) > 0
 
 /**
  * Avoid capitalizing or switching to shifted mode in certain edit boxes
@@ -1255,7 +1254,7 @@ fun isUriOrEmailOrPasswordField(ime: IMEService): Boolean {
         InputType.TYPE_TEXT_VARIATION_VISIBLE_PASSWORD,
         InputType.TYPE_NUMBER_VARIATION_PASSWORD,
     ).contains(inputType) ||
-            ime.currentInputEditorInfo.inputType == EditorInfo.TYPE_NULL
+        ime.currentInputEditorInfo.inputType == EditorInfo.TYPE_NULL
 }
 
 fun isPasswordField(ime: IMEService): Boolean {
@@ -1445,9 +1444,11 @@ fun circularDirection(
     // This allows for spiralling circles and makes detection quite a bit better
     val filteredPositions =
         positions.dropWhileIndexed { index, position ->
-            index == 0 || position.getDistanceTo(positions.last()) <= positions[index - 1].getDistanceTo(
-                positions.last()
-            )
+            index == 0 ||
+                position.getDistanceTo(positions.last()) <=
+                positions[index - 1].getDistanceTo(
+                    positions.last(),
+                )
         }
 
     return if (filteredPositions.isNotEmpty()) {
@@ -1508,8 +1509,9 @@ fun updateLayouts(
     )
 }
 
-fun Context.navigationModeIsGesture() = Settings.Secure.getInt(
-    contentResolver,
-    "navigation_mode",
-    -1,
-) == 2
+fun Context.navigationModeIsGesture() =
+    Settings.Secure.getInt(
+        contentResolver,
+        "navigation_mode",
+        -1,
+    ) == 2

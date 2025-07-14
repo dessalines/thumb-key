@@ -138,12 +138,12 @@ fun KeyboardScreen(
                 ?: DEFAULT_POSITION,
         ]
 
-    val gestureNavigationOffset = when {
-        Build.VERSION.SDK_INT < Build.VERSION_CODES.VANILLA_ICE_CREAM -> 0.dp
-        ctx.navigationModeIsGesture() -> 24.dp
-        else -> 0.dp
-    }
-
+    val gestureNavigationOffset =
+        when {
+            Build.VERSION.SDK_INT < Build.VERSION_CODES.VANILLA_ICE_CREAM -> 0.dp
+            ctx.navigationModeIsGesture() -> 24.dp
+            else -> 0.dp
+        }
 
     val pushupSizeDp = (settings?.pushupSize ?: DEFAULT_PUSHUP_SIZE).dp
 
