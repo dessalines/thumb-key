@@ -93,4 +93,10 @@
     <string name="slide_cursor_acceleration_quadratic">X*X hızlanma</string>
     <string name="bottom_offset">Alt boşluk: %1$s</string>
     <string name="slide_backspace_deadzone_enable">Geri tuşu: Normal kaydırmalar kaydırma hareketleriyle birlikte çalışabilsin</string>
+    <string name="srcery">Srcery</string>
+    <string name="dual">Çift</string>
+    <string name="slide_cursor_acceleration_threshold_acceleration">Eşik hızlanma</string>
+    <string name="modify_keys">Tuşları değiştir</string>
+    <string name="key_modification_placeholder">YAML\'ı girin</string>
+    <string name="how_to_modify_keys">Tuşları nasıl değiştirilir</string>
 </resources>
