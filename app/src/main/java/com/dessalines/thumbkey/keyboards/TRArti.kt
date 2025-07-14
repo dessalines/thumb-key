@@ -274,8 +274,8 @@ val KB_TR_ARTI_NUMERIC =
         Triple(0, 1) { key ->
             key.copy(
                 center = KeyC("1", size = LARGE),
-                bottomRight = null,
-                bottom = null,
+                bottomRight = KeyC("₸", color = MUTED),
+                bottom = KeyC("€", color = MUTED),
             )
         },
         Triple(0, 2) { key ->
@@ -306,11 +306,11 @@ val KB_TR_ARTI_NUMERIC =
             key.copy(
                 center = KeyC("5", size = LARGE),
                 topLeft = null,
-                top = null,
+                top = KeyC(";", color = MUTED),
                 topRight = null,
                 right = null,
                 bottomRight = null,
-                bottom = null,
+                bottom = KeyC(":", color = MUTED),
                 bottomLeft = null,
                 left = null,
             )
