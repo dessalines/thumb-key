@@ -2,6 +2,7 @@ package com.dessalines.thumbkey.ui.components.keyboard
 
 import android.content.Context
 import android.media.AudioManager
+import android.os.Build
 import android.util.Log
 import android.view.HapticFeedbackConstants
 import android.view.inputmethod.InputConnection.CURSOR_UPDATE_MONITOR
@@ -77,6 +78,7 @@ import com.dessalines.thumbkey.utils.getAutoKeyWidth
 import com.dessalines.thumbkey.utils.getKeyboardMode
 import com.dessalines.thumbkey.utils.getModifiedKeyboardDefinition
 import com.dessalines.thumbkey.utils.keyboardPositionToAlignment
+import com.dessalines.thumbkey.utils.navigationModeIsGesture
 import com.dessalines.thumbkey.utils.toBool
 import kotlin.time.TimeMark
 
@@ -135,6 +137,13 @@ fun KeyboardScreen(
             settings?.position
                 ?: DEFAULT_POSITION,
         ]
+
+    val gestureNavigationOffset = when {
+        Build.VERSION.SDK_INT < Build.VERSION_CODES.VANILLA_ICE_CREAM -> 0.dp
+        ctx.navigationModeIsGesture() -> 24.dp
+        else -> 0.dp
+    }
+
 
     val pushupSizeDp = (settings?.pushupSize ?: DEFAULT_PUSHUP_SIZE).dp
 
@@ -221,6 +230,7 @@ fun KeyboardScreen(
                 modifier =
                     Modifier
                         .navigationBarsPadding()
+                        .padding(bottom = gestureNavigationOffset)
                         .padding(bottom = pushupSizeDp)
                         .fillMaxWidth()
                         .then(
@@ -414,6 +424,7 @@ fun KeyboardScreen(
                     modifier =
                         Modifier
                             .navigationBarsPadding()
+                            .padding(bottom = gestureNavigationOffset)
                             .then(
                                 if (backdropEnabled) {
                                     Modifier.padding(top = backdropPadding)
