@@ -12,8 +12,8 @@ import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
-import androidx.compose.foundation.layout.navigationBarsPadding
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.safeDrawingPadding
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.runtime.Composable
@@ -220,7 +220,7 @@ fun KeyboardScreen(
             Row(
                 modifier =
                     Modifier
-                        .navigationBarsPadding()
+                        .safeDrawingPadding()
                         .padding(bottom = pushupSizeDp)
                         .fillMaxWidth()
                         .then(
@@ -413,7 +413,7 @@ fun KeyboardScreen(
                 Column(
                     modifier =
                         Modifier
-                            .navigationBarsPadding()
+                            .safeDrawingPadding()
                             .then(
                                 if (backdropEnabled) {
                                     Modifier.padding(top = backdropPadding)
