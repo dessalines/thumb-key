@@ -88,6 +88,33 @@ data class KeyItemC(
         }
 }
 
+fun KeyboardC.alterKey(
+    row: Int,
+    col: Int,
+    modifier: (KeyItemC) -> KeyItemC,
+): KeyboardC =
+    this.copy(
+        arr =
+            this.arr.toMutableList().apply {
+                if (row < this.size) {
+                    this[row] =
+                        this[row].toMutableList().apply {
+                            if (col < this.size) {
+                                this[col] = modifier(this[col])
+                            }
+                        }
+                }
+            },
+    )
+
+fun KeyboardC.alterKeys(vararg modifications: Triple<Int, Int, (KeyItemC) -> KeyItemC>): KeyboardC {
+    var result = this
+    for ((row, col, modifier) in modifications) {
+        result = result.alterKey(row, col, modifier)
+    }
+    return result
+}
+
 @optics
 data class KeyC(
     val action: KeyAction,

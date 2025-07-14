@@ -161,6 +161,7 @@ import com.dessalines.thumbkey.keyboards.KB_PT_DVORAK_WIDE
 import com.dessalines.thumbkey.keyboards.KB_PT_EN_THUMBKEY
 import com.dessalines.thumbkey.keyboards.KB_PT_THUMBKEY
 import com.dessalines.thumbkey.keyboards.KB_PT_TYPESPLIT
+import com.dessalines.thumbkey.keyboards.KB_RU_ARTI
 import com.dessalines.thumbkey.keyboards.KB_RU_MESSAGEASE
 import com.dessalines.thumbkey.keyboards.KB_RU_MESSAGEASE_SYMBOLS
 import com.dessalines.thumbkey.keyboards.KB_RU_MESSAGEASE_WRITER
@@ -382,4 +383,5 @@ enum class KeyboardLayout(
     SRLatnEnDeThumbKey(KB_SRLATN_EN_DE_THUMBKEY),
     FRENFrappeFluideV1(KB_FR_EN_FRAPPE_FLUIDE_V1),
     ENThumbKeyWordsSymbolsDual(KB_EN_THUMBKEY_WORDS_SYMBOLS_DUAL),
+    RUArti(KB_RU_ARTI),
 }
