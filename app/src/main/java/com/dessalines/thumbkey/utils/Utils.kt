@@ -42,6 +42,7 @@ import com.dessalines.thumbkey.R
 import com.dessalines.thumbkey.db.AppSettingsViewModel
 import com.dessalines.thumbkey.db.DEFAULT_KEYBOARD_LAYOUT
 import com.dessalines.thumbkey.db.LayoutsUpdate
+import com.dessalines.thumbkey.utils.KeyboardLayout
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
@@ -421,8 +422,7 @@ fun performKeyAction(
         }
 
         is KeyAction.SmartQuotes -> {
-            val textBeforeCursor =
-                ime.currentInputConnection.getTextBeforeCursor(1, 0)?.toString() ?: ""
+            val textBeforeCursor = ime.currentInputConnection.getTextBeforeCursor(1, 0)?.toString() ?: ""
             val textNew = if (textBeforeCursor.matches(Regex("\\S"))) action.end else action.start
             ime.currentInputConnection.commitText(textNew, 1)
         }
@@ -985,7 +985,6 @@ fun performKeyAction(
             onToggleShiftMode(enable)
             onToggleCapsLock()
         }
-
         KeyAction.SelectAll -> {
             // Check here for the action #s:
             // https://developer.android.com/reference/android/R.id
@@ -1054,7 +1053,6 @@ fun performKeyAction(
                     else -> KeyboardPosition.Left
                 }
             }
-
         KeyAction.MoveKeyboard.Right ->
             onChangePosition {
                 when (it) {
@@ -1062,7 +1060,6 @@ fun performKeyAction(
                     else -> KeyboardPosition.Right
                 }
             }
-
         KeyAction.MoveKeyboard.CycleLeft ->
             onChangePosition {
                 when (it) {
@@ -1072,7 +1069,6 @@ fun performKeyAction(
                     KeyboardPosition.Dual -> KeyboardPosition.Center
                 }
             }
-
         KeyAction.MoveKeyboard.CycleRight ->
             onChangePosition {
                 when (it) {
@@ -1442,11 +1438,7 @@ fun circularDirection(
     // This allows for spiralling circles and makes detection quite a bit better
     val filteredPositions =
         positions.dropWhileIndexed { index, position ->
-            index == 0 ||
-                position.getDistanceTo(positions.last()) <=
-                positions[index - 1].getDistanceTo(
-                    positions.last(),
-                )
+            index == 0 || position.getDistanceTo(positions.last()) <= positions[index - 1].getDistanceTo(positions.last())
         }
 
     return if (filteredPositions.isNotEmpty()) {
