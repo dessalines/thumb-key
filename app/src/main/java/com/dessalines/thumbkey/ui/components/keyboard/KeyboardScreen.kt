@@ -2,7 +2,6 @@ package com.dessalines.thumbkey.ui.components.keyboard
 
 import android.content.Context
 import android.media.AudioManager
-import android.os.Build
 import android.util.Log
 import android.view.HapticFeedbackConstants
 import android.view.inputmethod.InputConnection.CURSOR_UPDATE_MONITOR
@@ -13,8 +12,8 @@ import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
-import androidx.compose.foundation.layout.navigationBarsPadding
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.safeDrawingPadding
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.runtime.Composable
@@ -78,7 +77,6 @@ import com.dessalines.thumbkey.utils.getAutoKeyWidth
 import com.dessalines.thumbkey.utils.getKeyboardMode
 import com.dessalines.thumbkey.utils.getModifiedKeyboardDefinition
 import com.dessalines.thumbkey.utils.keyboardPositionToAlignment
-import com.dessalines.thumbkey.utils.navigationModeIsGesture
 import com.dessalines.thumbkey.utils.toBool
 import kotlin.time.TimeMark
 
@@ -137,13 +135,6 @@ fun KeyboardScreen(
             settings?.position
                 ?: DEFAULT_POSITION,
         ]
-
-    val gestureNavigationOffset =
-        when {
-            Build.VERSION.SDK_INT < Build.VERSION_CODES.VANILLA_ICE_CREAM -> 0.dp
-            ctx.navigationModeIsGesture() -> 24.dp
-            else -> 0.dp
-        }
 
     val pushupSizeDp = (settings?.pushupSize ?: DEFAULT_PUSHUP_SIZE).dp
 
@@ -229,8 +220,7 @@ fun KeyboardScreen(
             Row(
                 modifier =
                     Modifier
-                        .navigationBarsPadding()
-                        .padding(bottom = gestureNavigationOffset)
+                        .safeDrawingPadding()
                         .padding(bottom = pushupSizeDp)
                         .fillMaxWidth()
                         .then(
@@ -423,8 +413,7 @@ fun KeyboardScreen(
                 Column(
                     modifier =
                         Modifier
-                            .navigationBarsPadding()
-                            .padding(bottom = gestureNavigationOffset)
+                            .safeDrawingPadding()
                             .then(
                                 if (backdropEnabled) {
                                     Modifier.padding(top = backdropPadding)

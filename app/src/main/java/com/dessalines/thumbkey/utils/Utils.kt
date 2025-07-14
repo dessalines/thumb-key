@@ -8,7 +8,6 @@ import android.content.res.Resources
 import android.os.Build
 import android.os.Handler
 import android.os.Looper
-import android.provider.Settings
 import android.text.InputType
 import android.util.Log
 import android.view.KeyEvent
@@ -43,7 +42,6 @@ import com.dessalines.thumbkey.R
 import com.dessalines.thumbkey.db.AppSettingsViewModel
 import com.dessalines.thumbkey.db.DEFAULT_KEYBOARD_LAYOUT
 import com.dessalines.thumbkey.db.LayoutsUpdate
-import com.dessalines.thumbkey.utils.KeyboardLayout
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
@@ -1508,10 +1506,3 @@ fun updateLayouts(
         ),
     )
 }
-
-fun Context.navigationModeIsGesture() =
-    Settings.Secure.getInt(
-        contentResolver,
-        "navigation_mode",
-        -1,
-    ) == 2
