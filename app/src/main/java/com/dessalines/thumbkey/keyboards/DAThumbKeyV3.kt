@@ -16,7 +16,7 @@ val KB_DA_THUMBKEY_MAIN =
             listOf(
                 KeyItemC(
                     center = KeyC("s", size = LARGE),
-                    swipeType = FOUR_WAY_DIAGONAL,
+                    right = KeyC("z"),
                     bottomRight = KeyC("v"),
                     topLeft = KeyC("w"),
                 ),
@@ -74,7 +74,6 @@ val KB_DA_THUMBKEY_MAIN =
                     center = KeyC("t", size = LARGE),
                     swipeType = FOUR_WAY_DIAGONAL,
                     topRight = KeyC("g"),
-                    bottomLeft = KeyC("z"),
                 ),
                 KeyItemC(
                     center = KeyC("d", size = LARGE),
@@ -105,7 +104,7 @@ val KB_DA_THUMBKEY_SHIFTED =
             listOf(
                 KeyItemC(
                     center = KeyC("S", size = LARGE),
-                    swipeType = FOUR_WAY_DIAGONAL,
+                    right = KeyC("Z"),
                     bottomRight = KeyC("V"),
                     topLeft = KeyC("W"),
                 ),
@@ -166,7 +165,6 @@ val KB_DA_THUMBKEY_SHIFTED =
                     center = KeyC("T", size = LARGE),
                     swipeType = FOUR_WAY_DIAGONAL,
                     topRight = KeyC("G"),
-                    bottomLeft = KeyC("Z"),
                 ),
                 KeyItemC(
                     center = KeyC("D", size = LARGE),
