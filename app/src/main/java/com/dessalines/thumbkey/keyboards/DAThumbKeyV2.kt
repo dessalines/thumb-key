@@ -79,8 +79,8 @@ val KB_DA_THUMBKEY_MAIN =
                 KeyItemC(
                     center = KeyC("d", size = LARGE),
                     top = KeyC("k"),
-                    topRight = KeyC("c", color = MUTED),
-                    right = KeyC("'"),
+                    topRight = KeyC("c"),
+                    right = KeyC("'", color = MUTED),
                     bottomRight = KeyC("-", color = MUTED),
                     bottom = KeyC(".", color = MUTED),
                     bottomLeft = KeyC(",", color = MUTED),
@@ -171,8 +171,8 @@ val KB_DA_THUMBKEY_SHIFTED =
                 KeyItemC(
                     center = KeyC("D", size = LARGE),
                     top = KeyC("K"),
-                    topRight = KeyC("C", color = MUTED),
-                    right = KeyC("'"),
+                    topRight = KeyC("C"),
+                    right = KeyC("'", color = MUTED),
                     bottomRight = KeyC("-", color = MUTED),
                     bottom = KeyC(".", color = MUTED),
                     bottomLeft = KeyC("*", color = MUTED),
