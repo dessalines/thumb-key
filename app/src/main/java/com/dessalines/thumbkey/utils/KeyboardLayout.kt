@@ -384,4 +384,5 @@ enum class KeyboardLayout(
     FRENFrappeFluideV1(KB_FR_EN_FRAPPE_FLUIDE_V1),
     ENThumbKeyWordsSymbolsDual(KB_EN_THUMBKEY_WORDS_SYMBOLS_DUAL),
     RUArti(KB_RU_ARTI),
+    DAThumbKeyMultiLingual(KB_DA_THUMBKEY_MULTILINGUAL),
 }
