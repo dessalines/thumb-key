@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file.
 
+## What's Changed in 5.0.2
+
+- Revert "Fix bottom padding for Android 15+ " by @dessalines in [#1465](https://github.com/dessalines/thumb-key/pull/1465)
+
+**Full Changelog**: https://github.com/dessalines/thumb-key/compare/5.0.1...5.0.2
+
 ## What's Changed in 5.0.1
 
 - Fix bottom padding for Android 15+ by @juschmitt in [#1463](https://github.com/dessalines/thumb-key/pull/1463)
