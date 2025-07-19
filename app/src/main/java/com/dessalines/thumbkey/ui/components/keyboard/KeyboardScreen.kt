@@ -44,6 +44,7 @@ import com.dessalines.thumbkey.db.DEFAULT_DRAG_RETURN_ENABLED
 import com.dessalines.thumbkey.db.DEFAULT_GHOST_KEYS_ENABLED
 import com.dessalines.thumbkey.db.DEFAULT_HIDE_LETTERS
 import com.dessalines.thumbkey.db.DEFAULT_HIDE_SYMBOLS
+import com.dessalines.thumbkey.db.DEFAULT_IGNORE_BOTTOM_PADDING
 import com.dessalines.thumbkey.db.DEFAULT_KEYBOARD_LAYOUT
 import com.dessalines.thumbkey.db.DEFAULT_KEY_BORDER_WIDTH
 import com.dessalines.thumbkey.db.DEFAULT_KEY_HEIGHT
@@ -137,6 +138,7 @@ fun KeyboardScreen(
         ]
 
     val pushupSizeDp = (settings?.pushupSize ?: DEFAULT_PUSHUP_SIZE).dp
+    val ignoreBottomPadding = (settings?.ignoreBottomPadding ?: DEFAULT_IGNORE_BOTTOM_PADDING).toBool()
 
     val autoCapitalize = (settings?.autoCapitalize ?: DEFAULT_AUTO_CAPITALIZE).toBool()
     val spacebarMultiTaps = (settings?.spacebarMultiTaps ?: DEFAULT_SPACEBAR_MULTITAPS).toBool()
@@ -220,7 +222,7 @@ fun KeyboardScreen(
             Row(
                 modifier =
                     Modifier
-                        .safeDrawingPadding()
+                        .then(if (!ignoreBottomPadding) Modifier.safeDrawingPadding() else Modifier)
                         .padding(bottom = pushupSizeDp)
                         .fillMaxWidth()
                         .then(
@@ -397,7 +399,15 @@ fun KeyboardScreen(
                 modifier =
                     Modifier
                         .then(if (drawBackdrop) Modifier.background(backdropColor) else (Modifier))
-                        .padding(bottom = pushupSizeDp),
+                        .then(if (!ignoreBottomPadding) Modifier.safeDrawingPadding() else Modifier)
+                        .padding(bottom = pushupSizeDp)
+                        .then(
+                            if (backdropEnabled) {
+                                Modifier.padding(top = backdropPadding)
+                            } else {
+                                (Modifier)
+                            },
+                        ),
             ) {
                 // adds a pretty line if you're using the backdrop
                 if (drawBackdrop) {
@@ -410,18 +420,7 @@ fun KeyboardScreen(
                                 .background(color = MaterialTheme.colorScheme.surfaceVariant),
                     )
                 }
-                Column(
-                    modifier =
-                        Modifier
-                            .safeDrawingPadding()
-                            .then(
-                                if (backdropEnabled) {
-                                    Modifier.padding(top = backdropPadding)
-                                } else {
-                                    (Modifier)
-                                },
-                            ),
-                ) {
+                Column {
                     keyboard.arr.forEachIndexed { i, row ->
                         Row {
                             row.forEachIndexed { j, key ->
