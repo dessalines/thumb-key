@@ -61,6 +61,7 @@ const val DEFAULT_CLOCKWISE_DRAG_ACTION = 0
 const val DEFAULT_COUNTERCLOCKWISE_DRAG_ACTION = 1
 const val DEFAULT_GHOST_KEYS_ENABLED = 0
 const val DEFAULT_KEY_MODIFICATIONS = ""
+const val DEFAULT_IGNORE_BOTTOM_PADDING = 0
 
 @Entity
 data class AppSettings(
@@ -263,6 +264,11 @@ data class AppSettings(
         defaultValue = DEFAULT_KEY_HEIGHT.toString(),
     )
     val keyHeight: Int,
+    @ColumnInfo(
+        name = "ignore_bottom_padding",
+        defaultValue = DEFAULT_IGNORE_BOTTOM_PADDING.toString(),
+    )
+    val ignoreBottomPadding: Int,
 )
 
 data class LayoutsUpdate(
@@ -351,6 +357,10 @@ data class LookAndFeelUpdate(
         name = "key_height_v18",
     )
     val keyHeight: Int,
+    @ColumnInfo(
+        name = "ignore_bottom_padding",
+    )
+    val ignoreBottomPadding: Int,
 )
 
 data class BehaviorUpdate(
@@ -682,8 +692,17 @@ val MIGRATION_17_18 =
         }
     }
 
+val MIGRATION_18_19 =
+    object : Migration(18, 19) {
+        override fun migrate(db: SupportSQLiteDatabase) {
+            db.execSQL(
+                "alter table AppSettings add column ignore_bottom_padding INTEGER NOT NULL default $DEFAULT_IGNORE_BOTTOM_PADDING",
+            )
+        }
+    }
+
 @Database(
-    version = 18,
+    version = 19,
     entities = [AppSettings::class],
     exportSchema = true,
 )
@@ -723,6 +742,7 @@ abstract class AppDB : RoomDatabase() {
                             MIGRATION_15_16,
                             MIGRATION_16_17,
                             MIGRATION_17_18,
+                            MIGRATION_18_19,
                         )
                         // Necessary because it can't insert data on creation
                         .addCallback(

@@ -99,4 +99,5 @@
     <string name="modify_keys">Modify keys</string>
     <string name="key_modification_placeholder">Enter YAML</string>
     <string name="how_to_modify_keys">How to modify keys</string>
+    <string name="ignore_bottom_padding">Ignore bottom padding</string>
 </resources>

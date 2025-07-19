@@ -46,6 +46,7 @@ import com.dessalines.thumbkey.db.DEFAULT_DRAG_RETURN_ENABLED
 import com.dessalines.thumbkey.db.DEFAULT_GHOST_KEYS_ENABLED
 import com.dessalines.thumbkey.db.DEFAULT_HIDE_LETTERS
 import com.dessalines.thumbkey.db.DEFAULT_HIDE_SYMBOLS
+import com.dessalines.thumbkey.db.DEFAULT_IGNORE_BOTTOM_PADDING
 import com.dessalines.thumbkey.db.DEFAULT_KEYBOARD_LAYOUT
 import com.dessalines.thumbkey.db.DEFAULT_KEY_BORDERS
 import com.dessalines.thumbkey.db.DEFAULT_KEY_BORDER_WIDTH
@@ -256,6 +257,7 @@ private fun resetAppSettingsToDefault(appSettingsViewModel: AppSettingsViewModel
             nonSquareKeys = DEFAULT_NON_SQUARE_KEYS,
             keyWidth = DEFAULT_KEY_WIDTH,
             keyHeight = DEFAULT_KEY_HEIGHT,
+            ignoreBottomPadding = DEFAULT_IGNORE_BOTTOM_PADDING,
         ),
     )
 }
