@@ -15,7 +15,7 @@ data class KeyboardDefinitionModes(
     val ctrled: KeyboardC? = null,
     val alted: KeyboardC? = null,
 ) {
-    companion object {}
+    companion object
 }
 
 @optics
@@ -23,8 +23,6 @@ data class KeyboardDefinitionSettings(
     val autoCapitalizers: AutoCapitalizers = arrayOf(),
     val autoShift: Boolean = true,
 ) {
-    companion object {}
-
     override fun equals(other: Any?): Boolean {
         if (this === other) return true
         if (javaClass != other?.javaClass) return false
@@ -35,6 +33,8 @@ data class KeyboardDefinitionSettings(
     }
 
     override fun hashCode(): Int = autoCapitalizers.contentHashCode()
+
+    companion object
 }
 
 @optics
@@ -43,7 +43,7 @@ data class KeyboardDefinition(
     val modes: KeyboardDefinitionModes,
     val settings: KeyboardDefinitionSettings = KeyboardDefinitionSettings(),
 ) {
-    companion object {}
+    companion object
 }
 
 @optics
@@ -51,7 +51,7 @@ data class KeyboardDefinition(
 data class KeyboardC(
     val arr: List<List<KeyItemC>>,
 ) {
-    companion object {}
+    companion object
 }
 
 @optics
@@ -72,7 +72,7 @@ data class KeyItemC(
     val slideType: SlideType = SlideType.NONE,
     val longPress: KeyAction? = null,
 ) {
-    companion object {}
+    companion object
 
     fun getSwipe(dir: SwipeDirection?) =
         when (dir) {
@@ -132,8 +132,6 @@ data class KeyC(
             else -> ColorVariant.SECONDARY
         },
 ) {
-    companion object {}
-
     constructor(
         text: String,
         displayText: String = text,
@@ -155,6 +153,8 @@ data class KeyC(
         size,
         color,
     )
+
+    companion object
 }
 
 sealed class KeyDisplay {
@@ -274,7 +274,7 @@ sealed class KeyAction {
 }
 
 enum class CursorAccelerationMode(
-    @StringRes val resId: Int,
+    @param:StringRes val resId: Int,
 ) {
     LINEAR(R.string.slide_cursor_acceleration_linear),
     QUADRATIC(R.string.slide_cursor_acceleration_quadratic),
@@ -317,7 +317,7 @@ enum class FontSizeVariant {
 }
 
 enum class ThemeMode(
-    @StringRes val resId: Int,
+    @param:StringRes val resId: Int,
 ) {
     System(R.string.system),
     Light(R.string.light),
@@ -325,7 +325,7 @@ enum class ThemeMode(
 }
 
 enum class ThemeColor(
-    @StringRes val resId: Int,
+    @param:StringRes val resId: Int,
 ) {
     Dynamic(R.string.dynamic),
     Green(R.string.green),
@@ -342,7 +342,7 @@ enum class ThemeColor(
 }
 
 enum class KeyboardPosition(
-    @StringRes val resId: Int,
+    @param:StringRes val resId: Int,
 ) {
     Center(R.string.center),
     Right(R.string.right),
@@ -394,7 +394,7 @@ enum class CircularDirection {
 }
 
 enum class CircularDragAction(
-    @StringRes val resId: Int,
+    @param:StringRes val resId: Int,
 ) {
     OppositeCase(R.string.send_oppsite_case),
     Numeric(R.string.send_numeric),
