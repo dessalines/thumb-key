@@ -33,8 +33,6 @@ val KB_DA_THUMBKEY_MAIN =
                     topRight = KeyC("y"),
                     right = KeyC("ü", color = MUTED),
                     bottomLeft = KeyC("h"),
-                    
-                    
                 ),
                 EMOJI_KEY_ITEM,
             ),
@@ -114,7 +112,7 @@ val KB_DA_THUMBKEY_SHIFTED =
                     center = KeyC("S", size = LARGE),
                     left = KeyC("ß", color = MUTED),
                     right = KeyC("Z"),
-                    bottom =KeyC("Š", color = MUTED),
+                    bottom = KeyC("Š", color = MUTED),
                     bottomRight = KeyC("V"),
                     topLeft = KeyC("W"),
                 ),
@@ -129,8 +127,6 @@ val KB_DA_THUMBKEY_SHIFTED =
                     topRight = KeyC("Y"),
                     right = KeyC("Ü", color = MUTED),
                     bottomLeft = KeyC("H"),
-                    
-                    
                 ),
                 EMOJI_KEY_ITEM,
             ),
