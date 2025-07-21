@@ -153,7 +153,7 @@ Enabling `Ghost keys` in keyboard settings will enable swiping hidden symbol key
 
 ### Modify keys
 
-You can customize individual keyboard keys using a YAML configuration file. This lets you change characters, remove keys, adjust visual size, and other changes.
+Keyboard keys can be customized using YAML.
 
 #### Example 1
 
