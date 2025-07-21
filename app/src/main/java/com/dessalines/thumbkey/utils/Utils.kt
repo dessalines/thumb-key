@@ -346,10 +346,11 @@ fun performKeyAction(
             Log.d(TAG, "committing key text: $text")
             ime.ignoreNextCursorMove()
 
-            ime.currentInputConnection.commitText(
-                text,
-                1,
-            )
+            keyboardSettings.textProcessor?.processInput(ime, text) ?:
+                ime.currentInputConnection.commitText(
+                    text,
+                    1,
+                )
 
             if (autoCapitalize && keyboardSettings.autoShift) {
                 autoCapitalize(
@@ -365,7 +366,8 @@ fun performKeyAction(
         is KeyAction.SendEvent -> {
             val ev = action.event
             Log.d(TAG, "sending key event: $ev")
-            ime.currentInputConnection.sendKeyEvent(ev)
+            keyboardSettings.textProcessor?.handleKeyEvent(ime, ev) ?:
+                ime.currentInputConnection.sendKeyEvent(ev)
             onKeyEvent()
         }
 

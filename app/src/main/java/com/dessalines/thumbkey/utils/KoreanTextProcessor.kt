@@ -3,6 +3,7 @@ package com.dessalines.thumbkey.utils
 import android.util.Log
 import android.view.inputmethod.InputConnection
 import android.view.KeyEvent
+import android.view.inputmethod.ExtractedTextRequest
 import com.dessalines.thumbkey.IMEService
 
 private const val UNICODE_BASE = 0xAC00
@@ -11,6 +12,8 @@ private const val VOWEL_MULTIPLIER = 28
 
 interface TextProcessor {
     fun processInput(ime: IMEService, input: CharSequence)
+    fun handleKeyEvent(ime: IMEService, ev: KeyEvent)
+    fun handleFinishInput(ime: IMEService)
 }
 
 object KoreanLetters{
@@ -88,6 +91,15 @@ class KoreanTextProcessor : TextProcessor {
         val ic = ime.currentInputConnection
         val inputChar = input[0]
 
+        if (ime.didCursorMove()) {
+            val extractedText = ime.currentInputConnection.getExtractedText(ExtractedTextRequest(), 0)
+            commitCurrentBlock(ic)  // TODO: while removing entire word it commit the text on next input
+            // TODO: when moving cursor and deleting it returns back to the composingText and deletes single letter from it
+            // TODO: enter doesn't commit composeText
+            resetState()
+            ime.currentInputConnection.setSelection(extractedText?.selectionStart ?: -1, extractedText.selectionEnd)
+        }
+
         if (KoreanLetters.isConsonant(inputChar)) {
             processConsonant(ic, inputChar)
         }
@@ -105,12 +117,17 @@ class KoreanTextProcessor : TextProcessor {
         Log.d(TAG, "trailing: $trailing")
     }
 
-    fun sendKeyEvent(ev: KeyEvent, ime: IMEService) {
+    override fun handleKeyEvent(ime: IMEService, ev: KeyEvent) {
         if (ev.keyCode == KeyEvent.KEYCODE_DEL) {
             deleteKeyAction(ev, ime)
         } else {
             ime.currentInputConnection.sendKeyEvent(ev)
         }
+    }
+
+    override fun handleFinishInput(ime: IMEService) {
+//        commitCurrentBlock(ime.currentInputConnection) -- it is committed 2 times
+        resetState()
     }
 
     private fun deleteKeyAction(ev: KeyEvent, ime: IMEService) {

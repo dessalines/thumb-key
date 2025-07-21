@@ -17,6 +17,8 @@ import androidx.savedstate.SavedStateRegistryController
 import androidx.savedstate.SavedStateRegistryOwner
 import androidx.savedstate.setViewTreeSavedStateRegistryOwner
 import com.dessalines.thumbkey.db.DEFAULT_DISABLE_FULLSCREEN_EDITOR
+import com.dessalines.thumbkey.utils.KeyboardDefinition
+import com.dessalines.thumbkey.utils.KeyboardLayout
 import com.dessalines.thumbkey.utils.TAG
 import com.dessalines.thumbkey.utils.toBool
 
@@ -27,6 +29,12 @@ class IMEService :
     SavedStateRegistryOwner {
     private fun setupView(): View {
         val settingsRepo = (application as ThumbkeyApplication).appSettingsRepository
+
+        val layoutIndex = settingsRepo.appSettings.value?.keyboardLayout
+        if (layoutIndex != null) {
+            currentKeyboardDefinition = KeyboardLayout.entries[layoutIndex].keyboardDefinition
+            Log.d(TAG, KeyboardLayout.entries[layoutIndex].name)
+        }
 
         val view = ComposeKeyboardView(this, settingsRepo)
         window?.window?.decorView?.let { decorView ->
@@ -42,6 +50,8 @@ class IMEService :
         return view
     }
 
+    private lateinit var currentKeyboardDefinition: KeyboardDefinition
+
     /**
      * This is called every time the keyboard is brought up.
      * You can't use onCreate, because that can't pick up new numeric inputs
@@ -53,6 +63,7 @@ class IMEService :
         super.onStartInput(attribute, restarting)
         val view = this.setupView()
         this.setInputView(view)
+        Log.d(TAG, "onStartInput")
     }
 
     // Lifecycle Methods
@@ -107,6 +118,21 @@ class IMEService :
     fun ignoreNextCursorMove() {
         // This gets reset on the next call to `onUpdateCursorAnchorInfo`
         ignoreCursorMove = true
+    }
+
+    override fun onFinishInput() {
+        Log.d(TAG, "onFinishInput")
+        super.onFinishInput()
+    }
+
+    override fun onWindowHidden() {
+        currentKeyboardDefinition.settings.textProcessor?.handleFinishInput(this)
+        super.onWindowHidden()
+    }
+
+    fun setKeyboardDefinition(definition: KeyboardDefinition) {
+        currentKeyboardDefinition = definition
+        Log.d(TAG, "Layout changed: " + currentKeyboardDefinition.title)
     }
 
     private var ignoreCursorMove: Boolean = false
