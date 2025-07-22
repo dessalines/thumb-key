@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">Thumb-Key</string>
+    <string name="app_name">Thumb Key</string>
     <string name="settings">Настройки</string>
     <string name="system">Системная</string>
     <string name="light">Светлая</string>
@@ -8,15 +8,15 @@
     <string name="dynamic">Динамическая</string>
     <string name="green">Зелёная</string>
     <string name="pink">Розовая</string>
-    <string name="matrix">Матрица-амолед</string>
-    <string name="srcery">Серая</string>
+    <string name="matrix">Матрично-чёрная</string>
+    <string name="srcery">Кудесническая</string>
     <string name="blue">Голубая</string>
-    <string name="dracula">Dracula</string>
-    <string name="twilight">Сумерки</string>
-    <string name="high_contrast">Высокий контраст</string>
-    <string name="high_contrast_colorful">Высокий контраст с яркими цветами</string>
-    <string name="ancom">Анархо-коммунистические цвета</string>
-    <string name="center">Центр</string>
+    <string name="dracula">Мрачная</string>
+    <string name="twilight">Сумеречная</string>
+    <string name="high_contrast">Высококонтрастная</string>
+    <string name="high_contrast_colorful">Ярко контрастная</string>
+    <string name="ancom">Анархо-коммунистическая</string>
+    <string name="center">По центру</string>
     <string name="right">Справа</string>
     <string name="left">Слева</string>
     <string name="about">О приложении</string>
@@ -28,7 +28,7 @@
     <string name="developer_matrix_chatroom">Чат разработчиков в Matrix</string>
     <string name="donate_to_thumbkey">Поддержать Thumb-Key</string>
     <string name="social">Социальные сети</string>
-    <string name="join_c_thumbkey">Lemmy: c/thumbkey</string>
+    <string name="join_c_thumbkey">Присоединиться в Lemmy</string>
     <string name="follow_me_mastodon">Подписаться на меня в Mastodon</string>
     <string name="open_source">Открытый исходный код</string>
     <string name="source_code">Исходный код</string>
@@ -38,7 +38,7 @@
     <string name="layouts">Раскладки</string>
     <string name="theme">Тема</string>
     <string name="theme_color">Цвет темы</string>
-    <string name="position">Положение</string>
+    <string name="position">Расположение</string>
     <string name="vibrate_on_tap">Вибрация при касании</string>
     <string name="vibrate_warning">Требуется включить вибрацию в настройках системы</string>
     <string name="play_sound_on_tap">Звук при касании</string>
@@ -61,13 +61,13 @@
     <string name="reset_to_defaults_msg">Вы хотите вернуться к настройкам по умолчанию?</string>
     <string name="reset_to_defaults_confirm">Сбросить</string>
     <string name="cancel">Отмена</string>
-    <string name="test_out_thumbkey">Тест Thumb-Key</string>
-    <string name="setup">Настройки</string>
+    <string name="test_out_thumbkey">Протестировать клавиатуру</string>
+    <string name="setup">Первоначальная настройка</string>
     <string name="user_guide">Руководство пользователя</string>
     <string name="setup_thumbkey">Активация Thumb-Key</string>
-    <string name="enable_thumbkey">Включить Thumb-Key</string>
-    <string name="select_thumbkey">Выбрать Thumb-Key</string>
-    <string name="finish_setup">Завершить настройки</string>
+    <string name="enable_thumbkey">Включите Thumb-Key</string>
+    <string name="select_thumbkey">Выберите Thumb-Key</string>
+    <string name="finish_setup">Завершить настройку</string>
     <string name="copy">Скопированный текст</string>
     <string name="hide_letters">Скрыть буквы</string>
     <string name="hide_symbols">Скрыть символы</string>
@@ -77,4 +77,26 @@
     <string name="key_padding">Отступы клавиш: %1$s</string>
     <string name="key_border_width">Ширина границы клавиш: %1$s</string>
     <string name="key_radius">Радиус клавиш: %1$s</string>
+    <string name="auto_size_keys">Максимизация под ширину экрана</string>
+    <string name="key_non_square">Использовать скругление клавиш</string>
+    <string name="key_height">Высота клавиш: %1$s</string>
+    <string name="key_width">Ширина клавиш: %1$s</string>
+    <string name="send_oppsite_case">Буква в противоположном регистре</string>
+    <string name="send_numeric">Цифровая клавиша</string>
+    <string name="circular_drag_enable">Круговое вращение</string>
+    <string name="clockwise_drag_action">Вращение по часовой</string>
+    <string name="counterclockwise_drag_action">Вращение против часовой</string>
+    <string name="drag_return_enable">Свайп с возвратом</string>
+    <string name="ghost_keys_enable">Скрытые клавиши</string>
+    <string name="dual">Диада</string>
+    <string name="ghost_keys_description">Ввод скрытых символов, не переключаясь на раскладку с цифрами</string>
+    <string name="modify_keys">Модификация клавиш</string>
+    <string name="key_modification_placeholder">Введите или вставьте текст в формате YAML</string>
+    <string name="how_to_modify_keys">Как модифицировать клавиши</string>
+    <string name="backup_database">Создать резервную копию</string>
+    <string name="restore_database">Восстановить из резервной копии</string>
+    <string name="database_restored">Восстановление завершено.</string>
+    <string name="database_backed_up">Резервная копия создана.</string>
+    <string name="backup_and_restore">Резервное копирование и восстановление</string>
+    <string name="restore_database_warning">Предупреждение: Все данные в текущей базе данных будут стёрты</string>
 </resources>
