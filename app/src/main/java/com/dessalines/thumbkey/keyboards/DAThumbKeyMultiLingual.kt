@@ -10,7 +10,7 @@ import com.dessalines.thumbkey.utils.FontSizeVariant.*
 import com.dessalines.thumbkey.utils.KeyAction.*
 import com.dessalines.thumbkey.utils.SwipeNWay.*
 
-val KB_DA_THUMBKEY_MAIN =
+val KB_DA_THUMBKEY_MULTILINGUAL_MAIN =
     KeyboardC(
         listOf(
             listOf(
@@ -104,7 +104,7 @@ val KB_DA_THUMBKEY_MAIN =
         ),
     )
 
-val KB_DA_THUMBKEY_SHIFTED =
+val KB_DA_THUMBKEY_MULTILINGUAL_SHIFTED =
     KeyboardC(
         listOf(
             listOf(
@@ -201,13 +201,13 @@ val KB_DA_THUMBKEY_SHIFTED =
         ),
     )
 
-val KB_DA_THUMBKEY: KeyboardDefinition =
+val KB_DA_THUMBKEY_MULTILINGUAL: KeyboardDefinition =
     KeyboardDefinition(
         title = "dansk thumb-key",
         modes =
             KeyboardDefinitionModes(
-                main = KB_DA_THUMBKEY_MAIN,
-                shifted = KB_DA_THUMBKEY_SHIFTED,
+                main = KB_DA_THUMBKEY_MULTILINGUAL_MAIN,
+                shifted = KB_DA_THUMBKEY_MULTILINGUAL_SHIFTED,
                 numeric = NUMERIC_KEYBOARD,
             ),
     )
