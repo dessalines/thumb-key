@@ -210,3 +210,12 @@ val MIGRATION_17_18 =
             )
         }
     }
+
+val MIGRATION_18_19 =
+    object : Migration(18, 19) {
+        override fun migrate(db: SupportSQLiteDatabase) {
+            db.execSQL(
+                "alter table AppSettings add column ignore_bottom_padding INTEGER NOT NULL default $DEFAULT_IGNORE_BOTTOM_PADDING",
+            )
+        }
+    }
