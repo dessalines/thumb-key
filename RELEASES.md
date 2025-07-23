@@ -2,6 +2,15 @@
 
 All notable changes to this project will be documented in this file.
 
+## What's Changed in 5.0.3
+
+- Adding setting to ignore bottom padding. by @dessalines in [#1477](https://github.com/dessalines/thumb-key/pull/1477)
+- Update README.md by @Toldry in [#1480](https://github.com/dessalines/thumb-key/pull/1480)
+- Move migrations to own file. by @dessalines in [#1479](https://github.com/dessalines/thumb-key/pull/1479)
+- Fix a few stringres param issues. by @dessalines in [#1478](https://github.com/dessalines/thumb-key/pull/1478)
+
+**Full Changelog**: https://github.com/dessalines/thumb-key/compare/5.0.2...5.0.3
+
 ## What's Changed in 5.0.2
 
 - Revert "Fix bottom padding for Android 15+ " by @dessalines in [#1465](https://github.com/dessalines/thumb-key/pull/1465)
@@ -1146,7 +1155,7 @@ All notable changes to this project will be documented in this file.
 - Finnish/Estonian messageease style layout by @Eemilp in [#639](https://github.com/dessalines/thumb-key/pull/639)
 - Typos by @5atoshiNakamoto in [#644](https://github.com/dessalines/thumb-key/pull/644)
 - Update strings.xml (typo) by @ligurio in [#638](https://github.com/dessalines/thumb-key/pull/638)
-- show locale currency bottom-right to 1 by @priyavrat-misra in [#636](https://github.com/dessalines/thumb-key/pull/636)
+- show locale currency bottom-right to 1 in [#636](https://github.com/dessalines/thumb-key/pull/636)
 - Adding release notes. by @dessalines
 
 ## New Contributors
@@ -1155,7 +1164,6 @@ All notable changes to this project will be documented in this file.
 - @Eemilp made their first contribution in [#639](https://github.com/dessalines/thumb-key/pull/639)
 - @5atoshiNakamoto made their first contribution in [#644](https://github.com/dessalines/thumb-key/pull/644)
 - @ligurio made their first contribution in [#638](https://github.com/dessalines/thumb-key/pull/638)
-- @priyavrat-misra made their first contribution in [#636](https://github.com/dessalines/thumb-key/pull/636)
 
 **Full Changelog**: https://github.com/dessalines/thumb-key/compare/2.6.10...2.6.11
 
