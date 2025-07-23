@@ -1,3 +1,32 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <string name="settings">Nastavení</string>
+    <string name="system">Systém</string>
+    <string name="light">Světlý</string>
+    <string name="dark">Tmavý</string>
+    <string name="dynamic">Dynamické</string>
+    <string name="green">Zelené</string>
+    <string name="pink">Růžové</string>
+    <string name="blue">Modré</string>
+    <string name="twilight">Zatmění</string>
+    <string name="high_contrast">Kontrastní</string>
+    <string name="high_contrast_colorful">Kontrastní barevné</string>
+    <string name="ancom">Anarcho-komunistické barvy</string>
+    <string name="center">Uprostřed</string>
+    <string name="right">Vpravo</string>
+    <string name="left">Vlevo</string>
+    <string name="dual">Zdvojené</string>
+    <string name="whats_new">Novinky</string>
+    <string name="version">Verze %1$s</string>
+    <string name="releases">Vydání</string>
+    <string name="support">Podpora</string>
+    <string name="donate_to_thumbkey">Darujte projektu</string>
+    <string name="social">Sociální sítě</string>
+    <string name="join_c_thumbkey">Připojte se k c/thumbkey</string>
+    <string name="follow_me_mastodon">Sledujte mě na Mastodonu</string>
+    <string name="source_code">Zdrojový kód</string>
+    <string name="source_code_subtitle">Thumb-Key je svobodný open-source software, licencovaný pod GNU Affero General Public License v3.0</string>
+    <string name="look_and_feel">Vzhled a odezva</string>
+    <string name="behavior">Chování</string>
+    <string name="layouts">Rozložení</string>
 </resources>
