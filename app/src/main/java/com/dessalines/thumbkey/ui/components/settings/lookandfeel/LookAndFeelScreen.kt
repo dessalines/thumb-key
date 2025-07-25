@@ -9,6 +9,7 @@ import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.outlined.Animation
+import androidx.compose.material.icons.outlined.BorderBottom
 import androidx.compose.material.icons.outlined.BorderOuter
 import androidx.compose.material.icons.outlined.Colorize
 import androidx.compose.material.icons.outlined.Crop75
@@ -50,6 +51,7 @@ import com.dessalines.thumbkey.db.DEFAULT_AUTO_SIZE_KEYS
 import com.dessalines.thumbkey.db.DEFAULT_BACKDROP_ENABLED
 import com.dessalines.thumbkey.db.DEFAULT_HIDE_LETTERS
 import com.dessalines.thumbkey.db.DEFAULT_HIDE_SYMBOLS
+import com.dessalines.thumbkey.db.DEFAULT_IGNORE_BOTTOM_PADDING
 import com.dessalines.thumbkey.db.DEFAULT_KEY_BORDER_WIDTH
 import com.dessalines.thumbkey.db.DEFAULT_KEY_HEIGHT
 import com.dessalines.thumbkey.db.DEFAULT_KEY_PADDING
@@ -120,6 +122,7 @@ fun LookAndFeelScreen(
     var soundOnTapState = (settings?.soundOnTap ?: DEFAULT_SOUND_ON_TAP).toBool()
     var hideLettersState = (settings?.hideLetters ?: DEFAULT_HIDE_LETTERS).toBool()
     var hideSymbolsState = (settings?.hideSymbols ?: DEFAULT_HIDE_SYMBOLS).toBool()
+    var ignoreBottomPaddingState = (settings?.ignoreBottomPadding ?: DEFAULT_IGNORE_BOTTOM_PADDING).toBool()
 
     var backdropEnabledState = (settings?.backdropEnabled ?: DEFAULT_BACKDROP_ENABLED).toBool()
 
@@ -135,6 +138,7 @@ fun LookAndFeelScreen(
                 soundOnTap = soundOnTapState.toInt(),
                 hideLetters = hideLettersState.toInt(),
                 hideSymbols = hideSymbolsState.toInt(),
+                ignoreBottomPadding = ignoreBottomPaddingState.toInt(),
                 theme = themeState.ordinal,
                 themeColor = themeColorState.ordinal,
                 backdropEnabled = backdropEnabledState.toInt(),
@@ -296,6 +300,23 @@ fun LookAndFeelScreen(
                     )
 
                     SwitchPreference(
+                        value = ignoreBottomPaddingState,
+                        onValueChange = {
+                            ignoreBottomPaddingState = it
+                            updateLookAndFeel()
+                        },
+                        title = {
+                            Text(stringResource(R.string.ignore_bottom_padding))
+                        },
+                        icon = {
+                            Icon(
+                                imageVector = Icons.Outlined.BorderBottom,
+                                contentDescription = null,
+                            )
+                        },
+                    )
+
+                    SwitchPreference(
                         value = autoSizeKeysState,
                         onValueChange = {
                             autoSizeKeysState = it
@@ -374,7 +395,7 @@ fun LookAndFeelScreen(
                                 val keyHeightStr =
                                     stringResource(
                                         R.string.key_height,
-                                        (keyHeightSliderState ?: DEFAULT_KEY_HEIGHT.toFloat()).toInt().toString(),
+                                        keyHeightSliderState.toInt().toString(),
                                     )
                                 Text(keyHeightStr)
                             },
