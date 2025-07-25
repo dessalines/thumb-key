@@ -238,7 +238,7 @@ ESCAMessagEase:
   - `TWO_WAY_VERTICAL`
   - `TWO_WAY_HORIZONTAL`
 
-### Example 3 - key action
+#### Example 3
 
 ```yaml
 ENThumbKey:
@@ -272,7 +272,7 @@ This swaps the 'switch language' and 'toggle emoji' actions on the top-right key
 
 `keyAction` and `text` cannot be used together.
 
-#### Example 4 - long press
+#### Example 4
 
 ```yaml
 ENThumbKey:
@@ -291,7 +291,7 @@ ENThumbKey:
 
 This enables long pressing to type digits. `longPress` properties are: `text`, `keyAction`, `remove`. These are used the same way as for `center`, `left`, `topLeft`, etc.
 
-#### Example 5 - combining marks (diacritics)
+#### Example 5
 
 ```yaml
 ENMessagEase:
