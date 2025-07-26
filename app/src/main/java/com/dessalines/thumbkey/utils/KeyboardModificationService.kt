@@ -86,15 +86,7 @@ fun checkAllKeyboardModifications(
 fun deserializeKeyModifications(keyModifications: String): KeyModifications {
     val serializer =
         MapSerializer(String.serializer(), KeyboardDefinitionModesSerializable.serializer())
-    val yaml =
-        Yaml(
-            configuration =
-                YamlConfiguration(
-                    anchorsAndAliases = AnchorsAndAliases.Permitted(),
-                ),
-        )
-
-    return yaml.decodeFromString(serializer, keyModifications)
+    return getYaml().decodeFromString(serializer, keyModifications)
 }
 
 fun modifyKeyboardDefinition(
@@ -235,11 +227,9 @@ fun checkTextAndKeyActionValidity(
     keyCSerializable: KeyCSerializable,
 ) {
     if (keyActionKeyC != null && keyCSerializable.text != null) {
-        val yaml = Yaml(configuration = YamlConfiguration(encodeDefaults = false))
-
         throw IllegalArgumentException(
             "Properties `text` and `keyAction` cannot both be used:\n${
-                yaml.encodeToString(
+                getYaml().encodeToString(
                     KeyCSerializable.serializer() ,
                     keyCSerializable,
                 )
@@ -267,6 +257,16 @@ fun getCommonKeyCFromKeyAction(keyCSerializable: KeyCSerializable): KeyC? =
         KeyActionSerializable.HideKeyboard -> HIDE_KEYBOARD_KEYC
         null -> null
     }
+
+fun getYaml(): Yaml =
+    Yaml(
+        configuration =
+            YamlConfiguration(
+                encodeDefaults = false,
+                anchorsAndAliases = AnchorsAndAliases.Permitted(),
+                extensionDefinitionPrefix = "x-",
+            ),
+    )
 
 typealias KeyModifications = Map<String, KeyboardDefinitionModesSerializable>
 
