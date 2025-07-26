@@ -49,9 +49,10 @@
   - [Modify keys](#modify-keys)
     - [Example 1](#example-1)
     - [Example 2](#example-2)
-  - [Example 3 - key action](#example-3---key-action)
-    - [Example 4 - long press](#example-4---long-press)
-    - [Example 5 - combining marks (diacritics)](#example-5---combining-marks-diacritics)
+    - [Example 3](#example-3)
+    - [Example 4](#example-4)
+    - [Example 5](#example-5)
+    - [Example 6](#example-6)
   - [Other](#other)
 - [Thumb-Key Design](#thumb-key-design)
   - [A History of Phone Keyboards](#a-history-of-phone-keyboards)
@@ -293,6 +294,8 @@ This enables long pressing to type digits. `longPress` properties are: `text`, `
 
 #### Example 5
 
+This example shows one way to declare combining diacritics:
+
 ```yaml
 ENMessagEase:
   main:
@@ -307,6 +310,26 @@ ENMessagEase:
         text: "\u030b" # Combining Double Acute Accent
         displayText: "◌̋"
 ```
+
+Note that the `text` field contains only one character: the combining diacritic, while the `displayText` field contains two characters: the dotted circle and the combining diacritic.
+
+#### Example 6
+
+```yaml
+ENThumbKey:
+  main:
+    key0_1:
+      right:
+        text: "!"
+        swipeReturnText: "¡" # upside-down exclamation mark, used commonly in Spanish
+      key1_3:
+        bottomLeft:
+          swipeReturnAction: Redo
+        bottomRight:
+          swipeReturnAction: Undo
+```
+
+The attributes `swipeReturnText` and `swipeReturnAction` allow defining swipe-return behaviour. Possible values for `swipeReturnAction` are the same as the ones for `keyAction`.
 
 ### Other
 
