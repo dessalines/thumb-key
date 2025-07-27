@@ -61,6 +61,7 @@ const val DEFAULT_COUNTERCLOCKWISE_DRAG_ACTION = 1
 const val DEFAULT_GHOST_KEYS_ENABLED = 0
 const val DEFAULT_KEY_MODIFICATIONS = ""
 const val DEFAULT_IGNORE_BOTTOM_PADDING = 0
+const val DEFAULT_SHOW_TOAST_ON_LAYOUT_SWITCH = 1
 
 @Entity
 data class AppSettings(
@@ -268,6 +269,11 @@ data class AppSettings(
         defaultValue = DEFAULT_IGNORE_BOTTOM_PADDING.toString(),
     )
     val ignoreBottomPadding: Int,
+    @ColumnInfo(
+        name = "show_toast_on_layout_switch",
+        defaultValue = DEFAULT_SHOW_TOAST_ON_LAYOUT_SWITCH.toString(),
+    )
+    val showToastOnLayoutSwitch: Int,
 )
 
 data class LayoutsUpdate(
@@ -360,6 +366,10 @@ data class LookAndFeelUpdate(
         name = "ignore_bottom_padding",
     )
     val ignoreBottomPadding: Int,
+    @ColumnInfo(
+        name = "show_toast_on_layout_switch",
+    )
+    val showToastOnLayoutSwitch: Int,
 )
 
 data class BehaviorUpdate(
@@ -484,7 +494,7 @@ class AppSettingsRepository(
 }
 
 @Database(
-    version = 19,
+    version = 20,
     entities = [AppSettings::class],
     exportSchema = true,
 )
@@ -525,6 +535,7 @@ abstract class AppDB : RoomDatabase() {
                             MIGRATION_16_17,
                             MIGRATION_17_18,
                             MIGRATION_18_19,
+                            MIGRATION_19_20,
                         )
                         // Necessary because it can't insert data on creation
                         .addCallback(

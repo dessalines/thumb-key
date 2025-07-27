@@ -100,4 +100,5 @@
     <string name="key_modification_placeholder">Enter YAML</string>
     <string name="how_to_modify_keys">How to modify keys</string>
     <string name="ignore_bottom_padding">Ignore bottom padding</string>
+    <string name="show_toast_on_layout_switch">Show toast on layout switch</string>
 </resources>

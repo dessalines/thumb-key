@@ -52,10 +52,12 @@ class ComposeKeyboardView(
                                     settingsRepo.update(s2)
 
                                     // Display the new layout's name on the screen
-                                    val layoutName = layout.keyboardDefinition.title
-                                    Toast
-                                        .makeText(context, layoutName, Toast.LENGTH_SHORT)
-                                        .show()
+                                    if (s.showToastOnLayoutSwitch == 1) {
+                                        val layoutName = layout.keyboardDefinition.title
+                                        Toast
+                                            .makeText(context, layoutName, Toast.LENGTH_SHORT)
+                                            .show()
+                                    }
                                 }
                             }
                         }
