@@ -17,6 +17,7 @@ import androidx.compose.material.icons.outlined.FormatSize
 import androidx.compose.material.icons.outlined.Fullscreen
 import androidx.compose.material.icons.outlined.HideImage
 import androidx.compose.material.icons.outlined.LinearScale
+import androidx.compose.material.icons.outlined.Mail
 import androidx.compose.material.icons.outlined.MusicNote
 import androidx.compose.material.icons.outlined.Padding
 import androidx.compose.material.icons.outlined.Palette
@@ -60,6 +61,7 @@ import com.dessalines.thumbkey.db.DEFAULT_KEY_WIDTH
 import com.dessalines.thumbkey.db.DEFAULT_NON_SQUARE_KEYS
 import com.dessalines.thumbkey.db.DEFAULT_POSITION
 import com.dessalines.thumbkey.db.DEFAULT_PUSHUP_SIZE
+import com.dessalines.thumbkey.db.DEFAULT_SHOW_TOAST_ON_LAYOUT_SWITCH
 import com.dessalines.thumbkey.db.DEFAULT_SOUND_ON_TAP
 import com.dessalines.thumbkey.db.DEFAULT_THEME
 import com.dessalines.thumbkey.db.DEFAULT_THEME_COLOR
@@ -123,6 +125,7 @@ fun LookAndFeelScreen(
     var hideLettersState = (settings?.hideLetters ?: DEFAULT_HIDE_LETTERS).toBool()
     var hideSymbolsState = (settings?.hideSymbols ?: DEFAULT_HIDE_SYMBOLS).toBool()
     var ignoreBottomPaddingState = (settings?.ignoreBottomPadding ?: DEFAULT_IGNORE_BOTTOM_PADDING).toBool()
+    var showToastOnLayoutSwitchState = (settings?.showToastOnLayoutSwitch ?: DEFAULT_SHOW_TOAST_ON_LAYOUT_SWITCH).toBool()
 
     var backdropEnabledState = (settings?.backdropEnabled ?: DEFAULT_BACKDROP_ENABLED).toBool()
 
@@ -149,6 +152,7 @@ fun LookAndFeelScreen(
                 nonSquareKeys = nonSquareKeysState.toInt(),
                 keyWidth = keyWidthState.toInt(),
                 keyHeight = keyHeightState.toInt(),
+                showToastOnLayoutSwitch = showToastOnLayoutSwitchState.toInt(),
             ),
         )
     }
@@ -311,6 +315,23 @@ fun LookAndFeelScreen(
                         icon = {
                             Icon(
                                 imageVector = Icons.Outlined.BorderBottom,
+                                contentDescription = null,
+                            )
+                        },
+                    )
+
+                    SwitchPreference(
+                        value = showToastOnLayoutSwitchState,
+                        onValueChange = {
+                            showToastOnLayoutSwitchState = it
+                            updateLookAndFeel()
+                        },
+                        title = {
+                            Text(stringResource(R.string.show_toast_on_layout_switch))
+                        },
+                        icon = {
+                            Icon(
+                                imageVector = Icons.Outlined.Mail,
                                 contentDescription = null,
                             )
                         },
