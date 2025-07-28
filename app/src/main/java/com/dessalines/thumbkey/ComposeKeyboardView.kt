@@ -16,6 +16,7 @@ import com.dessalines.thumbkey.ui.components.keyboard.KeyboardScreen
 import com.dessalines.thumbkey.ui.theme.ThumbkeyTheme
 import com.dessalines.thumbkey.utils.KeyboardPosition
 import com.dessalines.thumbkey.utils.keyboardLayoutsSetFromDbIndexString
+import com.dessalines.thumbkey.utils.toBool
 import kotlinx.coroutines.launch
 
 @SuppressLint("ViewConstructor")
@@ -52,7 +53,7 @@ class ComposeKeyboardView(
                                     settingsRepo.update(s2)
 
                                     // Display the new layout's name on the screen
-                                    if (s.showToastOnLayoutSwitch == 1) {
+                                    if (s.showToastOnLayoutSwitch.toBool()) {
                                         val layoutName = layout.keyboardDefinition.title
                                         Toast
                                             .makeText(context, layoutName, Toast.LENGTH_SHORT)
