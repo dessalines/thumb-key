@@ -11,6 +11,7 @@ import com.dessalines.thumbkey.keyboards.KB_BY_THUMBKEY_SYMBOLS
 import com.dessalines.thumbkey.keyboards.KB_CA_THUMBKEY
 import com.dessalines.thumbkey.keyboards.KB_CZ_MESSAGEASE_PROGRAMMING
 import com.dessalines.thumbkey.keyboards.KB_DA_THUMBKEY
+import com.dessalines.thumbkey.keyboards.KB_DA_THUMBKEY_MULTILINGUAL
 import com.dessalines.thumbkey.keyboards.KB_DE_MESSAGEASE
 import com.dessalines.thumbkey.keyboards.KB_DE_MESSAGEASE_INVERTED_NUMPAD
 import com.dessalines.thumbkey.keyboards.KB_DE_MESSAGEASE_LEFT
@@ -384,4 +385,5 @@ enum class KeyboardLayout(
     FRENFrappeFluideV1(KB_FR_EN_FRAPPE_FLUIDE_V1),
     ENThumbKeyWordsSymbolsDual(KB_EN_THUMBKEY_WORDS_SYMBOLS_DUAL),
     RUArti(KB_RU_ARTI),
+    DAThumbKeyMultiLingual(KB_DA_THUMBKEY_MULTILINGUAL),
 }

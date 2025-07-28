@@ -10,14 +10,16 @@ import com.dessalines.thumbkey.utils.FontSizeVariant.*
 import com.dessalines.thumbkey.utils.KeyAction.*
 import com.dessalines.thumbkey.utils.SwipeNWay.*
 
-val KB_DA_THUMBKEY_MAIN =
+val KB_DA_THUMBKEY_MULTILINGUAL_MAIN =
     KeyboardC(
         listOf(
             listOf(
                 KeyItemC(
                     center = KeyC("s", size = LARGE),
-                    swipeType = FOUR_WAY_DIAGONAL,
+                    left = KeyC("ß", color = MUTED),
+                    right = KeyC("z"),
                     bottomRight = KeyC("v"),
+                    bottom = KeyC("š", color = MUTED),
                     topLeft = KeyC("w"),
                 ),
                 KeyItemC(
@@ -28,8 +30,9 @@ val KB_DA_THUMBKEY_MAIN =
                 KeyItemC(
                     center = KeyC("i", size = LARGE),
                     swipeType = FOUR_WAY_DIAGONAL,
-                    bottomLeft = KeyC("h"),
                     topRight = KeyC("y"),
+                    right = KeyC("ü", color = MUTED),
+                    bottomLeft = KeyC("h"),
                 ),
                 EMOJI_KEY_ITEM,
             ),
@@ -38,6 +41,7 @@ val KB_DA_THUMBKEY_MAIN =
                     center = KeyC("n", size = LARGE),
                     swipeType = TWO_WAY_HORIZONTAL,
                     right = KeyC("m"),
+                    left = KeyC("ñ", color = MUTED),
                 ),
                 KeyItemC(
                     center = KeyC("j", size = LARGE),
@@ -53,6 +57,7 @@ val KB_DA_THUMBKEY_MAIN =
                 KeyItemC(
                     center = KeyC("a", size = LARGE),
                     swipeType = FOUR_WAY_CROSS,
+                    right = KeyC("ä", color = MUTED),
                     left = KeyC("u"),
                     top =
                         KeyC(
@@ -74,13 +79,12 @@ val KB_DA_THUMBKEY_MAIN =
                     center = KeyC("t", size = LARGE),
                     swipeType = FOUR_WAY_DIAGONAL,
                     topRight = KeyC("g"),
-                    bottomLeft = KeyC("z"),
                 ),
                 KeyItemC(
                     center = KeyC("d", size = LARGE),
                     top = KeyC("k"),
-                    topRight = KeyC("c", color = MUTED),
-                    right = KeyC("'"),
+                    topRight = KeyC("c"),
+                    right = KeyC("'", color = MUTED),
                     bottomRight = KeyC("-", color = MUTED),
                     bottom = KeyC(".", color = MUTED),
                     bottomLeft = KeyC(",", color = MUTED),
@@ -88,6 +92,7 @@ val KB_DA_THUMBKEY_MAIN =
                 KeyItemC(
                     center = KeyC("e", size = LARGE),
                     swipeType = FOUR_WAY_DIAGONAL,
+                    topRight = KeyC("ö", color = MUTED),
                     topLeft = KeyC("o"),
                 ),
                 BACKSPACE_KEY_ITEM,
@@ -99,13 +104,15 @@ val KB_DA_THUMBKEY_MAIN =
         ),
     )
 
-val KB_DA_THUMBKEY_SHIFTED =
+val KB_DA_THUMBKEY_MULTILINGUAL_SHIFTED =
     KeyboardC(
         listOf(
             listOf(
                 KeyItemC(
                     center = KeyC("S", size = LARGE),
-                    swipeType = FOUR_WAY_DIAGONAL,
+                    left = KeyC("ß", color = MUTED),
+                    right = KeyC("Z"),
+                    bottom = KeyC("Š", color = MUTED),
                     bottomRight = KeyC("V"),
                     topLeft = KeyC("W"),
                 ),
@@ -117,8 +124,9 @@ val KB_DA_THUMBKEY_SHIFTED =
                 KeyItemC(
                     center = KeyC("I", size = LARGE),
                     swipeType = FOUR_WAY_DIAGONAL,
-                    bottomLeft = KeyC("H"),
                     topRight = KeyC("Y"),
+                    right = KeyC("Ü", color = MUTED),
+                    bottomLeft = KeyC("H"),
                 ),
                 EMOJI_KEY_ITEM,
             ),
@@ -127,6 +135,7 @@ val KB_DA_THUMBKEY_SHIFTED =
                     center = KeyC("N", size = LARGE),
                     swipeType = TWO_WAY_HORIZONTAL,
                     right = KeyC("M"),
+                    left = KeyC("Ñ", color = MUTED),
                 ),
                 KeyItemC(
                     center = KeyC("J", size = LARGE),
@@ -143,6 +152,7 @@ val KB_DA_THUMBKEY_SHIFTED =
                     center = KeyC("A", size = LARGE),
                     swipeType = FOUR_WAY_CROSS,
                     left = KeyC("U"),
+                    right = KeyC("Ä", color = MUTED),
                     bottom =
                         KeyC(
                             display = KeyDisplay.IconDisplay(Icons.Outlined.ArrowDropDown),
@@ -166,13 +176,12 @@ val KB_DA_THUMBKEY_SHIFTED =
                     center = KeyC("T", size = LARGE),
                     swipeType = FOUR_WAY_DIAGONAL,
                     topRight = KeyC("G"),
-                    bottomLeft = KeyC("Z"),
                 ),
                 KeyItemC(
                     center = KeyC("D", size = LARGE),
                     top = KeyC("K"),
-                    topRight = KeyC("C", color = MUTED),
-                    right = KeyC("'"),
+                    topRight = KeyC("C"),
+                    right = KeyC("'", color = MUTED),
                     bottomRight = KeyC("-", color = MUTED),
                     bottom = KeyC(".", color = MUTED),
                     bottomLeft = KeyC("*", color = MUTED),
@@ -180,6 +189,7 @@ val KB_DA_THUMBKEY_SHIFTED =
                 KeyItemC(
                     center = KeyC("E", size = LARGE),
                     swipeType = FOUR_WAY_DIAGONAL,
+                    topRight = KeyC("Ö", color = MUTED),
                     topLeft = KeyC("O"),
                 ),
                 BACKSPACE_KEY_ITEM,
@@ -191,13 +201,13 @@ val KB_DA_THUMBKEY_SHIFTED =
         ),
     )
 
-val KB_DA_THUMBKEY: KeyboardDefinition =
+val KB_DA_THUMBKEY_MULTILINGUAL: KeyboardDefinition =
     KeyboardDefinition(
         title = "dansk thumb-key",
         modes =
             KeyboardDefinitionModes(
-                main = KB_DA_THUMBKEY_MAIN,
-                shifted = KB_DA_THUMBKEY_SHIFTED,
+                main = KB_DA_THUMBKEY_MULTILINGUAL_MAIN,
+                shifted = KB_DA_THUMBKEY_MULTILINGUAL_SHIFTED,
                 numeric = NUMERIC_KEYBOARD,
             ),
     )
