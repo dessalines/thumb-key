@@ -57,7 +57,7 @@ val KB_DA_THUMBKEY_MULTILINGUAL_MAIN =
                 KeyItemC(
                     center = KeyC("a", size = LARGE),
                     swipeType = FOUR_WAY_CROSS,
-                    right = Key("ä", color = MUTED),
+                    right = KeyC("ä", color = MUTED),
                     left = KeyC("u"),
                     top =
                         KeyC(
