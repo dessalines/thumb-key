@@ -86,15 +86,7 @@ fun checkAllKeyboardModifications(
 fun deserializeKeyModifications(keyModifications: String): KeyModifications {
     val serializer =
         MapSerializer(String.serializer(), KeyboardDefinitionModesSerializable.serializer())
-    val yaml =
-        Yaml(
-            configuration =
-                YamlConfiguration(
-                    anchorsAndAliases = AnchorsAndAliases.Permitted(),
-                ),
-        )
-
-    return yaml.decodeFromString(serializer, keyModifications)
+    return getYaml().decodeFromString(serializer, keyModifications)
 }
 
 fun modifyKeyboardDefinition(
@@ -172,9 +164,9 @@ fun modifyKeyC(
         return keyC
     }
 
-    val keyActionKeyC = getCommonKeyCFromKeyAction(keyCSerializable)
-    checkTextAndKeyActionValidity(keyActionKeyC, keyCSerializable)
-
+    val keyActionKeyC = getCommonKeyCFromKeyAction(keyCSerializable.keyAction)
+    val swipeReturnActionKeyC = getCommonKeyCFromKeyAction(keyCSerializable.swipeReturnAction)
+    checkTextAndKeyActionValidity(keyActionKeyC, swipeReturnActionKeyC, keyCSerializable)
     if (keyCSerializable.remove) {
         return null
     }
@@ -190,6 +182,14 @@ fun modifyKeyC(
             KeyC.swipeReturnAction.set(it.swipeReturnAction)
             KeyC.display.set(it.display)
             KeyC.capsModeDisplay.set(it.capsModeDisplay)
+        }
+
+        keyCSerializable.swipeReturnText?.let {
+            KeyC.swipeReturnAction.set(CommitText(it))
+        }
+
+        swipeReturnActionKeyC?.let {
+            KeyC.swipeReturnAction.set(it.action)
         }
 
         keyCSerializable.displayText?.let {
@@ -212,8 +212,9 @@ fun modifyLongPress(
         return keyAction
     }
 
-    val keyActionKeyC = getCommonKeyCFromKeyAction(keyCSerializable)
-    checkTextAndKeyActionValidity(keyActionKeyC, keyCSerializable)
+    val keyActionKeyC = getCommonKeyCFromKeyAction(keyCSerializable.keyAction)
+    val swipeReturnActionKeyC = getCommonKeyCFromKeyAction(keyCSerializable.swipeReturnAction)
+    checkTextAndKeyActionValidity(keyActionKeyC, swipeReturnActionKeyC, keyCSerializable)
 
     if (keyCSerializable.remove) {
         return null
@@ -232,14 +233,23 @@ fun modifyLongPress(
 
 fun checkTextAndKeyActionValidity(
     keyActionKeyC: KeyC?,
+    swipeReturnActionKeyC: KeyC?,
     keyCSerializable: KeyCSerializable,
 ) {
     if (keyActionKeyC != null && keyCSerializable.text != null) {
-        val yaml = Yaml(configuration = YamlConfiguration(encodeDefaults = false))
-
         throw IllegalArgumentException(
             "Properties `text` and `keyAction` cannot both be used:\n${
-                yaml.encodeToString(
+                getYaml().encodeToString(
+                    KeyCSerializable.serializer() ,
+                    keyCSerializable,
+                )
+            }",
+        )
+    }
+    if (swipeReturnActionKeyC != null && keyCSerializable.swipeReturnText != null) {
+        throw IllegalArgumentException(
+            "Properties `swipeReturnText` and `swipeReturnAction` cannot both be used:\n${
+                getYaml().encodeToString(
                     KeyCSerializable.serializer() ,
                     keyCSerializable,
                 )
@@ -248,8 +258,8 @@ fun checkTextAndKeyActionValidity(
     }
 }
 
-fun getCommonKeyCFromKeyAction(keyCSerializable: KeyCSerializable): KeyC? =
-    when (keyCSerializable.keyAction) {
+fun getCommonKeyCFromKeyAction(keyActionSerializable: KeyActionSerializable?): KeyC? =
+    when (keyActionSerializable) {
         KeyActionSerializable.ToggleNumericMode -> TOGGLE_NUMERIC_MODE_TRUE_KEYC
         KeyActionSerializable.ToggleEmojiMode -> TOGGLE_EMOJI_MODE_TRUE_KEYC
         KeyActionSerializable.Left -> SPACEBAR_LEFT_KEYC
@@ -267,6 +277,16 @@ fun getCommonKeyCFromKeyAction(keyCSerializable: KeyCSerializable): KeyC? =
         KeyActionSerializable.HideKeyboard -> HIDE_KEYBOARD_KEYC
         null -> null
     }
+
+fun getYaml(): Yaml =
+    Yaml(
+        configuration =
+            YamlConfiguration(
+                encodeDefaults = false,
+                anchorsAndAliases = AnchorsAndAliases.Permitted(),
+                extensionDefinitionPrefix = "x-",
+            ),
+    )
 
 typealias KeyModifications = Map<String, KeyboardDefinitionModesSerializable>
 
@@ -414,6 +434,8 @@ data class KeyCSerializable(
     val color: ColorVariant? = null,
     val remove: Boolean = false,
     val keyAction: KeyActionSerializable? = null,
+    val swipeReturnText: String? = null,
+    val swipeReturnAction: KeyActionSerializable? = null,
 )
 
 @Keep

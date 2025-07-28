@@ -59,6 +59,7 @@ import com.dessalines.thumbkey.db.DEFAULT_MIN_SWIPE_LENGTH
 import com.dessalines.thumbkey.db.DEFAULT_NON_SQUARE_KEYS
 import com.dessalines.thumbkey.db.DEFAULT_POSITION
 import com.dessalines.thumbkey.db.DEFAULT_PUSHUP_SIZE
+import com.dessalines.thumbkey.db.DEFAULT_SHOW_TOAST_ON_LAYOUT_SWITCH
 import com.dessalines.thumbkey.db.DEFAULT_SLIDE_BACKSPACE_DEADZONE_ENABLED
 import com.dessalines.thumbkey.db.DEFAULT_SLIDE_CURSOR_MOVEMENT_MODE
 import com.dessalines.thumbkey.db.DEFAULT_SLIDE_ENABLED
@@ -258,6 +259,7 @@ private fun resetAppSettingsToDefault(appSettingsViewModel: AppSettingsViewModel
             keyWidth = DEFAULT_KEY_WIDTH,
             keyHeight = DEFAULT_KEY_HEIGHT,
             ignoreBottomPadding = DEFAULT_IGNORE_BOTTOM_PADDING,
+            showToastOnLayoutSwitch = DEFAULT_SHOW_TOAST_ON_LAYOUT_SWITCH,
         ),
     )
 }

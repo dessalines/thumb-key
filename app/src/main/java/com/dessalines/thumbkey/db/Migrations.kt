@@ -219,3 +219,12 @@ val MIGRATION_18_19 =
             )
         }
     }
+
+val MIGRATION_19_20 =
+    object : Migration(19, 20) {
+        override fun migrate(db: SupportSQLiteDatabase) {
+            db.execSQL(
+                "alter table AppSettings add column show_toast_on_layout_switch INTEGER NOT NULL default $DEFAULT_SHOW_TOAST_ON_LAYOUT_SWITCH",
+            )
+        }
+    }
