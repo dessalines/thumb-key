@@ -100,4 +100,5 @@
     <string name="backup_and_restore">Резервное копирование и восстановление</string>
     <string name="restore_database_warning">Предупреждение: Все данные в текущей базе данных будут стёрты</string>
     <string name="ignore_bottom_padding">Игнорировать нижний отступ</string>
+    <string name="show_toast_on_layout_switch">Показывать всплывающее уведомление при смене раскладки</string>
 </resources>
