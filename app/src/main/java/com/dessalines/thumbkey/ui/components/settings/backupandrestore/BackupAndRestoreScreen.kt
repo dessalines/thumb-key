@@ -56,6 +56,7 @@ import com.dessalines.thumbkey.db.DEFAULT_KEY_PADDING
 import com.dessalines.thumbkey.db.DEFAULT_KEY_RADIUS
 import com.dessalines.thumbkey.db.DEFAULT_KEY_WIDTH
 import com.dessalines.thumbkey.db.DEFAULT_MIN_SWIPE_LENGTH
+import com.dessalines.thumbkey.db.DEFAULT_NEVER_EXTRACT_UI
 import com.dessalines.thumbkey.db.DEFAULT_NON_SQUARE_KEYS
 import com.dessalines.thumbkey.db.DEFAULT_POSITION
 import com.dessalines.thumbkey.db.DEFAULT_PUSHUP_SIZE
@@ -260,6 +261,7 @@ private fun resetAppSettingsToDefault(appSettingsViewModel: AppSettingsViewModel
             keyHeight = DEFAULT_KEY_HEIGHT,
             ignoreBottomPadding = DEFAULT_IGNORE_BOTTOM_PADDING,
             showToastOnLayoutSwitch = DEFAULT_SHOW_TOAST_ON_LAYOUT_SWITCH,
+            disableFullscreenEditor = DEFAULT_NEVER_EXTRACT_UI,
         ),
     )
 }
