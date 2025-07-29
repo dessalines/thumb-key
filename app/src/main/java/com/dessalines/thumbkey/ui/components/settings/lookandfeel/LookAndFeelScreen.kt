@@ -26,6 +26,7 @@ import androidx.compose.material.icons.outlined.VerticalAlignTop
 import androidx.compose.material.icons.outlined.Vibration
 import androidx.compose.material.icons.outlined.ViewDay
 import androidx.compose.material.icons.outlined.Visibility
+import androidx.compose.material.icons.outlined.WebAssetOff
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.Icon
 import androidx.compose.material3.MaterialTheme
@@ -50,6 +51,7 @@ import com.dessalines.thumbkey.db.DEFAULT_ANIMATION_HELPER_SPEED
 import com.dessalines.thumbkey.db.DEFAULT_ANIMATION_SPEED
 import com.dessalines.thumbkey.db.DEFAULT_AUTO_SIZE_KEYS
 import com.dessalines.thumbkey.db.DEFAULT_BACKDROP_ENABLED
+import com.dessalines.thumbkey.db.DEFAULT_DISABLE_FULLSCREEN_EDITOR
 import com.dessalines.thumbkey.db.DEFAULT_HIDE_LETTERS
 import com.dessalines.thumbkey.db.DEFAULT_HIDE_SYMBOLS
 import com.dessalines.thumbkey.db.DEFAULT_IGNORE_BOTTOM_PADDING
@@ -129,6 +131,8 @@ fun LookAndFeelScreen(
 
     var backdropEnabledState = (settings?.backdropEnabled ?: DEFAULT_BACKDROP_ENABLED).toBool()
 
+    var disableFullscreenEditorState = (settings?.disableFullscreenEditor ?: DEFAULT_DISABLE_FULLSCREEN_EDITOR).toBool()
+
     fun updateLookAndFeel() {
         appSettingsViewModel.updateLookAndFeel(
             LookAndFeelUpdate(
@@ -153,6 +157,7 @@ fun LookAndFeelScreen(
                 keyWidth = keyWidthState.toInt(),
                 keyHeight = keyHeightState.toInt(),
                 showToastOnLayoutSwitch = showToastOnLayoutSwitchState.toInt(),
+                disableFullscreenEditor = disableFullscreenEditorState.toInt(),
             ),
         )
     }
@@ -332,6 +337,22 @@ fun LookAndFeelScreen(
                         icon = {
                             Icon(
                                 imageVector = Icons.Outlined.Mail,
+                                contentDescription = null,
+                            )
+                        },
+                    )
+                    SwitchPreference(
+                        value = disableFullscreenEditorState,
+                        onValueChange = {
+                            disableFullscreenEditorState = it
+                            updateLookAndFeel()
+                        },
+                        title = {
+                            Text(stringResource(R.string.disable_fullscreen_editor))
+                        },
+                        icon = {
+                            Icon(
+                                imageVector = Icons.Outlined.WebAssetOff,
                                 contentDescription = null,
                             )
                         },

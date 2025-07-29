@@ -16,7 +16,9 @@ import androidx.savedstate.SavedStateRegistry
 import androidx.savedstate.SavedStateRegistryController
 import androidx.savedstate.SavedStateRegistryOwner
 import androidx.savedstate.setViewTreeSavedStateRegistryOwner
+import com.dessalines.thumbkey.db.DEFAULT_DISABLE_FULLSCREEN_EDITOR
 import com.dessalines.thumbkey.utils.TAG
+import com.dessalines.thumbkey.utils.toBool
 
 class IMEService :
     InputMethodService(),
@@ -87,6 +89,17 @@ class IMEService :
 
         selectionStart = cursorAnchorInfo.selectionStart
         selectionEnd = cursorAnchorInfo.selectionEnd
+    }
+
+    // Disable the fullscreen text editor if set by the user
+    override fun onUpdateExtractingVisibility(ei: EditorInfo) {
+        val settingsRepo = (application as ThumbkeyApplication).appSettingsRepository
+        val settings = settingsRepo.appSettings.getValue()
+        if ((settings?.disableFullscreenEditor ?: DEFAULT_DISABLE_FULLSCREEN_EDITOR).toBool()) {
+            ei.imeOptions =
+                ei.imeOptions or EditorInfo.IME_FLAG_NO_EXTRACT_UI or EditorInfo.IME_FLAG_NO_FULLSCREEN
+        }
+        super.onUpdateExtractingVisibility(ei)
     }
 
     fun didCursorMove(): Boolean = cursorMoved

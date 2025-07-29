@@ -228,3 +228,11 @@ val MIGRATION_19_20 =
             )
         }
     }
+val MIGRATION_20_21 =
+    object : Migration(20, 21) {
+        override fun migrate(db: SupportSQLiteDatabase) {
+            db.execSQL(
+                "alter table AppSettings add column disable_fullscreen_editor INTEGER NOT NULL default $DEFAULT_DISABLE_FULLSCREEN_EDITOR",
+            )
+        }
+    }

@@ -62,6 +62,7 @@ const val DEFAULT_GHOST_KEYS_ENABLED = 0
 const val DEFAULT_KEY_MODIFICATIONS = ""
 const val DEFAULT_IGNORE_BOTTOM_PADDING = 0
 const val DEFAULT_SHOW_TOAST_ON_LAYOUT_SWITCH = 1
+const val DEFAULT_DISABLE_FULLSCREEN_EDITOR = 0
 
 @Entity
 data class AppSettings(
@@ -274,6 +275,11 @@ data class AppSettings(
         defaultValue = DEFAULT_SHOW_TOAST_ON_LAYOUT_SWITCH.toString(),
     )
     val showToastOnLayoutSwitch: Int,
+    @ColumnInfo(
+        name = "disable_fullscreen_editor",
+        defaultValue = DEFAULT_DISABLE_FULLSCREEN_EDITOR.toString(),
+    )
+    val disableFullscreenEditor: Int,
 )
 
 data class LayoutsUpdate(
@@ -370,6 +376,10 @@ data class LookAndFeelUpdate(
         name = "show_toast_on_layout_switch",
     )
     val showToastOnLayoutSwitch: Int,
+    @ColumnInfo(
+        name = "disable_fullscreen_editor",
+    )
+    val disableFullscreenEditor: Int,
 )
 
 data class BehaviorUpdate(
@@ -494,7 +504,7 @@ class AppSettingsRepository(
 }
 
 @Database(
-    version = 20,
+    version = 21,
     entities = [AppSettings::class],
     exportSchema = true,
 )
@@ -536,6 +546,7 @@ abstract class AppDB : RoomDatabase() {
                             MIGRATION_17_18,
                             MIGRATION_18_19,
                             MIGRATION_19_20,
+                            MIGRATION_20_21,
                         )
                         // Necessary because it can't insert data on creation
                         .addCallback(
