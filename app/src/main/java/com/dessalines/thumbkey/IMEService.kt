@@ -20,7 +20,7 @@ import androidx.savedstate.SavedStateRegistryOwner
 import androidx.savedstate.setViewTreeSavedStateRegistryOwner
 import com.dessalines.thumbkey.db.AppSettings
 import com.dessalines.thumbkey.db.AppSettingsRepository
-import com.dessalines.thumbkey.db.DEFAULT_NEVER_EXTRACT_UI
+import com.dessalines.thumbkey.db.DEFAULT_DISABLE_FULLSCREEN_EDITOR
 import com.dessalines.thumbkey.utils.TAG
 import com.dessalines.thumbkey.utils.toBool
 
@@ -99,7 +99,7 @@ class IMEService :
     override fun onUpdateExtractingVisibility(ei: EditorInfo) {
         val settingsRepo = (application as ThumbkeyApplication).appSettingsRepository
         val settings = settingsRepo.appSettings.getValue()
-        if ((settings?.disableFullscreenEditor ?: DEFAULT_NEVER_EXTRACT_UI).toBool()) {
+        if ((settings?.disableFullscreenEditor ?: DEFAULT_DISABLE_FULLSCREEN_EDITOR).toBool()) {
             ei.imeOptions =
                 ei.imeOptions or EditorInfo.IME_FLAG_NO_EXTRACT_UI or EditorInfo.IME_FLAG_NO_FULLSCREEN
         }

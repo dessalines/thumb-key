@@ -62,7 +62,7 @@ const val DEFAULT_GHOST_KEYS_ENABLED = 0
 const val DEFAULT_KEY_MODIFICATIONS = ""
 const val DEFAULT_IGNORE_BOTTOM_PADDING = 0
 const val DEFAULT_SHOW_TOAST_ON_LAYOUT_SWITCH = 1
-const val DEFAULT_NEVER_EXTRACT_UI = 0
+const val DEFAULT_DISABLE_FULLSCREEN_EDITOR = 0
 
 @Entity
 data class AppSettings(
@@ -277,7 +277,7 @@ data class AppSettings(
     val showToastOnLayoutSwitch: Int,
     @ColumnInfo(
         name = "disable_fullscreen_editor",
-        defaultValue = DEFAULT_NEVER_EXTRACT_UI.toString(),
+        defaultValue = DEFAULT_DISABLE_FULLSCREEN_EDITOR.toString(),
     )
     val disableFullscreenEditor: Int,
 )
