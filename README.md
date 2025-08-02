@@ -130,7 +130,6 @@ Enabling `Slide gestures` in keyboard settings will enable the following continu
 Enabling `Spacebar: Allow normal swipes to work with slide gestures`, in keyboard settings will enable the following:
 
 - Swipe left and right to move the cursor by a single character.
-- Swipe up and down to move the cursor up or down a line.
 - Allow us to use the other characters on the spacebars in the typesplit layouts.
 
 Enabling `Backspace: Allow normal swipes to work with slide gestures`, in keyboard settings will enable the following:
