@@ -434,7 +434,7 @@ val TWO_HANDS_NUMERIC_ARROWS_COMPACT_KEYBOARD =
 
 val KB_EN_SYMBOLS_NUMBERS_ARROWS_TWO_HANDS_COMPACT: KeyboardDefinition =
     KeyboardDefinition(
-        title = "english symbols-numbers-arrows two-hands",
+        title = "english symbols-numbers-arrows two-hands compact",
         modes =
             KeyboardDefinitionModes(
                 main = KB_EN_SYMBOLS_NUMBERS_ARROWS_TWO_HANDS_COMPACT_MAIN,
