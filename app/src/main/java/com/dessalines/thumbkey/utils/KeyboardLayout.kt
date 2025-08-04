@@ -75,6 +75,7 @@ import com.dessalines.thumbkey.keyboards.KB_EN_RSINOA
 import com.dessalines.thumbkey.keyboards.KB_EN_SK_THUMBKEY
 import com.dessalines.thumbkey.keyboards.KB_EN_SV_THUMBKEY_PROGRAMMING
 import com.dessalines.thumbkey.keyboards.KB_EN_SYMBOLS_NUMBERS_ARROWS_TWO_HANDS
+import com.dessalines.thumbkey.keyboards.KB_EN_SYMBOLS_NUMBERS_ARROWS_TWO_HANDS_COMPACT
 import com.dessalines.thumbkey.keyboards.KB_EN_SYMBOLS_NUMBERS_TWO_HANDS
 import com.dessalines.thumbkey.keyboards.KB_EN_SYMBOLS_TWO_HANDS
 import com.dessalines.thumbkey.keyboards.KB_EN_THUMBKEY
@@ -386,4 +387,5 @@ enum class KeyboardLayout(
     ENThumbKeyWordsSymbolsDual(KB_EN_THUMBKEY_WORDS_SYMBOLS_DUAL),
     RUArti(KB_RU_ARTI),
     DAThumbKeyMultiLingual(KB_DA_THUMBKEY_MULTILINGUAL),
+    ENSymbolsNumbersArrowsTwoHandsCompact(KB_EN_SYMBOLS_NUMBERS_ARROWS_TWO_HANDS_COMPACT),
 }
