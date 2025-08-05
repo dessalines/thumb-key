@@ -1,3 +1,15 @@
+## What's Changed in 5.0.5
+
+- adds new layout: english twohands symbols numbers arrows compact. by @bklaase in [#1507](https://github.com/dessalines/thumb-key/pull/1507)
+- Remove mention of the deprecated moving cursor up or down lines from the README by @JulienVig in [#1506](https://github.com/dessalines/thumb-key/pull/1506)
+- Add option to disable fullscreen editor by @jm355 in [#1499](https://github.com/dessalines/thumb-key/pull/1499)
+
+## New Contributors
+
+- @JulienVig made their first contribution in [#1506](https://github.com/dessalines/thumb-key/pull/1506)
+
+**Full Changelog**: https://github.com/dessalines/thumb-key/compare/5.0.4...5.0.5
+
 ## What's Changed in 5.0.4
 
 - limfjorden's PR by @dessalines in [#1496](https://github.com/dessalines/thumb-key/pull/1496)
