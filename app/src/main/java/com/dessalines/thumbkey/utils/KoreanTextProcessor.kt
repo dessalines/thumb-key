@@ -10,10 +10,16 @@ private const val UNICODE_BASE = 0xAC00
 private const val LEADING_MULTIPLIER = 588
 private const val VOWEL_MULTIPLIER = 28
 
+// SOLVED: deleting word doesn't delete composing field
+// SOLVED: changing layout doesn't commit composing field and writing overwrite it
+// SOLVED: undo/redo doesn't clear state
+// SOLVED: selecting/copying/pasting text also should clear state
+
 interface TextProcessor {
     fun processInput(ime: IMEService, input: CharSequence)
     fun handleKeyEvent(ime: IMEService, ev: KeyEvent)
     fun handleFinishInput(ime: IMEService)
+    fun resetState()
 }
 
 object KoreanLetters{
@@ -85,20 +91,24 @@ class KoreanTextProcessor : TextProcessor {
     private var medialVowel = ""
     private var trailing = ""
     private var standaloneVowel = ""
-    private var composedText = ""   // should always contain current value of ComposingText field use this variable instead of temporary ones?
+    private var composedText = ""
+    private var selectionStart = 0
+    private var selectionEnd = 0
+    private var cursorMoved = false
 
     override fun processInput(ime: IMEService, input: CharSequence) {
         val ic = ime.currentInputConnection
         val inputChar = input[0]
 
-        if (ime.didCursorMove()) {
-            val extractedText = ime.currentInputConnection.getExtractedText(ExtractedTextRequest(), 0)
-            commitCurrentBlock(ic)  // TODO: while removing entire word it commit the text on next input
-            // TODO: when moving cursor and deleting it returns back to the composingText and deletes single letter from it
-            // TODO: enter doesn't commit composeText
-            resetState()
-            ime.currentInputConnection.setSelection(extractedText?.selectionStart ?: -1, extractedText.selectionEnd)
+        Log.d(TAG, "TextProcessor processInput: $input")
+        updateCursorPosition(ic)
+        if (cursorMoved && state != CompositionState.EMPTY) {
+            Log.d(TAG, "processInput: cursorMoved")
+            commitCurrentBlock(ic, false)
+            ic.setSelection(selectionStart, selectionEnd)
         }
+
+        Log.d(TAG, "processInput: cursor position: $selectionStart")
 
         if (KoreanLetters.isConsonant(inputChar)) {
             processConsonant(ic, inputChar)
@@ -109,28 +119,67 @@ class KoreanTextProcessor : TextProcessor {
             processNonHangul(ic, input)
         }
         Log.d(TAG, "Current state: $state")
-/*
-        Log.d(TAG, "Calculated Unicode: ${composedText[0].code}")
-*/
-        Log.d(TAG, "leading: $leading")
-        Log.d(TAG, "vowel: $medialVowel")
-        Log.d(TAG, "trailing: $trailing")
     }
 
     override fun handleKeyEvent(ime: IMEService, ev: KeyEvent) {
-        if (ev.keyCode == KeyEvent.KEYCODE_DEL) {
-            deleteKeyAction(ev, ime)
-        } else {
-            ime.currentInputConnection.sendKeyEvent(ev)
+        val ic = ime.currentInputConnection
+        Log.d(TAG, "TextProcessor: Key action: ${ev.keyCode}")
+
+        if (state == CompositionState.EMPTY) {
+            ic.sendKeyEvent(ev)
+            updateCursorPosition(ic)
+            return
+        }
+
+        updateCursorPosition(ic)
+
+        when {
+            ev.keyCode == KeyEvent.KEYCODE_ENTER ||
+            cursorMoved -> {
+                commitCurrentBlock(ic, false)
+                ic.setSelection(selectionStart, selectionEnd)
+                ic.sendKeyEvent(ev)
+                updateCursorPosition(ic)
+            }
+            ev.keyCode == KeyEvent.KEYCODE_DEL -> deleteKeyAction(ime, ev)
+            else -> {
+                // eg. KEYCODE_DPAD_LEFT, KEYCODE_DPAD_RIGHT
+                Log.d(TAG, "TextProcessor: unhandled KeyAction: ${ev.keyCode}")
+                commitCurrentBlock(ic, true)
+                ic.sendKeyEvent(ev)
+                updateCursorPosition(ic)
+            }
         }
     }
 
     override fun handleFinishInput(ime: IMEService) {
-//        commitCurrentBlock(ime.currentInputConnection) -- it is committed 2 times
-        resetState()
+        Log.d(TAG, "Finish Korean Input")
+        commitCurrentBlock(ime.currentInputConnection, true)
     }
 
-    private fun deleteKeyAction(ev: KeyEvent, ime: IMEService) {
+    override fun resetState() {
+        Log.d(TAG, "TextProcessor: resetting state")
+        state = CompositionState.EMPTY
+        leading = ""
+        medialVowel = ""
+        trailing = ""
+        standaloneVowel = ""
+        composedText = ""
+    }
+
+    // ime.cursorMoved doesn't contain real time value
+    private fun updateCursorPosition(ic: InputConnection) {
+        val extractedText = ic.getExtractedText(ExtractedTextRequest(), 0)
+        val moved = extractedText.selectionStart != selectionStart ||
+                extractedText.selectionEnd != selectionEnd
+        Log.d(TAG, "TextProcessor - selection start: $selectionStart, selection end: $selectionEnd")
+        selectionStart = extractedText.selectionStart
+        selectionEnd = extractedText.selectionEnd
+        Log.d(TAG, "updated selection - selection start: $selectionStart, selection end: $selectionEnd")
+        cursorMoved = moved
+    }
+
+    private fun deleteKeyAction(ime: IMEService, ev: KeyEvent) {
         val ic = ime.currentInputConnection
 
 
@@ -191,6 +240,9 @@ class KoreanTextProcessor : TextProcessor {
                 state = CompositionState.LEADING_CONSONANT
                 leading = consonant.toString()
                 composedText = leading
+
+                selectionStart += 1
+                selectionEnd += 1
             }
             CompositionState.LEADING_CONSONANT -> {
                 if (KoreanLetters.isComplexConsonant(leading[0], consonant)) {
@@ -198,8 +250,9 @@ class KoreanTextProcessor : TextProcessor {
                     leading += consonant
                     composedText = KoreanLetters.getComplexConsonant(leading[0], consonant).toString()
                 } else {
+                    commitCurrentBlock(ic, true)
+
                     state = CompositionState.LEADING_CONSONANT
-                    commitCurrentBlock(ic)
                     leading = consonant.toString()
                     composedText = leading
                 }
@@ -211,8 +264,9 @@ class KoreanTextProcessor : TextProcessor {
                     val unicode = calculateBlockUnicode(leading, medialVowel, trailing)
                     composedText = unicode.toChar().toString()
                 } else {
+                    commitCurrentBlock(ic, true)
+
                     state = CompositionState.LEADING_CONSONANT
-                    commitCurrentBlock(ic)
                     leading = consonant.toString()
                     composedText = leading
                 }
@@ -225,8 +279,9 @@ class KoreanTextProcessor : TextProcessor {
                     composedText = unicode.toChar().toString()
                 }
                 else {
+                    commitCurrentBlock(ic, true)
+
                     state = CompositionState.LEADING_CONSONANT
-                    commitCurrentBlock(ic)
                     leading = consonant.toString()
                     composedText = leading
                 }
@@ -234,8 +289,9 @@ class KoreanTextProcessor : TextProcessor {
             CompositionState.TRAILING_COMPLEX_CONSONANT,
             CompositionState.STANDALONE_COMPLEX_CONSONANT,
             CompositionState.STANDALONE_VOWEL -> {
+                commitCurrentBlock(ic, true)
+
                 state = CompositionState.LEADING_CONSONANT
-                commitCurrentBlock(ic)
                 leading = consonant.toString()
                 composedText = leading
             }
@@ -250,6 +306,9 @@ class KoreanTextProcessor : TextProcessor {
                 state = CompositionState.STANDALONE_VOWEL
                 standaloneVowel = vowel.toString()
                 composedText = standaloneVowel
+
+                selectionStart += 1
+                selectionEnd += 1
             }
             CompositionState.LEADING_CONSONANT -> {
                 state = CompositionState.MEDIAL_VOWEL
@@ -258,21 +317,22 @@ class KoreanTextProcessor : TextProcessor {
                 composedText = unicode.toChar().toString()
             }
             CompositionState.MEDIAL_VOWEL -> {
-                if (KoreanLetters.isDiphthong(medialVowel[0], vowel)) {
+                Log.d(TAG, "media vowel: $medialVowel")
+                if (KoreanLetters.isDiphthong(medialVowel[0], vowel) && medialVowel.length < 2) {
                     // state is the same
                     medialVowel += vowel
                     val unicode = calculateBlockUnicode(leading, medialVowel)
                     composedText = unicode.toChar().toString()
                 } else {
+                    commitCurrentBlock(ic, true)
+
                     state = CompositionState.STANDALONE_VOWEL
-                    commitCurrentBlock(ic)
                     standaloneVowel = vowel.toString()
                     composedText = standaloneVowel
                 }
             }
             CompositionState.TRAILING_CONSONANT,
             CompositionState.TRAILING_COMPLEX_CONSONANT -> {
-                state = CompositionState.MEDIAL_VOWEL
                 val lastConsonant = trailing.last()
                 trailing = trailing.dropLast(1)
                 var unicode = if (trailing.isNotEmpty()) {
@@ -280,16 +340,21 @@ class KoreanTextProcessor : TextProcessor {
                 } else {
                     calculateBlockUnicode(leading, medialVowel)
                 }
-                ic.commitText(unicode.toChar().toString(), 1)
+                composedText = unicode.toChar().toString()
+                commitCurrentBlock(ic, true)
+
+                state = CompositionState.MEDIAL_VOWEL
                 leading = lastConsonant.toString()
                 medialVowel = vowel.toString()
                 unicode = calculateBlockUnicode(leading, medialVowel)
                 composedText = unicode.toChar().toString()
             }
             CompositionState.STANDALONE_COMPLEX_CONSONANT -> {
-                state = CompositionState.MEDIAL_VOWEL
                 val lastConsonant = leading.last().toString()
-                ic.commitText(leading.dropLast(1), 1)
+                composedText = leading.dropLast(1)
+                commitCurrentBlock(ic, true)
+
+                state = CompositionState.MEDIAL_VOWEL
                 leading = lastConsonant
                 medialVowel = vowel.toString()
                 val unicode = calculateBlockUnicode(leading, medialVowel)
@@ -297,19 +362,13 @@ class KoreanTextProcessor : TextProcessor {
             }
             CompositionState.STANDALONE_VOWEL -> {
                 // if no STANDALONE_DIPHTHONG state, in all cases it stays in STANDALONE_VOWEL
-                if (standaloneVowel.length == 1) {
-                    if (KoreanLetters.isDiphthong(standaloneVowel[0], vowel)) {
-                        standaloneVowel += vowel
-                        composedText = KoreanLetters.getDiphthong(standaloneVowel[0], vowel).toString()
-                    }
-                    else {
-                        commitCurrentBlock(ic)
-                        standaloneVowel = vowel.toString()
-                        composedText = vowel.toString()
-                    }
+                if (standaloneVowel.length == 1 && KoreanLetters.isDiphthong(standaloneVowel[0], vowel)) {
+                    standaloneVowel += vowel
+                    composedText = KoreanLetters.getDiphthong(standaloneVowel[0], vowel).toString()
                 }
                 else {
-                    commitCurrentBlock(ic)
+                    commitCurrentBlock(ic, true)
+                    state = CompositionState.STANDALONE_VOWEL
                     standaloneVowel = vowel.toString()
                     composedText = standaloneVowel
                 }
@@ -320,29 +379,21 @@ class KoreanTextProcessor : TextProcessor {
     }
 
     private fun processNonHangul(ic: InputConnection, input: CharSequence) {
-        ic.finishComposingText()
+        ic.commitText(composedText, 1)
         resetState()
         ic.commitText(input, 1)
+        selectionStart += 1
+        selectionEnd += 1
     }
 
-    fun resetState() {
-        state = CompositionState.EMPTY
-        leading = ""
-        medialVowel = ""
-        trailing = ""
-        standaloneVowel = ""
-        composedText = ""
-    }
-
-    private fun commitCurrentBlock(ic: InputConnection) {
+    private fun commitCurrentBlock(ic: InputConnection, updateSelection: Boolean) {
         ic.commitText(composedText, 1)
-/*
-        leading = ""
-        vowel = ""
-        trailing = ""
-        currentBlock = ""
-        standaloneVowel = ""
-*/
+        resetState()
+        if (updateSelection) {
+            selectionStart += 1
+            selectionEnd += 1
+        }
+        Log.d(TAG, "commitCurrentBlock, predicted cursor position: $selectionStart")
     }
 
     private fun calculateBlockUnicode(lCons: String, medVow: String, tCons: String? = null): Int {

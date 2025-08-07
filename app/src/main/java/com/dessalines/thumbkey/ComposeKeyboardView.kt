@@ -58,7 +58,9 @@ class ComposeKeyboardView(
                                         .makeText(context, layoutName, Toast.LENGTH_SHORT)
                                         .show()
 
-                                    ctx.setKeyboardDefinition(layouts[nextIndex].keyboardDefinition)
+                                    ctx.currentKeyboardDefinition?.settings?.textProcessor?.handleFinishInput(ctx)
+                                    ctx.currentKeyboardDefinition = (layouts[nextIndex].keyboardDefinition)
+
                                     if (s.showToastOnLayoutSwitch.toBool()) {
                                         val layoutName = layout.keyboardDefinition.title
                                         Toast

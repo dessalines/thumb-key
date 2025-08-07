@@ -380,11 +380,13 @@ fun performKeyAction(
 
         is KeyAction.DeleteWordBeforeCursor -> {
             Log.d(TAG, "deleting last word")
+            keyboardSettings.textProcessor?.handleFinishInput(ime)
             deleteWordBeforeCursor(ime)
         }
 
         is KeyAction.DeleteWordAfterCursor -> {
             Log.d(TAG, "deleting next word")
+            keyboardSettings.textProcessor?.handleFinishInput(ime)
             deleteWordAfterCursor(ime)
         }
 
@@ -948,6 +950,7 @@ fun performKeyAction(
         is KeyAction.ToggleEmojiMode -> {
             val enable = action.enable
             Log.d(TAG, "Toggling Emoji: $enable")
+            keyboardSettings.textProcessor?.handleFinishInput(ime)
             onToggleEmojiMode(enable)
         }
 
@@ -967,12 +970,12 @@ fun performKeyAction(
                 }
 
                 EditorInfo.IME_ACTION_NONE -> {
-                    ime.currentInputConnection.sendKeyEvent(
-                        KeyEvent(
-                            KeyEvent.ACTION_DOWN,
-                            KeyEvent.KEYCODE_ENTER,
-                        ),
+                    val ev = KeyEvent(
+                        KeyEvent.ACTION_DOWN,
+                        KeyEvent.KEYCODE_ENTER,
                     )
+                    // enter doesn't send messages on discord, but it's not my fault this time
+                    keyboardSettings.textProcessor?.handleKeyEvent(ime, ev) ?: ime.currentInputConnection.sendKeyEvent(ev)
                 }
 
                 else -> {
@@ -991,10 +994,12 @@ fun performKeyAction(
         KeyAction.SelectAll -> {
             // Check here for the action #s:
             // https://developer.android.com/reference/android/R.id
+            keyboardSettings.textProcessor?.handleFinishInput(ime)
             ime.currentInputConnection.performContextMenuAction(android.R.id.selectAll)
         }
 
         KeyAction.Cut -> {
+            keyboardSettings.textProcessor?.handleFinishInput(ime)
             if (ime.currentInputConnection.getSelectedText(0).isNullOrEmpty()) {
                 // Nothing selected, so cut all the text
                 ime.currentInputConnection.performContextMenuAction(android.R.id.selectAll)
@@ -1009,6 +1014,7 @@ fun performKeyAction(
         }
 
         KeyAction.Copy -> {
+            keyboardSettings.textProcessor?.handleFinishInput(ime)
             if (ime.currentInputConnection.getSelectedText(0).isNullOrEmpty()) {
                 // Nothing selected, so copy all the text
                 ime.currentInputConnection.performContextMenuAction(android.R.id.selectAll)
@@ -1026,16 +1032,19 @@ fun performKeyAction(
         }
 
         KeyAction.Paste -> {
+            keyboardSettings.textProcessor?.handleFinishInput(ime)
             ime.currentInputConnection.performContextMenuAction(android.R.id.paste)
         }
 
         KeyAction.Undo -> {
+            keyboardSettings.textProcessor?.handleFinishInput(ime)
             ime.currentInputConnection.sendKeyEvent(
                 KeyEvent(0, 0, KeyEvent.ACTION_DOWN, KeyEvent.KEYCODE_Z, 0, KeyEvent.META_CTRL_ON),
             )
         }
 
         KeyAction.Redo -> {
+            keyboardSettings.textProcessor?.handleFinishInput(ime)
             ime.currentInputConnection.sendKeyEvent(
                 KeyEvent(
                     0,

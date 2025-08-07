@@ -50,7 +50,7 @@ class IMEService :
         return view
     }
 
-    private lateinit var currentKeyboardDefinition: KeyboardDefinition
+    var currentKeyboardDefinition: KeyboardDefinition? = null
 
     /**
      * This is called every time the keyboard is brought up.
@@ -126,13 +126,8 @@ class IMEService :
     }
 
     override fun onWindowHidden() {
-        currentKeyboardDefinition.settings.textProcessor?.handleFinishInput(this)
+        currentKeyboardDefinition?.settings?.textProcessor?.resetState()
         super.onWindowHidden()
-    }
-
-    fun setKeyboardDefinition(definition: KeyboardDefinition) {
-        currentKeyboardDefinition = definition
-        Log.d(TAG, "Layout changed: " + currentKeyboardDefinition.title)
     }
 
     private var ignoreCursorMove: Boolean = false
