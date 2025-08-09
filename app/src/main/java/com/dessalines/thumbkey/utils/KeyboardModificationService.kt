@@ -16,8 +16,10 @@ import com.dessalines.thumbkey.keyboards.HIDE_KEYBOARD_KEYC
 import com.dessalines.thumbkey.keyboards.PASTE_KEYC
 import com.dessalines.thumbkey.keyboards.REDO_KEYC
 import com.dessalines.thumbkey.keyboards.SELECT_ALL_KEYC
+import com.dessalines.thumbkey.keyboards.SPACEBAR_BOTTOM_KEYC
 import com.dessalines.thumbkey.keyboards.SPACEBAR_LEFT_KEYC
 import com.dessalines.thumbkey.keyboards.SPACEBAR_RIGHT_KEYC
+import com.dessalines.thumbkey.keyboards.SPACEBAR_TOP_KEYC
 import com.dessalines.thumbkey.keyboards.SWITCH_IME_KEYC
 import com.dessalines.thumbkey.keyboards.SWITCH_IME_VOICE_KEYC
 import com.dessalines.thumbkey.keyboards.SWITCH_LANGUAGE_KEYC
@@ -264,6 +266,8 @@ fun getCommonKeyCFromKeyAction(keyActionSerializable: KeyActionSerializable?): K
         KeyActionSerializable.ToggleEmojiMode -> TOGGLE_EMOJI_MODE_TRUE_KEYC
         KeyActionSerializable.Left -> SPACEBAR_LEFT_KEYC
         KeyActionSerializable.Right -> SPACEBAR_RIGHT_KEYC
+        KeyActionSerializable.Top -> SPACEBAR_TOP_KEYC
+        KeyActionSerializable.Bottom -> SPACEBAR_BOTTOM_KEYC
         KeyActionSerializable.GotoSettings -> GOTO_SETTINGS_KEYC
         KeyActionSerializable.SelectAll -> SELECT_ALL_KEYC
         KeyActionSerializable.Cut -> CUT_KEYC
@@ -444,6 +448,8 @@ enum class KeyActionSerializable {
     ToggleEmojiMode,
     Left,
     Right,
+    Top,
+    Bottom,
     GotoSettings,
     SelectAll,
     Cut,
