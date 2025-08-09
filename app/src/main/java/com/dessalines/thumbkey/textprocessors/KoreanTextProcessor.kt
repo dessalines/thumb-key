@@ -1,78 +1,150 @@
-package com.dessalines.thumbkey.utils
+package com.dessalines.thumbkey.textprocessors
 
 import android.util.Log
-import android.view.inputmethod.InputConnection
 import android.view.KeyEvent
 import android.view.inputmethod.ExtractedTextRequest
+import android.view.inputmethod.InputConnection
 import com.dessalines.thumbkey.IMEService
+import com.dessalines.thumbkey.utils.TAG
 
 private const val UNICODE_BASE = 0xAC00
 private const val LEADING_MULTIPLIER = 588
 private const val VOWEL_MULTIPLIER = 28
 
-// SOLVED: deleting word doesn't delete composing field
-// SOLVED: changing layout doesn't commit composing field and writing overwrite it
-// SOLVED: undo/redo doesn't clear state
-// SOLVED: selecting/copying/pasting text also should clear state
-
-interface TextProcessor {
-    fun processInput(ime: IMEService, input: CharSequence)
-    fun handleKeyEvent(ime: IMEService, ev: KeyEvent)
-    fun handleFinishInput(ime: IMEService)
-    fun resetState()
-}
-
-object KoreanLetters{
-    private val leadingConsonants: Set<Char> = setOf(
-        'ㄱ', 'ㄲ', 'ㄴ', 'ㄷ', 'ㄸ', 'ㄹ', 'ㅁ', 'ㅂ', 'ㅃ', 'ㅅ', 'ㅆ', 'ㅇ', 'ㅈ', 'ㅉ',
-        'ㅊ', 'ㅋ', 'ㅌ', 'ㅍ', 'ㅎ'
-    )
-    private val vowels: Set<Char> = setOf(
-        'ㅏ', 'ㅐ', 'ㅑ', 'ㅒ', 'ㅓ', 'ㅔ', 'ㅕ', 'ㅖ', 'ㅗ', 'ㅘ', 'ㅙ', 'ㅚ', 'ㅛ', 'ㅜ',
-        'ㅝ', 'ㅞ', 'ㅟ', 'ㅠ', 'ㅡ', 'ㅢ', 'ㅣ'
-    )
-    private val trailingConsonants: Set<Char> = setOf(
-        '\u0000', 'ㄱ', 'ㄲ', 'ㄳ', 'ㄴ', 'ㄵ', 'ㄶ', 'ㄷ', 'ㄹ', 'ㄺ', 'ㄻ', 'ㄼ', 'ㄽ',
-        'ㄾ', 'ㄿ', 'ㅀ', 'ㅁ', 'ㅂ', 'ㅄ', 'ㅅ', 'ㅆ', 'ㅇ', 'ㅈ', 'ㅊ', 'ㅋ', 'ㅌ', 'ㅍ', 'ㅎ'
-    )
-    private val diphthongs: Map<Pair<Char, Char>, Char> = mapOf(
-        ('ㅗ' to 'ㅏ') to 'ㅘ',
-        ('ㅗ' to 'ㅐ') to 'ㅙ',
-        ('ㅗ' to 'ㅣ') to 'ㅚ',
-        ('ㅜ' to 'ㅓ') to 'ㅝ',
-        ('ㅜ' to 'ㅔ') to 'ㅞ',
-        ('ㅜ' to 'ㅣ') to 'ㅟ',
-        ('ㅡ' to 'ㅣ') to 'ㅢ'
-    )
-    private val complexConsonants: Map<Pair<Char, Char>, Char> = mapOf(
-        ('ㄱ' to 'ㅅ') to 'ㄳ',
-        ('ㄴ' to 'ㅈ') to 'ㄵ',
-        ('ㄴ' to 'ㅎ') to 'ㄶ',
-        ('ㄹ' to 'ㄱ') to 'ㄺ',
-        ('ㄹ' to 'ㅁ') to 'ㄻ',
-        ('ㄹ' to 'ㅂ') to 'ㄼ',
-        ('ㄹ' to 'ㅅ') to 'ㄽ',
-        ('ㄹ' to 'ㅌ') to 'ㄾ',
-        ('ㄹ' to 'ㅍ') to 'ㄿ',
-        ('ㄹ' to 'ㅎ') to 'ㅀ',
-        ('ㅂ' to 'ㅅ') to 'ㅄ'
-    )
+object KoreanLetters {
+    private val leadingConsonants: Set<Char> =
+        setOf(
+            'ㄱ',
+            'ㄲ',
+            'ㄴ',
+            'ㄷ',
+            'ㄸ',
+            'ㄹ',
+            'ㅁ',
+            'ㅂ',
+            'ㅃ',
+            'ㅅ',
+            'ㅆ',
+            'ㅇ',
+            'ㅈ',
+            'ㅉ',
+            'ㅊ',
+            'ㅋ',
+            'ㅌ',
+            'ㅍ',
+            'ㅎ',
+        )
+    private val vowels: Set<Char> =
+        setOf(
+            'ㅏ',
+            'ㅐ',
+            'ㅑ',
+            'ㅒ',
+            'ㅓ',
+            'ㅔ',
+            'ㅕ',
+            'ㅖ',
+            'ㅗ',
+            'ㅘ',
+            'ㅙ',
+            'ㅚ',
+            'ㅛ',
+            'ㅜ',
+            'ㅝ',
+            'ㅞ',
+            'ㅟ',
+            'ㅠ',
+            'ㅡ',
+            'ㅢ',
+            'ㅣ',
+        )
+    private val trailingConsonants: Set<Char> =
+        setOf(
+            '\u0000',
+            'ㄱ',
+            'ㄲ',
+            'ㄳ',
+            'ㄴ',
+            'ㄵ',
+            'ㄶ',
+            'ㄷ',
+            'ㄹ',
+            'ㄺ',
+            'ㄻ',
+            'ㄼ',
+            'ㄽ',
+            'ㄾ',
+            'ㄿ',
+            'ㅀ',
+            'ㅁ',
+            'ㅂ',
+            'ㅄ',
+            'ㅅ',
+            'ㅆ',
+            'ㅇ',
+            'ㅈ',
+            'ㅊ',
+            'ㅋ',
+            'ㅌ',
+            'ㅍ',
+            'ㅎ',
+        )
+    private val diphthongs: Map<Pair<Char, Char>, Char> =
+        mapOf(
+            ('ㅗ' to 'ㅏ') to 'ㅘ',
+            ('ㅗ' to 'ㅐ') to 'ㅙ',
+            ('ㅗ' to 'ㅣ') to 'ㅚ',
+            ('ㅜ' to 'ㅓ') to 'ㅝ',
+            ('ㅜ' to 'ㅔ') to 'ㅞ',
+            ('ㅜ' to 'ㅣ') to 'ㅟ',
+            ('ㅡ' to 'ㅣ') to 'ㅢ',
+        )
+    private val complexConsonants: Map<Pair<Char, Char>, Char> =
+        mapOf(
+            ('ㄱ' to 'ㅅ') to 'ㄳ',
+            ('ㄴ' to 'ㅈ') to 'ㄵ',
+            ('ㄴ' to 'ㅎ') to 'ㄶ',
+            ('ㄹ' to 'ㄱ') to 'ㄺ',
+            ('ㄹ' to 'ㅁ') to 'ㄻ',
+            ('ㄹ' to 'ㅂ') to 'ㄼ',
+            ('ㄹ' to 'ㅅ') to 'ㄽ',
+            ('ㄹ' to 'ㅌ') to 'ㄾ',
+            ('ㄹ' to 'ㅍ') to 'ㄿ',
+            ('ㄹ' to 'ㅎ') to 'ㅀ',
+            ('ㅂ' to 'ㅅ') to 'ㅄ',
+        )
 
     fun isConsonant(c: Char): Boolean = c in leadingConsonants
+
     fun isVowel(c: Char): Boolean = c in vowels
+
     fun isTrailing(c: Char): Boolean = c in trailingConsonants
-    fun isComplexConsonant(cons1: Char, cons2: Char): Boolean = Pair(cons1, cons2) in complexConsonants
-    fun isDiphthong(vowel1: Char, vowel2: Char): Boolean = Pair(vowel1, vowel2) in diphthongs
+
+    fun isComplexConsonant(
+        cons1: Char,
+        cons2: Char,
+    ): Boolean = Pair(cons1, cons2) in complexConsonants
+
+    fun isDiphthong(
+        vowel1: Char,
+        vowel2: Char,
+    ): Boolean = Pair(vowel1, vowel2) in diphthongs
 
     fun getLeadingIndex(leading: Char): Int = leadingConsonants.indexOf(leading)
+
     fun getVowelIndex(vowel: Char): Int = vowels.indexOf(vowel)
+
     fun getTrailingIndex(trailing: Char): Int = trailingConsonants.indexOf(trailing)
-    fun getDiphthong(vowel1: Char, vowel2: Char): Char? {
-        return diphthongs[vowel1 to vowel2]
-    }
-    fun getComplexConsonant(cons1: Char, cons2: Char): Char? {
-        return complexConsonants[cons1 to cons2]
-    }
+
+    fun getDiphthong(
+        vowel1: Char,
+        vowel2: Char,
+    ): Char? = diphthongs[vowel1 to vowel2]
+
+    fun getComplexConsonant(
+        cons1: Char,
+        cons2: Char,
+    ): Char? = complexConsonants[cons1 to cons2]
 }
 
 enum class CompositionState {
@@ -96,34 +168,34 @@ class KoreanTextProcessor : TextProcessor {
     private var selectionEnd = 0
     private var cursorMoved = false
 
-    override fun processInput(ime: IMEService, input: CharSequence) {
+    override fun processInput(
+        ime: IMEService,
+        input: CharSequence,
+    ) {
         val ic = ime.currentInputConnection
         val inputChar = input[0]
 
-        Log.d(TAG, "TextProcessor processInput: $input")
         updateCursorPosition(ic)
         if (cursorMoved && state != CompositionState.EMPTY) {
-            Log.d(TAG, "processInput: cursorMoved")
             commitCurrentBlock(ic, false)
             ic.setSelection(selectionStart, selectionEnd)
         }
 
-        Log.d(TAG, "processInput: cursor position: $selectionStart")
-
         if (KoreanLetters.isConsonant(inputChar)) {
             processConsonant(ic, inputChar)
-        }
-        else if (KoreanLetters.isVowel(inputChar)) {
+        } else if (KoreanLetters.isVowel(inputChar)) {
             processVowel(ic, inputChar)
         } else {
             processNonHangul(ic, input)
         }
-        Log.d(TAG, "Current state: $state")
+        Log.d(TAG, "TextProcessor: current state: $state, cursor position: $selectionStart")
     }
 
-    override fun handleKeyEvent(ime: IMEService, ev: KeyEvent) {
+    override fun handleKeyEvent(
+        ime: IMEService,
+        ev: KeyEvent,
+    ) {
         val ic = ime.currentInputConnection
-        Log.d(TAG, "TextProcessor: Key action: ${ev.keyCode}")
 
         if (state == CompositionState.EMPTY) {
             ic.sendKeyEvent(ev)
@@ -135,7 +207,7 @@ class KoreanTextProcessor : TextProcessor {
 
         when {
             ev.keyCode == KeyEvent.KEYCODE_ENTER ||
-            cursorMoved -> {
+                cursorMoved -> {
                 commitCurrentBlock(ic, false)
                 ic.setSelection(selectionStart, selectionEnd)
                 ic.sendKeyEvent(ev)
@@ -153,8 +225,11 @@ class KoreanTextProcessor : TextProcessor {
     }
 
     override fun handleFinishInput(ime: IMEService) {
-        Log.d(TAG, "Finish Korean Input")
-        commitCurrentBlock(ime.currentInputConnection, true)
+        val ic = ime.currentInputConnection
+
+        updateCursorPosition(ic)
+        commitCurrentBlock(ic, true)
+        ic.setSelection(selectionStart, selectionEnd)
     }
 
     override fun resetState() {
@@ -170,18 +245,22 @@ class KoreanTextProcessor : TextProcessor {
     // ime.cursorMoved doesn't contain real time value
     private fun updateCursorPosition(ic: InputConnection) {
         val extractedText = ic.getExtractedText(ExtractedTextRequest(), 0)
-        val moved = extractedText.selectionStart != selectionStart ||
+        val moved =
+            extractedText.selectionStart != selectionStart ||
                 extractedText.selectionEnd != selectionEnd
-        Log.d(TAG, "TextProcessor - selection start: $selectionStart, selection end: $selectionEnd")
         selectionStart = extractedText.selectionStart
         selectionEnd = extractedText.selectionEnd
-        Log.d(TAG, "updated selection - selection start: $selectionStart, selection end: $selectionEnd")
         cursorMoved = moved
+        if (cursorMoved) {
+            Log.d(TAG, "TextProcessor: detected cursor move")
+        }
     }
 
-    private fun deleteKeyAction(ime: IMEService, ev: KeyEvent) {
+    private fun deleteKeyAction(
+        ime: IMEService,
+        ev: KeyEvent,
+    ) {
         val ic = ime.currentInputConnection
-
 
         when (state) {
             CompositionState.EMPTY -> {
@@ -225,16 +304,13 @@ class KoreanTextProcessor : TextProcessor {
             }
         }
 
-        Log.d(TAG, "Current state: $state")
-        Log.d(TAG, "text: $composedText")
-        Log.d(TAG, "leading: $leading")
-        Log.d(TAG, "vowel: $medialVowel")
-        Log.d(TAG, "trailing: $trailing")
-
         ic.setComposingText(composedText, 1)
     }
 
-    private fun processConsonant(ic: InputConnection, consonant: Char) {
+    private fun processConsonant(
+        ic: InputConnection,
+        consonant: Char,
+    ) {
         when (state) {
             CompositionState.EMPTY -> {
                 state = CompositionState.LEADING_CONSONANT
@@ -277,8 +353,7 @@ class KoreanTextProcessor : TextProcessor {
                     trailing += consonant
                     val unicode = calculateBlockUnicode(leading, medialVowel, trailing)
                     composedText = unicode.toChar().toString()
-                }
-                else {
+                } else {
                     commitCurrentBlock(ic, true)
 
                     state = CompositionState.LEADING_CONSONANT
@@ -288,7 +363,8 @@ class KoreanTextProcessor : TextProcessor {
             }
             CompositionState.TRAILING_COMPLEX_CONSONANT,
             CompositionState.STANDALONE_COMPLEX_CONSONANT,
-            CompositionState.STANDALONE_VOWEL -> {
+            CompositionState.STANDALONE_VOWEL,
+            -> {
                 commitCurrentBlock(ic, true)
 
                 state = CompositionState.LEADING_CONSONANT
@@ -300,7 +376,10 @@ class KoreanTextProcessor : TextProcessor {
         ic.setComposingText(composedText, 1)
     }
 
-    private fun processVowel(ic: InputConnection, vowel: Char) {
+    private fun processVowel(
+        ic: InputConnection,
+        vowel: Char,
+    ) {
         when (state) {
             CompositionState.EMPTY -> {
                 state = CompositionState.STANDALONE_VOWEL
@@ -317,7 +396,6 @@ class KoreanTextProcessor : TextProcessor {
                 composedText = unicode.toChar().toString()
             }
             CompositionState.MEDIAL_VOWEL -> {
-                Log.d(TAG, "media vowel: $medialVowel")
                 if (KoreanLetters.isDiphthong(medialVowel[0], vowel) && medialVowel.length < 2) {
                     // state is the same
                     medialVowel += vowel
@@ -332,14 +410,16 @@ class KoreanTextProcessor : TextProcessor {
                 }
             }
             CompositionState.TRAILING_CONSONANT,
-            CompositionState.TRAILING_COMPLEX_CONSONANT -> {
+            CompositionState.TRAILING_COMPLEX_CONSONANT,
+            -> {
                 val lastConsonant = trailing.last()
                 trailing = trailing.dropLast(1)
-                var unicode = if (trailing.isNotEmpty()) {
-                    calculateBlockUnicode(leading, medialVowel, trailing)
-                } else {
-                    calculateBlockUnicode(leading, medialVowel)
-                }
+                var unicode =
+                    if (trailing.isNotEmpty()) {
+                        calculateBlockUnicode(leading, medialVowel, trailing)
+                    } else {
+                        calculateBlockUnicode(leading, medialVowel)
+                    }
                 composedText = unicode.toChar().toString()
                 commitCurrentBlock(ic, true)
 
@@ -365,8 +445,7 @@ class KoreanTextProcessor : TextProcessor {
                 if (standaloneVowel.length == 1 && KoreanLetters.isDiphthong(standaloneVowel[0], vowel)) {
                     standaloneVowel += vowel
                     composedText = KoreanLetters.getDiphthong(standaloneVowel[0], vowel).toString()
-                }
-                else {
+                } else {
                     commitCurrentBlock(ic, true)
                     state = CompositionState.STANDALONE_VOWEL
                     standaloneVowel = vowel.toString()
@@ -378,7 +457,10 @@ class KoreanTextProcessor : TextProcessor {
         ic.setComposingText(composedText, 1)
     }
 
-    private fun processNonHangul(ic: InputConnection, input: CharSequence) {
+    private fun processNonHangul(
+        ic: InputConnection,
+        input: CharSequence,
+    ) {
         ic.commitText(composedText, 1)
         resetState()
         ic.commitText(input, 1)
@@ -386,25 +468,30 @@ class KoreanTextProcessor : TextProcessor {
         selectionEnd += 1
     }
 
-    private fun commitCurrentBlock(ic: InputConnection, updateSelection: Boolean) {
+    private fun commitCurrentBlock(
+        ic: InputConnection,
+        updateSelection: Boolean,
+    ) {
         ic.commitText(composedText, 1)
         resetState()
         if (updateSelection) {
             selectionStart += 1
             selectionEnd += 1
         }
-        Log.d(TAG, "commitCurrentBlock, predicted cursor position: $selectionStart")
     }
 
-    private fun calculateBlockUnicode(lCons: String, medVow: String, tCons: String? = null): Int {
+    private fun calculateBlockUnicode(
+        lCons: String,
+        medVow: String,
+        tCons: String? = null,
+    ): Int {
         var codepoint = UNICODE_BASE
         codepoint += KoreanLetters.getLeadingIndex(lCons[0]) * LEADING_MULTIPLIER
 
         if (medVow.length == 2) {
             val diphthong = KoreanLetters.getDiphthong(medVow[0], medVow[1]) ?: return 0xFFFD
             codepoint += KoreanLetters.getVowelIndex(diphthong) * VOWEL_MULTIPLIER
-        }
-        else {
+        } else {
             codepoint += KoreanLetters.getVowelIndex(medVow[0]) * VOWEL_MULTIPLIER
         }
 
@@ -413,8 +500,7 @@ class KoreanTextProcessor : TextProcessor {
         if (tLength == 2) {
             val complex = KoreanLetters.getComplexConsonant(tCons[0], tCons[1]) ?: return 0xFFFD
             codepoint += KoreanLetters.getTrailingIndex(complex)
-        }
-        else {
+        } else {
             codepoint += KoreanLetters.getTrailingIndex(tCons[0])
         }
 

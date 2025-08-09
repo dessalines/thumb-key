@@ -2,10 +2,10 @@
 
 package com.dessalines.thumbkey.keyboards
 
+import com.dessalines.thumbkey.textprocessors.KoreanTextProcessor
 import com.dessalines.thumbkey.utils.*
 import com.dessalines.thumbkey.utils.ColorVariant.*
 import com.dessalines.thumbkey.utils.FontSizeVariant.*
-import com.dessalines.thumbkey.utils.KeyAction.*
 import com.dessalines.thumbkey.utils.SwipeNWay.*
 
 val KB_KR_TYPESPLIT_MAIN =
@@ -49,7 +49,7 @@ val KB_KR_TYPESPLIT_MAIN =
                     swipeType = FOUR_WAY_CROSS,
                     left = KeyC("ㅎ"),
                     bottom = KeyC("ㄸ"),
-                    top = KeyC("ㅉ")
+                    top = KeyC("ㅉ"),
                 ),
                 SPACEBAR_TYPESPLIT_MIDDLE_KEY_ITEM,
                 KeyItemC(
@@ -110,7 +110,8 @@ val KB_KR_TYPESPLIT: KeyboardDefinition =
                 shifted = KB_KR_TYPESPLIT_MAIN,
                 numeric = TYPESPLIT_NUMERIC_KEYBOARD,
             ),
-        settings = KeyboardDefinitionSettings(
-            textProcessor = KoreanTextProcessor()
-        )
+        settings =
+            KeyboardDefinitionSettings(
+                textProcessor = KoreanTextProcessor(),
+            ),
     )

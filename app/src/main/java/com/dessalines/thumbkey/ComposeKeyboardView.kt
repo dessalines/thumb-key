@@ -52,15 +52,13 @@ class ComposeKeyboardView(
                                     val s2 = s.copy(keyboardLayout = layout.ordinal)
                                     settingsRepo.update(s2)
 
-                                    // Display the new layout's name on the screen
-                                    val layoutName = layout.keyboardDefinition.title
-                                    Toast
-                                        .makeText(context, layoutName, Toast.LENGTH_SHORT)
-                                        .show()
-
-                                    ctx.currentKeyboardDefinition?.settings?.textProcessor?.handleFinishInput(ctx)
+                                    ctx.currentKeyboardDefinition
+                                        ?.settings
+                                        ?.textProcessor
+                                        ?.handleFinishInput(ctx)
                                     ctx.currentKeyboardDefinition = (layouts[nextIndex].keyboardDefinition)
 
+                                    // Display the new layout's name on the screen
                                     if (s.showToastOnLayoutSwitch.toBool()) {
                                         val layoutName = layout.keyboardDefinition.title
                                         Toast

@@ -346,8 +346,8 @@ fun performKeyAction(
             Log.d(TAG, "committing key text: $text")
             ime.ignoreNextCursorMove()
 
-            keyboardSettings.textProcessor?.processInput(ime, text) ?:
-                ime.currentInputConnection.commitText(
+            keyboardSettings.textProcessor?.processInput(ime, text)
+                ?: ime.currentInputConnection.commitText(
                     text,
                     1,
                 )
@@ -366,8 +366,8 @@ fun performKeyAction(
         is KeyAction.SendEvent -> {
             val ev = action.event
             Log.d(TAG, "sending key event: $ev")
-            keyboardSettings.textProcessor?.handleKeyEvent(ime, ev) ?:
-                ime.currentInputConnection.sendKeyEvent(ev)
+            keyboardSettings.textProcessor?.handleKeyEvent(ime, ev)
+                ?: ime.currentInputConnection.sendKeyEvent(ev)
             onKeyEvent()
         }
 
@@ -970,12 +970,13 @@ fun performKeyAction(
                 }
 
                 EditorInfo.IME_ACTION_NONE -> {
-                    val ev = KeyEvent(
-                        KeyEvent.ACTION_DOWN,
-                        KeyEvent.KEYCODE_ENTER,
-                    )
-                    // enter doesn't send messages on discord, but it's not my fault this time
-                    keyboardSettings.textProcessor?.handleKeyEvent(ime, ev) ?: ime.currentInputConnection.sendKeyEvent(ev)
+                    val ev =
+                        KeyEvent(
+                            KeyEvent.ACTION_DOWN,
+                            KeyEvent.KEYCODE_ENTER,
+                        )
+                    keyboardSettings.textProcessor?.handleKeyEvent(ime, ev)
+                        ?: ime.currentInputConnection.sendKeyEvent(ev)
                 }
 
                 else -> {
