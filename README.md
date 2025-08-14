@@ -258,6 +258,8 @@ This swaps the 'switch language' and 'toggle emoji' actions on the top-right key
 - `ToggleEmojiMode`
 - `Left`
 - `Right`
+- `Top`
+- `Bottom`
 - `GotoSettings`
 - `SelectAll`
 - `Cut`
