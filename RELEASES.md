@@ -1,3 +1,9 @@
+## What's Changed in 5.0.6
+
+- add top bottom key actions (closes #1418) by @pohmelie in [#1512](https://github.com/dessalines/thumb-key/pull/1512)
+
+**Full Changelog**: https://github.com/dessalines/thumb-key/compare/5.0.5...5.0.6
+
 ## What's Changed in 5.0.5
 
 - adds new layout: english twohands symbols numbers arrows compact. by @bklaase in [#1507](https://github.com/dessalines/thumb-key/pull/1507)
