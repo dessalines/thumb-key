@@ -205,11 +205,11 @@ val KB_ENLV_THUMBKEY_SHIFTED =
     )
 val KB_ENLV_THUMBKEY: KeyboardDefinition =
     KeyboardDefinition(
-        title = "latvian thumb-key with english based layout",
+        title = "latviešu valoda english thumb-key",
         modes =
             KeyboardDefinitionModes(
-                main = KB_EN_THUMBKEY_MAIN,
-                shifted = KB_EN_THUMBKEY_SHIFTED,
+                main = KB_ENLV_THUMBKEY_MAIN,
+                shifted = KB_ENLV_THUMBKEY_SHIFTED,
                 numeric = NUMERIC_KEYBOARD,
             ),
         settings =
