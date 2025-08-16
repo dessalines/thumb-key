@@ -25,6 +25,7 @@ import com.dessalines.thumbkey.keyboards.KB_DE_THUMBKEY_SYMNUM
 import com.dessalines.thumbkey.keyboards.KB_DE_THUMBKEY_WORDS
 import com.dessalines.thumbkey.keyboards.KB_DE_TYPESPLIT
 import com.dessalines.thumbkey.keyboards.KB_DE_TYPESPLIT_IMPROVED
+import com.dessalines.thumbkey.keyboards.KB_ENLV_THUMBKEY
 import com.dessalines.thumbkey.keyboards.KB_EN_COLUMNAR
 import com.dessalines.thumbkey.keyboards.KB_EN_COLUMNAR_QUICK
 import com.dessalines.thumbkey.keyboards.KB_EN_CZ_THUMBKEY
@@ -388,4 +389,5 @@ enum class KeyboardLayout(
     RUArti(KB_RU_ARTI),
     DAThumbKeyMultiLingual(KB_DA_THUMBKEY_MULTILINGUAL),
     ENSymbolsNumbersArrowsTwoHandsCompact(KB_EN_SYMBOLS_NUMBERS_ARROWS_TWO_HANDS_COMPACT),
+    ENLVThumbKey(KB_ENLV_THUMBKEY),
 }
