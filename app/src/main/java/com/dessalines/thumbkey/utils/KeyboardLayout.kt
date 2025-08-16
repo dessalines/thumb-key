@@ -1,6 +1,5 @@
 package com.dessalines.thumbkey.utils
 
-import com.dessalines.thumbkey.keyboards.KB_ENLV_THUMBKEY
 import com.dessalines.thumbkey.keyboards.KB_AR_THUMBKEY_LEVANT
 import com.dessalines.thumbkey.keyboards.KB_BG_MESSAGEASE_PHONETIC_SYMBOLS
 import com.dessalines.thumbkey.keyboards.KB_BG_THUMBKEY_SYMBOLS
@@ -26,6 +25,7 @@ import com.dessalines.thumbkey.keyboards.KB_DE_THUMBKEY_SYMNUM
 import com.dessalines.thumbkey.keyboards.KB_DE_THUMBKEY_WORDS
 import com.dessalines.thumbkey.keyboards.KB_DE_TYPESPLIT
 import com.dessalines.thumbkey.keyboards.KB_DE_TYPESPLIT_IMPROVED
+import com.dessalines.thumbkey.keyboards.KB_ENLV_THUMBKEY
 import com.dessalines.thumbkey.keyboards.KB_EN_COLUMNAR
 import com.dessalines.thumbkey.keyboards.KB_EN_COLUMNAR_QUICK
 import com.dessalines.thumbkey.keyboards.KB_EN_CZ_THUMBKEY
