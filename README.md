@@ -384,6 +384,14 @@ MessagEase is unfortunately unmaintained, and Thumb-Key uses a better alternatin
 - [F-Droid](https://f-droid.org/en/packages/com.dessalines.thumbkey/)
 - [Google Play](https://play.google.com/store/apps/details?id=com.dessalines.thumbkey)
 
+### Verifying Fingerprints
+
+You can use [the following tool](https://developer.android.com/tools/apksigner#usage-verify) to verify the certificate before installation:
+
+`apksigner verify -v --print-certs <path-to-apk>`
+
+`SHA256: EA:71:95:CF:CE:63:8A:E6:B1:A8:00:2D:DC:0D:48:63:36:60:95:EA:5B:8D:95:C1:CD:5E:25:DB:0F:E2:E7:C3`
+
 ## Contributing
 
 See [Contributing.md](CONTRIBUTING.md) for how to add keyboard layouts, and themes.
