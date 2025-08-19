@@ -2,7 +2,6 @@ package com.dessalines.thumbkey.textprocessors
 
 import android.util.Log
 import android.view.KeyEvent
-import android.view.inputmethod.ExtractedTextRequest
 import android.view.inputmethod.InputConnection
 import com.dessalines.thumbkey.IMEService
 import com.dessalines.thumbkey.utils.TAG
@@ -166,7 +165,7 @@ class KoreanTextProcessor : TextProcessor {
     private var composedText = ""
     private var selectionStart = 0
     private var selectionEnd = 0
-    private var cursorMoved = false
+    private var ignoreNextMove = false
 
     override fun processInput(
         ime: IMEService,
@@ -174,12 +173,6 @@ class KoreanTextProcessor : TextProcessor {
     ) {
         val ic = ime.currentInputConnection
         val inputChar = input[0]
-
-        updateCursorPosition(ic)
-        if (cursorMoved && state != CompositionState.EMPTY) {
-            commitCurrentBlock(ic, false)
-            ic.setSelection(selectionStart, selectionEnd)
-        }
 
         if (KoreanLetters.isConsonant(inputChar)) {
             processConsonant(ic, inputChar)
@@ -199,27 +192,20 @@ class KoreanTextProcessor : TextProcessor {
 
         if (state == CompositionState.EMPTY) {
             ic.sendKeyEvent(ev)
-            updateCursorPosition(ic)
             return
         }
 
-        updateCursorPosition(ic)
-
-        when {
-            ev.keyCode == KeyEvent.KEYCODE_ENTER ||
-                cursorMoved -> {
+        when (ev.keyCode) {
+            KeyEvent.KEYCODE_ENTER -> {
                 commitCurrentBlock(ic, false)
                 ic.setSelection(selectionStart, selectionEnd)
                 ic.sendKeyEvent(ev)
-                updateCursorPosition(ic)
             }
-            ev.keyCode == KeyEvent.KEYCODE_DEL -> deleteKeyAction(ime, ev)
+            KeyEvent.KEYCODE_DEL -> deleteKeyAction(ime, ev)
             else -> {
                 // eg. KEYCODE_DPAD_LEFT, KEYCODE_DPAD_RIGHT
-                Log.d(TAG, "TextProcessor: unhandled KeyAction: ${ev.keyCode}")
                 commitCurrentBlock(ic, true)
                 ic.sendKeyEvent(ev)
-                updateCursorPosition(ic)
             }
         }
     }
@@ -227,7 +213,6 @@ class KoreanTextProcessor : TextProcessor {
     override fun handleFinishInput(ime: IMEService) {
         val ic = ime.currentInputConnection
 
-        updateCursorPosition(ic)
         commitCurrentBlock(ic, true)
         ic.setSelection(selectionStart, selectionEnd)
     }
@@ -242,18 +227,27 @@ class KoreanTextProcessor : TextProcessor {
         composedText = ""
     }
 
-    // ime.cursorMoved doesn't contain real time value
-    private fun updateCursorPosition(ic: InputConnection) {
-        val extractedText = ic.getExtractedText(ExtractedTextRequest(), 0)
-        val moved =
-            extractedText.selectionStart != selectionStart ||
-                extractedText.selectionEnd != selectionEnd
-        selectionStart = extractedText.selectionStart
-        selectionEnd = extractedText.selectionEnd
-        cursorMoved = moved
-        if (cursorMoved) {
-            Log.d(TAG, "TextProcessor: detected cursor move")
+    override fun onCursorSelectionChanged(
+        ime: IMEService,
+        oldSelStart: Int,
+        oldSelEnd: Int,
+        newSelStart: Int,
+        newSelEnd: Int,
+    ) {
+        Log.d(TAG, "old: $oldSelStart, new: $newSelStart, saved: $selectionStart, ignore: $ignoreNextMove")
+        if (ignoreNextMove) {
+            ignoreNextMove = false
+            return
         }
+        if (oldSelStart == newSelStart && oldSelEnd == newSelEnd) return
+        if (selectionStart == newSelStart) return
+
+        Log.d(TAG, "Cursor moved!")
+        commitCurrentBlock(ime.currentInputConnection, false)
+        selectionStart = newSelStart
+        selectionEnd = newSelEnd
+        ime.currentInputConnection.setSelection(selectionStart, selectionEnd)
+        ignoreNextMove = true
     }
 
     private fun deleteKeyAction(
@@ -472,6 +466,7 @@ class KoreanTextProcessor : TextProcessor {
         ic: InputConnection,
         updateSelection: Boolean,
     ) {
+        Log.d(TAG, "committing text: $composedText")
         ic.commitText(composedText, 1)
         resetState()
         if (updateSelection) {

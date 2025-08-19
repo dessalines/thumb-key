@@ -130,6 +130,34 @@ class IMEService :
         super.onWindowHidden()
     }
 
+    override fun onUpdateSelection(
+        oldSelStart: Int,
+        oldSelEnd: Int,
+        newSelStart: Int,
+        newSelEnd: Int,
+        candidatesStart: Int,
+        candidatesEnd: Int,
+    ) {
+        super.onUpdateSelection(
+            oldSelStart,
+            oldSelEnd,
+            newSelStart,
+            newSelEnd,
+            candidatesStart,
+            candidatesEnd,
+        )
+
+        if (ignoreCursorMove) return
+
+        currentKeyboardDefinition?.settings?.textProcessor?.onCursorSelectionChanged(
+            this,
+            oldSelStart,
+            oldSelEnd,
+            newSelStart,
+            newSelEnd,
+        )
+    }
+
     private var ignoreCursorMove: Boolean = false
     private var cursorMoved: Boolean = false
     private var selectionStart: Int = 0

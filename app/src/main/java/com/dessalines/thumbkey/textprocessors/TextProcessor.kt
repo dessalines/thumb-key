@@ -16,5 +16,13 @@ interface TextProcessor {
 
     fun handleFinishInput(ime: IMEService)
 
+    fun onCursorSelectionChanged(
+        ime: IMEService,
+        oldSelStart: Int,
+        oldSelEnd: Int,
+        newSelStart: Int,
+        newSelEnd: Int,
+    )
+
     fun resetState()
 }
