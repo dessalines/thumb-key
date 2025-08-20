@@ -396,7 +396,7 @@ You can use [the following tool](https://developer.android.com/tools/apksigner#u
 
 See [Contributing.md](CONTRIBUTING.md) for how to add keyboard layouts, and themes.
 
-Translations via [weblate](https://hosted.weblate.org/engage/thumb-key/):
+Translations via [Weblate](https://hosted.weblate.org/engage/thumb-key/):
 
 [![Translation status](https://hosted.weblate.org/widget/thumb-key/thumb-key/multi-auto.svg)](https://hosted.weblate.org/engage/thumb-key/)
 
@@ -411,14 +411,14 @@ Your donations directly support full-time development, and help keep this mainta
 
 ### Crypto
 
-- bitcoin: `1Hefs7miXS5ff5Ck5xvmjKjXf5242KzRtK`
-- ethereum: `0x400c96c96acbC6E7B3B43B1dc1BB446540a88A01`
-- monero: `41taVyY6e1xApqKyMVDRVxJ76sPkfZhALLTjRvVKpaAh2pBd4wv9RgYj1tSPrx8wc6iE1uWUfjtQdTmTy2FGMeChGVKPQuV`
+- Bitcoin: `1Hefs7miXS5ff5Ck5xvmjKjXf5242KzRtK`
+- Ethereum: `0x400c96c96acbC6E7B3B43B1dc1BB446540a88A01`
+- Monero: `41taVyY6e1xApqKyMVDRVxJ76sPkfZhALLTjRvVKpaAh2pBd4wv9RgYj1tSPrx8wc6iE1uWUfjtQdTmTy2FGMeChGVKPQuV`
 
 ## Social / Contact
 
 - [lemmy.ml/c/thumbkey](https://lemmy.ml/c/thumbkey)
-- [Thumbkey dev chat](https://matrix.to/#/#thumbkey-dev:matrix.org)
+- [Thumb-Key dev chat](https://matrix.to/#/#thumbkey-dev:matrix.org)
 - [Mastodon](https://mastodon.social/@dessalines)
 
 ## Android IME Resources
