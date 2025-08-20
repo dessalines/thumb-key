@@ -19,17 +19,17 @@
     A privacy-conscious keyboard made for your thumbs
     <br />
     <br />
-    <a href="https://github.com/dessalines/thumb-key/issues">Report Bug</a>
+    <a href="https://github.com/dessalines/thumb-key/issues">Report bug</a>
     ·
-    <a href="https://github.com/dessalines/thumb-key/issues">Request Feature</a>
+    <a href="https://github.com/dessalines/thumb-key/issues">Request feature</a>
     ·
     <a href="https://github.com/dessalines/thumb-key/releases">Releases</a>
   </p>
   <p align="center">
-    <a href="https://apt.izzysoft.de/fdroid/index/apk/com.dessalines.thumbkey"><img src="https://gitlab.com/IzzyOnDroid/repo/-/raw/master/assets/IzzyOnDroid.png" alt="Get it on IzzyOnDroid" height="80"></a>
     <a href="https://f-droid.org/packages/com.dessalines.thumbkey"><img src="https://fdroid.gitlab.io/artwork/badge/get-it-on.png" alt="Get it on F-Droid" height="80"></a>
-    <a href="https://play.google.com/store/apps/details?id=com.dessalines.thumbkey"><img src="https://cdn.rawgit.com/steverichey/google-play-badge-svg/master/img/en_get.svg" alt="Get it on the Google play store" height="80"></a>
+    <a href="https://play.google.com/store/apps/details?id=com.dessalines.thumbkey"><img src="https://cdn.rawgit.com/steverichey/google-play-badge-svg/master/img/en_get.svg" alt="Get it on the Google Play Store" height="80"></a>
     <a href="https://github.com/dessalines/thumb-key/releases/latest"><img src="https://raw.githubusercontent.com/andOTP/andOTP/master/assets/badges/get-it-on-github.png" alt="Get it on Github" height="80"></a>
+    <a href="https://apt.izzysoft.de/fdroid/index/apk/com.dessalines.thumbkey"><img src="https://gitlab.com/IzzyOnDroid/repo/-/raw/master/assets/IzzyOnDroid.png" alt="Get it on IzzyOnDroid" height="80"></a>
   </p>
 </p>
 
@@ -55,17 +55,17 @@
     - [Example 6](#example-6)
   - [Other](#other)
 - [Thumb-Key Design](#thumb-key-design)
-  - [A History of Phone Keyboards](#a-history-of-phone-keyboards)
-    - [When phone keyboards became Keyloggers](#when-phone-keyboards-became-keyloggers)
+  - [A history of phone keyboards](#a-history-of-phone-keyboards)
+    - [When phone keyboards became keyloggers](#when-phone-keyboards-became-keyloggers)
     - [MessagEase](#messagease)
-  - [Thumb-Key Letter Positions](#thumb-key-letter-positions)
-  - [Built With](#built-with)
+  - [Thumb-Key letter positions](#thumb-key-letter-positions)
+  - [Built with](#built-with)
 - [Installation / Releases](#installation--releases)
 - [Contributing](#contributing)
 - [Support / Donate](#support--donate)
   - [Crypto](#crypto)
 - [Social / Contact](#social--contact)
-- [Android IME Resources](#android-ime-resources)
+- [Android IME resources](#android-ime-resources)
 
 <!-- tocstop -->
 
@@ -81,13 +81,13 @@ Instead of relying on profit-driven, privacy-offending word and sentence predict
 
 As the key positions get ingrained into your muscle memory, eventually you'll be able to approximate the fast speeds of [touch-typing](https://en.m.wikipedia.org/wiki/Touch_typing), your eyes never having to leave the text edit area.
 
-This project is a follow-up to the now unmaintained (and closed-source) [MessagEase Keyboard](https://www.exideas.com/ME/), which is its main inspiration.
+This project is a follow-up to the now unmaintained (and closed source) [MessagEase Keyboard](https://www.exideas.com/ME/), which is its main inspiration.
 
 ### Features
 
 - Highly configurable.
 - Customizeable sizing, ThumbKey and MessagEase layouts, dynamic / Material v3 themes, animations, haptic feedback, and audio feedback.
-- Open-source, [AGPL License](/LICENSE).
+- Open source, [AGPL License](/LICENSE).
 
 ## User Guide
 
@@ -100,7 +100,7 @@ This project is a follow-up to the now unmaintained (and closed-source) [MessagE
 - **Swipe left** or **right** on the spacebar to move the cursor by 1 character.
 - **Long press** the return key to insert a line break
 
-### Emoji Key
+### Emoji key
 
 - **Tap** to access the emoji picker.
 - **Swipe up** to configure Thumb-key.
@@ -336,24 +336,24 @@ The attributes `swipeReturnText` and `swipeReturnAction` allow defining swipe-re
 
 - Practice typing, and check your words per minute, using [monkeytype.com](https://monkeytype.com)
 
-## Thumb-Key Design
+## Thumb-Key design
 
-### A History of Phone Keyboards
+### A history of phone keyboards
 
 Physical keyboards, with the full-size _QWERTY_ layout, **were not designed for use on small devices like phones**; they were designed specifically for 10 fingers resting on a keybed, sitting on a secure surface.
 Phones must be held with the fore-fingers and palm, or held with one hand and typed with the other, leaving only 1 or 2 thumbs (as opposed to 10 fingers) free to perform key-presses. As texting came into being, word prediction came to be seen as the best solution to slow input speeds.
 
 On phones that used the 9-key numeric layout, [T9 predictive text](<https://en.m.wikipedia.org/wiki/T9_(predictive_text)>) was used. Other phones used the full-hand layout with the familiar _QWERTY_ layout, with other proprietary predictive methods.
 
-#### When phone keyboards became Keyloggers
+#### When phone keyboards became keyloggers
 
 As phones moved from physical buttons to soft-keyboards, key sizes became smaller and taps more imprecise and error-prone, with better predictive technology picking up the slack.
 
-Smartphone companies like Apple and Google, in an attempt to better their word prediction algorithms, as well as collect potentially profitable information on what their users were typing, began submitting and aggregating all their user's key-taps to their servers, violating user's privacy in the process. [Known as Keyloggers](https://usa.kaspersky.com/resource-center/definitions/keylogger), and seen as _universally malicious_ programs on desktop computers, these apps unfortunately became normalized and seen as a necessity on phones.
+Smartphone companies like Apple and Google, in an attempt to better their word prediction algorithms, as well as collect potentially profitable information on what their users were typing, began submitting and aggregating all their user's key-taps to their servers, violating user's privacy in the process. [Known as keyloggers](https://usa.kaspersky.com/resource-center/definitions/keylogger), and seen as _universally malicious_ programs on desktop computers, these apps unfortunately became normalized and seen as a necessity on phones.
 
-The lack of innovation on phone keyboard design, is best explained by the _potential profitability_ these companies stand to gain by collecting and aggregating everything a user types; including the commodification of this data directly, or information and trends about you learned from this data, that they can sell to advertisers and 3rd parties. These could include your buying preferences, preferred websites, what you most commonly talk about with friends, and **everything you type into search bars and text boxes.**
+The lack of innovation on phone keyboard design, is best explained by the _potential profitability_ these companies stand to gain by collecting and aggregating everything a user types; including the commodification of this data directly, or information and trends about you learned from this data, that they can sell to advertisers and 3rd parties. These could include your buying preferences, preferred websites, what you most commonly talk about with friends, and **everything you type into search bars and text boxes**.
 
-As of today, phone keyboards are in such an abysmal state of privacy, that there aren't many keyboards left that can guarantee **not to be logging all of your keystrokes.**
+As of today, phone keyboards are in such an abysmal state of privacy, that there aren't many keyboards left that can guarantee **not to be logging all of your keystrokes**.
 
 #### MessagEase
 
@@ -363,9 +363,9 @@ One company named Exideas created a keyboard app called [MessagEase](https://www
 
 [Much research went into MessagEase's design](https://www.exideas.com/ME/ICMI2003Paper.pdf), and many of its users can do > 50 words per minute.
 
-MessagEase is unfortunately unmaintained, and Thumb-Key uses a better alternating-thumb layout letter position (although the original MessagEase Keyboard layout is available in the settings).
+MessagEase is unfortunately unmaintained, and Thumb-Key uses a better alternating-thumb layout letter position (although the original MessagEase keyboard layout is available in the settings).
 
-### Thumb-Key Letter Positions
+### Thumb-Key letter positions
 
 - Large keys are in a predictable 9-key grid. Eventually, you should be able to keep your eyes on the text input area, rather than hunting-and-pecking for letters, approximating touch-typing.
 - Letter positions are based on [English text letter frequency](https://en.m.wikipedia.org/wiki/Letter_frequency). The most common letters are: **ETAOINSHR**. These 9 letters alone make up ~70% of all English text.
@@ -373,18 +373,18 @@ MessagEase is unfortunately unmaintained, and Thumb-Key uses a better alternatin
 - Alternate thumbs for vowels and consonants (Vowels on right side of keyboard, consonants on left). This naturally results in fast digram speeds.
 - Prioritize bottom, and right side of keyboard. So EAO should be on the right side, and bottom to top, while TNS is on the left side.
 
-### Built With
+### Built with
 
 - [Android Jetpack Compose](https://developer.android.com/jetpack/compose)
 
 ## Installation / Releases
 
 - [Releases](https://github.com/dessalines/thumb-key/releases)
-- [IzzyOnDroid](https://apt.izzysoft.de/fdroid/index/apk/com.dessalines.thumbkey)
 - [F-Droid](https://f-droid.org/en/packages/com.dessalines.thumbkey/)
 - [Google Play](https://play.google.com/store/apps/details?id=com.dessalines.thumbkey)
+- [IzzyOnDroid](https://apt.izzysoft.de/fdroid/index/apk/com.dessalines.thumbkey)
 
-### Verifying Fingerprints
+### Verifying fingerprints
 
 You can use [the following tool](https://developer.android.com/tools/apksigner#usage-verify) to verify the certificate before installation:
 
@@ -394,34 +394,34 @@ You can use [the following tool](https://developer.android.com/tools/apksigner#u
 
 ## Contributing
 
-See [Contributing.md](CONTRIBUTING.md) for how to add keyboard layouts, and themes.
+See [Contributing.md](CONTRIBUTING.md) for how to add keyboard layouts and themes.
 
-Translations via [weblate](https://hosted.weblate.org/engage/thumb-key/):
+Translations via [Weblate](https://hosted.weblate.org/engage/thumb-key/):
 
 [![Translation status](https://hosted.weblate.org/widget/thumb-key/thumb-key/multi-auto.svg)](https://hosted.weblate.org/engage/thumb-key/)
 
 ## Support / Donate
 
-Thumb-Key will always remain free, open-source software. We've seen many keyboards (and open-source projects in general) go unmaintained after a few years. **Recurring donations have proven to be the only way these projects can stay alive.**
+Thumb-Key will always remain free, open source software. We've seen many keyboards (and open source projects in general) go unmaintained after a few years. **Recurring donations have proven to be the only way these projects can stay alive.**
 
 Your donations directly support full-time development, and help keep this maintained. If you find yourself using Thumb-Key every day, consider donating:
 
 - [Support me on Liberapay](https://liberapay.com/dessalines).
-- [Support me Patreon](https://www.patreon.com/dessalines).
+- [Support me on Patreon](https://www.patreon.com/dessalines).
 
 ### Crypto
 
-- bitcoin: `1Hefs7miXS5ff5Ck5xvmjKjXf5242KzRtK`
-- ethereum: `0x400c96c96acbC6E7B3B43B1dc1BB446540a88A01`
-- monero: `41taVyY6e1xApqKyMVDRVxJ76sPkfZhALLTjRvVKpaAh2pBd4wv9RgYj1tSPrx8wc6iE1uWUfjtQdTmTy2FGMeChGVKPQuV`
+- Bitcoin: `1Hefs7miXS5ff5Ck5xvmjKjXf5242KzRtK`
+- Ethereum: `0x400c96c96acbC6E7B3B43B1dc1BB446540a88A01`
+- Monero: `41taVyY6e1xApqKyMVDRVxJ76sPkfZhALLTjRvVKpaAh2pBd4wv9RgYj1tSPrx8wc6iE1uWUfjtQdTmTy2FGMeChGVKPQuV`
 
 ## Social / Contact
 
 - [lemmy.ml/c/thumbkey](https://lemmy.ml/c/thumbkey)
-- [Thumbkey dev chat](https://matrix.to/#/#thumbkey-dev:matrix.org)
 - [Mastodon](https://mastodon.social/@dessalines)
+- [Thumb-Key developer chat](https://matrix.to/#/#thumbkey-dev:matrix.org)
 
-## Android IME Resources
+## Android IME resources
 
 - https://github.com/THEAccess/compose-keyboard-ime
 - https://stackoverflow.com/questions/65570024/build-software-keyboard-with-jetpack-compose-ime-input-method-with-jetpack-com
