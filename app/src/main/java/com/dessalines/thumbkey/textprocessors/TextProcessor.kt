@@ -4,7 +4,7 @@ import android.view.KeyEvent
 import com.dessalines.thumbkey.IMEService
 
 interface TextProcessor {
-    fun processInput(
+    fun handleCommitText(
         ime: IMEService,
         input: CharSequence,
     )
@@ -16,13 +16,11 @@ interface TextProcessor {
 
     fun handleFinishInput(ime: IMEService)
 
-    fun onCursorSelectionChanged(
+    fun handleCursorUpdate(
         ime: IMEService,
         oldSelStart: Int,
         oldSelEnd: Int,
         newSelStart: Int,
         newSelEnd: Int,
     )
-
-    fun resetState()
 }

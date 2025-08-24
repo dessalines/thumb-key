@@ -63,7 +63,6 @@ class IMEService :
         super.onStartInput(attribute, restarting)
         val view = this.setupView()
         this.setInputView(view)
-        Log.d(TAG, "onStartInput")
     }
 
     // Lifecycle Methods
@@ -98,6 +97,17 @@ class IMEService :
                     cursorAnchorInfo.selectionEnd != selectionEnd
             }
 
+        Log.d(TAG, "oldSelStart: $selectionStart, newSelStart: ${cursorAnchorInfo.selectionStart}")
+        Log.d(TAG, "oldSelEnd: $selectionEnd, newSelStart: ${cursorAnchorInfo.selectionEnd}")
+
+        currentKeyboardDefinition?.settings?.textProcessor?.handleCursorUpdate(
+            this,
+            selectionStart,
+            selectionEnd,
+            cursorAnchorInfo.selectionStart,
+            cursorAnchorInfo.selectionEnd,
+        )
+
         selectionStart = cursorAnchorInfo.selectionStart
         selectionEnd = cursorAnchorInfo.selectionEnd
     }
@@ -120,42 +130,9 @@ class IMEService :
         ignoreCursorMove = true
     }
 
-    override fun onFinishInput() {
-        Log.d(TAG, "onFinishInput")
-        super.onFinishInput()
-    }
-
     override fun onWindowHidden() {
-        currentKeyboardDefinition?.settings?.textProcessor?.resetState()
+        currentKeyboardDefinition?.settings?.textProcessor?.handleFinishInput(this)
         super.onWindowHidden()
-    }
-
-    override fun onUpdateSelection(
-        oldSelStart: Int,
-        oldSelEnd: Int,
-        newSelStart: Int,
-        newSelEnd: Int,
-        candidatesStart: Int,
-        candidatesEnd: Int,
-    ) {
-        super.onUpdateSelection(
-            oldSelStart,
-            oldSelEnd,
-            newSelStart,
-            newSelEnd,
-            candidatesStart,
-            candidatesEnd,
-        )
-
-        if (ignoreCursorMove) return
-
-        currentKeyboardDefinition?.settings?.textProcessor?.onCursorSelectionChanged(
-            this,
-            oldSelStart,
-            oldSelEnd,
-            newSelStart,
-            newSelEnd,
-        )
     }
 
     private var ignoreCursorMove: Boolean = false

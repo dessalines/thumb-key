@@ -167,7 +167,7 @@ class KoreanTextProcessor : TextProcessor {
     private var selectionEnd = 0
     private var ignoreNextMove = false
 
-    override fun processInput(
+    override fun handleCommitText(
         ime: IMEService,
         input: CharSequence,
     ) {
@@ -196,15 +196,9 @@ class KoreanTextProcessor : TextProcessor {
         }
 
         when (ev.keyCode) {
-            KeyEvent.KEYCODE_ENTER -> {
-                commitCurrentBlock(ic, false)
-                ic.setSelection(selectionStart, selectionEnd)
-                ic.sendKeyEvent(ev)
-            }
             KeyEvent.KEYCODE_DEL -> deleteKeyAction(ime, ev)
             else -> {
-                // eg. KEYCODE_DPAD_LEFT, KEYCODE_DPAD_RIGHT
-                commitCurrentBlock(ic, true)
+                finishCurrentBlock(ic)
                 ic.sendKeyEvent(ev)
             }
         }
@@ -213,11 +207,14 @@ class KoreanTextProcessor : TextProcessor {
     override fun handleFinishInput(ime: IMEService) {
         val ic = ime.currentInputConnection
 
-        commitCurrentBlock(ic, true)
-        ic.setSelection(selectionStart, selectionEnd)
+        if (state != CompositionState.EMPTY) {
+            finishCurrentBlock(ic)
+        } else {
+            resetState()
+        }
     }
 
-    override fun resetState() {
+    fun resetState() {
         Log.d(TAG, "TextProcessor: resetting state")
         state = CompositionState.EMPTY
         leading = ""
@@ -227,27 +224,26 @@ class KoreanTextProcessor : TextProcessor {
         composedText = ""
     }
 
-    override fun onCursorSelectionChanged(
+    override fun handleCursorUpdate(
         ime: IMEService,
         oldSelStart: Int,
         oldSelEnd: Int,
         newSelStart: Int,
-        newSelEnd: Int,
+        newSelEnd: Int
     ) {
-        Log.d(TAG, "old: $oldSelStart, new: $newSelStart, saved: $selectionStart, ignore: $ignoreNextMove")
-        if (ignoreNextMove) {
-            ignoreNextMove = false
-            return
+        if (oldSelStart == newSelStart || selectionStart == newSelStart) return
+        if (newSelStart != newSelEnd) {
+            resetState()
         }
-        if (oldSelStart == newSelStart && oldSelEnd == newSelEnd) return
-        if (selectionStart == newSelStart) return
 
-        Log.d(TAG, "Cursor moved!")
-        commitCurrentBlock(ime.currentInputConnection, false)
+        Log.d(TAG, "handleCursorUpdate, newSelStart: $newSelStart")
+
         selectionStart = newSelStart
         selectionEnd = newSelEnd
-        ime.currentInputConnection.setSelection(selectionStart, selectionEnd)
-        ignoreNextMove = true
+
+        if (state != CompositionState.EMPTY) {
+            finishCurrentBlock(ime.currentInputConnection)
+        }
     }
 
     private fun deleteKeyAction(
@@ -320,8 +316,7 @@ class KoreanTextProcessor : TextProcessor {
                     leading += consonant
                     composedText = KoreanLetters.getComplexConsonant(leading[0], consonant).toString()
                 } else {
-                    commitCurrentBlock(ic, true)
-
+                    commitCurrentBlock(ic)
                     state = CompositionState.LEADING_CONSONANT
                     leading = consonant.toString()
                     composedText = leading
@@ -334,7 +329,7 @@ class KoreanTextProcessor : TextProcessor {
                     val unicode = calculateBlockUnicode(leading, medialVowel, trailing)
                     composedText = unicode.toChar().toString()
                 } else {
-                    commitCurrentBlock(ic, true)
+                    commitCurrentBlock(ic)
 
                     state = CompositionState.LEADING_CONSONANT
                     leading = consonant.toString()
@@ -348,7 +343,7 @@ class KoreanTextProcessor : TextProcessor {
                     val unicode = calculateBlockUnicode(leading, medialVowel, trailing)
                     composedText = unicode.toChar().toString()
                 } else {
-                    commitCurrentBlock(ic, true)
+                    commitCurrentBlock(ic)
 
                     state = CompositionState.LEADING_CONSONANT
                     leading = consonant.toString()
@@ -359,7 +354,7 @@ class KoreanTextProcessor : TextProcessor {
             CompositionState.STANDALONE_COMPLEX_CONSONANT,
             CompositionState.STANDALONE_VOWEL,
             -> {
-                commitCurrentBlock(ic, true)
+                commitCurrentBlock(ic)
 
                 state = CompositionState.LEADING_CONSONANT
                 leading = consonant.toString()
@@ -396,7 +391,7 @@ class KoreanTextProcessor : TextProcessor {
                     val unicode = calculateBlockUnicode(leading, medialVowel)
                     composedText = unicode.toChar().toString()
                 } else {
-                    commitCurrentBlock(ic, true)
+                    commitCurrentBlock(ic)
 
                     state = CompositionState.STANDALONE_VOWEL
                     standaloneVowel = vowel.toString()
@@ -415,7 +410,7 @@ class KoreanTextProcessor : TextProcessor {
                         calculateBlockUnicode(leading, medialVowel)
                     }
                 composedText = unicode.toChar().toString()
-                commitCurrentBlock(ic, true)
+                commitCurrentBlock(ic)
 
                 state = CompositionState.MEDIAL_VOWEL
                 leading = lastConsonant.toString()
@@ -426,7 +421,7 @@ class KoreanTextProcessor : TextProcessor {
             CompositionState.STANDALONE_COMPLEX_CONSONANT -> {
                 val lastConsonant = leading.last().toString()
                 composedText = leading.dropLast(1)
-                commitCurrentBlock(ic, true)
+                commitCurrentBlock(ic)
 
                 state = CompositionState.MEDIAL_VOWEL
                 leading = lastConsonant
@@ -440,7 +435,7 @@ class KoreanTextProcessor : TextProcessor {
                     standaloneVowel += vowel
                     composedText = KoreanLetters.getDiphthong(standaloneVowel[0], vowel).toString()
                 } else {
-                    commitCurrentBlock(ic, true)
+                    commitCurrentBlock(ic)
                     state = CompositionState.STANDALONE_VOWEL
                     standaloneVowel = vowel.toString()
                     composedText = standaloneVowel
@@ -464,15 +459,19 @@ class KoreanTextProcessor : TextProcessor {
 
     private fun commitCurrentBlock(
         ic: InputConnection,
-        updateSelection: Boolean,
     ) {
-        Log.d(TAG, "committing text: $composedText")
+        Log.d(TAG, "TextProcessor: committing text: $composedText")
         ic.commitText(composedText, 1)
         resetState()
-        if (updateSelection) {
-            selectionStart += 1
-            selectionEnd += 1
-        }
+        selectionStart += 1
+        selectionEnd += 1
+    }
+
+    private fun finishCurrentBlock(ic: InputConnection)
+    {
+        Log.d(TAG, "TextProcessor: committing text: $composedText")
+        ic.finishComposingText()
+        resetState()
     }
 
     private fun calculateBlockUnicode(

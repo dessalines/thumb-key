@@ -42,7 +42,6 @@ import com.dessalines.thumbkey.R
 import com.dessalines.thumbkey.db.AppSettingsViewModel
 import com.dessalines.thumbkey.db.DEFAULT_KEYBOARD_LAYOUT
 import com.dessalines.thumbkey.db.LayoutsUpdate
-import com.dessalines.thumbkey.utils.KeyboardLayout
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
@@ -346,7 +345,7 @@ fun performKeyAction(
             Log.d(TAG, "committing key text: $text")
             ime.ignoreNextCursorMove()
 
-            keyboardSettings.textProcessor?.processInput(ime, text)
+            keyboardSettings.textProcessor?.handleCommitText(ime, text)
                 ?: ime.currentInputConnection.commitText(
                     text,
                     1,
@@ -375,7 +374,8 @@ fun performKeyAction(
         // on their repos.
         is KeyAction.DeleteKeyAction -> {
             val ev = KeyEvent(KeyEvent.ACTION_DOWN, KeyEvent.KEYCODE_DEL)
-            ime.currentInputConnection.sendKeyEvent(ev)
+            keyboardSettings.textProcessor?.handleKeyEvent(ime, ev)
+                ?: ime.currentInputConnection.sendKeyEvent(ev)
         }
 
         is KeyAction.DeleteWordBeforeCursor -> {
