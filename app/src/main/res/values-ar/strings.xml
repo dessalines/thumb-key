@@ -97,4 +97,9 @@
     <string name="modify_keys">تعديل المفاتيح</string>
     <string name="key_modification_placeholder">أدخل YAML</string>
     <string name="how_to_modify_keys">كيفية تعديل المفاتيح</string>
+    <string name="dual">ثنائي</string>
+    <string name="auto_size_keys">كبّر لملء عرض الشاشة</string>
+    <string name="ignore_bottom_padding">تجاهل الحشوة السفلية</string>
+    <string name="show_toast_on_layout_switch">أظهر إشعار على تبديل التخطيط</string>
+    <string name="disable_fullscreen_editor">عطّل محرِّر النصوص بملء الشاشة</string>
 </resources>
