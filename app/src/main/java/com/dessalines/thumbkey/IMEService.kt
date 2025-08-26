@@ -33,7 +33,6 @@ class IMEService :
         val layoutIndex = settingsRepo.appSettings.value?.keyboardLayout
         if (layoutIndex != null) {
             currentKeyboardDefinition = KeyboardLayout.entries[layoutIndex].keyboardDefinition
-            Log.d(TAG, KeyboardLayout.entries[layoutIndex].name)
         }
 
         val view = ComposeKeyboardView(this, settingsRepo)
@@ -96,9 +95,6 @@ class IMEService :
                 cursorAnchorInfo.selectionStart != selectionStart ||
                     cursorAnchorInfo.selectionEnd != selectionEnd
             }
-
-        Log.d(TAG, "oldSelStart: $selectionStart, newSelStart: ${cursorAnchorInfo.selectionStart}")
-        Log.d(TAG, "oldSelEnd: $selectionEnd, newSelStart: ${cursorAnchorInfo.selectionEnd}")
 
         currentKeyboardDefinition?.settings?.textProcessor?.handleCursorUpdate(
             this,

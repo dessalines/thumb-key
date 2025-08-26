@@ -165,7 +165,6 @@ class KoreanTextProcessor : TextProcessor {
     private var composedText = ""
     private var selectionStart = 0
     private var selectionEnd = 0
-    private var ignoreNextMove = false
 
     override fun handleCommitText(
         ime: IMEService,
@@ -181,7 +180,7 @@ class KoreanTextProcessor : TextProcessor {
         } else {
             processNonHangul(ic, input)
         }
-        Log.d(TAG, "TextProcessor: current state: $state, cursor position: $selectionStart")
+        Log.d(TAG, "TextProcessor: state $state, cursor position $selectionStart")
     }
 
     override fun handleKeyEvent(
@@ -198,30 +197,20 @@ class KoreanTextProcessor : TextProcessor {
         when (ev.keyCode) {
             KeyEvent.KEYCODE_DEL -> deleteKeyAction(ime, ev)
             else -> {
-                finishCurrentBlock(ic)
+                // in any other case (ENTER, DEL, DPAD movement) it just needs to finish job
+                handleFinishInput(ime)
                 ic.sendKeyEvent(ev)
             }
         }
     }
 
     override fun handleFinishInput(ime: IMEService) {
-        val ic = ime.currentInputConnection
-
+        // if in EMPTY state it means processor has been reset
         if (state != CompositionState.EMPTY) {
-            finishCurrentBlock(ic)
-        } else {
+            // finishComposingText doesn't move cursor
+            ime.currentInputConnection.finishComposingText()
             resetState()
         }
-    }
-
-    fun resetState() {
-        Log.d(TAG, "TextProcessor: resetting state")
-        state = CompositionState.EMPTY
-        leading = ""
-        medialVowel = ""
-        trailing = ""
-        standaloneVowel = ""
-        composedText = ""
     }
 
     override fun handleCursorUpdate(
@@ -229,21 +218,31 @@ class KoreanTextProcessor : TextProcessor {
         oldSelStart: Int,
         oldSelEnd: Int,
         newSelStart: Int,
-        newSelEnd: Int
+        newSelEnd: Int,
     ) {
+        // after committing each letter selectionStart is incremented to predict cursor position
         if (oldSelStart == newSelStart || selectionStart == newSelStart) return
         if (newSelStart != newSelEnd) {
             resetState()
         }
 
-        Log.d(TAG, "handleCursorUpdate, newSelStart: $newSelStart")
+        Log.d(TAG, "TextProcessor: cursor moved -> $newSelStart")
 
         selectionStart = newSelStart
         selectionEnd = newSelEnd
 
         if (state != CompositionState.EMPTY) {
-            finishCurrentBlock(ime.currentInputConnection)
+            handleFinishInput(ime)
         }
+    }
+
+    private fun resetState() {
+        state = CompositionState.EMPTY
+        leading = ""
+        medialVowel = ""
+        trailing = ""
+        standaloneVowel = ""
+        composedText = ""
     }
 
     private fun deleteKeyAction(
@@ -430,7 +429,6 @@ class KoreanTextProcessor : TextProcessor {
                 composedText = unicode.toChar().toString()
             }
             CompositionState.STANDALONE_VOWEL -> {
-                // if no STANDALONE_DIPHTHONG state, in all cases it stays in STANDALONE_VOWEL
                 if (standaloneVowel.length == 1 && KoreanLetters.isDiphthong(standaloneVowel[0], vowel)) {
                     standaloneVowel += vowel
                     composedText = KoreanLetters.getDiphthong(standaloneVowel[0], vowel).toString()
@@ -457,21 +455,12 @@ class KoreanTextProcessor : TextProcessor {
         selectionEnd += 1
     }
 
-    private fun commitCurrentBlock(
-        ic: InputConnection,
-    ) {
+    private fun commitCurrentBlock(ic: InputConnection) {
         Log.d(TAG, "TextProcessor: committing text: $composedText")
         ic.commitText(composedText, 1)
         resetState()
         selectionStart += 1
         selectionEnd += 1
-    }
-
-    private fun finishCurrentBlock(ic: InputConnection)
-    {
-        Log.d(TAG, "TextProcessor: committing text: $composedText")
-        ic.finishComposingText()
-        resetState()
     }
 
     private fun calculateBlockUnicode(

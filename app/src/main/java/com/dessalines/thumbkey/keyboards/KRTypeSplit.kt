@@ -2,10 +2,14 @@
 
 package com.dessalines.thumbkey.keyboards
 
+import android.view.KeyEvent
+import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.automirrored.outlined.KeyboardBackspace
 import com.dessalines.thumbkey.textprocessors.KoreanTextProcessor
 import com.dessalines.thumbkey.utils.*
 import com.dessalines.thumbkey.utils.ColorVariant.*
 import com.dessalines.thumbkey.utils.FontSizeVariant.*
+import com.dessalines.thumbkey.utils.KeyAction.SendEvent
 import com.dessalines.thumbkey.utils.SwipeNWay.*
 
 val KB_KR_TYPESPLIT_MAIN =
@@ -75,14 +79,16 @@ val KB_KR_TYPESPLIT_MAIN =
                 KeyItemC(
                     center = KeyC("ㄹ", size = LARGE),
                     swipeType = FOUR_WAY_CROSS,
-                    left = KeyC("ㅊ", color = MUTED),
+                    left = KeyC("ㅊ"),
                     top = KeyC("ㅍ"),
                 ),
                 SPACEBAR_TYPESPLIT_BOTTOM_KEY_ITEM,
                 KeyItemC(
                     center = KeyC("ㅜ", size = LARGE),
-                    swipeType = TWO_WAY_HORIZONTAL,
-                    right = KeyC("ㅠ", color = MUTED),
+                    swipeType = FOUR_WAY_CROSS,
+                    right = KeyC("ㅠ"),
+                    left = KeyC("₩", color = MUTED),
+                    top = KeyC("~", color = MUTED),
                 ),
                 KeyItemC(
                     center = KeyC("ㅡ", size = LARGE),
@@ -95,7 +101,27 @@ val KB_KR_TYPESPLIT_MAIN =
             ),
             listOf(
                 NUMERIC_KEY_ITEM,
-                BACKSPACE_TYPESPLIT_KEY_ITEM,
+                KeyItemC(
+                    center =
+                        KeyC(
+                            display = KeyDisplay.IconDisplay(Icons.AutoMirrored.Outlined.KeyboardBackspace),
+                            action =
+                                SendEvent(
+                                    KeyEvent(
+                                        KeyEvent.ACTION_DOWN,
+                                        KeyEvent.KEYCODE_DEL,
+                                    ),
+                                ),
+                            size = LARGE,
+                            color = SECONDARY,
+                        ),
+                    swipeType = FOUR_WAY_CROSS,
+                    slideType = SlideType.DELETE,
+                    left = DELETE_WORD_BEFORE_CURSOR_KEYC,
+                    right = DELETE_WORD_AFTER_CURSOR_KEYC,
+                    widthMultiplier = 3,
+                    backgroundColor = SURFACE_VARIANT,
+                ),
                 RETURN_KEY_ITEM,
             ),
         ),
