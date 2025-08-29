@@ -17,6 +17,8 @@ import androidx.savedstate.SavedStateRegistryController
 import androidx.savedstate.SavedStateRegistryOwner
 import androidx.savedstate.setViewTreeSavedStateRegistryOwner
 import com.dessalines.thumbkey.db.DEFAULT_DISABLE_FULLSCREEN_EDITOR
+import com.dessalines.thumbkey.utils.KeyboardDefinition
+import com.dessalines.thumbkey.utils.KeyboardLayout
 import com.dessalines.thumbkey.utils.TAG
 import com.dessalines.thumbkey.utils.toBool
 
@@ -27,6 +29,11 @@ class IMEService :
     SavedStateRegistryOwner {
     private fun setupView(): View {
         val settingsRepo = (application as ThumbkeyApplication).appSettingsRepository
+
+        val layoutIndex = settingsRepo.appSettings.value?.keyboardLayout
+        if (layoutIndex != null) {
+            currentKeyboardDefinition = KeyboardLayout.entries[layoutIndex].keyboardDefinition
+        }
 
         val view = ComposeKeyboardView(this, settingsRepo)
         window?.window?.decorView?.let { decorView ->
@@ -41,6 +48,8 @@ class IMEService :
         }
         return view
     }
+
+    var currentKeyboardDefinition: KeyboardDefinition? = null
 
     /**
      * This is called every time the keyboard is brought up.
@@ -87,6 +96,14 @@ class IMEService :
                     cursorAnchorInfo.selectionEnd != selectionEnd
             }
 
+        currentKeyboardDefinition?.settings?.textProcessor?.handleCursorUpdate(
+            this,
+            selectionStart,
+            selectionEnd,
+            cursorAnchorInfo.selectionStart,
+            cursorAnchorInfo.selectionEnd,
+        )
+
         selectionStart = cursorAnchorInfo.selectionStart
         selectionEnd = cursorAnchorInfo.selectionEnd
     }
@@ -109,6 +126,11 @@ class IMEService :
         ignoreCursorMove = true
     }
 
+    override fun onWindowHidden() {
+        currentKeyboardDefinition?.settings?.textProcessor?.handleFinishInput(this)
+        super.onWindowHidden()
+    }
+
     private var ignoreCursorMove: Boolean = false
     private var cursorMoved: Boolean = false
     private var selectionStart: Int = 0
@@ -118,7 +140,6 @@ class IMEService :
     override val viewModelStore = ViewModelStore()
 
     // SaveStateRegistry Methods
-
     private val savedStateRegistryController = SavedStateRegistryController.create(this)
     override val savedStateRegistry: SavedStateRegistry =
         savedStateRegistryController.savedStateRegistry

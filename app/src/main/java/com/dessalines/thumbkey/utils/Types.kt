@@ -6,6 +6,7 @@ import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.text.font.FontFamily
 import arrow.optics.optics
 import com.dessalines.thumbkey.R
+import com.dessalines.thumbkey.textprocessors.TextProcessor
 
 @optics
 data class KeyboardDefinitionModes(
@@ -22,6 +23,7 @@ data class KeyboardDefinitionModes(
 data class KeyboardDefinitionSettings(
     val autoCapitalizers: AutoCapitalizers = arrayOf(),
     val autoShift: Boolean = true,
+    val textProcessor: TextProcessor? = null,
 ) {
     override fun equals(other: Any?): Boolean {
         if (this === other) return true
