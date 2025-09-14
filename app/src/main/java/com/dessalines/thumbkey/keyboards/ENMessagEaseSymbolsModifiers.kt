@@ -175,7 +175,7 @@ val KB_EN_MESSAGEASE_SYMBOLS_MODIFIERS_MAIN =
                 BACKSPACE_KEY_ITEM,
             ),
             listOf(
-                SPACEBAR_KEY_ITEM,
+                SPACEBAR_PROGRAMMING_KEY_ITEM,
                 RETURN_KEY_ITEM,
             ),
         ),
@@ -289,7 +289,7 @@ val KB_EN_MESSAGEASE_SYMBOLS_MODIFIERS_SHIFTED =
                 BACKSPACE_KEY_ITEM,
             ),
             listOf(
-                SPACEBAR_KEY_ITEM,
+                SPACEBAR_PROGRAMMING_KEY_ITEM,
                 KeyItemC(
                     center =
                         keyCModifier(
@@ -382,7 +382,7 @@ val KB_EN_MESSAGEASE_SYMBOLS_MODIFIERS_CTRLED =
                 BACKSPACE_KEY_ITEM,
             ),
             listOf(
-                SPACEBAR_KEY_ITEM,
+                SPACEBAR_PROGRAMMING_KEY_ITEM,
                 KeyItemC(
                     center =
                         keyCModifier(
@@ -475,7 +475,7 @@ val KB_EN_MESSAGEASE_SYMBOLS_MODIFIERS_ALTED =
                 BACKSPACE_KEY_ITEM,
             ),
             listOf(
-                SPACEBAR_KEY_ITEM,
+                SPACEBAR_PROGRAMMING_KEY_ITEM,
                 KeyItemC(
                     center =
                         keyCModifier(
