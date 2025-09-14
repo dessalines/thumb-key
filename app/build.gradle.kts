@@ -7,12 +7,12 @@ plugins {
 }
 
 android {
-    compileSdk = 35
+    compileSdk = 36
 
     defaultConfig {
         applicationId = "com.dessalines.thumbkey"
         minSdk = 24
-        targetSdk = 35
+        targetSdk = 36
         versionCode = 162
         versionName = "5.0.7"
 
@@ -103,7 +103,7 @@ dependencies {
     implementation("androidx.compose.runtime:runtime-livedata:1.9.1")
 
     // Activities
-    implementation("androidx.activity:activity-compose:1.10.1")
+    implementation("androidx.activity:activity-compose:1.11.0")
     implementation("androidx.activity:activity-ktx:1.10.1")
 
     // LiveData
