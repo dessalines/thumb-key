@@ -106,8 +106,8 @@ fun modifyKeyboardDefinition(
             KeyboardDefinitionModes.main transform { modifyKeyboardC(it, mainModifications) ?: it }
             KeyboardDefinitionModes.shifted transform { modifyKeyboardC(it, shiftedModifications) ?: it }
             KeyboardDefinitionModes.numeric transform { modifyKeyboardC(it, modifications.numeric) ?: it }
-            KeyboardDefinitionModes.ctrled transform { modifyKeyboardC(it, modifications.ctrled) }
-            KeyboardDefinitionModes.alted transform { modifyKeyboardC(it, modifications.alted) }
+            KeyboardDefinitionModes.ctrled transform { modifyKeyboardC(it, modifications.ctrled) ?: it }
+            KeyboardDefinitionModes.alted transform { modifyKeyboardC(it, modifications.alted) ?: it }
         }
     }
 }
