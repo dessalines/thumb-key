@@ -286,6 +286,50 @@ val RETURN_KEY_ITEM =
         longPress = CommitText("\n"),
     )
 
+val RETURN_TOP_KEYC =
+    KeyC(
+        action =
+            SendEvent(
+                KeyEvent(
+                    KeyEvent.ACTION_DOWN,
+                    KeyEvent.KEYCODE_ESCAPE,
+                ),
+            ),
+        display = null,
+    )
+val RETURN_LEFT_KEYC =
+    KeyC(
+        action =
+            SendEvent(
+                KeyEvent(
+                    KeyEvent.ACTION_DOWN,
+                    KeyEvent.KEYCODE_MOVE_HOME,
+                ),
+            ),
+        display = null,
+    )
+val RETURN_RIGHT_KEYC =
+    KeyC(
+        action =
+            SendEvent(
+                KeyEvent(
+                    KeyEvent.ACTION_DOWN,
+                    KeyEvent.KEYCODE_MOVE_END,
+                ),
+            ),
+        display = null,
+    )
+val RETURN_PROGRAMMING_KEY_ITEM =
+    KeyItemC(
+        center = RETURN_KEYC,
+        swipeType = FOUR_WAY_CROSS,
+        top = RETURN_TOP_KEYC,
+        left = RETURN_LEFT_KEYC,
+        right = RETURN_RIGHT_KEYC,
+        backgroundColor = SURFACE_VARIANT,
+        longPress = CommitText("\n"),
+    )
+
 val SPACEBAR_TYPESPLIT_MIDDLE_KEY_ITEM =
     KeyItemC(
         center = SPACEBAR_CENTER_KEYC,
