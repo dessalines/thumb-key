@@ -13,8 +13,26 @@ import com.dessalines.thumbkey.utils.SwipeNWay.*
 val DELETE_WORD_BEFORE_CURSOR_TEXT_KEYC =
     KeyC(
         action = DeleteWordBeforeCursor,
-        display = KeyDisplay.TextDisplay("^W"),
+        display = KeyDisplay.TextDisplay("<|"),
         color = MUTED,
+    )
+
+fun specialActionKeyItemCustom(center: KeyC): KeyItemC =
+    KeyItemC(
+        backgroundColor = SURFACE_VARIANT,
+        swipeType = EIGHT_WAY,
+        center = center,
+        // topLeft = MOVE_KEYBOARD_CYCLE_RIGHT_KEYC,
+        top = GOTO_SETTINGS_KEYC,
+        bottom = SWITCH_IME_KEYC,
+        bottomLeft = SWITCH_IME_VOICE_KEYC,
+        left = SWITCH_LANGUAGE_KEYC,
+        right = DELETE_WORD_BEFORE_CURSOR_TEXT_KEYC,
+    )
+
+val EMOJI_KEY_ITEM_CUSTOM =
+    specialActionKeyItemCustom(
+        center = TOGGLE_EMOJI_MODE_TRUE_KEYC,
     )
 
 // Move UNDO_KEYC to right instead of bottomLeft to avoid painful presses
@@ -25,7 +43,7 @@ fun textEditKeyItemCustom(center: KeyC): KeyItemC =
         center = center,
         topLeft = SELECT_ALL_KEYC,
         top = COPY_KEYC,
-        topRight = DELETE_WORD_BEFORE_CURSOR_TEXT_KEYC,
+        topRight = CUT_KEYC,
         right = UNDO_KEYC,
         bottom = PASTE_KEYC,
         bottomRight = REDO_KEYC,
@@ -75,7 +93,7 @@ val KB_FR_EN_FRAPPE_FLUIDE_V1_MAIN =
                     bottom = KeyC("î", color = MUTED),
                     bottomRight = KeyC("ô", color = MUTED),
                 ),
-                EMOJI_KEY_ITEM,
+                EMOJI_KEY_ITEM_CUSTOM,
             ),
             listOf(
                 KeyItemC(
@@ -200,7 +218,7 @@ val KB_FR_EN_FRAPPE_FLUIDE_V1_SHIFTED =
                     bottom = KeyC("Î", color = MUTED),
                     bottomRight = KeyC("Ô", color = MUTED),
                 ),
-                EMOJI_KEY_ITEM,
+                EMOJI_KEY_ITEM_CUSTOM,
             ),
             listOf(
                 KeyItemC(
@@ -327,7 +345,7 @@ val FRENCH_FLUID_NUMERIC_KEYBOARD =
                     bottom = KeyC("&"),
                     bottomRight = KeyC("#"),
                 ),
-                EMOJI_KEY_ITEM,
+                EMOJI_KEY_ITEM_CUSTOM,
             ),
             listOf(
                 KeyItemC(
