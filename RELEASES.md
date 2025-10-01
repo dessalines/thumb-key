@@ -1,3 +1,19 @@
+## What's Changed in 5.0.8
+
+- Add `ch` to frenfrappefluidev1 by @antoinepouille in [#1584](https://github.com/dessalines/thumb-key/pull/1584)
+- Adds Korean Thumb-Key layout by @Hate9 in [#1575](https://github.com/dessalines/thumb-key/pull/1575)
+- Update fren frappefluide v1 : move delete_word by @antoinepouille in [#1570](https://github.com/dessalines/thumb-key/pull/1570)
+- Update FREN_frappefluide_v1 by @antoinepouille in [#1550](https://github.com/dessalines/thumb-key/pull/1550)
+- ENMessagEaseSymbolsModifiers: Add "up" and "down" keys by @federvieh in [#1560](https://github.com/dessalines/thumb-key/pull/1560)
+- CommonKeys: Add return programming key item by @federvieh in [#1561](https://github.com/dessalines/thumb-key/pull/1561)
+- Key modifications: Fix NPE if ctrled/alted are empty by @federvieh in [#1552](https://github.com/dessalines/thumb-key/pull/1552)
+
+## New Contributors
+
+- @federvieh made their first contribution in [#1560](https://github.com/dessalines/thumb-key/pull/1560)
+
+**Full Changelog**: https://github.com/dessalines/thumb-key/compare/5.0.7...5.0.8
+
 ## What's Changed in 5.0.7
 
 - Add Korean layout and custom input processor implementation by @uranium-boy in [#1534](https://github.com/dessalines/thumb-key/pull/1534)
@@ -808,11 +824,11 @@
 - Make cursor movement detection index-based (fixes #881) by @glm4610 in [#917](https://github.com/dessalines/thumb-key/pull/917)
 - Fix #304 (take two): In Utils.autoCapitalizeCheck, use input type of current editor by @mpsijm in [#909](https://github.com/dessalines/thumb-key/pull/909)
 - Fixing donation line. by @dessalines in [#906](https://github.com/dessalines/thumb-key/pull/906)
-- Add QBased a qwerty based keyboard by @ScaredWhitless in [#905](https://github.com/dessalines/thumb-key/pull/905)
+- Add QBased a qwerty based keyboard by @WrennWhitlock in [#905](https://github.com/dessalines/thumb-key/pull/905)
 
 ## New Contributors
 
-- @ScaredWhitless made their first contribution in [#905](https://github.com/dessalines/thumb-key/pull/905)
+- @WrennWhitlock made their first contribution in [#905](https://github.com/dessalines/thumb-key/pull/905)
 
 **Full Changelog**: https://github.com/dessalines/thumb-key/compare/3.1.7...3.1.8
 
