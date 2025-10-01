@@ -17,6 +17,7 @@ import androidx.compose.foundation.layout.safeDrawingPadding
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
@@ -364,7 +365,10 @@ fun KeyboardScreen(
                                         }
                                     }
                                 },
-                                onSwitchLanguage = onSwitchLanguage,
+                                onSwitchLanguage = {
+                                    onSwitchLanguage()
+                                    mode = KeyboardMode.MAIN
+                                },
                                 onChangePosition = onChangePosition,
                                 onKeyEvent = {
                                     when (mode) {
@@ -535,7 +539,10 @@ fun KeyboardScreen(
                                                 }
                                             }
                                         },
-                                        onSwitchLanguage = onSwitchLanguage,
+                                        onSwitchLanguage = {
+                                            onSwitchLanguage()
+                                            mode = KeyboardMode.MAIN
+                                        },
                                         onChangePosition = onChangePosition,
                                         oppositeCaseKey =
                                             when (mode) {
