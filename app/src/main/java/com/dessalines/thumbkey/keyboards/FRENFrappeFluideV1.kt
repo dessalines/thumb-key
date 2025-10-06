@@ -75,6 +75,7 @@ val KB_FR_EN_FRAPPE_FLUIDE_V1_MAIN =
                 ),
                 KeyItemC(
                     center = KeyC("n", size = LARGE),
+                    topLeft = KeyC("#", color = MUTED),
                     top = KeyC("\u0308", displayText = "¨", color = MUTED),
                     topRight = KeyC("@", color = MUTED),
                     left = KeyC("mm", size = SMALLEST, color = MUTED),
@@ -201,6 +202,7 @@ val KB_FR_EN_FRAPPE_FLUIDE_V1_SHIFTED =
                 ),
                 KeyItemC(
                     center = KeyC("N", size = LARGE),
+                    topLeft = KeyC("#", color = MUTED),
                     top = KeyC("\u0308", displayText = "¨", color = MUTED),
                     topRight = KeyC("@", color = MUTED),
                     left = KeyC("MM", size = SMALLEST, color = MUTED),
@@ -330,6 +332,7 @@ val FRENCH_FLUID_NUMERIC_KEYBOARD =
                 ),
                 KeyItemC(
                     center = KeyC("8", size = LARGE),
+                    topLeft = KeyC("#"),
                     top = KeyC("≈"),
                     topRight = KeyC("@"),
                     left = KeyC("×"),
@@ -346,7 +349,6 @@ val FRENCH_FLUID_NUMERIC_KEYBOARD =
                     right = KeyC("|"),
                     bottomLeft = KeyC("~"),
                     bottom = KeyC("&"),
-                    bottomRight = KeyC("#"),
                 ),
                 EMOJI_KEY_ITEM_CUSTOM,
             ),
