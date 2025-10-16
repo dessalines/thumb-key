@@ -153,6 +153,7 @@ import com.dessalines.thumbkey.keyboards.KB_KZ_THUMBKEY
 import com.dessalines.thumbkey.keyboards.KB_LT_THUMBKEY
 import com.dessalines.thumbkey.keyboards.KB_LV_LTG_THUMBKEY
 import com.dessalines.thumbkey.keyboards.KB_MATH_THUMBKEY
+import com.dessalines.thumbkey.keyboards.KB_MY_THUMBKEY
 import com.dessalines.thumbkey.keyboards.KB_NL_THUMBKEY
 import com.dessalines.thumbkey.keyboards.KB_NL_TYPESPLIT
 import com.dessalines.thumbkey.keyboards.KB_NO_THUMBKEY
@@ -396,4 +397,5 @@ enum class KeyboardLayout(
     KRTypeSplit(KB_KR_TYPESPLIT),
     KRThumbKey(KB_KR_THUMBKEY),
     RUHyper(KB_RU_HYPER),
+    MYThumbKey(KB_MY_THUMBKEY),
 }
