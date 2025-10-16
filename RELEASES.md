@@ -1,9 +1,23 @@
+## What's Changed in 5.0.9
+
+- Adding a few keyboards. by @dessalines in [#1611](https://github.com/dessalines/thumb-key/pull/1611)
+- Update FRENFrappeFluideV1: Better spot for backtick, on main layer by @jiquiame in [#1598](https://github.com/dessalines/thumb-key/pull/1598)
+- Update FRENFrappeFluideV1: Add ff and gh by @jiquiame in [#1594](https://github.com/dessalines/thumb-key/pull/1594)
+- Update FRENFrappeFluideV1: Add # to principal layer in [#1590](https://github.com/dessalines/thumb-key/pull/1590)
+- switch language resets to main by @Toldry in [#1586](https://github.com/dessalines/thumb-key/pull/1586)
+
+## New Contributors
+
+- @jiquiame made their first contribution in [#1598](https://github.com/dessalines/thumb-key/pull/1598)
+
+**Full Changelog**: https://github.com/dessalines/thumb-key/compare/5.0.8...5.0.9
+
 ## What's Changed in 5.0.8
 
-- Add `ch` to frenfrappefluidev1 by @antoinepouille in [#1584](https://github.com/dessalines/thumb-key/pull/1584)
+- Add `ch` to frenfrappefluidev1 in [#1584](https://github.com/dessalines/thumb-key/pull/1584)
 - Adds Korean Thumb-Key layout by @Hate9 in [#1575](https://github.com/dessalines/thumb-key/pull/1575)
-- Update fren frappefluide v1 : move delete_word by @antoinepouille in [#1570](https://github.com/dessalines/thumb-key/pull/1570)
-- Update FREN_frappefluide_v1 by @antoinepouille in [#1550](https://github.com/dessalines/thumb-key/pull/1550)
+- Update fren frappefluide v1 : move delete_word in [#1570](https://github.com/dessalines/thumb-key/pull/1570)
+- Update FREN_frappefluide_v1 in [#1550](https://github.com/dessalines/thumb-key/pull/1550)
 - ENMessagEaseSymbolsModifiers: Add "up" and "down" keys by @federvieh in [#1560](https://github.com/dessalines/thumb-key/pull/1560)
 - CommonKeys: Add return programming key item by @federvieh in [#1561](https://github.com/dessalines/thumb-key/pull/1561)
 - Key modifications: Fix NPE if ctrled/alted are empty by @federvieh in [#1552](https://github.com/dessalines/thumb-key/pull/1552)
@@ -101,12 +115,11 @@
 - Address CoPilot review issues, improve function signatures by @alerque
 - Overhaul migrations to avoid SQLite & Room limitations by @alerque
 - Fix long press numeric key yaml by @jm355 in [#1453](https://github.com/dessalines/thumb-key/pull/1453)
-- Add FRENFrappeFluideV1 by @antoinepouille in [#1450](https://github.com/dessalines/thumb-key/pull/1450)
+- Add FRENFrappeFluideV1 in [#1450](https://github.com/dessalines/thumb-key/pull/1450)
 
 ## New Contributors
 
 - @pohmelie made their first contribution in [#1456](https://github.com/dessalines/thumb-key/pull/1456)
-- @antoinepouille made their first contribution in [#1450](https://github.com/dessalines/thumb-key/pull/1450)
 
 **Full Changelog**: https://github.com/dessalines/thumb-key/compare/4.0.36...5.0.0
 
@@ -225,13 +238,14 @@
 - Added translation using Weblate (Arabic) by @williampiti
 - Translated using Weblate (Japanese) by @williampiti
 - Translated using Weblate (Japanese) by @williampiti
-- Translated using Weblate (Polish)
+- Translated using Weblate (Polish) by @e-michalak
 - Translated using Weblate (Japanese) by @williampiti
 
 ## New Contributors
 
 - @owl-from-hogvarts made their first contribution in [#1337](https://github.com/dessalines/thumb-key/pull/1337)
 - @williampiti made their first contribution
+- @e-michalak made their first contribution
 
 **Full Changelog**: https://github.com/dessalines/thumb-key/compare/4.0.26...4.0.27
 
@@ -1227,13 +1241,13 @@
 ## What's Changed in 2.6.10
 
 - Update ITMessageEase.kt by @flauta in [#637](https://github.com/dessalines/thumb-key/pull/637)
-- Fix 'å' shadowing 'unshift' in 'english dansk symbols thumb-key' by @maximbaz in [#634](https://github.com/dessalines/thumb-key/pull/634)
-- Add 'english dansk symbols thumb-key' by @maximbaz in [#633](https://github.com/dessalines/thumb-key/pull/633)
+- Fix 'å' shadowing 'unshift' in 'english dansk symbols thumb-key' by @max-baz in [#634](https://github.com/dessalines/thumb-key/pull/634)
+- Add 'english dansk symbols thumb-key' by @max-baz in [#633](https://github.com/dessalines/thumb-key/pull/633)
 - Adding release notes. by @dessalines
 
 ## New Contributors
 
-- @maximbaz made their first contribution in [#634](https://github.com/dessalines/thumb-key/pull/634)
+- @max-baz made their first contribution in [#634](https://github.com/dessalines/thumb-key/pull/634)
 
 **Full Changelog**: https://github.com/dessalines/thumb-key/compare/2.6.9...2.6.10
 
