@@ -62,7 +62,7 @@ val KB_MY_THUMBKEY_MAIN =
                 KeyItemC(
                     center = KeyC("စ", size = LARGE),
                     swipeType = FOUR_WAY_CROSS,
-                    right = ("ဈ"),
+                    right = KeyC("ဈ"),
                     left = KeyC("လ"),
                     top =
                         KeyC(
