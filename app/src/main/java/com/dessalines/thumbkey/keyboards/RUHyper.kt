@@ -240,7 +240,7 @@ val KB_RU_HYPER_SHIFTED =
 
 val KB_RU_HYPER: KeyboardDefinition =
     KeyboardDefinition(
-        title = "russian hyper",
+        title = "русский hyper",
         modes =
             KeyboardDefinitionModes(
                 main = KB_RU_HYPER_MAIN,
