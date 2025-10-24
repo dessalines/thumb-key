@@ -42,7 +42,7 @@ val KB_KR_THUMBKEY_MAIN =
                 ),
                 KeyItemC(
                     center = KeyC("ㅇ", size = LARGE),
-                    swipeType = TWO_WAY_VERTICAL,
+                    swipeType = FOUR_WAY_DIAGONAL,
                     topLeft = KeyC("ㅋ"),
                     topRight = KeyC("ㅌ"),
                     bottomRight = KeyC("ㅍ"),
@@ -130,7 +130,7 @@ val KB_KR_THUMBKEY_SHIFTED =
                 ),
                 KeyItemC(
                     center = KeyC("ㅇ", size = LARGE),
-                    swipeType = TWO_WAY_VERTICAL,
+                    swipeType = FOUR_WAY_DIAGONAL,
                     topLeft = KeyC("ㅋ"),
                     topRight = KeyC("ㅌ"),
                     bottomRight = KeyC("ㅍ"),
