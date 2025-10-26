@@ -143,6 +143,7 @@ import com.dessalines.thumbkey.keyboards.KB_IT_THUMBKEY
 import com.dessalines.thumbkey.keyboards.KB_IT_TYPESPLIT
 import com.dessalines.thumbkey.keyboards.KB_JA_HIRAGANA_THUMBKEY
 import com.dessalines.thumbkey.keyboards.KB_JA_HIRAGANA_TYPESPLIT
+import com.dessalines.thumbkey.keyboards.KB_JA_KANA_STANDARD
 import com.dessalines.thumbkey.keyboards.KB_JA_KANA_THUMBKEY
 import com.dessalines.thumbkey.keyboards.KB_JA_KATAKANA_THUMBKEY
 import com.dessalines.thumbkey.keyboards.KB_JA_KATAKANA_TYPESPLIT
@@ -398,4 +399,5 @@ enum class KeyboardLayout(
     KRThumbKey(KB_KR_THUMBKEY),
     RUHyper(KB_RU_HYPER),
     MYThumbKey(KB_MY_THUMBKEY),
+    JAKanaStandard(KB_JA_KANA_STANDARD),
 }
