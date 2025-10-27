@@ -430,4 +430,4 @@ Your donations directly support full-time development, and help keep this mainta
 
 ## Related Projects
 
-- alternative solution for iOS : [Wurstfinger](https://github.com/cl445/wurstfinger)
+- Alternative solution for iOS : [Wurstfinger](https://github.com/cl445/wurstfinger)
