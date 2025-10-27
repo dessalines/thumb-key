@@ -427,3 +427,7 @@ Your donations directly support full-time development, and help keep this mainta
 - https://stackoverflow.com/questions/65570024/build-software-keyboard-with-jetpack-compose-ime-input-method-with-jetpack-com
 - https://developer.android.com/develop/ui/views/touch-and-input/creating-input-method
 - https://www.answertopia.com/jetpack-compose/a-jetpack-compose-in-app-purchasing-tutorial/
+
+## Related Projects
+
+- alternative solution for iOS : [Wurstfinger](https://github.com/cl445/wurstfinger)
