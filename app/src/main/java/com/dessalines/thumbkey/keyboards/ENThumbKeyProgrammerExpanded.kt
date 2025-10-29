@@ -13,55 +13,7 @@ import com.dessalines.thumbkey.utils.SwipeNWay.*
 
 // uses programming layout but adds numbers to the left side. the grid is 5x4.
 // the layout also adds the few other keys from the numeric layout that the programming layout didn't already have.
-// because this layout contains all the keys from the numeric layout, the key to switch to the numeric layout has been replaced with the key to switch to voice input.
-// additionally, the "move keyboard" button has been relocated from right to topLeft, because swiping inward is easier than outward for keys on the edge.
-
-val EMOJI_KEY_PROGRAMMING_EXPANDED =
-    KeyItemC(
-        backgroundColor = SURFACE_VARIANT,
-        swipeType = EIGHT_WAY,
-        center =
-            KeyC(
-                display = KeyDisplay.IconDisplay(Icons.Outlined.Mood),
-                action = ToggleEmojiMode(true),
-                size = LARGE,
-                color = SECONDARY,
-            ),
-        top =
-            KeyC(
-                display = KeyDisplay.IconDisplay(Icons.Outlined.Settings),
-                action = GotoSettings,
-                color = MUTED,
-            ),
-        bottom =
-            KeyC(
-                display = KeyDisplay.IconDisplay(Icons.Outlined.Keyboard),
-                action = SwitchIME,
-                color = MUTED,
-            ),
-        topLeft =
-            KeyC(
-                display = KeyDisplay.IconDisplay(Icons.Outlined.LinearScale),
-                action = MoveKeyboard.CycleRight,
-                color = MUTED,
-            ),
-        left =
-            KeyC(
-                display = KeyDisplay.IconDisplay(Icons.Outlined.Language),
-                action = SwitchLanguage,
-                color = MUTED,
-            ),
-    )
-val TEXTEDIT_KEY_PROGRAMMING_EXPANDED =
-    textEditKeyItem(
-        center =
-            KeyC(
-                display = KeyDisplay.IconDisplay(Icons.Outlined.Mic),
-                action = SwitchIMEVoice,
-                size = LARGE,
-                color = SECONDARY,
-            ),
-    )
+// also adds a custom numeric layout with all the letter keys on it, just for good measure
 
 val KB_EN_THUMBKEY_PROGRAMMING_EXPANDED_MAIN =
     KeyboardC(
@@ -97,7 +49,7 @@ val KB_EN_THUMBKEY_PROGRAMMING_EXPANDED_MAIN =
                     topLeft = KeyC("=", color = MUTED),
                     topRight = KeyC("+", color = MUTED),
                 ),
-                EMOJI_KEY_PROGRAMMING_EXPANDED,
+                EMOJI_KEY_ITEM,
             ),
             listOf(
                 KeyItemC(
@@ -150,7 +102,7 @@ val KB_EN_THUMBKEY_PROGRAMMING_EXPANDED_MAIN =
                             color = MUTED,
                         ),
                 ),
-                TEXTEDIT_KEY_PROGRAMMING_EXPANDED,
+                NUMERIC_KEY_ITEM,
             ),
             listOf(
                 KeyItemC(
@@ -232,7 +184,7 @@ val KB_EN_THUMBKEY_PROGRAMMING_EXPANDED_SHIFTED =
                     topLeft = KeyC("=", color = MUTED),
                     topRight = KeyC("+", color = MUTED),
                 ),
-                EMOJI_KEY_PROGRAMMING_EXPANDED,
+                EMOJI_KEY_ITEM,
             ),
             listOf(
                 KeyItemC(
@@ -287,7 +239,7 @@ val KB_EN_THUMBKEY_PROGRAMMING_EXPANDED_SHIFTED =
                             color = MUTED,
                         ),
                 ),
-                TEXTEDIT_KEY_PROGRAMMING_EXPANDED,
+                NUMERIC_KEY_ITEM,
             ),
             listOf(
                 KeyItemC(
@@ -336,6 +288,288 @@ val KB_EN_THUMBKEY_PROGRAMMING_EXPANDED_SHIFTED =
         ),
     )
 
+val NUMERIC_KEYBOARD_EXPANDED =
+    KeyboardC(
+        listOf(
+            listOf(
+                KeyItemC(
+                    center = KeyC("a", size = LARGE, color = MUTED),
+                    top = KeyC("b", color = MUTED),
+                    topRight = KeyC("c", color = MUTED),
+                    right = KeyC("d", color = MUTED),
+                    bottomRight = KeyC("e", color = MUTED),
+                    bottom = KeyC("f", color = MUTED),
+                    left = KeyC("w", color = MUTED),
+                ),
+                KeyItemC(
+                    center = KeyC("1", size = LARGE),
+                    bottomLeft = KeyC("$"),
+                    bottomRight =
+                        getLocalCurrency()?.let {
+                            if (it !in setOf("$", "£", "€")) {
+                                KeyC(it)
+                            } else {
+                                null
+                            }
+                        },
+                ),
+                KeyItemC(
+                    center = KeyC("2", size = LARGE),
+                    topLeft = KeyC("`"),
+                    top = KeyC("^"),
+                    topRight = KeyC("´"),
+                    right = KeyC("!"),
+                    bottomRight = KeyC("\\"),
+                    bottomLeft = KeyC("/"),
+                    left = KeyC("+"),
+                ),
+                KeyItemC(
+                    center = KeyC("3", size = LARGE),
+                    left = KeyC("?"),
+                    bottomRight = KeyC("€"),
+                    bottomLeft = KeyC("£"),
+                    bottom = KeyC("="),
+                ),
+                EMOJI_KEY_ITEM,
+            ),
+            listOf(
+                KeyItemC(
+                    center = KeyC("g", size = LARGE, color = MUTED),
+                    top = KeyC("h", color = MUTED),
+                    topRight = KeyC("i", color = MUTED),
+                    right = KeyC("j", color = MUTED),
+                    bottomRight = KeyC("k", color = MUTED),
+                    bottom = KeyC("l", color = MUTED),
+                    left = KeyC("x", color = MUTED),
+                ),
+                KeyItemC(
+                    center = KeyC("4", size = LARGE),
+                    topLeft = KeyC("{"),
+                    topRight = KeyC("%"),
+                    bottomRight = KeyC("_"),
+                    bottomLeft = KeyC("["),
+                    left = KeyC("("),
+                ),
+                KeyItemC(
+                    center = KeyC("5", size = LARGE),
+                ),
+                KeyItemC(
+                    center = KeyC("6", size = LARGE),
+                    topLeft = KeyC("|"),
+                    topRight = KeyC("}"),
+                    right = KeyC(")"),
+                    bottomRight = KeyC("]"),
+                    bottomLeft = KeyC("@"),
+                    top =
+                        KeyC(
+                            display = KeyDisplay.IconDisplay(Icons.Outlined.ArrowDropUp),
+                            action = ToggleAltMode(true),
+                            color = MUTED,
+                        ),
+                    bottom =
+                        KeyC(
+                            display = KeyDisplay.IconDisplay(Icons.Outlined.ArrowDropDown),
+                            action = ToggleNumericMode(true),
+                            color = MUTED,
+                        ),
+                ),
+                ABC_KEY_ITEM,
+            ),
+            listOf(
+                KeyItemC(
+                    center = KeyC("m", size = LARGE, color = MUTED),
+                    top = KeyC("n", color = MUTED),
+                    topRight = KeyC("o", color = MUTED),
+                    right = KeyC("p", color = MUTED),
+                    bottomRight = KeyC("q", color = MUTED),
+                    bottom = KeyC("r", color = MUTED),
+                    left = KeyC("y", color = MUTED),
+                ),
+                KeyItemC(
+                    center = KeyC("7", size = LARGE),
+                    topLeft = KeyC("~"),
+                    bottomRight = KeyC(":"),
+                    bottomLeft = KeyC("<"),
+                ),
+                KeyItemC(
+                    center = KeyC("8", size = LARGE),
+                    topLeft = KeyC("\""),
+                    topRight = KeyC("'"),
+                    bottomRight = KeyC("-"),
+                    bottom = KeyC("."),
+                    bottomLeft = KeyC("*"),
+                    left = KeyC(","),
+                ),
+                KeyItemC(
+                    center = KeyC("9", size = LARGE),
+                    top = KeyC("&"),
+                    topRight = KeyC("°"),
+                    bottomRight = KeyC(">"),
+                    bottomLeft = KeyC(";"),
+                    left = KeyC("#"),
+                ),
+                BACKSPACE_KEY_ITEM,
+            ),
+            listOf(
+                KeyItemC(
+                    center = KeyC("s", size = LARGE, color = MUTED),
+                    top = KeyC("t", color = MUTED),
+                    topRight = KeyC("u", color = MUTED),
+                    right = KeyC("v", color = MUTED),
+                    left = KeyC("z", color = MUTED),
+                ),
+                KeyItemC(
+                    center = KeyC("0", size = LARGE),
+                    widthMultiplier = 2,
+                ),
+                SPACEBAR_SKINNY_KEY_ITEM,
+                RETURN_KEY_ITEM,
+            ),
+        ),
+    )
+
+val NUMERIC_KEYBOARD_EXPANDED_SHIFTED =
+    KeyboardC(
+        listOf(
+            listOf(
+                KeyItemC(
+                    center = KeyC("A", size = LARGE, color = MUTED),
+                    top = KeyC("B", color = MUTED),
+                    topRight = KeyC("C", color = MUTED),
+                    right = KeyC("D", color = MUTED),
+                    bottomRight = KeyC("E", color = MUTED),
+                    bottom = KeyC("F", color = MUTED),
+                    left = KeyC("W", color = MUTED),
+                ),
+                KeyItemC(
+                    center = KeyC("1", size = LARGE),
+                    bottomLeft = KeyC("$"),
+                    bottomRight =
+                        getLocalCurrency()?.let {
+                            if (it !in setOf("$", "£", "€")) {
+                                KeyC(it)
+                            } else {
+                                null
+                            }
+                        },
+                ),
+                KeyItemC(
+                    center = KeyC("2", size = LARGE),
+                    topLeft = KeyC("`"),
+                    top = KeyC("^"),
+                    topRight = KeyC("´"),
+                    right = KeyC("!"),
+                    bottomRight = KeyC("\\"),
+                    bottomLeft = KeyC("/"),
+                    left = KeyC("+"),
+                ),
+                KeyItemC(
+                    center = KeyC("3", size = LARGE),
+                    left = KeyC("?"),
+                    bottomRight = KeyC("€"),
+                    bottomLeft = KeyC("£"),
+                    bottom = KeyC("="),
+                ),
+                EMOJI_KEY_ITEM,
+            ),
+            listOf(
+                KeyItemC(
+                    center = KeyC("G", size = LARGE, color = MUTED),
+                    top = KeyC("H", color = MUTED),
+                    topRight = KeyC("I", color = MUTED),
+                    right = KeyC("J", color = MUTED),
+                    bottomRight = KeyC("K", color = MUTED),
+                    bottom = KeyC("L", color = MUTED),
+                    left = KeyC("X", color = MUTED),
+                ),
+                KeyItemC(
+                    center = KeyC("4", size = LARGE),
+                    topLeft = KeyC("{"),
+                    topRight = KeyC("%"),
+                    bottomRight = KeyC("_"),
+                    bottomLeft = KeyC("["),
+                    left = KeyC("("),
+                ),
+                KeyItemC(
+                    center = KeyC("5", size = LARGE),
+                ),
+                KeyItemC(
+                    center = KeyC("6", size = LARGE),
+                    topLeft = KeyC("|"),
+                    topRight = KeyC("}"),
+                    right = KeyC(")"),
+                    bottomRight = KeyC("]"),
+                    bottomLeft = KeyC("@"),
+                    bottom =
+                        KeyC(
+                            display = KeyDisplay.IconDisplay(Icons.Outlined.ArrowDropDown),
+                            // technically, alt and numeric are mutually exclusive
+                            action = ToggleNumericMode(true),
+                            color = MUTED,
+                        ),
+                    top =
+                        KeyC(
+                            display = KeyDisplay.IconDisplay(Icons.Outlined.ArrowDropUp),
+                            // no such thing as caps lock for alt mode
+                            action = ToggleAltMode(true),
+                            color = MUTED,
+                        ),
+                ),
+                ABC_KEY_ITEM,
+            ),
+            listOf(
+                KeyItemC(
+                    center = KeyC("M", size = LARGE, color = MUTED),
+                    top = KeyC("N", color = MUTED),
+                    topRight = KeyC("O", color = MUTED),
+                    right = KeyC("P", color = MUTED),
+                    bottomRight = KeyC("Q", color = MUTED),
+                    bottom = KeyC("R", color = MUTED),
+                    left = KeyC("Y", color = MUTED),
+                ),
+                KeyItemC(
+                    center = KeyC("7", size = LARGE),
+                    topLeft = KeyC("~"),
+                    bottomRight = KeyC(":"),
+                    bottomLeft = KeyC("<"),
+                ),
+                KeyItemC(
+                    center = KeyC("8", size = LARGE),
+                    topLeft = KeyC("\""),
+                    topRight = KeyC("'"),
+                    bottomRight = KeyC("-"),
+                    bottom = KeyC("."),
+                    bottomLeft = KeyC("*"),
+                    left = KeyC(","),
+                ),
+                KeyItemC(
+                    center = KeyC("9", size = LARGE),
+                    top = KeyC("&"),
+                    topRight = KeyC("°"),
+                    bottomRight = KeyC(">"),
+                    bottomLeft = KeyC(";"),
+                    left = KeyC("#"),
+                ),
+                BACKSPACE_KEY_ITEM,
+            ),
+            listOf(
+                KeyItemC(
+                    center = KeyC("S", size = LARGE, color = MUTED),
+                    top = KeyC("T", color = MUTED),
+                    topRight = KeyC("U", color = MUTED),
+                    right = KeyC("V", color = MUTED),
+                    left = KeyC("Z", color = MUTED),
+                ),
+                KeyItemC(
+                    center = KeyC("0", size = LARGE),
+                    widthMultiplier = 2,
+                ),
+                SPACEBAR_SKINNY_KEY_ITEM,
+                RETURN_KEY_ITEM,
+            ),
+        ),
+    )
+
 val KB_EN_THUMBKEY_PROGRAMMING_EXPANDED: KeyboardDefinition =
     KeyboardDefinition(
         title = "english thumb-key programming expanded",
@@ -343,7 +577,9 @@ val KB_EN_THUMBKEY_PROGRAMMING_EXPANDED: KeyboardDefinition =
             KeyboardDefinitionModes(
                 main = KB_EN_THUMBKEY_PROGRAMMING_EXPANDED_MAIN,
                 shifted = KB_EN_THUMBKEY_PROGRAMMING_EXPANDED_SHIFTED,
-                numeric = NUMERIC_KEYBOARD,
+                numeric = NUMERIC_KEYBOARD_EXPANDED,
+                // there is no numeric shifted layout mode, so...
+                alted = NUMERIC_KEYBOARD_EXPANDED_SHIFTED,
             ),
         settings =
             KeyboardDefinitionSettings(
