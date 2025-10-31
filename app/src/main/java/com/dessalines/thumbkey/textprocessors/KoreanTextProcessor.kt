@@ -2,6 +2,7 @@ package com.dessalines.thumbkey.textprocessors
 
 import android.util.Log
 import android.view.KeyEvent
+import android.view.inputmethod.ExtractedTextRequest
 import android.view.inputmethod.InputConnection
 import com.dessalines.thumbkey.IMEService
 import com.dessalines.thumbkey.utils.TAG
@@ -234,6 +235,12 @@ class KoreanTextProcessor : TextProcessor {
         if (state != CompositionState.EMPTY) {
             handleFinishInput(ime)
         }
+    }
+
+    override fun updateCursorPosition(ime: IMEService) {
+        val extracted = ime.currentInputConnection.getExtractedText(ExtractedTextRequest(), 0)
+        selectionStart = extracted.selectionStart
+        selectionEnd = extracted.selectionEnd
     }
 
     private fun resetState() {
