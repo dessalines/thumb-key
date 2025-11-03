@@ -27,4 +27,7 @@ interface TextProcessor {
         newSelStart: Int,
         newSelEnd: Int,
     )
+
+    // manually update position after switching layouts
+    fun updateCursorPosition(ime: IMEService)
 }

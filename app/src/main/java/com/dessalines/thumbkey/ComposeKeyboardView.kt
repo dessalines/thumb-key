@@ -57,6 +57,10 @@ class ComposeKeyboardView(
                                         ?.textProcessor
                                         ?.handleFinishInput(ctx)
                                     ctx.currentKeyboardDefinition = (layouts[nextIndex].keyboardDefinition)
+                                    ctx.currentKeyboardDefinition
+                                        ?.settings
+                                        ?.textProcessor
+                                        ?.updateCursorPosition(ctx)
 
                                     // Display the new layout's name on the screen
                                     if (s.showToastOnLayoutSwitch.toBool()) {
