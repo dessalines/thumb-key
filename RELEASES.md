@@ -1,3 +1,22 @@
+## What's Changed in 5.0.10
+
+- Fixed kana cycle: tsu -> sokuon -> zu by @DeBestTrap in [#1640](https://github.com/dessalines/thumb-key/pull/1640)
+- fix: korean composition breaking when switching layouts by @uranium-boy in [#1636](https://github.com/dessalines/thumb-key/pull/1636)
+- Add back `gh` to français frappefluide by @jiquiame in [#1639](https://github.com/dessalines/thumb-key/pull/1639)
+- Updates English Thumb-Key Programmer Expanded to use default special keys; adds custom numeric layout by @Hate9 in [#1634](https://github.com/dessalines/thumb-key/pull/1634)
+- Standard japanese keyboard by @K0baU in [#1630](https://github.com/dessalines/thumb-key/pull/1630)
+- add Wurstfinger as related project by @cl445 in [#1632](https://github.com/dessalines/thumb-key/pull/1632)
+- Fixed incorrect swipetype in center key on KRThumbKey by @Hate9 in [#1621](https://github.com/dessalines/thumb-key/pull/1621)
+- Update RUHyper.kt by @bjarjfff in [#1616](https://github.com/dessalines/thumb-key/pull/1616)
+
+## New Contributors
+
+- @DeBestTrap made their first contribution in [#1640](https://github.com/dessalines/thumb-key/pull/1640)
+- @cl445 made their first contribution in [#1632](https://github.com/dessalines/thumb-key/pull/1632)
+- @bjarjfff made their first contribution in [#1616](https://github.com/dessalines/thumb-key/pull/1616)
+
+**Full Changelog**: https://github.com/dessalines/thumb-key/compare/5.0.9...5.0.10
+
 ## What's Changed in 5.0.9
 
 - Adding a few keyboards. by @dessalines in [#1611](https://github.com/dessalines/thumb-key/pull/1611)
@@ -31,7 +50,7 @@
 ## What's Changed in 5.0.7
 
 - Add Korean layout and custom input processor implementation by @uranium-boy in [#1534](https://github.com/dessalines/thumb-key/pull/1534)
-- Update README.md by @jwkwshjsjsj in [#1531](https://github.com/dessalines/thumb-key/pull/1531)
+- Update README.md by @jwkwshjsjsj
 - Verify apk fingerprint. by @dessalines in [#1528](https://github.com/dessalines/thumb-key/pull/1528)
 - English based Latvian keyboard by @HX3A in [#1522](https://github.com/dessalines/thumb-key/pull/1522)
 - downgrade agp version (closes #1514) by @pohmelie in [#1521](https://github.com/dessalines/thumb-key/pull/1521)
@@ -40,7 +59,7 @@
 ## New Contributors
 
 - @uranium-boy made their first contribution in [#1534](https://github.com/dessalines/thumb-key/pull/1534)
-- @jwkwshjsjsj made their first contribution in [#1531](https://github.com/dessalines/thumb-key/pull/1531)
+- @jwkwshjsjsj made their first contribution
 - @HX3A made their first contribution in [#1522](https://github.com/dessalines/thumb-key/pull/1522)
 
 **Full Changelog**: https://github.com/dessalines/thumb-key/compare/5.0.6...5.0.7
