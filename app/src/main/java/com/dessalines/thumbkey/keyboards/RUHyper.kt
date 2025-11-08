@@ -123,6 +123,7 @@ val KB_RU_HYPER_MAIN =
             ),
         ),
     )
+    
 val KB_RU_HYPER_SHIFTED =
     KeyboardC(
         listOf(
@@ -236,6 +237,7 @@ val KB_RU_HYPER_SHIFTED =
             ),
         ),
     )
+    
 val KB_RU_HYPER: KeyboardDefinition =
     KeyboardDefinition(
         title = "русский hyper",
