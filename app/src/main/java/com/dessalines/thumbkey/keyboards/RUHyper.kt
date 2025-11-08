@@ -1,5 +1,4 @@
 @file:Suppress("ktlint:standard:no-wildcard-imports")
-
 package com.dessalines.thumbkey.keyboards
 
 import androidx.compose.material.icons.Icons
@@ -7,6 +6,7 @@ import androidx.compose.material.icons.outlined.ArrowDropDown
 import androidx.compose.material.icons.outlined.ArrowDropUp
 import androidx.compose.material.icons.outlined.Copyright
 import androidx.compose.material.icons.outlined.KeyboardCapslock
+
 import com.dessalines.thumbkey.utils.*
 import com.dessalines.thumbkey.utils.ColorVariant.*
 import com.dessalines.thumbkey.utils.FontSizeVariant.*
@@ -19,39 +19,39 @@ val KB_RU_HYPER_MAIN =
             listOf(
                 RETURN_KEY_ITEM,
                 KeyItemC(
-                    center = KeyC("р", size = LARGE),
+                    center = KeyC("с", size = LARGE),
                     swipeType = FOUR_WAY_CROSS,
                     right = KeyC("`", color = MUTED),
-                    bottom = KeyC("й"),
+                    bottom = KeyC("ч"),
                 ),
                 KeyItemC(
-                    center = KeyC("в", size = LARGE),
+                    center = KeyC("о", size = LARGE),
                     swipeType = FOUR_WAY_CROSS,
                     bottom = KeyC("!", color = MUTED),
-                    left = KeyC("с"),
-                    right = KeyC("ю"),
+                    left = KeyC("ц"),
+                    right = KeyC("д"),
                 ),
                 KeyItemC(
-                    center = KeyC("л", size = LARGE),
+                    center = KeyC("н", size = LARGE),
                     swipeType = FOUR_WAY_CROSS,
-                    right = KeyC("э"),
+                    right = KeyC("п"),
                     bottom = KeyC("х"),
                 ),
                 KeyItemC(
-                    center = KeyC("к", size = LARGE),
+                    center = KeyC("е", size = LARGE),
                     swipeType = FOUR_WAY_CROSS,
                     left = KeyC("@", color = MUTED),
                     bottom = KeyC("ж"),
-                    right = KeyC("ё"),
+                    right = KeyC("у"),
                 ),
                 BACKSPACE_KEY_ITEM,
             ),
             listOf(
                 SPACEBAR_SKINNY_KEY_ITEM,
                 KeyItemC(
-                    center = KeyC("м", size = LARGE),
+                    center = KeyC("т", size = LARGE),
                     swipeType = FOUR_WAY_CROSS,
-                    right = KeyC("и"),
+                    right = KeyC("я"),
                     top =
                         KeyC(
                             display = KeyDisplay.IconDisplay(Icons.Outlined.ArrowDropUp),
@@ -66,103 +66,102 @@ val KB_RU_HYPER_MAIN =
                         ),
                 ),
                 KeyItemC(
-                    center = KeyC("д", size = LARGE),
+                    center = KeyC("и", size = LARGE),
                     swipeType = FOUR_WAY_CROSS,
                     left = KeyC(".", color = MUTED),
                     top = KeyC(",", color = MUTED),
                     bottom = KeyC("?", color = MUTED),
-                    right = KeyC("у"),
-                ),
-                KeyItemC(
-                    center = KeyC("п", size = LARGE),
-                    swipeType = FOUR_WAY_CROSS,
                     right = KeyC("ы"),
-                    bottom = KeyC("ш"),
-                    top = KeyC("щ"),
                 ),
                 KeyItemC(
-                    center = KeyC("ь", size = LARGE),
+                    center = KeyC("а", size = LARGE),
                     swipeType = FOUR_WAY_CROSS,
-                    left = KeyC("т"),
-                    bottom = KeyC("ц"),
+                    right = KeyC("ь"),
+                    bottom = KeyC("ш"),
+                    top = KeyC("э"),
+                ),
+                KeyItemC(
+                    center = KeyC("р", size = LARGE),
+                    swipeType = FOUR_WAY_CROSS,
+                    left = KeyC("ф"),
+                    bottom = KeyC("ю"),
                     top = KeyC("-", color = MUTED),
-                    right = KeyC("я"),
+                    right = KeyC("г"),
                 ),
                 SPACEBAR_SKINNY_KEY_ITEM,
             ),
             listOf(
                 NUMERIC_KEY_ITEM,
                 KeyItemC(
-                    center = KeyC("г", size = LARGE),
+                    center = KeyC("л", size = LARGE),
                     swipeType = FOUR_WAY_CROSS,
                     right = KeyC("\"", color = MUTED),
-                    top = KeyC("ф"),
-                    left = KeyC("н"),
+                    top = KeyC("ё"),
+                    left = KeyC("щ"),
                 ),
                 KeyItemC(
-                    center = KeyC("б", size = LARGE),
+                    center = KeyC("в", size = LARGE),
                     swipeType = FOUR_WAY_CROSS,
                     top = KeyC("'", color = MUTED),
                     left = KeyC(";", color = MUTED),
-                    right = KeyC("о"),
+                    right = KeyC("з"),
                 ),
                 KeyItemC(
-                    center = KeyC("з", size = LARGE),
+                    center = KeyC("м", size = LARGE),
                     swipeType = FOUR_WAY_CROSS,
-                    right = KeyC("а"),
+                    right = KeyC("б"),
                     top = KeyC("ъ"),
                 ),
                 KeyItemC(
-                    center = KeyC("ч", size = LARGE),
+                    center = KeyC("к", size = LARGE),
                     swipeType = FOUR_WAY_CROSS,
                     left = KeyC("#", color = MUTED),
                     top = KeyC("/", color = MUTED),
-                    right = KeyC("е"),
+                    right = KeyC("й"),
                 ),
                 EMOJI_KEY_ITEM,
             ),
         ),
     )
-
 val KB_RU_HYPER_SHIFTED =
     KeyboardC(
         listOf(
             listOf(
                 RETURN_KEY_ITEM,
                 KeyItemC(
-                    center = KeyC("Р", size = LARGE),
+                    center = KeyC("С", size = LARGE),
                     swipeType = FOUR_WAY_CROSS,
                     right = KeyC("~", color = MUTED),
-                    bottom = KeyC("Й"),
+                    bottom = KeyC("Ч"),
                 ),
                 KeyItemC(
-                    center = KeyC("В", size = LARGE),
+                    center = KeyC("О", size = LARGE),
                     swipeType = FOUR_WAY_CROSS,
                     bottom = KeyC("!", color = MUTED),
-                    left = KeyC("С"),
-                    right = KeyC("Ю"),
+                    left = KeyC("Ц"),
+                    right = KeyC("Д"),
                 ),
                 KeyItemC(
-                    center = KeyC("Л", size = LARGE),
+                    center = KeyC("Н", size = LARGE),
                     swipeType = FOUR_WAY_CROSS,
-                    right = KeyC("Э"),
+                    right = KeyC("П"),
                     bottom = KeyC("Х"),
                 ),
                 KeyItemC(
-                    center = KeyC("К", size = LARGE),
+                    center = KeyC("Е", size = LARGE),
                     swipeType = FOUR_WAY_CROSS,
                     left = KeyC("@", color = MUTED),
                     bottom = KeyC("Ж"),
-                    right = KeyC("Ё"),
+                    right = KeyC("У"),
                 ),
                 BACKSPACE_KEY_ITEM,
             ),
             listOf(
                 SPACEBAR_SKINNY_KEY_ITEM,
                 KeyItemC(
-                    center = KeyC("М", size = LARGE),
+                    center = KeyC("Т", size = LARGE),
                     swipeType = FOUR_WAY_CROSS,
-                    right = KeyC("И"),
+                    right = KeyC("Я"),
                     top =
                         KeyC(
                             display = KeyDisplay.IconDisplay(Icons.Outlined.KeyboardCapslock),
@@ -180,64 +179,63 @@ val KB_RU_HYPER_SHIFTED =
                         ),
                 ),
                 KeyItemC(
-                    center = KeyC("Д", size = LARGE),
+                    center = KeyC("И", size = LARGE),
                     swipeType = FOUR_WAY_CROSS,
                     left = KeyC(".", color = MUTED),
                     top = KeyC(",", color = MUTED),
                     bottom = KeyC("?", color = MUTED),
-                    right = KeyC("У"),
-                ),
-                KeyItemC(
-                    center = KeyC("П", size = LARGE),
-                    swipeType = FOUR_WAY_CROSS,
                     right = KeyC("Ы"),
-                    bottom = KeyC("Ш"),
-                    top = KeyC("Щ"),
                 ),
                 KeyItemC(
-                    center = KeyC("Ь", size = LARGE),
+                    center = KeyC("А", size = LARGE),
                     swipeType = FOUR_WAY_CROSS,
-                    left = KeyC("Т"),
-                    bottom = KeyC("Ц"),
+                    right = KeyC("Ь"),
+                    bottom = KeyC("Ш"),
+                    top = KeyC("Э"),
+                ),
+                KeyItemC(
+                    center = KeyC("Р", size = LARGE),
+                    swipeType = FOUR_WAY_CROSS,
+                    left = KeyC("Ф"),
+                    bottom = KeyC("Ю"),
                     top = KeyC("_", color = MUTED),
-                    right = KeyC("Я"),
+                    right = KeyC("Г"),
                 ),
                 SPACEBAR_SKINNY_KEY_ITEM,
             ),
             listOf(
                 NUMERIC_KEY_ITEM,
                 KeyItemC(
-                    center = KeyC("Г", size = LARGE),
+                    center = KeyC("Л", size = LARGE),
                     swipeType = FOUR_WAY_CROSS,
                     right = KeyC("\"", color = MUTED),
-                    top = KeyC("Ф"),
-                    left = KeyC("Н"),
+                    top = KeyC("Ё"),
+                    left = KeyC("Щ"),
                 ),
                 KeyItemC(
-                    center = KeyC("Б", size = LARGE),
+                    center = KeyC("В", size = LARGE),
                     swipeType = FOUR_WAY_CROSS,
                     top = KeyC("'", color = MUTED),
                     left = KeyC(":", color = MUTED),
-                    right = KeyC("О"),
+                    right = KeyC("З"),
                 ),
                 KeyItemC(
-                    center = KeyC("З", size = LARGE),
+                    center = KeyC("М", size = LARGE),
                     swipeType = FOUR_WAY_CROSS,
-                    right = KeyC("А"),
+                    right = KeyC("Б"),
                     top = KeyC("Ъ"),
                 ),
                 KeyItemC(
-                    center = KeyC("Ч", size = LARGE),
+                    center = KeyC("К", size = LARGE),
                     swipeType = FOUR_WAY_CROSS,
                     left = KeyC("#", color = MUTED),
                     top = KeyC("/", color = MUTED),
-                    right = KeyC("Е"),
+                    right = KeyC("Й"),
                 ),
                 EMOJI_KEY_ITEM,
             ),
         ),
     )
-
 val KB_RU_HYPER: KeyboardDefinition =
     KeyboardDefinition(
         title = "русский hyper",
