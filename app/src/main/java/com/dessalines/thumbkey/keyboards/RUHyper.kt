@@ -11,7 +11,7 @@ import com.dessalines.thumbkey.utils.*
 import com.dessalines.thumbkey.utils.ColorVariant.*
 import com.dessalines.thumbkey.utils.FontSizeVariant.*
 import com.dessalines.thumbkey.utils.KeyAction.*
-import com.dessalines.thumbkey.utils.SwipeNWay*
+import com.dessalines.thumbkey.utils.SwipeNWay.*
 
 val KB_RU_HYPER_MAIN =
     KeyboardC(
