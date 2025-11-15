@@ -7,7 +7,7 @@ steps:
       - event: pull_request
 
   check_formatting:
-    image: cimg/android:2025.10.1
+    image: cimg/android:2025.11.1
     commands:
       - sudo chown -R circleci:circleci .
       - ./gradlew lintKotlin
@@ -17,7 +17,7 @@ steps:
       - event: pull_request
 
   check_android_lint:
-    image: cimg/android:2025.10.1
+    image: cimg/android:2025.11.1
     commands:
       - sudo chown -R circleci:circleci .
       - ./gradlew lint
@@ -27,7 +27,7 @@ steps:
       - event: pull_request
 
   build_project:
-    image: cimg/android:2025.10.1
+    image: cimg/android:2025.11.1
     commands:
       - sudo chown -R circleci:circleci .
       - ./gradlew assembleDebug
