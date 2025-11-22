@@ -410,8 +410,10 @@ fun KeyboardKey(
                             if (!selection.active) {
                                 timeOfLastAccelerationInput = System.currentTimeMillis()
                                 // Activate selection, first detection is large enough to preserve swipe actions.
-                                if (slideBackspaceDeadzoneEnabled &&
-                                    (abs(offsetX) > slideOffsetTrigger) ||
+                                if ((
+                                        slideBackspaceDeadzoneEnabled &&
+                                            (abs(offsetX) > slideOffsetTrigger)
+                                    ) ||
                                     !slideBackspaceDeadzoneEnabled
                                 ) {
                                     // reset offsetX, do not reset offsetY when sliding, it will break selecting
@@ -483,9 +485,13 @@ fun KeyboardKey(
                                                     )
                                                 circularDirection(positions, finalOffsetThreshold, minSwipeLength)?.let {
                                                     when (it) {
-                                                        CircularDirection.Clockwise -> circularDragActions[clockwiseDragAction]
-                                                        CircularDirection.Counterclockwise ->
+                                                        CircularDirection.Clockwise -> {
+                                                            circularDragActions[clockwiseDragAction]
+                                                        }
+
+                                                        CircularDirection.Counterclockwise -> {
                                                             circularDragActions[counterclockwiseDragAction]
+                                                        }
                                                     }
                                                 }
                                             } else {
@@ -815,10 +821,12 @@ fun KeyText(
     val color = colorVariantToColor(colorVariant = key.color)
     val isUpperCase =
         when (key.display) {
-            is KeyDisplay.TextDisplay ->
+            is KeyDisplay.TextDisplay -> {
                 key.display.text
                     .firstOrNull()
                     ?.isUpperCase() == true
+            }
+
             else -> {
                 false
             }
@@ -846,6 +854,7 @@ fun KeyText(
                 modifier = Modifier.size(fontSize),
             )
         }
+
         is KeyDisplay.TextDisplay -> {
             // Only  hide the letters for text, not symbols
             val containsLetters = display.text.any { it.isLetter() }
@@ -874,6 +883,7 @@ fun KeyText(
                 )
             }
         }
+
         null -> {}
     }
 }

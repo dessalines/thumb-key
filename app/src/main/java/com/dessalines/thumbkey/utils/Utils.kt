@@ -125,23 +125,29 @@ fun slideCursorDistance(
             }
         }
 
-        CursorAccelerationMode.QUADRATIC.ordinal -> return acceleratingCursorDistanceQuadratic(
-            offsetX,
-            timeOfLastAccelerationInput,
-            acceleration,
-        )
+        CursorAccelerationMode.QUADRATIC.ordinal -> {
+            return acceleratingCursorDistanceQuadratic(
+                offsetX,
+                timeOfLastAccelerationInput,
+                acceleration,
+            )
+        }
 
-        CursorAccelerationMode.LINEAR.ordinal -> return acceleratingCursorDistanceLinear(
-            offsetX,
-            timeOfLastAccelerationInput,
-            acceleration,
-        )
+        CursorAccelerationMode.LINEAR.ordinal -> {
+            return acceleratingCursorDistanceLinear(
+                offsetX,
+                timeOfLastAccelerationInput,
+                acceleration,
+            )
+        }
 
-        CursorAccelerationMode.THRESHOLD.ordinal -> return acceleratingCursorDistanceThreshold(
-            offsetX,
-            timeOfLastAccelerationInput,
-            acceleration,
-        )
+        CursorAccelerationMode.THRESHOLD.ordinal -> {
+            return acceleratingCursorDistanceThreshold(
+                offsetX,
+                timeOfLastAccelerationInput,
+                acceleration,
+            )
+        }
 
         else -> {
             // Default to this if there is no match.
@@ -439,165 +445,308 @@ fun performKeyAction(
 
             val textNew =
                 when (text) {
-                    "\"" ->
+                    "\"" -> {
                         when (textBefore) {
                             "a" -> "ä"
+
                             "A" -> "Ä"
+
                             "e" -> "ë"
+
                             "E" -> "Ë"
+
                             "h" -> "ḧ"
+
                             "H" -> "Ḧ"
+
                             "i" -> "ï"
+
                             "I" -> "Ï"
+
                             "o" -> "ö"
+
                             "O" -> "Ö"
+
                             "t" -> "ẗ"
+
                             "u" -> "ü"
+
                             "U" -> "Ü"
+
                             "w" -> "ẅ"
+
                             "W" -> "Ẅ"
+
                             "x" -> "ẍ"
+
                             "X" -> "Ẍ"
+
                             "y" -> "ÿ"
+
                             "Y" -> "Ÿ"
+
                             " " -> "\""
+
                             "'" -> "\""
+
                             // Greek
                             "υ" -> "ϋ"
+
                             "ύ" -> "ΰ"
+
                             "Υ" -> "Ϋ"
+
                             "ι" -> "ϊ"
+
                             "ί" -> "ΐ"
+
                             "Ι" -> "Ϊ"
+
                             else -> textBefore
                         }
+                    }
 
-                    "'" ->
+                    "'" -> {
                         when (textBefore) {
                             "a" -> "á"
+
                             "A" -> "Á"
+
                             "â" -> "ấ"
+
                             "Â" -> "Ấ"
+
                             "ă" -> "ắ"
+
                             "Ă" -> "Ắ"
+
                             "c" -> "ć"
+
                             "C" -> "Ć"
+
                             "e" -> "é"
+
                             "E" -> "É"
+
                             "ê" -> "ế"
+
                             "Ê" -> "Ế"
+
                             "g" -> "ǵ"
+
                             "G" -> "Ǵ"
+
                             "i" -> "í"
+
                             "I" -> "Í"
+
                             "j" -> "j́"
+
                             "J" -> "J́"
+
                             "k" -> "ḱ"
+
                             "K" -> "Ḱ"
+
                             "l" -> "ĺ"
+
                             "L" -> "Ĺ"
+
                             "m" -> "ḿ"
+
                             "M" -> "Ḿ"
+
                             "n" -> "ń"
+
                             "N" -> "Ń"
+
                             "o" -> "ó"
+
                             "O" -> "Ó"
+
                             "ô" -> "ố"
+
                             "Ô" -> "Ố"
+
                             "ơ" -> "ớ"
+
                             "Ơ" -> "Ớ"
+
                             "p" -> "ṕ"
+
                             "P" -> "Ṕ"
+
                             "r" -> "ŕ"
+
                             "R" -> "Ŕ"
+
                             "s" -> "ś"
+
                             "S" -> "Ś"
+
                             "u" -> "ú"
+
                             "U" -> "Ú"
+
                             "ư" -> "ứ"
+
                             "Ư" -> "Ứ"
+
                             "w" -> "ẃ"
+
                             "W" -> "Ẃ"
+
                             "y" -> "ý"
+
                             "Y" -> "Ý"
+
                             "z" -> "ź"
+
                             "Z" -> "Ź"
+
                             "'" -> "”"
+
                             " " -> "'"
+
                             "\"" -> "'"
+
                             // Greek
                             "α" -> "ά"
+
                             "Α" -> "Ά"
+
                             "ε" -> "έ"
+
                             "Ε" -> "Έ"
+
                             "η" -> "ή"
+
                             "Η" -> "Ή"
+
                             "ι" -> "ί"
+
                             "ϊ" -> "ΐ"
+
                             "Ι" -> "Ί"
+
                             "ο" -> "ό"
+
                             "Ο" -> "Ό"
+
                             "υ" -> "ύ"
+
                             "ϋ" -> "ΰ"
+
                             "ω" -> "ώ"
+
                             "Ω" -> "Ώ"
+
                             else -> textBefore
                         }
+                    }
 
-                    "`" ->
+                    "`" -> {
                         when (textBefore) {
                             "a" -> "à"
+
                             "A" -> "À"
+
                             "â" -> "ầ"
+
                             "Â" -> "Ầ"
+
                             "ă" -> "ằ"
+
                             "Ă" -> "Ằ"
+
                             "e" -> "è"
+
                             "E" -> "È"
+
                             "ê" -> "ề"
+
                             "Ê" -> "Ề"
+
                             "i" -> "ì"
+
                             "I" -> "Ì"
+
                             "n" -> "ǹ"
+
                             "N" -> "Ǹ"
+
                             "o" -> "ò"
+
                             "O" -> "Ò"
+
                             "ô" -> "ồ"
+
                             "Ô" -> "Ồ"
+
                             "ơ" -> "ờ"
+
                             "Ờ" -> "Ờ"
+
                             "u" -> "ù"
+
                             "U" -> "Ù"
+
                             "ư" -> "ừ"
+
                             "Ư" -> "Ừ"
+
                             "ü" -> "ǜ"
+
                             "Ü" -> "Ǜ"
+
                             "w" -> "ẁ"
+
                             "W" -> "Ẁ"
+
                             "y" -> "ỳ"
+
                             "Y" -> "Ỳ"
+
                             "`" -> " “"
+
                             " " -> "`"
+
                             // Greek
                             "α" -> "ά"
+
                             "Α" -> "Ά"
+
                             "ε" -> "έ"
+
                             "Ε" -> "Έ"
+
                             "η" -> "ή"
+
                             "Η" -> "Ή"
+
                             "ι" -> "ί"
+
                             "ϊ" -> "ΐ"
+
                             "Ι" -> "Ί"
+
                             "ο" -> "ό"
+
                             "Ο" -> "Ό"
+
                             "υ" -> "ύ"
+
                             "ϋ" -> "ΰ"
+
                             "ω" -> "ώ"
+
                             "Ω" -> "Ώ"
+
                             else -> textBefore
                         }
+                    }
 
-                    "^" ->
+                    "^" -> {
                         when (textBefore) {
                             "a" -> "â"
                             "A" -> "Â"
@@ -628,8 +777,9 @@ fun performKeyAction(
                             " " -> "^"
                             else -> textBefore
                         }
+                    }
 
-                    "~" ->
+                    "~" -> {
                         when (textBefore) {
                             "a" -> "ã"
                             "A" -> "Ã"
@@ -664,8 +814,9 @@ fun performKeyAction(
                             " " -> "~"
                             else -> textBefore
                         }
+                    }
 
-                    "°" ->
+                    "°" -> {
                         when (textBefore) {
                             "a" -> "å"
                             "A" -> "Å"
@@ -676,8 +827,9 @@ fun performKeyAction(
                             " " -> "°"
                             else -> textBefore
                         }
+                    }
 
-                    "˘" ->
+                    "˘" -> {
                         when (textBefore) {
                             "a" -> "ă"
                             "A" -> "Ă"
@@ -694,8 +846,9 @@ fun performKeyAction(
                             " " -> "˘"
                             else -> textBefore
                         }
+                    }
 
-                    "!" ->
+                    "!" -> {
                         when (textBefore) {
                             "a" -> "æ"
                             "A" -> "Æ"
@@ -724,8 +877,9 @@ fun performKeyAction(
                             " " -> "!"
                             else -> textBefore
                         }
+                    }
 
-                    "\$" ->
+                    "\$" -> {
                         when (textBefore) {
                             "c" -> "¢"
                             "C" -> "¢"
@@ -742,8 +896,9 @@ fun performKeyAction(
                             " " -> "\$"
                             else -> textBefore
                         }
+                    }
 
-                    "゛" ->
+                    "゛" -> {
                         when (textBefore) {
                             "あ" -> "ぁ"
                             "い" -> "ぃ"
@@ -829,8 +984,9 @@ fun performKeyAction(
                             "ヽ" -> "ヾ"
                             else -> textBefore
                         }
+                    }
 
-                    "?" ->
+                    "?" -> {
                         when (textBefore) {
                             "a" -> "ả"
                             "A" -> "Ả"
@@ -859,8 +1015,9 @@ fun performKeyAction(
                             " " -> "?"
                             else -> textBefore
                         }
+                    }
 
-                    "*" ->
+                    "*" -> {
                         when (textBefore) {
                             "a" -> "ạ"
                             "A" -> "Ạ"
@@ -889,8 +1046,9 @@ fun performKeyAction(
                             " " -> "*"
                             else -> textBefore
                         }
+                    }
 
-                    "ˇ" ->
+                    "ˇ" -> {
                         when (textBefore) {
                             "c" -> "č"
                             "d" -> "ď"
@@ -913,8 +1071,11 @@ fun performKeyAction(
                             " " -> "ˇ"
                             else -> textBefore
                         }
+                    }
 
-                    else -> throw IllegalStateException("Invalid key modifier")
+                    else -> {
+                        throw IllegalStateException("Invalid key modifier")
+                    }
                 }
 
             if (textNew != textBefore) {
@@ -985,13 +1146,17 @@ fun performKeyAction(
             }
         }
 
-        KeyAction.ToggleCapsLock -> onToggleCapsLock()
+        KeyAction.ToggleCapsLock -> {
+            onToggleCapsLock()
+        }
+
         is KeyAction.ShiftAndCapsLock -> {
             val enable = action.enable
             Log.d(TAG, "Toggling Shifted: $enable")
             onToggleShiftMode(enable)
             onToggleCapsLock()
         }
+
         KeyAction.SelectAll -> {
             // Check here for the action #s:
             // https://developer.android.com/reference/android/R.id
@@ -1058,22 +1223,29 @@ fun performKeyAction(
             )
         }
 
-        is KeyAction.MoveKeyboard.ToPosition -> onChangePosition { action.position }
-        KeyAction.MoveKeyboard.Left ->
+        is KeyAction.MoveKeyboard.ToPosition -> {
+            onChangePosition { action.position }
+        }
+
+        KeyAction.MoveKeyboard.Left -> {
             onChangePosition {
                 when (it) {
                     KeyboardPosition.Right -> KeyboardPosition.Center
                     else -> KeyboardPosition.Left
                 }
             }
-        KeyAction.MoveKeyboard.Right ->
+        }
+
+        KeyAction.MoveKeyboard.Right -> {
             onChangePosition {
                 when (it) {
                     KeyboardPosition.Left -> KeyboardPosition.Center
                     else -> KeyboardPosition.Right
                 }
             }
-        KeyAction.MoveKeyboard.CycleLeft ->
+        }
+
+        KeyAction.MoveKeyboard.CycleLeft -> {
             onChangePosition {
                 when (it) {
                     KeyboardPosition.Right -> KeyboardPosition.Dual
@@ -1082,7 +1254,9 @@ fun performKeyAction(
                     KeyboardPosition.Dual -> KeyboardPosition.Center
                 }
             }
-        KeyAction.MoveKeyboard.CycleRight ->
+        }
+
+        KeyAction.MoveKeyboard.CycleRight -> {
             onChangePosition {
                 when (it) {
                     KeyboardPosition.Left -> KeyboardPosition.Dual
@@ -1091,8 +1265,12 @@ fun performKeyAction(
                     KeyboardPosition.Dual -> KeyboardPosition.Center
                 }
             }
+        }
 
-        KeyAction.SwitchLanguage -> onSwitchLanguage()
+        KeyAction.SwitchLanguage -> {
+            onSwitchLanguage()
+        }
+
         KeyAction.SwitchIME -> {
             val imeManager =
                 ime.getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
