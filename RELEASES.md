@@ -1,3 +1,15 @@
+## What's Changed in 5.0.11
+
+- Use jauderho prettier image. by @dessalines in [#1672](https://github.com/dessalines/thumb-key/pull/1672)
+- Add spacebar bottom left and right swipes for previous and next word. by @dessalines in [#1670](https://github.com/dessalines/thumb-key/pull/1670)
+- Fixing autocapitalize after multi-tap bug. by @dessalines in [#1671](https://github.com/dessalines/thumb-key/pull/1671)
+- Don't bother writing fastlane changelog. by @dessalines in [#1669](https://github.com/dessalines/thumb-key/pull/1669)
+- fix: follow title format for FAThumbKey.kt by @pxeemo in [#1667](https://github.com/dessalines/thumb-key/pull/1667)
+- Fix fastlane changelog by @dessalines in [#1664](https://github.com/dessalines/thumb-key/pull/1664)
+- Update RUHyper.kt by @bjarjfff in [#1646](https://github.com/dessalines/thumb-key/pull/1646)
+
+**Full Changelog**: https://github.com/dessalines/thumb-key/compare/5.0.10...5.0.11
+
 ## What's Changed in 5.0.10
 
 - Fixed kana cycle: tsu -> sokuon -> zu by @DeBestTrap in [#1640](https://github.com/dessalines/thumb-key/pull/1640)
@@ -1851,7 +1863,7 @@
 - MessageEaseENSymbols corrected in [#239](https://github.com/dessalines/thumb-key/pull/239)
 - Modified symbols so that they match messageEase
 - Finishing adding georgian keyboard. by @dessalines
-- Add Georgian keyboard layout by @gvalson in [#240](https://github.com/dessalines/thumb-key/pull/240)
+- Add Georgian keyboard layout in [#240](https://github.com/dessalines/thumb-key/pull/240)
 - Update ThumbKeyFRv2.kt by @breversa
 - Update ThumbKeyFRv2.kt by @breversa
 - Create ThumbKeyFRv2.kt by @breversa
@@ -1860,7 +1872,6 @@
 ## New Contributors
 
 - @breversa made their first contribution
-- @gvalson made their first contribution in [#240](https://github.com/dessalines/thumb-key/pull/240)
 
 **Full Changelog**: https://github.com/dessalines/thumb-key/compare/1.3.0...1.4.0
 
