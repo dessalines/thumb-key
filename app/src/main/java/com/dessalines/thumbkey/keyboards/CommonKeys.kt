@@ -178,6 +178,18 @@ val DELETE_WORD_AFTER_CURSOR_KEYC =
         DeleteWordAfterCursor,
         display = null,
     )
+
+val PREVIOUS_WORD_BEFORE_CURSOR_KEYC =
+    KeyC(
+        PreviousWordBeforeCursor,
+        display = null,
+    )
+val NEXT_WORD_AFTER_CURSOR_KEYC =
+    KeyC(
+        NextWordAfterCursor,
+        display = null,
+    )
+
 val BACKSPACE_KEY_ITEM =
     KeyItemC(
         center = BACKSPACE_KEYC,
@@ -226,10 +238,12 @@ val SPACEBAR_CENTER_KEYC = KeyC(" ")
 val SPACEBAR_KEY_ITEM =
     KeyItemC(
         center = SPACEBAR_CENTER_KEYC,
-        swipeType = FOUR_WAY_CROSS,
+        swipeType = SwipeNWay.EIGHT_WAY,
         slideType = SlideType.MOVE_CURSOR,
         left = SPACEBAR_LEFT_KEYC,
         right = SPACEBAR_RIGHT_KEYC,
+        bottomLeft = PREVIOUS_WORD_BEFORE_CURSOR_KEYC,
+        bottomRight = NEXT_WORD_AFTER_CURSOR_KEYC,
         nextTapActions = SPACEBAR_NEXT_TAP_ACTIONS,
         backgroundColor = SURFACE_VARIANT,
         widthMultiplier = 3,

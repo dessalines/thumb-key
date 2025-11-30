@@ -396,6 +396,18 @@ fun performKeyAction(
             deleteWordAfterCursor(ime)
         }
 
+        is KeyAction.PreviousWordBeforeCursor -> {
+            Log.d(TAG, "Previous word")
+            keyboardSettings.textProcessor?.handleFinishInput(ime)
+            previousWordBeforeCursor(ime)
+        }
+
+        is KeyAction.NextWordAfterCursor -> {
+            Log.d(TAG, "Next word")
+            keyboardSettings.textProcessor?.handleFinishInput(ime)
+            nextWordAfterCursor(ime)
+        }
+
         is KeyAction.ReplaceLastText -> {
             Log.d(TAG, "replacing last word")
             val text = action.text
@@ -1467,6 +1479,29 @@ fun deleteWordAfterCursor(ime: IMEService) {
     val nextWordLength = wordsAfterCursor?.let { pattern.find(it)?.value?.length } ?: 0
 
     ime.currentInputConnection.deleteSurroundingText(0, nextWordLength)
+}
+
+fun previousWordBeforeCursor(ime: IMEService) {
+    val wordsBeforeCursor = ime.currentInputConnection.getTextBeforeCursor(9999, 0)
+
+    val pattern = Regex("(\\w+\\W?|[^\\s\\w]+)?\\s*$")
+    val lastWordLength = wordsBeforeCursor?.let { pattern.find(it)?.value?.length } ?: 0
+
+    val selection = startSelection(ime)
+    selection.left(lastWordLength)
+    ime.currentInputConnection.setSelection(selection.end, selection.end)
+}
+
+fun nextWordAfterCursor(ime: IMEService) {
+    val wordsAfterCursor = ime.currentInputConnection.getTextAfterCursor(9999, 0)
+
+    val pattern = Regex("^\\s?(\\w+\\W?|[^\\s\\w]+|\\s+)")
+    val nextWordLength = wordsAfterCursor?.let { pattern.find(it)?.value?.length } ?: 0
+
+    val selection = startSelection(ime)
+    selection.right(nextWordLength)
+
+    ime.currentInputConnection.setSelection(selection.end, selection.end)
 }
 
 fun buildTapActions(keyItem: KeyItemC): List<KeyAction> {
