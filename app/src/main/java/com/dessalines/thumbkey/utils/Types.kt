@@ -246,6 +246,10 @@ sealed class KeyAction {
 
     data object DeleteWordAfterCursor : KeyAction()
 
+    data object PreviousWordBeforeCursor : KeyAction()
+
+    data object NextWordAfterCursor : KeyAction()
+
     data object GotoSettings : KeyAction()
 
     data object IMECompleteAction : KeyAction()
