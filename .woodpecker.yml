@@ -1,6 +1,6 @@
 steps:
   prettier_markdown_check:
-    image: tmknom/prettier
+    image: jauderho/prettier:3.7.3-alpine
     commands:
       - prettier -c "**/*.md" "**/*.yml"
     when:
