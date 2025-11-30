@@ -406,7 +406,7 @@ fun performKeyAction(
                 text,
                 1,
             )
-            if (autoCapitalize && !keyboardSettings.autoShift) {
+            if (autoCapitalize && keyboardSettings.autoShift) {
                 autoCapitalize(
                     ime = ime,
                     onAutoCapitalize = onAutoCapitalize,
