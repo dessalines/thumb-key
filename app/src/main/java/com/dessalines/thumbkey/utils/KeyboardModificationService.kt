@@ -24,6 +24,7 @@ import com.dessalines.thumbkey.keyboards.SWITCH_IME_KEYC
 import com.dessalines.thumbkey.keyboards.SWITCH_IME_VOICE_KEYC
 import com.dessalines.thumbkey.keyboards.SWITCH_LANGUAGE_KEYC
 import com.dessalines.thumbkey.keyboards.TOGGLE_EMOJI_MODE_TRUE_KEYC
+import com.dessalines.thumbkey.keyboards.TOGGLE_NUMERIC_MODE_FALSE_KEYC
 import com.dessalines.thumbkey.keyboards.TOGGLE_NUMERIC_MODE_TRUE_KEYC
 import com.dessalines.thumbkey.keyboards.UNDO_KEYC
 import com.dessalines.thumbkey.utils.KeyAction.CommitText
@@ -263,6 +264,7 @@ fun checkTextAndKeyActionValidity(
 fun getCommonKeyCFromKeyAction(keyActionSerializable: KeyActionSerializable?): KeyC? =
     when (keyActionSerializable) {
         KeyActionSerializable.ToggleNumericMode -> TOGGLE_NUMERIC_MODE_TRUE_KEYC
+        KeyActionSerializable.ToggleABCMode -> TOGGLE_NUMERIC_MODE_FALSE_KEYC
         KeyActionSerializable.ToggleEmojiMode -> TOGGLE_EMOJI_MODE_TRUE_KEYC
         KeyActionSerializable.Left -> SPACEBAR_LEFT_KEYC
         KeyActionSerializable.Right -> SPACEBAR_RIGHT_KEYC
@@ -445,6 +447,7 @@ data class KeyCSerializable(
 @Keep
 enum class KeyActionSerializable {
     ToggleNumericMode,
+    ToggleABCMode,
     ToggleEmojiMode,
     Left,
     Right,
