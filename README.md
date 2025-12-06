@@ -255,6 +255,7 @@ ENThumbKey:
 This swaps the 'switch language' and 'toggle emoji' actions on the top-right key. Possible values for `keyAction` are:
 
 - `ToggleNumericMode`
+- `ToggleABCMode`
 - `ToggleEmojiMode`
 - `Left`
 - `Right`
