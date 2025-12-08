@@ -32,10 +32,9 @@ import androidx.compose.runtime.mutableFloatStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.platform.LocalContext
+import androidx.compose.ui.platform.LocalResources
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.AnnotatedString
-import androidx.core.content.ContextCompat.getString
 import androidx.navigation.NavController
 import com.dessalines.thumbkey.R
 import com.dessalines.thumbkey.db.AppSettingsViewModel
@@ -103,7 +102,7 @@ fun BehaviorScreen(
 
     val scrollState = rememberScrollState()
 
-    val ctx = LocalContext.current
+    val resources = LocalResources.current
 
     fun updateBehavior() {
         appSettingsViewModel.updateBehavior(
@@ -227,7 +226,7 @@ fun BehaviorScreen(
                         },
                         values = CursorAccelerationMode.entries,
                         valueToText = {
-                            AnnotatedString(getString(ctx, it.resId))
+                            AnnotatedString(resources.getString(it.resId))
                         },
                         title = {
                             Text(stringResource(R.string.slide_cursor_movement_mode))
@@ -346,7 +345,7 @@ fun BehaviorScreen(
                         },
                         values = CircularDragAction.entries,
                         valueToText = {
-                            AnnotatedString(getString(ctx, it.resId))
+                            AnnotatedString(resources.getString(it.resId))
                         },
                         title = {
                             Text(stringResource(R.string.clockwise_drag_action))
@@ -371,7 +370,7 @@ fun BehaviorScreen(
                         },
                         values = CircularDragAction.entries,
                         valueToText = {
-                            AnnotatedString(getString(ctx, it.resId))
+                            AnnotatedString(resources.getString(it.resId))
                         },
                         title = {
                             Text(stringResource(R.string.counterclockwise_drag_action))
