@@ -44,6 +44,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.AnnotatedString
+import androidx.core.content.ContextCompat.getString
 import androidx.navigation.NavController
 import com.dessalines.thumbkey.R
 import com.dessalines.thumbkey.db.AppSettingsViewModel
@@ -192,7 +193,7 @@ fun LookAndFeelScreen(
                         },
                         values = ThemeMode.entries,
                         valueToText = {
-                            AnnotatedString(ctx.getString(it.resId))
+                            AnnotatedString(getString(ctx, it.resId))
                         },
                         title = {
                             Text(stringResource(R.string.theme))
@@ -217,7 +218,7 @@ fun LookAndFeelScreen(
                         },
                         values = ThemeColor.entries,
                         valueToText = {
-                            AnnotatedString(ctx.getString(it.resId))
+                            AnnotatedString(getString(ctx, it.resId))
                         },
                         title = {
                             Text(stringResource(R.string.theme_color))
@@ -242,7 +243,7 @@ fun LookAndFeelScreen(
                         },
                         values = KeyboardPosition.entries,
                         valueToText = {
-                            AnnotatedString(ctx.getString(it.resId))
+                            AnnotatedString(getString(ctx, it.resId))
                         },
                         summary = {
                             Text(stringResource(positionState.resId))
