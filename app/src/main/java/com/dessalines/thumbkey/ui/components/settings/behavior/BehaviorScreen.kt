@@ -35,6 +35,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.AnnotatedString
+import androidx.core.content.ContextCompat.getString
 import androidx.navigation.NavController
 import com.dessalines.thumbkey.R
 import com.dessalines.thumbkey.db.AppSettingsViewModel
@@ -226,7 +227,7 @@ fun BehaviorScreen(
                         },
                         values = CursorAccelerationMode.entries,
                         valueToText = {
-                            AnnotatedString(ctx.getString(it.resId))
+                            AnnotatedString(getString(ctx, it.resId))
                         },
                         title = {
                             Text(stringResource(R.string.slide_cursor_movement_mode))
@@ -345,7 +346,7 @@ fun BehaviorScreen(
                         },
                         values = CircularDragAction.entries,
                         valueToText = {
-                            AnnotatedString(ctx.getString(it.resId))
+                            AnnotatedString(getString(ctx, it.resId))
                         },
                         title = {
                             Text(stringResource(R.string.clockwise_drag_action))
@@ -370,7 +371,7 @@ fun BehaviorScreen(
                         },
                         values = CircularDragAction.entries,
                         valueToText = {
-                            AnnotatedString(ctx.getString(it.resId))
+                            AnnotatedString(getString(ctx, it.resId))
                         },
                         title = {
                             Text(stringResource(R.string.counterclockwise_drag_action))
