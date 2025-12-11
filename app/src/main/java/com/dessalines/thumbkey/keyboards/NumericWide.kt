@@ -25,7 +25,7 @@ val WIDE_NUMERIC_KEYBOARD =
                             display = KeyDisplay.TextDisplay(""),
                             action = CommitText("¹"),
                         ),
-                    bottom = KeyC("_"),
+                    bottomLeft = KeyC("_"),
                     bottomRight = KeyC("|"),
                 ),
                 KeyItemC(
