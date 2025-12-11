@@ -98,6 +98,7 @@ This project is a follow-up to the now unmaintained (and closed-source) [MessagE
 - **Swipe left** or **long press** on the backspace key to delete whole words to the left of the cursor.
 - **Swipe right** on the backspace key to delete whole words to the right of the cursor.
 - **Swipe left** or **right** on the spacebar to move the cursor by 1 character.
+- **Swipe to the bottom left** or **bottom right** on the spacebar to move the cursor by 1 word.
 - **Long press** the return key to insert a line break
 
 ### Emoji Key
