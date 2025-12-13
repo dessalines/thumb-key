@@ -161,53 +161,58 @@ val ABC_KEY_ITEM_ALT = specialActionKeyItem(center = ABC_KEY_ITEM.center)
 val NUMERIC_KEY_ITEM_ALT = specialActionKeyItem(center = NUMERIC_KEY_ITEM.center)
 val EMOJI_KEY_ITEM_ALT = textEditKeyItem(center = EMOJI_KEY_ITEM.center)
 
-val TOGGLE_CAPS_KEYC = KeyC(
-    display = KeyDisplay.IconDisplay(Icons.Outlined.KeyboardCapslock),
-    capsModeDisplay = KeyDisplay.IconDisplay(Icons.Outlined.Copyright),
-    action = ToggleCapsLock,
-    swipeReturnAction = ToggleCurrentWordCapitalization(true),
-    color = MUTED,
-)
+val TOGGLE_CAPS_KEYC =
+    KeyC(
+        display = KeyDisplay.IconDisplay(Icons.Outlined.KeyboardCapslock),
+        capsModeDisplay = KeyDisplay.IconDisplay(Icons.Outlined.Copyright),
+        action = ToggleCapsLock,
+        swipeReturnAction = ToggleCurrentWordCapitalization(true),
+        color = MUTED,
+    )
 
+val TOGGLE_SHIFT_TRUE_KEYC =
+    KeyC(
+        display = KeyDisplay.IconDisplay(Icons.Outlined.ArrowDropUp),
+        action = ToggleShiftMode(true),
+        swipeReturnAction = ToggleCurrentWordCapitalization(true),
+        color = MUTED,
+    )
 
-val TOGGLE_SHIFT_TRUE_KEYC = KeyC(
-    display = KeyDisplay.IconDisplay(Icons.Outlined.ArrowDropUp),
-    action = ToggleShiftMode(true),
-    swipeReturnAction = ToggleCurrentWordCapitalization(true),
-    color = MUTED,
-)
+val TOGGLE_SHIFT_FALSE_KEYC =
+    KeyC(
+        display = KeyDisplay.IconDisplay(Icons.Outlined.ArrowDropDown),
+        action = ToggleShiftMode(false),
+        swipeReturnAction = ToggleCurrentWordCapitalization(false),
+        color = MUTED,
+    )
 
-val TOGGLE_SHIFT_FALSE_KEYC = KeyC(
-    display = KeyDisplay.IconDisplay(Icons.Outlined.ArrowDropDown),
-    action = ToggleShiftMode(false),
-    swipeReturnAction = ToggleCurrentWordCapitalization(false),
-    color = MUTED,
-)
+val TOGGLE_CTRL_TRUE_KEYC =
+    KeyC(
+        display = KeyDisplay.IconDisplay(Icons.Outlined.KeyboardControlKey),
+        action = ToggleCtrlMode(true),
+        color = MUTED,
+    )
 
+val TOGGLE_CTRL_FALSE_KEYC =
+    KeyC(
+        display = KeyDisplay.IconDisplay(Icons.Outlined.KeyboardDoubleArrowDown),
+        action = ToggleCtrlMode(false),
+        color = MUTED,
+    )
 
-val TOGGLE_CTRL_TRUE_KEYC = KeyC(
-    display = KeyDisplay.IconDisplay(Icons.Outlined.KeyboardControlKey),
-    action = ToggleCtrlMode(true),
-    color = MUTED,
-)
+val TOGGLE_ALT_TRUE_KEYC =
+    KeyC(
+        display = KeyDisplay.IconDisplay(Icons.Outlined.KeyboardOptionKey),
+        action = ToggleAltMode(true),
+        color = MUTED,
+    )
 
-val TOGGLE_CTRL_FALSE_KEYC = KeyC(
-    display = KeyDisplay.IconDisplay(Icons.Outlined.KeyboardDoubleArrowDown),
-    action = ToggleCtrlMode(false),
-    color = MUTED,
-)
-
-val TOGGLE_ALT_TRUE_KEYC = KeyC(
-    display = KeyDisplay.IconDisplay(Icons.Outlined.KeyboardOptionKey),
-    action = ToggleAltMode(true),
-    color = MUTED,
-)
-
-val TOGGLE_ALT_FALSE_KEYC = KeyC(
-    display = KeyDisplay.IconDisplay(Icons.Outlined.KeyboardDoubleArrowDown),
-    action = ToggleAltMode(false),
-    color = MUTED,
-)
+val TOGGLE_ALT_FALSE_KEYC =
+    KeyC(
+        display = KeyDisplay.IconDisplay(Icons.Outlined.KeyboardDoubleArrowDown),
+        action = ToggleAltMode(false),
+        color = MUTED,
+    )
 
 val BACKSPACE_KEYC =
     KeyC(
@@ -462,7 +467,7 @@ val BACKSPACE_TYPESPLIT_SHIFTED_KEY_ITEM =
         left = DELETE_WORD_BEFORE_CURSOR_KEYC,
         right = DELETE_WORD_AFTER_CURSOR_KEYC,
         top = TOGGLE_CAPS_KEYC.copy(color = SECONDARY),
-        bottom = TOGGLE_SHIFT_FALSE_KEYC.copy(color = SECONDARY)
+        bottom = TOGGLE_SHIFT_FALSE_KEYC.copy(color = SECONDARY),
     )
 
 val SPACEBAR_FRENCH_NEXT_TAP_ACTIONS =
