@@ -393,7 +393,9 @@ enum class KeyboardLayout(
     ENThumbKeyWordsSymbolsDual(KB_EN_THUMBKEY_WORDS_SYMBOLS_DUAL), // english thumb-key words symbols dual
     RUArti(KB_RU_ARTI), // русский плюс много
     DAThumbKeyMultiLingual(KB_DA_THUMBKEY_MULTILINGUAL), // dansk thumb-key
-    ENSymbolsNumbersArrowsTwoHandsCompact(KB_EN_SYMBOLS_NUMBERS_ARROWS_TWO_HANDS_COMPACT), // english symbols-numbers-arrows two-hands compact
+    ENSymbolsNumbersArrowsTwoHandsCompact(
+        KB_EN_SYMBOLS_NUMBERS_ARROWS_TWO_HANDS_COMPACT,
+    ), // english symbols-numbers-arrows two-hands compact
     ENLVThumbKey(KB_ENLV_THUMBKEY), // latviešu valoda english thumb-key
     KRTypeSplit(KB_KR_TYPESPLIT), // 한국어 type-split
     KRThumbKey(KB_KR_THUMBKEY), // 한국어 thumb-key
