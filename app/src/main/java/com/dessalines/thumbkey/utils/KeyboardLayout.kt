@@ -188,6 +188,8 @@ import com.dessalines.thumbkey.keyboards.KB_SR_THUMBKEY
 import com.dessalines.thumbkey.keyboards.KB_SV_MESSAGEASE
 import com.dessalines.thumbkey.keyboards.KB_SV_THUMBKEY
 import com.dessalines.thumbkey.keyboards.KB_T9
+import com.dessalines.thumbkey.keyboards.KB_TH_THUMBKEY
+import com.dessalines.thumbkey.keyboards.KB_TH_THUMBKEY_KHAM_CHUEAM
 import com.dessalines.thumbkey.keyboards.KB_TOK_SITELEN_THUMBKEY_EMOJI
 import com.dessalines.thumbkey.keyboards.KB_TOK_THUMBKEY
 import com.dessalines.thumbkey.keyboards.KB_TR_ARTI
@@ -402,4 +404,6 @@ enum class KeyboardLayout(
     MYThumbKey(KB_MY_THUMBKEY),
     JAKanaStandard(KB_JA_KANA_STANDARD),
     KNThumbKey(KB_KN_THUMBKEY),
+    THThumbKey(KB_TH_THUMBKEY),
+    THThumbKeyKhamChueam(KB_TH_THUMBKEY_KHAM_CHUEAM),
 }
