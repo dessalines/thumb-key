@@ -17,6 +17,7 @@ import com.dessalines.thumbkey.ui.theme.ThumbkeyTheme
 import com.dessalines.thumbkey.utils.KeyboardPosition
 import com.dessalines.thumbkey.utils.keyboardLayoutsSetFromDbIndexString
 import com.dessalines.thumbkey.utils.toBool
+import com.dessalines.thumbkey.utils.toInt
 import kotlinx.coroutines.launch
 
 @SuppressLint("ViewConstructor")
@@ -79,6 +80,16 @@ class ComposeKeyboardView(
                             state?.let { s ->
                                 val nextPosition = f(KeyboardPosition.entries[s.position]).ordinal
                                 val s2 = s.copy(position = nextPosition)
+                                settingsRepo.update(s2)
+                            }
+                        }
+                    },
+                    onToggleHideLetters = {
+                        ctx.lifecycleScope.launch {
+                            val state = settingsState.value
+                            state?.let { s ->
+                                val newHideLetters = (!s.hideLetters.toBool()).toInt()
+                                val s2 = s.copy(hideLetters = newHideLetters)
                                 settingsRepo.update(s2)
                             }
                         }
