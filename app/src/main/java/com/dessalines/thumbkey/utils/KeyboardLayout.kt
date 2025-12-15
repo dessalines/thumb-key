@@ -159,6 +159,7 @@ import com.dessalines.thumbkey.keyboards.KB_MY_THUMBKEY
 import com.dessalines.thumbkey.keyboards.KB_NL_THUMBKEY
 import com.dessalines.thumbkey.keyboards.KB_NL_TYPESPLIT
 import com.dessalines.thumbkey.keyboards.KB_NO_THUMBKEY
+import com.dessalines.thumbkey.keyboards.KB_NO_THUMBKEY_DATADRIVEN
 import com.dessalines.thumbkey.keyboards.KB_PL_MESSAGEASE
 import com.dessalines.thumbkey.keyboards.KB_PL_THUMBKEY
 import com.dessalines.thumbkey.keyboards.KB_PL_TYPESPLIT_SYMBOLS_V1
@@ -408,4 +409,5 @@ enum class KeyboardLayout(
     KNThumbKey(KB_KN_THUMBKEY), // ಕನ್ನಡ thumb-key
     THThumbKey(KB_TH_THUMBKEY), // ภาษาไทย thai thumb-key
     THThumbKeyKhamChueam(KB_TH_THUMBKEY_KHAM_CHUEAM), // ภาษาไทย thai thumb-key คำเชื่อม",
+    NOThumbKeyDataDriven(KB_NO_THUMBKEY_DATADRIVEN), // norsk thumb-key datadrevet
 }
