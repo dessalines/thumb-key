@@ -148,6 +148,7 @@ import com.dessalines.thumbkey.keyboards.KB_JA_KANA_THUMBKEY
 import com.dessalines.thumbkey.keyboards.KB_JA_KATAKANA_THUMBKEY
 import com.dessalines.thumbkey.keyboards.KB_JA_KATAKANA_TYPESPLIT
 import com.dessalines.thumbkey.keyboards.KB_KA_THUMBKEY
+import com.dessalines.thumbkey.keyboards.KB_KN_THUMBKEY
 import com.dessalines.thumbkey.keyboards.KB_KR_THUMBKEY
 import com.dessalines.thumbkey.keyboards.KB_KR_TYPESPLIT
 import com.dessalines.thumbkey.keyboards.KB_KZ_THUMBKEY
@@ -187,6 +188,8 @@ import com.dessalines.thumbkey.keyboards.KB_SR_THUMBKEY
 import com.dessalines.thumbkey.keyboards.KB_SV_MESSAGEASE
 import com.dessalines.thumbkey.keyboards.KB_SV_THUMBKEY
 import com.dessalines.thumbkey.keyboards.KB_T9
+import com.dessalines.thumbkey.keyboards.KB_TH_THUMBKEY
+import com.dessalines.thumbkey.keyboards.KB_TH_THUMBKEY_KHAM_CHUEAM
 import com.dessalines.thumbkey.keyboards.KB_TOK_SITELEN_THUMBKEY_EMOJI
 import com.dessalines.thumbkey.keyboards.KB_TOK_THUMBKEY
 import com.dessalines.thumbkey.keyboards.KB_TR_ARTI
@@ -402,4 +405,7 @@ enum class KeyboardLayout(
     RUHyper(KB_RU_HYPER), // русский hyper
     MYThumbKey(KB_MY_THUMBKEY), // myanmar thumb-key
     JAKanaStandard(KB_JA_KANA_STANDARD), // japanese standard kana keyboard
+    KNThumbKey(KB_KN_THUMBKEY), // ಕನ್ನಡ thumb-key
+    THThumbKey(KB_TH_THUMBKEY), // ภาษาไทย thai thumb-key
+    THThumbKeyKhamChueam(KB_TH_THUMBKEY_KHAM_CHUEAM), // ภาษาไทย thai thumb-key คำเชื่อม",
 }

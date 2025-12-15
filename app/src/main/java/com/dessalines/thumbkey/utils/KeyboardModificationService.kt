@@ -9,12 +9,18 @@ import arrow.optics.*
 import com.charleskorn.kaml.AnchorsAndAliases
 import com.charleskorn.kaml.Yaml
 import com.charleskorn.kaml.YamlConfiguration
+import com.dessalines.thumbkey.keyboards.BACKSPACE_KEYC
 import com.dessalines.thumbkey.keyboards.COPY_KEYC
 import com.dessalines.thumbkey.keyboards.CUT_KEYC
+import com.dessalines.thumbkey.keyboards.DELETE_WORD_AFTER_CURSOR_KEYC
+import com.dessalines.thumbkey.keyboards.DELETE_WORD_BEFORE_CURSOR_KEYC
 import com.dessalines.thumbkey.keyboards.GOTO_SETTINGS_KEYC
 import com.dessalines.thumbkey.keyboards.HIDE_KEYBOARD_KEYC
+import com.dessalines.thumbkey.keyboards.NEXT_WORD_AFTER_CURSOR_KEYC
 import com.dessalines.thumbkey.keyboards.PASTE_KEYC
+import com.dessalines.thumbkey.keyboards.PREVIOUS_WORD_BEFORE_CURSOR_KEYC
 import com.dessalines.thumbkey.keyboards.REDO_KEYC
+import com.dessalines.thumbkey.keyboards.RETURN_KEYC
 import com.dessalines.thumbkey.keyboards.SELECT_ALL_KEYC
 import com.dessalines.thumbkey.keyboards.SPACEBAR_BOTTOM_KEYC
 import com.dessalines.thumbkey.keyboards.SPACEBAR_LEFT_KEYC
@@ -23,9 +29,16 @@ import com.dessalines.thumbkey.keyboards.SPACEBAR_TOP_KEYC
 import com.dessalines.thumbkey.keyboards.SWITCH_IME_KEYC
 import com.dessalines.thumbkey.keyboards.SWITCH_IME_VOICE_KEYC
 import com.dessalines.thumbkey.keyboards.SWITCH_LANGUAGE_KEYC
+import com.dessalines.thumbkey.keyboards.TOGGLE_ALT_FALSE_KEYC
+import com.dessalines.thumbkey.keyboards.TOGGLE_ALT_TRUE_KEYC
+import com.dessalines.thumbkey.keyboards.TOGGLE_CAPS_KEYC
+import com.dessalines.thumbkey.keyboards.TOGGLE_CTRL_FALSE_KEYC
+import com.dessalines.thumbkey.keyboards.TOGGLE_CTRL_TRUE_KEYC
 import com.dessalines.thumbkey.keyboards.TOGGLE_EMOJI_MODE_TRUE_KEYC
 import com.dessalines.thumbkey.keyboards.TOGGLE_NUMERIC_MODE_FALSE_KEYC
 import com.dessalines.thumbkey.keyboards.TOGGLE_NUMERIC_MODE_TRUE_KEYC
+import com.dessalines.thumbkey.keyboards.TOGGLE_SHIFT_FALSE_KEYC
+import com.dessalines.thumbkey.keyboards.TOGGLE_SHIFT_TRUE_KEYC
 import com.dessalines.thumbkey.keyboards.UNDO_KEYC
 import com.dessalines.thumbkey.utils.KeyAction.CommitText
 import com.dessalines.thumbkey.utils.KeyAction.Noop
@@ -266,10 +279,20 @@ fun getCommonKeyCFromKeyAction(keyActionSerializable: KeyActionSerializable?): K
         KeyActionSerializable.ToggleNumericMode -> TOGGLE_NUMERIC_MODE_TRUE_KEYC
         KeyActionSerializable.ToggleABCMode -> TOGGLE_NUMERIC_MODE_FALSE_KEYC
         KeyActionSerializable.ToggleEmojiMode -> TOGGLE_EMOJI_MODE_TRUE_KEYC
+        KeyActionSerializable.ToggleCapsLock -> TOGGLE_CAPS_KEYC
+        KeyActionSerializable.ToggleShiftModeTrue -> TOGGLE_SHIFT_TRUE_KEYC
+        KeyActionSerializable.ToggleShiftModeFalse -> TOGGLE_SHIFT_FALSE_KEYC
+        KeyActionSerializable.ToggleCtrlModeTrue -> TOGGLE_ALT_TRUE_KEYC
+        KeyActionSerializable.ToggleCtrlModeFalse -> TOGGLE_ALT_FALSE_KEYC
+        KeyActionSerializable.ToggleAltModeTrue -> TOGGLE_CTRL_TRUE_KEYC
+        KeyActionSerializable.ToggleAltModeFalse -> TOGGLE_CTRL_FALSE_KEYC
         KeyActionSerializable.Left -> SPACEBAR_LEFT_KEYC
         KeyActionSerializable.Right -> SPACEBAR_RIGHT_KEYC
         KeyActionSerializable.Top -> SPACEBAR_TOP_KEYC
         KeyActionSerializable.Bottom -> SPACEBAR_BOTTOM_KEYC
+        KeyActionSerializable.IMEComplete -> RETURN_KEYC
+        KeyActionSerializable.PreviousWordBeforeCursor -> PREVIOUS_WORD_BEFORE_CURSOR_KEYC
+        KeyActionSerializable.NextWordAfterCursor -> NEXT_WORD_AFTER_CURSOR_KEYC
         KeyActionSerializable.GotoSettings -> GOTO_SETTINGS_KEYC
         KeyActionSerializable.SelectAll -> SELECT_ALL_KEYC
         KeyActionSerializable.Cut -> CUT_KEYC
@@ -277,6 +300,9 @@ fun getCommonKeyCFromKeyAction(keyActionSerializable: KeyActionSerializable?): K
         KeyActionSerializable.Paste -> PASTE_KEYC
         KeyActionSerializable.Undo -> UNDO_KEYC
         KeyActionSerializable.Redo -> REDO_KEYC
+        KeyActionSerializable.Delete -> BACKSPACE_KEYC
+        KeyActionSerializable.DeleteWordBeforeCursor -> DELETE_WORD_BEFORE_CURSOR_KEYC
+        KeyActionSerializable.DeleteWordAfterCursor -> DELETE_WORD_AFTER_CURSOR_KEYC
         KeyActionSerializable.SwitchLanguage -> SWITCH_LANGUAGE_KEYC
         KeyActionSerializable.SwitchIME -> SWITCH_IME_KEYC
         KeyActionSerializable.SwitchIMEVoice -> SWITCH_IME_VOICE_KEYC
@@ -449,6 +475,13 @@ enum class KeyActionSerializable {
     ToggleNumericMode,
     ToggleABCMode,
     ToggleEmojiMode,
+    ToggleCapsLock,
+    ToggleShiftModeFalse,
+    ToggleShiftModeTrue,
+    ToggleCtrlModeTrue,
+    ToggleCtrlModeFalse,
+    ToggleAltModeTrue,
+    ToggleAltModeFalse,
     Left,
     Right,
     Top,
@@ -464,4 +497,10 @@ enum class KeyActionSerializable {
     SwitchIME,
     SwitchIMEVoice,
     HideKeyboard,
+    IMEComplete,
+    PreviousWordBeforeCursor,
+    NextWordAfterCursor,
+    Delete,
+    DeleteWordBeforeCursor,
+    DeleteWordAfterCursor,
 }
