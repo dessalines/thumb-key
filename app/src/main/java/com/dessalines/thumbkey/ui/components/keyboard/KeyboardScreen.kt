@@ -87,6 +87,7 @@ fun KeyboardScreen(
     settings: AppSettings?,
     onSwitchLanguage: () -> Unit,
     onChangePosition: ((old: KeyboardPosition) -> KeyboardPosition) -> Unit,
+    onToggleHideLetters: () -> Unit,
 ) {
     val ctx = LocalContext.current as IMEService
 
@@ -356,6 +357,7 @@ fun KeyboardScreen(
                                 onToggleCapsLock = {
                                     capsLock = !capsLock
                                 },
+                                onToggleHideLetters = onToggleHideLetters,
                                 onAutoCapitalize = { enable ->
                                     if (mode !== KeyboardMode.NUMERIC) {
                                         if (enable) {
@@ -526,6 +528,7 @@ fun KeyboardScreen(
                                         onToggleCapsLock = {
                                             capsLock = !capsLock
                                         },
+                                        onToggleHideLetters = onToggleHideLetters,
                                         onKeyEvent = {
                                             when (mode) {
                                                 KeyboardMode.CTRLED, KeyboardMode.ALTED -> {

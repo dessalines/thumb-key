@@ -104,6 +104,7 @@ fun specialActionKeyItem(center: KeyC): KeyItemC =
         swipeType = EIGHT_WAY,
         center = center,
         top = GOTO_SETTINGS_KEYC,
+        topLeft = TOGGLE_HIDE_LETTERS_KEYC,
         bottom = SWITCH_IME_KEYC,
         bottomLeft = SWITCH_IME_VOICE_KEYC,
         left = SWITCH_LANGUAGE_KEYC,
@@ -140,6 +141,14 @@ val TOGGLE_EMOJI_MODE_TRUE_KEYC =
         size = LARGE,
         color = SECONDARY,
     )
+
+val TOGGLE_HIDE_LETTERS_KEYC =
+    KeyC(
+        display = KeyDisplay.IconDisplay(Icons.Outlined.HideImage),
+        action = ToggleHideLetters,
+        color = MUTED,
+    )
+
 val EMOJI_KEY_ITEM =
     specialActionKeyItem(
         center = TOGGLE_EMOJI_MODE_TRUE_KEYC,
