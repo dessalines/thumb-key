@@ -1,3 +1,22 @@
+## What's Changed in 5.0.12
+
+- Adding a fast toggle for hiding letters. by @dessalines in [#1706](https://github.com/dessalines/thumb-key/pull/1706)
+- Adding norsk data driven layout. by @dessalines in [#1705](https://github.com/dessalines/thumb-key/pull/1705)
+- add keyboard name comments by @Toldry in [#1693](https://github.com/dessalines/thumb-key/pull/1693)
+- Add Thai language by @sarchar in [#1700](https://github.com/dessalines/thumb-key/pull/1700)
+- add more key actions by @Toldry in [#1692](https://github.com/dessalines/thumb-key/pull/1692)
+- Add kannada language. by @dessalines in [#1691](https://github.com/dessalines/thumb-key/pull/1691)
+- fix numeric wide underscore by @Toldry in [#1690](https://github.com/dessalines/thumb-key/pull/1690)
+- Add instructions on spacebar word swiping to readme. by @dessalines in [#1689](https://github.com/dessalines/thumb-key/pull/1689)
+- Using resources.getString by @dessalines in [#1688](https://github.com/dessalines/thumb-key/pull/1688)
+- add ToggleABCMode key action by @Toldry in [#1677](https://github.com/dessalines/thumb-key/pull/1677)
+
+## New Contributors
+
+- @sarchar made their first contribution in [#1700](https://github.com/dessalines/thumb-key/pull/1700)
+
+**Full Changelog**: https://github.com/dessalines/thumb-key/compare/5.0.11...5.0.12
+
 ## What's Changed in 5.0.11
 
 - Use jauderho prettier image. by @dessalines in [#1672](https://github.com/dessalines/thumb-key/pull/1672)
@@ -451,12 +470,12 @@
 ## What's Changed in 4.0.9
 
 - Fix keyboard overlapping navigation bar on Android 15 by @juschmitt in [#1190](https://github.com/dessalines/thumb-key/pull/1190)
-- Fix Layout deutsch english + Æ (#1064) by @jackie-jackie in [#1189](https://github.com/dessalines/thumb-key/pull/1189)
+- Fix Layout deutsch english + Æ (#1064) by @havky in [#1189](https://github.com/dessalines/thumb-key/pull/1189)
 
 ## New Contributors
 
 - @juschmitt made their first contribution in [#1190](https://github.com/dessalines/thumb-key/pull/1190)
-- @jackie-jackie made their first contribution in [#1189](https://github.com/dessalines/thumb-key/pull/1189)
+- @havky made their first contribution in [#1189](https://github.com/dessalines/thumb-key/pull/1189)
 
 **Full Changelog**: https://github.com/dessalines/thumb-key/compare/4.0.8...4.0.9
 
