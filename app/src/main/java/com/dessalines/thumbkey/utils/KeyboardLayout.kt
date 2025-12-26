@@ -149,6 +149,7 @@ import com.dessalines.thumbkey.keyboards.KB_JA_KATAKANA_THUMBKEY
 import com.dessalines.thumbkey.keyboards.KB_JA_KATAKANA_TYPESPLIT
 import com.dessalines.thumbkey.keyboards.KB_KA_THUMBKEY
 import com.dessalines.thumbkey.keyboards.KB_KN_THUMBKEY
+import com.dessalines.thumbkey.keyboards.KB_KR_ONETHUMB
 import com.dessalines.thumbkey.keyboards.KB_KR_THUMBKEY
 import com.dessalines.thumbkey.keyboards.KB_KR_TYPESPLIT
 import com.dessalines.thumbkey.keyboards.KB_KZ_THUMBKEY
@@ -410,4 +411,5 @@ enum class KeyboardLayout(
     THThumbKey(KB_TH_THUMBKEY), // ภาษาไทย thai thumb-key
     THThumbKeyKhamChueam(KB_TH_THUMBKEY_KHAM_CHUEAM), // ภาษาไทย thai thumb-key คำเชื่อม",
     NOThumbKeyDataDriven(KB_NO_THUMBKEY_DATADRIVEN), // norsk thumb-key datadrevet
+    KROneThumb(KB_KR_ONETHUMB), // 한국어 one-thumb
 }
