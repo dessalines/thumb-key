@@ -46,7 +46,7 @@ val KB_DE_NORDIC_MESSAGEASE_MAIN =
             listOf(
                 KeyItemC(
                     center = KeyC("h", size = LARGE),
-                    top = KeyC("ü"),
+                    top = KeyC("æ"),
                     topLeft = KeyC("{", color = MUTED),
                     left = KeyC("(", color = MUTED),
                     bottomLeft = KeyC("[", color = MUTED),
@@ -97,7 +97,6 @@ val KB_DE_NORDIC_MESSAGEASE_MAIN =
                     right = KeyC("*", color = MUTED),
                     topRight = KeyC("y"),
                     top = KeyC("ø"),
-                    bottom = KeyC("ß"),
                     bottomRight =
                         KeyC(
                             display = KeyDisplay.IconDisplay(Icons.AutoMirrored.Outlined.KeyboardTab),
@@ -109,7 +108,6 @@ val KB_DE_NORDIC_MESSAGEASE_MAIN =
                     center = KeyC("e", size = LARGE),
                     top = KeyC("w"),
                     topLeft = KeyC("\"", color = MUTED),
-                    left = KeyC("æ"),
                     bottomLeft = KeyC(",", color = SECONDARY),
                     bottom = KeyC(".", color = SECONDARY),
                     bottomRight = KeyC(":", color = SECONDARY),
@@ -169,7 +167,7 @@ val KB_DE_NORDIC_MESSAGEASE_SHIFTED =
             listOf(
                 KeyItemC(
                     center = KeyC("H", size = LARGE),
-                    top = KeyC("Ü"),
+                    top = KeyC("Æ"),
                     topLeft = KeyC("{", color = MUTED),
                     left = KeyC("(", color = MUTED),
                     bottomLeft = KeyC("[", color = MUTED),
@@ -223,7 +221,6 @@ val KB_DE_NORDIC_MESSAGEASE_SHIFTED =
                     right = KeyC("*", color = MUTED),
                     topRight = KeyC("Y"),
                     top = KeyC("Ø"),
-                    bottom = KeyC("ẞ"),
                     bottomRight =
                         KeyC(
                             display = KeyDisplay.IconDisplay(Icons.AutoMirrored.Outlined.KeyboardTab),
@@ -235,7 +232,6 @@ val KB_DE_NORDIC_MESSAGEASE_SHIFTED =
                     center = KeyC("E", size = LARGE),
                     top = KeyC("W"),
                     topLeft = KeyC("\"", color = MUTED),
-                    left = KeyC("Æ"),
                     bottomLeft = KeyC(",", color = SECONDARY),
                     bottom = KeyC(".", color = SECONDARY),
                     bottomRight = KeyC(":", color = SECONDARY),
