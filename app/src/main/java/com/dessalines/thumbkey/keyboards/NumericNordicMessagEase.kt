@@ -10,6 +10,11 @@ import com.dessalines.thumbkey.utils.FontSizeVariant.*
 import com.dessalines.thumbkey.utils.KeyAction.*
 import com.dessalines.thumbkey.utils.SwipeNWay.*
 
+/**
+ * This is the numeric portion of the layout known as "German + ÅÆØ" in
+ * MessagEase and is intended to preserve compatibility with it. Do not
+ * make changes that alter the placements!
+ */
 val KB_NORDIC_MESSAGEASE_NUMERIC =
     KeyboardC(
         listOf(
