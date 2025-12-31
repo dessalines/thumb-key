@@ -413,5 +413,5 @@ enum class KeyboardLayout(
     THThumbKeyKhamChueam(KB_TH_THUMBKEY_KHAM_CHUEAM), // ภาษาไทย thai thumb-key คำเชื่อม",
     NOThumbKeyDataDriven(KB_NO_THUMBKEY_DATADRIVEN), // norsk thumb-key datadrevet
     KROneThumb(KB_KR_ONETHUMB), // 한국어 one-thumb
-    ScandinavianMessagEase(KB_SCANDINAVIAN_MESSAGEASE), // aka. "German + ÅÆØ" in MessagEase
+    ScandinavianMessagEase(KB_SCANDINAVIAN_MESSAGEASE), // scandinavian messagease
 }
