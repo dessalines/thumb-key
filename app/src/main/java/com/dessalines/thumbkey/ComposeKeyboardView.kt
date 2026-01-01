@@ -42,13 +42,13 @@ class ComposeKeyboardView(
             settings = settings,
         ) {
             val colorScheme = MaterialTheme.colorScheme
-            val darkTheme = when(ThemeMode.entries[settings?.theme ?: 0]) {
-                ThemeMode.System -> isSystemInDarkTheme()
-                ThemeMode.Light -> false
-                ThemeMode.Dark -> true
-            }
+            val darkTheme =
+                when (ThemeMode.entries[settings?.theme ?: 0]) {
+                    ThemeMode.System -> isSystemInDarkTheme()
+                    ThemeMode.Light -> false
+                    ThemeMode.Dark -> true
+                }
             CompositionLocalProvider(LocalLayoutDirection provides LayoutDirection.Ltr) {
-
                 KeyboardScreen(
                     settings = settings,
                     onSwitchLanguage = {
@@ -110,13 +110,15 @@ class ComposeKeyboardView(
                     },
                 )
                 SideEffect {
-                    ctx.window?.window?.apply{
+                    ctx.window?.window?.apply {
                         /*
                         deprecated, but cannot find the proper way... Also, this feels a lot like
                         a workaround, not a proper solution. Still, it seems to work.
                          */
+                        @Suppress("DEPRECATION")
                         navigationBarColor = colorScheme.background.toArgb()
-                        WindowCompat.getInsetsController(this, decorView)
+                        WindowCompat
+                            .getInsetsController(this, decorView)
                             .isAppearanceLightNavigationBars = !darkTheme
                     }
                 }
