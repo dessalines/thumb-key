@@ -1,3 +1,14 @@
+## What's Changed in 5.0.13
+
+- Add MessagEase "German + ÅØÆ" layout as "scandinavian" by @RolKau in [#1721](https://github.com/dessalines/thumb-key/pull/1721)
+- Changed Korean thumb-key layout with optimization. by @neXyon in [#1717](https://github.com/dessalines/thumb-key/pull/1717)
+
+## New Contributors
+
+- @neXyon made their first contribution in [#1717](https://github.com/dessalines/thumb-key/pull/1717)
+
+**Full Changelog**: https://github.com/dessalines/thumb-key/compare/5.0.12...5.0.13
+
 ## What's Changed in 5.0.12
 
 - Adding a fast toggle for hiding letters. by @dessalines in [#1706](https://github.com/dessalines/thumb-key/pull/1706)
@@ -81,7 +92,7 @@
 ## What's Changed in 5.0.7
 
 - Add Korean layout and custom input processor implementation by @uranium-boy in [#1534](https://github.com/dessalines/thumb-key/pull/1534)
-- Update README.md by @jwkwshjsjsj
+- Update README.md by @jwkwshjsjsj in [#1531](https://github.com/dessalines/thumb-key/pull/1531)
 - Verify apk fingerprint. by @dessalines in [#1528](https://github.com/dessalines/thumb-key/pull/1528)
 - English based Latvian keyboard by @HX3A in [#1522](https://github.com/dessalines/thumb-key/pull/1522)
 - downgrade agp version (closes #1514) by @pohmelie in [#1521](https://github.com/dessalines/thumb-key/pull/1521)
@@ -90,7 +101,7 @@
 ## New Contributors
 
 - @uranium-boy made their first contribution in [#1534](https://github.com/dessalines/thumb-key/pull/1534)
-- @jwkwshjsjsj made their first contribution
+- @jwkwshjsjsj made their first contribution in [#1531](https://github.com/dessalines/thumb-key/pull/1531)
 - @HX3A made their first contribution in [#1522](https://github.com/dessalines/thumb-key/pull/1522)
 
 **Full Changelog**: https://github.com/dessalines/thumb-key/compare/5.0.6...5.0.7
@@ -1346,14 +1357,10 @@
 - Scaling down uppercase letters. Fixes #109 by @dessalines in [#611](https://github.com/dessalines/thumb-key/pull/611)
 - Added Italian translation by @flauta in [#610](https://github.com/dessalines/thumb-key/pull/610)
 - Upgrading compose to 1.5.7 by @dessalines in [#609](https://github.com/dessalines/thumb-key/pull/609)
-- double symbols prototype by @alensiljak in [#608](https://github.com/dessalines/thumb-key/pull/608)
+- double symbols prototype in [#608](https://github.com/dessalines/thumb-key/pull/608)
 - Adding svenska messageease. Fixes #601 by @dessalines in [#605](https://github.com/dessalines/thumb-key/pull/605)
 - Update ITThumbKey.kt by @flauta in [#603](https://github.com/dessalines/thumb-key/pull/603)
 - Adding release notes. by @dessalines
-
-## New Contributors
-
-- @alensiljak made their first contribution in [#608](https://github.com/dessalines/thumb-key/pull/608)
 
 **Full Changelog**: https://github.com/dessalines/thumb-key/compare/2.6.5...2.6.6
 
