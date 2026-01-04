@@ -26,9 +26,9 @@
     <string name="social">Soziale Netzwerke</string>
     <string name="join_c_thumbkey">c/thumbkey beitreten</string>
     <string name="follow_me_mastodon">Folge mir auf Mastodon</string>
-    <string name="open_source">Open source</string>
+    <string name="open_source">Open Source</string>
     <string name="source_code">Quellcode</string>
-    <string name="source_code_subtitle">Thumb-Key ist eine libre open-source software, lizenziert unter der GNU Affero General Public License v3.0</string>
+    <string name="source_code_subtitle">Thumb-Key ist eine libre open-source Software, lizenziert unter der GNU Affero General Public License v3.0</string>
     <string name="look_and_feel">Aussehen</string>
     <string name="layouts">Layouts</string>
     <string name="theme">Design</string>
@@ -39,7 +39,7 @@
     <string name="auto_capitalize">Auto-Großschreibung</string>
     <string name="key_size">Tastengröße: %1$s</string>
     <string name="bottom_offset">Unterer Abstand: %1$s</string>
-    <string name="min_swipe_length">Minimale wischlänge: %1$s</string>
+    <string name="min_swipe_length">Minimale Wischlänge: %1$s</string>
     <string name="animation_speed">Animationsgeschwindigkeit: %1$s</string>
     <string name="animation_helper_speed">Animationshelfergeschwindigkeit: %1$s</string>
     <string name="reset_to_defaults">Auf Standardwerte zurücksetzen</string>
@@ -97,4 +97,5 @@
     <string name="modify_keys">Tasten bearbeiten</string>
     <string name="key_modification_placeholder">YAML eingeben</string>
     <string name="how_to_modify_keys">Wie werden Tasten bearbeitet</string>
+    <string name="disable_fullscreen_editor">Vollbild-Texteditor deaktivieren</string>
 </resources>
