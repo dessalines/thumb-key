@@ -96,6 +96,7 @@ fun KeyboardKey(
     keyboardSettings: KeyboardDefinitionSettings,
     spacebarMultiTaps: Boolean,
     vibrateOnTap: Boolean,
+    // TODO: add vibrateOnSwipe
     soundOnTap: Boolean,
     hideLetters: Boolean,
     hideSymbols: Boolean,
@@ -295,6 +296,19 @@ fun KeyboardKey(
                         // First detection is large enough to preserve swipe actions.
                         val slideOffsetTrigger = (keySize.dp.toPx() * 0.75) + minSwipeLength
 
+                        /**
+                         * The type of haptic feedback to use, based on the device's supported API,
+                         * or [HapticFeedbackConstants.NO_HAPTICS] if slide haptics are disabled.
+                         */
+                        val slideHapticConstant =
+                            // TODO: Check if haptics are disabled
+                            if (android.os.Build.VERSION.SDK_INT >= 27) {
+                                HapticFeedbackConstants.TEXT_HANDLE_MOVE
+                            } else {
+                                // Compatible with API 24, but vibration will not distinguish between tap and slide
+                                HapticFeedbackConstants.KEYBOARD_TAP
+                            }
+
                         // These keys have a lot of functionality.
                         // We can tap; swipe; slide the cursor left/right; select and delete text
                         // Spacebar:
@@ -333,6 +347,8 @@ fun KeyboardKey(
                                     )
                                     // reset offsetX, do not reset offsetY when sliding, it will break selecting
                                     offsetX = 0f
+                                    // selection has changed; give feedback
+                                    view.performHapticFeedback(slideHapticConstant)
                                 }
                             } else if ((
                                     slideSpacebarDeadzoneEnabled &&
@@ -407,6 +423,8 @@ fun KeyboardKey(
                                     ime.currentInputConnection.commitText("", cursorMovement)
                                     // reset offsetX, do not reset offsetY when sliding, it will break selecting
                                     offsetX = 0f
+                                    // selection has changed; give feedback
+                                    view.performHapticFeedback(slideHapticConstant)
                                 }
                             }
                         } else if (key.slideType == SlideType.DELETE && slideEnabled) {
@@ -439,6 +457,8 @@ fun KeyboardKey(
                                     )
                                     // reset offsetX, do not reset offsetY when sliding, it will break selecting
                                     offsetX = 0f
+                                    // selection has changed; give feedback
+                                    view.performHapticFeedback(slideHapticConstant)
                                 }
                             }
                         }
@@ -584,6 +604,10 @@ fun KeyboardKey(
                                         onToggleEmojiMode = onToggleEmojiMode,
                                         onKeyEvent = onKeyEvent,
                                     )
+                                }
+                                // Play an extra haptic effect on supported devices when slide deleting text
+                                if (android.os.Build.VERSION.SDK_INT >= 30) {
+                                    view.performHapticFeedback(HapticFeedbackConstants.REJECT)
                                 }
                             }
                             doneKeyAction(
@@ -884,6 +908,17 @@ fun KeyText(
                     fontFamily = display.fontFamily,
                     fontSize = spSize,
                     lineHeight = spSize,
+                    color = color,
+                )
+            }
+
+            if (display.text.isBlank()) {
+                Text(
+                    text = "This is a debug build!",
+                    fontWeight = FontWeight.Bold,
+                    fontFamily = display.fontFamily,
+                    fontSize = fontSize.toPx.pxToSp / 2,
+                    lineHeight = fontSize.toPx.pxToSp / 2,
                     color = color,
                 )
             }
