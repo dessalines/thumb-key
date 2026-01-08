@@ -115,6 +115,9 @@ import com.dessalines.thumbkey.keyboards.KB_FI_THUMBKEY
 import com.dessalines.thumbkey.keyboards.KB_FI_THUMBKEY_WIDE
 import com.dessalines.thumbkey.keyboards.KB_FI_TYPESPLIT
 import com.dessalines.thumbkey.keyboards.KB_FR_EN_FRAPPE_FLUIDE_V1
+import com.dessalines.thumbkey.keyboards.KB_FR_EN_FRAPPE_FLUIDE_V1_CONTROL_LEFT_SIDE
+import com.dessalines.thumbkey.keyboards.KB_FR_EN_FRAPPE_FLUIDE_V1_LEFT_HANDED
+import com.dessalines.thumbkey.keyboards.KB_FR_EN_FRAPPE_FLUIDE_V1_LEFT_HANDED_CONTROL_LEFT_SIDE
 import com.dessalines.thumbkey.keyboards.KB_FR_MESSAGEASE
 import com.dessalines.thumbkey.keyboards.KB_FR_THUMBKEY_V1
 import com.dessalines.thumbkey.keyboards.KB_FR_THUMBKEY_V2
@@ -414,4 +417,13 @@ enum class KeyboardLayout(
     NOThumbKeyDataDriven(KB_NO_THUMBKEY_DATADRIVEN), // norsk thumb-key datadrevet
     KROneThumb(KB_KR_ONETHUMB), // 한국어 one-thumb
     ScandinavianMessagEase(KB_SCANDINAVIAN_MESSAGEASE), // scandinavian messagease
+    FRENFrappeFluideV1ControlLeftSide(
+        KB_FR_EN_FRAPPE_FLUIDE_V1_CONTROL_LEFT_SIDE,
+    ), // français frappefluide (fr+en) v1 (outils à gauche)
+    FRENFrappeFluideV1LeftHanded(
+        KB_FR_EN_FRAPPE_FLUIDE_V1_LEFT_HANDED,
+    ), // français frappefluide (fr+en) v1 (gauchère)
+    FRENFrappeFluideV1LeftHandedControlLeftSide(
+        KB_FR_EN_FRAPPE_FLUIDE_V1_LEFT_HANDED_CONTROL_LEFT_SIDE,
+    ), // français frappefluide (fr+en) v1 (gauchère, outils à gauche)
 }

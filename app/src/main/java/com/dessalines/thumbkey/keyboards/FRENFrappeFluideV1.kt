@@ -26,8 +26,8 @@ fun specialActionKeyItemCustom(center: KeyC): KeyItemC =
         top = GOTO_SETTINGS_KEYC,
         bottom = SWITCH_IME_KEYC,
         bottomLeft = SWITCH_IME_VOICE_KEYC,
-        left = SWITCH_LANGUAGE_KEYC,
-        right = DELETE_WORD_BEFORE_CURSOR_TEXT_KEYC,
+        left = DELETE_WORD_BEFORE_CURSOR_TEXT_KEYC,
+        right = SWITCH_LANGUAGE_KEYC,
     )
 
 val EMOJI_KEY_ITEM_CUSTOM =
@@ -423,6 +423,78 @@ val FRENCH_FLUID_NUMERIC_KEYBOARD =
         ),
     )
 
+fun reverseKeyItemC(item: KeyItemC): KeyItemC {
+    val revItem =
+        item.copy(
+            left = item.right,
+            right = item.left,
+            topLeft = item.topRight,
+            topRight = item.topLeft,
+            bottomLeft = item.bottomRight,
+            bottomRight = item.bottomLeft,
+        )
+    return revItem
+}
+
+fun reverseRow(l: List<KeyItemC>): List<KeyItemC> {
+    val rev = mutableListOf<KeyItemC>()
+    for (item in l) {
+        val revItem = reverseKeyItemC(item)
+        rev.add(0, revItem)
+    }
+    return rev
+}
+
+fun reverseRowExceptControl(l: List<KeyItemC>): List<KeyItemC> {
+    val rev = mutableListOf<KeyItemC>()
+    for (item in l) {
+        if (item.backgroundColor == SURFACE_VARIANT) {
+            rev.add(item)
+        } else {
+            val revItem = reverseKeyItemC(item)
+            rev.add(0, revItem)
+        }
+    }
+    return rev
+}
+
+fun reverseRowOnlyControl(l: List<KeyItemC>): List<KeyItemC> {
+    val grid = mutableListOf<KeyItemC>()
+    for (item in l) {
+        if (item.backgroundColor == SURFACE_VARIANT) {
+            val revItem = reverseKeyItemC(item)
+            grid.add(0, revItem)
+        } else {
+            grid.add(item)
+        }
+    }
+    return grid
+}
+
+fun makeControlLeftSide(kb: KeyboardC): KeyboardC {
+    val kbArrNew = mutableListOf<List<KeyItemC>>()
+    for (row in kb.arr) {
+        kbArrNew.add(reverseRowOnlyControl(row))
+    }
+    return KeyboardC(kbArrNew)
+}
+
+fun makeLeftHanded(kb: KeyboardC): KeyboardC {
+    val kbArrNew = mutableListOf<List<KeyItemC>>()
+    for (row in kb.arr) {
+        kbArrNew.add(reverseRowExceptControl(row))
+    }
+    return KeyboardC(kbArrNew)
+}
+
+fun makeLeftHandedControlLeftSide(kb: KeyboardC): KeyboardC {
+    val kbArrNew = mutableListOf<List<KeyItemC>>()
+    for (row in kb.arr) {
+        kbArrNew.add(reverseRow(row))
+    }
+    return KeyboardC(kbArrNew)
+}
+
 val KB_FR_EN_FRAPPE_FLUIDE_V1: KeyboardDefinition =
     KeyboardDefinition(
         title = "français frappefluide (fr+en) v1",
@@ -431,5 +503,38 @@ val KB_FR_EN_FRAPPE_FLUIDE_V1: KeyboardDefinition =
                 main = KB_FR_EN_FRAPPE_FLUIDE_V1_MAIN,
                 shifted = KB_FR_EN_FRAPPE_FLUIDE_V1_SHIFTED,
                 numeric = FRENCH_FLUID_NUMERIC_KEYBOARD,
+            ),
+    )
+
+val KB_FR_EN_FRAPPE_FLUIDE_V1_CONTROL_LEFT_SIDE: KeyboardDefinition =
+    KeyboardDefinition(
+        title = "français frappefluide (fr+en) v1 (outils à gauche)",
+        modes =
+            KeyboardDefinitionModes(
+                main = makeControlLeftSide(KB_FR_EN_FRAPPE_FLUIDE_V1_MAIN),
+                shifted = makeControlLeftSide(KB_FR_EN_FRAPPE_FLUIDE_V1_SHIFTED),
+                numeric = makeControlLeftSide(FRENCH_FLUID_NUMERIC_KEYBOARD),
+            ),
+    )
+
+val KB_FR_EN_FRAPPE_FLUIDE_V1_LEFT_HANDED: KeyboardDefinition =
+    KeyboardDefinition(
+        title = "français frappefluide (fr+en) v1 (gauchère)",
+        modes =
+            KeyboardDefinitionModes(
+                main = makeLeftHanded(KB_FR_EN_FRAPPE_FLUIDE_V1_MAIN),
+                shifted = makeLeftHanded(KB_FR_EN_FRAPPE_FLUIDE_V1_SHIFTED),
+                numeric = makeLeftHanded(FRENCH_FLUID_NUMERIC_KEYBOARD),
+            ),
+    )
+
+val KB_FR_EN_FRAPPE_FLUIDE_V1_LEFT_HANDED_CONTROL_LEFT_SIDE: KeyboardDefinition =
+    KeyboardDefinition(
+        title = "français frappefluide (fr+en) v1 (gauchère, outils à gauche)",
+        modes =
+            KeyboardDefinitionModes(
+                main = makeLeftHandedControlLeftSide(KB_FR_EN_FRAPPE_FLUIDE_V1_MAIN),
+                shifted = makeLeftHandedControlLeftSide(KB_FR_EN_FRAPPE_FLUIDE_V1_SHIFTED),
+                numeric = makeLeftHandedControlLeftSide(FRENCH_FLUID_NUMERIC_KEYBOARD),
             ),
     )
