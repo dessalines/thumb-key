@@ -25,7 +25,7 @@ fun specialActionKeyItemCustom(center: KeyC): KeyItemC =
         // topLeft = MOVE_KEYBOARD_CYCLE_RIGHT_KEYC,
         top = GOTO_SETTINGS_KEYC,
         bottom = SWITCH_IME_KEYC,
-        bottomLeft = SWITCH_IME_VOICE_KEYC,
+        bottomRight = SWITCH_IME_VOICE_KEYC,
         left = DELETE_WORD_BEFORE_CURSOR_TEXT_KEYC,
         right = SWITCH_LANGUAGE_KEYC,
     )
