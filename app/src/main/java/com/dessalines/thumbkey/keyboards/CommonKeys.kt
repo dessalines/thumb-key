@@ -395,6 +395,13 @@ val RETURN_RIGHT_KEYC =
             ),
         display = null,
     )
+
+val NOOP_KEYC =
+    KeyC(
+        action = Noop,
+        display = null,
+    )
+
 val RETURN_PROGRAMMING_KEY_ITEM =
     KeyItemC(
         center = RETURN_KEYC,

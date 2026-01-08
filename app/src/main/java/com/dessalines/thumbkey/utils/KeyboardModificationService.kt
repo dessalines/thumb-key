@@ -17,6 +17,7 @@ import com.dessalines.thumbkey.keyboards.DELETE_WORD_BEFORE_CURSOR_KEYC
 import com.dessalines.thumbkey.keyboards.GOTO_SETTINGS_KEYC
 import com.dessalines.thumbkey.keyboards.HIDE_KEYBOARD_KEYC
 import com.dessalines.thumbkey.keyboards.NEXT_WORD_AFTER_CURSOR_KEYC
+import com.dessalines.thumbkey.keyboards.NOOP_KEYC
 import com.dessalines.thumbkey.keyboards.PASTE_KEYC
 import com.dessalines.thumbkey.keyboards.PREVIOUS_WORD_BEFORE_CURSOR_KEYC
 import com.dessalines.thumbkey.keyboards.REDO_KEYC
@@ -307,6 +308,7 @@ fun getCommonKeyCFromKeyAction(keyActionSerializable: KeyActionSerializable?): K
         KeyActionSerializable.SwitchIME -> SWITCH_IME_KEYC
         KeyActionSerializable.SwitchIMEVoice -> SWITCH_IME_VOICE_KEYC
         KeyActionSerializable.HideKeyboard -> HIDE_KEYBOARD_KEYC
+        KeyActionSerializable.Noop -> NOOP_KEYC
         null -> null
     }
 
@@ -503,4 +505,5 @@ enum class KeyActionSerializable {
     Delete,
     DeleteWordBeforeCursor,
     DeleteWordAfterCursor,
+    Noop,
 }
