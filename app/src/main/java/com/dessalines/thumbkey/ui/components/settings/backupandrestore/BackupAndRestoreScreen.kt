@@ -70,6 +70,7 @@ import com.dessalines.thumbkey.db.DEFAULT_SOUND_ON_TAP
 import com.dessalines.thumbkey.db.DEFAULT_SPACEBAR_MULTITAPS
 import com.dessalines.thumbkey.db.DEFAULT_THEME
 import com.dessalines.thumbkey.db.DEFAULT_THEME_COLOR
+import com.dessalines.thumbkey.db.DEFAULT_VIBRATE_ON_SLIDE
 import com.dessalines.thumbkey.db.DEFAULT_VIBRATE_ON_TAP
 import com.dessalines.thumbkey.utils.SimpleTopAppBar
 import com.dessalines.thumbkey.utils.keyboardLayoutsSetFromDbIndexString
@@ -243,6 +244,7 @@ private fun resetAppSettingsToDefault(appSettingsViewModel: AppSettingsViewModel
             theme = DEFAULT_THEME,
             themeColor = DEFAULT_THEME_COLOR,
             vibrateOnTap = DEFAULT_VIBRATE_ON_TAP,
+            vibrateOnSlide = DEFAULT_VIBRATE_ON_SLIDE,
             lastVersionCodeViewed = appSettingsViewModel.appSettings.value?.lastVersionCodeViewed ?: 0,
             viewedChangelog = appSettingsViewModel.appSettings.value?.viewedChangelog ?: 1,
             backdropEnabled = DEFAULT_BACKDROP_ENABLED,

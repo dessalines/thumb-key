@@ -63,6 +63,7 @@ import com.dessalines.thumbkey.db.DEFAULT_SLIDE_SENSITIVITY
 import com.dessalines.thumbkey.db.DEFAULT_SLIDE_SPACEBAR_DEADZONE_ENABLED
 import com.dessalines.thumbkey.db.DEFAULT_SOUND_ON_TAP
 import com.dessalines.thumbkey.db.DEFAULT_SPACEBAR_MULTITAPS
+import com.dessalines.thumbkey.db.DEFAULT_VIBRATE_ON_SLIDE
 import com.dessalines.thumbkey.db.DEFAULT_VIBRATE_ON_TAP
 import com.dessalines.thumbkey.keyboards.BACKSPACE_KEY_ITEM
 import com.dessalines.thumbkey.keyboards.EMOJI_BACK_KEY_ITEM
@@ -150,6 +151,7 @@ fun KeyboardScreen(
     val slideBackspaceDeadzoneEnabled = (settings?.slideBackspaceDeadzoneEnabled ?: DEFAULT_SLIDE_BACKSPACE_DEADZONE_ENABLED).toBool()
     val keyBorderWidth = (settings?.keyBorderWidth ?: DEFAULT_KEY_BORDER_WIDTH)
     val vibrateOnTap = (settings?.vibrateOnTap ?: DEFAULT_VIBRATE_ON_TAP).toBool()
+    val vibrateOnSlide = (settings?.vibrateOnSlide ?: DEFAULT_VIBRATE_ON_SLIDE).toBool()
     val soundOnTap = (settings?.soundOnTap ?: DEFAULT_SOUND_ON_TAP).toBool()
     val hideLetters = (settings?.hideLetters ?: DEFAULT_HIDE_LETTERS).toBool()
     val hideSymbols = (settings?.hideSymbols ?: DEFAULT_HIDE_SYMBOLS).toBool()
@@ -296,6 +298,7 @@ fun KeyboardScreen(
                                 keyboardSettings = keyboardDefinition.settings,
                                 spacebarMultiTaps = spacebarMultiTaps,
                                 vibrateOnTap = vibrateOnTap,
+                                vibrateOnSlide = vibrateOnSlide,
                                 soundOnTap = soundOnTap,
                                 hideLetters = hideLetters,
                                 hideSymbols = hideSymbols,
@@ -463,6 +466,7 @@ fun KeyboardScreen(
                                         keyboardSettings = keyboardDefinition.settings,
                                         spacebarMultiTaps = spacebarMultiTaps,
                                         vibrateOnTap = vibrateOnTap,
+                                        vibrateOnSlide = vibrateOnSlide,
                                         soundOnTap = soundOnTap,
                                         hideLetters = hideLetters,
                                         hideSymbols = hideSymbols,

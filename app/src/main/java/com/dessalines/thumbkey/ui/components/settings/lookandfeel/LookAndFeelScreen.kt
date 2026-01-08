@@ -67,6 +67,7 @@ import com.dessalines.thumbkey.db.DEFAULT_SHOW_TOAST_ON_LAYOUT_SWITCH
 import com.dessalines.thumbkey.db.DEFAULT_SOUND_ON_TAP
 import com.dessalines.thumbkey.db.DEFAULT_THEME
 import com.dessalines.thumbkey.db.DEFAULT_THEME_COLOR
+import com.dessalines.thumbkey.db.DEFAULT_VIBRATE_ON_SLIDE
 import com.dessalines.thumbkey.db.DEFAULT_VIBRATE_ON_TAP
 import com.dessalines.thumbkey.db.LookAndFeelUpdate
 import com.dessalines.thumbkey.ui.components.common.TestOutTextField
@@ -124,6 +125,7 @@ fun LookAndFeelScreen(
     var positionState = KeyboardPosition.entries[settings?.position ?: DEFAULT_POSITION]
 
     var vibrateOnTapState = (settings?.vibrateOnTap ?: DEFAULT_VIBRATE_ON_TAP).toBool()
+    var vibrateOnSlideState = (settings?.vibrateOnSlide ?: DEFAULT_VIBRATE_ON_SLIDE).toBool()
     var soundOnTapState = (settings?.soundOnTap ?: DEFAULT_SOUND_ON_TAP).toBool()
     var hideLettersState = (settings?.hideLetters ?: DEFAULT_HIDE_LETTERS).toBool()
     var hideSymbolsState = (settings?.hideSymbols ?: DEFAULT_HIDE_SYMBOLS).toBool()
@@ -143,6 +145,7 @@ fun LookAndFeelScreen(
                 animationHelperSpeed = animationHelperSpeedState.toInt(),
                 position = positionState.ordinal,
                 vibrateOnTap = vibrateOnTapState.toInt(),
+                vibrateOnSlide = vibrateOnSlideState.toInt(),
                 soundOnTap = soundOnTapState.toInt(),
                 hideLetters = hideLettersState.toInt(),
                 hideSymbols = hideSymbolsState.toInt(),
@@ -591,6 +594,30 @@ fun LookAndFeelScreen(
                         icon = {
                             Icon(
                                 imageVector = Icons.Outlined.Vibration,
+                                contentDescription = null,
+                            )
+                        },
+                    )
+                    SwitchPreference(
+                        enabled = settings?.slideEnabled?.toBool() == true,
+                        value = vibrateOnSlideState,
+                        onValueChange = {
+                            vibrateOnSlideState = it
+                            updateLookAndFeel()
+                        },
+                        title = {
+                            Text(stringResource(R.string.vibrate_on_slide))
+                        },
+                        summary = {
+                            if (settings?.slideEnabled?.toBool() == true) {
+                                Text(stringResource(R.string.vibrate_slide_note))
+                            } else {
+                                Text(stringResource(R.string.vibrate_slide_warning))
+                            }
+                        },
+                        icon = {
+                            Icon(
+                                imageVector = Icons.Outlined.LinearScale,
                                 contentDescription = null,
                             )
                         },

@@ -42,6 +42,9 @@
     <string name="position">Position</string>
     <string name="vibrate_on_tap">Vibrate on tap</string>
     <string name="vibrate_warning">Requires touch feedback to be enabled in system settings</string>
+    <string name="vibrate_on_slide">Vibrate for slide gestures</string>
+    <string name="vibrate_slide_note">Applies when sliding across the spacebar or backspace keys</string>
+    <string name="vibrate_slide_warning">Requires slide gestures to be enabled in Behavior settings</string>
     <string name="play_sound_on_tap">Play sound on tap</string>
     <string name="auto_capitalize">Auto-capitalize</string>
     <string name="auto_size_keys">Maximize to fit screen width</string>

@@ -1,6 +1,7 @@
 package com.dessalines.thumbkey.ui.components.keyboard
 import android.content.Context
 import android.media.AudioManager
+import android.os.Build
 import android.view.HapticFeedbackConstants
 import android.view.KeyEvent
 import androidx.compose.animation.AnimatedVisibility
@@ -96,7 +97,7 @@ fun KeyboardKey(
     keyboardSettings: KeyboardDefinitionSettings,
     spacebarMultiTaps: Boolean,
     vibrateOnTap: Boolean,
-    // TODO: add vibrateOnSwipe
+    vibrateOnSlide: Boolean,
     soundOnTap: Boolean,
     hideLetters: Boolean,
     hideSymbols: Boolean,
@@ -135,8 +136,8 @@ fun KeyboardKey(
     // Necessary for swipe settings to get updated correctly
     val id =
         key.toString() + ghostKey.toString() + animationHelperSpeed + animationSpeed + autoCapitalize +
-            vibrateOnTap + soundOnTap + legendHeight + legendWidth + minSwipeLength + slideSensitivity +
-            slideEnabled + slideCursorMovementMode + slideSpacebarDeadzoneEnabled +
+            vibrateOnTap + vibrateOnSlide + soundOnTap + legendHeight + legendWidth + minSwipeLength +
+            slideSensitivity + slideEnabled + slideCursorMovementMode + slideSpacebarDeadzoneEnabled +
             slideBackspaceDeadzoneEnabled + dragReturnEnabled + circularDragEnabled +
             clockwiseDragAction.ordinal + counterclockwiseDragAction.ordinal
 
@@ -297,12 +298,11 @@ fun KeyboardKey(
                         val slideOffsetTrigger = (keySize.dp.toPx() * 0.75) + minSwipeLength
 
                         /**
-                         * The type of haptic feedback to use, based on the device's supported API,
-                         * or [HapticFeedbackConstants.NO_HAPTICS] if slide haptics are disabled.
+                         * The type of haptic feedback to use when moving the cursor with slide
+                         * gestures, based on the device's supported API.
                          */
                         val slideHapticConstant =
-                            // TODO: Check if haptics are disabled
-                            if (android.os.Build.VERSION.SDK_INT >= 27) {
+                            if (Build.VERSION.SDK_INT >= 27) {
                                 HapticFeedbackConstants.TEXT_HANDLE_MOVE
                             } else {
                                 // Compatible with API 24, but vibration will not distinguish between tap and slide
@@ -348,7 +348,7 @@ fun KeyboardKey(
                                     // reset offsetX, do not reset offsetY when sliding, it will break selecting
                                     offsetX = 0f
                                     // selection has changed; give feedback
-                                    view.performHapticFeedback(slideHapticConstant)
+                                    if (vibrateOnSlide) view.performHapticFeedback(slideHapticConstant)
                                 }
                             } else if ((
                                     slideSpacebarDeadzoneEnabled &&
@@ -424,7 +424,7 @@ fun KeyboardKey(
                                     // reset offsetX, do not reset offsetY when sliding, it will break selecting
                                     offsetX = 0f
                                     // selection has changed; give feedback
-                                    view.performHapticFeedback(slideHapticConstant)
+                                    if (vibrateOnSlide) view.performHapticFeedback(slideHapticConstant)
                                 }
                             }
                         } else if (key.slideType == SlideType.DELETE && slideEnabled) {
@@ -458,7 +458,7 @@ fun KeyboardKey(
                                     // reset offsetX, do not reset offsetY when sliding, it will break selecting
                                     offsetX = 0f
                                     // selection has changed; give feedback
-                                    view.performHapticFeedback(slideHapticConstant)
+                                    if (vibrateOnSlide) view.performHapticFeedback(slideHapticConstant)
                                 }
                             }
                         }
@@ -606,7 +606,7 @@ fun KeyboardKey(
                                     )
                                 }
                                 // Play an extra haptic effect on supported devices when slide deleting text
-                                if (android.os.Build.VERSION.SDK_INT >= 30) {
+                                if (vibrateOnSlide && Build.VERSION.SDK_INT >= 30) {
                                     view.performHapticFeedback(HapticFeedbackConstants.REJECT)
                                 }
                             }
@@ -908,17 +908,6 @@ fun KeyText(
                     fontFamily = display.fontFamily,
                     fontSize = spSize,
                     lineHeight = spSize,
-                    color = color,
-                )
-            }
-
-            if (display.text.isBlank()) {
-                Text(
-                    text = "This is a debug build!",
-                    fontWeight = FontWeight.Bold,
-                    fontFamily = display.fontFamily,
-                    fontSize = fontSize.toPx.pxToSp / 2,
-                    lineHeight = fontSize.toPx.pxToSp / 2,
                     color = color,
                 )
             }
