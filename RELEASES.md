@@ -1,3 +1,17 @@
+## What's Changed in 5.0.14
+
+- Update FRENFrappeFluideV1: move voice to avoid misentering delete word by @jiquiame in [#1730](https://github.com/dessalines/thumb-key/pull/1730)
+- Update FRENFrappeFluideV1: add left handed and left control variants by @jiquiame in [#1728](https://github.com/dessalines/thumb-key/pull/1728)
+- Add Haptic Feedback to Cursor Slide Gestures by @emallery in [#1727](https://github.com/dessalines/thumb-key/pull/1727)
+- Fix some spelling in the German fastlane metadata by @JSchmerling in [#1724](https://github.com/dessalines/thumb-key/pull/1724)
+
+## New Contributors
+
+- @emallery made their first contribution in [#1727](https://github.com/dessalines/thumb-key/pull/1727)
+- @JSchmerling made their first contribution in [#1724](https://github.com/dessalines/thumb-key/pull/1724)
+
+**Full Changelog**: https://github.com/dessalines/thumb-key/compare/5.0.13...5.0.14
+
 ## What's Changed in 5.0.13
 
 - Add MessagEase "German + ÅØÆ" layout as "scandinavian" by @RolKau in [#1721](https://github.com/dessalines/thumb-key/pull/1721)
