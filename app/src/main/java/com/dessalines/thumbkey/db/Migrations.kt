@@ -236,3 +236,11 @@ val MIGRATION_20_21 =
             )
         }
     }
+val MIGRATION_21_22 =
+    object : Migration(21, 22) {
+        override fun migrate(db: SupportSQLiteDatabase) {
+            db.execSQL(
+                "alter table AppSettings add column vibrate_on_slide INTEGER NOT NULL default $DEFAULT_VIBRATE_ON_SLIDE",
+            )
+        }
+    }
