@@ -319,10 +319,6 @@ data class LookAndFeelUpdate(
     )
     val vibrateOnTap: Int,
     @ColumnInfo(
-        name = "vibrate_on_slide",
-    )
-    val vibrateOnSlide: Int,
-    @ColumnInfo(
         name = "sound_on_tap",
     )
     val soundOnTap: Int,
@@ -390,6 +386,10 @@ data class LookAndFeelUpdate(
         name = "disable_fullscreen_editor",
     )
     val disableFullscreenEditor: Int,
+    @ColumnInfo(
+        name = "vibrate_on_slide",
+    )
+    val vibrateOnSlide: Int,
 )
 
 data class BehaviorUpdate(
