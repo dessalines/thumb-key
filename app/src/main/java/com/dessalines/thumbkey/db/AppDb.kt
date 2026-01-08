@@ -110,11 +110,6 @@ data class AppSettings(
     )
     val vibrateOnTap: Int,
     @ColumnInfo(
-        name = "vibrate_on_slide",
-        defaultValue = DEFAULT_VIBRATE_ON_SLIDE.toString(),
-    )
-    val vibrateOnSlide: Int,
-    @ColumnInfo(
         name = "slide_enabled",
         defaultValue = DEFAULT_SLIDE_ENABLED.toString(),
     )
@@ -286,6 +281,11 @@ data class AppSettings(
         defaultValue = DEFAULT_DISABLE_FULLSCREEN_EDITOR.toString(),
     )
     val disableFullscreenEditor: Int,
+    @ColumnInfo(
+        name = "vibrate_on_slide",
+        defaultValue = DEFAULT_VIBRATE_ON_SLIDE.toString(),
+    )
+    val vibrateOnSlide: Int,
 )
 
 data class LayoutsUpdate(
