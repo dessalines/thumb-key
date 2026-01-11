@@ -16,7 +16,11 @@ import androidx.savedstate.SavedStateRegistry
 import androidx.savedstate.SavedStateRegistryController
 import androidx.savedstate.SavedStateRegistryOwner
 import androidx.savedstate.setViewTreeSavedStateRegistryOwner
+import com.dessalines.thumbkey.db.DEFAULT_DISABLE_FULLSCREEN_EDITOR
+import com.dessalines.thumbkey.utils.KeyboardDefinition
+import com.dessalines.thumbkey.utils.KeyboardLayout
 import com.dessalines.thumbkey.utils.TAG
+import com.dessalines.thumbkey.utils.toBool
 
 class IMEService :
     InputMethodService(),
@@ -25,6 +29,11 @@ class IMEService :
     SavedStateRegistryOwner {
     private fun setupView(): View {
         val settingsRepo = (application as ThumbkeyApplication).appSettingsRepository
+
+        val layoutIndex = settingsRepo.appSettings.value?.keyboardLayout
+        if (layoutIndex != null) {
+            currentKeyboardDefinition = KeyboardLayout.entries[layoutIndex].keyboardDefinition
+        }
 
         val view = ComposeKeyboardView(this, settingsRepo)
         window?.window?.decorView?.let { decorView ->
@@ -39,6 +48,8 @@ class IMEService :
         }
         return view
     }
+
+    var currentKeyboardDefinition: KeyboardDefinition? = null
 
     /**
      * This is called every time the keyboard is brought up.
@@ -85,8 +96,27 @@ class IMEService :
                     cursorAnchorInfo.selectionEnd != selectionEnd
             }
 
+        currentKeyboardDefinition?.settings?.textProcessor?.handleCursorUpdate(
+            this,
+            selectionStart,
+            selectionEnd,
+            cursorAnchorInfo.selectionStart,
+            cursorAnchorInfo.selectionEnd,
+        )
+
         selectionStart = cursorAnchorInfo.selectionStart
         selectionEnd = cursorAnchorInfo.selectionEnd
+    }
+
+    // Disable the fullscreen text editor if set by the user
+    override fun onUpdateExtractingVisibility(ei: EditorInfo) {
+        val settingsRepo = (application as ThumbkeyApplication).appSettingsRepository
+        val settings = settingsRepo.appSettings.getValue()
+        if ((settings?.disableFullscreenEditor ?: DEFAULT_DISABLE_FULLSCREEN_EDITOR).toBool()) {
+            ei.imeOptions =
+                ei.imeOptions or EditorInfo.IME_FLAG_NO_EXTRACT_UI or EditorInfo.IME_FLAG_NO_FULLSCREEN
+        }
+        super.onUpdateExtractingVisibility(ei)
     }
 
     fun didCursorMove(): Boolean = cursorMoved
@@ -94,6 +124,11 @@ class IMEService :
     fun ignoreNextCursorMove() {
         // This gets reset on the next call to `onUpdateCursorAnchorInfo`
         ignoreCursorMove = true
+    }
+
+    override fun onWindowHidden() {
+        currentKeyboardDefinition?.settings?.textProcessor?.handleFinishInput(this)
+        super.onWindowHidden()
     }
 
     private var ignoreCursorMove: Boolean = false
@@ -105,7 +140,6 @@ class IMEService :
     override val viewModelStore = ViewModelStore()
 
     // SaveStateRegistry Methods
-
     private val savedStateRegistryController = SavedStateRegistryController.create(this)
     override val savedStateRegistry: SavedStateRegistry =
         savedStateRegistryController.savedStateRegistry

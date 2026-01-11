@@ -88,4 +88,15 @@
     <string name="circular_drag_enable">Cirkulært slæb</string>
     <string name="ghost_keys_enable">Spøgelsestaster</string>
     <string name="ghost_keys_description">Tilgå skjulte symboltaster uden at skifte til det numeriske tastatur</string>
+    <string name="dual">Par</string>
+    <string name="auto_size_keys">Udfyld til skærmbredde</string>
+    <string name="backup_database">Sikkerhedskopier database</string>
+    <string name="restore_database">Gendan database</string>
+    <string name="restore_database_warning">Advarsel: Dette vil slette din nuværende database</string>
+    <string name="database_restored">Gendannede database.</string>
+    <string name="database_backed_up">Sikkerhedskopierede database.</string>
+    <string name="backup_and_restore">Sikkerhedskopiering og gendannelse</string>
+    <string name="modify_keys">Tilpas taster</string>
+    <string name="key_modification_placeholder">Indsæt YAML</string>
+    <string name="how_to_modify_keys">Sådan tilpasses taster</string>
 </resources>

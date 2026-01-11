@@ -1,19 +1,29 @@
+import org.jetbrains.kotlin.gradle.dsl.JvmTarget
+
 plugins {
     id("com.android.application")
     id("org.jetbrains.kotlin.android")
     id("org.jetbrains.kotlin.plugin.compose")
     id("com.google.devtools.ksp")
+    kotlin("plugin.serialization") version "2.3.0"
+}
+
+kotlin {
+    compilerOptions {
+        jvmTarget = JvmTarget.fromTarget("17")
+        freeCompilerArgs = listOf("-Xjvm-default=all-compatibility", "-opt-in=kotlin.RequiresOptIn")
+    }
 }
 
 android {
-    compileSdk = 35
+    compileSdk = 36
 
     defaultConfig {
         applicationId = "com.dessalines.thumbkey"
-        minSdk = 21
-        targetSdk = 35
-        versionCode = 144
-        versionName = "4.0.26"
+        minSdk = 24
+        targetSdk = 36
+        versionCode = 169
+        versionName = "5.0.14"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
         vectorDrawables {
@@ -68,14 +78,17 @@ android {
         }
     }
 
+    lint {
+        disable += "MissingTranslation"
+        disable += "KtxExtensionAvailable"
+        disable += "UseKtx"
+    }
+
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_17
         targetCompatibility = JavaVersion.VERSION_17
     }
-    kotlinOptions {
-        jvmTarget = "17"
-        freeCompilerArgs = listOf("-Xjvm-default=all-compatibility", "-opt-in=kotlin.RequiresOptIn")
-    }
+
     buildFeatures {
         compose = true
     }
@@ -87,29 +100,29 @@ dependencies {
     implementation("com.github.dessalines:room-db-export-import:0.1.0")
 
     // Compose BOM
-    implementation(platform("androidx.compose:compose-bom:2025.03.01"))
+    implementation(platform("androidx.compose:compose-bom:2025.12.01"))
     implementation("androidx.compose.ui:ui")
     implementation("androidx.compose.material3:material3")
     implementation("androidx.compose.material:material-icons-extended:1.7.8")
     implementation("androidx.compose.material3:material3-window-size-class")
     implementation("androidx.compose.ui:ui-tooling")
-    implementation("androidx.compose.runtime:runtime-livedata:1.7.8")
+    implementation("androidx.compose.runtime:runtime-livedata:1.10.0")
 
     // Activities
-    implementation("androidx.activity:activity-compose:1.10.1")
-    implementation("androidx.activity:activity-ktx:1.10.1")
+    implementation("androidx.activity:activity-compose:1.12.2")
+    implementation("androidx.activity:activity-ktx:1.12.2")
 
     // LiveData
     implementation("androidx.lifecycle:lifecycle-runtime-compose")
 
     // Navigation
-    implementation("androidx.navigation:navigation-compose:2.8.9")
+    implementation("androidx.navigation:navigation-compose:2.9.6")
 
     // Emoji Picker
-    implementation("androidx.emoji2:emoji2-emojipicker:1.5.0")
+    implementation("androidx.emoji2:emoji2-emojipicker:1.6.0")
 
     // Markdown
-    implementation("com.github.jeziellago:compose-markdown:0.5.7")
+    implementation("com.github.jeziellago:compose-markdown:0.5.8")
 
     // Preferences
     implementation("me.zhanghai.compose.preference:library:1.1.1")
@@ -120,13 +133,23 @@ dependencies {
 
     // Room
     // To use Kotlin annotation processing tool
-    ksp("androidx.room:room-compiler:2.6.1")
-    implementation("androidx.room:room-runtime:2.6.1")
-    annotationProcessor("androidx.room:room-compiler:2.6.1")
+    ksp("androidx.room:room-compiler:2.8.4")
+    implementation("androidx.room:room-runtime:2.8.4")
+    annotationProcessor("androidx.room:room-compiler:2.8.4")
 
     // optional - Kotlin Extensions and Coroutines support for Room
-    implementation("androidx.room:room-ktx:2.6.1")
+    implementation("androidx.room:room-ktx:2.8.4")
 
     // App compat
-    implementation("androidx.appcompat:appcompat:1.7.0")
+    implementation("androidx.appcompat:appcompat:1.7.1")
+
+    // YAML serialization
+    implementation("com.charleskorn.kaml:kaml:0.104.0")
+
+    // Kotlin Reflect
+    implementation("org.jetbrains.kotlin:kotlin-reflect:2.3.0")
+
+    // Arrow-kt for mutating deeply nested data classes
+    implementation("io.arrow-kt:arrow-optics:2.2.1.1")
+    ksp("io.arrow-kt:arrow-optics-ksp-plugin:2.2.1.1")
 }

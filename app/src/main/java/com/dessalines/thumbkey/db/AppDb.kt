@@ -18,7 +18,6 @@ import androidx.room.Query
 import androidx.room.Room
 import androidx.room.RoomDatabase
 import androidx.room.Update
-import androidx.room.migration.Migration
 import androidx.sqlite.db.SupportSQLiteDatabase
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.MutableStateFlow
@@ -27,7 +26,10 @@ import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 import java.util.concurrent.Executors
 
-const val DEFAULT_KEY_SIZE = 64
+const val DEFAULT_AUTO_SIZE_KEYS = 1
+const val DEFAULT_NON_SQUARE_KEYS = 0
+const val DEFAULT_KEY_WIDTH = 64
+const val DEFAULT_KEY_HEIGHT = DEFAULT_KEY_WIDTH
 const val DEFAULT_ANIMATION_SPEED = 250
 const val DEFAULT_ANIMATION_HELPER_SPEED = 250
 const val DEFAULT_POSITION = 0
@@ -36,6 +38,7 @@ const val DEFAULT_KEYBOARD_LAYOUT = 0
 const val DEFAULT_THEME = 0
 const val DEFAULT_THEME_COLOR = 0
 const val DEFAULT_VIBRATE_ON_TAP = 1
+const val DEFAULT_VIBRATE_ON_SLIDE = 1
 const val DEFAULT_SOUND_ON_TAP = 0
 const val DEFAULT_MIN_SWIPE_LENGTH = 40
 const val DEFAULT_PUSHUP_SIZE = 0
@@ -57,19 +60,25 @@ const val DEFAULT_CIRCULAR_DRAG_ENABLED = 1
 const val DEFAULT_CLOCKWISE_DRAG_ACTION = 0
 const val DEFAULT_COUNTERCLOCKWISE_DRAG_ACTION = 1
 const val DEFAULT_GHOST_KEYS_ENABLED = 0
+const val DEFAULT_KEY_MODIFICATIONS = ""
+const val DEFAULT_IGNORE_BOTTOM_PADDING = 0
+const val DEFAULT_SHOW_TOAST_ON_LAYOUT_SWITCH = 1
+const val DEFAULT_DISABLE_FULLSCREEN_EDITOR = 0
 
 @Entity
 data class AppSettings(
     @PrimaryKey(autoGenerate = true) val id: Int,
+    // These columns exist in the database schema because we can't drop them without recreating tables.
+    // They still have to be handled nearly identically to active columns, but they are actually defunct.
     @ColumnInfo(
-        name = "key_size",
-        defaultValue = DEFAULT_KEY_SIZE.toString(),
+        name = "key_size_defunct",
+        defaultValue = DEFAULT_KEY_WIDTH.toString(),
     )
-    val keySize: Int,
+    val keySizeDefunct: Int = DEFAULT_KEY_WIDTH,
     @ColumnInfo(
-        name = "key_width",
+        name = "key_width_defunct",
     )
-    val keyWidth: Int?,
+    val keyWidthDefunct: Int? = null,
     @ColumnInfo(
         name = "animation_speed",
         defaultValue = DEFAULT_ANIMATION_SPEED.toString(),
@@ -232,6 +241,51 @@ data class AppSettings(
         defaultValue = DEFAULT_GHOST_KEYS_ENABLED.toString(),
     )
     val ghostKeysEnabled: Int,
+    @ColumnInfo(
+        name = "key_modifications",
+        defaultValue = "",
+    )
+    val keyModifications: String,
+    @ColumnInfo(
+        name = "auto_size_keys",
+        defaultValue = DEFAULT_AUTO_SIZE_KEYS.toString(),
+    )
+    val autoSizeKeys: Int,
+    @ColumnInfo(
+        name = "non_square_keys",
+        defaultValue = DEFAULT_NON_SQUARE_KEYS.toString(),
+    )
+    val nonSquareKeys: Int,
+    @ColumnInfo(
+        name = "key_width_v18",
+        defaultValue = DEFAULT_KEY_WIDTH.toString(),
+    )
+    val keyWidth: Int,
+    @ColumnInfo(
+        name = "key_height_v18",
+        defaultValue = DEFAULT_KEY_HEIGHT.toString(),
+    )
+    val keyHeight: Int,
+    @ColumnInfo(
+        name = "ignore_bottom_padding",
+        defaultValue = DEFAULT_IGNORE_BOTTOM_PADDING.toString(),
+    )
+    val ignoreBottomPadding: Int,
+    @ColumnInfo(
+        name = "show_toast_on_layout_switch",
+        defaultValue = DEFAULT_SHOW_TOAST_ON_LAYOUT_SWITCH.toString(),
+    )
+    val showToastOnLayoutSwitch: Int,
+    @ColumnInfo(
+        name = "disable_fullscreen_editor",
+        defaultValue = DEFAULT_DISABLE_FULLSCREEN_EDITOR.toString(),
+    )
+    val disableFullscreenEditor: Int,
+    @ColumnInfo(
+        name = "vibrate_on_slide",
+        defaultValue = DEFAULT_VIBRATE_ON_SLIDE.toString(),
+    )
+    val vibrateOnSlide: Int,
 )
 
 data class LayoutsUpdate(
@@ -248,14 +302,6 @@ data class LayoutsUpdate(
 
 data class LookAndFeelUpdate(
     val id: Int,
-    @ColumnInfo(
-        name = "key_size",
-    )
-    val keySize: Int,
-    @ColumnInfo(
-        name = "key_width",
-    )
-    val keyWidth: Int?,
     @ColumnInfo(
         name = "animation_speed",
     )
@@ -312,6 +358,38 @@ data class LookAndFeelUpdate(
         name = "key_radius",
     )
     val keyRadius: Int,
+    @ColumnInfo(
+        name = "auto_size_keys",
+    )
+    val autoSizeKeys: Int,
+    @ColumnInfo(
+        name = "non_square_keys",
+    )
+    val nonSquareKeys: Int,
+    @ColumnInfo(
+        name = "key_width_v18",
+    )
+    val keyWidth: Int,
+    @ColumnInfo(
+        name = "key_height_v18",
+    )
+    val keyHeight: Int,
+    @ColumnInfo(
+        name = "ignore_bottom_padding",
+    )
+    val ignoreBottomPadding: Int,
+    @ColumnInfo(
+        name = "show_toast_on_layout_switch",
+    )
+    val showToastOnLayoutSwitch: Int,
+    @ColumnInfo(
+        name = "disable_fullscreen_editor",
+    )
+    val disableFullscreenEditor: Int,
+    @ColumnInfo(
+        name = "vibrate_on_slide",
+    )
+    val vibrateOnSlide: Int,
 )
 
 data class BehaviorUpdate(
@@ -344,6 +422,14 @@ data class BehaviorUpdate(
     val ghostKeysEnabled: Int,
 )
 
+data class KeyModificationsUpdate(
+    val id: Int,
+    @ColumnInfo(
+        name = "key_modifications",
+    )
+    val keyModifications: String,
+)
+
 @Dao
 interface AppSettingsDao {
     @Query("SELECT * FROM AppSettings limit 1")
@@ -360,6 +446,9 @@ interface AppSettingsDao {
 
     @Update(entity = AppSettings::class)
     fun updateBehavior(behavior: BehaviorUpdate)
+
+    @Update(entity = AppSettings::class)
+    fun updateKeyModifications(behavior: KeyModificationsUpdate)
 
     @Query("UPDATE AppSettings SET last_version_code_viewed = :versionCode")
     suspend fun updateLastVersionCode(versionCode: Int)
@@ -398,6 +487,11 @@ class AppSettingsRepository(
     }
 
     @WorkerThread
+    fun updateKeyModifications(behavior: KeyModificationsUpdate) {
+        appSettingsDao.updateKeyModifications(behavior)
+    }
+
+    @WorkerThread
     suspend fun updateLastVersionCodeViewed(versionCode: Int) {
         appSettingsDao.updateLastVersionCode(versionCode)
     }
@@ -419,171 +513,8 @@ class AppSettingsRepository(
     }
 }
 
-val MIGRATION_1_2 =
-    object : Migration(1, 2) {
-        override fun migrate(db: SupportSQLiteDatabase) {
-            db.execSQL(
-                "alter table AppSettings add column min_swipe_length INTEGER NOT NULL default $DEFAULT_MIN_SWIPE_LENGTH",
-            )
-        }
-    }
-
-val MIGRATION_2_3 =
-    object : Migration(2, 3) {
-        override fun migrate(db: SupportSQLiteDatabase) {
-            db.execSQL(
-                "alter table AppSettings add column pushup_size INTEGER NOT NULL default $DEFAULT_PUSHUP_SIZE",
-            )
-        }
-    }
-
-val MIGRATION_3_4 =
-    object : Migration(3, 4) {
-        override fun migrate(db: SupportSQLiteDatabase) {
-            db.execSQL(
-                "alter table AppSettings add column hide_letters INTEGER NOT NULL default $DEFAULT_HIDE_LETTERS",
-            )
-        }
-    }
-
-val MIGRATION_4_5 =
-    object : Migration(4, 5) {
-        override fun migrate(db: SupportSQLiteDatabase) {
-            db.execSQL(
-                "alter table AppSettings add column keyboard_layouts TEXT NOT NULL default '$DEFAULT_KEYBOARD_LAYOUT'",
-            )
-        }
-    }
-
-val MIGRATION_5_6 =
-    object : Migration(5, 6) {
-        override fun migrate(db: SupportSQLiteDatabase) {
-            db.execSQL(
-                "alter table AppSettings add column key_borders INTEGER NOT NULL default $DEFAULT_KEY_BORDERS",
-            )
-        }
-    }
-
-val MIGRATION_6_7 =
-    object : Migration(6, 7) {
-        override fun migrate(db: SupportSQLiteDatabase) {
-            db.execSQL(
-                "alter table AppSettings add column spacebar_multitaps INTEGER NOT NULL default $DEFAULT_SPACEBAR_MULTITAPS",
-            )
-        }
-    }
-
-val MIGRATION_7_8 =
-    object : Migration(7, 8) {
-        override fun migrate(db: SupportSQLiteDatabase) {
-            db.execSQL(
-                "alter table AppSettings add column hide_symbols INTEGER NOT NULL default $DEFAULT_HIDE_SYMBOLS",
-            )
-        }
-    }
-
-val MIGRATION_8_9 =
-    object : Migration(8, 9) {
-        override fun migrate(db: SupportSQLiteDatabase) {
-            db.execSQL(
-                "alter table AppSettings add column last_version_code_viewed INTEGER NOT NULL default 0",
-            )
-        }
-    }
-
-val MIGRATION_9_10 =
-    object : Migration(9, 10) {
-        override fun migrate(db: SupportSQLiteDatabase) {
-            db.execSQL(
-                "alter table AppSettings add column slide_enabled INTEGER NOT NULL default $DEFAULT_SLIDE_ENABLED",
-            )
-            db.execSQL(
-                "alter table AppSettings add column slide_sensitivity INTEGER NOT NULL default $DEFAULT_SLIDE_SENSITIVITY",
-            )
-        }
-    }
-
-val MIGRATION_10_11 =
-    object : Migration(10, 11) {
-        override fun migrate(db: SupportSQLiteDatabase) {
-            db.execSQL(
-                "alter table AppSettings add column backdrop_enabled INTEGER NOT NULL default $DEFAULT_BACKDROP_ENABLED",
-            )
-        }
-    }
-
-val MIGRATION_11_12 =
-    object : Migration(11, 12) {
-        override fun migrate(db: SupportSQLiteDatabase) {
-            db.execSQL(
-                "alter table AppSettings add column key_padding INTEGER NOT NULL default $DEFAULT_KEY_PADDING",
-            )
-            db.execSQL(
-                "alter table AppSettings add column key_border_width INTEGER NOT NULL default $DEFAULT_KEY_BORDER_WIDTH",
-            )
-            db.execSQL(
-                "alter table AppSettings add column key_radius INTEGER NOT NULL default $DEFAULT_KEY_RADIUS",
-            )
-        }
-    }
-
-val MIGRATION_12_13 =
-    object : Migration(12, 13) {
-        override fun migrate(db: SupportSQLiteDatabase) {
-            db.execSQL(
-                "alter table AppSettings add column slide_spacebar_deadzone_enabled INTEGER NOT NULL " +
-                    "default $DEFAULT_SLIDE_SPACEBAR_DEADZONE_ENABLED",
-            )
-            db.execSQL(
-                "alter table AppSettings add column slide_backspace_deadzone_enabled INTEGER NOT NULL " +
-                    "default $DEFAULT_SLIDE_BACKSPACE_DEADZONE_ENABLED",
-            )
-            db.execSQL(
-                "alter table AppSettings add column slide_cursor_movement_mode INTEGER NOT NULL " +
-                    "default $DEFAULT_SLIDE_CURSOR_MOVEMENT_MODE",
-            )
-        }
-    }
-
-val MIGRATION_13_14 =
-    object : Migration(13, 14) {
-        override fun migrate(db: SupportSQLiteDatabase) {
-            db.execSQL(
-                "alter table AppSettings add column key_width INTEGER",
-            )
-        }
-    }
-
-val MIGRATION_14_15 =
-    object : Migration(14, 15) {
-        override fun migrate(db: SupportSQLiteDatabase) {
-            db.execSQL(
-                "alter table AppSettings add column drag_return_enabled INTEGER NOT NULL default $DEFAULT_DRAG_RETURN_ENABLED",
-            )
-            db.execSQL(
-                "alter table AppSettings add column circular_drag_enabled INTEGER NOT NULL default $DEFAULT_CIRCULAR_DRAG_ENABLED",
-            )
-            db.execSQL(
-                "alter table AppSettings add column clockwise_drag_action INTEGER NOT NULL default $DEFAULT_CLOCKWISE_DRAG_ACTION",
-            )
-            db.execSQL(
-                "alter table AppSettings add column counterclockwise_drag_action INTEGER NOT NULL " +
-                    "default $DEFAULT_COUNTERCLOCKWISE_DRAG_ACTION",
-            )
-        }
-    }
-
-val MIGRATION_15_16 =
-    object : Migration(15, 16) {
-        override fun migrate(db: SupportSQLiteDatabase) {
-            db.execSQL(
-                "alter table AppSettings add column ghost_keys_enabled INTEGER NOT NULL default $DEFAULT_GHOST_KEYS_ENABLED",
-            )
-        }
-    }
-
 @Database(
-    version = 16,
+    version = 22,
     entities = [AppSettings::class],
     exportSchema = true,
 )
@@ -621,6 +552,12 @@ abstract class AppDB : RoomDatabase() {
                             MIGRATION_13_14,
                             MIGRATION_14_15,
                             MIGRATION_15_16,
+                            MIGRATION_16_17,
+                            MIGRATION_17_18,
+                            MIGRATION_18_19,
+                            MIGRATION_19_20,
+                            MIGRATION_20_21,
+                            MIGRATION_21_22,
                         )
                         // Necessary because it can't insert data on creation
                         .addCallback(
@@ -672,6 +609,11 @@ class AppSettingsViewModel(
     fun updateBehavior(behavior: BehaviorUpdate) =
         viewModelScope.launch {
             repository.updateBehavior(behavior)
+        }
+
+    fun updateKeyModifications(behavior: KeyModificationsUpdate) =
+        viewModelScope.launch {
+            repository.updateKeyModifications(behavior)
         }
 
     fun updateLastVersionCodeViewed(versionCode: Int) =

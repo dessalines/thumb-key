@@ -9,7 +9,7 @@
     <string name="green">Vert</string>
     <string name="pink">Rose</string>
     <string name="matrix">Matrice-AMOLED</string>
-    <string name="srcery">Srcery</string>
+    <string name="srcery">Sorcière</string>
     <string name="blue">Bleu</string>
     <string name="dracula">Dracula</string>
     <string name="twilight">Crépuscule</string>
@@ -30,7 +30,7 @@
     <string name="social">Réseaux sociaux</string>
     <string name="join_c_thumbkey">Rejoindre c/thumbkey</string>
     <string name="follow_me_mastodon">Me suivre sur Mastodon</string>
-    <string name="open_source">Open-source</string>
+    <string name="open_source">Open source</string>
     <string name="source_code">Code source</string>
     <string name="source_code_subtitle">Thumb-Key est un logiciel libre et open source, sous la licence GNU Affero General Public License v3.0</string>
     <string name="look_and_feel">Apparence</string>
@@ -43,7 +43,7 @@
     <string name="vibrate_warning">Nécessite d’activer Vibrer à l’appui dans les paramètres du téléphone</string>
     <string name="play_sound_on_tap">Son au toucher</string>
     <string name="auto_capitalize">Majuscules automatiques</string>
-    <string name="key_size">Taille des touches : %1$s</string>
+    <string name="key_size">Taille des touches : %1$s</string>
     <string name="key_non_square">Touches non carrées</string>
     <string name="key_height">Hauteur des touches : %1$s</string>
     <string name="key_width">Largeur des touches : %1$s</string>
@@ -94,4 +94,10 @@
     <string name="database_restored">La base de données a été restaurée.</string>
     <string name="database_backed_up">La base de données a été sauvegardée.</string>
     <string name="backup_and_restore">Sauvegarde et restauration</string>
+    <string name="modify_keys">Modifications des touches</string>
+    <string name="dual">Double</string>
+    <string name="auto_size_keys">Étendre pour remplir la largeur de l\'écran</string>
+    <string name="how_to_modify_keys">Comment modifier les touches</string>
+    <string name="ignore_bottom_padding">Ignorer l\'espacement inférieur</string>
+    <string name="key_modification_placeholder">Insérer du YAML</string>
 </resources>

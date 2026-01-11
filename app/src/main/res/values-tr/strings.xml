@@ -27,6 +27,7 @@
     <string name="vibrate_on_tap">Titret</string>
     <string name="play_sound_on_tap">Ses çal</string>
     <string name="auto_capitalize">Otomatik büyük harf</string>
+    <string name="auto_size_keys">Ekran genişliğine sığdırmak için büyüt</string>
     <string name="key_size">Tuş boyutu: %1$s</string>
     <string name="key_non_square">Kare olmayan tuşları kullan</string>
     <string name="key_width">Tuş genişliği: %1$s</string>
@@ -92,4 +93,10 @@
     <string name="slide_cursor_acceleration_quadratic">X*X hızlanma</string>
     <string name="bottom_offset">Alt boşluk: %1$s</string>
     <string name="slide_backspace_deadzone_enable">Geri tuşu: Normal kaydırmalar kaydırma hareketleriyle birlikte çalışabilsin</string>
+    <string name="srcery">Srcery</string>
+    <string name="dual">Çift</string>
+    <string name="slide_cursor_acceleration_threshold_acceleration">Eşik hızlanma</string>
+    <string name="modify_keys">Tuşları değiştir</string>
+    <string name="key_modification_placeholder">YAML\'ı girin</string>
+    <string name="how_to_modify_keys">Tuşları nasıl değiştirilir</string>
 </resources>

@@ -77,4 +77,18 @@
     <string name="key_padding">Spaziatura tasti : %1$s</string>
     <string name="key_border_width">Bordo tasti : %1$s</string>
     <string name="key_radius">Arrotondamento tasti : %1$s</string>
+    <string name="auto_size_keys">Adatta larghezza allo schermo</string>
+    <string name="key_non_square">Tasti non quadrati</string>
+    <string name="key_height">Altezza tasto: %1$s</string>
+    <string name="key_width">Larghezza tasto: %1$s</string>
+    <string name="ghost_keys_enable">Tasti fantasma</string>
+    <string name="ghost_keys_description">Accedi ai simboli nascosti senza dover passare alla tastiera numerica</string>
+    <string name="restore_database">Ripristino database</string>
+    <string name="restore_database_warning">Attenzione: il database corrente verrà eliminato</string>
+    <string name="database_restored">Database ripristinato.</string>
+    <string name="database_backed_up">Database salvato.</string>
+    <string name="backup_and_restore">Backup e ripristino</string>
+    <string name="modify_keys">Modifica tasti</string>
+    <string name="key_modification_placeholder">Inserisci YAML</string>
+    <string name="how_to_modify_keys">Come modificare i tasti</string>
 </resources>

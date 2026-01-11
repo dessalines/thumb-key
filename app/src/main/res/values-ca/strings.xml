@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Thumb-Key</string>
+    <string name="settings">Arranjament</string>
+    <string name="system">Sistema</string>
+    <string name="light">Clar</string>
+    <string name="dark">Fosc</string>
+    <string name="dynamic">Dinàmic</string>
+    <string name="green">Verd</string>
+    <string name="pink">Rosa</string>
+    <string name="matrix">Matricial-AMOLED</string>
+    <string name="blue">Blau</string>
+    <string name="dracula">Dràcula</string>
+    <string name="twilight">Crepuscle</string>
+    <string name="high_contrast">Alt contrast</string>
+    <string name="ancom">Colors anarco-comunistes</string>
+    <string name="center">Centre</string>
+    <string name="right">Dreta</string>
+    <string name="left">Esquerra</string>
+    <string name="dual">Dual</string>
+    <string name="about">Quant a</string>
+    <string name="whats_new">Novetats</string>
+    <string name="version">Versió %1$s</string>
+    <string name="releases">Llançaments</string>
+    <string name="donate_to_thumbkey">Donar a Thumb-Key</string>
+    <string name="social">Xarxes socials</string>
+    <string name="join_c_thumbkey">Uniu-vos a c/thumbkey</string>
+    <string name="follow_me_mastodon">Segueix-nos a Mastodon</string>
+    <string name="open_source">Codi obert</string>
+    <string name="source_code">Codi font</string>
+    <string name="source_code_subtitle">Thumb-Key és un programari de codi obert amb llicència GNU Affero General Public License v3.0</string>
+    <string name="behavior">Comportament</string>
+    <string name="layouts">Disposicions</string>
+    <string name="theme">Tema</string>
+    <string name="theme_color">Color del tema</string>
+    <string name="position">Posició</string>
+    <string name="vibrate_on_tap">Vibra en tocar</string>
+    <string name="play_sound_on_tap">Reprodueix un so en tocar</string>
+    <string name="auto_size_keys">Maximitzar per adaptar-se a l\'amplada de la pantalla</string>
+    <string name="key_size">Mida de la tecla: %1$s</string>
+    <string name="key_non_square">Utilitzar tecles no quadrades</string>
+    <string name="key_height">Alçada de la tecla: %1$s</string>
+    <string name="key_width">Amplada de la tecla: %1$s</string>
+</resources>

@@ -37,23 +37,30 @@ import com.dessalines.thumbkey.db.AppSettingsViewModel
 import com.dessalines.thumbkey.db.DEFAULT_ANIMATION_HELPER_SPEED
 import com.dessalines.thumbkey.db.DEFAULT_ANIMATION_SPEED
 import com.dessalines.thumbkey.db.DEFAULT_AUTO_CAPITALIZE
+import com.dessalines.thumbkey.db.DEFAULT_AUTO_SIZE_KEYS
 import com.dessalines.thumbkey.db.DEFAULT_BACKDROP_ENABLED
 import com.dessalines.thumbkey.db.DEFAULT_CIRCULAR_DRAG_ENABLED
 import com.dessalines.thumbkey.db.DEFAULT_CLOCKWISE_DRAG_ACTION
 import com.dessalines.thumbkey.db.DEFAULT_COUNTERCLOCKWISE_DRAG_ACTION
+import com.dessalines.thumbkey.db.DEFAULT_DISABLE_FULLSCREEN_EDITOR
 import com.dessalines.thumbkey.db.DEFAULT_DRAG_RETURN_ENABLED
 import com.dessalines.thumbkey.db.DEFAULT_GHOST_KEYS_ENABLED
 import com.dessalines.thumbkey.db.DEFAULT_HIDE_LETTERS
 import com.dessalines.thumbkey.db.DEFAULT_HIDE_SYMBOLS
+import com.dessalines.thumbkey.db.DEFAULT_IGNORE_BOTTOM_PADDING
 import com.dessalines.thumbkey.db.DEFAULT_KEYBOARD_LAYOUT
 import com.dessalines.thumbkey.db.DEFAULT_KEY_BORDERS
 import com.dessalines.thumbkey.db.DEFAULT_KEY_BORDER_WIDTH
+import com.dessalines.thumbkey.db.DEFAULT_KEY_HEIGHT
+import com.dessalines.thumbkey.db.DEFAULT_KEY_MODIFICATIONS
 import com.dessalines.thumbkey.db.DEFAULT_KEY_PADDING
 import com.dessalines.thumbkey.db.DEFAULT_KEY_RADIUS
-import com.dessalines.thumbkey.db.DEFAULT_KEY_SIZE
+import com.dessalines.thumbkey.db.DEFAULT_KEY_WIDTH
 import com.dessalines.thumbkey.db.DEFAULT_MIN_SWIPE_LENGTH
+import com.dessalines.thumbkey.db.DEFAULT_NON_SQUARE_KEYS
 import com.dessalines.thumbkey.db.DEFAULT_POSITION
 import com.dessalines.thumbkey.db.DEFAULT_PUSHUP_SIZE
+import com.dessalines.thumbkey.db.DEFAULT_SHOW_TOAST_ON_LAYOUT_SWITCH
 import com.dessalines.thumbkey.db.DEFAULT_SLIDE_BACKSPACE_DEADZONE_ENABLED
 import com.dessalines.thumbkey.db.DEFAULT_SLIDE_CURSOR_MOVEMENT_MODE
 import com.dessalines.thumbkey.db.DEFAULT_SLIDE_ENABLED
@@ -63,6 +70,7 @@ import com.dessalines.thumbkey.db.DEFAULT_SOUND_ON_TAP
 import com.dessalines.thumbkey.db.DEFAULT_SPACEBAR_MULTITAPS
 import com.dessalines.thumbkey.db.DEFAULT_THEME
 import com.dessalines.thumbkey.db.DEFAULT_THEME_COLOR
+import com.dessalines.thumbkey.db.DEFAULT_VIBRATE_ON_SLIDE
 import com.dessalines.thumbkey.db.DEFAULT_VIBRATE_ON_TAP
 import com.dessalines.thumbkey.utils.SimpleTopAppBar
 import com.dessalines.thumbkey.utils.keyboardLayoutsSetFromDbIndexString
@@ -232,12 +240,11 @@ private fun resetAppSettingsToDefault(appSettingsViewModel: AppSettingsViewModel
             hideLetters = DEFAULT_HIDE_LETTERS,
             hideSymbols = DEFAULT_HIDE_SYMBOLS,
             keyBorders = DEFAULT_KEY_BORDERS,
-            keySize = DEFAULT_KEY_SIZE,
-            keyWidth = null,
             spacebarMultiTaps = DEFAULT_SPACEBAR_MULTITAPS,
             theme = DEFAULT_THEME,
             themeColor = DEFAULT_THEME_COLOR,
             vibrateOnTap = DEFAULT_VIBRATE_ON_TAP,
+            vibrateOnSlide = DEFAULT_VIBRATE_ON_SLIDE,
             lastVersionCodeViewed = appSettingsViewModel.appSettings.value?.lastVersionCodeViewed ?: 0,
             viewedChangelog = appSettingsViewModel.appSettings.value?.viewedChangelog ?: 1,
             backdropEnabled = DEFAULT_BACKDROP_ENABLED,
@@ -249,6 +256,14 @@ private fun resetAppSettingsToDefault(appSettingsViewModel: AppSettingsViewModel
             clockwiseDragAction = DEFAULT_CLOCKWISE_DRAG_ACTION,
             counterclockwiseDragAction = DEFAULT_COUNTERCLOCKWISE_DRAG_ACTION,
             ghostKeysEnabled = DEFAULT_GHOST_KEYS_ENABLED,
+            keyModifications = DEFAULT_KEY_MODIFICATIONS,
+            autoSizeKeys = DEFAULT_AUTO_SIZE_KEYS,
+            nonSquareKeys = DEFAULT_NON_SQUARE_KEYS,
+            keyWidth = DEFAULT_KEY_WIDTH,
+            keyHeight = DEFAULT_KEY_HEIGHT,
+            ignoreBottomPadding = DEFAULT_IGNORE_BOTTOM_PADDING,
+            showToastOnLayoutSwitch = DEFAULT_SHOW_TOAST_ON_LAYOUT_SWITCH,
+            disableFullscreenEditor = DEFAULT_DISABLE_FULLSCREEN_EDITOR,
         ),
     )
 }
