@@ -2,7 +2,6 @@
 
 package com.dessalines.thumbkey.keyboards
 
-
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.outlined.*
 import com.dessalines.thumbkey.utils.*
@@ -96,15 +95,24 @@ val KB_HU_HUNGRAM_MAIN =
                     right = KeyC("^"),
                     top =
                         KeyC(
-                            display = KeyDisplay.IconDisplay(Icons.Outlined.ArrowDropUp),
+                            display =
+                                KeyDisplay.IconDisplay(
+                                    Icons.Outlined.ArrowDropUp,
+                                ),
                             action = ToggleShiftMode(true),
-                            swipeReturnAction = ToggleCurrentWordCapitalization(true),
+                            swipeReturnAction =
+                                ToggleCurrentWordCapitalization(
+                                    true,
+                                ),
                             color = MUTED,
                         ),
                     bottom =
                         KeyC(
                             ToggleShiftMode(false),
-                            swipeReturnAction = ToggleCurrentWordCapitalization(false),
+                            swipeReturnAction =
+                                ToggleCurrentWordCapitalization(
+                                    false,
+                                ),
                         ),
                 ),
                 KeyItemC(
@@ -142,6 +150,8 @@ val KB_HU_HUNGRAM_MAIN =
                 KeyItemC(
                     center = KeyC("f", size = LARGE),
                     left = KeyC("v"),
+                    top = KeyC("."),
+                    bottom = KeyC(","),
                     swipeType = FOUR_WAY_CROSS,
                 ),
                 KeyItemC(
@@ -153,8 +163,7 @@ val KB_HU_HUNGRAM_MAIN =
             listOf(
                 NUMERIC_KEY_ITEM_ALT,
                 BACKSPACE_KEY_ITEM,
-                SPACEBAR_TYPESPLIT_MIDDLE_KEY_ITEM.copy(widthMultiplier = 2,
-                 top = KeyC(".", color = MUTED),),
+                SPACEBAR_PROGRAMMING_KEY_ITEM.copy(widthMultiplier = 2),
                 RETURN_KEY_ITEM,
                 EMOJI_KEY_ITEM_ALT,
             ),
@@ -246,15 +255,24 @@ val KB_HU_HUNGRAM_SHIFTED =
                     right = KeyC("^"),
                     top =
                         KeyC(
-                            display = KeyDisplay.IconDisplay(Icons.Outlined.ArrowDropUp),
+                            display =
+                                KeyDisplay.IconDisplay(
+                                    Icons.Outlined.ArrowDropUp,
+                                ),
                             action = ToggleShiftMode(true),
-                            swipeReturnAction = ToggleCurrentWordCapitalization(true),
+                            swipeReturnAction =
+                                ToggleCurrentWordCapitalization(
+                                    true,
+                                ),
                             color = MUTED,
                         ),
                     bottom =
                         KeyC(
                             ToggleShiftMode(false),
-                            swipeReturnAction = ToggleCurrentWordCapitalization(false),
+                            swipeReturnAction =
+                                ToggleCurrentWordCapitalization(
+                                    false,
+                                ),
                         ),
                 ),
                 KeyItemC(
@@ -292,6 +310,8 @@ val KB_HU_HUNGRAM_SHIFTED =
                 KeyItemC(
                     center = KeyC("F", size = LARGE),
                     left = KeyC("V"),
+                    top = KeyC("."),
+                    bottom = KeyC(","),
                     swipeType = FOUR_WAY_CROSS,
                 ),
                 KeyItemC(
@@ -303,8 +323,7 @@ val KB_HU_HUNGRAM_SHIFTED =
             listOf(
                 NUMERIC_KEY_ITEM_ALT,
                 BACKSPACE_KEY_ITEM,
-                SPACEBAR_TYPESPLIT_MIDDLE_KEY_ITEM.copy(widthMultiplier = 2,
-                 top = KeyC(".", color = MUTED),),
+                SPACEBAR_PROGRAMMING_KEY_ITEM.copy(widthMultiplier = 2),
                 RETURN_KEY_ITEM,
                 EMOJI_KEY_ITEM_ALT,
             ),
@@ -313,7 +332,7 @@ val KB_HU_HUNGRAM_SHIFTED =
 
 val KB_HU_HUNGRAM: KeyboardDefinition =
     KeyboardDefinition(
-        title = "hungram",
+        title = "magyar hungram",
         modes =
             KeyboardDefinitionModes(
                 main = KB_HU_HUNGRAM_MAIN,
