@@ -157,7 +157,7 @@ val KB_JA_KANA_STANDARD_KATAKANA =
                 KeyItemC(
                     center = KeyC("サ", size = LARGE),
                     swipeType = FOUR_WAY_CROSS,
-                    left = KeyC("ソ"),
+                    left = KeyC("シ"),
                     top = KeyC("ス"),
                     right = KeyC("セ"),
                     bottom = KeyC("ソ"),
