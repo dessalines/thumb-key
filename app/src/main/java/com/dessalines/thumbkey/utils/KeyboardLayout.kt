@@ -451,5 +451,5 @@ enum class KeyboardLayout(
     FRENFrappeFluideV1LeftHandedControlLeftSide(
         KB_FR_EN_FRAPPE_FLUIDE_V1_LEFT_HANDED_CONTROL_LEFT_SIDE,
     ), // français frappefluide (fr+en) v1 (gauchère, outils à gauche),
-    HUHungram(KB_HU_HUNGRAM),
+    HUHungram(KB_HU_HUNGRAM), // magyar hungram
 }
