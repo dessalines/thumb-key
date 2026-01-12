@@ -135,6 +135,7 @@ import com.dessalines.thumbkey.keyboards.KB_HI_THUMBKEY_EXTENDED
 import com.dessalines.thumbkey.keyboards.KB_HR_THUMBKEY
 import com.dessalines.thumbkey.keyboards.KB_HR_THUMBKEY_SYMBOLS
 import com.dessalines.thumbkey.keyboards.KB_HR_TWO_HANDS
+import com.dessalines.thumbkey.keyboards.KB_HU_HUNGRAM
 import com.dessalines.thumbkey.keyboards.KB_HU_THUMBKEY
 import com.dessalines.thumbkey.keyboards.KB_HU_TYPESPLIT
 import com.dessalines.thumbkey.keyboards.KB_ID_THUMBKEY_SYMBOLS_NUMBERS_V1
@@ -256,7 +257,9 @@ enum class KeyboardLayout(
     PTTypeSplit(KB_PT_TYPESPLIT), // português type-split
     PLTypeSplitV2(KB_PL_TYPESPLIT_V2), // polski type-split v2
     ENTwoHands(KB_EN_TWO_HANDS), // english two-hands
-    ENThumbKeyProgrammingWide(KB_EN_THUMBKEY_PROGRAMMING_WIDE), // english thumb-key programming wide
+    ENThumbKeyProgrammingWide(
+        KB_EN_THUMBKEY_PROGRAMMING_WIDE,
+    ), // english thumb-key programming wide
     HUThumbKey(KB_HU_THUMBKEY), // magyar thumb-key
     ESEOThumbKey(KB_ES_EO_THUMBKEY), // español esperanto thumb-key
     ITMessagEase(KB_IT_MESSAGEASE), // italiano messagease
@@ -275,7 +278,9 @@ enum class KeyboardLayout(
     LVLTGThumbKey(KB_LV_LTG_THUMBKEY), // latviešu valoda thumb-key
     LTThumbKey(KB_LT_THUMBKEY), // lietuvių kalba thumb-key
     IDThumbKeySymbolsV2(KB_ID_THUMBKEY_SYMBOLS_V2), // bahasa indonesia thumb-key symbols v2
-    IDThumbKeySymbolsNumbers(KB_ID_THUMBKEY_SYMBOLS_NUMBERS_V1), // bahasa indonesia thumb-key symbols-numbers v1
+    IDThumbKeySymbolsNumbers(
+        KB_ID_THUMBKEY_SYMBOLS_NUMBERS_V1,
+    ), // bahasa indonesia thumb-key symbols-numbers v1
     ESCAThumbKey(KB_ES_CA_THUMBKEY), // español català thumb-key
     ENITThumbKey(KB_EN_IT_THUMBKEY), // english italiano thumb-key
     ENEOMessagEaseSymbols(KB_EN_EO_MESSAGEASE_SYMBOLS), // english esperanto messagease symbols
@@ -304,14 +309,18 @@ enum class KeyboardLayout(
     ENDAThumbKeySymbols(KB_EN_DA_THUMBKEY_SYMBOLS), // english dansk thumb-key symbols
     FIEEMessagEase(KB_FI_EE_MESSAGEASE_SYMBOLS), // suomi eesti messagease
     ENPLThumbkey(KB_EN_PL_THUMBKEY), // english polski thumb-key
-    BGMessagEasePhoneticSymbols(KB_BG_MESSAGEASE_PHONETIC_SYMBOLS), // bulgarian messagease phonetic symbols
+    BGMessagEasePhoneticSymbols(
+        KB_BG_MESSAGEASE_PHONETIC_SYMBOLS,
+    ), // bulgarian messagease phonetic symbols
     UKMessagEaseSymbols(KB_UK_MESSAGEASE_SYMBOLS), // українська messagease symbols
     ENFRMessagEaseSymbols(KB_EN_FR_MESSAGEASE_SYMBOLS), // english français messagease symbols
     HEMessagEaseSymbols(KB_HE_MESSAGEASE_SYMBOLS), // עברית messagease symbols
     ENNOMessagEaseSymbols(KB_EN_NO_MESSAGEASE_SYMBOLS), // english norsk messagease symbols
     SLMessagEaseSymbols(KB_SL_MESSAGEASE_SYMBOLS), // slovenščina messagease symbols
     ENMessagEaseLeft(KB_EN_MESSAGEASE_LEFT), // english messagease left-handed
-    ENMessagEaseLeftSymbols(KB_EN_MESSAGEASE_LEFT_SYMBOLS), // english messagease left-handed symbols
+    ENMessagEaseLeftSymbols(
+        KB_EN_MESSAGEASE_LEFT_SYMBOLS,
+    ), // english messagease left-handed symbols
     ENEOThumbKey(KB_EN_EO_THUMBKEY), // english esperanto thumb-key
     ENPHMessagEase(KB_EN_PH_MESSAGEASE), // english wikang tagalog messagease
     EOCyrillicThumbKey(KB_EO_CYRILLIC_THUMBKEY), // esperanto cyrillic thumb-key
@@ -348,7 +357,9 @@ enum class KeyboardLayout(
     DEENThumbkeyAE(KB_EN_DE_THUMBKEY_AE), // english deutsch thumb-key +æ
     SKThumbKeyV3(KB_SK_THUMBKEY_V3), // slovenčina thumb-key v3
     EuropeThumbkey(KB_EUROPE_THUMBKEY), // european thumb-key
-    ENMessagEaseSymbolsTwoHands(KB_EN_MESSAGEASE_SYMBOLS_TWO_HANDS), // english messagease symbols two-hands
+    ENMessagEaseSymbolsTwoHands(
+        KB_EN_MESSAGEASE_SYMBOLS_TWO_HANDS,
+    ), // english messagease symbols two-hands
     RUThumbKeyWriter(KB_RU_THUMBKEY_WRITER), // русский writer thumb-key
     ENMessagEaseWriter(KB_EN_MESSAGEASE_WRITER), // english messagease writer
     RUMessagEaseWriter(KB_RU_MESSAGEASE_WRITER), // русский messagease writer
@@ -365,7 +376,9 @@ enum class KeyboardLayout(
     ENColumnarQuick(KB_EN_COLUMNAR_QUICK), // english qwerty-columnar quick
     UKBYRUThumbKey(KB_UK_BY_RU_THUMBKEY), // українська беларуская русский thumb-key
     PTENThumbKey(KB_PT_EN_THUMBKEY), // português english thumb-key
-    ENThumbKeyProgrammingExpanded(KB_EN_THUMBKEY_PROGRAMMING_EXPANDED), // english thumb-key programming expanded
+    ENThumbKeyProgrammingExpanded(
+        KB_EN_THUMBKEY_PROGRAMMING_EXPANDED,
+    ), // english thumb-key programming expanded
     HIThumbKey(KB_HI_THUMBKEY), // हिन्दी thumb-key
     ENNLTypeSplit(KB_EN_NL_TYPESPLIT), // english nederlands type-split
     HIThumbKeyExtended(KB_HI_THUMBKEY_EXTENDED), // हिन्दी thumb-key extended
@@ -374,7 +387,9 @@ enum class KeyboardLayout(
     TRTypeSplit(KB_TR_TYPESPLIT), // türkçe type-split
     ENDvorakWide(KB_EN_DVORAK_WIDE), // english dvorak wide
     ENDvorakWideCompose(KB_EN_DVORAK_WIDE_COMPOSE), // english dvorak wide compose
-    ENMessagEaseSymbolsModifiers(KB_EN_MESSAGEASE_SYMBOLS_MODIFIERS), // english messagease symbols modifiers
+    ENMessagEaseSymbolsModifiers(
+        KB_EN_MESSAGEASE_SYMBOLS_MODIFIERS,
+    ), // english messagease symbols modifiers
     ARThumbKeyLevant(KB_AR_THUMBKEY_LEVANT), // عربية شامية thumb-key
     PTDvorakWide(KB_PT_DVORAK_WIDE), // português dvorak wide
     BRFRThumbKeyCompose(KB_BR_FR_THUMBKEY_COMPOSE), // brezhoneg français thumb-key compose
@@ -382,24 +397,34 @@ enum class KeyboardLayout(
     ENThumbKeyWordsSymbols(KB_EN_THUMBKEY_WORDS_SYMBOLS), // english thumb-key words symbols
     ENHyperSpace(KB_EN_HYPER_SPACE), // english hyper space
     EnTypeSplitProgramming(KB_EN_TYPESPLIT_PROGRAMMING), // english type-split programming
-    ENSymbolsNumbersArrowsTwoHands(KB_EN_SYMBOLS_NUMBERS_ARROWS_TWO_HANDS), // english symbols-numbers-arrows two-hands
+    ENSymbolsNumbersArrowsTwoHands(
+        KB_EN_SYMBOLS_NUMBERS_ARROWS_TWO_HANDS,
+    ), // english symbols-numbers-arrows two-hands
     BRFRThumbKeyV3(KB_BR_FR_THUMBKEY_V3), // brezhoneg français thumb-key v3
     ENESCAENTwoHands(KB_EN_ES_CA_TWO_HANDS), // english español català two-hands
     DEThumbKeyWords(KB_DE_THUMBKEY_WORDS), // deutsch thumb-key words
     RUMessageOwl(KB_RU_MESSAGE_OWL), // русский owl
     DETypeSplitImproved(KB_DE_TYPESPLIT_IMPROVED), // deutsch type-split improved
-    ENThumbkeyFlippedNumpad(KB_EN_THUMBKEY_FLIPPED_NUMPAD), // english thumb-key with a flipped numpad layout
+    ENThumbkeyFlippedNumpad(
+        KB_EN_THUMBKEY_FLIPPED_NUMPAD,
+    ), // english thumb-key with a flipped numpad layout
     GRThumbKeyNormal(KB_GRNORM_THUMBKEY), // ελληνικά normal thumb-key
     GRNormThumbKeySymbols(KB_GRNORM_THUMBKEY_SYMBOLS), // ελληνικά thumb-key symbols
-    DEMessageEaseInvertedNumpad(KB_DE_MESSAGEASE_INVERTED_NUMPAD), // deutsch messagease, inverted numpad
+    DEMessageEaseInvertedNumpad(
+        KB_DE_MESSAGEASE_INVERTED_NUMPAD,
+    ), // deutsch messagease, inverted numpad
     DEMessagEaseLeft(KB_DE_MESSAGEASE_LEFT), // deutsch messagease left-handed
-    DEMessagEaseLeftInvertedNumpad(KB_DE_MESSAGEASE_LEFT_INVERTED_NUMPAD), // deutsch messagease left-handed, inverted numpad
+    DEMessagEaseLeftInvertedNumpad(
+        KB_DE_MESSAGEASE_LEFT_INVERTED_NUMPAD,
+    ), // deutsch messagease left-handed, inverted numpad
     TRArti(KB_TR_ARTI), // türkçe artı çok
     SRThumbKey(KB_SR_THUMBKEY), // српски / srpski thumb-key
     SRLatnThumbKey(KB_SRLATN_THUMBKEY), // srpski (latinica) thumb-key
     SRLatnEnDeThumbKey(KB_SRLATN_EN_DE_THUMBKEY), // srpski (latinica) engleski nemački thumb-key
     FRENFrappeFluideV1(KB_FR_EN_FRAPPE_FLUIDE_V1), // français frappefluide (fr+en) v1
-    ENThumbKeyWordsSymbolsDual(KB_EN_THUMBKEY_WORDS_SYMBOLS_DUAL), // english thumb-key words symbols dual
+    ENThumbKeyWordsSymbolsDual(
+        KB_EN_THUMBKEY_WORDS_SYMBOLS_DUAL,
+    ), // english thumb-key words symbols dual
     RUArti(KB_RU_ARTI), // русский плюс много
     DAThumbKeyMultiLingual(KB_DA_THUMBKEY_MULTILINGUAL), // dansk thumb-key
     ENSymbolsNumbersArrowsTwoHandsCompact(
@@ -425,5 +450,6 @@ enum class KeyboardLayout(
     ), // français frappefluide (fr+en) v1 (gauchère)
     FRENFrappeFluideV1LeftHandedControlLeftSide(
         KB_FR_EN_FRAPPE_FLUIDE_V1_LEFT_HANDED_CONTROL_LEFT_SIDE,
-    ), // français frappefluide (fr+en) v1 (gauchère, outils à gauche)
+    ), // français frappefluide (fr+en) v1 (gauchère, outils à gauche),
+    HUHungram(KB_HU_HUNGRAM), // magyar hungram
 }
