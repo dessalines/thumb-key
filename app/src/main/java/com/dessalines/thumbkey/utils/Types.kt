@@ -217,6 +217,10 @@ sealed class KeyAction {
         val enable: Boolean,
     ) : KeyAction()
 
+    class ToggleClipboardMode(
+        val enable: Boolean,
+    ) : KeyAction()
+
     class ComposeLastKey(
         val text: String,
     ) : KeyAction()
@@ -297,6 +301,7 @@ enum class KeyboardMode {
     EMOJI,
     CTRLED,
     ALTED,
+    CLIPBOARD,
 }
 
 enum class SwipeDirection {

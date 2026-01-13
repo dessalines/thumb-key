@@ -46,6 +46,7 @@ val PASTE_KEYC =
     KeyC(
         display = KeyDisplay.IconDisplay(Icons.Outlined.ContentPaste),
         action = Paste,
+        swipeReturnAction = ToggleClipboardMode(true),
         color = MUTED,
     )
 val GOTO_SETTINGS_KEYC =
@@ -138,6 +139,14 @@ val TOGGLE_EMOJI_MODE_TRUE_KEYC =
     KeyC(
         display = KeyDisplay.IconDisplay(Icons.Outlined.Mood),
         action = ToggleEmojiMode(true),
+        size = LARGE,
+        color = SECONDARY,
+    )
+
+val TOGGLE_CLIPBOARD_MODE_TRUE_KEYC =
+    KeyC(
+        display = KeyDisplay.IconDisplay(Icons.Outlined.Inventory),
+        action = ToggleClipboardMode(true),
         size = LARGE,
         color = SECONDARY,
     )
