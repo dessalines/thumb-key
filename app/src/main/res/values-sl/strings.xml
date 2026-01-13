@@ -102,4 +102,7 @@
     <string name="ignore_bottom_padding">Ne upoštevaj spodnjega odmika</string>
     <string name="show_toast_on_layout_switch">Prikaži sporočilo ob spremembi tipkovnice</string>
     <string name="disable_fullscreen_editor">Onemogoči celozaslonski urejevalnik</string>
+    <string name="vibrate_on_slide">Vibriraj ob drsanju</string>
+    <string name="vibrate_slide_note">Velja za drsanje po preslednici ali vračalki</string>
+    <string name="vibrate_slide_warning">Kretnje pri drsanju morajo biti omogočene v nastavitvah (Obnašanje)</string>
 </resources>
