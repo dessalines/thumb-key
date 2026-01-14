@@ -1160,6 +1160,7 @@ fun performKeyAction(
         }
 
         KeyAction.ToggleCapsLock -> {
+            Log.d(TAG, "Toggling Caps Lock")
             onToggleCapsLock()
         }
 
