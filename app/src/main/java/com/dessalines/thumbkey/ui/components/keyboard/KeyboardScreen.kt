@@ -359,6 +359,11 @@ fun KeyboardScreen(
                                 },
                                 onToggleCapsLock = {
                                     capsLock = !capsLock
+
+                                    // Change to shifted mode in case it isn't already shifted
+                                    if (capsLock) {
+                                        mode = KeyboardMode.SHIFTED
+                                    }
                                 },
                                 onToggleHideLetters = onToggleHideLetters,
                                 onAutoCapitalize = { enable ->
@@ -531,6 +536,11 @@ fun KeyboardScreen(
                                         },
                                         onToggleCapsLock = {
                                             capsLock = !capsLock
+
+                                            // Change to shifted mode in case it isn't already shifted
+                                            if (capsLock) {
+                                                mode = KeyboardMode.SHIFTED
+                                            }
                                         },
                                         onToggleHideLetters = onToggleHideLetters,
                                         onKeyEvent = {
