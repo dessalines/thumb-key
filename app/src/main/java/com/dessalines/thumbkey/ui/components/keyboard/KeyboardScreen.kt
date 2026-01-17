@@ -5,6 +5,7 @@ import android.media.AudioManager
 import android.util.Log
 import android.view.HapticFeedbackConstants
 import android.view.inputmethod.InputConnection.CURSOR_UPDATE_MONITOR
+import android.widget.Toast
 import androidx.compose.foundation.background
 import androidx.compose.foundation.border
 import androidx.compose.foundation.layout.Box
@@ -76,6 +77,7 @@ import com.dessalines.thumbkey.keyboards.NUMERIC_KEY_ITEM
 import com.dessalines.thumbkey.keyboards.RETURN_KEY_ITEM
 import com.dessalines.thumbkey.utils.CircularDragAction
 import com.dessalines.thumbkey.utils.KeyAction
+import com.dessalines.thumbkey.utils.KeyboardC
 import com.dessalines.thumbkey.utils.KeyboardLayout
 import com.dessalines.thumbkey.utils.KeyboardMode
 import com.dessalines.thumbkey.utils.KeyboardPosition
@@ -135,15 +137,44 @@ fun KeyboardScreen(
 
     val clipboardItems by clipboardRepository.allClipboardItems.observeAsState(initial = emptyList())
 
-    val keyboard =
+    /**
+     * Get the keyboard definition corresponding to the given mode (Main, Shifted, etc.),
+     * or `null` if there is no definition for that mode in the current layout.
+     */
+    fun getKeyboardDefinition(mode: KeyboardMode): KeyboardC? =
         when (mode) {
             KeyboardMode.MAIN -> keyboardDefinition.modes.main
             KeyboardMode.SHIFTED -> keyboardDefinition.modes.shifted
             KeyboardMode.NUMERIC -> keyboardDefinition.modes.numeric
-            KeyboardMode.CTRLED -> keyboardDefinition.modes.ctrled!!
-            KeyboardMode.ALTED -> keyboardDefinition.modes.alted!!
+            KeyboardMode.CTRLED -> keyboardDefinition.modes.ctrled // nullable
+            KeyboardMode.ALTED -> keyboardDefinition.modes.alted // nullable
             else -> KB_EN_THUMBKEY_MAIN
         }
+
+    /**
+     * Try to change the keyboard mode into [newMode], or back to [KeyboardMode.MAIN] if [enable]
+     * is `false`.
+     *
+     * If the current layout doesn't have a definition for [newMode], then the mode will not be
+     * changed, and a warning Toast will be displayed.
+     */
+    fun handleModeChange(newMode: KeyboardMode, enable: Boolean) {
+        mode =
+            if (enable && getKeyboardDefinition(newMode) == null) {
+                // Layout does not have this definition, do not switch to it
+                Toast.makeText(ctx, "Layout \"${keyboardDefinition.title}\" has no \"${newMode}\" mode definition.", Toast.LENGTH_SHORT).show()
+                mode
+            }
+            else if (!enable) {
+                // Disabling the mode
+                KeyboardMode.MAIN
+            }
+            else {
+                newMode
+            }
+    }
+
+    val keyboard = getKeyboardDefinition(mode)
 
     val position =
         KeyboardPosition.entries[
@@ -327,46 +358,27 @@ fun KeyboardScreen(
                                 slideSpacebarDeadzoneEnabled = slideSpacebarDeadzoneEnabled,
                                 slideBackspaceDeadzoneEnabled = slideBackspaceDeadzoneEnabled,
                                 onToggleShiftMode = { enable ->
-                                    mode =
-                                        if (enable) {
-                                            KeyboardMode.SHIFTED
-                                        } else {
-                                            capsLock = false
-                                            KeyboardMode.MAIN
-                                        }
+                                    handleModeChange(KeyboardMode.SHIFTED, enable)
+
+                                    if (!enable) {
+                                        capsLock = false
+                                    }
                                 },
                                 onToggleCtrlMode = { enable ->
-                                    mode =
-                                        if (enable) {
-                                            KeyboardMode.CTRLED
-                                        } else {
-                                            KeyboardMode.MAIN
-                                        }
+                                    handleModeChange(KeyboardMode.CTRLED, enable)
                                 },
                                 onToggleAltMode = { enable ->
-                                    mode =
-                                        if (enable) {
-                                            KeyboardMode.ALTED
-                                        } else {
-                                            KeyboardMode.MAIN
-                                        }
+                                    handleModeChange(KeyboardMode.ALTED, enable)
                                 },
                                 onToggleNumericMode = { enable ->
-                                    mode =
-                                        if (enable) {
-                                            KeyboardMode.NUMERIC
-                                        } else {
-                                            capsLock = false
-                                            KeyboardMode.MAIN
-                                        }
+                                    handleModeChange(KeyboardMode.NUMERIC, enable)
+
+                                    if (!enable) {
+                                        capsLock = false
+                                    }
                                 },
                                 onToggleEmojiMode = { enable ->
-                                    mode =
-                                        if (enable) {
-                                            KeyboardMode.EMOJI
-                                        } else {
-                                            KeyboardMode.MAIN
-                                        }
+                                    handleModeChange(KeyboardMode.EMOJI, enable)
                                 },
                                 onToggleClipboardMode = { enable ->
                                     mode =
@@ -553,7 +565,17 @@ fun KeyboardScreen(
                     )
                 }
                 Column {
-                    keyboard.arr.forEachIndexed { i, row ->
+                    // Failsafe catchall preventing a crash if the keyboard is set to a mode that
+                    // isn't defined for the current layout.
+                    if (keyboard == null) {
+                        val message = "Invalid keyboard layout \"$mode\". Restoring to default."
+                        Toast.makeText(ctx, message, Toast.LENGTH_SHORT).show()
+                        Log.d(TAG, message)
+
+                        mode = KeyboardMode.MAIN
+                    }
+
+                    keyboard?.arr?.forEachIndexed { i, row ->
                         Row {
                             row.forEachIndexed { j, key ->
                                 Column {
@@ -608,46 +630,27 @@ fun KeyboardScreen(
                                         slideSpacebarDeadzoneEnabled = slideSpacebarDeadzoneEnabled,
                                         slideBackspaceDeadzoneEnabled = slideBackspaceDeadzoneEnabled,
                                         onToggleShiftMode = { enable ->
-                                            mode =
-                                                if (enable) {
-                                                    KeyboardMode.SHIFTED
-                                                } else {
-                                                    capsLock = false
-                                                    KeyboardMode.MAIN
-                                                }
+                                            handleModeChange(KeyboardMode.SHIFTED, enable)
+
+                                            if (!enable) {
+                                                capsLock = false
+                                            }
                                         },
                                         onToggleCtrlMode = { enable ->
-                                            mode =
-                                                if (enable) {
-                                                    KeyboardMode.CTRLED
-                                                } else {
-                                                    KeyboardMode.MAIN
-                                                }
+                                            handleModeChange(KeyboardMode.CTRLED, enable)
                                         },
                                         onToggleAltMode = { enable ->
-                                            mode =
-                                                if (enable) {
-                                                    KeyboardMode.ALTED
-                                                } else {
-                                                    KeyboardMode.MAIN
-                                                }
+                                            handleModeChange(KeyboardMode.ALTED, enable)
                                         },
                                         onToggleNumericMode = { enable ->
-                                            mode =
-                                                if (enable) {
-                                                    KeyboardMode.NUMERIC
-                                                } else {
-                                                    capsLock = false
-                                                    KeyboardMode.MAIN
-                                                }
+                                            handleModeChange(KeyboardMode.NUMERIC, enable)
+
+                                            if (!enable) {
+                                                capsLock = false
+                                            }
                                         },
                                         onToggleEmojiMode = { enable ->
-                                            mode =
-                                                if (enable) {
-                                                    KeyboardMode.EMOJI
-                                                } else {
-                                                    KeyboardMode.MAIN
-                                                }
+                                            handleModeChange(KeyboardMode.EMOJI, enable)
                                         },
                                         onToggleClipboardMode = { enable ->
                                             mode =
@@ -669,8 +672,7 @@ fun KeyboardScreen(
                                         onKeyEvent = {
                                             when (mode) {
                                                 KeyboardMode.CTRLED, KeyboardMode.ALTED -> {
-                                                    mode =
-                                                        KeyboardMode.MAIN
+                                                    mode = KeyboardMode.MAIN
                                                 }
 
                                                 else -> {}
