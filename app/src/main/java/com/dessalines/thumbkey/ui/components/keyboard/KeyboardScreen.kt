@@ -359,8 +359,8 @@ fun KeyboardScreen(
                                 },
                                 onToggleCapsLock = {
                                     capsLock = !capsLock
-
-                                    // Force the keyboard into shifted state whenever capslock is on
+t
+                                    // Change to shifted mode in case it isn't already shifted
                                     if (capsLock) {
                                         mode = KeyboardMode.SHIFTED
                                     }
@@ -537,7 +537,7 @@ fun KeyboardScreen(
                                         onToggleCapsLock = {
                                             capsLock = !capsLock
 
-                                            // Force the keyboard into shifted state whenever capslock is on
+                                            // Change to shifted mode in case it isn't already shifted
                                             if (capsLock) {
                                                 mode = KeyboardMode.SHIFTED
                                             }
