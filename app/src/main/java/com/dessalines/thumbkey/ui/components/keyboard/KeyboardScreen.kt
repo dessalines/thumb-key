@@ -34,6 +34,7 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.viewinterop.AndroidView
 import androidx.emoji2.emojipicker.EmojiPickerView
 import com.dessalines.thumbkey.IMEService
+import com.dessalines.thumbkey.R
 import com.dessalines.thumbkey.db.AppSettings
 import com.dessalines.thumbkey.db.ClipboardItem
 import com.dessalines.thumbkey.db.ClipboardRepository
@@ -162,7 +163,10 @@ fun KeyboardScreen(
         mode =
             if (enable && getKeyboardDefinition(newMode) == null) {
                 // Layout does not have this definition, do not switch to it
-                Toast.makeText(ctx, "Layout \"${keyboardDefinition.title}\" has no \"${newMode}\" mode definition.", Toast.LENGTH_SHORT).show()
+                val text = ctx.resources.getString(R.string.warning_invalid_mode, keyboardDefinition.title, newMode)
+                Toast.makeText(ctx, text, Toast.LENGTH_SHORT).show()
+                Log.d(TAG, text)
+
                 mode
             }
             else if (!enable) {
@@ -568,9 +572,9 @@ fun KeyboardScreen(
                     // Failsafe catchall preventing a crash if the keyboard is set to a mode that
                     // isn't defined for the current layout.
                     if (keyboard == null) {
-                        val message = "Invalid keyboard layout \"$mode\". Restoring to default."
-                        Toast.makeText(ctx, message, Toast.LENGTH_SHORT).show()
-                        Log.d(TAG, message)
+                        val text = ctx.resources.getString(R.string.warning_invalid_mode_default, mode)
+                        Toast.makeText(ctx, text, Toast.LENGTH_SHORT).show()
+                        Log.d(TAG, text)
 
                         mode = KeyboardMode.MAIN
                     }
