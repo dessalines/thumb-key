@@ -339,6 +339,7 @@ fun performKeyAction(
     onToggleAltMode: (enable: Boolean) -> Unit,
     onToggleNumericMode: (enable: Boolean) -> Unit,
     onToggleEmojiMode: (enable: Boolean) -> Unit,
+    onToggleClipboardMode: (enable: Boolean) -> Unit,
     onToggleCapsLock: () -> Unit,
     onToggleHideLetters: () -> Unit,
     onAutoCapitalize: (enable: Boolean) -> Unit,
@@ -1126,6 +1127,13 @@ fun performKeyAction(
             Log.d(TAG, "Toggling Emoji: $enable")
             keyboardSettings.textProcessor?.handleFinishInput(ime)
             onToggleEmojiMode(enable)
+        }
+
+        is KeyAction.ToggleClipboardMode -> {
+            val enable = action.enable
+            Log.d(TAG, "Toggling Clipboard: $enable")
+            keyboardSettings.textProcessor?.handleFinishInput(ime)
+            onToggleClipboardMode(enable)
         }
 
         KeyAction.GotoSettings -> {

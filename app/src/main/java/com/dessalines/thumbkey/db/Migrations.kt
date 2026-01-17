@@ -244,3 +244,25 @@ val MIGRATION_21_22 =
             )
         }
     }
+
+val MIGRATION_22_23 =
+    object : Migration(22, 23) {
+        override fun migrate(db: SupportSQLiteDatabase) {
+            // Add clipboard settings columns (ClipboardItem table is in separate database)
+            db.execSQL(
+                "ALTER TABLE AppSettings ADD COLUMN clipboard_history_enabled INTEGER NOT NULL DEFAULT $DEFAULT_CLIPBOARD_HISTORY_ENABLED",
+            )
+            db.execSQL(
+                "ALTER TABLE AppSettings ADD COLUMN clipboard_auto_cleanup_enabled INTEGER NOT NULL DEFAULT $DEFAULT_CLIPBOARD_AUTO_CLEANUP_ENABLED",
+            )
+            db.execSQL(
+                "ALTER TABLE AppSettings ADD COLUMN clipboard_cleanup_after_minutes INTEGER NOT NULL DEFAULT $DEFAULT_CLIPBOARD_CLEANUP_AFTER_MINUTES",
+            )
+            db.execSQL(
+                "ALTER TABLE AppSettings ADD COLUMN clipboard_size_limit_enabled INTEGER NOT NULL DEFAULT $DEFAULT_CLIPBOARD_SIZE_LIMIT_ENABLED",
+            )
+            db.execSQL(
+                "ALTER TABLE AppSettings ADD COLUMN clipboard_max_size INTEGER NOT NULL DEFAULT $DEFAULT_CLIPBOARD_MAX_SIZE",
+            )
+        }
+    }

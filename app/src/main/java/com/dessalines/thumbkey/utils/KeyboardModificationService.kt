@@ -33,6 +33,7 @@ import com.dessalines.thumbkey.keyboards.SWITCH_LANGUAGE_KEYC
 import com.dessalines.thumbkey.keyboards.TOGGLE_ALT_FALSE_KEYC
 import com.dessalines.thumbkey.keyboards.TOGGLE_ALT_TRUE_KEYC
 import com.dessalines.thumbkey.keyboards.TOGGLE_CAPS_KEYC
+import com.dessalines.thumbkey.keyboards.TOGGLE_CLIPBOARD_MODE_TRUE_KEYC
 import com.dessalines.thumbkey.keyboards.TOGGLE_CTRL_FALSE_KEYC
 import com.dessalines.thumbkey.keyboards.TOGGLE_CTRL_TRUE_KEYC
 import com.dessalines.thumbkey.keyboards.TOGGLE_EMOJI_MODE_TRUE_KEYC
@@ -280,6 +281,7 @@ fun getCommonKeyCFromKeyAction(keyActionSerializable: KeyActionSerializable?): K
         KeyActionSerializable.ToggleNumericMode -> TOGGLE_NUMERIC_MODE_TRUE_KEYC
         KeyActionSerializable.ToggleABCMode -> TOGGLE_NUMERIC_MODE_FALSE_KEYC
         KeyActionSerializable.ToggleEmojiMode -> TOGGLE_EMOJI_MODE_TRUE_KEYC
+        KeyActionSerializable.ToggleClipboardMode -> TOGGLE_CLIPBOARD_MODE_TRUE_KEYC
         KeyActionSerializable.ToggleCapsLock -> TOGGLE_CAPS_KEYC
         KeyActionSerializable.ToggleShiftModeTrue -> TOGGLE_SHIFT_TRUE_KEYC
         KeyActionSerializable.ToggleShiftModeFalse -> TOGGLE_SHIFT_FALSE_KEYC
@@ -477,6 +479,7 @@ enum class KeyActionSerializable {
     ToggleNumericMode,
     ToggleABCMode,
     ToggleEmojiMode,
+    ToggleClipboardMode,
     ToggleCapsLock,
     ToggleShiftModeFalse,
     ToggleShiftModeTrue,

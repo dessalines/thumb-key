@@ -9,6 +9,7 @@ import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.compose.animation.AnimatedContentTransitionScope
 import androidx.compose.animation.core.tween
+import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.livedata.observeAsState
 import androidx.compose.runtime.mutableStateOf
@@ -21,11 +22,14 @@ import com.dessalines.thumbkey.db.AppDB
 import com.dessalines.thumbkey.db.AppSettingsRepository
 import com.dessalines.thumbkey.db.AppSettingsViewModel
 import com.dessalines.thumbkey.db.AppSettingsViewModelFactory
+import com.dessalines.thumbkey.db.ClipboardDB
+import com.dessalines.thumbkey.db.ClipboardRepository
 import com.dessalines.thumbkey.ui.components.common.ShowChangelog
 import com.dessalines.thumbkey.ui.components.settings.SettingsScreen
 import com.dessalines.thumbkey.ui.components.settings.about.AboutScreen
 import com.dessalines.thumbkey.ui.components.settings.backupandrestore.BackupAndRestoreScreen
 import com.dessalines.thumbkey.ui.components.settings.behavior.BehaviorScreen
+import com.dessalines.thumbkey.ui.components.settings.clipboard.ClipboardSettingsScreen
 import com.dessalines.thumbkey.ui.components.settings.lookandfeel.LookAndFeelScreen
 import com.dessalines.thumbkey.ui.components.settings.modifykeys.ModifyKeysScreen
 import com.dessalines.thumbkey.ui.components.setup.SetupScreen
@@ -36,7 +40,14 @@ import splitties.systemservices.inputMethodManager
 
 class ThumbkeyApplication : Application() {
     private val database by lazy { AppDB.getDatabase(this) }
+    private val clipboardDatabase by lazy { ClipboardDB.getDatabase(this) }
     val appSettingsRepository by lazy { AppSettingsRepository(database.appSettingsDao()) }
+    val clipboardRepository by lazy {
+        ClipboardRepository(
+            clipboardDatabase.clipboardItemDao(),
+            database.appSettingsDao(),
+        )
+    }
 }
 
 class MainActivity : AppCompatActivity() {
@@ -138,6 +149,13 @@ class MainActivity : AppCompatActivity() {
                         BehaviorScreen(
                             navController = navController,
                             appSettingsViewModel = appSettingsViewModel,
+                        )
+                    }
+                    composable(route = "clipboardSettings") {
+                        ClipboardSettingsScreen(
+                            navController = navController,
+                            appSettingsViewModel = appSettingsViewModel,
+                            clipboardRepository = (application as ThumbkeyApplication).clipboardRepository,
                         )
                     }
                     composable(route = "modifyKeys") {

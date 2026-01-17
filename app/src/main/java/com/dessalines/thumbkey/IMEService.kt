@@ -2,7 +2,6 @@ package com.dessalines.thumbkey
 
 import android.inputmethodservice.InputMethodService
 import android.util.Log
-import android.view.View
 import android.view.inputmethod.CursorAnchorInfo
 import android.view.inputmethod.EditorInfo
 import androidx.lifecycle.Lifecycle
@@ -20,6 +19,7 @@ import com.dessalines.thumbkey.db.DEFAULT_DISABLE_FULLSCREEN_EDITOR
 import com.dessalines.thumbkey.utils.KeyboardDefinition
 import com.dessalines.thumbkey.utils.KeyboardLayout
 import com.dessalines.thumbkey.utils.TAG
+import com.dessalines.thumbkey.utils.ThumbKeyClipboardManager
 import com.dessalines.thumbkey.utils.toBool
 
 class IMEService :
@@ -27,15 +27,17 @@ class IMEService :
     LifecycleOwner,
     ViewModelStoreOwner,
     SavedStateRegistryOwner {
-    private fun setupView(): View {
-        val settingsRepo = (application as ThumbkeyApplication).appSettingsRepository
+    private fun setupView(): ComposeKeyboardView {
+        val app = application as ThumbkeyApplication
+        val settingsRepo = app.appSettingsRepository
+        val clipboardRepo = app.clipboardRepository
 
         val layoutIndex = settingsRepo.appSettings.value?.keyboardLayout
         if (layoutIndex != null) {
             currentKeyboardDefinition = KeyboardLayout.entries[layoutIndex].keyboardDefinition
         }
 
-        val view = ComposeKeyboardView(this, settingsRepo)
+        val view = ComposeKeyboardView(this, settingsRepo, clipboardRepo)
         window?.window?.decorView?.let { decorView ->
             decorView.setViewTreeLifecycleOwner(this)
             decorView.setViewTreeViewModelStoreOwner(this)
@@ -50,6 +52,7 @@ class IMEService :
     }
 
     var currentKeyboardDefinition: KeyboardDefinition? = null
+    private var clipboardManager: ThumbKeyClipboardManager? = null
 
     /**
      * This is called every time the keyboard is brought up.
@@ -75,9 +78,17 @@ class IMEService :
         super.onCreate()
         savedStateRegistryController.performRestore(null)
         handleLifecycleEvent(Lifecycle.Event.ON_RESUME)
+
+        // Initialize clipboard manager
+        val app = application as ThumbkeyApplication
+        clipboardManager = ThumbKeyClipboardManager(this, app.clipboardRepository)
+        clipboardManager?.startListening()
+        clipboardManager?.clearExpired()
     }
 
     override fun onDestroy() {
+        clipboardManager?.stopListening()
+        clipboardManager = null
         super.onDestroy()
         handleLifecycleEvent(Lifecycle.Event.ON_DESTROY)
     }
