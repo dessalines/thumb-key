@@ -140,15 +140,15 @@ fun KeyboardScreen(
 
     /**
      * Get the keyboard definition corresponding to the given mode (Main, Shifted, etc.),
-     * or `null` if there is no definition for that mode in the current layout.
+     * or `null` if there is no definition for that mode in the current layout (Ctrled, Alted, etc.).
      */
     fun getKeyboardDefinition(mode: KeyboardMode): KeyboardC? =
         when (mode) {
             KeyboardMode.MAIN -> keyboardDefinition.modes.main
             KeyboardMode.SHIFTED -> keyboardDefinition.modes.shifted
             KeyboardMode.NUMERIC -> keyboardDefinition.modes.numeric
-            KeyboardMode.CTRLED -> keyboardDefinition.modes.ctrled // nullable
-            KeyboardMode.ALTED -> keyboardDefinition.modes.alted // nullable
+            KeyboardMode.CTRLED -> keyboardDefinition.modes.ctrled
+            KeyboardMode.ALTED -> keyboardDefinition.modes.alted
             else -> KB_EN_THUMBKEY_MAIN
         }
 
@@ -159,7 +159,10 @@ fun KeyboardScreen(
      * If the current layout doesn't have a definition for [newMode], then the mode will not be
      * changed, and a warning Toast will be displayed.
      */
-    fun handleModeChange(newMode: KeyboardMode, enable: Boolean) {
+    fun handleModeChange(
+        newMode: KeyboardMode,
+        enable: Boolean,
+    ) {
         mode =
             if (enable && getKeyboardDefinition(newMode) == null) {
                 // Layout does not have this definition, do not switch to it
@@ -168,12 +171,10 @@ fun KeyboardScreen(
                 Log.d(TAG, text)
 
                 mode
-            }
-            else if (!enable) {
+            } else if (!enable) {
                 // Disabling the mode
                 KeyboardMode.MAIN
-            }
-            else {
+            } else {
                 newMode
             }
     }
