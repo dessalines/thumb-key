@@ -1,14 +1,14 @@
 package com.dessalines.thumbkey.db
 
 import androidx.annotation.WorkerThread
+import androidx.lifecycle.LiveData
 import com.dessalines.thumbkey.utils.toBool
-import kotlinx.coroutines.flow.Flow
 
 class ClipboardRepository(
     private val clipboardItemDao: ClipboardItemDao,
     private val appSettingsDao: AppSettingsDao,
 ) {
-    val allClipboardItems: Flow<List<ClipboardItem>> = clipboardItemDao.getAllClipboardItems()
+    val allClipboardItems: LiveData<List<ClipboardItem>> = clipboardItemDao.getAllClipboardItems()
 
     @WorkerThread
     suspend fun addItem(text: String) {

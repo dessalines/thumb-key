@@ -6,7 +6,6 @@ import android.content.Intent
 import android.widget.Toast
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.CompositionLocalProvider
-import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.livedata.observeAsState
 import androidx.compose.ui.platform.AbstractComposeView
@@ -33,7 +32,6 @@ class ComposeKeyboardView(
     override fun Content() {
         val settingsState = settingsRepo.appSettings.observeAsState()
         val settings by settingsState
-        val clipboardItems by clipboardRepo.allClipboardItems.collectAsState(initial = emptyList())
         val ctx = context as IMEService
 
         ThumbkeyTheme(
@@ -42,7 +40,6 @@ class ComposeKeyboardView(
             CompositionLocalProvider(LocalLayoutDirection provides LayoutDirection.Ltr) {
                 KeyboardScreen(
                     settings = settings,
-                    clipboardItems = clipboardItems,
                     clipboardRepository = clipboardRepo,
                     onSwitchLanguage = {
                         ctx.lifecycleScope.launch {

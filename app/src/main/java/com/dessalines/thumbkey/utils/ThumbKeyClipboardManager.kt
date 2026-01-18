@@ -2,6 +2,7 @@ package com.dessalines.thumbkey.utils
 
 import android.content.ClipboardManager
 import android.content.Context
+import android.util.Log
 import com.dessalines.thumbkey.db.ClipboardRepository
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
@@ -25,6 +26,7 @@ class ThumbKeyClipboardManager(
             val text = clip.getItemAt(0).coerceToText(context).toString()
             if (text.isBlank() || text == lastClipText) return@OnPrimaryClipChangedListener
             lastClipText = text
+            Log.d(TAG, "Adding clipboard item: $text")
             scope.launch {
                 clipboardRepository.addItem(text)
             }

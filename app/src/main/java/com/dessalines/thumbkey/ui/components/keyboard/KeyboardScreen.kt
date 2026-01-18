@@ -19,6 +19,7 @@ import androidx.compose.material3.MaterialTheme
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.getValue
+import androidx.compose.runtime.livedata.observeAsState
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
@@ -92,8 +93,7 @@ import kotlin.time.TimeMark
 @Composable
 fun KeyboardScreen(
     settings: AppSettings?,
-    clipboardItems: List<ClipboardItem>,
-    clipboardRepository: ClipboardRepository?,
+    clipboardRepository: ClipboardRepository,
     onSwitchLanguage: () -> Unit,
     onChangePosition: ((old: KeyboardPosition) -> KeyboardPosition) -> Unit,
     onToggleHideLetters: () -> Unit,
@@ -132,6 +132,8 @@ fun KeyboardScreen(
 
     // TODO get rid of this crap
     val lastAction = remember { mutableStateOf<Pair<KeyAction, TimeMark>?>(null) }
+
+    val clipboardItems by clipboardRepository.allClipboardItems.observeAsState(initial = emptyList())
 
     val keyboard =
         when (mode) {

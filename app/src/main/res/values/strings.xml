@@ -136,8 +136,4 @@
     <string name="clipboard_disabled">Clipboard history is disabled</string>
     <string name="clipboard_go_to_settings">Go to clipboard settings</string>
     <string name="clipboard_characters">%1$d characters</string>
-    <string name="clipboard_just_now">Just now</string>
-    <string name="clipboard_minutes_ago">%1$d min ago</string>
-    <string name="clipboard_hours_ago">%1$d hr ago</string>
-    <string name="clipboard_hours_minutes_ago">%1$d hr %2$d min ago</string>
 </resources>

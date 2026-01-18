@@ -297,27 +297,27 @@ data class AppSettings(
         name = "clipboard_history_enabled",
         defaultValue = DEFAULT_CLIPBOARD_HISTORY_ENABLED.toString(),
     )
-    val clipboardHistoryEnabled: Int = DEFAULT_CLIPBOARD_HISTORY_ENABLED,
+    val clipboardHistoryEnabled: Int,
     @ColumnInfo(
         name = "clipboard_auto_cleanup_enabled",
         defaultValue = DEFAULT_CLIPBOARD_AUTO_CLEANUP_ENABLED.toString(),
     )
-    val clipboardAutoCleanupEnabled: Int = DEFAULT_CLIPBOARD_AUTO_CLEANUP_ENABLED,
+    val clipboardAutoCleanupEnabled: Int,
     @ColumnInfo(
         name = "clipboard_cleanup_after_minutes",
         defaultValue = DEFAULT_CLIPBOARD_CLEANUP_AFTER_MINUTES.toString(),
     )
-    val clipboardCleanupAfterMinutes: Int = DEFAULT_CLIPBOARD_CLEANUP_AFTER_MINUTES,
+    val clipboardCleanupAfterMinutes: Int,
     @ColumnInfo(
         name = "clipboard_size_limit_enabled",
         defaultValue = DEFAULT_CLIPBOARD_SIZE_LIMIT_ENABLED.toString(),
     )
-    val clipboardSizeLimitEnabled: Int = DEFAULT_CLIPBOARD_SIZE_LIMIT_ENABLED,
+    val clipboardSizeLimitEnabled: Int,
     @ColumnInfo(
         name = "clipboard_max_size",
         defaultValue = DEFAULT_CLIPBOARD_MAX_SIZE.toString(),
     )
-    val clipboardMaxSize: Int = DEFAULT_CLIPBOARD_MAX_SIZE,
+    val clipboardMaxSize: Int,
 )
 
 data class LayoutsUpdate(

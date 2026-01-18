@@ -1,6 +1,7 @@
 package com.dessalines.thumbkey.db
 
 import android.content.Context
+import androidx.lifecycle.LiveData
 import androidx.room.ColumnInfo
 import androidx.room.Dao
 import androidx.room.Database
@@ -30,7 +31,7 @@ data class ClipboardItem(
 @Dao
 interface ClipboardItemDao {
     @Query("SELECT * FROM ClipboardItem ORDER BY is_pinned DESC, timestamp DESC")
-    fun getAllClipboardItems(): Flow<List<ClipboardItem>>
+    fun getAllClipboardItems(): LiveData<List<ClipboardItem>>
 
     @Query("SELECT * FROM ClipboardItem WHERE id = :id")
     suspend fun getById(id: Int): ClipboardItem?

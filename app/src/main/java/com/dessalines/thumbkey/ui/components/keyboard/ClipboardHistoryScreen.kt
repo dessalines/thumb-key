@@ -43,19 +43,17 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.geometry.Offset
 import androidx.compose.ui.input.pointer.pointerInput
-import androidx.compose.ui.platform.LocalConfiguration
 import androidx.compose.ui.platform.LocalDensity
 import androidx.compose.ui.res.stringResource
-import androidx.compose.ui.text.SpanStyle
-import androidx.compose.ui.text.buildAnnotatedString
 import androidx.compose.ui.text.style.TextOverflow
-import androidx.compose.ui.text.withStyle
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.DpOffset
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.window.PopupProperties
 import com.dessalines.thumbkey.R
 import com.dessalines.thumbkey.db.ClipboardItem
+
+val spacing = 16.dp
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
@@ -100,12 +98,11 @@ fun ClipboardHistoryScreen(
                 cornerRadius = cornerRadius,
             )
         } else if (clipboardItems.isEmpty()) {
-            // Clipboard items list - empty state
             Box(
                 modifier =
                     Modifier
                         .fillMaxSize()
-                        .padding(16.dp),
+                        .padding(spacing),
                 contentAlignment = Alignment.Center,
             ) {
                 Text(
@@ -166,12 +163,12 @@ private fun ClipboardDisabledView(
         modifier =
             Modifier
                 .fillMaxSize()
-                .padding(16.dp),
+                .padding(spacing),
         contentAlignment = Alignment.Center,
     ) {
         Column(
             horizontalAlignment = Alignment.CenterHorizontally,
-            verticalArrangement = Arrangement.spacedBy(16.dp),
+            verticalArrangement = Arrangement.spacedBy(spacing),
         ) {
             Text(
                 text = stringResource(R.string.clipboard_disabled),
@@ -290,37 +287,14 @@ private fun ClipboardHeader(
     }
 }
 
-@Composable
-private fun formatTimestamp(timestamp: Long): String {
-    val now = System.currentTimeMillis()
-    val diff = now - timestamp
-    val minutes = (diff / (1000 * 60)).toInt()
-    val hours = minutes / 60
-    val remainingMinutes = minutes % 60
-
-    return when {
-        minutes < 1 -> {
-            stringResource(R.string.clipboard_just_now)
-        }
-
-        hours < 1 -> {
-            stringResource(R.string.clipboard_minutes_ago, minutes)
-        }
-
-        hours < 24 && remainingMinutes == 0 -> {
-            stringResource(R.string.clipboard_hours_ago, hours)
-        }
-
-        hours < 24 -> {
-            stringResource(R.string.clipboard_hours_minutes_ago, hours, remainingMinutes)
-        }
-
-        else -> {
-            val formatter = java.text.SimpleDateFormat("MMM d, h:mm a", java.util.Locale.getDefault())
-            formatter.format(java.util.Date(timestamp))
-        }
-    }
-}
+private fun formatTimestamp(timestamp: Long): String =
+    android.text.format.DateUtils
+        .getRelativeTimeSpanString(
+            timestamp,
+            System.currentTimeMillis(),
+            android.text.format.DateUtils.SECOND_IN_MILLIS,
+            android.text.format.DateUtils.FORMAT_ABBREV_RELATIVE,
+        ).toString()
 
 @Composable
 private fun ClipboardItemRow(
@@ -361,26 +335,23 @@ private fun ClipboardItemRow(
                 verticalAlignment = Alignment.CenterVertically,
                 horizontalArrangement = Arrangement.spacedBy(8.dp),
             ) {
-                // Pin indicator
                 if (item.isPinned) {
                     Icon(
                         imageVector = Icons.Outlined.PushPin,
                         contentDescription = null,
-                        modifier = Modifier.size(16.dp),
+                        modifier = Modifier.size(spacing),
                         tint = MaterialTheme.colorScheme.primary,
                     )
                 }
 
-                // Content (text)
                 Text(
-                    text = middleTruncate(item.text),
+                    text = item.text.replace("\n", " ").replace("\r", ""),
                     style = MaterialTheme.typography.bodyMedium,
-                    maxLines = 2,
-                    overflow = TextOverflow.Ellipsis,
+                    maxLines = 1,
+                    overflow = TextOverflow.MiddleEllipsis,
                     modifier = Modifier.weight(1f),
                 )
 
-                // Timestamp and character count (right side)
                 Column(
                     horizontalAlignment = Alignment.End,
                 ) {
@@ -389,13 +360,12 @@ private fun ClipboardItemRow(
                         style = MaterialTheme.typography.labelSmall,
                         color = MaterialTheme.colorScheme.onSurfaceVariant,
                     )
-                    if (item.text.length > calculateMaxDisplayLength()) {
-                        Text(
-                            text = stringResource(R.string.clipboard_characters, item.text.length),
-                            style = MaterialTheme.typography.labelSmall,
-                            color = MaterialTheme.colorScheme.onSurfaceVariant,
-                        )
-                    }
+
+                    Text(
+                        text = stringResource(R.string.clipboard_characters, item.text.length),
+                        style = MaterialTheme.typography.labelSmall,
+                        color = MaterialTheme.colorScheme.onSurfaceVariant,
+                    )
                 }
             }
         }
@@ -461,31 +431,3 @@ private fun ClipboardItemRow(
         }
     }
 }
-
-@Composable
-private fun calculateMaxDisplayLength(): Int {
-    val configuration = LocalConfiguration.current
-    // Estimate ~7dp per character at body medium size, minus padding
-    val availableWidth = configuration.screenWidthDp - 80 // Subtract padding and icons
-    return (availableWidth / 7).coerceIn(30, 80)
-}
-
-@Composable
-private fun middleTruncate(text: String) =
-    buildAnnotatedString {
-        val maxDisplayLength = calculateMaxDisplayLength()
-        val truncationPartLength = (maxDisplayLength - 3) / 2 // -3 for "..."
-        val cleanText = text.replace("\n", " ").replace("\r", "")
-        if (cleanText.length <= maxDisplayLength) {
-            append(cleanText)
-        } else {
-            val head = cleanText.take(truncationPartLength)
-            val tail = cleanText.takeLast(truncationPartLength)
-
-            append(head)
-            withStyle(SpanStyle(color = MaterialTheme.colorScheme.outline)) {
-                append("...")
-            }
-            append(tail)
-        }
-    }

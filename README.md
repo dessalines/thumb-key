@@ -118,6 +118,7 @@ This project is a follow-up to the now unmaintained (and closed-source) [MessagE
 - **Swipe to top-right** to cut - If nothing is selected, all the text will be selected and cut.
 - **Swipe right** to redo.
 - **Swipe down** to paste.
+- ** Swipe down and then up** to open clipboard history (swipe-return gesture).
 - **Swipe left** to undo.
 
 ### Slide gestures
