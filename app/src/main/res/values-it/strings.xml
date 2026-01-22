@@ -91,4 +91,16 @@
     <string name="modify_keys">Modifica tasti</string>
     <string name="key_modification_placeholder">Inserisci YAML</string>
     <string name="how_to_modify_keys">Come modificare i tasti</string>
+    <string name="duration_1_day">1 giorno</string>
+    <string name="duration_2_days">2 giorni</string>
+    <string name="duration_4_days">4 giorni</string>
+    <string name="duration_7_days">7 giorni</string>
+    <string name="duration_1_hour">1 ora</string>
+    <string name="duration_2_hours">2 ore</string>
+    <string name="duration_4_hours">4 ore</string>
+    <string name="duration_12_hours">12 ore</string>
+    <string name="duration_5_minutes">5 minuti</string>
+    <string name="duration_10_minutes">10 minuti</string>
+    <string name="duration_30_minutes">30 minuti</string>
+    <string name="clipboard_paste">Incolla</string>
 </resources>
