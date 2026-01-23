@@ -5,6 +5,7 @@ import android.media.AudioManager
 import android.util.Log
 import android.view.HapticFeedbackConstants
 import android.view.inputmethod.InputConnection.CURSOR_UPDATE_MONITOR
+import android.widget.Toast
 import androidx.compose.foundation.background
 import androidx.compose.foundation.border
 import androidx.compose.foundation.layout.Box
@@ -28,11 +29,13 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.platform.LocalView
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.viewinterop.AndroidView
 import androidx.emoji2.emojipicker.EmojiPickerView
 import com.dessalines.thumbkey.IMEService
+import com.dessalines.thumbkey.R
 import com.dessalines.thumbkey.db.AppSettings
 import com.dessalines.thumbkey.db.ClipboardItem
 import com.dessalines.thumbkey.db.ClipboardRepository
@@ -140,8 +143,22 @@ fun KeyboardScreen(
             KeyboardMode.MAIN -> keyboardDefinition.modes.main
             KeyboardMode.SHIFTED -> keyboardDefinition.modes.shifted
             KeyboardMode.NUMERIC -> keyboardDefinition.modes.numeric
-            KeyboardMode.CTRLED -> keyboardDefinition.modes.ctrled!!
-            KeyboardMode.ALTED -> keyboardDefinition.modes.alted!!
+            KeyboardMode.CTRLED -> keyboardDefinition.modes.ctrled ?: run {
+                val text = stringResource(R.string.warning_invalid_mode, mode, keyboardDefinition.title)
+                Toast.makeText(ctx, text, Toast.LENGTH_SHORT).show()
+                Log.d(TAG, text)
+
+                mode = KeyboardMode.MAIN
+                keyboardDefinition.modes.main
+            }
+            KeyboardMode.ALTED -> keyboardDefinition.modes.alted ?: run {
+                val text = stringResource(R.string.warning_invalid_mode, mode, keyboardDefinition.title)
+                Toast.makeText(ctx, text, Toast.LENGTH_SHORT).show()
+                Log.d(TAG, text)
+
+                mode = KeyboardMode.MAIN
+                keyboardDefinition.modes.main
+            }
             else -> KB_EN_THUMBKEY_MAIN
         }
 

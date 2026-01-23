@@ -105,8 +105,7 @@
     <string name="ignore_bottom_padding">Ignore bottom padding</string>
     <string name="show_toast_on_layout_switch">Show toast on layout switch</string>
     <string name="disable_fullscreen_editor">Disable fullscreen text editor</string>
-    <string name="warning_invalid_mode">Layout \"%s\" has no \"%s\" mode definition.</string>
-    <string name="warning_invalid_mode_default">Invalid keyboard mode \"%s\". Restoring to default.</string>
+    <string name="warning_invalid_mode">Mode \"%s\" is not defined for layout \"%s\".</string>
     <!-- Clipboard History -->
     <string name="clipboard_history">Clipboard history</string>
     <string name="clipboard_history_enabled">Enable clipboard history</string>
