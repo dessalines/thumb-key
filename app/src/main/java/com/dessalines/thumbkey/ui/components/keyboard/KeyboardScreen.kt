@@ -140,26 +140,44 @@ fun KeyboardScreen(
 
     val keyboard =
         when (mode) {
-            KeyboardMode.MAIN -> keyboardDefinition.modes.main
-            KeyboardMode.SHIFTED -> keyboardDefinition.modes.shifted
-            KeyboardMode.NUMERIC -> keyboardDefinition.modes.numeric
-            KeyboardMode.CTRLED -> keyboardDefinition.modes.ctrled ?: run {
-                val text = stringResource(R.string.warning_invalid_mode, mode, keyboardDefinition.title)
-                Toast.makeText(ctx, text, Toast.LENGTH_SHORT).show()
-                Log.d(TAG, text)
-
-                mode = KeyboardMode.MAIN
+            KeyboardMode.MAIN -> {
                 keyboardDefinition.modes.main
             }
-            KeyboardMode.ALTED -> keyboardDefinition.modes.alted ?: run {
-                val text = stringResource(R.string.warning_invalid_mode, mode, keyboardDefinition.title)
-                Toast.makeText(ctx, text, Toast.LENGTH_SHORT).show()
-                Log.d(TAG, text)
 
-                mode = KeyboardMode.MAIN
-                keyboardDefinition.modes.main
+            KeyboardMode.SHIFTED -> {
+                keyboardDefinition.modes.shifted
             }
-            else -> KB_EN_THUMBKEY_MAIN
+
+            KeyboardMode.NUMERIC -> {
+                keyboardDefinition.modes.numeric
+            }
+
+            KeyboardMode.CTRLED -> {
+                keyboardDefinition.modes.ctrled ?: run {
+                    val text = stringResource(R.string.warning_invalid_mode, mode, keyboardDefinition.title)
+                    Toast.makeText(ctx, text, Toast.LENGTH_SHORT).show()
+                    Log.d(TAG, text)
+
+                    mode = KeyboardMode.MAIN
+                    keyboardDefinition.modes.main
+                }
+            }
+
+            KeyboardMode.ALTED -> {
+                keyboardDefinition.modes.alted ?: run {
+                    val text = stringResource(R.string.warning_invalid_mode, mode, keyboardDefinition.title)
+                    Toast.makeText(ctx, text, Toast.LENGTH_SHORT).show()
+                    Log.d(TAG, text)
+
+                    mode = KeyboardMode.MAIN
+                    keyboardDefinition.modes.main
+                }
+            }
+
+            else -> {
+                // Emoji and Clipboard modes use their own rendering, which does not depend on this value
+                KB_EN_THUMBKEY_MAIN
+            }
         }
 
     val position =
