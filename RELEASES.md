@@ -1,3 +1,17 @@
+## What's Changed in 5.1.0
+
+- Add clipboard history feature by @Toldry in [#1737](https://github.com/dessalines/thumb-key/pull/1737)
+- Fix ToggleCapsLock key doing nothing in non-shifted mode by @emallery in [#1738](https://github.com/dessalines/thumb-key/pull/1738)
+- Add hungarian-optimized engram layout by @dwat3r in [#1732](https://github.com/dessalines/thumb-key/pull/1732)
+- Correct a mistake in JAKanaStandard.kt by @K0baU in [#1734](https://github.com/dessalines/thumb-key/pull/1734)
+- add NOOP action by @Toldry in [#1731](https://github.com/dessalines/thumb-key/pull/1731)
+
+## New Contributors
+
+- @dwat3r made their first contribution in [#1732](https://github.com/dessalines/thumb-key/pull/1732)
+
+**Full Changelog**: https://github.com/dessalines/thumb-key/compare/5.0.14...5.1.0
+
 ## What's Changed in 5.0.14
 
 - Update FRENFrappeFluideV1: move voice to avoid misentering delete word by @jiquiame in [#1730](https://github.com/dessalines/thumb-key/pull/1730)
