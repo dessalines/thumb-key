@@ -266,3 +266,12 @@ val MIGRATION_22_23 =
             )
         }
     }
+
+val MIGRATION_23_24 =
+    object : Migration(23, 24) {
+        override fun migrate(db: SupportSQLiteDatabase) {
+            db.execSQL(
+                "ALTER TABLE AppSettings ADD COLUMN position_padding INTEGER NOT NULL DEFAULT $DEFAULT_POSITION_PADDING",
+            )
+        }
+    }

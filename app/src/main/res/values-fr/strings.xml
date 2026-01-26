@@ -39,6 +39,7 @@
     <string name="theme">Thème</string>
     <string name="theme_color">Couleur du thème</string>
     <string name="position">Position</string>
+    <string name="position_padding">Décalage ajouté à la position: %1$s</string>
     <string name="vibrate_on_tap">Vibration au toucher</string>
     <string name="vibrate_warning">Nécessite d’activer Vibrer à l’appui dans les paramètres du téléphone</string>
     <string name="play_sound_on_tap">Son au toucher</string>

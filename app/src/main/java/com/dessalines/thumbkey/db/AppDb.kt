@@ -33,6 +33,7 @@ const val DEFAULT_KEY_HEIGHT = DEFAULT_KEY_WIDTH
 const val DEFAULT_ANIMATION_SPEED = 250
 const val DEFAULT_ANIMATION_HELPER_SPEED = 250
 const val DEFAULT_POSITION = 0
+const val DEFAULT_POSITION_PADDING = 0
 const val DEFAULT_AUTO_CAPITALIZE = 1
 const val DEFAULT_KEYBOARD_LAYOUT = 0
 const val DEFAULT_THEME = 0
@@ -318,6 +319,11 @@ data class AppSettings(
         defaultValue = DEFAULT_CLIPBOARD_MAX_SIZE.toString(),
     )
     val clipboardMaxSize: Int,
+    @ColumnInfo(
+        name = "position_padding",
+        defaultValue = DEFAULT_POSITION_PADDING.toString(),
+    )
+    val positionPadding: Int,
 )
 
 data class LayoutsUpdate(
@@ -422,6 +428,10 @@ data class LookAndFeelUpdate(
         name = "vibrate_on_slide",
     )
     val vibrateOnSlide: Int,
+    @ColumnInfo(
+        name = "position_padding",
+    )
+    val positionPadding: Int,
 )
 
 data class BehaviorUpdate(
@@ -571,7 +581,7 @@ class AppSettingsRepository(
 }
 
 @Database(
-    version = 23,
+    version = 24,
     entities = [AppSettings::class],
     exportSchema = true,
 )
@@ -616,6 +626,7 @@ abstract class AppDB : RoomDatabase() {
                             MIGRATION_20_21,
                             MIGRATION_21_22,
                             MIGRATION_22_23,
+                            MIGRATION_23_24,
                         )
                         // Necessary because it can't insert data on creation
                         .addCallback(
