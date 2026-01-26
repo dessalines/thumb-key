@@ -254,6 +254,8 @@ sealed class KeyAction {
 
     data object NextWordAfterCursor : KeyAction()
 
+    data object SelectLineWithCursor : KeyAction()
+
     data object GotoSettings : KeyAction()
 
     data object IMECompleteAction : KeyAction()
