@@ -339,6 +339,7 @@ fun performKeyAction(
     onToggleAltMode: (enable: Boolean) -> Unit,
     onToggleNumericMode: (enable: Boolean) -> Unit,
     onToggleEmojiMode: (enable: Boolean) -> Unit,
+    onToggleClipboardMode: (enable: Boolean) -> Unit,
     onToggleCapsLock: () -> Unit,
     onToggleHideLetters: () -> Unit,
     onAutoCapitalize: (enable: Boolean) -> Unit,
@@ -1128,6 +1129,13 @@ fun performKeyAction(
             onToggleEmojiMode(enable)
         }
 
+        is KeyAction.ToggleClipboardMode -> {
+            val enable = action.enable
+            Log.d(TAG, "Toggling Clipboard: $enable")
+            keyboardSettings.textProcessor?.handleFinishInput(ime)
+            onToggleClipboardMode(enable)
+        }
+
         KeyAction.GotoSettings -> {
             val mainActivityIntent = Intent(ime, MainActivity::class.java)
             mainActivityIntent.flags = Intent.FLAG_ACTIVITY_NEW_TASK
@@ -1160,6 +1168,7 @@ fun performKeyAction(
         }
 
         KeyAction.ToggleCapsLock -> {
+            Log.d(TAG, "Toggling Caps Lock")
             onToggleCapsLock()
         }
 

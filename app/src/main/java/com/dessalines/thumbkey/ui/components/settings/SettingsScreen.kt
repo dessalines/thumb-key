@@ -10,6 +10,7 @@ import androidx.compose.foundation.verticalScroll
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.automirrored.outlined.HelpCenter
 import androidx.compose.material.icons.outlined.AppRegistration
+import androidx.compose.material.icons.outlined.ContentPaste
 import androidx.compose.material.icons.outlined.Info
 import androidx.compose.material.icons.outlined.InstallMobile
 import androidx.compose.material.icons.outlined.KeyboardAlt
@@ -151,6 +152,16 @@ fun SettingsScreen(
                             )
                         },
                         onClick = { navController.navigate("behavior") },
+                    )
+                    Preference(
+                        title = { Text(stringResource(R.string.clipboard_history)) },
+                        icon = {
+                            Icon(
+                                imageVector = Icons.Outlined.ContentPaste,
+                                contentDescription = null,
+                            )
+                        },
+                        onClick = { navController.navigate("clipboardSettings") },
                     )
                     Preference(
                         title = {

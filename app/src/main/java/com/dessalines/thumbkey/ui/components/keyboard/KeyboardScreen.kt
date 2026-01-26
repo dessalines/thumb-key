@@ -5,6 +5,7 @@ import android.media.AudioManager
 import android.util.Log
 import android.view.HapticFeedbackConstants
 import android.view.inputmethod.InputConnection.CURSOR_UPDATE_MONITOR
+import android.widget.Toast
 import androidx.compose.foundation.background
 import androidx.compose.foundation.border
 import androidx.compose.foundation.layout.Box
@@ -19,6 +20,7 @@ import androidx.compose.material3.MaterialTheme
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.getValue
+import androidx.compose.runtime.livedata.observeAsState
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
@@ -27,18 +29,23 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.platform.LocalView
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.viewinterop.AndroidView
 import androidx.emoji2.emojipicker.EmojiPickerView
 import com.dessalines.thumbkey.IMEService
+import com.dessalines.thumbkey.R
 import com.dessalines.thumbkey.db.AppSettings
+import com.dessalines.thumbkey.db.ClipboardItem
+import com.dessalines.thumbkey.db.ClipboardRepository
 import com.dessalines.thumbkey.db.DEFAULT_ANIMATION_HELPER_SPEED
 import com.dessalines.thumbkey.db.DEFAULT_ANIMATION_SPEED
 import com.dessalines.thumbkey.db.DEFAULT_AUTO_CAPITALIZE
 import com.dessalines.thumbkey.db.DEFAULT_AUTO_SIZE_KEYS
 import com.dessalines.thumbkey.db.DEFAULT_BACKDROP_ENABLED
 import com.dessalines.thumbkey.db.DEFAULT_CIRCULAR_DRAG_ENABLED
+import com.dessalines.thumbkey.db.DEFAULT_CLIPBOARD_HISTORY_ENABLED
 import com.dessalines.thumbkey.db.DEFAULT_CLOCKWISE_DRAG_ACTION
 import com.dessalines.thumbkey.db.DEFAULT_COUNTERCLOCKWISE_DRAG_ACTION
 import com.dessalines.thumbkey.db.DEFAULT_DRAG_RETURN_ENABLED
@@ -81,14 +88,19 @@ import com.dessalines.thumbkey.utils.getKeyboardMode
 import com.dessalines.thumbkey.utils.getModifiedKeyboardDefinition
 import com.dessalines.thumbkey.utils.keyboardPositionToAlignment
 import com.dessalines.thumbkey.utils.toBool
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
 import kotlin.time.TimeMark
 
 @Composable
 fun KeyboardScreen(
     settings: AppSettings?,
+    clipboardRepository: ClipboardRepository,
     onSwitchLanguage: () -> Unit,
     onChangePosition: ((old: KeyboardPosition) -> KeyboardPosition) -> Unit,
     onToggleHideLetters: () -> Unit,
+    onGoToClipboardSettings: () -> Unit,
 ) {
     val ctx = LocalContext.current as IMEService
 
@@ -124,14 +136,48 @@ fun KeyboardScreen(
     // TODO get rid of this crap
     val lastAction = remember { mutableStateOf<Pair<KeyAction, TimeMark>?>(null) }
 
+    val clipboardItems by clipboardRepository.allClipboardItems.observeAsState(initial = emptyList())
+
     val keyboard =
         when (mode) {
-            KeyboardMode.MAIN -> keyboardDefinition.modes.main
-            KeyboardMode.SHIFTED -> keyboardDefinition.modes.shifted
-            KeyboardMode.NUMERIC -> keyboardDefinition.modes.numeric
-            KeyboardMode.CTRLED -> keyboardDefinition.modes.ctrled!!
-            KeyboardMode.ALTED -> keyboardDefinition.modes.alted!!
-            else -> KB_EN_THUMBKEY_MAIN
+            KeyboardMode.MAIN -> {
+                keyboardDefinition.modes.main
+            }
+
+            KeyboardMode.SHIFTED -> {
+                keyboardDefinition.modes.shifted
+            }
+
+            KeyboardMode.NUMERIC -> {
+                keyboardDefinition.modes.numeric
+            }
+
+            KeyboardMode.CTRLED -> {
+                keyboardDefinition.modes.ctrled ?: run {
+                    val text = stringResource(R.string.warning_invalid_mode, mode, keyboardDefinition.title)
+                    Toast.makeText(ctx, text, Toast.LENGTH_SHORT).show()
+                    Log.d(TAG, text)
+
+                    mode = KeyboardMode.MAIN
+                    keyboardDefinition.modes.main
+                }
+            }
+
+            KeyboardMode.ALTED -> {
+                keyboardDefinition.modes.alted ?: run {
+                    val text = stringResource(R.string.warning_invalid_mode, mode, keyboardDefinition.title)
+                    Toast.makeText(ctx, text, Toast.LENGTH_SHORT).show()
+                    Log.d(TAG, text)
+
+                    mode = KeyboardMode.MAIN
+                    keyboardDefinition.modes.main
+                }
+            }
+
+            else -> {
+                // Emoji and Clipboard modes use their own rendering, which does not depend on this value
+                KB_EN_THUMBKEY_MAIN
+            }
         }
 
     val position =
@@ -357,8 +403,21 @@ fun KeyboardScreen(
                                             KeyboardMode.MAIN
                                         }
                                 },
+                                onToggleClipboardMode = { enable ->
+                                    mode =
+                                        if (enable) {
+                                            KeyboardMode.CLIPBOARD
+                                        } else {
+                                            KeyboardMode.MAIN
+                                        }
+                                },
                                 onToggleCapsLock = {
                                     capsLock = !capsLock
+
+                                    // Change to shifted mode in case it isn't already shifted
+                                    if (capsLock) {
+                                        mode = KeyboardMode.SHIFTED
+                                    }
                                 },
                                 onToggleHideLetters = onToggleHideLetters,
                                 onAutoCapitalize = { enable ->
@@ -392,6 +451,102 @@ fun KeyboardScreen(
                         }
                     }
                 }
+            }
+        }
+    } else if (mode == KeyboardMode.CLIPBOARD) {
+        // Clipboard history view
+        val scope = CoroutineScope(Dispatchers.IO)
+        val clipboardHistoryEnabled =
+            (settings?.clipboardHistoryEnabled ?: DEFAULT_CLIPBOARD_HISTORY_ENABLED).toBool()
+
+        // Calculate keyboard height based on number of rows
+        val rowCount = keyboardDefinition.modes.main.arr.size
+        val keyboardHeight = Dp(keyHeight * rowCount)
+
+        // Perform auto-cleanup when entering clipboard view, and clear all if disabled
+        LaunchedEffect(Unit) {
+            if (clipboardHistoryEnabled) {
+                clipboardRepository?.clearExpired()
+            } else {
+                clipboardRepository?.clearAll()
+            }
+        }
+
+        Box(
+            modifier =
+                Modifier
+                    .then(
+                        if (backdropEnabled) {
+                            Modifier.background(backdropColor)
+                        } else {
+                            (Modifier)
+                        },
+                    ),
+        ) {
+            // adds a pretty line if you're using the backdrop
+            if (backdropEnabled) {
+                Box(
+                    modifier =
+                        Modifier
+                            .align(Alignment.TopCenter)
+                            .fillMaxWidth()
+                            .height(1.dp)
+                            .background(color = MaterialTheme.colorScheme.surfaceVariant),
+                )
+            }
+            Box(
+                modifier =
+                    Modifier
+                        .then(if (!ignoreBottomPadding) Modifier.safeDrawingPadding() else Modifier)
+                        .padding(bottom = pushupSizeDp)
+                        .fillMaxWidth()
+                        .height(keyboardHeight)
+                        .then(
+                            if (backdropEnabled) {
+                                Modifier.padding(top = backdropPadding)
+                            } else {
+                                (Modifier)
+                            },
+                        ),
+            ) {
+                ClipboardHistoryScreen(
+                    clipboardItems = clipboardItems,
+                    isEnabled = clipboardHistoryEnabled,
+                    onItemClick = { item ->
+                        // Paste and return to keyboard
+                        ctx.currentInputConnection.commitText(item.text, 1)
+                        mode = KeyboardMode.MAIN
+                    },
+                    onItemPaste = { item ->
+                        // Paste WITHOUT returning to keyboard
+                        ctx.currentInputConnection.commitText(item.text, 1)
+                    },
+                    onItemDelete = { item ->
+                        scope.launch {
+                            clipboardRepository?.deleteItem(item)
+                        }
+                    },
+                    onItemTogglePin = { item ->
+                        scope.launch {
+                            clipboardRepository?.togglePin(item)
+                        }
+                    },
+                    onBack = {
+                        mode = KeyboardMode.MAIN
+                    },
+                    onClearAll = {
+                        scope.launch {
+                            clipboardRepository?.clearUnpinned()
+                        }
+                    },
+                    onGoToClipboardSettings = {
+                        mode = KeyboardMode.MAIN
+                        onGoToClipboardSettings()
+                    },
+                    keyHeight = keyHeight,
+                    keyPadding = keyPadding,
+                    cornerRadius = cornerRadius,
+                )
             }
         }
     } else {
@@ -529,8 +684,21 @@ fun KeyboardScreen(
                                                     KeyboardMode.MAIN
                                                 }
                                         },
+                                        onToggleClipboardMode = { enable ->
+                                            mode =
+                                                if (enable) {
+                                                    KeyboardMode.CLIPBOARD
+                                                } else {
+                                                    KeyboardMode.MAIN
+                                                }
+                                        },
                                         onToggleCapsLock = {
                                             capsLock = !capsLock
+
+                                            // Change to shifted mode in case it isn't already shifted
+                                            if (capsLock) {
+                                                mode = KeyboardMode.SHIFTED
+                                            }
                                         },
                                         onToggleHideLetters = onToggleHideLetters,
                                         onKeyEvent = {

@@ -105,4 +105,36 @@
     <string name="ignore_bottom_padding">Ignore bottom padding</string>
     <string name="show_toast_on_layout_switch">Show toast on layout switch</string>
     <string name="disable_fullscreen_editor">Disable fullscreen text editor</string>
+    <string name="warning_invalid_mode">Mode \"%s\" is not defined for layout \"%s\".</string>
+    <!-- Clipboard History -->
+    <string name="clipboard_history">Clipboard history</string>
+    <string name="clipboard_history_enabled">Enable clipboard history</string>
+    <string name="clipboard_history_enabled_description">Store copied text for quick access</string>
+    <string name="clipboard_auto_cleanup">Auto-cleanup old clips</string>
+    <string name="clipboard_auto_cleanup_description">Automatically remove old unpinned clips</string>
+    <string name="clipboard_cleanup_after">Cleanup after %1$s</string>
+    <string name="duration_5_minutes">5 minutes</string>
+    <string name="duration_10_minutes">10 minutes</string>
+    <string name="duration_30_minutes">30 minutes</string>
+    <string name="duration_1_hour">1 hour</string>
+    <string name="duration_2_hours">2 hours</string>
+    <string name="duration_4_hours">4 hours</string>
+    <string name="duration_12_hours">12 hours</string>
+    <string name="duration_1_day">1 day</string>
+    <string name="duration_2_days">2 days</string>
+    <string name="duration_4_days">4 days</string>
+    <string name="duration_7_days">7 days</string>
+    <string name="clipboard_size_limit">Limit history size</string>
+    <string name="clipboard_size_limit_description">Remove oldest clips when limit is reached</string>
+    <string name="clipboard_max_size">Max history size: %1$d</string>
+    <string name="clipboard_clear_all">Clear all</string>
+    <string name="clipboard_back">Back</string>
+    <string name="clipboard_pin">Pin</string>
+    <string name="clipboard_unpin">Unpin</string>
+    <string name="clipboard_delete">Delete</string>
+    <string name="clipboard_paste">Paste</string>
+    <string name="clipboard_empty">Clipboard is empty</string>
+    <string name="clipboard_disabled">Clipboard history is disabled</string>
+    <string name="clipboard_go_to_settings">Go to clipboard settings</string>
+    <string name="clipboard_characters">%1$d characters</string>
 </resources>

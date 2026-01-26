@@ -40,6 +40,11 @@ import com.dessalines.thumbkey.db.DEFAULT_AUTO_CAPITALIZE
 import com.dessalines.thumbkey.db.DEFAULT_AUTO_SIZE_KEYS
 import com.dessalines.thumbkey.db.DEFAULT_BACKDROP_ENABLED
 import com.dessalines.thumbkey.db.DEFAULT_CIRCULAR_DRAG_ENABLED
+import com.dessalines.thumbkey.db.DEFAULT_CLIPBOARD_AUTO_CLEANUP_ENABLED
+import com.dessalines.thumbkey.db.DEFAULT_CLIPBOARD_CLEANUP_AFTER_MINUTES
+import com.dessalines.thumbkey.db.DEFAULT_CLIPBOARD_HISTORY_ENABLED
+import com.dessalines.thumbkey.db.DEFAULT_CLIPBOARD_MAX_SIZE
+import com.dessalines.thumbkey.db.DEFAULT_CLIPBOARD_SIZE_LIMIT_ENABLED
 import com.dessalines.thumbkey.db.DEFAULT_CLOCKWISE_DRAG_ACTION
 import com.dessalines.thumbkey.db.DEFAULT_COUNTERCLOCKWISE_DRAG_ACTION
 import com.dessalines.thumbkey.db.DEFAULT_DISABLE_FULLSCREEN_EDITOR
@@ -264,6 +269,11 @@ private fun resetAppSettingsToDefault(appSettingsViewModel: AppSettingsViewModel
             ignoreBottomPadding = DEFAULT_IGNORE_BOTTOM_PADDING,
             showToastOnLayoutSwitch = DEFAULT_SHOW_TOAST_ON_LAYOUT_SWITCH,
             disableFullscreenEditor = DEFAULT_DISABLE_FULLSCREEN_EDITOR,
+            clipboardHistoryEnabled = DEFAULT_CLIPBOARD_HISTORY_ENABLED,
+            clipboardAutoCleanupEnabled = DEFAULT_CLIPBOARD_AUTO_CLEANUP_ENABLED,
+            clipboardCleanupAfterMinutes = DEFAULT_CLIPBOARD_CLEANUP_AFTER_MINUTES,
+            clipboardSizeLimitEnabled = DEFAULT_CLIPBOARD_SIZE_LIMIT_ENABLED,
+            clipboardMaxSize = DEFAULT_CLIPBOARD_MAX_SIZE,
         ),
     )
 }
