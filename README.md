@@ -114,11 +114,12 @@ This project is a follow-up to the now unmaintained (and closed-source) [MessagE
 
 - **Tap** to access numbers & symbols. **Tap again** to return to letters.
 - **Swipe to top-left** to select all.
+- **Swipe to top-left and back** to select the current line.
 - **Swipe up** to copy - If nothing is selected, all the text will be copied.
 - **Swipe to top-right** to cut - If nothing is selected, all the text will be selected and cut.
 - **Swipe right** to redo.
 - **Swipe down** to paste.
-- ** Swipe down and then up** to open clipboard history (swipe-return gesture).
+- **Swipe down and then up on paste** to open clipboard history (swipe-return gesture).
 - **Swipe left** to undo.
 
 ### Slide gestures

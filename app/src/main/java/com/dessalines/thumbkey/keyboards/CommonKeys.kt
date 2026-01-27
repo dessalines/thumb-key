@@ -22,6 +22,7 @@ val SELECT_ALL_KEYC =
     KeyC(
         display = KeyDisplay.IconDisplay(Icons.Outlined.SelectAll),
         action = SelectAll,
+        swipeReturnAction = SelectLineWithCursor,
         color = MUTED,
     )
 val CUT_KEYC =
