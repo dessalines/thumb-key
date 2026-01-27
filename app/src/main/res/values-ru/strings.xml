@@ -134,4 +134,5 @@
     <string name="clipboard_disabled">История буфера обмена отключена</string>
     <string name="clipboard_go_to_settings">Перейти в настройки буфера обмена</string>
     <string name="clipboard_characters">Символов: %1$d</string>
+    <string name="warning_invalid_mode">Режим \"%s\" не определён для макета \"%s\".</string>
 </resources>
