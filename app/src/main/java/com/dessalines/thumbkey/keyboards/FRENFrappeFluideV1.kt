@@ -10,6 +10,13 @@ import com.dessalines.thumbkey.utils.FontSizeVariant.*
 import com.dessalines.thumbkey.utils.KeyAction.*
 import com.dessalines.thumbkey.utils.SwipeNWay.*
 
+val SELECT_LINE_WITH_CURSOR_KEYC =
+    KeyC(
+        action = SelectLineWithCursor,
+        display = KeyDisplay.TextDisplay("<>"),
+        color = MUTED,
+    )
+
 val DELETE_WORD_BEFORE_CURSOR_TEXT_KEYC =
     KeyC(
         action = DeleteWordBeforeCursor,
@@ -22,6 +29,7 @@ fun specialActionKeyItemCustom(center: KeyC): KeyItemC =
         backgroundColor = SURFACE_VARIANT,
         swipeType = EIGHT_WAY,
         center = center,
+        topLeft = SELECT_LINE_WITH_CURSOR_KEYC,
         // topLeft = MOVE_KEYBOARD_CYCLE_RIGHT_KEYC,
         top = GOTO_SETTINGS_KEYC,
         bottom = SWITCH_IME_KEYC,

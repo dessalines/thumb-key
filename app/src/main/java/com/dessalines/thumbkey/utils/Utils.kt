@@ -410,6 +410,12 @@ fun performKeyAction(
             nextWordAfterCursor(ime)
         }
 
+        is KeyAction.SelectLineWithCursor -> {
+            Log.d(TAG, "Select Line")
+            keyboardSettings.textProcessor?.handleFinishInput(ime)
+            selectLineWithCursor(ime)
+        }
+
         is KeyAction.ReplaceLastText -> {
             Log.d(TAG, "replacing last word")
             val text = action.text
@@ -1496,15 +1502,22 @@ fun deleteWordAfterCursor(ime: IMEService) {
     ime.currentInputConnection.deleteSurroundingText(0, nextWordLength)
 }
 
+fun moveCursor(
+    ime: IMEService,
+    delta: Int,
+) {
+    val selection = startSelection(ime)
+    selection.right(delta)
+    ime.currentInputConnection.setSelection(selection.end, selection.end)
+}
+
 fun previousWordBeforeCursor(ime: IMEService) {
     val wordsBeforeCursor = ime.currentInputConnection.getTextBeforeCursor(9999, 0)
 
     val pattern = Regex("(\\w+\\W?|[^\\s\\w]+)?\\s*$")
     val lastWordLength = wordsBeforeCursor?.let { pattern.find(it)?.value?.length } ?: 0
 
-    val selection = startSelection(ime)
-    selection.left(lastWordLength)
-    ime.currentInputConnection.setSelection(selection.end, selection.end)
+    moveCursor(ime, -lastWordLength)
 }
 
 fun nextWordAfterCursor(ime: IMEService) {
@@ -1513,10 +1526,29 @@ fun nextWordAfterCursor(ime: IMEService) {
     val pattern = Regex("^\\s?(\\w+\\W?|[^\\s\\w]+|\\s+)")
     val nextWordLength = wordsAfterCursor?.let { pattern.find(it)?.value?.length } ?: 0
 
-    val selection = startSelection(ime)
-    selection.right(nextWordLength)
+    moveCursor(ime, nextWordLength)
+}
 
-    ime.currentInputConnection.setSelection(selection.end, selection.end)
+fun selectLineWithCursor(ime: IMEService) {
+    // Find line start
+    val wordsBeforeCursor = ime.currentInputConnection.getTextBeforeCursor(9999, 0)
+    val lastChar = wordsBeforeCursor?.last() ?: ' '
+    if (!(lastChar == '\n' || lastChar == '\r')) {
+        val patternStart = Regex("^[^\\n\\r]*\\Z", RegexOption.MULTILINE)
+        val previousLineStart = wordsBeforeCursor?.let { patternStart.find(it)?.value?.length } ?: 0
+
+        // Move to line start
+        moveCursor(ime, -previousLineStart)
+    }
+
+    // Find length of line, with endline if present
+    val wordsAfterCursor = ime.currentInputConnection.getTextAfterCursor(9999, 0)
+    val patternLine = Regex("\\A[^\\n\\r]*(\\n|\\r)?", RegexOption.MULTILINE)
+    val lineLength = wordsAfterCursor?.let { patternLine.find(it)?.value?.length } ?: 0
+
+    val selection = startSelection(ime)
+    selection.right(lineLength)
+    ime.currentInputConnection.setSelection(selection.start, selection.end)
 }
 
 fun buildTapActions(keyItem: KeyItemC): List<KeyAction> {
