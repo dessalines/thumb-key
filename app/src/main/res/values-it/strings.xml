@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">Thumb-Key</string>
     <string name="settings">Parametri</string>
     <string name="system">Sistema</string>
     <string name="light">Chiaro</string>
