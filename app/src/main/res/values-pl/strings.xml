@@ -2,7 +2,6 @@
 <resources>
     <string name="support">Wsparcie</string>
     <string name="version">Wersja %1$s</string>
-    <string name="app_name">Thumb-Key</string>
     <string name="settings">Ustawienia</string>
     <string name="system">System</string>
     <string name="light">Jasny</string>

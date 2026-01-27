@@ -54,7 +54,6 @@
     <string name="database_restored">Veriler Geri Döndürüldü.</string>
     <string name="database_backed_up">Veriler Yedeklendi.</string>
     <string name="backup_and_restore">Yedekleme</string>
-    <string name="app_name">Thumb-Key</string>
     <string name="dark">Karanlık</string>
     <string name="center">Merkez</string>
     <string name="right">Sağ</string>

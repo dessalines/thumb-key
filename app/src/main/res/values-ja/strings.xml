@@ -50,7 +50,6 @@
     <string name="restore_database">データベースの復元</string>
     <string name="restore_database_warning">警告: これにより現在のデータベースが消去されます</string>
     <string name="vibrate_warning">システム設定でタッチフィードバックを有効にする必要があります</string>
-    <string name="app_name">Thumb-Key</string>
     <string name="source_code">ソースコード</string>
     <string name="position">位置</string>
     <string name="vibrate_on_tap">タップ時に振動</string>
