@@ -1,3 +1,14 @@
+## What's Changed in 5.1.1
+
+- Add keyboard position padding for horizontal positioning by @jiquiame in [#1753](https://github.com/dessalines/thumb-key/pull/1753)
+- fix debug app name override by translations by @Toldry in [#1758](https://github.com/dessalines/thumb-key/pull/1758)
+- Adding swipe return gesture on select all key to select current line. by @dessalines in [#1757](https://github.com/dessalines/thumb-key/pull/1757)
+- Frappefluide: fix nbspaces for french quotes by @jiquiame in [#1756](https://github.com/dessalines/thumb-key/pull/1756)
+- Add action to select current line by @jiquiame in [#1752](https://github.com/dessalines/thumb-key/pull/1752)
+- Fix crash when using ToggleCtrlMode/ToggleAltMode when not defined by @emallery in [#1745](https://github.com/dessalines/thumb-key/pull/1745)
+
+**Full Changelog**: https://github.com/dessalines/thumb-key/compare/5.1.0...5.1.1
+
 ## What's Changed in 5.1.0
 
 - Add clipboard history feature by @Toldry in [#1737](https://github.com/dessalines/thumb-key/pull/1737)
