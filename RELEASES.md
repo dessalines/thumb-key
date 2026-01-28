@@ -1,3 +1,9 @@
+## What's Changed in 5.1.2
+
+- Fixing gradle.properties nonFinalResIds by @dessalines
+
+**Full Changelog**: https://github.com/dessalines/thumb-key/compare/5.1.1...5.1.2
+
 ## What's Changed in 5.1.1
 
 - Add keyboard position padding for horizontal positioning by @jiquiame in [#1753](https://github.com/dessalines/thumb-key/pull/1753)
