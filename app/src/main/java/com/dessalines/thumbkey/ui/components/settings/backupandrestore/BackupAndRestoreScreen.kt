@@ -64,6 +64,7 @@ import com.dessalines.thumbkey.db.DEFAULT_KEY_WIDTH
 import com.dessalines.thumbkey.db.DEFAULT_MIN_SWIPE_LENGTH
 import com.dessalines.thumbkey.db.DEFAULT_NON_SQUARE_KEYS
 import com.dessalines.thumbkey.db.DEFAULT_POSITION
+import com.dessalines.thumbkey.db.DEFAULT_POSITION_PADDING
 import com.dessalines.thumbkey.db.DEFAULT_PUSHUP_SIZE
 import com.dessalines.thumbkey.db.DEFAULT_SHOW_TOAST_ON_LAYOUT_SWITCH
 import com.dessalines.thumbkey.db.DEFAULT_SLIDE_BACKSPACE_DEADZONE_ENABLED
@@ -238,6 +239,7 @@ private fun resetAppSettingsToDefault(appSettingsViewModel: AppSettingsViewModel
             slideSensitivity = DEFAULT_SLIDE_SENSITIVITY,
             soundOnTap = DEFAULT_SOUND_ON_TAP,
             position = DEFAULT_POSITION,
+            positionPadding = DEFAULT_POSITION_PADDING,
             pushupSize = DEFAULT_PUSHUP_SIZE,
             minSwipeLength = DEFAULT_MIN_SWIPE_LENGTH,
             keyboardLayout = DEFAULT_KEYBOARD_LAYOUT,

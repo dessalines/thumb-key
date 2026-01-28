@@ -62,6 +62,7 @@ import com.dessalines.thumbkey.db.DEFAULT_KEY_RADIUS
 import com.dessalines.thumbkey.db.DEFAULT_KEY_WIDTH
 import com.dessalines.thumbkey.db.DEFAULT_NON_SQUARE_KEYS
 import com.dessalines.thumbkey.db.DEFAULT_POSITION
+import com.dessalines.thumbkey.db.DEFAULT_POSITION_PADDING
 import com.dessalines.thumbkey.db.DEFAULT_PUSHUP_SIZE
 import com.dessalines.thumbkey.db.DEFAULT_SHOW_TOAST_ON_LAYOUT_SWITCH
 import com.dessalines.thumbkey.db.DEFAULT_SOUND_ON_TAP
@@ -124,6 +125,9 @@ fun LookAndFeelScreen(
 
     var positionState = KeyboardPosition.entries[settings?.position ?: DEFAULT_POSITION]
 
+    var positionPaddingState = (settings?.positionPadding ?: DEFAULT_POSITION_PADDING).toFloat()
+    var positionPaddingSliderState by remember { mutableFloatStateOf(positionPaddingState) }
+
     var vibrateOnTapState = (settings?.vibrateOnTap ?: DEFAULT_VIBRATE_ON_TAP).toBool()
     var vibrateOnSlideState = (settings?.vibrateOnSlide ?: DEFAULT_VIBRATE_ON_SLIDE).toBool()
     var soundOnTapState = (settings?.soundOnTap ?: DEFAULT_SOUND_ON_TAP).toBool()
@@ -144,6 +148,7 @@ fun LookAndFeelScreen(
                 animationSpeed = animationSpeedState.toInt(),
                 animationHelperSpeed = animationHelperSpeedState.toInt(),
                 position = positionState.ordinal,
+                positionPadding = positionPaddingState.toInt(),
                 vibrateOnTap = vibrateOnTapState.toInt(),
                 vibrateOnSlide = vibrateOnSlideState.toInt(),
                 soundOnTap = soundOnTapState.toInt(),
@@ -251,6 +256,33 @@ fun LookAndFeelScreen(
                         },
                         title = {
                             Text(stringResource(R.string.position))
+                        },
+                        icon = {
+                            Icon(
+                                imageVector = Icons.Outlined.LinearScale,
+                                contentDescription = null,
+                            )
+                        },
+                    )
+
+                    SliderPreference(
+                        value = positionPaddingState,
+                        sliderValue = positionPaddingSliderState,
+                        onValueChange = {
+                            positionPaddingState = it
+                            updateLookAndFeel()
+                        },
+                        onSliderValueChange = {
+                            positionPaddingSliderState = it
+                        },
+                        valueRange = -200f..200f,
+                        title = {
+                            val positionPaddingStr =
+                                stringResource(
+                                    R.string.position_padding,
+                                    positionPaddingSliderState.toInt().toString(),
+                                )
+                            Text(positionPaddingStr)
                         },
                         icon = {
                             Icon(
@@ -520,7 +552,7 @@ fun LookAndFeelScreen(
                             updateLookAndFeel()
                         },
                         onSliderValueChange = { pushupSizeSliderState = it },
-                        valueRange = 0f..200f,
+                        valueRange = 0f..250f,
                         title = {
                             val bottomOffsetStr = stringResource(R.string.bottom_offset, pushupSizeSliderState.toInt().toString())
                             Text(bottomOffsetStr)

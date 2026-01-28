@@ -40,6 +40,7 @@
     <string name="theme">Theme</string>
     <string name="theme_color">Theme color</string>
     <string name="position">Position</string>
+    <string name="position_padding">Position padding: %1$s</string>
     <string name="vibrate_on_tap">Vibrate on tap</string>
     <string name="vibrate_warning">Requires touch feedback to be enabled in system settings</string>
     <string name="vibrate_on_slide">Vibrate for slide gestures</string>

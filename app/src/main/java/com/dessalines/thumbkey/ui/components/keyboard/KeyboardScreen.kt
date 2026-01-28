@@ -62,6 +62,7 @@ import com.dessalines.thumbkey.db.DEFAULT_KEY_WIDTH
 import com.dessalines.thumbkey.db.DEFAULT_MIN_SWIPE_LENGTH
 import com.dessalines.thumbkey.db.DEFAULT_NON_SQUARE_KEYS
 import com.dessalines.thumbkey.db.DEFAULT_POSITION
+import com.dessalines.thumbkey.db.DEFAULT_POSITION_PADDING
 import com.dessalines.thumbkey.db.DEFAULT_PUSHUP_SIZE
 import com.dessalines.thumbkey.db.DEFAULT_SLIDE_BACKSPACE_DEADZONE_ENABLED
 import com.dessalines.thumbkey.db.DEFAULT_SLIDE_CURSOR_MOVEMENT_MODE
@@ -185,6 +186,8 @@ fun KeyboardScreen(
             settings?.position
                 ?: DEFAULT_POSITION,
         ]
+
+    val positionPadding = settings?.positionPadding ?: DEFAULT_POSITION_PADDING
 
     val pushupSizeDp = (settings?.pushupSize ?: DEFAULT_PUSHUP_SIZE).dp
     val ignoreBottomPadding = (settings?.ignoreBottomPadding ?: DEFAULT_IGNORE_BOTTOM_PADDING).toBool()
@@ -560,7 +563,13 @@ fun KeyboardScreen(
             Log.d(TAG, "request for cursor updates failed, cursor updates will not be provided")
         }
 
-        val drawKeyboard = @Composable { alignment: Alignment, drawBackdrop: Boolean ->
+        val drawKeyboard = @Composable { alignment: Alignment, drawBackdrop: Boolean, positionPadding: Int ->
+            val modifierPositionPadding =
+                if (positionPadding > 0) {
+                    Modifier.padding(start = positionPadding.dp)
+                } else {
+                    Modifier.padding(end = -positionPadding.dp)
+                }
             Box(
                 contentAlignment = alignment,
                 modifier =
@@ -587,7 +596,7 @@ fun KeyboardScreen(
                                 .background(color = MaterialTheme.colorScheme.surfaceVariant),
                     )
                 }
-                Column {
+                Column(modifier = modifierPositionPadding) {
                     keyboard.arr.forEachIndexed { i, row ->
                         Row {
                             row.forEachIndexed { j, key ->
@@ -756,9 +765,9 @@ fun KeyboardScreen(
             }
         }
 
-        drawKeyboard(keyboardPositionToAlignment(position), backdropEnabled)
+        drawKeyboard(keyboardPositionToAlignment(position), backdropEnabled, positionPadding)
         if (position == KeyboardPosition.Dual) {
-            drawKeyboard(keyboardPositionToAlignment(KeyboardPosition.Right), false)
+            drawKeyboard(keyboardPositionToAlignment(KeyboardPosition.Right), false, positionPadding)
         }
     }
 }
