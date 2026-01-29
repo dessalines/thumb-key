@@ -16,6 +16,7 @@ import android.view.inputmethod.EditorInfo
 import android.view.inputmethod.InputMethodInfo
 import android.view.inputmethod.InputMethodManager
 import android.widget.Toast
+import androidx.activity.compose.LocalActivity
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.automirrored.outlined.ArrowBack
 import androidx.compose.material3.ExperimentalMaterial3Api
@@ -1591,7 +1592,7 @@ fun SimpleTopAppBar(
     scrollBehavior: TopAppBarScrollBehavior? = null,
     showBack: Boolean = true,
 ) {
-    val activity = LocalContext.current as? Activity
+    val activity = LocalActivity.current
     TopAppBar(
         scrollBehavior = scrollBehavior,
         title = {
