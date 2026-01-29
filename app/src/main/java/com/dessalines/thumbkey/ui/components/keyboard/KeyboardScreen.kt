@@ -542,10 +542,7 @@ fun KeyboardScreen(
                             clipboardRepository?.clearUnpinned()
                         }
                     },
-                    onGoToClipboardSettings = {
-                        mode = KeyboardMode.MAIN
-                        onGoToClipboardSettings()
-                    },
+                    onGoToClipboardSettings = onGoToClipboardSettings,
                     keyHeight = keyHeight,
                     keyPadding = keyPadding,
                     cornerRadius = cornerRadius,

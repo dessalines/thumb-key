@@ -1,5 +1,6 @@
 package com.dessalines.thumbkey.utils
 
+import android.app.Activity
 import android.content.Context
 import android.content.Intent
 import android.content.pm.PackageInfo
@@ -15,6 +16,7 @@ import android.view.inputmethod.EditorInfo
 import android.view.inputmethod.InputMethodInfo
 import android.view.inputmethod.InputMethodManager
 import android.widget.Toast
+import androidx.activity.compose.LocalActivity
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.automirrored.outlined.ArrowBack
 import androidx.compose.material3.ExperimentalMaterial3Api
@@ -29,6 +31,7 @@ import androidx.compose.runtime.MutableState
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.geometry.Offset
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.TextUnit
@@ -1589,6 +1592,7 @@ fun SimpleTopAppBar(
     scrollBehavior: TopAppBarScrollBehavior? = null,
     showBack: Boolean = true,
 ) {
+    val activity = LocalActivity.current
     TopAppBar(
         scrollBehavior = scrollBehavior,
         title = {
@@ -1598,7 +1602,15 @@ fun SimpleTopAppBar(
         },
         navigationIcon = {
             if (showBack) {
-                IconButton(onClick = { navController.popBackStack() }) {
+                IconButton(onClick = {
+                    // If there's no previous destination, finish the activity
+                    // This handles the case when navigating directly to a screen via intent
+                    if (navController.previousBackStackEntry == null) {
+                        activity?.finish()
+                    } else {
+                        navController.popBackStack()
+                    }
+                }) {
                     Icon(
                         Icons.AutoMirrored.Outlined.ArrowBack,
                         contentDescription = stringResource(R.string.settings),
