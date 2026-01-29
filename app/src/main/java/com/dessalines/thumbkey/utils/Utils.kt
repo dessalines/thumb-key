@@ -1535,13 +1535,16 @@ fun nextWordAfterCursor(ime: IMEService) {
 fun selectLineWithCursor(ime: IMEService) {
     // Find line start
     val wordsBeforeCursor = ime.currentInputConnection.getTextBeforeCursor(9999, 0)
-    val lastChar = wordsBeforeCursor?.last() ?: ' '
-    if (!(lastChar == '\n' || lastChar == '\r')) {
-        val patternStart = Regex("^[^\\n\\r]*\\Z", RegexOption.MULTILINE)
-        val previousLineStart = wordsBeforeCursor?.let { patternStart.find(it)?.value?.length } ?: 0
+    if (wordsBeforeCursor?.length ?: 0 != 0) {
+        // If we are at the beginning of a line nothing to do, else
+        val lastChar = wordsBeforeCursor?.last() ?: ' '
+        if (!(lastChar == '\n' || lastChar == '\r')) {
+            val patternStart = Regex("^[^\\n\\r]*\\Z", RegexOption.MULTILINE)
+            val previousLineStart = wordsBeforeCursor?.let { patternStart.find(it)?.value?.length } ?: 0
 
-        // Move to line start
-        moveCursor(ime, -previousLineStart)
+            // Move to line start
+            moveCursor(ime, -previousLineStart)
+        }
     }
 
     // Find length of line, with endline if present
