@@ -275,3 +275,12 @@ val MIGRATION_23_24 =
             )
         }
     }
+
+val MIGRATION_24_25 =
+    object : Migration(24, 25) {
+        override fun migrate(db: SupportSQLiteDatabase) {
+            db.execSQL(
+                "ALTER TABLE AppSettings ADD COLUMN use_private_clipboard INTEGER NOT NULL DEFAULT $DEFAULT_USE_PRIVATE_CLIPBOARD",
+            )
+        }
+    }

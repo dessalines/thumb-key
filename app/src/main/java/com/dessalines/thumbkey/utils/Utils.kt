@@ -1246,6 +1246,23 @@ fun performKeyAction(
         }
 
         KeyAction.Cut -> {
+            fun performCut() {
+                if (ime.clipboardUsePrivate()) {
+                    val text = ime.currentInputConnection.getSelectedText(0).toString()
+                    ime.clipboardAddPrivateClip(text)?.let {
+                        ime.currentInputConnection.commitText("", 1)
+                        val message = ime.getString(R.string.private_cut)
+                        Toast.makeText(ime, message, Toast.LENGTH_SHORT).show()
+                    } ?: {
+                        ime.currentInputConnection.performContextMenuAction(android.R.id.cut)
+                        val message = ime.getString(R.string.private_cut_error)
+                        Toast.makeText(ime, message, Toast.LENGTH_SHORT).show()
+                    }
+                } else {
+                    ime.currentInputConnection.performContextMenuAction(android.R.id.cut)
+                }
+            }
+
             keyboardSettings.textProcessor?.handleFinishInput(ime)
             if (ime.currentInputConnection.getSelectedText(0).isNullOrEmpty()) {
                 // Nothing selected, so cut all the text
@@ -1253,14 +1270,32 @@ fun performKeyAction(
                 // Wait a bit for the select all to complete.
                 val delayInMillis = 100L
                 Handler(Looper.getMainLooper()).postDelayed({
-                    ime.currentInputConnection.performContextMenuAction(android.R.id.cut)
+                    performCut()
                 }, delayInMillis)
             } else {
-                ime.currentInputConnection.performContextMenuAction(android.R.id.cut)
+                performCut()
             }
         }
 
         KeyAction.Copy -> {
+            fun performCopy() {
+                if (ime.clipboardUsePrivate()) {
+                    val text = ime.currentInputConnection.getSelectedText(0).toString()
+                    ime.clipboardAddPrivateClip(text)?.let {
+                        // Text successfully added to clipboard history
+                        val message = ime.getString(R.string.private_copy)
+                        Toast.makeText(ime, message, Toast.LENGTH_SHORT).show()
+                    } ?: {
+                        ime.currentInputConnection.performContextMenuAction(android.R.id.copy)
+                        val message = ime.getString(R.string.private_copy_error)
+                        Toast.makeText(ime, message, Toast.LENGTH_SHORT).show()
+                    }
+                } else {
+                    ime.currentInputConnection.performContextMenuAction(android.R.id.copy)
+                    val message = ime.getString(R.string.copy)
+                    Toast.makeText(ime, message, Toast.LENGTH_SHORT).show()
+                }
+            }
             keyboardSettings.textProcessor?.handleFinishInput(ime)
             if (ime.currentInputConnection.getSelectedText(0).isNullOrEmpty()) {
                 // Nothing selected, so copy all the text
@@ -1268,19 +1303,27 @@ fun performKeyAction(
                 // Wait a bit for the select all to complete.
                 val delayInMillis = 100L
                 Handler(Looper.getMainLooper()).postDelayed({
-                    ime.currentInputConnection.performContextMenuAction(android.R.id.copy)
+                    performCopy()
                 }, delayInMillis)
             } else {
-                ime.currentInputConnection.performContextMenuAction(android.R.id.copy)
+                performCopy()
             }
-
-            val message = ime.getString(R.string.copy)
-            Toast.makeText(ime, message, Toast.LENGTH_SHORT).show()
         }
 
         KeyAction.Paste -> {
             keyboardSettings.textProcessor?.handleFinishInput(ime)
-            ime.currentInputConnection.performContextMenuAction(android.R.id.paste)
+            if (ime.clipboardUsePrivate() && !ime.clipboardIsLastCopySystem()) {
+                val text = ime.clipboardGetLastClip()
+                if (text.isNullOrEmpty()) {
+                    ime.currentInputConnection.performContextMenuAction(android.R.id.paste)
+                    val message = ime.getString(R.string.private_paste_error)
+                    Toast.makeText(ime, message, Toast.LENGTH_SHORT).show()
+                } else {
+                    ime.currentInputConnection.commitText(text, 1)
+                }
+            } else {
+                ime.currentInputConnection.performContextMenuAction(android.R.id.paste)
+            }
         }
 
         KeyAction.Undo -> {
