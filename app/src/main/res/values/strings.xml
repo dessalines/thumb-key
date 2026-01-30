@@ -141,8 +141,4 @@
     <string name="use_private_clipboard">Use private clipboard</string>
     <string name="use_private_clipboard_description">Use internal app clipboard instead of system clipboard</string>
     <string name="private_copy">Copied selected text privately</string>
-    <string name="private_cut">Cut selected text privately</string>
-    <string name="private_copy_error">Private clipboard error, copied selected text to system clipboard</string>
-    <string name="private_cut_error">Private clipboard error, cut selected test to system clipboard</string>
-    <string name="private_paste_error">Private clipboard error, pasted from system clipboard</string>
 </resources>
