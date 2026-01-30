@@ -1251,12 +1251,8 @@ fun performKeyAction(
                     val text = ime.currentInputConnection.getSelectedText(0).toString()
                     ime.clipboardAddPrivateClip(text)?.let {
                         ime.currentInputConnection.commitText("", 1)
-                        val message = ime.getString(R.string.private_cut)
-                        Toast.makeText(ime, message, Toast.LENGTH_SHORT).show()
                     } ?: {
-                        ime.currentInputConnection.performContextMenuAction(android.R.id.cut)
-                        val message = ime.getString(R.string.private_cut_error)
-                        Toast.makeText(ime, message, Toast.LENGTH_SHORT).show()
+                        Toast.makeText(ime, "Error: private cut failed", Toast.LENGTH_SHORT).show()
                     }
                 } else {
                     ime.currentInputConnection.performContextMenuAction(android.R.id.cut)
@@ -1286,9 +1282,7 @@ fun performKeyAction(
                         val message = ime.getString(R.string.private_copy)
                         Toast.makeText(ime, message, Toast.LENGTH_SHORT).show()
                     } ?: {
-                        ime.currentInputConnection.performContextMenuAction(android.R.id.copy)
-                        val message = ime.getString(R.string.private_copy_error)
-                        Toast.makeText(ime, message, Toast.LENGTH_SHORT).show()
+                        Toast.makeText(ime, "Error: private copy failed", Toast.LENGTH_SHORT).show()
                     }
                 } else {
                     ime.currentInputConnection.performContextMenuAction(android.R.id.copy)
@@ -1315,9 +1309,7 @@ fun performKeyAction(
             if (ime.clipboardUsePrivate() && !ime.clipboardIsLastCopySystem()) {
                 val text = ime.clipboardGetLastClip()
                 if (text.isNullOrEmpty()) {
-                    ime.currentInputConnection.performContextMenuAction(android.R.id.paste)
-                    val message = ime.getString(R.string.private_paste_error)
-                    Toast.makeText(ime, message, Toast.LENGTH_SHORT).show()
+                    Toast.makeText(ime, "Error: private paste failed", Toast.LENGTH_SHORT).show()
                 } else {
                     ime.currentInputConnection.commitText(text, 1)
                 }
