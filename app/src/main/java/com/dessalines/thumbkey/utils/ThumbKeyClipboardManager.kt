@@ -18,18 +18,24 @@ class ThumbKeyClipboardManager(
     private val scope = CoroutineScope(SupervisorJob() + Dispatchers.IO)
     private var isListening = false
     private var lastClipText: String? = null
+    private var isLastCopySystem: Boolean = true
+
+    private fun addToClipboardRepo(text: String) {
+        if (text.isBlank() || text == lastClipText) return@addToClipboardRepo
+        lastClipText = text
+        Log.d(TAG, "Adding clipboard item: $text")
+        scope.launch {
+            clipboardRepository.addItem(text)
+        }
+    }
 
     private val clipboardListener =
         ClipboardManager.OnPrimaryClipChangedListener {
             val clip = systemClipboardManager.primaryClip
             if (clip == null || clip.itemCount == 0) return@OnPrimaryClipChangedListener
             val text = clip.getItemAt(0).coerceToText(context).toString()
-            if (text.isBlank() || text == lastClipText) return@OnPrimaryClipChangedListener
-            lastClipText = text
-            Log.d(TAG, "Adding clipboard item: $text")
-            scope.launch {
-                clipboardRepository.addItem(text)
-            }
+            addToClipboardRepo(text)
+            isLastCopySystem = true
         }
 
     fun startListening() {
@@ -51,4 +57,13 @@ class ThumbKeyClipboardManager(
             clipboardRepository.clearExpired()
         }
     }
+
+    fun addPrivateClip(text: String) {
+        addToClipboardRepo(text)
+        isLastCopySystem = false
+    }
+
+    fun isLastCopySystem(): Boolean = isLastCopySystem
+
+    fun getLastClip(): String? = lastClipText
 }
