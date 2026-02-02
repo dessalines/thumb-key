@@ -381,12 +381,34 @@ fun performKeyAction(
             onKeyEvent()
         }
 
-        // Some apps are having problems with delete key events, and issues need to be opened up
-        // on their repos.
+        // Some apps (like Google Chat) ignore KeyEvent.KEYCODE_DEL, so we use deleteSurroundingText
+        // for normal editors. However, raw editors (TYPE_NULL) like Termux need key events.
+        // See: https://github.com/dessalines/thumb-key/issues/1065
         is KeyAction.DeleteKeyAction -> {
+            val ic = ime.currentInputConnection
+            val editorInfo = ime.currentInputEditorInfo
+            val inputType = editorInfo?.inputType ?: 0
+
             val ev = KeyEvent(KeyEvent.ACTION_DOWN, KeyEvent.KEYCODE_DEL)
+            // If there's a text processor, let it handle the key event
             keyboardSettings.textProcessor?.handleKeyEvent(ime, ev)
-                ?: ime.currentInputConnection.sendKeyEvent(ev)
+                ?: run {
+                    // No text processor - handle directly
+                    if (inputType == EditorInfo.TYPE_NULL) {
+                        // Raw editor (like Termux) - use key event
+                        ic.sendKeyEvent(ev)
+                    } else {
+                        // Normal editor - use text manipulation which works in Google Chat
+                        val selectedText = ic.getSelectedText(0)
+                        if (selectedText?.isNotEmpty() == true) {
+                            // Has selection - delete it by committing empty string
+                            ic.commitText("", 0)
+                        } else {
+                            // No selection - delete one character before cursor
+                            ic.deleteSurroundingText(1, 0)
+                        }
+                    }
+                }
         }
 
         is KeyAction.DeleteWordBeforeCursor -> {
