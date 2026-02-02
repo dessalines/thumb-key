@@ -205,6 +205,7 @@ val KB_JA_KATAKANA_THUMBKEY_SHIFTED =
 val KB_JA_KATAKANA_THUMBKEY: KeyboardDefinition =
     KeyboardDefinition(
         title = "japanese katakana thumb-key",
+        locales = listOf("ja"),
         modes =
             KeyboardDefinitionModes(
                 main = KB_JA_KATAKANA_THUMBKEY_MAIN,

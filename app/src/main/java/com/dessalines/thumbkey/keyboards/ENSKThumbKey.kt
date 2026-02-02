@@ -226,6 +226,7 @@ val KB_EN_SK_THUMBKEY_SHIFTED =
 val KB_EN_SK_THUMBKEY: KeyboardDefinition =
     KeyboardDefinition(
         title = "english slovenčina thumb-key",
+        locales = listOf("en", "sk"),
         modes =
             KeyboardDefinitionModes(
                 main = KB_EN_SK_THUMBKEY_MAIN,

@@ -227,6 +227,7 @@ val KB_EN_HYPER_SHIFTED =
 val KB_EN_HYPER: KeyboardDefinition =
     KeyboardDefinition(
         title = "english hyper",
+        locales = listOf("en"),
         modes =
             KeyboardDefinitionModes(
                 main = KB_EN_HYPER_MAIN,

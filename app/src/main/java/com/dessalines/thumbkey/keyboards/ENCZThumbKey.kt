@@ -213,6 +213,7 @@ val KB_EN_CZ_THUMBKEY_SHIFTED =
 val KB_EN_CZ_THUMBKEY: KeyboardDefinition =
     KeyboardDefinition(
         title = "english čeština thumb-key",
+        locales = listOf("en", "cs"),
         modes =
             KeyboardDefinitionModes(
                 main = KB_EN_CZ_THUMBKEY_MAIN,

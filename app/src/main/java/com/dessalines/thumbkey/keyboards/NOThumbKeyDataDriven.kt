@@ -192,6 +192,7 @@ val KB_NO_THUMBKEY_DATADRIVEN_SHIFTED =
 val KB_NO_THUMBKEY_DATADRIVEN: KeyboardDefinition =
     KeyboardDefinition(
         title = "norsk thumb-key datadrevet",
+        locales = listOf("no"),
         modes =
             KeyboardDefinitionModes(
                 main = KB_NO_THUMBKEY_DATADRIVEN_MAIN,

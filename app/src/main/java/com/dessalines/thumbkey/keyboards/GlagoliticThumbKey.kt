@@ -232,6 +232,7 @@ val KB_GLAGOLITIC_THUMBKEY_SHIFTED =
 val KB_GLAGOLITIC_THUMBKEY: KeyboardDefinition =
     KeyboardDefinition(
         title = "ⰳⰾⰰⰳⱁⰾⰻⱌⰰ thumb-key",
+        locales = listOf("cu"),
         modes =
             KeyboardDefinitionModes(
                 main = KB_GLAGOLITIC_THUMBKEY_MAIN,

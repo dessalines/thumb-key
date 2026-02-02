@@ -227,6 +227,7 @@ val KB_HU_TYPESPLIT_SHIFTED =
 val KB_HU_TYPESPLIT: KeyboardDefinition =
     KeyboardDefinition(
         title = "magyar type-split",
+        locales = listOf("hu"),
         modes =
             KeyboardDefinitionModes(
                 main = KB_HU_TYPESPLIT_MAIN,

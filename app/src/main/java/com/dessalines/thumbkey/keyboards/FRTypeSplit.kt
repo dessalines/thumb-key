@@ -237,6 +237,7 @@ val KB_FR_TYPESPLIT_SHIFTED =
 val KB_FR_TYPESPLIT: KeyboardDefinition =
     KeyboardDefinition(
         title = "français type-split",
+        locales = listOf("fr"),
         modes =
             KeyboardDefinitionModes(
                 main = KB_FR_TYPESPLIT_MAIN,

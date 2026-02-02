@@ -429,6 +429,7 @@ val KB_EN_DOUBLE_SYMBOLS_SHIFTED =
 val KB_EN_DOUBLE_SYMBOLS: KeyboardDefinition =
     KeyboardDefinition(
         title = "english double symbols",
+        locales = listOf("en"),
         modes =
             KeyboardDefinitionModes(
                 main = KB_EN_DOUBLE_SYMBOLS_MAIN,

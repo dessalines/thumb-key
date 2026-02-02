@@ -95,4 +95,5 @@ val KB_AR_THUMBKEY_LEVANT: KeyboardDefinition =
                 shifted = KB_AR_THUMBKEY_LEVANT_MAIN,
                 numeric = ARABIC_NUMERIC_KEYBOARD,
             ),
+        locales = listOf("ar"),
     )
