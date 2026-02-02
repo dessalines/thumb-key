@@ -67,6 +67,9 @@ class ComposeKeyboardView(
                                         ?.textProcessor
                                         ?.updateCursorPosition(ctx)
 
+                                    // Notify the system of the new locale for spellchecking
+                                    ctx.updateInputLocale()
+
                                     // Display the new layout's name on the screen
                                     if (s.showToastOnLayoutSwitch.toBool()) {
                                         val layoutName = layout.keyboardDefinition.title
