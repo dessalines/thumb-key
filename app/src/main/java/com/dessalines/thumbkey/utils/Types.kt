@@ -42,6 +42,7 @@ data class KeyboardDefinitionSettings(
 @optics
 data class KeyboardDefinition(
     val title: String,
+    val locales: List<String>? = null,
     val modes: KeyboardDefinitionModes,
     val settings: KeyboardDefinitionSettings = KeyboardDefinitionSettings(),
 ) {

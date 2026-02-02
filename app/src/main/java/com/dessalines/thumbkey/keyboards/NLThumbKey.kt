@@ -192,6 +192,7 @@ val KB_NL_THUMBKEY_SHIFTED =
 val KB_NL_THUMBKEY: KeyboardDefinition =
     KeyboardDefinition(
         title = "nederlands thumb-key",
+        locales = listOf("nl"),
         modes =
             KeyboardDefinitionModes(
                 main = KB_NL_THUMBKEY_MAIN,

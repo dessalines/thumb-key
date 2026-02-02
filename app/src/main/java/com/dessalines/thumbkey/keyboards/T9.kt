@@ -566,6 +566,7 @@ val KB_T9_SHIFTED =
 val KB_T9: KeyboardDefinition =
     KeyboardDefinition(
         title = "T9",
+        locales = listOf("en"),
         modes =
             KeyboardDefinitionModes(
                 main = KB_T9_MAIN,

@@ -188,6 +188,7 @@ val KB_EU_THUMBKEY_SHIFTED =
 val KB_EU_THUMBKEY: KeyboardDefinition =
     KeyboardDefinition(
         title = "euskara thumb-key",
+        locales = listOf("eu"),
         modes =
             KeyboardDefinitionModes(
                 main = KB_EU_THUMBKEY_MAIN,

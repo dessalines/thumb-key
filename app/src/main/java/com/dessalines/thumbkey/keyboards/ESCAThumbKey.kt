@@ -212,6 +212,7 @@ val KB_ES_CA_THUMBKEY_SHIFTED =
 val KB_ES_CA_THUMBKEY: KeyboardDefinition =
     KeyboardDefinition(
         title = "español català thumb-key",
+        locales = listOf("es", "ca"),
         modes =
             KeyboardDefinitionModes(
                 main = KB_ES_CA_THUMBKEY_MAIN,

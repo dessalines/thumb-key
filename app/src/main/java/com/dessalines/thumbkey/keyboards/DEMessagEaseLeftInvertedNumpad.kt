@@ -9,6 +9,7 @@ import com.dessalines.thumbkey.utils.lastColKeysToFirst
 val KB_DE_MESSAGEASE_LEFT_INVERTED_NUMPAD: KeyboardDefinition =
     KeyboardDefinition(
         title = "deutsch messagease left-handed, inverted numpad",
+        locales = listOf("de"),
         modes =
             KeyboardDefinitionModes(
                 main = lastColKeysToFirst(KB_DE_MESSAGEASE_MAIN),

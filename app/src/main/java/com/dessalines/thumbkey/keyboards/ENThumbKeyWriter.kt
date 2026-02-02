@@ -253,6 +253,7 @@ val KB_EN_THUMBKEY_WRITER_SHIFTED =
 val KB_EN_THUMBKEY_WRITER: KeyboardDefinition =
     KeyboardDefinition(
         title = "english thumb-key writer",
+        locales = listOf("en"),
         modes =
             KeyboardDefinitionModes(
                 main = KB_EN_THUMBKEY_WRITER_MAIN,

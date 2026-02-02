@@ -244,6 +244,7 @@ val KB_EN_THUMBKEY_PROGRAMMING_SHIFTED =
 val KB_EN_THUMBKEY_PROGRAMMING: KeyboardDefinition =
     KeyboardDefinition(
         title = "english thumb-key programming",
+        locales = listOf("en"),
         modes =
             KeyboardDefinitionModes(
                 main = KB_EN_THUMBKEY_PROGRAMMING_MAIN,

@@ -251,4 +251,5 @@ val KB_RU_HYPER: KeyboardDefinition =
             KeyboardDefinitionSettings(
                 autoCapitalizers = arrayOf(::autoCapitalizeI, ::autoCapitalizeIApostrophe),
             ),
+        locales = listOf("ru"),
     )

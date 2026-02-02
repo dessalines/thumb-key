@@ -296,4 +296,5 @@ val KB_KN_THUMBKEY: KeyboardDefinition =
             KeyboardDefinitionSettings(
                 autoCapitalizers = arrayOf(::autoCapitalizeI, ::autoCapitalizeIApostrophe),
             ),
+        locales = listOf("kn"),
     )

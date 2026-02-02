@@ -274,6 +274,7 @@ val KB_EN_EO_MESSAGEASE_SYMBOLS_SHIFTED =
 val KB_EN_EO_MESSAGEASE_SYMBOLS: KeyboardDefinition =
     KeyboardDefinition(
         title = "english esperanto messagease symbols",
+        locales = listOf("en", "eo"),
         modes =
             KeyboardDefinitionModes(
                 main = KB_EN_EO_MESSAGEASE_SYMBOLS_MAIN,

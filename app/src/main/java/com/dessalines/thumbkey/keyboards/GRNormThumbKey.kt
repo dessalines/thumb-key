@@ -195,6 +195,7 @@ val KB_GRNORM_THUMBKEY_SHIFTED =
 val KB_GRNORM_THUMBKEY: KeyboardDefinition =
     KeyboardDefinition(
         title = "ελληνικά normal thumb-key",
+        locales = listOf("el"),
         modes =
             KeyboardDefinitionModes(
                 main = KB_GRNORM_THUMBKEY_MAIN,

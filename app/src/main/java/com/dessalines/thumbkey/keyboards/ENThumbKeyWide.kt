@@ -218,6 +218,7 @@ val KB_EN_THUMBKEY_WIDE_SHIFTED =
 val KB_EN_THUMBKEY_WIDE: KeyboardDefinition =
     KeyboardDefinition(
         title = "english thumb-key wide",
+        locales = listOf("en"),
         modes =
             KeyboardDefinitionModes(
                 main = KB_EN_THUMBKEY_WIDE_MAIN,

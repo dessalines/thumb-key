@@ -263,6 +263,7 @@ val KB_JA_KANA_STANDARD_KATAKANA =
 val KB_JA_KANA_STANDARD: KeyboardDefinition =
     KeyboardDefinition(
         title = "japanese standard kana keyboard",
+        locales = listOf("ja"),
         modes =
             KeyboardDefinitionModes(
                 main = KB_JA_KANA_STANDARD_HIRAGANA,

@@ -192,6 +192,7 @@ val KB_NO_THUMBKEY_SHIFTED =
 val KB_NO_THUMBKEY: KeyboardDefinition =
     KeyboardDefinition(
         title = "norsk thumb-key",
+        locales = listOf("no"),
         modes =
             KeyboardDefinitionModes(
                 main = KB_NO_THUMBKEY_MAIN,

@@ -310,6 +310,7 @@ val KB_EN_THUMBKEY_COMPOSE_SHIFTED =
 val KB_EN_THUMBKEY_COMPOSE: KeyboardDefinition =
     KeyboardDefinition(
         title = "english thumb-key compose",
+        locales = listOf("en"),
         modes =
             KeyboardDefinitionModes(
                 main = KB_EN_THUMBKEY_COMPOSE_MAIN,

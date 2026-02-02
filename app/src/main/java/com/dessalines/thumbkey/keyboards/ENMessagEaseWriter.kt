@@ -252,6 +252,7 @@ val KB_EN_MESSAGEASE_WRITER_SHIFTED =
 val KB_EN_MESSAGEASE_WRITER: KeyboardDefinition =
     KeyboardDefinition(
         title = "english messagease writer",
+        locales = listOf("en"),
         modes =
             KeyboardDefinitionModes(
                 main = KB_EN_MESSAGEASE_WRITER_MAIN,

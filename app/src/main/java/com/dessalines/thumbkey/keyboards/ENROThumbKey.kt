@@ -198,6 +198,7 @@ val KB_EN_RO_THUMBKEY_SHIFTED =
 val KB_EN_RO_THUMBKEY: KeyboardDefinition =
     KeyboardDefinition(
         title = "english română thumb-key",
+        locales = listOf("en", "ro"),
         modes =
             KeyboardDefinitionModes(
                 main = KB_EN_RO_THUMBKEY_MAIN,

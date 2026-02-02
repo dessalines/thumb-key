@@ -109,6 +109,7 @@ val KB_DE_MESSAGEASE_INVERTED_NUMPAD_NUMERIC =
 val KB_DE_MESSAGEASE_INVERTED_NUMPAD: KeyboardDefinition =
     KeyboardDefinition(
         title = "deutsch messagease, inverted numpad",
+        locales = listOf("de"),
         modes =
             KeyboardDefinitionModes(
                 main = KB_DE_MESSAGEASE_MAIN,

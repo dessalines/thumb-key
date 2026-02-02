@@ -307,6 +307,7 @@ val KB_DE_THUMBKEY_WORDS_SHIFTED =
 val KB_DE_THUMBKEY_WORDS: KeyboardDefinition =
     KeyboardDefinition(
         title = "deutsch thumb-key words",
+        locales = listOf("de"),
         modes =
             KeyboardDefinitionModes(
                 main = KB_DE_THUMBKEY_WORDS_MAIN,
