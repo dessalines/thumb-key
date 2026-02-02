@@ -36,7 +36,7 @@ class IMEService :
         val settingsRepo = app.appSettingsRepository
         val clipboardRepo = app.clipboardRepository
 
-        val layoutIndex = settingsRepo.appSettings.value?.keyboardLayout
+        val layoutIndex = app.appSettingsRepository.getSettingsSync()?.keyboardLayout
         if (layoutIndex != null) {
             currentKeyboardDefinition = KeyboardLayout.entries[layoutIndex].keyboardDefinition
         }
