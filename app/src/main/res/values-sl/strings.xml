@@ -38,7 +38,7 @@
     <string name="layouts">Razporeditve</string>
     <string name="theme">Barvni način</string>
     <string name="theme_color">Barvna shema</string>
-    <string name="position">Pozicija</string>
+    <string name="position">Poravnava tipkovnice</string>
     <string name="vibrate_on_tap">Vibriraj ob pritisku tipke</string>
     <string name="vibrate_warning">Haptični odziv mora biti omogočen v sistemskih nastavitvah</string>
     <string name="play_sound_on_tap">Zvok ob dotiku tipke</string>
@@ -76,7 +76,7 @@
     <string name="hide_letters">Skrij črke</string>
     <string name="hide_symbols">Skrij simbole</string>
     <string name="spacebar_multitaps">Večkratni dotik preslednice</string>
-    <string name="done">Končaj</string>
+    <string name="done">Zapri</string>
     <string name="backdrop">Ozadje tipkovnice</string>
     <string name="key_padding">Razmak med tipkami: %1$s</string>
     <string name="key_border_width">Debelina roba tipk: %1$s</string>
@@ -134,4 +134,6 @@
     <string name="clipboard_empty">Odložišče je prazno</string>
     <string name="clipboard_disabled">Zgodovina odložišča ni omogočena</string>
     <string name="clipboard_go_to_settings">Na nastavitve odložišča</string>
+    <string name="position_padding">Odmik od roba: %1$s</string>
+    <string name="warning_invalid_mode">Način \"%s\" v razporeditvi \"%s\" ni določen.</string>
 </resources>
