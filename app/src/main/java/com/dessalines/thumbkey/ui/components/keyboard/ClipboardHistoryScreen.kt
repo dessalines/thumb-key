@@ -330,8 +330,6 @@ private fun ClipboardItemRow(
                                 pressOffset = offset
                                 showContextMenu = true
                                 if (vibrateOnTap) {
-                                    // This is a workaround for only having LongPress
-                                    // https://stackoverflow.com/questions/68333741/how-to-perform-a-haptic-feedback-in-jetpack-compose
                                     view.performHapticFeedback(HapticFeedbackConstants.KEYBOARD_TAP)
                                 }
                             },
