@@ -279,6 +279,8 @@ sealed class KeyAction {
 
     data object SwitchLanguage : KeyAction()
 
+    data object CycleLocale : KeyAction()
+
     data object SwitchIME : KeyAction()
 
     data object SwitchIMEVoice : KeyAction()

@@ -72,47 +72,38 @@ class IMEService :
         updateInputLocale()
     }
 
-    /**
-     * Reports the current keyboard's locale(s) to the system so that
-     * spellcheckers and other language-aware services can use the correct dictionary.
-     *
-     * This registers a dynamic InputMethodSubtype with the keyboard's locale and switches to it,
-     * which notifies the system (including spellcheckers) of the language change.
-     */
     fun updateInputLocale() {
         val locales = currentKeyboardDefinition?.locales
         if (!locales.isNullOrEmpty()) {
-            val primaryLocale = locales.first()
+            setLocale(locales.first())
+        }
+    }
 
-            // InputMethodSubtype.InputMethodSubtypeBuilder requires API 26+
-            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
-                try {
-                    val imm = getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
-                    val imeId = "$packageName/${IMEService::class.java.name}"
+    fun setLocale(locale: String) {
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+            try {
+                val imm = getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
+                val imeId = "$packageName/${IMEService::class.java.name}"
 
-                    // Build a subtype with the keyboard's locale
-                    val subtype =
-                        InputMethodSubtype
-                            .InputMethodSubtypeBuilder()
-                            .setSubtypeLocale(primaryLocale)
-                            .setLanguageTag(primaryLocale)
-                            .setSubtypeMode("keyboard")
-                            .setIsAuxiliary(false)
-                            .setOverridesImplicitlyEnabledSubtype(true)
-                            .build()
+                val subtype =
+                    InputMethodSubtype
+                        .InputMethodSubtypeBuilder()
+                        .setSubtypeLocale(locale)
+                        .setLanguageTag(locale)
+                        .setSubtypeMode("keyboard")
+                        .setIsAuxiliary(false)
+                        .setOverridesImplicitlyEnabledSubtype(true)
+                        .build()
 
-                    // Register the subtype dynamically so the system recognizes it
-                    imm.setAdditionalInputMethodSubtypes(imeId, arrayOf(subtype))
+                imm.setAdditionalInputMethodSubtypes(imeId, arrayOf(subtype))
 
-                    // Now switch to this subtype
-                    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.P) {
-                        switchInputMethod(imeId, subtype)
-                    }
-
-                    Log.d(TAG, "Updated input locale to: $primaryLocale")
-                } catch (e: Exception) {
-                    Log.e(TAG, "Failed to update input locale: ${e.message}")
+                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.P) {
+                    switchInputMethod(imeId, subtype)
                 }
+
+                Log.d(TAG, "Updated input locale to: $locale")
+            } catch (e: Exception) {
+                Log.e(TAG, "Failed to update input locale: ${e.message}")
             }
         }
     }
