@@ -347,6 +347,7 @@ fun performKeyAction(
     onToggleHideLetters: () -> Unit,
     onAutoCapitalize: (enable: Boolean) -> Unit,
     onSwitchLanguage: () -> Unit,
+    onCycleLocale: () -> Unit,
     onChangePosition: ((old: KeyboardPosition) -> KeyboardPosition) -> Unit,
     onKeyEvent: () -> Unit,
 ) {
@@ -1305,6 +1306,10 @@ fun performKeyAction(
 
         KeyAction.SwitchLanguage -> {
             onSwitchLanguage()
+        }
+
+        KeyAction.CycleLocale -> {
+            onCycleLocale()
         }
 
         KeyAction.SwitchIME -> {
