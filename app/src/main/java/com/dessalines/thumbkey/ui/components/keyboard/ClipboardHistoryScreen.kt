@@ -1,5 +1,6 @@
 package com.dessalines.thumbkey.ui.components.keyboard
 
+import android.view.HapticFeedbackConstants
 import androidx.compose.foundation.background
 import androidx.compose.foundation.gestures.detectTapGestures
 import androidx.compose.foundation.layout.Arrangement
@@ -44,6 +45,7 @@ import androidx.compose.ui.draw.clip
 import androidx.compose.ui.geometry.Offset
 import androidx.compose.ui.input.pointer.pointerInput
 import androidx.compose.ui.platform.LocalDensity
+import androidx.compose.ui.platform.LocalView
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.Dp
@@ -70,6 +72,7 @@ fun ClipboardHistoryScreen(
     keyHeight: Float,
     keyPadding: Int,
     cornerRadius: Float,
+    vibrateOnTap: Boolean,
     modifier: Modifier = Modifier,
 ) {
     val headerHeight = (keyHeight * 0.6f).dp
@@ -132,6 +135,7 @@ fun ClipboardHistoryScreen(
                             onDelete = { onItemDelete(item) },
                             onTogglePin = { onItemTogglePin(item) },
                             cornerRadius = cornerRadius,
+                            vibrateOnTap = vibrateOnTap,
                         )
                     }
                 }
@@ -146,6 +150,7 @@ fun ClipboardHistoryScreen(
                             onDelete = { onItemDelete(item) },
                             onTogglePin = { onItemTogglePin(item) },
                             cornerRadius = cornerRadius,
+                            vibrateOnTap = vibrateOnTap,
                         )
                     }
                 }
@@ -304,11 +309,13 @@ private fun ClipboardItemRow(
     onDelete: () -> Unit,
     onTogglePin: () -> Unit,
     cornerRadius: Float,
+    vibrateOnTap: Boolean,
 ) {
     var showContextMenu by remember { mutableStateOf(false) }
     // Track the press location for context menu positioning
     var pressOffset by remember { mutableStateOf(Offset.Zero) }
     val density = LocalDensity.current
+    val view = LocalView.current
 
     Box {
         Surface(
@@ -322,6 +329,11 @@ private fun ClipboardItemRow(
                             onLongPress = { offset ->
                                 pressOffset = offset
                                 showContextMenu = true
+                                if (vibrateOnTap) {
+                                    // This is a workaround for only having LongPress
+                                    // https://stackoverflow.com/questions/68333741/how-to-perform-a-haptic-feedback-in-jetpack-compose
+                                    view.performHapticFeedback(HapticFeedbackConstants.KEYBOARD_TAP)
+                                }
                             },
                         )
                     },

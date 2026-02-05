@@ -546,6 +546,7 @@ fun KeyboardScreen(
                     keyHeight = keyHeight,
                     keyPadding = keyPadding,
                     cornerRadius = cornerRadius,
+                    vibrateOnTap = vibrateOnTap,
                 )
             }
         }

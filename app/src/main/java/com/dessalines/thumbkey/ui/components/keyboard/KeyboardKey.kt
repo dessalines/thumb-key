@@ -218,6 +218,7 @@ fun KeyboardKey(
             .combinedClickable(
                 interactionSource = interactionSource,
                 indication = null,
+                hapticFeedbackEnabled = false, // We manually trigger haptics instead
                 onClick = {
                     // Set the last key info, and the tap count
                     val cAction = key.center.action
