@@ -250,6 +250,7 @@ val KB_GRNORM_THUMBKEY_SYMBOLS_SHIFTED =
 val KB_GRNORM_THUMBKEY_SYMBOLS: KeyboardDefinition =
     KeyboardDefinition(
         title = "ελληνικά thumb-key symbols",
+        locales = listOf("el"),
         modes =
             KeyboardDefinitionModes(
                 main = KB_GRNORM_THUMBKEY_SYMBOLS_MAIN,

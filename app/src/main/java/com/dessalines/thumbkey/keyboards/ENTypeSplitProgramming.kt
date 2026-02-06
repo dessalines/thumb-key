@@ -399,6 +399,7 @@ val KB_EN_TYPESPLIT_PROGRAMMING_NUMERIC =
 val KB_EN_TYPESPLIT_PROGRAMMING: KeyboardDefinition =
     KeyboardDefinition(
         title = "english type-split programming",
+        locales = listOf("en"),
         modes =
             KeyboardDefinitionModes(
                 main = KB_EN_TYPESPLIT_PROGRAMMING_MAIN,

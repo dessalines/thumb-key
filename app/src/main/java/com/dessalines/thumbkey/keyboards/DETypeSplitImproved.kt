@@ -706,6 +706,7 @@ val KB_DE_TYPESPLIT_IMPROVED_NUMERIC =
 val KB_DE_TYPESPLIT_IMPROVED: KeyboardDefinition =
     KeyboardDefinition(
         title = "deutsch type-split improved",
+        locales = listOf("de"),
         modes =
             KeyboardDefinitionModes(
                 main = KB_DE_TYPESPLIT_IMPROVED_MAIN,

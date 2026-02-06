@@ -336,6 +336,7 @@ val KB_PL_MESSAGEASE_NUMERIC =
 val KB_PL_MESSAGEASE: KeyboardDefinition =
     KeyboardDefinition(
         title = "polski messagease",
+        locales = listOf("pl"),
         modes =
             KeyboardDefinitionModes(
                 main = KB_PL_MESSAGEASE_MAIN,

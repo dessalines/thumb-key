@@ -529,6 +529,9 @@ class AppSettingsRepository(
     val appSettings = appSettingsDao.getSettings()
 
     @WorkerThread
+    fun getSettingsSync(): AppSettings? = appSettingsDao.getSettingsSync()
+
+    @WorkerThread
     suspend fun update(appSettings: AppSettings) {
         appSettingsDao.updateAppSettings(appSettings)
     }

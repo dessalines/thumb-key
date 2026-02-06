@@ -11,6 +11,7 @@ import com.dessalines.thumbkey.utils.SwipeNWay.*
 val KB_EN_MESSAGEASE_LEFT: KeyboardDefinition =
     KeyboardDefinition(
         title = "english messagease left-handed",
+        locales = listOf("en"),
         modes =
             KeyboardDefinitionModes(
                 main = lastColKeysToFirst(KB_EN_MESSAGEASE_MAIN),
