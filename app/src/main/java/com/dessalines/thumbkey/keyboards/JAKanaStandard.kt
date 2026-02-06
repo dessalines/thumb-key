@@ -252,7 +252,7 @@ val KB_JA_KANA_STANDARD_KATAKANA =
                     bottom =
                         KeyC(
                             display = KeyDisplay.TextDisplay("あ"),
-                            action = ShiftAndCapsLock(false),
+                            action = ToggleShiftMode(false),
                         ),
                 ),
                 RETURN_KEY_ITEM,
