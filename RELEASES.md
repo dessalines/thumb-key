@@ -1,3 +1,13 @@
+## What's Changed in 5.1.3
+
+- Removing non-final res ids. by @dessalines in [#1784](https://github.com/dessalines/thumb-key/pull/1784)
+- fix katakana->hiragana by @K0baU in [#1781](https://github.com/dessalines/thumb-key/pull/1781)
+- fix long press haptics by @Toldry in [#1779](https://github.com/dessalines/thumb-key/pull/1779)
+- Fix crash when select line from first character of text field by @jiquiame in [#1763](https://github.com/dessalines/thumb-key/pull/1763)
+- fix clipboard history settings back not working by @Toldry in [#1761](https://github.com/dessalines/thumb-key/pull/1761)
+
+**Full Changelog**: https://github.com/dessalines/thumb-key/compare/5.1.2...5.1.3
+
 ## What's Changed in 5.1.2
 
 - Fixing gradle.properties nonFinalResIds by @dessalines
@@ -137,7 +147,7 @@
 ## What's Changed in 5.0.7
 
 - Add Korean layout and custom input processor implementation by @uranium-boy in [#1534](https://github.com/dessalines/thumb-key/pull/1534)
-- Update README.md by @jwkwshjsjsj in [#1531](https://github.com/dessalines/thumb-key/pull/1531)
+- Update README.md in [#1531](https://github.com/dessalines/thumb-key/pull/1531)
 - Verify apk fingerprint. by @dessalines in [#1528](https://github.com/dessalines/thumb-key/pull/1528)
 - English based Latvian keyboard by @HX3A in [#1522](https://github.com/dessalines/thumb-key/pull/1522)
 - downgrade agp version (closes #1514) by @pohmelie in [#1521](https://github.com/dessalines/thumb-key/pull/1521)
@@ -146,7 +156,6 @@
 ## New Contributors
 
 - @uranium-boy made their first contribution in [#1534](https://github.com/dessalines/thumb-key/pull/1534)
-- @jwkwshjsjsj made their first contribution in [#1531](https://github.com/dessalines/thumb-key/pull/1531)
 - @HX3A made their first contribution in [#1522](https://github.com/dessalines/thumb-key/pull/1522)
 
 **Full Changelog**: https://github.com/dessalines/thumb-key/compare/5.0.6...5.0.7
