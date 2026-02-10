@@ -214,6 +214,7 @@ val KB_KZ_THUMBKEY_SHIFTED =
 val KB_KZ_THUMBKEY: KeyboardDefinition =
     KeyboardDefinition(
         title = "қазақша thumb-key",
+        locales = listOf("kk"),
         modes =
             KeyboardDefinitionModes(
                 main = KB_KZ_THUMBKEY_MAIN,

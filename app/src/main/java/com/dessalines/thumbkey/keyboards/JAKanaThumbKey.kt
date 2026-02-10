@@ -269,6 +269,7 @@ val KB_JA_KANA_THUMBKEY_KATAKANA =
 val KB_JA_KANA_THUMBKEY: KeyboardDefinition =
     KeyboardDefinition(
         title = "japanese kana thumb-key",
+        locales = listOf("ja"),
         modes =
             KeyboardDefinitionModes(
                 main = KB_JA_KANA_THUMBKEY_HIRAGANA,

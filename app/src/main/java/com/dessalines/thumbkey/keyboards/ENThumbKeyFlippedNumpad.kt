@@ -188,6 +188,7 @@ val KB_EN_THUMBKEY_FLIPPED_NUMPAD_SHIFTED =
 val KB_EN_THUMBKEY_FLIPPED_NUMPAD: KeyboardDefinition =
     KeyboardDefinition(
         title = "english thumb-key with a flipped numpad layout",
+        locales = listOf("en"),
         modes =
             KeyboardDefinitionModes(
                 main = KB_EN_THUMBKEY_FLIPPED_NUMPAD_MAIN,

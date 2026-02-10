@@ -235,6 +235,7 @@ val KB_EN_THUMBKEY_WORDS_SHIFTED =
 val KB_EN_THUMBKEY_WORDS: KeyboardDefinition =
     KeyboardDefinition(
         title = "english thumb-key words",
+        locales = listOf("en"),
         modes =
             KeyboardDefinitionModes(
                 main = KB_EN_THUMBKEY_WORDS_MAIN,

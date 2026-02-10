@@ -203,6 +203,7 @@ val KB_NL_TYPESPLIT_SHIFTED =
 val KB_NL_TYPESPLIT: KeyboardDefinition =
     KeyboardDefinition(
         title = "nederlands type-split",
+        locales = listOf("nl"),
         modes =
             KeyboardDefinitionModes(
                 main = KB_NL_TYPESPLIT_MAIN,

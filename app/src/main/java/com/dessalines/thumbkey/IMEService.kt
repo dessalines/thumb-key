@@ -1,9 +1,13 @@
 package com.dessalines.thumbkey
 
+import android.content.Context
 import android.inputmethodservice.InputMethodService
+import android.os.Build
 import android.util.Log
 import android.view.inputmethod.CursorAnchorInfo
 import android.view.inputmethod.EditorInfo
+import android.view.inputmethod.InputMethodManager
+import android.view.inputmethod.InputMethodSubtype
 import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.LifecycleOwner
 import androidx.lifecycle.LifecycleRegistry
@@ -32,7 +36,7 @@ class IMEService :
         val settingsRepo = app.appSettingsRepository
         val clipboardRepo = app.clipboardRepository
 
-        val layoutIndex = settingsRepo.appSettings.value?.keyboardLayout
+        val layoutIndex = app.appSettingsRepository.getSettingsSync()?.keyboardLayout
         if (layoutIndex != null) {
             currentKeyboardDefinition = KeyboardLayout.entries[layoutIndex].keyboardDefinition
         }
@@ -65,6 +69,43 @@ class IMEService :
         super.onStartInput(attribute, restarting)
         val view = this.setupView()
         this.setInputView(view)
+        updateInputLocale()
+    }
+
+    fun updateInputLocale() {
+        val locales = currentKeyboardDefinition?.locales
+        if (!locales.isNullOrEmpty()) {
+            setLocale(locales.first())
+        }
+    }
+
+    fun setLocale(locale: String) {
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+            try {
+                val imm = getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
+                val imeId = "$packageName/${IMEService::class.java.name}"
+
+                val subtype =
+                    InputMethodSubtype
+                        .InputMethodSubtypeBuilder()
+                        .setSubtypeLocale(locale)
+                        .setLanguageTag(locale)
+                        .setSubtypeMode("keyboard")
+                        .setIsAuxiliary(false)
+                        .setOverridesImplicitlyEnabledSubtype(true)
+                        .build()
+
+                imm.setAdditionalInputMethodSubtypes(imeId, arrayOf(subtype))
+
+                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.P) {
+                    switchInputMethod(imeId, subtype)
+                }
+
+                Log.d(TAG, "Updated input locale to: $locale")
+            } catch (e: Exception) {
+                Log.e(TAG, "Failed to update input locale: ${e.message}")
+            }
+        }
     }
 
     // Lifecycle Methods

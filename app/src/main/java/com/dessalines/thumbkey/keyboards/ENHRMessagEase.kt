@@ -192,6 +192,7 @@ val KB_EN_HR_MESSAGEASE_SHIFTED =
 val KB_EN_HR_MESSAGEASE: KeyboardDefinition =
     KeyboardDefinition(
         title = "english hrvatski messagease",
+        locales = listOf("en", "hr"),
         modes =
             KeyboardDefinitionModes(
                 main = KB_EN_HR_MESSAGEASE_MAIN,

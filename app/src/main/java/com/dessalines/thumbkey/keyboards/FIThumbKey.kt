@@ -194,6 +194,7 @@ val KB_FI_THUMBKEY_SHIFTED =
 val KB_FI_THUMBKEY: KeyboardDefinition =
     KeyboardDefinition(
         title = "suomi thumb-key",
+        locales = listOf("fi"),
         modes =
             KeyboardDefinitionModes(
                 main = KB_FI_THUMBKEY_MAIN,
