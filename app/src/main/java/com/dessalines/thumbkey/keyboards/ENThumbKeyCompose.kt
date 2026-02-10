@@ -41,6 +41,12 @@ val KB_EN_THUMBKEY_COMPOSE_MAIN =
                     center = KeyC("r", size = LARGE),
                     swipeType = TWO_WAY_VERTICAL,
                     bottom = KeyC("g"),
+                    top =
+                        KeyC(
+                            display = KeyDisplay.TextDisplay("-"),
+                            action = ComposeLastKey("-"),
+                            color = MUTED,
+                        ),
                 ),
                 KeyItemC(
                     center = KeyC("o", size = LARGE),
@@ -188,6 +194,12 @@ val KB_EN_THUMBKEY_COMPOSE_SHIFTED =
                     center = KeyC("R", size = LARGE),
                     swipeType = TWO_WAY_VERTICAL,
                     bottom = KeyC("G"),
+                    top =
+                        KeyC(
+                            display = KeyDisplay.TextDisplay("-"),
+                            action = ComposeLastKey("-"),
+                            color = MUTED,
+                        ),
                 ),
                 KeyItemC(
                     center = KeyC("O", size = LARGE),
