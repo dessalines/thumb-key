@@ -4,23 +4,30 @@ import android.annotation.SuppressLint
 import android.content.Context
 import android.content.Intent
 import android.widget.Toast
+import androidx.compose.foundation.isSystemInDarkTheme
+import androidx.compose.material3.MaterialTheme
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.CompositionLocalProvider
+import androidx.compose.runtime.SideEffect
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.livedata.observeAsState
+import androidx.compose.ui.graphics.toArgb
 import androidx.compose.ui.platform.AbstractComposeView
 import androidx.compose.ui.platform.LocalLayoutDirection
 import androidx.compose.ui.unit.LayoutDirection
+import androidx.core.view.WindowCompat
 import androidx.lifecycle.lifecycleScope
 import com.dessalines.thumbkey.db.AppSettingsRepository
 import com.dessalines.thumbkey.db.ClipboardRepository
 import com.dessalines.thumbkey.ui.components.keyboard.KeyboardScreen
 import com.dessalines.thumbkey.ui.theme.ThumbkeyTheme
 import com.dessalines.thumbkey.utils.KeyboardPosition
+import com.dessalines.thumbkey.utils.ThemeMode
 import com.dessalines.thumbkey.utils.keyboardLayoutsSetFromDbIndexString
 import com.dessalines.thumbkey.utils.toBool
 import com.dessalines.thumbkey.utils.toInt
 import kotlinx.coroutines.launch
+import splitties.systemservices.windowManager
 
 @SuppressLint("ViewConstructor")
 class ComposeKeyboardView(
@@ -37,6 +44,13 @@ class ComposeKeyboardView(
         ThumbkeyTheme(
             settings = settings,
         ) {
+            val colorScheme = MaterialTheme.colorScheme
+            val darkTheme =
+                when (ThemeMode.entries[settings?.theme ?: 0]) {
+                    ThemeMode.System -> isSystemInDarkTheme()
+                    ThemeMode.Light -> false
+                    ThemeMode.Dark -> true
+                }
             CompositionLocalProvider(LocalLayoutDirection provides LayoutDirection.Ltr) {
                 KeyboardScreen(
                     settings = settings,
@@ -107,6 +121,19 @@ class ComposeKeyboardView(
                         context.startActivity(intent)
                     },
                 )
+                SideEffect {
+                    ctx.window?.window?.apply {
+                        /*
+                        deprecated, but cannot find the proper way... Also, this feels a lot like
+                        a workaround, not a proper solution. Still, it seems to work.
+                         */
+                        @Suppress("DEPRECATION")
+                        navigationBarColor = colorScheme.background.toArgb()
+                        WindowCompat
+                            .getInsetsController(this, decorView)
+                            .isAppearanceLightNavigationBars = !darkTheme
+                    }
+                }
             }
         }
     }
