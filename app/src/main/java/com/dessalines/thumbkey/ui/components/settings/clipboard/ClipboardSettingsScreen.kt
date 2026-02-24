@@ -266,6 +266,7 @@ fun ClipboardSettingsScreen(
                             usePrivateClipboardState = it
                             updateClipboardSettings()
                         },
+                        enabled = clipboardHistoryEnabledState,
                         title = {
                             Text(stringResource(R.string.use_private_clipboard))
                         },

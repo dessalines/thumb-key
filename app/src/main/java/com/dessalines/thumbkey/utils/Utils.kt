@@ -1251,8 +1251,6 @@ fun performKeyAction(
                     val text = ime.currentInputConnection.getSelectedText(0).toString()
                     ime.clipboardAddPrivateClip(text)?.let {
                         ime.currentInputConnection.commitText("", 1)
-                    } ?: {
-                        Toast.makeText(ime, "Error: private cut failed", Toast.LENGTH_SHORT).show()
                     }
                 } else {
                     ime.currentInputConnection.performContextMenuAction(android.R.id.cut)
@@ -1279,10 +1277,8 @@ fun performKeyAction(
                     val text = ime.currentInputConnection.getSelectedText(0).toString()
                     ime.clipboardAddPrivateClip(text)?.let {
                         // Text successfully added to clipboard history
-                        val message = ime.getString(R.string.private_copy)
+                        val message = ime.getString(R.string.copy)
                         Toast.makeText(ime, message, Toast.LENGTH_SHORT).show()
-                    } ?: {
-                        Toast.makeText(ime, "Error: private copy failed", Toast.LENGTH_SHORT).show()
                     }
                 } else {
                     ime.currentInputConnection.performContextMenuAction(android.R.id.copy)
@@ -1306,15 +1302,23 @@ fun performKeyAction(
 
         KeyAction.Paste -> {
             keyboardSettings.textProcessor?.handleFinishInput(ime)
-            if (ime.clipboardUsePrivate() && !ime.clipboardIsLastCopySystem()) {
-                val text = ime.clipboardGetLastClip()
-                if (text.isNullOrEmpty()) {
-                    Toast.makeText(ime, "Error: private paste failed", Toast.LENGTH_SHORT).show()
-                } else {
-                    ime.currentInputConnection.commitText(text, 1)
-                }
-            } else {
+            if (!ime.clipboardUsePrivate()) {
+                // Standard clipboard behavior
                 ime.currentInputConnection.performContextMenuAction(android.R.id.paste)
+            } else { // Private clipboard
+                // Here, `clipboardWasLastCopyDoneViaSystem` is used to manage data with a non-text MEME type.
+                // When copying data with a MEME type different than a text, e.g. a picture, it is not added to the history, as it’s not a text. With standard paste it’s not an issue as the paste will still paste it.
+                // However if we paste from the internal clipboard, it will paste the latest string in the history, and not the picture that was only in the system clipboard.
+                if (ime.clipboardWasLastCopyDoneViaSystem()) {
+                    // Latest clip is present in the system clipboard, might be absent from internal clipboard
+                    ime.currentInputConnection.performContextMenuAction(android.R.id.paste)
+                } else {
+                    // Latest clip is in the internal clipboard
+                    val text = ime.clipboardGetLastClip()
+                    if (!text.isNullOrEmpty()) {
+                        ime.currentInputConnection.commitText(text, 1)
+                    }
+                }
             }
         }
 

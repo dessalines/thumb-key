@@ -165,9 +165,9 @@ class IMEService :
         return clipboardHistoryEnabled && usePrivateClipboard
     }
 
-    fun clipboardAddPrivateClip(text: String): Unit? = clipboardManager?.addPrivateClip(text) ?: null
+    fun clipboardAddPrivateClip(text: String): Unit? = clipboardManager?.addPrivateClip(text)
 
-    fun clipboardIsLastCopySystem(): Boolean = clipboardManager?.isLastCopySystem() ?: true
+    fun clipboardWasLastCopyDoneViaSystem(): Boolean = clipboardManager?.wasLastCopyOperationDoneViaSystem() ?: true
 
     fun clipboardGetLastClip(): String? = clipboardManager?.getLastClip()
 }
