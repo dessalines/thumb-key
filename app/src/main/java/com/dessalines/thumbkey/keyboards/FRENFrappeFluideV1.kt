@@ -365,12 +365,17 @@ val FRENCH_FLUID_NUMERIC_KEYBOARD =
                 KeyItemC(
                     center = KeyC("4", size = LARGE),
                     topLeft = KeyC("\\"),
+                    top = KeyC("²"),
+                    topRight = KeyC("³"),
                     left = KeyC("("),
+                    right = KeyC("₂"),
                     bottomLeft = KeyC("\u202F", displayText = "⍽", size = SMALLEST),
                     bottom = KeyC("{"),
+                    bottomRight = KeyC("₃"),
                 ),
                 KeyItemC(
                     center = KeyC("5", size = LARGE),
+                    topLeft = KeyC("k"),
                     topRight = KeyC("¥"),
                     left = KeyC("‰"),
                     right = KeyC("$"),
