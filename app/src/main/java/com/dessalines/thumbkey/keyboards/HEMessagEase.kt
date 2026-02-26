@@ -81,6 +81,7 @@ val KB_HE_MESSAGEASE_MAIN =
 val KB_HE_MESSAGEASE: KeyboardDefinition =
     KeyboardDefinition(
         title = "עברית messagease",
+        locales = listOf("he"),
         modes =
             KeyboardDefinitionModes(
                 main = KB_HE_MESSAGEASE_MAIN,

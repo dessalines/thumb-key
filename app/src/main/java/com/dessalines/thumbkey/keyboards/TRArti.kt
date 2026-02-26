@@ -348,6 +348,7 @@ val KB_TR_ARTI_NUMERIC =
 val KB_TR_ARTI: KeyboardDefinition =
     KeyboardDefinition(
         title = "türkçe artı çok",
+        locales = listOf("tr"),
         modes =
             KeyboardDefinitionModes(
                 main = KB_TR_ARTI_MAIN,

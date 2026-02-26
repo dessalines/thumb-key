@@ -496,6 +496,7 @@ val KB_EN_MESSAGEASE_SYMBOLS_MODIFIERS_ALTED =
 val KB_EN_MESSAGEASE_SYMBOLS_MODIFIERS: KeyboardDefinition =
     KeyboardDefinition(
         title = "english messagease symbols modifiers",
+        locales = listOf("en"),
         modes =
             KeyboardDefinitionModes(
                 main = KB_EN_MESSAGEASE_SYMBOLS_MODIFIERS_MAIN,

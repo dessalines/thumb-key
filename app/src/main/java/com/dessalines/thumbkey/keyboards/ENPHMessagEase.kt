@@ -188,6 +188,7 @@ val KB_EN_PH_MESSAGEASE_SHIFTED =
 val KB_EN_PH_MESSAGEASE: KeyboardDefinition =
     KeyboardDefinition(
         title = "english wikang tagalog messagease",
+        locales = listOf("en", "tl"),
         modes =
             KeyboardDefinitionModes(
                 main = KB_EN_PH_MESSAGEASE_MAIN,

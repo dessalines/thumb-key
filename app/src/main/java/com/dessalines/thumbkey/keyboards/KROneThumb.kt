@@ -133,6 +133,7 @@ val KB_KR_ONETHUMB_MAIN =
 val KB_KR_ONETHUMB: KeyboardDefinition =
     KeyboardDefinition(
         title = "한국어 one-thumb",
+        locales = listOf("ko"),
         modes =
             KeyboardDefinitionModes(
                 main = KB_KR_ONETHUMB_MAIN,

@@ -194,6 +194,7 @@ val KB_KR_THUMBKEY_SHIFTED =
 val KB_KR_THUMBKEY: KeyboardDefinition =
     KeyboardDefinition(
         title = "한국어 thumb-key",
+        locales = listOf("ko"),
         modes =
             KeyboardDefinitionModes(
                 main = KB_KR_THUMBKEY_MAIN,

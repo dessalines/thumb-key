@@ -256,4 +256,5 @@ val KB_BG_MESSAGEASE_PHONETIC_SYMBOLS: KeyboardDefinition =
             KeyboardDefinitionSettings(
                 autoCapitalizers = arrayOf(::autoCapitalizeI, ::autoCapitalizeIApostrophe),
             ),
+        locales = listOf("bg"),
     )

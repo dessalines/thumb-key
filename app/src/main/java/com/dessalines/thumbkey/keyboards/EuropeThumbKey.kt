@@ -447,6 +447,7 @@ val KB_EUROPE_THUMBKEY_SHIFTED =
 val KB_EUROPE_THUMBKEY: KeyboardDefinition =
     KeyboardDefinition(
         title = "european thumb-key",
+        locales = listOf("en", "de", "fr", "es", "it", "pt", "nl"),
         modes =
             KeyboardDefinitionModes(
                 main = KB_EUROPE_THUMBKEY_MAIN,

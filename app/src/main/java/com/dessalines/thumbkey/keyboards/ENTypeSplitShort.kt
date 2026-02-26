@@ -429,6 +429,7 @@ val KB_EN_TYPESPLIT_SHORT_NUMERIC =
 val KB_EN_TYPESPLIT_SHORT: KeyboardDefinition =
     KeyboardDefinition(
         title = "english type-split short",
+        locales = listOf("en"),
         modes =
             KeyboardDefinitionModes(
                 main = KB_EN_TYPESPLIT_SHORT_MAIN,

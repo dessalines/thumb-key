@@ -207,6 +207,7 @@ val KB_EN_EO_THUMBKEY_SHIFTED =
 val KB_EN_EO_THUMBKEY: KeyboardDefinition =
     KeyboardDefinition(
         title = "english esperanto thumb-key",
+        locales = listOf("en", "eo"),
         modes =
             KeyboardDefinitionModes(
                 main = KB_EN_EO_THUMBKEY_MAIN,

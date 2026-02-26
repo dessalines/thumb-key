@@ -211,6 +211,7 @@ val KB_RU_MESSAGE_OWL_SHIFTED =
 val KB_RU_MESSAGE_OWL: KeyboardDefinition =
     KeyboardDefinition(
         title = "русский owl",
+        locales = listOf("ru"),
         modes =
             KeyboardDefinitionModes(
                 main = KB_RU_MESSAGE_OWL_MAIN,

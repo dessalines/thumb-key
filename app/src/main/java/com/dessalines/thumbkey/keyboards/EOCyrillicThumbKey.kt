@@ -199,6 +199,7 @@ val KB_EO_CYRILLIC_THUMBKEY_SHIFTED =
 val KB_EO_CYRILLIC_THUMBKEY: KeyboardDefinition =
     KeyboardDefinition(
         title = "esperanto cyrillic thumb-key",
+        locales = listOf("eo"),
         modes =
             KeyboardDefinitionModes(
                 main = KB_EO_CYRILLIC_THUMBKEY_MAIN,

@@ -261,6 +261,7 @@ val KB_ES_CA_MESSAGEASE_SHIFTED =
 val KB_ES_CA_MESSAGEASE: KeyboardDefinition =
     KeyboardDefinition(
         title = "español català messagease",
+        locales = listOf("es", "ca"),
         modes =
             KeyboardDefinitionModes(
                 main = KB_ES_CA_MESSAGEASE_MAIN,

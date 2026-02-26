@@ -307,6 +307,7 @@ fun getCommonKeyCFromKeyAction(keyActionSerializable: KeyActionSerializable?): K
         KeyActionSerializable.DeleteWordBeforeCursor -> DELETE_WORD_BEFORE_CURSOR_KEYC
         KeyActionSerializable.DeleteWordAfterCursor -> DELETE_WORD_AFTER_CURSOR_KEYC
         KeyActionSerializable.SwitchLanguage -> SWITCH_LANGUAGE_KEYC
+        KeyActionSerializable.CycleLocale -> SWITCH_LANGUAGE_KEYC
         KeyActionSerializable.SwitchIME -> SWITCH_IME_KEYC
         KeyActionSerializable.SwitchIMEVoice -> SWITCH_IME_VOICE_KEYC
         KeyActionSerializable.HideKeyboard -> HIDE_KEYBOARD_KEYC
@@ -499,6 +500,7 @@ enum class KeyActionSerializable {
     Undo,
     Redo,
     SwitchLanguage,
+    CycleLocale,
     SwitchIME,
     SwitchIMEVoice,
     HideKeyboard,

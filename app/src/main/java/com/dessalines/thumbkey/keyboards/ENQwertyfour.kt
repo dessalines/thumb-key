@@ -200,6 +200,7 @@ val KB_EN_QWERTYFOUR_SHIFTED =
 val KB_EN_QWERTYFOUR: KeyboardDefinition =
     KeyboardDefinition(
         title = "english qwertyfour",
+        locales = listOf("en"),
         modes =
             KeyboardDefinitionModes(
                 main = KB_EN_QWERTYFOUR_MAIN,

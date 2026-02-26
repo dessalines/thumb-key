@@ -227,6 +227,7 @@ val KB_BR_FR_THUMBKEY_SHIFTED =
 val KB_BR_FR_THUMBKEY: KeyboardDefinition =
     KeyboardDefinition(
         title = "brezhoneg français thumb-key",
+        locales = listOf("br", "fr"),
         modes =
             KeyboardDefinitionModes(
                 main = KB_BR_FR_THUMBKEY_MAIN,

@@ -106,6 +106,7 @@ val KB_HE_MESSAGEASE_SYMBOLS_MAIN =
 val KB_HE_MESSAGEASE_SYMBOLS: KeyboardDefinition =
     KeyboardDefinition(
         title = "עברית messagease symbols",
+        locales = listOf("he"),
         modes =
             KeyboardDefinitionModes(
                 main = KB_HE_MESSAGEASE_SYMBOLS_MAIN,

@@ -227,6 +227,7 @@ val KB_EN_HYPER_SPACE_SHIFTED =
 val KB_EN_HYPER_SPACE: KeyboardDefinition =
     KeyboardDefinition(
         title = "english hyper space",
+        locales = listOf("en"),
         modes =
             KeyboardDefinitionModes(
                 main = KB_EN_HYPER_SPACE_MAIN,

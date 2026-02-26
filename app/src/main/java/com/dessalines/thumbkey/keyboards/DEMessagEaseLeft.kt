@@ -15,4 +15,5 @@ val KB_DE_MESSAGEASE_LEFT: KeyboardDefinition =
                 shifted = lastColKeysToFirst(KB_DE_MESSAGEASE_SHIFTED),
                 numeric = lastColKeysToFirst(KB_EN_MESSAGEASE_NUMERIC),
             ),
+        locales = listOf("de"),
     )

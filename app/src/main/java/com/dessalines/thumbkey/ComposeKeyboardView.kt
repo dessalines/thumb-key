@@ -8,6 +8,9 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.CompositionLocalProvider
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.livedata.observeAsState
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.remember
+import androidx.compose.runtime.setValue
 import androidx.compose.ui.platform.AbstractComposeView
 import androidx.compose.ui.platform.LocalLayoutDirection
 import androidx.compose.ui.unit.LayoutDirection
@@ -33,6 +36,8 @@ class ComposeKeyboardView(
         val settingsState = settingsRepo.appSettings.observeAsState()
         val settings by settingsState
         val ctx = context as IMEService
+
+        var currentLocaleIndex by remember { mutableStateOf(0) }
 
         ThumbkeyTheme(
             settings = settings,
@@ -67,15 +72,30 @@ class ComposeKeyboardView(
                                         ?.textProcessor
                                         ?.updateCursorPosition(ctx)
 
+                                    // Notify the system of the new locale for spellchecking
+                                    ctx.updateInputLocale()
+
                                     // Display the new layout's name on the screen
                                     if (s.showToastOnLayoutSwitch.toBool()) {
                                         val layoutName = layout.keyboardDefinition.title
-                                        Toast
-                                            .makeText(context, layoutName, Toast.LENGTH_SHORT)
-                                            .show()
+                                        val localeCode = layout.keyboardDefinition.locales?.firstOrNull() ?: ""
+                                        val message = if (localeCode.isNotEmpty()) "$layoutName: $localeCode" else layoutName
+                                        Toast.makeText(context, message, Toast.LENGTH_SHORT).show()
                                     }
                                 }
                             }
+                        }
+                    },
+                    onCycleLocale = {
+                        val locales = ctx.currentKeyboardDefinition?.locales ?: return@KeyboardScreen
+                        if (locales.size > 0) {
+                            currentLocaleIndex = (currentLocaleIndex + 1) % locales.size
+                            val localeCode = locales[currentLocaleIndex]
+                            ctx.setLocale(localeCode)
+
+                            val layoutName = ctx.currentKeyboardDefinition?.title ?: ""
+                            val message = if (localeCode.isNotEmpty()) "$layoutName: $localeCode" else localeCode
+                            Toast.makeText(context, message, Toast.LENGTH_SHORT).show()
                         }
                     },
                     onChangePosition = { f ->

@@ -123,6 +123,7 @@ val KB_TH_THUMBKEY_MAIN =
 val KB_TH_THUMBKEY: KeyboardDefinition =
     KeyboardDefinition(
         title = "ภาษาไทย thai thumb-key",
+        locales = listOf("th"),
         modes =
             KeyboardDefinitionModes(
                 main = KB_TH_THUMBKEY_MAIN,

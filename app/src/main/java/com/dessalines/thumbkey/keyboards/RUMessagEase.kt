@@ -195,6 +195,7 @@ val KB_RU_MESSAGEASE_SHIFTED =
 val KB_RU_MESSAGEASE: KeyboardDefinition =
     KeyboardDefinition(
         title = "русский messagease",
+        locales = listOf("ru"),
         modes =
             KeyboardDefinitionModes(
                 main = KB_RU_MESSAGEASE_MAIN,

@@ -258,4 +258,5 @@ val KB_RU_THUMBKEY_SYMBOLS: KeyboardDefinition =
                 shifted = KB_RU_THUMBKEY_SYMBOLS_SHIFTED,
                 numeric = NUMERIC_KEYBOARD,
             ),
+        locales = listOf("ru"),
     )
