@@ -17,6 +17,7 @@ import androidx.compose.material.icons.outlined.History
 import androidx.compose.material.icons.outlined.HourglassEmpty
 import androidx.compose.material.icons.outlined.HourglassTop
 import androidx.compose.material.icons.outlined.Numbers
+import androidx.compose.material.icons.outlined.VisibilityOff
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.Icon
 import androidx.compose.material3.MaterialTheme
@@ -43,6 +44,7 @@ import com.dessalines.thumbkey.db.DEFAULT_CLIPBOARD_CLEANUP_AFTER_MINUTES
 import com.dessalines.thumbkey.db.DEFAULT_CLIPBOARD_HISTORY_ENABLED
 import com.dessalines.thumbkey.db.DEFAULT_CLIPBOARD_MAX_SIZE
 import com.dessalines.thumbkey.db.DEFAULT_CLIPBOARD_SIZE_LIMIT_ENABLED
+import com.dessalines.thumbkey.db.DEFAULT_USE_PRIVATE_CLIPBOARD
 import com.dessalines.thumbkey.db.MAX_CLIPBOARD_MAX_SIZE
 import com.dessalines.thumbkey.db.MIN_CLIPBOARD_MAX_SIZE
 import com.dessalines.thumbkey.utils.SimpleTopAppBar
@@ -105,6 +107,8 @@ fun ClipboardSettingsScreen(
     var clipboardMaxSizeState =
         (settings?.clipboardMaxSize ?: DEFAULT_CLIPBOARD_MAX_SIZE).toFloat()
     var clipboardMaxSizeSliderState by remember { mutableFloatStateOf(clipboardMaxSizeState) }
+    var usePrivateClipboardState =
+        (settings?.usePrivateClipboard ?: DEFAULT_USE_PRIVATE_CLIPBOARD).toBool()
 
     val snackbarHostState = remember { SnackbarHostState() }
     val scrollState = rememberScrollState()
@@ -118,6 +122,7 @@ fun ClipboardSettingsScreen(
                 clipboardCleanupAfterMinutes = clipboardCleanupDuration.minutes,
                 clipboardSizeLimitEnabled = clipboardSizeLimitEnabledState.toInt(),
                 clipboardMaxSize = clipboardMaxSizeState.toInt(),
+                usePrivateClipboard = usePrivateClipboardState.toInt(),
             ),
         )
         // Enforce size limit after updating settings
@@ -251,6 +256,26 @@ fun ClipboardSettingsScreen(
                         icon = {
                             Icon(
                                 imageVector = Icons.Outlined.DataArray,
+                                contentDescription = null,
+                            )
+                        },
+                    )
+                    SwitchPreference(
+                        value = usePrivateClipboardState,
+                        onValueChange = {
+                            usePrivateClipboardState = it
+                            updateClipboardSettings()
+                        },
+                        enabled = clipboardHistoryEnabledState,
+                        title = {
+                            Text(stringResource(R.string.use_private_clipboard))
+                        },
+                        summary = {
+                            Text(stringResource(R.string.use_private_clipboard_description))
+                        },
+                        icon = {
+                            Icon(
+                                imageVector = Icons.Outlined.VisibilityOff,
                                 contentDescription = null,
                             )
                         },

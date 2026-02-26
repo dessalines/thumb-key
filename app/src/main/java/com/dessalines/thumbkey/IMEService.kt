@@ -15,7 +15,9 @@ import androidx.savedstate.SavedStateRegistry
 import androidx.savedstate.SavedStateRegistryController
 import androidx.savedstate.SavedStateRegistryOwner
 import androidx.savedstate.setViewTreeSavedStateRegistryOwner
+import com.dessalines.thumbkey.db.DEFAULT_CLIPBOARD_HISTORY_ENABLED
 import com.dessalines.thumbkey.db.DEFAULT_DISABLE_FULLSCREEN_EDITOR
+import com.dessalines.thumbkey.db.DEFAULT_USE_PRIVATE_CLIPBOARD
 import com.dessalines.thumbkey.utils.KeyboardDefinition
 import com.dessalines.thumbkey.utils.KeyboardLayout
 import com.dessalines.thumbkey.utils.TAG
@@ -154,4 +156,18 @@ class IMEService :
     private val savedStateRegistryController = SavedStateRegistryController.create(this)
     override val savedStateRegistry: SavedStateRegistry =
         savedStateRegistryController.savedStateRegistry
+
+    fun clipboardUsePrivate(): Boolean {
+        val settingsRepo = (application as ThumbkeyApplication).appSettingsRepository
+        val settings = settingsRepo.appSettings.getValue()
+        val clipboardHistoryEnabled = (settings?.clipboardHistoryEnabled ?: DEFAULT_CLIPBOARD_HISTORY_ENABLED).toBool()
+        val usePrivateClipboard = (settings?.usePrivateClipboard ?: DEFAULT_USE_PRIVATE_CLIPBOARD).toBool()
+        return clipboardHistoryEnabled && usePrivateClipboard
+    }
+
+    fun clipboardAddPrivateClip(text: String): Unit? = clipboardManager?.addPrivateClip(text)
+
+    fun clipboardWasLastCopyDoneViaSystem(): Boolean = clipboardManager?.wasLastCopyOperationDoneViaSystem() ?: true
+
+    fun clipboardGetLastClip(): String? = clipboardManager?.getLastClip()
 }

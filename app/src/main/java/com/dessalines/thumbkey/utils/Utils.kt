@@ -1246,6 +1246,17 @@ fun performKeyAction(
         }
 
         KeyAction.Cut -> {
+            fun performCut() {
+                if (ime.clipboardUsePrivate()) {
+                    val text = ime.currentInputConnection.getSelectedText(0).toString()
+                    ime.clipboardAddPrivateClip(text)?.let {
+                        ime.currentInputConnection.commitText("", 1)
+                    }
+                } else {
+                    ime.currentInputConnection.performContextMenuAction(android.R.id.cut)
+                }
+            }
+
             keyboardSettings.textProcessor?.handleFinishInput(ime)
             if (ime.currentInputConnection.getSelectedText(0).isNullOrEmpty()) {
                 // Nothing selected, so cut all the text
@@ -1253,14 +1264,28 @@ fun performKeyAction(
                 // Wait a bit for the select all to complete.
                 val delayInMillis = 100L
                 Handler(Looper.getMainLooper()).postDelayed({
-                    ime.currentInputConnection.performContextMenuAction(android.R.id.cut)
+                    performCut()
                 }, delayInMillis)
             } else {
-                ime.currentInputConnection.performContextMenuAction(android.R.id.cut)
+                performCut()
             }
         }
 
         KeyAction.Copy -> {
+            fun performCopy() {
+                if (ime.clipboardUsePrivate()) {
+                    val text = ime.currentInputConnection.getSelectedText(0).toString()
+                    ime.clipboardAddPrivateClip(text)?.let {
+                        // Text successfully added to clipboard history
+                        val message = ime.getString(R.string.copy)
+                        Toast.makeText(ime, message, Toast.LENGTH_SHORT).show()
+                    }
+                } else {
+                    ime.currentInputConnection.performContextMenuAction(android.R.id.copy)
+                    val message = ime.getString(R.string.copy)
+                    Toast.makeText(ime, message, Toast.LENGTH_SHORT).show()
+                }
+            }
             keyboardSettings.textProcessor?.handleFinishInput(ime)
             if (ime.currentInputConnection.getSelectedText(0).isNullOrEmpty()) {
                 // Nothing selected, so copy all the text
@@ -1268,19 +1293,33 @@ fun performKeyAction(
                 // Wait a bit for the select all to complete.
                 val delayInMillis = 100L
                 Handler(Looper.getMainLooper()).postDelayed({
-                    ime.currentInputConnection.performContextMenuAction(android.R.id.copy)
+                    performCopy()
                 }, delayInMillis)
             } else {
-                ime.currentInputConnection.performContextMenuAction(android.R.id.copy)
+                performCopy()
             }
-
-            val message = ime.getString(R.string.copy)
-            Toast.makeText(ime, message, Toast.LENGTH_SHORT).show()
         }
 
         KeyAction.Paste -> {
             keyboardSettings.textProcessor?.handleFinishInput(ime)
-            ime.currentInputConnection.performContextMenuAction(android.R.id.paste)
+            if (!ime.clipboardUsePrivate()) {
+                // Standard clipboard behavior
+                ime.currentInputConnection.performContextMenuAction(android.R.id.paste)
+            } else { // Private clipboard
+                // Here, `clipboardWasLastCopyDoneViaSystem` is used to manage data with a non-text MEME type.
+                // When copying data with a MEME type different than a text, e.g. a picture, it is not added to the history, as it’s not a text. With standard paste it’s not an issue as the paste will still paste it.
+                // However if we paste from the internal clipboard, it will paste the latest string in the history, and not the picture that was only in the system clipboard.
+                if (ime.clipboardWasLastCopyDoneViaSystem()) {
+                    // Latest clip is present in the system clipboard, might be absent from internal clipboard
+                    ime.currentInputConnection.performContextMenuAction(android.R.id.paste)
+                } else {
+                    // Latest clip is in the internal clipboard
+                    val text = ime.clipboardGetLastClip()
+                    if (!text.isNullOrEmpty()) {
+                        ime.currentInputConnection.commitText(text, 1)
+                    }
+                }
+            }
         }
 
         KeyAction.Undo -> {

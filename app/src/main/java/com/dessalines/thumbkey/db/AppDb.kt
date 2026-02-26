@@ -72,6 +72,7 @@ const val DEFAULT_CLIPBOARD_SIZE_LIMIT_ENABLED = 1
 const val DEFAULT_CLIPBOARD_MAX_SIZE = 20
 const val MIN_CLIPBOARD_MAX_SIZE = 2
 const val MAX_CLIPBOARD_MAX_SIZE = 100
+const val DEFAULT_USE_PRIVATE_CLIPBOARD = 0
 
 @Entity
 data class AppSettings(
@@ -324,6 +325,11 @@ data class AppSettings(
         defaultValue = DEFAULT_POSITION_PADDING.toString(),
     )
     val positionPadding: Int,
+    @ColumnInfo(
+        name = "use_private_clipboard",
+        defaultValue = DEFAULT_USE_PRIVATE_CLIPBOARD.toString(),
+    )
+    val usePrivateClipboard: Int,
 )
 
 data class LayoutsUpdate(
@@ -484,6 +490,10 @@ data class ClipboardSettingsUpdate(
     val clipboardSizeLimitEnabled: Int,
     @ColumnInfo(name = "clipboard_max_size")
     val clipboardMaxSize: Int,
+    @ColumnInfo(
+        name = "use_private_clipboard",
+    )
+    val usePrivateClipboard: Int,
 )
 
 @Dao
@@ -581,7 +591,7 @@ class AppSettingsRepository(
 }
 
 @Database(
-    version = 24,
+    version = 25,
     entities = [AppSettings::class],
     exportSchema = true,
 )
@@ -627,6 +637,7 @@ abstract class AppDB : RoomDatabase() {
                             MIGRATION_21_22,
                             MIGRATION_22_23,
                             MIGRATION_23_24,
+                            MIGRATION_24_25,
                         )
                         // Necessary because it can't insert data on creation
                         .addCallback(

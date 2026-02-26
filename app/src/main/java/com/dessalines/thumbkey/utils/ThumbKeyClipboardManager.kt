@@ -19,17 +19,27 @@ class ThumbKeyClipboardManager(
     private var isListening = false
     private var lastClipText: String? = null
 
+// Used to manage data with a non-text MEME type, when private clipboard is enabled
+// When copying data with a MEME type different than a text, e.g. a picture, it is not added to the history, as it’s not a text. With standard paste it’s not an issue as the paste will still paste it.
+// However if we paste from the internal clipboard, it will paste the latest string in the history, and not the picture that was only in the system clipboard.
+    private var wasLastCopyOperationDoneViaSystem: Boolean = true
+
+    private fun addToClipboardRepo(text: String) {
+        if (text.isBlank() || text == lastClipText) return@addToClipboardRepo
+        lastClipText = text
+        Log.d(TAG, "Adding clipboard item: $text")
+        scope.launch {
+            clipboardRepository.addItem(text)
+        }
+    }
+
     private val clipboardListener =
         ClipboardManager.OnPrimaryClipChangedListener {
             val clip = systemClipboardManager.primaryClip
             if (clip == null || clip.itemCount == 0) return@OnPrimaryClipChangedListener
             val text = clip.getItemAt(0).coerceToText(context).toString()
-            if (text.isBlank() || text == lastClipText) return@OnPrimaryClipChangedListener
-            lastClipText = text
-            Log.d(TAG, "Adding clipboard item: $text")
-            scope.launch {
-                clipboardRepository.addItem(text)
-            }
+            addToClipboardRepo(text)
+            wasLastCopyOperationDoneViaSystem = true
         }
 
     fun startListening() {
@@ -51,4 +61,13 @@ class ThumbKeyClipboardManager(
             clipboardRepository.clearExpired()
         }
     }
+
+    fun addPrivateClip(text: String) {
+        addToClipboardRepo(text)
+        wasLastCopyOperationDoneViaSystem = false
+    }
+
+    fun wasLastCopyOperationDoneViaSystem(): Boolean = wasLastCopyOperationDoneViaSystem
+
+    fun getLastClip(): String? = lastClipText
 }
