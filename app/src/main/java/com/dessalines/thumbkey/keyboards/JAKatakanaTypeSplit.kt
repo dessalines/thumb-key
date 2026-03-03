@@ -262,4 +262,5 @@ val KB_JA_KATAKANA_TYPESPLIT: KeyboardDefinition =
                 shifted = KB_JA_KATAKANA_TYPESPLIT_SHIFTED,
                 numeric = TYPESPLIT_NUMERIC_KEYBOARD,
             ),
+        locales = listOf("ja"),
     )

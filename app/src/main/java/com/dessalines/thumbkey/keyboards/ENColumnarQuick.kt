@@ -198,6 +198,7 @@ val KB_EN_COLUMNAR_QUICK_SHIFTED =
 val KB_EN_COLUMNAR_QUICK: KeyboardDefinition =
     KeyboardDefinition(
         title = "english qwerty-columnar quick",
+        locales = listOf("en"),
         modes =
             KeyboardDefinitionModes(
                 main = KB_EN_COLUMNAR_QUICK_MAIN,

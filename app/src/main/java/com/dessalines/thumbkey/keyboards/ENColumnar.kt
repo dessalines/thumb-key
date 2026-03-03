@@ -198,6 +198,7 @@ val KB_EN_COLUMNAR_SHIFTED =
 val KB_EN_COLUMNAR: KeyboardDefinition =
     KeyboardDefinition(
         title = "english qwerty-columnar",
+        locales = listOf("en"),
         modes =
             KeyboardDefinitionModes(
                 main = KB_EN_COLUMNAR_MAIN,

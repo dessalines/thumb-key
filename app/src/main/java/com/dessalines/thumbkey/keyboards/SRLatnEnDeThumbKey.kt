@@ -199,6 +199,7 @@ val KB_SRLATN_EN_DE_THUMBKEY_SHIFTED =
 val KB_SRLATN_EN_DE_THUMBKEY: KeyboardDefinition =
     KeyboardDefinition(
         title = "srpski (latinica) engleski nemački thumb-key",
+        locales = listOf("sr-Latn", "en", "de"),
         modes =
             KeyboardDefinitionModes(
                 main = KB_SRLATN_EN_DE_THUMBKEY_MAIN,

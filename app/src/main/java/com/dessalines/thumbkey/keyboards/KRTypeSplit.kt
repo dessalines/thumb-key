@@ -130,6 +130,7 @@ val KB_KR_TYPESPLIT_MAIN =
 val KB_KR_TYPESPLIT: KeyboardDefinition =
     KeyboardDefinition(
         title = "한국어 type-split",
+        locales = listOf("ko"),
         modes =
             KeyboardDefinitionModes(
                 main = KB_KR_TYPESPLIT_MAIN,

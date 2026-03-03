@@ -11,6 +11,7 @@ import com.dessalines.thumbkey.utils.SwipeNWay.*
 val KB_EN_QBASED_LEFT: KeyboardDefinition =
     KeyboardDefinition(
         title = "english qbased left-handed",
+        locales = listOf("en"),
         modes =
             KeyboardDefinitionModes(
                 main = lastColKeysToFirst(KB_EN_QBASED_MAIN),

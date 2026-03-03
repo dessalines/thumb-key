@@ -233,6 +233,7 @@ val KB_EN_DVORAK_WIDE_SHIFTED =
 val KB_EN_DVORAK_WIDE: KeyboardDefinition =
     KeyboardDefinition(
         title = "english dvorak wide",
+        locales = listOf("en"),
         modes =
             KeyboardDefinitionModes(
                 main = KB_EN_DVORAK_WIDE_MAIN,

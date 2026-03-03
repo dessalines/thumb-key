@@ -253,6 +253,7 @@ val KB_PL_TYPESPLIT_SYMBOLS_V1_SHIFTED =
 val KB_PL_TYPESPLIT_SYMBOLS_V1: KeyboardDefinition =
     KeyboardDefinition(
         title = "polski symbols type-split v1",
+        locales = listOf("pl"),
         modes =
             KeyboardDefinitionModes(
                 main = KB_PL_TYPESPLIT_SYMBOLS_V1_MAIN,

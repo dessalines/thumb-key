@@ -200,6 +200,7 @@ val KB_EN_EE_THUMBKEY_SHIFTED =
 val KB_EN_EE_THUMBKEY: KeyboardDefinition =
     KeyboardDefinition(
         title = "english eegbe thumb-key",
+        locales = listOf("en", "ee"),
         modes =
             KeyboardDefinitionModes(
                 main = KB_EN_EE_THUMBKEY_MAIN,

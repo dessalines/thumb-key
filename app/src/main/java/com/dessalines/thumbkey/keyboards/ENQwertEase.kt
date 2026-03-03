@@ -186,6 +186,7 @@ val KB_EN_QWERTEASE_SHIFTED =
 val KB_EN_QWERTEASE: KeyboardDefinition =
     KeyboardDefinition(
         title = "english qwertease",
+        locales = listOf("en"),
         modes =
             KeyboardDefinitionModes(
                 main = KB_EN_QWERTEASE_MAIN,

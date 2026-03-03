@@ -339,6 +339,7 @@ val KB_EN_MESSAGEASE_COMPOSED_SHIFTED =
 val KB_EN_MESSAGEASE_COMPOSE: KeyboardDefinition =
     KeyboardDefinition(
         title = "english messagease compose",
+        locales = listOf("en"),
         modes =
             KeyboardDefinitionModes(
                 main = KB_EN_MESSAGEASE_COMPOSED_MAIN,

@@ -252,6 +252,7 @@ val KB_FI_EE_MESSAGEASE_SYMBOLS_SHIFTED =
 val KB_FI_EE_MESSAGEASE_SYMBOLS: KeyboardDefinition =
     KeyboardDefinition(
         title = "suomi eesti messagease",
+        locales = listOf("fi", "ee"),
         modes =
             KeyboardDefinitionModes(
                 main = KB_FI_EE_MESSAGEASE_SYMBOLS_MAIN,
