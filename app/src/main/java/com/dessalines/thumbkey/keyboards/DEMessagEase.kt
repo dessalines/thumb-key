@@ -230,4 +230,5 @@ val KB_DE_MESSAGEASE: KeyboardDefinition =
                 shifted = KB_DE_MESSAGEASE_SHIFTED,
                 numeric = KB_EN_MESSAGEASE_NUMERIC,
             ),
+        locales = listOf("de"),
     )

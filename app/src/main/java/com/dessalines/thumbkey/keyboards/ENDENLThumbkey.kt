@@ -215,6 +215,7 @@ val KB_EN_DE_NL_THUMBKEY_SHIFTED =
 val KB_EN_DE_NL_THUMBKEY: KeyboardDefinition =
     KeyboardDefinition(
         title = "english deutsch nederlands thumb-key",
+        locales = listOf("en", "de", "nl"),
         modes =
             KeyboardDefinitionModes(
                 main = KB_EN_DE_NL_THUMBKEY_MAIN,

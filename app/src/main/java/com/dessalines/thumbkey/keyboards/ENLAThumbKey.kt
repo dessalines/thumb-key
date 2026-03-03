@@ -200,6 +200,7 @@ val KB_EN_LA_THUMBKEY_SHIFTED =
 val KB_EN_LA_THUMBKEY: KeyboardDefinition =
     KeyboardDefinition(
         title = "english latina thumb-key",
+        locales = listOf("en", "la"),
         modes =
             KeyboardDefinitionModes(
                 main = KB_EN_LA_THUMBKEY_MAIN,

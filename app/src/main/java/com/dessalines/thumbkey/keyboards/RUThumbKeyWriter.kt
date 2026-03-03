@@ -266,6 +266,7 @@ val KB_RU_THUMBKEY_WRITER_SHIFTED =
 val KB_RU_THUMBKEY_WRITER: KeyboardDefinition =
     KeyboardDefinition(
         title = "русский writer thumb-key",
+        locales = listOf("ru"),
         modes =
             KeyboardDefinitionModes(
                 main = KB_RU_THUMBKEY_WRITER_MAIN,

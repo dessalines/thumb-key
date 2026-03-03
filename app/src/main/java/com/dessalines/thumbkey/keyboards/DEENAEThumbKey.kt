@@ -263,4 +263,5 @@ val KB_EN_DE_THUMBKEY_AE =
                 shifted = KB_EN_DE_THUMBKEY_AE_SHIFTED,
                 numeric = NUMERIC_KEYBOARD,
             ),
+        locales = listOf("en", "de"),
     )

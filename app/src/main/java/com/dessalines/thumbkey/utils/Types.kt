@@ -42,6 +42,7 @@ data class KeyboardDefinitionSettings(
 @optics
 data class KeyboardDefinition(
     val title: String,
+    val locales: List<String>? = null,
     val modes: KeyboardDefinitionModes,
     val settings: KeyboardDefinitionSettings = KeyboardDefinitionSettings(),
 ) {
@@ -277,6 +278,8 @@ sealed class KeyAction {
     data object Redo : KeyAction()
 
     data object SwitchLanguage : KeyAction()
+
+    data object CycleLocale : KeyAction()
 
     data object SwitchIME : KeyAction()
 

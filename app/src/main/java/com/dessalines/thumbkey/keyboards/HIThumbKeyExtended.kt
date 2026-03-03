@@ -212,6 +212,7 @@ val KB_HI_THUMBKEY_EXTENDED_SHIFTED =
 val KB_HI_THUMBKEY_EXTENDED: KeyboardDefinition =
     KeyboardDefinition(
         title = "हिन्दी thumb-key extended",
+        locales = listOf("hi"),
         modes =
             KeyboardDefinitionModes(
                 main = KB_HI_THUMBKEY_EXTENDED_MAIN,

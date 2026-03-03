@@ -331,6 +331,7 @@ val KB_EN_TWO_HANDS_SHIFTED =
 val KB_EN_TWO_HANDS: KeyboardDefinition =
     KeyboardDefinition(
         title = "english two-hands",
+        locales = listOf("en"),
         modes =
             KeyboardDefinitionModes(
                 main = KB_EN_TWO_HANDS_MAIN,

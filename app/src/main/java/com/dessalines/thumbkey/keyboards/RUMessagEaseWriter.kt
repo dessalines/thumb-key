@@ -262,6 +262,7 @@ val KB_RU_MESSAGEASE_WRITER_SHIFTED =
 val KB_RU_MESSAGEASE_WRITER: KeyboardDefinition =
     KeyboardDefinition(
         title = "русский messagease writer",
+        locales = listOf("ru"),
         modes =
             KeyboardDefinitionModes(
                 main = KB_RU_MESSAGEASE_WRITER_MAIN,

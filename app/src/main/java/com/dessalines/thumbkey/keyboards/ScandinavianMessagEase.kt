@@ -264,6 +264,7 @@ val KB_SCANDINAVIAN_MESSAGEASE_SHIFTED =
 val KB_SCANDINAVIAN_MESSAGEASE: KeyboardDefinition =
     KeyboardDefinition(
         title = "scandinavian messagease",
+        locales = listOf("da", "no", "sv"),
         modes =
             KeyboardDefinitionModes(
                 main = KB_SCANDINAVIAN_MESSAGEASE_MAIN,

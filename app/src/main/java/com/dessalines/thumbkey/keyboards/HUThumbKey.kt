@@ -200,6 +200,7 @@ val KB_HU_THUMBKEY_SHIFTED =
 val KB_HU_THUMBKEY: KeyboardDefinition =
     KeyboardDefinition(
         title = "magyar thumb-key",
+        locales = listOf("hu"),
         modes =
             KeyboardDefinitionModes(
                 main = KB_HU_THUMBKEY_MAIN,

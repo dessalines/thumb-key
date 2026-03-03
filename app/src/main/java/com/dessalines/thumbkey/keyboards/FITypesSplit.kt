@@ -1,4 +1,4 @@
-﻿@file:Suppress("ktlint:standard:no-wildcard-imports")
+@file:Suppress("ktlint:standard:no-wildcard-imports")
 
 package com.dessalines.thumbkey.keyboards
 
@@ -257,6 +257,7 @@ val KB_FI_TYPESPLIT_SHIFTED =
 val KB_FI_TYPESPLIT: KeyboardDefinition =
     KeyboardDefinition(
         title = "suomi type-split",
+        locales = listOf("fi"),
         modes =
             KeyboardDefinitionModes(
                 main = KB_FI_TYPESPLIT_MAIN,
