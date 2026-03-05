@@ -53,6 +53,9 @@
     - [Example 4](#example-4)
     - [Example 5](#example-5)
     - [Example 6](#example-6)
+  - [Clipboard](#clipboard)
+    - [Clipboard history](#clipboard-history)
+    - [Private clipboard](#private-clipboard)
   - [Other](#other)
 - [Thumb-Key Design](#thumb-key-design)
   - [A History of Phone Keyboards](#a-history-of-phone-keyboards)
@@ -350,6 +353,22 @@ ENThumbKey:
 ```
 
 The attributes `swipeReturnText` and `swipeReturnAction` allow defining swipe-return behaviour. Possible values for `swipeReturnAction` are the same as the ones for `keyAction`.
+
+### Clipboard
+
+#### Clipboard history
+
+This feature retains the latest text clips that were copied/cut, so that you can select an older one. It’s enabled in the parameters and accessible through a swipe-return on the _paste_ slide action.
+
+#### Private clipboard
+
+Once enabled, text copied or cut through the copy/cut actions in ThumbKey won’t be shared with the system clipboard of Android.
+Instead, it will be stored in the app’s memory and pasted from there instead of from the system clipboard.
+
+Note that using cut/copy/paste controls from outside the keyboard will use the standard system clipboard and not ThumbKey’s private one.
+
+This ensures more privacy, as data added to the system clipboard can actually be accessed by any app.
+In some Android devices such as _samsung_ devices, it is also automatically retrieved and stored by a proprietary application, without any option to disable it.
 
 ### Other
 
