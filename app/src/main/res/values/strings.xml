@@ -138,4 +138,6 @@
     <string name="clipboard_disabled">Clipboard history is disabled</string>
     <string name="clipboard_go_to_settings">Go to clipboard settings</string>
     <string name="clipboard_characters">%1$d characters</string>
+    <string name="use_private_clipboard">Use private clipboard</string>
+    <string name="use_private_clipboard_description">Copy into internal clipboard instead of system clipboard"</string>
 </resources>
