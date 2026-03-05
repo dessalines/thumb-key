@@ -20,7 +20,7 @@ class ThumbKeyClipboardManager(
     private var lastClipText: String? = null
 
 // Used to manage data with a non-text MEME type, when private clipboard is enabled
-// When copying data with a MEME type different than a text, e.g. a picture, it is not added to the history, as it’s not a text. With standard paste it’s not an issue as the paste will still paste it.
+// When copying data with a MIME type different than a text, e.g. a picture, it is not added to the history, as it’s not a text. With standard paste it’s not an issue as the paste will still paste it.
 // However if we paste from the internal clipboard, it will paste the latest string in the history, and not the picture that was only in the system clipboard.
     private var wasLastCopyOperationDoneViaSystem: Boolean = true
 
