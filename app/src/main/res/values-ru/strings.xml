@@ -136,4 +136,6 @@
     <string name="clipboard_characters">Символов: %1$d</string>
     <string name="warning_invalid_mode">Режим \"%s\" не определён для макета \"%s\".</string>
     <string name="position_padding">Смещение позиции: %1$s</string>
+    <string name="use_private_clipboard">Использовать защищённый буфер обмена</string>
+    <string name="use_private_clipboard_description">Копирование происходит во внутренний буфер обмена вместо системного</string>
 </resources>
