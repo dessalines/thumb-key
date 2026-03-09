@@ -1,3 +1,16 @@
+## What's Changed in 5.1.4
+
+- Add private clipboard option by @jiquiame in [#1762](https://github.com/dessalines/thumb-key/pull/1762)
+- Spellcheck locale fix by @markokocic in [#1774](https://github.com/dessalines/thumb-key/pull/1774)
+- frappefluide: add k and 2 3 as super/subscripts to numeric layer by @jiquiame in [#1803](https://github.com/dessalines/thumb-key/pull/1803)
+- Macron compose by @IFcoltransG in [#1785](https://github.com/dessalines/thumb-key/pull/1785)
+
+## New Contributors
+
+- @IFcoltransG made their first contribution in [#1785](https://github.com/dessalines/thumb-key/pull/1785)
+
+**Full Changelog**: https://github.com/dessalines/thumb-key/compare/5.1.3...5.1.4
+
 ## What's Changed in 5.1.3
 
 - Removing non-final res ids. by @dessalines in [#1784](https://github.com/dessalines/thumb-key/pull/1784)
@@ -332,7 +345,7 @@
 
 ## What's Changed in 4.0.27
 
-- Update Hyper's symbol layer with small changes by @luminespire in [#1340](https://github.com/dessalines/thumb-key/pull/1340)
+- Update Hyper's symbol layer with small changes by @va1orance in [#1340](https://github.com/dessalines/thumb-key/pull/1340)
 - feat: add owl-layout by @owl-from-hogvarts in [#1337](https://github.com/dessalines/thumb-key/pull/1337)
 - Translated using Weblate (Arabic) by @weblate
 - Translated using Weblate (Polish) by @weblate
@@ -394,7 +407,7 @@
 
 ## What's Changed in 4.0.23
 
-- Update Hyper symbol layer and punctuation by @luminespire in [#1293](https://github.com/dessalines/thumb-key/pull/1293)
+- Update Hyper symbol layer and punctuation by @va1orance in [#1293](https://github.com/dessalines/thumb-key/pull/1293)
 - Update old br-fr keyboards and create a new BRFRThumbKeyV3 by @zeecho in [#1290](https://github.com/dessalines/thumb-key/pull/1290)
 - Draft: use minSwipeLength setting for DragReturn and Circular detection by @stfstf123 in [#1244](https://github.com/dessalines/thumb-key/pull/1244)
 
@@ -424,7 +437,7 @@
 
 - Slight tweaks to en typesplit programming layout by @bklaase in [#1274](https://github.com/dessalines/thumb-key/pull/1274)
 - add English Typesplit layout, optimized for programming by @bklaase in [#1272](https://github.com/dessalines/thumb-key/pull/1272)
-- add hyper space and minor fixes to hyper by @luminespire in [#1268](https://github.com/dessalines/thumb-key/pull/1268)
+- add hyper space and minor fixes to hyper by @va1orance in [#1268](https://github.com/dessalines/thumb-key/pull/1268)
 - Add layout with words and common symbols by @jm355 in [#1262](https://github.com/dessalines/thumb-key/pull/1262)
 - Update README.md to include other voice input option (transcribro) by @jm355 in [#1263](https://github.com/dessalines/thumb-key/pull/1263)
 
@@ -432,11 +445,11 @@
 
 ## What's Changed in 4.0.19
 
-- add hyper layout by @luminespire in [#1260](https://github.com/dessalines/thumb-key/pull/1260)
+- add hyper layout by @va1orance in [#1260](https://github.com/dessalines/thumb-key/pull/1260)
 
 ## New Contributors
 
-- @luminespire made their first contribution in [#1260](https://github.com/dessalines/thumb-key/pull/1260)
+- @va1orance made their first contribution in [#1260](https://github.com/dessalines/thumb-key/pull/1260)
 
 **Full Changelog**: https://github.com/dessalines/thumb-key/compare/4.0.18...4.0.19
 
