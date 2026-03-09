@@ -136,4 +136,6 @@
     <string name="clipboard_go_to_settings">Na nastavitve odložišča</string>
     <string name="position_padding">Odmik od roba: %1$s</string>
     <string name="warning_invalid_mode">Način \"%s\" v razporeditvi \"%s\" ni določen.</string>
+    <string name="use_private_clipboard">Zasebno odložišče</string>
+    <string name="use_private_clipboard_description">Kopiraj v interno odložišče namesto v sistemskega</string>
 </resources>
