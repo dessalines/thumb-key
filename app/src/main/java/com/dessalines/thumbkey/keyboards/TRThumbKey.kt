@@ -259,5 +259,4 @@ val KB_TR_THUMBKEY: KeyboardDefinition =
                 shifted = KB_TR_THUMBKEY_SHIFTED,
                 numeric = NUMERIC_KEYBOARD,
             ),
-        locales = listOf("tr"),
     )

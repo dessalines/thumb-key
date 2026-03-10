@@ -208,7 +208,6 @@ val KB_IT_THUMBKEY_SHIFTED =
 val KB_IT_THUMBKEY: KeyboardDefinition =
     KeyboardDefinition(
         title = "italiano thumb-key",
-        locales = listOf("it"),
         modes =
             KeyboardDefinitionModes(
                 main = KB_IT_THUMBKEY_MAIN,

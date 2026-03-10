@@ -93,7 +93,6 @@ val KB_HE_THUMBKEY_MAIN =
 val KB_HE_THUMBKEY: KeyboardDefinition =
     KeyboardDefinition(
         title = "עברית thumb-key",
-        locales = listOf("he"),
         modes =
             KeyboardDefinitionModes(
                 main = KB_HE_THUMBKEY_MAIN,

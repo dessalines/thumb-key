@@ -196,7 +196,6 @@ val KB_LT_THUMBKEY_SHIFTED =
 val KB_LT_THUMBKEY: KeyboardDefinition =
     KeyboardDefinition(
         title = "lietuvių kalba thumb-key",
-        locales = listOf("lt"),
         modes =
             KeyboardDefinitionModes(
                 main = KB_LT_THUMBKEY_MAIN,

@@ -272,7 +272,6 @@ val KB_FR_THUMBKEY_V3_SHIFTED =
 val KB_FR_THUMBKEY_V3: KeyboardDefinition =
     KeyboardDefinition(
         title = "français thumb-key v3",
-        locales = listOf("fr"),
         modes =
             KeyboardDefinitionModes(
                 main = KB_FR_THUMBKEY_V3_MAIN,

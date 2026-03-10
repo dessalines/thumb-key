@@ -204,7 +204,6 @@ val KB_DA_THUMBKEY_MULTILINGUAL_SHIFTED =
 val KB_DA_THUMBKEY_MULTILINGUAL: KeyboardDefinition =
     KeyboardDefinition(
         title = "dansk thumb-key",
-        locales = listOf("da", "en", "de", "sv", "no"),
         modes =
             KeyboardDefinitionModes(
                 main = KB_DA_THUMBKEY_MULTILINGUAL_MAIN,

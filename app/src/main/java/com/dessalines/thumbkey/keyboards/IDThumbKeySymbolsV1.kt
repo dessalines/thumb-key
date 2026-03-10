@@ -243,7 +243,6 @@ val KB_ID_THUMBKEY_SYMBOLS_V1_SHIFTED =
 val KB_ID_THUMBKEY_SYMBOLS_V1: KeyboardDefinition =
     KeyboardDefinition(
         title = "bahasa indonesia thumb-key symbols v1",
-        locales = listOf("id"),
         modes =
             KeyboardDefinitionModes(
                 main = KB_ID_THUMBKEY_SYMBOLS_V1_MAIN,

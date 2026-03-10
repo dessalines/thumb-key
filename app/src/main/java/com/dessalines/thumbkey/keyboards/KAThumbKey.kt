@@ -97,5 +97,4 @@ val KB_KA_THUMBKEY: KeyboardDefinition =
                 shifted = KB_KA_THUMBKEY_MAIN,
                 numeric = NUMERIC_KEYBOARD,
             ),
-        locales = listOf("ka"),
     )

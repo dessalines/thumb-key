@@ -208,7 +208,6 @@ val KB_MATH_THUMBKEY_SLASH =
 val KB_MATH_THUMBKEY: KeyboardDefinition =
     KeyboardDefinition(
         title = "math thumb-key",
-        locales = listOf("en"),
         modes =
             KeyboardDefinitionModes(
                 main = KB_MATH_THUMBKEY_MAIN,

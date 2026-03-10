@@ -355,5 +355,4 @@ val KB_BR_FR_THUMBKEY_COMPOSE: KeyboardDefinition =
                 shifted = KB_BR_FR_THUMBKEY_COMPOSE_SHIFTED,
                 numeric = FRENCH_NUMERIC_KEYBOARD,
             ),
-        locales = listOf("br", "fr"),
     )

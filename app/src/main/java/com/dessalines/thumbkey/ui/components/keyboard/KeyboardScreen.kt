@@ -99,7 +99,6 @@ fun KeyboardScreen(
     settings: AppSettings?,
     clipboardRepository: ClipboardRepository,
     onSwitchLanguage: () -> Unit,
-    onCycleLocale: () -> Unit,
     onChangePosition: ((old: KeyboardPosition) -> KeyboardPosition) -> Unit,
     onToggleHideLetters: () -> Unit,
     onGoToClipboardSettings: () -> Unit,
@@ -437,10 +436,6 @@ fun KeyboardScreen(
                                     onSwitchLanguage()
                                     mode = KeyboardMode.MAIN
                                 },
-                                onCycleLocale = {
-                                    onCycleLocale()
-                                    mode = KeyboardMode.MAIN
-                                },
                                 onChangePosition = onChangePosition,
                                 onKeyEvent = {
                                     when (mode) {
@@ -734,10 +729,6 @@ fun KeyboardScreen(
                                         },
                                         onSwitchLanguage = {
                                             onSwitchLanguage()
-                                            mode = KeyboardMode.MAIN
-                                        },
-                                        onCycleLocale = {
-                                            onCycleLocale()
                                             mode = KeyboardMode.MAIN
                                         },
                                         onChangePosition = onChangePosition,

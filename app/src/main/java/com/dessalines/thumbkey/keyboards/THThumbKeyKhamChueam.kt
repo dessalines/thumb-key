@@ -208,7 +208,6 @@ val KB_TH_THUMBKEY_KHAM_CHUEAM_SHIFTED =
 val KB_TH_THUMBKEY_KHAM_CHUEAM: KeyboardDefinition =
     KeyboardDefinition(
         title = "ภาษาไทย thai thumb-key คำเชื่อม",
-        locales = listOf("th"),
         modes =
             KeyboardDefinitionModes(
                 main = KB_TH_THUMBKEY_KHAM_CHUEAM_MAIN,

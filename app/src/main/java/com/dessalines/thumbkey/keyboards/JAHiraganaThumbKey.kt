@@ -210,7 +210,6 @@ val KB_JA_HIRAGANA_THUMBKEY_SHIFTED =
 val KB_JA_HIRAGANA_THUMBKEY: KeyboardDefinition =
     KeyboardDefinition(
         title = "japanese hiragana thumb-key",
-        locales = listOf("ja"),
         modes =
             KeyboardDefinitionModes(
                 main = KB_JA_HIRAGANA_THUMBKEY_MAIN,

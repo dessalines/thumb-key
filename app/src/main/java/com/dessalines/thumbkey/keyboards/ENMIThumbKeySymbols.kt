@@ -253,7 +253,6 @@ val KB_EN_MI_THUMBKEY_SYMBOLS_SHIFTED =
 val KB_EN_MI_THUMBKEY_SYMBOLS: KeyboardDefinition =
     KeyboardDefinition(
         title = "english te reo māori symbols thumb-key",
-        locales = listOf("en", "mi"),
         modes =
             KeyboardDefinitionModes(
                 main = KB_EN_MI_THUMBKEY_SYMBOLS_MAIN,

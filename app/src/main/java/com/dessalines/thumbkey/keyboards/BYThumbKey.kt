@@ -206,5 +206,4 @@ val KB_BY_THUMBKEY: KeyboardDefinition =
                 shifted = KB_BY_THUMBKEY_SHIFTED,
                 numeric = NUMERIC_KEYBOARD,
             ),
-        locales = listOf("be"),
     )
