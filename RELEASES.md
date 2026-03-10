@@ -1,3 +1,9 @@
+## What's Changed in 5.1.5
+
+- Revert "Spellcheck locale fix" by @dessalines in [#1819](https://github.com/dessalines/thumb-key/pull/1819)
+
+**Full Changelog**: https://github.com/dessalines/thumb-key/compare/5.1.4...5.1.5
+
 ## What's Changed in 5.1.4
 
 - Add private clipboard option by @jiquiame in [#1762](https://github.com/dessalines/thumb-key/pull/1762)
