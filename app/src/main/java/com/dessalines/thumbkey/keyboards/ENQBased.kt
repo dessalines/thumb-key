@@ -197,7 +197,6 @@ val KB_EN_QBASED_SHIFTED =
 val KB_EN_QBASED: KeyboardDefinition =
     KeyboardDefinition(
         title = "english qbased",
-        locales = listOf("en"),
         modes =
             KeyboardDefinitionModes(
                 main = KB_EN_QBASED_MAIN,

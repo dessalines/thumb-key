@@ -254,5 +254,4 @@ val KB_PT_DVORAK_WIDE: KeyboardDefinition =
                 shifted = KB_PT_DVORAK_WIDE_SHIFTED,
                 numeric = WIDE_NUMERIC_KEYBOARD,
             ),
-        locales = listOf("pt"),
     )

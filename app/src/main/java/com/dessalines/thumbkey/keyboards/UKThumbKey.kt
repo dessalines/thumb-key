@@ -196,7 +196,6 @@ val KB_UK_THUMBKEY_SHIFTED =
 val KB_UK_THUMBKEY: KeyboardDefinition =
     KeyboardDefinition(
         title = "українська thumb-key",
-        locales = listOf("uk"),
         modes =
             KeyboardDefinitionModes(
                 main = KB_UK_THUMBKEY_MAIN,

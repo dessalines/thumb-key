@@ -190,7 +190,6 @@ val KB_SV_THUMBKEY_SHIFTED =
 val KB_SV_THUMBKEY: KeyboardDefinition =
     KeyboardDefinition(
         title = "svenska thumb-key",
-        locales = listOf("sv"),
         modes =
             KeyboardDefinitionModes(
                 main = KB_SV_THUMBKEY_MAIN,

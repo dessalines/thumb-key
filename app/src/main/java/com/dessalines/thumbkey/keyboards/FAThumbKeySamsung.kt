@@ -11,7 +11,6 @@ import com.dessalines.thumbkey.utils.SwipeNWay.*
 val KB_FA_THUMBKEY_SAMSUNG: KeyboardDefinition =
     KeyboardDefinition(
         title = "فارسی thumb-key samsung",
-        locales = listOf("fa"),
         modes =
             KeyboardDefinitionModes(
                 main = KB_FA_THUMBKEY_MAIN,

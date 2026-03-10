@@ -204,7 +204,6 @@ val KB_UK_BY_RU_THUMBKEY_SHIFTED =
 val KB_UK_BY_RU_THUMBKEY: KeyboardDefinition =
     KeyboardDefinition(
         title = "українська беларуская русский thumb-key",
-        locales = listOf("uk", "be", "ru"),
         modes =
             KeyboardDefinitionModes(
                 main = KB_UK_BY_RU_THUMBKEY_MAIN,

@@ -281,7 +281,6 @@ val KB_EN_DVORAK_WIDE_COMPOSE_SHIFTED =
 val KB_EN_DVORAK_WIDE_COMPOSE: KeyboardDefinition =
     KeyboardDefinition(
         title = "english dvorak wide compose",
-        locales = listOf("en"),
         modes =
             KeyboardDefinitionModes(
                 main = KB_EN_DVORAK_WIDE_COMPOSE_MAIN,

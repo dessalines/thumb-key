@@ -100,7 +100,6 @@ val KB_FA_THUMBKEY_MAIN =
 val KB_FA_THUMBKEY: KeyboardDefinition =
     KeyboardDefinition(
         title = "فارسی thumb-key",
-        locales = listOf("fa"),
         modes =
             KeyboardDefinitionModes(
                 main = KB_FA_THUMBKEY_MAIN,

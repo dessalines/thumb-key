@@ -230,7 +230,6 @@ val KB_ES_THUMBKEY_SYMBOLS_SHIFTED =
 val KB_ES_THUMBKEY_SYMBOLS: KeyboardDefinition =
     KeyboardDefinition(
         title = "español thumb-key symbols",
-        locales = listOf("es"),
         modes =
             KeyboardDefinitionModes(
                 main = KB_ES_THUMBKEY_SYMBOLS_MAIN,

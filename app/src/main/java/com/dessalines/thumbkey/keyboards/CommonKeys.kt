@@ -72,7 +72,6 @@ val SWITCH_LANGUAGE_KEYC =
     KeyC(
         display = KeyDisplay.IconDisplay(Icons.Outlined.Language),
         action = SwitchLanguage,
-        swipeReturnAction = CycleLocale,
         color = MUTED,
     )
 val MOVE_KEYBOARD_CYCLE_RIGHT_KEYC =

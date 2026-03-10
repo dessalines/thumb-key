@@ -333,7 +333,6 @@ val KB_HR_TWO_HANDS_SHIFTED =
 val KB_HR_TWO_HANDS: KeyboardDefinition =
     KeyboardDefinition(
         title = "hrvatski two-hands",
-        locales = listOf("hr"),
         modes =
             KeyboardDefinitionModes(
                 main = KB_HR_TWO_HANDS_MAIN,

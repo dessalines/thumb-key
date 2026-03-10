@@ -267,7 +267,6 @@ val KB_DE_TYPESPLIT_SHIFTED =
 val KB_DE_TYPESPLIT: KeyboardDefinition =
     KeyboardDefinition(
         title = "deutsch type-split",
-        locales = listOf("de"),
         modes =
             KeyboardDefinitionModes(
                 main = KB_DE_TYPESPLIT_MAIN,

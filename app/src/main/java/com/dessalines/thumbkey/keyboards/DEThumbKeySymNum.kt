@@ -289,7 +289,6 @@ val KB_DE_THUMBKEY_SYMNUM_SHIFTED =
 val KB_DE_THUMBKEY_SYMNUM: KeyboardDefinition =
     KeyboardDefinition(
         title = "deutsch thumb-key symnum",
-        locales = listOf("de"),
         modes =
             KeyboardDefinitionModes(
                 main = KB_DE_THUMBKEY_SYMNUM_MAIN,

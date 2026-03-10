@@ -192,7 +192,6 @@ val KB_DA_THUMBKEY_SHIFTED =
 val KB_DA_THUMBKEY: KeyboardDefinition =
     KeyboardDefinition(
         title = "dansk thumb-key",
-        locales = listOf("da"),
         modes =
             KeyboardDefinitionModes(
                 main = KB_DA_THUMBKEY_MAIN,
