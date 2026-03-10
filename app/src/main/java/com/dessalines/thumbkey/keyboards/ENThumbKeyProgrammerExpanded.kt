@@ -573,7 +573,6 @@ val NUMERIC_KEYBOARD_EXPANDED_SHIFTED =
 val KB_EN_THUMBKEY_PROGRAMMING_EXPANDED: KeyboardDefinition =
     KeyboardDefinition(
         title = "english thumb-key programming expanded",
-        locales = listOf("en"),
         modes =
             KeyboardDefinitionModes(
                 main = KB_EN_THUMBKEY_PROGRAMMING_EXPANDED_MAIN,

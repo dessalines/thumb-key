@@ -287,5 +287,4 @@ val KB_PL_TYPESPLIT_V1: KeyboardDefinition =
                 shifted = KB_PL_TYPESPLIT_V1_SHIFTED,
                 numeric = TYPESPLIT_NUMERIC_KEYBOARD,
             ),
-        locales = listOf("pl"),
     )

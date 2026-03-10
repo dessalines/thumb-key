@@ -333,7 +333,6 @@ val KB_HU_HUNGRAM_SHIFTED =
 val KB_HU_HUNGRAM: KeyboardDefinition =
     KeyboardDefinition(
         title = "magyar hungram",
-        locales = listOf("hu"),
         modes =
             KeyboardDefinitionModes(
                 main = KB_HU_HUNGRAM_MAIN,

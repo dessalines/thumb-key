@@ -192,7 +192,6 @@ val KB_SR_THUMBKEY_SHIFTED =
 val KB_SR_THUMBKEY: KeyboardDefinition =
     KeyboardDefinition(
         title = "српски / srpski thumb-key",
-        locales = listOf("sr"),
         modes =
             KeyboardDefinitionModes(
                 main = KB_SR_THUMBKEY_MAIN,

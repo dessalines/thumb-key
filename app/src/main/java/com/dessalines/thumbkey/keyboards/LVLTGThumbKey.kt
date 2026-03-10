@@ -198,7 +198,6 @@ val KB_LV_LTG_THUMBKEY_SHIFTED =
 val KB_LV_LTG_THUMBKEY: KeyboardDefinition =
     KeyboardDefinition(
         title = "latviešu valoda thumb-key",
-        locales = listOf("lv"),
         modes =
             KeyboardDefinitionModes(
                 main = KB_LV_LTG_THUMBKEY_MAIN,

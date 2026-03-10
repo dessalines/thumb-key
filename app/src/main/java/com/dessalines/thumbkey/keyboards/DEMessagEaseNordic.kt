@@ -263,7 +263,6 @@ val KB_DE_NORDIC_MESSAGEASE_SHIFTED =
 val KB_DE_NORDIC_MESSAGEASE: KeyboardDefinition =
     KeyboardDefinition(
         title = "deutsch messagease +åæø",
-        locales = listOf("de"),
         modes =
             KeyboardDefinitionModes(
                 main = KB_DE_NORDIC_MESSAGEASE_MAIN,

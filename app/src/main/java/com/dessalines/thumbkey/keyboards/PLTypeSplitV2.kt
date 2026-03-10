@@ -281,7 +281,6 @@ val KB_PL_TYPESPLIT_V2_SHIFTED =
 val KB_PL_TYPESPLIT_V2: KeyboardDefinition =
     KeyboardDefinition(
         title = "polski type-split v2",
-        locales = listOf("pl"),
         modes =
             KeyboardDefinitionModes(
                 main = KB_PL_TYPESPLIT_V2_MAIN,

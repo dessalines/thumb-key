@@ -239,5 +239,4 @@ val KB_TR_TYPESPLIT: KeyboardDefinition =
                 shifted = KB_TR_TYPESPLIT_SHIFTED,
                 numeric = TYPESPLIT_NUMERIC_KEYBOARD,
             ),
-        locales = listOf("tr"),
     )

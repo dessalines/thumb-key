@@ -125,7 +125,6 @@ fun KeyboardKey(
     onToggleHideLetters: () -> Unit,
     onAutoCapitalize: (enable: Boolean) -> Unit,
     onSwitchLanguage: () -> Unit,
-    onCycleLocale: () -> Unit,
     onChangePosition: ((old: KeyboardPosition) -> KeyboardPosition) -> Unit,
     onKeyEvent: () -> Unit,
     oppositeCaseKey: KeyItemC? = null,
@@ -249,7 +248,6 @@ fun KeyboardKey(
                         onToggleHideLetters = onToggleHideLetters,
                         onAutoCapitalize = onAutoCapitalize,
                         onSwitchLanguage = onSwitchLanguage,
-                        onCycleLocale = onCycleLocale,
                         onChangePosition = onChangePosition,
                         onKeyEvent = onKeyEvent,
                     )
@@ -272,7 +270,6 @@ fun KeyboardKey(
                             onToggleHideLetters = onToggleHideLetters,
                             onAutoCapitalize = onAutoCapitalize,
                             onSwitchLanguage = onSwitchLanguage,
-                            onCycleLocale = onCycleLocale,
                             onChangePosition = onChangePosition,
                             onKeyEvent = onKeyEvent,
                         )
@@ -572,7 +569,6 @@ fun KeyboardKey(
                                 onToggleHideLetters = onToggleHideLetters,
                                 onAutoCapitalize = onAutoCapitalize,
                                 onSwitchLanguage = onSwitchLanguage,
-                                onCycleLocale = onCycleLocale,
                                 onChangePosition = onChangePosition,
                                 onKeyEvent = onKeyEvent,
                             )
@@ -611,7 +607,6 @@ fun KeyboardKey(
                                         onToggleHideLetters = onToggleHideLetters,
                                         onAutoCapitalize = onAutoCapitalize,
                                         onSwitchLanguage = onSwitchLanguage,
-                                        onCycleLocale = onCycleLocale,
                                         onChangePosition = onChangePosition,
                                         onKeyEvent = onKeyEvent,
                                     )

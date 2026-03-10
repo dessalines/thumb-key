@@ -182,5 +182,4 @@ val KB_RU_ARTI: KeyboardDefinition =
             ),
         settings =
             KeyboardDefinitionSettings(),
-        locales = listOf("ru"),
     )

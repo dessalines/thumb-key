@@ -315,5 +315,4 @@ val KB_CZ_MESSAGEASE_PROGRAMMING: KeyboardDefinition =
                 shifted = KB_CZ_MESSAGEASE_PROGRAMMING_SHIFTED,
                 numeric = KB_EN_MESSAGEASE_NUMERIC,
             ),
-        locales = listOf("cs"),
     )

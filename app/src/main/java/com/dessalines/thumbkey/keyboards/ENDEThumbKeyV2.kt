@@ -190,7 +190,6 @@ val KB_EN_DE_THUMBKEY_V2_SHIFTED =
 val KB_EN_DE_THUMBKEY_V2: KeyboardDefinition =
     KeyboardDefinition(
         title = "english deutsch thumb-key v2",
-        locales = listOf("en", "de"),
         modes =
             KeyboardDefinitionModes(
                 main = KB_EN_DE_THUMBKEY_V2_MAIN,

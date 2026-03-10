@@ -422,5 +422,4 @@ val KB_TOK_THUMBKEY: KeyboardDefinition =
                 numeric = NUMERIC_KEYBOARD,
             ),
         settings = KeyboardDefinitionSettings(autoShift = false),
-        locales = listOf("en"),
     )

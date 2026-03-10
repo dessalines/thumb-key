@@ -243,7 +243,6 @@ val KB_EN_NO_MESSAGEASE_SYMBOLS_SHIFTED =
 val KB_EN_NO_MESSAGEASE_SYMBOLS: KeyboardDefinition =
     KeyboardDefinition(
         title = "english norsk messagease symbols",
-        locales = listOf("en", "no"),
         modes =
             KeyboardDefinitionModes(
                 main = KB_EN_NO_MESSAGEASE_SYMBOLS_MAIN,

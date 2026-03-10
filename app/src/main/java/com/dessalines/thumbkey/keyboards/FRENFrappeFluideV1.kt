@@ -511,7 +511,6 @@ fun makeLeftHandedControlLeftSide(kb: KeyboardC): KeyboardC {
 val KB_FR_EN_FRAPPE_FLUIDE_V1: KeyboardDefinition =
     KeyboardDefinition(
         title = "français frappefluide (fr+en) v1",
-        locales = listOf("fr", "en"),
         modes =
             KeyboardDefinitionModes(
                 main = KB_FR_EN_FRAPPE_FLUIDE_V1_MAIN,
@@ -523,7 +522,6 @@ val KB_FR_EN_FRAPPE_FLUIDE_V1: KeyboardDefinition =
 val KB_FR_EN_FRAPPE_FLUIDE_V1_CONTROL_LEFT_SIDE: KeyboardDefinition =
     KeyboardDefinition(
         title = "français frappefluide (fr+en) v1 (outils à gauche)",
-        locales = listOf("fr", "en"),
         modes =
             KeyboardDefinitionModes(
                 main = makeControlLeftSide(KB_FR_EN_FRAPPE_FLUIDE_V1_MAIN),
@@ -535,7 +533,6 @@ val KB_FR_EN_FRAPPE_FLUIDE_V1_CONTROL_LEFT_SIDE: KeyboardDefinition =
 val KB_FR_EN_FRAPPE_FLUIDE_V1_LEFT_HANDED: KeyboardDefinition =
     KeyboardDefinition(
         title = "français frappefluide (fr+en) v1 (gauchère)",
-        locales = listOf("fr", "en"),
         modes =
             KeyboardDefinitionModes(
                 main = makeLeftHanded(KB_FR_EN_FRAPPE_FLUIDE_V1_MAIN),
@@ -547,7 +544,6 @@ val KB_FR_EN_FRAPPE_FLUIDE_V1_LEFT_HANDED: KeyboardDefinition =
 val KB_FR_EN_FRAPPE_FLUIDE_V1_LEFT_HANDED_CONTROL_LEFT_SIDE: KeyboardDefinition =
     KeyboardDefinition(
         title = "français frappefluide (fr+en) v1 (gauchère, outils à gauche)",
-        locales = listOf("fr", "en"),
         modes =
             KeyboardDefinitionModes(
                 main = makeLeftHandedControlLeftSide(KB_FR_EN_FRAPPE_FLUIDE_V1_MAIN),

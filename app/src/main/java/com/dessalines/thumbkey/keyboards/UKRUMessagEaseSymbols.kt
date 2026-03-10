@@ -248,7 +248,6 @@ val KB_UK_RU_MESSAGEASE_SYMBOLS_SHIFTED =
 val KB_UK_RU_MESSAGEASE_SYMBOLS: KeyboardDefinition =
     KeyboardDefinition(
         title = "українська русский messagease symbols",
-        locales = listOf("uk", "ru"),
         modes =
             KeyboardDefinitionModes(
                 main = KB_UK_RU_MESSAGEASE_SYMBOLS_MAIN,

@@ -252,5 +252,4 @@ val KB_UK_MESSAGEASE_SYMBOLS: KeyboardDefinition =
                 shifted = KB_UK_MESSAGEASE_SYMBOLS_SHIFTED,
                 numeric = KB_EN_MESSAGEASE_NUMERIC,
             ),
-        locales = listOf("uk"),
     )

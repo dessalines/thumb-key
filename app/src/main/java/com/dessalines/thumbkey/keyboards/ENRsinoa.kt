@@ -190,7 +190,6 @@ val KB_EN_RSINOA_SHIFTED =
 val KB_EN_RSINOA: KeyboardDefinition =
     KeyboardDefinition(
         title = "english rsinoa",
-        locales = listOf("en"),
         modes =
             KeyboardDefinitionModes(
                 main = KB_EN_RSINOA_MAIN,

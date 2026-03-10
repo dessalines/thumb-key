@@ -247,5 +247,4 @@ val KB_CA_THUMBKEY: KeyboardDefinition =
                 shifted = KB_CA_THUMBKEY_SHIFTED,
                 numeric = NUMERIC_KEYBOARD,
             ),
-        locales = listOf("cr"),
     )
