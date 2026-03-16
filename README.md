@@ -183,7 +183,7 @@ This YAML configuration modifies the key in the second row, first column, center
   - `ctrled`
   - `alted`
 - `key1_0` specifies the key to modify. The first number is the row, and the second number is the column. The top row is 0, and the left column is 0.
-- `center` specifies which slide/touch direction of the key to modify. Possible values are:
+- `center` specifies which slide/touch direction of the key to modify. Possible values depend on the value of `swipeType` -- for `swipeType: EIGHT_WAY`, they are:
   - `center`
   - `left`
   - `topLeft`
@@ -201,11 +201,13 @@ This YAML configuration modifies the key in the second row, first column, center
 ENThumbKey:
   main:
     key0_0:
+      swipeType: EIGHT_WAY
       right: { text: ê }
       topRight: { text: è }
       top: { text: ę }
   shifted:
     key0_0:
+      swipeType: EIGHT_WAY
       right: { text: Ê }
       topRight: { text: È }
       top: { text: Ę }
@@ -232,6 +234,8 @@ ESCAMessagEase:
 
 - Two keyboards are modified: `ENThumbKey (english thumbkey)` and `ESCAMessagEase (español català messagease)`.
 - The first keyboard has both `main` and `shifted` modes modified.
+- Because we are adding swipe directions to letters in `ENThumbKey` which don't
+  have them by default, we must adjust `swipeType`.
 - The second keyboard uses the `size` property to specify the display size of the text. Possible values are:
   - `LARGE`
   - `SMALL`
