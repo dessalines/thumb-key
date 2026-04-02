@@ -389,6 +389,42 @@ fun performKeyAction(
                 ?: ime.currentInputConnection.sendKeyEvent(ev)
         }
 
+        // Alternative delete that uses deleteSurroundingText instead of KEYCODE_DEL.
+        // Some apps (like Google Chat) ignore key events from soft keyboards but respond
+        // to text manipulation. Users can assign this via YAML key modifications.
+        // Falls back to sendKeyEvent for TYPE_NULL editors (Termux, terminals).
+        // See: https://github.com/dessalines/thumb-key/issues/1065
+        is KeyAction.DeleteViaTextManipulation -> {
+            val ic = ime.currentInputConnection
+            val editorInfo = ime.currentInputEditorInfo
+            val inputType = editorInfo?.inputType ?: 0
+
+            if (inputType == EditorInfo.TYPE_NULL) {
+                // Raw editor (like Termux) - use key event
+                ic.sendKeyEvent(KeyEvent(KeyEvent.ACTION_DOWN, KeyEvent.KEYCODE_DEL))
+            } else {
+                val selectedText = ic.getSelectedText(0)
+                if (!selectedText.isNullOrEmpty()) {
+                    ic.commitText("", 1)
+                } else {
+                    val textBefore = ic.getTextBeforeCursor(50, 0)
+                    if (!textBefore.isNullOrEmpty()) {
+                        val bi = java.text.BreakIterator.getCharacterInstance()
+                        bi.setText(textBefore.toString())
+                        val end = bi.last()
+                        val start = bi.previous()
+                        val deleteCount =
+                            if (start == java.text.BreakIterator.DONE) {
+                                textBefore.length
+                            } else {
+                                end - start
+                            }
+                        ic.deleteSurroundingText(deleteCount, 0)
+                    }
+                }
+            }
+        }
+
         is KeyAction.DeleteWordBeforeCursor -> {
             Log.d(TAG, "deleting last word")
             keyboardSettings.textProcessor?.handleFinishInput(ime)
