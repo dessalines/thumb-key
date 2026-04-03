@@ -133,7 +133,7 @@ class IMEService :
          * https://developer.android.com/reference/android/inputmethodservice/InputMethodService#onEvaluateInputViewShown()
          */
         return super.onEvaluateInputViewShown() ||
-                showOnScreenKeyboard
+            showOnScreenKeyboard
     }
 
     // Disable the fullscreen text editor if set by the user
