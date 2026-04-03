@@ -10,6 +10,7 @@ import androidx.compose.foundation.verticalScroll
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.automirrored.outlined.HelpCenter
 import androidx.compose.material.icons.outlined.AppRegistration
+import androidx.compose.material.icons.outlined.Build
 import androidx.compose.material.icons.outlined.ContentPaste
 import androidx.compose.material.icons.outlined.Info
 import androidx.compose.material.icons.outlined.InstallMobile
@@ -186,6 +187,16 @@ fun SettingsScreen(
                             )
                         },
                         onClick = { navController.navigate("backupAndRestore") },
+                    )
+                    Preference(
+                        title = { Text(stringResource(R.string.other)) },
+                        icon = {
+                            Icon(
+                                imageVector = Icons.Outlined.Build,
+                                contentDescription = null,
+                            )
+                        },
+                        onClick = { navController.navigate("otherSettings") },
                     )
                     Preference(
                         title = { Text(stringResource(R.string.user_guide)) },

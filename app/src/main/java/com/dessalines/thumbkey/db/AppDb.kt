@@ -2,6 +2,7 @@ package com.dessalines.thumbkey.db
 
 import android.content.ContentValues
 import android.content.Context
+import com.dessalines.thumbkey.BuildConfig
 import android.database.sqlite.SQLiteDatabase.CONFLICT_IGNORE
 import android.util.Log
 import androidx.annotation.WorkerThread
@@ -73,6 +74,7 @@ const val DEFAULT_CLIPBOARD_MAX_SIZE = 20
 const val MIN_CLIPBOARD_MAX_SIZE = 2
 const val MAX_CLIPBOARD_MAX_SIZE = 100
 const val DEFAULT_USE_PRIVATE_CLIPBOARD = 0
+const val DEFAULT_SHOW_ON_SCREEN_KEYBOARD = 0
 
 @Entity
 data class AppSettings(
@@ -330,6 +332,11 @@ data class AppSettings(
         defaultValue = DEFAULT_USE_PRIVATE_CLIPBOARD.toString(),
     )
     val usePrivateClipboard: Int,
+    @ColumnInfo(
+        name = "show_on_screen_keyboard",
+        defaultValue = DEFAULT_SHOW_ON_SCREEN_KEYBOARD.toString(),
+    )
+    val showOnScreenKeyboard: Int,
 )
 
 data class LayoutsUpdate(
@@ -496,6 +503,12 @@ data class ClipboardSettingsUpdate(
     val usePrivateClipboard: Int,
 )
 
+data class OtherSettingsUpdate(
+    val id: Int,
+    @ColumnInfo(name = "show_on_screen_keyboard")
+    val showOnScreenKeyboard: Int,
+)
+
 @Dao
 interface AppSettingsDao {
     @Query("SELECT * FROM AppSettings limit 1")
@@ -521,6 +534,9 @@ interface AppSettingsDao {
 
     @Update(entity = AppSettings::class)
     fun updateClipboardSettings(clipboardSettings: ClipboardSettingsUpdate)
+
+    @Update(entity = AppSettings::class)
+    fun updateOtherSettings(otherSettings: OtherSettingsUpdate)
 
     @Query("UPDATE AppSettings SET last_version_code_viewed = :versionCode")
     suspend fun updateLastVersionCode(versionCode: Int)
@@ -569,6 +585,11 @@ class AppSettingsRepository(
     }
 
     @WorkerThread
+    fun updateOtherSettings(otherSettings: OtherSettingsUpdate) {
+        appSettingsDao.updateOtherSettings(otherSettings)
+    }
+
+    @WorkerThread
     suspend fun updateLastVersionCodeViewed(versionCode: Int) {
         appSettingsDao.updateLastVersionCode(versionCode)
     }
@@ -591,7 +612,7 @@ class AppSettingsRepository(
 }
 
 @Database(
-    version = 25,
+    version = 26,
     entities = [AppSettings::class],
     exportSchema = true,
 )
@@ -638,6 +659,7 @@ abstract class AppDB : RoomDatabase() {
                             MIGRATION_22_23,
                             MIGRATION_23_24,
                             MIGRATION_24_25,
+                            MIGRATION_25_26,
                         )
                         // Necessary because it can't insert data on creation
                         .addCallback(
@@ -651,6 +673,10 @@ abstract class AppDB : RoomDatabase() {
                                             CONFLICT_IGNORE,
                                             ContentValues(2).apply {
                                                 put("id", 1)
+                                                put(
+                                                    "show_on_screen_keyboard",
+                                                    if (BuildConfig.DEBUG) 1 else DEFAULT_SHOW_ON_SCREEN_KEYBOARD,
+                                                )
                                             },
                                         )
                                     }
@@ -699,6 +725,11 @@ class AppSettingsViewModel(
     fun updateClipboardSettings(clipboardSettings: ClipboardSettingsUpdate) =
         viewModelScope.launch {
             repository.updateClipboardSettings(clipboardSettings)
+        }
+
+    fun updateOtherSettings(otherSettings: OtherSettingsUpdate) =
+        viewModelScope.launch {
+            repository.updateOtherSettings(otherSettings)
         }
 
     fun updateLastVersionCodeViewed(versionCode: Int) =

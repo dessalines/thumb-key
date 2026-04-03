@@ -140,4 +140,8 @@
     <string name="clipboard_characters">%1$d characters</string>
     <string name="use_private_clipboard">Use private clipboard</string>
     <string name="use_private_clipboard_description">Copy into internal clipboard instead of system clipboard"</string>
+    <!-- Other -->
+    <string name="other">Other</string>
+    <string name="show_on_screen_keyboard">Show on-screen keyboard</string>
+    <string name="show_on_screen_keyboard_description">Show on-screen keyboard while using physical keyboard</string>
 </resources>

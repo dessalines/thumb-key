@@ -284,3 +284,12 @@ val MIGRATION_24_25 =
             )
         }
     }
+
+val MIGRATION_25_26 =
+    object : Migration(25, 26) {
+        override fun migrate(db: SupportSQLiteDatabase) {
+            db.execSQL(
+                "ALTER TABLE AppSettings ADD COLUMN show_on_screen_keyboard INTEGER NOT NULL DEFAULT $DEFAULT_SHOW_ON_SCREEN_KEYBOARD",
+            )
+        }
+    }
