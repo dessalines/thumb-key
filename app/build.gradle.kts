@@ -121,7 +121,7 @@ dependencies {
     implementation("androidx.emoji2:emoji2-emojipicker:1.6.0")
 
     // Markdown
-    implementation("com.github.jeziellago:compose-markdown:0.6.0")
+    implementation("com.github.jeziellago:compose-markdown:0.7.0")
 
     // Preferences
     implementation("me.zhanghai.compose.preference:library:1.1.1")
