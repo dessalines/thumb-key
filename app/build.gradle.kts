@@ -90,6 +90,7 @@ android {
 
     buildFeatures {
         compose = true
+        buildConfig = true
     }
     namespace = "com.dessalines.thumbkey"
 }
