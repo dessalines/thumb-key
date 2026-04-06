@@ -10,6 +10,7 @@ import com.charleskorn.kaml.AnchorsAndAliases
 import com.charleskorn.kaml.Yaml
 import com.charleskorn.kaml.YamlConfiguration
 import com.dessalines.thumbkey.keyboards.BACKSPACE_KEYC
+import com.dessalines.thumbkey.keyboards.BACKSPACE_TEXT_MANIPULATION_KEYC
 import com.dessalines.thumbkey.keyboards.COPY_KEYC
 import com.dessalines.thumbkey.keyboards.CUT_KEYC
 import com.dessalines.thumbkey.keyboards.DELETE_WORD_AFTER_CURSOR_KEYC
@@ -304,6 +305,7 @@ fun getCommonKeyCFromKeyAction(keyActionSerializable: KeyActionSerializable?): K
         KeyActionSerializable.Undo -> UNDO_KEYC
         KeyActionSerializable.Redo -> REDO_KEYC
         KeyActionSerializable.Delete -> BACKSPACE_KEYC
+        KeyActionSerializable.DeleteViaTextManipulation -> BACKSPACE_TEXT_MANIPULATION_KEYC
         KeyActionSerializable.DeleteWordBeforeCursor -> DELETE_WORD_BEFORE_CURSOR_KEYC
         KeyActionSerializable.DeleteWordAfterCursor -> DELETE_WORD_AFTER_CURSOR_KEYC
         KeyActionSerializable.SwitchLanguage -> SWITCH_LANGUAGE_KEYC
@@ -506,6 +508,7 @@ enum class KeyActionSerializable {
     PreviousWordBeforeCursor,
     NextWordAfterCursor,
     Delete,
+    DeleteViaTextManipulation,
     DeleteWordBeforeCursor,
     DeleteWordAfterCursor,
     Noop,

@@ -240,6 +240,13 @@ val BACKSPACE_KEYC =
         size = LARGE,
         color = SECONDARY,
     )
+val BACKSPACE_TEXT_MANIPULATION_KEYC =
+    KeyC(
+        display = KeyDisplay.IconDisplay(Icons.AutoMirrored.Outlined.KeyboardBackspace),
+        action = KeyAction.DeleteViaTextManipulation,
+        size = LARGE,
+        color = SECONDARY,
+    )
 val DELETE_WORD_BEFORE_CURSOR_KEYC =
     KeyC(
         DeleteWordBeforeCursor,
