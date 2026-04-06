@@ -1,3 +1,16 @@
+## What's Changed in 5.1.6
+
+- feat: add "show on-screen keyboard" setting by @Toldry in [#1834](https://github.com/dessalines/thumb-key/pull/1834)
+- feat: Add DeleteViaTextManipulation key action for apps that ignore KEYCODE_DEL by @brendanlong in [#1833](https://github.com/dessalines/thumb-key/pull/1833)
+- Update README examples to set `swipeType` by @mjkelly in [#1824](https://github.com/dessalines/thumb-key/pull/1824)
+
+## New Contributors
+
+- @brendanlong made their first contribution in [#1833](https://github.com/dessalines/thumb-key/pull/1833)
+- @mjkelly made their first contribution in [#1824](https://github.com/dessalines/thumb-key/pull/1824)
+
+**Full Changelog**: https://github.com/dessalines/thumb-key/compare/5.1.5...5.1.6
+
 ## What's Changed in 5.1.5
 
 - Revert "Spellcheck locale fix" by @dessalines in [#1819](https://github.com/dessalines/thumb-key/pull/1819)
@@ -1430,10 +1443,14 @@
 - Scaling down uppercase letters. Fixes #109 by @dessalines in [#611](https://github.com/dessalines/thumb-key/pull/611)
 - Added Italian translation by @flauta in [#610](https://github.com/dessalines/thumb-key/pull/610)
 - Upgrading compose to 1.5.7 by @dessalines in [#609](https://github.com/dessalines/thumb-key/pull/609)
-- double symbols prototype in [#608](https://github.com/dessalines/thumb-key/pull/608)
+- double symbols prototype by @alensiljak in [#608](https://github.com/dessalines/thumb-key/pull/608)
 - Adding svenska messageease. Fixes #601 by @dessalines in [#605](https://github.com/dessalines/thumb-key/pull/605)
 - Update ITThumbKey.kt by @flauta in [#603](https://github.com/dessalines/thumb-key/pull/603)
 - Adding release notes. by @dessalines
+
+## New Contributors
+
+- @alensiljak made their first contribution in [#608](https://github.com/dessalines/thumb-key/pull/608)
 
 **Full Changelog**: https://github.com/dessalines/thumb-key/compare/2.6.5...2.6.6
 
