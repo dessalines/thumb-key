@@ -127,11 +127,10 @@ class IMEService :
         val settings = settingsRepo.appSettings.getValue()
         val showOnScreenKeyboard =
             (settings?.showOnScreenKeyboard ?: DEFAULT_SHOW_ON_SCREEN_KEYBOARD).toBool()
-        /**
-         * Always call super implementation because Android docs says:
-         * "If you override this method you must call through to the superclass implementation."
-         * https://developer.android.com/reference/android/inputmethodservice/InputMethodService#onEvaluateInputViewShown()
-         */
+
+        // Always call super implementation because Android docs says:
+        // "If you override this method you must call through to the superclass implementation."
+        // https://developer.android.com/reference/android/inputmethodservice/InputMethodService#onEvaluateInputViewShown()
         return super.onEvaluateInputViewShown() ||
             showOnScreenKeyboard
     }
