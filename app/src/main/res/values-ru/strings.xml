@@ -8,9 +8,9 @@
     <string name="green">Зелёная</string>
     <string name="pink">Розовая</string>
     <string name="matrix">Матрично-чёрная</string>
-    <string name="srcery">Кудесническая</string>
+    <string name="srcery">Srcery</string>
     <string name="blue">Голубая</string>
-    <string name="dracula">Мрачная</string>
+    <string name="dracula">Dracula</string>
     <string name="twilight">Сумеречная</string>
     <string name="high_contrast">Высококонтрастная</string>
     <string name="high_contrast_colorful">Ярко контрастная</string>
@@ -138,4 +138,7 @@
     <string name="position_padding">Смещение позиции: %1$s</string>
     <string name="use_private_clipboard">Использовать защищённый буфер обмена</string>
     <string name="use_private_clipboard_description">Копирование происходит во внутренний буфер обмена вместо системного</string>
+    <string name="other">Другое</string>
+    <string name="show_on_screen_keyboard">Показывать экранную клавиатуру</string>
+    <string name="show_on_screen_keyboard_description">Отображение экранной клавиатуры при использовании физической клавиатуры</string>
 </resources>
