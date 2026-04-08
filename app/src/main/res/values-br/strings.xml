@@ -10,7 +10,7 @@
     <string name="matrix">Oged-AMOLED</string>
     <string name="srcery">Srcery</string>
     <string name="blue">Glas</string>
-    <string name="dracula">Dracula</string>
+    <string name="dracula">Drakula</string>
     <string name="twilight">Peuznoz</string>
     <string name="high_contrast">Dargemm uhel</string>
     <string name="high_contrast_colorful">Dargemm uhel livioù splann</string>
@@ -93,4 +93,8 @@
     <string name="database_restored">Stlennvon assavet.</string>
     <string name="database_backed_up">Stlennvon gwaredet.</string>
     <string name="backup_and_restore">Assav ha gwarediñ</string>
+    <string name="dual">Doubl</string>
+    <string name="duration_12_hours">12 eurvezh</string>
+    <string name="duration_1_day">1 devezh</string>
+    <string name="duration_2_days">2 zevezh</string>
 </resources>
