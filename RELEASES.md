@@ -1,3 +1,9 @@
+## What's Changed in 5.1.7
+
+- Adding freedroidwarn by @dessalines in [#1840](https://github.com/dessalines/thumb-key/pull/1840)
+
+**Full Changelog**: https://github.com/dessalines/thumb-key/compare/5.1.6...5.1.7
+
 ## What's Changed in 5.1.6
 
 - feat: add "show on-screen keyboard" setting by @Toldry in [#1834](https://github.com/dessalines/thumb-key/pull/1834)
