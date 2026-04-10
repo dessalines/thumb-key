@@ -96,6 +96,9 @@ android {
 }
 
 dependencies {
+    // Freedroidwarn
+    implementation("com.github.woheller69:FreeDroidWarn:V1.11")
+
     // Exporting / importing DB helper
     implementation("com.github.dessalines:room-db-export-import:0.1.0")
 
