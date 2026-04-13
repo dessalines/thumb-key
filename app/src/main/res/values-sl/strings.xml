@@ -138,4 +138,7 @@
     <string name="warning_invalid_mode">Način \"%s\" v razporeditvi \"%s\" ni določen.</string>
     <string name="use_private_clipboard">Zasebno odložišče</string>
     <string name="use_private_clipboard_description">Kopiraj v interno odložišče namesto v sistemskega</string>
+    <string name="other">Drugo</string>
+    <string name="show_on_screen_keyboard">Prikaži zaslonsko tipkovnico</string>
+    <string name="show_on_screen_keyboard_description">Prikaži zaslonsko tipkovnico tudi pri rabi fizične tipkovnice</string>
 </resources>
