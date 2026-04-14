@@ -136,4 +136,9 @@
     <string name="clipboard_disabled">Историята на клипборда е изключена</string>
     <string name="clipboard_go_to_settings">Към настройките на клипборда</string>
     <string name="clipboard_characters">%1$d знака</string>
+    <string name="use_private_clipboard">Използване на частен клипборд</string>
+    <string name="use_private_clipboard_description">Копиране във вътрешния клипборд вместо в системния</string>
+    <string name="other">Други</string>
+    <string name="show_on_screen_keyboard">Показване на екранната клавиатура</string>
+    <string name="show_on_screen_keyboard_description">Показване на екранната клавиатура при използване на физическа клавиатура</string>
 </resources>
