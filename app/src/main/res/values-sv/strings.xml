@@ -1,3 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <string name="settings">Inställningar</string>
+    <string name="system">System</string>
+    <string name="light">Ljust</string>
+    <string name="dark">Mörkt</string>
+    <string name="dynamic">Dynamiskt</string>
+    <string name="green">Grön</string>
+    <string name="pink">Rosa</string>
+    <string name="blue">Blå</string>
+    <string name="high_contrast">Hög kontrast</string>
+    <string name="center">Mitt</string>
+    <string name="right">Höger</string>
+    <string name="left">Vänster</string>
 </resources>
