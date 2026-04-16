@@ -455,6 +455,26 @@ fun performKeyAction(
             selectLineWithCursor(ime)
         }
 
+        is KeyAction.CursorToLineStart -> {
+            Log.d(TAG, "Cursor to line start")
+            cursorToLineStart(ime)
+        }
+
+        is KeyAction.CursorToLineEnd -> {
+            Log.d(TAG, "Cursor to line end")
+            cursorToLineEnd(ime)
+        }
+
+        is KeyAction.CursorToTextStart -> {
+            Log.d(TAG, "Cursor to text start")
+            cursorToTextStart(ime)
+        }
+
+        is KeyAction.CursorToTextEnd -> {
+            Log.d(TAG, "Cursor to text end")
+            cursorToTextEnd(ime)
+        }
+
         is KeyAction.ReplaceLastText -> {
             Log.d(TAG, "replacing last word")
             val text = action.text
@@ -1632,6 +1652,37 @@ fun moveCursor(
     val selection = startSelection(ime)
     selection.right(delta)
     ime.currentInputConnection.setSelection(selection.end, selection.end)
+}
+
+fun cursorToLineStart(ime: IMEService) {
+    ime.currentInputConnection.sendKeyEvent(
+        KeyEvent(KeyEvent.ACTION_DOWN, KeyEvent.KEYCODE_MOVE_HOME),
+    )
+    ime.currentInputConnection.sendKeyEvent(
+        KeyEvent(KeyEvent.ACTION_UP, KeyEvent.KEYCODE_MOVE_HOME),
+    )
+}
+
+fun cursorToLineEnd(ime: IMEService) {
+    ime.currentInputConnection.sendKeyEvent(
+        KeyEvent(KeyEvent.ACTION_DOWN, KeyEvent.KEYCODE_MOVE_END),
+    )
+    ime.currentInputConnection.sendKeyEvent(
+        KeyEvent(KeyEvent.ACTION_UP, KeyEvent.KEYCODE_MOVE_END),
+    )
+}
+
+fun cursorToTextStart(ime: IMEService) {
+    ime.currentInputConnection.setSelection(0, 0)
+}
+
+fun cursorToTextEnd(ime: IMEService) {
+    val ic = ime.currentInputConnection
+    // Sum text before and after the cursor to find the absolute end position.
+    // Using large limits to handle long documents; typical mobile content is well within range.
+    val before = ic.getTextBeforeCursor(1_000_000, 0)?.length ?: return
+    val after = ic.getTextAfterCursor(1_000_000, 0)?.length ?: return
+    ic.setSelection(before + after, before + after)
 }
 
 fun previousWordBeforeCursor(ime: IMEService) {

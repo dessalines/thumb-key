@@ -71,6 +71,7 @@ import com.dessalines.thumbkey.db.DEFAULT_SHOW_TOAST_ON_LAYOUT_SWITCH
 import com.dessalines.thumbkey.db.DEFAULT_SLIDE_BACKSPACE_DEADZONE_ENABLED
 import com.dessalines.thumbkey.db.DEFAULT_SLIDE_CURSOR_MOVEMENT_MODE
 import com.dessalines.thumbkey.db.DEFAULT_SLIDE_ENABLED
+import com.dessalines.thumbkey.db.DEFAULT_SLIDE_HOLD_ENABLED
 import com.dessalines.thumbkey.db.DEFAULT_SLIDE_SENSITIVITY
 import com.dessalines.thumbkey.db.DEFAULT_SLIDE_SPACEBAR_DEADZONE_ENABLED
 import com.dessalines.thumbkey.db.DEFAULT_SOUND_ON_TAP
@@ -280,6 +281,7 @@ private fun resetAppSettingsToDefault(appSettingsViewModel: AppSettingsViewModel
             clipboardMaxSize = DEFAULT_CLIPBOARD_MAX_SIZE,
             usePrivateClipboard = DEFAULT_USE_PRIVATE_CLIPBOARD,
             showOnScreenKeyboard = DEFAULT_SHOW_ON_SCREEN_KEYBOARD,
+            slideHoldEnabled = DEFAULT_SLIDE_HOLD_ENABLED,
         ),
     )
 }

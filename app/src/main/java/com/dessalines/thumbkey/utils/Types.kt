@@ -278,6 +278,14 @@ sealed class KeyAction {
 
     data object Redo : KeyAction()
 
+    data object CursorToLineStart : KeyAction()
+
+    data object CursorToLineEnd : KeyAction()
+
+    data object CursorToTextStart : KeyAction()
+
+    data object CursorToTextEnd : KeyAction()
+
     data object SwitchLanguage : KeyAction()
 
     data object SwitchIME : KeyAction()

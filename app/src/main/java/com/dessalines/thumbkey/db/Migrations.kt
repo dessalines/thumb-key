@@ -293,3 +293,12 @@ val MIGRATION_25_26 =
             )
         }
     }
+
+val MIGRATION_26_27 =
+    object : Migration(26, 27) {
+        override fun migrate(db: SupportSQLiteDatabase) {
+            db.execSQL(
+                "ALTER TABLE AppSettings ADD COLUMN slide_hold_enabled INTEGER NOT NULL DEFAULT $DEFAULT_SLIDE_HOLD_ENABLED",
+            )
+        }
+    }

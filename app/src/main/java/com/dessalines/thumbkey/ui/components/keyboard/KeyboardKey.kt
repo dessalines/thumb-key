@@ -2,6 +2,7 @@ package com.dessalines.thumbkey.ui.components.keyboard
 import android.content.Context
 import android.media.AudioManager
 import android.os.Build
+import android.util.Log
 import android.view.HapticFeedbackConstants
 import android.view.KeyEvent
 import androidx.compose.animation.AnimatedVisibility
@@ -63,24 +64,39 @@ import com.dessalines.thumbkey.utils.Selection
 import com.dessalines.thumbkey.utils.SlideType
 import com.dessalines.thumbkey.utils.SwipeDirection
 import com.dessalines.thumbkey.utils.SwipeNWay
+import com.dessalines.thumbkey.utils.TAG
 import com.dessalines.thumbkey.utils.buildTapActions
 import com.dessalines.thumbkey.utils.circularDirection
 import com.dessalines.thumbkey.utils.colorVariantToColor
+import com.dessalines.thumbkey.utils.deleteWordBeforeCursor
 import com.dessalines.thumbkey.utils.doneKeyAction
 import com.dessalines.thumbkey.utils.fontSizeVariantToFontSize
 import com.dessalines.thumbkey.utils.isPasswordField
+import com.dessalines.thumbkey.utils.nextWordAfterCursor
 import com.dessalines.thumbkey.utils.performKeyAction
+import com.dessalines.thumbkey.utils.previousWordBeforeCursor
 import com.dessalines.thumbkey.utils.pxToSp
 import com.dessalines.thumbkey.utils.slideCursorDistance
 import com.dessalines.thumbkey.utils.startSelection
 import com.dessalines.thumbkey.utils.swipeDirection
 import com.dessalines.thumbkey.utils.toPx
+import kotlinx.coroutines.currentCoroutineContext
+import kotlinx.coroutines.delay
+import kotlinx.coroutines.isActive
+import kotlinx.coroutines.launch
 import kotlin.math.abs
 import kotlin.math.max
 import kotlin.math.min
 import kotlin.time.Duration.Companion.seconds
 import kotlin.time.TimeMark
 import kotlin.time.TimeSource
+
+// magic number found from trial and error
+private const val DRAG_RETURN_THRESHOLD_FACTOR = 0.71f
+
+private const val SLIDE_HOLD_SLOW_TICK_THRESHOLD = 4 // number of ticks at the slow rate
+private const val SLIDE_HOLD_SLOW_TICK_DELAY_MS = 300L // ms between ticks during slow phase
+private const val SLIDE_HOLD_FAST_TICK_DELAY_MS = 100L // ms between ticks during fast phase
 
 @OptIn(ExperimentalFoundationApi::class)
 @Composable
@@ -133,6 +149,7 @@ fun KeyboardKey(
     circularDragEnabled: Boolean,
     clockwiseDragAction: CircularDragAction,
     counterclockwiseDragAction: CircularDragAction,
+    slideHoldEnabled: Boolean,
 ) {
     // Necessary for swipe settings to get updated correctly
     val id =
@@ -140,7 +157,8 @@ fun KeyboardKey(
             vibrateOnTap + vibrateOnSlide + soundOnTap + legendHeight + legendWidth + minSwipeLength +
             slideSensitivity + slideEnabled + slideCursorMovementMode + slideSpacebarDeadzoneEnabled +
             slideBackspaceDeadzoneEnabled + dragReturnEnabled + circularDragEnabled +
-            clockwiseDragAction.ordinal + counterclockwiseDragAction.ordinal
+            clockwiseDragAction.ordinal + counterclockwiseDragAction.ordinal +
+            slideHoldEnabled
 
     val ctx = LocalContext.current
     val ime = ctx as IMEService
@@ -172,6 +190,12 @@ fun KeyboardKey(
 
     var selection by remember { mutableStateOf(Selection()) }
 
+    // Slide-hold states
+    var slideHoldDirection by remember { mutableStateOf<SwipeDirection?>(null) }
+    var slideHoldReturnDetected by remember { mutableStateOf(false) }
+    var slideHoldTickCount by remember { mutableIntStateOf(0) }
+    var slideHoldRepeatJob by remember { mutableStateOf<kotlinx.coroutines.Job?>(null) }
+
     val backgroundColor =
         if (!(isDragged.value || isPressed)) {
             colorVariantToColor(colorVariant = key.backgroundColor)
@@ -184,6 +208,18 @@ fun KeyboardKey(
     val view = LocalView.current
     val audioManager = ctx.getSystemService(Context.AUDIO_SERVICE) as AudioManager
 
+    /**
+     * The type of haptic feedback to use when moving the cursor with slide
+     * gestures, based on the device's supported API.
+     */
+    val slideHapticConstant =
+        if (Build.VERSION.SDK_INT >= 27) {
+            HapticFeedbackConstants.TEXT_HANDLE_MOVE
+        } else {
+            // Compatible with API 24, but vibration will not distinguish between tap and slide
+            HapticFeedbackConstants.KEYBOARD_TAP
+        }
+
     LaunchedEffect(key1 = isPressed) {
         if (isPressed) {
             if (vibrateOnTap) {
@@ -193,6 +229,148 @@ fun KeyboardKey(
             }
             if (soundOnTap) {
                 audioManager.playSoundEffect(AudioManager.FX_KEY_CLICK, .1f)
+            }
+        }
+    }
+
+    suspend fun repeatCursorMovement(dir: SwipeDirection) {
+        var tickCount = 0
+        while (currentCoroutineContext().isActive) {
+            val delayMs =
+                if (tickCount < SLIDE_HOLD_SLOW_TICK_THRESHOLD) {
+                    SLIDE_HOLD_SLOW_TICK_DELAY_MS
+                } else {
+                    SLIDE_HOLD_FAST_TICK_DELAY_MS
+                }
+            delay(delayMs)
+            val keyCode =
+                when (dir) {
+                    SwipeDirection.LEFT -> {
+                        KeyEvent.KEYCODE_DPAD_LEFT
+                    }
+
+                    SwipeDirection.RIGHT -> {
+                        KeyEvent.KEYCODE_DPAD_RIGHT
+                    }
+
+                    else -> {
+                        // This should never happen)
+                        Log.d(TAG, "ERROR: Invalid swipe direction: $dir")
+                    }
+                }
+            if (slideHoldReturnDetected) {
+                if (dir == SwipeDirection.RIGHT) nextWordAfterCursor(ime) else previousWordBeforeCursor(ime)
+            } else {
+                ime.currentInputConnection.sendKeyEvent(KeyEvent(KeyEvent.ACTION_DOWN, keyCode))
+                ime.currentInputConnection.sendKeyEvent(KeyEvent(KeyEvent.ACTION_UP, keyCode))
+            }
+            tickCount++
+            slideHoldTickCount = tickCount
+            if (vibrateOnSlide) view.performHapticFeedback(slideHapticConstant)
+        }
+    }
+
+    suspend fun repeatDeleteAction() {
+        var tickCount = 0
+        while (currentCoroutineContext().isActive) {
+            val delayMs =
+                if (tickCount < SLIDE_HOLD_SLOW_TICK_THRESHOLD) {
+                    SLIDE_HOLD_SLOW_TICK_DELAY_MS
+                } else {
+                    SLIDE_HOLD_FAST_TICK_DELAY_MS
+                }
+            delay(delayMs)
+            if (slideHoldReturnDetected) {
+                deleteWordBeforeCursor(ime)
+            } else {
+                ime.currentInputConnection.sendKeyEvent(KeyEvent(KeyEvent.ACTION_DOWN, KeyEvent.KEYCODE_DEL))
+                ime.currentInputConnection.sendKeyEvent(KeyEvent(KeyEvent.ACTION_UP, KeyEvent.KEYCODE_DEL))
+            }
+            tickCount++
+            slideHoldTickCount = tickCount
+            if (vibrateOnSlide) view.performHapticFeedback(slideHapticConstant)
+        }
+    }
+
+    /**
+     * Resets all state variables associated with the slide-hold gesture.
+     *
+     * @return The number of ticks that occurred during the slide-hold before it was reset.
+     */
+    fun resetSlideHoldVariables(): Int {
+        // Always clean up slide-hold at drag end. Capture ticks before clearing
+        // so the branch below can decide whether the hold actually fired.
+        val slideHoldTicks = slideHoldTickCount
+        slideHoldRepeatJob?.cancel()
+        slideHoldRepeatJob = null
+        slideHoldDirection = null
+        slideHoldReturnDetected = false
+        slideHoldTickCount = 0
+        return slideHoldTicks
+    }
+
+    fun handleSlideHold() {
+        // Slide-hold: detect swipe direction, then
+        // repeat cursor movement (spacebar) or deletion (backspace) while held
+        val returnThreshold = minSwipeLength * DRAG_RETURN_THRESHOLD_FACTOR
+
+        if (slideHoldDirection != null) {
+            // Direction already detected; check for return gesture.
+            if (!slideHoldReturnDetected && maxOffset.getDistance() >= minSwipeLength) {
+                // Mirrors the drag-return detection in onDragEnd: the gesture qualifies as "slide-and-return" if either
+                // (a) it's close enough to the origin, or
+                // (b) it moved into a different cardinal direction from the max-offset direction.
+                val currentOffset = positions.lastOrNull() ?: Offset(offsetX, offsetY)
+                val closeEnough = currentOffset.getDistance() <= returnThreshold
+                val currentSwipeDirection =
+                    swipeDirection(
+                        currentOffset.x,
+                        currentOffset.y,
+                        minSwipeLength,
+                        SwipeNWay.FOUR_WAY_CROSS,
+                    )
+                val maxSwipeDirection =
+                    swipeDirection(
+                        maxOffset.x,
+                        maxOffset.y,
+                        minSwipeLength,
+                        SwipeNWay.FOUR_WAY_CROSS,
+                    )
+                val oppositeDirection = currentSwipeDirection != maxSwipeDirection
+                if (closeEnough || oppositeDirection) {
+                    slideHoldReturnDetected = true
+                }
+            }
+        } else {
+            // Try to detect cardinal swipe direction
+            val dir =
+                swipeDirection(
+                    offsetX,
+                    offsetY,
+                    minSwipeLength,
+                    SwipeNWay.FOUR_WAY_CROSS,
+                )
+            if (dir == null) {
+                return
+            }
+
+            slideHoldDirection = dir
+            when (key.slideType) {
+                SlideType.MOVE_CURSOR -> {
+                    if (dir == SwipeDirection.LEFT || dir == SwipeDirection.RIGHT) {
+                        // Launch repeating cursor movement coroutine
+                        slideHoldRepeatJob = scope.launch { repeatCursorMovement(dir) }
+                    }
+                }
+
+                SlideType.DELETE -> {
+                    // Backspace: only left-swipe is supported
+                    if (dir == SwipeDirection.LEFT) {
+                        slideHoldRepeatJob = scope.launch { repeatDeleteAction() }
+                    }
+                }
+
+                SlideType.NONE -> {}
             }
         }
     }
@@ -301,18 +479,6 @@ fun KeyboardKey(
                         // First detection is large enough to preserve swipe actions.
                         val slideOffsetTrigger = (keySize.dp.toPx() * 0.75) + minSwipeLength
 
-                        /**
-                         * The type of haptic feedback to use when moving the cursor with slide
-                         * gestures, based on the device's supported API.
-                         */
-                        val slideHapticConstant =
-                            if (Build.VERSION.SDK_INT >= 27) {
-                                HapticFeedbackConstants.TEXT_HANDLE_MOVE
-                            } else {
-                                // Compatible with API 24, but vibration will not distinguish between tap and slide
-                                HapticFeedbackConstants.KEYBOARD_TAP
-                            }
-
                         // These keys have a lot of functionality.
                         // We can tap; swipe; slide the cursor left/right; select and delete text
                         // Spacebar:
@@ -326,7 +492,9 @@ fun KeyboardKey(
                         //      Slide gesture delete
                         //          Wtih slide gesture deadzone to allow normal swipes
                         //          Without deadzone
-                        if (key.slideType == SlideType.MOVE_CURSOR && slideEnabled) {
+                        if ((key.slideType == SlideType.MOVE_CURSOR || key.slideType == SlideType.DELETE) && slideHoldEnabled) {
+                            handleSlideHold()
+                        } else if (key.slideType == SlideType.MOVE_CURSOR && slideEnabled) {
                             val slideSelectionOffsetTrigger = (keySize.dp.toPx() * 1.25) + minSwipeLength
                             if (abs(offsetY) > slideSelectionOffsetTrigger) {
                                 // If user slides upwards, enable selection
@@ -470,7 +638,15 @@ fun KeyboardKey(
                     onDragEnd = {
                         lateinit var action: KeyAction
 
-                        if (key.slideType == SlideType.NONE ||
+                        val slideHoldTicks = resetSlideHoldVariables()
+
+                        if ((key.slideType == SlideType.MOVE_CURSOR || key.slideType == SlideType.DELETE) &&
+                            slideHoldEnabled && slideHoldTicks > 0
+                        ) {
+                            // The repeat coroutine already handled all movement/deletion; nothing more to do.
+                            action = KeyAction.Noop
+                            doneKeyAction(scope, action, isDragged, releasedKey, animationHelperSpeed)
+                        } else if (key.slideType == SlideType.NONE ||
                             !slideEnabled ||
                             ((key.slideType == SlideType.DELETE) && !selection.active) ||
                             ((key.slideType == SlideType.MOVE_CURSOR) && !hasSlideMoveCursorTriggered)
@@ -480,7 +656,7 @@ fun KeyboardKey(
                             // offset where we recognize if the swipe is back to the initial key
                             // this offset needs to take the minSwipeLength into consideration. Otherwise
                             // just a little (1px) swipe back would trigger the DragReturn action
-                            val finalOffsetThreshold = minSwipeLength * 0.71f // magic number found from trial and error
+                            val finalOffsetThreshold = minSwipeLength * DRAG_RETURN_THRESHOLD_FACTOR // magic number found from trial and error
 
                             // offset needed, at which the swipe qualifies for DragReturn or Circular
                             // depending on minSwipeLength setting to have consistent swipe lengths or circle sizes
