@@ -69,7 +69,6 @@ val KB_NO_THUMBKEY_DATADRIVEN_MAIN =
             listOf(
                 KeyItemC(
                     center = KeyC("r", size = LARGE),
-                    swipeType = FOUR_WAY_DIAGONAL,
                     topRight = KeyC("g"),
                     right = KeyC("z"),
                 ),
@@ -84,7 +83,6 @@ val KB_NO_THUMBKEY_DATADRIVEN_MAIN =
                 ),
                 KeyItemC(
                     center = KeyC("e", size = LARGE),
-                    swipeType = FOUR_WAY_DIAGONAL,
                     topLeft = KeyC("f"),
                     top = KeyC("q"),
                     left = KeyC("x"),
@@ -160,7 +158,6 @@ val KB_NO_THUMBKEY_DATADRIVEN_SHIFTED =
             listOf(
                 KeyItemC(
                     center = KeyC("R", size = LARGE),
-                    swipeType = FOUR_WAY_DIAGONAL,
                     topRight = KeyC("G"),
                     right = KeyC("Z"),
                 ),
@@ -175,7 +172,6 @@ val KB_NO_THUMBKEY_DATADRIVEN_SHIFTED =
                 ),
                 KeyItemC(
                     center = KeyC("E", size = LARGE),
-                    swipeType = FOUR_WAY_DIAGONAL,
                     topLeft = KeyC("F"),
                     top = KeyC("Q"),
                     left = KeyC("X"),
