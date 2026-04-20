@@ -208,6 +208,9 @@ fun BehaviorScreen(
                         value = slideEnabledState,
                         onValueChange = {
                             slideEnabledState = it
+                            if (slideHoldEnabledState) {
+                                slideHoldEnabledState = false
+                            }
                             updateBehavior()
                         },
                         title = {
@@ -303,6 +306,29 @@ fun BehaviorScreen(
                             Icon(
                                 imageVector = Icons.AutoMirrored.Outlined.Backspace,
                                 contentDescription = stringResource(R.string.slide_backspace_deadzone_enable),
+                            )
+                        },
+                    )
+                    SwitchPreference(
+                        value = slideHoldEnabledState,
+                        onValueChange = {
+                            slideHoldEnabledState = it
+                            if (slideEnabledState) {
+                                slideEnabledState = false
+                            }
+
+                            updateBehavior()
+                        },
+                        title = {
+                            Text(stringResource(R.string.slide_hold_enable))
+                        },
+                        summary = {
+                            Text(stringResource(R.string.slide_hold_description))
+                        },
+                        icon = {
+                            Icon(
+                                imageVector = Icons.Outlined.SwipeRight,
+                                contentDescription = stringResource(R.string.slide_hold_enable),
                             )
                         },
                     )
@@ -405,25 +431,6 @@ fun BehaviorScreen(
                             Icon(
                                 imageVector = Icons.Outlined.BorderInner,
                                 contentDescription = stringResource(R.string.ghost_keys_enable),
-                            )
-                        },
-                    )
-                    SwitchPreference(
-                        value = slideHoldEnabledState,
-                        onValueChange = {
-                            slideHoldEnabledState = it
-                            updateBehavior()
-                        },
-                        title = {
-                            Text(stringResource(R.string.slide_hold_enable))
-                        },
-                        summary = {
-                            Text(stringResource(R.string.slide_hold_description))
-                        },
-                        icon = {
-                            Icon(
-                                imageVector = Icons.Outlined.SwipeRight,
-                                contentDescription = stringResource(R.string.slide_hold_enable),
                             )
                         },
                     )

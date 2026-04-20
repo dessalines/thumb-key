@@ -656,7 +656,7 @@ fun KeyboardKey(
                             // offset where we recognize if the swipe is back to the initial key
                             // this offset needs to take the minSwipeLength into consideration. Otherwise
                             // just a little (1px) swipe back would trigger the DragReturn action
-                            val finalOffsetThreshold = minSwipeLength * DRAG_RETURN_THRESHOLD_FACTOR // magic number found from trial and error
+                            val finalOffsetThreshold = minSwipeLength * DRAG_RETURN_THRESHOLD_FACTOR
 
                             // offset needed, at which the swipe qualifies for DragReturn or Circular
                             // depending on minSwipeLength setting to have consistent swipe lengths or circle sizes

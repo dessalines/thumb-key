@@ -1658,17 +1658,11 @@ fun cursorToLineStart(ime: IMEService) {
     ime.currentInputConnection.sendKeyEvent(
         KeyEvent(KeyEvent.ACTION_DOWN, KeyEvent.KEYCODE_MOVE_HOME),
     )
-    ime.currentInputConnection.sendKeyEvent(
-        KeyEvent(KeyEvent.ACTION_UP, KeyEvent.KEYCODE_MOVE_HOME),
-    )
 }
 
 fun cursorToLineEnd(ime: IMEService) {
     ime.currentInputConnection.sendKeyEvent(
         KeyEvent(KeyEvent.ACTION_DOWN, KeyEvent.KEYCODE_MOVE_END),
-    )
-    ime.currentInputConnection.sendKeyEvent(
-        KeyEvent(KeyEvent.ACTION_UP, KeyEvent.KEYCODE_MOVE_END),
     )
 }
 
