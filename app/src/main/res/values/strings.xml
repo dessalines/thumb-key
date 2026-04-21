@@ -94,6 +94,8 @@
     <string name="circular_drag_enable">Circular drag</string>
     <string name="ghost_keys_enable">Ghost keys</string>
     <string name="ghost_keys_description">Access hidden symbol keys without switching to numeric view</string>
+    <string name="slide_hold_enable">Slide-hold cursor movement</string>
+    <string name="slide_hold_description">Slide and hold to repeat cursor movement, slide-return-hold for word movement. Backspace: slide-hold to repeat delete, slide-return-hold for word delete.</string>
     <string name="backup_database">Backup database</string>
     <string name="restore_database">Restore database</string>
     <string name="restore_database_warning">Warning: This will clear out your current database</string>

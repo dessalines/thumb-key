@@ -17,6 +17,7 @@ import androidx.compose.material.icons.outlined.Circle
 import androidx.compose.material.icons.outlined.SpaceBar
 import androidx.compose.material.icons.outlined.SwapHoriz
 import androidx.compose.material.icons.outlined.Swipe
+import androidx.compose.material.icons.outlined.SwipeRight
 import androidx.compose.material.icons.outlined.UTurnRight
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.Icon
@@ -49,6 +50,7 @@ import com.dessalines.thumbkey.db.DEFAULT_MIN_SWIPE_LENGTH
 import com.dessalines.thumbkey.db.DEFAULT_SLIDE_BACKSPACE_DEADZONE_ENABLED
 import com.dessalines.thumbkey.db.DEFAULT_SLIDE_CURSOR_MOVEMENT_MODE
 import com.dessalines.thumbkey.db.DEFAULT_SLIDE_ENABLED
+import com.dessalines.thumbkey.db.DEFAULT_SLIDE_HOLD_ENABLED
 import com.dessalines.thumbkey.db.DEFAULT_SLIDE_SENSITIVITY
 import com.dessalines.thumbkey.db.DEFAULT_SLIDE_SPACEBAR_DEADZONE_ENABLED
 import com.dessalines.thumbkey.db.DEFAULT_SPACEBAR_MULTITAPS
@@ -97,6 +99,7 @@ fun BehaviorScreen(
     var counterclockwiseDragActionState =
         CircularDragAction.entries[settings?.counterclockwiseDragAction ?: DEFAULT_COUNTERCLOCKWISE_DRAG_ACTION]
     var ghostKeysEnabledState = (settings?.ghostKeysEnabled ?: DEFAULT_GHOST_KEYS_ENABLED).toBool()
+    var slideHoldEnabledState = (settings?.slideHoldEnabled ?: DEFAULT_SLIDE_HOLD_ENABLED).toBool()
 
     val snackbarHostState = remember { SnackbarHostState() }
 
@@ -121,6 +124,7 @@ fun BehaviorScreen(
                 clockwiseDragAction = clockwiseDragActionState.ordinal,
                 counterclockwiseDragAction = counterclockwiseDragActionState.ordinal,
                 ghostKeysEnabled = ghostKeysEnabledState.toInt(),
+                slideHoldEnabled = slideHoldEnabledState.toInt(),
             ),
         )
     }
@@ -204,6 +208,9 @@ fun BehaviorScreen(
                         value = slideEnabledState,
                         onValueChange = {
                             slideEnabledState = it
+                            if (slideHoldEnabledState) {
+                                slideHoldEnabledState = false
+                            }
                             updateBehavior()
                         },
                         title = {
@@ -299,6 +306,29 @@ fun BehaviorScreen(
                             Icon(
                                 imageVector = Icons.AutoMirrored.Outlined.Backspace,
                                 contentDescription = stringResource(R.string.slide_backspace_deadzone_enable),
+                            )
+                        },
+                    )
+                    SwitchPreference(
+                        value = slideHoldEnabledState,
+                        onValueChange = {
+                            slideHoldEnabledState = it
+                            if (slideEnabledState) {
+                                slideEnabledState = false
+                            }
+
+                            updateBehavior()
+                        },
+                        title = {
+                            Text(stringResource(R.string.slide_hold_enable))
+                        },
+                        summary = {
+                            Text(stringResource(R.string.slide_hold_description))
+                        },
+                        icon = {
+                            Icon(
+                                imageVector = Icons.Outlined.SwipeRight,
+                                contentDescription = stringResource(R.string.slide_hold_enable),
                             )
                         },
                     )

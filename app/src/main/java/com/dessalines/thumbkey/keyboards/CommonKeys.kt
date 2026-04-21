@@ -282,6 +282,20 @@ val BACKSPACE_KEY_ITEM =
 
 val BACKSPACE_WIDE_KEY_ITEM = BACKSPACE_KEY_ITEM.copy(widthMultiplier = 3)
 
+val SPACEBAR_TOP_KEYC =
+    KeyC(
+        action = CursorToLineStart,
+        swipeReturnAction = CursorToTextStart,
+        display = null,
+    )
+
+val SPACEBAR_BOTTOM_KEYC =
+    KeyC(
+        action = CursorToLineEnd,
+        swipeReturnAction = CursorToTextEnd,
+        display = null,
+    )
+
 val SPACEBAR_LEFT_KEYC =
     KeyC(
         action =
@@ -319,6 +333,8 @@ val SPACEBAR_KEY_ITEM =
         center = SPACEBAR_CENTER_KEYC,
         swipeType = SwipeNWay.EIGHT_WAY,
         slideType = SlideType.MOVE_CURSOR,
+        top = SPACEBAR_TOP_KEYC,
+        bottom = SPACEBAR_BOTTOM_KEYC,
         left = SPACEBAR_LEFT_KEYC,
         right = SPACEBAR_RIGHT_KEYC,
         bottomLeft = PREVIOUS_WORD_BEFORE_CURSOR_KEYC,
@@ -330,7 +346,7 @@ val SPACEBAR_KEY_ITEM =
 val SPACEBAR_SKINNY_KEY_ITEM = SPACEBAR_KEY_ITEM.copy(widthMultiplier = 1)
 val SPACEBAR_DOUBLE_KEY_ITEM = SPACEBAR_KEY_ITEM.copy(widthMultiplier = 2)
 
-val SPACEBAR_TOP_KEYC =
+val SPACEBAR_PROGRAMMING_TOP_KEYC =
     KeyC(
         action =
             SendEvent(
@@ -341,7 +357,7 @@ val SPACEBAR_TOP_KEYC =
             ),
         display = null,
     )
-val SPACEBAR_BOTTOM_KEYC =
+val SPACEBAR_PROGRAMMING_BOTTOM_KEYC =
     KeyC(
         action =
             SendEvent(
@@ -359,8 +375,8 @@ val SPACEBAR_PROGRAMMING_KEY_ITEM =
         slideType = SlideType.MOVE_CURSOR,
         left = SPACEBAR_LEFT_KEYC,
         right = SPACEBAR_RIGHT_KEYC,
-        top = SPACEBAR_TOP_KEYC,
-        bottom = SPACEBAR_BOTTOM_KEYC,
+        top = SPACEBAR_PROGRAMMING_TOP_KEYC,
+        bottom = SPACEBAR_PROGRAMMING_BOTTOM_KEYC,
         backgroundColor = SURFACE_VARIANT,
         widthMultiplier = 3,
     )
@@ -463,8 +479,8 @@ val SPACEBAR_ALL_DIRECTIONS =
     SPACEBAR_TYPESPLIT_MIDDLE_KEY_ITEM.copy(
         left = SPACEBAR_LEFT_KEYC.copy(display = KeyDisplay.TextDisplay("←"), color = MUTED),
         right = SPACEBAR_RIGHT_KEYC.copy(display = KeyDisplay.TextDisplay("→"), color = MUTED),
-        top = SPACEBAR_TOP_KEYC.copy(display = KeyDisplay.TextDisplay("↑"), color = MUTED),
-        bottom = SPACEBAR_BOTTOM_KEYC.copy(display = KeyDisplay.TextDisplay("↓"), color = MUTED),
+        top = SPACEBAR_PROGRAMMING_TOP_KEYC.copy(display = KeyDisplay.TextDisplay("↑"), color = MUTED),
+        bottom = SPACEBAR_PROGRAMMING_BOTTOM_KEYC.copy(display = KeyDisplay.TextDisplay("↓"), color = MUTED),
     )
 
 val BACKSPACE_TYPESPLIT_KEY_ITEM =
