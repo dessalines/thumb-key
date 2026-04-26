@@ -38,7 +38,7 @@
     <string name="theme">Thème</string>
     <string name="theme_color">Couleur du thème</string>
     <string name="position">Position</string>
-    <string name="position_padding">Décalage ajouté à la position: %1$s</string>
+    <string name="position_padding">Décalage ajouté à la position : %1$s</string>
     <string name="vibrate_on_tap">Vibration au toucher</string>
     <string name="vibrate_warning">Nécessite d’activer Vibrer à l’appui dans les paramètres du téléphone</string>
     <string name="play_sound_on_tap">Son au toucher</string>
@@ -105,7 +105,7 @@
     <string name="clipboard_history_enabled">Activer l\'historique du presse-papier</string>
     <string name="clipboard_history_enabled_description">Enregistrer le texte copié pour un accès rapide</string>
     <string name="clipboard_auto_cleanup">Effacer automatiquement les veux enregistrements</string>
-    <string name="clipboard_auto_cleanup_description">Supprimer automatiquement les enregistrement non épinglés</string>
+    <string name="clipboard_auto_cleanup_description">Supprimer automatiquement les anciens enregistrement non épinglés</string>
     <string name="clipboard_cleanup_after">Effacer après %1$s</string>
     <string name="duration_5_minutes">5 minutes</string>
     <string name="duration_10_minutes">10 minutes</string>
@@ -120,7 +120,7 @@
     <string name="duration_7_days">7 jours</string>
     <string name="clipboard_size_limit">Taille de l\'historique</string>
     <string name="clipboard_size_limit_description">Supprimer les enregistrements les plus vieux lorsque la limite est atteinte</string>
-    <string name="clipboard_max_size">Taille max de l\'historique: %1$d</string>
+    <string name="clipboard_max_size">Taille max de l\'historique : %1$d</string>
     <string name="clipboard_clear_all">Tout effacer</string>
     <string name="clipboard_back">Retour</string>
     <string name="clipboard_pin">Épingler</string>
@@ -133,5 +133,14 @@
     <string name="clipboard_characters">%1$d caractères</string>
     <string name="vibrate_slide_warning">Nécessite d\'activer les gestes de glissement dans les paramètres de comportement</string>
     <string name="vibrate_on_slide">Vibration lors des gestes de glissement</string>
-    <string name="vibrate_slide_note">Appliquer lors des balayages sur la touche espace ou retour</string>
+    <string name="vibrate_slide_note">S\'applique lors des balayages sur la touche espace ou retour</string>
+    <string name="slide_hold_enable">Mouvements du curseur glissé-maintenu</string>
+    <string name="slide_hold_description">Glissez et maintenez pour répéter le mouvement du curseur, glissez, maintenez et retournez pour un mouvement d\'un mot. Effacer : glissez et maintenz pour répéter \"effacer\", glissez, maintenez et retournez pour supprimer un mot.</string>
+    <string name="show_toast_on_layout_switch">Afficher un toast lorque vous changez de disposition</string>
+    <string name="disable_fullscreen_editor">Désactiver l\'éditeur en plein écran</string>
+    <string name="use_private_clipboard">Utiliser le presse papier privé</string>
+    <string name="use_private_clipboard_description">Copier dans le presse papier privé, au lieu de celui du système</string>
+    <string name="other">Autre</string>
+    <string name="show_on_screen_keyboard">Afficher le clavier virtuel</string>
+    <string name="show_on_screen_keyboard_description">Afficher le clavier virtuel lors de l\'utilisation du clavier pysique</string>
 </resources>
