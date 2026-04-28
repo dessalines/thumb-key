@@ -1330,11 +1330,13 @@ fun performKeyAction(
         KeyAction.Copy -> {
             fun performCopy() {
                 if (ime.clipboardUsePrivate()) {
-                    val text = ime.currentInputConnection.getSelectedText(0).toString()
-                    ime.clipboardAddPrivateClip(text)?.let {
-                        // Text successfully added to clipboard history
-                        val message = ime.getString(R.string.copy)
-                        Toast.makeText(ime, message, Toast.LENGTH_SHORT).show()
+                    val text = ime.currentInputConnection.getSelectedText(0)
+                    if (text != null) {
+                        ime.clipboardAddPrivateClip(text.toString())?.let {
+                            // Text successfully added to clipboard history
+                            val message = ime.getString(R.string.copy)
+                            Toast.makeText(ime, message, Toast.LENGTH_SHORT).show()
+                        }
                     }
                 } else {
                     ime.currentInputConnection.performContextMenuAction(android.R.id.copy)
