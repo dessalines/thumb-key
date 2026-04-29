@@ -141,4 +141,6 @@
     <string name="other">Drugo</string>
     <string name="show_on_screen_keyboard">Prikaži zaslonsko tipkovnico</string>
     <string name="show_on_screen_keyboard_description">Prikaži zaslonsko tipkovnico tudi pri rabi fizične tipkovnice</string>
+    <string name="slide_hold_enable">Premikanje kazalca \"podrsaj-zadrži\"</string>
+    <string name="slide_hold_description">Podrsaj in zadrži: ponovi premik kazalca. Podrsaj-vrni-zadrži: premikanje po besedah. Vračalka: podrsaj in zadrži: ponovi brisanje.Podrsaj-vrni-zadrži: izbriši besedo.</string>
 </resources>
