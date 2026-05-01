@@ -225,6 +225,11 @@ sealed class KeyAction {
         val text: String,
     ) : KeyAction()
 
+    class NormalizeLastKey(
+        val text: String,
+        val form: java.text.Normalizer.Form? = java.text.Normalizer.Form.NFC,
+    ) : KeyAction()
+
     class SmartQuotes(
         val start: String,
         val end: String,

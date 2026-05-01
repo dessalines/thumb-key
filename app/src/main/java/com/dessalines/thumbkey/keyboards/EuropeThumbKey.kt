@@ -21,7 +21,11 @@ val KB_EUROPE_THUMBKEY_MAIN =
                     topRight = KeyC("»", color = MUTED),
                     left = KeyC("¿", color = MUTED),
                     right = KeyC("?", color = MUTED),
-                    bottomLeft = KeyC("\u0304", displayText = "◌̄"),
+                    bottomLeft =
+                        KeyC(
+                            display = KeyDisplay.TextDisplay("◌̄"),
+                            action = NormalizeLastKey("\u0304"),
+                        ),
                     bottomRight =
                         KeyC(
                             CommitText("p"),
@@ -43,20 +47,36 @@ val KB_EUROPE_THUMBKEY_MAIN =
                 KeyItemC(
                     center = KeyC("i", size = LARGE),
                     swipeType = FOUR_WAY_DIAGONAL,
-                    topLeft = KeyC("\u0303", displayText = "◌̃"),
-                    topRight = KeyC("\u0306", displayText = "◌̆"),
+                    topLeft =
+                        KeyC(
+                            display = KeyDisplay.TextDisplay("◌̃"),
+                            action = NormalizeLastKey("\u0303"),
+                        ),
+                    topRight =
+                        KeyC(
+                            display = KeyDisplay.TextDisplay("◌̆"),
+                            action = NormalizeLastKey("\u0306"),
+                        ),
                     bottomLeft =
                         KeyC(
                             CommitText("m"),
                         ),
-                    bottomRight = KeyC("\u030c", displayText = "◌̌"),
+                    bottomRight =
+                        KeyC(
+                            display = KeyDisplay.TextDisplay("◌̌"),
+                            action = NormalizeLastKey("\u030c"),
+                        ),
                 ),
                 EMOJI_KEY_ITEM,
             ),
             listOf(
                 KeyItemC(
                     center = KeyC("t", size = LARGE),
-                    topLeft = KeyC("\u0313", displayText = "◌̓"),
+                    topLeft =
+                        KeyC(
+                            display = KeyDisplay.TextDisplay("◌̓"),
+                            action = NormalizeLastKey("\u0313"),
+                        ),
                     top =
                         KeyC(
                             // PER MILLE SIGN
@@ -64,7 +84,11 @@ val KB_EUROPE_THUMBKEY_MAIN =
                             action = CommitText("\u2030"),
                             color = MUTED,
                         ),
-                    topRight = KeyC("\u0326", displayText = "◌̦"),
+                    topRight =
+                        KeyC(
+                            display = KeyDisplay.TextDisplay("◌̦"),
+                            action = NormalizeLastKey("\u0326"),
+                        ),
                     left =
                         KeyC(
                             // DAGGER
@@ -76,7 +100,11 @@ val KB_EUROPE_THUMBKEY_MAIN =
                         KeyC(
                             CommitText("h"),
                         ),
-                    bottomLeft = KeyC("\u030f", displayText = "◌̏"),
+                    bottomLeft =
+                        KeyC(
+                            display = KeyDisplay.TextDisplay("◌̏"),
+                            action = NormalizeLastKey("\u030f"),
+                        ),
                     bottom =
                         KeyC(
                             // PLUS-MINUS SIGN
@@ -84,7 +112,11 @@ val KB_EUROPE_THUMBKEY_MAIN =
                             action = CommitText("\u00b1"),
                             color = MUTED,
                         ),
-                    bottomRight = KeyC("\u0307", displayText = "◌̇"),
+                    bottomRight =
+                        KeyC(
+                            display = KeyDisplay.TextDisplay("◌̇"),
+                            action = NormalizeLastKey("\u0307"),
+                        ),
                 ),
                 KeyItemC(
                     center = KeyC("r", size = LARGE),
@@ -123,8 +155,16 @@ val KB_EUROPE_THUMBKEY_MAIN =
                 ),
                 KeyItemC(
                     center = KeyC("a", size = LARGE),
-                    topLeft = KeyC("\u030a", displayText = "◌̊"),
-                    topRight = KeyC("\u0328", displayText = "◌̨"),
+                    topLeft =
+                        KeyC(
+                            display = KeyDisplay.TextDisplay("◌̊"),
+                            action = NormalizeLastKey("\u030a"),
+                        ),
+                    topRight =
+                        KeyC(
+                            display = KeyDisplay.TextDisplay("◌̨"),
+                            action = NormalizeLastKey("\u0328"),
+                        ),
                     left =
                         KeyC(
                             CommitText("u"),
@@ -141,9 +181,21 @@ val KB_EUROPE_THUMBKEY_MAIN =
                             ToggleShiftMode(false),
                             swipeReturnAction = ToggleCurrentWordCapitalization(false),
                         ),
-                    bottomLeft = KeyC("\u0312", displayText = "◌̒"),
-                    right = KeyC("\u0308", displayText = "◌̈"),
-                    bottomRight = KeyC("\u0327", displayText = "◌̧"),
+                    bottomLeft =
+                        KeyC(
+                            display = KeyDisplay.TextDisplay("◌̒"),
+                            action = NormalizeLastKey("\u0312"),
+                        ),
+                    right =
+                        KeyC(
+                            display = KeyDisplay.TextDisplay("◌̈"),
+                            action = NormalizeLastKey("\u0308"),
+                        ),
+                    bottomRight =
+                        KeyC(
+                            display = KeyDisplay.TextDisplay("◌̧"),
+                            action = NormalizeLastKey("\u0327"),
+                        ),
                 ),
                 NUMERIC_KEY_ITEM,
             ),
@@ -209,14 +261,30 @@ val KB_EUROPE_THUMBKEY_MAIN =
                         KeyC(
                             CommitText("d"),
                         ),
-                    topRight = KeyC("\u0300", displayText = "◌̀"),
+                    topRight =
+                        KeyC(
+                            display = KeyDisplay.TextDisplay("◌̀"),
+                            action = NormalizeLastKey("\u0300"),
+                        ),
                     left =
                         KeyC(
                             CommitText("ß"),
                         ),
-                    right = KeyC("\u0302", displayText = "◌̂"),
-                    bottomLeft = KeyC("\u030b", displayText = "◌̋"),
-                    bottomRight = KeyC("\u0301", displayText = "◌́"),
+                    right =
+                        KeyC(
+                            display = KeyDisplay.TextDisplay("◌̂"),
+                            action = NormalizeLastKey("\u0302"),
+                        ),
+                    bottomLeft =
+                        KeyC(
+                            display = KeyDisplay.TextDisplay("◌̋"),
+                            action = NormalizeLastKey("\u030b"),
+                        ),
+                    bottomRight =
+                        KeyC(
+                            display = KeyDisplay.TextDisplay("◌́"),
+                            action = NormalizeLastKey("\u0301"),
+                        ),
                 ),
                 BACKSPACE_KEY_ITEM,
             ),
@@ -238,7 +306,11 @@ val KB_EUROPE_THUMBKEY_SHIFTED =
                     topRight = KeyC("»", color = MUTED),
                     left = KeyC("¿", color = MUTED),
                     right = KeyC("?", color = MUTED),
-                    bottomLeft = KeyC("\u0304", displayText = "◌̄"),
+                    bottomLeft =
+                        KeyC(
+                            display = KeyDisplay.TextDisplay("◌̄"),
+                            action = NormalizeLastKey("\u0304"),
+                        ),
                     bottomRight =
                         KeyC(
                             CommitText("P"),
@@ -260,20 +332,36 @@ val KB_EUROPE_THUMBKEY_SHIFTED =
                 KeyItemC(
                     center = KeyC("I", size = LARGE),
                     swipeType = FOUR_WAY_DIAGONAL,
-                    topLeft = KeyC("\u0303", displayText = "◌̃"),
-                    topRight = KeyC("\u0306", displayText = "◌̆"),
+                    topLeft =
+                        KeyC(
+                            display = KeyDisplay.TextDisplay("◌̃"),
+                            action = NormalizeLastKey("\u0303"),
+                        ),
+                    topRight =
+                        KeyC(
+                            display = KeyDisplay.TextDisplay("◌̆"),
+                            action = NormalizeLastKey("\u0306"),
+                        ),
                     bottomLeft =
                         KeyC(
                             CommitText("M"),
                         ),
-                    bottomRight = KeyC("\u030c", displayText = "◌̌"),
+                    bottomRight =
+                        KeyC(
+                            display = KeyDisplay.TextDisplay("◌̌"),
+                            action = NormalizeLastKey("\u030c"),
+                        ),
                 ),
                 EMOJI_KEY_ITEM,
             ),
             listOf(
                 KeyItemC(
                     center = KeyC("T", size = LARGE),
-                    topLeft = KeyC("\u0313", displayText = "◌̓"),
+                    topLeft =
+                        KeyC(
+                            display = KeyDisplay.TextDisplay("◌̓"),
+                            action = NormalizeLastKey("\u0313"),
+                        ),
                     top =
                         KeyC(
                             // PER MILLE SIGN
@@ -281,7 +369,11 @@ val KB_EUROPE_THUMBKEY_SHIFTED =
                             action = CommitText("\u2030"),
                             color = MUTED,
                         ),
-                    topRight = KeyC("\u0326", displayText = "◌̦"),
+                    topRight =
+                        KeyC(
+                            display = KeyDisplay.TextDisplay("◌̦"),
+                            action = NormalizeLastKey("\u0326"),
+                        ),
                     left =
                         KeyC(
                             // DOUBLE DAGGER
@@ -293,7 +385,11 @@ val KB_EUROPE_THUMBKEY_SHIFTED =
                         KeyC(
                             CommitText("H"),
                         ),
-                    bottomLeft = KeyC("\u030f", displayText = "◌̏"),
+                    bottomLeft =
+                        KeyC(
+                            display = KeyDisplay.TextDisplay("◌̏"),
+                            action = NormalizeLastKey("\u030f"),
+                        ),
                     bottom =
                         KeyC(
                             // PLUS-MINUS SIGN
@@ -301,7 +397,11 @@ val KB_EUROPE_THUMBKEY_SHIFTED =
                             action = CommitText("\u00b1"),
                             color = MUTED,
                         ),
-                    bottomRight = KeyC("\u0307", displayText = "◌̇"),
+                    bottomRight =
+                        KeyC(
+                            display = KeyDisplay.TextDisplay("◌̇"),
+                            action = NormalizeLastKey("\u0307"),
+                        ),
                 ),
                 KeyItemC(
                     center = KeyC("R", size = LARGE),
@@ -340,8 +440,16 @@ val KB_EUROPE_THUMBKEY_SHIFTED =
                 ),
                 KeyItemC(
                     center = KeyC("A", size = LARGE),
-                    topLeft = KeyC("\u030a", displayText = "◌̊"),
-                    topRight = KeyC("\u0328", displayText = "◌̨"),
+                    topLeft =
+                        KeyC(
+                            display = KeyDisplay.TextDisplay("◌̊"),
+                            action = NormalizeLastKey("\u030a"),
+                        ),
+                    topRight =
+                        KeyC(
+                            display = KeyDisplay.TextDisplay("◌̨"),
+                            action = NormalizeLastKey("\u0328"),
+                        ),
                     left =
                         KeyC(
                             CommitText("U"),
@@ -361,9 +469,21 @@ val KB_EUROPE_THUMBKEY_SHIFTED =
                             swipeReturnAction = ToggleCurrentWordCapitalization(false),
                             color = MUTED,
                         ),
-                    bottomLeft = KeyC("\u0312", displayText = "◌̒"),
-                    right = KeyC("\u0308", displayText = "◌̈"),
-                    bottomRight = KeyC("\u0327", displayText = "◌̧"),
+                    bottomLeft =
+                        KeyC(
+                            display = KeyDisplay.TextDisplay("◌̒"),
+                            action = NormalizeLastKey("\u0312"),
+                        ),
+                    right =
+                        KeyC(
+                            display = KeyDisplay.TextDisplay("◌̈"),
+                            action = NormalizeLastKey("\u0308"),
+                        ),
+                    bottomRight =
+                        KeyC(
+                            display = KeyDisplay.TextDisplay("◌̧"),
+                            action = NormalizeLastKey("\u0327"),
+                        ),
                 ),
                 NUMERIC_KEY_ITEM,
             ),
@@ -426,14 +546,30 @@ val KB_EUROPE_THUMBKEY_SHIFTED =
                         KeyC(
                             CommitText("D"),
                         ),
-                    topRight = KeyC("\u0300", displayText = "◌̀"),
+                    topRight =
+                        KeyC(
+                            display = KeyDisplay.TextDisplay("◌̀"),
+                            action = NormalizeLastKey("\u0300"),
+                        ),
                     left =
                         KeyC(
                             CommitText("ẞ"),
                         ),
-                    right = KeyC("\u0302", displayText = "◌̂"),
-                    bottomLeft = KeyC("\u030b", displayText = "◌̋"),
-                    bottomRight = KeyC("\u0301", displayText = "◌́"),
+                    right =
+                        KeyC(
+                            display = KeyDisplay.TextDisplay("◌̂"),
+                            action = NormalizeLastKey("\u0302"),
+                        ),
+                    bottomLeft =
+                        KeyC(
+                            display = KeyDisplay.TextDisplay("◌̋"),
+                            action = NormalizeLastKey("\u030b"),
+                        ),
+                    bottomRight =
+                        KeyC(
+                            display = KeyDisplay.TextDisplay("◌́"),
+                            action = NormalizeLastKey("\u0301"),
+                        ),
                 ),
                 BACKSPACE_KEY_ITEM,
             ),

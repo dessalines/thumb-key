@@ -1208,6 +1208,20 @@ fun performKeyAction(
             }
         }
 
+        is KeyAction.NormalizeLastKey -> {
+            Log.d(TAG, "combining last key")
+            val mark = action.text
+            val form = action.form
+            val textBefore = ime.currentInputConnection.getTextBeforeCursor(1, 0)
+
+            val textNew = java.text.Normalizer.normalize("$textBefore$mark", form)
+
+            if (textNew != textBefore) {
+                ime.currentInputConnection.deleteSurroundingText(1, 0)
+                ime.currentInputConnection.commitText(textNew, 1)
+            }
+        }
+
         is KeyAction.ToggleShiftMode -> {
             val enable = action.enable
             Log.d(TAG, "Toggling Shifted: $enable")
