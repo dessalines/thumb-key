@@ -1,3 +1,14 @@
+## What's Changed in 5.1.9
+
+- New layout for Sakha (sah) language based on Thumb-Key Writer by @kyraha in [#1879](https://github.com/dessalines/thumb-key/pull/1879)
+- Normalize characters in the European layout (#1828) by @marekjm in [#1873](https://github.com/dessalines/thumb-key/pull/1873)
+
+## New Contributors
+
+- @kyraha made their first contribution in [#1879](https://github.com/dessalines/thumb-key/pull/1879)
+
+**Full Changelog**: https://github.com/dessalines/thumb-key/compare/5.1.8...5.1.9
+
 ## What's Changed in 5.1.8
 
 - fix: handle null case when getting selected text content via java cla… by @Elnix90 in [#1867](https://github.com/dessalines/thumb-key/pull/1867)
