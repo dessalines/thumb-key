@@ -46,7 +46,6 @@ val KB_EUROPE_THUMBKEY_MAIN =
                 ),
                 KeyItemC(
                     center = KeyC("i", size = LARGE),
-                    swipeType = FOUR_WAY_DIAGONAL,
                     topLeft =
                         KeyC(
                             display = KeyDisplay.TextDisplay("◌̃"),
@@ -65,6 +64,10 @@ val KB_EUROPE_THUMBKEY_MAIN =
                         KeyC(
                             display = KeyDisplay.TextDisplay("◌̌"),
                             action = NormalizeLastKey("\u030c"),
+                        ),
+                    top =
+                        KeyC(
+                            CommitText("ı"),
                         ),
                 ),
                 EMOJI_KEY_ITEM,
@@ -331,7 +334,6 @@ val KB_EUROPE_THUMBKEY_SHIFTED =
                 ),
                 KeyItemC(
                     center = KeyC("I", size = LARGE),
-                    swipeType = FOUR_WAY_DIAGONAL,
                     topLeft =
                         KeyC(
                             display = KeyDisplay.TextDisplay("◌̃"),
@@ -350,6 +352,10 @@ val KB_EUROPE_THUMBKEY_SHIFTED =
                         KeyC(
                             display = KeyDisplay.TextDisplay("◌̌"),
                             action = NormalizeLastKey("\u030c"),
+                        ),
+                    top =
+                        KeyC(
+                            CommitText("İ"),
                         ),
                 ),
                 EMOJI_KEY_ITEM,
