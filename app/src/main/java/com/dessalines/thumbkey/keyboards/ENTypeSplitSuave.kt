@@ -164,7 +164,7 @@ val SUAVE_BOTTOM_ROW_CTRLED = listOf(
             KeyC(
                 display = KeyDisplay.TextDisplay("Ctrl"),
                 action = ToggleCtrlMode(false),
-                color = SECONDARY,
+                color = PRIMARY,
             ),
         right =
             KeyC(
@@ -474,6 +474,7 @@ val KB_EN_TYPESPLIT_SUAVE_CTRLED =
                     right = keyCModifier(KeyEvent.META_CTRL_ON, KeyEvent.KEYCODE_2, "2", color = MUTED),
                     bottom = keyCModifier(KeyEvent.META_CTRL_ON, KeyEvent.KEYCODE_O, "ö"),
                     left = KeyC(""),
+                    backgroundColor = SURFACE_VARIANT,
                 ),
                 KeyItemC(
                     center = keyCModifier(KeyEvent.META_CTRL_ON, KeyEvent.KEYCODE_R, "r", size = LARGE),
@@ -482,6 +483,7 @@ val KB_EN_TYPESPLIT_SUAVE_CTRLED =
                     right = keyCModifier(KeyEvent.META_CTRL_ON, KeyEvent.KEYCODE_5, "5", color = MUTED),
                     bottom = keyCModifier(KeyEvent.META_CTRL_ON, KeyEvent.KEYCODE_W, "w"),
                     left = keyCModifier(KeyEvent.META_CTRL_ON, KeyEvent.KEYCODE_3, "3", color = MUTED),
+                    backgroundColor = SURFACE_VARIANT,
                 ),
                 SUAVE_BACKSPACE,
                 KeyItemC(
@@ -491,6 +493,7 @@ val KB_EN_TYPESPLIT_SUAVE_CTRLED =
                     right = keyCModifier(KeyEvent.META_CTRL_ON, KeyEvent.KEYCODE_8, "8", color = MUTED),
                     bottom = keyCModifier(KeyEvent.META_CTRL_ON, KeyEvent.KEYCODE_P, "p"),
                     left = keyCModifier(KeyEvent.META_CTRL_ON, KeyEvent.KEYCODE_6, "6", color = MUTED),
+                    backgroundColor = SURFACE_VARIANT,
                 ),
                 KeyItemC(
                     center = keyCModifier(KeyEvent.META_CTRL_ON, KeyEvent.KEYCODE_H, "h", size = LARGE),
@@ -498,6 +501,7 @@ val KB_EN_TYPESPLIT_SUAVE_CTRLED =
                     top = keyCModifier(KeyEvent.META_CTRL_ON, KeyEvent.KEYCODE_0, "0", color = MUTED),
                     bottom = keyCModifier(KeyEvent.META_CTRL_ON, KeyEvent.KEYCODE_Q, "q"),
                     left = keyCModifier(KeyEvent.META_CTRL_ON, KeyEvent.KEYCODE_9, "9", color = MUTED),
+                    backgroundColor = SURFACE_VARIANT,
                 ),
             ),
             listOf(
@@ -506,6 +510,7 @@ val KB_EN_TYPESPLIT_SUAVE_CTRLED =
                     swipeType = FOUR_WAY_CROSS,
                     right = keyCModifier(KeyEvent.META_CTRL_ON, KeyEvent.KEYCODE_A, "ä"),
                     bottom = keyCModifier(KeyEvent.META_CTRL_ON, KeyEvent.KEYCODE_EQUALS, "+", color = MUTED),
+                    backgroundColor = SURFACE_VARIANT,
                 ),
                 KeyItemC(
                     center = keyCModifier(KeyEvent.META_CTRL_ON, KeyEvent.KEYCODE_E, "e", size = LARGE),
@@ -516,6 +521,7 @@ val KB_EN_TYPESPLIT_SUAVE_CTRLED =
                     bottom = keyCModifier(KeyEvent.META_CTRL_ON, KeyEvent.KEYCODE_F, "f"),
                     bottomRight = KeyC("ch", color = MUTED),
                     left = keyCModifier(KeyEvent.META_CTRL_ON, KeyEvent.KEYCODE_Z, "z"),
+                    backgroundColor = SURFACE_VARIANT,
                 ),
                 SUAVE_SPACE,
                 KeyItemC(
@@ -525,6 +531,7 @@ val KB_EN_TYPESPLIT_SUAVE_CTRLED =
                     right = keyCModifier(KeyEvent.META_CTRL_ON, KeyEvent.KEYCODE_K, "k"),
                     bottom = keyCModifier(KeyEvent.META_CTRL_ON, KeyEvent.KEYCODE_M, "m"),
                     left = keyCModifier(KeyEvent.META_CTRL_ON, KeyEvent.KEYCODE_G, "g"),
+                    backgroundColor = SURFACE_VARIANT,
                 ),
                 KeyItemC(
                     center = keyCModifier(KeyEvent.META_CTRL_ON, KeyEvent.KEYCODE_S, "s", size = LARGE),
@@ -534,6 +541,7 @@ val KB_EN_TYPESPLIT_SUAVE_CTRLED =
                     bottom = KeyC("|", color = MUTED),
                     bottomLeft = KeyC("sch", color = MUTED),
                     left = KeyC("ß"),
+                    backgroundColor = SURFACE_VARIANT,
                 ),
             ),
             listOf(
@@ -545,6 +553,7 @@ val KB_EN_TYPESPLIT_SUAVE_CTRLED =
                     right = keyCModifier(KeyEvent.META_CTRL_ON, KeyEvent.KEYCODE_LEFT_BRACKET, "[", color = MUTED),
                     bottom = KeyC( text = "", color = MUTED),
                     bottomRight = keyCModifier(KeyEvent.META_CTRL_ON or KeyEvent.META_SHIFT_ON, KeyEvent.KEYCODE_LEFT_BRACKET, "{", color = MUTED),
+                    backgroundColor = SURFACE_VARIANT,
                 ),
                 KeyItemC(
                     center = keyCModifier(KeyEvent.META_CTRL_ON, KeyEvent.KEYCODE_I, "i", size = LARGE),
@@ -553,7 +562,8 @@ val KB_EN_TYPESPLIT_SUAVE_CTRLED =
                     right = keyCModifier(KeyEvent.META_CTRL_ON, KeyEvent.KEYCODE_X, "x"),
                     bottom = keyCModifier(KeyEvent.META_CTRL_ON, KeyEvent.KEYCODE_POUND, "#", color = MUTED),
                     bottomLeft = keyCModifier(KeyEvent.META_CTRL_ON, KeyEvent.KEYCODE_AT, "@", color = MUTED),
-                    bottomRight = keyCModifier(KeyEvent.META_CTRL_ON or KeyEvent.META_SHIFT_ON, KeyEvent.KEYCODE_4, "$", color = MUTED)
+                    bottomRight = keyCModifier(KeyEvent.META_CTRL_ON or KeyEvent.META_SHIFT_ON, KeyEvent.KEYCODE_4, "$", color = MUTED),
+                    backgroundColor = SURFACE_VARIANT,
                 ),
                 KeyItemC(
                     center =
@@ -584,6 +594,7 @@ val KB_EN_TYPESPLIT_SUAVE_CTRLED =
                     bottomLeft = keyCModifier(KeyEvent.META_CTRL_ON or KeyEvent.META_SHIFT_ON, KeyEvent.KEYCODE_8, "*", color = MUTED),
                     bottomRight = keyCModifier(KeyEvent.META_CTRL_ON, KeyEvent.KEYCODE_SLASH, "/", color = MUTED),
                     left = keyCModifier(KeyEvent.META_CTRL_ON, KeyEvent.KEYCODE_Y, "y"),
+                    backgroundColor = SURFACE_VARIANT,
                 ),
                 KeyItemC(
                     center = keyCModifier(KeyEvent.META_CTRL_ON, KeyEvent.KEYCODE_L, "l", size = LARGE),
@@ -593,11 +604,13 @@ val KB_EN_TYPESPLIT_SUAVE_CTRLED =
                     bottom = keyCModifier(KeyEvent.META_CTRL_ON, KeyEvent.KEYCODE_BACKSLASH, "\\", color = MUTED),
                     bottomLeft = keyCModifier(KeyEvent.META_CTRL_ON or KeyEvent.META_SHIFT_ON, KeyEvent.KEYCODE_RIGHT_BRACKET, "}", color = MUTED),
                     left = keyCModifier(KeyEvent.META_CTRL_ON, KeyEvent.KEYCODE_RIGHT_BRACKET, "]", color = MUTED),
+                    backgroundColor = SURFACE_VARIANT,
                 ),
             ),
             SUAVE_BOTTOM_ROW_CTRLED,
         ),
     )
+
 val KB_EN_TYPESPLIT_SUAVE_NUMERIC =
     KeyboardC(
         listOf(
