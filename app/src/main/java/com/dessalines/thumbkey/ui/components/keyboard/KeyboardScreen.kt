@@ -360,18 +360,86 @@ fun KeyboardScreen(
                                     slideCursorMovementMode = slideCursorMovementMode,
                                     slideSpacebarDeadzoneEnabled = slideSpacebarDeadzoneEnabled,
                                     slideBackspaceDeadzoneEnabled = slideBackspaceDeadzoneEnabled,
-                                    onToggleShiftMode = { enable -> mode = if (enable) KeyboardMode.SHIFTED else { capsLock = false; KeyboardMode.MAIN } },
-                                    onToggleCtrlMode = { enable -> mode = if (enable) KeyboardMode.CTRLED else KeyboardMode.MAIN },
-                                    onToggleAltMode = { enable -> mode = if (enable) KeyboardMode.ALTED else KeyboardMode.MAIN },
-                                    onToggleNumericMode = { enable -> mode = if (enable) KeyboardMode.NUMERIC else { capsLock = false; KeyboardMode.MAIN } },
-                                    onToggleEmojiMode = { enable -> mode = if (enable) KeyboardMode.EMOJI else KeyboardMode.MAIN },
-                                    onToggleClipboardMode = { enable -> mode = if (enable) KeyboardMode.CLIPBOARD else KeyboardMode.MAIN },
-                                    onToggleCapsLock = { capsLock = !capsLock; if (capsLock) mode = KeyboardMode.SHIFTED },
+                                    onToggleShiftMode = { enable ->
+                                        mode =
+                                            if (enable) {
+                                                KeyboardMode.SHIFTED
+                                            } else {
+                                                capsLock = false
+                                                KeyboardMode.MAIN
+                                            }
+                                    },
+                                    onToggleCtrlMode = { enable ->
+                                        mode =
+                                            if (enable) {
+                                                KeyboardMode.CTRLED
+                                            } else {
+                                                KeyboardMode.MAIN
+                                            }
+                                    },
+                                    onToggleAltMode = { enable ->
+                                        mode =
+                                            if (enable) {
+                                                KeyboardMode.ALTED
+                                            } else {
+                                                KeyboardMode.MAIN
+                                            }
+                                    },
+                                    onToggleNumericMode = { enable ->
+                                        mode =
+                                            if (enable) {
+                                                KeyboardMode.NUMERIC
+                                            } else {
+                                                capsLock = false
+                                                KeyboardMode.MAIN
+                                            }
+                                    },
+                                    onToggleEmojiMode = { enable ->
+                                        mode =
+                                            if (enable) {
+                                                KeyboardMode.EMOJI
+                                            } else {
+                                                KeyboardMode.MAIN
+                                            }
+                                    },
+                                    onToggleClipboardMode = { enable ->
+                                        mode =
+                                            if (enable) {
+                                                KeyboardMode.CLIPBOARD
+                                            } else {
+                                                KeyboardMode.MAIN
+                                            }
+                                    },
+                                    onToggleCapsLock = {
+                                        capsLock = !capsLock
+                                        if (capsLock) {
+                                            mode = KeyboardMode.SHIFTED
+                                        }
+                                    },
                                     onToggleHideLetters = onToggleHideLetters,
-                                    onAutoCapitalize = { enable -> if (mode !== KeyboardMode.NUMERIC) { if (enable) mode = KeyboardMode.SHIFTED else if (!capsLock) mode = KeyboardMode.MAIN } },
-                                    onSwitchLanguage = { onSwitchLanguage(); mode = KeyboardMode.MAIN },
+                                    onAutoCapitalize = { enable ->
+                                        if (mode !== KeyboardMode.NUMERIC) {
+                                            if (enable) {
+                                                mode = KeyboardMode.SHIFTED
+                                            } else if (!capsLock) {
+                                                mode = KeyboardMode.MAIN
+                                            }
+                                        }
+                                    },
+                                    onSwitchLanguage = {
+                                        onSwitchLanguage()
+                                        mode = KeyboardMode.MAIN
+                                    },
                                     onChangePosition = onChangePosition,
-                                    onKeyEvent = { when (mode) { KeyboardMode.CTRLED, KeyboardMode.ALTED -> mode = KeyboardMode.MAIN else -> {} } },
+                                    onKeyEvent = {
+                                        when (mode) {
+                                            KeyboardMode.CTRLED, KeyboardMode.ALTED -> {
+                                                mode = KeyboardMode.MAIN
+                                            }
+
+                                            else -> {}
+                                        }
+                                    },
                                     dragReturnEnabled = dragReturnEnabled,
                                     circularDragEnabled = circularDragEnabled,
                                     clockwiseDragAction = clockwiseDragAction,
