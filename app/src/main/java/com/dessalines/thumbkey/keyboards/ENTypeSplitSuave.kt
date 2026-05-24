@@ -43,6 +43,7 @@ private val SHIFT_MAPPINGS = mapOf(
     "ch" to "Ch"
 )
 
+
 // Key Definitions
 private val GRID_0_0 = SuaveKeyDef("o", top = "1", right = "2", bottom = "ö", left = "", isStatic = true)
 private val GRID_0_1 = SuaveKeyDef("r", top = "4", right = "5", bottom = "w", bottomLeft = "?", bottomRight = "," , left = "3")
@@ -57,7 +58,7 @@ private val GRID_1_4 = SuaveKeyDef("s", top = "~", topLeft = "$", bottom = "|", 
 private val GRID_2_0 = SuaveKeyDef("u", top = "ü", topRight = "(", right = "[", bottomRight = "{")
 private val GRID_2_1 = SuaveKeyDef("i", topLeft = "<", right = "x", bottom = "#", bottomLeft = "@", bottomRight = "$")
 private val GRID_2_3 = SuaveKeyDef("d", top = "j", topRight = ">", bottom = "=", bottomLeft = "*", bottomRight = "/", left = "y")
-private val GRID_2_4 = SuaveKeyDef("l", top = "julian.konrath@gmail.com", topLeft = ")", bottom = "\\", bottomLeft = "}", left = "]", isStatic = true)
+private val GRID_2_4 = SuaveKeyDef("l", topLeft = ")", bottom = "\\", bottomLeft = "}", left = "]", isStatic = true)
 
 val SUAVE_BACKSPACE = KeyItemC(
     center = KeyC(display = KeyDisplay.IconDisplay(Icons.AutoMirrored.Outlined.KeyboardBackspace), action = DeleteKeyAction, size = LARGE, color = SECONDARY),
@@ -93,25 +94,25 @@ val SUAVE_RETURN = KeyItemC(
 )
 
 val SUAVE_MODIFIER_KEY = KeyItemC(
-    center = KeyC(display = KeyDisplay.TextDisplay("Ctrl"), action = ToggleCtrlMode(true), color = SECONDARY),
-    right = KeyC(display = KeyDisplay.TextDisplay("Alt"), action = ToggleAltMode(true), color = MUTED),
-    top = KeyC(display = KeyDisplay.TextDisplay("ESC"), action = SendEvent(KeyEvent(KeyEvent.ACTION_DOWN, KeyEvent.KEYCODE_ESCAPE)), color = MUTED),
+    center = KeyC(display = KeyDisplay.TextDisplay("ctrl"), action = ToggleCtrlMode(true), color = SECONDARY),
+    right = KeyC(display = KeyDisplay.TextDisplay("alt"), action = ToggleAltMode(true), color = MUTED, size = SMALL),
+    top = KeyC(display = KeyDisplay.TextDisplay("esc"), action = SendEvent(KeyEvent(KeyEvent.ACTION_DOWN, KeyEvent.KEYCODE_ESCAPE)), color = MUTED, size = SMALL),
     swipeType = FOUR_WAY_CROSS,
     backgroundColor = SURFACE_VARIANT,
 )
 
 val SUAVE_MODIFIER_KEY_CTRLED = KeyItemC(
-    center = KeyC(display = KeyDisplay.TextDisplay("Ctrl"), action = ToggleCtrlMode(false), color = PRIMARY),
-    right = KeyC(display = KeyDisplay.TextDisplay("Alt"), action = ToggleAltMode(true), color = MUTED),
-    top = KeyC(display = KeyDisplay.TextDisplay("ESC"), action = SendEvent(KeyEvent(KeyEvent.ACTION_DOWN, KeyEvent.KEYCODE_ESCAPE)), color = MUTED),
+    center = KeyC(display = KeyDisplay.TextDisplay("ctrl"), action = ToggleCtrlMode(false), color = PRIMARY),
+    right = KeyC(display = KeyDisplay.TextDisplay("alt"), action = ToggleAltMode(true), color = MUTED, size = SMALL),
+    top = KeyC(display = KeyDisplay.TextDisplay("esc"), action = SendEvent(KeyEvent(KeyEvent.ACTION_DOWN, KeyEvent.KEYCODE_ESCAPE)), color = MUTED, size = SMALL),
     swipeType = FOUR_WAY_CROSS,
     backgroundColor = SURFACE_VARIANT,
 )
 
 val SUAVE_MODIFIER_KEY_ALTED = KeyItemC(
-    center = KeyC(display = KeyDisplay.TextDisplay("Ctrl"), action = ToggleCtrlMode(true), color = MUTED),
-    right = KeyC(display = KeyDisplay.TextDisplay("Alt"), action = ToggleAltMode(false), color = PRIMARY),
-    top = KeyC(display = KeyDisplay.TextDisplay("ESC"), action = SendEvent(KeyEvent(KeyEvent.ACTION_DOWN, KeyEvent.KEYCODE_ESCAPE)), color = MUTED),
+    center = KeyC(display = KeyDisplay.TextDisplay("ctrl"), action = ToggleCtrlMode(true), color = MUTED),
+    right = KeyC(display = KeyDisplay.TextDisplay("alt"), action = ToggleAltMode(false), color = PRIMARY, size = SMALL),
+    top = KeyC(display = KeyDisplay.TextDisplay("esc"), action = SendEvent(KeyEvent(KeyEvent.ACTION_DOWN, KeyEvent.KEYCODE_ESCAPE)), color = MUTED, size = SMALL),
     swipeType = FOUR_WAY_CROSS,
     backgroundColor = SURFACE_VARIANT,
 )
@@ -157,7 +158,6 @@ private val SUAVE_GRID_TEMPLATE_SHIFTED = listOf(
     listOf(GRID_2_0, GRID_2_1, SHIFT_KEY_SHIFTED, GRID_2_3, GRID_2_4)
 )
 
-
 private fun getKeyCode(char: Char): Int = when (char.lowercaseChar()) {
     'a' -> KeyEvent.KEYCODE_A
     'b' -> KeyEvent.KEYCODE_B
@@ -195,6 +195,15 @@ private fun getKeyCode(char: Char): Int = when (char.lowercaseChar()) {
     '8' -> KeyEvent.KEYCODE_8
     '9' -> KeyEvent.KEYCODE_9
     '0' -> KeyEvent.KEYCODE_0
+    '.' -> KeyEvent.KEYCODE_PERIOD
+    ',' -> KeyEvent.KEYCODE_COMMA
+    '/' -> KeyEvent.KEYCODE_SLASH
+    ';' -> KeyEvent.KEYCODE_SEMICOLON
+    '=' -> KeyEvent.KEYCODE_EQUALS
+    '-' -> KeyEvent.KEYCODE_MINUS
+    '[' -> KeyEvent.KEYCODE_LEFT_BRACKET
+    ']' -> KeyEvent.KEYCODE_RIGHT_BRACKET
+    '\\' -> KeyEvent.KEYCODE_BACKSLASH
     else -> KeyEvent.KEYCODE_UNKNOWN
 }
 
@@ -220,7 +229,7 @@ private fun generateSuaveLayout(mode: SuaveMode, grid: List<List<Any>>): Keyboar
                         if ((mode == SuaveMode.CTRLED || mode == SuaveMode.ALTED) && text.length == 1) {
                             val code = getKeyCode(text[0])
                             if (code != KeyEvent.KEYCODE_UNKNOWN) {
-                                val flag = if (mode == SuaveMode.CTRLED) KeyEvent.META_CTRL_ON else KeyEvent.META_ALT_ON
+                                val flag = if (mode == SuaveMode.CTRLED) KeyEvent.META_CTRL_ON else (KeyEvent.META_ALT_ON or KeyEvent.META_ALT_LEFT_ON)
                                 return keyCModifier(flag, code, processedText, size = if (isCenter) item.size else SMALL)
                             }
                         }
@@ -397,6 +406,6 @@ val KB_EN_TYPESPLIT_SUAVE: KeyboardDefinition =
                 shifted = KB_EN_TYPESPLIT_SUAVE_SHIFTED,
                 numeric = KB_EN_TYPESPLIT_SUAVE_NUMERIC,
                 ctrled = KB_EN_TYPESPLIT_SUAVE_CTRLED,
-                alted = KB_EN_TYPESPLIT_SUAVE_ALTED
-            ),
+                alted = KB_EN_TYPESPLIT_SUAVE_ALTED,
+                ),
     )
