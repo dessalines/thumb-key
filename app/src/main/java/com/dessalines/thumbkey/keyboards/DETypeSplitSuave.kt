@@ -82,13 +82,13 @@ private val SUAVE_GRID_TEMPLATE = listOf(
     listOf(GRID_2_0, GRID_2_1, GRID_2_2, GRID_2_3, GRID_2_4)
 )
 
-val KB_EN_TYPESPLIT_SUAVE_MAIN = generateSuaveLayout(SuaveMode.MAIN, SUAVE_GRID_TEMPLATE + listOf(listOf(GRID_3_0, GRID_3_1, GRID_3_2, GRID_3_3)))
-val KB_EN_TYPESPLIT_SUAVE_SHIFTED = generateSuaveLayout(SuaveMode.SHIFTED, SUAVE_GRID_TEMPLATE + listOf(listOf(GRID_3_0, GRID_3_1, GRID_3_2, GRID_3_3)))
-val KB_EN_TYPESPLIT_SUAVE_CTRLED = generateSuaveLayout(SuaveMode.CTRLED, SUAVE_GRID_TEMPLATE + listOf(listOf(GRID_3_0, GRID_3_1, GRID_3_2, GRID_3_3)))
-val KB_EN_TYPESPLIT_SUAVE_ALTED = generateSuaveLayout(SuaveMode.ALTED, SUAVE_GRID_TEMPLATE + listOf(listOf(GRID_3_0, GRID_3_1, GRID_3_2, GRID_3_3)))
-val KB_EN_TYPESPLIT_SUAVE_EMOJI = generateSuaveLayout(SuaveMode.EMOJI, SUAVE_GRID_TEMPLATE + listOf(listOf(GRID_3_0_EMOJI, GRID_3_1, GRID_3_2, GRID_3_3)))
+val KB_DE_TYPESPLIT_SUAVE_MAIN = generateSuaveLayout(SuaveMode.MAIN, SUAVE_GRID_TEMPLATE + listOf(listOf(GRID_3_0, GRID_3_1, GRID_3_2, GRID_3_3)))
+val KB_DE_TYPESPLIT_SUAVE_SHIFTED = generateSuaveLayout(SuaveMode.SHIFTED, SUAVE_GRID_TEMPLATE + listOf(listOf(GRID_3_0, GRID_3_1, GRID_3_2, GRID_3_3)))
+val KB_DE_TYPESPLIT_SUAVE_CTRLED = generateSuaveLayout(SuaveMode.CTRLED, SUAVE_GRID_TEMPLATE + listOf(listOf(GRID_3_0, GRID_3_1, GRID_3_2, GRID_3_3)))
+val KB_DE_TYPESPLIT_SUAVE_ALTED = generateSuaveLayout(SuaveMode.ALTED, SUAVE_GRID_TEMPLATE + listOf(listOf(GRID_3_0, GRID_3_1, GRID_3_2, GRID_3_3)))
+val KB_DE_TYPESPLIT_SUAVE_EMOJI = generateSuaveLayout(SuaveMode.EMOJI, SUAVE_GRID_TEMPLATE + listOf(listOf(GRID_3_0_EMOJI, GRID_3_1, GRID_3_2, GRID_3_3)))
 
-val KB_EN_TYPESPLIT_SUAVE_NUMERIC =
+val KB_DE_TYPESPLIT_SUAVE_NUMERIC =
     KeyboardC(
         listOf(
             listOf(
@@ -217,17 +217,17 @@ val KB_EN_TYPESPLIT_SUAVE_NUMERIC =
     )
 
 
-val KB_EN_TYPESPLIT_SUAVE: KeyboardDefinition =
+val KB_DE_TYPESPLIT_SUAVE: KeyboardDefinition =
     KeyboardDefinition(
-        title = "english type-split suave",
+        title = "deutsch type-split suave",
         modes =
             KeyboardDefinitionModes(
-                main = KB_EN_TYPESPLIT_SUAVE_MAIN,
-                shifted = KB_EN_TYPESPLIT_SUAVE_SHIFTED,
-                numeric = KB_EN_TYPESPLIT_SUAVE_NUMERIC,
-                ctrled = KB_EN_TYPESPLIT_SUAVE_CTRLED,
-                alted = KB_EN_TYPESPLIT_SUAVE_ALTED,
-                emoji = KB_EN_TYPESPLIT_SUAVE_EMOJI,
+                main = KB_DE_TYPESPLIT_SUAVE_MAIN,
+                shifted = KB_DE_TYPESPLIT_SUAVE_SHIFTED,
+                numeric = KB_DE_TYPESPLIT_SUAVE_NUMERIC,
+                ctrled = KB_DE_TYPESPLIT_SUAVE_CTRLED,
+                alted = KB_DE_TYPESPLIT_SUAVE_ALTED,
+                emoji = KB_DE_TYPESPLIT_SUAVE_EMOJI,
                 ),
     )
 
