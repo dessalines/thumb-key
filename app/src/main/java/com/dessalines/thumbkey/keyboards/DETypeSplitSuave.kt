@@ -44,15 +44,13 @@ private data class SuaveKeyDef(
     val bottomRight: String? = null,
     val swipeType: SwipeNWay = EIGHT_WAY,
     val size: FontSizeVariant = LARGE,
-    val isStatic: Boolean = false, // If true, don't change case or apply Ctrl
-    val keyCode: Int? = null, // Optional explicit keycode for shortcuts
     val w: Int = 1,
     val bg: ColorVariant? = null,
     val slide: SlideType = SlideType.NONE,
 )
 
 // Key Definitions
-private val GRID_0_0 = SuaveKeyDef("o", top = "1", right = "2", bottom = "ö", left = "", isStatic = true)
+private val GRID_0_0 = SuaveKeyDef("o", top = "1", right = "2", bottom = "ö", left = "")
 private val GRID_0_1 = SuaveKeyDef("r", top = "4", right = "5", bottom = "w", bottomLeft = "?", bottomRight = ",", left = "3")
 private val GRID_0_2 =
     SuaveKeyDef(
@@ -98,7 +96,7 @@ private val GRID_2_2 =
         bg = SURFACE_VARIANT,
     )
 private val GRID_2_3 = SuaveKeyDef("d", top = "j", topRight = ">", bottom = "=", bottomLeft = "*", bottomRight = "/", left = "y")
-private val GRID_2_4 = SuaveKeyDef("l", topLeft = ")", bottom = "\\", bottomLeft = "}", left = "]", isStatic = true)
+private val GRID_2_4 = SuaveKeyDef("l", topLeft = ")", bottom = "\\", bottomLeft = "}", left = "]")
 
 private val GRID_3_0 = SuaveKeyDef("ctrl", right = "alt", top = "esc", bg = SURFACE_VARIANT, swipeType = FOUR_WAY_CROSS)
 private val GRID_3_0_EMOJI = SuaveKeyDef("backspace", bg = SURFACE_VARIANT, slide = SlideType.DELETE)
@@ -619,13 +617,16 @@ private fun generateSuaveLayout(
                                 }
                             }
 
-                            // 2. Handle static/letter mapping
-                            if (item.isStatic && !isCenter) return KeyC(text, color = MUTED)
-
+                            // 2. Handle letter mapping
                             val processedText =
                                 when (mode) {
-                                    SuaveMode.SHIFTED -> SHIFT_MAPPINGS[text] ?: if (text.length == 1) text.uppercase() else text
-                                    else -> text
+                                    SuaveMode.SHIFTED -> {
+                                        SHIFT_MAPPINGS[text] ?: if (text.length == 1) text.uppercase() else text
+                                    }
+
+                                    else -> {
+                                        text
+                                    }
                                 }
 
                             // 3. Handle shortcuts
