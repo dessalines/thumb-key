@@ -53,7 +53,7 @@ private data class SuaveKeyDef(
 // Key Definitions
 private val GRID_0_0 = SuaveKeyDef("o", top = "1", right = "2", bottom = "ö", left = "", isStatic = true)
 private val GRID_0_1 = SuaveKeyDef("r", top = "4", right = "5", bottom = "w", bottomLeft = "?", bottomRight = "," , left = "3")
-private val GRID_0_2 = SuaveKeyDef("backspace", top = "'", topLeft = "!", topRight = "?", bottom = "\"", bottomLeft = ".", bottomRight = ",", bg = SURFACE_VARIANT, slide = SlideType.DELETE)
+private val GRID_0_2 = SuaveKeyDef("backspace", top = "'", bottom = "\"", bg = SURFACE_VARIANT, slide = SlideType.DELETE, swipeType = FOUR_WAY_CROSS)
 private val GRID_0_3 = SuaveKeyDef("t", top = "7", right = "8", bottom = "p", bottomLeft = ".", bottomRight = "!", left = "6")
 private val GRID_0_4 = SuaveKeyDef("h", top = "0", bottom = "q", left = "9")
 
