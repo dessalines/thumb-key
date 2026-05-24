@@ -12,52 +12,158 @@ import com.dessalines.thumbkey.utils.FontSizeVariant.*
 import com.dessalines.thumbkey.utils.KeyAction.*
 import com.dessalines.thumbkey.utils.SwipeNWay.*
 
-
-val SUAVE_MODIFIER_KEY = KeyItemC(
-    center =
-        KeyC(
-            display = KeyDisplay.TextDisplay("Ctrl"),
-            action = ToggleCtrlMode(true),
-            color = SECONDARY,
-        ),
-    right =
-        KeyC(
-            display = KeyDisplay.TextDisplay("Alt"),
-            action = ToggleAltMode(true),
-            color = MUTED,
-        ),
-    top =
-        KeyC(
-            display = KeyDisplay.TextDisplay("ESC"),
-            action =
-                SendEvent(
-                    KeyEvent(
-                        KeyEvent.ACTION_DOWN,
-                        KeyEvent.KEYCODE_ESCAPE,
-                    ),
-                ),
-            color = MUTED,
-        ),
-    swipeType = FOUR_WAY_CROSS,
-    backgroundColor = SURFACE_VARIANT,
+/**
+ * Internal helper to define a key's content once and generate layers from it.
+ */
+private data class SuaveKeyDef(
+    val center: String,
+    val top: String? = null,
+    val topLeft: String? = null,
+    val topRight: String? = null,
+    val left: String? = null,
+    val right: String? = null,
+    val bottom: String? = null,
+    val bottomLeft: String? = null,
+    val bottomRight: String? = null,
+    val swipeType: SwipeNWay = EIGHT_WAY,
+    val size: FontSizeVariant = LARGE,
+    val isStatic: Boolean = false, // If true, don't change case or apply Ctrl
+    val keyCode: Int? = null // Optional explicit keycode for shortcuts
 )
 
+private enum class SuaveMode { MAIN, SHIFTED, CTRLED, ALTED }
+
+// Special mappings for shifted mode
+private val SHIFT_MAPPINGS = mapOf(
+    "ö" to "Ö",
+    "ä" to "Ä",
+    "ü" to "Ü",
+    "ß" to "SS",
+    "sch" to "Sch",
+    "ch" to "Ch"
+)
+
+private fun getKeyCode(char: Char): Int = when (char.lowercaseChar()) {
+    'a' -> KeyEvent.KEYCODE_A
+    'b' -> KeyEvent.KEYCODE_B
+    'c' -> KeyEvent.KEYCODE_C
+    'd' -> KeyEvent.KEYCODE_D
+    'e' -> KeyEvent.KEYCODE_E
+    'f' -> KeyEvent.KEYCODE_F
+    'g' -> KeyEvent.KEYCODE_G
+    'h' -> KeyEvent.KEYCODE_H
+    'i' -> KeyEvent.KEYCODE_I
+    'j' -> KeyEvent.KEYCODE_J
+    'k' -> KeyEvent.KEYCODE_K
+    'l' -> KeyEvent.KEYCODE_L
+    'm' -> KeyEvent.KEYCODE_M
+    'n' -> KeyEvent.KEYCODE_N
+    'o' -> KeyEvent.KEYCODE_O
+    'p' -> KeyEvent.KEYCODE_P
+    'q' -> KeyEvent.KEYCODE_Q
+    'r' -> KeyEvent.KEYCODE_R
+    's' -> KeyEvent.KEYCODE_S
+    't' -> KeyEvent.KEYCODE_T
+    'u' -> KeyEvent.KEYCODE_U
+    'v' -> KeyEvent.KEYCODE_V
+    'w' -> KeyEvent.KEYCODE_W
+    'x' -> KeyEvent.KEYCODE_X
+    'y' -> KeyEvent.KEYCODE_Y
+    'z' -> KeyEvent.KEYCODE_Z
+    '1' -> KeyEvent.KEYCODE_1
+    '2' -> KeyEvent.KEYCODE_2
+    '3' -> KeyEvent.KEYCODE_3
+    '4' -> KeyEvent.KEYCODE_4
+    '5' -> KeyEvent.KEYCODE_5
+    '6' -> KeyEvent.KEYCODE_6
+    '7' -> KeyEvent.KEYCODE_7
+    '8' -> KeyEvent.KEYCODE_8
+    '9' -> KeyEvent.KEYCODE_9
+    '0' -> KeyEvent.KEYCODE_0
+    else -> KeyEvent.KEYCODE_UNKNOWN
+}
+
+private fun generateSuaveLayout(mode: SuaveMode, grid: List<List<Any>>): KeyboardC {
+    val result = grid.map { row ->
+        row.map { item ->
+            when (item) {
+                is KeyItemC -> item
+                is SuaveKeyDef -> {
+                    val backgroundColor = if (mode == SuaveMode.CTRLED || mode == SuaveMode.ALTED) SURFACE_VARIANT else SURFACE
+
+                    fun process(text: String?, isCenter: Boolean = false): KeyC? {
+                        if (text == null) return null
+                        if (item.isStatic && !isCenter) return KeyC(text, color = MUTED)
+
+                        val processedText = when (mode) {
+                            SuaveMode.SHIFTED -> {
+                                SHIFT_MAPPINGS[text] ?: if (text.length == 1) text.uppercase() else text
+                            }
+                            else -> text
+                        }
+
+                        if ((mode == SuaveMode.CTRLED || mode == SuaveMode.ALTED) && text.length == 1) {
+                            val code = getKeyCode(text[0])
+                            if (code != KeyEvent.KEYCODE_UNKNOWN) {
+                                val flag = if (mode == SuaveMode.CTRLED) KeyEvent.META_CTRL_ON else KeyEvent.META_ALT_ON
+                                return keyCModifier(flag, code, processedText, size = if (isCenter) item.size else SMALL)
+                            }
+                        }
+                        
+                        return if ((mode == SuaveMode.CTRLED || mode == SuaveMode.ALTED) && !isCenter) {
+                            KeyC(processedText, color = MUTED)
+                        } else {
+                            KeyC(processedText, size = if (isCenter) item.size else SMALL, color = if (isCenter) PRIMARY else MUTED)
+                        }
+                    }
+
+                    KeyItemC(
+                        center = process(item.center, true)!!,
+                        top = process(item.top),
+                        topLeft = process(item.topLeft),
+                        topRight = process(item.topRight),
+                        left = process(item.left),
+                        right = process(item.right),
+                        bottom = process(item.bottom),
+                        bottomLeft = process(item.bottomLeft),
+                        bottomRight = process(item.bottomRight),
+                        swipeType = item.swipeType,
+                        backgroundColor = backgroundColor
+                    )
+                }
+                else -> throw IllegalArgumentException("Unknown item type")
+            }
+        }
+    }
+    return KeyboardC(result)
+}
+
+// Key Definitions
+private val GRID_O = SuaveKeyDef("o", top = "1", right = "2", bottom = "ö", left = "", isStatic = true)
+private val GRID_R = SuaveKeyDef("r", top = "4", right = "5", bottom = "w", left = "3")
+private val GRID_T = SuaveKeyDef("t", top = "7", right = "8", bottom = "p", left = "6")
+private val GRID_H = SuaveKeyDef("h", top = "0", bottom = "q", left = "9")
+
+private val GRID_A = SuaveKeyDef("a", right = "ä", bottom = "+", swipeType = FOUR_WAY_CROSS)
+private val GRID_E = SuaveKeyDef("e", top = "v", topRight = "€", right = "c", bottom = "f", bottomRight = "ch", left = "z")
+private val GRID_N = SuaveKeyDef("n", top = "b", right = "k", bottom = "m", left = "g", swipeType = FOUR_WAY_CROSS)
+private val GRID_S = SuaveKeyDef("s", top = "~", topLeft = "$", bottom = "|", bottomLeft = "sch", left = "ß")
+
+private val GRID_U = SuaveKeyDef("u", top = "ü", topRight = "(", right = "[", bottomRight = "{")
+private val GRID_I = SuaveKeyDef("i", topLeft = "<", right = "x", bottom = "#", bottomLeft = "@", bottomRight = "$", left = "—")
+private val GRID_D = SuaveKeyDef("d", top = "j", topRight = ">", bottom = "=", bottomLeft = "*", bottomRight = "/", left = "y")
+private val GRID_L = SuaveKeyDef("l", topLeft = ")", bottom = "\\", bottomLeft = "}", left = "]", isStatic = true)
+
 val SUAVE_BACKSPACE = KeyItemC(
-    center =
-        KeyC(
-            display = KeyDisplay.IconDisplay(Icons.AutoMirrored.Outlined.KeyboardBackspace),
-            action = DeleteKeyAction,
-            size = LARGE,
-            color = SECONDARY,
-        ),
+    center = KeyC(display = KeyDisplay.IconDisplay(Icons.AutoMirrored.Outlined.KeyboardBackspace), action = DeleteKeyAction, size = LARGE, color = SECONDARY),
     swipeType = EIGHT_WAY,
     slideType = SlideType.DELETE,
     top = KeyC("'", color = MUTED),
-    topLeft = KeyC("?", color = MUTED),
-    topRight = KeyC("!", color = MUTED),
+    topLeft = KeyC("!", color = MUTED),
+    topRight = KeyC("?", color = MUTED),
     bottom = KeyC("\"", color = MUTED),
-    bottomLeft = KeyC(",", color = MUTED),
-    bottomRight = KeyC(".", color = MUTED),
+    bottomLeft = KeyC(".", color = MUTED),
+    bottomRight = KeyC(",", color = MUTED),
     backgroundColor = SURFACE_VARIANT,
     longPress = DeleteWordBeforeCursor,
 )
@@ -66,550 +172,94 @@ val SUAVE_SPACE = KeyItemC(
     center = KeyC(" "),
     swipeType = FOUR_WAY_CROSS,
     slideType = SlideType.MOVE_CURSOR,
-    left =
-        KeyC(
-            display = KeyDisplay.TextDisplay("←"),
-            action =
-                SendEvent(
-                    KeyEvent(
-                        KeyEvent.ACTION_DOWN,
-                        KeyEvent.KEYCODE_DPAD_LEFT,
-                    ),
-                ),
-            color = MUTED,
-        ),
-    right =
-        KeyC(
-            display = KeyDisplay.TextDisplay("→"),
-            action =
-                SendEvent(
-                    KeyEvent(
-                        KeyEvent.ACTION_DOWN,
-                        KeyEvent.KEYCODE_DPAD_RIGHT,
-                    ),
-                ),
-            color = MUTED,
-        ),
-    top =
-        KeyC(
-            display = KeyDisplay.TextDisplay("↑"),
-            action =
-                SendEvent(
-                    KeyEvent(
-                        KeyEvent.ACTION_DOWN,
-                        KeyEvent.KEYCODE_DPAD_UP,
-                    ),
-                ),
-            color = MUTED,
-        ),
-    bottom =
-        KeyC(
-            display = KeyDisplay.TextDisplay("↓"),
-            action =
-                SendEvent(
-                    KeyEvent(
-                        KeyEvent.ACTION_DOWN,
-                        KeyEvent.KEYCODE_DPAD_DOWN,
-                    ),
-                ),
-            color = MUTED,
-        ),
-    nextTapActions =
-        listOf(
-            ReplaceLastText(", ", trimCount = 1),
-            ReplaceLastText(". "),
-            ReplaceLastText("? "),
-            ReplaceLastText("! "),
-            ReplaceLastText(": "),
-            ReplaceLastText("; "),
-        ),
+    left = KeyC(display = KeyDisplay.TextDisplay("←"), action = SendEvent(KeyEvent(KeyEvent.ACTION_DOWN, KeyEvent.KEYCODE_DPAD_LEFT)), color = MUTED),
+    right = KeyC(display = KeyDisplay.TextDisplay("→"), action = SendEvent(KeyEvent(KeyEvent.ACTION_DOWN, KeyEvent.KEYCODE_DPAD_RIGHT)), color = MUTED),
+    top = KeyC(display = KeyDisplay.TextDisplay("↑"), action = SendEvent(KeyEvent(KeyEvent.ACTION_DOWN, KeyEvent.KEYCODE_DPAD_UP)), color = MUTED),
+    bottom = KeyC(display = KeyDisplay.TextDisplay("↓"), action = SendEvent(KeyEvent(KeyEvent.ACTION_DOWN, KeyEvent.KEYCODE_DPAD_DOWN)), color = MUTED),
+    nextTapActions = listOf(ReplaceLastText(", ", trimCount = 1), ReplaceLastText(". "), ReplaceLastText("? "), ReplaceLastText("! "), ReplaceLastText(": "), ReplaceLastText("; ")),
     backgroundColor = SURFACE_VARIANT,
     widthMultiplier = 1,
 )
 
 val SUAVE_RETURN = KeyItemC(
-    center =
-        KeyC(
-            display = KeyDisplay.IconDisplay(Icons.AutoMirrored.Outlined.KeyboardReturn),
-            action = IMECompleteAction,
-            size = LARGE,
-            color = SECONDARY,
-        ),
+    center = KeyC(display = KeyDisplay.IconDisplay(Icons.AutoMirrored.Outlined.KeyboardReturn), action = IMECompleteAction, size = LARGE, color = SECONDARY),
     swipeType = FOUR_WAY_CROSS,
-    left =
-        KeyC(
-            display = null,
-            action = CommitText("\n")
-        ),
-    top =
-        KeyC(
-            display = KeyDisplay.IconDisplay(Icons.AutoMirrored.Outlined.KeyboardTab),
-            action = CommitText("\t"),
-            color = SECONDARY,
-        ),
+    left = KeyC(display = null, action = CommitText("\n")),
+    top = KeyC(display = KeyDisplay.IconDisplay(Icons.AutoMirrored.Outlined.KeyboardTab), action = CommitText("\t"), color = SECONDARY),
     backgroundColor = SURFACE_VARIANT,
     longPress = CommitText("\n"),
     widthMultiplier = 2
 )
-val SUAVE_BOTTOM_ROW = listOf(
-    SUAVE_MODIFIER_KEY,
-    EMOJI_KEY_ITEM,
-    NUMERIC_KEY_ITEM,
-    SUAVE_RETURN,
+
+val SUAVE_MODIFIER_KEY = KeyItemC(
+    center = KeyC(display = KeyDisplay.TextDisplay("Ctrl"), action = ToggleCtrlMode(true), color = SECONDARY),
+    right = KeyC(display = KeyDisplay.TextDisplay("Alt"), action = ToggleAltMode(true), color = MUTED),
+    top = KeyC(display = KeyDisplay.TextDisplay("ESC"), action = SendEvent(KeyEvent(KeyEvent.ACTION_DOWN, KeyEvent.KEYCODE_ESCAPE)), color = MUTED),
+    swipeType = FOUR_WAY_CROSS,
+    backgroundColor = SURFACE_VARIANT,
 )
 
-val SUAVE_BOTTOM_ROW_CTRLED = listOf(
-    KeyItemC(
-        center =
-            KeyC(
-                display = KeyDisplay.TextDisplay("Ctrl"),
-                action = ToggleCtrlMode(false),
-                color = PRIMARY,
-            ),
-        right =
-            KeyC(
-                display = KeyDisplay.TextDisplay("Alt"),
-                action = ToggleAltMode(true),
-                color = MUTED,
-            ),
-        top =
-            KeyC(
-                display = KeyDisplay.TextDisplay("ESC"),
-                action =
-                    SendEvent(
-                        KeyEvent(
-                            KeyEvent.ACTION_DOWN,
-                            KeyEvent.KEYCODE_ESCAPE,
-                        ),
-                    ),
-                color = MUTED,
-            ),
-        swipeType = FOUR_WAY_CROSS,
-        backgroundColor = SURFACE_VARIANT,
-    ),
-    EMOJI_KEY_ITEM,
-    NUMERIC_KEY_ITEM,
-    SUAVE_RETURN,
+val SUAVE_MODIFIER_KEY_CTRLED = KeyItemC(
+    center = KeyC(display = KeyDisplay.TextDisplay("Ctrl"), action = ToggleCtrlMode(false), color = PRIMARY),
+    right = KeyC(display = KeyDisplay.TextDisplay("Alt"), action = ToggleAltMode(true), color = MUTED),
+    top = KeyC(display = KeyDisplay.TextDisplay("ESC"), action = SendEvent(KeyEvent(KeyEvent.ACTION_DOWN, KeyEvent.KEYCODE_ESCAPE)), color = MUTED),
+    swipeType = FOUR_WAY_CROSS,
+    backgroundColor = SURFACE_VARIANT,
 )
 
-val KB_EN_TYPESPLIT_SUAVE_MAIN =
-    KeyboardC(
-        listOf(
-            listOf(
-                KeyItemC(
-                    center = KeyC("o", size = LARGE),
-                    swipeType = EIGHT_WAY,
-                    top = KeyC("1", color = MUTED),
-                    right = KeyC("2", color = MUTED),
-                    bottom = KeyC("ö"),
-                    left = KeyC(""),
-                ),
-                KeyItemC(
-                    center = KeyC("r", size = LARGE),
-                    swipeType = EIGHT_WAY,
-                    top = KeyC("4", color = MUTED),
-                    right = KeyC("5", color = MUTED),
-                    bottom = KeyC("w"),
-                    left = KeyC("3", color = MUTED),
-                ),
-                SUAVE_BACKSPACE,
-                KeyItemC(
-                    center = KeyC("t", size = LARGE),
-                    swipeType = EIGHT_WAY,
-                    top = KeyC("7", color = MUTED),
-                    right = KeyC("8", color = MUTED),
-                    bottom = KeyC("p"),
-                    left = KeyC("6", color = MUTED),
-                ),
-                KeyItemC(
-                    center = KeyC("h", size = LARGE),
-                    swipeType = EIGHT_WAY,
-                    top = KeyC("0", color = MUTED),
-                    bottom = KeyC("q"),
-                    left = KeyC("9", color = MUTED),
-                ),
-            ),
-            listOf(
-                KeyItemC(
-                    center = KeyC("a", size = LARGE),
-                    swipeType = FOUR_WAY_CROSS,
-                    right = KeyC("ä"),
-                    bottom = KeyC("+", color = MUTED),
-                ),
-                KeyItemC(
-                    center = KeyC("e", size = LARGE),
-                    swipeType = EIGHT_WAY,
-                    top = KeyC("v"),
-                    topRight = KeyC("€", color = MUTED),
-                    right = KeyC("c"),
-                    bottom = KeyC("f"),
-                    bottomRight = KeyC("ch", color = MUTED),
-                    left = KeyC("z"),
-                ),
-                SUAVE_SPACE,
-                KeyItemC(
-                    center = KeyC("n", size = LARGE),
-                    swipeType = FOUR_WAY_CROSS,
-                    top = KeyC("b"),
-                    right = KeyC("k"),
-                    bottom = KeyC("m"),
-                    left = KeyC("g"),
-                ),
-                KeyItemC(
-                    center = KeyC("s", size = LARGE),
-                    swipeType = EIGHT_WAY,
-                    top = KeyC("~", color = MUTED),
-                    topLeft = KeyC("$", color = MUTED),
-                    bottom = KeyC("|", color = MUTED),
-                    bottomLeft = KeyC("sch", color = MUTED),
-                    left = KeyC("ß"),
-                ),
-            ),
-            listOf(
-                KeyItemC(
-                    center = KeyC("u", size = LARGE),
-                    swipeType = EIGHT_WAY,
-                    top = KeyC("ü"),
-                    topRight = KeyC("(", color = MUTED),
-                    right = KeyC("[", color = MUTED),
-                    bottom = KeyC( text = "", color = MUTED),
-                    bottomRight = KeyC("{", color = MUTED),
-                ),
-                KeyItemC(
-                    center = KeyC("i", size = LARGE),
-                    swipeType = EIGHT_WAY,
-                    topLeft = KeyC("<", color = MUTED),
-                    right = KeyC("x"),
-                    bottom = KeyC("#", color = MUTED),
-                    bottomLeft = KeyC("@", color = MUTED),
-                    bottomRight = KeyC("$", color = MUTED)
-                ),
-                KeyItemC(
-                    center =
-                        KeyC(
-                            display = KeyDisplay.IconDisplay(Icons.Outlined.ArrowDropUp),
-                            action = ToggleShiftMode(true),
-                            size = LARGE,
-                            color = SECONDARY,
-                        ),
-                    longPress = ToggleCapsLock,
-                    swipeType = EIGHT_WAY,
-                    top = KeyC("-", color = MUTED),
-                    left = KeyC("—", color = MUTED),
-                    topLeft = KeyC(";", color = MUTED),
-                    topRight = KeyC(":", color = MUTED),
-                    right = KeyC("_", color = MUTED),
-                    bottom = KeyC("^", color = MUTED),
-                    bottomLeft = KeyC("%", color = MUTED),
-                    bottomRight = KeyC("&", color = MUTED),
-                    backgroundColor = SURFACE_VARIANT,
-                ),
-                KeyItemC(
-                    center = KeyC("d", size = LARGE),
-                    swipeType = EIGHT_WAY,
-                    top = KeyC("j"),
-                    topRight = KeyC(">", color = MUTED),
-                    bottom = KeyC("=", color = MUTED),
-                    bottomLeft = KeyC("*", color = MUTED),
-                    bottomRight = KeyC("/", color = MUTED),
-                    left = KeyC("y"),
-                ),
-                KeyItemC(
-                    center = KeyC("l", size = LARGE),
-                    swipeType = EIGHT_WAY,
-                    top = KeyC("", color = MUTED),
-                    topLeft = KeyC(")", color = MUTED),
-                    bottom = KeyC("\\", color = MUTED),
-                    bottomLeft = KeyC("}", color = MUTED),
-                    left = KeyC("]", color = MUTED),
-                ),
-            ),
-            SUAVE_BOTTOM_ROW,
-        ),
-    )
+val SUAVE_MODIFIER_KEY_ALTED = KeyItemC(
+    center = KeyC(display = KeyDisplay.TextDisplay("Ctrl"), action = ToggleCtrlMode(true), color = MUTED),
+    right = KeyC(display = KeyDisplay.TextDisplay("Alt"), action = ToggleAltMode(false), color = PRIMARY),
+    top = KeyC(display = KeyDisplay.TextDisplay("ESC"), action = SendEvent(KeyEvent(KeyEvent.ACTION_DOWN, KeyEvent.KEYCODE_ESCAPE)), color = MUTED),
+    swipeType = FOUR_WAY_CROSS,
+    backgroundColor = SURFACE_VARIANT,
+)
 
-val KB_EN_TYPESPLIT_SUAVE_SHIFTED =
-    KeyboardC(
-        listOf(
-            listOf(
-                KeyItemC(
-                    center = KeyC("O", size = LARGE),
-                    swipeType = EIGHT_WAY,
-                    top = KeyC("1", color = MUTED),
-                    right = KeyC("2", color = MUTED),
-                    bottom = KeyC("Ö"),
-                ),
-                KeyItemC(
-                    center = KeyC("R", size = LARGE),
-                    swipeType = EIGHT_WAY,
-                    top = KeyC("4", color = MUTED),
-                    right = KeyC("5", color = MUTED),
-                    bottom = KeyC("W"),
-                    left = KeyC("3", color = MUTED),
-                ),
-                SUAVE_BACKSPACE,
-                KeyItemC(
-                    center = KeyC("T", size = LARGE),
-                    swipeType = FOUR_WAY_CROSS,
-                    top = KeyC("7", color = MUTED),
-                    right = KeyC("8", color = MUTED),
-                    bottom = KeyC("P"),
-                    left = KeyC("6", color = MUTED),
-                ),
-                KeyItemC(
-                    center = KeyC("H", size = LARGE),
-                    swipeType = FOUR_WAY_CROSS,
-                    top = KeyC("0", color = MUTED),
-                    bottom = KeyC("Q"),
-                    left = KeyC("9", color = MUTED),
-                ),
-            ),
-            listOf(
-                KeyItemC(
-                    center = KeyC("A", size = LARGE),
-                    swipeType = FOUR_WAY_CROSS,
-                    right = KeyC("Ä"),
-                    bottom = KeyC("+", color = MUTED),
-                ),
-                KeyItemC(
-                    center = KeyC("E", size = LARGE),
-                    swipeType = EIGHT_WAY,
-                    top = KeyC("V"),
-                    topRight = KeyC("€", color = MUTED),
-                    right = KeyC("C"),
-                    bottom = KeyC("F"),
-                    bottomRight = KeyC("Ch", color = MUTED),
-                    left = KeyC("Z"),
-                ),
-                SUAVE_SPACE,
-                KeyItemC(
-                    center = KeyC("N", size = LARGE),
-                    swipeType = FOUR_WAY_CROSS,
-                    top = KeyC("B"),
-                    right = KeyC("K"),
-                    bottom = KeyC("M"),
-                    left = KeyC("G"),
-                ),
-                KeyItemC(
-                    center = KeyC("S", size = LARGE),
-                    swipeType = EIGHT_WAY,
-                    top = KeyC("~", color = MUTED),
-                    topLeft = KeyC("$", color = MUTED),
-                    bottom = KeyC("|", color = MUTED),
-                    bottomLeft = KeyC("Sch", color = MUTED),
-                    left = KeyC("ß"),
-                ),
-            ),
-            listOf(
-                KeyItemC(
-                    center = KeyC("U", size = LARGE),
-                    swipeType = EIGHT_WAY,
-                    top = KeyC("Ü"),
-                    topRight = KeyC("(", color = MUTED),
-                    right = KeyC("[", color = MUTED),
-                    bottom = KeyC("", color = MUTED),
-                    bottomRight = KeyC("{", color = MUTED),
-                ),
-                KeyItemC(
-                    center = KeyC("I", size = LARGE),
-                    swipeType = EIGHT_WAY,
-                    topLeft = KeyC("<", color = MUTED),
-                    right = KeyC("X"),
-                    bottom = KeyC("#", color = MUTED),
-                    bottomLeft = KeyC("@", color = MUTED),
-                    bottomRight = KeyC("$", color = MUTED),
-                ),
-                KeyItemC(
-                    center =
-                        KeyC(
-                            display = KeyDisplay.IconDisplay(Icons.Outlined.KeyboardArrowUp),
-                            capsModeDisplay = KeyDisplay.IconDisplay(Icons.Outlined.KeyboardCapslock),
-                            action = ToggleShiftMode(false),
-                            size = LARGE,
-                            color = SECONDARY,
-                        ),
-                    longPress = ToggleCapsLock,
-                    swipeType = EIGHT_WAY,
-                    top = KeyC("-", color = MUTED),
-                    topLeft = KeyC(";", color = MUTED),
-                    topRight = KeyC(":", color = MUTED),
-                    right = KeyC("_", color = MUTED),
-                    bottom = KeyC("^", color = MUTED),
-                    bottomLeft = KeyC("%", color = MUTED),
-                    bottomRight = KeyC("&", color = MUTED),
-                    backgroundColor = SURFACE_VARIANT,
-                ),
-                KeyItemC(
-                    center = KeyC("D", size = LARGE),
-                    swipeType = EIGHT_WAY,
-                    top = KeyC("J"),
-                    topRight = KeyC(">", color = MUTED),
-                    bottom = KeyC("=", color = MUTED),
-                    bottomLeft = KeyC("*", color = MUTED),
-                    bottomRight = KeyC("/", color = MUTED),
-                    left = KeyC("Y"),
-                ),
-                KeyItemC(
-                    center = KeyC("L", size = LARGE),
-                    swipeType = EIGHT_WAY,
-                    topLeft = KeyC(")", color = MUTED),
-                    right = KeyC(""),
-                    bottom = KeyC("\\", color = MUTED),
-                    bottomLeft = KeyC("}", color = MUTED),
-                    left = KeyC("]", color = MUTED),
-                ),
-            ),
-            SUAVE_BOTTOM_ROW,
-        ),
-    )
+private val SHIFT_KEY_MAIN = KeyItemC(
+    center = KeyC(display = KeyDisplay.IconDisplay(Icons.Outlined.ArrowDropUp), action = ToggleShiftMode(true), size = LARGE, color = SECONDARY),
+    longPress = ToggleCapsLock,
+    swipeType = EIGHT_WAY,
+    top = KeyC("-", color = MUTED),
+    left = KeyC("—", color = MUTED),
+    topLeft = KeyC(";", color = MUTED),
+    topRight = KeyC(":", color = MUTED),
+    right = KeyC("_", color = MUTED),
+    bottom = KeyC("^", color = MUTED),
+    bottomLeft = KeyC("%", color = MUTED),
+    bottomRight = KeyC("&", color = MUTED),
+    backgroundColor = SURFACE_VARIANT,
+)
 
-val KB_EN_TYPESPLIT_SUAVE_CTRLED =
-    KeyboardC(
-        listOf(
-            listOf(
-                KeyItemC(
-                    center = keyCModifier(KeyEvent.META_CTRL_ON, KeyEvent.KEYCODE_O, "o", size = LARGE),
-                    swipeType = EIGHT_WAY,
-                    top = keyCModifier(KeyEvent.META_CTRL_ON, KeyEvent.KEYCODE_1, "1", color = MUTED),
-                    right = keyCModifier(KeyEvent.META_CTRL_ON, KeyEvent.KEYCODE_2, "2", color = MUTED),
-                    bottom = keyCModifier(KeyEvent.META_CTRL_ON, KeyEvent.KEYCODE_O, "ö"),
-                    left = KeyC(""),
-                    backgroundColor = SURFACE_VARIANT,
-                ),
-                KeyItemC(
-                    center = keyCModifier(KeyEvent.META_CTRL_ON, KeyEvent.KEYCODE_R, "r", size = LARGE),
-                    swipeType = EIGHT_WAY,
-                    top = keyCModifier(KeyEvent.META_CTRL_ON, KeyEvent.KEYCODE_4, "4", color = MUTED),
-                    right = keyCModifier(KeyEvent.META_CTRL_ON, KeyEvent.KEYCODE_5, "5", color = MUTED),
-                    bottom = keyCModifier(KeyEvent.META_CTRL_ON, KeyEvent.KEYCODE_W, "w"),
-                    left = keyCModifier(KeyEvent.META_CTRL_ON, KeyEvent.KEYCODE_3, "3", color = MUTED),
-                    backgroundColor = SURFACE_VARIANT,
-                ),
-                SUAVE_BACKSPACE,
-                KeyItemC(
-                    center = keyCModifier(KeyEvent.META_CTRL_ON, KeyEvent.KEYCODE_T, "t", size = LARGE),
-                    swipeType = EIGHT_WAY,
-                    top = keyCModifier(KeyEvent.META_CTRL_ON, KeyEvent.KEYCODE_7, "7", color = MUTED),
-                    right = keyCModifier(KeyEvent.META_CTRL_ON, KeyEvent.KEYCODE_8, "8", color = MUTED),
-                    bottom = keyCModifier(KeyEvent.META_CTRL_ON, KeyEvent.KEYCODE_P, "p"),
-                    left = keyCModifier(KeyEvent.META_CTRL_ON, KeyEvent.KEYCODE_6, "6", color = MUTED),
-                    backgroundColor = SURFACE_VARIANT,
-                ),
-                KeyItemC(
-                    center = keyCModifier(KeyEvent.META_CTRL_ON, KeyEvent.KEYCODE_H, "h", size = LARGE),
-                    swipeType = EIGHT_WAY,
-                    top = keyCModifier(KeyEvent.META_CTRL_ON, KeyEvent.KEYCODE_0, "0", color = MUTED),
-                    bottom = keyCModifier(KeyEvent.META_CTRL_ON, KeyEvent.KEYCODE_Q, "q"),
-                    left = keyCModifier(KeyEvent.META_CTRL_ON, KeyEvent.KEYCODE_9, "9", color = MUTED),
-                    backgroundColor = SURFACE_VARIANT,
-                ),
-            ),
-            listOf(
-                KeyItemC(
-                    center = keyCModifier(KeyEvent.META_CTRL_ON, KeyEvent.KEYCODE_A, "a", size = LARGE),
-                    swipeType = FOUR_WAY_CROSS,
-                    right = keyCModifier(KeyEvent.META_CTRL_ON, KeyEvent.KEYCODE_A, "ä"),
-                    bottom = keyCModifier(KeyEvent.META_CTRL_ON, KeyEvent.KEYCODE_EQUALS, "+", color = MUTED),
-                    backgroundColor = SURFACE_VARIANT,
-                ),
-                KeyItemC(
-                    center = keyCModifier(KeyEvent.META_CTRL_ON, KeyEvent.KEYCODE_E, "e", size = LARGE),
-                    swipeType = EIGHT_WAY,
-                    top = keyCModifier(KeyEvent.META_CTRL_ON, KeyEvent.KEYCODE_V, "v"),
-                    topRight = KeyC("€", color = MUTED),
-                    right = keyCModifier(KeyEvent.META_CTRL_ON, KeyEvent.KEYCODE_C, "c"),
-                    bottom = keyCModifier(KeyEvent.META_CTRL_ON, KeyEvent.KEYCODE_F, "f"),
-                    bottomRight = KeyC("ch", color = MUTED),
-                    left = keyCModifier(KeyEvent.META_CTRL_ON, KeyEvent.KEYCODE_Z, "z"),
-                    backgroundColor = SURFACE_VARIANT,
-                ),
-                SUAVE_SPACE,
-                KeyItemC(
-                    center = keyCModifier(KeyEvent.META_CTRL_ON, KeyEvent.KEYCODE_N, "n", size = LARGE),
-                    swipeType = FOUR_WAY_CROSS,
-                    top = keyCModifier(KeyEvent.META_CTRL_ON, KeyEvent.KEYCODE_B, "b"),
-                    right = keyCModifier(KeyEvent.META_CTRL_ON, KeyEvent.KEYCODE_K, "k"),
-                    bottom = keyCModifier(KeyEvent.META_CTRL_ON, KeyEvent.KEYCODE_M, "m"),
-                    left = keyCModifier(KeyEvent.META_CTRL_ON, KeyEvent.KEYCODE_G, "g"),
-                    backgroundColor = SURFACE_VARIANT,
-                ),
-                KeyItemC(
-                    center = keyCModifier(KeyEvent.META_CTRL_ON, KeyEvent.KEYCODE_S, "s", size = LARGE),
-                    swipeType = EIGHT_WAY,
-                    top = KeyC("~", color = MUTED),
-                    topLeft = KeyC("$", color = MUTED),
-                    bottom = KeyC("|", color = MUTED),
-                    bottomLeft = KeyC("sch", color = MUTED),
-                    left = KeyC("ß"),
-                    backgroundColor = SURFACE_VARIANT,
-                ),
-            ),
-            listOf(
-                KeyItemC(
-                    center = keyCModifier(KeyEvent.META_CTRL_ON, KeyEvent.KEYCODE_U, "u", size = LARGE),
-                    swipeType = EIGHT_WAY,
-                    top = KeyC("ü"),
-                    topRight = keyCModifier(KeyEvent.META_CTRL_ON or KeyEvent.META_SHIFT_ON, KeyEvent.KEYCODE_9, "(", color = MUTED),
-                    right = keyCModifier(KeyEvent.META_CTRL_ON, KeyEvent.KEYCODE_LEFT_BRACKET, "[", color = MUTED),
-                    bottom = KeyC( text = "", color = MUTED),
-                    bottomRight = keyCModifier(KeyEvent.META_CTRL_ON or KeyEvent.META_SHIFT_ON, KeyEvent.KEYCODE_LEFT_BRACKET, "{", color = MUTED),
-                    backgroundColor = SURFACE_VARIANT,
-                ),
-                KeyItemC(
-                    center = keyCModifier(KeyEvent.META_CTRL_ON, KeyEvent.KEYCODE_I, "i", size = LARGE),
-                    swipeType = EIGHT_WAY,
-                    topLeft = keyCModifier(KeyEvent.META_CTRL_ON or KeyEvent.META_SHIFT_ON, KeyEvent.KEYCODE_COMMA, "<", color = MUTED),
-                    right = keyCModifier(KeyEvent.META_CTRL_ON, KeyEvent.KEYCODE_X, "x"),
-                    bottom = keyCModifier(KeyEvent.META_CTRL_ON, KeyEvent.KEYCODE_POUND, "#", color = MUTED),
-                    bottomLeft = keyCModifier(KeyEvent.META_CTRL_ON, KeyEvent.KEYCODE_AT, "@", color = MUTED),
-                    bottomRight = keyCModifier(KeyEvent.META_CTRL_ON or KeyEvent.META_SHIFT_ON, KeyEvent.KEYCODE_4, "$", color = MUTED),
-                    backgroundColor = SURFACE_VARIANT,
-                ),
-                KeyItemC(
-                    center =
-                        KeyC(
-                            display = KeyDisplay.IconDisplay(Icons.Outlined.ArrowDropUp),
-                            action = ToggleShiftMode(true),
-                            size = LARGE,
-                            color = SECONDARY,
-                        ),
-                    longPress = ToggleCapsLock,
-                    swipeType = EIGHT_WAY,
-                    top = keyCModifier(KeyEvent.META_CTRL_ON, KeyEvent.KEYCODE_MINUS, "-", color = MUTED),
-                    left = keyCModifier(KeyEvent.META_CTRL_ON, KeyEvent.KEYCODE_MINUS, "—", color = MUTED),
-                    topLeft = keyCModifier(KeyEvent.META_CTRL_ON, KeyEvent.KEYCODE_SEMICOLON, ";", color = MUTED),
-                    topRight = keyCModifier(KeyEvent.META_CTRL_ON or KeyEvent.META_SHIFT_ON, KeyEvent.KEYCODE_SEMICOLON, ":", color = MUTED),
-                    right = keyCModifier(KeyEvent.META_CTRL_ON or KeyEvent.META_SHIFT_ON, KeyEvent.KEYCODE_MINUS, "_", color = MUTED),
-                    bottom = keyCModifier(KeyEvent.META_CTRL_ON or KeyEvent.META_SHIFT_ON, KeyEvent.KEYCODE_6, "^", color = MUTED),
-                    bottomLeft = keyCModifier(KeyEvent.META_CTRL_ON or KeyEvent.META_SHIFT_ON, KeyEvent.KEYCODE_5, "%", color = MUTED),
-                    bottomRight = keyCModifier(KeyEvent.META_CTRL_ON or KeyEvent.META_SHIFT_ON, KeyEvent.KEYCODE_7, "&", color = MUTED),
-                    backgroundColor = SURFACE_VARIANT,
-                ),
-                KeyItemC(
-                    center = keyCModifier(KeyEvent.META_CTRL_ON, KeyEvent.KEYCODE_D, "d", size = LARGE),
-                    swipeType = EIGHT_WAY,
-                    top = keyCModifier(KeyEvent.META_CTRL_ON, KeyEvent.KEYCODE_J, "j"),
-                    topRight = keyCModifier(KeyEvent.META_CTRL_ON or KeyEvent.META_SHIFT_ON, KeyEvent.KEYCODE_PERIOD, ">", color = MUTED),
-                    bottom = keyCModifier(KeyEvent.META_CTRL_ON, KeyEvent.KEYCODE_EQUALS, "=", color = MUTED),
-                    bottomLeft = keyCModifier(KeyEvent.META_CTRL_ON or KeyEvent.META_SHIFT_ON, KeyEvent.KEYCODE_8, "*", color = MUTED),
-                    bottomRight = keyCModifier(KeyEvent.META_CTRL_ON, KeyEvent.KEYCODE_SLASH, "/", color = MUTED),
-                    left = keyCModifier(KeyEvent.META_CTRL_ON, KeyEvent.KEYCODE_Y, "y"),
-                    backgroundColor = SURFACE_VARIANT,
-                ),
-                KeyItemC(
-                    center = keyCModifier(KeyEvent.META_CTRL_ON, KeyEvent.KEYCODE_L, "l", size = LARGE),
-                    swipeType = EIGHT_WAY,
-                    top = KeyC("", color = MUTED),
-                    topLeft = keyCModifier(KeyEvent.META_CTRL_ON or KeyEvent.META_SHIFT_ON, KeyEvent.KEYCODE_0, ")", color = MUTED),
-                    bottom = keyCModifier(KeyEvent.META_CTRL_ON, KeyEvent.KEYCODE_BACKSLASH, "\\", color = MUTED),
-                    bottomLeft = keyCModifier(KeyEvent.META_CTRL_ON or KeyEvent.META_SHIFT_ON, KeyEvent.KEYCODE_RIGHT_BRACKET, "}", color = MUTED),
-                    left = keyCModifier(KeyEvent.META_CTRL_ON, KeyEvent.KEYCODE_RIGHT_BRACKET, "]", color = MUTED),
-                    backgroundColor = SURFACE_VARIANT,
-                ),
-            ),
-            SUAVE_BOTTOM_ROW_CTRLED,
-        ),
-    )
+private val SHIFT_KEY_SHIFTED = KeyItemC(
+    center = KeyC(display = KeyDisplay.IconDisplay(Icons.Outlined.KeyboardArrowUp), capsModeDisplay = KeyDisplay.IconDisplay(Icons.Outlined.KeyboardCapslock), action = ToggleShiftMode(false), size = LARGE, color = SECONDARY),
+    longPress = ToggleCapsLock,
+    swipeType = EIGHT_WAY,
+    top = KeyC("-", color = MUTED),
+    topLeft = KeyC(";", color = MUTED),
+    topRight = KeyC(":", color = MUTED),
+    right = KeyC("_", color = MUTED),
+    bottom = KeyC("^", color = MUTED),
+    bottomLeft = KeyC("%", color = MUTED),
+    bottomRight = KeyC("&", color = MUTED),
+    backgroundColor = SURFACE_VARIANT,
+)
+
+private val SUAVE_GRID_TEMPLATE = listOf(
+    listOf(GRID_O, GRID_R, SUAVE_BACKSPACE, GRID_T, GRID_H),
+    listOf(GRID_A, GRID_E, SUAVE_SPACE, GRID_N, GRID_S),
+    listOf(GRID_U, GRID_I, SHIFT_KEY_MAIN, GRID_D, GRID_L)
+)
+
+private val SUAVE_GRID_TEMPLATE_SHIFTED = listOf(
+    listOf(GRID_O, GRID_R, SUAVE_BACKSPACE, GRID_T, GRID_H),
+    listOf(GRID_A, GRID_E, SUAVE_SPACE, GRID_N, GRID_S),
+    listOf(GRID_U, GRID_I, SHIFT_KEY_SHIFTED, GRID_D, GRID_L)
+)
+
+val KB_EN_TYPESPLIT_SUAVE_MAIN = generateSuaveLayout(SuaveMode.MAIN, SUAVE_GRID_TEMPLATE + listOf(listOf(SUAVE_MODIFIER_KEY, EMOJI_KEY_ITEM, NUMERIC_KEY_ITEM, SUAVE_RETURN)))
+val KB_EN_TYPESPLIT_SUAVE_SHIFTED = generateSuaveLayout(SuaveMode.SHIFTED, SUAVE_GRID_TEMPLATE_SHIFTED + listOf(listOf(SUAVE_MODIFIER_KEY, EMOJI_KEY_ITEM, NUMERIC_KEY_ITEM, SUAVE_RETURN)))
+val KB_EN_TYPESPLIT_SUAVE_CTRLED = generateSuaveLayout(SuaveMode.CTRLED, SUAVE_GRID_TEMPLATE + listOf(listOf(SUAVE_MODIFIER_KEY_CTRLED, EMOJI_KEY_ITEM, NUMERIC_KEY_ITEM, SUAVE_RETURN)))
+val KB_EN_TYPESPLIT_SUAVE_ALTED = generateSuaveLayout(SuaveMode.ALTED, SUAVE_GRID_TEMPLATE + listOf(listOf(SUAVE_MODIFIER_KEY_ALTED, EMOJI_KEY_ITEM, NUMERIC_KEY_ITEM, SUAVE_RETURN)))
 
 val KB_EN_TYPESPLIT_SUAVE_NUMERIC =
     KeyboardC(
@@ -748,6 +398,7 @@ val KB_EN_TYPESPLIT_SUAVE: KeyboardDefinition =
                 main = KB_EN_TYPESPLIT_SUAVE_MAIN,
                 shifted = KB_EN_TYPESPLIT_SUAVE_SHIFTED,
                 numeric = KB_EN_TYPESPLIT_SUAVE_NUMERIC,
-                ctrled = KB_EN_TYPESPLIT_SUAVE_CTRLED
+                ctrled = KB_EN_TYPESPLIT_SUAVE_CTRLED,
+                alted = KB_EN_TYPESPLIT_SUAVE_ALTED
             ),
     )
