@@ -16,7 +16,7 @@ import com.dessalines.thumbkey.utils.SwipeNWay.*
  * INTERNAL CONFIGURATION
  */
 
-private enum class SuaveMode { MAIN, SHIFTED, CTRLED, ALTED }
+private enum class SuaveMode { MAIN, SHIFTED, CTRLED, ALTED, EMOJI }
 
 // Special mappings for shifted mode
 private val SHIFT_MAPPINGS = mapOf(
@@ -70,6 +70,7 @@ private val GRID_2_3 = SuaveKeyDef("d", top = "j", topRight = ">", bottom = "=",
 private val GRID_2_4 = SuaveKeyDef("l", topLeft = ")", bottom = "\\", bottomLeft = "}", left = "]", isStatic = true)
 
 private val GRID_3_0 = SuaveKeyDef("ctrl", right = "alt", top = "esc", bg = SURFACE_VARIANT, swipeType = FOUR_WAY_CROSS)
+private val GRID_3_0_EMOJI = SuaveKeyDef("backspace", bg = SURFACE_VARIANT, slide = SlideType.DELETE)
 private val GRID_3_1 = SuaveKeyDef("emoji", top = "settings", topLeft = "hide", bottom = "ime", bottomLeft = "voice", left = "lang", right = "move", bg = SURFACE_VARIANT)
 private val GRID_3_2 = SuaveKeyDef("numeric", top = "copy", topLeft = "selectAll", topRight = "cut", bottomLeft = "undo", bottomRight = "redo", bottom = "paste", bg = SURFACE_VARIANT)
 private val GRID_3_2_ABC = GRID_3_2.copy(center = "abc")
@@ -85,6 +86,7 @@ val KB_EN_TYPESPLIT_SUAVE_MAIN = generateSuaveLayout(SuaveMode.MAIN, SUAVE_GRID_
 val KB_EN_TYPESPLIT_SUAVE_SHIFTED = generateSuaveLayout(SuaveMode.SHIFTED, SUAVE_GRID_TEMPLATE + listOf(listOf(GRID_3_0, GRID_3_1, GRID_3_2, GRID_3_3)))
 val KB_EN_TYPESPLIT_SUAVE_CTRLED = generateSuaveLayout(SuaveMode.CTRLED, SUAVE_GRID_TEMPLATE + listOf(listOf(GRID_3_0, GRID_3_1, GRID_3_2, GRID_3_3)))
 val KB_EN_TYPESPLIT_SUAVE_ALTED = generateSuaveLayout(SuaveMode.ALTED, SUAVE_GRID_TEMPLATE + listOf(listOf(GRID_3_0, GRID_3_1, GRID_3_2, GRID_3_3)))
+val KB_EN_TYPESPLIT_SUAVE_EMOJI = generateSuaveLayout(SuaveMode.EMOJI, SUAVE_GRID_TEMPLATE + listOf(listOf(GRID_3_0_EMOJI, GRID_3_1, GRID_3_2, GRID_3_3)))
 
 val KB_EN_TYPESPLIT_SUAVE_NUMERIC =
     KeyboardC(
@@ -225,6 +227,7 @@ val KB_EN_TYPESPLIT_SUAVE: KeyboardDefinition =
                 numeric = KB_EN_TYPESPLIT_SUAVE_NUMERIC,
                 ctrled = KB_EN_TYPESPLIT_SUAVE_CTRLED,
                 alted = KB_EN_TYPESPLIT_SUAVE_ALTED,
+                emoji = KB_EN_TYPESPLIT_SUAVE_EMOJI,
                 ),
     )
 
@@ -317,7 +320,10 @@ private fun generateSuaveLayout(mode: SuaveMode, grid: List<List<Any>>): Keyboar
                             "right" -> return KeyC(display = KeyDisplay.TextDisplay("→"), action = SendEvent(KeyEvent(KeyEvent.ACTION_DOWN, KeyEvent.KEYCODE_DPAD_RIGHT)), color = MUTED)
                             "up" -> return KeyC(display = KeyDisplay.TextDisplay("↑"), action = SendEvent(KeyEvent(KeyEvent.ACTION_DOWN, KeyEvent.KEYCODE_DPAD_UP)), color = MUTED)
                             "down" -> return KeyC(display = KeyDisplay.TextDisplay("↓"), action = SendEvent(KeyEvent(KeyEvent.ACTION_DOWN, KeyEvent.KEYCODE_DPAD_DOWN)), color = MUTED)
-                            "emoji" -> return KeyC(display = KeyDisplay.IconDisplay(Icons.Outlined.Mood), action = ToggleEmojiMode(true), size = LARGE, color = SECONDARY)
+                            "emoji" -> {
+                                val isActive = (mode == SuaveMode.EMOJI)
+                                return KeyC(display = KeyDisplay.IconDisplay(Icons.Outlined.Mood), action = ToggleEmojiMode(!isActive), size = LARGE, color = if (isActive) PRIMARY else SECONDARY)
+                            }
                             "numeric" -> return KeyC(display = KeyDisplay.IconDisplay(Icons.Outlined.Numbers), action = ToggleNumericMode(true), size = LARGE, color = SECONDARY)
                             "abc" -> return KeyC(display = KeyDisplay.IconDisplay(Icons.Outlined.Abc), action = ToggleNumericMode(false), size = LARGE, color = SECONDARY)
                             "copy" -> return KeyC(display = KeyDisplay.IconDisplay(Icons.Outlined.ContentCopy), action = Copy, color = MUTED)

@@ -336,6 +336,7 @@ data class KeyboardDefinitionModesSerializable(
     val numeric: KeyboardCSerializable? = null,
     val ctrled: KeyboardCSerializable? = null,
     val alted: KeyboardCSerializable? = null,
+    val emoji: KeyboardCSerializable? = null,
 )
 
 @Serializable
