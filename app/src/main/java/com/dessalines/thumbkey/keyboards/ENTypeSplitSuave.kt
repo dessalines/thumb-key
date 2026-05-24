@@ -43,127 +43,28 @@ private val SHIFT_MAPPINGS = mapOf(
     "ch" to "Ch"
 )
 
-private fun getKeyCode(char: Char): Int = when (char.lowercaseChar()) {
-    'a' -> KeyEvent.KEYCODE_A
-    'b' -> KeyEvent.KEYCODE_B
-    'c' -> KeyEvent.KEYCODE_C
-    'd' -> KeyEvent.KEYCODE_D
-    'e' -> KeyEvent.KEYCODE_E
-    'f' -> KeyEvent.KEYCODE_F
-    'g' -> KeyEvent.KEYCODE_G
-    'h' -> KeyEvent.KEYCODE_H
-    'i' -> KeyEvent.KEYCODE_I
-    'j' -> KeyEvent.KEYCODE_J
-    'k' -> KeyEvent.KEYCODE_K
-    'l' -> KeyEvent.KEYCODE_L
-    'm' -> KeyEvent.KEYCODE_M
-    'n' -> KeyEvent.KEYCODE_N
-    'o' -> KeyEvent.KEYCODE_O
-    'p' -> KeyEvent.KEYCODE_P
-    'q' -> KeyEvent.KEYCODE_Q
-    'r' -> KeyEvent.KEYCODE_R
-    's' -> KeyEvent.KEYCODE_S
-    't' -> KeyEvent.KEYCODE_T
-    'u' -> KeyEvent.KEYCODE_U
-    'v' -> KeyEvent.KEYCODE_V
-    'w' -> KeyEvent.KEYCODE_W
-    'x' -> KeyEvent.KEYCODE_X
-    'y' -> KeyEvent.KEYCODE_Y
-    'z' -> KeyEvent.KEYCODE_Z
-    '1' -> KeyEvent.KEYCODE_1
-    '2' -> KeyEvent.KEYCODE_2
-    '3' -> KeyEvent.KEYCODE_3
-    '4' -> KeyEvent.KEYCODE_4
-    '5' -> KeyEvent.KEYCODE_5
-    '6' -> KeyEvent.KEYCODE_6
-    '7' -> KeyEvent.KEYCODE_7
-    '8' -> KeyEvent.KEYCODE_8
-    '9' -> KeyEvent.KEYCODE_9
-    '0' -> KeyEvent.KEYCODE_0
-    else -> KeyEvent.KEYCODE_UNKNOWN
-}
-
-private fun generateSuaveLayout(mode: SuaveMode, grid: List<List<Any>>): KeyboardC {
-    val result = grid.map { row ->
-        row.map { item ->
-            when (item) {
-                is KeyItemC -> item
-                is SuaveKeyDef -> {
-                    val backgroundColor = if (mode == SuaveMode.CTRLED || mode == SuaveMode.ALTED) SURFACE_VARIANT else SURFACE
-
-                    fun process(text: String?, isCenter: Boolean = false): KeyC? {
-                        if (text == null) return null
-                        if (item.isStatic && !isCenter) return KeyC(text, color = MUTED)
-
-                        val processedText = when (mode) {
-                            SuaveMode.SHIFTED -> {
-                                SHIFT_MAPPINGS[text] ?: if (text.length == 1) text.uppercase() else text
-                            }
-                            else -> text
-                        }
-
-                        if ((mode == SuaveMode.CTRLED || mode == SuaveMode.ALTED) && text.length == 1) {
-                            val code = getKeyCode(text[0])
-                            if (code != KeyEvent.KEYCODE_UNKNOWN) {
-                                val flag = if (mode == SuaveMode.CTRLED) KeyEvent.META_CTRL_ON else KeyEvent.META_ALT_ON
-                                return keyCModifier(flag, code, processedText, size = if (isCenter) item.size else SMALL)
-                            }
-                        }
-                        
-                        return if ((mode == SuaveMode.CTRLED || mode == SuaveMode.ALTED) && !isCenter) {
-                            KeyC(processedText, color = MUTED)
-                        } else {
-                            KeyC(processedText, size = if (isCenter) item.size else SMALL, color = if (isCenter) PRIMARY else MUTED)
-                        }
-                    }
-
-                    KeyItemC(
-                        center = process(item.center, true)!!,
-                        top = process(item.top),
-                        topLeft = process(item.topLeft),
-                        topRight = process(item.topRight),
-                        left = process(item.left),
-                        right = process(item.right),
-                        bottom = process(item.bottom),
-                        bottomLeft = process(item.bottomLeft),
-                        bottomRight = process(item.bottomRight),
-                        swipeType = item.swipeType,
-                        backgroundColor = backgroundColor
-                    )
-                }
-                else -> throw IllegalArgumentException("Unknown item type")
-            }
-        }
-    }
-    return KeyboardC(result)
-}
-
 // Key Definitions
-private val GRID_O = SuaveKeyDef("o", top = "1", right = "2", bottom = "ö", left = "", isStatic = true)
-private val GRID_R = SuaveKeyDef("r", top = "4", right = "5", bottom = "w", left = "3")
-private val GRID_T = SuaveKeyDef("t", top = "7", right = "8", bottom = "p", left = "6")
-private val GRID_H = SuaveKeyDef("h", top = "0", bottom = "q", left = "9")
+private val GRID_0_0 = SuaveKeyDef("o", top = "1", right = "2", bottom = "ö", left = "", isStatic = true)
+private val GRID_0_1 = SuaveKeyDef("r", top = "4", right = "5", bottom = "w", bottomLeft = "?", bottomRight = "," , left = "3")
+private val GRID_0_3 = SuaveKeyDef("t", top = "7", right = "8", bottom = "p", bottomLeft = ".", bottomRight = "!", left = "6")
+private val GRID_0_4 = SuaveKeyDef("h", top = "0", bottom = "q", left = "9")
 
-private val GRID_A = SuaveKeyDef("a", right = "ä", bottom = "+", swipeType = FOUR_WAY_CROSS)
-private val GRID_E = SuaveKeyDef("e", top = "v", topRight = "€", right = "c", bottom = "f", bottomRight = "ch", left = "z")
-private val GRID_N = SuaveKeyDef("n", top = "b", right = "k", bottom = "m", left = "g", swipeType = FOUR_WAY_CROSS)
-private val GRID_S = SuaveKeyDef("s", top = "~", topLeft = "$", bottom = "|", bottomLeft = "sch", left = "ß")
+private val GRID_1_0 = SuaveKeyDef("a", right = "ä", bottom = "+")
+private val GRID_1_1 = SuaveKeyDef("e", top = "v", topRight = "€", right = "c", bottom = "f", bottomRight = "ch", left = "z")
+private val GRID_1_3 = SuaveKeyDef("n", top = "b", right = "k", bottom = "m", left = "g")
+private val GRID_1_4 = SuaveKeyDef("s", top = "~", topLeft = "$", bottom = "|", bottomLeft = "sch", left = "ß")
 
-private val GRID_U = SuaveKeyDef("u", top = "ü", topRight = "(", right = "[", bottomRight = "{")
-private val GRID_I = SuaveKeyDef("i", topLeft = "<", right = "x", bottom = "#", bottomLeft = "@", bottomRight = "$", left = "—")
-private val GRID_D = SuaveKeyDef("d", top = "j", topRight = ">", bottom = "=", bottomLeft = "*", bottomRight = "/", left = "y")
-private val GRID_L = SuaveKeyDef("l", topLeft = ")", bottom = "\\", bottomLeft = "}", left = "]", isStatic = true)
+private val GRID_2_0 = SuaveKeyDef("u", top = "ü", topRight = "(", right = "[", bottomRight = "{")
+private val GRID_2_1 = SuaveKeyDef("i", topLeft = "<", right = "x", bottom = "#", bottomLeft = "@", bottomRight = "$")
+private val GRID_2_3 = SuaveKeyDef("d", top = "j", topRight = ">", bottom = "=", bottomLeft = "*", bottomRight = "/", left = "y")
+private val GRID_2_4 = SuaveKeyDef("l", top = "julian.konrath@gmail.com", topLeft = ")", bottom = "\\", bottomLeft = "}", left = "]", isStatic = true)
 
 val SUAVE_BACKSPACE = KeyItemC(
     center = KeyC(display = KeyDisplay.IconDisplay(Icons.AutoMirrored.Outlined.KeyboardBackspace), action = DeleteKeyAction, size = LARGE, color = SECONDARY),
-    swipeType = EIGHT_WAY,
+    swipeType = SwipeNWay.FOUR_WAY_CROSS,
     slideType = SlideType.DELETE,
     top = KeyC("'", color = MUTED),
-    topLeft = KeyC("!", color = MUTED),
-    topRight = KeyC("?", color = MUTED),
     bottom = KeyC("\"", color = MUTED),
-    bottomLeft = KeyC(".", color = MUTED),
-    bottomRight = KeyC(",", color = MUTED),
     backgroundColor = SURFACE_VARIANT,
     longPress = DeleteWordBeforeCursor,
 )
@@ -245,16 +146,113 @@ private val SHIFT_KEY_SHIFTED = KeyItemC(
 )
 
 private val SUAVE_GRID_TEMPLATE = listOf(
-    listOf(GRID_O, GRID_R, SUAVE_BACKSPACE, GRID_T, GRID_H),
-    listOf(GRID_A, GRID_E, SUAVE_SPACE, GRID_N, GRID_S),
-    listOf(GRID_U, GRID_I, SHIFT_KEY_MAIN, GRID_D, GRID_L)
+    listOf(GRID_0_0, GRID_0_1, SUAVE_BACKSPACE, GRID_0_3, GRID_0_4),
+    listOf(GRID_1_0, GRID_1_1, SUAVE_SPACE, GRID_1_3, GRID_1_4),
+    listOf(GRID_2_0, GRID_2_1, SHIFT_KEY_MAIN, GRID_2_3, GRID_2_4)
 )
 
 private val SUAVE_GRID_TEMPLATE_SHIFTED = listOf(
-    listOf(GRID_O, GRID_R, SUAVE_BACKSPACE, GRID_T, GRID_H),
-    listOf(GRID_A, GRID_E, SUAVE_SPACE, GRID_N, GRID_S),
-    listOf(GRID_U, GRID_I, SHIFT_KEY_SHIFTED, GRID_D, GRID_L)
+    listOf(GRID_0_0, GRID_0_1, SUAVE_BACKSPACE, GRID_0_3, GRID_0_4),
+    listOf(GRID_1_0, GRID_1_1, SUAVE_SPACE, GRID_1_3, GRID_1_4),
+    listOf(GRID_2_0, GRID_2_1, SHIFT_KEY_SHIFTED, GRID_2_3, GRID_2_4)
 )
+
+
+private fun getKeyCode(char: Char): Int = when (char.lowercaseChar()) {
+    'a' -> KeyEvent.KEYCODE_A
+    'b' -> KeyEvent.KEYCODE_B
+    'c' -> KeyEvent.KEYCODE_C
+    'd' -> KeyEvent.KEYCODE_D
+    'e' -> KeyEvent.KEYCODE_E
+    'f' -> KeyEvent.KEYCODE_F
+    'g' -> KeyEvent.KEYCODE_G
+    'h' -> KeyEvent.KEYCODE_H
+    'i' -> KeyEvent.KEYCODE_I
+    'j' -> KeyEvent.KEYCODE_J
+    'k' -> KeyEvent.KEYCODE_K
+    'l' -> KeyEvent.KEYCODE_L
+    'm' -> KeyEvent.KEYCODE_M
+    'n' -> KeyEvent.KEYCODE_N
+    'o' -> KeyEvent.KEYCODE_O
+    'p' -> KeyEvent.KEYCODE_P
+    'q' -> KeyEvent.KEYCODE_Q
+    'r' -> KeyEvent.KEYCODE_R
+    's' -> KeyEvent.KEYCODE_S
+    't' -> KeyEvent.KEYCODE_T
+    'u' -> KeyEvent.KEYCODE_U
+    'v' -> KeyEvent.KEYCODE_V
+    'w' -> KeyEvent.KEYCODE_W
+    'x' -> KeyEvent.KEYCODE_X
+    'y' -> KeyEvent.KEYCODE_Y
+    'z' -> KeyEvent.KEYCODE_Z
+    '1' -> KeyEvent.KEYCODE_1
+    '2' -> KeyEvent.KEYCODE_2
+    '3' -> KeyEvent.KEYCODE_3
+    '4' -> KeyEvent.KEYCODE_4
+    '5' -> KeyEvent.KEYCODE_5
+    '6' -> KeyEvent.KEYCODE_6
+    '7' -> KeyEvent.KEYCODE_7
+    '8' -> KeyEvent.KEYCODE_8
+    '9' -> KeyEvent.KEYCODE_9
+    '0' -> KeyEvent.KEYCODE_0
+    else -> KeyEvent.KEYCODE_UNKNOWN
+}
+
+private fun generateSuaveLayout(mode: SuaveMode, grid: List<List<Any>>): KeyboardC {
+    val result = grid.map { row ->
+        row.map { item ->
+            when (item) {
+                is KeyItemC -> item
+                is SuaveKeyDef -> {
+                    val backgroundColor = if (mode == SuaveMode.CTRLED || mode == SuaveMode.ALTED) SURFACE_VARIANT else SURFACE
+
+                    fun process(text: String?, isCenter: Boolean = false): KeyC? {
+                        if (text == null) return null
+                        if (item.isStatic && !isCenter) return KeyC(text, color = MUTED)
+
+                        val processedText = when (mode) {
+                            SuaveMode.SHIFTED -> {
+                                SHIFT_MAPPINGS[text] ?: if (text.length == 1) text.uppercase() else text
+                            }
+                            else -> text
+                        }
+
+                        if ((mode == SuaveMode.CTRLED || mode == SuaveMode.ALTED) && text.length == 1) {
+                            val code = getKeyCode(text[0])
+                            if (code != KeyEvent.KEYCODE_UNKNOWN) {
+                                val flag = if (mode == SuaveMode.CTRLED) KeyEvent.META_CTRL_ON else KeyEvent.META_ALT_ON
+                                return keyCModifier(flag, code, processedText, size = if (isCenter) item.size else SMALL)
+                            }
+                        }
+
+                        return if ((mode == SuaveMode.CTRLED || mode == SuaveMode.ALTED) && !isCenter) {
+                            KeyC(processedText, color = MUTED)
+                        } else {
+                            KeyC(processedText, size = if (isCenter) item.size else SMALL, color = if (isCenter) PRIMARY else MUTED)
+                        }
+                    }
+
+                    KeyItemC(
+                        center = process(item.center, true)!!,
+                        top = process(item.top),
+                        topLeft = process(item.topLeft),
+                        topRight = process(item.topRight),
+                        left = process(item.left),
+                        right = process(item.right),
+                        bottom = process(item.bottom),
+                        bottomLeft = process(item.bottomLeft),
+                        bottomRight = process(item.bottomRight),
+                        swipeType = item.swipeType,
+                        backgroundColor = backgroundColor
+                    )
+                }
+                else -> throw IllegalArgumentException("Unknown item type")
+            }
+        }
+    }
+    return KeyboardC(result)
+}
+
 
 val KB_EN_TYPESPLIT_SUAVE_MAIN = generateSuaveLayout(SuaveMode.MAIN, SUAVE_GRID_TEMPLATE + listOf(listOf(SUAVE_MODIFIER_KEY, EMOJI_KEY_ITEM, NUMERIC_KEY_ITEM, SUAVE_RETURN)))
 val KB_EN_TYPESPLIT_SUAVE_SHIFTED = generateSuaveLayout(SuaveMode.SHIFTED, SUAVE_GRID_TEMPLATE_SHIFTED + listOf(listOf(SUAVE_MODIFIER_KEY, EMOJI_KEY_ITEM, NUMERIC_KEY_ITEM, SUAVE_RETURN)))
