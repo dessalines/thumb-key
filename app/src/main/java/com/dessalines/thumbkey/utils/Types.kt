@@ -15,6 +15,7 @@ data class KeyboardDefinitionModes(
     val numeric: KeyboardC,
     val ctrled: KeyboardC? = null,
     val alted: KeyboardC? = null,
+    val emoji: KeyboardC? = null,
 ) {
     companion object
 }
