@@ -72,7 +72,6 @@
     <string name="backup_database">Архивиране на базата данни</string>
     <string name="restore_database">Възстановяване на базата данни</string>
     <string name="restore_database_warning">Предупреждение: Това ще изчисти текущата ви база данни</string>
-    <string name="database_restored">Базата данни е възстановена.</string>
     <string name="backup_and_restore">Резервно копие</string>
     <string name="cancel">Отказ</string>
     <string name="slide_cursor_acceleration_threshold_acceleration">Прагово ускорение</string>

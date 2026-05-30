@@ -63,7 +63,6 @@
     <string name="finish_setup">設定完了</string>
     <string name="key_padding">キーの余白: %1$s</string>
     <string name="ghost_keys_description">数字ビューに切り替えずに隠れた記号キーにアクセス</string>
-    <string name="database_restored">データベースが復元されました。</string>
     <string name="follow_me_mastodon">Mastodonでフォローする</string>
     <string name="open_source">オープンソース</string>
     <string name="look_and_feel">外観と操作感</string>

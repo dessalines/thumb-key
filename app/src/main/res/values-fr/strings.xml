@@ -91,7 +91,6 @@
     <string name="backup_database">Sauvegarder la base de données</string>
     <string name="restore_database">Restaurer la base de données</string>
     <string name="restore_database_warning">Attention : votre base de données sera réinitialisée</string>
-    <string name="database_restored">La base de données a été restaurée.</string>
     <string name="database_backed_up">La base de données a été sauvegardée.</string>
     <string name="backup_and_restore">Sauvegarde et restauration</string>
     <string name="modify_keys">Modifications des touches</string>

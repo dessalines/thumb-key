@@ -90,7 +90,6 @@
     <string name="backup_database">Gwarediñ ar stlennvon</string>
     <string name="restore_database">Assav ar stlennvon</string>
     <string name="restore_database_warning">Diwallit: adderaouekaet e vo ho stlennvon</string>
-    <string name="database_restored">Stlennvon assavet.</string>
     <string name="database_backed_up">Stlennvon gwaredet.</string>
     <string name="backup_and_restore">Assav ha gwarediñ</string>
     <string name="dual">Doubl</string>

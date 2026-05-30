@@ -92,7 +92,6 @@
     <string name="backup_database">Shrani varnostno kopijo</string>
     <string name="restore_database">Obnovi iz varnostne kopije</string>
     <string name="restore_database_warning">Pozor: Obnovitev bo prepisala trenutne nastavitve</string>
-    <string name="database_restored">Obnovitev je končana.</string>
     <string name="database_backed_up">Varnostna kopija je shranjena.</string>
     <string name="backup_and_restore">Varnostna kopija in obnovitev</string>
     <string name="modify_keys">Uredi tipke</string>

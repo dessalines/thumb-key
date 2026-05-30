@@ -74,7 +74,6 @@
     <string name="send_numeric">Zifferntaste</string>
     <string name="circular_drag_enable">Kreisförmig ziehen</string>
     <string name="restore_database">Datenbank wiederherstellen</string>
-    <string name="database_restored">Datenbank wiederhergestellt.</string>
     <string name="database_backed_up">Datenbank gesichert.</string>
     <string name="backup_and_restore">Sicherung und Wiederherstellung</string>
     <string name="slide_cursor_acceleration_quadratic">Quadratische Beschleunigung</string>

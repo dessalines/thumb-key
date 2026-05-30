@@ -84,7 +84,6 @@
     <string name="ghost_keys_description">Accedi ai simboli nascosti senza dover passare alla tastiera numerica</string>
     <string name="restore_database">Ripristino database</string>
     <string name="restore_database_warning">Attenzione: il database corrente verrà eliminato</string>
-    <string name="database_restored">Database ripristinato.</string>
     <string name="database_backed_up">Database salvato.</string>
     <string name="backup_and_restore">Backup e ripristino</string>
     <string name="modify_keys">Modifica tasti</string>
