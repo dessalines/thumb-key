@@ -100,7 +100,7 @@ dependencies {
     implementation("com.github.woheller69:FreeDroidWarn:V1.13")
 
     // Exporting / importing DB helper
-    implementation("com.github.dessalines:room-db-export-import:0.1.0")
+    implementation("com.github.dessalines:room-db-export-import:0.1.1")
 
     // Compose BOM
     implementation(platform("androidx.compose:compose-bom:2026.05.01"))
