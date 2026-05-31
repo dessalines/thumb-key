@@ -89,7 +89,6 @@
     <string name="backup_database">Guardar configuracion</string>
     <string name="restore_database">Cargar configuaracion</string>
     <string name="restore_database_warning">Precaucion: esto borrara tu configuracion actual</string>
-    <string name="database_restored">Configuracion restaurada.</string>
     <string name="database_backed_up">Configuracion guardada.</string>
     <string name="backup_and_restore">Guardar y restablecer</string>
     <string name="modify_keys">Modificar las teclas</string>

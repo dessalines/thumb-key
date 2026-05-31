@@ -94,7 +94,6 @@
     <string name="how_to_modify_keys">Как модифицировать клавиши</string>
     <string name="backup_database">Создать резервную копию</string>
     <string name="restore_database">Восстановить из резервной копии</string>
-    <string name="database_restored">Восстановление завершено.</string>
     <string name="database_backed_up">Резервная копия создана.</string>
     <string name="backup_and_restore">Резервное копирование и восстановление</string>
     <string name="restore_database_warning">Предупреждение: Все данные в текущей базе данных будут стёрты</string>

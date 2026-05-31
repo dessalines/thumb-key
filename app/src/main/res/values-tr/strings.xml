@@ -51,7 +51,6 @@
     <string name="backup_database">Verileri yedekle</string>
     <string name="restore_database">Yedeği geri döndür</string>
     <string name="restore_database_warning">Uyarı: Bu işlem mevcut verileri siler</string>
-    <string name="database_restored">Veriler Geri Döndürüldü.</string>
     <string name="database_backed_up">Veriler Yedeklendi.</string>
     <string name="backup_and_restore">Yedekleme</string>
     <string name="dark">Karanlık</string>

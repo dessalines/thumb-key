@@ -90,7 +90,6 @@
     <string name="restore_database_warning">هشدار: با این کار پایگاه داده کنونی شما به طور کامل پاک می‌شود</string>
     <string name="twilight">شفق</string>
     <string name="slide_cursor_movement_mode">حالت حرکت مکان نما</string>
-    <string name="database_restored">پایگاه‌داده بازگردانی شد.</string>
     <string name="send_oppsite_case">حرف با حالت وارونه (بزرگ یا کوچک)</string>
     <string name="slide_spacebar_deadzone_enable">کلید فاصله: امکان استفاده از کشیدن انگشت معمولی برای حرکات کشیدنی</string>
     <string name="modify_keys">سفارشی‌سازی کلیدها</string>

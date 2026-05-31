@@ -67,7 +67,6 @@
     <string name="ghost_keys_description">Prístup k skrytým symbolom bez zmeny na numerický mód</string>
     <string name="restore_database">Obnoviť databázu</string>
     <string name="restore_database_warning">Upozornenie: Toto vymaže vašu aktuálnu databázu</string>
-    <string name="database_restored">Databáza obnovená.</string>
     <string name="database_backed_up">Databáza zálohovaná.</string>
     <string name="left">Vľavo</string>
     <string name="social">Sociálne siete</string>

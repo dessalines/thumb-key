@@ -25,6 +25,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
+import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
@@ -85,8 +86,12 @@ import com.dessalines.thumbkey.utils.SimpleTopAppBar
 import com.dessalines.thumbkey.utils.keyboardLayoutsSetFromDbIndexString
 import com.dessalines.thumbkey.utils.updateLayouts
 import com.roomdbexportimport.RoomDBExportImport
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
+import kotlinx.coroutines.withContext
 import me.zhanghai.compose.preference.Preference
 import me.zhanghai.compose.preference.ProvidePreferenceTheme
+import java.time.LocalDate
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
@@ -97,23 +102,35 @@ fun BackupAndRestoreScreen(
     Log.d("thumb key", "Got to Backup and Restore screen")
 
     val ctx = LocalContext.current
+    val scope = rememberCoroutineScope()
     val snackbarHostState = remember { SnackbarHostState() }
 
     var showConfirmResetDialog by remember { mutableStateOf(false) }
 
-    val dbSavedText = stringResource(R.string.database_backed_up)
-    val dbRestoredText = stringResource(R.string.database_restored)
-
     val dbHelper = RoomDBExportImport(AppDB.getDatabase(ctx).openHelper)
+
+    val backedUpMsg = stringResource(R.string.database_backed_up)
+    val operationFailedTemplate = stringResource(R.string.database_operation_failed)
 
     val exportDbLauncher =
         rememberLauncherForActivityResult(
             ActivityResultContracts.CreateDocument("application/zip"),
         ) {
-            it?.also {
+            it?.also { uri ->
                 if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
-                    dbHelper.export(ctx, it)
-                    Toast.makeText(ctx, dbSavedText, Toast.LENGTH_SHORT).show()
+                    scope.launch {
+                        withContext(Dispatchers.IO) { dbHelper.export(ctx, uri) }
+                            .onSuccess {
+                                Toast.makeText(ctx, backedUpMsg, Toast.LENGTH_SHORT).show()
+                            }.onFailure {
+                                Toast
+                                    .makeText(
+                                        ctx,
+                                        operationFailedTemplate.format(it.message ?: it.stackTraceToString()),
+                                        Toast.LENGTH_LONG,
+                                    ).show()
+                            }
+                    }
                 }
             }
         }
@@ -122,10 +139,19 @@ fun BackupAndRestoreScreen(
         rememberLauncherForActivityResult(
             ActivityResultContracts.OpenDocument(),
         ) {
-            it?.also {
+            it?.also { uri ->
                 if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
-                    dbHelper.import(ctx, it, true)
-                    Toast.makeText(ctx, dbRestoredText, Toast.LENGTH_SHORT).show()
+                    scope.launch {
+                        withContext(Dispatchers.IO) { dbHelper.import(ctx, uri, true) }
+                            .onFailure {
+                                Toast
+                                    .makeText(
+                                        ctx,
+                                        operationFailedTemplate.format(it.message ?: it.stackTraceToString()),
+                                        Toast.LENGTH_LONG,
+                                    ).show()
+                            }
+                    }
                 }
             }
         }
@@ -187,7 +213,13 @@ fun BackupAndRestoreScreen(
                             )
                         },
                         onClick = {
-                            exportDbLauncher.launch("thumb-key")
+                            val filename =
+                                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+                                    "${LocalDate.now()}-thumb-key.zip"
+                                } else {
+                                    "thumb-key.zip"
+                                }
+                            exportDbLauncher.launch(filename)
                         },
                     )
                     Preference(
