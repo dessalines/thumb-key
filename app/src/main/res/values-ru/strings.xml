@@ -142,4 +142,5 @@
     <string name="show_on_screen_keyboard_description">Отображение экранной клавиатуры при использовании физической клавиатуры</string>
     <string name="slide_hold_enable">Перемещение курсора свайпом с удержанием</string>
     <string name="slide_hold_description">Свайп с удержанием для непрерывного перемещения курсора, свайп с возвратом и удержанием — для перемещения по словам. Backspace: свайп с удержанием для непрерывного удаления, свайп с возвратом и удержанием — для удаления по словам.</string>
+    <string name="database_operation_failed">Ошибка операции: %1$s</string>
 </resources>
