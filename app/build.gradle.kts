@@ -153,6 +153,6 @@ dependencies {
     implementation("org.jetbrains.kotlin:kotlin-reflect:2.3.21")
 
     // Arrow-kt for mutating deeply nested data classes
-    implementation("io.arrow-kt:arrow-optics:2.2.2.1")
-    ksp("io.arrow-kt:arrow-optics-ksp-plugin:2.2.2.1")
+    implementation("io.arrow-kt:arrow-optics:2.2.3")
+    ksp("io.arrow-kt:arrow-optics-ksp-plugin:2.2.3")
 }
