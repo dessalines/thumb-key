@@ -88,6 +88,7 @@ import com.dessalines.thumbkey.keyboards.KB_EN_THUMBKEY_PROGRAMMING_EXPANDED
 import com.dessalines.thumbkey.keyboards.KB_EN_THUMBKEY_PROGRAMMING_WIDE
 import com.dessalines.thumbkey.keyboards.KB_EN_THUMBKEY_SYMBOLS
 import com.dessalines.thumbkey.keyboards.KB_EN_THUMBKEY_WIDE
+import com.dessalines.thumbkey.keyboards.KB_EN_THUMBKEY_WIDE_COMPOSE
 import com.dessalines.thumbkey.keyboards.KB_EN_THUMBKEY_WORDS
 import com.dessalines.thumbkey.keyboards.KB_EN_THUMBKEY_WORDS_SYMBOLS
 import com.dessalines.thumbkey.keyboards.KB_EN_THUMBKEY_WORDS_SYMBOLS_DUAL
@@ -456,4 +457,5 @@ enum class KeyboardLayout(
     HUHungram(KB_HU_HUNGRAM), // magyar hungram
     SAHThumbKeyWriter(KB_SAH_THUMBKEY_WRITER), // сахалыы writer thumb-key
     DETypeSplitSuave(KB_DE_TYPESPLIT_SUAVE), // deutsch type-split suave
+    ENThumbKeyWideCompose(KB_EN_THUMBKEY_WIDE_COMPOSE), // english thumb-key wide compose
 }
