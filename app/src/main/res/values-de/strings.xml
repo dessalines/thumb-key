@@ -118,7 +118,7 @@
     <string name="clipboard_history">Zwischenablage mit Verlauf</string>
     <string name="clipboard_cleanup_after">Aufräumen nach %1$s</string>
     <string name="clipboard_history_enabled">Zwischenablagenverlauf aktivieren</string>
-    <string name="position_padding">Versatz: %1$s</string>
+    <string name="position_padding">Position versetzen: %1$s</string>
     <string name="vibrate_slide_note">Wird bem Streichen über die Leer- oder Rücktaste verwendet</string>
     <string name="vibrate_slide_warning">Benötigt Aktivierung von Schiebegesten in »Verhalten«-Einstellungen</string>
     <string name="auto_size_keys">Auf Bildschirmbreite vergrößern</string>
