@@ -142,4 +142,5 @@
     <string name="vibrate_slide_warning">Requiere que los gestos de deslizamiento estén habilitados en la configuración de comportamiento</string>
     <string name="slide_hold_enable">Movimiento de deslizar y mantener pulsado el cursor</string>
     <string name="position_padding">Relleno de posición: %1$s</string>
+    <string name="slide_hold_description">Deslizar y mantener presionado para repetir el movimiento del cursor, deslizar-volver-mantener para el movimiento de palabra. Retroceso: deslizar-mantener para repetir eliminar, deslizar-volver-mantener para eliminar palabras.</string>
 </resources>
