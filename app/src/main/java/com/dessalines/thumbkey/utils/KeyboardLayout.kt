@@ -51,6 +51,7 @@ import com.dessalines.thumbkey.keyboards.KB_EN_IT_THUMBKEY
 import com.dessalines.thumbkey.keyboards.KB_EN_LA_THUMBKEY
 import com.dessalines.thumbkey.keyboards.KB_EN_MESSAGEASE
 import com.dessalines.thumbkey.keyboards.KB_EN_MESSAGEASE_COMPOSE
+import com.dessalines.thumbkey.keyboards.KB_EN_MESSAGEASE_COMPOSE_LEFT_FLIPPED_NUMPAD
 import com.dessalines.thumbkey.keyboards.KB_EN_MESSAGEASE_LEFT
 import com.dessalines.thumbkey.keyboards.KB_EN_MESSAGEASE_LEFT_SYMBOLS
 import com.dessalines.thumbkey.keyboards.KB_EN_MESSAGEASE_SYMBOLS
@@ -121,6 +122,7 @@ import com.dessalines.thumbkey.keyboards.KB_FR_EN_FRAPPE_FLUIDE_V1_CONTROL_LEFT_
 import com.dessalines.thumbkey.keyboards.KB_FR_EN_FRAPPE_FLUIDE_V1_LEFT_HANDED
 import com.dessalines.thumbkey.keyboards.KB_FR_EN_FRAPPE_FLUIDE_V1_LEFT_HANDED_CONTROL_LEFT_SIDE
 import com.dessalines.thumbkey.keyboards.KB_FR_MESSAGEASE
+import com.dessalines.thumbkey.keyboards.KB_FR_MESSAGEASE_LEFT_FLIPPED_NUMPAD
 import com.dessalines.thumbkey.keyboards.KB_FR_THUMBKEY_V1
 import com.dessalines.thumbkey.keyboards.KB_FR_THUMBKEY_V2
 import com.dessalines.thumbkey.keyboards.KB_FR_THUMBKEY_V3
@@ -458,4 +460,6 @@ enum class KeyboardLayout(
     SAHThumbKeyWriter(KB_SAH_THUMBKEY_WRITER), // сахалыы writer thumb-key
     DETypeSplitSuave(KB_DE_TYPESPLIT_SUAVE), // deutsch type-split suave
     ENThumbKeyWideCompose(KB_EN_THUMBKEY_WIDE_COMPOSE), // english thumb-key wide compose
+    ENMessagEaseComposeFlipped(KB_EN_MESSAGEASE_COMPOSE_LEFT_FLIPPED_NUMPAD), // english messagease compose flipped
+    FRMessagEaseFlipped(KB_FR_MESSAGEASE_LEFT_FLIPPED_NUMPAD), // français messagease left-handed flipped
 }
