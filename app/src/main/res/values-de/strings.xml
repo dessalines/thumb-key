@@ -61,7 +61,7 @@
     <string name="key_non_square">Nicht-quadratische Tasten verwenden</string>
     <string name="key_height">Tastenhöhe: %1$s</string>
     <string name="key_width">Tastenbreite: %1$s</string>
-    <string name="slide_sensitivity">Streichpfindlichkeit: %1$s</string>
+    <string name="slide_sensitivity">Streichempfindlichkeit: %1$s</string>
     <string name="slide_cursor_acceleration_constant">Keine Beschleunigung / Konstante Geschwindigkeit</string>
     <string name="reset_to_defaults_msg">Möchtest Du die Einstellungen wirklich auf die Standardwerte zurücksetzen?</string>
     <string name="reset_to_defaults_confirm">Zurücksetzen</string>
@@ -124,7 +124,7 @@
     <string name="auto_size_keys">Auf Bildschirmbreite vergrößern</string>
     <string name="slide_hold_enable">Cursorsteuerung mit »Streichen+halten«</string>
     <string name="dual">Doppelt</string>
-    <string name="slide_hold_description">• Ziehen+halten: wiederholte Bewegung; ziehen-zurück+halten — wortweise • Rücktaste ziehen+halten: wiederholtes Löschen zeichenweise, ziehen-zurück+halten — wortweise</string>
+    <string name="slide_hold_description">• Ziehen+halten: wiederholte Bewegung; ziehen-zurück+halten — wortweise • Rücktaste ziehen+halten: wiederholtes Löschen zeichenweise, ziehen-zurück+halten — wortweise.</string>
     <string name="database_operation_failed">Operation fehlgeschlagen: %1$s</string>
     <string name="ignore_bottom_padding">Unteren Abstand ignorieren</string>
     <string name="show_toast_on_layout_switch">Benachrichtigen beim Umschalten der Belegung</string>
