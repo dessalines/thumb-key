@@ -1,3 +1,9 @@
+## What's Changed in 5.1.11
+
+- Adding 2 flipped layouts. by @dessalines in [#1921](https://github.com/dessalines/thumb-key/pull/1921)
+
+**Full Changelog**: https://github.com/dessalines/thumb-key/compare/5.1.10...5.1.11
+
 ## What's Changed in 5.1.10
 
 - Add Thumb-Key Wide Compose layout by @sprinklednights in [#1906](https://github.com/dessalines/thumb-key/pull/1906)
@@ -557,7 +563,7 @@
 
 ## What's Changed in 4.0.14
 
-- Update NumericWide ° \* # by @lyluqo in [#1227](https://github.com/dessalines/thumb-key/pull/1227)
+- Update NumericWide ° * # by @lyluqo in [#1227](https://github.com/dessalines/thumb-key/pull/1227)
 - Fix swipe types of NumericWide by @lyluqo in [#1226](https://github.com/dessalines/thumb-key/pull/1226)
 - Fix dvorak compose ´ by @lyluqo in [#1225](https://github.com/dessalines/thumb-key/pull/1225)
 
@@ -2343,7 +2349,7 @@
 
 - Adding a minimum swipe length. Fixes #14 by @dessalines in [#22](https://github.com/dessalines/thumb-key/pull/22)
 - Changing default space next tap action to comma. #18 by @dessalines in [#20](https://github.com/dessalines/thumb-key/pull/20)
-- Swapping out \* for - , which is more common. Fixes #13 by @dessalines in [#19](https://github.com/dessalines/thumb-key/pull/19)
+- Swapping out * for - , which is more common. Fixes #13 by @dessalines in [#19](https://github.com/dessalines/thumb-key/pull/19)
 - Adding capitalize instructions. Fixes #16 by @dessalines
 - Fixing fastlane full description. by @dessalines
 
