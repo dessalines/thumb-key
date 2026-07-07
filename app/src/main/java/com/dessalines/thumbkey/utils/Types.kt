@@ -2,6 +2,8 @@ package com.dessalines.thumbkey.utils
 
 import android.view.KeyEvent
 import androidx.annotation.StringRes
+import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.outlined.*
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.text.font.FontFamily
 import arrow.optics.optics
@@ -12,6 +14,7 @@ import com.dessalines.thumbkey.textprocessors.TextProcessor
 data class KeyboardDefinitionModes(
     val main: KeyboardC,
     val shifted: KeyboardC,
+    val capslocked: KeyboardC = shifted.capslock(),
     val numeric: KeyboardC,
     val ctrled: KeyboardC? = null,
     val alted: KeyboardC? = null,
@@ -54,6 +57,49 @@ data class KeyboardDefinition(
 data class KeyboardC(
     val arr: List<List<KeyItemC>>,
 ) {
+    fun map(modifier: (KeyC) -> KeyC): KeyboardC =
+        KeyboardC(arr.map {
+            it.map {
+                it.copy(
+                    center = modifier(it.center),
+                    topLeft = it.topLeft?.let { modifier(it) },
+                    top = it.top?.let { modifier(it) },
+                    topRight = it.topRight?.let { modifier(it) },
+                    left = it.left?.let { modifier(it) },
+                    right = it.right?.let { modifier(it) },
+                    bottomLeft = it.bottomLeft?.let { modifier(it) },
+                    bottom = it.bottom?.let { modifier(it) },
+                    bottomRight = it.bottomRight?.let { modifier(it) },
+                )
+            }
+        })
+
+    fun capslock(capsDisplay: KeyDisplay = KeyDisplay.IconDisplay(Icons.Outlined.Copyright)): KeyboardC =
+        copy().map {
+            when (it.action) {
+                is KeyAction.CommitText -> {
+                    val newText = it.action.text.uppercase()
+                    it.copy(
+                        action = KeyAction.CommitText(newText),
+                        display = if (it.display is KeyDisplay.TextDisplay && it.display.text.isEmpty()) {
+                            it.display
+                        } else {
+                            KeyDisplay.TextDisplay(newText)
+                        }
+                    )
+                }
+
+                is KeyAction.ToggleCapsLock -> {
+                    it.copy(
+                        display = capsDisplay,
+                    )
+                }
+
+                else -> {
+                    it
+                }
+            }
+        }
     companion object
 }
 
@@ -315,6 +361,7 @@ enum class CursorAccelerationMode(
 enum class KeyboardMode {
     MAIN,
     SHIFTED,
+    CAPSLOCKED,
     NUMERIC,
     EMOJI,
     CTRLED,

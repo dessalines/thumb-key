@@ -79,12 +79,10 @@ import com.dessalines.thumbkey.keyboards.KB_EN_THUMBKEY_MAIN
 import com.dessalines.thumbkey.keyboards.NUMERIC_KEY_ITEM
 import com.dessalines.thumbkey.keyboards.RETURN_KEY_ITEM
 import com.dessalines.thumbkey.utils.CircularDragAction
-import com.dessalines.thumbkey.utils.ColorVariant
 import com.dessalines.thumbkey.utils.KeyAction
 import com.dessalines.thumbkey.utils.KeyboardLayout
 import com.dessalines.thumbkey.utils.KeyboardMode
 import com.dessalines.thumbkey.utils.KeyboardPosition
-import com.dessalines.thumbkey.utils.SlideType
 import com.dessalines.thumbkey.utils.TAG
 import com.dessalines.thumbkey.utils.getAutoKeyWidth
 import com.dessalines.thumbkey.utils.getKeyboardMode
@@ -132,10 +130,6 @@ fun KeyboardScreen(
         mutableStateOf(startMode)
     }
 
-    var capsLock by remember {
-        mutableStateOf(false)
-    }
-
     // TODO get rid of this crap
     val lastAction = remember { mutableStateOf<Pair<KeyAction, TimeMark>?>(null) }
 
@@ -149,6 +143,10 @@ fun KeyboardScreen(
 
             KeyboardMode.SHIFTED -> {
                 keyboardDefinition.modes.shifted
+            }
+
+            KeyboardMode.CAPSLOCKED -> {
+                keyboardDefinition.modes.capslocked
             }
 
             KeyboardMode.NUMERIC -> {
@@ -351,7 +349,6 @@ fun KeyboardScreen(
                                     soundOnTap = soundOnTap,
                                     hideLetters = hideLetters,
                                     hideSymbols = hideSymbols,
-                                    capsLock = capsLock,
                                     animationSpeed = settings?.animationSpeed ?: DEFAULT_ANIMATION_SPEED,
                                     animationHelperSpeed = settings?.animationHelperSpeed ?: DEFAULT_ANIMATION_HELPER_SPEED,
                                     minSwipeLength = settings?.minSwipeLength ?: DEFAULT_MIN_SWIPE_LENGTH,
@@ -365,7 +362,6 @@ fun KeyboardScreen(
                                             if (enable) {
                                                 KeyboardMode.SHIFTED
                                             } else {
-                                                capsLock = false
                                                 KeyboardMode.MAIN
                                             }
                                     },
@@ -390,7 +386,6 @@ fun KeyboardScreen(
                                             if (enable) {
                                                 KeyboardMode.NUMERIC
                                             } else {
-                                                capsLock = false
                                                 KeyboardMode.MAIN
                                             }
                                     },
@@ -411,9 +406,10 @@ fun KeyboardScreen(
                                             }
                                     },
                                     onToggleCapsLock = {
-                                        capsLock = !capsLock
-                                        if (capsLock) {
-                                            mode = KeyboardMode.SHIFTED
+                                        mode = if (mode == KeyboardMode.CAPSLOCKED) {
+                                            KeyboardMode.SHIFTED
+                                        } else {
+                                            KeyboardMode.CAPSLOCKED
                                         }
                                     },
                                     onToggleHideLetters = onToggleHideLetters,
@@ -421,7 +417,7 @@ fun KeyboardScreen(
                                         if (mode !== KeyboardMode.NUMERIC) {
                                             if (enable) {
                                                 mode = KeyboardMode.SHIFTED
-                                            } else if (!capsLock) {
+                                            } else if (mode != KeyboardMode.CAPSLOCKED) {
                                                 mode = KeyboardMode.MAIN
                                             }
                                         }
@@ -530,7 +526,6 @@ fun KeyboardScreen(
                                     soundOnTap = soundOnTap,
                                     hideLetters = hideLetters,
                                     hideSymbols = hideSymbols,
-                                    capsLock = capsLock,
                                     animationSpeed =
                                         settings?.animationSpeed
                                             ?: DEFAULT_ANIMATION_SPEED,
@@ -548,7 +543,6 @@ fun KeyboardScreen(
                                             if (enable) {
                                                 KeyboardMode.SHIFTED
                                             } else {
-                                                capsLock = false
                                                 KeyboardMode.MAIN
                                             }
                                     },
@@ -573,7 +567,6 @@ fun KeyboardScreen(
                                             if (enable) {
                                                 KeyboardMode.NUMERIC
                                             } else {
-                                                capsLock = false
                                                 KeyboardMode.MAIN
                                             }
                                     },
@@ -594,11 +587,10 @@ fun KeyboardScreen(
                                             }
                                     },
                                     onToggleCapsLock = {
-                                        capsLock = !capsLock
-
-                                        // Change to shifted mode in case it isn't already shifted
-                                        if (capsLock) {
-                                            mode = KeyboardMode.SHIFTED
+                                        mode = if (mode == KeyboardMode.CAPSLOCKED) {
+                                            KeyboardMode.SHIFTED
+                                        } else {
+                                            KeyboardMode.CAPSLOCKED
                                         }
                                     },
                                     onToggleHideLetters = onToggleHideLetters,
@@ -606,7 +598,7 @@ fun KeyboardScreen(
                                         if (mode !== KeyboardMode.NUMERIC) {
                                             if (enable) {
                                                 mode = KeyboardMode.SHIFTED
-                                            } else if (!capsLock) {
+                                            } else if (mode != KeyboardMode.CAPSLOCKED) {
                                                 mode = KeyboardMode.MAIN
                                             }
                                         }
@@ -813,7 +805,6 @@ fun KeyboardScreen(
                                         soundOnTap = soundOnTap,
                                         hideLetters = hideLetters,
                                         hideSymbols = hideSymbols,
-                                        capsLock = capsLock,
                                         animationSpeed =
                                             settings?.animationSpeed
                                                 ?: DEFAULT_ANIMATION_SPEED,
@@ -835,7 +826,6 @@ fun KeyboardScreen(
                                                 if (enable) {
                                                     KeyboardMode.SHIFTED
                                                 } else {
-                                                    capsLock = false
                                                     KeyboardMode.MAIN
                                                 }
                                         },
@@ -860,7 +850,6 @@ fun KeyboardScreen(
                                                 if (enable) {
                                                     KeyboardMode.NUMERIC
                                                 } else {
-                                                    capsLock = false
                                                     KeyboardMode.MAIN
                                                 }
                                         },
@@ -881,11 +870,10 @@ fun KeyboardScreen(
                                                 }
                                         },
                                         onToggleCapsLock = {
-                                            capsLock = !capsLock
-
-                                            // Change to shifted mode in case it isn't already shifted
-                                            if (capsLock) {
-                                                mode = KeyboardMode.SHIFTED
+                                            mode = if (mode == KeyboardMode.CAPSLOCKED) {
+                                                KeyboardMode.SHIFTED
+                                            } else {
+                                                KeyboardMode.CAPSLOCKED
                                             }
                                         },
                                         onToggleHideLetters = onToggleHideLetters,
@@ -903,7 +891,7 @@ fun KeyboardScreen(
                                             if (mode !== KeyboardMode.NUMERIC) {
                                                 if (enable) {
                                                     mode = KeyboardMode.SHIFTED
-                                                } else if (!capsLock) {
+                                                } else if (mode != KeyboardMode.CAPSLOCKED) {
                                                     mode = KeyboardMode.MAIN
                                                 }
                                             }
@@ -916,7 +904,7 @@ fun KeyboardScreen(
                                         oppositeCaseKey =
                                             when (mode) {
                                                 KeyboardMode.MAIN -> keyboardDefinition.modes.shifted
-                                                KeyboardMode.SHIFTED -> keyboardDefinition.modes.main
+                                                KeyboardMode.SHIFTED, KeyboardMode.CAPSLOCKED -> keyboardDefinition.modes.main
                                                 else -> null
                                             }?.arr?.getOrNull(i)?.getOrNull(j),
                                         numericKey =

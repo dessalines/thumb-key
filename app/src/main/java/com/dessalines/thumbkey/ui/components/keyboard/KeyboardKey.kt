@@ -117,7 +117,6 @@ fun KeyboardKey(
     soundOnTap: Boolean,
     hideLetters: Boolean,
     hideSymbols: Boolean,
-    capsLock: Boolean,
     legendHeight: Int,
     legendWidth: Int,
     keyPadding: Int,
@@ -869,7 +868,7 @@ fun KeyboardKey(
                     ),
         ) {
             key.getSwipe(SwipeDirection.TOP_LEFT)?.let {
-                KeyText(it, (keySize - keyBorderWidth).dp, hideLetters, hideSymbols, capsLock)
+                KeyText(it, (keySize - keyBorderWidth).dp, hideLetters, hideSymbols)
             }
         }
         Box(
@@ -880,7 +879,7 @@ fun KeyboardKey(
                     .padding(vertical = yPadding),
         ) {
             key.getSwipe(SwipeDirection.TOP)?.let {
-                KeyText(it, (keySize - keyBorderWidth).dp, hideLetters, hideSymbols, capsLock)
+                KeyText(it, (keySize - keyBorderWidth).dp, hideLetters, hideSymbols)
             }
         }
         Box(
@@ -894,7 +893,7 @@ fun KeyboardKey(
                     ),
         ) {
             key.getSwipe(SwipeDirection.TOP_RIGHT)?.let {
-                KeyText(it, (keySize - keyBorderWidth).dp, hideLetters, hideSymbols, capsLock)
+                KeyText(it, (keySize - keyBorderWidth).dp, hideLetters, hideSymbols)
             }
         }
         Box(
@@ -905,7 +904,7 @@ fun KeyboardKey(
                     .padding(horizontal = xPadding),
         ) {
             key.getSwipe(SwipeDirection.LEFT)?.let {
-                KeyText(it, (keySize - keyBorderWidth).dp, hideLetters, hideSymbols, capsLock)
+                KeyText(it, (keySize - keyBorderWidth).dp, hideLetters, hideSymbols)
             }
         }
         Box(
@@ -914,7 +913,7 @@ fun KeyboardKey(
                 Modifier
                     .fillMaxSize(),
         ) {
-            KeyText(key.center, (keySize - keyBorderWidth).dp, hideLetters, hideSymbols, capsLock)
+            KeyText(key.center, (keySize - keyBorderWidth).dp, hideLetters, hideSymbols)
         }
 
         Box(
@@ -925,7 +924,7 @@ fun KeyboardKey(
                     .padding(horizontal = xPadding),
         ) {
             key.getSwipe(SwipeDirection.RIGHT)?.let {
-                KeyText(it, (keySize - keyBorderWidth).dp, hideLetters, hideSymbols, capsLock)
+                KeyText(it, (keySize - keyBorderWidth).dp, hideLetters, hideSymbols)
             }
         }
         Box(
@@ -939,7 +938,7 @@ fun KeyboardKey(
                     ),
         ) {
             key.getSwipe(SwipeDirection.BOTTOM_LEFT)?.let {
-                KeyText(it, (keySize - keyBorderWidth).dp, hideLetters, hideSymbols, capsLock)
+                KeyText(it, (keySize - keyBorderWidth).dp, hideLetters, hideSymbols)
             }
         }
         Box(
@@ -950,7 +949,7 @@ fun KeyboardKey(
                     .padding(vertical = yPadding),
         ) {
             key.getSwipe(SwipeDirection.BOTTOM)?.let {
-                KeyText(it, (keySize - keyBorderWidth).dp, hideLetters, hideSymbols, capsLock)
+                KeyText(it, (keySize - keyBorderWidth).dp, hideLetters, hideSymbols)
             }
         }
         Box(
@@ -964,7 +963,7 @@ fun KeyboardKey(
                     ),
         ) {
             key.getSwipe(SwipeDirection.BOTTOM_RIGHT)?.let {
-                KeyText(it, (keySize - keyBorderWidth).dp, hideLetters, hideSymbols, capsLock)
+                KeyText(it, (keySize - keyBorderWidth).dp, hideLetters, hideSymbols)
             }
         }
 
@@ -1027,7 +1026,6 @@ fun KeyText(
     keySize: Dp,
     hideLetters: Boolean,
     hideSymbols: Boolean,
-    capsLock: Boolean,
 ) {
     val color = colorVariantToColor(colorVariant = key.color)
     val isUpperCase =
@@ -1049,12 +1047,7 @@ fun KeyText(
             isUpperCase = isUpperCase,
         )
 
-    val display =
-        if (capsLock) {
-            key.capsModeDisplay ?: key.display
-        } else {
-            key.display
-        }
+    val display = key.display
 
     when (display) {
         is KeyDisplay.IconDisplay -> {

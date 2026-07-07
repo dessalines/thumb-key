@@ -122,6 +122,7 @@ fun modifyKeyboardDefinition(
         inside(KeyboardDefinition.modes) {
             KeyboardDefinitionModes.main transform { modifyKeyboardC(it, mainModifications) ?: it }
             KeyboardDefinitionModes.shifted transform { modifyKeyboardC(it, shiftedModifications) ?: it }
+            KeyboardDefinitionModes.capslocked transform { modifyKeyboardC(it, modifications.capslocked) ?: it }
             KeyboardDefinitionModes.numeric transform { modifyKeyboardC(it, modifications.numeric) ?: it }
             KeyboardDefinitionModes.ctrled transform { modifyKeyboardC(it, modifications.ctrled) ?: it }
             KeyboardDefinitionModes.alted transform { modifyKeyboardC(it, modifications.alted) ?: it }
@@ -333,6 +334,7 @@ typealias KeyModifications = Map<String, KeyboardDefinitionModesSerializable>
 data class KeyboardDefinitionModesSerializable(
     val main: KeyboardCSerializable? = null,
     val shifted: KeyboardCSerializable? = null,
+    val capslocked: KeyboardCSerializable? = null,
     val numeric: KeyboardCSerializable? = null,
     val ctrled: KeyboardCSerializable? = null,
     val alted: KeyboardCSerializable? = null,
