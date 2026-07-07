@@ -6,7 +6,6 @@ import android.view.KeyEvent
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.automirrored.outlined.*
 import androidx.compose.material.icons.outlined.*
-import arrow.optics.copy
 import com.dessalines.thumbkey.utils.*
 import com.dessalines.thumbkey.utils.ColorVariant.*
 import com.dessalines.thumbkey.utils.FontSizeVariant.*
@@ -393,7 +392,6 @@ private fun generateSuaveLayout(
                                     return if (mode == SuaveMode.SHIFTED) {
                                         KeyC(
                                             display = KeyDisplay.IconDisplay(Icons.Outlined.KeyboardArrowUp),
-                                            capsModeDisplay = KeyDisplay.IconDisplay(Icons.Outlined.KeyboardCapslock),
                                             action = ToggleShiftMode(false),
                                             size = LARGE,
                                             color = SECONDARY,

@@ -154,7 +154,6 @@ val KB_EN_COLUMNAR_QUICK_SHIFTED =
                     right =
                         KeyC(
                             display = KeyDisplay.IconDisplay(Icons.Outlined.KeyboardCapslock),
-                            capsModeDisplay = KeyDisplay.IconDisplay(Icons.Outlined.Copyright),
                             action = ToggleCapsLock,
                             swipeReturnAction =
                                 ToggleCurrentWordCapitalization(

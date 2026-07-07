@@ -5,7 +5,6 @@ package com.dessalines.thumbkey.keyboards
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.outlined.ArrowDropDown
 import androidx.compose.material.icons.outlined.ArrowDropUp
-import androidx.compose.material.icons.outlined.Copyright
 import androidx.compose.material.icons.outlined.KeyboardCapslock
 import com.dessalines.thumbkey.utils.*
 import com.dessalines.thumbkey.utils.ColorVariant.*
@@ -157,7 +156,6 @@ val KB_EN_HYPER_SHIFTED =
                     top =
                         KeyC(
                             display = KeyDisplay.IconDisplay(Icons.Outlined.KeyboardCapslock),
-                            capsModeDisplay = KeyDisplay.IconDisplay(Icons.Outlined.Copyright),
                             action = ToggleCapsLock,
                             swipeReturnAction = ToggleCurrentWordCapitalization(true),
                             color = MUTED,

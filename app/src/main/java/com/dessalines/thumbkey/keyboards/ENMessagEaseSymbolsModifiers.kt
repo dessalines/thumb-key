@@ -7,7 +7,6 @@ import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.automirrored.outlined.KeyboardReturn
 import androidx.compose.material.icons.outlined.ArrowDropDown
 import androidx.compose.material.icons.outlined.ArrowDropUp
-import androidx.compose.material.icons.outlined.Copyright
 import androidx.compose.material.icons.outlined.KeyboardCapslock
 import androidx.compose.material.icons.outlined.KeyboardControlKey
 import androidx.compose.material.icons.outlined.KeyboardDoubleArrowDown
@@ -41,7 +40,6 @@ fun keyCModifier(
     displayText: String,
     swipeReturnAction: KeyAction? = null,
     display: KeyDisplay = KeyDisplay.TextDisplay(displayText),
-    capsModeDisplay: KeyDisplay? = null,
     size: FontSizeVariant = FontSizeVariant.SMALL,
     color: ColorVariant =
         when (size) {
@@ -53,7 +51,6 @@ fun keyCModifier(
         KeyAction.SendEvent(KeyEvent(0, 0, KeyEvent.ACTION_DOWN, keyCode, 0, flagCode)),
         swipeReturnAction,
         display,
-        capsModeDisplay,
         size,
         color,
     )
@@ -245,7 +242,6 @@ val KB_EN_MESSAGEASE_SYMBOLS_MODIFIERS_SHIFTED =
                     top =
                         KeyC(
                             display = KeyDisplay.IconDisplay(Icons.Outlined.KeyboardCapslock),
-                            capsModeDisplay = KeyDisplay.IconDisplay(Icons.Outlined.Copyright),
                             action = ToggleCapsLock,
                             swipeReturnAction = ToggleCurrentWordCapitalization(true),
                             color = MUTED,

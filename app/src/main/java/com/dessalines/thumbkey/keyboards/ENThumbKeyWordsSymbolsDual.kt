@@ -215,7 +215,6 @@ val KB_EN_THUMBKEY_WORDS_SYMBOLS_DUAL_SHIFTED =
                     top =
                         KeyC(
                             display = KeyDisplay.IconDisplay(Icons.Outlined.KeyboardCapslock),
-                            capsModeDisplay = KeyDisplay.IconDisplay(Icons.Outlined.Copyright),
                             action = ToggleCapsLock,
                             swipeReturnAction = ToggleCurrentWordCapitalization(true),
                             color = MUTED,

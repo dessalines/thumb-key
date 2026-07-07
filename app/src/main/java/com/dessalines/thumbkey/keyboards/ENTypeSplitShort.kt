@@ -111,7 +111,6 @@ val EN_TYPESPLIT_SHORT_SPACEBAR_SHIFT_KEY_SHIFTED_ITEM =
         top =
             KeyC(
                 display = KeyDisplay.IconDisplay(Icons.Outlined.KeyboardCapslock),
-                capsModeDisplay = KeyDisplay.IconDisplay(Icons.Outlined.Copyright),
                 action = ToggleCapsLock,
                 swipeReturnAction = ToggleCurrentWordCapitalization(true),
                 color = MUTED,

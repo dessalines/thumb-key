@@ -367,7 +367,6 @@ val KB_DE_TYPESPLIT_IMPROVED_SHIFTED =
                     center =
                         KeyC(
                             display = KeyDisplay.IconDisplay(Icons.Outlined.KeyboardCapslock),
-                            capsModeDisplay = KeyDisplay.IconDisplay(Icons.Outlined.ArrowDropUp),
                             action = ToggleCapsLock,
                             size = LARGE,
                             color = SECONDARY,

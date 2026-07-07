@@ -200,7 +200,6 @@ val KB_EN_TYPESPLIT_PROGRAMMING_SHIFTED =
                     top =
                         KeyC(
                             display = KeyDisplay.IconDisplay(Icons.Outlined.KeyboardCapslock),
-                            capsModeDisplay = KeyDisplay.IconDisplay(Icons.Outlined.ArrowDropUp),
                             action = ToggleCapsLock,
                             swipeReturnAction = ToggleCurrentWordCapitalization(true),
                             color = MUTED,

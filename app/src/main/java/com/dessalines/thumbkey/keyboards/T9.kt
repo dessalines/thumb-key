@@ -363,7 +363,6 @@ val KB_T9_SHIFTED =
                     top =
                         KeyC(
                             display = KeyDisplay.TextDisplay("⇪"),
-                            capsModeDisplay = KeyDisplay.TextDisplay("⇧"),
                             action = ToggleCapsLock,
                             color = MUTED,
                         ),

@@ -182,7 +182,6 @@ val KB_ID_THUMBKEY_SYMBOLS_V1_SHIFTED =
                     top =
                         KeyC(
                             display = KeyDisplay.IconDisplay(Icons.Outlined.KeyboardCapslock),
-                            capsModeDisplay = KeyDisplay.IconDisplay(Icons.Outlined.Copyright),
                             action = ToggleCapsLock,
                             swipeReturnAction = ToggleCurrentWordCapitalization(true),
                             color = MUTED,

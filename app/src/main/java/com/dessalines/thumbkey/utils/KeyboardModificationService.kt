@@ -201,7 +201,6 @@ fun modifyKeyC(
             KeyC.action.set(it.action)
             KeyC.swipeReturnAction.set(it.swipeReturnAction)
             KeyC.display.set(it.display)
-            KeyC.capsModeDisplay.set(it.capsModeDisplay)
         }
 
         keyCSerializable.swipeReturnText?.let {

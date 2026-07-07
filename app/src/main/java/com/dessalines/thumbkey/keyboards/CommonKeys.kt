@@ -183,7 +183,6 @@ val EMOJI_KEY_ITEM_ALT = textEditKeyItem(center = EMOJI_KEY_ITEM.center)
 val TOGGLE_CAPS_KEYC =
     KeyC(
         display = KeyDisplay.IconDisplay(Icons.Outlined.KeyboardCapslock),
-        capsModeDisplay = KeyDisplay.IconDisplay(Icons.Outlined.Copyright),
         action = ToggleCapsLock,
         swipeReturnAction = ToggleCurrentWordCapitalization(true),
         color = MUTED,
