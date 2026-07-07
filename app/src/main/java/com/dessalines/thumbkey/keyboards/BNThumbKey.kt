@@ -10,9 +10,8 @@ import com.dessalines.thumbkey.utils.FontSizeVariant.*
 import com.dessalines.thumbkey.utils.KeyAction.*
 import com.dessalines.thumbkey.utils.SwipeNWay.*
 
-// Layer 1 (main): Most frequent consonants + vowel signs (kar forms), used for
+// Layer 1 (main): most frequent consonants + vowel signs (kar forms), used for
 // normal running text (consonant + attached vowel sign is the common case).
-
 val KB_BN_THUMBKEY_MAIN =
     KeyboardC(
         listOf(
@@ -20,16 +19,20 @@ val KB_BN_THUMBKEY_MAIN =
                 KeyItemC(
                     center = KeyC("\u09A8", size = LARGE), // ন na
                     swipeType = FOUR_WAY_DIAGONAL,
+                    topLeft = KeyC("\u0964", color = MUTED), // । dari (Bengali full stop)
                     bottomRight = KeyC("\u0997"), // গ ga
+                    bottomLeft = KeyC(",", color = MUTED), // comma
                 ),
                 KeyItemC(
                     center = KeyC("\u09B0", size = LARGE), // র ra
                     swipeType = TWO_WAY_VERTICAL,
+                    top = KeyC("?", color = MUTED), // question mark
                     bottom = KeyC("\u09AC"), // ব ba
                 ),
                 KeyItemC(
                     center = KeyC("\u09C7", size = LARGE), // ে e-kar
                     swipeType = FOUR_WAY_DIAGONAL,
+                    topRight = KeyC("!", color = MUTED), // exclamation mark
                     bottomLeft = KeyC("\u09C8"), // ৈ oi-kar
                 ),
                 EMOJI_KEY_ITEM,
@@ -38,6 +41,7 @@ val KB_BN_THUMBKEY_MAIN =
                 KeyItemC(
                     center = KeyC("\u09B8", size = LARGE), // স sa
                     swipeType = TWO_WAY_HORIZONTAL,
+                    left = KeyC("-", color = MUTED), // hyphen
                     right = KeyC("\u09B2"), // ল la
                 ),
                 KeyItemC(
@@ -55,6 +59,7 @@ val KB_BN_THUMBKEY_MAIN =
                     center = KeyC("\u09BE", size = LARGE), // া aa-kar
                     swipeType = FOUR_WAY_CROSS,
                     left = KeyC("\u09CD", color = MUTED), // ্ hasanta/virama
+                    right = KeyC(":", color = MUTED), // colon
                     top =
                         KeyC(
                             display = KeyDisplay.IconDisplay(Icons.Outlined.ArrowDropUp),
@@ -73,21 +78,26 @@ val KB_BN_THUMBKEY_MAIN =
                 KeyItemC(
                     center = KeyC("\u09A4", size = LARGE), // ত ta
                     swipeType = FOUR_WAY_DIAGONAL,
+                    topLeft = KeyC("(", color = MUTED), // open paren
                     topRight = KeyC("\u09A6"), // দ da
+                    bottomRight = KeyC(")", color = MUTED), // close paren
                 ),
                 KeyItemC(
                     center = KeyC("\u09AE", size = LARGE), // ম ma
+                    topLeft = KeyC("\u09F3", color = MUTED), // ৳ taka sign
                     top = KeyC("\u09AA"), // প pa
                     topRight = KeyC("\u09AF"), // য ya
                     right = KeyC("\u0982", color = MUTED), // ং anusvara
                     bottomRight = KeyC("\u0983", color = MUTED), // ঃ visarga
                     bottom = KeyC("\u09C0"), // ী ii-kar
                     bottomLeft = KeyC("\u09C1"), // ু u-kar
+                    left = KeyC(";", color = MUTED), // semicolon
                 ),
                 KeyItemC(
                     center = KeyC("\u09BF", size = LARGE), // ি i-kar
                     swipeType = FOUR_WAY_DIAGONAL,
                     topLeft = KeyC("\u09C2"), // ূ uu-kar
+                    topRight = KeyC("\u0965", color = MUTED), // ॥ double danda
                 ),
                 BACKSPACE_KEY_ITEM,
             ),
@@ -98,7 +108,7 @@ val KB_BN_THUMBKEY_MAIN =
         ),
     )
 
-// Layer 2 ("shifted" slot, repurposed): Independent vowels + remaining
+// Layer 2 ("shifted" slot, repurposed): independent vowels + remaining
 // consonants + nukta letters + marks not frequent enough for layer 1.
 // There is no case in Bengali, so this layer replaces capitals rather than adding them.
 
