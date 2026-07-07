@@ -403,6 +403,7 @@ val KB_EN_TYPESPLIT_PROGRAMMING: KeyboardDefinition =
             KeyboardDefinitionModes(
                 main = KB_EN_TYPESPLIT_PROGRAMMING_MAIN,
                 shifted = KB_EN_TYPESPLIT_PROGRAMMING_SHIFTED,
+                capsDisplay = KeyDisplay.IconDisplay(Icons.Outlined.ArrowDropUp),
                 numeric = KB_EN_TYPESPLIT_PROGRAMMING_NUMERIC,
             ),
         settings =

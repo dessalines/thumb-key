@@ -20,6 +20,15 @@ data class KeyboardDefinitionModes(
     val alted: KeyboardC? = null,
     val emoji: KeyboardC? = null,
 ) {
+    constructor(
+        main: KeyboardC,
+        shifted: KeyboardC,
+        capsDisplay: KeyDisplay,
+        numeric: KeyboardC,
+        ctrled: KeyboardC? = null,
+        alted: KeyboardC? = null,
+        emoji: KeyboardC? = null,
+    ) : this(main, shifted, shifted.capslock(capsDisplay), numeric, ctrled, alted, emoji)
     companion object
 }
 

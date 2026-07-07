@@ -710,6 +710,7 @@ val KB_DE_TYPESPLIT_IMPROVED: KeyboardDefinition =
             KeyboardDefinitionModes(
                 main = KB_DE_TYPESPLIT_IMPROVED_MAIN,
                 shifted = KB_DE_TYPESPLIT_IMPROVED_SHIFTED,
+                capsDisplay = KeyDisplay.IconDisplay(Icons.Outlined.ArrowDropUp),
                 numeric = KB_DE_TYPESPLIT_IMPROVED_NUMERIC,
             ),
     )

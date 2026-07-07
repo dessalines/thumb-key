@@ -6,6 +6,7 @@ import android.view.KeyEvent
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.automirrored.outlined.*
 import androidx.compose.material.icons.outlined.*
+import arrow.optics.copy
 import com.dessalines.thumbkey.utils.*
 import com.dessalines.thumbkey.utils.ColorVariant.*
 import com.dessalines.thumbkey.utils.FontSizeVariant.*
@@ -142,6 +143,10 @@ val KB_DE_TYPESPLIT_SUAVE_SHIFTED =
         SuaveMode.SHIFTED,
         SUAVE_GRID_TEMPLATE + listOf(listOf(GRID_3_0, GRID_3_1, GRID_3_2, GRID_3_3)),
     )
+val KB_DE_TYPESPLIT_SUAVE_CAPSLOCKED =
+    KB_DE_TYPESPLIT_SUAVE_SHIFTED.capslock().alterKeys(Triple(2, 2) {
+        KeyItemC.center.display.set(it, KeyDisplay.IconDisplay(Icons.Outlined.KeyboardCapslock))
+    })
 val KB_DE_TYPESPLIT_SUAVE_CTRLED =
     generateSuaveLayout(
         SuaveMode.CTRLED,
@@ -293,6 +298,7 @@ val KB_DE_TYPESPLIT_SUAVE: KeyboardDefinition =
             KeyboardDefinitionModes(
                 main = KB_DE_TYPESPLIT_SUAVE_MAIN,
                 shifted = KB_DE_TYPESPLIT_SUAVE_SHIFTED,
+                capslocked = KB_DE_TYPESPLIT_SUAVE_CAPSLOCKED,
                 numeric = KB_DE_TYPESPLIT_SUAVE_NUMERIC,
                 ctrled = KB_DE_TYPESPLIT_SUAVE_CTRLED,
                 alted = KB_DE_TYPESPLIT_SUAVE_ALTED,
