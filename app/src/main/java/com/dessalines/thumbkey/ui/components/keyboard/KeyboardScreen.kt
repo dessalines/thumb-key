@@ -406,11 +406,12 @@ fun KeyboardScreen(
                                             }
                                     },
                                     onToggleCapsLock = {
-                                        mode = if (mode == KeyboardMode.CAPSLOCKED) {
-                                            KeyboardMode.SHIFTED
-                                        } else {
-                                            KeyboardMode.CAPSLOCKED
-                                        }
+                                        mode =
+                                            if (mode == KeyboardMode.CAPSLOCKED) {
+                                                KeyboardMode.SHIFTED
+                                            } else {
+                                                KeyboardMode.CAPSLOCKED
+                                            }
                                     },
                                     onToggleHideLetters = onToggleHideLetters,
                                     onAutoCapitalize = { enable ->
@@ -587,11 +588,12 @@ fun KeyboardScreen(
                                             }
                                     },
                                     onToggleCapsLock = {
-                                        mode = if (mode == KeyboardMode.CAPSLOCKED) {
-                                            KeyboardMode.SHIFTED
-                                        } else {
-                                            KeyboardMode.CAPSLOCKED
-                                        }
+                                        mode =
+                                            if (mode == KeyboardMode.CAPSLOCKED) {
+                                                KeyboardMode.SHIFTED
+                                            } else {
+                                                KeyboardMode.CAPSLOCKED
+                                            }
                                     },
                                     onToggleHideLetters = onToggleHideLetters,
                                     onAutoCapitalize = { enable ->
@@ -870,11 +872,12 @@ fun KeyboardScreen(
                                                 }
                                         },
                                         onToggleCapsLock = {
-                                            mode = if (mode == KeyboardMode.CAPSLOCKED) {
-                                                KeyboardMode.SHIFTED
-                                            } else {
-                                                KeyboardMode.CAPSLOCKED
-                                            }
+                                            mode =
+                                                if (mode == KeyboardMode.CAPSLOCKED) {
+                                                    KeyboardMode.SHIFTED
+                                                } else {
+                                                    KeyboardMode.CAPSLOCKED
+                                                }
                                         },
                                         onToggleHideLetters = onToggleHideLetters,
                                         onKeyEvent = {

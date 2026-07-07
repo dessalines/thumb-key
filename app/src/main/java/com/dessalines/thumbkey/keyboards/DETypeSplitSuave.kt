@@ -143,9 +143,11 @@ val KB_DE_TYPESPLIT_SUAVE_SHIFTED =
         SUAVE_GRID_TEMPLATE + listOf(listOf(GRID_3_0, GRID_3_1, GRID_3_2, GRID_3_3)),
     )
 val KB_DE_TYPESPLIT_SUAVE_CAPSLOCKED =
-    KB_DE_TYPESPLIT_SUAVE_SHIFTED.capslock().alterKeys(Triple(2, 2) {
-        KeyItemC.center.display.set(it, KeyDisplay.IconDisplay(Icons.Outlined.KeyboardCapslock))
-    })
+    KB_DE_TYPESPLIT_SUAVE_SHIFTED.capslock().alterKeys(
+        Triple(2, 2) {
+            KeyItemC.center.display.set(it, KeyDisplay.IconDisplay(Icons.Outlined.KeyboardCapslock))
+        },
+    )
 val KB_DE_TYPESPLIT_SUAVE_CTRLED =
     generateSuaveLayout(
         SuaveMode.CTRLED,
