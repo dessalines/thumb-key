@@ -22,10 +22,10 @@ val KB_MY_THUMBKEY_MAIN =
                 KeyItemC(
                     center = KeyC("ပ", size = LARGE),
                     bottomLeft = KeyC("ဂ"),
-                    bottomRight= KeyC("ဒ"),
+                    bottomRight = KeyC("ဒ"),
                 ),
                 KeyItemC(
-                    center = KeyC("လ, size = LARGE),
+                    center = KeyC("လ", size = LARGE),
                     left = KeyC("ဇ"),
                     bottomLeft = KeyC("ခ"),
                 ),
@@ -123,7 +123,7 @@ val KB_MY_THUMBKEY_SHIFTED =
                     center = KeyC("ဤ", size = LARGE),
                     swipeType = FOUR_WAY_CROSS,
                     left = KeyC("ဣ"),
-                         right = KeyC("ဿ"),
+                    right = KeyC("ဿ"),
                 ),
                 EMOJI_KEY_ITEM,
             ),
@@ -167,7 +167,7 @@ val KB_MY_THUMBKEY_SHIFTED =
                 KeyItemC(
                     center = KeyC("ဏ", size = LARGE),
                     top = KeyC("ဠ"),
-                    topRight = Kr=eyC("ဏ္ဍ"),
+                    topRight = KeyC("ဏ္ဍ"),
                     right = KeyC("ဏ္ထ"),
                     bottom = KeyC("ဉ"),
                 ),
