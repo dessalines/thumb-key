@@ -25,7 +25,7 @@ val KB_MY_THUMBKEY_MAIN =
                     bottomRight = KeyC("ဒ"),
                 ),
                 KeyItemC(
-                    center = KeyC("လ", size = LARGE),
+                    center = KeyC("င", size = LARGE),
                     left = KeyC("ဇ"),
                     bottomLeft = KeyC("ခ"),
                 ),
@@ -74,7 +74,7 @@ val KB_MY_THUMBKEY_MAIN =
             listOf(
                 KeyItemC(
                     center = KeyC("က", size = LARGE),
-                    topRight = KeyC("င"),
+                    topRight = KeyC("လ"),
                     right = KeyC("သ"),
                     bottomRight = KeyC("ဘ"),
                 ),
