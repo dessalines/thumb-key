@@ -108,7 +108,7 @@ val KB_MY_THUMBKEY_SHIFTED =
         listOf(
             listOf(
                 KeyItemC(
-                    center = KeyC("လ", size = LARGE),
+                    center = KeyC("ဎ", size = LARGE),
                     right = KeyC("န္ဓ"),
                     bottomRight = KeyC("န္တ"),
                 ),
