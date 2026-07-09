@@ -38,7 +38,7 @@ val KB_MY_THUMBKEY_MAIN =
                     topRight = KeyC("ှ"),
                     bottom = KeyC("့"),
                     right = KeyC("ရ"),
-                    bottomRight = KeyC("ွ"),
+                    bottomRight = KeyC("ဝ"),
                 ),
                 KeyItemC(
                     center = KeyC("း", size = LARGE),
@@ -83,7 +83,7 @@ val KB_MY_THUMBKEY_MAIN =
                     left = KeyC("ထ"),
                     top = KeyC("ဲ"),
                     right = KeyC("စ"),
-                    bottom = KeyC("ဝ"),
+                    bottom = KeyC("ွ"),
                 ),
                 KeyItemC(
                     center = KeyC("မ", size = LARGE),
