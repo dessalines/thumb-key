@@ -569,7 +569,7 @@ val KB_T9: KeyboardDefinition =
             KeyboardDefinitionModes(
                 main = KB_T9_MAIN,
                 shifted = KB_T9_SHIFTED,
-                capsDisplay = KeyDisplay.TextDisplay("⇧"),
+                capslocked = KB_T9_SHIFTED.capslock(KeyDisplay.TextDisplay("⇧")),
                 numeric = NUMERIC_KEYBOARD,
             ),
     )

@@ -431,7 +431,7 @@ val KB_EN_DOUBLE_SYMBOLS: KeyboardDefinition =
             KeyboardDefinitionModes(
                 main = KB_EN_DOUBLE_SYMBOLS_MAIN,
                 shifted = KB_EN_DOUBLE_SYMBOLS_SHIFTED,
-                capsDisplay = KeyDisplay.IconDisplay(Icons.Outlined.ArrowDropUp),
+                capslocked = KB_EN_DOUBLE_SYMBOLS_SHIFTED.capslock(KeyDisplay.IconDisplay((Icons.Outlined.ArrowDropUp))),
                 numeric = DOUBLE_NUMERIC_KEYBOARD,
             ),
         settings =

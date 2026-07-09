@@ -333,7 +333,7 @@ val KB_EN_TWO_HANDS: KeyboardDefinition =
             KeyboardDefinitionModes(
                 main = KB_EN_TWO_HANDS_MAIN,
                 shifted = KB_EN_TWO_HANDS_SHIFTED,
-                capsDisplay = KeyDisplay.IconDisplay(Icons.Outlined.ArrowDropUp),
+                capslocked = KB_EN_TWO_HANDS_SHIFTED.capslock(KeyDisplay.IconDisplay((Icons.Outlined.ArrowDropUp))),
                 numeric = TWO_HANDS_NUMERIC_KEYBOARD,
             ),
         settings =
