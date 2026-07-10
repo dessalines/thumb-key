@@ -14,16 +14,16 @@ val KB_EN_MARLIN_MAIN =
         listOf(
             listOf(
                 KeyItemC(
-                    center = KeyC("d", size = LARGE),
-                ),
-                KeyItemC(
-                    center = KeyC("o", size = LARGE),
+                    center = KeyC("m", size = LARGE),
                 ),
                 KeyItemC(
                     center = KeyC("u", size = LARGE),
                 ),
+                KeyItemC(
+                    center = KeyC("o", size = LARGE),
+                ),
                 EMOJI_KEY_ITEM.copy(
-                    center = KeyC("m", size = LARGE),
+                    center = KeyC("d", size = LARGE),
                     right =
                         TOGGLE_EMOJI_MODE_TRUE_KEYC.copy(
                             size = SMALL,
@@ -34,13 +34,13 @@ val KB_EN_MARLIN_MAIN =
             ),
             listOf(
                 KeyItemC(
-                    center = KeyC("t", size = LARGE),
-                ),
-                KeyItemC(
-                    center = KeyC("e", size = LARGE),
+                    center = KeyC("n", size = LARGE),
                 ),
                 KeyItemC(
                     center = KeyC("h", size = LARGE),
+                ),
+                KeyItemC(
+                    center = KeyC("e", size = LARGE),
                     left = KeyC(".", color = MUTED),
                     right = KeyC(",", color = MUTED),
                     topRight = KeyC("'", color = MUTED),
@@ -53,7 +53,7 @@ val KB_EN_MARLIN_MAIN =
                     bottomLeft = KeyC("*", color = MUTED),
                 ),
                 NUMERIC_KEY_ITEM.copy(
-                    center = KeyC("n", size = LARGE),
+                    center = KeyC("t", size = LARGE),
                     right =
                         TOGGLE_NUMERIC_MODE_TRUE_KEYC.copy(
                             size = SMALL,
@@ -64,17 +64,17 @@ val KB_EN_MARLIN_MAIN =
             ),
             listOf(
                 KeyItemC(
-                    center = KeyC("i", size = LARGE),
+                    center = KeyC("s", size = LARGE),
                 ),
                 KeyItemC(
-                    center = KeyC("a", size = LARGE),
+                    center = KeyC("r", size = LARGE),
                     top = KeyC("z"),
                     bottom = KeyC("k"),
                     left = KeyC("x"),
                     right = KeyC("q"),
                 ),
                 KeyItemC(
-                    center = KeyC("r", size = LARGE),
+                    center = KeyC("a", size = LARGE),
                     top = KeyC("f"),
                     bottom = KeyC("w"),
                     left = KeyC("p"),
@@ -85,7 +85,7 @@ val KB_EN_MARLIN_MAIN =
                     bottomLeft = KeyC("j"),
                 ),
                 KeyItemC(
-                    center = KeyC("s", size = LARGE),
+                    center = KeyC("i", size = LARGE),
                     top =
                         KeyC(
                             display = KeyDisplay.IconDisplay(Icons.Outlined.ArrowDropUp),
@@ -103,10 +103,10 @@ val KB_EN_MARLIN_MAIN =
             listOf(
                 BACKSPACE_KEY_ITEM,
                 KeyItemC(
-                    center = KeyC("l", size = LARGE),
+                    center = KeyC("c", size = LARGE),
                 ),
                 KeyItemC(
-                    center = KeyC("c", size = LARGE),
+                    center = KeyC("l", size = LARGE),
                 ),
                 SPACEBAR_SKINNY_KEY_ITEM,
             ),
@@ -118,16 +118,16 @@ val KB_EN_MARLIN_SHIFTED =
         listOf(
             listOf(
                 KeyItemC(
-                    center = KeyC("D", size = LARGE),
-                ),
-                KeyItemC(
-                    center = KeyC("O", size = LARGE),
+                    center = KeyC("M", size = LARGE),
                 ),
                 KeyItemC(
                     center = KeyC("U", size = LARGE),
                 ),
+                KeyItemC(
+                    center = KeyC("O", size = LARGE),
+                ),
                 EMOJI_KEY_ITEM.copy(
-                    center = KeyC("M", size = LARGE),
+                    center = KeyC("D", size = LARGE),
                     right =
                         TOGGLE_EMOJI_MODE_TRUE_KEYC.copy(
                             size = SMALL,
@@ -138,13 +138,13 @@ val KB_EN_MARLIN_SHIFTED =
             ),
             listOf(
                 KeyItemC(
-                    center = KeyC("T", size = LARGE),
-                ),
-                KeyItemC(
-                    center = KeyC("E", size = LARGE),
+                    center = KeyC("N", size = LARGE),
                 ),
                 KeyItemC(
                     center = KeyC("H", size = LARGE),
+                ),
+                KeyItemC(
+                    center = KeyC("E", size = LARGE),
                     left = KeyC(".", color = MUTED),
                     right = KeyC(",", color = MUTED),
                     topRight = KeyC("'", color = MUTED),
@@ -157,7 +157,7 @@ val KB_EN_MARLIN_SHIFTED =
                     bottomLeft = KeyC("*", color = MUTED),
                 ),
                 NUMERIC_KEY_ITEM.copy(
-                    center = KeyC("N", size = LARGE),
+                    center = KeyC("T", size = LARGE),
                     right =
                         TOGGLE_NUMERIC_MODE_TRUE_KEYC.copy(
                             size = SMALL,
@@ -168,17 +168,17 @@ val KB_EN_MARLIN_SHIFTED =
             ),
             listOf(
                 KeyItemC(
-                    center = KeyC("I", size = LARGE),
+                    center = KeyC("S", size = LARGE),
                 ),
                 KeyItemC(
-                    center = KeyC("A", size = LARGE),
+                    center = KeyC("R", size = LARGE),
                     top = KeyC("Z"),
                     bottom = KeyC("K"),
                     left = KeyC("X"),
                     right = KeyC("Q"),
                 ),
                 KeyItemC(
-                    center = KeyC("R", size = LARGE),
+                    center = KeyC("A", size = LARGE),
                     top = KeyC("F"),
                     bottom = KeyC("W"),
                     left = KeyC("P"),
@@ -189,7 +189,7 @@ val KB_EN_MARLIN_SHIFTED =
                     bottomLeft = KeyC("J"),
                 ),
                 KeyItemC(
-                    center = KeyC("S", size = LARGE),
+                    center = KeyC("I", size = LARGE),
                     bottom =
                         KeyC(
                             display = KeyDisplay.IconDisplay(Icons.Outlined.ArrowDropDown),
@@ -210,10 +210,10 @@ val KB_EN_MARLIN_SHIFTED =
             listOf(
                 BACKSPACE_KEY_ITEM,
                 KeyItemC(
-                    center = KeyC("L", size = LARGE),
+                    center = KeyC("C", size = LARGE),
                 ),
                 KeyItemC(
-                    center = KeyC("C", size = LARGE),
+                    center = KeyC("L", size = LARGE),
                 ),
                 SPACEBAR_SKINNY_KEY_ITEM,
             ),
