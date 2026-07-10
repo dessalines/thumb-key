@@ -126,7 +126,7 @@ val KB_IT_THUMBKEY_SHIFTED =
                     right = KeyC("Ò", color = MUTED),
                     bottomRight = KeyC("Ù", color = MUTED),
                     left = KeyC("U"),
-                    bottomLeft = KeyC("Qu", color = MUTED),
+                    bottomLeft = KeyC("Qu", capsModeDisplay = KeyDisplay.TextDisplay("QU"), color = MUTED),
                 ),
                 EMOJI_KEY_ITEM,
             ),
@@ -150,7 +150,7 @@ val KB_IT_THUMBKEY_SHIFTED =
                     right = KeyC("C"),
                     left = KeyC("B"),
                     bottomRight = KeyC("À", color = MUTED),
-                    bottomLeft = KeyC("Ch", color = MUTED),
+                    bottomLeft = KeyC("Ch", capsModeDisplay = KeyDisplay.TextDisplay("CH"), color = MUTED),
                     top =
                         KeyC(
                             display = KeyDisplay.IconDisplay(Icons.Outlined.KeyboardCapslock),
@@ -193,7 +193,7 @@ val KB_IT_THUMBKEY_SHIFTED =
                     top = KeyC("D"),
                     left = KeyC("F"),
                     bottom = KeyC("G"),
-                    bottomLeft = KeyC("Gh", color = MUTED),
+                    bottomLeft = KeyC("Gh", capsModeDisplay = KeyDisplay.TextDisplay("GH"), color = MUTED),
                     bottomRight = KeyC("3", color = MUTED),
                 ),
                 BACKSPACE_KEY_ITEM,

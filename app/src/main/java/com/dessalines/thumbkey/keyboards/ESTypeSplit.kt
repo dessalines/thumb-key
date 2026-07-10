@@ -194,7 +194,7 @@ val KB_ES_TYPESPLIT_SHIFTED =
                             display = null,
                             action = CommitText("Á"),
                         ),
-                    top = KeyC("Qu", color = MUTED),
+                    top = KeyC("Qu", capsModeDisplay = KeyDisplay.TextDisplay("QU"), color = MUTED),
                 ),
                 KeyItemC(
                     center = KeyC("S", size = LARGE),

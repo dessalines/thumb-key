@@ -208,7 +208,7 @@ val KB_FR_EN_FRAPPE_FLUIDE_V1_SHIFTED =
                     right = KeyC("Û", color = MUTED),
                     bottomLeft = KeyC("LL", size = SMALLEST, color = MUTED),
                     bottom = KeyC("B"),
-                    bottomRight = KeyC("Qu"),
+                    bottomRight = KeyC("Qu", capsModeDisplay = KeyDisplay.TextDisplay("QU")),
                 ),
                 KeyItemC(
                     center = KeyC("N", size = LARGE),
@@ -287,7 +287,7 @@ val KB_FR_EN_FRAPPE_FLUIDE_V1_SHIFTED =
                     center = KeyC("R", size = LARGE),
                     topLeft = KeyC("·", color = MUTED),
                     top = KeyC("J"),
-                    topRight = KeyC("Ch", color = MUTED),
+                    topRight = KeyC("Ch", capsModeDisplay = KeyDisplay.TextDisplay("CH"), color = MUTED),
                     left = KeyC("“", color = MUTED),
                     right = KeyC("=", color = MUTED),
                     bottomLeft = KeyC("« ", displayText = "«", color = MUTED),

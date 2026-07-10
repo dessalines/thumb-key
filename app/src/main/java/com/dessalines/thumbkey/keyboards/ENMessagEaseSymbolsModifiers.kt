@@ -42,6 +42,7 @@ fun keyCModifier(
     swipeReturnAction: KeyAction? = null,
     display: KeyDisplay = KeyDisplay.TextDisplay(displayText),
     capsModeDisplay: KeyDisplay? = null,
+    capsModeAction: KeyAction? = null,
     size: FontSizeVariant = FontSizeVariant.SMALL,
     color: ColorVariant =
         when (size) {
@@ -54,6 +55,7 @@ fun keyCModifier(
         swipeReturnAction,
         display,
         capsModeDisplay,
+        capsModeAction,
         size,
         color,
     )

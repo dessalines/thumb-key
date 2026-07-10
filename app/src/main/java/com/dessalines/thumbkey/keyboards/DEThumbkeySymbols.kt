@@ -217,11 +217,11 @@ val KB_DE_THUMBKEY_SYMBOLS_SHIFTED =
             listOf(
                 KeyItemC(
                     center = KeyC("R", size = LARGE),
-                    top = KeyC("Sch"),
+                    top = KeyC("Sch", capsModeDisplay = KeyDisplay.TextDisplay("SCH")),
                     topLeft = KeyC("{", color = MUTED),
                     left = KeyC("(", color = MUTED),
                     bottomLeft = KeyC("[", color = MUTED),
-                    bottom = KeyC("Ch"),
+                    bottom = KeyC("Ch", capsModeDisplay = KeyDisplay.TextDisplay("CH")),
                     bottomRight = KeyC("_", color = MUTED),
                     right = KeyC("M"),
                     topRight = KeyC("%", color = MUTED),

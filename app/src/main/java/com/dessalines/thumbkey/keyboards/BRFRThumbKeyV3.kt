@@ -252,9 +252,9 @@ val KB_BR_FR_THUMBKEY_V3_SHIFTED =
                 KeyItemC(
                     center = KeyC("S", size = LARGE),
                     topLeft = KeyC("F"),
-                    top = KeyC("C'h"),
+                    top = KeyC("C'h", capsModeDisplay = KeyDisplay.TextDisplay("C'H")),
                     topRight = KeyC("Ꝃ"),
-                    left = KeyC("Ch"),
+                    left = KeyC("Ch", capsModeDisplay = KeyDisplay.TextDisplay("CH")),
                     right = KeyC(">", color = MUTED),
                     bottomLeft = KeyC(";", color = MUTED),
                     bottom = KeyC("\u0308", displayText = "¨", color = MUTED),
