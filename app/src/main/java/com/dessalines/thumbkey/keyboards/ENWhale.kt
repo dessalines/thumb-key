@@ -14,19 +14,19 @@ val KB_EN_WHALE_MAIN =
         listOf(
             listOf(
                 KeyItemC(
-                    center = KeyC("b", size = LARGE),
+                    center = KeyC("f", size = LARGE),
                 ),
                 KeyItemC(
-                    center = KeyC("p", size = LARGE),
+                    center = KeyC("w", size = LARGE),
                 ),
                 KeyItemC(
                     center = KeyC("v", size = LARGE),
                 ),
                 KeyItemC(
-                    center = KeyC("w", size = LARGE),
+                    center = KeyC("p", size = LARGE),
                 ),
                 EMOJI_KEY_ITEM.copy(
-                    center = KeyC("f", size = LARGE),
+                    center = KeyC("b", size = LARGE),
                     right =
                         TOGGLE_EMOJI_MODE_TRUE_KEYC.copy(
                             size = SMALL,
@@ -37,10 +37,10 @@ val KB_EN_WHALE_MAIN =
             ),
             listOf(
                 KeyItemC(
-                    center = KeyC("y", size = LARGE),
+                    center = KeyC("m", size = LARGE),
                 ),
                 KeyItemC(
-                    center = KeyC("g", size = LARGE),
+                    center = KeyC("u", size = LARGE),
                 ),
                 KeyItemC(
                     center = KeyC("k", size = LARGE),
@@ -50,10 +50,10 @@ val KB_EN_WHALE_MAIN =
                     right = KeyC("x"),
                 ),
                 KeyItemC(
-                    center = KeyC("u", size = LARGE),
+                    center = KeyC("g", size = LARGE),
                 ),
                 NUMERIC_KEY_ITEM.copy(
-                    center = KeyC("m", size = LARGE),
+                    center = KeyC("y", size = LARGE),
                     right =
                         TOGGLE_NUMERIC_MODE_TRUE_KEYC.copy(
                             size = SMALL,
@@ -64,10 +64,10 @@ val KB_EN_WHALE_MAIN =
             ),
             listOf(
                 KeyItemC(
-                    center = KeyC("d", size = LARGE),
+                    center = KeyC("c", size = LARGE),
                 ),
                 KeyItemC(
-                    center = KeyC("i", size = LARGE),
+                    center = KeyC("l", size = LARGE),
                 ),
                 KeyItemC(
                     center = KeyC(".", size = LARGE),
@@ -83,10 +83,10 @@ val KB_EN_WHALE_MAIN =
                     backgroundColor = SURFACE_VARIANT,
                 ),
                 KeyItemC(
-                    center = KeyC("l", size = LARGE),
+                    center = KeyC("i", size = LARGE),
                 ),
                 KeyItemC(
-                    center = KeyC("c", size = LARGE),
+                    center = KeyC("d", size = LARGE),
                     top =
                         KeyC(
                             display = KeyDisplay.IconDisplay(Icons.Outlined.ArrowDropUp),
@@ -103,32 +103,32 @@ val KB_EN_WHALE_MAIN =
             ),
             listOf(
                 KeyItemC(
-                    center = KeyC("o", size = LARGE),
+                    center = KeyC("r", size = LARGE),
                 ),
-                KeyItemC(
-                    center = KeyC("a", size = LARGE),
-                ),
-                BACKSPACE_KEY_ITEM,
                 KeyItemC(
                     center = KeyC("h", size = LARGE),
                 ),
+                BACKSPACE_KEY_ITEM,
                 KeyItemC(
-                    center = KeyC("r", size = LARGE),
+                    center = KeyC("a", size = LARGE),
+                ),
+                KeyItemC(
+                    center = KeyC("o", size = LARGE),
                 ),
             ),
             listOf(
                 KeyItemC(
-                    center = KeyC("t", size = LARGE),
+                    center = KeyC("s", size = LARGE),
                 ),
-                KeyItemC(
-                    center = KeyC("e", size = LARGE),
-                ),
-                SPACEBAR_SKINNY_KEY_ITEM,
                 KeyItemC(
                     center = KeyC("n", size = LARGE),
                 ),
+                SPACEBAR_SKINNY_KEY_ITEM,
                 KeyItemC(
-                    center = KeyC("s", size = LARGE),
+                    center = KeyC("e", size = LARGE),
+                ),
+                KeyItemC(
+                    center = KeyC("t", size = LARGE),
                 ),
             ),
         ),
@@ -139,19 +139,19 @@ val KB_EN_WHALE_SHIFTED =
         listOf(
             listOf(
                 KeyItemC(
-                    center = KeyC("B", size = LARGE),
+                    center = KeyC("F", size = LARGE),
                 ),
                 KeyItemC(
-                    center = KeyC("P", size = LARGE),
+                    center = KeyC("W", size = LARGE),
                 ),
                 KeyItemC(
                     center = KeyC("V", size = LARGE),
                 ),
                 KeyItemC(
-                    center = KeyC("W", size = LARGE),
+                    center = KeyC("P", size = LARGE),
                 ),
                 EMOJI_KEY_ITEM.copy(
-                    center = KeyC("F", size = LARGE),
+                    center = KeyC("B", size = LARGE),
                     right =
                         TOGGLE_EMOJI_MODE_TRUE_KEYC.copy(
                             size = SMALL,
@@ -162,10 +162,10 @@ val KB_EN_WHALE_SHIFTED =
             ),
             listOf(
                 KeyItemC(
-                    center = KeyC("Y", size = LARGE),
+                    center = KeyC("M", size = LARGE),
                 ),
                 KeyItemC(
-                    center = KeyC("G", size = LARGE),
+                    center = KeyC("U", size = LARGE),
                 ),
                 KeyItemC(
                     center = KeyC("K", size = LARGE),
@@ -175,10 +175,10 @@ val KB_EN_WHALE_SHIFTED =
                     right = KeyC("X"),
                 ),
                 KeyItemC(
-                    center = KeyC("U", size = LARGE),
+                    center = KeyC("G", size = LARGE),
                 ),
                 NUMERIC_KEY_ITEM.copy(
-                    center = KeyC("M", size = LARGE),
+                    center = KeyC("Y", size = LARGE),
                     right =
                         TOGGLE_NUMERIC_MODE_TRUE_KEYC.copy(
                             size = SMALL,
@@ -189,10 +189,10 @@ val KB_EN_WHALE_SHIFTED =
             ),
             listOf(
                 KeyItemC(
-                    center = KeyC("D", size = LARGE),
+                    center = KeyC("C", size = LARGE),
                 ),
                 KeyItemC(
-                    center = KeyC("I", size = LARGE),
+                    center = KeyC("L", size = LARGE),
                 ),
                 KeyItemC(
                     center = KeyC(".", size = LARGE),
@@ -208,10 +208,10 @@ val KB_EN_WHALE_SHIFTED =
                     backgroundColor = SURFACE_VARIANT,
                 ),
                 KeyItemC(
-                    center = KeyC("L", size = LARGE),
+                    center = KeyC("I", size = LARGE),
                 ),
                 KeyItemC(
-                    center = KeyC("C", size = LARGE),
+                    center = KeyC("D", size = LARGE),
                     bottom =
                         KeyC(
                             display = KeyDisplay.IconDisplay(Icons.Outlined.ArrowDropDown),
@@ -231,32 +231,32 @@ val KB_EN_WHALE_SHIFTED =
             ),
             listOf(
                 KeyItemC(
-                    center = KeyC("O", size = LARGE),
+                    center = KeyC("R", size = LARGE),
                 ),
-                KeyItemC(
-                    center = KeyC("A", size = LARGE),
-                ),
-                BACKSPACE_KEY_ITEM,
                 KeyItemC(
                     center = KeyC("H", size = LARGE),
                 ),
+                BACKSPACE_KEY_ITEM,
                 KeyItemC(
-                    center = KeyC("R", size = LARGE),
+                    center = KeyC("A", size = LARGE),
+                ),
+                KeyItemC(
+                    center = KeyC("O", size = LARGE),
                 ),
             ),
             listOf(
                 KeyItemC(
-                    center = KeyC("T", size = LARGE),
+                    center = KeyC("S", size = LARGE),
                 ),
-                KeyItemC(
-                    center = KeyC("E", size = LARGE),
-                ),
-                SPACEBAR_SKINNY_KEY_ITEM,
                 KeyItemC(
                     center = KeyC("N", size = LARGE),
                 ),
+                SPACEBAR_SKINNY_KEY_ITEM,
                 KeyItemC(
-                    center = KeyC("S", size = LARGE),
+                    center = KeyC("E", size = LARGE),
+                ),
+                KeyItemC(
+                    center = KeyC("T", size = LARGE),
                 ),
             ),
         ),
