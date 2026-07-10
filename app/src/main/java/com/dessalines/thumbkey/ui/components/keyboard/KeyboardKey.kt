@@ -724,7 +724,11 @@ fun KeyboardKey(
                                                 minSwipeLength,
                                                 if (ghostKey == null) key.swipeType else SwipeNWay.EIGHT_WAY,
                                             )
-                                        key.getSwipe(swipeDirection)?.action ?: (
+                                        if (capsLock && key.getSwipe(swipeDirection)?.capsModeAction != null) {
+                                            key.getSwipe(swipeDirection)?.capsModeAction
+                                        } else {
+                                            key.getSwipe(swipeDirection)?.action
+                                        } ?: (
                                             ghostKey?.getSwipe(swipeDirection)?.action
                                         )
                                     }

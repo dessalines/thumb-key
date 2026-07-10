@@ -128,6 +128,11 @@ data class KeyC(
             else -> null
         },
     val capsModeDisplay: KeyDisplay? = null,
+    val capsModeAction: KeyAction? =
+        when (capsModeDisplay) {
+            is KeyDisplay.TextDisplay -> KeyAction.CommitText(capsModeDisplay.text)
+            else -> null
+        },
     val size: FontSizeVariant = FontSizeVariant.SMALL,
     val color: ColorVariant =
         when (size) {
@@ -142,6 +147,11 @@ data class KeyC(
         swipeReturnAction: KeyAction? = null,
         display: KeyDisplay = KeyDisplay.TextDisplay(displayText, fontFamily = displayFont),
         capsModeDisplay: KeyDisplay? = null,
+        capsModeAction: KeyAction? =
+            when (capsModeDisplay) {
+                is KeyDisplay.TextDisplay -> KeyAction.CommitText(capsModeDisplay.text)
+                else -> null
+            },
         size: FontSizeVariant = FontSizeVariant.SMALL,
         color: ColorVariant =
             when (size) {
@@ -153,6 +163,7 @@ data class KeyC(
         swipeReturnAction,
         display,
         capsModeDisplay,
+        capsModeAction,
         size,
         color,
     )
