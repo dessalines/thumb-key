@@ -50,6 +50,7 @@ import com.dessalines.thumbkey.keyboards.KB_EN_HYPER
 import com.dessalines.thumbkey.keyboards.KB_EN_HYPER_SPACE
 import com.dessalines.thumbkey.keyboards.KB_EN_IT_THUMBKEY
 import com.dessalines.thumbkey.keyboards.KB_EN_LA_THUMBKEY
+import com.dessalines.thumbkey.keyboards.KB_EN_MARLIN
 import com.dessalines.thumbkey.keyboards.KB_EN_MESSAGEASE
 import com.dessalines.thumbkey.keyboards.KB_EN_MESSAGEASE_COMPOSE
 import com.dessalines.thumbkey.keyboards.KB_EN_MESSAGEASE_COMPOSE_LEFT_FLIPPED_NUMPAD
@@ -99,6 +100,7 @@ import com.dessalines.thumbkey.keyboards.KB_EN_TWO_HANDS
 import com.dessalines.thumbkey.keyboards.KB_EN_TYPESPLIT
 import com.dessalines.thumbkey.keyboards.KB_EN_TYPESPLIT_PROGRAMMING
 import com.dessalines.thumbkey.keyboards.KB_EN_TYPESPLIT_SHORT
+import com.dessalines.thumbkey.keyboards.KB_EN_WHALE
 import com.dessalines.thumbkey.keyboards.KB_EO_CYRILLIC_THUMBKEY
 import com.dessalines.thumbkey.keyboards.KB_EO_EN_DE_THUMBKEY
 import com.dessalines.thumbkey.keyboards.KB_ES_CA_MESSAGEASE
@@ -464,4 +466,6 @@ enum class KeyboardLayout(
     ENMessagEaseComposeFlipped(KB_EN_MESSAGEASE_COMPOSE_LEFT_FLIPPED_NUMPAD), // english messagease compose flipped
     FRMessagEaseFlipped(KB_FR_MESSAGEASE_LEFT_FLIPPED_NUMPAD), // français messagease left-handed flipped
     BNThumbKey(KB_BN_THUMBKEY), // বাংলা thumb-key
+    ENWhale(KB_EN_WHALE),
+    ENMarlin(KB_EN_MARLIN),
 }
