@@ -1,3 +1,19 @@
+## What's Changed in 5.1.12
+
+- Adding Deepseek-generated 5x5 (whale) and 4x4 (marlin) layouts by @dessalines in [#1942](https://github.com/dessalines/thumb-key/pull/1942)
+- Update MYThumbKey.kt by @khantNZaw in [#1939](https://github.com/dessalines/thumb-key/pull/1939)
+- Update MYThumbKey.kt by @khantNZaw in [#1938](https://github.com/dessalines/thumb-key/pull/1938)
+- Update MYThumbKey.kt by @khantNZaw in [#1937](https://github.com/dessalines/thumb-key/pull/1937)
+- Update MYThumbKey.kt by @khantNZaw in [#1935](https://github.com/dessalines/thumb-key/pull/1935)
+- Add Bengali keyboard layout by @Shihab-glitch in [#1931](https://github.com/dessalines/thumb-key/pull/1931)
+
+## New Contributors
+
+- @khantNZaw made their first contribution in [#1939](https://github.com/dessalines/thumb-key/pull/1939)
+- @Shihab-glitch made their first contribution in [#1931](https://github.com/dessalines/thumb-key/pull/1931)
+
+**Full Changelog**: https://github.com/dessalines/thumb-key/compare/5.1.11...5.1.12
+
 ## What's Changed in 5.1.11
 
 - Adding 2 flipped layouts. by @dessalines in [#1921](https://github.com/dessalines/thumb-key/pull/1921)
