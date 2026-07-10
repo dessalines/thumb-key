@@ -61,6 +61,7 @@ import com.dessalines.thumbkey.keyboards.KB_EN_MESSAGEASE_SYMBOLS_MODIFIERS
 import com.dessalines.thumbkey.keyboards.KB_EN_MESSAGEASE_SYMBOLS_TWO_HANDS
 import com.dessalines.thumbkey.keyboards.KB_EN_MESSAGEASE_TWO_HANDS
 import com.dessalines.thumbkey.keyboards.KB_EN_MESSAGEASE_WRITER
+import com.dessalines.thumbkey.keyboards.KB_EN_MINNOW
 import com.dessalines.thumbkey.keyboards.KB_EN_MI_THUMBKEY
 import com.dessalines.thumbkey.keyboards.KB_EN_MI_THUMBKEY_SYMBOLS
 import com.dessalines.thumbkey.keyboards.KB_EN_NL_TYPESPLIT
@@ -468,4 +469,5 @@ enum class KeyboardLayout(
     BNThumbKey(KB_BN_THUMBKEY), // বাংলা thumb-key
     ENWhale(KB_EN_WHALE),
     ENMarlin(KB_EN_MARLIN),
+    ENMinnow(KB_EN_MINNOW)
 }
