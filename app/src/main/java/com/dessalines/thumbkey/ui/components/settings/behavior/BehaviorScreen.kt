@@ -46,6 +46,7 @@ import com.dessalines.thumbkey.db.DEFAULT_CLOCKWISE_DRAG_ACTION
 import com.dessalines.thumbkey.db.DEFAULT_COUNTERCLOCKWISE_DRAG_ACTION
 import com.dessalines.thumbkey.db.DEFAULT_DRAG_RETURN_ENABLED
 import com.dessalines.thumbkey.db.DEFAULT_GHOST_KEYS_ENABLED
+import com.dessalines.thumbkey.db.DEFAULT_LONG_PRESS_DURATION
 import com.dessalines.thumbkey.db.DEFAULT_MIN_SWIPE_LENGTH
 import com.dessalines.thumbkey.db.DEFAULT_SLIDE_BACKSPACE_DEADZONE_ENABLED
 import com.dessalines.thumbkey.db.DEFAULT_SLIDE_CURSOR_MOVEMENT_MODE
@@ -101,6 +102,9 @@ fun BehaviorScreen(
     var ghostKeysEnabledState = (settings?.ghostKeysEnabled ?: DEFAULT_GHOST_KEYS_ENABLED).toBool()
     var slideHoldEnabledState = (settings?.slideHoldEnabled ?: DEFAULT_SLIDE_HOLD_ENABLED).toBool()
 
+    var longPressDurationState = (settings?.longPressDuration ?: DEFAULT_LONG_PRESS_DURATION).toFloat()
+    var longPressDurationSliderState by remember { mutableFloatStateOf(longPressDurationState) }
+
     val snackbarHostState = remember { SnackbarHostState() }
 
     val scrollState = rememberScrollState()
@@ -125,6 +129,7 @@ fun BehaviorScreen(
                 counterclockwiseDragAction = counterclockwiseDragActionState.ordinal,
                 ghostKeysEnabled = ghostKeysEnabledState.toInt(),
                 slideHoldEnabled = slideHoldEnabledState.toInt(),
+                longPressDuration = longPressDurationState.toInt(),
             ),
         )
     }
@@ -159,6 +164,30 @@ fun BehaviorScreen(
                         icon = {
                             Icon(
                                 imageVector = Icons.Outlined.Abc,
+                                contentDescription = null,
+                            )
+                        },
+                    )
+                    SliderPreference(
+                        value = longPressDurationState,
+                        sliderValue = longPressDurationSliderState,
+                        onValueChange = {
+                            longPressDurationState = it
+                            updateBehavior()
+                        },
+                        onSliderValueChange = { longPressDurationSliderState = it },
+                        valueRange = 100f..1000f,
+                        title = {
+                            val longPressDurationStr =
+                                stringResource(
+                                    R.string.long_press_duration,
+                                    longPressDurationSliderState.toInt().toString(),
+                                )
+                            Text(longPressDurationStr)
+                        },
+                        icon = {
+                            Icon(
+                                imageVector = Icons.Outlined.Swipe,
                                 contentDescription = null,
                             )
                         },

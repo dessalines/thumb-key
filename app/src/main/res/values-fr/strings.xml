@@ -99,7 +99,7 @@
     <string name="how_to_modify_keys">Comment modifier les touches</string>
     <string name="ignore_bottom_padding">Ignorer l\'espacement inférieur</string>
     <string name="key_modification_placeholder">Insérer du YAML</string>
-    <string name="warning_invalid_mode">Le mode \"%s\" n\'est pas défini pour la disposition \"%s\".</string>
+    <string name="warning_invalid_mode">Le mode \"%1$s\" n\'est pas défini pour la disposition \"%2$s\".</string>
     <string name="clipboard_history">Historique du presse-papier</string>
     <string name="clipboard_history_enabled">Activer l\'historique du presse-papier</string>
     <string name="clipboard_history_enabled_description">Enregistrer le texte copié pour un accès rapide</string>

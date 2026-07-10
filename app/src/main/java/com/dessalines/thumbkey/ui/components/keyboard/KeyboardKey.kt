@@ -13,9 +13,12 @@ import androidx.compose.animation.slideInVertically
 import androidx.compose.foundation.ExperimentalFoundationApi
 import androidx.compose.foundation.background
 import androidx.compose.foundation.border
-import androidx.compose.foundation.combinedClickable
+import androidx.compose.foundation.gestures.awaitEachGesture
+import androidx.compose.foundation.gestures.awaitFirstDown
 import androidx.compose.foundation.gestures.detectDragGestures
+import androidx.compose.foundation.gestures.waitForUpOrCancellation
 import androidx.compose.foundation.interaction.MutableInteractionSource
+import androidx.compose.foundation.interaction.PressInteraction
 import androidx.compose.foundation.interaction.collectIsPressedAsState
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.fillMaxSize
@@ -150,6 +153,7 @@ fun KeyboardKey(
     clockwiseDragAction: CircularDragAction,
     counterclockwiseDragAction: CircularDragAction,
     slideHoldEnabled: Boolean,
+    longPressDuration: Int,
 ) {
     // Necessary for swipe settings to get updated correctly
     val id =
@@ -158,7 +162,7 @@ fun KeyboardKey(
             slideSensitivity + slideEnabled + slideCursorMovementMode + slideSpacebarDeadzoneEnabled +
             slideBackspaceDeadzoneEnabled + dragReturnEnabled + circularDragEnabled +
             clockwiseDragAction.ordinal + counterclockwiseDragAction.ordinal +
-            slideHoldEnabled
+            slideHoldEnabled + longPressDuration
 
     val ctx = LocalContext.current
     val ime = ctx as IMEService
@@ -171,6 +175,7 @@ fun KeyboardKey(
     val isPressed by interactionSource.collectIsPressedAsState()
 
     val isDragged = remember { mutableStateOf(false) }
+    var longPressTriggered by remember { mutableStateOf(false) }
     val releasedKey = remember { mutableStateOf<String?>(null) }
 
     var tapCount by remember { mutableIntStateOf(0) }
@@ -392,47 +397,66 @@ fun KeyboardKey(
                     (Modifier)
                 },
             ).background(color = backgroundColor)
-            // Note: pointerInput has a delay when switching keyboards, so you must use this
-            .combinedClickable(
-                interactionSource = interactionSource,
-                indication = null,
-                hapticFeedbackEnabled = false, // We manually trigger haptics instead
-                onClick = {
-                    // Set the last key info, and the tap count
-                    val cAction = key.center.action
-                    lastAction.value?.let { (lastAction, time) ->
-                        if (time.elapsedNow() < 1.seconds && lastAction == cAction && !ime.didCursorMove()) {
-                            tapCount += 1
-                        } else {
-                            tapCount = 0
-                        }
-                    }
-                    lastAction.value = Pair(cAction, TimeSource.Monotonic.markNow())
+            // The key1 is necessary, otherwise new swipes wont work
+            .pointerInput(key1 = id) {
+                awaitEachGesture {
+                    val down = awaitFirstDown()
+                    longPressTriggered = false
+                    val press = PressInteraction.Press(down.position)
+                    scope.launch { interactionSource.emit(press) }
 
-                    // Set the correct action
-                    val action = tapActions[tapCount % tapActions.size]
-                    performKeyAction(
-                        action = action,
-                        ime = ime,
-                        autoCapitalize = autoCapitalize,
-                        keyboardSettings = keyboardSettings,
-                        onToggleShiftMode = onToggleShiftMode,
-                        onToggleCtrlMode = onToggleCtrlMode,
-                        onToggleAltMode = onToggleAltMode,
-                        onToggleNumericMode = onToggleNumericMode,
-                        onToggleEmojiMode = onToggleEmojiMode,
-                        onToggleClipboardMode = onToggleClipboardMode,
-                        onToggleCapsLock = onToggleCapsLock,
-                        onToggleHideLetters = onToggleHideLetters,
-                        onAutoCapitalize = onAutoCapitalize,
-                        onSwitchLanguage = onSwitchLanguage,
-                        onChangePosition = onChangePosition,
-                        onKeyEvent = onKeyEvent,
-                    )
-                    doneKeyAction(scope, action, isDragged, releasedKey, animationHelperSpeed)
-                },
-                onLongClick = {
-                    key.longPress?.let { action ->
+                    val longPressJob =
+                        scope.launch {
+                            delay(longPressDuration.toLong())
+                            if (!isDragged.value) {
+                                key.longPress?.let { action ->
+                                    longPressTriggered = true
+                                    performKeyAction(
+                                        action = action,
+                                        ime = ime,
+                                        autoCapitalize = autoCapitalize,
+                                        keyboardSettings = keyboardSettings,
+                                        onToggleShiftMode = onToggleShiftMode,
+                                        onToggleCtrlMode = onToggleCtrlMode,
+                                        onToggleAltMode = onToggleAltMode,
+                                        onToggleNumericMode = onToggleNumericMode,
+                                        onToggleEmojiMode = onToggleEmojiMode,
+                                        onToggleClipboardMode = onToggleClipboardMode,
+                                        onToggleCapsLock = onToggleCapsLock,
+                                        onToggleHideLetters = onToggleHideLetters,
+                                        onAutoCapitalize = onAutoCapitalize,
+                                        onSwitchLanguage = onSwitchLanguage,
+                                        onChangePosition = onChangePosition,
+                                        onKeyEvent = onKeyEvent,
+                                    )
+                                    doneKeyAction(scope, action, isDragged, releasedKey, animationHelperSpeed)
+                                    if (vibrateOnTap) {
+                                        view.performHapticFeedback(HapticFeedbackConstants.KEYBOARD_TAP)
+                                    }
+                                    if (soundOnTap) {
+                                        audioManager.playSoundEffect(AudioManager.FX_KEY_CLICK, .1f)
+                                    }
+                                }
+                            }
+                        }
+
+                    var upOrCancel = waitForUpOrCancellation()
+                    longPressJob.cancel()
+
+                    if (upOrCancel != null && !longPressTriggered && !isDragged.value) {
+                        // Set the last key info, and the tap count
+                        val cAction = key.center.action
+                        lastAction.value?.let { (lastAction, time) ->
+                            if (time.elapsedNow() < 1.seconds && lastAction == cAction && !ime.didCursorMove()) {
+                                tapCount += 1
+                            } else {
+                                tapCount = 0
+                            }
+                        }
+                        lastAction.value = Pair(cAction, TimeSource.Monotonic.markNow())
+
+                        // Set the correct action
+                        val action = tapActions[tapCount % tapActions.size]
                         performKeyAction(
                             action = action,
                             ime = ime,
@@ -452,22 +476,25 @@ fun KeyboardKey(
                             onKeyEvent = onKeyEvent,
                         )
                         doneKeyAction(scope, action, isDragged, releasedKey, animationHelperSpeed)
-                        if (vibrateOnTap) {
-                            view.performHapticFeedback(HapticFeedbackConstants.KEYBOARD_TAP)
-                        }
-                        if (soundOnTap) {
-                            audioManager.playSoundEffect(AudioManager.FX_KEY_CLICK, .1f)
-                        }
                     }
-                },
-            )
-            // The key1 is necessary, otherwise new swipes wont work
+
+                    scope.launch {
+                        interactionSource.emit(
+                            if (upOrCancel != null) PressInteraction.Release(press) else PressInteraction.Cancel(press),
+                        )
+                    }
+                }
+            }
             .pointerInput(key1 = id) {
                 detectDragGestures(
                     onDragStart = {
-                        isDragged.value = true
+                        if (!longPressTriggered) {
+                            isDragged.value = true
+                        }
                     },
                     onDrag = { change, dragAmount ->
+                        if (longPressTriggered) return@detectDragGestures
+
                         change.consume()
                         val (x, y) = dragAmount
                         offsetX += x
@@ -475,6 +502,8 @@ fun KeyboardKey(
                         val offset = Offset(offsetX, offsetY)
                         positions += offset
                         if (offset.getDistanceSquared() > maxOffset.getDistanceSquared()) maxOffset = offset
+
+                        if (longPressTriggered) return@detectDragGestures
 
                         // First detection is large enough to preserve swipe actions.
                         val slideOffsetTrigger = (keySize.dp.toPx() * 0.75) + minSwipeLength
@@ -636,6 +665,18 @@ fun KeyboardKey(
                         }
                     },
                     onDragEnd = {
+                        if (longPressTriggered) {
+                            // Reset the drags
+                            offsetX = 0f
+                            offsetY = 0f
+                            maxOffset = Offset(0f, 0f)
+                            positions = listOf()
+
+                            // Reset selection
+                            selection = Selection()
+                            return@detectDragGestures
+                        }
+
                         lateinit var action: KeyAction
 
                         val slideHoldTicks = resetSlideHoldVariables()

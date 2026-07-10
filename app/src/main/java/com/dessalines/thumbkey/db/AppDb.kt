@@ -63,6 +63,7 @@ const val DEFAULT_CLOCKWISE_DRAG_ACTION = 0
 const val DEFAULT_COUNTERCLOCKWISE_DRAG_ACTION = 1
 const val DEFAULT_GHOST_KEYS_ENABLED = 0
 const val DEFAULT_SLIDE_HOLD_ENABLED = 0
+const val DEFAULT_LONG_PRESS_DURATION = 400
 const val DEFAULT_KEY_MODIFICATIONS = ""
 const val DEFAULT_IGNORE_BOTTOM_PADDING = 0
 const val DEFAULT_SHOW_TOAST_ON_LAYOUT_SWITCH = 1
@@ -258,6 +259,11 @@ data class AppSettings(
         defaultValue = DEFAULT_SLIDE_HOLD_ENABLED.toString(),
     )
     val slideHoldEnabled: Int,
+    @ColumnInfo(
+        name = "long_press_duration",
+        defaultValue = DEFAULT_LONG_PRESS_DURATION.toString(),
+    )
+    val longPressDuration: Int,
     @ColumnInfo(
         name = "key_modifications",
         defaultValue = "",
@@ -483,6 +489,8 @@ data class BehaviorUpdate(
     val ghostKeysEnabled: Int,
     @ColumnInfo(name = "slide_hold_enabled")
     val slideHoldEnabled: Int,
+    @ColumnInfo(name = "long_press_duration")
+    val longPressDuration: Int,
 )
 
 data class KeyModificationsUpdate(
@@ -620,7 +628,7 @@ class AppSettingsRepository(
 }
 
 @Database(
-    version = 27,
+    version = 28,
     entities = [AppSettings::class],
     exportSchema = true,
 )
@@ -669,6 +677,7 @@ abstract class AppDB : RoomDatabase() {
                             MIGRATION_24_25,
                             MIGRATION_25_26,
                             MIGRATION_26_27,
+                            MIGRATION_27_28,
                         )
                         // Necessary because it can't insert data on creation
                         .addCallback(

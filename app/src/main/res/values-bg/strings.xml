@@ -104,7 +104,7 @@
     <string name="ignore_bottom_padding">Игнориране на долния отстъп</string>
     <string name="show_toast_on_layout_switch">Показване на съобщение при смяна на подредбата</string>
     <string name="disable_fullscreen_editor">Изключване на текстовия редактор на цял екран</string>
-    <string name="warning_invalid_mode">Режимът „%s“ не е дефиниран за подредбата „%s“.</string>
+    <string name="warning_invalid_mode">Режимът „%1$s“ не е дефиниран за подредбата „%2$s“.</string>
     <string name="clipboard_history">История на клипборда</string>
     <string name="clipboard_history_enabled">Включване на историята на клипборда</string>
     <string name="clipboard_history_enabled_description">Запазване на копирания текст с цел бърз достъп</string>

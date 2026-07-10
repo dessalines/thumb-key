@@ -62,6 +62,7 @@ import com.dessalines.thumbkey.db.DEFAULT_KEY_MODIFICATIONS
 import com.dessalines.thumbkey.db.DEFAULT_KEY_PADDING
 import com.dessalines.thumbkey.db.DEFAULT_KEY_RADIUS
 import com.dessalines.thumbkey.db.DEFAULT_KEY_WIDTH
+import com.dessalines.thumbkey.db.DEFAULT_LONG_PRESS_DURATION
 import com.dessalines.thumbkey.db.DEFAULT_MIN_SWIPE_LENGTH
 import com.dessalines.thumbkey.db.DEFAULT_NON_SQUARE_KEYS
 import com.dessalines.thumbkey.db.DEFAULT_POSITION
@@ -314,6 +315,7 @@ private fun resetAppSettingsToDefault(appSettingsViewModel: AppSettingsViewModel
             usePrivateClipboard = DEFAULT_USE_PRIVATE_CLIPBOARD,
             showOnScreenKeyboard = DEFAULT_SHOW_ON_SCREEN_KEYBOARD,
             slideHoldEnabled = DEFAULT_SLIDE_HOLD_ENABLED,
+            longPressDuration = DEFAULT_LONG_PRESS_DURATION,
         ),
     )
 }

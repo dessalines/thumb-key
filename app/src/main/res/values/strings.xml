@@ -57,6 +57,7 @@
     <string name="min_swipe_length">Minimum swipe length: %1$s</string>
     <string name="animation_speed">Animation speed: %1$s</string>
     <string name="animation_helper_speed">Animation helper speed: %1$s</string>
+    <string name="long_press_duration">Long press duration: %1$sms</string>
     <string name="slide_enable">Slide gestures</string>
     <string name="slide_cursor_movement_mode">Cursor movement mode</string>
     <string name="slide_sensitivity">Slide sensitivity: %1$s</string>
@@ -108,7 +109,7 @@
     <string name="ignore_bottom_padding">Ignore bottom padding</string>
     <string name="show_toast_on_layout_switch">Show toast on layout switch</string>
     <string name="disable_fullscreen_editor">Disable fullscreen text editor</string>
-    <string name="warning_invalid_mode">Mode \"%s\" is not defined for layout \"%s\".</string>
+    <string name="warning_invalid_mode">Mode \"%1$s\" is not defined for layout \"%2$s\".</string>
     <!-- Clipboard History -->
     <string name="clipboard_history">Clipboard history</string>
     <string name="clipboard_history_enabled">Enable clipboard history</string>

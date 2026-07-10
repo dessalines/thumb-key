@@ -12,6 +12,15 @@ val MIGRATION_1_2 =
         }
     }
 
+val MIGRATION_27_28 =
+    object : Migration(27, 28) {
+        override fun migrate(db: SupportSQLiteDatabase) {
+            db.execSQL(
+                "ALTER TABLE AppSettings ADD COLUMN long_press_duration INTEGER NOT NULL DEFAULT $DEFAULT_LONG_PRESS_DURATION",
+            )
+        }
+    }
+
 val MIGRATION_2_3 =
     object : Migration(2, 3) {
         override fun migrate(db: SupportSQLiteDatabase) {
