@@ -17,3 +17,4 @@ app/schemas
 .classpath
 .kotlin
 build.sh
+deploy_to_device.sh
