@@ -9,21 +9,22 @@ import com.dessalines.thumbkey.utils.ColorVariant.*
 import com.dessalines.thumbkey.utils.FontSizeVariant.*
 import com.dessalines.thumbkey.utils.KeyAction.*
 
-val KB_EN_MARLIN_MAIN =
+val KB_EN_MINNOW_MAIN =
     KeyboardC(
         listOf(
             listOf(
                 KeyItemC(
-                    center = KeyC("m", size = LARGE),
-                ),
-                KeyItemC(
-                    center = KeyC("u", size = LARGE),
+                    center = KeyC("s", size = LARGE),
+                    bottomRight = KeyC("p"),
                 ),
                 KeyItemC(
                     center = KeyC("o", size = LARGE),
+                    bottom = KeyC("f"),
+                    bottomLeft = KeyC("g"),
+                    bottomRight = KeyC("y"),
                 ),
                 EMOJI_KEY_ITEM.copy(
-                    center = KeyC("d", size = LARGE),
+                    center = KeyC("i", size = LARGE),
                     right =
                         TOGGLE_EMOJI_MODE_TRUE_KEYC.copy(
                             size = SMALL,
@@ -34,13 +35,45 @@ val KB_EN_MARLIN_MAIN =
             ),
             listOf(
                 KeyItemC(
-                    center = KeyC("n", size = LARGE),
+                    center = KeyC("t", size = LARGE),
+                    right = KeyC("b"),
+                    topRight = KeyC("z"),
                 ),
                 KeyItemC(
-                    center = KeyC("h", size = LARGE),
+                    center = SPACEBAR_CENTER_KEYC,
+                    slideType = SlideType.MOVE_CURSOR,
+                    nextTapActions = SPACEBAR_NEXT_TAP_ACTIONS,
+                    top = KeyC("h"),
+                    bottom = KeyC("r"),
+                    left = KeyC("d"),
+                    right = KeyC("l"),
+                    topLeft = KeyC("c"),
+                    topRight = KeyC("u"),
+                    bottomLeft = KeyC("m"),
+                    bottomRight = KeyC("w"),
                 ),
-                KeyItemC(
+                NUMERIC_KEY_ITEM.copy(
                     center = KeyC("e", size = LARGE),
+                    left = KeyC("v"),
+                    right =
+                        TOGGLE_NUMERIC_MODE_TRUE_KEYC.copy(
+                            size = SMALL,
+                            color = MUTED,
+                        ),
+                    backgroundColor = SURFACE,
+                ),
+            ),
+            listOf(
+                KeyItemC(
+                    center = KeyC("n", size = LARGE),
+                    topRight = KeyC("k"),
+                ),
+                KeyItemC(
+                    center = BACKSPACE_KEYC,
+                    longPress = DeleteWordBeforeCursor,
+                    slideType = SlideType.DELETE,
+                    top = KeyC("j"),
+                    topLeft = KeyC("x"),
                     left = KeyC(".", color = MUTED),
                     right = KeyC(",", color = MUTED),
                     topRight = KeyC("'", color = MUTED),
@@ -52,40 +85,9 @@ val KB_EN_MARLIN_MAIN =
                         ),
                     bottomLeft = KeyC("*", color = MUTED),
                 ),
-                NUMERIC_KEY_ITEM.copy(
-                    center = KeyC("t", size = LARGE),
-                    right =
-                        TOGGLE_NUMERIC_MODE_TRUE_KEYC.copy(
-                            size = SMALL,
-                            color = MUTED,
-                        ),
-                    backgroundColor = SURFACE,
-                ),
-            ),
-            listOf(
-                KeyItemC(
-                    center = KeyC("s", size = LARGE),
-                ),
-                KeyItemC(
-                    center = KeyC("r", size = LARGE),
-                    top = KeyC("z"),
-                    bottom = KeyC("k"),
-                    left = KeyC("x"),
-                    right = KeyC("q"),
-                ),
                 KeyItemC(
                     center = KeyC("a", size = LARGE),
-                    top = KeyC("f"),
-                    bottom = KeyC("w"),
-                    left = KeyC("p"),
-                    right = KeyC("g"),
-                    topRight = KeyC("b"),
-                    bottomRight = KeyC("v"),
-                    topLeft = KeyC("y"),
-                    bottomLeft = KeyC("j"),
-                ),
-                KeyItemC(
-                    center = KeyC("i", size = LARGE),
+                    topLeft = KeyC("q"),
                     top =
                         KeyC(
                             display = KeyDisplay.IconDisplay(Icons.Outlined.ArrowDropUp),
@@ -100,34 +102,25 @@ val KB_EN_MARLIN_MAIN =
                         ),
                 ),
             ),
-            listOf(
-                BACKSPACE_KEY_ITEM,
-                KeyItemC(
-                    center = KeyC("c", size = LARGE),
-                ),
-                KeyItemC(
-                    center = KeyC("l", size = LARGE),
-                ),
-                SPACEBAR_SKINNY_KEY_ITEM,
-            ),
         ),
     )
 
-val KB_EN_MARLIN_SHIFTED =
+val KB_EN_MINNOW_SHIFTED =
     KeyboardC(
         listOf(
             listOf(
                 KeyItemC(
-                    center = KeyC("M", size = LARGE),
-                ),
-                KeyItemC(
-                    center = KeyC("U", size = LARGE),
+                    center = KeyC("S", size = LARGE),
+                    bottomRight = KeyC("P"),
                 ),
                 KeyItemC(
                     center = KeyC("O", size = LARGE),
+                    bottom = KeyC("F"),
+                    bottomLeft = KeyC("G"),
+                    bottomRight = KeyC("Y"),
                 ),
                 EMOJI_KEY_ITEM.copy(
-                    center = KeyC("D", size = LARGE),
+                    center = KeyC("I", size = LARGE),
                     right =
                         TOGGLE_EMOJI_MODE_TRUE_KEYC.copy(
                             size = SMALL,
@@ -138,13 +131,45 @@ val KB_EN_MARLIN_SHIFTED =
             ),
             listOf(
                 KeyItemC(
-                    center = KeyC("N", size = LARGE),
+                    center = KeyC("T", size = LARGE),
+                    right = KeyC("B"),
+                    topRight = KeyC("Z"),
                 ),
                 KeyItemC(
-                    center = KeyC("H", size = LARGE),
+                    center = SPACEBAR_CENTER_KEYC,
+                    slideType = SlideType.MOVE_CURSOR,
+                    nextTapActions = SPACEBAR_NEXT_TAP_ACTIONS,
+                    top = KeyC("H"),
+                    bottom = KeyC("R"),
+                    left = KeyC("D"),
+                    right = KeyC("L"),
+                    topLeft = KeyC("C"),
+                    topRight = KeyC("U"),
+                    bottomLeft = KeyC("M"),
+                    bottomRight = KeyC("W"),
                 ),
-                KeyItemC(
+                NUMERIC_KEY_ITEM.copy(
                     center = KeyC("E", size = LARGE),
+                    left = KeyC("V"),
+                    right =
+                        TOGGLE_NUMERIC_MODE_TRUE_KEYC.copy(
+                            size = SMALL,
+                            color = MUTED,
+                        ),
+                    backgroundColor = SURFACE,
+                ),
+            ),
+            listOf(
+                KeyItemC(
+                    center = KeyC("N", size = LARGE),
+                    topRight = KeyC("K"),
+                ),
+                KeyItemC(
+                    center = BACKSPACE_KEYC,
+                    longPress = DeleteWordBeforeCursor,
+                    slideType = SlideType.DELETE,
+                    top = KeyC("J"),
+                    topLeft = KeyC("X"),
                     left = KeyC(".", color = MUTED),
                     right = KeyC(",", color = MUTED),
                     topRight = KeyC("'", color = MUTED),
@@ -156,40 +181,9 @@ val KB_EN_MARLIN_SHIFTED =
                         ),
                     bottomLeft = KeyC("*", color = MUTED),
                 ),
-                NUMERIC_KEY_ITEM.copy(
-                    center = KeyC("T", size = LARGE),
-                    right =
-                        TOGGLE_NUMERIC_MODE_TRUE_KEYC.copy(
-                            size = SMALL,
-                            color = MUTED,
-                        ),
-                    backgroundColor = SURFACE,
-                ),
-            ),
-            listOf(
-                KeyItemC(
-                    center = KeyC("S", size = LARGE),
-                ),
-                KeyItemC(
-                    center = KeyC("R", size = LARGE),
-                    top = KeyC("Z"),
-                    bottom = KeyC("K"),
-                    left = KeyC("X"),
-                    right = KeyC("Q"),
-                ),
                 KeyItemC(
                     center = KeyC("A", size = LARGE),
-                    top = KeyC("F"),
-                    bottom = KeyC("W"),
-                    left = KeyC("P"),
-                    right = KeyC("G"),
-                    topRight = KeyC("B"),
-                    bottomRight = KeyC("V"),
-                    topLeft = KeyC("Y"),
-                    bottomLeft = KeyC("J"),
-                ),
-                KeyItemC(
-                    center = KeyC("I", size = LARGE),
+                    topLeft = KeyC("Q"),
                     bottom =
                         KeyC(
                             display = KeyDisplay.IconDisplay(Icons.Outlined.ArrowDropDown),
@@ -207,26 +201,15 @@ val KB_EN_MARLIN_SHIFTED =
                         ),
                 ),
             ),
-            listOf(
-                BACKSPACE_KEY_ITEM,
-                KeyItemC(
-                    center = KeyC("C", size = LARGE),
-                ),
-                KeyItemC(
-                    center = KeyC("L", size = LARGE),
-                ),
-                SPACEBAR_SKINNY_KEY_ITEM,
-            ),
         ),
     )
-
-val KB_EN_MARLIN: KeyboardDefinition =
+val KB_EN_MINNOW: KeyboardDefinition =
     KeyboardDefinition(
-        title = "english marlin",
+        title = "english minnow",
         modes =
             KeyboardDefinitionModes(
-                main = KB_EN_MARLIN_MAIN,
-                shifted = KB_EN_MARLIN_SHIFTED,
+                main = KB_EN_MINNOW_MAIN,
+                shifted = KB_EN_MINNOW_SHIFTED,
                 numeric = NUMERIC_KEYBOARD,
             ),
         settings =
