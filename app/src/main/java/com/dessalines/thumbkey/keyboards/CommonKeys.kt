@@ -5,6 +5,7 @@ package com.dessalines.thumbkey.keyboards
 import android.view.KeyEvent
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.automirrored.outlined.*
+import androidx.compose.material.icons.filled.SpaceBar
 import androidx.compose.material.icons.outlined.*
 import com.dessalines.thumbkey.utils.*
 import com.dessalines.thumbkey.utils.ColorVariant.*
@@ -240,6 +241,13 @@ val BACKSPACE_KEYC =
         size = LARGE,
         color = SECONDARY,
     )
+
+val BACKSPACE_KEYC_MUTED =
+    KeyC(
+        display = KeyDisplay.IconDisplay(Icons.AutoMirrored.Outlined.KeyboardBackspace),
+        action = DeleteKeyAction,
+        color = MUTED,
+    )
 val BACKSPACE_TEXT_MANIPULATION_KEYC =
     KeyC(
         display = KeyDisplay.IconDisplay(Icons.AutoMirrored.Outlined.KeyboardBackspace),
@@ -328,6 +336,11 @@ val SPACEBAR_NEXT_TAP_ACTIONS =
         ReplaceLastText("; "),
     )
 val SPACEBAR_CENTER_KEYC = KeyC(" ")
+val SPACEBAR_CENTER_KEYC_UNDERSCORE = KeyC(
+    text = " ",
+    display = KeyDisplay.IconDisplay(Icons.Default.SpaceBar),
+    color = MUTED,
+)
 val SPACEBAR_KEY_ITEM =
     KeyItemC(
         center = SPACEBAR_CENTER_KEYC,
