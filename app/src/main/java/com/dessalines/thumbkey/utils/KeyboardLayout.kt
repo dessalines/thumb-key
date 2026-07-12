@@ -470,6 +470,6 @@ enum class KeyboardLayout(
     BNThumbKey(KB_BN_THUMBKEY), // বাংলা thumb-key
     ENWhale(KB_EN_WHALE),
     ENMarlin(KB_EN_MARLIN),
-    MYWhale(KB_MY_WHALE),
     ENMinnow(KB_EN_MINNOW),
+    MYWhale(KB_MY_WHALE), // myanmar whale
 }
