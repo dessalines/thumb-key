@@ -468,8 +468,8 @@ enum class KeyboardLayout(
     ENMessagEaseComposeFlipped(KB_EN_MESSAGEASE_COMPOSE_LEFT_FLIPPED_NUMPAD), // english messagease compose flipped
     FRMessagEaseFlipped(KB_FR_MESSAGEASE_LEFT_FLIPPED_NUMPAD), // français messagease left-handed flipped
     BNThumbKey(KB_BN_THUMBKEY), // বাংলা thumb-key
-    ENWhale(KB_EN_WHALE),
-    ENMarlin(KB_EN_MARLIN),
-    ENMinnow(KB_EN_MINNOW),
+    ENWhale(KB_EN_WHALE), // english whale
+    ENMarlin(KB_EN_MARLIN), // english marlin
+    ENMinnow(KB_EN_MINNOW), // english minnow
     MYWhale(KB_MY_WHALE), // myanmar whale
 }

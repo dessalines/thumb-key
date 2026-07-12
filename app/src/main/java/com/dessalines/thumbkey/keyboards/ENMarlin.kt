@@ -8,22 +8,14 @@ import com.dessalines.thumbkey.utils.*
 import com.dessalines.thumbkey.utils.ColorVariant.*
 import com.dessalines.thumbkey.utils.FontSizeVariant.*
 import com.dessalines.thumbkey.utils.KeyAction.*
+import com.dessalines.thumbkey.utils.KeyAction.DeleteWordBeforeCursor
 
 val KB_EN_MARLIN_MAIN =
     KeyboardC(
         listOf(
             listOf(
-                KeyItemC(
-                    center = KeyC("m", size = LARGE),
-                ),
-                KeyItemC(
-                    center = KeyC("u", size = LARGE),
-                ),
-                KeyItemC(
-                    center = KeyC("o", size = LARGE),
-                ),
                 EMOJI_KEY_ITEM.copy(
-                    center = KeyC("d", size = LARGE),
+                    center = KeyC("w", size = LARGE),
                     right =
                         TOGGLE_EMOJI_MODE_TRUE_KEYC.copy(
                             size = SMALL,
@@ -31,30 +23,15 @@ val KB_EN_MARLIN_MAIN =
                         ),
                     backgroundColor = SURFACE,
                 ),
-            ),
-            listOf(
                 KeyItemC(
-                    center = KeyC("n", size = LARGE),
+                    center = KeyC("l", size = LARGE),
                 ),
                 KeyItemC(
-                    center = KeyC("h", size = LARGE),
-                ),
-                KeyItemC(
-                    center = KeyC("e", size = LARGE),
-                    left = KeyC(".", color = MUTED),
-                    right = KeyC(",", color = MUTED),
-                    topRight = KeyC("'", color = MUTED),
-                    bottomRight = KeyC("-", color = MUTED),
-                    bottom =
-                        RETURN_KEYC.copy(
-                            size = SMALL,
-                            color = MUTED,
-                        ),
-                    bottomLeft = KeyC("*", color = MUTED),
+                    center = KeyC("m", size = LARGE),
                 ),
                 NUMERIC_KEY_ITEM.copy(
-                    center = KeyC("t", size = LARGE),
-                    right =
+                    center = KeyC("d", size = LARGE),
+                    left =
                         TOGGLE_NUMERIC_MODE_TRUE_KEYC.copy(
                             size = SMALL,
                             color = MUTED,
@@ -64,28 +41,16 @@ val KB_EN_MARLIN_MAIN =
             ),
             listOf(
                 KeyItemC(
-                    center = KeyC("s", size = LARGE),
+                    center = KeyC("f", size = LARGE),
+                ),
+                KeyItemC(
+                    center = KeyC("c", size = LARGE),
+                ),
+                KeyItemC(
+                    center = KeyC("h", size = LARGE),
                 ),
                 KeyItemC(
                     center = KeyC("r", size = LARGE),
-                    top = KeyC("z"),
-                    bottom = KeyC("k"),
-                    left = KeyC("x"),
-                    right = KeyC("q"),
-                ),
-                KeyItemC(
-                    center = KeyC("a", size = LARGE),
-                    top = KeyC("f"),
-                    bottom = KeyC("w"),
-                    left = KeyC("p"),
-                    right = KeyC("g"),
-                    topRight = KeyC("b"),
-                    bottomRight = KeyC("v"),
-                    topLeft = KeyC("y"),
-                    bottomLeft = KeyC("j"),
-                ),
-                KeyItemC(
-                    center = KeyC("i", size = LARGE),
                     top =
                         KeyC(
                             display = KeyDisplay.IconDisplay(Icons.Outlined.ArrowDropUp),
@@ -101,14 +66,59 @@ val KB_EN_MARLIN_MAIN =
                 ),
             ),
             listOf(
-                BACKSPACE_KEY_ITEM,
                 KeyItemC(
-                    center = KeyC("c", size = LARGE),
+                    center = KeyC("n", size = LARGE),
+                    top = KeyC("g"),
                 ),
                 KeyItemC(
-                    center = KeyC("l", size = LARGE),
+                    center = KeyC("u", size = LARGE),
+                    top = KeyC("q"),
+                    bottom = KeyC("j"),
                 ),
-                SPACEBAR_SKINNY_KEY_ITEM,
+                KeyItemC(
+                    center = KeyC("s", size = LARGE),
+                    top = KeyC("k"),
+                ),
+                KeyItemC(
+                    center = KeyC("i", size = LARGE),
+                    top = KeyC("p"),
+                    bottom = KeyC("b"),
+                    left = KeyC(".", color = MUTED),
+                    topLeft = KeyC("?", color = MUTED),
+                    right = KeyC(",", color = MUTED),
+                    topRight = KeyC("'", color = MUTED),
+                    bottomRight = KeyC("-", color = MUTED),
+                    bottomLeft = KeyC("*", color = MUTED),
+                ),
+            ),
+            listOf(
+                KeyItemC(
+                    center = KeyC("e", size = LARGE),
+                    top = KeyC("y"),
+                    bottom = KeyC("x"),
+                    right = SPACEBAR_CENTER_KEYC_UNDERSCORE,
+                    left = BACKSPACE_KEYC_MUTED,
+                    longPress = DeleteWordBeforeCursor,
+                ),
+                KeyItemC(
+                    center = KeyC("t", size = LARGE),
+                ),
+                KeyItemC(
+                    center = KeyC("a", size = LARGE),
+                    top = KeyC("v"),
+                    bottom = KeyC("z"),
+                ),
+                KeyItemC(
+                    center = KeyC("o", size = LARGE),
+                    right = SPACEBAR_CENTER_KEYC_UNDERSCORE,
+                    left = BACKSPACE_KEYC_MUTED,
+                    bottom =
+                        RETURN_KEYC.copy(
+                            size = SMALL,
+                            color = MUTED,
+                        ),
+                    longPress = DeleteWordBeforeCursor,
+                ),
             ),
         ),
     )
@@ -117,17 +127,8 @@ val KB_EN_MARLIN_SHIFTED =
     KeyboardC(
         listOf(
             listOf(
-                KeyItemC(
-                    center = KeyC("M", size = LARGE),
-                ),
-                KeyItemC(
-                    center = KeyC("U", size = LARGE),
-                ),
-                KeyItemC(
-                    center = KeyC("O", size = LARGE),
-                ),
                 EMOJI_KEY_ITEM.copy(
-                    center = KeyC("D", size = LARGE),
+                    center = KeyC("W", size = LARGE),
                     right =
                         TOGGLE_EMOJI_MODE_TRUE_KEYC.copy(
                             size = SMALL,
@@ -135,30 +136,15 @@ val KB_EN_MARLIN_SHIFTED =
                         ),
                     backgroundColor = SURFACE,
                 ),
-            ),
-            listOf(
                 KeyItemC(
-                    center = KeyC("N", size = LARGE),
+                    center = KeyC("L", size = LARGE),
                 ),
                 KeyItemC(
-                    center = KeyC("H", size = LARGE),
-                ),
-                KeyItemC(
-                    center = KeyC("E", size = LARGE),
-                    left = KeyC(".", color = MUTED),
-                    right = KeyC(",", color = MUTED),
-                    topRight = KeyC("'", color = MUTED),
-                    bottomRight = KeyC("-", color = MUTED),
-                    bottom =
-                        RETURN_KEYC.copy(
-                            size = SMALL,
-                            color = MUTED,
-                        ),
-                    bottomLeft = KeyC("*", color = MUTED),
+                    center = KeyC("M", size = LARGE),
                 ),
                 NUMERIC_KEY_ITEM.copy(
-                    center = KeyC("T", size = LARGE),
-                    right =
+                    center = KeyC("D", size = LARGE),
+                    left =
                         TOGGLE_NUMERIC_MODE_TRUE_KEYC.copy(
                             size = SMALL,
                             color = MUTED,
@@ -168,28 +154,16 @@ val KB_EN_MARLIN_SHIFTED =
             ),
             listOf(
                 KeyItemC(
-                    center = KeyC("S", size = LARGE),
+                    center = KeyC("F", size = LARGE),
+                ),
+                KeyItemC(
+                    center = KeyC("C", size = LARGE),
+                ),
+                KeyItemC(
+                    center = KeyC("H", size = LARGE),
                 ),
                 KeyItemC(
                     center = KeyC("R", size = LARGE),
-                    top = KeyC("Z"),
-                    bottom = KeyC("K"),
-                    left = KeyC("X"),
-                    right = KeyC("Q"),
-                ),
-                KeyItemC(
-                    center = KeyC("A", size = LARGE),
-                    top = KeyC("F"),
-                    bottom = KeyC("W"),
-                    left = KeyC("P"),
-                    right = KeyC("G"),
-                    topRight = KeyC("B"),
-                    bottomRight = KeyC("V"),
-                    topLeft = KeyC("Y"),
-                    bottomLeft = KeyC("J"),
-                ),
-                KeyItemC(
-                    center = KeyC("I", size = LARGE),
                     bottom =
                         KeyC(
                             display = KeyDisplay.IconDisplay(Icons.Outlined.ArrowDropDown),
@@ -208,14 +182,59 @@ val KB_EN_MARLIN_SHIFTED =
                 ),
             ),
             listOf(
-                BACKSPACE_KEY_ITEM,
                 KeyItemC(
-                    center = KeyC("C", size = LARGE),
+                    center = KeyC("N", size = LARGE),
+                    top = KeyC("G"),
                 ),
                 KeyItemC(
-                    center = KeyC("L", size = LARGE),
+                    center = KeyC("U", size = LARGE),
+                    top = KeyC("Q"),
+                    bottom = KeyC("J"),
                 ),
-                SPACEBAR_SKINNY_KEY_ITEM,
+                KeyItemC(
+                    center = KeyC("S", size = LARGE),
+                    top = KeyC("K"),
+                ),
+                KeyItemC(
+                    center = KeyC("I", size = LARGE),
+                    top = KeyC("P"),
+                    bottom = KeyC("B"),
+                    left = KeyC(".", color = MUTED),
+                    topLeft = KeyC("?", color = MUTED),
+                    right = KeyC(",", color = MUTED),
+                    topRight = KeyC("'", color = MUTED),
+                    bottomRight = KeyC("-", color = MUTED),
+                    bottomLeft = KeyC("*", color = MUTED),
+                ),
+            ),
+            listOf(
+                KeyItemC(
+                    center = KeyC("E", size = LARGE),
+                    top = KeyC("Y"),
+                    bottom = KeyC("X"),
+                    right = SPACEBAR_CENTER_KEYC_UNDERSCORE,
+                    left = BACKSPACE_KEYC_MUTED,
+                    longPress = DeleteWordBeforeCursor,
+                ),
+                KeyItemC(
+                    center = KeyC("T", size = LARGE),
+                ),
+                KeyItemC(
+                    center = KeyC("a", size = LARGE),
+                    top = KeyC("V"),
+                    bottom = KeyC("Z"),
+                ),
+                KeyItemC(
+                    center = KeyC("O", size = LARGE),
+                    right = SPACEBAR_CENTER_KEYC_UNDERSCORE,
+                    left = BACKSPACE_KEYC_MUTED,
+                    bottom =
+                        RETURN_KEYC.copy(
+                            size = SMALL,
+                            color = MUTED,
+                        ),
+                    longPress = DeleteWordBeforeCursor,
+                ),
             ),
         ),
     )
