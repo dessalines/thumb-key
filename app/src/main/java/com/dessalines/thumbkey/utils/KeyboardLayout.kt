@@ -169,6 +169,7 @@ import com.dessalines.thumbkey.keyboards.KB_LT_THUMBKEY
 import com.dessalines.thumbkey.keyboards.KB_LV_LTG_THUMBKEY
 import com.dessalines.thumbkey.keyboards.KB_MATH_THUMBKEY
 import com.dessalines.thumbkey.keyboards.KB_MY_THUMBKEY
+import com.dessalines.thumbkey.keyboards.KB_MY_WHALE
 import com.dessalines.thumbkey.keyboards.KB_NL_THUMBKEY
 import com.dessalines.thumbkey.keyboards.KB_NL_TYPESPLIT
 import com.dessalines.thumbkey.keyboards.KB_NO_THUMBKEY
@@ -470,4 +471,5 @@ enum class KeyboardLayout(
     ENWhale(KB_EN_WHALE), // english whale
     ENMarlin(KB_EN_MARLIN), // english marlin
     ENMinnow(KB_EN_MINNOW), // english minnow
+    MYWhale(KB_MY_WHALE), // myanmar whale
 }
