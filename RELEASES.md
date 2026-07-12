@@ -1,3 +1,12 @@
+## What's Changed in 5.1.13
+
+- Adding EN-thumbkey compact (extra keys moved into 3x3 grid) by @dessalines in [#1949](https://github.com/dessalines/thumb-key/pull/1949)
+- added Myanmar WHALE Layout by @khantNZaw in [#1947](https://github.com/dessalines/thumb-key/pull/1947)
+- Deepseek layout fixes - Optimizing minnow and marlin by @dessalines in [#1948](https://github.com/dessalines/thumb-key/pull/1948)
+- Deepseek layout fixes 1 by @dessalines in [#1944](https://github.com/dessalines/thumb-key/pull/1944)
+
+**Full Changelog**: https://github.com/dessalines/thumb-key/compare/5.1.12...5.1.13
+
 ## What's Changed in 5.1.12
 
 - Adding Deepseek-generated 5x5 (whale) and 4x4 (marlin) layouts by @dessalines in [#1942](https://github.com/dessalines/thumb-key/pull/1942)
