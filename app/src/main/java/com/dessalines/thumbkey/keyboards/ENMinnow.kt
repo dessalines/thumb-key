@@ -13,18 +13,10 @@ val KB_EN_MINNOW_MAIN =
     KeyboardC(
         listOf(
             listOf(
-                KeyItemC(
-                    center = KeyC("s", size = LARGE),
-                    bottomRight = KeyC("p"),
-                ),
-                KeyItemC(
-                    center = KeyC("o", size = LARGE),
-                    bottom = KeyC("f"),
-                    bottomLeft = KeyC("g"),
-                    bottomRight = KeyC("y"),
-                ),
                 EMOJI_KEY_ITEM.copy(
-                    center = KeyC("i", size = LARGE),
+                    center = KeyC("n", size = LARGE),
+                    bottom = KeyC("g"),
+                    topRight = SWITCH_IME_KEYC,
                     right =
                         TOGGLE_EMOJI_MODE_TRUE_KEYC.copy(
                             size = SMALL,
@@ -32,62 +24,42 @@ val KB_EN_MINNOW_MAIN =
                         ),
                     backgroundColor = SURFACE,
                 ),
-            ),
-            listOf(
-                KeyItemC(
-                    center = KeyC("t", size = LARGE),
-                    right = KeyC("b"),
-                    topRight = KeyC("z"),
-                ),
-                KeyItemC(
-                    center = SPACEBAR_CENTER_KEYC,
-                    slideType = SlideType.MOVE_CURSOR,
-                    nextTapActions = SPACEBAR_NEXT_TAP_ACTIONS,
-                    top = KeyC("h"),
-                    bottom = KeyC("r"),
-                    left = KeyC("d"),
-                    right = KeyC("l"),
-                    topLeft = KeyC("c"),
-                    topRight = KeyC("u"),
-                    bottomLeft = KeyC("m"),
-                    bottomRight = KeyC("w"),
-                ),
                 NUMERIC_KEY_ITEM.copy(
-                    center = KeyC("e", size = LARGE),
-                    left = KeyC("v"),
-                    right =
+                    center = KeyC("h", size = LARGE),
+                    left =
                         TOGGLE_NUMERIC_MODE_TRUE_KEYC.copy(
                             size = SMALL,
                             color = MUTED,
                         ),
                     backgroundColor = SURFACE,
                 ),
+                KeyItemC(
+                    center = KeyC("i", size = LARGE),
+                    bottom = KeyC("c"),
+                    left = KeyC("m"),
+                    top = KeyC("z"),
+                ),
             ),
             listOf(
                 KeyItemC(
-                    center = KeyC("n", size = LARGE),
-                    topRight = KeyC("k"),
-                ),
-                KeyItemC(
-                    center = BACKSPACE_KEYC,
-                    longPress = DeleteWordBeforeCursor,
-                    slideType = SlideType.DELETE,
-                    top = KeyC("j"),
-                    topLeft = KeyC("x"),
-                    left = KeyC(".", color = MUTED),
+                    center = KeyC("r", size = LARGE),
                     right = KeyC(",", color = MUTED),
+                    bottom = KeyC(".", color = MUTED),
+                    topLeft = KeyC("?", color = MUTED),
                     topRight = KeyC("'", color = MUTED),
                     bottomRight = KeyC("-", color = MUTED),
-                    bottom =
-                        RETURN_KEYC.copy(
-                            size = SMALL,
-                            color = MUTED,
-                        ),
                     bottomLeft = KeyC("*", color = MUTED),
                 ),
                 KeyItemC(
-                    center = KeyC("a", size = LARGE),
-                    topLeft = KeyC("q"),
+                    center = KeyC("o", size = LARGE),
+                    top = KeyC("u"),
+                    bottom = KeyC("f"),
+                    left = KeyC("w"),
+                    right = KeyC("q"),
+                ),
+                KeyItemC(
+                    center = KeyC("t", size = LARGE),
+                    left = KeyC("y"),
                     top =
                         KeyC(
                             display = KeyDisplay.IconDisplay(Icons.Outlined.ArrowDropUp),
@@ -102,25 +74,51 @@ val KB_EN_MINNOW_MAIN =
                         ),
                 ),
             ),
+            listOf(
+                KeyItemC(
+                    center = KeyC("s", size = LARGE),
+                    right = SPACEBAR_CENTER_KEYC_UNDERSCORE,
+                    left = BACKSPACE_KEYC_MUTED,
+                    bottom =
+                        RETURN_KEYC.copy(
+                            size = SMALL,
+                            color = MUTED,
+                        ),
+                    longPress = DeleteWordBeforeCursor,
+                ),
+                KeyItemC(
+                    center = KeyC("a", size = LARGE),
+                    top = KeyC("l"),
+                    bottom = KeyC("p"),
+                    left = KeyC("b"),
+                    right = KeyC("k"),
+                ),
+                KeyItemC(
+                    center = KeyC("e", size = LARGE),
+                    top = KeyC("d"),
+                    topLeft = KeyC("v"),
+                    bottomLeft = KeyC("j"),
+                    bottomRight = KeyC("x"),
+                    right = SPACEBAR_CENTER_KEYC_UNDERSCORE,
+                    left = BACKSPACE_KEYC_MUTED,
+                    bottom =
+                        RETURN_KEYC.copy(
+                            size = SMALL,
+                            color = MUTED,
+                        ),
+                    longPress = DeleteWordBeforeCursor,
+                ),
+            ),
         ),
     )
-
 val KB_EN_MINNOW_SHIFTED =
     KeyboardC(
         listOf(
             listOf(
-                KeyItemC(
-                    center = KeyC("S", size = LARGE),
-                    bottomRight = KeyC("P"),
-                ),
-                KeyItemC(
-                    center = KeyC("O", size = LARGE),
-                    bottom = KeyC("F"),
-                    bottomLeft = KeyC("G"),
-                    bottomRight = KeyC("Y"),
-                ),
                 EMOJI_KEY_ITEM.copy(
-                    center = KeyC("I", size = LARGE),
+                    center = KeyC("N", size = LARGE),
+                    bottom = KeyC("G"),
+                    topRight = SWITCH_IME_KEYC,
                     right =
                         TOGGLE_EMOJI_MODE_TRUE_KEYC.copy(
                             size = SMALL,
@@ -128,62 +126,42 @@ val KB_EN_MINNOW_SHIFTED =
                         ),
                     backgroundColor = SURFACE,
                 ),
-            ),
-            listOf(
-                KeyItemC(
-                    center = KeyC("T", size = LARGE),
-                    right = KeyC("B"),
-                    topRight = KeyC("Z"),
-                ),
-                KeyItemC(
-                    center = SPACEBAR_CENTER_KEYC,
-                    slideType = SlideType.MOVE_CURSOR,
-                    nextTapActions = SPACEBAR_NEXT_TAP_ACTIONS,
-                    top = KeyC("H"),
-                    bottom = KeyC("R"),
-                    left = KeyC("D"),
-                    right = KeyC("L"),
-                    topLeft = KeyC("C"),
-                    topRight = KeyC("U"),
-                    bottomLeft = KeyC("M"),
-                    bottomRight = KeyC("W"),
-                ),
                 NUMERIC_KEY_ITEM.copy(
-                    center = KeyC("E", size = LARGE),
-                    left = KeyC("V"),
-                    right =
+                    center = KeyC("H", size = LARGE),
+                    left =
                         TOGGLE_NUMERIC_MODE_TRUE_KEYC.copy(
                             size = SMALL,
                             color = MUTED,
                         ),
                     backgroundColor = SURFACE,
                 ),
+                KeyItemC(
+                    center = KeyC("I", size = LARGE),
+                    bottom = KeyC("C"),
+                    left = KeyC("M"),
+                    top = KeyC("Z"),
+                ),
             ),
             listOf(
                 KeyItemC(
-                    center = KeyC("N", size = LARGE),
-                    topRight = KeyC("K"),
-                ),
-                KeyItemC(
-                    center = BACKSPACE_KEYC,
-                    longPress = DeleteWordBeforeCursor,
-                    slideType = SlideType.DELETE,
-                    top = KeyC("J"),
-                    topLeft = KeyC("X"),
-                    left = KeyC(".", color = MUTED),
+                    center = KeyC("R", size = LARGE),
                     right = KeyC(",", color = MUTED),
+                    bottom = KeyC(".", color = MUTED),
+                    topLeft = KeyC("?", color = MUTED),
                     topRight = KeyC("'", color = MUTED),
                     bottomRight = KeyC("-", color = MUTED),
-                    bottom =
-                        RETURN_KEYC.copy(
-                            size = SMALL,
-                            color = MUTED,
-                        ),
                     bottomLeft = KeyC("*", color = MUTED),
                 ),
                 KeyItemC(
-                    center = KeyC("A", size = LARGE),
-                    topLeft = KeyC("Q"),
+                    center = KeyC("O", size = LARGE),
+                    top = KeyC("U"),
+                    bottom = KeyC("F"),
+                    left = KeyC("W"),
+                    right = KeyC("Q"),
+                ),
+                KeyItemC(
+                    center = KeyC("T", size = LARGE),
+                    left = KeyC("Y"),
                     bottom =
                         KeyC(
                             display = KeyDisplay.IconDisplay(Icons.Outlined.ArrowDropDown),
@@ -201,8 +179,44 @@ val KB_EN_MINNOW_SHIFTED =
                         ),
                 ),
             ),
+            listOf(
+                KeyItemC(
+                    center = KeyC("S", size = LARGE),
+                    right = SPACEBAR_CENTER_KEYC_UNDERSCORE,
+                    left = BACKSPACE_KEYC_MUTED,
+                    bottom =
+                        RETURN_KEYC.copy(
+                            size = SMALL,
+                            color = MUTED,
+                        ),
+                    longPress = DeleteWordBeforeCursor,
+                ),
+                KeyItemC(
+                    center = KeyC("A", size = LARGE),
+                    top = KeyC("L"),
+                    bottom = KeyC("P"),
+                    left = KeyC("B"),
+                    right = KeyC("K"),
+                ),
+                KeyItemC(
+                    center = KeyC("E", size = LARGE),
+                    top = KeyC("D"),
+                    topLeft = KeyC("V"),
+                    bottomLeft = KeyC("J"),
+                    bottomRight = KeyC("X"),
+                    right = SPACEBAR_CENTER_KEYC_UNDERSCORE,
+                    left = BACKSPACE_KEYC_MUTED,
+                    bottom =
+                        RETURN_KEYC.copy(
+                            size = SMALL,
+                            color = MUTED,
+                        ),
+                    longPress = DeleteWordBeforeCursor,
+                ),
+            ),
         ),
     )
+
 val KB_EN_MINNOW: KeyboardDefinition =
     KeyboardDefinition(
         title = "english minnow",
