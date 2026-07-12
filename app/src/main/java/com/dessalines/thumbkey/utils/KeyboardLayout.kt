@@ -85,6 +85,7 @@ import com.dessalines.thumbkey.keyboards.KB_EN_SYMBOLS_NUMBERS_ARROWS_TWO_HANDS_
 import com.dessalines.thumbkey.keyboards.KB_EN_SYMBOLS_NUMBERS_TWO_HANDS
 import com.dessalines.thumbkey.keyboards.KB_EN_SYMBOLS_TWO_HANDS
 import com.dessalines.thumbkey.keyboards.KB_EN_THUMBKEY
+import com.dessalines.thumbkey.keyboards.KB_EN_THUMBKEY_COMPACT
 import com.dessalines.thumbkey.keyboards.KB_EN_THUMBKEY_COMPOSE
 import com.dessalines.thumbkey.keyboards.KB_EN_THUMBKEY_FLIPPED_NUMPAD
 import com.dessalines.thumbkey.keyboards.KB_EN_THUMBKEY_PROGRAMMING
@@ -472,4 +473,5 @@ enum class KeyboardLayout(
     ENMarlin(KB_EN_MARLIN), // english marlin
     ENMinnow(KB_EN_MINNOW), // english minnow
     MYWhale(KB_MY_WHALE), // myanmar whale
+    ENThumbKeyCompact(KB_EN_THUMBKEY_COMPACT), // english thumb-key compact
 }
