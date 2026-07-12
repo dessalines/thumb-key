@@ -336,11 +336,12 @@ val SPACEBAR_NEXT_TAP_ACTIONS =
         ReplaceLastText("; "),
     )
 val SPACEBAR_CENTER_KEYC = KeyC(" ")
-val SPACEBAR_CENTER_KEYC_UNDERSCORE = KeyC(
-    text = " ",
-    display = KeyDisplay.IconDisplay(Icons.Default.SpaceBar),
-    color = MUTED,
-)
+val SPACEBAR_CENTER_KEYC_UNDERSCORE =
+    KeyC(
+        text = " ",
+        display = KeyDisplay.IconDisplay(Icons.Default.SpaceBar),
+        color = MUTED,
+    )
 val SPACEBAR_KEY_ITEM =
     KeyItemC(
         center = SPACEBAR_CENTER_KEYC,
