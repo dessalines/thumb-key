@@ -225,7 +225,6 @@ val KB_EN_THUMBKEY_COMPACT_SHIFTED =
         ),
     )
 
-
 val KB_EN_THUMBKEY_COMPACT: KeyboardDefinition =
     KeyboardDefinition(
         title = "english thumb-key compact",

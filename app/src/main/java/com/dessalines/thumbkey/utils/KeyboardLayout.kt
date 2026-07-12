@@ -473,5 +473,5 @@ enum class KeyboardLayout(
     ENMarlin(KB_EN_MARLIN), // english marlin
     ENMinnow(KB_EN_MINNOW), // english minnow
     MYWhale(KB_MY_WHALE), // myanmar whale
-    ENThumbKeyCompact(KB_EN_THUMBKEY_COMPACT) // english thumb-key compact
+    ENThumbKeyCompact(KB_EN_THUMBKEY_COMPACT), // english thumb-key compact
 }
