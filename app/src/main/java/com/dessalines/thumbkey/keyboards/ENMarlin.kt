@@ -73,11 +73,11 @@ val KB_EN_MARLIN_MAIN =
                 KeyItemC(
                     center = KeyC("u", size = LARGE),
                     top = KeyC("q"),
-                    bottom = KeyC("j")
+                    bottom = KeyC("j"),
                 ),
                 KeyItemC(
                     center = KeyC("s", size = LARGE),
-                    top = KeyC("k")
+                    top = KeyC("k"),
                 ),
                 KeyItemC(
                     center = KeyC("i", size = LARGE),
@@ -190,11 +190,11 @@ val KB_EN_MARLIN_SHIFTED =
                 KeyItemC(
                     center = KeyC("U", size = LARGE),
                     top = KeyC("Q"),
-                    bottom = KeyC("J")
+                    bottom = KeyC("J"),
                 ),
                 KeyItemC(
                     center = KeyC("S", size = LARGE),
-                    top = KeyC("K")
+                    top = KeyC("K"),
                 ),
                 KeyItemC(
                     center = KeyC("I", size = LARGE),
@@ -240,7 +240,6 @@ val KB_EN_MARLIN_SHIFTED =
             ),
         ),
     )
-
 
 val KB_EN_MARLIN: KeyboardDefinition =
     KeyboardDefinition(
