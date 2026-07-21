@@ -71,6 +71,8 @@
     <string name="hide_letters">Ocultar letras</string>
     <string name="hide_symbols">Ocultar símbolos</string>
     <string name="spacebar_multitaps">Barra de espacio multitáctil</string>
+    <string name="switch_to_letters_after_space">Volver a las letras después de un espacio</string>
+    <string name="switch_to_letters_after_space_description">Vuelve al teclado de letras después de introducir un espacio en el modo numérico</string>
     <string name="done">Hecho</string>
     <string name="backdrop">Fondo de teclado</string>
     <string name="key_padding">Acolchado de teclas: %1$s</string>
