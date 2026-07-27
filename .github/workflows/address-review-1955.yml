@@ -1,0 +1,174 @@
+name: Address PR 1955 review
+
+on:
+  push:
+    branches:
+      - feature/switch-numeric-to-letters-after-space
+
+permissions:
+  contents: write
+
+jobs:
+  update:
+    if: github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out branch
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Set up Java
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: "17"
+
+      - name: Set up Android SDK
+        uses: android-actions/setup-android@v3
+
+      - name: Apply review fixes and validate
+        shell: bash
+        run: |
+          set -euo pipefail
+
+          python3 <<'PY'
+          from pathlib import Path
+          import re
+
+          def replace_once(path: str, old: str, new: str) -> None:
+              file = Path(path)
+              text = file.read_text()
+              count = text.count(old)
+              if count != 1:
+                  raise RuntimeError(f"Expected one match in {path}, found {count}: {old!r}")
+              file.write_text(text.replace(old, new, 1))
+
+          app_db = "app/src/main/java/com/dessalines/thumbkey/db/AppDb.kt"
+          column_block = '''    @ColumnInfo(
+              name = "switch_to_letters_after_space",
+              defaultValue = DEFAULT_SWITCH_TO_LETTERS_AFTER_SPACE.toString(),
+          )
+          val switchToLettersAfterSpace: Int = DEFAULT_SWITCH_TO_LETTERS_AFTER_SPACE,
+          '''
+          app_db_text = Path(app_db).read_text()
+          if app_db_text.count(column_block) != 1:
+              raise RuntimeError("Expected the new AppSettings column exactly once")
+          app_db_text = app_db_text.replace(column_block, "", 1)
+          app_settings_end = '''    val showOnScreenKeyboard: Int,
+          )
+          '''
+          app_settings_end_new = '''    val showOnScreenKeyboard: Int,
+              @ColumnInfo(
+                  name = "switch_to_letters_after_space",
+                  defaultValue = DEFAULT_SWITCH_TO_LETTERS_AFTER_SPACE.toString(),
+              )
+              val switchToLettersAfterSpace: Int = DEFAULT_SWITCH_TO_LETTERS_AFTER_SPACE,
+          )
+          '''
+          if app_db_text.count(app_settings_end) != 1:
+              raise RuntimeError("Could not find the end of AppSettings")
+          Path(app_db).write_text(app_db_text.replace(app_settings_end, app_settings_end_new, 1))
+
+          keyboard_screen = "app/src/main/java/com/dessalines/thumbkey/ui/components/keyboard/KeyboardScreen.kt"
+          screen_text = Path(keyboard_screen).read_text()
+          launched_effect = '''    LaunchedEffect(lastAction.value) {
+              val action = lastAction.value?.first
+              if (
+                  switchToLettersAfterSpace &&
+                  mode == KeyboardMode.NUMERIC &&
+                  action is KeyAction.CommitText &&
+                  action.text == " "
+              ) {
+                  capsLock = false
+                  mode = KeyboardMode.MAIN
+              }
+          }
+
+          '''
+          if screen_text.count(launched_effect) != 1:
+              raise RuntimeError("Expected the old LaunchedEffect exactly once")
+          screen_text = screen_text.replace(launched_effect, "", 1)
+
+          handler_anchor = '''    val slideHoldEnabled = (settings?.slideHoldEnabled ?: DEFAULT_SLIDE_HOLD_ENABLED).toBool()
+
+          '''
+          handler = '''    val handleKeyEvent: (KeyAction) -> Unit = { action ->
+              when (mode) {
+                  KeyboardMode.CTRLED, KeyboardMode.ALTED -> {
+                      mode = KeyboardMode.MAIN
+                  }
+
+                  KeyboardMode.NUMERIC -> {
+                      if (
+                          switchToLettersAfterSpace &&
+                          action is KeyAction.CommitText &&
+                          action.text == " "
+                      ) {
+                          capsLock = false
+                          mode = KeyboardMode.MAIN
+                      }
+                  }
+
+                  else -> {}
+              }
+          }
+
+          '''
+          if screen_text.count(handler_anchor) != 1:
+              raise RuntimeError("Could not find handler insertion point")
+          screen_text = screen_text.replace(handler_anchor, handler_anchor + handler, 1)
+
+          on_key_event_pattern = re.compile(
+              r'''onKeyEvent = \{\s*when \(mode\) \{\s*KeyboardMode\.CTRLED, KeyboardMode\.ALTED -> \{\s*mode\s*=\s*KeyboardMode\.MAIN\s*\}\s*else -> \{\}\s*\}\s*\},''',
+              re.MULTILINE,
+          )
+          screen_text, count = on_key_event_pattern.subn("onKeyEvent = handleKeyEvent,", screen_text)
+          if count != 3:
+              raise RuntimeError(f"Expected to replace 3 onKeyEvent handlers, replaced {count}")
+          Path(keyboard_screen).write_text(screen_text)
+
+          keyboard_key = "app/src/main/java/com/dessalines/thumbkey/ui/components/keyboard/KeyboardKey.kt"
+          replace_once(
+              keyboard_key,
+              "    onKeyEvent: () -> Unit,\n",
+              "    onKeyEvent: (action: KeyAction) -> Unit,\n",
+          )
+
+          utils = "app/src/main/java/com/dessalines/thumbkey/utils/Utils.kt"
+          replace_once(
+              utils,
+              "    onKeyEvent: () -> Unit,\n",
+              "    onKeyEvent: (action: KeyAction) -> Unit,\n",
+          )
+          replace_once(
+              utils,
+              '''            } else { // To return to MAIN mode after a shifted key action.
+                  onAutoCapitalize(false)
+              }
+          }
+
+              is KeyAction.SendEvent -> {
+          ''',
+              '''            } else { // To return to MAIN mode after a shifted key action.
+                  onAutoCapitalize(false)
+              }
+              onKeyEvent(action)
+          }
+
+              is KeyAction.SendEvent -> {
+          ''',
+          )
+          replace_once(utils, "            onKeyEvent()\n", "            onKeyEvent(action)\n")
+          PY
+
+          ./gradlew formatKotlin
+          ./gradlew lintKotlin testDebugUnitTest assembleDebug
+          git diff --check
+
+          rm .github/workflows/address-review-1955.yml
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          git commit -m "Address review feedback"
+          git push
