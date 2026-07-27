@@ -237,19 +237,6 @@ fun KeyboardScreen(
     val ghostKeysEnabled = (settings?.ghostKeysEnabled ?: DEFAULT_GHOST_KEYS_ENABLED).toBool()
     val slideHoldEnabled = (settings?.slideHoldEnabled ?: DEFAULT_SLIDE_HOLD_ENABLED).toBool()
 
-    LaunchedEffect(lastAction.value) {
-        val action = lastAction.value?.first
-        if (
-            switchToLettersAfterSpace &&
-            mode == KeyboardMode.NUMERIC &&
-            action is KeyAction.CommitText &&
-            action.text == " "
-        ) {
-            capsLock = false
-            mode = KeyboardMode.MAIN
-        }
-    }
-
     val keyBorderWidthFloat = keyBorderWidth / 10.0f
     val keyBorderColour = MaterialTheme.colorScheme.outline
     val keyHeight = legendHeight.toFloat()
@@ -447,10 +434,23 @@ fun KeyboardScreen(
                                         mode = KeyboardMode.MAIN
                                     },
                                     onChangePosition = onChangePosition,
-                                    onKeyEvent = {
+                                    onKeyEvent = { action ->
                                         when (mode) {
                                             KeyboardMode.CTRLED, KeyboardMode.ALTED -> {
-                                                mode = KeyboardMode.MAIN
+                                                if (action is KeyAction.SendEvent) {
+                                                    mode = KeyboardMode.MAIN
+                                                }
+                                            }
+
+                                            KeyboardMode.NUMERIC -> {
+                                                if (
+                                                    switchToLettersAfterSpace &&
+                                                    action is KeyAction.CommitText &&
+                                                    action.text == " "
+                                                ) {
+                                                    capsLock = false
+                                                    mode = KeyboardMode.MAIN
+                                                }
                                             }
 
                                             else -> {}
@@ -632,10 +632,23 @@ fun KeyboardScreen(
                                         mode = KeyboardMode.MAIN
                                     },
                                     onChangePosition = onChangePosition,
-                                    onKeyEvent = {
+                                    onKeyEvent = { action ->
                                         when (mode) {
                                             KeyboardMode.CTRLED, KeyboardMode.ALTED -> {
-                                                mode = KeyboardMode.MAIN
+                                                if (action is KeyAction.SendEvent) {
+                                                    mode = KeyboardMode.MAIN
+                                                }
+                                            }
+
+                                            KeyboardMode.NUMERIC -> {
+                                                if (
+                                                    switchToLettersAfterSpace &&
+                                                    action is KeyAction.CommitText &&
+                                                    action.text == " "
+                                                ) {
+                                                    capsLock = false
+                                                    mode = KeyboardMode.MAIN
+                                                }
                                             }
 
                                             else -> {}
@@ -905,11 +918,23 @@ fun KeyboardScreen(
                                             }
                                         },
                                         onToggleHideLetters = onToggleHideLetters,
-                                        onKeyEvent = {
+                                        onKeyEvent = { action ->
                                             when (mode) {
                                                 KeyboardMode.CTRLED, KeyboardMode.ALTED -> {
-                                                    mode =
-                                                        KeyboardMode.MAIN
+                                                    if (action is KeyAction.SendEvent) {
+                                                        mode = KeyboardMode.MAIN
+                                                    }
+                                                }
+
+                                                KeyboardMode.NUMERIC -> {
+                                                    if (
+                                                        switchToLettersAfterSpace &&
+                                                        action is KeyAction.CommitText &&
+                                                        action.text == " "
+                                                    ) {
+                                                        capsLock = false
+                                                        mode = KeyboardMode.MAIN
+                                                    }
                                                 }
 
                                                 else -> {}

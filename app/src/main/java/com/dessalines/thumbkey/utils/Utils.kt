@@ -348,7 +348,7 @@ fun performKeyAction(
     onAutoCapitalize: (enable: Boolean) -> Unit,
     onSwitchLanguage: () -> Unit,
     onChangePosition: ((old: KeyboardPosition) -> KeyboardPosition) -> Unit,
-    onKeyEvent: () -> Unit,
+    onKeyEvent: (action: KeyAction) -> Unit,
 ) {
     when (action) {
         is KeyAction.CommitText -> {
@@ -371,6 +371,7 @@ fun performKeyAction(
             } else { // To return to MAIN mode after a shifted key action.
                 onAutoCapitalize(false)
             }
+            onKeyEvent(action)
         }
 
         is KeyAction.SendEvent -> {
@@ -378,7 +379,7 @@ fun performKeyAction(
             Log.d(TAG, "sending key event: $ev")
             keyboardSettings.textProcessor?.handleKeyEvent(ime, ev)
                 ?: ime.currentInputConnection.sendKeyEvent(ev)
-            onKeyEvent()
+            onKeyEvent(action)
         }
 
         // Some apps are having problems with delete key events, and issues need to be opened up

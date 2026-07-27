@@ -200,11 +200,6 @@ data class AppSettings(
     )
     val spacebarMultiTaps: Int,
     @ColumnInfo(
-        name = "switch_to_letters_after_space",
-        defaultValue = DEFAULT_SWITCH_TO_LETTERS_AFTER_SPACE.toString(),
-    )
-    val switchToLettersAfterSpace: Int = DEFAULT_SWITCH_TO_LETTERS_AFTER_SPACE,
-    @ColumnInfo(
         name = "hide_symbols",
         defaultValue = DEFAULT_HIDE_SYMBOLS.toString(),
     )
@@ -349,6 +344,11 @@ data class AppSettings(
         defaultValue = DEFAULT_SHOW_ON_SCREEN_KEYBOARD.toString(),
     )
     val showOnScreenKeyboard: Int,
+    @ColumnInfo(
+        name = "switch_to_letters_after_space",
+        defaultValue = DEFAULT_SWITCH_TO_LETTERS_AFTER_SPACE.toString(),
+    )
+    val switchToLettersAfterSpace: Int = DEFAULT_SWITCH_TO_LETTERS_AFTER_SPACE,
 )
 
 data class LayoutsUpdate(
