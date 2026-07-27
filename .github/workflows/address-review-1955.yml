@@ -4,6 +4,7 @@ on:
   push:
     branches:
       - feature/switch-numeric-to-letters-after-space
+  workflow_dispatch:
 
 permissions:
   contents: write
@@ -172,5 +173,3 @@ jobs:
           git add -A
           git commit -m "Address review feedback"
           git push
-
-# retrigger
