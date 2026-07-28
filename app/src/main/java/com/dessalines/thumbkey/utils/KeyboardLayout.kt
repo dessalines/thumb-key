@@ -95,6 +95,7 @@ import com.dessalines.thumbkey.keyboards.KB_EN_THUMBKEY_SYMBOLS
 import com.dessalines.thumbkey.keyboards.KB_EN_THUMBKEY_WIDE
 import com.dessalines.thumbkey.keyboards.KB_EN_THUMBKEY_WIDE_COMPOSE
 import com.dessalines.thumbkey.keyboards.KB_EN_THUMBKEY_WORDS
+import com.dessalines.thumbkey.keyboards.KB_EN_THUMBKEY_WORDS_SHIFT
 import com.dessalines.thumbkey.keyboards.KB_EN_THUMBKEY_WORDS_SYMBOLS
 import com.dessalines.thumbkey.keyboards.KB_EN_THUMBKEY_WORDS_SYMBOLS_DUAL
 import com.dessalines.thumbkey.keyboards.KB_EN_THUMBKEY_WRITER
@@ -474,4 +475,5 @@ enum class KeyboardLayout(
     ENMinnow(KB_EN_MINNOW), // english minnow
     MYWhale(KB_MY_WHALE), // myanmar whale
     ENThumbKeyCompact(KB_EN_THUMBKEY_COMPACT), // english thumb-key compact
+    ENThumbKeyWordsShift(KB_EN_THUMBKEY_WORDS_SHIFT), // english thumb-key words shift
 }
