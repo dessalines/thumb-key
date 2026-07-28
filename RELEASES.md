@@ -1,3 +1,14 @@
+## What's Changed in 5.1.14
+
+- Add option to switch to letters after a space in numeric mode by @agm-9 in [#1955](https://github.com/dessalines/thumb-key/pull/1955)
+- Adding ENThumbKeyWordsShift by @dessalines in [#1960](https://github.com/dessalines/thumb-key/pull/1960)
+
+## New Contributors
+
+- @agm-9 made their first contribution in [#1955](https://github.com/dessalines/thumb-key/pull/1955)
+
+**Full Changelog**: https://github.com/dessalines/thumb-key/compare/5.1.13...5.1.14
+
 ## What's Changed in 5.1.13
 
 - Adding EN-thumbkey compact (extra keys moved into 3x3 grid) by @dessalines in [#1949](https://github.com/dessalines/thumb-key/pull/1949)
@@ -200,7 +211,7 @@
 - Don't bother writing fastlane changelog. by @dessalines in [#1669](https://github.com/dessalines/thumb-key/pull/1669)
 - fix: follow title format for FAThumbKey.kt by @pxeemo in [#1667](https://github.com/dessalines/thumb-key/pull/1667)
 - Fix fastlane changelog by @dessalines in [#1664](https://github.com/dessalines/thumb-key/pull/1664)
-- Update RUHyper.kt by @bjarjfff in [#1646](https://github.com/dessalines/thumb-key/pull/1646)
+- Update RUHyper.kt by @uintta in [#1646](https://github.com/dessalines/thumb-key/pull/1646)
 
 **Full Changelog**: https://github.com/dessalines/thumb-key/compare/5.0.10...5.0.11
 
@@ -213,13 +224,13 @@
 - Standard japanese keyboard by @K0baU in [#1630](https://github.com/dessalines/thumb-key/pull/1630)
 - add Wurstfinger as related project by @cl445 in [#1632](https://github.com/dessalines/thumb-key/pull/1632)
 - Fixed incorrect swipetype in center key on KRThumbKey by @Hate9 in [#1621](https://github.com/dessalines/thumb-key/pull/1621)
-- Update RUHyper.kt by @bjarjfff in [#1616](https://github.com/dessalines/thumb-key/pull/1616)
+- Update RUHyper.kt by @uintta in [#1616](https://github.com/dessalines/thumb-key/pull/1616)
 
 ## New Contributors
 
 - @DeBestTrap made their first contribution in [#1640](https://github.com/dessalines/thumb-key/pull/1640)
 - @cl445 made their first contribution in [#1632](https://github.com/dessalines/thumb-key/pull/1632)
-- @bjarjfff made their first contribution in [#1616](https://github.com/dessalines/thumb-key/pull/1616)
+- @uintta made their first contribution in [#1616](https://github.com/dessalines/thumb-key/pull/1616)
 
 **Full Changelog**: https://github.com/dessalines/thumb-key/compare/5.0.9...5.0.10
 
