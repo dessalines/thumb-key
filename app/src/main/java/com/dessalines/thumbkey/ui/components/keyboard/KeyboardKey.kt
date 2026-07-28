@@ -142,7 +142,7 @@ fun KeyboardKey(
     onAutoCapitalize: (enable: Boolean) -> Unit,
     onSwitchLanguage: () -> Unit,
     onChangePosition: ((old: KeyboardPosition) -> KeyboardPosition) -> Unit,
-    onKeyEvent: () -> Unit,
+    onKeyEvent: (action: KeyAction) -> Unit,
     oppositeCaseKey: KeyItemC? = null,
     numericKey: KeyItemC? = null,
     dragReturnEnabled: Boolean,

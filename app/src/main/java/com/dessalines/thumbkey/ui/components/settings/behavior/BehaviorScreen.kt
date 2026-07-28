@@ -54,6 +54,7 @@ import com.dessalines.thumbkey.db.DEFAULT_SLIDE_HOLD_ENABLED
 import com.dessalines.thumbkey.db.DEFAULT_SLIDE_SENSITIVITY
 import com.dessalines.thumbkey.db.DEFAULT_SLIDE_SPACEBAR_DEADZONE_ENABLED
 import com.dessalines.thumbkey.db.DEFAULT_SPACEBAR_MULTITAPS
+import com.dessalines.thumbkey.db.DEFAULT_SWITCH_TO_LETTERS_AFTER_SPACE
 import com.dessalines.thumbkey.ui.components.common.TestOutTextField
 import com.dessalines.thumbkey.ui.components.settings.about.SettingsDivider
 import com.dessalines.thumbkey.utils.CircularDragAction
@@ -92,6 +93,8 @@ fun BehaviorScreen(
     var slideBackspaceDeadzoneEnabledState = (settings?.slideBackspaceDeadzoneEnabled ?: DEFAULT_SLIDE_BACKSPACE_DEADZONE_ENABLED).toBool()
     var autoCapitalizeState = (settings?.autoCapitalize ?: DEFAULT_AUTO_CAPITALIZE).toBool()
     var spacebarMultiTapsState = (settings?.spacebarMultiTaps ?: DEFAULT_SPACEBAR_MULTITAPS).toBool()
+    var switchToLettersAfterSpaceState =
+        (settings?.switchToLettersAfterSpace ?: DEFAULT_SWITCH_TO_LETTERS_AFTER_SPACE).toBool()
 
     var dragReturnEnabledState = (settings?.dragReturnEnabled ?: DEFAULT_DRAG_RETURN_ENABLED).toBool()
     var circularDragEnabledState = (settings?.circularDragEnabled ?: DEFAULT_CIRCULAR_DRAG_ENABLED).toBool()
@@ -119,6 +122,7 @@ fun BehaviorScreen(
                 slideBackspaceDeadzoneEnabled = slideBackspaceDeadzoneEnabledState.toInt(),
                 autoCapitalize = autoCapitalizeState.toInt(),
                 spacebarMultiTaps = spacebarMultiTapsState.toInt(),
+                switchToLettersAfterSpace = switchToLettersAfterSpaceState.toInt(),
                 dragReturnEnabled = dragReturnEnabledState.toInt(),
                 circularDragEnabled = circularDragEnabledState.toInt(),
                 clockwiseDragAction = clockwiseDragActionState.ordinal,
@@ -175,6 +179,25 @@ fun BehaviorScreen(
                         icon = {
                             Icon(
                                 imageVector = Icons.Outlined.SpaceBar,
+                                contentDescription = null,
+                            )
+                        },
+                    )
+                    SwitchPreference(
+                        value = switchToLettersAfterSpaceState,
+                        onValueChange = {
+                            switchToLettersAfterSpaceState = it
+                            updateBehavior()
+                        },
+                        title = {
+                            Text(stringResource(R.string.switch_to_letters_after_space))
+                        },
+                        summary = {
+                            Text(stringResource(R.string.switch_to_letters_after_space_description))
+                        },
+                        icon = {
+                            Icon(
+                                imageVector = Icons.Outlined.Abc,
                                 contentDescription = null,
                             )
                         },

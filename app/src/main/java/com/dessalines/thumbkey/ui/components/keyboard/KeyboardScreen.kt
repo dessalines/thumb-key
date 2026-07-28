@@ -71,6 +71,7 @@ import com.dessalines.thumbkey.db.DEFAULT_SLIDE_SENSITIVITY
 import com.dessalines.thumbkey.db.DEFAULT_SLIDE_SPACEBAR_DEADZONE_ENABLED
 import com.dessalines.thumbkey.db.DEFAULT_SOUND_ON_TAP
 import com.dessalines.thumbkey.db.DEFAULT_SPACEBAR_MULTITAPS
+import com.dessalines.thumbkey.db.DEFAULT_SWITCH_TO_LETTERS_AFTER_SPACE
 import com.dessalines.thumbkey.db.DEFAULT_VIBRATE_ON_SLIDE
 import com.dessalines.thumbkey.db.DEFAULT_VIBRATE_ON_TAP
 import com.dessalines.thumbkey.keyboards.BACKSPACE_KEY_ITEM
@@ -196,6 +197,8 @@ fun KeyboardScreen(
 
     val autoCapitalize = (settings?.autoCapitalize ?: DEFAULT_AUTO_CAPITALIZE).toBool()
     val spacebarMultiTaps = (settings?.spacebarMultiTaps ?: DEFAULT_SPACEBAR_MULTITAPS).toBool()
+    val switchToLettersAfterSpace =
+        (settings?.switchToLettersAfterSpace ?: DEFAULT_SWITCH_TO_LETTERS_AFTER_SPACE).toBool()
     val slideEnabled = (settings?.slideEnabled ?: DEFAULT_SLIDE_ENABLED).toBool()
     val slideCursorMovementMode = (settings?.slideCursorMovementMode ?: DEFAULT_SLIDE_CURSOR_MOVEMENT_MODE)
     val slideSpacebarDeadzoneEnabled = (settings?.slideSpacebarDeadzoneEnabled ?: DEFAULT_SLIDE_SPACEBAR_DEADZONE_ENABLED).toBool()
@@ -431,10 +434,23 @@ fun KeyboardScreen(
                                         mode = KeyboardMode.MAIN
                                     },
                                     onChangePosition = onChangePosition,
-                                    onKeyEvent = {
+                                    onKeyEvent = { action ->
                                         when (mode) {
                                             KeyboardMode.CTRLED, KeyboardMode.ALTED -> {
-                                                mode = KeyboardMode.MAIN
+                                                if (action is KeyAction.SendEvent) {
+                                                    mode = KeyboardMode.MAIN
+                                                }
+                                            }
+
+                                            KeyboardMode.NUMERIC -> {
+                                                if (
+                                                    switchToLettersAfterSpace &&
+                                                    action is KeyAction.CommitText &&
+                                                    action.text == " "
+                                                ) {
+                                                    capsLock = false
+                                                    mode = KeyboardMode.MAIN
+                                                }
                                             }
 
                                             else -> {}
@@ -616,10 +632,23 @@ fun KeyboardScreen(
                                         mode = KeyboardMode.MAIN
                                     },
                                     onChangePosition = onChangePosition,
-                                    onKeyEvent = {
+                                    onKeyEvent = { action ->
                                         when (mode) {
                                             KeyboardMode.CTRLED, KeyboardMode.ALTED -> {
-                                                mode = KeyboardMode.MAIN
+                                                if (action is KeyAction.SendEvent) {
+                                                    mode = KeyboardMode.MAIN
+                                                }
+                                            }
+
+                                            KeyboardMode.NUMERIC -> {
+                                                if (
+                                                    switchToLettersAfterSpace &&
+                                                    action is KeyAction.CommitText &&
+                                                    action.text == " "
+                                                ) {
+                                                    capsLock = false
+                                                    mode = KeyboardMode.MAIN
+                                                }
                                             }
 
                                             else -> {}
@@ -889,11 +918,23 @@ fun KeyboardScreen(
                                             }
                                         },
                                         onToggleHideLetters = onToggleHideLetters,
-                                        onKeyEvent = {
+                                        onKeyEvent = { action ->
                                             when (mode) {
                                                 KeyboardMode.CTRLED, KeyboardMode.ALTED -> {
-                                                    mode =
-                                                        KeyboardMode.MAIN
+                                                    if (action is KeyAction.SendEvent) {
+                                                        mode = KeyboardMode.MAIN
+                                                    }
+                                                }
+
+                                                KeyboardMode.NUMERIC -> {
+                                                    if (
+                                                        switchToLettersAfterSpace &&
+                                                        action is KeyAction.CommitText &&
+                                                        action.text == " "
+                                                    ) {
+                                                        capsLock = false
+                                                        mode = KeyboardMode.MAIN
+                                                    }
                                                 }
 
                                                 else -> {}
