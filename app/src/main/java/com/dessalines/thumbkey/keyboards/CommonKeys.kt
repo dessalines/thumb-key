@@ -255,6 +255,11 @@ val BACKSPACE_TEXT_MANIPULATION_KEYC =
         size = LARGE,
         color = SECONDARY,
     )
+val DELETE_CHARACTER_AFTER_CURSOR_KEYC =
+    KeyC(
+        DeleteCharacterAfterCursor,
+        display = null,
+    )
 val DELETE_WORD_BEFORE_CURSOR_KEYC =
     KeyC(
         DeleteWordBeforeCursor,

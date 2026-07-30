@@ -252,6 +252,8 @@ sealed class KeyAction {
 
     data object DeleteKeyAction : KeyAction()
 
+    data object DeleteCharacterAfterCursor : KeyAction()
+
     data object DeleteViaTextManipulation : KeyAction()
 
     data object DeleteWordBeforeCursor : KeyAction()

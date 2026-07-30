@@ -290,6 +290,7 @@ This swaps the 'switch language' and 'toggle emoji' actions on the top-right key
 - `Undo`
 - `Redo`
 - `Delete`
+- `DeleteCharacterAfterCursor`
 - `DeleteWordBeforeCursor`
 - `DeleteWordAfterCursor`
 - `SwitchLanguage`

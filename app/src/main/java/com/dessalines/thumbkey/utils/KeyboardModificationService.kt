@@ -13,6 +13,7 @@ import com.dessalines.thumbkey.keyboards.BACKSPACE_KEYC
 import com.dessalines.thumbkey.keyboards.BACKSPACE_TEXT_MANIPULATION_KEYC
 import com.dessalines.thumbkey.keyboards.COPY_KEYC
 import com.dessalines.thumbkey.keyboards.CUT_KEYC
+import com.dessalines.thumbkey.keyboards.DELETE_CHARACTER_AFTER_CURSOR_KEYC
 import com.dessalines.thumbkey.keyboards.DELETE_WORD_AFTER_CURSOR_KEYC
 import com.dessalines.thumbkey.keyboards.DELETE_WORD_BEFORE_CURSOR_KEYC
 import com.dessalines.thumbkey.keyboards.GOTO_SETTINGS_KEYC
@@ -305,6 +306,7 @@ fun getCommonKeyCFromKeyAction(keyActionSerializable: KeyActionSerializable?): K
         KeyActionSerializable.Undo -> UNDO_KEYC
         KeyActionSerializable.Redo -> REDO_KEYC
         KeyActionSerializable.Delete -> BACKSPACE_KEYC
+        KeyActionSerializable.DeleteCharacterAfterCursor -> DELETE_CHARACTER_AFTER_CURSOR_KEYC
         KeyActionSerializable.DeleteViaTextManipulation -> BACKSPACE_TEXT_MANIPULATION_KEYC
         KeyActionSerializable.DeleteWordBeforeCursor -> DELETE_WORD_BEFORE_CURSOR_KEYC
         KeyActionSerializable.DeleteWordAfterCursor -> DELETE_WORD_AFTER_CURSOR_KEYC
@@ -509,6 +511,7 @@ enum class KeyActionSerializable {
     PreviousWordBeforeCursor,
     NextWordAfterCursor,
     Delete,
+    DeleteCharacterAfterCursor,
     DeleteViaTextManipulation,
     DeleteWordBeforeCursor,
     DeleteWordAfterCursor,
