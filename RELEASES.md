@@ -1,3 +1,9 @@
+## What's Changed in 5.1.15
+
+- Add delete character after cursor action by @agm-9 in [#1963](https://github.com/dessalines/thumb-key/pull/1963)
+
+**Full Changelog**: https://github.com/dessalines/thumb-key/compare/5.1.14...5.1.15
+
 ## What's Changed in 5.1.14
 
 - Add option to switch to letters after a space in numeric mode by @agm-9 in [#1955](https://github.com/dessalines/thumb-key/pull/1955)
