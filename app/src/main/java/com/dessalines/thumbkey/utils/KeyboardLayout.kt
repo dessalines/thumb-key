@@ -190,6 +190,7 @@ import com.dessalines.thumbkey.keyboards.KB_PT_THUMBKEY
 import com.dessalines.thumbkey.keyboards.KB_PT_TYPESPLIT
 import com.dessalines.thumbkey.keyboards.KB_RU_ARTI
 import com.dessalines.thumbkey.keyboards.KB_RU_HYPER
+import com.dessalines.thumbkey.keyboards.KB_RU_HYPER_SPACE
 import com.dessalines.thumbkey.keyboards.KB_RU_MESSAGEASE
 import com.dessalines.thumbkey.keyboards.KB_RU_MESSAGEASE_SYMBOLS
 import com.dessalines.thumbkey.keyboards.KB_RU_MESSAGEASE_WRITER
@@ -480,4 +481,5 @@ enum class KeyboardLayout(
     ENThumbKeyWordsShift(KB_EN_THUMBKEY_WORDS_SHIFT), // english thumb-key words shift
     ENROHyper(KB_EN_RO_HYPER), // english română hyper
     ENROHyperSpace(KB_EN_RO_HYPER_SPACE), // english română hyper space
+    RUHyperSpace(KB_RU_HYPER_SPACE), // русский hyper space
 }
