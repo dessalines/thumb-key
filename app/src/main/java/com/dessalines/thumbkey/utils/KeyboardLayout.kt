@@ -76,6 +76,8 @@ import com.dessalines.thumbkey.keyboards.KB_EN_QWERTEASE
 import com.dessalines.thumbkey.keyboards.KB_EN_QWERTEASE_TWO_HANDS
 import com.dessalines.thumbkey.keyboards.KB_EN_QWERTYFOUR
 import com.dessalines.thumbkey.keyboards.KB_EN_QWERTYFOUR_COMPOSE
+import com.dessalines.thumbkey.keyboards.KB_EN_RO_HYPER
+import com.dessalines.thumbkey.keyboards.KB_EN_RO_HYPER_SPACE
 import com.dessalines.thumbkey.keyboards.KB_EN_RO_THUMBKEY
 import com.dessalines.thumbkey.keyboards.KB_EN_RSINOA
 import com.dessalines.thumbkey.keyboards.KB_EN_SK_THUMBKEY
@@ -477,5 +479,7 @@ enum class KeyboardLayout(
     MYWhale(KB_MY_WHALE), // myanmar whale
     ENThumbKeyCompact(KB_EN_THUMBKEY_COMPACT), // english thumb-key compact
     ENThumbKeyWordsShift(KB_EN_THUMBKEY_WORDS_SHIFT), // english thumb-key words shift
+    ENROHyper(KB_EN_RO_HYPER), // english română hyper
+    ENROHyperSpace(KB_EN_RO_HYPER_SPACE), // english română hyper space
     RUHyperSpace(KB_RU_HYPER_SPACE), // русский hyper space
 }
