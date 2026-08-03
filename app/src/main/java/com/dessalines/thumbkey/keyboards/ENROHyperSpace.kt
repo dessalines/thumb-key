@@ -30,7 +30,7 @@ val KB_EN_RO_HYPER_SPACE_MAIN =
                     bottom = KeyC("!", color = MUTED),
                     top = KeyC("â"),
                     left = KeyC("j"),
-                    right = Keyc("ă"),
+                    right = KeyC("ă"),
                 ),
                 KeyItemC(
                     center = KeyC("n", size = LARGE),
@@ -219,7 +219,7 @@ val KB_EN_RO_HYPER_SPACE_SHIFTED =
                     center = KeyC("I", size = LARGE),
                     swipeType = FOUR_WAY_CROSS,
                     left = KeyC(":", color = MUTED),
-                    right = ("Î"),
+                    right = KeyC("Î"),
                     top = KeyC("'", color = MUTED),
                 ),
                 KeyItemC(
