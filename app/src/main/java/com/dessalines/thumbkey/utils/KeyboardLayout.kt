@@ -188,6 +188,7 @@ import com.dessalines.thumbkey.keyboards.KB_PT_THUMBKEY
 import com.dessalines.thumbkey.keyboards.KB_PT_TYPESPLIT
 import com.dessalines.thumbkey.keyboards.KB_RU_ARTI
 import com.dessalines.thumbkey.keyboards.KB_RU_HYPER
+import com.dessalines.thumbkey.keyboards.KB_RU_HYPER_SPACE
 import com.dessalines.thumbkey.keyboards.KB_RU_MESSAGEASE
 import com.dessalines.thumbkey.keyboards.KB_RU_MESSAGEASE_SYMBOLS
 import com.dessalines.thumbkey.keyboards.KB_RU_MESSAGEASE_WRITER
@@ -446,6 +447,7 @@ enum class KeyboardLayout(
     KRTypeSplit(KB_KR_TYPESPLIT), // 한국어 type-split
     KRThumbKey(KB_KR_THUMBKEY), // 한국어 thumb-key
     RUHyper(KB_RU_HYPER), // русский hyper
+    RUHyperSpace(KB_RU_HYPER_SPACE), // русский hyper space
     MYThumbKey(KB_MY_THUMBKEY), // myanmar thumb-key
     JAKanaStandard(KB_JA_KANA_STANDARD), // japanese standard kana keyboard
     KNThumbKey(KB_KN_THUMBKEY), // ಕನ್ನಡ thumb-key
