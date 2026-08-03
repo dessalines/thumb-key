@@ -447,7 +447,6 @@ enum class KeyboardLayout(
     KRTypeSplit(KB_KR_TYPESPLIT), // 한국어 type-split
     KRThumbKey(KB_KR_THUMBKEY), // 한국어 thumb-key
     RUHyper(KB_RU_HYPER), // русский hyper
-    RUHyperSpace(KB_RU_HYPER_SPACE), // русский hyper space
     MYThumbKey(KB_MY_THUMBKEY), // myanmar thumb-key
     JAKanaStandard(KB_JA_KANA_STANDARD), // japanese standard kana keyboard
     KNThumbKey(KB_KN_THUMBKEY), // ಕನ್ನಡ thumb-key
@@ -478,4 +477,5 @@ enum class KeyboardLayout(
     MYWhale(KB_MY_WHALE), // myanmar whale
     ENThumbKeyCompact(KB_EN_THUMBKEY_COMPACT), // english thumb-key compact
     ENThumbKeyWordsShift(KB_EN_THUMBKEY_WORDS_SHIFT), // english thumb-key words shift
+    RUHyperSpace(KB_RU_HYPER_SPACE), // русский hyper space
 }
