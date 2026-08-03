@@ -76,8 +76,8 @@ import com.dessalines.thumbkey.keyboards.KB_EN_QWERTEASE
 import com.dessalines.thumbkey.keyboards.KB_EN_QWERTEASE_TWO_HANDS
 import com.dessalines.thumbkey.keyboards.KB_EN_QWERTYFOUR
 import com.dessalines.thumbkey.keyboards.KB_EN_QWERTYFOUR_COMPOSE
-import com.dessalines.thumbkey.keyboards.KB_EN_RO_THUMBKEY
 import com.dessalines.thumbkey.keyboards.KB_EN_RO_HYPER
+import com.dessalines.thumbkey.keyboards.KB_EN_RO_THUMBKEY
 import com.dessalines.thumbkey.keyboards.KB_EN_RSINOA
 import com.dessalines.thumbkey.keyboards.KB_EN_SK_THUMBKEY
 import com.dessalines.thumbkey.keyboards.KB_EN_SV_THUMBKEY_PROGRAMMING
@@ -339,7 +339,7 @@ enum class KeyboardLayout(
     EOCyrillicThumbKey(KB_EO_CYRILLIC_THUMBKEY), // esperanto cyrillic thumb-key
     HUTypeSplit(KB_HU_TYPESPLIT), // magyar type-split
     ENROThumbKey(KB_EN_RO_THUMBKEY), // english română thumb-key
-	ENROHyper(KB_EN_RO_HYPER),
+    ENROHyper(KB_EN_RO_HYPER),
     ENLAThumbKey(KB_EN_LA_THUMBKEY), // english latina thumb-key
     NLTypeSplit(KB_NL_TYPESPLIT), // nederlands type-split
     PLMessagEase(KB_PL_MESSAGEASE), // polski messagease
