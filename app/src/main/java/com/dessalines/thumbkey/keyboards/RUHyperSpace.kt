@@ -50,9 +50,9 @@ val KB_RU_HYPER_SPACE_MAIN =
                 KeyItemC(
                     center = KeyC("р", size = LARGE),
                     swipeType = FOUR_WAY_CROSS,
-                    right = KeyC("\"", color = MUTED),
-                    top = KeyC("ё"),
-                    left = KeyC("щ"),
+                    bottom = KeyC("\"", color = MUTED),
+                    right = KeyC("ё"),
+                    top = KeyC("щ"),
                 ),
                 KeyItemC(
                     center = KeyC("т", size = LARGE),
@@ -97,9 +97,9 @@ val KB_RU_HYPER_SPACE_MAIN =
                 KeyItemC(
                     center = KeyC("м", size = LARGE),
                     swipeType = FOUR_WAY_CROSS,
-                    left = KeyC("#", color = MUTED),
-                    top = KeyC("/", color = MUTED),
-                    right = KeyC("ь"),
+                    bottom = KeyC("#", color = MUTED),
+                    left = KeyC("/", color = MUTED),
+                    top = KeyC("ь"),
                 ),
             ),
             listOf(
