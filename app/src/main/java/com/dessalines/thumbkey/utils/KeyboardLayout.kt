@@ -340,8 +340,6 @@ enum class KeyboardLayout(
     EOCyrillicThumbKey(KB_EO_CYRILLIC_THUMBKEY), // esperanto cyrillic thumb-key
     HUTypeSplit(KB_HU_TYPESPLIT), // magyar type-split
     ENROThumbKey(KB_EN_RO_THUMBKEY), // english română thumb-key
-    ENROHyper(KB_EN_RO_HYPER), // english română hyper
-    ENROHyperSpace(KB_EN_RO_HYPER_SPACE), // english română hyper space
     ENLAThumbKey(KB_EN_LA_THUMBKEY), // english latina thumb-key
     NLTypeSplit(KB_NL_TYPESPLIT), // nederlands type-split
     PLMessagEase(KB_PL_MESSAGEASE), // polski messagease
@@ -480,4 +478,6 @@ enum class KeyboardLayout(
     MYWhale(KB_MY_WHALE), // myanmar whale
     ENThumbKeyCompact(KB_EN_THUMBKEY_COMPACT), // english thumb-key compact
     ENThumbKeyWordsShift(KB_EN_THUMBKEY_WORDS_SHIFT), // english thumb-key words shift
+    ENROHyper(KB_EN_RO_HYPER), // english română hyper
+    ENROHyperSpace(KB_EN_RO_HYPER_SPACE), // english română hyper space
 }
