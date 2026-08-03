@@ -390,6 +390,12 @@ fun performKeyAction(
                 ?: ime.currentInputConnection.sendKeyEvent(ev)
         }
 
+        is KeyAction.DeleteCharacterAfterCursor -> {
+            val ev = KeyEvent(KeyEvent.ACTION_DOWN, KeyEvent.KEYCODE_FORWARD_DEL)
+            keyboardSettings.textProcessor?.handleKeyEvent(ime, ev)
+                ?: ime.currentInputConnection.sendKeyEvent(ev)
+        }
+
         // Alternative delete that uses deleteSurroundingText instead of KEYCODE_DEL.
         // Some apps (like Google Chat) ignore key events from soft keyboards but respond
         // to text manipulation. Users can assign this via YAML key modifications.
