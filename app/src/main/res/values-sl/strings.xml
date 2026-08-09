@@ -142,4 +142,7 @@
     <string name="show_on_screen_keyboard_description">Prikaži zaslonsko tipkovnico tudi pri rabi fizične tipkovnice</string>
     <string name="slide_hold_enable">Premikanje kazalca \"podrsaj-zadrži\"</string>
     <string name="slide_hold_description">Podrsaj in zadrži: ponovi premik kazalca. Podrsaj-vrni-zadrži: premikanje po besedah. Vračalka: podrsaj in zadrži: ponovi brisanje.Podrsaj-vrni-zadrži: izbriši besedo.</string>
+    <string name="switch_to_letters_after_space">Po preslednici zamenjaj na črke</string>
+    <string name="switch_to_letters_after_space_description">Po vnosu preslednice na numerični tipkovnici preklopi na črkovni način</string>
+    <string name="database_operation_failed">Dejanje ni uspelo: %1$s</string>
 </resources>
