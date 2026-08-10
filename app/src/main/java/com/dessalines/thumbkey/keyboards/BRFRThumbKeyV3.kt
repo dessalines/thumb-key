@@ -27,9 +27,24 @@ val KB_BR_FR_THUMBKEY_V3_MAIN =
                 ),
                 KeyItemC(
                     center = KeyC("n", size = LARGE),
-                    topLeft = KeyC("\u0300", displayText = "ˋ", color = MUTED),
-                    top = KeyC("\u0302", displayText = "^", color = MUTED),
-                    topRight = KeyC("\u0301", displayText = "ˊ", color = MUTED),
+                    topLeft =
+                        KeyC(
+                            display = KeyDisplay.TextDisplay("◌̀"),
+                            action = NormalizeLastKey("\u0300"),
+                            color = MUTED,
+                        ),
+                    top =
+                        KeyC(
+                            display = KeyDisplay.TextDisplay("◌̂"),
+                            action = NormalizeLastKey("\u0302"),
+                            color = MUTED,
+                        ),
+                    topRight =
+                        KeyC(
+                            display = KeyDisplay.TextDisplay("◌́"),
+                            action = NormalizeLastKey("\u0301"),
+                            color = MUTED,
+                        ),
                     left = KeyC("+", color = MUTED),
                     right = KeyC("!", color = MUTED),
                     bottomLeft = KeyC("/", color = MUTED),
@@ -103,7 +118,12 @@ val KB_BR_FR_THUMBKEY_V3_MAIN =
                     topRight = KeyC("y"),
                     left = KeyC("<", color = MUTED),
                     right = KeyC(":", color = MUTED),
-                    bottomLeft = KeyC("\u0303", displayText = "õ", color = MUTED),
+                    bottomLeft =
+                        KeyC(
+                            display = KeyDisplay.TextDisplay("◌̃"),
+                            action = NormalizeLastKey("\u0303"),
+                            color = MUTED,
+                        ),
                     bottom = KeyC("_", color = MUTED),
                     bottomRight = KeyC("l"),
                 ),
@@ -126,7 +146,12 @@ val KB_BR_FR_THUMBKEY_V3_MAIN =
                     left = KeyC("ch"),
                     right = KeyC(">", color = MUTED),
                     bottomLeft = KeyC(";", color = MUTED),
-                    bottom = KeyC("\u0308", displayText = "¨", color = MUTED),
+                    bottom =
+                        KeyC(
+                            display = KeyDisplay.TextDisplay("◌̈"),
+                            action = NormalizeLastKey("\u0308"),
+                            color = MUTED,
+                        ),
                     bottomRight = KeyC("·", color = MUTED),
                 ),
                 BACKSPACE_KEY_ITEM,
@@ -155,9 +180,24 @@ val KB_BR_FR_THUMBKEY_V3_SHIFTED =
                 ),
                 KeyItemC(
                     center = KeyC("N", size = LARGE),
-                    topLeft = KeyC("\u0300", displayText = "ˋ", color = MUTED),
-                    top = KeyC("\u0302", displayText = "^", color = MUTED),
-                    topRight = KeyC("\u0301", displayText = "ˊ", color = MUTED),
+                    topLeft =
+                        KeyC(
+                            display = KeyDisplay.TextDisplay("◌̀"),
+                            action = NormalizeLastKey("\u0300"),
+                            color = MUTED,
+                        ),
+                    top =
+                        KeyC(
+                            display = KeyDisplay.TextDisplay("◌̂"),
+                            action = NormalizeLastKey("\u0302"),
+                            color = MUTED,
+                        ),
+                    topRight =
+                        KeyC(
+                            display = KeyDisplay.TextDisplay("◌́"),
+                            action = NormalizeLastKey("\u0301"),
+                            color = MUTED,
+                        ),
                     left = KeyC("+", color = MUTED),
                     right = KeyC("!", color = MUTED),
                     bottomLeft = KeyC("/", color = MUTED),
@@ -234,7 +274,12 @@ val KB_BR_FR_THUMBKEY_V3_SHIFTED =
                     topRight = KeyC("Y"),
                     left = KeyC("<", color = MUTED),
                     right = KeyC(":", color = MUTED),
-                    bottomLeft = KeyC("\u0303", displayText = "õ", color = MUTED),
+                    bottomLeft =
+                        KeyC(
+                            display = KeyDisplay.TextDisplay("◌̃"),
+                            action = NormalizeLastKey("\u0303"),
+                            color = MUTED,
+                        ),
                     bottom = KeyC("_", color = MUTED),
                     bottomRight = KeyC("L"),
                 ),
@@ -257,7 +302,12 @@ val KB_BR_FR_THUMBKEY_V3_SHIFTED =
                     left = KeyC("Ch"),
                     right = KeyC(">", color = MUTED),
                     bottomLeft = KeyC(";", color = MUTED),
-                    bottom = KeyC("\u0308", displayText = "¨", color = MUTED),
+                    bottom =
+                        KeyC(
+                            display = KeyDisplay.TextDisplay("◌̈"),
+                            action = NormalizeLastKey("\u0308"),
+                            color = MUTED,
+                        ),
                     bottomRight = KeyC("·", color = MUTED),
                 ),
                 BACKSPACE_KEY_ITEM,
