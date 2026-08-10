@@ -93,6 +93,7 @@ import com.dessalines.thumbkey.keyboards.KB_EN_THUMBKEY_FLIPPED_NUMPAD
 import com.dessalines.thumbkey.keyboards.KB_EN_THUMBKEY_PROGRAMMING
 import com.dessalines.thumbkey.keyboards.KB_EN_THUMBKEY_PROGRAMMING_EXPANDED
 import com.dessalines.thumbkey.keyboards.KB_EN_THUMBKEY_PROGRAMMING_WIDE
+import com.dessalines.thumbkey.keyboards.KB_EN_THUMBKEY_SHIFT
 import com.dessalines.thumbkey.keyboards.KB_EN_THUMBKEY_SYMBOLS
 import com.dessalines.thumbkey.keyboards.KB_EN_THUMBKEY_WIDE
 import com.dessalines.thumbkey.keyboards.KB_EN_THUMBKEY_WIDE_COMPOSE
@@ -214,6 +215,7 @@ import com.dessalines.thumbkey.keyboards.KB_TH_THUMBKEY
 import com.dessalines.thumbkey.keyboards.KB_TH_THUMBKEY_KHAM_CHUEAM
 import com.dessalines.thumbkey.keyboards.KB_TOK_SITELEN_THUMBKEY_EMOJI
 import com.dessalines.thumbkey.keyboards.KB_TOK_THUMBKEY
+import com.dessalines.thumbkey.keyboards.KB_TOK_THUMBKEY_LETTERS_SHIFT
 import com.dessalines.thumbkey.keyboards.KB_TR_ARTI
 import com.dessalines.thumbkey.keyboards.KB_TR_THUMBKEY
 import com.dessalines.thumbkey.keyboards.KB_TR_TYPESPLIT
@@ -482,4 +484,6 @@ enum class KeyboardLayout(
     ENROHyper(KB_EN_RO_HYPER), // english română hyper
     ENROHyperSpace(KB_EN_RO_HYPER_SPACE), // english română hyper space
     RUHyperSpace(KB_RU_HYPER_SPACE), // русский hyper space
+    ENThumbKeyShift(KB_EN_THUMBKEY_SHIFT), // english thumb-key shift
+    TOKThumbKeyLettersShift(KB_TOK_THUMBKEY_LETTERS_SHIFT), // toki pona thumb-key letters shift
 }
