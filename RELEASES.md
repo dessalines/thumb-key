@@ -1,3 +1,17 @@
+## What's Changed in 5.1.16
+
+- Adding ENThumbkeyShift and TOKThumbkeyLettersShift by @dessalines in [#1980](https://github.com/dessalines/thumb-key/pull/1980)
+- Fixing some lints by @dessalines in [#1979](https://github.com/dessalines/thumb-key/pull/1979)
+- Improve accents in BRFRThumbKeyV3 by @zeecho in [#1975](https://github.com/dessalines/thumb-key/pull/1975)
+- Add Russian hyper space keyboard layout by @Lucariowu in [#1965](https://github.com/dessalines/thumb-key/pull/1965)
+- Add English based Romanian hyper and hyper space keyboard layouts by @Lucariowu in [#1964](https://github.com/dessalines/thumb-key/pull/1964)
+
+## New Contributors
+
+- @Lucariowu made their first contribution in [#1965](https://github.com/dessalines/thumb-key/pull/1965)
+
+**Full Changelog**: https://github.com/dessalines/thumb-key/compare/5.1.15...5.1.16
+
 ## What's Changed in 5.1.15
 
 - Add delete character after cursor action by @agm-9 in [#1963](https://github.com/dessalines/thumb-key/pull/1963)
@@ -217,7 +231,7 @@
 - Don't bother writing fastlane changelog. by @dessalines in [#1669](https://github.com/dessalines/thumb-key/pull/1669)
 - fix: follow title format for FAThumbKey.kt by @pxeemo in [#1667](https://github.com/dessalines/thumb-key/pull/1667)
 - Fix fastlane changelog by @dessalines in [#1664](https://github.com/dessalines/thumb-key/pull/1664)
-- Update RUHyper.kt by @uintta in [#1646](https://github.com/dessalines/thumb-key/pull/1646)
+- Update RUHyper.kt by @itsjustchalon in [#1646](https://github.com/dessalines/thumb-key/pull/1646)
 
 **Full Changelog**: https://github.com/dessalines/thumb-key/compare/5.0.10...5.0.11
 
@@ -230,13 +244,13 @@
 - Standard japanese keyboard by @K0baU in [#1630](https://github.com/dessalines/thumb-key/pull/1630)
 - add Wurstfinger as related project by @cl445 in [#1632](https://github.com/dessalines/thumb-key/pull/1632)
 - Fixed incorrect swipetype in center key on KRThumbKey by @Hate9 in [#1621](https://github.com/dessalines/thumb-key/pull/1621)
-- Update RUHyper.kt by @uintta in [#1616](https://github.com/dessalines/thumb-key/pull/1616)
+- Update RUHyper.kt by @itsjustchalon in [#1616](https://github.com/dessalines/thumb-key/pull/1616)
 
 ## New Contributors
 
 - @DeBestTrap made their first contribution in [#1640](https://github.com/dessalines/thumb-key/pull/1640)
 - @cl445 made their first contribution in [#1632](https://github.com/dessalines/thumb-key/pull/1632)
-- @uintta made their first contribution in [#1616](https://github.com/dessalines/thumb-key/pull/1616)
+- @itsjustchalon made their first contribution in [#1616](https://github.com/dessalines/thumb-key/pull/1616)
 
 **Full Changelog**: https://github.com/dessalines/thumb-key/compare/5.0.9...5.0.10
 
