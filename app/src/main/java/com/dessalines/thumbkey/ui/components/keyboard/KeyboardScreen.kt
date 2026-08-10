@@ -95,6 +95,7 @@ import com.dessalines.thumbkey.utils.toBool
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
+import kotlin.collections.sortedBy
 import kotlin.time.TimeMark
 
 @Composable
@@ -263,7 +264,7 @@ fun KeyboardScreen(
                         if (backdropEnabled) {
                             Modifier.background(backdropColor)
                         } else {
-                            (Modifier)
+                            Modifier
                         },
                     ),
         ) {
@@ -291,7 +292,7 @@ fun KeyboardScreen(
                                 if (backdropEnabled) {
                                     Modifier.padding(top = backdropPadding)
                                 } else {
-                                    (Modifier)
+                                    Modifier
                                 },
                             ),
                 ) {
@@ -309,7 +310,7 @@ fun KeyboardScreen(
                                             shape = RoundedCornerShape(cornerRadius.dp),
                                         )
                                     } else {
-                                        (Modifier)
+                                        Modifier
                                     },
                                 ).background(MaterialTheme.colorScheme.surface),
                     ) {
@@ -477,7 +478,7 @@ fun KeyboardScreen(
                                 if (backdropEnabled) {
                                     Modifier.padding(top = backdropPadding)
                                 } else {
-                                    (Modifier)
+                                    Modifier
                                 },
                             ),
                 ) {
@@ -495,7 +496,7 @@ fun KeyboardScreen(
                                             shape = RoundedCornerShape(cornerRadius.dp),
                                         )
                                     } else {
-                                        (Modifier)
+                                        Modifier
                                     },
                                 ).background(MaterialTheme.colorScheme.surface),
                     ) {
@@ -679,9 +680,9 @@ fun KeyboardScreen(
         // Perform auto-cleanup when entering clipboard view, and clear all if disabled
         LaunchedEffect(Unit) {
             if (clipboardHistoryEnabled) {
-                clipboardRepository?.clearExpired()
+                clipboardRepository.clearExpired()
             } else {
-                clipboardRepository?.clearAll()
+                clipboardRepository.clearAll()
             }
         }
 
@@ -692,7 +693,7 @@ fun KeyboardScreen(
                         if (backdropEnabled) {
                             Modifier.background(backdropColor)
                         } else {
-                            (Modifier)
+                            Modifier
                         },
                     ),
         ) {
@@ -718,7 +719,7 @@ fun KeyboardScreen(
                             if (backdropEnabled) {
                                 Modifier.padding(top = backdropPadding)
                             } else {
-                                (Modifier)
+                                Modifier
                             },
                         ),
             ) {
@@ -736,12 +737,12 @@ fun KeyboardScreen(
                     },
                     onItemDelete = { item ->
                         scope.launch {
-                            clipboardRepository?.deleteItem(item)
+                            clipboardRepository.deleteItem(item)
                         }
                     },
                     onItemTogglePin = { item ->
                         scope.launch {
-                            clipboardRepository?.togglePin(item)
+                            clipboardRepository.togglePin(item)
                         }
                     },
                     onBack = {
@@ -749,7 +750,7 @@ fun KeyboardScreen(
                     },
                     onClearAll = {
                         scope.launch {
-                            clipboardRepository?.clearUnpinned()
+                            clipboardRepository.clearUnpinned()
                         }
                     },
                     onGoToClipboardSettings = onGoToClipboardSettings,
@@ -789,7 +790,7 @@ fun KeyboardScreen(
                             if (backdropEnabled) {
                                 Modifier.padding(top = backdropPadding)
                             } else {
-                                (Modifier)
+                                Modifier
                             },
                         ),
             ) {

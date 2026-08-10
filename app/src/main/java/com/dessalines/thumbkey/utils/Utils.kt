@@ -1,6 +1,5 @@
 package com.dessalines.thumbkey.utils
 
-import android.app.Activity
 import android.content.Context
 import android.content.Intent
 import android.content.pm.PackageInfo
@@ -31,7 +30,6 @@ import androidx.compose.runtime.MutableState
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.geometry.Offset
 import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.TextUnit
@@ -57,6 +55,7 @@ import kotlin.math.max
 import kotlin.math.min
 import kotlin.math.pow
 import kotlin.math.sqrt
+import kotlin.time.Duration.Companion.milliseconds
 
 const val TAG = "com.thumbkey"
 
@@ -1580,7 +1579,7 @@ fun getCurrentLayoutColumnCount(keyboardLayout: Int): Int {
     val keyboardDefinition = currentLayout.keyboardDefinition
     val mainKeyboard = keyboardDefinition.modes.main
     val columnCount = mainKeyboard.arr.maxOf { it.size }
-    return columnCount.toInt()
+    return columnCount
 }
 
 fun getCurrentDisplayWidth(ctx: Context): Int {
@@ -1602,7 +1601,7 @@ fun getAutoKeyWidth(
             else -> 1
         }
     val columns = getCurrentLayoutColumnCount(keyboardLayout) * multiplier
-    return (availableWidth / columns).toInt()
+    return (availableWidth / columns)
 }
 
 private fun autoCapitalize(
@@ -1723,7 +1722,7 @@ fun nextWordAfterCursor(ime: IMEService) {
 fun selectLineWithCursor(ime: IMEService) {
     // Find line start
     val wordsBeforeCursor = ime.currentInputConnection.getTextBeforeCursor(9999, 0)
-    if (wordsBeforeCursor?.length ?: 0 != 0) {
+    if ((wordsBeforeCursor?.length ?: 0) != 0) {
         // If we are at the beginning of a line nothing to do, else
         val lastChar = wordsBeforeCursor?.last() ?: ' '
         if (!(lastChar == '\n' || lastChar == '\r')) {
@@ -1760,7 +1759,7 @@ fun doneKeyAction(
 ) {
     pressed.value = false
     scope.launch {
-        delay(animationHelperSpeed.toLong())
+        delay(animationHelperSpeed.toLong().milliseconds)
         releasedKey.value = null
     }
     releasedKey.value =
