@@ -29,4 +29,17 @@
     <string name="look_and_feel">Vzhled a odezva</string>
     <string name="behavior">Chování</string>
     <string name="layouts">Rozložení</string>
+    <string name="matrix">Matrix-AMOLED</string>
+    <string name="about">O projektu</string>
+    <string name="open_source">Svobodný software</string>
+    <string name="theme">Motiv</string>
+    <string name="theme_color">Barevný motiv</string>
+    <string name="position">Pozice</string>
+    <string name="position_padding">Odsazení pozice: %1$s</string>
+    <string name="vibrate_on_tap">Vibrovat po klepnutí</string>
+    <string name="vibrate_warning">Vyžaduje povolení hmatové odezvy v systémovém nastavení</string>
+    <string name="vibrate_on_slide">Vibrovat po gestech posunutím</string>
+    <string name="vibrate_slide_note">Bude použito při gestech posouvání prsty na mezerníku nebo klávese backspace</string>
+    <string name="vibrate_slide_warning">Vyžaduje aby byla gesta posouvání prsty povolena v nastavení Chování</string>
+    <string name="play_sound_on_tap">Zvuk po klepnutí</string>
 </resources>
