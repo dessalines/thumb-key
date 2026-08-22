@@ -74,4 +74,21 @@
     <string name="done">Hotovo</string>
     <string name="backdrop">Pozadí klávesnice</string>
     <string name="key_padding">Mezery mezi tlačítky: %1$s</string>
+    <string name="slide_spacebar_deadzone_enable">Mezerník: Povolit normálním tahům fungovat s posuvnými gesty</string>
+    <string name="slide_backspace_deadzone_enable">Backspace: Umožnit normálním tahům fungovat s posuvnými gesty</string>
+    <string name="setup">Instalace</string>
+    <string name="setup_thumbkey">Instalace Thumb–Key</string>
+    <string name="enable_thumbkey">Povolit Thumb–Key</string>
+    <string name="select_thumbkey">Vybrat Thumb–Key</string>
+    <string name="finish_setup">Dokončit instalaci</string>
+    <string name="srcery">Srcery</string>
+    <string name="dracula">Dracula</string>
+    <string name="issue_tracker">Issue tracker</string>
+    <string name="developer_matrix_chatroom">Developer Matrix chatroom</string>
+    <string name="key_border_width">Šířka hranic tlačítek: %1$s</string>
+    <string name="key_radius">Zaoblení tlačítek: %1$s</string>
+    <string name="drag_return_enable">Potažení a návrat</string>
+    <string name="counterclockwise_drag_action">Akce tahu proti směru hodin</string>
+    <string name="clockwise_drag_action">Akce tahu po směru hodin</string>
+    <string name="send_oppsite_case">Opačná velikost písmene</string>
 </resources>
