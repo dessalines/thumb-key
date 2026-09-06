@@ -11,6 +11,7 @@ import com.dessalines.thumbkey.keyboards.KB_BY_THUMBKEY
 import com.dessalines.thumbkey.keyboards.KB_BY_THUMBKEY_SYMBOLS
 import com.dessalines.thumbkey.keyboards.KB_CA_THUMBKEY
 import com.dessalines.thumbkey.keyboards.KB_CZ_MESSAGEASE_PROGRAMMING
+import com.dessalines.thumbkey.keyboards.KB_CZ_TYPESPLIT_FULL
 import com.dessalines.thumbkey.keyboards.KB_DA_THUMBKEY
 import com.dessalines.thumbkey.keyboards.KB_DA_THUMBKEY_MULTILINGUAL
 import com.dessalines.thumbkey.keyboards.KB_DE_MESSAGEASE
@@ -486,4 +487,5 @@ enum class KeyboardLayout(
     RUHyperSpace(KB_RU_HYPER_SPACE), // русский hyper space
     ENThumbKeyShift(KB_EN_THUMBKEY_SHIFT), // english thumb-key shift
     TOKThumbKeyLettersShift(KB_TOK_THUMBKEY_LETTERS_SHIFT), // toki pona thumb-key letters shift
+    CZTypeSplit(KB_CZ_TYPESPLIT_FULL), // čeština type-split
 }
