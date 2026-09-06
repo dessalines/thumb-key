@@ -10,6 +10,10 @@ interface TextProcessor {
         input: CharSequence,
     )
 
+    // notifies that a compose key was pressed, starting a sequence.
+    // no-op for processors that don't implement one.
+    fun handleComposeStart(ime: IMEService) {}
+
     // intercepts non-text key events (e.g. ENTER, DEL, DPAD)
     fun handleKeyEvent(
         ime: IMEService,

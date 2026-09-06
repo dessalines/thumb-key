@@ -226,6 +226,10 @@ sealed class KeyAction {
         val text: String,
     ) : KeyAction()
 
+    // Starts a desktop-style compose sequence. Requires the layout to set a
+    // ComposeComboProcessor as its textProcessor.
+    data object StartComposeCombo : KeyAction()
+
     class NormalizeLastKey(
         val text: String,
         val form: java.text.Normalizer.Form? = java.text.Normalizer.Form.NFC,

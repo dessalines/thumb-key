@@ -523,6 +523,11 @@ fun performKeyAction(
             ime.currentInputConnection.commitText(textNew, 1)
         }
 
+        is KeyAction.StartComposeCombo -> {
+            Log.d(TAG, "starting compose combo")
+            keyboardSettings.textProcessor?.handleComposeStart(ime)
+        }
+
         is KeyAction.ComposeLastKey -> {
             Log.d(TAG, "composing last key")
             val text = action.text
