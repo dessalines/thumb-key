@@ -6,6 +6,7 @@
 - [Ways to contribute](#ways-to-contribute)
 - [How do I add my language or layout?](#how-do-i-add-my-language-or-layout)
 - [Theming guide](#theming-guide)
+- [Adding compose sequences](#adding-compose-sequences)
 - [Application structure](#application-structure)
 - [Code contributions](#code-contributions)
   * [Kotlin](#kotlin)
@@ -66,6 +67,42 @@ where feasibe.
 | Keypress flash colour on release          | `tertiaryContainer`           |
 | Key outline                               | `outline`                     |
 | Backdrop                                  | `background`                  |
+
+## Adding compose sequences
+
+Layouts with a compose key (`♫`) resolve typed sequences into single characters, using the table
+in `app/src/main/java/com/dessalines/thumbkey/textprocessors/ComposeComboTable.kt`. Adding a
+character is one line of data, which makes it practical to cover a specialised field —
+mathematics, linguistics, chemistry, law — without touching any keyboard code.
+
+Adding a set for your field:
+
+1. **List the characters you actually reach for.** A good set is small. Twenty characters you use
+   weekly beat two hundred you will never type on a phone.
+2. **Look each one up in X11 first.** Thumb-Key follows the
+   [X11 compose table](https://gitlab.freedesktop.org/xorg/lib/libx11/-/blob/master/nls/en_US.UTF-8/Compose.pre),
+   so anyone arriving from a desktop already knows the sequence. Download that file and search it
+   for the character before inventing anything.
+3. **Only invent a sequence when X11 has none**, and then check the spelling is not already
+   spent on something else. `co` looks like an obvious choice for ©, but X11 uses it for ǒ, so
+   copying it would break a Czech or Chinese-pinyin user's muscle memory. This is why the
+   letter-first spellings of © and ® are `CO` and `RO`.
+4. **Keep the table prefix-free.** A match is committed the moment it is found, so if `ab` is a
+   sequence then `abc` can never be reached. This is why `..` gives … and there is no `...`, and
+   why taking `--` for the em dash rules out the X11 spellings `---` and `--.`.
+5. **Add the group under its own comment block**, so the table stays readable as it grows.
+
+```kotlin
+// Chemistry
+put("o2", "₂")
+put("<>", "⇌")   // only if <> is not already taken — it is, by ⋄
+```
+
+Both letter orders are worth adding when X11 defines both, since which one feels natural varies
+by person. Several characters already have two or three spellings for this reason.
+
+Sequences are shared by every layout with a compose key, so a set added for one field becomes
+available everywhere. Prefer extending the shared table over creating a parallel one.
 
 ## Application structure
 
