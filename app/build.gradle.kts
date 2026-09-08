@@ -15,12 +15,12 @@ kotlin {
 }
 
 android {
-    compileSdk = 36
+    compileSdk = 37
 
     defaultConfig {
         applicationId = "com.dessalines.thumbkey"
         minSdk = 24
-        targetSdk = 36
+        targetSdk = 37
         versionCode = 186
         versionName = "5.1.16"
 
@@ -66,9 +66,8 @@ android {
                 // the Android Gradle plugin. To learn more, go to the section about
                 // R8 configuration files.
                 getDefaultProguardFile("proguard-android-optimize.txt"),
-
                 // Includes a local, custom Proguard rules file
-                "proguard-rules.pro"
+                "proguard-rules.pro",
             )
         }
         debug {
@@ -103,7 +102,7 @@ dependencies {
     implementation("com.github.dessalines:room-db-export-import:0.1.1")
 
     // Compose BOM
-    implementation(platform("androidx.compose:compose-bom:2026.06.01"))
+    implementation(platform("androidx.compose:compose-bom:2026.08.00"))
     implementation("androidx.compose.ui:ui")
     implementation("androidx.compose.material3:material3")
     implementation("androidx.compose.material:material-icons-extended:1.7.8")
