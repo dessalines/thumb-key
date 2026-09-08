@@ -349,6 +349,7 @@ enum class ColorVariant {
 
 enum class FontSizeVariant {
     LARGE,
+    MEDIUM,
     SMALL,
     SMALLEST,
 }
