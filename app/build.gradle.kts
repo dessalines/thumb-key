@@ -4,7 +4,7 @@ plugins {
     id("com.android.application")
     id("org.jetbrains.kotlin.plugin.compose")
     id("com.google.devtools.ksp")
-    kotlin("plugin.serialization") version "2.4.10"
+    kotlin("plugin.serialization") version "2.4.20"
 }
 
 kotlin {
@@ -149,7 +149,7 @@ dependencies {
     implementation("com.charleskorn.kaml:kaml:0.104.0")
 
     // Kotlin Reflect
-    implementation("org.jetbrains.kotlin:kotlin-reflect:2.4.10")
+    implementation("org.jetbrains.kotlin:kotlin-reflect:2.4.20")
 
     // Arrow-kt for mutating deeply nested data classes
     implementation("io.arrow-kt:arrow-optics:2.2.3")
