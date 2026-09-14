@@ -262,6 +262,19 @@ val KB_TR_ARTI_SHIFTED =
                 topLeft = KeyC("D"),
             )
         },
+        Triple(1, 4) { key ->
+            key.copy(
+                top =
+                    KeyC(
+                        display = KeyDisplay.IconDisplay(Icons.Outlined.KeyboardCapslock),
+                        capsModeDisplay = KeyDisplay.IconDisplay(Icons.Outlined.Copyright),
+                        action = ToggleCapsLock,
+                        swipeReturnAction = ToggleCurrentWordCapitalization(true),
+                        size = LARGE,
+                        color = PRIMARY,
+                    ),
+            )
+        },
     )
 
 val KB_TR_ARTI_NUMERIC =
