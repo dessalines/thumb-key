@@ -7,7 +7,7 @@
     <string name="dynamic">Динамично</string>
     <string name="green">Зелено</string>
     <string name="pink">Розово</string>
-    <string name="matrix">Матрицата-амолед</string>
+    <string name="matrix">Matrix-AMOLED</string>
     <string name="srcery">Srcery</string>
     <string name="blue">Синьо</string>
     <string name="center">В центъра</string>
@@ -20,7 +20,7 @@
     <string name="support">Поддръжка</string>
     <string name="issue_tracker">Бъг тракер</string>
     <string name="developer_matrix_chatroom">Matrix чат стая за разработчици</string>
-    <string name="donate_to_thumbkey">Направете дарение към Thumb-Key</string>
+    <string name="donate_to_thumbkey">Направете дарение за Thumb-Key</string>
     <string name="social">Социални</string>
     <string name="join_c_thumbkey">Присъединете се към c/thumbkey</string>
     <string name="follow_me_mastodon">Последвайте ме в Mastodon</string>
@@ -49,7 +49,7 @@
     <string name="select_thumbkey">Изберете Thumb-Key</string>
     <string name="finish_setup">Завършете настройването</string>
     <string name="hide_letters">Скриване на буквите</string>
-    <string name="spacebar_multitaps">Интервал многокр-докосв.</string>
+    <string name="spacebar_multitaps">Многокр. докосв. на интервала</string>
     <string name="twilight">Здрач</string>
     <string name="behavior">Поведение</string>
     <string name="key_non_square">Използване на неквадратни клавиши</string>
@@ -140,4 +140,9 @@
     <string name="other">Други</string>
     <string name="show_on_screen_keyboard">Показване на екранната клавиатура</string>
     <string name="show_on_screen_keyboard_description">Показване на екранната клавиатура при използване на физическа клавиатура</string>
+    <string name="switch_to_letters_after_space">Превключване към букви след интервал</string>
+    <string name="switch_to_letters_after_space_description">Връщане към буквената клавиатура след въвеждане на интервал в цифров режим</string>
+    <string name="slide_hold_enable">Движение на курсора с плъзгане и задържане</string>
+    <string name="slide_hold_description">Плъзнете и задръжте за повтарящо се движение на курсора, плъзнете-върнете-задръжте за движение по думи. Изтриване: плъзнете и задръжте за повтарящо се изтриване, плъзнете-върнете-задръжте за изтриване по думи.</string>
+    <string name="database_operation_failed">Неуспешна операция: %1$s</string>
 </resources>
