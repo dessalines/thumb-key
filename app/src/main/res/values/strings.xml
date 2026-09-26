@@ -111,6 +111,9 @@
     <string name="show_toast_on_layout_switch">Show toast on layout switch</string>
     <string name="disable_fullscreen_editor">Disable fullscreen text editor</string>
     <string name="warning_invalid_mode">Mode \"%s\" is not defined for layout \"%s\".</string>
+    <string name="search_layouts">Search layouts</string>
+    <string name="clear_search">Clear search</string>
+    <string name="no_layouts_found">No layouts found</string>
     <!-- Clipboard History -->
     <string name="clipboard_history">Clipboard history</string>
     <string name="clipboard_history_enabled">Enable clipboard history</string>
