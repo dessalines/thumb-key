@@ -378,9 +378,12 @@ This swaps the 'switch language' and 'toggle emoji' actions on the top-right key
 - `SwitchIME`
 - `SwitchIMEVoice`
 - `HideKeyboard`
+- `StartComposeCombo` # The compose key. See [Compose combo](#compose-combo).
 - `Noop` # No operation. Does nothing.
 
 `keyAction` and `text` cannot be used together.
+
+`StartComposeCombo` works on any layout except the Korean ones, which already process their own input.
 
 #### Example 4
 

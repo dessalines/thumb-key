@@ -227,7 +227,8 @@ sealed class KeyAction {
     ) : KeyAction()
 
     // Starts a desktop-style compose sequence. Requires the layout to set a
-    // ComposeComboProcessor as its textProcessor.
+    // ComposeComboProcessor as its textProcessor. Key modifications that add this
+    // action get one attached automatically, see attachComposeComboProcessor.
     data object StartComposeCombo : KeyAction()
 
     class NormalizeLastKey(

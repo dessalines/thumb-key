@@ -448,6 +448,13 @@ val RETURN_RIGHT_KEYC =
         display = null,
     )
 
+val COMPOSE_COMBO_KEYC =
+    KeyC(
+        display = KeyDisplay.TextDisplay("♫"),
+        action = StartComposeCombo,
+        color = MUTED,
+    )
+
 val NOOP_KEYC =
     KeyC(
         action = Noop,
