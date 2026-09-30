@@ -236,7 +236,7 @@ fun SketchScreen(
 
     val cornerLabels = (keyWidth + keyHeight) / 2 >= SKETCH_CORNER_LABELS_MIN_KEY_SIZE
     // The best candidates sit nearest the thumb: #1 on the right, or on the left for a
-    // keyboard on the left
+    // left-handed layout
     val candidateKeys =
         remember(state.tiles, loaded, cornerLabels, leftHanded) {
             val keys = (0 until SKETCH_CANDIDATE_KEYS).map { candidateKeyItem(it, state.tiles, loaded?.charset, cornerLabels) }

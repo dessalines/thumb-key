@@ -90,6 +90,7 @@ import com.dessalines.thumbkey.utils.TAG
 import com.dessalines.thumbkey.utils.getAutoKeyWidth
 import com.dessalines.thumbkey.utils.getKeyboardMode
 import com.dessalines.thumbkey.utils.getModifiedKeyboardDefinition
+import com.dessalines.thumbkey.utils.isLeftHandedLayout
 import com.dessalines.thumbkey.utils.keyboardPositionToAlignment
 import com.dessalines.thumbkey.utils.toBool
 import kotlinx.coroutines.CoroutineScope
@@ -839,7 +840,7 @@ fun KeyboardScreen(
                     state = sketch,
                     layoutName = layout.name,
                     rowCount = rowCount,
-                    leftHanded = position == KeyboardPosition.Left,
+                    leftHanded = isLeftHandedLayout(layout.name),
                     keyWidth = keyWidth,
                     keyHeight = keyHeight,
                     keyPadding = keyPadding,

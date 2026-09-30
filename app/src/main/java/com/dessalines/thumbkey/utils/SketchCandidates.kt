@@ -12,7 +12,7 @@ import com.dessalines.thumbkey.utils.SwipeDirection.TOP_RIGHT
 // Sketch mode puts its candidates on three keys. Ranks run key by key: the centers are
 // #1–3, the sides #4–15 (clockwise from the top) and the corners #16–27 (clockwise from the
 // top left). Ranks here count from 0. Key 0 is shown on the right, where a right thumb
-// reaches it most easily, and key 2 on the left.
+// reaches it most easily, and key 2 on the left; left-handed layouts mirror this.
 const val SKETCH_CANDIDATE_KEYS = 3
 const val SKETCH_KEY_SLOTS = SKETCH_CANDIDATE_KEYS * 9
 
@@ -43,6 +43,10 @@ fun sketchSlot(rank: Int): Pair<Int, SwipeDirection?>? =
     }
 
 fun isCornerDirection(direction: SwipeDirection?) = direction in CORNERS
+
+// Thumb-Key has no left-handed setting; left-handed layouts say so in their name, as
+// ENMessagEaseLeft or FRENFrappeFluideV1LeftHanded.
+fun isLeftHandedLayout(layoutName: String) = layoutName.contains("Left")
 
 fun swipeDirectionArrow(direction: SwipeDirection?): String =
     when (direction) {
