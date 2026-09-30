@@ -1,6 +1,5 @@
 package com.dessalines.thumbkey
 
-import android.inputmethodservice.InputMethodService
 import android.util.Log
 import android.view.inputmethod.CursorAnchorInfo
 import android.view.inputmethod.EditorInfo
@@ -26,7 +25,7 @@ import com.dessalines.thumbkey.utils.ThumbKeyClipboardManager
 import com.dessalines.thumbkey.utils.toBool
 
 class IMEService :
-    InputMethodService(),
+    RedirectableInputMethodService(),
     LifecycleOwner,
     ViewModelStoreOwner,
     SavedStateRegistryOwner {
@@ -66,6 +65,7 @@ class IMEService :
         restarting: Boolean,
     ) {
         super.onStartInput(attribute, restarting)
+        setInputRedirect(null)
         val view = this.setupView()
         this.setInputView(view)
     }
