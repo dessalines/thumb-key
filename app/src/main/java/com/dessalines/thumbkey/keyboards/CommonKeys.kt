@@ -112,6 +112,7 @@ fun specialActionKeyItem(center: KeyC): KeyItemC =
         bottomLeft = SWITCH_IME_VOICE_KEYC,
         left = SWITCH_LANGUAGE_KEYC,
         right = MOVE_KEYBOARD_CYCLE_RIGHT_KEYC,
+        bottomRight = TOGGLE_SKETCH_MODE_TRUE_KEYC,
     )
 
 val TOGGLE_NUMERIC_MODE_FALSE_KEYC =
@@ -151,6 +152,50 @@ val TOGGLE_CLIPBOARD_MODE_TRUE_KEYC =
         action = ToggleClipboardMode(true),
         size = LARGE,
         color = SECONDARY,
+    )
+
+val TOGGLE_SKETCH_MODE_TRUE_KEYC =
+    KeyC(
+        display = KeyDisplay.IconDisplay(Icons.Outlined.Draw),
+        action = ToggleSketchMode(true),
+        color = MUTED,
+    )
+
+val TOGGLE_SKETCH_MODE_FALSE_KEYC =
+    KeyC(
+        display = KeyDisplay.IconDisplay(Icons.Outlined.Abc),
+        action = ToggleSketchMode(false),
+        size = LARGE,
+    )
+val SKETCH_BACK_KEY_ITEM =
+    KeyItemC(
+        center = TOGGLE_SKETCH_MODE_FALSE_KEYC,
+        backgroundColor = SURFACE_VARIANT,
+    )
+
+// Tap to undo a stroke, swipe up for the full list of candidates, swipe down to clear the pad
+val SKETCH_UNDO_KEY_ITEM =
+    KeyItemC(
+        center =
+            KeyC(
+                display = KeyDisplay.IconDisplay(Icons.AutoMirrored.Outlined.Undo),
+                action = Sketch.UndoStroke,
+                size = LARGE,
+            ),
+        top =
+            KeyC(
+                display = KeyDisplay.IconDisplay(Icons.Outlined.FormatListNumbered),
+                action = Sketch.ShowCandidateList,
+                color = MUTED,
+            ),
+        bottom =
+            KeyC(
+                display = KeyDisplay.IconDisplay(Icons.Outlined.DeleteSweep),
+                action = Sketch.ClearPad,
+                color = MUTED,
+            ),
+        swipeType = TWO_WAY_VERTICAL,
+        backgroundColor = SURFACE_VARIANT,
     )
 
 val TOGGLE_HIDE_LETTERS_KEYC =

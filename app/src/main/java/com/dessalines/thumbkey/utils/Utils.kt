@@ -343,12 +343,14 @@ fun performKeyAction(
     onToggleNumericMode: (enable: Boolean) -> Unit,
     onToggleEmojiMode: (enable: Boolean) -> Unit,
     onToggleClipboardMode: (enable: Boolean) -> Unit,
+    onToggleSketchMode: (enable: Boolean) -> Unit,
     onToggleCapsLock: () -> Unit,
     onToggleHideLetters: () -> Unit,
     onAutoCapitalize: (enable: Boolean) -> Unit,
     onSwitchLanguage: () -> Unit,
     onChangePosition: ((old: KeyboardPosition) -> KeyboardPosition) -> Unit,
     onKeyEvent: (action: KeyAction) -> Unit,
+    onSketchAction: (action: KeyAction.Sketch) -> Unit = {},
 ) {
     when (action) {
         is KeyAction.CommitText -> {
@@ -1272,6 +1274,17 @@ fun performKeyAction(
             onToggleClipboardMode(enable)
         }
 
+        is KeyAction.ToggleSketchMode -> {
+            val enable = action.enable
+            Log.d(TAG, "Toggling Sketch: $enable")
+            keyboardSettings.textProcessor?.handleFinishInput(ime)
+            onToggleSketchMode(enable)
+        }
+
+        is KeyAction.Sketch -> {
+            onSketchAction(action)
+        }
+
         KeyAction.GotoSettings -> {
             val mainActivityIntent = Intent(ime, MainActivity::class.java)
             mainActivityIntent.flags = Intent.FLAG_ACTIVITY_NEW_TASK
@@ -1772,6 +1785,10 @@ fun doneKeyAction(
         when (action) {
             is KeyAction.CommitText -> {
                 action.text
+            }
+
+            is KeyAction.Sketch.CommitCandidate -> {
+                action.displayText
             }
 
             else -> {

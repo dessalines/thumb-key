@@ -414,6 +414,14 @@ fun KeyboardScreen(
                                                 KeyboardMode.MAIN
                                             }
                                     },
+                                    onToggleSketchMode = { enable ->
+                                        mode =
+                                            if (enable) {
+                                                KeyboardMode.SKETCH
+                                            } else {
+                                                KeyboardMode.MAIN
+                                            }
+                                    },
                                     onToggleCapsLock = {
                                         capsLock = !capsLock
                                         if (capsLock) {
@@ -606,6 +614,14 @@ fun KeyboardScreen(
                                         mode =
                                             if (enable) {
                                                 KeyboardMode.CLIPBOARD
+                                            } else {
+                                                KeyboardMode.MAIN
+                                            }
+                                    },
+                                    onToggleSketchMode = { enable ->
+                                        mode =
+                                            if (enable) {
+                                                KeyboardMode.SKETCH
                                             } else {
                                                 KeyboardMode.MAIN
                                             }
@@ -906,6 +922,14 @@ fun KeyboardScreen(
                                             mode =
                                                 if (enable) {
                                                     KeyboardMode.CLIPBOARD
+                                                } else {
+                                                    KeyboardMode.MAIN
+                                                }
+                                        },
+                                        onToggleSketchMode = { enable ->
+                                            mode =
+                                                if (enable) {
+                                                    KeyboardMode.SKETCH
                                                 } else {
                                                     KeyboardMode.MAIN
                                                 }
