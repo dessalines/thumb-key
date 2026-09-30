@@ -838,7 +838,6 @@ fun KeyboardScreen(
             ) {
                 SketchScreen(
                     state = sketch,
-                    layoutName = layout.name,
                     rowCount = rowCount,
                     leftHanded = isLeftHandedLayout(layout.name),
                     keyWidth = keyWidth,

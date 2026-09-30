@@ -88,7 +88,6 @@ import com.dessalines.thumbkey.utils.SwipeDirection
 import com.dessalines.thumbkey.utils.SwipeNWay
 import com.dessalines.thumbkey.utils.TAG
 import com.dessalines.thumbkey.utils.isCornerDirection
-import com.dessalines.thumbkey.utils.sketchLanguage
 import com.dessalines.thumbkey.utils.sketchRank
 import com.dessalines.thumbkey.utils.sketchSlot
 import com.dessalines.thumbkey.utils.swipeDirectionArrow
@@ -152,7 +151,6 @@ class SketchState {
 @Composable
 fun SketchScreen(
     state: SketchState,
-    layoutName: String,
     rowCount: Int,
     leftHanded: Boolean,
     keyWidth: Float,
@@ -173,10 +171,9 @@ fun SketchScreen(
         value = runCatching { SketchRecognizer.get(ctx) }
     }
     val loaded = recognizer?.getOrNull()
-    val language = remember(loaded, layoutName) { loaded?.let { sketchLanguage(layoutName, it.charset.keyboardScripts) } }
 
     // Recognize after each stroke. A new stroke restarts this, dropping the older query.
-    LaunchedEffect(loaded, state.strokes, language) {
+    LaunchedEffect(loaded, state.strokes) {
         val strokes = state.strokes
         if (loaded == null || strokes.isEmpty()) {
             state.tiles = emptyList()
@@ -187,7 +184,8 @@ fun SketchScreen(
             withContext(Dispatchers.Default) {
                 loaded.recognize(
                     points,
-                    language = language,
+                    // Only picks a group's representative, which is set below
+                    language = null,
                     tiles = SKETCH_LIST_SIZE,
                     characters = 0,
                     accept = SketchRecognizer.displayable,
@@ -196,11 +194,17 @@ fun SketchScreen(
         with(result.timings) {
             Log.d(
                 TAG,
-                "glyphsketch: recognized ${strokes.size} strokes (language $language) in " +
+                "glyphsketch: recognized ${strokes.size} strokes in " +
                     "%.1f ms: rasterize %.1f, encode %.1f, rank %.1f".format(totalMs, rasterizeMs, encodeMs, rankMs),
             )
         }
-        state.tiles = result.tiles
+        // A look-alike group shows as its lowest code point, its members in code point order,
+        // whatever the keyboard's language
+        state.tiles =
+            result.tiles.map { tile ->
+                val members = tile.members.sorted()
+                tile.copy(representative = members.first(), members = members)
+            }
     }
 
     // The drawing stays on the pad, for another candidate or a look-alike
