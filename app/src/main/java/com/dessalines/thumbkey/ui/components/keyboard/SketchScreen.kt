@@ -145,8 +145,8 @@ class SketchState {
 
 /**
  * Sketch mode: draw a character on the pad and type it from the candidate keys below.
- * The pad takes the three left columns, above the row of three candidate keys; the right
- * column holds the controls. `key` draws a keyboard key that sends sketch actions to
+ * The pad takes three columns, above the row of three candidate keys; the fourth column,
+ * on the right or for a left-handed layout on the left, holds the controls. `key` draws a keyboard key that sends sketch actions to
  * `onSketchAction`. `onSearch` opens the open list's search.
  */
 @Composable
@@ -247,10 +247,18 @@ fun SketchScreen(
             .take(rowCount.coerceAtLeast(3))
 
     val padShape = RoundedCornerShape(cornerRadius.dp)
+    val controls =
+        @Composable {
+            Column {
+                controlKeys.forEach { key(it, onSketchAction) }
+            }
+        }
     Box {
         // The pad fills what the candidate keys leave of the control column's height, so both
-        // columns end on the same pixel
+        // columns end on the same pixel. The controls are on the right, or on the left for a
+        // left-handed layout.
         Row(modifier = Modifier.height(IntrinsicSize.Min)) {
+            if (leftHanded) controls()
             Column(modifier = Modifier.fillMaxHeight()) {
                 Box(
                     modifier =
@@ -282,9 +290,7 @@ fun SketchScreen(
                     candidateKeys.forEach { key(it, onSketchAction) }
                 }
             }
-            Column {
-                controlKeys.forEach { key(it, onSketchAction) }
-            }
+            if (!leftHanded) controls()
         }
         val charset = loaded?.charset
         val list = state.list
