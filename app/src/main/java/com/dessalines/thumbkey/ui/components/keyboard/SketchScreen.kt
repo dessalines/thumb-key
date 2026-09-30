@@ -17,6 +17,7 @@ import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.aspectRatio
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.heightIn
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
@@ -25,19 +26,23 @@ import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.grid.GridCells
 import androidx.compose.foundation.lazy.grid.LazyVerticalGrid
 import androidx.compose.foundation.lazy.grid.itemsIndexed
+import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.lazy.itemsIndexed
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.automirrored.outlined.ArrowBack
 import androidx.compose.material.icons.outlined.Close
 import androidx.compose.material.icons.outlined.Draw
+import androidx.compose.material.icons.outlined.Search
 import androidx.compose.material3.HorizontalDivider
 import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.DisposableEffect
 import androidx.compose.runtime.LaunchedEffect
+import androidx.compose.runtime.Stable
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateListOf
 import androidx.compose.runtime.mutableStateOf
@@ -61,8 +66,11 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
+import androidx.compose.ui.text.style.TextOverflow
+import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import com.dessalines.thumbkey.IMEService
 import com.dessalines.thumbkey.R
 import com.dessalines.thumbkey.keyboards.BACKSPACE_KEY_ITEM
 import com.dessalines.thumbkey.keyboards.RETURN_KEY_ITEM
@@ -75,6 +83,7 @@ import com.dessalines.thumbkey.utils.KeyAction
 import com.dessalines.thumbkey.utils.KeyC
 import com.dessalines.thumbkey.utils.KeyDisplay
 import com.dessalines.thumbkey.utils.KeyItemC
+import com.dessalines.thumbkey.utils.KeyboardFieldConnection
 import com.dessalines.thumbkey.utils.SKETCH_CANDIDATE_KEYS
 import com.dessalines.thumbkey.utils.SKETCH_LIST_SIZE
 import com.dessalines.thumbkey.utils.SketchRecognizer
@@ -102,13 +111,32 @@ private const val SKETCH_PEN_WIDTH_DP = 6f
 private const val SKETCH_BASELINE = 0.72f
 
 /**
+ * What sketch mode shows. KeyboardScreen keeps it, so the drawing stays while the full list's
+ * search borrows the letter keys, and when sketch mode is left and opened again.
+ */
+@Stable
+class SketchState {
+    var strokes by mutableStateOf(listOf<List<Offset>>())
+    var tiles by mutableStateOf(listOf<Tile>())
+
+    // The look-alikes open over the pad, the candidate first
+    var lookAlikes by mutableStateOf<List<Int>?>(null)
+    var showList by mutableStateOf(false)
+
+    // Searching the full list, typed with the layout's own keys
+    var searching by mutableStateOf(false)
+    var query by mutableStateOf("")
+}
+
+/**
  * Sketch mode: draw a character on the pad and type it from the candidate keys below.
  * The pad takes the three left columns, above the row of three candidate keys; the right
  * column holds the controls. `key` draws a keyboard key that sends sketch actions to
- * `onSketchAction`.
+ * `onSketchAction`. `onSearch` opens the full list's search.
  */
 @Composable
 fun SketchScreen(
+    state: SketchState,
     layoutName: String,
     rowCount: Int,
     keyWidth: Float,
@@ -119,11 +147,11 @@ fun SketchScreen(
     vibrateOnTap: Boolean,
     soundOnTap: Boolean,
     onCommit: (text: String) -> Unit,
+    onSearch: () -> Unit,
     key: @Composable (key: KeyItemC, onSketchAction: (KeyAction.Sketch) -> Unit) -> Unit,
 ) {
     val ctx = LocalContext.current
-    val view = LocalView.current
-    val audioManager = ctx.getSystemService(Context.AUDIO_SERVICE) as AudioManager
+    val feedback = rememberSketchFeedback(vibrateOnTap, soundOnTap)
 
     val recognizer by produceState<Result<Recognizer>?>(null) {
         value = runCatching { SketchRecognizer.get(ctx) }
@@ -131,15 +159,11 @@ fun SketchScreen(
     val loaded = recognizer?.getOrNull()
     val language = remember(loaded, layoutName) { loaded?.let { sketchLanguage(layoutName, it.charset.keyboardScripts) } }
 
-    var strokes by remember { mutableStateOf(listOf<List<Offset>>()) }
-    var tiles by remember { mutableStateOf(listOf<Tile>()) }
-    var lookAlikes by remember { mutableStateOf<List<Int>?>(null) }
-    var showList by remember { mutableStateOf(false) }
-
     // Recognize after each stroke. A new stroke restarts this, dropping the older query.
-    LaunchedEffect(loaded, strokes, language) {
+    LaunchedEffect(loaded, state.strokes, language) {
+        val strokes = state.strokes
         if (loaded == null || strokes.isEmpty()) {
-            tiles = emptyList()
+            state.tiles = emptyList()
             return@LaunchedEffect
         }
         val points = strokes.map { stroke -> stroke.map { Point(it.x.toDouble(), it.y.toDouble()) } }
@@ -160,19 +184,14 @@ fun SketchScreen(
                     "%.1f ms: rasterize %.1f, encode %.1f, rank %.1f".format(totalMs, rasterizeMs, encodeMs, rankMs),
             )
         }
-        tiles = result.tiles
+        state.tiles = result.tiles
     }
 
-    fun feedback() {
-        if (vibrateOnTap) view.performHapticFeedback(HapticFeedbackConstants.KEYBOARD_TAP)
-        if (soundOnTap) audioManager.playSoundEffect(AudioManager.FX_KEY_CLICK, .1f)
-    }
-
+    // The drawing stays on the pad, for another candidate or a look-alike
     fun commit(text: String) {
         onCommit(text)
-        strokes = emptyList()
-        lookAlikes = null
-        showList = false
+        state.lookAlikes = null
+        state.showList = false
     }
 
     val onSketchAction: (KeyAction.Sketch) -> Unit = { action ->
@@ -182,30 +201,31 @@ fun SketchScreen(
             }
 
             is KeyAction.Sketch.ShowLookAlikes -> {
-                lookAlikes = action.codePoints
+                state.lookAlikes = action.codePoints
             }
 
             KeyAction.Sketch.UndoStroke -> {
-                strokes = strokes.dropLast(1)
-                lookAlikes = null
+                state.strokes = state.strokes.dropLast(1)
+                state.lookAlikes = null
             }
 
             KeyAction.Sketch.ClearPad -> {
-                strokes = emptyList()
-                lookAlikes = null
+                state.strokes = emptyList()
+                state.lookAlikes = null
             }
 
             KeyAction.Sketch.ShowCandidateList -> {
-                showList = true
-                lookAlikes = null
+                state.showList = true
+                state.lookAlikes = null
             }
         }
     }
 
     val cornerLabels = (keyWidth + keyHeight) / 2 >= SKETCH_CORNER_LABELS_MIN_KEY_SIZE
+    // Right to left: the best candidates sit nearest a right thumb
     val candidateKeys =
-        remember(tiles, loaded, cornerLabels) {
-            (0 until SKETCH_CANDIDATE_KEYS).map { candidateKeyItem(it, tiles, loaded?.charset, cornerLabels) }
+        remember(state.tiles, loaded, cornerLabels) {
+            (0 until SKETCH_CANDIDATE_KEYS).map { candidateKeyItem(it, state.tiles, loaded?.charset, cornerLabels) }.asReversed()
         }
     val controlKeys =
         listOf(SKETCH_BACK_KEY_ITEM, SKETCH_UNDO_KEY_ITEM, BACKSPACE_KEY_ITEM, SPACEBAR_SKINNY_KEY_ITEM, RETURN_KEY_ITEM)
@@ -230,7 +250,7 @@ fun SketchScreen(
                             ).background(MaterialTheme.colorScheme.surface),
                 ) {
                     SketchPad(
-                        strokes = strokes,
+                        strokes = state.strokes,
                         hint =
                             when {
                                 recognizer == null -> stringResource(R.string.sketch_loading)
@@ -238,12 +258,12 @@ fun SketchScreen(
                                 else -> stringResource(R.string.sketch_hint)
                             },
                         onStroke = {
-                            strokes = strokes + listOf(it)
-                            lookAlikes = null
+                            state.strokes = state.strokes + listOf(it)
+                            state.lookAlikes = null
                         },
                     )
                     val charset = loaded?.charset
-                    val members = lookAlikes
+                    val members = state.lookAlikes
                     if (charset != null && members != null) {
                         LookAlikes(
                             codePoints = members,
@@ -252,7 +272,7 @@ fun SketchScreen(
                                 feedback()
                                 commit(it)
                             },
-                            onClose = { lookAlikes = null },
+                            onClose = { state.lookAlikes = null },
                         )
                     }
                 }
@@ -265,19 +285,34 @@ fun SketchScreen(
             }
         }
         val charset = loaded?.charset
-        if (showList && charset != null) {
+        if (state.showList && charset != null) {
             CandidateList(
-                tiles = tiles,
-                hasStrokes = strokes.isNotEmpty(),
+                tiles = state.tiles,
+                hasStrokes = state.strokes.isNotEmpty(),
                 charset = charset,
                 onPick = {
                     feedback()
                     commit(it)
                 },
-                onClose = { showList = false },
+                onSearch = onSearch,
+                onClose = { state.showList = false },
                 modifier = Modifier.matchParentSize(),
             )
         }
+    }
+}
+
+@Composable
+private fun rememberSketchFeedback(
+    vibrateOnTap: Boolean,
+    soundOnTap: Boolean,
+): () -> Unit {
+    val ctx = LocalContext.current
+    val view = LocalView.current
+    val audioManager = ctx.getSystemService(Context.AUDIO_SERVICE) as AudioManager
+    return {
+        if (vibrateOnTap) view.performHapticFeedback(HapticFeedbackConstants.KEYBOARD_TAP)
+        if (soundOnTap) audioManager.playSoundEffect(AudioManager.FX_KEY_CLICK, .1f)
     }
 }
 
@@ -453,15 +488,15 @@ private fun LookAlikes(
                 )
             }
         }
-        LazyVerticalGrid(columns = GridCells.Fixed(4)) {
+        LazyVerticalGrid(columns = GridCells.Adaptive(minSize = 60.dp)) {
             itemsIndexed(codePoints) { index, codePoint ->
                 val info = charset.characters.getValue(codePoint)
                 Column(
                     horizontalAlignment = Alignment.CenterHorizontally,
-                    verticalArrangement = Arrangement.spacedBy(5.dp, Alignment.CenterVertically),
+                    verticalArrangement = Arrangement.spacedBy(3.dp, Alignment.CenterVertically),
                     modifier =
                         Modifier
-                            .aspectRatio(1f)
+                            .aspectRatio(0.72f)
                             .background(
                                 if (index == 0) {
                                     MaterialTheme.colorScheme.primaryContainer
@@ -469,17 +504,27 @@ private fun LookAlikes(
                                     MaterialTheme.colorScheme.surface
                                 },
                             ).border(0.5.dp, MaterialTheme.colorScheme.outlineVariant)
-                            .clickable { onPick(info.text) },
+                            .clickable { onPick(info.text) }
+                            .padding(horizontal = 3.dp),
                 ) {
                     Text(
                         text = info.displayText,
-                        fontSize = 30.sp,
-                        lineHeight = 32.sp,
+                        fontSize = 26.sp,
+                        lineHeight = 28.sp,
+                        color = MaterialTheme.colorScheme.onSurface,
+                    )
+                    Text(
+                        text = info.name,
+                        fontSize = 8.sp,
+                        lineHeight = 9.5.sp,
+                        maxLines = 2,
+                        overflow = TextOverflow.Ellipsis,
+                        textAlign = TextAlign.Center,
                         color = MaterialTheme.colorScheme.onSurface,
                     )
                     Text(
                         text = codePointLabel(codePoint),
-                        fontSize = 9.5.sp,
+                        fontSize = 8.5.sp,
                         fontFamily = FontFamily.Monospace,
                         color = MaterialTheme.colorScheme.onSurfaceVariant,
                     )
@@ -496,6 +541,7 @@ private fun CandidateList(
     hasStrokes: Boolean,
     charset: Charset,
     onPick: (text: String) -> Unit,
+    onSearch: () -> Unit,
     onClose: () -> Unit,
     modifier: Modifier = Modifier,
 ) {
@@ -536,62 +582,258 @@ private fun CandidateList(
                 )
             }
         }
+        if (tiles.isNotEmpty()) {
+            SearchField(
+                text = "",
+                hint = stringResource(R.string.sketch_search_hint),
+                modifier = Modifier.clickable(onClick = onSearch),
+            )
+        }
         LazyColumn {
             itemsIndexed(tiles) { rank, tile ->
-                val info = charset.characters.getValue(tile.representative)
-                Row(
-                    verticalAlignment = Alignment.CenterVertically,
-                    horizontalArrangement = Arrangement.spacedBy(6.dp),
-                    modifier =
-                        Modifier
-                            .fillMaxWidth()
-                            .heightIn(min = 52.dp)
-                            .clickable { onPick(info.text) }
-                            .padding(start = 8.dp, end = 10.dp, top = 4.dp, bottom = 4.dp),
-                ) {
-                    Text(
-                        text = (rank + 1).toString(),
-                        fontSize = 11.sp,
-                        fontFamily = FontFamily.Monospace,
-                        color = MaterialTheme.colorScheme.outline,
-                        textAlign = TextAlign.End,
-                        modifier = Modifier.width(30.dp),
-                    )
-                    Text(
-                        text = info.displayText,
-                        fontSize = 28.sp,
-                        lineHeight = 30.sp,
-                        color = MaterialTheme.colorScheme.onSurface,
-                        textAlign = TextAlign.Center,
-                        modifier = Modifier.width(48.dp),
-                    )
-                    Column(modifier = Modifier.weight(1f)) {
-                        Text(
-                            text = info.name,
-                            fontSize = 12.sp,
-                            lineHeight = 15.sp,
-                            color = MaterialTheme.colorScheme.onSurface,
-                        )
-                        Text(
-                            text = codePointLabel(tile.representative),
-                            fontSize = 10.5.sp,
-                            fontFamily = FontFamily.Monospace,
-                            color = MaterialTheme.colorScheme.onSurfaceVariant,
-                        )
-                    }
-                    sketchSlot(rank)?.let { (key, direction) ->
-                        Text(
-                            text = stringResource(R.string.sketch_key_position, key + 1, swipeDirectionArrow(direction)),
-                            fontSize = 11.sp,
-                            fontWeight = FontWeight.Medium,
-                            color = MaterialTheme.colorScheme.primary,
-                        )
-                    }
-                }
-                HorizontalDivider(thickness = 0.5.dp, color = MaterialTheme.colorScheme.outlineVariant)
+                CandidateRow(rank, tile.representative, charset, sketchSlot(rank), onPick)
             }
         }
     }
+}
+
+/**
+ * The full list's search, over the keyboard while its letter keys type the query. It finds
+ * candidates, and members of their look-alike groups, by name or code point.
+ */
+@Composable
+fun SketchSearch(
+    state: SketchState,
+    height: Dp,
+    vibrateOnTap: Boolean,
+    soundOnTap: Boolean,
+    onPick: (text: String) -> Unit,
+    onClose: () -> Unit,
+) {
+    val ctx = LocalContext.current
+    val ime = ctx as IMEService
+    val view = LocalView.current
+    val feedback = rememberSketchFeedback(vibrateOnTap, soundOnTap)
+    val charset = produceState<Charset?>(null) { value = runCatching { SketchRecognizer.get(ctx).charset }.getOrNull() }.value
+
+    // The keys type into the search field while it's shown
+    val field = remember { KeyboardFieldConnection(view, state.query) { state.query = it } }
+    DisposableEffect(field) {
+        ime.setInputRedirect(field)
+        onDispose { ime.setInputRedirect(null) }
+    }
+
+    val results =
+        remember(state.query, state.tiles, charset) {
+            charset?.let { sketchSearch(state.query, state.tiles, it) }.orEmpty()
+        }
+
+    Column(
+        modifier =
+            Modifier
+                .fillMaxWidth()
+                .background(MaterialTheme.colorScheme.surface),
+    ) {
+        Row(
+            verticalAlignment = Alignment.CenterVertically,
+            modifier =
+                Modifier
+                    .fillMaxWidth()
+                    .background(MaterialTheme.colorScheme.surfaceVariant)
+                    .padding(horizontal = 4.dp),
+        ) {
+            IconButton(onClick = onClose) {
+                Icon(
+                    imageVector = Icons.AutoMirrored.Outlined.ArrowBack,
+                    contentDescription = stringResource(R.string.sketch_back),
+                    tint = MaterialTheme.colorScheme.onSurfaceVariant,
+                )
+            }
+            SearchField(
+                text = state.query,
+                hint = stringResource(R.string.sketch_search_hint),
+                cursor = true,
+                modifier = Modifier.weight(1f),
+            )
+            if (state.query.isNotEmpty()) {
+                IconButton(onClick = { field.clear() }) {
+                    Icon(
+                        imageVector = Icons.Outlined.Close,
+                        contentDescription = stringResource(R.string.sketch_clear_search),
+                        tint = MaterialTheme.colorScheme.onSurfaceVariant,
+                    )
+                }
+            }
+        }
+        LazyColumn(modifier = Modifier.height(height)) {
+            if (charset != null && results.isEmpty()) {
+                item {
+                    Text(
+                        text = stringResource(R.string.sketch_no_matches),
+                        fontSize = 13.sp,
+                        color = MaterialTheme.colorScheme.onSurfaceVariant,
+                        modifier = Modifier.padding(16.dp),
+                    )
+                }
+            }
+            if (charset != null) {
+                items(results) { (rank, codePoint) ->
+                    val tile = state.tiles[rank]
+                    CandidateRow(
+                        rank = rank,
+                        codePoint = codePoint,
+                        charset = charset,
+                        // Only the candidate itself is on a key, not the rest of its group
+                        slot = if (codePoint == tile.representative) sketchSlot(rank) else null,
+                        onPick = {
+                            feedback()
+                            onPick(it)
+                        },
+                    )
+                }
+            }
+        }
+    }
+}
+
+/** A search field's look, with a 🔎: the keyboard's keys, not a system keyboard, type in it. */
+@Composable
+private fun SearchField(
+    text: String,
+    hint: String,
+    modifier: Modifier = Modifier,
+    cursor: Boolean = false,
+) {
+    Row(
+        verticalAlignment = Alignment.CenterVertically,
+        horizontalArrangement = Arrangement.spacedBy(8.dp),
+        modifier =
+            modifier
+                .fillMaxWidth()
+                .padding(horizontal = 8.dp, vertical = 6.dp)
+                .clip(RoundedCornerShape(20.dp))
+                .background(MaterialTheme.colorScheme.surfaceContainerHighest)
+                .heightIn(min = 40.dp)
+                .padding(horizontal = 12.dp),
+    ) {
+        Icon(
+            imageVector = Icons.Outlined.Search,
+            contentDescription = null,
+            tint = MaterialTheme.colorScheme.onSurfaceVariant,
+            modifier = Modifier.size(20.dp),
+        )
+        Row(verticalAlignment = Alignment.CenterVertically) {
+            if (text.isNotEmpty()) {
+                Text(text = text, fontSize = 15.sp, maxLines = 1, color = MaterialTheme.colorScheme.onSurface)
+            }
+            if (cursor) {
+                Box(
+                    modifier =
+                        Modifier
+                            .width(2.dp)
+                            .height(18.dp)
+                            .background(MaterialTheme.colorScheme.primary),
+                )
+            }
+            if (text.isEmpty()) {
+                Text(
+                    text = hint,
+                    fontSize = 14.sp,
+                    maxLines = 1,
+                    overflow = TextOverflow.Ellipsis,
+                    color = MaterialTheme.colorScheme.onSurfaceVariant,
+                    modifier = Modifier.padding(start = 2.dp),
+                )
+            }
+        }
+    }
+}
+
+/** One candidate: rank, character, name, code point and, if it's on a key, where. */
+@Composable
+private fun CandidateRow(
+    rank: Int,
+    codePoint: Int,
+    charset: Charset,
+    slot: Pair<Int, SwipeDirection?>?,
+    onPick: (text: String) -> Unit,
+) {
+    val info = charset.characters.getValue(codePoint)
+    Row(
+        verticalAlignment = Alignment.CenterVertically,
+        horizontalArrangement = Arrangement.spacedBy(6.dp),
+        modifier =
+            Modifier
+                .fillMaxWidth()
+                .heightIn(min = 52.dp)
+                .clickable { onPick(info.text) }
+                .padding(start = 8.dp, end = 10.dp, top = 4.dp, bottom = 4.dp),
+    ) {
+        Text(
+            text = (rank + 1).toString(),
+            fontSize = 11.sp,
+            fontFamily = FontFamily.Monospace,
+            color = MaterialTheme.colorScheme.outline,
+            textAlign = TextAlign.End,
+            modifier = Modifier.width(30.dp),
+        )
+        Text(
+            text = info.displayText,
+            fontSize = 28.sp,
+            lineHeight = 30.sp,
+            color = MaterialTheme.colorScheme.onSurface,
+            textAlign = TextAlign.Center,
+            modifier = Modifier.width(48.dp),
+        )
+        Column(modifier = Modifier.weight(1f)) {
+            Text(
+                text = info.name,
+                fontSize = 12.sp,
+                lineHeight = 15.sp,
+                color = MaterialTheme.colorScheme.onSurface,
+            )
+            Text(
+                text = codePointLabel(codePoint),
+                fontSize = 10.5.sp,
+                fontFamily = FontFamily.Monospace,
+                color = MaterialTheme.colorScheme.onSurfaceVariant,
+            )
+        }
+        slot?.let { (key, direction) ->
+            Text(
+                text = stringResource(R.string.sketch_key_position, key + 1, swipeDirectionArrow(direction)),
+                fontSize = 11.sp,
+                fontWeight = FontWeight.Medium,
+                color = MaterialTheme.colorScheme.primary,
+            )
+        }
+    }
+    HorizontalDivider(thickness = 0.5.dp, color = MaterialTheme.colorScheme.outlineVariant)
+}
+
+/**
+ * The candidates, and members of their look-alike groups, whose name or code point matches
+ * every word of `query`, as (rank, code point) in rank order. A blank query matches every
+ * candidate itself.
+ */
+private fun sketchSearch(
+    query: String,
+    tiles: List<Tile>,
+    charset: Charset,
+): List<Pair<Int, Int>> {
+    val words = query.trim().split(Regex("\\s+")).filter { it.isNotEmpty() }
+    if (words.isEmpty()) return tiles.mapIndexed { rank, tile -> Pair(rank, tile.representative) }
+
+    fun matches(codePoint: Int): Boolean {
+        val name = charset.characters.getValue(codePoint).name
+        val code = "%04X".format(codePoint)
+        return words.all { word ->
+            name.contains(word, ignoreCase = true) ||
+                code.contains(word.removePrefix("U+").removePrefix("u+"), ignoreCase = true)
+        }
+    }
+
+    return tiles.flatMapIndexed { rank, tile -> tile.members.filter(::matches).map { Pair(rank, it) } }
 }
 
 private fun codePointLabel(codePoint: Int) = "U+%04X".format(codePoint)

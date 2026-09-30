@@ -138,6 +138,14 @@ fun KeyboardScreen(
         mutableStateOf(false)
     }
 
+    // Sketch mode's drawing and candidates, kept while its search uses the letter keys
+    val sketch = remember { SketchState() }
+    LaunchedEffect(mode) {
+        if (mode == KeyboardMode.SKETCH || mode == KeyboardMode.EMOJI || mode == KeyboardMode.CLIPBOARD) {
+            sketch.searching = false
+        }
+    }
+
     // TODO get rid of this crap
     val lastAction = remember { mutableStateOf<Pair<KeyAction, TimeMark>?>(null) }
 
@@ -818,6 +826,7 @@ fun KeyboardScreen(
                         ),
             ) {
                 SketchScreen(
+                    state = sketch,
                     layoutName = layout.name,
                     rowCount = rowCount,
                     keyWidth = keyWidth,
@@ -831,7 +840,11 @@ fun KeyboardScreen(
                         // Straight to the text field: the layout's text processor and
                         // auto-capitalization don't apply to a drawn character.
                         ctx.ignoreNextCursorMove()
-                        ctx.currentInputConnection.commitText(text, 1)
+                        ctx.appInputConnection.commitText(text, 1)
+                    },
+                    onSearch = {
+                        sketch.searching = true
+                        mode = KeyboardMode.MAIN
                     },
                 ) { key, onSketchAction ->
                     KeyboardKey(
@@ -1125,9 +1138,39 @@ fun KeyboardScreen(
             }
         }
 
-        drawKeyboard(keyboardPositionToAlignment(position), backdropEnabled, positionPadding)
-        if (position == KeyboardPosition.Dual) {
-            drawKeyboard(keyboardPositionToAlignment(KeyboardPosition.Right), false, positionPadding)
+        val drawKeyboards = @Composable {
+            drawKeyboard(keyboardPositionToAlignment(position), backdropEnabled, positionPadding)
+            if (position == KeyboardPosition.Dual) {
+                drawKeyboard(keyboardPositionToAlignment(KeyboardPosition.Right), false, positionPadding)
+            }
+        }
+
+        if (sketch.searching) {
+            // Sketch mode's search, typed with the layout's keys below it
+            Column {
+                SketchSearch(
+                    state = sketch,
+                    height = Dp(keyHeight * 2),
+                    vibrateOnTap = vibrateOnTap,
+                    soundOnTap = soundOnTap,
+                    onPick = { text ->
+                        // Stop typing into the search first, so the character goes to the app
+                        sketch.searching = false
+                        sketch.showList = false
+                        ctx.setInputRedirect(null)
+                        ctx.ignoreNextCursorMove()
+                        ctx.appInputConnection.commitText(text, 1)
+                        mode = KeyboardMode.SKETCH
+                    },
+                    onClose = {
+                        sketch.searching = false
+                        mode = KeyboardMode.SKETCH
+                    },
+                )
+                Box { drawKeyboards() }
+            }
+        } else {
+            drawKeyboards()
         }
     }
 }
