@@ -463,7 +463,7 @@ In some Android devices such as _samsung_ devices, it is also automatically retr
 
 Draw a character with your finger to type it: symbols, accented letters, and letters of other scripts that aren't on your keyboard. Recognition runs entirely on your phone, and nothing you draw leaves it.
 
-<!-- VIDEO: insert the sketch mode demonstration video here -->
+https://github.com/user-attachments/assets/1d702012-37f5-4b30-8811-3ee9aaf301b7
 
 - **Swipe to bottom-right** on the emoji key to open sketch mode.
 - Draw a character on the pad. After each stroke, the three keys below it fill with candidate characters.
