@@ -349,6 +349,7 @@ This swaps the 'switch language' and 'toggle emoji' actions on the top-right key
 - `ToggleABCMode`
 - `ToggleEmojiMode`
 - `ToggleClipboardMode`
+- `ToggleSketchMode`
 - `ToggleCapsLock`
 - `ToggleShiftModeTrue`
 - `ToggleShiftModeFalse`
