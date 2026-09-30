@@ -465,15 +465,12 @@ Draw a character with your finger to type it: symbols, accented letters, and let
 
 <!-- VIDEO: insert the sketch mode demonstration video here -->
 
-- **Swipe to bottom-right** on the emoji key to open sketch mode. Tap `abc` to go back to your keyboard.
-- Draw a character on the pad. After each stroke, the three keys below it fill with candidates.
-- **Tap** a key to type its center candidate. The best candidate is on the key nearest your thumb: the right one, or the left one on layouts with `Left` in their name.
-- **Swipe** a key to a side or a corner for more candidates, 27 in all.
+- **Swipe to bottom-right** on the emoji key to open sketch mode.
+- Draw a character on the pad. After each stroke, the three keys below it fill with candidate characters.
+- **Tap** a key to type its center candidate, or _swipe_ for the radial characters.
 - **Long press** a key, or **swipe-return** on it, to see the characters that look like it, such as Latin `A`, Greek `Α` and Cyrillic `А`.
-- The undo key: **tap** to undo the last stroke, **swipe down** to clear the pad, and **swipe up** for a list of the 100 best candidates, with their names and code points. Search the list by name or code point, such as `acute` or `U+00E9`, typing with your own keyboard.
-- Your drawing stays on the pad after you type, so you can pick another candidate.
-- Draw an accent alone to type a combining mark, which joins the letter before the cursor. Candidates show it on a dotted circle, as in `◌́`.
-- Only characters your phone's fonts can show are suggested. Chinese, Japanese and Korean characters aren't recognized.
+- The undo key: **tap** to undo the last stroke, **swipe down** to clear the pad, and **swipe up** for a list of the 100 best candidate characters, with their names and code points. Search the list by name or code point.
+- Only characters your phone's fonts can show are suggested. Chinese, Japanese and Korean characters are currently not supported.
 - To put sketch mode on another key, use the `ToggleSketchMode` key action in [Modify keys](#modify-keys).
 
 Handwriting recognition is powered by [glyphsketch](https://github.com/Toldry/glyphsketch).
