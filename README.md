@@ -59,6 +59,7 @@
   - [Clipboard](#clipboard)
     - [Clipboard history](#clipboard-history)
     - [Private clipboard](#private-clipboard)
+  - [Sketch mode](#sketch-mode)
   - [Other](#other)
 - [Thumb-Key Design](#thumb-key-design)
   - [A History of Phone Keyboards](#a-history-of-phone-keyboards)
@@ -114,6 +115,7 @@ This project is a follow-up to the now unmaintained (and closed-source) [MessagE
 - **Swipe right** to change keyboard position.
 - **Swipe down** to access IME switcher (switch between Thumb-key and other keyboards).
 - **Swipe left** to cycle between selected layouts (languages).
+- **Swipe to bottom-right** to open [sketch mode](#sketch-mode) and draw a character.
 - **Swipe to bottom-left** to toggle voice input. Requires [FUTO Voice Input](https://play.google.com/store/apps/details?id=org.futo.voiceinput), [Transcribro](https://github.com/soupslurpr/Transcribro), or [Whisper IME](https://github.com/woheller69/whisperIME).
 
 ### Symbols / Letters Key
@@ -456,6 +458,25 @@ Note that using cut/copy/paste controls from outside the keyboard will use the s
 
 This ensures more privacy, as data added to the system clipboard can actually be accessed by any app.
 In some Android devices such as _samsung_ devices, it is also automatically retrieved and stored by a proprietary application, without any option to disable it.
+
+### Sketch mode
+
+Draw a character with your finger to type it: symbols, accented letters, and letters of other scripts that aren't on your keyboard. Recognition runs entirely on your phone, and nothing you draw leaves it.
+
+<!-- VIDEO: insert the sketch mode demonstration video here -->
+
+- **Swipe to bottom-right** on the emoji key to open sketch mode. Tap `abc` to go back to your keyboard.
+- Draw a character on the pad. After each stroke, the three keys below it fill with candidates.
+- **Tap** a key to type its center candidate. The best candidate is on the key nearest your thumb: the right one, or the left one on layouts with `Left` in their name.
+- **Swipe** a key to a side or a corner for more candidates, 27 in all.
+- **Long press** a key, or **swipe-return** on it, to see the characters that look like it, such as Latin `A`, Greek `Α` and Cyrillic `А`.
+- The undo key: **tap** to undo the last stroke, **swipe down** to clear the pad, and **swipe up** for a list of the 100 best candidates, with their names and code points. Search the list by name or code point, such as `acute` or `U+00E9`, typing with your own keyboard.
+- Your drawing stays on the pad after you type, so you can pick another candidate.
+- Draw an accent alone to type a combining mark, which joins the letter before the cursor. Candidates show it on a dotted circle, as in `◌́`.
+- Only characters your phone's fonts can show are suggested. Chinese, Japanese and Korean characters aren't recognized.
+- To put sketch mode on another key, use the `ToggleSketchMode` key action in [Modify keys](#modify-keys).
+
+Handwriting recognition is powered by [glyphsketch](https://github.com/Toldry/glyphsketch).
 
 ### Other
 
