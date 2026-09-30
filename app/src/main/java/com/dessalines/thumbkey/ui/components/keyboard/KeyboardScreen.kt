@@ -777,6 +777,120 @@ fun KeyboardScreen(
                 )
             }
         }
+    } else if (mode == KeyboardMode.SKETCH) {
+        val rowCount = keyboardDefinition.modes.main.arr.size
+
+        Box(
+            modifier =
+                Modifier
+                    .then(
+                        if (backdropEnabled) {
+                            Modifier.background(backdropColor)
+                        } else {
+                            Modifier
+                        },
+                    ),
+        ) {
+            // adds a pretty line if you're using the backdrop
+            if (backdropEnabled) {
+                Box(
+                    modifier =
+                        Modifier
+                            .align(Alignment.TopCenter)
+                            .fillMaxWidth()
+                            .height(1.dp)
+                            .background(color = MaterialTheme.colorScheme.surfaceVariant),
+                )
+            }
+            Box(
+                contentAlignment = keyboardPositionToAlignment(position),
+                modifier =
+                    Modifier
+                        .then(if (!ignoreBottomPadding) Modifier.safeDrawingPadding() else Modifier)
+                        .padding(bottom = pushupSizeDp)
+                        .fillMaxWidth()
+                        .then(
+                            if (backdropEnabled) {
+                                Modifier.padding(top = backdropPadding)
+                            } else {
+                                Modifier
+                            },
+                        ),
+            ) {
+                SketchScreen(
+                    layoutName = layout.name,
+                    rowCount = rowCount,
+                    keyWidth = keyWidth,
+                    keyHeight = keyHeight,
+                    keyPadding = keyPadding,
+                    keyBorderWidth = keyBorderWidthFloat,
+                    cornerRadius = cornerRadius,
+                    vibrateOnTap = vibrateOnTap,
+                    soundOnTap = soundOnTap,
+                    onCommit = { text ->
+                        // Straight to the text field: the layout's text processor and
+                        // auto-capitalization don't apply to a drawn character.
+                        ctx.ignoreNextCursorMove()
+                        ctx.currentInputConnection.commitText(text, 1)
+                    },
+                ) { key, onSketchAction ->
+                    KeyboardKey(
+                        key = key,
+                        lastAction = lastAction,
+                        legendHeight = legendHeight,
+                        legendWidth = legendWidth,
+                        keyHeight = keyHeight,
+                        keyWidth = keyWidth,
+                        keyPadding = keyPadding,
+                        keyBorderWidth = keyBorderWidthFloat,
+                        keyRadius = cornerRadius,
+                        autoCapitalize = autoCapitalize,
+                        keyboardSettings = keyboardDefinition.settings,
+                        spacebarMultiTaps = spacebarMultiTaps,
+                        vibrateOnTap = vibrateOnTap,
+                        vibrateOnSlide = vibrateOnSlide,
+                        soundOnTap = soundOnTap,
+                        // Candidates are always shown
+                        hideLetters = false,
+                        hideSymbols = false,
+                        capsLock = false,
+                        animationSpeed = settings?.animationSpeed ?: DEFAULT_ANIMATION_SPEED,
+                        animationHelperSpeed = settings?.animationHelperSpeed ?: DEFAULT_ANIMATION_HELPER_SPEED,
+                        minSwipeLength = settings?.minSwipeLength ?: DEFAULT_MIN_SWIPE_LENGTH,
+                        slideSensitivity = settings?.slideSensitivity ?: DEFAULT_SLIDE_SENSITIVITY,
+                        slideEnabled = slideEnabled,
+                        slideCursorMovementMode = slideCursorMovementMode,
+                        slideSpacebarDeadzoneEnabled = slideSpacebarDeadzoneEnabled,
+                        slideBackspaceDeadzoneEnabled = slideBackspaceDeadzoneEnabled,
+                        onToggleShiftMode = {},
+                        onToggleCtrlMode = {},
+                        onToggleAltMode = {},
+                        onToggleNumericMode = {},
+                        onToggleEmojiMode = {},
+                        onToggleClipboardMode = {},
+                        onToggleSketchMode = { enable ->
+                            if (!enable) mode = KeyboardMode.MAIN
+                        },
+                        onToggleCapsLock = {},
+                        onToggleHideLetters = onToggleHideLetters,
+                        // Stay in sketch mode after typing a space
+                        onAutoCapitalize = {},
+                        onSwitchLanguage = {
+                            onSwitchLanguage()
+                            mode = KeyboardMode.MAIN
+                        },
+                        onChangePosition = onChangePosition,
+                        onKeyEvent = {},
+                        dragReturnEnabled = dragReturnEnabled,
+                        circularDragEnabled = circularDragEnabled,
+                        clockwiseDragAction = clockwiseDragAction,
+                        counterclockwiseDragAction = counterclockwiseDragAction,
+                        slideHoldEnabled = slideHoldEnabled,
+                        onSketchAction = onSketchAction,
+                    )
+                }
+            }
+        }
     } else {
         // NOTE, this should use or CURSOR_UPDATE_FILTER_INSERTION_MARKER , but it doesn't work on
         // non-compose textfields.

@@ -148,4 +148,13 @@
     <string name="other">Other</string>
     <string name="show_on_screen_keyboard">Show on-screen keyboard</string>
     <string name="show_on_screen_keyboard_description">Show on-screen keyboard while using physical keyboard</string>
+    <string name="sketch_hint">Draw a character. Tap or swipe a key below to type. Hold, or swipe out and back, for look-alikes.</string>
+    <string name="sketch_loading">Loading handwriting recognition…</string>
+    <string name="sketch_load_failed">Couldn\'t load handwriting recognition</string>
+    <string name="sketch_look_alikes">Look-alikes</string>
+    <string name="sketch_close">Close</string>
+    <string name="sketch_back">Back</string>
+    <string name="sketch_all_candidates">All candidates · %1$d</string>
+    <string name="sketch_draw_first">Draw first to rank candidates</string>
+    <string name="sketch_key_position">key %1$d %2$s</string>
 </resources>
