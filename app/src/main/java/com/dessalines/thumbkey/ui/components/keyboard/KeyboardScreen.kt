@@ -141,8 +141,11 @@ fun KeyboardScreen(
     // Sketch mode's drawing and candidates, kept while its search uses the letter keys
     val sketch = remember { SketchState() }
     LaunchedEffect(mode) {
-        if (mode == KeyboardMode.SKETCH || mode == KeyboardMode.EMOJI || mode == KeyboardMode.CLIPBOARD) {
+        val typingSearch = sketch.searching && mode != KeyboardMode.EMOJI && mode != KeyboardMode.CLIPBOARD
+        // Coming back to sketch mode shows the pad, unless the search is being typed
+        if (mode != KeyboardMode.SKETCH && !typingSearch) {
             sketch.searching = false
+            sketch.list = null
         }
     }
 
@@ -423,12 +426,15 @@ fun KeyboardScreen(
                                             }
                                     },
                                     onToggleSketchMode = { enable ->
-                                        mode =
-                                            if (enable) {
-                                                KeyboardMode.SKETCH
-                                            } else {
-                                                KeyboardMode.MAIN
-                                            }
+                                        // Not while typing sketch mode's own search
+                                        if (!sketch.searching) {
+                                            mode =
+                                                if (enable) {
+                                                    KeyboardMode.SKETCH
+                                                } else {
+                                                    KeyboardMode.MAIN
+                                                }
+                                        }
                                     },
                                     onToggleCapsLock = {
                                         capsLock = !capsLock
@@ -627,12 +633,15 @@ fun KeyboardScreen(
                                             }
                                     },
                                     onToggleSketchMode = { enable ->
-                                        mode =
-                                            if (enable) {
-                                                KeyboardMode.SKETCH
-                                            } else {
-                                                KeyboardMode.MAIN
-                                            }
+                                        // Not while typing sketch mode's own search
+                                        if (!sketch.searching) {
+                                            mode =
+                                                if (enable) {
+                                                    KeyboardMode.SKETCH
+                                                } else {
+                                                    KeyboardMode.MAIN
+                                                }
+                                        }
                                     },
                                     onToggleCapsLock = {
                                         capsLock = !capsLock
@@ -829,6 +838,7 @@ fun KeyboardScreen(
                     state = sketch,
                     layoutName = layout.name,
                     rowCount = rowCount,
+                    leftHanded = position == KeyboardPosition.Left,
                     keyWidth = keyWidth,
                     keyHeight = keyHeight,
                     keyPadding = keyPadding,
@@ -1054,12 +1064,15 @@ fun KeyboardScreen(
                                                 }
                                         },
                                         onToggleSketchMode = { enable ->
-                                            mode =
-                                                if (enable) {
-                                                    KeyboardMode.SKETCH
-                                                } else {
-                                                    KeyboardMode.MAIN
-                                                }
+                                            // Not while typing sketch mode's own search
+                                            if (!sketch.searching) {
+                                                mode =
+                                                    if (enable) {
+                                                        KeyboardMode.SKETCH
+                                                    } else {
+                                                        KeyboardMode.MAIN
+                                                    }
+                                            }
                                         },
                                         onToggleCapsLock = {
                                             capsLock = !capsLock
@@ -1156,7 +1169,7 @@ fun KeyboardScreen(
                     onPick = { text ->
                         // Stop typing into the search first, so the character goes to the app
                         sketch.searching = false
-                        sketch.showList = false
+                        sketch.list = null
                         ctx.setInputRedirect(null)
                         ctx.ignoreNextCursorMove()
                         ctx.appInputConnection.commitText(text, 1)

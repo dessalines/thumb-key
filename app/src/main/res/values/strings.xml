@@ -151,13 +151,11 @@
     <string name="sketch_hint">Draw a character. Tap or swipe a key below to type. Hold, or swipe-return, for look-alikes.</string>
     <string name="sketch_loading">Loading handwriting recognition…</string>
     <string name="sketch_load_failed">Couldn\'t load handwriting recognition</string>
-    <string name="sketch_look_alikes">Look-alikes</string>
-    <string name="sketch_close">Close</string>
+    <string name="sketch_look_alikes">Look-alikes of %1$s · %2$d</string>
     <string name="sketch_back">Back</string>
     <string name="sketch_all_candidates">All candidates · %1$d</string>
-    <string name="sketch_draw_first">Draw first to rank candidates</string>
     <string name="sketch_key_position">key %1$d %2$s</string>
-    <string name="sketch_search_hint">Search names and code points</string>
+    <string name="sketch_search_hint">Search</string>
     <string name="sketch_clear_search">Clear search</string>
     <string name="sketch_no_matches">No candidates match</string>
     <string name="handwriting_recognition">Handwriting recognition</string>
