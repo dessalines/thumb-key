@@ -119,8 +119,9 @@ sealed interface SketchList {
 }
 
 /**
- * What sketch mode shows. KeyboardScreen keeps it, so the drawing stays while a list's search
- * borrows the letter keys, and when sketch mode is left and opened again.
+ * What sketch mode shows. IMEService keeps it, so the drawing stays while a list's search
+ * borrows the letter keys, when sketch mode is left and opened again, and when the keyboard
+ * is closed and opened again.
  */
 @Stable
 class SketchState {

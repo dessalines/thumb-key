@@ -18,6 +18,7 @@ import com.dessalines.thumbkey.db.DEFAULT_CLIPBOARD_HISTORY_ENABLED
 import com.dessalines.thumbkey.db.DEFAULT_DISABLE_FULLSCREEN_EDITOR
 import com.dessalines.thumbkey.db.DEFAULT_SHOW_ON_SCREEN_KEYBOARD
 import com.dessalines.thumbkey.db.DEFAULT_USE_PRIVATE_CLIPBOARD
+import com.dessalines.thumbkey.ui.components.keyboard.SketchState
 import com.dessalines.thumbkey.utils.KeyboardDefinition
 import com.dessalines.thumbkey.utils.KeyboardLayout
 import com.dessalines.thumbkey.utils.TAG
@@ -54,6 +55,9 @@ class IMEService :
     }
 
     var currentKeyboardDefinition: KeyboardDefinition? = null
+
+    // Sketch mode's drawing, kept while the keyboard is closed and opened again
+    val sketchState = SketchState()
     private var clipboardManager: ThumbKeyClipboardManager? = null
 
     /**
@@ -66,6 +70,10 @@ class IMEService :
     ) {
         super.onStartInput(attribute, restarting)
         setInputRedirect(null)
+        // A new keyboard opens on the letters: close sketch mode's search and lists, but keep
+        // its drawing
+        sketchState.searching = false
+        sketchState.list = null
         val view = this.setupView()
         this.setInputView(view)
     }
