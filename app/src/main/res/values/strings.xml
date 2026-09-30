@@ -157,4 +157,6 @@
     <string name="sketch_all_candidates">All candidates · %1$d</string>
     <string name="sketch_draw_first">Draw first to rank candidates</string>
     <string name="sketch_key_position">key %1$d %2$s</string>
+    <string name="handwriting_recognition">Handwriting recognition</string>
+    <string name="handwriting_recognition_summary">Sketch mode recognizes characters with glyphsketch, on the device.</string>
 </resources>
