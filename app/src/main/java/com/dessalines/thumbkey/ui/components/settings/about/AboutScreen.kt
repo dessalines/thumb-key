@@ -50,7 +50,6 @@ const val MATRIX_CHAT_URL = "https://matrix.to/#/#thumbkey-dev:matrix.org"
 const val DONATE_URL = "https://liberapay.com/dessalines"
 const val LEMMY_URL = "https://lemmy.ml/c/thumbkey"
 const val MASTODON_URL = "https://mastodon.social/@dessalines"
-const val GLYPHSKETCH_URL = "https://github.com/Toldry/glyphsketch"
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
@@ -200,9 +199,6 @@ fun AboutScreen(navController: NavController) {
                                 imageVector = Icons.Outlined.Draw,
                                 contentDescription = stringResource(R.string.handwriting_recognition),
                             )
-                        },
-                        onClick = {
-                            openLink(GLYPHSKETCH_URL, ctx)
                         },
                     )
                 }
