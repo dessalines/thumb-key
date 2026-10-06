@@ -143,4 +143,8 @@
     <string name="show_on_screen_keyboard">Afficher le clavier virtuel</string>
     <string name="show_on_screen_keyboard_description">Afficher le clavier virtuel lors de l\'utilisation du clavier pysique</string>
     <string name="database_operation_failed">Échec de l\'opération : %1$s</string>
+    <string name="neon" translatable="false"></string>
+    <string name="switch_to_letters_after_space_description"></string>
+    <string name="switch_to_letters_after_space"></string>
+    <string name="app_name" translatable="false"></string>
 </resources>
