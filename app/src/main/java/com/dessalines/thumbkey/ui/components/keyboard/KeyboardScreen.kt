@@ -92,6 +92,7 @@ import com.dessalines.thumbkey.utils.getKeyboardMode
 import com.dessalines.thumbkey.utils.getModifiedKeyboardDefinition
 import com.dessalines.thumbkey.utils.isLeftHandedLayout
 import com.dessalines.thumbkey.utils.keyboardPositionToAlignment
+import com.dessalines.thumbkey.utils.resolveKeyboardDefinition
 import com.dessalines.thumbkey.utils.toBool
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
@@ -117,13 +118,7 @@ fun KeyboardScreen(
         ]
 
     val keyMods = settings?.keyModifications
-    val keyboardDefinition =
-        if (!keyMods.isNullOrEmpty()) {
-            getModifiedKeyboardDefinition(layout, keyMods)
-                ?: layout.keyboardDefinition
-        } else {
-            layout.keyboardDefinition
-        }
+    val keyboardDefinition = resolveKeyboardDefinition(layout, keyMods)
 
     var mode by remember {
         val startMode =

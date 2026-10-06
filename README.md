@@ -28,7 +28,6 @@
   <p align="center">
     <a href="https://apt.izzysoft.de/fdroid/index/apk/com.dessalines.thumbkey"><img src="https://gitlab.com/IzzyOnDroid/repo/-/raw/master/assets/IzzyOnDroid.png" alt="Get it on IzzyOnDroid" height="80"></a>
     <a href="https://f-droid.org/packages/com.dessalines.thumbkey"><img src="https://fdroid.gitlab.io/artwork/badge/get-it-on.png" alt="Get it on F-Droid" height="80"></a>
-    <a href="https://play.google.com/store/apps/details?id=com.dessalines.thumbkey"><img src="https://cdn.rawgit.com/steverichey/google-play-badge-svg/master/img/en_get.svg" alt="Get it on the Google play store" height="80"></a>
     <a href="https://github.com/dessalines/thumb-key/releases/latest"><img src="https://raw.githubusercontent.com/andOTP/andOTP/master/assets/badges/get-it-on-github.png" alt="Get it on Github" height="80"></a>
   </p>
 </p>
@@ -381,9 +380,12 @@ This swaps the 'switch language' and 'toggle emoji' actions on the top-right key
 - `SwitchIME`
 - `SwitchIMEVoice`
 - `HideKeyboard`
+- `StartComposeCombo` # The compose key. See [Compose combo](#compose-combo).
 - `Noop` # No operation. Does nothing.
 
 `keyAction` and `text` cannot be used together.
+
+`StartComposeCombo` works on any layout except the Korean ones, which already process their own input.
 
 #### Example 4
 
@@ -525,7 +527,6 @@ MessagEase is unfortunately unmaintained, and Thumb-Key uses a better alternatin
 - [Releases](https://github.com/dessalines/thumb-key/releases)
 - [IzzyOnDroid](https://apt.izzysoft.de/fdroid/index/apk/com.dessalines.thumbkey)
 - [F-Droid](https://f-droid.org/en/packages/com.dessalines.thumbkey/)
-- [Google Play](https://play.google.com/store/apps/details?id=com.dessalines.thumbkey)
 
 ### Verifying Fingerprints
 

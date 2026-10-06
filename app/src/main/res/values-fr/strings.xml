@@ -38,16 +38,16 @@
     <string name="theme">Thème</string>
     <string name="theme_color">Couleur du thème</string>
     <string name="position">Position</string>
-    <string name="position_padding">Décalage ajouté à la position : %1$s</string>
+    <string name="position_padding">Décalage ajouté à la position : %1$s</string>
     <string name="vibrate_on_tap">Vibration au toucher</string>
     <string name="vibrate_warning">Nécessite d’activer Vibrer à l’appui dans les paramètres du téléphone</string>
     <string name="play_sound_on_tap">Son au toucher</string>
     <string name="auto_capitalize">Majuscule automatique</string>
-    <string name="key_size">Taille des touches : %1$s</string>
+    <string name="key_size">Taille des touches : %1$s</string>
     <string name="key_non_square">Touches non carrées</string>
     <string name="key_height">Hauteur des touches : %1$s</string>
     <string name="key_width">Largeur des touches : %1$s</string>
-    <string name="bottom_offset">Décalage inférieur : %1$s</string>
+    <string name="bottom_offset">Décalage inférieur : %1$s</string>
     <string name="min_swipe_length">Longueur minimale du balayage : %1$s</string>
     <string name="animation_speed">Vitesse de l’animation : %1$s</string>
     <string name="animation_helper_speed">Vitesse de l’animation d’aide : %1$s</string>
@@ -119,7 +119,7 @@
     <string name="duration_7_days">7 jours</string>
     <string name="clipboard_size_limit">Taille de l\'historique</string>
     <string name="clipboard_size_limit_description">Supprimer les enregistrements les plus vieux lorsque la limite est atteinte</string>
-    <string name="clipboard_max_size">Taille max de l\'historique : %1$d</string>
+    <string name="clipboard_max_size">Taille max de l\'historique : %1$d</string>
     <string name="clipboard_clear_all">Tout effacer</string>
     <string name="clipboard_back">Retour</string>
     <string name="clipboard_pin">Épingler</string>
@@ -134,7 +134,7 @@
     <string name="vibrate_on_slide">Vibration lors des gestes de glissement</string>
     <string name="vibrate_slide_note">S\'applique lors des balayages sur la touche espace ou retour</string>
     <string name="slide_hold_enable">Mouvements du curseur glissé-maintenu</string>
-    <string name="slide_hold_description">Glissez et maintenez pour répéter le mouvement du curseur, glissez, maintenez et retournez pour un mouvement d\'un mot. Effacer : glissez et maintenz pour répéter \"effacer\", glissez, maintenez et retournez pour supprimer un mot.</string>
+    <string name="slide_hold_description">Glissez et maintenez pour répéter le mouvement du curseur, glissez, maintenez et retournez pour un mouvement d\'un mot. Effacer : glissez et maintenz pour répéter \"effacer\", glissez, maintenez et retournez pour supprimer un mot.</string>
     <string name="show_toast_on_layout_switch">Afficher un toast lorque vous changez de disposition</string>
     <string name="disable_fullscreen_editor">Désactiver le plein écran de l\'éditeur de texte</string>
     <string name="use_private_clipboard">Utiliser le presse papier privé</string>
@@ -142,5 +142,5 @@
     <string name="other">Autre</string>
     <string name="show_on_screen_keyboard">Afficher le clavier virtuel</string>
     <string name="show_on_screen_keyboard_description">Afficher le clavier virtuel lors de l\'utilisation du clavier pysique</string>
-    <string name="database_operation_failed">Échec de l\'opération : %1$s</string>
+    <string name="database_operation_failed">Échec de l\'opération : %1$s</string>
 </resources>

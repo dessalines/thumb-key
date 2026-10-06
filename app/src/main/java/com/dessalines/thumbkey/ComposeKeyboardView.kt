@@ -18,6 +18,7 @@ import com.dessalines.thumbkey.ui.components.keyboard.KeyboardScreen
 import com.dessalines.thumbkey.ui.theme.ThumbkeyTheme
 import com.dessalines.thumbkey.utils.KeyboardPosition
 import com.dessalines.thumbkey.utils.keyboardLayoutsSetFromDbIndexString
+import com.dessalines.thumbkey.utils.resolveKeyboardDefinition
 import com.dessalines.thumbkey.utils.toBool
 import com.dessalines.thumbkey.utils.toInt
 import kotlinx.coroutines.launch
@@ -61,7 +62,7 @@ class ComposeKeyboardView(
                                         ?.settings
                                         ?.textProcessor
                                         ?.handleFinishInput(ctx)
-                                    ctx.currentKeyboardDefinition = (layouts[nextIndex].keyboardDefinition)
+                                    ctx.currentKeyboardDefinition = resolveKeyboardDefinition(layout, s.keyModifications)
                                     ctx.currentKeyboardDefinition
                                         ?.settings
                                         ?.textProcessor
