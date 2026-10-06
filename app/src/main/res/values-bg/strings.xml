@@ -145,4 +145,6 @@
     <string name="slide_hold_enable">Движение на курсора с плъзгане и задържане</string>
     <string name="slide_hold_description">Плъзнете и задръжте за повтарящо се движение на курсора, плъзнете-върнете-задръжте за движение по думи. Изтриване: плъзнете и задръжте за повтарящо се изтриване, плъзнете-върнете-задръжте за изтриване по думи.</string>
     <string name="database_operation_failed">Неуспешна операция: %1$s</string>
+    <string name="neon" translatable="false"></string>
+    <string name="app_name" translatable="false"></string>
 </resources>
