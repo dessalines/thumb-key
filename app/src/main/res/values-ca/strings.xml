@@ -40,4 +40,5 @@
     <string name="key_non_square">Utilitzar tecles no quadrades</string>
     <string name="key_height">Alçada de la tecla: %1$s</string>
     <string name="key_width">Amplada de la tecla: %1$s</string>
+    <string name="app_name" translatable="false"></string>
 </resources>
