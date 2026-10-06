@@ -142,4 +142,9 @@
     <string name="clipboard_max_size">Ment vrasañ ar roll istor: %1$d</string>
     <string name="use_private_clipboard_description">Eilañ er golver prevez e-lec\'h hini ar reizhiad</string>
     <string name="show_on_screen_keyboard_description">Diskouez ar c\'hlavier galloudel pa vez arveret ar c\'hlavier alvezel</string>
+    <string name="neon" translatable="false"></string>
+    <string name="slide_hold_description"></string>
+    <string name="switch_to_letters_after_space_description"></string>
+    <string name="slide_hold_enable"></string>
+    <string name="app_name" translatable="false"></string>
 </resources>
