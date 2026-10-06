@@ -143,4 +143,8 @@
     <string name="clipboard_auto_cleanup_description">Alte nicht angeheftete Einträge automatisch löschen</string>
     <string name="clipboard_size_limit">Verlaufsgröße begrenzen</string>
     <string name="warning_invalid_mode">Kein Modus \"%s\" bei Tastatur \"%s\".</string>
+    <string name="neon" translatable="false"></string>
+    <string name="switch_to_letters_after_space_description"></string>
+    <string name="switch_to_letters_after_space"></string>
+    <string name="app_name" translatable="false"></string>
 </resources>
