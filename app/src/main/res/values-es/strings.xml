@@ -145,4 +145,6 @@
     <string name="slide_hold_enable">Movimiento de deslizar y mantener pulsado el cursor</string>
     <string name="position_padding">Relleno de posición: %1$s</string>
     <string name="slide_hold_description">Deslizar y mantener presionado para repetir el movimiento del cursor, deslizar-volver-mantener para el movimiento de palabra. Retroceso: deslizar-mantener para repetir eliminar, deslizar-volver-mantener para eliminar palabras.</string>
+    <string name="neon" translatable="false"></string>
+    <string name="app_name" translatable="false"></string>
 </resources>
