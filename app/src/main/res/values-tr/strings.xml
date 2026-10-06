@@ -97,4 +97,5 @@
     <string name="modify_keys">Tuşları değiştir</string>
     <string name="key_modification_placeholder">YAML\'ı girin</string>
     <string name="how_to_modify_keys">Tuşları nasıl değiştirilir</string>
+    <string name="app_name" translatable="false"></string>
 </resources>
