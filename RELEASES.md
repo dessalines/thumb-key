@@ -1,3 +1,15 @@
+## What's Changed in 5.1.18
+
+- Add sketch mode by @Toldry in [#2023](https://github.com/dessalines/thumb-key/pull/2023)
+- Add search and pinned selection to the layouts dialog by @Toldry in [#2020](https://github.com/dessalines/thumb-key/pull/2020)
+- Allow StartComposeCombo in key modifications by @sarefo in [#2021](https://github.com/dessalines/thumb-key/pull/2021)
+- Fix compose sequence committed twice when the keyboard hides by @sarefo in [#2022](https://github.com/dessalines/thumb-key/pull/2022)
+- Removing google play links. by @dessalines
+- Enable CapsLock feature on TR Arti + RU Arti layouts by @alerque in [#2013](https://github.com/dessalines/thumb-key/pull/2013)
+- Add the english messagease compose combo layout by @sarefo in [#1999](https://github.com/dessalines/thumb-key/pull/1999)
+
+**Full Changelog**: https://github.com/dessalines/thumb-key/compare/5.1.17...5.1.18
+
 ## What's Changed in 5.1.17
 
 - added a font size between SMALL and LARGE named MEDIUM by @LaraSQP in [#1989](https://github.com/dessalines/thumb-key/pull/1989)
@@ -2042,11 +2054,11 @@
 - Create ThumbKeyJAv1Katakana.kt by @K0baU
 - Update ThumbKeyJAv1Hiragana.kt by @K0baU
 - Update ThumbKeyJAv1Hiragana.kt by @K0baU
-- Update ThumbKeyJAv1Hiragana.kt by @K0baU
-- Update ThumbKeyJAv1Hiragana.kt by @K0baU
-- Update ThumbKeyJAv1Hiragana.kt by @K0baU
-- Rename ThumbKeyJAv1.kt to ThumbKeyJAv1Hiragana.kt by @K0baU
-- Create ThumbKeyJAv1.kt by @K0baU
+- Update ThumbKeyJAv1Hiragana.kt
+- Update ThumbKeyJAv1Hiragana.kt
+- Update ThumbKeyJAv1Hiragana.kt
+- Rename ThumbKeyJAv1.kt to ThumbKeyJAv1Hiragana.kt
+- Create ThumbKeyJAv1.kt
 - French keymap by @dessalines in [#257](https://github.com/dessalines/thumb-key/pull/257)
 - T symbol fix by @dessalines in [#266](https://github.com/dessalines/thumb-key/pull/266)
 - Merge branch 'main' into T_symbol_fix by @dessalines
