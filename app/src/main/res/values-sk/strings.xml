@@ -82,4 +82,5 @@
     <string name="reset_to_defaults_confirm">Obnoviť</string>
     <string name="hide_symbols">Skryť symboly</string>
     <string name="counterclockwise_drag_action">Akcia pri potiahnutí do protismeru hodinových ručičiek</string>
+    <string name="app_name" translatable="false"></string>
 </resources>
