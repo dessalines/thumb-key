@@ -145,6 +145,4 @@
     <string name="other">Ostatní</string>
     <string name="show_on_screen_keyboard">Ukázat klávesnici na obrazovce</string>
     <string name="show_on_screen_keyboard_description">Ukázat klávesnici na obrazovce i při používání fyzické klávesnice</string>
-    <string name="neon" translatable="false"></string>
-    <string name="app_name" translatable="false"></string>
 </resources>
