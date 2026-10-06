@@ -103,4 +103,5 @@
     <string name="vibrate_on_slide">الاهتزاز لإيماءات الانزلاق</string>
     <string name="vibrate_slide_note">يطبق عند الانزلاق عبر مفتاح المسافة أو مفتاح المسافة الخلفية</string>
     <string name="vibrate_slide_warning">يتطلب تفعيل إيماءات الانزلاق في إعدادات السلوك</string>
+    <string name="app_name" translatable="false"></string>
 </resources>
