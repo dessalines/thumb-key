@@ -60,4 +60,5 @@
     <string name="issue_tracker">Śledzenie zgłoszeń</string>
     <string name="setup">Konfiguracja</string>
     <string name="done">Gotowe</string>
+    <string name="app_name" translatable="false"></string>
 </resources>
