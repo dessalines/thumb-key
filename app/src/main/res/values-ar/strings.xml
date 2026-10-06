@@ -104,4 +104,47 @@
     <string name="vibrate_slide_note">يطبق عند الانزلاق عبر مفتاح المسافة أو مفتاح المسافة الخلفية</string>
     <string name="vibrate_slide_warning">يتطلب تفعيل إيماءات الانزلاق في إعدادات السلوك</string>
     <string name="app_name" translatable="false"></string>
+    <string name="clipboard_unpin"></string>
+    <string name="neon" translatable="false"></string>
+    <string name="warning_invalid_mode"></string>
+    <string name="clipboard_go_to_settings"></string>
+    <string name="slide_hold_description"></string>
+    <string name="clipboard_size_limit_description"></string>
+    <string name="show_on_screen_keyboard"></string>
+    <string name="duration_2_days"></string>
+    <string name="switch_to_letters_after_space_description"></string>
+    <string name="duration_12_hours"></string>
+    <string name="clipboard_max_size"></string>
+    <string name="clipboard_history_enabled"></string>
+    <string name="duration_4_days"></string>
+    <string name="clipboard_auto_cleanup"></string>
+    <string name="duration_1_day"></string>
+    <string name="use_private_clipboard"></string>
+    <string name="duration_5_minutes"></string>
+    <string name="clipboard_pin"></string>
+    <string name="duration_10_minutes"></string>
+    <string name="clipboard_paste"></string>
+    <string name="clipboard_clear_all"></string>
+    <string name="clipboard_size_limit"></string>
+    <string name="clipboard_characters"></string>
+    <string name="other"></string>
+    <string name="clipboard_disabled"></string>
+    <string name="database_operation_failed"></string>
+    <string name="clipboard_delete"></string>
+    <string name="duration_7_days"></string>
+    <string name="clipboard_auto_cleanup_description"></string>
+    <string name="switch_to_letters_after_space"></string>
+    <string name="duration_2_hours"></string>
+    <string name="use_private_clipboard_description"></string>
+    <string name="clipboard_back"></string>
+    <string name="slide_hold_enable"></string>
+    <string name="duration_4_hours"></string>
+    <string name="clipboard_history_enabled_description"></string>
+    <string name="duration_1_hour"></string>
+    <string name="clipboard_cleanup_after"></string>
+    <string name="position_padding"></string>
+    <string name="clipboard_history"></string>
+    <string name="show_on_screen_keyboard_description"></string>
+    <string name="duration_30_minutes"></string>
+    <string name="clipboard_empty"></string>
 </resources>
