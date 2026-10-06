@@ -137,6 +137,7 @@ fun KeyboardKey(
     onToggleNumericMode: (enable: Boolean) -> Unit,
     onToggleEmojiMode: (enable: Boolean) -> Unit,
     onToggleClipboardMode: (enable: Boolean) -> Unit,
+    onToggleSketchMode: (enable: Boolean) -> Unit,
     onToggleCapsLock: () -> Unit,
     onToggleHideLetters: () -> Unit,
     onAutoCapitalize: (enable: Boolean) -> Unit,
@@ -150,6 +151,7 @@ fun KeyboardKey(
     clockwiseDragAction: CircularDragAction,
     counterclockwiseDragAction: CircularDragAction,
     slideHoldEnabled: Boolean,
+    onSketchAction: (action: KeyAction.Sketch) -> Unit = {},
 ) {
     // Necessary for swipe settings to get updated correctly
     val id =
@@ -422,12 +424,14 @@ fun KeyboardKey(
                         onToggleNumericMode = onToggleNumericMode,
                         onToggleEmojiMode = onToggleEmojiMode,
                         onToggleClipboardMode = onToggleClipboardMode,
+                        onToggleSketchMode = onToggleSketchMode,
                         onToggleCapsLock = onToggleCapsLock,
                         onToggleHideLetters = onToggleHideLetters,
                         onAutoCapitalize = onAutoCapitalize,
                         onSwitchLanguage = onSwitchLanguage,
                         onChangePosition = onChangePosition,
                         onKeyEvent = onKeyEvent,
+                        onSketchAction = onSketchAction,
                     )
                     doneKeyAction(scope, action, isDragged, releasedKey, animationHelperSpeed)
                 },
@@ -444,12 +448,14 @@ fun KeyboardKey(
                             onToggleNumericMode = onToggleNumericMode,
                             onToggleEmojiMode = onToggleEmojiMode,
                             onToggleClipboardMode = onToggleClipboardMode,
+                            onToggleSketchMode = onToggleSketchMode,
                             onToggleCapsLock = onToggleCapsLock,
                             onToggleHideLetters = onToggleHideLetters,
                             onAutoCapitalize = onAutoCapitalize,
                             onSwitchLanguage = onSwitchLanguage,
                             onChangePosition = onChangePosition,
                             onKeyEvent = onKeyEvent,
+                            onSketchAction = onSketchAction,
                         )
                         doneKeyAction(scope, action, isDragged, releasedKey, animationHelperSpeed)
                         if (vibrateOnTap) {
@@ -741,12 +747,14 @@ fun KeyboardKey(
                                 onToggleNumericMode = onToggleNumericMode,
                                 onToggleEmojiMode = onToggleEmojiMode,
                                 onToggleClipboardMode = onToggleClipboardMode,
+                                onToggleSketchMode = onToggleSketchMode,
                                 onToggleCapsLock = onToggleCapsLock,
                                 onToggleHideLetters = onToggleHideLetters,
                                 onAutoCapitalize = onAutoCapitalize,
                                 onSwitchLanguage = onSwitchLanguage,
                                 onChangePosition = onChangePosition,
                                 onKeyEvent = onKeyEvent,
+                                onSketchAction = onSketchAction,
                             )
                             doneKeyAction(
                                 scope,
@@ -779,12 +787,14 @@ fun KeyboardKey(
                                         onToggleNumericMode = onToggleNumericMode,
                                         onToggleEmojiMode = onToggleEmojiMode,
                                         onToggleClipboardMode = onToggleClipboardMode,
+                                        onToggleSketchMode = onToggleSketchMode,
                                         onToggleCapsLock = onToggleCapsLock,
                                         onToggleHideLetters = onToggleHideLetters,
                                         onAutoCapitalize = onAutoCapitalize,
                                         onSwitchLanguage = onSwitchLanguage,
                                         onChangePosition = onChangePosition,
                                         onKeyEvent = onKeyEvent,
+                                        onSketchAction = onSketchAction,
                                     )
                                 }
                                 // Play an extra haptic effect on supported devices when slide deleting text

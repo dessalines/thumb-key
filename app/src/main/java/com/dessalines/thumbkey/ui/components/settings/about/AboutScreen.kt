@@ -12,6 +12,7 @@ import androidx.compose.material.icons.automirrored.outlined.Chat
 import androidx.compose.material.icons.outlined.AttachMoney
 import androidx.compose.material.icons.outlined.BugReport
 import androidx.compose.material.icons.outlined.Code
+import androidx.compose.material.icons.outlined.Draw
 import androidx.compose.material.icons.outlined.NewReleases
 import androidx.compose.material.icons.outlined.TravelExplore
 import androidx.compose.material3.ExperimentalMaterial3Api
@@ -23,6 +24,8 @@ import androidx.compose.material3.SnackbarHost
 import androidx.compose.material3.SnackbarHostState
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.produceState
 import androidx.compose.runtime.remember
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
@@ -34,6 +37,7 @@ import androidx.navigation.NavController
 import androidx.navigation.compose.rememberNavController
 import com.dessalines.thumbkey.R
 import com.dessalines.thumbkey.utils.SimpleTopAppBar
+import com.dessalines.thumbkey.utils.SketchRecognizer
 import com.dessalines.thumbkey.utils.TAG
 import com.dessalines.thumbkey.utils.openLink
 import me.zhanghai.compose.preference.Preference
@@ -55,6 +59,11 @@ fun AboutScreen(navController: NavController) {
     val ctx = LocalContext.current
 
     val version = ctx.packageManager.getPackageInfo(ctx.packageName, 0).versionName
+
+    // The handwriting model's data sources, which require attribution
+    val handwritingAttribution by produceState<List<String>?>(null) {
+        value = runCatching { SketchRecognizer.get(ctx).charset.attribution }.getOrNull()
+    }
 
     val snackbarHostState = remember { SnackbarHostState() }
     val scrollState = rememberScrollState()
@@ -173,6 +182,23 @@ fun AboutScreen(navController: NavController) {
                         },
                         onClick = {
                             openLink(GITHUB_URL, ctx)
+                        },
+                    )
+                    Preference(
+                        title = { Text(stringResource(R.string.handwriting_recognition)) },
+                        summary = {
+                            Text(
+                                (
+                                    listOf(stringResource(R.string.handwriting_recognition_summary)) +
+                                        handwritingAttribution.orEmpty()
+                                ).joinToString("\n\n"),
+                            )
+                        },
+                        icon = {
+                            Icon(
+                                imageVector = Icons.Outlined.Draw,
+                                contentDescription = stringResource(R.string.handwriting_recognition),
+                            )
                         },
                     )
                 }

@@ -222,6 +222,30 @@ sealed class KeyAction {
         val enable: Boolean,
     ) : KeyAction()
 
+    class ToggleSketchMode(
+        val enable: Boolean,
+    ) : KeyAction()
+
+    // The keys of sketch mode, handled by its screen
+    sealed class Sketch : KeyAction() {
+        // Types a recognized character. displayText shows a combining mark on a dotted circle.
+        class CommitCandidate(
+            val text: String,
+            val displayText: String,
+        ) : Sketch()
+
+        // Opens the look-alikes of a candidate, the candidate first
+        class ShowLookAlikes(
+            val codePoints: List<Int>,
+        ) : Sketch()
+
+        data object UndoStroke : Sketch()
+
+        data object ClearPad : Sketch()
+
+        data object ShowCandidateList : Sketch()
+    }
+
     class ComposeLastKey(
         val text: String,
     ) : KeyAction()
@@ -327,6 +351,7 @@ enum class KeyboardMode {
     CTRLED,
     ALTED,
     CLIPBOARD,
+    SKETCH,
 }
 
 enum class SwipeDirection {

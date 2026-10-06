@@ -89,6 +89,8 @@ import com.dessalines.thumbkey.utils.SlideType
 import com.dessalines.thumbkey.utils.TAG
 import com.dessalines.thumbkey.utils.getAutoKeyWidth
 import com.dessalines.thumbkey.utils.getKeyboardMode
+import com.dessalines.thumbkey.utils.getModifiedKeyboardDefinition
+import com.dessalines.thumbkey.utils.isLeftHandedLayout
 import com.dessalines.thumbkey.utils.keyboardPositionToAlignment
 import com.dessalines.thumbkey.utils.resolveKeyboardDefinition
 import com.dessalines.thumbkey.utils.toBool
@@ -130,6 +132,18 @@ fun KeyboardScreen(
 
     var capsLock by remember {
         mutableStateOf(false)
+    }
+
+    // Sketch mode's drawing and candidates, kept while its search uses the letter keys, and
+    // while the keyboard is closed
+    val sketch = ctx.sketchState
+    LaunchedEffect(mode) {
+        val typingSearch = sketch.searching && mode != KeyboardMode.EMOJI && mode != KeyboardMode.CLIPBOARD
+        // Coming back to sketch mode shows the pad, unless the search is being typed
+        if (mode != KeyboardMode.SKETCH && !typingSearch) {
+            sketch.searching = false
+            sketch.list = null
+        }
     }
 
     // TODO get rid of this crap
@@ -408,6 +422,17 @@ fun KeyboardScreen(
                                                 KeyboardMode.MAIN
                                             }
                                     },
+                                    onToggleSketchMode = { enable ->
+                                        // Not while typing sketch mode's own search
+                                        if (!sketch.searching) {
+                                            mode =
+                                                if (enable) {
+                                                    KeyboardMode.SKETCH
+                                                } else {
+                                                    KeyboardMode.MAIN
+                                                }
+                                        }
+                                    },
                                     onToggleCapsLock = {
                                         capsLock = !capsLock
                                         if (capsLock) {
@@ -604,6 +629,17 @@ fun KeyboardScreen(
                                                 KeyboardMode.MAIN
                                             }
                                     },
+                                    onToggleSketchMode = { enable ->
+                                        // Not while typing sketch mode's own search
+                                        if (!sketch.searching) {
+                                            mode =
+                                                if (enable) {
+                                                    KeyboardMode.SKETCH
+                                                } else {
+                                                    KeyboardMode.MAIN
+                                                }
+                                        }
+                                    },
                                     onToggleCapsLock = {
                                         capsLock = !capsLock
 
@@ -755,6 +791,125 @@ fun KeyboardScreen(
                 )
             }
         }
+    } else if (mode == KeyboardMode.SKETCH) {
+        val rowCount = keyboardDefinition.modes.main.arr.size
+
+        Box(
+            modifier =
+                Modifier
+                    .then(
+                        if (backdropEnabled) {
+                            Modifier.background(backdropColor)
+                        } else {
+                            Modifier
+                        },
+                    ),
+        ) {
+            // adds a pretty line if you're using the backdrop
+            if (backdropEnabled) {
+                Box(
+                    modifier =
+                        Modifier
+                            .align(Alignment.TopCenter)
+                            .fillMaxWidth()
+                            .height(1.dp)
+                            .background(color = MaterialTheme.colorScheme.surfaceVariant),
+                )
+            }
+            Box(
+                contentAlignment = keyboardPositionToAlignment(position),
+                modifier =
+                    Modifier
+                        .then(if (!ignoreBottomPadding) Modifier.safeDrawingPadding() else Modifier)
+                        .padding(bottom = pushupSizeDp)
+                        .fillMaxWidth()
+                        .then(
+                            if (backdropEnabled) {
+                                Modifier.padding(top = backdropPadding)
+                            } else {
+                                Modifier
+                            },
+                        ),
+            ) {
+                SketchScreen(
+                    state = sketch,
+                    rowCount = rowCount,
+                    leftHanded = isLeftHandedLayout(layout.name),
+                    keyWidth = keyWidth,
+                    keyHeight = keyHeight,
+                    keyPadding = keyPadding,
+                    keyBorderWidth = keyBorderWidthFloat,
+                    cornerRadius = cornerRadius,
+                    vibrateOnTap = vibrateOnTap,
+                    soundOnTap = soundOnTap,
+                    onCommit = { text ->
+                        // Straight to the text field: the layout's text processor and
+                        // auto-capitalization don't apply to a drawn character.
+                        ctx.ignoreNextCursorMove()
+                        ctx.appInputConnection.commitText(text, 1)
+                    },
+                    onSearch = {
+                        sketch.searching = true
+                        mode = KeyboardMode.MAIN
+                    },
+                ) { key, onSketchAction ->
+                    KeyboardKey(
+                        key = key,
+                        lastAction = lastAction,
+                        legendHeight = legendHeight,
+                        legendWidth = legendWidth,
+                        keyHeight = keyHeight,
+                        keyWidth = keyWidth,
+                        keyPadding = keyPadding,
+                        keyBorderWidth = keyBorderWidthFloat,
+                        keyRadius = cornerRadius,
+                        autoCapitalize = autoCapitalize,
+                        keyboardSettings = keyboardDefinition.settings,
+                        spacebarMultiTaps = spacebarMultiTaps,
+                        vibrateOnTap = vibrateOnTap,
+                        vibrateOnSlide = vibrateOnSlide,
+                        soundOnTap = soundOnTap,
+                        // Candidates are always shown
+                        hideLetters = false,
+                        hideSymbols = false,
+                        capsLock = false,
+                        animationSpeed = settings?.animationSpeed ?: DEFAULT_ANIMATION_SPEED,
+                        animationHelperSpeed = settings?.animationHelperSpeed ?: DEFAULT_ANIMATION_HELPER_SPEED,
+                        minSwipeLength = settings?.minSwipeLength ?: DEFAULT_MIN_SWIPE_LENGTH,
+                        slideSensitivity = settings?.slideSensitivity ?: DEFAULT_SLIDE_SENSITIVITY,
+                        slideEnabled = slideEnabled,
+                        slideCursorMovementMode = slideCursorMovementMode,
+                        slideSpacebarDeadzoneEnabled = slideSpacebarDeadzoneEnabled,
+                        slideBackspaceDeadzoneEnabled = slideBackspaceDeadzoneEnabled,
+                        onToggleShiftMode = {},
+                        onToggleCtrlMode = {},
+                        onToggleAltMode = {},
+                        onToggleNumericMode = {},
+                        onToggleEmojiMode = {},
+                        onToggleClipboardMode = {},
+                        onToggleSketchMode = { enable ->
+                            if (!enable) mode = KeyboardMode.MAIN
+                        },
+                        onToggleCapsLock = {},
+                        onToggleHideLetters = onToggleHideLetters,
+                        // Stay in sketch mode after typing a space
+                        onAutoCapitalize = {},
+                        onSwitchLanguage = {
+                            onSwitchLanguage()
+                            mode = KeyboardMode.MAIN
+                        },
+                        onChangePosition = onChangePosition,
+                        onKeyEvent = {},
+                        dragReturnEnabled = dragReturnEnabled,
+                        circularDragEnabled = circularDragEnabled,
+                        clockwiseDragAction = clockwiseDragAction,
+                        counterclockwiseDragAction = counterclockwiseDragAction,
+                        slideHoldEnabled = slideHoldEnabled,
+                        onSketchAction = onSketchAction,
+                    )
+                }
+            }
+        }
     } else {
         // NOTE, this should use or CURSOR_UPDATE_FILTER_INSERTION_MARKER , but it doesn't work on
         // non-compose textfields.
@@ -904,6 +1059,17 @@ fun KeyboardScreen(
                                                     KeyboardMode.MAIN
                                                 }
                                         },
+                                        onToggleSketchMode = { enable ->
+                                            // Not while typing sketch mode's own search
+                                            if (!sketch.searching) {
+                                                mode =
+                                                    if (enable) {
+                                                        KeyboardMode.SKETCH
+                                                    } else {
+                                                        KeyboardMode.MAIN
+                                                    }
+                                            }
+                                        },
                                         onToggleCapsLock = {
                                             capsLock = !capsLock
 
@@ -981,9 +1147,39 @@ fun KeyboardScreen(
             }
         }
 
-        drawKeyboard(keyboardPositionToAlignment(position), backdropEnabled, positionPadding)
-        if (position == KeyboardPosition.Dual) {
-            drawKeyboard(keyboardPositionToAlignment(KeyboardPosition.Right), false, positionPadding)
+        val drawKeyboards = @Composable {
+            drawKeyboard(keyboardPositionToAlignment(position), backdropEnabled, positionPadding)
+            if (position == KeyboardPosition.Dual) {
+                drawKeyboard(keyboardPositionToAlignment(KeyboardPosition.Right), false, positionPadding)
+            }
+        }
+
+        if (sketch.searching) {
+            // Sketch mode's search, typed with the layout's keys below it
+            Column {
+                SketchSearch(
+                    state = sketch,
+                    height = Dp(keyHeight * 2),
+                    vibrateOnTap = vibrateOnTap,
+                    soundOnTap = soundOnTap,
+                    onPick = { text ->
+                        // Stop typing into the search first, so the character goes to the app
+                        sketch.searching = false
+                        sketch.list = null
+                        ctx.setInputRedirect(null)
+                        ctx.ignoreNextCursorMove()
+                        ctx.appInputConnection.commitText(text, 1)
+                        mode = KeyboardMode.SKETCH
+                    },
+                    onClose = {
+                        sketch.searching = false
+                        mode = KeyboardMode.SKETCH
+                    },
+                )
+                Box { drawKeyboards() }
+            }
+        } else {
+            drawKeyboards()
         }
     }
 }

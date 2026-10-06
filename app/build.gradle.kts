@@ -154,4 +154,7 @@ dependencies {
     // Arrow-kt for mutating deeply nested data classes
     implementation("io.arrow-kt:arrow-optics:2.2.3")
     ksp("io.arrow-kt:arrow-optics-ksp-plugin:2.2.3")
+
+    // Handwriting recognition for sketch mode, fully offline
+    implementation("io.github.toldry:glyphsketch:0.1.1")
 }

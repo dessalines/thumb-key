@@ -4,6 +4,7 @@ import android.inputmethodservice.InputMethodService
 import android.util.Log
 import android.view.inputmethod.CursorAnchorInfo
 import android.view.inputmethod.EditorInfo
+import android.view.inputmethod.InputConnection
 import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.LifecycleOwner
 import androidx.lifecycle.LifecycleRegistry
@@ -19,6 +20,7 @@ import com.dessalines.thumbkey.db.DEFAULT_CLIPBOARD_HISTORY_ENABLED
 import com.dessalines.thumbkey.db.DEFAULT_DISABLE_FULLSCREEN_EDITOR
 import com.dessalines.thumbkey.db.DEFAULT_SHOW_ON_SCREEN_KEYBOARD
 import com.dessalines.thumbkey.db.DEFAULT_USE_PRIVATE_CLIPBOARD
+import com.dessalines.thumbkey.ui.components.keyboard.SketchState
 import com.dessalines.thumbkey.utils.KeyboardDefinition
 import com.dessalines.thumbkey.utils.KeyboardLayout
 import com.dessalines.thumbkey.utils.TAG
@@ -58,6 +60,25 @@ class IMEService :
     }
 
     var currentKeyboardDefinition: KeyboardDefinition? = null
+
+    // While set, the keys type into this field of the keyboard's own, like sketch mode's
+    // search, instead of the app's
+    private var inputRedirect: InputConnection? = null
+
+    fun setInputRedirect(connection: InputConnection?) {
+        inputRedirect = connection
+    }
+
+    // The framework's connection is null while no text field is bound, and the framework itself
+    // calls this. Kotlin would check a platform value returned as non-null and throw, so pass it
+    // through unchecked, as the Java method does. Nullable would break every caller.
+    override fun getCurrentInputConnection(): InputConnection = inputRedirect ?: unchecked(super.getCurrentInputConnection())
+
+    /** The app's text field, even while the keys type into the keyboard's own field. */
+    val appInputConnection: InputConnection get() = super.getCurrentInputConnection()
+
+    // Sketch mode's drawing, kept while the keyboard is closed and opened again
+    val sketchState = SketchState()
     private var clipboardManager: ThumbKeyClipboardManager? = null
 
     /**
@@ -69,6 +90,11 @@ class IMEService :
         restarting: Boolean,
     ) {
         super.onStartInput(attribute, restarting)
+        setInputRedirect(null)
+        // A new keyboard opens on the letters: close sketch mode's search and lists, but keep
+        // its drawing
+        sketchState.searching = false
+        sketchState.list = null
         val view = this.setupView()
         this.setInputView(view)
     }
@@ -190,3 +216,7 @@ class IMEService :
 
     fun clipboardGetLastClip(): String? = clipboardManager?.getLastClip()
 }
+
+// Returns `value` without Kotlin's null check, for a platform value that may be null
+@Suppress("UNCHECKED_CAST")
+private fun <T> unchecked(value: T?): T = value as T
