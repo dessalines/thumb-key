@@ -146,4 +146,5 @@
     <string name="switch_to_letters_after_space_description">Возвращение к буквенной раскладке после пробела в цифровой</string>
     <string name="switch_to_letters_after_space">Возвращаться к буквам после пробела</string>
     <string name="neon" translatable="false"></string>
+    <string name="app_name" translatable="false"></string>
 </resources>
