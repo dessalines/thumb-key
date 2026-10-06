@@ -145,4 +145,6 @@
     <string name="other">Altro</string>
     <string name="show_on_screen_keyboard">Mostra tastiera su schermo</string>
     <string name="show_on_screen_keyboard_description">Mostra tastiera su schermo quando si usa una tastiera fisica</string>
+    <string name="neon" translatable="false"></string>
+    <string name="app_name" translatable="false"></string>
 </resources>
