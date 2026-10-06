@@ -47,7 +47,7 @@
     <string name="key_non_square">Touches non carrées</string>
     <string name="key_height">Hauteur des touches : %1$s</string>
     <string name="key_width">Largeur des touches : %1$s</string>
-    <string name="bottom_offset">Décalage inférieur : %1$s</string>
+    <string name="bottom_offset">Décalage inférieur : %1$s</string>
     <string name="min_swipe_length">Longueur minimale du balayage : %1$s</string>
     <string name="animation_speed">Vitesse de l’animation : %1$s</string>
     <string name="animation_helper_speed">Vitesse de l’animation d’aide : %1$s</string>
@@ -142,7 +142,7 @@
     <string name="other">Autre</string>
     <string name="show_on_screen_keyboard">Afficher le clavier virtuel</string>
     <string name="show_on_screen_keyboard_description">Afficher le clavier virtuel lors de l\'utilisation du clavier pysique</string>
-    <string name="database_operation_failed">Échec de l\'opération : %1$s</string>
+    <string name="database_operation_failed">Échec de l\'opération : %1$s</string>
     <string name="neon" translatable="false"></string>
     <string name="switch_to_letters_after_space_description"></string>
     <string name="switch_to_letters_after_space"></string>
