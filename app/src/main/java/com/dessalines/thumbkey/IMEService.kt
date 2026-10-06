@@ -23,6 +23,7 @@ import com.dessalines.thumbkey.utils.KeyboardDefinition
 import com.dessalines.thumbkey.utils.KeyboardLayout
 import com.dessalines.thumbkey.utils.TAG
 import com.dessalines.thumbkey.utils.ThumbKeyClipboardManager
+import com.dessalines.thumbkey.utils.resolveKeyboardDefinition
 import com.dessalines.thumbkey.utils.toBool
 
 class IMEService :
@@ -35,9 +36,11 @@ class IMEService :
         val settingsRepo = app.appSettingsRepository
         val clipboardRepo = app.clipboardRepository
 
-        val layoutIndex = settingsRepo.appSettings.value?.keyboardLayout
+        val appSettings = settingsRepo.appSettings.value
+        val layoutIndex = appSettings?.keyboardLayout
         if (layoutIndex != null) {
-            currentKeyboardDefinition = KeyboardLayout.entries[layoutIndex].keyboardDefinition
+            currentKeyboardDefinition =
+                resolveKeyboardDefinition(KeyboardLayout.entries[layoutIndex], appSettings.keyModifications)
         }
 
         val view = ComposeKeyboardView(this, settingsRepo, clipboardRepo)

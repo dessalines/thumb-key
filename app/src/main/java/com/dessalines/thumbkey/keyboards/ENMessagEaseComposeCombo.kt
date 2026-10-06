@@ -35,13 +35,6 @@ import com.dessalines.thumbkey.utils.SwipeNWay.*
 // Everything else goes through the compose key (♫) on the top-left of A: ♫ o c for ©,
 // ♫ ~ ~ for ≈, ♫ = = for ≡.
 
-private val COMPOSE_KEY =
-    KeyC(
-        display = KeyDisplay.TextDisplay("♫"),
-        action = StartComposeCombo,
-        color = MUTED,
-    )
-
 private val GRAVE_KEY =
     KeyC(
         display = KeyDisplay.TextDisplay("`"),
@@ -104,7 +97,7 @@ val KB_EN_MESSAGEASE_COMPOSE_COMBO_MAIN =
             listOf(
                 KeyItemC(
                     center = KeyC("a", size = LARGE),
-                    topLeft = COMPOSE_KEY,
+                    topLeft = COMPOSE_COMBO_KEYC,
                     top = DIAERESIS_KEY,
                     topRight = TILDE_KEY,
                     bottom = CEDILLA_KEY,
@@ -226,7 +219,7 @@ val KB_EN_MESSAGEASE_COMPOSE_COMBO_SHIFTED =
             listOf(
                 KeyItemC(
                     center = KeyC("A", size = LARGE),
-                    topLeft = COMPOSE_KEY,
+                    topLeft = COMPOSE_COMBO_KEYC,
                     top = DIAERESIS_KEY,
                     topRight = TILDE_KEY,
                     bottom = CEDILLA_KEY,
@@ -358,7 +351,7 @@ val KB_EN_MESSAGEASE_COMPOSE_COMBO_NUMERIC =
             listOf(
                 KeyItemC(
                     center = KeyC("1", size = LARGE),
-                    topLeft = COMPOSE_KEY,
+                    topLeft = COMPOSE_COMBO_KEYC,
                     bottomLeft = KeyC("$"),
                     right = KeyC("-"),
                     bottomRight =
