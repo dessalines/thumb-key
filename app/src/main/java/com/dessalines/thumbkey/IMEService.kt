@@ -153,9 +153,11 @@ class IMEService :
         ignoreCursorMove = true
     }
 
-    override fun onWindowHidden() {
+    override fun onFinishInputView(finishingInput: Boolean) {
+        // Must run before super, which commits any composing text as it stands.
+        // Running after it would let the processor write its pending text a second time.
         currentKeyboardDefinition?.settings?.textProcessor?.handleFinishInput(this)
-        super.onWindowHidden()
+        super.onFinishInputView(finishingInput)
     }
 
     private var ignoreCursorMove: Boolean = false
