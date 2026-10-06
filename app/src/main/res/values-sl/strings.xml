@@ -146,4 +146,5 @@
     <string name="switch_to_letters_after_space_description">Po vnosu preslednice na numerični tipkovnici preklopi na črkovni način</string>
     <string name="database_operation_failed">Dejanje ni uspelo: %1$s</string>
     <string name="app_name" translatable="false"></string>
+    <string name="neon" translatable="false"></string>
 </resources>
