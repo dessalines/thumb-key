@@ -43,7 +43,7 @@
     <string name="vibrate_warning">Nécessite d’activer Vibrer à l’appui dans les paramètres du téléphone</string>
     <string name="play_sound_on_tap">Son au toucher</string>
     <string name="auto_capitalize">Majuscule automatique</string>
-    <string name="key_size">Taille des touches : %1$s</string>
+    <string name="key_size">Taille des touches : %1$s</string>
     <string name="key_non_square">Touches non carrées</string>
     <string name="key_height">Hauteur des touches : %1$s</string>
     <string name="key_width">Largeur des touches : %1$s</string>
