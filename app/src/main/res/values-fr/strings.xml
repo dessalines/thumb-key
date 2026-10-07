@@ -143,4 +143,19 @@
     <string name="show_on_screen_keyboard">Afficher le clavier virtuel</string>
     <string name="show_on_screen_keyboard_description">Afficher le clavier virtuel lors de l\'utilisation du clavier pysique</string>
     <string name="database_operation_failed">Échec de l\'opération : %1$s</string>
+    <string name="switch_to_letters_after_space">Passer aux lettres après un espace</string>
+    <string name="switch_to_letters_after_space_description">Revenir aux lettres après avoir tapé un espace depuis le clavier des nombres</string>
+    <string name="search_layouts">Rechercher des dispositions</string>
+    <string name="clear_search">Effacer la recherche</string>
+    <string name="no_layouts_found">Aucune disposition trouvée</string>
+    <string name="sketch_key_position">touche %1$d %2$s</string>
+    <string name="sketch_search_hint">Rechercher</string>
+    <string name="sketch_clear_search">Effacer la recherche</string>
+    <string name="sketch_no_matches">Aucune correspondance</string>
+    <string name="handwriting_recognition">Reconnaissance d’écriture manuscrite</string>
+    <string name="sketch_back">Retour</string>
+    <string name="sketch_all_candidates">Correspondances %1$d</string>
+    <string name="sketch_loading">Chargement de la reconnaissance de l’écriture manuscrite…</string>
+    <string name="sketch_load_failed">Échec du chargement de la reconnaissance de l’écriture manuscrite</string>
+    <string name="sketch_look_alikes">Similitudes de %1$s %2$d</string>
 </resources>
