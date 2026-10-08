@@ -145,4 +145,19 @@
     <string name="database_operation_failed">Ошибка операции: %1$s</string>
     <string name="switch_to_letters_after_space_description">Возвращение к буквенной раскладке после пробела в цифровой</string>
     <string name="switch_to_letters_after_space">Возвращаться к буквам после пробела</string>
+    <string name="search_layouts">Поиск раскладок</string>
+    <string name="clear_search">Очистить поиск</string>
+    <string name="no_layouts_found">Раскладки не найдены</string>
+    <string name="sketch_hint">Нарисуйте символ. Коснитесь или смахните по клавише ниже для ввода. Удерживайте или смахните с возвратом, чтобы увидеть похожие.</string>
+    <string name="sketch_loading">Загрузка распознавания рукописного ввода…</string>
+    <string name="sketch_load_failed">Не удалось загрузить распознавание рукописного ввода</string>
+    <string name="sketch_look_alikes">Похожие на %1$s %2$d</string>
+    <string name="sketch_back">Назад</string>
+    <string name="sketch_all_candidates">Все варианты %1$d</string>
+    <string name="sketch_key_position">Клавиша %1$d %2$s</string>
+    <string name="sketch_search_hint">Поиск</string>
+    <string name="sketch_clear_search">Очистить поиск</string>
+    <string name="sketch_no_matches">Нет подходящих вариантов</string>
+    <string name="handwriting_recognition">Распознавание рукописного ввода</string>
+    <string name="handwriting_recognition_summary">В режиме рисования символы распознаются с помощью glyphsketch прямо на устройстве.</string>
 </resources>
