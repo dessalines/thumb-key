@@ -145,4 +145,19 @@
     <string name="switch_to_letters_after_space">Po preslednici zamenjaj na črke</string>
     <string name="switch_to_letters_after_space_description">Po vnosu preslednice na numerični tipkovnici preklopi na črkovni način</string>
     <string name="database_operation_failed">Dejanje ni uspelo: %1$s</string>
+    <string name="search_layouts">Iskanje razporeditev</string>
+    <string name="clear_search">Počisti iskanje</string>
+    <string name="no_layouts_found">Ni zadetkov</string>
+    <string name="sketch_hint">Nariši znak. Pritisni ali podrsaj za vnos znaka. Zadrži ali povleci tja in nazaj za podobne znake.</string>
+    <string name="sketch_loading">Nalaganje prepoznavanja pisave …</string>
+    <string name="sketch_load_failed">Nalaganje prepoznavanja pisave ni uspelo</string>
+    <string name="sketch_look_alikes">Znaki, podobni %1$s · %2$d</string>
+    <string name="sketch_back">Nazaj</string>
+    <string name="sketch_all_candidates">Vsi kandidati · %1$d</string>
+    <string name="sketch_key_position">tipka %1$d %2$s</string>
+    <string name="sketch_search_hint">Iskanje</string>
+    <string name="sketch_clear_search">Počisti iskanje</string>
+    <string name="sketch_no_matches">Ni podobnih kandidatov</string>
+    <string name="handwriting_recognition">Prepoznavanje pisave</string>
+    <string name="handwriting_recognition_summary">Prepoznavanje znakov z glyphsketch na napravi, brez spletnih storitev.</string>
 </resources>
