@@ -121,7 +121,7 @@ dependencies {
     implementation("androidx.navigation:navigation-compose:2.10.2")
 
     // Emoji Picker
-    implementation("androidx.emoji2:emoji2-emojipicker:1.6.0")
+    implementation("androidx.emoji2:emoji2-emojipicker:1.7.0")
 
     // Markdown
     implementation("com.github.jeziellago:compose-markdown:0.7.3")
