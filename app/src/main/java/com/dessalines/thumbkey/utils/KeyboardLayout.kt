@@ -327,7 +327,7 @@ enum class KeyboardLayout(
     FIMessagEase(KB_FI_MESSAGEASE), // suomi messagease
     ENDAThumbKeySymbols(KB_EN_DA_THUMBKEY_SYMBOLS), // english dansk thumb-key symbols
     FIEEMessagEase(KB_FI_EE_MESSAGEASE_SYMBOLS), // suomi eesti messagease
-    ENPLThumbkey(KB_EN_PL_THUMBKEY), // english polski thumb-key
+    ENPLThumbKey(KB_EN_PL_THUMBKEY), // english polski thumb-key
     BGMessagEasePhoneticSymbols(
         KB_BG_MESSAGEASE_PHONETIC_SYMBOLS,
     ), // bulgarian messagease phonetic symbols
@@ -368,14 +368,14 @@ enum class KeyboardLayout(
     ENThumbKeyWide(KB_EN_THUMBKEY_WIDE), // english thumb-key wide
     ENQBased(KB_EN_QBASED), // english qbased
     ENQBasedLeft(KB_EN_QBASED_LEFT), // english qbased left-handed
-    DEThumbkeySymbols(KB_DE_THUMBKEY_SYMBOLS), // deutsch thumb-key symbols
+    DEThumbKeySymbols(KB_DE_THUMBKEY_SYMBOLS), // deutsch thumb-key symbols
     ENQwertyFourCompose(KB_EN_QWERTYFOUR_COMPOSE), // english qwertyfour compose
     ENThumbKeyWriter(KB_EN_THUMBKEY_WRITER), // english thumb-key writer
     JAKanaThumbKey(KB_JA_KANA_THUMBKEY), // japanese kana thumb-key
     FAThumbKeySamsung(KB_FA_THUMBKEY_SAMSUNG), // فارسی thumb-key samsung
-    DEENThumbkeyAE(KB_EN_DE_THUMBKEY_AE), // english deutsch thumb-key +æ
+    DEENThumbKeyAE(KB_EN_DE_THUMBKEY_AE), // english deutsch thumb-key +æ
     SKThumbKeyV3(KB_SK_THUMBKEY_V3), // slovenčina thumb-key v3
-    EuropeThumbkey(KB_EUROPE_THUMBKEY), // european thumb-key
+    EuropeThumbKey(KB_EUROPE_THUMBKEY), // european thumb-key
     ENMessagEaseSymbolsTwoHands(
         KB_EN_MESSAGEASE_SYMBOLS_TWO_HANDS,
     ), // english messagease symbols two-hands
@@ -390,7 +390,7 @@ enum class KeyboardLayout(
     ENTypeSplitShort(KB_EN_TYPESPLIT_SHORT), // english type-split short
     PLTypeSplitV1(KB_PL_TYPESPLIT_V1), // polski type-split v1
     PLTypeSplitSymbolsV1(KB_PL_TYPESPLIT_SYMBOLS_V1), // polski symbols type-split v1
-    GlagoliticThumbkey(KB_GLAGOLITIC_THUMBKEY), // ⰳⰾⰰⰳⱁⰾⰻⱌⰰ thumb-key
+    GlagoliticThumbKey(KB_GLAGOLITIC_THUMBKEY), // ⰳⰾⰰⰳⱁⰾⰻⱌⰰ thumb-key
     ENColumnar(KB_EN_COLUMNAR), // english qwerty-columnar
     ENColumnarQuick(KB_EN_COLUMNAR_QUICK), // english qwerty-columnar quick
     UKBYRUThumbKey(KB_UK_BY_RU_THUMBKEY), // українська беларуская русский thumb-key
@@ -402,7 +402,7 @@ enum class KeyboardLayout(
     ENNLTypeSplit(KB_EN_NL_TYPESPLIT), // english nederlands type-split
     HIThumbKeyExtended(KB_HI_THUMBKEY_EXTENDED), // हिन्दी thumb-key extended
     FRThumbKeyV3(KB_FR_THUMBKEY_V3), // français thumb-key v3
-    DEThumbkeySymNum(KB_DE_THUMBKEY_SYMNUM), // deutsch thumb-key symnum
+    DEThumbKeySymNum(KB_DE_THUMBKEY_SYMNUM), // deutsch thumb-key symnum
     TRTypeSplit(KB_TR_TYPESPLIT), // türkçe type-split
     ENDvorakWide(KB_EN_DVORAK_WIDE), // english dvorak wide
     ENDvorakWideCompose(KB_EN_DVORAK_WIDE_COMPOSE), // english dvorak wide compose
@@ -424,7 +424,7 @@ enum class KeyboardLayout(
     DEThumbKeyWords(KB_DE_THUMBKEY_WORDS), // deutsch thumb-key words
     RUMessageOwl(KB_RU_MESSAGE_OWL), // русский owl
     DETypeSplitImproved(KB_DE_TYPESPLIT_IMPROVED), // deutsch type-split improved
-    ENThumbkeyFlippedNumpad(
+    ENThumbKeyFlippedNumpad(
         KB_EN_THUMBKEY_FLIPPED_NUMPAD,
     ), // english thumb-key with a flipped numpad layout
     GRThumbKeyNormal(KB_GRNORM_THUMBKEY), // ελληνικά normal thumb-key

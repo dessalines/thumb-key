@@ -76,6 +76,36 @@ fun resolveKeyboardDefinition(
         ?: keyboardLayout.keyboardDefinition
 
 /**
+ * Former `Thumbkey` enum names and the `ThumbKey` names that replaced them.
+ * Modify Keys YAML may use either spelling. When a document has both, the
+ * `ThumbKey` entry is the one applied. The stored document stays as written.
+ */
+private val legacyKeyboardLayoutNames: Map<String, String> =
+    mapOf(
+        "ENPLThumbkey" to "ENPLThumbKey",
+        "DEThumbkeySymbols" to "DEThumbKeySymbols",
+        "DEENThumbkeyAE" to "DEENThumbKeyAE",
+        "EuropeThumbkey" to "EuropeThumbKey",
+        "GlagoliticThumbkey" to "GlagoliticThumbKey",
+        "DEThumbkeySymNum" to "DEThumbKeySymNum",
+        "ENThumbkeyFlippedNumpad" to "ENThumbKeyFlippedNumpad",
+    )
+
+private fun keyboardLayoutForModificationKey(key: String): KeyboardLayout? {
+    val name = legacyKeyboardLayoutNames[key] ?: key
+    return KeyboardLayout.entries.find { it.name == name }
+}
+
+private fun modificationsForLayout(
+    keyMods: KeyModifications,
+    layout: KeyboardLayout,
+): KeyboardDefinitionModesSerializable? {
+    keyMods[layout.name]?.let { return it }
+    val legacyName = legacyKeyboardLayoutNames.entries.find { it.value == layout.name }?.key
+    return legacyName?.let { keyMods[it] }
+}
+
+/**
  * @param keyboardLayout The layout of the keyboard to be modified.
  * @param keyModifications The key modifications YAML string.
  * @return A modified `KeyboardDefinition` if modifications exist for the layout, else null.
@@ -86,7 +116,7 @@ fun getModifiedKeyboardDefinition(
 ): KeyboardDefinition? =
     try {
         val keyMods = deserializeKeyModifications(keyModifications)
-        keyMods[keyboardLayout.name]?.let {
+        modificationsForLayout(keyMods, keyboardLayout)?.let {
             val modifiedKeyboardDefinition = modifyKeyboardDefinition(keyboardLayout, it)
             Log.d(TAG, "key modifications applied to layout ${keyboardLayout.name}")
             modifiedKeyboardDefinition
@@ -105,7 +135,13 @@ fun checkAllKeyboardModifications(
     try {
         val keyModifications = deserializeKeyModifications(keyModifications)
         keyModifications.forEach {
-            val keyboardLayout = KeyboardLayout.entries.find { layout -> it.key == layout.name }
+            // Keep the ThumbKey entry when the document lists both spellings.
+            val canonicalName = legacyKeyboardLayoutNames[it.key]
+            if (canonicalName != null && keyModifications.containsKey(canonicalName)) {
+                return@forEach
+            }
+
+            val keyboardLayout = keyboardLayoutForModificationKey(it.key)
             if (keyboardLayout == null) {
                 // This should never happen
                 keyModificationsErrorState.value = "Keyboard layout '${it.key}' not found."
