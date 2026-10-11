@@ -234,6 +234,8 @@ Superscript and subscript digits use `^` and `_`, one sequence per digit, so ¹�
 
 If your field needs characters that are not here, adding them is a few lines of data — see [Adding compose sequences](CONTRIBUTING.md#adding-compose-sequences) in the contributing guide.
 
+The compose combo key is enabled on layouts that have "compose combo" in their name, but it can also be added to any other layout using the [modify keys feature](#modify-keys) (see [example #4](#example-4)).
+
 ### Coming from MessagEase Keyboard Tips
 
 - For those use to tapping on the hand key to hide the MessagEase Keyboard and make more screen real estate available, this can be done by using the Android back key or on Android 10 and higher using the guesture navigation for back.
@@ -344,7 +346,21 @@ ENThumbKey:
 
 ![](fastlane/metadata/android/en-US/images/userGuideImages/modify_keys_example_3.png)
 
-This swaps the 'switch language' and 'toggle emoji' actions on the top-right key. Possible values for `keyAction` are:
+This swaps the 'switch language' and 'toggle emoji' actions on the top-right key.
+
+#### Example 4
+
+```yaml
+ENThumbKey:
+  main:
+    key0_0:
+      topLeft:
+        keyAction: StartComposeCombo
+```
+
+This adds a [compose combo key](#compose-combo) action to the top-left swipe on the top-left key (for layouts that do not normally have one).
+
+Possible values for `keyAction` are:
 
 - `ToggleNumericMode`
 - `ToggleABCMode`
@@ -387,7 +403,7 @@ This swaps the 'switch language' and 'toggle emoji' actions on the top-right key
 
 `StartComposeCombo` works on any layout except the Korean ones, which already process their own input.
 
-#### Example 4
+#### Example 5
 
 ```yaml
 ENThumbKey:
@@ -406,7 +422,7 @@ ENThumbKey:
 
 This enables long pressing to type digits. `longPress` properties are: `text`, `keyAction`, `remove`. These are used the same way as for `center`, `left`, `topLeft`, etc.
 
-#### Example 5
+#### Example 6
 
 This example shows one way to declare combining diacritics:
 
@@ -427,7 +443,7 @@ ENMessagEase:
 
 Note that the `text` field contains only one character: the combining diacritic, while the `displayText` field contains two characters: the dotted circle and the combining diacritic.
 
-#### Example 6
+#### Example 7
 
 ```yaml
 ENThumbKey:
