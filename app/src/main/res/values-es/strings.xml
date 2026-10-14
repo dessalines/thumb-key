@@ -148,4 +148,14 @@
     <string name="clear_search">Limpiar búsqueda</string>
     <string name="sketch_back">Atrás</string>
     <string name="sketch_clear_search">Limpiar búsqueda</string>
+    <string name="search_layouts">Buscar diseños</string>
+    <string name="no_layouts_found">No se encontraron diseños</string>
+    <string name="sketch_hint">Dibuja un carácter. Toca o desliza el dedo sobre una de las teclas inferiores para escribir. Mantén pulsada la tecla o desliza el dedo y vuelve a ella para ver variantes similares.</string>
+    <string name="sketch_loading">Cargando el reconocimiento de escritura manual…</string>
+    <string name="sketch_load_failed">No se pudo cargar el reconocimiento de escritura a mano</string>
+    <string name="sketch_look_alikes">Parecidos de %1$s · %2$d</string>
+    <string name="sketch_all_candidates">Todas las candidatas · %1$d</string>
+    <string name="sketch_no_matches">Ninguna candidata coincide</string>
+    <string name="handwriting_recognition">Reconocimiento de escritura manual</string>
+    <string name="handwriting_recognition_summary">El modo de boceto reconoce caracteres mediante glyphsketch en el propio dispositivo.</string>
 </resources>
