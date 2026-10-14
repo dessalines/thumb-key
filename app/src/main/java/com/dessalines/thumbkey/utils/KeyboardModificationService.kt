@@ -256,6 +256,7 @@ fun modifyKeyC(
         keyCSerializable.text?.let {
             KeyC.action.set(CommitText(it))
             KeyC.display.set(TextDisplay(it))
+            KeyC.capsModeDisplay.set(null)
         }
 
         keyActionKeyC?.let {
@@ -275,6 +276,7 @@ fun modifyKeyC(
 
         keyCSerializable.displayText?.let {
             KeyC.display.set(TextDisplay(it))
+            KeyC.capsModeDisplay.set(null)
         }
         keyCSerializable.color?.let {
             KeyC.color.set(it)
