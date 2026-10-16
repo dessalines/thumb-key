@@ -1640,7 +1640,20 @@ private fun autoCapitalize(
     }
 }
 
-fun autoCapitalizeCheck(ime: IMEService): Boolean = ime.currentInputConnection.getCursorCapsMode(ime.currentInputEditorInfo.inputType) > 0
+fun autoCapitalizeCheck(ime: IMEService): Boolean {
+    val inputConnection = ime.currentInputConnection
+    val capsMode = inputConnection.getCursorCapsMode(ime.currentInputEditorInfo.inputType)
+    val textBeforeCursor = inputConnection.getTextBeforeCursor(1, 0)
+    return shouldAutoCapitalize(capsMode, textBeforeCursor)
+}
+
+internal fun shouldAutoCapitalize(
+    capsMode: Int,
+    textBeforeCursor: CharSequence?,
+): Boolean =
+    capsMode > 0 ||
+        textBeforeCursor?.lastOrNull() == '¡' ||
+        textBeforeCursor?.lastOrNull() == '¿'
 
 /**
  * Avoid capitalizing or switching to shifted mode in certain edit boxes
