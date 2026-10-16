@@ -452,6 +452,14 @@ data class Selection(
     }
 }
 
+enum class ImeSwitchMode(
+    @param:StringRes val resId: Int,
+) {
+    Picker(R.string.ime_switch_mode_picker),
+    Previous(R.string.ime_switch_mode_previous),
+    Next(R.string.ime_switch_mode_next),
+}
+
 enum class CircularDirection {
     Clockwise,
     Counterclockwise,

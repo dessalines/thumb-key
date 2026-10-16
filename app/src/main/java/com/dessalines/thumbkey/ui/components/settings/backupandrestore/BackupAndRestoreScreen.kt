@@ -77,6 +77,7 @@ import com.dessalines.thumbkey.db.DEFAULT_SLIDE_SENSITIVITY
 import com.dessalines.thumbkey.db.DEFAULT_SLIDE_SPACEBAR_DEADZONE_ENABLED
 import com.dessalines.thumbkey.db.DEFAULT_SOUND_ON_TAP
 import com.dessalines.thumbkey.db.DEFAULT_SPACEBAR_MULTITAPS
+import com.dessalines.thumbkey.db.DEFAULT_SWITCH_IME_MODE
 import com.dessalines.thumbkey.db.DEFAULT_SWITCH_TO_LETTERS_AFTER_SPACE
 import com.dessalines.thumbkey.db.DEFAULT_THEME
 import com.dessalines.thumbkey.db.DEFAULT_THEME_COLOR
@@ -316,6 +317,7 @@ private fun resetAppSettingsToDefault(appSettingsViewModel: AppSettingsViewModel
             usePrivateClipboard = DEFAULT_USE_PRIVATE_CLIPBOARD,
             showOnScreenKeyboard = DEFAULT_SHOW_ON_SCREEN_KEYBOARD,
             slideHoldEnabled = DEFAULT_SLIDE_HOLD_ENABLED,
+            switchImeMode = DEFAULT_SWITCH_IME_MODE,
         ),
     )
 }

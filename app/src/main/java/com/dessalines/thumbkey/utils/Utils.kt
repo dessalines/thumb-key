@@ -1489,9 +1489,39 @@ fun performKeyAction(
         }
 
         KeyAction.SwitchIME -> {
-            val imeManager =
-                ime.getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
-            imeManager.showInputMethodPicker()
+            when (ime.switchImeMode()) {
+                ImeSwitchMode.Picker -> {
+                    val imeManager =
+                        ime.getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
+                    imeManager.showInputMethodPicker()
+                }
+
+                ImeSwitchMode.Previous -> {
+                    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.P) {
+                        ime.switchToPreviousInputMethod()
+                    } else {
+                        ime.window.window?.attributes?.token?.let { token ->
+                            val imeManager =
+                                ime.getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
+                            @Suppress("DEPRECATION")
+                            imeManager.switchToLastInputMethod(token)
+                        }
+                    }
+                }
+
+                ImeSwitchMode.Next -> {
+                    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.P) {
+                        ime.switchToNextInputMethod(false)
+                    } else {
+                        ime.window.window?.attributes?.token?.let { token ->
+                            val imeManager =
+                                ime.getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
+                            @Suppress("DEPRECATION")
+                            imeManager.switchToNextInputMethod(token, false)
+                        }
+                    }
+                }
+            }
         }
 
         KeyAction.SwitchIMEVoice -> {
