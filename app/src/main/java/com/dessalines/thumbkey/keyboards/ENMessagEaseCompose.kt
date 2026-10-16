@@ -133,12 +133,7 @@ val KB_EN_MESSAGEASE_COMPOSED_MAIN =
                 ),
                 KeyItemC(
                     center = KeyC("e", size = LARGE),
-                    topLeft =
-                        KeyC(
-                            display = KeyDisplay.TextDisplay("\""),
-                            action = ComposeLastKey("\""),
-                            color = MUTED,
-                        ),
+                    topLeft = KeyC("\"", color = MUTED),
                     top = KeyC("w"),
                     topRight = KeyC("'", color = MUTED),
                     right = KeyC("z"),
@@ -295,19 +290,9 @@ val KB_EN_MESSAGEASE_COMPOSED_SHIFTED =
                 ),
                 KeyItemC(
                     center = KeyC("E", size = LARGE),
-                    topLeft =
-                        KeyC(
-                            display = KeyDisplay.TextDisplay("\""),
-                            action = ComposeLastKey("\""),
-                            color = MUTED,
-                        ),
+                    topLeft = KeyC("\"", color = MUTED),
                     top = KeyC("W"),
-                    topRight =
-                        KeyC(
-                            display = KeyDisplay.TextDisplay("'"),
-                            action = ComposeLastKey("'"),
-                            color = MUTED,
-                        ),
+                    topRight = KeyC("'", color = MUTED),
                     right = KeyC("Z"),
                     bottomRight = KeyC(":", color = MUTED),
                     bottom = KeyC(".", color = MUTED),

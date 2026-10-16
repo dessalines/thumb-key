@@ -95,6 +95,8 @@ android {
 }
 
 dependencies {
+    testImplementation("junit:junit:4.13.2")
+
     // Freedroidwarn
     implementation("com.github.woheller69:FreeDroidWarn:V1.14")
 
