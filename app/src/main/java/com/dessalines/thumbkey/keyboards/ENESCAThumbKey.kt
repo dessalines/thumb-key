@@ -222,6 +222,6 @@ val KB_EN_ES_CA_THUMBKEY: KeyboardDefinition =
             ),
         settings =
             KeyboardDefinitionSettings(
-                autoCapitalizers = arrayOf(::autoCapitalizeI, ::autoCapitalizeIApostrophe),
+                autoCapitalizers = arrayOf(::autoCapitalizeI, ::autoCapitalizeIApostrophe, ::autoCapitalizeSpanishOpeningMarks),
             ),
     )

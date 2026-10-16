@@ -283,4 +283,5 @@ val KB_ES_TYPESPLIT: KeyboardDefinition =
                 shifted = KB_ES_TYPESPLIT_SHIFTED,
                 numeric = TYPESPLIT_NUMERIC_KEYBOARD,
             ),
+        settings = KeyboardDefinitionSettings(autoCapitalizers = arrayOf(::autoCapitalizeSpanishOpeningMarks)),
     )

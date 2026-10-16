@@ -218,4 +218,5 @@ val KB_ES_CA_THUMBKEY: KeyboardDefinition =
                 shifted = KB_ES_CA_THUMBKEY_SHIFTED,
                 numeric = NUMERIC_KEYBOARD,
             ),
+        settings = KeyboardDefinitionSettings(autoCapitalizers = arrayOf(::autoCapitalizeSpanishOpeningMarks)),
     )

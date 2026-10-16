@@ -391,6 +391,6 @@ val KB_EN_ES_CA_TWO_HANDS: KeyboardDefinition =
             ),
         settings =
             KeyboardDefinitionSettings(
-                autoCapitalizers = arrayOf(::autoCapitalizeI, ::autoCapitalizeIApostrophe),
+                autoCapitalizers = arrayOf(::autoCapitalizeI, ::autoCapitalizeIApostrophe, ::autoCapitalizeSpanishOpeningMarks),
             ),
     )

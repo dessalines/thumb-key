@@ -267,4 +267,5 @@ val KB_ES_CA_MESSAGEASE: KeyboardDefinition =
                 shifted = KB_ES_CA_MESSAGEASE_SHIFTED,
                 numeric = KB_EN_MESSAGEASE_NUMERIC,
             ),
+        settings = KeyboardDefinitionSettings(autoCapitalizers = arrayOf(::autoCapitalizeSpanishOpeningMarks)),
     )
