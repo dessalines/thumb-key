@@ -83,6 +83,10 @@
     <string name="spacebar_multitaps">Spacebar multi-taps</string>
     <string name="switch_to_letters_after_space">Switch to letters after a space</string>
     <string name="switch_to_letters_after_space_description">Return to the letter keyboard after entering a space in numeric mode</string>
+    <string name="ime_switch_mode">Switching between input methods</string>
+    <string name="ime_switch_mode_picker">Show the input method picker</string>
+    <string name="ime_switch_mode_previous">Switch to last used</string>
+    <string name="ime_switch_mode_next">Switch to the next in the list</string>
     <string name="done">Done</string>
     <string name="backdrop">Keyboard backdrop</string>
     <string name="key_padding">Key padding: %1$s</string>

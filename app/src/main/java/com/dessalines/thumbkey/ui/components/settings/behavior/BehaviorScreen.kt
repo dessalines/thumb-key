@@ -14,6 +14,7 @@ import androidx.compose.material.icons.automirrored.outlined.RotateRight
 import androidx.compose.material.icons.outlined.Abc
 import androidx.compose.material.icons.outlined.BorderInner
 import androidx.compose.material.icons.outlined.Circle
+import androidx.compose.material.icons.outlined.Keyboard
 import androidx.compose.material.icons.outlined.SpaceBar
 import androidx.compose.material.icons.outlined.SwapHoriz
 import androidx.compose.material.icons.outlined.Swipe
@@ -54,11 +55,13 @@ import com.dessalines.thumbkey.db.DEFAULT_SLIDE_HOLD_ENABLED
 import com.dessalines.thumbkey.db.DEFAULT_SLIDE_SENSITIVITY
 import com.dessalines.thumbkey.db.DEFAULT_SLIDE_SPACEBAR_DEADZONE_ENABLED
 import com.dessalines.thumbkey.db.DEFAULT_SPACEBAR_MULTITAPS
+import com.dessalines.thumbkey.db.DEFAULT_SWITCH_IME_MODE
 import com.dessalines.thumbkey.db.DEFAULT_SWITCH_TO_LETTERS_AFTER_SPACE
 import com.dessalines.thumbkey.ui.components.common.TestOutTextField
 import com.dessalines.thumbkey.ui.components.settings.about.SettingsDivider
 import com.dessalines.thumbkey.utils.CircularDragAction
 import com.dessalines.thumbkey.utils.CursorAccelerationMode
+import com.dessalines.thumbkey.utils.ImeSwitchMode
 import com.dessalines.thumbkey.utils.SimpleTopAppBar
 import com.dessalines.thumbkey.utils.TAG
 import com.dessalines.thumbkey.utils.toBool
@@ -103,6 +106,7 @@ fun BehaviorScreen(
         CircularDragAction.entries[settings?.counterclockwiseDragAction ?: DEFAULT_COUNTERCLOCKWISE_DRAG_ACTION]
     var ghostKeysEnabledState = (settings?.ghostKeysEnabled ?: DEFAULT_GHOST_KEYS_ENABLED).toBool()
     var slideHoldEnabledState = (settings?.slideHoldEnabled ?: DEFAULT_SLIDE_HOLD_ENABLED).toBool()
+    var switchImeModeState = ImeSwitchMode.entries[settings?.switchImeMode ?: DEFAULT_SWITCH_IME_MODE]
 
     val snackbarHostState = remember { SnackbarHostState() }
 
@@ -129,6 +133,7 @@ fun BehaviorScreen(
                 counterclockwiseDragAction = counterclockwiseDragActionState.ordinal,
                 ghostKeysEnabled = ghostKeysEnabledState.toInt(),
                 slideHoldEnabled = slideHoldEnabledState.toInt(),
+                switchImeMode = switchImeModeState.ordinal,
             ),
         )
     }
@@ -454,6 +459,31 @@ fun BehaviorScreen(
                             Icon(
                                 imageVector = Icons.Outlined.BorderInner,
                                 contentDescription = stringResource(R.string.ghost_keys_enable),
+                            )
+                        },
+                    )
+                    SettingsDivider()
+                    ListPreference(
+                        type = ListPreferenceType.DROPDOWN_MENU,
+                        value = switchImeModeState,
+                        onValueChange = {
+                            switchImeModeState = it
+                            updateBehavior()
+                        },
+                        values = ImeSwitchMode.entries,
+                        valueToText = {
+                            AnnotatedString(resources.getString(it.resId))
+                        },
+                        title = {
+                            Text(stringResource(R.string.ime_switch_mode))
+                        },
+                        summary = {
+                            Text(stringResource(switchImeModeState.resId))
+                        },
+                        icon = {
+                            Icon(
+                                imageVector = Icons.Outlined.Keyboard,
+                                contentDescription = null,
                             )
                         },
                     )

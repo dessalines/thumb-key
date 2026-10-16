@@ -19,8 +19,10 @@ import androidx.savedstate.setViewTreeSavedStateRegistryOwner
 import com.dessalines.thumbkey.db.DEFAULT_CLIPBOARD_HISTORY_ENABLED
 import com.dessalines.thumbkey.db.DEFAULT_DISABLE_FULLSCREEN_EDITOR
 import com.dessalines.thumbkey.db.DEFAULT_SHOW_ON_SCREEN_KEYBOARD
+import com.dessalines.thumbkey.db.DEFAULT_SWITCH_IME_MODE
 import com.dessalines.thumbkey.db.DEFAULT_USE_PRIVATE_CLIPBOARD
 import com.dessalines.thumbkey.ui.components.keyboard.SketchState
+import com.dessalines.thumbkey.utils.ImeSwitchMode
 import com.dessalines.thumbkey.utils.KeyboardDefinition
 import com.dessalines.thumbkey.utils.KeyboardLayout
 import com.dessalines.thumbkey.utils.TAG
@@ -208,6 +210,12 @@ class IMEService :
         val clipboardHistoryEnabled = (settings?.clipboardHistoryEnabled ?: DEFAULT_CLIPBOARD_HISTORY_ENABLED).toBool()
         val usePrivateClipboard = (settings?.usePrivateClipboard ?: DEFAULT_USE_PRIVATE_CLIPBOARD).toBool()
         return clipboardHistoryEnabled && usePrivateClipboard
+    }
+
+    fun switchImeMode(): ImeSwitchMode {
+        val settingsRepo = (application as ThumbkeyApplication).appSettingsRepository
+        val settings = settingsRepo.appSettings.getValue()
+        return ImeSwitchMode.entries[settings?.switchImeMode ?: DEFAULT_SWITCH_IME_MODE]
     }
 
     fun clipboardAddPrivateClip(text: String): Unit? = clipboardManager?.addPrivateClip(text)
