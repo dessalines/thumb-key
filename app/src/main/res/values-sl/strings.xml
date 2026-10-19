@@ -160,4 +160,8 @@
     <string name="sketch_no_matches">Ni podobnih kandidatov</string>
     <string name="handwriting_recognition">Prepoznavanje pisave</string>
     <string name="handwriting_recognition_summary">Prepoznavanje znakov z glyphsketch na napravi, brez spletnih storitev.</string>
+    <string name="ime_switch_mode">Preklapljanje med vnosnimi načini</string>
+    <string name="ime_switch_mode_picker">Prikaži izbirnik vnosne načinov</string>
+    <string name="ime_switch_mode_previous">Preklopi na nazadnje uporabljeni način</string>
+    <string name="ime_switch_mode_next">Preklopi na naslednji način iz seznama</string>
 </resources>
