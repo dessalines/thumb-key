@@ -158,4 +158,8 @@
     <string name="sketch_loading">Chargement de la reconnaissance de l’écriture manuscrite…</string>
     <string name="sketch_load_failed">Échec du chargement de la reconnaissance de l’écriture manuscrite</string>
     <string name="sketch_look_alikes">Similitudes de %1$s %2$d</string>
+    <string name="ime_switch_mode">Basculement entre les méthodes de saisie</string>
+    <string name="ime_switch_mode_picker">Afficher le sélectionneur de méthode d’entrée</string>
+    <string name="ime_switch_mode_previous">Basculer vers le dernier utilisé</string>
+    <string name="ime_switch_mode_next">Basculer vers le premier de la liste</string>
 </resources>
