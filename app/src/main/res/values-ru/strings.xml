@@ -160,4 +160,8 @@
     <string name="sketch_no_matches">Нет подходящих вариантов</string>
     <string name="handwriting_recognition">Распознавание рукописного ввода</string>
     <string name="handwriting_recognition_summary">В режиме рисования символы распознаются с помощью glyphsketch прямо на устройстве.</string>
+    <string name="ime_switch_mode">Переключение способов ввода</string>
+    <string name="ime_switch_mode_picker">Показать меню выбора способа ввода</string>
+    <string name="ime_switch_mode_previous">Переключаться на последний использованный</string>
+    <string name="ime_switch_mode_next">Переключаться на следующий в списке</string>
 </resources>
