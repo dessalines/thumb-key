@@ -1,3 +1,18 @@
+## What's Changed in 5.1.19
+
+- Add Theme Magma by @DavidAJL in [#2050](https://github.com/dessalines/thumb-key/pull/2050)
+- Add an input method switching mode setting by @lightrush in [#2041](https://github.com/dessalines/thumb-key/pull/2041)
+- Override the caps-lock legend from key modifications by @mvanhorn in [#2039](https://github.com/dessalines/thumb-key/pull/2039)
+- Spell keyboard layout identifiers ThumbKey by @mvanhorn in [#2033](https://github.com/dessalines/thumb-key/pull/2033)
+
+## New Contributors
+
+- @DavidAJL made their first contribution in [#2050](https://github.com/dessalines/thumb-key/pull/2050)
+- @lightrush made their first contribution in [#2041](https://github.com/dessalines/thumb-key/pull/2041)
+- @mvanhorn made their first contribution in [#2039](https://github.com/dessalines/thumb-key/pull/2039)
+
+**Full Changelog**: https://github.com/dessalines/thumb-key/compare/5.1.18...5.1.19
+
 ## What's Changed in 5.1.18
 
 - Add sketch mode by @Toldry in [#2023](https://github.com/dessalines/thumb-key/pull/2023)
@@ -2054,11 +2069,11 @@
 - Create ThumbKeyJAv1Katakana.kt by @K0baU
 - Update ThumbKeyJAv1Hiragana.kt by @K0baU
 - Update ThumbKeyJAv1Hiragana.kt by @K0baU
-- Update ThumbKeyJAv1Hiragana.kt
-- Update ThumbKeyJAv1Hiragana.kt
-- Update ThumbKeyJAv1Hiragana.kt
-- Rename ThumbKeyJAv1.kt to ThumbKeyJAv1Hiragana.kt
-- Create ThumbKeyJAv1.kt
+- Update ThumbKeyJAv1Hiragana.kt by @K0baU
+- Update ThumbKeyJAv1Hiragana.kt by @K0baU
+- Update ThumbKeyJAv1Hiragana.kt by @K0baU
+- Rename ThumbKeyJAv1.kt to ThumbKeyJAv1Hiragana.kt by @K0baU
+- Create ThumbKeyJAv1.kt by @K0baU
 - French keymap by @dessalines in [#257](https://github.com/dessalines/thumb-key/pull/257)
 - T symbol fix by @dessalines in [#266](https://github.com/dessalines/thumb-key/pull/266)
 - Merge branch 'main' into T_symbol_fix by @dessalines
