@@ -403,6 +403,7 @@ enum class ThemeColor(
     Ancom(R.string.ancom),
     Matrix(R.string.matrix),
     Neon(R.string.neon),
+    Magma(R.string.magma),
 }
 
 enum class KeyboardPosition(

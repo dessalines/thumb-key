@@ -44,6 +44,7 @@ fun ThumbkeyTheme(
             ThemeColor.HighContrastColorful -> highContrastColorful()
             ThemeColor.Ancom -> ancom()
             ThemeColor.Neon -> neon()
+            ThemeColor.Magma -> magma()
         }
 
     val systemTheme =
