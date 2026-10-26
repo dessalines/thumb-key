@@ -164,4 +164,5 @@
     <string name="ime_switch_mode_picker">Показать меню выбора способа ввода</string>
     <string name="ime_switch_mode_previous">Переключаться на последний использованный</string>
     <string name="ime_switch_mode_next">Переключаться на следующий в списке</string>
+    <string name="magma">Магма</string>
 </resources>

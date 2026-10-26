@@ -160,4 +160,9 @@
     <string name="sketch_no_matches">Inga matchande förslag</string>
     <string name="handwriting_recognition">Handstilsigenkänning</string>
     <string name="handwriting_recognition_summary">Skissläget känner igen tecken med glyphsketch på enheten.</string>
+    <string name="magma">Magma</string>
+    <string name="ime_switch_mode">Växla mellan inmatningsmetoder</string>
+    <string name="ime_switch_mode_picker">Visa väljaren för inmatningsmetod</string>
+    <string name="ime_switch_mode_previous">Växla till senast använda</string>
+    <string name="ime_switch_mode_next">Växla till nästa i listan</string>
 </resources>
