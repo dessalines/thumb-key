@@ -158,4 +158,9 @@
     <string name="sketch_no_matches">Ninguna candidata coincide</string>
     <string name="handwriting_recognition">Reconocimiento de escritura manual</string>
     <string name="handwriting_recognition_summary">El modo de boceto reconoce caracteres mediante glyphsketch en el propio dispositivo.</string>
+    <string name="magma">Magma</string>
+    <string name="ime_switch_mode">Cambiando entre métodos de entrada</string>
+    <string name="ime_switch_mode_picker">Mostrar el selector de método de entrada</string>
+    <string name="ime_switch_mode_previous">Cambiar al último utilizado</string>
+    <string name="ime_switch_mode_next">Cambiar al siguiente de la lista</string>
 </resources>

@@ -164,4 +164,5 @@
     <string name="ime_switch_mode_picker">Prikaži izbirnik vnosne načinov</string>
     <string name="ime_switch_mode_previous">Preklopi na nazadnje uporabljeni način</string>
     <string name="ime_switch_mode_next">Preklopi na naslednji način iz seznama</string>
+    <string name="magma">Magma</string>
 </resources>
