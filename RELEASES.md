@@ -1,3 +1,16 @@
+## What's Changed in 5.1.20
+
+- Add ToggleHideLetters as a key modification action by @Xander-AJ in [#2062](https://github.com/dessalines/thumb-key/pull/2062)
+- Restore Android IME settings entry by @mvanhorn in [#2060](https://github.com/dessalines/thumb-key/pull/2060)
+- Match layout search against the layout title by @Xander-AJ in [#2055](https://github.com/dessalines/thumb-key/pull/2055)
+- Remove freedroidwarn by @dessalines in [#2051](https://github.com/dessalines/thumb-key/pull/2051)
+
+## New Contributors
+
+- @Xander-AJ made their first contribution in [#2062](https://github.com/dessalines/thumb-key/pull/2062)
+
+**Full Changelog**: https://github.com/dessalines/thumb-key/compare/5.1.19...5.1.20
+
 ## What's Changed in 5.1.19
 
 - Add Theme Magma by @DavidAJL in [#2050](https://github.com/dessalines/thumb-key/pull/2050)
