@@ -33,7 +33,7 @@ object AvroEngine {
         value: String = "",
     ) = Cond(type, scope, value)
 
-    private fun R(
+    private fun rule(
         replace: String,
         vararg conds: Cond,
     ) = Rule(replace, conds.toList())
@@ -41,8 +41,8 @@ object AvroEngine {
     // vowel renders as full letter at word start / after vowel, kar after consonant
     private fun sealRules(full: String) =
         listOf(
-            R(full, c("prefix", "!consonant"), c("suffix", "!exact", "`")),
-            R(full, c("prefix", "punctuation"), c("suffix", "!exact", "`")),
+            rule(full, c("prefix", "!consonant"), c("suffix", "!exact", "`")),
+            rule(full, c("prefix", "punctuation"), c("suffix", "!exact", "`")),
         )
 
     private val PATTERNS: List<Pattern> =
@@ -225,9 +225,9 @@ object AvroEngine {
             Pattern("OI`", "ৈ"),
             Pattern("OU`", "ৌ"),
             Pattern("O`", "ো"),
-            Pattern("OI", "ৈ", listOf(R("ঐ", c("prefix", "!consonant")), R("ঐ", c("prefix", "punctuation")))),
-            Pattern("OU", "ৌ", listOf(R("ঔ", c("prefix", "!consonant")), R("ঔ", c("prefix", "punctuation")))),
-            Pattern("O", "ো", listOf(R("ও", c("prefix", "!consonant")), R("ও", c("prefix", "punctuation")))),
+            Pattern("OI", "ৈ", listOf(rule("ঐ", c("prefix", "!consonant")), rule("ঐ", c("prefix", "punctuation")))),
+            Pattern("OU", "ৌ", listOf(rule("ঔ", c("prefix", "!consonant")), rule("ঔ", c("prefix", "punctuation")))),
+            Pattern("O", "ো", listOf(rule("ও", c("prefix", "!consonant")), rule("ও", c("prefix", "punctuation")))),
             Pattern("phl", "ফ্ল"),
             Pattern("pT", "প্ট"),
             Pattern("pt", "প্ত"),
@@ -240,17 +240,17 @@ object AvroEngine {
             Pattern("f", "ফ"),
             Pattern("p", "প"),
             Pattern("rri`", "ৃ"),
-            Pattern("rri", "ৃ", listOf(R("ঋ", c("prefix", "!consonant")), R("ঋ", c("prefix", "punctuation")))),
+            Pattern("rri", "ৃ", listOf(rule("ঋ", c("prefix", "!consonant")), rule("ঋ", c("prefix", "punctuation")))),
             Pattern("rrZ", "রর‍্য"),
             Pattern("rry", "রর‍্য"),
             Pattern(
                 "rZ",
                 "র‍্য",
                 listOf(
-                    R(
+                    rule(
                         "্র্য",
                         c("prefix", "consonant"),
-                        c("prefix", "!exact", "r"),
+                        c("prefix", "!exact", "rule"),
                         c("prefix", "!exact", "y"),
                         c("prefix", "!exact", "w"),
                         c("prefix", "!exact", "x"),
@@ -261,10 +261,10 @@ object AvroEngine {
                 "ry",
                 "র‍্য",
                 listOf(
-                    R(
+                    rule(
                         "্র্য",
                         c("prefix", "consonant"),
-                        c("prefix", "!exact", "r"),
+                        c("prefix", "!exact", "rule"),
                         c("prefix", "!exact", "y"),
                         c("prefix", "!exact", "w"),
                         c("prefix", "!exact", "x"),
@@ -275,21 +275,27 @@ object AvroEngine {
                 "rr",
                 "রর",
                 listOf(
-                    R("র্", c("prefix", "!consonant"), c("suffix", "!vowel"), c("suffix", "!exact", "r"), c("suffix", "!punctuation")),
-                    R("্রর", c("prefix", "consonant"), c("prefix", "!exact", "r")),
+                    rule(
+                        "র্",
+                        c("prefix", "!consonant"),
+                        c("suffix", "!vowel"),
+                        c("suffix", "!exact", "rule"),
+                        c("suffix", "!punctuation"),
+                    ),
+                    rule("্রর", c("prefix", "consonant"), c("prefix", "!exact", "rule")),
                 ),
             ),
             Pattern("Rg", "ড্গ"),
             Pattern("Rh", "ঢ়"),
-            Pattern("R", "ড"),
+            Pattern("rule", "ড"),
             Pattern(
-                "r",
+                "rule",
                 "র",
                 listOf(
-                    R(
+                    rule(
                         "্র",
                         c("prefix", "consonant"),
-                        c("prefix", "!exact", "r"),
+                        c("prefix", "!exact", "rule"),
                         c("prefix", "!exact", "y"),
                         c("prefix", "!exact", "w"),
                         c("prefix", "!exact", "x"),
@@ -343,9 +349,9 @@ object AvroEngine {
                 "o",
                 "",
                 listOf(
-                    R("ও", c("prefix", "vowel"), c("prefix", "!exact", "o")),
-                    R("অ", c("prefix", "vowel"), c("prefix", "exact", "o")),
-                    R("অ", c("prefix", "punctuation")),
+                    rule("ও", c("prefix", "vowel"), c("prefix", "!exact", "o")),
+                    rule("অ", c("prefix", "vowel"), c("prefix", "exact", "o")),
+                    rule("অ", c("prefix", "punctuation")),
                 ),
             ),
             Pattern("tth", "ত্থ"),
@@ -367,9 +373,9 @@ object AvroEngine {
                 "a",
                 "া",
                 listOf(
-                    R("আ", c("prefix", "punctuation"), c("suffix", "!exact", "`")),
-                    R("যা", c("prefix", "!consonant"), c("prefix", "!exact", "a"), c("suffix", "!exact", "`")),
-                    R("আ", c("prefix", "exact", "a"), c("suffix", "!exact", "`")),
+                    rule("আ", c("prefix", "punctuation"), c("suffix", "!exact", "`")),
+                    rule("যা", c("prefix", "!consonant"), c("prefix", "!exact", "a"), c("suffix", "!exact", "`")),
+                    rule("আ", c("prefix", "exact", "a"), c("suffix", "!exact", "`")),
                 ),
             ),
             Pattern("i`", "ি"),
@@ -390,8 +396,8 @@ object AvroEngine {
                 "y",
                 "্য",
                 listOf(
-                    R("য", c("prefix", "!consonant"), c("prefix", "!punctuation")),
-                    R("ইয", c("prefix", "punctuation")),
+                    rule("য", c("prefix", "!consonant"), c("prefix", "!punctuation")),
+                    rule("ইয", c("prefix", "punctuation")),
                 ),
             ),
             Pattern("Y", "য"),
@@ -400,11 +406,11 @@ object AvroEngine {
                 "w",
                 "ও",
                 listOf(
-                    R("ওয", c("prefix", "punctuation"), c("suffix", "vowel")),
-                    R("্ব", c("prefix", "consonant")),
+                    rule("ওয", c("prefix", "punctuation"), c("suffix", "vowel")),
+                    rule("্ব", c("prefix", "consonant")),
                 ),
             ),
-            Pattern("x", "ক্স", listOf(R("এক্স", c("prefix", "punctuation")))),
+            Pattern("x", "ক্স", listOf(rule("এক্স", c("prefix", "punctuation")))),
             Pattern(":`", ":"),
             Pattern(":", "ঃ"),
             Pattern("^`", "^"),
