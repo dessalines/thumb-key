@@ -26,6 +26,7 @@ import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.foundation.text.TextAutoSize
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.automirrored.outlined.ArrowBack
 import androidx.compose.material.icons.outlined.Close
@@ -66,6 +67,7 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
+import androidx.compose.ui.unit.em
 import androidx.compose.ui.unit.sp
 import com.dessalines.thumbkey.IMEService
 import com.dessalines.thumbkey.R
@@ -390,7 +392,8 @@ private fun SketchPad(
             Column(
                 horizontalAlignment = Alignment.CenterHorizontally,
                 verticalArrangement = Arrangement.spacedBy(6.dp, Alignment.CenterVertically),
-                modifier = Modifier.fillMaxSize().padding(horizontal = 20.dp),
+                // The hint must not contribute to the pad's intrinsic height.
+                modifier = Modifier.matchParentSize().padding(horizontal = 20.dp),
             ) {
                 Icon(
                     imageVector = Icons.Outlined.Draw,
@@ -401,9 +404,10 @@ private fun SketchPad(
                 Text(
                     text = hint,
                     color = hintColor,
-                    fontSize = 14.sp,
-                    lineHeight = 19.sp,
+                    autoSize = TextAutoSize.StepBased(minFontSize = 1.sp, maxFontSize = 14.sp),
+                    lineHeight = (19f / 14f).em,
                     textAlign = TextAlign.Center,
+                    modifier = Modifier.weight(1f, fill = false),
                 )
             }
         }
