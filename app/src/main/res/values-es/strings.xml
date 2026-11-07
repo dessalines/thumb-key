@@ -163,4 +163,5 @@
     <string name="ime_switch_mode_picker">Mostrar el selector de método de entrada</string>
     <string name="ime_switch_mode_previous">Cambiar al último utilizado</string>
     <string name="ime_switch_mode_next">Cambiar al siguiente de la lista</string>
+    <string name="sketch_search_hint">Búsqueda</string>
 </resources>
