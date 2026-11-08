@@ -361,6 +361,8 @@ This swaps the 'switch language' and 'toggle emoji' actions on the top-right key
 - `ToggleAltModeFalse`
 - `Left`
 - `Right`
+- `Up`
+- `Down`
 - `Top`
 - `Bottom`
 - `IMEComplete`

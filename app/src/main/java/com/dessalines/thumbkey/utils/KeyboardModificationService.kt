@@ -359,6 +359,8 @@ fun getCommonKeyCFromKeyAction(keyActionSerializable: KeyActionSerializable?): K
         KeyActionSerializable.ToggleAltModeFalse -> TOGGLE_ALT_FALSE_KEYC
         KeyActionSerializable.Left -> SPACEBAR_LEFT_KEYC
         KeyActionSerializable.Right -> SPACEBAR_RIGHT_KEYC
+        KeyActionSerializable.Up -> SPACEBAR_PROGRAMMING_TOP_KEYC
+        KeyActionSerializable.Down -> SPACEBAR_PROGRAMMING_BOTTOM_KEYC
         KeyActionSerializable.Top -> SPACEBAR_PROGRAMMING_TOP_KEYC
         KeyActionSerializable.Bottom -> SPACEBAR_PROGRAMMING_BOTTOM_KEYC
         KeyActionSerializable.IMEComplete -> RETURN_KEYC
@@ -563,6 +565,8 @@ enum class KeyActionSerializable {
     ToggleAltModeFalse,
     Left,
     Right,
+    Up,
+    Down,
     Top,
     Bottom,
     GotoSettings,

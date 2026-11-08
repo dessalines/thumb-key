@@ -412,24 +412,12 @@ val SPACEBAR_DOUBLE_KEY_ITEM = SPACEBAR_KEY_ITEM.copy(widthMultiplier = 2)
 
 val SPACEBAR_PROGRAMMING_TOP_KEYC =
     KeyC(
-        action =
-            SendEvent(
-                KeyEvent(
-                    KeyEvent.ACTION_DOWN,
-                    KeyEvent.KEYCODE_DPAD_UP,
-                ),
-            ),
+        action = CursorUp,
         display = null,
     )
 val SPACEBAR_PROGRAMMING_BOTTOM_KEYC =
     KeyC(
-        action =
-            SendEvent(
-                KeyEvent(
-                    KeyEvent.ACTION_DOWN,
-                    KeyEvent.KEYCODE_DPAD_DOWN,
-                ),
-            ),
+        action = CursorDown,
         display = null,
     )
 val SPACEBAR_PROGRAMMING_KEY_ITEM =
