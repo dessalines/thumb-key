@@ -464,6 +464,16 @@ fun performKeyAction(
             selectLineWithCursor(ime)
         }
 
+        is KeyAction.CursorUp -> {
+            Log.d(TAG, "Cursor up")
+            sendCursorKeyEvent(ime, keyboardSettings, KeyEvent.KEYCODE_DPAD_UP, onKeyEvent)
+        }
+
+        is KeyAction.CursorDown -> {
+            Log.d(TAG, "Cursor down")
+            sendCursorKeyEvent(ime, keyboardSettings, KeyEvent.KEYCODE_DPAD_DOWN, onKeyEvent)
+        }
+
         is KeyAction.CursorToLineStart -> {
             Log.d(TAG, "Cursor to line start")
             cursorToLineStart(ime)
@@ -1723,6 +1733,19 @@ fun moveCursor(
     val selection = startSelection(ime)
     selection.right(delta)
     ime.currentInputConnection.setSelection(selection.end, selection.end)
+}
+
+fun sendCursorKeyEvent(
+    ime: IMEService,
+    keyboardSettings: KeyboardDefinitionSettings,
+    keyCode: Int,
+    onKeyEvent: (action: KeyAction) -> Unit,
+) {
+    val action = KeyAction.SendEvent(KeyEvent(KeyEvent.ACTION_DOWN, keyCode))
+    keyboardSettings.textProcessor?.handleKeyEvent(ime, action.event)
+        ?: ime.currentInputConnection.sendKeyEvent(action.event)
+    // Reported as a key event, so ctrl and alt modes are released like for the left and right keys
+    onKeyEvent(action)
 }
 
 fun cursorToLineStart(ime: IMEService) {
