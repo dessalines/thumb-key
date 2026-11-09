@@ -125,7 +125,7 @@ val KB_HI_THUMBKEY_EXTENDED_MAIN =
                     topRight = KeyC("औ"),
                     right = KeyC("ओ"),
                     bottomRight = KeyC("ँ"),
-                    bottom = KeyC("|"),
+                    bottom = KeyC("।"),
                     bottomLeft = KeyC("-"),
                     left = KeyC("ो"),
                 ),
@@ -198,6 +198,7 @@ val KB_HI_THUMBKEY_EXTENDED_SHIFTED =
                 ),
                 KeyItemC(
                     center = KeyC("९", size = LARGE),
+                    right = KeyC("॥"),
                     bottom = KeyC("'"),
                 ),
                 BACKSPACE_KEY_ITEM,
