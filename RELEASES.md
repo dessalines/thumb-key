@@ -1,3 +1,18 @@
+## What's Changed in 5.1.21
+
+- Hindi extended: Add Dandas, remove duplicated pipe by @salsifis in [#2072](https://github.com/dessalines/thumb-key/pull/2072)
+- Add Up and Down key actions to key modifications by @saimskywalker in [#2070](https://github.com/dessalines/thumb-key/pull/2070)
+- Prevent sketch hints from resizing the drawing pad by @mvanhorn in [#2066](https://github.com/dessalines/thumb-key/pull/2066)
+- Add bangla thumb-key avro layout (Avro phonetic transliteration) by @Nyctophilia58 in [#2064](https://github.com/dessalines/thumb-key/pull/2064)
+- Delete apostrophe before Chandrabindu in Devanagari extended layout by @salsifis in [#2065](https://github.com/dessalines/thumb-key/pull/2065)
+
+## New Contributors
+
+- @saimskywalker made their first contribution in [#2070](https://github.com/dessalines/thumb-key/pull/2070)
+- @Nyctophilia58 made their first contribution in [#2064](https://github.com/dessalines/thumb-key/pull/2064)
+
+**Full Changelog**: https://github.com/dessalines/thumb-key/compare/5.1.20...5.1.21
+
 ## What's Changed in 5.1.20
 
 - Add ToggleHideLetters as a key modification action by @Xander-AJ in [#2062](https://github.com/dessalines/thumb-key/pull/2062)
