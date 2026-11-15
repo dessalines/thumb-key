@@ -145,4 +145,24 @@
     <string name="slide_hold_enable">Движение на курсора с плъзгане и задържане</string>
     <string name="slide_hold_description">Плъзнете и задръжте за повтарящо се движение на курсора, плъзнете-върнете-задръжте за движение по думи. Изтриване: плъзнете и задръжте за повтарящо се изтриване, плъзнете-върнете-задръжте за изтриване по думи.</string>
     <string name="database_operation_failed">Неуспешна операция: %1$s</string>
+    <string name="magma">Магма</string>
+    <string name="ime_switch_mode">Превключване между методите за въвеждане</string>
+    <string name="ime_switch_mode_picker">Показване на избора на метод за въвеждане</string>
+    <string name="ime_switch_mode_previous">Превключване към последния използван</string>
+    <string name="ime_switch_mode_next">Превключване към следващия в списъка</string>
+    <string name="search_layouts">Търсене на подредби</string>
+    <string name="clear_search">Изчистване на търсенето</string>
+    <string name="no_layouts_found">Няма намерени подредби</string>
+    <string name="sketch_hint">Нарисувайте знак. Докоснете или плъзнете клавиш отдолу, за да го въведете. Задръжте или плъзнете и върнете за сходни знаци.</string>
+    <string name="sketch_loading">Зареждане на разпознаването на ръкопис…</string>
+    <string name="sketch_load_failed">Разпознаването на ръкопис не можа да се зареди</string>
+    <string name="sketch_look_alikes">Сходни на %1$s · %2$d</string>
+    <string name="sketch_back">Назад</string>
+    <string name="sketch_all_candidates">Всички варианти · %1$d</string>
+    <string name="sketch_key_position">клавиш %1$d %2$s</string>
+    <string name="sketch_search_hint">Търсене</string>
+    <string name="sketch_clear_search">Изчистване на търсенето</string>
+    <string name="sketch_no_matches">Няма съвпадащи варианти</string>
+    <string name="handwriting_recognition">Разпознаване на ръкопис</string>
+    <string name="handwriting_recognition_summary">Режимът за рисуване разпознава знаци чрез glyphsketch локално на устройството.</string>
 </resources>
