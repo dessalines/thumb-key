@@ -234,6 +234,8 @@ Superscript and subscript digits use `^` and `_`, one sequence per digit, so ¹�
 
 If your field needs characters that are not here, adding them is a few lines of data — see [Adding compose sequences](CONTRIBUTING.md#adding-compose-sequences) in the contributing guide.
 
+The compose combo key is enabled on layouts that have "compose combo" in their name, but it can also be added to any other layout using the [modify keys feature](#modify-keys) (see example below).
+
 ### Coming from MessagEase Keyboard Tips
 
 - For those use to tapping on the hand key to hide the MessagEase Keyboard and make more screen real estate available, this can be done by using the Android back key or on Android 10 and higher using the guesture navigation for back.
@@ -340,11 +342,16 @@ ENThumbKey:
         keyAction: SwitchLanguage
       left:
         keyAction: ToggleEmojiMode
+    key0_0:
+      topLeft:
+        keyAction: StartComposeCombo
 ```
 
 ![](fastlane/metadata/android/en-US/images/userGuideImages/modify_keys_example_3.png)
 
-This swaps the 'switch language' and 'toggle emoji' actions on the top-right key. Possible values for `keyAction` are:
+This swaps the 'switch language' and 'toggle emoji' actions on the top-right key and adds a [compose combo key](#compose-combo) action to the top-left swipe on the top-left key (for layouts that do not normally have one).
+
+Possible values for `keyAction` are:
 
 - `ToggleNumericMode`
 - `ToggleABCMode`
