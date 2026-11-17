@@ -1,3 +1,14 @@
+## What's Changed in 5.1.22
+
+- Add README example that adds compose combo key by @matthijskooijman in [#2084](https://github.com/dessalines/thumb-key/pull/2084)
+- Adding de_4x3_symnum by @dessalines in [#2077](https://github.com/dessalines/thumb-key/pull/2077)
+
+## New Contributors
+
+- @matthijskooijman made their first contribution in [#2084](https://github.com/dessalines/thumb-key/pull/2084)
+
+**Full Changelog**: https://github.com/dessalines/thumb-key/compare/5.1.21...5.1.22
+
 ## What's Changed in 5.1.21
 
 - Hindi extended: Add Dandas, remove duplicated pipe by @salsifis in [#2072](https://github.com/dessalines/thumb-key/pull/2072)
