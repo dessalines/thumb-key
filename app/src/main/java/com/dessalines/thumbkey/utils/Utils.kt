@@ -1475,10 +1475,10 @@ fun performKeyAction(
         KeyAction.MoveKeyboard.CycleLeft -> {
             onChangePosition {
                 when (it) {
-                    KeyboardPosition.Right -> KeyboardPosition.Dual
+                    KeyboardPosition.Right -> KeyboardPosition.Center
                     KeyboardPosition.Center -> KeyboardPosition.Left
-                    KeyboardPosition.Left -> KeyboardPosition.Right
-                    KeyboardPosition.Dual -> KeyboardPosition.Center
+                    KeyboardPosition.Left -> KeyboardPosition.Dual
+                    KeyboardPosition.Dual -> KeyboardPosition.Right
                 }
             }
         }
@@ -1486,10 +1486,10 @@ fun performKeyAction(
         KeyAction.MoveKeyboard.CycleRight -> {
             onChangePosition {
                 when (it) {
-                    KeyboardPosition.Left -> KeyboardPosition.Dual
+                    KeyboardPosition.Left -> KeyboardPosition.Center
                     KeyboardPosition.Center -> KeyboardPosition.Right
-                    KeyboardPosition.Right -> KeyboardPosition.Left
-                    KeyboardPosition.Dual -> KeyboardPosition.Center
+                    KeyboardPosition.Right -> KeyboardPosition.Dual
+                    KeyboardPosition.Dual -> KeyboardPosition.Left
                 }
             }
         }
