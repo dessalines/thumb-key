@@ -1539,27 +1539,31 @@ fun performKeyAction(
             val imeManager =
                 ime.getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
             val candidates = imeManager.enabledInputMethodList.filter { it.packageName != ime.packageName }
-            for (candidate in candidates) {
-                for (i in 0 until candidate.subtypeCount) {
-                    val subtype = candidate.getSubtypeAt(i)
-                    if (subtype.mode.equals("voice", ignoreCase = true)) {
-                        switchToVoiceInputMethod(ime, imeManager, candidate.id, subtype)
-                        return
-                    }
+            val voiceSubtype =
+                candidates.firstNotNullOfOrNull { candidate ->
+                    (0 until candidate.subtypeCount)
+                        .firstNotNullOfOrNull { i ->
+                            candidate.getSubtypeAt(i).takeIf {
+                                it.mode.equals("voice", ignoreCase = true)
+                            }
+                        }?.let { subtype ->
+                            candidate.id to subtype
+                        }
                 }
-            }
-
             val target =
                 candidates.firstOrNull {
                     val id = it.id.lowercase(Locale.ROOT)
                     "voice" in id || "whisper" in id || "transcribro" in id
                 }
-            if (target == null) {
+
+            if (voiceSubtype != null) {
+                switchToVoiceInputMethod(ime, imeManager, voiceSubtype.first, voiceSubtype.second)
+            } else if (target != null) {
+                val subtype = if (target.subtypeCount > 0) target.getSubtypeAt(0) else null
+                switchToVoiceInputMethod(ime, imeManager, target.id, subtype)
+            } else {
                 Log.i(TAG, "No enabled voice input method found")
-                return
             }
-            val subtype = if (target.subtypeCount > 0) target.getSubtypeAt(0) else null
-            switchToVoiceInputMethod(ime, imeManager, target.id, subtype)
         }
 
         KeyAction.HideKeyboard -> {
