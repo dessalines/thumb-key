@@ -62,6 +62,7 @@ const val TAG = "com.thumbkey"
 
 const val IME_ACTION_CUSTOM_LABEL = EditorInfo.IME_MASK_ACTION + 1
 const val ANIMATION_SPEED = 300
+private val VOICE_IME_ID_KEYWORDS = listOf("voice", "whisper", "transcribro")
 
 fun accelCurve(
     offset: Float,
@@ -1553,7 +1554,7 @@ fun performKeyAction(
             val target =
                 candidates.firstOrNull {
                     val id = it.id.lowercase(Locale.ROOT)
-                    "voice" in id || "whisper" in id || "transcribro" in id
+                    VOICE_IME_ID_KEYWORDS.any { it in id }
                 }
 
             if (voiceSubtype != null) {
