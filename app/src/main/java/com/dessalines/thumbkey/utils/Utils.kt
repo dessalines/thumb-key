@@ -1613,35 +1613,41 @@ private fun switchToVoiceInputMethod(
     id: String,
     subtype: InputMethodSubtype?,
 ) {
-    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.P) {
-        try {
-            if (subtype != null) {
-                ime.switchInputMethod(id, subtype)
-            } else {
-                ime.switchInputMethod(id)
+    val switched =
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.P) {
+            try {
+                if (subtype != null) {
+                    ime.switchInputMethod(id, subtype)
+                } else {
+                    ime.switchInputMethod(id)
+                }
+                true
+            } catch (e: RuntimeException) {
+                Log.w(TAG, "Could not switch to $id, trying the window token", e)
+                false
             }
-            return
-        } catch (e: RuntimeException) {
-            Log.w(TAG, "Could not switch to $id, trying the window token", e)
-        }
-    }
-
-    val token =
-        ime.window.window
-            ?.attributes
-            ?.token
-    if (token == null) {
-        Log.i(TAG, "No window token available to switch to $id")
-        return
-    }
-    try {
-        if (subtype != null) {
-            imeManager.setInputMethodAndSubtype(token, id, subtype)
         } else {
-            imeManager.setInputMethod(token, id)
+            false
         }
-    } catch (e: RuntimeException) {
-        Log.w(TAG, "Could not switch to $id using the window token", e)
+
+    if (!switched) {
+        val token =
+            ime.window.window
+                ?.attributes
+                ?.token
+        if (token == null) {
+            Log.i(TAG, "No window token available to switch to $id")
+        } else {
+            try {
+                if (subtype != null) {
+                    imeManager.setInputMethodAndSubtype(token, id, subtype)
+                } else {
+                    imeManager.setInputMethod(token, id)
+                }
+            } catch (e: RuntimeException) {
+                Log.w(TAG, "Could not switch to $id using the window token", e)
+            }
+        }
     }
 }
 
