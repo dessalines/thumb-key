@@ -12,8 +12,8 @@ import android.text.InputType
 import android.util.Log
 import android.view.KeyEvent
 import android.view.inputmethod.EditorInfo
-import android.view.inputmethod.InputMethodInfo
 import android.view.inputmethod.InputMethodManager
+import android.view.inputmethod.InputMethodSubtype
 import android.widget.Toast
 import androidx.activity.compose.LocalActivity
 import androidx.compose.material.icons.Icons
@@ -47,6 +47,7 @@ import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 import java.text.NumberFormat
+import java.util.Locale
 import java.util.regex.Pattern
 import kotlin.math.PI
 import kotlin.math.abs
@@ -1537,20 +1538,28 @@ fun performKeyAction(
         KeyAction.SwitchIMEVoice -> {
             val imeManager =
                 ime.getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
-            val list: List<InputMethodInfo> = imeManager.enabledInputMethodList
-            for (el in list) {
-                for (i in 0 until el.subtypeCount) {
-                    if (el.getSubtypeAt(i).mode != "voice") continue
-                    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.P) {
-                        ime.switchInputMethod(el.id)
-                    } else {
-                        ime.window.window?.let { window ->
-                            @Suppress("DEPRECATION")
-                            imeManager.setInputMethod(window.attributes.token, el.id)
-                        }
+            val candidates = imeManager.enabledInputMethodList.filter { it.packageName != ime.packageName }
+            for (candidate in candidates) {
+                for (i in 0 until candidate.subtypeCount) {
+                    val subtype = candidate.getSubtypeAt(i)
+                    if (subtype.mode.equals("voice", ignoreCase = true)) {
+                        switchToVoiceInputMethod(ime, imeManager, candidate.id, subtype)
+                        return
                     }
                 }
             }
+
+            val target =
+                candidates.firstOrNull {
+                    val id = it.id.lowercase(Locale.ROOT)
+                    "voice" in id || "whisper" in id || "transcribro" in id
+                }
+            if (target == null) {
+                Log.i(TAG, "No enabled voice input method found")
+                return
+            }
+            val subtype = if (target.subtypeCount > 0) target.getSubtypeAt(0) else null
+            switchToVoiceInputMethod(ime, imeManager, target.id, subtype)
         }
 
         KeyAction.HideKeyboard -> {
@@ -1590,6 +1599,45 @@ fun performKeyAction(
                 }
             }
         }
+    }
+}
+
+@Suppress("DEPRECATION")
+private fun switchToVoiceInputMethod(
+    ime: IMEService,
+    imeManager: InputMethodManager,
+    id: String,
+    subtype: InputMethodSubtype?,
+) {
+    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.P) {
+        try {
+            if (subtype != null) {
+                ime.switchInputMethod(id, subtype)
+            } else {
+                ime.switchInputMethod(id)
+            }
+            return
+        } catch (e: RuntimeException) {
+            Log.w(TAG, "Could not switch to $id, trying the window token", e)
+        }
+    }
+
+    val token =
+        ime.window.window
+            ?.attributes
+            ?.token
+    if (token == null) {
+        Log.i(TAG, "No window token available to switch to $id")
+        return
+    }
+    try {
+        if (subtype != null) {
+            imeManager.setInputMethodAndSubtype(token, id, subtype)
+        } else {
+            imeManager.setInputMethod(token, id)
+        }
+    } catch (e: RuntimeException) {
+        Log.w(TAG, "Could not switch to $id using the window token", e)
     }
 }
 
