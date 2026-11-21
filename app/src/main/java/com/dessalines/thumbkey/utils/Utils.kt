@@ -1607,6 +1607,15 @@ fun performKeyAction(
     }
 }
 
+/**
+ * Switches from Thumb-Key to the voice input method [id], with its voice [subtype] when
+ * one was found.
+ *
+ * On Android P and later an input method service can switch itself, so that is tried
+ * first. Before P, or when that call throws, it falls back to the older
+ * InputMethodManager calls, which need the keyboard window's token. Those are
+ * deprecated, hence the suppression.
+ */
 @Suppress("DEPRECATION")
 private fun switchToVoiceInputMethod(
     ime: IMEService,
@@ -1614,6 +1623,7 @@ private fun switchToVoiceInputMethod(
     id: String,
     subtype: InputMethodSubtype?,
 ) {
+    // Android P+: ask the IME service itself to switch. False means "try the fallback".
     val switched =
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.P) {
             try {
@@ -1631,6 +1641,8 @@ private fun switchToVoiceInputMethod(
             false
         }
 
+    // Fallback for older Android, or when the P+ switch failed: switch through the
+    // InputMethodManager using this keyboard window's token.
     if (!switched) {
         val token =
             ime.window.window
