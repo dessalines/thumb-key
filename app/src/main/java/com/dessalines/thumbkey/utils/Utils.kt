@@ -12,8 +12,8 @@ import android.text.InputType
 import android.util.Log
 import android.view.KeyEvent
 import android.view.inputmethod.EditorInfo
-import android.view.inputmethod.InputMethodInfo
 import android.view.inputmethod.InputMethodManager
+import android.view.inputmethod.InputMethodSubtype
 import android.widget.Toast
 import androidx.activity.compose.LocalActivity
 import androidx.compose.material.icons.Icons
@@ -47,6 +47,7 @@ import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 import java.text.NumberFormat
+import java.util.Locale
 import java.util.regex.Pattern
 import kotlin.math.PI
 import kotlin.math.abs
@@ -61,6 +62,7 @@ const val TAG = "com.thumbkey"
 
 const val IME_ACTION_CUSTOM_LABEL = EditorInfo.IME_MASK_ACTION + 1
 const val ANIMATION_SPEED = 300
+private val VOICE_IME_ID_KEYWORDS = listOf("voice", "whisper", "transcribro")
 
 fun accelCurve(
     offset: Float,
@@ -1537,19 +1539,31 @@ fun performKeyAction(
         KeyAction.SwitchIMEVoice -> {
             val imeManager =
                 ime.getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
-            val list: List<InputMethodInfo> = imeManager.enabledInputMethodList
-            for (el in list) {
-                for (i in 0 until el.subtypeCount) {
-                    if (el.getSubtypeAt(i).mode != "voice") continue
-                    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.P) {
-                        ime.switchInputMethod(el.id)
-                    } else {
-                        ime.window.window?.let { window ->
-                            @Suppress("DEPRECATION")
-                            imeManager.setInputMethod(window.attributes.token, el.id)
+            val candidates = imeManager.enabledInputMethodList.filter { it.packageName != ime.packageName }
+            val voiceSubtype =
+                candidates.firstNotNullOfOrNull { candidate ->
+                    (0 until candidate.subtypeCount)
+                        .firstNotNullOfOrNull { i ->
+                            candidate.getSubtypeAt(i).takeIf {
+                                it.mode.equals("voice", ignoreCase = true)
+                            }
+                        }?.let { subtype ->
+                            candidate.id to subtype
                         }
-                    }
                 }
+            val target =
+                candidates.firstOrNull {
+                    val id = it.id.lowercase(Locale.ROOT)
+                    VOICE_IME_ID_KEYWORDS.any { it in id }
+                }
+
+            if (voiceSubtype != null) {
+                switchToVoiceInputMethod(ime, imeManager, voiceSubtype.first, voiceSubtype.second)
+            } else if (target != null) {
+                val subtype = if (target.subtypeCount > 0) target.getSubtypeAt(0) else null
+                switchToVoiceInputMethod(ime, imeManager, target.id, subtype)
+            } else {
+                Log.i(TAG, "No enabled voice input method found")
             }
         }
 
@@ -1588,6 +1602,51 @@ fun performKeyAction(
                     )
                     ime.currentInputConnection.commitText(replacementText, 1)
                 }
+            }
+        }
+    }
+}
+
+@Suppress("DEPRECATION")
+private fun switchToVoiceInputMethod(
+    ime: IMEService,
+    imeManager: InputMethodManager,
+    id: String,
+    subtype: InputMethodSubtype?,
+) {
+    val switched =
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.P) {
+            try {
+                if (subtype != null) {
+                    ime.switchInputMethod(id, subtype)
+                } else {
+                    ime.switchInputMethod(id)
+                }
+                true
+            } catch (e: RuntimeException) {
+                Log.w(TAG, "Could not switch to $id, trying the window token", e)
+                false
+            }
+        } else {
+            false
+        }
+
+    if (!switched) {
+        val token =
+            ime.window.window
+                ?.attributes
+                ?.token
+        if (token == null) {
+            Log.i(TAG, "No window token available to switch to $id")
+        } else {
+            try {
+                if (subtype != null) {
+                    imeManager.setInputMethodAndSubtype(token, id, subtype)
+                } else {
+                    imeManager.setInputMethod(token, id)
+                }
+            } catch (e: RuntimeException) {
+                Log.w(TAG, "Could not switch to $id using the window token", e)
             }
         }
     }
