@@ -60,6 +60,7 @@ import com.dessalines.thumbkey.db.DEFAULT_HIDE_SYMBOLS
 import com.dessalines.thumbkey.db.DEFAULT_IGNORE_BOTTOM_PADDING
 import com.dessalines.thumbkey.db.DEFAULT_KEYBOARD_LAYOUT
 import com.dessalines.thumbkey.db.DEFAULT_KEYBOARD_OPACITY
+import com.dessalines.thumbkey.db.DEFAULT_KEY_ANIMATION_TYPE
 import com.dessalines.thumbkey.db.DEFAULT_KEY_BORDER_WIDTH
 import com.dessalines.thumbkey.db.DEFAULT_KEY_HEIGHT
 import com.dessalines.thumbkey.db.DEFAULT_KEY_PADDING
@@ -78,6 +79,7 @@ import com.dessalines.thumbkey.db.DEFAULT_SLIDE_SENSITIVITY
 import com.dessalines.thumbkey.db.DEFAULT_SLIDE_SPACEBAR_DEADZONE_ENABLED
 import com.dessalines.thumbkey.db.DEFAULT_SOUND_ON_TAP
 import com.dessalines.thumbkey.db.DEFAULT_SPACEBAR_MULTITAPS
+import com.dessalines.thumbkey.db.DEFAULT_SWIPE_TRAIL_ENABLED
 import com.dessalines.thumbkey.db.DEFAULT_SWITCH_TO_LETTERS_AFTER_SPACE
 import com.dessalines.thumbkey.db.DEFAULT_VIBRATE_ON_SLIDE
 import com.dessalines.thumbkey.db.DEFAULT_VIBRATE_ON_TAP
@@ -92,6 +94,7 @@ import com.dessalines.thumbkey.utils.CircularDragAction
 import com.dessalines.thumbkey.utils.ColorVariant
 import com.dessalines.thumbkey.utils.FloatingHandlePosition
 import com.dessalines.thumbkey.utils.KeyAction
+import com.dessalines.thumbkey.utils.KeyAnimationType
 import com.dessalines.thumbkey.utils.KeyboardLayout
 import com.dessalines.thumbkey.utils.KeyboardMode
 import com.dessalines.thumbkey.utils.KeyboardPosition
@@ -102,6 +105,7 @@ import com.dessalines.thumbkey.utils.getCurrentLayoutGridColumns
 import com.dessalines.thumbkey.utils.getKeyboardMode
 import com.dessalines.thumbkey.utils.getModifiedKeyboardDefinition
 import com.dessalines.thumbkey.utils.isLeftHandedLayout
+import com.dessalines.thumbkey.utils.isPasswordField
 import com.dessalines.thumbkey.utils.keyboardPositionToAlignment
 import com.dessalines.thumbkey.utils.resolveKeyboardDefinition
 import com.dessalines.thumbkey.utils.toBool
@@ -267,6 +271,25 @@ fun KeyboardScreen(
         ) { FloatingHandlePosition.Bottom }
     val floatingXFraction = settings?.floatingXFraction ?: DEFAULT_FLOATING_X_FRACTION
     val floatingYFraction = settings?.floatingYFraction ?: DEFAULT_FLOATING_Y_FRACTION
+    val keyAnimationType =
+        KeyAnimationType.entries.getOrElse(
+            settings?.keyAnimationType ?: DEFAULT_KEY_ANIMATION_TYPE,
+        ) { KeyAnimationType.SlideFromTop }
+    val swipeTrailEnabled = (settings?.swipeTrailEnabled ?: DEFAULT_SWIPE_TRAIL_ENABLED).toBool()
+    val isPassword = remember(ctx) { isPasswordField(ctx) }
+    val effectiveSwipeTrailEnabled = swipeTrailEnabled && !isPassword
+    val swipeTrailState = rememberSwipeTrailState()
+
+    LaunchedEffect(effectiveSwipeTrailEnabled, mode) {
+        if (
+            !effectiveSwipeTrailEnabled ||
+            mode == KeyboardMode.EMOJI ||
+            mode == KeyboardMode.CLIPBOARD ||
+            mode == KeyboardMode.SKETCH
+        ) {
+            swipeTrailState.clear()
+        }
+    }
 
     val keyBorderWidthFloat = keyBorderWidth / 10.0f
     val keyBorderColour = MaterialTheme.colorScheme.outline
@@ -399,6 +422,7 @@ fun KeyboardScreen(
                                         capsLock = capsLock,
                                         animationSpeed = settings?.animationSpeed ?: DEFAULT_ANIMATION_SPEED,
                                         animationHelperSpeed = settings?.animationHelperSpeed ?: DEFAULT_ANIMATION_HELPER_SPEED,
+                                        keyAnimationType = keyAnimationType,
                                         minSwipeLength = settings?.minSwipeLength ?: DEFAULT_MIN_SWIPE_LENGTH,
                                         slideSensitivity = settings?.slideSensitivity ?: DEFAULT_SLIDE_SENSITIVITY,
                                         slideEnabled = slideEnabled,
@@ -605,6 +629,7 @@ fun KeyboardScreen(
                                         animationHelperSpeed =
                                             settings?.animationHelperSpeed
                                                 ?: DEFAULT_ANIMATION_HELPER_SPEED,
+                                        keyAnimationType = keyAnimationType,
                                         minSwipeLength = settings?.minSwipeLength ?: DEFAULT_MIN_SWIPE_LENGTH,
                                         slideSensitivity = settings?.slideSensitivity ?: DEFAULT_SLIDE_SENSITIVITY,
                                         slideEnabled = slideEnabled,
@@ -905,6 +930,7 @@ fun KeyboardScreen(
                             capsLock = false,
                             animationSpeed = settings?.animationSpeed ?: DEFAULT_ANIMATION_SPEED,
                             animationHelperSpeed = settings?.animationHelperSpeed ?: DEFAULT_ANIMATION_HELPER_SPEED,
+                            keyAnimationType = keyAnimationType,
                             minSwipeLength = settings?.minSwipeLength ?: DEFAULT_MIN_SWIPE_LENGTH,
                             slideSensitivity = settings?.slideSensitivity ?: DEFAULT_SLIDE_SENSITIVITY,
                             slideEnabled = slideEnabled,
@@ -984,7 +1010,9 @@ fun KeyboardScreen(
                                     .background(color = MaterialTheme.colorScheme.surfaceVariant),
                         )
                     }
-                    Column(modifier = modifierPositionPadding) {
+                    Column(
+                        modifier = modifierPositionPadding.captureSwipeTrail(swipeTrailState, effectiveSwipeTrailEnabled),
+                    ) {
                         keyboard.arr.forEachIndexed { i, row ->
                             Row {
                                 row.forEachIndexed { j, key ->
@@ -1029,6 +1057,7 @@ fun KeyboardScreen(
                                             animationHelperSpeed =
                                                 settings?.animationHelperSpeed
                                                     ?: DEFAULT_ANIMATION_HELPER_SPEED,
+                                            keyAnimationType = keyAnimationType,
                                             minSwipeLength =
                                                 settings?.minSwipeLength
                                                     ?: DEFAULT_MIN_SWIPE_LENGTH,
@@ -1230,6 +1259,14 @@ fun KeyboardScreen(
             vibrateOnTap = vibrateOnTap,
             onMoved = onFloatingMoved,
             onBounds = onFloatingBounds,
+            overlay = {
+                if (effectiveSwipeTrailEnabled) {
+                    SwipeTrailOverlay(
+                        state = swipeTrailState,
+                        modifier = Modifier.matchParentSize(),
+                    )
+                }
+            },
         ) { floatingKeyWidth, floatingKeyHeight ->
             renderKeyboardContent(floatingKeyWidth, floatingKeyHeight, true)
         }
@@ -1243,13 +1280,21 @@ fun KeyboardScreen(
             } else {
                 Modifier
             }
-        Box(
-            modifier =
-                Modifier
-                    .fillMaxWidth()
-                    .then(dockedOpacityModifier),
-        ) {
-            renderKeyboardContent(keyWidth, keyHeight, false)
+        Box(modifier = Modifier.fillMaxWidth()) {
+            Box(
+                modifier =
+                    Modifier
+                        .fillMaxWidth()
+                        .then(dockedOpacityModifier),
+            ) {
+                renderKeyboardContent(keyWidth, keyHeight, false)
+            }
+            if (effectiveSwipeTrailEnabled) {
+                SwipeTrailOverlay(
+                    state = swipeTrailState,
+                    modifier = Modifier.matchParentSize(),
+                )
+            }
         }
     }
 }

@@ -14,6 +14,7 @@ import androidx.compose.foundation.gestures.awaitFirstDown
 import androidx.compose.foundation.gestures.awaitTouchSlopOrCancellation
 import androidx.compose.foundation.gestures.drag
 import androidx.compose.foundation.layout.Box
+import androidx.compose.foundation.layout.BoxScope
 import androidx.compose.foundation.layout.BoxWithConstraints
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
@@ -146,6 +147,7 @@ fun FloatingKeyboardFrame(
     vibrateOnTap: Boolean,
     onMoved: (Float, Float) -> Unit,
     onBounds: (IntRect) -> Unit,
+    overlay: @Composable BoxScope.() -> Unit = {},
     content: @Composable (keyWidth: Float, keyHeight: Float) -> Unit,
 ) {
     val density = LocalDensity.current
@@ -480,7 +482,6 @@ fun FloatingKeyboardFrame(
             Box(
                 modifier =
                     Modifier
-                        .then(bodyOpacityModifier)
                         .pointerInput(Unit) {
                             awaitPointerEventScope {
                                 while (true) {
@@ -492,7 +493,10 @@ fun FloatingKeyboardFrame(
                             }
                         },
             ) {
-                content(effectiveKeyWidth, effectiveKeyHeight)
+                Box(modifier = bodyOpacityModifier) {
+                    content(effectiveKeyWidth, effectiveKeyHeight)
+                }
+                overlay()
             }
 
             if (handlePosition == FloatingHandlePosition.Bottom) {

@@ -59,6 +59,7 @@ import com.dessalines.thumbkey.db.DEFAULT_HIDE_SYMBOLS
 import com.dessalines.thumbkey.db.DEFAULT_IGNORE_BOTTOM_PADDING
 import com.dessalines.thumbkey.db.DEFAULT_KEYBOARD_LAYOUT
 import com.dessalines.thumbkey.db.DEFAULT_KEYBOARD_OPACITY
+import com.dessalines.thumbkey.db.DEFAULT_KEY_ANIMATION_TYPE
 import com.dessalines.thumbkey.db.DEFAULT_KEY_BORDERS
 import com.dessalines.thumbkey.db.DEFAULT_KEY_BORDER_WIDTH
 import com.dessalines.thumbkey.db.DEFAULT_KEY_HEIGHT
@@ -81,6 +82,7 @@ import com.dessalines.thumbkey.db.DEFAULT_SLIDE_SENSITIVITY
 import com.dessalines.thumbkey.db.DEFAULT_SLIDE_SPACEBAR_DEADZONE_ENABLED
 import com.dessalines.thumbkey.db.DEFAULT_SOUND_ON_TAP
 import com.dessalines.thumbkey.db.DEFAULT_SPACEBAR_MULTITAPS
+import com.dessalines.thumbkey.db.DEFAULT_SWIPE_TRAIL_ENABLED
 import com.dessalines.thumbkey.db.DEFAULT_SWITCH_IME_MODE
 import com.dessalines.thumbkey.db.DEFAULT_SWITCH_TO_LETTERS_AFTER_SPACE
 import com.dessalines.thumbkey.db.DEFAULT_THEME
@@ -326,6 +328,8 @@ private fun resetAppSettingsToDefault(appSettingsViewModel: AppSettingsViewModel
             floatingHandlePosition = DEFAULT_FLOATING_HANDLE_POSITION,
             floatingXFraction = DEFAULT_FLOATING_X_FRACTION,
             floatingYFraction = DEFAULT_FLOATING_Y_FRACTION,
+            keyAnimationType = DEFAULT_KEY_ANIMATION_TYPE,
+            swipeTrailEnabled = DEFAULT_SWIPE_TRAIL_ENABLED,
         ),
     )
 }

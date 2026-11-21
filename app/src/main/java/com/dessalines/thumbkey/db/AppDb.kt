@@ -84,6 +84,8 @@ const val MAX_KEYBOARD_OPACITY = 100
 const val DEFAULT_FLOATING_HANDLE_POSITION = 0
 const val DEFAULT_FLOATING_X_FRACTION = 0.5f
 const val DEFAULT_FLOATING_Y_FRACTION = 1.0f
+const val DEFAULT_KEY_ANIMATION_TYPE = 0
+const val DEFAULT_SWIPE_TRAIL_ENABLED = 0
 
 @Entity
 data class AppSettings(
@@ -381,6 +383,16 @@ data class AppSettings(
         defaultValue = DEFAULT_FLOATING_Y_FRACTION.toString(),
     )
     val floatingYFraction: Float = DEFAULT_FLOATING_Y_FRACTION,
+    @ColumnInfo(
+        name = "key_animation_type",
+        defaultValue = DEFAULT_KEY_ANIMATION_TYPE.toString(),
+    )
+    val keyAnimationType: Int = DEFAULT_KEY_ANIMATION_TYPE,
+    @ColumnInfo(
+        name = "swipe_trail_enabled",
+        defaultValue = DEFAULT_SWIPE_TRAIL_ENABLED.toString(),
+    )
+    val swipeTrailEnabled: Int = DEFAULT_SWIPE_TRAIL_ENABLED,
 )
 
 data class LayoutsUpdate(
@@ -497,6 +509,14 @@ data class LookAndFeelUpdate(
         name = "floating_handle_position",
     )
     val floatingHandlePosition: Int,
+    @ColumnInfo(
+        name = "key_animation_type",
+    )
+    val keyAnimationType: Int,
+    @ColumnInfo(
+        name = "swipe_trail_enabled",
+    )
+    val swipeTrailEnabled: Int,
 )
 
 data class FloatingPositionUpdate(
@@ -690,7 +710,7 @@ class AppSettingsRepository(
 }
 
 @Database(
-    version = 30,
+    version = 31,
     entities = [AppSettings::class],
     exportSchema = true,
 )
@@ -742,6 +762,7 @@ abstract class AppDB : RoomDatabase() {
                             MIGRATION_27_28,
                             MIGRATION_28_29,
                             MIGRATION_29_30,
+                            MIGRATION_30_31,
                         )
                         // Necessary because it can't insert data on creation
                         .addCallback(

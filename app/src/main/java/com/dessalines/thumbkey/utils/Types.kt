@@ -484,3 +484,20 @@ enum class FloatingHandlePosition(
     Bottom(R.string.bottom),
     Top(R.string.top),
 }
+
+enum class KeyAnimationType(
+    @param:StringRes val resId: Int,
+) {
+    SlideFromTop(R.string.key_animation_slide_from_top),
+    SlideFromBottom(R.string.key_animation_slide_from_bottom),
+    SlideFromLeft(R.string.key_animation_slide_from_left),
+    SlideFromRight(R.string.key_animation_slide_from_right),
+    Fade(R.string.key_animation_fade),
+    FromOrigin(R.string.key_animation_from_origin),
+}
+
+data class ReleasedKeyFeedback(
+    val text: String,
+    val originDirection: SwipeDirection?,
+    val id: Long,
+)

@@ -16,6 +16,7 @@ import androidx.compose.material.icons.outlined.Crop75
 import androidx.compose.material.icons.outlined.DragHandle
 import androidx.compose.material.icons.outlined.FormatSize
 import androidx.compose.material.icons.outlined.Fullscreen
+import androidx.compose.material.icons.outlined.Gesture
 import androidx.compose.material.icons.outlined.HideImage
 import androidx.compose.material.icons.outlined.LinearScale
 import androidx.compose.material.icons.outlined.Mail
@@ -60,6 +61,7 @@ import com.dessalines.thumbkey.db.DEFAULT_HIDE_LETTERS
 import com.dessalines.thumbkey.db.DEFAULT_HIDE_SYMBOLS
 import com.dessalines.thumbkey.db.DEFAULT_IGNORE_BOTTOM_PADDING
 import com.dessalines.thumbkey.db.DEFAULT_KEYBOARD_OPACITY
+import com.dessalines.thumbkey.db.DEFAULT_KEY_ANIMATION_TYPE
 import com.dessalines.thumbkey.db.DEFAULT_KEY_BORDER_WIDTH
 import com.dessalines.thumbkey.db.DEFAULT_KEY_HEIGHT
 import com.dessalines.thumbkey.db.DEFAULT_KEY_PADDING
@@ -71,6 +73,7 @@ import com.dessalines.thumbkey.db.DEFAULT_POSITION_PADDING
 import com.dessalines.thumbkey.db.DEFAULT_PUSHUP_SIZE
 import com.dessalines.thumbkey.db.DEFAULT_SHOW_TOAST_ON_LAYOUT_SWITCH
 import com.dessalines.thumbkey.db.DEFAULT_SOUND_ON_TAP
+import com.dessalines.thumbkey.db.DEFAULT_SWIPE_TRAIL_ENABLED
 import com.dessalines.thumbkey.db.DEFAULT_THEME
 import com.dessalines.thumbkey.db.DEFAULT_THEME_COLOR
 import com.dessalines.thumbkey.db.DEFAULT_VIBRATE_ON_SLIDE
@@ -81,6 +84,7 @@ import com.dessalines.thumbkey.db.MIN_KEYBOARD_OPACITY
 import com.dessalines.thumbkey.ui.components.common.TestOutTextField
 import com.dessalines.thumbkey.ui.components.settings.about.SettingsDivider
 import com.dessalines.thumbkey.utils.FloatingHandlePosition
+import com.dessalines.thumbkey.utils.KeyAnimationType
 import com.dessalines.thumbkey.utils.KeyboardPosition
 import com.dessalines.thumbkey.utils.SimpleTopAppBar
 import com.dessalines.thumbkey.utils.TAG
@@ -170,6 +174,13 @@ fun LookAndFeelScreen(
             settings?.floatingHandlePosition ?: DEFAULT_FLOATING_HANDLE_POSITION,
         ) { FloatingHandlePosition.Bottom }
 
+    var keyAnimationTypeState =
+        KeyAnimationType.entries.getOrElse(
+            settings?.keyAnimationType ?: DEFAULT_KEY_ANIMATION_TYPE,
+        ) { KeyAnimationType.SlideFromTop }
+
+    var swipeTrailEnabledState = (settings?.swipeTrailEnabled ?: DEFAULT_SWIPE_TRAIL_ENABLED).toBool()
+
     fun updateLookAndFeel() {
         appSettingsViewModel.updateLookAndFeel(
             LookAndFeelUpdate(
@@ -199,6 +210,8 @@ fun LookAndFeelScreen(
                 disableFullscreenEditor = disableFullscreenEditorState.toInt(),
                 keyboardOpacity = keyboardOpacityState.roundToInt(),
                 floatingHandlePosition = floatingHandlePositionState.ordinal,
+                keyAnimationType = keyAnimationTypeState.ordinal,
+                swipeTrailEnabled = swipeTrailEnabledState.toInt(),
             ),
         )
     }
@@ -655,6 +668,30 @@ fun LookAndFeelScreen(
                             )
                         },
                     )
+                    ListPreference(
+                        type = ListPreferenceType.DROPDOWN_MENU,
+                        value = keyAnimationTypeState,
+                        onValueChange = {
+                            keyAnimationTypeState = it
+                            updateLookAndFeel()
+                        },
+                        values = KeyAnimationType.entries,
+                        valueToText = {
+                            AnnotatedString(resources.getString(it.resId))
+                        },
+                        title = {
+                            Text(stringResource(R.string.key_animation))
+                        },
+                        summary = {
+                            Text(stringResource(keyAnimationTypeState.resId))
+                        },
+                        icon = {
+                            Icon(
+                                imageVector = Icons.Outlined.Animation,
+                                contentDescription = null,
+                            )
+                        },
+                    )
                     SliderPreference(
                         value = animationSpeedState,
                         sliderValue = animationSpeedSliderState,
@@ -697,6 +734,25 @@ fun LookAndFeelScreen(
                         icon = {
                             Icon(
                                 imageVector = Icons.Outlined.Visibility,
+                                contentDescription = null,
+                            )
+                        },
+                    )
+                    SwitchPreference(
+                        value = swipeTrailEnabledState,
+                        onValueChange = {
+                            swipeTrailEnabledState = it
+                            updateLookAndFeel()
+                        },
+                        title = {
+                            Text(stringResource(R.string.swipe_trail))
+                        },
+                        summary = {
+                            Text(stringResource(R.string.swipe_trail_summary))
+                        },
+                        icon = {
+                            Icon(
+                                imageVector = Icons.Outlined.Gesture,
                                 contentDescription = null,
                             )
                         },

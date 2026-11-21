@@ -338,3 +338,15 @@ val MIGRATION_29_30 =
             )
         }
     }
+
+val MIGRATION_30_31 =
+    object : Migration(30, 31) {
+        override fun migrate(db: SupportSQLiteDatabase) {
+            db.execSQL(
+                "ALTER TABLE AppSettings ADD COLUMN key_animation_type INTEGER NOT NULL DEFAULT $DEFAULT_KEY_ANIMATION_TYPE",
+            )
+            db.execSQL(
+                "ALTER TABLE AppSettings ADD COLUMN swipe_trail_enabled INTEGER NOT NULL DEFAULT $DEFAULT_SWIPE_TRAIL_ENABLED",
+            )
+        }
+    }

@@ -43,9 +43,6 @@ import com.dessalines.thumbkey.R
 import com.dessalines.thumbkey.db.AppSettingsViewModel
 import com.dessalines.thumbkey.db.DEFAULT_KEYBOARD_LAYOUT
 import com.dessalines.thumbkey.db.LayoutsUpdate
-import kotlinx.coroutines.CoroutineScope
-import kotlinx.coroutines.delay
-import kotlinx.coroutines.launch
 import java.text.NumberFormat
 import java.util.regex.Pattern
 import kotlin.math.PI
@@ -55,7 +52,6 @@ import kotlin.math.max
 import kotlin.math.min
 import kotlin.math.pow
 import kotlin.math.sqrt
-import kotlin.time.Duration.Companion.milliseconds
 
 const val TAG = "com.thumbkey"
 
@@ -1832,31 +1828,26 @@ fun buildTapActions(keyItem: KeyItemC): List<KeyAction> {
 }
 
 fun doneKeyAction(
-    scope: CoroutineScope,
     action: KeyAction,
     pressed: MutableState<Boolean>,
-    releasedKey: MutableState<String?>,
-    animationHelperSpeed: Int,
+    releasedFeedback: MutableState<ReleasedKeyFeedback?>,
+    originDirection: SwipeDirection? = null,
 ) {
     pressed.value = false
-    scope.launch {
-        delay(animationHelperSpeed.toLong().milliseconds)
-        releasedKey.value = null
-    }
-    releasedKey.value =
+    val displayText =
         when (action) {
-            is KeyAction.CommitText -> {
-                action.text
-            }
-
-            is KeyAction.Sketch.CommitCandidate -> {
-                action.displayText
-            }
-
-            else -> {
-                null
-            }
+            is KeyAction.CommitText -> action.text
+            is KeyAction.Sketch.CommitCandidate -> action.displayText
+            else -> null
         }
+    if (displayText != null) {
+        releasedFeedback.value =
+            ReleasedKeyFeedback(
+                text = displayText,
+                originDirection = originDirection,
+                id = (releasedFeedback.value?.id ?: 0L) + 1L,
+            )
+    }
 }
 
 @OptIn(ExperimentalMaterial3Api::class)

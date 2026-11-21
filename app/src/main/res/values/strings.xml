@@ -174,4 +174,13 @@
     <string name="bottom">Bottom</string>
     <string name="top">Top</string>
     <string name="floating_drag_handle">Drag to move keyboard</string>
+    <string name="key_animation">Key animation</string>
+    <string name="key_animation_slide_from_top">Slide from top</string>
+    <string name="key_animation_slide_from_bottom">Slide from bottom</string>
+    <string name="key_animation_slide_from_left">Slide from left</string>
+    <string name="key_animation_slide_from_right">Slide from right</string>
+    <string name="key_animation_fade">Fade in</string>
+    <string name="key_animation_from_origin">From key position</string>
+    <string name="swipe_trail">Swipe trail</string>
+    <string name="swipe_trail_summary">Show a trail while swiping across keys</string>
 </resources>
