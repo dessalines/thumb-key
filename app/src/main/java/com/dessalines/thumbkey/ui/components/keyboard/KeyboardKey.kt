@@ -379,6 +379,8 @@ fun KeyboardKey(
 
     val keyboardKeyModifier =
         Modifier
+            .height(keyHeight.dp)
+            .width(keyWidth.dp * key.widthMultiplier)
             // Note: pointerInput has a delay when switching keyboards, so you must use this
             .combinedClickable(
                 interactionSource = interactionSource,
@@ -826,22 +828,20 @@ fun KeyboardKey(
                         selection = Selection()
                     },
                 )
-                .height(keyHeight.dp)
-                .width(keyWidth.dp * key.widthMultiplier)
-                .padding(keyPadding.dp)
-                .clip(RoundedCornerShape(keyRadius.dp))
-                .then(
-                    if (keyBorderWidth > 0.0) {
-                        Modifier.border(
-                            keyBorderWidth.dp,
-                            keyBorderColour,
-                            shape = RoundedCornerShape(keyRadius.dp),
-                        )
-                    } else {
-                        (Modifier)
-                    },
-                ).background(color = backgroundColor)
             }
+            .padding(keyPadding.dp)
+            .clip(RoundedCornerShape(keyRadius.dp))
+            .then(
+                if (keyBorderWidth > 0.0) {
+                    Modifier.border(
+                        keyBorderWidth.dp,
+                        keyBorderColour,
+                        shape = RoundedCornerShape(keyRadius.dp),
+                    )
+                } else {
+                    (Modifier)
+                },
+            ).background(color = backgroundColor)
 
     // a 3x3 grid
     // Use box so they can overlap
