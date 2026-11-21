@@ -3,6 +3,7 @@ package com.dessalines.thumbkey
 import android.annotation.SuppressLint
 import android.content.Context
 import android.content.Intent
+import android.view.WindowInsets
 import android.widget.Toast
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.CompositionLocalProvider
@@ -11,9 +12,11 @@ import androidx.compose.runtime.livedata.observeAsState
 import androidx.compose.ui.platform.AbstractComposeView
 import androidx.compose.ui.platform.LocalLayoutDirection
 import androidx.compose.ui.unit.LayoutDirection
+import androidx.core.view.WindowInsetsCompat
 import androidx.lifecycle.lifecycleScope
 import com.dessalines.thumbkey.db.AppSettingsRepository
 import com.dessalines.thumbkey.db.ClipboardRepository
+import com.dessalines.thumbkey.db.FloatingPositionUpdate
 import com.dessalines.thumbkey.ui.components.keyboard.KeyboardScreen
 import com.dessalines.thumbkey.ui.theme.ThumbkeyTheme
 import com.dessalines.thumbkey.utils.KeyboardPosition
@@ -29,9 +32,16 @@ class ComposeKeyboardView(
     private val settingsRepo: AppSettingsRepository,
     private val clipboardRepo: ClipboardRepository,
 ) : AbstractComposeView(context) {
+    override fun dispatchApplyWindowInsets(insets: WindowInsets): WindowInsets {
+        val compat = WindowInsetsCompat.toWindowInsetsCompat(insets, this)
+        val navBottom = compat.getInsets(WindowInsetsCompat.Type.navigationBars()).bottom
+        (context as IMEService).onNavBarBottomInsetChanged(navBottom)
+        return super.dispatchApplyWindowInsets(insets)
+    }
+
     @Composable
     override fun Content() {
-        val settingsState = settingsRepo.appSettings.observeAsState()
+        val settingsState = settingsRepo.appSettings.observeAsState(initial = settingsRepo.appSettings.value)
         val settings by settingsState
         val ctx = context as IMEService
 
@@ -83,7 +93,8 @@ class ComposeKeyboardView(
                         ctx.lifecycleScope.launch {
                             val state = settingsState.value
                             state?.let { s ->
-                                val nextPosition = f(KeyboardPosition.entries[s.position]).ordinal
+                                val current = KeyboardPosition.entries.getOrElse(s.position) { KeyboardPosition.Center }
+                                val nextPosition = f(current).ordinal
                                 val s2 = s.copy(position = nextPosition)
                                 settingsRepo.update(s2)
                             }
@@ -98,6 +109,21 @@ class ComposeKeyboardView(
                                 settingsRepo.update(s2)
                             }
                         }
+                    },
+                    onFloatingMoved = { xFrac, yFrac ->
+                        ctx.lifecycleScope.launch {
+                            val id = settingsState.value?.id ?: 1
+                            settingsRepo.updateFloatingPosition(
+                                FloatingPositionUpdate(
+                                    id = id,
+                                    floatingXFraction = xFrac.coerceIn(0f, 1f),
+                                    floatingYFraction = yFrac.coerceIn(0f, 1f),
+                                ),
+                            )
+                        }
+                    },
+                    onFloatingBounds = { bounds ->
+                        ctx.onFloatingBounds(bounds)
                     },
                     onGoToClipboardSettings = {
                         val intent =

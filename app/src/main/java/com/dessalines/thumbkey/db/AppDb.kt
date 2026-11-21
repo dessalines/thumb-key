@@ -78,6 +78,12 @@ const val MAX_CLIPBOARD_MAX_SIZE = 100
 const val DEFAULT_USE_PRIVATE_CLIPBOARD = 0
 const val DEFAULT_SHOW_ON_SCREEN_KEYBOARD = 0
 const val DEFAULT_SWITCH_IME_MODE = 0
+const val DEFAULT_KEYBOARD_OPACITY = 100
+const val MIN_KEYBOARD_OPACITY = 15
+const val MAX_KEYBOARD_OPACITY = 100
+const val DEFAULT_FLOATING_HANDLE_POSITION = 0
+const val DEFAULT_FLOATING_X_FRACTION = 0.5f
+const val DEFAULT_FLOATING_Y_FRACTION = 1.0f
 
 @Entity
 data class AppSettings(
@@ -355,6 +361,26 @@ data class AppSettings(
         defaultValue = DEFAULT_SWITCH_IME_MODE.toString(),
     )
     val switchImeMode: Int = DEFAULT_SWITCH_IME_MODE,
+    @ColumnInfo(
+        name = "keyboard_opacity",
+        defaultValue = DEFAULT_KEYBOARD_OPACITY.toString(),
+    )
+    val keyboardOpacity: Int = DEFAULT_KEYBOARD_OPACITY,
+    @ColumnInfo(
+        name = "floating_handle_position",
+        defaultValue = DEFAULT_FLOATING_HANDLE_POSITION.toString(),
+    )
+    val floatingHandlePosition: Int = DEFAULT_FLOATING_HANDLE_POSITION,
+    @ColumnInfo(
+        name = "floating_x_fraction",
+        defaultValue = DEFAULT_FLOATING_X_FRACTION.toString(),
+    )
+    val floatingXFraction: Float = DEFAULT_FLOATING_X_FRACTION,
+    @ColumnInfo(
+        name = "floating_y_fraction",
+        defaultValue = DEFAULT_FLOATING_Y_FRACTION.toString(),
+    )
+    val floatingYFraction: Float = DEFAULT_FLOATING_Y_FRACTION,
 )
 
 data class LayoutsUpdate(
@@ -463,6 +489,26 @@ data class LookAndFeelUpdate(
         name = "position_padding",
     )
     val positionPadding: Int,
+    @ColumnInfo(
+        name = "keyboard_opacity",
+    )
+    val keyboardOpacity: Int,
+    @ColumnInfo(
+        name = "floating_handle_position",
+    )
+    val floatingHandlePosition: Int,
+)
+
+data class FloatingPositionUpdate(
+    val id: Int,
+    @ColumnInfo(
+        name = "floating_x_fraction",
+    )
+    val floatingXFraction: Float,
+    @ColumnInfo(
+        name = "floating_y_fraction",
+    )
+    val floatingYFraction: Float,
 )
 
 data class BehaviorUpdate(
@@ -551,6 +597,9 @@ interface AppSettingsDao {
     fun updateLookAndFeel(lookAndFeel: LookAndFeelUpdate)
 
     @Update(entity = AppSettings::class)
+    suspend fun updateFloatingPosition(floatingPosition: FloatingPositionUpdate)
+
+    @Update(entity = AppSettings::class)
     fun updateBehavior(behavior: BehaviorUpdate)
 
     @Update(entity = AppSettings::class)
@@ -591,6 +640,11 @@ class AppSettingsRepository(
     @WorkerThread
     fun updateLookAndFeel(lookAndFeel: LookAndFeelUpdate) {
         appSettingsDao.updateLookAndFeel(lookAndFeel)
+    }
+
+    @WorkerThread
+    suspend fun updateFloatingPosition(floatingPosition: FloatingPositionUpdate) {
+        appSettingsDao.updateFloatingPosition(floatingPosition)
     }
 
     @WorkerThread
@@ -636,7 +690,7 @@ class AppSettingsRepository(
 }
 
 @Database(
-    version = 29,
+    version = 30,
     entities = [AppSettings::class],
     exportSchema = true,
 )
@@ -687,6 +741,7 @@ abstract class AppDB : RoomDatabase() {
                             MIGRATION_26_27,
                             MIGRATION_27_28,
                             MIGRATION_28_29,
+                            MIGRATION_29_30,
                         )
                         // Necessary because it can't insert data on creation
                         .addCallback(

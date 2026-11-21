@@ -265,6 +265,7 @@ fun keyboardPositionToAlignment(position: KeyboardPosition): Alignment =
         KeyboardPosition.Center -> Alignment.BottomCenter
         KeyboardPosition.Left -> Alignment.BottomStart
         KeyboardPosition.Dual -> Alignment.BottomStart
+        KeyboardPosition.Floating -> Alignment.BottomStart
     }
 
 /**
@@ -1477,7 +1478,8 @@ fun performKeyAction(
                 when (it) {
                     KeyboardPosition.Right -> KeyboardPosition.Center
                     KeyboardPosition.Center -> KeyboardPosition.Left
-                    KeyboardPosition.Left -> KeyboardPosition.Dual
+                    KeyboardPosition.Left -> KeyboardPosition.Floating
+                    KeyboardPosition.Floating -> KeyboardPosition.Dual
                     KeyboardPosition.Dual -> KeyboardPosition.Right
                 }
             }
@@ -1489,7 +1491,8 @@ fun performKeyAction(
                     KeyboardPosition.Left -> KeyboardPosition.Center
                     KeyboardPosition.Center -> KeyboardPosition.Right
                     KeyboardPosition.Right -> KeyboardPosition.Dual
-                    KeyboardPosition.Dual -> KeyboardPosition.Left
+                    KeyboardPosition.Dual -> KeyboardPosition.Floating
+                    KeyboardPosition.Floating -> KeyboardPosition.Left
                 }
             }
         }
@@ -1639,6 +1642,12 @@ fun getCurrentLayoutColumnCount(keyboardLayout: Int): Int {
     val mainKeyboard = keyboardDefinition.modes.main
     val columnCount = mainKeyboard.arr.maxOf { it.size }
     return columnCount
+}
+
+fun getCurrentLayoutGridColumns(keyboardLayout: Int): Int {
+    val currentLayout = KeyboardLayout.entries[keyboardLayout]
+    val mainKeyboard = currentLayout.keyboardDefinition.modes.main
+    return mainKeyboard.arr.maxOf { row -> row.sumOf { it.widthMultiplier } }.coerceAtLeast(1)
 }
 
 fun getCurrentDisplayWidth(ctx: Context): Int {

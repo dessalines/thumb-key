@@ -417,6 +417,7 @@ enum class KeyboardPosition(
     Right(R.string.right),
     Left(R.string.left),
     Dual(R.string.dual),
+    Floating(R.string.floating),
 }
 
 enum class SwipeNWay {
@@ -475,4 +476,11 @@ enum class CircularDragAction(
 ) {
     OppositeCase(R.string.send_oppsite_case),
     Numeric(R.string.send_numeric),
+}
+
+enum class FloatingHandlePosition(
+    @param:StringRes val resId: Int,
+) {
+    Bottom(R.string.bottom),
+    Top(R.string.top),
 }

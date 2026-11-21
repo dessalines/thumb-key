@@ -50,11 +50,15 @@ import com.dessalines.thumbkey.db.DEFAULT_CLOCKWISE_DRAG_ACTION
 import com.dessalines.thumbkey.db.DEFAULT_COUNTERCLOCKWISE_DRAG_ACTION
 import com.dessalines.thumbkey.db.DEFAULT_DISABLE_FULLSCREEN_EDITOR
 import com.dessalines.thumbkey.db.DEFAULT_DRAG_RETURN_ENABLED
+import com.dessalines.thumbkey.db.DEFAULT_FLOATING_HANDLE_POSITION
+import com.dessalines.thumbkey.db.DEFAULT_FLOATING_X_FRACTION
+import com.dessalines.thumbkey.db.DEFAULT_FLOATING_Y_FRACTION
 import com.dessalines.thumbkey.db.DEFAULT_GHOST_KEYS_ENABLED
 import com.dessalines.thumbkey.db.DEFAULT_HIDE_LETTERS
 import com.dessalines.thumbkey.db.DEFAULT_HIDE_SYMBOLS
 import com.dessalines.thumbkey.db.DEFAULT_IGNORE_BOTTOM_PADDING
 import com.dessalines.thumbkey.db.DEFAULT_KEYBOARD_LAYOUT
+import com.dessalines.thumbkey.db.DEFAULT_KEYBOARD_OPACITY
 import com.dessalines.thumbkey.db.DEFAULT_KEY_BORDERS
 import com.dessalines.thumbkey.db.DEFAULT_KEY_BORDER_WIDTH
 import com.dessalines.thumbkey.db.DEFAULT_KEY_HEIGHT
@@ -318,6 +322,10 @@ private fun resetAppSettingsToDefault(appSettingsViewModel: AppSettingsViewModel
             showOnScreenKeyboard = DEFAULT_SHOW_ON_SCREEN_KEYBOARD,
             slideHoldEnabled = DEFAULT_SLIDE_HOLD_ENABLED,
             switchImeMode = DEFAULT_SWITCH_IME_MODE,
+            keyboardOpacity = DEFAULT_KEYBOARD_OPACITY,
+            floatingHandlePosition = DEFAULT_FLOATING_HANDLE_POSITION,
+            floatingXFraction = DEFAULT_FLOATING_X_FRACTION,
+            floatingYFraction = DEFAULT_FLOATING_Y_FRACTION,
         ),
     )
 }

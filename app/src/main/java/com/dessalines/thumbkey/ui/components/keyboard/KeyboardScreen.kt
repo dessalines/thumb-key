@@ -27,10 +27,13 @@ import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
+import androidx.compose.ui.graphics.CompositingStrategy
+import androidx.compose.ui.graphics.graphicsLayer
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.platform.LocalView
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.Dp
+import androidx.compose.ui.unit.IntRect
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.viewinterop.AndroidView
 import androidx.emoji2.emojipicker.EmojiPickerView
@@ -48,11 +51,15 @@ import com.dessalines.thumbkey.db.DEFAULT_CLIPBOARD_HISTORY_ENABLED
 import com.dessalines.thumbkey.db.DEFAULT_CLOCKWISE_DRAG_ACTION
 import com.dessalines.thumbkey.db.DEFAULT_COUNTERCLOCKWISE_DRAG_ACTION
 import com.dessalines.thumbkey.db.DEFAULT_DRAG_RETURN_ENABLED
+import com.dessalines.thumbkey.db.DEFAULT_FLOATING_HANDLE_POSITION
+import com.dessalines.thumbkey.db.DEFAULT_FLOATING_X_FRACTION
+import com.dessalines.thumbkey.db.DEFAULT_FLOATING_Y_FRACTION
 import com.dessalines.thumbkey.db.DEFAULT_GHOST_KEYS_ENABLED
 import com.dessalines.thumbkey.db.DEFAULT_HIDE_LETTERS
 import com.dessalines.thumbkey.db.DEFAULT_HIDE_SYMBOLS
 import com.dessalines.thumbkey.db.DEFAULT_IGNORE_BOTTOM_PADDING
 import com.dessalines.thumbkey.db.DEFAULT_KEYBOARD_LAYOUT
+import com.dessalines.thumbkey.db.DEFAULT_KEYBOARD_OPACITY
 import com.dessalines.thumbkey.db.DEFAULT_KEY_BORDER_WIDTH
 import com.dessalines.thumbkey.db.DEFAULT_KEY_HEIGHT
 import com.dessalines.thumbkey.db.DEFAULT_KEY_PADDING
@@ -74,6 +81,8 @@ import com.dessalines.thumbkey.db.DEFAULT_SPACEBAR_MULTITAPS
 import com.dessalines.thumbkey.db.DEFAULT_SWITCH_TO_LETTERS_AFTER_SPACE
 import com.dessalines.thumbkey.db.DEFAULT_VIBRATE_ON_SLIDE
 import com.dessalines.thumbkey.db.DEFAULT_VIBRATE_ON_TAP
+import com.dessalines.thumbkey.db.MAX_KEYBOARD_OPACITY
+import com.dessalines.thumbkey.db.MIN_KEYBOARD_OPACITY
 import com.dessalines.thumbkey.keyboards.BACKSPACE_KEY_ITEM
 import com.dessalines.thumbkey.keyboards.EMOJI_BACK_KEY_ITEM
 import com.dessalines.thumbkey.keyboards.KB_EN_THUMBKEY_MAIN
@@ -81,6 +90,7 @@ import com.dessalines.thumbkey.keyboards.NUMERIC_KEY_ITEM
 import com.dessalines.thumbkey.keyboards.RETURN_KEY_ITEM
 import com.dessalines.thumbkey.utils.CircularDragAction
 import com.dessalines.thumbkey.utils.ColorVariant
+import com.dessalines.thumbkey.utils.FloatingHandlePosition
 import com.dessalines.thumbkey.utils.KeyAction
 import com.dessalines.thumbkey.utils.KeyboardLayout
 import com.dessalines.thumbkey.utils.KeyboardMode
@@ -88,6 +98,7 @@ import com.dessalines.thumbkey.utils.KeyboardPosition
 import com.dessalines.thumbkey.utils.SlideType
 import com.dessalines.thumbkey.utils.TAG
 import com.dessalines.thumbkey.utils.getAutoKeyWidth
+import com.dessalines.thumbkey.utils.getCurrentLayoutGridColumns
 import com.dessalines.thumbkey.utils.getKeyboardMode
 import com.dessalines.thumbkey.utils.getModifiedKeyboardDefinition
 import com.dessalines.thumbkey.utils.isLeftHandedLayout
@@ -107,6 +118,8 @@ fun KeyboardScreen(
     onSwitchLanguage: () -> Unit,
     onChangePosition: ((old: KeyboardPosition) -> KeyboardPosition) -> Unit,
     onToggleHideLetters: () -> Unit,
+    onFloatingMoved: (xFraction: Float, yFraction: Float) -> Unit,
+    onFloatingBounds: (IntRect) -> Unit,
     onGoToClipboardSettings: () -> Unit,
 ) {
     val ctx = LocalContext.current as IMEService
@@ -194,10 +207,10 @@ fun KeyboardScreen(
         }
 
     val position =
-        KeyboardPosition.entries[
-            settings?.position
-                ?: DEFAULT_POSITION,
-        ]
+        KeyboardPosition.entries.getOrElse(
+            settings?.position ?: DEFAULT_POSITION,
+        ) { KeyboardPosition.Center }
+    val floatingMode = position == KeyboardPosition.Floating
 
     val positionPadding = settings?.positionPadding ?: DEFAULT_POSITION_PADDING
 
@@ -218,16 +231,17 @@ fun KeyboardScreen(
     val soundOnTap = (settings?.soundOnTap ?: DEFAULT_SOUND_ON_TAP).toBool()
     val hideLetters = (settings?.hideLetters ?: DEFAULT_HIDE_LETTERS).toBool()
     val hideSymbols = (settings?.hideSymbols ?: DEFAULT_HIDE_SYMBOLS).toBool()
-    val backdropEnabled = (settings?.backdropEnabled ?: DEFAULT_BACKDROP_ENABLED).toBool()
+    val backdropEnabled = (settings?.backdropEnabled ?: DEFAULT_BACKDROP_ENABLED).toBool() && !floatingMode
     val backdropColor = MaterialTheme.colorScheme.background
     val backdropPadding = 6.dp
     val keyPadding = settings?.keyPadding ?: DEFAULT_KEY_PADDING
     val autoSizeKeys = (settings?.autoSizeKeys ?: DEFAULT_AUTO_SIZE_KEYS).toBool()
+    val effectiveAutoSizeKeys = autoSizeKeys && !floatingMode
     val nonSquareKeys = (settings?.nonSquareKeys ?: DEFAULT_NON_SQUARE_KEYS).toBool()
+    val keyboardLayoutIndex = settings?.keyboardLayout ?: DEFAULT_KEYBOARD_LAYOUT
     val legendWidth =
-        if (autoSizeKeys) {
-            val keyboardLayout = settings?.keyboardLayout ?: DEFAULT_KEYBOARD_LAYOUT
-            getAutoKeyWidth(keyboardLayout, keyPadding, position, ctx)
+        if (effectiveAutoSizeKeys) {
+            getAutoKeyWidth(keyboardLayoutIndex, keyPadding, position, ctx)
         } else {
             settings?.keyWidth ?: DEFAULT_KEY_WIDTH
         }
@@ -246,705 +260,58 @@ fun KeyboardScreen(
     val ghostKeysEnabled = (settings?.ghostKeysEnabled ?: DEFAULT_GHOST_KEYS_ENABLED).toBool()
     val slideHoldEnabled = (settings?.slideHoldEnabled ?: DEFAULT_SLIDE_HOLD_ENABLED).toBool()
 
+    val keyboardOpacity = (settings?.keyboardOpacity ?: DEFAULT_KEYBOARD_OPACITY).coerceIn(MIN_KEYBOARD_OPACITY, MAX_KEYBOARD_OPACITY)
+    val floatingHandlePosition =
+        FloatingHandlePosition.entries.getOrElse(
+            settings?.floatingHandlePosition ?: DEFAULT_FLOATING_HANDLE_POSITION,
+        ) { FloatingHandlePosition.Bottom }
+    val floatingXFraction = settings?.floatingXFraction ?: DEFAULT_FLOATING_X_FRACTION
+    val floatingYFraction = settings?.floatingYFraction ?: DEFAULT_FLOATING_Y_FRACTION
+
     val keyBorderWidthFloat = keyBorderWidth / 10.0f
     val keyBorderColour = MaterialTheme.colorScheme.outline
     val keyHeight = legendHeight.toFloat()
     val keyWidth = legendWidth.toFloat()
-    val cornerRadius = (keyRadius / 100.0f) * ((keyWidth + keyHeight) / 4.0f)
 
-    if (mode == KeyboardMode.EMOJI) {
-        // Dynamically determine number of rows based on keyboard structure
-        val rowCount = keyboardDefinition.modes.main.arr.size
-        val controllerKeys =
-            if (rowCount <= 3) {
-                listOf(EMOJI_BACK_KEY_ITEM, BACKSPACE_KEY_ITEM, RETURN_KEY_ITEM)
-            } else {
-                listOf(EMOJI_BACK_KEY_ITEM, NUMERIC_KEY_ITEM, BACKSPACE_KEY_ITEM, RETURN_KEY_ITEM)
-            }
-        val keyboardHeight = Dp((keyHeight * controllerKeys.size) - (keyPadding * 2))
-
-        ctx.currentInputConnection.requestCursorUpdates(0)
-
-        Box(
-            modifier =
+    val renderKeyboardContent = @Composable { effectiveKeyWidth: Float, effectiveKeyHeight: Float, isFloating: Boolean ->
+        val effectiveLegendWidth = effectiveKeyWidth.toInt()
+        val effectiveLegendHeight = effectiveKeyHeight.toInt()
+        val cornerRadius = (keyRadius / 100.0f) * ((effectiveKeyWidth + effectiveKeyHeight) / 4.0f)
+        val safeInsetsAndPushupModifier =
+            if (isFloating) {
                 Modifier
-                    .then(
-                        if (backdropEnabled) {
-                            Modifier.background(backdropColor)
-                        } else {
-                            Modifier
-                        },
-                    ),
-        ) {
-            // adds a pretty line if you're using the backdrop
-            if (backdropEnabled) {
-                Box(
-                    modifier =
-                        Modifier
-                            .align(Alignment.TopCenter)
-                            .fillMaxWidth()
-                            .height(1.dp)
-                            .background(color = MaterialTheme.colorScheme.surfaceVariant),
-                )
-            }
-            val emojiModeLayout = keyboardDefinition.modes.emoji
-            if (emojiModeLayout != null) {
-                // Custom Emoji layout provides its own functional row at the bottom
-                Column(
-                    modifier =
-                        Modifier
-                            .then(if (!ignoreBottomPadding) Modifier.safeDrawingPadding() else Modifier)
-                            .padding(bottom = pushupSizeDp)
-                            .fillMaxWidth()
-                            .then(
-                                if (backdropEnabled) {
-                                    Modifier.padding(top = backdropPadding)
-                                } else {
-                                    Modifier
-                                },
-                            ),
-                ) {
-                    val emojiPickerHeight = Dp((keyHeight * (emojiModeLayout.arr.size - 1)) - (keyPadding * 2))
-                    Box(
-                        modifier =
-                            Modifier
-                                .padding(keyPadding.dp)
-                                .clip(RoundedCornerShape(cornerRadius.dp))
-                                .then(
-                                    if (keyBorderWidthFloat > 0.0) {
-                                        Modifier.border(
-                                            keyBorderWidthFloat.dp,
-                                            keyBorderColour,
-                                            shape = RoundedCornerShape(cornerRadius.dp),
-                                        )
-                                    } else {
-                                        Modifier
-                                    },
-                                ).background(MaterialTheme.colorScheme.surface),
-                    ) {
-                        val view = LocalView.current
-                        val audioManager = ctx.getSystemService(Context.AUDIO_SERVICE) as AudioManager
-                        AndroidView(
-                            factory = { context ->
-                                val emojiPicker = EmojiPickerView(context)
-                                emojiPicker.setOnEmojiPickedListener {
-                                    if (vibrateOnTap) {
-                                        view.performHapticFeedback(HapticFeedbackConstants.KEYBOARD_TAP)
-                                    }
-                                    if (soundOnTap) {
-                                        audioManager.playSoundEffect(AudioManager.FX_KEY_CLICK, .1f)
-                                    }
-                                    ctx.currentInputConnection.commitText(it.emoji, 1)
-                                }
-                                emojiPicker
-                            },
-                            modifier = Modifier.fillMaxWidth().height(emojiPickerHeight),
-                        )
-                    }
-                    Row {
-                        val bottomRow = emojiModeLayout.arr.last()
-                        bottomRow.forEach { key ->
-                            Column {
-                                KeyboardKey(
-                                    key = key,
-                                    lastAction = lastAction,
-                                    legendHeight = legendHeight,
-                                    legendWidth = legendWidth,
-                                    keyHeight = keyHeight,
-                                    keyWidth = keyWidth,
-                                    keyPadding = keyPadding,
-                                    keyBorderWidth = keyBorderWidthFloat,
-                                    keyRadius = cornerRadius,
-                                    autoCapitalize = autoCapitalize,
-                                    keyboardSettings = keyboardDefinition.settings,
-                                    spacebarMultiTaps = spacebarMultiTaps,
-                                    vibrateOnTap = vibrateOnTap,
-                                    vibrateOnSlide = vibrateOnSlide,
-                                    soundOnTap = soundOnTap,
-                                    hideLetters = hideLetters,
-                                    hideSymbols = hideSymbols,
-                                    capsLock = capsLock,
-                                    animationSpeed = settings?.animationSpeed ?: DEFAULT_ANIMATION_SPEED,
-                                    animationHelperSpeed = settings?.animationHelperSpeed ?: DEFAULT_ANIMATION_HELPER_SPEED,
-                                    minSwipeLength = settings?.minSwipeLength ?: DEFAULT_MIN_SWIPE_LENGTH,
-                                    slideSensitivity = settings?.slideSensitivity ?: DEFAULT_SLIDE_SENSITIVITY,
-                                    slideEnabled = slideEnabled,
-                                    slideCursorMovementMode = slideCursorMovementMode,
-                                    slideSpacebarDeadzoneEnabled = slideSpacebarDeadzoneEnabled,
-                                    slideBackspaceDeadzoneEnabled = slideBackspaceDeadzoneEnabled,
-                                    onToggleShiftMode = { enable ->
-                                        mode =
-                                            if (enable) {
-                                                KeyboardMode.SHIFTED
-                                            } else {
-                                                capsLock = false
-                                                KeyboardMode.MAIN
-                                            }
-                                    },
-                                    onToggleCtrlMode = { enable ->
-                                        mode =
-                                            if (enable) {
-                                                KeyboardMode.CTRLED
-                                            } else {
-                                                KeyboardMode.MAIN
-                                            }
-                                    },
-                                    onToggleAltMode = { enable ->
-                                        mode =
-                                            if (enable) {
-                                                KeyboardMode.ALTED
-                                            } else {
-                                                KeyboardMode.MAIN
-                                            }
-                                    },
-                                    onToggleNumericMode = { enable ->
-                                        mode =
-                                            if (enable) {
-                                                KeyboardMode.NUMERIC
-                                            } else {
-                                                capsLock = false
-                                                KeyboardMode.MAIN
-                                            }
-                                    },
-                                    onToggleEmojiMode = { enable ->
-                                        mode =
-                                            if (enable) {
-                                                KeyboardMode.EMOJI
-                                            } else {
-                                                KeyboardMode.MAIN
-                                            }
-                                    },
-                                    onToggleClipboardMode = { enable ->
-                                        mode =
-                                            if (enable) {
-                                                KeyboardMode.CLIPBOARD
-                                            } else {
-                                                KeyboardMode.MAIN
-                                            }
-                                    },
-                                    onToggleSketchMode = { enable ->
-                                        // Not while typing sketch mode's own search
-                                        if (!sketch.searching) {
-                                            mode =
-                                                if (enable) {
-                                                    KeyboardMode.SKETCH
-                                                } else {
-                                                    KeyboardMode.MAIN
-                                                }
-                                        }
-                                    },
-                                    onToggleCapsLock = {
-                                        capsLock = !capsLock
-                                        if (capsLock) {
-                                            mode = KeyboardMode.SHIFTED
-                                        }
-                                    },
-                                    onToggleHideLetters = onToggleHideLetters,
-                                    onAutoCapitalize = { enable ->
-                                        if (mode !== KeyboardMode.NUMERIC) {
-                                            if (enable) {
-                                                mode = KeyboardMode.SHIFTED
-                                            } else if (!capsLock) {
-                                                mode = KeyboardMode.MAIN
-                                            }
-                                        }
-                                    },
-                                    onSwitchLanguage = {
-                                        onSwitchLanguage()
-                                        mode = KeyboardMode.MAIN
-                                    },
-                                    onChangePosition = onChangePosition,
-                                    onKeyEvent = { action ->
-                                        when (mode) {
-                                            KeyboardMode.CTRLED, KeyboardMode.ALTED -> {
-                                                if (action is KeyAction.SendEvent) {
-                                                    mode = KeyboardMode.MAIN
-                                                }
-                                            }
-
-                                            KeyboardMode.NUMERIC -> {
-                                                if (
-                                                    switchToLettersAfterSpace &&
-                                                    action is KeyAction.CommitText &&
-                                                    action.text == " "
-                                                ) {
-                                                    capsLock = false
-                                                    mode = KeyboardMode.MAIN
-                                                }
-                                            }
-
-                                            else -> {}
-                                        }
-                                    },
-                                    dragReturnEnabled = dragReturnEnabled,
-                                    circularDragEnabled = circularDragEnabled,
-                                    clockwiseDragAction = clockwiseDragAction,
-                                    counterclockwiseDragAction = counterclockwiseDragAction,
-                                    slideHoldEnabled = slideHoldEnabled,
-                                )
-                            }
-                        }
-                    }
-                }
             } else {
-                Row(
-                    modifier =
-                        Modifier
-                            .then(if (!ignoreBottomPadding) Modifier.safeDrawingPadding() else Modifier)
-                            .padding(bottom = pushupSizeDp)
-                            .fillMaxWidth()
-                            .then(
-                                if (backdropEnabled) {
-                                    Modifier.padding(top = backdropPadding)
-                                } else {
-                                    Modifier
-                                },
-                            ),
-                ) {
-                    Box(
-                        modifier =
-                            Modifier
-                                .weight(1f) // Take up available space equally
-                                .padding(keyPadding.dp)
-                                .clip(RoundedCornerShape(cornerRadius.dp))
-                                .then(
-                                    if (keyBorderWidthFloat > 0.0) {
-                                        Modifier.border(
-                                            keyBorderWidthFloat.dp,
-                                            keyBorderColour,
-                                            shape = RoundedCornerShape(cornerRadius.dp),
-                                        )
-                                    } else {
-                                        Modifier
-                                    },
-                                ).background(MaterialTheme.colorScheme.surface),
-                    ) {
-                        val view = LocalView.current
-                        val audioManager = ctx.getSystemService(Context.AUDIO_SERVICE) as AudioManager
-                        AndroidView(
-                            // Write the emoji to our text box when we tap one.
-                            factory = { context ->
-                                val emojiPicker = EmojiPickerView(context)
-                                emojiPicker.setOnEmojiPickedListener {
-                                    if (vibrateOnTap) {
-                                        view.performHapticFeedback(HapticFeedbackConstants.KEYBOARD_TAP)
-                                    }
-                                    if (soundOnTap) {
-                                        audioManager.playSoundEffect(AudioManager.FX_KEY_CLICK, .1f)
-                                    }
-                                    ctx.currentInputConnection.commitText(
-                                        it.emoji,
-                                        1,
-                                    )
-                                }
-                                emojiPicker
-                            },
-                            modifier =
-                                Modifier
-                                    .fillMaxWidth()
-                                    .height(keyboardHeight),
-                        )
-                    }
-                    Column {
-                        controllerKeys.forEach { key ->
-                            Column {
-                                KeyboardKey(
-                                    key = key,
-                                    lastAction = lastAction,
-                                    legendHeight = legendHeight,
-                                    legendWidth = legendWidth,
-                                    keyHeight = keyHeight,
-                                    keyWidth = keyWidth,
-                                    keyPadding = keyPadding,
-                                    keyBorderWidth = keyBorderWidthFloat,
-                                    keyRadius = cornerRadius,
-                                    autoCapitalize = autoCapitalize,
-                                    keyboardSettings = keyboardDefinition.settings,
-                                    spacebarMultiTaps = spacebarMultiTaps,
-                                    vibrateOnTap = vibrateOnTap,
-                                    vibrateOnSlide = vibrateOnSlide,
-                                    soundOnTap = soundOnTap,
-                                    hideLetters = hideLetters,
-                                    hideSymbols = hideSymbols,
-                                    capsLock = capsLock,
-                                    animationSpeed =
-                                        settings?.animationSpeed
-                                            ?: DEFAULT_ANIMATION_SPEED,
-                                    animationHelperSpeed =
-                                        settings?.animationHelperSpeed
-                                            ?: DEFAULT_ANIMATION_HELPER_SPEED,
-                                    minSwipeLength = settings?.minSwipeLength ?: DEFAULT_MIN_SWIPE_LENGTH,
-                                    slideSensitivity = settings?.slideSensitivity ?: DEFAULT_SLIDE_SENSITIVITY,
-                                    slideEnabled = slideEnabled,
-                                    slideCursorMovementMode = slideCursorMovementMode,
-                                    slideSpacebarDeadzoneEnabled = slideSpacebarDeadzoneEnabled,
-                                    slideBackspaceDeadzoneEnabled = slideBackspaceDeadzoneEnabled,
-                                    onToggleShiftMode = { enable ->
-                                        mode =
-                                            if (enable) {
-                                                KeyboardMode.SHIFTED
-                                            } else {
-                                                capsLock = false
-                                                KeyboardMode.MAIN
-                                            }
-                                    },
-                                    onToggleCtrlMode = { enable ->
-                                        mode =
-                                            if (enable) {
-                                                KeyboardMode.CTRLED
-                                            } else {
-                                                KeyboardMode.MAIN
-                                            }
-                                    },
-                                    onToggleAltMode = { enable ->
-                                        mode =
-                                            if (enable) {
-                                                KeyboardMode.ALTED
-                                            } else {
-                                                KeyboardMode.MAIN
-                                            }
-                                    },
-                                    onToggleNumericMode = { enable ->
-                                        mode =
-                                            if (enable) {
-                                                KeyboardMode.NUMERIC
-                                            } else {
-                                                capsLock = false
-                                                KeyboardMode.MAIN
-                                            }
-                                    },
-                                    onToggleEmojiMode = { enable ->
-                                        mode =
-                                            if (enable) {
-                                                KeyboardMode.EMOJI
-                                            } else {
-                                                KeyboardMode.MAIN
-                                            }
-                                    },
-                                    onToggleClipboardMode = { enable ->
-                                        mode =
-                                            if (enable) {
-                                                KeyboardMode.CLIPBOARD
-                                            } else {
-                                                KeyboardMode.MAIN
-                                            }
-                                    },
-                                    onToggleSketchMode = { enable ->
-                                        // Not while typing sketch mode's own search
-                                        if (!sketch.searching) {
-                                            mode =
-                                                if (enable) {
-                                                    KeyboardMode.SKETCH
-                                                } else {
-                                                    KeyboardMode.MAIN
-                                                }
-                                        }
-                                    },
-                                    onToggleCapsLock = {
-                                        capsLock = !capsLock
-
-                                        // Change to shifted mode in case it isn't already shifted
-                                        if (capsLock) {
-                                            mode = KeyboardMode.SHIFTED
-                                        }
-                                    },
-                                    onToggleHideLetters = onToggleHideLetters,
-                                    onAutoCapitalize = { enable ->
-                                        if (mode !== KeyboardMode.NUMERIC) {
-                                            if (enable) {
-                                                mode = KeyboardMode.SHIFTED
-                                            } else if (!capsLock) {
-                                                mode = KeyboardMode.MAIN
-                                            }
-                                        }
-                                    },
-                                    onSwitchLanguage = {
-                                        onSwitchLanguage()
-                                        mode = KeyboardMode.MAIN
-                                    },
-                                    onChangePosition = onChangePosition,
-                                    onKeyEvent = { action ->
-                                        when (mode) {
-                                            KeyboardMode.CTRLED, KeyboardMode.ALTED -> {
-                                                if (action is KeyAction.SendEvent) {
-                                                    mode = KeyboardMode.MAIN
-                                                }
-                                            }
-
-                                            KeyboardMode.NUMERIC -> {
-                                                if (
-                                                    switchToLettersAfterSpace &&
-                                                    action is KeyAction.CommitText &&
-                                                    action.text == " "
-                                                ) {
-                                                    capsLock = false
-                                                    mode = KeyboardMode.MAIN
-                                                }
-                                            }
-
-                                            else -> {}
-                                        }
-                                    },
-                                    dragReturnEnabled = dragReturnEnabled,
-                                    circularDragEnabled = circularDragEnabled,
-                                    clockwiseDragAction = clockwiseDragAction,
-                                    counterclockwiseDragAction = counterclockwiseDragAction,
-                                    slideHoldEnabled = slideHoldEnabled,
-                                )
-                            }
-                        }
-                    }
-                }
-            }
-        }
-    } else if (mode == KeyboardMode.CLIPBOARD) {
-        // Clipboard history view
-        val scope = CoroutineScope(Dispatchers.IO)
-        val clipboardHistoryEnabled =
-            (settings?.clipboardHistoryEnabled ?: DEFAULT_CLIPBOARD_HISTORY_ENABLED).toBool()
-
-        // Calculate keyboard height based on number of rows
-        val rowCount = keyboardDefinition.modes.main.arr.size
-        val keyboardHeight = Dp(keyHeight * rowCount)
-
-        // Perform auto-cleanup when entering clipboard view, and clear all if disabled
-        LaunchedEffect(Unit) {
-            if (clipboardHistoryEnabled) {
-                clipboardRepository.clearExpired()
-            } else {
-                clipboardRepository.clearAll()
-            }
-        }
-
-        Box(
-            modifier =
                 Modifier
-                    .then(
-                        if (backdropEnabled) {
-                            Modifier.background(backdropColor)
-                        } else {
-                            Modifier
-                        },
-                    ),
-        ) {
-            // adds a pretty line if you're using the backdrop
-            if (backdropEnabled) {
-                Box(
-                    modifier =
-                        Modifier
-                            .align(Alignment.TopCenter)
-                            .fillMaxWidth()
-                            .height(1.dp)
-                            .background(color = MaterialTheme.colorScheme.surfaceVariant),
-                )
+                    .then(if (!ignoreBottomPadding) Modifier.safeDrawingPadding() else Modifier)
+                    .padding(bottom = pushupSizeDp)
             }
-            Box(
-                modifier =
-                    Modifier
-                        .then(if (!ignoreBottomPadding) Modifier.safeDrawingPadding() else Modifier)
-                        .padding(bottom = pushupSizeDp)
-                        .fillMaxWidth()
-                        .height(keyboardHeight)
-                        .then(
-                            if (backdropEnabled) {
-                                Modifier.padding(top = backdropPadding)
-                            } else {
-                                Modifier
-                            },
-                        ),
-            ) {
-                ClipboardHistoryScreen(
-                    clipboardItems = clipboardItems,
-                    isEnabled = clipboardHistoryEnabled,
-                    onItemClick = { item ->
-                        // Paste and return to keyboard
-                        ctx.currentInputConnection.commitText(item.text, 1)
-                        mode = KeyboardMode.MAIN
-                    },
-                    onItemPaste = { item ->
-                        // Paste WITHOUT returning to keyboard
-                        ctx.currentInputConnection.commitText(item.text, 1)
-                    },
-                    onItemDelete = { item ->
-                        scope.launch {
-                            clipboardRepository.deleteItem(item)
-                        }
-                    },
-                    onItemTogglePin = { item ->
-                        scope.launch {
-                            clipboardRepository.togglePin(item)
-                        }
-                    },
-                    onBack = {
-                        mode = KeyboardMode.MAIN
-                    },
-                    onClearAll = {
-                        scope.launch {
-                            clipboardRepository.clearUnpinned()
-                        }
-                    },
-                    onGoToClipboardSettings = onGoToClipboardSettings,
-                    keyHeight = keyHeight,
-                    keyPadding = keyPadding,
-                    cornerRadius = cornerRadius,
-                    vibrateOnTap = vibrateOnTap,
-                )
-            }
-        }
-    } else if (mode == KeyboardMode.SKETCH) {
-        val rowCount = keyboardDefinition.modes.main.arr.size
 
-        Box(
-            modifier =
-                Modifier
-                    .then(
-                        if (backdropEnabled) {
-                            Modifier.background(backdropColor)
-                        } else {
-                            Modifier
-                        },
-                    ),
-        ) {
-            // adds a pretty line if you're using the backdrop
-            if (backdropEnabled) {
-                Box(
-                    modifier =
-                        Modifier
-                            .align(Alignment.TopCenter)
-                            .fillMaxWidth()
-                            .height(1.dp)
-                            .background(color = MaterialTheme.colorScheme.surfaceVariant),
-                )
-            }
-            Box(
-                contentAlignment = keyboardPositionToAlignment(position),
-                modifier =
-                    Modifier
-                        .then(if (!ignoreBottomPadding) Modifier.safeDrawingPadding() else Modifier)
-                        .padding(bottom = pushupSizeDp)
-                        .fillMaxWidth()
-                        .then(
-                            if (backdropEnabled) {
-                                Modifier.padding(top = backdropPadding)
-                            } else {
-                                Modifier
-                            },
-                        ),
-            ) {
-                SketchScreen(
-                    state = sketch,
-                    rowCount = rowCount,
-                    leftHanded = isLeftHandedLayout(layout.name),
-                    keyWidth = keyWidth,
-                    keyHeight = keyHeight,
-                    keyPadding = keyPadding,
-                    keyBorderWidth = keyBorderWidthFloat,
-                    cornerRadius = cornerRadius,
-                    vibrateOnTap = vibrateOnTap,
-                    soundOnTap = soundOnTap,
-                    onCommit = { text ->
-                        // Straight to the text field: the layout's text processor and
-                        // auto-capitalization don't apply to a drawn character.
-                        ctx.ignoreNextCursorMove()
-                        ctx.appInputConnection.commitText(text, 1)
-                    },
-                    onSearch = {
-                        sketch.searching = true
-                        mode = KeyboardMode.MAIN
-                    },
-                ) { key, onSketchAction ->
-                    KeyboardKey(
-                        key = key,
-                        lastAction = lastAction,
-                        legendHeight = legendHeight,
-                        legendWidth = legendWidth,
-                        keyHeight = keyHeight,
-                        keyWidth = keyWidth,
-                        keyPadding = keyPadding,
-                        keyBorderWidth = keyBorderWidthFloat,
-                        keyRadius = cornerRadius,
-                        autoCapitalize = autoCapitalize,
-                        keyboardSettings = keyboardDefinition.settings,
-                        spacebarMultiTaps = spacebarMultiTaps,
-                        vibrateOnTap = vibrateOnTap,
-                        vibrateOnSlide = vibrateOnSlide,
-                        soundOnTap = soundOnTap,
-                        // Candidates are always shown
-                        hideLetters = false,
-                        hideSymbols = false,
-                        capsLock = false,
-                        animationSpeed = settings?.animationSpeed ?: DEFAULT_ANIMATION_SPEED,
-                        animationHelperSpeed = settings?.animationHelperSpeed ?: DEFAULT_ANIMATION_HELPER_SPEED,
-                        minSwipeLength = settings?.minSwipeLength ?: DEFAULT_MIN_SWIPE_LENGTH,
-                        slideSensitivity = settings?.slideSensitivity ?: DEFAULT_SLIDE_SENSITIVITY,
-                        slideEnabled = slideEnabled,
-                        slideCursorMovementMode = slideCursorMovementMode,
-                        slideSpacebarDeadzoneEnabled = slideSpacebarDeadzoneEnabled,
-                        slideBackspaceDeadzoneEnabled = slideBackspaceDeadzoneEnabled,
-                        onToggleShiftMode = {},
-                        onToggleCtrlMode = {},
-                        onToggleAltMode = {},
-                        onToggleNumericMode = {},
-                        onToggleEmojiMode = {},
-                        onToggleClipboardMode = {},
-                        onToggleSketchMode = { enable ->
-                            if (!enable) mode = KeyboardMode.MAIN
-                        },
-                        onToggleCapsLock = {},
-                        onToggleHideLetters = onToggleHideLetters,
-                        // Stay in sketch mode after typing a space
-                        onAutoCapitalize = {},
-                        onSwitchLanguage = {
-                            onSwitchLanguage()
-                            mode = KeyboardMode.MAIN
-                        },
-                        onChangePosition = onChangePosition,
-                        onKeyEvent = {},
-                        dragReturnEnabled = dragReturnEnabled,
-                        circularDragEnabled = circularDragEnabled,
-                        clockwiseDragAction = clockwiseDragAction,
-                        counterclockwiseDragAction = counterclockwiseDragAction,
-                        slideHoldEnabled = slideHoldEnabled,
-                        onSketchAction = onSketchAction,
-                    )
-                }
-            }
-        }
-    } else {
-        // NOTE, this should use or CURSOR_UPDATE_FILTER_INSERTION_MARKER , but it doesn't work on
-        // non-compose textfields.
-        // This also requires jetpack compose >= 1.6
-        // See https://github.com/dessalines/thumb-key/issues/242
-        if (ctx.currentInputConnection.requestCursorUpdates(CURSOR_UPDATE_MONITOR)) {
-            Log.d(TAG, "request for cursor updates succeeded, cursor updates will be provided")
-        } else {
-            Log.d(TAG, "request for cursor updates failed, cursor updates will not be provided")
-        }
-
-        val drawKeyboard = @Composable { alignment: Alignment, drawBackdrop: Boolean, positionPadding: Int ->
-            val modifierPositionPadding =
-                if (positionPadding > 0) {
-                    Modifier.padding(start = positionPadding.dp)
+        if (mode == KeyboardMode.EMOJI) {
+            // Dynamically determine number of rows based on keyboard structure
+            val rowCount = keyboardDefinition.modes.main.arr.size
+            val controllerKeys =
+                if (rowCount <= 3) {
+                    listOf(EMOJI_BACK_KEY_ITEM, BACKSPACE_KEY_ITEM, RETURN_KEY_ITEM)
                 } else {
-                    Modifier.padding(end = -positionPadding.dp)
+                    listOf(EMOJI_BACK_KEY_ITEM, NUMERIC_KEY_ITEM, BACKSPACE_KEY_ITEM, RETURN_KEY_ITEM)
                 }
+            val keyboardHeight = Dp((effectiveKeyHeight * controllerKeys.size) - (keyPadding * 2))
+
+            ctx.currentInputConnection.requestCursorUpdates(0)
+
             Box(
-                contentAlignment = alignment,
                 modifier =
                     Modifier
-                        .then(if (drawBackdrop) Modifier.background(backdropColor) else (Modifier))
-                        .then(if (!ignoreBottomPadding) Modifier.safeDrawingPadding() else Modifier)
-                        .padding(bottom = pushupSizeDp)
                         .then(
                             if (backdropEnabled) {
-                                Modifier.padding(top = backdropPadding)
+                                Modifier.background(backdropColor)
                             } else {
                                 Modifier
                             },
                         ),
             ) {
                 // adds a pretty line if you're using the backdrop
-                if (drawBackdrop) {
+                if (backdropEnabled) {
                     Box(
                         modifier =
                             Modifier
@@ -954,33 +321,272 @@ fun KeyboardScreen(
                                 .background(color = MaterialTheme.colorScheme.surfaceVariant),
                     )
                 }
-                Column(modifier = modifierPositionPadding) {
-                    keyboard.arr.forEachIndexed { i, row ->
-                        Row {
-                            row.forEachIndexed { j, key ->
-                                Column {
-                                    val ghostKey =
-                                        if (ghostKeysEnabled) {
-                                            when (mode) {
-                                                KeyboardMode.MAIN, KeyboardMode.SHIFTED, KeyboardMode.CTRLED, KeyboardMode.ALTED -> {
-                                                    keyboardDefinition.modes.numeric
-                                                }
-
-                                                else -> {
-                                                    null
-                                                }
-                                            }?.arr?.getOrNull(i)?.getOrNull(j)
+                val emojiModeLayout = keyboardDefinition.modes.emoji
+                if (emojiModeLayout != null) {
+                    // Custom Emoji layout provides its own functional row at the bottom
+                    Column(
+                        modifier =
+                            Modifier
+                                .then(safeInsetsAndPushupModifier)
+                                .fillMaxWidth()
+                                .then(
+                                    if (backdropEnabled) {
+                                        Modifier.padding(top = backdropPadding)
+                                    } else {
+                                        Modifier
+                                    },
+                                ),
+                    ) {
+                        val emojiPickerHeight = Dp((effectiveKeyHeight * (emojiModeLayout.arr.size - 1)) - (keyPadding * 2))
+                        Box(
+                            modifier =
+                                Modifier
+                                    .padding(keyPadding.dp)
+                                    .clip(RoundedCornerShape(cornerRadius.dp))
+                                    .then(
+                                        if (keyBorderWidthFloat > 0.0) {
+                                            Modifier.border(
+                                                keyBorderWidthFloat.dp,
+                                                keyBorderColour,
+                                                shape = RoundedCornerShape(cornerRadius.dp),
+                                            )
                                         } else {
-                                            null
+                                            Modifier
+                                        },
+                                    ).background(MaterialTheme.colorScheme.surface),
+                        ) {
+                            val view = LocalView.current
+                            val audioManager = ctx.getSystemService(Context.AUDIO_SERVICE) as AudioManager
+                            AndroidView(
+                                factory = { context ->
+                                    val emojiPicker = EmojiPickerView(context)
+                                    emojiPicker.setOnEmojiPickedListener {
+                                        if (vibrateOnTap) {
+                                            view.performHapticFeedback(HapticFeedbackConstants.KEYBOARD_TAP)
                                         }
+                                        if (soundOnTap) {
+                                            audioManager.playSoundEffect(AudioManager.FX_KEY_CLICK, .1f)
+                                        }
+                                        ctx.currentInputConnection.commitText(it.emoji, 1)
+                                    }
+                                    emojiPicker
+                                },
+                                modifier = Modifier.fillMaxWidth().height(emojiPickerHeight),
+                            )
+                        }
+                        Row {
+                            val bottomRow = emojiModeLayout.arr.last()
+                            bottomRow.forEach { key ->
+                                Column {
                                     KeyboardKey(
                                         key = key,
-                                        ghostKey = ghostKey,
                                         lastAction = lastAction,
-                                        legendHeight = legendHeight,
-                                        legendWidth = legendWidth,
-                                        keyHeight = keyHeight,
-                                        keyWidth = keyWidth,
+                                        legendHeight = effectiveLegendHeight,
+                                        legendWidth = effectiveLegendWidth,
+                                        keyHeight = effectiveKeyHeight,
+                                        keyWidth = effectiveKeyWidth,
+                                        keyPadding = keyPadding,
+                                        keyBorderWidth = keyBorderWidthFloat,
+                                        keyRadius = cornerRadius,
+                                        autoCapitalize = autoCapitalize,
+                                        keyboardSettings = keyboardDefinition.settings,
+                                        spacebarMultiTaps = spacebarMultiTaps,
+                                        vibrateOnTap = vibrateOnTap,
+                                        vibrateOnSlide = vibrateOnSlide,
+                                        soundOnTap = soundOnTap,
+                                        hideLetters = hideLetters,
+                                        hideSymbols = hideSymbols,
+                                        capsLock = capsLock,
+                                        animationSpeed = settings?.animationSpeed ?: DEFAULT_ANIMATION_SPEED,
+                                        animationHelperSpeed = settings?.animationHelperSpeed ?: DEFAULT_ANIMATION_HELPER_SPEED,
+                                        minSwipeLength = settings?.minSwipeLength ?: DEFAULT_MIN_SWIPE_LENGTH,
+                                        slideSensitivity = settings?.slideSensitivity ?: DEFAULT_SLIDE_SENSITIVITY,
+                                        slideEnabled = slideEnabled,
+                                        slideCursorMovementMode = slideCursorMovementMode,
+                                        slideSpacebarDeadzoneEnabled = slideSpacebarDeadzoneEnabled,
+                                        slideBackspaceDeadzoneEnabled = slideBackspaceDeadzoneEnabled,
+                                        onToggleShiftMode = { enable ->
+                                            mode =
+                                                if (enable) {
+                                                    KeyboardMode.SHIFTED
+                                                } else {
+                                                    capsLock = false
+                                                    KeyboardMode.MAIN
+                                                }
+                                        },
+                                        onToggleCtrlMode = { enable ->
+                                            mode =
+                                                if (enable) {
+                                                    KeyboardMode.CTRLED
+                                                } else {
+                                                    KeyboardMode.MAIN
+                                                }
+                                        },
+                                        onToggleAltMode = { enable ->
+                                            mode =
+                                                if (enable) {
+                                                    KeyboardMode.ALTED
+                                                } else {
+                                                    KeyboardMode.MAIN
+                                                }
+                                        },
+                                        onToggleNumericMode = { enable ->
+                                            mode =
+                                                if (enable) {
+                                                    KeyboardMode.NUMERIC
+                                                } else {
+                                                    capsLock = false
+                                                    KeyboardMode.MAIN
+                                                }
+                                        },
+                                        onToggleEmojiMode = { enable ->
+                                            mode =
+                                                if (enable) {
+                                                    KeyboardMode.EMOJI
+                                                } else {
+                                                    KeyboardMode.MAIN
+                                                }
+                                        },
+                                        onToggleClipboardMode = { enable ->
+                                            mode =
+                                                if (enable) {
+                                                    KeyboardMode.CLIPBOARD
+                                                } else {
+                                                    KeyboardMode.MAIN
+                                                }
+                                        },
+                                        onToggleSketchMode = { enable ->
+                                            // Not while typing sketch mode's own search
+                                            if (!sketch.searching) {
+                                                mode =
+                                                    if (enable) {
+                                                        KeyboardMode.SKETCH
+                                                    } else {
+                                                        KeyboardMode.MAIN
+                                                    }
+                                            }
+                                        },
+                                        onToggleCapsLock = {
+                                            capsLock = !capsLock
+                                            if (capsLock) {
+                                                mode = KeyboardMode.SHIFTED
+                                            }
+                                        },
+                                        onToggleHideLetters = onToggleHideLetters,
+                                        onAutoCapitalize = { enable ->
+                                            if (mode !== KeyboardMode.NUMERIC) {
+                                                if (enable) {
+                                                    mode = KeyboardMode.SHIFTED
+                                                } else if (!capsLock) {
+                                                    mode = KeyboardMode.MAIN
+                                                }
+                                            }
+                                        },
+                                        onSwitchLanguage = {
+                                            onSwitchLanguage()
+                                            mode = KeyboardMode.MAIN
+                                        },
+                                        onChangePosition = onChangePosition,
+                                        onKeyEvent = { action ->
+                                            when (mode) {
+                                                KeyboardMode.CTRLED, KeyboardMode.ALTED -> {
+                                                    if (action is KeyAction.SendEvent) {
+                                                        mode = KeyboardMode.MAIN
+                                                    }
+                                                }
+
+                                                KeyboardMode.NUMERIC -> {
+                                                    if (
+                                                        switchToLettersAfterSpace &&
+                                                        action is KeyAction.CommitText &&
+                                                        action.text == " "
+                                                    ) {
+                                                        capsLock = false
+                                                        mode = KeyboardMode.MAIN
+                                                    }
+                                                }
+
+                                                else -> {}
+                                            }
+                                        },
+                                        dragReturnEnabled = dragReturnEnabled,
+                                        circularDragEnabled = circularDragEnabled,
+                                        clockwiseDragAction = clockwiseDragAction,
+                                        counterclockwiseDragAction = counterclockwiseDragAction,
+                                        slideHoldEnabled = slideHoldEnabled,
+                                    )
+                                }
+                            }
+                        }
+                    }
+                } else {
+                    Row(
+                        modifier =
+                            Modifier
+                                .then(safeInsetsAndPushupModifier)
+                                .fillMaxWidth()
+                                .then(
+                                    if (backdropEnabled) {
+                                        Modifier.padding(top = backdropPadding)
+                                    } else {
+                                        Modifier
+                                    },
+                                ),
+                    ) {
+                        Box(
+                            modifier =
+                                Modifier
+                                    .weight(1f) // Take up available space equally
+                                    .padding(keyPadding.dp)
+                                    .clip(RoundedCornerShape(cornerRadius.dp))
+                                    .then(
+                                        if (keyBorderWidthFloat > 0.0) {
+                                            Modifier.border(
+                                                keyBorderWidthFloat.dp,
+                                                keyBorderColour,
+                                                shape = RoundedCornerShape(cornerRadius.dp),
+                                            )
+                                        } else {
+                                            Modifier
+                                        },
+                                    ).background(MaterialTheme.colorScheme.surface),
+                        ) {
+                            val view = LocalView.current
+                            val audioManager = ctx.getSystemService(Context.AUDIO_SERVICE) as AudioManager
+                            AndroidView(
+                                // Write the emoji to our text box when we tap one.
+                                factory = { context ->
+                                    val emojiPicker = EmojiPickerView(context)
+                                    emojiPicker.setOnEmojiPickedListener {
+                                        if (vibrateOnTap) {
+                                            view.performHapticFeedback(HapticFeedbackConstants.KEYBOARD_TAP)
+                                        }
+                                        if (soundOnTap) {
+                                            audioManager.playSoundEffect(AudioManager.FX_KEY_CLICK, .1f)
+                                        }
+                                        ctx.currentInputConnection.commitText(
+                                            it.emoji,
+                                            1,
+                                        )
+                                    }
+                                    emojiPicker
+                                },
+                                modifier =
+                                    Modifier
+                                        .fillMaxWidth()
+                                        .height(keyboardHeight),
+                            )
+                        }
+                        Column {
+                            controllerKeys.forEach { key ->
+                                Column {
+                                    KeyboardKey(
+                                        key = key,
+                                        lastAction = lastAction,
+                                        legendHeight = effectiveLegendHeight,
+                                        legendWidth = effectiveLegendWidth,
+                                        keyHeight = effectiveKeyHeight,
+                                        keyWidth = effectiveKeyWidth,
                                         keyPadding = keyPadding,
                                         keyBorderWidth = keyBorderWidthFloat,
                                         keyRadius = cornerRadius,
@@ -999,12 +605,8 @@ fun KeyboardScreen(
                                         animationHelperSpeed =
                                             settings?.animationHelperSpeed
                                                 ?: DEFAULT_ANIMATION_HELPER_SPEED,
-                                        minSwipeLength =
-                                            settings?.minSwipeLength
-                                                ?: DEFAULT_MIN_SWIPE_LENGTH,
-                                        slideSensitivity =
-                                            settings?.slideSensitivity
-                                                ?: DEFAULT_SLIDE_SENSITIVITY,
+                                        minSwipeLength = settings?.minSwipeLength ?: DEFAULT_MIN_SWIPE_LENGTH,
+                                        slideSensitivity = settings?.slideSensitivity ?: DEFAULT_SLIDE_SENSITIVITY,
                                         slideEnabled = slideEnabled,
                                         slideCursorMovementMode = slideCursorMovementMode,
                                         slideSpacebarDeadzoneEnabled = slideSpacebarDeadzoneEnabled,
@@ -1079,6 +681,20 @@ fun KeyboardScreen(
                                             }
                                         },
                                         onToggleHideLetters = onToggleHideLetters,
+                                        onAutoCapitalize = { enable ->
+                                            if (mode !== KeyboardMode.NUMERIC) {
+                                                if (enable) {
+                                                    mode = KeyboardMode.SHIFTED
+                                                } else if (!capsLock) {
+                                                    mode = KeyboardMode.MAIN
+                                                }
+                                            }
+                                        },
+                                        onSwitchLanguage = {
+                                            onSwitchLanguage()
+                                            mode = KeyboardMode.MAIN
+                                        },
+                                        onChangePosition = onChangePosition,
                                         onKeyEvent = { action ->
                                             when (mode) {
                                                 KeyboardMode.CTRLED, KeyboardMode.ALTED -> {
@@ -1101,38 +717,6 @@ fun KeyboardScreen(
                                                 else -> {}
                                             }
                                         },
-                                        onAutoCapitalize = { enable ->
-                                            if (mode !== KeyboardMode.NUMERIC) {
-                                                if (enable) {
-                                                    mode = KeyboardMode.SHIFTED
-                                                } else if (!capsLock) {
-                                                    mode = KeyboardMode.MAIN
-                                                }
-                                            }
-                                        },
-                                        onSwitchLanguage = {
-                                            onSwitchLanguage()
-                                            mode = KeyboardMode.MAIN
-                                        },
-                                        onChangePosition = onChangePosition,
-                                        oppositeCaseKey =
-                                            when (mode) {
-                                                KeyboardMode.MAIN -> keyboardDefinition.modes.shifted
-                                                KeyboardMode.SHIFTED -> keyboardDefinition.modes.main
-                                                else -> null
-                                            }?.arr?.getOrNull(i)?.getOrNull(j),
-                                        numericKey =
-                                            when (mode) {
-                                                KeyboardMode.MAIN, KeyboardMode.SHIFTED, KeyboardMode.CTRLED, KeyboardMode.ALTED -> {
-                                                    keyboardDefinition.modes.numeric.arr
-                                                        .getOrNull(i)
-                                                        ?.getOrNull(j)
-                                                }
-
-                                                else -> {
-                                                    null
-                                                }
-                                            },
                                         dragReturnEnabled = dragReturnEnabled,
                                         circularDragEnabled = circularDragEnabled,
                                         clockwiseDragAction = clockwiseDragAction,
@@ -1145,41 +729,527 @@ fun KeyboardScreen(
                     }
                 }
             }
-        }
+        } else if (mode == KeyboardMode.CLIPBOARD) {
+            // Clipboard history view
+            val scope = CoroutineScope(Dispatchers.IO)
+            val clipboardHistoryEnabled =
+                (settings?.clipboardHistoryEnabled ?: DEFAULT_CLIPBOARD_HISTORY_ENABLED).toBool()
 
-        val drawKeyboards = @Composable {
-            drawKeyboard(keyboardPositionToAlignment(position), backdropEnabled, positionPadding)
-            if (position == KeyboardPosition.Dual) {
-                drawKeyboard(keyboardPositionToAlignment(KeyboardPosition.Right), false, positionPadding)
+            // Calculate keyboard height based on number of rows
+            val rowCount = keyboardDefinition.modes.main.arr.size
+            val keyboardHeight = Dp(effectiveKeyHeight * rowCount)
+
+            // Perform auto-cleanup when entering clipboard view, and clear all if disabled
+            LaunchedEffect(Unit) {
+                if (clipboardHistoryEnabled) {
+                    clipboardRepository.clearExpired()
+                } else {
+                    clipboardRepository.clearAll()
+                }
             }
-        }
 
-        if (sketch.searching) {
-            // Sketch mode's search, typed with the layout's keys below it
-            Column {
-                SketchSearch(
-                    state = sketch,
-                    height = Dp(keyHeight * 2),
-                    vibrateOnTap = vibrateOnTap,
-                    soundOnTap = soundOnTap,
-                    onPick = { text ->
-                        // Stop typing into the search first, so the character goes to the app
-                        sketch.searching = false
-                        sketch.list = null
-                        ctx.setInputRedirect(null)
-                        ctx.ignoreNextCursorMove()
-                        ctx.appInputConnection.commitText(text, 1)
-                        mode = KeyboardMode.SKETCH
-                    },
-                    onClose = {
-                        sketch.searching = false
-                        mode = KeyboardMode.SKETCH
-                    },
-                )
-                Box { drawKeyboards() }
+            Box(
+                modifier =
+                    Modifier
+                        .then(
+                            if (backdropEnabled) {
+                                Modifier.background(backdropColor)
+                            } else {
+                                Modifier
+                            },
+                        ),
+            ) {
+                // adds a pretty line if you're using the backdrop
+                if (backdropEnabled) {
+                    Box(
+                        modifier =
+                            Modifier
+                                .align(Alignment.TopCenter)
+                                .fillMaxWidth()
+                                .height(1.dp)
+                                .background(color = MaterialTheme.colorScheme.surfaceVariant),
+                    )
+                }
+                Box(
+                    modifier =
+                        Modifier
+                            .then(safeInsetsAndPushupModifier)
+                            .fillMaxWidth()
+                            .height(keyboardHeight)
+                            .then(
+                                if (backdropEnabled) {
+                                    Modifier.padding(top = backdropPadding)
+                                } else {
+                                    Modifier
+                                },
+                            ),
+                ) {
+                    ClipboardHistoryScreen(
+                        clipboardItems = clipboardItems,
+                        isEnabled = clipboardHistoryEnabled,
+                        onItemClick = { item ->
+                            // Paste and return to keyboard
+                            ctx.currentInputConnection.commitText(item.text, 1)
+                            mode = KeyboardMode.MAIN
+                        },
+                        onItemPaste = { item ->
+                            // Paste WITHOUT returning to keyboard
+                            ctx.currentInputConnection.commitText(item.text, 1)
+                        },
+                        onItemDelete = { item ->
+                            scope.launch {
+                                clipboardRepository.deleteItem(item)
+                            }
+                        },
+                        onItemTogglePin = { item ->
+                            scope.launch {
+                                clipboardRepository.togglePin(item)
+                            }
+                        },
+                        onBack = {
+                            mode = KeyboardMode.MAIN
+                        },
+                        onClearAll = {
+                            scope.launch {
+                                clipboardRepository.clearUnpinned()
+                            }
+                        },
+                        onGoToClipboardSettings = onGoToClipboardSettings,
+                        keyHeight = effectiveKeyHeight,
+                        keyPadding = keyPadding,
+                        cornerRadius = cornerRadius,
+                        vibrateOnTap = vibrateOnTap,
+                    )
+                }
+            }
+        } else if (mode == KeyboardMode.SKETCH) {
+            val rowCount = keyboardDefinition.modes.main.arr.size
+
+            Box(
+                modifier =
+                    Modifier
+                        .then(
+                            if (backdropEnabled) {
+                                Modifier.background(backdropColor)
+                            } else {
+                                Modifier
+                            },
+                        ),
+            ) {
+                // adds a pretty line if you're using the backdrop
+                if (backdropEnabled) {
+                    Box(
+                        modifier =
+                            Modifier
+                                .align(Alignment.TopCenter)
+                                .fillMaxWidth()
+                                .height(1.dp)
+                                .background(color = MaterialTheme.colorScheme.surfaceVariant),
+                    )
+                }
+                Box(
+                    contentAlignment = if (isFloating) Alignment.BottomStart else keyboardPositionToAlignment(position),
+                    modifier =
+                        Modifier
+                            .then(safeInsetsAndPushupModifier)
+                            .fillMaxWidth()
+                            .then(
+                                if (backdropEnabled) {
+                                    Modifier.padding(top = backdropPadding)
+                                } else {
+                                    Modifier
+                                },
+                            ),
+                ) {
+                    SketchScreen(
+                        state = sketch,
+                        rowCount = rowCount,
+                        leftHanded = isLeftHandedLayout(layout.name),
+                        keyWidth = effectiveKeyWidth,
+                        keyHeight = effectiveKeyHeight,
+                        keyPadding = keyPadding,
+                        keyBorderWidth = keyBorderWidthFloat,
+                        cornerRadius = cornerRadius,
+                        vibrateOnTap = vibrateOnTap,
+                        soundOnTap = soundOnTap,
+                        onCommit = { text ->
+                            // Straight to the text field: the layout's text processor and
+                            // auto-capitalization don't apply to a drawn character.
+                            ctx.ignoreNextCursorMove()
+                            ctx.appInputConnection.commitText(text, 1)
+                        },
+                        onSearch = {
+                            sketch.searching = true
+                            mode = KeyboardMode.MAIN
+                        },
+                    ) { key, onSketchAction ->
+                        KeyboardKey(
+                            key = key,
+                            lastAction = lastAction,
+                            legendHeight = effectiveLegendHeight,
+                            legendWidth = effectiveLegendWidth,
+                            keyHeight = effectiveKeyHeight,
+                            keyWidth = effectiveKeyWidth,
+                            keyPadding = keyPadding,
+                            keyBorderWidth = keyBorderWidthFloat,
+                            keyRadius = cornerRadius,
+                            autoCapitalize = autoCapitalize,
+                            keyboardSettings = keyboardDefinition.settings,
+                            spacebarMultiTaps = spacebarMultiTaps,
+                            vibrateOnTap = vibrateOnTap,
+                            vibrateOnSlide = vibrateOnSlide,
+                            soundOnTap = soundOnTap,
+                            // Candidates are always shown
+                            hideLetters = false,
+                            hideSymbols = false,
+                            capsLock = false,
+                            animationSpeed = settings?.animationSpeed ?: DEFAULT_ANIMATION_SPEED,
+                            animationHelperSpeed = settings?.animationHelperSpeed ?: DEFAULT_ANIMATION_HELPER_SPEED,
+                            minSwipeLength = settings?.minSwipeLength ?: DEFAULT_MIN_SWIPE_LENGTH,
+                            slideSensitivity = settings?.slideSensitivity ?: DEFAULT_SLIDE_SENSITIVITY,
+                            slideEnabled = slideEnabled,
+                            slideCursorMovementMode = slideCursorMovementMode,
+                            slideSpacebarDeadzoneEnabled = slideSpacebarDeadzoneEnabled,
+                            slideBackspaceDeadzoneEnabled = slideBackspaceDeadzoneEnabled,
+                            onToggleShiftMode = {},
+                            onToggleCtrlMode = {},
+                            onToggleAltMode = {},
+                            onToggleNumericMode = {},
+                            onToggleEmojiMode = {},
+                            onToggleClipboardMode = {},
+                            onToggleSketchMode = { enable ->
+                                if (!enable) mode = KeyboardMode.MAIN
+                            },
+                            onToggleCapsLock = {},
+                            onToggleHideLetters = onToggleHideLetters,
+                            // Stay in sketch mode after typing a space
+                            onAutoCapitalize = {},
+                            onSwitchLanguage = {
+                                onSwitchLanguage()
+                                mode = KeyboardMode.MAIN
+                            },
+                            onChangePosition = onChangePosition,
+                            onKeyEvent = {},
+                            dragReturnEnabled = dragReturnEnabled,
+                            circularDragEnabled = circularDragEnabled,
+                            clockwiseDragAction = clockwiseDragAction,
+                            counterclockwiseDragAction = counterclockwiseDragAction,
+                            slideHoldEnabled = slideHoldEnabled,
+                            onSketchAction = onSketchAction,
+                        )
+                    }
+                }
             }
         } else {
-            drawKeyboards()
+            // NOTE, this should use or CURSOR_UPDATE_FILTER_INSERTION_MARKER , but it doesn't work on
+            // non-compose textfields.
+            // This also requires jetpack compose >= 1.6
+            // See https://github.com/dessalines/thumb-key/issues/242
+            if (ctx.currentInputConnection.requestCursorUpdates(CURSOR_UPDATE_MONITOR)) {
+                Log.d(TAG, "request for cursor updates succeeded, cursor updates will be provided")
+            } else {
+                Log.d(TAG, "request for cursor updates failed, cursor updates will not be provided")
+            }
+
+            val drawKeyboard = @Composable { alignment: Alignment, drawBackdrop: Boolean, posPadding: Int ->
+                val modifierPositionPadding =
+                    if (posPadding > 0) {
+                        Modifier.padding(start = posPadding.dp)
+                    } else {
+                        Modifier.padding(end = -posPadding.dp)
+                    }
+                Box(
+                    contentAlignment = alignment,
+                    modifier =
+                        Modifier
+                            .then(if (!isFloating) Modifier.fillMaxWidth() else Modifier)
+                            .then(if (drawBackdrop) Modifier.background(backdropColor) else (Modifier))
+                            .then(safeInsetsAndPushupModifier)
+                            .then(
+                                if (backdropEnabled) {
+                                    Modifier.padding(top = backdropPadding)
+                                } else {
+                                    Modifier
+                                },
+                            ),
+                ) {
+                    // adds a pretty line if you're using the backdrop
+                    if (drawBackdrop) {
+                        Box(
+                            modifier =
+                                Modifier
+                                    .align(Alignment.TopCenter)
+                                    .fillMaxWidth()
+                                    .height(1.dp)
+                                    .background(color = MaterialTheme.colorScheme.surfaceVariant),
+                        )
+                    }
+                    Column(modifier = modifierPositionPadding) {
+                        keyboard.arr.forEachIndexed { i, row ->
+                            Row {
+                                row.forEachIndexed { j, key ->
+                                    Column {
+                                        val ghostKey =
+                                            if (ghostKeysEnabled) {
+                                                when (mode) {
+                                                    KeyboardMode.MAIN, KeyboardMode.SHIFTED, KeyboardMode.CTRLED, KeyboardMode.ALTED -> {
+                                                        keyboardDefinition.modes.numeric
+                                                    }
+
+                                                    else -> {
+                                                        null
+                                                    }
+                                                }?.arr?.getOrNull(i)?.getOrNull(j)
+                                            } else {
+                                                null
+                                            }
+                                        KeyboardKey(
+                                            key = key,
+                                            ghostKey = ghostKey,
+                                            lastAction = lastAction,
+                                            legendHeight = effectiveLegendHeight,
+                                            legendWidth = effectiveLegendWidth,
+                                            keyHeight = effectiveKeyHeight,
+                                            keyWidth = effectiveKeyWidth,
+                                            keyPadding = keyPadding,
+                                            keyBorderWidth = keyBorderWidthFloat,
+                                            keyRadius = cornerRadius,
+                                            autoCapitalize = autoCapitalize,
+                                            keyboardSettings = keyboardDefinition.settings,
+                                            spacebarMultiTaps = spacebarMultiTaps,
+                                            vibrateOnTap = vibrateOnTap,
+                                            vibrateOnSlide = vibrateOnSlide,
+                                            soundOnTap = soundOnTap,
+                                            hideLetters = hideLetters,
+                                            hideSymbols = hideSymbols,
+                                            capsLock = capsLock,
+                                            animationSpeed =
+                                                settings?.animationSpeed
+                                                    ?: DEFAULT_ANIMATION_SPEED,
+                                            animationHelperSpeed =
+                                                settings?.animationHelperSpeed
+                                                    ?: DEFAULT_ANIMATION_HELPER_SPEED,
+                                            minSwipeLength =
+                                                settings?.minSwipeLength
+                                                    ?: DEFAULT_MIN_SWIPE_LENGTH,
+                                            slideSensitivity =
+                                                settings?.slideSensitivity
+                                                    ?: DEFAULT_SLIDE_SENSITIVITY,
+                                            slideEnabled = slideEnabled,
+                                            slideCursorMovementMode = slideCursorMovementMode,
+                                            slideSpacebarDeadzoneEnabled = slideSpacebarDeadzoneEnabled,
+                                            slideBackspaceDeadzoneEnabled = slideBackspaceDeadzoneEnabled,
+                                            onToggleShiftMode = { enable ->
+                                                mode =
+                                                    if (enable) {
+                                                        KeyboardMode.SHIFTED
+                                                    } else {
+                                                        capsLock = false
+                                                        KeyboardMode.MAIN
+                                                    }
+                                            },
+                                            onToggleCtrlMode = { enable ->
+                                                mode =
+                                                    if (enable) {
+                                                        KeyboardMode.CTRLED
+                                                    } else {
+                                                        KeyboardMode.MAIN
+                                                    }
+                                            },
+                                            onToggleAltMode = { enable ->
+                                                mode =
+                                                    if (enable) {
+                                                        KeyboardMode.ALTED
+                                                    } else {
+                                                        KeyboardMode.MAIN
+                                                    }
+                                            },
+                                            onToggleNumericMode = { enable ->
+                                                mode =
+                                                    if (enable) {
+                                                        KeyboardMode.NUMERIC
+                                                    } else {
+                                                        capsLock = false
+                                                        KeyboardMode.MAIN
+                                                    }
+                                            },
+                                            onToggleEmojiMode = { enable ->
+                                                mode =
+                                                    if (enable) {
+                                                        KeyboardMode.EMOJI
+                                                    } else {
+                                                        KeyboardMode.MAIN
+                                                    }
+                                            },
+                                            onToggleClipboardMode = { enable ->
+                                                mode =
+                                                    if (enable) {
+                                                        KeyboardMode.CLIPBOARD
+                                                    } else {
+                                                        KeyboardMode.MAIN
+                                                    }
+                                            },
+                                            onToggleSketchMode = { enable ->
+                                                // Not while typing sketch mode's own search
+                                                if (!sketch.searching) {
+                                                    mode =
+                                                        if (enable) {
+                                                            KeyboardMode.SKETCH
+                                                        } else {
+                                                            KeyboardMode.MAIN
+                                                        }
+                                                }
+                                            },
+                                            onToggleCapsLock = {
+                                                capsLock = !capsLock
+
+                                                // Change to shifted mode in case it isn't already shifted
+                                                if (capsLock) {
+                                                    mode = KeyboardMode.SHIFTED
+                                                }
+                                            },
+                                            onToggleHideLetters = onToggleHideLetters,
+                                            onKeyEvent = { action ->
+                                                when (mode) {
+                                                    KeyboardMode.CTRLED, KeyboardMode.ALTED -> {
+                                                        if (action is KeyAction.SendEvent) {
+                                                            mode = KeyboardMode.MAIN
+                                                        }
+                                                    }
+
+                                                    KeyboardMode.NUMERIC -> {
+                                                        if (
+                                                            switchToLettersAfterSpace &&
+                                                            action is KeyAction.CommitText &&
+                                                            action.text == " "
+                                                        ) {
+                                                            capsLock = false
+                                                            mode = KeyboardMode.MAIN
+                                                        }
+                                                    }
+
+                                                    else -> {}
+                                                }
+                                            },
+                                            onAutoCapitalize = { enable ->
+                                                if (mode !== KeyboardMode.NUMERIC) {
+                                                    if (enable) {
+                                                        mode = KeyboardMode.SHIFTED
+                                                    } else if (!capsLock) {
+                                                        mode = KeyboardMode.MAIN
+                                                    }
+                                                }
+                                            },
+                                            onSwitchLanguage = {
+                                                onSwitchLanguage()
+                                                mode = KeyboardMode.MAIN
+                                            },
+                                            onChangePosition = onChangePosition,
+                                            oppositeCaseKey =
+                                                when (mode) {
+                                                    KeyboardMode.MAIN -> keyboardDefinition.modes.shifted
+                                                    KeyboardMode.SHIFTED -> keyboardDefinition.modes.main
+                                                    else -> null
+                                                }?.arr?.getOrNull(i)?.getOrNull(j),
+                                            numericKey =
+                                                when (mode) {
+                                                    KeyboardMode.MAIN, KeyboardMode.SHIFTED, KeyboardMode.CTRLED, KeyboardMode.ALTED -> {
+                                                        keyboardDefinition.modes.numeric.arr
+                                                            .getOrNull(i)
+                                                            ?.getOrNull(j)
+                                                    }
+
+                                                    else -> {
+                                                        null
+                                                    }
+                                                },
+                                            dragReturnEnabled = dragReturnEnabled,
+                                            circularDragEnabled = circularDragEnabled,
+                                            clockwiseDragAction = clockwiseDragAction,
+                                            counterclockwiseDragAction = counterclockwiseDragAction,
+                                            slideHoldEnabled = slideHoldEnabled,
+                                        )
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+
+            val drawKeyboards = @Composable {
+                if (isFloating) {
+                    drawKeyboard(Alignment.BottomStart, false, 0)
+                } else {
+                    drawKeyboard(keyboardPositionToAlignment(position), backdropEnabled, positionPadding)
+                    if (position == KeyboardPosition.Dual) {
+                        drawKeyboard(keyboardPositionToAlignment(KeyboardPosition.Right), false, positionPadding)
+                    }
+                }
+            }
+
+            if (sketch.searching) {
+                // Sketch mode's search, typed with the layout's keys below it
+                Column {
+                    SketchSearch(
+                        state = sketch,
+                        height = Dp(effectiveKeyHeight * 2),
+                        vibrateOnTap = vibrateOnTap,
+                        soundOnTap = soundOnTap,
+                        onPick = { text ->
+                            // Stop typing into the search first, so the character goes to the app
+                            sketch.searching = false
+                            sketch.list = null
+                            ctx.setInputRedirect(null)
+                            ctx.ignoreNextCursorMove()
+                            ctx.appInputConnection.commitText(text, 1)
+                            mode = KeyboardMode.SKETCH
+                        },
+                        onClose = {
+                            sketch.searching = false
+                            mode = KeyboardMode.SKETCH
+                        },
+                    )
+                    Box { drawKeyboards() }
+                }
+            } else {
+                drawKeyboards()
+            }
+        }
+    }
+
+    if (floatingMode) {
+        FloatingKeyboardFrame(
+            keyWidth = keyWidth,
+            keyHeight = keyHeight,
+            columns = getCurrentLayoutGridColumns(keyboardLayoutIndex),
+            keyboardOpacity = keyboardOpacity,
+            handlePosition = floatingHandlePosition,
+            floatingXFraction = floatingXFraction,
+            floatingYFraction = floatingYFraction,
+            vibrateOnTap = vibrateOnTap,
+            onMoved = onFloatingMoved,
+            onBounds = onFloatingBounds,
+        ) { floatingKeyWidth, floatingKeyHeight ->
+            renderKeyboardContent(floatingKeyWidth, floatingKeyHeight, true)
+        }
+    } else {
+        val dockedOpacityModifier =
+            if (keyboardOpacity < MAX_KEYBOARD_OPACITY) {
+                Modifier.graphicsLayer {
+                    alpha = (keyboardOpacity / 100f).coerceIn(MIN_KEYBOARD_OPACITY / 100f, 1f)
+                    compositingStrategy = CompositingStrategy.Offscreen
+                }
+            } else {
+                Modifier
+            }
+        Box(
+            modifier =
+                Modifier
+                    .fillMaxWidth()
+                    .then(dockedOpacityModifier),
+        ) {
+            renderKeyboardContent(keyWidth, keyHeight, false)
         }
     }
 }

@@ -13,12 +13,14 @@ import androidx.compose.material.icons.outlined.BorderBottom
 import androidx.compose.material.icons.outlined.BorderOuter
 import androidx.compose.material.icons.outlined.Colorize
 import androidx.compose.material.icons.outlined.Crop75
+import androidx.compose.material.icons.outlined.DragHandle
 import androidx.compose.material.icons.outlined.FormatSize
 import androidx.compose.material.icons.outlined.Fullscreen
 import androidx.compose.material.icons.outlined.HideImage
 import androidx.compose.material.icons.outlined.LinearScale
 import androidx.compose.material.icons.outlined.Mail
 import androidx.compose.material.icons.outlined.MusicNote
+import androidx.compose.material.icons.outlined.Opacity
 import androidx.compose.material.icons.outlined.Padding
 import androidx.compose.material.icons.outlined.Palette
 import androidx.compose.material.icons.outlined.RoundedCorner
@@ -35,6 +37,7 @@ import androidx.compose.material3.SnackbarHost
 import androidx.compose.material3.SnackbarHostState
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.livedata.observeAsState
 import androidx.compose.runtime.mutableFloatStateOf
@@ -52,9 +55,11 @@ import com.dessalines.thumbkey.db.DEFAULT_ANIMATION_SPEED
 import com.dessalines.thumbkey.db.DEFAULT_AUTO_SIZE_KEYS
 import com.dessalines.thumbkey.db.DEFAULT_BACKDROP_ENABLED
 import com.dessalines.thumbkey.db.DEFAULT_DISABLE_FULLSCREEN_EDITOR
+import com.dessalines.thumbkey.db.DEFAULT_FLOATING_HANDLE_POSITION
 import com.dessalines.thumbkey.db.DEFAULT_HIDE_LETTERS
 import com.dessalines.thumbkey.db.DEFAULT_HIDE_SYMBOLS
 import com.dessalines.thumbkey.db.DEFAULT_IGNORE_BOTTOM_PADDING
+import com.dessalines.thumbkey.db.DEFAULT_KEYBOARD_OPACITY
 import com.dessalines.thumbkey.db.DEFAULT_KEY_BORDER_WIDTH
 import com.dessalines.thumbkey.db.DEFAULT_KEY_HEIGHT
 import com.dessalines.thumbkey.db.DEFAULT_KEY_PADDING
@@ -71,8 +76,11 @@ import com.dessalines.thumbkey.db.DEFAULT_THEME_COLOR
 import com.dessalines.thumbkey.db.DEFAULT_VIBRATE_ON_SLIDE
 import com.dessalines.thumbkey.db.DEFAULT_VIBRATE_ON_TAP
 import com.dessalines.thumbkey.db.LookAndFeelUpdate
+import com.dessalines.thumbkey.db.MAX_KEYBOARD_OPACITY
+import com.dessalines.thumbkey.db.MIN_KEYBOARD_OPACITY
 import com.dessalines.thumbkey.ui.components.common.TestOutTextField
 import com.dessalines.thumbkey.ui.components.settings.about.SettingsDivider
+import com.dessalines.thumbkey.utils.FloatingHandlePosition
 import com.dessalines.thumbkey.utils.KeyboardPosition
 import com.dessalines.thumbkey.utils.SimpleTopAppBar
 import com.dessalines.thumbkey.utils.TAG
@@ -85,6 +93,7 @@ import me.zhanghai.compose.preference.ListPreferenceType
 import me.zhanghai.compose.preference.ProvidePreferenceTheme
 import me.zhanghai.compose.preference.SliderPreference
 import me.zhanghai.compose.preference.SwitchPreference
+import kotlin.math.roundToInt
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
@@ -102,8 +111,14 @@ fun LookAndFeelScreen(
     var nonSquareKeysState = (settings?.nonSquareKeys ?: DEFAULT_NON_SQUARE_KEYS).toBool()
     var keyHeightState = (settings?.keyHeight ?: DEFAULT_KEY_HEIGHT).toFloat()
     var keyHeightSliderState by remember { mutableFloatStateOf(keyHeightState) }
+    LaunchedEffect(settings?.keyHeight) {
+        keyHeightSliderState = (settings?.keyHeight ?: DEFAULT_KEY_HEIGHT).toFloat()
+    }
     var keyWidthState = (settings?.keyWidth ?: DEFAULT_KEY_WIDTH).toFloat()
     var keyWidthSliderState by remember { mutableFloatStateOf(keyWidthState) }
+    LaunchedEffect(settings?.keyWidth) {
+        keyWidthSliderState = (settings?.keyWidth ?: DEFAULT_KEY_WIDTH).toFloat()
+    }
 
     var pushupSizeState = (settings?.pushupSize ?: DEFAULT_PUSHUP_SIZE).toFloat()
     var pushupSizeSliderState by remember { mutableFloatStateOf(pushupSizeState) }
@@ -123,7 +138,11 @@ fun LookAndFeelScreen(
     var keyRadiusState = (settings?.keyRadius ?: DEFAULT_KEY_RADIUS).toFloat()
     var keyRadiusSliderState by remember { mutableFloatStateOf(keyRadiusState) }
 
-    var positionState = KeyboardPosition.entries[settings?.position ?: DEFAULT_POSITION]
+    var positionState =
+        KeyboardPosition.entries.getOrElse(
+            settings?.position ?: DEFAULT_POSITION,
+        ) { KeyboardPosition.Center }
+    val isFloating = positionState == KeyboardPosition.Floating
 
     var positionPaddingState = (settings?.positionPadding ?: DEFAULT_POSITION_PADDING).toFloat()
     var positionPaddingSliderState by remember { mutableFloatStateOf(positionPaddingState) }
@@ -139,6 +158,17 @@ fun LookAndFeelScreen(
     var backdropEnabledState = (settings?.backdropEnabled ?: DEFAULT_BACKDROP_ENABLED).toBool()
 
     var disableFullscreenEditorState = (settings?.disableFullscreenEditor ?: DEFAULT_DISABLE_FULLSCREEN_EDITOR).toBool()
+
+    var keyboardOpacityState = (settings?.keyboardOpacity ?: DEFAULT_KEYBOARD_OPACITY).toFloat()
+    var keyboardOpacitySliderState by remember { mutableFloatStateOf(keyboardOpacityState) }
+    LaunchedEffect(settings?.keyboardOpacity) {
+        keyboardOpacitySliderState = (settings?.keyboardOpacity ?: DEFAULT_KEYBOARD_OPACITY).toFloat()
+    }
+
+    var floatingHandlePositionState =
+        FloatingHandlePosition.entries.getOrElse(
+            settings?.floatingHandlePosition ?: DEFAULT_FLOATING_HANDLE_POSITION,
+        ) { FloatingHandlePosition.Bottom }
 
     fun updateLookAndFeel() {
         appSettingsViewModel.updateLookAndFeel(
@@ -167,6 +197,8 @@ fun LookAndFeelScreen(
                 keyHeight = keyHeightState.toInt(),
                 showToastOnLayoutSwitch = showToastOnLayoutSwitchState.toInt(),
                 disableFullscreenEditor = disableFullscreenEditorState.toInt(),
+                keyboardOpacity = keyboardOpacityState.roundToInt(),
+                floatingHandlePosition = floatingHandlePositionState.ordinal,
             ),
         )
     }
@@ -265,6 +297,33 @@ fun LookAndFeelScreen(
                         },
                     )
 
+                    if (isFloating) {
+                        ListPreference(
+                            type = ListPreferenceType.DROPDOWN_MENU,
+                            value = floatingHandlePositionState,
+                            onValueChange = {
+                                floatingHandlePositionState = it
+                                updateLookAndFeel()
+                            },
+                            values = FloatingHandlePosition.entries,
+                            valueToText = {
+                                AnnotatedString(resources.getString(it.resId))
+                            },
+                            title = {
+                                Text(stringResource(R.string.floating_handle_position))
+                            },
+                            summary = {
+                                Text(stringResource(floatingHandlePositionState.resId))
+                            },
+                            icon = {
+                                Icon(
+                                    imageVector = Icons.Outlined.DragHandle,
+                                    contentDescription = null,
+                                )
+                            },
+                        )
+                    }
+
                     SliderPreference(
                         value = positionPaddingState,
                         sliderValue = positionPaddingSliderState,
@@ -276,6 +335,7 @@ fun LookAndFeelScreen(
                             positionPaddingSliderState = it
                         },
                         valueRange = -200f..200f,
+                        enabled = !isFloating,
                         title = {
                             val positionPaddingStr =
                                 stringResource(
@@ -331,6 +391,7 @@ fun LookAndFeelScreen(
                             backdropEnabledState = it
                             updateLookAndFeel()
                         },
+                        enabled = !isFloating,
                         title = {
                             Text(stringResource(R.string.backdrop))
                         },
@@ -342,12 +403,40 @@ fun LookAndFeelScreen(
                         },
                     )
 
+                    SliderPreference(
+                        value = keyboardOpacityState,
+                        sliderValue = keyboardOpacitySliderState,
+                        onValueChange = {
+                            keyboardOpacityState = it
+                            updateLookAndFeel()
+                        },
+                        onSliderValueChange = {
+                            keyboardOpacitySliderState = it
+                        },
+                        valueRange = MIN_KEYBOARD_OPACITY.toFloat()..MAX_KEYBOARD_OPACITY.toFloat(),
+                        title = {
+                            Text(
+                                stringResource(
+                                    R.string.keyboard_opacity,
+                                    keyboardOpacitySliderState.roundToInt().toString(),
+                                ),
+                            )
+                        },
+                        icon = {
+                            Icon(
+                                imageVector = Icons.Outlined.Opacity,
+                                contentDescription = null,
+                            )
+                        },
+                    )
+
                     SwitchPreference(
                         value = ignoreBottomPaddingState,
                         onValueChange = {
                             ignoreBottomPaddingState = it
                             updateLookAndFeel()
                         },
+                        enabled = !isFloating,
                         title = {
                             Text(stringResource(R.string.ignore_bottom_padding))
                         },
@@ -398,6 +487,7 @@ fun LookAndFeelScreen(
                             autoSizeKeysState = it
                             updateLookAndFeel()
                         },
+                        enabled = !isFloating,
                         title = {
                             Text(stringResource(R.string.auto_size_keys))
                         },
@@ -409,7 +499,7 @@ fun LookAndFeelScreen(
                         },
                     )
 
-                    if (!autoSizeKeysState) {
+                    if (!autoSizeKeysState || isFloating) {
                         SliderPreference(
                             value = keyWidthState,
                             sliderValue = keyWidthSliderState,
@@ -553,6 +643,7 @@ fun LookAndFeelScreen(
                         },
                         onSliderValueChange = { pushupSizeSliderState = it },
                         valueRange = 0f..250f,
+                        enabled = !isFloating,
                         title = {
                             val bottomOffsetStr = stringResource(R.string.bottom_offset, pushupSizeSliderState.toInt().toString())
                             Text(bottomOffsetStr)
