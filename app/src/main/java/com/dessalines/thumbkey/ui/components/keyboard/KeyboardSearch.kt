@@ -17,7 +17,9 @@ import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.grid.GridCells
 import androidx.compose.foundation.lazy.grid.LazyVerticalGrid
 import androidx.compose.foundation.lazy.grid.items
+import androidx.compose.foundation.lazy.grid.rememberLazyGridState
 import androidx.compose.foundation.lazy.items
+import androidx.compose.foundation.lazy.rememberLazyListState
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.automirrored.outlined.ArrowBack
 import androidx.compose.material.icons.outlined.Close
@@ -27,6 +29,7 @@ import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.DisposableEffect
+import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.Stable
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
@@ -278,6 +281,9 @@ fun EmojiSearch(
                     .getOrDefault(emptyList())
         }.value
     val results = remember(index, state.query) { index?.let { EmojiSearchIndex.search(it, state.query) }.orEmpty() }
+    // New results show from the top. The grid would otherwise stay on the emoji it showed first.
+    val gridState = rememberLazyGridState()
+    LaunchedEffect(results) { gridState.scrollToItem(0) }
 
     Column(
         modifier =
@@ -301,6 +307,7 @@ fun EmojiSearch(
 
                 else -> {
                     LazyVerticalGrid(
+                        state = gridState,
                         columns = GridCells.Adaptive(minSize = 48.dp),
                         contentPadding =
                             PaddingValues(4.dp),
@@ -361,6 +368,9 @@ fun ClipboardSearch(
         remember(clipboardItems, state.query) {
             searchClipboardItems(clipboardItems, state.query).sortedByDescending { it.isPinned }
         }
+    // New results show from the top, as in the emoji search
+    val listState = rememberLazyListState()
+    LaunchedEffect(state.query) { listState.scrollToItem(0) }
 
     Column(
         modifier =
@@ -379,6 +389,7 @@ fun ClipboardSearch(
                 NoMatches(stringResource(R.string.clipboard_search_no_matches))
             } else {
                 LazyColumn(
+                    state = listState,
                     modifier = Modifier.padding(horizontal = keyPadding.dp),
                     verticalArrangement = Arrangement.spacedBy(4.dp),
                     contentPadding =
