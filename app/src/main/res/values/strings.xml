@@ -166,6 +166,11 @@
     <string name="sketch_search_hint">Search</string>
     <string name="sketch_clear_search">Clear search</string>
     <string name="sketch_no_matches">No candidates match</string>
+    <string name="search_back">Back</string>
+    <string name="emoji_search_hint">Search emoji</string>
+    <string name="emoji_search_no_matches">No emoji match</string>
+    <string name="clipboard_search_hint">Search clipboard</string>
+    <string name="clipboard_search_no_matches">No clips match</string>
     <string name="handwriting_recognition">Handwriting recognition</string>
     <string name="handwriting_recognition_summary">Sketch mode recognizes characters with glyphsketch, on the device.</string>
 </resources>
