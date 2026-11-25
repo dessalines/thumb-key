@@ -785,13 +785,15 @@ fun KeyboardScreen(
                     clipboardItems = clipboardItems,
                     isEnabled = clipboardHistoryEnabled,
                     onItemClick = { item ->
-                        // Paste and return to keyboard
+                        // Paste and return to keyboard. The pasted clip becomes the most recent.
                         ctx.currentInputConnection.commitText(item.text, 1)
+                        scope.launch { clipboardRepository.markUsed(item) }
                         mode = KeyboardMode.MAIN
                     },
                     onItemPaste = { item ->
                         // Paste WITHOUT returning to keyboard
                         ctx.currentInputConnection.commitText(item.text, 1)
+                        scope.launch { clipboardRepository.markUsed(item) }
                     },
                     onItemDelete = { item ->
                         scope.launch {
@@ -1250,11 +1252,13 @@ fun KeyboardScreen(
                         ctx.setInputRedirect(null)
                         ctx.ignoreNextCursorMove()
                         ctx.appInputConnection.commitText(item.text, 1)
+                        scope.launch { clipboardRepository.markUsed(item) }
                     },
                     onItemPaste = { item ->
                         // Paste without closing the search
                         ctx.ignoreNextCursorMove()
                         ctx.appInputConnection.commitText(item.text, 1)
+                        scope.launch { clipboardRepository.markUsed(item) }
                     },
                     onItemDelete = { item ->
                         scope.launch { clipboardRepository.deleteItem(item) }
