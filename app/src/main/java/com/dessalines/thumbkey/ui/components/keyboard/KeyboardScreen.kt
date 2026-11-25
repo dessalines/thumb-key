@@ -137,12 +137,20 @@ fun KeyboardScreen(
     // Sketch mode's drawing and candidates, kept while its search uses the letter keys, and
     // while the keyboard is closed
     val sketch = ctx.sketchState
+
+    // The emoji and clipboard searches, typed with the layout's letter keys. Their queries are
+    // kept while the keyboard is closed, like sketch mode's drawing.
+    val search = ctx.searchState
     LaunchedEffect(mode) {
         val typingSearch = sketch.searching && mode != KeyboardMode.EMOJI && mode != KeyboardMode.CLIPBOARD
         // Coming back to sketch mode shows the pad, unless the search is being typed
         if (mode != KeyboardMode.SKETCH && !typingSearch) {
             sketch.searching = false
             sketch.list = null
+        }
+        // The emoji and clipboard searches close when their own screens, or sketch mode, open
+        if (mode == KeyboardMode.EMOJI || mode == KeyboardMode.CLIPBOARD || mode == KeyboardMode.SKETCH) {
+            search.target = null
         }
     }
 
@@ -265,6 +273,12 @@ fun KeyboardScreen(
 
         ctx.currentInputConnection.requestCursorUpdates(0)
 
+        // The search above the emoji picker is typed with the layout's letter keys
+        val openEmojiSearch = {
+            search.target = KeyboardSearchTarget.EMOJI
+            mode = KeyboardMode.MAIN
+        }
+
         Box(
             modifier =
                 Modifier
@@ -324,22 +338,31 @@ fun KeyboardScreen(
                     ) {
                         val view = LocalView.current
                         val audioManager = ctx.getSystemService(Context.AUDIO_SERVICE) as AudioManager
-                        AndroidView(
-                            factory = { context ->
-                                val emojiPicker = EmojiPickerView(context)
-                                emojiPicker.setOnEmojiPickedListener {
-                                    if (vibrateOnTap) {
-                                        view.performHapticFeedback(HapticFeedbackConstants.KEYBOARD_TAP)
+                        Column {
+                            SearchEntryField(
+                                hint = stringResource(R.string.emoji_search_hint),
+                                onClick = openEmojiSearch,
+                            )
+                            AndroidView(
+                                factory = { context ->
+                                    val emojiPicker = EmojiPickerView(context)
+                                    emojiPicker.setOnEmojiPickedListener {
+                                        if (vibrateOnTap) {
+                                            view.performHapticFeedback(HapticFeedbackConstants.KEYBOARD_TAP)
+                                        }
+                                        if (soundOnTap) {
+                                            audioManager.playSoundEffect(AudioManager.FX_KEY_CLICK, .1f)
+                                        }
+                                        ctx.currentInputConnection.commitText(it.emoji, 1)
                                     }
-                                    if (soundOnTap) {
-                                        audioManager.playSoundEffect(AudioManager.FX_KEY_CLICK, .1f)
-                                    }
-                                    ctx.currentInputConnection.commitText(it.emoji, 1)
-                                }
-                                emojiPicker
-                            },
-                            modifier = Modifier.fillMaxWidth().height(emojiPickerHeight),
-                        )
+                                    emojiPicker
+                                },
+                                modifier =
+                                    Modifier
+                                        .fillMaxWidth()
+                                        .height(emojiPickerHeight - SEARCH_ENTRY_FIELD_HEIGHT),
+                            )
+                        }
                     }
                     Row {
                         val bottomRow = emojiModeLayout.arr.last()
@@ -521,29 +544,35 @@ fun KeyboardScreen(
                     ) {
                         val view = LocalView.current
                         val audioManager = ctx.getSystemService(Context.AUDIO_SERVICE) as AudioManager
-                        AndroidView(
-                            // Write the emoji to our text box when we tap one.
-                            factory = { context ->
-                                val emojiPicker = EmojiPickerView(context)
-                                emojiPicker.setOnEmojiPickedListener {
-                                    if (vibrateOnTap) {
-                                        view.performHapticFeedback(HapticFeedbackConstants.KEYBOARD_TAP)
+                        Column {
+                            SearchEntryField(
+                                hint = stringResource(R.string.emoji_search_hint),
+                                onClick = openEmojiSearch,
+                            )
+                            AndroidView(
+                                // Write the emoji to our text box when we tap one.
+                                factory = { context ->
+                                    val emojiPicker = EmojiPickerView(context)
+                                    emojiPicker.setOnEmojiPickedListener {
+                                        if (vibrateOnTap) {
+                                            view.performHapticFeedback(HapticFeedbackConstants.KEYBOARD_TAP)
+                                        }
+                                        if (soundOnTap) {
+                                            audioManager.playSoundEffect(AudioManager.FX_KEY_CLICK, .1f)
+                                        }
+                                        ctx.currentInputConnection.commitText(
+                                            it.emoji,
+                                            1,
+                                        )
                                     }
-                                    if (soundOnTap) {
-                                        audioManager.playSoundEffect(AudioManager.FX_KEY_CLICK, .1f)
-                                    }
-                                    ctx.currentInputConnection.commitText(
-                                        it.emoji,
-                                        1,
-                                    )
-                                }
-                                emojiPicker
-                            },
-                            modifier =
-                                Modifier
-                                    .fillMaxWidth()
-                                    .height(keyboardHeight),
-                        )
+                                    emojiPicker
+                                },
+                                modifier =
+                                    Modifier
+                                        .fillMaxWidth()
+                                        .height(keyboardHeight - SEARCH_ENTRY_FIELD_HEIGHT),
+                            )
+                        }
                     }
                     Column {
                         controllerKeys.forEach { key ->
@@ -757,13 +786,15 @@ fun KeyboardScreen(
                     clipboardItems = clipboardItems,
                     isEnabled = clipboardHistoryEnabled,
                     onItemClick = { item ->
-                        // Paste and return to keyboard
+                        // Paste and return to keyboard. The pasted clip becomes the most recent.
                         ctx.currentInputConnection.commitText(item.text, 1)
+                        scope.launch { clipboardRepository.markUsed(item) }
                         mode = KeyboardMode.MAIN
                     },
                     onItemPaste = { item ->
                         // Paste WITHOUT returning to keyboard
                         ctx.currentInputConnection.commitText(item.text, 1)
+                        scope.launch { clipboardRepository.markUsed(item) }
                     },
                     onItemDelete = { item ->
                         scope.launch {
@@ -784,6 +815,11 @@ fun KeyboardScreen(
                         }
                     },
                     onGoToClipboardSettings = onGoToClipboardSettings,
+                    onSearch = {
+                        // Typed with the layout's letter keys
+                        search.target = KeyboardSearchTarget.CLIPBOARD
+                        mode = KeyboardMode.MAIN
+                    },
                     keyHeight = keyHeight,
                     keyPadding = keyPadding,
                     cornerRadius = cornerRadius,
@@ -1174,6 +1210,66 @@ fun KeyboardScreen(
                     onClose = {
                         sketch.searching = false
                         mode = KeyboardMode.SKETCH
+                    },
+                )
+                Box { drawKeyboards() }
+            }
+        } else if (search.target == KeyboardSearchTarget.EMOJI) {
+            // The emoji picker's search, typed with the layout's keys below it
+            Column {
+                EmojiSearch(
+                    state = search,
+                    height = Dp(keyHeight * 2),
+                    vibrateOnTap = vibrateOnTap,
+                    soundOnTap = soundOnTap,
+                    onPick = { emoji ->
+                        // Straight to the app's field, past the search the keys type into.
+                        // The search stays open, to pick more.
+                        ctx.ignoreNextCursorMove()
+                        ctx.appInputConnection.commitText(emoji, 1)
+                    },
+                    onClose = {
+                        search.target = null
+                        mode = KeyboardMode.EMOJI
+                    },
+                )
+                Box { drawKeyboards() }
+            }
+        } else if (search.target == KeyboardSearchTarget.CLIPBOARD) {
+            // The clipboard history's search, typed with the layout's keys below it
+            val scope = CoroutineScope(Dispatchers.IO)
+            Column {
+                ClipboardSearch(
+                    state = search,
+                    clipboardItems = clipboardItems,
+                    height = Dp(keyHeight * 2),
+                    keyPadding = keyPadding,
+                    cornerRadius = cornerRadius,
+                    vibrateOnTap = vibrateOnTap,
+                    onItemClick = { item ->
+                        // Paste and return to the keyboard, like the clipboard history. Stop
+                        // typing into the search first, so the text goes to the app.
+                        search.target = null
+                        ctx.setInputRedirect(null)
+                        ctx.ignoreNextCursorMove()
+                        ctx.appInputConnection.commitText(item.text, 1)
+                        scope.launch { clipboardRepository.markUsed(item) }
+                    },
+                    onItemPaste = { item ->
+                        // Paste without closing the search
+                        ctx.ignoreNextCursorMove()
+                        ctx.appInputConnection.commitText(item.text, 1)
+                        scope.launch { clipboardRepository.markUsed(item) }
+                    },
+                    onItemDelete = { item ->
+                        scope.launch { clipboardRepository.deleteItem(item) }
+                    },
+                    onItemTogglePin = { item ->
+                        scope.launch { clipboardRepository.togglePin(item) }
+                    },
+                    onClose = {
+                        search.target = null
+                        mode = KeyboardMode.CLIPBOARD
                     },
                 )
                 Box { drawKeyboards() }

@@ -69,6 +69,7 @@ fun ClipboardHistoryScreen(
     onBack: () -> Unit,
     onClearAll: () -> Unit,
     onGoToClipboardSettings: () -> Unit,
+    onSearch: () -> Unit,
     keyHeight: Float,
     keyPadding: Int,
     cornerRadius: Float,
@@ -115,6 +116,12 @@ fun ClipboardHistoryScreen(
                 )
             }
         } else {
+            // Typed with the keyboard's own keys, see ClipboardSearch
+            SearchEntryField(
+                hint = stringResource(R.string.clipboard_search_hint),
+                onClick = onSearch,
+            )
+
             val pinnedItems = clipboardItems.filter { it.isPinned }
             val unpinnedItems = clipboardItems.filter { !it.isPinned }
 
@@ -302,7 +309,7 @@ private fun formatTimestamp(timestamp: Long): String =
         ).toString()
 
 @Composable
-private fun ClipboardItemRow(
+internal fun ClipboardItemRow(
     item: ClipboardItem,
     onClick: () -> Unit,
     onPaste: () -> Unit,

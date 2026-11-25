@@ -17,3 +17,6 @@ plugins {
 subprojects {
     apply(plugin = "org.jmailen.kotlinter") // Version should be inherited from parent
 }
+
+// ./gradlew generateEmojiSearchData regenerates the emoji search index
+apply(from = "scripts/emoji-search-data.gradle.kts")

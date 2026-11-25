@@ -31,6 +31,12 @@ class ClipboardRepository(
         }
     }
 
+    /** Makes `item` the most recent, as when it's picked from the history to paste. */
+    @WorkerThread
+    suspend fun markUsed(item: ClipboardItem) {
+        clipboardItemDao.update(item.copy(timestamp = System.currentTimeMillis()))
+    }
+
     @WorkerThread
     suspend fun togglePin(item: ClipboardItem) {
         clipboardItemDao.update(item.copy(isPinned = !item.isPinned))
