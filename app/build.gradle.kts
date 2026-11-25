@@ -152,6 +152,9 @@ dependencies {
     implementation("io.arrow-kt:arrow-optics:2.3.0")
     ksp("io.arrow-kt:arrow-optics-ksp-plugin:2.3.0")
 
+    // Emoji names, shortcodes and emoticons for the emoji search
+    implementation("org.kodein.emoji:emoji-kt:2.5.0")
+
     // Handwriting recognition for sketch mode, fully offline
     implementation("io.github.toldry:glyphsketch:0.1.1")
 }

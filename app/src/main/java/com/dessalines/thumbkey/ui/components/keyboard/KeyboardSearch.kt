@@ -1,6 +1,5 @@
 package com.dessalines.thumbkey.ui.components.keyboard
 
-import android.content.Context
 import android.graphics.Paint
 import android.util.Log
 import androidx.compose.foundation.background
@@ -57,6 +56,8 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.sync.Mutex
 import kotlinx.coroutines.sync.withLock
 import kotlinx.coroutines.withContext
+import org.kodein.emoji.Emoji
+import org.kodein.emoji.all
 
 /** What the keyboard's own search field, typed with the layout's keys, is searching. */
 enum class KeyboardSearchTarget {
@@ -180,58 +181,31 @@ val SEARCH_ENTRY_FIELD_HEIGHT = 52.dp
 // Emoji search
 
 /**
- * The fields of one CSV line (RFC 4180): a quoted field may hold commas, and a doubled quote
- * inside it stands for one quote. The index has no line breaks inside fields.
+ * One emoji of the search index: its name, the words of its shortcodes (like "heart_eyes" or
+ * "thumbsup") and its emoticons (like ":)").
  */
-internal fun parseCsvLine(line: String): List<String> {
-    val fields = mutableListOf<String>()
-    val field = StringBuilder()
-    var quoted = false
-    var index = 0
-    while (index < line.length) {
-        val char = line[index]
-        when {
-            quoted && char == '"' && line.getOrNull(index + 1) == '"' -> {
-                field.append('"')
-                index++
-            }
-
-            char == '"' && (quoted || field.isEmpty()) -> {
-                quoted = !quoted
-            }
-
-            !quoted && char == ',' -> {
-                fields.add(field.toString())
-                field.clear()
-            }
-
-            else -> {
-                field.append(char)
-            }
-        }
-        index++
-    }
-    fields.add(field.toString())
-    return fields
-}
-
-/** One emoji of the search index, with its name and keywords. */
 class EmojiSearchEntry(
     val emoji: String,
     val name: String,
-    keywords: String,
+    shortcodes: List<String>,
+    private val emoticons: List<String>,
 ) {
     private val nameWords = searchWords(name)
-    private val keywordWords = searchWords(keywords)
+    private val shortcodeWords = shortcodes.flatMap { searchWords(it) } + shortcodes
 
-    // 0 if every word starts a word of the name, 1 if some only start a keyword, or null
-    fun rank(words: List<String>): Int? {
+    // 0 if every word starts a word of the name, 1 if some only start a shortcode, or null.
+    // An emoticon matches only whole.
+    fun rank(
+        query: String,
+        words: List<String>,
+    ): Int? {
+        if (query in emoticons) return 0
         var rank = 0
         for (word in words) {
             when {
                 nameWords.any { it.startsWith(word, ignoreCase = true) } -> {}
 
-                keywordWords.any { it.startsWith(word, ignoreCase = true) } -> {
+                shortcodeWords.any { it.startsWith(word, ignoreCase = true) } -> {
                     rank = 1
                 }
 
@@ -244,45 +218,36 @@ class EmojiSearchEntry(
     }
 
     private companion object {
-        fun searchWords(text: String) = text.split(Regex("[^\\p{L}\\p{N}’'-]+")).filter { it.isNotEmpty() }
+        fun searchWords(text: String) = text.split(Regex("[^\\p{L}\\p{N}’']+")).filter { it.isNotEmpty() }
     }
 }
 
 /**
- * The emoji search index, read once from assets/emoji_search.csv (see
- * ./gradlew generateEmojiSearchData), without the emoji this phone's fonts can't draw.
+ * The emoji search index, from Kodein's Emoji.kt, without the emoji this phone's fonts can't
+ * draw. It's built once, on first use.
  */
 object EmojiSearchIndex {
-    private const val ASSET = "emoji_search.csv"
     private val mutex = Mutex()
     private var entries: List<EmojiSearchEntry>? = null
 
-    suspend fun get(ctx: Context): List<EmojiSearchEntry> =
+    suspend fun get(): List<EmojiSearchEntry> =
         mutex.withLock {
-            entries ?: withContext(Dispatchers.IO) { load(ctx.applicationContext) }.also { entries = it }
+            entries ?: withContext(Dispatchers.Default) { load() }.also { entries = it }
         }
 
-    private fun load(ctx: Context): List<EmojiSearchEntry> {
+    private fun load(): List<EmojiSearchEntry> {
         val paint = Paint()
-        return ctx.assets.open(ASSET).bufferedReader().useLines { lines ->
-            lines
-                .drop(1) // The header: emoji,name,keywords
-                .filter { it.isNotBlank() }
-                .mapNotNull { line ->
-                    val fields = parseCsvLine(line)
-                    val emoji = fields[0]
-                    if (fields.size < 2 || !paint.hasGlyph(emoji)) {
-                        null
-                    } else {
-                        EmojiSearchEntry(emoji, fields[1], fields.getOrElse(2) { "" })
-                    }
-                }.toList()
-        }
+        return Emoji
+            .all()
+            .map { it.details }
+            .filter { paint.hasGlyph(it.string) }
+            .map { EmojiSearchEntry(it.string, it.description, it.aliases, it.emoticons) }
     }
 
     /**
-     * The emoji whose names or keywords have a word starting with each word of `query`, those
-     * that match by name first. An empty query matches every emoji.
+     * The emoji whose names or shortcodes have a word starting with each word of `query`,
+     * those that match by name first, or whose emoticon is `query`. An empty query matches
+     * every emoji.
      */
     fun search(
         entries: List<EmojiSearchEntry>,
@@ -291,7 +256,7 @@ object EmojiSearchIndex {
         val words = queryWords(query)
         if (words.isEmpty()) return entries
         return entries
-            .mapNotNull { entry -> entry.rank(words)?.let { entry to it } }
+            .mapNotNull { entry -> entry.rank(query.trim(), words)?.let { entry to it } }
             .sortedBy { it.second }
             .map { it.first }
     }
@@ -310,13 +275,12 @@ fun EmojiSearch(
     onPick: (emoji: String) -> Unit,
     onClose: () -> Unit,
 ) {
-    val ctx = LocalContext.current
     val feedback = rememberSketchFeedback(vibrateOnTap, soundOnTap)
     val field = rememberRedirectedField(state.query) { state.query = it }
     val index =
         produceState<List<EmojiSearchEntry>?>(null) {
             value =
-                runCatching { EmojiSearchIndex.get(ctx) }
+                runCatching { EmojiSearchIndex.get() }
                     .onFailure { Log.e(TAG, "Couldn't load the emoji search index", it) }
                     .getOrDefault(emptyList())
         }.value
