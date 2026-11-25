@@ -828,8 +828,7 @@ fun KeyboardKey(
                         selection = Selection()
                     },
                 )
-            }
-            .padding(keyPadding.dp)
+            }.padding(keyPadding.dp)
             .clip(RoundedCornerShape(keyRadius.dp))
             .then(
                 if (keyBorderWidth > 0.0) {
