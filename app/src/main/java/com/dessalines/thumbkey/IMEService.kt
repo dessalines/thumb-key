@@ -21,6 +21,7 @@ import com.dessalines.thumbkey.db.DEFAULT_DISABLE_FULLSCREEN_EDITOR
 import com.dessalines.thumbkey.db.DEFAULT_SHOW_ON_SCREEN_KEYBOARD
 import com.dessalines.thumbkey.db.DEFAULT_SWITCH_IME_MODE
 import com.dessalines.thumbkey.db.DEFAULT_USE_PRIVATE_CLIPBOARD
+import com.dessalines.thumbkey.ui.components.keyboard.KeyboardSearchState
 import com.dessalines.thumbkey.ui.components.keyboard.SketchState
 import com.dessalines.thumbkey.utils.ImeSwitchMode
 import com.dessalines.thumbkey.utils.KeyboardDefinition
@@ -81,6 +82,9 @@ class IMEService :
 
     // Sketch mode's drawing, kept while the keyboard is closed and opened again
     val sketchState = SketchState()
+
+    // The emoji and clipboard searches' queries, kept the same way
+    val searchState = KeyboardSearchState()
     private var clipboardManager: ThumbKeyClipboardManager? = null
 
     /**
@@ -97,6 +101,7 @@ class IMEService :
         // its drawing
         sketchState.searching = false
         sketchState.list = null
+        searchState.target = null
         val view = this.setupView()
         this.setInputView(view)
     }

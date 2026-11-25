@@ -138,8 +138,9 @@ fun KeyboardScreen(
     // while the keyboard is closed
     val sketch = ctx.sketchState
 
-    // The emoji and clipboard searches, typed with the layout's letter keys
-    val search = remember { KeyboardSearchState() }
+    // The emoji and clipboard searches, typed with the layout's letter keys. Their queries are
+    // kept while the keyboard is closed, like sketch mode's drawing.
+    val search = ctx.searchState
     LaunchedEffect(mode) {
         val typingSearch = sketch.searching && mode != KeyboardMode.EMOJI && mode != KeyboardMode.CLIPBOARD
         // Coming back to sketch mode shows the pad, unless the search is being typed

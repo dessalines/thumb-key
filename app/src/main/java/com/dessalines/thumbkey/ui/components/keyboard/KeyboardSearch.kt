@@ -32,6 +32,7 @@ import androidx.compose.runtime.DisposableEffect
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.Stable
 import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableStateMapOf
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.produceState
 import androidx.compose.runtime.remember
@@ -69,15 +70,17 @@ enum class KeyboardSearchTarget {
  */
 @Stable
 class KeyboardSearchState {
-    private var openTarget by mutableStateOf<KeyboardSearchTarget?>(null)
-    var query by mutableStateOf("")
+    // The open search, or null for none
+    var target by mutableStateOf<KeyboardSearchTarget?>(null)
 
-    // The open search, or null for none. Closing it clears the query.
-    var target: KeyboardSearchTarget?
-        get() = openTarget
+    // Each search keeps its own query, also while it's closed
+    private val queries = mutableStateMapOf<KeyboardSearchTarget, String>()
+
+    // The open search's query
+    var query: String
+        get() = target?.let { queries[it] }.orEmpty()
         set(value) {
-            if (value != openTarget) query = ""
-            openTarget = value
+            target?.let { queries[it] = value }
         }
 }
 
