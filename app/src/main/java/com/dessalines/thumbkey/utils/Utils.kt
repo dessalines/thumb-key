@@ -43,9 +43,6 @@ import com.dessalines.thumbkey.R
 import com.dessalines.thumbkey.db.AppSettingsViewModel
 import com.dessalines.thumbkey.db.DEFAULT_KEYBOARD_LAYOUT
 import com.dessalines.thumbkey.db.LayoutsUpdate
-import kotlinx.coroutines.CoroutineScope
-import kotlinx.coroutines.delay
-import kotlinx.coroutines.launch
 import java.text.NumberFormat
 import java.util.Locale
 import java.util.regex.Pattern
@@ -56,7 +53,6 @@ import kotlin.math.max
 import kotlin.math.min
 import kotlin.math.pow
 import kotlin.math.sqrt
-import kotlin.time.Duration.Companion.milliseconds
 
 const val TAG = "com.thumbkey"
 
@@ -267,6 +263,7 @@ fun keyboardPositionToAlignment(position: KeyboardPosition): Alignment =
         KeyboardPosition.Center -> Alignment.BottomCenter
         KeyboardPosition.Left -> Alignment.BottomStart
         KeyboardPosition.Dual -> Alignment.BottomStart
+        KeyboardPosition.Floating -> Alignment.BottomStart
     }
 
 /**
@@ -1479,7 +1476,8 @@ fun performKeyAction(
                 when (it) {
                     KeyboardPosition.Right -> KeyboardPosition.Center
                     KeyboardPosition.Center -> KeyboardPosition.Left
-                    KeyboardPosition.Left -> KeyboardPosition.Dual
+                    KeyboardPosition.Left -> KeyboardPosition.Floating
+                    KeyboardPosition.Floating -> KeyboardPosition.Dual
                     KeyboardPosition.Dual -> KeyboardPosition.Right
                 }
             }
@@ -1491,7 +1489,8 @@ fun performKeyAction(
                     KeyboardPosition.Left -> KeyboardPosition.Center
                     KeyboardPosition.Center -> KeyboardPosition.Right
                     KeyboardPosition.Right -> KeyboardPosition.Dual
-                    KeyboardPosition.Dual -> KeyboardPosition.Left
+                    KeyboardPosition.Dual -> KeyboardPosition.Floating
+                    KeyboardPosition.Floating -> KeyboardPosition.Left
                 }
             }
         }
@@ -1712,6 +1711,12 @@ fun getCurrentLayoutColumnCount(keyboardLayout: Int): Int {
     return columnCount
 }
 
+fun getCurrentLayoutGridColumns(keyboardLayout: Int): Int {
+    val currentLayout = KeyboardLayout.entries[keyboardLayout]
+    val mainKeyboard = currentLayout.keyboardDefinition.modes.main
+    return mainKeyboard.arr.maxOf { row -> row.sumOf { it.widthMultiplier } }.coerceAtLeast(1)
+}
+
 fun getCurrentDisplayWidth(ctx: Context): Int {
     val displayMetrics = ctx.resources.displayMetrics
     return (displayMetrics.widthPixels / displayMetrics.density).toInt()
@@ -1894,31 +1899,26 @@ fun buildTapActions(keyItem: KeyItemC): List<KeyAction> {
 }
 
 fun doneKeyAction(
-    scope: CoroutineScope,
     action: KeyAction,
     pressed: MutableState<Boolean>,
-    releasedKey: MutableState<String?>,
-    animationHelperSpeed: Int,
+    releasedFeedback: MutableState<ReleasedKeyFeedback?>,
+    originDirection: SwipeDirection? = null,
 ) {
     pressed.value = false
-    scope.launch {
-        delay(animationHelperSpeed.toLong().milliseconds)
-        releasedKey.value = null
-    }
-    releasedKey.value =
+    val displayText =
         when (action) {
-            is KeyAction.CommitText -> {
-                action.text
-            }
-
-            is KeyAction.Sketch.CommitCandidate -> {
-                action.displayText
-            }
-
-            else -> {
-                null
-            }
+            is KeyAction.CommitText -> action.text
+            is KeyAction.Sketch.CommitCandidate -> action.displayText
+            else -> null
         }
+    if (displayText != null) {
+        releasedFeedback.value =
+            ReleasedKeyFeedback(
+                text = displayText,
+                originDirection = originDirection,
+                id = (releasedFeedback.value?.id ?: 0L) + 1L,
+            )
+    }
 }
 
 @OptIn(ExperimentalMaterial3Api::class)

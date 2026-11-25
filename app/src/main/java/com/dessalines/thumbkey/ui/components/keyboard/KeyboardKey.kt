@@ -5,11 +5,9 @@ import android.os.Build
 import android.util.Log
 import android.view.HapticFeedbackConstants
 import android.view.KeyEvent
-import androidx.compose.animation.AnimatedVisibility
-import androidx.compose.animation.EnterTransition
+import androidx.compose.animation.core.Animatable
+import androidx.compose.animation.core.FastOutSlowInEasing
 import androidx.compose.animation.core.tween
-import androidx.compose.animation.fadeOut
-import androidx.compose.animation.slideInVertically
 import androidx.compose.foundation.ExperimentalFoundationApi
 import androidx.compose.foundation.background
 import androidx.compose.foundation.border
@@ -42,7 +40,8 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.geometry.Offset
-import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.graphics.CompositingStrategy
+import androidx.compose.ui.graphics.graphicsLayer
 import androidx.compose.ui.input.pointer.pointerInput
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.platform.LocalView
@@ -55,11 +54,13 @@ import com.dessalines.thumbkey.utils.CircularDirection
 import com.dessalines.thumbkey.utils.CircularDragAction
 import com.dessalines.thumbkey.utils.FontSizeVariant
 import com.dessalines.thumbkey.utils.KeyAction
+import com.dessalines.thumbkey.utils.KeyAnimationType
 import com.dessalines.thumbkey.utils.KeyC
 import com.dessalines.thumbkey.utils.KeyDisplay
 import com.dessalines.thumbkey.utils.KeyItemC
 import com.dessalines.thumbkey.utils.KeyboardDefinitionSettings
 import com.dessalines.thumbkey.utils.KeyboardPosition
+import com.dessalines.thumbkey.utils.ReleasedKeyFeedback
 import com.dessalines.thumbkey.utils.Selection
 import com.dessalines.thumbkey.utils.SlideType
 import com.dessalines.thumbkey.utils.SwipeDirection
@@ -109,6 +110,7 @@ fun KeyboardKey(
     lastAction: MutableState<Pair<KeyAction, TimeMark>?>,
     animationHelperSpeed: Int,
     animationSpeed: Int,
+    keyAnimationType: KeyAnimationType = KeyAnimationType.SlideFromTop,
     autoCapitalize: Boolean,
     keyboardSettings: KeyboardDefinitionSettings,
     spacebarMultiTaps: Boolean,
@@ -173,7 +175,7 @@ fun KeyboardKey(
     val isPressed by interactionSource.collectIsPressedAsState()
 
     val isDragged = remember { mutableStateOf(false) }
-    val releasedKey = remember { mutableStateOf<String?>(null) }
+    val releasedFeedback = remember { mutableStateOf<ReleasedKeyFeedback?>(null) }
 
     var tapCount by remember { mutableIntStateOf(0) }
     val tapActions =
@@ -420,7 +422,7 @@ fun KeyboardKey(
                         onKeyEvent = onKeyEvent,
                         onSketchAction = onSketchAction,
                     )
-                    doneKeyAction(scope, action, isDragged, releasedKey, animationHelperSpeed)
+                    doneKeyAction(action, isDragged, releasedFeedback)
                 },
                 onLongClick = {
                     key.longPress?.let { action ->
@@ -444,7 +446,7 @@ fun KeyboardKey(
                             onKeyEvent = onKeyEvent,
                             onSketchAction = onSketchAction,
                         )
-                        doneKeyAction(scope, action, isDragged, releasedKey, animationHelperSpeed)
+                        doneKeyAction(action, isDragged, releasedFeedback)
                         if (vibrateOnTap) {
                             view.performHapticFeedback(HapticFeedbackConstants.KEYBOARD_TAP)
                         }
@@ -638,7 +640,7 @@ fun KeyboardKey(
                         ) {
                             // The repeat coroutine already handled all movement/deletion; nothing more to do.
                             action = KeyAction.Noop
-                            doneKeyAction(scope, action, isDragged, releasedKey, animationHelperSpeed)
+                            doneKeyAction(action, isDragged, releasedFeedback)
                         } else if (key.slideType == SlideType.NONE ||
                             !slideEnabled ||
                             ((key.slideType == SlideType.DELETE) && !selection.active) ||
@@ -669,7 +671,7 @@ fun KeyboardKey(
 
                             val maxOffsetDistance = maxOffset.getDistance().toDouble()
                             val maxOffsetBigEnough = maxOffsetDistance >= maxOffsetThreshold
-                            action =
+                            val (resolvedAction, originDirection) =
                                 (
                                     if (maxOffsetBigEnough && finalOffsetSmallEnough) {
                                         (
@@ -679,49 +681,54 @@ fun KeyboardKey(
                                                         CircularDragAction.OppositeCase to oppositeCaseKey?.center?.action,
                                                         CircularDragAction.Numeric to numericKey?.center?.action,
                                                     )
-                                                circularDirection(positions, finalOffsetThreshold, minSwipeLength)?.let {
-                                                    when (it) {
-                                                        CircularDirection.Clockwise -> {
-                                                            circularDragActions[clockwiseDragAction]
-                                                        }
+                                                circularDirection(positions, finalOffsetThreshold, minSwipeLength)
+                                                    ?.let {
+                                                        when (it) {
+                                                            CircularDirection.Clockwise -> {
+                                                                circularDragActions[clockwiseDragAction]
+                                                            }
 
-                                                        CircularDirection.Counterclockwise -> {
-                                                            circularDragActions[counterclockwiseDragAction]
+                                                            CircularDirection.Counterclockwise -> {
+                                                                circularDragActions[counterclockwiseDragAction]
+                                                            }
                                                         }
-                                                    }
-                                                }
+                                                    }?.let { it to null }
                                             } else {
                                                 null
                                             }
                                         ) ?: (
                                             if (dragReturnEnabled) {
-                                                val swipeDirection =
+                                                val swipeDir =
                                                     swipeDirection(
                                                         maxOffset.x,
                                                         maxOffset.y,
                                                         minSwipeLength,
                                                         if (ghostKey == null) key.swipeType else SwipeNWay.EIGHT_WAY,
                                                     )
-                                                key.getSwipe(swipeDirection)?.swipeReturnAction
-                                                    ?: oppositeCaseKey?.getSwipe(swipeDirection)?.action
-                                                    ?: ghostKey?.getSwipe(swipeDirection)?.swipeReturnAction
+                                                (
+                                                    key.getSwipe(swipeDir)?.swipeReturnAction
+                                                        ?: oppositeCaseKey?.getSwipe(swipeDir)?.action
+                                                        ?: ghostKey?.getSwipe(swipeDir)?.swipeReturnAction
+                                                )?.let { it to swipeDir }
                                             } else {
                                                 null
                                             }
                                         )
                                     } else {
-                                        val swipeDirection =
+                                        val swipeDir =
                                             swipeDirection(
                                                 offsetX,
                                                 offsetY,
                                                 minSwipeLength,
                                                 if (ghostKey == null) key.swipeType else SwipeNWay.EIGHT_WAY,
                                             )
-                                        key.getSwipe(swipeDirection)?.action ?: (
-                                            ghostKey?.getSwipe(swipeDirection)?.action
-                                        )
+                                        (
+                                            key.getSwipe(swipeDir)?.action
+                                                ?: ghostKey?.getSwipe(swipeDir)?.action
+                                        )?.let { it to swipeDir }
                                     }
-                                ) ?: key.center.action
+                                ) ?: (key.center.action to null)
+                            action = resolvedAction
 
                             performKeyAction(
                                 action = action,
@@ -744,11 +751,10 @@ fun KeyboardKey(
                                 onSketchAction = onSketchAction,
                             )
                             doneKeyAction(
-                                scope,
-                                action,
-                                isDragged,
-                                releasedKey,
-                                animationHelperSpeed,
+                                action = action,
+                                pressed = isDragged,
+                                releasedFeedback = releasedFeedback,
+                                originDirection = originDirection,
                             )
                         } else if (key.slideType == SlideType.DELETE) {
                             action =
@@ -789,13 +795,7 @@ fun KeyboardKey(
                                     view.performHapticFeedback(HapticFeedbackConstants.REJECT)
                                 }
                             }
-                            doneKeyAction(
-                                scope,
-                                action,
-                                isDragged,
-                                releasedKey,
-                                animationHelperSpeed,
-                            )
+                            doneKeyAction(action, isDragged, releasedFeedback)
                         } else {
                             hasSlideMoveCursorTriggered = false
                             action =
@@ -805,13 +805,7 @@ fun KeyboardKey(
                                         KeyEvent.KEYCODE_DPAD_RIGHT,
                                     ),
                                 )
-                            doneKeyAction(
-                                scope,
-                                action,
-                                isDragged,
-                                releasedKey,
-                                animationHelperSpeed,
-                            )
+                            doneKeyAction(action, isDragged, releasedFeedback)
                         }
 
                         // Set tapCount and lastAction to avoid issues with multitap after slide
@@ -977,55 +971,121 @@ fun KeyboardKey(
             }
         }
 
-        // The animated box that fades out.
-        AnimatedVisibility(
-            modifier =
-                Modifier
-                    .fillMaxSize()
-                    .background(color = Color(0, 0, 0, 0)),
-            visible = releasedKey.value != null && !isPasswordField,
-            enter = EnterTransition.None,
-            exit = fadeOut(tween(animationSpeed)),
-        ) {
-            Box(
-                contentAlignment = Alignment.Center,
-                modifier =
-                    Modifier
-                        .fillMaxSize()
-                        .background(color = MaterialTheme.colorScheme.tertiaryContainer),
-            ) {}
+        if (!isPasswordField) {
+            KeyPressFeedbackOverlay(
+                feedback = releasedFeedback.value,
+                keyAnimationType = keyAnimationType,
+                animationSpeed = animationSpeed,
+                animationHelperSpeed = animationHelperSpeed,
+                keySize = keySize,
+            )
         }
+    }
+}
 
-        // The animated key letter that falls downwards and then fades out.
-        AnimatedVisibility(
-            modifier =
-                Modifier
-                    .fillMaxSize()
-                    .background(color = Color(0, 0, 0, 0)),
-            visible = releasedKey.value != null && !isPasswordField,
-            enter = slideInVertically(tween(animationSpeed)),
-            exit = fadeOut(tween(animationSpeed)),
-        ) {
-            Box(
-                contentAlignment = Alignment.Center,
-                modifier = Modifier.fillMaxSize(),
-            ) {
-                val spSize =
-                    fontSizeVariantToFontSize(
-                        fontSizeVariant = FontSizeVariant.LARGE,
-                        keySize = keySize.dp,
-                        isUpperCase = false,
-                    ).toPx.pxToSp
-                releasedKey.value?.let { text ->
-                    Text(
-                        text = text,
-                        fontWeight = FontWeight.Bold,
-                        fontSize = spSize,
-                        lineHeight = spSize,
-                        color = MaterialTheme.colorScheme.tertiary,
+private fun KeyAnimationType.initialTranslationFraction(originDirection: SwipeDirection?): Offset =
+    when (this) {
+        KeyAnimationType.SlideFromTop -> Offset(0f, -0.5f)
+        KeyAnimationType.SlideFromBottom -> Offset(0f, 0.5f)
+        KeyAnimationType.SlideFromLeft -> Offset(-0.5f, 0f)
+        KeyAnimationType.SlideFromRight -> Offset(0.5f, 0f)
+        KeyAnimationType.Fade -> Offset.Zero
+        KeyAnimationType.FromOrigin -> originDirection?.originTranslationFraction() ?: Offset.Zero
+    }
+
+private fun SwipeDirection.originTranslationFraction(): Offset =
+    when (this) {
+        SwipeDirection.TOP -> Offset(0f, -0.45f)
+        SwipeDirection.BOTTOM -> Offset(0f, 0.45f)
+        SwipeDirection.LEFT -> Offset(-0.45f, 0f)
+        SwipeDirection.RIGHT -> Offset(0.45f, 0f)
+        SwipeDirection.TOP_LEFT -> Offset(-0.42f, -0.42f)
+        SwipeDirection.TOP_RIGHT -> Offset(0.42f, -0.42f)
+        SwipeDirection.BOTTOM_LEFT -> Offset(-0.42f, 0.42f)
+        SwipeDirection.BOTTOM_RIGHT -> Offset(0.42f, 0.42f)
+    }
+
+@Composable
+private fun KeyPressFeedbackOverlay(
+    feedback: ReleasedKeyFeedback?,
+    keyAnimationType: KeyAnimationType,
+    animationSpeed: Int,
+    animationHelperSpeed: Int,
+    keySize: Double,
+) {
+    var activeFeedback by remember { mutableStateOf<ReleasedKeyFeedback?>(null) }
+    val enterProgress = remember { Animatable(1f) }
+    val exitAlpha = remember { Animatable(0f) }
+
+    LaunchedEffect(feedback?.id) {
+        val current = feedback ?: return@LaunchedEffect
+        if (animationSpeed <= 0 && animationHelperSpeed <= 0) {
+            activeFeedback = null
+            return@LaunchedEffect
+        }
+        activeFeedback = current
+        enterProgress.snapTo(if (animationSpeed <= 0) 1f else 0f)
+        exitAlpha.snapTo(1f)
+        val enterJob =
+            if (animationSpeed > 0) {
+                launch {
+                    enterProgress.animateTo(
+                        targetValue = 1f,
+                        animationSpec = tween(durationMillis = animationSpeed, easing = FastOutSlowInEasing),
                     )
                 }
+            } else {
+                null
             }
+        delay(animationHelperSpeed.coerceAtLeast(0).toLong())
+        if (animationSpeed > 0) {
+            exitAlpha.animateTo(
+                targetValue = 0f,
+                animationSpec = tween(durationMillis = animationSpeed),
+            )
+        }
+        enterJob?.cancel()
+        activeFeedback = null
+    }
+
+    val current = activeFeedback ?: return
+    val useFadeIn = keyAnimationType == KeyAnimationType.Fade || keyAnimationType == KeyAnimationType.FromOrigin
+    val originFraction = keyAnimationType.initialTranslationFraction(current.originDirection)
+    val spSize =
+        fontSizeVariantToFontSize(
+            fontSizeVariant = FontSizeVariant.LARGE,
+            keySize = keySize.dp,
+            isUpperCase = false,
+        ).toPx.pxToSp
+
+    Box(
+        modifier =
+            Modifier
+                .fillMaxSize()
+                .graphicsLayer {
+                    val fadeInFactor = if (useFadeIn) enterProgress.value else 1f
+                    alpha = (fadeInFactor * exitAlpha.value).coerceIn(0f, 1f)
+                    compositingStrategy = CompositingStrategy.Offscreen
+                }.background(color = MaterialTheme.colorScheme.tertiaryContainer),
+    ) {
+        Box(
+            contentAlignment = Alignment.Center,
+            modifier =
+                Modifier
+                    .fillMaxSize()
+                    .graphicsLayer {
+                        val remaining = 1f - enterProgress.value
+                        translationX = size.width * originFraction.x * remaining
+                        translationY = size.height * originFraction.y * remaining
+                    },
+        ) {
+            Text(
+                text = current.text,
+                fontWeight = FontWeight.Bold,
+                fontSize = spSize,
+                lineHeight = spSize,
+                color = MaterialTheme.colorScheme.tertiary,
+            )
         }
     }
 }

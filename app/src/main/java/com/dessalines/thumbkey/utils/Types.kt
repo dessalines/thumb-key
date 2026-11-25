@@ -417,6 +417,7 @@ enum class KeyboardPosition(
     Right(R.string.right),
     Left(R.string.left),
     Dual(R.string.dual),
+    Floating(R.string.floating),
 }
 
 enum class SwipeNWay {
@@ -476,3 +477,27 @@ enum class CircularDragAction(
     OppositeCase(R.string.send_oppsite_case),
     Numeric(R.string.send_numeric),
 }
+
+enum class FloatingHandlePosition(
+    @param:StringRes val resId: Int,
+) {
+    Bottom(R.string.bottom),
+    Top(R.string.top),
+}
+
+enum class KeyAnimationType(
+    @param:StringRes val resId: Int,
+) {
+    SlideFromTop(R.string.key_animation_slide_from_top),
+    SlideFromBottom(R.string.key_animation_slide_from_bottom),
+    SlideFromLeft(R.string.key_animation_slide_from_left),
+    SlideFromRight(R.string.key_animation_slide_from_right),
+    Fade(R.string.key_animation_fade),
+    FromOrigin(R.string.key_animation_from_origin),
+}
+
+data class ReleasedKeyFeedback(
+    val text: String,
+    val originDirection: SwipeDirection?,
+    val id: Long,
+)

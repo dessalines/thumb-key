@@ -320,3 +320,33 @@ val MIGRATION_28_29 =
             )
         }
     }
+
+val MIGRATION_29_30 =
+    object : Migration(29, 30) {
+        override fun migrate(db: SupportSQLiteDatabase) {
+            db.execSQL(
+                "ALTER TABLE AppSettings ADD COLUMN keyboard_opacity INTEGER NOT NULL DEFAULT $DEFAULT_KEYBOARD_OPACITY",
+            )
+            db.execSQL(
+                "ALTER TABLE AppSettings ADD COLUMN floating_handle_position INTEGER NOT NULL DEFAULT $DEFAULT_FLOATING_HANDLE_POSITION",
+            )
+            db.execSQL(
+                "ALTER TABLE AppSettings ADD COLUMN floating_x_fraction REAL NOT NULL DEFAULT $DEFAULT_FLOATING_X_FRACTION",
+            )
+            db.execSQL(
+                "ALTER TABLE AppSettings ADD COLUMN floating_y_fraction REAL NOT NULL DEFAULT $DEFAULT_FLOATING_Y_FRACTION",
+            )
+        }
+    }
+
+val MIGRATION_30_31 =
+    object : Migration(30, 31) {
+        override fun migrate(db: SupportSQLiteDatabase) {
+            db.execSQL(
+                "ALTER TABLE AppSettings ADD COLUMN key_animation_type INTEGER NOT NULL DEFAULT $DEFAULT_KEY_ANIMATION_TYPE",
+            )
+            db.execSQL(
+                "ALTER TABLE AppSettings ADD COLUMN swipe_trail_enabled INTEGER NOT NULL DEFAULT $DEFAULT_SWIPE_TRAIL_ENABLED",
+            )
+        }
+    }

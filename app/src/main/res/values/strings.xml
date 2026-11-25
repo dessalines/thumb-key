@@ -21,6 +21,7 @@
     <string name="right">Right</string>
     <string name="left">Left</string>
     <string name="dual">Dual</string>
+    <string name="floating">Floating</string>
     <string name="about">About</string>
     <string name="whats_new">What\'s new</string>
     <string name="version">Version %1$s</string>
@@ -168,4 +169,18 @@
     <string name="sketch_no_matches">No candidates match</string>
     <string name="handwriting_recognition">Handwriting recognition</string>
     <string name="handwriting_recognition_summary">Sketch mode recognizes characters with glyphsketch, on the device.</string>
+    <string name="keyboard_opacity">Keyboard opacity: %1$s%%</string>
+    <string name="floating_handle_position">Floating handlebar position</string>
+    <string name="bottom">Bottom</string>
+    <string name="top">Top</string>
+    <string name="floating_drag_handle">Drag to move keyboard</string>
+    <string name="key_animation">Key animation</string>
+    <string name="key_animation_slide_from_top">Slide from top</string>
+    <string name="key_animation_slide_from_bottom">Slide from bottom</string>
+    <string name="key_animation_slide_from_left">Slide from left</string>
+    <string name="key_animation_slide_from_right">Slide from right</string>
+    <string name="key_animation_fade">Fade in</string>
+    <string name="key_animation_from_origin">From key position</string>
+    <string name="swipe_trail">Swipe trail</string>
+    <string name="swipe_trail_summary">Show a trail while swiping across keys</string>
 </resources>
