@@ -211,7 +211,7 @@ class EmojiSearchEntry(
 
 /**
  * The emoji search index, read once from assets/emoji_search.tsv (see
- * scripts/generate_emoji_search_data.py), without the emoji this phone's fonts can't draw.
+ * ./gradlew generateEmojiSearchData), without the emoji this phone's fonts can't draw.
  */
 object EmojiSearchIndex {
     private const val ASSET = "emoji_search.tsv"
