@@ -176,6 +176,42 @@ val SEARCH_ENTRY_FIELD_HEIGHT = 52.dp
 
 // Emoji search
 
+/**
+ * The fields of one CSV line (RFC 4180): a quoted field may hold commas, and a doubled quote
+ * inside it stands for one quote. The index has no line breaks inside fields.
+ */
+internal fun parseCsvLine(line: String): List<String> {
+    val fields = mutableListOf<String>()
+    val field = StringBuilder()
+    var quoted = false
+    var index = 0
+    while (index < line.length) {
+        val char = line[index]
+        when {
+            quoted && char == '"' && line.getOrNull(index + 1) == '"' -> {
+                field.append('"')
+                index++
+            }
+
+            char == '"' && (quoted || field.isEmpty()) -> {
+                quoted = !quoted
+            }
+
+            !quoted && char == ',' -> {
+                fields.add(field.toString())
+                field.clear()
+            }
+
+            else -> {
+                field.append(char)
+            }
+        }
+        index++
+    }
+    fields.add(field.toString())
+    return fields
+}
+
 /** One emoji of the search index, with its name and keywords. */
 class EmojiSearchEntry(
     val emoji: String,
@@ -210,11 +246,11 @@ class EmojiSearchEntry(
 }
 
 /**
- * The emoji search index, read once from assets/emoji_search.tsv (see
+ * The emoji search index, read once from assets/emoji_search.csv (see
  * ./gradlew generateEmojiSearchData), without the emoji this phone's fonts can't draw.
  */
 object EmojiSearchIndex {
-    private const val ASSET = "emoji_search.tsv"
+    private const val ASSET = "emoji_search.csv"
     private val mutex = Mutex()
     private var entries: List<EmojiSearchEntry>? = null
 
@@ -227,9 +263,10 @@ object EmojiSearchIndex {
         val paint = Paint()
         return ctx.assets.open(ASSET).bufferedReader().useLines { lines ->
             lines
-                .filter { it.isNotBlank() && !it.startsWith("#") }
+                .drop(1) // The header: emoji,name,keywords
+                .filter { it.isNotBlank() }
                 .mapNotNull { line ->
-                    val fields = line.split('\t')
+                    val fields = parseCsvLine(line)
                     val emoji = fields[0]
                     if (fields.size < 2 || !paint.hasGlyph(emoji)) {
                         null
