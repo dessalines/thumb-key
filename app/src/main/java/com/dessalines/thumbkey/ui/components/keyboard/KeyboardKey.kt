@@ -499,23 +499,30 @@ fun KeyboardKey(
                                     selection = startSelection(ime)
                                 }
 
-                                val cursorMovement =
-                                    slideCursorDistance(offsetX, timeOfLastAccelerationInput, slideCursorMovementMode, slideSensitivity)
-                                timeOfLastAccelerationInput = System.currentTimeMillis()
-                                if (cursorMovement >= 1 || cursorMovement <= -1) {
-                                    if (cursorMovement < 0.00) {
-                                        selection.left(abs(cursorMovement))
-                                    } else {
-                                        selection.right(abs(cursorMovement))
+                                if (selection.active) {
+                                    val cursorMovement =
+                                        slideCursorDistance(
+                                            offsetX,
+                                            timeOfLastAccelerationInput,
+                                            slideCursorMovementMode,
+                                            slideSensitivity,
+                                        )
+                                    timeOfLastAccelerationInput = System.currentTimeMillis()
+                                    if (cursorMovement >= 1 || cursorMovement <= -1) {
+                                        if (cursorMovement < 0.00) {
+                                            selection.left(abs(cursorMovement))
+                                        } else {
+                                            selection.right(abs(cursorMovement))
+                                        }
+                                        ime.currentInputConnection.setSelection(
+                                            selection.selectionStart,
+                                            selection.selectionEnd,
+                                        )
+                                        // reset offsetX, do not reset offsetY when sliding, it will break selecting
+                                        offsetX = 0f
+                                        // selection has changed; give feedback
+                                        if (vibrateOnSlide) view.performHapticFeedback(slideHapticConstant)
                                     }
-                                    ime.currentInputConnection.setSelection(
-                                        selection.start,
-                                        selection.end,
-                                    )
-                                    // reset offsetX, do not reset offsetY when sliding, it will break selecting
-                                    offsetX = 0f
-                                    // selection has changed; give feedback
-                                    if (vibrateOnSlide) view.performHapticFeedback(slideHapticConstant)
                                 }
                             } else if ((
                                     slideSpacebarDeadzoneEnabled &&
@@ -549,8 +556,8 @@ fun KeyboardKey(
 
                                     selection = Selection(location, location, false)
                                     ime.currentInputConnection.setSelection(
-                                        selection.start,
-                                        selection.end,
+                                        selection.selectionStart,
+                                        selection.selectionEnd,
                                     )
                                 } else {
                                     // Check if any text has been selected, but the selection wasn't done by this keyboard.
@@ -575,10 +582,12 @@ fun KeyboardKey(
                                     if (lengthOfSelectedText > 0) {
                                         // Deselect text that has been selected, but the selection wasn't done by this keyboard.
                                         selection = startSelection(ime)
-                                        ime.currentInputConnection.setSelection(
-                                            selection.start,
-                                            selection.end,
-                                        )
+                                        if (selection.active) {
+                                            ime.currentInputConnection.setSelection(
+                                                selection.selectionStart,
+                                                selection.selectionEnd,
+                                            )
+                                        }
                                         // Reset the selection
                                         selection = Selection()
 
@@ -619,8 +628,8 @@ fun KeyboardKey(
                                         selection.right(abs(cursorMovement))
                                     }
                                     ime.currentInputConnection.setSelection(
-                                        selection.start,
-                                        selection.end,
+                                        selection.selectionStart,
+                                        selection.selectionEnd,
                                     )
                                     // reset offsetX, do not reset offsetY when sliding, it will break selecting
                                     offsetX = 0f

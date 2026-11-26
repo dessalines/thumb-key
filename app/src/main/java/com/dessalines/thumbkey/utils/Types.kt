@@ -438,23 +438,30 @@ data class Selection(
     var start: Int,
     var end: Int,
     var active: Boolean,
+    val maxLength: Int = Int.MAX_VALUE,
 ) {
-    constructor() : this(0, 0, false)
+    constructor() : this(0, 0, false, 0)
+
+    val selectionStart: Int
+        get() = minOf(start, end).coerceIn(0, maxLength.coerceAtLeast(0))
+
+    val selectionEnd: Int
+        get() = maxOf(start, end).coerceIn(0, maxLength.coerceAtLeast(0))
 
     fun left() {
-        end -= 1
+        left(1)
     }
 
     fun left(index: Int) {
-        end -= index
+        end = (end - index).coerceIn(0, maxLength.coerceAtLeast(0))
     }
 
     fun right() {
-        end += 1
+        right(1)
     }
 
     fun right(index: Int) {
-        end += index
+        end = (end + index).coerceIn(0, maxLength.coerceAtLeast(0))
     }
 }
 

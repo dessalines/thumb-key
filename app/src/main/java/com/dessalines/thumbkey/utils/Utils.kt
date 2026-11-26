@@ -12,6 +12,7 @@ import android.text.InputType
 import android.util.Log
 import android.view.KeyEvent
 import android.view.inputmethod.EditorInfo
+import android.view.inputmethod.InputConnection
 import android.view.inputmethod.InputMethodManager
 import android.view.inputmethod.InputMethodSubtype
 import android.widget.Toast
@@ -58,6 +59,7 @@ const val TAG = "com.thumbkey"
 
 const val IME_ACTION_CUSTOM_LABEL = EditorInfo.IME_MASK_ACTION + 1
 const val ANIMATION_SPEED = 300
+private const val MAX_SELECTION_TEXT_LOOKUP = 1_000_000
 private val VOICE_IME_ID_KEYWORDS = listOf("voice", "whisper", "transcribro")
 
 fun accelCurve(
@@ -1807,6 +1809,7 @@ fun moveCursor(
     delta: Int,
 ) {
     val selection = startSelection(ime)
+    if (!selection.active) return
     selection.right(delta)
     ime.currentInputConnection.setSelection(selection.end, selection.end)
 }
@@ -1888,8 +1891,9 @@ fun selectLineWithCursor(ime: IMEService) {
     val lineLength = wordsAfterCursor?.let { patternLine.find(it)?.value?.length } ?: 0
 
     val selection = startSelection(ime)
+    if (!selection.active) return
     selection.right(lineLength)
-    ime.currentInputConnection.setSelection(selection.start, selection.end)
+    ime.currentInputConnection.setSelection(selection.selectionStart, selection.selectionEnd)
 }
 
 fun buildTapActions(keyItem: KeyItemC): List<KeyAction> {
@@ -2004,16 +2008,12 @@ fun Context.getImeNames(): List<String> =
     )
 
 fun startSelection(ime: IMEService): Selection {
-    val cursorPosition =
-        ime.currentInputConnection
-            .getTextBeforeCursor(
-                Integer.MAX_VALUE,
-                0,
-            )?.length
-    cursorPosition?.let {
-        return Selection(it, it, true)
-    }
-    return Selection()
+    val ic: InputConnection? = ime.currentInputConnection
+    val beforeLen = ic?.getTextBeforeCursor(MAX_SELECTION_TEXT_LOOKUP, 0)?.length ?: return Selection()
+    val selectedLen = ic.getSelectedText(0)?.length ?: 0
+    val afterLen = ic.getTextAfterCursor(MAX_SELECTION_TEXT_LOOKUP, 0)?.length ?: 0
+    val maxLength = (beforeLen + selectedLen + afterLen).coerceAtLeast(beforeLen)
+    return Selection(beforeLen, beforeLen, true, maxLength)
 }
 
 fun getLocalCurrency(): String? =
