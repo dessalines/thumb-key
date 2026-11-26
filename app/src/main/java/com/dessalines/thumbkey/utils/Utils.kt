@@ -8,10 +8,13 @@ import android.content.res.Resources
 import android.os.Build
 import android.os.Handler
 import android.os.Looper
+import android.os.SystemClock
 import android.text.InputType
 import android.util.Log
+import android.view.KeyCharacterMap
 import android.view.KeyEvent
 import android.view.inputmethod.EditorInfo
+import android.view.inputmethod.InputConnection
 import android.view.inputmethod.InputMethodManager
 import android.view.inputmethod.InputMethodSubtype
 import android.widget.Toast
@@ -379,7 +382,7 @@ fun performKeyAction(
             val ev = action.event
             Log.d(TAG, "sending key event: $ev")
             keyboardSettings.textProcessor?.handleKeyEvent(ime, ev)
-                ?: ime.currentInputConnection.sendKeyEvent(ev)
+                ?: sendDownUpKeyEvent(ime.currentInputConnection, ev)
             onKeyEvent(action)
         }
 
@@ -388,13 +391,13 @@ fun performKeyAction(
         is KeyAction.DeleteKeyAction -> {
             val ev = KeyEvent(KeyEvent.ACTION_DOWN, KeyEvent.KEYCODE_DEL)
             keyboardSettings.textProcessor?.handleKeyEvent(ime, ev)
-                ?: ime.currentInputConnection.sendKeyEvent(ev)
+                ?: sendDownUpKeyEvent(ime.currentInputConnection, ev)
         }
 
         is KeyAction.DeleteCharacterAfterCursor -> {
             val ev = KeyEvent(KeyEvent.ACTION_DOWN, KeyEvent.KEYCODE_FORWARD_DEL)
             keyboardSettings.textProcessor?.handleKeyEvent(ime, ev)
-                ?: ime.currentInputConnection.sendKeyEvent(ev)
+                ?: sendDownUpKeyEvent(ime.currentInputConnection, ev)
         }
 
         // Alternative delete that uses deleteSurroundingText instead of KEYCODE_DEL.
@@ -409,7 +412,7 @@ fun performKeyAction(
 
             if (inputType == EditorInfo.TYPE_NULL) {
                 // Raw editor (like Termux) - use key event
-                ic.sendKeyEvent(KeyEvent(KeyEvent.ACTION_DOWN, KeyEvent.KEYCODE_DEL))
+                sendDownUpKeyEvent(ic, KeyEvent.KEYCODE_DEL)
             } else {
                 val selectedText = ic.getSelectedText(0)
                 if (!selectedText.isNullOrEmpty()) {
@@ -1309,14 +1312,16 @@ fun performKeyAction(
                     ime.currentInputConnection.performEditorAction(ime.currentInputEditorInfo.actionId)
                 }
 
-                EditorInfo.IME_ACTION_NONE -> {
+                EditorInfo.IME_ACTION_NONE,
+                EditorInfo.IME_ACTION_UNSPECIFIED,
+                -> {
                     val ev =
                         KeyEvent(
                             KeyEvent.ACTION_DOWN,
                             KeyEvent.KEYCODE_ENTER,
                         )
                     keyboardSettings.textProcessor?.handleKeyEvent(ime, ev)
-                        ?: ime.currentInputConnection.sendKeyEvent(ev)
+                        ?: sendDownUpKeyEvent(ime.currentInputConnection, ev)
                 }
 
                 else -> {
@@ -1430,22 +1435,15 @@ fun performKeyAction(
 
         KeyAction.Undo -> {
             keyboardSettings.textProcessor?.handleFinishInput(ime)
-            ime.currentInputConnection.sendKeyEvent(
-                KeyEvent(0, 0, KeyEvent.ACTION_DOWN, KeyEvent.KEYCODE_Z, 0, KeyEvent.META_CTRL_ON),
-            )
+            sendDownUpKeyEvent(ime.currentInputConnection, KeyEvent.KEYCODE_Z, KeyEvent.META_CTRL_ON)
         }
 
         KeyAction.Redo -> {
             keyboardSettings.textProcessor?.handleFinishInput(ime)
-            ime.currentInputConnection.sendKeyEvent(
-                KeyEvent(
-                    0,
-                    0,
-                    KeyEvent.ACTION_DOWN,
-                    KeyEvent.KEYCODE_Z,
-                    0,
-                    (KeyEvent.META_CTRL_ON or KeyEvent.META_SHIFT_ON),
-                ),
+            sendDownUpKeyEvent(
+                ime.currentInputConnection,
+                KeyEvent.KEYCODE_Z,
+                KeyEvent.META_CTRL_ON or KeyEvent.META_SHIFT_ON,
             )
         }
 
@@ -1811,6 +1809,34 @@ fun moveCursor(
     ime.currentInputConnection.setSelection(selection.end, selection.end)
 }
 
+// Pair ACTION_DOWN with ACTION_UP so emulators and remote clients don't auto-repeat held keys.
+fun sendDownUpKeyEvent(
+    ic: InputConnection,
+    event: KeyEvent,
+) {
+    if (event.action == KeyEvent.ACTION_DOWN) {
+        sendDownUpKeyEvent(ic, event.keyCode, event.metaState, event.flags)
+    } else {
+        ic.sendKeyEvent(event)
+    }
+}
+
+fun sendDownUpKeyEvent(
+    ic: InputConnection,
+    keyCode: Int,
+    metaState: Int = 0,
+    extraFlags: Int = 0,
+) {
+    val now = SystemClock.uptimeMillis()
+    val flags = extraFlags or KeyEvent.FLAG_SOFT_KEYBOARD or KeyEvent.FLAG_KEEP_TOUCH_MODE
+    ic.sendKeyEvent(
+        KeyEvent(now, now, KeyEvent.ACTION_DOWN, keyCode, 0, metaState, KeyCharacterMap.VIRTUAL_KEYBOARD, 0, flags),
+    )
+    ic.sendKeyEvent(
+        KeyEvent(now, now, KeyEvent.ACTION_UP, keyCode, 0, metaState, KeyCharacterMap.VIRTUAL_KEYBOARD, 0, flags),
+    )
+}
+
 fun sendCursorKeyEvent(
     ime: IMEService,
     keyboardSettings: KeyboardDefinitionSettings,
@@ -1819,21 +1845,17 @@ fun sendCursorKeyEvent(
 ) {
     val action = KeyAction.SendEvent(KeyEvent(KeyEvent.ACTION_DOWN, keyCode))
     keyboardSettings.textProcessor?.handleKeyEvent(ime, action.event)
-        ?: ime.currentInputConnection.sendKeyEvent(action.event)
+        ?: sendDownUpKeyEvent(ime.currentInputConnection, action.event)
     // Reported as a key event, so ctrl and alt modes are released like for the left and right keys
     onKeyEvent(action)
 }
 
 fun cursorToLineStart(ime: IMEService) {
-    ime.currentInputConnection.sendKeyEvent(
-        KeyEvent(KeyEvent.ACTION_DOWN, KeyEvent.KEYCODE_MOVE_HOME),
-    )
+    sendDownUpKeyEvent(ime.currentInputConnection, KeyEvent.KEYCODE_MOVE_HOME)
 }
 
 fun cursorToLineEnd(ime: IMEService) {
-    ime.currentInputConnection.sendKeyEvent(
-        KeyEvent(KeyEvent.ACTION_DOWN, KeyEvent.KEYCODE_MOVE_END),
-    )
+    sendDownUpKeyEvent(ime.currentInputConnection, KeyEvent.KEYCODE_MOVE_END)
 }
 
 fun cursorToTextStart(ime: IMEService) {

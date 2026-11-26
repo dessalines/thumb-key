@@ -6,6 +6,7 @@ import android.view.inputmethod.ExtractedTextRequest
 import android.view.inputmethod.InputConnection
 import com.dessalines.thumbkey.IMEService
 import com.dessalines.thumbkey.utils.TAG
+import com.dessalines.thumbkey.utils.sendDownUpKeyEvent
 
 private const val UNICODE_BASE = 0xAC00
 private const val LEADING_MULTIPLIER = 588
@@ -191,7 +192,7 @@ class KoreanTextProcessor : TextProcessor {
         val ic = ime.currentInputConnection
 
         if (state == CompositionState.EMPTY) {
-            ic.sendKeyEvent(ev)
+            sendDownUpKeyEvent(ic, ev)
             return
         }
 
@@ -203,7 +204,7 @@ class KoreanTextProcessor : TextProcessor {
             else -> {
                 // in any other case (ENTER, DEL, DPAD movement) it just needs to finish job
                 handleFinishInput(ime)
-                ic.sendKeyEvent(ev)
+                sendDownUpKeyEvent(ic, ev)
             }
         }
     }
@@ -263,7 +264,7 @@ class KoreanTextProcessor : TextProcessor {
 
         when (state) {
             CompositionState.EMPTY -> {
-                ic.sendKeyEvent(ev)
+                sendDownUpKeyEvent(ic, ev)
             }
 
             CompositionState.LEADING_CONSONANT -> {
