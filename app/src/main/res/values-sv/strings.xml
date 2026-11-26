@@ -165,4 +165,19 @@
     <string name="ime_switch_mode_picker">Visa väljaren för inmatningsmetod</string>
     <string name="ime_switch_mode_previous">Växla till senast använda</string>
     <string name="ime_switch_mode_next">Växla till nästa i listan</string>
+    <string name="floating">Flytande</string>
+    <string name="keyboard_opacity">Tangentbordets opacitet: %1$s%%</string>
+    <string name="floating_handle_position">Flytande styrposition</string>
+    <string name="bottom">Nederst</string>
+    <string name="top">Högst upp</string>
+    <string name="floating_drag_handle">Dra för att flytta tangentbord</string>
+    <string name="key_animation">Tangentanimation</string>
+    <string name="key_animation_slide_from_top">Dra ner uppifrån</string>
+    <string name="key_animation_slide_from_bottom">Dra uppifrån och ner</string>
+    <string name="key_animation_slide_from_left">Dra från vänster</string>
+    <string name="key_animation_slide_from_right">Dra från höger</string>
+    <string name="key_animation_fade">Tona in</string>
+    <string name="key_animation_from_origin">Från tangentposition</string>
+    <string name="swipe_trail">Svepspår</string>
+    <string name="swipe_trail_summary">Visa ett spår när du sveper över tangenterna</string>
 </resources>
