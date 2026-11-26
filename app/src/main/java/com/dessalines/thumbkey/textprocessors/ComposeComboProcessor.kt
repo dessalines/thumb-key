@@ -63,7 +63,6 @@ class ComposeComboProcessor : TextProcessor {
 
         val match = ComposeComboTable.match(seq)
         if (match != null) {
-            Log.d(TAG, "ComposeCombo: $seq -> $match")
             show(ic, match)
             ic.finishComposingText()
             base += match.length
@@ -77,7 +76,6 @@ class ComposeComboProcessor : TextProcessor {
         }
 
         // Dead end. Emit what was typed rather than swallowing it.
-        Log.d(TAG, "ComposeCombo: no sequence for $seq")
         flushLiterally(ic)
     }
 

@@ -1,13 +1,16 @@
 package com.dessalines.thumbkey.utils
 
+import android.content.ClipDescription
 import android.content.ClipboardManager
 import android.content.Context
-import android.util.Log
+import android.os.Build
 import com.dessalines.thumbkey.db.ClipboardRepository
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.SupervisorJob
 import kotlinx.coroutines.launch
+
+private const val LEGACY_EXTRA_IS_SENSITIVE = "android.content.extra.IS_SENSITIVE"
 
 class ThumbKeyClipboardManager(
     private val context: Context,
@@ -27,16 +30,27 @@ class ThumbKeyClipboardManager(
     private fun addToClipboardRepo(text: String) {
         if (text.isBlank() || text == lastClipText) return@addToClipboardRepo
         lastClipText = text
-        Log.d(TAG, "Adding clipboard item: $text")
         scope.launch {
             clipboardRepository.addItem(text)
         }
+    }
+
+    private fun isSensitiveClip(description: ClipDescription?): Boolean {
+        val extras = description?.extras ?: return false
+        val key =
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
+                ClipDescription.EXTRA_IS_SENSITIVE
+            } else {
+                LEGACY_EXTRA_IS_SENSITIVE
+            }
+        return extras.getBoolean(key, false)
     }
 
     private val clipboardListener =
         ClipboardManager.OnPrimaryClipChangedListener {
             val clip = systemClipboardManager.primaryClip
             if (clip == null || clip.itemCount == 0) return@OnPrimaryClipChangedListener
+            if (isSensitiveClip(clip.description)) return@OnPrimaryClipChangedListener
             val text = clip.getItemAt(0).coerceToText(context).toString()
             addToClipboardRepo(text)
             wasLastCopyOperationDoneViaSystem = true
