@@ -77,6 +77,7 @@ import com.dessalines.thumbkey.utils.nextWordAfterCursor
 import com.dessalines.thumbkey.utils.performKeyAction
 import com.dessalines.thumbkey.utils.previousWordBeforeCursor
 import com.dessalines.thumbkey.utils.pxToSp
+import com.dessalines.thumbkey.utils.sendDownUpKeyEvent
 import com.dessalines.thumbkey.utils.slideCursorDistance
 import com.dessalines.thumbkey.utils.startSelection
 import com.dessalines.thumbkey.utils.swipeDirection
@@ -265,8 +266,7 @@ fun KeyboardKey(
             if (slideHoldReturnDetected) {
                 if (dir == SwipeDirection.RIGHT) nextWordAfterCursor(ime) else previousWordBeforeCursor(ime)
             } else {
-                ime.currentInputConnection.sendKeyEvent(KeyEvent(KeyEvent.ACTION_DOWN, keyCode))
-                ime.currentInputConnection.sendKeyEvent(KeyEvent(KeyEvent.ACTION_UP, keyCode))
+                sendDownUpKeyEvent(ime.currentInputConnection, keyCode)
             }
             tickCount++
             slideHoldTickCount = tickCount
@@ -287,8 +287,7 @@ fun KeyboardKey(
             if (slideHoldReturnDetected) {
                 deleteWordBeforeCursor(ime)
             } else {
-                ime.currentInputConnection.sendKeyEvent(KeyEvent(KeyEvent.ACTION_DOWN, KeyEvent.KEYCODE_DEL))
-                ime.currentInputConnection.sendKeyEvent(KeyEvent(KeyEvent.ACTION_UP, KeyEvent.KEYCODE_DEL))
+                sendDownUpKeyEvent(ime.currentInputConnection, KeyEvent.KEYCODE_DEL)
             }
             tickCount++
             slideHoldTickCount = tickCount

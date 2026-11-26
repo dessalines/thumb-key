@@ -6,6 +6,7 @@ import android.view.inputmethod.ExtractedTextRequest
 import android.view.inputmethod.InputConnection
 import com.dessalines.thumbkey.IMEService
 import com.dessalines.thumbkey.utils.TAG
+import com.dessalines.thumbkey.utils.sendDownUpKeyEvent
 
 /** Shown underlined while a sequence is being typed, so the armed state is visible. */
 private const val COMPOSE_HINT = "♫"
@@ -88,7 +89,7 @@ class ComposeComboProcessor : TextProcessor {
         val ic = ime.currentInputConnection ?: return
 
         if (!composing) {
-            ic.sendKeyEvent(ev)
+            sendDownUpKeyEvent(ic, ev)
             return
         }
 
@@ -105,7 +106,7 @@ class ComposeComboProcessor : TextProcessor {
 
         // Enter, arrow keys and the like end the sequence first.
         flushLiterally(ic)
-        ic.sendKeyEvent(ev)
+        sendDownUpKeyEvent(ic, ev)
     }
 
     override fun handleFinishInput(ime: IMEService) {
