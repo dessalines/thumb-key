@@ -1,10 +1,8 @@
 package com.dessalines.thumbkey.textprocessors
 
-import android.util.Log
 import android.view.KeyEvent
 import android.view.inputmethod.ExtractedTextRequest
 import com.dessalines.thumbkey.IMEService
-import com.dessalines.thumbkey.utils.TAG
 
 class AvroTextProcessor : TextProcessor {
     private var buffer = ""
@@ -28,7 +26,6 @@ class AvroTextProcessor : TextProcessor {
             buffer = ""
         } else {
             buffer += input
-            Log.d(TAG, "AvroProcessor: buffer='$buffer'")
             val converted = AvroEngine.convert(buffer)
             ic.setComposingText(converted, 1)
             selectionStart += converted.length - lastConvertedLen
