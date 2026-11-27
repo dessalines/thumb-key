@@ -61,6 +61,9 @@ import androidx.compose.ui.input.pointer.pointerInput
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.platform.LocalView
 import androidx.compose.ui.res.stringResource
+import androidx.compose.ui.text.SpanStyle
+import androidx.compose.ui.text.TextRange
+import androidx.compose.ui.text.buildAnnotatedString
 import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
@@ -125,13 +128,12 @@ sealed interface SketchList {
  * is closed and opened again.
  */
 @Stable
-class SketchState {
+class SketchState(
+    // Holds the open list's search, KeyboardSearchTarget.SKETCH
+    private val search: KeyboardSearchState,
+) {
     var strokes by mutableStateOf(listOf<List<Offset>>())
     var tiles by mutableStateOf(listOf<Tile>())
-
-    // Searching the open list, typed with the layout's own keys
-    var searching by mutableStateOf(false)
-    var query by mutableStateOf("")
 
     private var openList by mutableStateOf<SketchList?>(null)
 
@@ -140,7 +142,7 @@ class SketchState {
         get() = openList
         set(value) {
             openList = value
-            if (value == null) query = ""
+            if (value == null) search.clearQuery(KeyboardSearchTarget.SKETCH)
         }
 }
 
@@ -582,6 +584,7 @@ private fun SketchListScreen(
 @Composable
 fun SketchSearch(
     state: SketchState,
+    search: KeyboardSearchState,
     height: Dp,
     vibrateOnTap: Boolean,
     soundOnTap: Boolean,
@@ -589,22 +592,14 @@ fun SketchSearch(
     onClose: () -> Unit,
 ) {
     val ctx = LocalContext.current
-    val ime = ctx as IMEService
-    val view = LocalView.current
     val feedback = rememberSketchFeedback(vibrateOnTap, soundOnTap)
     val charset = produceState<Charset?>(null) { value = runCatching { SketchRecognizer.get(ctx).charset }.getOrNull() }.value
-
-    // The keys type into the search field while it's shown
-    val field = remember { KeyboardFieldConnection(view, state.query) { state.query = it } }
-    DisposableEffect(field) {
-        ime.setInputRedirect(field)
-        onDispose { ime.setInputRedirect(null) }
-    }
+    val field = rememberRedirectedField(search.query) { search.query = it }
 
     val list = state.list ?: SketchList.Candidates
     val rows =
-        remember(list, state.query, state.tiles, charset) {
-            charset?.let { sketchListRows(list, state.query, state.tiles, it) }.orEmpty()
+        remember(list, search.query, state.tiles, charset) {
+            charset?.let { sketchListRows(list, search.query, state.tiles, it) }.orEmpty()
         }
 
     Column(
@@ -613,47 +608,15 @@ fun SketchSearch(
                 .fillMaxWidth()
                 .background(MaterialTheme.colorScheme.surface),
     ) {
-        Row(
-            verticalAlignment = Alignment.CenterVertically,
-            modifier =
-                Modifier
-                    .fillMaxWidth()
-                    .background(MaterialTheme.colorScheme.surfaceVariant)
-                    .padding(horizontal = 4.dp),
-        ) {
-            IconButton(onClick = onClose) {
-                Icon(
-                    imageVector = Icons.AutoMirrored.Outlined.ArrowBack,
-                    contentDescription = stringResource(R.string.sketch_back),
-                    tint = MaterialTheme.colorScheme.onSurfaceVariant,
-                )
-            }
-            SearchField(
-                text = state.query,
-                hint = stringResource(R.string.sketch_search_hint),
-                cursor = true,
-                modifier = Modifier.weight(1f),
-            )
-            if (state.query.isNotEmpty()) {
-                IconButton(onClick = { field.clear() }) {
-                    Icon(
-                        imageVector = Icons.Outlined.Close,
-                        contentDescription = stringResource(R.string.sketch_clear_search),
-                        tint = MaterialTheme.colorScheme.onSurfaceVariant,
-                    )
-                }
-            }
-        }
+        SearchBar(
+            field = field,
+            query = search.query,
+            hint = stringResource(R.string.sketch_search_hint),
+            onClose = onClose,
+        )
         LazyColumn(modifier = Modifier.height(height)) {
             if (charset != null && rows.isEmpty()) {
-                item {
-                    Text(
-                        text = stringResource(R.string.sketch_no_matches),
-                        fontSize = 13.sp,
-                        color = MaterialTheme.colorScheme.onSurfaceVariant,
-                        modifier = Modifier.padding(16.dp),
-                    )
-                }
+                item { NoMatches(stringResource(R.string.sketch_no_matches)) }
             }
             if (charset != null) {
                 items(rows) { row ->
@@ -673,7 +636,7 @@ internal fun SearchField(
     text: String,
     hint: String,
     modifier: Modifier = Modifier,
-    cursor: Boolean = false,
+    selection: TextRange? = null,
 ) {
     Row(
         verticalAlignment = Alignment.CenterVertically,
@@ -694,10 +657,27 @@ internal fun SearchField(
             modifier = Modifier.size(20.dp),
         )
         Row(verticalAlignment = Alignment.CenterVertically) {
-            if (text.isNotEmpty()) {
-                Text(text = text, fontSize = 15.sp, maxLines = 1, color = MaterialTheme.colorScheme.onSurface)
-            }
-            if (cursor) {
+            val textColor = MaterialTheme.colorScheme.onSurface
+            if (selection == null || !selection.collapsed) {
+                // No cursor, or a selection, shown highlighted
+                val highlight = MaterialTheme.colorScheme.primary.copy(alpha = 0.3f)
+                val styled =
+                    buildAnnotatedString {
+                        append(text)
+                        if (selection != null) {
+                            val end = selection.end.coerceAtMost(text.length)
+                            addStyle(SpanStyle(background = highlight), selection.start.coerceAtMost(end), end)
+                        }
+                    }
+                if (text.isNotEmpty()) {
+                    Text(text = styled, fontSize = 15.sp, maxLines = 1, color = textColor)
+                }
+            } else {
+                // The text on either side of the cursor
+                val cursor = selection.start.coerceAtMost(text.length)
+                if (cursor > 0) {
+                    Text(text = text.substring(0, cursor), fontSize = 15.sp, maxLines = 1, color = textColor)
+                }
                 Box(
                     modifier =
                         Modifier
@@ -705,6 +685,9 @@ internal fun SearchField(
                             .height(18.dp)
                             .background(MaterialTheme.colorScheme.primary),
                 )
+                if (cursor < text.length) {
+                    Text(text = text.substring(cursor), fontSize = 15.sp, maxLines = 1, color = textColor)
+                }
             }
             if (text.isEmpty()) {
                 Text(

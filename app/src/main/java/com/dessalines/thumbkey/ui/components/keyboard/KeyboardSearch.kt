@@ -62,11 +62,14 @@ import kotlinx.coroutines.withContext
 enum class KeyboardSearchTarget {
     EMOJI,
     CLIPBOARD,
+
+    // Sketch mode's open list
+    SKETCH,
 }
 
 /**
- * The emoji and clipboard searches. While `target` is set, the layout's letter keys show
- * under the search and type into it, like sketch mode's search.
+ * The emoji, clipboard and sketch mode searches. While `target` is set, the layout's letter
+ * keys show under that search and type into it.
  */
 @Stable
 class KeyboardSearchState {
@@ -82,6 +85,10 @@ class KeyboardSearchState {
         set(value) {
             target?.let { queries[it] = value }
         }
+
+    fun clearQuery(target: KeyboardSearchTarget) {
+        queries.remove(target)
+    }
 }
 
 /**
@@ -89,7 +96,7 @@ class KeyboardSearchState {
  * app's text field. `onChange` gets its text after every edit.
  */
 @Composable
-private fun rememberRedirectedField(
+internal fun rememberRedirectedField(
     initialText: String,
     onChange: (String) -> Unit,
 ): KeyboardFieldConnection {
@@ -106,12 +113,15 @@ private fun rememberRedirectedField(
 /** The words of a search query. */
 private fun queryWords(query: String) = query.trim().split(Regex("\\s+")).filter { it.isNotEmpty() }
 
-/** A search's top bar: back, the field the keys type into, and clear once there's a query. */
+/**
+ * A search's top bar: back, then the field the keys type into, then clear once there's a query
+ * or, while there's none, back again on the right.
+ */
 @Composable
-private fun SearchBar(
+internal fun SearchBar(
+    field: KeyboardFieldConnection,
     query: String,
     hint: String,
-    onClear: () -> Unit,
     onClose: () -> Unit,
 ) {
     Row(
@@ -132,14 +142,22 @@ private fun SearchBar(
         SearchField(
             text = query,
             hint = hint,
-            cursor = true,
+            selection = field.selection,
             modifier = Modifier.weight(1f),
         )
         if (query.isNotEmpty()) {
-            IconButton(onClick = onClear) {
+            IconButton(onClick = { field.clear() }) {
                 Icon(
                     imageVector = Icons.Outlined.Close,
                     contentDescription = stringResource(R.string.sketch_clear_search),
+                    tint = MaterialTheme.colorScheme.onSurfaceVariant,
+                )
+            }
+        } else {
+            IconButton(onClick = onClose) {
+                Icon(
+                    imageVector = Icons.AutoMirrored.Outlined.ArrowBack,
+                    contentDescription = stringResource(R.string.search_back),
                     tint = MaterialTheme.colorScheme.onSurfaceVariant,
                 )
             }
@@ -148,7 +166,7 @@ private fun SearchBar(
 }
 
 @Composable
-private fun NoMatches(text: String) {
+internal fun NoMatches(text: String) {
     Text(
         text = text,
         fontSize = 13.sp,
@@ -332,9 +350,9 @@ fun EmojiSearch(
                 .background(MaterialTheme.colorScheme.surface),
     ) {
         SearchBar(
+            field = field,
             query = state.query,
             hint = stringResource(R.string.emoji_search_hint),
-            onClear = { field.clear() },
             onClose = onClose,
         )
         Box(modifier = Modifier.height(height)) {
@@ -419,9 +437,9 @@ fun ClipboardSearch(
                 .background(MaterialTheme.colorScheme.surfaceContainerLow),
     ) {
         SearchBar(
+            field = field,
             query = state.query,
             hint = stringResource(R.string.clipboard_search_hint),
-            onClear = { field.clear() },
             onClose = onClose,
         )
         Box(modifier = Modifier.height(height)) {

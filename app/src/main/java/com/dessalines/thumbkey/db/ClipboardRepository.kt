@@ -31,9 +31,12 @@ class ClipboardRepository(
         }
     }
 
-    /** Makes `item` the most recent, as when it's picked from the history to paste. */
+    /**
+     * Moves `item` to the top of the unpinned clips by making it the most recent, as when it's
+     * pasted from the history.
+     */
     @WorkerThread
-    suspend fun markUsed(item: ClipboardItem) {
+    suspend fun moveToTop(item: ClipboardItem) {
         clipboardItemDao.update(item.copy(timestamp = System.currentTimeMillis()))
     }
 
