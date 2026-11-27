@@ -2,6 +2,7 @@ package com.dessalines.thumbkey
 
 import android.inputmethodservice.InputMethodService
 import android.util.Log
+import android.view.KeyEvent
 import android.view.inputmethod.CursorAnchorInfo
 import android.view.inputmethod.EditorInfo
 import android.view.inputmethod.InputConnection
@@ -80,12 +81,44 @@ class IMEService :
     /** The app's text field, even while the keys type into the keyboard's own field. */
     val appInputConnection: InputConnection get() = super.getCurrentInputConnection()
 
-    // Sketch mode's drawing, kept while the keyboard is closed and opened again
-    val sketchState = SketchState()
-
-    // The emoji and clipboard searches' queries, kept the same way
+    // The emoji, clipboard and sketch mode searches' queries, kept while the keyboard is closed
+    // and opened again
     val searchState = KeyboardSearchState()
+
+    // Sketch mode's drawing, kept the same way
+    val sketchState = SketchState(searchState)
     private var clipboardManager: ThumbKeyClipboardManager? = null
+
+    // Closes the open search, set by KeyboardScreen
+    var closeSearch: (() -> Unit)? = null
+
+    // Whether the system's Back went down while a search was open, so its release closes it
+    private var backClosesSearch = false
+
+    // While the keyboard is shown it gets Back before the app (on Android 13+, the back gesture
+    // reaches it as Back too). With a search open, Back closes the search, not the keyboard.
+    override fun onKeyDown(
+        keyCode: Int,
+        event: KeyEvent,
+    ): Boolean {
+        if (keyCode == KeyEvent.KEYCODE_BACK && searchState.target != null && closeSearch != null) {
+            backClosesSearch = true
+            return true
+        }
+        return super.onKeyDown(keyCode, event)
+    }
+
+    override fun onKeyUp(
+        keyCode: Int,
+        event: KeyEvent,
+    ): Boolean {
+        if (keyCode == KeyEvent.KEYCODE_BACK && backClosesSearch) {
+            backClosesSearch = false
+            if (!event.isCanceled) closeSearch?.invoke()
+            return true
+        }
+        return super.onKeyUp(keyCode, event)
+    }
 
     /**
      * This is called every time the keyboard is brought up.
@@ -97,9 +130,8 @@ class IMEService :
     ) {
         super.onStartInput(attribute, restarting)
         setInputRedirect(null)
-        // A new keyboard opens on the letters: close sketch mode's search and lists, but keep
-        // its drawing
-        sketchState.searching = false
+        // A new keyboard opens on the letters: close the searches and sketch mode's list, but
+        // keep its drawing
         sketchState.list = null
         searchState.target = null
         val view = this.setupView()

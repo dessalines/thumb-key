@@ -18,6 +18,7 @@ import androidx.compose.foundation.layout.safeDrawingPadding
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.DisposableEffect
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.livedata.observeAsState
@@ -138,20 +139,36 @@ fun KeyboardScreen(
     // while the keyboard is closed
     val sketch = ctx.sketchState
 
-    // The emoji and clipboard searches, typed with the layout's letter keys. Their queries are
-    // kept while the keyboard is closed, like sketch mode's drawing.
+    // The emoji, clipboard and sketch mode searches, typed with the layout's letter keys. Their
+    // queries are kept while the keyboard is closed, like sketch mode's drawing.
     val search = ctx.searchState
     LaunchedEffect(mode) {
-        val typingSearch = sketch.searching && mode != KeyboardMode.EMOJI && mode != KeyboardMode.CLIPBOARD
-        // Coming back to sketch mode shows the pad, unless the search is being typed
-        if (mode != KeyboardMode.SKETCH && !typingSearch) {
-            sketch.searching = false
-            sketch.list = null
-        }
-        // The emoji and clipboard searches close when their own screens, or sketch mode, open
+        // Opening the emoji picker, the clipboard history or sketch mode closes any search
         if (mode == KeyboardMode.EMOJI || mode == KeyboardMode.CLIPBOARD || mode == KeyboardMode.SKETCH) {
             search.target = null
         }
+        // Leaving sketch mode closes its list, so coming back shows the pad. Its search, typed
+        // outside sketch mode, keeps the list open.
+        if (mode != KeyboardMode.SKETCH && search.target != KeyboardSearchTarget.SKETCH) {
+            sketch.list = null
+        }
+    }
+
+    // Closing a search goes back to the screen it searches. The system's Back does it too.
+    val closeSearch: () -> Unit = {
+        search.target?.let { target ->
+            search.target = null
+            mode =
+                when (target) {
+                    KeyboardSearchTarget.EMOJI -> KeyboardMode.EMOJI
+                    KeyboardSearchTarget.CLIPBOARD -> KeyboardMode.CLIPBOARD
+                    KeyboardSearchTarget.SKETCH -> KeyboardMode.SKETCH
+                }
+        }
+    }
+    DisposableEffect(ctx) {
+        ctx.closeSearch = closeSearch
+        onDispose { ctx.closeSearch = null }
     }
 
     // TODO get rid of this crap
@@ -447,7 +464,7 @@ fun KeyboardScreen(
                                     },
                                     onToggleSketchMode = { enable ->
                                         // Not while typing sketch mode's own search
-                                        if (!sketch.searching) {
+                                        if (search.target != KeyboardSearchTarget.SKETCH) {
                                             mode =
                                                 if (enable) {
                                                     KeyboardMode.SKETCH
@@ -660,7 +677,7 @@ fun KeyboardScreen(
                                     },
                                     onToggleSketchMode = { enable ->
                                         // Not while typing sketch mode's own search
-                                        if (!sketch.searching) {
+                                        if (search.target != KeyboardSearchTarget.SKETCH) {
                                             mode =
                                                 if (enable) {
                                                     KeyboardMode.SKETCH
@@ -788,13 +805,13 @@ fun KeyboardScreen(
                     onItemClick = { item ->
                         // Paste and return to keyboard. The pasted clip becomes the most recent.
                         ctx.currentInputConnection.commitText(item.text, 1)
-                        scope.launch { clipboardRepository.markUsed(item) }
+                        scope.launch { clipboardRepository.moveToTop(item) }
                         mode = KeyboardMode.MAIN
                     },
                     onItemPaste = { item ->
                         // Paste WITHOUT returning to keyboard
                         ctx.currentInputConnection.commitText(item.text, 1)
-                        scope.launch { clipboardRepository.markUsed(item) }
+                        scope.launch { clipboardRepository.moveToTop(item) }
                     },
                     onItemDelete = { item ->
                         scope.launch {
@@ -885,7 +902,7 @@ fun KeyboardScreen(
                         ctx.appInputConnection.commitText(text, 1)
                     },
                     onSearch = {
-                        sketch.searching = true
+                        search.target = KeyboardSearchTarget.SKETCH
                         mode = KeyboardMode.MAIN
                     },
                 ) { key, onSketchAction ->
@@ -1097,7 +1114,7 @@ fun KeyboardScreen(
                                         },
                                         onToggleSketchMode = { enable ->
                                             // Not while typing sketch mode's own search
-                                            if (!sketch.searching) {
+                                            if (search.target != KeyboardSearchTarget.SKETCH) {
                                                 mode =
                                                     if (enable) {
                                                         KeyboardMode.SKETCH
@@ -1190,27 +1207,25 @@ fun KeyboardScreen(
             }
         }
 
-        if (sketch.searching) {
+        if (search.target == KeyboardSearchTarget.SKETCH) {
             // Sketch mode's search, typed with the layout's keys below it
             Column {
                 SketchSearch(
                     state = sketch,
+                    search = search,
                     height = Dp(keyHeight * 2),
                     vibrateOnTap = vibrateOnTap,
                     soundOnTap = soundOnTap,
                     onPick = { text ->
                         // Stop typing into the search first, so the character goes to the app
-                        sketch.searching = false
+                        search.target = null
                         sketch.list = null
                         ctx.setInputRedirect(null)
                         ctx.ignoreNextCursorMove()
                         ctx.appInputConnection.commitText(text, 1)
                         mode = KeyboardMode.SKETCH
                     },
-                    onClose = {
-                        sketch.searching = false
-                        mode = KeyboardMode.SKETCH
-                    },
+                    onClose = closeSearch,
                 )
                 Box { drawKeyboards() }
             }
@@ -1228,10 +1243,7 @@ fun KeyboardScreen(
                         ctx.ignoreNextCursorMove()
                         ctx.appInputConnection.commitText(emoji, 1)
                     },
-                    onClose = {
-                        search.target = null
-                        mode = KeyboardMode.EMOJI
-                    },
+                    onClose = closeSearch,
                 )
                 Box { drawKeyboards() }
             }
@@ -1253,13 +1265,13 @@ fun KeyboardScreen(
                         ctx.setInputRedirect(null)
                         ctx.ignoreNextCursorMove()
                         ctx.appInputConnection.commitText(item.text, 1)
-                        scope.launch { clipboardRepository.markUsed(item) }
+                        scope.launch { clipboardRepository.moveToTop(item) }
                     },
                     onItemPaste = { item ->
                         // Paste without closing the search
                         ctx.ignoreNextCursorMove()
                         ctx.appInputConnection.commitText(item.text, 1)
-                        scope.launch { clipboardRepository.markUsed(item) }
+                        scope.launch { clipboardRepository.moveToTop(item) }
                     },
                     onItemDelete = { item ->
                         scope.launch { clipboardRepository.deleteItem(item) }
@@ -1267,10 +1279,7 @@ fun KeyboardScreen(
                     onItemTogglePin = { item ->
                         scope.launch { clipboardRepository.togglePin(item) }
                     },
-                    onClose = {
-                        search.target = null
-                        mode = KeyboardMode.CLIPBOARD
-                    },
+                    onClose = closeSearch,
                 )
                 Box { drawKeyboards() }
             }

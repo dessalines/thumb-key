@@ -116,7 +116,7 @@ fun ClipboardHistoryScreen(
                 )
             }
         } else {
-            // Typed with the keyboard's own keys, see ClipboardSearch
+            // Typed with the keyboard's own keys: see [ClipboardSearch] in KeyboardSearch.kt
             SearchEntryField(
                 hint = stringResource(R.string.clipboard_search_hint),
                 onClick = onSearch,
