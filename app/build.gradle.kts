@@ -153,8 +153,8 @@ dependencies {
     implementation("org.jetbrains.kotlin:kotlin-reflect:2.4.21")
 
     // Arrow-kt for mutating deeply nested data classes
-    implementation("io.arrow-kt:arrow-optics:2.3.0")
-    ksp("io.arrow-kt:arrow-optics-ksp-plugin:2.3.0")
+    implementation("io.arrow-kt:arrow-optics:2.3.0.1")
+    ksp("io.arrow-kt:arrow-optics-ksp-plugin:2.3.0.1")
 
     // Handwriting recognition for sketch mode, fully offline
     implementation("io.github.toldry:glyphsketch:0.1.1")
