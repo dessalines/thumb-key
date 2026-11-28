@@ -1,7 +1,9 @@
 package com.dessalines.thumbkey.ui.theme
 
+import android.content.Context
 import android.os.Build
 import androidx.compose.foundation.isSystemInDarkTheme
+import androidx.compose.material3.ColorScheme
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.dynamicDarkColorScheme
 import androidx.compose.material3.dynamicLightColorScheme
@@ -16,10 +18,23 @@ fun ThumbkeyTheme(
     settings: AppSettings?,
     content: @Composable () -> Unit,
 ) {
+    MaterialTheme(
+        colorScheme = thumbkeyColorScheme(LocalContext.current, settings, isSystemInDarkTheme()),
+        typography = Typography,
+        shapes = Shapes,
+        content = content,
+    )
+}
+
+/** The colors of the theme in the settings, also for views outside Compose. */
+fun thumbkeyColorScheme(
+    ctx: Context,
+    settings: AppSettings?,
+    systemInDarkTheme: Boolean,
+): ColorScheme {
     val themeMode = ThemeMode.entries[settings?.theme ?: 0]
     val themeColor = ThemeColor.entries[settings?.themeColor ?: 0]
 
-    val ctx = LocalContext.current
     val android12OrLater = Build.VERSION.SDK_INT >= Build.VERSION_CODES.S
 
     // Dynamic schemes crash on lower than android 12
@@ -48,23 +63,15 @@ fun ThumbkeyTheme(
         }
 
     val systemTheme =
-        if (!isSystemInDarkTheme()) {
+        if (!systemInDarkTheme) {
             colorPair.first
         } else {
             colorPair.second
         }
 
-    val colors =
-        when (themeMode) {
-            ThemeMode.System -> systemTheme
-            ThemeMode.Light -> colorPair.first
-            ThemeMode.Dark -> colorPair.second
-        }
-
-    MaterialTheme(
-        colorScheme = colors,
-        typography = Typography,
-        shapes = Shapes,
-        content = content,
-    )
+    return when (themeMode) {
+        ThemeMode.System -> systemTheme
+        ThemeMode.Light -> colorPair.first
+        ThemeMode.Dark -> colorPair.second
+    }
 }

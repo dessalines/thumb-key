@@ -692,6 +692,9 @@ class AppSettingsRepository(
         appSettingsDao.updateLastVersionCode(versionCode)
     }
 
+    // The settings, read from the database if they haven't loaded yet
+    fun settingsNow(): AppSettings? = appSettings.value ?: appSettingsDao.getSettingsSync()
+
     @WorkerThread
     suspend fun updateChangelog(ctx: Context) {
         withContext(Dispatchers.IO) {

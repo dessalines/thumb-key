@@ -4,6 +4,7 @@ import android.content.Context
 import android.content.Intent
 import android.content.pm.PackageInfo
 import android.content.pm.PackageManager
+import android.content.res.Configuration
 import android.content.res.Resources
 import android.os.Build
 import android.os.Handler
@@ -1716,6 +1717,10 @@ fun getCurrentLayoutGridColumns(keyboardLayout: Int): Int {
     val mainKeyboard = currentLayout.keyboardDefinition.modes.main
     return mainKeyboard.arr.maxOf { row -> row.sumOf { it.widthMultiplier } }.coerceAtLeast(1)
 }
+
+fun isWatch(ctx: Context): Boolean =
+    ctx.packageManager.hasSystemFeature(PackageManager.FEATURE_WATCH) ||
+        (ctx.resources.configuration.uiMode and Configuration.UI_MODE_TYPE_MASK) == Configuration.UI_MODE_TYPE_WATCH
 
 fun getCurrentDisplayWidth(ctx: Context): Int {
     val displayMetrics = ctx.resources.displayMetrics
